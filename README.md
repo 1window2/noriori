@@ -1,40 +1,27 @@
 # noriori
 
-일본 철도 탑승 기록 앱입니다. 탄 구간을 기록하면 지도에 칠하고, 노선과 회사별 완승률을 보여 줍니다.
+[![CI](https://github.com/1window2/noriori/actions/workflows/lint-test.yml/badge.svg)](https://github.com/1window2/noriori/actions/workflows/lint-test.yml)
 
-- 완전 오픈소스, 무료입니다. 광고와 계정이 없습니다.
-- 기록은 기기에만 저장됩니다. 사용자가 고른 폴더로 자동 백업합니다.
-- 노리츠부시에서 내려받은 CSV를 가져올 수 있습니다.
-- Android 먼저, iOS는 사이드로드로 배포합니다.
+일본 철도를 어디까지 탔는지 기록하는 앱입니다. 탄 구간을 고르면 지도에 칠하고, 노선·회사·도도부현별 완주율을 보여 줍니다.
+
+- 일본 전 노선과 폐선을 담았습니다. 지도와 노선도는 인터넷 없이도 보입니다.
+- 기록은 기기에만 저장되고, 고른 폴더로 자동 백업합니다. 계정과 광고가 없습니다.
+- 노리츠부시에서 내려받은 CSV를 가져오고 같은 형식으로 내보낼 수 있습니다.
+- 한국어, 영어, 일본어를 지원합니다. Android 먼저, iOS는 사이드로드로 배포합니다.
 
 아직 공개 배포 전입니다.
 
-## 구조
-
-| 경로 | 내용 |
-|---|---|
-| `apps/noriori` | Flutter 앱 |
-| `packages/noriori_core` | 규칙과 타입. 의존성이 없는 순수 Dart |
-| `packages/noriori_store` | SQLite 저장소, 백업, 데이터 팩 |
-| `tools/` | 데이터 파이프라인과 검증 도구 |
-| `data/` | 데이터 원본. 구축 절차는 [data/README.md](data/README.md) |
-| `docs/` | [제품 설계](docs/DESIGN.md), [구조 설계](docs/ARCHITECTURE.md) |
-
-의존 방향은 `apps → store → core`입니다. `tools/check_boundaries.py`가 검사합니다.
-
 ## 개발
 
-Flutter stable이 필요합니다.
+Flutter stable과 tippecanoe가 필요합니다.
 
 ```bash
-bash tools/all.sh
-bash tools/sync_pack.sh
-cd apps/noriori
-flutter test
-flutter run
+bash tools/all.sh       # 데이터 팩 만들기
+bash tools/sync_pack.sh # 앱에 넣기
+cd apps/noriori && flutter run
 ```
 
-릴리스 빌드에는 서명 키가 필요합니다. `apps/noriori/android/key.properties.example`을 보세요.
+구조는 `apps/noriori`(앱), `packages/noriori_core`(규칙), `packages/noriori_store`(저장소), `tools/`(데이터 파이프라인), `data/`(원본)입니다. 설계는 [docs/DESIGN.md](docs/DESIGN.md)와 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)에 있습니다.
 
 ## 라이선스
 

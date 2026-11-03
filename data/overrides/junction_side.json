@@ -18,5 +18,6 @@
 {"line": "l_tohoku_main_line", "other": "l_mito_line", "at": "n_oyama_mito", "side": "up", "why": "水戸線은 小山 역 間々田 쪽에서 나가 동쪽으로 돈다 (haisenryakuzu.net 水戸線 配線略図 01, 2024년 3월 조사)"},
 {"line": "l_yamada_line", "other": "l_miyako_line", "at": "n_miyako", "side": "up", "why": "옛 宮古線(山口団地 방면)은 宮古 역 千徳 쪽, 山田線과 같은 편에서 나간다 (haisenryakuzu.net 山田線 配線略図 04)"},
 {"line": "l_hitahikosan_line", "other": "l_ita_line", "at": "n_tagawa_ita", "side": "down", "why": "伊田線은 田川伊田 역 田川後藤寺 쪽에서 下伊田 방면으로 갈라진다 (haisenryakuzu.net 日田彦山線 配線略図 03)"},
-{"line": "l_hitahikosan_line", "other": "l_ita_line_heisei_chikuho", "at": "n_tagawa_ita", "side": "down", "why": "伊田線은 田川伊田 역 田川後藤寺 쪽에서 下伊田 방면으로 갈라진다 (haisenryakuzu.net 日田彦山線 配線略図 03)"}
+{"line": "l_hitahikosan_line", "other": "l_ita_line_heisei_chikuho", "at": "n_tagawa_ita", "side": "down", "why": "伊田線은 田川伊田 역 田川後藤寺 쪽에서 下伊田 방면으로 갈라진다 (haisenryakuzu.net 日田彦山線 配線略図 03)"},
+{"line": "l_nippo_main_line", "other": "l_hososhima_line", "at": "n_hyugashi", "side": "down", "why": "細島線은 日向市 역에서 日豊本線을 따라 남쪽(財光寺·宮崎 쪽)으로 내려간 뒤 동쪽으로 꺾여 細島로 간다 (지리원 지도에 옛 선형을 그린 답사 기록 ameblo.jp/ironmaiden666666/entry-12121855796). 위키에서 온 값과 같다"}
 ]

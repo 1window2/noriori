@@ -21,8 +21,16 @@ docs/name-review.md
 *.keystore
 key.properties
 
-# 빌드 산출물
+# 빌드 산출물. build/ 밖에 만들어도 올라가지 않게 한다
 build/
+*.apk
+*.aab
+*.ipa
+*.dSYM.zip
+coverage/
+*.log
+.env
+.env.*
 
 # 앱에 넣는 데이터 팩. build/에서 tools/sync_pack.sh로 복사한다
 apps/noriori/assets/pack/
