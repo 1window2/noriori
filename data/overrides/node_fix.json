@@ -1,0 +1,283 @@
+{
+"n_playpia_shirahama": {
+"kana": "ぷれいぴあしらはま",
+"ko": "푸레이피아시라하마"
+},
+"n_hitoyoshi": {
+"kana": "ひとよし",
+"ko": "히토요시"
+},
+"n_hitoyoshi_onsen": {
+"kana": "ひとよしおんせん",
+"ko": "히토요시온센",
+"en": "Hitoyoshi-Onsen"
+},
+"n_jukkokutoge_sanroku": {
+"kana": "じゅっこくとうげさんろく",
+"ko": "줏코쿠토게산로쿠"
+},
+"n_jukkokutoge_sancho": {
+"kana": "じゅっこくとうげさんちょう",
+"ko": "줏코쿠토게산초"
+},
+"n_tsukubasancho": {
+"kana": "つくばさんちょう",
+"ko": "츠쿠바산초"
+},
+"n_oyama_cable": {
+"kana": "おおやまけーぶる",
+"ko": "오야마케이블"
+},
+"n_ueno_zoo_west_garden": {
+"kana": "うえのどうぶつえんにしえん",
+"ko": "우에노도부츠엔니시엔"
+},
+"n_echigootsu": {
+"kana": "えちごおおつ",
+"ko": "에치고오츠"
+},
+"n_fukawatase": {
+"kana": "ふかわたせ",
+"ko": "후카와타세"
+},
+"n_kanayamabashi": {
+"kana": "かなやまばし",
+"ko": "카나야마바시"
+},
+"n_funagoya": {
+"kana": "ふなごや",
+"ko": "후나고야"
+},
+"n_tsugaruimabetsu": {
+"kana": "つがるいまべつ",
+"ko": "츠가루이마베츠"
+},
+"n_higashifuruichi": {
+"kana": "ひがしふるいち",
+"ko": "히가시후루이치"
+},
+"n_shimabara_gaiko": {
+"kana": "しまばらがいこう",
+"ko": "시마바라가이항"
+},
+"n_takaoka_ekimae": {
+"kana": "たかおかえきまえ",
+"ko": "타카오카에키마에"
+},
+"n_fukui_ekimae": {
+"kana": "ふくいえきまえ",
+"ko": "후쿠이에키마에"
+},
+"n_jr_matsuyama_ekimae": {
+"ja": "JR松山駅前",
+"kana": "じぇいあーるまつやまえきまえ",
+"ko": "JR마츠야마에키마에"
+},
+"n_matsuyama_city_iyotetsu_hanazono": {
+"ja": "松山市駅",
+"kana": "まつやましえき",
+"ko": "마츠야마시역"
+},
+"n_hiroshima_hiroden": {
+"kana": "ひろしまえき",
+"ko": "히로시마역"
+},
+"n_nishitetsu_fukuoka": {
+"kana": "にしてつふくおか(てんじん)"
+},
+"n_okushirataki": {
+"ko": "오쿠시라타키",
+"en": "Okushirataki",
+"kana": "おくしらたき"
+},
+"n_kamikoshi": {
+"ko": "카미코시",
+"en": "Kamikoshi",
+"kana": "かみこし"
+},
+"n_nakakoshi": {
+"ko": "나카코시",
+"en": "Nakakoshi",
+"kana": "なかこし"
+},
+"n_shikagoe": {
+"ko": "시카고에",
+"en": "Shikagoe",
+"kana": "しかごえ"
+},
+"n_sai": {
+"kana": "さい",
+"ko": "사이",
+"en": "Sai"
+},
+"n_saiin": {
+"kana": "さいいん"
+},
+"n_sannomiya_kobe_city": {
+"kana": "さんのみや"
+},
+"n_sannomiya_kobe_new_transit": {
+"kana": "さんのみや"
+},
+"n_sannomiya_sanyo": {
+"kana": "さんのみや"
+},
+"n_shimoamazu": {
+"kana": "しもあまづ"
+},
+"n_nirebara": {
+"ko": "니레바라"
+},
+"n_nikenjaya": {
+"ko": "니켄자야"
+},
+"n_gomi": {
+"ko": "고미"
+},
+"n_shimo_umi": {
+"ko": "시모우미"
+},
+"n_koenkami": {
+"ko": "코엔카미"
+},
+"n_yuchinnai": {
+"ko": "유친나이"
+},
+"n_utsunomiya_university_yoto_campus": {
+"ko": "우츠노미야다이가쿠요토캠퍼스"
+},
+"n_higashiyama_okaden_chuggington_museum": {
+"ko": "히가시야마·오카덴뮤지엄역"
+},
+"n_haneda_airport_terminal_3_keikyu": {
+"ko": "하네다 공항 제3터미널"
+},
+"n_haneda_airport_terminal_3_tokyo_monorail": {
+"ko": "하네다 공항 제3터미널"
+},
+"n_airport_terminal_2": {
+"ko": "공항제2빌딩",
+"en": "Airport Terminal 2"
+},
+"n_airport_terminal_2_keisei": {
+"ko": "공항제2빌딩",
+"en": "Airport Terminal 2"
+},
+"n_ja_hiroshima_byoin_mae": {
+"ko": "JA히로시마뵤인마에"
+},
+"n_seikan_tunnel_museum": {
+"ko": "세이칸터널키넨칸"
+},
+"n_shikone": {
+"en": "Shikone"
+},
+"n_higashi_asamai": {
+"en": "Higashi-Asamai"
+},
+"n_higo_fukagawa": {
+"en": "Higo-Fukagawa"
+},
+"n_satsuma_fuke": {
+"en": "Satsuma-Fuke"
+},
+"n_osumi_fukuyama": {
+"en": "Osumi-Fukuyama"
+},
+"n_negasa": {
+"en": "Negasa"
+},
+"n_nozuka": {
+"en": "Nozuka"
+},
+"n_yanagisawa": {
+"en": "Yanagisawa"
+},
+"n_gujo_hokutan": {
+"en": "Gujo"
+},
+"n_yatetsukakisaka": {
+"en": "Yatetsukakisaka"
+},
+"n_fukubuguchi": {
+"en": "Fukubuguchi"
+},
+"n_gohyakukoku": {
+"en": "Gohyakukoku"
+},
+"n_jokojimae": {
+"en": "Jokojimae"
+},
+"n_harajo": {
+"en": "Harajo"
+},
+"n_shirahamakaisuiyokujomae": {
+"en": "Shirahamakaisuiyokujomae"
+},
+"n_moritabokujomae": {
+"en": "Moritabokujomae"
+},
+"n_suzukashi": {
+"en": "Suzukashi"
+},
+"n_miyajima_boat_race": {
+"en": "Miyajima Boat Race"
+},
+"n_hosokura_mine_park_mae": {
+"en": "Hosokura Mine Park-mae"
+},
+"n_niisato": {
+"ko": "니이사토"
+},
+"n_tabata_signal": {
+"lat": 35.73826,
+"lon": 139.76067,
+"pos_note": "田端信号場. 원천에 좌표 없음. 田端역에 붙어 있고 駒込 1.6km, 上中里 1.7km가 田端역 km와 같아 N02 東北線 선로의 田端역 부근 점에 둠"
+},
+"n_sangi_asake_signal": {
+"lat": 35.015556,
+"lon": 136.648889,
+"pos_src": "wikidata",
+"pos_note": "三岐朝明信号場. Wikidata 좌표"
+},
+"n_seibu_chichibu_kagemori_side": {
+"lat": 35.9889,
+"lon": 139.08237,
+"pos_note": "西武秩父 연락선과 秩父本線의 影森방 분기. N02 조각의 분기점"
+},
+"n_seibu_chichibu_through": {
+"lat": 35.98896,
+"lon": 139.08262,
+"pos_note": "西武秩父線에서 연락선이 갈리는 점. N02 조각의 분기점"
+},
+"n_seibu_chichibu_ohanabatake_side": {
+"lat": 35.99075,
+"lon": 139.08304,
+"pos_note": "연락선이 秩父本線과 만나는 御花畑방 점. 0.2km를 N02 선로 위에서 잼"
+},
+"n_yamato_yagi_uehommachi_side": {
+"lat": 34.51483,
+"lon": 135.78844,
+"pos_note": "大阪線 上本町방 분기. N02 조각의 분기점"
+},
+"n_yamato_yagi_yagi_nishiguchi": {
+"lat": 34.51334,
+"lon": 135.79017,
+"pos_note": "八木連絡線의 八木西口방 끝. 0.2km를 N02 선로 위에서 잼"
+},
+"n_ise_nakagawa_uehommachi_side": {
+"lat": 34.63961,
+"lon": 136.47371,
+"pos_note": "中川短絡線과 大阪線의 분기. N02 조각의 분기점"
+},
+"n_ise_nakagawa_nagoya_side": {
+"lat": 34.64037,
+"lon": 136.47703,
+"pos_note": "中川短絡線과 名古屋線의 분기. N02 조각의 분기점"
+},
+"n_kannoura_asa_seaside_asato_b": {
+"lat": 33.54688,
+"lon": 134.28784,
+"pos_note": "甲浦 모드 인터체인지. N02 2024의 승강장 가운데"
+}
+}

@@ -1,0 +1,1283 @@
+# 별칭
+- {"entity_type": "node", "id": "n_namba_osaka_metro", "lang": "ja", "text": "難波", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_nakamozu_osaka_metro", "lang": "ja", "text": "中百舌鳥", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_abiko_osaka_metro", "lang": "ja", "text": "我孫子", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_mitsuiashibetsu", "lang": "ja", "text": "三井芦別駅", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_horoshin", "lang": "ja", "text": "幌新駅", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_shinuryu", "lang": "ja", "text": "新雨竜駅", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_teradomari_shindo", "lang": "ja", "text": "寺泊新道", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_tokachi_shimizu", "lang": "ja", "text": "清水", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_ainonai", "lang": "ja", "text": "東相ノ内", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawayu_onsen", "lang": "ja", "text": "川湯", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sattsuru", "lang": "ja", "text": "札鶴", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shiretoko_shari", "lang": "ja", "text": "斜里", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hodogaya", "lang": "ja", "text": "程ヶ谷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_noborito", "lang": "ja", "text": "稲田多摩川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_noborito", "lang": "ja", "text": "登戸多摩川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tsurumi_ono", "lang": "ja", "text": "工業学校前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_tokorozawa", "lang": "ja", "text": "松井村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_tokorozawa", "lang": "ja", "text": "所沢飛行場", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_musashi_hikida", "lang": "ja", "text": "病院前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_azumi_oiwake", "lang": "ja", "text": "アルプス追分", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kita_hosono", "lang": "ja", "text": "おかめ前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishi_nasuno", "lang": "ja", "text": "那須", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hamayoshida", "lang": "ja", "text": "吉田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hitachi_aoyagi", "lang": "ja", "text": "青柳", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hitachi_ota", "lang": "ja", "text": "太田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_naganohara_kusatsuguchi", "lang": "ja", "text": "長野原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_niita", "lang": "ja", "text": "熟田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishi_shiogama", "lang": "ja", "text": "西塩竈", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hon_shiogama", "lang": "ja", "text": "本塩竈", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_shiogama", "lang": "ja", "text": "東塩竈", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iwate_futsukamachi", "lang": "ja", "text": "二日町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kazusa_ichinomiya", "lang": "ja", "text": "一ノ宮", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yoshiwara", "lang": "ja", "text": "鈴川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iwata_tokaido_main", "lang": "ja", "text": "新中泉", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_owari_ichinomiya", "lang": "ja", "text": "尾張一ノ宮", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_omi", "lang": "ja", "text": "長篠", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishinomiya", "lang": "ja", "text": "西ノ宮", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawanishi_ikeda", "lang": "ja", "text": "池田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nakayamadera", "lang": "ja", "text": "中山", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tamba_takeda", "lang": "ja", "text": "竹田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tonami", "lang": "ja", "text": "出町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_miyajimaguchi", "lang": "ja", "text": "宮島", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_wadamisaki", "lang": "ja", "text": "和田崎町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_aki_yaguchi", "lang": "ja", "text": "矢口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fuchu", "lang": "ja", "text": "府中町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishi_iwakuni", "lang": "ja", "text": "岩国", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ube_shinkawa", "lang": "ja", "text": "宇部", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nagato_nagasawa", "lang": "ja", "text": "長沢", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_nakagawa", "lang": "ja", "text": "中川町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_saga_arashiyama", "lang": "ja", "text": "嵯峨", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_izumo_jinzai", "lang": "ja", "text": "出雲大社口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yamashiro_aodani", "lang": "ja", "text": "青谷梅林", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kyotanabe", "lang": "ja", "text": "田辺", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_kishiwada", "lang": "ja", "text": "阪和岸和田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kii_sano", "lang": "ja", "text": "秋津野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_awa_kawabata", "lang": "ja", "text": "川端", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_naruto_naruto", "lang": "ja", "text": "ゑびす前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yamase", "lang": "ja", "text": "山崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_anan", "lang": "ja", "text": "阿波富岡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitagawachi", "lang": "ja", "text": "赤河内", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_koboke", "lang": "ja", "text": "西宇", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kami_kumamoto", "lang": "ja", "text": "池田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yufuin", "lang": "ja", "text": "北由布", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_buzen_zenkoji", "lang": "ja", "text": "四日市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tokyo_skytree", "lang": "ja", "text": "業平橋", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tatara_tobu", "lang": "ja", "text": "中野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ashikagashi", "lang": "ja", "text": "足利町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanoshi", "lang": "ja", "text": "佐野町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_daiyamuko", "lang": "ja", "text": "大谷向今市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shin_takatoku", "lang": "ja", "text": "高徳", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kosagoe", "lang": "ja", "text": "小佐越前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kinugawa_onsen", "lang": "ja", "text": "下滝", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kinugawa_onsen", "lang": "ja", "text": "大滝", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_asaka_tobu", "lang": "ja", "text": "膝折", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kasumigaseki_tobu", "lang": "ja", "text": "的場", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_musashi_ranzan", "lang": "ja", "text": "菅谷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shakujii_koen", "lang": "ja", "text": "石神井", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_oizumi_gakuen", "lang": "ja", "text": "東大泉", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sayamagaoka", "lang": "ja", "text": "三ヶ島村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_agano", "lang": "ja", "text": "虎秀", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toritsu_kasei", "lang": "ja", "text": "府立家政", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_fushimi", "lang": "ja", "text": "上保谷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shin_tokorozawa", "lang": "ja", "text": "所沢飛行場前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shin_tokorozawa", "lang": "ja", "text": "所沢御幸町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shiraitodai", "lang": "ja", "text": "北多磨", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kyoteijo_mae", "lang": "ja", "text": "常久", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_keisei_hikifune", "lang": "ja", "text": "曳舟", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_keisei_tateishi", "lang": "ja", "text": "立石", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_keisei_makuhari", "lang": "ja", "text": "幕張", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_keisei_inage", "lang": "ja", "text": "稲毛", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_midori_dai", "lang": "ja", "text": "浜海岸", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_midori_dai", "lang": "ja", "text": "帝大工学部前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_midori_dai", "lang": "ja", "text": "工学部前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_midori_dai", "lang": "ja", "text": "黒砂", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishi_nobuto", "lang": "ja", "text": "千葉海岸", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_keisei_kanamachi", "lang": "ja", "text": "金町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tokiwadaira", "lang": "ja", "text": "金ヶ作", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hatsutomi", "lang": "ja", "text": "鎌ヶ谷初富", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_inokashira_koen", "lang": "ja", "text": "井ノ頭公園", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_noborito_odakyu", "lang": "ja", "text": "稲田多摩川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_noborito_odakyu", "lang": "ja", "text": "登戸多摩川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gakugei_daigaku", "lang": "ja", "text": "碑文谷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gakugei_daigaku", "lang": "ja", "text": "青山師範", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gakugei_daigaku", "lang": "ja", "text": "第一師範", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toritsu_daigaku", "lang": "ja", "text": "柿ノ木坂", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toritsu_daigaku", "lang": "ja", "text": "府立高等", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toritsu_daigaku", "lang": "ja", "text": "都立高校", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tsunashima", "lang": "ja", "text": "綱島温泉", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_okurayama_tokyu_railways", "lang": "ja", "text": "太尾", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_myorenji", "lang": "ja", "text": "妙蓮寺前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_musashi_koyama", "lang": "ja", "text": "小山", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minatocho", "lang": "ja", "text": "コロムビア前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_suzukicho", "lang": "ja", "text": "味の素前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawasaki_daishi", "lang": "ja", "text": "大師", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_keikyu_nagasawa", "lang": "ja", "text": "京浜長沢", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_goyu", "lang": "ja", "text": "本御油", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_meiden_akasaka", "lang": "ja", "text": "愛電赤坂", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_meiden_nagasawa", "lang": "ja", "text": "愛電長沢", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_meiden_yamanaka", "lang": "ja", "text": "愛電山中", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_okazakikoen_mae", "lang": "ja", "text": "西岡崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fujimatsu", "lang": "ja", "text": "今川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toyoake", "lang": "ja", "text": "阿野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_arimatsu", "lang": "ja", "text": "有松裏", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_moto_kasadera", "lang": "ja", "text": "笠寺", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanno_meitetsu", "lang": "ja", "text": "中日球場前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanno_meitetsu", "lang": "ja", "text": "ナゴヤ球場前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_meitetsu_nagoya", "lang": "ja", "text": "新名古屋", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shin_kiyosu", "lang": "ja", "text": "西清洲", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shima_ujinaga", "lang": "ja", "text": "大和", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iwato", "lang": "ja", "text": "馬寄", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sakuramachi_mae", "lang": "ja", "text": "中学前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_mikawa_ogihara", "lang": "ja", "text": "荻原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kariyashi", "lang": "ja", "text": "刈谷町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kodomonokuni_meitetsu", "lang": "ja", "text": "洲崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shibata_meitetsu", "lang": "ja", "text": "星崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nawa_meitetsu", "lang": "ja", "text": "名和村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_onomachi_meitetsu", "lang": "ja", "text": "大野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_higashi_nagoyako", "lang": "ja", "text": "西六号", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_moriyama_jieitai_mae", "lang": "ja", "text": "二十軒家", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_moriyama_jieitai_mae", "lang": "ja", "text": "守山町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_moriyama_jieitai_mae", "lang": "ja", "text": "守山市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_owari_asahi", "lang": "ja", "text": "新居", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_owari_asahi", "lang": "ja", "text": "旭新居", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_mizuno", "lang": "ja", "text": "今村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_seto_shiyakusho_mae", "lang": "ja", "text": "追分", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_konan_meitetsu", "lang": "ja", "text": "古知野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fuso", "lang": "ja", "text": "高雄", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fuso", "lang": "ja", "text": "下野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_inuyama_yuen", "lang": "ja", "text": "犬山橋", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nihon_rhine_imawatari", "lang": "ja", "text": "今渡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_machikata", "lang": "ja", "text": "兼平", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yanaizu_meitetsu", "lang": "ja", "text": "西柳津", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_takehana", "lang": "ja", "text": "栄町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hashimashiyakushomae", "lang": "ja", "text": "竹鼻", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hashimashiyakushomae", "lang": "ja", "text": "羽島", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hashimashiyakushomae", "lang": "ja", "text": "西竹鼻", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_suwacho", "lang": "ja", "text": "市役所前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_yao", "lang": "ja", "text": "八尾", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_yao", "lang": "ja", "text": "大軌八尾", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_shimoda", "lang": "ja", "text": "下田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ise_nakahara", "lang": "ja", "text": "参急中原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawachi_kosaka", "lang": "ja", "text": "小阪", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawachi_kosaka", "lang": "ja", "text": "大軌小阪", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_wakae_iwata", "lang": "ja", "text": "若江", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawachi_hanazono", "lang": "ja", "text": "花園", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawachi_hanazono", "lang": "ja", "text": "大軌花園", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kawachi_amami", "lang": "ja", "text": "天美車庫前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ojingoryomae", "lang": "ja", "text": "御陵前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_takadashi", "lang": "ja", "text": "高田町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_muda", "lang": "ja", "text": "吉野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tondabayashi_nishiguchi", "lang": "ja", "text": "学校前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shigisanshita", "lang": "ja", "text": "信貴山口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_gose", "lang": "ja", "text": "南和御所町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_masuo_kintetsu", "lang": "ja", "text": "西桑名", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_yatomi", "lang": "ja", "text": "関急弥富", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_kanie", "lang": "ja", "text": "関急蟹江", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_kanie", "lang": "ja", "text": "参急蟹江", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_kanie", "lang": "ja", "text": "関急蟹江", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_kanie", "lang": "ja", "text": "近畿日本蟹江", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_hatta", "lang": "ja", "text": "関急八田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_hatta", "lang": "ja", "text": "参急八田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_hatta", "lang": "ja", "text": "関急八田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kintetsu_hatta", "lang": "ja", "text": "近畿日本八田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ise_matsumoto", "lang": "ja", "text": "松本村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yunoyama_onsen", "lang": "ja", "text": "湯ノ山", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_izumiotsu", "lang": "ja", "text": "大津", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_chikkocho", "lang": "ja", "text": "和歌山港", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hatsushiba", "lang": "ja", "text": "西村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_osakasayamashi", "lang": "ja", "text": "狭山遊園前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kii_hosokawa", "lang": "ja", "text": "細川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kii_kamiya", "lang": "ja", "text": "神谷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sembayashi", "lang": "ja", "text": "森小路", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_moriguchishi", "lang": "ja", "text": "守口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_neyagawashi", "lang": "ja", "text": "寝屋川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_korien", "lang": "ja", "text": "香里", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fushimi_momoyama", "lang": "ja", "text": "伏見", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fujinomori", "lang": "ja", "text": "師団前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fushimi_inari", "lang": "ja", "text": "稲荷神社前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_jingu_marutamachi", "lang": "ja", "text": "丸太町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_cable_hachimangu_sanjo", "lang": "ja", "text": "男山", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kamisakaemachi", "lang": "ja", "text": "長等公園下", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_aikawa_hankyu", "lang": "ja", "text": "吹田町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_aikawa_hankyu", "lang": "ja", "text": "吹田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_omiya_hankyu", "lang": "ja", "text": "京阪京都", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kyoto_kawaramachi", "lang": "ja", "text": "河原町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_osaka_umeda_hankyu", "lang": "ja", "text": "梅田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_osaka_umeda_hanshin", "lang": "ja", "text": "梅田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_dome_mae", "lang": "ja", "text": "大阪ドーム前千代崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_hirao", "lang": "ja", "text": "平尾", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_hirao", "lang": "ja", "text": "九鉄平尾", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_ogori", "lang": "ja", "text": "小郡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_ogori", "lang": "ja", "text": "九鉄小郡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_kurume", "lang": "ja", "text": "九鉄久留米", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_yanagawa", "lang": "ja", "text": "柳河", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_yanagawa", "lang": "ja", "text": "九鉄柳河", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_yanagawa", "lang": "ja", "text": "西鉄柳河", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_nakashima", "lang": "ja", "text": "中島", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_nakashima", "lang": "ja", "text": "九鉄中島", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_wataze", "lang": "ja", "text": "渡瀬", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_wataze", "lang": "ja", "text": "九鉄渡瀬", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_ginsui", "lang": "ja", "text": "銀水", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_ginsui", "lang": "ja", "text": "九鉄銀水", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_gojo", "lang": "ja", "text": "五条", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_kashii", "lang": "ja", "text": "新香椎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanyo_aboshi", "lang": "ja", "text": "電鉄網干", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_hiragishi", "lang": "ja", "text": "霊園前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_wadamisaki_kobe_city", "lang": "ja", "text": "和田崎町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kami_kumamoto_kumamoto_city", "lang": "ja", "text": "池田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirosaki_higashikomae", "lang": "ja", "text": "松森町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirosaki_higashikomae", "lang": "ja", "text": "東工業高前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kuroishi_konan", "lang": "ja", "text": "弘南黒石", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_owani", "lang": "ja", "text": "弘南大鰐", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ishikawa_konan", "lang": "ja", "text": "新石川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_chitose_konan", "lang": "ja", "text": "津軽千年", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirosaki_gakuindai_mae", "lang": "ja", "text": "西弘前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_rokudoji", "lang": "ja", "text": "新湊", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gohyakukoku", "lang": "ja", "text": "立山町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_daisenji", "lang": "ja", "text": "上滝公園下", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_daisenji", "lang": "ja", "text": "大川寺公園", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_daisenji", "lang": "ja", "text": "大川寺遊園", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iwasehama", "lang": "ja", "text": "岩瀬港", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nonoichi_hokuriku", "lang": "ja", "text": "野々市連絡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nukajutaku_mae", "lang": "ja", "text": "大額", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_otomaru", "lang": "ja", "text": "粟田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nirayama", "lang": "ja", "text": "北條", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_izu_nagaoka", "lang": "ja", "text": "南條", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_mitsutoge", "lang": "ja", "text": "小沼", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fujikyu_highland", "lang": "ja", "text": "ハイランド", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gokaku", "lang": "ja", "text": "五和", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_abt_ichishiro", "lang": "ja", "text": "川根市代", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_sakae", "lang": "ja", "text": "陸軍病院前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_sakae", "lang": "ja", "text": "病院前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_mikawa_tahara", "lang": "ja", "text": "田原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_daian", "lang": "ja", "text": "大井田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishi_kuwana", "lang": "ja", "text": "大山田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_oizumihigashi", "lang": "ja", "text": "大泉", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_asunarou_yokkaichi", "lang": "ja", "text": "諏訪", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_asunarou_yokkaichi", "lang": "ja", "text": "近畿日本四日市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_jinaijoshikoko", "lang": "ja", "text": "裁判所前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tarobogu_mae", "lang": "ja", "text": "太郎坊", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishiojisanjo", "lang": "ja", "text": "三条口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_arisugawa", "lang": "ja", "text": "嵯峨野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ryoanji", "lang": "ja", "text": "竜安寺道", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sekime_takadono", "lang": "ja", "text": "関目", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shitennoji_mae_yuhigaoka", "lang": "ja", "text": "四天王寺前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shintetsu_rokko", "lang": "ja", "text": "六甲北口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shintetsu_rokko", "lang": "ja", "text": "六甲登山口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_suzurandai_nishiguchi", "lang": "ja", "text": "鈴蘭ダンスホール前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_suzurandai_nishiguchi", "lang": "ja", "text": "小部西口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kizu_kobe", "lang": "ja", "text": "電鉄木津", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ebisu_kobe", "lang": "ja", "text": "久留美", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_miki_uenomaru", "lang": "ja", "text": "三木東口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_miki_uenomaru", "lang": "ja", "text": "上の丸", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_miki_kobe", "lang": "ja", "text": "三木福有橋", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_miki_kobe", "lang": "ja", "text": "電鉄三木", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ichiba_kobe", "lang": "ja", "text": "電鉄市場", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ono_kobe", "lang": "ja", "text": "電鉄小野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tsuzumigataki", "lang": "ja", "text": "皷ヶ滝", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tsuzumigataki", "lang": "ja", "text": "皷滝", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hiroshima_hiroden", "lang": "ja", "text": "広島駅前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yokogawa_hiroden", "lang": "ja", "text": "横川駅前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kusatsuminami", "lang": "ja", "text": "荒手", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kusatsuminami", "lang": "ja", "text": "中央魚市場前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shoko_center_iriguchi", "lang": "ja", "text": "井口病院前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shoko_center_iriguchi", "lang": "ja", "text": "荒手車庫前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shudaikyosochukomae", "lang": "ja", "text": "実践女学校前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shudaikyosochukomae", "lang": "ja", "text": "鈴峯女専前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shudaikyosochukomae", "lang": "ja", "text": "鈴峯女子大前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shudaikyosochukomae", "lang": "ja", "text": "修大附属鈴峯前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirodenitsukaichi", "lang": "ja", "text": "五日市町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirodenitsukaichi", "lang": "ja", "text": "電車五日市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanyojogakuenmae", "lang": "ja", "text": "山陽女学園", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanyojogakuenmae", "lang": "ja", "text": "山陽女子大前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirodenhatsukaichi", "lang": "ja", "text": "廿日市町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirodenhatsukaichi", "lang": "ja", "text": "電車廿日市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirodenajina", "lang": "ja", "text": "田尻", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_miyajima_boat_race", "lang": "ja", "text": "競艇場前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hiroden_miyajimaguchi", "lang": "ja", "text": "広電宮島", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_izumo_science_center_park_town_mae", "lang": "ja", "text": "今市上町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_izumo_science_center_park_town_mae", "lang": "ja", "text": "大和紡前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_unshu_hirata", "lang": "ja", "text": "平田市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_matsue_english_garden_mae", "lang": "ja", "text": "C.ティファニー庭園美術館前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_takamatsu_chikko", "lang": "ja", "text": "築港", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kotoden_kotohira", "lang": "ja", "text": "琴平", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kotoden_yashima", "lang": "ja", "text": "屋島登山口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_rokumanji", "lang": "ja", "text": "六萬寺", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_rokumanji", "lang": "ja", "text": "牟礼", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iyo_tachibana", "lang": "ja", "text": "立花", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iyo_tachibana", "lang": "ja", "text": "伊予立花", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirai_iyotetsu", "lang": "ja", "text": "平井河原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ushibuchi", "lang": "ja", "text": "田窪", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gomenmachi_tosaden_kotsu", "lang": "ja", "text": "後免町駅前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_akaji", "lang": "ja", "text": "あかじ", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kami_kumamoto_kumamoto", "lang": "ja", "text": "池田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae", "lang": "ja", "text": "再春荘前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_fujisakigu_mae", "lang": "ja", "text": "北千反畑", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kurobe", "lang": "ja", "text": "三日市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_akechi_akechi", "lang": "ja", "text": "明知", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitasui", "lang": "ja", "text": "東門", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iwate_kawaguchi", "lang": "ja", "text": "川口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ichinohe", "lang": "ja", "text": "一ノ戸", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sannohe", "lang": "ja", "text": "三ノ戸", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_omama", "lang": "ja", "text": "大間々町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shishiorikarakuwa", "lang": "ja", "text": "鹿折", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_namiita_kaigan", "lang": "ja", "text": "浪板", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tanabu", "lang": "ja", "text": "本田名部", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_orihata", "lang": "ja", "text": "西宮内", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ayukawa_yuri_kogen", "lang": "ja", "text": "羽後鮎川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_osumi_koyama", "lang": "ja", "text": "高山", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_aira_osumi", "lang": "ja", "text": "姶良", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_osumi_takasu", "lang": "ja", "text": "高須", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_chikuzen_miyada", "lang": "ja", "text": "桐野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iwashiroshimizu", "lang": "ja", "text": "清水役場前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hirano_fukushima_transportation", "lang": "ja", "text": "明神町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_iohji_mae", "lang": "ja", "text": "仏坂上", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_daigakumae_ueda", "lang": "ja", "text": "本州大学前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_takasaki", "lang": "ja", "text": "下和田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_joshu_tomioka", "lang": "ja", "text": "富岡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_joshu_nanokaichi", "lang": "ja", "text": "七日市", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_joshu_ichinomiya", "lang": "ja", "text": "一ノ宮", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_inuboh", "lang": "ja", "text": "燈台前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yoshiwara_gakunan_electric_train", "lang": "ja", "text": "鈴川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_jatco_mae", "lang": "ja", "text": "日産前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hachiman", "lang": "ja", "text": "遠州八幡", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sukenobu", "lang": "ja", "text": "遠州助信", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hikuma", "lang": "ja", "text": "島ノ郷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hikuma", "lang": "ja", "text": "遠州島ノ郷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hikuma", "lang": "ja", "text": "遠州曳馬", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kamijima", "lang": "ja", "text": "遠州上島", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_jidosha_gakko_mae", "lang": "ja", "text": "遠州市場", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_saginomiya_enshu", "lang": "ja", "text": "共同", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_saginomiya_enshu", "lang": "ja", "text": "遠州共同", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sekishi", "lang": "ja", "text": "松木", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sekishi", "lang": "ja", "text": "遠州松木", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_enshu_nishigasaki", "lang": "ja", "text": "西ヶ崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_enshu_komatsu", "lang": "ja", "text": "小松", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_misono_chuo_koen", "lang": "ja", "text": "北浜", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_misono_chuo_koen", "lang": "ja", "text": "北浜中学校前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_enshu_kobayashi", "lang": "ja", "text": "新原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_enshu_shibamoto", "lang": "ja", "text": "芝本", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kanaya_nagoya_guideway_bus", "lang": "ja", "text": "守山市民病院", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_towadashi", "lang": "ja", "text": "三本木", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shinano_kawada", "lang": "ja", "text": "町川田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shikamura", "lang": "ja", "text": "四ヶ村", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_gonokomae", "lang": "ja", "text": "一野坪", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitasuzaka", "lang": "ja", "text": "豊洲", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nakamiyori_onsen", "lang": "ja", "text": "中三依", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_niisato", "lang": "ja", "text": "武井", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kazusa_yamada", "lang": "ja", "text": "養老川", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_heiwadai_ryutetsu", "lang": "ja", "text": "赤城", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_heiwadai_ryutetsu", "lang": "ja", "text": "赤城台", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shichirigahama", "lang": "ja", "text": "田辺", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shichirigahama", "lang": "ja", "text": "行合", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_koshigoe", "lang": "ja", "text": "谷戸", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_enoshima", "lang": "ja", "text": "片瀬", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitsunegasaki", "lang": "ja", "text": "上原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitsunegasaki", "lang": "ja", "text": "遊園前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitsunegasaki", "lang": "ja", "text": "狐ヶ崎ヤングランド前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shin_shimizu", "lang": "ja", "text": "清水相生町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nichizengu", "lang": "ja", "text": "秋月", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_yayoi_mizushima_rinkai", "lang": "ja", "text": "福田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kumanishi", "lang": "ja", "text": "貞元", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_seibijo", "lang": "ja", "text": "羽田整備場", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tenkubashi_tokyo_monorail", "lang": "ja", "text": "羽田", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_haneda_airport_terminal_1", "lang": "ja", "text": "羽田空港", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_haneda_airport_terminal_1", "lang": "ja", "text": "羽田空港第1ビル", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_haneda_airport_terminal_2", "lang": "ja", "text": "羽田空港第2ビル", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_koga", "lang": "ja", "text": "新古賀", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nishitetsu_fukuma", "lang": "ja", "text": "筑前福間", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sugihashi", "lang": "ja", "text": "鳥矢崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kurikoma", "lang": "ja", "text": "岩ヶ崎", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kurihara_tamachi", "lang": "ja", "text": "田町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_uguisuzawa_kogyokoko_mae", "lang": "ja", "text": "駒場", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_hosokura_mine_park_mae", "lang": "ja", "text": "細倉", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_oyubari", "lang": "ja", "text": "二股", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tedori_onsen", "lang": "ja", "text": "上野", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_mitsukuchi_hokuriku_nomi", "lang": "ja", "text": "三口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kagaiwauchi", "lang": "ja", "text": "岩内", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tatsunokuchi_onsen", "lang": "ja", "text": "辰口", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitamachi", "lang": "ja", "text": "若宮", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sanzenseishimae", "lang": "ja", "text": "松原", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shintsukatani", "lang": "ja", "text": "塚谷", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_ugawa_yusenji", "lang": "ja", "text": "遊泉寺", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_shikamachi", "lang": "ja", "text": "末吉", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitagata_higashiguchi", "lang": "ja", "text": "森町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kitagata_chitosemachi", "lang": "ja", "text": "千歳町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kanazonocho_9_chome", "lang": "ja", "text": "二軒屋", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kanazonocho_9_chome", "lang": "ja", "text": "薬専前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_kanazonocho_9_chome", "lang": "ja", "text": "薬大前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_fukiagehama", "lang": "ja", "text": "入来", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minami_fukiagehama", "lang": "ja", "text": "入来ノ浜", "kind": "old_title"}
+- {"entity_type": "line", "id": "l_rias_line", "lang": "ja", "text": "北リアス線", "kind": "old_title"}
+- {"entity_type": "line", "id": "l_rias_line", "lang": "ja", "text": "南リアス線", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_jr_matsuyama_ekimae", "lang": "ja", "text": "松山駅前", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_hanazono", "lang": "ja", "text": "松山市駅前", "kind": "noritsubushi"}
+- {"entity_type": "route", "id": "r_hakodate_main_line", "lang": "ja", "text": "函館本線", "kind": "noritsubushi", "span": ["函館", "旭川"]}
+- {"entity_type": "route", "id": "r_hakodate_main_line_sunagawa_kami_sunagawa", "lang": "ja", "text": "函館本線", "kind": "noritsubushi", "span": ["砂川", "上砂川"]}
+- {"entity_type": "route", "id": "r_hakodate_main_line_bibai_minami_bibai", "lang": "ja", "text": "函館本線", "kind": "noritsubushi", "span": ["美唄", "南美唄"]}
+- {"entity_type": "route", "id": "r_hakodate_main_line_onuma_mori", "lang": "ja", "text": "函館本線 (砂原回り)", "kind": "noritsubushi", "span": ["大沼", "森"]}
+- {"entity_type": "route", "id": "r_hokkaido_shinkansen", "lang": "ja", "text": "北海道新幹線", "kind": "noritsubushi", "span": ["新青森", "新函館北斗"]}
+- {"entity_type": "route", "id": "r_sassho_line", "lang": "ja", "text": "札沼線", "kind": "noritsubushi", "span": ["桑園", "北海道医療大学"]}
+- {"entity_type": "route", "id": "r_sassho_line", "lang": "ja", "text": "札沼線", "kind": "noritsubushi", "span": ["北海道医療大学", "石狩沼田"]}
+- {"entity_type": "route", "id": "r_chitose_line", "lang": "ja", "text": "千歳線", "kind": "noritsubushi", "span": ["沼ノ端", "白石"]}
+- {"entity_type": "route", "id": "r_chitose_line_minami_chitose_new_chitose_airport", "lang": "ja", "text": "千歳線 (空港支線)", "kind": "noritsubushi", "span": ["南千歳", "新千歳空港"]}
+- {"entity_type": "route", "id": "r_sekisho_line", "lang": "ja", "text": "石勝線", "kind": "noritsubushi", "span": ["南千歳", "新得"]}
+- {"entity_type": "route", "id": "r_sekisho_line_shin_yubari_yubari", "lang": "ja", "text": "石勝線 (夕張支線)", "kind": "noritsubushi", "span": ["新夕張", "夕張"]}
+- {"entity_type": "route", "id": "r_muroran_main_line", "lang": "ja", "text": "室蘭本線", "kind": "noritsubushi", "span": ["長万部", "岩見沢"]}
+- {"entity_type": "route", "id": "r_muroran_main_line_higashi_muroran_muroran", "lang": "ja", "text": "室蘭本線 (室蘭支線)", "kind": "noritsubushi", "span": ["東室蘭", "室蘭"]}
+- {"entity_type": "route", "id": "r_hidaka_main_line", "lang": "ja", "text": "日高本線", "kind": "noritsubushi", "span": ["苫小牧", "鵡川"]}
+- {"entity_type": "route", "id": "r_hidaka_main_line", "lang": "ja", "text": "日高本線", "kind": "noritsubushi", "span": ["鵡川", "様似"]}
+- {"entity_type": "route", "id": "r_nemuro_main_line", "lang": "ja", "text": "根室本線 (滝川～富良野)", "kind": "noritsubushi", "span": ["滝川", "富良野"]}
+- {"entity_type": "route", "id": "r_nemuro_main_line", "lang": "ja", "text": "根室本線", "kind": "noritsubushi", "span": ["富良野", "新得"]}
+- {"entity_type": "route", "id": "r_nemuro_main_line", "lang": "ja", "text": "根室本線 (新得～根室)", "kind": "noritsubushi", "span": ["新得", "根室"]}
+- {"entity_type": "route", "id": "r_furano_line", "lang": "ja", "text": "富良野線", "kind": "noritsubushi", "span": ["旭川", "富良野"]}
+- {"entity_type": "route", "id": "r_soya_main_line", "lang": "ja", "text": "宗谷本線", "kind": "noritsubushi", "span": ["旭川", "稚内"]}
+- {"entity_type": "route", "id": "r_sekihoku_main_line", "lang": "ja", "text": "石北本線", "kind": "noritsubushi", "span": ["新旭川", "網走"]}
+- {"entity_type": "route", "id": "r_senmo_main_line", "lang": "ja", "text": "釧網本線", "kind": "noritsubushi", "span": ["東釧路", "網走"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line", "lang": "ja", "text": "東海道本線", "kind": "noritsubushi", "span": ["東京", "熱海"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line", "lang": "ja", "text": "東海道本線", "kind": "noritsubushi", "span": ["熱海", "米原"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line", "lang": "ja", "text": "東海道本線", "kind": "noritsubushi", "span": ["米原", "神戸"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line_shinagawa_tsurumi", "lang": "ja", "text": "東海道本線 (品鶴線)", "kind": "noritsubushi", "span": ["品川", "鶴見"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line_tsurumi_hazawa_yokohama_kokudai", "lang": "ja", "text": "東海道本線 (相鉄直通線)", "kind": "noritsubushi", "span": ["鶴見", "羽沢横浜国大"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line_ogaki_mino_akasaka", "lang": "ja", "text": "東海道本線 (美濃赤坂線)", "kind": "noritsubushi", "span": ["大垣", "美濃赤坂"]}
+- {"entity_type": "route", "id": "r_tokaido_main_line_ogaki_sekigahara", "lang": "ja", "text": "東海道本線 (新垂井経由)", "kind": "noritsubushi", "span": ["大垣", "関ヶ原"]}
+- {"entity_type": "route", "id": "r_yamanote_line", "lang": "ja", "text": "山手線", "kind": "noritsubushi", "span": ["品川", "田端"]}
+- {"entity_type": "route", "id": "r_akabane_line", "lang": "ja", "text": "赤羽線", "kind": "noritsubushi", "span": ["池袋", "赤羽"]}
+- {"entity_type": "route", "id": "r_nambu_line", "lang": "ja", "text": "南武線", "kind": "noritsubushi", "span": ["川崎", "立川"]}
+- {"entity_type": "route", "id": "r_nambu_line_shitte_hama_kawasaki", "lang": "ja", "text": "南武線 (南武支線)", "kind": "noritsubushi", "span": ["尻手", "浜川崎"]}
+- {"entity_type": "route", "id": "r_tsurumi_line", "lang": "ja", "text": "鶴見線", "kind": "noritsubushi", "span": ["鶴見", "扇町"]}
+- {"entity_type": "route", "id": "r_tsurumi_line_musashi_shiraishi_okawa", "lang": "ja", "text": "鶴見線 (大川支線)", "kind": "noritsubushi", "span": ["武蔵白石", "大川"]}
+- {"entity_type": "route", "id": "r_tsurumi_line_asano_umi_shibaura", "lang": "ja", "text": "鶴見線 (海芝浦支線)", "kind": "noritsubushi", "span": ["浅野", "海芝浦"]}
+- {"entity_type": "route", "id": "r_musashino_line", "lang": "ja", "text": "武蔵野線", "kind": "noritsubushi", "span": ["府中本町", "西船橋"]}
+- {"entity_type": "route", "id": "r_yokohama_line", "lang": "ja", "text": "横浜線", "kind": "noritsubushi", "span": ["東神奈川", "八王子"]}
+- {"entity_type": "route", "id": "r_negishi_line", "lang": "ja", "text": "根岸線", "kind": "noritsubushi", "span": ["横浜", "大船"]}
+- {"entity_type": "route", "id": "r_yokosuka_line", "lang": "ja", "text": "横須賀線", "kind": "noritsubushi", "span": ["大船", "久里浜"]}
+- {"entity_type": "route", "id": "r_sagami_line", "lang": "ja", "text": "相模線", "kind": "noritsubushi", "span": ["茅ケ崎", "橋本"]}
+- {"entity_type": "route", "id": "r_sagami_line_samukawa_nishi_samukawa", "lang": "ja", "text": "相模線", "kind": "noritsubushi", "span": ["寒川", "西寒川"]}
+- {"entity_type": "route", "id": "r_ito_line", "lang": "ja", "text": "伊東線", "kind": "noritsubushi", "span": ["熱海", "伊東"]}
+- {"entity_type": "route", "id": "r_chuo_main_line", "lang": "ja", "text": "中央本線", "kind": "noritsubushi", "span": ["新宿", "塩尻"]}
+- {"entity_type": "route", "id": "r_chuo_main_line", "lang": "ja", "text": "中央本線", "kind": "noritsubushi", "span": ["塩尻", "名古屋"]}
+- {"entity_type": "route", "id": "r_chuo_main_line_kanda_yoyogi", "lang": "ja", "text": "中央本線 (神田-代々木)", "kind": "noritsubushi", "span": ["神田", "代々木"]}
+- {"entity_type": "route", "id": "r_chuo_main_line_okaya_shiojiri", "lang": "ja", "text": "中央本線 (辰野経由)", "kind": "noritsubushi", "span": ["岡谷", "塩尻"]}
+- {"entity_type": "route", "id": "r_ome_line", "lang": "ja", "text": "青梅線", "kind": "noritsubushi", "span": ["立川", "奥多摩"]}
+- {"entity_type": "route", "id": "r_itsukaichi_line", "lang": "ja", "text": "五日市線", "kind": "noritsubushi", "span": ["拝島", "武蔵五日市"]}
+- {"entity_type": "route", "id": "r_itsukaichi_line", "lang": "ja", "text": "五日市線", "kind": "noritsubushi", "span": ["武蔵五日市", "武蔵岩井"]}
+- {"entity_type": "route", "id": "r_hachiko_line", "lang": "ja", "text": "八高線", "kind": "noritsubushi", "span": ["八王子", "倉賀野"]}
+- {"entity_type": "route", "id": "r_koumi_line", "lang": "ja", "text": "小海線", "kind": "noritsubushi", "span": ["小淵沢", "小諸"]}
+- {"entity_type": "route", "id": "r_shinonoi_line", "lang": "ja", "text": "篠ノ井線", "kind": "noritsubushi", "span": ["塩尻", "篠ノ井"]}
+- {"entity_type": "route", "id": "r_oito_line", "lang": "ja", "text": "大糸線", "kind": "noritsubushi", "span": ["松本", "南小谷"]}
+- {"entity_type": "route", "id": "r_oito_line", "lang": "ja", "text": "大糸線", "kind": "noritsubushi", "span": ["南小谷", "糸魚川"]}
+- {"entity_type": "route", "id": "r_tohoku_main_line", "lang": "ja", "text": "東北本線", "kind": "noritsubushi", "span": ["東京", "盛岡"]}
+- {"entity_type": "route", "id": "r_tohoku_main_line", "lang": "ja", "text": "東北本線", "kind": "noritsubushi", "span": ["盛岡", "青森"]}
+- {"entity_type": "route", "id": "r_tohoku_main_line_nippori_akabane", "lang": "ja", "text": "東北本線 (尾久経由)", "kind": "noritsubushi", "span": ["日暮里", "赤羽"]}
+- {"entity_type": "route", "id": "r_tohoku_main_line_akabane_omiya", "lang": "ja", "text": "東北本線 (埼京線)", "kind": "noritsubushi", "span": ["赤羽", "大宮"]}
+- {"entity_type": "route", "id": "r_tohoku_main_line_iwakiri_rifu", "lang": "ja", "text": "東北本線 (利府支線)", "kind": "noritsubushi", "span": ["岩切", "利府"]}
+- {"entity_type": "route", "id": "r_tohoku_main_line_matsushima_takagimachi", "lang": "ja", "text": "東北本線 (仙石東北ライン)", "kind": "noritsubushi", "span": ["松島", "高城町"]}
+- {"entity_type": "route", "id": "r_tohoku_shinkansen", "lang": "ja", "text": "東北新幹線", "kind": "noritsubushi", "span": ["東京", "新青森"]}
+- {"entity_type": "route", "id": "r_joban_line", "lang": "ja", "text": "常磐線", "kind": "noritsubushi", "span": ["日暮里", "岩沼"]}
+- {"entity_type": "route", "id": "r_joban_line", "lang": "ja", "text": "常磐線", "kind": "noritsubushi", "span": ["駒ヶ嶺", "浜吉田"]}
+- {"entity_type": "route", "id": "r_suigun_line", "lang": "ja", "text": "水郡線", "kind": "noritsubushi", "span": ["水戸", "安積永盛"]}
+- {"entity_type": "route", "id": "r_suigun_line_kami_sugaya_hitachi_ota", "lang": "ja", "text": "水郡線 (常陸太田支線)", "kind": "noritsubushi", "span": ["上菅谷", "常陸太田"]}
+- {"entity_type": "route", "id": "r_kawagoe_line", "lang": "ja", "text": "川越線", "kind": "noritsubushi", "span": ["大宮", "高麗川"]}
+- {"entity_type": "route", "id": "r_takasaki_line", "lang": "ja", "text": "高崎線", "kind": "noritsubushi", "span": ["大宮", "高崎"]}
+- {"entity_type": "route", "id": "r_joetsu_line", "lang": "ja", "text": "上越線", "kind": "noritsubushi", "span": ["高崎", "宮内"]}
+- {"entity_type": "route", "id": "r_joetsu_line_echigo_yuzawa_gala_yuzawa", "lang": "ja", "text": "上越線 (ガーラ湯沢)", "kind": "noritsubushi", "span": ["越後湯沢", "ガーラ湯沢"]}
+- {"entity_type": "route", "id": "r_joetsu_shinkansen", "lang": "ja", "text": "上越新幹線", "kind": "noritsubushi", "span": ["大宮", "新潟"]}
+- {"entity_type": "route", "id": "r_agatsuma_line", "lang": "ja", "text": "吾妻線", "kind": "noritsubushi", "span": ["渋川", "大前"]}
+- {"entity_type": "route", "id": "r_agatsuma_line", "lang": "ja", "text": "吾妻線", "kind": "noritsubushi", "span": ["岩島", "長野原草津口"]}
+- {"entity_type": "route", "id": "r_ryomo_line", "lang": "ja", "text": "両毛線", "kind": "noritsubushi", "span": ["小山", "新前橋"]}
+- {"entity_type": "route", "id": "r_mito_line", "lang": "ja", "text": "水戸線", "kind": "noritsubushi", "span": ["小山", "友部"]}
+- {"entity_type": "route", "id": "r_nikko_line", "lang": "ja", "text": "日光線", "kind": "noritsubushi", "span": ["宇都宮", "日光"]}
+- {"entity_type": "route", "id": "r_karasuyama_line", "lang": "ja", "text": "烏山線", "kind": "noritsubushi", "span": ["宝積寺", "烏山"]}
+- {"entity_type": "route", "id": "r_senzan_line", "lang": "ja", "text": "仙山線", "kind": "noritsubushi", "span": ["仙台", "羽前千歳"]}
+- {"entity_type": "route", "id": "r_senseki_line", "lang": "ja", "text": "仙石線", "kind": "noritsubushi", "span": ["あおば通", "石巻"]}
+- {"entity_type": "route", "id": "r_senseki_line", "lang": "ja", "text": "仙石線", "kind": "noritsubushi", "span": ["陸前大塚", "陸前小野"]}
+- {"entity_type": "route", "id": "r_ishinomaki_line", "lang": "ja", "text": "石巻線", "kind": "noritsubushi", "span": ["小牛田", "女川"]}
+- {"entity_type": "route", "id": "r_ishinomaki_line", "lang": "ja", "text": "石巻線", "kind": "noritsubushi", "span": ["浦宿", "女川"]}
+- {"entity_type": "route", "id": "r_kesennuma_line", "lang": "ja", "text": "気仙沼線", "kind": "noritsubushi", "span": ["前谷地", "柳津"]}
+- {"entity_type": "route", "id": "r_kesennuma_line", "lang": "ja", "text": "気仙沼線", "kind": "noritsubushi", "span": ["柳津", "気仙沼"]}
+- {"entity_type": "route", "id": "r_ofunato_line", "lang": "ja", "text": "大船渡線", "kind": "noritsubushi", "span": ["一ノ関", "気仙沼"]}
+- {"entity_type": "route", "id": "r_ofunato_line", "lang": "ja", "text": "大船渡線", "kind": "noritsubushi", "span": ["気仙沼", "盛"]}
+- {"entity_type": "route", "id": "r_kitakami_line", "lang": "ja", "text": "北上線", "kind": "noritsubushi", "span": ["北上", "横手"]}
+- {"entity_type": "route", "id": "r_kamaishi_line", "lang": "ja", "text": "釜石線", "kind": "noritsubushi", "span": ["花巻", "釜石"]}
+- {"entity_type": "route", "id": "r_tazawako_line", "lang": "ja", "text": "田沢湖線", "kind": "noritsubushi", "span": ["盛岡", "大曲"]}
+- {"entity_type": "route", "id": "r_yamada_line", "lang": "ja", "text": "山田線", "kind": "noritsubushi", "span": ["盛岡", "宮古"]}
+- {"entity_type": "route", "id": "r_yamada_line", "lang": "ja", "text": "山田線", "kind": "noritsubushi", "span": ["宮古", "釜石"]}
+- {"entity_type": "route", "id": "r_hanawa_line", "lang": "ja", "text": "花輪線", "kind": "noritsubushi", "span": ["好摩", "大館"]}
+- {"entity_type": "route", "id": "r_hachinohe_line", "lang": "ja", "text": "八戸線", "kind": "noritsubushi", "span": ["八戸", "久慈"]}
+- {"entity_type": "route", "id": "r_ominato_line", "lang": "ja", "text": "大湊線", "kind": "noritsubushi", "span": ["野辺地", "大湊"]}
+- {"entity_type": "route", "id": "r_banetsu_east_line", "lang": "ja", "text": "磐越東線", "kind": "noritsubushi", "span": ["いわき", "郡山"]}
+- {"entity_type": "route", "id": "r_banetsu_west_line", "lang": "ja", "text": "磐越西線", "kind": "noritsubushi", "span": ["郡山", "新津"]}
+- {"entity_type": "route", "id": "r_tadami_line", "lang": "ja", "text": "只見線", "kind": "noritsubushi", "span": ["会津若松", "小出"]}
+- {"entity_type": "route", "id": "r_ou_main_line", "lang": "ja", "text": "奥羽本線", "kind": "noritsubushi", "span": ["福島", "青森"]}
+- {"entity_type": "route", "id": "r_yonesaka_line", "lang": "ja", "text": "米坂線", "kind": "noritsubushi", "span": ["米沢", "坂町"]}
+- {"entity_type": "route", "id": "r_aterazawa_line", "lang": "ja", "text": "左沢線", "kind": "noritsubushi", "span": ["北山形", "左沢"]}
+- {"entity_type": "route", "id": "r_oga_line", "lang": "ja", "text": "男鹿線", "kind": "noritsubushi", "span": ["追分", "男鹿"]}
+- {"entity_type": "route", "id": "r_gono_line", "lang": "ja", "text": "五能線", "kind": "noritsubushi", "span": ["東能代", "川部"]}
+- {"entity_type": "route", "id": "r_tsugaru_line", "lang": "ja", "text": "津軽線", "kind": "noritsubushi", "span": ["青森", "三厩"]}
+- {"entity_type": "route", "id": "r_uetsu_main_line", "lang": "ja", "text": "羽越本線", "kind": "noritsubushi", "span": ["新津", "秋田"]}
+- {"entity_type": "route", "id": "r_hakushin_line", "lang": "ja", "text": "白新線", "kind": "noritsubushi", "span": ["新潟", "新発田"]}
+- {"entity_type": "route", "id": "r_rikuu_east_line", "lang": "ja", "text": "陸羽東線", "kind": "noritsubushi", "span": ["小牛田", "新庄"]}
+- {"entity_type": "route", "id": "r_rikuu_west_line", "lang": "ja", "text": "陸羽西線", "kind": "noritsubushi", "span": ["新庄", "余目"]}
+- {"entity_type": "route", "id": "r_shinetsu_main_line", "lang": "ja", "text": "信越本線 (高崎-横川)", "kind": "noritsubushi", "span": ["高崎", "横川"]}
+- {"entity_type": "route", "id": "r_shinetsu_main_line", "lang": "ja", "text": "信越本線", "kind": "noritsubushi", "span": ["横川", "篠ノ井"]}
+- {"entity_type": "route", "id": "r_shinetsu_main_line", "lang": "ja", "text": "信越本線 (篠ノ井-長野)", "kind": "noritsubushi", "span": ["篠ノ井", "長野"]}
+- {"entity_type": "route", "id": "r_shinetsu_main_line", "lang": "ja", "text": "信越本線", "kind": "noritsubushi", "span": ["長野", "直江津"]}
+- {"entity_type": "route", "id": "r_shinetsu_main_line", "lang": "ja", "text": "信越本線 (直江津-新潟)", "kind": "noritsubushi", "span": ["直江津", "新潟"]}
+- {"entity_type": "route", "id": "r_hokuriku_shinkansen", "lang": "ja", "text": "北陸新幹線", "kind": "noritsubushi", "span": ["高崎", "上越妙高"]}
+- {"entity_type": "route", "id": "r_hokuriku_shinkansen", "lang": "ja", "text": "北陸新幹線", "kind": "noritsubushi", "span": ["上越妙高", "敦賀"]}
+- {"entity_type": "route", "id": "r_iiyama_line", "lang": "ja", "text": "飯山線", "kind": "noritsubushi", "span": ["豊野", "越後川口"]}
+- {"entity_type": "route", "id": "r_echigo_line", "lang": "ja", "text": "越後線", "kind": "noritsubushi", "span": ["柏崎", "新潟"]}
+- {"entity_type": "route", "id": "r_yahiko_line", "lang": "ja", "text": "弥彦線", "kind": "noritsubushi", "span": ["弥彦", "東三条"]}
+- {"entity_type": "route", "id": "r_yahiko_line", "lang": "ja", "text": "弥彦線", "kind": "noritsubushi", "span": ["東三条", "越後長沢"]}
+- {"entity_type": "route", "id": "r_sobu_main_line", "lang": "ja", "text": "総武本線", "kind": "noritsubushi", "span": ["東京", "銚子"]}
+- {"entity_type": "route", "id": "r_sobu_main_line_ochanomizu_kinshicho", "lang": "ja", "text": "総武本線 (御茶ノ水)", "kind": "noritsubushi", "span": ["御茶ノ水", "錦糸町"]}
+- {"entity_type": "route", "id": "r_keiyo_line", "lang": "ja", "text": "京葉線", "kind": "noritsubushi", "span": ["東京", "蘇我"]}
+- {"entity_type": "route", "id": "r_keiyo_line_ichikawashiohama_minami_funabashi", "lang": "ja", "text": "京葉線 (市川塩浜-西船橋)", "kind": "noritsubushi", "span": ["市川塩浜", "西船橋"]}
+- {"entity_type": "route", "id": "r_keiyo_line_ichikawashiohama_minami_funabashi", "lang": "ja", "text": "京葉線 (西船橋-南船橋)", "kind": "noritsubushi", "span": ["西船橋", "南船橋"]}
+- {"entity_type": "route", "id": "r_sotobo_line", "lang": "ja", "text": "外房線", "kind": "noritsubushi", "span": ["千葉", "安房鴨川"]}
+- {"entity_type": "route", "id": "r_uchibo_line", "lang": "ja", "text": "内房線", "kind": "noritsubushi", "span": ["蘇我", "安房鴨川"]}
+- {"entity_type": "route", "id": "r_narita_line", "lang": "ja", "text": "成田線", "kind": "noritsubushi", "span": ["佐倉", "松岸"]}
+- {"entity_type": "route", "id": "r_narita_line_abiko_narita", "lang": "ja", "text": "成田線 (我孫子支線)", "kind": "noritsubushi", "span": ["我孫子", "成田"]}
+- {"entity_type": "route", "id": "r_narita_line_narita_narita_airport_terminal_1", "lang": "ja", "text": "成田線 (空港支線)", "kind": "noritsubushi", "span": ["成田", "成田空港"]}
+- {"entity_type": "route", "id": "r_kashima_line", "lang": "ja", "text": "鹿島線", "kind": "noritsubushi", "span": ["香取", "鹿島サッカースタジアム"]}
+- {"entity_type": "route", "id": "r_kururi_line", "lang": "ja", "text": "久留里線", "kind": "noritsubushi", "span": ["木更津", "上総亀山"]}
+- {"entity_type": "route", "id": "r_togane_line", "lang": "ja", "text": "東金線", "kind": "noritsubushi", "span": ["大網", "成東"]}
+- {"entity_type": "route", "id": "r_tokaido_shinkansen", "lang": "ja", "text": "東海道新幹線", "kind": "noritsubushi", "span": ["東京", "新大阪"]}
+- {"entity_type": "route", "id": "r_gotemba_line", "lang": "ja", "text": "御殿場線", "kind": "noritsubushi", "span": ["国府津", "沼津"]}
+- {"entity_type": "route", "id": "r_minobu_line", "lang": "ja", "text": "身延線", "kind": "noritsubushi", "span": ["富士", "甲府"]}
+- {"entity_type": "route", "id": "r_iida_line", "lang": "ja", "text": "飯田線", "kind": "noritsubushi", "span": ["豊橋", "辰野"]}
+- {"entity_type": "route", "id": "r_taketoyo_line", "lang": "ja", "text": "武豊線", "kind": "noritsubushi", "span": ["大府", "武豊"]}
+- {"entity_type": "route", "id": "r_takayama_main_line", "lang": "ja", "text": "高山本線", "kind": "noritsubushi", "span": ["岐阜", "猪谷"]}
+- {"entity_type": "route", "id": "r_takayama_main_line", "lang": "ja", "text": "高山本線", "kind": "noritsubushi", "span": ["猪谷", "富山"]}
+- {"entity_type": "route", "id": "r_taita_line", "lang": "ja", "text": "太多線", "kind": "noritsubushi", "span": ["多治見", "美濃太田"]}
+- {"entity_type": "route", "id": "r_kansai_main_line", "lang": "ja", "text": "関西本線", "kind": "noritsubushi", "span": ["名古屋", "亀山"]}
+- {"entity_type": "route", "id": "r_kansai_main_line", "lang": "ja", "text": "関西本線", "kind": "noritsubushi", "span": ["亀山", "JR難波"]}
+- {"entity_type": "route", "id": "r_kisei_main_line", "lang": "ja", "text": "紀勢本線", "kind": "noritsubushi", "span": ["亀山", "新宮"]}
+- {"entity_type": "route", "id": "r_kisei_main_line", "lang": "ja", "text": "紀勢本線", "kind": "noritsubushi", "span": ["新宮", "和歌山市"]}
+- {"entity_type": "route", "id": "r_meisho_line", "lang": "ja", "text": "名松線", "kind": "noritsubushi", "span": ["松阪", "伊勢奥津"]}
+- {"entity_type": "route", "id": "r_sangu_line", "lang": "ja", "text": "参宮線", "kind": "noritsubushi", "span": ["多気", "鳥羽"]}
+- {"entity_type": "route", "id": "r_kosei_line", "lang": "ja", "text": "湖西線", "kind": "noritsubushi", "span": ["山科", "近江塩津"]}
+- {"entity_type": "route", "id": "r_osaka_loop_line", "lang": "ja", "text": "大阪環状線", "kind": "noritsubushi", "span": ["天王寺", "新今宮"]}
+- {"entity_type": "route", "id": "r_sakurajima_line", "lang": "ja", "text": "桜島線", "kind": "noritsubushi", "span": ["西九条", "桜島"]}
+- {"entity_type": "route", "id": "r_jr_tozai_line", "lang": "ja", "text": "JR東西線", "kind": "noritsubushi", "span": ["京橋", "尼崎"]}
+- {"entity_type": "route", "id": "r_fukuchiyama_line", "lang": "ja", "text": "福知山線", "kind": "noritsubushi", "span": ["尼崎", "福知山"]}
+- {"entity_type": "route", "id": "r_fukuchiyama_line_tsukaguchi_amagasakiko", "lang": "ja", "text": "福知山線", "kind": "noritsubushi", "span": ["塚口", "尼崎港"]}
+- {"entity_type": "route", "id": "r_hokuriku_main_line", "lang": "ja", "text": "北陸本線", "kind": "noritsubushi", "span": ["米原", "敦賀"]}
+- {"entity_type": "route", "id": "r_hokuriku_main_line", "lang": "ja", "text": "北陸本線", "kind": "noritsubushi", "span": ["敦賀", "直江津"]}
+- {"entity_type": "route", "id": "r_obama_line", "lang": "ja", "text": "小浜線", "kind": "noritsubushi", "span": ["敦賀", "東舞鶴"]}
+- {"entity_type": "route", "id": "r_etsumi_hoku_line", "lang": "ja", "text": "越美北線", "kind": "noritsubushi", "span": ["越前花堂", "九頭竜湖"]}
+- {"entity_type": "route", "id": "r_nanao_line", "lang": "ja", "text": "七尾線", "kind": "noritsubushi", "span": ["津幡", "和倉温泉"]}
+- {"entity_type": "route", "id": "r_nanao_line", "lang": "ja", "text": "七尾線", "kind": "noritsubushi", "span": ["和倉温泉", "輪島"]}
+- {"entity_type": "route", "id": "r_johana_line", "lang": "ja", "text": "城端線", "kind": "noritsubushi", "span": ["高岡", "城端"]}
+- {"entity_type": "route", "id": "r_himi_line", "lang": "ja", "text": "氷見線", "kind": "noritsubushi", "span": ["高岡", "氷見"]}
+- {"entity_type": "route", "id": "r_sanyo_main_line", "lang": "ja", "text": "山陽本線", "kind": "noritsubushi", "span": ["神戸", "下関"]}
+- {"entity_type": "route", "id": "r_sanyo_main_line", "lang": "ja", "text": "山陽本線", "kind": "noritsubushi", "span": ["下関", "門司"]}
+- {"entity_type": "route", "id": "r_sanyo_main_line_hyogo_wadamisaki", "lang": "ja", "text": "山陽本線 (和田岬線)", "kind": "noritsubushi", "span": ["兵庫", "和田岬"]}
+- {"entity_type": "route", "id": "r_sanyo_shinkansen", "lang": "ja", "text": "山陽新幹線", "kind": "noritsubushi", "span": ["新大阪", "博多"]}
+- {"entity_type": "route", "id": "r_kakogawa_line", "lang": "ja", "text": "加古川線", "kind": "noritsubushi", "span": ["加古川", "谷川"]}
+- {"entity_type": "route", "id": "r_bantan_line", "lang": "ja", "text": "播但線", "kind": "noritsubushi", "span": ["飾磨港", "姫路"]}
+- {"entity_type": "route", "id": "r_bantan_line", "lang": "ja", "text": "播但線", "kind": "noritsubushi", "span": ["姫路", "和田山"]}
+- {"entity_type": "route", "id": "r_kishin_line", "lang": "ja", "text": "姫新線", "kind": "noritsubushi", "span": ["姫路", "新見"]}
+- {"entity_type": "route", "id": "r_ako_line", "lang": "ja", "text": "赤穂線", "kind": "noritsubushi", "span": ["相生", "東岡山"]}
+- {"entity_type": "route", "id": "r_tsuyama_line", "lang": "ja", "text": "津山線", "kind": "noritsubushi", "span": ["岡山", "津山"]}
+- {"entity_type": "route", "id": "r_kibi_line", "lang": "ja", "text": "吉備線", "kind": "noritsubushi", "span": ["岡山", "総社"]}
+- {"entity_type": "route", "id": "r_uno_line", "lang": "ja", "text": "宇野線", "kind": "noritsubushi", "span": ["岡山", "宇野"]}
+- {"entity_type": "route", "id": "r_honshi_bisan_line", "lang": "ja", "text": "本四備讃線", "kind": "noritsubushi", "span": ["茶屋町", "児島"]}
+- {"entity_type": "route", "id": "r_honshi_bisan_line", "lang": "ja", "text": "本四備讃線", "kind": "noritsubushi", "span": ["児島", "宇多津"]}
+- {"entity_type": "route", "id": "r_hakubi_line", "lang": "ja", "text": "伯備線", "kind": "noritsubushi", "span": ["倉敷", "伯耆大山"]}
+- {"entity_type": "route", "id": "r_geibi_line", "lang": "ja", "text": "芸備線", "kind": "noritsubushi", "span": ["備中神代", "広島"]}
+- {"entity_type": "route", "id": "r_fukuen_line", "lang": "ja", "text": "福塩線", "kind": "noritsubushi", "span": ["福山", "塩町"]}
+- {"entity_type": "route", "id": "r_kure_line", "lang": "ja", "text": "呉線", "kind": "noritsubushi", "span": ["三原", "海田市"]}
+- {"entity_type": "route", "id": "r_kabe_line", "lang": "ja", "text": "可部線", "kind": "noritsubushi", "span": ["横川", "あき亀山"]}
+- {"entity_type": "route", "id": "r_kabe_line_kabe_sandankyo", "lang": "ja", "text": "可部線", "kind": "noritsubushi", "span": ["可部", "三段峡"]}
+- {"entity_type": "route", "id": "r_gantoku_line", "lang": "ja", "text": "岩徳線", "kind": "noritsubushi", "span": ["岩国", "櫛ヶ浜"]}
+- {"entity_type": "route", "id": "r_yamaguchi_line", "lang": "ja", "text": "山口線", "kind": "noritsubushi", "span": ["新山口", "益田"]}
+- {"entity_type": "route", "id": "r_ube_line", "lang": "ja", "text": "宇部線", "kind": "noritsubushi", "span": ["新山口", "宇部"]}
+- {"entity_type": "route", "id": "r_onoda_line", "lang": "ja", "text": "小野田線", "kind": "noritsubushi", "span": ["居能", "小野田"]}
+- {"entity_type": "route", "id": "r_onoda_line_suzumeda_nagato_motoyama", "lang": "ja", "text": "小野田線 (本山支線)", "kind": "noritsubushi", "span": ["雀田", "長門本山"]}
+- {"entity_type": "route", "id": "r_mine_line", "lang": "ja", "text": "美祢線", "kind": "noritsubushi", "span": ["厚狭", "長門市"]}
+- {"entity_type": "route", "id": "r_mine_line_minami_omine_omine", "lang": "ja", "text": "美祢線", "kind": "noritsubushi", "span": ["南大嶺", "大嶺"]}
+- {"entity_type": "route", "id": "r_sanin_main_line", "lang": "ja", "text": "山陰本線", "kind": "noritsubushi", "span": ["京都", "幡生"]}
+- {"entity_type": "route", "id": "r_sanin_main_line_nagatoshi_senzaki", "lang": "ja", "text": "山陰本線 (仙崎支線)", "kind": "noritsubushi", "span": ["長門市", "仙崎"]}
+- {"entity_type": "route", "id": "r_maizuru_line", "lang": "ja", "text": "舞鶴線", "kind": "noritsubushi", "span": ["綾部", "東舞鶴"]}
+- {"entity_type": "route", "id": "r_maizuru_line", "lang": "ja", "text": "舞鶴線", "kind": "noritsubushi", "span": ["東舞鶴", "中舞鶴"]}
+- {"entity_type": "route", "id": "r_inbi_line", "lang": "ja", "text": "因美線", "kind": "noritsubushi", "span": ["鳥取", "東津山"]}
+- {"entity_type": "route", "id": "r_sakai_line", "lang": "ja", "text": "境線", "kind": "noritsubushi", "span": ["米子", "境港"]}
+- {"entity_type": "route", "id": "r_kisuki_line", "lang": "ja", "text": "木次線", "kind": "noritsubushi", "span": ["宍道", "備後落合"]}
+- {"entity_type": "route", "id": "r_kusatsu_line", "lang": "ja", "text": "草津線", "kind": "noritsubushi", "span": ["柘植", "草津"]}
+- {"entity_type": "route", "id": "r_nara_line", "lang": "ja", "text": "奈良線", "kind": "noritsubushi", "span": ["京都", "木津"]}
+- {"entity_type": "route", "id": "r_sakurai_line", "lang": "ja", "text": "桜井線", "kind": "noritsubushi", "span": ["奈良", "高田"]}
+- {"entity_type": "route", "id": "r_katamachi_line", "lang": "ja", "text": "片町線", "kind": "noritsubushi", "span": ["木津", "京橋"]}
+- {"entity_type": "route", "id": "r_katamachi_line", "lang": "ja", "text": "片町線", "kind": "noritsubushi", "span": ["京橋", "片町"]}
+- {"entity_type": "route", "id": "r_osaka_higashi_line", "lang": "ja", "text": "おおさか東線", "kind": "noritsubushi", "span": ["新大阪", "久宝寺"]}
+- {"entity_type": "route", "id": "r_wakayama_line", "lang": "ja", "text": "和歌山線", "kind": "noritsubushi", "span": ["王寺", "和歌山"]}
+- {"entity_type": "route", "id": "r_hanwa_line", "lang": "ja", "text": "阪和線", "kind": "noritsubushi", "span": ["天王寺", "和歌山"]}
+- {"entity_type": "route", "id": "r_hanwa_line_otori_higashi_hagoromo", "lang": "ja", "text": "阪和線 (東羽衣支線)", "kind": "noritsubushi", "span": ["鳳", "東羽衣"]}
+- {"entity_type": "route", "id": "r_kansai_airport_line", "lang": "ja", "text": "関西空港線", "kind": "noritsubushi", "span": ["日根野", "関西空港"]}
+- {"entity_type": "route", "id": "r_hakata_minami_line", "lang": "ja", "text": "博多南線", "kind": "noritsubushi", "span": ["博多", "博多南"]}
+- {"entity_type": "route", "id": "r_yosan_line", "lang": "ja", "text": "予讃線", "kind": "noritsubushi", "span": ["高松", "宇和島"]}
+- {"entity_type": "route", "id": "r_yosan_line_mukaibara_uchiko", "lang": "ja", "text": "予讃線 (向井原-内子)", "kind": "noritsubushi", "span": ["向井原", "内子"]}
+- {"entity_type": "route", "id": "r_yosan_line_niiya_iyo_ozu", "lang": "ja", "text": "予讃線 (新谷-伊予大洲)", "kind": "noritsubushi", "span": ["新谷", "伊予大洲"]}
+- {"entity_type": "route", "id": "r_uchiko_line", "lang": "ja", "text": "内子線", "kind": "noritsubushi", "span": ["内子", "新谷"]}
+- {"entity_type": "route", "id": "r_uchiko_line", "lang": "ja", "text": "内子線", "kind": "noritsubushi", "span": ["五郎", "新谷"]}
+- {"entity_type": "route", "id": "r_yodo_line", "lang": "ja", "text": "予土線", "kind": "noritsubushi", "span": ["若井", "北宇和島"]}
+- {"entity_type": "route", "id": "r_kotoku_line", "lang": "ja", "text": "高徳線", "kind": "noritsubushi", "span": ["高松", "徳島"]}
+- {"entity_type": "route", "id": "r_naruto_line", "lang": "ja", "text": "鳴門線", "kind": "noritsubushi", "span": ["池谷", "鳴門"]}
+- {"entity_type": "route", "id": "r_tokushima_line", "lang": "ja", "text": "徳島線", "kind": "noritsubushi", "span": ["佃", "佐古"]}
+- {"entity_type": "route", "id": "r_mugi_line", "lang": "ja", "text": "牟岐線", "kind": "noritsubushi", "span": ["徳島", "阿波海南"]}
+- {"entity_type": "route", "id": "r_mugi_line", "lang": "ja", "text": "牟岐線", "kind": "noritsubushi", "span": ["阿波海南", "海部"]}
+- {"entity_type": "route", "id": "r_dosan_line", "lang": "ja", "text": "土讃線", "kind": "noritsubushi", "span": ["多度津", "窪川"]}
+- {"entity_type": "route", "id": "r_kagoshima_main_line", "lang": "ja", "text": "鹿児島本線", "kind": "noritsubushi", "span": ["門司港", "八代"]}
+- {"entity_type": "route", "id": "r_kagoshima_main_line", "lang": "ja", "text": "鹿児島本線", "kind": "noritsubushi", "span": ["八代", "川内"]}
+- {"entity_type": "route", "id": "r_kagoshima_main_line_sendai_kagoshima", "lang": "ja", "text": "鹿児島本線 (川内以南)", "kind": "noritsubushi", "span": ["川内", "鹿児島"]}
+- {"entity_type": "route", "id": "r_kyushu_shinkansen", "lang": "ja", "text": "九州新幹線", "kind": "noritsubushi", "span": ["博多", "鹿児島中央"]}
+- {"entity_type": "route", "id": "r_kashii_line", "lang": "ja", "text": "香椎線", "kind": "noritsubushi", "span": ["西戸崎", "宇美"]}
+- {"entity_type": "route", "id": "r_sasaguri_line", "lang": "ja", "text": "篠栗線", "kind": "noritsubushi", "span": ["桂川", "吉塚"]}
+- {"entity_type": "route", "id": "r_misumi_line", "lang": "ja", "text": "三角線", "kind": "noritsubushi", "span": ["宇土", "三角"]}
+- {"entity_type": "route", "id": "r_hisatsu_line", "lang": "ja", "text": "肥薩線", "kind": "noritsubushi", "span": ["八代", "隼人"]}
+- {"entity_type": "route", "id": "r_ibusuki_makurazaki_line", "lang": "ja", "text": "指宿枕崎線", "kind": "noritsubushi", "span": ["鹿児島中央", "枕崎"]}
+- {"entity_type": "route", "id": "r_nagasaki_main_line", "lang": "ja", "text": "長崎本線", "kind": "noritsubushi", "span": ["鳥栖", "長崎"]}
+- {"entity_type": "route", "id": "r_nagasaki_main_line_kikitsu_urakami", "lang": "ja", "text": "長崎本線 (長与回り)", "kind": "noritsubushi", "span": ["喜々津", "浦上"]}
+- {"entity_type": "route", "id": "r_nishi_kyushu_shinkansen", "lang": "ja", "text": "西九州新幹線", "kind": "noritsubushi", "span": ["武雄温泉", "長崎"]}
+- {"entity_type": "route", "id": "r_karatsu_line", "lang": "ja", "text": "唐津線", "kind": "noritsubushi", "span": ["久保田", "西唐津"]}
+- {"entity_type": "route", "id": "r_karatsu_line_yamamoto_kishitake", "lang": "ja", "text": "唐津線", "kind": "noritsubushi", "span": ["山本", "岸嶽"]}
+- {"entity_type": "route", "id": "r_chikuhi_line", "lang": "ja", "text": "筑肥線", "kind": "noritsubushi", "span": ["博多", "姪浜"]}
+- {"entity_type": "route", "id": "r_chikuhi_line_nijinomatsubara_yamamoto", "lang": "ja", "text": "筑肥線", "kind": "noritsubushi", "span": ["虹ノ松原", "山本"]}
+- {"entity_type": "route", "id": "r_chikuhi_line_meinohama_karatsu", "lang": "ja", "text": "筑肥線 (東部)", "kind": "noritsubushi", "span": ["姪浜", "唐津"]}
+- {"entity_type": "route", "id": "r_chikuhi_line_yamamoto_imari", "lang": "ja", "text": "筑肥線 (西部)", "kind": "noritsubushi", "span": ["山本", "伊万里"]}
+- {"entity_type": "route", "id": "r_sasebo_line", "lang": "ja", "text": "佐世保線", "kind": "noritsubushi", "span": ["江北", "佐世保"]}
+- {"entity_type": "route", "id": "r_omura_line", "lang": "ja", "text": "大村線", "kind": "noritsubushi", "span": ["早岐", "諫早"]}
+- {"entity_type": "route", "id": "r_kyudai_main_line", "lang": "ja", "text": "久大本線", "kind": "noritsubushi", "span": ["久留米", "大分"]}
+- {"entity_type": "route", "id": "r_hohi_main_line", "lang": "ja", "text": "豊肥本線", "kind": "noritsubushi", "span": ["大分", "熊本"]}
+- {"entity_type": "route", "id": "r_nippo_main_line", "lang": "ja", "text": "日豊本線", "kind": "noritsubushi", "span": ["小倉", "鹿児島"]}
+- {"entity_type": "route", "id": "r_hitahikosan_line", "lang": "ja", "text": "日田彦山線", "kind": "noritsubushi", "span": ["城野", "添田"]}
+- {"entity_type": "route", "id": "r_hitahikosan_line", "lang": "ja", "text": "日田彦山線", "kind": "noritsubushi", "span": ["添田", "夜明"]}
+- {"entity_type": "route", "id": "r_nichinan_line", "lang": "ja", "text": "日南線", "kind": "noritsubushi", "span": ["南宮崎", "志布志"]}
+- {"entity_type": "route", "id": "r_miyazaki_kuko_line", "lang": "ja", "text": "宮崎空港線", "kind": "noritsubushi", "span": ["田吉", "宮崎空港"]}
+- {"entity_type": "route", "id": "r_kitto_line", "lang": "ja", "text": "吉都線", "kind": "noritsubushi", "span": ["都城", "吉松"]}
+- {"entity_type": "route", "id": "r_chikuho_main_line", "lang": "ja", "text": "筑豊本線", "kind": "noritsubushi", "span": ["若松", "原田"]}
+- {"entity_type": "route", "id": "r_gotoji_line", "lang": "ja", "text": "後藤寺線", "kind": "noritsubushi", "span": ["田川後藤寺", "新飯塚"]}
+- {"entity_type": "route", "id": "r_isesaki_line", "lang": "ja", "text": "伊勢崎線", "kind": "noritsubushi", "span": ["浅草", "伊勢崎"]}
+- {"entity_type": "route", "id": "r_kameido_line", "lang": "ja", "text": "亀戸線", "kind": "noritsubushi", "span": ["亀戸", "曳舟"]}
+- {"entity_type": "route", "id": "r_taishi_line", "lang": "ja", "text": "大師線", "kind": "noritsubushi", "span": ["西新井", "大師前"]}
+- {"entity_type": "route", "id": "r_kiryu_line", "lang": "ja", "text": "桐生線", "kind": "noritsubushi", "span": ["太田", "赤城"]}
+- {"entity_type": "route", "id": "r_koizumi_line", "lang": "ja", "text": "小泉線 (館林-西小泉)", "kind": "noritsubushi", "span": ["館林", "西小泉"]}
+- {"entity_type": "route", "id": "r_koizumi_line_ota_higashi_koizumi", "lang": "ja", "text": "小泉線 (太田-東小泉)", "kind": "noritsubushi", "span": ["太田", "東小泉"]}
+- {"entity_type": "route", "id": "r_sano_line", "lang": "ja", "text": "佐野線", "kind": "noritsubushi", "span": ["館林", "葛生"]}
+- {"entity_type": "route", "id": "r_nikko_line_tobu", "lang": "ja", "text": "日光線", "kind": "noritsubushi", "span": ["東武動物公園", "東武日光"]}
+- {"entity_type": "route", "id": "r_kinugawa_line", "lang": "ja", "text": "鬼怒川線", "kind": "noritsubushi", "span": ["下今市", "新藤原"]}
+- {"entity_type": "route", "id": "r_utsunomiya_line", "lang": "ja", "text": "宇都宮線", "kind": "noritsubushi", "span": ["新栃木", "東武宇都宮"]}
+- {"entity_type": "route", "id": "r_noda_line", "lang": "ja", "text": "野田線", "kind": "noritsubushi", "span": ["大宮", "船橋"]}
+- {"entity_type": "route", "id": "r_tojo_main_line", "lang": "ja", "text": "東上本線", "kind": "noritsubushi", "span": ["池袋", "寄居"]}
+- {"entity_type": "route", "id": "r_ogose_line", "lang": "ja", "text": "越生線", "kind": "noritsubushi", "span": ["坂戸", "越生"]}
+- {"entity_type": "route", "id": "r_ikebukuro_line", "lang": "ja", "text": "池袋線", "kind": "noritsubushi", "span": ["池袋", "吾野"]}
+- {"entity_type": "route", "id": "r_seibu_chichibu_line", "lang": "ja", "text": "西武秩父線", "kind": "noritsubushi", "span": ["吾野", "西武秩父"]}
+- {"entity_type": "route", "id": "r_shinjuku_line_seibu", "lang": "ja", "text": "新宿線", "kind": "noritsubushi", "span": ["西武新宿", "本川越"]}
+- {"entity_type": "route", "id": "r_seibuen_line", "lang": "ja", "text": "西武園線", "kind": "noritsubushi", "span": ["東村山", "西武園"]}
+- {"entity_type": "route", "id": "r_kokubunji_line", "lang": "ja", "text": "国分寺線", "kind": "noritsubushi", "span": ["国分寺", "東村山"]}
+- {"entity_type": "route", "id": "r_tamako_line", "lang": "ja", "text": "多摩湖線", "kind": "noritsubushi", "span": ["国分寺", "多摩湖"]}
+- {"entity_type": "route", "id": "r_seibu_yurakucho_line", "lang": "ja", "text": "西武有楽町線", "kind": "noritsubushi", "span": ["練馬", "小竹向原"]}
+- {"entity_type": "route", "id": "r_toshima_line", "lang": "ja", "text": "豊島線", "kind": "noritsubushi", "span": ["練馬", "豊島園"]}
+- {"entity_type": "route", "id": "r_sayama_line", "lang": "ja", "text": "狭山線", "kind": "noritsubushi", "span": ["西所沢", "西武球場前"]}
+- {"entity_type": "route", "id": "r_haijima_line", "lang": "ja", "text": "拝島線", "kind": "noritsubushi", "span": ["小平", "拝島"]}
+- {"entity_type": "route", "id": "r_tamagawa_line", "lang": "ja", "text": "多摩川線", "kind": "noritsubushi", "span": ["武蔵境", "是政"]}
+- {"entity_type": "route", "id": "r_yamaguchi_line_seibu", "lang": "ja", "text": "山口線", "kind": "noritsubushi", "span": ["多摩湖", "西武球場前"]}
+- {"entity_type": "route", "id": "r_keisei_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["京成上野", "成田空港"]}
+- {"entity_type": "route", "id": "r_higashi_narita_line", "lang": "ja", "text": "東成田線", "kind": "noritsubushi", "span": ["[駒井野分岐点]", "東成田"]}
+- {"entity_type": "route", "id": "r_oshiage_line", "lang": "ja", "text": "押上線", "kind": "noritsubushi", "span": ["押上", "青砥"]}
+- {"entity_type": "route", "id": "r_chiba_line", "lang": "ja", "text": "千葉線", "kind": "noritsubushi", "span": ["京成津田沼", "千葉中央"]}
+- {"entity_type": "route", "id": "r_chihara_line", "lang": "ja", "text": "千原線", "kind": "noritsubushi", "span": ["千葉中央", "ちはら台"]}
+- {"entity_type": "route", "id": "r_kanamachi_line", "lang": "ja", "text": "金町線", "kind": "noritsubushi", "span": ["京成高砂", "京成金町"]}
+- {"entity_type": "route", "id": "r_narita_airport_line", "lang": "ja", "text": "成田空港線 (成田スカイアクセス)", "kind": "noritsubushi", "span": ["京成高砂", "成田空港"]}
+- {"entity_type": "route", "id": "r_matsudo_line", "lang": "ja", "text": "松戸線", "kind": "noritsubushi", "span": ["松戸", "京成津田沼"]}
+- {"entity_type": "route", "id": "r_keio_line", "lang": "ja", "text": "京王線", "kind": "noritsubushi", "span": ["新宿", "京王八王子"]}
+- {"entity_type": "route", "id": "r_sagamihara_line", "lang": "ja", "text": "相模原線", "kind": "noritsubushi", "span": ["調布", "橋本"]}
+- {"entity_type": "route", "id": "r_takao_line", "lang": "ja", "text": "高尾線", "kind": "noritsubushi", "span": ["北野", "高尾山口"]}
+- {"entity_type": "route", "id": "r_keibajo_line", "lang": "ja", "text": "競馬場線", "kind": "noritsubushi", "span": ["東府中", "府中競馬正門前"]}
+- {"entity_type": "route", "id": "r_dobutsuen_line", "lang": "ja", "text": "動物園線", "kind": "noritsubushi", "span": ["高幡不動", "多摩動物公園"]}
+- {"entity_type": "route", "id": "r_inogashira_line", "lang": "ja", "text": "井の頭線", "kind": "noritsubushi", "span": ["渋谷", "吉祥寺"]}
+- {"entity_type": "route", "id": "r_odawara_line", "lang": "ja", "text": "小田原線", "kind": "noritsubushi", "span": ["新宿", "小田原"]}
+- {"entity_type": "route", "id": "r_enoshima_line_odakyu", "lang": "ja", "text": "江ノ島線", "kind": "noritsubushi", "span": ["[相模大野分岐点]", "片瀬江ノ島"]}
+- {"entity_type": "route", "id": "r_tama_line", "lang": "ja", "text": "多摩線", "kind": "noritsubushi", "span": ["新百合ヶ丘", "唐木田"]}
+- {"entity_type": "route", "id": "r_toyoko_line", "lang": "ja", "text": "東横線", "kind": "noritsubushi", "span": ["渋谷", "横浜"]}
+- {"entity_type": "route", "id": "r_toyoko_line", "lang": "ja", "text": "東横線", "kind": "noritsubushi", "span": ["横浜", "桜木町"]}
+- {"entity_type": "route", "id": "r_meguro_line", "lang": "ja", "text": "目黒線", "kind": "noritsubushi", "span": ["目黒", "田園調布"]}
+- {"entity_type": "route", "id": "r_tokyu_shin_yokohama_line", "lang": "ja", "text": "東急新横浜線", "kind": "noritsubushi", "span": ["日吉", "新横浜"]}
+- {"entity_type": "route", "id": "r_tokyu_tamagawa_line", "lang": "ja", "text": "東急多摩川線", "kind": "noritsubushi", "span": ["多摩川", "蒲田"]}
+- {"entity_type": "route", "id": "r_oimachi_line", "lang": "ja", "text": "大井町線", "kind": "noritsubushi", "span": ["大井町", "二子玉川"]}
+- {"entity_type": "route", "id": "r_ikegami_line", "lang": "ja", "text": "池上線", "kind": "noritsubushi", "span": ["五反田", "蒲田"]}
+- {"entity_type": "route", "id": "r_den_en_toshi_line", "lang": "ja", "text": "田園都市線", "kind": "noritsubushi", "span": ["渋谷", "中央林間"]}
+- {"entity_type": "route", "id": "r_kodomonokuni_line", "lang": "ja", "text": "こどもの国線", "kind": "noritsubushi", "span": ["長津田", "こどもの国"]}
+- {"entity_type": "route", "id": "r_setagaya_line", "lang": "ja", "text": "世田谷線", "kind": "noritsubushi", "span": ["三軒茶屋", "下高井戸"]}
+- {"entity_type": "route", "id": "r_keikyu_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["泉岳寺", "浦賀"]}
+- {"entity_type": "route", "id": "r_keikyu_airport_line", "lang": "ja", "text": "空港線", "kind": "noritsubushi", "span": ["京急蒲田", "羽田空港第1・第2ターミナル"]}
+- {"entity_type": "route", "id": "r_daishi_line", "lang": "ja", "text": "大師線", "kind": "noritsubushi", "span": ["京急川崎", "小島新田"]}
+- {"entity_type": "route", "id": "r_zushi_line", "lang": "ja", "text": "逗子線", "kind": "noritsubushi", "span": ["金沢八景", "逗子・葉山"]}
+- {"entity_type": "route", "id": "r_kurihama_line", "lang": "ja", "text": "久里浜線", "kind": "noritsubushi", "span": ["堀ノ内", "三崎口"]}
+- {"entity_type": "route", "id": "r_sotetsu_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["横浜", "海老名"]}
+- {"entity_type": "route", "id": "r_izumino_line", "lang": "ja", "text": "いずみ野線", "kind": "noritsubushi", "span": ["二俣川", "湘南台"]}
+- {"entity_type": "route", "id": "r_sotetsu_shin_yokohama_line", "lang": "ja", "text": "相鉄新横浜線", "kind": "noritsubushi", "span": ["新横浜", "西谷"]}
+- {"entity_type": "route", "id": "r_ginza_line", "lang": "ja", "text": "銀座線 (3号線)", "kind": "noritsubushi", "span": ["浅草", "渋谷"]}
+- {"entity_type": "route", "id": "r_marunouchi_line", "lang": "ja", "text": "丸ノ内線 (4号線)", "kind": "noritsubushi", "span": ["池袋", "荻窪"]}
+- {"entity_type": "route", "id": "r_marunouchi_line_honancho_branch", "lang": "ja", "text": "丸ノ内線方南町支線 (4号線)", "kind": "noritsubushi", "span": ["中野坂上", "方南町"]}
+- {"entity_type": "route", "id": "r_hibiya_line", "lang": "ja", "text": "日比谷線 (2号線)", "kind": "noritsubushi", "span": ["北千住", "中目黒"]}
+- {"entity_type": "route", "id": "r_tozai_line_tokyo_metro", "lang": "ja", "text": "東西線 (5号線)", "kind": "noritsubushi", "span": ["中野", "西船橋"]}
+- {"entity_type": "route", "id": "r_chiyoda_line", "lang": "ja", "text": "千代田線 (9号線)", "kind": "noritsubushi", "span": ["代々木上原", "北綾瀬"]}
+- {"entity_type": "route", "id": "r_yurakucho_line", "lang": "ja", "text": "有楽町線 (8号線)", "kind": "noritsubushi", "span": ["小竹向原", "新木場"]}
+- {"entity_type": "route", "id": "r_hanzomon_line", "lang": "ja", "text": "半蔵門線 (11号線)", "kind": "noritsubushi", "span": ["渋谷", "押上"]}
+- {"entity_type": "route", "id": "r_namboku_line_tokyo_metro", "lang": "ja", "text": "南北線 (7号線)", "kind": "noritsubushi", "span": ["目黒", "赤羽岩淵"]}
+- {"entity_type": "route", "id": "r_fukutoshin_line", "lang": "ja", "text": "副都心線 (13号線)", "kind": "noritsubushi", "span": ["和光市", "渋谷"]}
+- {"entity_type": "route", "id": "r_nagoya_main_line", "lang": "ja", "text": "名古屋本線", "kind": "noritsubushi", "span": ["豊橋", "名鉄岐阜"]}
+- {"entity_type": "route", "id": "r_nishio_line", "lang": "ja", "text": "西尾線", "kind": "noritsubushi", "span": ["新安城", "吉良吉田"]}
+- {"entity_type": "route", "id": "r_mikawa_line", "lang": "ja", "text": "三河線", "kind": "noritsubushi", "span": ["猿投", "碧南"]}
+- {"entity_type": "route", "id": "r_toyota_line", "lang": "ja", "text": "豊田線", "kind": "noritsubushi", "span": ["梅坪", "赤池"]}
+- {"entity_type": "route", "id": "r_gamagori_line", "lang": "ja", "text": "蒲郡線", "kind": "noritsubushi", "span": ["吉良吉田", "蒲郡"]}
+- {"entity_type": "route", "id": "r_tokoname_line", "lang": "ja", "text": "常滑線", "kind": "noritsubushi", "span": ["神宮前", "常滑"]}
+- {"entity_type": "route", "id": "r_chikko_line", "lang": "ja", "text": "築港線", "kind": "noritsubushi", "span": ["大江", "東名古屋港"]}
+- {"entity_type": "route", "id": "r_kowa_line", "lang": "ja", "text": "河和線", "kind": "noritsubushi", "span": ["太田川", "河和"]}
+- {"entity_type": "route", "id": "r_chita_new_line", "lang": "ja", "text": "知多新線", "kind": "noritsubushi", "span": ["富貴", "内海"]}
+- {"entity_type": "route", "id": "r_seto_line", "lang": "ja", "text": "瀬戸線", "kind": "noritsubushi", "span": ["栄町", "尾張瀬戸"]}
+- {"entity_type": "route", "id": "r_komaki_line", "lang": "ja", "text": "小牧線", "kind": "noritsubushi", "span": ["上飯田", "犬山"]}
+- {"entity_type": "route", "id": "r_kakamigahara_line", "lang": "ja", "text": "各務原線", "kind": "noritsubushi", "span": ["名鉄岐阜", "新鵜沼"]}
+- {"entity_type": "route", "id": "r_inuyama_line", "lang": "ja", "text": "犬山線", "kind": "noritsubushi", "span": ["[枇杷島分岐点]", "新鵜沼"]}
+- {"entity_type": "route", "id": "r_hiromi_line", "lang": "ja", "text": "広見線", "kind": "noritsubushi", "span": ["犬山", "御嵩"]}
+- {"entity_type": "route", "id": "r_tsushima_line", "lang": "ja", "text": "津島線", "kind": "noritsubushi", "span": ["須ヶ口", "津島"]}
+- {"entity_type": "route", "id": "r_bisai_line", "lang": "ja", "text": "尾西線", "kind": "noritsubushi", "span": ["弥富", "玉ノ井"]}
+- {"entity_type": "route", "id": "r_takehana_line", "lang": "ja", "text": "竹鼻線", "kind": "noritsubushi", "span": ["笠松", "江吉良"]}
+- {"entity_type": "route", "id": "r_hashima_line", "lang": "ja", "text": "羽島線", "kind": "noritsubushi", "span": ["江吉良", "新羽島"]}
+- {"entity_type": "route", "id": "r_toyokawa_line", "lang": "ja", "text": "豊川線", "kind": "noritsubushi", "span": ["国府", "豊川稲荷"]}
+- {"entity_type": "route", "id": "r_meitetsu_airport_line", "lang": "ja", "text": "空港線", "kind": "noritsubushi", "span": ["常滑", "中部国際空港"]}
+- {"entity_type": "route", "id": "r_osaka_line", "lang": "ja", "text": "大阪線", "kind": "noritsubushi", "span": ["大阪上本町", "伊勢中川"]}
+- {"entity_type": "route", "id": "r_namba_line", "lang": "ja", "text": "難波線", "kind": "noritsubushi", "span": ["大阪難波", "大阪上本町"]}
+- {"entity_type": "route", "id": "r_yamada_line_kintetsu", "lang": "ja", "text": "山田線", "kind": "noritsubushi", "span": ["伊勢中川", "宇治山田"]}
+- {"entity_type": "route", "id": "r_nara_line_kintetsu", "lang": "ja", "text": "奈良線", "kind": "noritsubushi", "span": ["布施", "近鉄奈良"]}
+- {"entity_type": "route", "id": "r_keihanna_line", "lang": "ja", "text": "けいはんな線", "kind": "noritsubushi", "span": ["長田", "学研奈良登美ヶ丘"]}
+- {"entity_type": "route", "id": "r_kashihara_line", "lang": "ja", "text": "橿原線", "kind": "noritsubushi", "span": ["大和西大寺", "橿原神宮前"]}
+- {"entity_type": "route", "id": "r_tenri_line", "lang": "ja", "text": "天理線", "kind": "noritsubushi", "span": ["平端", "天理"]}
+- {"entity_type": "route", "id": "r_shigi_line", "lang": "ja", "text": "信貴線", "kind": "noritsubushi", "span": ["河内山本", "信貴山口"]}
+- {"entity_type": "route", "id": "r_minami_osaka_line", "lang": "ja", "text": "南大阪線", "kind": "noritsubushi", "span": ["大阪阿部野橋", "橿原神宮前"]}
+- {"entity_type": "route", "id": "r_yoshino_line", "lang": "ja", "text": "吉野線", "kind": "noritsubushi", "span": ["橿原神宮前", "吉野"]}
+- {"entity_type": "route", "id": "r_nagano_line_kintetsu", "lang": "ja", "text": "長野線", "kind": "noritsubushi", "span": ["古市", "河内長野"]}
+- {"entity_type": "route", "id": "r_kyoto_line", "lang": "ja", "text": "京都線", "kind": "noritsubushi", "span": ["京都", "大和西大寺"]}
+- {"entity_type": "route", "id": "r_ikoma_line", "lang": "ja", "text": "生駒線", "kind": "noritsubushi", "span": ["王寺", "生駒"]}
+- {"entity_type": "route", "id": "r_tawaramoto_line", "lang": "ja", "text": "田原本線", "kind": "noritsubushi", "span": ["新王寺", "西田原本"]}
+- {"entity_type": "route", "id": "r_domyoji_line", "lang": "ja", "text": "道明寺線", "kind": "noritsubushi", "span": ["道明寺", "柏原"]}
+- {"entity_type": "route", "id": "r_gose_line", "lang": "ja", "text": "御所線", "kind": "noritsubushi", "span": ["尺土", "近鉄御所"]}
+- {"entity_type": "route", "id": "r_nagoya_line", "lang": "ja", "text": "名古屋線", "kind": "noritsubushi", "span": ["伊勢中川", "近鉄名古屋"]}
+- {"entity_type": "route", "id": "r_suzuka_line", "lang": "ja", "text": "鈴鹿線", "kind": "noritsubushi", "span": ["伊勢若松", "平田町"]}
+- {"entity_type": "route", "id": "r_yunoyama_line", "lang": "ja", "text": "湯の山線", "kind": "noritsubushi", "span": ["近鉄四日市", "湯の山温泉"]}
+- {"entity_type": "route", "id": "r_shima_line", "lang": "ja", "text": "志摩線", "kind": "noritsubushi", "span": ["鳥羽", "賢島"]}
+- {"entity_type": "route", "id": "r_toba_line", "lang": "ja", "text": "鳥羽線", "kind": "noritsubushi", "span": ["宇治山田", "鳥羽"]}
+- {"entity_type": "route", "id": "r_ikoma_cable_line", "lang": "ja", "text": "生駒鋼索線", "kind": "noritsubushi", "span": ["鳥居前", "生駒山上"]}
+- {"entity_type": "route", "id": "r_nishi_shigi_cable_line", "lang": "ja", "text": "西信貴鋼索線", "kind": "noritsubushi", "span": ["信貴山口", "高安山"]}
+- {"entity_type": "route", "id": "r_nankai_main_line", "lang": "ja", "text": "南海本線", "kind": "noritsubushi", "span": ["難波", "和歌山市"]}
+- {"entity_type": "route", "id": "r_takashinohama_line", "lang": "ja", "text": "高師浜線", "kind": "noritsubushi", "span": ["羽衣", "高師浜"]}
+- {"entity_type": "route", "id": "r_nankai_airport_line", "lang": "ja", "text": "空港線", "kind": "noritsubushi", "span": ["泉佐野", "関西空港"]}
+- {"entity_type": "route", "id": "r_tanagawa_line", "lang": "ja", "text": "多奈川線", "kind": "noritsubushi", "span": ["みさき公園", "多奈川"]}
+- {"entity_type": "route", "id": "r_kada_line", "lang": "ja", "text": "加太線", "kind": "noritsubushi", "span": ["紀ノ川", "加太"]}
+- {"entity_type": "route", "id": "r_wakayamako_line", "lang": "ja", "text": "和歌山港線", "kind": "noritsubushi", "span": ["和歌山市", "和歌山港"]}
+- {"entity_type": "route", "id": "r_wakayamako_line", "lang": "ja", "text": "和歌山港線", "kind": "noritsubushi", "span": ["和歌山港", "水軒"]}
+- {"entity_type": "route", "id": "r_koya_line", "lang": "ja", "text": "高野線", "kind": "noritsubushi", "span": ["汐見橋", "極楽橋"]}
+- {"entity_type": "route", "id": "r_koyasan_cable", "lang": "ja", "text": "鋼索線", "kind": "noritsubushi", "span": ["極楽橋", "高野山"]}
+- {"entity_type": "route", "id": "r_semboku_line", "lang": "ja", "text": "泉北線", "kind": "noritsubushi", "span": ["中百舌鳥", "和泉中央"]}
+- {"entity_type": "route", "id": "r_katano_line", "lang": "ja", "text": "交野線", "kind": "noritsubushi", "span": ["枚方市", "私市"]}
+- {"entity_type": "route", "id": "r_keihan_main_line", "lang": "ja", "text": "京阪本線", "kind": "noritsubushi", "span": ["淀屋橋", "三条"]}
+- {"entity_type": "route", "id": "r_nakanoshima_line", "lang": "ja", "text": "中之島線", "kind": "noritsubushi", "span": ["中之島", "天満橋"]}
+- {"entity_type": "route", "id": "r_uji_line", "lang": "ja", "text": "宇治線", "kind": "noritsubushi", "span": ["中書島", "宇治"]}
+- {"entity_type": "route", "id": "r_oto_line", "lang": "ja", "text": "鴨東線", "kind": "noritsubushi", "span": ["三条", "出町柳"]}
+- {"entity_type": "route", "id": "r_iwashimizu_hachimangu_sando_cable", "lang": "ja", "text": "鋼索線 (石清水八幡宮参道ケーブル)", "kind": "noritsubushi", "span": ["ケーブル八幡宮口", "ケーブル八幡宮山上"]}
+- {"entity_type": "route", "id": "r_keishin_line", "lang": "ja", "text": "京津線", "kind": "noritsubushi", "span": ["御陵", "びわ湖浜大津"]}
+- {"entity_type": "route", "id": "r_ishiyama_sakamoto_line", "lang": "ja", "text": "石山坂本線", "kind": "noritsubushi", "span": ["石山寺", "坂本比叡山口"]}
+- {"entity_type": "route", "id": "r_kyoto_main_line", "lang": "ja", "text": "京都本線", "kind": "noritsubushi", "span": ["十三", "京都河原町"]}
+- {"entity_type": "route", "id": "r_senri_line", "lang": "ja", "text": "千里線", "kind": "noritsubushi", "span": ["天神橋筋六丁目", "北千里"]}
+- {"entity_type": "route", "id": "r_arashiyama_line", "lang": "ja", "text": "嵐山線", "kind": "noritsubushi", "span": ["桂", "嵐山"]}
+- {"entity_type": "route", "id": "r_kobe_main_line", "lang": "ja", "text": "神戸本線", "kind": "noritsubushi", "span": ["大阪梅田", "神戸三宮"]}
+- {"entity_type": "route", "id": "r_imazu_line", "lang": "ja", "text": "今津線", "kind": "noritsubushi", "span": ["宝塚", "今津"]}
+- {"entity_type": "route", "id": "r_itami_line", "lang": "ja", "text": "伊丹線", "kind": "noritsubushi", "span": ["塚口", "伊丹"]}
+- {"entity_type": "route", "id": "r_koyo_line", "lang": "ja", "text": "甲陽線", "kind": "noritsubushi", "span": ["夙川", "甲陽園"]}
+- {"entity_type": "route", "id": "r_takarazuka_main_line", "lang": "ja", "text": "宝塚本線", "kind": "noritsubushi", "span": ["大阪梅田", "宝塚"]}
+- {"entity_type": "route", "id": "r_minoo_line", "lang": "ja", "text": "箕面線", "kind": "noritsubushi", "span": ["石橋阪大前", "箕面"]}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_hankyu", "lang": "ja", "text": "神戸高速線", "kind": "noritsubushi", "span": ["神戸三宮", "新開地"]}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_hankyu", "lang": "ja", "text": "神戸高速線", "kind": "noritsubushi", "span": ["新開地", "西代"]}
+- {"entity_type": "route", "id": "r_hanshin_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["大阪梅田", "元町"]}
+- {"entity_type": "route", "id": "r_hanshin_namba_line", "lang": "ja", "text": "阪神なんば線", "kind": "noritsubushi", "span": ["尼崎", "大阪難波"]}
+- {"entity_type": "route", "id": "r_mukogawa_line", "lang": "ja", "text": "武庫川線", "kind": "noritsubushi", "span": ["武庫川", "武庫川団地前"]}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_hanshin", "lang": "ja", "text": "神戸高速線", "kind": "noritsubushi", "span": ["元町", "西代"]}
+- {"entity_type": "route", "id": "r_tenjin_omuta_line", "lang": "ja", "text": "天神大牟田線", "kind": "noritsubushi", "span": ["西鉄福岡（天神）", "大牟田"]}
+- {"entity_type": "route", "id": "r_dazaifu_line", "lang": "ja", "text": "太宰府線", "kind": "noritsubushi", "span": ["西鉄二日市", "太宰府"]}
+- {"entity_type": "route", "id": "r_kaizuka_line", "lang": "ja", "text": "貝塚線", "kind": "noritsubushi", "span": ["貝塚", "西鉄新宮"]}
+- {"entity_type": "route", "id": "r_amagi_line_nishi_nippon", "lang": "ja", "text": "甘木線", "kind": "noritsubushi", "span": ["宮の陣", "甘木"]}
+- {"entity_type": "route", "id": "r_sanyo_main_line_sanyo", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["西代", "山陽姫路"]}
+- {"entity_type": "route", "id": "r_aboshi_line", "lang": "ja", "text": "網干線", "kind": "noritsubushi", "span": ["飾磨", "山陽網干"]}
+- {"entity_type": "route", "id": "r_namboku_line_sapporo_city", "lang": "ja", "text": "南北線", "kind": "noritsubushi", "span": ["麻生", "真駒内"]}
+- {"entity_type": "route", "id": "r_tozai_line_sapporo_city", "lang": "ja", "text": "東西線", "kind": "noritsubushi", "span": ["宮の沢", "新さっぽろ"]}
+- {"entity_type": "route", "id": "r_toho_line", "lang": "ja", "text": "東豊線", "kind": "noritsubushi", "span": ["栄町", "福住"]}
+- {"entity_type": "route", "id": "r_hakodate_tram_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["函館どつく前", "函館駅前"]}
+- {"entity_type": "route", "id": "r_horai_yachigashira_line", "lang": "ja", "text": "宝来・谷地頭線", "kind": "noritsubushi", "span": ["十字街", "谷地頭"]}
+- {"entity_type": "route", "id": "r_omori_line", "lang": "ja", "text": "大森線", "kind": "noritsubushi", "span": ["松風町", "函館駅前"]}
+- {"entity_type": "route", "id": "r_yunokawa_line", "lang": "ja", "text": "湯の川線", "kind": "noritsubushi", "span": ["松風町", "湯の川"]}
+- {"entity_type": "route", "id": "r_namboku_line_sendai_city", "lang": "ja", "text": "南北線", "kind": "noritsubushi", "span": ["泉中央", "富沢"]}
+- {"entity_type": "route", "id": "r_tozai_line_sendai_city", "lang": "ja", "text": "東西線", "kind": "noritsubushi", "span": ["八木山動物公園", "荒井"]}
+- {"entity_type": "route", "id": "r_asakusa_line", "lang": "ja", "text": "浅草線 (1号線)", "kind": "noritsubushi", "span": ["西馬込", "押上"]}
+- {"entity_type": "route", "id": "r_mita_line", "lang": "ja", "text": "三田線 (6号線)", "kind": "noritsubushi", "span": ["目黒", "西高島平"]}
+- {"entity_type": "route", "id": "r_shinjuku_line_toei", "lang": "ja", "text": "新宿線 (10号線)", "kind": "noritsubushi", "span": ["新宿", "本八幡"]}
+- {"entity_type": "route", "id": "r_oedo_line", "lang": "ja", "text": "大江戸線 (12号線)", "kind": "noritsubushi", "span": ["都庁前", "光が丘"]}
+- {"entity_type": "route", "id": "r_arakawa_line", "lang": "ja", "text": "荒川線", "kind": "noritsubushi", "span": ["三ノ輪橋", "早稲田"]}
+- {"entity_type": "route", "id": "r_nippori_toneri_liner", "lang": "ja", "text": "日暮里・舎人ライナー", "kind": "noritsubushi", "span": ["日暮里", "見沼代親水公園"]}
+- {"entity_type": "route", "id": "r_blue_line_line_1", "lang": "ja", "text": "1号線", "kind": "noritsubushi", "span": ["関内", "湘南台"]}
+- {"entity_type": "route", "id": "r_blue_line_line_3", "lang": "ja", "text": "3号線", "kind": "noritsubushi", "span": ["関内", "あざみ野"]}
+- {"entity_type": "route", "id": "r_green_line", "lang": "ja", "text": "4号線 (グリーンライン)", "kind": "noritsubushi", "span": ["中山", "日吉"]}
+- {"entity_type": "route", "id": "r_higashiyama_line", "lang": "ja", "text": "東山線 (1号線)", "kind": "noritsubushi", "span": ["高畑", "藤が丘"]}
+- {"entity_type": "route", "id": "r_meijo_meiko_line", "lang": "ja", "text": "名城線・名港線 (2号線)", "kind": "noritsubushi", "span": ["大曽根", "名古屋港"]}
+- {"entity_type": "route", "id": "r_meijo_line", "lang": "ja", "text": "名城線 (4号線)", "kind": "noritsubushi", "span": ["大曽根", "金山"]}
+- {"entity_type": "route", "id": "r_tsurumai_line", "lang": "ja", "text": "鶴舞線 (3号線)", "kind": "noritsubushi", "span": ["上小田井", "赤池"]}
+- {"entity_type": "route", "id": "r_sakura_dori_line", "lang": "ja", "text": "桜通線 (6号線)", "kind": "noritsubushi", "span": ["太閤通（旧中村区役所）", "徳重"]}
+- {"entity_type": "route", "id": "r_kamiiida_line", "lang": "ja", "text": "上飯田線", "kind": "noritsubushi", "span": ["平安通", "上飯田"]}
+- {"entity_type": "route", "id": "r_karasuma_line", "lang": "ja", "text": "烏丸線", "kind": "noritsubushi", "span": ["国際会館", "竹田"]}
+- {"entity_type": "route", "id": "r_tozai_line_kyoto_city", "lang": "ja", "text": "東西線", "kind": "noritsubushi", "span": ["六地蔵", "太秦天神川"]}
+- {"entity_type": "route", "id": "r_seishin_extension_line", "lang": "ja", "text": "西神延伸線", "kind": "noritsubushi", "span": ["名谷", "西神中央"]}
+- {"entity_type": "route", "id": "r_seishin_line", "lang": "ja", "text": "西神線", "kind": "noritsubushi", "span": ["名谷", "新長田"]}
+- {"entity_type": "route", "id": "r_yamate_line", "lang": "ja", "text": "山手線", "kind": "noritsubushi", "span": ["新神戸", "新長田"]}
+- {"entity_type": "route", "id": "r_kaigan_line", "lang": "ja", "text": "海岸線", "kind": "noritsubushi", "span": ["三宮・花時計前", "新長田"]}
+- {"entity_type": "route", "id": "r_hokushin_line", "lang": "ja", "text": "北神線", "kind": "noritsubushi", "span": ["新神戸", "谷上"]}
+- {"entity_type": "route", "id": "r_fukuoka_subway_airport_line", "lang": "ja", "text": "空港線 (1号線)", "kind": "noritsubushi", "span": ["姪浜", "福岡空港"]}
+- {"entity_type": "route", "id": "r_hakozaki_line", "lang": "ja", "text": "箱崎線 (2号線)", "kind": "noritsubushi", "span": ["中洲川端", "貝塚"]}
+- {"entity_type": "route", "id": "r_nanakuma_line", "lang": "ja", "text": "七隈線 (3号線)", "kind": "noritsubushi", "span": ["橋本", "博多"]}
+- {"entity_type": "route", "id": "r_trunk_line", "lang": "ja", "text": "幹線", "kind": "noritsubushi", "span": ["熊本駅前", "水道町"]}
+- {"entity_type": "route", "id": "r_suizenji_line", "lang": "ja", "text": "水前寺線", "kind": "noritsubushi", "span": ["水道町", "水前寺公園"]}
+- {"entity_type": "route", "id": "r_kengun_line", "lang": "ja", "text": "健軍線", "kind": "noritsubushi", "span": ["水前寺公園", "健軍町"]}
+- {"entity_type": "route", "id": "r_kami_kumamoto_line", "lang": "ja", "text": "上熊本線", "kind": "noritsubushi", "span": ["辛島町", "上熊本"]}
+- {"entity_type": "route", "id": "r_tasaki_line", "lang": "ja", "text": "田崎線", "kind": "noritsubushi", "span": ["熊本駅前", "田崎橋"]}
+- {"entity_type": "route", "id": "r_first_phase_line", "lang": "ja", "text": "第一期線", "kind": "noritsubushi", "span": ["武之橋", "鹿児島駅前"]}
+- {"entity_type": "route", "id": "r_second_phase_line", "lang": "ja", "text": "第二期線", "kind": "noritsubushi", "span": ["高見馬場", "鹿児島中央駅前"]}
+- {"entity_type": "route", "id": "r_taniyama_line", "lang": "ja", "text": "谷山線", "kind": "noritsubushi", "span": ["武之橋", "谷山"]}
+- {"entity_type": "route", "id": "r_toso_line", "lang": "ja", "text": "唐湊線", "kind": "noritsubushi", "span": ["鹿児島中央駅前", "郡元"]}
+- {"entity_type": "route", "id": "r_konan_line", "lang": "ja", "text": "弘南線", "kind": "noritsubushi", "span": ["弘前", "黒石"]}
+- {"entity_type": "route", "id": "r_owani_line", "lang": "ja", "text": "大鰐線", "kind": "noritsubushi", "span": ["大鰐", "中央弘前"]}
+- {"entity_type": "route", "id": "r_nihonkai_hisui_line", "lang": "ja", "text": "日本海ひすいライン", "kind": "noritsubushi", "span": ["市振", "直江津"]}
+- {"entity_type": "route", "id": "r_myoko_haneuma_line", "lang": "ja", "text": "妙高はねうまライン", "kind": "noritsubushi", "span": ["妙高高原", "直江津"]}
+- {"entity_type": "route", "id": "r_shinano_railway_line", "lang": "ja", "text": "しなの鉄道線", "kind": "noritsubushi", "span": ["軽井沢", "篠ノ井"]}
+- {"entity_type": "route", "id": "r_kita_shinano_line", "lang": "ja", "text": "北しなの線", "kind": "noritsubushi", "span": ["長野", "妙高高原"]}
+- {"entity_type": "route", "id": "r_shin_minatoko_line", "lang": "ja", "text": "新湊港線", "kind": "noritsubushi", "span": ["越ノ潟", "六渡寺"]}
+- {"entity_type": "route", "id": "r_takaoka_tramway_line", "lang": "ja", "text": "高岡軌道線", "kind": "noritsubushi", "span": ["高岡駅", "六渡寺"]}
+- {"entity_type": "route", "id": "r_toyama_chiho_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["電鉄富山", "宇奈月温泉"]}
+- {"entity_type": "route", "id": "r_tateyama_line", "lang": "ja", "text": "立山線", "kind": "noritsubushi", "span": ["寺田", "立山"]}
+- {"entity_type": "route", "id": "r_fujikoshi_line", "lang": "ja", "text": "不二越線", "kind": "noritsubushi", "span": ["稲荷町", "南富山"]}
+- {"entity_type": "route", "id": "r_kamidaki_line", "lang": "ja", "text": "上滝線", "kind": "noritsubushi", "span": ["南富山", "岩峅寺"]}
+- {"entity_type": "route", "id": "r_tramway_main_line", "lang": "ja", "text": "軌道線本線", "kind": "noritsubushi", "span": ["電鉄富山駅・エスタ前", "南富山駅前"]}
+- {"entity_type": "route", "id": "r_tramway_branch_line", "lang": "ja", "text": "軌道線支線", "kind": "noritsubushi", "span": ["電鉄富山駅・エスタ前", "丸の内"]}
+- {"entity_type": "route", "id": "r_tramway_yasunoya_line", "lang": "ja", "text": "軌道線安野屋線", "kind": "noritsubushi", "span": ["丸の内", "安野屋"]}
+- {"entity_type": "route", "id": "r_tramway_kureha_line", "lang": "ja", "text": "軌道線呉羽線", "kind": "noritsubushi", "span": ["安野屋", "富山大学前"]}
+- {"entity_type": "route", "id": "r_tramway_toyama_city_center_line", "lang": "ja", "text": "軌道線富山都心線", "kind": "noritsubushi", "span": ["丸の内", "西町"]}
+- {"entity_type": "route", "id": "r_tramway_toyama_station_north_south_link", "lang": "ja", "text": "軌道線富山駅南北接続線", "kind": "noritsubushi", "span": ["支線接続点", "富山駅"]}
+- {"entity_type": "route", "id": "r_toyamako_line_toyama_chiho", "lang": "ja", "text": "富山港線", "kind": "noritsubushi", "span": ["富山駅", "岩瀬浜"]}
+- {"entity_type": "route", "id": "r_asanogawa_line", "lang": "ja", "text": "浅野川線", "kind": "noritsubushi", "span": ["北鉄金沢", "内灘"]}
+- {"entity_type": "route", "id": "r_ishikawa_line", "lang": "ja", "text": "石川線", "kind": "noritsubushi", "span": ["野町", "鶴来"]}
+- {"entity_type": "route", "id": "r_ishikawa_line", "lang": "ja", "text": "石川線", "kind": "noritsubushi", "span": ["鶴来", "加賀一の宮"]}
+- {"entity_type": "route", "id": "r_joso_line", "lang": "ja", "text": "常総線", "kind": "noritsubushi", "span": ["取手", "下館"]}
+- {"entity_type": "route", "id": "r_ryugasaki_line", "lang": "ja", "text": "竜ヶ崎線", "kind": "noritsubushi", "span": ["佐貫", "竜ヶ崎"]}
+- {"entity_type": "route", "id": "r_hakone_tozan_train", "lang": "ja", "text": "鉄道線", "kind": "noritsubushi", "span": ["小田原", "強羅"]}
+- {"entity_type": "route", "id": "r_hakone_tozan_cable_car", "lang": "ja", "text": "鋼索線", "kind": "noritsubushi", "span": ["強羅", "早雲山"]}
+- {"entity_type": "route", "id": "r_daiyuzan_line", "lang": "ja", "text": "大雄山線", "kind": "noritsubushi", "span": ["小田原", "大雄山"]}
+- {"entity_type": "route", "id": "r_sunzu_line", "lang": "ja", "text": "駿豆線", "kind": "noritsubushi", "span": ["三島", "修善寺"]}
+- {"entity_type": "route", "id": "r_otsuki_line", "lang": "ja", "text": "大月線", "kind": "noritsubushi", "span": ["大月", "富士山"]}
+- {"entity_type": "route", "id": "r_kawaguchiko_line", "lang": "ja", "text": "河口湖線", "kind": "noritsubushi", "span": ["富士山", "河口湖"]}
+- {"entity_type": "route", "id": "r_oigawa_main_line", "lang": "ja", "text": "大井川本線", "kind": "noritsubushi", "span": ["金谷", "千頭"]}
+- {"entity_type": "route", "id": "r_ikawa_line", "lang": "ja", "text": "井川線", "kind": "noritsubushi", "span": ["千頭", "井川"]}
+- {"entity_type": "route", "id": "r_atsumi_line", "lang": "ja", "text": "渥美線", "kind": "noritsubushi", "span": ["新豊橋", "三河田原"]}
+- {"entity_type": "route", "id": "r_azumada_main_line", "lang": "ja", "text": "東田本線", "kind": "noritsubushi", "span": ["駅前", "赤岩口"]}
+- {"entity_type": "route", "id": "r_azumada_main_line_ihara_undo_koen_mae", "lang": "ja", "text": "東田本線 (支線)", "kind": "noritsubushi", "span": ["井原", "運動公園前"]}
+- {"entity_type": "route", "id": "r_sangi_line", "lang": "ja", "text": "三岐線", "kind": "noritsubushi", "span": ["三岐朝明信号所", "西藤原"]}
+- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "ja", "text": "近鉄連絡線", "kind": "noritsubushi", "span": ["三岐朝明信号所", "近鉄富田"]}
+- {"entity_type": "route", "id": "r_hokusei_line", "lang": "ja", "text": "北勢線", "kind": "noritsubushi", "span": ["西桑名", "阿下喜"]}
+- {"entity_type": "route", "id": "r_utsube_line", "lang": "ja", "text": "内部線", "kind": "noritsubushi", "span": ["あすなろう四日市", "内部"]}
+- {"entity_type": "route", "id": "r_hachioji_line", "lang": "ja", "text": "八王子線", "kind": "noritsubushi", "span": ["日永", "西日野"]}
+- {"entity_type": "route", "id": "r_fukubu_line", "lang": "ja", "text": "福武線", "kind": "noritsubushi", "span": ["たけふ新", "福井駅"]}
+- {"entity_type": "route", "id": "r_fukubu_line_fukui_joshi_daimyomachi_tawaramachi", "lang": "ja", "text": "福武線 (田原町方面)", "kind": "noritsubushi", "span": ["福井城址大名町", "田原町"]}
+- {"entity_type": "route", "id": "r_katsuyama_eiheiji_line", "lang": "ja", "text": "勝山永平寺線", "kind": "noritsubushi", "span": ["福井", "勝山"]}
+- {"entity_type": "route", "id": "r_mikuni_awara_line", "lang": "ja", "text": "三国芦原線", "kind": "noritsubushi", "span": ["福井口", "三国港"]}
+- {"entity_type": "route", "id": "r_ohmi_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["米原", "貴生川"]}
+- {"entity_type": "route", "id": "r_taga_line", "lang": "ja", "text": "多賀線", "kind": "noritsubushi", "span": ["高宮", "多賀大社前"]}
+- {"entity_type": "route", "id": "r_yokaichi_line", "lang": "ja", "text": "八日市線", "kind": "noritsubushi", "span": ["八日市", "近江八幡"]}
+- {"entity_type": "route", "id": "r_miyafuku_line", "lang": "ja", "text": "宮福線", "kind": "noritsubushi", "span": ["福知山", "宮津"]}
+- {"entity_type": "route", "id": "r_miyazu_line_kyoto_tango_railway_willer_trains", "lang": "ja", "text": "宮津線 (宮舞線・宮豊線)", "kind": "noritsubushi", "span": ["西舞鶴", "豊岡"]}
+- {"entity_type": "route", "id": "r_eizan_main_line", "lang": "ja", "text": "叡山本線", "kind": "noritsubushi", "span": ["出町柳", "八瀬比叡山口"]}
+- {"entity_type": "route", "id": "r_kurama_line", "lang": "ja", "text": "鞍馬線", "kind": "noritsubushi", "span": ["宝ヶ池", "鞍馬"]}
+- {"entity_type": "route", "id": "r_arashiyama_main_line", "lang": "ja", "text": "嵐山本線", "kind": "noritsubushi", "span": ["四条大宮", "嵐山"]}
+- {"entity_type": "route", "id": "r_kitano_line", "lang": "ja", "text": "北野線", "kind": "noritsubushi", "span": ["北野白梅町", "帷子ノ辻"]}
+- {"entity_type": "route", "id": "r_eizan_cable", "lang": "ja", "text": "鋼索線 (叡山ケーブル)", "kind": "noritsubushi", "span": ["ケーブル八瀬", "ケーブル比叡"]}
+- {"entity_type": "route", "id": "r_midosuji_line", "lang": "ja", "text": "御堂筋線 (1号線)", "kind": "noritsubushi", "span": ["江坂", "中百舌鳥"]}
+- {"entity_type": "route", "id": "r_tanimachi_line", "lang": "ja", "text": "谷町線 (2号線)", "kind": "noritsubushi", "span": ["大日", "八尾南"]}
+- {"entity_type": "route", "id": "r_yotsubashi_line", "lang": "ja", "text": "四つ橋線 (3号線)", "kind": "noritsubushi", "span": ["西梅田", "住之江公園"]}
+- {"entity_type": "route", "id": "r_osaka_metro_chuo_line", "lang": "ja", "text": "中央線 (4号線)", "kind": "noritsubushi", "span": ["夢洲", "長田"]}
+- {"entity_type": "route", "id": "r_sennichimae_line", "lang": "ja", "text": "千日前線 (5号線)", "kind": "noritsubushi", "span": ["野田阪神", "南巽"]}
+- {"entity_type": "route", "id": "r_sakaisuji_line", "lang": "ja", "text": "堺筋線 (6号線)", "kind": "noritsubushi", "span": ["天神橋筋六丁目", "天下茶屋"]}
+- {"entity_type": "route", "id": "r_nagahori_tsurumi_ryokuchi_line", "lang": "ja", "text": "長堀鶴見緑地線 (7号線)", "kind": "noritsubushi", "span": ["大正", "門真南"]}
+- {"entity_type": "route", "id": "r_imazatosuji_line", "lang": "ja", "text": "今里筋線 (8号線)", "kind": "noritsubushi", "span": ["井高野", "今里"]}
+- {"entity_type": "route", "id": "r_nanko_port_town_line", "lang": "ja", "text": "南港ポートタウン線 (ニュートラム)", "kind": "noritsubushi", "span": ["コスモスクエア", "住之江公園"]}
+- {"entity_type": "route", "id": "r_hankai_line", "lang": "ja", "text": "阪堺線", "kind": "noritsubushi", "span": ["恵美須町", "浜寺駅前"]}
+- {"entity_type": "route", "id": "r_uemachi_line", "lang": "ja", "text": "上町線", "kind": "noritsubushi", "span": ["天王寺駅前", "住吉"]}
+- {"entity_type": "route", "id": "r_uemachi_line", "lang": "ja", "text": "上町線", "kind": "noritsubushi", "span": ["住吉", "住吉公園"]}
+- {"entity_type": "route", "id": "r_arima_line", "lang": "ja", "text": "有馬線", "kind": "noritsubushi", "span": ["湊川", "有馬温泉"]}
+- {"entity_type": "route", "id": "r_sanda_line", "lang": "ja", "text": "三田線", "kind": "noritsubushi", "span": ["有馬口", "三田"]}
+- {"entity_type": "route", "id": "r_koen_toshi_line", "lang": "ja", "text": "公園都市線", "kind": "noritsubushi", "span": ["横山", "ウッディタウン中央"]}
+- {"entity_type": "route", "id": "r_ao_line", "lang": "ja", "text": "粟生線", "kind": "noritsubushi", "span": ["鈴蘭台", "粟生"]}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_kobe", "lang": "ja", "text": "神戸高速線", "kind": "noritsubushi", "span": ["新開地", "湊川"]}
+- {"entity_type": "route", "id": "r_myoken_line", "lang": "ja", "text": "妙見線", "kind": "noritsubushi", "span": ["川西能勢口", "妙見口"]}
+- {"entity_type": "route", "id": "r_nissei_line", "lang": "ja", "text": "日生線", "kind": "noritsubushi", "span": ["山下", "日生中央"]}
+- {"entity_type": "route", "id": "r_higashiyama_main_line", "lang": "ja", "text": "東山本線", "kind": "noritsubushi", "span": ["岡山駅前", "東山・おかでんチャギントンミュージアム駅"]}
+- {"entity_type": "route", "id": "r_seikibashi_line", "lang": "ja", "text": "清輝橋線", "kind": "noritsubushi", "span": ["柳川", "清輝橋"]}
+- {"entity_type": "route", "id": "r_hiroden_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["広島駅", "広電西広島"]}
+- {"entity_type": "route", "id": "r_hiroden_main_line_hiroshima_matobacho", "lang": "ja", "text": "本線 (猿猴橋町経由)", "kind": "noritsubushi", "span": ["広島駅", "的場町"]}
+- {"entity_type": "route", "id": "r_ujina_line_hiroden", "lang": "ja", "text": "宇品線", "kind": "noritsubushi", "span": ["紙屋町", "広島港"]}
+- {"entity_type": "route", "id": "r_eba_line", "lang": "ja", "text": "江波線", "kind": "noritsubushi", "span": ["土橋", "江波"]}
+- {"entity_type": "route", "id": "r_yokogawa_line", "lang": "ja", "text": "横川線", "kind": "noritsubushi", "span": ["十日市町", "横川駅"]}
+- {"entity_type": "route", "id": "r_minami_line", "lang": "ja", "text": "皆実線", "kind": "noritsubushi", "span": ["稲荷町", "皆実町六丁目"]}
+- {"entity_type": "route", "id": "r_hakushima_line", "lang": "ja", "text": "白島線", "kind": "noritsubushi", "span": ["八丁堀", "白島"]}
+- {"entity_type": "route", "id": "r_loop_line", "lang": "ja", "text": "循環線", "kind": "noritsubushi", "span": ["稲荷町", "比治山下"]}
+- {"entity_type": "route", "id": "r_miyajima_line", "lang": "ja", "text": "宮島線", "kind": "noritsubushi", "span": ["広電西広島", "広電宮島口"]}
+- {"entity_type": "route", "id": "r_kita_matsue_line", "lang": "ja", "text": "北松江線", "kind": "noritsubushi", "span": ["電鉄出雲市", "松江しんじ湖温泉"]}
+- {"entity_type": "route", "id": "r_taisha_line_ichibata", "lang": "ja", "text": "大社線", "kind": "noritsubushi", "span": ["川跡", "出雲大社前"]}
+- {"entity_type": "route", "id": "r_kotohira_line", "lang": "ja", "text": "琴平線", "kind": "noritsubushi", "span": ["高松築港", "琴電琴平"]}
+- {"entity_type": "route", "id": "r_nagao_line", "lang": "ja", "text": "長尾線", "kind": "noritsubushi", "span": ["瓦町", "長尾"]}
+- {"entity_type": "route", "id": "r_shido_line", "lang": "ja", "text": "志度線", "kind": "noritsubushi", "span": ["瓦町", "琴電志度"]}
+- {"entity_type": "route", "id": "r_takahama_line", "lang": "ja", "text": "高浜線", "kind": "noritsubushi", "span": ["高浜", "松山市"]}
+- {"entity_type": "route", "id": "r_yokogawara_line", "lang": "ja", "text": "横河原線", "kind": "noritsubushi", "span": ["松山市", "横河原"]}
+- {"entity_type": "route", "id": "r_gunchu_line", "lang": "ja", "text": "郡中線", "kind": "noritsubushi", "span": ["松山市", "郡中港"]}
+- {"entity_type": "route", "id": "r_johoku_line_iyotetsu", "lang": "ja", "text": "城北線", "kind": "noritsubushi", "span": ["古町", "平和通一丁目"]}
+- {"entity_type": "route", "id": "r_jonan_line", "lang": "ja", "text": "城南線", "kind": "noritsubushi", "span": ["道後温泉", "西堀端"]}
+- {"entity_type": "route", "id": "r_jonan_line_heiwadori_1_chome_kamiichiman", "lang": "ja", "text": "城南線 (大手町線側)", "kind": "noritsubushi", "span": ["平和通一丁目", "上一万"]}
+- {"entity_type": "route", "id": "r_honmachi_line", "lang": "ja", "text": "本町線", "kind": "noritsubushi", "span": ["本町一丁目", "本町六丁目"]}
+- {"entity_type": "route", "id": "r_otemachi_line", "lang": "ja", "text": "大手町線", "kind": "noritsubushi", "span": ["古町", "西堀端"]}
+- {"entity_type": "route", "id": "r_hanazono_line", "lang": "ja", "text": "花園線", "kind": "noritsubushi", "span": ["松山市駅前", "南堀端"]}
+- {"entity_type": "route", "id": "r_ino_line", "lang": "ja", "text": "伊野線", "kind": "noritsubushi", "span": ["はりまや橋", "伊野"]}
+- {"entity_type": "route", "id": "r_gomen_line", "lang": "ja", "text": "後免線", "kind": "noritsubushi", "span": ["後免町", "はりまや橋"]}
+- {"entity_type": "route", "id": "r_sambashi_line", "lang": "ja", "text": "桟橋線", "kind": "noritsubushi", "span": ["高知駅前", "桟橋通五丁目"]}
+- {"entity_type": "route", "id": "r_nakamura_line_tosa_kuroshio", "lang": "ja", "text": "中村線", "kind": "noritsubushi", "span": ["窪川", "中村"]}
+- {"entity_type": "route", "id": "r_sukumo_line", "lang": "ja", "text": "宿毛線", "kind": "noritsubushi", "span": ["宿毛", "中村"]}
+- {"entity_type": "route", "id": "r_asa_line", "lang": "ja", "text": "阿佐線 (ごめん・なはり線)", "kind": "noritsubushi", "span": ["後免", "奈半利"]}
+- {"entity_type": "route", "id": "r_ita_line_heisei_chikuho", "lang": "ja", "text": "伊田線", "kind": "noritsubushi", "span": ["直方", "田川伊田"]}
+- {"entity_type": "route", "id": "r_itoda_line_heisei_chikuho", "lang": "ja", "text": "糸田線", "kind": "noritsubushi", "span": ["金田", "田川後藤寺"]}
+- {"entity_type": "route", "id": "r_tagawa_line_heisei_chikuho", "lang": "ja", "text": "田川線", "kind": "noritsubushi", "span": ["行橋", "田川伊田"]}
+- {"entity_type": "route", "id": "r_mojiko_retro_scenic_line", "lang": "ja", "text": "門司港レトロ観光線", "kind": "noritsubushi", "span": ["九州鉄道記念館", "関門海峡めかり"]}
+- {"entity_type": "route", "id": "r_akasako_branch_line", "lang": "ja", "text": "赤迫支線", "kind": "noritsubushi", "span": ["赤迫", "住吉"]}
+- {"entity_type": "route", "id": "r_nagasaki_tram_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["住吉", "崇福寺（旧正覚寺下）"]}
+- {"entity_type": "route", "id": "r_sakuramachi_branch_line", "lang": "ja", "text": "桜町支線", "kind": "noritsubushi", "span": ["長崎駅前", "市役所（旧市民会館）"]}
+- {"entity_type": "route", "id": "r_oura_branch_line", "lang": "ja", "text": "大浦支線", "kind": "noritsubushi", "span": ["新地中華街（旧築町）", "石橋"]}
+- {"entity_type": "route", "id": "r_hotarujaya_branch_line", "lang": "ja", "text": "蛍茶屋支線", "kind": "noritsubushi", "span": ["西浜町／浜町アーケード", "蛍茶屋"]}
+- {"entity_type": "route", "id": "r_kikuchi_line", "lang": "ja", "text": "菊池線", "kind": "noritsubushi", "span": ["上熊本", "御代志"]}
+- {"entity_type": "route", "id": "r_kikuchi_line_miyoshi_kikuchi", "lang": "ja", "text": "菊池線 (御代志以北)", "kind": "noritsubushi", "span": ["御代志", "菊池"]}
+- {"entity_type": "route", "id": "r_kikuchi_line_kumamoto_kosen_mae_miyoshi", "lang": "ja", "text": "菊池線 (付替)", "kind": "noritsubushi", "span": ["熊本高専前", "御代志"]}
+- {"entity_type": "route", "id": "r_fujisaki_line", "lang": "ja", "text": "藤崎線", "kind": "noritsubushi", "span": ["北熊本", "藤崎宮前"]}
+- {"entity_type": "route", "id": "r_chiba_urban_monorail_line_1", "lang": "ja", "text": "1号線", "kind": "noritsubushi", "span": ["千葉みなと", "県庁前"]}
+- {"entity_type": "route", "id": "r_chiba_urban_monorail_line_2", "lang": "ja", "text": "2号線", "kind": "noritsubushi", "span": ["千葉", "千城台"]}
+- {"entity_type": "route", "id": "r_osaka_monorail_main_line", "lang": "ja", "text": "大阪モノレール線", "kind": "noritsubushi", "span": ["大阪空港", "門真市"]}
+- {"entity_type": "route", "id": "r_saito_line", "lang": "ja", "text": "国際文化公園都市線 (彩都線)", "kind": "noritsubushi", "span": ["万博記念公園", "彩都西"]}
+- {"entity_type": "route", "id": "r_port_island_line", "lang": "ja", "text": "ポートアイランド線", "kind": "noritsubushi", "span": ["三宮", "中公園"]}
+- {"entity_type": "route", "id": "r_port_island_line_shimin_hiroba_kobe_airport", "lang": "ja", "text": "ポートアイランド線 (空港方面)", "kind": "noritsubushi", "span": ["市民広場", "神戸空港"]}
+- {"entity_type": "route", "id": "r_rokko_island_line", "lang": "ja", "text": "六甲アイランド線", "kind": "noritsubushi", "span": ["住吉", "マリンパーク"]}
+- {"entity_type": "route", "id": "r_tateyama_cable_car", "lang": "ja", "text": "鋼索線 (黒部ケーブルカー)", "kind": "noritsubushi", "span": ["黒部湖", "黒部平"]}
+- {"entity_type": "route", "id": "r_tateyama_cable_car_tateyama_bijodaira", "lang": "ja", "text": "鋼索線 (立山ケーブルカー)", "kind": "noritsubushi", "span": ["立山", "美女平"]}
+- {"entity_type": "route", "id": "r_shimizuko_line", "lang": "ja", "text": "清水港線", "kind": "noritsubushi", "span": ["清水", "三保"]}
+- {"entity_type": "route", "id": "r_futamata_line", "lang": "ja", "text": "二俣線", "kind": "noritsubushi", "span": ["掛川", "新所原"]}
+- {"entity_type": "route", "id": "r_okata_line", "lang": "ja", "text": "岡多線", "kind": "noritsubushi", "span": ["岡崎", "新豊田"]}
+- {"entity_type": "route", "id": "r_tarumi_line", "lang": "ja", "text": "樽見線", "kind": "noritsubushi", "span": ["大垣", "美濃神海"]}
+- {"entity_type": "route", "id": "r_sasayama_line", "lang": "ja", "text": "篠山線", "kind": "noritsubushi", "span": ["篠山口", "福住"]}
+- {"entity_type": "route", "id": "r_mikuni_line", "lang": "ja", "text": "三国線", "kind": "noritsubushi", "span": ["金津", "芦原"]}
+- {"entity_type": "route", "id": "r_noto_line", "lang": "ja", "text": "能登線", "kind": "noritsubushi", "span": ["穴水", "蛸島"]}
+- {"entity_type": "route", "id": "r_toyamako_line", "lang": "ja", "text": "富山港線", "kind": "noritsubushi", "span": ["富山", "岩瀬浜"]}
+- {"entity_type": "route", "id": "r_etsumi_nan_line", "lang": "ja", "text": "越美南線", "kind": "noritsubushi", "span": ["美濃太田", "北濃"]}
+- {"entity_type": "route", "id": "r_kamioka_line", "lang": "ja", "text": "神岡線", "kind": "noritsubushi", "span": ["猪谷", "神岡"]}
+- {"entity_type": "route", "id": "r_akechi_line", "lang": "ja", "text": "明知線", "kind": "noritsubushi", "span": ["恵那", "明知"]}
+- {"entity_type": "route", "id": "r_takasago_line", "lang": "ja", "text": "高砂線", "kind": "noritsubushi", "span": ["加古川", "高砂"]}
+- {"entity_type": "route", "id": "r_miki_line", "lang": "ja", "text": "三木線", "kind": "noritsubushi", "span": ["厄神", "三木"]}
+- {"entity_type": "route", "id": "r_hojo_line", "lang": "ja", "text": "北条線", "kind": "noritsubushi", "span": ["粟生", "北条町"]}
+- {"entity_type": "route", "id": "r_kajiya_line", "lang": "ja", "text": "鍛冶屋線", "kind": "noritsubushi", "span": ["野村", "鍛冶屋"]}
+- {"entity_type": "route", "id": "r_ujina_line", "lang": "ja", "text": "宇品線", "kind": "noritsubushi", "span": ["広島", "宇品"]}
+- {"entity_type": "route", "id": "r_gannichi_line", "lang": "ja", "text": "岩日線", "kind": "noritsubushi", "span": ["川西", "錦町"]}
+- {"entity_type": "route", "id": "r_miyazu_line", "lang": "ja", "text": "宮津線", "kind": "noritsubushi", "span": ["西舞鶴", "豊岡"]}
+- {"entity_type": "route", "id": "r_wakasa_line", "lang": "ja", "text": "若桜線", "kind": "noritsubushi", "span": ["郡家", "若桜"]}
+- {"entity_type": "route", "id": "r_kurayoshi_line", "lang": "ja", "text": "倉吉線", "kind": "noritsubushi", "span": ["倉吉", "山守"]}
+- {"entity_type": "route", "id": "r_taisha_line", "lang": "ja", "text": "大社線", "kind": "noritsubushi", "span": ["出雲市", "大社"]}
+- {"entity_type": "route", "id": "r_sanko_line", "lang": "ja", "text": "三江線", "kind": "noritsubushi", "span": ["江津", "三次"]}
+- {"entity_type": "route", "id": "r_ise_line", "lang": "ja", "text": "伊勢線", "kind": "noritsubushi", "span": ["南四日市", "津"]}
+- {"entity_type": "route", "id": "r_shigaraki_line", "lang": "ja", "text": "信楽線", "kind": "noritsubushi", "span": ["貴生川", "信楽"]}
+- {"entity_type": "route", "id": "r_naganohara_line", "lang": "ja", "text": "長野原線", "kind": "noritsubushi", "span": ["長野原", "太子"]}
+- {"entity_type": "route", "id": "r_ashio_line", "lang": "ja", "text": "足尾線", "kind": "noritsubushi", "span": ["桐生", "間藤"]}
+- {"entity_type": "route", "id": "r_moka_line", "lang": "ja", "text": "真岡線", "kind": "noritsubushi", "span": ["下館", "茂木"]}
+- {"entity_type": "route", "id": "r_kawamata_line", "lang": "ja", "text": "川俣線", "kind": "noritsubushi", "span": ["松川", "岩代川俣"]}
+- {"entity_type": "route", "id": "r_marumori_line", "lang": "ja", "text": "丸森線", "kind": "noritsubushi", "span": ["丸森", "槻木"]}
+- {"entity_type": "route", "id": "r_sakari_line", "lang": "ja", "text": "盛線", "kind": "noritsubushi", "span": ["盛", "吉浜"]}
+- {"entity_type": "route", "id": "r_iwaizumi_line", "lang": "ja", "text": "岩泉線", "kind": "noritsubushi", "span": ["茂市", "岩泉"]}
+- {"entity_type": "route", "id": "r_miyako_line", "lang": "ja", "text": "宮古線", "kind": "noritsubushi", "span": ["宮古", "田老"]}
+- {"entity_type": "route", "id": "r_kuji_line", "lang": "ja", "text": "久慈線", "kind": "noritsubushi", "span": ["普代", "久慈"]}
+- {"entity_type": "route", "id": "r_ohata_line", "lang": "ja", "text": "大畑線", "kind": "noritsubushi", "span": ["下北", "大畑"]}
+- {"entity_type": "route", "id": "r_aizu_line", "lang": "ja", "text": "会津線", "kind": "noritsubushi", "span": ["西若松", "会津高原(旧会津滝ノ原)"]}
+- {"entity_type": "route", "id": "r_nitchu_line", "lang": "ja", "text": "日中線", "kind": "noritsubushi", "span": ["喜多方", "熱塩"]}
+- {"entity_type": "route", "id": "r_nagai_line", "lang": "ja", "text": "長井線", "kind": "noritsubushi", "span": ["赤湯", "荒砥"]}
+- {"entity_type": "route", "id": "r_aniai_line", "lang": "ja", "text": "阿仁合線", "kind": "noritsubushi", "span": ["鷹ノ巣", "比立内"]}
+- {"entity_type": "route", "id": "r_kakunodate_line", "lang": "ja", "text": "角館線", "kind": "noritsubushi", "span": ["松葉", "角館"]}
+- {"entity_type": "route", "id": "r_kuroishi_line", "lang": "ja", "text": "黒石線", "kind": "noritsubushi", "span": ["川部", "黒石"]}
+- {"entity_type": "route", "id": "r_akatani_line", "lang": "ja", "text": "赤谷線", "kind": "noritsubushi", "span": ["新発田", "東赤谷"]}
+- {"entity_type": "route", "id": "r_yashima_line", "lang": "ja", "text": "矢島線", "kind": "noritsubushi", "span": ["羽後本荘", "羽後矢島"]}
+- {"entity_type": "route", "id": "r_uonuma_line", "lang": "ja", "text": "魚沼線", "kind": "noritsubushi", "span": ["来迎寺", "西小千谷"]}
+- {"entity_type": "route", "id": "r_kihara_line", "lang": "ja", "text": "木原線", "kind": "noritsubushi", "span": ["大原", "上総中野"]}
+- {"entity_type": "route", "id": "r_kajiyabara_line", "lang": "ja", "text": "鍛冶屋原線", "kind": "noritsubushi", "span": ["板野", "鍛冶屋原"]}
+- {"entity_type": "route", "id": "r_komatsushima_line", "lang": "ja", "text": "小松島線", "kind": "noritsubushi", "span": ["中田", "小松島"]}
+- {"entity_type": "route", "id": "r_nakamura_line", "lang": "ja", "text": "中村線", "kind": "noritsubushi", "span": ["窪川", "中村"]}
+- {"entity_type": "route", "id": "r_muroki_line", "lang": "ja", "text": "室木線", "kind": "noritsubushi", "span": ["遠賀川", "室木"]}
+- {"entity_type": "route", "id": "r_katsuta_line", "lang": "ja", "text": "勝田線", "kind": "noritsubushi", "span": ["吉塚", "筑前勝田"]}
+- {"entity_type": "route", "id": "r_amagi_line", "lang": "ja", "text": "甘木線", "kind": "noritsubushi", "span": ["基山", "甘木"]}
+- {"entity_type": "route", "id": "r_yabe_line", "lang": "ja", "text": "矢部線", "kind": "noritsubushi", "span": ["羽犬塚", "黒木"]}
+- {"entity_type": "route", "id": "r_yamano_line", "lang": "ja", "text": "山野線", "kind": "noritsubushi", "span": ["水俣", "栗野"]}
+- {"entity_type": "route", "id": "r_miyanojo_line", "lang": "ja", "text": "宮之城線", "kind": "noritsubushi", "span": ["川内", "薩摩大口"]}
+- {"entity_type": "route", "id": "r_yunomae_line", "lang": "ja", "text": "湯前線", "kind": "noritsubushi", "span": ["人吉", "湯前"]}
+- {"entity_type": "route", "id": "r_saga_line", "lang": "ja", "text": "佐賀線", "kind": "noritsubushi", "span": ["佐賀", "瀬高"]}
+- {"entity_type": "route", "id": "r_matsuura_line", "lang": "ja", "text": "松浦線", "kind": "noritsubushi", "span": ["有田", "佐世保"]}
+- {"entity_type": "route", "id": "r_sechibaru_line", "lang": "ja", "text": "世知原線", "kind": "noritsubushi", "span": ["肥前吉井", "世知原"]}
+- {"entity_type": "route", "id": "r_usunoura_line", "lang": "ja", "text": "臼ノ浦線", "kind": "noritsubushi", "span": ["佐々", "臼ノ浦"]}
+- {"entity_type": "route", "id": "r_miyanoharu_line", "lang": "ja", "text": "宮原線", "kind": "noritsubushi", "span": ["恵良", "肥後小国"]}
+- {"entity_type": "route", "id": "r_takamori_line", "lang": "ja", "text": "高森線", "kind": "noritsubushi", "span": ["立野", "高森"]}
+- {"entity_type": "route", "id": "r_hososhima_line", "lang": "ja", "text": "細島線", "kind": "noritsubushi", "span": ["日向市", "細島"]}
+- {"entity_type": "route", "id": "r_soeda_line", "lang": "ja", "text": "添田線", "kind": "noritsubushi", "span": ["香春", "添田"]}
+- {"entity_type": "route", "id": "r_tagawa_line", "lang": "ja", "text": "田川線", "kind": "noritsubushi", "span": ["行橋", "伊田"]}
+- {"entity_type": "route", "id": "r_takachiho_line", "lang": "ja", "text": "高千穂線", "kind": "noritsubushi", "span": ["延岡", "高千穂"]}
+- {"entity_type": "route", "id": "r_tsuma_line", "lang": "ja", "text": "妻線", "kind": "noritsubushi", "span": ["佐土原", "杉安"]}
+- {"entity_type": "route", "id": "r_shibushi_line", "lang": "ja", "text": "志布志線", "kind": "noritsubushi", "span": ["西都城", "志布志"]}
+- {"entity_type": "route", "id": "r_osumi_line", "lang": "ja", "text": "大隅線", "kind": "noritsubushi", "span": ["志布志", "国分"]}
+- {"entity_type": "route", "id": "r_katsuki_line", "lang": "ja", "text": "香月線", "kind": "noritsubushi", "span": ["中間", "香月"]}
+- {"entity_type": "route", "id": "r_ita_line", "lang": "ja", "text": "伊田線", "kind": "noritsubushi", "span": ["直方", "伊田"]}
+- {"entity_type": "route", "id": "r_itoda_line", "lang": "ja", "text": "糸田線", "kind": "noritsubushi", "span": ["金田", "後藤寺"]}
+- {"entity_type": "route", "id": "r_miyada_line", "lang": "ja", "text": "宮田線", "kind": "noritsubushi", "span": ["勝野", "筑前宮田"]}
+- {"entity_type": "route", "id": "r_kobukuro_line", "lang": "ja", "text": "幸袋線", "kind": "noritsubushi", "span": ["小竹", "二瀬"]}
+- {"entity_type": "route", "id": "r_urushio_line", "lang": "ja", "text": "漆生線", "kind": "noritsubushi", "span": ["下鴨生", "下山田"]}
+- {"entity_type": "route", "id": "r_kamiyamada_line", "lang": "ja", "text": "上山田線", "kind": "noritsubushi", "span": ["飯塚", "豊前川崎"]}
+- {"entity_type": "route", "id": "r_esashi_line", "lang": "ja", "text": "江差線", "kind": "noritsubushi", "span": ["五稜郭", "江差"]}
+- {"entity_type": "route", "id": "r_matsumae_line", "lang": "ja", "text": "松前線", "kind": "noritsubushi", "span": ["木古内", "松前"]}
+- {"entity_type": "route", "id": "r_kaikyo_line", "lang": "ja", "text": "海峡線", "kind": "noritsubushi", "span": ["中小国", "木古内"]}
+- {"entity_type": "route", "id": "r_setana_line", "lang": "ja", "text": "瀬棚線", "kind": "noritsubushi", "span": ["国縫", "瀬棚"]}
+- {"entity_type": "route", "id": "r_horonai_line", "lang": "ja", "text": "幌内線", "kind": "noritsubushi", "span": ["岩見沢", "幌内"]}
+- {"entity_type": "route", "id": "r_horonai_line_mikasa_ikushumbetsu", "lang": "ja", "text": "幌内線", "kind": "noritsubushi", "span": ["三笠", "幾春別"]}
+- {"entity_type": "route", "id": "r_utashinai_line", "lang": "ja", "text": "歌志内線", "kind": "noritsubushi", "span": ["砂川", "歌志内"]}
+- {"entity_type": "route", "id": "r_temiya_line", "lang": "ja", "text": "手宮線", "kind": "noritsubushi", "span": ["南小樽", "手宮"]}
+- {"entity_type": "route", "id": "r_iwanai_line", "lang": "ja", "text": "岩内線", "kind": "noritsubushi", "span": ["小沢", "岩内"]}
+- {"entity_type": "route", "id": "r_shinmei_line", "lang": "ja", "text": "深名線", "kind": "noritsubushi", "span": ["深川", "名寄"]}
+- {"entity_type": "route", "id": "r_iburi_line", "lang": "ja", "text": "胆振線", "kind": "noritsubushi", "span": ["伊達紋別", "倶知安"]}
+- {"entity_type": "route", "id": "r_iburi_line_kyogoku_wakikata", "lang": "ja", "text": "胆振線", "kind": "noritsubushi", "span": ["京極", "脇方"]}
+- {"entity_type": "route", "id": "r_manji_line", "lang": "ja", "text": "万字線", "kind": "noritsubushi", "span": ["志文", "万字炭山"]}
+- {"entity_type": "route", "id": "r_tomiuchi_line", "lang": "ja", "text": "富内線", "kind": "noritsubushi", "span": ["鵡川", "日高町"]}
+- {"entity_type": "route", "id": "r_rumoi_main_line", "lang": "ja", "text": "留萌本線", "kind": "noritsubushi", "span": ["深川", "増毛"]}
+- {"entity_type": "route", "id": "r_haboro_line", "lang": "ja", "text": "羽幌線", "kind": "noritsubushi", "span": ["留萠", "幌延"]}
+- {"entity_type": "route", "id": "r_shihoro_line", "lang": "ja", "text": "士幌線", "kind": "noritsubushi", "span": ["帯広", "十勝三股"]}
+- {"entity_type": "route", "id": "r_hiroo_line", "lang": "ja", "text": "広尾線", "kind": "noritsubushi", "span": ["帯広", "広尾"]}
+- {"entity_type": "route", "id": "r_chihoku_line", "lang": "ja", "text": "池北線", "kind": "noritsubushi", "span": ["池田", "北見"]}
+- {"entity_type": "route", "id": "r_shiranuka_line", "lang": "ja", "text": "白糠線", "kind": "noritsubushi", "span": ["白糠", "北進"]}
+- {"entity_type": "route", "id": "r_biko_line", "lang": "ja", "text": "美幸線", "kind": "noritsubushi", "span": ["美深", "仁宇布"]}
+- {"entity_type": "route", "id": "r_tempoku_line", "lang": "ja", "text": "天北線", "kind": "noritsubushi", "span": ["音威子府", "南稚内"]}
+- {"entity_type": "route", "id": "r_kohin_north_line", "lang": "ja", "text": "興浜北線", "kind": "noritsubushi", "span": ["浜頓別", "北見枝幸"]}
+- {"entity_type": "route", "id": "r_nayoro_main_line", "lang": "ja", "text": "名寄本線", "kind": "noritsubushi", "span": ["名寄", "遠軽"]}
+- {"entity_type": "route", "id": "r_nayoro_main_line_naka_yubetsu_yubetsu", "lang": "ja", "text": "名寄本線", "kind": "noritsubushi", "span": ["中湧別", "湧別"]}
+- {"entity_type": "route", "id": "r_kohin_south_line", "lang": "ja", "text": "興浜南線", "kind": "noritsubushi", "span": ["興部", "雄武"]}
+- {"entity_type": "route", "id": "r_shokotsu_line", "lang": "ja", "text": "渚滑線", "kind": "noritsubushi", "span": ["渚滑", "北見滝ノ上"]}
+- {"entity_type": "route", "id": "r_yumo_line", "lang": "ja", "text": "湧網線", "kind": "noritsubushi", "span": ["中湧別", "網走"]}
+- {"entity_type": "route", "id": "r_aioi_line", "lang": "ja", "text": "相生線", "kind": "noritsubushi", "span": ["美幌", "北見相生"]}
+- {"entity_type": "route", "id": "r_shibetsu_line", "lang": "ja", "text": "標津線", "kind": "noritsubushi", "span": ["標茶", "根室標津"]}
+- {"entity_type": "route", "id": "r_shibetsu_line_nakashibetsu_attoko", "lang": "ja", "text": "標津線", "kind": "noritsubushi", "span": ["中標津", "厚床"]}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_sanyo", "lang": "ja", "text": "神戸高速線 (阪急側)", "kind": "noritsubushi", "span": ["西代", "三宮"]}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_sanyo_kosoku_kobe_motomachi", "lang": "ja", "text": "神戸高速線 (阪神側)", "kind": "noritsubushi", "span": ["高速神戸", "元町"]}
+- {"entity_type": "route", "id": "r_nanao_line_noto", "lang": "ja", "text": "七尾線", "kind": "noritsubushi", "span": ["七尾", "穴水"]}
+- {"entity_type": "route", "id": "r_nanao_line_noto", "lang": "ja", "text": "七尾線", "kind": "noritsubushi", "span": ["穴水", "輪島"]}
+- {"entity_type": "route", "id": "r_noto_line_noto", "lang": "ja", "text": "能登線", "kind": "noritsubushi", "span": ["穴水", "蛸島"]}
+- {"entity_type": "route", "id": "r_fujishiro_line", "lang": "ja", "text": "藤城線 (函館本線)", "kind": "noritsubushi", "span": ["七飯", "大沼"]}
+- {"entity_type": "route", "id": "r_tokaido_freight_line", "lang": "ja", "text": "東海道貨物線 (東海道本線)", "kind": "noritsubushi", "span": ["鶴見", "東戸塚"]}
+- {"entity_type": "route", "id": "r_takashima_line", "lang": "ja", "text": "高島線 (東海道本線)", "kind": "noritsubushi", "span": ["鶴見", "桜木町"]}
+- {"entity_type": "route", "id": "r_osaki_branch_line", "lang": "ja", "text": "大崎支線 (大崎駅構内)", "kind": "noritsubushi", "span": ["大崎", "西大井"]}
+- {"entity_type": "route", "id": "r_yamanote_freight_line", "lang": "ja", "text": "山手貨物線 (山手線)", "kind": "noritsubushi", "span": ["駒込", "田端信号場"]}
+- {"entity_type": "route", "id": "r_musashino_south_line", "lang": "ja", "text": "武蔵野南線 (武蔵野線)", "kind": "noritsubushi", "span": ["鶴見", "府中本町"]}
+- {"entity_type": "route", "id": "r_kunitachi_branch_line", "lang": "ja", "text": "国立支線 (武蔵野線)", "kind": "noritsubushi", "span": ["新小平", "国立"]}
+- {"entity_type": "route", "id": "r_omiya_branch_line", "lang": "ja", "text": "大宮支線 (武蔵野線)", "kind": "noritsubushi", "span": ["西浦和", "与野"]}
+- {"entity_type": "route", "id": "r_nishiurawa_branch_line", "lang": "ja", "text": "西浦和支線 (武蔵野線)", "kind": "noritsubushi", "span": ["武蔵浦和", "与野"]}
+- {"entity_type": "route", "id": "r_mabashi_branch_line", "lang": "ja", "text": "馬橋支線 (武蔵野線)", "kind": "noritsubushi", "span": ["南流山", "馬橋"]}
+- {"entity_type": "route", "id": "r_kita_kogane_branch_line", "lang": "ja", "text": "北小金支線 (武蔵野線)", "kind": "noritsubushi", "span": ["南流山", "北小金"]}
+- {"entity_type": "route", "id": "r_tohoku_freight_line", "lang": "ja", "text": "東北貨物線 (東北本線)", "kind": "noritsubushi", "span": ["田端信号場", "上中里"]}
+- {"entity_type": "route", "id": "r_tabata_freight_line", "lang": "ja", "text": "田端貨物線 (常磐線)", "kind": "noritsubushi", "span": ["田端信号場", "三河島"]}
+- {"entity_type": "route", "id": "r_akitako_line", "lang": "ja", "text": "秋田港線 (奥羽本線)", "kind": "noritsubushi", "span": ["土崎", "秋田港"]}
+- {"entity_type": "route", "id": "r_shinkin_line", "lang": "ja", "text": "新金線 (総武本線)", "kind": "noritsubushi", "span": ["小岩", "金町"]}
+- {"entity_type": "route", "id": "r_hoppo_freight_line", "lang": "ja", "text": "北方貨物線 (東海道本線)", "kind": "noritsubushi", "span": ["吹田貨物ターミナル", "尼崎"]}
+- {"entity_type": "route", "id": "r_umeda_freight_line", "lang": "ja", "text": "梅田貨物線 (東海道本線)", "kind": "noritsubushi", "span": ["吹田貨物ターミナル", "福島"]}
+- {"entity_type": "route", "id": "r_hanwa_freight_line", "lang": "ja", "text": "阪和貨物線 (関西本線)", "kind": "noritsubushi", "span": ["八尾", "杉本町"]}
+- {"entity_type": "route", "id": "r_hanzomon_line_through_service", "lang": "ja", "text": "半蔵門線直通", "kind": "noritsubushi", "span": ["押上", "曳舟"]}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line", "lang": "ja", "text": "秩父鉄道連絡線 (長瀞方面)", "kind": "noritsubushi", "span": ["西武秩父（通過）", "西武秩父（御花畑方）"]}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line_branch", "lang": "ja", "text": "秩父鉄道連絡線 (三峰口方面)", "kind": "noritsubushi", "span": ["西武秩父", "西武秩父（影森方）"]}
+- {"entity_type": "route", "id": "r_matsuda_connecting_line", "lang": "ja", "text": "松田連絡線", "kind": "noritsubushi", "span": ["新松田", "松田"]}
+- {"entity_type": "route", "id": "r_unuma_connecting_line", "lang": "ja", "text": "鵜沼連絡線", "kind": "noritsubushi", "span": ["新鵜沼", "鵜沼"]}
+- {"entity_type": "route", "id": "r_yagi_connecting_line", "lang": "ja", "text": "八木連絡線", "kind": "noritsubushi", "span": ["大和八木（上本町方）", "大和八木（八木西口）"]}
+- {"entity_type": "route", "id": "r_ninokuchi_connecting_line", "lang": "ja", "text": "新ノ口連絡線", "kind": "noritsubushi", "span": ["大和八木（上本町方）", "新ノ口"]}
+- {"entity_type": "route", "id": "r_nakagawa_connecting_line", "lang": "ja", "text": "中川短絡線", "kind": "noritsubushi", "span": ["伊勢中川（上本町方）", "伊勢中川（名古屋方）"]}
+- {"entity_type": "route", "id": "r_namboku_line_kita_osaka_kyuko", "lang": "ja", "text": "南北線", "kind": "noritsubushi", "span": ["江坂", "箕面萱野"]}
+- {"entity_type": "route", "id": "r_donan_isaribi_railway_line", "lang": "ja", "text": "道南いさりび鉄道線", "kind": "noritsubushi", "span": ["五稜郭", "木古内"]}
+- {"entity_type": "route", "id": "r_aoimori_railway_line", "lang": "ja", "text": "青い森鉄道線", "kind": "noritsubushi", "span": ["目時", "青森"]}
+- {"entity_type": "route", "id": "r_rias_line", "lang": "ja", "text": "リアス線", "kind": "noritsubushi", "span": ["盛", "久慈"]}
+- {"entity_type": "route", "id": "r_chokai_sanroku_line", "lang": "ja", "text": "鳥海山ろく線", "kind": "noritsubushi", "span": ["羽後本荘", "矢島"]}
+- {"entity_type": "route", "id": "r_flower_nagai_line", "lang": "ja", "text": "フラワー長井線", "kind": "noritsubushi", "span": ["赤湯", "荒砥"]}
+- {"entity_type": "route", "id": "r_iizaka_line", "lang": "ja", "text": "飯坂線", "kind": "noritsubushi", "span": ["福島", "飯坂温泉"]}
+- {"entity_type": "route", "id": "r_hokuhoku_line", "lang": "ja", "text": "ほくほく線", "kind": "noritsubushi", "span": ["六日町", "犀潟"]}
+- {"entity_type": "route", "id": "r_bessho_line", "lang": "ja", "text": "別所線", "kind": "noritsubushi", "span": ["上田", "別所温泉"]}
+- {"entity_type": "route", "id": "r_kurobe_gorge_main_line", "lang": "ja", "text": "本線", "kind": "noritsubushi", "span": ["宇奈月", "欅平"]}
+- {"entity_type": "route", "id": "r_oarai_kashima_line", "lang": "ja", "text": "大洗鹿島線", "kind": "noritsubushi", "span": ["水戸", "鹿島サッカースタジアム"]}
+- {"entity_type": "route", "id": "r_moka_line_moka", "lang": "ja", "text": "真岡線", "kind": "noritsubushi", "span": ["下館", "茂木"]}
+- {"entity_type": "route", "id": "r_utsunomiya_haga_light_rail_line", "lang": "ja", "text": "宇都宮芳賀ライトレール線", "kind": "noritsubushi", "span": ["宇都宮駅東口", "芳賀・高根沢工業団地"]}
+- {"entity_type": "route", "id": "r_joshin_line", "lang": "ja", "text": "上信線", "kind": "noritsubushi", "span": ["高崎", "下仁田"]}
+- {"entity_type": "route", "id": "r_chichibu_main_line", "lang": "ja", "text": "秩父本線", "kind": "noritsubushi", "span": ["羽生", "三峰口"]}
+- {"entity_type": "route", "id": "r_choshi_electric_railway_line", "lang": "ja", "text": "銚子電気鉄道線", "kind": "noritsubushi", "span": ["銚子", "外川"]}
+- {"entity_type": "route", "id": "r_isumi_line", "lang": "ja", "text": "いすみ線", "kind": "noritsubushi", "span": ["大原", "上総中野"]}
+- {"entity_type": "route", "id": "r_hokuso_line", "lang": "ja", "text": "北総線", "kind": "noritsubushi", "span": ["京成高砂", "印旛日本医大"]}
+- {"entity_type": "route", "id": "r_shibayama_railway_line", "lang": "ja", "text": "芝山鉄道線", "kind": "noritsubushi", "span": ["東成田", "芝山千代田"]}
+- {"entity_type": "route", "id": "r_rinkai_line", "lang": "ja", "text": "りんかい線", "kind": "noritsubushi", "span": ["新木場", "大崎"]}
+- {"entity_type": "route", "id": "r_minatomirai_line", "lang": "ja", "text": "みなとみらい21線 (みなとみらい線)", "kind": "noritsubushi", "span": ["横浜", "元町・中華街"]}
+- {"entity_type": "route", "id": "r_gakunan_railway_line", "lang": "ja", "text": "岳南鉄道線", "kind": "noritsubushi", "span": ["吉原", "岳南江尾"]}
+- {"entity_type": "route", "id": "r_enshu_railway_line", "lang": "ja", "text": "鉄道線", "kind": "noritsubushi", "span": ["新浜松", "西鹿島"]}
+- {"entity_type": "route", "id": "r_aonami_line", "lang": "ja", "text": "西名古屋港線 (あおなみ線)", "kind": "noritsubushi", "span": ["名古屋", "金城ふ頭"]}
+- {"entity_type": "route", "id": "r_johoku_line_tokai_kotsu", "lang": "ja", "text": "城北線", "kind": "noritsubushi", "span": ["勝川", "枇杷島"]}
+- {"entity_type": "route", "id": "r_iga_line", "lang": "ja", "text": "伊賀線", "kind": "noritsubushi", "span": ["伊賀上野", "伊賀神戸"]}
+- {"entity_type": "route", "id": "r_yoro_line", "lang": "ja", "text": "養老線", "kind": "noritsubushi", "span": ["桑名", "揖斐"]}
+- {"entity_type": "route", "id": "r_etsumi_nan_line_nagaragawa", "lang": "ja", "text": "越美南線", "kind": "noritsubushi", "span": ["美濃太田", "北濃"]}
+- {"entity_type": "route", "id": "r_sagano_scenic_line", "lang": "ja", "text": "嵯峨野観光線", "kind": "noritsubushi", "span": ["トロッコ嵯峨", "トロッコ亀岡"]}
+- {"entity_type": "route", "id": "r_kishu_railway_line", "lang": "ja", "text": "紀州鉄道線", "kind": "noritsubushi", "span": ["御坊", "西御坊"]}
+- {"entity_type": "route", "id": "r_hojo_line_hojo", "lang": "ja", "text": "北条線", "kind": "noritsubushi", "span": ["粟生", "北条町"]}
+- {"entity_type": "route", "id": "r_ibara_line", "lang": "ja", "text": "井原線", "kind": "noritsubushi", "span": ["総社", "神辺"]}
+- {"entity_type": "route", "id": "r_chizu_express_line", "lang": "ja", "text": "智頭急行線", "kind": "noritsubushi", "span": ["上郡", "智頭"]}
+- {"entity_type": "route", "id": "r_asato_line", "lang": "ja", "text": "阿佐東線", "kind": "noritsubushi", "span": ["阿波海南（モードインターチェンジ）", "甲浦（モードインターチェンジ）"]}
+- {"entity_type": "route", "id": "r_amagi_line_amagi", "lang": "ja", "text": "甘木線", "kind": "noritsubushi", "span": ["基山", "甘木"]}
+- {"entity_type": "route", "id": "r_shimabara_railway_line", "lang": "ja", "text": "島原鉄道線", "kind": "noritsubushi", "span": ["諫早", "島原港"]}
+- {"entity_type": "route", "id": "r_shimabara_railway_line_shimabara_gaiko_kazusa", "lang": "ja", "text": "島原鉄道線", "kind": "noritsubushi", "span": ["島原外港", "加津佐"]}
+- {"entity_type": "route", "id": "r_takamori_line_minami_aso", "lang": "ja", "text": "高森線", "kind": "noritsubushi", "span": ["立野", "高森"]}
+- {"entity_type": "route", "id": "r_disney_resort_line", "lang": "ja", "text": "ディズニーリゾートライン", "kind": "noritsubushi", "span": ["リゾートゲートウェイ・ステーション", "リゾートゲートウェイ・ステーション"]}
+- {"entity_type": "route", "id": "r_tama_toshi_monorail_line", "lang": "ja", "text": "多摩都市モノレール線", "kind": "noritsubushi", "span": ["上北台", "多摩センター"]}
+- {"entity_type": "route", "id": "r_kokura_line", "lang": "ja", "text": "小倉線", "kind": "noritsubushi", "span": ["小倉", "企救丘"]}
+- {"entity_type": "route", "id": "r_new_shuttle", "lang": "ja", "text": "伊奈線", "kind": "noritsubushi", "span": ["大宮", "内宿"]}
+- {"entity_type": "route", "id": "r_yurikamome_line", "lang": "ja", "text": "東京臨海新交通臨海線", "kind": "noritsubushi", "span": ["新橋", "豊洲"]}
+- {"entity_type": "route", "id": "r_guideway_bus_shidami_line", "lang": "ja", "text": "ガイドウェイバス志段味線", "kind": "noritsubushi", "span": ["大曽根", "小幡緑地"]}
+- {"entity_type": "route", "id": "r_seikan_tunnel_tappi_shako_line", "lang": "ja", "text": "青函トンネル竜飛斜坑線", "kind": "noritsubushi", "span": ["青函トンネル記念館", "体験坑道"]}
+- {"entity_type": "route", "id": "r_takao_tozan_cable_car", "lang": "ja", "text": "ケーブルカー", "kind": "noritsubushi", "span": ["清滝", "高尾山"]}
+- {"entity_type": "route", "id": "r_oyama_cable_line", "lang": "ja", "text": "大山鋼索線", "kind": "noritsubushi", "span": ["大山ケーブル", "阿夫利神社"]}
+- {"entity_type": "route", "id": "r_sakamoto_cable", "lang": "ja", "text": "比叡山鉄道線 (坂本ケーブル)", "kind": "noritsubushi", "span": ["ケーブル坂本", "ケーブル延暦寺"]}
+- {"entity_type": "route", "id": "r_amanohashidate_cable_car", "lang": "ja", "text": "天橋立鋼索鉄道", "kind": "noritsubushi", "span": ["府中", "傘松"]}
+- {"entity_type": "route", "id": "r_maya_cable_line", "lang": "ja", "text": "摩耶ケーブル線", "kind": "noritsubushi", "span": ["摩耶ケーブル", "虹"]}
+- {"entity_type": "route", "id": "r_sarakurayama_cable_car", "lang": "ja", "text": "皿倉山ケーブルカー", "kind": "noritsubushi", "span": ["山麓", "山上"]}
+- {"entity_type": "route", "id": "r_linimo", "lang": "ja", "text": "東部丘陵線", "kind": "noritsubushi", "span": ["藤が丘", "八草"]}
+- {"entity_type": "route", "id": "r_monkey_park_monorail", "lang": "ja", "text": "モンキーパークモノレール線", "kind": "noritsubushi", "span": ["犬山遊園", "動物園"]}
+- {"entity_type": "route", "id": "r_ueno_zoo_monorail_line", "lang": "ja", "text": "上野懸垂線", "kind": "noritsubushi", "span": ["上野動物園東園", "上野動物園西園"]}
+- {"entity_type": "route", "id": "r_towada_kanko_electric_railway_line", "lang": "ja", "text": "十和田観光電鉄線", "kind": "noritsubushi", "span": ["三沢", "十和田市"]}
+- {"entity_type": "route", "id": "r_yashiro_line", "lang": "ja", "text": "屋代線", "kind": "noritsubushi", "span": ["屋代", "須坂"]}
+- {"entity_type": "route", "id": "r_kashima_railway_line", "lang": "ja", "text": "鹿島鉄道線", "kind": "noritsubushi", "span": ["石岡", "鉾田"]}
+- {"entity_type": "route", "id": "r_kamioka_line_kamioka", "lang": "ja", "text": "神岡線", "kind": "noritsubushi", "span": ["猪谷", "奥飛騨温泉口"]}
+- {"entity_type": "route", "id": "r_myokennomori_cable", "lang": "ja", "text": "妙見の森ケーブル", "kind": "noritsubushi", "span": ["黒川", "ケーブル山上"]}
+- {"entity_type": "route", "id": "r_takachiho_line_takachiho", "lang": "ja", "text": "高千穂線", "kind": "noritsubushi", "span": ["延岡", "高千穂"]}
+- {"entity_type": "route", "id": "r_tokadai_line", "lang": "ja", "text": "桃花台線", "kind": "noritsubushi", "span": ["小牧", "桃花台東"]}
+- {"entity_type": "route", "id": "r_tateyama_tunnel_trolleybus", "lang": "ja", "text": "無軌条電車 (立山トンネルトロリーバス)", "kind": "noritsubushi", "span": ["室堂", "大観峰"]}
+- {"entity_type": "route", "id": "r_sapporo_streetcar", "lang": "ja", "text": "1条線・山鼻線・山鼻西線・都心線", "kind": "noritsubushi", "span": ["西4丁目", "西4丁目"]}
+- {"entity_type": "route", "id": "r_tsugaru_railway_line", "lang": "ja", "text": "津軽鉄道線", "kind": "noritsubushi", "span": ["津軽五所川原", "津軽中里"]}
+- {"entity_type": "route", "id": "r_iwate_galaxy_railway_line", "lang": "ja", "text": "いわて銀河鉄道線", "kind": "noritsubushi", "span": ["盛岡", "目時"]}
+- {"entity_type": "route", "id": "r_sendai_airport_line", "lang": "ja", "text": "仙台空港線", "kind": "noritsubushi", "span": ["名取", "仙台空港"]}
+- {"entity_type": "route", "id": "r_akita_nairiku_line", "lang": "ja", "text": "秋田内陸線", "kind": "noritsubushi", "span": ["鷹巣", "角館"]}
+- {"entity_type": "route", "id": "r_abukuma_express_line", "lang": "ja", "text": "阿武隈急行線", "kind": "noritsubushi", "span": ["福島", "槻木"]}
+- {"entity_type": "route", "id": "r_aizu_line_aizu", "lang": "ja", "text": "会津線", "kind": "noritsubushi", "span": ["西若松", "会津高原尾瀬口"]}
+- {"entity_type": "route", "id": "r_nagano_line_nagano", "lang": "ja", "text": "長野線", "kind": "noritsubushi", "span": ["長野", "湯田中"]}
+- {"entity_type": "route", "id": "r_kamikochi_line", "lang": "ja", "text": "上高地線", "kind": "noritsubushi", "span": ["松本", "新島々"]}
+- {"entity_type": "route", "id": "r_ainokaze_toyama_railway_line", "lang": "ja", "text": "あいの風とやま鉄道線", "kind": "noritsubushi", "span": ["倶利伽羅", "市振"]}
+- {"entity_type": "route", "id": "r_ir_ishikawa_railway_line", "lang": "ja", "text": "IRいしかわ鉄道線", "kind": "noritsubushi", "span": ["大聖寺", "倶利伽羅"]}
+- {"entity_type": "route", "id": "r_minato_line", "lang": "ja", "text": "湊線", "kind": "noritsubushi", "span": ["勝田", "阿字ヶ浦"]}
+- {"entity_type": "route", "id": "r_aizu_kinugawa_line", "lang": "ja", "text": "会津鬼怒川線", "kind": "noritsubushi", "span": ["新藤原", "会津高原尾瀬口"]}
+- {"entity_type": "route", "id": "r_jomo_line", "lang": "ja", "text": "上毛線", "kind": "noritsubushi", "span": ["中央前橋", "西桐生"]}
+- {"entity_type": "route", "id": "r_watarase_keikoku_line", "lang": "ja", "text": "わたらせ渓谷線", "kind": "noritsubushi", "span": ["桐生", "間藤"]}
+- {"entity_type": "route", "id": "r_saitama_rapid_railway_line", "lang": "ja", "text": "埼玉高速鉄道線", "kind": "noritsubushi", "span": ["赤羽岩淵", "浦和美園"]}
+- {"entity_type": "route", "id": "r_kominato_railway_line", "lang": "ja", "text": "小湊鉄道線", "kind": "noritsubushi", "span": ["五井", "上総中野"]}
+- {"entity_type": "route", "id": "r_nagareyama_line", "lang": "ja", "text": "流山線", "kind": "noritsubushi", "span": ["馬橋", "流山"]}
+- {"entity_type": "route", "id": "r_toyo_rapid_railway_line", "lang": "ja", "text": "東葉高速線", "kind": "noritsubushi", "span": ["西船橋", "東葉勝田台"]}
+- {"entity_type": "route", "id": "r_tsukuba_express_line", "lang": "ja", "text": "つくばエクスプレス線", "kind": "noritsubushi", "span": ["秋葉原", "つくば"]}
+- {"entity_type": "route", "id": "r_enoshima_electric_railway_line", "lang": "ja", "text": "江ノ島電鉄線", "kind": "noritsubushi", "span": ["鎌倉", "藤沢"]}
+- {"entity_type": "route", "id": "r_izu_kyuko_line", "lang": "ja", "text": "伊豆急行線", "kind": "noritsubushi", "span": ["伊東", "伊豆急下田"]}
+- {"entity_type": "route", "id": "r_shizuoka_shimizu_line", "lang": "ja", "text": "静岡清水線", "kind": "noritsubushi", "span": ["新静岡", "新清水"]}
+- {"entity_type": "route", "id": "r_tenryu_hamanako_line", "lang": "ja", "text": "天竜浜名湖線", "kind": "noritsubushi", "span": ["掛川", "新所原"]}
+- {"entity_type": "route", "id": "r_aichi_loop_line", "lang": "ja", "text": "愛知環状鉄道線", "kind": "noritsubushi", "span": ["岡崎", "高蔵寺"]}
+- {"entity_type": "route", "id": "r_ise_line_ise", "lang": "ja", "text": "伊勢線", "kind": "noritsubushi", "span": ["河原田", "津"]}
+- {"entity_type": "route", "id": "r_tarumi_line_tarumi", "lang": "ja", "text": "樽見線", "kind": "noritsubushi", "span": ["大垣", "樽見"]}
+- {"entity_type": "route", "id": "r_akechi_line_akechi", "lang": "ja", "text": "明知線", "kind": "noritsubushi", "span": ["恵那", "明智"]}
+- {"entity_type": "route", "id": "r_hapi_line_fukui_line", "lang": "ja", "text": "ハピラインふくい線", "kind": "noritsubushi", "span": ["敦賀", "大聖寺"]}
+- {"entity_type": "route", "id": "r_shigaraki_line_shigaraki_kohgen", "lang": "ja", "text": "信楽線", "kind": "noritsubushi", "span": ["貴生川", "信楽"]}
+- {"entity_type": "route", "id": "r_mizuma_line", "lang": "ja", "text": "水間線", "kind": "noritsubushi", "span": ["貝塚", "水間観音"]}
+- {"entity_type": "route", "id": "r_kishigawa_line", "lang": "ja", "text": "貴志川線", "kind": "noritsubushi", "span": ["和歌山", "貴志"]}
+- {"entity_type": "route", "id": "r_mizushima_main_line", "lang": "ja", "text": "水島本線", "kind": "noritsubushi", "span": ["倉敷市", "三菱自工前"]}
+- {"entity_type": "route", "id": "r_nishikigawa_seiryu_line", "lang": "ja", "text": "錦川清流線", "kind": "noritsubushi", "span": ["川西", "錦町"]}
+- {"entity_type": "route", "id": "r_wakasa_line_wakasa", "lang": "ja", "text": "若桜線", "kind": "noritsubushi", "span": ["郡家", "若桜"]}
+- {"entity_type": "route", "id": "r_chikuho_electric_railroad", "lang": "ja", "text": "筑豊電気鉄道", "kind": "noritsubushi", "span": ["黒崎駅前", "筑豊直方"]}
+- {"entity_type": "route", "id": "r_nishi_kyushu_line", "lang": "ja", "text": "西九州線", "kind": "noritsubushi", "span": ["有田", "佐世保"]}
+- {"entity_type": "route", "id": "r_hisatsu_orange_line", "lang": "ja", "text": "肥薩おれんじ鉄道線", "kind": "noritsubushi", "span": ["八代", "川内"]}
+- {"entity_type": "route", "id": "r_yunomae_line_kumagawa", "lang": "ja", "text": "湯前線", "kind": "noritsubushi", "span": ["人吉温泉", "湯前"]}
+- {"entity_type": "route", "id": "r_tokyo_monorail_haneda_airport_line", "lang": "ja", "text": "東京モノレール羽田空港線", "kind": "noritsubushi", "span": ["モノレール浜松町", "羽田空港第2ターミナル"]}
+- {"entity_type": "route", "id": "r_enoshima_line_shonan_monorail", "lang": "ja", "text": "江の島線", "kind": "noritsubushi", "span": ["大船", "湘南江の島"]}
+- {"entity_type": "route", "id": "r_okinawa_urban_monorail_line", "lang": "ja", "text": "沖縄都市モノレール線 (ゆいレール)", "kind": "noritsubushi", "span": ["那覇空港", "てだこ浦西"]}
+- {"entity_type": "route", "id": "r_yukarigaoka_line", "lang": "ja", "text": "ユーカリが丘線", "kind": "noritsubushi", "span": ["ユーカリが丘", "公園"]}
+- {"entity_type": "route", "id": "r_kanazawa_seaside_line", "lang": "ja", "text": "金沢シーサイド線", "kind": "noritsubushi", "span": ["新杉田", "金沢八景"]}
+- {"entity_type": "route", "id": "r_astram_line", "lang": "ja", "text": "広島新交通1号線 (アストラムライン)", "kind": "noritsubushi", "span": ["本通", "広域公園前"]}
+- {"entity_type": "route", "id": "r_mount_tsukuba_cable_car", "lang": "ja", "text": "筑波山鋼索鉄道線", "kind": "noritsubushi", "span": ["宮脇", "筑波山頂"]}
+- {"entity_type": "route", "id": "r_mitake_tozan_cable_car", "lang": "ja", "text": "ケーブルカー", "kind": "noritsubushi", "span": ["滝本", "御岳山"]}
+- {"entity_type": "route", "id": "r_jukkokutoge_cable_car", "lang": "ja", "text": "十国鋼索線", "kind": "noritsubushi", "span": ["十国峠山麓", "十国峠山頂"]}
+- {"entity_type": "route", "id": "r_kuramayama_cable_line", "lang": "ja", "text": "鞍馬山鋼索鉄道線", "kind": "noritsubushi", "span": ["山門", "多宝塔"]}
+- {"entity_type": "route", "id": "r_rokko_cable_line", "lang": "ja", "text": "六甲ケーブル線", "kind": "noritsubushi", "span": ["六甲ケーブル下", "六甲山上"]}
+- {"entity_type": "route", "id": "r_yakuri_cable", "lang": "ja", "text": "八栗ケーブル", "kind": "noritsubushi", "span": ["八栗登山口", "八栗山上"]}
+- {"entity_type": "route", "id": "r_beppu_rakutenchi_cable_line", "lang": "ja", "text": "別府ラクテンチケーブル線", "kind": "noritsubushi", "span": ["雲泉寺(ラクテンチ下)", "乙原(ラクテンチ上)"]}
+- {"entity_type": "route", "id": "r_miyajidake_line", "lang": "ja", "text": "宮地岳線", "kind": "noritsubushi", "span": ["西鉄新宮", "津屋崎"]}
+- {"entity_type": "route", "id": "r_furusato_ginga_line", "lang": "ja", "text": "ふるさと銀河線", "kind": "noritsubushi", "span": ["池田", "北見"]}
+- {"entity_type": "route", "id": "r_kurihara_denen_railway_line", "lang": "ja", "text": "くりはら田園鉄道線", "kind": "noritsubushi", "span": ["石越", "細倉マインパーク前"]}
+- {"entity_type": "route", "id": "r_hitachi_electric_railway_line", "lang": "ja", "text": "日立電鉄線", "kind": "noritsubushi", "span": ["常北太田", "鮎川"]}
+- {"entity_type": "route", "id": "r_miki_line_miki", "lang": "ja", "text": "三木線", "kind": "noritsubushi", "span": ["厄神", "三木"]}
+- {"entity_type": "route", "id": "r_seno_line", "lang": "ja", "text": "広島短距離交通瀬野線", "kind": "noritsubushi", "span": ["みどり口", "みどり中央"]}
+- {"entity_type": "route", "id": "r_kanden_tunnel_trolleybus", "lang": "ja", "text": "無軌条電車 (関電トンネルトロリーバス)", "kind": "noritsubushi", "span": ["扇沢", "黒部ダム"]}
+- {"entity_type": "route", "id": "r_nambu_jukan_railway_line", "lang": "ja", "text": "南部縦貫鉄道線", "kind": "noritsubushi", "span": ["野辺地", "七戸"]}
+- {"entity_type": "route", "id": "r_osho_line", "lang": "ja", "text": "横荘線", "kind": "noritsubushi", "span": ["沼館", "横手"]}
+- {"entity_type": "route", "id": "r_ogachi_line", "lang": "ja", "text": "雄勝線", "kind": "noritsubushi", "span": ["西馬音内", "湯沢"]}
+- {"entity_type": "route", "id": "r_kashima_rinko_line", "lang": "ja", "text": "鹿島臨港線", "kind": "noritsubushi", "span": ["鹿島サッカースタジアム", "鹿島港南"]}
+- {"entity_type": "route", "id": "r_hokutan_railway", "lang": "ja", "text": "北丹鉄道", "kind": "noritsubushi", "span": ["福知山", "河守"]}
+- {"entity_type": "route", "id": "r_kompoku_line", "lang": "ja", "text": "根北線", "kind": "noritsubushi", "span": ["斜里", "越川"]}
+- {"entity_type": "route", "id": "r_suttsu_railway", "lang": "ja", "text": "寿都鉄道", "kind": "noritsubushi", "span": ["黒松内", "寿都"]}
+- {"entity_type": "route", "id": "r_mitsui_ashibetsu_railway", "lang": "ja", "text": "三井芦別鉄道", "kind": "noritsubushi", "span": ["芦別", "玉川(北海道)"]}
+- {"entity_type": "route", "id": "r_oyubari_railway", "lang": "ja", "text": "大夕張鉄道", "kind": "noritsubushi", "span": ["清水沢", "大夕張炭山"]}
+- {"entity_type": "route", "id": "r_yubetsu_railway", "lang": "ja", "text": "雄別鉄道", "kind": "noritsubushi", "span": ["釧路", "雄別炭山"]}
+- {"entity_type": "route", "id": "r_rumoi_railway", "lang": "ja", "text": "留萠鉄道", "kind": "noritsubushi", "span": ["恵比島", "昭和"]}
+- {"entity_type": "route", "id": "r_yunohama_line", "lang": "ja", "text": "湯野浜線", "kind": "noritsubushi", "span": ["鶴岡", "湯野浜温泉"]}
+- {"entity_type": "route", "id": "r_sanzan_line", "lang": "ja", "text": "三山線", "kind": "noritsubushi", "span": ["羽前高松", "間沢"]}
+- {"entity_type": "route", "id": "r_takahata_line", "lang": "ja", "text": "高畠線", "kind": "noritsubushi", "span": ["糠ノ目", "高畠"]}
+- {"entity_type": "route", "id": "r_ibaraki_line", "lang": "ja", "text": "茨城線", "kind": "noritsubushi", "span": ["赤塚", "大学前(茨城)"]}
+- {"entity_type": "route", "id": "r_kumagaya_line", "lang": "ja", "text": "熊谷線", "kind": "noritsubushi", "span": ["熊谷", "妻沼"]}
+- {"entity_type": "route", "id": "r_nagaoka_line", "lang": "ja", "text": "長岡線", "kind": "noritsubushi", "span": ["来迎寺", "寺泊新道"]}
+- {"entity_type": "route", "id": "r_tochio_line", "lang": "ja", "text": "栃尾線", "kind": "noritsubushi", "span": ["悠久山", "栃尾"]}
+- {"entity_type": "route", "id": "r_kubiki_railway", "lang": "ja", "text": "頸城鉄道", "kind": "noritsubushi", "span": ["百間町", "飯室"]}
+- {"entity_type": "route", "id": "r_kimmei_line", "lang": "ja", "text": "金名線", "kind": "noritsubushi", "span": ["加賀一の宮", "白山下"]}
+- {"entity_type": "route", "id": "r_nomi_line", "lang": "ja", "text": "能美線", "kind": "noritsubushi", "span": ["鶴来", "新寺井"]}
+- {"entity_type": "route", "id": "r_kanaiwa_line", "lang": "ja", "text": "金石線", "kind": "noritsubushi", "span": ["中橋", "大野港"]}
+- {"entity_type": "route", "id": "r_yamanaka_line", "lang": "ja", "text": "山中線", "kind": "noritsubushi", "span": ["山中", "大聖寺"]}
+- {"entity_type": "route", "id": "r_yamashiro_line", "lang": "ja", "text": "山代線", "kind": "noritsubushi", "span": ["河南", "新動橋"]}
+- {"entity_type": "route", "id": "r_komatsu_line", "lang": "ja", "text": "小松線", "kind": "noritsubushi", "span": ["小松", "鵜川遊泉寺"]}
+- {"entity_type": "route", "id": "r_noto_line_hokuriku", "lang": "ja", "text": "能登線", "kind": "noritsubushi", "span": ["羽咋", "三明"]}
+- {"entity_type": "route", "id": "r_nan_etsu_line", "lang": "ja", "text": "南越線", "kind": "noritsubushi", "span": ["社武生", "戸ノ口"]}
+- {"entity_type": "route", "id": "r_kasahara_line", "lang": "ja", "text": "笠原線", "kind": "noritsubushi", "span": ["新多治見", "笠原"]}
+- {"entity_type": "route", "id": "r_dachi_line", "lang": "ja", "text": "駄知線", "kind": "noritsubushi", "span": ["土岐市", "東駄知"]}
+- {"entity_type": "route", "id": "r_ibi_line", "lang": "ja", "text": "揖斐線", "kind": "noritsubushi", "span": ["忠節", "本揖斐"]}
+- {"entity_type": "route", "id": "r_tanigumi_line", "lang": "ja", "text": "谷汲線", "kind": "noritsubushi", "span": ["黒野", "谷汲"]}
+- {"entity_type": "route", "id": "r_yaotsu_line", "lang": "ja", "text": "八百津線", "kind": "noritsubushi", "span": ["明智(名古屋鉄道)", "八百津"]}
+- {"entity_type": "route", "id": "r_minomachi_line", "lang": "ja", "text": "美濃町線", "kind": "noritsubushi", "span": ["徹明町", "美濃"]}
+- {"entity_type": "route", "id": "r_tennoji_branch_line", "lang": "ja", "text": "天王寺支線", "kind": "noritsubushi", "span": ["天王寺", "天下茶屋"]}
+- {"entity_type": "route", "id": "r_noguchi_line", "lang": "ja", "text": "野口線", "kind": "noritsubushi", "span": ["野口", "別府港"]}
+- {"entity_type": "route", "id": "r_nogami_electric_railway", "lang": "ja", "text": "野上電気鉄道", "kind": "noritsubushi", "span": ["日方", "登山口"]}
+- {"entity_type": "route", "id": "r_tamano_municipal_electric_railway", "lang": "ja", "text": "玉野市営電気鉄道", "kind": "noritsubushi", "span": ["宇野", "玉遊園地前"]}
+- {"entity_type": "route", "id": "r_katakami_railway", "lang": "ja", "text": "片上鉄道", "kind": "noritsubushi", "span": ["片上(岡山)", "柵原"]}
+- {"entity_type": "route", "id": "r_yabakei_line", "lang": "ja", "text": "耶馬渓線", "kind": "noritsubushi", "span": ["中津", "守実温泉"]}
+- {"entity_type": "route", "id": "r_makurazaki_line", "lang": "ja", "text": "枕崎線", "kind": "noritsubushi", "span": ["伊集院", "枕崎"]}
+- {"entity_type": "route", "id": "r_yubari_line_noborikawa_branch", "lang": "ja", "text": "夕張線登川支線", "kind": "noritsubushi", "span": ["紅葉山", "登川"]}
+- {"entity_type": "route", "id": "r_tagami_line", "lang": "ja", "text": "田神線", "kind": "noritsubushi", "span": ["競輪場前", "田神"]}
+- {"entity_type": "route", "id": "r_eiheiji_line", "lang": "ja", "text": "永平寺線", "kind": "noritsubushi", "span": ["東古市", "永平寺"]}

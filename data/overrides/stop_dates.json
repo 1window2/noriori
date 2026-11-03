@@ -1,0 +1,289 @@
+{
+"n_igiri": [
+"1978-07-25",
+"1978-11-01"
+],
+"n_yuki_meitetsu": [
+null,
+"1990-04-23"
+],
+"n_kojo": [
+null,
+"1944-10-25"
+],
+"n_shuparoko": [
+null,
+"1969-10-01"
+],
+"n_takarasawa": [
+"1952-05-01",
+"1963-07-15"
+],
+"n_hondorijokojo": [
+"1952-05-01",
+null
+],
+"n_fukuroji": [
+"1952-05-01",
+null
+],
+"n_horoshin": [
+null,
+"1969-05-01"
+],
+"n_shinuryu": [
+null,
+"1969-05-01"
+],
+"n_seki_meitetsu": [
+"1999-04-01",
+null
+],
+"n_nakakoshi": [
+null,
+"2001-07-01"
+],
+"n_kamikoshi": [
+null,
+"1975-12-25"
+],
+"n_okushirataki": [
+null,
+"2001-07-01"
+],
+"r_fukutoshin_line|n_senkawa": [
+"2008-06-14",
+null
+],
+"r_fukutoshin_line|n_kanamecho": [
+"2008-06-14",
+null
+],
+"r_tokaido_shinkansen|n_mishima": [
+"1969-04-25",
+null
+],
+"r_tokaido_shinkansen|n_kakegawa": [
+"1988-03-13",
+null
+],
+"r_sanyo_shinkansen|n_asa": [
+"1999-03-13",
+null
+],
+"r_tokaido_main_line_shinagawa_tsurumi|n_musashi_kosugi": [
+"2010-03-13",
+null
+],
+"r_chihoku_line|n_okamedo": [
+"1995-09-04",
+null
+],
+"n_nishitetsusakaemachi": [
+"1938-10-01",
+"1970-04-28"
+],
+"n_otsukahonmachi": [
+"1946-03-01",
+null
+],
+"n_omachi_toyama_chiho": [
+"1933-01-09",
+null
+],
+"n_sawanakayama": [
+"1921-03-19",
+null
+],
+"n_monju": [
+"1941-07-01",
+null
+],
+"r_umeda_freight_line|n_osaka": [
+"2023-03-18",
+null
+],
+"r_chihoku_line|n_takashima_chihoku": [
+"1910-09-22",
+null
+],
+"n_toyohoro_aioi": [
+"1955-08-20",
+null
+],
+"n_kyoei_shiranuka": [
+"1974-07-25",
+null
+],
+"n_hanaoka": [
+"1956-08-20",
+null
+],
+"n_fukushima_yumo": [
+"1955-12-25",
+null
+],
+"n_omagari_yumo": [
+"1955-12-25",
+null
+],
+"r_kaikyo_line|n_shiriuchi": [
+"1990-07-01",
+"2014-03-15"
+],
+"n_washinosu": [
+"1987-04-01",
+null
+],
+"r_kaikyo_line|n_kikonai": [
+null,
+"2016-03-26"
+],
+"r_noto_line_noto|n_ushitsu": [
+null,
+"2005-04-01"
+],
+"r_sagami_line_samukawa_nishi_samukawa|n_samukawa": [
+null,
+"1984-04-01"
+],
+"r_sagami_line_samukawa_nishi_samukawa|n_nishi_samukawa": [
+null,
+"1984-04-01"
+],
+"r_tempoku_line|n_minami_wakkanai": [
+null,
+"1989-05-01"
+],
+"r_urushio_line|n_shimo_kamoo": [
+null,
+"1986-04-01"
+],
+"r_hokuriku_shinkansen|n_kanazawa": [
+"2015-03-14",
+null
+],
+"r_komaki_line|n_kamiiida_meitetsu": [
+"1931-02-11",
+null
+],
+"r_utsube_line|n_asunarou_yokkaichi": [
+"1956-09-23",
+null
+],
+"r_kikuchi_line_kumamoto_kosen_mae_miyoshi|n_miyoshi_kumamoto": [
+null,
+"2022-10-10"
+],
+"r_tokyo_monorail_haneda_airport_line|n_tenkubashi_tokyo_monorail": [
+"1964-09-17",
+null
+],
+"r_azumada_main_line|n_ekimae": [
+"1950-08-26",
+null
+],
+"r_nishiurawa_branch_line|n_yono": [
+"1985-09-30",
+null
+],
+"r_tokaido_freight_line|n_tsurumi": [
+"1980-10-01",
+null
+],
+"r_sapporo_streetcar|n_nishi_8_chome": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_chuotoshokanmae": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_seishugakuenmae": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_higashihonganjimae": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_chuokuyakushomae": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_yamahanajukujo": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishisenjuichijo": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_gyokeidori": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_yamahanakujo": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_konanshogakkomae": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_susukino_sapporo_tsc": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_higashitondendori": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishisenkujoasahiyamakoendori": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishisenrokujo": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_ishiyamadori": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_denshajigyoshomae": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_ropeway_iriguchi": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nakajimakoendori": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishisenjurokujo": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishi_15_chome": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishi_4_chome": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_nishisenjuyojo": [
+"1931-XX-XX",
+null
+],
+"r_sapporo_streetcar|n_shiseikanshogakkomae": [
+"1931-XX-XX",
+null
+],
+"r_shinmei_line|n_omagari_shinmei": [null, "1995-09-04"],
+"r_nayoro_main_line|n_kawamukai": [null, "1989-05-01"],
+"r_ujina_line_hiroden|n_keirinjoiriguchi": [null, "194X-XX-XX"]
+}

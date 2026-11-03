@@ -1,0 +1,101 @@
+{
+"r_yamanote_freight_line": {
+"end": [
+"n_kami_nakazato",
+"n_mikawashima"
+]
+},
+"r_tohoku_freight_line": {
+"start": [
+"n_komagome",
+"n_mikawashima"
+]
+},
+"r_tabata_freight_line": {
+"start": [
+"n_komagome",
+"n_kami_nakazato"
+]
+},
+"r_hoppo_freight_line": {
+"start": [
+"n_kishibe"
+]
+},
+"r_umeda_freight_line": {
+"start": [
+"n_kishibe"
+]
+},
+"r_higashi_narita_line": {
+"start": [
+"n_keisei_narita"
+]
+},
+"r_enoshima_line_odakyu": {
+"start": [
+"n_sagami_ono"
+]
+},
+"r_inuyama_line": {
+"start": [
+"n_higashi_biwajima"
+]
+},
+"r_tramway_toyama_station_north_south_link": {
+"start": [
+"n_dentetsu_toyama_station_esta_mae",
+"n_shintomicho_toyama_chiho"
+]
+},
+"r_sangi_line": {
+"start": [
+"n_kintetsu_tomida_sangi"
+]
+},
+"r_kintetsu_connecting_line": {
+"start": [
+"n_oyachi_sangi"
+]
+},
+"r_chichibu_railway_connecting_line": {
+"start": [
+"n_yokoze"
+],
+"end": [
+"n_ohanabatake"
+]
+},
+"r_chichibu_railway_connecting_line_branch": {
+"end": [
+"n_kagemori"
+]
+},
+"r_yagi_connecting_line": {
+"start": [
+"n_masuga"
+],
+"end": [
+"n_yamato_yagi"
+]
+},
+"r_ninokuchi_connecting_line": {
+"start": [
+"n_masuga"
+]
+},
+"r_nakagawa_connecting_line": {
+"start": [
+"n_kawai_takaoka"
+],
+"end": [
+"n_ise_nakahara"
+]
+},
+"r_kikuchi_line_kumamoto_kosen_mae_miyoshi": {
+"start": [
+"n_kuroishi_kumamoto"
+],
+"from": "1913-08-27"
+}
+}

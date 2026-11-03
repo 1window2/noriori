@@ -1,0 +1,641 @@
+{
+  "app": {
+    "name": "noriori",
+    "loadFailed": "読み込めませんでした。アプリを開き直してください"
+  },
+  "tabs": {
+    "map": "地図",
+    "record": "記録",
+    "stats": "統計",
+    "settings": "設定"
+  },
+  "start": {
+    "loading": "準備しています",
+    "updateTitle": "アプリを更新してください",
+    "updateBody": "記録はこのアプリより新しいバージョンで保存されています。記録はそのまま残っています。",
+    "retryTitle": "記録を開けませんでした",
+    "retryBody": "記録はそのまま残っています。しばらくしてからもう一度お試しください。",
+    "restoreTitle": "記録ファイルが破損しています",
+    "restoreBody": "破損したファイルは保管しました。バックアップファイルから復元できます。",
+    "retry": "再試行",
+    "noSpaceTitle": "空き容量が足りません",
+    "noSpaceBody": "記録はそのまま残っています。空き容量を確保してからもう一度お試しください。",
+    "restoreAction": "復元する"
+  },
+  "map": {
+    "soloOff": "全路線を表示",
+    "scoreLabel": "現行",
+    "add": "記録",
+    "search": "路線・駅を検索",
+    "closed": "廃線",
+    "names": "駅名",
+    "wholeJapan": "全国を表示",
+    "firstRide": "最初の乗車を記録しましょう",
+    "firstRideHint": "路線を選んで2駅をタップするだけです",
+    "left": "残り $km km",
+    "continueTitle": "乗りつぶし中の路線",
+    "onlyRidden": "乗車済のみ",
+    "sheetHandle": "乗りつぶし中の路線一覧を開く",
+    "year": "年",
+    "yearHint": "その年までに乗った区間だけ色が付きます",
+    "heat": "都道府県"
+  },
+  "record": {
+    "viaService": "$nameで乗車",
+    "empty": "まだ記録がありません",
+    "emptyHint": "路線一覧や検索から最初の乗車を記録しましょう",
+    "add": "記録を追加",
+    "dateUnknown": "日付不明",
+    "status": {
+      "partial": "一部のみ確定",
+      "needsInput": "要確認",
+      "unknownRef": "要確認",
+      "invalid": "要確認",
+      "error": "計算失敗"
+    },
+    "deleted": "記録を削除しました",
+    "undo": "元に戻す",
+    "delete": "削除",
+    "km": "$km km",
+    "view": {
+      "lines": "路線",
+      "rides": "乗車記録",
+      "visits": "駅訪問",
+      "trips": "旅程"
+    },
+    "era": {
+      "current": "現行",
+      "closed": "廃線"
+    },
+    "category": {
+      "jr": "JR",
+      "majorPrivate": "大手私鉄",
+      "semiMajorPrivate": "準大手私鉄",
+      "public": "公営",
+      "generalPrivate": "中小私鉄・三セク",
+      "monorail": "モノレール",
+      "agt": "新交通",
+      "cable": "鋼索線"
+    },
+    "title": "記録",
+    "currentLabel": "現行路線網",
+    "closedLabel": "廃止区間",
+    "of": "$km km 中",
+    "lineCount": "路線 $num / $den",
+    "completeCount": "完乗 $num",
+    "filter": {
+      "all": "すべて",
+      "riding": "一部乗車",
+      "unridden": "未乗の路線",
+      "complete": "完乗"
+    },
+    "lineSub": "$era · $num / $den km · $percent",
+    "filterEmpty": "該当する路線がありません",
+    "picked": "$count件選択",
+    "pickAll": "すべて"
+  },
+  "stats": {
+    "decade": "$year年代",
+    "totalRidden": "累計乗車距離 $km km",
+    "empty": "記録を追加すると完乗率が表示されます",
+    "current": "現行",
+    "allTime": "廃線含む",
+    "ridden": "$num / $den km",
+    "operators": "事業者",
+    "lines": "路線",
+    "title": "統計",
+    "year": "年",
+    "yearPick": "年を選択",
+    "yearLabel": "$year年",
+    "rodeOf": "$num / $den km",
+    "month": "今月 +$km km",
+    "kpi": {
+      "lines": "乗車路線",
+      "complete": "完乗",
+      "stations": "経由駅",
+      "operators": "事業者"
+    },
+    "nearly": "もうすぐ完乗",
+    "left": "残り $km km",
+    "prefs": "都道府県",
+    "prefHint": "乗車率",
+    "prefLabel": "$name $percent",
+    "visited": {
+      "other": "乗降・訪問した駅 $n駅"
+    },
+    "review": {
+      "other": "要確認 $n件 · $km km"
+    },
+    "badges": {
+      "other": "バッジ$n個"
+    },
+    "visitedClosed": "廃駅$n駅"
+  },
+  "settings": {
+    "language": "言語",
+    "version": "アプリのバージョン",
+    "dataEdition": "データのバージョン",
+    "packSummary": "駅 $stations · 路線 $lines",
+    "data": "バックアップと復元",
+    "licenses": "オープンソースライセンス",
+    "sources": "データの出典",
+    "showClosed": "廃駅・廃線を表示",
+    "showArchive": "記録対象外の駅・路線も表示",
+    "showBranches": "分岐する路線を表示",
+    "theme": "テーマ",
+    "themeLight": "ライト",
+    "themeDark": "ダーク",
+    "themeSystem": "システム設定",
+    "carryover": "事業者変更時に記録を引き継ぐ",
+    "carryoverHint": "オフにするとJRから移管された区間を新しい路線として数えます"
+  },
+  "search": {
+    "hint": "路線名・駅名",
+    "prompt": "路線や駅を検索して始めましょう",
+    "none": "見つかりませんでした"
+  },
+  "session": {
+    "laps": {
+      "other": "$n周"
+    },
+    "lapLess": "1周減らす",
+    "lapMore": "1周増やす",
+    "away": {
+      "other": "+$n駅"
+    },
+    "dateTitle": "乗車日",
+    "dateHint": "2015, 2015-03, 2015-03-14, 198X",
+    "dateUnknown": "日付不明",
+    "datePick": "カレンダーから選ぶ",
+    "dateBad": "日付の形式を確認してください",
+    "apply": "適用",
+    "cancel": "キャンセル",
+    "main": "本線",
+    "pickFrom": "乗車駅を選んでください",
+    "pickTo": "降車駅を選んでください",
+    "save": "記録する",
+    "summary": "$from → $to · $km km",
+    "noPath": "この2駅の間の経路が見つかりませんでした",
+    "state": {
+      "maybe": "?",
+      "suspended": "運休",
+      "until": "~$year",
+      "since": "$year~",
+      "span": "$from~$to"
+    },
+    "savedAs": "当時は$line",
+    "chooseDirection": "どちら回りで乗りましたか？",
+    "directionKm": "$km km",
+    "chooseRelocation": "どの時期の線路でしたか？",
+    "relocationOption": "$date時点 · $km km",
+    "dontKnow": "わからない",
+    "today": "今日",
+    "findStop": "駅を検索",
+    "meta": "$operator · $km",
+    "fresh": "新規乗車 $km km",
+    "noFresh": "乗車済の区間です",
+    "change": "$before → $after",
+    "nonePickable": "この日付に選べる駅がありません。乗車日を変えてみてください",
+    "maybeHint": "この日付に営業していたか確認できていません",
+    "saveFailed": "保存できませんでした。記録は変わっていません",
+    "spokenKm": "$kmキロメートル",
+    "spokenTransfer": {
+      "other": "乗換 $n路線"
+    },
+    "spokenFrom": "乗車駅に選択",
+    "spokenTo": "降車駅に選択",
+    "showClosed": "廃駅・廃線を表示",
+    "showArchive": "記録対象外の駅・路線も表示",
+    "returnsTo": "$nameに戻る",
+    "clear": "解除",
+    "lap": "1周",
+    "stops": {
+      "other": "$n駅"
+    },
+    "closedSection": "~$year 廃止",
+    "archiveStop": "$name（$year年廃止）は記録対象外です",
+    "archiveLine": "$nameは記録対象外です",
+    "from": "乗車",
+    "to": "降車",
+    "whyClosed": "その日付には営業していなかった駅です",
+    "whySuspended": "その日付には運休中の区間です",
+    "bound": "$names方面",
+    "spokenClosed": "$year年廃止",
+    "spokenBranch": "$line、$next方面の分岐",
+    "leaving": "$nameから乗車",
+    "progress": "$num / $den km ($percent)",
+    "leaveTitle": "選択が解除されます",
+    "leaveBody": "別の路線に移動すると、選択中の駅は解除されます。",
+    "leave": "移動する",
+    "dateDemoted": "選んだ区間はその日付に存在しないため、日付不明にしました",
+    "repick": "別の駅をタップすると選び直せます",
+    "closedUnknown": "廃止区間",
+    "relocationOld": "旧線 · $km km",
+    "relocationNew": "新線 · $km km",
+    "spokenOpen": "営業中",
+    "spokenRidden": "乗車済み"
+  },
+  "data": {
+    "title": "バックアップと復元",
+    "folder": "バックアップフォルダ",
+    "folderHint": "アプリを削除しても残る場所を選んでください",
+    "folderNone": "未選択",
+    "insideApp": "アプリを削除すると一緒に消える場所です。別のフォルダを選んでください",
+    "lastBackup": "最終バックアップ",
+    "never": "なし",
+    "lastFailed": "前回のバックアップに失敗しました",
+    "backupNow": "今すぐバックアップ",
+    "restore": "復元",
+    "restoreHint": "バックアップファイルを現在の記録に統合します。同じ記録は後から編集した方が残るので、新しい記録は消えません。",
+    "noFiles": "このフォルダにバックアップファイルがありません",
+    "fileRows": {
+      "other": "記録 $n件"
+    },
+    "fileTooNew": "アプリを更新すると読み込めます",
+    "fileUnreadable": "読み込めないファイルです",
+    "merged": {
+      "other": "$n件を取り込みました"
+    },
+    "refused": "このファイルは復元できません",
+    "exportQuarantined": "破損したファイルを書き出す",
+    "exportHint": "バックアップフォルダにコピーを保存します",
+    "exported": {
+      "other": "$n個のファイルを書き出しました"
+    },
+    "finish": "復元を完了して始める",
+    "notice": {
+      "needsMerge": "バックアップフォルダにこの端末より新しい記録があります。復元してください",
+      "failed": "自動バックアップに失敗しました",
+      "folderLost": "バックアップフォルダを選び直してください",
+      "unreadable": "バックアップフォルダに読み込めないファイルがあります",
+      "stale": "変更した記録が1週間以上バックアップされていません",
+      "noFolder": "バックアップフォルダを選んで記録を守りましょう"
+    },
+    "exportCompat": "CSV書き出し (乗りつぶしオンライン互換)",
+    "exportCompatHint": "乗りつぶしオンラインと同じ形式で送ります",
+    "exportFull": "CSV書き出し (完全版)",
+    "exportFullHint": "経路と日付まで含めて送ります",
+    "exportedUtf8": "シフトJISにない文字があるためUTF-8で保存しました: $name",
+    "exportFailed": "書き出せませんでした",
+    "exportBackup": "バックアップを書き出す",
+    "exportBackupHint": "今の記録を1つのファイルにして送ります",
+    "restoreFile": "ファイルから復元",
+    "restoreFileHint": "書き出したバックアップを選びます"
+  },
+  "importing": {
+    "title": "乗りつぶしオンラインから取り込む",
+    "entryHint": "ダウンロードしたCSVを現在の記録に追加します",
+    "hint": "乗りつぶしオンラインの「登録した記録を編集する」画面の下部からダウンロードしたCSVファイルを選んでください。コメント付きのCSVも使えます。",
+    "choose": "ファイルを選ぶ",
+    "refused": "乗りつぶしオンラインのCSVではありません: $name。別のファイルを選んでください。",
+    "failed": "取り込めませんでした。記録は変わっていません。",
+    "undone": "元に戻しました。削除した記録は再度取り込むときに選べます。",
+    "file": "ファイル",
+    "fresh": "新しい記録",
+    "rows": "$count件",
+    "distance": "記録距離の合計",
+    "existing": "すでにある記録",
+    "deleted": "削除した記録も再度取り込む",
+    "missed": {
+      "other": "一致しなかった行 $count件"
+    },
+    "missedHint": "記録としては残りますが完乗率には含まれません",
+    "broken": {
+      "other": "読み込めなかった行 $count件"
+    },
+    "brokenHint": "形式が崩れているため取り込みません",
+    "kmDiffers": {
+      "other": "距離が異なる行 $count件"
+    },
+    "kmDiffersHint": "ファイルの距離とアプリの距離が異なります",
+    "kmDiffersRow": "$raw → アプリ ${km}km",
+    "nothing": "新しく取り込む記録はありません",
+    "confirm": {
+      "other": "$count件を取り込む"
+    },
+    "done": {
+      "other": "$count件を取り込みました"
+    },
+    "close": "閉じる",
+    "undo": "元に戻す",
+    "fullHint": "noriori完全版です。記録$count件のうち、ないものだけを追加します。",
+    "merged": {
+      "other": "$n件を追加しました"
+    }
+  },
+  "ticket": {
+    "completeStamp": "完乗",
+    "rideStamp": "乗車",
+    "undo": "元に戻す",
+    "savedUnknown": "この日付では記録できないため、日付不明で保存しました",
+    "noDate": "日付不明"
+  },
+  "sources": {
+    "title": "データの出典",
+    "intro": "名称、距離、日付などの事実情報を複数の出典から集めて作成しました。norioriのデータはCC BY-SA 4.0で配布します。線路形状は下記の原資料の条件に従い、OSM線路ファイルのみODbL 1.0です。",
+    "n02": {
+      "name": "国土数値情報 鉄道データ (N02)",
+      "use": "線路形状、駅座標の補正",
+      "terms": "国土交通省。2020年以降の版はCC BY 4.0、それ以前の版は国土数値情報の利用条件。「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "n03": {
+      "name": "国土数値情報 行政区域データ (N03)",
+      "use": "日本の輪郭と都道府県境",
+      "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "stationDatabase": {
+      "name": "station_database",
+      "use": "駅一覧と座標",
+      "terms": "Seo-4d696b75. CC BY-SA 4.0"
+    },
+    "wikipedia": {
+      "name": "日本語版ウィキペディア",
+      "use": "路線図、接続、廃線履歴、読み",
+      "terms": "CC BY-SA 4.0"
+    },
+    "wikidata": {
+      "name": "Wikidata",
+      "use": "英語名、一部の駅座標",
+      "terms": "CC0 1.0"
+    },
+    "namuwiki": {
+      "name": "ナムウィキ",
+      "use": "韓国語の見出し表記。本文は使用しません",
+      "terms": "サイトライセンス CC BY-NC-SA 2.0 KR"
+    },
+    "noritsubushi": {
+      "name": "乗りつぶしオンライン",
+      "use": "営業キロ、駅の順序、開業日・廃止日、日本語表記",
+      "terms": "事実情報として使用"
+    },
+    "openFreeMap": {
+      "name": "OpenFreeMap",
+      "use": "背景地図",
+      "terms": "OpenFreeMap © OpenMapTiles. Data from OpenStreetMap"
+    },
+    "openStreetMap": {
+      "name": "OpenStreetMap",
+      "use": "N02にない線路形状",
+      "terms": "© OpenStreetMap contributors. ODbL 1.0。rail-osm.pmtilesのみ"
+    },
+    "noto": {
+      "name": "Noto Sans, Noto Sans CJK",
+      "use": "地図の駅名の文字",
+      "terms": "SIL OFL 1.1。全文はオープンソースライセンス画面にあります"
+    }
+  },
+  "editRide": {
+    "saved": "修正しました",
+    "transfers": "ここで乗り換えた",
+    "transfersHint": "通過した駅のうち、降りて乗り換えた駅を選びます",
+    "title": "記録の編集",
+    "missing": "記録が見つかりませんでした",
+    "date": "乗車日",
+    "times": "時刻",
+    "train": "列車名",
+    "car": "編成",
+    "note": "メモ",
+    "fromAlighted": "始点の駅で実際に乗車した",
+    "toAlighted": "終点の駅で実際に降車した",
+    "save": "保存",
+    "delete": "削除",
+    "failed": "保存できませんでした。記録は変わっていません"
+  },
+  "lineDetail": {
+    "soloMap": "地図でこの路線だけ表示",
+    "current": "現行",
+    "allTime": "廃止区間含む",
+    "km": "$num / $den km",
+    "completeCurrent": "完乗",
+    "completeAllTime": "廃止区間含め完乗",
+    "selfScore": "全体の集計対象外の路線です。この路線の中だけで乗車率を計算します。",
+    "open": "路線詳細",
+    "record": "この路線を記録する",
+    "clear": "この路線の記録をすべて消す",
+    "hint": "区間をタップすると乗車済・未乗が切り替わります。長押ししたままなぞると複数の区間をまとめて切り替えられます。駅の丸をタップすると訪問済・未訪問が切り替わります。",
+    "sectionRidden": "$fromから$to、乗車済。タップすると未乗に戻します。",
+    "sectionOpen": "$fromから$to、未乗。タップすると乗車済にします。",
+    "stopNode": "$nameの訪問を切り替える",
+    "turnedOff": {
+      "other": "記録$n件を修正しました"
+    },
+    "turnedOn": "乗車済にしました",
+    "restored": "消した記録を戻しました",
+    "blockedHidden": "信号場や分岐点で区切る必要があるため、ここでは消せません。記録を直接編集してください",
+    "blockedPath": "区切ると経路が変わるため消せません。記録を直接編集してください",
+    "blockedOn": "この区間はここでは乗車済にできません。駅の選択画面から記録してください。",
+    "visitAdded": "訪問済にしました",
+    "visitRemoved": "訪問を消しました",
+    "visitByRide": "乗降記録で塗られた駅です。記録を編集すると消せます",
+    "undo": "元に戻す",
+    "joinsTo": "$name →",
+    "visitDated": "訪問日を変更しました"
+  },
+  "service": {
+    "kind": "運転系統",
+    "none": "その日付には運行していなかった運転系統です",
+    "save": "記録する",
+    "failed": "この区間は記録できません。日付を確認してください"
+  },
+  "deleted": {
+    "fileOldest": "以前に取り込んだ記録",
+    "title": "削除した記録",
+    "empty": "削除した記録はありません",
+    "restore": "元に戻す",
+    "restored": "記録を戻しました",
+    "fileRides": {
+      "other": "記録 $n件"
+    },
+    "fileDelete": "ファイルごと削除",
+    "fileDeleted": {
+      "other": "記録$n件を削除しました"
+    }
+  },
+  "complete": {
+    "credit": "norioriで記録しました",
+    "share": "共有する",
+    "close": "閉じる"
+  },
+  "collection": {
+    "title": "コレクション",
+    "lines": "路線",
+    "operators": "事業者",
+    "prefs": "都道府県",
+    "stations": "駅",
+    "allTime": "廃線含む",
+    "stationGoal": "$n駅",
+    "empty": "まだありません",
+    "closed": "廃線",
+    "closedEmpty": "乗った区間に廃止されたものはありません",
+    "closedYear": "$year年廃止",
+    "closedAfter": {
+      "other": "乗車の$n年後"
+    },
+    "closedTotal": {
+      "other": "もう乗れない区間 $n箇所 · $km km"
+    }
+  },
+  "visits": {
+    "title": "訪問駅",
+    "count": {
+      "other": "$n駅"
+    },
+    "split": "現行 $open駅 · 廃駅 $closed駅",
+    "prefs": "都道府県 $n / 47",
+    "unknown": {
+      "other": "都道府県不明の駅 $n駅"
+    },
+    "empty": "訪問した駅はまだありません"
+  },
+  "remaining": {
+    "title": "未乗区間",
+    "entry": "おすすめを見る",
+    "shortest": "もうすぐ完乗",
+    "near": "近く",
+    "operators": "事業者別",
+    "empty": "未乗区間はありません",
+    "nearDenied": "位置情報を利用できません。設定で許可してください",
+    "nearNone": "$km km以内に未乗区間はありません",
+    "nearAway": "$km km"
+  },
+  "news": {
+    "title": "鉄道網が変わりました",
+    "history": "鉄道網の変更履歴",
+    "ok": "OK",
+    "lineOpened": "$line $km km 開業",
+    "lineClosed": "$line $km km 廃止",
+    "stationOpened": "$station駅 開業（$line）",
+    "stationClosed": "$station駅 廃止（$line）",
+    "more": {
+      "other": "ほか$n件"
+    },
+    "lineReopened": "$line $km km 開業。完乗が解除されました",
+    "rideDistance": "$lineの記録の距離が$before kmから$after kmに変わりました",
+    "rideReview": "$lineの記録を確認してください"
+  },
+  "journey": {
+    "title": "複数路線をまとめて記録",
+    "hint": "2つの駅を選ぶと経路を探し、路線ごとに記録して旅程にまとめます",
+    "from": "出発",
+    "to": "到着",
+    "choose": "選ぶ",
+    "save": "記録する",
+    "none": "つながる経路が見つかりません",
+    "stationHint": "駅名",
+    "saved": {
+      "other": "$n件の記録を保存しました"
+    }
+  },
+  "years": {
+    "title": "年別",
+    "activity": "アクティビティ",
+    "distance": "距離",
+    "count": "記録数",
+    "fresh": "新規区間",
+    "busiest": "一番乗った年",
+    "undated": "日付不明",
+    "undatedHint": "グラフとカレンダーには含まれません",
+    "empty": "日付のある記録がありません",
+    "activityHint": "色が濃い日ほど多く乗っています",
+    "noRides": "記録なし",
+    "rides": {
+      "other": "$n件"
+    }
+  },
+  "trip": {
+    "make": "旅程にまとめる",
+    "nameTitle": "旅程の名前",
+    "nameHint": "関西旅行",
+    "save": "保存",
+    "rename": "名前を変更",
+    "dissolve": "旅程を解除",
+    "dissolveHint": "まとまりだけを解除します。記録は残ります",
+    "dissolved": "旅程を解除しました",
+    "made": "旅程にまとめました",
+    "empty": "旅程はありません",
+    "emptyHint": "乗車記録を長押しして選ぶと、旅程にまとめられます",
+    "rides": {
+      "other": "$n件"
+    },
+    "delete": "旅程と記録を削除",
+    "deleteHint": "旅程の記録も削除します。5秒以内なら元に戻せます",
+    "deleted": "旅程と記録を削除しました"
+  },
+  "mapSheet": {
+    "beyond": "この駅の先の廃止区間",
+    "unlocated": "正確な位置は未確認",
+    "rideCount": "自分の乗車記録 $count件",
+    "viewSection": "区間を見る",
+    "unmapped": "地図に表示なし",
+    "visited": "この駅に行ったことがある",
+    "visitedHint": "完乗率には含まれず、地図の丸だけが塗られます",
+    "noVisits": "駅訪問の記録はありません。地図で駅をタップすると残せます。"
+  },
+  "prefNames": [
+    "北海道",
+    "青森",
+    "岩手",
+    "宮城",
+    "秋田",
+    "山形",
+    "福島",
+    "茨城",
+    "栃木",
+    "群馬",
+    "埼玉",
+    "千葉",
+    "東京",
+    "神奈川",
+    "新潟",
+    "富山",
+    "石川",
+    "福井",
+    "山梨",
+    "長野",
+    "岐阜",
+    "静岡",
+    "愛知",
+    "三重",
+    "滋賀",
+    "京都",
+    "大阪",
+    "兵庫",
+    "奈良",
+    "和歌山",
+    "鳥取",
+    "島根",
+    "岡山",
+    "広島",
+    "山口",
+    "徳島",
+    "香川",
+    "愛媛",
+    "高知",
+    "福岡",
+    "佐賀",
+    "長崎",
+    "熊本",
+    "大分",
+    "宮崎",
+    "鹿児島",
+    "沖縄"
+  ],
+  "date": {
+    "months": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "day": "$year.$month.$day",
+    "month": "$year.$month"
+  }
+}

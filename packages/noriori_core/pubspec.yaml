@@ -1,0 +1,11 @@
+name: noriori_core
+description: noriori의 규칙과 타입. 순수 Dart이고 I/O와 Flutter를 쓰지 않는다.
+publish_to: none
+resolution: workspace
+
+environment:
+  sdk: ^3.13.1
+
+dev_dependencies:
+  lints: ^6.1.0
+  test: any

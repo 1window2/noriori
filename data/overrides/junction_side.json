@@ -1,0 +1,22 @@
+[
+{"line": "l_sobu_main_line", "other": "l_sotobo_line", "at": "n_chiba", "side": "down", "why": "위키 노선도에 1963년 이전 옛 선로의 분기가 역 위쪽에 함께 그려져 있다. 지금의 外房線은 역 아래쪽(東千葉 방향)에서 갈라지고 東京 방면 열차가 그대로 들어간다"},
+{"line": "l_karatsu_line", "other": "l_chikuhi_line", "at": "n_yamamoto", "side": "up", "why": "역 아래쪽 분기는 1983년에 폐지된 옛 筑肥線이다. 지금의 筑肥線(伊万里 방면)은 역 위쪽에서 합류하고 伊万里와 唐津 사이 열차가 그대로 다닌다"},
+{"line": "l_yosan_line", "other": "l_honshi_bisan_line", "at": "n_utazu", "side": "up", "why": "本四備讃線은 宇多津 위쪽(坂出 방향)에서 합류하고 岡山 방면 열차가 그대로 松山 방면으로 간다"},
+{"line": "l_nankai_main_line", "other": "l_koya_line", "at": "n_kishinosato_tamade", "side": "down", "why": "難波에서 오는 高野線 열차가 岸里玉出를 지나 그대로 남쪽으로 간다. 위키 노선도의 역 위쪽 분기는 옛 선로다"},
+{"line": "l_kotoku_line", "other": "l_naruto_line", "at": "n_ikenotani", "side": "down", "why": "池谷는 V자 역으로 두 노선이 徳島 쪽에서 갈라진다. 徳島 방면 열차가 그대로 鳴門線에 들어간다. 위키 노선도에도 역 아래쪽에 분기가 있다"},
+{"line": "l_katsuta_line", "other": "l_kashii_line", "at": "n_umi", "side": "up", "why": "香椎線은 新原 쪽(勝田線의 下宇美 쪽)에서 나란히 들어와 宇美에서 끝난다. 위키 노선도의 두 줄이 역 위쪽에서 온다"},
+{"line": "l_tokaido_main_line", "other": "l_musashino_south_line", "at": "n_tsurumi", "side": "up", "why": "武蔵野南線은 鶴見 북쪽 新鶴見信号場(川崎 쪽)에서 갈라진다"},
+{"line": "l_sasebo_line", "other": "l_omura_line", "at": "n_haiki", "side": "up", "why": "佐世保 쪽 열차가 그대로 大村線에 들어가고, 博多 쪽에서 오는 ハウステンボス 열차는 早岐에서 방향을 바꾼다"},
+{"line": "l_sanda_line", "other": "l_koen_toshi_line", "at": "n_yokoyama_kobe", "side": "up", "why": "公園都市線 열차는 三田에서 横山을 지나 그대로 들어간다"},
+{"line": "l_hakodate_main_line", "other": "l_hakodate_main_line", "at": "n_sunagawa", "side": "up", "why": "上砂川支線은 砂川 역 札幌·岩見沢 쪽(豊沼 쪽)에 붙어 있었다 (砂川駅 문서의 1976년 항공사진 설명)"},
+{"line": "l_isesaki_line", "other": "l_kameido_line", "at": "n_hikifune", "side": "down", "why": "亀戸線은 東向島 쪽 배선으로 이어진다 (曳舟駅 문서의 配線図와 のりば 설명)"},
+{"line": "l_ishiyama_sakamoto_line", "other": "l_keishin_line", "at": "n_biwako_hamaotsu", "side": "up", "why": "京津線과 石山坂本線의 연결선은 石山寺 쪽에 있다 (びわ湖浜大津駅 문서)"},
+{"line": "l_nippo_main_line", "other": "l_kitto_line", "at": "n_miyakonojo", "side": "up", "why": "吉都線은 都城에서 宮崎 쪽으로 이어진다 (都城駅 문서의 吉都線 노선도)"},
+{"line": "l_nagoya_line", "other": "l_suzuka_line", "at": "n_ise_wakamatsu", "side": "down", "why": "鈴鹿線은 伊勢若松 近鉄名古屋 쪽에서 이어진다 (伊勢若松駅 문서의 駅構造)"},
+{"line": "l_hiromi_line", "other": "l_yaotsu_line", "at": "n_akechi_meitetsu", "side": "up", "why": "八百津線은 明智 新可児·犬山 쪽에서 갈라졌다 (明智駅 문서의 1993년 配線図)"},
+{"line": "l_hitahikosan_line", "other": "l_soeda_line", "at": "n_soeda", "side": "up", "why": "添田線은 添田 역 북쪽, 西添田 쪽에서 들어왔다 (添田駅 문서 사진 설명, 日田彦山線 노선도)"},
+{"line": "l_tohoku_main_line", "other": "l_mito_line", "at": "n_oyama_mito", "side": "up", "why": "水戸線은 小山 역 間々田 쪽에서 나가 동쪽으로 돈다 (haisenryakuzu.net 水戸線 配線略図 01, 2024년 3월 조사)"},
+{"line": "l_yamada_line", "other": "l_miyako_line", "at": "n_miyako", "side": "up", "why": "옛 宮古線(山口団地 방면)은 宮古 역 千徳 쪽, 山田線과 같은 편에서 나간다 (haisenryakuzu.net 山田線 配線略図 04)"},
+{"line": "l_hitahikosan_line", "other": "l_ita_line", "at": "n_tagawa_ita", "side": "down", "why": "伊田線은 田川伊田 역 田川後藤寺 쪽에서 下伊田 방면으로 갈라진다 (haisenryakuzu.net 日田彦山線 配線略図 03)"},
+{"line": "l_hitahikosan_line", "other": "l_ita_line_heisei_chikuho", "at": "n_tagawa_ita", "side": "down", "why": "伊田線은 田川伊田 역 田川後藤寺 쪽에서 下伊田 방면으로 갈라진다 (haisenryakuzu.net 日田彦山線 配線略図 03)"}
+]

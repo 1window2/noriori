@@ -1,0 +1,128 @@
+[
+{
+"old": "n_nonai_aoimori_aoimori_railway",
+"new": "n_nonai_aoimori_aoimori_railway_b",
+"date": "2011-03-12",
+"note": "野内駅 青森寄りに1.6km移転"
+},
+{
+"old": "n_orikasa",
+"new": "n_orikasa_sanriku",
+"date": "2019-03-23",
+"note": "織笠駅 三陸鉄道転換時に陸中山田寄りへ1km移転"
+},
+{
+"old": "n_kitamori_hanawa_b",
+"new": "n_kitamori_hanawa",
+"date": "2015-03-14",
+"note": "北森駅 平館寄りに500m移転"
+},
+{
+"old": "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside",
+"new": "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_b",
+"date": "2019-03-31",
+"note": "金沢八景駅 シーサイドライン本駅舎"
+},
+{
+"old": "n_mikawa_chiryu_meitetsu_mikawa_b",
+"new": "n_mikawa_chiryu_meitetsu_mikawa",
+"date": "2024-03-16",
+"note": "三河知立駅 移転 (旧駅 -2024-03-15)"
+},
+{
+"old": "n_shimbashi_yurikamome_b",
+"new": "n_shimbashi_yurikamome",
+"date": "2001-03-22",
+"note": "ゆりかもめ 新橋 仮駅から本駅へ"
+},
+{
+"old": "n_osadakoen_oita_transportation_yabakei",
+"new": "n_osadakoen_oita_transportation_yabakei_b",
+"date": "1944-03-01",
+"note": "大貞公園駅 上ノ原寄りに770m移転"
+},
+{
+"old": "n_kannoura_asa_seaside_asato",
+"new": "n_kannoura_asa_seaside_asato_b",
+"date": "2020-10-23",
+"note": "甲浦 阿佐東線0.1km延伸"
+},
+{
+"old": "n_funagoya",
+"new": "n_chikugo_funagoya",
+"date": "2011-03-12",
+"note": "船小屋駅 500m 이전, 筑後船小屋로 개칭"
+},
+{
+"old": "n_kawamura_kumagawa",
+"new": "n_sagaratoshima",
+"date": "2026-09-20",
+"note": "川村駅 이전, 相良十島로 개칭"
+},
+{
+"old": "n_takaoka_ekimae",
+"new": "n_takaoka_manyosen",
+"date": "2014-03-29",
+"note": "万葉線 高岡駅前 이전, 高岡駅로 개칭"
+},
+{
+"old": "n_fukui_ekimae",
+"new": "n_fukui_fukui",
+"date": "2016-03-27",
+"note": "福井鉄道 福井駅前 이전, 福井駅로 개칭"
+},
+{
+"old": "n_kanayamabashi",
+"new": "n_kanayama_meitetsu",
+"date": "1989-07-09",
+"note": "名鉄 金山橋 이전, 金山로 개칭 (金山総合駅)"
+},
+{
+"old": "n_susaki_meitetsu",
+"new": "n_kodomonokuni_meitetsu",
+"date": "1952-10-01",
+"note": "洲崎駅 서쪽으로 이전 (1976 こどもの国로 개칭)"
+},
+{
+"old": "n_hiratabashi",
+"new": "n_kami_otai_meitetsu",
+"date": "1991-10-27",
+"note": "平田橋 이전, 上小田井로 개칭"
+},
+{
+"old": "n_sakaigawa",
+"new": "n_ginan",
+"date": "1980-09-20",
+"note": "境川 이전, 岐南로 개칭"
+},
+{
+"old": "n_oshinozu",
+"new": "n_yonago_airport",
+"date": "2008-06-15",
+"note": "大篠津 이전, 米子空港로 개칭"
+},
+{
+"old": "n_onaga",
+"new": "n_hokusei_chuo_koenguchi",
+"date": "1997-04-01",
+"note": "大長 이전, 北勢中央公園口로 개칭"
+},
+{
+"old": "n_oida",
+"new": "n_daian",
+"date": "1986-03-25",
+"note": "大井田 이전, 大安로 개칭"
+},
+{
+"old": "n_higashifuren",
+"new": "n_nayorokoko",
+"date": "2022-03-12",
+"note": "東風連 이전, 名寄高校로 개칭"
+},
+{
+"old": "n_haramachida",
+"new": "n_machida_yokohama",
+"date": "1980-04-01",
+"note": "原町田 이전, 町田로 개칭"
+}
+]

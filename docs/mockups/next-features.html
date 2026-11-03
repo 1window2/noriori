@@ -1,0 +1,121 @@
+<title>noriori 시안 묶음</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Sans+JP:wght@500&display=swap">
+<style>
+/* 앱의 토큰을 그대로 쓴다 (apps/noriori/lib/app/theme/tokens.dart). 시안은 앱 화면처럼 보여야 판단할 수 있다.
+   배치: 기능 하나가 한 줄. 왼쪽 실제 크기 폰, 오른쪽 정할 것. */
+:root{--land:#F5F0E6;--water:#CFE0E6;--surface:#FBF8F1;--paper:#FFFDF8;--text:#1F2328;--muted:#5C6066;--closed:#8A8478;--hair:#E6DFD1;--track:#DDD6C7;
+--line:#7A7F86;--lineclosed:#A2988A;--ride:#1F6FEB;--ridesoft:#BFD6F8;--ridered:#C8352B;--on:#FFFFFF;
+--font:"Pretendard","Apple SD Gothic Neo","Noto Sans KR",system-ui,sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--land:#14171C;--water:#0F1F2B;--surface:#1C2027;--paper:#232830;--text:#E8EAED;--muted:#A7ADB5;--closed:#8E949D;--hair:#333A44;--track:#3A414C;--line:#8A919B;--lineclosed:#666E7A;--ride:#5AA2FF;--ridesoft:#27476F;--ridered:#FF6B60;--on:#0B1320;color-scheme:dark}}
+:root[data-theme="dark"]{--land:#14171C;--water:#0F1F2B;--surface:#1C2027;--paper:#232830;--text:#E8EAED;--muted:#A7ADB5;--closed:#8E949D;--hair:#333A44;--track:#3A414C;--line:#8A919B;--lineclosed:#666E7A;--ride:#5AA2FF;--ridesoft:#27476F;--ridered:#FF6B60;--on:#0B1320;color-scheme:dark}
+body{background:var(--surface);color:var(--text);font-family:var(--font);font-size:15px;line-height:1.6;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 64px}
+main{max-width:980px;margin:0 auto;display:grid;gap:56px}
+h1{font-size:28px;line-height:1.25;margin:0 0 8px;text-wrap:balance}
+h2{font-size:20px;line-height:1.3;margin:0 0 4px;text-wrap:balance}
+header p{margin:0;color:var(--muted);max-width:62ch}
+.row{display:grid;grid-template-columns:280px minmax(0,1fr);gap:32px;align-items:start;border-top:1px solid var(--hair);padding-top:24px}
+.row.two{grid-template-columns:280px 280px minmax(0,1fr)}
+@media (max-width:900px){.row.two{grid-template-columns:280px minmax(0,1fr)}.row.two .ask{grid-column:1/-1}}
+@media (max-width:640px){.row,.row.two{grid-template-columns:minmax(0,1fr)}.phone{margin-inline:auto}}
+.ask{min-width:0}.ask>p{margin:0 0 12px;color:var(--muted);max-width:60ch}
+.ask dl{margin:0;display:grid;gap:10px}
+.ask dt{font-weight:700;font-size:14px}.ask dd{margin:0;color:var(--muted);font-size:14px}
+.phone{width:280px;max-width:100%;height:560px;background:var(--surface);border:1px solid var(--hair);border-radius:24px;overflow:hidden;display:flex;flex-direction:column;position:relative;font-size:13px;line-height:1.4}
+.bar{display:flex;align-items:center;gap:8px;padding:14px 16px 10px;font-weight:700;font-size:16px}
+.bar small{margin-left:auto;font-weight:400;color:var(--muted);font-size:12px}
+.body{flex:1;overflow:hidden;padding:0 16px;display:flex;flex-direction:column;gap:10px;min-height:0}
+.tabs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--hair);background:var(--paper);text-align:center;font-size:10px;color:var(--muted);padding:8px 0 10px}
+.tabs b{color:var(--text)}
+.card{background:var(--paper);border:1px solid var(--hair);border-radius:14px;padding:12px}
+.li{display:flex;justify-content:space-between;gap:8px;padding:9px 0;border-bottom:1px solid var(--hair)}
+.li:last-child{border-bottom:0}.li span:last-child{color:var(--muted);white-space:nowrap}
+.mut{color:var(--muted)}.sm{font-size:11px}
+.btn{background:var(--ride);color:var(--on);border-radius:12px;padding:10px;text-align:center;font-weight:700}
+.btn.ghost{background:transparent;color:var(--text);border:1px solid var(--hair)}
+.meter{height:6px;border-radius:3px;background:var(--track);overflow:hidden}.meter i{display:block;height:100%;background:var(--ride)}
+.map{position:relative;flex:1;background:var(--water);overflow:hidden;min-height:0}
+.map svg{position:absolute;inset:0;width:100%;height:100%}
+.fab{position:absolute;right:10px;display:grid;gap:8px}
+.fab i{width:36px;height:36px;border-radius:10px;background:var(--paper);border:1px solid var(--hair);display:grid;place-items:center;font-style:normal;font-size:10px;color:var(--text)}
+.sheet{background:var(--paper);border-radius:16px 16px 0 0;padding:12px 16px;border-top:1px solid var(--hair);display:grid;gap:8px}
+.chips{display:flex;gap:6px;flex-wrap:wrap}.chip{border:1px solid var(--hair);border-radius:999px;padding:4px 10px;font-size:12px;background:var(--paper)}
+.chip.on{background:var(--text);color:var(--surface);border-color:var(--text)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.badge{aspect-ratio:1;border-radius:12px;border:1px solid var(--hair);display:grid;place-items:center;text-align:center;font-size:11px;padding:6px;background:var(--paper)}
+.badge.got{border-color:var(--ride);color:var(--ride);font-weight:700}
+.stamp{display:inline-grid;place-items:center;width:64px;height:64px;border:2.5px solid var(--ridered);border-radius:50%;color:var(--ridered);font-family:"Noto Sans JP",var(--font);font-weight:500;font-size:18px;transform:rotate(-8deg)}
+.photos{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.photos i{aspect-ratio:1;border-radius:10px;background:var(--track);display:grid;place-items:center;font-style:normal;color:var(--muted)}
+.slider{height:4px;background:var(--track);border-radius:2px;position:relative;margin:8px 0}.slider i{position:absolute;left:44%;top:-7px;width:18px;height:18px;border-radius:50%;background:var(--ride)}
+.notice{display:flex;justify-content:space-between;gap:8px;background:var(--paper);border:1px solid var(--hair);border-radius:12px;padding:8px 12px;font-size:12px}
+</style>
+<main>
+<header>
+<h1>noriori 시안 묶음</h1>
+<p>명세에 이름만 있고 승인 시안이 없는 기능 10개입니다. 전부 권장안으로 그렸습니다. 달리 원하는 항목만 말씀해 주시면 나머지는 이대로 만듭니다. 숫자와 이름은 예시입니다.</p>
+</header>
+
+<section class="row">
+<div class="phone"><div class="map"><svg viewBox="0 0 280 470" fill="none"><path d="M40 470C70 360 120 320 150 250S230 90 280 40V470Z" style="fill:var(--land)"/><path d="M70 430C110 340 150 300 175 230S230 120 262 70" style="stroke:var(--line)" stroke-width="1.5"/><path d="M120 420C140 360 165 320 190 300" style="stroke:var(--ride)" stroke-width="3"/><circle cx="168" cy="318" r="7" style="fill:var(--ride)" opacity=".25"/><circle cx="168" cy="318" r="3.5" style="fill:var(--ride)"/></svg>
+<div class="fab" style="top:62px"><i>현재</i><i>근처</i><i>표시</i><i>전국</i></div></div>
+<div class="sheet"><b>가까운 역</b><div class="li"><span>요코하마</span><span>320 m</span></div><div class="li"><span>신타카시마</span><span>780 m</span></div></div></div>
+<div class="ask"><h2>1. 지도 버튼과 근처 역</h2><p>오른쪽 위에 버튼 넷을 세로로 둡니다. `현재`와 `근처`를 처음 누를 때만 위치 권한을 묻습니다. 위치는 기기 밖으로 나가지 않습니다.</p>
+<dl><dt>근처 범위</dt><dd>반경 3km 안의 역을 가까운 순으로 5곳 보여 줍니다. 없으면 가장 가까운 역 1곳입니다.</dd><dt>F-Droid</dt><dd>위치 라이브러리가 Google 서비스에 묶여 있어, 그 판에서는 위치 버튼을 뺍니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone"><div class="map"><svg viewBox="0 0 280 430" fill="none"><path d="M30 430C70 330 120 300 150 230S230 80 280 30V430Z" style="fill:var(--land)"/><path d="M60 400C100 320 145 280 170 220S230 110 258 60" style="stroke:var(--line)" stroke-width="1.5"/><path d="M100 390C130 340 200 330 240 280" style="stroke:var(--lineclosed)" stroke-width="1.5"/><path d="M125 345C150 290 165 260 180 200" style="stroke:var(--ride)" stroke-width="3"/></svg></div>
+<div class="sheet"><div style="display:flex;justify-content:space-between"><b style="font-size:20px">1985년</b><span class="chip">닫기</span></div><div class="slider"><i></i></div><div class="mut sm" style="display:flex;justify-content:space-between"><span>1970</span><span>2026</span></div><div class="mut sm">그해까지 탄 구간만 파랗게 보입니다</div></div></div>
+<div class="ask"><h2>2. 타임 슬라이더</h2><p>지도의 `표시` 버튼에서 켭니다. 연 단위로 끌면 그해의 철도망과 그때까지의 내 기록을 보여 줍니다. 재생은 다음 판으로 미룹니다.</p>
+<dl><dt>범위</dt><dd>1970년부터 올해까지입니다. 수록 기준일에 맞춘 값입니다.</dd><dt>날짜 모름 기록</dt><dd>언제 탔는지 모르므로 슬라이더에서는 칠하지 않습니다.</dd></dl></div>
+</section>
+
+<section class="row two">
+<div class="phone"><div class="bar">통계<small>현재 노선</small></div><div class="body"><div style="font-size:30px;font-weight:700">3.1%</div><div class="meter"><i style="width:3.1%"></i></div><div class="card"><div class="li"><span>수집</span><span>배지 12개 ›</span></div><div class="li"><span>남은 구간</span><span>추천 보기 ›</span></div></div><div class="mut sm">도도부현 지도와 회사 목록은 그 아래에 그대로 둡니다</div></div><div class="tabs"><span>지도</span><span>기록</span><b>통계</b><span>설정</span></div></div>
+<div class="phone"><div class="bar">수집</div><div class="body"><div class="chips"><span class="chip on">노선</span><span class="chip">회사</span><span class="chip">도도부현</span><span class="chip">역</span></div><div class="grid"><div class="badge got">쇼난 모노레일</div><div class="badge got">미나토미라이선</div><div class="badge got">유리카모메</div><div class="badge">야마노테선<br>81%</div><div class="badge">게이세이 본선<br>70%</div><div class="badge">오사카 순환선<br>42%</div></div></div><div class="tabs"><span>지도</span><span>기록</span><b>통계</b><span>설정</span></div></div>
+<div class="ask"><h2>3. 수집과 배지</h2><p>탭은 넷으로 유지하고 통계 안에 입구를 둡니다. 배지는 저장하지 않고 지금 기록으로 계산합니다.</p>
+<dl><dt>종류</dt><dd>노선, 회사, 도도부현 완주와 탄 역 수(100, 500, 1,000, 3,000)입니다.</dd><dt>폐선이나 연장으로 완주가 풀리면</dt><dd>계산값이라 배지도 함께 풀립니다. 얻은 날짜를 따로 저장하지 않습니다.</dd><dt>현재와 폐선 포함</dt><dd>완주 표시는 현재 구간 기준이고, 폐선 포함 완주는 작은 표식을 하나 더 붙입니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone" style="background:var(--land)"><div class="body" style="justify-content:center;gap:14px;padding:24px"><div class="card" style="display:grid;gap:10px;justify-items:center;text-align:center;padding:22px 16px"><div class="stamp">完乗</div><b style="font-size:18px">쇼난 모노레일</b><div class="mut">5.2 km · 2026.11.3</div><div class="mut sm">noriori로 기록했습니다</div></div><div class="btn">공유하기</div><div class="btn ghost">닫기</div></div></div>
+<div class="ask"><h2>4. 완주 축하 카드와 공유 카드</h2><p>저장으로 노선을 처음 완주하면 승차권 대신 이 카드가 뜹니다. 닫기 버튼이 있고 흐름을 막지 않습니다. 공유는 카드 이미지를 OS 공유 창으로 보냅니다.</p>
+<dl><dt>넣는 값</dt><dd>노선 이름, 거리, 날짜, 도장입니다. 지도 이미지는 오프라인에서 만들 수 없을 수 있어 넣지 않습니다.</dd><dt>뺀 것</dt><dd>위젯과 마스코트는 v1.0 뒤로 미룹니다.</dd></dl></div>
+</section>
+
+<section class="row two">
+<div class="phone"><div class="bar">2개 선택<small>취소</small></div><div class="body"><div class="card"><div class="li"><span>☑ 도카이도 본선</span><span>2026.3.14</span></div><div class="li"><span>☑ 산요 본선</span><span>2026.3.14</span></div><div class="li"><span>☐ 요코스카선</span><span>2026.2.1</span></div></div><div style="flex:1"></div><div class="btn" style="margin-bottom:12px">여정으로 묶기</div></div><div class="tabs"><span>지도</span><b>기록</b><span>통계</span><span>설정</span></div></div>
+<div class="phone"><div class="bar">간사이 여행</div><div class="body"><div class="mut">2026.3.14 · 기록 2건 · 374.4 km</div><div class="card"><div class="li"><span>도쿄 → 교토</span><span>도카이도 본선</span></div><div class="li"><span>교토 → 히메지</span><span>산요 본선</span></div></div><div class="btn ghost">이름 바꾸기</div><div class="btn ghost">여정 풀기</div></div><div class="tabs"><span>지도</span><b>기록</b><span>통계</span><span>설정</span></div></div>
+<div class="ask"><h2>5. 여정</h2><p>저장할 때 묻지 않습니다. 기록 목록을 길게 눌러 고른 뒤 나중에 묶습니다. 기록 탭에 `여정` 밑줄 탭을 추가합니다.</p>
+<dl><dt>여정 풀기</dt><dd>묶음만 없앱니다. 기록은 지우지 않습니다.</dd><dt>구간을 꺼서 기록이 나뉘면</dt><dd>나뉜 조각은 원래 여정에 그대로 남습니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone"><div class="bar">기록 수정</div><div class="body"><b>도카이도 본선 · 도쿄 → 교토</b><div class="card"><div class="mut sm">사진 (3장까지)</div><div class="photos" style="margin-top:6px"><i>사진</i><i>사진</i><i>＋</i></div></div><div class="mut sm">위치 정보를 지우고 긴 변 2048px로 줄여 저장합니다</div><div class="card"><div class="li"><span>메모</span><span>창가 자리</span></div><div class="li"><span>차량 편성</span><span>N700S</span></div></div></div></div>
+<div class="ask"><h2>6. 사진</h2><p>탑승 기록에만 3장까지 붙입니다. 역 방문에는 붙이지 않습니다. 앱 안에만 저장하고 지도나 공유 카드에는 나오지 않습니다.</p>
+<dl><dt>백업</dt><dd>사진이 생기면 백업이 JSON에서 ZIP으로 바뀝니다. 자동 백업 폴더에는 새 사진만 복사합니다.</dd><dt>삭제한 기록의 사진</dt><dd>기록을 되살릴 수 있는 동안 함께 보관합니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone"><div class="bar">남은 구간<small>현재 노선</small></div><div class="body"><div class="chips"><span class="chip on">곧 완주</span><span class="chip">가까운 곳</span><span class="chip">회사별</span></div><div class="card"><div class="li"><span>게이큐 본선<br><span class="mut sm">도고온센 – 니시호리바타</span></span><span>0.5 km</span></div><div class="li"><span>요코스카선<br><span class="mut sm">즈시 – 쿠리하마</span></span><span>14.6 km</span></div><div class="li"><span>요산선<br><span class="mut sm">오카야마 – 니이미</span></span><span>47.1 km</span></div></div></div><div class="tabs"><span>지도</span><span>기록</span><b>통계</b><span>설정</span></div></div>
+<div class="ask"><h2>7. 미승 구간과 추천</h2><p>안 탄 구간을 노선별로 이어 붙여 보여 줍니다. 줄을 누르면 그 구간이 지도에 보입니다. `가까운 곳`은 위치를 켠 사람만 쓰입니다.</p>
+<dl><dt>기준</dt><dd>현재 노선만 봅니다. 폐선은 다시 탈 수 없어 추천에서 뺍니다.</dd><dt>측정 필요</dt><dd>766개 노선을 모두 계산하는 시간을 실기기에서 재고 넘으면 화면을 나눕니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone"><div class="bar">경로 찾기</div><div class="body"><div class="card"><div class="li"><span>출발</span><span>도쿄</span></div><div class="li"><span>도착</span><span>오사카</span></div></div><div class="card"><b>403.8 km</b><div class="li"><span>도카이도 본선</span><span>도쿄 → 교토</span></div><div class="li"><span>JR 교토선 구간</span><span>교토 → 오사카</span></div><div class="mut sm">노선마다 한 건씩 저장하고 여정으로 묶습니다</div></div><div class="btn">저장</div></div></div>
+<div class="ask"><h2>8. 다구간 경로</h2><p>노선을 넘어 두 역 사이를 찾습니다. 분기 이동을 한 기록으로 묶지 않기로 한 결정은 그대로라서, 저장은 노선마다 한 건이고 여정 하나로 묶습니다.</p>
+<dl><dt>입구</dt><dd>`기록` 버튼의 노선 검색 위에 둡니다.</dd><dt>경로가 여럿이면</dt><dd>가장 짧은 경로를 먼저 보이고 경유 노선 칩으로 바꿉니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone"><div class="map"><svg viewBox="0 0 280 300" fill="none"><path d="M40 300C70 220 120 200 150 150S230 60 280 20V300Z" style="fill:var(--land)"/></svg></div><div class="body" style="flex:none;padding:10px 16px"><div class="notice"><span>데이터가 갱신됐습니다. 노선 2곳이 바뀌었습니다</span><b>보기</b></div></div><div class="bar" style="padding-top:2px">바뀐 내용</div><div class="body" style="flex:none;padding-bottom:14px"><div class="card"><div class="li"><span>완주 풀림</span><span>쿠리하마선</span></div><div class="li"><span>새 구간</span><span>연장 1.3 km</span></div></div></div></div>
+<div class="ask"><h2>9. 변경 소식</h2><p>새 판을 적용했을 때 기록의 결과가 달라진 경우에만 지도 홈에 한 줄이 뜹니다. 누르면 내역을 봅니다. 전체 내역은 설정의 데이터 버전 안에 남습니다.</p>
+<dl><dt>알림</dt><dd>OS 알림은 쓰지 않습니다. 앱을 열었을 때만 보입니다.</dd></dl></div>
+</section>
+
+<section class="row">
+<div class="phone"><div class="bar">데이터 버전</div><div class="body"><div class="card"><div class="li"><span>지금</span><span>2026-11-02.9</span></div><div class="li"><span>새 판</span><span>2026-12-01.1</span></div><div class="li"><span>크기</span><span>21 MB</span></div></div><div class="btn">내려받기</div><div class="mut sm">받은 판은 다음에 앱을 열 때 적용합니다. 기록은 바뀌지 않습니다</div></div><div class="tabs"><span>지도</span><span>기록</span><span>통계</span><b>설정</b></div></div>
+<div class="ask"><h2>10. 데이터 내려받기</h2><p>사용자가 누를 때만 받습니다. 자동으로 받거나 앱이 먼저 서버에 묻지 않습니다. 서명과 해시를 확인한 뒤 다음 시작에 적용합니다.</p>
+<dl><dt>필요한 것</dt><dd>판을 올려 둘 공개 주소와 데이터 서명 키입니다. 저장소를 공개하는 시점에 정합니다.</dd></dl></div>
+</section>
+</main>

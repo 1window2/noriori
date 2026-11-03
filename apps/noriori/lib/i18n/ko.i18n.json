@@ -1,0 +1,641 @@
+{
+  "app": {
+    "name": "noriori",
+    "loadFailed": "불러오지 못했습니다. 앱을 다시 열어 주세요"
+  },
+  "tabs": {
+    "map": "지도",
+    "record": "기록",
+    "stats": "통계",
+    "settings": "설정"
+  },
+  "start": {
+    "loading": "준비하는 중",
+    "updateTitle": "앱을 업데이트해 주세요",
+    "updateBody": "기록이 이 앱보다 새로운 버전에서 저장되었습니다. 기록은 그대로 있습니다.",
+    "retryTitle": "기록을 열지 못했습니다",
+    "retryBody": "기록은 그대로 있습니다. 잠시 뒤 다시 시도해 주세요.",
+    "restoreTitle": "기록 파일이 손상되었습니다",
+    "restoreBody": "손상된 파일은 보관해 두었습니다. 백업 파일에서 복원할 수 있습니다.",
+    "retry": "다시 시도",
+    "noSpaceTitle": "저장 공간이 부족합니다",
+    "noSpaceBody": "기록은 그대로 있습니다. 공간을 확보한 뒤 다시 시도해 주세요.",
+    "restoreAction": "복원하기"
+  },
+  "map": {
+    "soloOff": "모든 노선 보기",
+    "scoreLabel": "현재",
+    "add": "기록",
+    "search": "노선이나 역 찾기",
+    "closed": "폐선",
+    "names": "역 이름",
+    "wholeJapan": "전국 보기",
+    "firstRide": "첫 탑승을 기록해 보세요",
+    "firstRideHint": "노선을 고르고 두 역만 누르면 됩니다",
+    "left": "$km km 남음",
+    "continueTitle": "이어서 타기",
+    "onlyRidden": "승차만",
+    "sheetHandle": "이어서 타기 목록 펼치기",
+    "year": "연도",
+    "yearHint": "그해까지 탄 구간만 파랗게 보입니다",
+    "heat": "도도부현"
+  },
+  "record": {
+    "viaService": "$name 탑승",
+    "empty": "아직 기록이 없습니다",
+    "emptyHint": "노선별 목록이나 검색에서 첫 탑승을 기록해 보세요",
+    "add": "기록 추가",
+    "dateUnknown": "날짜 모름",
+    "status": {
+      "partial": "일부 구간만 반영",
+      "needsInput": "확인 필요",
+      "unknownRef": "확인 필요",
+      "invalid": "확인 필요",
+      "error": "계산 실패"
+    },
+    "deleted": "기록을 삭제했습니다",
+    "undo": "되돌리기",
+    "delete": "삭제",
+    "km": "$km km",
+    "view": {
+      "lines": "노선",
+      "rides": "탑승 기록",
+      "visits": "역 방문",
+      "trips": "여정"
+    },
+    "era": {
+      "current": "현재",
+      "closed": "폐선"
+    },
+    "category": {
+      "jr": "JR",
+      "majorPrivate": "대형 사철",
+      "semiMajorPrivate": "준대형 사철",
+      "public": "공영",
+      "generalPrivate": "일반 사철",
+      "monorail": "모노레일",
+      "agt": "경전철(AGT)",
+      "cable": "케이블카"
+    },
+    "title": "기록",
+    "currentLabel": "현재 노선 전체",
+    "closedLabel": "폐지된 구간",
+    "of": "$km km 중",
+    "lineCount": "노선 $num / $den",
+    "completeCount": "완주 $num",
+    "filter": {
+      "all": "전체",
+      "riding": "일부 탄 노선",
+      "unridden": "안 탄 노선",
+      "complete": "완주"
+    },
+    "lineSub": "$era · $num / $den km · $percent",
+    "filterEmpty": "해당하는 노선이 없습니다",
+    "picked": "$count건 선택",
+    "pickAll": "모두 선택"
+  },
+  "stats": {
+    "totalRidden": "누적 탑승 거리 $km km",
+    "empty": "기록을 추가하면 완주율이 보입니다",
+    "current": "현재 노선",
+    "allTime": "폐선 포함",
+    "ridden": "$num / $den km",
+    "operators": "회사",
+    "lines": "노선",
+    "title": "통계",
+    "year": "연도",
+    "yearPick": "연도 고르기",
+    "yearLabel": "$year년",
+    "rodeOf": "$num / $den km",
+    "month": "이번 달 +$km km",
+    "kpi": {
+      "lines": "탄 노선",
+      "complete": "완주",
+      "stations": "지나간 역",
+      "operators": "탄 회사"
+    },
+    "nearly": "곧 완주",
+    "left": "$km km 남음",
+    "prefs": "도도부현",
+    "prefHint": "탄 비율",
+    "prefLabel": "$name $percent",
+    "visited": {
+      "other": "타고 내렸거나 들른 역 $n곳"
+    },
+    "decade": "$year년대",
+    "review": {
+      "other": "확인 필요 $n건 · $km km"
+    },
+    "badges": {
+      "other": "배지 $n개"
+    },
+    "visitedClosed": "폐역 $n곳"
+  },
+  "settings": {
+    "version": "앱 버전",
+    "dataEdition": "데이터 버전",
+    "packSummary": "역 $stations곳 · 노선 $lines개",
+    "data": "백업과 복원",
+    "licenses": "오픈소스 라이선스",
+    "sources": "데이터 출처",
+    "showClosed": "폐역·폐선 표시",
+    "showArchive": "기록할 수 없는 옛 역·노선도 표시",
+    "showBranches": "분기선 표시",
+    "theme": "테마",
+    "themeLight": "라이트",
+    "themeDark": "다크",
+    "themeSystem": "시스템 설정",
+    "language": "언어",
+    "carryover": "사업자 전환 시 기록 승계",
+    "carryoverHint": "끄면 JR에서 넘어간 구간은 새 노선으로 따로 셉니다"
+  },
+  "search": {
+    "hint": "노선이나 역 이름",
+    "prompt": "노선이나 역을 찾아 시작하세요",
+    "none": "검색 결과가 없습니다"
+  },
+  "session": {
+    "laps": {
+      "other": "$n바퀴"
+    },
+    "lapLess": "한 바퀴 줄이기",
+    "lapMore": "한 바퀴 늘리기",
+    "away": {
+      "other": "+$n역"
+    },
+    "dateTitle": "탑승일",
+    "dateHint": "2015, 2015-03, 2015-03-14, 198X",
+    "dateUnknown": "날짜 모름",
+    "datePick": "달력에서 고르기",
+    "dateBad": "날짜 형식을 확인해 주세요",
+    "apply": "적용",
+    "cancel": "취소",
+    "main": "본선",
+    "pickFrom": "출발역을 고르세요",
+    "pickTo": "도착역을 고르세요",
+    "save": "기록하기",
+    "summary": "$from → $to · $km km",
+    "noPath": "이 두 역 사이의 경로를 찾지 못했습니다",
+    "state": {
+      "maybe": "?",
+      "suspended": "운행 중단",
+      "until": "~$year",
+      "since": "$year~",
+      "span": "$from~$to"
+    },
+    "savedAs": "탑승일 기준 $line 구간",
+    "chooseDirection": "어느 쪽으로 탔나요?",
+    "directionKm": "$km km",
+    "chooseRelocation": "어느 시기의 선로였나요?",
+    "relocationOption": "$date 기준 · $km km",
+    "dontKnow": "모르겠음",
+    "today": "오늘",
+    "findStop": "역 찾기",
+    "meta": "$operator · $km",
+    "fresh": "새로 타는 구간 $km km",
+    "noFresh": "이미 탄 구간입니다",
+    "change": "$before → $after",
+    "nonePickable": "이 날짜에 고를 수 있는 역이 없습니다. 탑승일을 바꿔 보세요",
+    "maybeHint": "이 날짜에 운행했는지 확인되지 않았습니다",
+    "saveFailed": "저장하지 못했습니다. 기록은 바뀌지 않았습니다",
+    "spokenKm": "$km킬로미터",
+    "spokenTransfer": {
+      "other": "환승 $n개"
+    },
+    "spokenFrom": "출발역으로 선택됨",
+    "spokenTo": "도착역으로 선택됨",
+    "showClosed": "폐역·폐선 표시",
+    "showArchive": "기록할 수 없는 옛 역·노선도 표시",
+    "returnsTo": "한 바퀴 돌아 $name 도착",
+    "clear": "선택 해제",
+    "lap": "한 바퀴",
+    "stops": {
+      "other": "$n개 역"
+    },
+    "closedSection": "~$year 폐지",
+    "archiveStop": "$name: 폐역($year). 기록할 수 없는 옛 역입니다",
+    "archiveLine": "$name: 기록할 수 없는 옛 노선입니다",
+    "from": "출발",
+    "to": "도착",
+    "whyClosed": "그 날짜에는 운영하지 않던 역입니다",
+    "whySuspended": "그 날짜에는 운행이 중단된 구간입니다",
+    "bound": "$names 방면",
+    "spokenClosed": "$year년 폐지",
+    "spokenBranch": "$line, $next 분기",
+    "leaving": "$name에서 출발",
+    "progress": "$num / $den km ($percent)",
+    "leaveTitle": "고른 역이 사라집니다",
+    "leaveBody": "다른 노선으로 넘어가면 지금 고른 역은 지워집니다.",
+    "leave": "넘어가기",
+    "dateDemoted": "고른 구간이 그날 없어 날짜 모름으로 바꿨습니다",
+    "repick": "다른 역을 누르면 처음부터 다시 고릅니다",
+    "closedUnknown": "폐지 구간",
+    "relocationOld": "옛 선로 · $km km",
+    "relocationNew": "새 선로 · $km km",
+    "spokenOpen": "영업 중",
+    "spokenRidden": "탄 역"
+  },
+  "data": {
+    "title": "백업과 복원",
+    "folder": "백업 폴더",
+    "folderHint": "앱을 지워도 남는 곳을 고르세요",
+    "folderNone": "고르지 않음",
+    "insideApp": "앱을 지우면 함께 사라지는 위치입니다. 다른 폴더를 골라 주세요",
+    "lastBackup": "마지막 백업",
+    "never": "없음",
+    "lastFailed": "마지막 백업에 실패했습니다",
+    "backupNow": "지금 백업",
+    "restore": "복원",
+    "restoreHint": "백업 파일을 지금 기록에 합칩니다. 같은 기록은 더 늦게 고친 쪽이 남으므로 새 기록이 사라지지 않습니다.",
+    "noFiles": "이 폴더에 백업 파일이 없습니다",
+    "fileRows": {
+      "other": "기록 $n건"
+    },
+    "fileTooNew": "앱을 업데이트해야 읽을 수 있습니다",
+    "fileUnreadable": "읽을 수 없는 파일입니다",
+    "merged": {
+      "other": "$n건을 복원했습니다"
+    },
+    "refused": "이 파일은 복원할 수 없습니다",
+    "exportQuarantined": "손상된 파일 내보내기",
+    "exportHint": "백업 폴더에 사본을 저장합니다",
+    "exported": {
+      "other": "파일 $n개를 내보냈습니다"
+    },
+    "finish": "복원을 마치고 시작",
+    "notice": {
+      "needsMerge": "백업 폴더에 이 기기보다 새로운 기록이 있습니다. 복원해 주세요",
+      "failed": "자동 백업에 실패했습니다",
+      "folderLost": "백업 폴더를 다시 골라 주세요",
+      "unreadable": "백업 폴더에 읽지 못한 파일이 있습니다",
+      "stale": "바뀐 기록이 일주일 넘게 백업되지 않았습니다",
+      "noFolder": "백업 폴더를 골라 기록을 지켜 주세요"
+    },
+    "exportCompat": "CSV 내보내기 (노리츠부시 호환)",
+    "exportCompatHint": "노리츠부시와 같은 형식으로 보냅니다",
+    "exportFull": "CSV 내보내기 (전체)",
+    "exportFullHint": "경로와 날짜까지 담아 보냅니다",
+    "exportedUtf8": "일본어 CSV 형식에 없는 글자가 있어 UTF-8로 저장했습니다: $name",
+    "exportFailed": "내보내지 못했습니다",
+    "exportBackup": "백업 파일 내보내기",
+    "exportBackupHint": "지금 기록을 파일 하나로 만들어 보냅니다",
+    "restoreFile": "파일에서 복원",
+    "restoreFileHint": "내보낸 백업 파일을 직접 고릅니다"
+  },
+  "importing": {
+    "title": "노리츠부시 기록 가져오기",
+    "entryHint": "내려받은 CSV를 지금 기록에 더합니다",
+    "hint": "노리츠부시의 기록 편집 화면 아래에서 내려받은 CSV 파일을 고르세요. 일반판과 코멘트판 모두 됩니다.",
+    "choose": "파일 고르기",
+    "refused": "노리츠부시 CSV가 아닙니다: $name. 다른 파일을 골라 주세요.",
+    "failed": "가져오지 못했습니다. 기록은 바뀌지 않았습니다.",
+    "undone": "되돌렸습니다. 지운 기록은 다시 가져올 때 고를 수 있습니다.",
+    "file": "파일",
+    "fresh": "새 기록",
+    "rows": "$count건",
+    "distance": "기록 거리 합계",
+    "existing": "이미 있는 기록",
+    "deleted": "삭제했던 기록도 다시 넣기",
+    "missed": {
+      "other": "노선을 찾지 못한 행 $count건"
+    },
+    "missedHint": "기록으로 남기지만 완주율에는 들지 않습니다",
+    "broken": {
+      "other": "읽지 못한 행 $count건"
+    },
+    "brokenHint": "형식이 맞지 않아 가져오지 않습니다",
+    "kmDiffers": {
+      "other": "거리가 다른 행 $count건"
+    },
+    "kmDiffersHint": "파일의 거리와 앱의 거리가 다릅니다",
+    "kmDiffersRow": "$raw → 앱 $km km",
+    "nothing": "새로 가져올 기록이 없습니다",
+    "confirm": {
+      "other": "$count건 가져오기"
+    },
+    "done": {
+      "other": "$count건을 가져왔습니다"
+    },
+    "close": "닫기",
+    "undo": "되돌리기",
+    "fullHint": "noriori 전체 내보내기 파일입니다. 기록 $count건 중 없는 것만 더합니다.",
+    "merged": {
+      "other": "$n건을 더했습니다"
+    }
+  },
+  "ticket": {
+    "completeStamp": "完乗",
+    "rideStamp": "乗車",
+    "undo": "되돌리기",
+    "savedUnknown": "이 날짜로는 기록할 수 없어 날짜 모름으로 저장했습니다",
+    "noDate": "날짜 모름"
+  },
+  "sources": {
+    "title": "데이터 출처",
+    "intro": "이름, 거리, 날짜 같은 사실 정보를 여러 출처에서 모아 만들었습니다. noriori 데이터는 CC BY-SA 4.0으로 배포합니다. 선로 모양은 아래 원 자료의 조건을 따르고, OSM 선로 파일만 ODbL 1.0입니다.",
+    "n02": {
+      "name": "国土数値情報 鉄道データ (N02)",
+      "use": "선로 모양, 역 좌표 교정",
+      "terms": "국토교통성. 2020년 이후 판 CC BY 4.0, 그 전 판은 国土数値情報 이용 조건. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "n03": {
+      "name": "국토수치정보 행정구역 (N03)",
+      "use": "일본 윤곽과 도도부현 경계",
+      "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "stationDatabase": {
+      "name": "station_database",
+      "use": "역 목록과 좌표",
+      "terms": "Seo-4d696b75. CC BY-SA 4.0"
+    },
+    "wikipedia": {
+      "name": "일본어 위키백과",
+      "use": "노선도, 연결, 폐선 이력, 일본어 읽는 법",
+      "terms": "CC BY-SA 4.0"
+    },
+    "wikidata": {
+      "name": "Wikidata",
+      "use": "영어 이름, 일부 역 좌표",
+      "terms": "CC0 1.0"
+    },
+    "namuwiki": {
+      "name": "나무위키",
+      "use": "한국어 표제어 표기. 본문은 쓰지 않음",
+      "terms": "사이트 라이선스 CC BY-NC-SA 2.0 KR"
+    },
+    "noritsubushi": {
+      "name": "노리츠부시",
+      "use": "영업거리, 역 순서, 기본 날짜, 일본어 표기",
+      "terms": "사실 정보로 사용"
+    },
+    "openFreeMap": {
+      "name": "OpenFreeMap",
+      "use": "배경 지도",
+      "terms": "OpenFreeMap © OpenMapTiles. Data from OpenStreetMap"
+    },
+    "openStreetMap": {
+      "name": "OpenStreetMap",
+      "use": "N02에 없는 선로 모양",
+      "terms": "© OpenStreetMap contributors. ODbL 1.0. rail-osm.pmtiles 파일에만 적용"
+    },
+    "noto": {
+      "name": "Noto Sans, Noto Sans CJK",
+      "use": "지도의 역 이름 글자",
+      "terms": "SIL OFL 1.1. 전문은 오픈소스 라이선스 화면에 있습니다"
+    }
+  },
+  "editRide": {
+    "saved": "고쳤습니다",
+    "transfers": "갈아탄 역",
+    "transfersHint": "지나간 역 중 내려서 갈아탄 역을 고릅니다",
+    "title": "기록 수정",
+    "missing": "기록을 찾지 못했습니다",
+    "date": "탑승일",
+    "times": "시각",
+    "train": "열차명",
+    "car": "차량 편성",
+    "note": "메모",
+    "fromAlighted": "출발역에서 실제로 탔음",
+    "toAlighted": "도착역에서 실제로 내렸음",
+    "save": "저장",
+    "delete": "삭제",
+    "failed": "저장하지 못했습니다. 기록은 바뀌지 않았습니다"
+  },
+  "lineDetail": {
+    "soloMap": "지도에서 이 노선만 보기",
+    "current": "현재 구간",
+    "allTime": "폐지 구간 포함",
+    "km": "$num / $den km",
+    "completeCurrent": "현재 구간 완주",
+    "completeAllTime": "폐지 구간 포함 완주",
+    "selfScore": "전체 통계에 들어가지 않는 노선입니다. 이 노선의 거리만으로 진행률을 셉니다",
+    "open": "노선 상세",
+    "record": "이 노선 기록하기",
+    "clear": "이 노선 탑승 기록 모두 지우기",
+    "hint": "구간을 누르면 탑승 표시가 바뀝니다. 길게 누른 뒤 끌면 여러 구간을 한 번에 바꿉니다. 역을 나타내는 점을 누르면 방문 표시가 바뀝니다",
+    "sectionRidden": "$from에서 $to까지, 탄 구간. 누르면 탑승 표시를 지웁니다",
+    "sectionOpen": "$from에서 $to까지, 안 탄 구간. 누르면 탑승으로 표시합니다",
+    "stopNode": "$name 방문 표시 바꾸기",
+    "turnedOff": {
+      "other": "기록 $n건을 고쳤습니다"
+    },
+    "turnedOn": "탑승으로 표시했습니다",
+    "restored": "지운 기록을 되살렸습니다",
+    "blockedHidden": "역이 아닌 지점에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요",
+    "blockedPath": "이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요",
+    "blockedOn": "이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요",
+    "visitAdded": "방문으로 표시했습니다",
+    "visitRemoved": "방문을 지웠습니다",
+    "visitByRide": "타고 내린 기록으로 표시된 역입니다. 표시를 지우려면 기록을 고쳐 주세요",
+    "undo": "되돌리기",
+    "joinsTo": "$name →",
+    "visitDated": "방문일을 바꿨습니다"
+  },
+  "service": {
+    "kind": "운전 계통",
+    "none": "그 날짜에 운행하지 않던 운전 계통입니다",
+    "save": "기록하기",
+    "failed": "이 구간은 기록할 수 없습니다. 날짜를 확인해 주세요"
+  },
+  "deleted": {
+    "fileOldest": "예전에 가져온 기록",
+    "title": "삭제한 기록",
+    "empty": "삭제한 기록이 없습니다",
+    "restore": "되살리기",
+    "restored": "기록을 되살렸습니다",
+    "fileRides": {
+      "other": "기록 $n건"
+    },
+    "fileDelete": "이 파일 기록 모두 지우기",
+    "fileDeleted": {
+      "other": "기록 $n건을 지웠습니다"
+    }
+  },
+  "complete": {
+    "credit": "noriori로 기록했습니다",
+    "share": "공유하기",
+    "close": "닫기"
+  },
+  "collection": {
+    "title": "수집",
+    "lines": "노선",
+    "operators": "회사",
+    "prefs": "도도부현",
+    "stations": "역",
+    "allTime": "폐선 포함",
+    "stationGoal": "역 $n곳",
+    "empty": "아직 없습니다",
+    "closed": "폐선",
+    "closedEmpty": "탄 구간 중 폐지된 곳이 없습니다",
+    "closedYear": "$year년 폐지",
+    "closedAfter": {
+      "other": "탄 지 $n년 뒤"
+    },
+    "closedTotal": {
+      "other": "이제는 탈 수 없는 구간 $n곳 · $km km"
+    }
+  },
+  "visits": {
+    "title": "방문 역",
+    "count": {
+      "other": "$n곳"
+    },
+    "split": "현행 $open곳 · 폐역 $closed곳",
+    "prefs": "도도부현 $n / 47",
+    "unknown": {
+      "other": "도도부현을 모르는 역 $n곳"
+    },
+    "empty": "아직 방문한 역이 없습니다"
+  },
+  "remaining": {
+    "title": "남은 구간",
+    "entry": "추천 보기",
+    "shortest": "곧 완주",
+    "near": "가까운 곳",
+    "operators": "회사별",
+    "empty": "남은 구간이 없습니다",
+    "nearDenied": "위치를 쓸 수 없습니다. 설정에서 위치 권한을 켜 주세요",
+    "nearNone": "$km km 안에 남은 구간이 없습니다",
+    "nearAway": "$km km"
+  },
+  "news": {
+    "title": "철도망이 바뀌었습니다",
+    "history": "철도망 변경 내역",
+    "ok": "확인",
+    "lineOpened": "$line $km km 개업",
+    "lineClosed": "$line $km km 폐지",
+    "stationOpened": "$station역 개업 ($line)",
+    "stationClosed": "$station역 폐역 ($line)",
+    "more": {
+      "other": "그 밖에 $n건"
+    },
+    "lineReopened": "$line $km km 개업. 완주가 풀렸습니다",
+    "rideDistance": "$line 기록 거리가 $before km에서 $after km로 바뀌었습니다",
+    "rideReview": "$line 기록을 확인해 주세요"
+  },
+  "journey": {
+    "title": "여러 노선 한 번에 기록",
+    "hint": "출발역과 도착역을 고르면 경로를 찾아 노선마다 기록하고 여정으로 묶습니다",
+    "from": "출발",
+    "to": "도착",
+    "choose": "고르기",
+    "save": "기록하기",
+    "none": "이어지는 경로를 찾지 못했습니다",
+    "stationHint": "역 이름",
+    "saved": {
+      "other": "기록 $n건을 저장했습니다"
+    }
+  },
+  "years": {
+    "title": "연도별",
+    "activity": "활동",
+    "distance": "거리",
+    "count": "기록 수",
+    "fresh": "새 구간",
+    "busiest": "가장 많이 탄 해",
+    "undated": "날짜 모름",
+    "undatedHint": "그래프와 캘린더에는 들지 않습니다",
+    "empty": "날짜가 있는 기록이 없습니다",
+    "activityHint": "색이 진할수록 많이 탄 날입니다",
+    "noRides": "기록 없음",
+    "rides": {
+      "other": "$n건"
+    }
+  },
+  "trip": {
+    "make": "여정으로 묶기",
+    "nameTitle": "여정 이름",
+    "nameHint": "간사이 여행",
+    "save": "저장",
+    "rename": "이름 바꾸기",
+    "dissolve": "여정 풀기",
+    "dissolveHint": "묶음만 없앱니다. 기록은 남습니다",
+    "dissolved": "여정을 풀었습니다",
+    "made": "여정으로 묶었습니다",
+    "empty": "여정이 없습니다",
+    "emptyHint": "탑승 기록을 길게 눌러 고른 뒤 여정으로 묶을 수 있습니다",
+    "rides": {
+      "other": "기록 $n건"
+    },
+    "delete": "여정과 기록 삭제",
+    "deleteHint": "여정에 묶인 기록까지 지웁니다. 5초 안에 되돌릴 수 있습니다",
+    "deleted": "여정과 기록을 지웠습니다"
+  },
+  "mapSheet": {
+    "beyond": "이 역 너머 폐지 구간",
+    "unlocated": "정확한 위치 모름",
+    "rideCount": "내 탑승 기록 $count건",
+    "viewSection": "구간 보기",
+    "unmapped": "지도에 없음",
+    "visited": "이 역에 가 봤음",
+    "visitedHint": "완주율에는 들지 않고 지도의 점만 칠합니다",
+    "noVisits": "역 방문 기록이 없습니다. 지도에서 역을 눌러 남길 수 있습니다"
+  },
+  "prefNames": [
+    "홋카이도",
+    "아오모리",
+    "이와테",
+    "미야기",
+    "아키타",
+    "야마가타",
+    "후쿠시마",
+    "이바라키",
+    "도치기",
+    "군마",
+    "사이타마",
+    "치바",
+    "도쿄",
+    "가나가와",
+    "니가타",
+    "도야마",
+    "이시카와",
+    "후쿠이",
+    "야마나시",
+    "나가노",
+    "기후",
+    "시즈오카",
+    "아이치",
+    "미에",
+    "시가",
+    "교토",
+    "오사카",
+    "효고",
+    "나라",
+    "와카야마",
+    "돗토리",
+    "시마네",
+    "오카야마",
+    "히로시마",
+    "야마구치",
+    "도쿠시마",
+    "카가와",
+    "에히메",
+    "고치",
+    "후쿠오카",
+    "사가",
+    "나가사키",
+    "구마모토",
+    "오이타",
+    "미야자키",
+    "가고시마",
+    "오키나와"
+  ],
+  "date": {
+    "months": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "day": "$year.$month.$day",
+    "month": "$year.$month"
+  }
+}

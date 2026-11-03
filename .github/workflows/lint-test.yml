@@ -1,0 +1,52 @@
+name: lint-test
+on: [push, pull_request]
+
+jobs:
+  lint-test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.1
+          channel: stable
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.9'
+      # 판은 data/sources.lock에 적힌 tippecanoe와 맞춘다
+      - uses: actions/cache@v4
+        id: tippecanoe
+        with:
+          path: ~/.local/tippecanoe
+          key: tippecanoe-2.79.0-ubuntu-24.04
+      - if: steps.tippecanoe.outputs.cache-hit != 'true'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libsqlite3-dev zlib1g-dev
+          curl -fsSL https://github.com/felt/tippecanoe/archive/refs/tags/2.79.0.tar.gz | tar xz
+          make -C tippecanoe-2.79.0 -j4
+          make -C tippecanoe-2.79.0 install PREFIX="$HOME/.local/tippecanoe"
+      - run: echo "$HOME/.local/tippecanoe/bin" >> "$GITHUB_PATH"
+      - run: flutter pub get
+      - run: python3 tools/check_boundaries.py
+      # 데이터가 저장소에 있으므로 실제 팩을 만들어 store 시험이 건너뛰지 않게 한다
+      - run: bash tools/all.sh
+      - run: python3 -I tools/core_fixture.py
+      - run: bash tools/sync_pack.sh
+      - run: test -f build/core_fixture.json && test -f build/master.sqlite && test -f build/names.sqlite && test -f build/rail.pmtiles
+      - run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: packages/noriori_store
+      - run: dart run slang
+        working-directory: apps/noriori
+      # 생성 코드가 커밋된 것과 같은지 본다. slang의 생성 시각 줄은 뺀다
+      - name: 생성 코드 diff
+        run: |
+          test -z "$(git ls-files --others --exclude-standard -- '*.g.dart')"
+          git diff --exit-code -I '^/// Built on ' -- '*.g.dart'
+      - run: flutter analyze
+      - run: dart test
+        working-directory: packages/noriori_core
+      - run: dart test
+        working-directory: packages/noriori_store
+      - run: flutter test
+        working-directory: apps/noriori

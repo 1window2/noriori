@@ -1,0 +1,668 @@
+{
+  "app": {
+    "name": "noriori",
+    "loadFailed": "Couldn't load this. Please reopen the app"
+  },
+  "tabs": {
+    "map": "Map",
+    "record": "Log",
+    "stats": "Stats",
+    "settings": "Settings"
+  },
+  "start": {
+    "loading": "Getting ready",
+    "updateTitle": "Please update the app",
+    "updateBody": "Your rides were saved with a newer version of noriori. They're safe.",
+    "retryTitle": "Couldn't open your rides",
+    "retryBody": "Your rides are safe. Please try again in a moment.",
+    "restoreTitle": "Your ride data is corrupted",
+    "restoreBody": "We kept the corrupted file. You can restore your rides from a backup.",
+    "retry": "Try again",
+    "noSpaceTitle": "Not enough storage",
+    "noSpaceBody": "Your rides are safe. Free up some space and try again.",
+    "restoreAction": "Restore"
+  },
+  "map": {
+    "soloOff": "Show all lines",
+    "scoreLabel": "ridden",
+    "add": "Add ride",
+    "search": "Search lines and stations",
+    "closed": "Closed lines",
+    "names": "Station names",
+    "wholeJapan": "Show all of Japan",
+    "firstRide": "Log your first ride",
+    "firstRideHint": "Pick a line and tap two stations",
+    "left": "$km km to go",
+    "continueTitle": "Continue riding",
+    "onlyRidden": "Ridden only",
+    "sheetHandle": "Show all lines in progress",
+    "year": "Year",
+    "yearHint": "Shows only what you had ridden by that year",
+    "heat": "Prefectures"
+  },
+  "record": {
+    "viaService": "Via $name",
+    "empty": "No rides yet",
+    "emptyHint": "Log your first ride from the line list or search",
+    "add": "Add ride",
+    "dateUnknown": "Date unknown",
+    "status": {
+      "partial": "Partially confirmed",
+      "needsInput": "Needs review",
+      "unknownRef": "Needs review",
+      "invalid": "Needs review",
+      "error": "Couldn't calculate"
+    },
+    "deleted": "Ride deleted",
+    "undo": "Undo",
+    "delete": "Delete",
+    "km": "$km km",
+    "view": {
+      "lines": "Lines",
+      "rides": "Rides",
+      "visits": "Station visits",
+      "trips": "Trips"
+    },
+    "era": {
+      "current": "Current",
+      "closed": "Closed"
+    },
+    "category": {
+      "jr": "JR",
+      "majorPrivate": "Major private railways",
+      "semiMajorPrivate": "Semi-major private railways",
+      "public": "Public operators",
+      "generalPrivate": "Other private railways",
+      "monorail": "Monorails",
+      "agt": "New transit (AGT)",
+      "cable": "Cable cars"
+    },
+    "title": "Log",
+    "currentLabel": "Current network",
+    "closedLabel": "Closed sections",
+    "of": "of $km km",
+    "lineCount": "$num / $den lines",
+    "completeCount": "$num completed",
+    "filter": {
+      "all": "All",
+      "riding": "In progress",
+      "unridden": "Unridden",
+      "complete": "Completed"
+    },
+    "lineSub": "$era · $num / $den km · $percent",
+    "filterEmpty": "No matching lines",
+    "picked": "$count selected",
+    "pickAll": "Select all"
+  },
+  "stats": {
+    "totalRidden": "Total distance ridden: $km km",
+    "empty": "Add a ride to see your completion rate",
+    "current": "Current",
+    "allTime": "All time",
+    "ridden": "$num / $den km",
+    "operators": "Operators",
+    "lines": "Lines",
+    "title": "Stats",
+    "year": "Year",
+    "yearPick": "Choose a year",
+    "yearLabel": "$year",
+    "rodeOf": "$num / $den km",
+    "month": "+$km km this month",
+    "kpi": {
+      "lines": "Lines",
+      "complete": "Completed",
+      "stations": "Stations",
+      "operators": "Operators"
+    },
+    "nearly": "Almost complete",
+    "left": "$km km to go",
+    "prefs": "Prefectures",
+    "prefHint": "% ridden",
+    "prefLabel": "$name $percent",
+    "visited": {
+      "one": "$n station visited",
+      "other": "$n stations visited"
+    },
+    "decade": "${year}s",
+    "review": {
+      "one": "$n ride needs review · $km km",
+      "other": "$n rides need review · $km km"
+    },
+    "badges": {
+      "one": "$n badge",
+      "other": "$n badges"
+    },
+    "visitedClosed": "$n closed"
+  },
+  "settings": {
+    "version": "App version",
+    "dataEdition": "Data version",
+    "packSummary": "$stations stations · $lines lines",
+    "data": "Backup and restore",
+    "licenses": "Open source licenses",
+    "sources": "Data sources",
+    "showClosed": "Show closed stations and lines",
+    "showArchive": "Include historic stations and lines",
+    "showBranches": "Show lines at junctions",
+    "theme": "Theme",
+    "themeLight": "Light",
+    "themeDark": "Dark",
+    "themeSystem": "System",
+    "language": "Language",
+    "carryover": "Carry rides over when operators change",
+    "carryoverHint": "When off, sections transferred from JR count as new lines"
+  },
+  "search": {
+    "hint": "Line or station name",
+    "prompt": "Find a line or station to start",
+    "none": "No results"
+  },
+  "session": {
+    "laps": {
+      "one": "$n lap",
+      "other": "$n laps"
+    },
+    "lapLess": "Remove a lap",
+    "lapMore": "Add a lap",
+    "away": {
+      "one": "+$n stop",
+      "other": "+$n stops"
+    },
+    "dateTitle": "Ride date",
+    "dateHint": "2015, 2015-03, 2015-03-14, 198X",
+    "dateUnknown": "No date",
+    "datePick": "Pick from calendar",
+    "dateBad": "Please check the date format",
+    "apply": "Apply",
+    "cancel": "Cancel",
+    "main": "Main line",
+    "pickFrom": "Pick the departure station",
+    "pickTo": "Pick the arrival station",
+    "save": "Save ride",
+    "summary": "$from → $to · $km km",
+    "noPath": "No route found between these two stations",
+    "state": {
+      "maybe": "?",
+      "suspended": "Suspended",
+      "until": "until $year",
+      "since": "from $year",
+      "span": "$from–$to"
+    },
+    "savedAs": "Part of $line on that date",
+    "chooseDirection": "Which way did you ride?",
+    "directionKm": "$km km",
+    "chooseRelocation": "Which alignment did you ride?",
+    "relocationOption": "As of $date · $km km",
+    "dontKnow": "Not sure",
+    "today": "Today",
+    "findStop": "Find a station",
+    "meta": "$operator · $km",
+    "fresh": "New: $km km",
+    "noFresh": "Already ridden",
+    "change": "$before → $after",
+    "nonePickable": "No stations are available on this date. Try another date",
+    "maybeHint": "We couldn't confirm it was open on this date",
+    "saveFailed": "Couldn't save. Your rides haven't changed",
+    "spokenKm": "$km kilometers",
+    "spokenTransfer": {
+      "one": "$n transfer",
+      "other": "$n transfers"
+    },
+    "spokenFrom": "Selected as departure",
+    "spokenTo": "Selected as arrival",
+    "showClosed": "Closed stations",
+    "showArchive": "Historic stations",
+    "returnsTo": "Back to $name",
+    "clear": "Clear",
+    "lap": "One full loop",
+    "stops": {
+      "one": "$n station",
+      "other": "$n stations"
+    },
+    "closedSection": "Closed in $year",
+    "archiveStop": "$name closed in $year and can't be logged",
+    "archiveLine": "$name is a historic line and can't be logged",
+    "from": "From",
+    "to": "To",
+    "whyClosed": "This station wasn't open on that date",
+    "whySuspended": "This section was suspended on that date",
+    "bound": "For $names",
+    "spokenClosed": "Closed in $year",
+    "spokenBranch": "$line, branch to $next",
+    "leaving": "From $name",
+    "progress": "$num / $den km ($percent)",
+    "leaveTitle": "Your selection will be cleared",
+    "leaveBody": "If you switch lines, the stations you picked will be cleared.",
+    "leave": "Switch",
+    "dateDemoted": "That section wasn't open on that date, so the date was cleared",
+    "repick": "Tap another station to start over",
+    "closedUnknown": "Closed section",
+    "relocationOld": "Old alignment · $km km",
+    "relocationNew": "New alignment · $km km",
+    "spokenOpen": "open",
+    "spokenRidden": "ridden"
+  },
+  "data": {
+    "title": "Backup and restore",
+    "folder": "Backup folder",
+    "folderHint": "Choose a location that stays after you uninstall the app",
+    "folderNone": "Not set",
+    "insideApp": "This folder is deleted when you uninstall the app. Choose another folder",
+    "lastBackup": "Last backup",
+    "never": "Never",
+    "lastFailed": "The last attempt failed",
+    "backupNow": "Back up now",
+    "restore": "Restore",
+    "restoreHint": "Merges a backup file into your rides. If a ride is in both, the most recent edit is kept, so new rides are never lost.",
+    "noFiles": "No backup files in this folder",
+    "fileRows": {
+      "one": "$n ride",
+      "other": "$n rides"
+    },
+    "fileTooNew": "Update the app to read this file",
+    "fileUnreadable": "This file can't be read",
+    "merged": {
+      "one": "Restored $n ride",
+      "other": "Restored $n rides"
+    },
+    "refused": "This file can't be restored",
+    "exportQuarantined": "Export the corrupted file",
+    "exportHint": "Saves a copy to the backup folder",
+    "exported": {
+      "one": "Exported $n file",
+      "other": "Exported $n files"
+    },
+    "finish": "Finish and open app",
+    "notice": {
+      "needsMerge": "The backup folder has newer rides than this device. Please restore",
+      "failed": "Automatic backup failed",
+      "folderLost": "Please choose the backup folder again",
+      "unreadable": "The backup folder has files that couldn't be read",
+      "stale": "Recent changes haven't been backed up in over a week",
+      "noFolder": "Choose a backup folder to protect your rides"
+    },
+    "exportCompat": "Export CSV (Noritsubushi format)",
+    "exportCompatHint": "Sends the same format as Noritsubushi",
+    "exportFull": "Export CSV (full)",
+    "exportFullHint": "Sends everything, including routes and dates",
+    "exportedUtf8": "Saved as UTF-8 because some characters aren't supported in Shift-JIS: $name",
+    "exportFailed": "Couldn't export",
+    "exportBackup": "Export backup file",
+    "exportBackupHint": "Sends all your rides as a single file",
+    "restoreFile": "Restore from a file",
+    "restoreFileHint": "Choose a backup file you exported"
+  },
+  "importing": {
+    "title": "Import from Noritsubushi",
+    "entryHint": "Adds a downloaded CSV to your rides",
+    "hint": "Choose the CSV you downloaded from the bottom of Noritsubushi's record editing page. Both the plain and comment versions work.",
+    "choose": "Choose file",
+    "refused": "Not a Noritsubushi CSV: $name. Please choose another file.",
+    "failed": "Couldn't import. Your rides haven't changed.",
+    "undone": "Undone. You can pick the removed rides when you import again.",
+    "file": "File",
+    "fresh": "New rides",
+    "rows": "$count",
+    "distance": "Total distance",
+    "existing": "Already in your rides",
+    "deleted": "Also restore deleted rides",
+    "missed": {
+      "one": "$count row with no matching line",
+      "other": "$count rows with no matching line"
+    },
+    "missedHint": "Kept as rides, but they don't count toward completion",
+    "broken": {
+      "one": "$count row unreadable",
+      "other": "$count rows unreadable"
+    },
+    "brokenHint": "Malformed rows aren't imported",
+    "kmDiffers": {
+      "one": "$count row differs in distance",
+      "other": "$count rows differ in distance"
+    },
+    "kmDiffersHint": "The file's distance differs from the app's",
+    "kmDiffersRow": "$raw → app ${km} km",
+    "nothing": "No new rides to import",
+    "confirm": {
+      "one": "Import $count ride",
+      "other": "Import $count rides"
+    },
+    "done": {
+      "one": "Imported $count ride",
+      "other": "Imported $count rides"
+    },
+    "close": "Close",
+    "undo": "Undo",
+    "fullHint": "A full noriori export. Only rides you don't already have are added ($count in the file).",
+    "merged": {
+      "one": "Added $n ride",
+      "other": "Added $n rides"
+    }
+  },
+  "ticket": {
+    "completeStamp": "完乗",
+    "rideStamp": "乗車",
+    "undo": "Undo",
+    "savedUnknown": "This date can't be used here, so the ride was saved without a date",
+    "noDate": "Date unknown"
+  },
+  "sources": {
+    "title": "Data sources",
+    "intro": "Built from facts such as names, distances and dates gathered from several sources. noriori data is released under CC BY-SA 4.0. Track shapes follow the terms of each original source, and only the OSM track file is ODbL 1.0.",
+    "n02": {
+      "name": "国土数値情報 鉄道データ (N02)",
+      "use": "Track geometry, station coordinate corrections",
+      "terms": "MLIT. CC BY 4.0 for editions from 2020; earlier editions under the 国土数値情報 terms of use. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "n03": {
+      "name": "National Land Numerical Information: Administrative Zones (N03)",
+      "use": "Outline of Japan and prefecture borders",
+      "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "stationDatabase": {
+      "name": "station_database",
+      "use": "Station list and coordinates",
+      "terms": "Seo-4d696b75. CC BY-SA 4.0"
+    },
+    "wikipedia": {
+      "name": "Japanese Wikipedia",
+      "use": "Line diagrams, connections, closure history, Japanese readings",
+      "terms": "CC BY-SA 4.0"
+    },
+    "wikidata": {
+      "name": "Wikidata",
+      "use": "English names, some station coordinates",
+      "terms": "CC0 1.0"
+    },
+    "namuwiki": {
+      "name": "Namuwiki",
+      "use": "Korean title spellings. Article text is not used",
+      "terms": "Site license CC BY-NC-SA 2.0 KR"
+    },
+    "noritsubushi": {
+      "name": "Noritsubushi",
+      "use": "Operating kilometers, station order, key dates, Japanese names",
+      "terms": "Factual data only"
+    },
+    "openFreeMap": {
+      "name": "OpenFreeMap",
+      "use": "Base map",
+      "terms": "OpenFreeMap © OpenMapTiles. Data from OpenStreetMap"
+    },
+    "openStreetMap": {
+      "name": "OpenStreetMap",
+      "use": "Track geometry missing from N02",
+      "terms": "© OpenStreetMap contributors. ODbL 1.0. rail-osm.pmtiles only"
+    },
+    "noto": {
+      "name": "Noto Sans, Noto Sans CJK",
+      "use": "Station name lettering on the map",
+      "terms": "SIL OFL 1.1. Full text in Open source licenses"
+    }
+  },
+  "editRide": {
+    "saved": "Saved",
+    "transfers": "Changed trains here",
+    "transfersHint": "Pick the stations on this ride where you got off and changed",
+    "title": "Edit ride",
+    "missing": "Ride not found",
+    "date": "Ride date",
+    "times": "Departure and arrival times",
+    "train": "Train name",
+    "car": "Trainset",
+    "note": "Note",
+    "fromAlighted": "Boarded at the departure station",
+    "toAlighted": "Got off at the arrival station",
+    "save": "Save",
+    "delete": "Delete",
+    "failed": "Couldn't save. Your rides haven't changed"
+  },
+  "lineDetail": {
+    "soloMap": "Show only this line on the map",
+    "current": "Current",
+    "allTime": "All time",
+    "km": "$num / $den km",
+    "completeCurrent": "Completed (current)",
+    "completeAllTime": "Completed (all time)",
+    "selfScore": "Not counted in your totals. Progress is based on this line alone",
+    "open": "Line details",
+    "record": "Log a ride on this line",
+    "clear": "Clear all rides on this line",
+    "hint": "Tap a section to mark it as ridden or not. Long-press and drag to change several at once. Tap a station dot to mark it as visited",
+    "sectionRidden": "$from to $to, ridden. Tap to clear",
+    "sectionOpen": "$from to $to, not ridden. Tap to mark as ridden",
+    "stopNode": "Mark visit at $name",
+    "turnedOff": {
+      "one": "Updated $n ride",
+      "other": "Updated $n rides"
+    },
+    "turnedOn": "Marked as ridden",
+    "restored": "Ride restored",
+    "blockedHidden": "This ride would have to be split at a signal station or junction, so this section can't be cleared here. Edit the ride instead",
+    "blockedPath": "Removing this section would change the ride's route or date, so it can't be cleared here. Edit the ride instead",
+    "blockedOn": "This section can't be marked as ridden here. Log it from the station picker instead",
+    "visitAdded": "Marked as visited",
+    "visitRemoved": "Visit removed",
+    "visitByRide": "Marked because you boarded or got off here. Edit that ride to change it",
+    "undo": "Undo",
+    "joinsTo": "$name →",
+    "visitDated": "Visit date changed"
+  },
+  "service": {
+    "kind": "Service",
+    "none": "This service didn't run on that date",
+    "save": "Save ride",
+    "failed": "This section can't be logged. Please check the date"
+  },
+  "deleted": {
+    "fileOldest": "Earlier imports",
+    "title": "Deleted rides",
+    "empty": "No deleted rides",
+    "restore": "Restore",
+    "restored": "Ride restored",
+    "fileRides": {
+      "one": "$n ride",
+      "other": "$n rides"
+    },
+    "fileDelete": "Delete all",
+    "fileDeleted": {
+      "one": "Deleted $n ride",
+      "other": "Deleted $n rides"
+    }
+  },
+  "complete": {
+    "credit": "Logged with noriori",
+    "share": "Share",
+    "close": "Close"
+  },
+  "collection": {
+    "title": "Collection",
+    "lines": "Lines",
+    "operators": "Operators",
+    "prefs": "Prefectures",
+    "stations": "Stations",
+    "allTime": "All time",
+    "stationGoal": "$n stations",
+    "empty": "Nothing yet",
+    "closed": "Closed",
+    "closedEmpty": "None of the sections you rode have closed",
+    "closedYear": "closed in $year",
+    "closedAfter": {
+      "one": "$n year after your ride",
+      "other": "$n years after your ride"
+    },
+    "closedTotal": {
+      "one": "$n section you can no longer ride · $km km",
+      "other": "$n sections you can no longer ride · $km km"
+    }
+  },
+  "visits": {
+    "title": "Visited stations",
+    "count": {
+      "one": "$n station",
+      "other": "$n stations"
+    },
+    "split": "$open open · $closed closed",
+    "prefs": "$n of 47 prefectures",
+    "unknown": {
+      "one": "$n station with no prefecture",
+      "other": "$n stations with no prefecture"
+    },
+    "empty": "No stations visited yet"
+  },
+  "remaining": {
+    "title": "Unridden sections",
+    "entry": "See suggestions",
+    "shortest": "Almost complete",
+    "near": "Nearby",
+    "operators": "By operator",
+    "empty": "No sections left",
+    "nearDenied": "Location isn't available. Turn it on in Settings",
+    "nearNone": "No unridden sections within $km km",
+    "nearAway": "$km km away"
+  },
+  "news": {
+    "title": "The rail network has changed",
+    "history": "Network changes",
+    "ok": "OK",
+    "lineOpened": "$line: $km km opened",
+    "lineClosed": "$line: $km km closed",
+    "stationOpened": "$station station opened ($line)",
+    "stationClosed": "$station station closed ($line)",
+    "more": {
+      "one": "and $n more",
+      "other": "and $n more"
+    },
+    "lineReopened": "$line: $km km opened, so the line is no longer complete",
+    "rideDistance": "$line ride changed from $before km to $after km",
+    "rideReview": "Check your $line ride"
+  },
+  "journey": {
+    "title": "Log several lines at once",
+    "hint": "Pick two stations. noriori finds a route, logs each line and groups them into a trip",
+    "from": "From",
+    "to": "To",
+    "choose": "Choose",
+    "save": "Log",
+    "none": "No connecting route found",
+    "stationHint": "Station name",
+    "saved": {
+      "one": "Saved $n ride",
+      "other": "Saved $n rides"
+    }
+  },
+  "years": {
+    "title": "By year",
+    "activity": "Activity",
+    "distance": "Distance",
+    "count": "Rides",
+    "fresh": "New sections",
+    "busiest": "Busiest year",
+    "undated": "No date",
+    "undatedHint": "Not included in the chart or calendar",
+    "empty": "No dated rides yet",
+    "activityHint": "Darker days had more rides",
+    "noRides": "No rides",
+    "rides": {
+      "one": "$n ride",
+      "other": "$n rides"
+    }
+  },
+  "trip": {
+    "make": "Group into a trip",
+    "nameTitle": "Trip name",
+    "nameHint": "Kansai trip",
+    "save": "Save",
+    "rename": "Rename",
+    "dissolve": "Ungroup trip",
+    "dissolveHint": "Removes the group. Your rides stay",
+    "dissolved": "Trip ungrouped",
+    "made": "Grouped into a trip",
+    "empty": "No trips yet",
+    "emptyHint": "Long-press rides in your log to group them into a trip",
+    "rides": {
+      "one": "$n ride",
+      "other": "$n rides"
+    },
+    "delete": "Delete trip and rides",
+    "deleteHint": "Also deletes the rides in this trip. You can undo for 5 seconds",
+    "deleted": "Trip and rides deleted"
+  },
+  "mapSheet": {
+    "beyond": "Closed section beyond this station",
+    "unlocated": "Exact location unknown",
+    "rideCount": "Your rides: $count",
+    "viewSection": "View section",
+    "unmapped": "Not on map",
+    "visited": "I've been to this station",
+    "visitedHint": "Doesn't count toward completion. It only fills in the dot on the map",
+    "noVisits": "No station visits yet. Tap a station on the map to add one"
+  },
+  "prefNames": [
+    "Hokkaido",
+    "Aomori",
+    "Iwate",
+    "Miyagi",
+    "Akita",
+    "Yamagata",
+    "Fukushima",
+    "Ibaraki",
+    "Tochigi",
+    "Gunma",
+    "Saitama",
+    "Chiba",
+    "Tokyo",
+    "Kanagawa",
+    "Niigata",
+    "Toyama",
+    "Ishikawa",
+    "Fukui",
+    "Yamanashi",
+    "Nagano",
+    "Gifu",
+    "Shizuoka",
+    "Aichi",
+    "Mie",
+    "Shiga",
+    "Kyoto",
+    "Osaka",
+    "Hyogo",
+    "Nara",
+    "Wakayama",
+    "Tottori",
+    "Shimane",
+    "Okayama",
+    "Hiroshima",
+    "Yamaguchi",
+    "Tokushima",
+    "Kagawa",
+    "Ehime",
+    "Kochi",
+    "Fukuoka",
+    "Saga",
+    "Nagasaki",
+    "Kumamoto",
+    "Oita",
+    "Miyazaki",
+    "Kagoshima",
+    "Okinawa"
+  ],
+  "date": {
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ],
+    "day": "$month $day, $year",
+    "month": "$month $year"
+  }
+}

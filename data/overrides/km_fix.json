@@ -1,0 +1,98 @@
+[
+{
+"a": "n_kameido_tobu",
+"b": "n_kameidosuijin",
+"km": 0.7,
+"why": "亀戸線. 표가 역 이름만 亀戸→曳舟로 놓고 km는 曳舟 기점 값을 그대로 써서 뒤집혔다. 위키백과 曳舟 0.0, 小村井 1.4, 東あずま 2.0, 亀戸水神 2.7, 亀戸 3.4"
+},
+{
+"a": "n_kameidosuijin",
+"b": "n_higashi_azuma",
+"km": 0.7,
+"why": "위와 같다"
+},
+{
+"a": "n_higashi_azuma",
+"b": "n_omurai",
+"km": 0.6,
+"why": "위와 같다"
+},
+{
+"a": "n_omurai",
+"b": "n_hikifune",
+"km": 1.4,
+"why": "위와 같다"
+},
+{
+"a": "n_kanaishihara",
+"b": "n_kami_imari",
+"km": 4.4,
+"why": "筑肥線. 위키백과 金石原 19.7, 上伊万里 24.1, 伊万里 25.7. 표는 上伊万里를 23.1로 적었다. 실제 선로 4.37, 1.73"
+},
+{
+"a": "n_kami_imari",
+"b": "n_imari",
+"km": 1.6,
+"why": "위와 같다"
+},
+{
+"a": "n_funao",
+"b": "n_chikuzen_shonai",
+"km": 3.7,
+"why": "後藤寺線. 위키백과 筑前庄内 6.2, 船尾 9.9, 田川後藤寺 13.3. 표는 두 값이 뒤바뀌었다. 실제 선로 3.67, 3.33"
+},
+{
+"a": "n_tagawa_gotoji",
+"b": "n_funao",
+"km": 3.4,
+"why": "위와 같다"
+},
+{
+"a": "n_susaki",
+"b": "n_tosa_shinjo",
+"km": 1.9,
+"why": "土讃線. 위키백과 須崎 168.7, 土佐新荘 170.6, 安和 173.6. 실제 선로 1.93, 2.96"
+},
+{
+"a": "n_tosa_shinjo",
+"b": "n_awa",
+"km": 3.0,
+"why": "위와 같다"
+},
+{
+"a": "n_iwashimizu_hachimangu",
+"b": "n_yodo_keihan",
+"km": 3.5,
+"why": "京阪本線. 淀駅 고가화 이전을 반영. 위키백과 31.8, 35.3, 39.7. 실제 선로 3.50, 4.43"
+},
+{
+"a": "n_yodo_keihan",
+"b": "n_chushojima",
+"km": 4.4,
+"why": "위와 같다"
+},
+{
+"a": "n_sapporo",
+"b": "n_naebo",
+"km": 1.9,
+"why": "函館本線. 苗穂駅 2018년 이전을 반영. 위키백과 札幌 286.3, 苗穂 288.2. 실제 선로 1.95"
+},
+{
+"a": "n_naebo",
+"b": "n_shiroishi_chitose",
+"km": 3.9,
+"why": "위와 같다. 합은 그대로"
+},
+{
+"a": "n_chihaya",
+"b": "n_hakozaki",
+"km": 4.0,
+"why": "鹿児島本線. 위키백과 千早 71.0, 箱崎 75.0, 吉塚 76.4. 실제 선로 4.05, 1.23"
+},
+{
+"a": "n_hakozaki",
+"b": "n_yoshizuka",
+"km": 1.4,
+"why": "위와 같다"
+}
+]

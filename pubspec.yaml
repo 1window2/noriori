@@ -1,0 +1,10 @@
+name: noriori_workspace
+publish_to: none
+
+environment:
+  sdk: ^3.13.1
+
+workspace:
+  - apps/noriori
+  - packages/noriori_core
+  - packages/noriori_store

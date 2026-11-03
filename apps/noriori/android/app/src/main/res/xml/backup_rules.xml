@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- OS 백업은 user.sqlite와 -wal만이다 (ARCHITECTURE §3.7). 보장은 자동 백업 파일이다 -->
+<full-backup-content>
+    <include domain="file" path="user.sqlite"/>
+    <include domain="file" path="user.sqlite-wal"/>
+</full-backup-content>
