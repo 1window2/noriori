@@ -1,7 +1,7 @@
 [
 {
-"old": "n_nonai_aoimori_aoimori_railway",
-"new": "n_nonai_aoimori_aoimori_railway_b",
+"old": "n_nonai_aoimori_aoimori_railway_old",
+"new": "n_nonai_aoimori_aoimori_railway",
 "date": "2011-03-12",
 "note": "野内駅 青森寄りに1.6km移転"
 },
@@ -12,38 +12,38 @@
 "note": "織笠駅 三陸鉄道転換時に陸中山田寄りへ1km移転"
 },
 {
-"old": "n_kitamori_hanawa_b",
+"old": "n_kitamori_hanawa_old",
 "new": "n_kitamori_hanawa",
 "date": "2015-03-14",
 "note": "北森駅 平館寄りに500m移転"
 },
 {
-"old": "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside",
-"new": "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_b",
+"old": "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_old",
+"new": "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside",
 "date": "2019-03-31",
 "note": "金沢八景駅 シーサイドライン本駅舎"
 },
 {
-"old": "n_mikawa_chiryu_meitetsu_mikawa_b",
+"old": "n_mikawa_chiryu_meitetsu_mikawa_old",
 "new": "n_mikawa_chiryu_meitetsu_mikawa",
 "date": "2024-03-16",
 "note": "三河知立駅 移転 (旧駅 -2024-03-15)"
 },
 {
-"old": "n_shimbashi_yurikamome_b",
+"old": "n_shimbashi_yurikamome_old",
 "new": "n_shimbashi_yurikamome",
 "date": "2001-03-22",
 "note": "ゆりかもめ 新橋 仮駅から本駅へ"
 },
 {
-"old": "n_osadakoen_oita_transportation_yabakei",
-"new": "n_osadakoen_oita_transportation_yabakei_b",
+"old": "n_osadakoen_oita_transportation_yabakei_old",
+"new": "n_osadakoen_oita_transportation_yabakei",
 "date": "1944-03-01",
 "note": "大貞公園駅 上ノ原寄りに770m移転"
 },
 {
-"old": "n_kannoura_asa_seaside_asato",
-"new": "n_kannoura_asa_seaside_asato_b",
+"old": "n_kannoura_asa_seaside_asato_old",
+"new": "n_kannoura_asa_seaside_asato",
 "date": "2020-10-23",
 "note": "甲浦 阿佐東線0.1km延伸"
 },
@@ -124,5 +124,35 @@
 "new": "n_machida_yokohama",
 "date": "1980-04-01",
 "note": "原町田 이전, 町田로 개칭"
+},
+{
+"old": "n_higashi_karatsu_old",
+"new": "n_higashi_karatsu",
+"date": "1983-03-22",
+"note": "東唐津駅 筑肥線 虹ノ松原〜唐津間の新線開業で南東へ約1.2km移転"
+},
+{
+"old": "n_kaede_old",
+"new": "n_kaede",
+"date": "1981-10-01",
+"note": "楓駅 石勝線開業で約1km移転"
+},
+{
+"old": "n_shinchi_old",
+"new": "n_shinchi",
+"date": "2016-12-10",
+"note": "新地駅 常磐線 相馬〜浜吉田間の内陸移設で移転"
+},
+{
+"old": "n_sakamoto_joban_old",
+"new": "n_sakamoto_joban",
+"date": "2016-12-10",
+"note": "坂元駅 常磐線 相馬〜浜吉田間の内陸移設で移転"
+},
+{
+"old": "n_yamashita_old",
+"new": "n_yamashita",
+"date": "2016-12-10",
+"note": "山下駅 常磐線 相馬〜浜吉田間の内陸移設で移転"
 }
 ]

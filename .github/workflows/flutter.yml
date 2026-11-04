@@ -1,0 +1,50 @@
+name: Flutter
+# Data 워크플로가 통과하면 그 실행의 판으로 분석하고 시험한다
+on:
+  workflow_run:
+    workflows: [Data]
+    types: [completed]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  flutter:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: noriori-data
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.1
+          channel: stable
+      - run: flutter pub get
+      - run: dart run build_runner build --delete-conflicting-outputs
+        working-directory: packages/noriori_store
+      - run: dart run slang
+        working-directory: apps/noriori
+      # 생성 코드가 커밋된 것과 같은지 본다. slang의 생성 시각 줄은 뺀다
+      - name: 생성 코드 diff
+        run: |
+          test -z "$(git ls-files --others --exclude-standard -- '*.g.dart')"
+          git diff --exit-code -I '^/// Built on ' -- '*.g.dart'
+      - run: flutter analyze
+      - run: dart test
+        working-directory: packages/noriori_core
+      - run: dart test
+        working-directory: packages/noriori_store
+      - run: flutter test
+        working-directory: apps/noriori

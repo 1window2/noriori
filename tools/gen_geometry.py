@@ -75,9 +75,12 @@ LICENSE='''# 선형의 이용 조건
 |---|---|---|
 | `n02.yaml` | 国土数値情報 鉄道データ (N02) 2020·2024판 | CC BY 4.0 |
 | `n02_legacy.yaml` | 国土数値情報 鉄道データ (N02) 2005·2008·2015판 | 国土数値情報 이용 조건 (商用可). CC BY 4.0 아님 |
+| `n05.yaml` | 国土数値情報 鉄道時系列データ (N05) 2024판. 폐선 구간 중 N02와 OSM에 없는 것만 | 国土数値情報 이용 조건 (非商用). CC BY 4.0 아님 |
 | `osm.yaml` | OpenStreetMap | Open Database License (ODbL) 1.0 |
 
 N02 표시: 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。
+
+N05 표시: 「国土数値情報（鉄道時系列データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html）を加工して作成。このデータは国土交通省が作成したものではありません。비상업 목적으로만 씁니다. 공간 오차는 수백 m, 시간 오차는 1~5년일 수 있습니다.
 
 ## OpenStreetMap
 
@@ -89,7 +92,7 @@ N02 표시: 「国土数値情報（鉄道データ）」（国土交通省）�
 
 받은 원본은 `data/imports/osm/`에 있고 공개하지 않습니다. 판과 받은 날은 `data/sources.lock`에 있습니다.
 '''
-YEARS=['24','20','15','08','05']
+YEARS=[y for y in ['24','20','15','08','05'] if source_on('n02_20'+y)]   # 출처 스위치 (data/sources.json)
 ED={'24':2024,'20':2020,'15':2015,'08':2008,'05':2005}
 LEGACY=('N02-05','N02-08','N02-15')
 DATA={};STN={}
@@ -98,13 +101,18 @@ for y in YEARS:
     print(y,len(DATA[y]),len(STN[y]),flush=True)
 # OSM: data/imports/osm/의 가장 새 폴더. 받은 값은 신뢰하지 않으므로 좌표와 이름, 종류만 쓴다
 ACTIVE={'rail','subway','light_rail','tram','narrow_gauge','monorail','funicular'}
+# 철도 태그 없이 길로 그려진 노반. 이름에 노반임이 드러나면 폐선 조각으로, 자전거길·산책로 이름뿐이면 다른 길로 본다
+RAILBED=re.compile(r'廃線|線跡|線路跡|鉄道跡|軌道跡|鉄道敷|線敷|旧線')
 def load_osm():
     base=os.path.join(IMP,'osm')
     if not os.path.isdir(base):return None
     fd=sorted(x for x in os.listdir(base) if os.path.isdir(os.path.join(base,x)))
-    if not fd:return None
-    out={};d=os.path.join(base,fd[-1])
-    for f in sorted(os.listdir(d)):
+    # 선로 스냅숏(overpass-)과 노반 스냅숏(railbed-)을 각각 가장 새 것으로 읽는다
+    track=[x for x in fd if not x.startswith('railbed-')];bed=[x for x in fd if x.startswith('railbed-')]
+    if not track:return None
+    out={}
+    for d in [os.path.join(base,track[-1])]+([os.path.join(base,bed[-1])] if bed else []):
+      for f in sorted(os.listdir(d)):
         if not f.endswith('.json.gz'):continue
         for w in json.loads(gzip.open(os.path.join(d,f),'rb').read().decode('utf-8')).get('elements',[]):
             if w.get('type')!='way' or not isinstance(w.get('id'),int) or w['id'] in out:continue
@@ -115,11 +123,14 @@ def load_osm():
             r=str(t.get('railway',''))
             if r in ACTIVE and t.get('service')!='yard':kind='a'
             elif r in ('abandoned','razed','disused','dismantled','preserved') or 'abandoned:railway' in t or 'razed:railway' in t or 'disused:railway' in t:kind='o'
+            elif 'railway' in t:continue
+            elif t.get('historic')=='railway' or 'railway:historic' in t or 'was:railway' in t or RAILBED.search(str(t.get('name',''))):kind='o'
+            elif t.get('highway'):kind='g'
             else:continue
             nm=' '.join(str(t.get(k,'')) for k in ('name','name:ja','official_name','old_name','abandoned:name','razed:name','disused:name'))[:120]
             out[w['id']]=(nm,kind,c)
     return [out[k] for k in sorted(out)]
-OSM=load_osm()
+OSM=load_osm() if source_on('osm') else None
 SRCS=list(YEARS)
 if OSM is not None:
     DATA['osm']=OSM;SRCS.append('osm');print('osm',len(OSM),flush=True)
@@ -135,6 +146,8 @@ CUR={r[0] for r in _db.execute("select distinct edge_id from edge_attr where val
 CLOSEY={}
 for e_,v_ in _db.execute("select edge_id,max(valid_to) from edge_life group by 1"):
     if v_ and v_!='ongoing' and v_[:4].isdigit():CLOSEY[e_]=int(v_[:4])
+# 운행이 먼저 끝나고 법적 폐지가 늦은 구간. N05는 법적 폐지까지 선로를 남겨 두기도 한다
+LEGALY={e_:int(v_[:4]) for e_,v_ in _db.execute("select edge_id,max(legal_abolition) from edge_life group by 1") if v_ and v_[:4].isdigit()}
 STOPS={r[0] for r in _db.execute("select distinct node_id from route_stop where is_stop=1 and valid_to='ongoing'")}
 LOPS=collections.defaultdict(set)
 ELINE=collections.defaultdict(set)
@@ -165,7 +178,7 @@ def n02_names(nm):
     if m_:o.add(znorm(m_.group(1)))
     return o
 # N02의 사업자 이름 중 옛 이름인 것
-OPAL={'東京急行電鉄':'東急電鉄','箱根登山鉄道':'小田急箱根','松本電気鉄道':'アルピコ交通','大阪高速鉄道':'大阪モノレール','総武流山電鉄':'流鉄','富士急行':'富士山麓電気鉄道','上田交通':'上田電鉄','一畑電気鉄道':'一畑電車','土佐電氣鐵道':'とさでん交通','岳南鉄道':'岳南電車','小湊鐵道':'小湊鉄道','大阪府都市開発':'南海電気鉄道','泉北高速鉄道':'南海電気鉄道','横浜新都市交通':'横浜シーサイドライン','アイジーアールいわて銀河鉄道':'IGRいわて銀河鉄道','WILLER\u3000TRAINS':'京都丹後鉄道（WILLER TRAINS）'}
+OPAL=HT['OPAL']
 def same_op(l,co):
     co=OPAL.get(co,co);cs=LOPS.get(l['id'],())
     if '旅客鉄道' in co:return l.get('family')=='jr' or any(c.startswith('JR') or c=='日本国有鉄道' for c in cs)
@@ -358,6 +371,9 @@ def accept(c,closed,src,lid):
 def pick(src,lid,A,B,k,closed,ra,rb):
     """한 원천에서 가장 맞는 경로. lvl 0 엄격히 맞음, 1 느슨히 맞음, 2 안 맞음"""
     shin=is_shin(lid);crow=seglen(A,B);best=None
+    # 폐선 구간의 OSM 경로가 폐선 조각보다 다른 길(자전거길 등)을 더 많이 타면 끊긴 폐선 조각을 잇는 탐색까지 가 본다
+    def weak(c):return closed and src=='osm' and c['near']<.5
+    def rank(c):return (c['lvl'],weak(c),abs(c['L']-k))
     def lvl(c):
         # 현행 구간의 끝이 역에서 먼 경로는 길이가 맞아도 다른 선로에 붙은 것이다
         if not closed and c['far']>.3:return 2
@@ -372,14 +388,14 @@ def pick(src,lid,A,B,k,closed,ra,rb):
             c2=search(src,lid,A,B,k,closed,ra,rb,mode,av)
             if c2 and abs(c2['L']-k)<abs(c['L']-k):c=c2
         c['lvl']=lvl(c)
-        if best is None or (c['lvl'],abs(c['L']-k))<(best['lvl'],abs(best['L']-k)):best=c
-        if best['lvl']==0:break
+        if best is None or rank(c)<rank(best):best=c
+        if best['lvl']==0 and not weak(best):break
     # 시작점이 나선 선로의 다른 바퀴에 잡히면 루프를 건너뛴다. 쌍마다 찾아 본다
     if best and best['lvl'] and not shin:
         c=search(src,lid,A,B,k,closed,ra,rb,0,None,True)
         if c:
             c['lvl']=lvl(c)
-            if (c['lvl'],abs(c['L']-k))<(best['lvl'],abs(best['L']-k)):best=c
+            if rank(c)<rank(best):best=c
     return best
 def inside(p,q,tol):
     """p의 점들이 모두 q 가까이에 있는가. 100m마다 본다"""
@@ -456,7 +472,7 @@ def simplify(c,eps=.00004):
         if d>mx:mx=d;mi=i
     if mx<eps:return [a,b]
     return simplify(c[:mi+1],eps)[:-1]+simplify(c[mi:],eps)
-def tag(src):return 'osm' if src=='osm' else 'N02-'+src
+def tag(src):return 'osm' if src=='osm' else ('N05-24' if src=='n05' else 'N02-'+src)
 def row(eid,c,p):
     r=dict(edge=eid,source=tag(c['src']),coords=[list(x) for x in simplify(p)])
     if c['gap']>0:r['match']='stitched'
@@ -579,6 +595,15 @@ for lid in sorted(byline):
 def where(n):
     a=pos.get(n) or {}
     return a.get('_on') or lonlat(n)
+# 폐선 구간 중 규칙(폐선 조각 비율, 끊긴 길이)으로는 떨어지지만 다른 자료와 대조해 맞다고 확인한 경로. 키는 노선|노드|노드
+CLOSED_OK=json.load(open(os.path.join(ROOT,'data','overrides','closed_geometry.json'),encoding='utf-8'))
+def closed_ok(e,A,B,k,r):
+    fx=CLOSED_OK.get(f"{e['seed_line']}|{e['a']}|{e['b']}")
+    if not fx or not fx.get('src') or fx['src'] not in DATA:return None   # 꺼진 출처의 경로는 쓰지 않는다
+    if fx.get('by')=='n05' and not source_on('n05'):return None   # N05와 대조해 받아들인 경로는 N05를 끄면 근거가 없다
+    c=pick(fx['src'],LT(e['id']),A,B,k,True,r,r)
+    if not c or c['lvl']>=2 or c['gap']>max(1.8,.45*c['L']):st['closed_ok_lost']+=1;return None
+    c['plat']='';st['closed_ok']+=1;return c
 # 2. 나머지 구간
 for e in edges:
     if e['id'] in rows:continue
@@ -589,6 +614,7 @@ for e in edges:
     # 좌표가 어림값이면 선로에서 멀리 떨어져 있을 수 있다
     r=1.2 if closed or (pos[e['a']].get('quality')!='precise' or pos[e['b']].get('quality')!='precise') else .6
     c,last=best_path(LT(e['id']),e['a'],e['b'],A,B,k,closed,CLOSEY.get(e['id']),r)
+    if not c and closed:c=closed_ok(e,A,B,k,r)
     if c:
         rows[e['id']]=row(e['id'],c,c['path']);st[tag(c['src'])]+=1
         if c['plat']:rows[e['id']]['plat']=c['plat']
@@ -598,8 +624,61 @@ for e in edges:
         if last['plat']:rows[e['id']]['plat']=last['plat']
         meta[e['id']]=dict(L=last['L'],own=round(last['own'],2),gap=round(last['gap'],2),src=last['src'],fallback=1)
     else:st['miss_closed' if closed else 'miss']+=1
+# 2b. 国土数値情報 鉄道時系列(N05). N02와 OSM으로 못 찾았거나 끝이 역에서 먼 폐선 구간만.
+# 같은 이름 노선의 조각 중 폐지 직전 기간의 것만 쓴다. N05는 노선이 사업자를 바꿀 때도 기간을 끊어, 지금 선로의 옛 기록이 폐선처럼 보인다
+N05Z=os.path.join(IMP,'n05','N05-24_GML.zip')
+def ncore(x):
+    x=re.sub(r'[（(].*?[)）]','',x or '').replace('溪','渓').replace('萠','萌')
+    for y in ('本線','電気鉄道','鉄道線','鉄道','電鉄','線','支線'):x=x.replace(y,'')
+    return x
+# N05에서 다른 노선의 지선으로 기록된 노선
+N05AL={k:tuple(v) for k,v in HT['N05AL'].items()}
+def ends_far(eid):
+    r=rows.get(eid)
+    if not r:return 9
+    e=ids[eid];A,B=where(e['a']),where(e['b']);c=r['coords']
+    return max(seglen(c[0],A) if A else 0,seglen(c[-1],B) if B else 0)
+if os.path.exists(N05Z) and source_on('n05'):
+    zz=zipfile.ZipFile(N05Z);N5=[]
+    for ft in json.loads(zz.read('UTF-8/N05-24_RailroadSection2.geojson').decode('utf-8'))['features']:
+        p_=ft['properties'];g_=ft['geometry']
+        try:ye=int(p_.get('N05_005e'))
+        except (TypeError,ValueError):continue
+        if ye>=9999:continue
+        for l_ in (g_['coordinates'] if g_['type']=='MultiLineString' else [g_['coordinates']]):
+            N5.append((p_.get('N05_002',''),p_.get('N05_003',''),ye,[(round(c[0],6),round(c[1],6)) for c in l_]))
+    N5G=collections.defaultdict(set)
+    for i,(*_,l_) in enumerate(N5):
+        for x in l_:N5G[(int(x[0]*20),int(x[1]*20))].add(i)
+    for e in edges:
+        if e['id'] in CUR or ends_far(e['id'])<=.3:continue
+        A,B=where(e['a']),where(e['b']);y=CLOSEY.get(e['id'])
+        if not A or not B or not y:continue
+        lt=LT(e['id']);names={ncore(lines[x]['name_ja']) for x in lt}|{a for x in lt for a in N05AL.get(x,())}
+        y2=max(y,LEGALY.get(e['id'],y))
+        cand=set()
+        for X in range(int(min(A[0],B[0])*20)-1,int(max(A[0],B[0])*20)+2):
+            for Y in range(int(min(A[1],B[1])*20)-1,int(max(A[1],B[1])*20)+2):cand|=N5G.get((X,Y),set())
+        P_=[N5[i] for i in sorted(cand) if y-3<=N5[i][2]<=y2+2 and any(a and (a in ncore(N5[i][0]) or ncore(N5[i][0]) in a) for a in names)]
+        if not P_:continue
+        DATA['n05']=[(n_,co,l_) for n_,co,ye,l_ in P_];G_=collections.defaultdict(list)
+        for i,(_,_,l_) in enumerate(DATA['n05']):
+            sn=set()
+            for u,v in zip(l_,l_[1:]):
+                for a_ in range(int(min(u[0],v[0])*GC),int(max(u[0],v[0])*GC)+1):
+                    for b_ in range(int(min(u[1],v[1])*GC),int(max(u[1],v[1])*GC)+1):sn.add((a_,b_))
+            for c_ in sn:G_[c_].append(i)
+        GRID['n05']=G_
+        # 영업km가 두 역의 직선거리보다 짧으면 km 쪽이 틀린 것이다. 직선거리로 길이를 맞춘다
+        k=max(km.get(e['id']) or 0,seglen(A,B)*1.1)
+        c=pick('n05',lt,A,B,k,True,1.2,1.2)
+        if not c or c['lvl']>=2 or c['far']>.5 or c['gap']>max(.3,.2*c['L']):st['n05_miss']+=1;continue
+        if e['id'] in rows:st['n05_replace']+=1
+        c['plat']='';rows[e['id']]=row(e['id'],c,c['path']);st['N05-24']+=1
+        meta[e['id']]=dict(L=c['L'],own=round(c['own'],2),gap=round(c['gap'],2),src='n05',lvl=c['lvl'])
+    DATA.pop('n05',None);GRID.pop('n05',None)
 # 3. 같은 노선의 이웃 구간 끝을 맞춘다. 끊겨 보이는 곳은 대개 끝점이 어긋난 곳이다
-def famil(r):return 'osm' if r['source']=='osm' else 'n02'
+def famil(r):return 'osm' if r['source']=='osm' else ('n05' if r['source']=='N05-24' else 'n02')
 def end_of(eid,n):return -1 if ids[eid]['b']==n else 0
 def join(L_,n):
     """한 노드에서 만나는 같은 노선의 구간 끝을 한 점으로 모은다"""
@@ -614,9 +693,11 @@ def join(L_,n):
         m=where(n)
         if not m:return
         m=[round(m[0],5),round(m[1],5)]
+    # 폐선 구간 때문에 현행 구간의 끝을 옮기지 않는다. 역 좌표가 선로에서 떨어져 있으면 되돌아가는 꺾임이 생긴다
+    mixed=len(fam)>1 and any(e in CUR for e in L_) and any(e not in CUR for e in L_)
     for e,p in zip(L_,P):
         r=rows[e];x=end_of(e,n)
-        if seglen(p,m)<1e-5:continue
+        if seglen(p,m)<1e-5 or (mixed and e in CUR):continue
         if far<.03 and len(fam)==1 and len(r['coords'])>2:r['coords'][x]=m
         elif x==0:r['coords'].insert(0,m)
         else:r['coords'].append(m)
@@ -633,13 +714,18 @@ for eid in sorted(rows):
     if A and 'a' not in pl and .3<seglen(c[0],A)<=lim:c.insert(0,[round(A[0],5),round(A[1],5)]);st['tostation']+=1
     if B and 'b' not in pl and .3<seglen(c[-1],B)<=lim:c.append([round(B[0],5),round(B[1],5)]);st['tostation']+=1
 # 자동 탐색이 다른 선로를 고른 구간. OSM 선로를 손으로 따라간 값이다
-for eid,fx in json.load(open(os.path.join(ROOT,'data','overrides','osm_manual.json'),encoding='utf-8')).items():
-    rows[eid]=dict(edge=eid,source='osm',coords=fx['coords'])
+# 키는 노선|앞 노드|뒤 노드다. edge 번호는 노선이 늘면 밀린다
+EKEY={f"{e['seed_line']}|{e['a']}|{e['b']}":e['id'] for e in ids.values()}
+for key,fx in json.load(open(os.path.join(ROOT,'data','overrides','osm_manual.json'),encoding='utf-8')).items():
+    if not source_on('osm'):break
+    if key not in EKEY:raise SystemExit(f'osm_manual.json의 구간이 없습니다: {key}')
+    eid=EKEY[key];rows[eid]=dict(edge=eid,source='osm',coords=fx['coords'])
 os.makedirs(os.path.join(SRC,'geometry'),exist_ok=True)
 out=[rows[k] for k in sorted(rows)]
 # 2019년 이전 판은 CC BY 4.0이 아니라 "商用可" 조건이라 다시 허락할 수 없다. 파일을 나눠 조건을 구분한다
-dump('geometry/n02.yaml',[x for x in out if x['source'] not in LEGACY and x['source']!='osm'],'N02 선로에서 뽑은 edge별 선형. 2020·2024판 (CC BY 4.0)')
+dump('geometry/n02.yaml',[x for x in out if x['source'] not in LEGACY and x['source'] not in ('osm','N05-24')],'N02 선로에서 뽑은 edge별 선형. 2020·2024판 (CC BY 4.0)')
 dump('geometry/n02_legacy.yaml',[x for x in out if x['source'] in LEGACY],'N02 선로에서 뽑은 edge별 선형. 2005·2008·2015판 (商用可 조건, CC BY 4.0 아님)')
+dump('geometry/n05.yaml',[x for x in out if x['source']=='N05-24'],'国土数値情報 鉄道時系列(N05) 2024판에서 뽑은 폐선 구간 선형. 非商用 조건, CC BY 4.0 아님')
 dump('geometry/osm.yaml',[x for x in out if x['source']=='osm'],'OpenStreetMap 선로에서 뽑은 edge별 선형. ODbL 1.0. master.sqlite, rail.pmtiles에 넣지 않는다')
 # 보간 좌표를 선로 위로 옮긴 값. 나머지 좌표는 그대로 둔다
 if PU:

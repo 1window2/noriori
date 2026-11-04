@@ -1208,9 +1208,9 @@
 - {"id": "e_001207", "a": "n_shimizugawa", "b": "n_kominato", "seed_line": "l_tohoku_main_line"}
 - {"id": "e_001208", "a": "n_kominato", "b": "n_nishi_hiranai", "seed_line": "l_tohoku_main_line"}
 - {"id": "e_001209", "a": "n_nishi_hiranai", "b": "n_asamushi_onsen", "seed_line": "l_tohoku_main_line"}
-- {"id": "e_001210", "a": "n_asamushi_onsen", "b": "n_nonai_aoimori_aoimori_railway", "seed_line": "l_tohoku_main_line"}
-- {"id": "e_001211", "a": "n_nonai_aoimori_aoimori_railway", "b": "n_nonai_aoimori_aoimori_railway_b", "seed_line": "l_tohoku_main_line"}
-- {"id": "e_001212", "a": "n_nonai_aoimori_aoimori_railway_b", "b": "n_yadamae", "seed_line": "l_tohoku_main_line"}
+- {"id": "e_001210", "a": "n_asamushi_onsen", "b": "n_nonai_aoimori_aoimori_railway_old", "seed_line": "l_tohoku_main_line"}
+- {"id": "e_001211", "a": "n_nonai_aoimori_aoimori_railway_old", "b": "n_nonai_aoimori_aoimori_railway", "seed_line": "l_tohoku_main_line"}
+- {"id": "e_001212", "a": "n_nonai_aoimori_aoimori_railway", "b": "n_yadamae", "seed_line": "l_tohoku_main_line"}
 - {"id": "e_001213", "a": "n_yadamae", "b": "n_koyanagi", "seed_line": "l_tohoku_main_line"}
 - {"id": "e_001214", "a": "n_koyanagi", "b": "n_higashi_aomori", "seed_line": "l_tohoku_main_line"}
 - {"id": "e_001215", "a": "n_higashi_aomori", "b": "n_tsutsui_aoimori", "seed_line": "l_tohoku_main_line"}
@@ -1332,10 +1332,10 @@
 - {"id": "e_001331", "a": "n_hamayoshida", "b": "n_watari_joban", "seed_line": "l_joban_line"}
 - {"id": "e_001332", "a": "n_watari_joban", "b": "n_okuma_joban", "seed_line": "l_joban_line"}
 - {"id": "e_001333", "a": "n_okuma_joban", "b": "n_iwanuma", "seed_line": "l_joban_line"}
-- {"id": "e_001334", "a": "n_komagamine", "b": "n_shinchi", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
-- {"id": "e_001335", "a": "n_shinchi", "b": "n_sakamoto_joban", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
-- {"id": "e_001336", "a": "n_sakamoto_joban", "b": "n_yamashita", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
-- {"id": "e_001337", "a": "n_yamashita", "b": "n_hamayoshida", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
+- {"id": "e_001334", "a": "n_komagamine", "b": "n_shinchi_old", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
+- {"id": "e_001335", "a": "n_shinchi_old", "b": "n_sakamoto_joban_old", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
+- {"id": "e_001336", "a": "n_sakamoto_joban_old", "b": "n_yamashita_old", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
+- {"id": "e_001337", "a": "n_yamashita_old", "b": "n_hamayoshida", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
 - {"id": "e_001338", "a": "n_mito", "b": "n_hitachi_aoyagi", "seed_line": "l_suigun_line"}
 - {"id": "e_001339", "a": "n_hitachi_aoyagi", "b": "n_hitachi_tsuda", "seed_line": "l_suigun_line"}
 - {"id": "e_001340", "a": "n_hitachi_tsuda", "b": "n_godai", "seed_line": "l_suigun_line"}
@@ -1724,8 +1724,8 @@
 - {"id": "e_001723", "a": "n_higashi_obuke", "b": "n_obuke", "seed_line": "l_hanawa_line"}
 - {"id": "e_001724", "a": "n_obuke", "b": "n_tairadate", "seed_line": "l_hanawa_line"}
 - {"id": "e_001725", "a": "n_tairadate", "b": "n_kitamori_hanawa", "seed_line": "l_hanawa_line"}
-- {"id": "e_001726", "a": "n_kitamori_hanawa", "b": "n_kitamori_hanawa_b", "seed_line": "l_hanawa_line"}
-- {"id": "e_001727", "a": "n_kitamori_hanawa_b", "b": "n_matsuo_hachimantai", "seed_line": "l_hanawa_line"}
+- {"id": "e_001726", "a": "n_kitamori_hanawa", "b": "n_kitamori_hanawa_old", "seed_line": "l_hanawa_line"}
+- {"id": "e_001727", "a": "n_kitamori_hanawa_old", "b": "n_matsuo_hachimantai", "seed_line": "l_hanawa_line"}
 - {"id": "e_001728", "a": "n_matsuo_hachimantai", "b": "n_appi_kogen", "seed_line": "l_hanawa_line"}
 - {"id": "e_001729", "a": "n_appi_kogen", "b": "n_akasakata", "seed_line": "l_hanawa_line"}
 - {"id": "e_001730", "a": "n_akasakata", "b": "n_koyanohata", "seed_line": "l_hanawa_line"}
@@ -3589,8 +3589,8 @@
 - {"id": "e_003588", "a": "n_kodo_homachigawa", "b": "n_aki_kameyama_kabe", "seed_line": "l_kabe_line"}
 - {"id": "e_003589", "a": "n_kabe_kabe", "b": "n_kodo_kabe", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
 - {"id": "e_003590", "a": "n_kodo_kabe", "b": "n_imaida", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
-- {"id": "e_003591", "a": "n_imaida", "b": "n_aki_kameyama_kabe_b", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
-- {"id": "e_003592", "a": "n_aki_kameyama_kabe_b", "b": "n_kegi", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
+- {"id": "e_003591", "a": "n_imaida", "b": "n_aki_kameyama_kabe_old", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
+- {"id": "e_003592", "a": "n_aki_kameyama_kabe_old", "b": "n_kegi", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
 - {"id": "e_003593", "a": "n_kegi", "b": "n_aki_imuro", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
 - {"id": "e_003594", "a": "n_aki_imuro", "b": "n_nuno", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
 - {"id": "e_003595", "a": "n_nuno", "b": "n_ogauchi", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
@@ -4613,8 +4613,8 @@
 - {"id": "e_004612", "a": "n_ozasa", "b": "n_torikai", "seed_line": "l_chikuhi_line"}
 - {"id": "e_004613", "a": "n_torikai", "b": "n_nishijin", "seed_line": "l_chikuhi_line"}
 - {"id": "e_004614", "a": "n_nishijin", "b": "n_meinohama", "seed_line": "l_chikuhi_line"}
-- {"id": "e_004615", "a": "n_nijinomatsubara", "b": "n_higashi_karatsu", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_nijinomatsubara_yamamoto"}
-- {"id": "e_004616", "a": "n_higashi_karatsu", "b": "n_kagami", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_nijinomatsubara_yamamoto"}
+- {"id": "e_004615", "a": "n_nijinomatsubara", "b": "n_higashi_karatsu_old", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_nijinomatsubara_yamamoto"}
+- {"id": "e_004616", "a": "n_higashi_karatsu_old", "b": "n_kagami", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_nijinomatsubara_yamamoto"}
 - {"id": "e_004617", "a": "n_kagami", "b": "n_kuri", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_nijinomatsubara_yamamoto"}
 - {"id": "e_004618", "a": "n_kuri", "b": "n_yamamoto", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_nijinomatsubara_yamamoto"}
 - {"id": "e_004619", "a": "n_meinohama", "b": "n_shimoyamato", "seed_line": "l_chikuhi_line", "route_only": "r_chikuhi_line_meinohama_karatsu"}
@@ -6184,5 +6184,7 @@
 - {"id": "e_006183", "a": "n_shimo_koshikawa", "b": "n_juyongokarijokojo", "seed_line": "l_kompoku_line"}
 - {"id": "e_006184", "a": "n_juyongokarijokojo", "b": "n_jurokugokarijokojo", "seed_line": "l_kompoku_line"}
 - {"id": "e_006185", "a": "n_jurokugokarijokojo", "b": "n_koshikawa", "seed_line": "l_kompoku_line"}
-- {"id": "e_006186", "a": "n_shin_yubari", "b": "n_kaede", "seed_line": "l_yubari_line_noborikawa_branch"}
-- {"id": "e_006187", "a": "n_kaede", "b": "n_noborikawa", "seed_line": "l_yubari_line_noborikawa_branch"}
+- {"id": "e_006186", "a": "n_shin_yubari", "b": "n_kaede_old", "seed_line": "l_yubari_line_noborikawa_branch"}
+- {"id": "e_006187", "a": "n_kaede_old", "b": "n_noborikawa", "seed_line": "l_yubari_line_noborikawa_branch"}
+- {"id": "e_006188", "a": "n_ongagawa", "b": "n_chikuzenashiya", "seed_line": "l_ashiya_line"}
+- {"id": "e_006189", "a": "n_chikuzenashiya", "b": "n_ashiyajokojo", "seed_line": "l_ashiya_line"}

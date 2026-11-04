@@ -224,10 +224,9 @@ sealed class SaveOutcome {
 }
 
 final class SaveDone extends SaveOutcome {
-  const SaveDone(this.change, {required this.demoted, required this.ticket});
+  const SaveDone(this.change, {required this.ticket});
 
   final Change change;
-  final bool demoted;
   final RideTicketData ticket;
 }
 
@@ -268,6 +267,11 @@ final class SaveAskRelocation extends SaveOutcome {
   const SaveAskRelocation(this.options);
 
   final List<RelocationOption> options;
+}
+
+/// 그날 그 구간을 탈 수 없다. 경고하고 저장하지 않는다 (DESIGN §2.8 J).
+final class SaveUnridable extends SaveOutcome {
+  const SaveUnridable();
 }
 
 final class SaveFailed extends SaveOutcome {
@@ -418,8 +422,10 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
 
   /// 탑승일을 바꾸면 상태표만 다시 적용한다.
   ///
-  /// 고른 구간이 그날 없으면 선택을 지키고 날짜 모름으로 내린다 (DESIGN §8). 내렸으면 참이다.
+  /// 고른 구간을 그날 탈 수 없으면 날짜 변경을 받지 않는다. 고른 역과 원래 날짜는 그대로다
+  /// (DESIGN §8.0.1 탑승일, §2.8 J). 받지 않았으면 참이고 화면이 경고한다.
   Future<bool> setDate(String? raw) async {
+    final previous = state.dateInput;
     // 줄을 비우지 않는다. 비우면 DB를 다녀오는 사이에 목록이 맨 위로 돌아간다
     state = state.copyWith(dateInput: raw, clearDate: raw == null);
     await _refresh();
@@ -429,8 +435,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final direction = state.direction;
     final lost = (from != null && from.seq != _carried && !open.contains(from.seq)) ||
         (to != null && !open.contains(to.seq));
-    if (lost && raw != null) {
-      state = state.copyWith(clearDate: true);
+    if (raw != null && (lost || (from != null && to != null && _unridable(from, to, direction)))) {
+      state = state.copyWith(dateInput: previous, clearDate: previous == null);
       await _refresh();
       _setPicks(from, to, direction: direction);
       return true;
@@ -438,6 +444,57 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     _setPicks(from, to, direction: direction);
     return false;
   }
+
+  /// 고른 구간을 탑승일에 탈 수 없는가 (DESIGN §2.8 J). 기준일 이전은 기록 범위 밖이라 아니다.
+  bool _unridable(StopPick from, StopPick to, String? direction) {
+    if (normalizeRideDate(_date) == null) return false;
+    final result = _record(from, to, direction: direction);
+    if (result.status == ResolveStatus.invalid) return false;
+    if (result.demoted) return true;
+    if (!result.saved) return false;
+    return RideInterpreter(_network).unridable(_draft(result, from, to, direction));
+  }
+
+  /// 판정용 기록. 이름은 비워 둔다.
+  Ride _draft(Expansion result, StopPick from, StopPick to, String? direction) => Ride(
+        rideId: const RideId('draft'),
+        datasetVersion: '',
+        createdAt: 0,
+        updatedAt: 0,
+        deviceId: '',
+        dateInput: state.dateInput,
+        legs: from.seq == _carried
+            ? [
+                for (final (seq, leg) in result.legs.indexed)
+                  RideLeg(
+                    seq: seq,
+                    lineId: LineId(leg.lineId),
+                    routeId: RouteId(leg.routeId),
+                    fromNode: NodeId(leg.from!),
+                    toNode: NodeId(leg.to!),
+                    direction: _network.routes[leg.routeId]!.closed
+                        ? _resolver.record(leg.routeId, leg.from!, leg.to!).direction
+                        : null,
+                    lineLabel: '',
+                    fromLabel: '',
+                    toLabel: '',
+                  ),
+              ]
+            : [
+                RideLeg(
+                  seq: 0,
+                  lineId: LineId(state.lineId!),
+                  routeId: RouteId(state.routeId!),
+                  fromNode: NodeId(from.node),
+                  toNode: NodeId(to.node),
+                  direction: direction ??
+                      (_network.routes[state.routeId!]!.closed ? result.direction : null),
+                  lineLabel: '',
+                  fromLabel: '',
+                  toLabel: '',
+                ),
+              ],
+      );
 
   /// 앞선 새로 읽기가 늦게 끝나 다른 노선의 줄을 덮지 않게 한다.
   int _generation = 0;
@@ -664,6 +721,10 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final chosen = direction ?? state.direction;
     final result =
         _record(from, to, direction: chosen, asOf: asOf, resolveUnknown: resolveUnknown);
+    // 그날 경로가 없으면 날짜 모름으로 내리지 않고 경고한다. 기준일 이전은 내린다 (DESIGN §2.8 J)
+    if (result.demoted && result.status != ResolveStatus.invalid && normalizeRideDate(_date) != null) {
+      return const SaveUnridable();
+    }
     switch (result) {
       case Expansion(reason: ExpandReason.ambiguousPath):
         final up = _record(from, to, direction: seqUp);
@@ -707,15 +768,17 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
           ),
       ],
     );
+    // 유효 범위가 비거나 고른 역에 그날 서지 않으면 저장하지 않는다
+    if (RideInterpreter(_network).unridable(ride)) return const SaveUnridable();
     final expected = _preview(result);
     final change = await session.records.apply(Change(before: const [], after: [ride]));
     return SaveDone(
       change,
-      demoted: result.demoted,
       ticket: RideTicketData(
         lineName: ride.legs.first.lineLabel,
         fromName: ride.legs.first.fromLabel,
         toName: ride.legs.first.toLabel,
+        // 기준일보다 이른 날짜는 설명 없이 날짜 모름이다 (DESIGN §4.6)
         dateInput: result.demoted ? null : state.dateInput,
         meters: (result.meters ?? 0) * (state.isLap ? state.laps : 1),
         before: expected?.before,

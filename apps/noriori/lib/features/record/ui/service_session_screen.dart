@@ -39,7 +39,10 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
       context: context,
       builder: (context) => SessionDateDialog(current: current, today: ref.read(todayProvider)),
     );
-    if (result != null) ref.read(serviceSessionProvider.notifier).setDate(result.value);
+    if (result == null) return;
+    // 고른 구간을 그날 탈 수 없으면 날짜를 바꾸지 않고 경고한다 (DESIGN §8.0.1 탑승일)
+    final refused = ref.read(serviceSessionProvider.notifier).setDate(result.value);
+    if (refused && mounted) await showUnridable(context, context.t.session.unridableDate);
   }
 
   Future<void> _tap(ServiceStop stop) async {
@@ -82,17 +85,21 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
     final messenger = ScaffoldMessenger.of(context);
     final router = GoRouter.of(context);
     final commands = ref.read(recordCommandsProvider);
-    final saved = await ref.read(serviceSessionProvider.notifier).save();
-    if (saved == null) {
+    final outcome = await ref.read(serviceSessionProvider.notifier).save();
+    if (outcome is ServiceUnridable) {
+      if (mounted) await showUnridable(context, context.t.session.unridableSave);
+      return;
+    }
+    if (outcome is! ServiceSaved) {
       messenger.showSnackBar(SnackBar(content: Text(t.failed), persist: false));
       return;
     }
+    final saved = outcome;
     if (saved.ticket.completed && mounted) await showCompleteCard(context, saved.ticket);
     if (!mounted) return;
     showRideTicket(
       context,
       saved.ticket,
-      demoted: saved.demoted,
       onUndo: () => commands.undo(saved.change),
     );
     router.pop();

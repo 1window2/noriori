@@ -98,7 +98,7 @@ final class PackReader {
     );
   }
 
-  /// 내보내기가 쓰는 일본어 공식명. 숨은 노드는 `export_name`이다.
+  /// 내보내기가 쓰는 일본어 공식명. `export_name`이 있으면 그것을 쓴다: 숨은 노드, 역 이전의 옛 역 (DESIGN §10.3).
   Future<ExportNames> exportNames() async {
     final rows = await _db.customSelect(
       'SELECT entity_type, entity_id, text, line_id, valid_from, valid_to FROM names.name '
@@ -124,7 +124,7 @@ final class PackReader {
     for (final row in await _db
         .customSelect('SELECT id, export_name FROM master.node WHERE export_name IS NOT NULL')
         .get()) {
-      nodes.putIfAbsent(row.read('id'), () => row.read('export_name'));
+      nodes[row.read('id')] = row.read('export_name');
     }
     final aliases = await _db.customSelect(
       'SELECT entity_id, text FROM names.alias '

@@ -84,12 +84,9 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
       builder: (context) => SessionDateDialog(current: current, today: ref.read(todayProvider)),
     );
     if (result == null) return;
-    final demoted = await controller.setDate(result.value);
-    if (demoted && mounted) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(context.t.session.dateDemoted), persist: false),
-      );
-    }
+    // 고른 구간을 그날 탈 수 없으면 날짜를 바꾸지 않고 경고한다 (DESIGN §8.0.1 탑승일)
+    final refused = await controller.setDate(result.value);
+    if (refused && mounted) await showUnridable(context, context.t.session.unridableDate);
   }
 
   @override

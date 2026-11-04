@@ -78,6 +78,12 @@ F['license']=[(e,f'{name(e)} OSM 선형이 edge_shape에 있음') for e in leak]
 F['license']+=[(r[0],'좌표 출처가 OSM') for r in m.execute("select node_id from node_position where source like '%osm%'")]
 # 예외
 exc=json.load(open(os.path.join(ROOT,'data','overrides','geometry_exceptions.json'),encoding='utf-8'))
+# 구간 예외의 키는 노선|앞 노드|뒤 노드다. edge 번호는 노선이 늘면 밀린다
+EKEY={f"{e['seed_line']}|{e['a']}|{e['b']}":e['id'] for e in load('edges')}
+for x in exc:
+    if x.get('edge_key'):
+        if x['edge_key'] not in EKEY:raise SystemExit(f"geometry_exceptions.json의 구간이 없습니다: {x['edge_key']}")
+        x['edge']=EKEY[x['edge_key']]
 used=set();allow=collections.defaultdict(set)
 bad=[]
 for i,x in enumerate(exc):

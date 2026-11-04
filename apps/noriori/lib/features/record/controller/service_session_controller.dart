@@ -84,13 +84,21 @@ final class ServiceSessionState {
   bool passes(String node) => path.any((stop) => stop.node == node);
 }
 
+sealed class ServiceOutcome {
+  const ServiceOutcome();
+}
+
 /// 저장 결과. 승차권에 그대로 넘긴다.
-final class ServiceSaved {
-  const ServiceSaved(this.change, {required this.demoted, required this.ticket});
+final class ServiceSaved extends ServiceOutcome {
+  const ServiceSaved(this.change, {required this.ticket});
 
   final Change change;
-  final bool demoted;
   final RideTicketData ticket;
+}
+
+/// 그날 그 구간을 탈 수 없다. 경고하고 저장하지 않는다 (DESIGN §2.8 J).
+final class ServiceUnridable extends ServiceOutcome {
+  const ServiceUnridable();
 }
 
 final serviceSessionProvider =
@@ -106,9 +114,10 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
 
   ServiceSplitter get _splitter => ServiceSplitter(_network);
 
+  /// 고를 때 쓰는 날짜. 기준일보다 이르면 날짜 모름이다 (DESIGN §4.6).
   DateSpan? get _date {
     final raw = state.dateInput;
-    return raw == null ? null : DateSpan.parse(raw);
+    return raw == null ? null : normalizeRideDate(DateSpan.parse(raw));
   }
 
   Future<void> open(String serviceId) async {
@@ -132,8 +141,11 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
     state = _with(current, open: _splitter.openOn(current.service!, _date));
   }
 
-  /// 고른 역이 그날 없으면 푼다 (DESIGN §8 탑승일 상태표).
-  void setDate(String? raw) {
+  /// 탑승일을 바꾸면 고를 수 있는 역을 다시 정한다.
+  ///
+  /// 고른 구간을 그날 탈 수 없으면 날짜 변경을 받지 않는다. 고른 역과 원래 날짜는 그대로다
+  /// (DESIGN §8.0.1 탑승일, §2.8 J). 받지 않았으면 참이고 화면이 경고한다.
+  bool setDate(String? raw) {
     final current = state;
     state = ServiceSessionState(
       service: current.service,
@@ -144,6 +156,34 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
       lines: current.lines,
     );
     _applyDate();
+    final from = current.from;
+    final to = current.to;
+    if (from == null) return false;
+    final lost = [from, ?to].any((stop) => !state.open.contains(stop.node));
+    if (!lost && to != null) _pick(from, to, current.up, current.laps);
+    if (lost || _unridable()) {
+      state = current;
+      return true;
+    }
+    if (to == null) state = _with(state, from: from);
+    return false;
+  }
+
+  /// 고른 구간을 탑승일에 탈 수 없는가. 기준일 이전은 기록 범위 밖이라 아니다.
+  bool _unridable() {
+    final legs = state.legs;
+    if (legs == null) return false;
+    return RideInterpreter(_network).unridable(
+      Ride(
+        rideId: const RideId('draft'),
+        legs: legs,
+        datasetVersion: '',
+        createdAt: 0,
+        updatedAt: 0,
+        deviceId: '',
+        dateInput: state.dateInput,
+      ),
+    );
   }
 
   ServiceSessionState _with(
@@ -285,7 +325,7 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
     );
   }
 
-  Future<ServiceSaved?> save() async {
+  Future<ServiceOutcome?> save() async {
     final legs = state.legs;
     if (legs == null) return null;
     final session = ref.read(sessionProvider);
@@ -300,7 +340,11 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
       now: now,
     );
     if (ride == null) return null;
-    final expansions = RideInterpreter(_network).expansions(ride);
+    final interpreter = RideInterpreter(_network);
+    // 그날 탈 수 없으면 날짜 모름으로 내리지 않고 경고한다 (DESIGN §2.8 J)
+    if (interpreter.unridable(ride)) return const ServiceUnridable();
+    final expansions = interpreter.expansions(ride);
+    // 기준일보다 이른 날짜는 설명 없이 날짜 모름이다 (DESIGN §4.6)
     final demoted = expansions.any((expansion) => expansion.demoted);
     // 저장 뒤에는 탄 구간이 이미 들어가 있으니 오르는 값은 먼저 계산한다
     final preview = previewRide(
@@ -314,7 +358,6 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
     final change = await session.records.apply(Change(before: const [], after: [ride]));
     return ServiceSaved(
       change,
-      demoted: demoted,
       ticket: RideTicketData(
         lineName: state.title,
         fromName: ride.legs.first.fromLabel,

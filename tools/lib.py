@@ -8,6 +8,13 @@ CAND=os.path.join(ROOT,'data','candidates')
 BUILD=os.path.join(ROOT,'build')
 # 이 판의 기준일. 실행한 날에 따라 값이 달라지지 않게 입력으로 둔다. 새 판을 낼 때 손으로 올린다
 AS_OF=json.load(open(os.path.join(ROOT,'data','overrides','as_of.json'),encoding='utf-8'))['as_of']
+# 출처 스위치 (data/sources.json). 뼈대 출처를 끄면 멈춘다
+SOURCES=json.load(open(os.path.join(ROOT,'data','sources.json'),encoding='utf-8'))['sources']
+for _k,_v in SOURCES.items():
+    if _v.get('required') and not _v['on']:raise SystemExit(f'뼈대 출처 {_k}는 끌 수 없습니다. 대체 출처를 마련한 뒤 data/sources.json에서 required를 고치세요')
+def source_on(k):return SOURCES[k]['on']
+# 손으로 적은 보정 표. 표마다 설명과 값이 있다
+HT={k:v['값'] for k,v in json.load(open(os.path.join(ROOT,'data','overrides','hand_tables.json'),encoding='utf-8'))['tables'].items()}
 # 판 번호. 앱은 같은 판이면 받아 둔 팩을 그대로 쓰므로, 값이 바뀌면 반드시 올린다
 EDITION=json.load(open(os.path.join(ROOT,'data','overrides','as_of.json'),encoding='utf-8'))['edition']
 

@@ -24,7 +24,7 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRATCH = os.path.dirname(HERE)
 TODAY = "2026-11-01"
-FLOOR = "1969-12-08"   # §4.6 기준일
+FLOOR = "1950-01-01"   # §4.6 기준일
 MAXD = "9999-12-31"
 
 
@@ -76,7 +76,7 @@ def state_on(d, f_lo, f_hi, t_lo, t_hi):
 
 
 def normalize_date(d):
-    """§4.6: 1969-12-08 이전 날짜는 날짜 모름. 범위가 기준일에 걸쳐도 같다."""
+    """§4.6: 1950-01-01 이전 날짜는 날짜 모름. 범위가 기준일에 걸쳐도 같다."""
     if d is None:
         return None
     if edtf_range(d)[0] < FLOOR:
@@ -1084,23 +1084,23 @@ def scenarios(A, R):
     # ---- F. 기준일 ------------------------------------------------------
     r = "r_tokaido_main_line"
     a, b = N(r, "東京"), N(r, "品川")
-    x, y = A.record(r, a, b, "1969-12-07"), A.record(r, a, b, "1969-12-08")
-    R.add("F1", "기준일 경계 (東海道本線 東京→品川)", "1969-12-07 → 날짜 모름, 12-08 → 날짜 유지", f"{x['saved_date']} / {y['saved_date']}", x["saved_date"] is None and y["saved_date"] == "1969-12-08")
+    x, y = A.record(r, a, b, "1949-12-31"), A.record(r, a, b, "1950-01-01")
+    R.add("F1", "기준일 경계 (東海道本線 東京→品川)", "1949-12-31 → 날짜 모름, 1950-01-01 → 날짜 유지", f"{x['saved_date']} / {y['saved_date']}", x["saved_date"] is None and y["saved_date"] == "1950-01-01")
     r = "r_temiya_line"
     a, b = "n_minami_otaru", "n_temiya"
     x, y = A.record(r, a, b, "1960-06-01"), A.record(r, a, b, "1980-06-01")
     e = A.route_edges(r)[0][1]
     lg = A.db.execute("SELECT legal_abolition,valid_to FROM edge_life WHERE edge_id=?", (e,)).fetchone()
     al = A.completion([], "alltime", "on", {e})
-    R.add("F2", "手宮線 南小樽→手宮", "2.8km. 여객 1962 끝·법적 1985. 어떤 날짜든 날짜 모름으로 기록 가능, 역대 분모 2.8", f"{x['km']} saved={x['saved_date']}, 1980 saved={y['saved_date']}, 법적={lg[0]} 영업끝={lg[1]}, 역대 분모 {al['den_km']}",
-          approx(x["km"], 2.8) and x["saved_date"] is None and y["saved_date"] is None and lg[0] == "1985-11-05" and al["den_km"] == 2.8)
+    R.add("F2", "手宮線 南小樽→手宮", "2.8km. 여객 1962 끝·법적 1985. 1960년 탑승은 날짜 유지, 여객 영업 뒤(1980)는 날짜 모름, 역대 분모 2.8", f"{x['km']} saved={x['saved_date']}, 1980 saved={y['saved_date']}, 법적={lg[0]} 영업끝={lg[1]}, 역대 분모 {al['den_km']}",
+          approx(x["km"], 2.8) and x["saved_date"] == "1960-06-01" and y["saved_date"] is None and lg[0] == "1985-11-05" and al["den_km"] == 2.8)
     r = "r_kobukuro_line"
     a, b = "n_kotake", "n_futase"
     x, y = A.record(r, a, b, "1969-12-07"), A.record(r, a, b, "1969-12-08")
     es = set(x["edges"])
     al = A.completion([], "alltime", "on", es)
-    R.add("F3", "幸袋線 小竹→二瀬 (1969-12-08 폐지)", "7.6km. 마지막 영업일 12-07은 기준일 전이라 날짜 모름, 기록 가능, 역대 분모 7.6", f"{x['km']} saved={x['saved_date']} / {y['saved_date']}, 역대 {al['den_km']}",
-          approx(x["km"], 7.6) and x["saved_date"] is None and y["saved_date"] is None and al["den_km"] == 7.6)
+    R.add("F3", "幸袋線 小竹→二瀬 (1969-12-08 폐지)", "7.6km. 마지막 영업일 12-07은 날짜 유지, 폐지일 12-08은 날짜 모름, 역대 분모 7.6", f"{x['km']} saved={x['saved_date']} / {y['saved_date']}, 역대 {al['den_km']}",
+          approx(x["km"], 7.6) and x["saved_date"] == "1969-12-07" and y["saved_date"] is None and al["den_km"] == 7.6)
 
     # ---- G. 재해 BRT ----------------------------------------------------
     r = "r_kesennuma_line"
@@ -1153,9 +1153,9 @@ def scenarios(A, R):
     x = A.expand(r, "n_shimotoppu", "n_shin_totsukawa", "2010-06-01")
     R.add("H4", "폐역 中徳富 (2006-03-18) 선로는 그대로", "2005 선택 가능, 2010 불가, 2010 下徳富→新十津川 통과 5.0km", f"{a} / {x['status']} {x['km']}", a["2005-06-01"] == "open" and a["2010-06-01"] == "closed" and approx(x["km"], 5.0))
     x = A.record("r_yahiko_line", "n_higashi_sanjo", "n_echigo_osaki", "1985-XX-XX")
-    y = A.record("r_yahiko_line", "n_higashi_sanjo", "n_echigo_osaki", "1969-XX-XX")
+    y = A.record("r_yahiko_line", "n_higashi_sanjo", "n_echigo_osaki", "194X-XX-XX")
     z = A.record("r_yahiko_line", "n_higashi_sanjo", "n_echigo_osaki", "1986-XX-XX")
-    R.add("H4b", "범위 날짜는 겹치면 유지, 기준일에 걸치면 날짜 모름, 겹치지 않으면 날짜 모름", "1985 유지, 1969·1986 모름",
+    R.add("H4b", "범위 날짜는 겹치면 유지, 기준일에 걸치면 날짜 모름, 겹치지 않으면 날짜 모름", "1985 유지, 194X·1986 모름",
           f"{x['saved_date']}, {y['saved_date']}, {z['saved_date']}",
           x["saved_date"] == "1985-XX-XX" and y["saved_date"] is None and z["saved_date"] is None)
     st = A._stops["r_sanko_line"]
@@ -1317,17 +1317,33 @@ def sweep(A, R):
             cands[frozenset((a, b))].append(e)
         used = set()
         cum = 0.0
-        for p, q in zip(stops, stops[1:]):
-            es = cands.get(frozenset((p["node_id"], q["node_id"])))
-            if not es:
-                gaps.append((rid, p["seq"], p["node_id"], q["node_id"]))
-                cum = None
+        # 나란한 옛 선로(이설)의 역은 새 선로의 역과 km 순으로 섞여 있다. 바로 다음 역과 이어지지 않으면
+        # 세 칸 안의 역과 이어지는지 보고, 건너뛴 역은 앞뒤 세 칸 안의 역과 따로 이어져야 한다
+        i = 0
+        skipped = []
+        while i < len(stops) - 1:
+            p = stops[i]
+            j = next((j for j in range(i + 1, min(i + 4, len(stops))) if cands.get(frozenset((p["node_id"], stops[j]["node_id"])))), None)
+            if j is None:
+                gaps.append((rid, p["seq"], p["node_id"], stops[i + 1]["node_id"]))
                 break
+            q = stops[j]
+            es = cands[frozenset((p["node_id"], q["node_id"]))]
             used.update(es)
-            cum += A.km[es[0]]
-            if abs(cum - (q["km_cum"] or 0)) > 0.051:
-                kmdiff.append((rid, q["seq"], round(cum, 1), q["km_cum"]))
-                cum = q["km_cum"] or cum
+            skipped += stops[i + 1:j]
+            if j == i + 1:
+                cum += A.km[es[0]]
+                if abs(cum - (q["km_cum"] or 0)) > 0.051:
+                    kmdiff.append((rid, q["seq"], round(cum, 1), q["km_cum"]))
+            cum = q["km_cum"] or cum
+            i = j
+        for x in skipped:
+            k = stops.index(x)
+            nb = [y for y in stops[max(0, k - 3):k + 4] if y is not x and cands.get(frozenset((x["node_id"], y["node_id"])))]
+            if not nb:
+                gaps.append((rid, x["seq"], x["node_id"], None))
+            for y in nb:
+                used.update(cands[frozenset((x["node_id"], y["node_id"]))])
         for _, e, _, _ in A.route_edges(rid):
             if e not in used:
                 unused[rid] += 1
@@ -1396,13 +1412,13 @@ def sweep(A, R):
         anyjr = any(a["operator_id"] in jr_ops for a in rows)
         cl = {a["denominator_class"] for a in rows}
         legal = max((l["legal_abolition"] or "") for l in A._life[e]) if A._life[e] else ""
-        if "outside" in cl and (hi >= "2000-01-01" or anyjr):
+        if "outside" in cl and (hi >= "2000-01-01" or (anyjr and hi >= "1969-12-08")):
             wrong_out.append((lg, e, hi))
-        if not anyjr and "normal" in cl and FLOOR <= hi < "2000-01-01":
+        if "normal" in cl and FLOOR <= hi < ("1969-12-08" if anyjr else "2000-01-01"):
             wrong_norm.append((lg, e, hi, rows[0]["line_id"]))
         if "normal" in cl and hi < FLOOR and (legal or hi) < FLOOR:
             old_norm.append((lg, e, hi, rows[0]["line_id"], legal))
-    R.add("S7", "§4.6 등급: outside는 사철 1969-12-08~1999 폐선만", "규칙 위반 0", f"outside 위반 {len(wrong_out)}, 사철 그 기간인데 normal {len(wrong_norm)}개 노선 {sorted({x[3] for x in wrong_norm})[:8]}, 기준일 전 폐지인데 normal {len(old_norm)} {sorted({x[3] for x in old_norm})[:6]}",
+    R.add("S7", "§4.6 등급: outside는 새로 들어오는 폐선만 (1950~1969 국철·JR, 처음부터 사철이던 1950~1999)", "규칙 위반 0", f"outside 위반 {len(wrong_out)}, 사철 그 기간인데 normal {len(wrong_norm)}개 노선 {sorted({x[3] for x in wrong_norm})[:8]}, 기준일 전 폐지인데 normal {len(old_norm)} {sorted({x[3] for x in old_norm})[:6]}",
           not wrong_out and not wrong_norm and not old_norm)
     # S8 이관 옛 계통의 정차역
     miss = []
@@ -1580,7 +1596,7 @@ DESIGN_14_1 = {
     "route_edge": "route_id seq edge_id valid_from valid_to",
     "route_stop": "route_id seq node_id km_cum is_stop is_extension valid_from valid_to",
     "route_link": "route_id seq other_line_id other_route_id kind side at_edge other_node next_stop_node terminal_node flow flow_source valid_from valid_to",
-    "edge": "id from_node to_node seed_line route_only geometry_quality",
+    "edge": "id from_node to_node seed_line route_only geometry_quality geometry_source",
     "edge_life": "edge_id valid_from valid_to status last_service legal_abolition close_reason",
     "edge_km": "edge_id km valid_from valid_to",
     "edge_attr": "id edge_id line_id operator_id lineage_id carryover_group denominator_class valid_from valid_to",

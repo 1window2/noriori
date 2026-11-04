@@ -9,17 +9,17 @@ WIKI='https://ja.wikipedia.org/w/api.php'
 SD='https://github.com/Seo-4d696b75/station_database'
 NAMU='https://huggingface.co/datasets/heegyu/namuwiki'
 # 스냅샷이 아니라 도구가 만든 파일. 받은 날이 없다
-MADE={'n02_stations.json':'tools/n02_stations.py','old_lines.json':'tools/gen_old.py'}
+MADE={'n02/stations_2024.json':'tools/n02_stations.py','stationdb/old_lines.json':'tools/gen_old.py'}
 FIXED={'noritsubushi/lines.json':'https://www.noritsubushi.org/','wikidata/stations.json':'https://query.wikidata.org/sparql',
-       'wiki_kana.json':WIKI,'wiki_station.json':WIKI,'wiki_titles.txt':WIKI,'wiki_titles2.txt':WIKI,'wiki_titles3.txt':WIKI,'old_titles.json':WIKI,
-       'names_ko.json':NAMU,'names_lines.json':NAMU}
+       'wiki/kana.json':WIKI,'wiki/station.json':WIKI,'wiki/titles.txt':WIKI,'wiki/titles2.txt':WIKI,'wiki/titles3.txt':WIKI,'wiki/old_titles.json':WIKI}
 def url_of(rel):
     if rel in FIXED:return FIXED[rel]
     if rel.startswith('stationdb/'):return SD
     if rel.startswith('osm/'):return 'https://overpass-api.de/api/interpreter'
-    if rel.startswith('n02/'):
+    if rel.startswith('n02/') or rel.startswith('n05/'):
         y=os.path.basename(rel).split('_')[0]
-        return f'https://nlftp.mlit.go.jp/ksj/gml/data/N02/{y}/{os.path.basename(rel)}'
+        return f'https://nlftp.mlit.go.jp/ksj/gml/data/{y[:3]}/{y}/{os.path.basename(rel)}'
+    if rel.startswith('namuwiki/'):return NAMU
     if rel.startswith('wiki/'):
         r=json.load(gzip.open(os.path.join(IMP,rel),'rt',encoding='utf-8'))
         if r.get('title') and r.get('revid'):return f"https://ja.wikipedia.org/w/index.php?title={urllib.parse.quote(r['title'])}&oldid={r['revid']}"

@@ -234,7 +234,10 @@
     "leaveTitle": "Your selection will be cleared",
     "leaveBody": "If you switch lines, the stations you picked will be cleared.",
     "leave": "Switch",
-    "dateDemoted": "That section wasn't open on that date, so the date was cleared",
+    "unridableTitle": "This section couldn't be ridden on that date",
+    "unridableSave": "On that date the line was closed, not yet open or suspended, or trains didn't stop at the chosen station. The ride wasn't saved.",
+    "unridableDate": "On that date the line was closed, not yet open or suspended, or trains didn't stop at the chosen station. The date wasn't changed.",
+    "unridableOk": "OK",
     "repick": "Tap another station to start over",
     "closedUnknown": "Closed section",
     "relocationOld": "Old alignment · $km km",
@@ -331,6 +334,10 @@
       "one": "Imported $count ride",
       "other": "Imported $count rides"
     },
+    "undated": {
+      "one": "$count row added without a date",
+      "other": "$count rows added without a date"
+    },
     "close": "Close",
     "undo": "Undo",
     "fullHint": "A full noriori export. Only rides you don't already have are added ($count in the file).",
@@ -343,7 +350,6 @@
     "completeStamp": "完乗",
     "rideStamp": "乗車",
     "undo": "Undo",
-    "savedUnknown": "This date can't be used here, so the ride was saved without a date",
     "noDate": "Date unknown"
   },
   "sources": {
@@ -353,6 +359,11 @@
       "name": "国土数値情報 鉄道データ (N02)",
       "use": "Track geometry, station coordinate corrections",
       "terms": "MLIT. CC BY 4.0 for editions from 2020; earlier editions under the 国土数値情報 terms of use. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
+    },
+    "n05": {
+      "name": "国土数値情報 鉄道時系列データ (N05)",
+      "use": "Track geometry of closed sections missing from N02 and OpenStreetMap",
+      "terms": "MLIT. 国土数値情報 terms of use (non-commercial). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
     "n03": {
       "name": "National Land Numerical Information: Administrative Zones (N03)",
@@ -415,6 +426,7 @@
     "toAlighted": "Got off at the arrival station",
     "save": "Save",
     "delete": "Delete",
+    "unridable": "On that date the line was closed, not yet open or suspended, or trains didn't stop at the recorded station. Your ride hasn't changed.",
     "failed": "Couldn't save. Your rides haven't changed"
   },
   "lineDetail": {

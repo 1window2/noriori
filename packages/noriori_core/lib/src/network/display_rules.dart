@@ -66,7 +66,7 @@ final class TransferGroup {
   final TransferFlow flow;
   final List<DisplayLink> items;
 
-  /// 묶음이 둘 이상일 때만 있다. 왼쪽부터 1이다.
+  /// 묶음이 둘 이상일 때만 있다. 종류에 고정이고 없는 종류는 건너뛴다 (DESIGN §2.9 환승 번호).
   final int? number;
 
   bool get gone => items.every((item) => item.gone);
@@ -299,12 +299,13 @@ final class DisplayRules {
       for (final flow in TransferFlow.values)
         if (items.any((item) => flowOf(item) == flow)) flow,
     ];
+    // ① 지나감 ② 위에서 와서 끝남 ③ 아래에서 와서 끝남 ④ unknown. enum 순서가 곧 번호다
     return [
-      for (final (index, flow) in kinds.indexed)
+      for (final flow in kinds)
         TransferGroup(
           flow: flow,
           items: [for (final item in items) if (flowOf(item) == flow) item],
-          number: kinds.length > 1 ? index + 1 : null,
+          number: kinds.length > 1 ? flow.index + 1 : null,
         ),
     ];
   }

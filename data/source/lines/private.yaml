@@ -476,4 +476,73 @@
 - {"id": "l_yabakei_line", "name_ja": "耶馬渓線", "type": "rail", "rule_class": "normal", "kana": "おおいたこうつうやばけいせん", "sd": "大分交通耶馬渓線", "family": "poita_transportation", "closed": true}
 - {"id": "l_makurazaki_line", "name_ja": "枕崎線", "type": "rail", "rule_class": "normal", "kana": "かごしまこうつうまくらざきせん", "sd": "鹿児島交通枕崎線", "family": "pkagoshima_kotsu", "closed": true}
 - {"id": "l_tagami_line", "name_ja": "田神線", "type": "rail", "rule_class": "normal", "kana": "めいてつたがみせん", "sd": "名鉄田神線", "family": "pnagoya_railroad", "closed": true}
-- {"id": "l_eiheiji_line", "name_ja": "永平寺線", "type": "rail", "rule_class": "normal", "kana": "けいふくでんてつえいへいじせん", "sd": "京福電鉄永平寺線", "family": "pkeifuku_electric_railroad_b", "closed": true}
+- {"id": "l_eiheiji_line", "name_ja": "永平寺線", "type": "rail", "rule_class": "normal", "kana": "けいふくでんてつえいへいじせん", "sd": "京福電鉄永平寺線", "family": "pkeifuku_electric_railroad_fukui", "closed": true}
+- {"id": "l_ako_railway_line", "name_ja": "赤穂鉄道線", "type": "rail", "rule_class": "normal", "kana": "あこうてつどうせん", "family": "pako_railway", "closed": true}
+- {"id": "l_hoshu_line", "name_ja": "豊州線", "type": "rail", "rule_class": "normal", "kana": "ほうしゅうせん", "family": "poita_transportation", "closed": true}
+- {"id": "l_kotohira_kyuko_electric_railway_line", "name_ja": "琴平急行電鉄線", "type": "rail", "rule_class": "normal", "kana": "ことひらきゅうこうでんてつせん", "sd": "琴平急行電鉄", "family": "pkotohira_sangu_electric_railway", "closed": true}
+- {"id": "l_tomo_railway_line", "name_ja": "鞆鉄道線", "type": "rail", "rule_class": "normal", "kana": "ともてつどうせん", "family": "ptomo_railway", "closed": true}
+- {"id": "l_betsudai_line", "name_ja": "別大線", "type": "rail", "rule_class": "normal", "kana": "べつだいせん", "family": "poita_transportation", "closed": true}
+- {"id": "l_nagato_railway_line", "name_ja": "長門鉄道線", "type": "rail", "rule_class": "normal", "kana": "ながとてつどう", "sd": "長門鉄道", "family": "pnagato_railway", "closed": true}
+- {"id": "l_yamato_railway_line", "name_ja": "大和鉄道線", "type": "rail", "rule_class": "normal", "kana": "やまとてつどうせん", "family": "pyamato_railway", "closed": true}
+- {"id": "l_fukushima_line", "name_ja": "福島線", "type": "rail", "rule_class": "normal", "kana": "にしてつふくしません", "sd": "西鉄福島線", "family": "pnishi_nippon_railroad", "closed": true}
+- {"id": "l_obihirobu_line", "name_ja": "帯広部線", "type": "rail", "rule_class": "normal", "kana": "おびひろぶせん", "family": "ptokachi_railway", "closed": true}
+- {"id": "l_yaita_line", "name_ja": "矢板線", "type": "rail", "rule_class": "normal", "kana": "とうぶやいたせん", "sd": "東武矢板線", "family": "ptobu_railway", "closed": true}
+- {"id": "l_sendai_railway_line", "name_ja": "仙台鉄道線", "type": "rail", "rule_class": "normal", "kana": "せんだいてつどうせん", "family": "psendai_railway", "closed": true}
+- {"id": "l_heisaka_branch_line", "name_ja": "平坂支線", "type": "rail", "rule_class": "normal", "kana": "へいさかしせん", "family": "pnagoya_railroad", "closed": true}
+- {"id": "l_hirose_line", "name_ja": "広瀬線", "type": "rail", "rule_class": "normal", "kana": "いちばたでんきてつどうひろせせん", "sd": "一畑電気鉄道広瀬線", "family": "pichibata_denki_tetsudo", "closed": true}
+- {"id": "l_takatomi_line", "name_ja": "高富線", "type": "rail", "rule_class": "normal", "kana": "たかとみせん", "family": "pnagoya_railroad", "closed": true}
+- {"id": "l_kujukuri_railway_line", "name_ja": "九十九里鉄道線", "type": "rail", "rule_class": "normal", "kana": "くじゅうくりてつどうせん", "sd": "九十九里鐵道", "family": "pkujukuri_railway", "closed": true}
+- {"id": "l_funaki_railway_line", "name_ja": "船木鉄道線", "type": "rail", "rule_class": "normal", "kana": "ふなきてつどうせん", "sd": "船木鉄道", "family": "pfunaki_railway", "closed": true}
+- {"id": "l_bansei_line", "name_ja": "万世線", "type": "rail", "rule_class": "normal", "kana": "なんさつてつどうばんせいせん", "sd": "南薩鉄道万世線", "family": "pnansatsu_railway", "closed": true}
+- {"id": "l_kusakaru_electric_railway_line", "name_ja": "草軽電気鉄道線", "type": "rail", "rule_class": "normal", "kana": "くさかるでんきてつどうせん", "family": "pkusakaru_electric_railway", "closed": true}
+- {"id": "l_saidaiji_railway_line", "name_ja": "西大寺鉄道線", "type": "rail", "rule_class": "normal", "kana": "さいだいじてつどうせん", "family": "pryobi_bus", "closed": true}
+- {"id": "l_nishimaruko_line", "name_ja": "西丸子線", "type": "rail", "rule_class": "normal", "kana": "にしまるこせん", "sd": "上田丸子電鉄西丸子線", "family": "pueda_maruko_electric_railway", "closed": true}
+- {"id": "l_matsusaka_line", "name_ja": "松阪線", "type": "rail", "rule_class": "normal", "kana": "まつさかせん", "family": "pmie_kotsu", "closed": true}
+- {"id": "l_onomichi_railway_line", "name_ja": "尾道鉄道線", "type": "rail", "rule_class": "normal", "kana": "おのみちてつどう", "sd": "尾道鉄道", "family": "ponomichi_railway", "closed": true}
+- {"id": "l_iwakura_branch_line", "name_ja": "岩倉支線", "type": "rail", "rule_class": "normal", "kana": "いわくらしせん", "sd": "名鉄小牧線", "family": "pnagoya_railroad", "closed": true}
+- {"id": "l_yuen_railway_line", "name_ja": "熊延鉄道線", "type": "rail", "rule_class": "normal", "kana": "ゆうえんてつどう", "sd": "熊延鉄道", "family": "pyuen_railway", "closed": true}
+- {"id": "l_kagashima_line", "name_ja": "鏡島線", "type": "rail", "rule_class": "normal", "kana": "かがしません", "family": "pnagoya_railroad", "closed": true}
+- {"id": "l_boseki_railway_line", "name_ja": "防石鉄道線", "type": "rail", "rule_class": "normal", "kana": "ぼうせきてつどうせん", "sd": "防石鉄道", "family": "pboseki_railway", "closed": true}
+- {"id": "l_ichinomiya_line", "name_ja": "一宮線", "type": "rail", "rule_class": "normal", "kana": "いちのみやせん", "sd": "名鉄一宮線", "family": "pnagoya_railroad", "closed": true}
+- {"id": "l_yamaga_onsen_railway_line", "name_ja": "山鹿温泉鉄道線", "type": "rail", "rule_class": "normal", "kana": "やまがおんせんてつどう", "sd": "山鹿温泉鉄道", "family": "pyamaga_onsen_railway", "closed": true}
+- {"id": "l_morimatsu_line", "name_ja": "森松線", "type": "rail", "rule_class": "normal", "kana": "いよてつどうもりまつせん", "sd": "伊予鉄道森松線", "family": "piyotetsu", "closed": true}
+- {"id": "l_katayamazu_line", "name_ja": "片山津線", "type": "rail", "rule_class": "normal", "kana": "かたやまづせん", "sd": "北陸鉄道片山津線", "family": "phokuriku_railroad", "closed": true}
+- {"id": "l_chiran_line", "name_ja": "知覧線", "type": "rail", "rule_class": "normal", "kana": "かごしまこうつうちらんせん", "sd": "鹿児島交通知覧線", "family": "pkagoshima_kotsu", "closed": true}
+- {"id": "l_tachikue_line", "name_ja": "立久恵線", "type": "rail", "rule_class": "normal", "kana": "いちばたでんきてつどうたちくえせん", "sd": "一畑電気鉄道立久恵線", "family": "pichibata_denki_tetsudo", "closed": true}
+- {"id": "l_kunisaki_line", "name_ja": "国東線", "type": "rail", "rule_class": "normal", "kana": "おおいたこうつうくにさきせん", "sd": "大分交通国東線", "family": "poita_transportation", "closed": true}
+- {"id": "l_okawa_line", "name_ja": "大川線", "type": "rail", "rule_class": "normal", "kana": "にしてつおおかわせん", "sd": "西鉄大川線", "family": "pnishi_nippon_railroad", "closed": true}
+- {"id": "l_awaji_kotsu_line", "name_ja": "淡路交通線", "type": "rail", "rule_class": "normal", "kana": "あわじこうつうせん", "sd": "淡路鉄道", "family": "pawaji_kotsu", "closed": true}
+- {"id": "l_teshio_tanko_railway_line", "name_ja": "天塩炭礦鉄道線", "type": "rail", "rule_class": "normal", "kana": "てしおたんこうてつどう", "sd": "天塩炭礦鉄道", "family": "pteshio_tanko_railway", "closed": true}
+- {"id": "l_maruoka_line", "name_ja": "丸岡線", "type": "rail", "rule_class": "normal", "kana": "けいふくでんてつまるおかせん", "sd": "京福電鉄丸岡線", "family": "pkeifuku_electric_railroad_fukui", "closed": true}
+- {"id": "l_hokkaido_takushoku_railway_line", "name_ja": "北海道拓殖鉄道線", "type": "rail", "rule_class": "normal", "kana": "ほっかいどうたくしょくてつどう", "sd": "北海道拓殖鉄道", "family": "phokkaido_takushoku_railway", "closed": true}
+- {"id": "l_toya_railway_line", "name_ja": "東野鉄道線", "type": "rail", "rule_class": "normal", "kana": "とうやてつどうせん", "sd": "東野鉄道", "family": "ptoya_railway", "closed": true}
+- {"id": "l_ena_railway_line", "name_ja": "江名鉄道線", "type": "rail", "rule_class": "normal", "kana": "えなてつどう", "sd": "江名鉄道", "family": "pena_railway", "closed": true}
+- {"id": "l_taguchi_line", "name_ja": "田口線", "type": "rail", "rule_class": "normal", "kana": "たぐちせん", "sd": "豊橋鉄道田口線", "family": "ptoyohashi_railroad", "closed": true}
+- {"id": "l_bancho_line", "name_ja": "番町線", "type": "tram", "rule_class": "normal", "kana": "ばんちょうせん", "family": "pokayama_electric_tramway", "closed": true}
+- {"id": "l_toyoma_line", "name_ja": "登米線", "type": "rail", "rule_class": "normal", "kana": "とよません", "family": "pmiyagi_bus", "closed": true}
+- {"id": "l_maruko_line", "name_ja": "丸子線", "type": "rail", "rule_class": "normal", "kana": "まるこせん", "sd": "上田丸子電鉄丸子線", "family": "pueda_maruko_electric_railway", "closed": true}
+- {"id": "l_nambu_railway_line", "name_ja": "南部鉄道線", "type": "rail", "rule_class": "normal", "kana": "なんぶてつどう", "sd": "南部鉄道", "family": "pnambu_railway", "closed": true}
+- {"id": "l_jozankei_railway_line", "name_ja": "定山渓鉄道線", "type": "rail", "rule_class": "normal", "kana": "じょうざんけいてつどう", "sd": "定山渓鉄道", "family": "pjozankei_railway", "closed": true}
+- {"id": "l_bandai_express_electric_railway_line", "name_ja": "磐梯急行電鉄線", "type": "rail", "rule_class": "normal", "kana": "ばんだいきゅうこうでんてつせん", "family": "pbandai_express_electric_railway", "closed": true}
+- {"id": "l_izushi_railway_line", "name_ja": "出石鉄道線", "type": "rail", "rule_class": "normal", "kana": "いずしてつどうせん", "family": "pizushi_railway", "closed": true}
+- {"id": "l_akita_chuo_kotsu_line", "name_ja": "秋田中央交通線", "type": "rail", "rule_class": "normal", "kana": "あきたちゅうおうこうつうせん", "sd": "秋田中央交通", "family": "pakita_chuo_kotsu", "closed": true}
+- {"id": "l_sunen_line", "name_ja": "駿遠線", "type": "rail", "rule_class": "normal", "kana": "すんえんせん", "family": "pshizuoka_railway", "closed": true}
+- {"id": "l_kaetsu_line", "name_ja": "加越線", "type": "rail", "rule_class": "normal", "kana": "かえつせん", "sd": "加越鉄道", "family": "pkaetsuno_railway", "closed": true}
+- {"id": "l_ano_railway_line", "name_ja": "安濃鉄道線", "type": "rail", "rule_class": "normal", "kana": "あのうてつどうせん", "family": "pano_railway", "closed": true}
+- {"id": "l_koromo_line", "name_ja": "挙母線", "type": "rail", "rule_class": "normal", "kana": "ころもせん", "sd": "名鉄拳母線", "family": "pnagoya_railroad", "closed": true}
+- {"id": "l_sasazu_line", "name_ja": "笹津線", "type": "rail", "rule_class": "normal", "kana": "ささづせん", "sd": "富山地鉄笹津線", "family": "ptoyama_chiho_railway", "closed": true}
+- {"id": "l_yagyubashi_branch_line", "name_ja": "柳生橋支線", "type": "rail", "rule_class": "normal", "kana": "やぎゅうばししせん", "family": "ptoyohashi_railroad", "closed": true}
+- {"id": "l_ogoya_railway_line", "name_ja": "尾小屋鉄道線", "type": "rail", "rule_class": "normal", "kana": "おごやてつどうせん", "family": "pogoya_railway", "closed": true}
+- {"id": "l_ohama_line", "name_ja": "大浜線", "type": "rail", "rule_class": "normal", "kana": "おおはません", "family": "pnankai_electric_railway", "closed": true}
+- {"id": "l_higashishigi_cable_line", "name_ja": "東信貴鋼索線", "type": "cable", "rule_class": "normal", "kana": "ひがししぎこうさくせん", "sd": "近鉄生駒線", "family": "pkintetsu_railway", "closed": true}
+- {"id": "l_tsuchiyama_line", "name_ja": "土山線", "type": "rail", "rule_class": "normal", "kana": "べふてつどうつちやません", "sd": "別府鉄道土山線", "family": "pbefu_railway", "closed": true}
+- {"id": "l_okayama_rinko_railway_line", "name_ja": "岡山臨港鉄道線", "type": "rail", "rule_class": "normal", "kana": "おかやまりんこうてつどうせん", "sd": "岡山臨港鉄道", "family": "pokayama_rinko_railway", "closed": true}
+- {"id": "l_kaya_railway_line", "name_ja": "加悦鉄道線", "type": "rail", "rule_class": "normal", "kana": "かやてつどう", "sd": "加悦鉄道", "family": "pkaya_railway", "closed": true}
+- {"id": "l_hanaoka_line", "name_ja": "花岡線", "type": "rail", "rule_class": "normal", "kana": "はなおかせん", "sd": "同和鉱業花岡線", "family": "pdowa_mining", "closed": true}
+- {"id": "l_tsukuba_line", "name_ja": "筑波線", "type": "rail", "rule_class": "normal", "kana": "つくばせん", "sd": "筑波鉄道", "family": "ptsukuba_railway", "closed": true}
+- {"id": "l_shimotsui_line", "name_ja": "下津井線", "type": "rail", "rule_class": "normal", "kana": "しもついせん", "sd": "下津井電鉄", "family": "pshimotsui_electric_railway", "closed": true}
+- {"id": "l_kosaka_line", "name_ja": "小坂線", "type": "rail", "rule_class": "normal", "kana": "こさかせん", "sd": "小坂精練小坂線", "family": "pkosaka_smelting_and_refining", "closed": true}
+- {"id": "l_kambara_railway_line", "name_ja": "蒲原鉄道線", "type": "rail", "rule_class": "normal", "kana": "かんばらてつどう", "sd": "蒲原鉄道", "family": "pkambara_railway", "closed": true}
+- {"id": "l_dreamland_line", "name_ja": "ドリームランド線", "type": "rail", "rule_class": "normal", "kana": "どりーむらんどせん", "sd": "湘南モノレール", "family": "pdream_kaihatsu", "closed": true}
+- {"id": "l_arida_railway_line", "name_ja": "有田鉄道線", "type": "rail", "rule_class": "normal", "kana": "ありだてつどう", "sd": "有田鉄道", "family": "parida_railway", "closed": true}
+- {"id": "l_kato_line", "name_ja": "河東線", "type": "rail", "rule_class": "normal", "kana": "ながのでんてつかとうせん", "sd": "長野電鉄河東線", "family": "pnagano_electric_railway", "closed": true}

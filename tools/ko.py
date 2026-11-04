@@ -100,14 +100,9 @@ PLACE=(('東京','とうきょう','도쿄'),('京都','きょうと','교토'),
 # 나무위키 > 위키데이터 > 규칙 순서로 만든 역 이름 표
 # 표는 재배포하지 않는 원천 스냅샷이라 data/imports에 둔다
 NW={}
-_f=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data','imports','names_ko.json')
-if not os.environ.get('NW_OFF') and os.path.exists(_f):NW=json.load(open(_f,encoding='utf-8'))
-def rule_only(fn,*a):
-    """표를 끄고 규칙만으로 만든 값. 표의 값이 규칙으로도 나오는지 볼 때 쓴다"""
-    global NW
-    s=NW;NW={}
-    try:return fn(*a)
-    finally:NW=s
+_f=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data','imports','namuwiki','names_ko.json')
+# 출처 스위치에서 나무위키를 끄면 규칙 표기만 쓴다 (data/sources.json)
+if not os.environ.get('NW_OFF') and json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data','sources.json'),encoding='utf-8'))['sources']['namuwiki']['on'] and os.path.exists(_f):NW=json.load(open(_f,encoding='utf-8'))
 def station(k,name='',sino=False):
     # 이름의 가타카나 구간은 표기 사전으로, 나머지는 읽기 규칙으로 옮긴다
     nm=re.sub(r'[（(].*?[)）]','',name)

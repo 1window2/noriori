@@ -2,7 +2,9 @@ import '../date/date_span.dart';
 import '../ids.dart';
 import '../name/name_lookup.dart';
 import '../network/network.dart';
+import '../network/ride_interpreter.dart';
 import '../network/route_resolver.dart';
+import '../records/derived.dart';
 import '../records/record.dart';
 import 'noritsubushi_csv.dart';
 
@@ -173,12 +175,17 @@ final class ImportRow {
     required this.result,
     required this.rideId,
     required this.state,
+    this.undated = false,
   });
 
   final CsvRide row;
   final RowResult result;
   final RideId rideId;
   final ImportState state;
+
+  /// 파일에 날짜가 있지만 날짜 모름으로 들어간다. 그날 탈 수 없거나 기준일 이전인 행이다 (DESIGN §10.2).
+  /// `date_input`에는 파일의 날짜가 그대로 남는다.
+  final bool undated;
 
   /// 파일의 거리와 0.1km 단위로 다른가.
   bool get kmDiffers {
@@ -202,6 +209,12 @@ final class ImportPlan {
   List<ImportRow> get missed => [
         for (final row in ofState(ImportState.fresh))
           if (row.result is RowMissed) row,
+      ];
+
+  /// 날짜 모름으로 넣는 새 행. 결과에는 건수만 보여 주고 기준일은 말하지 않는다 (DESIGN §10.2).
+  List<ImportRow> get undated => [
+        for (final row in ofState(ImportState.fresh))
+          if (row.undated) row,
       ];
 
   List<ImportRow> get kmDiffers => [
@@ -236,24 +249,45 @@ ImportPlan planImport(
 }) {
   final seen = <String, int>{};
   final rows = <ImportRow>[];
+  final interpreter = RideInterpreter(matcher.network);
   for (final row in file.rides) {
     final key = [row.company, row.line, row.from, row.to, row.dateInput].join('\n');
     final occurrence = seen[key] = (seen[key] ?? 0) + 1;
     final id = RideId(idOf(csvRideKey(row, occurrence)));
+    final result = matcher.match(row);
     rows.add(
       ImportRow(
         row: row,
-        result: matcher.match(row),
+        result: result,
         rideId: id,
         state: switch (known[id.value]) {
           null => ImportState.fresh,
           true => ImportState.deleted,
           false => ImportState.existing,
         },
+        undated: result is RowMatched && _undated(row, result, interpreter),
       ),
     );
   }
   return ImportPlan(rows: rows, broken: file.broken);
+}
+
+/// 저장과 같은 해석으로 날짜가 남는지 본다. 팝업이 없으므로 묻지 않고 날짜 모름으로 넣는다 (ARCHITECTURE §3.4).
+bool _undated(CsvRide row, RowMatched matched, RideInterpreter interpreter) {
+  if (row.dateInput == null) return false;
+  final derived = interpreter.ride(
+    importedRide(
+      ImportRow(row: row, result: matched, rideId: const RideId('plan'), state: ImportState.fresh),
+      edition: '',
+      now: 0,
+      deviceId: '',
+      lineLabel: '',
+      fromLabel: '',
+      toLabel: '',
+    ),
+  );
+  final saved = derived.status == ResolveStatus.ok || derived.status == ResolveStatus.partial;
+  return saved && derived.date == null;
 }
 
 /// 저장할 기록. 끝은 승하차가 아니라 통과다 (DESIGN §10.2).

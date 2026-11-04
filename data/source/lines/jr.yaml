@@ -287,3 +287,4 @@
 - {"id": "l_hanwa_freight_line", "name_ja": "阪和貨物線", "type": "rail", "rule_class": "extra", "kana": "はんわかもつせん", "sd": "JR関西本線(大和路線)(加茂～ＪＲ難波)", "family": "jr", "closed": true}
 - {"id": "l_kompoku_line", "name_ja": "根北線", "type": "rail", "rule_class": "normal", "kana": "こんぽくせん", "sd": "根北線", "family": "jr", "closed": true}
 - {"id": "l_yubari_line_noborikawa_branch", "name_ja": "夕張線登川支線", "type": "rail", "rule_class": "normal", "kana": "ゆうばりせんのぼりかわしせん", "sd": "JR石勝線", "family": "jr", "closed": true}
+- {"id": "l_ashiya_line", "name_ja": "芦屋線", "type": "rail", "rule_class": "normal", "kana": "あしやせん", "sd": "芦屋線", "family": "jr", "closed": true}

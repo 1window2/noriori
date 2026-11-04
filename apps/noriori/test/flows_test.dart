@@ -20,6 +20,7 @@ import 'package:noriori/features/record/ui/continue_sheet.dart';
 import 'package:noriori/features/record/ui/line_tile.dart';
 import 'package:noriori/features/record/ui/record_edit_screen.dart';
 import 'package:noriori/features/record/ui/record_session_screen.dart';
+import 'package:noriori/features/record/ui/session_date.dart';
 import 'package:noriori/features/stats/ui/stats_screen.dart';
 import 'package:noriori/i18n/strings.g.dart';
 import 'package:noriori_core/noriori_core.dart';
@@ -364,7 +365,7 @@ void main() {
     _phone(tester);
     final container = await _session(tester, rig, rig.line('야마노테선'), a: 2, b: 4);
     final session = container.read(recordSessionProvider.notifier);
-    await tester.runAsync(() => session.setDate('1960-05-05'));
+    await tester.runAsync(() => session.setDate('1949-05-05'));
     await _frames(tester, 3);
     final state = container.read(recordSessionProvider);
     if (state.preview == null) {
@@ -377,9 +378,106 @@ void main() {
     final rides = (await tester.runAsync(
       () => RecordQueries(rig.session.db).watchRides().first,
     ))!;
-    final shown = rides.firstWhere((ride) => ride.dateInput == '1960-05-05');
+    final shown = rides.firstWhere((ride) => ride.dateInput == '1949-05-05');
     expect(shown.date, isNull);
     expect(shown.shownDate, isNull);
+  });
+
+  /// 오늘은 고를 역이 없고 날짜를 모르면 고를 수 있는 폐선 계통. 고를 수 있는 줄의 번호를 함께 준다.
+  (String, List<int>) closedRoute() {
+    final network = rig.world.network;
+    final builder = SelectorBuilder(network);
+    for (final route in network.routes.values) {
+      if (route.closed || route.role != 'main') continue;
+      if (builder.build(route.id, DateSpan.parse('2026-11-02')).any((row) => row.selectable)) continue;
+      final rows = builder.build(route.id, null);
+      final open = [for (final (i, row) in rows.indexed) if (row.selectable) i];
+      if (open.length >= 4) return (route.id, open);
+    }
+    throw StateError('폐선 계통이 없다');
+  }
+
+  testWidgets('고른 구간을 그날 탈 수 없으면 날짜를 바꾸지 않고 경고한다', skip: _skip != null, (tester) async {
+    _phone(tester);
+    final (route, open) = closedRoute();
+    final container = await _session(
+      tester,
+      rig,
+      rig.world.network.routes[route]!.lineId,
+      routeId: route,
+      a: open[1],
+      b: open[3],
+      dateUnknown: true,
+      today: '2026-11-02',
+    );
+    final before = container.read(recordSessionProvider);
+    expect(before.dateInput, isNull);
+    expect(before.preview?.saved, isTrue);
+    await tester.tap(find.byType(SessionDateChip));
+    await _frames(tester, 10);
+    await tester.enterText(
+      find.descendant(of: find.byType(SessionDateDialog), matching: find.byType(TextField)),
+      '2026-11-01',
+    );
+    await tester.tap(find.text('적용'));
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 200)));
+    await _frames(tester, 20);
+    expect(find.text('그 날짜에는 탈 수 없는 구간입니다'), findsOneWidget);
+    expect(find.textContaining('1950'), findsNothing);
+    final after = container.read(recordSessionProvider);
+    expect(after.dateInput, isNull, reason: '원래 날짜를 지킨다');
+    expect(after.from?.seq, before.from?.seq);
+    expect(after.to?.seq, before.to?.seq);
+    expect(after.preview?.saved, isTrue);
+    await tester.tap(find.widgetWithText(TextButton, '확인'));
+    await _frames(tester, 40);
+    expect(find.text('그 날짜에는 탈 수 없는 구간입니다'), findsNothing);
+    // 기준일보다 이른 날짜는 기록 범위 밖이라 경고 없이 받는다
+    final session = container.read(recordSessionProvider.notifier);
+    expect(await tester.runAsync(() => session.setDate('1949-05-05')), isFalse);
+    expect(container.read(recordSessionProvider).dateInput, '1949-05-05');
+    expect(container.read(recordSessionProvider).to?.seq, before.to?.seq);
+  });
+
+  testWidgets('기록의 날짜를 그날 탈 수 없는 날로 고치면 경고하고 고치지 않는다', skip: _skip != null, (tester) async {
+    _phone(tester);
+    final (route, open) = closedRoute();
+    final container = await _session(
+      tester,
+      rig,
+      rig.world.network.routes[route]!.lineId,
+      routeId: route,
+      a: open[1],
+      b: open[3],
+      dateUnknown: true,
+      today: '2026-11-02',
+    );
+    final outcome = await tester.runAsync(() => container.read(recordSessionProvider.notifier).save());
+    expect(outcome, isA<SaveDone>());
+    final ride = (outcome! as SaveDone).change.after.single as Ride;
+    final router = GoRouter(
+      routes: [
+        GoRoute(path: '/', builder: (context, state) => const Scaffold(body: Text('처음'))),
+        GoRoute(path: '/edit', builder: (context, state) => RecordEditScreen(rideId: ride.rideId.value)),
+      ],
+    );
+    await tester.pumpWidget(_app(router, container));
+    await _frames(tester, 3);
+    unawaited(router.push<void>('/edit'));
+    await _frames(tester, 10);
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 200)));
+    await _frames(tester, 10);
+    await tester.enterText(find.widgetWithText(TextField, '탑승일'), '2026-11-01');
+    await _frames(tester, 3);
+    await tester.ensureVisible(find.text('저장'));
+    await _frames(tester, 3);
+    await tester.tap(find.text('저장'));
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 200)));
+    await _frames(tester, 20);
+    expect(find.text('그 날짜에는 탈 수 없는 구간입니다'), findsOneWidget);
+    final kept = (await tester.runAsync(() => rig.session.records.ride(ride.rideId)))!;
+    expect(kept.dateInput, isNull);
+    expect(kept.updatedAt, ride.updatedAt);
   });
 
   testWidgets('첫 기록이 아주 짧아도 통계 머리가 깨지지 않는다', skip: _skip != null, (tester) async {
@@ -456,7 +554,10 @@ void main() {
         .where((line) => line.transfers.length > 1)
         .toList();
     expect(numbered, isNotEmpty);
-    expect(numbered.first.transfers.first.number, 1);
+    // 번호는 종류에 고정이다: ① 지나감 ② 위 ③ 아래 ④ unknown (DESIGN §2.9)
+    for (final line in numbered) {
+      expect(line.transfers.map((g) => g.number), [for (final g in line.transfers) g.flow.index + 1]);
+    }
     expect(numbered.every((line) => line.transfers.length <= 4), isTrue);
   });
 

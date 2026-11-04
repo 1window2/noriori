@@ -13,6 +13,7 @@ import '../controller/record_list_controller.dart';
 import '../controller/record_session_controller.dart';
 import 'complete_card.dart';
 import 'ride_ticket.dart';
+import 'session_date.dart' show showUnridable;
 
 /// 이설 질문의 답. 바깥을 눌러 닫으면 답이 아니라 취소다.
 final class _RelocationAnswer {
@@ -85,14 +86,13 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
     }
     if (!mounted) return;
     switch (outcome) {
-      case SaveDone(:final change, :final demoted, :final ticket):
+      case SaveDone(:final change, :final ticket):
         final commands = ref.read(recordCommandsProvider);
         if (ticket.completed) await showCompleteCard(context, ticket);
         if (!mounted) return;
         showRideTicket(
           context,
           ticket,
-          demoted: demoted,
           onUndo: () => commands.undo(change),
         );
         if (widget.returnBack) {
@@ -100,6 +100,8 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
         } else {
           router.go('/record');
         }
+      case SaveUnridable():
+        await showUnridable(context, t.session.unridableSave);
       case SaveFailed():
         messenger.showSnackBar(SnackBar(content: Text(t.session.noPath)));
       default:

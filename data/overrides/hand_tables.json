@@ -1,0 +1,835 @@
+{
+ "설명": "스크립트 안에 있던 손 보정 표. 사람이 정한 값이고 표마다 근거를 적는다 (DESIGN §2.10). 시드 동결 때 data/source로 흡수",
+ "tables": {
+  "BRT": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "大船渡線",
+     "気仙沼"
+    ],
+    [
+     "日田彦山線",
+     "添田"
+    ],
+    [
+     "気仙沼線",
+     "柳津"
+    ]
+   ]
+  },
+  "LEGAL": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "手宮線": "1985-11-05",
+    "日田彦山線": "2027-03-31",
+    "宇品線": "1986-10-01"
+   }
+  },
+  "PRXN": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "半蔵門線直通": "東武鉄道",
+    "秩父鉄道連絡線": "西武鉄道",
+    "松田連絡線": "小田急電鉄",
+    "鵜沼連絡線": "名古屋鉄道",
+    "八木連絡線": "近畿日本鉄道",
+    "新ノ口連絡線": "近畿日本鉄道",
+    "中川短絡線": "近畿日本鉄道"
+   }
+  },
+  "RENAME": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "伊田": "田川伊田",
+    "後藤寺": "田川後藤寺",
+    "鷹ノ巣": "鷹巣",
+    "人吉": "人吉温泉",
+    "明知": "明智",
+    "羽後矢島": "矢島",
+    "美濃神海": "神海",
+    "会津高原": "会津高原尾瀬口",
+    "斜里": "知床斜里",
+    "野村": "西脇市",
+    "金津": "芦原温泉",
+    "長野原": "長野原草津口",
+    "東風連": "名寄高校",
+    "楢原": "会津下郷",
+    "神岡": "奥飛騨温泉口",
+    "西漆山": "漆山",
+    "神岡口": "神岡鉱山前",
+    "飛騨船津": "飛騨神岡",
+    "東古市": "永平寺口",
+    "紅葉山": "新夕張"
+   }
+  },
+  "NOSD": {
+   "설명": "station_database 역에 붙이지 않는 역. 같은 이름의 다른 자리 (東唐津: 1983년, 楓: 1981년, 常磐線 新地·坂元·山下: 2016년 이전 전의 옛 역) 常磐線 옛 해안 선로 (2016년 이전 전). 사업자 이름 대신 부품 ID로 가린다",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "900010602",
+     "坂元"
+    ],
+    [
+     "900010602",
+     "山下"
+    ],
+    [
+     "900010602",
+     "新地"
+    ],
+    [
+     "旧国鉄・JR各社",
+     "東唐津"
+    ],
+    [
+     "旧国鉄・JR各社",
+     "楓"
+    ],
+    [
+     "黒部峡谷鉄道",
+     "柳橋"
+    ],
+    [
+     "黒部峡谷鉄道",
+     "森石"
+    ]
+   ]
+  },
+  "POSFIX": {
+   "설명": "원천 좌표가 같은 이름의 다른 지방 역을 가리키는 노드. 묶음 판정 전에 고친다 (좌표, 출처, 도도부현)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "n_unazuki": {
+     "lat": 36.8146,
+     "lon": 137.5829,
+     "src": "hand",
+     "pref": null,
+     "why": ""
+    },
+    "n_ashihara": {
+     "lat": 36.223056,
+     "lon": 136.193611,
+     "src": "wikipedia",
+     "pref": "18",
+     "why": "三国線 芦原. 豊橋鉄道 芦原의 좌표가 붙어 있었다. 위키백과 芦原駅 (福井県)"
+    },
+    "n_kurokawa_nose": {
+     "lat": 34.921805,
+     "lon": 135.451165,
+     "src": "wikidata",
+     "pref": "28",
+     "why": "妙見の森ケーブル 黒川. 小田急 黒川의 좌표가 붙어 있었다. Wikidata Q6446332"
+    },
+    "n_takahata_yamagata_kotsu": {
+     "lat": 38.005366,
+     "lon": 140.193771,
+     "src": "n05",
+     "pref": "6",
+     "why": "高畠線 高畠. 奥羽本線 高畠(옛 糠ノ目)의 좌표가 붙어 있었다. N05 역 점"
+    }
+   }
+  },
+  "LINEOPEN": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "ポートアイランド線": "1981-02-05",
+    "ディズニーリゾートライン": "2001-07-27",
+    "ユーカリが丘線": "1983-09-22",
+    "阿佐東線": "2020-10-23",
+    "金沢シーサイド線": "2019-03-31",
+    "1条線・山鼻線・山鼻西線・都心線": "2015-12-20"
+   }
+  },
+  "BYLINEKO": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "紅葉山": "모미지야마",
+    "大広田": "오히로타",
+    "丹後山田": "탄고야마다",
+    "丹後木津": "탄고키츠",
+    "丹後神野": "탄고칸노",
+    "但馬三江": "타지마미에",
+    "遠江桜木": "토토우미사쿠라기",
+    "遠江森": "토토우미모리",
+    "野部": "노베",
+    "遠江二俣": "토토우미후타마타",
+    "本巣北方": "모토스키타가타",
+    "美濃本巣": "미노모토스",
+    "真脇": "마와키",
+    "美濃関": "미노세키",
+    "半在": "한자이",
+    "郡上赤池": "구조아카이케",
+    "美濃相生": "미노아이오이",
+    "美濃山田": "미노야마다",
+    "美濃弥富": "미노야토미",
+    "神岡口": "카미오카구치",
+    "御庄": "미쇼",
+    "横橋": "요코하시",
+    "上三寄": "카미미요리",
+    "会津落合": "아이즈오치아이",
+    "田部原": "타베하라",
+    "会津高原(旧会津滝ノ原)": "아이즈코겐",
+    "西宮内": "니시미야우치",
+    "羽後鮎川": "우고아유카와",
+    "羽後黒沢": "우고쿠로사와",
+    "筑後松崎": "치쿠고마츠자키",
+    "筑前高田": "치쿠젠타카타",
+    "東多良木": "히가시타라기",
+    "肥前御厨": "히젠미쿠리야",
+    "肥前吉井": "히젠요시이",
+    "肥前神田": "히젠코다",
+    "上佐々": "카미사자",
+    "肥前中里": "히젠나카자토",
+    "長野原": "나가노하라",
+    "伊田": "이타",
+    "後藤寺": "고토지",
+    "丹後大宮": "탄고오미야",
+    "佐久米": "사쿠메",
+    "加茂野口": "카모노구치",
+    "苅安": "카리야스",
+    "花白": "하나시로",
+    "沼宮内": "누마쿠나이",
+    "奥中山": "오쿠나카야마",
+    "湯野上": "유노카미",
+    "荒海": "아라카이",
+    "会津高原": "아이즈코겐",
+    "宮内町": "미야우치마치",
+    "小ヶ田": "오가타",
+    "阿仁前田": "아니마에다",
+    "日奈久": "히나구",
+    "田平": "타비라",
+    "平戸口": "히라도구치",
+    "江迎": "에무카에",
+    "潜竜": "센류",
+    "阿蘇下田": "아소시모다",
+    "小浦": "오우라",
+    "美濃神海": "미노코미",
+    "人吉": "히토요시"
+   }
+  },
+  "JAFIX": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "n_namba_osaka_metro": "なんば",
+    "n_nakamozu_osaka_metro": "なかもず",
+    "n_abiko_osaka_metro": "あびこ",
+    "n_mitsuiashibetsu": "三井芦別",
+    "n_horoshin": "幌新",
+    "n_shinuryu": "新雨竜",
+    "n_teradomari_shindo": "寺泊"
+   }
+  },
+  "N02AL": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "文挾": "文挟",
+    "クロスベイ前": "第一イン新湊クロスベイ前",
+    "米島口アルビス米島店前": "米島口",
+    "東山・おかでんチャギントンミュージアム": "東山・おかでんミュージアム",
+    "紙屋町": "紙屋町東",
+    "松山駅前": "JR松山駅前",
+    "松山市駅前": "松山市",
+    "小籠通": "小篭通",
+    "伊太祁曽": "伊太祈曽"
+   }
+  },
+  "STOPCLOSE": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "楓": "2004-03-13",
+    "富山駅北": "2020-03-21",
+    "甲浦": "2021-12-25"
+   }
+  },
+  "FORCE_PAIR": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "牟岐線",
+     "阿佐東線"
+    ]
+   ]
+  },
+  "BRTDAY": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "気仙沼線",
+     "柳津",
+     "2012-08-20"
+    ],
+    [
+     "大船渡線",
+     "気仙沼",
+     "2013-03-02"
+    ],
+    [
+     "日田彦山線",
+     "添田",
+     "2023-08-28"
+    ]
+   ]
+  },
+  "LAST": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "札沼線": "2020-04-17"
+   }
+  },
+  "SVC": {
+   "설명": "재해로 끊긴 채 끝난 구간: 노선 -> [(역, 역, 실제 마지막 운행일)]",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "日高本線": [
+     [
+      "鵡川",
+      "様似",
+      "2015-01-07"
+     ]
+    ],
+    "岩泉線": [
+     [
+      "茂市",
+      "岩泉",
+      "2010-07-31"
+     ]
+    ],
+    "気仙沼線": [
+     [
+      "柳津",
+      "気仙沼",
+      "2011-03-11"
+     ]
+    ],
+    "大船渡線": [
+     [
+      "気仙沼",
+      "盛",
+      "2011-03-11"
+     ]
+    ],
+    "日田彦山線": [
+     [
+      "添田",
+      "夜明",
+      "2017-07-05"
+     ]
+    ],
+    "高千穂線": [
+     [
+      "延岡",
+      "高千穂",
+      "2005-09-05"
+     ]
+    ],
+    "根室本線": [
+     [
+      "東鹿越",
+      "新得",
+      "2016-08-30"
+     ]
+    ]
+   }
+  },
+  "OPENFIX": {
+   "설명": "표에 개업일이 없거나 틀린 구간: 노선 -> [(역, 역, 개업일)]. N05 노선은 위키 문서에서 확인한 값",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "西尾線": [
+     [
+      "西尾",
+      "福地",
+      "1915-02-13"
+     ]
+    ],
+    "天塩炭礦鉄道線": [
+     [
+      "春日町",
+      "達布",
+      "1941-12-18"
+     ]
+    ],
+    "磐梯急行電鉄線": [
+     [
+      "川桁",
+      "沼尻",
+      "1913-05-11"
+     ]
+    ],
+    "岡山臨港鉄道線": [
+     [
+      "岡南新保",
+      "岡山港",
+      "1951-XX-XX"
+     ]
+    ],
+    "ドリームランド線": [
+     [
+      "大船",
+      "ドリームランド",
+      "1966-XX-XX"
+     ]
+    ]
+   }
+  },
+  "OPHIST": {
+   "설명": "노리츠부시 표에 현재 회사만 있는 노선의 앞선 사업자: 노선 -> (앞선 회사, 바뀐 날)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "富山港線": [
+     "富山ライトレール",
+     "2020-02-22"
+    ],
+    "宮津線": [
+     "北近畿タンゴ鉄道",
+     "2015-04-01"
+    ],
+    "宮福線": [
+     "北近畿タンゴ鉄道",
+     "2015-04-01"
+    ]
+   }
+  },
+  "OPHIST_KO": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "富山ライトレール": "도야마 라이트레일",
+    "北近畿タンゴ鉄道": "키타킨키 탄고 철도"
+   }
+  },
+  "OPHIST_ID": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "富山ライトレール": "o_toyama_light_rail",
+    "北近畿タンゴ鉄道": "o_kitakinki_tango_railway"
+   }
+  },
+  "REASON": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "海峡線": "no_regular_service"
+   }
+  },
+  "TRAMCO": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    "とさでん交通",
+    "万葉線",
+    "函館市企業局交通部",
+    "宇都宮ライトレール",
+    "岡山電気軌道",
+    "札幌市交通事業振興公社",
+    "熊本市交通局",
+    "長崎電気軌道",
+    "阪堺電気軌道",
+    "鹿児島市交通局"
+   ]
+  },
+  "TRAMLN": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "京阪電気鉄道",
+     "京津線"
+    ],
+    [
+     "京阪電気鉄道",
+     "石山坂本線"
+    ],
+    [
+     "伊予鉄道",
+     "城北線"
+    ],
+    [
+     "伊予鉄道",
+     "城南線"
+    ],
+    [
+     "伊予鉄道",
+     "大手町線"
+    ],
+    [
+     "伊予鉄道",
+     "本町線"
+    ],
+    [
+     "伊予鉄道",
+     "花園線"
+    ],
+    [
+     "広島電鉄",
+     "宇品線"
+    ],
+    [
+     "広島電鉄",
+     "循環線"
+    ],
+    [
+     "広島電鉄",
+     "本線"
+    ],
+    [
+     "広島電鉄",
+     "横川線"
+    ],
+    [
+     "広島電鉄",
+     "江波線"
+    ],
+    [
+     "広島電鉄",
+     "白島線"
+    ],
+    [
+     "広島電鉄",
+     "皆実線"
+    ],
+    [
+     "東京都交通局",
+     "荒川線"
+    ],
+    [
+     "東急電鉄",
+     "世田谷線"
+    ],
+    [
+     "福井鉄道",
+     "福武線"
+    ],
+    [
+     "豊橋鉄道",
+     "東田本線"
+    ]
+   ]
+  },
+  "COSHORT": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "東京地下鉄": "東京メトロ",
+    "大阪市高速電気軌道": "Osaka Metro"
+   }
+  },
+  "ARCH_CLOSE": {
+   "설명": "표본 대조로 확인한 폐지일. 인포박스 날짜는 다른 사건일 때가 있어 2006년 이후 값은 버린다",
+   "쓰는 곳": "tools/gen_old.py",
+   "값": {
+    "尾小屋鉄道": "1977-03-20",
+    "西遠鉄道": "1937-10-06",
+    "近鉄伊勢線": "1961-01-22",
+    "名鉄平坂支線": "1960-XX-XX"
+   }
+  },
+  "ALIAS": {
+   "설명": "",
+   "쓰는 곳": "tools/gen_old.py",
+   "값": {
+    "東武": "東武鉄道",
+    "名鉄": "名古屋鉄道",
+    "近鉄": "近畿日本鉄道",
+    "西鉄": "西日本鉄道",
+    "南海": "南海電気鉄道",
+    "京成": "京成電鉄",
+    "阪急": "阪急電鉄",
+    "阪神": "阪神電気鉄道",
+    "京阪": "京阪電気鉄道",
+    "小田急": "小田急電鉄",
+    "東急": "東急電鉄",
+    "富山地鉄": "富山地方鉄道"
+   }
+  },
+  "OPAL": {
+   "설명": "N02의 사업자 이름 중 옛 이름인 것",
+   "쓰는 곳": "tools/gen_geometry.py",
+   "값": {
+    "東京急行電鉄": "東急電鉄",
+    "箱根登山鉄道": "小田急箱根",
+    "松本電気鉄道": "アルピコ交通",
+    "大阪高速鉄道": "大阪モノレール",
+    "総武流山電鉄": "流鉄",
+    "富士急行": "富士山麓電気鉄道",
+    "上田交通": "上田電鉄",
+    "一畑電気鉄道": "一畑電車",
+    "土佐電氣鐵道": "とさでん交通",
+    "岳南鉄道": "岳南電車",
+    "小湊鐵道": "小湊鉄道",
+    "大阪府都市開発": "南海電気鉄道",
+    "泉北高速鉄道": "南海電気鉄道",
+    "横浜新都市交通": "横浜シーサイドライン",
+    "アイジーアールいわて銀河鉄道": "IGRいわて銀河鉄道",
+    "WILLER　TRAINS": "京都丹後鉄道（WILLER TRAINS）"
+   }
+  },
+  "N05AL": {
+   "설명": "N05에서 다른 노선의 지선으로 기록된 노선",
+   "쓰는 곳": "tools/gen_geometry.py",
+   "값": {
+    "l_hososhima_line": [
+     "日豊"
+    ]
+   }
+  },
+  "SERVICES": {
+   "설명": "운전 계통은 표가 짧아 손으로 적는다",
+   "쓰는 곳": "tools/gen_en_names.py",
+   "값": {
+    "s_yamanote_loop": "Yamanote Line (Loop)",
+    "s_chuo_rapid": "Chuo Line (Rapid)",
+    "s_chuo_sobu_local": "Chuo-Sobu Line (Local)",
+    "s_keihin_tohoku": "Keihin-Tohoku Line",
+    "s_saikyo": "Saikyo Line",
+    "s_yokosuka": "Yokosuka Line",
+    "s_joban_rapid": "Joban Line (Rapid)",
+    "s_ueno_tokyo": "Ueno-Tokyo Line",
+    "s_shonan_shinjuku_ty": "Shonan-Shinjuku Line (Tokaido)",
+    "s_shonan_shinjuku_ys": "Shonan-Shinjuku Line (Yokosuka)",
+    "s_jr_kyoto": "JR Kyoto Line",
+    "s_jr_kobe": "JR Kobe Line",
+    "s_biwako": "Biwako Line",
+    "s_osaka_loop": "Osaka Loop Line",
+    "s_yamagata_shinkansen": "Yamagata Shinkansen",
+    "s_akita_shinkansen": "Akita Shinkansen",
+    "s_meijo_loop": "Meijo Line (Loop)"
+   }
+  },
+  "OPERATORS": {
+   "설명": "Wikidata에서 찾지 못한 사업자",
+   "쓰는 곳": "tools/gen_en_names.py",
+   "값": {
+    "JR東日本": "JR East",
+    "JR東海": "JR Central",
+    "JR西日本": "JR West",
+    "JR北海道": "JR Hokkaido",
+    "JR九州": "JR Kyushu",
+    "JR四国": "JR Shikoku",
+    "JR貨物": "JR Freight",
+    "上田電鉄": "Ueda Electric Railway",
+    "万葉線": "Manyosen",
+    "小湊鉄道": "Kominato Railway",
+    "京都丹後鉄道（WILLER TRAINS）": "Kyoto Tango Railway (Willer Trains)",
+    "京福電気鉄道": "Keifuku Electric Railroad",
+    "別府鉄道": "Befu Railway",
+    "大夕張鉄道": "Oyubari Railway",
+    "同和鉱業": "Dowa Mining",
+    "頸城鉄道": "Kubiki Railway",
+    "野上電気鉄道": "Nogami Electric Railway",
+    "北丹鉄道": "Hokutan Railway",
+    "備南電気鉄道": "Binan Electric Railway",
+    "南部縦貫鉄道": "Nambu Jukan Railway",
+    "筑波鉄道": "Tsukuba Railway",
+    "鞆鉄道": "Tomo Railway",
+    "草軽電気鉄道": "Kusakaru Electric Railway",
+    "定山渓鉄道": "Jozankei Railway",
+    "岡山臨港鉄道": "Okayama Rinko Railway",
+    "下津井電鉄": "Shimotsui Electric Railway",
+    "長門鉄道": "Nagato Railway",
+    "江名鉄道": "Ena Railway",
+    "両備バス": "Ryobi Bus",
+    "三重交通": "Mie Kotsu",
+    "九十九里鉄道": "Kujukuri Railway",
+    "熊延鉄道": "Yuen Railway",
+    "尾小屋鉄道": "Ogoya Railway",
+    "磐梯急行電鉄": "Bandai Express Electric Railway",
+    "南部鉄道": "Nambu Railway",
+    "一畑電気鉄道": "Ichibata Denki Tetsudo",
+    "加越能鉄道": "Kaetsuno Railway",
+    "尾道鉄道": "Onomichi Railway",
+    "小坂製錬": "Kosaka Smelting and Refining",
+    "上田丸子電鉄": "Ueda Maruko Electric Railway",
+    "淡路交通": "Awaji Kotsu",
+    "加悦鉄道": "Kaya Railway",
+    "船木鉄道": "Funaki Railway",
+    "ドリーム開発": "Dream Kaihatsu",
+    "有田鉄道": "Arida Railway",
+    "北海道拓殖鉄道": "Hokkaido Takushoku Railway",
+    "宮城バス": "Miyagi Bus",
+    "出石鉄道": "Izushi Railway",
+    "蒲原鉄道": "Kambara Railway",
+    "仙台鉄道": "Sendai Railway",
+    "大和鉄道": "Yamato Railway",
+    "秋田中央交通": "Akita Chuo Kotsu",
+    "東野鉄道": "Toya Railway",
+    "十勝鉄道": "Tokachi Railway",
+    "安濃鉄道": "Ano Railway",
+    "琴平参宮電鉄": "Kotohira Sangu Electric Railway",
+    "南薩鉄道": "Nansatsu Railway",
+    "山鹿温泉鉄道": "Yamaga Onsen Railway",
+    "天塩炭礦鉄道": "Teshio Tanko Railway",
+    "防石鉄道": "Boseki Railway",
+    "赤穂鉄道": "Ako Railway"
+   }
+  },
+  "READINGS": {
+   "설명": "읽기가 없는 노선. 노면전차 계통과 연락선이 대부분이다",
+   "쓰는 곳": "tools/gen_en_names.py",
+   "값": {
+    "つくばエクスプレス線": "Tsukuba Express Line",
+    "ディズニーリゾートライン": "Disney Resort Line",
+    "ポートアイランド線": "Port Island Line",
+    "六甲ケーブル線": "Rokko Cable Line",
+    "摩耶ケーブル線": "Maya Cable Line",
+    "妙見の森ケーブル": "Myokennomori Cable",
+    "ケーブルカー": "Cable Car",
+    "鋼索線": "Cable Line",
+    "鉄道線": "Railway Line",
+    "本線": "Main Line",
+    "1号線": "Line 1",
+    "2号線": "Line 2",
+    "3号線": "Line 3",
+    "4号線": "Line 4",
+    "金沢シーサイド線": "Kanazawa Seaside Line",
+    "東京臨海新交通臨海線": "Yurikamome Line",
+    "無軌条電車": "Trolleybus",
+    "成田空港線": "Narita Airport Line",
+    "幹線": "Trunk Line",
+    "丸ノ内線方南町支線": "Marunouchi Line Honancho Branch",
+    "夕張線登川支線": "Yubari Line Noborikawa Branch",
+    "名城線・名港線": "Meijo-Meiko Line",
+    "1条線・山鼻線・山鼻西線・都心線": "Sapporo Streetcar",
+    "天神大牟田線": "Tenjin-Omuta Line",
+    "国際文化公園都市線": "Kokusai Bunka Koen Toshi Line",
+    "西九州線": "Nishi-Kyushu Line",
+    "秋田内陸線": "Akita Nairiku Line",
+    "西神延伸線": "Seishin Extension Line",
+    "広島短距離交通瀬野線": "Seno Line",
+    "上野懸垂線": "Ueno Suspended Line",
+    "鞍馬山鋼索鉄道線": "Kuramayama Cable Line",
+    "東山本線": "Higashiyama Main Line",
+    "南越線": "Nan-Etsu Line",
+    "荒川線": "Arakawa Line",
+    "上滝線": "Kamidaki Line",
+    "立山線": "Tateyama Line",
+    "八日市線": "Yokaichi Line",
+    "多賀線": "Taga Line",
+    "上高地線": "Kamikochi Line",
+    "湊線": "Minato Line",
+    "阿佐東線": "Asato Line",
+    "山代線": "Yamashiro Line",
+    "田園都市線": "Den-en-toshi Line",
+    "モンキーパークモノレール線": "Monkey Park Monorail",
+    "秩父鉄道連絡線": "Chichibu Railway Connecting Line",
+    "北しなの線": "Kita-Shinano Line",
+    "半蔵門線直通": "Hanzomon Line Through Service",
+    "松田連絡線": "Matsuda Connecting Line",
+    "鵜沼連絡線": "Unuma Connecting Line",
+    "新ノ口連絡線": "Ninokuchi Connecting Line",
+    "宝来・谷地頭線": "Horai-Yachigashira Line",
+    "大森線": "Omori Line",
+    "湯の川線": "Yunokawa Line",
+    "水前寺線": "Suizenji Line",
+    "健軍線": "Kengun Line",
+    "上熊本線": "Kami-Kumamoto Line",
+    "田崎線": "Tasaki Line",
+    "第一期線": "First Phase Line",
+    "第二期線": "Second Phase Line",
+    "谷山線": "Taniyama Line",
+    "唐湊線": "Toso Line",
+    "軌道線本線": "Tramway Main Line",
+    "軌道線支線": "Tramway Branch Line",
+    "軌道線安野屋線": "Tramway Yasunoya Line",
+    "軌道線呉羽線": "Tramway Kureha Line",
+    "軌道線富山都心線": "Tramway Toyama City Center Line",
+    "軌道線富山駅南北接続線": "Tramway Toyama Station North-South Link",
+    "江波線": "Eba Line",
+    "横川線": "Yokogawa Line",
+    "皆実線": "Minami Line",
+    "白島線": "Hakushima Line",
+    "循環線": "Loop Line",
+    "宮島線": "Miyajima Line",
+    "城北線": "Johoku Line",
+    "城南線": "Jonan Line",
+    "本町線": "Honmachi Line",
+    "大手町線": "Otemachi Line",
+    "花園線": "Hanazono Line",
+    "赤迫支線": "Akasako Branch Line",
+    "桜町支線": "Sakuramachi Branch Line",
+    "大浦支線": "Oura Branch Line",
+    "蛍茶屋支線": "Hotarujaya Branch Line"
+   }
+  },
+  "NOCONT": {
+   "설명": "같은 역에서 만나도 직통 운행하지 않는 노선 쌍 (노선 이름 일본어)",
+   "값": [
+    [
+     "東横線",
+     "田園都市線"
+    ],
+    [
+     "銀座線",
+     "半蔵門線"
+    ],
+    [
+     "銀座線",
+     "副都心線"
+    ],
+    [
+     "半蔵門線",
+     "東横線"
+    ],
+    [
+     "副都心線",
+     "半蔵門線"
+    ],
+    [
+     "副都心線",
+     "田園都市線"
+    ],
+    [
+     "京都線",
+     "奈良線"
+    ],
+    [
+     "国分寺線",
+     "多摩湖線"
+    ],
+    [
+     "吉野線",
+     "橿原線"
+    ],
+    [
+     "東急多摩川線",
+     "池上線"
+    ]
+   ]
+  },
+  "WIKI_TITLE": {
+   "설명": "열람 전용 노선의 위키백과 문서 이름이 노선 이름과 다른 것",
+   "값": {
+    "姫路市交通局モノレール線": "姫路市営モノレール"
+   }
+  },
+  "ARCH_KO": {
+   "설명": "나무위키에 문서가 없는 열람 전용 노선의 한국어 이름",
+   "값": {
+    "西鉄戸畑線": "니시테츠 토바타선",
+    "西鉄北方線": "니시테츠 키타카타선",
+    "岡山臨港鉄道": "오카야마 임항철도"
+   }
+  },
+  "N05_OUT": {
+   "설명": "N05에 있지만 수록 대상이 아닌 노선 (DESIGN §4.1). 사업자나 노선 이름 -> 이유",
+   "값": {
+    "日本万国博覧会協会": "박람회장 안 교통 (유원지 안 철도와 같음)"
+   }
+  }
+ }
+}

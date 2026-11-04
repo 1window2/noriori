@@ -54,7 +54,16 @@
   "l_ueno_zoo_monorail_line": {"ja": "上野懸垂線", "en": "Ueno Zoo Monorail Line", "why": "懸垂 직역을 고침", "url": "https://en.wikipedia.org/wiki/Ueno_Zoo_Monorail"},
   "l_watarase_keikoku_line": {"ja": "わたらせ渓谷線", "en": "Watarase Keikoku Line", "why": "붙여 쓴 낱말"},
   "l_yamate_line": {"ja": "山手線", "en": "Yamate Line", "why": "神戸의 山手線은 やまて다. 읽기 자료가 JR을 따라갔다", "url": "https://en.wikipedia.org/wiki/Kobe_Municipal_Subway"},
-  "l_green_line": {"ja": "4号線", "en": "Green Line", "why": "요코하마시 공식 영문 Green Line", "url": "https://www.city.yokohama.lg.jp/lang/residents/en/bus-subway/"}
+  "l_green_line": {"ja": "4号線", "en": "Green Line", "why": "요코하마시 공식 영문 Green Line", "url": "https://www.city.yokohama.lg.jp/lang/residents/en/bus-subway/"},
+  "l_akita_chuo_kotsu_line": {"ja": "秋田中央交通線", "en": "Akita Chuo Kotsu Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_awaji_kotsu_line": {"ja": "淡路交通線", "en": "Awaji Kotsu Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_bandai_express_electric_railway_line": {"ja": "磐梯急行電鉄線", "en": "Bandai Express Electric Railway Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_dreamland_line": {"ja": "ドリームランド線", "en": "Dreamland Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_hokkaido_takushoku_railway_line": {"ja": "北海道拓殖鉄道線", "en": "Hokkaido Takushoku Railway Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_kotohira_kyuko_electric_railway_line": {"ja": "琴平急行電鉄線", "en": "Kotohira Kyuko Electric Railway Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_okayama_rinko_railway_line": {"ja": "岡山臨港鉄道線", "en": "Okayama Rinko Railway Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_teshio_tanko_railway_line": {"ja": "天塩炭礦鉄道線", "en": "Teshio Tanko Railway Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"},
+  "l_yamaga_onsen_railway_line": {"ja": "山鹿温泉鉄道線", "en": "Yamaga Onsen Railway Line", "why": "N05로 넣은 옛 폐선. 회사 이름 읽기를 띄어 쓴다"}
 },
 "operator": {
   "o_kintetsu_railway": {"ja": "近畿日本鉄道", "en": "Kintetsu Railway", "why": "법인 표기"},

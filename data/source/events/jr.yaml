@@ -1017,7 +1017,7 @@
 - {"date": "2016-12-10", "type": "close", "line": "l_joban_line", "edges": ["n_komagamine..n_hamayoshida@old"], "reason": "relocated", "source": "noritsubushi", "route": "r_joban_line"}
 - {"date": "2011-03-11", "type": "suspend", "line": "l_joban_line", "edges": ["n_komagamine..n_hamayoshida@old"], "source": "hand", "route": "r_joban_line"}
 - {"date": "1952-07-10", "type": "open_stop", "route": "r_joban_line", "node": "n_komagamine", "source": "wikipedia"}
-- {"date": "1949-05-10", "type": "open_stop", "route": "r_joban_line", "node": "n_yamashita", "source": "wikipedia"}
+- {"date": "1949-05-10", "type": "open_stop", "route": "r_joban_line", "node": "n_yamashita_old", "source": "wikipedia"}
 - {"date": "1897-11-16", "type": "open", "operator": "o_japanese_national_railways", "line": "l_suigun_line", "edges": ["n_mito..n_kami_sugaya"], "source": "noritsubushi"}
 - {"date": "1918-06-12", "type": "open", "operator": "o_japanese_national_railways", "line": "l_suigun_line", "edges": ["n_kami_sugaya..n_urizura"], "source": "noritsubushi"}
 - {"date": "1918-10-23", "type": "open", "operator": "o_japanese_national_railways", "line": "l_suigun_line", "edges": ["n_urizura..n_hitachi_omiya"], "source": "noritsubushi"}
@@ -1317,8 +1317,8 @@
 - {"date": "1987-04-01", "type": "transfer", "edges": ["n_koma..n_odate"], "from": {"operator": "o_japanese_national_railways", "line": "l_hanawa_line"}, "to": {"operator": "o_jr_east", "line": "l_hanawa_line"}, "source": "rule"}
 - {"date": "1960-12-01", "type": "open_stop", "route": "r_hanawa_line", "node": "n_higashi_obuke", "source": "wikipedia"}
 - {"date": "1961-04-20", "type": "open_stop", "route": "r_hanawa_line", "node": "n_kitamori_hanawa", "source": "wikipedia"}
-- {"date": null, "type": "close_stop", "route": "r_hanawa_line", "node": "n_kitamori_hanawa_b", "source": "noritsubushi"}
-- {"date": "1961-04-20", "type": "open_stop", "route": "r_hanawa_line", "node": "n_kitamori_hanawa_b", "source": "wikipedia"}
+- {"date": null, "type": "close_stop", "route": "r_hanawa_line", "node": "n_kitamori_hanawa_old", "source": "noritsubushi"}
+- {"date": "1961-04-20", "type": "open_stop", "route": "r_hanawa_line", "node": "n_kitamori_hanawa_old", "source": "wikipedia"}
 - {"date": "1961-12-28", "type": "open_stop", "route": "r_hanawa_line", "node": "n_appi_kogen", "source": "wikipedia"}
 - {"date": "1960-12-01", "type": "open_stop", "route": "r_hanawa_line", "node": "n_koyanohata", "source": "wikipedia"}
 - {"date": "1966-11-01", "type": "open_stop", "route": "r_hanawa_line", "node": "n_yokoma", "source": "wikipedia"}
@@ -3162,8 +3162,8 @@
 - {"date": "1925-06-15", "type": "open", "operator": "o_japanese_national_railways", "line": "l_chikuhi_line", "edges": ["n_chikuzen_takamiya..n_meinohama"], "source": "noritsubushi"}
 - {"date": "1983-03-22", "type": "close", "line": "l_chikuhi_line", "edges": ["n_hakata..n_meinohama"], "reason": "abolished", "source": "noritsubushi"}
 - {"date": "1931-01-16", "type": "open_stop", "route": "r_chikuhi_line", "node": "n_ozasa", "source": "wikipedia"}
-- {"date": "1925-06-15", "type": "open", "operator": "o_japanese_national_railways", "line": "l_chikuhi_line", "edges": ["n_nijinomatsubara..n_higashi_karatsu"], "route": "r_chikuhi_line_nijinomatsubara_yamamoto", "source": "noritsubushi"}
-- {"date": "1929-06-20", "type": "open", "operator": "o_japanese_national_railways", "line": "l_chikuhi_line", "edges": ["n_higashi_karatsu..n_yamamoto"], "route": "r_chikuhi_line_nijinomatsubara_yamamoto", "source": "noritsubushi"}
+- {"date": "1925-06-15", "type": "open", "operator": "o_japanese_national_railways", "line": "l_chikuhi_line", "edges": ["n_nijinomatsubara..n_higashi_karatsu_old"], "route": "r_chikuhi_line_nijinomatsubara_yamamoto", "source": "noritsubushi"}
+- {"date": "1929-06-20", "type": "open", "operator": "o_japanese_national_railways", "line": "l_chikuhi_line", "edges": ["n_higashi_karatsu_old..n_yamamoto"], "route": "r_chikuhi_line_nijinomatsubara_yamamoto", "source": "noritsubushi"}
 - {"date": "1983-03-22", "type": "close", "line": "l_chikuhi_line", "edges": ["n_nijinomatsubara..n_yamamoto"], "reason": "abolished", "source": "noritsubushi", "route": "r_chikuhi_line_nijinomatsubara_yamamoto"}
 - {"date": "1930-03-01", "type": "open_stop", "route": "r_chikuhi_line_nijinomatsubara_yamamoto", "node": "n_kuri", "source": "wikipedia"}
 - {"date": "1925-04-15", "type": "open", "operator": "o_japanese_national_railways", "line": "l_chikuhi_line", "edges": ["n_meinohama..n_chikuzen_maebaru"], "route": "r_chikuhi_line_meinohama_karatsu", "source": "noritsubushi"}
@@ -4162,6 +4162,10 @@
 - {"date": "1958-XX-XX", "type": "open_stop", "route": "r_kompoku_line", "node": "n_nishinisenkarijokojo", "source": "wikidata"}
 - {"date": "1958-XX-XX", "type": "open_stop", "route": "r_kompoku_line", "node": "n_juyongokarijokojo", "source": "wikidata"}
 - {"date": "1958-XX-XX", "type": "open_stop", "route": "r_kompoku_line", "node": "n_jurokugokarijokojo", "source": "wikidata"}
-- {"date": "1907-05-16", "type": "open", "operator": "o_japanese_national_railways", "line": "l_yubari_line_noborikawa_branch", "edges": ["n_shin_yubari..n_kaede"], "source": "wikipedia"}
-- {"date": "1916-07-11", "type": "open", "operator": "o_japanese_national_railways", "line": "l_yubari_line_noborikawa_branch", "edges": ["n_kaede..n_noborikawa"], "source": "wikipedia"}
+- {"date": "1907-05-16", "type": "open", "operator": "o_japanese_national_railways", "line": "l_yubari_line_noborikawa_branch", "edges": ["n_shin_yubari..n_kaede_old"], "source": "wikipedia"}
+- {"date": "1916-07-11", "type": "open", "operator": "o_japanese_national_railways", "line": "l_yubari_line_noborikawa_branch", "edges": ["n_kaede_old..n_noborikawa"], "source": "wikipedia"}
 - {"date": "1981-07-01", "type": "close", "line": "l_yubari_line_noborikawa_branch", "edges": ["n_shin_yubari..n_noborikawa"], "reason": "abolished", "source": "wikipedia"}
+- {"date": "1947-03-02", "type": "open", "operator": "o_japanese_national_railways", "line": "l_ashiya_line", "edges": ["n_ongagawa..n_ashiyajokojo"], "class": "outside", "source": "wikipedia"}
+- {"date": "1961-06-01", "type": "close", "line": "l_ashiya_line", "edges": ["n_ongagawa..n_ashiyajokojo"], "reason": "abolished", "source": "wikipedia+n05", "legal_abolition": "1961-06-01"}
+- {"date": "1947-03-04", "type": "open_stop", "route": "r_ashiya_line", "node": "n_chikuzenashiya", "source": "station_database"}
+- {"date": "1947-03-04", "type": "open_stop", "route": "r_ashiya_line", "node": "n_ashiyajokojo", "source": "wikidata"}

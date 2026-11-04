@@ -260,7 +260,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
   }
 
   /// 수록 기준일의 해.
-  static const _firstYear = 1970;
+  static const _firstYear = floorYear;
 
   void _toggleYear(int thisYear) {
     setState(() => _year = _year == null ? thisYear : null);

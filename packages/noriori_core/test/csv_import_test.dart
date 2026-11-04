@@ -308,6 +308,63 @@ void main() {
       expect(second.freshMeters, 3000);
     });
 
+    test('그날 탈 수 없는 행과 기준일 이전 행은 날짜 모름으로 넣고 건수를 센다', () {
+      // 2000년에 폐지된 노선 하나
+      final closed = Network(
+        NetworkData(
+          routes: [route('gone', 'g', 'main', 'e', 'f')],
+          edges: const [NetEdge(id: 'ef', n: 1, from: 'e', to: 'f', meters: 1000)],
+          routeEdges: const [NetRouteEdge(routeId: 'gone', seq: 0, edgeId: 'ef')],
+          stops: [stop('gone', 0, 'e'), stop('gone', 1, 'f')],
+          attrs: [attr('ef', 'g', period: before2000)],
+          lives: [life('ef', period: before2000)],
+          units: const [],
+          publicNodes: const {'e', 'f'},
+          nodeGroups: const {},
+        ),
+      );
+      const gone = ImportNames(
+        routes: {},
+        lines: {'廃線': {'g'}},
+        nodes: {'いー': {'e'}, 'えふ': {'f'}},
+      );
+      final plan = planImport(
+        file([
+          '会社,廃線,いー,えふ,1.0,1990-05-01',
+          '会社,廃線,いー,えふ,1.0,2010-05-01',
+          '会社,廃線,いー,えふ,1.0,1949-05-01',
+          '会社,廃線,いー,えふ,1.0,0000-00-00',
+          '会社,없는선,いー,えふ,1.0,2010-05-01',
+        ]),
+        CsvMatcher(closed, gone),
+        const {},
+        idOf: idOf,
+      );
+      expect(plan.rows.map((r) => r.undated), [false, true, true, false, false]);
+      expect(plan.undated.map((r) => r.row.dateInput), ['2010-05-01', '1949-05-01']);
+      // 파일의 날짜는 date_input에 그대로 남고 계산된 날짜만 날짜 모름이다
+      final ride = importedRide(
+        plan.rows[1],
+        edition: 'e',
+        now: 0,
+        deviceId: 'd',
+        lineLabel: '',
+        fromLabel: '',
+        toLabel: '',
+      );
+      expect(ride.dateInput, '2010-05-01');
+      expect(ride.importRaw, '会社,廃線,いー,えふ,1.0,2010-05-01');
+      expect(RideInterpreter(closed).ride(ride).date, isNull);
+      // 이미 있는 행은 세지 않는다
+      final again = planImport(
+        file(['会社,廃線,いー,えふ,1.0,2010-05-01']),
+        CsvMatcher(closed, gone),
+        {plan.rows[1].rideId.value: false},
+        idOf: idOf,
+      );
+      expect(again.undated, isEmpty);
+    });
+
     test('거리가 다른 행을 찾는다', () {
       final plan = planImport(
         file(['会社,本線,えー,びー,1.0,0000-00-00', '会社,本線,びー,しー,2.2,0000-00-00']),

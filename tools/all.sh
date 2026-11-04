@@ -8,6 +8,7 @@ if [ -f data/imports/noritsubushi/lines.json ]; then
   python3 -I tools/n02_stations.py
   python3 -I tools/gen_renames.py
   python3 -I tools/gen_old.py | cut -c1-200
+  python3 -I tools/gen_n05.py | cut -c1-300
   python3 -I tools/gen_source.py all | tail -2 | cut -c1-240
   python3 -I tools/gen_wiki.py | tail -2 | cut -c1-240
   python3 -I tools/gen_source.py all | tail -2 | cut -c1-240

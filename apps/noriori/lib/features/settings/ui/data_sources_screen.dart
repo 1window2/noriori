@@ -19,6 +19,7 @@ class DataSourcesScreen extends StatelessWidget {
           const SizedBox(height: 16),
           for (final (name, use, terms, url) in [
             (t.n02.name, t.n02.use, t.n02.terms, 'https://nlftp.mlit.go.jp/ksj/'),
+            (t.n05.name, t.n05.use, t.n05.terms, 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html'),
             (t.n03.name, t.n03.use, t.n03.terms, 'https://nlftp.mlit.go.jp/ksj/'),
             (
               t.stationDatabase.name,

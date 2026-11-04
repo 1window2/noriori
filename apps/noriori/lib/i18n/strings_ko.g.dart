@@ -678,8 +678,17 @@ class Translations$session$ko {
 	/// ko: '넘어가기'
 	String get leave => '넘어가기';
 
-	/// ko: '고른 구간이 그날 없어 날짜 모름으로 바꿨습니다'
-	String get dateDemoted => '고른 구간이 그날 없어 날짜 모름으로 바꿨습니다';
+	/// ko: '그 날짜에는 탈 수 없는 구간입니다'
+	String get unridableTitle => '그 날짜에는 탈 수 없는 구간입니다';
+
+	/// ko: '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.'
+	String get unridableSave => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.';
+
+	/// ko: '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.'
+	String get unridableDate => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.';
+
+	/// ko: '확인'
+	String get unridableOk => '확인';
 
 	/// ko: '다른 역을 누르면 처음부터 다시 고릅니다'
 	String get repick => '다른 역을 누르면 처음부터 다시 고릅니다';
@@ -897,6 +906,11 @@ class Translations$importing$ko {
 		other: '${count}건을 가져왔습니다',
 	);
 
+	/// ko: '(other) {날짜 모름으로 넣은 행 $count건}'
+	String undated({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
+		other: '날짜 모름으로 넣은 행 ${count}건',
+	);
+
 	/// ko: '닫기'
 	String get close => '닫기';
 
@@ -929,9 +943,6 @@ class Translations$ticket$ko {
 	/// ko: '되돌리기'
 	String get undo => '되돌리기';
 
-	/// ko: '이 날짜로는 기록할 수 없어 날짜 모름으로 저장했습니다'
-	String get savedUnknown => '이 날짜로는 기록할 수 없어 날짜 모름으로 저장했습니다';
-
 	/// ko: '날짜 모름'
 	String get noDate => '날짜 모름';
 }
@@ -951,6 +962,7 @@ class Translations$sources$ko {
 	String get intro => '이름, 거리, 날짜 같은 사실 정보를 여러 출처에서 모아 만들었습니다. noriori 데이터는 CC BY-SA 4.0으로 배포합니다. 선로 모양은 아래 원 자료의 조건을 따르고, OSM 선로 파일만 ODbL 1.0입니다.';
 
 	late final Translations$sources$n02$ko n02 = Translations$sources$n02$ko._(_root);
+	late final Translations$sources$n05$ko n05 = Translations$sources$n05$ko._(_root);
 	late final Translations$sources$n03$ko n03 = Translations$sources$n03$ko._(_root);
 	late final Translations$sources$stationDatabase$ko stationDatabase = Translations$sources$stationDatabase$ko._(_root);
 	late final Translations$sources$wikipedia$ko wikipedia = Translations$sources$wikipedia$ko._(_root);
@@ -1011,6 +1023,9 @@ class Translations$editRide$ko {
 
 	/// ko: '삭제'
 	String get delete => '삭제';
+
+	/// ko: '폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.'
+	String get unridable => '폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.';
 
 	/// ko: '저장하지 못했습니다. 기록은 바뀌지 않았습니다'
 	String get failed => '저장하지 못했습니다. 기록은 바뀌지 않았습니다';
@@ -1751,6 +1766,24 @@ class Translations$sources$n02$ko {
 	String get terms => '국토교통성. 2020년 이후 판 CC BY 4.0, 그 전 판은 国土数値情報 이용 조건. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.n05
+class Translations$sources$n05$ko {
+	Translations$sources$n05$ko._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// ko: '国土数値情報 鉄道時系列データ (N05)'
+	String get name => '国土数値情報 鉄道時系列データ (N05)';
+
+	/// ko: 'N02와 OpenStreetMap에 없는 폐선 구간의 선로 모양'
+	String get use => 'N02와 OpenStreetMap에 없는 폐선 구간의 선로 모양';
+
+	/// ko: '국토교통성. 国土数値情報 이용 조건 (비상업). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。'
+	String get terms => '국토교통성. 国土数値情報 이용 조건 (비상업). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
+}
+
 // Path: sources.n03
 class Translations$sources$n03$ko {
 	Translations$sources$n03$ko._(this._root);
@@ -2104,7 +2137,10 @@ extension on Translations {
 			'session.leaveTitle' => '고른 역이 사라집니다',
 			'session.leaveBody' => '다른 노선으로 넘어가면 지금 고른 역은 지워집니다.',
 			'session.leave' => '넘어가기',
-			'session.dateDemoted' => '고른 구간이 그날 없어 날짜 모름으로 바꿨습니다',
+			'session.unridableTitle' => '그 날짜에는 탈 수 없는 구간입니다',
+			'session.unridableSave' => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.',
+			'session.unridableDate' => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.',
+			'session.unridableOk' => '확인',
 			'session.repick' => '다른 역을 누르면 처음부터 다시 고릅니다',
 			'session.closedUnknown' => '폐지 구간',
 			'session.relocationOld' => ({required Object km}) => '옛 선로 · ${km} km',
@@ -2171,6 +2207,7 @@ extension on Translations {
 			'importing.nothing' => '새로 가져올 기록이 없습니다',
 			'importing.confirm' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${count}건 가져오기', ), 
 			'importing.done' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${count}건을 가져왔습니다', ), 
+			'importing.undated' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '날짜 모름으로 넣은 행 ${count}건', ), 
 			'importing.close' => '닫기',
 			'importing.undo' => '되돌리기',
 			'importing.fullHint' => ({required Object count}) => 'noriori 전체 내보내기 파일입니다. 기록 ${count}건 중 없는 것만 더합니다.',
@@ -2178,13 +2215,15 @@ extension on Translations {
 			'ticket.completeStamp' => '完乗',
 			'ticket.rideStamp' => '乗車',
 			'ticket.undo' => '되돌리기',
-			'ticket.savedUnknown' => '이 날짜로는 기록할 수 없어 날짜 모름으로 저장했습니다',
 			'ticket.noDate' => '날짜 모름',
 			'sources.title' => '데이터 출처',
 			'sources.intro' => '이름, 거리, 날짜 같은 사실 정보를 여러 출처에서 모아 만들었습니다. noriori 데이터는 CC BY-SA 4.0으로 배포합니다. 선로 모양은 아래 원 자료의 조건을 따르고, OSM 선로 파일만 ODbL 1.0입니다.',
 			'sources.n02.name' => '国土数値情報 鉄道データ (N02)',
 			'sources.n02.use' => '선로 모양, 역 좌표 교정',
 			'sources.n02.terms' => '국토교통성. 2020년 이후 판 CC BY 4.0, 그 전 판은 国土数値情報 이용 조건. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.n05.name' => '国土数値情報 鉄道時系列データ (N05)',
+			'sources.n05.use' => 'N02와 OpenStreetMap에 없는 폐선 구간의 선로 모양',
+			'sources.n05.terms' => '국토교통성. 国土数値情報 이용 조건 (비상업). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.n03.name' => '국토수치정보 행정구역 (N03)',
 			'sources.n03.use' => '일본 윤곽과 도도부현 경계',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
@@ -2226,6 +2265,7 @@ extension on Translations {
 			'editRide.toAlighted' => '도착역에서 실제로 내렸음',
 			'editRide.save' => '저장',
 			'editRide.delete' => '삭제',
+			'editRide.unridable' => '폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.',
 			'editRide.failed' => '저장하지 못했습니다. 기록은 바뀌지 않았습니다',
 			'lineDetail.soloMap' => '지도에서 이 노선만 보기',
 			'lineDetail.current' => '현재 구간',

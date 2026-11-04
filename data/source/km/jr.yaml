@@ -6186,3 +6186,5 @@
 - {"edge": "e_006185", "km": 1.8, "source": "wikipedia:106728356"}
 - {"edge": "e_006186", "km": 4.5, "source": "wikipedia"}
 - {"edge": "e_006187", "km": 3.1, "source": "wikipedia"}
+- {"edge": "e_006188", "km": 5.5, "source": "wikipedia:108525786"}
+- {"edge": "e_006189", "km": 0.7, "source": "wikipedia:108525786"}

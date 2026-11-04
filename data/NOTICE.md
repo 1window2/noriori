@@ -16,6 +16,7 @@
 | `names.sqlite` | 표시 이름, 별칭, 검색 색인 | CC BY-SA 4.0. 표기는 사실 정보로 취급 |
 | `rail.pmtiles`의 `station` 레이어 | 역 점 | CC BY-SA 4.0 |
 | `rail.pmtiles`의 `edge` 레이어, `source/geometry/` | 선로 모양 | [원 자료의 조건](source/geometry/LICENSE.md) |
+| `source/geometry/n05.yaml` (`rail.pmtiles`의 `edge` 레이어에 포함) | N02와 OSM에 없는 폐선 구간의 선로 모양 | 国土数値情報 이용 조건 (非商用). CC BY 4.0 아님 |
 | `rail-osm.pmtiles`, `source/geometry/osm.yaml`, `overrides/osm_manual.json` | N02에 없는 선로 모양과 그 선에 맞춘 역 점 | [ODbL 1.0](source/geometry/LICENSE.md). © OpenStreetMap contributors. 역 이름과 연도는 사실 정보로 취급 |
 
 ## 출처
@@ -26,6 +27,7 @@
 | [国土数値情報 行政区域データ (N03)](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N03-2025.html), 일본 국토교통성 | 일본 윤곽과 도도부현 경계 (`base.pmtiles`, `data/base/`) | 「国土数値情報（行政区域データ）」（国土交通省）を加工して作成 |
 | Noto Sans, Noto Sans CJK | 지도 역 이름의 글리프 (`glyph-*.pbf`, 한자·가나·한글 포함) | SIL OFL 1.1 ([전문](base/LICENSE-Noto.txt)) |
 | [OpenStreetMap](https://www.openstreetmap.org/copyright) | N02에 없는 선로 모양과 그 선에 맞춘 역 점 (`rail-osm.pmtiles`만) | © OpenStreetMap contributors. ODbL 1.0 |
+| [国土数値情報 鉄道時系列データ (N05)](https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html), 일본 국토교통성 | N02와 OSM에 없는 폐선 구간의 선로 모양 (`source/geometry/n05.yaml`), OSM 폐선 경로의 대조 (`overrides/closed_geometry.json`) | 国土数値情報 이용 조건 (非商用). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成 |
 | [station_database](https://github.com/Seo-4d696b75/station_database), Seo-4d696b75 | 역 목록과 좌표의 시드 | CC BY-SA 4.0 |
 | [일본어 위키백과](https://ja.wikipedia.org/) | 노선도, 분기와 연결, 폐선 구간의 이력과 거리, 역명의 옛 표기와 읽기 | CC BY-SA 4.0 |
 | [Wikidata](https://www.wikidata.org/) | 영어 이름, 일부 역 좌표 | CC0 1.0 |
@@ -37,6 +39,8 @@
 ## 고지
 
 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。
+
+「国土数値情報（鉄道時系列データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html）を加工して作成。
 
 「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。
 

@@ -158,6 +158,35 @@ void main() {
       expect(find.text('3건 가져오기'), findsOneWidget);
     });
 
+    testWidgets('결과에 날짜 모름으로 넣은 행의 건수만 보여 준다', (tester) async {
+      const ride = Ride(
+        rideId: RideId('r'),
+        legs: [],
+        datasetVersion: 'e',
+        createdAt: 0,
+        updatedAt: 0,
+        deviceId: 'd',
+      );
+      Future<void> show(int undated) async {
+        await tester.pumpWidget(const SizedBox());
+        await tester.pumpWidget(
+          _app(const ImportScreen(), [
+            importControllerProvider.overrideWith(
+              () => _Fixed(ImportDone(const Change(before: [], after: [ride, ride]), undated: undated)),
+            ),
+          ]),
+        );
+        await tester.pumpAndSettle();
+      }
+
+      await show(1);
+      expect(find.text('2건을 가져왔습니다'), findsOneWidget);
+      expect(find.text('날짜 모름으로 넣은 행 1건'), findsOneWidget);
+      expect(find.textContaining('1950'), findsNothing);
+      await show(0);
+      expect(find.textContaining('날짜 모름'), findsNothing);
+    });
+
     testWidgets('넣을 것이 없으면 버튼을 막는다', (tester) async {
       final plan = ImportPlan(rows: [_imported(matched, ImportState.existing)], broken: const []);
       await tester.pumpWidget(
@@ -468,7 +497,6 @@ void main() {
             onPressed: () => showRideTicket(
               context,
               const RideTicketData(lineName: '선', fromName: '가', toName: '나', meters: 1200, dateInput: '2026-11-03'),
-              demoted: false,
               onUndo: () {},
             ),
             child: const Text('열기'),

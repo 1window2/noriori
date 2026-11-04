@@ -132,3 +132,18 @@ class _SessionDateDialogState extends State<SessionDateDialog> {
     );
   }
 }
+
+/// 그날 그 구간을 탈 수 없다는 경고. 저장이나 날짜 변경을 받지 않았음을 [body]로 알린다 (DESIGN §2.8 J).
+Future<void> showUnridable(BuildContext context, String body) {
+  final t = context.t.session;
+  return showDialog<void>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(t.unridableTitle),
+      content: Text(body),
+      actions: [
+        TextButton(onPressed: () => Navigator.pop(context), child: Text(t.unridableOk)),
+      ],
+    ),
+  );
+}

@@ -6,7 +6,7 @@ ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B=sys.argv[1] if len(sys.argv)>1 else os.path.join(ROOT,'build')
 m=sqlite3.connect(os.path.join(B,'master.sqlite'));n=sqlite3.connect(os.path.join(B,'names.sqlite'))
 m.row_factory=sqlite3.Row
-TODAY='2026-11-01';BASE='1969-12-08';ON='ongoing'
+TODAY='2026-11-01';BASE='1950-01-01';ON='ongoing'
 R=collections.OrderedDict()
 def put(k,rows,lim=12):
     rows=list(rows);R[k]=dict(n=len(rows),sample=[(tuple(r) if isinstance(r,(sqlite3.Row,tuple,list)) else r) for r in rows[:lim]])

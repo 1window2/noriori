@@ -374,7 +374,10 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get leaveTitle => 'Your selection will be cleared';
 	@override String get leaveBody => 'If you switch lines, the stations you picked will be cleared.';
 	@override String get leave => 'Switch';
-	@override String get dateDemoted => 'That section wasn\'t open on that date, so the date was cleared';
+	@override String get unridableTitle => 'This section couldn\'t be ridden on that date';
+	@override String get unridableSave => 'On that date the line was closed, not yet open or suspended, or trains didn\'t stop at the chosen station. The ride wasn\'t saved.';
+	@override String get unridableDate => 'On that date the line was closed, not yet open or suspended, or trains didn\'t stop at the chosen station. The date wasn\'t changed.';
+	@override String get unridableOk => 'OK';
 	@override String get repick => 'Tap another station to start over';
 	@override String get closedUnknown => 'Closed section';
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
@@ -478,6 +481,10 @@ class _Translations$importing$en implements Translations$importing$ko {
 		one: 'Imported ${count} ride',
 		other: 'Imported ${count} rides',
 	);
+	@override String undated({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: '${count} row added without a date',
+		other: '${count} rows added without a date',
+	);
 	@override String get close => 'Close';
 	@override String get undo => 'Undo';
 	@override String fullHint({required Object count}) => 'A full noriori export. Only rides you don\'t already have are added (${count} in the file).';
@@ -497,7 +504,6 @@ class _Translations$ticket$en implements Translations$ticket$ko {
 	@override String get completeStamp => '完乗';
 	@override String get rideStamp => '乗車';
 	@override String get undo => 'Undo';
-	@override String get savedUnknown => 'This date can\'t be used here, so the ride was saved without a date';
 	@override String get noDate => 'Date unknown';
 }
 
@@ -511,6 +517,7 @@ class _Translations$sources$en implements Translations$sources$ko {
 	@override String get title => 'Data sources';
 	@override String get intro => 'Built from facts such as names, distances and dates gathered from several sources. noriori data is released under CC BY-SA 4.0. Track shapes follow the terms of each original source, and only the OSM track file is ODbL 1.0.';
 	@override late final _Translations$sources$n02$en n02 = _Translations$sources$n02$en._(_root);
+	@override late final _Translations$sources$n05$en n05 = _Translations$sources$n05$en._(_root);
 	@override late final _Translations$sources$n03$en n03 = _Translations$sources$n03$en._(_root);
 	@override late final _Translations$sources$stationDatabase$en stationDatabase = _Translations$sources$stationDatabase$en._(_root);
 	@override late final _Translations$sources$wikipedia$en wikipedia = _Translations$sources$wikipedia$en._(_root);
@@ -543,6 +550,7 @@ class _Translations$editRide$en implements Translations$editRide$ko {
 	@override String get toAlighted => 'Got off at the arrival station';
 	@override String get save => 'Save';
 	@override String get delete => 'Delete';
+	@override String get unridable => 'On that date the line was closed, not yet open or suspended, or trains didn\'t stop at the recorded station. Your ride hasn\'t changed.';
 	@override String get failed => 'Couldn\'t save. Your rides haven\'t changed';
 }
 
@@ -958,6 +966,18 @@ class _Translations$sources$n02$en implements Translations$sources$n02$ko {
 	@override String get terms => 'MLIT. CC BY 4.0 for editions from 2020; earlier editions under the 国土数値情報 terms of use. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.n05
+class _Translations$sources$n05$en implements Translations$sources$n05$ko {
+	_Translations$sources$n05$en._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => '国土数値情報 鉄道時系列データ (N05)';
+	@override String get use => 'Track geometry of closed sections missing from N02 and OpenStreetMap';
+	@override String get terms => 'MLIT. 国土数値情報 terms of use (non-commercial). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
+}
+
 // Path: sources.n03
 class _Translations$sources$n03$en implements Translations$sources$n03$ko {
 	_Translations$sources$n03$en._(this._root);
@@ -1257,7 +1277,10 @@ extension on TranslationsEn {
 			'session.leaveTitle' => 'Your selection will be cleared',
 			'session.leaveBody' => 'If you switch lines, the stations you picked will be cleared.',
 			'session.leave' => 'Switch',
-			'session.dateDemoted' => 'That section wasn\'t open on that date, so the date was cleared',
+			'session.unridableTitle' => 'This section couldn\'t be ridden on that date',
+			'session.unridableSave' => 'On that date the line was closed, not yet open or suspended, or trains didn\'t stop at the chosen station. The ride wasn\'t saved.',
+			'session.unridableDate' => 'On that date the line was closed, not yet open or suspended, or trains didn\'t stop at the chosen station. The date wasn\'t changed.',
+			'session.unridableOk' => 'OK',
 			'session.repick' => 'Tap another station to start over',
 			'session.closedUnknown' => 'Closed section',
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
@@ -1324,6 +1347,7 @@ extension on TranslationsEn {
 			'importing.nothing' => 'No new rides to import',
 			'importing.confirm' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: 'Import ${count} ride', other: 'Import ${count} rides', ), 
 			'importing.done' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: 'Imported ${count} ride', other: 'Imported ${count} rides', ), 
+			'importing.undated' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${count} row added without a date', other: '${count} rows added without a date', ), 
 			'importing.close' => 'Close',
 			'importing.undo' => 'Undo',
 			'importing.fullHint' => ({required Object count}) => 'A full noriori export. Only rides you don\'t already have are added (${count} in the file).',
@@ -1331,13 +1355,15 @@ extension on TranslationsEn {
 			'ticket.completeStamp' => '完乗',
 			'ticket.rideStamp' => '乗車',
 			'ticket.undo' => 'Undo',
-			'ticket.savedUnknown' => 'This date can\'t be used here, so the ride was saved without a date',
 			'ticket.noDate' => 'Date unknown',
 			'sources.title' => 'Data sources',
 			'sources.intro' => 'Built from facts such as names, distances and dates gathered from several sources. noriori data is released under CC BY-SA 4.0. Track shapes follow the terms of each original source, and only the OSM track file is ODbL 1.0.',
 			'sources.n02.name' => '国土数値情報 鉄道データ (N02)',
 			'sources.n02.use' => 'Track geometry, station coordinate corrections',
 			'sources.n02.terms' => 'MLIT. CC BY 4.0 for editions from 2020; earlier editions under the 国土数値情報 terms of use. 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.n05.name' => '国土数値情報 鉄道時系列データ (N05)',
+			'sources.n05.use' => 'Track geometry of closed sections missing from N02 and OpenStreetMap',
+			'sources.n05.terms' => 'MLIT. 国土数値情報 terms of use (non-commercial). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.n03.name' => 'National Land Numerical Information: Administrative Zones (N03)',
 			'sources.n03.use' => 'Outline of Japan and prefecture borders',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
@@ -1379,6 +1405,7 @@ extension on TranslationsEn {
 			'editRide.toAlighted' => 'Got off at the arrival station',
 			'editRide.save' => 'Save',
 			'editRide.delete' => 'Delete',
+			'editRide.unridable' => 'On that date the line was closed, not yet open or suspended, or trains didn\'t stop at the recorded station. Your ride hasn\'t changed.',
 			'editRide.failed' => 'Couldn\'t save. Your rides haven\'t changed',
 			'lineDetail.soloMap' => 'Show only this line on the map',
 			'lineDetail.current' => 'Current',

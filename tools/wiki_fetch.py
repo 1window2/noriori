@@ -14,9 +14,10 @@ def get(u,t=90):
     return None
 def resolve(t):
     d=get(API+'action=query&redirects=1&titles='+urllib.parse.quote(t))
-    if d and not d['query']['pages'][0].get('missing'):return d['query']['pages'][0]['title']
+    # 오류 응답에는 query가 없다. 못 찾은 것으로 본다
+    if d and 'query' in d and not d['query']['pages'][0].get('missing'):return d['query']['pages'][0]['title']
     d=get(API+'action=query&list=search&srlimit=5&srnamespace=0&srsearch='+urllib.parse.quote(t+' 鉄道 路線'))
-    if not d:return None
+    if not d or 'query' not in d:return None
     core=re.sub(r'(線|本線|鉄道)$','',t)
     for h in d['query']['search']:
         if core[-4:] in h['title']:return h['title']

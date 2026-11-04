@@ -29,14 +29,15 @@ void main() {
 
   group('normalizeRideDate', () {
     test('기준일 앞은 날짜 모름', () {
-      expect(normalizeRideDate(DateSpan.parse('1969-12-07')), isNull);
-      expect(normalizeRideDate(DateSpan.parse('1969-12-08')), isNotNull);
+      expect(normalizeRideDate(DateSpan.parse('1949-12-31')), isNull);
+      expect(normalizeRideDate(DateSpan.parse('1950-01-01')), isNotNull);
     });
 
     test('범위가 기준일에 걸쳐도 날짜 모름', () {
-      expect(normalizeRideDate(DateSpan.parse('1969-XX-XX')), isNull);
-      expect(normalizeRideDate(DateSpan.parse('196X-XX-XX')), isNull);
-      expect(normalizeRideDate(DateSpan.parse('1970-XX-XX')), isNotNull);
+      expect(normalizeRideDate(DateSpan.parse('1949-XX-XX')), isNull);
+      expect(normalizeRideDate(DateSpan.parse('194X-XX-XX')), isNull);
+      expect(normalizeRideDate(DateSpan.parse('1950-XX-XX')), isNotNull);
+      expect(normalizeRideDate(DateSpan.parse('195X-XX-XX')), isNotNull);
     });
   });
 

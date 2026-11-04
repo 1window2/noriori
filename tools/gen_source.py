@@ -11,17 +11,23 @@ import en_rules
 ONLY=set(sys.argv[1].split(',')) if len(sys.argv)>1 and sys.argv[1]!='all' else None   # 예: jr1 (JR 홋카이도만)
 DB=os.path.join(IMP,'stationdb')
 N=json.load(open(os.path.join(IMP,'noritsubushi','lines.json'),encoding='utf-8'))
-if os.path.exists(os.path.join(IMP,'old_lines.json')):N+=json.load(open(os.path.join(IMP,'old_lines.json'),encoding='utf-8'))
+if os.path.exists(os.path.join(IMP,'stationdb','old_lines.json')):N+=json.load(open(os.path.join(IMP,'stationdb','old_lines.json'),encoding='utf-8'))
+# N05와 교차 검증한 옛 폐선 (tools/gen_n05.py). N05를 끄면 빈 목록이다
+N5=json.load(open(os.path.join(IMP,'n05','lines.json'),encoding='utf-8')) if os.path.exists(os.path.join(IMP,'n05','lines.json')) and source_on('n05') else []
+N+=N5
+N5NAMES={re.search(r'【(?:.* )?(.+?)】',x['t']).group(1) for x in N5}
+# N05 노선 읽기(위키 문서 첫 줄)는 다른 읽기가 없을 때만. 같은 이름의 기존 노선 읽기를 바꾸면 그 노선의 ID가 바뀐다
+N5KANA={x['cn']+'|'+re.search(r'【(?:.* )?(.+?)】',x['t']).group(1):x['line_kana'] for x in N5 if x.get('line_kana')}
 
 JRCO={1:'o_jr_hokkaido',2:'o_jr_east',3:'o_jr_central',4:'o_jr_west',5:'o_jr_shikoku',6:'o_jr_kyushu'}
 JRJA={'o_japanese_national_railways':'日本国有鉄道','o_jr_hokkaido':'JR北海道','o_jr_east':'JR東日本','o_jr_central':'JR東海','o_jr_west':'JR西日本','o_jr_shikoku':'JR四国','o_jr_kyushu':'JR九州'}
 JRKO={'o_japanese_national_railways':'국철','o_jr_hokkaido':'JR 홋카이도','o_jr_east':'JR 동일본','o_jr_central':'JR 도카이','o_jr_west':'JR 서일본','o_jr_shikoku':'JR 시코쿠','o_jr_kyushu':'JR 큐슈'}
-BRT={('気仙沼線','柳津'),('大船渡線','気仙沼'),('日田彦山線','添田')}
-LEGAL={'手宮線':'1985-11-05','日田彦山線':'2027-03-31','宇品線':'1986-10-01'}
+BRT={tuple(x) for x in HT['BRT']}
+LEGAL=HT['LEGAL']
 
 # ---- 원천 읽기
 KANA={}
-_k=os.path.join(IMP,'wiki_kana.json')
+_k=os.path.join(IMP,'wiki','kana.json')
 if os.path.exists(_k):
     for a,b in json.load(open(_k,encoding='utf-8')).items():
         nm=a.split(':',1)[1];t=b['title']
@@ -32,6 +38,8 @@ if os.path.exists(_k):KANA.update(json.load(open(_k,encoding='utf-8')))
 NAMEKO=json.load(open(os.path.join(ROOT,'data','overrides','names_ko.json'),encoding='utf-8'))
 _e=os.path.join(ROOT,'data','overrides','kana_est.json')
 if os.path.exists(_e):KANA.update(json.load(open(_e,encoding='utf-8')))
+for x in N5:
+    for a,k in x.get('kana',{}).items():KANA.setdefault('node:'+a,k)
 _g=os.path.join(ROOT,'data','overrides','kana_est_report.json')
 GUESS=set(json.load(open(_g,encoding='utf-8')).get('guess',[])) if os.path.exists(_g) else set()
 OPKO=json.load(open(os.path.join(ROOT,'data','overrides','operators_ko.json'),encoding='utf-8')) if os.path.exists(os.path.join(ROOT,'data','overrides','operators_ko.json')) else {}
@@ -52,7 +60,7 @@ def dist(a,b):
     p=math.radians((a[0]+b[0])/2)
     return math.hypot((a[0]-b[0])*111.0,(a[1]-b[1])*111.0*math.cos(p))
 WD=collections.defaultdict(list)
-wdraw=json.load(open(os.path.join(IMP,'wikidata','stations.json'),encoding='utf-8'))['results']['bindings']
+wdraw=json.load(open(os.path.join(IMP,'wikidata','stations.json'),encoding='utf-8'))['results']['bindings'] if source_on('wikidata') else []
 _w={}
 for r in wdraw:
     q=r['s']['value'].rsplit('/',1)[1];x=_w.setdefault(q,{'q':q,'lines':set()})
@@ -81,7 +89,7 @@ def prx_op(p):
     return PUB.get(PRX[p.name],PRX[p.name]) if p.name in PRX else 'o_tokyu_railways'
 _ids=json.load(open(os.path.join(ROOT,'data','imports','id_map.json'),encoding='utf-8'))
 PUB=_ids['ids'];OLD={v:k for k,v in PUB.items()};FAM=_ids['family'];FAM_OLD={v:k for k,v in FAM.items()}
-PRXN={'半蔵門線直通':'東武鉄道','秩父鉄道連絡線':'西武鉄道','松田連絡線':'小田急電鉄','鵜沼連絡線':'名古屋鉄道','八木連絡線':'近畿日本鉄道','新ノ口連絡線':'近畿日本鉄道','中川短絡線':'近畿日本鉄道'}
+PRXN=HT['PRXN']
 PRX={}
 LINEKANA=json.load(open(os.path.join(ROOT,'data','overrides','lines_kana.json'),encoding='utf-8'))
 # ---- 부품 파싱
@@ -89,26 +97,28 @@ _co={}
 for x in N:
     if x.get('cn') and x['g']=='pr':_co[x['cn']]=str(x['c'])
 for a,b in PRXN.items():PRX[a]='o_'+_co[b]
-RENAME={'伊田':'田川伊田','後藤寺':'田川後藤寺','鷹ノ巣':'鷹巣','人吉':'人吉温泉','明知':'明智','羽後矢島':'矢島','美濃神海':'神海','会津高原':'会津高原尾瀬口','斜里':'知床斜里','野村':'西脇市','金津':'芦原温泉','長野原':'長野原草津口','東風連':'名寄高校','楢原':'会津下郷','神岡':'奥飛騨温泉口','西漆山':'漆山','神岡口':'神岡鉱山前','飛騨船津':'飛騨神岡','東古市':'永平寺口','紅葉山':'新夕張'}
-NOSD={('黒部峡谷鉄道','柳橋'),('黒部峡谷鉄道','森石')}
-POSFIX={'n_unazuki':(36.8146,137.5829)}
-LINEOPEN={'ポートアイランド線':'1981-02-05','ディズニーリゾートライン':'2001-07-27','ユーカリが丘線':'1983-09-22','阿佐東線':'2020-10-23','金沢シーサイド線':'2019-03-31','1条線・山鼻線・山鼻西線・都心線':'2015-12-20'}
-BYLINEKO={'紅葉山':'모미지야마','大広田':'오히로타','丹後山田':'탄고야마다','丹後木津':'탄고키츠','丹後神野':'탄고칸노','但馬三江':'타지마미에','遠江桜木':'토토우미사쿠라기','遠江森':'토토우미모리','野部':'노베','遠江二俣':'토토우미후타마타','本巣北方':'모토스키타가타','美濃本巣':'미노모토스','真脇':'마와키','美濃関':'미노세키','半在':'한자이','郡上赤池':'구조아카이케','美濃相生':'미노아이오이','美濃山田':'미노야마다','美濃弥富':'미노야토미','神岡口':'카미오카구치','御庄':'미쇼','横橋':'요코하시','上三寄':'카미미요리','会津落合':'아이즈오치아이','田部原':'타베하라','会津高原(旧会津滝ノ原)':'아이즈코겐','西宮内':'니시미야우치','羽後鮎川':'우고아유카와','羽後黒沢':'우고쿠로사와','筑後松崎':'치쿠고마츠자키','筑前高田':'치쿠젠타카타','東多良木':'히가시타라기','肥前御厨':'히젠미쿠리야','肥前吉井':'히젠요시이','肥前神田':'히젠코다','上佐々':'카미사자','肥前中里':'히젠나카자토','長野原':'나가노하라','伊田':'이타','後藤寺':'고토지','丹後大宮':'탄고오미야','佐久米':'사쿠메','加茂野口':'카모노구치','苅安':'카리야스','花白':'하나시로','沼宮内':'누마쿠나이','奥中山':'오쿠나카야마','湯野上':'유노카미','荒海':'아라카이','会津高原':'아이즈코겐','宮内町':'미야우치마치','小ヶ田':'오가타','阿仁前田':'아니마에다','日奈久':'히나구','田平':'타비라','平戸口':'히라도구치','江迎':'에무카에','潜竜':'센류','阿蘇下田':'아소시모다','小浦':'오우라','美濃神海':'미노코미','人吉':'히토요시'}
+RENAME=HT['RENAME']
+# station_database 역에 붙이지 않는 역. 같은 이름의 다른 자리 (東唐津: 1983년, 楓: 1981년, 常磐線 新地·坂元·山下: 2016년 이전 전의 옛 역)
+NOSD={tuple(x) for x in HT['NOSD']}
+# 원천 좌표가 같은 이름의 다른 지방 역을 가리키는 노드. 묶음 판정 전에 고친다 (좌표, 출처, 도도부현)
+POSFIX={k:(v['lat'],v['lon'],v['src'],v['pref']) for k,v in HT['POSFIX'].items()}
+LINEOPEN=HT['LINEOPEN']
+BYLINEKO=HT['BYLINEKO']
 SUSPENDED=json.load(open(os.path.join(ROOT,'data','overrides','suspended.json'),encoding='utf-8'))
-JAFIX={'n_namba_osaka_metro':'なんば','n_nakamozu_osaka_metro':'なかもず','n_abiko_osaka_metro':'あびこ','n_mitsuiashibetsu':'三井芦別','n_horoshin':'幌新','n_shinuryu':'新雨竜','n_teradomari_shindo':'寺泊'}
-N02AL={'文挾':'文挟','クロスベイ前':'第一イン新湊クロスベイ前','米島口アルビス米島店前':'米島口','東山・おかでんチャギントンミュージアム':'東山・おかでんミュージアム','紙屋町':'紙屋町東','松山駅前':'JR松山駅前','松山市駅前':'松山市','小籠通':'小篭通','伊太祁曽':'伊太祈曽'}
-STOPCLOSE={'楓':'2004-03-13','富山駅北':'2020-03-21','甲浦':'2021-12-25'}
-FORCE_PAIR={('牟岐線','阿佐東線')}
-BRTDAY={('気仙沼線','柳津'):'2012-08-20',('大船渡線','気仙沼'):'2013-03-02',('日田彦山線','添田'):'2023-08-28'}
-LAST={'札沼線':'2020-04-17'}
+JAFIX=HT['JAFIX']
+N02AL=HT['N02AL']
+STOPCLOSE=HT['STOPCLOSE']
+FORCE_PAIR={tuple(x) for x in HT['FORCE_PAIR']}
+BRTDAY={tuple(x[:-1]):x[-1] for x in HT['BRTDAY']}
+LAST=HT['LAST']
 # 재해로 끊긴 채 끝난 구간: 노선 -> [(역, 역, 실제 마지막 운행일)]
-SVC={'日高本線':[('鵡川','様似','2015-01-07')],'岩泉線':[('茂市','岩泉','2010-07-31')],'気仙沼線':[('柳津','気仙沼','2011-03-11')],'大船渡線':[('気仙沼','盛','2011-03-11')],'日田彦山線':[('添田','夜明','2017-07-05')],'高千穂線':[('延岡','高千穂','2005-09-05')],'根室本線':[('東鹿越','新得','2016-08-30')]}
-OPENFIX={'西尾線':[('西尾','福地','1915-02-13')]}
+SVC={k:[tuple(x) for x in v] for k,v in HT['SVC'].items()}
+OPENFIX={k:[tuple(x) for x in v] for k,v in HT['OPENFIX'].items()}
 # 노리츠부시 표에 현재 회사만 있는 노선의 앞선 사업자: 노선 -> (앞선 회사, 바뀐 날)
-OPHIST={'富山港線':('富山ライトレール','2020-02-22'),'宮津線':('北近畿タンゴ鉄道','2015-04-01'),'宮福線':('北近畿タンゴ鉄道','2015-04-01')}
-OPHIST_KO={'富山ライトレール':'도야마 라이트레일','北近畿タンゴ鉄道':'키타킨키 탄고 철도'}
-OPHIST_ID={'富山ライトレール':'o_toyama_light_rail','北近畿タンゴ鉄道':'o_kitakinki_tango_railway'}
-REASON={'海峡線':'no_regular_service'}
+OPHIST={k:tuple(v) for k,v in HT['OPHIST'].items()}
+OPHIST_KO=HT['OPHIST_KO']
+OPHIST_ID=HT['OPHIST_ID']
+REASON=HT['REASON']
 class P:pass
 parts=[]
 RX=re.compile(r'^(.+?)(?: \((.+?)\))? (\S.*?) ～ (\S.*?) 営業km: ([\d.]+)$')
@@ -116,6 +126,7 @@ for x in N:
     m=RX.match(x['t'])
     p=P();p.id=x['id'];p.g=x['g'];p.c=str(x['c']);p.cn=x.get('cn') or ''
     p.x_svc=x.get('svc') or [];p.x_legal=x.get('legal') or []
+    p.n05pt=x.get('n05pt') or {};p.arch=x.get('arch') or [];p.jr=bool(x.get('jr'))
     # 값의 출처. 노리츠부시 표가 기본이고 옛 폐선 표(gen_old)는 부품마다 적혀 있다
     p.s={k:(x.get('src') or {}).get(k,'noritsubushi') for k in ('km','stop','line','open','close','op')};p.hand_open=set()
     if m:p.name,p.paren,p.frm,p.to,km=m.groups();p.km=float(km)
@@ -134,7 +145,7 @@ for x in N:
         elif '廃止日' in h:p.close=[r for r in t[1:] if len(r)>=3]
     p.st=[]
     for lab,k in x['s']:
-        o=P();o.label=lab;o.km=float(k)
+        o=P();o.label=lab;o.km=float(k);o.n05=p.n05pt.get(lab)
         o.closed=lab.startswith('*') or lab.endswith('*')
         o.hidden=lab.startswith('[') and lab.endswith(']')
         o.old='【旧】' in lab
@@ -149,7 +160,7 @@ for x in N:
         o.mnm=RENAME.get(o.nm,o.nm) if x['g'] in('tm','old') else o.nm
         if x['g'] in('jrx','prx') and re.search('（.*(方|通過|八木西口).*）',lab):o.nm=o.name;o.mnm=o.name;o.hidden=True
         p.st.append(o)
-    p.family='jr' if p.g in('jr','jrx') or (p.g=='tm' and p.c=='9') else ('p'+PRX[p.name][2:] if p.g=='prx' else 'p'+p.c)
+    p.family='jr' if p.g in('jr','jrx') or (p.g=='tm' and p.c=='9') or p.jr else ('p'+PRX[p.name][2:] if p.g=='prx' else 'p'+p.c)
     if p.g=='prx':p.c=PRX[p.name][2:]
     p.extra=p.g=='ex'
     parts.append(p)
@@ -267,9 +278,18 @@ def find(x):
 def union(a,b):
     a,b=find(a),find(b)
     if a!=b:par[max(a,b)]=min(a,b)
+# N05 노선이 같은 회사의 기존 노선에 이어지면 이음 역은 그 노선의 역과 같은 역이다
+FAMSD={(p.family,o.nm):o.sd for p in parts if not p.n05pt for o in p.st if o.sd}
+for p in parts:
+    if p.n05pt:
+        for o in p.st:
+            q=FAMSD.get((p.family,o.nm))
+            if q and (not o.n05 or dist(o.n05,(q['lat_'],q['lng_']))<5):o.sd=q;o.n05=None
 for p in parts:
     for o in p.st:
-        if (p.cn,o.nm) in NOSD:o.sd=None
+        if (p.cn,o.nm) in NOSD or (p.id,o.nm) in NOSD:o.sd=None
+        # N05 노선의 역은 N05 역 점에서 1.5km 넘게 떨어진 station_database 역에 붙이지 않는다. 이름만 같은 다른 역이다
+        if getattr(o,'n05',None) and o.sd and dist(o.n05,(o.sd['lat_'],o.sd['lng_']))>1.5:o.sd=None
         o.key=('o'+p.family+':'+o.nm) if o.old else (('s'+o.sd['id']+':'+p.family) if o.sd else ('x'+p.family+':'+o.mnm))
         prevsame=[q for q in p.st[:p.st.index(o)] if getattr(q,'key',None)==o.key]
         if prevsame and (prevsame[-1].label!=o.label or p.st[p.st.index(o)-1] is prevsame[-1]):
@@ -403,16 +423,23 @@ for lk,ps in BASE.items():
 
 # ---- ID
 # 원천 표의 번호는 안에서만 쓰고 밖으로는 영어 이름 ID로 낸다 (ARCHITECTURE §4.2). 표는 공개하지 않는 data/imports/id_map.json이다
+NEW_IDS=os.environ.get('NORIORI_NEW_IDS')=='1';NEWK=set()
 used=set()
 def uid(base):
     b=base;i=2
     while b in used:b=f'{base}_{i}';i+=1
     used.add(b)
-    # 표에 없는 새 항목이 옛 형식으로 나가거나 기존 공개 ID와 겹치지 않게 여기서 멈춘다
-    if b not in PUB:raise SystemExit(f'data/imports/id_map.json에 없는 ID입니다: {b}')
+    # 표에 없는 새 항목이 옛 형식으로 나가거나 기존 공개 ID와 겹치지 않게 여기서 멈춘다.
+    # 새 노선을 넣을 때는 NORIORI_NEW_IDS=1로 한 번 돌려 내부 키를 그대로 내고, tools/new_ids.py가 영어 이름 ID를 표에 더한다
+    if b not in PUB:
+        if NEW_IDS:NEWK.add(b);return b
+        raise SystemExit(f'data/imports/id_map.json에 없는 ID입니다: {b}. 새 항목이면 NORIORI_NEW_IDS=1로 돌리고 tools/new_ids.py를 실행하세요')
     return PUB[b]
 def oid(c):
     i=f'o_{c}'
+    if i not in PUB and c not in('','x'):
+        if NEW_IDS:NEWK.add(i);return i
+        raise SystemExit(f'data/imports/id_map.json에 없는 사업자 ID입니다: {i}')
     return PUB.get(i,i)
 ops={};OPSRC={}
 def category(c):
@@ -453,8 +480,8 @@ for l in SL:
     if l['name_kana'] not in('','NULL'):
         kana_line.setdefault(znorm(conn.clean(l['name'])),l['name_kana'])
 linesout={};lid={};hub_line={};LSRC={}
-TRAMCO={'函館市企業局交通部','札幌市交通事業振興公社','万葉線','岡山電気軌道','とさでん交通','長崎電気軌道','熊本市交通局','鹿児島市交通局','阪堺電気軌道','宇都宮ライトレール'}
-TRAMLN={('東京都交通局','荒川線'),('東急電鉄','世田谷線'),('広島電鉄','本線'),('広島電鉄','宇品線'),('広島電鉄','江波線'),('広島電鉄','横川線'),('広島電鉄','皆実線'),('広島電鉄','白島線'),('広島電鉄','循環線'),('伊予鉄道','城北線'),('伊予鉄道','城南線'),('伊予鉄道','本町線'),('伊予鉄道','大手町線'),('伊予鉄道','花園線'),('豊橋鉄道','東田本線'),('福井鉄道','福武線'),('京阪電気鉄道','石山坂本線'),('京阪電気鉄道','京津線')}
+TRAMCO=set(HT['TRAMCO'])
+TRAMLN={tuple(x) for x in HT['TRAMLN']}
 def line_type(fam,name):
     c=fam[1:] if fam!='jr' else ''
     cn=ops.get(oid(c),{}).get('name_ja','')
@@ -488,7 +515,7 @@ for lk,ps,ch in line_rel:
     s=sd_line_for(ps)
     sdn_=conn.clean(s['name']) if s else ''
     same_=bool(s) and (znorm(name) in znorm(sdn_) or znorm(sdn_) in znorm(name)) and name not in('本線','幹線','鋼索線')
-    k=LINEKANA.get(ps[0].cn+'|'+name if fam!='jr' else '|'+name) or KANA.get('line:'+name) or kana_line.get(znorm(name)) or (s['name_kana'] if same_ and s['name_kana'] not in('','NULL') else None)
+    k=LINEKANA.get(ps[0].cn+'|'+name if fam!='jr' else '|'+name) or KANA.get('line:'+name) or kana_line.get(znorm(name)) or (s['name_kana'] if same_ and s['name_kana'] not in('','NULL') else None) or N5KANA.get(ps[0].cn+'|'+name)
     base='l_'+(romaji(re.sub(r'^じぇいあーる','',k)) if k else 'n'+ps[0].id)
     if fam!='jr':base+='_'+fam[1:]
     i=uid(base);lid[lk]=i
@@ -526,7 +553,10 @@ for k,L in clusters.items():
     kind='station'
     if hid or SIGNALISH.search(o0.name) or o0.kind:kind=o0.kind or ('signal' if '信号' in o0.name else ('freight' if '貨物' in o0.name else 'junction'))
     pt=(sd['lat_'],sd['lng_']) if sd else None
+    # station_database에 없는 N05 노선의 역은 N05 역 점 (DESIGN §2.11 출처 모듈화. N05를 끄면 쓰지 않는다)
+    n5pt=next((tuple(o.n05) for o in os_ if getattr(o,'n05',None)),None) if source_on('n05') else None
     nodes[i]=dict(id=i,cns=sorted({p_.cn for _,p_ in L}),kind=kind,group=None,pref=(sd or {}).get('prefecture'),name=o_name.name,nm=o_name.nm,kana=re.sub(r'〈.*?〉','',kana) if kana and kana!='NULL' else None,pt=pt,sd_only=bool(sd and len(byname.get(znorm(sd['name']),[]))==1 and len(st_lines[sd['code']])==1),sdname=(sd or {}).get('name'),sd=(sd or {}).get('id'),closed_sd=(sd or {}).get('closed'),sd_open=edtf((sd or {}).get('open_date')),sd_close=edtf((sd or {}).get('closed_date')),family=L[0][1].family,labels=sorted({o.name for o in os_}),by_line=sorted({(o.name,q.lk) for o,q in L if o.name!=o_name.name}),name_src=name_src,by_src={(o.name,q.lk):stop_src(o,q) for o,q in L})
+    if not pt and n5pt:nodes[i].update(pt=n5pt,pt_src='n05',closed_sd='1')
     if kind!='station':nodes[i]['export_name']=('['+o0.name+']') if o0.hidden else o0.name
     n_of[k]=i
 def nid(o):return n_of[find(o.key)]
@@ -539,10 +569,16 @@ def wd_for(n):
 for n in nodes.values():
     n['wd']=wd_for(n)
 
-for k_,v_ in POSFIX.items():
-    if k_ in nodes:nodes[k_]['pt']=v_
+# 손 보정 좌표도 그 근거 출처를 끄면 쓰지 않는다
+POSSRC={'wikidata':'wikidata','wikipedia':'wikipedia','n05':'n05','n02':'n02_2008'}
+def pos_ok(src):return source_on(POSSRC[src]) if src in POSSRC else True
+for k_,(la_,lo_,src_,pf_) in POSFIX.items():
+    if k_ in nodes and pos_ok(src_):
+        nodes[k_]['pt']=(la_,lo_)
+        if src_!='hand':nodes[k_]['pt_src']=src_
+        if pf_:nodes[k_]['pref']=pf_
 # 현행 역은 같은 이름·같은 사업자의 N02 2024 역 점과 맞춘다. 이름이 같은 다른 지방 역에 잘못 붙은 좌표를 고친다
-N02ST=json.load(open(os.path.join(IMP,'n02_stations.json'),encoding='utf-8'))
+N02ST=json.load(open(os.path.join(IMP,'n02','stations_2024.json'),encoding='utf-8'))
 cur_nodes=set()
 for p in parts:
     for o in p.st:
@@ -676,8 +712,8 @@ for lk,ps,ch in sorted(line_rel,key=lambda x:x[0][0]!='jr'):
     for c in ch:
         for a in c.alts:build_chain(a,l,alt='old',host=c)
 
-WS=json.load(open(os.path.join(IMP,'wiki_station.json'),encoding='utf-8')) if os.path.exists(os.path.join(IMP,'wiki_station.json')) else {}
-COSHORT={'東京地下鉄':'東京メトロ','大阪市高速電気軌道':'Osaka Metro'}
+WS=json.load(open(os.path.join(IMP,'wiki','station.json'),encoding='utf-8')) if os.path.exists(os.path.join(IMP,'wiki','station.json')) else {}
+COSHORT=HT['COSHORT']
 ws_stat=collections.Counter()
 PREF='北海道 青森県 岩手県 宮城県 秋田県 山形県 福島県 茨城県 栃木県 群馬県 埼玉県 千葉県 東京都 神奈川県 新潟県 富山県 石川県 福井県 山梨県 長野県 岐阜県 静岡県 愛知県 三重県 滋賀県 京都府 大阪府 兵庫県 奈良県 和歌山県 鳥取県 島根県 岡山県 広島県 山口県 徳島県 香川県 愛媛県 高知県 福岡県 佐賀県 長崎県 熊本県 大分県 宮崎県 鹿児島県 沖縄県'.split()
 ws_miss=[]
@@ -853,11 +889,15 @@ for lk,ps,ch in line_rel:
                     yield i,j,v
                     i=j+1
             # 개업
-            for i,j,v in emit_runs(lambda i:not(issucc and shared_i[i]),lambda i:(opened[i],pop[i],(legal[i] or closed[i] or '9999')<'2000')):
-                d,co,_o=v
+            # 등급의 기준은 법적 폐지일. 노리츠부시 표의 폐지일이 여객 영업 끝인 국철 노선은 LEGAL 표에 법적 폐지일이 있다
+            lg_=[legal[i] or (LEGAL.get(c.seq[i+1][1].name) if fam=='jr' else None) or closed[i] or '9999' for i in range(n)]
+            for i,j,v in emit_runs(lambda i:not(issucc and shared_i[i]),lambda i:(opened[i],pop[i],lg_[i]<'2000',lg_[i]<'1969-12-08')):
+                d,co,_o,_j=v
                 if fam=='jr' and before(d,JR_DAY):co='o_japanese_national_railways'
                 ev=dict(date=d,type='open',operator=co,line=l,edges=spec(c,i,j,alt).split(','))
-                if fam!='jr' and (legal[i] or closed[i] or '9999')<'2000':ev['class']='outside'
+                # 새로 들어오는 폐선은 N05와 목록 대조가 끝날 때까지 분모 밖 (DESIGN §2.8 O, §4.6): 처음부터 사철이던 2000년 전 폐지, 1969-12-08 전 국철 폐지
+                if fam!='jr' and lg_[i]<'2000':ev['class']='outside'
+                if fam=='jr' and lg_[i]<'1969-12-08':ev['class']='outside'
                 if owned:ev['route']=rid
                 ev['source']=run_src(opened_s,i,j) or c.seq[i+1][1].s['open']
                 EV.append((fam,ev))
@@ -1128,7 +1168,7 @@ for n in nodes.values():
         elif kk:
             hk=kata2hira(kk);v=ko.NW.get(lab+'|'+hk)
             add('node',n['id'],'ko',v[0] if v else ko.station(hk,lab),source=v[1] if v else 'rule',line=lid[lk_],checked=TODAY)
-NLN=json.load(open(os.path.join(IMP,'names_lines.json'),encoding='utf-8'))
+NLN=json.load(open(os.path.join(IMP,'namuwiki','names_lines.json'),encoding='utf-8'))
 LINEKO={tuple(k.split('|')):v for k,v in json.load(open(os.path.join(ROOT,'data','overrides','lines_ko.json'),encoding='utf-8')).items()}
 opko={k:v['short_ko'] for k,v in ops.items() if v.get('short_ko')}
 for i,l in linesout.items():
@@ -1149,6 +1189,9 @@ for i,l in linesout.items():
     elif l.get('kana') and same:t=ko.line(l['kana'],l['name_ja']);src='rule'
     elif KANA.get('line:'+l['name_ja']):
         t=ko.line(KANA['line:'+l['name_ja']],l['name_ja']);t=(cko+' '+t).strip() if cko and not t.startswith(cko) else t;src='rule'
+    elif l.get('kana') and l['name_ja'] in N5NAMES:
+        # N05 노선은 읽기를 노선 읽기 표(lines_kana.json)나 위키 문서 첫 줄에서 받는다
+        t=ko.line(l['kana'],l['name_ja']);t=(cko+' '+t).strip() if cko and not t.startswith(cko) else t;src='rule'
     if t:add('line',i,'ko',t,source=src,checked=TODAY)
     else:pend.append(('line',i,l['name_ja']))
 for a,b in OPHIST_ID.items():
@@ -1223,6 +1266,23 @@ for x in names:
     if x['entity_type'] in('line','operator') and x['lang']=='ko' and x['id'] in LFIX:x['text']=LFIX[x['id']];x['source']='hand'
 # 영어 이름은 일본어와 읽기가 확정된 뒤에 고친다 (DESIGN §9.1, data/overrides/en_fix.json)
 en_rules.fix_nodes(names)
+# 역 이전의 옛 역 (DESIGN §2.2 옛 역의 표시). 새 역과 이름이 같으면 이름 뒤에 표시를 붙이고, 원래 이름과 노리츠부시 표기는 별칭으로 남긴다
+OLDMARK={'ja':'（旧）','ko':'(구)','en':' (old)'}
+NSLABEL={}
+for p in parts:
+    for o in p.st:
+        if '旧' in o.label and not getattr(o,'ghost',False):NSLABEL.setdefault(nid(o),o.label.strip('*').strip('[]').strip())
+JA_={x['id']:x['text'] for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and not x.get('valid_to')}
+for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8')):
+    o_,n_=mv['old'],mv['new']
+    if o_ not in nodes or JA_.get(o_)!=JA_.get(n_):continue
+    for x in names:
+        if x['entity_type']=='node' and x['id']==o_ and x['lang'] in OLDMARK and not x.get('line'):
+            if x['lang']=='ja':aliases.append(dict(entity_type='node',id=o_,lang='ja',text=x['text'],kind='moved'))
+            x['text']=x['text']+OLDMARK[x['lang']]
+    lab=NSLABEL.get(o_)
+    if lab:aliases.append(dict(entity_type='node',id=o_,lang='ja',text=lab,kind='noritsubushi'))
+    nodes[o_]['export_name']=lab or JA_[o_]+'（旧）'
 for lk,ps,ch in line_rel:
     for c in ch:
         for q in c.parts:
@@ -1230,18 +1290,8 @@ for lk,ps,ch in line_rel:
         for a in c.alts:
             for q in a.parts:
                 aliases.append(dict(entity_type='route',id=c.rid,lang='ja',text=q.name+(f' ({q.paren})' if q.paren else ''),kind='noritsubushi',span=[q.frm,q.to]))
-# 나무위키 표의 값이 규칙 결과와 같으면 규칙이 출처다. 값은 그대로 두고 태그만 바꾼다
-# 띄어쓰기까지 같을 때만이다. 띄어쓰기가 다르면 표의 값이 출처다
-_jk={}
-for x in names:
-    if x['lang']=='ja' and x.get('kana'):_jk.setdefault((x['entity_type'],x['id']),(x['text'],x['kana']))
-nw_rule=collections.Counter()
-for x in names:
-    if x['lang']!='ko' or x.get('source')!='namuwiki':continue
-    j=_jk.get((x['entity_type'],x['id']))
-    if j and ko.rule_only(ko.station if x['entity_type']=='node' else ko.line,j[1],j[0])==x['text']:x['source']='rule';nw_rule['rule']+=1
-    else:nw_rule['namuwiki']+=1
-print('나무위키 태그',dict(nw_rule))
+# 이름 출처는 값을 정한 근거다. 나무위키 제목이 있으면 규칙 결과와 같아도 namuwiki다 (DESIGN §9.2)
+print('나무위키 태그',sum(1 for x in names if x['lang']=='ko' and x.get('source')=='namuwiki'))
 # ---- 쓰기
 if os.path.isdir(SRC):shutil.rmtree(SRC)
 fam=lambda x:'jr' if x=='jr' else 'private'
@@ -1281,7 +1331,7 @@ for n in nodes.values():
     if c:n['pt']=min(c,key=lambda x:dist(n['pt'],x));n['pt_src']='wikidata';wd_pts+=1
 print('Wikidata 좌표',wd_pts)
 for k_,v_ in NFIX.items():
-    if k_ in nodes and 'lat' in v_:nodes[k_].update(pt=(v_['lat'],v_['lon']),pt_src=v_.get('pos_src','hand'),closed_sd='1')
+    if k_ in nodes and 'lat' in v_ and pos_ok(v_.get('pos_src')):nodes[k_].update(pt=(v_['lat'],v_['lon']),pt_src=v_.get('pos_src','hand'),closed_sd='1')
 dump('positions/positions.yaml',[dict(node=n['id'],lat=n['pt'][0] if n['pt'] else None,lon=n['pt'][1] if n['pt'] else None,quality=('precise' if n.get('closed_sd')=='0' else 'approx') if n['pt'] else 'none',checked=TODAY,source=n.get('pt_src','station_database') if n['pt'] else None) for n in nodes.values()],'노드 좌표')
 dump('names/names.yaml',names,'이름')
 dump('aliases/aliases.yaml',aliases,'별칭')
@@ -1316,6 +1366,16 @@ dump('services/services.yaml',svc,'운전 계통')
 dump('names/names.yaml',names,'이름')
 print('운전 계통',len(svc),'문제',bad)
 os.makedirs(CAND,exist_ok=True)
+# N05에는 있지만 위키 목록에 km가 없는 역은 열람 전용 역으로 (tools/gen_n05.py, DESIGN §4.1). gen_extra가 이름을 붙여 넣는다
+n05arch=[]
+for lk,ps,chs in line_rel:
+    for c in chs:
+        for p in c.parts:
+            for nm_,a_,b_ in getattr(p,'arch',[]):
+                oa=next((o for o in p.st if o.label==a_),None);ob=next((o for o in p.st if o.label==b_),None)
+                if oa and ob:n05arch.append(dict(kind='stop',id='a_'+stable(lid[lk],nm_),line=lid[lk],route=c.rid,after=nid(oa),before=nid(ob),name=nm_,opened=None,closed=max([d for _,_,d in p.x_legal] or [None]),km=None,source='n05'))
+json.dump(n05arch,open(os.path.join(CAND,'n05_arch.json'),'w',encoding='utf-8'),ensure_ascii=False)
+json.dump(sorted(NEWK),open(os.path.join(CAND,'new_ids.json'),'w',encoding='utf-8'),ensure_ascii=False)
 json.dump(dict(pending=pend,unresolved=unresolved,transfers=[(p.name,p.frm,p.to,q.cn,q.name,len(sh)) for p,q,sh in trans]),open(os.path.join(CAND,'gen_report.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 tot=collections.Counter()
 for p in parts:

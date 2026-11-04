@@ -117,7 +117,7 @@ for r in m.execute("select p.node_id,p.lat,p.lon,p.quality,p.source from node_po
 far.sort(reverse=True,key=lambda x:x[0])
 put('현행 역 좌표가 N02와 350m 넘게 다름',far,80,ok=ok,none=none)
 # ---- 4. 역 날짜: 역 문서와 최종값
-W=json.load(open(os.path.join(ROOT,'data/imports/wiki_station.json'),encoding='utf-8'))
+W=json.load(open(os.path.join(ROOT,'data/imports/wiki/station.json'),encoding='utf-8'))
 print(json.dumps({k:v['n'] for k,v in R.items()},ensure_ascii=False))
 json.dump(R,open(os.path.join(B,'audit_ext.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 # ---- 5. 노리츠부시 현행 표와 오늘자 계통을 통째로 비교한다

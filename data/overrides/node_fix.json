@@ -30,7 +30,11 @@
 },
 "n_ueno_zoo_west_garden": {
 "kana": "うえのどうぶつえんにしえん",
-"ko": "우에노도부츠엔니시엔"
+"ko": "우에노도부츠엔니시엔",
+"lat": 35.714306,
+"lon": 139.769722,
+"pos_src": "wikidata",
+"pos_note": "上野動物園西園. Wikidata 좌표"
 },
 "n_echigootsu": {
 "kana": "えちごおおつ",
@@ -58,7 +62,11 @@
 },
 "n_shimabara_gaiko": {
 "kana": "しまばらがいこう",
-"ko": "시마바라가이항"
+"ko": "시마바라가이항",
+"lat": 32.768825,
+"lon": 130.370306,
+"pos_src": "wikipedia",
+"pos_note": "島原外港 (현 島原港). 위키백과 문서의 좌표"
 },
 "n_takaoka_ekimae": {
 "kana": "たかおかえきまえ",
@@ -275,9 +283,177 @@
 "lon": 136.47703,
 "pos_note": "中川短絡線과 名古屋線의 분기. N02 조각의 분기점"
 },
-"n_kannoura_asa_seaside_asato_b": {
+"n_kannoura_asa_seaside_asato": {
 "lat": 33.54688,
 "lon": 134.28784,
 "pos_note": "甲浦 모드 인터체인지. N02 2024의 승강장 가운데"
+},
+"n_nakatsu_oita_transportation": {
+"lat": 33.599167,
+"lon": 131.190833,
+"pos_src": "wikidata",
+"pos_note": "大分交通耶馬渓線 中津. 원천에 좌표 없음. 붙어 있던 日豊本線 中津역의 Wikidata 좌표"
+},
+"n_kojo": {
+"lat": 33.5762,
+"lon": 131.210149,
+"pos_src": "interpolated",
+"pos_note": "古城. 원천에 좌표 없음. 中津와 八幡前 사이를 km(3.4, 0.6) 비율로 나눈 점"
+},
+"n_nukanome": {
+"lat": 37.992433,
+"lon": 140.152717,
+"pos_src": "wikidata",
+"pos_note": "山形交通高畠線 糠ノ目. 원천에 좌표 없음. 같은 자리의 奥羽本線 糠ノ目(현 高畠)역 Wikidata 좌표"
+},
+"n_rumoi_haboro": {
+"lat": 43.942689,
+"lon": 141.652136,
+"pos_src": "wikidata",
+"pos_note": "羽幌線 留萠. 원천에 좌표 없음. 留萌역 Wikidata 좌표"
+},
+"n_katamachi_katamachi": {
+"lat": 34.694221,
+"lon": 135.529082,
+"pos_src": "wikidata",
+"pos_note": "片町. Wikidata 좌표"
+},
+"n_akitako": {
+"lat": 39.756306,
+"lon": 140.062306,
+"pos_src": "wikidata",
+"pos_note": "秋田港. Wikidata 좌표"
+},
+"n_teradomari_shindo": {
+"lat": 37.633278,
+"lon": 138.7615,
+"pos_src": "wikidata",
+"pos_note": "越後交通長岡線 寺泊. Wikidata 좌표"
+},
+"n_raiden": {
+"lat": 36.5672,
+"lon": 137.628,
+"pos_src": "wikidata",
+"pos_note": "雷殿. Wikidata 좌표"
+},
+"n_ueno_zoo_east_garden": {
+"lat": 35.715833,
+"lon": 139.770139,
+"pos_src": "wikidata",
+"pos_note": "上野動物園東園. Wikidata 좌표"
+},
+"n_cable_sanjo": {
+"lat": 34.923889,
+"lon": 135.457222,
+"pos_src": "wikidata",
+"pos_note": "ケーブル山上. Wikidata 좌표"
+},
+"n_ogizawa": {
+"lat": 36.5585,
+"lon": 137.720861,
+"pos_src": "wikipedia",
+"pos_note": "扇沢. 위키백과 문서의 좌표"
+},
+"n_kurobe_dam": {
+"lat": 36.566667,
+"lon": 137.666167,
+"pos_src": "wikipedia",
+"pos_note": "黒部ダム. 위키백과 문서의 좌표"
+},
+"n_murodo": {
+"lat": 36.577319,
+"lon": 137.595489,
+"pos_src": "wikipedia",
+"pos_note": "室堂. 위키백과 室堂ターミナル 문서의 좌표"
+},
+"n_daikanbo": {
+"lat": 36.569692,
+"lon": 137.631698,
+"pos_src": "wikidata",
+"pos_note": "大観峰. Wikidata 좌표"
+},
+"n_kanazu": {
+"lat": 36.214533,
+"lon": 136.235036,
+"pos_src": "wikidata",
+"pos_note": "三国線 金津. 원천에 좌표 없음. 같은 자리의 芦原温泉(옛 金津)역 Wikidata 좌표"
+},
+"n_higashi_karatsu_old": {
+"lat": 33.447766,
+"lon": 129.987686,
+"pos_src": "n05",
+"pos_note": "東唐津 옛 역 (1983-03-22 이전 전). 国土数値情報 鉄道時系列(N05)의 1982년까지 역 점"
+},
+"n_kaede_old": {
+"lat": 42.934203,
+"lon": 142.079858,
+"pos_src": "n05",
+"pos_note": "楓 옛 역 (1981년 石勝線 개업 때 이전). 国土数値情報 鉄道時系列(N05)의 1980년까지 역 점"
+},
+"n_kitago_fukui_nan_etsu": {
+"lat": 35.909578,
+"lon": 136.170915,
+"pos_src": "n05",
+"pos_note": "南越線 北府. 福武線 北府의 좌표가 붙어 있었다. N05 역 점"
+},
+"n_chikuzenminoshima": {
+"lat": 33.575972,
+"lon": 130.420417,
+"pos_src": "wikidata",
+"pos_note": "筑前蓑島. 원천에 좌표 없음. Wikidata 筑前簑島駅 좌표"
+},
+"n_osadakoen_oita_transportation_yabakei": {
+"lat": 33.564136,
+"lon": 131.206003,
+"pos_src": "n05",
+"pos_note": "耶馬渓線의 두 번째 大貞公園 (八幡前에서 1.2km). N05 역 점. 거리는 八幡前–大貞公園 선로 1.23km와 맞는다"
+},
+"n_osadakoen_oita_transportation_yabakei_old": {
+"lat": 33.568694,
+"lon": 131.212963,
+"pos_src": "n05",
+"pos_note": "耶馬渓線의 첫 번째 大貞公園 (八幡前에서 0.4km). 원천 좌표가 두 번째와 같다. N05 耶馬溪線 선로에서 八幡前부터 0.4km 지점"
+},
+"n_shinchi_old": {
+"lat": 37.88248,
+"lon": 140.92629,
+"pos_src": "n02",
+"pos_note": "常磐線 新地 옛 역 (2016-12-10 이전 전). N02 2008판 승강장 가운데"
+},
+"n_sakamoto_joban_old": {
+"lat": 37.92885,
+"lon": 140.91257,
+"pos_src": "n02",
+"pos_note": "常磐線 坂元 옛 역 (2016-12-10 이전 전). N02 2008판 승강장 가운데"
+},
+"n_yamashita_old": {
+"lat": 37.96702,
+"lon": 140.90093,
+"pos_src": "n02",
+"pos_note": "常磐線 山下 옛 역 (2016-12-10 이전 전). N02 2008판 승강장 가운데"
+},
+"n_shizugawa": {
+"lat": 38.67892,
+"lon": 141.44313,
+"pos_src": "n02",
+"pos_note": "気仙沼線 志津川. BRT 정류장 좌표가 붙어 있었다. N02 2008판 승강장 가운데"
+},
+"n_omagari_shinmei": {
+"lat": 44.228732,
+"lon": 142.164265,
+"pos_src": "n05",
+"pos_note": "深名線 大曲. 원천에 좌표 없음. N05 역 점"
+},
+"n_utsunai": {
+"lat": 44.3355,
+"lon": 142.167833,
+"pos_src": "wikipedia",
+"pos_note": "深名線 宇津内. 원천에 좌표 없음. 위키백과 宇津内仮乗降場 문서의 좌표"
+},
+"n_monju": {
+"lat": 43.491611,
+"lon": 141.986036,
+"pos_src": "n05",
+"pos_note": "歌志内線 文殊. 원천에 좌표 없음. N05 歌志内線 선로에서 焼山~西歌를 km(8.3) 비율로 나눈 점"
 }
 }

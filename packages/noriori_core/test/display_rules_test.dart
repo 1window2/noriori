@@ -131,6 +131,25 @@ void main() {
       expect(three.map((g) => g.number), [1, 2, 3]);
     });
 
+    test('번호는 종류에 고정이고 없는 종류의 번호는 건너뛴다', () {
+      List<int?> numbers(List<String?> flows) => rules
+          .transfers(
+            row(1, 'a', links: [
+              for (final (i, flow) in flows.indexed) link('transfer', 'l$i', flow: flow),
+            ]),
+            'me',
+            all,
+          )
+          .map((g) => g.number)
+          .toList();
+      // 지나감과 아래에서 끝남만 있으면 ①③ (DESIGN §2.9 환승 번호)
+      expect(numbers(['down', 'through']), [1, 3]);
+      expect(numbers(['down', 'up']), [2, 3]);
+      expect(numbers(['unknown', 'up']), [2, 4]);
+      expect(numbers([null, 'through', 'up', 'down']), [1, 2, 3, 4]);
+      expect(numbers(['down']), [null]);
+    });
+
     test('같은 회사 → 현행 → 폐선 순이고 JR 각사는 하나로 본다', () {
       final groups = rules.transfers(
         row(

@@ -45,7 +45,7 @@
 - {"id": "r_koumi_line", "line": "l_koumi_line", "role": "main", "from": "n_kobuchizawa", "to": "n_komoro"}
 - {"id": "r_shinonoi_line", "line": "l_shinonoi_line", "role": "main", "from": "n_shiojiri", "to": "n_shinonoi"}
 - {"id": "r_oito_line", "line": "l_oito_line", "role": "main", "from": "n_matsumoto", "to": "n_itoigawa"}
-- {"id": "r_tohoku_main_line", "line": "l_tohoku_main_line", "role": "main", "from": "n_tokyo", "to": "n_aomori", "hidden_stops": ["n_aoyama_igr_iwate_galaxy", "n_nonai_aoimori_aoimori_railway_b", "n_sugo", "n_tsutsui_aoimori"]}
+- {"id": "r_tohoku_main_line", "line": "l_tohoku_main_line", "role": "main", "from": "n_tokyo", "to": "n_aomori", "hidden_stops": ["n_aoyama_igr_iwate_galaxy", "n_nonai_aoimori_aoimori_railway", "n_sugo", "n_tsutsui_aoimori"]}
 - {"id": "r_tohoku_main_line_nippori_akabane", "line": "l_tohoku_main_line", "role": "branch", "from": "n_nippori", "to": "n_akabane", "owned": true}
 - {"id": "r_tohoku_main_line_akabane_omiya", "line": "l_tohoku_main_line", "role": "branch", "from": "n_akabane", "to": "n_omiya", "owned": true}
 - {"id": "r_tohoku_main_line_iwakiri_rifu", "line": "l_tohoku_main_line", "role": "branch", "from": "n_iwakiri", "to": "n_rifu", "owned": true}
@@ -332,3 +332,4 @@
 - {"id": "r_hanwa_freight_line", "line": "l_hanwa_freight_line", "role": "main", "from": "n_yao", "to": "n_sugimotocho"}
 - {"id": "r_kompoku_line", "line": "l_kompoku_line", "role": "main", "from": "n_shiretoko_shari", "to": "n_koshikawa"}
 - {"id": "r_yubari_line_noborikawa_branch", "line": "l_yubari_line_noborikawa_branch", "role": "main", "from": "n_shin_yubari", "to": "n_noborikawa"}
+- {"id": "r_ashiya_line", "line": "l_ashiya_line", "role": "main", "from": "n_ongagawa", "to": "n_ashiyajokojo"}

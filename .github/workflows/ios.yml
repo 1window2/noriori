@@ -1,0 +1,51 @@
+name: iOS
+# Data 워크플로가 main에서 통과하면 그 실행의 데이터 팩으로 서명 없이 릴리스 빌드를 한다
+# private 저장소에서는 macOS 실행 시간이 10배로 차감되어 main에서만 돈다
+on:
+  workflow_run:
+    workflows: [Data]
+    types: [completed]
+    branches: [main]
+
+permissions:
+  contents: read
+  actions: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.workflow_run.head_branch }}
+  cancel-in-progress: true
+
+jobs:
+  ios:
+    if: github.event.workflow_run.conclusion == 'success'
+    runs-on: macos-15
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.workflow_run.head_sha }}
+      - uses: actions/download-artifact@v4
+        with:
+          name: noriori-data
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ github.token }}
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: 3.47.1
+          channel: stable
+      - run: flutter pub get
+      - name: 릴리스 빌드 (서명 없음)
+        working-directory: apps/noriori
+        run: flutter build ios --release --no-codesign
+      # 서명 없는 IPA. 사이드로드 도구가 설치할 때 자기 Apple ID로 서명한다
+      - name: IPA 묶기
+        working-directory: apps/noriori/build/ios/iphoneos
+        run: |
+          mkdir Payload
+          cp -R Runner.app Payload/
+          zip -qry noriori-unsigned.ipa Payload
+      - uses: actions/upload-artifact@v4
+        with:
+          name: noriori-unsigned-ipa
+          path: apps/noriori/build/ios/iphoneos/noriori-unsigned.ipa
+          retention-days: 3

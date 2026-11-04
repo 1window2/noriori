@@ -22,7 +22,7 @@ class ImportScreen extends ConsumerWidget {
         ImportRefused(:final fileName) => _Pick(message: t.refused(name: fileName)),
         ImportFailed() => _Pick(message: t.failed),
         ImportReady(:final fileName, :final plan) => _Review(fileName: fileName, plan: plan),
-        ImportDone(:final count) => _Finished(count: count),
+        ImportDone(:final count, :final undated) => _Finished(count: count, undated: undated),
         ImportFullReady(:final fileName, :final contents) => Padding(
             padding: const EdgeInsets.all(24),
             child: Column(
@@ -199,9 +199,12 @@ class _Problems extends StatelessWidget {
 }
 
 class _Finished extends ConsumerWidget {
-  const _Finished({required this.count});
+  const _Finished({required this.count, required this.undated});
 
   final int count;
+
+  /// 그날 탈 수 없거나 기준일 이전이라 날짜 모름으로 넣은 행. 건수만 보여 준다 (DESIGN §10.2).
+  final int undated;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -213,6 +216,7 @@ class _Finished extends ConsumerWidget {
         spacing: 12,
         children: [
           Text(t.done(n: count, count: countLabel(count)), style: Theme.of(context).textTheme.titleLarge),
+          if (undated > 0) Text(t.undated(n: undated, count: countLabel(undated))),
           const SizedBox(height: 8),
           FilledButton(onPressed: () => context.pop(), child: Text(t.close)),
           OutlinedButton(

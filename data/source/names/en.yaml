@@ -13,39 +13,50 @@
 - {"entity_type": "line", "id": "l_akatani_line", "lang": "en", "text": "Akatani Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_akechi_line", "lang": "en", "text": "Akechi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_akechi_line_akechi", "lang": "en", "text": "Akechi Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_akita_chuo_kotsu_line", "lang": "en", "text": "Akita Chuo Kotsu Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_akita_nairiku_line", "lang": "en", "text": "Akita Nairiku Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_akitako_line", "lang": "en", "text": "Akitako Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ako_line", "lang": "en", "text": "Ako Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_ako_railway_line", "lang": "en", "text": "Ako Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_amagi_line", "lang": "en", "text": "Amagi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_amagi_line_amagi", "lang": "en", "text": "Amagi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_amagi_line_nishi_nippon", "lang": "en", "text": "Amagi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_amanohashidate_cable_car", "lang": "en", "text": "Amanohashidate Cable Car", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_aniai_line", "lang": "en", "text": "Aniai Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_ano_railway_line", "lang": "en", "text": "Ano Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ao_line", "lang": "en", "text": "Ao Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_aoimori_railway_line", "lang": "en", "text": "Aoimori Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_aonami_line", "lang": "en", "text": "Aonami Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_arakawa_line", "lang": "en", "text": "Arakawa Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_arashiyama_line", "lang": "en", "text": "Arashiyama Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_arashiyama_main_line", "lang": "en", "text": "Arashiyama Main Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_arida_railway_line", "lang": "en", "text": "Arida Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_arima_line", "lang": "en", "text": "Arima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_asa_line", "lang": "en", "text": "Asa Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_asakusa_line", "lang": "en", "text": "Asakusa Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_asanogawa_line", "lang": "en", "text": "Asanogawa Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_asato_line", "lang": "en", "text": "Asato Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ashio_line", "lang": "en", "text": "Ashio Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_ashiya_line", "lang": "en", "text": "Ashiya Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_astram_line", "lang": "en", "text": "Astram Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_aterazawa_line", "lang": "en", "text": "Aterazawa Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_atsumi_line", "lang": "en", "text": "Atsumi Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_awaji_kotsu_line", "lang": "en", "text": "Awaji Kotsu Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_azumada_main_line", "lang": "en", "text": "Azumada Main Line", "source": "hand"}
+- {"entity_type": "line", "id": "l_bancho_line", "lang": "en", "text": "Bancho Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_bandai_express_electric_railway_line", "lang": "en", "text": "Bandai Express Electric Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_banetsu_east_line", "lang": "en", "text": "Ban'etsu East Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_banetsu_west_line", "lang": "en", "text": "Ban'etsu West Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_bansei_line", "lang": "en", "text": "Bansei Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_bantan_line", "lang": "en", "text": "Bantan Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_beppu_rakutenchi_cable_line", "lang": "en", "text": "Beppu Rakutenchi Cable Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_bessho_line", "lang": "en", "text": "Bessho Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_betsudai_line", "lang": "en", "text": "Betsudai Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_biko_line", "lang": "en", "text": "Biko Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_bisai_line", "lang": "en", "text": "Bisai Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_blue_line_line_1", "lang": "en", "text": "Blue Line (Line 1)", "source": "hand"}
 - {"entity_type": "line", "id": "l_blue_line_line_3", "lang": "en", "text": "Blue Line (Line 3)", "source": "hand"}
+- {"entity_type": "line", "id": "l_boseki_railway_line", "lang": "en", "text": "Boseki Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_chiba_line", "lang": "en", "text": "Chiba Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_chiba_urban_monorail_line_1", "lang": "en", "text": "Chiba Urban Monorail Line 1", "source": "rule"}
 - {"entity_type": "line", "id": "l_chiba_urban_monorail_line_2", "lang": "en", "text": "Chiba Urban Monorail Line 2", "source": "rule"}
@@ -57,6 +68,7 @@
 - {"entity_type": "line", "id": "l_chikuhi_line", "lang": "en", "text": "Chikuhi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_chikuho_electric_railroad", "lang": "en", "text": "Chikuho Electric Railroad", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_chikuho_main_line", "lang": "en", "text": "Chikuho Main Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_chiran_line", "lang": "en", "text": "Chiran Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_chita_new_line", "lang": "en", "text": "Chita New Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_chitose_line", "lang": "en", "text": "Chitose Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_chiyoda_line", "lang": "en", "text": "Chiyoda Line", "source": "rule"}
@@ -74,11 +86,13 @@
 - {"entity_type": "line", "id": "l_domyoji_line", "lang": "en", "text": "Domyoji Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_donan_isaribi_railway_line", "lang": "en", "text": "Donan Isaribi Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_dosan_line", "lang": "en", "text": "Dosan Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_dreamland_line", "lang": "en", "text": "Dreamland Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_eba_line", "lang": "en", "text": "Eba Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_echigo_line", "lang": "en", "text": "Echigo Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_eiheiji_line", "lang": "en", "text": "Eiheiji Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_eizan_cable", "lang": "en", "text": "Eizan Cable", "source": "hand"}
 - {"entity_type": "line", "id": "l_eizan_main_line", "lang": "en", "text": "Eizan Main Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_ena_railway_line", "lang": "en", "text": "Ena Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_enoshima_electric_railway_line", "lang": "en", "text": "Enoshima Electric Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_enoshima_line_odakyu", "lang": "en", "text": "Enoshima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_enoshima_line_shonan_monorail", "lang": "en", "text": "Enoshima Line", "source": "wikidata"}
@@ -96,7 +110,9 @@
 - {"entity_type": "line", "id": "l_fukuchiyama_line", "lang": "en", "text": "Fukuchiyama Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_fukuen_line", "lang": "en", "text": "Fukuen Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_fukuoka_subway_airport_line", "lang": "en", "text": "Fukuoka Subway Airport Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_fukushima_line", "lang": "en", "text": "Fukushima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_fukutoshin_line", "lang": "en", "text": "Fukutoshin Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_funaki_railway_line", "lang": "en", "text": "Funaki Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_furano_line", "lang": "en", "text": "Furano Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_furusato_ginga_line", "lang": "en", "text": "Furusato Ginga Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_futamata_line", "lang": "en", "text": "Futamata Line", "source": "rule"}
@@ -128,6 +144,7 @@
 - {"entity_type": "line", "id": "l_hakubi_line", "lang": "en", "text": "Hakubi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hakushima_line", "lang": "en", "text": "Hakushima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hakushin_line", "lang": "en", "text": "Hakushin Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_hanaoka_line", "lang": "en", "text": "Hanaoka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hanawa_line", "lang": "en", "text": "Hanawa Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hanazono_line", "lang": "en", "text": "Hanazono Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hankai_line", "lang": "en", "text": "Hankai Line", "source": "wikidata"}
@@ -139,15 +156,18 @@
 - {"entity_type": "line", "id": "l_hanzomon_line_through_service", "lang": "en", "text": "Hanzomon Line Through Service", "source": "rule"}
 - {"entity_type": "line", "id": "l_hapi_line_fukui_line", "lang": "en", "text": "Hapi-Line Fukui Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hashima_line", "lang": "en", "text": "Hashima Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_heisaka_branch_line", "lang": "en", "text": "Heisaka Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hibiya_line", "lang": "en", "text": "Hibiya Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hidaka_main_line", "lang": "en", "text": "Hidaka Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_higashi_narita_line", "lang": "en", "text": "Higashi-Narita Line", "source": "hand"}
+- {"entity_type": "line", "id": "l_higashishigi_cable_line", "lang": "en", "text": "Higashishigi Cable Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_higashiyama_line", "lang": "en", "text": "Higashiyama Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_higashiyama_main_line", "lang": "en", "text": "Higashiyama Main Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_himi_line", "lang": "en", "text": "Himi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hiroden_main_line", "lang": "en", "text": "Hiroden Main Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hiromi_line", "lang": "en", "text": "Hiromi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hiroo_line", "lang": "en", "text": "Hiroo Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_hirose_line", "lang": "en", "text": "Hirose Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hisatsu_line", "lang": "en", "text": "Hisatsu Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hisatsu_orange_line", "lang": "en", "text": "Hisatsu Orange Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hitachi_electric_railway_line", "lang": "en", "text": "Hitachi Electric Railway Line", "source": "rule"}
@@ -156,6 +176,7 @@
 - {"entity_type": "line", "id": "l_hojo_line", "lang": "en", "text": "Hojo Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hojo_line_hojo", "lang": "en", "text": "Hojo Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hokkaido_shinkansen", "lang": "en", "text": "Hokkaido Shinkansen", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_hokkaido_takushoku_railway_line", "lang": "en", "text": "Hokkaido Takushoku Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_hokuhoku_line", "lang": "en", "text": "Hokuhoku Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hokuriku_main_line", "lang": "en", "text": "Hokuriku Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hokuriku_shinkansen", "lang": "en", "text": "Hokuriku Shinkansen", "source": "wikidata"}
@@ -168,6 +189,7 @@
 - {"entity_type": "line", "id": "l_hoppo_freight_line", "lang": "en", "text": "Hoppo Freight Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_horai_yachigashira_line", "lang": "en", "text": "Horai-Yachigashira Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_horonai_line", "lang": "en", "text": "Horonai Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_hoshu_line", "lang": "en", "text": "Hoshu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hososhima_line", "lang": "en", "text": "Hososhima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hotarujaya_branch_line", "lang": "en", "text": "Hotarujaya Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ibara_line", "lang": "en", "text": "Ibara Line", "source": "wikidata"}
@@ -175,6 +197,7 @@
 - {"entity_type": "line", "id": "l_ibi_line", "lang": "en", "text": "Ibi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_iburi_line", "lang": "en", "text": "Iburi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_ibusuki_makurazaki_line", "lang": "en", "text": "Ibusuki Makurazaki Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_ichinomiya_line", "lang": "en", "text": "Ichinomiya Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_iga_line", "lang": "en", "text": "Iga Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_iida_line", "lang": "en", "text": "Iida Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_iiyama_line", "lang": "en", "text": "Iiyama Line", "source": "wikidata"}
@@ -206,11 +229,13 @@
 - {"entity_type": "line", "id": "l_itoda_line_heisei_chikuho", "lang": "en", "text": "Itoda Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_itsukaichi_line", "lang": "en", "text": "Itsukaichi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_iwaizumi_line", "lang": "en", "text": "Iwaizumi Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_iwakura_branch_line", "lang": "en", "text": "Iwakura Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_iwanai_line", "lang": "en", "text": "Iwanai Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_iwashimizu_hachimangu_sando_cable", "lang": "en", "text": "Iwashimizu-hachimangu-sando Cable", "source": "hand"}
 - {"entity_type": "line", "id": "l_iwate_galaxy_railway_line", "lang": "en", "text": "Iwate Galaxy Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_izu_kyuko_line", "lang": "en", "text": "Izu Kyuko Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_izumino_line", "lang": "en", "text": "Izumino Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_izushi_railway_line", "lang": "en", "text": "Izushi Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_joban_line", "lang": "en", "text": "Joban Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_joetsu_line", "lang": "en", "text": "Joetsu Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_joetsu_shinkansen", "lang": "en", "text": "Joetsu Shinkansen", "source": "wikidata"}
@@ -221,10 +246,13 @@
 - {"entity_type": "line", "id": "l_jonan_line", "lang": "en", "text": "Jonan Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_joshin_line", "lang": "en", "text": "Joshin Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_joso_line", "lang": "en", "text": "Joso Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_jozankei_railway_line", "lang": "en", "text": "Jozankei Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_jr_tozai_line", "lang": "en", "text": "JR Tozai Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_jukkokutoge_cable_car", "lang": "en", "text": "Jukkokutoge Cable Car", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kabe_line", "lang": "en", "text": "Kabe Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kada_line", "lang": "en", "text": "Kada Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_kaetsu_line", "lang": "en", "text": "Kaetsu Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_kagashima_line", "lang": "en", "text": "Kagashima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kagoshima_main_line", "lang": "en", "text": "Kagoshima Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kaigan_line", "lang": "en", "text": "Kaigan Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kaikyo_line", "lang": "en", "text": "Kaikyo Line", "source": "wikidata"}
@@ -235,6 +263,7 @@
 - {"entity_type": "line", "id": "l_kakogawa_line", "lang": "en", "text": "Kakogawa Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kakunodate_line", "lang": "en", "text": "Kakunodate Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kamaishi_line", "lang": "en", "text": "Kamaishi Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_kambara_railway_line", "lang": "en", "text": "Kambara Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kameido_line", "lang": "en", "text": "Kameido Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kami_kumamoto_line", "lang": "en", "text": "Kami-Kumamoto Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kamidaki_line", "lang": "en", "text": "Kamidaki Line", "source": "rule"}
@@ -261,12 +290,15 @@
 - {"entity_type": "line", "id": "l_katakami_railway", "lang": "en", "text": "Katakami Railway", "source": "rule"}
 - {"entity_type": "line", "id": "l_katamachi_line", "lang": "en", "text": "Katamachi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_katano_line", "lang": "en", "text": "Katano Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_katayamazu_line", "lang": "en", "text": "Katayamazu Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_kato_line", "lang": "en", "text": "Kato Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_katsuki_line", "lang": "en", "text": "Katsuki Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_katsuta_line", "lang": "en", "text": "Katsuta Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_katsuyama_eiheiji_line", "lang": "en", "text": "Katsuyama Eiheiji Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kawagoe_line", "lang": "en", "text": "Kawagoe Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kawaguchiko_line", "lang": "en", "text": "Kawaguchiko Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kawamata_line", "lang": "en", "text": "Kawamata Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_kaya_railway_line", "lang": "en", "text": "Kaya Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_keibajo_line", "lang": "en", "text": "Keibajo Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_keihan_main_line", "lang": "en", "text": "Keihan Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_keihanna_line", "lang": "en", "text": "Keihanna Line", "source": "rule"}
@@ -315,7 +347,10 @@
 - {"entity_type": "line", "id": "l_kominato_railway_line", "lang": "en", "text": "Kominato Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kompoku_line", "lang": "en", "text": "Kompoku Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_konan_line", "lang": "en", "text": "Konan Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_koromo_line", "lang": "en", "text": "Koromo Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_kosaka_line", "lang": "en", "text": "Kosaka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kosei_line", "lang": "en", "text": "Kosei Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_kotohira_kyuko_electric_railway_line", "lang": "en", "text": "Kotohira Kyuko Electric Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_kotohira_line", "lang": "en", "text": "Kotohira Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kotoku_line", "lang": "en", "text": "Kotoku Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_koumi_line", "lang": "en", "text": "Koumi Line", "source": "wikidata"}
@@ -325,7 +360,9 @@
 - {"entity_type": "line", "id": "l_koyo_line", "lang": "en", "text": "Koyo Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kubiki_railway", "lang": "en", "text": "Kubiki Railway", "source": "rule"}
 - {"entity_type": "line", "id": "l_kuji_line", "lang": "en", "text": "Kuji Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_kujukuri_railway_line", "lang": "en", "text": "Kujukuri Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kumagaya_line", "lang": "en", "text": "Kumagaya Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_kunisaki_line", "lang": "en", "text": "Kunisaki Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kunitachi_branch_line", "lang": "en", "text": "Kunitachi Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kurama_line", "lang": "en", "text": "Kurama Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kuramayama_cable_line", "lang": "en", "text": "Kuramayama Cable Line", "source": "rule"}
@@ -336,6 +373,7 @@
 - {"entity_type": "line", "id": "l_kurobe_gorge_main_line", "lang": "en", "text": "Kurobe Gorge Main Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kuroishi_line", "lang": "en", "text": "Kuroishi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kururi_line", "lang": "en", "text": "Kururi Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_kusakaru_electric_railway_line", "lang": "en", "text": "Kusakaru Electric Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kusatsu_line", "lang": "en", "text": "Kusatsu Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_kyoto_line", "lang": "en", "text": "Kyoto Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_kyoto_main_line", "lang": "en", "text": "Kyoto Main Line", "source": "rule"}
@@ -347,12 +385,15 @@
 - {"entity_type": "line", "id": "l_maizuru_line", "lang": "en", "text": "Maizuru Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_makurazaki_line", "lang": "en", "text": "Makurazaki Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_manji_line", "lang": "en", "text": "Manji Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_maruko_line", "lang": "en", "text": "Maruko Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_marumori_line", "lang": "en", "text": "Marumori Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_marunouchi_line", "lang": "en", "text": "Marunouchi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_marunouchi_line_honancho_branch", "lang": "en", "text": "Marunouchi Line Honancho Branch", "source": "rule"}
+- {"entity_type": "line", "id": "l_maruoka_line", "lang": "en", "text": "Maruoka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_matsuda_connecting_line", "lang": "en", "text": "Matsuda Connecting Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_matsudo_line", "lang": "en", "text": "Matsudo Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_matsumae_line", "lang": "en", "text": "Matsumae Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_matsusaka_line", "lang": "en", "text": "Matsusaka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_matsuura_line", "lang": "en", "text": "Matsuura Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_maya_cable_line", "lang": "en", "text": "Maya Cable Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_meguro_line", "lang": "en", "text": "Meguro Line", "source": "rule"}
@@ -395,6 +436,7 @@
 - {"entity_type": "line", "id": "l_moka_line", "lang": "en", "text": "Moka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_moka_line_moka", "lang": "en", "text": "Moka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_monkey_park_monorail", "lang": "en", "text": "Monkey Park Monorail", "source": "rule"}
+- {"entity_type": "line", "id": "l_morimatsu_line", "lang": "en", "text": "Morimatsu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_mount_tsukuba_cable_car", "lang": "en", "text": "Mount Tsukuba Cable Car", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_mugi_line", "lang": "en", "text": "Mugi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_mukogawa_line", "lang": "en", "text": "Mukogawa Line", "source": "rule"}
@@ -415,6 +457,7 @@
 - {"entity_type": "line", "id": "l_nagareyama_line", "lang": "en", "text": "Nagareyama Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nagasaki_main_line", "lang": "en", "text": "Nagasaki Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_nagasaki_tram_main_line", "lang": "en", "text": "Nagasaki Tram Main Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_nagato_railway_line", "lang": "en", "text": "Nagato Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nagoya_line", "lang": "en", "text": "Nagoya Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nagoya_main_line", "lang": "en", "text": "Nagoya Main Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nakagawa_connecting_line", "lang": "en", "text": "Nakagawa Connecting Line", "source": "hand"}
@@ -428,6 +471,7 @@
 - {"entity_type": "line", "id": "l_namboku_line_tokyo_metro", "lang": "en", "text": "Namboku Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nambu_jukan_railway_line", "lang": "en", "text": "Nambu Jukan Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_nambu_line", "lang": "en", "text": "Nambu Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_nambu_railway_line", "lang": "en", "text": "Nambu Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nan_etsu_line", "lang": "en", "text": "Nan-Etsu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nanakuma_line", "lang": "en", "text": "Nanakuma Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_nanao_line", "lang": "en", "text": "Nanao Line", "source": "rule"}
@@ -455,6 +499,7 @@
 - {"entity_type": "line", "id": "l_nishi_kyushu_shinkansen", "lang": "en", "text": "Nishi Kyushu Shinkansen", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_nishi_shigi_cable_line", "lang": "en", "text": "Nishi-Shigi Cable Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_nishikigawa_seiryu_line", "lang": "en", "text": "Nishikigawa Seiryu Line", "source": "hand"}
+- {"entity_type": "line", "id": "l_nishimaruko_line", "lang": "en", "text": "Nishimaruko Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nishio_line", "lang": "en", "text": "Nishio Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nishiurawa_branch_line", "lang": "en", "text": "Nishiurawa Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_nissei_line", "lang": "en", "text": "Nissei Line", "source": "wikidata"}
@@ -468,18 +513,23 @@
 - {"entity_type": "line", "id": "l_noto_line_noto", "lang": "en", "text": "Noto Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_oarai_kashima_line", "lang": "en", "text": "Oarai Kashima Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_obama_line", "lang": "en", "text": "Obama Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_obihirobu_line", "lang": "en", "text": "Obihirobu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_odawara_line", "lang": "en", "text": "Odawara Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_oedo_line", "lang": "en", "text": "Oedo Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ofunato_line", "lang": "en", "text": "Ofunato Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_oga_line", "lang": "en", "text": "Oga Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_ogachi_line", "lang": "en", "text": "Ogachi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ogose_line", "lang": "en", "text": "Ogose Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_ogoya_railway_line", "lang": "en", "text": "Ogoya Railway Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_ohama_line", "lang": "en", "text": "Ohama Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ohata_line", "lang": "en", "text": "Ohata Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_ohmi_main_line", "lang": "en", "text": "Ohmi Main Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_oigawa_main_line", "lang": "en", "text": "Oigawa Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_oimachi_line", "lang": "en", "text": "Oimachi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_oito_line", "lang": "en", "text": "Oito Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_okata_line", "lang": "en", "text": "Okata Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_okawa_line", "lang": "en", "text": "Okawa Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_okayama_rinko_railway_line", "lang": "en", "text": "Okayama Rinko Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_okinawa_urban_monorail_line", "lang": "en", "text": "Okinawa Urban Monorail Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_ome_line", "lang": "en", "text": "Ome Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_ominato_line", "lang": "en", "text": "Ominato Line", "source": "wikidata"}
@@ -487,6 +537,7 @@
 - {"entity_type": "line", "id": "l_omori_line", "lang": "en", "text": "Omori Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_omura_line", "lang": "en", "text": "Omura Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_onoda_line", "lang": "en", "text": "Onoda Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_onomichi_railway_line", "lang": "en", "text": "Onomichi Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_osaka_higashi_line", "lang": "en", "text": "Osaka Higashi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_osaka_line", "lang": "en", "text": "Osaka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_osaka_loop_line", "lang": "en", "text": "Osaka Loop Line", "source": "wikidata"}
@@ -519,6 +570,7 @@
 - {"entity_type": "line", "id": "l_sagami_line", "lang": "en", "text": "Sagami Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_sagamihara_line", "lang": "en", "text": "Sagamihara Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_sagano_scenic_line", "lang": "en", "text": "Sagano Scenic Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_saidaiji_railway_line", "lang": "en", "text": "Saidaiji Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_saitama_rapid_railway_line", "lang": "en", "text": "Saitama Rapid Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_saito_line", "lang": "en", "text": "Saito Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_sakai_line", "lang": "en", "text": "Sakai Line", "source": "wikidata"}
@@ -544,6 +596,7 @@
 - {"entity_type": "line", "id": "l_sarakurayama_cable_car", "lang": "en", "text": "Sarakurayama Cable Car", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_sasaguri_line", "lang": "en", "text": "Sasaguri Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_sasayama_line", "lang": "en", "text": "Sasayama Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_sasazu_line", "lang": "en", "text": "Sasazu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_sasebo_line", "lang": "en", "text": "Sasebo Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_sassho_line", "lang": "en", "text": "Sassho Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_sayama_line", "lang": "en", "text": "Sayama Line", "source": "rule"}
@@ -560,6 +613,7 @@
 - {"entity_type": "line", "id": "l_sekisho_line", "lang": "en", "text": "Sekisho Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_semboku_line", "lang": "en", "text": "Semboku Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_sendai_airport_line", "lang": "en", "text": "Sendai Airport Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_sendai_railway_line", "lang": "en", "text": "Sendai Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_senmo_main_line", "lang": "en", "text": "Senmo Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_sennichimae_line", "lang": "en", "text": "Sennichimae Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_seno_line", "lang": "en", "text": "Seno Line", "source": "rule"}
@@ -580,6 +634,7 @@
 - {"entity_type": "line", "id": "l_shima_line", "lang": "en", "text": "Shima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_shimabara_railway_line", "lang": "en", "text": "Shimabara Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_shimizuko_line", "lang": "en", "text": "Shimizuko Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_shimotsui_line", "lang": "en", "text": "Shimotsui Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_shin_minatoko_line", "lang": "en", "text": "Shin-Minatoko Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_shinano_railway_line", "lang": "en", "text": "Shinano Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_shinetsu_main_line", "lang": "en", "text": "Shin'etsu Main Line", "source": "wikidata"}
@@ -600,15 +655,18 @@
 - {"entity_type": "line", "id": "l_suigun_line", "lang": "en", "text": "Suigun Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_suizenji_line", "lang": "en", "text": "Suizenji Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_sukumo_line", "lang": "en", "text": "Sukumo Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_sunen_line", "lang": "en", "text": "Sun'en Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_sunzu_line", "lang": "en", "text": "Sunzu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_suttsu_railway", "lang": "en", "text": "Suttsu Railway", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_suzuka_line", "lang": "en", "text": "Suzuka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tabata_freight_line", "lang": "en", "text": "Tabata Freight Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_tachikue_line", "lang": "en", "text": "Tachikue Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tadami_line", "lang": "en", "text": "Tadami Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_taga_line", "lang": "en", "text": "Taga Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tagami_line", "lang": "en", "text": "Tagami Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tagawa_line", "lang": "en", "text": "Tagawa Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tagawa_line_heisei_chikuho", "lang": "en", "text": "Tagawa Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_taguchi_line", "lang": "en", "text": "Taguchi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_taisha_line", "lang": "en", "text": "Taisha Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_taisha_line_ichibata", "lang": "en", "text": "Taisha Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_taishi_line", "lang": "en", "text": "Taishi Line", "source": "rule"}
@@ -627,6 +685,7 @@
 - {"entity_type": "line", "id": "l_takasaki_line", "lang": "en", "text": "Takasaki Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_takashima_line", "lang": "en", "text": "Takashima Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_takashinohama_line", "lang": "en", "text": "Takashinohama Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_takatomi_line", "lang": "en", "text": "Takatomi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_takayama_main_line", "lang": "en", "text": "Takayama Main Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_takehana_line", "lang": "en", "text": "Takehana Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_taketoyo_line", "lang": "en", "text": "Taketoyo Line", "source": "wikidata"}
@@ -653,6 +712,7 @@
 - {"entity_type": "line", "id": "l_tennoji_branch_line", "lang": "en", "text": "Tennoji Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tenri_line", "lang": "en", "text": "Tenri Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tenryu_hamanako_line", "lang": "en", "text": "Tenryu Hamanako Line", "source": "hand"}
+- {"entity_type": "line", "id": "l_teshio_tanko_railway_line", "lang": "en", "text": "Teshio Tanko Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_toba_line", "lang": "en", "text": "Toba Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tochio_line", "lang": "en", "text": "Tochio Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_togane_line", "lang": "en", "text": "Togane Line", "source": "wikidata"}
@@ -671,15 +731,18 @@
 - {"entity_type": "line", "id": "l_tokyu_shin_yokohama_line", "lang": "en", "text": "Tokyu Shin-Yokohama Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_tokyu_tamagawa_line", "lang": "en", "text": "Tokyu Tamagawa Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_tomiuchi_line", "lang": "en", "text": "Tomiuchi Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_tomo_railway_line", "lang": "en", "text": "Tomo Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toshima_line", "lang": "en", "text": "Toshima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toso_line", "lang": "en", "text": "Toso Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_towada_kanko_electric_railway_line", "lang": "en", "text": "Towada Kanko Electric Railway Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_toya_railway_line", "lang": "en", "text": "Toya Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toyama_chiho_main_line", "lang": "en", "text": "Toyama Chiho Main Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toyamako_line", "lang": "en", "text": "Toyamako Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toyamako_line_toyama_chiho", "lang": "en", "text": "Toyamako Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toyo_rapid_railway_line", "lang": "en", "text": "Toyo Rapid Railway Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_toyokawa_line", "lang": "en", "text": "Toyokawa Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toyoko_line", "lang": "en", "text": "Toyoko Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_toyoma_line", "lang": "en", "text": "Toyoma Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_toyota_line", "lang": "en", "text": "Toyota Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tozai_line_kyoto_city", "lang": "en", "text": "Tozai Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tozai_line_sapporo_city", "lang": "en", "text": "Tozai Line", "source": "rule"}
@@ -692,9 +755,11 @@
 - {"entity_type": "line", "id": "l_tramway_toyama_station_north_south_link", "lang": "en", "text": "Tramway Toyama Station North-South Link", "source": "rule"}
 - {"entity_type": "line", "id": "l_tramway_yasunoya_line", "lang": "en", "text": "Tramway Yasunoya Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_trunk_line", "lang": "en", "text": "Trunk Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_tsuchiyama_line", "lang": "en", "text": "Tsuchiyama Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tsugaru_line", "lang": "en", "text": "Tsugaru Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_tsugaru_railway_line", "lang": "en", "text": "Tsugaru Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_tsukuba_express_line", "lang": "en", "text": "Tsukuba Express Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_tsukuba_line", "lang": "en", "text": "Tsukuba Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_tsuma_line", "lang": "en", "text": "Tsuma Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_tsurumai_line", "lang": "en", "text": "Tsurumai Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_tsurumi_line", "lang": "en", "text": "Tsurumi Line", "source": "wikidata"}
@@ -727,10 +792,13 @@
 - {"entity_type": "line", "id": "l_yabakei_line", "lang": "en", "text": "Yabakei Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yabe_line", "lang": "en", "text": "Yabe Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_yagi_connecting_line", "lang": "en", "text": "Yagi Connecting Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_yagyubashi_branch_line", "lang": "en", "text": "Yagyubashi Branch Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yahiko_line", "lang": "en", "text": "Yahiko Line", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_yaita_line", "lang": "en", "text": "Yaita Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yakuri_cable", "lang": "en", "text": "Yakuri Cable", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_yamada_line", "lang": "en", "text": "Yamada Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yamada_line_kintetsu", "lang": "en", "text": "Yamada Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_yamaga_onsen_railway_line", "lang": "en", "text": "Yamaga Onsen Railway Line", "source": "hand"}
 - {"entity_type": "line", "id": "l_yamaguchi_line", "lang": "en", "text": "Yamaguchi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yamaguchi_line_seibu", "lang": "en", "text": "Yamaguchi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yamanaka_line", "lang": "en", "text": "Yamanaka Line", "source": "rule"}
@@ -739,6 +807,7 @@
 - {"entity_type": "line", "id": "l_yamanote_line", "lang": "en", "text": "Yamanote Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yamashiro_line", "lang": "en", "text": "Yamashiro Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yamate_line", "lang": "en", "text": "Yamate Line", "source": "hand"}
+- {"entity_type": "line", "id": "l_yamato_railway_line", "lang": "en", "text": "Yamato Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yaotsu_line", "lang": "en", "text": "Yaotsu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yashima_line", "lang": "en", "text": "Yashima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yashiro_line", "lang": "en", "text": "Yashiro Line", "source": "rule"}
@@ -755,6 +824,7 @@
 - {"entity_type": "line", "id": "l_yotsubashi_line", "lang": "en", "text": "Yotsubashi Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_yubari_line_noborikawa_branch", "lang": "en", "text": "Yubari Line Noborikawa Branch", "source": "rule"}
 - {"entity_type": "line", "id": "l_yubetsu_railway", "lang": "en", "text": "Yubetsu Railway", "source": "wikidata"}
+- {"entity_type": "line", "id": "l_yuen_railway_line", "lang": "en", "text": "Yuen Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yukarigaoka_line", "lang": "en", "text": "Yukarigaoka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_yumo_line", "lang": "en", "text": "Yumo Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_yunohama_line", "lang": "en", "text": "Yunohama Line", "source": "rule"}
@@ -771,29 +841,39 @@
 - {"entity_type": "operator", "id": "o_ainokaze_toyama_railway", "lang": "en", "text": "Ainokaze Toyama Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_aizu_railway", "lang": "en", "text": "Aizu Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_akechi_railway", "lang": "en", "text": "Akechi Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_akita_chuo_kotsu", "lang": "en", "text": "Akita Chuo Kotsu", "source": "rule"}
 - {"entity_type": "operator", "id": "o_akita_nairiku_jukan_railway", "lang": "en", "text": "Akita Nairiku Jukan Railway", "source": "hand"}
+- {"entity_type": "operator", "id": "o_ako_railway", "lang": "en", "text": "Ako Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_alpico_kotsu", "lang": "en", "text": "Alpico Kotsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_amagi_railway", "lang": "en", "text": "Amagi Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_ano_railway", "lang": "en", "text": "Ano Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_aoimori_railway_company", "lang": "en", "text": "Aoimori Railway Company", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_arida_railway", "lang": "en", "text": "Arida Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_asa_seaside_railway", "lang": "en", "text": "Asa Seaside Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_awaji_kotsu", "lang": "en", "text": "Awaji Kotsu", "source": "rule"}
+- {"entity_type": "operator", "id": "o_bandai_express_electric_railway", "lang": "en", "text": "Bandai Express Electric Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_befu_railway", "lang": "en", "text": "Befu Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_binan_electric_railway", "lang": "en", "text": "Binan Electric Railway", "source": "rule"}
+- {"entity_type": "operator", "id": "o_boseki_railway", "lang": "en", "text": "Boseki Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_chiba_urban_monorail", "lang": "en", "text": "Chiba Urban Monorail", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_chichibu_railway", "lang": "en", "text": "Chichibu Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_chikuho_electric_railroad", "lang": "en", "text": "Chikuho Electric Railroad", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_chizu_express", "lang": "en", "text": "Chizu Express", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_choshi_electric_railway", "lang": "en", "text": "Choshi Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_dowa_mining", "lang": "en", "text": "Dowa Mining", "source": "rule"}
+- {"entity_type": "operator", "id": "o_dream_kaihatsu", "lang": "en", "text": "Dream Kaihatsu", "source": "rule"}
 - {"entity_type": "operator", "id": "o_echigo_kotsu", "lang": "en", "text": "Echigo Kotsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_echigo_tokimeki_railway_company", "lang": "en", "text": "Echigo Tokimeki Railway Company", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_echizen_railway", "lang": "en", "text": "Echizen Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_eizan_electric_railway", "lang": "en", "text": "Eizan Electric Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_ena_railway", "lang": "en", "text": "Ena Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_enoshima_electric_railway", "lang": "en", "text": "Enoshima Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_enshu_railway", "lang": "en", "text": "Enshu Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_fujikyu_railway", "lang": "en", "text": "Fujikyu Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_fukui_railway", "lang": "en", "text": "Fukui Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_fukuoka_city_transportation_bureau", "lang": "en", "text": "Fukuoka City Transportation Bureau", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_fukushima_transportation", "lang": "en", "text": "Fukushima Transportation", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_funaki_railway", "lang": "en", "text": "Funaki Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_gakunan_electric_train", "lang": "en", "text": "Gakunan Electric Train", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_hakodate_city_tram_department", "lang": "en", "text": "Hakodate City Tram Department", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_hankai_tramway", "lang": "en", "text": "Hankai Tramway", "source": "wikidata"}
@@ -809,12 +889,14 @@
 - {"entity_type": "operator", "id": "o_hitachinaka_seaside_railway", "lang": "en", "text": "Hitachinaka Seaside Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_hojo_railway", "lang": "en", "text": "Hojo Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_hokkaido_chihoku_kogen_railway", "lang": "en", "text": "Hokkaido Chihoku Kogen Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_hokkaido_takushoku_railway", "lang": "en", "text": "Hokkaido Takushoku Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_hokuetsu_express", "lang": "en", "text": "Hokuetsu Express", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_hokuriku_railroad", "lang": "en", "text": "Hokuriku Railroad", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_hokuso_railway", "lang": "en", "text": "Hokuso Railway", "source": "hand"}
 - {"entity_type": "operator", "id": "o_hokutan_railway", "lang": "en", "text": "Hokutan Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_ibara_railway", "lang": "en", "text": "Ibara Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_ibaraki_kotsu", "lang": "en", "text": "Ibaraki Kotsu", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_ichibata_denki_tetsudo", "lang": "en", "text": "Ichibata Denki Tetsudo", "source": "rule"}
 - {"entity_type": "operator", "id": "o_ichibata_electric_railway", "lang": "en", "text": "Ichibata Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_iga_railway", "lang": "en", "text": "Iga Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_igr_iwate_galaxy_railway", "lang": "en", "text": "IGR Iwate Galaxy Railway", "source": "wikidata"}
@@ -824,9 +906,11 @@
 - {"entity_type": "operator", "id": "o_iyotetsu", "lang": "en", "text": "Iyotetsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_izuhakone_railway", "lang": "en", "text": "Izuhakone Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_izukyu_corporation", "lang": "en", "text": "Izukyu Corporation", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_izushi_railway", "lang": "en", "text": "Izushi Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_japanese_national_railways", "lang": "en", "text": "Japanese National Railways", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_jomo_electric_railway", "lang": "en", "text": "Jomo Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_joshin_electric_railway_company", "lang": "en", "text": "Joshin Electric Railway Company", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_jozankei_railway", "lang": "en", "text": "Jozankei Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_jr_central", "lang": "en", "text": "JR Central", "source": "rule"}
 - {"entity_type": "operator", "id": "o_jr_central_transport_service_company", "lang": "en", "text": "JR-Central Transport Service Company", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_jr_east", "lang": "en", "text": "JR East", "source": "rule"}
@@ -835,15 +919,18 @@
 - {"entity_type": "operator", "id": "o_jr_shikoku", "lang": "en", "text": "JR Shikoku", "source": "rule"}
 - {"entity_type": "operator", "id": "o_jr_west", "lang": "en", "text": "JR West", "source": "rule"}
 - {"entity_type": "operator", "id": "o_jukkoku_pass", "lang": "en", "text": "Jukkoku Pass", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_kaetsuno_railway", "lang": "en", "text": "Kaetsuno Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_kagoshima_city_transportation_bureau", "lang": "en", "text": "Kagoshima City Transportation Bureau", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kagoshima_kotsu", "lang": "en", "text": "Kagoshima Kotsu", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_kambara_railway", "lang": "en", "text": "Kambara Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_kamioka_railway", "lang": "en", "text": "Kamioka Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kansai_electric_power_company", "lang": "en", "text": "Kansai Electric Power Company", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kanto_railway", "lang": "en", "text": "Kanto Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kashima_railway_company", "lang": "en", "text": "Kashima Railway Company", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kashima_rinkai_railway", "lang": "en", "text": "Kashima Rinkai Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_kaya_railway", "lang": "en", "text": "Kaya Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_keifuku_electric_railroad", "lang": "en", "text": "Keifuku Electric Railroad", "source": "rule"}
-- {"entity_type": "operator", "id": "o_keifuku_electric_railroad_b", "lang": "en", "text": "Keifuku Electric Railroad", "source": "rule"}
+- {"entity_type": "operator", "id": "o_keifuku_electric_railroad_fukui", "lang": "en", "text": "Keifuku Electric Railroad", "source": "rule"}
 - {"entity_type": "operator", "id": "o_keihan_electric_railway", "lang": "en", "text": "Keihan Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_keikyu", "lang": "en", "text": "Keikyu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_keio", "lang": "en", "text": "Keio", "source": "wikidata"}
@@ -859,23 +946,29 @@
 - {"entity_type": "operator", "id": "o_kobe_new_transit", "lang": "en", "text": "Kobe New Transit", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kominato_railway", "lang": "en", "text": "Kominato Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_konan_railway_company", "lang": "en", "text": "Konan Railway Company", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_kosaka_smelting_and_refining", "lang": "en", "text": "Kosaka Smelting and Refining", "source": "rule"}
+- {"entity_type": "operator", "id": "o_kotohira_sangu_electric_railway", "lang": "en", "text": "Kotohira Sangu Electric Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_kubiki_railway", "lang": "en", "text": "Kubiki Railway", "source": "rule"}
+- {"entity_type": "operator", "id": "o_kujukuri_railway", "lang": "en", "text": "Kujukuri Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_kumagawa_railroad", "lang": "en", "text": "Kumagawa Railroad", "source": "hand"}
 - {"entity_type": "operator", "id": "o_kumamoto_city_transportation_bureau", "lang": "en", "text": "Kumamoto City Transportation Bureau", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kumamoto_electric_railway", "lang": "en", "text": "Kumamoto Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kurama_dera", "lang": "en", "text": "Kurama-dera", "source": "hand"}
 - {"entity_type": "operator", "id": "o_kurihara_denen_railway", "lang": "en", "text": "Kurihara Den'en Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kurobe_gorge_railway", "lang": "en", "text": "Kurobe Gorge Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_kusakaru_electric_railway", "lang": "en", "text": "Kusakaru Electric Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_kyoto_municipal_transportation_bureau", "lang": "en", "text": "Kyoto Municipal Transportation Bureau", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_kyoto_tango_railway_willer_trains", "lang": "en", "text": "Kyoto Tango Railway (Willer Trains)", "source": "rule"}
 - {"entity_type": "operator", "id": "o_maihama_resort_line", "lang": "en", "text": "Maihama Resort Line", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_manyosen", "lang": "en", "text": "Manyosen", "source": "rule"}
 - {"entity_type": "operator", "id": "o_matsuura_railway", "lang": "en", "text": "Matsuura Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_metropolitan_intercity_railway_company", "lang": "en", "text": "Metropolitan Intercity Railway Company", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_mie_kotsu", "lang": "en", "text": "Mie Kotsu", "source": "rule"}
 - {"entity_type": "operator", "id": "o_miki_railway", "lang": "en", "text": "Miki Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_minami_aso_railway", "lang": "en", "text": "Minami-Aso Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_mitake_tozan_railway", "lang": "en", "text": "Mitake Tozan Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_mitsui_ashibetsu_railway", "lang": "en", "text": "Mitsui Ashibetsu Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_miyagi_bus", "lang": "en", "text": "Miyagi Bus", "source": "rule"}
 - {"entity_type": "operator", "id": "o_mizuma_railway", "lang": "en", "text": "Mizuma Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_mizushima_rinkai_railway", "lang": "en", "text": "Mizushima Rinkai Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_moka_railway", "lang": "en", "text": "Moka Railway", "source": "wikidata"}
@@ -883,11 +976,14 @@
 - {"entity_type": "operator", "id": "o_nagano_electric_railway", "lang": "en", "text": "Nagano Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_nagaragawa_railway", "lang": "en", "text": "Nagaragawa Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_nagasaki_electric_tramway", "lang": "en", "text": "Nagasaki Electric Tramway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_nagato_railway", "lang": "en", "text": "Nagato Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_nagoya_guideway_bus", "lang": "en", "text": "Nagoya Guideway Bus", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_nagoya_railroad", "lang": "en", "text": "Nagoya Railroad", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_nagoya_rinkai_rapid_transit", "lang": "en", "text": "Nagoya Rinkai Rapid Transit", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_nambu_jukan_railway", "lang": "en", "text": "Nambu Jukan Railway", "source": "rule"}
+- {"entity_type": "operator", "id": "o_nambu_railway", "lang": "en", "text": "Nambu Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_nankai_electric_railway", "lang": "en", "text": "Nankai Electric Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_nansatsu_railway", "lang": "en", "text": "Nansatsu Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_nishi_nippon_railroad", "lang": "en", "text": "Nishi-Nippon Railroad", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_nishikigawa_railway", "lang": "en", "text": "Nishikigawa Railway", "source": "hand"}
 - {"entity_type": "operator", "id": "o_nogami_electric_railway", "lang": "en", "text": "Nogami Electric Railway", "source": "rule"}
@@ -895,17 +991,21 @@
 - {"entity_type": "operator", "id": "o_noto_railway", "lang": "en", "text": "Noto Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_odakyu_electric_railway", "lang": "en", "text": "Odakyu Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_odakyu_hakone", "lang": "en", "text": "Odakyu Hakone", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_ogoya_railway", "lang": "en", "text": "Ogoya Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_ohmi_railway", "lang": "en", "text": "Ohmi Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_oigawa_railway", "lang": "en", "text": "Oigawa Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_oita_transportation", "lang": "en", "text": "Oita Transportation", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_okayama_electric_tramway", "lang": "en", "text": "Okayama Electric Tramway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_okayama_rinko_railway", "lang": "en", "text": "Okayama Rinko Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_okinawa_urban_monorail", "lang": "en", "text": "Okinawa Urban Monorail", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_onomichi_railway", "lang": "en", "text": "Onomichi Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_osaka_metro", "lang": "en", "text": "Osaka Metro", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_osaka_monorail", "lang": "en", "text": "Osaka Monorail", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_oyama_kanko_electric_railway", "lang": "en", "text": "Oyama Kanko Electric Railway", "source": "hand"}
 - {"entity_type": "operator", "id": "o_oyubari_railway", "lang": "en", "text": "Oyubari Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_rakutenchi", "lang": "en", "text": "Rakutenchi", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_rumoi_railway", "lang": "en", "text": "Rumoi Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_ryobi_bus", "lang": "en", "text": "Ryobi Bus", "source": "rule"}
 - {"entity_type": "operator", "id": "o_ryutetsu", "lang": "en", "text": "Ryutetsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_sagami_railway", "lang": "en", "text": "Sagami Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_sagano_scenic_railway", "lang": "en", "text": "Sagano Scenic Railway", "source": "wikidata"}
@@ -921,10 +1021,12 @@
 - {"entity_type": "operator", "id": "o_seikan_tunnel_museum", "lang": "en", "text": "Seikan Tunnel Museum", "source": "hand"}
 - {"entity_type": "operator", "id": "o_sendai_airport_transit", "lang": "en", "text": "Sendai Airport Transit", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_sendai_city_transportation_bureau", "lang": "en", "text": "Sendai City Transportation Bureau", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_sendai_railway", "lang": "en", "text": "Sendai Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_shibayama_railway", "lang": "en", "text": "Shibayama Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_shigaraki_kohgen_railway", "lang": "en", "text": "Shigaraki Kohgen Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_shikoku_cable", "lang": "en", "text": "Shikoku Cable", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_shimabara_railway", "lang": "en", "text": "Shimabara Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_shimotsui_electric_railway", "lang": "en", "text": "Shimotsui Electric Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_shinano_railway", "lang": "en", "text": "Shinano Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_shizuoka_railway", "lang": "en", "text": "Shizuoka Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_shonai_kotsu", "lang": "en", "text": "Shonai Kotsu", "source": "wikidata"}
@@ -939,7 +1041,9 @@
 - {"entity_type": "operator", "id": "o_tarumi_railway", "lang": "en", "text": "Tarumi Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tateyama_kurobe_kanko", "lang": "en", "text": "Tateyama Kurobe Kanko", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tenryu_hamanako_railroad", "lang": "en", "text": "Tenryu Hamanako Railroad", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_teshio_tanko_railway", "lang": "en", "text": "Teshio Tanko Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_tobu_railway", "lang": "en", "text": "Tobu Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_tokachi_railway", "lang": "en", "text": "Tokachi Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_tokadai_new_transit", "lang": "en", "text": "Tokadai New Transit", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tokyo_metro", "lang": "en", "text": "Tokyo Metro", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tokyo_metropolitan_bureau_of_transportation", "lang": "en", "text": "Tokyo Metropolitan Bureau of Transportation", "source": "wikidata"}
@@ -947,10 +1051,12 @@
 - {"entity_type": "operator", "id": "o_tokyo_tama_intercity_monorail", "lang": "en", "text": "Tokyo Tama Intercity Monorail", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tokyo_waterfront_area_rapid_transit", "lang": "en", "text": "Tokyo Waterfront Area Rapid Transit", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tokyu_railways", "lang": "en", "text": "Tokyu Railways", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_tomo_railway", "lang": "en", "text": "Tomo Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_tono_railway", "lang": "en", "text": "Tono Railway", "source": "hand"}
 - {"entity_type": "operator", "id": "o_tosa_kuroshio_railway", "lang": "en", "text": "Tosa Kuroshio Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tosaden_kotsu", "lang": "en", "text": "Tosaden Kotsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_towada_kanko_electric_railway", "lang": "en", "text": "Towada Kanko Electric Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_toya_railway", "lang": "en", "text": "Toya Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_toyama_chiho_railway", "lang": "en", "text": "Toyama Chiho Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_toyama_light_rail", "lang": "en", "text": "Toyama Light Rail", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_toyo_rapid_railway", "lang": "en", "text": "Toyo Rapid Railway", "source": "wikidata"}
@@ -959,21 +1065,26 @@
 - {"entity_type": "operator", "id": "o_transportation_bureau_city_of_yokohama", "lang": "en", "text": "Transportation Bureau, City of Yokohama", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tsugaru_railway", "lang": "en", "text": "Tsugaru Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_tsukuba_kanko_railway", "lang": "en", "text": "Tsukuba Kanko Railway", "source": "hand"}
+- {"entity_type": "operator", "id": "o_tsukuba_railway", "lang": "en", "text": "Tsukuba Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_ueda_electric_railway", "lang": "en", "text": "Ueda Electric Railway", "source": "rule"}
+- {"entity_type": "operator", "id": "o_ueda_maruko_electric_railway", "lang": "en", "text": "Ueda Maruko Electric Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_ugo_kotsu", "lang": "en", "text": "Ugo Kotsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_utsunomiya_light_rail", "lang": "en", "text": "Utsunomiya Light Rail", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_wakasa_railway", "lang": "en", "text": "Wakasa Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_wakayama_electric_railway", "lang": "en", "text": "Wakayama Electric Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_watarase_keikoku_railway", "lang": "en", "text": "Watarase Keikoku Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yagan_railway", "lang": "en", "text": "Yagan Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_yamaga_onsen_railway", "lang": "en", "text": "Yamaga Onsen Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_yamagata_kotsu", "lang": "en", "text": "Yamagata Kotsu", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yamagata_railway", "lang": "en", "text": "Yamagata Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yamaman", "lang": "en", "text": "Yamaman", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_yamato_railway", "lang": "en", "text": "Yamato Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_yokkaichi_asunarou_railway", "lang": "en", "text": "Yokkaichi Asunarou Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yokohama_minatomirai_railway", "lang": "en", "text": "Yokohama Minatomirai Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yokohama_seaside_line", "lang": "en", "text": "Yokohama Seaside Line", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yoro_railway", "lang": "en", "text": "Yoro Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yubetsu_railway", "lang": "en", "text": "Yubetsu Railway", "source": "wikidata"}
+- {"entity_type": "operator", "id": "o_yuen_railway", "lang": "en", "text": "Yuen Railway", "source": "rule"}
 - {"entity_type": "operator", "id": "o_yuri_kogen_railway", "lang": "en", "text": "Yuri Kogen Railway", "source": "wikidata"}
 - {"entity_type": "operator", "id": "o_yurikamome", "lang": "en", "text": "Yurikamome", "source": "hand"}
 - {"entity_type": "service", "id": "s_yamanote_loop", "lang": "en", "text": "Yamanote Line (Loop)", "source": "hand"}
@@ -1321,6 +1432,7 @@
 - {"entity_type": "route", "id": "r_hanwa_freight_line", "lang": "en", "text": "Yao~Sugimotocho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kompoku_line", "lang": "en", "text": "Shiretoko-Shari~Koshikawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_yubari_line_noborikawa_branch", "lang": "en", "text": "Shin-Yubari~Noborikawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_ashiya_line", "lang": "en", "text": "Ongagawa~Ashiyajokojo", "source": "rule"}
 - {"entity_type": "route", "id": "r_isesaki_line", "lang": "en", "text": "Asakusa~Isesaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_kameido_line", "lang": "en", "text": "Kameido~Hikifune", "source": "rule"}
 - {"entity_type": "route", "id": "r_taishi_line", "lang": "en", "text": "Nishiarai~Daishimae", "source": "rule"}
@@ -1760,7 +1872,7 @@
 - {"entity_type": "route", "id": "r_seno_line", "lang": "en", "text": "Midoriguchi~Midori-Chuo", "source": "rule"}
 - {"entity_type": "route", "id": "r_kanden_tunnel_trolleybus", "lang": "en", "text": "Ogizawa~Kurobe Dam", "source": "rule"}
 - {"entity_type": "route", "id": "r_nambu_jukan_railway_line", "lang": "en", "text": "Noheji~Shichinohe", "source": "rule"}
-- {"entity_type": "route", "id": "r_osho_line", "lang": "en", "text": "Numadate~Yokote", "source": "rule"}
+- {"entity_type": "route", "id": "r_osho_line", "lang": "en", "text": "Oikata~Yokote", "source": "rule"}
 - {"entity_type": "route", "id": "r_ogachi_line", "lang": "en", "text": "Nishimonai~Yuzawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_kashima_rinko_line", "lang": "en", "text": "Kashima Soccer Stadium~Kashima-Konan", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokutan_railway", "lang": "en", "text": "Fukuchiyama~Koumori", "source": "rule"}
@@ -1771,8 +1883,8 @@
 - {"entity_type": "route", "id": "r_rumoi_railway", "lang": "en", "text": "Ebishima~Showa", "source": "rule"}
 - {"entity_type": "route", "id": "r_yunohama_line", "lang": "en", "text": "Tsuruoka~Yunohama-onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_sanzan_line", "lang": "en", "text": "Uzen-Takamatsu~Mazawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_takahata_line", "lang": "en", "text": "Nukanome~Takahata", "source": "rule"}
-- {"entity_type": "route", "id": "r_ibaraki_line", "lang": "en", "text": "Akatsuka~Daigakumae", "source": "rule"}
+- {"entity_type": "route", "id": "r_takahata_line", "lang": "en", "text": "Nukanome~Niijuku", "source": "rule"}
+- {"entity_type": "route", "id": "r_ibaraki_line", "lang": "en", "text": "Akatsuka~Gozenyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_kumagaya_line", "lang": "en", "text": "Kumagaya~Menuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagaoka_line", "lang": "en", "text": "Raikoji~Teradomari-Shindo", "source": "rule"}
 - {"entity_type": "route", "id": "r_tochio_line", "lang": "en", "text": "Yukyuzan~Tochio", "source": "rule"}
@@ -1799,4 +1911,73 @@
 - {"entity_type": "route", "id": "r_yabakei_line", "lang": "en", "text": "Nakatsu~Morizane Onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_makurazaki_line", "lang": "en", "text": "Ijuin~Makurazaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_tagami_line", "lang": "en", "text": "Keirinjo-Mae~Tagami", "source": "rule"}
-- {"entity_type": "route", "id": "r_eiheiji_line", "lang": "en", "text": "Higashifuruichi~Eiheiji", "source": "rule"}
+- {"entity_type": "route", "id": "r_eiheiji_line", "lang": "en", "text": "Awaraonsen~Eiheiji", "source": "rule"}
+- {"entity_type": "route", "id": "r_ako_railway_line", "lang": "en", "text": "Une~Banshu-Ako", "source": "rule"}
+- {"entity_type": "route", "id": "r_hoshu_line", "lang": "en", "text": "Buzen-Zenkoji~Buzenfutsukaichi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kotohira_kyuko_electric_railway_line", "lang": "en", "text": "Jogakkomae~Kotokyukotohira", "source": "rule"}
+- {"entity_type": "route", "id": "r_tomo_railway_line", "lang": "en", "text": "Fukuyama~Tomo", "source": "rule"}
+- {"entity_type": "route", "id": "r_betsudai_line", "lang": "en", "text": "Nakamadori~Kamegawashinkawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagato_railway_line", "lang": "en", "text": "Ozuki~Nishiichi", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamato_railway_line", "lang": "en", "text": "Kuroda~Sakurai", "source": "rule"}
+- {"entity_type": "route", "id": "r_fukushima_line", "lang": "en", "text": "Hiyoshimachi~Fukushima", "source": "rule"}
+- {"entity_type": "route", "id": "r_obihirobu_line", "lang": "en", "text": "Obihiro~Totsuta", "source": "rule"}
+- {"entity_type": "route", "id": "r_yaita_line", "lang": "en", "text": "Shin-Takatoku~Yaita", "source": "rule"}
+- {"entity_type": "route", "id": "r_sendai_railway_line", "lang": "en", "text": "Shakitasendai~Nishi-Furukawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_heisaka_branch_line", "lang": "en", "text": "Nishio~Minatomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_hirose_line", "lang": "en", "text": "Arashima~Izumohirose", "source": "rule"}
+- {"entity_type": "route", "id": "r_takatomi_line", "lang": "en", "text": "Nagarakitamachi~Takatomi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kujukuri_railway_line", "lang": "en", "text": "Togane~Kazusa-Katakai", "source": "rule"}
+- {"entity_type": "route", "id": "r_funaki_railway_line", "lang": "en", "text": "Nishiube~Kibe", "source": "rule"}
+- {"entity_type": "route", "id": "r_bansei_line", "lang": "en", "text": "Kaseda~Satsuma-Bansei", "source": "rule"}
+- {"entity_type": "route", "id": "r_kusakaru_electric_railway_line", "lang": "en", "text": "Shin-Karuizawa~Kusatsu-Onsen", "source": "rule"}
+- {"entity_type": "route", "id": "r_saidaiji_railway_line", "lang": "en", "text": "Saidaijiichi~Korakuen", "source": "rule"}
+- {"entity_type": "route", "id": "r_nishimaruko_line", "lang": "en", "text": "Miyamae~Nishimaruko", "source": "rule"}
+- {"entity_type": "route", "id": "r_matsusaka_line", "lang": "en", "text": "Matsusaka~Oishi", "source": "rule"}
+- {"entity_type": "route", "id": "r_onomichi_railway_line", "lang": "en", "text": "Onomichi~Ichi", "source": "rule"}
+- {"entity_type": "route", "id": "r_iwakura_branch_line", "lang": "en", "text": "Iwakura~Komaki", "source": "rule"}
+- {"entity_type": "route", "id": "r_yuen_railway_line", "lang": "en", "text": "Minami-Kumamoto~Tomochi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kagashima_line", "lang": "en", "text": "Senjudo~Nishikagashima", "source": "rule"}
+- {"entity_type": "route", "id": "r_boseki_railway_line", "lang": "en", "text": "Hofu~Hori", "source": "rule"}
+- {"entity_type": "route", "id": "r_ichinomiya_line", "lang": "en", "text": "Iwakura~Higashi-Ichinomiya", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamaga_onsen_railway_line", "lang": "en", "text": "Ueki~Yamaga", "source": "rule"}
+- {"entity_type": "route", "id": "r_morimatsu_line", "lang": "en", "text": "Iyotachibana~Morimatsu", "source": "rule"}
+- {"entity_type": "route", "id": "r_katayamazu_line", "lang": "en", "text": "Iburihashi~Katayamazu", "source": "rule"}
+- {"entity_type": "route", "id": "r_chiran_line", "lang": "en", "text": "Ata~Chiran", "source": "rule"}
+- {"entity_type": "route", "id": "r_tachikue_line", "lang": "en", "text": "Izumoshi~Izumosusa", "source": "rule"}
+- {"entity_type": "route", "id": "r_kunisaki_line", "lang": "en", "text": "Kitsuki~Kunisaki", "source": "rule"}
+- {"entity_type": "route", "id": "r_okawa_line", "lang": "en", "text": "Tsukasaki~Nishitetsuokawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_awaji_kotsu_line", "lang": "en", "text": "Sumoto~Fukura", "source": "rule"}
+- {"entity_type": "route", "id": "r_teshio_tanko_railway_line", "lang": "en", "text": "Kasugacho~Tappu", "source": "rule"}
+- {"entity_type": "route", "id": "r_maruoka_line", "lang": "en", "text": "Hon-Maruoka~Nishinagatayurinosato", "source": "rule"}
+- {"entity_type": "route", "id": "r_hokkaido_takushoku_railway_line", "lang": "en", "text": "Shintoku~Higashi-Urimaku", "source": "rule"}
+- {"entity_type": "route", "id": "r_toya_railway_line", "lang": "en", "text": "Nishi-Nasuno~Kurobane", "source": "rule"}
+- {"entity_type": "route", "id": "r_ena_railway_line", "lang": "en", "text": "Sakaecho~Ena", "source": "rule"}
+- {"entity_type": "route", "id": "r_taguchi_line", "lang": "en", "text": "Hon-Nagashino~Mikawa-Taguchi", "source": "rule"}
+- {"entity_type": "route", "id": "r_bancho_line", "lang": "en", "text": "Kaminocho~Bancho", "source": "rule"}
+- {"entity_type": "route", "id": "r_toyoma_line", "lang": "en", "text": "Semine~Toyoma", "source": "rule"}
+- {"entity_type": "route", "id": "r_maruko_line", "lang": "en", "text": "Uedahigashi~Marukomachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_nambu_railway_line", "lang": "en", "text": "Shiriuchi~Gonohe", "source": "rule"}
+- {"entity_type": "route", "id": "r_jozankei_railway_line", "lang": "en", "text": "Higashi-Sapporo~Jozankei", "source": "rule"}
+- {"entity_type": "route", "id": "r_bandai_express_electric_railway_line", "lang": "en", "text": "Kawageta~Numajiri", "source": "rule"}
+- {"entity_type": "route", "id": "r_izushi_railway_line", "lang": "en", "text": "Kaminogo~Izushi", "source": "rule"}
+- {"entity_type": "route", "id": "r_akita_chuo_kotsu_line", "lang": "en", "text": "Hachirogata~Gojonome", "source": "rule"}
+- {"entity_type": "route", "id": "r_sunen_line", "lang": "en", "text": "Ote~Shin-Fukuroi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kaetsu_line", "lang": "en", "text": "Isurugi~Shogawamachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_ano_railway_line", "lang": "en", "text": "Shinmachi~Mukumoto", "source": "rule"}
+- {"entity_type": "route", "id": "r_koromo_line", "lang": "en", "text": "Uwagoromo~Okazaki-Ida", "source": "rule"}
+- {"entity_type": "route", "id": "r_sasazu_line", "lang": "en", "text": "Minami-Toyama~Chitetsusasazu", "source": "rule"}
+- {"entity_type": "route", "id": "r_yagyubashi_branch_line", "lang": "en", "text": "Nakashiba~Yagyu-bashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_ogoya_railway_line", "lang": "en", "text": "Ogoya~Shin-Komatsu", "source": "rule"}
+- {"entity_type": "route", "id": "r_ohama_line", "lang": "en", "text": "Shukuin~Ohamakaigan", "source": "rule"}
+- {"entity_type": "route", "id": "r_higashishigi_cable_line", "lang": "en", "text": "Shigisanshita~Shigisan", "source": "rule"}
+- {"entity_type": "route", "id": "r_tsuchiyama_line", "lang": "en", "text": "Befuko~Tsuchiyama", "source": "rule"}
+- {"entity_type": "route", "id": "r_okayama_rinko_railway_line", "lang": "en", "text": "Konan-Shimpo~Okayamako", "source": "rule"}
+- {"entity_type": "route", "id": "r_kaya_railway_line", "lang": "en", "text": "Tangoyamada~Kaya", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanaoka_line", "lang": "en", "text": "Odate~Hanaoka", "source": "rule"}
+- {"entity_type": "route", "id": "r_tsukuba_line", "lang": "en", "text": "Tsuchiura~Iwase", "source": "rule"}
+- {"entity_type": "route", "id": "r_shimotsui_line", "lang": "en", "text": "Chayamachi~Shimotsui", "source": "rule"}
+- {"entity_type": "route", "id": "r_kosaka_line", "lang": "en", "text": "Odate~Kosaka", "source": "rule"}
+- {"entity_type": "route", "id": "r_kambara_railway_line", "lang": "en", "text": "Kamo~Gosen", "source": "rule"}
+- {"entity_type": "route", "id": "r_dreamland_line", "lang": "en", "text": "Ofuna~Dreamland", "source": "rule"}
+- {"entity_type": "route", "id": "r_arida_railway_line", "lang": "en", "text": "Tadonoguti~Kanayaguti", "source": "rule"}
+- {"entity_type": "route", "id": "r_kato_line", "lang": "en", "text": "Shinshunakano~Kijima", "source": "rule"}

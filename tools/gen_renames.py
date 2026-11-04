@@ -4,7 +4,7 @@
 import sys,os,re,json,unicodedata
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
-W=json.load(open(os.path.join(IMP,'wiki_station.json'),encoding='utf-8'))
+W=json.load(open(os.path.join(IMP,'wiki','station.json'),encoding='utf-8'))
 D=r'(\d{4})年(?:（[^）]*）)?(?:(\d{1,2})月(?:(\d{1,2})日)?)?'
 N=r'([^\s、。：:「」『』（）()・,，]{1,24}?)(?:駅|停留場|電停|停留所)'
 R1=re.compile(N+r'(?:から|より)[「『]?'+N+r'[」』]?に(?:駅名を)?(?:改称|改名|変更)')

@@ -1317,7 +1317,7 @@
 - {"id": "n_obuke", "kind": "station", "group": "g_obuke", "pref": "3"}
 - {"id": "n_tairadate", "kind": "station", "group": "g_tairadate", "pref": "3"}
 - {"id": "n_kitamori_hanawa", "kind": "station", "group": "g_kitamori_hanawa", "pref": "3"}
-- {"id": "n_kitamori_hanawa_b", "kind": "station", "group": "g_kitamori_hanawa", "pref": "3"}
+- {"id": "n_kitamori_hanawa_old", "kind": "station", "group": "g_kitamori_hanawa", "pref": "3", "export_name": "北森（旧）"}
 - {"id": "n_matsuo_hachimantai", "kind": "station", "group": "g_matsuo_hachimantai", "pref": "3"}
 - {"id": "n_appi_kogen", "kind": "station", "group": "g_appi_kogen", "pref": "3"}
 - {"id": "n_akasakata", "kind": "station", "group": "g_akasakata", "pref": "3"}
@@ -4420,8 +4420,8 @@
 - {"id": "n_tamba_hioki", "kind": "station", "group": "g_tamba_hioki", "pref": "28"}
 - {"id": "n_murakumo", "kind": "station", "group": "g_murakumo", "pref": "28"}
 - {"id": "n_fukusumi", "kind": "station", "group": "g_fukusumi", "pref": "28"}
-- {"id": "n_kanazu", "kind": "station", "group": "g_kanazu", "pref": "23"}
-- {"id": "n_ashihara", "kind": "station", "group": "g_ashihara_toyohashi", "pref": "23"}
+- {"id": "n_kanazu", "kind": "station", "group": "g_kanazu", "pref": "18"}
+- {"id": "n_ashihara", "kind": "station", "group": "g_ashihara", "pref": "18"}
 - {"id": "n_noto_mii", "kind": "station", "group": "g_noto_mii", "pref": "17"}
 - {"id": "n_noto_ichinose", "kind": "station", "group": "g_noto_ichinose", "pref": "17"}
 - {"id": "n_wajima", "kind": "station", "group": "g_wajima", "pref": "17"}
@@ -4487,7 +4487,7 @@
 - {"id": "n_ujina", "kind": "station", "group": "g_ujina", "pref": "34"}
 - {"id": "n_kodo_kabe", "kind": "station", "group": "g_kodo_kabe", "pref": "34"}
 - {"id": "n_imaida", "kind": "station", "group": "g_imaida", "pref": "34"}
-- {"id": "n_aki_kameyama_kabe_b", "kind": "station", "group": "g_aki_kameyama_kabe_b", "pref": "34"}
+- {"id": "n_aki_kameyama_kabe_old", "kind": "station", "group": "g_aki_kameyama_kabe_old", "pref": "34"}
 - {"id": "n_kegi", "kind": "station", "group": "g_kegi", "pref": "34"}
 - {"id": "n_aki_imuro", "kind": "station", "group": "g_aki_imuro", "pref": "34"}
 - {"id": "n_nuno", "kind": "station", "group": "g_nuno", "pref": "34"}
@@ -4554,6 +4554,9 @@
 - {"id": "n_awaya", "kind": "station", "group": "g_awaya", "pref": "34"}
 - {"id": "n_ozekiyama", "kind": "station", "group": "g_ozekiyama", "pref": "34"}
 - {"id": "n_katamachi_katamachi", "kind": "station", "group": "g_katamachi_katamachi", "pref": "27"}
+- {"id": "n_shinchi_old", "kind": "station", "group": "g_shinchi", "pref": "7", "export_name": "新地（旧）"}
+- {"id": "n_sakamoto_joban_old", "kind": "station", "group": "g_sakamoto_joban", "pref": "4", "export_name": "坂元（旧）"}
+- {"id": "n_yamashita_old", "kind": "station", "group": "g_yamashita", "pref": "4", "export_name": "山下（旧）"}
 - {"id": "n_oshi", "kind": "station", "group": "g_oshi", "pref": "10"}
 - {"id": "n_iwashiro_iino", "kind": "station", "group": "g_iwashiro_iino", "pref": "7"}
 - {"id": "n_iwashiro_kawamata", "kind": "station", "group": "g_iwashiro_kawamata", "pref": "7"}
@@ -4583,7 +4586,7 @@
 - {"id": "n_hosoura", "kind": "station", "group": "g_hosoura", "pref": "3"}
 - {"id": "n_shimofunato", "kind": "station", "group": "g_shimofunato", "pref": "3"}
 - {"id": "n_ofunato", "kind": "station", "group": "g_ofunato", "pref": "3"}
-- {"id": "n_orikasa", "kind": "station", "group": "g_orikasa", "pref": "3"}
+- {"id": "n_orikasa", "kind": "station", "group": "g_orikasa", "pref": "3", "export_name": "織笠（旧）"}
 - {"id": "n_iwate_kariya", "kind": "station", "group": "g_iwate_kariya", "pref": "3"}
 - {"id": "n_nakasato_iwaizumi", "kind": "station", "group": "g_nakasato_iwaizumi", "pref": "3"}
 - {"id": "n_iwate_wainai", "kind": "station", "group": "g_iwate_wainai", "pref": "3"}
@@ -4693,6 +4696,7 @@
 - {"id": "n_ozasa", "kind": "station", "group": "g_ozasa", "pref": "40"}
 - {"id": "n_torikai", "kind": "station", "group": "g_torikai", "pref": "40"}
 - {"id": "n_nishijin", "kind": "station", "group": "g_nishijin", "pref": "40"}
+- {"id": "n_higashi_karatsu_old", "kind": "station", "group": "g_higashi_karatsu_old", "pref": "41", "export_name": "東唐津（旧）"}
 - {"id": "n_kagami", "kind": "station", "group": "g_kagami", "pref": "41"}
 - {"id": "n_kuri", "kind": "station", "group": "g_kuri", "pref": "41"}
 - {"id": "n_iwaibashi", "kind": "station", "group": "g_iwaibashi", "pref": "42"}
@@ -5283,4 +5287,7 @@
 - {"id": "n_juyongokarijokojo", "kind": "station", "group": "g_juyongokarijokojo", "pref": "1"}
 - {"id": "n_jurokugokarijokojo", "kind": "station", "group": "g_jurokugokarijokojo", "pref": "1"}
 - {"id": "n_koshikawa", "kind": "station", "group": "g_koshikawa", "pref": "1"}
+- {"id": "n_kaede_old", "kind": "station", "group": "g_kaede", "pref": "1", "export_name": "楓（旧）"}
 - {"id": "n_noborikawa", "kind": "station", "group": "g_noborikawa", "pref": "1"}
+- {"id": "n_chikuzenashiya", "kind": "station", "group": "g_chikuzenashiya", "pref": "40"}
+- {"id": "n_ashiyajokojo", "kind": "station", "group": "g_ashiyajokojo", "pref": "40"}

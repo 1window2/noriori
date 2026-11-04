@@ -199,7 +199,7 @@ def mentions(a,b):
 ends=collections.defaultdict(set)
 for r in routes:ends[r['line']]|={r['from'],r['to']}
 done_=set()
-NOCONT={frozenset(x) for x in (('東横線','田園都市線'),('銀座線','半蔵門線'),('銀座線','副都心線'),('半蔵門線','東横線'),('副都心線','半蔵門線'),('副都心線','田園都市線'),('京都線','奈良線'),('国分寺線','多摩湖線'),('吉野線','橿原線'),('東急多摩川線','池上線'))}
+NOCONT={frozenset(x) for x in HT['NOCONT']}
 def add_cont(a,x,b,y,rv):
     done_.update({(a,b,x),(b,a,y)})
     for p_,q_,n_ in ((a,b,x),(b,a,y)):
@@ -244,7 +244,18 @@ _h=os.path.join(SRC,'hubs','hub_evidence.json')
 if os.path.exists(_h):
     H_=json.load(open(_h,encoding='utf-8'));ev_={tuple(x) for x in H_['evid']};doc_=set(H_['doc']);adj_={tuple(x) for x in H_['adj']}
     pairs={p for p in pairs if p not in adj_ and (p in ev_ or not(p[0] in doc_ or p[1] in doc_))}
-dump('hubs/wikipedia.yaml',[dict(id='hub_w'+stable(a,b),nodes=[a,b],source=['wikipedia'],verified=False) for a,b in sorted(pairs)],'위키 노선도의 다른 이름 환승')
+# 환승 묶음 ID는 묶인 역 중 JR 역의 이름, 없으면 첫 역의 이름. 겹치면 다른 역의 이름을 붙인다 (DESIGN §2.10)
+JRN={x for e in edges if lines.get(e['seed_line'],{}).get('family')=='jr' for x in (e['a'],e['b'])}
+_t=os.path.join(SRC,'hubs','hubs.yaml')
+HTAKEN={json.loads(l[2:])['id'] for l in open(_t,encoding='utf-8') if l.startswith('- ')} if os.path.exists(_t) else set()
+hw=[]
+for a,b in sorted(pairs):
+    first,second=(b,a) if b in JRN and a not in JRN else (a,b)
+    hid='hub_'+first[2:]
+    if hid in HTAKEN:hid=hid+'_'+second[2:]
+    if hid in HTAKEN:raise SystemExit(f'환승 묶음 ID가 겹칩니다: {hid}')
+    HTAKEN.add(hid);hw.append(dict(id=hid,nodes=[a,b],source=['wikipedia'],verified=False))
+dump('hubs/wikipedia.yaml',hw,'위키 노선도의 다른 이름 환승')
 print('환승 쌍',len(pairs))
 json.dump(kmrows,open(os.path.join(CAND,'wiki_km.json'),'w',encoding='utf-8'),ensure_ascii=False)
 json.dump(unmatched,open(os.path.join(CAND,'wiki_unmatched.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)

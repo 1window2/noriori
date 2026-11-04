@@ -367,7 +367,10 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get leaveTitle => '選択が解除されます';
 	@override String get leaveBody => '別の路線に移動すると、選択中の駅は解除されます。';
 	@override String get leave => '移動する';
-	@override String get dateDemoted => '選んだ区間はその日付に存在しないため、日付不明にしました';
+	@override String get unridableTitle => 'その日付には乗れない区間です';
+	@override String get unridableSave => 'その日は廃止後か開業前、運休中だったか、選んだ駅に列車が停まっていませんでした。記録していません。';
+	@override String get unridableDate => 'その日は廃止後か開業前、運休中だったか、選んだ駅に列車が停まっていませんでした。乗車日は変更していません。';
+	@override String get unridableOk => 'OK';
 	@override String get repick => '別の駅をタップすると選び直せます';
 	@override String get closedUnknown => '廃止区間';
 	@override String relocationOld({required Object km}) => '旧線 · ${km} km';
@@ -463,6 +466,9 @@ class _Translations$importing$ja implements Translations$importing$ko {
 	@override String done({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
 		other: '${count}件を取り込みました',
 	);
+	@override String undated({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
+		other: '日付不明で取り込んだ行 ${count}件',
+	);
 	@override String get close => '閉じる';
 	@override String get undo => '元に戻す';
 	@override String fullHint({required Object count}) => 'noriori完全版です。記録${count}件のうち、ないものだけを追加します。';
@@ -481,7 +487,6 @@ class _Translations$ticket$ja implements Translations$ticket$ko {
 	@override String get completeStamp => '完乗';
 	@override String get rideStamp => '乗車';
 	@override String get undo => '元に戻す';
-	@override String get savedUnknown => 'この日付では記録できないため、日付不明で保存しました';
 	@override String get noDate => '日付不明';
 }
 
@@ -495,6 +500,7 @@ class _Translations$sources$ja implements Translations$sources$ko {
 	@override String get title => 'データの出典';
 	@override String get intro => '名称、距離、日付などの事実情報を複数の出典から集めて作成しました。norioriのデータはCC BY-SA 4.0で配布します。線路形状は下記の原資料の条件に従い、OSM線路ファイルのみODbL 1.0です。';
 	@override late final _Translations$sources$n02$ja n02 = _Translations$sources$n02$ja._(_root);
+	@override late final _Translations$sources$n05$ja n05 = _Translations$sources$n05$ja._(_root);
 	@override late final _Translations$sources$n03$ja n03 = _Translations$sources$n03$ja._(_root);
 	@override late final _Translations$sources$stationDatabase$ja stationDatabase = _Translations$sources$stationDatabase$ja._(_root);
 	@override late final _Translations$sources$wikipedia$ja wikipedia = _Translations$sources$wikipedia$ja._(_root);
@@ -527,6 +533,7 @@ class _Translations$editRide$ja implements Translations$editRide$ko {
 	@override String get toAlighted => '終点の駅で実際に降車した';
 	@override String get save => '保存';
 	@override String get delete => '削除';
+	@override String get unridable => 'その日は廃止後か開業前、運休中だったか、記録した駅に列車が停まっていませんでした。記録は変わっていません。';
 	@override String get failed => '保存できませんでした。記録は変わっていません';
 }
 
@@ -931,6 +938,18 @@ class _Translations$sources$n02$ja implements Translations$sources$n02$ko {
 	@override String get terms => '国土交通省。2020年以降の版はCC BY 4.0、それ以前の版は国土数値情報の利用条件。「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.n05
+class _Translations$sources$n05$ja implements Translations$sources$n05$ko {
+	_Translations$sources$n05$ja._(this._root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => '国土数値情報 鉄道時系列データ (N05)';
+	@override String get use => 'N02とOpenStreetMapにない廃止区間の線路形状';
+	@override String get terms => '国土交通省。国土数値情報の利用条件（非商用）。「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
+}
+
 // Path: sources.n03
 class _Translations$sources$n03$ja implements Translations$sources$n03$ko {
 	_Translations$sources$n03$ja._(this._root);
@@ -1230,7 +1249,10 @@ extension on TranslationsJa {
 			'session.leaveTitle' => '選択が解除されます',
 			'session.leaveBody' => '別の路線に移動すると、選択中の駅は解除されます。',
 			'session.leave' => '移動する',
-			'session.dateDemoted' => '選んだ区間はその日付に存在しないため、日付不明にしました',
+			'session.unridableTitle' => 'その日付には乗れない区間です',
+			'session.unridableSave' => 'その日は廃止後か開業前、運休中だったか、選んだ駅に列車が停まっていませんでした。記録していません。',
+			'session.unridableDate' => 'その日は廃止後か開業前、運休中だったか、選んだ駅に列車が停まっていませんでした。乗車日は変更していません。',
+			'session.unridableOk' => 'OK',
 			'session.repick' => '別の駅をタップすると選び直せます',
 			'session.closedUnknown' => '廃止区間',
 			'session.relocationOld' => ({required Object km}) => '旧線 · ${km} km',
@@ -1297,6 +1319,7 @@ extension on TranslationsJa {
 			'importing.nothing' => '新しく取り込む記録はありません',
 			'importing.confirm' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${count}件を取り込む', ), 
 			'importing.done' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${count}件を取り込みました', ), 
+			'importing.undated' => ({required num n, required Object count}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '日付不明で取り込んだ行 ${count}件', ), 
 			'importing.close' => '閉じる',
 			'importing.undo' => '元に戻す',
 			'importing.fullHint' => ({required Object count}) => 'noriori完全版です。記録${count}件のうち、ないものだけを追加します。',
@@ -1304,13 +1327,15 @@ extension on TranslationsJa {
 			'ticket.completeStamp' => '完乗',
 			'ticket.rideStamp' => '乗車',
 			'ticket.undo' => '元に戻す',
-			'ticket.savedUnknown' => 'この日付では記録できないため、日付不明で保存しました',
 			'ticket.noDate' => '日付不明',
 			'sources.title' => 'データの出典',
 			'sources.intro' => '名称、距離、日付などの事実情報を複数の出典から集めて作成しました。norioriのデータはCC BY-SA 4.0で配布します。線路形状は下記の原資料の条件に従い、OSM線路ファイルのみODbL 1.0です。',
 			'sources.n02.name' => '国土数値情報 鉄道データ (N02)',
 			'sources.n02.use' => '線路形状、駅座標の補正',
 			'sources.n02.terms' => '国土交通省。2020年以降の版はCC BY 4.0、それ以前の版は国土数値情報の利用条件。「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.n05.name' => '国土数値情報 鉄道時系列データ (N05)',
+			'sources.n05.use' => 'N02とOpenStreetMapにない廃止区間の線路形状',
+			'sources.n05.terms' => '国土交通省。国土数値情報の利用条件（非商用）。「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.n03.name' => '国土数値情報 行政区域データ (N03)',
 			'sources.n03.use' => '日本の輪郭と都道府県境',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
@@ -1352,6 +1377,7 @@ extension on TranslationsJa {
 			'editRide.toAlighted' => '終点の駅で実際に降車した',
 			'editRide.save' => '保存',
 			'editRide.delete' => '削除',
+			'editRide.unridable' => 'その日は廃止後か開業前、運休中だったか、記録した駅に列車が停まっていませんでした。記録は変わっていません。',
 			'editRide.failed' => '保存できませんでした。記録は変わっていません',
 			'lineDetail.soloMap' => '地図でこの路線だけ表示',
 			'lineDetail.current' => '現行',

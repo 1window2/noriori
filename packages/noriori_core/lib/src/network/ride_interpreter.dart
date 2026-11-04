@@ -54,12 +54,9 @@ final class RideInterpreter implements RecordInterpreter {
       return RideDerived(status: status);
     }
     var dated = expansions.every((e) => !e.demoted) ? normalizeRideDate(input) : null;
-    var hi = _effectiveHi(ride, dated, expansions);
     // 입력과 멤버십, 정차 기간의 교집합이 비면 날짜 모름이다 (DESIGN §2.8 J)
-    if (dated != null && (hi.compareTo(dated.lo) < 0 || _beforeStop(ride, dated, expansions))) {
-      dated = null;
-      hi = _effectiveHi(ride, null, expansions);
-    }
+    if (dated != null && !_fits(ride, dated, expansions)) dated = null;
+    final hi = _effectiveHi(ride, dated, expansions);
     final legs = <LegDerived>[];
     final edges = <EdgeHit>[];
     final nodes = <String, NodeRole>{};
@@ -112,6 +109,28 @@ final class RideInterpreter implements RecordInterpreter {
       ],
     );
   }
+
+  /// 입력한 날에 그 구간을 탈 수 없는가 (DESIGN §2.8 J, ARCHITECTURE §3.4).
+  ///
+  /// 폐지 뒤, 개업 전, 운휴, 정차하지 않는 역, 범위 날짜에서 유효 범위가 비는 경우다. 저장과 날짜 수정은
+  /// 참이면 경고하고 저장하지 않는다. 기준일 이전은 기록 범위 밖이라 거짓이다. 날짜 없이도 경로가 없으면
+  /// 날짜 탓이 아니므로 거짓이다.
+  bool unridable(Ride ride) {
+    final raw = ride.dateInput;
+    final day = raw == null ? null : normalizeRideDate(DateSpan.parse(raw));
+    if (day == null) return false;
+    final expansions = this.expansions(ride);
+    if (expansions.any((e) => e.status == ResolveStatus.invalid || e.status == ResolveStatus.unknownRef)) {
+      return false;
+    }
+    if (expansions.any((e) => e.demoted)) return true;
+    if (!expansions.every((e) => e.saved)) return false;
+    return !_fits(ride, day, expansions);
+  }
+
+  /// 입력과 멤버십, 정차 기간의 교집합이 있는가.
+  bool _fits(Ride ride, DateSpan date, List<Expansion> expansions) =>
+      _effectiveHi(ride, date, expansions).compareTo(date.lo) >= 0 && !_beforeStop(ride, date, expansions);
 
   @override
   VisitDerived visit(Visit visit) {

@@ -17,7 +17,6 @@ OverlayEntry? _shownTicket;
 void showRideTicket(
   BuildContext context,
   RideTicketData data, {
-  required bool demoted,
   required VoidCallback onUndo,
 }) {
   final overlay = Overlay.of(context, rootOverlay: true);
@@ -32,7 +31,6 @@ void showRideTicket(
       onDone: close,
       child: RideTicket(
         data: data,
-        demoted: demoted,
         onUndo: () {
           close();
           onUndo();
@@ -108,12 +106,10 @@ class RideTicket extends StatelessWidget {
   const RideTicket({
     super.key,
     required this.data,
-    required this.demoted,
     required this.onUndo,
   });
 
   final RideTicketData data;
-  final bool demoted;
   final VoidCallback onUndo;
 
   static const _stubWidth = 98.0;
@@ -159,13 +155,8 @@ class RideTicket extends StatelessWidget {
                         ].join(' · '),
                         style: text.bodySmall,
                       ),
-                      if (demoted)
-                        Text(
-                          t.savedUnknown,
-                          style: text.labelSmall,
-                          maxLines: 2,
-                        )
-                      else if (before != null && after != null) ...[
+                      // 기준일보다 이른 날짜는 날짜 모름으로만 보이고 설명하지 않는다 (DESIGN §4.6)
+                      if (before != null && after != null) ...[
                         const SizedBox(height: 6),
                         TweenAnimationBuilder<double>(
                           tween: Tween(begin: before.ratio, end: after.ratio),

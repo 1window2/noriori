@@ -58,9 +58,12 @@ final class ImportMerged extends ImportStep {
 }
 
 final class ImportDone extends ImportStep {
-  const ImportDone(this.change);
+  const ImportDone(this.change, {this.undated = 0});
 
   final Change change;
+
+  /// 날짜 모름으로 넣은 행 수. 기준일은 말하지 않는다 (DESIGN §10.2).
+  final int undated;
 
   int get count => change.after.length;
 }
@@ -165,7 +168,7 @@ class ImportController extends Notifier<ImportStep> {
     final change = await session.records.apply(
       Change(before: deleted, after: [...rides, for (final ride in deleted) ride.withDeletedAt(null)]),
     );
-    state = ImportDone(change);
+    state = ImportDone(change, undated: ready.plan.undated.length);
   }
 
   Future<Ride> _ride(

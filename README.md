@@ -1,6 +1,6 @@
 # noriori
 
-[![CI](https://github.com/1window2/noriori/actions/workflows/lint-test.yml/badge.svg)](https://github.com/1window2/noriori/actions/workflows/lint-test.yml)
+[![Flutter](https://img.shields.io/github/actions/workflow/status/1window2/noriori/flutter.yml?branch=main&label=Flutter&logo=flutter)](https://github.com/1window2/noriori/actions/workflows/flutter.yml) [![Android](https://img.shields.io/github/actions/workflow/status/1window2/noriori/android.yml?branch=main&label=Android&logo=android)](https://github.com/1window2/noriori/actions/workflows/android.yml) [![iOS](https://img.shields.io/github/actions/workflow/status/1window2/noriori/ios.yml?branch=main&label=iOS&logo=apple)](https://github.com/1window2/noriori/actions/workflows/ios.yml)
 
 일본 철도를 어디까지 탔는지 기록하는 앱입니다. 탄 구간을 고르면 지도에 칠하고, 노선·회사·도도부현별 완주율을 보여 줍니다.
 

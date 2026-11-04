@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 완성된 DB를 독립 자료와 대조한다. 결과는 build/verify.json
-import sys,os,json,csv,sqlite3,collections,re,gzip,hashlib
+import sys,os,json,csv,sqlite3,collections,re,gzip,hashlib,glob
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
 m=sqlite3.connect(os.path.join(BUILD,'master.sqlite'));n=sqlite3.connect(os.path.join(BUILD,'names.sqlite'))
@@ -24,7 +24,7 @@ if os.path.exists(DB):
     R['옛 역 이름']=dict(sd_closed=len(sdcl),in_db=len(sdcl&allnm),missing_sample=sorted(sdcl-allnm)[:60],missing=len(sdcl-allnm))
 else:print('data/imports가 없어 station_database 이름 대조를 건너뜁니다')
 # 2. 날짜
-early=m.execute("select count(*) from edge_life where valid_to_lo<'1969-12-08' and valid_to<>'ongoing'").fetchone()[0]
+early=m.execute("select count(*) from edge_life where valid_to_lo<'1950-01-01' and valid_to<>'ongoing'").fetchone()[0]   # 기준일 (DESIGN §4.6)
 R['기준일 이전 폐지 edge']=early
 R['날짜 없는 개업 edge']=m.execute("select count(*) from edge_attr where valid_from is null").fetchone()[0]
 R['날짜 없는 폐역']=m.execute("select count(*) from route_stop where is_stop=1 and valid_to is null").fetchone()[0]
@@ -32,13 +32,13 @@ R['폐역']=m.execute("select count(*) from route_stop where is_stop=1 and valid
 # 3. 공개 노드에 숨은 종류가 없는지
 R['공개 노드 중 비여객']=m.execute("select count(*) from node_public where kind<>'station'").fetchone()[0]
 # 4. 거리
-R['연도별 분모']={a:b for a,b in m.execute("select basis,km from denominator where scope='all' and carryover='on' and basis in('current','alltime','1970','1980','1987','2000','2010','2020')")}
+R['연도별 분모']={a:b for a,b in m.execute("select basis,km from denominator where scope='all' and carryover='on' and basis in('current','alltime','1950','1960','1970','1980','1987','2000','2010','2020')")}
 R['승계 끔 역대']=m.execute("select km from denominator where scope='all' and carryover='off' and basis='alltime'").fetchone()[0]
 # 5. 이관
 R['이관 묶음']=m.execute("select count(distinct lineage_id) from edge_attr").fetchone()[0]
 # 6. 위치
 R['위치']={a:b for a,b in m.execute("select quality,count(*) from node_position group by 1")}
-R['선형 있는 edge']=m.execute("select geometry_quality,count(*) from edge group by 1").fetchall()
+R['선형 있는 edge']=m.execute("select geometry_quality,geometry_source,count(*) from edge group by 1,2").fetchall()
 R['표시']={a:b for a,b in m.execute("select kind,count(*) from route_link group by 1")}
 R['등급']={a:b for a,b in m.execute("select grade,count(*) from coverage group by 1")}
 R['이름 출처']={a:b for a,b in n.execute("select source,count(*) from name where entity_type='node' and lang='ko' group by 1")}
@@ -67,7 +67,20 @@ if os.path.exists(_w):
     json.dump(bad,open(os.path.join(CAND,'km_diff.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 else:print('data/candidates가 없어 위키 km 대조를 건너뜁니다')
 # ID에는 영어 이름만 쓴다. 원천 사이트의 번호나 해시가 나오면 실패다 (ARCHITECTURE §4.2)
-_bad=[i for t in ('node','line','route','operator') for i, in m.execute(f'select id from {t}') if re.search(r'_\d{3,}(_|$)|_[0-9a-f]{7,8}$|_x[0-9a-f]{8}|^[nlr]_n\d+',i)]
+_bad=[i for t in ('node','line','route','operator','hub','archive_stop','archive_line','service') for i, in m.execute(f'select id from {t}') if re.search(r'_\d{3,}(_|$)|_[0-9a-f]{7,8}$|_x[0-9a-f]{8}|^[nlr]_n\d+',i)]
 if _bad:raise SystemExit(f'ID에 번호가 있습니다: {_bad[:10]}')
+# 꺼진 출처의 값이 남지 않았는지 (data/sources.json, DESIGN §2.10)
+GEO_TAG={'n02_2024':'N02-24','n02_2020':'N02-20','n02_2015':'N02-15','n02_2008':'N02-08','n02_2005':'N02-05','n05':'N05-24','osm':'osm'}
+_geo=collections.Counter(json.loads(l[2:]).get('source') for f in glob.glob(os.path.join(SRC,'geometry','*.yaml')) for l in open(f,encoding='utf-8') if l.startswith('- '))
+_leak={}
+for k,v in SOURCES.items():
+    if v['on']:continue
+    c=_geo.get(GEO_TAG.get(k),0)
+    if k=='namuwiki':c+=n.execute("select count(*) from name where source='namuwiki'").fetchone()[0]
+    if k=='wikidata':c+=n.execute("select count(*) from name where source in('wikidata','rule+wikidata')").fetchone()[0]+m.execute("select count(*) from node_position where source='wikidata'").fetchone()[0]
+    if k=='n05':c+=m.execute("select count(*) from node_position where source='n05'").fetchone()[0]
+    _leak[k]=c
+R['꺼진 출처']=_leak
+if any(_leak.values()):raise SystemExit(f'꺼진 출처의 값이 남았습니다: {_leak}')
 json.dump(R,open(os.path.join(BUILD,'verify.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 for k,v in R.items():print(k,str(v)[:420])

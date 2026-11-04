@@ -5,11 +5,14 @@
 - {"id": "hub_okutsugaru_imabetsu", "nodes": ["n_okutsugaru_imabetsu", "n_tsugaru_futamata"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_asabu", "nodes": ["n_asabu", "n_shin_kotoni"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_sapporo", "nodes": ["n_shin_sapporo", "n_shin_sapporo_sapporo_city"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kaede", "nodes": ["n_kaede", "n_kaede_old"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_shintoku", "nodes": ["n_shintoku", "n_shintoku_hokkaido_takushoku"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ashibetsu", "nodes": ["n_ashibetsu", "n_ashibetsu_mitsui_ashibetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_obihiro", "nodes": ["n_obihiro", "n_obihiro_tokachi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kushiro_nemuro_main", "nodes": ["n_kushiro_nemuro_main", "n_kushiro_yubetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_otemachi_toei", "nodes": ["n_otemachi_toei", "n_otemachi_tokyo_metro", "n_tokyo", "n_tokyo_tokyo_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ginza", "nodes": ["n_ginza", "n_ginza_itchome", "n_hibiya_toei", "n_hibiya_tokyo_metro", "n_yurakucho", "n_yurakucho_tokyo_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_shimbashi", "nodes": ["n_shimbashi", "n_shimbashi_toei", "n_shimbashi_tokyo_metro", "n_shimbashi_yurikamome", "n_shimbashi_yurikamome_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_shimbashi", "nodes": ["n_shimbashi", "n_shimbashi_toei", "n_shimbashi_tokyo_metro", "n_shimbashi_yurikamome", "n_shimbashi_yurikamome_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_daimon_toei", "nodes": ["n_daimon_toei", "n_hamamatsucho", "n_monorail_hamamatsucho"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_mita", "nodes": ["n_mita", "n_tamachi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_sengakuji_keikyu", "nodes": ["n_sengakuji_keikyu", "n_sengakuji_toei", "n_takanawa_gateway"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -22,7 +25,7 @@
 - {"id": "hub_higashi_kanagawa", "nodes": ["n_higashi_kanagawa", "n_keikyu_higashi_kanagawa"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yokohama", "nodes": ["n_yokohama", "n_yokohama_keikyu", "n_yokohama_sotetsu", "n_yokohama_tokyu_railways", "n_yokohama_yokohama_city", "n_yokohama_yokohama_minatomirai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_totsuka", "nodes": ["n_totsuka", "n_totsuka_yokohama_city"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_ofuna", "nodes": ["n_ofuna", "n_ofuna_shonan_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_ofuna", "nodes": ["n_ofuna", "n_ofuna_dream", "n_ofuna_shonan_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_fujisawa", "nodes": ["n_fujisawa", "n_fujisawa_enoshima", "n_fujisawa_odakyu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_odawara", "nodes": ["n_odawara", "n_odawara_izuhakone", "n_odawara_odakyu", "n_odawara_odakyu_hakone"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_musashi_kosugi", "nodes": ["n_musashi_kosugi", "n_musashi_kosugi_tokyu_railways"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -101,12 +104,16 @@
 - {"id": "hub_kuki_tobu", "nodes": ["n_kuki_tobu", "n_kuki_tohoku_main"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kurihashi", "nodes": ["n_kurihashi", "n_kurihashi_tobu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_utsunomiya", "nodes": ["n_utsunomiya", "n_utsunomiya_station_east"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_yaita", "nodes": ["n_yaita", "n_yaita_yaita"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_nishi_nasuno", "nodes": ["n_nishi_nasuno", "n_nishi_nasuno_toya"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_fukushima_abukuma_express", "nodes": ["n_fukushima_abukuma_express", "n_fukushima_fukushima_transportation", "n_fukushima_ou_main"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_natori", "nodes": ["n_natori", "n_natori_sendai_airport_transit"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nagamachi", "nodes": ["n_nagamachi", "n_nagamachi_sendai_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_aoba_dori", "nodes": ["n_aoba_dori", "n_sendai_sendai_city", "n_sendai_senseki"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_semine", "nodes": ["n_semine", "n_semine_miyagi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ishikoshi", "nodes": ["n_ishikoshi", "n_ishikoshi_kurihara_denen"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_iwate_numakunai", "nodes": ["n_iwate_numakunai", "n_iwate_numakunai_igr_iwate_galaxy"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_hachinohe", "nodes": ["n_hachinohe", "n_shiriuchi_nambu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_minami_senju", "nodes": ["n_minami_senju", "n_minami_senju_tokyo_metro", "n_minami_senju_tsukuba_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kita_senju", "nodes": ["n_kita_senju", "n_kita_senju_tobu", "n_kita_senju_tokyo_metro", "n_kita_senju_tsukuba_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ayase", "nodes": ["n_ayase", "n_ayase_tokyo_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -116,6 +123,7 @@
 - {"id": "hub_kashiwa", "nodes": ["n_kashiwa", "n_kashiwa_tobu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_toride", "nodes": ["n_toride", "n_toride_kanto"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ryugasakishi", "nodes": ["n_ryugasakishi", "n_sanuki"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_tsuchiura", "nodes": ["n_tsuchiura", "n_tsuchiura_tsukuba"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ishioka", "nodes": ["n_ishioka", "n_ishioka_kashima"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_akatsuka_ibaraki_kotsu", "nodes": ["n_akatsuka_ibaraki_kotsu", "n_akatsuka_joban"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_mito", "nodes": ["n_mito", "n_mito_kashima_rinkai"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -127,26 +135,35 @@
 - {"id": "hub_takasaki", "nodes": ["n_takasaki", "n_takasaki_joshin"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_muikamachi", "nodes": ["n_muikamachi", "n_muikamachi_hokuetsu_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nagaoka", "nodes": ["n_nagaoka", "n_nagaoka_echigo_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_joshu_mihara", "nodes": ["n_joshu_mihara", "n_manza_kazawaguchi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tochigi", "nodes": ["n_tochigi", "n_tochigi_tobu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_sano", "nodes": ["n_sano", "n_sano_tobu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kiryu", "nodes": ["n_kiryu", "n_nishi_kiryu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_isesaki", "nodes": ["n_isesaki", "n_isesaki_tobu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shimodate", "nodes": ["n_shimodate", "n_shimodate_kanto"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_kita_sendai", "nodes": ["n_kita_sendai", "n_kita_sendai_sendai_city"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_iwase", "nodes": ["n_iwase", "n_iwase_tsukuba"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_toshogu", "nodes": ["n_toshogu", "n_toshogumae"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kita_sendai", "nodes": ["n_kita_sendai", "n_kita_sendai_sendai_city", "n_shakitasendai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yokote", "nodes": ["n_yokote", "n_yokote_ugo_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_kitamori_hanawa", "nodes": ["n_kitamori_hanawa", "n_kitamori_hanawa_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kitamori_hanawa", "nodes": ["n_kitamori_hanawa", "n_kitamori_hanawa_old"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_odate", "nodes": ["n_odate", "n_odate_hanaoka", "n_odate_kosaka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_noheji", "nodes": ["n_noheji", "n_noheji_nambu_jukan"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_takahata", "nodes": ["n_takahata", "n_takahata_yamagata_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kawageta", "nodes": ["n_kawageta", "n_kawageta_bandai_express"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_gosen", "nodes": ["n_gosen", "n_gosen_kambara"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yuzawa", "nodes": ["n_yuzawa", "n_yuzawa_ugo_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_hachirogata", "nodes": ["n_hachirogata", "n_hachirogata_akita_chuo"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_takanosu", "nodes": ["n_takanosu", "n_takanosu_akita_nairiku_jukan"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_owani", "nodes": ["n_owani", "n_owani_onsen"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hirosaki", "nodes": ["n_hirosaki", "n_hirosaki_konan"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_uzen_takamatsu", "nodes": ["n_uzen_takamatsu", "n_uzen_takamatsu_yamagata_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_goshogawara", "nodes": ["n_goshogawara", "n_tsugaru_goshogawara"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tsuruoka", "nodes": ["n_tsuruoka", "n_tsuruoka_shonai_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_nishi_furukawa", "nodes": ["n_nishi_furukawa", "n_nishi_furukawa_sendai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nagano", "nodes": ["n_nagano", "n_nagano_nagano"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_saigata", "nodes": ["n_saigata", "n_saigata_hokuetsu_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_raikoji", "nodes": ["n_raikoji", "n_raikoji_echigo_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kamo", "nodes": ["n_kamo", "n_kamo_shinetsu_main"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_karuizawa", "nodes": ["n_karuizawa", "n_shin_karuizawa"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ueda_hokuriku_shinkansen", "nodes": ["n_ueda_hokuriku_shinkansen", "n_ueda_ueda"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_joetsumyoko", "nodes": ["n_joetsumyoko", "n_joetsumyoko_echigo_tokimeki"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tokamachi", "nodes": ["n_tokamachi", "n_tokamachi_hokuetsu_express"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -173,13 +190,16 @@
 - {"id": "hub_keisei_narita", "nodes": ["n_keisei_narita", "n_narita"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_airport_terminal_2", "nodes": ["n_airport_terminal_2", "n_airport_terminal_2_keisei", "n_higashi_narita_keisei", "n_higashi_narita_shibayama", "n_narita_airport_terminal_1", "n_narita_airport_terminal_1_keisei"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kashima_soccer_stadium", "nodes": ["n_kashima_soccer_stadium", "n_kashima_soccer_stadium_kashima_rinkai"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_togane", "nodes": ["n_togane", "n_togane_kujukuri"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_mishima", "nodes": ["n_mishima", "n_mishima_izuhakone"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yoshiwara", "nodes": ["n_yoshiwara", "n_yoshiwara_gakunan_electric_train"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shimizu", "nodes": ["n_shimizu", "n_shin_shimizu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kusanagi", "nodes": ["n_kusanagi", "n_kusanagi_shizuoka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_higashi_shizuoka", "nodes": ["n_higashi_shizuoka", "n_naganuma_shizuoka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_shizuoka", "nodes": ["n_shin_shizuoka", "n_shizuoka"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_fujieda", "nodes": ["n_fujieda", "n_shin_fujieda"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kanaya", "nodes": ["n_kanaya", "n_kanaya_oigawa"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_fukuroi", "nodes": ["n_fukuroi", "n_shin_fukuroi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hamamatsu", "nodes": ["n_hamamatsu", "n_shin_hamamatsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ekimae", "nodes": ["n_ekimae", "n_shin_toyohashi", "n_toyohashi", "n_toyohashi_meitetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_gamagori", "nodes": ["n_gamagori", "n_gamagori_meitetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -197,6 +217,7 @@
 - {"id": "hub_shin_osaka", "nodes": ["n_shin_osaka", "n_shin_osaka_osaka_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_matsuda", "nodes": ["n_matsuda", "n_matsuda_odakyu", "n_shin_matsuda"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_toyokawa", "nodes": ["n_toyokawa", "n_toyokawa_inari"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_hon_nagashino", "nodes": ["n_hon_nagashino", "n_hon_nagashino_taguchi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_naka", "nodes": ["n_naka", "n_shin_naka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kagamigahara", "nodes": ["n_kagamigahara", "n_meiden_kakamigahara"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_unuma", "nodes": ["n_shin_unuma", "n_unuma", "n_unuma_meitetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -213,7 +234,7 @@
 - {"id": "hub_kintetsu_nagashima", "nodes": ["n_kintetsu_nagashima", "n_nagashima"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kuwana", "nodes": ["n_kuwana", "n_kuwana_kintetsu", "n_kuwana_yoro", "n_nishi_kuwana"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tsu", "nodes": ["n_tsu", "n_tsu_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_matsusaka", "nodes": ["n_matsusaka", "n_matsusaka_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_matsusaka", "nodes": ["n_matsusaka", "n_matsusaka_kintetsu", "n_matsusaka_mie"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ichishi", "nodes": ["n_ichishi", "n_kawai_takaoka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_iseshi", "nodes": ["n_iseshi", "n_iseshi_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_toba", "nodes": ["n_toba", "n_toba_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -251,7 +272,9 @@
 - {"id": "hub_hakui", "nodes": ["n_hakui", "n_hakui_hokuriku"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nanao", "nodes": ["n_nanao", "n_nanao_noto"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_takaoka", "nodes": ["n_takaoka", "n_takaoka_ekimae", "n_takaoka_manyosen"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_fukuno", "nodes": ["n_fukuno", "n_fukuno_kaetsuno"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nomachi", "nodes": ["n_nomachi", "n_shinnomachi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_chitetsusasazu", "nodes": ["n_chitetsusasazu", "n_sasazu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_dentetsu_toyama", "nodes": ["n_dentetsu_toyama", "n_dentetsu_toyama_station_esta_mae", "n_toyama"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_nagata", "nodes": ["n_shin_nagata", "n_shin_nagata_kobe_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_sanyo_suma", "nodes": ["n_sanyo_suma", "n_suma"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -259,11 +282,16 @@
 - {"id": "hub_sanyo_tarumi", "nodes": ["n_sanyo_tarumi", "n_tarumi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_maiko", "nodes": ["n_maiko", "n_maiko_koen"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_akashi", "nodes": ["n_akashi", "n_sanyo_akashi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_tsuchiyama", "nodes": ["n_tsuchiyama", "n_tsuchiyama_tsuchiyama"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_himeji", "nodes": ["n_himeji", "n_sanyo_himeji"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_une", "nodes": ["n_une", "n_une_ako"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kamigori", "nodes": ["n_kamigori", "n_kamigori_chizu_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_wake", "nodes": ["n_wake", "n_wake_dowa_mining"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_higashi_okayama", "nodes": ["n_higashi_okayama", "n_saida_ryobi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_okayama", "nodes": ["n_okayama", "n_okayama_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kurashiki", "nodes": ["n_kurashiki", "n_kurashikishi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_fukuyama", "nodes": ["n_fukuyama", "n_fukuyama_tomo", "n_sannomaru"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_onomichi", "nodes": ["n_onomichi", "n_onomichi_onomichi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_midoriguchi", "nodes": ["n_midoriguchi", "n_seno"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hiroshima", "nodes": ["n_hiroshima", "n_hiroshima_hiroden"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_hakushima", "nodes": ["n_shin_hakushima", "n_shin_hakushima_hiroshima_rapid_transit"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -275,6 +303,9 @@
 - {"id": "hub_miyauchi_hiroden", "nodes": ["n_miyauchi_hiroden", "n_miyauchikushido"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ajina", "nodes": ["n_ajina", "n_hirodenajina"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hiroden_miyajimaguchi", "nodes": ["n_hiroden_miyajimaguchi", "n_miyajimaguchi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_hofu", "nodes": ["n_hofu", "n_hofu_boseki"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_nishiube", "nodes": ["n_nishiube", "n_ube"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_ozuki", "nodes": ["n_ozuki", "n_ozuki_nagato"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_wadamisaki", "nodes": ["n_wadamisaki", "n_wadamisaki_kobe_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_kobe", "nodes": ["n_shin_kobe", "n_shin_kobe_kobe_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_seiryu_shin_iwakuni", "nodes": ["n_seiryu_shin_iwakuni", "n_shin_iwakuni"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -282,7 +313,11 @@
 - {"id": "hub_hakata", "nodes": ["n_hakata", "n_hakata_fukuoka_subway"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ao", "nodes": ["n_ao", "n_ao_kobe"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_sayo", "nodes": ["n_sayo", "n_sayo_chizu_express"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_sakoshi", "nodes": ["n_sakoshi", "n_sakoshi_ako"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_banshu_ako", "nodes": ["n_banshu_ako", "n_banshu_ako_ako"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_odara", "nodes": ["n_odara", "n_odara_ryobi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_soja", "nodes": ["n_soja", "n_soja_ibara"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_chayamachi", "nodes": ["n_chayamachi", "n_chayamachi_shimotsui"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_uno", "nodes": ["n_uno", "n_uno_binan"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kiyone", "nodes": ["n_kiyone", "n_kiyone_ibara"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kannabe", "nodes": ["n_kannabe", "n_kannabe_ibara"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -291,7 +326,8 @@
 - {"id": "hub_katabiranotsuji", "nodes": ["n_katabiranotsuji", "n_satsueishomae", "n_uzumasa"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_arashiyama_hankyu", "nodes": ["n_arashiyama_hankyu", "n_randensaga", "n_saga_arashiyama", "n_torokko_saga"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_torokko_kameoka", "nodes": ["n_torokko_kameoka", "n_umahori"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_dentetsu_izumoshi", "nodes": ["n_dentetsu_izumoshi", "n_izumoshi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_arashima", "nodes": ["n_arashima", "n_arashima_ichibata"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_dentetsu_izumoshi", "nodes": ["n_dentetsu_izumoshi", "n_izumoshi", "n_izumoshi_ichibata"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_chizu", "nodes": ["n_chizu", "n_chizu_chizu_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_iga_ueno", "nodes": ["n_iga_ueno", "n_iga_ueno_iga"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_oji_kansai_main", "nodes": ["n_oji_kansai_main", "n_oji_kintetsu", "n_shin_oji"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -304,7 +340,7 @@
 - {"id": "hub_kohata", "nodes": ["n_kohata", "n_kowata"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_obaku", "nodes": ["n_obaku", "n_obaku_keihan"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tenri", "nodes": ["n_tenri", "n_tenri_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_sakurai", "nodes": ["n_sakurai", "n_sakurai_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_sakurai", "nodes": ["n_sakurai", "n_sakurai_kintetsu", "n_sakurai_yamato"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hosono_katamachi", "nodes": ["n_hosono_katamachi", "n_shin_hosono"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_komada", "nodes": ["n_komada", "n_shimokoma"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_jr_miyamaki", "nodes": ["n_jr_miyamaki", "n_miyamaki"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -331,14 +367,15 @@
 - {"id": "hub_wakayamashi", "nodes": ["n_wakayamashi", "n_wakayamashi_nankai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kurobe_unazukionsen", "nodes": ["n_kurobe_unazukionsen", "n_shin_kurobe"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hokutetsu_kanazawa", "nodes": ["n_hokutetsu_kanazawa", "n_kanazawa", "n_nakabashi"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_komatsu", "nodes": ["n_komatsu", "n_komatsu_hokuriku"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_komatsu", "nodes": ["n_komatsu", "n_komatsu_hokuriku", "n_shin_komatsu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_awaraonsen", "nodes": ["n_awaraonsen", "n_awaraonsen_eiheiji"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_fukui", "nodes": ["n_fukui", "n_fukui_echizen", "n_fukui_ekimae", "n_fukui_fukui"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_takamatsu_chikko", "nodes": ["n_takamatsu_chikko", "n_takamatsu_kotoku"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_jr_matsuyama_ekimae", "nodes": ["n_jr_matsuyama_ekimae", "n_matsuyama"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_gunchu_port", "nodes": ["n_gunchu_port", "n_iyoshi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_sanuki_mure", "nodes": ["n_sanuki_mure", "n_yakuri_shimmichi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kotoden_shido", "nodes": ["n_kotoden_shido", "n_shido"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_kotoden_kotohira", "nodes": ["n_kotoden_kotohira", "n_kotohira_dosan"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kotoden_kotohira", "nodes": ["n_kotoden_kotohira", "n_kotohira_dosan", "n_kotokyukotohira"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_gomen", "nodes": ["n_gomen", "n_gomen_tosa_kuroshio"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ichijobashi", "nodes": ["n_ichijobashi", "n_ryosekidori", "n_seiwagakuenmae", "n_tosa_otsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kochi_dosan", "nodes": ["n_kochi_dosan", "n_kochi_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -352,6 +389,7 @@
 - {"id": "hub_chihaya", "nodes": ["n_chihaya", "n_nishitetsuchihaya"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hakozaki", "nodes": ["n_hakozaki", "n_hakozaki_miyamae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_omuta", "nodes": ["n_omuta", "n_omuta_nishi_nippon"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_ueki", "nodes": ["n_ueki", "n_ueki_yamaga_onsen"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kami_kumamoto", "nodes": ["n_kami_kumamoto", "n_kami_kumamoto_kumamoto", "n_kami_kumamoto_kumamoto_city", "n_kenritsutaiikukanmae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kumamoto", "nodes": ["n_kumamoto", "n_kumamoto_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ijuin", "nodes": ["n_ijuin", "n_ijuin_kagoshima_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -370,6 +408,10 @@
 - {"id": "hub_chitosemachi_nagasaki_tram", "nodes": ["n_chitosemachi_nagasaki_tram", "n_nishi_urakami", "n_showamachidori", "n_sumiyoshi_nagasaki_tram_akasako_branch", "n_sumiyoshi_nagasaki_tram_nagasaki_tram_main"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_meinohama", "nodes": ["n_meinohama", "n_meinohama_fukuoka_subway"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_suizenji", "nodes": ["n_shin_suizenji", "n_shin_suizenji_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_minami_kumamoto", "nodes": ["n_minami_kumamoto", "n_minami_kumamoto_yuen"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_buzen_zenkoji", "nodes": ["n_buzen_zenkoji", "n_buzen_zenkoji_hoshu"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kitsuki", "nodes": ["n_kitsuki", "n_kitsuki_kunisaki"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_beppu_daigaku", "nodes": ["n_beppu_daigaku", "n_rokushoen", "n_shoningahama"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kikugaoka", "nodes": ["n_kikugaoka", "n_shii_koen"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_asakusa_tobu", "nodes": ["n_asakusa_tobu", "n_asakusa_toei", "n_asakusa_tokyo_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_oshiage_keisei", "nodes": ["n_oshiage_keisei", "n_oshiage_tobu", "n_oshiage_toei", "n_oshiage_tokyo_metro", "n_tokyo_skytree"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -410,14 +452,13 @@
 - {"id": "hub_chuo_rinkan_odakyu", "nodes": ["n_chuo_rinkan_odakyu", "n_chuo_rinkan_tokyu_railways"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yamato_odakyu", "nodes": ["n_yamato_odakyu", "n_yamato_sotetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shonandai_odakyu", "nodes": ["n_shonandai_odakyu", "n_shonandai_sotetsu", "n_shonandai_yokohama_city"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_kurokawa_nose", "nodes": ["n_kurokawa_nose", "n_kurokawa_odakyu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_naka_meguro_tokyo_metro", "nodes": ["n_naka_meguro_tokyo_metro", "n_naka_meguro_tokyu_railways"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hiyoshi_tokyu_railways", "nodes": ["n_hiyoshi_tokyu_railways", "n_hiyoshi_yokohama_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nakanobu_toei", "nodes": ["n_nakanobu_toei", "n_nakanobu_tokyu_railways"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_togoshi", "nodes": ["n_togoshi", "n_togoshi_ginza"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_azamino_tokyu_railways", "nodes": ["n_azamino_tokyu_railways", "n_azamino_yokohama_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kamiooka_keikyu", "nodes": ["n_kamiooka_keikyu", "n_kamiooka_yokohama_city"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_kanazawa_hakkei_keikyu", "nodes": ["n_kanazawa_hakkei_keikyu", "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside", "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kanazawa_hakkei_keikyu", "nodes": ["n_kanazawa_hakkei_keikyu", "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside", "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tenkubashi_keikyu", "nodes": ["n_tenkubashi_keikyu", "n_tenkubashi_tokyo_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_haneda_airport_terminal_3_keikyu", "nodes": ["n_haneda_airport_terminal_3_keikyu", "n_haneda_airport_terminal_3_tokyo_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_haneda_airport_terminal_1", "nodes": ["n_haneda_airport_terminal_1", "n_haneda_airport_terminal_12", "n_haneda_airport_terminal_2"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -453,7 +494,7 @@
 - {"id": "hub_naka_okazaki", "nodes": ["n_naka_okazaki", "n_okazakikoen_mae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_toyota", "nodes": ["n_shin_toyota", "n_toyotashi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_uwagoromo", "nodes": ["n_shin_uwagoromo", "n_uwagoromo"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_mikawa_chiryu_meitetsu_mikawa", "nodes": ["n_mikawa_chiryu_meitetsu_mikawa", "n_mikawa_chiryu_meitetsu_mikawa_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_mikawa_chiryu_meitetsu_mikawa", "nodes": ["n_mikawa_chiryu_meitetsu_mikawa", "n_mikawa_chiryu_meitetsu_mikawa_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_akaike_meitetsu", "nodes": ["n_akaike_meitetsu", "n_akaike_nagoya_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hisaya_odori", "nodes": ["n_hisaya_odori", "n_sakae_nagoya_city", "n_sakaemachi_meitetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_moriyama_jieitai_mae", "nodes": ["n_moriyama_jieitai_mae", "n_moriyama_nagoya_guideway_bus"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -468,11 +509,12 @@
 - {"id": "hub_kintetsu_nippombashi", "nodes": ["n_kintetsu_nippombashi", "n_nippombashi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ikoma", "nodes": ["n_ikoma", "n_torii_mae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nagata_kintetsu", "nodes": ["n_nagata_kintetsu", "n_nagata_osaka_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_nishi_tawaramoto", "nodes": ["n_nishi_tawaramoto", "n_tawaramoto"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_nishi_tawaramoto", "nodes": ["n_nishi_tawaramoto", "n_tawaramoto", "n_tawaramoto_yamato"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kawachinagano_kintetsu", "nodes": ["n_kawachinagano_kintetsu", "n_kawachinagano_nankai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_takeda_kintetsu", "nodes": ["n_takeda_kintetsu", "n_takeda_kyoto_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kintetsu_tambabashi", "nodes": ["n_kintetsu_tambabashi", "n_tambabashi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_fushimi_momoyama", "nodes": ["n_fushimi_momoyama", "n_momoyamagoryo_mae"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kuroda", "nodes": ["n_kuroda", "n_kuroda_kintetsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_asunarou_yokkaichi", "nodes": ["n_asunarou_yokkaichi", "n_kintetsu_yokkaichi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kintetsu_tomida_kintetsu", "nodes": ["n_kintetsu_tomida_kintetsu", "n_kintetsu_tomida_sangi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_komeno", "nodes": ["n_komeno", "n_sasashima_raibu"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -528,8 +570,10 @@
 - {"id": "hub_hosui_susukino", "nodes": ["n_hosui_susukino", "n_nishi_4_chome", "n_odori", "n_susukino_sapporo_city", "n_susukino_sapporo_tsc", "n_tanukikoji"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nakajima_koen", "nodes": ["n_nakajima_koen", "n_yamahanakujo"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_horohira_bashi", "nodes": ["n_horohira_bashi", "n_seishugakuenmae"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_sumikawa", "nodes": ["n_sumikawa", "n_sumikawa_jozankei"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nishi_15_chome", "nodes": ["n_nishi_15_chome", "n_nishi_18_chome"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_chuokuyakushomae", "nodes": ["n_chuokuyakushomae", "n_nishi_11_chome"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_yaotome", "nodes": ["n_yaotome", "n_yaotome_sendai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_koshinzuka", "nodes": ["n_koshinzuka", "n_nishi_sugamo", "n_shinkoshinzuka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_okachimachi_toei", "nodes": ["n_shin_okachimachi_toei", "n_shin_okachimachi_tsukuba_express"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shiodome_toei", "nodes": ["n_shiodome_toei", "n_shiodome_yurikamome"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -542,6 +586,8 @@
 - {"id": "hub_tanigami_kobe", "nodes": ["n_tanigami_kobe", "n_tanigami_kobe_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_befu_fukuoka_subway", "nodes": ["n_befu_fukuoka_subway", "n_torikai"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kuroishi", "nodes": ["n_kuroishi", "n_kuroishi_konan"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_dentetsuoya", "nodes": ["n_dentetsuoya", "n_oya_shinano"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_shinano_kokubunji", "nodes": ["n_shinano_kokubunji", "n_yokado"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yashiro_nagano", "nodes": ["n_yashiro_nagano", "n_yashiro_shinano"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_namerikawa_ainokaze_toyama", "nodes": ["n_namerikawa_ainokaze_toyama", "n_namerikawa_toyama_chiho"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shin_uozu", "nodes": ["n_shin_uozu", "n_uozu"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -550,14 +596,16 @@
 - {"id": "hub_minami_toyama", "nodes": ["n_minami_toyama", "n_minami_toyama_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nishi_kanazawa", "nodes": ["n_nishi_kanazawa", "n_shin_nishi_kanazawa"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_moriya_kanto", "nodes": ["n_moriya_kanto", "n_moriya_tsukuba_express"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_ashihara", "nodes": ["n_ashihara", "n_ashihara_toyohashi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_fukubuguchi", "nodes": ["n_fukubuguchi", "n_shatakefu", "n_takefu", "n_takefu_shin"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kitago_fukui_fukubu", "nodes": ["n_kitago_fukui_fukubu", "n_kitago_fukui_nan_etsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tawaramachi_echizen", "nodes": ["n_tawaramachi_echizen", "n_tawaramachi_fukui"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_eiheijiguchi", "nodes": ["n_eiheijiguchi", "n_higashifuruichi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_nishinagata_yurinosato", "nodes": ["n_nishinagata_yurinosato", "n_nishinagatayurinosato"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_ashihara", "nodes": ["n_ashihara", "n_awara_yunomachi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_shimo_amazu", "nodes": ["n_shimo_amazu", "n_shimoamazu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_gujo_hokutan", "nodes": ["n_gujo_hokutan", "n_gujo_kyoto_tango_railway_willer_trains"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_koumori", "nodes": ["n_koumori", "n_oe_kyoto_tango_railway_willer_trains"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_tangoyamada", "nodes": ["n_tangoyamada", "n_yosano"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_cable_yase", "nodes": ["n_cable_yase", "n_yase_hieizanguchi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kurama", "nodes": ["n_kurama", "n_sanmon"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_esaka_kita_osaka_kyuko", "nodes": ["n_esaka_kita_osaka_kyuko", "n_esaka_osaka_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -565,20 +613,26 @@
 - {"id": "hub_dainichi_osaka_metro", "nodes": ["n_dainichi_osaka_metro", "n_dainichi_osaka_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_abeno_hankai", "nodes": ["n_abeno_hankai", "n_abeno_osaka_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_ebisucho_hankai", "nodes": ["n_ebisucho_hankai", "n_ebisucho_osaka_metro"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_shukuin", "nodes": ["n_shukuin", "n_shukuin_ohama"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kaminocho_bancho", "nodes": ["n_kaminocho_bancho", "n_shiroshita_okayama"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_hondori_hiroden", "nodes": ["n_hondori_hiroden", "n_hondori_hiroshima_rapid_transit", "n_kamiyacho_hiroden", "n_kencho_mae_hiroshima_rapid_transit"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_matsuyama_city_iyotetsu_gunchu", "nodes": ["n_matsuyama_city_iyotetsu_gunchu", "n_matsuyama_city_iyotetsu_hanazono"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_iyo_tachibana", "nodes": ["n_iyo_tachibana", "n_iyotachibana"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_honmachi_1_chome", "nodes": ["n_honmachi_1_chome", "n_nishihoribata"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_gomenmachi_tosa_kuroshio", "nodes": ["n_gomenmachi_tosa_kuroshio", "n_gomenmachi_tosaden_kotsu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kami_ita", "nodes": ["n_kami_ita", "n_kamiita"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_senri_chuo_kita_osaka_kyuko", "nodes": ["n_senri_chuo_kita_osaka_kyuko", "n_senri_chuo_osaka_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nishi_kajima_enshu", "nodes": ["n_nishi_kajima_enshu", "n_nishi_kajima_tenryu_hamanako"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_mikawa_toyota", "nodes": ["n_mikawa_toyota", "n_toyotajidoshamae"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_maruoka", "nodes": ["n_maruoka", "n_maruoka_maruoka"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_daishoji_hokuriku", "nodes": ["n_daishoji_hokuriku", "n_daishoji_ir_ishikawa"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_iburihashi", "nodes": ["n_iburihashi", "n_shin_iburihashi"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_iburihashi", "nodes": ["n_iburihashi", "n_iburihashi_katayamazu", "n_shin_iburihashi"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_nomineagari", "nodes": ["n_nomineagari", "n_shin_terai"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_isurugi", "nodes": ["n_isurugi", "n_isurugi_kaetsuno"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_seki_meitetsu", "nodes": ["n_seki_meitetsu", "n_seki_nagaragawa"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_noguchi", "nodes": ["n_noguchi", "n_noguchi_befu"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_misawa_aoimori", "nodes": ["n_misawa_aoimori", "n_misawa_towada_kanko"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_nonai_aoimori_aoimori_railway", "nodes": ["n_nonai_aoimori_aoimori_railway", "n_nonai_aoimori_aoimori_railway_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_nonai_aoimori_aoimori_railway", "nodes": ["n_nonai_aoimori_aoimori_railway", "n_nonai_aoimori_aoimori_railway_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_orikasa", "nodes": ["n_orikasa", "n_orikasa_sanriku"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_aizukogen_ozeguchi_aizu", "nodes": ["n_aizukogen_ozeguchi_aizu", "n_aizukogen_ozeguchi_yagan"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kazusa_nakano_isumi", "nodes": ["n_kazusa_nakano_isumi", "n_kazusa_nakano_kominato"], "source": ["station_database", "proximity_300m"], "verified": false}
@@ -589,7 +643,8 @@
 - {"id": "hub_ariake_yurikamome", "nodes": ["n_ariake_yurikamome", "n_kokusai_tenjijo"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_tennozu_isle_tokyo_monorail", "nodes": ["n_tennozu_isle_tokyo_monorail", "n_tennozu_isle_tokyo_waterfront_area_rapid_transit"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_matsumori_meitetsu", "nodes": ["n_matsumori_meitetsu", "n_matsumori_nagaragawa"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_kannoura_asa_seaside_asato", "nodes": ["n_kannoura_asa_seaside_asato", "n_kannoura_asa_seaside_asato_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kannoura_asa_seaside_asato", "nodes": ["n_kannoura_asa_seaside_asato", "n_kannoura_asa_seaside_asato_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yakusa_aichi_loop", "nodes": ["n_yakusa_aichi_loop", "n_yakusa_aichi_rapid_transit"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_enoshima", "nodes": ["n_enoshima", "n_shonan_enoshima"], "source": ["station_database", "proximity_300m"], "verified": false}
-- {"id": "hub_osadakoen_oita_transportation_yabakei", "nodes": ["n_osadakoen_oita_transportation_yabakei", "n_osadakoen_oita_transportation_yabakei_b"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_osadakoen_oita_transportation_yabakei", "nodes": ["n_osadakoen_oita_transportation_yabakei", "n_osadakoen_oita_transportation_yabakei_old"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_kaseda_kagoshima_kotsu", "nodes": ["n_kaseda_kagoshima_kotsu", "n_kaseda_nansatsu"], "source": ["station_database", "proximity_300m"], "verified": false}

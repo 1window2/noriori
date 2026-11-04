@@ -9,25 +9,12 @@ import json,os,re,sqlite3,sys,unicodedata
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'tools'))
 from en_rules import hepburn,load_fix
+from lib import HT,source_on
 
 # 운전 계통은 표가 짧아 손으로 적는다
-SERVICES={
-    's_yamanote_loop':'Yamanote Line (Loop)','s_chuo_rapid':'Chuo Line (Rapid)','s_chuo_sobu_local':'Chuo-Sobu Line (Local)',
-    's_keihin_tohoku':'Keihin-Tohoku Line','s_saikyo':'Saikyo Line','s_yokosuka':'Yokosuka Line',
-    's_joban_rapid':'Joban Line (Rapid)','s_ueno_tokyo':'Ueno-Tokyo Line','s_shonan_shinjuku_ty':'Shonan-Shinjuku Line (Tokaido)',
-    's_shonan_shinjuku_ys':'Shonan-Shinjuku Line (Yokosuka)','s_jr_kyoto':'JR Kyoto Line','s_jr_kobe':'JR Kobe Line',
-    's_biwako':'Biwako Line','s_osaka_loop':'Osaka Loop Line','s_yamagata_shinkansen':'Yamagata Shinkansen',
-    's_akita_shinkansen':'Akita Shinkansen','s_meijo_loop':'Meijo Line (Loop)',
-}
+SERVICES=HT['SERVICES']
 # Wikidata에서 찾지 못한 사업자
-OPERATORS={
-    'JR東日本':'JR East','JR東海':'JR Central','JR西日本':'JR West','JR北海道':'JR Hokkaido','JR九州':'JR Kyushu','JR四国':'JR Shikoku',
-    'JR貨物':'JR Freight','上田電鉄':'Ueda Electric Railway','万葉線':'Manyosen','小湊鉄道':'Kominato Railway',
-    '京都丹後鉄道（WILLER TRAINS）':'Kyoto Tango Railway (Willer Trains)','京福電気鉄道':'Keifuku Electric Railroad',
-    '別府鉄道':'Befu Railway','大夕張鉄道':'Oyubari Railway','同和鉱業':'Dowa Mining','頸城鉄道':'Kubiki Railway',
-    '野上電気鉄道':'Nogami Electric Railway','北丹鉄道':'Hokutan Railway','備南電気鉄道':'Binan Electric Railway',
-    '南部縦貫鉄道':'Nambu Jukan Railway',
-}
+OPERATORS=HT['OPERATORS']
 # 노선 읽기 앞에 붙는 회사 약칭. 일본어 이름에는 없고 읽기에만 있어 뗀다
 PREFIXES={'さんりくてつどう':'三陸鉄道','さんようでんてつ':'山陽電鉄','とうきょうめとろ':'東京メトロ','とえいとでん':'都営','とえい':'都営','にしてつ':'西鉄',
           'けいせい':'京成','めいてつ':'名鉄','きんてつ':'近鉄','せいぶ':'西武','けいおう':'京王','かんでん':'関電','とうぶ':'東武','おだきゅう':'小田急',
@@ -35,30 +22,7 @@ PREFIXES={'さんりくてつどう':'三陸鉄道','さんようでんてつ':'
           'しんてつ':'神鉄','りゅうてつ':'流鉄','いせ':'伊勢','みずま':'水間'}
 GENERIC=re.compile('^(でんきてつどう|ちほうてつどう|てつどう|でんてつ|でんきこうつう|でんこうつう|こうつう|でんき|しでん|しえいちかてつ|しちかてつ)')
 # 읽기가 없는 노선. 노면전차 계통과 연락선이 대부분이다
-READINGS={
-    'つくばエクスプレス線':'Tsukuba Express Line','ディズニーリゾートライン':'Disney Resort Line','ポートアイランド線':'Port Island Line',
-    '六甲ケーブル線':'Rokko Cable Line','摩耶ケーブル線':'Maya Cable Line','妙見の森ケーブル':'Myokennomori Cable','ケーブルカー':'Cable Car',
-    '鋼索線':'Cable Line','鉄道線':'Railway Line','本線':'Main Line','1号線':'Line 1','2号線':'Line 2','3号線':'Line 3','4号線':'Line 4',
-    '金沢シーサイド線':'Kanazawa Seaside Line','東京臨海新交通臨海線':'Yurikamome Line','無軌条電車':'Trolleybus','成田空港線':'Narita Airport Line',
-    '幹線':'Trunk Line','丸ノ内線方南町支線':'Marunouchi Line Honancho Branch','夕張線登川支線':'Yubari Line Noborikawa Branch',
-    '名城線・名港線':'Meijo-Meiko Line','1条線・山鼻線・山鼻西線・都心線':'Sapporo Streetcar','天神大牟田線':'Tenjin-Omuta Line',
-    '国際文化公園都市線':'Kokusai Bunka Koen Toshi Line','西九州線':'Nishi-Kyushu Line','秋田内陸線':'Akita Nairiku Line',
-    '西神延伸線':'Seishin Extension Line','広島短距離交通瀬野線':'Seno Line','上野懸垂線':'Ueno Suspended Line',
-    '鞍馬山鋼索鉄道線':'Kuramayama Cable Line','東山本線':'Higashiyama Main Line','南越線':'Nan-Etsu Line','荒川線':'Arakawa Line',
-    '上滝線':'Kamidaki Line','立山線':'Tateyama Line','八日市線':'Yokaichi Line','多賀線':'Taga Line','上高地線':'Kamikochi Line',
-    '湊線':'Minato Line','阿佐東線':'Asato Line','山代線':'Yamashiro Line','田園都市線':'Den-en-toshi Line',
-    'モンキーパークモノレール線':'Monkey Park Monorail','秩父鉄道連絡線':'Chichibu Railway Connecting Line','北しなの線':'Kita-Shinano Line',
-    '半蔵門線直通':'Hanzomon Line Through Service','松田連絡線':'Matsuda Connecting Line','鵜沼連絡線':'Unuma Connecting Line',
-    '新ノ口連絡線':'Ninokuchi Connecting Line','宝来・谷地頭線':'Horai-Yachigashira Line','大森線':'Omori Line',
-    '湯の川線':'Yunokawa Line','水前寺線':'Suizenji Line','健軍線':'Kengun Line','上熊本線':'Kami-Kumamoto Line',
-    '田崎線':'Tasaki Line','第一期線':'First Phase Line','第二期線':'Second Phase Line','谷山線':'Taniyama Line',
-    '唐湊線':'Toso Line','軌道線本線':'Tramway Main Line','軌道線支線':'Tramway Branch Line','軌道線安野屋線':'Tramway Yasunoya Line',
-    '軌道線呉羽線':'Tramway Kureha Line','軌道線富山都心線':'Tramway Toyama City Center Line',
-    '軌道線富山駅南北接続線':'Tramway Toyama Station North-South Link','江波線':'Eba Line','横川線':'Yokogawa Line',
-    '皆実線':'Minami Line','白島線':'Hakushima Line','循環線':'Loop Line','宮島線':'Miyajima Line','城北線':'Johoku Line',
-    '城南線':'Jonan Line','本町線':'Honmachi Line','大手町線':'Otemachi Line','花園線':'Hanazono Line','赤迫支線':'Akasako Branch Line',
-    '桜町支線':'Sakuramachi Branch Line','大浦支線':'Oura Branch Line','蛍茶屋支線':'Hotarujaya Branch Line',
-}
+READINGS=HT['READINGS']
 # 일반명사뿐인 이름. 회사 약칭(en_fix.json의 operator_short)을 붙인다
 GENERIC_NAMES=('Main Line','Airport Line','Line 1','Line 2')
 LINE_ENDS=(('新幹線','しんかんせん','Shinkansen'),('本線','ほんせん','Main Line'),('支線','しせん','Branch Line'),
@@ -160,7 +124,9 @@ def check(rows):
     if bad:sys.exit('영어 이름 규칙 위반: '+', '.join(bad))
 
 def main():
-    labels=json.load(open(os.path.join(ROOT,'data','overrides','wikidata_labels.json'),encoding='utf-8'))
+    # 출처 스위치에서 Wikidata를 끄면 라벨을 쓰지 않는다 (data/sources.json)
+    on=json.load(open(os.path.join(ROOT,'data','sources.json'),encoding='utf-8'))['sources']['wikidata']['on']
+    labels=json.load(open(os.path.join(ROOT,'data','overrides','wikidata_labels.json'),encoding='utf-8')) if on else {}
     fix=load_fix()
     dry='--dry' in sys.argv
     src=os.path.join(ROOT,'data','source','names','names.yaml')

@@ -181,7 +181,7 @@ void main() {
     });
 
     test('기준일보다 이른 날짜는 날짜 모름이다', () {
-      final result = resolver.record('r', 'b', 'c', date: day('1960-01-01'));
+      final result = resolver.record('r', 'b', 'c', date: day('1949-12-31'));
       expect(result.demoted, isTrue);
     });
   });
@@ -412,6 +412,20 @@ void main() {
       expect(derived.nodes.first.role, NodeRole.alighted);
     });
 
+    test('그날 탈 수 없는 날짜를 가리고 기준일 이전은 기록 범위 밖이라 가리지 않는다', () {
+      final interpreter = RideInterpreter(network);
+      // b-c는 2020년부터 운휴다 (DESIGN §2.8 J)
+      expect(interpreter.unridable(ride(date: '2021-01-01')), isTrue);
+      expect(interpreter.unridable(ride(date: '2010-01-01')), isFalse);
+      // 범위 날짜는 영업 기간과 겹치면 탈 수 있다
+      expect(interpreter.unridable(ride(date: '2019-XX-XX')), isFalse);
+      expect(interpreter.unridable(ride(date: '201X-XX-XX')), isFalse);
+      expect(interpreter.unridable(ride(date: '1949-12-31')), isFalse);
+      expect(interpreter.unridable(ride()), isFalse);
+      // 재해석은 묻지 않고 날짜 모름으로 둔다
+      expect(interpreter.ride(ride(date: '2021-01-01')).date, isNull);
+    });
+
     test('방향 없는 닫힌 계통은 재해석에서 답을 기다리고 모름은 공통 구간만 준다', () {
       Ride ride({bool unknown = false, String? direction}) => Ride(
             rideId: const RideId('r'),
@@ -530,6 +544,11 @@ void main() {
       expect(late.effectiveHi, '1999-12-31');
       final early = RideInterpreter(closed).ride(on('1990-01-01'));
       expect(early.date, '1990-01-01');
+      // 저장과 날짜 수정은 정차하지 않는 역을 막는다. 범위 날짜에서 유효 범위가 비어도 같다
+      expect(RideInterpreter(closed).unridable(on('2010-01-01')), isTrue);
+      expect(RideInterpreter(closed).unridable(on('200X-XX-XX')), isTrue);
+      expect(RideInterpreter(closed).unridable(on('199X-XX-XX')), isFalse);
+      expect(RideInterpreter(closed).unridable(on('1990-01-01')), isFalse);
     });
 
     test('분모 밖 구간은 저장 전 값에 나오지 않는다', () {
@@ -627,7 +646,7 @@ void main() {
         createdAt: 0,
         updatedAt: 1,
         deviceId: 'd',
-        dateInput: '1960-01-01',
+        dateInput: '1949-12-31',
       );
       final derived = RideInterpreter(network).visit(visit);
       expect(derived.groupId, 'g-a');

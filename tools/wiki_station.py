@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
-# 역 문서의 {{駅情報}}에서 사업자별 개업일·폐지일·읽기를 모은다. 결과: data/imports/wiki_station.json
+# 역 문서의 {{駅情報}}에서 사업자별 개업일·폐지일·읽기를 모은다. 결과: data/imports/wiki/station.json
 # 전문을 읽어 인포박스 블록과 연혁 줄을 남긴다. 각주 틀은 지운다
 import sys,os,re,json,time,urllib.parse,urllib.request,urllib.error
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
 UA={'User-Agent':'noriori-data/0.1 (personal open-source rail record app; low rate)'}
 API='https://ja.wikipedia.org/w/api.php'
-OUT=os.path.join(IMP,'wiki_station.json')
+OUT=os.path.join(IMP,'wiki','station.json')
 # 다시 받을 때는 파일을 지우고 돌린다
 D=json.load(open(OUT,encoding='utf-8')) if os.path.exists(OUT) else {}
 def save():json.dump(D,open(OUT,'w',encoding='utf-8'),ensure_ascii=False,indent=0)

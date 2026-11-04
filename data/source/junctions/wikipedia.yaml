@@ -270,6 +270,7 @@
 - {"line": "l_dosan_line", "other": "l_tokushima_line", "at": "n_tsukuda_dosan", "source": "wikipedia:111124356", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_kagoshima_main_line", "other": "l_sanyo_main_line", "at": "n_moji", "source": "wikipedia:111169723", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_kagoshima_main_line", "other": "l_nippo_main_line", "at": "n_nishi_kokura", "source": "wikipedia:111169723", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_kagoshima_main_line", "other": "l_ashiya_line", "at": "n_ongagawa", "source": "wikipedia:111169723", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_kagoshima_main_line", "other": "l_muroki_line", "at": "n_ongagawa", "source": "wikipedia:111169723", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_kagoshima_main_line", "other": "l_kashii_line", "at": "n_kashii", "source": "wikipedia:111169723", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_kagoshima_main_line", "other": "l_sasaguri_line", "at": "n_yoshizuka", "source": "wikipedia:111169723", "verified": false, "valid": [null, "ongoing"], "side": "up"}
@@ -402,6 +403,7 @@
 - {"line": "l_nikko_line_tobu", "other": "l_isesaki_line", "at": "n_tobu_dobutsu_koen", "source": "wikipedia:111096124", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_nikko_line_tobu", "other": "l_utsunomiya_line", "at": "n_shin_tochigi", "source": "wikipedia:111096124", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_nikko_line_tobu", "other": "l_kinugawa_line", "at": "n_shimo_imaichi", "source": "wikipedia:111096124", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_kinugawa_line", "other": "l_yaita_line", "at": "n_shin_takatoku", "source": "wikipedia:111044830", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_utsunomiya_line", "other": "l_nikko_line_tobu", "at": "n_shin_tochigi", "source": "wikipedia:111355508", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tojo_main_line", "other": "l_ogose_line", "at": "n_sakado_tobu", "source": "wikipedia:111367697", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_ikebukuro_line", "other": "l_shinjuku_line_seibu", "at": "n_tokorozawa", "source": "wikipedia:111500033", "verified": false, "valid": [null, "ongoing"], "side": "up"}
@@ -463,11 +465,15 @@
 - {"line": "l_fukutoshin_line", "other": "l_yurakucho_line", "at": "n_ikebukuro_tokyo_metro", "source": "wikipedia:111385037", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_nagoya_main_line", "other": "l_nishio_line", "at": "n_shin_anjo", "source": "wikipedia:110530063", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_nagoya_main_line", "other": "l_bisai_line", "at": "n_meitetsu_ichinomiya", "source": "wikipedia:110530063", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_nishio_line", "other": "l_heisaka_branch_line", "at": "n_nishio", "source": "wikipedia:110631706", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_mikawa_line", "other": "l_toyota_line", "at": "n_umetsubo", "source": "wikipedia:111573127", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_mikawa_line", "other": "l_koromo_line", "at": "n_uwagoromo", "source": "wikipedia:111573127", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_toyota_line", "other": "l_mikawa_line", "at": "n_umetsubo", "source": "wikipedia:109783176", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_gamagori_line", "other": "l_nishio_line", "at": "n_kira_yoshida", "source": "wikipedia:110580493", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tokoname_line", "other": "l_kowa_line", "at": "n_otagawa", "source": "wikipedia:109908654", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_kowa_line", "other": "l_chita_new_line", "at": "n_fuki", "source": "wikipedia:110213891", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_komaki_line", "other": "l_iwakura_branch_line", "at": "n_komaki_meitetsu", "source": "wikipedia:108883804", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_inuyama_line", "other": "l_iwakura_branch_line", "at": "n_iwakura_meitetsu", "source": "wikipedia:111188095", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_inuyama_line", "other": "l_unuma_connecting_line", "at": "n_shin_unuma", "source": "wikipedia:111188095", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_hiromi_line", "other": "l_yaotsu_line", "at": "n_akechi_meitetsu", "source": "wikipedia:110535786", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tsushima_line", "other": "l_nagoya_main_line", "at": "n_sukaguchi", "source": "wikipedia:110064748", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -563,7 +569,10 @@
 - {"line": "l_yamanaka_line", "other": "l_yamashiro_line", "at": "n_kawaminami_hokuriku", "source": "wikipedia:106808932", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_ibi_line", "other": "l_tanigumi_line", "at": "n_kurono_meitetsu", "source": "wikipedia:105491115", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_minomachi_line", "other": "l_tagami_line", "at": "n_keirinjo_mae", "source": "wikipedia:108797585", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_makurazaki_line", "other": "l_chiran_line", "at": "n_ata", "source": "wikipedia:108274748", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tagami_line", "other": "l_kakamigahara_line", "at": "n_tagami_meitetsu", "source": "wikipedia:100539875", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_ichinomiya_line", "other": "l_iwakura_branch_line", "at": "n_iwakura_meitetsu", "source": "wikipedia:109554637", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_kato_line", "other": "l_nagano_line_nagano", "at": "n_shinshunakano", "source": "wikipedia:109795657", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_abukuma_express_line", "other": "l_marumori_line", "at": "n_tsukinoki", "source": "wikipedia:111170784", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_marumori_line", "other": "l_abukuma_express_line", "at": "n_tsukinoki", "source": "wikipedia:111170784", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_ainokaze_toyama_railway_line", "other": "l_nihonkai_hisui_line", "at": "n_ichiburi", "source": "wikipedia:111392106", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -612,6 +621,8 @@
 - {"line": "l_watarase_keikoku_line", "other": "l_ashio_line", "at": "n_kiryu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_ashio_line", "other": "l_watarase_keikoku_line", "at": "n_mato", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_watarase_keikoku_line", "other": "l_ashio_line", "at": "n_mato", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_ashiya_line", "other": "l_muroki_line", "at": "n_ongagawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_muroki_line", "other": "l_ashiya_line", "at": "n_ongagawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_banetsu_east_line", "other": "l_banetsu_west_line", "at": "n_koriyama_banetsu_west", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_banetsu_west_line", "other": "l_banetsu_east_line", "at": "n_koriyama_banetsu_west", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_banetsu_west_line", "other": "l_uetsu_main_line", "at": "n_niitsu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -714,6 +725,8 @@
 - {"line": "l_kaizuka_line", "other": "l_hakozaki_line", "at": "n_kaizuka_nishi_nippon", "source": "wikipedia:111160311", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_hakushin_line", "other": "l_shinetsu_main_line", "at": "n_niigata", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_shinetsu_main_line", "other": "l_hakushin_line", "at": "n_niigata", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_hanaoka_line", "other": "l_kosaka_line", "at": "n_odate_hanaoka", "source": "wikipedia:108597698", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_kosaka_line", "other": "l_hanaoka_line", "at": "n_odate_kosaka", "source": "wikipedia:108597698", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_hanshin_main_line", "other": "l_kobe_kosoku_line_hanshin", "at": "n_motomachi_hanshin", "source": "wikipedia:111454992", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_kobe_kosoku_line_hanshin", "other": "l_hanshin_main_line", "at": "n_motomachi_hanshin", "source": "wikipedia:111454992", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_hanshin_main_line", "other": "l_kobe_kosoku_line_sanyo", "at": "n_motomachi_hanshin", "source": "wikipedia:111454992", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -1000,6 +1013,8 @@
 - {"line": "l_sasebo_line", "other": "l_nishi_kyushu_line", "at": "n_sasebo", "source": "wikipedia:110495488", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_nishiurawa_branch_line", "other": "l_omiya_branch_line", "at": "n_yono", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_omiya_branch_line", "other": "l_nishiurawa_branch_line", "at": "n_yono", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_noguchi_line", "other": "l_tsuchiyama_line", "at": "n_befuko", "source": "wikipedia:107332470", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_tsuchiyama_line", "other": "l_noguchi_line", "at": "n_befuko", "source": "wikipedia:107332470", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_noto_line", "other": "l_noto_line_noto", "at": "n_anamizu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_noto_line_noto", "other": "l_noto_line", "at": "n_anamizu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_noto_line", "other": "l_noto_line_noto", "at": "n_takojima", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}

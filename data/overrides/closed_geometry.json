@@ -1,0 +1,382 @@
+{
+"l_dachi_line|n_tokishi_tono|n_shintokitsu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 28m. 길이 0.66km, 영업km 0.7"
+},
+"l_hitachi_electric_railway_line|n_johoku_ota|n_ozawa": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 9m. 길이 1.42km, 영업km 1.5"
+},
+"l_hokutan_railway|n_gujo_hokutan|n_tadehara": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 58m. 길이 1.79km, 영업km 1.7"
+},
+"l_horonai_line|n_horonai_sumiyoshi|n_horonai": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 13m. 길이 1.42km, 영업km 1.5"
+},
+"l_horonai_line|n_mikasa|n_horonai_sumiyoshi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 10m. 길이 1.22km, 영업km 1.2"
+},
+"l_ibi_line|n_kiyomizu|n_hon_ibi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 85m. 길이 2.18km, 영업km 2.2"
+},
+"l_ise_line|n_minami_yokkaichi|n_kawarada": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 34m. 길이 3.69km, 영업km 3.7"
+},
+"l_kabe_line|n_kabe_kabe|n_kodo_kabe": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 2m. 길이 1.30km, 영업km 1.3"
+},
+"l_kamiyamada_line|n_iizuka|n_hiratsune": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 91%가 100m 안, 가장 먼 점 132m. 길이 1.44km, 영업km 1.5"
+},
+"l_kanden_tunnel_trolleybus|n_ogizawa|n_kurobe_dam": {
+"src": "15",
+"by": "hand",
+"why": "N02 2015판의 関西電力 무궤조 전차 선로. N02에서 노선 이름이 사업자 이름(関西電力)이라 이름 대조로는 잡히지 않는다"
+},
+"l_kashima_rinko_line|n_igiri|n_kashima_konan": {
+"src": "osm",
+"by": "hand",
+"why": "여객 영업만 끝났고 선로는 鹿島臨海鉄道 화물선으로 남아 있다. OSM의 현행 화물 선로"
+},
+"l_kashima_rinko_line|n_kashima_soccer_stadium_kashima_rinkai|n_igiri": {
+"src": "osm",
+"by": "hand",
+"why": "여객 영업만 끝났고 선로는 鹿島臨海鉄道 화물선으로 남아 있다. OSM의 현행 화물 선로"
+},
+"l_katamachi_line|n_kyobashi|n_katamachi_katamachi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 12m. 길이 0.51km, 영업km 0.5"
+},
+"l_kimmei_line|n_dainichigawa|n_shimono": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 25m. 길이 0.75km, 영업km 0.8"
+},
+"l_kimmei_line|n_hattori_hokuriku|n_kaga_kawai": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 13m. 길이 0.58km, 영업km 0.8"
+},
+"l_kimmei_line|n_hirose_hokuriku|n_segino": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 8m. 길이 1.41km, 영업km 1.5"
+},
+"l_kimmei_line|n_kaga_kawai|n_dainichigawa": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 21m. 길이 0.87km, 영업km 0.8"
+},
+"l_kimmei_line|n_kamashimizu|n_shimoyoshitani": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 21m. 길이 2.82km, 영업km 2.9"
+},
+"l_kimmei_line|n_mitsuyano|n_hakusanshita": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 14m. 길이 1.47km, 영업km 1.5"
+},
+"l_kimmei_line|n_nishisara|n_mitsuyano": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 21m. 길이 1.21km, 영업km 1.2"
+},
+"l_kimmei_line|n_segino|n_hattori_hokuriku": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 6m. 길이 0.64km, 영업km 0.5"
+},
+"l_kimmei_line|n_shimono|n_tedori_onsen": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 13m. 길이 1.12km, 영업km 1.1"
+},
+"l_kimmei_line|n_shimoyoshitani|n_nishisara": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 12m. 길이 1.62km, 영업km 1.6"
+},
+"l_kimmei_line|n_tedori_onsen|n_kamashimizu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 51m. 길이 1.11km, 영업km 1.1"
+},
+"l_kimmei_line|n_tedorinakajima|n_hirose_hokuriku": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 13m. 길이 0.31km, 영업km 0.3"
+},
+"l_kobukuro_line|n_kotake|n_shakano": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 91m. 길이 2.21km, 영업km 2.2"
+},
+"l_kumagaya_line|n_kumagaya_tobu|n_kami_kumagaya_tobu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 43m. 길이 0.81km, 영업km 0.9"
+},
+"l_minomachi_line|n_matsumori_meitetsu|n_mino_meitetsu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 94%가 100m 안, 가장 먼 점 101m. 길이 1.51km, 영업km 1.6"
+},
+"l_mitsui_ashibetsu_railway|n_ashibetsu_mitsui_ashibetsu|n_kokodori": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 49m. 길이 0.66km, 영업km 0.6"
+},
+"l_nanao_line|n_noto_mii|n_noto_ichinose": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 18m. 길이 4.51km, 영업km 5.0"
+},
+"l_nomi_line|n_tsurugi|n_hontsurugi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 10m. 길이 0.32km, 영업km 0.3"
+},
+"l_noto_line_hokuriku|n_amada|n_oshima_hokuriku": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 11m. 길이 2.02km, 영업km 2.0"
+},
+"l_noto_line_hokuriku|n_hakui_hokuriku|n_notoichinomiya": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 39m. 길이 3.21km, 영업km 3.3"
+},
+"l_noto_line_hokuriku|n_horimatsu|n_ozasa_hokuriku": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 20m. 길이 2.28km, 영업km 2.4"
+},
+"l_noto_line_hokuriku|n_konmachi|n_noumi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 22m. 길이 1.45km, 영업km 1.4"
+},
+"l_noto_line_hokuriku|n_notoichinomiya|n_taki_hokuriku": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 10m. 길이 0.83km, 영업km 0.8"
+},
+"l_noto_line_hokuriku|n_nototakahama|n_shikamachi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 28m. 길이 0.80km, 영업km 0.8"
+},
+"l_noto_line_hokuriku|n_noumi|n_sanmyo": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 31m. 길이 2.81km, 영업km 2.8"
+},
+"l_noto_line_hokuriku|n_oshima_hokuriku|n_nototakahama": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 18m. 길이 1.96km, 영업km 2.0"
+},
+"l_noto_line_hokuriku|n_ozasa_hokuriku|n_konmachi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 18m. 길이 2.06km, 영업km 2.1"
+},
+"l_noto_line_hokuriku|n_shibagaki|n_amada": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 11m. 길이 2.21km, 영업km 2.3"
+},
+"l_noto_line_hokuriku|n_shikamachi|n_horimatsu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 43m. 길이 1.43km, 영업km 1.4"
+},
+"l_noto_line_hokuriku|n_taki_hokuriku|n_shibagaki": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 18m. 길이 4.23km, 영업km 4.2"
+},
+"l_sanzan_line|n_kaishu|n_nishikaishu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 6m. 길이 0.86km, 영업km 0.9"
+},
+"l_soeda_line|n_kawara|n_kami_ita": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 12m. 길이 2.54km, 영업km 2.5"
+},
+"l_tagami_line|n_ichinotsubo|n_tagami_meitetsu": {
+"src": "05",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 67m. 길이 0.51km, 영업km 0.5"
+},
+"l_takahata_line|n_ipponyanagi|n_takenomori": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 7m. 길이 1.30km, 영업km 1.4"
+},
+"l_takahata_line|n_nukanome|n_ipponyanagi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 34m. 길이 2.05km, 영업km 2.1"
+},
+"l_takasago_line|n_onoe|n_takasago_kitaguchi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 34m. 길이 2.04km, 영업km 2.0"
+},
+"l_tamano_municipal_electric_railway|n_uno_binan|n_hirokata": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 25m. 길이 0.59km, 영업km 0.7"
+},
+"l_tateyama_tunnel_trolleybus|n_murodo|n_raiden": {
+"src": "20",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 0m. 길이 3.17km, 영업km 3.1"
+},
+"l_tateyama_tunnel_trolleybus|n_raiden|n_daikanbo": {
+"src": "20",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 0m. 길이 0.46km, 영업km 0.6"
+},
+"l_tochio_line|n_hommyo|n_oda_echigo_kotsu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 36m. 길이 1.20km, 영업km 1.3"
+},
+"l_tochio_line|n_kamimitsuke|n_myosho": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 55m. 길이 2.18km, 영업km 2.2"
+},
+"l_tochio_line|n_myosho|n_hommyo": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 26m. 길이 1.63km, 영업km 1.6"
+},
+"l_tochio_line|n_oda_echigo_kotsu|n_kamikitadani": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 20m. 길이 0.84km, 영업km 0.8"
+},
+"l_tsuma_line|n_kurono|n_tsuma": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 33m. 길이 3.45km, 영업km 3.5"
+},
+"l_uchiko_line|n_niiya|n_goro": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 11m. 길이 3.56km, 영업km 3.5"
+},
+"l_yabakei_line|n_domon|n_rakanji": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 45m. 길이 1.58km, 영업km 1.5"
+},
+"l_yabakei_line|n_ebuchi|n_nakama_oita_transportation": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 47m. 길이 1.39km, 영업km 1.6"
+},
+"l_yabakei_line|n_isayama|n_masaka": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 10m. 길이 2.02km, 영업km 2.1"
+},
+"l_yabakei_line|n_kabushino|n_yabakeihirata": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 35m. 길이 2.59km, 영업km 2.6"
+},
+"l_yabakei_line|n_kojo|n_hachimanmae_oita_transportation": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 9m. 길이 0.50km, 영업km 0.6"
+},
+"l_yabakei_line|n_masaka|n_noji": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 11m. 길이 1.03km, 영업km 1.0"
+},
+"l_yabakei_line|n_nakama_oita_transportation|n_shiraji": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 31m. 길이 1.69km, 영업km 1.8"
+},
+"l_yabakei_line|n_noji|n_domon": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 71m. 길이 3.86km, 영업km 3.9"
+},
+"l_yabakei_line|n_osadakoen_oita_transportation_yabakei|n_uenoharu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 9m. 길이 1.16km, 영업km 1.2"
+},
+"l_yabakei_line|n_rakanji|n_kabushino": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 49m. 길이 1.83km, 영업km 1.9"
+},
+"l_yabakei_line|n_shimogo|n_ebuchi": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 54m. 길이 1.54km, 영업km 1.2"
+},
+"l_yabakei_line|n_shiraji|n_uso": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 23m. 길이 0.94km, 영업km 1.0"
+},
+"l_yabakei_line|n_uenoharu|n_isayama": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 6m. 길이 1.09km, 영업km 0.9"
+},
+"l_yabakei_line|n_yabakeihirata|n_tsutami": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 50m. 길이 2.93km, 영업km 3.0"
+},
+"l_yabakei_line|n_yatetsukakisaka|n_shimogo": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 60m. 길이 3.90km, 영업km 3.8"
+},
+"l_yubetsu_railway|n_yutetsu_showa|n_kitazono": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 31m. 길이 1.63km, 영업km 1.3"
+},
+"l_yumo_line|n_higashitomioka|n_kitami_kyoritsu": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 35m. 길이 1.94km, 영업km 2.0"
+},
+"l_yumo_line|n_omagari_yumo|n_abashiri": {
+"src": "osm",
+"by": "n05",
+"why": "N05 대조: 경로 점의 100%가 100m 안, 가장 먼 점 15m. 길이 1.88km, 영업km 1.9"
+}
+}

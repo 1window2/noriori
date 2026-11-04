@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*-
 # 노리츠부시에 없는 옛 폐선(주로 사철 1969-12-08 이후)을 station_database·위키 노선도로 만든다
-# 결과: data/imports/old_lines.json (노리츠부시 표와 같은 모양에 값별 출처 src를 더함), data/candidates/old_report.json
+# 결과: data/imports/stationdb/old_lines.json (노리츠부시 표와 같은 모양에 값별 출처 src를 더함), data/candidates/old_report.json
 import sys,os,re,json,csv,gzip,hashlib,collections
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
 import wparse as w
 os.environ['NW_OFF']='1'
 import conn
+# station_database로 자동으로 만드는 범위. 1950~1969 폐선은 N05와 교차 검증하는 tools/gen_n05.py로만 넣는다 (DESIGN §2.12, §4.6)
+CUT='1969-12-08'
 DB=os.path.join(IMP,'stationdb')
 SD={s['code']:s for s in csv.DictReader(open(DB+'/station.csv',encoding='utf-8'))}
 SL=list(csv.DictReader(open(DB+'/line.csv',encoding='utf-8')))
@@ -94,11 +96,11 @@ def src_of(rec,i,co,stop):
 TRAMRX=re.compile(r'市電|市内線|路面|軌道線|電気軌道|電車線|トロリー|都電|馬車|人車')
 out=[];rep=collections.Counter();arch=[]
 # 표본 대조로 확인한 폐지일. 인포박스 날짜는 다른 사건일 때가 있어 2006년 이후 값은 버린다
-ARCH_CLOSE={'尾小屋鉄道':'1977-03-20','西遠鉄道':'1937-10-06','近鉄伊勢線':'1961-01-22','名鉄平坂支線':'1960-XX-XX'}
+ARCH_CLOSE=HT['ARCH_CLOSE']
 known={}
 for r in N:
     if r.get('cn') and r['g'] in('pr','tm') and str(r['c'])!='9':known[r['cn']]=str(r['c'])
-ALIAS={'東武':'東武鉄道','名鉄':'名古屋鉄道','近鉄':'近畿日本鉄道','西鉄':'西日本鉄道','南海':'南海電気鉄道','京成':'京成電鉄','阪急':'阪急電鉄','阪神':'阪神電気鉄道','京阪':'京阪電気鉄道','小田急':'小田急電鉄','東急':'東急電鉄','富山地鉄':'富山地方鉄道'}
+ALIAS=HT['ALIAS']
 def owner(t,op):
     for a,b in ALIAS.items():
         if t.startswith(a) and b in known:return b,known[b],t[len(a):]
@@ -118,7 +120,7 @@ titles=[]
 for l in SL:
     if l['closed']!='1':continue
     cd=l['closed_date']
-    if cd=='NULL' or cd<'1969-12-08':continue
+    if cd=='NULL' or cd<CUT:continue
     t=re.sub(r'^JR','',re.sub(r'[（(].*?[)）]','',l['name']).strip())
     st=[SD[r['station_code']] for r in sorted(REG[l['code']],key=lambda r:int(r['index'])) if r['station_code'] in SD]
     names=[znorm(s['name']) for s in st]
@@ -163,7 +165,7 @@ for l in SL:
     arch.append(dict(name=t,closed=cd,stations=[x[0] for x in seq],km_missing=miss,revid=(rec or {}).get('revid')))
     rep['archive_line']+=1
 # 폐선 일람에서 온 문서
-olds=json.load(open(os.path.join(IMP,'old_titles.json'),encoding='utf-8'))
+olds=json.load(open(os.path.join(IMP,'wiki','old_titles.json'),encoding='utf-8'))
 seen=set(x['t'] for x in out)|{a['name'] for a in arch}
 for t in olds:
     rec=doc(t)
@@ -196,7 +198,6 @@ hn={h['cn'][:2]+h['name'] for h in HAND}
 arch=[a for a in arch if not any(k in a['name'] for k in('京福電鉄永平寺線','京福電気鉄道永平寺線','名鉄田神線'))]
 # 구간별 이력. 기준일 전에 폐지된 구간은 뺀다
 HIST=json.load(open(os.path.join(ROOT,'data','overrides','old_history.json'),encoding='utf-8'))
-CUT='1969-12-08'
 rep2=collections.Counter()
 for o in out:
     t=o['t'][o['t'].index('【')+1:].rstrip('】')
@@ -251,7 +252,7 @@ for o in out:
     if sv:o['svc']=sv
 out=[o for o in out if not o.get('drop')]
 print('구간 이력',dict(rep2))
-json.dump(out,open(os.path.join(IMP,'old_lines.json'),'w',encoding='utf-8'),ensure_ascii=False)
+json.dump(out,open(os.path.join(IMP,'stationdb','old_lines.json'),'w',encoding='utf-8'),ensure_ascii=False)
 os.makedirs(CAND,exist_ok=True)
 json.dump(dict(stat=rep,archive=arch),open(os.path.join(CAND,'old_report.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 print(dict(rep),[x['t'][8:] for x in out][:20],[a['name'] for a in arch][:20])

@@ -1,7 +1,10 @@
 import 'date_span.dart';
 
 /// 기준일. 법적 폐지일 기준이고 화면에는 쓰지 않는다 (DESIGN §4.6).
-const floorDate = '1969-12-08';
+const floorDate = '1950-01-01';
+
+/// 기준일의 해. 연도별 완주율과 지도의 연도 막대가 여기서 시작한다.
+const floorYear = 1950;
 
 /// 기간에 대한 날짜의 상태. 범위 날짜는 겹치면 탈 수 있고, 다 들어가야 [yes]다.
 enum PeriodState { yes, maybe, before, after, unknown }

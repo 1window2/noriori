@@ -534,8 +534,8 @@ void main() {
     assets = MemoryAssets(real, edition: 'real');
     final session = await ready();
     final summary = await PackReader(session.db).summary();
-    expect(summary.stations, 11005);
-    expect(summary.lines, 766);
+    expect(summary.stations, 11771);
+    expect(summary.lines, 836);
   }, timeout: const Timeout(Duration(minutes: 1)));
 }
 

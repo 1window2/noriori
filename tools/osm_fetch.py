@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 # Overpass API에서 일본 철도 선로를 영역별로 받는다. 받은 값은 신뢰하지 않는 데이터다. python3 -I로 돌린다
-# all.sh와 따로, 원천을 새로 받을 때만 실행한다: python3 -I tools/osm_fetch.py [폴더 이름]
+# all.sh와 따로, 원천을 새로 받을 때만 실행한다: python3 -I tools/osm_fetch.py [railbed] [폴더 이름]
+# railbed: 철도 태그 없이 길로만 그려진 폐선 노반 (예: highway=cycleway, name=○○線廃線跡). 선로 스냅숏과 다른 폴더에 받는다
 # 공개 서비스라 한 번에 하나씩, 간격을 두고 부른다. 실패하면 간격을 늘리고, 그래도 안 되면 영역을 넷으로 나눈다
 import sys,os,json,gzip,time,math,subprocess,tempfile
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
@@ -19,7 +20,19 @@ QUERY='''[out:json][timeout:170][bbox:{s},{w},{n},{e}];
 );
 out tags geom;
 '''
-name=sys.argv[1] if len(sys.argv)>1 else 'overpass-'+AS_OF
+RAILBED='''[out:json][timeout:170][bbox:{s},{w},{n},{e}];
+(
+ way["highway"]["name"~"廃線|線跡|線路跡|鉄道跡|軌道跡|鉄道敷|線敷|旧線|自転車道|サイクリング|遊歩道|緑道|散策路|プロムナード"][!"railway"];
+ way["historic"~"railway"];
+ way["railway:historic"];
+ way["was:railway"];
+);
+out tags geom;
+'''
+args=sys.argv[1:]
+mode='railbed' if args[:1]==['railbed'] else 'track'
+if mode=='railbed':args=args[1:];QUERY=RAILBED
+name=args[0] if args else ('railbed-' if mode=='railbed' else 'overpass-')+AS_OF
 OUT=os.path.join(IMP,'osm',name)
 os.makedirs(OUT,exist_ok=True)
 IDX=os.path.join(OUT,'index.json')

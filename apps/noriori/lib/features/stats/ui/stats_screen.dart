@@ -39,7 +39,7 @@ class StatsScreen extends ConsumerWidget {
               padding: const EdgeInsets.fromLTRB(24, 16, 24, 8),
               child: Text(context.t.stats.yearPick, style: Theme.of(context).textTheme.titleLarge),
             ),
-            for (var year = last; year >= 1970; year--)
+            for (var year = last; year >= floorYear; year--)
               ListTile(
                 title: Text(context.t.stats.yearLabel(year: year)),
                 onTap: () => Navigator.pop(context, year),

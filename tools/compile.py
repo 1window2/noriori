@@ -339,7 +339,7 @@ for a in attr:
 denom=[dict(scope='all',basis='current',carryover='on',km=round(sum(cuniq.values()),1),unit_count=len(cuniq)),
        dict(scope='all',basis='alltime',carryover='on',km=round(alltime['on'],1),unit_count=sum(1 for u in unit_rows if u['carryover']=='on' and u['cls']=='normal')),
        dict(scope='all',basis='alltime',carryover='off',km=round(alltime['off'],1),unit_count=sum(1 for u in unit_rows if u['carryover']=='off' and u['cls']=='normal'))]
-for y in range(1970,int(TODAY[:4])+1):
+for y in range(1950,int(TODAY[:4])+1):   # 기준일의 해부터 (§4.6)
     s={}
     for a in attr:
         if a['denominator_class']=='normal' and overlap_year(a,y):s[(a['lineage_id'],a['edge_id'])]=kms.get(a['edge_id'],0)
@@ -577,10 +577,10 @@ t('node_position',['node_id','lat','lon','quality','checked','source'],[(p['node
 def coverage_of(rid):
     S=route_edges.get(rid,[])
     if not S:return 'none'
-    h=sum(1 for e in S if e['id'] in GEO)
+    h=sum(1 for e in S if e['id'] in DRAWN)
     return 'full' if h==len(S) else ('none' if h==0 else 'partial')
-GEO={g['edge'] for g in load_geo()}
-GEO_ALL={g['edge']:g for g in load('geometry')} # OSM 선형까지. 지도에 선이 있는가를 본다
+# 선 유무와 노선 등급은 출처와 무관하게 본다 (DESIGN §2.11). 배포하는 선형 모양(edge_shape)만 OSM을 뺀다
+GEO_ALL={g['edge']:g for g in load('geometry')}
 DRAWN=set(GEO_ALL)
 t('route',['id primary key','line_id','role','from_node','to_node','via_nodes','closed','closed_from','extend_to','map_coverage'],[(r['id'],r['line'],r.get('role'),r['from'],r['to'],json.dumps(r.get('via',[])),int(bool(r.get('closed'))),r.get('closed_from'),json.dumps(r.get('extend_to',[])),coverage_of(r['id'])) for r in routes.values()])
 t('route_edge',['route_id','seq','edge_id'],[(rid,i,e['id']) for rid,S in route_edges.items() for i,e in enumerate(S)])
@@ -624,9 +624,15 @@ links=_kept
 print('같은 환승 행 합침',_dup)
 t('route_link',['route_id','seq','other_line_id','other_route_id','kind','side','at_edge','other_node','next_stop_node','terminal_node','flow','flow_source','valid_from','valid_to'],[(l['route_id'],l['seq'],l['other_line_id'],l['other_route_id'],l['kind'],l['side'],l['at_edge'],l['other_node'],l['next_stop_node'],l['terminal_node'],l['flow'],l['flow_source'],l['valid_from'],l['valid_to']) for l in links])
 succ={frozenset((e['a'],e['b'])):e['id'] for e in edges.values() if e.get('alt')!='old'}
-t('edge_link',['edge_id','successor_edge_id','kind'],[(e['id'],succ.get(frozenset((e['a'],e['b']))),'relocate') for e in edges.values() if e.get('alt')=='old'])
-geo={g['edge'] for g in load_geo()}
-t('edge',['id primary key','n','from_node','to_node','seed_line','route_only','geometry_quality'],[(e['id'],int(e['id'][2:]),e['a'],e['b'],e.get('seed_line'),e.get('route_only'),'precise' if e['id'] in geo else 'none') for e in edges.values()])
+# 이설로 옮긴 역은 옛 노드와 새 노드가 따로다 (moved.json). 옛 선로의 끝을 새 노드로 바꿔 짝을 찾는다
+NEWOF={mv['old']:mv['new'] for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))}
+t('edge_link',['edge_id','successor_edge_id','kind'],[(e['id'],succ.get(frozenset((NEWOF.get(e['a'],e['a']),NEWOF.get(e['b'],e['b'])))),'relocate') for e in edges.values() if e.get('alt')=='old'])
+def geo_source(eid):
+    g=GEO_ALL.get(eid)
+    if not g:return None
+    s=g.get('source') or ''
+    return 'osm' if s=='osm' else ('n05' if s.startswith('N05') else 'n02')
+t('edge',['id primary key','n','from_node','to_node','seed_line','route_only','geometry_quality','geometry_source'],[(e['id'],int(e['id'][2:]),e['a'],e['b'],e.get('seed_line'),e.get('route_only'),'precise' if e['id'] in GEO_ALL else 'none',geo_source(e['id'])) for e in edges.values()])
 t('edge_life',['edge_id','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi','status','last_service','legal_abolition','close_reason'],[(r['edge_id'],)+per(0,r['valid_from'])+per(0,r['valid_to'])+(r['status'],r['last_service'],r['legal_abolition'],r['close_reason']) for r in life])
 t('edge_km',['edge_id','km','m'],[(k,v,round(v*1000)) for k,v in kms.items()])
 t('edge_attr',['edge_id','line_id','operator_id','lineage_id','carryover_group','denominator_class','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],[(a['edge_id'],a['line_id'],a['operator_id'],a['lineage_id'],a['carryover_group'],a['denominator_class'])+per(0,a['valid_from'])+per(0,a['valid_to']) for a in attr])
@@ -733,6 +739,8 @@ for l in lines:
     grade='지도 표시' if cc and all(x=='full' for x in cc) else '기록 가능'
     cov.append((l,grade,json.dumps(cc)))
 t('coverage',['line_id','grade','routes'],cov)
+# 역 이전: 선로 위 km가 바뀐 역의 옛·새 노드 (DESIGN §2.2, §14.1)
+t('node_move',['old_node','new_node','moved_on'],[(mv['old'],mv['new'],mv['date']) for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))])
 t('id_redirect',['entity_type','old_id','context_line','new_ids','dataset_version'],[])
 db.execute('create view node_public as select * from node where id in (select node_id from route_stop where is_stop=1)')
 for ix in ('route_stop(route_id,seq)','route_stop(node_id)','edge_attr(edge_id)','edge_attr(line_id)','route_link(route_id,seq)','route_edge(route_id)','route(line_id)','denominator_unit(carryover,unit_key)','edge_life(edge_id)','route_link(other_line_id)','edge_pref(edge_id)','edge_km(edge_id)','route_edge(edge_id)','node(group_id)','edge(n)','denominator_unit(n)'):

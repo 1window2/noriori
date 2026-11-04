@@ -8,6 +8,7 @@ import '../../../app/widgets/load_error.dart';
 import '../../../app/widgets/undo_snack.dart';
 import '../../../i18n/strings.g.dart';
 import '../controller/record_list_controller.dart';
+import 'session_date.dart' show showUnridable;
 import 'session_save_bar.dart' show relocationLabel;
 
 /// 기록 수정과 재해석 답변 (ARCHITECTURE §2.3 `/record/:rideId`).
@@ -126,6 +127,7 @@ class _FormState extends ConsumerState<_Form> {
     final router = GoRouter.of(context);
     final t = context.t.editRide;
     final saved = t.saved;
+    final refused = t.unridable;
     final undo = context.t.record.undo;
     try {
       final ride = widget.ride;
@@ -147,6 +149,15 @@ class _FormState extends ConsumerState<_Form> {
           asOf: answer.asOf,
           unknown: answer.unknown,
         );
+      }
+      // 날짜를 바꿔 그날 탈 수 없게 되면 고치지 않고 원래 날짜로 돌린다 (DESIGN §2.8 J)
+      if (date != ride.dateInput && RideInterpreter(ref.read(networkProvider)).unridable(after)) {
+        setState(() {
+          _saving = false;
+          _date.text = ride.dateInput?.replaceAll('-XX', '') ?? '';
+        });
+        await showUnridable(context, refused);
+        return;
       }
       final change = await commands.save(ride, after);
       if (mounted) router.pop();

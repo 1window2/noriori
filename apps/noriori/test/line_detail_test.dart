@@ -879,7 +879,7 @@ void main() {
     final once = state.legs!.length ~/ 2;
     expect(once, greaterThanOrEqualTo(3));
     expect((state.meters! / 1000).round(), closeTo(69, 2), reason: '일주 34.5km를 두 번');
-    final saved = (await tester.runAsync(notifier.save))!;
+    final saved = (await tester.runAsync(notifier.save))! as ServiceSaved;
     final ride = saved.change.after.single as Ride;
     expect(ride.serviceId?.value, 's_yamanote_loop');
     await tester.runAsync(
@@ -891,6 +891,25 @@ void main() {
     expect(state.open, isEmpty, reason: '2015년 개통 전이다');
     notifier.tap(state.stops.first);
     expect(container.read(serviceSessionProvider).from, isNull);
+    // 고른 구간을 그날 탈 수 없으면 날짜를 바꾸지 않는다. 고른 역과 원래 날짜는 그대로다 (DESIGN §8.0.1)
+    notifier.setDate(null);
+    state = container.read(serviceSessionProvider);
+    notifier
+      ..tap(state.stops.first)
+      ..tap(state.stops.last);
+    final picked = container.read(serviceSessionProvider);
+    expect(picked.legs, isNotNull);
+    expect(notifier.setDate('2000-01-01'), isTrue);
+    state = container.read(serviceSessionProvider);
+    expect(state.dateInput, isNull);
+    expect(state.from?.node, picked.from?.node);
+    expect(state.to?.node, picked.to?.node);
+    expect(state.legs, isNotNull);
+    // 기준일 이전은 기록 범위 밖이라 받고, 날짜 모름처럼 모든 역을 고를 수 있다
+    expect(notifier.setDate('1949-05-05'), isFalse);
+    state = container.read(serviceSessionProvider);
+    expect(state.dateInput, '1949-05-05');
+    expect(state.to?.node, picked.to?.node);
   });
 
   testWidgets('분기로 넘어가면 고른 역이 지워지고 뒤로 가면 직전 노선으로 돌아온다', skip: _skip != null, (tester) async {
