@@ -32,8 +32,14 @@ class _RestoreScreenState extends ConsumerState<RestoreScreen> {
 
   Future<void> _reload() async {
     final controller = ref.read(backupControllerProvider.notifier);
-    final files = await controller.candidates();
-    if (mounted) setState(() => _files = files);
+    try {
+      final files = await controller.candidates();
+      if (mounted) setState(() => _files = files);
+    } on Object catch (e) {
+      // 폴더 권한을 잃으면 목록을 읽지 못한다. 비어 있다고 보여 주지 않고 폴더를 다시 고르게 한다
+      debugPrint('백업 목록 실패: $e');
+      if (mounted) _say(context.t.data.notice.folderLost);
+    }
   }
 
   Future<void> _work(Future<void> Function() job) async {
@@ -58,30 +64,31 @@ class _RestoreScreenState extends ConsumerState<RestoreScreen> {
         await _reload();
       });
 
+  /// 병합 결과 한 줄.
+  String _result(RestoreOutcome outcome) {
+    final t = context.t.data;
+    return switch (outcome) {
+      RestoreMerged(:final taken) => t.merged(n: taken),
+      RestoreRefused() => t.refused,
+    };
+  }
+
   Future<void> _merge(BackupCandidate file) => _work(() async {
-        final t = context.t.data;
         final outcome = await ref.read(backupControllerProvider.notifier).restore(file.name);
         if (!mounted) return;
-        _say(switch (outcome) {
-          RestoreMerged(:final taken) => t.merged(n: taken),
-          RestoreRefused() => t.refused,
-        });
+        _say(_result(outcome));
         await _reload();
       });
 
   /// 폴더가 없어도 공유로 받은 백업을 고를 수 있다.
   Future<void> _pickFile() => _work(() async {
-        final t = context.t.data;
         final picked = await const ChannelFilePick().pick();
         if (picked == null) return;
         final outcome = await ref
             .read(backupControllerProvider.notifier)
             .restoreFile(picked.name, utf8.decode(picked.bytes, allowMalformed: true));
         if (!mounted) return;
-        _say(switch (outcome) {
-          RestoreMerged(:final taken) => t.merged(n: taken),
-          RestoreRefused() => t.refused,
-        });
+        _say(_result(outcome));
       });
 
   Future<void> _export() => _work(() async {

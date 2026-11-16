@@ -62,14 +62,17 @@ final class RideInterpreter implements RecordInterpreter {
     final nodes = <String, NodeRole>{};
     var meters = 0;
     for (final (index, expansion) in expansions.indexed) {
-      meters += expansion.meters ?? 0;
+      // 구간마다 그날 노선의 길이다. 3섹 전환 때 km가 바뀐 구간은 국철·JR 날짜에 옛 km다
+      if (expansion.meters != null) {
+        meters += expansion.legs.fold(0, (sum, leg) => sum + network.metersOf(leg.edges, lineId: leg.lineId));
+      }
       for (final leg in expansion.legs) {
         final seq = legs.length;
         legs.add(LegDerived(
           seq: seq,
           lineId: LineId(leg.lineId),
           routeId: RouteId(leg.routeId),
-          km10: km10(network.metersOf(leg.edges)),
+          km10: km10(network.metersOf(leg.edges, lineId: leg.lineId)),
         ));
         for (final edge in leg.edges) {
           edges.add(EdgeHit(
@@ -152,32 +155,26 @@ final class RideInterpreter implements RecordInterpreter {
       for (final leg in expansion.legs) {
         for (final edge in leg.edges) {
           final rows = network.attrsOf(edge, leg.lineId);
-          if (rows.isEmpty) continue;
-          var end = rows.first.period.toHi ?? DateSpan.maxDate;
-          for (final row in rows.skip(1)) {
-            final to = row.period.toHi ?? DateSpan.maxDate;
-            if (to.compareTo(end) > 0) end = to;
-          }
-          cap(end);
+          if (rows.isNotEmpty) cap(_latestEnd(rows.map((row) => row.period)));
         }
       }
     }
     for (final stops in _endStops(ride, expansions)) {
-      var end = stops.first.period.toHi ?? DateSpan.maxDate;
-      for (final stop in stops.skip(1)) {
-        final to = stop.period.toHi ?? DateSpan.maxDate;
-        if (to.compareTo(end) > 0) end = to;
-      }
-      cap(end);
+      cap(_latestEnd(stops.map((stop) => stop.period)));
     }
     return hi;
   }
 
-  /// 입력한 날에 아직 개업하지 않은 승하차역이 있는가.
+  /// 기간들 가운데 가장 늦은 끝. 끝이 없는 기간은 영업 중이다.
+  String _latestEnd(Iterable<NetPeriod> periods) => periods
+      .map((period) => period.toHi ?? DateSpan.maxDate)
+      .reduce((end, to) => to.compareTo(end) > 0 ? to : end);
+
+  /// 입력한 날에 아직 개업하지 않았거나 정차 기간 사이라 서지 않은 승하차역이 있는가.
   bool _beforeStop(Ride ride, DateSpan date, List<Expansion> expansions) => _endStops(ride, expansions).any(
         (stops) => stops.every((stop) {
           final from = stop.period.fromLo;
-          return from != null && date.hi.compareTo(from) < 0;
+          return (from != null && date.hi.compareTo(from) < 0) || inStopGap(date, stop);
         }),
       );
 

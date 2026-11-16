@@ -19,6 +19,7 @@ final class AppTokens extends ThemeExtension<AppTokens> {
     required this.lineClosedUnridden,
     required this.selectorGone,
     required this.selectorGoneText,
+    required this.walkTransfer,
     required this.lineRidden,
     required this.lineRiddenSoft,
     required this.lineClosedRidden,
@@ -39,6 +40,7 @@ final class AppTokens extends ThemeExtension<AppTokens> {
     lineClosedUnridden: Color(0xFFA2988A),
     selectorGone: Color(0xFFE3E6E0),
     selectorGoneText: Color(0xFFD3D7D0),
+    walkTransfer: Color(0xFFD2691E),
     lineRidden: Color(0xFF1F6FEB),
     lineRiddenSoft: Color(0xFFBFD6F8),
     lineClosedRidden: Color(0xFFC8352B),
@@ -59,6 +61,7 @@ final class AppTokens extends ThemeExtension<AppTokens> {
     lineClosedUnridden: Color(0xFF666E7A),
     selectorGone: Color(0xFF2F3530),
     selectorGoneText: Color(0xFF3D443E),
+    walkTransfer: Color(0xFFFF9A4D),
     lineRidden: Color(0xFF5AA2FF),
     lineRiddenSoft: Color(0xFF27476F),
     lineClosedRidden: Color(0xFFFF6B60),
@@ -90,6 +93,9 @@ final class AppTokens extends ThemeExtension<AppTokens> {
 
   /// 폐선 분기의 이름과 행선지. 분기선과 거의 같은 농도로 읽히게만 조금 진하다.
   final Color selectorGoneText;
+
+  /// 지도에서 다른 역 사이의 간접 환승(徒歩連絡)을 잇는 점선 (DESIGN §7.1·§7.5)
+  final Color walkTransfer;
   final Color lineRidden;
 
   /// 이미 탄 구간. 지금 고르는 구간([lineRidden])과 구분한다.

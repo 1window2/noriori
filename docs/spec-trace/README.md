@@ -4,11 +4,25 @@
 
 | 파일 | 대상 | 항목 |
 |---|---|---:|
-| [design-1-data-and-rules.md](design-1-data-and-rules.md) | DESIGN §1~§6 | 635 |
-| [design-2-screens-and-release.md](design-2-screens-and-release.md) | DESIGN §7 이후, 목업 | 721 |
-| [architecture.md](architecture.md) | ARCHITECTURE, server-notes, db-status, data/README | 697 |
+| [design-1-data-and-rules.md](design-1-data-and-rules.md) | DESIGN §1~§6 | 680 |
+| [design-2-screens-and-release.md](design-2-screens-and-release.md) | DESIGN §7 이후, 목업 | 758 |
+| [architecture.md](architecture.md) | ARCHITECTURE, server-notes, db-status, data/README | 727 |
 
 판정: 구현됨, 구현됨(이름 다름), 부분, 미구현, 미연결(코드는 있으나 화면에서 못 씀), 문서 오류, 문서 누락, 대상 아님.
+
+## 판정별 개수 (2026-11-05)
+
+| 판정 | design-1 | design-2 | architecture | 합계 |
+|---|---:|---:|---:|---:|
+| 구현됨 | 522 | 595 | 507 | 1,624 |
+| 구현됨(이름 다름) | 1 | 0 | 20 | 21 |
+| 부분 | 47 | 67 | 39 | 153 |
+| 미구현 | 40 | 32 | 56 | 128 |
+| 미연결 | 0 | 0 | 0 | 0 |
+| 문서 오류 | 27 | 23 | 13 | 63 |
+| 문서 누락 | 0 | 8 | 0 | 8 |
+| 대상 아님 | 43 | 33 | 92 | 168 |
+| **합계** | **680** | **758** | **727** | **2,165** |
 
 ## 규칙
 
@@ -18,7 +32,7 @@
 4. 진행 보고는 시험 개수가 아니라 이 표의 숫자로 합니다.
 5. 화면 항목은 실제 화면을 목업과 나란히 놓고 확인한 뒤 구현됨으로 바꿉니다.
 
-판정 시각: 2026-11-02 21시 작업본. 코드 대조는 정적 읽기로 했고, 화면 항목의 규칙 5 목업 대조는 아직 하지 않았습니다.
+판정 시각: 2026-11-05 작업본 (HEAD ada124d, DESIGN v0.51, ARCHITECTURE v0.13). 코드 대조는 정적 읽기로 했고, 화면 항목의 규칙 5 목업 대조는 아직 하지 않았습니다. 그래서 이번에 새로 넣거나 요구가 바뀐 화면 항목은 코드가 있어도 `부분`입니다. 그 전부터 `구현됨`이던 화면 항목은 코드를 읽어 내린 판정 그대로입니다.
 
 ## 표를 만든 뒤 반영한 것
 
@@ -35,4 +49,7 @@
 | 2026-11-02 | 한국어·영어·일본어 문구, 설정의 언어 슬라이드 바, 그 자리 전환. 노선 766, 사업자 211, 계통 807, 운전 계통 17의 영어 이름 생성 (`tools/gen_en_names.py`). 열람 전용 579건은 읽기가 없어 일본어로 나옴 |
 | 2026-11-02 | 세 표의 `미구현`·`부분`·`미연결` 행 재판정, DESIGN v0.42·ARCHITECTURE v0.11·승인안 감사 항목 추가 |
 | 2026-11-04 | 세 표의 명세 행 번호와 코드 근거 줄 번호를 현재 파일에 맞춤 |
-| 2026-11-04 | 환승 번호 고정, 탈 수 없는 날짜 경고와 저장 막기, CSV 날짜 모름 건수, 출처 끄기(`data/sources.json`), 원본 출처별 폴더와 손 보정 표 파일(`hand_tables.json`), N05 옛 폐선 74노선(판 2026-11-04.1). v0.48 뒤에 생긴 요구는 아직 표의 행이 아님 |
+| 2026-11-04 | 환승 번호 고정, 탈 수 없는 날짜 경고와 저장 막기, CSV 날짜 모름 건수, 출처 끄기(`data/sources.json`), 원본 출처별 폴더와 손 보정 표 파일(`hand_tables.json`), N05 옛 폐선 74노선(판 2026-11-04.1). v0.48 뒤에 생긴 요구는 아직 표의 행이 아님 (2026-11-05에 행으로 더함) |
+| 2026-11-04 | 가져온 파일 전체 삭제 전 확인 팝업 (빨간 삭제·취소, DESIGN v0.50 §8.2) |
+| 2026-11-05 | 세 표의 `미구현`·`부분`·`미연결` 행 재판정과 명세·근거 줄 번호 갱신. DESIGN v0.48~v0.51과 ARCHITECTURE v0.12·v0.13의 요구를 행으로 더함 (design-1 45행, design-2 24행, architecture 30행: v0.12·v0.13 14행, data/README 5행, CI·ID 잠금 행을 지금 §4.2·§4.4에 맞춰 나눠 늘어난 11행. 모두 99행). 반영한 구현: DESIGN §5.4 특정 연도 `판정 불가`(`unitCounts`·`unitUndecided`·`Score.undecidedUnits`, `fromHi`·`toLo`, `year_status`·`year_certain`, 통계 화면 `t.undecided`), 컴파일 단계 사건 보정 표 `data/overrides/events_fix.json`, `? km`(노선 상세·선택기·RideTile·저장 바·승차권, 28cd52d의 표식 시트·활동·컬렉션·여정), 옛 노면전차망 138노선, 무궤조전차 제외, 날짜별 도달성 예외 표, 가져온 파일 전체 삭제 확인 팝업, 앱 아이콘, AltStore 소스, `CI`·`Release` 워크플로와 관문, ID 잠금 검사(`tools/check_ids.py`, 잠금 목록은 아직 없음), `node_move` 배포, 도도부현 경계 km를 선형으로 나눔(81dcc93, 23구간만 반씩), 기록 파일 20MB 넘으면 Android 백업 안내(ada124d) |
+| 2026-11-05 | DESIGN §7.4 겹친 노선 고르기: 손가락 범위의 선로를 모두 모아 현행·일부 폐지·전체 폐선 순 팝업(`tappedLines`, `LinePicker`). design-2에 6행, 목업 대조 전이라 모두 `부분` |

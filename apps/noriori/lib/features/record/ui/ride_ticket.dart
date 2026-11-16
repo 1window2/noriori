@@ -151,7 +151,7 @@ class RideTicket extends StatelessWidget {
                       Text(
                         [
                           if (raw == null) t.noDate else dateText(context.t, raw),
-                          '${kmLabel(data.meters)} km',
+                          '${kmLabelOf(data.meters, estimated: data.kmEstimated)} km',
                         ].join(' · '),
                         style: text.bodySmall,
                       ),

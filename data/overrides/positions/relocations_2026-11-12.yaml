@@ -1,0 +1,7 @@
+# 역 이전 옛 자리 좌표(근거 조사 R6-G 2026-11-12). N05 그 시기 역 점, 없으면 N05 선형 위 km 차 추정(approx)
+- {"node": "n_higashioiwake_old", "lat": 42.90412, "lon": 141.83485, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "N05 石勝線 선형에서 지금 점부터 川端 쪽 300 m 추정 (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"}
+- {"node": "n_hori_boseki_old", "lat": 34.18669, "lon": 131.65301, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "N05 防石鉄道 선형에서 지금 점부터 三田尻 쪽 100 m 추정 (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"}
+- {"node": "n_oiwake_keihan_old", "lat": 34.99082, "lon": 135.8396, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "N05 京津線 선형(1950–1980)에서 지금 점부터 大谷 쪽 200 m 추정 (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"}
+- {"node": "n_kyobashi_keihan_old", "lat": 34.69788, "lon": 135.53433, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "N05 京阪本線 선형에서 지금 점부터 野江 쪽 200 m 추정 (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"}
+- {"node": "n_nakayamajuku_old", "lat": 37.493798, "lon": 140.227511, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "N05 EB03_12223005 1950–1996 점 (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"}
+- {"node": "n_higashi_isahaya_old", "lat": 32.85317, "lon": 130.06478, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "N05 長崎線 선형에서 지금 점부터 肥前長田 쪽 300 m 추정 (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"}

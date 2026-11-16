@@ -1,0 +1,16 @@
+# 국철 폐지로 들어갔던 사철 이관 (감사 SUC-002·SUC-003). 黒石線 1984-11-01 弘南鉄道, 大畑線 1985-07-01 下北交通. 생성기(gen_n05 in_db 판정)가 N05의 사철 시기를 국철 표와 같은 노선으로 보아 빠뜨린 것. 재생성으로 원본에 생기면 지움
+- {"patch": "add", "entity_type": "operator", "id": "o_shimokita_kotsu", "lang": "ja", "text": "下北交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shimokita_kotsu", "lang": "ko", "text": "시모키타 교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shimokita_kotsu", "lang": "en", "text": "Shimokita Kotsu", "source": "hand"}
+- {"patch": "add", "entity_type": "line", "id": "l_kuroishi_line_konan", "lang": "ja", "text": "黒石線", "source": "hand"}
+- {"patch": "add", "entity_type": "line", "id": "l_kuroishi_line_konan", "lang": "ko", "text": "코난 철도 쿠로이시선", "source": "hand"}
+- {"patch": "add", "entity_type": "line", "id": "l_kuroishi_line_konan", "lang": "en", "text": "Konan Railway Kuroishi Line", "source": "hand"}
+- {"patch": "add", "entity_type": "line", "id": "l_ohata_line_shimokita", "lang": "ja", "text": "大畑線", "source": "hand"}
+- {"patch": "add", "entity_type": "line", "id": "l_ohata_line_shimokita", "lang": "ko", "text": "시모키타 교통 오하타선", "source": "hand"}
+- {"patch": "add", "entity_type": "line", "id": "l_ohata_line_shimokita", "lang": "en", "text": "Shimokita Kotsu Ohata Line", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_kuroishi_line_konan", "lang": "ja", "text": "川部～黒石", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_kuroishi_line_konan", "lang": "ko", "text": "카와베~쿠로이시", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_kuroishi_line_konan", "lang": "en", "text": "Kawabe~Kuroishi", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_ohata_line_shimokita", "lang": "ja", "text": "下北～大畑", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_ohata_line_shimokita", "lang": "ko", "text": "시모키타~오하타", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_ohata_line_shimokita", "lang": "en", "text": "Shimokita~Ohata", "source": "hand"}

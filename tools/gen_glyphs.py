@@ -17,9 +17,12 @@ chars=set()
 for lang in ('ja','ko','en'):
     for (x,) in nm.execute("select text from name where entity_type='node' and lang=? and line_id is null",(lang,)):chars.update(map(ord,x))
 chars.add(ord(' '))
+# 빌드는 네트워크를 쓰지 않는다. 새 글자 범위가 생기면 --fetch로 받아 data/imports/glyphs에 둔다
+FETCH='--fetch' in sys.argv
 def fetch(name):
     p=os.path.join(CACHE,name+'.pbf')
     if not os.path.exists(p):
+        if not FETCH:raise SystemExit(f'글리프 {name}.pbf가 없습니다. python3 -I tools/gen_glyphs.py --fetch로 받으세요')
         req=urllib.request.Request(URL.format(name),headers=UA)
         with urllib.request.urlopen(req,timeout=30) as r:raw=r.read()
         with open(p,'wb') as f:f.write(raw)

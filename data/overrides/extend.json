@@ -1,4 +1,9 @@
 {
+"r_mikawa_line_chiryu_connecting_line": {
+"end": [
+"n_ushida_meitetsu"
+]
+},
 "r_yamanote_freight_line": {
 "end": [
 "n_kami_nakazato",
@@ -25,13 +30,8 @@
 "r_umeda_freight_line": {
 "start": [
 "n_kishibe"
-]
-},
-"r_higashi_narita_line": {
-"start": [
-"n_keisei_narita"
-]
-},
+],
+"end": ["n_nishikujo"], "_why": "끝 福島는 법정 끝일 뿐 梅田貨物線 경유 열차(はるか·くろしお)가 서지 않는 통과 경계(승강장 없음). 大阪環状線 西九条까지 이어 고름 (위키 梅田貨物線 rev111568936 주 「福島駅・野田駅には梅田貨物線のホーム自体が設置されていない」) (11회차 S2 2026-11-16, audit4 kinki_1-07)"},
 "r_enoshima_line_odakyu": {
 "start": [
 "n_sagami_ono"
@@ -40,7 +40,8 @@
 "r_inuyama_line": {
 "start": [
 "n_higashi_biwajima"
-]
+],
+"from": "1941-08-12"
 },
 "r_tramway_toyama_station_north_south_link": {
 "start": [
@@ -51,7 +52,8 @@
 "r_sangi_line": {
 "start": [
 "n_kintetsu_tomida_sangi"
-]
+],
+"from": "1970-06-25"
 },
 "r_kintetsu_connecting_line": {
 "start": [
@@ -89,7 +91,7 @@
 "n_kawai_takaoka"
 ],
 "end": [
-"n_ise_nakahara"
+"n_momozono"
 ]
 },
 "r_kikuchi_line_kumamoto_kosen_mae_miyoshi": {
@@ -97,5 +99,184 @@
 "n_kuroishi_kumamoto"
 ],
 "from": "1913-08-27"
-}
+},
+"r_tokushima_line": {
+"start": [
+"n_awa_ikeda"
+],
+"from": "1914-03-25",
+"to": "1962-07-18"
+},
+"r_sakaemachi_main_line": {
+"start": [
+"n_sannomiyahanshimmae",
+"n_shiyakushomae_kobe_city"
+],
+"from": "1912-12-28"
+},
+"r_nunobiki_line": {
+"start": [
+"n_sannomiyacho_1_chome",
+"n_shiyakushomae_kobe_city"
+]
+},
+"r_zeikan_line": {
+"start": [
+"n_sannomiyacho_1_chome",
+"n_sannomiyahanshimmae"
+]
+},
+"r_kokudo_line_kobe_city": {
+"start": [
+"n_sannomiyahanshimmae",
+"n_sannomiyahankyumae"
+]
+},
+"r_hobara_line": {
+"start": [
+"n_nagaokatamachi",
+"n_seikogakuimmae"
+]
+},
+"r_hiroicho_line": {
+"end": [
+"n_kikuicho"
+],
+"to": "1951-06-10",
+"from": "1943-03-20"
+},
+"r_kakuozan_line": {
+"start": [
+"n_kurumamichi"
+],
+"to": "1967-02-01"
+},
+"r_kamiegawa_line": {
+"start": [
+"n_hijiecho"
+],
+"to": "1971-04-01"
+},
+"r_kujonakanoshima_line": {
+"start": [
+"n_chuoichibamae"
+],
+"to": "1965-09-01",
+"from": "1916-12-27"
+},
+"r_namboku_line_midosuji_branch": {
+"end": [
+"n_yodoyabashi"
+],
+"to": "1966-07-01",
+"from": "1911-10-07"
+},
+"r_nishinoda_line": {
+"start": [
+"n_kawaguchicho"
+],
+"to": "1965-09-01"
+},
+"r_sakaisuji_line_osaka_city": {
+"start": [
+"n_umedashimmichi"
+],
+"to": "1966-07-01"
+},
+"r_temmabashizengenjicho_line": {
+"end": [
+"n_miyakojimaminamidori"
+],
+"to": "1968-12-18",
+"from": "1926-12-28"
+},
+"r_higashinodakasugaecho_line": {
+"start": [
+"n_higashinoda"
+],
+"to": "1968-12-18"
+},
+"r_nagoya_minato_line": {
+"start": [
+"n_nagoya"
+]
+},
+"r_yokohama_rinko_line": {
+"start": [
+"n_tsurumi"
+]
+},
+"r_akita_rinkai_railway_line": {
+"start": [
+"n_tsuchizaki"
+]
+},
+"r_hakushin_line_higashi_niigata_nuttari": {
+"end": [
+"n_ogata_hakushin",
+"n_niizaki"
+]
+},
+"r_shinetsu_main_line_echigo_ishiyama_niigata_shinetsu_main": {
+"start": [
+"n_kameda"
+]
+},
+"r_hokuso_line_kita_hatsutomi_hokuso_nishi_shiroi": {
+"end": [
+"n_nishi_shiroi"
+]
+},
+"r_oura_branch_line_sembacho_ourakaigandori": {
+"end": [
+"n_ourakaigandori"
+]
+},
+"r_keisei_main_line_keisei_narita_higashi_narita": {
+"start": [
+"n_keisei_narita"
+]
+},
+"r_hiroden_main_line_tenmacho_hiroden_nishi_hiroshima": {
+"start": [
+"n_tenmacho"
+]
+},
+"r_sangi_line_tomida_sangi_oyachi_sangi": {
+"end": [
+"n_oyachi_sangi"
+]
+},
+"r_azumabashi_line": {
+"end": [
+"n_honjo_azumabashi_toden"
+],
+"from": "1960-01-01",
+"to": "1972-11-12"
+},
+"r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi": {
+"end": [
+"n_kitanishiguchi"
+]
+},
+"r_sakaemachi_line": {
+"end": [
+"n_chikusa_ekimae"
+],
+"from": "1944-05-13",
+"to": "1967-02-01",
+"_why": "名古屋市電 栄町線 끝 西裏 정류장은 1944-05-13 폐지(W3 E2 stop_dates 근거)지만 車道–西裏 칸은 1967-02-01까지 영업. 西裏 너머 覚王山線 千種駅前까지 확장해 車道 쪽 끝 칸을 탈 수 있게 함(K35) (W4 F2 2026-11-12) / 확장은 끝 정류장이 없어진 날(1944-05-13)부터 (K33)"
+},
+"r_oshikiri_line_yanagibashi_shimacho": {
+"end": [
+"n_meidocho"
+],
+"from": "[1944-01-01..1944-12-31]",
+"to": "1971-04-01",
+"_why": "名古屋市電 押切線 柳橋–志摩町 끝 志摩町 정류장은 1944년 폐지(W3 E2 stop_dates 근거)지만 泥江町–志摩町 칸은 1971-04-01까지 영업. 志摩町 너머 上江川線 明道町까지 확장(K35) (W4 F2 2026-11-12) / 확장은 끝 정류장이 없어진 날([1944-01-01..1944-12-31])부터 (K33)"
+},
+"r_kashima_line": [{"end": ["n_koyadai"], "from": "1985-03-14", "to": "1994-03-12", "_why": "北鹿島는 1994-03-12 전 여객 취급 없는 통과 경계. 1985~1994 鹿島線에서 大洗鹿島線 荒野台까지 이어 고름 (위키 鹿島線 rev111584634 年表 「ただし北鹿島駅での旅客扱いはなし」 1978·1985, 1994-03-12 旅客営業開始) (8회차 W2 2026-11-15, audit3 kanto_2-001·002)"}, {"end": ["n_igiri", "n_kashima_konan"], "from": "1978-07-25", "to": "1983-12-01", "_why": "1978-07-25~1983-12-01 鹿島臨港線 여객 영업 때도 北鹿島는 여객 취급 없는 통과 경계(鹿島神宮 - 鹿島港南 직통). 鹿島線에서 臨港線 居切·鹿島港南까지 이어 고름. 확장 묶음을 시기마다 둠 (위키 鹿島線 rev111584634 年表 1978-07-25 「鹿島神宮駅 - 北鹿島駅間で旅客営業開始（ただし北鹿島駅での旅客扱いはなし）」; 위키 鹿島臨港線 rev111260824 旅客営業 「鹿島神宮 - 北鹿島 - 鹿島港南間」) (9회차 L 2026-11-16, audit3 kanto_2-001·002)"}],
+"r_oarai_kashima_line": {"end": ["n_kashima_jingu"], "from": "1985-03-14", "to": "1994-03-12", "_why": "北鹿島 통과 경계(1994-03-12 전). 大洗鹿島線에서 鹿島線 鹿島神宮까지 이어 고름 (위키 鹿島線 rev111584634 年表 「ただし北鹿島駅での旅客扱いはなし」 1978·1985, 1994-03-12 旅客営業開始) (8회차 W2 2026-11-15, audit3 kanto_2-001·002)"},
+"r_kashima_rinko_line": {"start": ["n_kashima_jingu"], "from": "1978-07-25", "to": "1983-12-01", "_why": "鹿島臨港線 1978-07-25~1983-12-01 여객 영업은 鹿島神宮 - 北鹿島 - 鹿島港南 직통이고 北鹿島는 여객 취급 없는 통과 경계. 臨港線 첫 역 北鹿島 너머 鹿島線 鹿島神宮까지 이어 고름(2005-10-16 하루 臨時 영업 때는 北鹿島 정차) (위키 鹿島線 rev111584634 年表 1978-07-25 「ただし北鹿島駅での旅客扱いはなし」; 위키 鹿島臨港線 rev111260824) (9회차 L 2026-11-16, audit3 kanto_2-002)"},
+"r_akitako_line": {"end": ["n_akita_hakumae"], "from": "1986-07-18", "to": "1986-08-25", "_why": "1986 秋田博 アッキー号는 秋田港(무정차, 運転停車만)을 지나 秋田臨海鉄道 南線 秋田博前까지 갔다(鉄道ジャーナル 1986-10 「途中はノンストップ」, 11회차 R2-3). 秋田港 정차는 2017-08-03부터라 1986년 계통 끝 너머 秋田博前까지 이어 고름 (11회차 S3)"}
 }

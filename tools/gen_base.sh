@@ -18,3 +18,5 @@ rm data/base/.prefs.topo.json
 "$ms" 8gb "$src" -dissolve N03_001 copy-fields=N03_007 -simplify interval=500 keep-shapes -clean \
   -each 'pref=parseInt(N03_007.slice(0,2),10);delete N03_001;delete N03_007' \
   -o data/base/pref.geojson format=geojson geojson-type=FeatureCollection precision=0.0001
+# 일본의 실효 지배 밖인 北方領土·竹島를 뺀다 (tools/base_exclude.py)
+python3 -I tools/base_exclude.py

@@ -23,10 +23,18 @@ final class StorePaths {
   File get userDb => File(p.join(support.path, 'user.sqlite'));
   Directory get datasets => Directory(p.join(support.path, 'datasets'));
   Directory get quarantine => Directory(p.join(support.path, 'quarantine'));
-  Directory get photos => Directory(p.join(support.path, 'photos'));
 
   /// OS 백업에서 뺄 폴더 (ARCHITECTURE §3.1).
-  List<Directory> get outsideOsBackup => [datasets, quarantine, photos];
+  List<Directory> get outsideOsBackup => [datasets, quarantine];
+
+  /// OS 백업에 드는 크기. `user.sqlite`와 `-wal`의 합이다 (ARCHITECTURE §3.7).
+  Future<int> osBackupBytes() async {
+    var total = 0;
+    for (final file in [userDb, File('${userDb.path}-wal')]) {
+      if (await file.exists()) total += await file.length();
+    }
+    return total;
+  }
 }
 
 sealed class StartOutcome {

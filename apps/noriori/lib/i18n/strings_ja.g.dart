@@ -248,6 +248,9 @@ class _Translations$stats$ja implements Translations$stats$ko {
 	@override String visited({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
 		other: '乗降・訪問した駅 ${n}駅',
 	);
+	@override String undecided({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
+		other: '判定不可 ${n}区間',
+	);
 	@override String review({required num n, required Object km}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
 		other: '要確認 ${n}件 · ${km} km',
 	);
@@ -289,9 +292,11 @@ class _Translations$search$ja implements Translations$search$ko {
 	final TranslationsJa _root; // ignore: unused_field
 
 	// Translations
+	@override String get showOnMap => '地図で見る';
 	@override String get hint => '路線名・駅名';
 	@override String get prompt => '路線や駅を検索して始めましょう';
 	@override String get none => '見つかりませんでした';
+	@override String get archive => '閲覧のみ';
 }
 
 // Path: session
@@ -313,6 +318,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get dateHint => '2015, 2015-03, 2015-03-14, 198X';
 	@override String get dateUnknown => '日付不明';
 	@override String get datePick => 'カレンダーから選ぶ';
+	@override String get dateToday => '今日';
 	@override String get dateBad => '日付の形式を確認してください';
 	@override String get apply => '適用';
 	@override String get cancel => 'キャンセル';
@@ -324,6 +330,9 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get noPath => 'この2駅の間の経路が見つかりませんでした';
 	@override late final _Translations$session$state$ja state = _Translations$session$state$ja._(_root);
 	@override String savedAs({required Object line}) => '当時は${line}';
+	@override String handSince({required Object date, required Object line}) => '${date}から${line}';
+	@override String get handOpen => '路線を見る ›';
+	@override String get handNote => 'この区間はその路線で記録されます';
 	@override String get chooseDirection => 'どちら回りで乗りましたか？';
 	@override String directionKm({required Object km}) => '${km} km';
 	@override String get chooseRelocation => 'どの時期の線路でしたか？';
@@ -346,7 +355,6 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get spokenTo => '降車駅に選択';
 	@override String get showClosed => '廃駅・廃線を表示';
 	@override String get showArchive => '記録対象外の駅・路線も表示';
-	@override String returnsTo({required Object name}) => '${name}に戻る';
 	@override String get clear => '解除';
 	@override String get lap => '1周';
 	@override String stops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
@@ -358,10 +366,36 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get from => '乗車';
 	@override String get to => '降車';
 	@override String get whyClosed => 'その日付には営業していなかった駅です';
+	@override String get onlyDown => '下りのみ';
+	@override String get onlyUp => '上りのみ';
+	@override String get onlyOneWay => '片方向のみ';
+	@override String get spokenOnlyDown => '下り列車のみ停車';
+	@override String get spokenOnlyUp => '上り列車のみ停車';
+	@override String get spokenOnlyOneWay => '片方向の列車のみ停車';
+	@override String stopDownTitle({required Object name}) => '${name}には下り列車のみ停車します';
+	@override String stopUpTitle({required Object name}) => '${name}には上り列車のみ停車します';
+	@override String stopOneWayTitle({required Object name}) => '${name}には片方向の列車のみ停車します';
+	@override String towardOnly({required Object name}) => '${name}方面にのみ乗車できます';
+	@override String get sectionTitle => '一方向にのみ運転する区間です';
+	@override String get sectionDetail => 'この方向には列車が走っていません';
+	@override String get aroundTitle => '一方向にのみ回る区間です';
+	@override String aroundDetail({required Object km}) => '回り道の${km} kmとして数えます';
+	@override String get reverse => '方向を反転';
+	@override String get onlyAlight => '降車専用';
+	@override String get alightTitle => '降車専用の駅です';
+	@override String get alightDetail => '降車駅としてのみ選べます';
 	@override String get whySuspended => 'その日付には運休中の区間です';
 	@override String bound({required Object names}) => '${names}方面';
 	@override String spokenClosed({required Object year}) => '${year}年廃止';
+	@override String spokenSuspendedSince({required Object year}) => '${year}年から運休';
+	@override String get pastKari => '仮';
+	@override String get pastRinji => '臨';
+	@override String get spokenPastKari => 'かつての仮乗降場';
+	@override String get spokenPastRinji => 'かつての臨時駅';
 	@override String spokenBranch({required Object line, required Object next}) => '${line}、${next}方面の分岐';
+	@override String reverseNow({required Object line}) => 'この駅で進行方向を変えて${line}へ直通します';
+	@override String reverseUsed({required Object line}) => 'この駅で進行方向を変えて${line}へ直通する列車がありました';
+	@override String get spokenReverse => 'スイッチバック';
 	@override String leaving({required Object name}) => '${name}から乗車';
 	@override String progress({required Object num, required Object den, required Object percent}) => '${num} / ${den} km (${percent})';
 	@override String get leaveTitle => '選択が解除されます';
@@ -373,6 +407,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get unridableOk => 'OK';
 	@override String get repick => '別の駅をタップすると選び直せます';
 	@override String get closedUnknown => '廃止区間';
+	@override String get suspendedSection => '運休中';
 	@override String relocationOld({required Object km}) => '旧線 · ${km} km';
 	@override String relocationNew({required Object km}) => '新線 · ${km} km';
 	@override String get spokenOpen => '営業中';
@@ -386,6 +421,7 @@ class _Translations$data$ja implements Translations$data$ko {
 	final TranslationsJa _root; // ignore: unused_field
 
 	// Translations
+	@override String get osBackupLarge => '記録ファイルが20MBを超え、Androidのクラウドバックアップに含まれない場合があります。バックアップフォルダを選んでください';
 	@override String get title => 'バックアップと復元';
 	@override String get folder => 'バックアップフォルダ';
 	@override String get folderHint => 'アプリを削除しても残る場所を選んでください';
@@ -549,7 +585,6 @@ class _Translations$lineDetail$ja implements Translations$lineDetail$ko {
 	@override String get allTime => '廃止区間含む';
 	@override String km({required Object num, required Object den}) => '${num} / ${den} km';
 	@override String get completeCurrent => '完乗';
-	@override String get completeAllTime => '廃止区間含め完乗';
 	@override String get selfScore => '全体の集計対象外の路線です。この路線の中だけで乗車率を計算します。';
 	@override String get open => '路線詳細';
 	@override String get record => 'この路線を記録する';
@@ -603,6 +638,12 @@ class _Translations$deleted$ja implements Translations$deleted$ko {
 		other: '記録 ${n}件',
 	);
 	@override String get fileDelete => 'ファイルごと削除';
+	@override String fileDeleteTitle({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
+		other: '記録${n}件を削除しますか？',
+	);
+	@override String fileDeleteBody({required Object file}) => '${file}から取り込んだ記録をすべて削除します。設定の「削除した記録」から元に戻せます。';
+	@override String get fileDeleteConfirm => '削除';
+	@override String get fileDeleteCancel => 'キャンセル';
 	@override String fileDeleted({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
 		other: '記録${n}件を削除しました',
 	);
@@ -632,7 +673,6 @@ class _Translations$collection$ja implements Translations$collection$ko {
 	@override String get operators => '事業者';
 	@override String get prefs => '都道府県';
 	@override String get stations => '駅';
-	@override String get allTime => '廃線含む';
 	@override String stationGoal({required Object n}) => '${n}駅';
 	@override String get empty => 'まだありません';
 	@override String get closed => '廃線';
@@ -789,6 +829,9 @@ class _Translations$mapSheet$ja implements Translations$mapSheet$ko {
 	@override String get visited => 'この駅に行ったことがある';
 	@override String get visitedHint => '完乗率には含まれず、地図の丸だけが塗られます';
 	@override String get noVisits => '駅訪問の記録はありません。地図で駅をタップすると残せます。';
+	@override String get pickerLabel => 'この場所を通る路線';
+	@override String get partlyClosed => 'この区間は廃止';
+	@override String get closed => '廃線';
 }
 
 // Path: date
@@ -906,6 +949,7 @@ class _Translations$session$state$ja implements Translations$session$state$ko {
 	// Translations
 	@override String get maybe => '?';
 	@override String get suspended => '運休';
+	@override String suspendedSince({required Object year}) => '運休 ${year}~';
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
 	@override String span({required Object from, required Object to}) => '${from}~${to}';
@@ -958,7 +1002,7 @@ class _Translations$sources$n03$ja implements Translations$sources$n03$ko {
 
 	// Translations
 	@override String get name => '国土数値情報 行政区域データ (N03)';
-	@override String get use => '日本の輪郭と都道府県境';
+	@override String get use => '日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ';
 	@override String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
@@ -1165,6 +1209,7 @@ extension on TranslationsJa {
 			'stats.prefHint' => '乗車率',
 			'stats.prefLabel' => ({required Object name, required Object percent}) => '${name} ${percent}',
 			'stats.visited' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '乗降・訪問した駅 ${n}駅', ), 
+			'stats.undecided' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '判定不可 ${n}区間', ), 
 			'stats.review' => ({required num n, required Object km}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '要確認 ${n}件 · ${km} km', ), 
 			'stats.badges' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: 'バッジ${n}個', ), 
 			'stats.visitedClosed' => ({required Object n}) => '廃駅${n}駅',
@@ -1184,9 +1229,11 @@ extension on TranslationsJa {
 			'settings.themeSystem' => 'システム設定',
 			'settings.carryover' => '事業者変更時に記録を引き継ぐ',
 			'settings.carryoverHint' => 'オフにするとJRから移管された区間を新しい路線として数えます',
+			'search.showOnMap' => '地図で見る',
 			'search.hint' => '路線名・駅名',
 			'search.prompt' => '路線や駅を検索して始めましょう',
 			'search.none' => '見つかりませんでした',
+			'search.archive' => '閲覧のみ',
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}周', ), 
 			'session.lapLess' => '1周減らす',
 			'session.lapMore' => '1周増やす',
@@ -1195,6 +1242,7 @@ extension on TranslationsJa {
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => '日付不明',
 			'session.datePick' => 'カレンダーから選ぶ',
+			'session.dateToday' => '今日',
 			'session.dateBad' => '日付の形式を確認してください',
 			'session.apply' => '適用',
 			'session.cancel' => 'キャンセル',
@@ -1206,10 +1254,14 @@ extension on TranslationsJa {
 			'session.noPath' => 'この2駅の間の経路が見つかりませんでした',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => '運休',
+			'session.state.suspendedSince' => ({required Object year}) => '運休 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => '当時は${line}',
+			'session.handSince' => ({required Object date, required Object line}) => '${date}から${line}',
+			'session.handOpen' => '路線を見る ›',
+			'session.handNote' => 'この区間はその路線で記録されます',
 			'session.chooseDirection' => 'どちら回りで乗りましたか？',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => 'どの時期の線路でしたか？',
@@ -1230,7 +1282,6 @@ extension on TranslationsJa {
 			'session.spokenTo' => '降車駅に選択',
 			'session.showClosed' => '廃駅・廃線を表示',
 			'session.showArchive' => '記録対象外の駅・路線も表示',
-			'session.returnsTo' => ({required Object name}) => '${name}に戻る',
 			'session.clear' => '解除',
 			'session.lap' => '1周',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}駅', ), 
@@ -1240,10 +1291,36 @@ extension on TranslationsJa {
 			'session.from' => '乗車',
 			'session.to' => '降車',
 			'session.whyClosed' => 'その日付には営業していなかった駅です',
+			'session.onlyDown' => '下りのみ',
+			'session.onlyUp' => '上りのみ',
+			'session.onlyOneWay' => '片方向のみ',
+			'session.spokenOnlyDown' => '下り列車のみ停車',
+			'session.spokenOnlyUp' => '上り列車のみ停車',
+			'session.spokenOnlyOneWay' => '片方向の列車のみ停車',
+			'session.stopDownTitle' => ({required Object name}) => '${name}には下り列車のみ停車します',
+			'session.stopUpTitle' => ({required Object name}) => '${name}には上り列車のみ停車します',
+			'session.stopOneWayTitle' => ({required Object name}) => '${name}には片方向の列車のみ停車します',
+			'session.towardOnly' => ({required Object name}) => '${name}方面にのみ乗車できます',
+			'session.sectionTitle' => '一方向にのみ運転する区間です',
+			'session.sectionDetail' => 'この方向には列車が走っていません',
+			'session.aroundTitle' => '一方向にのみ回る区間です',
+			'session.aroundDetail' => ({required Object km}) => '回り道の${km} kmとして数えます',
+			'session.reverse' => '方向を反転',
+			'session.onlyAlight' => '降車専用',
+			'session.alightTitle' => '降車専用の駅です',
+			'session.alightDetail' => '降車駅としてのみ選べます',
 			'session.whySuspended' => 'その日付には運休中の区間です',
 			'session.bound' => ({required Object names}) => '${names}方面',
 			'session.spokenClosed' => ({required Object year}) => '${year}年廃止',
+			'session.spokenSuspendedSince' => ({required Object year}) => '${year}年から運休',
+			'session.pastKari' => '仮',
+			'session.pastRinji' => '臨',
+			'session.spokenPastKari' => 'かつての仮乗降場',
+			'session.spokenPastRinji' => 'かつての臨時駅',
 			'session.spokenBranch' => ({required Object line, required Object next}) => '${line}、${next}方面の分岐',
+			'session.reverseNow' => ({required Object line}) => 'この駅で進行方向を変えて${line}へ直通します',
+			'session.reverseUsed' => ({required Object line}) => 'この駅で進行方向を変えて${line}へ直通する列車がありました',
+			'session.spokenReverse' => 'スイッチバック',
 			'session.leaving' => ({required Object name}) => '${name}から乗車',
 			'session.progress' => ({required Object num, required Object den, required Object percent}) => '${num} / ${den} km (${percent})',
 			'session.leaveTitle' => '選択が解除されます',
@@ -1255,10 +1332,12 @@ extension on TranslationsJa {
 			'session.unridableOk' => 'OK',
 			'session.repick' => '別の駅をタップすると選び直せます',
 			'session.closedUnknown' => '廃止区間',
+			'session.suspendedSection' => '運休中',
 			'session.relocationOld' => ({required Object km}) => '旧線 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '新線 · ${km} km',
 			'session.spokenOpen' => '営業中',
 			'session.spokenRidden' => '乗車済み',
+			'data.osBackupLarge' => '記録ファイルが20MBを超え、Androidのクラウドバックアップに含まれない場合があります。バックアップフォルダを選んでください',
 			'data.title' => 'バックアップと復元',
 			'data.folder' => 'バックアップフォルダ',
 			'data.folderHint' => 'アプリを削除しても残る場所を選んでください',
@@ -1337,7 +1416,7 @@ extension on TranslationsJa {
 			'sources.n05.use' => 'N02とOpenStreetMapにない廃止区間の線路形状',
 			'sources.n05.terms' => '国土交通省。国土数値情報の利用条件（非商用）。「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.n03.name' => '国土数値情報 行政区域データ (N03)',
-			'sources.n03.use' => '日本の輪郭と都道府県境',
+			'sources.n03.use' => '日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => '駅一覧と座標',
@@ -1384,7 +1463,6 @@ extension on TranslationsJa {
 			'lineDetail.allTime' => '廃止区間含む',
 			'lineDetail.km' => ({required Object num, required Object den}) => '${num} / ${den} km',
 			'lineDetail.completeCurrent' => '完乗',
-			'lineDetail.completeAllTime' => '廃止区間含め完乗',
 			'lineDetail.selfScore' => '全体の集計対象外の路線です。この路線の中だけで乗車率を計算します。',
 			'lineDetail.open' => '路線詳細',
 			'lineDetail.record' => 'この路線を記録する',
@@ -1416,6 +1494,10 @@ extension on TranslationsJa {
 			'deleted.restored' => '記録を戻しました',
 			'deleted.fileRides' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '記録 ${n}件', ), 
 			'deleted.fileDelete' => 'ファイルごと削除',
+			'deleted.fileDeleteTitle' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '記録${n}件を削除しますか？', ), 
+			'deleted.fileDeleteBody' => ({required Object file}) => '${file}から取り込んだ記録をすべて削除します。設定の「削除した記録」から元に戻せます。',
+			'deleted.fileDeleteConfirm' => '削除',
+			'deleted.fileDeleteCancel' => 'キャンセル',
 			'deleted.fileDeleted' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '記録${n}件を削除しました', ), 
 			'complete.credit' => 'norioriで記録しました',
 			'complete.share' => '共有する',
@@ -1425,7 +1507,6 @@ extension on TranslationsJa {
 			'collection.operators' => '事業者',
 			'collection.prefs' => '都道府県',
 			'collection.stations' => '駅',
-			'collection.allTime' => '廃線含む',
 			'collection.stationGoal' => ({required Object n}) => '${n}駅',
 			'collection.empty' => 'まだありません',
 			'collection.closed' => '廃線',
@@ -1503,6 +1584,9 @@ extension on TranslationsJa {
 			'mapSheet.visited' => 'この駅に行ったことがある',
 			'mapSheet.visitedHint' => '完乗率には含まれず、地図の丸だけが塗られます',
 			'mapSheet.noVisits' => '駅訪問の記録はありません。地図で駅をタップすると残せます。',
+			'mapSheet.pickerLabel' => 'この場所を通る路線',
+			'mapSheet.partlyClosed' => 'この区間は廃止',
+			'mapSheet.closed' => '廃線',
 			'prefNames.0' => '北海道',
 			'prefNames.1' => '青森',
 			'prefNames.2' => '岩手',
@@ -1538,6 +1622,8 @@ extension on TranslationsJa {
 			'prefNames.32' => '岡山',
 			'prefNames.33' => '広島',
 			'prefNames.34' => '山口',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.35' => '徳島',
 			'prefNames.36' => '香川',
 			'prefNames.37' => '愛媛',

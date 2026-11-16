@@ -16,8 +16,10 @@ final class DateSpan {
   static final _month = RegExp(r'^(\d{4})-(\d{2})-XX$');
   static final _year = RegExp(r'^(\d{4})-XX-XX$');
   static final _decade = RegExp(r'^(\d{3})X-XX-XX$');
+  static final _century = RegExp(r'^(\d{2})XX-XX-XX$');
+  static final _range = RegExp(r'^\[(.*)\.\.(.*)\]$');
 
-  /// 하루, 달, 해, 연대를 받는다. 그 밖의 값은 [FormatException].
+  /// 하루, 달, 해, 10년, 100년과 범위 `[A..B]`를 받는다. 그 밖의 값은 [FormatException].
   factory DateSpan.parse(String raw) {
     if (raw == 'ongoing') return const DateSpan._('ongoing', maxDate, maxDate);
     if (_day.hasMatch(raw)) return DateSpan._(raw, raw, raw);
@@ -36,6 +38,18 @@ final class DateSpan {
     final decade = _decade.firstMatch(raw);
     if (decade != null) {
       return DateSpan._(raw, '${decade[1]}0-01-01', '${decade[1]}9-12-31');
+    }
+    final century = _century.firstMatch(raw);
+    if (century != null) {
+      return DateSpan._(raw, '${century[1]}00-01-01', '${century[1]}99-12-31');
+    }
+    // 그 사이 어느 날인지 모르는 범위 (EDTF 「하나의 값」 [A..B]). 끝 하나는 비울 수 있다
+    final range = _range.firstMatch(raw);
+    if (range != null) {
+      final lo = range[1]!.isEmpty ? '0000-01-01' : DateSpan.parse(range[1]!).lo;
+      final hi = range[2]!.isEmpty ? maxDate : DateSpan.parse(range[2]!).hi;
+      if (lo.compareTo(hi) > 0) throw FormatException('범위가 거꾸로다', raw);
+      return DateSpan._(raw, lo, hi);
     }
     throw FormatException('EDTF 해석 불가', raw);
   }

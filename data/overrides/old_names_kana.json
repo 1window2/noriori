@@ -1,0 +1,3838 @@
+{
+"n_abozaki|吾妻崎": {
+"kana": "あづまざき",
+"source": "ja.wikipedia 阿母崎駅 (revid 110174238)"
+},
+"n_afurijinja|下社": {
+"kana": "しもしゃ",
+"source": "ja.wikipedia 大山観光電鉄大山鋼索線 (revid 110078955)"
+},
+"n_aichikyuhaku_kinen_koen|万博会場": {
+"kana": "ばんぱくかいじょう",
+"source": "ja.wikipedia 愛・地球博記念公園駅 (revid 111592256)"
+},
+"n_aikawa_akita_nairiku_jukan|羽後上大野": {
+"kana": "うごうえおおの",
+"source": "wikipedia:合川駅"
+},
+"n_aikawa_hankyu|吹田東口": {
+"kana": "すいたひがしぐち",
+"source": "wikipedia:相川駅"
+},
+"n_aino_shimabara|愛野村": {
+"kana": "あいのむら",
+"source": "ja.wikipedia 愛野駅 (長崎県) (revid 110362496)"
+},
+"n_ainosato_koen|釜谷臼": {
+"kana": "かまやうす",
+"source": "wikipedia:あいの里公園駅"
+},
+"n_aioi_nagaragawa|美濃相生": {
+"kana": "みのあいおい",
+"source": "ja.wikipedia 相生駅 (岐阜県) (revid 110078675)"
+},
+"n_aioicho_transportation_bureau_city_of_yokohama|太田町": {
+"kana": "おおたまち",
+"source": "ja.wikipedia 太田町 (横浜市) (revid 105579134) (신뢰도 중간: place)"
+},
+"n_aizu_arakai|荒海": {
+"kana": "あらかい",
+"source": "wikipedia:会津荒海駅"
+},
+"n_aizu_hinohara|会津檜原": {
+"kana": "あいづひのはら",
+"source": "wikipedia:会津桧原駅"
+},
+"n_aizu_shimogo|楢原": {
+"kana": "ならはら",
+"source": "wikipedia:会津下郷駅"
+},
+"n_ajinahigashi|地御前県病院前": {
+"kana": "じごぜんけんびょういんまえ",
+"source": "ja.wikipedia 阿品東駅 (revid 111483682)"
+},
+"n_akada|蜷川": {
+"kana": "にながわ",
+"source": "ja.wikipedia 赤田駅 (revid 98557589)"
+},
+"n_akagi_jomo|新大間々": {
+"kana": "しんおおまま",
+"source": "wikipedia:赤城駅"
+},
+"n_akagi_tobu|新大間々": {
+"kana": "しんおおまま",
+"source": "wikipedia:赤城駅"
+},
+"n_akaike_nagaragawa|郡上赤池": {
+"kana": "ぐじょうあかいけ",
+"source": "ja.wikipedia 赤池駅 (岐阜県) (revid 111614921)"
+},
+"n_akakura_onsen|富沢": {
+"kana": "とみさわ",
+"source": "wikipedia:赤倉温泉駅"
+},
+"n_akakura_onsen|羽前赤倉": {
+"kana": "うぜんあかくら",
+"source": "wikipedia:赤倉温泉駅"
+},
+"n_akamondori|三輪町": {
+"kana": "みわちょう",
+"source": "ja.wikipedia 三輪町 (名古屋市) (revid 108843184) (신뢰도 중간: place)"
+},
+"n_akatsuki_gakuenmae|萱生": {
+"kana": "かよう",
+"source": "wikipedia:暁学園前駅"
+},
+"n_akigawa|西秋留": {
+"kana": "にしあきる",
+"source": "ja.wikipedia 秋川駅 (revid 111398851)"
+},
+"n_anamori_inari|稲荷橋": {
+"kana": "いなりばし",
+"source": "wikipedia:穴守稲荷駅"
+},
+"n_antoku|安中村": {
+"kana": "あんなかむら",
+"source": "ja.wikipedia 安徳駅 (revid 110184455)"
+},
+"n_aonuma|入沢": {
+"kana": "いりさわ",
+"source": "wikipedia:青沼駅"
+},
+"n_aoyama_meitetsu|南成岩": {
+"kana": "みなみならわ",
+"source": "ja.wikipedia 青山駅 (愛知県) (revid 111403560)"
+},
+"n_aoyamacho|阿保": {
+"kana": "あお",
+"source": "ja.wikipedia 青山町駅 (revid 109090444)"
+},
+"n_ariakeyue|島鉄湯江": {
+"kana": "しまてつゆえ",
+"source": "ja.wikipedia 有明湯江駅 (revid 110174166)"
+},
+"n_ariigawa|東大方": {
+"kana": "ひがしおおかた",
+"source": "ja.wikipedia 有井川駅 (revid 111445679)"
+},
+"n_arimaguchi|唐櫃": {
+"kana": "からと",
+"source": "wikipedia:有馬口駅"
+},
+"n_arimaguchi|有馬温泉口": {
+"kana": "ありまおんせんぐち",
+"source": "wikipedia:有馬口駅"
+},
+"n_arimineguchi|小見": {
+"kana": "おみ",
+"source": "wikipedia:有峰口駅"
+},
+"n_asagiri_kumagawa|免田": {
+"kana": "めんだ",
+"source": "wikipedia:あさぎり駅"
+},
+"n_asahi_sobu_main|旭町": {
+"kana": "あさひまち",
+"source": "ja.wikipedia 旭駅 (千葉県) (revid 110932262)"
+},
+"n_asamushi_onsen|浅虫": {
+"kana": "あさむし",
+"source": "wikipedia:浅虫温泉駅"
+},
+"n_ashinomaki_onsen|上三寄": {
+"kana": "かみみより",
+"source": "wikipedia:芦ノ牧温泉駅"
+},
+"n_asuka|橘寺": {
+"kana": "たちばなでら",
+"source": "ja.wikipedia 飛鳥駅 (revid 111378992)"
+},
+"n_atsumi_onsen|温海": {
+"kana": "あつみ",
+"source": "wikipedia:あつみ温泉駅"
+},
+"n_awa_yamakawa|湯立": {
+"kana": "ゆだて",
+"source": "wikipedia:阿波山川駅"
+},
+"n_azuma|山田村": {
+"kana": "やまだむら",
+"source": "ja.wikipedia 吾妻駅 (revid 110173590)"
+},
+"n_bandai_atami|岩代熱海": {
+"kana": "いわしろあたみ",
+"source": "wikipedia:磐梯熱海駅"
+},
+"n_bandaimachi|大寺": {
+"kana": "おおでら",
+"source": "wikipedia:磐梯町駅"
+},
+"n_bekkai|西別": {
+"kana": "にしべつ",
+"source": "wikipedia:別海駅"
+},
+"n_bell_mae|花堂南": {
+"kana": "はなんどうみなみ",
+"source": "wikipedia:ベル前駅"
+},
+"n_beppo|上別保": {
+"kana": "かみべっぽ",
+"source": "ja.wikipedia 別保駅 (revid 111490897)"
+},
+"n_bijutsukantoshokanmae|森合": {
+"kana": "もりあい",
+"source": "wikipedia:美術館図書館前駅"
+},
+"n_bungo_kiyokawa|牧口": {
+"kana": "まきぐち",
+"source": "wikipedia:豊後清川駅"
+},
+"n_bunsui|地蔵堂": {
+"kana": "じぞうどう",
+"source": "wikipedia:分水駅"
+},
+"n_cable_enryakuji|叡山中堂": {
+"kana": "えいざんちゅうどう",
+"source": "wikipedia:ケーブル延暦寺駅"
+},
+"n_cable_hachimangu_guchi|八幡市": {
+"kana": "やわたし",
+"source": "ja.wikipedia 八幡市 (revid 111127075) (신뢰도 중간: place)"
+},
+"n_cable_hachimangu_sanjo|八幡宮": {
+"kana": "はちまんぐう",
+"source": "ja.wikipedia 八幡宮 (revid 111628577) (신뢰도 중간: place)"
+},
+"n_cable_hachimangu_sanjo|男山山上": {
+"kana": "おとこやまさんじょう",
+"source": "wikipedia:ケーブル八幡宮山上駅"
+},
+"n_cable_hiei|四明ヶ岳": {
+"kana": "しめがたけ",
+"source": "ja.wikipedia 比叡山 (revid 111537199) (신뢰도 중간: place)"
+},
+"n_cable_sakamoto|坂本": {
+"kana": "さかもと",
+"source": "wikipedia:ケーブル坂本駅"
+},
+"n_cable_yase|ケーブル八瀬遊園": {
+"kana": "けーぶるやせゆうえん",
+"source": "ja.wikipedia ケーブル八瀬駅 (revid 110242689)"
+},
+"n_cable_yase|西塔橋": {
+"kana": "さいとうばし",
+"source": "ja.wikipedia ケーブル八瀬駅 (revid 110242689)"
+},
+"n_chiba_minato|千葉港": {
+"kana": "ちばみなと",
+"source": "wikipedia:千葉みなと駅"
+},
+"n_chichibugaura_shimabara|中央高校前": {
+"kana": "ちゅうおうこうこうまえ",
+"source": "wikipedia:秩父が浦駅"
+},
+"n_chichibugaura_shimabara|技術専門校前": {
+"kana": "ぎじゅつせんもんこうまえ",
+"source": "wikipedia:秩父が浦駅"
+},
+"n_chichibugaura_shimabara|職業訓練校前": {
+"kana": "しょくぎょうくんれんこうまえ",
+"source": "wikipedia:秩父が浦駅"
+},
+"n_chippubetsu|筑紫": {
+"kana": "ちくし",
+"source": "ja.wikipedia 秩父別駅 (revid 109481623)"
+},
+"n_chiyoricho_2_chome|若松町通": {
+"kana": "わかまつちょうどおり",
+"source": "ja.wikipedia 知寄町二丁目停留場 (revid 109010645)"
+},
+"n_chiyoricho|知寄町車庫前": {
+"kana": "ちよりちょうしゃこまえ",
+"source": "ja.wikipedia 知寄町停留場 (revid 110869170)"
+},
+"n_chogo|新長後": {
+"kana": "しんちょうご",
+"source": "ja.wikipedia 長後駅 (revid 110517250)"
+},
+"n_chudenmae|白神社前": {
+"kana": "しらかみしゃまえ",
+"source": "ja.wikipedia 中電前停留場 (revid 111061168)"
+},
+"n_daigakubyoinmae|県庁市役所前": {
+"kana": "けんちょうしやくしょまえ",
+"source": "ja.wikipedia 大学病院前駅 (revid 106532839)"
+},
+"n_daigakubyoin|大学病院前": {
+"kana": "だいがくびょういんまえ",
+"source": "ja.wikipedia 大学病院停留場 (revid 110263670)"
+},
+"n_daigakubyoin|岩川町": {
+"kana": "いわかわまち",
+"source": "ja.wikipedia 大学病院停留場 (revid 110263670)"
+},
+"n_daigakumae_echigo_kotsu|四郎丸": {
+"kana": "しろうまる",
+"source": "ja.wikipedia 大学前駅 (新潟県) (revid 109754345)"
+},
+"n_daigakumae_toyama_chiho|五福": {
+"kana": "ごふく",
+"source": "ja.wikipedia 五福 (revid 101803698) (신뢰도 중간: place)"
+},
+"n_daigaku|大学前": {
+"kana": "だいがくまえ",
+"source": "ja.wikipedia 大学駅 (revid 110445422)"
+},
+"n_daishibashi|産業道路": {
+"kana": "さんぎょうどうろ",
+"source": "ja.wikipedia 大師橋駅 (revid 110067470)"
+},
+"n_danbara_1_chome|大畑町": {
+"kana": "おおはたちょう",
+"source": "ja.wikipedia 段原一丁目停留場 (revid 110394060)"
+},
+"n_danbara_1_chome|段原大畑町": {
+"kana": "だんばらおおはたちょう",
+"source": "ja.wikipedia 段原一丁目停留場 (revid 110394060)"
+},
+"n_dentetsu_izumoshi|出雲今市": {
+"kana": "いづもいまいち",
+"source": "wikipedia:電鉄出雲市駅"
+},
+"n_dentetsu_kurobe|西三日市": {
+"kana": "にしみっかいち",
+"source": "ja.wikipedia 電鉄黒部駅 (revid 109247649)"
+},
+"n_dentetsu_kurobe|電鉄桜井": {
+"kana": "でんてつさくらい",
+"source": "wikipedia:電鉄黒部駅"
+},
+"n_dentetsu_terminal_building_mae|とでん西武百貨店前": {
+"kana": "とでんせいぶひゃっかてんまえ",
+"source": "ja.wikipedia デンテツターミナルビル前停留場 (revid 109294135)"
+},
+"n_dentetsu_terminal_building_mae|浦戸町土電会館前": {
+"kana": "うらどまちとでんかいかんまえ",
+"source": "ja.wikipedia デンテツターミナルビル前停留場 (revid 109294135)"
+},
+"n_dokkyodaigakumae|松原団地": {
+"kana": "まつばらだんち",
+"source": "ja.wikipedia 獨協大学前駅 (revid 110910933)"
+},
+"n_ebino_iino|飯野": {
+"kana": "いいの",
+"source": "wikipedia:えびの飯野駅"
+},
+"n_ebino_uwae|上江": {
+"kana": "うわえ",
+"source": "wikipedia:えびの上江駅"
+},
+"n_ebino|加久藤": {
+"kana": "かくとう",
+"source": "wikipedia:えびの駅"
+},
+"n_ebisucho_hiroden|流川": {
+"kana": "ながれかわ",
+"source": "ja.wikipedia 流川 (広島市) (revid 106929596) (신뢰도 중간: place)"
+},
+"n_ebisucho_hiroden|流川町": {
+"kana": "ながれかわちょう",
+"source": "ja.wikipedia 胡町停留場 (revid 111060943)"
+},
+"n_echizen_kaihotsu|開発": {
+"kana": "かいほつ",
+"source": "wikipedia:越前開発駅"
+},
+"n_echizen_shinbo|新保": {
+"kana": "しんぼ",
+"source": "wikipedia:越前新保駅"
+},
+"n_einodaigakkomae|有畜農業指導所前": {
+"kana": "ゆうちくのうぎょうしどうしょまえ",
+"source": "ja.wikipedia 営農大学校前駅 (revid 111433478)"
+},
+"n_einodaigakkomae|研修所前": {
+"kana": "けんしゅうじょまえ",
+"source": "ja.wikipedia 営農大学校前駅 (revid 111433478)"
+},
+"n_emukae_shikamachi|江迎": {
+"kana": "えむかえ",
+"source": "ja.wikipedia 江迎鹿町駅 (revid 110444997)"
+},
+"n_ena|大井": {
+"kana": "おおい",
+"source": "wikipedia:恵那駅"
+},
+"n_enkobashicho|猿猴橋": {
+"kana": "えんこうばし",
+"source": "ja.wikipedia 猿猴橋 (revid 111364338) (신뢰도 중간: place)"
+},
+"n_enshu_kando|神戸村": {
+"kana": "かんどむら",
+"source": "ja.wikipedia 静岡鉄道駿遠線 (revid 107340138)"
+},
+"n_fujiedahommachi|岡出山": {
+"kana": "おかでやま",
+"source": "ja.wikipedia 静岡鉄道駿遠線 (revid 107340138)"
+},
+"n_fujikawa|岩淵": {
+"kana": "いわぶち",
+"source": "ja.wikipedia 富士川駅 (revid 109909635)"
+},
+"n_fujisan|富士吉田": {
+"kana": "ふじよしだ",
+"source": "ja.wikipedia 富士山駅 (revid 111372222)"
+},
+"n_fukkodaimae|筑前新宮": {
+"kana": "ちくぜんしんぐう",
+"source": "ja.wikipedia 福工大前駅 (revid 111058648)"
+},
+"n_fukuchiyama_shimin_byoin_guchi|厚中問屋": {
+"kana": "あつなかとんや",
+"source": "ja.wikipedia 福知山市民病院口駅 (revid 111249403)"
+},
+"n_fukuno_nagaragawa|郡上福野": {
+"kana": "ぐじょうふくの",
+"source": "ja.wikipedia 福野駅 (岐阜県) (revid 110055643)"
+},
+"n_fukuokacho|土呂": {
+"kana": "とろ",
+"source": "ja.wikipedia 福岡町駅 (revid 103829724)"
+},
+"n_funairimachi|舟入仲町": {
+"kana": "ふないりなかまち",
+"source": "ja.wikipedia 舟入町停留場 (revid 110402703)"
+},
+"n_funairiminami|グランド口": {
+"kana": "ぐらんどぐち",
+"source": "ja.wikipedia 舟入南停留場 (revid 110403026)"
+},
+"n_funairiminami|江波口": {
+"kana": "えばぐち",
+"source": "ja.wikipedia 舟入南停留場 (revid 110403026)"
+},
+"n_funairiminami|舟入南町": {
+"kana": "ふないりみなみまち",
+"source": "ja.wikipedia 舟入南停留場 (revid 110403026)"
+},
+"n_furukawa|陸前古川": {
+"kana": "りくぜんふるかわ",
+"source": "ja.wikipedia 古川駅 (revid 110783777)"
+},
+"n_futaba|長塚": {
+"kana": "ながつか",
+"source": "wikipedia:双葉駅"
+},
+"n_futako_shinchi|二子新地前": {
+"kana": "ふたこしんちまえ",
+"source": "ja.wikipedia 二子新地駅 (revid 110102017)"
+},
+"n_futako_tamagawa|二子玉川園": {
+"kana": "ふたこたまがわえん",
+"source": "ja.wikipedia 二子玉川園 (revid 109891599) (신뢰도 중간: place)"
+},
+"n_futomi_sassho|石狩太美": {
+"kana": "いしかりふとみ",
+"source": "wikipedia:太美駅"
+},
+"n_gasugaishamae|亀田": {
+"kana": "かめだ",
+"source": "ja.wikipedia ガス会社前停留場 (revid 110260063)"
+},
+"n_genbaku_dome_mae|相生橋": {
+"kana": "あいおいばし",
+"source": "ja.wikipedia 原爆ドーム前停留場 (revid 111060965)"
+},
+"n_genbakushiryokan|浜口町": {
+"kana": "はまぐちまち",
+"source": "ja.wikipedia 原爆資料館停留場 (revid 110990398)"
+},
+"n_gomennakamachi|後免中町通": {
+"kana": "ごめんなかまちどおり",
+"source": "ja.wikipedia 後免中町停留場 (revid 111355791)"
+},
+"n_gomennishimachi|後免西町通": {
+"kana": "ごめんにしまちどおり",
+"source": "ja.wikipedia 後免西町停留場 (revid 108740859)"
+},
+"n_gotsu|石見江津": {
+"kana": "いわみごうつ",
+"source": "ja.wikipedia 江津駅 (revid 111663375)"
+},
+"n_gujo_yamato|美濃弥富": {
+"kana": "みのやとみ",
+"source": "wikipedia:郡上大和駅"
+},
+"n_gurando_dori|乗出": {
+"kana": "のりだし",
+"source": "ja.wikipedia グランド通停留場 (revid 111004790)"
+},
+"n_gyodashi|行田": {
+"kana": "ぎょうだ",
+"source": "ja.wikipedia 行田市 (revid 111688473) (신뢰도 중간: place)"
+},
+"n_hachimantai|小豆沢": {
+"kana": "あずきざわ",
+"source": "wikipedia:八幡平駅"
+},
+"n_hachimori|椿": {
+"kana": "つばき",
+"source": "ja.wikipedia 八森駅 (revid 109227735)"
+},
+"n_hachirogata_akita_chuo|一日市": {
+"kana": "ひといち",
+"source": "wikipedia:八郎潟駅"
+},
+"n_hachirogata|一日市": {
+"kana": "ひといち",
+"source": "wikipedia:八郎潟駅"
+},
+"n_hadano|大秦野": {
+"kana": "おおはたの",
+"source": "ja.wikipedia 秦野駅 (revid 111589469)"
+},
+"n_hagiurashogakkomae|大広田": {
+"kana": "おおひろた",
+"source": "ja.wikipedia 萩浦小学校前駅 (revid 111546457)"
+},
+"n_hakuba|信濃四ツ谷": {
+"kana": "しなのよつや",
+"source": "wikipedia:白馬駅"
+},
+"n_hakushima_hiroden|白島終点": {
+"kana": "はくしましゅうてん",
+"source": "ja.wikipedia 白島停留場 (revid 110393747)"
+},
+"n_hama_koshimizu|古樋": {
+"kana": "ふるとい",
+"source": "wikipedia:浜小清水駅"
+},
+"n_hama_saroma|下佐呂間": {
+"kana": "しもさろま",
+"source": "wikipedia:浜佐呂間駅"
+},
+"n_hamanako_sakume|佐久米": {
+"kana": "さくめ",
+"source": "ja.wikipedia 浜名湖佐久米駅 (revid 110434893)"
+},
+"n_hamaokacho|池新田": {
+"kana": "いけしんでん",
+"source": "ja.wikipedia 静岡鉄道駿遠線 (revid 107340138)"
+},
+"n_hanamaki_airport|二枚橋": {
+"kana": "にまいばし",
+"source": "ja.wikipedia 花巻空港駅 (revid 111083854)"
+},
+"n_hanazono_takamatsu_kotohira|御坊川": {
+"kana": "ごぼがわ",
+"source": "ja.wikipedia 御坊川駅 (revid 104150432) (신뢰도 중간: station)"
+},
+"n_harajo|南有馬": {
+"kana": "みなみありま",
+"source": "ja.wikipedia 原城駅 (revid 110185434)"
+},
+"n_harimacho|本荘": {
+"kana": "ほんじょう",
+"source": "ja.wikipedia 播磨町駅 (revid 109400257)"
+},
+"n_hatsukaichishiyakushomae|平良": {
+"kana": "へら",
+"source": "ja.wikipedia 廿日市市役所前（平良）駅 (revid 110319456)"
+},
+"n_hattori_tenjin|服部": {
+"kana": "はっとり",
+"source": "ja.wikipedia 服部 (豊中市) (revid 109417934) (신뢰도 중간: place)"
+},
+"n_hayashisaki_matsuekaigan|電鉄林崎": {
+"kana": "でんてつはやしさき",
+"source": "ja.wikipedia 林崎松江海岸駅 (revid 109400318)"
+},
+"n_hazakawa|由加": {
+"kana": "ゆが",
+"source": "wikipedia:迫川駅"
+},
+"n_heiwakoen|松山町": {
+"kana": "まつやままち",
+"source": "ja.wikipedia 平和公園停留場 (revid 109340527)"
+},
+"n_hekinan|大浜港": {
+"kana": "おおはまみなと",
+"source": "wikipedia:碧南駅"
+},
+"n_hibarigaoka_seibu|田無町": {
+"kana": "たなしまち",
+"source": "wikipedia:ひばりヶ丘駅"
+},
+"n_hibayama|備後熊野": {
+"kana": "びんごくまの",
+"source": "ja.wikipedia 比婆山駅 (revid 110622108)"
+},
+"n_higashi_funaoka|横橋": {
+"kana": "よこはし",
+"source": "wikipedia:東船岡駅"
+},
+"n_higashi_gejo|熊渡": {
+"kana": "くまわたり",
+"source": "ja.wikipedia 東下条駅 (revid 104536651) (신뢰도 중간: place)"
+},
+"n_higashi_ikebukuro_yonchome|日出町二丁目": {
+"kana": "ひのでちょうにちょうめ",
+"source": "ja.wikipedia 東池袋四丁目停留場 (revid 109766365)"
+},
+"n_higashi_jujo|下十条": {
+"kana": "しもじゅうじょう",
+"source": "wikipedia:東十条駅"
+},
+"n_higashi_kagashima|弘法東口": {
+"kana": "こうぼうひがしぐち",
+"source": "ja.wikipedia 東鏡島駅 (revid 96096174)"
+},
+"n_higashi_kashiwazaki|比角": {
+"kana": "ひすみ",
+"source": "wikipedia:東柏崎駅"
+},
+"n_higashi_matsue|馬潟": {
+"kana": "まかた",
+"source": "ja.wikipedia 東松江駅 (島根県) (revid 111366818)"
+},
+"n_higashi_mukojima|玉ノ井": {
+"kana": "たまのい",
+"source": "ja.wikipedia 東向島駅 (revid 111018788)"
+},
+"n_higashi_muko|東向日町": {
+"kana": "ひがしむこうまち",
+"source": "ja.wikipedia 東向日駅 (revid 110635291)"
+},
+"n_higashi_nakatsu|大貞": {
+"kana": "おおさだ",
+"source": "ja.wikipedia 東中津駅 (revid 111677054)"
+},
+"n_higashi_okayama|西大寺": {
+"kana": "さいだいじ",
+"source": "ja.wikipedia 西大寺 (学区) (revid 106984336) (신뢰도 중간: place)"
+},
+"n_higashi_tabira|田平": {
+"kana": "たびら",
+"source": "ja.wikipedia 東田平駅 (revid 110444927)"
+},
+"n_higashi_yamatoshi|青梅橋": {
+"kana": "おうめばし",
+"source": "wikipedia:東大和市駅"
+},
+"n_higashino_danchi|渋沢農場前": {
+"kana": "しぶさわのうじょうまえ",
+"source": "wikipedia:ひがし野団地駅"
+},
+"n_higashishioda|鈴子": {
+"kana": "すずこ",
+"source": "ja.wikipedia 東塩田駅 (revid 101510065)"
+},
+"n_higashitakikawa|幌倉": {
+"kana": "ほろくら",
+"source": "wikipedia:東滝川駅"
+},
+"n_higashiyama_kintetsu|茸山": {
+"kana": "たけやま",
+"source": "ja.wikipedia 東山駅 (奈良県) (revid 109318403)"
+},
+"n_hijiri_kogen|麻績": {
+"kana": "おみ",
+"source": "wikipedia:聖高原駅"
+},
+"n_hinagu_onsen|日奈久": {
+"kana": "ひなぐ",
+"source": "ja.wikipedia 日奈久温泉駅 (revid 110483415)"
+},
+"n_hiraoka|満島": {
+"kana": "みつしま",
+"source": "ja.wikipedia 平岡駅 (revid 108722669)"
+},
+"n_hirayamajoshi_koen|平山": {
+"kana": "ひらやま",
+"source": "ja.wikipedia 平山城址公園駅 (revid 110854681)"
+},
+"n_hirodaifuzokugakkomae|広大付属高校前": {
+"kana": "ひろだいふぞくこうこうまえ",
+"source": "wikipedia:広大附属学校前駅"
+},
+"n_hirodaifuzokugakkomae|広大教養部前": {
+"kana": "ひろだいきょうようぶまえ",
+"source": "wikipedia:広大附属学校前駅"
+},
+"n_hirodaifuzokugakkomae|皆実分校前": {
+"kana": "みなみぶんこうまえ",
+"source": "ja.wikipedia 広大附属学校前停留場 (revid 111061222)"
+},
+"n_hiroden_miyajimaguchi|電車宮島": {
+"kana": "でんしゃみやじま",
+"source": "ja.wikipedia 広電宮島口駅 (revid 111324600)"
+},
+"n_hirodenhonshamae|電鉄前": {
+"kana": "でんてつまえ",
+"source": "ja.wikipedia 広電本社前停留場 (revid 111439374)"
+},
+"n_hirokoji_manyosen|湶町": {
+"kana": "あわらまち",
+"source": "ja.wikipedia 広小路停留場 (revid 106428228)"
+},
+"n_hirokojifushimi|伏見通": {
+"kana": "ふしみどおり",
+"source": "ja.wikipedia 伏見通 (revid 108962876) (신뢰도 중간: place)"
+},
+"n_hirokojifushimi|南園町": {
+"kana": "みなみそのまち",
+"source": "ja.wikipedia 南園町 (revid 97929784) (신뢰도 중간: place)"
+},
+"n_hirono_golf_jo_mae|広野新開": {
+"kana": "ひろのしんかい",
+"source": "wikipedia:広野ゴルフ場前駅"
+},
+"n_hiyoshi|殿田": {
+"kana": "とのだ",
+"source": "ja.wikipedia 日吉駅 (京都府) (revid 110913929)"
+},
+"n_hofu_boseki|三田尻": {
+"kana": "みたじり",
+"source": "ja.wikipedia 防府駅 (revid 108719751)"
+},
+"n_hofu|三田尻": {
+"kana": "みたじり",
+"source": "ja.wikipedia 防府駅 (revid 108719751)"
+},
+"n_hokuto|平戸前": {
+"kana": "ひらとまえ",
+"source": "ja.wikipedia 北斗駅 (revid 98031331)"
+},
+"n_hon_hachinohe|八戸": {
+"kana": "はちのへ",
+"source": "ja.wikipedia 東北地方の難読地名一覧 (revid 109929309) (신뢰도 중간: place)"
+},
+"n_hondori_hiroden|革屋町": {
+"kana": "かわやちょう",
+"source": "ja.wikipedia 本通停留場 (revid 110392859)"
+},
+"n_honkawacho|左官町": {
+"kana": "さかんちょう",
+"source": "ja.wikipedia 本川町停留場 (revid 111359222)"
+},
+"n_honmachi_3_chome|札ノ辻": {
+"kana": "ふだのつじ",
+"source": "ja.wikipedia 本町三丁目停留場 (revid 106209761)"
+},
+"n_honmachi_4_chome|本町": {
+"kana": "ほんまち",
+"source": "ja.wikipedia 本町四丁目停留場 (revid 106209764)"
+},
+"n_horiuchi_koen|碧海堀内": {
+"kana": "へきかいほりうち",
+"source": "ja.wikipedia 堀内公園駅 (revid 108755661)"
+},
+"n_hottoyuda|陸中川尻": {
+"kana": "りくちゅうかわしり",
+"source": "ja.wikipedia ほっとゆだ駅 (revid 111082723)"
+},
+"n_hyuga_shintomi|三納代": {
+"kana": "みなしろ",
+"source": "ja.wikipedia 日向新富駅 (revid 110413698)"
+},
+"n_hyugashi|富高": {
+"kana": "とみたか",
+"source": "wikipedia:日向市駅"
+},
+"n_ichibataguchi|小境灘": {
+"kana": "こざかいなだ",
+"source": "wikipedia:一畑口駅"
+},
+"n_ichishi|伊勢田尻": {
+"kana": "いせたじり",
+"source": "wikipedia:一志駅"
+},
+"n_ido|真行寺": {
+"kana": "しんぎょうじ",
+"source": "wikipedia:井戸駅"
+},
+"n_iida_noto|珠洲飯田": {
+"kana": "すずいいだ",
+"source": "ja.wikipedia 飯田駅 (石川県) (revid 111249230)"
+},
+"n_ikuta|東生田": {
+"kana": "ひがしいくた",
+"source": "ja.wikipedia 生田駅 (神奈川県) (revid 109422788)"
+},
+"n_inashi|伊那町": {
+"kana": "いなまち",
+"source": "wikipedia:伊那市駅"
+},
+"n_irumashi|豊岡町": {
+"kana": "とよおかまち",
+"source": "wikipedia:入間市駅"
+},
+"n_isahayahigashikoukou|諫早東高校前": {
+"kana": "いさはやひがしこうこうまえ",
+"source": "ja.wikipedia 諫早東高校駅 (revid 110173504)"
+},
+"n_isakida|縄瀬": {
+"kana": "なわせ",
+"source": "ja.wikipedia 伊崎田駅 (revid 108411774)"
+},
+"n_isawa_onsen|石和": {
+"kana": "いさわ",
+"source": "wikipedia:石和温泉駅"
+},
+"n_iseshi_kintetsu|山田": {
+"kana": "やまだ",
+"source": "wikipedia:伊勢市駅"
+},
+"n_iseshi|山田": {
+"kana": "やまだ",
+"source": "wikipedia:伊勢市駅"
+},
+"n_ishibashi_handai_mae|石橋": {
+"kana": "いしばし",
+"source": "ja.wikipedia 石橋 (大阪府) (revid 110194967) (신뢰도 중간: place)"
+},
+"n_ishibashi_nagasaki_tram|大浦石橋": {
+"kana": "おおうらいしばし",
+"source": "ja.wikipedia 石橋停留場 (revid 109340696)"
+},
+"n_itano|板西": {
+"kana": "ばんざい",
+"source": "ja.wikipedia 板野駅 (revid 110716402)"
+},
+"n_itoi|小糸魚": {
+"kana": "こいとい",
+"source": "ja.wikipedia 糸井駅 (revid 110655899)"
+},
+"n_iwaizumi_omoto|小本": {
+"kana": "おもと",
+"source": "ja.wikipedia 岩泉小本駅 (revid 109723265)"
+},
+"n_iwaki|平": {
+"kana": "たいら",
+"source": "ja.wikipedia いわき駅 (revid 111515343)"
+},
+"n_iwamuro|和納": {
+"kana": "わのう",
+"source": "ja.wikipedia 岩室駅 (revid 110459860)"
+},
+"n_iwashimizu_hachimangu|八幡市": {
+"kana": "やわたし",
+"source": "ja.wikipedia 八幡市 (revid 111127075) (신뢰도 중간: place)"
+},
+"n_iwashimizu_hachimangu|八幡町": {
+"kana": "やわたちょう",
+"source": "ja.wikipedia 八幡町駅 (revid 92265440)"
+},
+"n_iyoshi|南郡中": {
+"kana": "みなみぐんちゅう",
+"source": "ja.wikipedia 伊予市駅 (revid 110654814)"
+},
+"n_izumo_taisha_mae|大社神門": {
+"kana": "たいしゃしんもん",
+"source": "wikipedia:出雲大社前駅"
+},
+"n_izumoshi_ichibata|出雲今市": {
+"kana": "いづもいまいち",
+"source": "wikipedia:出雲市駅"
+},
+"n_izumoshi|出雲今市": {
+"kana": "いづもいまいち",
+"source": "wikipedia:出雲市駅"
+},
+"n_jiyugaoka_tokyu_railways|自由ヶ丘": {
+"kana": "じゆうがおか",
+"source": "ja.wikipedia 自由が丘駅 (revid 110290450)"
+},
+"n_joetsumyoko_echigo_tokimeki|脇野田": {
+"kana": "わきのだ",
+"source": "wikipedia:上越妙高駅"
+},
+"n_jomon_mawaki|真脇": {
+"kana": "まわき",
+"source": "wikipedia:縄文真脇駅"
+},
+"n_joto_jomo|一毛町": {
+"kana": "いっけまち",
+"source": "wikipedia:城東駅"
+},
+"n_jr_matsuyama_ekimae|国鉄駅前": {
+"kana": "こくてつえきまえ",
+"source": "ja.wikipedia 松山駅 (愛媛県) (revid 111506617)"
+},
+"n_jr_miyamaki|上田辺": {
+"kana": "かみたなべ",
+"source": "ja.wikipedia JR三山木駅 (revid 109225244)"
+},
+"n_jr_namba|湊町": {
+"kana": "みなとまち",
+"source": "wikipedia:JR難波駅"
+},
+"n_jukkokutoge_sancho|十国峠": {
+"kana": "じゅっこくとうげ",
+"source": "ja.wikipedia 十国峠十国鋼索線 (revid 111175436) (신뢰도 중간: place)"
+},
+"n_juo|川尻": {
+"kana": "かわじり",
+"source": "wikipedia:十王駅"
+},
+"n_kabutoyama|甲山": {
+"kana": "こうやま",
+"source": "ja.wikipedia かぶと山駅 (revid 109630287)"
+},
+"n_kadancho|女子学院前": {
+"kana": "じょしがくいんまえ",
+"source": "ja.wikipedia 関大前駅 (revid 111217958)"
+},
+"n_kagaonsen|作見": {
+"kana": "さくみ",
+"source": "ja.wikipedia 加賀温泉駅 (revid 111082795)"
+},
+"n_kagetsu_sojiji|花月園前": {
+"kana": "かげつえんまえ",
+"source": "wikipedia:花月総持寺駅"
+},
+"n_kagoshima_chuo|西鹿児島": {
+"kana": "にしかごしま",
+"source": "ja.wikipedia 鹿児島中央駅 (revid 111058662)"
+},
+"n_kai_yamato|初鹿野": {
+"kana": "はじかの",
+"source": "ja.wikipedia 甲斐大和駅 (revid 111666615)"
+},
+"n_kaigataonsen|海潟": {
+"kana": "かいがた",
+"source": "ja.wikipedia 日本の温泉地一覧 (revid 111071750) (신뢰도 중간: place)"
+},
+"n_kaiomaru|越ノ潟口": {
+"kana": "こしのかたぐち",
+"source": "wikipedia:海王丸駅"
+},
+"n_kakamigahara_shiyakusho_mae|各務原飛行場": {
+"kana": "かがみはらひこうじょう",
+"source": "wikipedia:各務原市役所前駅"
+},
+"n_kakamigahara_shiyakusho_mae|運動場前": {
+"kana": "うんどうじょうまえ",
+"source": "wikipedia:各務原市役所前駅"
+},
+"n_kamakurakokomae|日坂": {
+"kana": "にっさか",
+"source": "wikipedia:鎌倉高校前駅"
+},
+"n_kami_nagawa|上長流": {
+"kana": "かみおさる",
+"source": "wikipedia:上長和駅"
+},
+"n_kamikitacho|沼崎": {
+"kana": "ぬまさき",
+"source": "wikipedia:上北町駅"
+},
+"n_kamimiyori_shiobara_onsenguchi|上三依塩原": {
+"kana": "かみみよりしおばら",
+"source": "ja.wikipedia 上三依塩原温泉口駅 (revid 109700339)"
+},
+"n_kamimiyori_shiobara_onsenguchi|下野上三依": {
+"kana": "しもつけかみみより",
+"source": "ja.wikipedia 上三依塩原温泉口駅 (revid 109700339)"
+},
+"n_kaminaka|三宅": {
+"kana": "みやけ",
+"source": "ja.wikipedia 上中駅 (revid 110904226)"
+},
+"n_kaminome|西岩出山": {
+"kana": "にしいわでやま",
+"source": "wikipedia:上野目駅"
+},
+"n_kaminoyama_onsen|上ノ山": {
+"kana": "かみのやま",
+"source": "ja.wikipedia かみのやま温泉駅 (revid 110696673)"
+},
+"n_kamioka_kozanmae|神岡口": {
+"kana": "かみおかぐち",
+"source": "ja.wikipedia 神岡鉱山前駅 (revid 110034278)"
+},
+"n_kamono|加茂野口": {
+"kana": "かものぐち",
+"source": "ja.wikipedia 加茂野駅 (revid 110044526)"
+},
+"n_kanayamacho|山口町": {
+"kana": "やまぐちちょう",
+"source": "ja.wikipedia 銀山町停留場 (revid 111060937)"
+},
+"n_kanazonocho_4_chome|金園町": {
+"kana": "かなぞのちょう",
+"source": "ja.wikipedia 金園町四丁目駅 (revid 90108111)"
+},
+"n_kanehana|奔無加": {
+"kana": "ぽんむか",
+"source": "ja.wikipedia 金華信号場 (revid 109819971)"
+},
+"n_kanenomachi|六橋": {
+"kana": "ろくきょう",
+"source": "ja.wikipedia 金野町駅 (revid 111505729)"
+},
+"n_kani|広見": {
+"kana": "ひろみ",
+"source": "ja.wikipedia 可児駅 (revid 111660542)"
+},
+"n_kanonmachi|西天満町": {
+"kana": "にしてんままち",
+"source": "ja.wikipedia 天満町停留場 (revid 110401874)"
+},
+"n_kanzaki_nagasaki_main|肥前神埼": {
+"kana": "ひぜんかんざき",
+"source": "wikipedia:神埼駅"
+},
+"n_karasuma_oike|御池": {
+"kana": "おいけ",
+"source": "wikipedia:烏丸御池駅"
+},
+"n_kashii_kaenmae|運動場前": {
+"kana": "うんどうじょうまえ",
+"source": "『現代の文学』 1963 「点と線」 지도(NDL 스니펫)·위키 香椎花園前駅(중간 둘) (3회차 날짜 보강 조사 2026-11-13; r3out/dates)"
+},
+"n_kashima_soccer_stadium_kashima_rinkai|北鹿島": {
+"kana": "きたかしま",
+"source": "ja.wikipedia 鹿島サッカースタジアム駅 (revid 111424802)"
+},
+"n_kasugaicho|別田": {
+"kana": "べつでん",
+"source": "wikipedia:春日居町駅"
+},
+"n_katamachi_keihan_main|野田橋": {
+"kana": "のだばし",
+"source": "ja.wikipedia 片町 (大阪市) (revid 110277323) (신뢰도 중간: place)"
+},
+"n_katanoshi|交野": {
+"kana": "かたの",
+"source": "ja.wikipedia 近畿地方の難読地名一覧 (revid 107630066) (신뢰도 중간: place)"
+},
+"n_katsuyamacho|御宝町": {
+"kana": "みたからまち",
+"source": "wikipedia:勝山町駅"
+},
+"n_kawagoe_tomisuhara|富洲原": {
+"kana": "とみすはら",
+"source": "ja.wikipedia 川越富洲原駅 (revid 109415214)"
+},
+"n_kawarayu_onsen|川原湯": {
+"kana": "かわらゆ",
+"source": "wikipedia:川原湯温泉駅"
+},
+"n_kawatabi_onsen|川渡": {
+"kana": "かわたび",
+"source": "wikipedia:川渡温泉駅"
+},
+"n_kayamachi_6_chome|三津口": {
+"kana": "みつくち",
+"source": "wikipedia:萱町六丁目駅"
+},
+"n_kazunohanawa|陸中花輪": {
+"kana": "りくちゅうはなわ",
+"source": "wikipedia:鹿角花輪駅"
+},
+"n_keihan_ishiyama|石山駅前": {
+"kana": "いしやまえきまえ",
+"source": "ja.wikipedia 石山駅 (revid 111498557)"
+},
+"n_keihan_otsukyo|皇子山": {
+"kana": "おうじやま",
+"source": "wikipedia:京阪大津京駅"
+},
+"n_keihan_zeze|膳所駅前": {
+"kana": "ぜぜえきまえ",
+"source": "wikipedia:京阪膳所駅"
+},
+"n_keihoku|幕別": {
+"kana": "まくべつ",
+"source": "wikipedia:恵北駅"
+},
+"n_keio_hachioji|東八王子": {
+"kana": "ひがしはちおうじ",
+"source": "ja.wikipedia 京王八王子駅 (revid 111059835)"
+},
+"n_keisei_chiba|国鉄千葉駅前": {
+"kana": "こくてつちばえきまえ",
+"source": "wikipedia:京成千葉駅"
+},
+"n_keisei_nishifuna|葛飾": {
+"kana": "かつしか",
+"source": "wikipedia:京成西船駅"
+},
+"n_kenchodori|内山下": {
+"kana": "うちさんげ",
+"source": "ja.wikipedia 内山下 (岡山市) (revid 111194554) (신뢰도 중간: place)"
+},
+"n_kibogaoka_kokomae|土手ノ内": {
+"kana": "どてのうち",
+"source": "wikipedia:希望が丘高校前駅"
+},
+"n_kikuchi|隈府": {
+"kana": "わいふ",
+"source": "ja.wikipedia 九州地方の難読地名一覧 (revid 111258086) (신뢰도 중간: place)"
+},
+"n_kikugawa|堀ノ内": {
+"kana": "ほりのうち",
+"source": "ja.wikipedia 菊川駅 (静岡県) (revid 110536464)"
+},
+"n_kinosaki_onsen|城崎": {
+"kana": "きのさき",
+"source": "ja.wikipedia 城崎温泉駅 (revid 109528450)"
+},
+"n_kintaichi_onsen|金田一": {
+"kana": "きんたいち",
+"source": "ja.wikipedia 金田一温泉駅 (revid 110298421)"
+},
+"n_kintetsu_tambabashi|近畿日本丹波橋": {
+"kana": "きんきにっぽんたんばばし",
+"source": "wikipedia:近鉄丹波橋駅"
+},
+"n_kinuta_hommura|砧": {
+"kana": "きぬた",
+"source": "ja.wikipedia 砧 (世田谷区) (revid 108646244) (신뢰도 중간: place)"
+},
+"n_kirishima_onsen|牧園": {
+"kana": "まきぞの",
+"source": "wikipedia:霧島温泉駅"
+},
+"n_kirishima_onsen|霧島西口": {
+"kana": "きりしまにしぐち",
+"source": "ja.wikipedia 霧島温泉駅 (revid 111342267)"
+},
+"n_kishinosato_tamade|岸ノ里": {
+"kana": "きしのさと",
+"source": "ja.wikipedia 岸里玉出駅 (revid 111041283)"
+},
+"n_kita_ichiyan|北一己": {
+"kana": "きたいちゃん",
+"source": "ja.wikipedia 一已村 (revid 110112903)"
+},
+"n_kita_nagano|吉田": {
+"kana": "よしだ",
+"source": "ja.wikipedia 北長野駅 (revid 110345501)"
+},
+"n_kita_nagaoka|城岡": {
+"kana": "じょうおか",
+"source": "wikipedia:北長岡駅"
+},
+"n_kita_shin_yokohama|新横浜北": {
+"kana": "しんよこはまきた",
+"source": "wikipedia:北新横浜駅"
+},
+"n_kitagata_makuwa|本巣北方": {
+"kana": "もとすきたがた",
+"source": "wikipedia:北方真桑駅"
+},
+"n_kitago_fukui_fukubu|西武生": {
+"kana": "にしたけふ",
+"source": "wikipedia:北府駅"
+},
+"n_kitakami|黒沢尻": {
+"kana": "くろさわじり",
+"source": "ja.wikipedia 北上駅 (revid 110783619)"
+},
+"n_kitamoto|北本宿": {
+"kana": "きたもとじゅく",
+"source": "wikipedia:北本駅"
+},
+"n_kiyosatocho|上斜里": {
+"kana": "かみしゃり",
+"source": "wikipedia:清里町駅"
+},
+"n_kobayashi_kitto|小林町": {
+"kana": "こばやしまち",
+"source": "ja.wikipedia 小林駅 (宮崎県) (revid 110419574)"
+},
+"n_koboguchi|弘法西口": {
+"kana": "こうぼうにしぐち",
+"source": "ja.wikipedia 弘法口駅 (revid 101407912)"
+},
+"n_kochibashi|廿代町通": {
+"kana": "にじゅうだいまちどおり",
+"source": "ja.wikipedia 高知橋停留場 (revid 107029549)"
+},
+"n_kochijomae|公園通": {
+"kana": "こうえんどおり",
+"source": "ja.wikipedia 高知城前停留場 (revid 111682613)"
+},
+"n_kogane|黄金蘂": {
+"kana": "おこんしべ",
+"source": "ja.wikipedia 黄金駅 (北海道) (revid 109393556)"
+},
+"n_kohoku_nagasaki_main|肥前山口": {
+"kana": "ひぜんやまぐち",
+"source": "ja.wikipedia 江北駅 (佐賀県) (revid 111397327)"
+},
+"n_koishihama|小石浜": {
+"kana": "こいしはま",
+"source": "ja.wikipedia 恋し浜駅 (revid 109722835)"
+},
+"n_koka|大原市場": {
+"kana": "おおはらいちば",
+"source": "wikipedia:甲賀駅"
+},
+"n_kokimae|日工前": {
+"kana": "にっこうまえ",
+"source": "wikipedia:工機前駅"
+},
+"n_komagane|赤穂": {
+"kana": "あかほ",
+"source": "ja.wikipedia 駒ケ根駅 (revid 108698923)"
+},
+"n_komatsugawa_4_chome|小松川": {
+"kana": "こまつがわ",
+"source": "ja.wikipedia 小松川 (江戸川区) (revid 107129783) (신뢰도 중간: place)"
+},
+"n_komi_tarumi|美濃神海": {
+"kana": "みのこうみ",
+"source": "wikipedia:神海駅"
+},
+"n_konan_kusatsu|深川": {
+"kana": "ふかわ",
+"source": "『鐵道停車場一覽』 昭和9年(NDL 1212697, 높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_koshigaya|越ヶ谷": {
+"kana": "こしがや",
+"source": "ja.wikipedia 越ヶ谷 (revid 109321160) (신뢰도 중간: place)"
+},
+"n_kotobuki_fujikyu|暮地": {
+"kana": "くれち",
+"source": "ja.wikipedia 寿駅 (revid 110097231)"
+},
+"n_kouda|肥前神田": {
+"kana": "ひぜんこうだ",
+"source": "ja.wikipedia 神田駅 (長崎県) (revid 110445103)"
+},
+"n_kowada_uonuma|小粟田原": {
+"kana": "こおだはら",
+"source": "wikipedia:小粟田駅"
+},
+"n_kugahara_tokyu_railways|久ヶ原": {
+"kana": "くがはら",
+"source": "wikipedia:久が原駅"
+},
+"n_kumommyo|井戸川": {
+"kana": "いどがわ",
+"source": "ja.wikipedia 公文明駅 (revid 110955130)"
+},
+"n_kurate_muroki|新延": {
+"kana": "にのぶ",
+"source": "ja.wikipedia 鞍手駅 (国鉄) (revid 110457980)"
+},
+"n_kurayoshi|上井": {
+"kana": "あげい",
+"source": "ja.wikipedia 倉吉駅 (revid 111650259)"
+},
+"n_kuri_kawashiri|能登川尻": {
+"kana": "のとかわしり",
+"source": "wikipedia:九里川尻駅"
+},
+"n_kurohime|柏原": {
+"kana": "かしわばら",
+"source": "wikipedia:黒姫駅"
+},
+"n_kurumazakijinja|車折": {
+"kana": "くるまざき",
+"source": "wikipedia:車折神社駅"
+},
+"n_kusatsu_hiroden|草津町": {
+"kana": "くさつまち",
+"source": "ja.wikipedia 草津駅 (広島県) (revid 111549876)"
+},
+"n_kusatsuminami|中央市場前": {
+"kana": "ちゅうおういちばまえ",
+"source": "ja.wikipedia 草津南駅 (revid 111549884)"
+},
+"n_kushima|福島仲町": {
+"kana": "ふくしまなかまち",
+"source": "ja.wikipedia 串間駅 (revid 110421591)"
+},
+"n_kuwamizukosaten|神水町": {
+"kana": "くわみずまち",
+"source": "ja.wikipedia 神水交差点停留場 (revid 104906706) (신뢰도 중간: place)"
+},
+"n_kyomachi_onsen|京町": {
+"kana": "きょうまち",
+"source": "wikipedia:京町温泉駅"
+},
+"n_kyoshin|一区中通": {
+"kana": "いっくなかどおり",
+"source": "ja.wikipedia 共進駅 (revid 102884018)"
+},
+"n_kyotango_omiya|丹後大宮": {
+"kana": "たんごおおみや",
+"source": "wikipedia:京丹後大宮駅"
+},
+"n_kyotango_omiya|口大野": {
+"kana": "くちおおの",
+"source": "ja.wikipedia 京丹後大宮駅 (revid 109630238)"
+},
+"n_kyukan_iryo_center_mae|本丸会館前": {
+"kana": "ほんまるかいかんまえ",
+"source": "wikipedia:急患医療センター前駅"
+},
+"n_kyukan_iryo_center_mae|高岡市庁前": {
+"kana": "たかおかしちょうまえ",
+"source": "ja.wikipedia 急患医療センター前停留場 (revid 109366739)"
+},
+"n_kyushukodaimae|新中原": {
+"kana": "しんなかばる",
+"source": "ja.wikipedia 九州工大前駅 (revid 110919539)"
+},
+"n_machida_odakyu|新原町田": {
+"kana": "しんはらまちだ",
+"source": "ja.wikipedia 町田駅 (revid 111627796)"
+},
+"n_makubetsu|止若": {
+"kana": "やむわっか",
+"source": "wikipedia:幕別駅"
+},
+"n_marunouchi_toyama_chiho|総曲輪": {
+"kana": "そうがわ",
+"source": "ja.wikipedia 総曲輪 (revid 111154075) (신뢰도 중간: place)"
+},
+"n_maruyama_kobe|電鉄丸山": {
+"kana": "でんてつまるやま",
+"source": "ja.wikipedia 丸山駅 (兵庫県) (revid 111581407)"
+},
+"n_mashu|弟子屈": {
+"kana": "てしかが",
+"source": "ja.wikipedia 北海道の難読地名一覧 (revid 110777085) (신뢰도 중간: place)"
+},
+"n_masuda|石見益田": {
+"kana": "いわみますだ",
+"source": "ja.wikipedia 益田駅 (revid 110969981)"
+},
+"n_matsubara_tokyu_railways|玉電松原": {
+"kana": "たまでんまつばら",
+"source": "ja.wikipedia 松原駅 (東京都) (revid 107629297)"
+},
+"n_matsue_english_garden_mae|古江": {
+"kana": "ふるえ",
+"source": "ja.wikipedia 松江イングリッシュガーデン前駅 (revid 110917569)"
+},
+"n_matsuo_hachimantai|岩手松尾": {
+"kana": "いわてまつお",
+"source": "ja.wikipedia 松尾八幡平駅 (revid 108435631)"
+},
+"n_matsuo_shimabara|松尾町": {
+"kana": "まつおまち",
+"source": "ja.wikipedia 松尾駅 (長崎県) (revid 110174183)"
+},
+"n_matsuo_taisha|松尾": {
+"kana": "まつお",
+"source": "wikipedia:松尾大社駅"
+},
+"n_matsushima|新松島": {
+"kana": "しんまつしま",
+"source": "wikipedia:松島駅"
+},
+"n_matsuzaki_amagi|筑後松崎": {
+"kana": "ちくごまつざき",
+"source": "ja.wikipedia 松崎駅 (福岡県) (revid 110421884)"
+},
+"n_maya_cable|高尾": {
+"kana": "たかお",
+"source": "data/imports/wiki こうべ未来都市機構摩耶ケーブル線 rev109834079 「1973年2月1日 高尾駅を摩耶ケーブル下駅と改称」「2001年3月17日 摩耶駅を虹駅と改称」"
+},
+"n_medical_center|市民病院前": {
+"kana": "しみんびょういんまえ",
+"source": "ja.wikipedia メディカルセンター停留場 (revid 109340685)"
+},
+"n_meganebashi|賑橋": {
+"kana": "にぎわいばし",
+"source": "ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所"
+},
+"n_meitetsu_ichinomiya|新一宮": {
+"kana": "しんいちのみや",
+"source": "ja.wikipedia 名鉄一宮駅 (revid 109661957)"
+},
+"n_midorigaoka_kobe|広野野球場前": {
+"kana": "ひろのやきゅうじょうまえ",
+"source": "ja.wikipedia 緑が丘駅 (兵庫県) (revid 107819308)"
+},
+"n_midorigaoka_tokyu_railways|緑ヶ丘": {
+"kana": "みどりがおか",
+"source": "ja.wikipedia 緑が丘駅 (東京都) (revid 110454579)"
+},
+"n_midori|上札鶴": {
+"kana": "かみさっつる",
+"source": "wikipedia:緑駅"
+},
+"n_mihama|河原市": {
+"kana": "かわらいち",
+"source": "wikipedia:美浜駅"
+},
+"n_mikadodai|有度学校前": {
+"kana": "うどがっこうまえ",
+"source": "wikipedia:御門台駅"
+},
+"n_mikawa_banetsu_west|白崎": {
+"kana": "しろさき",
+"source": "ja.wikipedia 三川駅 (新潟県) (revid 106702338)"
+},
+"n_mikuriya_matsuura|肥前御厨": {
+"kana": "ひぜんみくりや",
+"source": "ja.wikipedia 御厨駅 (revid 91692041)"
+},
+"n_mimata|東都城": {
+"kana": "ひがしみやこのじょう",
+"source": "wikipedia:三股駅"
+},
+"n_minami_hanyu|須影": {
+"kana": "すかげ",
+"source": "ja.wikipedia 南羽生駅 (revid 109989154)"
+},
+"n_minami_hyuga|岩脇": {
+"kana": "いわわき",
+"source": "ja.wikipedia 南日向駅 (revid 110413062)"
+},
+"n_minami_kariyasu|苅安": {
+"kana": "かりやす",
+"source": "ja.wikipedia 美並苅安駅 (revid 110438483)"
+},
+"n_minami_machida_grandberry_park|南町田": {
+"kana": "みなみまちだ",
+"source": "wikipedia:南町田グランベリーパーク駅"
+},
+"n_minami_sendai|陸前中田": {
+"kana": "りくぜんなかだ",
+"source": "wikipedia:南仙台駅"
+},
+"n_minami_senri|新千里山": {
+"kana": "しんせんりやま",
+"source": "wikipedia:南千里駅"
+},
+"n_minamimachi_6_chome|専売公社前": {
+"kana": "せんばいこうしゃまえ",
+"source": "ja.wikipedia 皆実町六丁目停留場 (revid 110421811)"
+},
+"n_minatojima|市民病院前": {
+"kana": "しみんびょういんまえ",
+"source": "wikipedia:みなとじま駅"
+},
+"n_mine|吉則": {
+"kana": "よしのり",
+"source": "wikipedia:美祢駅"
+},
+"n_mino_meitetsu|新美濃町": {
+"kana": "しんみのまち",
+"source": "wikipedia:美濃駅"
+},
+"n_mino_yosan|高瀬大坊": {
+"kana": "たかせだいぼう",
+"source": "ja.wikipedia みの駅 (revid 111076858)"
+},
+"n_minoshi|美濃町": {
+"kana": "みのまち",
+"source": "wikipedia:美濃市駅"
+},
+"n_misaki_koen_nankai|南淡輪": {
+"kana": "みなみたんのわ",
+"source": "ja.wikipedia みさき公園駅 (revid 108891495)"
+},
+"n_misawa_towada_kanko|古間木": {
+"kana": "ふるまき",
+"source": "ja.wikipedia 三沢駅 (青森県) (revid 109604873)"
+},
+"n_mitsuya|吊橋": {
+"kana": "つりはし",
+"source": "wikipedia:三ツ屋駅"
+},
+"n_miyauchi_yamagata|宮内町": {
+"kana": "みやうちまち",
+"source": "ja.wikipedia 宮内町 (山形県) (revid 110163449) (신뢰도 중간: place)"
+},
+"n_miyazaki_jingu|花ヶ島": {
+"kana": "はながしま",
+"source": "ja.wikipedia 宮崎神宮駅 (revid 110415001)"
+},
+"n_miyoshi|備後十日市": {
+"kana": "びんごとおかいち",
+"source": "wikipedia:三次駅"
+},
+"n_mizuma_kannon|水間": {
+"kana": "みずま",
+"source": "ja.wikipedia 水間観音駅 (revid 110787522)"
+},
+"n_mogami|羽前向町": {
+"kana": "うぜんむかいまち",
+"source": "wikipedia:最上駅"
+},
+"n_mokichi_kinenkan_mae|北上ノ山": {
+"kana": "きたかみのやま",
+"source": "ja.wikipedia 茂吉記念館前駅 (revid 110994145)"
+},
+"n_morimachi|竹の久保通": {
+"kana": "たけのくぼどおり",
+"source": "ja.wikipedia 茂里町停留場 (revid 109340574)"
+},
+"n_moritabokujomae|膝森": {
+"kana": "ひざもり",
+"source": "wikipedia:盛田牧場前駅"
+},
+"n_motateyama|裳立山遊園地": {
+"kana": "もたてやまゆうえんち",
+"source": "wikipedia:もたて山駅"
+},
+"n_motosu|美濃本巣": {
+"kana": "みのもとす",
+"source": "ja.wikipedia 本巣駅 (revid 103540189)"
+},
+"n_motoujinaguchi|向宇品": {
+"kana": "むこううじな",
+"source": "ja.wikipedia 元宇品口停留場 (revid 110400289)"
+},
+"n_mukogaoka_yuen|稲田登戸": {
+"kana": "いなだのぼりと",
+"source": "ja.wikipedia 向ヶ丘遊園駅 (revid 110133646)"
+},
+"n_murayama|楯岡": {
+"kana": "たておか",
+"source": "ja.wikipedia 村山駅 (山形県) (revid 110591208)"
+},
+"n_musashinodai|車返": {
+"kana": "くるまがえし",
+"source": "ja.wikipedia 武蔵野台駅 (revid 111475523)"
+},
+"n_mutsuai_nichidaimae|六会": {
+"kana": "むつあい",
+"source": "ja.wikipedia 六会日大前駅 (revid 109025925)"
+},
+"n_myoko_kogen|田口": {
+"kana": "たぐち",
+"source": "wikipedia:妙高高原駅"
+},
+"n_nagaokakyo|神足": {
+"kana": "こうたり",
+"source": "ja.wikipedia 長岡京駅 (revid 110878320) (신뢰도 중간: place)"
+},
+"n_nagasakidaigaku|家野町": {
+"kana": "いえのまち",
+"source": "ja.wikipedia 長崎大学停留場 (revid 109340479)"
+},
+"n_nagasakidaigaku|長崎大学前": {
+"kana": "ながさきだいがくまえ",
+"source": "ja.wikipedia 長崎大学停留場 (revid 109340479)"
+},
+"n_nagatoshi|正明市": {
+"kana": "しょうみょういち",
+"source": "ja.wikipedia 長門市駅 (revid 110996135)"
+},
+"n_nagawa|長流": {
+"kana": "おさる",
+"source": "ja.wikipedia 長和駅 (revid 111090968)"
+},
+"n_nagiso|三留野": {
+"kana": "みどの",
+"source": "ja.wikipedia 南木曽駅 (revid 111030841)"
+},
+"n_naka_karuizawa|沓掛": {
+"kana": "くつかけ",
+"source": "ja.wikipedia 中軽井沢駅 (revid 110007180)"
+},
+"n_nakashima|安芸中島": {
+"kana": "あきなかしま",
+"source": "ja.wikipedia 中島駅 (広島県) (revid 110637826)"
+},
+"n_nakayamadaira_onsen|中山平": {
+"kana": "なかやまだいら",
+"source": "wikipedia:中山平温泉駅"
+},
+"n_nakazato|肥前中里": {
+"kana": "ひぜんなかざと",
+"source": "ja.wikipedia 中里駅 (長崎県) (revid 110445484)"
+},
+"n_nanatsugatake_tozanguchi|糸沢": {
+"kana": "いとざわ",
+"source": "wikipedia:七ヶ岳登山口駅"
+},
+"n_nanjo|鯖波": {
+"kana": "さばなみ",
+"source": "wikipedia:南条駅"
+},
+"n_naokawa|神原": {
+"kana": "ごうのはる",
+"source": "ja.wikipedia 直川駅 (revid 110408133)"
+},
+"n_naruko_gotenyu|東鳴子": {
+"kana": "ひがしなるご",
+"source": "wikipedia:鳴子御殿湯駅"
+},
+"n_naruko_onsen|鳴子": {
+"kana": "なるご",
+"source": "wikipedia:鳴子温泉駅"
+},
+"n_naruomukogawajoshidai_mae|鳴尾": {
+"kana": "なるお",
+"source": "wikipedia:鳴尾・武庫川女子大前駅"
+},
+"n_nasushiobara|東那須野": {
+"kana": "ひがしなすの",
+"source": "wikipedia:那須塩原駅"
+},
+"n_natori|増田": {
+"kana": "ますだ",
+"source": "wikipedia:名取駅"
+},
+"n_nayabashihigashi|納屋橋": {
+"kana": "なやばし",
+"source": "ja.wikipedia テラッセ納屋橋 (revid 110148977) (신뢰도 중간: place)"
+},
+"n_neyagawakoen|東寝屋川": {
+"kana": "ひがしねやがわ",
+"source": "wikipedia:寝屋川公園駅"
+},
+"n_nichinan|吾田": {
+"kana": "あがた",
+"source": "ja.wikipedia 日南駅 (revid 110421425)"
+},
+"n_nikaho|羽後平沢": {
+"kana": "うごひらさわ",
+"source": "wikipedia:仁賀保駅"
+},
+"n_nikkofurumiya|古宮": {
+"kana": "ふるみや",
+"source": "ja.wikipedia 日本鉱業佐賀関鉄道 (revid 106901165) (신뢰도 중간: line_table)"
+},
+"n_nikkohonkozaki|本幸崎": {
+"kana": "ほんこうざき",
+"source": "ja.wikipedia 日本鉱業佐賀関鉄道 (revid 106901165) (신뢰도 중간: line_table)"
+},
+"n_nikkokarako|辛幸": {
+"kana": "からこう",
+"source": "ja.wikipedia 日本鉱業佐賀関鉄道 (revid 106901165) (신뢰도 중간: line_table)"
+},
+"n_nikkokoshuki|小志生木": {
+"kana": "こじゅうき",
+"source": "ja.wikipedia 日本鉱業佐賀関鉄道 (revid 106901165) (신뢰도 중간: line_table)"
+},
+"n_nikkoohira|大平": {
+"kana": "おおひら",
+"source": "ja.wikipedia 日本鉱業佐賀関鉄道 (revid 106901165) (신뢰도 중간: line_table)"
+},
+"n_nikkoojuki|大志生木": {
+"kana": "おおじゅうき",
+"source": "ja.wikipedia 日本鉱業佐賀関鉄道 (revid 106901165) (신뢰도 중간: line_table)"
+},
+"n_nikkosaganoseki|佐賀関": {
+"kana": "さがのせき",
+"source": "ja.wikipedia 佐賀関 (revid 108647630) (신뢰도 중간: place)"
+},
+"n_ninohe|北福岡": {
+"kana": "きたふくおか",
+"source": "wikipedia:二戸駅"
+},
+"n_niseko|狩太": {
+"kana": "かりぶと",
+"source": "wikipedia:ニセコ駅"
+},
+"n_nishi_chofu|上石原": {
+"kana": "かみいしはら",
+"source": "ja.wikipedia 西調布駅 (revid 110429374)"
+},
+"n_nishi_furukawa_sendai|中新田": {
+"kana": "なかにいだ",
+"source": "ja.wikipedia 西古川駅 (revid 110656166)"
+},
+"n_nishi_furukawa|中新田": {
+"kana": "なかにいだ",
+"source": "ja.wikipedia 西古川駅 (revid 110656166)"
+},
+"n_nishi_hiroshima|己斐": {
+"kana": "こい",
+"source": "ja.wikipedia 西広島駅 (revid 111215739)"
+},
+"n_nishi_muko|西向日町": {
+"kana": "にしむこうまち",
+"source": "ja.wikipedia 西向日駅 (revid 109917639)"
+},
+"n_nishi_obihiro|伏古": {
+"kana": "ふしこ",
+"source": "wikipedia:西帯広駅"
+},
+"n_nishi_okoppe|瀬戸牛": {
+"kana": "せとうし",
+"source": "wikipedia:西興部駅"
+},
+"n_nishi_ono|五国寺": {
+"kana": "ごこうじ",
+"source": "ja.wikipedia 西大野駅 (revid 111506023)"
+},
+"n_nishi_osaki|上岩出山": {
+"kana": "かみいわでやま",
+"source": "wikipedia:西大崎駅"
+},
+"n_nishi_ueda|北塩尻": {
+"kana": "きたしおじり",
+"source": "ja.wikipedia 西上田駅 (revid 110010514)"
+},
+"n_nishiazabu|霞町": {
+"kana": "かすみちょう",
+"source": "ja.wikipedia 霞町 (東京都港区) (revid 105316034) (신뢰도 중간: place)"
+},
+"n_nishigahara_yonchome|滝野川": {
+"kana": "たきのがわ",
+"source": "ja.wikipedia 滝野川 (東京都北区) (revid 109482505) (신뢰도 중간: place)"
+},
+"n_nishiharue_heartpia|西春江": {
+"kana": "にしはるえ",
+"source": "wikipedia:西春江ハートピア駅"
+},
+"n_nishiinaei|稲永新田": {
+"kana": "いなえいしんでん",
+"source": "ja.wikipedia 稲永新田 (revid 108234685) (신뢰도 중간: place)"
+},
+"n_nishikagashima|合渡橋": {
+"kana": "ごうどばし",
+"source": "ja.wikipedia 西鏡島駅 (revid 101014518)"
+},
+"n_nishitetsuchihaya|名香野": {
+"kana": "なかの",
+"source": "ja.wikipedia 千早駅 (revid 111454450)"
+},
+"n_nishiwakishi|野村": {
+"kana": "のむら",
+"source": "ja.wikipedia 西脇市駅 (revid 111026926)"
+},
+"n_nishiyama_koen|下鯖江": {
+"kana": "しもさばえ",
+"source": "wikipedia:西山公園駅"
+},
+"n_nissekibyoinmae|大学前": {
+"kana": "だいがくまえ",
+"source": "ja.wikipedia 日赤病院前停留場 (revid 111215915)"
+},
+"n_nissekibyoinmae|広島大学前": {
+"kana": "ひろしまだいがくまえ",
+"source": "ja.wikipedia 日赤病院前停留場 (revid 111215915)"
+},
+"n_nodaoi|野田追": {
+"kana": "のだおい",
+"source": "wikipedia:野田生駅"
+},
+"n_nogakubumae|農大前": {
+"kana": "のうだいまえ",
+"source": "wikipedia:農学部前駅"
+},
+"n_nokendai|谷津坂": {
+"kana": "やつざか",
+"source": "ja.wikipedia 能見台駅 (revid 111346545)"
+},
+"n_nomineagari|寺井": {
+"kana": "てらい",
+"source": "ja.wikipedia 能美根上駅 (revid 110543423)"
+},
+"n_obase_nishikodai_mae|小波瀬": {
+"kana": "おばせ",
+"source": "wikipedia:小波瀬西工大前駅"
+},
+"n_odashi|石見大田": {
+"kana": "いわみおおた",
+"source": "ja.wikipedia 大田市駅 (revid 110969233)"
+},
+"n_oga_oga|船川": {
+"kana": "ふなかわ",
+"source": "ja.wikipedia 男鹿駅 (revid 110664888)"
+},
+"n_ogoto_onsen|雄琴": {
+"kana": "おごと",
+"source": "wikipedia:おごと温泉駅"
+},
+"n_okaido|一番町": {
+"kana": "いちばんちょう",
+"source": "ja.wikipedia 大街道停留場 (revid 110253983)"
+},
+"n_okaji|気賀高校前": {
+"kana": "きがこうこうまえ",
+"source": "ja.wikipedia 岡地駅 (天竜浜名湖鉄道) (revid 109756038)"
+},
+"n_okazaki_ekimae|岡崎新": {
+"kana": "おかざきしん",
+"source": "ja.wikipedia 岡崎駅前駅 (revid 110105445)"
+},
+"n_okuhida_onsenguchi|神岡": {
+"kana": "かみおか",
+"source": "wikipedia:奥飛騨温泉口駅"
+},
+"n_okunakayama_kogen|奥中山": {
+"kana": "おくなかやま",
+"source": "ja.wikipedia 奥中山高原駅 (revid 110297888)"
+},
+"n_okutama|氷川": {
+"kana": "ひかわ",
+"source": "ja.wikipedia 奥多摩駅 (revid 111649031)"
+},
+"n_omori_kinjogakuin_mae|大森": {
+"kana": "おおもり",
+"source": "ja.wikipedia 大森 (名古屋市) (revid 108575302) (신뢰도 중간: place)"
+},
+"n_omoshiroyama_kogen|面白山": {
+"kana": "おもしろやま",
+"source": "ja.wikipedia 面白山 (revid 111128050) (신뢰도 중간: place)"
+},
+"n_omuroninnaji|御室": {
+"kana": "おむろ",
+"source": "wikipedia:御室仁和寺駅"
+},
+"n_onishi|伊予大井": {
+"kana": "いよおおい",
+"source": "wikipedia:大西駅"
+},
+"n_ono_shimabara|小野本町": {
+"kana": "おのほんまち",
+"source": "ja.wikipedia 小野駅 (長崎県) (revid 110173483)"
+},
+"n_ono_shimabara|小野村": {
+"kana": "おのむら",
+"source": "ja.wikipedia 小野駅 (長崎県) (revid 110173483)"
+},
+"n_onuma|軍川": {
+"kana": "いくさがわ",
+"source": "wikipedia:大沼駅"
+},
+"n_osaka_uehommachi|上本町": {
+"kana": "うえほんまち",
+"source": "ja.wikipedia 上本町 (revid 111464168) (신뢰도 중간: place)"
+},
+"n_oshinozucho|御崎口": {
+"kana": "みさきぐち",
+"source": "ja.wikipedia 大篠津町駅 (revid 111362882)"
+},
+"n_otorichugakkomae|本牧": {
+"kana": "ほんもく",
+"source": "ja.wikipedia 本牧 (revid 110147995) (신뢰도 중간: place)"
+},
+"n_otsukyo|西大津": {
+"kana": "にしおおつ",
+"source": "wikipedia:大津京駅"
+},
+"n_oura_noto|能登小浦": {
+"kana": "のとおうら",
+"source": "ja.wikipedia 小浦駅 (石川県) (revid 111202550)"
+},
+"n_ourakaigandori|大浦": {
+"kana": "おおうら",
+"source": "ja.wikipedia 大浦海岸通停留場 (revid 109340689)"
+},
+"n_ouratenshudo|大浦天主堂下": {
+"kana": "おおうらてんしゅどうした",
+"source": "ja.wikipedia 大浦天主堂停留場 (revid 109340692)"
+},
+"n_ouratenshudo|弁天橋": {
+"kana": "べんてんばし",
+"source": "ja.wikipedia 大浦天主堂停留場 (revid 109340692)"
+},
+"n_oya_nagaragawa|美濃下川": {
+"kana": "みのしもかわ",
+"source": "wikipedia:大矢駅"
+},
+"n_oyakaigan|大谷": {
+"kana": "おおや",
+"source": "wikipedia:大谷海岸駅"
+},
+"n_oyama_cable|追分": {
+"kana": "おいわけ",
+"source": "ja.wikipedia 大山観光電鉄大山鋼索線 (revid 110078955)"
+},
+"n_rakurakuen|楽々園遊園地": {
+"kana": "らくらくえんゆうえんち",
+"source": "ja.wikipedia 楽々園駅 (revid 111465712)"
+},
+"n_randensaga|嵯峨駅前": {
+"kana": "さがえきまえ",
+"source": "wikipedia:嵐電嵯峨駅"
+},
+"n_reikyukoentaiikukan|島鉄本社前": {
+"kana": "しまてつほんしゃまえ",
+"source": "wikipedia:霊丘公園体育館駅"
+},
+"n_roppongi_5_chome|三河台町": {
+"kana": "みかわだいまち",
+"source": "ja.wikipedia 三河台町 (revid 106167758) (신뢰도 중간: place)"
+},
+"n_ryukokudai_mae_fukakusa|深草": {
+"kana": "ふかくさ",
+"source": "ja.wikipedia 深草 (revid 110134425) (신뢰도 중간: place)"
+},
+"n_ryutsu_center|新平和島": {
+"kana": "しんへいわじま",
+"source": "wikipedia:流通センター駅"
+},
+"n_sadowara|広瀬": {
+"kana": "ひろせ",
+"source": "wikipedia:佐土原駅"
+},
+"n_sagamiko|与瀬": {
+"kana": "よせ",
+"source": "ja.wikipedia 相模湖駅 (revid 108948156)"
+},
+"n_sagarahanganjoji|東人吉": {
+"kana": "ひがしひとよし",
+"source": "wikipedia:相良藩願成寺駅"
+},
+"n_saidaijiichi|西大寺町": {
+"kana": "さいだいじちょう",
+"source": "ja.wikipedia 西大寺町 (revid 107149677) (신뢰도 중간: place)"
+},
+"n_sakaishi|金岡": {
+"kana": "かなおか",
+"source": "wikipedia:堺市駅"
+},
+"n_sakakibara_onsenguchi|佐田": {
+"kana": "さだ",
+"source": "ja.wikipedia 榊原温泉口駅 (revid 111399868)"
+},
+"n_sakamoto_hieizanguchi|坂本": {
+"kana": "さかもと",
+"source": "wikipedia:坂本比叡山口駅"
+},
+"n_sakuragi_tenryu_hamanako|遠江桜木": {
+"kana": "とおとうみさくらぎ",
+"source": "ja.wikipedia 桜木駅 (静岡県) (revid 109753347)"
+},
+"n_sakuramachi_nagasaki_tram|小川町": {
+"kana": "おがわまち",
+"source": "ja.wikipedia 桜町停留場 (revid 105129530)"
+},
+"n_sanbashishakomae|岸壁通": {
+"kana": "がんぺきどおり",
+"source": "ja.wikipedia 桟橋車庫前停留場 (revid 110240303)"
+},
+"n_sanyo_himeji|電鉄姫路": {
+"kana": "でんてつひめじ",
+"source": "wikipedia:山陽姫路駅"
+},
+"n_sanyo_suma|電鉄須磨": {
+"kana": "でんてつすま",
+"source": "wikipedia:山陽須磨駅"
+},
+"n_saroma|中佐呂間": {
+"kana": "なかさろま",
+"source": "wikipedia:佐呂間駅"
+},
+"n_sayamashi|入間川": {
+"kana": "いるまがわ",
+"source": "wikipedia:狭山市駅"
+},
+"n_seiaichuko_mae|城南": {
+"kana": "じょうなん",
+"source": "wikipedia:聖愛中高前駅"
+},
+"n_seibu_kyujo_mae|村山": {
+"kana": "むらやま",
+"source": "ja.wikipedia 西武球場前駅 (revid 111191487)"
+},
+"n_seibu_kyujo_mae|狭山湖": {
+"kana": "さやまこ",
+"source": "ja.wikipedia 西武球場前駅 (revid 111191487)"
+},
+"n_seibuen_yuenchi|遊園地西": {
+"kana": "ゆうえんちにし",
+"source": "ja.wikipedia 西武園ゆうえんち駅 (revid 110674868)"
+},
+"n_seiho_koukou_mae|上佐々": {
+"kana": "かみさざ",
+"source": "ja.wikipedia 清峰高校前駅 (revid 110445309)"
+},
+"n_seiryu_shin_iwakuni|御庄": {
+"kana": "みしょう",
+"source": "wikipedia:清流新岩国駅"
+},
+"n_seki_nagaragawa|美濃関": {
+"kana": "みのせき",
+"source": "ja.wikipedia 関駅 (岐阜県) (revid 110137352)"
+},
+"n_seki_shimouchi|中濃西高前": {
+"kana": "ちゅうのうにしこうまえ",
+"source": "ja.wikipedia 関下有知駅 (revid 110049177)"
+},
+"n_sekijujimae|福井新": {
+"kana": "ふくいしん",
+"source": "wikipedia:赤十字前駅"
+},
+"n_sekiterasumae|刃物会館前": {
+"kana": "はものかいかんまえ",
+"source": "ja.wikipedia せきてらす前駅 (revid 110045204)"
+},
+"n_semi_onsen|瀬見": {
+"kana": "せみ",
+"source": "wikipedia:瀬見温泉駅"
+},
+"n_sengen|碁盤坂": {
+"kana": "ごばんざか",
+"source": "wikipedia:千軒駅"
+},
+"n_sengoku_1_chome|駕籠町": {
+"kana": "かごまち",
+"source": "ja.wikipedia 関東地方の難読地名一覧 (revid 111614383) (신뢰도 중간: place)"
+},
+"n_senryugataki|潜竜": {
+"kana": "せんりゅう",
+"source": "ja.wikipedia 潜竜ヶ滝駅 (revid 110445060)"
+},
+"n_setaka|瀬高町": {
+"kana": "せたかまち",
+"source": "wikipedia:瀬高駅"
+},
+"n_shigeto|天坪": {
+"kana": "あまつぼ",
+"source": "wikipedia:繁藤駅"
+},
+"n_shigisanshita|山下": {
+"kana": "やました",
+"source": "ja.wikipedia 信貴山下駅 (revid 108800004)"
+},
+"n_shikabe|鷹待": {
+"kana": "たかまち",
+"source": "ja.wikipedia 鹿部駅 (revid 108695732)"
+},
+"n_shima_isobe|迫間": {
+"kana": "はさま",
+"source": "ja.wikipedia 志摩磯部駅 (revid 110788754)"
+},
+"n_shimabara_funatsu|南島原": {
+"kana": "みなみしまばら",
+"source": "wikipedia:島原船津駅"
+},
+"n_shimabara_funatsu|島原湊": {
+"kana": "しまばらみなと",
+"source": "wikipedia:島原船津駅"
+},
+"n_shimabarako|島原外港": {
+"kana": "しまばらがいこう",
+"source": "ja.wikipedia 島原港駅 (revid 110173325)"
+},
+"n_shimin_koen_mae|岐阜大学前": {
+"kana": "ぎふだいがくまえ",
+"source": "wikipedia:市民公園前駅"
+},
+"n_shimin_koen_mae|農大前": {
+"kana": "のうだいまえ",
+"source": "wikipedia:市民公園前駅"
+},
+"n_shiminkaikanmae_loop_line_sendai_city|定禅寺通": {
+"kana": "じょうぜんじどおり",
+"source": "ja.wikipedia 定禅寺通 (revid 110367097) (신뢰도 중간: place)"
+},
+"n_shimmachi|弦巻": {
+"kana": "つるまき",
+"source": "ja.wikipedia 弦巻 (revid 109682995) (신뢰도 중간: place)"
+},
+"n_shimobe_onsen|下部": {
+"kana": "しもべ",
+"source": "wikipedia:下部温泉駅"
+},
+"n_shimohyogo_kofuku|下兵庫": {
+"kana": "しもひょうご",
+"source": "wikipedia:下兵庫こうふく駅"
+},
+"n_shimosa_kozaki|郡": {
+"kana": "こおり",
+"source": "wikipedia:下総神崎駅"
+},
+"n_shimura_sakaue|志村": {
+"kana": "しむら",
+"source": "ja.wikipedia 志村 (板橋区) (revid 104199271) (신뢰도 중간: place)"
+},
+"n_shin_daita|代田二丁目": {
+"kana": "だいたにちょうめ",
+"source": "ja.wikipedia 新代田駅 (revid 110082035)"
+},
+"n_shin_fujieda|藤枝新": {
+"kana": "ふじえだしん",
+"source": "ja.wikipedia 静岡鉄道駿遠線 (revid 107340138)"
+},
+"n_shin_hakodate_hokuto|渡島大野": {
+"kana": "おしまおおの",
+"source": "wikipedia:新函館北斗駅"
+},
+"n_shin_imamiya_ekimae|南霞町": {
+"kana": "みなみかすみちょう",
+"source": "ja.wikipedia 新今宮駅 (revid 111369735)"
+},
+"n_shin_kurashiki|玉島": {
+"kana": "たましま",
+"source": "wikipedia:新倉敷駅"
+},
+"n_shin_otaki|徳舜瞥": {
+"kana": "とくしゅんべつ",
+"source": "ja.wikipedia 新大滝駅 (revid 109396195)"
+},
+"n_shin_sagara|相良新": {
+"kana": "さがらしん",
+"source": "ja.wikipedia 静岡鉄道駿遠線 (revid 107340138)"
+},
+"n_shin_shimashima|赤松": {
+"kana": "あかまつ",
+"source": "wikipedia:新島々駅"
+},
+"n_shin_shimonoseki|長門一ノ宮": {
+"kana": "ながといちのみや",
+"source": "wikipedia:新下関駅"
+},
+"n_shin_shirakawa|磐城西郷": {
+"kana": "いわきにしごう",
+"source": "wikipedia:新白河駅"
+},
+"n_shin_shizuoka|鷹匠町": {
+"kana": "たかじょうまち",
+"source": "ja.wikipedia 新静岡駅 (revid 111382562)"
+},
+"n_shin_suizenji_ekimae|水前寺駅通": {
+"kana": "すいぜんじえきどおり",
+"source": "wikipedia:新水前寺駅前駅"
+},
+"n_shin_yamaguchi|小郡": {
+"kana": "おごおり",
+"source": "ja.wikipedia 新山口駅 (revid 111403799)"
+},
+"n_shin_yubari|紅葉山": {
+"kana": "もみじやま",
+"source": "ja.wikipedia 新夕張駅 (revid 111262816)"
+},
+"n_shinchi_chukagai|築町": {
+"kana": "つきまち",
+"source": "ja.wikipedia 新地中華街停留場 (revid 109340611)"
+},
+"n_shinko_higashiguchi|堀切": {
+"kana": "ほりきり",
+"source": "ja.wikipedia 新港東口駅 (revid 108905644)"
+},
+"n_shinnan_yo|周防富田": {
+"kana": "すおうとんだ",
+"source": "ja.wikipedia 新南陽駅 (revid 111106365)"
+},
+"n_shinsakaeno|野上": {
+"kana": "のがみ",
+"source": "ja.wikipedia 新栄野駅 (revid 109426634)"
+},
+"n_shintetsu_dojo|道場川原": {
+"kana": "どうじょうがわら",
+"source": "wikipedia:神鉄道場駅"
+},
+"n_shirahama|白浜口": {
+"kana": "しらはまぐち",
+"source": "wikipedia:白浜駅"
+},
+"n_shirakamidaketozanguchi|陸奥黒崎": {
+"kana": "むつくろさき",
+"source": "wikipedia:白神岳登山口駅"
+},
+"n_shirakawadoriotsu|南大津通": {
+"kana": "みなみおおつどおり",
+"source": "ja.wikipedia 南大津通 (revid 99285916) (신뢰도 중간: place)"
+},
+"n_shiromaru_noto|能登白丸": {
+"kana": "のとしろまる",
+"source": "ja.wikipedia 白丸駅 (石川県) (revid 111231346)"
+},
+"n_shirotori_kogen|二日町": {
+"kana": "ふつかまち",
+"source": "wikipedia:白鳥高原駅"
+},
+"n_shiyakusho|公会堂前": {
+"kana": "こうかいどうまえ",
+"source": "ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所"
+},
+"n_shiyakusho|桶屋町": {
+"kana": "おけやまち",
+"source": "ja.wikipedia 市役所停留場 (revid 111595067)"
+},
+"n_shokokaigishomae|木田四ツ辻": {
+"kana": "きだよつつじ",
+"source": "wikipedia:商工会議所前駅"
+},
+"n_shonankaigankoen|西方": {
+"kana": "にしかた",
+"source": "ja.wikipedia 湘南海岸公園駅 (revid 109070384)"
+},
+"n_shotenkyo|丹後神野": {
+"kana": "たんごかんの",
+"source": "ja.wikipedia 小天橋駅 (revid 109630276)"
+},
+"n_sodegaura|楢葉": {
+"kana": "ならは",
+"source": "wikipedia:袖ケ浦駅"
+},
+"n_soden|忠節橋": {
+"kana": "ちゅうせつばし",
+"source": "ja.wikipedia 早田駅 (revid 106532813)"
+},
+"n_sofukuji|正覚寺下": {
+"kana": "しょうかくじした",
+"source": "ja.wikipedia 崇福寺停留場 (revid 109340632)"
+},
+"n_sojodaigakumae|熊本工大前": {
+"kana": "くまもとこうだいまえ",
+"source": "ja.wikipedia 崇城大学前駅 (revid 110851353)"
+},
+"n_soma|中村": {
+"kana": "なかむら",
+"source": "wikipedia:相馬駅"
+},
+"n_soneda|電鉄福島": {
+"kana": "でんてつふくしま",
+"source": "wikipedia:曽根田駅"
+},
+"n_sotokanda_3_chome|旅籠町": {
+"kana": "はたごまち",
+"source": "ja.wikipedia 関東地方の難読地名一覧 (revid 111614383) (신뢰도 중간: place)"
+},
+"n_st_marys_hospital|試験場前": {
+"kana": "しけんじょうまえ",
+"source": "wikipedia:聖マリア病院前駅"
+},
+"n_suhara_nagaragawa|美濃洲原": {
+"kana": "みのすはら",
+"source": "wikipedia:洲原駅"
+},
+"n_sundome_nishi|上鯖江": {
+"kana": "かみさばえ",
+"source": "wikipedia:サンドーム西駅"
+},
+"n_suruga_oyama|駿河": {
+"kana": "するが",
+"source": "ja.wikipedia 駿河小山駅 (revid 109934042)"
+},
+"n_suwajinja|諏訪神社前": {
+"kana": "すわじんじゃまえ",
+"source": "ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所"
+},
+"n_suzuka_circuit_ino|稲生": {
+"kana": "いのう",
+"source": "ja.wikipedia 鈴鹿市 (revid 111627169) (신뢰도 중간: place)"
+},
+"n_suzukashi|伊勢神戸": {
+"kana": "いせかんべ",
+"source": "ja.wikipedia 鈴鹿市駅 (revid 111096236)"
+},
+"n_taga_taisha_mae|多賀": {
+"kana": "たが",
+"source": "wikipedia:多賀大社前駅"
+},
+"n_tagawa_gotoji|後藤寺": {
+"kana": "ごとうじ",
+"source": "wikipedia:田川後藤寺駅"
+},
+"n_tagawa_ita|伊田": {
+"kana": "いた",
+"source": "wikipedia:田川伊田駅"
+},
+"n_taira|多比良町": {
+"kana": "たいらまち",
+"source": "ja.wikipedia 多比良駅 (revid 110174115)"
+},
+"n_taisanji_oyama_kanko|不動前": {
+"kana": "ふどうまえ",
+"source": "ja.wikipedia 大山観光電鉄大山鋼索線 (revid 110078955)"
+},
+"n_tajima_koko_mae|田部原": {
+"kana": "たべはら",
+"source": "ja.wikipedia 田島高校前駅 (revid 109711526)"
+},
+"n_takaishi|高石町": {
+"kana": "たかいしちょう",
+"source": "wikipedia:高石駅"
+},
+"n_takaragaike|山端": {
+"kana": "やまばな",
+"source": "wikipedia:宝ヶ池駅"
+},
+"n_takase_yosan|上高瀬": {
+"kana": "かみたかせ",
+"source": "ja.wikipedia 高瀬駅 (香川県) (revid 110827676)"
+},
+"n_takashimaguchi|今福鷹島口": {
+"kana": "いまぶくたかしまぐち",
+"source": "ja.wikipedia 鷹島口駅 (revid 110439760)"
+},
+"n_takata_amagi|筑前高田": {
+"kana": "ちくぜんたかた",
+"source": "ja.wikipedia 高田駅 (福岡県) (revid 110421964)"
+},
+"n_takefu_shin|武生新": {
+"kana": "たけふしん",
+"source": "기존 위키 행 읽기 (2회차 후속 근거 조사 2026-11-13; r2out/follow)"
+},
+"n_takefu_shin|越前武生": {
+"kana": "えちぜんたけふ",
+"source": "福井鉄道 「福武線 新駅名はたけふ新に変更します」 2023-03(높음) (2회차 후속 근거 조사 2026-11-13; r2out/follow)"
+},
+"n_takeo_onsen|武雄": {
+"kana": "たけお",
+"source": "wikipedia:武雄温泉駅"
+},
+"n_takuhoku|東篠路": {
+"kana": "ひがししのろ",
+"source": "wikipedia:拓北駅"
+},
+"n_tama_seibu|多磨墓地前": {
+"kana": "たまぼちまえ",
+"source": "ja.wikipedia 多磨駅 (revid 110924298)"
+},
+"n_tamagawa_tokyu_railways|多摩川園": {
+"kana": "たまがわえん",
+"source": "ja.wikipedia 多摩川園 (revid 110261744) (신뢰도 중간: place)"
+},
+"n_tamana|高瀬": {
+"kana": "たかせ",
+"source": "ja.wikipedia 玉名駅 (revid 110222795)"
+},
+"n_tanesashi_kaigan|種差": {
+"kana": "たねさし",
+"source": "ja.wikipedia 種差海岸駅 (revid 111099314)"
+},
+"n_tanoshiri|筒賀": {
+"kana": "つつが",
+"source": "ja.wikipedia 田之尻駅 (revid 110641468)"
+},
+"n_taromaru_angelland|太郎丸": {
+"kana": "たろうまる",
+"source": "wikipedia:太郎丸エンゼルランド駅"
+},
+"n_tatemachi|郊外バス前": {
+"kana": "こうがいばすまえ",
+"source": "ja.wikipedia 立町停留場 (revid 111060953)"
+},
+"n_tatsuokajo|大奈良": {
+"kana": "おおなら",
+"source": "wikipedia:龍岡城駅"
+},
+"n_tazawako|生保内": {
+"kana": "おぼない",
+"source": "wikipedia:田沢湖駅"
+},
+"n_tedori_onsen|手取遊園": {
+"kana": "てどりゆうえん",
+"source": "wikipedia:手取温泉駅"
+},
+"n_teine|軽川": {
+"kana": "かるがわ",
+"source": "wikipedia:手稲駅"
+},
+"n_tenri|丹波市": {
+"kana": "たんばいち",
+"source": "wikipedia:天理駅"
+},
+"n_tenri|天理市": {
+"kana": "てんりし",
+"source": "wikipedia:天理駅"
+},
+"n_tenryu_futamata|遠江二俣": {
+"kana": "とおとうみふたまた",
+"source": "wikipedia:天竜二俣駅"
+},
+"n_teramachi|寺町裏": {
+"kana": "てらまちうら",
+"source": "ja.wikipedia 寺町停留場 (revid 111048392)"
+},
+"n_teshio_nakagawa|誉平": {
+"kana": "ぽんぴら",
+"source": "ja.wikipedia 天塩中川駅 (revid 111027933)"
+},
+"n_teshio_yayoi|初茶志内": {
+"kana": "はっちゃしない",
+"source": "wikipedia:天塩弥生駅"
+},
+"n_teshiogawa_onsen|南咲来": {
+"kana": "みなみさっくる",
+"source": "ja.wikipedia 天塩川温泉駅 (revid 109655656)"
+},
+"n_tetsudo_hakubutsukan|大成": {
+"kana": "おおなり",
+"source": "ja.wikipedia 鉄道博物館駅 (revid 108278909)"
+},
+"n_tobetsu|石狩当別": {
+"kana": "いしかりとうべつ",
+"source": "wikipedia:当別駅"
+},
+"n_toei|三河長岡": {
+"kana": "みかわながおか",
+"source": "ja.wikipedia 東栄駅 (revid 109033772)"
+},
+"n_togari_nozawaonsen|戸狩": {
+"kana": "とがり",
+"source": "ja.wikipedia 日本の温泉地一覧 (revid 111071750) (신뢰도 중간: place)"
+},
+"n_tojiin_ritsumeikan_university_kinugasa_campus_mae|等持院": {
+"kana": "とうじいん",
+"source": "wikipedia:等持院・立命館大学衣笠キャンパス前駅"
+},
+"n_tokaidaigaku_mae|大根": {
+"kana": "おおね",
+"source": "ja.wikipedia 東海大学前駅 (revid 109070729)"
+},
+"n_tokai|石神": {
+"kana": "いしがみ",
+"source": "wikipedia:東海駅"
+},
+"n_tokishi_tono|土岐津": {
+"kana": "ときつ",
+"source": "wikipedia:土岐市駅"
+},
+"n_tokishi|土岐津": {
+"kana": "ときつ",
+"source": "wikipedia:土岐市駅"
+},
+"n_tokohadaigakumae|浜松大学前": {
+"kana": "はままつだいがくまえ",
+"source": "wikipedia:常葉大学前駅"
+},
+"n_tokyo_big_sight|国際展示場正門": {
+"kana": "こくさいてんじじょうせいもん",
+"source": "wikipedia:東京ビッグサイト駅"
+},
+"n_tokyo_international_cruise_terminal|船の科学館": {
+"kana": "ふねのかがくかん",
+"source": "wikipedia:東京国際クルーズターミナル駅"
+},
+"n_tomamu|石勝高原": {
+"kana": "せきしょうこうげん",
+"source": "wikipedia:トマム駅"
+},
+"n_tomio|鵄邑": {
+"kana": "とびのむら",
+"source": "wikipedia:富雄駅"
+},
+"n_tonda|富田町": {
+"kana": "とんだまち",
+"source": "ja.wikipedia 富田駅 (大阪府) (revid 110997272)"
+},
+"n_towada_minami|毛馬内": {
+"kana": "けまない",
+"source": "wikipedia:十和田南駅"
+},
+"n_toya_muroran_main|虻田": {
+"kana": "あぶた",
+"source": "wikipedia:洞爺駅"
+},
+"n_toyokawa_inari|新豊川": {
+"kana": "しんとよかわ",
+"source": "wikipedia:豊川稲荷駅"
+},
+"n_toyooka_tenryu_hamanako|野部": {
+"kana": "のべ",
+"source": "ja.wikipedia 豊岡駅 (静岡県) (revid 110536513)"
+},
+"n_toyosaka|葛塚": {
+"kana": "くずつか",
+"source": "ja.wikipedia 豊栄駅 (revid 110718443)"
+},
+"n_toyotashi|挙母": {
+"kana": "ころも",
+"source": "ja.wikipedia 豊田市 (revid 111616739) (신뢰도 중간: place)"
+},
+"n_tozanguchi|生石口": {
+"kana": "おいしぐち",
+"source": "wikipedia:登山口駅"
+},
+"n_tsubaki|紀伊椿": {
+"kana": "きいつばき",
+"source": "wikipedia:椿駅"
+},
+"n_tsukumowan_ogi|能登小木": {
+"kana": "のとおぎ",
+"source": "wikipedia:九十九湾小木駅"
+},
+"n_tsunan|越後外丸": {
+"kana": "えちごとまる",
+"source": "wikipedia:津南駅"
+},
+"n_tsurumaki_onsen|鶴巻": {
+"kana": "つるまき",
+"source": "ja.wikipedia 鶴巻温泉駅 (revid 107498279)"
+},
+"n_tsurushi|谷村横町": {
+"kana": "やむらよこまち",
+"source": "wikipedia:都留市駅"
+},
+"n_tsutsujigaoka_keio|金子": {
+"kana": "かねこ",
+"source": "ja.wikipedia つつじヶ丘駅 (revid 110854734)"
+},
+"n_uchigo|綴": {
+"kana": "つづら",
+"source": "ja.wikipedia 内郷駅 (revid 111329752)"
+},
+"n_uehommachi_1_chome|上町": {
+"kana": "うえまち",
+"source": "ja.wikipedia 上町 (大阪市) (revid 109020913) (신뢰도 중간: place)"
+},
+"n_ujidanchimae|宇治学校前": {
+"kana": "うじがっこうまえ",
+"source": "ja.wikipedia 宇治団地前停留場 (revid 102112054)"
+},
+"n_ujina_3_chome|宇品十丁目": {
+"kana": "うじなじっちょうめ",
+"source": "ja.wikipedia 宇品三丁目停留場 (revid 110399881)"
+},
+"n_ujina_4_chome|七丁目": {
+"kana": "ななちょうめ",
+"source": "ja.wikipedia 宇品四丁目停留場 (revid 110399970)"
+},
+"n_ujina|宇品終点": {
+"kana": "うじなしゅうてん",
+"source": "ja.wikipedia 広島港（宇品）停留場 (revid 110700972)"
+},
+"n_ukai_noto|能登鵜飼": {
+"kana": "のとうかい",
+"source": "ja.wikipedia 鵜飼駅 (石川県) (revid 111248450)"
+},
+"n_ukiha|筑後千足": {
+"kana": "ちくごせんぞく",
+"source": "wikipedia:うきは駅"
+},
+"n_urakamishako|浦上車庫前": {
+"kana": "うらかみしゃこまえ",
+"source": "ja.wikipedia 浦上車庫停留場 (revid 109340490)"
+},
+"n_urakamishako|西町車庫前": {
+"kana": "にしまちしゃこまえ",
+"source": "ja.wikipedia 浦上車庫停留場 (revid 109340490)"
+},
+"n_urushiyama_kamioka|西漆山": {
+"kana": "にしうるしやま",
+"source": "ja.wikipedia 漆山駅 (岐阜県) (revid 110034111)"
+},
+"n_usuda|三反田": {
+"kana": "さんだんだ",
+"source": "wikipedia:臼田駅"
+},
+"n_utanai|宇戸内": {
+"kana": "うとない",
+"source": "ja.wikipedia 歌内駅 (revid 109450979)"
+},
+"n_utano|高雄口": {
+"kana": "たかおぐち",
+"source": "ja.wikipedia 宇多野駅 (revid 110255158)"
+},
+"n_utsubuki|倉吉": {
+"kana": "くらよし",
+"source": "wikipedia:打吹駅"
+},
+"n_wado_kuroya|黒谷": {
+"kana": "くろや",
+"source": "wikipedia:和銅黒谷駅"
+},
+"n_wakabayashi_tokyu_railways|玉電若林": {
+"kana": "たまでんわかばやし",
+"source": "ja.wikipedia 若林駅 (東京都) (revid 111615008)"
+},
+"n_wakayama_wakayama|東和歌山": {
+"kana": "ひがしわかやま",
+"source": "ja.wikipedia 和歌山駅 (revid 111263334)"
+},
+"n_wakoshi_tobu|大和町": {
+"kana": "やまとまち",
+"source": "wikipedia:和光市駅"
+},
+"n_wakura_onsen|和倉": {
+"kana": "わくら",
+"source": "wikipedia:和倉温泉駅"
+},
+"n_yachiho|佐久穂積": {
+"kana": "さくほづみ",
+"source": "wikipedia:八千穂駅"
+},
+"n_yachiyomachi|御船町": {
+"kana": "みふねまち",
+"source": "ja.wikipedia 八千代町停留場 (revid 111358319)"
+},
+"n_yagawara|佐竹": {
+"kana": "さたけ",
+"source": "wikipedia:谷河原駅"
+},
+"n_yahiro_keisei|荒川": {
+"kana": "あらかわ",
+"source": "wikipedia:八広駅"
+},
+"n_yamada_nagaragawa|美濃山田": {
+"kana": "みのやまだ",
+"source": "ja.wikipedia 山田駅 (岐阜県) (revid 110080115)"
+},
+"n_yamanashishi|日下部": {
+"kana": "くさかべ",
+"source": "ja.wikipedia 山梨市駅 (revid 111629937)"
+},
+"n_yamaoka|遠山": {
+"kana": "とおやま",
+"source": "wikipedia:山岡駅"
+},
+"n_yamashita_tokyu_railways|玉電山下": {
+"kana": "たまでんやました",
+"source": "ja.wikipedia 山下駅 (東京都) (revid 109761228)"
+},
+"n_yasaka_nagaragawa|半在": {
+"kana": "はんざい",
+"source": "ja.wikipedia 八坂駅 (岐阜県) (revid 110049334)"
+},
+"n_yase_hieizanguchi|八瀬": {
+"kana": "やせ",
+"source": "wikipedia:八瀬比叡山口駅"
+},
+"n_yase_hieizanguchi|八瀬遊園": {
+"kana": "やせゆうえん",
+"source": "wikipedia:八瀬比叡山口駅"
+},
+"n_yasunoya|安野屋町": {
+"kana": "やすのやちょう",
+"source": "ja.wikipedia 安野屋町 (revid 109435701) (신뢰도 중간: place)"
+},
+"n_yatsu_keisei|谷津遊園": {
+"kana": "やつゆうえん",
+"source": "ja.wikipedia 谷津遊園 (revid 110463437) (신뢰도 중간: place)"
+},
+"n_yokoe|尖山": {
+"kana": "とがりやま",
+"source": "ja.wikipedia 横江駅 (revid 110685239)"
+},
+"n_yomiuri_land_mae|西生田": {
+"kana": "にしいくた",
+"source": "ja.wikipedia 読売ランド前駅 (revid 111091670)"
+},
+"n_yoneyama|鉢崎": {
+"kana": "はっさき",
+"source": "wikipedia:米山駅"
+},
+"n_yosano|野田川": {
+"kana": "のだがわ",
+"source": "ja.wikipedia 野田川 (京都府) (revid 104727448) (신뢰도 중간: place)"
+},
+"n_yoshida|西吉田": {
+"kana": "にしよしだ",
+"source": "ja.wikipedia 吉田駅 (新潟県) (revid 110014042)"
+},
+"n_yoshii_matsuura|肥前吉井": {
+"kana": "ひぜんよしい",
+"source": "ja.wikipedia 吉井駅 (長崎県) (revid 110445083)"
+},
+"n_yoshinogari_koen|三田川": {
+"kana": "みたがわ",
+"source": "wikipedia:吉野ヶ里公園駅"
+},
+"n_yoson_koen|会津落合": {
+"kana": "あいづおちあい",
+"source": "wikipedia:養鱒公園駅"
+},
+"n_yuasa|紀伊湯浅": {
+"kana": "きいゆあさ",
+"source": "wikipedia:湯浅駅"
+},
+"n_yubetsu|下湧別": {
+"kana": "しもゆうべつ",
+"source": "ja.wikipedia 湧別駅 (revid 101522324)"
+},
+"n_yudaonsen|湯田": {
+"kana": "ゆだ",
+"source": "ja.wikipedia 湯田温泉駅 (revid 111178147)"
+},
+"n_yuhigaura_kitsu_onsen|丹後木津": {
+"kana": "たんごきづ",
+"source": "wikipedia:夕日ヶ浦木津温泉駅"
+},
+"n_yuhigaura_kitsu_onsen|木津温泉": {
+"kana": "きつおんせん",
+"source": "ja.wikipedia 夕日ヶ浦木津温泉駅 (revid 109571720)"
+},
+"n_yunohora_onsen_guchi|板取口": {
+"kana": "いたとりぐち",
+"source": "ja.wikipedia 湯の洞温泉口駅 (revid 110055540)"
+},
+"n_yunohora_onsen_guchi|美濃立花": {
+"kana": "みのたちばな",
+"source": "wikipedia:湯の洞温泉口駅"
+},
+"n_yunokami_onsen|湯野上": {
+"kana": "ゆのかみ",
+"source": "ja.wikipedia 湯野上温泉駅 (revid 109988190)"
+},
+"n_yuya_onsen|湯谷": {
+"kana": "ゆや",
+"source": "ja.wikipedia 湯谷温泉駅 (revid 109946840)"
+},
+"n_yuze_onsen|湯瀬": {
+"kana": "ゆぜ",
+"source": "wikipedia:湯瀬温泉駅"
+},
+"n_zao|金井": {
+"kana": "かない",
+"source": "wikipedia:蔵王駅"
+},
+"n_zushihayama|新逗子": {
+"kana": "しんずし",
+"source": "ja.wikipedia 逗子・葉山駅 (revid 111029995)"
+},
+"n_aichidaigakumae|大学前": {
+"kana": "だいがくまえ",
+"source": "ja.wikipedia 愛知大学前駅 (revid 360573) https://ja.wikipedia.org/w/index.php?oldid=360573"
+},
+"n_ainonai|相ノ内": {
+"kana": "あいのない",
+"source": "ja.wikipedia 相ノ内駅 (revid 30845486) https://ja.wikipedia.org/w/index.php?oldid=30845486"
+},
+"n_amusement_park|多摩湖ホテル前": {
+"kana": "たまこホテルまえ",
+"source": "ja.wikipedia 遊園地前駅 (埼玉県) (revid 109054290) https://ja.wikipedia.org/w/index.php?oldid=109054290"
+},
+"n_amusement_park|西武遊園地": {
+"kana": "せいぶゆうえんち",
+"source": "ja.wikipedia 西武遊園地駅 (revid 94157391) https://ja.wikipedia.org/w/index.php?oldid=94157391"
+},
+"n_ani_maeda_onsen|阿仁前田": {
+"kana": "あにまえだ",
+"source": "ja.wikipedia 阿仁前田温泉駅 (revid 75413485) https://ja.wikipedia.org/w/index.php?oldid=75413485"
+},
+"n_aso_shimodajo|阿蘇下田城ふれあい温泉": {
+"kana": "あそしもだじょうふれあいおんせん",
+"source": "ja.wikipedia 阿蘇下田城駅 (revid 86678872) https://ja.wikipedia.org/w/index.php?oldid=86678872"
+},
+"n_awara_yunomachi|芦原湯町": {
+"kana": "あわらゆのまち",
+"source": "ja.wikipedia あわら湯のまち駅 (revid 111332590) https://ja.wikipedia.org/w/index.php?oldid=111332590"
+},
+"n_chayamakyoto_geijutsudaigaku|茶山": {
+"kana": "ちゃやま",
+"source": "ja.wikipedia 茶山・京都芸術大学駅 (revid 83732282) https://ja.wikipedia.org/w/index.php?oldid=83732282"
+},
+"n_dentetsu_toyama_station_esta_mae|富山駅前": {
+"kana": "とやまえきまえ",
+"source": "ja.wikipedia 富山駅 (revid 50157976) https://ja.wikipedia.org/w/index.php?oldid=50157976"
+},
+"n_dogokoen|公園前": {
+"kana": "こうえんまえ",
+"source": "ja.wikipedia 公園前駅 (曖昧さ回避) (revid 106791275) https://ja.wikipedia.org/w/index.php?oldid=106791275"
+},
+"n_doshokubutsueniriguchi|動植物園前": {
+"kana": "どうしょくぶつえんまえ",
+"source": "ja.wikipedia 動植物園入口停留場 (revid 26118917) https://ja.wikipedia.org/w/index.php?oldid=26118917"
+},
+"n_ekimae_odori|名豊ビル前": {
+"kana": "めいほうビルまえ",
+"source": "ja.wikipedia 駅前大通停留場 (revid 111306127) https://ja.wikipedia.org/w/index.php?oldid=111306127"
+},
+"n_enshu_byoin|遠州病院前": {
+"kana": "えんしゅうびょういんまえ",
+"source": "ja.wikipedia 遠州病院駅 (revid 9079156) https://ja.wikipedia.org/w/index.php?oldid=9079156"
+},
+"n_fukui_joshi_daimyomachi|市役所前": {
+"kana": "しやくしょまえ",
+"source": "ja.wikipedia 福井城址大名町駅 (revid 59455337) https://ja.wikipedia.org/w/index.php?oldid=59455337"
+},
+"n_hakodate_arena_mae|市民会館前": {
+"kana": "しみんかいかんまえ",
+"source": "ja.wikipedia アリーナ前（函館サーモン・まるなまアリーナ前）停留場 (revid 51265217) https://ja.wikipedia.org/w/index.php?oldid=51265217"
+},
+"n_hakodate_dock_mae|弁天": {
+"kana": "べんてん",
+"source": "ja.wikipedia 弁天駅 (revid 72811452) https://ja.wikipedia.org/w/index.php?oldid=72811452"
+},
+"n_hakusanmae|県庁前": {
+"kana": "けんちょうまえ",
+"source": "ja.wikipedia 県庁前駅 (revid 107759311) https://ja.wikipedia.org/w/index.php?oldid=107759311"
+},
+"n_hanabatacho|熊本城前": {
+"kana": "くまもとじょうまえ",
+"source": "ja.wikipedia 花畑町停留場 (revid 27798374) https://ja.wikipedia.org/w/index.php?oldid=27798374"
+},
+"n_hanashiro_onsen|花白": {
+"kana": "はなしろ",
+"source": "ja.wikipedia 花白温泉駅 (revid 26082430) https://ja.wikipedia.org/w/index.php?oldid=26082430"
+},
+"n_haneda_airport_terminal_12|羽田空港国内線ターミナル": {
+"kana": "はねだくうこうこくないせんターミナル",
+"source": "ja.wikipedia 羽田空港第1・第2ターミナル駅 (revid 76337323) https://ja.wikipedia.org/w/index.php?oldid=76337323"
+},
+"n_haneda_airport_terminal_3_keikyu|羽田空港国際線ターミナル": {
+"kana": "はねだくうこうこくさいせんターミナル",
+"source": "ja.wikipedia 羽田空港第3ターミナル駅 (revid 70852595) https://ja.wikipedia.org/w/index.php?oldid=70852595"
+},
+"n_haneda_airport_terminal_3_tokyo_monorail|羽田空港国際線ビル": {
+"kana": "はねだくうこうこくさいせんビル",
+"source": "ja.wikipedia 羽田空港国際線ビル駅 (revid 75511603) https://ja.wikipedia.org/w/index.php?oldid=75511603"
+},
+"n_higashiyama_okaden_chuggington_museum|東山": {
+"kana": "ひがしやま",
+"source": "ja.wikipedia 東山・おかでんミュージアム駅停留場 (revid 60227921) https://ja.wikipedia.org/w/index.php?oldid=60227921"
+},
+"n_hokkaido_iryodaigaku|大学前": {
+"kana": "だいがくまえ",
+"source": "ja.wikipedia 大学前駅 (revid 108262076) https://ja.wikipedia.org/w/index.php?oldid=108262076"
+},
+"n_honmyojiiriguchi|本妙寺前": {
+"kana": "ほんみょうじまえ",
+"source": "ja.wikipedia 本妙寺入口停留場 (revid 29458062) https://ja.wikipedia.org/w/index.php?oldid=29458062"
+},
+"n_iryo_center|先端医療センター前": {
+"kana": "せんたんいりょうセンターまえ",
+"source": "ja.wikipedia 医療センター駅 (revid 29359017) https://ja.wikipedia.org/w/index.php?oldid=29359017"
+},
+"n_jomon_ogata|小ヶ田": {
+"kana": "おがた",
+"source": "ja.wikipedia 縄文小ヶ田駅 (revid 69591389) https://ja.wikipedia.org/w/index.php?oldid=69591389"
+},
+"n_kaizuka_nishi_nippon|競輪場前": {
+"kana": "けいりんじょうまえ",
+"source": "ja.wikipedia 競輪場前駅 (revid 85983957) https://ja.wikipedia.org/w/index.php?oldid=85983957"
+},
+"n_kawanishi_ikeda_old|池田": {
+"kana": "いけだ",
+"source": "ja.wikipedia 池田駅 (revid 100966894) https://ja.wikipedia.org/w/index.php?oldid=100966894"
+},
+"n_kawarayu_onsen_old|川原湯": {
+"kana": "かわらゆ",
+"source": "ja.wikipedia 川原湯温泉駅 (revid 110005693) https://ja.wikipedia.org/w/index.php?oldid=110005693"
+},
+"n_keikyu_higashi_kanagawa|仲木戸": {
+"kana": "なかきど",
+"source": "ja.wikipedia 京急東神奈川駅 (revid 76311233) https://ja.wikipedia.org/w/index.php?oldid=76311233"
+},
+"n_keisan_kagaku_center|ポートアイランド南": {
+"kana": "ポートアイランドみなみ",
+"source": "ja.wikipedia 計算科学センター駅 (revid 29358953) https://ja.wikipedia.org/w/index.php?oldid=29358953"
+},
+"n_ken_sogo_undojo|運動場前": {
+"kana": "うんどうじょうまえ",
+"source": "ja.wikipedia 運動場前駅 (revid 58340023) https://ja.wikipedia.org/w/index.php?oldid=58340023"
+},
+"n_kita_naganuma|長沼": {
+"kana": "ながぬま",
+"source": "ja.wikipedia 長沼駅 (revid 93318301) https://ja.wikipedia.org/w/index.php?oldid=93318301"
+},
+"n_kitano_hakubaicho|白梅町": {
+"kana": "はくばいちょう",
+"source": "ja.wikipedia 北野白梅町駅 (revid 110255413) https://ja.wikipedia.org/w/index.php?oldid=110255413"
+},
+"n_kohjiro|神代町": {
+"kana": "こうじろまち",
+"source": "ja.wikipedia 神代駅 (長崎県) (revid 69151885) https://ja.wikipedia.org/w/index.php?oldid=69151885"
+},
+"n_konotori_no_sato|但馬三江": {
+"kana": "たじまみえ",
+"source": "ja.wikipedia コウノトリの郷駅 (revid 47632320) https://ja.wikipedia.org/w/index.php?oldid=47632320"
+},
+"n_kumamoto_kosen_mae|電波高専前": {
+"kana": "でんぱこうせんまえ",
+"source": "ja.wikipedia 熊本高専前駅 (revid 39784275) https://ja.wikipedia.org/w/index.php?oldid=39784275"
+},
+"n_kumamotojoshiyakushomae|市役所前": {
+"kana": "しやくしょまえ",
+"source": "ja.wikipedia 熊本城・市役所前停留場 (revid 26118929) https://ja.wikipedia.org/w/index.php?oldid=26118929"
+},
+"n_kuwamizukosaten|神水・市民病院前": {
+"kana": "くわみず・しみんびょういんまえ",
+"source": "ja.wikipedia 神水交差点停留場 (revid 64139260) https://ja.wikipedia.org/w/index.php?oldid=64139260"
+},
+"n_kuwamizukosaten|神水橋": {
+"kana": "くわみずばし",
+"source": "ja.wikipedia 神水交差点停留場 (revid 23071294) https://ja.wikipedia.org/w/index.php?oldid=23071294"
+},
+"n_maya_cable|摩耶ケーブル下": {
+"kana": "まやけーぶるした",
+"source": "data/imports/wiki こうべ未来都市機構摩耶ケーブル線 rev109834079 「1973年2月1日 高尾駅を摩耶ケーブル下駅と改称」「2001年3月17日 摩耶駅を虹駅と改称」"
+},
+"n_meitetsu_gifu|新岐阜": {
+"kana": "しんぎふ",
+"source": "ja.wikipedia 名鉄岐阜駅 (revid 154631) https://ja.wikipedia.org/w/index.php?oldid=154631"
+},
+"n_minami_kagoshima_ekimae|競馬場前": {
+"kana": "けいばじょうまえ",
+"source": "ja.wikipedia 競馬場前駅 (revid 100011866) https://ja.wikipedia.org/w/index.php?oldid=100011866"
+},
+"n_myokenguchi|妙見": {
+"kana": "みょうけん",
+"source": "ja.wikipedia 妙見駅 (revid 67274787) https://ja.wikipedia.org/w/index.php?oldid=67274787"
+},
+"n_nichudori|交通局前": {
+"kana": "こうつうきょくまえ",
+"source": "ja.wikipedia 二中通停留場 (revid 49701677) https://ja.wikipedia.org/w/index.php?oldid=49701677"
+},
+"n_nishi_izumo|知井宮": {
+"kana": "ちいみや",
+"source": "ja.wikipedia 西出雲駅 (revid 110961584) https://ja.wikipedia.org/w/index.php?oldid=110961584"
+},
+"n_nishi_sadowara|佐土原": {
+"kana": "さどわら",
+"source": "ja.wikipedia 佐土原駅 (revid 111018674) https://ja.wikipedia.org/w/index.php?oldid=111018674"
+},
+"n_nishi_tomioka|病院前": {
+"kana": "びょういんまえ",
+"source": "ja.wikipedia 病院前駅 (revid 103809486) https://ja.wikipedia.org/w/index.php?oldid=103809486"
+},
+"n_nishichibiki|千曳": {
+"kana": "ちびき",
+"source": "ja.wikipedia 千曳駅 (revid 110392380) https://ja.wikipedia.org/w/index.php?oldid=110392380"
+},
+"n_nishigawaryokudokoen|西川": {
+"kana": "にしがわ",
+"source": "ja.wikipedia 西川緑道公園停留場 (revid 8714305) https://ja.wikipedia.org/w/index.php?oldid=8714305"
+},
+"n_osaka_namba_kintetsu|近鉄難波": {
+"kana": "きんてつなんば",
+"source": "ja.wikipedia 大阪難波駅 (revid 16380682) https://ja.wikipedia.org/w/index.php?oldid=16380682"
+},
+"n_saidaijicho_okayama_geijutsu_sozo_gekijo_harenowa_mae|西大寺町": {
+"kana": "さいだいじちょう",
+"source": "ja.wikipedia 西大寺町・岡山芸術創造劇場ハレノワ前停留場 (revid 84231506) https://ja.wikipedia.org/w/index.php?oldid=84231506"
+},
+"n_sakurai_meitetsu|碧海桜井": {
+"kana": "へきかいさくらい",
+"source": "ja.wikipedia 桜井駅 (愛知県) (revid 19955928) https://ja.wikipedia.org/w/index.php?oldid=19955928"
+},
+"n_sambashi_dori_1_chome|帯田": {
+"kana": "おびた",
+"source": "ja.wikipedia 桟橋通一丁目停留場 (revid 101769615) https://ja.wikipedia.org/w/index.php?oldid=101769615"
+},
+"n_sambashi_dori_2_chome|桟橋通三丁目": {
+"kana": "さんばしどおりさんちょうめ",
+"source": "ja.wikipedia 桟橋通二丁目停留場 (revid 106862912) https://ja.wikipedia.org/w/index.php?oldid=106862912"
+},
+"n_shibahara_handai_mae|柴原": {
+"kana": "しばはら",
+"source": "ja.wikipedia 柴原阪大前駅 (revid 66457065) https://ja.wikipedia.org/w/index.php?oldid=66457065"
+},
+"n_shimo_kamoo|赤坂": {
+"kana": "あかさか",
+"source": "ja.wikipedia 赤坂駅 (revid 80038760) https://ja.wikipedia.org/w/index.php?oldid=80038760"
+},
+"n_shin_anjo|今村": {
+"kana": "いまむら",
+"source": "ja.wikipedia 今村駅 (revid 97761991) https://ja.wikipedia.org/w/index.php?oldid=97761991"
+},
+"n_shiritsutaiikukanmae|体育館前": {
+"kana": "たいいくかんまえ",
+"source": "ja.wikipedia 体育館前駅 (revid 107668448) https://ja.wikipedia.org/w/index.php?oldid=107668448"
+},
+"n_sogosando|宗吾": {
+"kana": "そうご",
+"source": "ja.wikipedia 宗吾駅 (revid 45512155) https://ja.wikipedia.org/w/index.php?oldid=45512155"
+},
+"n_suizokukanguchi|県庁前": {
+"kana": "けんちょうまえ",
+"source": "ja.wikipedia 県庁前停留場 (revid 104961266) https://ja.wikipedia.org/w/index.php?oldid=104961266"
+},
+"n_tamako|西武遊園地": {
+"kana": "せいぶゆうえんち",
+"source": "ja.wikipedia 多摩湖駅 (revid 75539378) https://ja.wikipedia.org/w/index.php?oldid=75539378"
+},
+"n_todenzoshigaya|雑司ヶ谷": {
+"kana": "ぞうしがや",
+"source": "ja.wikipedia 都電雑司ヶ谷停留場 (revid 9540685) https://ja.wikipedia.org/w/index.php?oldid=9540685"
+},
+"n_tokushige_nagoya_geidai|徳重": {
+"kana": "とくしげ",
+"source": "ja.wikipedia 徳重・名古屋芸大駅 (revid 2140980) https://ja.wikipedia.org/w/index.php?oldid=2140980"
+},
+"n_toyohashikoenmae|体育館前": {
+"kana": "たいいくかんまえ",
+"source": "ja.wikipedia 体育館前駅 (revid 107668448) https://ja.wikipedia.org/w/index.php?oldid=107668448"
+},
+"n_toyohashikoenmae|球場前": {
+"kana": "きゅうじょうまえ",
+"source": "ja.wikipedia 球場前駅 (revid 49245748) https://ja.wikipedia.org/w/index.php?oldid=49245748"
+},
+"n_wakoshi_tobu|新倉": {
+"kana": "にいぐら",
+"source": "ja.wikipedia 和光市駅 (revid 111526784) https://ja.wikipedia.org/w/index.php?oldid=111526784"
+},
+"n_yakusa_aichi_loop|万博八草": {
+"kana": "ばんぱくやくさ",
+"source": "ja.wikipedia 八草駅 (revid 974510) https://ja.wikipedia.org/w/index.php?oldid=974510"
+},
+"n_yakusa_aichi_rapid_transit|万博八草": {
+"kana": "ばんぱくやくさ",
+"source": "ja.wikipedia 八草駅 (revid 1435359) https://ja.wikipedia.org/w/index.php?oldid=1435359"
+},
+"n_2_chome|東旭川市街": {
+"kana": "ひがしあさひかわしがい",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 247 https://dl.ndl.go.jp/pid/1207554/1/247"
+},
+"n_chiyoda_asahikawa|公有地": {
+"kana": "こうゆうち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 247 https://dl.ndl.go.jp/pid/1207554/1/247"
+},
+"n_kamikyokusei|上公有地": {
+"kana": "かみこうゆうち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 247 https://dl.ndl.go.jp/pid/1207554/1/247"
+},
+"n_jugo|遊園地": {
+"kana": "ゆうえんち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 247 https://dl.ndl.go.jp/pid/1207554/1/247"
+},
+"n_akechi_meitetsu|伏見口": {
+"kana": "ふしみぐち",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 185 https://dl.ndl.go.jp/pid/1025500/1/185"
+},
+"n_aso_shimodajo|阿蘇下田": {
+"kana": "あそしもだ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 94 https://dl.ndl.go.jp/pid/1207554/1/94"
+},
+"n_cable_hachimangu_guchi|八幡口": {
+"kana": "やはたぐち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 215 https://dl.ndl.go.jp/pid/1207554/1/215"
+},
+"n_chichibugaura_shimabara|秩父ヶ浦公園前": {
+"kana": "ちちぶがうらこうえんまえ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 242 https://dl.ndl.go.jp/pid/1207554/1/242"
+},
+"n_chokoku_no_mori|二の平": {
+"kana": "にのたいら",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 177 https://dl.ndl.go.jp/pid/1207554/1/177"
+},
+"n_fujimagari|藤山": {
+"kana": "ふじやま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 234 https://dl.ndl.go.jp/pid/1207554/1/234"
+},
+"n_fukudaimae_nishifukui|西福井": {
+"kana": "にしふくい",
+"source": "鉄道省『鉄道停車場一覧』昭和9年12月15日現在 (NDL 1212697) 쪽 그림 160 https://dl.ndl.go.jp/pid/1212697/1/160"
+},
+"n_hachiman|繭市場前": {
+"kana": "まゆしじょうまえ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 200 https://dl.ndl.go.jp/pid/1207554/1/200"
+},
+"n_hamakita|遠州貴布袮": {
+"kana": "えんしゅうきぶね",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 200 https://dl.ndl.go.jp/pid/1207554/1/200"
+},
+"n_hata_alpico_kotsu|波多": {
+"kana": "はた",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 192 https://dl.ndl.go.jp/pid/1207554/1/192"
+},
+"n_heiwajima|学校裏": {
+"kana": "がっこううら",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 251 https://dl.ndl.go.jp/pid/1207554/1/251"
+},
+"n_hekinan_chuo|新須磨": {
+"kana": "しんすま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 202 https://dl.ndl.go.jp/pid/1207554/1/202"
+},
+"n_higashi_matsuyama|武州松山": {
+"kana": "ぶしゅうまつやま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 170 https://dl.ndl.go.jp/pid/1207554/1/170"
+},
+"n_higashi_nagoyako_old|西六号": {
+"kana": "にしろくごう",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 187 https://dl.ndl.go.jp/pid/1025500/1/187"
+},
+"n_higashi_shimotsui|下津井東": {
+"kana": "しもついひがし",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 231 https://dl.ndl.go.jp/pid/1207554/1/231"
+},
+"n_hirosaki_higashikomae|南弘前": {
+"kana": "みなみひろさき",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 155 https://dl.ndl.go.jp/pid/1207554/1/155"
+},
+"n_hirusawa|駄子町": {
+"kana": "だごまち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 158 https://dl.ndl.go.jp/pid/1207554/1/158"
+},
+"n_horinouchi|横須賀堀内": {
+"kana": "よこすかほりのうち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 180 https://dl.ndl.go.jp/pid/1207554/1/180"
+},
+"n_inokuchi_hiroden|井ノ口": {
+"kana": "いのくち",
+"source": "鉄道省『鉄道停車場一覧』昭和9年12月15日現在 (NDL 1212697) 쪽 그림 204 https://dl.ndl.go.jp/pid/1212697/1/204"
+},
+"n_kairakuen|公園下": {
+"kana": "こうえんした",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 60 https://dl.ndl.go.jp/pid/1207554/1/60"
+},
+"n_kamigora|早雲館": {
+"kana": "そううんかん",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 177 https://dl.ndl.go.jp/pid/1207554/1/177"
+},
+"n_kanagawa_keikyu|京浜神奈川": {
+"kana": "けいひんかながわ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 251 https://dl.ndl.go.jp/pid/1207554/1/251"
+},
+"n_kanigawa|ライン遊園": {
+"kana": "らいんゆうえん",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 206 https://dl.ndl.go.jp/pid/1207554/1/206"
+},
+"n_katsunumabudokyo|勝沼": {
+"kana": "かつぬま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 36 https://dl.ndl.go.jp/pid/1207554/1/36"
+},
+"n_kawachinagano_kintetsu|長野": {
+"kana": "ながの",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 218 https://dl.ndl.go.jp/pid/1207554/1/218"
+},
+"n_kawachinagano_nankai|長野": {
+"kana": "ながの",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 219 https://dl.ndl.go.jp/pid/1207554/1/219"
+},
+"n_kawaneonsen_sasamado|笹間渡": {
+"kana": "ささまど",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 199 https://dl.ndl.go.jp/pid/1207554/1/199"
+},
+"n_keikyu_kamata|京浜蒲田": {
+"kana": "けいひんかまた",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 251 https://dl.ndl.go.jp/pid/1207554/1/251"
+},
+"n_keikyu_kawasaki|京浜川崎": {
+"kana": "けいひんかわさき",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 251 https://dl.ndl.go.jp/pid/1207554/1/251"
+},
+"n_keikyu_otsu|湘南大津": {
+"kana": "しょうなんおおつ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 180 https://dl.ndl.go.jp/pid/1207554/1/180"
+},
+"n_keikyu_taura|湘南田浦": {
+"kana": "しょうなんたうら",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 180 https://dl.ndl.go.jp/pid/1207554/1/180"
+},
+"n_keikyu_tomioka|湘南富岡": {
+"kana": "しょうなんとみおか",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 179 https://dl.ndl.go.jp/pid/1207554/1/179"
+},
+"n_keikyu_tsurumi|京浜鶴見": {
+"kana": "けいひんつるみ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 251 https://dl.ndl.go.jp/pid/1207554/1/251"
+},
+"n_kimitsu|周西": {
+"kana": "すさい",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 79 https://dl.ndl.go.jp/pid/1207554/1/79"
+},
+"n_kintetsu_yao_old|大軌八尾": {
+"kana": "だいきやお",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 253 https://dl.ndl.go.jp/pid/1207554/1/253"
+},
+"n_kinugawa_onsen_old|大滝": {
+"kana": "おおたき",
+"source": "鉄道省『鉄道停車場一覧』大正15年版 (NDL 1020981) 쪽 그림 153 https://dl.ndl.go.jp/pid/1020981/1/153"
+},
+"n_kira_yoshida|三河吉田": {
+"kana": "みかわよしだ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 202 https://dl.ndl.go.jp/pid/1207554/1/202"
+},
+"n_kitahiyama|東瀬棚": {
+"kana": "ひがしせたな",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 103 https://dl.ndl.go.jp/pid/1207554/1/103"
+},
+"n_kitanii_matsumotodaigakumae|北新": {
+"kana": "きたにい",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 192 https://dl.ndl.go.jp/pid/1207554/1/192"
+},
+"n_kitsukishi|杵築町": {
+"kana": "きつきまち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 243 https://dl.ndl.go.jp/pid/1207554/1/243"
+},
+"n_kurosawa_yuri_kogen|羽後黒沢": {
+"kana": "うごくろさわ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 75 https://dl.ndl.go.jp/pid/1207554/1/75"
+},
+"n_magura|中筋": {
+"kana": "なかすじ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 49 https://dl.ndl.go.jp/pid/1207554/1/49"
+},
+"n_matsue_shinjiko_onsen|北松江": {
+"kana": "きたまつえ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 230 https://dl.ndl.go.jp/pid/1207554/1/230"
+},
+"n_matsunohama|助松": {
+"kana": "すけまつ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 217 https://dl.ndl.go.jp/pid/1207554/1/217"
+},
+"n_matsushima_2_chome|松島四丁目": {
+"kana": "まつしましちょうめ",
+"source": "『鐵道停車場一覽』 昭和2·9·12年(높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_mishima_tamachi|三島町": {
+"kana": "みしままち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 200 https://dl.ndl.go.jp/pid/1207554/1/200"
+},
+"n_ogura|奈良電小倉": {
+"kana": "ならでんおぐら",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 216 https://dl.ndl.go.jp/pid/1207554/1/216"
+},
+"n_otemachi_iyotetsu|江戸町": {
+"kana": "えどまち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 238 https://dl.ndl.go.jp/pid/1207554/1/238"
+},
+"n_otemachi_ekimae_iyotetsu|江戸町": {
+"kana": "えどまち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 238 https://dl.ndl.go.jp/pid/1207554/1/238"
+},
+"n_rokko_cable_shita|土橋": {
+"kana": "どばし",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 225 https://dl.ndl.go.jp/pid/1207554/1/225"
+},
+"n_saginoyuonsenmae|温泉前": {
+"kana": "おんせんまえ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 230 https://dl.ndl.go.jp/pid/1207554/1/230"
+},
+"n_sanyo_sone|電鉄曽根": {
+"kana": "でんてつそね",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 224 https://dl.ndl.go.jp/pid/1207554/1/224"
+},
+"n_shikama_sanyo|電鉄飾磨": {
+"kana": "でんてつしかま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 224 https://dl.ndl.go.jp/pid/1207554/1/224"
+},
+"n_takasago_sanyo|電鉄高砂": {
+"kana": "でんてつたかさご",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 224 https://dl.ndl.go.jp/pid/1207554/1/224"
+},
+"n_shin_kani|新広見": {
+"kana": "しんひろみ",
+"source": "鉄道省『鉄道停車場一覧』昭和9年12月15日現在 (NDL 1212697) 쪽 그림 165 https://dl.ndl.go.jp/pid/1212697/1/165"
+},
+"n_shin_seto|尾張横山": {
+"kana": "おわりよこやま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 208 https://dl.ndl.go.jp/pid/1207554/1/208"
+},
+"n_shogawamachi|青島町": {
+"kana": "あおしままち",
+"source": "鉄道省『鉄道停車場一覧』大正15年版 (NDL 1020981) 쪽 그림 190 https://dl.ndl.go.jp/pid/1020981/1/190"
+},
+"n_soja|西総社": {
+"kana": "にしそうじゃ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 43 https://dl.ndl.go.jp/pid/1207554/1/43"
+},
+"n_takao|淺川": {
+"kana": "あさかわ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 36 https://dl.ndl.go.jp/pid/1207554/1/36"
+},
+"n_taki_kisei_main|相可口": {
+"kana": "おうかぐち",
+"source": "鉄道省『鉄道停車場一覧』昭和9年12月15日現在 (NDL 1212697) 쪽 그림 49 https://dl.ndl.go.jp/pid/1212697/1/49"
+},
+"n_takasagocho|女学校西": {
+"kana": "じょがっこうにし",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 239 https://dl.ndl.go.jp/pid/1025500/1/239"
+},
+"n_tamagawa_tokyu_railways|多摩川園前": {
+"kana": "たまがわえんまえ",
+"source": "鉄道省『鉄道停車場一覧』昭和9年12月15日現在 (NDL 1212697) 쪽 그림 145 https://dl.ndl.go.jp/pid/1212697/1/145"
+},
+"n_tobu_dobutsu_koen|杉戸": {
+"kana": "すぎと",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 167 https://dl.ndl.go.jp/pid/1207554/1/167"
+},
+"n_tokiwadai_tobu|武蔵常盤": {
+"kana": "むさしときわ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 170 https://dl.ndl.go.jp/pid/1207554/1/170"
+},
+"n_wadamachi|常盤園下": {
+"kana": "ときわえんした",
+"source": "鉄道省『鉄道停車場一覧』昭和9年12月15日現在 (NDL 1212697) 쪽 그림 149 https://dl.ndl.go.jp/pid/1212697/1/149"
+},
+"n_wakana|若菜辺": {
+"kana": "わかなべ",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 146 https://dl.ndl.go.jp/pid/1025500/1/146"
+},
+"n_yagumadai|谷熊": {
+"kana": "やぐま",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 209 https://dl.ndl.go.jp/pid/1207554/1/209"
+},
+"n_yamahana|穏禰平": {
+"kana": "おんねびら",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 144 https://dl.ndl.go.jp/pid/1025500/1/144"
+},
+"n_sakurada|湯波内": {
+"kana": "ゆっぱない",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 144 https://dl.ndl.go.jp/pid/1025500/1/144"
+},
+"n_zushihayama|湘南逗子": {
+"kana": "しょうなんずし",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 180 https://dl.ndl.go.jp/pid/1207554/1/180"
+},
+"n_appi_kogen|龍ヶ森": {
+"kana": "りゅうがもり",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 67 https://dl.ndl.go.jp/pid/1207554/1/67"
+},
+"n_aso_hohi_main|坊中": {
+"kana": "ぼうちゅう",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 93 https://dl.ndl.go.jp/pid/1207554/1/93"
+},
+"n_misawa_aoimori|古間木": {
+"kana": "ふるまき",
+"source": "鐵道院『鐵道停車場一覽』大正6年3月31日現在 (NDL 3461950) 쪽 그림 60 https://dl.ndl.go.jp/pid/3461950/1/60"
+},
+"n_matsuura|志佐": {
+"kana": "しさ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 91 https://dl.ndl.go.jp/pid/1207554/1/91"
+},
+"n_kita_koshigaya|武州大沢": {
+"kana": "ぶしゅうおおさわ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 167 https://dl.ndl.go.jp/pid/1207554/1/167"
+},
+"n_nishi_namerikawa|水橋口": {
+"kana": "みずはしぐち",
+"source": "鉄道省『鉄道停車場一覧』大正15年版 (NDL 1020981) 쪽 그림 191 https://dl.ndl.go.jp/pid/1020981/1/191"
+},
+"n_hamayamakoen_kitaguchi|鎗ヶ崎": {
+"kana": "やりがさき",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 230 https://dl.ndl.go.jp/pid/1207554/1/230"
+},
+"n_naruto_naruto_old|ゑびす前": {
+"kana": "えびすまえ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 83 https://dl.ndl.go.jp/pid/1207554/1/83"
+},
+"n_namporo|南幌向": {
+"kana": "みなみほろむい",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 154 https://dl.ndl.go.jp/pid/1207554/1/154"
+},
+"n_kenritsu_daigaku|横須賀公郷": {
+"kana": "よこすかくごう",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 180 https://dl.ndl.go.jp/pid/1207554/1/180"
+},
+"n_tabira_hiradoguchi|平戸口": {
+"kana": "ひらどぐち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 91 https://dl.ndl.go.jp/pid/1207554/1/91"
+},
+"n_horinouchi|横須賀堀ノ内": {
+"kana": "よこすかほりのうち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 180 https://dl.ndl.go.jp/pid/1207554/1/180"
+},
+"n_yashima_yuri_kogen|羽後矢島": {
+"kana": "うごやしま",
+"source": "陸運協力会『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 (NDL 1229849) 쪽 그림 33 https://dl.ndl.go.jp/pid/1229849/1/33"
+},
+"n_akishima|昭和前": {
+"kana": "しょうわまえ",
+"source": "鉄道教育会『内地社線運賃算出表』昭和17年9月1日現行 (NDL 1107698) 쪽 그림 110 https://dl.ndl.go.jp/pid/1107698/1/110"
+},
+"n_iwane|巖根": {
+"kana": "いわね",
+"source": "陸運協力会『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 (NDL 1229849) 쪽 그림 33 https://dl.ndl.go.jp/pid/1229849/1/33"
+},
+"n_kawabe|弘南川部": {
+"kana": "こうなんかわべ",
+"source": "NDL 1219457 『五十音別全国駅名粁程表』1936 143쪽 「弘南鐵道 こうなん / (川部) かはべ」 + 『鉄道停車場一覧』1937 73쪽 (중간 둘, 회사 접두 읽기+역 읽기, 沼宮内 선례; r3_sources_2 readings_old4)"
+},
+"n_kujoomiya|九条大路大宮": {
+"kana": "くじょうおおじおおみや",
+"source": "합성(沼宮内 선례): 九条大路 = 「Kujo-oji」(1949·1962 영문 주소록, NDL 스니펫 중간) + 大宮 = おおみや(같은 노드 지금 이름 九条大宮 くじょうおおみや). 九條大路大宮 자체의 振り仮名는 NDL 409건에 없음 (6회차 근거 조사 2026-11-14; r6out/B)"
+},
+"n_kawabe_yuri_kogen|羽後川辺": {
+"kana": "うごかわべ",
+"source": "陸運協力会『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 (NDL 1229849) 쪽 그림 33 https://dl.ndl.go.jp/pid/1229849/1/33"
+},
+"n_sakado_tobu|坂戸町": {
+"kana": "さかどまち",
+"source": "日本国有鉄道『停車場一覧』昭和41年3月現在 (NDL 1873236) 쪽 그림 167·289: (坂戸町) さかどまち SAKADO MACHI. 1931·1942 운임표도 さかどまち, 1926–1937 停車場一覧 계열만 さかとまち(탁점 누락)"
+},
+"n_sumiyoshitaisha|住吉公園": {
+"kana": "すみよしこうえん",
+"source": "ja.wikipedia 住吉大社駅 (1979-05-09 住吉公園駅을 住吉大社駅로 改称)"
+},
+"n_wakayama|東和歌山": {
+"kana": "ひがしわかやま",
+"source": "ja.wikipedia 和歌山駅 (1924 東和歌山駅として開業, 1968-02-01 和歌山駅に改称)"
+},
+"n_morishoji|新森小路": {
+"kana": "しんもりしょうじ",
+"source": "ja.wikipedia 森小路駅 (1931 新森小路駅として開業)"
+},
+"n_teradomari_shindo|寺泊新道": {
+"kana": "てらどまりしんどう",
+"source": "ja.wikipedia 寺泊新道駅 (1967-04-01 寺泊駅に改称)"
+},
+"n_mitsuizosenjomae|玉": {
+"kana": "たま",
+"source": "ja.wikipedia 三井造船所前駅 (1953 備南電気鉄道の玉駅として開業)"
+},
+"n_honjonakadori|代継橋": {
+"kana": "よつぎばし",
+"source": "ja.wikipedia 熊本市電春竹線 (1953-11-09 本荘中通停留場を代継橋停留場に改称)"
+},
+"n_agemasunaga|増永": {
+"kana": "ますなが",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_hamaotsu|浜大津東口": {
+"kana": "はまおおつひがしぐち",
+"source": "합성 읽기: 합성: 浜大津(はまおおつ, 같은 역 びわ湖浜大津 옛 이름) + 東口(ひがしぐち). 역 이름 자체 가나 근거 못 찾음 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_chidoribashi_fukuoka_tram|新博多": {
+"kana": "しんはかた",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 240 https://dl.ndl.go.jp/pid/1207554/1/240 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_chidoribashi_fukuoka_tram|西鉄博多": {
+"kana": "にしてつはかた",
+"source": "합성 읽기: 합성: 西鉄(にしてつ, 회사 약칭) + 博多(はかた). 역 이름 자체 가나 근거 못 찾음 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_chidoribashi_kaizuka|新博多": {
+"kana": "しんはかた",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 240 https://dl.ndl.go.jp/pid/1207554/1/240 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_chidoribashi_kaizuka|西鉄博多": {
+"kana": "にしてつはかた",
+"source": "합성 읽기: 합성: 西鉄(にしてつ, 회사 약칭) + 博多(はかた). 역 이름 자체 가나 근거 못 찾음 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_chitetsu_building_mae|桜町": {
+"kana": "さくらまち",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_dogo_onsen|道後": {
+"kana": "どうご",
+"source": "鉄道省『鉄道旅客手小荷物運賃算出表』昭和11年 連帯線ノ部 (NDL 1231032) 쪽 그림 78 https://dl.ndl.go.jp/pid/1231032/1/78 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_fujikoshi|山室": {
+"kana": "やまむろ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 184 https://dl.ndl.go.jp/pid/1207554/1/184 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_gionmachi|馬場新町": {
+"kana": "ばばしんまち",
+"source": "지명 읽기(역 이름 자체 가나 아님): ja.wikipedia 御供所町 (福岡市) (revid 111504174) https://ja.wikipedia.org/w/index.php?oldid=111504174 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_hachimangumae|安久津": {
+"kana": "あくつ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 158 https://dl.ndl.go.jp/pid/1207554/1/158 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_kamihonmachi|南田町": {
+"kana": "みなみだまち",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_kano_meitetsu|安良田町": {
+"kana": "あらたまち",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 195 https://dl.ndl.go.jp/pid/1207554/1/195 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_kita_engaru|学田": {
+"kana": "がくでん",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_motoasakusa_1_chome|竹町": {
+"kana": "たけちょう",
+"source": "지명 읽기(역 이름 자체 가나 아님): ja.wikipedia 竹町 (revid 97720451) https://ja.wikipedia.org/w/index.php?oldid=97720451 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_nishitetsuokawa|榎津": {
+"kana": "えのきづ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 240 https://dl.ndl.go.jp/pid/1207554/1/240 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_nissekibyoimmae|祓川": {
+"kana": "はらいがわ",
+"source": "지명 읽기(역 이름 자체 가나 아님): ja.wikipedia 松川 (福島県) (revid 105553392) https://ja.wikipedia.org/w/index.php?oldid=105553392 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_nogeyamayuenchiiriguchi|野毛町": {
+"kana": "のげちょう",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_shijokawaramachishinkyogoku|四条河原町": {
+"kana": "しじょうかわらまち",
+"source": "지명 읽기(역 이름 자체 가나 아님): ja.wikipedia 四条河原町 (revid 108853040) https://ja.wikipedia.org/w/index.php?oldid=108853040 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_shikinochugakkomae|大坪町": {
+"kana": "おおつぼまち",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_shin_hamamatsu_old|旭町": {
+"kana": "あさひちょう",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 200 https://dl.ndl.go.jp/pid/1207554/1/200 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_shinnittetsu_mae|加家": {
+"kana": "かけ",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 203 https://dl.ndl.go.jp/pid/1207554/1/203 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_shintomicho_toyama_chiho|神通町": {
+"kana": "じんづうまち",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_shinyashiki|新屋敷町": {
+"kana": "しんやしきちょう",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_tagata_jinja_mae|久保一色": {
+"kana": "くぼいしき",
+"source": "鉄道省『鉄道停車場一覧』昭和12年10月1日現在 (NDL 1207554) 쪽 그림 207 https://dl.ndl.go.jp/pid/1207554/1/207 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_takaemachi|南高江": {
+"kana": "みなみたかえ",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_tobu_ekimae|松原町": {
+"kana": "まつばらちょう",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_ueno_1_chome|黒門町": {
+"kana": "くろもんちょう",
+"source": "지명 읽기(역 이름 자체 가나 아님): ja.wikipedia 黒門 (revid 106251239) https://ja.wikipedia.org/w/index.php?oldid=106251239 (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_umizuka|貝塚南": {
+"kana": "かいづかみなみ",
+"source": "鉄道省『鉄道停車場一覧』大正15年版 (NDL 1020981) 쪽 그림 199 https://dl.ndl.go.jp/pid/1020981/1/199 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_yrp_nobi|野比": {
+"kana": "のび",
+"source": "지명 읽기(역 이름 자체 가나 아님): 日本郵便 郵便番号データ KEN_ALL (utf_ken_all.zip, 2026-11-08 取得) https://www.post.japanpost.jp/service/search/zipcode/download/utf-zip.html (3차 대조 r3 misc1, 신뢰 중간)"
+},
+"n_yubari_honcho|新夕張": {
+"kana": "しんゆうばり",
+"source": "鉄道省『鉄道停車場一覧』昭和2年版 (NDL 1025500) 쪽 그림 146 https://dl.ndl.go.jp/pid/1025500/1/146 (3차 대조 r3 misc1, 신뢰 높음)"
+},
+"n_suikonojomae|滋賀里": {
+"kana": "しがさと",
+"source": "ja.wikipedia 滋賀里駅 (revid 107908502)"
+},
+"n_higashioiwake|小安平": {
+"kana": "こあびら",
+"source": "ja.wikipedia 東追分駅 (revid 111578142) 「小安平仮乗降場（こあびらかりじょうこうじょう）」"
+},
+"n_sakurambo_higashine|蟹沢": {
+"kana": "かにさわ",
+"source": "ja.wikipedia さくらんぼ東根駅 (revid 110591217) 「蟹沢駅（かにさわえき）」"
+},
+"n_shimbamba|北馬場": {
+"kana": "きたばんば",
+"source": "ja.wikipedia 新馬場駅 (revid 110430422) 「北馬場駅（きたばんばえき）」"
+},
+"n_shimbamba|南馬場": {
+"kana": "みなみばんば",
+"source": "ja.wikipedia 新馬場駅 (revid 110430422) 「南馬場駅（みなみばんばえき）」"
+},
+"n_miyakomachi_hiroden|福島病院前": {
+"kana": "ふくしまびょういんまえ",
+"source": "ja.wikipedia 西観音町停留場 (revid 111068802) 「福島病院前停留場（ふくしまびょういんまえていりゅうじょう）」"
+},
+"n_chiba_chuo|京成千葉": {
+"kana": "けいせいちば",
+"source": "wiki station 千葉中央駅 hist: 1987-04-01 …千葉中央駅に改称; wiki 京成千葉線 L144: 1987年4月1日 - 京成千葉駅を千葉中央駅に…改称"
+},
+"n_ryugasakishi|佐貫": {
+"kana": "さぬき",
+"source": "wiki station 龍ケ崎市駅 hist: 2020年3月14日 JR東日本の駅名を龍ケ崎市駅に改称; 같은 hist: 1900年8月14日 …佐貫駅として同時に開業"
+},
+"n_otsuko|関本": {
+"kana": "せきもと",
+"source": "wiki station 大津港駅 hist: 1950年5月10日 大津港駅に改称 (開業時 関本駅)"
+},
+"n_todaimae_inogashira|一高前": {
+"kana": "いちこうまえ",
+"source": "wiki station 駒場東大前駅 hist: 1951年12月1日 一高前駅を東大前駅に改称"
+},
+"n_kashima_soccer_stadium|北鹿島": {
+"kana": "きたかしま",
+"source": "大洗鹿島線 wiki 年表: 1994年3月12日 北鹿島駅を鹿島サッカースタジアム駅に改称; N05 鹿島線 北鹿島 1978–1993 (EB03_13502015 계열)"
+},
+"n_tenkubashi_keikyu|羽田": {
+"kana": "はねだ",
+"source": "京急空港線 wiki 年表: 11月18日 - ... 羽田駅が天空橋駅に改称(1998); N05 空港線 羽田 1993–1997, 天空橋 1998–"
+},
+"n_keisei_ueno|上野公園": {
+"kana": "うえのこうえん",
+"source": "京成本線 wiki 111343993 年表 1953年5月1日 上野公園駅を京成上野駅に改称; N05 本線 上野公園 1950–1952"
+},
+"n_takashimadaira|志村": {
+"kana": "しむら",
+"source": "都営地下鉄三田線 wiki 110959523 年表 1968-12-27 巣鴨 - 志村（現・高島平）間開業, 1969-08-01 志村駅を高島平駅に改称; N05 6号線三田線 志村 1968"
+},
+"n_higashi_narita_keisei|成田空港": {
+"kana": "なりたくうこう",
+"source": "京成本線 wiki 年表 1978年5月21日 京成成田 - 成田空港（現在の東成田）間が開業; N05 東成田線 成田空港 1978–1990 (東成田 자리 45m)"
+},
+"n_tenkubashi_tokyo_monorail|羽田": {
+"kana": "はねだ",
+"source": "build/master.sqlite node_move n_haneda_tokyo_monorail→n_tenkubashi_tokyo_monorail 1993-09-27; wiki 東京モノレール 「整備場駅 - 羽田空港駅間開業。整備場駅 - （旧）羽田駅廃止」"
+},
+"n_hieizan_sakamoto|叡山": {
+"kana": "えいざん",
+"source": "data/imports/wiki 湖西線 rev111088405: 「叡山駅を比叡山坂本駅に改称」(1994-09-04)"
+},
+"n_unobe|茨木": {
+"kana": "いばらき",
+"source": "ja.wikipedia 大阪モノレール本線 rev111054270 「茨木駅を宇野辺駅に改称」(1997-04-01)"
+},
+"n_minami_fukuoka|雑餉隈": {
+"kana": "ざっしょのくま",
+"source": "data/imports/wiki/station.json 南福岡駅 「1966年（昭和41年）11月1日：南福岡駅…に改称」; n05 EB03_22202037 雑餉隈 1950–1965; data/candidates/n05_history.json class=check 「옛 이름이 가까운 다른 역 이름」(西鉄 雑餉隈)으로 미적용"
+},
+"n_onojo|白木原": {
+"kana": "しらきばる",
+"source": "data/imports/wiki/station.json 大野城駅 「1989年（平成元年）3月11日：…大野城駅…に改称」·「1961年…白木原駅…に昇格」; data/candidates/n05_history.json class=check로 미적용"
+},
+"n_heiwadori|小倉": {
+"kana": "こくら",
+"source": "data/imports/wiki/station.json 平和通駅 「1985年…小倉駅（初代）として開業」「1998年…平和通駅と改称」; n05 小倉 1985–1997 / 平和通 1998–"
+},
+"n_yudakinshuko|陸中大石": {
+"kana": "りくちゅうおおいし",
+"source": "data/imports/wiki 北上線 rev111501383 \"陸中大石駅がゆだ錦秋湖駅に…改称\"(1991-06-20); 같은 문서 노선도 \"1962- 陸中大石駅(2)\""
+},
+"n_hachinohe|尻内": {
+"kana": "しりうち",
+"source": "ja.wikipedia 東北本線 rev111496700: 「4月1日：尻内駅を八戸駅に改称」(1971); build/names.sqlite name entity_id=n_hachinohe lang=ja 행 1개"
+},
+"n_higashi_fukushima|瀬上": {
+"kana": "せのうえ",
+"source": "ja.wikipedia 東北本線 rev111496700: 「6月1日：瀬上駅を東福島駅に改称」(1978); build/names.sqlite name entity_id=n_higashi_fukushima lang=ja 행 1개"
+},
+"n_takahata|糠ノ目": {
+"kana": "ぬかのめ",
+"source": "ja.wikipedia 奥羽本線 rev111473148: 「3月16日：糠ノ目駅が高畠駅に…改称」(1991); build/names.sqlite name entity_id=n_takahata lang=ja 행 1개"
+},
+"n_owani_onsen|大鰐": {
+"kana": "おおわに",
+"source": "ja.wikipedia 奥羽本線 rev111473148: 「大鰐駅が大鰐温泉駅に改称」(1991); build/names.sqlite name entity_id=n_owani_onsen lang=ja 행 1개"
+},
+"n_tsukioka|天王新田": {
+"kana": "てんのうしんでん",
+"source": "ja.wikipedia 羽越本線 rev111580331: 「9月1日：天王新田駅が月岡駅に改称」(1950); build/names.sqlite name entity_id=n_tsukioka lang=ja 행 1개"
+},
+"n_hida_kamioka|飛騨船津": {
+"kana": "ひだふなつ",
+"source": "같은 노드 神岡線 전용 이름 행의 읽기(히다후나츠); ja.wikipedia 飛騨神岡駅 연혁으로 확인"
+},
+"n_aizukogen_ozeguchi_aizu|会津滝ノ原": {
+"kana": "あいづたきのはら",
+"source": "data/imports/wiki 会津鉄道会津線 rev108995651 年表 \"会津滝ノ原駅が会津高原駅に改称\"(1986-10-09); 같은 문서 \"会津高原駅が会津高原尾瀬口駅に改称\"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 \"会津高原(旧会津滝ノ原)\""
+},
+"n_aizukogen_ozeguchi_aizu|会津高原": {
+"kana": "あいづこうげん",
+"source": "data/imports/wiki 会津鉄道会津線 rev108995651 年表 \"会津滝ノ原駅が会津高原駅に改称\"(1986-10-09); 같은 문서 \"会津高原駅が会津高原尾瀬口駅に改称\"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 \"会津高原(旧会津滝ノ原)\""
+},
+"n_nijino|摩耶": {
+"kana": "まや",
+"source": "data/imports/wiki こうべ未来都市機構摩耶ケーブル線 rev109834079 「1973年2月1日 高尾駅を摩耶ケーブル下駅と改称」「2001年3月17日 摩耶駅を虹駅と改称」"
+},
+"n_shiyakusho|市民会館": {
+"kana": "しみんかいかん",
+"source": "ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所"
+},
+"n_godo_watarase_keikoku|神土": {
+"kana": "ごうど",
+"source": "ja.wikipedia 神戸駅 (群馬県): 「神土駅として開業」, 읽기 ごうど(같은 역 문서); 2회차 kanto_1-003"
+},
+"n_taragishorenji|東多良木": {
+"kana": "ひがしたらぎ",
+"source": "くま川鉄道湯前線 역 표 「多良木青蓮寺駅（東多良木駅）」; 2회차 kyushu_2-39"
+},
+"n_ginza|西銀座": {
+"kana": "にしぎんざ",
+"source": "東京メトロ丸ノ内線 年表 「西銀座駅」(1957–1964); 2회차 kanto_2-018"
+},
+"n_hommachi|信濃橋": {
+"kana": "しなのばし",
+"source": "Osaka Metro四つ橋線 「信濃橋駅を本町駅に統合」(1969); 2회차 kinki_3-048"
+},
+"n_hitoyoshi_onsen|人吉": {
+"kana": "ひとよし",
+"source": "くま川鉄道 人吉温泉駅의 옛 이름 人吉(2009-04-01 개칭, 위키 개칭 행). 읽기는 같은 글자 JR 人吉駅과 같은 ひとよし. 노드 읽기(ひとよしおんせん)가 노선 전용 이름 행에 잘못 붙던 것(같은 한자 다른 읽기)"
+},
+"n_kariya_meitetsu|刈谷新": {
+"kana": "かりやしん",
+"source": "鉄道院『停車場一覧』1917 三河鉄道 「(刈谷新) かりやしん」 https://dl.ndl.go.jp/pid/3461950/1/114"
+},
+"n_honmachi_1_chome|西堀端": {
+"kana": "にしほりばた",
+"source": "station_database 9980803 西堀端(にしほりばた, 松山市大手町1 — 같은 자리 30 m, 城南線 쪽 같은 이름 정류장)"
+},
+"n_nishi_4_chome|三越前": {
+"kana": "みつこしまえ",
+"source": "같은 자리(60 m) 西四丁目線 三越前 정류장 n_mitsukoshimae_sapporo_city의 읽기(ja.wikipedia 三越前停留場)"
+},
+"n_iwate_numakunai_igr_iwate_galaxy|沼宮内": {
+"kana": "ぬまくない",
+"source": "1891 日本鉄道 沼宮内駅 → 2002-12-01 いわて沼宮内(앞에 「いわて」만 붙인 개칭, 지금 공식 읽기 いわてぬまくない); 1966 停車場一覧 「沼宮内」 줄(NDL pid 1873236 コマ72); ja.wikipedia いわて沼宮内駅 연혁 (R6-G 2026-11-13)"
+},
+"n_oga_oga_old|船川": {
+"kana": "ふなかわ",
+"source": "『鉄道停車場一覧』 昭和41年(NDL 1873236, 높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_kashii_kaenmae|香椎福日園前": {
+"kana": "かしいふくにちえんまえ",
+"source": "위키 西鉄貝塚線 年表·『経済情報』 스니펫(중간 둘) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_kitasuzaka|豊洲": {
+"kana": "とよす",
+"source": "『鐵道停車場一覽』 昭和9年(NDL 1212697, 높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_kotoden_yashima|屋島登山口": {
+"kana": "やしまとざんぐち",
+"source": "『鐵道停車場一覽』 昭和9·12年(높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_namba_osaka_metro|難波元町": {
+"kana": "なんばもとまち",
+"source": "『鉄道停車場一覧』 昭和41年(NDL 1873236, 높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_kyusendo|大坂間": {
+"kana": "おおさかま",
+"source": "官報 1947-02-25 運輸省告示第38号(높음) (2회차 후속 근거 조사 2026-11-13; r2out/follow)"
+},
+"n_enshu_mori|遠江森": {
+"kana": "とおとうみもり",
+"source": "『鉄道停車場一覧』 昭和41年(NDL 1873236) 역 줄·역명 색인(높음) (2회차 audit 근거 조사 2026-11-13; r2out/audit)"
+},
+"n_asunarou_yokkaichi|近鉄四日市": {
+"kana": "きんてつよっかいち",
+"source": "『みえ 県政だより』 2003-02-01·07-01(三重県, 중간 둘) (3회차 날짜 보강 조사 2026-11-13; r3out/dates)"
+},
+"n_nishinagata_yurinosato|西長田": {
+"kana": "にしながた",
+"source": "丸岡線 西長田 노드를 三国芦原線 西長田(지금 西長田ゆりの里)와 합친 뒤 옛 이름 읽기. 원래 丸岡線 노드의 손 보정 읽기(node_fix, 西長田=にしながた, 같은 지명 역 읽기의 앞부분) 그대로 (8회차 W1b, 3회차 chubu_2-15)"
+},
+"n_suisankokomae|下神白": {"kana": "しもかじろ", "source": "ja.wikipedia 江名鉄道 (revid 105334360) 「水産高校前（停、すいさんこうこうまえ。旧下神白、しもかじろ）」 (8회차 W2 2026-11-15; audit3 tohoku_1-013)"},
+"n_hiroden_nishi_hiroshima|己斐": {"kana": "こい", "source": "ja.wikipedia 広電西広島（己斐）駅 정류장 칸 本線 「こい」 (8회차 W3 2026-11-15)"},
+"n_kintetsu_tambabashi|丹波橋": {"kana": "たんばばし", "source": "ja.wikipedia 丹波橋駅 정보 칸 「たんばばし」 (8회차 W3 2026-11-15)"},
+"n_hinokage_onsen|日ノ影": {"kana": "ひのかげ", "source": "합성(沼宮内 선례): ja.wikipedia 日之影温泉駅 「ひのかげおんせん」(日之影=日ノ影)에서 温泉(おんせん)을 뗀 읽기. 노선 옛 이름 日ノ影線 ひのかげせん과 같음 (8회차 W3 2026-11-15)"},
+"n_adogawa_kojaku|安曇": {"kana": "あど", "source": "railforum 『昭和時代』 기간 목록 텍스트 62133행 「安曇 あど」 1929.06.01~1930.04.01 이웃 新旭·水尾; railforum 『昭和時代』 기간 목록 텍스트 62181행 「安曇 あど」 1947.01.25~1962.--.-- 이웃 新旭·水尾; ja.wikipedia 「安曇川駅 (江若鉄道)」 rev 106827826 「|大溝駅]]から安曇駅までの区間が開通したのに合わせて'''安曇駅'''（あどえき）の名で開業した{{S」 (노선 문서·지금 역 문서·그 이름 문서) (9회차 R 2026-11-16)"},
+"n_aizukogen_ozeguchi_yagan|会津高原": {"kana": "あいづこうげん", "source": "railforum 『昭和時代』 기간 목록 텍스트 11166행 「会津高原 あいづこうげん」 1981.12.23~1987.04.01 이웃 男鹿高原; railforum 『平成時代』 기간 목록 텍스트 2593행 「会津高原 あいづこうげん」 1981.12.23~1986.10.09 이웃 男鹿高原; ja.wikipedia 「会津高原尾瀬口駅」 rev 110280945 「月9日]] - 野岩鉄道会津鬼怒川線が当駅まで開業し、'''会津高原駅'''（あいづこうげんえき）に改称{{R|私鉄1」 (지금 역 문서·그 이름 문서) (9회차 R 2026-11-16)"},
+"n_ajinahigashi|阿品": {"kana": "あじな", "source": "railforum 『昭和時代』 기간 목록 텍스트 85562행 「阿品 あじな」 1931.02.01~1942.04.10 이웃 地御前; railforum 『昭和時代』 기간 목록 텍스트 85672행 「阿品 あじな」 1942.04.10~1944.07.21 이웃 地御前; ja.wikipedia 「阿品東駅」 rev 111483682 「今昔』]]150-157頁</ref>。当時の駅名は'''阿品駅'''（あじなえき）である<ref na」 (이웃 地御前·지금 역 문서·그 이름 문서); 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「いち宮內みやうち地御前ぢごぜん阿品あじな電車島でんしや(宮宮島みやじま廣廣島市己斐町同草津町同古田町同草津町同同廣島縣佐」 (9회차 R 2026-11-16)"},
+"n_ajisu|本阿知須": {"kana": "ほんあじす", "source": "railforum 『昭和時代』 기간 목록 텍스트 86038행 「本阿知須 ほんあじす」 1929.11.29~1924.08.17 이웃 岐波·岩倉; railforum 『昭和時代』 기간 목록 텍스트 113087행 「本阿知須 ほんあじす」 1943.05.01~1948.02.01 이웃 岐波; ja.wikipedia 「阿知須駅」 rev 110755402 「部鉄道]]が[[床波駅]]から延伸した際の終着駅である'''本阿知須駅'''（ほんあじすえき）として開業<ref」 (지금 역 문서); ja.wikipedia 「阿知須駅」 연혁 「1924年（大正13年）8月17日：宇部鉄道が床波駅から延伸した際の終着駅である本阿知須駅（ほんあじすえき）として開業（今の本由良駅が当時の阿知須駅だった）。」; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「防佐山すはうさやま岩倉いはくら本阿知須ほんあぢす岐波きは丸尾まるを白土しらつち床波とこなみ常盤ときは草江くさえ宇部岬うベみさき東」; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 「0 45岐波きは20.5 51本阿知須ほんあぢす23.0 58周防佐山すはうさやま25.7 64深溝ふかみぞ27.3 68上嘉川」 (9회차 R 2026-11-16)"},
+"n_akan|舌辛": {"kana": "したから", "source": "railforum 『昭和時代』 기간 목록 텍스트 218행 「舌辛 したから」 1921.03.08~1930.04.01 이웃 古潭·桜田; ja.wikipedia 「阿寒駅」 rev 111030588 「ro-history-list-2006\" />に伴い'''舌辛駅'''（したからえき）として開業<ref>」 (지금 역 문서); ja.wikipedia 「阿寒駅」 연혁 「1923年（大正12年）1月17日：北海炭礦鉄道 釧路駅-雄別炭山駅間開業に伴い舌辛駅（したからえき）として開業。一般駅。」; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「禰平をんねびら湯波内ゆつぱない舌辛したから古潭こたん雄別炭山ゆうべつたんざん根室本線釧戶禰波2.0釧路市古川町29.0釧路」 (9회차 R 2026-11-16)"},
+"n_amagasaki|神崎": {"kana": "かんざき", "source": "railforum 『昭和時代』 기간 목록 텍스트 99979행 「神崎 かんざき」 1928.12.01~1874.06.01 이웃 塚本·立花; railforum 『昭和時代』 기간 목록 텍스트 100860행 「神崎 かんざき」 1934.12.01~1949.01.01 이웃 塚本·立花; ja.wikipedia 「尼崎駅 (JR西日本)」 rev 110847022 「[[1874年]]（明治7年）6月1日に東海道本線の'''神崎駅'''（かんざきえき）として開業。駅は[[」 (이웃 加島·塚本·지금 역 문서); 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 「2.5 11.2 97.1東)神崎かんざき金樂寺*きんらくじ尼ケ崎あまがさき0.0 0.5 1.6旅客ニ風扱阪各ケ間田及驛」 (9회차 R 2026-11-16)"},
+"n_asahigaoka_nayoro_main|秋里": {"kana": "あきさと", "source": "railforum 『昭和時代』 기간 목록 텍스트 144898행 「秋里 あきさと」 1956.09.01~1956.09.01 이웃 興部·豊野; ja.wikipedia 「旭ヶ丘駅 (北海道)」 연혁 「1956年（昭和31年）9月1日 - 日本国有鉄道（国鉄）名寄本線の秋里仮乗降場（あきさとかりじょうこうじょう）として新設。」 (9회차 R 2026-11-16)"},
+"n_asahigaoka_nayoro_main|旭丘": {"kana": "あさひおか", "source": "railforum 『昭和時代』 기간 목록 텍스트 144899행 「旭丘 あさひおか」 1981.07.--~1956.09.01 이웃 興部·豊野; ja.wikipedia 「旭ヶ丘駅 (北海道)」 연혁 「1959年（昭和34年）11月1日 - 移設（興部駅から実キロ3.6km → 同1.3km）。旭丘仮乗降場（あさひおかかりじょうこうじょう）に改称。」 (9회차 R 2026-11-16)"},
+"n_asahigaoka_nayoro_main|秋里仮乗降場": {"kana": "あきさとかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 144898행 「秋里 あきさと」 1956.09.01~1956.09.01 이웃 興部·豊野; ja.wikipedia 「旭ヶ丘駅 (北海道)」 연혁 「1956年（昭和31年）9月1日 - 日本国有鉄道（国鉄）名寄本線の秋里仮乗降場（あきさとかりじょうこうじょう）として新設。」 (9회차 R 2026-11-16)"},
+"n_asahigaoka_nayoro_main|旭丘仮乗降場": {"kana": "あさひおかかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 144899행 「旭丘 あさひおか」 1981.07.--~1956.09.01 이웃 興部·豊野; ja.wikipedia 「旭ヶ丘駅 (北海道)」 연혁 「1959年（昭和34年）11月1日 - 移設（興部駅から実キロ3.6km → 同1.3km）。旭丘仮乗降場（あさひおかかりじょうこうじょう）に改称。」 (9회차 R 2026-11-16)"},
+"n_ashinomaki_onsen_minami|桑原": {"kana": "くわばら", "source": "railforum 『昭和時代』 기간 목록 텍스트 124411행 「桑原 くわばら」 1932.12.22~1971.08.29 이웃 舟子; railforum 『昭和時代』 기간 목록 텍스트 147438행 「桑原 くわばら」 1987.04.01~1987.07.16 이웃 舟子; ja.wikipedia 「芦ノ牧温泉南駅」 rev 109700550 「）[[12月22日]] - [[鉄道省|国有鉄道]]の'''桑原駅'''（くわばらえき）として開業{{R|停」 (지금 역 문서); ja.wikipedia 「芦ノ牧温泉南駅」 연혁 「1932年（昭和7年）12月22日 - 国有鉄道の桑原駅（くわばらえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_awara_yunomachi|芦原": {"kana": "あわら", "source": "railforum 『昭和時代』 기간 목록 텍스트 42691행 「芦原 あわら」 1928.12.30~1930.04.01 이웃 水居·番田; railforum 『昭和時代』 기간 목록 텍스트 43206행 「芦原 あわら」 1942.09.01~1970.04.01 이웃 水居·番田; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 水居·番田)과 같은 줄 읽기 「あはら」 — 「關おほぜき本莊ほんじや う番田はんでん(蘆原)あはら水居みづゐ三國神社みくにじんじや電車三國(三國)でんしやみくに宿しゆく旅東尋坊口とうじん」 (9회차 R 2026-11-16)"},
+"n_awaraonsen|金津": {"kana": "かなづ", "source": "railforum 『昭和時代』 기간 목록 텍스트 42762행 「金津 かなづ」 1927.02.24~1929.12.10 이웃 丸岡·福井; railforum 『昭和時代』 기간 목록 텍스트 42823행 「金津 かなづ」 1927.02.24~1929.08.14 이웃 丸岡·福井; ja.wikipedia 「芦原温泉駅」 rev 111650293 「治30年）9月20日：官設鉄道の福井 - 小松間延伸により、金津駅（かなづえき）として開業[2][3」 (이웃 丸岡·福井·芦原·지금 역 문서); ja.wikipedia 「芦原温泉駅」 연혁 「1897年（明治30年）9月20日：官設鉄道の福井 - 小松間延伸により、金津駅（かなづえき）として開業。一般駅。」; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 「9.9 0.0記事丸岡まるをか金津かなづ北陸本線·三國線·七尾線細呂木ほそろぎ牛ノ谷うしのや大聖寺だいしやうじ動橋いぶり」 (9회차 R 2026-11-16)"},
+"n_befu_sanyo|電鉄別府": {"kana": "でんてつべふ", "source": "railforum 『昭和時代』 기간 목록 텍스트 80036행 「電鉄別府 でんてつべふ」 1944.04.01~1947.12.17 이웃 播磨町·浜の宮; railforum 『昭和時代』 기간 목록 텍스트 80156행 「電鉄別府 でんてつべふ」 1977.12.27~1923.08.19 이웃 播磨町·浜の宮; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 浜ノ宮)과 같은 줄 읽기 「ではやしさきんてつふじえなかやぎえいがしまにしえいがしまでんてつうおずみひがしふ」 — 「5客電鉄魚住26客東二見27客本荘28〓電鉄別府29空浜の宮30客(尾上の松) 31客(電鉄高砂) 32密荒井33客伊保34客電鉄曽根35客」 (9회차 R 2026-11-16)"},
+"n_chikatetsu_akatsuka|営団赤塚": {"kana": "えいだんあかつか", "source": "railforum 『昭和時代』 기간 목록 텍스트 26199행 「営団赤塚 えいだんあかつか」 1983.06.24~1987.04.01 이웃 平和台; railforum 『昭和時代』 기간 목록 텍스트 26230행 「営団赤塚 えいだんあかつか」 1987.04.01~1987.08.25 이웃 平和台; ja.wikipedia 「地下鉄赤塚駅」 rev 111115540 「鉄成増]]） - [[池袋駅|池袋]]間の開通により、'''営団赤塚駅'''（えいだんあかつかえき）として開業{{R|交」 (이웃 地下鉄成増·지금 역 문서); ja.wikipedia 「地下鉄赤塚駅」 연혁 「1983年（昭和58年）6月24日：帝都高速度交通営団（営団地下鉄）有楽町線の営団成増（現・地下鉄成増） - 池袋間の開通により、営団赤塚駅（えいだんあかつかえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_chikatetsu_narimasu|営団成増": {"kana": "えいだんなります", "source": "railforum 『昭和時代』 기간 목록 텍스트 26274행 「営団成増 えいだんなります」 1987.08.25~1983.06.24 이웃 和光市; railforum 『平成時代』 기간 목록 텍스트 6499행 「営団成増 えいだんなります」 2004.04.01~1983.06.24 이웃 和光市; ja.wikipedia 「地下鉄成増駅」 rev 111128448 「有楽町線当駅 - [[池袋駅|池袋]]間の開通により、'''営団成増駅'''（えいだんなりますえき）として開業{{R|交」 (이웃 和光市·地下鉄赤塚·지금 역 문서) (9회차 R 2026-11-16)"},
+"n_chokoku_no_mori|二ノ平": {"kana": "にのたいら", "source": "railforum 『昭和時代』 기간 목록 텍스트 37468행 「二ノ平 にのたいら」 1928.01.21~1919.06.01 이웃 小涌谷·強羅; railforum 『昭和時代』 기간 목록 텍스트 37488행 「二ノ平 にのたいら」 1928.01.21~1928.08.16 이웃 小涌谷·強羅; ja.wikipedia 「彫刻の森駅」 rev 110158571 「[1919年]]（[[大正]]8年）[[6月1日]]：'''二ノ平駅'''（にのたいらえき）として開業<ref>」 (지금 역 문서); ja.wikipedia 「彫刻の森駅」 연혁 「1919年（大正8年）6月1日：二ノ平駅（にのたいらえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_dentetsuoya|大屋": {"kana": "おおや", "source": "railforum 『昭和時代』 기간 목록 텍스트 44993행 「大屋 おおや」 1943.10.21~1953.11.-- 이웃 信濃石井·東特前; railforum 『昭和時代』 기간 목록 텍스트 45318행 「大屋 おおや」 1930.04.01~1918.11.21 이웃 信濃石井; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 「せ66信濃石井しなのいしゐ65大屋おほや(省大屋) 59 56岩下いはした八日堂やうかごう上堀うはほり染屋そめや上田東う」 (9회차 R 2026-11-16)"},
+"n_eba|江波口": {"kana": "えばぐち", "source": "railforum 『昭和時代』 기간 목록 텍스트 85421행 「江波口 えばぐち」 1947.11.01~1954.01.08 이웃 舟入南; railforum 『昭和時代』 기간 목록 텍스트 85425행 「江波口 えばぐち」 1952.10.02~1954.01.08 이웃 舟入南; ja.wikipedia 「舟入南停留場」 rev 110403026 「name=chizu38/>、その後1947年に'''江波口停留場'''（えばぐちていりゅうじょう）へと改称された<re」 (이웃 舟入南); ja.wikipedia 「江波停留場」 rev 110403051 「<ref name=osafune2/>。当時は'''江波口停留場'''（えばぐちていりゅうじょう）と称していた<ref」 (이웃 舟入南·지금 역 문서) (9회차 R 2026-11-16)"},
+"n_eiheijiguchi|東古市": {"kana": "ひがしふるいち", "source": "railforum 『昭和時代』 기간 목록 텍스트 43133행 「東古市 ひがしふるいち」 1987.04.01~1914.02.11 이웃 下志比·志比堺; railforum 『平成時代』 기간 목록 텍스트 10754행 「東古市 ひがしふるいち」 2003.02.01~1914.02.11 이웃 下志比·志比堺; ja.wikipedia 「永平寺口駅」 rev 111203736 「：永平寺鉄道が京福電気鉄道に合併され、永平寺線となる。'''東古市駅'''（ひがしふるいちえき）に改称。 * [[1」 (지금 역 문서); ja.wikipedia 「永平寺口駅」 연혁 「1944年（昭和19年）12月1日：永平寺鉄道が京福電気鉄道に合併され、永平寺線となる。東古市駅（ひがしふるいちえき）に改称。」 (9회차 R 2026-11-16)"},
+"n_etchu_nakamura|早月": {"kana": "はやつき", "source": "railforum 『昭和時代』 기간 목록 텍스트 38820행 「早月 はやつき」 1935.12.14~1943.01.01 이웃 西魚津; railforum 『昭和時代』 기간 목록 텍스트 39011행 「早月 はやつき」 1943.01.01~1950.03.23 이웃 早月加積·西魚津; ja.wikipedia 「越中中村駅」 rev 109989132 「=14}}{{sfn|寺田|2013|p=242}}、'''早月駅'''（はやつきえき）として開業{{sfn」 (이웃 早月加積·지금 역 문서); ja.wikipedia 「越中中村駅」 연혁 「1935年（昭和10年）12月13日：富山電気鉄道の滑川駅 - 当駅間が開業、早月駅（はやつきえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_fujigaoka_nagoya_city|藤ヶ丘": {"kana": "ふじがおか", "source": "railforum 『昭和時代』 기간 목록 텍스트 59475행 「藤ヶ丘 ふじがおか」 1969.04.01~1969.05.01 이웃 本郷; railforum 『昭和時代』 기간 목록 텍스트 59522행 「藤ヶ丘 ふじがおか」 1969.05.01~1975.02.01 이웃 本郷; ja.wikipedia 「藤が丘駅 (愛知県)」 rev 110757308 「)|藤が丘]]163 |乗換= |備考全幅= }}  '''藤が丘駅'''（ふじがおかえき）は、[[愛知県]][」 (지금 역 문서) (9회차 R 2026-11-16)"},
+"n_funabashikeibajo|センター競馬場前": {"kana": "せんたーけいばじょうまえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 19120행 「センター競馬場前 せんたーけいばじょうまえ」 1985.10.19~1987.04.01 이웃 大神宮下·谷津; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 大神宮下·谷津)과 같은 줄 읽기 「いじんばしけいせいふなだいじんぐうしたせんたーけいばじようまえやつゆうえんけいせ」 — 「客京(船成船橋橋) 23客大神宮下24客センター競馬場前25客谷津遊園26客(京成津田沼) 27客京成大久保28客実籾29 30客京成大和田」 (9회차 R 2026-11-16)"},
+"n_funako|舟子仮乗降場": {"kana": "ふなこかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 124407행 「舟子 ふなこ」 1968.10.17~1980.11.30 이웃 桑原; railforum 『昭和時代』 기간 목록 텍스트 124410행 「舟子 ふなこ」 1987.03.31~1987.04.01 이웃 桑原; ja.wikipedia 「大川ダム公園駅」 rev 109700527 「史[編集] 1927年（昭和2年）11月1日 - 国有鉄道の舟子信号場（ふなこしんごうじょう）として開業。 196」 (이웃 大川ダム公園); ja.wikipedia 「大川ダム公園駅」 rev 109700527 「）として開業。 1968年（昭和43年）10月17日 - 舟子仮乗降場（ふなこかりじょうこうじょう）開設[1]。 198」 (이웃 大川ダム公園) (9회차 R 2026-11-16)"},
+"n_gion_shijo|四条": {"kana": "しじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 70909행 「四条 しじょう」 1913.05.29~1933.12.29 이웃 三条; railforum 『昭和時代』 기간 목록 텍스트 70993행 「四条 しじょう」 1913.05.29~1936.10.10 이웃 三条; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 三条)과 같은 줄 읽기 「よどちゆうしよじまふしみももやまたんばばしすみぞめふじのもりふかくさふしみいなり」 — 「密(東福寺) 38密七条39客五条40客四条41客(三条)よどちゆうしよじまふしみももやまたんばばしすみぞめふじのもりふかくさふしみいなりと」 (9회차 R 2026-11-16)"},
+"n_gionmachi|博多駅前": {"kana": "はかたえきまえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 90628행 「博多駅前 はかたえきまえ」 1942.09.01~1949.11.18 이웃 奥の堂; railforum 『昭和時代』 기간 목록 텍스트 90632행 「博多駅前 はかたえきまえ」 1949.11.18~1949.11.18 이웃 奥の堂; ja.wikipedia 「西鉄福岡市内線」 rev 110542419 「(福岡県)|祇園町]]'''（ぎおんまち） - [[博多駅|博多駅前]]（はかたえきまえ） - 駅前四丁目（え」 (이웃 緑橋); ja.wikipedia 「西鉄福岡市内線」 rev 110542419 「） - 緑橋（みどりばし） - ◇祇園町（ぎおんまち） - 博多駅前（はかたえきまえ） - 駅前四丁目（え」 (이웃 緑橋) (9회차 R 2026-11-16)"},
+"n_hamayamakoen_kitaguchi|鑓ヶ崎": {"kana": "やりがさき", "source": "railforum 『昭和時代』 기간 목록 텍스트 82797행 「鑓ヶ崎 やりがさき」 1930.02.02~1930.04.01 이웃 遙堪; railforum 『昭和時代』 기간 목록 텍스트 82856행 「鑓ヶ崎 やりがさき」 1951.10.01~1960.04.26 이웃 出雲大社前·遙堪; ja.wikipedia 「浜山公園北口駅」 rev 104358516 「[1930年]]（[[昭和]]5年）[[2月2日]]：'''鑓ヶ崎駅'''（やりがさきえき）として開業。 * [」 (이웃 出雲大社前·지금 역 문서); ja.wikipedia 「浜山公園北口駅」 연혁 「1930年（昭和5年）2月2日：鑓ヶ崎駅（やりがさきえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_hanno_nagaragawa|美濃洲原": {"kana": "みのすはら", "source": "railforum 『昭和時代』 기간 목록 텍스트 103885행 「美濃洲原 みのすはら」 1927.04.10~1930.04.01 이웃 洲原; railforum 『昭和時代』 기간 목록 텍스트 106551행 「美濃洲原 みのすはら」 1957.04.01~1974.10.01 이웃 木尾·洲原; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 洲原)과 같은 줄 읽기 「みのすはら」 — 「せき(美濃町)みのまち板取口いたこりぐち美濃洲原みのすはら美濃下川みのしもかは苅安かりやす深戶ふかご美濃相生みのあひおひ郡上八幡ぐじやうはち」; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 노선 표에서 이름(이웃 洲原)과 같은 줄 읽기 「みのすはら」 — 「みのせき美濃町みのまち板取口いたとりぐち美濃洲原みのすはら美濃下川みのしもかは苅安かりやす47.6同43.6 40.8 38.0 35.6同」 (9회차 R 2026-11-16)"},
+"n_higashi_hachimori|八森": {"kana": "はちもり", "source": "railforum 『昭和時代』 기간 목록 텍스트 125832행 「八森 はちもり」 1930.04.01~1926.04.26 이웃 沢目; railforum 『昭和時代』 기간 목록 텍스트 125881행 「八森 はちもり」 1936.07.30~1959.10.01 이웃 沢目; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「羽後東雲ラごしののめ澤目さはめ八森はちもり椿つばき館いはだ〓仙鐵秋田運事.0 3.9 5.4 4.8 3.9 4.7 6.」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「ame 2.9 8.8 5.4八森はちもりHachimori 2.5 11.3 2.9椿ばき2.9 14.2 .0つTsu」 (9회차 R 2026-11-16)"},
+"n_higashi_niigata|新潟操車場前": {"kana": "にいがたそうしゃじょうまえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 126837행 「新潟操車場前 にいがたそうしゃじょうまえ」 1958.02.01~1958.04.29 이웃 大形; ja.wikipedia 「東新潟駅」 연혁 「1958年（昭和33年）2月1日：新潟操車場前仮乗降場（にいがたそうしゃじょうまえ-）として開業」 (9회차 검색 「\"にいがたそうしゃじょうまえ\"」 결과) (9회차 R 2026-11-16)"},
+"n_higashi_niigata|新潟操車場前仮乗降場": {"kana": "にいがたそうしゃじょうまえかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 126837행 「新潟操車場前 にいがたそうしゃじょうまえ」 1958.02.01~1958.04.29 이웃 大形; ja.wikipedia 「東新潟駅」 연혁 「1958年（昭和33年）2月1日：新潟操車場前仮乗降場（にいがたそうしゃじょうまえ-）として開業」 (9회차 검색 「\"にいがたそうしゃじょうまえ\"」 결과) (9회차 R 2026-11-16)"},
+"n_higashi_toyama|東岩瀬": {"kana": "ひがしいわせ", "source": "railforum 『昭和時代』 기간 목록 텍스트 104662행 「東岩瀬 ひがしいわせ」 1892.06.21~1930.04.01 이웃 水橋; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 水橋)과 같은 줄 읽기 「ひがしいはせ」 — 「くれは田刈屋信號場たかりや(富山)とやま東岩瀨ひがしいはせ濱假停黑車崎筋はまくろさき水橋みづはし(滑魚(三生入川)津市)地善川)なめりかは津」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 노선 표에서 이름(이웃 水橋)과 같은 줄 읽기 「ひがしいはせ」 — 「)とやまToyama 3.0 153.5東岩瀨ひがしいはせHigashi- Iwase 4.1 157.6水橋みづはしMizuhashi 3」 (9회차 R 2026-11-16)"},
+"n_higashiyama_kintetsu_old|茸山": {"kana": "たけやま", "source": "railforum 『昭和時代』 기간 목록 텍스트 80924행 「茸山 たけやま」 1927.09.21~1930.04.01 이웃 元山上口·東山; ja.wikipedia 「東山駅 (奈良県)」 rev 109318403 「'。  == 歴史 == 1927年に[[臨時駅]]の'''茸山駅'''（たけやまえき）として開業した<re」 (이웃 東山) (9회차 R 2026-11-16)"},
+"n_hon_yoshiwara|吉原": {"kana": "よしわら", "source": "railforum 『昭和時代』 기간 목록 텍스트 48579행 「吉原 よしわら」 1956.04.10~1969.09.09 이웃 吉原本町; railforum 『昭和時代』 기간 목록 텍스트 48591행 「吉原 よしわら」 1950.04.18~1956.04.10 이웃 吉原本町·岳南原田; ja.wikipedia 「本吉原駅」 rev 109806790 「]]25年）[[4月18日]]：[[岳南鉄道]]の初代'''吉原駅'''（よしわらえき）として開業{{R|1」 (지금 역 문서·그 이름 문서) (9회차 R 2026-11-16)"},
+"n_hon_yura|阿知須": {"kana": "あじす", "source": "railforum 『昭和時代』 기간 목록 텍스트 109327행 「阿知須 あじす」 1930.04.01~1900.12.03 이웃 嘉川; railforum 『昭和時代』 기간 목록 텍스트 109548행 「阿知須 あじす」 1934.12.01~1944.10.11 이웃 厚東·嘉川; ja.wikipedia 「本由良駅」 rev 110313838 「（現・[[防府駅]]） - [[厚狭駅]]間開通時に、'''阿知須駅'''（あじすえき）として開設{{R|停」 (지금 역 문서); ja.wikipedia 「本由良駅」 연혁 「1900年（明治33年）12月3日：山陽鉄道三田尻駅（現・防府駅） - 厚狭駅間開通時に、阿知須駅（あじすえき）として開設。旅客・貨物取扱開始。」; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「つじ(小郡)をごほり嘉川かがは阿知須あぢす上〓水信號所かみしみづ厚東ことう(字部)うベ(小野田)をのだ(厚狹)あさ埴生はぶ」; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 「よつつじ小郡をごほり嘉川かがは阿知須あぢす厚東ことう西宇部にしうベ小野田をのだ厚狹あさ埴生はぶ小月をづき長府ちやうふ長門一」 (9회차 R 2026-11-16)"},
+"n_ichibanchoyubinkyokumae|東一番丁仙台郵便局前": {"kana": "ひがしいちばんちょうせんだいゆうびんきょくまえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 6514행 「東一番丁仙台郵便局前 ひがしいちばんちょうせんだいゆうびんきょくまえ」 1970.05.--~1928.12.15 이웃 郵政局前; ja.wikipedia 「一番町郵便局前停留場」 rev 87762668 「丁（ひがしいちばんちょう） →東一番丁仙台郵便局前（ひがしいちばんちょうせんだいゆうびんきょくまえ）→一番町郵便局前」 (이웃 郵政局前·高等裁判所前·지금 역 문서); ja.wikipedia 「一番町郵便局前停留場」 rev 87762668 「丁（ひがしいちばんちょう） →東一番丁仙台郵便局前（ひがしいちばんちょうせんだいゆうびんきょくまえ）→'''一番町郵便局」 (이웃 郵政局前·高等裁判所前·지금 역 문서) (9회차 R 2026-11-16)"},
+"n_ichinotorii|一ノ鳥居": {"kana": "いちのとりい", "source": "railforum 『昭和時代』 기간 목록 텍스트 77458행 「一の鳥居 いちのとりい」 1955.05.01~1913.04.13 이웃 平野·畦野; railforum 『昭和時代』 기간 목록 텍스트 77529행 「一の鳥居 いちのとりい」 1977.12.27~1978.10.01 이웃 平野·畦野; ja.wikipedia 「一の鳥居駅」 rev 107830893 「鳥居駅から改称[1]。 |  テンプレートを表示 |    一の鳥居駅（いちのとりいえき）は、兵庫県川西市東畦」 (이웃 平野·畦野·지금 역 문서); ja.wikipedia 「一の鳥居駅」 rev 107830893 「称<ref name=\"zeneki\"/>。 }}  '''一の鳥居駅'''（いちのとりいえき）は、[[兵庫県]][」 (이웃 平野·畦野·지금 역 문서) (9회차 R 2026-11-16)"},
+"n_idakiso|伊太祁曽": {"kana": "いだきそ", "source": "railforum 『昭和時代』 기간 목록 텍스트 70302행 「伊太祁曽 いだきそ」 1961.11.01~1963.07.15 이웃 吉礼·山東; railforum 『昭和時代』 기간 목록 텍스트 70330행 「伊太祁曽 いだきそ」 1987.04.01~1916.02.15 이웃 吉礼·山東; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「やま岡崎前をかざきまヘ吉禮きれ伊太祁曾いだきそ東山東ひがしさんどう山東永山さんごうながやま大池遊園おほいけいうゑん紀勢西線有和」 (9회차 R 2026-11-16)"},
+"n_imaihama_kaigan|今井浜海水浴場": {"kana": "いまいはまかいすいよくじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 48055행 「今井浜海水浴場 いまいはまかいすいよくじょう」 1962.07.07~1969.03.01 이웃 伊豆稲取·河津; ja.wikipedia 「今井浜海水浴場」 첫 줄 「今井浜海水浴場（いまいはまかいすいよくじょう）は、静岡県賀茂郡河津町見高にある海水浴場」 — 임시역 이름은 그 해수욕장(지명·시설 이름 근거 중간) (9회차 검색 「\"いまいはまかいすいよくじょう\"」 결과) (9회차 R 2026-11-16)"},
+"n_imaihama_kaigan|(臨)今井浜海水浴場": {"kana": "いまいはまかいすいよくじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 48055행 「今井浜海水浴場 いまいはまかいすいよくじょう」 1962.07.07~1969.03.01 이웃 伊豆稲取·河津; ja.wikipedia 「今井浜海水浴場」 첫 줄 「今井浜海水浴場（いまいはまかいすいよくじょう）は、静岡県賀茂郡河津町見高にある海水浴場」 — 임시역 이름은 그 해수욕장(지명·시설 이름 근거 중간) (9회차 검색 「\"いまいはまかいすいよくじょう\"」 결과) (9회차 R 2026-11-16)"},
+"n_ise_kawashima|川島村": {"kana": "かわしまむら", "source": "railforum 『昭和時代』 기간 목록 텍스트 60235행 「川島村 かわしまむら」 1927.11.29~1913.06.01 이웃 伊勢松本·高角; railforum 『昭和時代』 기간 목록 텍스트 60260행 「川島村 かわしまむら」 1927.11.29~1930.04.01 이웃 伊勢松本·高角; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「なかがはら伊勢松本いせまつもと川島村かわしまむらSuwa .8 .5 .5ありよしさかいはしAriyeshi Ise- Mats」 (9회차 R 2026-11-16)"},
+"n_ishigami|高砂": {"kana": "たかすな", "source": "railforum 『昭和時代』 기간 목록 텍스트 36684행 「高砂 たかすな」 1928.07.01~1926.--.-- 이웃 川袋·藤沢; railforum 『昭和時代』 기간 목록 텍스트 36746행 「高砂 たかすな」 1928.07.01~1931.07.21 이웃 川袋·藤沢; ja.wikipedia 「石上駅」 연혁 「1920年（大正9年）4月1日：高砂駅（たかすなえき）として開業（1902年から1944年までの石上停車場は北方に別にあった）。」 (9회차 R 2026-11-16)"},
+"n_ishiyamadera|石山螢谷": {"kana": "いしやまほたるだに", "source": "railforum 『昭和時代』 기간 목록 텍스트 62679행 「石山螢谷 いしやまほたるだに」 1950.10.01~1953.04.01 이웃 唐橋前; ja.wikipedia 「石山寺駅」 rev None 「。 * [[1950年]]（昭和25年）10月1日：'''石山蛍谷駅'''（いしやまほたるだにえき）に改称{{sfn|寺」 (지금 역 문서); ja.wikipedia 「石山寺駅」 연혁 「1950年（昭和25年）10月1日：石山蛍谷駅（いしやまほたるだにえき）に改称。」 (9회차 R 2026-11-16)"},
+"n_itano|阿波大寺": {"kana": "あわおおてら", "source": "railforum 『昭和時代』 기간 목록 텍스트 86541행 「阿波大寺 あわおおてら」 1927.07.15~1923.02.15 이웃 犬伏; ja.wikipedia 「板野駅」 연혁 「1923年（大正12年）2月15日：阿波電気軌道（後の阿波鉄道）の池谷 - 鍛冶屋原間開通時に阿波大寺駅（あわおおてらえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_iyo_izushi|上老松": {"kana": "じょろまつ", "source": "railforum 『昭和時代』 기간 목록 텍스트 130924행 「上老松 じょろまつ」 1916.03.02~1935.10.06 이웃 伊予白滝·伊予長浜; railforum 『昭和時代』 기간 목록 텍스트 131118행 「上老松 じょろまつ」 1933.10.01~1935.10.06 이웃 伊予白滝·伊予長浜; ja.wikipedia 「伊予出石駅」 연혁 「1918年（大正7年）2月14日：愛媛鉄道の上老松駅（じょろまつえき）として開業する。」; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「續線名(伊豫長濱)いよながはま上老松じよろまつ伊豫白瀧いよしらたき八多喜はたき五郞ごらう若宮信號場わかみや(伊豫大洲)いよおほ」 (9회차 R 2026-11-16)"},
+"n_kamiyokoe|横江": {"kana": "よこえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 39276행 「横江 よこえ」 1965.04.15~1969.04.01 이웃 千垣; railforum 『昭和時代』 기간 목록 텍스트 39277행 「横江 よこえ」 1943.01.01~1965.04.15 이웃 千垣; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 千垣)과 같은 줄 읽기 「だいせんじこうえんいわくらじよこえちがきおみ」 — 「 13 14 15大川寺公園(岩 寺 )横江千垣(小見)だいせんじこうえんいわくらじよこえちがきおみDAISENJI K〓EN IWAKUR」 (9회차 R 2026-11-16)"},
+"n_kashiba|下田": {"kana": "しもだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 116475행 「下田 しもだ」 1930.04.01~1891.03.01 이웃 志都美; railforum 『昭和時代』 기간 목록 텍스트 153229행 「下田 しもだ」 1987.04.01~1891.03.01 이웃 志都美; ja.wikipedia 「香芝駅」 rev 108453431 「- [[高田駅 (奈良県)|高田駅]]間延伸開業の際に'''下田駅'''（しもだえき）として開業<ref」 (지금 역 문서); ja.wikipedia 「香芝駅」 연혁 「1891年（明治24年）3月1日：大阪鉄道 (初代)の王寺駅 - 高田駅間延伸開業の際に下田駅（しもだえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_kashiharajingu_mae|橿原神宮駅": {"kana": "かしはらじんぐうえき", "source": "railforum 『昭和時代』 기간 목록 텍스트 65593행 「橿原神宮駅 かしはらじんぐうえき」 1939.07.28~1941.03.15 이웃 畝傍御陵前; railforum 『昭和時代』 기간 목록 텍스트 66124행 「橿原神宮駅 かしはらじんぐうえき」 1941.03.15~1942.10.01 이웃 畝傍御陵前; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 畝傍御陵前)과 같은 줄 읽기 「のくちやまとやぎうねびごりようまえかしはらじんぐうえき」 — 「原線動力軌間1.電435M気大和西大寺·橿原神宮駅間大和西大寺から0客(大和西大寺) 7612123客尼ケ辻24客西ノ京25客九条26客近畿」; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 畝傍御陵前)과 같은 줄 읽기 「のくちやまとやぎうねびごりようまえかしはらじんぐうえき」 — 「客(大和八木) 36〓畝傍御陵前37客(橿原神宮駅) 0 1. 5近鉄奈良線近鉄京都線あまがつじにしのきようくじようんこおりやまきんきにつぽ」 (9회차 R 2026-11-16)"},
+"n_kashitajinjamae|香下": {"kana": "こうした", "source": "railforum 『昭和時代』 기간 목록 텍스트 97708행 「香下 こうした」 1945.04.20~1952.03.01 이웃 三又川·円座; railforum 『昭和時代』 기간 목록 텍스트 97851행 「香下 こうした」 1929.05.01~1919.04.26 이웃 三又川·円座; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「は拜田はいた三又川みつまたがは香下かうした圓座ゑんざ豐前二日市ぶぜんふつかいち.0 2.2 1.9 1.8 1.8 3.0」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「もんD〓mon Rakanji香下かうした圓座ゑんざEnza前市Buzen-壹、日ふつかいちぶぜんFutsukaichi 」 (9회차 R 2026-11-16)"},
+"n_kasumigaura|羽津": {"kana": "はづ", "source": "railforum 『昭和時代』 기간 목록 텍스트 60440행 「羽津 はづ」 1929.01.30~1929.07.05 이웃 阿倉川; railforum 『昭和時代』 기간 목록 텍스트 66293행 「羽津 はづ」 1941.03.15~1943.10.22 이웃 阿倉川; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「田にしとみだ霞ケ浦かすみがうら羽津はづ阿倉川あくらがは川原町かはらまち西町にしまち(諏訪)すは(四日市)よつかいち海山」 (9회차 R 2026-11-16)"},
+"n_kawano|鈴鹿": {"kana": "すずか", "source": "railforum 『昭和時代』 기간 목록 텍스트 60621행 「鈴鹿 すずか」 1987.03.27~1987.04.01 이웃 河原田; railforum 『昭和時代』 기간 목록 텍스트 60632행 「鈴鹿 すずか」 1987.04.01~1973.09.01 이웃 河原田; ja.wikipedia 「河曲駅」 연혁 「1949年（昭和24年）3月1日：鈴鹿駅（すずかえき）に昇格。旅客・荷物の取扱いを開始。」 (9회차 R 2026-11-16)"},
+"n_kegi|東毛木": {"kana": "ひがしけぎ", "source": "railforum 『昭和時代』 기간 목록 텍스트 112685행 「東毛木 ひがしけぎ」 1956.11.19~1956.12.20 이웃 安芸亀山·安芸飯室; ja.wikipedia 「毛木駅」 연혁 「1956年（昭和31年）11月19日：国鉄可部線の東毛木仮乗降場（ひがしけぎかりじょうこうじょう）として安佐郡安佐町飯室に開…」 (9회차 검색 「\"ひがしけぎ\"」 결과) (9회차 R 2026-11-16)"},
+"n_kegi|東毛木仮乗降場": {"kana": "ひがしけぎかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 112685행 「東毛木 ひがしけぎ」 1956.11.19~1956.12.20 이웃 安芸亀山·安芸飯室; ja.wikipedia 「毛木駅」 연혁 「1956年（昭和31年）11月19日：国鉄可部線の東毛木仮乗降場（ひがしけぎかりじょうこうじょう）として安佐郡安佐町飯室に開…」 (9회차 검색 「\"ひがしけぎ\"」 결과) (9회차 R 2026-11-16)"},
+"n_keihin_zushi|湘南逗子": {"kana": "しょうなんずし", "source": "railforum 『昭和時代』 기간 목록 텍스트 36601행 「湘南逗子 しょうなんずし」 1930.04.01~1931.04.01 이웃 神武寺; railforum 『停車場一覧1953.09.30』 텍스트 4194행 「湘南逗子 しょうなんずし」 1930.04.01 이웃 神武寺·逗子海岸; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「景)はつけい神武寺じん むじ〓湘南逗子しやうなんづし至京濱電氣境界點至浦賀非連帶●(横濱)旅(平沼)〓戸部祝日ノ出町湘ト南電氣ノ境界」 (9회차 R 2026-11-16)"},
+"n_keikyu_kurihama|京浜久里浜": {"kana": "けいひんくりはま", "source": "railforum 『昭和時代』 기간 목록 텍스트 25138행 「京浜久里浜 けいひんくりはま」 1963.11.01~1968.06.21 이웃 北久里浜; railforum 『昭和時代』 기간 목록 텍스트 25184행 「京浜久里浜 けいひんくりはま」 1987.04.01~1987.06.01 이웃 北久里浜; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 北久里浜)과 같은 줄 읽기 「ほりのうちしんおおつきたくりはまけいひんくりはまのび」 — 「 8同1客(堀ノ内)客新大津客北久里浜客京浜久里浜客野比ほりのうちしんおおつきたくりはまけいひんくりはまのびHORINO UCHI SHIN」 (9회차 R 2026-11-16)"},
+"n_keikyu_shin_koyasu|京浜新子安": {"kana": "けいひんしんこやす", "source": "railforum 『昭和時代』 기간 목록 텍스트 23419행 「京浜新子安 けいひんしんこやす」 1945.02.24~1946.03.31 이웃 子安·生麦; railforum 『昭和時代』 기간 목록 텍스트 24642행 「京浜新子安 けいひんしんこやす」 1968.06.21~1910.03.27 이웃 子安·生麦; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 「越本郡上八幡ぐじようはちまん〃京浜新子安けいひんしんこやす社〃黒石くろいし黒石郡上福野ぐじようふくの〃京王多摩川けいおうたまがわ社京王京浜」 (9회차 R 2026-11-16)"},
+"n_keishin_sanjo|三条": {"kana": "さんじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 62511행 「三条 さんじょう」 1949.11.25~1949.12.01 이웃 東山三条; railforum 『昭和時代』 기간 목록 텍스트 62626행 「三条 さんじょう」 1912.12.13~1949.12.01 이웃 東山三条; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 東山三条)과 같은 줄 읽기 「ひがしやまさんじようけあげくじようやまひのおかみささぎけいはんやましなしのみやお」 — 「 5 6. 9同同同大字私部線市間方客(三条) 7331542客東山三条43客蹴上44密九条山45客日ノ岡46客御陵47客(山京阪山科科) 」 (9회차 R 2026-11-16)"},
+"n_kintetsu_gose|近畿日本御所": {"kana": "きんきにっぽんごせ", "source": "railforum 『停車場一覧1953.09.30』 텍스트 13652행 「近畿日本御所 きんきにっぽんご」 1930.12.09 이웃 忍海; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 忍海)과 같은 줄 읽기 「きんきにつぽんしんじようおしみきんきにつぽんごせ」 — 「同同御所線動力軌間電気1.067M尺土·近畿日本御所間生同同同同同同同同尺土から0客(尺土)密近畿日本新庄客忍海客近畿日本御所0近鉄南大阪線」; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 忍海)과 같은 줄 읽기 「きんきにつぽんしんじようおしみきんきにつぽんごせ」 — 「土から0客(尺土)密近畿日本新庄客忍海客近畿日本御所0近鉄南大阪線7612724きんきにつぽんしんじようおしみきんきにつぽんごせKINKI 」 (9회차 R 2026-11-16)"},
+"n_kintetsu_shinjo|近畿日本新庄": {"kana": "きんきにっぽんしんじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 67353행 「近畿日本新庄 きんきにっぽんしんじょう」 1944.06.01~1970.03.01 이웃 尺土·忍海; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 尺土·忍海)과 같은 줄 읽기 「きんきにつぽんしんじようおしみきんきにつぽんごせ」 — 「生同同同同同同同同尺土から0客(尺土)密近畿日本新庄客忍海客近畿日本御所0近鉄南大阪線7612724きんきにつぽんしんじようおしみきんきにつ」 (9회차 R 2026-11-16)"},
+"n_kintetsu_yatomi|近畿日本弥富": {"kana": "きんきにっぽんやとみ", "source": "railforum 『昭和時代』 기간 목록 텍스트 67644행 「近畿日本弥富 きんきにっぽんやとみ」 1955.07.15~1956.09.23 이웃 佐古木; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 佐古木)과 같은 줄 읽기 「きんきにつぽんながしまきんきにつぽんやとみさこぎんかにえきんきにつぽとだふしやん」 — 「5. 1. 9 86〓近畿日本長島87密近畿日本弥富88客佐古木89客近畿日本蟹江90 (客)戸田91客伏屋92客近畿日本八田93客烏森94」 (9회차 R 2026-11-16)"},
+"n_kiyomizu_gojo|五条": {"kana": "ごじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 70907행 「五条 ごじょう」 1933.12.29~1910.04.15 이웃 七条; railforum 『昭和時代』 기간 목록 텍스트 70992행 「五条 ごじょう」 1936.10.10~1943.10.01 이웃 七条; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 七条)과 같은 줄 읽기 「よどちゆうしよじまふしみももやまたんばばしすみぞめふじのもりふかくさふしみいなり」 — 「羽街道37密(東福寺) 38密七条39客五条40客四条41客(三条)よどちゆうしよじまふしみももやまたんばばしすみぞめふじのもりふかくさふし」 (9회차 R 2026-11-16)"},
+"n_kumanoshi|紀伊木本": {"kana": "きいきのもと", "source": "railforum 『昭和時代』 기간 목록 텍스트 116932행 「紀伊木本 きいきのもと」 1940.08.08~1959.07.15 이웃 大泊·有井; railforum 『停車場一覧1953.09.30』 텍스트 25831행 「紀伊木本 きいきのもと」 1940.08.08 이웃 有井; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 노선 표에서 이름(이웃 有井)과 같은 줄 읽기 「きいきのもと」 — 「市木きいいちぎ神志山かうしやま有井ありゐ紀伊木本きいきのもと殿田とのだ胡麻ごま下山しもやま和知わち山家やまが綾部あやべ石原いさ福知ふくちやま」 (9회차 R 2026-11-16)"},
+"n_kuri|上久里": {"kana": "かみくり", "source": "railforum 『昭和時代』 기간 목록 텍스트 94032행 「上久里 かみくり」 1930.03.01~1930.04.01 이웃 山本; railforum 『昭和時代』 기간 목록 텍스트 134162행 「上久里 かみくり」 1937.10.01~1950.05.20 이웃 山本; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「津ひがしからっ鏡かがみ久里くり上久里かみくり(山本)やまもと非連帶見非連帶〃非連帶20.0非連帶非連帶非連帶非連帶北九州鐵道」; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 「幡隨院ばんずゐゐん山本やまもと上久里かみくり久里くり東唐津ひがしからつ虹ノ松原にじのまつばら濱崎はまさき鹿家しかや福吉ふくよ」 (9회차 R 2026-11-16)"},
+"n_makifudomae|馬木": {"kana": "まき", "source": "railforum 『昭和時代』 기간 목록 텍스트 83073행 「馬木 まき」 1932.12.12~1938.06.09 이웃 朝山; railforum 『昭和時代』 기간 목록 텍스트 83101행 「馬木 まき」 1938.06.09~1952.03.01 이웃 古志町·朝山; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「雲今市)いづもいまいち古志こし馬木まき上朝山かみあさやま島根縣簸川郡鹽冶村下鹽冶同同朝山村馬木同同同上朝山(小境灘)こ」 (9회차 R 2026-11-16)"},
+"n_mikawa_chiryu_meitetsu_mikawa_old|知立": {"kana": "ちりゅう", "source": "railforum 『昭和時代』 기간 목록 텍스트 52913행 「知立 ちりゅう」 1941.06.01~1948.05.16 이웃 三河八橋; railforum 『昭和時代』 기간 목록 텍스트 53978행 「知立 ちりゅう」 1948.05.16~1959.04.01 이웃 三河八橋·三河知立; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 三河八橋)과 같은 줄 읽기 「ちりふ」 — 「ら若林わかばやし三河八橋みかはやつはし(知立)ちりふ重原しげはら(刈谷)かりや刈谷町かりやまち小垣江をがきえ吉濱よしはま三河高濱みかはたかは」 (9회차 R 2026-11-16)"},
+"n_miyanosaka_tokyu_railways|宮ノ坂": {"kana": "みやのさか", "source": "railforum 『昭和時代』 기간 목록 텍스트 21834행 「宮ノ坂 みやのさか」 1945.07.15~1966.01.20 이웃 上町·山下; railforum 『昭和時代』 기간 목록 텍스트 21835행 「宮の坂 みやのさか」 1966.01.20~1969.05.11 이웃 上町·山下; ja.wikipedia 「宮の坂駅」 rev 105169681 「（昭和20年）7月15日 |  テンプレートを表示 |   宮の坂駅（みやのさかえき）は、東京都世田谷区宮」 (이웃 上町·山下·지금 역 문서) (9회차 R 2026-11-16)"},
+"n_mizonokuchi|溝ノ口": {"kana": "みぞのくち", "source": "railforum 『昭和時代』 기간 목록 텍스트 21448행 「溝ノ口 みぞのくち」 1938.04.15~1939.10.01 이웃 高津; railforum 『昭和時代』 기간 목록 텍스트 21556행 「溝ノ口 みぞのくち」 1939.10.01~1939.10.16 이웃 高津; ja.wikipedia 「東急玉川線」 rev 111505383 「津駅 (神奈川県)|高津駅]]（たかつ） - [[溝の口駅|溝ノ口駅]]（みぞのくち）  === 天現寺橋」 (이웃 高津); ja.wikipedia 「東急玉川線」 rev 111505383 「玉川園駅） - 二子駅（ふたこ） - 高津駅（たかつ） - 溝ノ口駅（みぞのくち）  天現寺橋線[編集」 (이웃 高津) (9회차 R 2026-11-16)"},
+"n_motozenkoji|座光寺": {"kana": "ざこうじ", "source": "railforum 『昭和時代』 기간 목록 텍스트 103249행 「座光寺 ざこうじ」 1943.08.01~1950.05.20 이웃 下市田·伊那上郷; ja.wikipedia 「元善光寺駅」 연혁 「1943年（昭和18年）8月1日：伊那電気鉄道線が飯田線の一部として国有化、鉄道省（後の日本国有鉄道）の駅となる。同時に座光寺駅（ざこうじえき）に改称。」 (9회차 R 2026-11-16)"},
+"n_nagoyajo|市役所": {"kana": "しやくしょ", "source": "railforum 『昭和時代』 기간 목록 텍스트 59627행 「市役所 しやくしょ」 1971.12.20~1987.04.01 이웃 名城公園; railforum 『昭和時代』 기간 목록 텍스트 59668행 「市役所 しやくしょ」 1987.04.01~1965.10.15 이웃 名城公園; ja.wikipedia 「名古屋城駅」 rev 110628542 「ある[WEB 3]。2023年1月4日に開業以来の名称だった市役所駅（しやくしょえき）から改称された。日本」 (지금 역 문서) (9회차 R 2026-11-16)"},
+"n_namikicho|岡南藤田": {"kana": "こうなんふじた", "source": "『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 「戸こうど可部神戸港こうべこう〃岡南藤田こうなんふじた社〃河土讃本河免ごめん う土讃本町ごめんちよ社土佐電気河和古道わ社名屋鉄神戸港こ」; railforum 『昭和時代』 기간 목록 텍스트 83723행 「岡南藤田 こうなんふじ」 1960.08.01~1966.03.01 이웃 岡南元町·岡南福田 (9회차 R 2026-11-16)"},
+"n_nishi_memambetsu|旭野": {"kana": "あさひの", "source": "railforum 『昭和時代』 기간 목록 텍스트 145722행 「旭野 あさひの」 1947.02.11~1950.01.15 이웃 女満別·美幌; ja.wikipedia 「西女満別駅」 연혁 「1947年（昭和22年）2月11日：鉄道省網走本線の旭野仮乗降場（あさひのかりじょうこうじょう）として開業。旅客のみ取扱い。」 (9회차 R 2026-11-16)"},
+"n_nishi_memambetsu|旭野仮乗降場": {"kana": "あさひのかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 145722행 「旭野 あさひの」 1947.02.11~1950.01.15 이웃 女満別·美幌; ja.wikipedia 「西女満別駅」 연혁 「1947年（昭和22年）2月11日：鉄道省網走本線の旭野仮乗降場（あさひのかりじょうこうじょう）として開業。旅客のみ取扱い。」 (9회차 R 2026-11-16)"},
+"n_nishi_miyoshi|三次": {"kana": "みよし", "source": "railforum 『昭和時代』 기간 목록 텍스트 84858행 「三次 みよし」 1930.04.01~1915.06.01 이웃 志和地; railforum 『昭和時代』 기간 목록 텍스트 111784행 「三次 みよし」 1954.12.10~1970.04.01 이웃 志和地; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 「ふたち川立かはたち志和地しわち三次みよし備後十日市びとんをかいちご廣廣濱可部13.8ち9.8 14.3 20.7 25.」; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 「上川立かみかはたち志和地しわち三次みよし備後十日市ぴとをかいちんご八次やつぎ神杉かみすぎ町しほまち3.2 2.2 4.8」 (9회차 R 2026-11-16)"},
+"n_nishi_tawaramoto|田原本": {"kana": "たわらもと", "source": "railforum 『昭和時代』 기간 목록 텍스트 80976행 「田原本 たわらもと」 1961.10.01~1964.10.01 이웃 黒田; railforum 『昭和時代』 기간 목록 텍스트 81017행 「田原本 たわらもと」 1930.04.01~1918.04.26 이웃 黒田; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「箸尾はしを但馬たじま黑田くろだ田原本たはらもと寺川てらがは味間あぢま大泉おほいづみ東新堂ひがししんだう(櫻井)さくらゐ大正7.」; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 「 46 51円簸自油阪信貴山ロ田原本たはらもと7. .5 19黑田くろだ9.5 24箸尾はしを11.9 30池部いけベ13.5」 (9회차 R 2026-11-16)"},
+"n_nishi_yamana|入野": {"kana": "いりの", "source": "railforum 『昭和時代』 기간 목록 텍스트 12353행 「入野 いりの」 1938.12.27~1951.10.01 이웃 山名·馬庭; railforum 『昭和時代』 기간 목록 텍스트 12405행 「入野 いりの」 1951.10.01~1959.04.01 이웃 山名·馬庭; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 山名·馬庭)과 같은 줄 읽기 「みなみたかさきねごややまないりのまにわよしいじようにいやしゆうじようふくしゆうし」 — 「) 02南高崎03客根小屋04山名05客入野06馬庭07吉井08客上州新屋09上州福島0 0. 9 2. 8 2. 4 0. 9 2. 4 」 (9회차 R 2026-11-16)"},
+"n_nishikioka|錦多峰": {"kana": "にしたっぷ", "source": "鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「omai 5.4△小糸魚2.9錦多峰にしたつぶNishitappu 3.3社臺あやだいShadai 3.9白老もられいShir」; ja.wikipedia 「錦岡駅」 연혁 「1898年（明治31年）2月1日：北海道炭礦鉄道の錦多峰駅（にしたっぷえき）として開業。一般駅。」 (9회차 R 2026-11-16)"},
+"n_nishitetsu_shingu|新宮港": {"kana": "しんぐうみなと", "source": "railforum 『昭和時代』 기간 목록 텍스트 91894행 「新宮港 しんぐうみなと」 1942.09.01~1950.05.01 이웃 三苫; ja.wikipedia 「西鉄新宮駅」 연혁 「1925年（大正14年）7月1日：博多湾鉄道汽船の新宮港（しんぐうみなと）駅として開業。」 (9회차 R 2026-11-16)"},
+"n_nodashi|野田町": {"kana": "のだまち", "source": "railforum 『昭和時代』 기간 목록 텍스트 13209행 「野田町 のだまち」 1929.11.22~1911.05.09 이웃 愛宕·梅郷; railforum 『昭和時代』 기간 목록 텍스트 13260행 「野田町 のだまち」 1929.11.22~1929.12.30 이웃 梅郷; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 노선 표에서 이름(이웃 愛宕·梅郷)과 같은 줄 읽기 「のだまち」 — 「間かはま〓水公園しみづこうえん愛宕あたご野田町のだまち梅郷うめさと運河うんが初石はついし豐四季とよしき柏かしは增尾ますを高柳たかやなぎ西田井」; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 노선 표에서 이름(이웃 愛宕)과 같은 줄 읽기 「のだまち」 — 「4 36平井梅運初〓河石50 55 42野田町54野田町60愛岩56愛岩62豐〓水公園柏四季40 33 58 (梅野〓水公田鄉町園60 64」 (9회차 R 2026-11-16)"},
+"n_nogakubumae|田中道": {"kana": "たなかみち", "source": "railforum 『昭和時代』 기간 목록 텍스트 86844행 「田中道 たなかみち」 1943.11.01~1912.04.30 이웃 平木·池戸; railforum 『昭和時代』 기간 목록 텍스트 86951행 「田中道 たなかみち」 1943.11.01~1945.02.01 이웃 平木·池戸; ja.wikipedia 「農学部前駅」 연혁 「1912年（明治45年）4月30日 - 高松電気軌道の田中道駅（たなかみちえき）として開業。」 (9회차 R 2026-11-16)"},
+"n_nonoichi_kodaimae|上野々市": {"kana": "かみののいち", "source": "railforum 『昭和時代』 기간 목록 텍스트 40936행 「上野々市 かみののいち」 1931.08.11~1941.08.01 이웃 野々市; railforum 『昭和時代』 기간 목록 텍스트 41151행 「上野々市 かみののいち」 1941.08.01~1942.04.01 이웃 野々市; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 野々市)과 같은 줄 읽기 「かみののいち」 — 「澤)にしかなざは押野をしの野々市ののいち上野々市かみののいち大額おほぬか三十苅さんじ.ふがり四十万しじま曾谷そだに道法寺だうはふじ小柳をやな」; 『鐵道停車場一覽』大正6年3月31日現在 https://dl.ndl.go.jp/pid/3461950 (전문 텍스트) 노선 표에서 이름(이웃 野々市)과 같은 줄 읽기 「あんののいちをしのののいちれんらくかみののいちたほぬか」 — 「か押野野々市連絡8 8 4 1 2同1.上野々市Kami- Nonoichi〓nuka 4 1 6 7.0同同同同同額村(額新保)同同(四十」 (9회차 R 2026-11-16)"},
+"n_ogotoonsen|雄琴": {"kana": "おごと", "source": "railforum 『昭和時代』 기간 목록 텍스트 62101행 「雄琴 おごと」 1930.04.01~1923.04.01 이웃 堅田·日吉; railforum 『昭和時代』 기간 목록 텍스트 62158행 「雄琴 おごと」 1947.01.25~1962.--.-- 이웃 堅田·日吉; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「滋賀しが叡山えいざん日吉ひよし雄琴をごと堅田かたた眞野まの東海道本線太湖汽船航路2.0 9.0 17.0 19.0 26」 (9회차 R 2026-11-16)"},
+"n_oji_koen|西灘": {"kana": "にしなだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 71724행 「西灘 にしなだ」 1936.04.01~1943.10.01 이웃 六甲·春日野道; railforum 『昭和時代』 기간 목록 텍스트 71978행 「西灘 にしなだ」 1912.07.25~1943.10.01 이웃 六甲·春日野道; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 春日野道)과 같은 줄 읽기 「みかげいしやがわしんざいけおおいしにしなだいわやかすがのみちさんのみやもとまち」 — 「38客石屋川39客新在家40客大石47客西灘48幸岩屋49客春日野道50客(三宮) 51客(元町)みかげいしやがわしんざいけおおいしにしなだ」 (9회차 R 2026-11-16)"},
+"n_okawa_dam_koen|舟子": {"kana": "ふなこ", "source": "railforum 『昭和時代』 기간 목록 텍스트 124407행 「舟子 ふなこ」 1968.10.17~1980.11.30 이웃 桑原; railforum 『昭和時代』 기간 목록 텍스트 124410행 「舟子 ふなこ」 1987.03.31~1987.04.01 이웃 桑原; ja.wikipedia 「大川ダム公園駅」 rev 109700527 「史[編集] 1927年（昭和2年）11月1日 - 国有鉄道の舟子信号場（ふなこしんごうじょう）として開業。 196」 (지금 역 문서); ja.wikipedia 「大川ダム公園駅」 rev 109700527 「）として開業。 1968年（昭和43年）10月17日 - 舟子仮乗降場（ふなこかりじょうこうじょう）開設[1]。 198」 (지금 역 문서) (9회차 R 2026-11-16)"},
+"n_omura_kobe|電鉄大村": {"kana": "でんてつおおむら", "source": "railforum 『昭和時代』 기간 목록 텍스트 79469행 「電鉄大村 でんてつおおむら」 1947.12.01~1987.04.01 이웃 三木·樫山; railforum 『停車場一覧1953.09.30』 텍스트 16863행 「電鉄大村 でんてつおおむら」 1947.12.01~1951.12.28 이웃 三木·樫山; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 三木·樫山)과 같은 줄 읽기 「あすずらんだいにしぐちいなでんてつでんてつきづこばたおしべだにでんてつさかえみど」 — 「三木上の丸客電鉄三木客恵客志比須染20客電鉄大村21客樫山22客電鉄市場23客電鉄小野24母葉多25客(粟生)あすずらんだいにしぐちいなでん」 (9회차 R 2026-11-16)"},
+"n_onomichikoko_shita|大池": {"kana": "おおいけ", "source": "railforum 『昭和時代』 기간 목록 텍스트 84319행 「大池 おおいけ」 1933.07.01~1945.--.-- 이웃 三美園·栗原; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「まへ宮ノ前みやのまへ栗原りはら大池おほいけ三成みなり木梨口きなしだち遊龜橋いうきばし木頃本〓きごろほんがう石畦いしじろ畑は」 (9회차 R 2026-11-16)"},
+"n_otsutachi|立久恵": {"kana": "たちくえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 83030행 「立久恵 たちくえ」 1924.05.14~1954.05.01 이웃 向名·立久恵峡; railforum 『昭和時代』 기간 목록 텍스트 83090행 「立久恵 たちくえ」 1932.12.12~1938.06.09 이웃 向名; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「ところはら下立久惠しもたちくゑ立久惠たちくゑ向名むかひみやう出雲須 佐いづもすさ櫻非連帶河本かうもと備前矢田びぜんやた苦木に」 (9회차 R 2026-11-16)"},
+"n_sakura_kintetsu|桜村": {"kana": "さくらむら", "source": "railforum 『昭和時代』 기간 목록 텍스트 60237행 「桜村 さくらむら」 1927.11.29~1913.06.01 이웃 菰野·高角; railforum 『昭和時代』 기간 목록 텍스트 60264행 「桜村 さくらむら」 1927.11.29~1930.04.01 이웃 菰野·高角; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 菰野·高角)과 같은 줄 읽기 「さくらむら」 — 「こも旅川島村かはしまむら旅高角たかつの旅櫻村さくらむら神森かもり宿野しゆくの旅菰野こもの中菰野なかこもの檢湯ノ山ゆのやま至伊勢八王子伊勢電氣」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 노선 표에서 이름(이웃 菰野·高角)과 같은 줄 읽기 「たさくらむらかつの」 — 「1.大正6.21三重鐵道伊勢鐵道6高角。櫻村たさくらむらかつのTakatsuno神森かもり·◇菰野こものKomono。湯ノ山ゆのやまYuno」 (9회차 R 2026-11-16)"},
+"n_sanyo_akashi|電鉄明石": {"kana": "でんてつあかし", "source": "railforum 『昭和時代』 기간 목록 텍스트 79975행 「電鉄明石 でんてつあかし」 1968.04.07~1977.12.27 이웃 人丸前·西新町; railforum 『昭和時代』 기간 목록 텍스트 80133행 「電鉄明石 でんてつあかし」 1977.12.27~1917.04.12 이웃 人丸前·西新町; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 人丸前)과 같은 줄 읽기 「なでんてつひようごがたにしだいいたやどひがしすまつきみやますまでらでんてつすます」 — 「客西舞子17客大蔵谷18客人丸前19客(電鉄明石)なでんてつひようごがたにしだいいたやどひがしすまつきみやますまでらでんてつすますまうらこう」 (9회차 R 2026-11-16)"},
+"n_sanyo_shioya|電鉄塩屋": {"kana": "でんてつしおや", "source": "railforum 『昭和時代』 기간 목록 텍스트 79963행 「電鉄塩屋 でんてつしおや」 1968.04.07~1977.12.27 이웃 滝の茶屋; railforum 『昭和時代』 기간 목록 텍스트 80121행 「電鉄塩屋 でんてつしおや」 1977.12.27~1913.05.11 이웃 滝の茶屋; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 滝ノ茶屋)과 같은 줄 읽기 「なでんてつひようごがたにしだいいたやどひがしすまつきみやますまでらでんてつすます」 — 「磨寺08客電鉄須磨09密須磨浦公園10客電鉄塩屋11客滝の茶屋12客東垂水13客電鉄垂水14客霞ケ丘15客舞子公園16客西舞子17客大蔵谷1」 (9회차 R 2026-11-16)"},
+"n_sanyo_tarumi|電鉄垂水": {"kana": "でんてつたるみ", "source": "railforum 『昭和時代』 기간 목록 텍스트 79967행 「電鉄垂水 でんてつたるみ」 1968.04.07~1977.12.27 이웃 東垂水·霞ヶ丘; railforum 『昭和時代』 기간 목록 텍스트 80125행 「電鉄垂水 でんてつたるみ」 1977.12.27~1917.04.12 이웃 東垂水·霞ヶ丘; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 東垂水·霞ケ丘)과 같은 줄 읽기 「なでんてつひようごがたにしだいいたやどひがしすまつきみやますまでらでんてつすます」 — 「電鉄塩屋11客滝の茶屋12客東垂水13客電鉄垂水14客霞ケ丘15客舞子公園16客西舞子17客大蔵谷18客人丸前19客(電鉄明石)なでんてつひ」 (9회차 R 2026-11-16)"},
+"n_sanyo_temma|電鉄天満": {"kana": "でんてつてんま", "source": "railforum 『昭和時代』 기간 목록 텍스트 80186행 「電鉄天満 でんてつてんま」 1941.04.27~1941.04.27 이웃 平松·広畑; railforum 『昭和時代』 기간 목록 텍스트 80388행 「電鉄天満 でんてつてんま」 1987.04.01~1941.04.27 이웃 平松·広畑; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 平松·広畑)과 같은 줄 읽기 「でんてつしかまにししかまゆめさきがわひろはたでんてつてんまひらまつでんてつあぼし」 — 「6客(電鉄節磨)客西飾磨客夢前川客広畑客電鉄天満客平松客電鉄網干でんてつしかまにししかまゆめさきがわひろはたでんてつてんまひらまつでんてつあ」 (9회차 R 2026-11-16)"},
+"n_sanyo_uozumi|魚住": {"kana": "うおずみ", "source": "railforum 『昭和時代』 기간 목록 텍스트 79667행 「魚住 うおずみ」 1927.04.01~1923.08.19 이웃 東二見; railforum 『昭和時代』 기간 목록 텍스트 79767행 「魚住 うおずみ」 1927.04.01~1930.04.01 이웃 東二見; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「江井ヶ島西口えゐがしにしぐちま魚住うをずみ東二見ひがしふた み本莊ほんじやう別府北口べふきた ぐち濱ノ宮はまのみや尾上ノ松」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「ima- nishiguchi魚住うをずみ東二見ひがしふたみHigashi- futami別府北口本莊べふほんじやうきたく」 (9회차 R 2026-11-16)"},
+"n_sanyo_uozumi|電鉄魚住": {"kana": "でんてつうおずみ", "source": "railforum 『昭和時代』 기간 목록 텍스트 80025행 「電鉄魚住 でんてつうおずみ」 1961.10.01~1977.12.27 이웃 東二見·西江井ヶ島; railforum 『昭和時代』 기간 목록 텍스트 80143행 「電鉄魚住 でんてつうおずみ」 1977.12.27~1923.08.19 이웃 東二見·西江井ヶ島; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 東二見·西江井ケ島)과 같은 줄 읽기 「ではやしさきんてつふじえなかやぎえいがしまにしえいがしまでんてつうおずみひがしふ」 — 「密中八木24客江井ヶ島密西江井ヶ島25客電鉄魚住26客東二見27客本荘28〓電鉄別府29空浜の宮30客(尾上の松) 31客(電鉄高砂) 32」 (9회차 R 2026-11-16)"},
+"n_shin_totsukawa|中徳富": {"kana": "なかとっぷ", "source": "railforum 『昭和時代』 기간 목록 텍스트 141107행 「中徳富 なかとっぷ」 1956.11.16~1979.02.01 이웃 石狩橋本; railforum 『昭和時代』 기간 목록 텍스트 141109행 「中徳富 なかとっぷ」 1935.10.03~1943.10.01 이웃 石狩橋本; ja.wikipedia 「新十津川駅」 연혁 「1931年（昭和6年）10月10日：国有鉄道札沼北線 石狩沼田駅 - 当駅間の開業に伴い、同線の終着駅・中徳富駅（なかとっぷえき）として開業。一般駅。」 (9회차 R 2026-11-16)"},
+"n_shinasahi|新儀": {"kana": "しんぎ", "source": "railforum 『昭和時代』 기간 목록 텍스트 62142행 「新儀 しんぎ」 1919.08.19~1931.01.01 이웃 安曇川·饗庭; railforum 『昭和時代』 기간 목록 텍스트 62190행 「新儀 しんぎ」 1947.01.25~1962.--.-- 이웃 安曇川·饗庭; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「大溝おほみぞ水尾みづを安曇あご新儀しんぎ饗庭あひは北饗庭きたあひば近江今津あふみいまづなぶくか生草津線信樂線高高從宮米從」; 鉄道省運輸局 編『鉄道旅客手小荷物運賃算出表』昭和11年3月15日現在 連帯線ノ部版 https://dl.ndl.go.jp/pid/1231032 (전문 텍스트) 「●小荷物25.2 40安曇あご新儀しんぎ45.2饗庭あいは46.7近江今津あふみいまづ51.0特種取扱事項1.鶴橋驛接續」 (9회차 R 2026-11-16)"},
+"n_shujitsugakuenmae|一番町": {"kana": "いちばんちょう", "source": "railforum 『停車場一覧1953.09.30』 텍스트 17563행 「一番町 いちばんちょう」  이웃 後楽園前·番町; ja.wikipedia 「名古屋市電下江川線」 rev 107487948 「text-align:center;\"|4.6 | |- |一番町 |いちばんちょう |style=\"te」 (이웃 番町); ja.wikipedia 「名古屋市電下江川線」 rev 107487948 「町  |  にしまち  |  4.6  |    |    一番町  |  いちばんちょう  |  5.0  |」 (이웃 番町); 鉄道省運輸局 編纂『内地社線運賃算出表』昭和17年9月1日現行 https://dl.ndl.go.jp/pid/1107698 (전문 텍스트) 「4は(ら〃羽山田うまだ半勝17一番町いちばんちやう伊豫井戶田ゐどた名古屋130き武87羽後三うみわ〃17一ノ澤いちのさは4種太庶2」 (9회차 R 2026-11-16)"},
+"n_takao|浅川": {"kana": "あさかわ", "source": "railforum 『昭和時代』 기간 목록 텍스트 106917행 「浅川 あさかわ」 1927.02.07~1901.08.01 이웃 西八王子; railforum 『停車場一覧1953.09.30』 텍스트 22877행 「浅川 あさかわ」 1901.08.01 이웃 相模湖·西八王子; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 「るわうじ東淺川仮ひがしあさかは淺川あさかは(小ズヲ扱ハ荷物與瀨よせ藤野ふぢの區間ヲ本驛之累ハ客算?問粁含粁通賃程定運ノ90」 (9회차 R 2026-11-16)"},
+"n_takeda_kintetsu_old|奈良電竹田": {"kana": "ならでんたけだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 62784행 「奈良電竹田 ならでんたけだ」 1940.04.05~1963.10.01 이웃 上鳥羽口·伏見; railforum 『停車場一覧1953.09.30』 텍스트 12415행 「奈良電竹田 ならでんたけだ」  이웃 上鳥羽口·伏見; ja.wikipedia 「竹田駅 (京都府)」 rev 111667065 「[1940年]]（昭和15年）[[4月5日]]：駅名を'''奈良電竹田駅'''（ならでんたけだえき）に改称鉄道省監督局「」 (이웃 竹田) (9회차 R 2026-11-16)"},
+"n_taki_kisei_main|相可": {"kana": "おうか", "source": "railforum 『昭和時代』 기간 목록 텍스트 117221행 「相可 おうか」 1919.03.25~1959.07.15 이웃 徳和; railforum 『昭和時代』 기간 목록 텍스트 150738행 「相可 おうか」 1919.03.25~1987.04.01 이웃 徳和; 『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (전문 텍스트) 노선 표에서 이름(이웃 徳和)과 같은 줄 읽기 「しものしよういしんでんつあこぎたかちややろつんまつさかとくわたきおうか」 — 「和622009 (多気) 622010〓相可1しものしよういしんでんつあこぎたかちややろつんまつさかとくわたきおうかSHIMONO SH〓I」; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 徳和)과 같은 줄 읽기 「あふかごち」 — 「ろくけん(松阪)まつさか旅德和)とくわ(相可口)あふかごち田丸たまる宮川みやがは山田上口やまだかみぐち(山田)やまだ二見浦ふたみのうら(鳥羽」 (9회차 R 2026-11-16)"},
+"n_teikokusenimae|絹紡前": {"kana": "けんぼうまえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 41446행 「絹紡前 けんぼうまえ」 1943.10.13~1945.04.01 이웃 大聖寺·黒瀬; railforum 『昭和時代』 기간 목록 텍스트 41756행 「絹紡前 けんぼうまえ」 1945.04.01~1946.--.-- 이웃 大聖寺·黒瀬; ja.wikipedia 「帝国繊維前駅」 연혁 「1925年（大正14年）8月10日：温泉電軌の絹紡前（けんぼうまえ）駅として開業。」 (9회차 R 2026-11-16)"},
+"n_teradomari|大河津": {"kana": "おおこうづ", "source": "railforum 『昭和時代』 기간 목록 텍스트 37675행 「大河津 おおこうづ」 1927.10.01~1913.04.20 이웃 分水·桐原; railforum 『昭和時代』 기간 목록 텍스트 38234행 「大河津 おおこうづ」 1930.04.01~1915.10.07 이웃 分水; 鉄道総局業務局 編『鉄道旅客手小荷物運賃算出表』昭和18年11月1日現在 省線の部 https://dl.ndl.go.jp/pid/1229849 (전문 텍스트) 「ふじ小島谷おじまや桐原きりはら大河津おほかうづ地藏堂ぢざうだう粟生津あはふづ西吉田にしよしだ和納わなふ卷まき越後曾根ゑちごそね」 (9회차 R 2026-11-16)"},
+"n_tomika|加茂野": {"kana": "かもの", "source": "railforum 『昭和時代』 기간 목록 텍스트 46844행 「加茂野 かもの」 1986.12.11~1987.04.01 이웃 関富岡; railforum 『昭和時代』 기간 목록 텍스트 46892행 「加茂野 かもの」 1987.04.01~1952.12.26 이웃 関富岡; ja.wikipedia 「富加駅」 연혁 「1923年（大正12年）10月5日：鉄道省越美南線美濃太田駅 - 美濃町駅（現・美濃市駅）間開通時に加茂野駅（かものえき）として開設。旅客・貨物取扱開始。」 (9회차 R 2026-11-16)"},
+"n_tonohama_kagoshima_main|唐浜仮乗降場": {"kana": "からはまかりじょうこうじょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 133490행 「唐浜 からはま」 1951.07.23~1952.05.01 이웃 草道·薩摩高城; railforum 『停車場一覧1953.09.30』 텍스트 28548행 「唐浜 からはま」 1951.07.23 이웃 草道·薩摩高城; ja.wikipedia 「唐浜仮停車場」 첫 줄 「唐浜仮停車場（からはまかりていしゃじょう）は、鹿児島県川内市（現：薩摩川内市）網津町にあった日本国有鉄道（国鉄）鹿児島本線の仮停車場（廃駅）」 (9회차 검색 「\"からはま\"」 결과) (9회차 R 2026-11-16)"},
+"n_unazukionsen|宇奈月": {"kana": "うなづき", "source": "railforum 『昭和時代』 기간 목록 텍스트 38561행 「宇奈月 うなづき」 1930.04.01~1923.11.21 이웃 音沢; railforum 『昭和時代』 기간 목록 텍스트 39068행 「宇奈月 うなづき」 1969.04.01~1969.08.01 이웃 音沢; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 「もと內山うちやま園音澤おとざは宇奈月うなづき至石田港北陸本線非連帶富山縣下新川郡三日市町三島7.0同同同下町10.0同同荻生」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「いもと内山うちやま音澤おとざは宇奈月うなづき七和ななわ穴太あの六把野ろつばのき北大社たおやしろ大木たほき大泉たいづみ長宮なが」 (9회차 R 2026-11-16)"},
+"n_unoki_tokyu_railways|鵜ノ木": {"kana": "うのき", "source": "railforum 『昭和時代』 기간 목록 텍스트 22100행 「鵜ノ木 うのき」 1930.04.01~1924.02.29 이웃 下丸子·沼部; railforum 『昭和時代』 기간 목록 텍스트 22304행 「鵜ノ木 うのき」 1939.10.16~1942.05.01 이웃 下丸子·沼部; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (전문 텍스트) 노선 표에서 이름(이웃 下丸子·沼部)과 같은 줄 읽기 「うのき」 — 「.8 8.4 11. .0同同同一丁目旅鵜ノ木うのき1.0 9.4同同調布嶺町二丁目下丸子しもまるこ.7 10.1 11.0同蒲田區下丸子町」; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 노선 표에서 이름(이웃 下丸子·沼部)과 같은 줄 읽기 「うのき」 — 「Tamagawa〓沼部ぬまベNumabe鵜ノ木うのき下丸子まもまるこ〓武藏新田むさにしつたMusashi- Nitta矢口やヒち蒲田かまた(」 (9회차 R 2026-11-16)"},
+"n_uzumasakoryuji|太子前": {"kana": "たいしまえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 64926행 「太子前 たいしまえ」 1928.12.28~1910.03.25 이웃 帷子ノ辻·蚕ノ社; railforum 『昭和時代』 기간 목록 텍스트 64969행 「太子前 たいしまえ」 1942.03.02~1944.04.16 이웃 帷子ノ辻·蚕ノ社; ja.wikipedia 「太秦広隆寺駅」 연혁 「1914年（大正3年）頃：太子前駅（たいしまええき）に改称。」 (9회차 R 2026-11-16)"},
+"n_yosano|丹後山田": {"kana": "たんごやまだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 114606행 「丹後山田 たんごやまだ」 1930.04.01~1925.07.31 이웃 岩滝口; railforum 『昭和時代』 기간 목록 텍스트 153156행 「丹後山田 たんごやまだ」 1987.04.01~1925.07.31 이웃 岩滝口; 鉄道省 編『鉄道停車場一覧 : 附・関係法規、線路図運賃早見表』 https://dl.ndl.go.jp/pid/1020981 (전문 텍스트) 「takigu- chi 2.3丹後山田たんごやまだTango- Yamada 1.8口大野くちれほのKuchi〓no 4.4峰山み」 (9회차 R 2026-11-16)"},
+"n_yoshinobu|吉野": {"kana": "よしの", "source": "railforum 『昭和時代』 기간 목록 텍스트 88733행 「吉野 よしの」 1930.04.01~1923.12.12 이웃 松丸; ja.wikipedia 「吉野生駅」 rev 110694394 「[編集] 1923年（大正12年）12月12日：宇和島鉄道の吉野駅（よしのえき）として開設[2]。」 (지금 역 문서·그 이름 문서) (9회차 R 2026-11-16)"},
+"n_yukigaya_otsuka|雪ヶ谷大塚": {"kana": "ゆきがやおおつか", "source": "railforum 『昭和時代』 기간 목록 텍스트 23043행 「雪が谷大塚 ゆきがやおおつか」 1987.04.01~1923.05.04 이웃 御嶽山·石川台; railforum 『平成時代』 기간 목록 텍스트 6044행 「雪が谷大塚 ゆきがやおおつか」 1923.05.04 이웃 御嶽山·石川台; ja.wikipedia 「雪が谷大塚駅」 rev 110928162 「年（大正12年）5月4日 |  テンプレートを表示 |   雪が谷大塚駅（ゆきがやおおつかえき、雪谷大塚と書く場合も」 (이웃 御嶽山·石川台·지금 역 문서); ja.wikipedia 「調布大塚駅」 rev None 「日 1923年（大正12年）5月4日 テンプレートを表示  雪が谷大塚駅（ゆきがやおおつかえき、雪谷大塚と書く場合も」 (이웃 御嶽山·石川台) (9회차 R 2026-11-16)"},
+"n_seiwa_onsen|下政和": {"kana": "しもせいわ", "source": "ja.wikipedia 深名線 rev111317864 노선도·연표 「下政和仮乗降場」, DB 기존 행 下政和 しもせいわ(wikipedia) — 옛 자리 노드 n_shimo_seiwa 이름 읽기 (10회차 D2)"},
+"n_cross_bay_mae|西新湊": {"kana": "にししんみなと", "source": "railforum 『停車場一覧1953.09.30』 텍스트 7316행 「西新湊 にししんみなと」  이웃 庄川口; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/308 쪽 그림 판독 「停車場一覧 索引 に 항: 西新湊 にししんみなと 社 富山地方(射水線)」; railforum 『昭和時代』 기간 목록 텍스트 40470행 「西新湊 にししんみな」 1966.04.05~1983.04.01 이웃 庄川口·新町口 (10회차 D3 2026-11-16)"},
+"n_enshu_byoin|遠鉄浜松": {"kana": "えんてつはままつ", "source": "日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236 (lab 전문 텍스트) 「井えちぜんへいい社福井鉄道遠〃遠鉄浜松えんてつはままつ社遠州鉄道小島谷おじまや越後小見おみ社富山方地〃遠別えんべつ羽幌小値賀港おじかみなと航九州商船小見川」 이웃 遠州浜松; railforum 『昭和時代』 기간 목록 텍스트 50565행 「遠鉄浜松 えんてつはま」 1958.06.01~1961.11.21 이웃 八幡·遠州浜松; railforum 『昭和時代』 기간 목록 텍스트 50635행 「遠鉄浜松 えんてつはま」 1964.11.01~1976.04.01 이웃 八幡·遠州浜松 (10회차 D3 2026-11-16)"},
+"n_hiroden_nishi_hiroshima|西広島": {"kana": "にしひろしま", "source": "railforum 『昭和時代』 기간 목록 텍스트 85565행 「西広島 にしひろしま」 1919.03.07~1942.04.10 이웃 東高須; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/307 쪽 그림 판독 「停車場一覧 索引 に 항: 西広島 にしひろしま 社 広島電鉄」 (10회차 D3 2026-11-16)"},
+"n_ichibanchoyubinkyokumae|東一番丁": {"kana": "ひがしいちばんちょう", "source": "ja.wikipedia 「一番町郵便局前停留場」 rev 87762668 「芭蕉の辻線全線廃止 1976年4月1日 - 全線廃線により廃駅  駅名の変遷 東一番丁（ひがしいちばんちょう） →東一番丁仙台郵便」 (이웃 郵政局前·高等裁判所前); ja.wikipedia 「一番町郵便局前停留場」 rev 87762668 「* [[1976年]]4月1日 - 全線廃線により廃駅  ; 駅名の変遷 : 東一番丁（ひがしいちばんちょう） →東一番丁仙台郵便」 (이웃 郵政局前·高等裁判所前); railforum 『昭和時代』 기간 목록 텍스트 6512행 「東一番丁 ひがしいちば」 1930.01.24~1956.01.-- 이웃 郵政局前 (10회차 D3 2026-11-16)"},
+"n_kadancho|千里山遊園": {"kana": "せんりやまゆうえん", "source": "railforum 『昭和時代』 기간 목록 텍스트 72654행 「千里山遊園 せんりやまゆうえん」 1946.04.07~1950.08.01 이웃 豊津·関大前; ja.wikipedia 「関大前駅」 rev 111217958 「ta/>。 * [[1938年]]（昭和13年）9月15日：花壇前駅を'''千里山遊園駅'''（せんりやまゆうえんえき）に改称<ref na」 (이웃 豊津·関大前) (10회차 D3 2026-11-16)"},
+"n_kaminogo|志摩磯部": {"kana": "しまいそべ", "source": "railforum 『昭和時代』 기간 목록 텍스트 61577행 「志摩磯部 しまいそべ」 1944.02.11~1952.04.02 이웃 沓掛; railforum 『昭和時代』 기간 목록 텍스트 61742행 「志摩磯部 しまいそべ」 1964.02.01~1965.04.01 이웃 沓掛; railforum 『昭和時代』 기간 목록 텍스트 61770행 「志摩磯部 しまいそべ」 1929.07.23~1930.04.01 이웃 沓掛; railforum 『昭和時代』 기간 목록 텍스트 68502행 「志摩磯部 しまいそべ」 1965.04.01~1970.03.01 이웃 沓掛 (10회차 D3 2026-11-16)"},
+"n_keifuku_ono|大野三番": {"kana": "おおのさんばん", "source": "railforum 『昭和時代』 기간 목록 텍스트 42872행 「大野三番 おおのさんばん」 1914.11.04~1929.09.21 이웃 大野口; railforum 『停車場一覧1953.09.30』 텍스트 8107행 「大野三番 おおのさんばん」 1914.11.04~1918.09.01 이웃 大野口; ja.wikipedia 「京福大野駅」 rev 103059439 「name=rp7011/>。これに伴って開業したのが当駅である。開通当初は'''大野三番駅'''（おおのさんばんえき）となっていたが、[[」 (이웃 大野口); 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697/1/159 쪽 그림 판독 「京都電燈 越前電気線 福井·大野三番間 표: 大野口 おほのぐち / 大野三番 おほのさんばん」 (10회차 D3 2026-11-16)"},
+"n_keikyu_otsu|京浜大津": {"kana": "けいひんおおつ", "source": "railforum 『昭和時代』 기간 목록 텍스트 24982행 「京浜大津 けいひんおおつ」 1987.04.01~1987.06.01 이웃 堀ノ内·馬堀海岸; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/285 쪽 그림 판독 「停車場一覧 索引 け 항: 京浜大津 けいひんおおつ 社 京浜急行」; railforum 『昭和時代』 기간 목록 텍스트 24729행 「京浜大津 けいひんおお」 1963.11.01~1966.03.01 이웃 堀ノ内·馬堀海岸; railforum 『昭和時代』 기간 목록 텍스트 24871행 「京浜大津 けいひんおお」 1968.06.21~1984.03.20 이웃 堀ノ内·馬堀海岸 (10회차 D3 2026-11-16)"},
+"n_keikyu_taura|京浜田浦": {"kana": "けいひんたうら", "source": "railforum 『昭和時代』 기간 목록 텍스트 24965행 「京浜田浦 けいひんたうら」 1987.04.01~1987.06.01 이웃 安針塚·追浜; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/285 쪽 그림 판독 「停車場一覧 索引 け 항: 京浜田浦 けいひんたうら 社 京浜急行」; railforum 『昭和時代』 기간 목록 텍스트 24699행 「京浜田浦 けいひんたう」 1963.11.01~1966.03.01 이웃 安針塚·追浜; railforum 『昭和時代』 기간 목록 텍스트 24848행 「京浜田浦 けいひんたう」 1968.06.21~1984.03.20 이웃 安針塚·追浜 (10회차 D3 2026-11-16)"},
+"n_keikyu_tomioka|京浜富岡": {"kana": "けいひんとみおか", "source": "railforum 『昭和時代』 기간 목록 텍스트 24946행 「京浜富岡 けいひんとみおか」 1987.04.01~1987.06.01 이웃 能見台; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/285 쪽 그림 판독 「停車場一覧 索引 け 항: 京浜富岡 けいひんとみおか 社 京浜急行」; railforum 『昭和時代』 기간 목록 텍스트 24833행 「京浜富岡 けいひんとみ」 1968.06.21~1984.03.20 이웃 能見台 (10회차 D3 2026-11-16)"},
+"n_kenritsu_daigaku|京浜安浦": {"kana": "けいひんやすうら", "source": "railforum 『昭和時代』 기간 목록 텍스트 24976행 「京浜安浦 けいひんやすうら」 1987.04.01~1987.06.01 이웃 堀ノ内·横須賀中央; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/285 쪽 그림 판독 「停車場一覧 索引 け 항: 京浜安浦 けいひんやすうら 社 京浜急行」; railforum 『昭和時代』 기간 목록 텍스트 24722행 「京浜安浦 けいひんやす」 1963.11.01~1966.03.01 이웃 堀ノ内·横須賀中央; railforum 『昭和時代』 기간 목록 텍스트 24867행 「京浜安浦 けいひんやす」 1968.06.21~1984.03.20 이웃 堀ノ内·横須賀中央 (10회차 D3 2026-11-16)"},
+"n_kintetsu_hatta_old|近畿日本八田": {"kana": "きんきにっぽんはった", "source": "railforum 『昭和時代』 기간 목록 텍스트 67651행 「近畿日本八田 きんきにっぽんはった」 1955.07.15~1956.09.23 이웃 伏屋; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本八田 きんきにつぽん はった (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13807행 「近畿日本八田 きんきにっぽんは」 1938.06.26 이웃 伏屋 (10회차 D3 2026-11-16)"},
+"n_kintetsu_koriyama|近畿日本郡山": {"kana": "きんきにっぽんこおりやま", "source": "日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本郡山 きんきにつぽん こおりやま (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13467행 「近畿日本郡山 きんきにっぽんこ」  이웃 九条·筒井 (10회차 D3 2026-11-16)"},
+"n_kintetsu_nagashima|近畿日本長島": {"kana": "きんきにっぽんながしま", "source": "railforum 『昭和時代』 기간 목록 텍스트 67640행 「近畿日本長島 きんきにっぽんながしま」 1955.07.15~1956.09.23 이웃 桑名; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本長島 きんきにつぽん ながしま (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13790행 「近畿日本長島 きんきにっぽんな」 1938.06.26 이웃 桑名 (10회차 D3 2026-11-16)"},
+"n_kintetsu_nagoya|近畿日本名古屋": {"kana": "きんきにっぽんなごや", "source": "railforum 『昭和時代』 기간 목록 텍스트 67656행 「近畿日本名古屋 きんきにっぽんなごや」 1955.07.15~1956.09.23 이웃 米野; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本名古屋 きんきにつぽん なごや (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13826행 「近畿日本名古屋 きんきにっぽんな」 1938.06.26 이웃 米野 (10회차 D3 2026-11-16)"},
+"n_kintetsu_nara|近畿日本奈良": {"kana": "きんきにっぽんなら", "source": "日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本奈良 きんきにつぽん なら (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13444행 「近畿日本奈良 きんきにっぽんな」 1914.07.08~1914.07.08 이웃 油阪 (10회차 D3 2026-11-16)"},
+"n_kintetsu_shimoda|近畿日本下田": {"kana": "きんきにっぽんしもだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 66535행 「近畿日本下田 きんきにっぽんしもだ」 1944.06.01~1970.03.01 이웃 二上·五位堂; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本下田 きんきにつぽん しもだ (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13264행 「近畿日本下田 きんきにっぽんし」 1927.07.01 이웃 二上·五位堂 (10회차 D3 2026-11-16)"},
+"n_kintetsu_tomida_kintetsu|近畿日本富田": {"kana": "きんきにっぽんとみだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 67629행 「近畿日本富田 きんきにっぽんとみだ」 1955.07.15~1956.09.23 이웃 霞ヶ浦; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本富田 きんきにつぽん とみだ (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13773행 「近畿日本富田 きんきにっぽんと」 1929.01.30 이웃 霞ヶ浦 (10회차 D3 2026-11-16)"},
+"n_kintetsu_yao_old|近畿日本八尾": {"kana": "きんきにっぽんやお", "source": "railforum 『昭和時代』 기간 목록 텍스트 66518행 「近畿日本八尾 きんきにっぽんやお」 1944.06.01~1970.03.01 이웃 久宝寺口·近鉄八尾; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/283 쪽 그림 판독 「停車場一覧 索引 き 항: 近畿日本八尾 きんきにつぽん やお (社 近畿日本)」; railforum 『停車場一覧1953.09.30』 텍스트 13243행 「近畿日本八尾 きんきにっぽんや」 1924.10.31 이웃 久宝寺口 (10회차 D3 2026-11-16)"},
+"n_kobata|電鉄木幡": {"kana": "でんてつこばた", "source": "railforum 『昭和時代』 기간 목록 텍스트 79456행 「電鉄木幡 でんてつこばた」 1987.04.01~1988.04.01 이웃 木津; railforum 『停車場一覧1953.09.30』 텍스트 16832행 「電鉄木幡 でんてつこばた」 1937.06.15 이웃 木津; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/302 쪽 그림 판독 「停車場一覧 索引 て 항: 電鉄木津 でんてつきづ 社 神戸電気 / 電鉄木幡 でんてつこばた 社 〃」; railforum 『昭和時代』 기간 목록 텍스트 79377행 「電鉄木幡 でんてつこば」 1952.10.01~1979.11.16 이웃 木津 (10회차 D3 2026-11-16)"},
+"n_kobe_sannomiya_hankyu|神戸": {"kana": "こうべ", "source": "railforum 『昭和時代』 기간 목록 텍스트 71728행 「神戸 こうべ」 1936.04.01~1943.10.01 이웃 春日野道; railforum 『昭和時代』 기간 목록 텍스트 71988행 「神戸 こうべ」 1943.10.01~1954.10.01 이웃 春日野道; railforum 『昭和時代』 기간 목록 텍스트 73128행 「神戸 こうべ」 1930.06.06~1933.06.17 이웃 春日野道; railforum 『停車場一覧1953.09.30』 텍스트 14565행 「神戸 こうべ」 1936.04.01 이웃 春日野道 (10회차 D3 2026-11-16)"},
+"n_kobe_sannomiya_hanshin|三宮": {"kana": "さんのみや", "source": "railforum 『昭和時代』 기간 목록 텍스트 71991행 「三宮 さんのみや」 1968.04.07~1970.10.05 이웃 春日野道; railforum 『昭和時代』 기간 목록 텍스트 72806행 「三宮 さんのみや」 1978.03.10~1980.12.01 이웃 春日野道; railforum 『昭和時代』 기간 목록 텍스트 72832행 「三宮 さんのみや」 1987.04.01~1936.04.01 이웃 春日野道; railforum 『昭和時代』 기간 목록 텍스트 73031행 「三宮 さんのみや」 1931.08.01~1905.04.12 이웃 春日野道 (10회차 D3 2026-11-16)"},
+"n_kodomonokuni_meitetsu|洲崎": {"kana": "すさき", "source": "railforum 『昭和時代』 기간 목록 텍스트 52961행 「洲崎 すさき」 1941.06.01~1944.--.-- 이웃 西浦; railforum 『昭和時代』 기간 목록 텍스트 53862행 「洲崎 すさき」 1948.05.16~1952.10.01 이웃 西浦; railforum 『昭和時代』 기간 목록 텍스트 57514행 「洲崎 すさき」 1936.07.24~1941.06.01 이웃 西浦; railforum 『停車場一覧1953.09.30』 텍스트 10036행 「洲崎 すさき」 1936.07.24 이웃 西浦 (10회차 D3 2026-11-16)"},
+"n_koganemachi|高野町": {"kana": "たかのちょう", "source": "railforum 『昭和時代』 기간 목록 텍스트 47083행 「高野町 たかのちょう」 1930.08.20~1925.06.01 이웃 千手堂·徹明町; railforum 『昭和時代』 기간 목록 텍스트 47246행 「高野町 たかのちょう」 1930.08.20~1930.09.05 이웃 千手堂·徹明町; railforum 『昭和時代』 기간 목록 텍스트 47331행 「高野町 たかのちょう」 1930.09.05~1935.08.01 이웃 千手堂·徹明町; railforum 『昭和時代』 기간 목록 텍스트 47441행 「高野町 たかのちょう」 1935.08.01~1944.--.-- 이웃 千手堂·徹明町 (10회차 D3 2026-11-16)"},
+"n_koshimachi|古志": {"kana": "こし", "source": "railforum 『昭和時代』 기간 목록 텍스트 83072행 「古志 こし」 1932.12.12~1938.06.09 이웃 出雲市; railforum 『昭和時代』 기간 목록 텍스트 83098행 「古志 こし」 1938.06.09~1952.03.01 이웃 出雲市·馬木不動前; 鉄道省 編纂『鉄道停車場一覧』昭和12年10月1日現在 https://dl.ndl.go.jp/pid/1207554/1/230 쪽 그림 판독 「大社宮島鉄道 出雲今市·出雲須佐間 표: (出雲今市) いづもいまいち / 古志 こし / 馬木 まき」 (10회차 D3 2026-11-16)"},
+"n_minamimachi_6_chome|皆実町三丁目": {"kana": "みなみまちさんちょうめ", "source": "railforum 『昭和時代』 기간 목록 텍스트 85259행 「皆実町三丁目 みなみまちさんちょうめ」 1971.05.01~1935.12.27 이웃 御幸橋; ja.wikipedia 「皆実町六丁目停留場」 rev 110421811 「ame=osafune2/>、停留場名はこのとき'''皆実町三丁目停留場'''（みなみまちさんちょうめていりゅうじょう）に改称したとされる<」 (이웃 御幸橋) (10회차 D3 2026-11-16)"},
+"n_minamimizuochi|水落": {"kana": "みずおち", "source": "railforum 『昭和時代』 기간 목록 텍스트 43668행 「水落 みずおち」 1927.--.--~1929.04.01 이웃 東鯖江·越前平井; railforum 『昭和時代』 기간 목록 텍스트 43691행 「水落 みずおち」 1929.04.01~1930.04.01 이웃 東鯖江·越前平井; ja.wikipedia 「水落駅」 rev 108677389 「乗降人員   =  |統計年度   =  |備考       =  }} '''水落駅'''（みずおちえき）は、[[福井県]][」 (이웃 越前平井) (10회차 D3 2026-11-16)"},
+"n_mitakeguchi|御嵩": {"kana": "みたけ", "source": "railforum 『昭和時代』 기간 목록 텍스트 46828행 「御嵩 みたけ」 1928.10.01~1920.08.21 이웃 顔戸; railforum 『昭和時代』 기간 목록 텍스트 53093행 「御嵩 みたけ」 1943.03.01~1948.05.16 이웃 顔戸; railforum 『昭和時代』 기간 목록 텍스트 55400행 「御嵩 みたけ」 1948.05.16~1952.05.01 이웃 顔戸; railforum 『昭和時代』 기간 목록 텍스트 55404행 「御嵩 みたけ」 1929.11.04~1952.04.01 이웃 顔戸 (10회차 D3 2026-11-16)"},
+"n_miyanosaka_keihan|中宮": {"kana": "なかみや", "source": "railforum 『昭和時代』 기간 목록 텍스트 71337행 「中宮 なかみや」 1940.09.11~1945.05.01 이웃 星ヶ丘·枚方市; railforum 『昭和時代』 기간 목록 텍스트 71528행 「中宮 なかみや」 1949.12.01~1971.06.20 이웃 星ヶ丘·枚方市; railforum 『昭和時代』 기간 목록 텍스트 72459행 「中宮 なかみや」 1945.05.01~1945.09.15 이웃 星ヶ丘·枚方市; railforum 『停車場一覧1953.09.30』 텍스트 14452행 「中宮 なかみや」 1940.09.11 이웃 星ヶ丘·枚方市 (10회차 D3 2026-11-16)"},
+"n_nagaokakyo|【西】神足": {"kana": "こうたり", "source": "railforum 『平成時代』 기간 목록 텍스트 38330행 「神足 こうたり」 1995.09.01~1931.08.01 이웃 向日町·山崎; ja.wikipedia 「長岡京駅」 rev 110878320 「]東海道本線の[[向日町駅]] - [[山崎駅 (京都府)|山崎駅]]間に'''神足駅'''（こうたりえき）として開業{{R|停」 (이웃 向日町·山崎); 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697 (lab 전문 텍스트) 「)うめこうぢ向日町むかふま ち神足かうたり山崎やまざき高槻たかつき攝津富田せつつこん だ茨木ばらきい吹田操車場すゐた(吹田)すゐた宮原信號場み」 이웃 向日町·山崎; 鉄道総局『鉄道旅客手小荷物運賃算出表』昭和18年 省線の部 https://dl.ndl.go.jp/pid/1229849 (lab 전문 텍스트) 「大路にしぉほぢ向日町むかふまち神足かうたり(東)山崎やまざき高槻たかつき攝津富田せつつとんだ茨木いばら き千里丘せんりをか吹田すゐた東淀川ひが」 이웃 向日町·山崎 (10회차 D3 2026-11-16)"},
+"n_nishitetsu_fukuoka_old|西鉄福岡": {"kana": "にしてつふくおか", "source": "日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/307 쪽 그림 판독 「停車場一覧 索引 に 항: 西鉄福岡 にしてつふくおか 社 西日本鉄道」 (10회차 D3 2026-11-16)"},
+"n_oboke|阿波赤野": {"kana": "あわあかの", "source": "ja.wikipedia 「大歩危駅」 rev 111756346 「== * [[1935年]]（[[昭和]]10年）[[11月28日]]：'''阿波赤野駅'''（あわあかのえき）として開業{{R|停」 (이웃 小歩危); 鉄道省 編纂『鉄道停車場一覧』昭和12年10月1日現在 https://dl.ndl.go.jp/pid/1207554/1/84 쪽 그림 판독 「土讃線 多度津·須崎間 표: 西宇 にしう / 阿波赤野 あはあかの / 土佐岩原 とさいははら」 (10회차 D3 2026-11-16)"},
+"n_osakasayamashi|河内半田": {"kana": "かわちはんだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 68204행 「河内半田 かわちはんだ」 1944.06.01~1947.06.01 이웃 狭山·金剛; railforum 『昭和時代』 기간 목록 텍스트 69267행 「河内半田 かわちはんだ」 1930.04.01~1917.01.11 이웃 狭山·金剛; railforum 『昭和時代』 기간 목록 텍스트 70081행 「河内半田 かわちはんだ」 1947.06.01~1950.04.01 이웃 狭山·金剛; ja.wikipedia 「大阪狭山市駅」 rev 110425694 「。駅番号は'''NK65'''。  == 歴史 == [[大阪高野鉄道]]'''河内半田駅'''（かわちはんだえき）として開業し、後に南」 (이웃 狭山) (10회차 D3 2026-11-16)"},
+"n_sakae_kobe|電鉄栄": {"kana": "でんてつさかえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 79458행 「電鉄栄 でんてつさかえ」 1987.04.01~1988.04.01 이웃 押部谷·木幡; railforum 『停車場一覧1953.09.30』 텍스트 16834행 「電鉄栄 でんてつさかえ」 1937.06.15 이웃 押部谷·木幡; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/302 쪽 그림 판독 「停車場一覧 索引 て 항: 電鉄栄 でんてつさかえ 社 神戸電気」; railforum 『昭和時代』 기간 목록 텍스트 79390행 「電鉄栄 でんてつさか」 1928.07.04~1952.10.01 이웃 押部谷·木幡 (10회차 D3 2026-11-16)"},
+"n_shirahamakaisuiyokujomae|女学校前": {"kana": "じょがっこうまえ", "source": "ja.wikipedia 「白浜海水浴場前駅」 rev 110185517 「）である。  歴史[編集] 1932年（昭和7年）11月15日：口之津鉄道により女学校前駅（じょがっこうまええき）として開設[1]。」 (이웃 加津佐·口之津); 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697/1/214 쪽 그림 판독 「口之津鉄道 島原湊·加津佐間 표: 口之津 くちのつ / 女学校前 ぢよがくかうまへ (끝)」 (10회차 D3 2026-11-16)"},
+"n_stadium_city_north|銭座町": {"kana": "ぜんざまち", "source": "railforum 『昭和時代』 기간 목록 텍스트 95788행 「銭座町 ぜんざまち」 1966.09.20~1915.11.16 이웃 茂里町; railforum 『平成時代』 기간 목록 텍스트 24796행 「銭座町 ぜんざまち」 1995.02.09~1915.11.16 이웃 茂里町; ja.wikipedia 「スタジアムシティノース停留場」 rev 111596279 「]31年）に宝町公園前に移設、[[1966年]]（昭和41年）には'''銭座町停留場'''（ぜんざまちていりゅうじょう）へ改称した{{Sfn」 (이웃 スタジアムシティサウス·茂里町) (10회차 D3 2026-11-16)"},
+"n_stadium_city_south|船蔵町": {"kana": "ふなぐらまち", "source": "railforum 『昭和時代』 기간 목록 텍스트 95723행 「船蔵町 ふなぐらまち」 1957.12.19~1960.05.08 이웃 八千代町; railforum 『昭和時代』 기간 목록 텍스트 95789행 「船蔵町 ふなぐらまち」 1960.05.08~1966.09.20 이웃 八千代町; ja.wikipedia 「スタジアムシティサウス停留場」 rev 111596269 「005|p=40}}。旧線上の停留場は廃され、新線上へ移設のうえ'''船蔵町停留場'''（ふなぐらまちていりゅうじょう）に改称した{{Sfn」 (이웃 スタジアムシティノース) (10회차 D3 2026-11-16)"},
+"n_stadium_city_south|宝町": {"kana": "たからまち", "source": "railforum 『昭和時代』 기간 목록 텍스트 95790행 「宝町 たからまち」 1966.09.20~1957.12.19 이웃 八千代町; railforum 『平成時代』 기간 목록 텍스트 24799행 「宝町 たからまち」 1995.02.09~1957.12.19 이웃 八千代町; ja.wikipedia 「スタジアムシティサウス停留場」 rev 111596269 「00年史|p=127}}。さらに[[1966年]]（昭和41年）には'''宝町停留場'''（たからまちていりゅうじょう）へ改称している{{S」 (이웃 スタジアムシティノース) (10회차 D3 2026-11-16)"},
+"n_tachikuekyo|下立久恵": {"kana": "しもたちくえ", "source": "railforum 『昭和時代』 기간 목록 텍스트 83110행 「下立久恵 しもたちくえ」 1938.06.09~1952.03.01 이웃 乙立; 鉄道省 編纂『鉄道停車場一覧』昭和12年10月1日現在 https://dl.ndl.go.jp/pid/1207554/1/230 쪽 그림 판독 「大社宮島鉄道 표: 所原 ところはら / 下立久恵 しもたちくゑ / 立久恵 たちくゑ」; 鉄道省 編『鉄道停車場一覧』昭和9年12月15日現在 https://dl.ndl.go.jp/pid/1212697/1/201 쪽 그림 판독 「大社宮島鉄道 표: 所原 ところはら / 下立久恵 しもたちくゑ / 立久恵 たちくゑ」 (10회차 D3 2026-11-16)"},
+"n_taiko_dori|中村区役所": {"kana": "なかむらくやくしょ", "source": "railforum 『平成時代』 기간 목록 텍스트 14503행 「中村区役所 なかむらくやくしょ」 1989.09.10~1989.09.10 이웃 名古屋; ja.wikipedia 「太閤通駅」 rev 111019762 「]]間の開通に伴い、[[1989年]]（[[平成]]元年）9月10日に'''中村区役所駅'''（なかむらくやくしょえき）として開業した{{S」 (이웃 名古屋) (10회차 D3 2026-11-16)"},
+"n_tonoshiroguchi|川久保": {"kana": "かわくぼ", "source": "railforum 『昭和時代』 기간 목록 텍스트 44833행 「川久保 かわくぼ」 1928.01.10~1930.04.01 이웃 下原下·伊勢山; railforum 『昭和時代』 기간 목록 텍스트 44879행 「川久保 かわくぼ」 1925.03.31~1939.03.19 이웃 下原下·伊勢山; railforum 『昭和時代』 기간 목록 텍스트 44952행 「川久保 かわくぼ」 1939.08.30~1943.10.21 이웃 下原下·伊勢山; railforum 『昭和時代』 기간 목록 텍스트 45132행 「川久保 かわくぼ」 1943.10.21~1953.07.15 이웃 下原下·伊勢山 (10회차 D3 2026-11-16)"},
+"n_tsushima|新津島": {"kana": "しんつしま", "source": "railforum 『昭和時代』 기간 목록 텍스트 51102행 「新津島 しんつしま」 1930.04.01~1914.01.23 이웃 津島口; railforum 『昭和時代』 기간 목록 텍스트 51429행 「新津島 しんつしま」 1930.09.05~1932.10.25 이웃 日比野·津島口; 鉄道省 編『鉄道停車場一覧』大正15年版(1926) https://dl.ndl.go.jp/pid/1020981/1/179 쪽 그림 판독 「名古屋鉄道 枇杷島橋·新津島間 표: 津島口 つしまぐち / 新津島 しんつしま」 (10회차 D3 2026-11-16)"},
+"n_ujina_4_chome|宇品七丁目": {"kana": "うじなななちょうめ", "source": "railforum 『昭和時代』 기간 목록 텍스트 85311행 「宇品七丁目 うじなななちょうめ」 1960.03.30~1968.09.01 이웃 宇品三丁目·宇品五丁目; ja.wikipedia 「宇品四丁目停留場」 rev 110399970 「age=38}}</ref>。  戦後、1960年には'''宇品七丁目停留場'''（うじなななちょうめていりゅうじょう）へと改称される<re」 (이웃 宇品五丁目) (10회차 D3 2026-11-16)"},
+"n_yokoyama_kobe|電鉄横山": {"kana": "でんてつよこやま", "source": "railforum 『昭和時代』 기간 목록 텍스트 79308행 「電鉄横山 でんてつよこやま」 1987.04.01~1988.04.01 이웃 三田本町; railforum 『停車場一覧1953.09.30』 텍스트 16818행 「電鉄横山 でんてつよこやま」 1928.12.18 이웃 三田本町; 日本国有鉄道『停車場一覧』昭和41年3月現在 https://dl.ndl.go.jp/pid/1873236/1/303 쪽 그림 판독 「停車場一覧 索引 て 항: 電鉄横山 でんてつよこやま 社 神戸電気」; railforum 『昭和時代』 기간 목록 텍스트 79289행 「電鉄横山 でんてつよこ」 1927.06.02~1952.10.01 이웃 三田本町 (10회차 D3 2026-11-16)"},
+"n_yudakogen|岩手湯田": {"kana": "いわてゆだ", "source": "railforum 『昭和時代』 기간 목록 텍스트 122910행 「岩手湯田 いわてゆだ」 1948.12.25~1962.12.01 이웃 黒沢; railforum 『昭和時代』 기간 목록 텍스트 122970행 「岩手湯田 いわてゆだ」 1966.10.20~1970.01.01 이웃 黒沢; railforum 『昭和時代』 기간 목록 텍스트 148191행 「岩手湯田 いわてゆだ」 1987.04.01~1948.12.25 이웃 黒沢; railforum 『平成時代』 기간 목록 텍스트 29706행 「岩手湯田 いわてゆだ」 1991.06.20~1948.12.25 이웃 ほっとゆだ·黒沢 (10회차 D3 2026-11-16)"},
+"n_anamizu|のと穴水": {"kana": "のとあなみず", "source": "합성 읽기: のと(히라가나 그대로) + 穴水(あなみず, 노리츠부시·같은 노드 지금 이름). 沼宮内 선례처럼 두 부분 모두 근거 있음 (10회차 G2 2026-11-16; audit4 chubu_2-004)"},
+"n_okinami|立戸の浜": {"kana": "たつどのはま", "source": "노리츠부시 能登線(国鉄) 표 「立戸の浜」 읽기 たつどのはま(같은 노드 노선 한정 행, kana.json node:立戸の浜과 같음). N05 행에 붙던 읽기를 손 개칭 행으로 옮김 (10회차 G2 2026-11-16; audit4 chubu_2-005)"},
+"n_biwako_hamaotsu|浜大津東口": {"kana": "はまおおつひがしぐち", "source": "합성 읽기: 浜大津(はまおおつ, 같은 노드 옛 이름 old_names) + 東口(ひがしぐち). 옛 n_hamaotsu 행(3차 대조 r3 misc1)의 같은 합성을 石坂線 역 노드로 옮김 (10회차 G2 2026-11-16; audit4 kinki_1-02)"},
+"n_ueda_ueda|電鉄上田": {"kana": "でんてつうえだ", "source": "ja.wikipedia 上田駅 rev110964436 上田交通 電鉄上田駅 「よみがな = でんてつうえだ」·1955-08-08 独立·1972-02-19 廃止(중간) + railforum 『昭和時代』 45117행 「電鉄上田 でんてつうえ」(가나 칸에서 잘림, 앞부분 일치) 1955.08.08~1972.02.20(중간, 독립). 끝 「だ」는 上田 うえだ (11회차 R·S1)"},
+"n_kintetsu_yokkaichi|近畿日本四日市": {"kana": "きんきにっぽんよっかいち", "source": "停車場一覧 昭和41年(NDL pid 1873236) 색인 「近畿日本四日市 きんきにつぽんよつかいち」(높음) + railforum 『昭和時代』 61471행 「近畿日本四 きんきにっぽ」·67756행 「近鉄四日市 きんてつよっ」(っ 자리, 중간). n_asunarou_yokkaichi의 같은 이름 읽기와 같음 (11회차 R·S1)"},
+"n_bunkyokuyakushomae|春日町": {"kana": "かすがちょう", "source": "『東京市統計年表』 第24回(1928, NDL pid 1448330, 인터넷 공개) 시영 전차 停留場及營業線路 표 lab 전문 page 675 「Otsukaekimai to Kasugacho」; 第25回(1929, pid 1448372) page 723 같은 구간; 第7回(1911, pid 806549) 「神保町春日町間 … Kasugacho」 + 『さむもあこんぽじしゃん』1923(NDL pid 919722, lab page 91) 「This is a Waseda … car, … you must get a Mita at Kasugacho. 此の電車は早稻田行ですから,三田へ行くには乘換切符」(전차 갈아타기 문장, lab 검색 하이라이트) + railforum 『昭和時代』 기간 목록 텍스트 29477행 「春日町 かすがちょう」 1943.07.01~1945.--.-- 이웃 富坂上 (11회차 R4)"},
+"n_mukogaoka_2_chome|本郷肴町": {"kana": "ほんごうさかなまち", "source": "『東京市統計年表』 第24回(pid 1448330) page 675 「Hongo Sakanamachi to Hakusanue」, 第20回(pid 974762, lab 검색 page 715) 「Roppongi to Aoyama 6 chome Hongo Sakanamachi」 + railforum 『昭和時代』 기간 목록 텍스트 29453행 「本郷肴町 ほんごうさか」 1943.07.01~1944.10.05 이웃 向丘一丁目 (11회차 R4)"},
+"n_sotokanda_2_chome|松住町": {"kana": "まつずみちょう", "source": "『東京市統計年表』 第24回(pid 1448330) page 675 「Kitashinagawa to Asakusabashi and Kaminarimon Honkokucho to Matsuzumicho」, 第25回(pid 1448372) page 723 같은 구간표 + railforum 『昭和時代』 기간 목록 텍스트 29379행 「松住町 まつずみちょう」 1900.06.09~1943.07.01 이웃 神田明神前 + railforum 『停車場一覧1953.09.30』 텍스트 4700행 「松住町 まつずみちょう」 1900.06.09~1904.01.15 이웃 神田明神前 (11회차 R4)"},
+"n_minami_aoyama_5_chome|青山六丁目": {"kana": "あおやまろくちょうめ", "source": "『東京市統計年表』 第22回(pid 974765) page 661 「Roppongi to Aoyama 6 chome」, 第25回(pid 1448372) page 723 「Aoyama 6 chome to Roppongi」 + railforum 『昭和時代』 기간 목록 텍스트 27359행 「青山六丁目 あおやまろくちょうめ」 1943.07.01~1911.--.-- 이웃 明治神宮前·青山車庫前 + railforum 『昭和時代』 기간 목록 텍스트 29788행 「青山六丁目 あおやまろく」 1943.07.01~1958.09.18 이웃 明治神宮前·青山車庫前 (11회차 R4)"},
+"n_azabu_juban_toden|一ノ橋": {"kana": "いちのはし", "source": "『東京市統計年表』 第7回(1911, pid 806549) lab 전문 page 366(검색 표기 670) 「御茶ノ水萬世橋間 … 一ノ橋四谷鹽町間 Ichinohashi」(시영 전차 구간표) + railforum 『昭和時代』 기간 목록 텍스트 27574행 「一ノ橋 いちのはし」 1943.07.01~1908.12.29 이웃 二ノ橋·麻布中ノ橋 + railforum 『昭和時代』 기간 목록 텍스트 30162행 「一ノ橋 いちのはし」 1943.07.01~1944.10.05 이웃 二ノ橋·麻布中ノ橋 (11회차 R4)"},
+"n_asakusa_1_chome|田原町": {"kana": "たわらまち", "source": "『東京市統計年表』 第12回(pid 974755) lab page 511 「Kurumazakacho to Tawaramachi / Tawaramachi to Asakusabashi」 + railforum 『昭和時代』 기간 목록 텍스트 26589행 「田原町 たわらまち」 1929.09.24~1938.01.23 이웃 菊屋橋·雷門 + railforum 『昭和時代』 기간 목록 텍스트 26596행 「田原町 たわらまち」 1929.09.24~1904.03.18 이웃 菊屋橋·雷門 (11회차 R4)"},
+"n_higashikanda|豊島町": {"kana": "としまちょう", "source": "『大満洲帝国商工案内 [英文]』1937(NDL pid 1230911, lab page 403) 「Front of tram stop of Toshimacho, Kandaku」 + railforum 『昭和時代』 기간 목록 텍스트 26878행 「豊島町 としまちょう」 1929.08.10~1943.07.01 이웃 岩本町·浅草橋 + railforum 『昭和時代』 기간 목록 텍스트 29066행 「豊島町 としまちょう」 1943.07.01~1944.10.05 이웃 岩本町·浅草橋 (11회차 R4)"},
+"n_kujoshimmichi|花園橋": {"kana": "はなぞのばし", "source": "大阪市 『Statistical abstract for Osaka 7』(1917, NDL pid 1681508, 인터넷 공개) Table CXXIX Tramway 「From Harbour to Hanazonobashi」(lab 전문 page 101, 검색 표기 113) + 大阪市 『A glimpse of Osaka』(1934, pid 1900905, lab page 55) 「the first line, extending for 5 kilometres from Osaka harbour to Hanazonobashi」 (11회차 R4)"}
+}

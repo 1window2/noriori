@@ -1,0 +1,509 @@
+번호	고친 파일	동작	지적 id	원인	키	값	근거	메모
+1	data/overrides/renames_hand.json	add	chubu_1-03	K11	n_teradomari		ja.wikipedia 越後線 rev111454860 「1986年11月1日 【駅名改称】大河津→寺泊」; N05 大河津 越後線 1950–1985	
+2	data/overrides/renames_hand.json	add	chubu_1-04	K11	n_hon_yoshiwara		岳南電車岳南鉄道線 rev111490170 「鈴川駅を吉原駅に、吉原駅を本吉原駅に改称」(1956-04-10); N05 吉原 岳南線 1950–1955 (本吉原 자리)	
+3	data/overrides/renames_hand.json	add	chubu_1-06	K11	n_mitakeguchi		名鉄広見線 rev110535786 「これまでの御嵩駅を御嵩口駅と改称」(1952-04-01); N05 御嵩 広見線 1950–1951 (御嵩口 자리)	
+4	data/overrides/renames_hand.json	add	chubu_1-09	K11	n_kitarinzaiji		豊橋鉄道東田本線 rev111617936 「車庫前停留場を北臨済寺停留場に改称」(1960-07-01); N05 車庫前 東田本線 1950–1959	
+5	data/overrides/renames_hand.json	add	chubu_1-16	K11	n_awaraonsen		北陸本線 rev111217659 「金津駅が芦原温泉駅に改称」(1972-03-15); N05 金津 北陸線 1950–1971	
+6	data/overrides/renames_hand.json	add	chubu_1-21	K11	n_nonoichi_kodaimae		北陸鉄道石川線 rev111054098 「上野々市駅（3代）を工専前駅に改称」(1963-04-11); 같은 문서 「工専前駅を野々市工大前駅に改称」(1966-09-15)	
+7	data/overrides/renames_hand.json	add	chubu_3-030	K11	n_cross_bay_mae		wiki 万葉線 rev111306973: 「中学校前駅を西新湊駅（初代）に改称」(1949-06-20); 「射水市新湊庁舎前駅を西新湊駅（2代）に改称」(2016-10-11)	
+8	data/overrides/renames_hand.json	add	chubu_3-032	K11	n_kamiyokoe		wiki 富山地方鉄道立山線: 「尖山駅を横江駅に、横江駅を上横江駅に改称」(1965-04-15); 「千寿ヶ原駅（現在の立山駅）」	
+9	data/overrides/renames_hand.json	add	chugoku_shikoku_1-017	K11	n_ajinahigashi		위키 広島電鉄宮島線 rev 110659845 연표 「1969年10月1日：西広島駅を広電西広島駅に改称」「1972年3月1日：地御前県病院前駅を阿品駅に改称」「2001年11月1日：…阿品駅を阿品東駅に」; N05 宮島線 西広島 1950–1988, 阿品 1972–2000, 中央市場前 1965–1978	
+10	data/overrides/renames_hand.json	add	chugoku_shikoku_1-018	K11	n_eba		위키 広島電鉄江波線 rev 110659826 「1954年1月8日 …江波口停留場が現在の江波停留場付近に移転。旧江波口停留場はグランド口停留場に改称」「1963年：江波口停留場が江波停留場に改称」「2019年4月1日：舟入南町停留場が舟入南停留場に改称」	
+11	data/overrides/renames_hand.json	add	chugoku_shikoku_1-019	K11	n_dentetsu_izumoshi		위키 一畑電車北松江線 rev 109550463 연표 1952·1957·1964·1970·2001·2002·2007년 항목	
+12	data/overrides/renames_hand.json	add	chugoku_shikoku_1-020	K11	n_oboke		위키 土讃線 rev 111124356 「10月1日：西宇駅を小歩危駅に、阿波赤野駅を大歩危駅に改称」(1950년)	
+13	data/overrides/renames_hand.json	add	chugoku_shikoku_2-B02	K11	n_ube		wiki 宇部線 110993921: 宇部駅が西宇部駅に改称(1943-05-01); wiki 山陽本線 111054473: 1964年10月1日 西宇部駅が宇部駅に改称	
+14	data/overrides/renames_hand.json	add	chugoku_shikoku_2-B11	K11	n_hon_yura		wiki 山陽本線: 1950年6月1日：阿知須駅を本由良駅に改称; wiki 予讃線: 1950年4月1日：上老松駅を伊予出石駅に改称	
+15	data/overrides/renames_hand.json	add	chugoku_shikoku_2-B11	K11	n_iyo_izushi		wiki 山陽本線: 1950年6月1日：阿知須駅を本由良駅に改称; wiki 予讃線: 1950年4月1日：上老松駅を伊予出石駅に改称	
+16	data/overrides/renames_hand.json	add	hokkaido_1-007	K11	n_onuma_koen		위키 函館本線 「1964年 5月1日：大沼駅（2代）を大沼公園駅に改称。6月1日：軍川駅を大沼駅（3代）に改称」; 위키 室蘭本線·釧網本線 1950-09-10 개칭, 雄別鉄道 1950-05-01, 留萠鉄道 1952-10-01 「浅野炭山駅を新雨竜駅に」; names.sqlite n_onuma_koen ja 행 「大沼公園」 하나; 1회차 hokkaido_1-024 일부 미	
+17	data/overrides/renames_hand.json	add	kanto_1-012	K11	n_chiba_chuo		wiki station 千葉中央駅 hist: 1987-04-01 …千葉中央駅に改称; wiki 京成千葉線 L144: 1987年4月1日 - 京成千葉駅を千葉中央駅に…改称	
+18	data/overrides/renames_hand.json	add	kanto_1-019	K11	n_omotesando		wiki station 表参道駅 hist: 1939年9月16日 神宮前駅へ改称; 같은 hist: 1972年10月20日 …銀座線の神宮前駅も同名に改称	
+19	data/overrides/renames_hand.json	add	kanto_1-020	K11	n_ryugasakishi		wiki station 龍ケ崎市駅 hist: 2020年3月14日 JR東日本の駅名を龍ケ崎市駅に改称; 같은 hist: 1900年8月14日 …佐貫駅として同時に開業	
+20	data/overrides/renames_hand.json	add	kanto_1-021	K11	n_otsuko		wiki station 大津港駅 hist: 1950年5月10日 大津港駅に改称 (開業時 関本駅)	
+21	data/overrides/renames_hand.json	add	kanto_1-022	K11	n_todaimae_inogashira		wiki station 駒場東大前駅 hist: 1951年12月1日 一高前駅を東大前駅に改称	
+22	data/overrides/renames_hand.json	add	kanto_2-003	K11	n_kashima_soccer_stadium		大洗鹿島線 wiki 年表: 1994年3月12日 北鹿島駅を鹿島サッカースタジアム駅に改称; N05 鹿島線 北鹿島 1978–1993 (EB03_13502015 계열)	
+23	data/overrides/renames_hand.json	add	kanto_2-008	K11	n_tenkubashi_keikyu		京急空港線 wiki 年表: 11月18日 - ... 羽田駅が天空橋駅に改称(1998); N05 空港線 羽田 1993–1997, 天空橋 1998–	
+24	data/overrides/renames_hand.json	add	kanto_2-009	K11	n_haneda_airport_terminal_12		N05 空港線 羽田空港 1998–2009, 羽田空港国内線ターミナル 2010–2019, 第1・第2 2010–(겹침); 京急空港線 wiki 노선도·年表(2010-10-21 第3ターミナル(国際線) 개업, 2020-03-14 개칭)	
+25	data/overrides/renames_hand.json	add	kanto_2-016	K11	n_keisei_ueno		京成本線 wiki 111343993 年表 1953年5月1日 上野公園駅を京成上野駅に改称; N05 本線 上野公園 1950–1952	
+26	data/overrides/renames_hand.json	add	kanto_2-017	K11	n_funabashikeibajo		京成本線 wiki 年表 1950年7月5日 京成花輪駅を船橋競馬場駅に改称 / 1963年12月1日 / 1987年4月1日	
+27	data/overrides/renames_hand.json	add	kanto_2-018	K11	n_ginza		東京メトロ丸ノ内線 wiki 111274806: 1964-08-29 ... 西銀座駅を銀座駅に統合; N05 4号線丸ノ内線 西銀座 1957–1963	
+28	data/overrides/renames_hand.json	add	kanto_2-019	K11	n_takashimadaira		都営地下鉄三田線 wiki 110959523 年表 1968-12-27 巣鴨 - 志村（現・高島平）間開業, 1969-08-01 志村駅を高島平駅に改称; N05 6号線三田線 志村 1968	
+29	data/overrides/renames_hand.json	add	kanto_2-020	K11	n_nodashi		東武野田線 wiki 111355825 年表 1950-05-30 野田町駅を野田市駅に改称	
+30	data/overrides/renames_hand.json	add	kanto_2-021	K11	n_yorokeikoku		N05 小湊鐵道線 朝生原 1950–1953 (養老渓谷 자리 150m 안); DB n_kazusa_yamada 養老川 valid_to 1954-12-01(wikipedia)	
+31	data/overrides/renames_hand.json	add	kanto_2-022	K11	n_kazusa_tsurumai		N05 小湊鐵道線 鶴舞町 1950–1957 (上総鶴舞 자리)	
+32	data/overrides/renames_hand.json	add	kanto_2-029	K11	n_higashi_narita_keisei		京成本線 wiki 年表 1978年5月21日 京成成田 - 成田空港（現在の東成田）間が開業; N05 東成田線 成田空港 1978–1990 (東成田 자리 45m)	
+33	data/overrides/renames_hand.json	add	kanto_3-15	K11	n_chikatetsu_narimasu		N05 EB03_15409002 営団成増 1983–2003, EB03_15409003 営団赤塚 1983–2003; wiki 西武有楽町線 「営団成増（現・地下鉄成増）」	
+34	data/overrides/renames_hand.json	add	kanto_3-15	K11	n_chikatetsu_akatsuka		N05 EB03_15409002 営団成増 1983–2003, EB03_15409003 営団赤塚 1983–2003; wiki 西武有楽町線 「営団成増（現・地下鉄成増）」	
+35	data/overrides/renames_hand.json	add	kanto_3-16	K11	n_tenkubashi_tokyo_monorail		build/master.sqlite node_move n_haneda_tokyo_monorail→n_tenkubashi_tokyo_monorail 1993-09-27; wiki 東京モノレール 「整備場駅 - 羽田空港駅間開業。整備場駅 - （旧）羽田駅廃止」	
+36	data/overrides/renames_hand.json	add	kanto_3-17	K11	n_tamako_old		wiki 西武多摩湖線 「狭山公園前駅を多摩湖駅に改称」(1951-09-01); N05 EB03_14434011 狭山公園前 1950	
+37	data/overrides/renames_hand.json	add	kinki_2-013	K11	n_idakiso		data/imports/wiki 和歌山電鐵貴志川線 rev110526764 노선도: 「09 伊太祈曽駅」; data/overrides/hand_tables.json N02AL: 「伊太祁曽」→「伊太祈曽」 대응만 있고 이름에 미반영; 1회차 kinki_1-031 미해결	
+38	data/overrides/renames_hand.json	add	kinki_2-016	K11	n_kobe_sannomiya_hankyu		data/imports/wiki 阪急神戸本線 rev111135883: 「神戸駅を三宮駅と改称」(1968-04-07), 「2013年12月21日：三宮駅を神戸三宮駅に改称」	
+39	data/overrides/renames_hand.json	add	kinki_2-017	K11	n_oji_koen		data/imports/wiki 阪急神戸本線 rev111135883: 1984年 「6月1日：西灘駅を王子公園駅と改称」	
+40	data/overrides/renames_hand.json	add	kinki_2-018	K11	n_hieizan_sakamoto		data/imports/wiki 湖西線 rev111088405: 「叡山駅を比叡山坂本駅に改称」(1994-09-04)	
+41	data/overrides/renames_hand.json	add	kinki_2-019	K11	n_omiya_hankyu		data/imports/wiki 阪急京都本線 rev110983908: 「京阪京都駅を京阪神京都駅」(1943-10-01), 「京阪神京都駅を大宮駅と改称」(1963-06-17)	
+42	data/overrides/renames_hand.json	add	kinki_2-022	K11	n_cable_sanjo		data/imports/wiki 能勢電鉄妙見の森ケーブル rev108922747: 「山上駅を…ケーブル山上」(1965-04-01); 1회차 kinki_1-047 미해결	
+43	data/overrides/renames_hand.json	add	kinki_2-023	K11	n_dome_mae_chiyozaki		data/imports/wiki Osaka Metro長堀鶴見緑地線 rev110840101: 「大阪ドーム前千代崎駅…ドーム前千代崎」(2006-12-24); 1회차 kinki_1-053 미해결	
+44	data/overrides/renames_hand.json	add	kinki_2-024	K11	n_ikoma		data/imports/wiki 近鉄奈良線 rev110923443: 「近畿日本生駒駅を生駒駅に改称」(1964-10-01); 1회차 kinki_3-017 미해결	
+45	data/overrides/renames_hand.json	add	kinki_2-026	K11	n_takeda_kintetsu_old		data/imports/wiki 近鉄京都線 rev110958649: 「城南宮前駅を奈良電竹田駅に改称」(1940-04-05), 1963-10-01 「奈良電竹田駅を竹田駅に改称」	
+46	data/overrides/renames_hand.json	add	kinki_3-005	K11	n_kintetsu_yao_old		ja.wikipedia 近鉄大阪線 rev111364868 「関急八尾駅を近畿日本八尾駅に…改称」(1944-06-01)	
+47	data/overrides/renames_hand.json	add	kinki_3-011	K11	n_unobe		ja.wikipedia 大阪モノレール本線 rev111054270 「茨木駅を宇野辺駅に改称」(1997-04-01)	
+48	data/overrides/renames_hand.json	add	kinki_3-013	K11	n_keisan_kagaku_center		ja.wikipedia 神戸新交通ポートアイランド線 rev110789768 「京コンピュータ前駅を計算科学センター駅に改称」(2021-06-19)	
+49	data/overrides/renames_hand.json	add	kinki_3-015	K11	n_nakayama_kannon		ja.wikipedia 阪急宝塚本線 rev109449986 「中山駅を中山観音駅に改称」(2013-12-21)	
+50	data/overrides/renames_hand.json	add	kinki_3-018	K11	n_kadancho		ja.wikipedia 阪急千里線 「1951年4月1日：女子学院前駅を花壇町駅に改称」	
+51	data/overrides/renames_hand.json	add	kinki_3-019	K11	n_sanyo_uozumi		ja.wikipedia 山陽電気鉄道本線 rev111474989 「1961年10月1日：魚住駅を電鉄魚住駅に改称」	
+52	data/overrides/renames_hand.json	add	kinki_3-022	K11	n_sakura_kintetsu		ja.wikipedia 近鉄湯の山線 「1954年7月：川島村駅を伊勢川島駅、桜村駅を桜駅に改称」	
+53	data/overrides/renames_hand.json	add	kinki_3-024	K11	n_tsurumachi_2_chome		ja.wikipedia 大阪市電鶴町線 rev102389657 「鶴町車庫前駅を鶴町二丁目駅に改称」(1954-07)	
+54	data/overrides/renames_hand.json	add	kinki_3-048	K11	n_hommachi		ja.wikipedia Osaka Metro四つ橋線 rev111580814 「信濃橋駅を本町駅に統合」(1969-07-01)「難波元町駅を難波駅に統合」(1970-03-11)	
+55	data/overrides/renames_hand.json	add	kinki_3-061	K11	n_kaminogo		ja.wikipedia 近鉄志摩線 rev111151681 「志摩磯部駅を上之郷駅に、迫間駅を志摩磯部駅に改称」(1970-03-01)	
+56	data/overrides/renames_hand.json	add	kinki_3-066	K11	n_utsubohonmachi_4_chome		ja.wikipedia 大阪市電靱本町線 rev111464221 「茂左衛門橋停留場を靱本町四丁目停留場に改称」(1961-06-01)	
+57	data/overrides/renames_hand.json	add	kyushu_1-012	K11	n_minami_fukuoka		data/imports/wiki/station.json 南福岡駅 「1966年（昭和41年）11月1日：南福岡駅…に改称」; n05 EB03_22202037 雑餉隈 1950–1965; data/candidates/n05_history.json class=check 「옛 이름이 가까운 다른 역 이름」(西鉄 雑餉隈)으로 미적용	
+58	data/overrides/renames_hand.json	add	kyushu_1-013	K11	n_onojo		data/imports/wiki/station.json 大野城駅 「1989年（平成元年）3月11日：…大野城駅…に改称」·「1961年…白木原駅…に昇格」; data/candidates/n05_history.json class=check로 미적용	
+59	data/overrides/renames_hand.json	add	kyushu_1-014	K11	n_kotochugakkomae		data/imports/wiki/station.json 甲東中学校前停留場 「1948年…市立病院前停留場に改名」「2015年…5月1日：…甲東中学校前停留場へ改称」; n05 EB03_22302003 市立病院前 1950–2014	
+60	data/overrides/renames_hand.json	add	kyushu_1-015	K11	n_kami_kumamoto_kumamoto_city		data/imports/wiki/station.json 上熊本駅 「2019年…上熊本駅前停留場から上熊本停留場に改称」; station.json 洗馬橋駅 「1981年：洗馬橋停留場に改称」, 蔚山町駅 「1961年 - 1962年：蔚山町停留場に改称」; n05 上熊本駅前 1950–2018, 塩屋町 1950–999, 蔚山町護国神社前 1950–999	
+61	data/overrides/renames_hand.json	add	kyushu_1-016	K11	n_heiwadori		data/imports/wiki/station.json 平和通駅 「1985年…小倉駅（初代）として開業」「1998年…平和通駅と改称」; n05 小倉 1985–1997 / 平和通 1998–	
+62	data/overrides/renames_hand.json	add	kyushu_1-017	K11	n_kagami		data/imports/wiki/station.json 久里駅 「1950年…それまで久里駅を名乗っていた隣の駅を鏡駅（2代）と改称し」; 1차 kyushu_1-052와 같음(미반영)	
+63	data/overrides/renames_hand.json	add	kyushu_1-017	K11	n_kuri		data/imports/wiki/station.json 久里駅 「1950年…それまで久里駅を名乗っていた隣の駅を鏡駅（2代）と改称し」; 1차 kyushu_1-052와 같음(미반영)	
+64	data/overrides/renames_hand.json	add	kyushu_1-018	K11	n_tamaeshogakkomae		ja.wikipedia 鹿児島市電伊敷線 rev108122176 「1962年…伊敷を玉江小学校前に、下伊敷を国立病院前に」; 같은 문서 「1953年…2月20日 玉里道を護国神社前に改称」「1979年…国立病院前を下伊敷に改称」	
+65	data/overrides/renames_hand.json	add	kyushu_1-019	K11	n_kaizuka_nishi_nippon_old		ja.wikipedia 西鉄貝塚線 rev111320593 「箱崎宮前駅を箱崎浜電停に…西鉄多々良駅を競輪場前駅に改称」(1954-03-05); n05 宮地岳線 競輪場前 1954–1961, 箱崎宮前 1950–1953, 金平 1962–1974	
+66	data/overrides/renames_hand.json	add	kyushu_2-01	K11	n_gionmachi		西鉄福岡市内線 rev110542419: （旧）博多駅前を馬場新町と改称; N05 EB03_22431027 博多駅前→馬場新町 (1963까지); data/overrides/n05_fix.json 循環線 旧線 note: 1964-07-01 전 博多駅前(旧)	
+67	data/overrides/renames_hand.json	add	kyushu_2-09	K11	n_stadium_city_north		長崎電気軌道本線 rev110993491: 2024年10月1日 … 銭座町停留場をスタジアムシティノース停留場へ; N05 EB03_22415013 井樋の口 1950-1965 / 銭座町 1966-; 노리츠부시: スタジアムシティノース（旧銭座町）	
+68	data/overrides/renames_hand.json	add	kyushu_2-25	K11	n_nishitetsu_fukuoka		西鉄天神大牟田線 rev111320592: 2001年1月1日：線名を大牟田線から天神大牟田線に改称し、西鉄福岡駅を西鉄福岡（天神）駅に改称	
+69	data/overrides/renames_hand.json	add	kyushu_2-27	K11	n_shinden_kagoshima_city		N05 EB03_22305005: 唐湊 1952-1956 / 神田 1957-2014 / 神田（交通局前） 2015-; N05 EB03_22305006 唐湊 1957- (DB n_toso 1957-03-29 개업과 맞음); 鹿児島市交通局 rev111052650: 「交通局前」バス停および電停は2015年に二中通に変更	
+70	data/overrides/renames_hand.json	add	tohoku_1-011	K11	n_yudakinshuko		data/imports/wiki 北上線 rev111501383 "陸中大石駅がゆだ錦秋湖駅に…改称"(1991-06-20); 같은 문서 노선도 "1962- 陸中大石駅(2)"	
+71	data/overrides/renames_hand.json	add	tohoku_1-014	K11	n_hachinohe		data/imports/wiki 八戸線 rev111465986 "4月1日：尻内駅を八戸駅（2代）に改称"; 같은 문서 "2月1日：八戸駅を本八戸駅に改称"	
+72	data/overrides/renames_hand.json	add	tohoku_2-011	K11	n_hachinohe		ja.wikipedia 東北本線 rev111496700: 「4月1日：尻内駅を八戸駅に改称」(1971); build/names.sqlite name entity_id=n_hachinohe lang=ja 행 1개	
+73	data/overrides/renames_hand.json	add	tohoku_2-012	K11	n_higashi_fukushima		ja.wikipedia 東北本線 rev111496700: 「6月1日：瀬上駅を東福島駅に改称」(1978); build/names.sqlite name entity_id=n_higashi_fukushima lang=ja 행 1개	
+74	data/overrides/renames_hand.json	add	tohoku_2-013	K11	n_takahata		ja.wikipedia 奥羽本線 rev111473148: 「3月16日：糠ノ目駅が高畠駅に…改称」(1991); build/names.sqlite name entity_id=n_takahata lang=ja 행 1개	
+75	data/overrides/renames_hand.json	add	tohoku_2-014	K11	n_owani_onsen		ja.wikipedia 奥羽本線 rev111473148: 「大鰐駅が大鰐温泉駅に改称」(1991); build/names.sqlite name entity_id=n_owani_onsen lang=ja 행 1개	
+76	data/overrides/renames_hand.json	add	tohoku_2-015	K11	n_tsukioka		ja.wikipedia 羽越本線 rev111580331: 「9月1日：天王新田駅が月岡駅に改称」(1950); build/names.sqlite name entity_id=n_tsukioka lang=ja 행 1개	
+77	data/overrides/renames_hand.json	set	kyushu_1-025	K11	(めがね橋 노드) ; (市役所 노드)		ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年…8月1日：…浜町アーケード停留場が開業」 / 浜町アーケード는 노리츠부시 대응표로 노드·group 결정	
+78	data/overrides/renames_hand.json	add	kanto_1-010	K12	n_honjo_azumabashi_toden		wiki 東京都電車 L901: 吾妻橋（吾妻橋二丁目→本所吾妻橋）; names.sqlite n_honjo_azumabashi_toden에는 옛 이름 행 없음	
+79	data/overrides/renames_hand.json	add	tohoku_1-015	K12	n_kawabe		data/imports/wiki 弘南鉄道黒石線 rev111125380 "1986年…4月1日 弘南川部駅を川部駅に…改称"; build/names.sqlite name n_kawabe 弘南川部(line_id NULL)	
+80	data/overrides/renames_hand.json	add	chubu_1-07	K14	n_hanno_nagaragawa		長良川鉄道越美南線 rev110660132 「美濃洲原駅（初代）を木尾駅（初代、現在の母野駅）に改称」(1956-12-20); N05 美濃洲原 越美南線 1950–1955 (母野 자리)	
+81	data/overrides/renames_hand.json	add	tohoku_1-001	K14	n_aizukogen_ozeguchi_aizu		data/imports/wiki 会津鉄道会津線 rev108995651 年表 "会津滝ノ原駅が会津高原駅に改称"(1986-10-09); 같은 문서 "会津高原駅が会津高原尾瀬口駅に改称"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 "会津高原(旧会津滝ノ原)"	
+82	data/overrides/renames_hand.json	add	tohoku_1-005	K26	n_ichinosekirokujizoson		data/imports/wiki 会津鉄道会津線 rev108995651 "臨時駅として六地蔵尊駅が開業（2009年8月23日・24日のみ営業）"	
+83	data/overrides/old_names_fix.json	set	chubu_1-22	K11	n_otomaru|粟田		北陸鉄道石川線 rev111054098 「粟田駅を乙丸駅に改称」(1963年4月以前); 같은 문서 「粟田駅（現在の乙丸駅）開業」(1935-03-02)	
+84	data/overrides/old_names_fix.json	set	chubu_1-29	K11	n_takao|淺川		中央本線 rev111456828 「浅川駅が高尾駅に改称」(1961-03-20); names.sqlite n_takao ja 淺川 source n05	
+85	data/overrides/old_names_fix.json	set	chubu_3-031	K11	n_kaiomaru|越ノ潟口		wiki 万葉線: 「越ノ潟口駅を移転し、海王丸駅に改称」(1990-04-01)	
+86	data/overrides/old_names_fix.json	set	chubu_3-039	K11	n_nishi_namerikawa|水橋口		wiki 富山地方鉄道本線: 「6月25日 西三日市駅を電鉄桜井駅に改称」; 「10月2日 水橋口駅を西滑川駅に改称」	
+87	data/overrides/old_names_fix.json	set	chugoku_shikoku_1-017	K11	n_ajinahigashi|地御前県病院前		위키 広島電鉄宮島線 rev 110659845 연표 「1969年10月1日：西広島駅を広電西広島駅に改称」「1972年3月1日：地御前県病院前駅を阿品駅に改称」「2001年11月1日：…阿品駅を阿品東駅に」; N05 宮島線 西広島 1950–1988, 阿品 1972–2000, 中央市場前 1965–1978	
+88	data/overrides/old_names_fix.json	set	chugoku_shikoku_1-019	K11	n_dentetsu_izumoshi|出雲今市		위키 一畑電車北松江線 rev 109550463 연표 1952·1957·1964·1970·2001·2002·2007년 항목	
+89	data/overrides/old_names_fix.json	set	chugoku_shikoku_1-021	K11	n_gomenmachi_tosaden_kotsu|後免町駅前		위키 とさでん交通後免線 rev 108744584 「1974年7月26日：後免町駅前停留場を移転し後免町停留場に改称」	
+90	data/overrides/old_names_fix.json	set	chugoku_shikoku_1-027	K11	n_saginoyuonsenmae|温泉前		위키 一畑電気鉄道広瀬線 rev 111534864 「1955年1月1日 - 温泉前駅を鷺湯温泉前駅に改称」「1946年 - 1952年 - …温泉前駅を0.2 km荒島寄りに移転」, 노선도 温泉前 6.8	
+91	data/overrides/old_names_fix.json	set	chugoku_shikoku_2-B10	K11	n_nagatoshi|正明市		wiki 山陰本線 111452828 연혁(例: 11月1日：正明市駅が長門市駅に改称); wiki 山陽本線 111054473 연혁(例: 2003年10月1日：小郡駅が新山口駅に改称); wiki 予讃線 111002174 연혁(例: 1994年12月3日：高瀬大坊駅をみの駅に改称)	
+92	data/overrides/old_names_fix.json	set	kanto_1-004	K11	n_kawarayu_onsen_old|川原湯		wiki 吾妻線 rev111452472: 12月1日 川原湯駅を川原湯温泉駅に…改称 (1991); wiki station 川原湯温泉駅 hist: 1991年12月1日 川原湯温泉駅に改称	
+93	data/overrides/old_names_fix.json	set	kanto_1-008	K11	n_todenzoshigaya|雑司ヶ谷		names.sqlite n_todenzoshigaya ja 雑司ヶ谷 valid_to [2007-XX-XX..2008-XX-XX]; 都電雑司ヶ谷停留場 개칭은 東京メトロ副都心線 개업(2008-06-14)과 같은 날 (확인 필요: 위키 캐시에 정류장 문서 없음)	
+94	data/overrides/old_names_fix.json	set	kanto_1-013	K11	n_keisei_chiba|国鉄千葉駅前		wiki station 京成千葉駅 hist: 1987年4月1日 駅名を国鉄千葉駅前駅から京成千葉駅に改称	
+95	data/overrides/old_names_fix.json	set	kanto_1-015	K11	n_higashi_ogu_sanchome|下尾久 ; n_higashi_ogu_sanchome|尾久町一丁目		wiki station 東尾久三丁目 hist: 1942-02-01 …同時に尾久町一丁目停留場に改称; 같은 hist: 1965-09-15 住居表示実施に伴い東尾久三丁目停留場に改称	
+96	data/overrides/old_names_fix.json	set	kanto_1-016	K11	n_akagi_jomo|新大間々 ; n_akagi_tobu|新大間々		wiki station 赤城駅 hist: 1958年11月1日 …赤城駅と改称; names.sqlite n_akagi_jomo 新大間々 valid_to [1952-XX-XX..1953-XX-XX]	
+97	data/overrides/old_names_fix.json	set	kanto_2-004	K11	n_kashima_soccer_stadium_kashima_rinkai|北鹿島		大洗鹿島線 wiki 年表 1994年3月12日 改称(私鉄車両編成表 '94); data/overrides/renames_n05.json n_kashima_soccer_stadium_kashima_rinkai 北鹿島 [1993..1994]	
+98	data/overrides/old_names_fix.json	set	kanto_2-009	K11	n_haneda_airport_terminal_12|羽田空港国内線ターミナル		N05 空港線 羽田空港 1998–2009, 羽田空港国内線ターミナル 2010–2019, 第1・第2 2010–(겹침); 京急空港線 wiki 노선도·年表(2010-10-21 第3ターミナル(国際線) 개업, 2020-03-14 개칭)	
+99	data/overrides/old_names_fix.json	set	kanto_2-010	K11	n_haneda_airport_terminal_3_keikyu|羽田空港国際線ターミナル		N05 羽田空港国際線ターミナル 2010–2019, 第3ターミナル 2020–	
+100	data/overrides/old_names_fix.json	set	kanto_2-011	K11	n_anamori_inari|稲荷橋		京急空港線 wiki 年表 1956年4月20日 稲荷橋駅が穴守稲荷駅に改称	
+101	data/overrides/old_names_fix.json	set	kanto_2-017	K11	n_funabashikeibajo|船橋競馬場前 ; n_funabashikeibajo|センター競馬場前		京成本線 wiki 年表 1950年7月5日 京成花輪駅を船橋競馬場駅に改称 / 1963年12月1日 / 1987年4月1日	
+102	data/overrides/old_names_fix.json	set	kanto_2-050	K11	n_horinouchi|横須賀堀ノ内 ; n_horinouchi|横須賀堀内		京急本線 wiki 年表 1961年9月1日 ... 横須賀堀内駅が堀ノ内駅に改称	
+103	data/overrides/old_names_fix.json	set	kinki_2-014	K11	n_wakayama_wakayama|東和歌山		data/imports/wiki 和歌山電鐵貴志川線 rev110526764: 「1968年3月1日：東和歌山駅を和歌山駅に改称」; data/imports/wiki 紀勢本線 rev111257602: 「2月1日：和歌山駅（初代）が紀和駅に改称」「3月1日：東和歌山駅が和歌山駅（2代目）に改称」	
+104	data/overrides/old_names_fix.json	set	kinki_2-019	K11	n_omiya_hankyu|京阪京都		data/imports/wiki 阪急京都本線 rev110983908: 「京阪京都駅を京阪神京都駅」(1943-10-01), 「京阪神京都駅を大宮駅と改称」(1963-06-17)	
+105	data/overrides/old_names_fix.json	set	kinki_2-020	K11	n_aikawa_hankyu|吹田		data/imports/wiki 阪急京都本線 rev110983908: 「吹田町駅を京阪吹田駅に改称」(1940-06-15), 「吹田東口駅を相川駅と改称」(1954-05-01)	
+106	data/overrides/old_names_fix.json	set	kinki_2-025	K11	n_kintetsu_yatomi|関急弥富 ; n_kintetsu_yatomi|近畿日本弥富		data/imports/wiki 近鉄名古屋線 rev111029029: 「関急弥富駅を近畿日本弥富駅に」(1944-06-01), 「近畿日本弥富駅を近鉄弥富駅に」(1970-03-01); 1회차 kinki_3-015 미해결	
+107	data/overrides/old_names_fix.json	set	kinki_3-001	K11	n_tozanguchi|生石口		ja.wikipedia 野上電気鉄道 rev111283740 「1958年6月12日 - 生石口駅を登山口駅に改称」	
+108	data/overrides/old_names_fix.json	set	kinki_3-005	K11	n_kintetsu_yao_old|大軌八尾		ja.wikipedia 近鉄大阪線 rev111364868 「関急八尾駅を近畿日本八尾駅に…改称」(1944-06-01)	
+109	data/overrides/old_names_fix.json	set	kinki_3-006	K11	n_kintetsu_shimoda|下田 ; n_kintetsu_shimoda|近畿日本下田		ja.wikipedia 近鉄大阪線 rev111364868 「下田駅を近畿日本下田駅に改称」(1944-06-01)	
+110	data/overrides/old_names_fix.json	set	kinki_3-007	K11	n_sakakibara_onsenguchi|佐田		ja.wikipedia 近鉄大阪線 「1965年3月18日：佐田駅を榊原温泉口駅に改称」	
+111	data/overrides/old_names_fix.json	set	kinki_3-008	K11	n_aoyamacho|阿保		ja.wikipedia 近鉄大阪線 「3月1日：…阿保駅を青山町駅に改称」(1970)	
+112	data/overrides/old_names_fix.json	set	kinki_3-009	K11	n_osaka_uehommachi|上本町		ja.wikipedia 近鉄大阪線 「3月20日：上本町駅を大阪上本町駅に改称」(2009)	
+113	data/overrides/old_names_fix.json	set	kinki_3-012	K11	n_shibahara_handai_mae|柴原		ja.wikipedia 大阪モノレール本線 「柴原駅を柴原阪大前駅に改称」(2019-10-01)	
+114	data/overrides/old_names_fix.json	set	kinki_3-013	K11	n_keisan_kagaku_center|ポートアイランド南		ja.wikipedia 神戸新交通ポートアイランド線 rev110789768 「京コンピュータ前駅を計算科学センター駅に改称」(2021-06-19)	
+115	data/overrides/old_names_fix.json	set	kinki_3-014	K11	n_minatojima|市民病院前		ja.wikipedia 神戸新交通ポートアイランド線 「2011年7月1日：市民病院前駅をみなとじま駅に…改称」	
+116	data/overrides/old_names_fix.json	set	kinki_3-016	K11	n_hattori_tenjin|服部		ja.wikipedia 阪急宝塚本線 「1965年7月1日：能勢口駅を川西能勢口駅と改称」 등	
+117	data/overrides/old_names_fix.json	set	kinki_3-017	K11	n_minami_senri|新千里山		ja.wikipedia 阪急千里線 rev109783576 「新千里山駅を南千里駅に改称」(1967-03-01)	
+118	data/overrides/old_names_fix.json	set	kinki_3-018	K11	n_kadancho|女子学院前		ja.wikipedia 阪急千里線 「1951年4月1日：女子学院前駅を花壇町駅に改称」	
+119	data/overrides/old_names_fix.json	set	kinki_3-019	K11	n_sanyo_uozumi|電鉄魚住		ja.wikipedia 山陽電気鉄道本線 rev111474989 「1961年10月1日：魚住駅を電鉄魚住駅に改称」	
+120	data/overrides/old_names_fix.json	set	kinki_3-020	K11	n_harimacho|本荘		ja.wikipedia 山陽電気鉄道本線 「電鉄須磨駅…を、それぞれ「山陽○○駅」に改称」(1991-04-07)	
+121	data/overrides/old_names_fix.json	set	kinki_3-021	K11	n_yunoyama_onsen|湯ノ山		ja.wikipedia 近鉄湯の山線 rev108899897 「1970年8月1日：湯の山駅を湯の山温泉駅に改称」	
+122	data/overrides/old_names_fix.json	set	kinki_3-029	K11	n_cable_enryakuji|叡山中堂		ja.wikipedia 比叡山鉄道線 「叡山中堂駅をケーブル延暦寺駅に改称」(1974-01-15)	
+123	data/overrides/old_names_fix.json	set	kinki_3-030	K11	n_rokko_cable_shita|土橋		ja.wikipedia 神戸六甲鉄道六甲ケーブル線 rev111408407 「1973年2月1日：土橋駅を六甲ケーブル下駅と改称」	
+124	data/overrides/old_names_fix.json	set	kinki_3-033	K11	n_arimaguchi|唐櫃 ; n_arimaguchi|有馬温泉口		ja.wikipedia 神戸電鉄三田線 rev110743347 沿革 각 행	
+125	data/overrides/old_names_fix.json	set	kinki_3-036	K11	n_misato_sangi|宇賀渓口		ja.wikipedia 三岐鉄道三岐線 沿革 「6月1日 三里駅を宇賀渓口駅に改称」(1968) 등	
+126	data/overrides/old_names_fix.json	set	kinki_3-045	K11	n_wakayama|東和歌山		ja.wikipedia 和歌山線 「3月1日：東和歌山駅が和歌山駅（2代目）に改称」(1968)	
+127	data/overrides/old_names_fix.json	set	kinki_3-061	K11	n_shima_isobe|迫間		ja.wikipedia 近鉄志摩線 rev111151681 「志摩磯部駅を上之郷駅に、迫間駅を志摩磯部駅に改称」(1970-03-01)	
+128	data/overrides/old_names_fix.json	set	kyushu_2-01	K11	n_gionmachi|馬場新町		西鉄福岡市内線 rev110542419: （旧）博多駅前を馬場新町と改称; N05 EB03_22431027 博多駅前→馬場新町 (1963까지); data/overrides/n05_fix.json 循環線 旧線 note: 1964-07-01 전 博多駅前(旧)	
+129	data/overrides/old_names_fix.json	set	kyushu_2-09	K11	n_stadium_city_south|宝町		長崎電気軌道本線 rev110993491: 2024年10月1日 … 銭座町停留場をスタジアムシティノース停留場へ; N05 EB03_22415013 井樋の口 1950-1965 / 銭座町 1966-; 노리츠부시: スタジアムシティノース（旧銭座町）	
+130	data/overrides/old_names_fix.json	set	kyushu_2-22	K11	n_takashimaguchi|今福鷹島口		松浦鉄道西九州線 rev110495488: 1994年10月3日：本山駅が開業、今福鷹島口駅を鷹島口駅に、大学前駅を大学駅に改称	
+131	data/overrides/old_names_fix.json	set	kyushu_2-24	K11	n_sanroku|小倉公園		皿倉登山鉄道帆柱ケーブル線 rev111580630: 1957年11月12日：尾倉公園 - 帆柱山間が開業; 같은 문서: 1985年4月13日：尾倉公園駅を山麓駅に、帆柱山駅を山上駅に改称; N05 EB03_22435001 小倉公園 1957-1984 (N05 오기로 보임)	
+132	data/overrides/old_names_fix.json	set	tohoku_1-020	K11	n_seikogakuimmae|本社前		data/imports/wiki 福島交通飯坂東線 rev109650637 "1962年…7月12日 … 車庫前を聖光学院前に改称"	
+133	data/overrides/old_names_fix.json	set	tohoku_1-028	K11	n_hachirogata_akita_chuo|一日市		data/imports/wiki 秋田中央交通線 rev108151830 "1965年…6月1日 - 一日市駅を八郎潟駅に改称"; data/imports/wiki 会津鉄道会津線 rev108995651 1987-07-16 개칭 문장; 그 밖 각 노선 문서 年表	
+134	data/overrides/old_names_fix.json	set	tohoku_1-029	K11	n_higashihachimantai|屋敷台		data/imports/wiki 松尾鉱業鉄道 rev107876422 "1962年…1月1日 屋敷台駅を東八幡平駅に改称"	
+135	data/overrides/old_names_fix.json	set	chubu_1-12	K12	n_shin_fukuroi|杜袋井		N05 Station2 杜袋井 駿遠線 1950–1955 / 袋井駅前 秋葉線 1952–1955; 静岡鉄道秋葉線 rev110863172 「笠西村（後、袋井駅前→新袋井）」	
+136	data/overrides/old_names_fix.json	set	chubu_1-27	K12	n_nagoyajo_nagoya_tram|市役所		名古屋市電行幸線 rev108191698 「本町御門停留場（後の名古屋城）」, 노선도 終点 名古屋城電停; N05 名古屋城 行幸線·東片端線 1950–1970 / 市役所 2号線名城線 1965–2022	
+137	data/overrides/old_names_fix.json	set	chubu_3-036	K12	n_shinmachiguchi|女学校前		wiki 富山地方鉄道射水線: 「新町口駅を新設する」(1955-10-14)	
+138	data/overrides/old_names_fix.json	set	chugoku_shikoku_2-021	K12	n_ujina|宇品終点		N05 EB03_21448020 (広島電鉄 宇品線) 宇品終点 1951–1959, 宇品 1960–2001, 広島港（宇品） 2002–; names: n_ujina ja 宇品終点 source n05	
+139	data/overrides/old_names_fix.json	set	kanto_1-007	K12	n_honjo_azumabashi|吾妻橋二丁目		names.sqlite n_honjo_azumabashi ja 吾妻橋二丁目 source n05 valid_to [1959-XX-XX..1960-XX-XX]; route_stop r_asakusa_line seq18 valid_from 1960-12-04 (다른 계통 없음)	
+140	data/overrides/old_names_fix.json	set	kanto_3-02	K12	n_amusement_park|武蔵境 ; n_amusement_park|多摩湖ホテル前 ; n_amusement_park|西武遊園地		render2/r_yamaguchisenotogi_line.txt 오늘 화면 「● 武蔵境[n_amusement_park]」; data/overrides/renames_n05.json n_amusement_park 둘째 행 「武蔵境」; wiki 西武山口線 年表 「多摩湖ホテル前駅を西武遊園地駅に改称」(1963-07-01), 「西武遊園地駅を遊園地前駅に改称」(197	
+141	data/overrides/old_names_fix.json	set	tohoku_1-015	K12	n_kawabe|弘南川部		data/imports/wiki 弘南鉄道黒石線 rev111125380 "1986年…4月1日 弘南川部駅を川部駅に…改称"; build/names.sqlite name n_kawabe 弘南川部(line_id NULL)	
+142	data/overrides/old_names_fix.json	set	chubu_1-08	K14	n_yunohora_onsen_guchi|板取口 ; n_yunohora_onsen_guchi|美濃立花		長良川鉄道越美南線 rev110660132 「板取口駅を美濃立花駅に…改称」(1956-12-20); docs/DESIGN.md §14.2 이름 조회 순서: 노선 고유 > 기본+날짜	
+143	data/overrides/old_names_fix.json	set	kyushu_1-020	K14	n_tagawa_ita|伊田		build/names.sqlite n_tagawa_ita ja 伊田 line_id=l_ita_line valid 없음; render2/r_itoda_line.txt 끝 역 「後藤寺」; 1차 kyushu_1-051과 같음(미반영)	
+144	data/overrides/old_names_fix.json	set	kyushu_2-30	K14	n_shimabarako|島原外港		島原鉄道線 rev111517354: 終点 = 島原港駅 / 島原外港駅（現・島原港駅）; names.sqlite n_shimabarako ja 島原外港 line_id=l_shimabara_railway_line valid 없음; redesign.md R2 대표 사례: 島原港 오늘 이름 오류 (1회차 지적이 남음)	
+145	data/overrides/old_names_fix.json	set	chugoku_shikoku_1-036	K17	n_minamimachi_6_chome|皆実町3丁目		build/names.sqlite ja 행 kana NULL; docs/redesign.md §3.0 「옛 이름 읽기 약 576건 2차 조사」	
+146	data/overrides/old_names_fix.json	set	chugoku_shikoku_2-023	K17	n_otemachi_ekimae_iyotetsu|江戸町 ; n_otemachi_ekimae_iyotetsu|江戸町駅前		wiki 伊予鉄道大手町線 108563046 BS: 04 大手町駅前停留場; names: n_otemachi_ekimae_iyotetsu ja 江戸町駅前 valid_from=valid_to=[1952-XX-XX..1953-XX-XX]; 같은 노선 JR松山駅前은 hand로 고쳐져 있음(노리츠부시 松山駅前)	
+147	data/overrides/old_names_fix.json	set	chubu_2-23	K25	n_teradomari_shindo|寺泊新道		ja.wikipedia 越後交通長岡線 rev108108259 「同時に寺泊新道駅が寺泊駅（2代目）に改称」	
+148	data/overrides/old_names_fix.json	set	kanto_3-11	K25	n_shin_tokorozawa_shinjuku_line_seibu|所沢御幸町 ; n_shin_tokorozawa_shinjuku_line_seibu|北所沢		wiki 西武新宿線 「所沢御幸町駅を1.4km北へ移築し、北所沢駅を開業」(1951-06-11); build/names.sqlite n_shin_tokorozawa_shinjuku_line_seibu ja 所沢御幸町 1940-12-01..1959-02-01 / 北所沢 None..[1958..1959]	
+149	data/overrides/stop_dates.json	set	chubu_1-01	K18	r_gamagori_line|n_mikawa_toba		ja.wikipedia 名鉄蒲郡線 rev110580493 「三河吉田駅 - 三河鳥羽駅間が開業」(1929-08-11)	
+150	data/overrides/stop_dates.json	set	chubu_1-05	K18	n_nishi_kani ; n_aigi ; n_katabira		名鉄広見線 rev110535786 「愛岐駅・帷子駅・春里駅を統合し…西可児駅を設置」(1969-03-16)	
+151	data/overrides/stop_dates.json	set	chubu_1-10	K18	r_azumada_main_line|n_ekimae_odori		豊橋鉄道東田本線 rev111617936 「新線に駅大通（後の名豊ビル前）停留場…開業」(1950-08-26) / 같은 자리인지 확인. 다른 자리면 별도 노드	
+152	data/overrides/stop_dates.json	set	chubu_1-11	K18	n_shirokaizu ; n_shiminbyoinmae_toyohashi		豊橋鉄道東田本線 rev111617936 「駅前 - 市民病院前間を休止」(1969-05-15)	
+153	data/overrides/stop_dates.json	set	chubu_1-15	K18	n_suwama		京福電気鉄道永平寺線 rev108719970 「御簾ノ尾駅・友末駅・諏訪間駅廃止認可」(1930-07-05)	
+154	data/overrides/stop_dates.json	confirm	chubu_2-33	K18			확인 필요: 官報·私鉄要覧으로 1952 여객 재개 근거, 없으면 정차 제외 / ja.wikipedia えちぜん鉄道勝山永平寺線 rev111511386 「大野口駅旅客営業廃止」(1918)	
+155	data/overrides/stop_dates.json	confirm	chubu_3-040	K18			확인 필요: 폐역일 자료 / render2/r_tobu_line.txt 東堤町 「폐역?」	
+156	data/overrides/stop_dates.json	set	chubu_3-041	K18	n_shimokui ; (越中中島) ; (城川原) ; (蓮町) ; (萩浦小学校前) ; (東岩瀬) ; (岩瀬浜)		dossier edge_life e_005234 「2006-03-01~2006-04-29 suspended」 / 괄호 이름은 노드 ID로	
+157	data/overrides/stop_dates.json	confirm	chubu_3-047	K18			확인 필요: 1950 뒤 정차 근거(없으면 열람 전용·범위) / wiki 北陸鉄道松金線 rev109946449 「中野々市駅 -1946以降」	
+158	data/overrides/stop_dates.json	set	chugoku_shikoku_1-016	K18	r_miyajima_line|n_hatsukaichishiyakushomae		위키 広島電鉄宮島線 rev 110659845 「1984年（昭和59年）11月1日：平良駅開業」	
+159	data/overrides/stop_dates.json	confirm	chugoku_shikoku_1-034	K18			확인 필요: 역 문서·사업자 자료로 개업일 확정 / 위키 広島電鉄宮島線 rev 110659845 「1964年8月13日 東高須駅開業」「1960年8月11日：井口病院前駅開業」	
+160	data/overrides/stop_dates.json	set	chugoku_shikoku_1-035	K18	n_munakatajinjamae		위키 日ノ丸自動車法勝寺電鉄線 rev 109457516 「1952年（昭和27年）- 1966年（昭和41年）頃：宗形神社前駅廃止」	
+161	data/overrides/stop_dates.json	set	chugoku_shikoku_2-002	K18	r_nagao_line|n_kumommyo		wiki 長尾線 111480106: 1915 井戸駅（現在の公文明駅）を井戸川駅に改称 / 이름 井戸川 valid_to 1951-03-01	
+162	data/overrides/stop_dates.json	set	chugoku_shikoku_2-008	K18	r_sambashi_line|n_shioebashikitazume		wiki 桟橋線 108470759: 1928-08-10 はりまや橋 - 潮江橋北詰間が開業。堀詰 - 潮江橋北詰間廃止	
+163	data/overrides/stop_dates.json	set	chugoku_shikoku_2-020	K18	r_ujina_line|n_ozuguchi		wiki 宇品線 111320510: 1966年12月20日 …大須口駅が大須口信号場に変更	
+164	data/overrides/stop_dates.json	set	chugoku_shikoku_2-027	K18	n_haraojima ; (立久恵線 桜) ; (立久恵線 向名)		wiki 西大寺鉄道 109417111: 1933-09-01 藤原 - 森下間に岡山競馬場前駅が開設 / 1923-07-01 原尾島停車場を廃止	
+165	data/overrides/stop_dates.json	set	chugoku_shikoku_2-B06	K18	r_sanin_main_line|n_shirousagi_nagai		wiki 山陰本線 111452828: 7月6日：湖山駅 - 宝木駅間に白兎仮停車場が開業 (1925年)	
+166	data/overrides/stop_dates.json	set	chugoku_shikoku_2-B07	K18	r_sanin_main_line|n_kiyomizudera		wiki 山陰本線: 1915年 3月31日：米子駅 - 安来駅間に清水寺仮停車場が開業	
+167	data/overrides/stop_dates.json	confirm	hokkaido_1-011	K18			확인 필요: 川向 1966 폐지 정확한 날 / 위키 名寄本線 rev109306648 노선도 「(?) 川向駅 -1966」	
+168	data/overrides/stop_dates.json	set	kanto_1-027	K18	r_hokuso_line|n_shin_kamagaya_hokuso		wiki station 新鎌ケ谷駅 hist: 1979年3月9日 …新鎌ヶ谷信号場設置。駅格上げを前提とした信号場	
+169	data/overrides/stop_dates.json	set	kanto_3-21	K18	n_higashikodaira		wiki 西武新宿線 「東小平駅（…1954年10月10日小平駅に統合廃止）」	
+170	data/overrides/stop_dates.json	confirm	kinki_1-013	K18			확인 필요: 清水橋 1944-07-01 출처 / ja.wikipedia 四日市あすなろう鉄道八王子線 rev108178557 「この年までに…東日野駅…清水橋駅休止」「休止中の東日野駅・清水橋駅廃止」	
+171	data/overrides/stop_dates.json	set	kinki_2-004	K18	r_nankai_main_line|n_kishinosato_tamade ; r_koya_line|n_kishinosato_tamade		data/imports/wiki 南海本線 rev111120385 노선도: 岸里玉出 3.9, 「玉出駅 4.1 -1993」 / old_names 岸ノ里 valid_to 1993-04-18	
+172	data/overrides/stop_dates.json	set	kinki_2-048	K18	n_kamiurae ; (大仁西町) ; (下三番) ; (豊崎東通)		data/imports/n05 N05-24_Station2 北大阪線 上浦江 b 1950 e 999 / 湊川線 湊川公園도 같은 꼴	
+173	data/overrides/stop_dates.json	set	kinki_3-035	K18	n_sangi_asake_signal		ja.wikipedia 三岐鉄道三岐線 rev111510770 「1950年10月30日 富田 - 大矢知間に三岐朝明駅開業」「三岐朝明駅を廃止、三岐朝明信号場に変更」(1989-04-01) / 이름 三岐朝明(さんぎあさけ)·ko·en, 폐역으로 공개	
+174	data/overrides/stop_dates.json	set	kinki_3-040	K18	n_suita_hankyu		ja.wikipedia 阪急千里線 rev109783576 「（旧）吹田駅…1964年4月10日市役所前駅に統合され、市役所前駅は吹田駅に改称」 / old_names 市役所前 ~1964-04-10	
+175	data/overrides/stop_dates.json	set	kyushu_1-011	K18	n_nishikarashimacho		data/imports/wiki/station.json 西辛島町駅 「1955年…0.1km終点側に移設し復活」	
+176	data/overrides/stop_dates.json	set	kyushu_1-037	K18	n_tenraiji ; (白木海水浴場)		n05 天籟寺·白木海水浴場·片野新町·上高江·下高江·田町 1950–999 / 北方線 片野新町·川尻線 3역도 같은 규칙. 생성기 고치면 불필요	
+177	data/overrides/stop_dates.json	set	kyushu_1-038	K18	(KRT 3역)		data/overrides/official_lines.json KRT why 「마지막 운행 1976-01-18 뒤는 운휴」	
+178	data/overrides/stop_dates.json	set	kyushu_2-04	K18	n_esabaru		宮崎交通線 rev110279373: 1949年（昭和24年）1月20日 江佐原駅開業	
+179	data/overrides/stop_dates.json	set	kyushu_2-11	K18	n_chitosemachi_nagasaki_tram ; (昭和町通)		長崎電気軌道本線 rev110993491: 1998年5月7日：昭和町通停留場を休止し、千歳町停留場を設置 / 昭和町通 1950은 N05(1960~)와 대조 확인	
+180	data/overrides/stop_dates.json	set	kyushu_2-12	K18	n_morimachi		長崎電気軌道本線 rev110993491: 1944年1月 … 竹の久保通・本社前・八千代町・五島町 … 各停留場が廃止 / 1950 전 기간은 범위 밖	
+181	data/overrides/stop_dates.json	set	kyushu_2-17	K18	n_tayoshi		日南線 rev111131181: 1963年5月8日 … 【駅新設】田吉（2代）	
+182	data/overrides/stop_dates.json	confirm	kyushu_2-35	K18			확인 필요: 封戸駅 개업일(私鉄要覧) / N05 宇佐参宮線 封戸 N05_005b 1952 (다른 역은 1950)	
+183	data/overrides/stop_dates.json	set	kyushu_2-38	K18	n_nishimondori		N05 吉塚線 西門通 EB03_22433004 N05_005b 1950, 끝 999(모름)	
+184	data/overrides/stop_dates.json	set	kyushu_2-41	K18	n_kamizaki		高千穂鉄道高千穂線 rev111478046: 1957年（昭和32年）2月1日：細見・吐合・上崎・亀ヶ崎・吾味の各駅を新設	
+185	data/overrides/stop_dates.json	set	kyushu_2-42	K18	r_tagawa_line|n_sakiyama		平成筑豊鉄道田川線 rev110948388: 1954年4月10日：崎山信号場、内田信号場を開設	
+186	data/overrides/stop_dates.json	set	kyushu_2-43	K18	n_kawamura_kumagawa		くま川鉄道湯前線 rev111331037: 1953年（昭和28年）7月15日：川村駅・木上駅が開業	
+187	data/overrides/stop_dates.json	set	tohoku_1-006	K18	n_aizu_sanson_dojo		data/imports/wiki 会津鉄道会津線 rev108995651 "2001年…7月18日：会津山村道場駅が開業"	
+188	data/overrides/stop_dates.json	set	tohoku_1-017	K18	n_sakuramizu		data/imports/wiki 福島交通飯坂線 rev109896933 "1951年…3月30日：前谷地駅廃止" / 이름 前谷地 ~1951-03-30	
+189	data/overrides/stop_dates.json	set	tohoku_2-017	K18	r_ou_main_line|n_osawa_ou_main		ja.wikipedia 奥羽本線 rev111473148: 「12月1日：…大沢駅が通年でそれぞれ全列車通過駅となる」(2024)	
+190	data/overrides/stop_dates.json	set	kinki_2-001	K19	r_kyoto_line|n_kintetsu_tambabashi		data/imports/wiki 近鉄京都線 rev110958649: 「伏見駅 - 堀内駅 - 桃山御陵前駅間廃止」(1945-12-21) / 이름 丹波橋 1967-03-29~1968-12-20, 近畿日本丹波橋 ~1970-03-01은 old_names	
+191	data/overrides/stop_dates.json	set	chugoku_shikoku_1-015	K26	r_hakubi_line|n_sakazu		위키 伯備線 rev 111531409 「1954年4月1日：倉敷駅 - 清音駅間に酒津仮停車場が開業」「1962年6月1日：酒津仮停車場が廃止」「酒津公園観桜用の臨時駅」	
+192	data/overrides/stop_dates.json	set	chugoku_shikoku_1-025	K26	n_akihamasaki ; n_karugahama		위키 呉線 rev 111046476 「1926年7月21日：…安芸浜崎仮停車場が開業」「1928年7月7日：狩留賀浜仮停車場が開業」「1967年8月1日：狩留賀浜仮停車場・安芸浜崎仮停車場廃止」 / 狩留賀浜 노드 ID 확인	
+193	data/overrides/stop_dates.json	set	chugoku_shikoku_1-026	K26	n_kanaiso		위키 牟岐線 rev 111002477 「1940年9月1日 金磯駅を仮停車場に変更」「1962年7月18日：…金磯駅廃止」	
+194	data/overrides/stop_dates.json	set	chugoku_shikoku_2-006	K26	r_onoda_line|n_minami_onoda		wiki 小野田線 110993965: 1947-10-01 小野田港駅が0.5km南に移転し、旧駅は小野田港北口乗降場とする	
+195	data/overrides/stop_dates.json	set	chugoku_shikoku_2-B01	K26	n_kirihamakaisuiyokujo ; r_sanin_main_line|n_kirihamabichi		wiki 山陰本線 111452828: 1986年8月1日 切浜海水浴場駅が廃止	
+196	data/overrides/stop_dates.json	set	kyushu_2-19	K26	n_shingakuji		日豊本線 rev111420360: 1908年7月28日：心岳寺仮乗降場が開業	
+197	data/overrides/stop_dates.json	set	tohoku_1-022	K26	n_yoshiokakaitei ; n_tappikaitei		data/imports/wiki 海峡線 rev111124231 주석 "2006年8月28日 - 2014年3月14日は臨時駅" / 2014-03-15 폐지까지는 정차 없음(休止). 吉岡海底 끝 03-18 vs 08-28 확인	
+198	data/overrides/stop_dates.json	set	tohoku_1-031	K26	n_mukai_noshiro ; (横磯) ; (風合瀬)		data/imports/wiki 五能線 rev111472962 "2月：向能代仮乗降場を新設" "4月1日{要検証範囲}：横磯・風合瀬の各仮乗降場を新設" / 위키 요검증 날짜는 범위로	
+199	data/overrides/stop_dates.json	set	tohoku_2-018	K26	n_kuromatagawa		ja.wikipedia 只見線 rev111454822: 「12月10日 : 黒又川仮乗降場（入広瀬駅 - 柿ノ木仮乗降場間）を新設」(1954)	
+200	data/overrides/stop_dates.json	confirm	kinki_3-043	K28			확인 필요: 1943 화물역 변경과의 관계 / ja.wikipedia 山陽電気鉄道本線 「1952年8月21日：大開通停留場廃止」	
+201	data/overrides/stop_dates.json	confirm	chubu_3-037	K35			확인 필요: 新線 위 熊ノ平 여객 취급 여부(1963-09-30~1966-02-01) / wiki 信越本線 rev111451465: 「2月1日：熊ノ平駅が信号場に変更」(1966)	
+202	data/overrides/stop_dates.json	set	kinki_3-039	K35	r_yamate_line|(三宮) ; r_yamate_line|(新長田) ; r_yamate_line|n_kamisawa_kobe_city		ja.wikipedia 神戸市営地下鉄西神・山手線 「三宮駅・上沢駅・新長田駅は通過」「3月31日：上沢駅営業再開」 / 휴업 시작일 확인	
+203	data/overrides/moved.json	add	kyushu_1-023	K03		[{"old":"(再春医療センター前·御代志 옛 노드)","new":"n_saishun_iryo_center_mae","date":"2022-10-10","note":"km 바뀐 이전"}]	render2/r_kikuchi_line.txt 熊本高専前 「└ 분기 熊本電気鉄道菊池線 다음 再春医療センター前 … (끝남 ~2022-10-10)」 / compile: 겹치는 기간 없는 continue 제외	
+204	data/overrides/moved.json	add	kinki_2-029	K25		{"old":"n_osaka_ekimae","new":"n_osaka_ekimae_osaka_city","date":"1964-06-20","note":"大阪駅前 정류장 이전(N05 大阪駅前【旧】)"}	data/imports/n05/lines.json 南北線 御堂筋支線: 「大阪駅前【旧】」; 1회차 kinki_4-028 미해결	
+205	data/overrides/moved.json	add	chubu_1-02	K25		[{"old":"n_kodomonokuni_meitetsu_old(새 ID, 洲崎 2代 자리)","new":"n_kodomonokuni_meitetsu","date":"1974-10-XX","note":"洲崎(2代)→こどもの国 재이전. 옛 km 확인 뒤"}]	名鉄蒲郡線 rev110580493 「1974年10月…洲崎駅を再び移設」	
+206	data/overrides/moved.json	add	chubu_3-035	K25		[{"old":"n_owari_seto_old(새 ID)","new":"n_owari_seto","date":"2001-XX-XX","note":"尾張瀬戸駅 移転(20.5→20.6 km)"}]	wiki 名鉄瀬戸線 rev110713307 「尾張瀬戸駅 (I) -2002」「印場駅 (I) -1944休、1969廃 12.5」 / 印場(I)는 1944 휴지라 1950 전 정차 — 행을 지우거나 (旧) 노드	
+207	data/overrides/moved.json	add	chubu_3-044	K25		[{"old":"n_tokoname_old(새 ID)","new":"n_tokoname","date":"2002-XX-XX","note":"常滑駅 고가화 이전 29.5→29.3 km. 날짜 확인"}]	wiki 名鉄常滑線 rev109908654 노선도 常滑 29.5	
+208	data/overrides/moved.json	add	chubu_3-046	K25		[{"old":"n_irinaka_yagoto_old(새 ID)","new":"n_irinaka_yagoto","date":"1957-05-14","note":"山中町–半僧坊前 궤도 이설"}]	wiki 名古屋市電八事線: 「山中町・半僧坊前間の軌道移設」(1957-05-14) / 옛 선로 relocate 행은 events_fix	
+209	data/overrides/moved.json	add	chugoku_shikoku_1-023	K25		[{"old":"n_hori_boseki_old(새 ID, 18.7 km)","new":"n_hori_boseki","date":"1958-03-20","note":"堀駅 移転 18.7→18.8 km"}]	위키 防石鉄道 rev 111183413 노선도 「exBHF|18.7|堀駅|(I) -1958」「exKBHFe|18.8|堀駅|(II) 1958-」, 연표 「1958年3月20日 堀駅改築により営業キロを0.1…」	
+210	data/overrides/moved.json	add	hokkaido_1-006	K25		[{"old":"n_naebo_old(새 ID, 288.5)","new":"n_naebo","date":"2018-11-17","note":"苗穂駅 札幌방 300 m 이전 288.5→288.2"},{"old":"n_higashioiwake_old(새 ID)","new":"n_higashioiwake","date":"1981-06-01","note":"東追分 追分방 300 m 이전·改キロ"}]	위키 函館本線 rev111583591 노선도 「288.2 苗穂駅 2018-」「288.5 苗穂駅」 / 나머지 2쌍은 지적 원문, 千歳線 옛 경로 起点·苗穂駅前 환승은 옛 자리	
+211	data/overrides/moved.json	confirm	kanto_1-023	K25			확인 필요: 1958 전 萩山–小平 영업キロ / wiki station 萩山駅 hist: 1958年9月16日 現在地に移転	
+212	data/overrides/moved.json	confirm	kanto_2-015	K25			확인 필요: 두 옛 역 km(위키)·통합일 / 京急本線 wiki 111490311 年表 1975-08-27, 1976-10-15	
+213	data/overrides/moved.json	add	kanto_2-033	K25		[{"old":"n_shidenkawasaki_old(새 ID)","new":"n_shidenkawasaki","date":"1950-08-18","note":"市電川崎 0.110 km 이설"}]	川崎市電 wiki 109289490 年表 1950年8月18日 市電川崎を0.110km移設	
+214	data/overrides/moved.json	confirm	kanto_2-061	K25			확인 필요: 옛 자리 km·이전일(1955년경) / 京急本線 wiki 111490311 年表 1947年3月1日 湘南富岡駅が移転の上で再開業	
+215	data/overrides/moved.json	add	kanto_3-01	K25		[{"old":"n_keihin_zushi_old(새 ID)","new":"n_zushihayama","date":"1985-03-02","note":"京浜逗子·逗子海岸 통합 新逗子"}]	data/imports/wiki 京急逗子線 「京浜逗子駅と逗子海岸駅を統合し、中間地点に新逗子駅を開設。0.2 km短縮」 / 逗子海岸 노드·京浜逗子–逗子海岸 칸(6.1 km 축)은 events_fix	
+216	data/overrides/moved.json	confirm	kanto_3-18	K25			확인 필요: 위키 萩山駅·西武 자료로 이동 거리 / wiki 西武多摩湖線 「萩山駅の配線変更、多摩湖駅方に0.3 km移設」(1958-09-16)	
+217	data/overrides/moved.json	add	kinki_1-004	K25		[{"old":"n_misasagi_keihan_old(새 ID, 京津三条 기준 3.9)","new":"n_misasagi_keihan","date":"1997-10-12","note":"御陵 지상→지하"}]	ja.wikipedia 京阪京津線 rev111210110 노선도 「御陵駅 (1) -1997」 3.9 / 「御陵駅 (2) 1997-」	
+218	data/overrides/moved.json	add	kinki_1-005	K25		[{"old":"n_oiwake_keihan_old(새 ID)","new":"n_oiwake_keihan","date":"1979-XX-XX","note":"追分駅 移転"}]	ja.wikipedia 京阪京津線 rev111210110 노선도 「追分駅 -1979」 7.3 / 「OT33 追分駅 1979-」 7.1 / 이전일 연표로	
+219	data/overrides/moved.json	add	kinki_1-016	K25		[{"old":"n_kyobashi_keihan_old(새 ID)","new":"n_kyobashi_keihan","date":"1969-11-30","note":"京橋駅 移転 3.2→3.0 km. 날짜 확인"}]	ja.wikipedia 京阪本線 rev111466840 노선도 「京橋駅 (2) -1969」 3.2 / 「KH04 京橋駅 (3) 1969-」 3.0	
+220	data/overrides/moved.json	add	kinki_1-017	K25		[{"old":"n_temmabashi_keihan_old(새 ID)","new":"n_temmabashi_keihan","date":"1963-XX-XX","note":"天満橋駅 移転 1.5→1.3 km. 날짜 확인"}]	ja.wikipedia 京阪本線 rev111466840 노선도 「天満橋駅 (1) -1963」 1.5 / 「KH03 天満橋駅 (2) 1963-」 1.3	
+221	data/overrides/moved.json	add	kinki_1-018	K25		[{"old":"n_sanjo_keihan_keihan_main_old(새 ID)","new":"n_sanjo_keihan_keihan_main","date":"1987-XX-XX","note":"三条駅 移転 49.2→49.3 km. 날짜 확인"}]	ja.wikipedia 京阪本線 rev111466840 노선도 「三条駅 (1)」 49.2 / 「KH40 三条駅 (2)」 49.3	
+222	data/overrides/moved.json	add	kinki_1-020	K25		[{"old":"n_nishinomiya_hanshin_old(새 ID)","new":"n_nishinomiya_hanshin","date":"2001-03-03","note":"西宮駅 移転 16.9→16.7 km. 날짜 확인"}]	ja.wikipedia 阪神本線 rev111454992 「西宮駅を200m東側（大阪梅田寄り）に移設・高架化」(2001-03-03)	
+223	data/overrides/moved.json	add	kinki_1-022	K25		[{"old":"n_imazu_hankyu_old(새 ID)","new":"n_imazu_hankyu","date":"1993-XX-XX","note":"今津駅 移転 9.5→9.3 km. 날짜 확인"}]	ja.wikipedia 阪急今津線 rev110631417 노선도 「今津駅 (1) -1993」 9.5 / 「HK-21 今津駅 (2) 1993-」 9.3	
+224	data/overrides/moved.json	add	kinki_1-023	K25		[{"old":"n_higashiyama_kintetsu_old(새 ID)","new":"n_higashiyama_kintetsu","date":"1993-XX-XX","note":"東山駅 移転 6.9→7.0 km. 날짜 확인"}]	ja.wikipedia 近鉄生駒線 rev109300992 노선도(生駒 기준) 「G22 東山駅」 5.4 / 「東山駅 -1993」 5.5	
+225	data/overrides/moved.json	add	kinki_2-005	K25		[{"old":"n_sakai_nankai_old","new":"n_sakai_nankai_mid(새 ID, 10.0 km)","date":"1955-04-21","note":"堺 이전(龍神 통합 자리)"},{"old":"n_sakai_nankai_mid(새 ID)","new":"n_sakai_nankai","date":"1985-05-07","note":"堺 고가화 이전"}]	data/imports/wiki 南海本線 rev111120385 노선도: 「堺駅 9.7 (1) -1955」「堺駅 10.0 (2) 1955-1985」「堺駅 9.8 (3) 1985-」「龍神駅 10.2 -1955」 / 기존 n_sakai_nankai_old→n_sakai_nankai 1985 행은 대체	
+226	data/overrides/moved.json	confirm	kinki_2-007	K25			확인 필요: 一の鳥居·畦野 옛 km, 0.1 km 이전 처리 규칙 / data/imports/wiki 能勢電鉄妙見線 rev110790216 노선도: 「皷滝駅（旧）3.4 -1969」「鼓滝駅 3.5 1969-」「一の鳥居駅（旧） -1973」「畦野駅（旧） -1974」	
+227	data/overrides/moved.json	confirm	kinki_3-023	K25			확인 필요: キロ 변화 여부 / ja.wikipedia 近鉄湯の山線 「桜駅を移転するとともにその近辺は大幅に経路変更」	
+228	data/overrides/moved.json	confirm	kinki_3-034	K25			확인 필요: 영업km 변화 여부(결정 7 세 조건) / ja.wikipedia 神戸電鉄三田線 「岡場駅が200 m三田寄りへ移転」「横山駅が100 m三田寄りへ移転」	
+229	data/overrides/moved.json	confirm	kinki_3-042	K25			확인 필요: 영업km 변화 / ja.wikipedia 山陽電気鉄道本線 「1957年9月18日：須磨浦公園駅移転」	
+230	data/overrides/moved.json	confirm	kinki_3-047	K25			확인 필요: 初代 和歌山港 km / ja.wikipedia 南海和歌山港線 rev111221904 沿革·BS	
+231	data/overrides/moved.json	confirm	kinki_3-062	K25			확인 필요: 영업km 변화 / ja.wikipedia 近鉄志摩線 1970-03-01 행	
+232	data/overrides/moved.json	add	tohoku_1-026	K25		[{"old":"n_yasawa","new":"n_shin_hanamaki","date":"1985-03-14","note":"矢沢駅 移転·新花巻 改称"}]	data/imports/wiki 釜石線 rev111465812 "矢沢駅を廃止、新花巻駅を新設（実質的に矢沢駅の移転改称）"	
+233	data/overrides/moved.json	add	tohoku_1-039	K25		[{"old":"n_nakayamajuku_old(새 ID, 20.1)","new":"n_nakayamajuku","date":"1997-03-22","note":"中山宿駅 移転 20.1→20.8"}]	data/imports/wiki 磐越西線 rev111454759 노선도 "20.1 中山宿 (1) -1997"	
+234	data/overrides/moved.json	add	tohoku_2-016	K25		[{"old":"n_kanizawa(새 ID, 약 108.7 km)","new":"n_sakurambo_higashine","date":"1999-12-04","note":"蟹沢駅 山形 쪽 0.6 km 이전·さくらんぼ東根 改称"}]	ja.wikipedia 奥羽本線 rev111473148: 「12月1日：乱川駅・蟹沢駅が開業」(1954)	
+235	data/overrides/moved.json	confirm	tohoku_2-021	K25			확인 필요: 옛 km(N05 1969/1971) / ja.wikipedia 奥羽本線 rev111473148 노선도: 「津軽湯の沢駅 -1970」(옛 선로 exBHF)·「422.3 津軽湯の沢駅 1970-」	
+236	data/overrides/moved.json	add	kanto_2-046	K27		[{"old":"n_ogikubo_ekimae_old(새 ID)","new":"n_ogikubo_ekimae","date":"1956-01-29","note":"荻窪駅前 南口→北口 移設, 営業キロ 0.2 km 감소"}]	1회차 kanto_4 지적(N05 天沼 1953–55 옛 위치) / 옛 칸 relocate 행 events_fix	
+237	data/overrides/stop_status.json	add	chugoku_shikoku_2-B06	K18		[{"node":"n_shirousagi_nagai","kind":"kari","from":"1925-07-06","to":"1969-03-01","name":"白兎仮停車場","source":"(지적 근거 revid)"}]	wiki 山陰本線 111452828: 7月6日：湖山駅 - 宝木駅間に白兎仮停車場が開業 (1925年)	
+238	data/overrides/stop_status.json	add	chugoku_shikoku_2-B07	K18		[{"node":"n_kiyomizudera","kind":"kari","from":"1915-03-31","to":"1964-10-01","name":"清水寺仮停車場","source":"(지적 근거 revid)"}]	wiki 山陰本線: 1915年 3月31日：米子駅 - 安来駅間に清水寺仮停車場が開業	
+239	data/overrides/stop_status.json	add	kinki_2-010	K23		[{"node":"n_nakamozundojomae","kind":"rinji","from":"1949-07-30","to":"1958-05-10","name":"中百舌鳥運動場前駅","source":"(지적 근거 revid)"}]	data/imports/wiki 南海高野線 rev110646583 노선도: 「10.4 （臨）中百舌鳥運動場前駅」, 白鷺 10.5, 中百舌鳥 9.5	
+240	data/overrides/stop_status.json	add	chubu_2-22	K26		[{"node":"n_fotodekki","kind":"rinji","from":"1986-07-26","to":"1986-09-01","name":"フォトデッキ駅","source":"(지적 근거 revid)"},{"node":"n_nagoya_kyujo_seimonmae","kind":"rinji","from":"1987-XX-XX","to":"1994-XX-XX","name":"ナゴヤ球場正門前駅","source":"(지적 근거 revid)"}]	build/names.sqlite n_fotodekki ja=フォトデッキ ko=포토뎃키{rule} / ナゴヤ球場正門前 정확한 기간 확인, ko 포토덱은 names_ko.json	
+241	data/overrides/stop_status.json	confirm	chubu_3-043	K26			확인 필요: 鮎淵 臨時駅 기간 / wiki 豊橋鉄道田口線 rev111618531 「（臨）[[鮎淵駅]]」	
+242	data/overrides/stop_status.json	confirm	chubu_3-049	K26			확인 필요: 1959 仮乗降場(伊勢湾台風 뒤?) / wiki 名鉄津島線 rev110064748 노선도 「津島口仮乗降場 1959年」	
+243	data/overrides/stop_status.json	add	chugoku_shikoku_1-015	K26		[{"node":"n_sakazu","kind":"rinji","from":"1954-04-01","to":"1962-06-01","name":"酒津仮停車場","source":"(지적 근거 revid)"}]	위키 伯備線 rev 111531409 「1954年4月1日：倉敷駅 - 清音駅間に酒津仮停車場が開業」「1962年6月1日：酒津仮停車場が廃止」「酒津公園観桜用の臨時駅」	
+244	data/overrides/stop_status.json	add	chugoku_shikoku_1-025	K26		[{"node":"n_akihamasaki","kind":"kari","from":"1926-07-21","to":"1967-08-01","name":"安芸浜崎仮停車場","source":"(지적 근거 revid)"}]	위키 呉線 rev 111046476 「1926年7月21日：…安芸浜崎仮停車場が開業」「1928年7月7日：狩留賀浜仮停車場が開業」「1967年8月1日：狩留賀浜仮停車場・安芸浜崎仮停車場廃止」 / 狩留賀浜 표식(지금 rinji, 끊김)과 같은 종류로 맞춤	
+245	data/overrides/stop_status.json	add	chugoku_shikoku_1-026	K26		[{"node":"n_kanaiso","kind":"kari","from":"1940-09-01","to":"1962-07-18","name":"金磯仮停車場","source":"(지적 근거 revid)"}]	위키 牟岐線 rev 111002477 「1940年9月1日 金磯駅を仮停車場に変更」「1962年7月18日：…金磯駅廃止」	
+246	data/overrides/stop_status.json	add	chugoku_shikoku_2-006	K26		[{"node":"n_minami_onoda","kind":"kari","from":"1947-10-01","to":"1962-03-15","name":"小野田港北口乗降場","source":"(지적 근거 revid)"}]	wiki 小野田線 110993965: 1947-10-01 小野田港駅が0.5km南に移転し、旧駅は小野田港北口乗降場とする	
+247	data/overrides/stop_status.json	add	chugoku_shikoku_2-017	K26		[{"node":"n_shioyakaisuiyokujomae","kind":"rinji","from":"1951-XX-XX","to":"1970-XX-XX","name":"塩屋海水浴場前駅","source":"(지적 근거 revid)"}]	wiki 志度線 111442761: 1951年 塩屋 - 房前間に季節臨時駅として塩屋海水浴場前駅を開設 / 기간은 지금 정차 기간과 같게	
+248	data/overrides/stop_status.json	set	chugoku_shikoku_2-B01	K26	match ; set		wiki 山陰本線 111452828: 1986年8月1日 切浜海水浴場駅が廃止	
+249	data/overrides/stop_status.json	add	hokkaido_1-009	K26		[{"node":"n_kitairie","kind":"kari","from":"1948-07-01","to":"1964-08-30","name":"北入江仮乗降場","source":"(지적 근거 revid)"},{"node":"(下相ノ内 노드)","kind":"kari","from":"1950-11-01","to":"1967-10-01","name":"下相ノ内仮乗降場","source":"(지적 근거 revid)"},{"node":"(厚生病院前 노드)","kind":"kari","from":"1955-XX-XX","to":"1966-10-01","name":"厚生病院前仮乗降場","source":"(지적 근거 revid)"},{"node":"(色内 노드)","kind":"kari","from":"1949-09-01","to":"(끝 확인)","name":"色内仮乗降場","source":"(지적 근거 revid)"}]	위키 室蘭本線 「1948年7月1日：北入江信号場（初代）を仮乗降場に変更」	
+250	data/overrides/stop_status.json	add	kanto_1-028	K26		[{"node":"n_bampakuchuo","kind":"rinji","from":"1985-03-14","to":"1985-09-16","name":"万博中央駅","source":"(지적 근거 revid)"}]	names.sqlite stop_mark: n_bampakuchuo 행 없음 (n_kita_matsudo·n_j_village·n_kairakuen은 있음)	
+251	data/overrides/stop_status.json	add	kinki_1-011	K26		[{"node":"n_amagasaki","line":"l_fukuchiyama_line","kind":"kari","from":"(尼崎港線 여객 시작)","to":"1981-04-01","name":"尼崎","source":"noritsubushi"}]	NB 福知山線 塚口～尼崎港 s 「尼崎（臨時乗降場）:2.5」 / stop_status에 line 칸을 새로 둬야 적용 가능	
+252	data/overrides/stop_status.json	add	kinki_1-024	K26		[{"node":"n_itami_hankyu_kari(새 노드)","kind":"kari","from":"1995-03-11","to":"1998-11-21","name":"伊丹仮駅","source":"(지적 근거 revid)"}]	ja.wikipedia 阪急伊丹線 rev106807822 「伊丹駅の400m南に伊丹仮駅を設置し新伊丹駅 - 伊丹仮駅間の営業再開」(1995-03-11)	
+253	data/overrides/stop_status.json	add	kinki_3-026	K26		[{"node":"n_hommachi_kari(새 노드)","kind":"kari","from":"1964-10-31","to":"1969-07-01","name":"本町仮駅","source":"(지적 근거 revid)"}]	ja.wikipedia Osaka Metro中央線 rev111464199 「弁天町駅 - 本町駅（仮）間（3.7 km）が開業」「本町駅本駅完成（+0.2 km）」	
+254	data/overrides/stop_status.json	add	kyushu_1-027	K26		[{"node":"n_tonohama_kagoshima_main","kind":"kari","from":"1951-07-23","to":"1955-03-08","name":"唐浜仮乗降場","source":"(지적 근거 revid)"}]	ja.wikipedia 鹿児島本線 「西方駅 - 草道駅間に唐浜仮乗降場が開業」 / 읽기 근거 없으면 kana 비우고 ja_as_is	
+255	data/overrides/stop_status.json	add	kyushu_1-034	K26		[{"node":"(深江浜 새 노드)","kind":"kari","from":"[..1950-01-01]","to":"[1959..1960]","name":"深江浜仮乗降場","source":"(지적 근거 revid)"}]	ja.wikipedia 筑肥線 rev110909455 「深江浜仮乗降場 -1959?」	
+256	data/overrides/stop_status.json	add	kyushu_1-035	K26		[{"node":"(片男佐 새 노드)","kind":"rinji","from":"(개업)","to":"(폐지 범위)","name":"片男佐駅","source":"(지적 근거 revid)"}]	ja.wikipedia 西鉄貝塚線 「（臨）片男佐駅開業。廃止日不明」	
+257	data/overrides/stop_status.json	add	kyushu_2-19	K26		[{"node":"n_shingakuji","kind":"kari","from":"1908-07-28","to":"1967-08-01","name":"心岳寺仮乗降場","source":"(지적 근거 revid)"},{"node":"n_totorokaisuiyokujo","kind":"kari","from":"1954-08-XX","to":"(끝)","name":"土々呂海水浴場仮乗降場","source":"(지적 근거 revid)"},{"node":"n_kakusa","kind":"kari","from":"1959-07-20","to":"(역 승격일)","name":"加草仮乗降場","source":"(지적 근거 revid)"}]	日豊本線 rev111420360: 1908年7月28日：心岳寺仮乗降場が開業	
+258	data/overrides/stop_status.json	add	tohoku_1-030	K26		[{"node":"n_shidahama","kind":"kari","from":"1962-07-20","to":"1967-08-21","name":"志田浜仮乗降場","source":"(지적 근거 revid)"}]	data/imports/wiki 磐越西線 rev111454759 "7月20日：志田浜仮乗降場新設"	
+259	data/overrides/stop_status.json	add	tohoku_1-031	K26		[{"node":"n_mukai_noshiro","kind":"kari","from":"1951-02-XX","to":"1952-01-25","name":"向能代仮乗降場","source":"(지적 근거 revid)"},{"node":"(横磯)","kind":"kari","from":"1951-04-01","to":"1954-12-25","name":"横磯仮乗降場","source":"(지적 근거 revid)"},{"node":"(風合瀬)","kind":"kari","from":"1951-04-01","to":"1954-11-20","name":"風合瀬仮乗降場","source":"(지적 근거 revid)"}]	data/imports/wiki 五能線 rev111472962 "2月：向能代仮乗降場を新設" "4月1日{要検証範囲}：横磯・風合瀬の各仮乗降場を新設"	
+260	data/overrides/stop_status.json	set	tohoku_1-033	K26	match ; set		build/names.sqlite stop_mark n_eda	
+261	data/overrides/stop_status.json	confirm	tohoku_1-034	K26			확인 필요: 秋田港駅 문서 rev110465722 / data/overrides/stop_status.json n_akitako	
+262	data/overrides/stop_status.json	add	tohoku_2-018	K26		[{"node":"n_kuromatagawa","kind":"kari","from":"1954-12-10","to":"1965-07-16","name":"黒又川仮乗降場","source":"(지적 근거 revid)"}]	ja.wikipedia 只見線 rev111454822: 「12月10日 : 黒又川仮乗降場（入広瀬駅 - 柿ノ木仮乗降場間）を新設」(1954)	
+263	data/overrides/stop_status.json	add	tohoku_2-019	K26		[{"node":"(魚沼田中)","kind":"kari","from":"[1951-01-01..1951-03-01]","to":"1951-10-01","name":"魚沼田中仮乗降場","source":"(지적 근거 revid)"},{"node":"(藪神)","kind":"kari","from":"[1951-01-01..1951-03-01]","to":"1951-10-01","name":"藪神仮乗降場","source":"(지적 근거 revid)"},{"node":"(上浜)","kind":"kari","from":"[1951-01-01..1951-04-01]","to":"1952-03-01","name":"上浜仮乗降場","source":"(지적 근거 revid)"},{"node":"(醍醐)","kind":"kari","from":"1950-11-01","to":"1951-11-15","name":"醍醐仮乗降場","source":"(지적 근거 revid)"}]	ja.wikipedia 只見線 rev111454822: 「藪神・魚沼田中・上条・柿ノ木の各仮乗降場を新設」(1951-03-01?) / stop_dates 시작도 같이	
+264	data/overrides/events_fix.json	confirm	tohoku_1-041	K08		1986-11-01 전 阿仁合線 鷹ノ巣 쪽 끝 노드를 n_takanosu(국철 鷹ノ巣)로 — edge 끝 노드 교체는 edge_keys/remap 필요	tohoku_1-041 근거	
+265	data/overrides/events_fix.json	add	kanto_1-001	K19		[{"why":"草木ダム 付け替え 新線 神土–沢入 1973-06-27 개업(옛 선로와 같은 날 교대)","add":{"date":"1973-06-27","type":"relocate","line":"l_ashio_line","operator":"o_japanese_national_railways","close":["n_godo_watarase_keikoku..n_sori@old"],"open":["e_005442"]}}]	wiki わたらせ渓谷鐵道わたらせ渓谷線 rev111124676 연혁: 1973-06-27 神土駅 - 沢入駅間を草木トンネル経由の新線に付け替え / 일반 규칙(gen_source 이설 열림일) 고치면 불필요	
+266	data/overrides/events_fix.json	add	kinki_2-001	K19		[{"why":"1945-12-21 京阪 丹波橋 경유로 바뀌어 직통 선로 영업 끝","add":{"date":"1945-12-21","type":"close","line":"l_kyoto_line","edges":["e_007806","e_007807"],"reason":"relocated"}},{"why":"1967-03-29 丹波橋(近鉄) 경유 재개","add":{"date":"1967-03-29","type":"open","operator":"o_kintetsu_railway","line":"l_kyoto_line","edges":["e_007806","e_007807"],"continues":"l_kyoto_line"}}]	data/imports/wiki 近鉄京都線 rev110958649: 「伏見駅 - 堀内駅 - 桃山御陵前駅間廃止」(1945-12-21)	
+267	data/overrides/events_fix.json	add	tohoku_2-001	K19		[{"why":"東北本線 東青森 경유 새 선로 1968-07-21 개업(옛 선로 浪打·浦町 경유와 교대)","match":{"type":"open","line":"l_tohoku_main_line","edges":["e_001271","e_001272","e_001273","e_001274","e_001275","e_001276"]},"set":{"date":"1968-07-21"}}]	ja.wikipedia 東北本線 rev111496700: 「7月21日：野内 - 青森間経路変更。新線上に東青森駅開業」(1968) / 일반 규칙 고치면 불필요	
+268	data/overrides/events_fix.json	add	tohoku_1-016	K25		[{"why":"1984-11-01 弘南 이관 때 前田屋敷–弘南黒石 渡り線 이설","add":{"date":"1984-11-01","type":"relocate","line":"l_kuroishi_line_konan","close":["n_maedayashiki..n_kuroishi"],"open":["n_maedayashiki..n_kuroishi_konan"]}}]	data/imports/wiki 弘南鉄道黒石線 rev111125380 노선도 "2.9 前田屋敷" "6.2 黒石駅" "6.9 黒石駅（国鉄）-1984" / km_era_hand: 前田屋敷 2.9, 川部–黒石 6.2	
+269	data/overrides/events_fix.json	add	kinki_1-024	K26		[{"why":"1995-03-11 伊丹仮駅 설치, 新伊丹–伊丹仮駅 재개","add":{"date":"1995-03-11","type":"resume","line":"l_itami_line","edges":["n_shin_itami..n_itami_hankyu_kari(새 노드 약 2.7 km)"]}}]	ja.wikipedia 阪急伊丹線 rev106807822 「伊丹駅の400m南に伊丹仮駅を設置し新伊丹駅 - 伊丹仮駅間の営業再開」(1995-03-11) / 仮駅–伊丹만 1998-11-21까지 운휴	
+270	data/overrides/events_fix.json	add	kinki_3-026	K26		[{"why":"1964-10-31 弁天町–本町（仮） 개업","add":{"date":"1964-10-31","type":"open","line":"l_osaka_metro_chuo_line","edges":["n_awaza..n_hommachi_kari(새 노드 12.4 km)"]}}]	ja.wikipedia Osaka Metro中央線 rev111464199 「弁天町駅 - 本町駅（仮）間（3.7 km）が開業」「本町駅本駅完成（+0.2 km）」 / 本町（仮）–本町 0.2 km는 1969-07-01, moved.json 쌍	
+271	data/overrides/events_fix.json	add	chubu_1-28	K27		[{"why":"揖斐線 忠節 1954-12-21 경로 변경·忠節 이전(3代). 옛 선로 忠節(2代)–近ノ島","add":{"date":"1954-12-21","type":"relocate","line":"l_ibi_line","close":["n_chusetsu_old..n_gonnoshima@old"],"open":["n_chusetsu..n_gonnoshima"]}}]	名鉄揖斐線 rev105491115 「忠節 - 近ノ島間が経路変更。忠節駅移転。忠節駅（3代目）」(1954-12-21) / km는 위키 노선도·N05로. 옛 자리 노드는 moved.json 쌍	
+272	data/overrides/events_fix.json	add	chubu_2-13	K27		[{"why":"笠原線 多治見 연장 0.3km(1937-06-01), 1958 多治見 폐지","add":{"date":"1937-06-01","type":"open","operator":"o_tono_railway","line":"l_kasahara_line","edges":["n_shin_tajimi..n_tajimi_tono(새 노드)"]}},{"why":"같은 구간 폐지(날짜 확인)","add":{"date":"1958-XX-XX","type":"close","line":"l_kasahara_line","edges":["n_shin_tajimi..n_tajimi_tono(새 노드)"],"reason":"abolished"}}]	ja.wikipedia 東濃鉄道笠原線 rev110409868 「多治見駅にスイッチバックする形で0.3km延伸」 / 폐지 정확한 날 N05·官報 확인	
+273	data/overrides/events_fix.json	add	kanto_1-011	K27		[{"why":"京成千葉線 옛 선로 新千葉–京成千葉（旧） 区画整理 이설","add":{"date":"1958-02-10","type":"relocate","line":"l_chiba_line","close":["n_shin_chiba..n_keisei_chiba_old(새 노드)@old"],"open":["n_shin_chiba..n_chiba_chuo"]}}]	wiki 京成千葉線 rev111490339 L135: 1958-02-10 新千葉 - 京成千葉間の線路を現在地に移設 / moved.json 京成千葉（旧）→千葉中央 쌍, 옛 km 위키	
+274	data/overrides/events_fix.json	add	kanto_1-026	K27		[{"why":"北総開発鉄道 1기 北初富–小室 개업","add":{"date":"1979-03-09","type":"open","operator":"o_hokuso_railway","line":"l_hokuso_line","edges":["n_kita_hatsutomi..n_shin_kamagaya_hokuso"]}},{"why":"新京成 新鎌ヶ谷 개업으로 北初富–新鎌ヶ谷 폐지","add":{"date":"1992-07-08","type":"close","line":"l_hokuso_line","edges":["n_kita_hatsutomi..n_shin_kamagaya_hokuso"],"reason":"abolished"}}]	wiki station 北初富駅 hist: 1979年3月8日 北総開発鉄道…当駅 - 小室駅間が開業 / km은 N05 겹침 또는 사업자	
+275	data/overrides/events_fix.json	add	kanto_2-007	K27		[{"why":"穴守稲荷–羽田空港(初代) 延伸開業","add":{"date":"1956-04-20","type":"open","line":"l_keikyu_airport_line","edges":["n_anamori_inari..n_haneda_airport_keikyu_old(새 노드 3.1 km)"]}},{"why":"1991-01-16 営業休止(1993 天空橋로 대체)","add":{"date":"1991-01-16","type":"close","line":"l_keikyu_airport_line","edges":["n_anamori_inari..n_haneda_airport_keikyu_old(새 노드 3.1 km)"],"reason":"relocated"}}]	京急空港線 wiki 110729000 年表: 1956年4月20日 穴守稲荷駅 - （初代）羽田空港駅間が延伸開業 / moved.json 羽田空港(初代)→天空橋	
+276	data/overrides/events_fix.json	add	kinki_2-006	K27		[{"why":"1955-07-15 逆川分岐–高田本山–江戸橋 경로 변경·0.5 km 단축","add":{"date":"1955-07-15","type":"relocate","line":"l_nagoya_line","close":["(옛 선로)@old"],"open":["(새 선로)"]}}]	data/imports/wiki 近鉄名古屋線 rev111029029: 「逆川分岐 - 高田本山駅 - 江戸橋駅間の経路変更・複線化…0.5 km短縮」 / 옛 선형 N05 1950~1954	
+277	data/overrides/events_fix.json	add	chubu_3-023	K31		[{"why":"立山開発鉄道 소유 기간","add":{"date":"1954-04-01","type":"transfer","line":"l_tateyama_line","edges":["n_arimineguchi..n_awasuno"],"to_operator":"o_tateyama_kaihatsu_railway","source":"wikipedia"}},{"why":"富山地方鉄道로 양도","add":{"date":"1962-04-01","type":"transfer","line":"l_tateyama_line","edges":["n_arimineguchi..n_tateyama_toyama_chiho"],"to_operator":"o_toyama_chiho_railway","source":"wikipedia"}}]	chubu_3-023 근거(위키 富山地方鉄道立山線 年表); 粟巣野–千寿ヶ原 칸은 1955-07-01 개업 때부터	
+278	data/overrides/events_fix.json	add	chugoku_shikoku_2-028	K31		[{"why":"八栗登山鉄道 廃止","add":{"date":"1960-12-25","type":"close","line":"l_yakuri_cable","reason":"abolished","source":"wikipedia"}},{"why":"八栗ケーブル 부활","add":{"date":"1964-12-28","type":"open","line":"l_yakuri_cable","continues":"l_yakuri_cable","operator":"o_yakuri_cable","source":"wikipedia"}}]	chugoku_shikoku_2-028 근거(위키 八栗ケーブル 年表). 1931~1960 사업자 八栗登山鉄道 operator 추가 필요	
+279	data/overrides/events_fix.json	add	kinki_2-046	K31	why ; add		§17 확정 「면허 사업자」(神戸高速鉄道 1968~1988). 4노선 모두, operator o_kobe_rapid_transit(새 사업자 ID) 추가	
+280	data/overrides/events_fix.json	add	tohoku_1-018	K31	why ; add		다른 edge의 1962-07-12 이관 행과 같게	
+281	data/overrides/events_fix.json	add	chubu_3-001	K35		[{"why":"1966-04-05 전 越ノ潟–新湊는 富山地方鉄道 射水線의 일부(위키 富山地方鉄道射水線 rev111471223 노선도). 감사2 chubu_3-001","match":{"edge":"e_008995","type":"open"},"set":{"line":"l_toyamachitetsuimizu_line"}},{"why":"1966-04-05 越ノ潟–新湊 加越能鉄道 新湊港線으로 이관","add":{"date":"1966-04-05","type":"transfer","edges":["e_008995"],"source":"wikipedia","from":{"operator":"o_toyama_chiho_railway","line":"l_toyamachitetsuimizu_line"},"to":{"operator":"o_kaetsuno_railway","line":"l_shin_minatoko_line"}}}]	edge_attr e_008995 1930-12-23~1966-04-05 l_shin_minatoko_line/o_toyama_chiho_railway. 越ノ潟 두 노드는 hub_join group:true	
+282	data/overrides/events_fix.json	set	kyushu_1-001	K35	why ; note			
+283	data/overrides/events_fix.json	add	chugoku_shikoku_2-018	K35		[{"why":"野井 임시 종점 기간 明塚–野井 운행 재개","add":{"date":"1972-11-XX","type":"resume","line":"l_sanko_line","edges":["n_akatsuka..n_noi"]}},{"why":"野井 임시 종점 끝","add":{"date":"1973-11-XX","type":"suspend","line":"l_sanko_line","edges":["n_akatsuka..n_noi"]}}]	DB edge_life e_005393 1972-07-11~1974-12-29 suspended / 野井 기간 근거 재확인	
+284	data/overrides/events_fix.json	add	chugoku_shikoku_2-019	K35		[{"why":"2004-10-16 営業休止 → 마지막 운행 2004-10-15","match":{"type":"close","line":"l_yashima_cable"},"set":{"date":"2004-10-16","last_service":"2004-10-15"}}]	wiki 屋島登山鉄道屋島ケーブル 108130797: 2004年（平成16年）10月16日 屋島登山口 - 屋島山上間が営業休止 / 법적 폐지 2005-08-31 그대로	
+285	data/overrides/events_fix.json	add	chugoku_shikoku_2-025	K35		[{"why":"岡山臨港鉄道 1951-08-01 지방철도 개업","match":{"date":"1951-XX-XX","type":"open","line":"l_okayama_rinko_railway_line"},"set":{"date":"1951-08-01"}}]	wiki 岡山臨港鉄道 108088194: 1951年8月1日：大元 - 岡山港間が地方鉄道として開業し、旅客運転を開始 / 역 정차 시작도 같이 바뀌는지 확인	
+286	data/overrides/events_fix.json	add	kanto_2-005	K35		[{"why":"2005-10-16 鹿島サッカースタジアム–神栖 旅客営業(国の許可, 3往復)","add":{"date":"2005-10-16","type":"open","operator":"o_kashima_rinkai_railway","line":"l_kashima_rinko_line","edges":["n_kashima_soccer_stadium_kashima_rinkai..n_kamisu(새 노드 10.1 km)"],"class":"extra"}},{"why":"하루 영업 끝","add":{"date":"2005-10-17","type":"close","line":"l_kashima_rinko_line","edges":["n_kashima_soccer_stadium_kashima_rinkai..n_kamisu(새 노드 10.1 km)"],"reason":"abolished"}}]	臨港線 wiki 年表: 2005年10月16日 国の許可を得て ... 旅客営業復活（この日限り） / 분모 등급은 秋田臨海 선례 확인	
+287	data/overrides/events_fix.json	add	kanto_2-032	K35		[{"why":"長野原線 여객 영업 시작(1954-06-21은 改キロ)","match":{"date":"1954-06-21","type":"open","line":"l_naganohara_line"},"set":{"date":"1961-09-01"}},{"why":"1970-11-01 営業休止, 1971-05-01 廃止","match":{"date":"1970-11-01","type":"close","line":"l_naganohara_line"},"set":{"legal_abolition":"1971-05-01"}}]	吾妻線 wiki 111452472 年表 1961年9月1日 長野原駅 - 太子駅間 (5.8 km) の旅客営業を開始	
+288	data/overrides/events_fix.json	add	kinki_3-044	K35		[{"why":"貨物支線에 1962-03-01부터 準急 여객열차 경유(1972-03-15 旅客営業開始). 화물·연결선 규칙: 여객 이력 기간만 기록 가능, 분모 밖","add":{"date":"1962-03-01","type":"open","operator":"o_japanese_national_railways","line":"l_wakayama_line","edges":["n_tainose..n_wakayama"],"class":"extra"}}]	ja.wikipedia 和歌山線 rev110989741 「準急「はまゆう」…田井ノ瀬駅 - 東和歌山駅間の貨物支線を経由」(1962-03-01) / 시작일은 회사 자료로 확인, 1972-03-15에 normal로	
+289	data/overrides/events_fix.json	add	chugoku_shikoku_1-002	K36		[{"why":"小松島港仮乗降場는 小松島駅 구내, 별도 営業キロ 없음(§4.5 끝 역은 이웃 역 자리). 분모에서 뺌","match":{"type":"open","line":"l_komatsushima_line","edges":["n_komatsushima..n_komatsushimako"]},"set":{"class":"extra"}}]	위키 小松島線 rev 107273631 「区間（営業キロ）：中田 - 小松島（小松島港仮乗降場）(1.9km)」 / stop_status kari 1940-03-15~1985-03-14도 함께	
+290	data/overrides/old_names_kana.json	add	kanto_1-012	K11	n_chiba_chuo|京成千葉		wiki station 千葉中央駅 hist: 1987-04-01 …千葉中央駅に改称; wiki 京成千葉線 L144: 1987年4月1日 - 京成千葉駅を千葉中央駅に…改称	
+291	data/overrides/old_names_kana.json	add	kanto_1-020	K11	n_ryugasakishi|佐貫		wiki station 龍ケ崎市駅 hist: 2020年3月14日 JR東日本の駅名を龍ケ崎市駅に改称; 같은 hist: 1900年8月14日 …佐貫駅として同時に開業	
+292	data/overrides/old_names_kana.json	add	kanto_1-021	K11	n_otsuko|関本		wiki station 大津港駅 hist: 1950年5月10日 大津港駅に改称 (開業時 関本駅)	
+293	data/overrides/old_names_kana.json	add	kanto_1-022	K11	n_todaimae_inogashira|一高前		wiki station 駒場東大前駅 hist: 1951年12月1日 一高前駅を東大前駅に改称	
+294	data/overrides/old_names_kana.json	add	kanto_2-003	K11	n_kashima_soccer_stadium|北鹿島		大洗鹿島線 wiki 年表: 1994年3月12日 北鹿島駅を鹿島サッカースタジアム駅に改称; N05 鹿島線 北鹿島 1978–1993 (EB03_13502015 계열)	
+295	data/overrides/old_names_kana.json	add	kanto_2-008	K11	n_tenkubashi_keikyu|羽田		京急空港線 wiki 年表: 11月18日 - ... 羽田駅が天空橋駅に改称(1998); N05 空港線 羽田 1993–1997, 天空橋 1998–	
+296	data/overrides/old_names_kana.json	add	kanto_2-016	K11	n_keisei_ueno|上野公園		京成本線 wiki 111343993 年表 1953年5月1日 上野公園駅を京成上野駅に改称; N05 本線 上野公園 1950–1952	
+297	data/overrides/old_names_kana.json	add	kanto_2-019	K11	n_takashimadaira|志村		都営地下鉄三田線 wiki 110959523 年表 1968-12-27 巣鴨 - 志村（現・高島平）間開業, 1969-08-01 志村駅を高島平駅に改称; N05 6号線三田線 志村 1968	
+298	data/overrides/old_names_kana.json	add	kanto_2-029	K11	n_higashi_narita_keisei|成田空港		京成本線 wiki 年表 1978年5月21日 京成成田 - 成田空港（現在の東成田）間が開業; N05 東成田線 成田空港 1978–1990 (東成田 자리 45m)	
+299	data/overrides/old_names_kana.json	add	kanto_3-16	K11	n_tenkubashi_tokyo_monorail|羽田		build/master.sqlite node_move n_haneda_tokyo_monorail→n_tenkubashi_tokyo_monorail 1993-09-27; wiki 東京モノレール 「整備場駅 - 羽田空港駅間開業。整備場駅 - （旧）羽田駅廃止」	
+300	data/overrides/old_names_kana.json	add	kinki_2-018	K11	n_hieizan_sakamoto|叡山		data/imports/wiki 湖西線 rev111088405: 「叡山駅を比叡山坂本駅に改称」(1994-09-04)	
+301	data/overrides/old_names_kana.json	add	kinki_3-011	K11	n_unobe|茨木		ja.wikipedia 大阪モノレール本線 rev111054270 「茨木駅を宇野辺駅に改称」(1997-04-01)	
+302	data/overrides/old_names_kana.json	add	kyushu_1-012	K11	n_minami_fukuoka|雑餉隈		data/imports/wiki/station.json 南福岡駅 「1966年（昭和41年）11月1日：南福岡駅…に改称」; n05 EB03_22202037 雑餉隈 1950–1965; data/candidates/n05_history.json class=check 「옛 이름이 가까운 다른 역 이름」(西鉄 雑餉隈)으로 미적용	
+303	data/overrides/old_names_kana.json	add	kyushu_1-013	K11	n_onojo|白木原		data/imports/wiki/station.json 大野城駅 「1989年（平成元年）3月11日：…大野城駅…に改称」·「1961年…白木原駅…に昇格」; data/candidates/n05_history.json class=check로 미적용	
+304	data/overrides/old_names_kana.json	add	kyushu_1-016	K11	n_heiwadori|小倉		data/imports/wiki/station.json 平和通駅 「1985年…小倉駅（初代）として開業」「1998年…平和通駅と改称」; n05 小倉 1985–1997 / 平和通 1998–	
+305	data/overrides/old_names_kana.json	add	tohoku_1-011	K11	n_yudakinshuko|陸中大石		data/imports/wiki 北上線 rev111501383 "陸中大石駅がゆだ錦秋湖駅に…改称"(1991-06-20); 같은 문서 노선도 "1962- 陸中大石駅(2)"	
+306	data/overrides/old_names_kana.json	add	tohoku_1-014	K11	n_hachinohe|尻内		data/imports/wiki 八戸線 rev111465986 "4月1日：尻内駅を八戸駅（2代）に改称"; 같은 문서 "2月1日：八戸駅を本八戸駅に改称"	
+307	data/overrides/old_names_kana.json	add	tohoku_2-011	K11	n_hachinohe|尻内		ja.wikipedia 東北本線 rev111496700: 「4月1日：尻内駅を八戸駅に改称」(1971); build/names.sqlite name entity_id=n_hachinohe lang=ja 행 1개	
+308	data/overrides/old_names_kana.json	add	tohoku_2-012	K11	n_higashi_fukushima|瀬上		ja.wikipedia 東北本線 rev111496700: 「6月1日：瀬上駅を東福島駅に改称」(1978); build/names.sqlite name entity_id=n_higashi_fukushima lang=ja 행 1개	
+309	data/overrides/old_names_kana.json	add	tohoku_2-013	K11	n_takahata|糠ノ目		ja.wikipedia 奥羽本線 rev111473148: 「3月16日：糠ノ目駅が高畠駅に…改称」(1991); build/names.sqlite name entity_id=n_takahata lang=ja 행 1개	
+310	data/overrides/old_names_kana.json	add	tohoku_2-014	K11	n_owani_onsen|大鰐		ja.wikipedia 奥羽本線 rev111473148: 「大鰐駅が大鰐温泉駅に改称」(1991); build/names.sqlite name entity_id=n_owani_onsen lang=ja 행 1개	
+311	data/overrides/old_names_kana.json	add	tohoku_2-015	K11	n_tsukioka|天王新田		ja.wikipedia 羽越本線 rev111580331: 「9月1日：天王新田駅が月岡駅に改称」(1950); build/names.sqlite name entity_id=n_tsukioka lang=ja 행 1개	
+312	data/overrides/old_names_kana.json	add	chubu_2-20	K14	n_hida_kamioka|飛騨船津		build/names.sqlite n_hida_kamioka ko L:히다후나츠{rule} / 기간 행 '(당시 飛騨船津)'	
+313	data/overrides/old_names_kana.json	add	tohoku_1-001	K14	n_aizukogen_ozeguchi_aizu|会津滝ノ原		data/imports/wiki 会津鉄道会津線 rev108995651 年表 "会津滝ノ原駅が会津高原駅に改称"(1986-10-09); 같은 문서 "会津高原駅が会津高原尾瀬口駅に改称"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 "会津高原(旧会津滝ノ原)"	
+314	data/overrides/old_names_kana.json	add	tohoku_1-001	K14	n_aizukogen_ozeguchi_aizu|会津高原		data/imports/wiki 会津鉄道会津線 rev108995651 年表 "会津滝ノ原駅が会津高原駅に改称"(1986-10-09); 같은 문서 "会津高原駅が会津高原尾瀬口駅に改称"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 "会津高原(旧会津滝ノ原)"	
+315	data/overrides/wiki_insert_stations.json	add	kinki_3-040	K18		[{"family":"private","line":"千里線","name":"吹田（旧）","open":"1921-XX-XX","close":"1964-04-10","km":5.7,"prev":"下新庄","next":"吹田","why":"旧吹田"}]	ja.wikipedia 阪急千里線 rev109783576 「（旧）吹田駅…1964年4月10日市役所前駅に統合され、市役所前駅は吹田駅に改称」	
+316	data/overrides/wiki_insert_stations.json	add	kyushu_1-034	K26		[{"family":"jr","line":"筑肥線","name":"深江浜","open":null,"close":"[1959..1960]","km":21.0,"prev":"筑前深江","next":"大入","why":"N05 1959–999, 위키 「-1959?」"}]	ja.wikipedia 筑肥線 rev110909455 「深江浜仮乗降場 -1959?」 / 生の松原은 확인 필요	
+317	data/overrides/wiki_insert_stations.json	add	kyushu_1-035	K26		[{"family":"private","line":"貝塚線","name":"片男佐","open":"(확인)","close":"(폐지일 불명 → 범위)","km":null,"prev":"西鉄香椎","next":"和白","why":"위키 「（臨）片男佐駅開業。廃止日不明」"}]	ja.wikipedia 西鉄貝塚線 「（臨）片男佐駅開業。廃止日不明」	
+318	data/overrides/wiki_insert_stations.json	add	kyushu_2-08	K27		[{"family":"private","line":"本線(長崎電気軌道)","name":"千馬町","open":"1915-11-16","close":"1961-10-05","km":null,"prev":"出島","next":"新地中華街","why":"大浦支線 옛 기점"}]	長崎電気軌道本線 rev110993491: 千馬町停留場：出島 - 築町（現・新地中華街）間 … 1961年10月5日廃止	
+319	data/overrides/wiki_insert_stations.json	confirm	chubu_3-045	K28			확인 필요: 1944 휴지 여부·1950~1954 정차 / wiki 名古屋市電東郊線 rev108442363 「(0.9)|都島電停|-1954」	
+320	data/overrides/wiki_insert_stations.json	confirm	chubu_3-048	K28			확인 필요: 1950 뒤 영업 여부 / wiki 静岡鉄道駿遠線 rev107340138 「17.0|大幡駅」「相川駅」「（臨）国安海岸駅」	
+321	data/overrides/wiki_insert_stations.json	add	chugoku_shikoku_2-001	K28		[{"family":"private","line":"長尾線","name":"御坊川","open":null,"close":"1954-08-01","km":null,"prev":"花園","next":"木太西口","why":"N05 御坊川. 花園 노드의 옛 이름 행(~[1953..1954])은 지움"}]	wiki 高松琴平電気鉄道長尾線 111480106: 1954-08-01 花園信号場が駅に昇格…御坊川駅、木太西口駅廃止	
+322	data/overrides/wiki_insert_stations.json	add	chugoku_shikoku_2-007	K28		[{"family":"private","line":"桟橋線","name":"桟橋通一丁目（旧）","open":null,"close":"1955-06-20","km":null,"prev":"梅の辻","next":"桟橋通一丁目","why":"1회차 025 잔여"}]	wiki とさでん交通桟橋線 108470759 BS: 梅の辻 0.6 → 桟橋通一丁目停留場 (1)(ueBHF) → 桟橋通一丁目 (2) 1.1	
+323	data/overrides/wiki_insert_stations.json	add	kanto_2-027	K28		[{"family":"private","line":"鬼怒川線","name":"鬼怒立岩","open":"(연혁)","close":"1964-10-08","km":11.6,"prev":"東武ワールドスクウェア","next":"鬼怒川温泉","why":"1964-10-08 신호장 전환"}]	東武鬼怒川線 wiki 111044830 年表 1964年10月8日 鬼怒立岩駅が廃止され信号場に変更	
+324	data/overrides/wiki_insert_stations.json	confirm	kanto_2-028	K28			확인 필요: 私鉄要覧·鹿島鉄道 역 일람 / N05 鉾田線(鹿島参宮鉄道) 武田 005b 999 005e 1956, 139.4334,36.1157	
+325	data/overrides/wiki_insert_stations.json	add	kinki_1-014	K28		[{"family":"private","line":"石山坂本線","name":"水耕農場前","open":"1927-05-15","close":"1956-02-15","km":11.2,"prev":"滋賀里","next":"穴太","why":"1955-05-01까지 滋賀里, 1956-02-15 休止. 10.8 滋賀里는 1955-05-01부터"}]	ja.wikipedia 京阪石山坂本線 rev107968078 「滋賀里駅を「水耕農場前駅」に改称。400m浜大津方の旧駅を滋賀里駅として営業」(1955) / 이름 이력(滋賀里→水耕農場前)	
+326	data/overrides/wiki_insert_stations.json	add	kinki_2-003	K28		[{"family":"private","line":"南海本線","name":"深日","open":"1898-10-22","close":"1955-06-11","km":53.0,"prev":"みさき公園","next":"孝子","why":"1955-06-11 休止, 1958 廃止. 읽기 ふけ"}]	data/imports/wiki 南海本線 rev111120385 노선도: 「深日駅 53.0 -1958」	
+327	data/overrides/wiki_insert_stations.json	confirm	kinki_2-047	K28			확인 필요: 폐지일(阪神電気鉄道百年史), 휴지 중이었는지 / data/imports/wiki 阪神国道線 rev110799720 노선도: 「13.5 西宮市役所前 -1952?」「17.8 津知 -1952?」「25.5 浜岩屋 -1952?」	
+328	data/overrides/wiki_insert_stations.json	add	kyushu_1-008	K28		[{"family":"private","line":"甘木線","name":"将軍梅前","open":null,"close":"[1950-01-01..(N05 마지막 해)]","km":null,"why":"N05 1950 영업 기록, 위키 「-?」"},{"family":"private","line":"甘木線","name":"鏡","open":null,"close":"[1950-01-01..(N05 마지막 해)]","km":null,"why":"N05 1950 영업 기록, 위키 「-?」"},{"family":"private","line":"甘木線","name":"高島","open":null,"close":"[1950-01-01..(N05 마지막 해)]","km":null,"why":"N05 1950 영업 기록, 위키 「-?」"},{"family":"private","line":"甘木線","name":"染","open":null,"close":"[1950-01-01..(N05 마지막 해)]","km":null,"why":"N05 1950 영업 기록, 위키 「-?」"},{"family":"private","line":"甘木線","name":"下本郷","open":null,"close":"[1950-01-01..(N05 마지막 해)]","km":null,"why":"N05 1950 영업 기록, 위키 「-?」"}]	n05 Station2 EB03_22421002 将軍梅前 1950–999, 鏡·高島·染·下本郷 1950–999 / prev/next는 지적 원문대로	
+329	data/overrides/wiki_insert_stations.json	add	kyushu_1-010	K28		[{"family":"private","line":"別大線","name":"競輪場前","open":"(확인)","close":"[..1971]","km":null,"prev":"照波園前","next":"弁天前","why":"N05 1950–1971"}]	n05 Station2 EB03_22405036 競輪場前 1950–1971 駅位置推定 / 개업·폐지일 확인	
+330	data/overrides/wiki_insert_stations.json	confirm	kyushu_1-036	K28			확인 필요: 여객 취급 여부 / n05 EB03_22405015 仏崎 1950–1971	
+331	data/overrides/wiki_insert_stations.json	confirm	chubu_2-24	K35			확인 필요: 폐지일(1950 전이면 archive, 뒤면 정차역) / ja.wikipedia 越後交通長岡線 rev108108259 역 표 寺泊温泉駅 0.5/38.5, 「7月26日 寺泊温泉駅開業」	
+332	data/overrides/wiki_insert_stations.json	confirm	hokkaido_1-010	K35			확인 필요: 北入江信号場 문서 최신판·停車場変遷大事典 / 위키 室蘭本線 rev110959208 「9月30日：北入江仮乗降場を有珠側に600 m移設し、信号場に変更」(1964)	
+333	data/overrides/wiki_insert_stations.json	confirm	kinki_2-049	K35			확인 필요: 大浜駅 문서·저자 생략(2008) / data/imports/wiki 南海本線 rev111120385 노선도: 「大浜駅 10.6」 주석 1937-1952年の間に廃止	
+334	data/overrides/wiki_insert_stations.json	confirm	kinki_3-031	K35			확인 필요: 清水 폐지일·六甲山 개칭일 / ja.wikipedia 神戸六甲鉄道六甲ケーブル線 「土橋駅…清水駅 - 六甲山駅…間が開業…清水駅で乗り継ぐ」	
+335	data/overrides/archive_fix.json	set	chubu_1-17	K24	洞道西口 ; 麻生口		北陸本線 rev111217659 노선도 「exBHF 洞道西口駅 -1884」「exBHF 刀根駅」「exBHF 麻生口駅 -1884」(ex 열) / 두 역 순서(柳ヶ瀬–刀根 또는 刀根–疋田)는 원문으로 확인	
+336	data/overrides/archive_fix.json	set	chubu_1-18	K24	越前下関		ハピラインふくい線 rev110950598 노선도 丸岡駅 65.9 → 越前下関駅 69.0 -1940 → 芦原温泉駅 71.7	
+337	data/overrides/archive_fix.json	set	chubu_2-15	K24	北寺津 ; 三河吉田		data/source/archive/archive.yaml a_kitaterazu after=before=n_terazu	
+338	data/overrides/archive_fix.json	confirm	chubu_2-35	K24			확인 필요: 岡崎新의 노선(西尾鉄道 岡崎線 열람 전용 노선)과 자리 / data/source/archive/archive.yaml a_okazakiekimae after n_minami_anjo km 0.0	
+339	data/overrides/archive_fix.json	set	chugoku_shikoku_1-032	K24	_add		위키 芸備線 rev 111178286 노선도 「eBHF|132.0|弥谷|-1941」, 「弥谷駅：1941年休止、上三田駅 - 中三田駅間（132.0 km）」	
+340	data/overrides/archive_fix.json	set	chugoku_shikoku_2-B08	K24	_add		wiki 山陰本線: 1947年：同年以降に石見益田駅 - 戸田小浜駅間に競馬場仮停車場が開業（廃止日不明）	
+341	data/overrides/archive_fix.json	set	kanto_1-030	K24	北十間 ; 十間橋通 ; 虎橋通		render2/r_kameido_line.txt 오늘 화면 ○ 열람전용역 3줄 위치	
+342	data/overrides/archive_fix.json	set	kanto_2-049	K24	_add		N05 野田線 北柏 1950–1954 (EB03_13421026) / 지금 北柏(1955~)과 다른 자리인지 확인	
+343	data/overrides/archive_fix.json	set	kinki_1-036	K24	_add		ja.wikipedia 三岐鉄道北勢線 rev111413633 「稗田前駅、星川駅、大木駅、畑新田駅休止」(1944-07-01), 노선도 「星川駅 -1969」 5.8	
+344	data/overrides/archive_fix.json	set	kinki_1-037	K24	_add		ja.wikipedia 伊賀鉄道伊賀線 rev110828730 「四十九駅 -1969」 6.8, 「休止中の…四十九駅廃止」(1969-05-15)	
+345	data/overrides/archive_fix.json	set	chugoku_shikoku_1-030	K24	湛井		km 근거 없음 → null(?) (§4.5)	
+346	data/overrides/archive_fix.json	add	chugoku_shikoku_1-031	K24	_add ; _del		一畑口–一畑 3.3 km 지선(1회차 032 미해결)	
+347	data/overrides/archive_fix.json	add	chugoku_shikoku_2-029	K24	_add		chugoku_shikoku_2-029 근거(위키 노선도); 행 8개 형식은 archive_fix _add 예시와 같게	
+348	data/overrides/archive_fix.json	add	hokkaido_1-014	K24	_add ; _del		위키 富内線 「下段は沼ノ端からのキロ程」; 沼ノ端–豊城 1943 폐지	
+349	data/overrides/archive_fix.json	add	kanto_3-19	K24	本小平		本小平는 小平線(萩山–本小平, 지금 拝島線 구간) 위 역	
+350	data/overrides/archive_fix.json	add	kinki_2-051	K24	揖斐川		kinki_2-051 근거(위키 近鉄名古屋線)	
+351	data/overrides/archive_fix.json	add	kinki_2-052	K24	東山東		伊太祈曽(8.0)–山東(9.1) 사이 km 8.8	
+352	data/overrides/archive_fix.json	add	kinki_3-041	K24	_add ; _del		法隆寺線 平端–近畿日本法隆寺 1945 休止·1952 廃止	
+353	data/overrides/archive_fix.json	set	kyushu_1-009	K24		甘木線(西鉄) 13행: km = 17.9 − 위키 km, after/before 서로 바꿈(鯉段 3.3·富安 2.7 学校前–古賀茶屋, 牛木 17.2 馬田–甘木, 筑後川·南薫 宮の陣 쪽)	위키 西鉄甘木線 노선도(甘木 기점)	
+354	data/overrides/hub_join.json	add	chubu_1-30	K06		{"node":"n_kita_gate_aichi_expo","with":"n_aichikyuhaku_kinen_koen","group":false,"why":"2005 愛・地球博 北ゲート ↔ リニモ 万博会場 184m 환승(위키 愛・地球博線 노선도 HST, 감사2 chubu_1-30)"}		
+355	data/overrides/hub_join.json	add	chubu_2-18	K06		{"node":"n_shin_komatsu","with":"n_komatsu","group":false,"why":"尾小屋鉄道 新小松는 国鉄 小松駅 옆(1919~1977). 감사2 chubu_2-18"}		
+356	data/overrides/hub_join.json	add	chugoku_shikoku_1-033	K06		{"node":"n_zentsuji","with":"n_shakomae","group":false,"why":"위키 土讃線 rev111124356 「善通寺駅：琴平参宮電鉄丸亀線（善通寺車庫前駅）」"}		
+357	data/overrides/hub_join.json	add	chugoku_shikoku_1-033	K06		{"node":"n_kotohira_dosan","with":"n_kotosankotohira","group":false,"why":"위키 土讃線 rev111124356 「琴平駅：琴平参宮電鉄琴平線（琴参琴平駅）」"}		
+358	data/overrides/hub_join.json	add	hokkaido_1-005	K06		{"node":"n_sha_shakubetsu","with":"n_shakubetsu","group":false,"why":"위키 雄別鉄道 rev109063734 「旅客は社尺別駅乗り換え」(332m)"}		
+359	data/overrides/hub_join.json	add	kanto_2-012	K06		{"node":"n_tenkubashi_keikyu","with":"n_haneda_tokyo_monorail","group":false,"why":"1993 京急 羽田(현 天空橋)에서 東京モノレール 乗り継ぎ(京急空港線 위키). 일반 규칙(같은 group 쌍 상시 후보)이 들어가면 불필요"}		
+360	data/overrides/hub_join.json	add	kanto_2-013	K06		{"node":"n_shin_sugita_yokohama_seaside_line","with":"n_shin_sugita","group":true,"why":"같은 group g_shin_sugita. 일반 규칙이 들어가면 불필요"}		
+361	data/overrides/hub_join.json	add	kanto_3-03	K06		{"node":"n_bakuro_yokoyama","with":"n_bakurocho","group":false,"why":"馬喰横山–馬喰町 143m 지하 통로 공식 환승(東日本橋 185m도 같은 hub)"}		
+362	data/overrides/hub_join.json	add	kanto_3-10	K06		{"node":"n_ginza_4_chome","with":"n_ginza","group":false,"why":"都電 銀座四丁目 정류장은 지하철 銀座역 위 162m"}		
+363	data/overrides/hub_join.json	add	kinki_3-068	K06		{"node":"n_nodahanshindenshamae","with":"n_noda_hanshin","group":false,"why":"野田阪神電車前 정류장 – 阪神 野田 152m"}		
+364	data/overrides/hub_join.json	add	kinki_3-069	K06		{"node":"n_sannomiyahankyumae","with":"n_kobe_sannomiya_hankyu","group":false,"why":"三宮阪急前 – 阪急 神戸三宮 301m(같은 hub 구성원인데 쌍 없음)"}		
+365	data/overrides/hub_join.json	add	kyushu_2-16	K06		{"node":"n_tenjin_minami","with":"n_tenjin","group":false,"why":"天神南–天神 공식 도보 환승(hub_pairs.json [天神,天神南] 행이 안 먹음)"}		
+366	data/overrides/hub_join.json	add	tohoku_1-023	K06		{"node":"n_shakitasendai","with":"n_kita_sendai","group":false,"why":"위키 仙台市電 rev111123306 「北仙台では、仙台鉄道や仙山線と乗り換え」(150m)"}		
+367	data/overrides/hub_join.json	add	chubu_1-26	K08		{"node":"n_yonejimaguchi_fushiki","with":"n_yonejimaguchi","group":true,"why":"伏木線은 高岡軌道線의 일부로 米島口에서 갈라짐(위키 加越能鉄道伏木線 rev108783568). ID 동결 전 노드 합침(id_redirect) 권장"}		
+368	data/overrides/hub_join.json	add	chubu_3-011	K08		{"node":"n_shinkawa_yagyubashi_branch","with":"n_shinkawa_toyohashi","group":true,"why":"柳生橋支線은 東田本線 新川에서 갈라지는 같은 회사 지선. 노드 합침 권장"}		
+369	data/overrides/hub_join.json	add	kyushu_1-005	K08		{"node":"n_kaseda_nansatsu","with":"n_kaseda_kagoshima_kotsu","group":true,"why":"万世線·枕崎線 모두 南薩鉄道의 加世田. 노드 합침 권장"}		
+370	data/overrides/km_fix.json	add	kinki_2-010	K23		[{"a":"(앞 역)","b":"n_nakamozundojomae","km":"(15.0 − 앞 역 km)","why":"위키 10.4 + 岸里玉出 기점 차 4.6"}]	data/imports/wiki 南海高野線 rev110646583 노선도: 「10.4 （臨）中百舌鳥運動場前駅」, 白鷺 10.5, 中百舌鳥 9.5	
+371	data/overrides/km_fix.json	add	kinki_1-004	K25		[{"a":"n_hinooka","b":"n_misasagi_keihan_old","km":0.4,"why":"위키 노선도 京津三条 기준 御陵(1) 3.9"}]	ja.wikipedia 京阪京津線 rev111210110 노선도 「御陵駅 (1) -1997」 3.9 / 「御陵駅 (2) 1997-」	
+372	data/overrides/km_fix.json	confirm	hokkaido_1-013	K36			확인 필요: 私鉄統計·鉄道要覧 계열 km / 위키 定山渓鉄道線 rev109021513 「路線距離（営業キロ）：27.2 km」, 노선도 「27.2 定山渓駅」, 역 표 「0.8 / 27.1」	
+373	data/overrides/km_fix.json	confirm	kanto_2-058	K36			확인 필요: 사업자 공표 km(사용자 판단: 노리츠부시 유지 여부) / 東京都交通局日暮里・舎人ライナー wiki 110705726 駅一覧: 熊野前 駅間0.7 累計2.4 / 扇大橋 4.1 / 高野 4.6 / 江北 5.2	
+374	data/overrides/km_fix.json	confirm	kanto_2-059	K36			확인 필요: 사업자 km / 京成松戸線 wiki 111480624 노선도 BS 11.4 北初富	
+375	data/overrides/km_fix.json	confirm	kanto_2-060	K36			확인 필요: 사업자 km / 真岡鐵道真岡線 wiki 108678139 노선도 BS	
+376	data/overrides/km_fix.json	add	kinki_1-012	K36		[{"a":"(西日野)","b":"(西日野（旧）)","km":0.2,"why":"e_009355. 日永 기준 旧西日野 1.5, 폐지 구간 1.7"}]	ja.wikipedia 四日市あすなろう鉄道八王子線 rev108178557 노선도 1.5/1.8/2.3/3.0	
+377	data/overrides/km_fix.json	confirm	kinki_1-027	K36			확인 필요: 阪堺電軌 공표 営業キロ / ja.wikipedia 阪堺電気軌道阪堺線 rev111440345 표 「塚西 3.5」「御陵前 10.1」	
+378	data/overrides/km_fix.json	confirm	kinki_1-034	K36			확인 필요: Osaka Metro 공표 km / ja.wikipedia Osaka Metro今里筋線 rev110840105 표	
+379	data/overrides/km_fix.json	confirm	kinki_1-035	K36			확인 필요: 三岐鉄道 공표 km / ja.wikipedia 三岐鉄道北勢線 rev111413633 「蓮花寺駅 3.5」	
+380	data/overrides/km_fix.json	add	kinki_2-008	K36		[{"a":"(北助松)","b":"n_matsunohama","km":0.9,"why":"위키 역 일람"},{"a":"n_matsunohama","b":"(泉大津)","km":1.0,"why":"위키 역 일람"}]	data/imports/wiki 南海本線 rev111120385 노선도: 「19.4 NK19 松ノ浜駅」	
+381	data/overrides/km_fix.json	confirm	kinki_3-002	K36			확인 필요: 近江鉄道 공식 キロ程 / ja.wikipedia 近江鉄道本線 rev111078982 BS 「12.7 OR10 尼子駅」	
+382	data/overrides/km_fix.json	confirm	kinki_3-028	K36			확인 필요: 比叡山鉄道 공식 キロ程 / ja.wikipedia 比叡山鉄道線 rev109148718 BS 「0.3 ほうらい丘駅」「1.7 もたて山駅」	
+383	data/overrides/km_fix.json	add	kinki_3-049	K36		[{"a":"(今池町)","b":"n_tennoji_nankai","km":1.2,"why":"1984-11-18 南海天王寺 100 m 이전·0.1 km 단축, 폐지 직전 값"}]	ja.wikipedia 南海天王寺支線 rev107049234 「南海天王寺駅が今池町駅寄りに100m移転し、路線距離が0.1km短縮」「今池町駅 - 天王寺駅間1.2kmが廃止」	
+384	data/overrides/km_fix.json	add	kyushu_2-03	K36		[{"a":"n_ijuin_kagoshima_kotsu","b":"n_kami_hioki","km":4.4,"why":"위키 표 上日置 4.4, 합계 49.6"}]	鹿児島交通枕崎線 rev(캐시): 路線距離（営業キロ）：伊集院 - 枕崎間 49.6 km / 일반: gen_wiki 첫 역 km≠0 처리를 표 営業キロ와 대조	
+385	data/overrides/n05_fix.json	set	kyushu_1-006	K07	lines		render2/r_loop_line_nishitetsu.txt 博多築港前 「환승(up): 西鉄福岡市内線循環線 博多築港前–千鳥橋」 / 千鳥橋 노드 합치기	
+386	data/overrides/n05_fix.json	set	chubu_3-028	K23	lines		wiki 静岡鉄道清水市内線 rev107659703 BS행 「1.8|清水駅前停留場」 / 袖師 4.3(노선도) vs 4.2(区間표): 区間표 우선 여부 판정	
+387	data/overrides/n05_fix.json	set	chubu_3-029	K23	lines		wiki 名古屋市電築地線 rev92163572 「6.3|東起町五丁目電停」「(6.5)|東起電停|-1954」 / 築地線支線 港西小学校前 0.4. 東起 1950~1954 정차는 운행 확인 뒤	
+388	data/overrides/n05_fix.json	set	hokkaido_1-012	K23	lines		위키 雄別鉄道 rev109063734 尺別鉄道 노선도 「3.940 八幡前駅」「9.400 旭町駅」「0.260 社尺別駅」 / 尺別 기점 3.940/7.900/9.400 − 社尺別 0.260	
+389	data/overrides/n05_fix.json	set	kanto_3-31	K23	lines		data/imports/n05/lines.json 水浜線 h 「磯浜～大洗【旧】 3.0」, km_est에 大洗【旧】 / km_est 목록에서 제외	
+390	data/overrides/n05_fix.json	set	kinki_2-011	K23	lines		data/imports/wiki 阪神国道線 rev110799720 노선도 km 열 / 나머지 정류장(北今津 이후)도 위키 노선도 값으로	
+391	data/overrides/n05_fix.json	set	kinki_2-012	K23	lines		data/imports/wiki 京都市電九条線 rev110668610 노선도 / 丸太町線 丸太町新道 1.4·川端丸太町 1.6 등도	
+392	data/overrides/n05_fix.json	set	kinki_3-064	K23	lines		ja.wikipedia 京都市電千本線 rev101148803 「2.506 急 千本丸太町」 / 大宮線 四条大宮 0.000…九条大宮 2.695, 白川線 浄土寺 0.332	
+393	data/overrides/n05_fix.json	set	tohoku_2-030	K23	lines		data/imports/n05/lines.json n05a70c5b h 「野内（旧）～青森 10.4」, km_est ['青森'] / km_est 해제	
+394	data/overrides/n05_fix.json	add	chubu_3-025	K27	lines		wiki 富山地方鉄道本線 rev111392356: 「黒部支線 1969年（昭和44年）8月17日廃止」 / km는 위키·N05 겹침	
+395	data/overrides/n05_fix.json	add	chugoku_shikoku_2-005	K27	lines		wiki 小野田線 110993965: 1949-03-01 西沖山駅 - 宇部港駅間、支線 宇部港駅 - 港町駅間の旅客営業廃止 / km 위키 2.2·1.8, 역 km는 N05 겹침	
+396	data/overrides/n05_fix.json	set	chubu_3-021	K30	kind ; db_line_id ; note		DESIGN §2.2 relocate·redesign §3.0 옛 선형 일반화(常磐線 모델)	
+397	data/overrides/n05_fix.json	set	kyushu_1-026	K30	lines ; kind ; db_line_id		DESIGN §2.2 relocate·redesign §3.0 옛 선형 일반화	
+398	data/overrides/n05_fix.json	del	kinki_2-050	K35	lines		docs/DESIGN.md §17 「운휴 수록 기준 … 30일 이상」 / DESIGN §17 운휴 수록 기준	
+399	data/overrides/node_fix.json	set	kinki_2-013	K11	n_idakiso		data/imports/wiki 和歌山電鐵貴志川線 rev110526764 노선도: 「09 伊太祈曽駅」; data/overrides/hand_tables.json N02AL: 「伊太祁曽」→「伊太祈曽」 대응만 있고 이름에 미반영; 1회차 kinki_1-031 미해결	
+400	data/overrides/node_fix.json	set	kinki_2-015	K12	n_biwako_hamaotsu_kojaku		data/imports/wiki 江若鉄道 rev110542243 노선도: 「浜大津駅 0.0 （江若・国鉄）」	
+401	data/overrides/node_fix.json	set	chubu_1-13	K13	n_awaraonsen_eiheiji		names.sqlite n_awaraonsen_eiheiji 행(ja 金津, kana あわらおんせん); 北陸本線 rev111217659 「金津駅が芦原温泉駅に改称」(1972-03-15, 폐지 뒤)	
+402	data/overrides/node_fix.json	set	kinki_3-053	K13	n_hiranocho_osaka_city		data/imports/n05/lines.json 【大阪市交通局 堺筋線】 kana 「平野町: ひらのまち」(wikipedia:110687702); data/overrides/n05_fix.json 高橋線 kana 「平野町: ひらのちょう」	
+403	data/overrides/node_fix.json	set	kinki_3-054	K13	n_shimizucho_osaka_city		data/imports/n05/lines.json 【大阪市交通局 堺筋線】 kana 「清水町: しみずまち」	
+404	data/overrides/node_fix.json	set	kinki_3-055	K13	n_imabuku_osaka_city		data/imports/n05/lines.json 【大阪市交通局 天満今福線】 kana 「今福: いまふく」(wikipedia:101410479)	
+405	data/overrides/node_fix.json	set	kinki_3-056	K13	n_niinai_nankai		data/imports/n05/lines.json 【南海電気鉄道 和歌山軌道線新町線】 kana 「新内: しんうち」(wikipedia:111210581)	
+406	data/overrides/node_fix.json	set	chugoku_shikoku_1-028	K17	n_chofu_sanyo		build/names.sqlite n_chofu_sanyo·n_shimonoseki_sanyo·n_hiroshima_hiroden	
+407	data/overrides/node_fix.json	set	chugoku_shikoku_2-023	K17	n_otemachi_ekimae_iyotetsu		wiki 伊予鉄道大手町線 108563046 BS: 04 大手町駅前停留場; names: n_otemachi_ekimae_iyotetsu ja 江戸町駅前 valid_from=valid_to=[1952-XX-XX..1953-XX-XX]; 같은 노선 JR松山駅前은 hand로 고쳐져 있음(노리츠부시 松山駅前)	
+408	data/overrides/node_fix.json	set	kanto_1-034	K17	n_hodogaya_idogaya		N05 표 保土ヶ谷線 s 끝: 保土ヶ谷駅 2.8; names.sqlite n_hodogaya_idogaya ja 保土ヶ谷駅 kana ほどがや	
+409	data/overrides/node_fix.json	set	kinki_3-058	K17	n_suma_kobe_city		data/imports/n05/lines.json 【神戸市交通局 須磨線】 kana 「須磨駅: すまえき」	
+410	data/overrides/node_fix.json	set	kinki_3-063	K17	n_kenryukomae		ja.wikipedia 京都市電千本線 rev101148803 BS 「0.835 ｜ 乾隆校前」; n05/lines.json 「乾隆高前」	
+411	data/overrides/node_fix.json	set	kyushu_2-05	K17	n_higashi_isahaya		長崎本線 rev111384902 노선도: [[東諫早駅]] 97.8; 같은 문서 주석: 正確な駅名は「諫」; N05 같은 역에 東諌早·東諫早 둘 다	
+412	data/overrides/node_fix.json	set	kyushu_2-18	K17	n_nikkooshuki ; n_nikkokoshuki		日本鉱業佐賀関鉄道 rev106901165: 日鉱大志生木駅（おおじゅうき） - 日鉱小志生木駅（こじゅうき）	
+413	data/overrides/hand_tables.json	add	chubu_2-01	K02		{"line":"l_joetsu_line","other_route":"r_joetsu_line_echigo_yuzawa_gala_yuzawa","at":"n_echigo_yuzawa","why":"ガーラ湯沢 지선은 표준궤로 上越新幹線 선로에만 이어짐(재래선 1067mm와 선로 없음)"}	chubu_2-01; 함께 THROUGH 행에 other_route:r_joetsu_line_echigo_yuzawa_gala_yuzawa 칸 추가(上越新幹線→ガーラ湯沢 계통)	
+414	data/overrides/hand_tables.json	add	chugoku_shikoku_2-B13	K02	table ; row		嵯峨野線 京都 頭端式(KBHFa)	
+415	data/overrides/hand_tables.json	add	kanto_2-024	K02		{"line":"l_keiyo_line","other":"l_sobu_main_line","at":"n_tokyo","why":"京葉線 東京은 지하 막다른 승강장(tKBHFa), 総武快速 터널은 교차만"}	위키 京葉線 노선도	
+416	data/overrides/hand_tables.json	add	kanto_2-045	K02	table ; row		杉並線 1067mm / 都電 新宿線 1372mm. 일반 규칙(line.gauge)이 들어가면 불필요	
+417	data/overrides/hand_tables.json	add	kanto_3-06	K02	table ; rows		위키 鶴見線 각주 「鶴見線とは線路が繋がっていない」. 근본은 gen_wiki.py:242 JR 끝-끝 규칙 폐지	
+418	data/overrides/hand_tables.json	note	kinki_1-008	K02	table ; rows		NOCONT에 이미 있음 → 위키 행 is_continue가 name_ja 키(「海岸線」 등 짧은 이름)와 안 맞아 남은 것으로 보임. line ID 키로 바꿔야	
+419	data/overrides/hand_tables.json	add	kinki_1-021	K02		{"line":"l_hanshin_main_line","other":"l_kitaosaka_line","at":"n_noda_hanshin","why":"北大阪線 野田는 国道線과 이어진 별도 노면 승강장(위키 阪神北大阪線 rev110507999 노선도)"}		
+420	data/overrides/hand_tables.json	note	kinki_2-033	K02	table ; row		NOCONT에 이미 있는데도 끝 이어짐이 남음 → 이름 키 불일치(lines.name_ja가 「橿原線」·「南大阪線」). line ID 키 표로 바꿔야(1회차 kinki_2-012 미해결 원인)	
+421	data/overrides/hand_tables.json	set	chugoku_shikoku_2-015	K35	tables.THROUGH		wiki 志度線 111442761: 1994-06-26 瓦町駅改良工事着手に伴い琴平線・長尾線と分断され、孤立線となる	
+422	data/overrides/hand_tables.json	set	chugoku_shikoku_2-024	K35	junction		wiki 本四備讃線: 1988年3月20日 茶屋町駅 - 児島駅間暫定開業	
+423	data/overrides/positions	set	kinki_3-025	K06		{"node":"n_osaka_ekimae","note":"大阪駅 남쪽 정류장 자리 좌표로(지금 阪急東口 좌표와 동일 approx n05). 고치면 ekimae 규칙으로 hub_osaka 편입"}	node_position 두 노드 좌표 동일	
+424	data/overrides/positions	confirm	chubu_2-34	K37			확인 필요: N05 역 점 재대조 / build/master.sqlite node_position n_kagashima 35.408036,136.711783 (n05)	
+425	data/overrides/positions	confirm	chugoku_shikoku_1-024	K37			확인 필요: 1959~2001 3代 高松駅 자리 좌표(옛 지형도·N02 2001 전판) / data/overrides/moved.json 「高松駅移転。0.3 km延長」(1959)·「0.3 km短縮」(2001)	
+426	data/overrides/positions	add	kanto_2-034	K37		{"node":"n_azami","lat":36.38511,"lon":139.30653,"src":"n02_2024"}	data/imports/n02/stations_2024.json 阿左美 36.38511,139.30653	
+427	data/overrides/positions	add	kinki_1-041	K37		{"node":"n_hojomachi","src":"n02_2024","lat":"(N02 2024 역 점)","lon":"(N02 2024 역 점)"}	master.sqlite node_position n_hojomachi approx n05	
+428	data/overrides/positions	add	kinki_2-055	K37		{"node":"n_sannomiya_sanyo","same_as":"(阪急 神戸三宮 좌표)"}	1회차 kinki_4-009 (group은 고침, 좌표는 그대로)	
+429	data/overrides/positions	confirm	kinki_3-067	K37			확인 필요: N05 1950~1964 역 점 / node_position 세 노드 좌표 동일	
+430	data/overrides/positions	confirm	tohoku_1-043	K37			확인 필요: 猪川 좌표 / build/master.sqlite node_position n_ikawa_iwate approx	
+431	data/overrides/positions	add	tohoku_2-029	K37	n_tona_old ; (浦町)		build/master.sqlite node_position n_tona_old·n_uramachi	
+432	data/overrides/line_history.json	add	kanto_1-017	K15		{"line":"l_chihara_line","from_node":null,"to_node":null,"name_ja":"千葉急行線","kana":"ちばきゅうこうせん","operator":"o_chiba_kyuko_electric_railway","valid_from":"1992-04-01","valid_to":"1998-10-01","kind":"name","evidence":[],"why":"노선 옛 이름(결정 3)"}	build master line_period: l_chihara_line 행 0; edge_attr: o_chiba_kyuko_electric_railway 1992-04-01~1998-10-01	
+433	data/overrides/line_history.json	add	kanto_1-024	K15		{"line":"l_hakone_tozan_train","from_node":null,"to_node":null,"name_ja":"箱根登山鉄道鉄道線","kana":"はこねとざんてつどうてつどうせん","operator":"o_hakone_tozan_railway","valid_from":null,"valid_to":"2024-04-01","kind":"name","evidence":[],"why":"노선 옛 이름(결정 3)"}	edge_attr: o_hakone_tozan_railway ~2024-04-01, o_odakyu_hakone 2024-04-01~; build master line_period: 두 노선 행 0	
+434	data/overrides/line_history.json	add	kanto_1-024	K15		{"line":"l_hakone_tozan_cable_car","from_node":null,"to_node":null,"name_ja":"箱根登山鉄道鋼索線","kana":"はこねとざんてつどうこうさくせん","operator":"o_hakone_tozan_railway","valid_from":null,"valid_to":"2024-04-01","kind":"name","evidence":[],"why":"노선 옛 이름(결정 3)"}	edge_attr: o_hakone_tozan_railway ~2024-04-01, o_odakyu_hakone 2024-04-01~; build master line_period: 두 노선 행 0	
+435	data/overrides/line_history.json	add	kyushu_2-26	K15		{"line":"l_osumi_line","from_node":null,"to_node":null,"name_ja":"古江線","kana":"ふるえせん","operator":null,"valid_from":null,"valid_to":"1972-09-09","kind":"name","evidence":[],"why":"노선 옛 이름(결정 3)"}	大隅線 rev110914996: 1972年9月9日 … 全通。古江線を大隅線と改称; 高千穂鉄道高千穂線 rev111478046: 1972年7月22日：日ノ影 - 高千穂間を延伸開業し高千穂線と改称; 西鉄天神大牟田線 rev111320592: 線名を大牟田線から天神大牟田線に改称	
+436	data/overrides/line_history.json	add	kyushu_2-26	K15		{"line":"l_takachiho_line","from_node":null,"to_node":null,"name_ja":"日ノ影線","kana":"ひのかげせん","operator":null,"valid_from":null,"valid_to":"1972-07-22","kind":"name","evidence":[],"why":"노선 옛 이름(결정 3)"}	大隅線 rev110914996: 1972年9月9日 … 全通。古江線を大隅線と改称; 高千穂鉄道高千穂線 rev111478046: 1972年7月22日：日ノ影 - 高千穂間を延伸開業し高千穂線と改称; 西鉄天神大牟田線 rev111320592: 線名を大牟田線から天神大牟田線に改称	
+437	data/overrides/line_history.json	add	kyushu_2-26	K15		{"line":"l_tenjin_omuta_line","from_node":null,"to_node":null,"name_ja":"大牟田線","kana":"おおむたせん","operator":"o_nishi_nippon_railroad","valid_from":null,"valid_to":"2001-01-01","kind":"name","evidence":[],"why":"노선 옛 이름(결정 3)"}	大隅線 rev110914996: 1972年9月9日 … 全通。古江線を大隅線と改称; 高千穂鉄道高千穂線 rev111478046: 1972年7月22日：日ノ影 - 高千穂間を延伸開業し高千穂線と改称; 西鉄天神大牟田線 rev111320592: 線名を大牟田線から天神大牟田線に改称	
+438	data/overrides/line_history.json	add	chubu_3-024	K15		{"line":"l_tateyama_line","from_node":"n_terada_toyama_chiho","to_node":"n_iwakuraji","name_ja":"五百石線","kana":"ごひゃっこくせん","operator":null,"valid_from":null,"valid_to":"1969-04-01","kind":"member","evidence":["ja.wikipedia 富山地方鉄道立山線 年表 1969-04-01"],"why":"1969-04-01 立山線 편입 전 寺田–岩峅寺는 五百石線"}	공식 자료 확인 필요(확인 필요)	
+439	data/overrides/line_history.json	add	tohoku_1-036	K15		kind=name 행 4개: 秋田内陸北線·南線(1986-11-01~1989-04-01), 小本線(~1972-02-06 → 岩泉線), 秋保電気鉄道(→仙南交通秋保線)	tohoku_1-036 근거	
+440	data/overrides/suspended.json	set	chubu_1-14	K35	永平寺線		京福電気鉄道永平寺線 rev108719970 「越前本線で同線と永平寺線の電車が正面衝突」(2000-12-17)	
+441	data/overrides/suspended.json	set	chubu_2-12	K35	黒部峡谷鉄道本線		ja.wikipedia 黒部峡谷鉄道 rev111588021 「この年の営業は宇奈月 - 猫又間の部分運行」	
+442	data/overrides/suspended.json	confirm	chugoku_shikoku_2-B16	K35			확인 필요: 온종일 운휴 첫날(JR四国 운행 정보) / wiki 予讃線: 7月：平成30年7月豪雨により、一部区間不通	
+443	data/overrides/suspended.json	set	kyushu_1-022	K35	九州新幹線		ja.wikipedia 九州新幹線 「7月28日：…熊本地震発生…地震後、終日運転を休止」	
+444	data/overrides/suspended.json	set	kyushu_2-13	K35	長崎電気軌道 本線		長崎電気軌道本線 rev110993491: 1953年7月1日：軌道敷を闇市に占拠されていた西浜町 - 思案橋間が運行再開	
+445	data/overrides/suspended.json	set	kyushu_2-33	K35	高千穂線		高千穂鉄道高千穂線 rev111478046: 8月25日：日ノ影 - 高千穂間が運転再開 / 기존 川水流–高千穂 행 대체	
+446	data/overrides/suspended.json	set	tohoku_1-032	K35	阿武隈急行線		data/imports/wiki 阿武隈急行線 rev111170784 "10月12日 … 全線で運休"	
+447	data/overrides/removed.json	add	kanto_1-002	K19	n_godo_ashio		wiki 神戸駅 (群馬県) hist: 1973-06-27 草木ダム建設に伴い、当駅 - 沢入駅間の線路を付け替え	
+448	data/overrides/removed.json	add	kanto_2-035	K24	archive_line:a_utsunomiyarikugunkokusho_line		kanto_2-035 근거	
+449	data/overrides/removed.json	add	kanto_2-048	K24	archive_stop:a_morito		kanto_2-048 근거(위키 八高線/越生線 노선도)	
+450	data/overrides/removed.json	add	kinki_2-053	K24	archive_stop:a_kamitsutsui		kinki_2-053 근거	
+451	data/overrides/removed.json	add	kyushu_1-024	K24	archive_stop:a_tabiishi		kyushu_1-024 근거	
+452	data/overrides/removed.json	add	kinki_2-002	K35	edge:e_014599		edge_attr e_014599 normal 1916~1932; 대안 n05_fix.json 西野田線 항목에서 구간 제외	
+453	data/overrides/archive_lines.json	set	chubu_1-19	K24	drop_stop		越後線 rev111454860 노선도 「exKBSTeq …万代駅 -1965」	
+454	data/overrides/archive_lines.json	set	chubu_3-038	K24	closed		render2/r_shinano_railway_line.txt 小諸 「~?」	
+455	data/overrides/archive_lines.json	set	kanto_1-025	K24	drop_stop		render2/r_higashi_narita_line.txt 오늘 화면 ○ 열람전용역 3줄 / ID는 DB archive_stop에서 확인	
+456	data/overrides/archive_lines.json	set	kanto_2-036	K24	closed		成田鉄道多古線 wiki 110863186 年表 1946年10月9日 正式廃止	
+457	data/overrides/archive_lines.json	confirm	kanto_2-037	K24			확인 필요: 폐지일(1935) 원문 / render2/r_meguro_line.txt 奥沢 행	
+458	data/overrides/archive_lines.json	set	kinki_1-019	K24	drop_stop		ja.wikipedia 京阪本線 rev111466840 「貨物輸送は廃止され貨物専用駅の塩小路駅も廃駅」	
+459	data/source/routes/private.yaml	set	chugoku_shikoku_2-003	K03	r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi		render2/r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi.txt: ● 木太東口 km=? 상태=closed 개업1912 폐역1951	
+460	data/source/routes/private.yaml	set	chubu_2-14	K20	r_kubiki_railway ; branch 계통		ja.wikipedia 頸城鉄道線 rev111271002 노선도 新黒井 0.0 … 浦川原 15.0	
+461	data/source/routes/private.yaml	set	kinki_3-050	K20	route ; from ; to		위키 노선도 天下茶屋 0.0–天王寺 2.4	
+462	data/source/routes/private.yaml	set	kinki_2-043	K35	id ; from ; to		会場線 桃山台(분기)–千里中央（仮）–万国博中央口 1970-02-24~09-14	
+463	data/source/routes/private.yaml	set	kanto_1-009	K35	r_azumabashi_line		wiki 東京都電車 rev110874184 L303-304: 吾妻橋線 上野駅前 - 菊屋橋 - 雷門 - 浅草 - 本所吾妻橋 / 또는 吾妻橋一丁目–本所吾妻橋 0.1km edge	
+464	data/overrides/parallel_runs.json	add	chubu_2-09	K09	lines ; nodes ; names ; period ; parallel ; how ; why			
+465	data/overrides/parallel_runs.json	add	chugoku_shikoku_1-014	K09	lines ; nodes ; names ; period ; parallel ; how ; why			
+466	data/overrides/parallel_runs.json	add	kanto_2-044	K09	lines ; nodes ; period ; parallel ; how ; why			
+467	data/overrides/parallel_runs.json	add	kinki_2-044	K09	note			
+468	data/overrides/parallel_runs.json	add	kinki_2-045	K09	lines ; nodes ; period ; parallel ; how ; why			
+469	data/overrides/official_lines.json	add	chubu_3-020	K30	op ; lines ; into ; routes ; why		chubu_3-020 근거(위키 福井鉄道鯖浦線). official_lines 행 형식(id/op/set)에 맞춰 작성 필요 — 사용자 판단 U-노선단위 참조	
+470	data/overrides/official_lines.json	add	chubu_3-022	K30		{"op":"split","line":"l_tateyama_cable_car","new_line":"l_kurobe_cable_car","route":"黒部湖–黒部平 0.8 km","why":"노리츠부시·鉄道要覧 모두 별 노선(鋼索線 둘)"}	chubu_3-022 근거	
+471	data/overrides/official_lines.json	confirm	kanto_3-22	K30		{"op":"merge","line":"l_shinkin_line","into":"l_sobu_main_line","route":"r_sobu_main_line_koiwa_kanamachi (새 계통 ID)"}	DESIGN §17 별선·단락선 행(2026-11-09부터 JR 화물선은 모선의 지선 계통) — 사용자 판단 필요	
+472	data/overrides/official_lines.json	replace	chubu_2-32	K35	why ; set			
+473	data/overrides/official_lines.json	replace	chubu_3-016	K35	why ; set			
+474	data/overrides/old_names.json	add	chugoku_shikoku_2-B02	K11	n_ube|西宇部		wiki 宇部線 110993921: 宇部駅が西宇部駅に改称(1943-05-01); wiki 山陽本線 111054473: 1964年10月1日 西宇部駅が宇部駅に改称	
+475	data/overrides/old_names.json	add	kanto_1-019	K11	n_omotesando|神宮前		wiki station 表参道駅 hist: 1939年9月16日 神宮前駅へ改称; 같은 hist: 1972年10月20日 …銀座線の神宮前駅も同名に改称	
+476	data/overrides/old_names.json	add	chubu_2-25	K17	n_tsukumowan_ogi|能登小木		build/names.sqlite n_tsukumowan_ogi·n_ukai_noto·n_oura_noto 기간·노선 전용 ko/en	
+477	tools/new_ids.py 개명 표	add	kanto_3-23	K32	n_honmachi_2_chome		§2.10 ID 영어 이름 규칙. tools/new_ids.py 개명·id_redirect 경로로	
+478	tools/new_ids.py 개명 표	add	kinki_1-015	K32	n_biwakohamaotsu		§2.10 옛 노드 ID는 옛 이름 기준(_old)	
+479	tools/new_ids.py 개명 표	add	tohoku_1-027	K32	n_nishikoen_sendai_city		§2.10, 좌표 岩手	
+480	data/overrides/extend.json	del	chugoku_shikoku_2-011	K35	r_tokushima_line		佃는 공개 정차역이라 extend_to 불필요. 佃 위는 ▲ 끝이어짐 土讃線(箸蔵·阿波池田 방면)	
+481	data/overrides/extend.json	set	kinki_2-038	K35	r_ninokuchi_connecting_line		新ノ口連絡線은 大和八木 上本町側에서 大阪線에 합류(京伊特急). 新ノ口 쪽은 橿原線 끝 이어짐(THROUGH 행)	
+482	data/overrides/extend.json	set	kinki_2-039	K35	r_nakagawa_connecting_line		中川短絡線은 大阪線(川合高岡 쪽)–名古屋線(桃園 쪽) 연결(名阪特急)	
+483	data/overrides/hub_not.json	add	kanto_3-09	K07		{"node":"n_awajicho_awajicho","with":"n_ochanomizu","why":"都電 淡路町–御茶ノ水 514m, 新御茶ノ水를 사이에 둔 사슬일 뿐 직접 환승 아님"}		
+484	data/overrides/hub_not.json	add	kanto_3-09	K07		{"node":"n_awajicho_awajicho","with":"n_ochanomizu_toei","why":"698m 사슬"}		
+485	data/overrides/node_split.json	set	tohoku_2-010	K08	note			
+486	data/overrides/node_split.json	confirm	tohoku_1-042	K08		{"node":"n_kakunodate","keep_lines":["l_tazawako_line"],"move_lines":["l_akita_nairiku_line"],"new_id":"n_kakunodate_akita_nairiku","new_group":"g_kakunodate"}	§17 「같은 역의 노드: 다르면 별도 node + 같은 group + hub」. 확인 필요(같은 역사 공유 여부)	
+487	data/overrides/names_ko.json	set	kanto_1-006	K13	n_meiji_jingumae_toei		names.sqlite n_meiji_jingumae_toei ko 메이지진구마에〈하라주쿠〉 source namuwiki, ja 明治神宮前; 같은 이름의 후계 역 문서 제목을 다른 시대 노드에 가져온 경우	
+488	data/overrides/names_ko.json	set	kanto_1-018	K17	n_dreamland		names.sqlite n_dreamland ko 도리무란도 source estimated; DESIGN §9.2: 가타카나 … 단순 영어는 영어 원어 음차	
+489	data/overrides/lines_en.json	set	kinki_1-032	K16	l_hirano_line_nankai		names.sqlite line l_hirano_line_nankai	
+490	data/overrides/lines_en.json	set	kinki_1-033	K16	l_futami_line		names.sqlite line l_futami_line ko source=rule	
+491	data/overrides/lines_ko.json	set	kinki_1-033	K16	三重交通|二見線		names.sqlite line l_futami_line ko source=rule	
+492	data/overrides/lines_ko.json	set	kyushu_1-007	K16	西日本鉄道|北方線		build/names.sqlite name line l_kitagata_line ko=니시테츠 키타큐슈선, l_kitakyushu_line ko=니시테츠 키타큐슈선	
+493	data/overrides/edge_dates.json	confirm	kanto_2-047	K18			확인 필요: お茶の水線 万世橋–秋葉原駅西口 개업일 / render2/r_ochanomizu_line.txt 万世橋·秋葉原駅西口 「개업?」	
+494	data/overrides/edge_dates.json	confirm	chugoku_shikoku_2-022	K35			확인 필요: 広島電鉄宇品線 연혁(캐시에 없음) / noritsubushi 44040020: 元宇品口～広島港 0.5 開業日 1967-10-01	
+495	data/overrides/wiki_insert_moves.json	set	chugoku_shikoku_1-022	K21	id ; km		위키 土讃線 rev 111124356 노선도 「eBHF|93.7|土佐北川駅|1960-1986」	
+496	data/overrides/wiki_insert_moves.json	set	kinki_3-004	K21		[{"id":"n_nishi_aoyama_osaka_old","km":85.3},{"id":"(東青山（旧） ID)","km":89.1}]	ja.wikipedia 近鉄大阪線 rev111364868 BS 「85.3 * 西青山駅 -1975」「89.1 * 東青山駅 -1975」	
+497	data/source/archive/archive.yaml	set	chugoku_shikoku_2-B14	K24		[{"id":"a_izushi_railway","closed":"1970-07-20"},{"id":"a_kotohirakyuko_electric_railway_line","closed":"1954-XX-XX"}]	出石鉄道 1944-05-01 休止·1970-07-20 廃止, 琴平急行電鉄 1944 休止·1954 廃止(§4.6: closed는 법적 폐지일)	
+498	data/source/archive/archive.yaml	confirm	chugoku_shikoku_2-B15	K24	kind ; id ; at ; closed		岩井町営軌道 1944-01-11 休止·1964-03-27 廃止. 軌道法 궤도인지 먼저 확인(簡易軌道면 제외)	
+499	data/overrides/platforms	add	chubu_3-033	K37	n_musashi_kosugi ; n_kusanagi_shizuoka ; n_mizuochi		node_position precise/station_database, edge_shape와의 최단거리 계산(감사 스크립트)	
+500	data/overrides/platforms	add	kinki_2-054	K37	n_namba_osaka_metro ; (なかもず) ; (武庫川 武庫川線)		build/master.sqlite node_position vs edge_shape 최단거리(이 감사의 계산)	
+501	data/overrides/hub_split.json	add	kanto_3-08	K07		{"node":"n_ryogoku_toden","from":"n_ryogoku","group":false,"why":"都電 両国(両国橋 서쪽, 日本橋 쪽)은 隅田川 건너 JR 両国와 537m — 이름만 같음. 감사2 kanto_3-08"}		
+502	tools/new_ids.py 병합 표	add	chubu_2-17	K08	n_nishinagata		chubu_2-17 근거(위키 京福電気鉄道丸岡線); node_fix에 merge 칸이 없으면 node_split의 반대 연산(병합) 칸을 새로 둬야 함	
+503	data/overrides/lines_ja.json	set	kinki_1-032	K16	l_hirano_line_nankai		names.sqlite line l_hirano_line_nankai	
+504	data/overrides/km_era_hand.json	add	tohoku_2-022	K22		[{"line":"l_ohata_line_shimokita","route":"(下北交通 계통)","a":"(海老川)","b":"n_tanabu","km":1.7,"km_now":"(국철 값)","table":"下北交通大畑線 駅一覧: 下北–海老川 1.4, 海老川–田名部 1.7, 田名部–樺山 4.8, 樺山–陸奥関根 2.7"}]	ja.wikipedia 下北交通大畑線 rev110559604 駅一覧(中央書院1989 출처): 田名部 累計 3.1, 樺山 7.9	
+505	data/source/routes	set	tohoku_1-038	K35	id ; from ; to ; note		위키 羽後交通雄勝線	
+506	data/overrides/service_aliases.json	add	kinki_1-028	K35		{"alias":"八木西口","node":"n_yamato_yagi","line_id":"l_kashihara_line"}	NB 橿原線 「大和八木／八木西口:20.5」 / 별도 노드면 0 km 칸 불변식과 충돌 → 사용자 판단	
+507	data/source/events	confirm	kinki_3-046	K35			확인 필요: 서류상 여객 취급(§17 명목상 여객) / ja.wikipedia 和歌山線 「1977年11月1日：大和二見駅 - 川端駅間の旅客営業廃止」	
+508	data/source/geometry	confirm	tohoku_1-044	K37			확인 필요: N05·옛 지도 선형 / build/master.sqlite edge e_092011 geometry none	

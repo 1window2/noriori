@@ -1,0 +1,4 @@
+# 1945-07-30 長尾線 瓦町駅을 琴電高松駅에 統合(出晴 폐지). 1951-12-26 琴電高松–花園 경로 변경
+- {"patch": "add", "date": "1945-07-30", "type": "open", "operator": "o_takamatsu_kotohira_electric_railroad", "line": "l_nagao_line", "edges": ["n_kawaramachi_takamatsu_kotohira..n_hanazono_takamatsu_kotohira@old"], "route": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "source": "wikipedia"}
+- {"patch": "add", "date": "1951-12-26", "type": "close", "line": "l_nagao_line", "edges": ["n_kawaramachi_takamatsu_kotohira..n_hanazono_takamatsu_kotohira@old"], "reason": "relocated", "route": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "source": "wikipedia"}
+- {"patch": "add", "date": "1951-12-26", "type": "close_stop", "route": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "node": "n_kawaramachi_takamatsu_kotohira", "source": "wikipedia"}

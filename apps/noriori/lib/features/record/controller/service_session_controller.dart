@@ -4,12 +4,14 @@ import 'package:noriori_core/noriori_core.dart';
 import '../../../app/session_providers.dart';
 import 'record_session_controller.dart' show RideTicketData;
 
-/// 운전 계통 입력의 상태. 한 줄 노선도에서 두 역을 고른다 (DESIGN §8).
+/// 운행 계통 입력의 상태. 한 줄 노선도에서 두 역을 고른다 (DESIGN §8).
 final class ServiceSessionState {
   const ServiceSessionState({
     this.service,
     this.title = '',
     this.dateInput,
+    this.edition,
+    this.all = const [],
     this.stops = const [],
     this.open = const {},
     this.names = const {},
@@ -29,7 +31,13 @@ final class ServiceSessionState {
   final String title;
   final String? dateInput;
 
-  /// 날짜와 상관없는 전체 역. 그날 없는 역은 흐리게 그린다.
+  /// 탑승일의 판. 날짜를 모르면 지금 판, 그날 판이 없으면 마지막 판을 그린다.
+  final NetServiceEdition? edition;
+
+  /// 그 판 경로의 모든 역. 서지 않는 역도 들어 있고 구간 분해에 쓴다.
+  final List<ServiceStop> all;
+
+  /// 화면의 행. 그 판의 계통 열차가 서는 역만이고, 날짜와 상관없이 그린다. 그날 없는 역은 흐리게 그린다.
   final List<ServiceStop> stops;
 
   /// 그날 고를 수 있는 역.
@@ -48,7 +56,7 @@ final class ServiceSessionState {
   /// 한 바퀴를 몇 번 돌았는가.
   final int laps;
 
-  /// 고른 구간을 지나는 역.
+  /// 고른 구간을 지나는 역. 행에 있는 역(정차역)만이다.
   final List<ServiceStop> path;
   final List<RideLeg>? legs;
   final List<ServiceLegSummary> summary;
@@ -58,7 +66,7 @@ final class ServiceSessionState {
 
   bool get isLap => from != null && from?.node == to?.node;
 
-  /// 출발역을 고른 뒤 도착역 후보까지 몇 역인가.
+  /// 출발역을 고른 뒤 도착역 후보까지 몇 역인가. 그 계통이 서는 역만 센다 (DESIGN §1.5 거리 힌트).
   int? stopsAway(ServiceStop stop) {
     final start = from;
     if (start == null || to != null || !open.contains(stop.node) || start.index == stop.index) {
@@ -123,22 +131,54 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
   Future<void> open(String serviceId) async {
     final service = _network.data.services.firstWhere((s) => s.id == serviceId);
     final title = (await ref.read(packReaderProvider).serviceNames([serviceId]))[serviceId] ?? serviceId;
-    final stops = _splitter.stops(service, null);
-    final names = await ref.read(packReaderProvider).nodeNames(stops.map((s) => s.node));
+    // 날짜를 바꾸면 판이 바뀔 수 있어 모든 판의 역 이름을 함께 읽는다
+    final nodes = {
+      for (final edition in service.editions)
+        for (final stop in _splitter.stops(service, null, edition: edition)) stop.node,
+    };
+    final names = await ref.read(packReaderProvider).nodeNames(nodes);
+    // 기본 날짜는 노선과 같다: 오늘 운행하는 계통이면 오늘, 끝난 계통이면 날짜 모름 (長野新幹線)
+    final today = ref.read(todayProvider);
+    final current = _splitter.edition(service, normalizeRideDate(DateSpan.parse(today))) != null;
     state = ServiceSessionState(
       service: service,
       title: title,
-      dateInput: ref.read(todayProvider),
-      stops: stops,
+      dateInput: current ? today : null,
       names: names,
       lines: ref.read(nameBookProvider).lines,
     );
     _applyDate();
   }
 
+  /// 탑승일의 판으로 행을 다시 만들고 그날 고를 수 있는 역을 정한다. 판이 같으면 행은 그대로다.
   void _applyDate() {
     final current = state;
-    state = _with(current, open: _splitter.openOn(current.service!, _date));
+    final service = current.service!;
+    final edition = _splitter.layout(service, _date);
+    final same = edition == current.edition && current.all.isNotEmpty;
+    // 행은 날짜와 상관없이 그 판의 역 전부다. 그날 없는 역은 흐리게 그린다
+    final all = same ? current.all : _splitter.stops(service, null, edition: edition);
+    state = ServiceSessionState(
+      service: service,
+      title: current.title,
+      dateInput: current.dateInput,
+      edition: edition,
+      all: all,
+      stops: same ? current.stops : [for (final stop in all) if (stop.halts) stop],
+      open: _splitter.openOn(service, _date),
+      names: current.names,
+      lines: current.lines,
+    );
+  }
+
+  /// 판이 바뀌었으면 고른 역을 새 행의 같은 역으로 옮긴다. 새 판에 없으면 null이다.
+  ServiceStop? _carry(ServiceStop stop, List<ServiceStop> before) {
+    // 판이 같으면 행도 같다. 고리의 처음과 끝처럼 같은 역이 두 번 나와도 고른 자리를 그대로 둔다
+    if (identical(before, state.stops)) return stop;
+    for (final candidate in state.stops) {
+      if (candidate.node == stop.node) return candidate;
+    }
+    return null;
   }
 
   /// 탑승일을 바꾸면 고를 수 있는 역을 다시 정한다.
@@ -151,17 +191,25 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
       service: current.service,
       title: current.title,
       dateInput: raw,
+      edition: current.edition,
+      all: current.all,
       stops: current.stops,
       names: current.names,
       lines: current.lines,
     );
     _applyDate();
-    final from = current.from;
-    final to = current.to;
-    if (from == null) return false;
-    final lost = [from, ?to].any((stop) => !state.open.contains(stop.node));
-    if (!lost && to != null) _pick(from, to, current.up, current.laps);
-    if (lost || _unridable()) {
+    if (current.from == null) return false;
+    // 판이 바뀌면 행이 새로 만들어지므로 고른 역을 새 행의 같은 역으로 옮긴다
+    final from = _carry(current.from!, current.stops);
+    final to = current.to == null ? null : _carry(current.to!, current.stops);
+    if (from == null ||
+        (current.to != null && to == null) ||
+        [from, ?to].any((stop) => !state.open.contains(stop.node))) {
+      state = current;
+      return true;
+    }
+    if (to != null) _pick(from, to, current.up, current.laps);
+    if (_unridable()) {
       state = current;
       return true;
     }
@@ -203,6 +251,8 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
         service: base.service,
         title: base.title,
         dateInput: base.dateInput,
+        edition: base.edition,
+        all: base.all,
         stops: base.stops,
         open: open ?? base.open,
         names: base.names,
@@ -254,9 +304,10 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
 
   void clear() => state = _with(state);
 
+  /// 구간 분해는 서지 않는 역까지 넣은 전체 목록으로 한다. 서지 않는 역에서 노선이 바뀌어도 맞게 나뉘고 km도 공식 경로 전체다.
   List<RideLeg>? _legs(ServiceStop from, ServiceStop to, bool up) => _splitter.legs(
         state.service!,
-        state.stops,
+        state.all,
         from,
         to,
         date: _date,
@@ -278,15 +329,20 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
         dateInput: state.dateInput,
       ),
     );
-    return derived.status == ResolveStatus.ok ? derived : null;
+    // 경로가 둘 이상이면 역 선택기처럼 저장하고 수정 화면에서 답한다 (DESIGN §2.8 상태표 needs_input)
+    return derived.status == ResolveStatus.ok || derived.status == ResolveStatus.needsInput ? derived : null;
   }
 
   void _pick(ServiceStop from, ServiceStop to, bool? chosen, int laps) {
     final closed = state.service!.closed;
     final upLegs = _legs(from, to, true);
     final downLegs = closed ? _legs(from, to, false) : null;
-    final upKm = _derive(upLegs)?.km10;
-    final downKm = _derive(downLegs)?.km10;
+    int? km(List<RideLeg>? legs) => switch (_derive(legs)) {
+          RideDerived(status: ResolveStatus.ok, :final km10) => km10,
+          _ => null,
+        };
+    final upKm = km(upLegs);
+    final downKm = km(downLegs);
     final ways = upKm != null && downKm != null && from.node != to.node
         ? (up: upKm * 100, down: downKm * 100)
         : null;
@@ -318,10 +374,13 @@ final class ServiceSessionController extends Notifier<ServiceSessionState> {
       up: chosen ?? (closed ? up : null),
       ways: ways,
       laps: laps,
-      path: _splitter.path(state.service!, state.stops, from, to, up: up),
+      path: [
+        for (final stop in _splitter.path(state.service!, state.all, from, to, up: up))
+          if (stop.halts) stop,
+      ],
       legs: derived == null ? null : legs,
-      summary: derived == null ? const [] : summarizeLegs(derived),
-      meters: derived == null ? null : (derived.km10 ?? 0) * 100,
+      summary: derived?.status == ResolveStatus.ok ? summarizeLegs(derived!) : const [],
+      meters: derived?.status == ResolveStatus.ok ? (derived!.km10 ?? 0) * 100 : null,
     );
   }
 

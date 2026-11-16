@@ -4,6 +4,7 @@ import '../name/name_lookup.dart';
 import '../network/network.dart';
 import '../network/ride_interpreter.dart';
 import '../network/route_resolver.dart';
+import '../network/service_splitter.dart';
 import '../records/derived.dart';
 import '../records/record.dart';
 import 'noritsubushi_csv.dart';
@@ -15,11 +16,14 @@ const unmatchedRef = 'unmatched';
 
 /// 일본어 이름과 별칭에서 ID로 가는 표. 키는 [importKey]다.
 final class ImportNames {
-  const ImportNames({required this.routes, required this.lines, required this.nodes});
+  const ImportNames({required this.routes, required this.lines, required this.nodes, this.services = const {}});
 
   final Map<String, Set<String>> routes;
   final Map<String, Set<String>> lines;
   final Map<String, Set<String>> nodes;
+
+  /// 운행 계통 이름과 노리츠부시 대응표의 노선명 (DESIGN §10.2). 공식 노선 구성과 다르게 나뉜 노선은 운행 계통으로 펼친다.
+  final Map<String, Set<String>> services;
 }
 
 /// `ケ`와 `ヶ`, 전각 괄호, 띄어쓰기 차이를 없앤다.
@@ -42,6 +46,7 @@ final class RowMatched extends RowResult {
     required this.meters,
     this.direction,
     this.asOf,
+    this.legs = const [],
   });
 
   final String lineId;
@@ -51,6 +56,9 @@ final class RowMatched extends RowResult {
   final int meters;
   final String? direction;
   final String? asOf;
+
+  /// 운행 계통으로 펼친 행의 공식 구간들. 비면 위의 한 구간이다.
+  final List<RideLeg> legs;
 }
 
 final class RowMissed extends RowResult {
@@ -69,9 +77,12 @@ final class CsvMatcher {
 
   RowResult match(CsvRide row) {
     final routes = _routesOf(row.line);
-    if (routes.isEmpty) return const RowMissed(MissReason.line);
     final froms = names.nodes[importKey(row.from)];
     final tos = names.nodes[importKey(row.to)];
+    if (routes.isEmpty) {
+      if (froms == null || tos == null) return _servicesOf(row.line).isEmpty ? const RowMissed(MissReason.line) : const RowMissed(MissReason.station);
+      return _service(row, froms, tos) ?? (_servicesOf(row.line).isEmpty ? const RowMissed(MissReason.line) : const RowMissed(MissReason.path));
+    }
     if (froms == null || tos == null) return const RowMissed(MissReason.station);
     RowMatched? best;
     var bestGap = 0;
@@ -89,7 +100,55 @@ final class CsvMatcher {
         }
       }
     }
-    return best ?? const RowMissed(MissReason.path);
+    return best ?? _service(row, froms, tos) ?? const RowMissed(MissReason.path);
+  }
+
+  List<String> _servicesOf(String line) => [
+        ...?names.services[importKey(line)] ?? names.services[importKey(_withoutParens(line))],
+      ];
+
+  /// 노리츠부시가 공식 노선과 다르게 나눈 노선(副都心線 和光市～渋谷, 札幌市電 한 노선)은 운행 계통으로 펼쳐
+  /// 공식 구간마다 나눈 한 기록으로 넣는다 (DESIGN §10.2 노리츠부시 대응표). 고리는 파일의 거리에 가까운 방향이다
+  RowMatched? _service(CsvRide row, Set<String> froms, Set<String> tos) {
+    final splitter = ServiceSplitter(network);
+    final date = row.dateInput == null ? null : DateSpan.parse(row.dateInput!);
+    RowMatched? best;
+    var bestGap = 0;
+    for (final id in _servicesOf(row.line)) {
+      final service = network.data.services.where((x) => x.id == id).firstOrNull;
+      if (service == null) continue;
+      final edition = splitter.edition(service, date) ?? splitter.layout(service, date);
+      if (edition == null) continue;
+      final stops = splitter.stops(service, date, edition: edition);
+      for (final from in stops.where((stop) => froms.contains(stop.node))) {
+        for (final to in stops.where((stop) => tos.contains(stop.node) && stop.index != from.index)) {
+          for (final up in service.closed ? const [true, false] : const [true]) {
+            final legs = splitter.legs(service, stops, from, to, date: date, lineName: (line) => line, nodeName: (node) => node, up: up);
+            if (legs == null || legs.isEmpty) continue;
+            final total = service.closed ? _loopMeters(stops, from, to, up) : (to.meters - from.meters).abs();
+            final gap = _gap(total, row.meters);
+            if (best != null && gap >= bestGap) continue;
+            best = RowMatched(
+              lineId: legs.first.lineId.value,
+              routeId: legs.first.routeId.value,
+              fromNode: legs.first.fromNode.value,
+              toNode: legs.last.toNode.value,
+              meters: total,
+              legs: legs,
+            );
+            bestGap = gap;
+          }
+        }
+      }
+    }
+    return best;
+  }
+
+  int _loopMeters(List<ServiceStop> stops, ServiceStop from, ServiceStop to, bool up) {
+    final round = stops.last.meters;
+    final forward = (to.meters - from.meters) % (round == 0 ? 1 : round);
+    final ahead = forward < 0 ? forward + round : forward;
+    return up ? ahead : round - ahead;
   }
 
   /// 괄호까지 맞는 계통이 먼저다. 애칭 괄호는 노선 이름으로 내려간다. 본선이 앞선다.
@@ -115,7 +174,21 @@ final class CsvMatcher {
   int _gap(int meters, int? fileMeters) => fileMeters == null ? 0 : (meters - fileMeters).abs();
 
   /// 묻는 대신 파일의 거리로 고른다. 순환 방향과 이설 선로는 거리가 다르다.
+  ///
+  /// 노리츠부시 행에는 방향이 없다(탄 구간만 뜻함). 한 방향 운행·정차 때문에 그 방향으로 못 가면 뒤집어 받고,
+  /// 한 방향 계통에서는 뒤집은 쪽도 후보로 두어 파일의 거리에 가까운 쪽을 고른다 (DESIGN §8 한 방향 운행·한 방향 정차).
   RowMatched? _expand(String routeId, String from, String to, CsvRide row) {
+    final forward = _expandOne(routeId, from, to, row);
+    final oneWay = network.hasOneWay(routeId) ||
+        network.data.stopDirections.any((x) => x.routeId == routeId && (x.node == from || x.node == to));
+    if (!oneWay) return forward;
+    final backward = _expandOne(routeId, to, from, row);
+    if (forward == null) return backward;
+    if (backward == null || row.meters == null) return forward;
+    return _gap(backward.meters, row.meters) < _gap(forward.meters, row.meters) ? backward : forward;
+  }
+
+  RowMatched? _expandOne(String routeId, String from, String to, CsvRide row) {
     final date = row.dateInput == null ? null : DateSpan.parse(row.dateInput!);
     RowMatched? take(Expansion result, {String? direction, String? asOf}) => result.saved
         ? RowMatched(
@@ -300,9 +373,11 @@ Ride importedRide(
   required String fromLabel,
   required String toLabel,
   String? fileName,
+  List<RideLeg>? legs,
 }) {
   final result = item.result;
   final matched = result is RowMatched ? result : null;
+  final split = legs ?? (matched == null || matched.legs.isEmpty ? null : matched.legs);
   return Ride(
     rideId: item.rideId,
     datasetVersion: edition,
@@ -315,19 +390,20 @@ Ride importedRide(
     toAlighted: false,
     importSource: fileName == null ? importSourceNoritsubushi : '$importSourceNoritsubushi:$fileName',
     importRaw: item.row.raw,
-    legs: [
-      RideLeg(
-        seq: 0,
-        lineId: LineId(matched?.lineId ?? unmatchedRef),
-        routeId: RouteId(matched?.routeId ?? unmatchedRef),
-        fromNode: NodeId(matched?.fromNode ?? unmatchedRef),
-        toNode: NodeId(matched?.toNode ?? unmatchedRef),
-        direction: matched?.direction,
-        resolveAsOf: matched?.asOf,
-        lineLabel: lineLabel,
-        fromLabel: fromLabel,
-        toLabel: toLabel,
-      ),
-    ],
+    legs: split ??
+        [
+          RideLeg(
+            seq: 0,
+            lineId: LineId(matched?.lineId ?? unmatchedRef),
+            routeId: RouteId(matched?.routeId ?? unmatchedRef),
+            fromNode: NodeId(matched?.fromNode ?? unmatchedRef),
+            toNode: NodeId(matched?.toNode ?? unmatchedRef),
+            direction: matched?.direction,
+            resolveAsOf: matched?.asOf,
+            lineLabel: lineLabel,
+            fromLabel: fromLabel,
+            toLabel: toLabel,
+          ),
+        ],
   );
 }

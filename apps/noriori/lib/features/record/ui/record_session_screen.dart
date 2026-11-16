@@ -9,6 +9,7 @@ import '../../../app/theme/app_theme.dart';
 import '../../../app/widgets/pills.dart';
 import '../../../i18n/strings.g.dart';
 import '../controller/record_session_controller.dart';
+import 'one_way_bubble.dart';
 import 'session_date.dart';
 import 'session_lines.dart';
 import 'session_save_bar.dart';
@@ -68,6 +69,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
 
   @override
   void dispose() {
+    OneWayBubble.dismiss();
     _lines.dispose();
     super.dispose();
   }
@@ -147,7 +149,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
               ? TextField(
                   autofocus: true,
                   autocorrect: false,
-                  enableSuggestions: false,
+                  // enableSuggestions: false는 안드로이드에서 visiblePassword 입력이 되어 Gboard가 한국어·일본어를 끈다
                   decoration: InputDecoration(hintText: t.findStop, border: InputBorder.none),
                   onChanged: (value) => setState(() => _query = value),
                 )
@@ -226,6 +228,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                       key: index == _focusLine ? _focusKey : null,
                       child: SessionLineTile(
                         line: lines[index],
+                        prev: index > 0 ? lines[index - 1] : null,
                         next: index + 1 < lines.length ? lines[index + 1] : null,
                         trunk: trunk,
                       ),

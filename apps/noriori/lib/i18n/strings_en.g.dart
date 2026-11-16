@@ -249,6 +249,10 @@ class _Translations$stats$en implements Translations$stats$ko {
 		other: '${n} stations visited',
 	);
 	@override String decade({required Object year}) => '${year}s';
+	@override String undecided({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: '${n} section undetermined',
+		other: '${n} sections undetermined',
+	);
 	@override String review({required num n, required Object km}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
 		one: '${n} ride needs review · ${km} km',
 		other: '${n} rides need review · ${km} km',
@@ -292,9 +296,11 @@ class _Translations$search$en implements Translations$search$ko {
 	final TranslationsEn _root; // ignore: unused_field
 
 	// Translations
+	@override String get showOnMap => 'Show on map';
 	@override String get hint => 'Line or station name';
 	@override String get prompt => 'Find a line or station to start';
 	@override String get none => 'No results';
+	@override String get archive => 'View only';
 }
 
 // Path: session
@@ -318,6 +324,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get dateHint => '2015, 2015-03, 2015-03-14, 198X';
 	@override String get dateUnknown => 'No date';
 	@override String get datePick => 'Pick from calendar';
+	@override String get dateToday => 'Today';
 	@override String get dateBad => 'Please check the date format';
 	@override String get apply => 'Apply';
 	@override String get cancel => 'Cancel';
@@ -329,6 +336,9 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get noPath => 'No route found between these two stations';
 	@override late final _Translations$session$state$en state = _Translations$session$state$en._(_root);
 	@override String savedAs({required Object line}) => 'Part of ${line} on that date';
+	@override String handSince({required Object line, required Object date}) => '${line} from ${date}';
+	@override String get handOpen => 'Open line ›';
+	@override String get handNote => 'Rides here are saved to that line';
 	@override String get chooseDirection => 'Which way did you ride?';
 	@override String directionKm({required Object km}) => '${km} km';
 	@override String get chooseRelocation => 'Which alignment did you ride?';
@@ -352,23 +362,48 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get spokenTo => 'Selected as arrival';
 	@override String get showClosed => 'Closed stations';
 	@override String get showArchive => 'Historic stations';
-	@override String returnsTo({required Object name}) => 'Back to ${name}';
 	@override String get clear => 'Clear';
 	@override String get lap => 'One full loop';
 	@override String stops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
 		one: '${n} station',
 		other: '${n} stations',
 	);
-	@override String closedSection({required Object year}) => 'Closed in ${year}';
+	@override String closedSection({required Object year}) => '~${year} closed';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
 	@override String get to => 'To';
 	@override String get whyClosed => 'This station wasn\'t open on that date';
+	@override String get onlyDown => 'Down only';
+	@override String get onlyUp => 'Up only';
+	@override String get onlyOneWay => 'One way';
+	@override String get spokenOnlyDown => 'Down trains only';
+	@override String get spokenOnlyUp => 'Up trains only';
+	@override String get spokenOnlyOneWay => 'Trains in one direction only';
+	@override String stopDownTitle({required Object name}) => 'Only down trains stop at ${name}';
+	@override String stopUpTitle({required Object name}) => 'Only up trains stop at ${name}';
+	@override String stopOneWayTitle({required Object name}) => 'Trains stop at ${name} in one direction only';
+	@override String towardOnly({required Object name}) => 'You can only ride toward ${name}';
+	@override String get sectionTitle => 'Trains run one way on this section';
+	@override String get sectionDetail => 'No trains run in this direction';
+	@override String get aroundTitle => 'This loop runs one way';
+	@override String aroundDetail({required Object km}) => 'Counted the long way round: ${km} km';
+	@override String get reverse => 'Reverse direction';
+	@override String get onlyAlight => 'Exit only';
+	@override String get alightTitle => 'Alighting-only stop';
+	@override String get alightDetail => 'You can only choose it as your arrival';
 	@override String get whySuspended => 'This section was suspended on that date';
 	@override String bound({required Object names}) => 'For ${names}';
 	@override String spokenClosed({required Object year}) => 'Closed in ${year}';
+	@override String spokenSuspendedSince({required Object year}) => 'Suspended since ${year}';
+	@override String get pastKari => 'temp.';
+	@override String get pastRinji => 'seasonal';
+	@override String get spokenPastKari => 'formerly a temporary stop';
+	@override String get spokenPastRinji => 'formerly a seasonal station';
 	@override String spokenBranch({required Object line, required Object next}) => '${line}, branch to ${next}';
+	@override String reverseNow({required Object line}) => 'Trains reverse here and run through to the ${line}';
+	@override String reverseUsed({required Object line}) => 'Trains used to reverse here and run through to the ${line}';
+	@override String get spokenReverse => 'reverses direction';
 	@override String leaving({required Object name}) => 'From ${name}';
 	@override String progress({required Object num, required Object den, required Object percent}) => '${num} / ${den} km (${percent})';
 	@override String get leaveTitle => 'Your selection will be cleared';
@@ -380,6 +415,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get unridableOk => 'OK';
 	@override String get repick => 'Tap another station to start over';
 	@override String get closedUnknown => 'Closed section';
+	@override String get suspendedSection => 'Suspended';
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
 	@override String relocationNew({required Object km}) => 'New alignment · ${km} km';
 	@override String get spokenOpen => 'open';
@@ -393,6 +429,7 @@ class _Translations$data$en implements Translations$data$ko {
 	final TranslationsEn _root; // ignore: unused_field
 
 	// Translations
+	@override String get osBackupLarge => 'Your records are over 20 MB and may not fit in Android cloud backup. Choose a backup folder';
 	@override String get title => 'Backup and restore';
 	@override String get folder => 'Backup folder';
 	@override String get folderHint => 'Choose a location that stays after you uninstall the app';
@@ -566,7 +603,6 @@ class _Translations$lineDetail$en implements Translations$lineDetail$ko {
 	@override String get allTime => 'All time';
 	@override String km({required Object num, required Object den}) => '${num} / ${den} km';
 	@override String get completeCurrent => 'Completed (current)';
-	@override String get completeAllTime => 'Completed (all time)';
 	@override String get selfScore => 'Not counted in your totals. Progress is based on this line alone';
 	@override String get open => 'Line details';
 	@override String get record => 'Log a ride on this line';
@@ -622,6 +658,13 @@ class _Translations$deleted$en implements Translations$deleted$ko {
 		other: '${n} rides',
 	);
 	@override String get fileDelete => 'Delete all';
+	@override String fileDeleteTitle({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: 'Delete ${n} ride?',
+		other: 'Delete ${n} rides?',
+	);
+	@override String fileDeleteBody({required Object file}) => 'This deletes every ride imported from ${file}. You can bring them back from Deleted rides in Settings.';
+	@override String get fileDeleteConfirm => 'Delete';
+	@override String get fileDeleteCancel => 'Cancel';
 	@override String fileDeleted({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
 		one: 'Deleted ${n} ride',
 		other: 'Deleted ${n} rides',
@@ -652,7 +695,6 @@ class _Translations$collection$en implements Translations$collection$ko {
 	@override String get operators => 'Operators';
 	@override String get prefs => 'Prefectures';
 	@override String get stations => 'Stations';
-	@override String get allTime => 'All time';
 	@override String stationGoal({required Object n}) => '${n} stations';
 	@override String get empty => 'Nothing yet';
 	@override String get closed => 'Closed';
@@ -817,6 +859,9 @@ class _Translations$mapSheet$en implements Translations$mapSheet$ko {
 	@override String get visited => 'I\'ve been to this station';
 	@override String get visitedHint => 'Doesn\'t count toward completion. It only fills in the dot on the map';
 	@override String get noVisits => 'No station visits yet. Tap a station on the map to add one';
+	@override String get pickerLabel => 'Lines through this spot';
+	@override String get partlyClosed => 'Closed here';
+	@override String get closed => 'Closed line';
 }
 
 // Path: date
@@ -934,9 +979,10 @@ class _Translations$session$state$en implements Translations$session$state$ko {
 	// Translations
 	@override String get maybe => '?';
 	@override String get suspended => 'Suspended';
-	@override String until({required Object year}) => 'until ${year}';
-	@override String since({required Object year}) => 'from ${year}';
-	@override String span({required Object from, required Object to}) => '${from}–${to}';
+	@override String suspendedSince({required Object year}) => 'Suspended ${year}~';
+	@override String until({required Object year}) => '~${year}';
+	@override String since({required Object year}) => '${year}~';
+	@override String span({required Object from, required Object to}) => '${from}~${to}';
 }
 
 // Path: data.notice
@@ -986,7 +1032,7 @@ class _Translations$sources$n03$en implements Translations$sources$n03$ko {
 
 	// Translations
 	@override String get name => 'National Land Numerical Information: Administrative Zones (N03)';
-	@override String get use => 'Outline of Japan and prefecture borders';
+	@override String get use => 'Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them';
 	@override String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
@@ -1193,6 +1239,7 @@ extension on TranslationsEn {
 			'stats.prefLabel' => ({required Object name, required Object percent}) => '${name} ${percent}',
 			'stats.visited' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} station visited', other: '${n} stations visited', ), 
 			'stats.decade' => ({required Object year}) => '${year}s',
+			'stats.undecided' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} section undetermined', other: '${n} sections undetermined', ), 
 			'stats.review' => ({required num n, required Object km}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} ride needs review · ${km} km', other: '${n} rides need review · ${km} km', ), 
 			'stats.badges' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} badge', other: '${n} badges', ), 
 			'stats.visitedClosed' => ({required Object n}) => '${n} closed',
@@ -1212,9 +1259,11 @@ extension on TranslationsEn {
 			'settings.language' => 'Language',
 			'settings.carryover' => 'Carry rides over when operators change',
 			'settings.carryoverHint' => 'When off, sections transferred from JR count as new lines',
+			'search.showOnMap' => 'Show on map',
 			'search.hint' => 'Line or station name',
 			'search.prompt' => 'Find a line or station to start',
 			'search.none' => 'No results',
+			'search.archive' => 'View only',
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} lap', other: '${n} laps', ), 
 			'session.lapLess' => 'Remove a lap',
 			'session.lapMore' => 'Add a lap',
@@ -1223,6 +1272,7 @@ extension on TranslationsEn {
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => 'No date',
 			'session.datePick' => 'Pick from calendar',
+			'session.dateToday' => 'Today',
 			'session.dateBad' => 'Please check the date format',
 			'session.apply' => 'Apply',
 			'session.cancel' => 'Cancel',
@@ -1234,10 +1284,14 @@ extension on TranslationsEn {
 			'session.noPath' => 'No route found between these two stations',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => 'Suspended',
-			'session.state.until' => ({required Object year}) => 'until ${year}',
-			'session.state.since' => ({required Object year}) => 'from ${year}',
-			'session.state.span' => ({required Object from, required Object to}) => '${from}–${to}',
+			'session.state.suspendedSince' => ({required Object year}) => 'Suspended ${year}~',
+			'session.state.until' => ({required Object year}) => '~${year}',
+			'session.state.since' => ({required Object year}) => '${year}~',
+			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => 'Part of ${line} on that date',
+			'session.handSince' => ({required Object line, required Object date}) => '${line} from ${date}',
+			'session.handOpen' => 'Open line ›',
+			'session.handNote' => 'Rides here are saved to that line',
 			'session.chooseDirection' => 'Which way did you ride?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => 'Which alignment did you ride?',
@@ -1258,20 +1312,45 @@ extension on TranslationsEn {
 			'session.spokenTo' => 'Selected as arrival',
 			'session.showClosed' => 'Closed stations',
 			'session.showArchive' => 'Historic stations',
-			'session.returnsTo' => ({required Object name}) => 'Back to ${name}',
 			'session.clear' => 'Clear',
 			'session.lap' => 'One full loop',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} station', other: '${n} stations', ), 
-			'session.closedSection' => ({required Object year}) => 'Closed in ${year}',
+			'session.closedSection' => ({required Object year}) => '~${year} closed',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',
 			'session.to' => 'To',
 			'session.whyClosed' => 'This station wasn\'t open on that date',
+			'session.onlyDown' => 'Down only',
+			'session.onlyUp' => 'Up only',
+			'session.onlyOneWay' => 'One way',
+			'session.spokenOnlyDown' => 'Down trains only',
+			'session.spokenOnlyUp' => 'Up trains only',
+			'session.spokenOnlyOneWay' => 'Trains in one direction only',
+			'session.stopDownTitle' => ({required Object name}) => 'Only down trains stop at ${name}',
+			'session.stopUpTitle' => ({required Object name}) => 'Only up trains stop at ${name}',
+			'session.stopOneWayTitle' => ({required Object name}) => 'Trains stop at ${name} in one direction only',
+			'session.towardOnly' => ({required Object name}) => 'You can only ride toward ${name}',
+			'session.sectionTitle' => 'Trains run one way on this section',
+			'session.sectionDetail' => 'No trains run in this direction',
+			'session.aroundTitle' => 'This loop runs one way',
+			'session.aroundDetail' => ({required Object km}) => 'Counted the long way round: ${km} km',
+			'session.reverse' => 'Reverse direction',
+			'session.onlyAlight' => 'Exit only',
+			'session.alightTitle' => 'Alighting-only stop',
+			'session.alightDetail' => 'You can only choose it as your arrival',
 			'session.whySuspended' => 'This section was suspended on that date',
 			'session.bound' => ({required Object names}) => 'For ${names}',
 			'session.spokenClosed' => ({required Object year}) => 'Closed in ${year}',
+			'session.spokenSuspendedSince' => ({required Object year}) => 'Suspended since ${year}',
+			'session.pastKari' => 'temp.',
+			'session.pastRinji' => 'seasonal',
+			'session.spokenPastKari' => 'formerly a temporary stop',
+			'session.spokenPastRinji' => 'formerly a seasonal station',
 			'session.spokenBranch' => ({required Object line, required Object next}) => '${line}, branch to ${next}',
+			'session.reverseNow' => ({required Object line}) => 'Trains reverse here and run through to the ${line}',
+			'session.reverseUsed' => ({required Object line}) => 'Trains used to reverse here and run through to the ${line}',
+			'session.spokenReverse' => 'reverses direction',
 			'session.leaving' => ({required Object name}) => 'From ${name}',
 			'session.progress' => ({required Object num, required Object den, required Object percent}) => '${num} / ${den} km (${percent})',
 			'session.leaveTitle' => 'Your selection will be cleared',
@@ -1283,10 +1362,12 @@ extension on TranslationsEn {
 			'session.unridableOk' => 'OK',
 			'session.repick' => 'Tap another station to start over',
 			'session.closedUnknown' => 'Closed section',
+			'session.suspendedSection' => 'Suspended',
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
 			'session.relocationNew' => ({required Object km}) => 'New alignment · ${km} km',
 			'session.spokenOpen' => 'open',
 			'session.spokenRidden' => 'ridden',
+			'data.osBackupLarge' => 'Your records are over 20 MB and may not fit in Android cloud backup. Choose a backup folder',
 			'data.title' => 'Backup and restore',
 			'data.folder' => 'Backup folder',
 			'data.folderHint' => 'Choose a location that stays after you uninstall the app',
@@ -1365,7 +1446,7 @@ extension on TranslationsEn {
 			'sources.n05.use' => 'Track geometry of closed sections missing from N02 and OpenStreetMap',
 			'sources.n05.terms' => 'MLIT. 国土数値情報 terms of use (non-commercial). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.n03.name' => 'National Land Numerical Information: Administrative Zones (N03)',
-			'sources.n03.use' => 'Outline of Japan and prefecture borders',
+			'sources.n03.use' => 'Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => 'Station list and coordinates',
@@ -1412,7 +1493,6 @@ extension on TranslationsEn {
 			'lineDetail.allTime' => 'All time',
 			'lineDetail.km' => ({required Object num, required Object den}) => '${num} / ${den} km',
 			'lineDetail.completeCurrent' => 'Completed (current)',
-			'lineDetail.completeAllTime' => 'Completed (all time)',
 			'lineDetail.selfScore' => 'Not counted in your totals. Progress is based on this line alone',
 			'lineDetail.open' => 'Line details',
 			'lineDetail.record' => 'Log a ride on this line',
@@ -1444,6 +1524,10 @@ extension on TranslationsEn {
 			'deleted.restored' => 'Ride restored',
 			'deleted.fileRides' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} ride', other: '${n} rides', ), 
 			'deleted.fileDelete' => 'Delete all',
+			'deleted.fileDeleteTitle' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: 'Delete ${n} ride?', other: 'Delete ${n} rides?', ), 
+			'deleted.fileDeleteBody' => ({required Object file}) => 'This deletes every ride imported from ${file}. You can bring them back from Deleted rides in Settings.',
+			'deleted.fileDeleteConfirm' => 'Delete',
+			'deleted.fileDeleteCancel' => 'Cancel',
 			'deleted.fileDeleted' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: 'Deleted ${n} ride', other: 'Deleted ${n} rides', ), 
 			'complete.credit' => 'Logged with noriori',
 			'complete.share' => 'Share',
@@ -1453,7 +1537,6 @@ extension on TranslationsEn {
 			'collection.operators' => 'Operators',
 			'collection.prefs' => 'Prefectures',
 			'collection.stations' => 'Stations',
-			'collection.allTime' => 'All time',
 			'collection.stationGoal' => ({required Object n}) => '${n} stations',
 			'collection.empty' => 'Nothing yet',
 			'collection.closed' => 'Closed',
@@ -1531,6 +1614,9 @@ extension on TranslationsEn {
 			'mapSheet.visited' => 'I\'ve been to this station',
 			'mapSheet.visitedHint' => 'Doesn\'t count toward completion. It only fills in the dot on the map',
 			'mapSheet.noVisits' => 'No station visits yet. Tap a station on the map to add one',
+			'mapSheet.pickerLabel' => 'Lines through this spot',
+			'mapSheet.partlyClosed' => 'Closed here',
+			'mapSheet.closed' => 'Closed line',
 			'prefNames.0' => 'Hokkaido',
 			'prefNames.1' => 'Aomori',
 			'prefNames.2' => 'Iwate',
@@ -1566,6 +1652,8 @@ extension on TranslationsEn {
 			'prefNames.32' => 'Okayama',
 			'prefNames.33' => 'Hiroshima',
 			'prefNames.34' => 'Yamaguchi',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.35' => 'Tokushima',
 			'prefNames.36' => 'Kagawa',
 			'prefNames.37' => 'Ehime',

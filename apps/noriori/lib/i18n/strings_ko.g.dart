@@ -400,6 +400,11 @@ class Translations$stats$ko {
 	/// ko: '$year년대'
 	String decade({required Object year}) => '${year}년대';
 
+	/// ko: '(other) {판정 불가 $n구간}'
+	String undecided({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
+		other: '판정 불가 ${n}구간',
+	);
+
 	/// ko: '(other) {확인 필요 $n건 · $km km}'
 	String review({required num n, required Object km}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
 		other: '확인 필요 ${n}건 · ${km} km',
@@ -479,6 +484,9 @@ class Translations$search$ko {
 
 	// Translations
 
+	/// ko: '지도에서 보기'
+	String get showOnMap => '지도에서 보기';
+
 	/// ko: '노선이나 역 이름'
 	String get hint => '노선이나 역 이름';
 
@@ -487,6 +495,9 @@ class Translations$search$ko {
 
 	/// ko: '검색 결과가 없습니다'
 	String get none => '검색 결과가 없습니다';
+
+	/// ko: '열람 전용'
+	String get archive => '열람 전용';
 }
 
 // Path: session
@@ -525,6 +536,9 @@ class Translations$session$ko {
 	/// ko: '달력에서 고르기'
 	String get datePick => '달력에서 고르기';
 
+	/// ko: '오늘'
+	String get dateToday => '오늘';
+
 	/// ko: '날짜 형식을 확인해 주세요'
 	String get dateBad => '날짜 형식을 확인해 주세요';
 
@@ -556,6 +570,15 @@ class Translations$session$ko {
 
 	/// ko: '탑승일 기준 $line 구간'
 	String savedAs({required Object line}) => '탑승일 기준 ${line} 구간';
+
+	/// ko: '$date부터 $line'
+	String handSince({required Object date, required Object line}) => '${date}부터 ${line}';
+
+	/// ko: '노선 보기 ›'
+	String get handOpen => '노선 보기 ›';
+
+	/// ko: '이 구간은 그 노선으로 기록돼요'
+	String get handNote => '이 구간은 그 노선으로 기록돼요';
 
 	/// ko: '어느 쪽으로 탔나요?'
 	String get chooseDirection => '어느 쪽으로 탔나요?';
@@ -619,9 +642,6 @@ class Translations$session$ko {
 	/// ko: '기록할 수 없는 옛 역·노선도 표시'
 	String get showArchive => '기록할 수 없는 옛 역·노선도 표시';
 
-	/// ko: '한 바퀴 돌아 $name 도착'
-	String returnsTo({required Object name}) => '한 바퀴 돌아 ${name} 도착';
-
 	/// ko: '선택 해제'
 	String get clear => '선택 해제';
 
@@ -651,6 +671,60 @@ class Translations$session$ko {
 	/// ko: '그 날짜에는 운영하지 않던 역입니다'
 	String get whyClosed => '그 날짜에는 운영하지 않던 역입니다';
 
+	/// ko: '하행만'
+	String get onlyDown => '하행만';
+
+	/// ko: '상행만'
+	String get onlyUp => '상행만';
+
+	/// ko: '한 방향만'
+	String get onlyOneWay => '한 방향만';
+
+	/// ko: '하행 열차만 정차'
+	String get spokenOnlyDown => '하행 열차만 정차';
+
+	/// ko: '상행 열차만 정차'
+	String get spokenOnlyUp => '상행 열차만 정차';
+
+	/// ko: '한 방향 열차만 정차'
+	String get spokenOnlyOneWay => '한 방향 열차만 정차';
+
+	/// ko: '$name에는 하행 열차만 서요'
+	String stopDownTitle({required Object name}) => '${name}에는 하행 열차만 서요';
+
+	/// ko: '$name에는 상행 열차만 서요'
+	String stopUpTitle({required Object name}) => '${name}에는 상행 열차만 서요';
+
+	/// ko: '$name에는 한 방향 열차만 서요'
+	String stopOneWayTitle({required Object name}) => '${name}에는 한 방향 열차만 서요';
+
+	/// ko: '$name 방면으로만 탈 수 있어요'
+	String towardOnly({required Object name}) => '${name} 방면으로만 탈 수 있어요';
+
+	/// ko: '한 방향으로만 다니는 구간이에요'
+	String get sectionTitle => '한 방향으로만 다니는 구간이에요';
+
+	/// ko: '이 방향으로는 열차가 다니지 않아요'
+	String get sectionDetail => '이 방향으로는 열차가 다니지 않아요';
+
+	/// ko: '한 방향으로만 도는 구간이에요'
+	String get aroundTitle => '한 방향으로만 도는 구간이에요';
+
+	/// ko: '돌아가는 길 $km km로 셉니다'
+	String aroundDetail({required Object km}) => '돌아가는 길 ${km} km로 셉니다';
+
+	/// ko: '방향 바꾸기'
+	String get reverse => '방향 바꾸기';
+
+	/// ko: '하차전용'
+	String get onlyAlight => '하차전용';
+
+	/// ko: '하차전용 역이에요'
+	String get alightTitle => '하차전용 역이에요';
+
+	/// ko: '도착역으로만 고를 수 있어요'
+	String get alightDetail => '도착역으로만 고를 수 있어요';
+
 	/// ko: '그 날짜에는 운행이 중단된 구간입니다'
 	String get whySuspended => '그 날짜에는 운행이 중단된 구간입니다';
 
@@ -660,8 +734,32 @@ class Translations$session$ko {
 	/// ko: '$year년 폐지'
 	String spokenClosed({required Object year}) => '${year}년 폐지';
 
+	/// ko: '$year년부터 운휴'
+	String spokenSuspendedSince({required Object year}) => '${year}년부터 운휴';
+
+	/// ko: '가'
+	String get pastKari => '가';
+
+	/// ko: '임'
+	String get pastRinji => '임';
+
+	/// ko: '예전 가승강장'
+	String get spokenPastKari => '예전 가승강장';
+
+	/// ko: '예전 임시역'
+	String get spokenPastRinji => '예전 임시역';
+
 	/// ko: '$line, $next 분기'
 	String spokenBranch({required Object line, required Object next}) => '${line}, ${next} 분기';
+
+	/// ko: '이 역에서 진행 방향을 바꿔 $line 직통합니다'
+	String reverseNow({required Object line}) => '이 역에서 진행 방향을 바꿔 ${line} 직통합니다';
+
+	/// ko: '이 역에서 진행 방향을 바꿔 $line 직통하는 열차가 있었습니다'
+	String reverseUsed({required Object line}) => '이 역에서 진행 방향을 바꿔 ${line} 직통하는 열차가 있었습니다';
+
+	/// ko: '방향 바꿈'
+	String get spokenReverse => '방향 바꿈';
 
 	/// ko: '$name에서 출발'
 	String leaving({required Object name}) => '${name}에서 출발';
@@ -681,11 +779,11 @@ class Translations$session$ko {
 	/// ko: '그 날짜에는 탈 수 없는 구간입니다'
 	String get unridableTitle => '그 날짜에는 탈 수 없는 구간입니다';
 
-	/// ko: '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.'
-	String get unridableSave => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.';
+	/// ko: '폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.'
+	String get unridableSave => '폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.';
 
-	/// ko: '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.'
-	String get unridableDate => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.';
+	/// ko: '폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.'
+	String get unridableDate => '폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.';
 
 	/// ko: '확인'
 	String get unridableOk => '확인';
@@ -695,6 +793,9 @@ class Translations$session$ko {
 
 	/// ko: '폐지 구간'
 	String get closedUnknown => '폐지 구간';
+
+	/// ko: '운휴 중'
+	String get suspendedSection => '운휴 중';
 
 	/// ko: '옛 선로 · $km km'
 	String relocationOld({required Object km}) => '옛 선로 · ${km} km';
@@ -716,6 +817,9 @@ class Translations$data$ko {
 	final Translations _root; // ignore: unused_field
 
 	// Translations
+
+	/// ko: '기록 파일이 20MB를 넘어 Android 클라우드 백업에 들어가지 않을 수 있어요. 백업 폴더를 골라 두세요'
+	String get osBackupLarge => '기록 파일이 20MB를 넘어 Android 클라우드 백업에 들어가지 않을 수 있어요. 백업 폴더를 골라 두세요';
 
 	/// ko: '백업과 복원'
 	String get title => '백업과 복원';
@@ -1024,8 +1128,8 @@ class Translations$editRide$ko {
 	/// ko: '삭제'
 	String get delete => '삭제';
 
-	/// ko: '폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.'
-	String get unridable => '폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.';
+	/// ko: '폐지 뒤나 개업 전, 운휴 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.'
+	String get unridable => '폐지 뒤나 개업 전, 운휴 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.';
 
 	/// ko: '저장하지 못했습니다. 기록은 바뀌지 않았습니다'
 	String get failed => '저장하지 못했습니다. 기록은 바뀌지 않았습니다';
@@ -1053,9 +1157,6 @@ class Translations$lineDetail$ko {
 
 	/// ko: '현재 구간 완주'
 	String get completeCurrent => '현재 구간 완주';
-
-	/// ko: '폐지 구간 포함 완주'
-	String get completeAllTime => '폐지 구간 포함 완주';
 
 	/// ko: '전체 통계에 들어가지 않는 노선입니다. 이 노선의 거리만으로 진행률을 셉니다'
 	String get selfScore => '전체 통계에 들어가지 않는 노선입니다. 이 노선의 거리만으로 진행률을 셉니다';
@@ -1128,11 +1229,11 @@ class Translations$service$ko {
 
 	// Translations
 
-	/// ko: '운전 계통'
-	String get kind => '운전 계통';
+	/// ko: '운행 계통'
+	String get kind => '운행 계통';
 
-	/// ko: '그 날짜에 운행하지 않던 운전 계통입니다'
-	String get none => '그 날짜에 운행하지 않던 운전 계통입니다';
+	/// ko: '그 날짜에 운행하지 않던 운행 계통입니다'
+	String get none => '그 날짜에 운행하지 않던 운행 계통입니다';
 
 	/// ko: '기록하기'
 	String get save => '기록하기';
@@ -1171,6 +1272,20 @@ class Translations$deleted$ko {
 
 	/// ko: '이 파일 기록 모두 지우기'
 	String get fileDelete => '이 파일 기록 모두 지우기';
+
+	/// ko: '(other) {기록 $n건을 지울까요?}'
+	String fileDeleteTitle({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
+		other: '기록 ${n}건을 지울까요?',
+	);
+
+	/// ko: '$file에서 가져온 기록을 모두 지웁니다. 설정의 삭제한 기록에서 되살릴 수 있습니다.'
+	String fileDeleteBody({required Object file}) => '${file}에서 가져온 기록을 모두 지웁니다. 설정의 삭제한 기록에서 되살릴 수 있습니다.';
+
+	/// ko: '삭제'
+	String get fileDeleteConfirm => '삭제';
+
+	/// ko: '취소'
+	String get fileDeleteCancel => '취소';
 
 	/// ko: '(other) {기록 $n건을 지웠습니다}'
 	String fileDeleted({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
@@ -1218,9 +1333,6 @@ class Translations$collection$ko {
 
 	/// ko: '역'
 	String get stations => '역';
-
-	/// ko: '폐선 포함'
-	String get allTime => '폐선 포함';
 
 	/// ko: '역 $n곳'
 	String stationGoal({required Object n}) => '역 ${n}곳';
@@ -1531,6 +1643,15 @@ class Translations$mapSheet$ko {
 
 	/// ko: '역 방문 기록이 없습니다. 지도에서 역을 눌러 남길 수 있습니다'
 	String get noVisits => '역 방문 기록이 없습니다. 지도에서 역을 눌러 남길 수 있습니다';
+
+	/// ko: '이 자리를 지나는 노선'
+	String get pickerLabel => '이 자리를 지나는 노선';
+
+	/// ko: '이 구간 폐지'
+	String get partlyClosed => '이 구간 폐지';
+
+	/// ko: '폐선'
+	String get closed => '폐선';
 }
 
 // Path: date
@@ -1708,8 +1829,11 @@ class Translations$session$state$ko {
 	/// ko: '?'
 	String get maybe => '?';
 
-	/// ko: '운행 중단'
-	String get suspended => '운행 중단';
+	/// ko: '운휴'
+	String get suspended => '운휴';
+
+	/// ko: '운휴 $year~'
+	String suspendedSince({required Object year}) => '운휴 ${year}~';
 
 	/// ko: '~$year'
 	String until({required Object year}) => '~${year}';
@@ -1795,8 +1919,8 @@ class Translations$sources$n03$ko {
 	/// ko: '국토수치정보 행정구역 (N03)'
 	String get name => '국토수치정보 행정구역 (N03)';
 
-	/// ko: '일본 윤곽과 도도부현 경계'
-	String get use => '일본 윤곽과 도도부현 경계';
+	/// ko: '일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리'
+	String get use => '일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리';
 
 	/// ko: '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。'
 	String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
@@ -2053,6 +2177,7 @@ extension on Translations {
 			'stats.prefLabel' => ({required Object name, required Object percent}) => '${name} ${percent}',
 			'stats.visited' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '타고 내렸거나 들른 역 ${n}곳', ), 
 			'stats.decade' => ({required Object year}) => '${year}년대',
+			'stats.undecided' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '판정 불가 ${n}구간', ), 
 			'stats.review' => ({required num n, required Object km}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '확인 필요 ${n}건 · ${km} km', ), 
 			'stats.badges' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '배지 ${n}개', ), 
 			'stats.visitedClosed' => ({required Object n}) => '폐역 ${n}곳',
@@ -2072,9 +2197,11 @@ extension on Translations {
 			'settings.language' => '언어',
 			'settings.carryover' => '사업자 전환 시 기록 승계',
 			'settings.carryoverHint' => '끄면 JR에서 넘어간 구간은 새 노선으로 따로 셉니다',
+			'search.showOnMap' => '지도에서 보기',
 			'search.hint' => '노선이나 역 이름',
 			'search.prompt' => '노선이나 역을 찾아 시작하세요',
 			'search.none' => '검색 결과가 없습니다',
+			'search.archive' => '열람 전용',
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}바퀴', ), 
 			'session.lapLess' => '한 바퀴 줄이기',
 			'session.lapMore' => '한 바퀴 늘리기',
@@ -2083,6 +2210,7 @@ extension on Translations {
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => '날짜 모름',
 			'session.datePick' => '달력에서 고르기',
+			'session.dateToday' => '오늘',
 			'session.dateBad' => '날짜 형식을 확인해 주세요',
 			'session.apply' => '적용',
 			'session.cancel' => '취소',
@@ -2093,11 +2221,15 @@ extension on Translations {
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
 			'session.noPath' => '이 두 역 사이의 경로를 찾지 못했습니다',
 			'session.state.maybe' => '?',
-			'session.state.suspended' => '운행 중단',
+			'session.state.suspended' => '운휴',
+			'session.state.suspendedSince' => ({required Object year}) => '운휴 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => '탑승일 기준 ${line} 구간',
+			'session.handSince' => ({required Object date, required Object line}) => '${date}부터 ${line}',
+			'session.handOpen' => '노선 보기 ›',
+			'session.handNote' => '이 구간은 그 노선으로 기록돼요',
 			'session.chooseDirection' => '어느 쪽으로 탔나요?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => '어느 시기의 선로였나요?',
@@ -2118,7 +2250,6 @@ extension on Translations {
 			'session.spokenTo' => '도착역으로 선택됨',
 			'session.showClosed' => '폐역·폐선 표시',
 			'session.showArchive' => '기록할 수 없는 옛 역·노선도 표시',
-			'session.returnsTo' => ({required Object name}) => '한 바퀴 돌아 ${name} 도착',
 			'session.clear' => '선택 해제',
 			'session.lap' => '한 바퀴',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}개 역', ), 
@@ -2128,25 +2259,53 @@ extension on Translations {
 			'session.from' => '출발',
 			'session.to' => '도착',
 			'session.whyClosed' => '그 날짜에는 운영하지 않던 역입니다',
+			'session.onlyDown' => '하행만',
+			'session.onlyUp' => '상행만',
+			'session.onlyOneWay' => '한 방향만',
+			'session.spokenOnlyDown' => '하행 열차만 정차',
+			'session.spokenOnlyUp' => '상행 열차만 정차',
+			'session.spokenOnlyOneWay' => '한 방향 열차만 정차',
+			'session.stopDownTitle' => ({required Object name}) => '${name}에는 하행 열차만 서요',
+			'session.stopUpTitle' => ({required Object name}) => '${name}에는 상행 열차만 서요',
+			'session.stopOneWayTitle' => ({required Object name}) => '${name}에는 한 방향 열차만 서요',
+			'session.towardOnly' => ({required Object name}) => '${name} 방면으로만 탈 수 있어요',
+			'session.sectionTitle' => '한 방향으로만 다니는 구간이에요',
+			'session.sectionDetail' => '이 방향으로는 열차가 다니지 않아요',
+			'session.aroundTitle' => '한 방향으로만 도는 구간이에요',
+			'session.aroundDetail' => ({required Object km}) => '돌아가는 길 ${km} km로 셉니다',
+			'session.reverse' => '방향 바꾸기',
+			'session.onlyAlight' => '하차전용',
+			'session.alightTitle' => '하차전용 역이에요',
+			'session.alightDetail' => '도착역으로만 고를 수 있어요',
 			'session.whySuspended' => '그 날짜에는 운행이 중단된 구간입니다',
 			'session.bound' => ({required Object names}) => '${names} 방면',
 			'session.spokenClosed' => ({required Object year}) => '${year}년 폐지',
+			'session.spokenSuspendedSince' => ({required Object year}) => '${year}년부터 운휴',
+			'session.pastKari' => '가',
+			'session.pastRinji' => '임',
+			'session.spokenPastKari' => '예전 가승강장',
+			'session.spokenPastRinji' => '예전 임시역',
 			'session.spokenBranch' => ({required Object line, required Object next}) => '${line}, ${next} 분기',
+			'session.reverseNow' => ({required Object line}) => '이 역에서 진행 방향을 바꿔 ${line} 직통합니다',
+			'session.reverseUsed' => ({required Object line}) => '이 역에서 진행 방향을 바꿔 ${line} 직통하는 열차가 있었습니다',
+			'session.spokenReverse' => '방향 바꿈',
 			'session.leaving' => ({required Object name}) => '${name}에서 출발',
 			'session.progress' => ({required Object num, required Object den, required Object percent}) => '${num} / ${den} km (${percent})',
 			'session.leaveTitle' => '고른 역이 사라집니다',
 			'session.leaveBody' => '다른 노선으로 넘어가면 지금 고른 역은 지워집니다.',
 			'session.leave' => '넘어가기',
 			'session.unridableTitle' => '그 날짜에는 탈 수 없는 구간입니다',
-			'session.unridableSave' => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.',
-			'session.unridableDate' => '폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.',
+			'session.unridableSave' => '폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.',
+			'session.unridableDate' => '폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.',
 			'session.unridableOk' => '확인',
 			'session.repick' => '다른 역을 누르면 처음부터 다시 고릅니다',
 			'session.closedUnknown' => '폐지 구간',
+			'session.suspendedSection' => '운휴 중',
 			'session.relocationOld' => ({required Object km}) => '옛 선로 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '새 선로 · ${km} km',
 			'session.spokenOpen' => '영업 중',
 			'session.spokenRidden' => '탄 역',
+			'data.osBackupLarge' => '기록 파일이 20MB를 넘어 Android 클라우드 백업에 들어가지 않을 수 있어요. 백업 폴더를 골라 두세요',
 			'data.title' => '백업과 복원',
 			'data.folder' => '백업 폴더',
 			'data.folderHint' => '앱을 지워도 남는 곳을 고르세요',
@@ -2225,7 +2384,7 @@ extension on Translations {
 			'sources.n05.use' => 'N02와 OpenStreetMap에 없는 폐선 구간의 선로 모양',
 			'sources.n05.terms' => '국토교통성. 国土数値情報 이용 조건 (비상업). 「国土数値情報（鉄道時系列データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.n03.name' => '국토수치정보 행정구역 (N03)',
-			'sources.n03.use' => '일본 윤곽과 도도부현 경계',
+			'sources.n03.use' => '일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => '역 목록과 좌표',
@@ -2265,14 +2424,13 @@ extension on Translations {
 			'editRide.toAlighted' => '도착역에서 실제로 내렸음',
 			'editRide.save' => '저장',
 			'editRide.delete' => '삭제',
-			'editRide.unridable' => '폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.',
+			'editRide.unridable' => '폐지 뒤나 개업 전, 운휴 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.',
 			'editRide.failed' => '저장하지 못했습니다. 기록은 바뀌지 않았습니다',
 			'lineDetail.soloMap' => '지도에서 이 노선만 보기',
 			'lineDetail.current' => '현재 구간',
 			'lineDetail.allTime' => '폐지 구간 포함',
 			'lineDetail.km' => ({required Object num, required Object den}) => '${num} / ${den} km',
 			'lineDetail.completeCurrent' => '현재 구간 완주',
-			'lineDetail.completeAllTime' => '폐지 구간 포함 완주',
 			'lineDetail.selfScore' => '전체 통계에 들어가지 않는 노선입니다. 이 노선의 거리만으로 진행률을 셉니다',
 			'lineDetail.open' => '노선 상세',
 			'lineDetail.record' => '이 노선 기록하기',
@@ -2293,8 +2451,8 @@ extension on Translations {
 			'lineDetail.undo' => '되돌리기',
 			'lineDetail.joinsTo' => ({required Object name}) => '${name} →',
 			'lineDetail.visitDated' => '방문일을 바꿨습니다',
-			'service.kind' => '운전 계통',
-			'service.none' => '그 날짜에 운행하지 않던 운전 계통입니다',
+			'service.kind' => '운행 계통',
+			'service.none' => '그 날짜에 운행하지 않던 운행 계통입니다',
 			'service.save' => '기록하기',
 			'service.failed' => '이 구간은 기록할 수 없습니다. 날짜를 확인해 주세요',
 			'deleted.fileOldest' => '예전에 가져온 기록',
@@ -2304,6 +2462,10 @@ extension on Translations {
 			'deleted.restored' => '기록을 되살렸습니다',
 			'deleted.fileRides' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '기록 ${n}건', ), 
 			'deleted.fileDelete' => '이 파일 기록 모두 지우기',
+			'deleted.fileDeleteTitle' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '기록 ${n}건을 지울까요?', ), 
+			'deleted.fileDeleteBody' => ({required Object file}) => '${file}에서 가져온 기록을 모두 지웁니다. 설정의 삭제한 기록에서 되살릴 수 있습니다.',
+			'deleted.fileDeleteConfirm' => '삭제',
+			'deleted.fileDeleteCancel' => '취소',
 			'deleted.fileDeleted' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '기록 ${n}건을 지웠습니다', ), 
 			'complete.credit' => 'noriori로 기록했습니다',
 			'complete.share' => '공유하기',
@@ -2313,7 +2475,6 @@ extension on Translations {
 			'collection.operators' => '회사',
 			'collection.prefs' => '도도부현',
 			'collection.stations' => '역',
-			'collection.allTime' => '폐선 포함',
 			'collection.stationGoal' => ({required Object n}) => '역 ${n}곳',
 			'collection.empty' => '아직 없습니다',
 			'collection.closed' => '폐선',
@@ -2391,6 +2552,9 @@ extension on Translations {
 			'mapSheet.visited' => '이 역에 가 봤음',
 			'mapSheet.visitedHint' => '완주율에는 들지 않고 지도의 점만 칠합니다',
 			'mapSheet.noVisits' => '역 방문 기록이 없습니다. 지도에서 역을 눌러 남길 수 있습니다',
+			'mapSheet.pickerLabel' => '이 자리를 지나는 노선',
+			'mapSheet.partlyClosed' => '이 구간 폐지',
+			'mapSheet.closed' => '폐선',
 			'prefNames.0' => '홋카이도',
 			'prefNames.1' => '아오모리',
 			'prefNames.2' => '이와테',
@@ -2426,6 +2590,8 @@ extension on Translations {
 			'prefNames.32' => '오카야마',
 			'prefNames.33' => '히로시마',
 			'prefNames.34' => '야마구치',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.35' => '도쿠시마',
 			'prefNames.36' => '카가와',
 			'prefNames.37' => '에히메',

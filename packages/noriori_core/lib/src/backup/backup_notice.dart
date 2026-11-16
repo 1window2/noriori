@@ -19,6 +19,12 @@ enum BackupNotice {
   noFolder,
 }
 
+/// Android는 앱 백업이 25MB를 넘으면 클라우드 백업을 하지 않는다. 그 전에 설정에서 알린다 (ARCHITECTURE §3.7).
+const osBackupNoticeBytes = 20 * 1024 * 1024;
+
+/// OS 백업에 드는 파일(`user.sqlite`와 `-wal`)이 [osBackupNoticeBytes]를 넘었는가.
+bool osBackupTooLarge(int bytes) => bytes > osBackupNoticeBytes;
+
 /// 이 기간이 지나도록 바뀐 기록이 백업되지 않으면 알린다.
 const staleBackupMillis = 7 * 24 * 60 * 60 * 1000;
 

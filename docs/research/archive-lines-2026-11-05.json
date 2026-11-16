@@ -1,0 +1,3507 @@
+{
+ "a_nishitetsukitakyushu_line": {
+  "name": "西鉄北九州線",
+  "closed": "2000-11-26",
+  "result": "open",
+  "stations": [
+   [
+    "門司",
+    "XX"
+   ],
+   [
+    "東本町",
+    "XX"
+   ],
+   [
+    "鎮西橋",
+    "XX"
+   ],
+   [
+    "桟橋通",
+    "XX"
+   ],
+   [
+    "広石",
+    "XX"
+   ],
+   [
+    "風師",
+    "XX"
+   ],
+   [
+    "葛葉",
+    "XX"
+   ],
+   [
+    "二タ松町",
+    "XX"
+   ],
+   [
+    "片上",
+    "XX"
+   ],
+   [
+    "小森江",
+    "XX"
+   ],
+   [
+    "市立門司病院前",
+    "XX"
+   ],
+   [
+    "大里東口",
+    "XX"
+   ],
+   [
+    "大里",
+    "XX"
+   ],
+   [
+    "門司駅前",
+    "XX"
+   ],
+   [
+    "原町",
+    "XX"
+   ],
+   [
+    "社ノ木",
+    "XX"
+   ],
+   [
+    "新町",
+    "XX"
+   ],
+   [
+    "赤坂",
+    "XX"
+   ],
+   [
+    "上富野三丁目",
+    "XX"
+   ],
+   [
+    "上富野一丁目",
+    "XX"
+   ],
+   [
+    "砂津",
+    "XX"
+   ],
+   [
+    "米町",
+    "XX"
+   ],
+   [
+    "小倉駅前",
+    "XX"
+   ],
+   [
+    "魚町",
+    "XX"
+   ],
+   [
+    "室町",
+    "XX"
+   ],
+   [
+    "大門",
+    "XX"
+   ],
+   [
+    "竪町",
+    "XX"
+   ],
+   [
+    "金田",
+    "XX"
+   ],
+   [
+    "下到津",
+    "XX"
+   ],
+   [
+    "歯科大学前",
+    "XX"
+   ],
+   [
+    "遊園前",
+    "XX"
+   ],
+   [
+    "遊園前バス営業所",
+    "XX"
+   ],
+   [
+    "昭和",
+    "XX"
+   ],
+   [
+    "七条",
+    "XX"
+   ],
+   [
+    "荒生田",
+    "XX"
+   ],
+   [
+    "三条",
+    "XX"
+   ],
+   [
+    "大蔵",
+    "XX"
+   ],
+   [
+    "上本町",
+    "XX"
+   ],
+   [
+    "中央町",
+    "XX"
+   ],
+   [
+    "春の町",
+    "XX"
+   ],
+   [
+    "尾倉",
+    "XX"
+   ],
+   [
+    "八幡駅前",
+    "XX"
+   ],
+   [
+    "製鉄西門前",
+    "XX"
+   ],
+   [
+    "前田",
+    "XX"
+   ],
+   [
+    "桃園",
+    "XX"
+   ],
+   [
+    "陣山",
+    "XX"
+   ],
+   [
+    "紅梅",
+    "XX"
+   ],
+   [
+    "藤田",
+    "XX"
+   ],
+   [
+    "黒崎駅前",
+    "XX"
+   ],
+   [
+    "黒崎車庫前",
+    "XX"
+   ],
+   [
+    "西黒崎",
+    "XX"
+   ],
+   [
+    "熊西",
+    "XX"
+   ],
+   [
+    "皇后崎",
+    "XX"
+   ],
+   [
+    "陣の原",
+    "XX"
+   ],
+   [
+    "折尾東口",
+    "XX"
+   ],
+   [
+    "折尾",
+    "XX"
+   ]
+  ],
+  "open": [
+   [
+    "鎮西橋",
+    "三条",
+    "1911-06-05"
+   ],
+   [
+    "三条",
+    "黒崎駅前",
+    "1911-07-15"
+   ],
+   [
+    "東本町",
+    "鎮西橋",
+    "1911-09-01"
+   ],
+   [
+    "門司",
+    "東本町",
+    "1914-04-02"
+   ],
+   [
+    "黒崎駅前",
+    "折尾",
+    "1914-06-25"
+   ]
+  ],
+  "close": [
+   [
+    "門司",
+    "砂津",
+    "1985-10-20",
+    null
+   ],
+   [
+    "砂津",
+    "黒崎駅前",
+    "1992-10-25",
+    null
+   ],
+   [
+    "黒崎駅前",
+    "折尾",
+    "2000-11-26",
+    null
+   ]
+  ],
+  "evidence": [
+   "; 北九州本線 : 門司 - 東本町 - 鎮西橋 - … - 黒崎駅前 - 黒崎車庫前 - 西黒崎 - 熊西 - 皇后崎 - 陣の原 - 折尾東口 - 折尾（名称は廃止時点のもの）",
+   "路線距離（営業キロ）：北九州本線=29.4km（最大時）、戸畑線=5.5km、枝光線=4.8km、北方線=4.6km",
+   "1985年（昭和60年）10月20日 門司 - 砂津 廃止",
+   "1992年（平成4年）10月25日 砂津 - 黒崎駅前 廃止",
+   "1992年（平成4年）10月25日 北九州本線の一部（砂津 - 黒崎駅前間）廃止、西黒崎停留場を新設",
+   "1999年（平成11年）12月22日 北九州本線の黒崎駅前停留場が黒崎駅西地区再開発ビル1階に移転、黒崎車庫前停留場を廃止",
+   "2000年（平成12年）11月26日 黒崎駅前 - 折尾 （軌道線として）廃止"
+  ],
+  "source": "西鉄北九州線 111195863",
+  "note": "北九州本線만. 정류장 km는 원문에 없음(전체 29.4km만). 門司 0.0·折尾 29.4로 둘 수 있으나 「最大時」 값이라 XX로 둠. 정류장 이름은 廃止時点 이름이라 1950년대 이름과 다를 수 있음. 西黒崎는 1992 신설이라 砂津–黒崎駅前 폐지 뒤의 구간(黒崎駅前–折尾)에만 있음. 黒崎駅前–熊西는 2000-11-26부터 筑豊電気鉄道(DB l_chikuho_electric_railroad)로 이어짐. 1956-03-21부터 筑豊電鉄 직통. 中央町은 정류장이 셋(본선 2·枝光線 1). 1911 개업 경계 「大蔵川」은 三条–大蔵 사이(원문 「鎮西橋 - 大蔵川（三条 - 大蔵間）」)라 三条로 적음",
+  "kind": "archive_line",
+  "stop_open": {
+   "西黒崎": "1992-10-25"
+  },
+  "stop_close": {
+   "黒崎車庫前": "1999-12-22"
+  }
+ },
+ "a_nishitetsutobata_line": {
+  "name": "西鉄戸畑線",
+  "closed": "1985-10-20",
+  "result": "open",
+  "stations": [
+   [
+    "大門",
+    0.0
+   ],
+   [
+    "日明",
+    "XX"
+   ],
+   [
+    "日明西口",
+    "XX"
+   ],
+   [
+    "中井口",
+    "XX"
+   ],
+   [
+    "中原",
+    "XX"
+   ],
+   [
+    "工大前",
+    "XX"
+   ],
+   [
+    "三六",
+    "XX"
+   ],
+   [
+    "幸町",
+    "XX"
+   ],
+   [
+    "元宮町",
+    "XX"
+   ],
+   [
+    "戸畑",
+    5.5
+   ]
+  ],
+  "open": [
+   [
+    "大門",
+    "戸畑",
+    "1912-07-01"
+   ]
+  ],
+  "close": [
+   [
+    "大門",
+    "戸畑",
+    "1985-10-20",
+    null
+   ]
+  ],
+  "evidence": [
+   "; 戸畑線 : ◇大門 - 日明 - 日明西口 - 中井口 - 中原 - 工大前 - 三六 - ◇幸町 - 元宮町 - 戸畑",
+   "戸畑線=5.5km",
+   "1912年（明治45年）7月1日 戸畑線が全線開通",
+   "1985年（昭和60年）10月20日 戸畑線・枝光線・北九州線の一部（門司 - 砂津間）廃止"
+  ],
+  "source": "西鉄北九州線 111195863",
+  "note": "원문은 西鉄北九州線 문서(「西鉄戸畑線」은 넘겨주기). 중간 km 없음. 大門에서 본선과 Y자 분기(折尾 방향 직통 불가). 幸町에서 枝光線과 만남. 정류장 이름은 廃止時点",
+  "kind": "archive_line"
+ },
+ "a_nishitetsuedamitsu_line": {
+  "name": "西鉄枝光線",
+  "closed": "1985-10-20",
+  "result": "open",
+  "stations": [
+   [
+    "中央町",
+    0.0
+   ],
+   [
+    "中央町3",
+    "XX"
+   ],
+   [
+    "山王",
+    "XX"
+   ],
+   [
+    "枝光本町",
+    "XX"
+   ],
+   [
+    "枝光駅前",
+    "XX"
+   ],
+   [
+    "荒手",
+    "XX"
+   ],
+   [
+    "牧山",
+    "XX"
+   ],
+   [
+    "沖台通",
+    "XX"
+   ],
+   [
+    "浅生",
+    "XX"
+   ],
+   [
+    "幸町",
+    4.8
+   ]
+  ],
+  "open": [
+   [
+    "中央町",
+    "枝光駅前",
+    "1923-11-13"
+   ],
+   [
+    "枝光駅前",
+    "牧山",
+    "1928-06-01"
+   ],
+   [
+    "牧山",
+    "沖台通",
+    "1929-05-31"
+   ],
+   [
+    "沖台通",
+    "幸町",
+    "1929-11-26"
+   ]
+  ],
+  "close": [
+   [
+    "中央町",
+    "幸町",
+    "1985-10-20",
+    null
+   ]
+  ],
+  "evidence": [
+   "; 枝光線 : ◇中央町 - 中央町3※中央3丁目側 - 山王 - 枝光本町 - 枝光駅前 - 荒手 - 牧山 - 沖台通 - 浅生 - ◇幸町",
+   "枝光線=4.8km",
+   "1923年（大正12年）11月13日 中央町 - 枝光駅前 開業",
+   "1928年（昭和3年）6月1日 枝光駅前 - 牧山 開業",
+   "1929年（昭和4年）5月31日 牧山 - 沖台通 開業",
+   "1929年（昭和4年）11月26日 沖台通 - 幸町 開業（全線開通）",
+   "1985年（昭和60年）10月20日 全線廃止"
+  ],
+  "source": "西鉄北九州線 111195863",
+  "note": "원문은 西鉄北九州線 문서. 「中央町3」은 원문 그대로(中央3丁目側 정류장). 중간 km 없음",
+  "kind": "archive_line"
+ },
+ "a_nishitetsukitagata_line": {
+  "name": "西鉄北方線",
+  "closed": "1980-11-02",
+  "result": "open",
+  "stations": [
+   [
+    "魚町",
+    0.0
+   ],
+   [
+    "旦過橋",
+    "XX"
+   ],
+   [
+    "市立小倉病院前",
+    "XX"
+   ],
+   [
+    "香春口",
+    "XX"
+   ],
+   [
+    "三萩野",
+    "XX"
+   ],
+   [
+    "片野",
+    "XX"
+   ],
+   [
+    "城野駅前",
+    "XX"
+   ],
+   [
+    "富士見町",
+    "XX"
+   ],
+   [
+    "城野",
+    "XX"
+   ],
+   [
+    "北方車庫前",
+    "XX"
+   ],
+   [
+    "北方一丁目",
+    "XX"
+   ],
+   [
+    "北方",
+    4.6
+   ]
+  ],
+  "open": [
+   [
+    "香春口",
+    "城野",
+    "1906-06-11"
+   ],
+   [
+    "城野",
+    "北方",
+    "1907-02-23"
+   ],
+   [
+    "旦過橋",
+    "香春口",
+    "1927-02-01"
+   ],
+   [
+    "魚町",
+    "旦過橋",
+    "1932-10-02"
+   ]
+  ],
+  "close": [
+   [
+    "魚町",
+    "北方",
+    "1980-11-02",
+    null
+   ]
+  ],
+  "evidence": [
+   "; 北方線 : ◇魚町 - 旦過橋 - 市立小倉病院前 - 香春口 - 三萩野 - 片野 - 城野駅前 - 富士見町 - 城野 - 北方車庫前 - 北方一丁目 - 北方",
+   "北方線=4.6km",
+   "1906年（明治39年）6月11日 香春口 - 城野 開業（馬車鉄道）",
+   "1907年（明治40年）2月23日 城野 - 北方 開業（馬車鉄道）",
+   "1927年（昭和2年）2月1日 旦過橋 - 香春口 開業",
+   "1932年（昭和7年）10月2日 魚町 - 旦過橋 開業（全線開通）",
+   "1980年（昭和55年）11月2日 全線廃止",
+   "* 1980年（昭和55年）11月1日 北方線廃止"
+  ],
+  "source": "西鉄北九州線 111195863",
+  "note": "원문은 西鉄北九州線 문서. 같은 문서에 폐지일이 11月1日(전체 연표)·11月2日(北方線 연표) 둘로 적힘. 11-01이 마지막 운행일, 11-02가 폐지일로 보는 것이 맞아 보이나 원문은 설명하지 않음. DB 기존 값 1980-11-02. 軌間 1067mm로 본선과 직통 없음. 北方線 魚町은 본선 魚町과 다른 곳",
+  "kind": "archive_line"
+ },
+ "a_kitami_railway": {
+  "name": "北見鉄道",
+  "closed": "1939-08-25",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1939年（昭和14年）8月25日：鉄道路線廃止"
+  ],
+  "source": "北見鉄道 94426447",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kushirokaihatsufutonishiko_line": {
+  "name": "釧路開発埠頭西港線",
+  "closed": "1999-09-10",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1999年（平成11年）9月10日 - 全線廃止"
+  ],
+  "source": "釧路開発埠頭西港線 74145895",
+  "note": "화물선, 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_kushirokaihatsufutofuto_line": {
+  "name": "釧路開発埠頭埠頭線",
+  "closed": "1984-02-01",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1984年（昭和59年）2月1日 - 廃止"
+  ],
+  "source": "釧路開発埠頭埠頭線 101607943",
+  "note": "화물선, 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_kushiro_railway": {
+  "name": "釧路鉄道",
+  "closed": "1896-08-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1896年（明治29年）8月1日：運行休止"
+  ],
+  "source": "釧路鉄道 108179792",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_saru_railway": {
+  "name": "沙流鉄道",
+  "closed": "1951-12-11",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1951|12|11|df=y}}"
+  ],
+  "source": "沙流鉄道 99318950",
+  "note": "DB에 기록 노선 l_saru_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_saru_railway_line"
+ },
+ "a_taiheiyosekitanhambaiyusorinko_line": {
+  "name": "太平洋石炭販売輸送臨港線",
+  "closed": "2019-06-30",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "春採駅 - 臨港駅間で旅客営業を開始 / 廃止 = 2019年（令和元年）6月30日"
+  ],
+  "source": "太平洋石炭販売輸送臨港線 110080484",
+  "note": "DB에 기록 노선 l_rinko_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨. 여객 영업 시기(釧路臨港鉄道, DB 東釧路–入舟町 1926–1963)만 DB에 있음. 그 뒤 화물선 구간은 기록 범위 밖",
+  "kind": "archive_line",
+  "db_line": "l_rinko_line"
+ },
+ "a_teshiotanko_railway": {
+  "name": "天塩炭砿鉄道",
+  "closed": "1967-07-31",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1967|07|31|df=y}}"
+  ],
+  "source": "天塩炭砿鉄道 105760740",
+  "note": "DB에 기록 노선 l_teshio_tanko_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_teshio_tanko_railway_line"
+ },
+ "a_toyako_electric_railway": {
+  "name": "洞爺湖電気鉄道",
+  "closed": "1941-05-29",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1941年（昭和16年）5月29日：全線廃止"
+  ],
+  "source": "洞爺湖電気鉄道 106653715",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_tokachi_railway": {
+  "name": "十勝鉄道",
+  "closed": "1959-11-15",
+  "result": "open",
+  "stations": [
+   [
+    "藤",
+    0.0
+   ],
+   [
+    "基松",
+    3.5
+   ],
+   [
+    "常盤",
+    5.6
+   ],
+   [
+    "上帯広",
+    8.5
+   ],
+   [
+    "広野",
+    13.1
+   ],
+   [
+    "上広野",
+    15.4
+   ],
+   [
+    "八千代",
+    17.7
+   ]
+  ],
+  "open": [
+   [
+    "藤",
+    "八千代",
+    "1924-02-08"
+   ]
+  ],
+  "close": [
+   [
+    "藤",
+    "八千代",
+    "1957-08-18",
+    null
+   ]
+  ],
+  "evidence": [
+   "藤駅 - 八千代駅間（八千代線） 藤 0.0 / 基松 3.5 / 常盤 5.6 / 上帯広 8.5 / 広野 13.1 / 上広野 15.4 / (広野→八千代) 17.7",
+   "藤駅 - 八千代駅間：17.7 km",
+   "2月8日：十勝鉄道が専用線を譲り受け、新帯広駅 - 太平駅（後の上清川駅）間、藤駅 - 上美生駅間、常盤駅 - 千代田駅（後の八千代駅）間を地方鉄道として開業",
+   "1926年（大正15年）5月25日：藤駅 - 常盤駅間に基松（もといまつ）駅を開業",
+   "1957年（昭和32年）8月18日：川西駅 - 戸蔦駅間、藤駅 - 八千代駅間を廃止",
+   "1949年（昭和24年）8月以降：下清水駅 - 熊牛駅間を除き旅客運輸営業を休止",
+   "1951年 7月1日：清水駅 - 鹿追駅間、熊牛駅 - 北熊牛駅間、熊牛駅 - 南熊牛駅間廃止。清水部線全廃",
+   "清水部線 BS: 清水 0.0 / 下清水 0.5 / 人舞 5.2 / 熊牛 8.1"
+  ],
+  "source": "十勝鉄道 111467266",
+  "note": "帯広部線(帯広–戸蔦)은 DB l_obihirobu_line에 있음. 八千代線 표의 마지막 줄은 「広野駅 17.7」로 오기, 노선도·路線データ는 八千代駅 17.7. 八千代線 藤–常盤의 1924-02-08 개업은 「藤駅 - 上美生駅間」으로 적혀 있음. 美生線(常盤–上美生)은 1940-05-06 廃止라 범위 밖. 清水部線은 1949-08부터 下清水–熊牛만 여객이 남아 1951-07-01 全廃: 그 구간을 별선으로 열 수 있음(清水–下清水 0.5km는 여객 休止). 清水部線 열 때 開業은 下清水–鹿追 1925-05-30",
+  "kind": "archive_line",
+  "db_line": "l_obihirobu_line",
+  "extra_lines": {
+   "清水部線(1950 뒤 여객 구간)": {
+    "stations": [
+     [
+      "下清水",
+      0.5
+     ],
+     [
+      "人舞",
+      5.2
+     ],
+     [
+      "熊牛",
+      8.1
+     ]
+    ],
+    "open": [
+     [
+      "下清水",
+      "熊牛",
+      "1925-05-30"
+     ]
+    ],
+    "close": [
+     [
+      "下清水",
+      "熊牛",
+      "1951-07-01",
+      null
+     ]
+    ]
+   }
+  },
+  "stop_open": {
+   "基松": "1926-05-25"
+  }
+ },
+ "a_nemurotakushoku_railway": {
+  "name": "根室拓殖鉄道",
+  "closed": "1959-06-20",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1959|06|20|df=y}}"
+  ],
+  "source": "根室拓殖鉄道 107467623",
+  "note": "DB에 기록 노선 l_nemurotakushoku_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_nemurotakushoku_railway_line"
+ },
+ "a_hokkaidotankokisen_yubari_railway_line": {
+  "name": "北海道炭礦汽船夕張鉄道線",
+  "closed": "1975-04-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1975|04|01|df=y}}"
+  ],
+  "source": "北海道炭礦汽船夕張鉄道線 110051170",
+  "note": "DB에 기록 노선 l_yubari_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_yubari_railway_line"
+ },
+ "a_mitsubishikogyobibai_railway_line": {
+  "name": "三菱鉱業美唄鉄道線",
+  "closed": "1972-06-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1972|06|01|df=y}}"
+  ],
+  "source": "三菱鉱業美唄鉄道線 105973586",
+  "note": "DB에 기록 노선 l_bibai_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_bibai_railway_line"
+ },
+ "a_aomorikenkoyorinko_line": {
+  "name": "青森県公用臨港線",
+  "closed": null,
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1986年（昭和61年）時点では、貨物線が既に廃止されており"
+  ],
+  "source": "青森県公用臨港線 106341197",
+  "note": "화물선(青森港 埠頭 臨港線), 여객 영업 없음. 폐지일도 원문에 없음",
+  "kind": "archive_line"
+ },
+ "a_sendai_railway": {
+  "name": "仙台鉄道",
+  "closed": "1960-05-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1960|05|01|df=y}}"
+  ],
+  "source": "仙台鉄道 110564139",
+  "note": "DB에 기록 노선 l_sendai_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_sendai_railway_line"
+ },
+ "a_sempoku_railway": {
+  "name": "仙北鉄道",
+  "closed": "1968-03-25",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1968年（昭和43年）3月25日 登米線廃止 / 1949年10月10日 築館線休止 / 1950年3月1日 築館線廃止"
+  ],
+  "source": "仙北鉄道 109047070",
+  "note": "DB에 기록 노선 l_toyoma_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨. 築館線(瀬峰–築館 12.56km)은 1949-10-10 休止·バス代行 뒤 1950-03-01 廃止라 1950 뒤 여객 영업 없음 → 범위 밖",
+  "kind": "archive_line",
+  "db_line": "l_toyoma_line"
+ },
+ "a_akitarinkai_railway_line": {
+  "name": "秋田臨海鉄道線",
+  "closed": "1986-08-25",
+  "result": "open",
+  "stations": [
+   [
+    "秋田港",
+    0.0
+   ],
+   [
+    "秋田博前",
+    4.0
+   ]
+  ],
+  "open": [
+   [
+    "秋田港",
+    "秋田博前",
+    "1986-07-18"
+   ]
+  ],
+  "close": [
+   [
+    "秋田港",
+    "秋田博前",
+    "1986-08-25",
+    null
+   ]
+  ],
+  "evidence": [
+   "1986年（昭和61年）7月18日 - （臨）秋田博前駅が開業、南線 秋田港 - 秋田博前間で臨時旅客営業を開始（同年8月25日廃止）",
+   "秋田港駅 0.0 / 穀保町駅 1.5（廃止） / （臨）秋田博前駅 4.0 / 向浜駅 5.4",
+   "1986年の臨時旅客営業による旅客輸送人員50千人"
+  ],
+  "source": "秋田臨海鉄道線 110115668",
+  "note": "화물선이지만 1986 秋田博覧会 때 南線 秋田港–秋田博前에서 임시 여객 영업(「アッキー号」, 秋田駅에서 직통). 그 구간만 열 수 있음. 穀保町는 화물역. 秋田駅–秋田港(奥羽本線貨物支線)은 별개",
+  "kind": "archive_line",
+  "scope_question": "38일간 임시 여객 영업만 있던 화물선. 기록 노선으로 둘지 사용자 판단"
+ },
+ "a_ugokotsuosho_line": {
+  "name": "羽後交通横荘線",
+  "closed": "1971-07-20",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1971|07|20|df=y}}"
+  ],
+  "source": "羽後交通横荘線 108362980",
+  "note": "DB에 기록 노선 l_osho_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_osho_line"
+ },
+ "a_ugokotsuogachi_line": {
+  "name": "羽後交通雄勝線",
+  "closed": "1973-04-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1973|04|01|df=y}}"
+  ],
+  "source": "羽後交通雄勝線 109987197",
+  "note": "DB에 기록 노선 l_ogachi_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_ogachi_line"
+ },
+ "a_hakuho_line": {
+  "name": "白棚線",
+  "closed": "1944-12-11",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）12月11日 【休止】全線 (-23.3 km)。代行バス（白棚線）運行開始"
+  ],
+  "source": "白棚線 111124704",
+  "note": "1944 休止 뒤 철도로 재개하지 않고 国鉄バス 전용도로가 됨",
+  "kind": "archive_line"
+ },
+ "a_fukushimarinkai_railway_onahamafuto_main_line": {
+  "name": "福島臨海鉄道小名浜埠頭本線",
+  "closed": "2001-10-01",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "10月1日 宮下駅 - 小名浜埠頭駅間廃止。全線廃止"
+  ],
+  "source": "福島臨海鉄道小名浜埠頭本線 108696362",
+  "note": "화물선, 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_mito_electric_railway_line": {
+  "name": "水戸電気鉄道線",
+  "closed": "1936-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1936年（昭和11年）に全線が廃止"
+  ],
+  "source": "水戸電気鉄道線 109364872",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_akamikeiben_railway": {
+  "name": "赤見軽便鉄道",
+  "closed": "1927-10-20",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1927年（昭和2年）10月20日 廃止"
+  ],
+  "source": "赤見軽便鉄道 109351169",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_utsunomiyarikugunkokusho_line": {
+  "name": "宇都宮陸軍航空廠線",
+  "closed": "1945-11-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1945年（昭和20年）11月1日 廃止"
+  ],
+  "source": "宇都宮陸軍航空廠線 109364857",
+  "note": "군용선, 1945-11-01 폐지",
+  "kind": "archive_line"
+ },
+ "a_tobunikkokosaku_railway_line": {
+  "name": "東武日光鋼索鉄道線",
+  "closed": "1970-04-01",
+  "result": "open",
+  "stations": [
+   [
+    "馬返",
+    0.0
+   ],
+   [
+    "明智平",
+    1.2
+   ]
+  ],
+  "open": [
+   [
+    "馬返",
+    "明智平",
+    "1932-08-28"
+   ]
+  ],
+  "close": [
+   [
+    "馬返",
+    "明智平",
+    "1970-04-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "**8月28日 馬返 - 明智平間開業。",
+   "路線距離（営業キロ）：1.2 km",
+   "*1970年（昭和45年）4月1日 馬返 - 明智平間廃止。",
+   "1953年（昭和28年）2月5日から運輸営業を休止して車両を更新するとともに…同年3月18日から運輸営業を再開した"
+  ],
+  "source": "東武日光鋼索鉄道線 109364850",
+  "note": "ケーブルカー. 1932년 개업 연도는 「1932年（昭和7年）に馬返 - 明智平間1.2kmがようやく開業」",
+  "kind": "archive_line",
+  "suspend": [
+   [
+    "馬返",
+    "明智平",
+    "1953-02-05",
+    "1953-03-18"
+   ]
+  ]
+ },
+ "a_akagitozan_railway": {
+  "name": "赤城登山鉄道",
+  "closed": "1968-06-01",
+  "result": "open",
+  "stations": [
+   [
+    "利平茶屋",
+    0.0
+   ],
+   [
+    "赤城山頂",
+    1.0
+   ]
+  ],
+  "open": [
+   [
+    "利平茶屋",
+    "赤城山頂",
+    "1957-07-21"
+   ]
+  ],
+  "close": [
+   [
+    "利平茶屋",
+    "赤城山頂",
+    "1967-11-05",
+    "1968-06-01"
+   ]
+  ],
+  "evidence": [
+   "1957年（昭和32年）7月21日 利平茶屋 - 鳥居峠間のケーブルカーが開業",
+   "1967年（昭和42年）11月5日 ケーブルカー全線休止",
+   "1968年（昭和43年）6月1日 ケーブルカー全線廃止",
+   "路線距離（営業キロ）：1.0 km",
+   "利平茶屋駅 - 赤城山頂駅"
+  ],
+  "source": "赤城登山鉄道 110994647",
+  "note": "DB closed 1979-10-01은 会社(赤城山ロープウェイ) 합병 해산일이지 철도 폐지일이 아님. 鳥居峠=赤城山頂. ロープウェイ·リフト는 索道라 범위 밖",
+  "kind": "archive_line"
+ },
+ "a_ikahokeburu_railway": {
+  "name": "伊香保ケーブル鉄道",
+  "closed": "1966-12-19",
+  "result": "open",
+  "stations": [
+   [
+    "新伊香保",
+    0.0
+   ],
+   [
+    "榛名山",
+    2.0
+   ]
+  ],
+  "open": [
+   [
+    "新伊香保",
+    "榛名山",
+    "1929-09-06"
+   ]
+  ],
+  "close": [
+   [
+    "新伊香保",
+    "榛名山",
+    "1966-07-13",
+    "1966-12-19"
+   ]
+  ],
+  "evidence": [
+   "*1929年（昭和4年）9月6日 関東鋼索鉄道により開業。",
+   "不要不急線として1944年に休止され",
+   "**2月11日 営業休止。",
+   "*1961年（昭和36年）8月13日 運行再開",
+   "1966年7月13日に休止した後、同年12月19日に復活後わずか5年で廃止された",
+   "路線距離（営業キロ）：2.0 km",
+   "新伊香保駅 - 榛名山駅"
+  ],
+  "source": "伊香保ケーブル鉄道 109349926",
+  "note": "1944-02-11 休止~1961-08-13 再開. 기록 범위는 1961-08-13~1966-07-13",
+  "kind": "archive_line",
+  "suspend": [
+   [
+    "新伊香保",
+    "榛名山",
+    "1944-02-11",
+    "1961-08-13"
+   ]
+  ]
+ },
+ "a_iwahanakeiben_railway": {
+  "name": "岩鼻軽便鉄道",
+  "closed": "1945-08-30",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1945年（昭和20年）8月30日 全線廃止"
+  ],
+  "source": "岩鼻軽便鉄道 109349903",
+  "note": "1945-08-30 폐지",
+  "kind": "archive_line"
+ },
+ "a_kusakaru_electric_railway": {
+  "name": "草軽電気鉄道",
+  "closed": "1962-02-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1962|02|01|df=y}}"
+  ],
+  "source": "草軽電気鉄道 109946491",
+  "note": "DB에 기록 노선 l_kusakaru_electric_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_kusakaru_electric_railway_line"
+ },
+ "a_bushu_railway": {
+  "name": "武州鉄道",
+  "closed": "1938-09-03",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1938|09|03|df=y}}"
+  ],
+  "source": "武州鉄道 110900121",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kujukuri_railway": {
+  "name": "九十九里鉄道",
+  "closed": "1961-02-28",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1961年2月28日限りで廃止され"
+  ],
+  "source": "九十九里鉄道 111042903",
+  "note": "DB에 기록 노선 l_kujukuri_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_kujukuri_railway_line"
+ },
+ "a_keiseiyatsu_branch_line": {
+  "name": "京成谷津支線",
+  "closed": "1934-06-22",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 1934年6月22日"
+  ],
+  "source": "京成谷津支線 111029824",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_railway_rentaienshu_line": {
+  "name": "鉄道連隊演習線",
+  "closed": null,
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1960年（昭和35年）に、津田沼－高津駅間が陸上自衛隊101建設隊の演習線として復活したが、6年後に隊と共に廃止"
+  ],
+  "source": "鉄道連隊演習線 109364861",
+  "note": "군 연습선, 일반 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_narita_railway_tako_line": {
+  "name": "成田鉄道多古線",
+  "closed": "1946-10-09",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1946|10|09|df=y}}"
+  ],
+  "source": "成田鉄道多古線 110863186",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_narita_railway_yachimata_line": {
+  "name": "成田鉄道八街線",
+  "closed": "1940-05-14",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1940|05|14|df=y}}"
+  ],
+  "source": "成田鉄道八街線 109364859",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_nanso_railway": {
+  "name": "南総鉄道",
+  "closed": "1939-03-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1939|03|01|df=y}}"
+  ],
+  "source": "南総鉄道 109361270",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kamakama_line": {
+  "name": "蒲蒲線",
+  "closed": null,
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "東京都は、羽田空港のアクセス路線として…"
+  ],
+  "source": "蒲蒲線 110375142",
+  "note": "미개업 계획선(新空港線). 영업한 적 없음",
+  "kind": "archive_line"
+ },
+ "a_keiseishirahige_line": {
+  "name": "京成白鬚線",
+  "closed": "1936-03-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1936|03|01|df=y}}"
+  ],
+  "source": "京成白鬚線 110338203",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_daita_connecting_line": {
+  "name": "代田連絡線",
+  "closed": "1952-XX-XX",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "路線距離（営業キロ）:644m（一般営業路線ではない）",
+   "|休止=1952年（使用停止）"
+  ],
+  "source": "代田連絡線 111030076",
+  "note": "차량 반입용 연락선, 一般営業路線ではない. 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_tokyutamagawa_line": {
+  "name": "東急玉川線",
+  "closed": "1969-05-11",
+  "result": "open",
+  "stations": [
+   [
+    "渋谷",
+    0.0
+   ],
+   [
+    "上通",
+    "XX"
+   ],
+   [
+    "大橋",
+    "XX"
+   ],
+   [
+    "玉電池尻",
+    "XX"
+   ],
+   [
+    "三宿",
+    "XX"
+   ],
+   [
+    "三軒茶屋",
+    "XX"
+   ],
+   [
+    "玉電中里",
+    "XX"
+   ],
+   [
+    "上馬",
+    "XX"
+   ],
+   [
+    "真中",
+    "XX"
+   ],
+   [
+    "駒沢",
+    "XX"
+   ],
+   [
+    "新町",
+    "XX"
+   ],
+   [
+    "桜新町",
+    "XX"
+   ],
+   [
+    "用賀",
+    "XX"
+   ],
+   [
+    "玉電瀬田",
+    "XX"
+   ],
+   [
+    "二子玉川園",
+    9.1
+   ]
+  ],
+  "open": [
+   [
+    "渋谷",
+    "二子玉川園",
+    "1907-08-11"
+   ]
+  ],
+  "close": [
+   [
+    "渋谷",
+    "二子玉川園",
+    "1969-05-11",
+    null
+   ]
+  ],
+  "evidence": [
+   "=== 玉川線 === 渋谷駅 - 〔道玄坂上駅〕 - 上通駅 - 〔大坂上駅〕 - 大橋駅 - 玉電池尻駅 - 三宿駅 - 〔東太子堂駅〕 - 三軒茶屋駅 - 玉電中里駅 - 上馬駅 - 真中駅 - 駒沢駅 - 新町駅 - 桜新町駅 - 用賀駅 - 玉電瀬田駅 - 〔玉川遊園駅〕 - 二子玉川園駅",
+   "〔〕内は路線廃止時以前に廃止された停留場・駅",
+   "玉川線：渋谷 - 二子玉川園間 9.1 キロメートル",
+   "玉川線：15駅",
+   "3月6日 玉川電気鉄道の路線として道玄坂上 - 三軒茶屋間開業",
+   "4月1日 三軒茶屋 - 玉川間開業",
+   "8月11日 渋谷 - 道玄坂上間開業",
+   "1969年（昭和44年）5月11日 下高井戸線（三軒茶屋 - 下高井戸間）を除いて廃止"
+  ],
+  "source": "東急玉川線 111505383",
+  "note": "玉川線 本線만. 〔〕 4곳(道玄坂上·大坂上·東太子堂·玉川遊園)은 폐지일 모름이라 뺌(1950 뒤 있었는지 원문에 없음). open은 全通일(段階 개업: 道玄坂上–三軒茶屋 1907-03-06, 三軒茶屋–玉川 1907-04-01, 渋谷–道玄坂上 1907-08-11). 砧線은 DB l_kinuta_line에 이미 있음. 下高井戸線은 世田谷線(DB). 天現寺橋線·中目黒線은 1948-03-10 東京都 譲渡(都電 쪽). 溝ノ口線은 1943 大井町線 편입. 二子玉川園은 1954-08-01 改称(그 전 二子玉川). 중간 km 없음",
+  "kind": "archive_line"
+ },
+ "a_megurokamata_electric_railway_shin_okusawa_line": {
+  "name": "目黒蒲田電鉄新奥沢線",
+  "closed": "1935-11-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1935|11|01|df=y}}"
+  ],
+  "source": "目黒蒲田電鉄新奥沢線 108646303",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_izuhakone_railway_komagatake_cable_line": {
+  "name": "伊豆箱根鉄道駒ヶ岳鋼索線",
+  "closed": "2005-09-01",
+  "result": "open",
+  "stations": [
+   [
+    "駒ヶ岳登り口",
+    0.0
+   ],
+   [
+    "駒ヶ岳頂上",
+    0.7
+   ]
+  ],
+  "open": [
+   [
+    "駒ヶ岳登り口",
+    "駒ヶ岳頂上",
+    "1957-11-16"
+   ]
+  ],
+  "close": [
+   [
+    "駒ヶ岳登り口",
+    "駒ヶ岳頂上",
+    "2005-09-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "1957年（昭和32年）11月16日 駒ヶ岳鋼索線 駒ヶ岳登り口 - 駒ヶ岳頂上間が開業",
+   "2005年（平成17年）9月1日 駒ヶ岳鋼索線 駒ヶ岳登り口 - 駒ヶ岳頂上間（全線）廃止",
+   "路線距離（営業キロ）：0.7 km"
+  ],
+  "source": "伊豆箱根鉄道駒ヶ岳鋼索線 109944308",
+  "note": "営業最終日 2005-08-31",
+  "kind": "archive_line"
+ },
+ "a_odakyumukogaokayuen_monorail": {
+  "name": "小田急向ヶ丘遊園モノレール線",
+  "closed": "2001-02-01",
+  "result": "open",
+  "stations": [
+   [
+    "向ヶ丘遊園",
+    0.0
+   ],
+   [
+    "向ヶ丘遊園正門",
+    1.1
+   ]
+  ],
+  "open": [
+   [
+    "向ヶ丘遊園",
+    "向ヶ丘遊園正門",
+    "1966-04-23"
+   ]
+  ],
+  "close": [
+   [
+    "向ヶ丘遊園",
+    "向ヶ丘遊園正門",
+    "2000-02-13",
+    "2001-02-01"
+   ]
+  ],
+  "evidence": [
+   "|開業 = 1966年（昭和41年）4月23日",
+   "|休止 = 2000年（平成12年）2月13日",
+   "|廃止 = 2001年（平成13年）2月1日",
+   "路線距離（営業キロ）：1.1km",
+   "向ヶ丘遊園駅 - 向ヶ丘遊園正門駅"
+  ],
+  "source": "小田急向ヶ丘遊園モノレール線 108397283",
+  "note": "1966 전의 豆汽車·豆電車(1927–1965)는 다른 노선이라 넣지 않음(1950-03-25 재개~1965 가을 폐지, 역·km 원문에 없음)",
+  "kind": "archive_line"
+ },
+ "a_dorimukaihatsudorimurando_line": {
+  "name": "ドリーム開発ドリームランド線",
+  "closed": "2003-09-18",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|2003|09|18|df=y}}"
+  ],
+  "source": "ドリーム開発ドリームランド線 109710235",
+  "note": "DB에 기록 노선 l_dreamland_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨. 1967 운휴, 2003-09-18 정식 폐지",
+  "kind": "archive_line",
+  "db_line": "l_dreamland_line"
+ },
+ "a_kubiki_railway_line": {
+  "name": "頸城鉄道線",
+  "closed": "1971-05-02",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 {{End date|1971|05|02|df=y}}"
+  ],
+  "source": "頸城鉄道線 111271002",
+  "note": "DB에 기록 노선 l_kubiki_railway 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_kubiki_railway"
+ },
+ "a_kaetsuno_railway_kaetsu_line": {
+  "name": "加越能鉄道加越線",
+  "closed": "1972-09-16",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1972|09|16|df=y}}"
+  ],
+  "source": "加越能鉄道加越線 111478058",
+  "note": "DB에 기록 노선 l_kaetsu_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_kaetsu_line"
+ },
+ "a_toyamachiho_railway_imizu_line": {
+  "name": "富山地方鉄道射水線",
+  "closed": "1980-04-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1980|04|01|df=y}}"
+  ],
+  "source": "富山地方鉄道射水線 111471223",
+  "note": "DB에 기록 노선 l_toyamachitetsuimizu_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_toyamachitetsuimizu_line"
+ },
+ "a_toyamachiho_railway_sasazu_line": {
+  "name": "富山地方鉄道笹津線",
+  "closed": "1975-04-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = 1975年4月1日"
+  ],
+  "source": "富山地方鉄道笹津線 111471220",
+  "note": "DB에 기록 노선 l_sasazu_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_sasazu_line"
+ },
+ "a_ogoya_railway": {
+  "name": "尾小屋鉄道",
+  "closed": "1977-03-20",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "3月20日：鉄道廃止、バス専業となる"
+  ],
+  "source": "尾小屋鉄道 111495261",
+  "note": "DB에 기록 노선 l_ogoya_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_ogoya_railway_line"
+ },
+ "a_hokuriku_railway_shokin_line": {
+  "name": "北陸鉄道松金線",
+  "closed": "1955-11-15",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 {{End date|1955|11|15|df=y}}"
+  ],
+  "source": "北陸鉄道松金線 109946449",
+  "note": "DB에 기록 노선 l_shokin_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_shokin_line"
+ },
+ "a_keifuku_electric_railway_maruoka_line": {
+  "name": "京福電気鉄道丸岡線",
+  "closed": "1968-07-11",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 {{End date|1968|07|11|df=y}}"
+  ],
+  "source": "京福電気鉄道丸岡線 111156357",
+  "note": "DB에 기록 노선 l_maruoka_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_maruoka_line"
+ },
+ "a_ikeda_railway": {
+  "name": "池田鉄道",
+  "closed": "1938-06-06",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1938|06|06|df=y}}"
+  ],
+  "source": "池田鉄道 106391105",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_zenkojihakuba_electric_railway": {
+  "name": "善光寺白馬電鉄",
+  "closed": "1969-07-09",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）1月10日 戦時下の企業整備により全線を休止。",
+   "1969年（昭和44年）7月9日 裾花ダム建設決定により全線を正式に廃止"
+  ],
+  "source": "善光寺白馬電鉄 110652775",
+  "note": "1944-01-10 休止 뒤 재개 없이 1969 폐지",
+  "kind": "archive_line"
+ },
+ "a_nunobiki_electric_railway": {
+  "name": "布引電気鉄道",
+  "closed": "1936-10-28",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1936|10|28|df=y}}"
+  ],
+  "source": "布引電気鉄道 111353680",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kitaena_railway_oi_line": {
+  "name": "北恵那鉄道大井線",
+  "closed": "1934-09-15",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1932年（昭和7年）9月：休止。",
+   "1934年（昭和9年）9月15日：廃止となり大同電力に再移管され、専用鉄道に戻る。"
+  ],
+  "source": "北恵那鉄道大井線 106421816",
+  "note": "여객 영업은 1932 休止로 끝",
+  "kind": "archive_line"
+ },
+ "a_sakagawa_railway": {
+  "name": "坂川鉄道",
+  "closed": "1944-12-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）12月1日 廃止。林野局に譲渡され、坂下森林鉄道の一部となる"
+  ],
+  "source": "坂川鉄道 108735411",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_seino_railway_ichihashi_line": {
+  "name": "西濃鉄道市橋線",
+  "closed": "1945-04-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1945年（昭和20年）4月1日：全線の旅客営業廃止。赤坂本町駅廃止。"
+  ],
+  "source": "西濃鉄道市橋線 107727440",
+  "note": "화물은 2006까지(猿岩–市橋 廃止 2006-03-31), 여객은 1945-04-01 끝",
+  "kind": "archive_line"
+ },
+ "a_abe_railway": {
+  "name": "安倍鉄道",
+  "closed": "1934-11-15",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1934年（昭和9年）6月16日 - 旅客運輸営業廃止実施",
+   "1934年（昭和9年）11月15日 - 廃止"
+  ],
+  "source": "安倍鉄道 109940490",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_enshu_railway_okuyama_line": {
+  "name": "遠州鉄道奥山線",
+  "closed": "1964-11-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1964|11|01|df=y}}"
+  ],
+  "source": "遠州鉄道奥山線 111478140",
+  "note": "DB에 기록 노선 l_okuyama_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_okuyama_line"
+ },
+ "a_komyo_electric_railway": {
+  "name": "光明電気鉄道",
+  "closed": "1936-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1月20日 料金滞納による送電停止により全線運転休止",
+   "7月20日 新中泉 - 田川間廃止許可"
+  ],
+  "source": "光明電気鉄道 108879410",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_shizuoka_railway_sun_en_line": {
+  "name": "静岡鉄道駿遠線",
+  "closed": "1970-08-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1970|08|01|df=y}}"
+  ],
+  "source": "静岡鉄道駿遠線 107340138",
+  "note": "DB에 기록 노선 l_sunen_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_sunen_line"
+ },
+ "a_seien_railway": {
+  "name": "西遠鉄道",
+  "closed": "1937-10-06",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1937年（昭和12年）10月6日 - 全線廃止。"
+  ],
+  "source": "西遠鉄道 108952211",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_hamamatsu_electric_railway_kasai_line": {
+  "name": "浜松電気鉄道笠井線",
+  "closed": "1944-12-10",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1944|12|10|df=y}}"
+  ],
+  "source": "浜松電気鉄道笠井線 110542140",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_hamamatsu_electric_railway_nakanomachi_line": {
+  "name": "浜松電気鉄道中ノ町線",
+  "closed": "1937-02-18",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1937|02|18|df=y}}"
+  ],
+  "source": "浜松電気鉄道中ノ町線 110528015",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_nisengonennihonkokusaihakurankaikyokaiaichikyuhaku_line": {
+  "name": "2005年日本国際博覧会協会愛・地球博線",
+  "closed": "2005-09-26",
+  "result": "open",
+  "stations": [
+   [
+    "北ゲート",
+    0.0
+   ],
+   [
+    "西ゲート",
+    "XX"
+   ],
+   [
+    "EXPOドーム",
+    1.6
+   ]
+  ],
+  "open": [
+   [
+    "北ゲート",
+    "EXPOドーム",
+    "2005-03-25"
+   ]
+  ],
+  "close": [
+   [
+    "北ゲート",
+    "EXPOドーム",
+    "2005-09-26",
+    null
+   ]
+  ],
+  "evidence": [
+   "専用道路の部分は…第1種鉄道事業の許可を受けた鉄道路線の扱いである",
+   "; 専用道路区間 : 北ゲート駅 - 西ゲート駅 - EXPOドーム駅",
+   "路線距離（営業キロ）：北ゲート駅 - EXPOドーム駅 1.6km",
+   "** 3月25日 北ゲート - EXPOドーム間（専用道路）と西ゲート - メッセ前（一般道路）間が開業。",
+   "** 9月26日 博覧会終了に伴い廃止。"
+  ],
+  "source": "2005年日本国際博覧会協会愛・地球博線 109664585",
+  "note": "IMTS(자기 유도 버스). 西ゲート–メッセ前은 일반 도로라 넣지 않음",
+  "kind": "archive_line",
+  "scope_question": "궤도 없는 IMTS. 무궤조전차를 넣지 않는 규칙(§4.4)과 같이 볼지 사용자 판단 필요"
+ },
+ "a_meitetsukoromo_line": {
+  "name": "名鉄挙母線",
+  "closed": "1973-03-04",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1973|03|04|df=y}}"
+  ],
+  "source": "名鉄挙母線 96437285",
+  "note": "DB에 기록 노선 l_koromo_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_koromo_line"
+ },
+ "a_meitetsuiwakura_branch_line": {
+  "name": "名鉄岩倉支線",
+  "closed": "1964-04-26",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1964|04|26|df=y}}"
+  ],
+  "source": "名鉄岩倉支線 107870026",
+  "note": "DB에 기록 노선 l_iwakura_branch_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_iwakura_branch_line"
+ },
+ "a_meitetsukachigawa_line": {
+  "name": "名鉄勝川線",
+  "closed": "1937-02-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1937|02|01|df=y}}"
+  ],
+  "source": "名鉄勝川線 104486423",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_meitetsukiyosu_line": {
+  "name": "名鉄清洲線",
+  "closed": "1948-08-03",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1948|08|03|df=y}}"
+  ],
+  "source": "名鉄清洲線 94007551",
+  "note": "1948-08-03 폐지",
+  "kind": "archive_line"
+ },
+ "a_ano_railway": {
+  "name": "安濃鉄道",
+  "closed": "1972-08-31",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年1月11日 全線を不要不急線として休止",
+   "1972年8月31日 全線廃止"
+  ],
+  "source": "安濃鉄道 109465484",
+  "note": "n05_fix 「安濃鉄道 安濃鉄道線」과 같은 노선. 1944 休止 뒤 재개 없음",
+  "kind": "archive_line"
+ },
+ "a_chusei_railway": {
+  "name": "中勢鉄道",
+  "closed": "1943-02-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1943|02|01|df=y}}"
+  ],
+  "source": "中勢鉄道 111302138",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_mie_electric_railway_matsusaka_line": {
+  "name": "三重電気鉄道松阪線",
+  "closed": "1964-12-14",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1964|12|14|df=y}}"
+  ],
+  "source": "三重電気鉄道松阪線 107260639",
+  "note": "DB에 기록 노선 l_matsusaka_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨. 大口線은 1948-01-21 休止 뒤 1958-12-03 廃止라 범위 밖",
+  "kind": "archive_line",
+  "db_line": "l_matsusaka_line"
+ },
+ "a_miekotsushinto_line": {
+  "name": "三重交通神都線",
+  "closed": "1961-01-20",
+  "result": "open",
+  "stations": [
+   [
+    "伊勢市駅前",
+    0.0
+   ],
+   [
+    "本町（外宮前）",
+    "XX"
+   ],
+   [
+    "外宮前",
+    "XX"
+   ],
+   [
+    "近鉄宇治山田駅前",
+    "XX"
+   ],
+   [
+    "古市口",
+    "XX"
+   ],
+   [
+    "倉田山",
+    "XX"
+   ],
+   [
+    "中山",
+    "XX"
+   ],
+   [
+    "松尾",
+    "XX"
+   ],
+   [
+    "楠部",
+    "XX"
+   ],
+   [
+    "猿田彦神社前",
+    "XX"
+   ],
+   [
+    "内宮前",
+    "XX"
+   ]
+  ],
+  "open": [
+   [
+    "伊勢市駅前",
+    "内宮前",
+    "1914-11-14"
+   ],
+   [
+    "古市口",
+    "二見",
+    "1909-10-01"
+   ]
+  ],
+  "close": [
+   [
+    "伊勢市駅前",
+    "内宮前",
+    "1961-01-20",
+    null
+   ],
+   [
+    "古市口",
+    "二見",
+    "1961-01-20",
+    null
+   ],
+   [
+    "中山",
+    "二軒茶屋",
+    "1961-01-20",
+    null
+   ]
+  ],
+  "evidence": [
+   "廃止直前の1961年1月当時のもの。; 内宮線 : 伊勢市駅前 - 本町（外宮前） - 外宮前 - 近鉄宇治山田駅前 - 古市口 - 倉田山 - 中山 - 松尾 - 楠部 - 猿田彦神社前 - 内宮前",
+   "; 二見線 : 古市口 - 河崎 - 二軒茶屋 - 学校前 - 通 - 汐合 - 三津 - 二見",
+   "; 中山線 : 中山 - 二軒茶屋",
+   "路線距離 14.0 km",
+   "1906年（明治39年）10月16日 : 古市口 - 宇治（後の猿田彦神社前）間 (4.5 km)、中山 - 二軒茶屋間 (0.6 km) 開業",
+   "1959年（昭和34年）9月27日 : 伊勢湾台風により10月4日まで運転休止",
+   "1961年（昭和36年）1月20日 : 神都線全線廃止、バスに転換"
+  ],
+  "source": "三重交通神都線 108665796",
+  "note": "3계통(内宮線·二見線·中山線). 本町（外宮前）은 上り만, 外宮前은 下り만 정류장(상하선 분리 구간). 개업 구간 km(0.3·7.6·1.3·4.5·0.9·0.6, 합 15.2)이 전장 14.0과 맞지 않아 경로가 바뀐 것으로 보여 정류장 km는 XX. 二見線 개업은 1903 本町–二見 구간에서 이어지나 古市口 기점이 된 시기는 원문에 없음. open은 内宮線 全通일(1914-11-14)과, 二見線은 古市口 접속이 생긴 本町–外宮前–古市口 개업일(1909-10-01)로 둠. 段階 개업: 本町–二見 1903-08-05, 山田駅前–本町 1905-08-04, 古市口–宇治 1906-10-16, 宇治–内宮前 1914-11-14. 朝熊線은 1944-01-11 休止 뒤 1962-07-15 廃止라 범위 밖",
+  "kind": "archive_line",
+  "extra_lines": {
+   "二見線": {
+    "stations": [
+     [
+      "古市口",
+      0.0
+     ],
+     [
+      "河崎",
+      "XX"
+     ],
+     [
+      "二軒茶屋",
+      "XX"
+     ],
+     [
+      "学校前",
+      "XX"
+     ],
+     [
+      "通",
+      "XX"
+     ],
+     [
+      "汐合",
+      "XX"
+     ],
+     [
+      "三津",
+      "XX"
+     ],
+     [
+      "二見",
+      "XX"
+     ]
+    ]
+   },
+   "中山線": {
+    "stations": [
+     [
+      "中山",
+      0.0
+     ],
+     [
+      "二軒茶屋",
+      0.6
+     ]
+    ],
+    "open": [
+     [
+      "中山",
+      "二軒茶屋",
+      "1906-10-16"
+     ]
+    ]
+   }
+  },
+  "suspend": [
+   [
+    "伊勢市駅前",
+    "内宮前",
+    "1959-09-27",
+    "1959-10-04"
+   ]
+  ]
+ },
+ "a_atagosan_railway": {
+  "name": "愛宕山鉄道",
+  "closed": "1944-12-11",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）2月11日 - 鋼索線廃止。",
+   "1944年（昭和19年）12月11日 - 平坦線廃止。"
+  ],
+  "source": "愛宕山鉄道 109282974",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_ako_railway": {
+  "name": "赤穂鉄道",
+  "closed": "1951-12-12",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 {{End date|1951|12|12}}"
+  ],
+  "source": "赤穂鉄道 109282965",
+  "note": "DB에 기록 노선 l_ako_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_ako_railway_line"
+ },
+ "a_awajikotsu_railway_line": {
+  "name": "淡路交通鉄道線",
+  "closed": "1966-10-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 {{end date|1966|10|1}}"
+  ],
+  "source": "淡路交通鉄道線 111514080",
+  "note": "DB에 기록 노선 l_awaji_kotsu_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_awaji_kotsu_line"
+ },
+ "a_izushi_railway": {
+  "name": "出石鉄道",
+  "closed": "1970-07-20",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年5月1日 : 円山川（鶴岡橋梁付近） - 出石間休止",
+   "1951年5月1日 : 江原 - 円山川間の貨物運輸営業を休止",
+   "1970年7月20日 : 江原 - 出石間全線廃止"
+  ],
+  "source": "出石鉄道 109282993",
+  "note": "n05_fix 「出石鉄道 出石鉄道線」과 같은 노선. 江原–円山川은 1951까지 화물만",
+  "kind": "archive_line"
+ },
+ "a_kitazawasangyoaboshi_railway": {
+  "name": "北沢産業網干鉄道",
+  "closed": "1989-05-01",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "*1989年（平成元年）5月1日 全線廃止",
+   "貨物輸送数量（トン）"
+  ],
+  "source": "北沢産業網干鉄道 100005993",
+  "note": "화물 전용(전 専用線, 1966 地方鉄道 전환), 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_sasayama_railway": {
+  "name": "篠山鉄道",
+  "closed": "1944-03-21",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1944|03|21|df=y}}"
+  ],
+  "source": "篠山鉄道 111406509",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_hankyukamitsutsui_line": {
+  "name": "阪急上筒井線",
+  "closed": "1940-05-20",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 1940年5月20日"
+  ],
+  "source": "阪急上筒井線 110418744",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_himejishikotsukyoku_monorail": {
+  "name": "姫路市交通局モノレール線",
+  "closed": "1974-04-11",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1974年（昭和49年）4月11日 - 休止 / 1979年（昭和54年）1月26日 - 廃止"
+  ],
+  "source": "姫路市交通局モノレール線 111240073",
+  "note": "DB에 기록 노선 l_himejishiei_monorail 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_himejishiei_monorail"
+ },
+ "a_meishindensha": {
+  "name": "明神電車",
+  "closed": "1985-10-XX",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "鉱山関係者の便宜を図って人車（客車）も1945年（昭和20年）から運行された",
+   "1985年（昭和60年）10月の人員輸送廃止まで"
+  ],
+  "source": "明神電車 110819557",
+  "note": "鉱山 전용 궤도(明延鉱山)의 人車. 地方鉄道·軌道 영업이 아니고 원문에 역 목록 없음",
+  "kind": "archive_line"
+ },
+ "a_nankaikitajima_branch_line": {
+  "name": "南海北島支線",
+  "closed": "1966-12-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 1966年12月1日"
+  ],
+  "source": "南海北島支線 111513395",
+  "note": "DB에 기록 노선 l_kitajima_branch_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_kitajima_branch_line"
+ },
+ "a_hinomarujidoshahosshoji_electric_railway_line": {
+  "name": "日ノ丸自動車法勝寺電鉄線",
+  "closed": "1967-05-15",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1967年（昭和42年）5月15日：米子市 - 法勝寺間全線廃止"
+  ],
+  "source": "日ノ丸自動車法勝寺電鉄線 109457516",
+  "note": "DB에 기록 노선 l_hosshoji_electric_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨. 母里 支線(阿賀–母里)은 1944-02-11 休止 뒤 1959-09-17 廃止라 범위 밖",
+  "kind": "archive_line",
+  "db_line": "l_hosshoji_electric_railway_line"
+ },
+ "a_ikasa_railway_kannabe_line": {
+  "name": "井笠鉄道神辺線",
+  "closed": "1967-04-01",
+  "result": "open",
+  "stations": [
+   [
+    "井原",
+    0.0
+   ],
+   [
+    "出部",
+    1.5
+   ],
+   [
+    "下出部",
+    2.5
+   ],
+   [
+    "高屋",
+    4.0
+   ],
+   [
+    "両備金光",
+    5.1
+   ],
+   [
+    "御領",
+    7.4
+   ],
+   [
+    "両備国分寺",
+    8.6
+   ],
+   [
+    "湯野",
+    9.8
+   ],
+   [
+    "神辺",
+    11.8
+   ]
+  ],
+  "open": [
+   [
+    "神辺",
+    "高屋",
+    "1922-04-09"
+   ],
+   [
+    "井原",
+    "高屋",
+    "1925-02-07"
+   ]
+  ],
+  "close": [
+   [
+    "井原",
+    "神辺",
+    "1967-04-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "1922年4月9日、高屋線（たかやせん）として神辺 - 高屋間7.8kmをようやく開業した",
+   "1925年2月7日に井原 - 高屋間4.0kmの営業を開始した",
+   "1967年4月1日に路線廃止が実施された",
+   "井原 0.0 / 出部 1.5 / 下出部 2.5 / 高屋 4.0 / 両備金光 5.1 / 御領 7.4 / 両備国分寺 8.6 / 湯野 9.8 / 神辺 11.8"
+  ],
+  "source": "井笠鉄道神辺線 110826600",
+  "note": "神辺–高屋는 両備軽便鉄道(→両備鉄道→神高鉄道) 개업, 1940년대 井笠鉄道로 넘어와 神辺線이 됨(사업자 이력은 원문 연표 참조). 井原는 井笠鉄道 本線(DB l_ikasa_line)과 만남",
+  "kind": "archive_line"
+ },
+ "a_ikasa_railway_yakage_line": {
+  "name": "井笠鉄道矢掛線",
+  "closed": "1967-04-01",
+  "result": "open",
+  "stations": [
+   [
+    "北川",
+    0.0
+   ],
+   [
+    "備中小田",
+    1.2
+   ],
+   [
+    "毎戸",
+    2.5
+   ],
+   [
+    "本堀",
+    3.3
+   ],
+   [
+    "川面",
+    4.6
+   ],
+   [
+    "矢掛",
+    5.8
+   ]
+  ],
+  "open": [
+   [
+    "北川",
+    "矢掛",
+    "1921-10-25"
+   ]
+  ],
+  "close": [
+   [
+    "北川",
+    "矢掛",
+    "1967-04-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "1921年（大正10年）10月25日：北川 - 矢掛間開業。備中小田駅・本堀駅・川面駅・矢掛駅開業。",
+   "1928年（昭和3年）4月20日：毎戸駅開業。",
+   "1967年（昭和42年）4月1日：全線廃止",
+   "北川 0.0 / 備中小田 1.2 / 毎戸 2.5 / 本堀 3.3 / 川面 4.6 / 矢掛 5.8"
+  ],
+  "source": "井笠鉄道矢掛線 110907116",
+  "note": "北川는 井笠鉄道 本線(DB l_ikasa_line)의 역",
+  "kind": "archive_line",
+  "stop_open": {
+   "毎戸": "1928-04-20"
+  }
+ },
+ "a_saidaiji_railway": {
+  "name": "西大寺鉄道",
+  "closed": "1962-09-08",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1962|09|08|df=y}}"
+  ],
+  "source": "西大寺鉄道 109417111",
+  "note": "DB에 기록 노선 l_saidaiji_railway_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_saidaiji_railway_line"
+ },
+ "a_samban_railway": {
+  "name": "三蟠鉄道",
+  "closed": "1931-06-28",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1931|06|28|df=y}}"
+  ],
+  "source": "三蟠鉄道 109450197",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_shimotsui_electric_railway_line": {
+  "name": "下津井電鉄線",
+  "closed": "1991-01-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1972年4月1日付で児島駅 - 茶屋町駅間14.5kmが廃止され、また1991年1月1日付で下津井駅 - 児島"
+  ],
+  "source": "下津井電鉄線 111486305",
+  "note": "DB에 기록 노선 l_shimotsui_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_shimotsui_line"
+ },
+ "a_chugokuinariyamakosaku_railway": {
+  "name": "中国稲荷山鋼索鉄道",
+  "closed": "1944-06-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）6月1日：廃止"
+  ],
+  "source": "中国稲荷山鋼索鉄道 110843407",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_mizushimarinkai_railway_nishifuto_line": {
+  "name": "水島臨海鉄道西埠頭線",
+  "closed": "2016-07-15",
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "2016年（平成28年）7月15日：三菱自工前駅 - 西埠頭駅間 (0.8 km) 廃止"
+  ],
+  "source": "水島臨海鉄道西埠頭線 111477784",
+  "note": "화물선(三菱自工前–西埠頭 0.8km), 여객 영업 없음",
+  "kind": "archive_line"
+ },
+ "a_hashikuratozan_railway": {
+  "name": "箸蔵登山鉄道",
+  "closed": "1944-02-11",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）2月11日 - 不要不急線に指定され廃止。"
+  ],
+  "source": "箸蔵登山鉄道 86753366",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kotohirakyuko_electric_railway_line": {
+  "name": "琴平急行電鉄線",
+  "closed": "1954-09-30",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年1月 - 不要不急線として休止",
+   "1954年9月30日 - 旧琴平急行電鉄線を正式に廃止"
+  ],
+  "source": "琴平急行電鉄線 110612553",
+  "note": "n05_fix 「琴平参宮電鉄 琴平急行電鉄線」과 같은 노선",
+  "kind": "archive_line"
+ },
+ "a_kotohira_electric_railway_shionoe_line": {
+  "name": "琴平電鉄塩江線",
+  "closed": "1941-05-10",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1941|05|10|df=y}}"
+  ],
+  "source": "琴平電鉄塩江線 111227587",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_yashimatozan_railway_yashimakeburu": {
+  "name": "屋島登山鉄道屋島ケーブル",
+  "closed": "2005-08-31",
+  "result": "open",
+  "stations": [
+   [
+    "屋島登山口",
+    0.0
+   ],
+   [
+    "屋島山上",
+    0.8
+   ]
+  ],
+  "open": [
+   [
+    "屋島登山口",
+    "屋島山上",
+    "1929-04-21"
+   ]
+  ],
+  "close": [
+   [
+    "屋島登山口",
+    "屋島山上",
+    "2004-10-16",
+    "2005-08-31"
+   ]
+  ],
+  "evidence": [
+   "1929年（昭和4年）4月21日 屋島神社前（後の屋島登山口） - 屋島南嶺（後の屋島山上）間が開業。",
+   "1944年（昭和19年）2月11日 屋島神社前 - 屋島南嶺間が不要不急線として休止。",
+   "1950年（昭和25年）4月16日 屋島登山口 - 屋島山上間が営業再開。",
+   "2004年（平成16年）10月16日 屋島登山口 - 屋島山上間が営業休止。",
+   "2005年（平成17年）8月31日 屋島登山口 - 屋島山上間が廃止。",
+   "屋島登山口駅 0.0 / 屋島山上駅 0.8"
+  ],
+  "source": "屋島登山鉄道屋島ケーブル 108130797",
+  "note": "1950-04-16 재개 때 屋島神社前→屋島登山口, 屋島南嶺→屋島山上으로 개칭. 기록 범위 1950-04-16~2004-10-16(마지막 운행일 2004-10-15는 사고로 종일 운휴)",
+  "kind": "archive_line",
+  "suspend": [
+   [
+    "屋島登山口",
+    "屋島山上",
+    "1944-02-11",
+    "1950-04-16"
+   ]
+  ]
+ },
+ "a_dogo_railway": {
+  "name": "道後鉄道",
+  "closed": "1900-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1900年（明治33年）に開業からわずか5年で伊予鉄道に吸収合併され"
+  ],
+  "source": "道後鉄道 111366481",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_sumitomokinzokukozankabu_railway": {
+  "name": "住友金属鉱山下部鉄道",
+  "closed": "1955-01-01",
+  "result": "open",
+  "stations": [
+   [
+    "惣開",
+    0.0
+   ],
+   [
+    "星越",
+    1.6
+   ],
+   [
+    "土橋",
+    5.2
+   ],
+   [
+    "山根",
+    6.3
+   ],
+   [
+    "黒石",
+    9.0
+   ],
+   [
+    "端出場",
+    9.9
+   ]
+  ],
+  "open": [
+   [
+    "惣開",
+    "端出場",
+    "1929-11-05"
+   ]
+  ],
+  "close": [
+   [
+    "惣開",
+    "端出場",
+    "1955-01-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "1929年（昭和4年）11月5日 - 惣開支線（惣開、星越、土橋、山根、黒石、端出場）が開業。また同日に地方鉄道に転換、一般旅客営業開始。",
+   "1955年（昭和30年）1月1日 - 一般旅客営業廃止、鉱山鉄道に再転換。",
+   "노선도: 星越 0.0* – 惣開 1.6* (惣開支線) / 新居浜港 0.0 – 星越 2.0 – 土橋 5.6 – 山根 6.7 – 黒石 9.4 – 端出場 10.3 (端出場本線)"
+  ],
+  "source": "住友金属鉱山下部鉄道 105477333",
+  "note": "一般旅客営業 기간 1929-11-05~1955-01-01이라 1950~1954 범위 안. 여객 구간은 1929년 지방철도 전환 때의 惣開–端出場로 봄(원문 역 열거 순서). 新居浜港–星越(1936 개업)·国鉄連絡線에 여객이 있었는지는 원문에 없음. km는 노선도 값을 惣開 기점으로 환산(端出場本線 킬로−2.0+1.6): 원문 수치가 아니라 계산값이니 XX로 둘지 판단 필요. 板ノ元·多喜ノ宮·原地·昭和橋 역은 개설 시기 원문에 없어 뺌",
+  "kind": "archive_line",
+  "km_note": "星越 이후 km는 계산값"
+ },
+ "a_tosa_electric_railway_aki_line": {
+  "name": "土佐電気鉄道安芸線",
+  "closed": "1974-04-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 {{End date|1974|04|01}}"
+  ],
+  "source": "土佐電気鉄道安芸線 111330992",
+  "note": "DB에 기록 노선 l_aki_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_aki_line"
+ },
+ "a_kokuraura_line": {
+  "name": "小倉裏線",
+  "closed": "1916-06-21",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "廃止 1916年6月21日"
+  ],
+  "source": "小倉裏線 111124690",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_ashiya_railway": {
+  "name": "芦屋鉄道",
+  "closed": "1932-04-25",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1932年（昭和7年）4月25日 全線廃止。"
+  ],
+  "source": "芦屋鉄道 93164676",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_unoshima_railway": {
+  "name": "宇島鉄道",
+  "closed": "1936-08-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1936|08|01|df=y}}"
+  ],
+  "source": "宇島鉄道 97640849",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kitakyushu_railway": {
+  "name": "北九州鉄道",
+  "closed": "1937-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "(1937 国有化, 筑肥線)"
+  ],
+  "source": "北九州鉄道 108024558",
+  "note": "1937 국유화로 筑肥線이 됨(DB l_chikuhi_line). 회사 노선으로는 1950 전에 끝남",
+  "kind": "archive_line"
+ },
+ "a_kyushuhichiku_railway": {
+  "name": "九州肥筑鉄道",
+  "closed": "1938-12-16",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1938|12|16|df=y}}"
+  ],
+  "source": "九州肥筑鉄道 100803647",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kyushudento_railway": {
+  "name": "九州電灯鉄道",
+  "closed": "1922-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "(電気事業者. 鉄道部문은 회사 합병으로 다른 회사 노선이 됨)"
+  ],
+  "source": "九州電灯鉄道 99911639",
+  "note": "전력 회사 문서. 철도 노선은 다른 문서·회사로 이어짐",
+  "kind": "archive_line"
+ },
+ "a_unzen_railway": {
+  "name": "雲仙鉄道",
+  "closed": "1938-08-15",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1938|08|15|df=y}}"
+  ],
+  "source": "雲仙鉄道 110717579",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_kumamotokeiben_railway": {
+  "name": "熊本軽便鉄道",
+  "closed": "1920-07-02",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1920年（大正9年）7月2日 残余の区間全線を廃止"
+  ],
+  "source": "熊本軽便鉄道 104197337",
+  "note": "1950-01-01 전에 여객 영업이 끝남",
+  "kind": "archive_line"
+ },
+ "a_oitakotsuhoshu_line": {
+  "name": "大分交通豊州線",
+  "closed": "1953-09-30",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1953|09|30|df=y}}"
+  ],
+  "source": "大分交通豊州線 107272832",
+  "note": "DB에 기록 노선 l_hoshu_line 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_hoshu_line"
+ },
+ "a_nihonkogyosaganoseki_railway": {
+  "name": "日本鉱業佐賀関鉄道",
+  "closed": "1963-05-15",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1963年（昭和38年）5月15日 - 廃止"
+  ],
+  "source": "日本鉱業佐賀関鉄道 106901165",
+  "note": "DB에 기록 노선 l_nihonkogyosaganoseki_railway 이 이미 있음 (역 목록·km 들어 있음). archive_line 줄은 중복이라 지우면 됨",
+  "kind": "archive_line",
+  "db_line": "l_nihonkogyosaganoseki_railway"
+ },
+ "a_okinawaken_ei_railway_itoman_line": {
+  "name": "沖縄県営鉄道糸満線",
+  "closed": "1945-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）7月をもって通常ダイヤが廃止され、実質軍用列車（嘉手納線 문서）"
+  ],
+  "source": "沖縄県営鉄道糸満線 107847965",
+  "note": "沖縄戦으로 1945년 운행 정지, 재개 없음. 원문에 정확한 폐지일 없음",
+  "kind": "archive_line"
+ },
+ "a_okinawaken_ei_railway_kairikurenraku_line": {
+  "name": "沖縄県営鉄道海陸連絡線",
+  "closed": "1945-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "那覇駅の構内側線として…1917年（大正6年）に正式な貨物線として開業した"
+  ],
+  "source": "沖縄県営鉄道海陸連絡線 107847966",
+  "note": "화물선, 1945년 운행 정지",
+  "kind": "archive_line"
+ },
+ "a_okinawaken_ei_railway_kadena_line": {
+  "name": "沖縄県営鉄道嘉手納線",
+  "closed": "1945-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）7月をもって通常ダイヤが廃止され、実質軍用列車"
+  ],
+  "source": "沖縄県営鉄道嘉手納線 107847963",
+  "note": "沖縄戦으로 1945년 운행 정지",
+  "kind": "archive_line"
+ },
+ "a_okinawaken_ei_railway_yonabaru_line": {
+  "name": "沖縄県営鉄道与那原線",
+  "closed": "1945-XX-XX",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "(沖縄戦으로 1945 운행 정지)"
+  ],
+  "source": "沖縄県営鉄道与那原線 108617882",
+  "note": "沖縄戦으로 1945년 운행 정지",
+  "kind": "archive_line"
+ },
+ "a_ohamashi_line": {
+  "name": "大浜線",
+  "closed": "1980-11-28",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "2月11日 大浜北町 - 大浜海岸間が休止",
+   "1949年3月3日 宿院 - 大浜北町間が休止",
+   "1980年11月28日 全線が正式廃止"
+  ],
+  "source": "南海大浜支線 84977705",
+  "note": "n05_fix 「南海電気鉄道 大浜線」과 같은 노선",
+  "kind": "archive_line"
+ },
+ "a_araoshiei_electric_railway": {
+  "name": "荒尾市営電気鉄道",
+  "closed": "1964-10-01",
+  "result": "open",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "| close = {{End date|1964|10|01|df=y}}"
+  ],
+  "source": "荒尾市営電気鉄道 109457657",
+  "note": "n05_fix 「荒尾市 荒尾市営電気鉄道」 항목(역 10곳, km 3곳 XX)과 같은 노선. 그 항목으로 열면 됨",
+  "kind": "archive_line"
+ },
+ "三重交通 大口線": {
+  "name": "三重交通 大口線",
+  "closed": "1958-12-03",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1948年（昭和23年）1月21日 - 大口線を休止。",
+   "1958年（昭和33年）12月3日 - 大口線廃止。"
+  ],
+  "source": "三重電気鉄道松阪線 107260639",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 1948-01-21 휴지 뒤 재개 없이 1958-12-03 폐지. 1950 전에 여객 영업이 끝남",
+  "kind": "n05_fix"
+ },
+ "出石鉄道 出石鉄道線": {
+  "name": "出石鉄道 出石鉄道線",
+  "closed": "1970-07-20",
+  "result": "out_of_range",
+  "stations": [
+   [
+    "江原",
+    0.0
+   ],
+   [
+    "上ノ郷",
+    2.5
+   ],
+   [
+    "中筋",
+    4.2
+   ],
+   [
+    "小坂村",
+    6.8
+   ],
+   [
+    "島口",
+    7.6
+   ],
+   [
+    "鳥居",
+    8.8
+   ],
+   [
+    "出石",
+    11.2
+   ]
+  ],
+  "open": [
+   [
+    "江原",
+    "出石",
+    "1929-07-21"
+   ]
+  ],
+  "close": [
+   [
+    "江原",
+    "出石",
+    "1944-05-01",
+    "1970-07-20"
+   ]
+  ],
+  "evidence": [
+   "1944年5月1日 : 円山川（鶴岡橋梁付近） - 出石間休止",
+   "1970年7月20日 : 江原 - 出石間全線廃止"
+  ],
+  "source": "出石鉄道 109282993",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 1944-05-01 不要不急線으로 円山川–出石 운행 휴지, 江原–円山川은 화물만 남았다가 1951-05-01 휴지. 여객은 1950년 전에 끝나 재개 없이 1970-07-20 폐지 → 범위 밖",
+  "kind": "n05_fix"
+ },
+ "南海電気鉄道 大浜線": {
+  "name": "南海電気鉄道 大浜線",
+  "closed": "1980-11-28",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1949年3月3日 宿院 - 大浜北町間が休止",
+   "1980年11月28日 全線が正式廃止"
+  ],
+  "source": "南海大浜支線 84977705",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 大浜北町–大浜海岸 1945-02-11 휴지, 宿院–大浜北町 1949-03-03 휴지 뒤 재개 없이 1980-11-28 정식 폐지. 1950년 이후 여객 영업이 없어 범위 밖(§4.1 장기 휴지 제외)",
+  "kind": "n05_fix"
+ },
+ "大和鉄道 大和鉄道線": {
+  "name": "大和鉄道 大和鉄道線",
+  "closed": "1958-12-27",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年1月11日 田原本 - 桜井間が休止",
+   "1958年12月27日 休止中の田原本 - 桜井間を廃止"
+  ],
+  "source": "大和鉄道 109230338",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 田原本–桜井은 1944-01-11 休止 뒤 재개 없이 1958-12-27 폐지라 범위 밖. 黒田–田原本은 지금의 近鉄田原本線(黒田–西田原本)으로 DB l_tawaramoto_line에 이미 있음. 1961은 信貴生駒電鉄 합병 해이지 폐지가 아님",
+  "kind": "n05_fix"
+ },
+ "安濃鉄道 安濃鉄道線": {
+  "name": "安濃鉄道 安濃鉄道線",
+  "closed": "1972-08-31",
+  "result": "out_of_range",
+  "stations": [
+   [
+    "新町",
+    0.0
+   ],
+   [
+    "納所",
+    1.8
+   ],
+   [
+    "安東",
+    2.5
+   ],
+   [
+    "鹿毛",
+    3.7
+   ],
+   [
+    "曽根",
+    4.9
+   ],
+   [
+    "内多",
+    5.7
+   ],
+   [
+    "安濃",
+    7.4
+   ],
+   [
+    "荒木",
+    8.8
+   ],
+   [
+    "岡本",
+    9.5
+   ],
+   [
+    "萩野",
+    10.1
+   ],
+   [
+    "安西",
+    11.0
+   ],
+   [
+    "椋本口",
+    12.5
+   ],
+   [
+    "椋本",
+    12.8
+   ]
+  ],
+  "open": [
+   [
+    "新町",
+    "椋本",
+    "1914-12-29"
+   ]
+  ],
+  "close": [
+   [
+    "新町",
+    "椋本",
+    "1944-01-11",
+    "1972-08-31"
+   ]
+  ],
+  "evidence": [
+   "1944年1月11日 全線を不要不急線として休止",
+   "1972年8月31日 全線廃止"
+  ],
+  "source": "安濃鉄道 109465484",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 1944-01-11 全線을 不要不急線으로 휴지, 전후 재개 없이 1972-08-31 폐지 → 1950년 뒤 여객 영업 없음",
+  "kind": "n05_fix"
+ },
+ "岩井町 岩井町営軌道": {
+  "name": "岩井町 岩井町営軌道",
+  "closed": "1964-03-27",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）1月11日 休止。その後線路撤去され、実質的には廃線状態になっていた。",
+   "1964年（昭和39年）3月27日 正式に廃止。"
+  ],
+  "source": "岩井町営軌道 80653459",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 1943 鳥取地震으로 휴업, 1944-01-11 휴지 뒤 재개 없이 1964-03-27 폐지",
+  "kind": "n05_fix"
+ },
+ "日ノ丸自動車 母里線": {
+  "name": "日ノ丸自動車 母里線",
+  "closed": "1959-09-17",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "2月11日：阿賀 - 母里間の支線を休止。",
+   "1959年（昭和34年）9月17日：休止中の阿賀 - 母里間を廃止。"
+  ],
+  "source": "日ノ丸自動車法勝寺電鉄線 109457516",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 阿賀–母里 支線은 1944-02-11 휴지 뒤 재개 없이 1959-09-17 폐지",
+  "kind": "n05_fix"
+ },
+ "日本国有鉄道 小松島線 小松島–小松島港": {
+  "name": "日本国有鉄道 小松島線 小松島–小松島港",
+  "closed": "1985-03-14",
+  "result": "open",
+  "stations": [
+   [
+    "小松島",
+    0.0
+   ],
+   [
+    "小松島港",
+    "XX"
+   ]
+  ],
+  "open": [
+   [
+    "小松島",
+    "小松島港",
+    "1940-03-15"
+   ]
+  ],
+  "close": [
+   [
+    "小松島",
+    "小松島港",
+    "1985-03-14",
+    null
+   ]
+  ],
+  "evidence": [
+   "小松島港仮乗降場が小松島駅構内に設置",
+   "通常、仮乗降場には営業キロが設定されず",
+   "小松島駅から（まで）の営業キロを用いて",
+   "3月14日 : 全線 (1.9 km) が廃止"
+  ],
+  "source": "小松島線 107273631",
+  "note": "역 목록·순서는 분명(中田–小松島–小松島港). 営業キロ가 설정되지 않은 仮乗降場이라 km는 XX. 다만 기록상 中田–小松島港 승차는 中田–小松島 1.9km로 덮이므로 0km 구간을 새로 만들지, archive 역(archive_fix.json 「小松島港」)으로 둘지는 사용자 판단",
+  "kind": "n05_fix",
+  "scope_question": "km 없는 0km 꼬리 구간을 기록 구간으로 둘지"
+ },
+ "本郷軌道 本郷軌道線": {
+  "name": "本郷軌道 本郷軌道線",
+  "closed": null,
+  "result": "keep_archive",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "軌間 666mm のものは本郷軌道（福井県） 5.2 km（「馬車鉄道」 문서, 검색 결과 발췌）"
+  ],
+  "source": "馬車鉄道 (검색 결과 발췌)",
+  "note": "위키 독립 문서 없음. 「馬車鉄道」 문서에 이름·궤간·길이만 있고 역 목록·날짜 없음",
+  "kind": "n05_fix"
+ },
+ "東武鉄道 大谷軌道線": {
+  "name": "東武鉄道 大谷軌道線",
+  "closed": "1952-03-31",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1934年（昭和9年）3月15日：大谷軌道線 西原町 - 大谷間の旅客営業を廃止。",
+   "3月31日：大谷軌道線 荒針 - 大谷 - 風返間、荒針 - 弁天山間を廃止。"
+  ],
+  "source": "東武大谷線 110766074",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 人車軌道. 西原町–大谷 여객은 1934-03-15 폐지, 1952-03-31 폐지된 荒針–大谷–風返·荒針–弁天山은 화물만. 1950 이후 여객 영업 없음",
+  "kind": "n05_fix"
+ },
+ "松本電気鉄道 浅間線": {
+  "name": "松本電気鉄道 浅間線",
+  "closed": "1964-04-01",
+  "result": "open",
+  "stations": [
+   [
+    "松本駅前",
+    0.0
+   ],
+   [
+    "国府町",
+    "XX"
+   ],
+   [
+    "本町",
+    "XX"
+   ],
+   [
+    "小池町",
+    "XX"
+   ],
+   [
+    "市民会館前",
+    "XX"
+   ],
+   [
+    "警察署前",
+    "XX"
+   ],
+   [
+    "学校前",
+    1.6
+   ],
+   [
+    "日の出町",
+    "XX"
+   ],
+   [
+    "清水",
+    "XX"
+   ],
+   [
+    "桜橋",
+    "XX"
+   ],
+   [
+    "元町",
+    "XX"
+   ],
+   [
+    "横田",
+    "XX"
+   ],
+   [
+    "自動車学校前",
+    "XX"
+   ],
+   [
+    "玄向寺口",
+    "XX"
+   ],
+   [
+    "運動場前",
+    "XX"
+   ],
+   [
+    "下浅間",
+    "XX"
+   ],
+   [
+    "中浅間",
+    "XX"
+   ],
+   [
+    "浅間温泉",
+    5.3
+   ]
+  ],
+  "open": [
+   [
+    "松本駅前",
+    "浅間温泉",
+    "1924-04-19"
+   ]
+  ],
+  "close": [
+   [
+    "松本駅前",
+    "浅間温泉",
+    "1964-04-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "松本駅前から学校前までの1.6 kmは…併用軌道",
+   "松本駅前 - 浅間温泉 5.3 km",
+   "1964年（昭和39年）4月1日…廃止"
+  ],
+  "source": "松本電気鉄道浅間線 108041314",
+  "note": "n05_fix 1차 표(역 순서·XX) 그대로. 2026-11-05 결정(역 목록이 있으면 ? km로 연다)으로 archive에서 open으로 바꿀 수 있음",
+  "kind": "n05_fix"
+ },
+ "琴平参宮電鉄 琴平急行電鉄線": {
+  "name": "琴平参宮電鉄 琴平急行電鉄線",
+  "closed": "1954-09-30",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年1月 - 不要不急線として休止",
+   "1954年9月30日 - 旧琴平急行電鉄線を正式に廃止"
+  ],
+  "source": "琴平急行電鉄線 110612553",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 1944년 1월(공문서상 2월 10일) 不要不急線으로 全線休止, 재개 없이 1954-09-30 정식 폐지. 1950년 뒤 여객 영업 없음",
+  "kind": "n05_fix"
+ },
+ "荒尾市 荒尾市営電気鉄道": {
+  "name": "荒尾市 荒尾市営電気鉄道",
+  "closed": "1964-10-01",
+  "result": "open",
+  "stations": [
+   [
+    "荒尾",
+    0.0
+   ],
+   [
+    "境崎",
+    0.7
+   ],
+   [
+    "小田峯",
+    "XX"
+   ],
+   [
+    "宮内",
+    1.1
+   ],
+   [
+    "本村",
+    2.7
+   ],
+   [
+    "揚増永",
+    3.1
+   ],
+   [
+    "水源地前",
+    "XX"
+   ],
+   [
+    "シオン園前",
+    "XX"
+   ],
+   [
+    "新生区",
+    4.2
+   ],
+   [
+    "緑ヶ丘",
+    5.1
+   ]
+  ],
+  "open": [
+   [
+    "境崎",
+    "揚増永",
+    "1949-03-01"
+   ],
+   [
+    "揚増永",
+    "緑ヶ丘",
+    "1950-06-20"
+   ],
+   [
+    "荒尾",
+    "境崎",
+    "1950-12-21"
+   ]
+  ],
+  "close": [
+   [
+    "荒尾",
+    "緑ヶ丘",
+    "1964-10-01",
+    null
+   ]
+  ],
+  "evidence": [
+   "1949年（昭和24年）3月1日 境崎 - 増永（後の揚増永）間開業",
+   "6月20日 増永 - 緑ヶ丘（仮）間開業",
+   "12月21日 荒尾 - 境崎間開業",
+   "1964年（昭和39年）10月1日 荒尾 - 緑ヶ丘間全線廃止"
+  ],
+  "source": "荒尾市営電気鉄道 109457657",
+  "note": "n05_fix 표 그대로(null→XX). 小田峯·水源地前·シオン園前 km는 노선도에 「?」. 1950-06-20 緑ヶ丘는 仮駅(4.7km), 1950-12-21 緑ヶ丘(5.1km) 延伸開業認可. 水源地前 개업 1952는 N05 처음 해라 원문 값이 아님. archive_line a_araoshiei_electric_railway와 같은 노선",
+  "kind": "n05_fix",
+  "stop_open": {
+   "水源地前": "1952-XX-XX"
+  }
+ },
+ "近江鉄道 御園線": {
+  "name": "近江鉄道 御園線",
+  "closed": "1964-09-25",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1948年（昭和23年）8月1日 - 新八日市駅 - 御園駅間が休止",
+   "1964年（昭和39年）9月25日 - 休止中の新八日市駅 - 御園駅間の廃止許可"
+  ],
+  "source": "近江鉄道八日市線 108616013",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 新八日市–御園은 1948-08-01 휴지 뒤 1964-09-25 폐지",
+  "kind": "n05_fix"
+ },
+ "関東レース倶楽部 よみうりランドモノレール": {
+  "name": "関東レース倶楽部 よみうりランドモノレール",
+  "closed": "1978-12-01",
+  "result": "open",
+  "stations": [
+   [
+    "遊園地",
+    "XX"
+   ],
+   [
+    "駐車場",
+    "XX"
+   ],
+   [
+    "サッカー場",
+    "XX"
+   ],
+   [
+    "スカイロード",
+    "XX"
+   ],
+   [
+    "遊園地",
+    2.9
+   ]
+  ],
+  "open": [
+   [
+    "遊園地",
+    "遊園地",
+    "1964-08-28"
+   ]
+  ],
+  "close": [
+   [
+    "遊園地",
+    "遊園地",
+    "1978-11-30",
+    "1978-12-01"
+   ]
+  ],
+  "evidence": [
+   "よみうりランドモノレール : 1964年1月1日 - 1978年11月30日",
+   "当初は西生田 - ゴルフ場間の1.8kmで開業。1964年8月28日に全長2.9kmの環状路線となり",
+   "遊園地（ランドホテル）→駐車場→サッカー場→スカイロード→遊園地の周回運行",
+   "ゴルフ場から遊園地に改称。改称時期は不詳。",
+   "西生田から音楽堂、さらにサッカー場に改称。改称時期は不詳。",
+   "スキー場からスカイロードに改称。改称時期は不詳。",
+   "園内遊具扱ではなく地方鉄道法の免許を受けた交通機関であった。1978年12月1日の路線廃止後は"
+  ],
+  "source": "よみうりランド 111488610",
+  "note": "환상선 4역, 순서는 원문(遊園地→駐車場→サッカー場→スカイロード→遊園地). 역 이름은 바뀐 뒤 이름이고 개칭 시기는 「不詳」. 역별 km 없음(전장 2.9, 첫 구간 1.8). open은 환상 전선 개통일(1964-08-28); 1964-01-01에 西生田(→サッカー場)–ゴルフ場(→遊園地) 1.8km 먼저 개업(경로상 어느 쪽 반원인지는 원문에 없음). 역 목록과 순서가 있으니 결정 기준으로는 open이지만, 이름 시기가 불명이고 환상선이라 기록 모델에 넣기 까다로움",
+  "kind": "n05_fix",
+  "scope_question": "유원지 안 순환선(地方鉄道法 면허). 수록 대상인지 사용자 판단 필요(n05_fix에도 같은 질문)"
+ },
+ "京都市交通局 蹴上線": {
+  "name": "京都市交通局 蹴上線",
+  "closed": "1965-07-10",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1945年（昭和20年）2月1日：戦争の激化により、全線休止",
+   "1965年（昭和40年）7月10日：全線廃止"
+  ],
+  "source": "京都市電蹴上線 106296811",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 1945-02-01 全線休止 뒤 재개 없이 1965-07-10 廃止. 1950 뒤 여객 영업 없음(N05는 1950-1964 선을 그림)",
+  "kind": "n05_fix"
+ },
+ "熊本市交通局 百貫線": {
+  "name": "熊本市交通局 百貫線",
+  "closed": "1965-02-11",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1945年3月1日：田崎 - 百貫石間休止",
+   "1965年（昭和40年）2月11日：全線廃止"
+  ],
+  "source": "熊本市電百貫線 104497415",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 熊本電気軌道 百貫線 田崎–百貫石 6.539km. 1945-03-01 休止, 休止 중인 채 1945-12-01 市가 買収하고 재개 없이 1965-02-11 廃止. 1950 뒤 여객 영업 없음(N05는 1950-1964 선을 그림)",
+  "kind": "n05_fix"
+ },
+ "名古屋市交通局 千早線": {
+  "name": "名古屋市交通局 千早線",
+  "closed": "1963-02-01",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1944年（昭和19年）7月2日 - 休止",
+   "1963年（昭和38年）2月1日 - 廃止"
+  ],
+  "source": "名古屋市電千早線 68959488",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 矢場町–千早町 1.4km. 1944-07-02 休止 뒤 재개 없이 1963-02-01 廃止. 1950 뒤 여객 영업 없음(N05는 1950-1962 선을 그림)",
+  "kind": "n05_fix"
+ },
+ "大阪市交通局 安治川築港線": {
+  "name": "大阪市交通局 安治川築港線",
+  "closed": "1960-10-10",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "1945年（昭和20年）3月13日：戦災のため全線休止",
+   "1960年（昭和35年）10月10日：全線廃止"
+  ],
+  "source": "大阪市電安治川築港線 90280373",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 玉船橋–千舟橋 3.4km. 1945-03-13 戦災で全線休止, 재개 없이 1960-10-10 廃止. 1950 뒤 여객 영업 없음(N05는 1950-1959 선을 그림)",
+  "kind": "n05_fix"
+ },
+ "高松琴平電気鉄道 市内線": {
+  "name": "高松琴平電気鉄道 市内線",
+  "closed": "1957-01-08",
+  "result": "out_of_range",
+  "stations": [],
+  "open": [],
+  "close": [],
+  "evidence": [
+   "7月4日 空襲の被害により休止",
+   "1957年（昭和32年）1月8日 全線廃止"
+  ],
+  "source": "高松琴平電気鉄道市内線 110914951",
+  "note": "1950 전 休止 뒤 재개 없이 폐지라 1950 뒤 여객 영업 없음(n05_fix 1·2차 판정과 같음). 築港前–公園前 2.4km. 1945-07-04 空襲으로 休止, 1947-08-02 軌道 撤去, 재개 없이 1957-01-08 廃止. 1950 뒤 여객 영업 없음(N05는 1950-1956 선을 그림)",
+  "kind": "n05_fix"
+ }
+}

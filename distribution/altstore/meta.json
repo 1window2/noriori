@@ -1,0 +1,28 @@
+{
+ "name": "noriori",
+ "identifier": "app.noriori.source",
+ "sourceURL": "https://github.com/1window2/noriori/releases/latest/download/altstore.json",
+ "subtitle": "일본 철도 탑승 기록 · Japan rail ride log",
+ "description": "noriori 공식 소스입니다. 새 판을 올리면 AltStore·SideStore에서 업데이트로 보입니다.\nOfficial noriori source. New releases show up as updates in AltStore and SideStore.",
+ "website": "https://github.com/1window2/noriori",
+ "iconURL": "https://raw.githubusercontent.com/1window2/noriori/main/distribution/altstore/icon.png",
+ "headerURL": "https://raw.githubusercontent.com/1window2/noriori/main/distribution/altstore/header.png",
+ "tintColor": "#5E9A2E",
+ "app": {
+  "name": "noriori",
+  "bundleIdentifier": "app.noriori",
+  "developerName": "noriori",
+  "subtitle": "일본 철도를 어디까지 탔는지 기록합니다",
+  "localizedDescription": "일본 전 노선과 1950년 이후 폐선의 탄 구간을 기록하고 지도에 칠합니다. 노선·회사·도도부현별 완주율을 보여 주고, 지도와 노선도는 인터넷 없이도 보입니다. 기록은 기기에만 저장되고 계정과 광고가 없습니다. 한국어, 영어, 일본어.\n\nRecords which sections of Japanese railways you have ridden, including lines closed since 1950, and colors them on an offline map. No account, no ads. Korean, English and Japanese.",
+  "iconURL": "https://raw.githubusercontent.com/1window2/noriori/main/distribution/altstore/icon.png",
+  "tintColor": "#5E9A2E",
+  "category": "lifestyle",
+  "minOSVersion": "15.0",
+  "appPermissions": {
+   "entitlements": [],
+   "privacy": {
+    "NSLocationWhenInUseUsageDescription": "Finds unridden sections near you. Your location stays on this device."
+   }
+  }
+ }
+}

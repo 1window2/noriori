@@ -314,16 +314,40 @@ class _Header extends ConsumerWidget {
             Text(t.selfScore, style: text.bodySmall?.copyWith(color: tokens.textMuted))
           else ...[
             if (current != null && current.denMeters > 0)
-              _ScoreRow(label: t.current, score: current, badge: t.completeCurrent),
-            if (allTime != null) _ScoreRow(label: t.allTime, score: allTime, badge: t.completeAllTime),
+              _ScoreRow(
+                label: t.current,
+                score: current,
+                badge: t.completeCurrent,
+                // 한 번 얻은 현행 완주 배지는 새 역이 생겨도 남는다 (DESIGN §3.3)
+                held: ref.watch(heldBadgesProvider).value?.contains(lineBadge(lineId)) ?? false,
+              ),
+            // 역대 완주 배지는 없다. 폐선 포함 진행률은 숫자로만 보인다 (DESIGN §3.3)
+            if (allTime != null) _ScoreRow(label: t.allTime, score: allTime),
           ],
           if (ref.watch(unmappedLinesProvider).value?.contains(lineId) ?? false)
             Text(context.t.mapSheet.unmapped, style: text.labelMedium?.copyWith(color: tokens.textMuted)),
           LineStripBar(strip: strip),
+          // 양 끝 역 이름은 칸을 반씩 쓰고 넘치면 줄인다(영어 이름이 길다, 세 언어 전수 점검 2026-11-12)
           Row(
             children: [
-              Expanded(child: Text(names[strip.startNode] ?? '', style: text.labelSmall)),
-              Text(names[strip.endNode] ?? '', style: text.labelSmall),
+              Expanded(
+                child: Text(
+                  names[strip.startNode] ?? '',
+                  style: text.labelSmall,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                ),
+              ),
+              const SizedBox(width: 8),
+              Flexible(
+                child: Text(
+                  names[strip.endNode] ?? '',
+                  style: text.labelSmall,
+                  maxLines: 1,
+                  overflow: TextOverflow.ellipsis,
+                  textAlign: TextAlign.end,
+                ),
+              ),
             ],
           ),
           SizedBox(
@@ -345,7 +369,7 @@ class _Header extends ConsumerWidget {
             if (route.current.denMeters > 0)
               _ScoreRow(label: label(routeId), score: route.current, badge: t.completeCurrent)
             else
-              _ScoreRow(label: label(routeId), score: route.allTime, badge: t.completeAllTime),
+              _ScoreRow(label: label(routeId), score: route.allTime),
           ],
           Text(t.hint, style: text.bodySmall?.copyWith(color: tokens.textMuted)),
         ],
@@ -355,11 +379,16 @@ class _Header extends ConsumerWidget {
 }
 
 class _ScoreRow extends StatelessWidget {
-  const _ScoreRow({required this.label, required this.score, required this.badge});
+  const _ScoreRow({required this.label, required this.score, this.badge, this.held = false});
 
   final String label;
   final Score score;
-  final String badge;
+
+  /// 완주 배지 글자. 없으면 배지를 보이지 않는다.
+  final String? badge;
+
+  /// 전에 얻은 배지라 100%가 아니어도 보인다.
+  final bool held;
 
   @override
   Widget build(BuildContext context) {
@@ -380,14 +409,14 @@ class _ScoreRow extends StatelessWidget {
               '${t.km(num: kmLabel(score.numMeters), den: kmLabel(score.denMeters))}  ${percentLabel(score)}',
               style: text.bodyMedium?.copyWith(fontFeatures: tabularFigures),
             ),
-            if (score.complete)
+            if (badge != null && (score.complete || held))
               Container(
                 padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
                 decoration: BoxDecoration(
                   color: tokens.lineRiddenSoft,
                   borderRadius: BorderRadius.circular(999),
                 ),
-                child: Text(badge, style: text.labelSmall),
+                child: Text(badge!, style: text.labelSmall),
               ),
           ],
         ),
@@ -468,7 +497,8 @@ class _StopRow extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(left: 8, right: 16),
               child: Text(
-                stop.kmCum!.toStringAsFixed(1),
+                // 営業キロ를 몰라 추정한 역은 숫자 뒤에 `?` (54.1?, DESIGN §4.5)
+                '${stop.kmCum!.toStringAsFixed(1)}${stop.kmEstimated ? '?' : ''}',
                 style: text.labelSmall?.copyWith(color: tokens.textMuted, fontFeatures: tabularFigures),
               ),
             ),
@@ -517,28 +547,39 @@ class _SectionRow extends StatelessWidget {
         onTap: section.editable ? onTap : null,
         child: ColoredBox(
           color: picked ? tokens.lineRiddenSoft : Colors.transparent,
-          child: SizedBox(
-            height: 40,
-            child: Row(
-              children: [
-                SizedBox(
-                  width: lineStemColumn,
-                  height: double.infinity,
-                  child: Center(
-                    child: Container(width: _stemWidth(section), color: _stemColor(section, tokens)),
+          // 글이 길면(영어·큰 글자) 줄을 늘려 두 줄로 쓴다. 줄기는 줄 높이를 따라간다 (세 언어 전수 점검 2026-11-12)
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(minHeight: 40),
+            child: IntrinsicHeight(
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  SizedBox(
+                    width: lineStemColumn,
+                    child: Center(
+                      child: Container(width: _stemWidth(section), color: _stemColor(section, tokens)),
+                    ),
                   ),
-                ),
-                Text(
-                  [
-                    '${kmLabel(section.meters)} km',
-                    if (closedYear != null) closedNote(context, closedYear!),
-                  ].join(' · '),
-                  style: text.labelSmall?.copyWith(
-                    color: tokens.textMuted,
-                    fontFeatures: tabularFigures,
+                  Expanded(
+                    child: Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text(
+                          [
+                            '${kmLabel(section.meters)} km',
+                            if (closedYear != null) closedNote(context, closedYear!),
+                          ].join(' · '),
+                          style: text.labelSmall?.copyWith(
+                            color: tokens.textMuted,
+                            fontFeatures: tabularFigures,
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),

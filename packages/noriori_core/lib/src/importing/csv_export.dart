@@ -166,7 +166,7 @@ final class CsvExporter {
             (lineOf[next] ?? leg.lineId.value) == line &&
             _operatorOf(next, line, expansion.date) == company;
         if (sameNext) continue;
-        final meters = network.metersOf(expansion.edges.sublist(start, i + 1));
+        final meters = network.metersOf(expansion.edges.sublist(start, i + 1), lineId: line);
         // 한 바퀴처럼 노드 수가 다른 경로는 기록의 양 끝을 쓴다
         final from = start < nodes.length ? nodes[start] : leg.fromNode.value;
         final to = i + 1 < nodes.length ? nodes[i + 1] : leg.toNode.value;

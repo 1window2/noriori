@@ -1,0 +1,1167 @@
+{
+"설명": "동결 전 공개 ID 개명과 합친 노드의 옛 ID (DESIGN §2.10, 2회차 결정 U12). rename: 생성기(gen_source)가 id_map의 공개 ID를 new로 바꿔 낸다. merge: 같은 역 노드 합치기(hand_tables SAME_NODE)로 사라진 ID. 두 종류 모두 컴파일이 id_redirect 행(old → new)으로 낸다. ID 규칙(ARCHITECTURE §4.2): 영어 이름, 겹칠 때만 회사 약칭·노선 이름 꼬리. key: 구조를 바꿔 새로 생긴 내부 키(노선을 합쳐 생긴 지선 계통 등)에 옛 공개 ID를 준다(계통 ID 유지). line·route 옛 ID는 merge 행(old → 새 노선·계통)으로 id_redirect",
+"rows": [
+{
+"kind": "rename",
+"old": "n_honmachi_2_chome",
+"new": "n_honmachi_3_chome_takasaki_line_tobu",
+"why": "東武 高崎線(伊香保軌道) 本町三丁目의 ID가 2_chome(옆 本町二丁目은 n_honmachi_2_chome_takasaki_line_tobu). n_honmachi_3_chome은 다른 本町三丁目이 써서 같은 노선 꼬리 (3회차 전수 점검 kanto_3-17, 2회차 kanto_3-23·결정 U12)"
+},
+{
+"kind": "rename",
+"old": "n_nishikoen_sendai_city",
+"new": "n_nishikoen_hanamaki",
+"why": "花巻電鉄 鉛線 西公園(岩手)인데 仙台市電 ID(판 2026-11-11.4 n_omachinishikoen 개명이 틀림). n_nishikoen은 다른 西公園이 써서 회사 약칭 꼬리 (3회차 tohoku_1-026·tohoku_2-018, 2회차 tohoku_1-027·결정 U12)"
+},
+{
+"kind": "rename",
+"old": "n_imabuku_osaka_city",
+"new": "n_imafuku",
+"why": "大阪市電 今福의 읽기는 いまふく(Imafuku). いまぶく(松浦鉄道 今福 n_imabuku) 읽기에서 나온 ID (2회차 kinki_1-015·결정 U12)"
+},
+{
+"kind": "rename",
+"old": "n_niinai_nankai",
+"new": "n_shinuchi",
+"why": "新内의 읽기는 しんうち(Shin'uchi). にいない 읽기에서 나온 ID (2회차 kinki_3-055·결정 U12)"
+},
+{
+"kind": "rename",
+"old": "n_nikkooshuki",
+"new": "n_nikkoojuki",
+"why": "日鉱大志生木의 읽기는 にっこうおおじゅうき(Nikkoojuki). おおしゅうき 읽기에서 나온 ID (2회차 kyushu_2-18·결정 U12)"
+},
+{
+"kind": "rename",
+"old": "n_biwakohamaotsu",
+"new": "n_hamaotsu",
+"why": "京阪 浜大津(옛 浜大津東口)는 びわ湖浜大津(n_biwako_hamaotsu)와 다른 노드인데 ID가 びわ湖浜大津에서 나옴 (2회차 kinki_3-056·결정 U12)"
+},
+{
+"kind": "merge",
+"old": "n_nishinagata",
+"new": "n_nishinagata_yurinosato",
+"why": "京福 丸岡線 西長田를 三国芦原線 西長田(지금 西長田ゆりの里)와 한 노드로 합침(hand_tables SAME_NODE, 3회차 chubu_2-15)"
+},
+{
+"kind": "key",
+"key": "r_soubuhonsen_100017401",
+"new": "r_shinkin_line",
+"why": "新金線을 総武本線의 지선 계통으로 옮김(3회차 kanto_3-21). 계통 ID는 그대로"
+},
+{
+"kind": "merge",
+"old": "l_shinkin_line",
+"new": "l_sobu_main_line",
+"why": "新金貨物線 노선을 総武本線에 합침(지선 계통 r_shinkin_line, 3회차 kanto_3-21)"
+},
+{
+"kind": "key",
+"key": "r_betsudaisen_99df75f_n05ac063c",
+"new": "r_betsudai_line_beppu_ekimae_branch",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_chikabumisen_908675f_n05f89d19",
+"new": "r_chikabumi_line_hokkaidojinjamae_keibajokitaguchimae",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_fukuitetsudouseihosen_42220_n0539e036",
+"new": "r_seiho_line_sabae_echizen_hirai",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 옛 계통 ID r_seihosensabaeechizenhirai는 영어 이름 규칙 밖이라 새 ID로 바꾸고 id_redirect"
+},
+{
+"kind": "key",
+"key": "r_iizakatousen_40210_n05ea869a",
+"new": "r_iizakahigashi_line_seikogakuimmae_date_ekimae",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_ishikisen_30150_n05505ad2",
+"new": "r_ishiki_line_shinshoin_ishiki_old_route",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_junkansen_10160_n057c183b",
+"new": "r_loop_line_hakatachikkomae_chidoribashi",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_junkansen_10160_n05d354c3",
+"new": "r_loop_line_old_route",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_junkansen_30040_n05141969",
+"new": "r_loop_line_kakyoin_sendai_ekimae",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_meitetsugifushinaisen_10100_n058d3778",
+"new": "r_gifushinai_line_chusetsu_branch",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_nanbokusen_964c4c5_n051d66a1",
+"new": "r_namboku_line_midosuji_branch",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_nishiyonchoumesen_30010_4",
+"new": "r_nishiyonchome_line_nishi_4_chome_mitsukoshimae",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_obihirobusen_9eab3d2_n0525c668",
+"new": "r_obihirobu_line_obihiroodori_branch",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_oshikirisen_30080_n05cf3206",
+"new": "r_oshikiri_line_yanagibashi_shimacho",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_toukousen_30080_n05452f14",
+"new": "r_toko_line_takatsuji_takiko",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "key",
+"key": "r_uedakoutsuusanadasoehisen_40270_n051a8d53",
+"new": "r_sanadasoehi_line_soehi_branch",
+"why": "같은 노선의 토막·지선·옛 선로 항목을 부모 노선의 계통으로 합침(gen_n05 부모 항목 규칙, 3회차 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009). 계통 ID는 그대로"
+},
+{
+"kind": "merge",
+"old": "r_seihosensabaeechizenhirai",
+"new": "r_seiho_line_sabae_echizen_hirai",
+"why": "鯖浦線 鯖江–越前平井 계통 ID를 영어 이름 규칙(§2.10)에 맞춤(노선 합침과 함께)"
+},
+{
+"kind": "merge",
+"old": "l_betsudai_line_beppu_ekimae_branch",
+"new": "l_betsudai_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_chikabumi_line_hokkaidojinjamae_keibajokitaguchimae",
+"new": "l_chikabumi_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_gifushinai_line_chusetsu_branch",
+"new": "l_gifushinai_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_iizakahigashi_line_seikogakuimmae_date_ekimae",
+"new": "l_iizakato_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_ishiki_line_shinshoin_ishiki_old_route",
+"new": "l_ishiki_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_loop_line_hakatachikkomae_chidoribashi",
+"new": "l_loop_line_nishitetsu",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_loop_line_old_route",
+"new": "l_loop_line_nishitetsu",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_loop_line_kakyoin_sendai_ekimae",
+"new": "l_loop_line_sendai_city",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_namboku_line_midosuji_branch",
+"new": "l_namboku_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_nishiyonchome_line_nishi_4_chome_mitsukoshimae",
+"new": "l_nishiyonchome_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_obihirobu_line_obihiroodori_branch",
+"new": "l_obihirobu_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_oshikiri_line_yanagibashi_shimacho",
+"new": "l_oshikiri_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_sanadasoehi_line_soehi_branch",
+"new": "l_sanadasoehi_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_seiho_line_sabae_echizen_hirai",
+"new": "l_seiho_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_shimizushinai_line_nishikubo_sodeshi_old_route",
+"new": "l_shimizushinai_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "l_toko_line_takatsuji_takiko",
+"new": "l_toko_line",
+"why": "토막·지선·옛 선로 노선을 부모 노선에 합침(3회차 K30, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "n_meguro_toei",
+"new": "n_meguro_tokyo_metro",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_shirokanedai_toei",
+"new": "n_shirokanedai_tokyo_metro",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_shirokane_takanawa_toei",
+"new": "n_shirokane_takanawa_tokyo_metro",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_nanao_noto",
+"new": "n_nanao",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_soja_ibara",
+"new": "n_soja",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_kiyone_ibara",
+"new": "n_kiyone",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_rinku_town_nankai",
+"new": "n_rinku_town",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "merge",
+"old": "n_kansai_airport_nankai",
+"new": "n_kansai_airport",
+"why": "사업자별로 나뉜 공용 선로의 같은 역을 한 노드로(hand_tables SHARED_TRACK, 2회차 결정 U03, 3회차 kanto_2-007)"
+},
+{
+"kind": "key",
+"key": "r_shimizushinaisen_42030_n057c67cb",
+"new": "r_shimizushinai_line_nishikubo_sodeshi_old_route",
+"why": "清水市内線 西久保–袖師 旧線을 清水市内線의 계통으로 합침(3회차 K30). 계통 ID는 그대로"
+},
+{
+"kind": "merge",
+"old": "r_kubiki_railway_hyakkenmachi_shin_kuroi",
+"new": "r_kubiki_railway",
+"why": "공식 기점 한 줄 계통으로 합침(hand_tables LINE_AXIS, 3회차 chubu_2-12·chubu_2-13)"
+},
+{
+"kind": "merge",
+"old": "r_mikawa_line_hekinan_kira_yoshida",
+"new": "r_mikawa_line",
+"why": "공식 기점 한 줄 계통으로 합침(hand_tables LINE_AXIS, 3회차 chubu_2-12·chubu_2-13)"
+},
+{
+"kind": "merge",
+"old": "r_mikawa_line_sanage_nishi_nakagane",
+"new": "r_mikawa_line",
+"why": "공식 기점 한 줄 계통으로 합침(hand_tables LINE_AXIS, 3회차 chubu_2-12·chubu_2-13)"
+},
+{
+"kind": "merge",
+"old": "a_kadosoto_ou_main",
+"new": "a_kadosoto",
+"why": "奥羽本線 열람 전용 역. 다른 노선으로 번진 같은 이름 행이 sd 짝 규칙으로 안 생기게 되어 꼬리 없는 ID로 나옴(같은 역, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "a_mutsumoriyama_ou_main",
+"new": "a_mutsumoriyama",
+"why": "奥羽本線 열람 전용 역. 다른 노선으로 번진 같은 이름 행이 sd 짝 규칙으로 안 생기게 되어 꼬리 없는 ID로 나옴(같은 역, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "a_toyomaki_ou_main",
+"new": "a_toyomaki",
+"why": "奥羽本線 열람 전용 역. 다른 노선으로 번진 같은 이름 행이 sd 짝 규칙으로 안 생기게 되어 꼬리 없는 ID로 나옴(같은 역, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "a_wattoku_ou_main",
+"new": "a_wattoku",
+"why": "奥羽本線 열람 전용 역. 다른 노선으로 번진 같은 이름 행이 sd 짝 규칙으로 안 생기게 되어 꼬리 없는 ID로 나옴(같은 역, 8회차 W1b)"
+},
+{
+"kind": "merge",
+"old": "a_higashiyanaizu_takehana",
+"new": "a_higashiyanaizu",
+"why": "竹鼻線 같은 계통·이름·km 열람 전용 역 중복의 한쪽(3회차 chubu_3-02). 남은 행으로 잇는다"
+},
+{
+"kind": "merge",
+"old": "a_hongakujimae_takehana",
+"new": "a_hongakujimae",
+"why": "竹鼻線 같은 계통·이름·km 열람 전용 역 중복의 한쪽(3회차 chubu_3-02). 남은 행으로 잇는다"
+},
+{
+"kind": "merge",
+"old": "a_kadoma_takehana",
+"new": "a_kadoma",
+"why": "竹鼻線 같은 계통·이름·km 열람 전용 역 중복의 한쪽(3회차 chubu_3-02). 남은 행으로 잇는다"
+},
+{
+"kind": "merge",
+"old": "a_magari_takehana",
+"new": "a_magari",
+"why": "竹鼻線 같은 계통·이름·km 열람 전용 역 중복의 한쪽(3회차 chubu_3-02). 남은 행으로 잇는다"
+},
+{
+"kind": "merge",
+"old": "a_minoishida_takehana",
+"new": "a_minoishida",
+"why": "竹鼻線 같은 계통·이름·km 열람 전용 역 중복의 한쪽(3회차 chubu_3-02). 남은 행으로 잇는다"
+},
+{
+"kind": "merge",
+"old": "a_shousenjimae_takehana",
+"new": "a_shousenjimae",
+"why": "竹鼻線 같은 계통·이름·km 열람 전용 역 중복의 한쪽(3회차 chubu_3-02). 남은 행으로 잇는다"
+},
+{
+"kind": "merge",
+"old": "r_ogachi_line_nishimonai_fumoto",
+"new": "r_ogachi_line",
+"why": "羽後交通 雄勝線 두 계통(西馬音内→湯沢 뒤집힌 본선, 西馬音内–梺)을 공식 기점 湯沢 한 줄 계통으로 합침(hand_tables LINE_AXIS, 3회차 tohoku_1-025)"
+},
+{
+"kind": "rename",
+"old": "a_akagawa",
+"new": "a_kamaishi_sekiguchi_iwate_kamigo",
+"why": "열람 전용 赤川: 읽기 あかがわ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_akasaka",
+"new": "a_kagoshima_main_moji_kokura",
+"why": "열람 전용 赤坂: 읽기 あかさか가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_asahidoori",
+"new": "a_hanshin_main_kasuganomichi_hanshin_kobe_sannomiya_hanshin",
+"why": "열람 전용 旭通: 읽기 あさひどおり가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_awajima",
+"new": "a_kakogawa_ao_kawainishi",
+"why": "열람 전용 粟島: 읽기 あわじま가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_awaya",
+"new": "a_geibi_nishi_miyoshi_shiwachi",
+"why": "열람 전용 粟屋: 읽기 あわや가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_doukanyamadoori_keisei_main",
+"new": "a_doukanyamadoori",
+"why": "열람 전용 道灌山通: 읽기 どうかんやまどおり가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_doukanyamadoori (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ekimae_gifushinai",
+"new": "a_gifushinai_shin_gifu_ekimae_kinpocho",
+"why": "열람 전용 駅前: 읽기 えきまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ekimae_nagoya_main",
+"new": "a_nagoya_main_meitetsu_gifu",
+"why": "열람 전용 駅前: 읽기 えきまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_fukushimachou",
+"new": "a_fukushimamachi",
+"why": "열람 전용 福島町: 읽기 ふくしまちょう가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_fukushimamachi (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_funato",
+"new": "a_tokushima_anabuki_kawata",
+"why": "열람 전용 船戸: 읽기 ふなと가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_gakudenhara_komaki",
+"new": "a_gakudenhara",
+"why": "열람 전용 楽田原: 읽기 がくでんはら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_gakudenhara (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_gakuenmae",
+"new": "a_seto_shin_seto_seto_shiyakusho_mae",
+"why": "열람 전용 学園前: 읽기 がくえんまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_gion",
+"new": "a_kabe_shimo_gion_furuichibashi",
+"why": "열람 전용 祇園: 읽기 ぎおん가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_goroumaru_komaki",
+"new": "a_goroumaru",
+"why": "열람 전용 五郎丸: 읽기 ごろうまる가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_goroumaru (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hachiman_keisei_main",
+"new": "a_yawata",
+"why": "열람 전용 八幡: 읽기 はちまん가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_yawata (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hanabatake",
+"new": "a_fukuchiyama_kawanishi_ikeda_old_nakayamadera",
+"why": "열람 전용 花畑: 읽기 はなばたけ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_higashiinuyama_komaki",
+"new": "a_higashiinuyama",
+"why": "열람 전용 東犬山: 읽기 ひがしいぬやま가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_higashiinuyama (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hikifune",
+"new": "a_tennoji_branch_imaikecho_tengachaya_nankai",
+"why": "열람 전용 曳舟: 읽기 ひきふね가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hirai",
+"new": "a_takarazuka_main_hibarigaoka_yamamoto_hankyu",
+"why": "열람 전용 平井: 읽기 ひらい가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_honmachi",
+"new": "a_onoda_minami_onoda_minami_nakagawa",
+"why": "열람 전용 本町: 읽기 ほんまち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_honshamae",
+"new": "a_seto_morishita_meitetsu_old_ozone_meitetsu",
+"why": "열람 전용 本社前: 읽기 ほんしゃまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ichimura",
+"new": "a_koumi_nakasato_koumi_misato_koumi",
+"why": "열람 전용 市村: 읽기 いちむら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kagamino",
+"new": "a_kakamigahara_rokken_meitetsu_mikakino",
+"why": "열람 전용 各務野: 읽기 かがみの가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kamishinmachi_komaki",
+"new": "a_kamishinmachi",
+"why": "열람 전용 上新町: 읽기 かみしんまち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_kamishinmachi (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kanehama",
+"new": "a_osumi_osumi_takasu_arahira",
+"why": "열람 전용 金浜: 읽기 かねはま가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kaneijisaka_keisei_main",
+"new": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei",
+"why": "열람 전용 寛永寺坂: 읽기 かんえいじさか가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kasamatsuguchi_takehana",
+"new": "a_kasamatsuguchi",
+"why": "열람 전용 笠松口: 읽기 かさまつぐち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_kasamatsuguchi (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kashiimiyamae",
+"new": "a_kashii_kashii_kashii_jingu",
+"why": "열람 전용 香椎宮前: 읽기 かしいみやまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kasugaiguchi_komaki",
+"new": "a_kasugaiguchi",
+"why": "열람 전용 春日井口: 읽기 かすがいぐち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_kasugaiguchi (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_keibajoumae",
+"new": "a_isesaki_yashu_yamabe_niragawa",
+"why": "열람 전용 競馬場前: 읽기 けいばじょうまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kioroshi",
+"new": "a_kinoshita",
+"why": "열람 전용 木下: 읽기 きおろし가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_kinoshita (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_koumyouji",
+"new": "a_ikegami_kugahara_tokyu_railways_chidoricho",
+"why": "열람 전용 光明寺: 읽기 こうみょうじ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kuroda",
+"new": "a_johana_shin_takaoka_futatsuka",
+"why": "열람 전용 黒田: 읽기 くろだ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kusubashi",
+"new": "a_katsuki_arate_iwasaki",
+"why": "열람 전용 楠橋: 읽기 くすばし가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_mikuni",
+"new": "a_mikuni_ashihara",
+"why": "열람 전용 三国: 읽기 みくに가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_misono",
+"new": "a_iida_ina_kita_tabata_iida_second",
+"why": "열람 전용 御園: 읽기 みその가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_miyahara",
+"new": "a_miyabaru",
+"why": "열람 전용 宮原: 읽기 みやはら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_miyabaru (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_miyanomae",
+"new": "a_nagano_line_kintetsu_kishi_kintetsu_asahigaoka_kintetsu",
+"why": "열람 전용 宮ノ前: 읽기 みやのまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_motoyama",
+"new": "a_tsurumi_tsurumi_kokudo",
+"why": "열람 전용 本山: 읽기 もとやま가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_murayamachosuichi_tamako",
+"new": "a_murayamachosuichi",
+"why": "열람 전용 村山貯水池: 읽기 むらやまちょすいち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_murayamachosuichi (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nakamura",
+"new": "a_amagi_line_nishi_nippon_kitano_nishi_nippon_oki_nishi_nippon",
+"why": "열람 전용 中村: 읽기 なかむら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nakatsu",
+"new": "a_yosan_sanuki_shioya_tadotsu",
+"why": "열람 전용 中津: 읽기 なかつ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nakayagi",
+"new": "a_kabe_bairin_kami_yagi_old",
+"why": "열람 전용 中八木: 읽기 なかやぎ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_naritahanasakichou_keisei_main",
+"new": "a_keisei_main_kozunomori_keisei_narita",
+"why": "열람 전용 成田花咲町: 읽기 なりたはなさきちょう가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nishichou",
+"new": "a_nishimachi",
+"why": "열람 전용 西町: 읽기 にしちょう가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_nishimachi (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nishisenju_keisei_main",
+"new": "a_nishisenju",
+"why": "열람 전용 西千住: 읽기 にしせんじゅ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_nishisenju (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nishiura",
+"new": "a_nagano_line_kintetsu_furuichi_kintetsu_kishi_kintetsu",
+"why": "열람 전용 西浦: 읽기 にしうら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_oiwake",
+"new": "a_iida_ina_matsushima_sawa_iida",
+"why": "열람 전용 追分: 읽기 おいわけ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_oiwake_shizuoka_shimizu",
+"new": "a_shizuoka_shimizu_kitsunegasaki_sakurabashi_shizuoka",
+"why": "열람 전용 追分: 읽기 おいわけ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ookubo",
+"new": "a_nippo_main_kiyotake_hyuga_kutsukake",
+"why": "열람 전용 大久保: 읽기 おおくぼ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ooshimizu",
+"new": "a_ou_main_ishikawa_hirosaki",
+"why": "열람 전용 大清水: 읽기 おおしみず가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_oowada",
+"new": "a_hanshin_main_himejima_chibune",
+"why": "열람 전용 大和田: 읽기 おおわだ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_seko_komaki",
+"new": "a_seko",
+"why": "열람 전용 瀬古: 읽기 せこ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_seko (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shimizuhara",
+"new": "a_suigun_hitachi_tsuda_godai",
+"why": "열람 전용 清水原: 읽기 しみずはら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shimoura",
+"new": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura",
+"why": "열람 전용 下浦: 읽기 しもうら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shinjuku",
+"new": "a_daishi_keikyu_kawasaki_minatocho_old",
+"why": "열람 전용 新宿: 읽기 しんじゅく가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shinmachi_iida",
+"new": "a_iida_ina_shimmachi_miyaki",
+"why": "열람 전용 新町: 읽기 しんまち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shinyodogawa_takarazuka_main",
+"new": "a_takarazuka_main_nakatsu_hankyu_juso",
+"why": "열람 전용 新淀川: 읽기 しんよどがわ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shiyakushomae",
+"new": "a_utsube_asunarou_yokkaichi",
+"why": "열람 전용 市役所前: 읽기 しやくしょまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_teramachi",
+"new": "a_amagi_line_nishi_nippon_miyanojin",
+"why": "열람 전용 寺町: 읽기 てらまち가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_toyotsuueno",
+"new": "a_toyotsuura",
+"why": "열람 전용 豊津浦: 읽기 とよつうえの가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_toyotsuura (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_tsuchihashi",
+"new": "a_koumi_mitsuoka_otome",
+"why": "열람 전용 土橋: 읽기 つちはし가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_wakamiya",
+"new": "a_koya_sawanocho_abikomae",
+"why": "열람 전용 若宮: 읽기 わかみや가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_yamadani",
+"new": "a_sanya",
+"why": "열람 전용 山谷: 읽기 やまだに가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16) / 10회차: 그 역 근거로 읽기를 찾아 ID a_sanya (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_yamadera",
+"new": "a_iida_ina_kita_tabata_iida",
+"why": "열람 전용 山寺: 읽기 やまでら가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_yuuenchimae",
+"new": "a_sanyo_main_line_sanyo_hitomarumae_sanyo_akashi",
+"why": "열람 전용 遊園地前: 읽기 ゆうえんちまえ가 같은 이름 다른 역의 이름 열쇠 읽기라 뺐다. 읽기 없는 열람 전용 역은 자리 ID(DESIGN §2.10)라 ID가 바뀜, 이름은 일본어 표기 그대로 (9회차 N 이름 열쇠 읽기 규칙, 사용자 결정 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ainokaze_toyama_railway_higashi_toyama_mizuhashi",
+"new": "a_hamakurosaki",
+"why": "열람 전용 浜黒崎: 그 역의 읽기 はまくろさき를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_atsumi_mikawa_tahara",
+"new": "a_kaji",
+"why": "열람 전용 加治: 그 역의 읽기 かじ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_atsumi_minami_sakae_takashi",
+"new": "a_karaike",
+"why": "열람 전용 空池: 그 역의 읽기 からいけ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_bantan_kameyama_bantan_himeji",
+"new": "a_toufumachi",
+"why": "열람 전용 豆腐町: 그 역의 읽기 とうふまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_bisai_tamanoi",
+"new": "a_satokomaki",
+"why": "열람 전용 里小牧: 그 역의 읽기 さとこまき를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_fukuoka_fukuokacho",
+"new": "a_miejima",
+"why": "열람 전용 三江島: 그 역의 읽기 みえじま를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_fukuoka_fukuokacho_fourth",
+"new": "a_yatsuomote",
+"why": "열람 전용 八ツ面: 그 역의 읽기 やつおもて를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_fukuoka_fukuokacho_second",
+"new": "a_mikawanakajima",
+"why": "열람 전용 三河中島: 그 역의 읽기 みかわなかじま를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_fukuoka_fukuokacho_third",
+"new": "a_kumaku",
+"why": "열람 전용 久麻久: 그 역의 읽기 くまく를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_funaki_railway_magura_funaki",
+"new": "a_touge",
+"why": "열람 전용 峠: 그 역의 읽기 とうげ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hitahikosan_ishiharamachi_yobuno",
+"new": "a_kinoshita",
+"why": "열람 전용 木下: 그 역의 읽기 きのした를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hitahikosan_saidosho_kawara",
+"new": "a_miyabaru",
+"why": "열람 전용 宮原: 그 역의 읽기 みやばる를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_hitahikosan_yobuno_saidosho",
+"new": "a_gotanda",
+"why": "열람 전용 五反田: 그 역의 읽기 ごたんだ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ibi_kitagata_higashiguchi_kitagata_chitosemachi",
+"new": "a_shinmachi",
+"why": "열람 전용 新町: 그 역의 읽기 しんまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_iida_miyaki_tatsuno_chuo_main",
+"new": "a_nishimachi",
+"why": "열람 전용 西町: 그 역의 읽기 にしまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_iiyama_hachisu_iiyama",
+"new": "a_shizuma",
+"why": "열람 전용 静間: 그 역의 읽기 しずま를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kagashima_kagashima",
+"new": "a_kawarabata",
+"why": "열람 전용 川原畑: 그 역의 읽기 かわらばた를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_kakogawa_kurodasho_hon_kuroda",
+"new": "a_kita_kakogawa",
+"why": "열람 전용 喜多: 그 역의 읽기 きた를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_katsuta_umi_chikuzen_katsuta",
+"new": "a_ootani",
+"why": "열람 전용 大谷: 그 역의 읽기 おおたに를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_keio_shinjuku_keio_hatsudai",
+"new": "a_tenjinbashi",
+"why": "열람 전용 天神橋: 그 역의 읽기 てんじんばし를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_keio_shinjuku_keio_hatsudai_second",
+"new": "a_shinmachi_keio",
+"why": "열람 전용 新町: 그 역의 읽기 しんまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_keisei_main_keisei_yawata_onigoe",
+"new": "a_yawata",
+"why": "열람 전용 八幡: 그 역의 읽기 やわた를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_keisei_main_machiya_keisei_senjuohashi",
+"new": "a_nishisenju",
+"why": "열람 전용 西千住: 그 역의 읽기 にしせんじゅ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_keisei_main_nippori_keisei_shim_mikawashima",
+"new": "a_doukanyamadoori",
+"why": "열람 전용 道灌山通: 그 역의 읽기 どうかんやまどおり를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_komaki_ajiyoshi_meitetsu_kasugai_meitetsu",
+"new": "a_kasugaiguchi",
+"why": "열람 전용 春日井口: 그 역의 읽기 かすがいぐち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_komaki_gakuden_meitetsu_haguro_meitetsu",
+"new": "a_gakudenhara",
+"why": "열람 전용 楽田原: 그 역의 읽기 がくでんはら를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_komaki_haguro_meitetsu_inuyama",
+"new": "a_higashiinuyama",
+"why": "열람 전용 東犬山: 그 역의 읽기 ひがしいぬやま를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_komaki_haguro_meitetsu_inuyama_second",
+"new": "a_goroumaru",
+"why": "열람 전용 五郎丸: 그 역의 읽기 ごろうまる를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_komaki_kamiiida_meitetsu_ajima",
+"new": "a_seko",
+"why": "열람 전용 瀬古: 그 역의 읽기 せこ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_komaki_komaki_meitetsu_komakihara_meitetsu",
+"new": "a_kamishinmachi",
+"why": "열람 전용 上新町: 그 역의 읽기 かみしんまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagato_railway_ozuki_nagato_shimoono_second",
+"new": "a_nagatokamiichi",
+"why": "열람 전용 長門上市: 그 역의 읽기 ながとかみいち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_ise_asahi_masuo_kintetsu",
+"new": "a_machiya",
+"why": "열람 전용 町屋: 그 역의 읽기 まちや를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_kawagoe_tomisuhara_ise_asahi",
+"new": "a_kawagoe",
+"why": "열람 전용 川越: 그 역의 읽기 かわごえ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_main_chajo_kano_meitetsu",
+"new": "a_aratamachi",
+"why": "열람 전용 安良田町: 그 역의 읽기 あらたまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_main_okazakikoen_mae_old_yahagibashi",
+"new": "a_nishiokazaki",
+"why": "열람 전용 西岡崎: 그 역의 읽기 にしおかざき를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_shiratsuka_toyotsu_ueno",
+"new": "a_toyotsuura",
+"why": "열람 전용 豊津浦: 그 역의 읽기 とよつうら를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_takadahonzan_shiratsuka",
+"new": "a_sakagawa",
+"why": "열람 전용 逆川: 그 역의 읽기 さかがわ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nagoya_toyotsu_ueno_chisato_kintetsu",
+"new": "a_iseueno",
+"why": "열람 전용 伊勢上野: 그 역의 읽기 いせうえの를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_nippo_main_sadowara_hyuga_sumiyoshi",
+"new": "a_hirose",
+"why": "열람 전용 広瀬: 그 역의 읽기 ひろせ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_odawara_minami_shinjuku_sangubashi",
+"new": "a_sanya",
+"why": "열람 전용 山谷: 그 역의 읽기 さんや를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_oito_kita_matsumoto_shimauchi",
+"new": "a_aoshima",
+"why": "열람 전용 青島: 그 역의 읽기 あおしま를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_okuyama_kitatamachi_motoshiro",
+"new": "a_tamachiguchi",
+"why": "열람 전용 田町口: 그 역의 읽기 たまちぐち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ome_tachikawa_nishi_tachikawa",
+"new": "a_musashiuenohara",
+"why": "열람 전용 武蔵上ノ原: 그 역의 읽기 むさしうえのはら를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_onoda_suzumeda_onodako_second",
+"new": "a_matsubara",
+"why": "열람 전용 松原: 그 역의 읽기 まつばら를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_oyubari_railway_shimizusawa_oyubari_enhoro",
+"new": "a_shinshimizusawa",
+"why": "열람 전용 新清水沢: 그 역의 읽기 しんしみずさわ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_sanyo_main_hyogo_wadamisaki",
+"new": "a_kaneboumae",
+"why": "열람 전용 鐘紡前: 그 역의 읽기 かねぼうまえ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_senri_tenjimbashi_senri_old_kunijima",
+"new": "a_nagara",
+"why": "열람 전용 長柄: 그 역의 읽기 ながら를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_setagaya_matsubara_tokyu_railways_shimo_takaido_tokyu_railways",
+"new": "a_shichikenchou",
+"why": "열람 전용 七軒町: 그 역의 읽기 しちけんちょう를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_seto_asahi_mae_owari_asahi",
+"new": "a_tsunboishi",
+"why": "열람 전용 聾石: 그 역의 읽기 つんぼいし를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shido_kawaramachi_takamatsu_kotohira",
+"new": "a_nakanomachi",
+"why": "열람 전용 中野町: 그 역의 읽기 なかのまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_shido_kawaramachi_takamatsu_kotohira_second",
+"new": "a_fujitsuka",
+"why": "열람 전용 藤塚: 그 역의 읽기 ふじつか를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_soeda_imato_oto_soeda",
+"new": "a_kakibaru",
+"why": "열람 전용 柿原: 그 역의 읽기 かきばる를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_soeda_kawara_kami_ita",
+"new": "a_ipponmatsu",
+"why": "열람 전용 一本松: 그 역의 읽기 いっぽんまつ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_sunen_kamiyoshida_konmatsu",
+"new": "a_shimoyoshida",
+"why": "열람 전용 下吉田: 그 역의 읽기 しもよしだ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_takatomi_nagarakitamachi_takami",
+"new": "a_kitamachi",
+"why": "열람 전용 北町: 그 역의 읽기 きたまち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_takatomi_tobagawa_mitahora",
+"new": "a_kamiiwasaki",
+"why": "열람 전용 上岩崎: 그 역의 읽기 かみいわさき를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_takehana_kasamatsu_meitetsu_nishi_kasamatsu",
+"new": "a_kasamatsuguchi",
+"why": "열람 전용 笠松口: 그 역의 읽기 かさまつぐち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_tamako_yasaka_seibu_musashi_yamato",
+"new": "a_murayamachosuichi",
+"why": "열람 전용 村山貯水池: 그 역의 읽기 むらやまちょすいち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_tennoji_branch_tobitahondori_imaikecho",
+"new": "a_oomondoori",
+"why": "열람 전용 大門通: 그 역의 읽기 おおもんどおり를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_tsuma_sadowara_nishi_sadowara",
+"new": "a_fukushimamachi",
+"why": "열람 전용 福島町: 그 역의 읽기 ふくしままち를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_ube_kami_kagawa_fukamizo",
+"new": "a_suouesaki",
+"why": "열람 전용 周防江崎: 그 역의 읽기 すおうえさき를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{
+"kind": "rename",
+"old": "a_uonuma_kowada_uonuma_nishi_ojiya",
+"new": "a_hirasawa",
+"why": "열람 전용 平沢: 그 역의 읽기 ひらさわ를 근거(archive_fix·node_fix 행의 why)로 찾아 자리 ID(DESIGN §2.10)가 읽기 로마자 ID로 바뀜 (10회차 D3 2026-11-16)"
+},
+{"kind": "rename", "old": "a_kitagata_jono_nishi_nippon_second", "new": "a_kitagata_mihagino_katano_nishi_nippon", "why": "北方線 片野本町: 앞뒤 역(三萩野–片野)을 채워 자리 ID가 바뀜 (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "rename", "old": "a_kitagata_jono_nishi_nippon_third", "new": "a_edamitsu_saiwaimachi_aso", "why": "郡道筋: 北方線이 아니라 枝光線(幸町–浅生) 정류장이라 옮겨 자리 ID가 바뀜 (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "rename", "old": "a_kitagata_jono_nishi_nippon_fourth", "new": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "why": "北方線 記念館前: 뒤 역(北方車庫前)·km 3.5를 채워 자리 ID가 바뀜 (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "rename", "old": "a_kitakyushu_moji_nishi_nippon_okura", "new": "a_kitakyushu_uomachi_muromachi", "why": "北九州線 勝山橋: 門司–大蔵가 아니라 魚町–室町 사이라 자리 ID가 바뀜 (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "merge", "old": "a_kitakyushu_orio_nishi_nippon", "new": "a_kitagata_mihagino_katano_nishi_nippon", "why": "北九州線 계통 끝 折尾 뒤로 번진 片野本町 중복이 빠짐(北方線 행이 맡음) (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "merge", "old": "a_kitakyushu_orio_nishi_nippon_second", "new": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "why": "北九州線 계통 끝 折尾 뒤로 번진 記念館前 중복이 빠짐(北方線 행이 맡음) (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "merge", "old": "a_kitakyushu_orio_nishi_nippon_third", "new": "a_edamitsu_saiwaimachi_aso", "why": "北九州線 계통 끝 折尾 뒤로 번진 郡道筋 중복이 빠짐(枝光線 행이 맡음) (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
+{"kind": "rename", "old": "a_hosshoji_electric_railway_hosshoji_second", "new": "a_mori_aga", "why": "与一谷: 法勝寺電鉄 母里支線 역(위키 日ノ丸自動車法勝寺電鉄線 rev109457516 「猪小路 - 母里間にはかつて与一谷・不動尊の各駅が存在した」)을 本線 法勝寺 뒤에서 열람 전용 노선 母里線으로 옮겨 자리 ID(a_<노선>_<앞 역>)가 바뀜 (11회차 S2 2026-11-16, audit4 chugoku_shikoku_1-014)"},
+{"kind": "rename", "old": "a_hosshoji_electric_railway_hosshoji", "new": "a_mori_aga_second", "why": "不動尊: 法勝寺電鉄 母里支線 역(위키 日ノ丸自動車法勝寺電鉄線 rev109457516 「猪小路 - 母里間にはかつて与一谷・不動尊の各駅が存在した」)을 本線 法勝寺 뒤에서 열람 전용 노선 母里線으로 옮겨 자리 ID(a_<노선>_<앞 역>)가 바뀜 (11회차 S2 2026-11-16, audit4 chugoku_shikoku_1-014)"},
+{"kind": "merge", "old": "n_zeze_kojaku", "new": "n_zeze", "why": "江若 膳所 노드는 江若 열차가 乗り入れ한 国鉄 膳所(같은 역). 膳所–浜大津을 국철 지선 계통으로 옮겨 江若 노선에서 빠짐 (11회차 R 확정·S2 2026-11-16)"}
+]
+}

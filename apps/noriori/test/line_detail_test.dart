@@ -5,6 +5,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -22,6 +23,7 @@ import 'package:noriori/features/record/controller/service_session_controller.da
 import 'package:noriori/features/record/ui/complete_card.dart';
 import 'package:noriori/features/record/ui/line_detail_screen.dart';
 import 'package:noriori/features/record/ui/service_session_screen.dart';
+import 'package:noriori/features/data/controller/deleted_controller.dart';
 import 'package:noriori/features/record/controller/trip_controller.dart';
 import 'package:noriori/features/stats/controller/remaining_controller.dart';
 import 'package:noriori/i18n/strings.g.dart';
@@ -40,22 +42,28 @@ final class _FileAssets implements PackAssets {
 }
 
 final class _Rig {
-  _Rig(this.session, this.network, this.names);
+  _Rig(this.session, this.network, this.books);
 
   final AppSession session;
   final Network network;
-  final NameBook names;
+
+  /// 언어마다 노선·역 이름이 다르다. 전수 화면 점검은 세 언어로 돈다
+  final Map<AppLocale, NameBook> books;
+  NameBook get names => books[AppLocale.ko]!;
 
   Future<List<Ride>> rides() => session.records.allRides();
 
   String line(String name) => names.lines.entries.firstWhere((e) => e.value == name).key;
 
-  ProviderContainer container({FileShare? share}) => ProviderContainer(
+  /// [net]을 주면 그 선로망을 쓴다. 판 데이터에 없는 운행 계통 판을 시험할 때다.
+  ProviderContainer container({FileShare? share, Network? net, AppLocale locale = AppLocale.ko}) => ProviderContainer(
         overrides: [
           if (share != null) fileShareProvider.overrideWithValue(share),
           sessionProvider.overrideWithValue(session),
-          networkProvider.overrideWithValue(network),
-          nameBookProvider.overrideWithValue(names),
+          networkProvider.overrideWithValue(net ?? network),
+          nameBookProvider.overrideWithValue(books[locale]!),
+          if (locale != AppLocale.ko)
+            packReaderProvider.overrideWithValue(PackReader(session.db, languages: nameLanguages(locale))),
           editionProvider.overrideWithValue(session.pack.edition),
           todayProvider.overrideWithValue('2026-11-02'),
         ],
@@ -92,7 +100,7 @@ final class _Rig {
 Future<_Rig> _open() async {
   final dir = Directory.systemTemp.createTempSync('line');
   Network? network;
-  NameBook? names;
+  Map<AppLocale, NameBook>? books;
   final outcome = await ColdStart(
     paths: StorePaths(dir),
     assets: _FileAssets(),
@@ -101,20 +109,22 @@ Future<_Rig> _open() async {
     connect: openDirect,
     interpreter: (db) async {
       network = Network(await NetworkReader(db).read());
-      names = await PackReader(db).nameBook();
+      books = {
+        for (final locale in AppLocale.values) locale: await PackReader(db, languages: nameLanguages(locale)).nameBook(),
+      };
       return RideInterpreter(network!);
     },
     now: () => DateTime.now().millisecondsSinceEpoch,
   ).run();
-  return _Rig((outcome as StartReady).session, network!, names!);
+  return _Rig((outcome as StartReady).session, network!, books!);
 }
 
-Widget _app(ProviderContainer container, String lineId) => TranslationProvider(
+Widget _app(ProviderContainer container, String lineId, {AppLocale locale = AppLocale.ko}) => TranslationProvider(
       child: UncontrolledProviderScope(
         container: container,
         child: MaterialApp.router(
           theme: appTheme(Brightness.light),
-          locale: const Locale('ko'),
+          locale: Locale(locale.languageCode),
           supportedLocales: AppLocaleUtils.supportedLocales,
           localizationsDelegates: GlobalMaterialLocalizations.delegates,
           routerConfig: GoRouter(
@@ -266,6 +276,51 @@ void main() {
     expect(ok, greaterThan(1500));
   });
 
+  test('날짜 없는 中央本線 上諏訪→勝川은 어느 구간을 꺼도 같은 선형으로 남는다', skip: _skip, () {
+    // みどり湖 쪽(1983~)이 田立 새 선형을 정한다. 그쪽을 끄면 남은 조각이 옛 田立 선형도 묻는다 (판 2026-11-11.5)
+    final network = rig.network;
+    final interpreter = RideInterpreter(network);
+    const ride = Ride(
+      rideId: RideId('chuo'),
+      legs: [
+        RideLeg(
+          seq: 0,
+          lineId: LineId('l_chuo_main_line'),
+          routeId: RouteId('r_chuo_main_line'),
+          fromNode: NodeId('n_kami_suwa'),
+          toNode: NodeId('n_kachigawa'),
+          lineLabel: 'l',
+          fromLabel: 'a',
+          toLabel: 'b',
+        ),
+      ],
+      datasetVersion: 'v',
+      createdAt: 1,
+      updatedAt: 1,
+      deviceId: 'd',
+    );
+    final derived = interpreter.ride(ride);
+    final want = [for (final e in derived.edges) e.edge]..sort();
+    expect(want.length, 37);
+    for (final hit in derived.edges) {
+      var next = 0;
+      final outcome = cutSection(
+        ride,
+        network,
+        offUnits: {hit.unitOn},
+        carryover: true,
+        nameOf: (node) => node,
+        newId: () => 'n${next++}',
+        now: 5,
+      );
+      expect(outcome, isA<CutDone>(), reason: '${hit.edge}');
+      final all = <int>[
+        for (final piece in (outcome as CutDone).after) ...interpreter.ride(piece).edges.map((e) => e.edge),
+      ];
+      expect(all..sort(), want);
+    }
+  });
+
   test('모든 노선의 노선도가 표시 역 사이 구간을 빠짐없이 만든다', skip: _skip, () {
     final network = rig.network;
     var empty = 0;
@@ -293,7 +348,7 @@ void main() {
     expect(empty, 0);
   });
 
-  test('연도나 연대만 아는 날짜도 운전 계통은 질문 없이 펼쳐진다', skip: _skip, () {
+  test('연도나 연대만 아는 날짜도 운행 계통은 질문 없이 펼쳐진다', skip: _skip, () {
     final network = rig.network;
     final splitter = ServiceSplitter(network);
     final interpreter = RideInterpreter(network);
@@ -328,19 +383,21 @@ void main() {
       }
     }
     // ignore: avoid_print
-    print('운전 계통 날짜 범위: $tried조합, 질문 필요 ${asked.length} ${asked.take(10)}');
+    print('운행 계통 날짜 범위: $tried조합, 질문 필요 ${asked.length} ${asked.take(10)}');
     expect(asked, isEmpty, reason: '이설 질문이 필요해지면 저장 화면에 답을 넣어야 한다');
   });
 
-  test('운전 계통은 어느 두 역을 골라도 공식 구간으로 나뉘어 펼쳐진다', skip: _skip, () {
+  test('운행 계통은 어느 두 역을 골라도 공식 구간으로 나뉘어 펼쳐진다', skip: _skip, () {
     final network = rig.network;
     final splitter = ServiceSplitter(network);
     final interpreter = RideInterpreter(network);
     final bad = <String>[];
     var ok = 0;
+    var asked = 0;
     for (final service in network.data.services) {
       final stops = splitter.stops(service, null);
-      expect(stops.length, greaterThan(2), reason: service.id);
+      // 羽衣線(鳳~東羽衣)처럼 두 역뿐인 계통도 있다
+      expect(stops.length, greaterThanOrEqualTo(2), reason: service.id);
       for (var a = 0; a < stops.length; a += 3) {
         for (var b = 0; b < stops.length; b += 4) {
           if (stops[a].node == stops[b].node) continue;
@@ -367,7 +424,17 @@ void main() {
                     now: 1,
                   );
             if (ride == null) {
-              if (bad.length < 12) bad.add('${service.id} ${stops[a].node}~${stops[b].node}');
+              // 날짜를 모르는데 이설 구간을 지나면 길을 묻는다. 화면은 저장하고 수정 화면에서 답한다 (DESIGN §2.8 needs_input)
+              final status = legs == null
+                  ? null
+                  : interpreter
+                      .ride(Ride(rideId: const RideId('q'), legs: legs, datasetVersion: '', createdAt: 0, updatedAt: 0, deviceId: ''))
+                      .status;
+              if (status == ResolveStatus.needsInput) {
+                asked++;
+                continue;
+              }
+              if (bad.length < 12) bad.add('${service.id} ${stops[a].node}~${stops[b].node} $status');
               continue;
             }
             expect(interpreter.ride(ride).edges, isNotEmpty);
@@ -377,7 +444,7 @@ void main() {
       }
     }
     // ignore: avoid_print
-    print('운전 계통: 일치 $ok, 실패 ${bad.length} $bad');
+    print('운행 계통: 일치 $ok, 길 질문 $asked, 실패 ${bad.length} $bad');
     expect(bad, isEmpty);
   });
 
@@ -404,7 +471,7 @@ void main() {
     expect([for (final row in rows) row.km10], [13, 83, 7]);
   });
 
-  testWidgets('운전 계통을 검색해서 두 역을 고르면 분해를 보여 주고 공식 구간으로 저장한다', skip: _skip != null, (tester) async {
+  testWidgets('운행 계통을 검색해서 두 역을 고르면 분해를 보여 주고 공식 구간으로 저장한다', skip: _skip != null, (tester) async {
     tester.view.physicalSize = const Size(1170, 2532);
     tester.view.devicePixelRatio = 3;
     addTearDown(tester.view.reset);
@@ -505,6 +572,44 @@ void main() {
         other!.withDeletedAt(99999999),
         kept!.withDeletedAt(99999999),
       ]));
+    });
+  }, skip: _skip != null);
+
+  testWidgets('삭제한 기록에는 역 방문도 나오고 여정째 지운 기록을 되살리면 여정도 돌아온다', (tester) async {
+    final container = rig.container();
+    addTearDown(container.dispose);
+    await tester.runAsync(() async {
+      await container.read(deviceIdProvider.future);
+      final lineId = rig.line('야마노테선');
+      final a = rig.ride('gone-a', lineId, 0, 2);
+      final b = rig.ride('gone-b', lineId, 3, 5);
+      final visit = Visit(
+        visitId: const VisitId('gone-visit'),
+        nodeId: a.legs.first.fromNode,
+        nodeLabel: a.legs.first.fromLabel,
+        nodeExplicit: true,
+        createdAt: 1,
+        updatedAt: 1,
+        deviceId: 'test',
+        deletedAt: 5,
+      );
+      final records = rig.session.records;
+      await records.apply(Change(before: const [], after: [a, b, visit]));
+      final trips = container.read(tripCommandsProvider);
+      await trips.make('지운 여행', [a.rideId, b.rideId]);
+      final trip = (await container.read(recordQueriesProvider).watchTrips().first).singleWhere((t) => t.title == '지운 여행');
+      await trips.deleteWithRides(trip.tripId);
+      final listed = await container.read(deletedRecordsProvider.future);
+      expect(listed.whereType<Visit>().map((v) => v.visitId), contains(visit.visitId));
+      expect(listed.whereType<Ride>().map((r) => r.rideId), containsAll([a.rideId, b.rideId]));
+      final commands = container.read(deletedCommandsProvider);
+      await commands.restore((await records.ride(a.rideId))!);
+      expect((await records.trip(trip.tripId))!.isDeleted, isFalse, reason: '여정 없이 살아나면 묶음이 사라진다');
+      expect((await records.ride(a.rideId))!.isDeleted, isFalse);
+      await commands.restore((await records.visit(visit.visitId))!);
+      expect((await records.visit(visit.visitId))!.isDeleted, isFalse);
+      final now = [await records.ride(a.rideId), await records.ride(b.rideId), await records.trip(trip.tripId), await records.visit(visit.visitId)];
+      await records.apply(Change(before: [for (final r in now) r!], after: [for (final r in now) r!.withDeletedAt(99999999)]));
     });
   }, skip: _skip != null);
 
@@ -615,14 +720,19 @@ void main() {
 
   test('두 역을 노선을 넘어 잇고 구간마다 재해석된다', skip: _skip, () {
     final network = rig.network;
+    final day = DateSpan.parse('2026-11-02');
     final interpreter = RideInterpreter(network);
     final stops = [
       for (final route in network.routes.values)
         if (route.role == 'main')
-          ...network.stops(route.id).where((stop) => stop.isStop && network.isShown(stop.node)).map((stop) => stop.node),
+          // 그날 영업하는 역만 고른다. 폐역끼리는 그날 잇는 길이 없어 길찾기를 시험하지 못한다
+          ...network
+              .stops(route.id)
+              .where((stop) =>
+                  stop.isStop && network.isShown(stop.node) && stateOfPeriod(day, stop.period) == PeriodState.yes)
+              .map((stop) => stop.node),
     ].toList();
     final random = math.Random(7);
-    final day = DateSpan.parse('2026-11-02');
     var found = 0;
     final watch = Stopwatch()..start();
     for (var run = 0; run < 60; run++) {
@@ -784,8 +894,12 @@ void main() {
       final done = outcome! as SaveDone;
       final ride = done.change.after.single as Ride;
       expect(ride.legs.length, preview.legs.length, reason: branch.id);
-      expect(interpreter.ride(ride).status, ResolveStatus.ok, reason: branch.id);
-      expect((interpreter.ride(ride).km10 ?? 0) * 100, closeTo(preview.meters!, 100), reason: branch.id);
+      // 날짜 모름으로 옛 경로가 따로 있는 구간(東北本線 옛 千曳)을 지나면 경로를 되묻는다 (ARCHITECTURE §7.2)
+      final status = interpreter.ride(ride).status;
+      expect(status, anyOf(ResolveStatus.ok, ResolveStatus.needsInput), reason: branch.id);
+      if (status == ResolveStatus.ok) {
+        expect((interpreter.ride(ride).km10 ?? 0) * 100, closeTo(preview.meters!, 100), reason: branch.id);
+      }
       await tester.runAsync(
         () => rig.session.records.apply(Change(before: [ride], after: [ride.withDeletedAt(9999999)])),
       );
@@ -837,6 +951,8 @@ void main() {
     session.tap(row);
     session.pickLap();
     session.setLaps(2);
+    await tester.runAsync(() => session.setDate(null));
+    expect(container.read(recordSessionProvider).laps, 2, reason: '날짜만 바꾸면 바퀴 수를 그대로 둔다');
     final outcome = (await tester.runAsync(session.save))!;
     expect(outcome, isA<SaveDone>());
     final done = outcome as SaveDone;
@@ -849,7 +965,7 @@ void main() {
     );
   });
 
-  testWidgets('운전 계통 고리는 짧은 쪽이 기본이고 한 바퀴와 횟수를 저장하며 없던 날은 못 고른다', skip: _skip != null, (tester) async {
+  testWidgets('운행 계통 고리는 짧은 쪽이 기본이고 한 바퀴와 횟수를 저장하며 없던 날은 못 고른다', skip: _skip != null, (tester) async {
     final container = rig.container();
     addTearDown(container.dispose);
     final sub = container.listen(serviceSessionProvider, (_, _) {});
@@ -910,6 +1026,106 @@ void main() {
     state = container.read(serviceSessionProvider);
     expect(state.dateInput, '1949-05-05');
     expect(state.to?.node, picked.to?.node);
+  });
+
+  testWidgets('이름이 공식 노선과 같은 운행 계통은 검색 결과에 범위를 붙인다', skip: _skip != null, (tester) async {
+    final container = rig.container();
+    addTearDown(container.dispose);
+    final hits = (await tester.runAsync(() => container.read(lineSearchProvider('高崎線').future)))!;
+    final service = hits.singleWhere((row) => row.serviceId == 's_takasaki');
+    final line = hits.firstWhere((row) => row.lineId == 'l_takasaki_line');
+    expect(service.title, isNot(line.title));
+    expect(service.title, startsWith(line.title));
+    expect(service.title, contains('~'));
+  });
+
+  testWidgets('운행 계통 화면은 탑승일 판의 정차역만 보이고 저장 분해와 km는 공식 노선 전체다', skip: _skip != null, (tester) async {
+    // 판 데이터에 정차역이 아직 없어 츄오 쾌속선에 가짜 두 판을 둔다. 1986년 판은 代々木(노선이 바뀌는 역)에 서지 않는다
+    final real = rig.network.data.services.firstWhere((s) => s.id == 's_chuo_rapid');
+    final fake = NetService(id: real.id, closed: real.closed, editions: [
+      NetServiceEdition(
+        validFrom: '1980-01-01',
+        validTo: '1986-03-03',
+        parts: real.parts,
+        stops: const {'n_tokyo', 'n_shinjuku', 'n_takao'},
+      ),
+      NetServiceEdition(
+        validFrom: '1986-03-03',
+        validTo: 'ongoing',
+        parts: real.parts,
+        stops: const {'n_tokyo', 'n_kanda_chuo_main', 'n_ochanomizu', 'n_yotsuya', 'n_shinjuku', 'n_takao'},
+      ),
+    ]);
+    final data = rig.network.data;
+    final network = Network(NetworkData(
+      routes: data.routes,
+      edges: data.edges,
+      routeEdges: data.routeEdges,
+      stops: data.stops,
+      attrs: data.attrs,
+      lives: data.lives,
+      units: data.units,
+      publicNodes: data.publicNodes,
+      nodeGroups: data.nodeGroups,
+      groupNumbers: data.groupNumbers,
+      services: [for (final s in data.services) s.id == fake.id ? fake : s],
+      operators: data.operators,
+      lineOrder: data.lineOrder,
+      edgePrefs: data.edgePrefs,
+      eraMeters: data.eraMeters,
+    ));
+    final container = rig.container(net: network);
+    addTearDown(container.dispose);
+    final sub = container.listen(serviceSessionProvider, (_, _) {});
+    addTearDown(sub.close);
+    final notifier = container.read(serviceSessionProvider.notifier);
+    await tester.runAsync(() => notifier.open('s_chuo_rapid'));
+    var state = container.read(serviceSessionProvider);
+    List<String> nodes(List<ServiceStop> stops) => [for (final stop in stops) stop.node];
+    expect(nodes(state.stops), ['n_tokyo', 'n_kanda_chuo_main', 'n_ochanomizu', 'n_yotsuya', 'n_shinjuku', 'n_takao']);
+    expect(state.all.length, greaterThan(state.stops.length));
+    ServiceStop at(String node) => container.read(serviceSessionProvider).stops.firstWhere((s) => s.node == node);
+    notifier.tap(at('n_tokyo'));
+    // 거리 힌트도 서는 역만 센다
+    expect(container.read(serviceSessionProvider).stopsAway(at('n_shinjuku')), 4);
+    notifier.tap(at('n_shinjuku'));
+    state = container.read(serviceSessionProvider);
+    expect(nodes(state.path), ['n_tokyo', 'n_kanda_chuo_main', 'n_ochanomizu', 'n_yotsuya', 'n_shinjuku']);
+    expect(state.covers(3), isTrue);
+    expect(state.covers(4), isFalse);
+    // 서지 않는 代々木에서도 노선이 바뀐다. 모든 역에 서던 옛 동작과 분해·km가 같다
+    expect([for (final leg in state.legs!) leg.routeId.value], [
+      'r_tohoku_main_line',
+      'r_chuo_main_line_kanda_yoyogi',
+      'r_yamanote_line',
+    ]);
+    expect([for (final row in state.summary) row.km10], [13, 83, 7]);
+    final splitter = ServiceSplitter(rig.network);
+    final old = splitter.stops(real, null);
+    final oldLegs = splitter.legs(real, old, old.firstWhere((s) => s.node == 'n_tokyo'), old.firstWhere((s) => s.node == 'n_shinjuku'),
+        date: null, lineName: (id) => id, nodeName: (node) => node)!;
+    expect([for (final leg in state.legs!) (leg.routeId, leg.fromNode, leg.toNode)],
+        [for (final leg in oldLegs) (leg.routeId, leg.fromNode, leg.toNode)]);
+    expect(state.meters, interpreter(rig.network, oldLegs).km10! * 100);
+
+    // 1985년이면 1985년 판의 정차역이다. 고른 두 역이 그 판에도 서므로 날짜를 받는다
+    expect(notifier.setDate('1985-06-01'), isFalse);
+    state = container.read(serviceSessionProvider);
+    expect(nodes(state.stops), ['n_tokyo', 'n_shinjuku', 'n_takao']);
+    expect(state.from?.node, 'n_tokyo');
+    expect(state.to?.node, 'n_shinjuku');
+    expect(state.legs, hasLength(3));
+    // 어느 판에도 없는 날짜는 받지 않는다
+    expect(notifier.setDate('1975-01-01'), isTrue);
+    expect(container.read(serviceSessionProvider).dateInput, '1985-06-01');
+    notifier.clear();
+    notifier.setDate('1975-01-01');
+    state = container.read(serviceSessionProvider);
+    expect(state.open, isEmpty, reason: '그 날짜에 운행하지 않던 운행 계통');
+    expect(nodes(state.stops), hasLength(6), reason: '화면은 마지막 판을 그린다');
+    // 날짜 모름이면 지금 판이다
+    notifier.setDate(null);
+    expect(nodes(container.read(serviceSessionProvider).stops), hasLength(6));
   });
 
   testWidgets('분기로 넘어가면 고른 역이 지워지고 뒤로 가면 직전 노선으로 돌아온다', skip: _skip != null, (tester) async {
@@ -1093,4 +1309,73 @@ void main() {
       expect(tester.takeException(), isNull);
     });
   });
+
+  // 전수 화면 점검: 모든 노선의 노선 상세(노선도)를 좁은 폰·큰 글자로 끝까지 내려 그리기 오류와 화면에 새어 나온 ID가 없는지 본다.
+  // 오래 걸려 FULL_RENDER=1일 때만 돈다
+  final full = Platform.environment['FULL_RENDER'] == '1' ? null : 'FULL_RENDER=1일 때만';
+  // 영어는 글이 길어 넘치기 쉽다. 세 언어 모두 좁은 폰·큰 글자로 본다 (사용자 지시 2026-11-12)
+  for (final (width, scale, locale) in const [
+    (390.0, 1.0, AppLocale.ko),
+    (360.0, 1.3, AppLocale.ko),
+    (390.0, 1.0, AppLocale.en),
+    (360.0, 1.3, AppLocale.en),
+    (360.0, 1.3, AppLocale.ja),
+  ]) {
+    testWidgets('전수: 모든 노선의 노선 상세를 끝까지 내려도 그리기 오류와 ID 노출이 없다 (폭 $width, 글자 $scale배, ${locale.languageCode})',
+        skip: _skip != null || full != null, (tester) async {
+      LocaleSettings.setLocaleSync(locale);
+      addTearDown(() => LocaleSettings.setLocaleSync(AppLocale.ko));
+      if (Platform.environment['FULL_RENDER_VERBOSE'] == '1') {
+        final previous = FlutterError.onError;
+        FlutterError.onError = (details) {
+          // ignore: avoid_print
+          print(details.toString());
+          previous?.call(details);
+        };
+        addTearDown(() => FlutterError.onError = previous);
+      }
+      tester.view.physicalSize = Size(width * 3, 844 * 3);
+      tester.view.devicePixelRatio = 3;
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      addTearDown(tester.view.reset);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final idLike = RegExp(r'\b[nrlega]_[a-z0-9_]{3,}\b');
+      final failures = <String>[];
+      var screens = 0;
+      final only = Platform.environment['FULL_RENDER_LINE'];
+      final lines = {for (final route in rig.network.routes.values) route.lineId}.where((l) => only == null || l == only).toList()..sort();
+      for (final lineId in lines) {
+        final container = rig.container(locale: locale);
+        await tester.pumpWidget(_app(container, lineId, locale: locale));
+        await _frames(tester, 12);
+        Object? error = tester.takeException();
+        String? leaked;
+        void look() {
+          for (final paragraph in tester.allRenderObjects.whereType<RenderParagraph>()) {
+            final match = idLike.firstMatch(paragraph.text.toPlainText());
+            if (match != null) leaked ??= match.group(0);
+          }
+        }
+        look();
+        final list = find.byType(Scrollable);
+        for (var step = 0; error == null && list.evaluate().isNotEmpty && step < 150; step++) {
+          final scrollable = tester.state<ScrollableState>(list.first);
+          if (scrollable.position.pixels >= scrollable.position.maxScrollExtent) break;
+          await tester.drag(list.first, const Offset(0, -600), warnIfMissed: false);
+          await _frames(tester, 3);
+          error = tester.takeException();
+          look();
+        }
+        screens++;
+        if (error != null) failures.add('$lineId: ${'$error'.split('\n').first}');
+        if (leaked != null) failures.add('$lineId: 화면에 ID $leaked');
+        await tester.pumpWidget(const SizedBox());
+        container.dispose();
+      }
+      await tester.pump(const Duration(seconds: 10));
+      // ignore: avoid_print
+      print('노선 상세 $screens개, 문제 ${failures.length}');
+      expect(failures, isEmpty, reason: failures.take(40).join('\n'));
+    }, timeout: const Timeout(Duration(hours: 1)));
+  }
 }

@@ -15,12 +15,11 @@ final class StopPick {
 
 /// 고른 경로가 지나는 줄. 순환 계통의 짧은 쪽은 seq 끝을 넘으므로 범위로 셀 수 없다.
 final class PickedPath {
-  const PickedPath({required this.stops, required this.above, required this.below});
+  const PickedPath({required this.stops, required this.below});
 
   final Set<int> stops;
 
-  /// 위쪽, 아래쪽 선이 경로에 드는 줄의 seq.
-  final Set<int> above;
+  /// 아래쪽 선이 경로에 드는 줄의 seq.
   final Set<int> below;
 
   factory PickedPath.of(List<SelectorRow> rows, List<String> nodes) {
@@ -30,20 +29,15 @@ final class PickedPath {
     final joined = {
       for (var i = 0; i + 1 < walked.length; i++) pair(walked[i], walked[i + 1]),
     };
-    final above = <int>{};
-    final below = <int>{};
-    for (var i = 0; i + 1 < rows.length; i++) {
-      if (joined.contains(pair(rows[i].node, rows[i + 1].node))) {
-        below.add(rows[i].seq);
-        above.add(rows[i + 1].seq);
-      }
-    }
+    final below = <int>{
+      for (var i = 0; i + 1 < rows.length; i++)
+        if (joined.contains(pair(rows[i].node, rows[i + 1].node))) rows[i].seq,
+    };
     return PickedPath(
       stops: {
         for (final row in rows)
           if (nodes.contains(row.node)) row.seq,
       },
-      above: above,
       below: below,
     );
   }
@@ -63,7 +57,11 @@ final class RecordSessionState {
     this.openGaps = const [],
     this.names = const {},
     this.japanese = const {},
+    this.readings = const {},
+    this.pastMarks = const {},
     this.archiveNames = const {},
+    this.stopDirections = const {},
+    this.oneWayGaps = const [],
     this.preview,
     this.ridePreview,
     this.path,
@@ -98,7 +96,19 @@ final class RecordSessionState {
 
   /// 역 이름 곁에 작게 적는 일본어 이름.
   final Map<String, String> japanese;
+
+  /// 일본어판에서 역 이름 옆에 다는 읽기(히라가나). 다른 언어판과 읽기 근거가 없는 역은 비어 있다
+  final Map<String, String> readings;
+
+  /// 날짜 모름일 때 예전에만 仮乗降場·臨時駅이었던 역 → kari·rinji (작은 표식).
+  final Map<String, String> pastMarks;
   final Map<String, String> archiveNames;
+
+  /// 그날 한 방향 열차만 서는 역 줄(순번) → 그 행 (DESIGN §8 한 방향 정차).
+  final Map<int, NetStopDirection> stopDirections;
+
+  /// 보이는 역 사이가 그날 한 방향이면 그 방향. 참이면 목록 아래로, 거짓이면 위로 간다 (DESIGN §8 한 방향 운행).
+  final List<bool?> oneWayGaps;
 
   /// 두 역을 고르면 만들어지는 펼친 결과.
   final Expansion? preview;
@@ -127,6 +137,9 @@ final class RecordSessionState {
   /// 분기로 넘어온 횟수. 0이 아니면 뒤로 가기가 직전 노선으로 돌아간다.
   final int depth;
 
+  /// 고른 두 역 중 하나의 km가 추정값이다. 승차 km를 `?`로 보인다 (DESIGN §4.5).
+  bool get kmEstimated => rows.any((row) => row.kmEstimated && (row.seq == from?.seq || row.seq == to?.seq));
+
   RecordSessionState copyWith({
     String? dateInput,
     bool clearDate = false,
@@ -139,7 +152,11 @@ final class RecordSessionState {
     List<bool>? openGaps,
     Map<String, String>? names,
     Map<String, String>? japanese,
+    Map<String, String>? readings,
+    Map<String, String>? pastMarks,
     Map<String, String>? archiveNames,
+    Map<int, NetStopDirection>? stopDirections,
+    List<bool?>? oneWayGaps,
     Expansion? preview,
     RidePreview? ridePreview,
     PickedPath? path,
@@ -160,7 +177,11 @@ final class RecordSessionState {
         openGaps: openGaps ?? this.openGaps,
         names: names ?? this.names,
         japanese: japanese ?? this.japanese,
+        readings: readings ?? this.readings,
+        pastMarks: pastMarks ?? this.pastMarks,
         archiveNames: archiveNames ?? this.archiveNames,
+        stopDirections: stopDirections ?? this.stopDirections,
+        oneWayGaps: oneWayGaps ?? this.oneWayGaps,
         preview: clearPicks ? null : preview ?? this.preview,
         ridePreview: clearPicks ? null : ridePreview ?? this.ridePreview,
         path: clearPicks ? null : path ?? this.path,
@@ -180,15 +201,6 @@ final class RecordSessionState {
     return a != null && b != null && seq > min(a, b) && seq < max(a, b);
   }
 
-  /// 이 역 위쪽 선이 고른 구간에 드는가.
-  bool coversAbove(int seq) {
-    final known = path;
-    if (known != null) return known.above.contains(seq);
-    final a = from?.seq;
-    final b = to?.seq;
-    return a != null && b != null && seq > min(a, b) && seq <= max(a, b);
-  }
-
   /// 이 역 아래쪽 선이 고른 구간에 드는가.
   bool coversBelow(int seq) {
     final known = path;
@@ -199,6 +211,13 @@ final class RecordSessionState {
   }
 
   String nameOf(String node) => names[node] ?? node;
+
+  /// 연결 줄의 상대 역 이름. 끝난 연결이면 그 연결이 끝난 날 전날, 상대 노선의 이름이다 (4회차 kyushu_2-007)
+  String linkNameOf(SelectorLink link, String node) {
+    final raw = dateInput;
+    final day = endedLinkNameDay(link, raw == null ? null : DateSpan.parse(raw));
+    return (day == null ? null : names[endedLinkNameKey(node, link.otherLineId, day)]) ?? nameOf(node);
+  }
 
   /// 출발역을 고른 뒤 도착역 후보까지 몇 역인가 (DESIGN §1.5). 고를 수 있는 역만 센다.
   int? stopsAway(SelectorRow row) {
@@ -238,6 +257,7 @@ final class RideTicketData {
     required this.toName,
     required this.dateInput,
     required this.meters,
+    this.kmEstimated = false,
     this.before,
     this.after,
   });
@@ -247,6 +267,9 @@ final class RideTicketData {
   final String toName;
   final String? dateInput;
   final int meters;
+
+  /// 탄 역이나 내린 역의 km가 추정값이다 (DESIGN §4.5).
+  final bool kmEstimated;
   final Score? before;
   final Score? after;
 
@@ -316,6 +339,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     required String lineId,
     String? routeId,
     String? fromNode,
+    String? focusNode,
     bool dateUnknown = false,
   }) async {
     final route = routeId ?? _mainRoute(lineId);
@@ -330,6 +354,12 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     );
     await _refresh();
     _pickNode(fromNode);
+    // 열람 전용을 찾아 왔으면 고르지 않고 그 자리로만 옮긴다
+    if (focusNode != null) {
+      for (final row in state.rows) {
+        if (row.node == focusNode) state = state.copyWith(focus: row.seq);
+      }
+    }
   }
 
   void _pickNode(String? node) {
@@ -337,7 +367,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     for (final row in state.rows) {
       if (row.node == node && row.selectable) {
         state = state.copyWith(focus: row.seq);
-        return tap(row);
+        tap(row);
+        return;
       }
     }
   }
@@ -378,6 +409,13 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     if (!canOpen(lineId)) return;
     _trail.add((lineId: state.lineId!, routeId: state.routeId!, node: at.node));
     await _move(lineId!, link.otherRouteId ?? _mainRoute(lineId), at.node);
+  }
+
+  /// 이관 구간의 구분선에서 이어받은 노선으로 넘어간다 (DESIGN §8.0.1). [node] 역으로 스크롤한다.
+  Future<void> jumpToLine(String lineId, String node) async {
+    if (!canOpen(lineId)) return;
+    _trail.add((lineId: state.lineId!, routeId: state.routeId!, node: node));
+    await _move(lineId, _mainRoute(lineId), node);
   }
 
   /// 넘어온 노선으로 돌아간다. 돌아갈 곳이 없으면 거짓이다.
@@ -463,7 +501,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
         updatedAt: 0,
         deviceId: '',
         dateInput: state.dateInput,
-        legs: from.seq == _carried
+        legs: _isAcross(from, to)
             ? [
                 for (final (seq, leg) in result.legs.indexed)
                   RideLeg(
@@ -509,7 +547,18 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final network = _network;
     final today = ref.read(todayProvider);
     final builder = SelectorBuilder(network);
-    final rows = builder.build(routeId, date, links: await reader.routeLinks(routeId));
+    // 이관 구간 안은 이어받은 노선의 그날 역·환승·분기로 채운다 (DESIGN §8.0.1 B안)
+    final rows = builder.fillHanded(
+      routeId,
+      builder.build(
+        routeId,
+        date,
+        links: await reader.routeLinks(routeId, carryover: options.carryover),
+        carryoverStops: options.carryover ? await reader.carryoverStops(routeId) : const {},
+      ),
+      date,
+      links: {for (final other in builder.handRoutes(routeId)) other: await reader.routeLinks(other)},
+    );
     final rules = DisplayRules(network, today: today);
     final visible = rules.visible(rows, options);
     final openGaps = builder.openBetween(routeId, visible, date);
@@ -519,6 +568,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
         : openGaps;
     final stops = await reader.archiveStops(routeId);
     final branches = await reader.archiveBranches(rows.map((row) => row.node));
+    final parallels = await reader.routeParallels(routeId);
     final lines = rules.lines(
       lineId: state.lineId!,
       rows: visible,
@@ -528,9 +578,13 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       archiveStops: stops,
       archiveBranches: branches,
       sectionGaps: sectionGaps,
+      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today)),
       undated: date == null,
+      parallels: parallels,
+      date: date,
     );
     final ids = <String>{
+      for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],
       for (final row in rows) row.node,
       for (final row in rows)
         for (final link in [...row.links, ...row.goneLinks]) ...[
@@ -539,28 +593,64 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
           ?link.terminal,
         ],
     };
-    final names = await reader.nodeNames(ids, lineId: state.lineId, date: date?.lo);
+    final names = {...await reader.nodeNames(ids, lineId: state.lineId, routeId: routeId, date: date?.lo)};
+    // 끝난 연결 줄의 상대 역은 그 연결이 끝난 날 전날, 상대 노선의 이름이다 (4회차 kyushu_2-007: 臼ノ浦線 「松浦線 다음 上佐々」)
+    final endedIds = <(String?, String), Set<String>>{};
+    for (final row in rows) {
+      for (final link in [...row.links, ...row.goneLinks]) {
+        final day = endedLinkNameDay(link, date);
+        if (day == null) continue;
+        (endedIds[(link.otherLineId, day)] ??= {}).addAll([?link.otherNode, ?link.nextStop, ?link.terminal]);
+      }
+    }
+    for (final MapEntry(key: (other, day), value: list) in endedIds.entries) {
+      final ended = await reader.nodeNames(list, lineId: other, date: day);
+      for (final MapEntry(key: node, value: name) in ended.entries) {
+        names[endedLinkNameKey(node, other, day)] = name;
+      }
+    }
     final japanese = await reader.nodeNames(
       rows.map((row) => row.node),
       lineId: state.lineId,
+      routeId: routeId,
       date: date?.lo,
       languages: const ['ja'],
     );
+    final readings = reader.languages.first == 'ja'
+        ? await reader.nodeReadings(rows.map((row) => row.node), lineId: state.lineId, routeId: routeId, date: date?.lo)
+        : const <String, String>{};
+    // 날짜를 모를 때만 작은 표식을 단다. 날짜가 있으면 그날 이름에 표시가 붙는다
+    final pastMarks = date == null && state.lineId != null
+        ? await reader.pastTempMarks(rows.map((row) => row.node), state.lineId!, routeId: routeId)
+        : const <String, String>{};
     final archiveNames = await reader.archiveNames([
       for (final stop in stops) stop.id,
       for (final branch in branches) branch.id,
     ]);
+    // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
+    final stopDirections = <int, NetStopDirection>{
+      for (final row in visible)
+        row.seq: ?network.stopDirectionOf(routeId, row.node, date),
+    };
+    final oneWayGaps = [
+      for (var at = 0; at + 1 < visible.length; at++)
+        network.oneWayBetween(routeId, visible[at].node, visible[at + 1].node, date),
+    ];
     if (generation != _generation) return;
     state = state.copyWith(
       rows: rows,
       visible: visible,
       lines: lines,
       openGaps: openGaps,
+      stopDirections: stopDirections,
+      oneWayGaps: oneWayGaps,
       names: {
         ...names,
         if (state.from case StopPick(seq: _carried, :final node)) node: state.nameOf(node),
       },
       japanese: japanese,
+      readings: readings,
+      pastMarks: pastMarks,
       archiveNames: archiveNames,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
@@ -569,18 +659,65 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
   }
 
   /// 첫 탭은 출발역, 두 번째 탭은 도착역이다. 범위가 있을 때 다시 탭하면 처음부터다.
-  void tap(SelectorRow row) {
-    if (!row.selectable) return;
+  ///
+  /// 한 방향 운행·정차 때문에 그 방향으로 갈 수 없으면 두 번째 탭을 받지 않고(출발역만 남음), 순환에서 돌아가는 길로
+  /// 받았으면 그렇다고 알린다. 화면은 돌려준 값으로 말풍선을 띄운다 (DESIGN §8 한 방향 운행·한 방향 정차).
+  OneWayNote? tap(SelectorRow row) {
+    if (!row.selectable) return null;
     final from = state.from;
     final to = state.to;
     final pick = StopPick(row.seq, row.node);
     if (from == null || to != null) {
+      // 하차전용 역은 출발역이 될 수 없다. 첫 탭에서 바로 알리고 받지 않는다 (DESIGN §8 한 방향 정차)
+      final only = state.stopDirections[row.seq];
+      if (only?.use == 'alight') {
+        return OneWayNote.stop(
+          node: row.node,
+          label: only!.label,
+          down: only.direction == seqUp,
+          alight: true,
+          from: pick,
+          to: pick,
+          canReverse: false,
+        );
+      }
       _setPicks(pick, null);
     } else if (from.seq == row.seq) {
       _setPicks(null, null);
     } else {
       _setPicks(from, pick);
+      final preview = state.preview;
+      switch (preview?.reason) {
+        case ExpandReason.stopDirection:
+          _setPicks(from, null);
+          final refused = state.stopDirections[row.seq] ?? state.stopDirections[from.seq];
+          final at = state.stopDirections.containsKey(row.seq) ? row : state.rows.firstWhere((item) => item.seq == from.seq);
+          return OneWayNote.stop(
+            node: at.node,
+            label: refused?.label,
+            down: refused?.direction == seqUp,
+            alight: refused?.use == 'alight' && at.seq == from.seq,
+            from: from,
+            to: pick,
+          );
+        case ExpandReason.oneWay:
+          _setPicks(from, null);
+          return OneWayNote.section(down: pick.seq < from.seq, from: from, to: pick);
+        default:
+          if (preview?.around ?? false) {
+            return OneWayNote.around(meters: preview!.meters ?? 0, down: preview.direction == seqUp, from: from, to: pick);
+          }
+      }
     }
+    return null;
+  }
+
+  /// 말풍선의 `방향 바꾸기`. 출발과 도착을 뒤집어 고른다.
+  OneWayNote? reverse(OneWayNote note) {
+    _setPicks(null, null);
+    final rows = state.rows;
+    tap(rows.firstWhere((row) => row.seq == note.to.seq));
+    return tap(rows.firstWhere((row) => row.seq == note.from.seq));
   }
 
   /// 순환에서 같은 역을 다시 누르면 해제와 한 바퀴 중에 고른다 (DESIGN §8).
@@ -610,6 +747,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       final down = _record(from, to, direction: seqDown).meters;
       if (up != null && down != null) ways = (up: up, down: down);
     }
+    // 날짜나 방향만 바꿨으면 고른 바퀴 수를 그대로 둔다
+    final laps = from.seq == state.from?.seq && to?.seq == state.to?.seq ? state.laps : 1;
     final base = state.copyWith(clearPicks: true);
     state = RecordSessionState(
       lineId: base.lineId,
@@ -623,7 +762,11 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       openGaps: base.openGaps,
       names: base.names,
       japanese: base.japanese,
+      readings: base.readings,
+      pastMarks: base.pastMarks,
       archiveNames: base.archiveNames,
+      stopDirections: base.stopDirections,
+      oneWayGaps: base.oneWayGaps,
       preview: preview,
       ridePreview: preview == null ? null : _preview(preview),
       path: preview == null || preview.nodes.isEmpty
@@ -632,6 +775,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       direction: direction,
       ways: ways,
       split: _split(preview),
+      laps: laps,
       focus: base.focus,
       depth: base.depth,
     );
@@ -641,7 +785,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     if (expansion == null || !expansion.saved) return const [];
     final byLine = <String, int>{};
     for (final leg in expansion.legs) {
-      byLine.update(leg.lineId, (m) => m + _network.metersOf(leg.edges), ifAbsent: () => _network.metersOf(leg.edges));
+      final meters = _network.metersOf(leg.edges, lineId: leg.lineId);
+      byLine.update(leg.lineId, (m) => m + meters, ifAbsent: () => meters);
     }
     if (byLine.length < 2) return const [];
     return [for (final MapEntry(:key, :value) in byLine.entries) (lineId: key, meters: value)];
@@ -667,6 +812,14 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     return raw == null ? null : DateSpan.parse(raw);
   }
 
+  /// 날짜 모름에서 이관 뒤 새 역을 골랐는가. 그 역은 이어받은 노선에만 서므로 그 노선 계통을 넘어 저장한다.
+  /// 날짜가 있으면 이 계통으로 펼쳐도 그날 노선(이어받은 노선)으로 저장된다 (DESIGN §8.0.1 B안, §2.8 D)
+  bool _handAcross(StopPick from, StopPick to) =>
+      _date == null && state.rows.any((row) => row.handedOnly && (row.seq == from.seq || row.seq == to.seq));
+
+  /// 계통을 넘어 구간마다 나눠 저장하는가.
+  bool _isAcross(StopPick from, StopPick to) => from.seq == _carried || _handAcross(from, to);
+
   Expansion _record(
     StopPick from,
     StopPick to, {
@@ -676,16 +829,33 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
   }) =>
       from.seq == _carried
           ? _resolver.across(state.lineId!, from.node, to.node, date: _date)
+          : _handAcross(from, to)
+          ? _resolver.acrossRoutes(
+              [state.routeId!, ...SelectorBuilder(_network).handRoutes(state.routeId!)],
+              from.node,
+              to.node,
+            )
           : _resolver.record(
         state.routeId!,
         from.node,
         to.node,
         date: _date,
-        // 같은 역 두 줄이면 한 바퀴다. 방향이 있어야 펼쳐진다
-        direction: direction ?? (isLoop && from.node == to.node ? seqUp : null),
+        // 같은 역 두 줄이면 한 바퀴다. 방향이 있어야 펼쳐진다. 한 방향 순환은 운행 방향으로 돈다 (DESIGN §8)
+        direction: direction ?? (isLoop && from.node == to.node ? _lapDirection(from.node) : null),
         asOf: asOf == null ? null : DateSpan.parse(asOf),
         resolveUnknown: resolveUnknown,
       );
+
+  String _lapDirection(String node) =>
+      _resolver.record(state.routeId!, node, node, date: _date, direction: seqUp).reason == ExpandReason.oneWay
+          ? seqDown
+          : seqUp;
+
+  /// 기록에 남길 노선. 펼친 구간이 모두 한 노선이면 그 노선이고, 여러 노선에 걸치면 그날의 노선이다.
+  String _labelLine(Expansion result) {
+    final lines = {for (final leg in result.legs) leg.lineId};
+    return lines.length == 1 ? lines.single : shownLine;
+  }
 
   /// 계통마다 한 구간으로 나눈다 (DESIGN §2.8 F).
   Future<List<RideLeg>> _acrossLegs(Expansion result) async {
@@ -702,7 +872,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
           direction: _network.routes[leg.routeId]!.closed
               ? _resolver.record(leg.routeId, leg.from!, leg.to!, date: _date).direction
               : null,
-          lineLabel: book.lines[shownLine] ?? leg.lineId,
+          // 이어받은 노선 구간은 그 노선 이름이다
+          lineLabel: book.lines[leg.lineId == state.lineId ? shownLine : leg.lineId] ?? leg.lineId,
           fromLabel: names[leg.from] ?? leg.from!,
           toLabel: names[leg.to] ?? leg.to!,
         ),
@@ -741,7 +912,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final now = ref.read(nowProvider)();
     final lineId = state.lineId!;
     final closed = _network.routes[state.routeId!]!.closed;
-    final across = from.seq == _carried ? await _acrossLegs(result) : null;
+    final across = _isAcross(from, to) ? await _acrossLegs(result) : null;
     final ride = Ride(
       rideId: RideId(uuidV7(millis: now, randomBytes: secureRandomBytes())),
       datasetVersion: session.pack.edition,
@@ -761,8 +932,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
             direction: chosen ?? (closed ? result.direction : null),
             resolveAsOf: asOf,
             resolveUnknown: resolveUnknown,
-            // 기록에는 그날의 노선 이름을 남긴다 (DESIGN §8)
-            lineLabel: ref.read(nameBookProvider).lines[shownLine] ?? lineId,
+            // 기록에는 그날의 노선 이름을 남긴다 (DESIGN §8). 이관 구간 안만 탔으면 이어받은 노선이다
+            lineLabel: ref.read(nameBookProvider).lines[_labelLine(result)] ?? lineId,
             fromLabel: state.nameOf(from.node),
             toLabel: state.nameOf(to.node),
           ),
@@ -781,9 +952,72 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
         // 기준일보다 이른 날짜는 설명 없이 날짜 모름이다 (DESIGN §4.6)
         dateInput: result.demoted ? null : state.dateInput,
         meters: (result.meters ?? 0) * (state.isLap ? state.laps : 1),
+        kmEstimated: state.kmEstimated,
         before: expected?.before,
         after: expected?.after,
       ),
     );
   }
+}
+
+/// 한 방향 운행·정차 때문에 화면이 알릴 것 (DESIGN §8 한 방향 운행·한 방향 정차).
+final class OneWayNote {
+  const OneWayNote.stop({
+    required String this.node,
+    required this.label,
+    required this.down,
+    required this.from,
+    required this.to,
+    this.alight = false,
+    this.canReverse = true,
+  })  : kind = OneWayKind.stop,
+        meters = null;
+  const OneWayNote.section({required this.down, required this.from, required this.to})
+      : kind = OneWayKind.section,
+        alight = false,
+        canReverse = true,
+        node = null,
+        label = null,
+        meters = null;
+  const OneWayNote.around({required int this.meters, required this.down, required this.from, required this.to})
+      : kind = OneWayKind.around,
+        alight = false,
+        canReverse = true,
+        node = null,
+        label = null;
+
+  final OneWayKind kind;
+
+  /// 한 방향 열차만 서는 역.
+  final String? node;
+
+  /// 상·하행 이름(`down`·`up`). 없으면 한 방향이라고만 적는다.
+  final String? label;
+
+  /// 탈 수 있는 방향이 목록 아래쪽인가.
+  final bool down;
+
+  /// 하차전용 역(仮降車場)을 출발역으로 골랐다.
+  final bool alight;
+
+  /// `방향 바꾸기`로 풀 수 있는가. 하차전용 역을 첫 탭으로 고른 때는 아니다.
+  final bool canReverse;
+
+  /// 순환에서 돌아가는 길로 센 거리.
+  final int? meters;
+
+  /// 사용자가 고른 출발과 도착. `방향 바꾸기`가 뒤집는다.
+  final StopPick from;
+  final StopPick to;
+}
+
+enum OneWayKind {
+  /// 한 방향 열차만 서는 역을 반대 방향으로 골랐다. 받지 않는다.
+  stop,
+
+  /// 한 방향으로만 다니는 구간을 거꾸로 골랐다. 받지 않는다.
+  section,
+
+  /// 한 방향으로만 도는 순환에서 거꾸로 골라 돌아가는 길로 받았다.
+  around,
 }

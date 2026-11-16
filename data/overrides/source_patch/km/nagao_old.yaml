@@ -1,0 +1,2 @@
+# 옛 경로 km는 원문 없음. N05 1950 선 0.71km + 지금 瓦町까지 0.17km = 0.9 (n05_fix km_est)
+- {"patch": "add", "edge": "e_090001", "km": 0.9, "source": "n05_estimate"}

@@ -1,0 +1,2 @@
+# 5회차 구조 패치(2026-11-13): 뺀 노선 한정 이름(노리츠부시 표기)을 가져오기·찾기용 별칭으로 남김
+- {"patch": "add", "entity_type": "node", "id": "n_hinokage_onsen", "lang": "ja", "text": "日之影", "kind": "noritsubushi", "why": "노리츠부시 高千穂線 표의 표기(오기). 노리츠부시 기록 가져오기가 이 이름으로 찾게 둠 (source_patch/names/r5struct_2026-11-13.yaml의 drop 행)"}

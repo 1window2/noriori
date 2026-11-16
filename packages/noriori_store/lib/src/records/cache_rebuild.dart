@@ -47,7 +47,7 @@ final class CacheRebuild {
   Future<void> _report(String edition, int appBuild, Map<String, RideOutcome> before) async {
     final changes = diffRides(before, await _outcomes());
     if (changes.isEmpty) return;
-    final now = DateTime.now().millisecondsSinceEpoch;
+    final now = _records.now();
     await _db.into(_db.changeReportTable).insert(
           ChangeReportTableCompanion.insert(
             id: 'change-$edition-$appBuild',

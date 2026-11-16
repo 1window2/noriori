@@ -1,0 +1,14 @@
+# 8회차 W3(2026-11-15) 좌표. 옛 역·옛 자리는 国土数値情報 鉄道時系列(N05) 2024판의 그 시기 역 점(非商用 조건, 출처를 끄면 빠짐). OSM 미사용
+- {"node": "n_kojima_shimotsui_old", "lat": 34.469507, "lon": 133.804697, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "下津井 児島 옛 자리(1913~1987): N05 EB03_21432010 1950–1985 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_takamatsu_chikko_old", "lat": 34.348978, "lon": 134.049705, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "琴電 築港 仮駅(1948~1955): N05 EB03_21434002 1950–1954 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_konzoji_marugame", "lat": 34.24834, "lon": 133.77958, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "琴平参宮電鉄 丸亀線 金蔵寺: station_database가 국철 金蔵寺 점을 빌려 노선에서 185 m. N05 EB03_21424010 丸亀線 「金蔵寺」 1950–1962 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_sambashi_dori_1_chome_old", "lat": 33.55237, "lon": 133.54469, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "(旧)桟橋通一丁目: N05 EB03_21442008 1950–1954 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_hiroshimako_old", "lat": 34.353537, "lon": 132.457559, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "広電 宇品終点(1951~1967): N05 EB03_21448020 1951–1966 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_uno_binan", "lat": 34.493499, "lon": 133.953509, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "備南電鉄·玉野市営 宇野(1953–1972): 지금 JR 宇野(1994 새 자리) 점을 빌리고 있었음. N05 EB03_21302001 1953–1971 점(옛 국철 宇野 n_uno_old 곁) (8회차 W3 2026-11-15)"}
+- {"node": "n_sakai_nankai_old", "lat": 34.580374, "lon": 135.467084, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "南海 堺(2) 1955~1985 자리: N05 EB03_18442012 1955–1984 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_gobogawa", "lat": 34.33355, "lon": 134.06023, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "長尾線 御坊川: decisions 358 좌표(N05 EB03_21436002 1950–1953 점 근처 선로 위) (8회차 W3 2026-11-15)"}
+- {"node": "n_shogunbaimae", "lat": 33.32955, "lon": 130.53751, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "西鉄 甘木線 将軍梅前: N05 EB03_22421002 1950 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_kagami_amagi", "lat": 33.350637, "lon": 130.614739, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "西鉄 甘木線 鏡: N05 EB03_22421008 1950 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_takashima_amagi", "lat": 33.35108, "lon": 130.61932, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "西鉄 甘木線 高島: N05 EB03_22421009 1950 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_shimohongo_amagi", "lat": 33.37857, "lon": 130.62451, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "西鉄 甘木線 下本郷: N05 EB03_22421013 1950 점 (8회차 W3 2026-11-15)"}
+- {"node": "n_katao_sa", "lat": 33.66447, "lon": 130.43866, "quality": "approx", "source": "n05", "checked": "2026-11-15", "why": "(臨)片男佐: N05 EB03_22419013 1950 점 (8회차 W3 2026-11-15)"}

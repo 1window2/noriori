@@ -25,6 +25,7 @@ export 'src/network/route_resolver.dart';
 export 'src/network/selector.dart';
 export 'src/network/service_splitter.dart';
 export 'src/network/station_state.dart';
+export 'src/network/tapped_lines.dart';
 export 'src/pack/pack_choice.dart';
 export 'src/records/ride_changes.dart';
 export 'src/records/change.dart';

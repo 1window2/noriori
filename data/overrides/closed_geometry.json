@@ -49,10 +49,15 @@
 "by": "hand",
 "why": "N02 2015판의 関西電力 무궤조 전차 선로. N02에서 노선 이름이 사업자 이름(関西電力)이라 이름 대조로는 잡히지 않는다"
 },
-"l_kashima_rinko_line|n_igiri|n_kashima_konan": {
+"l_kashima_rinko_line|n_igiri|n_kamisu": {
 "src": "osm",
 "by": "hand",
-"why": "여객 영업만 끝났고 선로는 鹿島臨海鉄道 화물선으로 남아 있다. OSM의 현행 화물 선로"
+"why": "여객 영업만 끝났고 선로는 鹿島臨海鉄道 화물선으로 남아 있다. OSM의 현행 화물 선로 / 居切–鹿島港南 칸에 神栖를 끼워 둘로 나눔 (W4 F2 2026-11-12)"
+},
+"l_kashima_rinko_line|n_kamisu|n_kashima_konan": {
+"src": "osm",
+"by": "hand",
+"why": "여객 영업만 끝났고 선로는 鹿島臨海鉄道 화물선으로 남아 있다. OSM의 현행 화물 선로 / 居切–鹿島港南 칸에 神栖를 끼워 둘로 나눔 (W4 F2 2026-11-12)"
 },
 "l_kashima_rinko_line|n_kashima_soccer_stadium_kashima_rinkai|n_igiri": {
 "src": "osm",

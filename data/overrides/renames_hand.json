@@ -1,4 +1,5 @@
 {
+"n_sakuramizu": [["前谷地", null, "1951-03-30"]],
 "n_tokyo_skytree": [
 [
 "業平橋",
@@ -41,13 +42,6 @@ null,
 "1991-12-01"
 ]
 ],
-"n_kodomonokuni_meitetsu": [
-[
-"洲崎",
-null,
-"1976-10-10"
-]
-],
 "n_hashimashiyakushomae": [
 [
 "西竹鼻",
@@ -58,8 +52,8 @@ null,
 "n_tenkubashi_tokyo_monorail": [
 [
 "羽田",
-"1964-09-17",
-"1993-09-27"
+"1993-09-27",
+"1998-11-18"
 ]
 ],
 "n_rokumanji": [
@@ -75,5 +69,2098 @@ null,
 "1960-03-30",
 "2001-11-01"
 ]
+],
+"n_ichitsubo": [
+[
+"椿宮",
+null,
+"1964-10-01"
 ]
+],
+"n_seiwa_onsen": [
+[
+"下政和",
+null,
+"1961-12-01"
+]
+],
+"n_otsu_shiyakusho_mae": [
+[
+"兵営前",
+null,
+"1940-11-10"
+],
+[
+"別所",
+"1940-11-10",
+"2018-03-17"
+]
+],
+"n_tenjimbashisuji_6_chome_hankyu": [
+[
+"天神橋",
+null,
+"1969-12-06"
+]
+],
+"n_kasumigaoka_sanyo": [
+[
+"歌敷山",
+null,
+"1964-06-01"
+]
+],
+"n_asuwayamakoenguchi": [
+[
+"毛矢町",
+null,
+"1962-04-01"
+],
+[
+"公園口",
+"1962-04-01",
+"2016-03-27"
+]
+],
+"n_echizen_takehara": [
+[
+"市荒川",
+null,
+"1955-09-01"
+]
+],
+"n_keishin_sanjo": [
+[
+"三条",
+null,
+"1987-04-01"
+]
+],
+"n_kawanishi_kokutetsumae": [
+[
+"池田駅前",
+null,
+"1965-04-01"
+]
+],
+"n_sessokyo_onsen": [
+[
+"川根長島",
+null,
+"1990-10-02"
+]
+],
+"n_toyohira_8_chome": [
+[
+"豊平駅前",
+null,
+"1969-11-01"
+]
+],
+"n_yubari_honcho": [
+[
+"新夕張",
+null,
+"1954-01-16"
+]
+],
+"n_sakae_nagoya_city": [
+[
+"栄町",
+null,
+"1966-06-01"
+]
+],
+"n_gionmachi": [
+[
+"馬場新町",
+null,
+"1964-07-01"
+],
+[
+"博多駅前",
+null,
+"1964-07-01"
+]
+],
+"n_takaoka_ekimae": [
+[
+"地鉄高岡",
+null,
+"1959-04-01"
+],
+[
+"新高岡",
+"1959-04-01",
+"1979-XX-XX"
+]
+],
+"n_jr_namba": [
+[
+"湊町",
+null,
+"1994-09-04"
+]
+],
+"n_kintetsu_yokkaichi": [
+[
+"近畿日本四日市",
+"1956-09-23",
+"1970-03-01"
+]
+],
+"n_enshu_byoin": [["遠州病院前", "1985-12-01", "2007-04-01"], ["東田町", null, "1958-06-01"]],
+"n_biwako_hamaotsu": [
+[
+"浜大津",
+null,
+"1957-03-20",
+"l_ishiyama_sakamoto_line"
+],
+[
+"浜大津東口",
+"1957-03-20",
+"1981-04-12",
+"l_ishiyama_sakamoto_line"
+],
+[
+"浜大津",
+"1981-04-12",
+"2018-03-17"
+]
+],
+"n_zushihayama": [
+[
+"湘南逗子",
+null,
+"1963-11-01"
+],
+[
+"京浜逗子",
+"1963-11-01",
+"1985-03-02"
+],
+[
+"新逗子",
+"1985-03-02",
+"2020-03-14"
+]
+],
+"n_motorijinjamae": [
+[
+"公園下",
+null,
+"1930-04-10"
+]
+],
+"n_marutamachichiekoin": [
+[
+"医師会前",
+null,
+"1965-08-01"
+]
+],
+"n_kujominami_1_chome": [
+[
+"九条中通一丁目",
+null,
+"1964-10-01"
+]
+],
+"n_higashiyama_okaden_chuggington_museum": [
+[
+"東山",
+null,
+"2017-04-01"
+]
+],
+"n_shiritsutaiikukanmae": [
+[
+"砂取",
+null,
+"1958-XX-XX"
+],
+[
+"体育館前",
+"1958-XX-XX",
+"[1964-XX-XX..1969-XX-XX]"
+]
+],
+"n_kohjiro": [
+[
+"神代町",
+null,
+"2019-10-01"
+]
+],
+"n_meitetsu_ichinomiya": [
+[
+"新一宮",
+null,
+"2005-01-29"
+]
+],
+"n_inaeicho_tsukiji_line_nagoya_city": [
+[
+"西稲永",
+"[..1941-12-30]",
+"1956-09-15"
+]
+],
+"n_nishiinaei": [
+[
+"稲永新田",
+null,
+"1956-09-15"
+]
+],
+"n_okayamajinjamae": [
+[
+"県庁前",
+null,
+"1954-12-20"
+]
+],
+"n_kitasuzaka": [
+[
+"豊洲",
+"1923-03-26",
+"1960-04-11"
+]
+],
+"n_minami_sakaide": [
+[
+"常陸酒出",
+null,
+"1953-02-01"
+]
+],
+"n_yagawara": [
+[
+"佐竹",
+null,
+"1954-10-21"
+]
+],
+"n_kiwa_kisei_main": [
+[
+"和歌山",
+null,
+"1968-02-01"
+]
+],
+"n_taki_kisei_main": [
+[
+"相可",
+null,
+"1923-03-20"
+],
+[
+"相可口",
+"1923-03-20",
+"1959-07-15"
+]
+],
+"n_sambashi_dori_1_chome": [
+[
+"帯田",
+null,
+"1955-06-20"
+]
+],
+"n_sambashi_dori_2_chome": [
+[
+"桟橋通三丁目",
+null,
+"1955-06-20"
+]
+],
+"n_sanbashishakomae": [
+[
+"岸壁通",
+"1905-04-07",
+"2007-01-10"
+]
+],
+"n_kitano_hakubaicho": [
+[
+"白梅町",
+null,
+"1958-09-16"
+]
+],
+"n_nishichibiki": [
+[
+"千曳",
+null,
+"1968-08-05"
+]
+],
+"n_seibu_kyujo_mae": [
+[
+"狭山湖",
+"1978-11-30",
+"1979-03-25"
+]
+],
+"n_umizuka": [
+[
+"貝塚南",
+null,
+"1952-01-01"
+]
+],
+"n_chidoribashi_kaizuka": [
+[
+"新博多",
+null,
+"1950-05-15",
+"l_kaizuka_line"
+],
+[
+"西鉄博多",
+"1950-05-15",
+"1954-03-05",
+"l_kaizuka_line"
+],
+[
+"新博多",
+"1954-03-05",
+"[1963-01-01..1963-12-31]"
+]
+],
+"n_tama_seibu": [
+[
+"多磨墓地前",
+null,
+"2001-03-28"
+]
+],
+"n_sumiyoshitaisha": [
+[
+"住吉公園",
+null,
+"1979-05-09"
+]
+],
+"n_wakayama": [
+[
+"東和歌山",
+null,
+"1968-02-01"
+]
+],
+"n_morishoji": [
+[
+"新森小路",
+null,
+"1942-04-01"
+]
+],
+"n_teradomari_shindo": [
+[
+"寺泊新道",
+null,
+"1967-04-01"
+]
+],
+"n_mitsuizosenjomae": [
+[
+"玉",
+null,
+"1955-10-01"
+]
+],
+"n_honjonakadori": [
+[
+"代継橋",
+"1953-11-09",
+"1959-04-01"
+]
+],
+"n_fushimi_nagoya_city": [
+[
+"伏見町",
+null,
+"1966-06-01"
+]
+],
+"n_nagoyajo": [
+[
+"市役所",
+null,
+"2023-01-04"
+]
+],
+"n_taiko_dori": [
+[
+"中村区役所",
+null,
+"2023-01-04"
+]
+],
+"n_iwanebashi_kumamoto_city": [
+[
+"加藤神社前",
+null,
+"1961-09-05"
+]
+],
+"n_shiritsudaigakubyoin": [
+[
+"桜山町",
+null,
+"1966-11-15"
+]
+],
+"n_stadium_city_south": [
+[
+"宝町",
+"1966-09-20",
+"2024-XX-XX"
+],
+[
+"船蔵町",
+null,
+"1966-09-20"
+],
+[
+"稲佐橋通",
+null,
+"1957-12-19"
+]
+],
+"n_kohoku_nagoya_rinkai_rapid_transit": [
+[
+"名古屋競馬場前",
+null,
+"2022-03-12"
+]
+],
+"n_keifuku_ono": [
+[
+"大野三番",
+null,
+"1955-10-01"
+]
+],
+"n_nakatsugawa_katsuyama_eiheiji": [
+[
+"横枕",
+null,
+"1953-05-01"
+]
+],
+"n_daigakubyoin": [
+[
+"岩川町",
+null,
+"1954-02-01"
+],
+[
+"大学病院前",
+"1954-02-01",
+"[2017-XX-XX..2018-XX-XX]"
+]
+],
+"n_suikonojomae": [
+[
+"滋賀里",
+null,
+"1955-05-01"
+]
+],
+"n_higashioiwake": [
+[
+"小安平",
+null,
+"1965-03-01"
+]
+],
+"n_miyakomachi_hiroden": [
+[
+"福島病院前",
+"1960-02-10",
+"1962-02-12"
+]
+],
+"n_amagasaki": [
+[
+"神崎",
+null,
+"1949-01-01"
+]
+],
+"n_rakuyokokomae": [
+[
+"九条大路御前通",
+null,
+"[1938-XX-XX..1950-XX-XX]"
+],
+[
+"九条御前通",
+"[1938-XX-XX..1950-XX-XX]",
+"[1950-XX-XX..1951-XX-XX]"
+]
+],
+"n_kujokintetsumae": [
+[
+"九条大路堀川",
+null,
+"[1939-XX-XX..1950-XX-XX]"
+],
+[
+"九条堀川奈良電前",
+"[1939-XX-XX..1950-XX-XX]",
+"[1950-XX-XX..1963-XX-XX]"
+]
+],
+"_근거": {
+"n_chidoribashi_kaizuka|新博多": "新博多(~1950-05-15)·西鉄博多(1950-05-15~1954-03-05)는 宮地岳線(지금 l_kaizuka_line) 역 이름이라 그 노선 행으로만(千鳥橋 세 노드를 하나로 합친 뒤 循環線 화면에 번지지 않게). 1954-03-05 宮地岳線 西鉄博多–西鉄多々良 改軌·市内線 편입 뒤의 新博多(~1963)는 정류장 이름이라 노선 한정 없음. 위키 西鉄貝塚線 r111320593 「千鳥橋（元の西鉄博多）」 (7회차 구조 2026-11-14; r6out/B)",
+"n_chidoribashi_kaizuka|西鉄博多": "新博多(~1950-05-15)·西鉄博多(1950-05-15~1954-03-05)는 宮地岳線(지금 l_kaizuka_line) 역 이름이라 그 노선 행으로만(千鳥橋 세 노드를 하나로 합친 뒤 循環線 화면에 번지지 않게). 1954-03-05 宮地岳線 西鉄博多–西鉄多々良 改軌·市内線 편입 뒤의 新博多(~1963)는 정류장 이름이라 노선 한정 없음. 위키 西鉄貝塚線 r111320593 「千鳥橋（元の西鉄博多）」 (7회차 구조 2026-11-14; r6out/B)",
+"n_sakuramizu|前谷地": "福島交通飯坂線 r109896933 「1951年3月30日：前谷地駅廃止」「実質1951年に廃止された前谷地駅の復活開業」, 노선도 5.1 桜水駅（前谷地駅）; N05 EB03_12420009 前谷地 1950 → 桜水 1975 (중간 둘). 읽기 근거 없음(ja_as_is) (6회차 근거 조사 2026-11-14; r6out/B)",
+"n_teradomari|大河津": "chubu_1-03: ja.wikipedia 越後線 rev111454860 「1986年11月1日 【駅名改称】大河津→寺泊」; N05 大河津 越後線 1950–1985 (근거 등급 높음)",
+"n_hon_yoshiwara|吉原": "chubu_1-04: 岳南電車岳南鉄道線 rev111490170 「鈴川駅を吉原駅に、吉原駅を本吉原駅に改称」(1956-04-10); N05 吉原 岳南線 1950–1955 (本吉原 자리) (근거 등급 높음)",
+"n_mitakeguchi|御嵩": "chubu_1-06: 名鉄広見線 rev110535786 「これまでの御嵩駅を御嵩口駅と改称」(1952-04-01); N05 御嵩 広見線 1950–1951 (御嵩口 자리) (근거 등급 높음)",
+"n_kitarinzaiji|車庫前": "chubu_1-09: 豊橋鉄道東田本線 rev111617936 「車庫前停留場を北臨済寺停留場に改称」(1960-07-01); N05 車庫前 東田本線 1950–1959 (근거 등급 높음)",
+"n_awaraonsen|金津": "chubu_1-16: 北陸本線 rev111217659 「金津駅が芦原温泉駅に改称」(1972-03-15); N05 金津 北陸線 1950–1971 (근거 등급 높음)",
+"n_nonoichi_kodaimae|上野々市": "chubu_1-21: 北陸鉄道石川線 rev111054098 「上野々市駅（3代）を工専前駅に改称」(1963-04-11); 같은 문서 「工専前駅を野々市工大前駅に改称」(1966-09-15) (근거 등급 높음)",
+"n_nonoichi_kodaimae|工専前": "chubu_1-21: 北陸鉄道石川線 rev111054098 「上野々市駅（3代）を工専前駅に改称」(1963-04-11); 같은 문서 「工専前駅を野々市工大前駅に改称」(1966-09-15) (근거 등급 높음)",
+"n_cross_bay_mae|西新湊": "chubu_3-030: wiki 万葉線 rev111306973: 「中学校前駅を西新湊駅（初代）に改称」(1949-06-20); 「射水市新湊庁舎前駅を西新湊駅（2代）に改称」(2016-10-11) (근거 등급 높음) / 2代 西新湊 끝 2023-09-01: 위키 万葉線 年表 「2023年（令和5年）9月1日 - 西新湊駅を第一イン新湊 クロスベイ前駅に改称」 (8회차 W2 2026-11-15; audit3 chubu_3-09)",
+"n_cross_bay_mae|新湊市役所前": "chubu_3-030: wiki 万葉線 rev111306973: 「中学校前駅を西新湊駅（初代）に改称」(1949-06-20); 「射水市新湊庁舎前駅を西新湊駅（2代）に改称」(2016-10-11) (근거 등급 높음)",
+"n_cross_bay_mae|射水市新湊庁舎前": "chubu_3-030: wiki 万葉線 rev111306973: 「中学校前駅を西新湊駅（初代）に改称」(1949-06-20); 「射水市新湊庁舎前駅を西新湊駅（2代）に改称」(2016-10-11) (근거 등급 높음)",
+"n_kamiyokoe|横江": "chubu_3-032: wiki 富山地方鉄道立山線: 「尖山駅を横江駅に、横江駅を上横江駅に改称」(1965-04-15); 「千寿ヶ原駅（現在の立山駅）」 (근거 등급 높음)",
+"n_ajinahigashi|阿品": "chugoku_shikoku_1-017: 위키 広島電鉄宮島線 rev 110659845 연표 「1969年10月1日：西広島駅を広電西広島駅に改称」「1972年3月1日：地御前県病院前駅を阿品駅に改称」「2001年11月1日：…阿品駅を阿品東駅に」; N05 宮島線 西広島 1950–1988, 阿品 1972–2000, 中央市場前 1965–1978 (근거 등급 높음)",
+"n_eba|江波口": "chugoku_shikoku_1-018: 위키 広島電鉄江波線 rev 110659826 「1954年1月8日 …江波口停留場が現在の江波停留場付近に移転。旧江波口停留場はグランド口停留場に改称」「1963年：江波口停留場が江波停留場に改称」「2019年4月1日：舟入南町停留場が舟入南停留場に改称」 (근거 등급 높음)",
+"n_dentetsu_izumoshi|出雲市": "chugoku_shikoku_1-019: 위키 一畑電車北松江線 rev 109550463 연표 1952·1957·1964·1970·2001·2002·2007년 항목 (근거 등급 높음)",
+"n_oboke|阿波赤野": "chugoku_shikoku_1-020: 위키 土讃線 rev 111124356 「10月1日：西宇駅を小歩危駅に、阿波赤野駅を大歩危駅に改称」(1950년) (근거 등급 높음)",
+"n_ube|西宇部": "chugoku_shikoku_2-B02: wiki 宇部線 110993921: 宇部駅が西宇部駅に改称(1943-05-01); wiki 山陽本線 111054473: 1964年10月1日 西宇部駅が宇部駅に改称 (근거 등급 높음)",
+"n_hon_yura|阿知須": "chugoku_shikoku_2-B11: wiki 山陽本線: 1950年6月1日：阿知須駅を本由良駅に改称; wiki 予讃線: 1950年4月1日：上老松駅を伊予出石駅に改称 (근거 등급 높음)",
+"n_iyo_izushi|上老松": "chugoku_shikoku_2-B11: wiki 山陽本線: 1950年6月1日：阿知須駅を本由良駅に改称; wiki 予讃線: 1950年4月1日：上老松駅を伊予出石駅に改称 (근거 등급 높음)",
+"n_onuma_koen|大沼": "hokkaido_1-007: 위키 函館本線 「1964年 5月1日：大沼駅（2代）を大沼公園駅に改称。6月1日：軍川駅を大沼駅（3代）に改称」; 위키 室蘭本線·釧網本線 1950-09-10 개칭, 雄別鉄道 1950-05-01, 留萠鉄道 1952-10-01 「浅野炭山駅を新雨竜駅に」; names.sqlite n_onuma_koen ja 행 「大沼公園」 하나; 1회차 hokkaido_1-024 일부 미 (근거 등급 높음)",
+"n_chiba_chuo|京成千葉": "kanto_1-012: wiki station 千葉中央駅 hist: 1987-04-01 …千葉中央駅に改称; wiki 京成千葉線 L144: 1987年4月1日 - 京成千葉駅を千葉中央駅に…改称 (근거 등급 높음)",
+"n_omotesando|神宮前": "kanto_1-019: wiki station 表参道駅 hist: 1939年9月16日 神宮前駅へ改称; 같은 hist: 1972年10月20日 …銀座線の神宮前駅も同名に改称 (근거 등급 높음)",
+"n_ryugasakishi|佐貫": "kanto_1-020: wiki station 龍ケ崎市駅 hist: 2020年3月14日 JR東日本の駅名を龍ケ崎市駅に改称; 같은 hist: 1900年8月14日 …佐貫駅として同時に開業 (근거 등급 높음)",
+"n_otsuko|関本": "kanto_1-021: wiki station 大津港駅 hist: 1950年5月10日 大津港駅に改称 (開業時 関本駅) (근거 등급 높음)",
+"n_todaimae_inogashira|一高前": "kanto_1-022: wiki station 駒場東大前駅 hist: 1951年12月1日 一高前駅を東大前駅に改称 (근거 등급 높음)",
+"n_kashima_soccer_stadium|北鹿島": "kanto_2-003: 大洗鹿島線 wiki 年表: 1994年3月12日 北鹿島駅を鹿島サッカースタジアム駅に改称; N05 鹿島線 北鹿島 1978–1993 (EB03_13502015 계열) (근거 등급 높음)",
+"n_tenkubashi_keikyu|羽田": "kanto_2-008: 京急空港線 wiki 年表: 11月18日 - ... 羽田駅が天空橋駅に改称(1998); N05 空港線 羽田 1993–1997, 天空橋 1998– (근거 등급 높음)",
+"n_haneda_airport_terminal_12|羽田空港": "kanto_2-009: N05 空港線 羽田空港 1998–2009, 羽田空港国内線ターミナル 2010–2019, 第1・第2 2010–(겹침); 京急空港線 wiki 노선도·年表(2010-10-21 第3ターミナル(国際線) 개업, 2020-03-14 개칭) (근거 등급 중간)",
+"n_keisei_ueno|上野公園": "kanto_2-016: 京成本線 wiki 111343993 年表 1953年5月1日 上野公園駅を京成上野駅に改称; N05 本線 上野公園 1950–1952 (근거 등급 높음)",
+"n_funabashikeibajo|京成花輪": "kanto_2-017: 京成本線 wiki 年表 1950年7月5日 京成花輪駅を船橋競馬場駅に改称 / 1963年12月1日 / 1987年4月1日 (근거 등급 높음)",
+"n_ginza|西銀座": "kanto_2-018: 東京メトロ丸ノ内線 wiki 111274806: 1964-08-29 ... 西銀座駅を銀座駅に統合; N05 4号線丸ノ内線 西銀座 1957–1963 (근거 등급 높음)",
+"n_takashimadaira|志村": "kanto_2-019: 都営地下鉄三田線 wiki 110959523 年表 1968-12-27 巣鴨 - 志村（現・高島平）間開業, 1969-08-01 志村駅を高島平駅に改称; N05 6号線三田線 志村 1968 (근거 등급 높음)",
+"n_nodashi|野田町": "kanto_2-020: 東武野田線 wiki 111355825 年表 1950-05-30 野田町駅を野田市駅に改称 (근거 등급 높음)",
+"n_yorokeikoku|朝生原": "kanto_2-021: N05 小湊鐵道線 朝生原 1950–1953 (養老渓谷 자리 150m 안); DB n_kazusa_yamada 養老川 valid_to 1954-12-01(wikipedia) (근거 등급 중간)",
+"n_kazusa_tsurumai|鶴舞町": "kanto_2-022: N05 小湊鐵道線 鶴舞町 1950–1957 (上総鶴舞 자리) (근거 등급 중간)",
+"n_higashi_narita_keisei|成田空港": "kanto_2-029: 京成本線 wiki 年表 1978年5月21日 京成成田 - 成田空港（現在の東成田）間が開業; N05 東成田線 成田空港 1978–1990 (東成田 자리 45m) (근거 등급 높음)",
+"n_chikatetsu_narimasu|営団成増": "kanto_3-15: N05 EB03_15409002 営団成増 1983–2003, EB03_15409003 営団赤塚 1983–2003; wiki 西武有楽町線 「営団成増（現・地下鉄成増）」 (근거 등급 높음)",
+"n_chikatetsu_akatsuka|営団赤塚": "kanto_3-15: N05 EB03_15409002 営団成増 1983–2003, EB03_15409003 営団赤塚 1983–2003; wiki 西武有楽町線 「営団成増（現・地下鉄成増）」 (근거 등급 높음)",
+"n_tenkubashi_tokyo_monorail|羽田": "kanto_3-16: build/master.sqlite node_move n_haneda_tokyo_monorail→n_tenkubashi_tokyo_monorail 1993-09-27; wiki 東京モノレール 「整備場駅 - 羽田空港駅間開業。整備場駅 - （旧）羽田駅廃止」 (근거 등급 중간)",
+"n_tamako_old|狭山公園前": "kanto_3-17: wiki 西武多摩湖線 「狭山公園前駅を多摩湖駅に改称」(1951-09-01); N05 EB03_14434011 狭山公園前 1950 (근거 등급 높음)",
+"n_idakiso|伊太祁曽": "kinki_2-013: data/imports/wiki 和歌山電鐵貴志川線 rev110526764 노선도: 「09 伊太祈曽駅」; data/overrides/hand_tables.json N02AL: 「伊太祁曽」→「伊太祈曽」 대응만 있고 이름에 미반영; 1회차 kinki_1-031 미해결 (근거 등급 높음)",
+"n_kobe_sannomiya_hankyu|神戸": "kinki_2-016: data/imports/wiki 阪急神戸本線 rev111135883: 「神戸駅を三宮駅と改称」(1968-04-07), 「2013年12月21日：三宮駅を神戸三宮駅に改称」 (근거 등급 높음)",
+"n_kobe_sannomiya_hankyu|三宮": "kinki_2-016: data/imports/wiki 阪急神戸本線 rev111135883: 「神戸駅を三宮駅と改称」(1968-04-07), 「2013年12月21日：三宮駅を神戸三宮駅に改称」 (근거 등급 높음)",
+"n_oji_koen|西灘": "kinki_2-017: data/imports/wiki 阪急神戸本線 rev111135883: 1984年 「6月1日：西灘駅を王子公園駅と改称」 (근거 등급 높음)",
+"n_hieizan_sakamoto|叡山": "kinki_2-018: data/imports/wiki 湖西線 rev111088405: 「叡山駅を比叡山坂本駅に改称」(1994-09-04) (근거 등급 높음)",
+"n_omiya_hankyu|京阪神京都": "kinki_2-019: data/imports/wiki 阪急京都本線 rev110983908: 「京阪京都駅を京阪神京都駅」(1943-10-01), 「京阪神京都駅を大宮駅と改称」(1963-06-17) (근거 등급 높음)",
+"n_cable_sanjo|山上": "kinki_2-022: data/imports/wiki 能勢電鉄妙見の森ケーブル rev108922747: 「山上駅を…ケーブル山上」(1965-04-01); 1회차 kinki_1-047 미해결 (근거 등급 높음)",
+"n_dome_mae_chiyozaki|大阪ドーム前千代崎": "kinki_2-023: data/imports/wiki Osaka Metro長堀鶴見緑地線 rev110840101: 「大阪ドーム前千代崎駅…ドーム前千代崎」(2006-12-24); 1회차 kinki_1-053 미해결 (근거 등급 높음)",
+"n_ikoma|近畿日本生駒": "kinki_2-024: data/imports/wiki 近鉄奈良線 rev110923443: 「近畿日本生駒駅を生駒駅に改称」(1964-10-01); 1회차 kinki_3-017 미해결 (근거 등급 높음)",
+"n_takeda_kintetsu_old|奈良電竹田": "kinki_2-026: data/imports/wiki 近鉄京都線 rev110958649: 「城南宮前駅を奈良電竹田駅に改称」(1940-04-05), 1963-10-01 「奈良電竹田駅を竹田駅に改称」 (근거 등급 높음)",
+"n_kintetsu_yao_old|関急八尾": "kinki_3-005: ja.wikipedia 近鉄大阪線 rev111364868 「関急八尾駅を近畿日本八尾駅に…改称」(1944-06-01) (근거 등급 높음)",
+"n_kintetsu_yao_old|近畿日本八尾": "kinki_3-005: ja.wikipedia 近鉄大阪線 rev111364868 「関急八尾駅を近畿日本八尾駅に…改称」(1944-06-01) (근거 등급 높음)",
+"n_unobe|茨木": "kinki_3-011: ja.wikipedia 大阪モノレール本線 rev111054270 「茨木駅を宇野辺駅に改称」(1997-04-01) (근거 등급 높음)",
+"n_keisan_kagaku_center|京コンピュータ前": "kinki_3-013: ja.wikipedia 神戸新交通ポートアイランド線 rev110789768 「京コンピュータ前駅を計算科学センター駅に改称」(2021-06-19) (근거 등급 높음)",
+"n_nakayama_kannon|中山": "kinki_3-015: ja.wikipedia 阪急宝塚本線 rev109449986 「中山駅を中山観音駅に改称」(2013-12-21) (근거 등급 높음)",
+"n_kadancho|千里山遊園": "kinki_3-018: ja.wikipedia 阪急千里線 「1951年4月1日：女子学院前駅を花壇町駅に改称」 (근거 등급 높음)",
+"n_sanyo_uozumi|魚住": "kinki_3-019: ja.wikipedia 山陽電気鉄道本線 rev111474989 「1961年10月1日：魚住駅を電鉄魚住駅に改称」 (근거 등급 높음)",
+"n_sakura_kintetsu|桜村": "kinki_3-022: ja.wikipedia 近鉄湯の山線 「1954年7月：川島村駅を伊勢川島駅、桜村駅を桜駅に改称」 (근거 등급 높음)",
+"n_tsurumachi_2_chome|鶴町車庫前": "kinki_3-024: ja.wikipedia 大阪市電鶴町線 rev102389657 「鶴町車庫前駅を鶴町二丁目駅に改称」(1954-07) (근거 등급 높음)",
+"n_hommachi|信濃橋": "kinki_3-048: ja.wikipedia Osaka Metro四つ橋線 rev111580814 「信濃橋駅を本町駅に統合」(1969-07-01)「難波元町駅を難波駅に統合」(1970-03-11) (근거 등급 높음)",
+"n_kaminogo|志摩磯部": "kinki_3-061: ja.wikipedia 近鉄志摩線 rev111151681 「志摩磯部駅を上之郷駅に、迫間駅を志摩磯部駅に改称」(1970-03-01) (근거 등급 높음)",
+"n_utsubohonmachi_4_chome|茂左衛門橋": "kinki_3-066: ja.wikipedia 大阪市電靱本町線 rev111464221 「茂左衛門橋停留場を靱本町四丁目停留場に改称」(1961-06-01) (근거 등급 높음)",
+"n_minami_fukuoka|雑餉隈": "kyushu_1-012: data/imports/wiki/station.json 南福岡駅 「1966年（昭和41年）11月1日：南福岡駅…に改称」; n05 EB03_22202037 雑餉隈 1950–1965; data/candidates/n05_history.json class=check 「옛 이름이 가까운 다른 역 이름」(西鉄 雑餉隈)으로 미적용 (근거 등급 높음)",
+"n_onojo|白木原": "kyushu_1-013: data/imports/wiki/station.json 大野城駅 「1989年（平成元年）3月11日：…大野城駅…に改称」·「1961年…白木原駅…に昇格」; data/candidates/n05_history.json class=check로 미적용 (근거 등급 높음)",
+"n_kotochugakkomae|市立病院前": "kyushu_1-014: data/imports/wiki/station.json 甲東中学校前停留場 「1948年…市立病院前停留場に改名」「2015年…5月1日：…甲東中学校前停留場へ改称」; n05 EB03_22302003 市立病院前 1950–2014 (근거 등급 높음)",
+"n_kami_kumamoto_kumamoto_city|上熊本駅前": "kyushu_1-015: data/imports/wiki/station.json 上熊本駅 「2019年…上熊本駅前停留場から上熊本停留場に改称」; station.json 洗馬橋駅 「1981年：洗馬橋停留場に改称」, 蔚山町駅 「1961年 - 1962年：蔚山町停留場に改称」; n05 上熊本駅前 1950–2018, 塩屋町 1950–999, 蔚山町護国神社前 1950–999 (근거 등급 높음)",
+"n_heiwadori|小倉": "kyushu_1-016: data/imports/wiki/station.json 平和通駅 「1985年…小倉駅（初代）として開業」「1998年…平和通駅と改称」; n05 小倉 1985–1997 / 平和通 1998– (근거 등급 높음)",
+"n_kagami|久里": "kyushu_1-017: data/imports/wiki/station.json 久里駅 「1950年…それまで久里駅を名乗っていた隣の駅を鏡駅（2代）と改称し」; 1차 kyushu_1-052와 같음(미반영) (근거 등급 높음)",
+"n_kuri|上久里": "kyushu_1-017: data/imports/wiki/station.json 久里駅 「1950年…それまで久里駅を名乗っていた隣の駅を鏡駅（2代）と改称し」; 1차 kyushu_1-052와 같음(미반영) (근거 등급 높음)",
+"n_tamaeshogakkomae|伊敷": "kyushu_1-018: ja.wikipedia 鹿児島市電伊敷線 rev108122176 「1962年…伊敷を玉江小学校前に、下伊敷を国立病院前に」; 같은 문서 「1953年…2月20日 玉里道を護国神社前に改称」「1979年…国立病院前を下伊敷に改称」 (근거 등급 높음)",
+"n_kaizuka_nishi_nippon_old|西鉄多々良": "kyushu_1-019: ja.wikipedia 西鉄貝塚線 rev111320593 「箱崎宮前駅を箱崎浜電停に…西鉄多々良駅を競輪場前駅に改称」(1954-03-05); n05 宮地岳線 競輪場前 1954–1961, 箱崎宮前 1950–1953, 金平 1962–1974 (근거 등급 높음)",
+"n_kaizuka_nishi_nippon_old|競輪場前": "kyushu_1-019: ja.wikipedia 西鉄貝塚線 rev111320593 「箱崎宮前駅を箱崎浜電停に…西鉄多々良駅を競輪場前駅に改称」(1954-03-05); n05 宮地岳線 競輪場前 1954–1961, 箱崎宮前 1950–1953, 金平 1962–1974 (근거 등급 높음)",
+"n_gionmachi|博多駅前": "kyushu_2-01: 西鉄福岡市内線 rev110542419: （旧）博多駅前を馬場新町と改称; N05 EB03_22431027 博多駅前→馬場新町 (1963까지); data/overrides/n05_fix.json 循環線 旧線 note: 1964-07-01 전 博多駅前(旧) (근거 등급 중간)",
+"n_stadium_city_north|井樋の口": "kyushu_2-09: 長崎電気軌道本線 rev110993491: 2024年10月1日 … 銭座町停留場をスタジアムシティノース停留場へ; N05 EB03_22415013 井樋の口 1950-1965 / 銭座町 1966-; 노리츠부시: スタジアムシティノース（旧銭座町） (근거 등급 높음)",
+"n_stadium_city_north|銭座町": "kyushu_2-09: 長崎電気軌道本線 rev110993491: 2024年10月1日 … 銭座町停留場をスタジアムシティノース停留場へ; N05 EB03_22415013 井樋の口 1950-1965 / 銭座町 1966-; 노리츠부시: スタジアムシティノース（旧銭座町） (근거 등급 높음)",
+"n_nishitetsu_fukuoka|西鉄福岡": "kyushu_2-25: 西鉄天神大牟田線 rev111320592: 2001年1月1日：線名を大牟田線から天神大牟田線に改称し、西鉄福岡駅を西鉄福岡（天神）駅に改称 (근거 등급 높음)",
+"n_shinden_kagoshima_city|唐湊": "kyushu_2-27: N05 EB03_22305005: 唐湊 1952-1956 / 神田 1957-2014 / 神田（交通局前） 2015-; N05 EB03_22305006 唐湊 1957- (DB n_toso 1957-03-29 개업과 맞음); 鹿児島市交通局 rev111052650: 「交通局前」バス停および電停は2015年に二中通に変更 (근거 등급 중간)",
+"n_shinden_kagoshima_city|神田": "kyushu_2-27: N05 EB03_22305005: 唐湊 1952-1956 / 神田 1957-2014 / 神田（交通局前） 2015-; N05 EB03_22305006 唐湊 1957- (DB n_toso 1957-03-29 개업과 맞음); 鹿児島市交通局 rev111052650: 「交通局前」バス停および電停は2015年に二中通に変更 (근거 등급 중간)",
+"n_yudakinshuko|陸中大石": "tohoku_1-011: data/imports/wiki 北上線 rev111501383 \"陸中大石駅がゆだ錦秋湖駅に…改称\"(1991-06-20); 같은 문서 노선도 \"1962- 陸中大石駅(2)\" (근거 등급 높음)",
+"n_hachinohe|尻内": "tohoku_2-011: ja.wikipedia 東北本線 rev111496700: 「4月1日：尻内駅を八戸駅に改称」(1971); build/names.sqlite name entity_id=n_hachinohe lang=ja 행 1개 (근거 등급 높음)",
+"n_higashi_fukushima|瀬上": "tohoku_2-012: ja.wikipedia 東北本線 rev111496700: 「6月1日：瀬上駅を東福島駅に改称」(1978); build/names.sqlite name entity_id=n_higashi_fukushima lang=ja 행 1개 (근거 등급 높음)",
+"n_takahata|糠ノ目": "tohoku_2-013: ja.wikipedia 奥羽本線 rev111473148: 「3月16日：糠ノ目駅が高畠駅に…改称」(1991); build/names.sqlite name entity_id=n_takahata lang=ja 행 1개 (근거 등급 높음)",
+"n_owani_onsen|大鰐": "tohoku_2-014: ja.wikipedia 奥羽本線 rev111473148: 「大鰐駅が大鰐温泉駅に改称」(1991); build/names.sqlite name entity_id=n_owani_onsen lang=ja 행 1개 (근거 등급 높음)",
+"n_tsukioka|天王新田": "tohoku_2-015: ja.wikipedia 羽越本線 rev111580331: 「9月1日：天王新田駅が月岡駅に改称」(1950); build/names.sqlite name entity_id=n_tsukioka lang=ja 행 1개 (근거 등급 높음)",
+"n_honjo_azumabashi_toden|吾妻橋二丁目": "kanto_1-010: wiki 東京都電車 L901: 吾妻橋（吾妻橋二丁目→本所吾妻橋）; names.sqlite n_honjo_azumabashi_toden에는 옛 이름 행 없음 (근거 등급 높음)",
+"n_kawabe|弘南川部": "tohoku_1-015: data/imports/wiki 弘南鉄道黒石線 rev111125380 \"1986年…4月1日 弘南川部駅を川部駅に…改称\"; build/names.sqlite name n_kawabe 弘南川部(line_id NULL) (근거 등급 높음)",
+"n_hanno_nagaragawa|美濃洲原": "chubu_1-07: 長良川鉄道越美南線 rev110660132 「美濃洲原駅（初代）を木尾駅（初代、現在の母野駅）に改称」(1956-12-20); N05 美濃洲原 越美南線 1950–1955 (母野 자리) (근거 등급 높음)",
+"n_aizukogen_ozeguchi_aizu|会津滝ノ原": "tohoku_1-001: data/imports/wiki 会津鉄道会津線 rev108995651 年表 \"会津滝ノ原駅が会津高原駅に改称\"(1986-10-09); 같은 문서 \"会津高原駅が会津高原尾瀬口駅に改称\"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 \"会津高原(旧会津滝ノ原)\" (근거 등급 높음)",
+"n_aizukogen_ozeguchi_aizu|会津高原": "tohoku_1-001: data/imports/wiki 会津鉄道会津線 rev108995651 年表 \"会津滝ノ原駅が会津高原駅に改称\"(1986-10-09); 같은 문서 \"会津高原駅が会津高原尾瀬口駅に改称\"(2006-03-18); data/imports/noritsubushi/lines.json id 900014701 \"会津高原(旧会津滝ノ原)\" (근거 등급 높음)",
+"n_ichinosekirokujizoson|六地蔵尊": "tohoku_1-005: data/imports/wiki 会津鉄道会津線 rev108995651 \"臨時駅として六地蔵尊駅が開業（2009年8月23日・24日のみ営業）\" (근거 등급 높음)",
+"n_meganebashi|賑橋": "kyushu_1-025: ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所 (근거 등급 중간)",
+"n_suwajinja|諏訪神社前": "kyushu_1-025: ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所 (근거 등급 중간)",
+"n_shiyakusho|桶屋町": "kyushu_1-025: ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所 (근거 등급 중간)",
+"n_shiyakusho|公会堂前": "kyushu_1-025: ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所 (근거 등급 중간)",
+"n_shiyakusho|市民会館": "kyushu_1-025: ja.wikipedia 長崎電気軌道蛍茶屋支線 rev110003826 「2018年8月1日 浜町アーケード停留場開業」 같은 날 賑橋→めがね橋·公会堂前→市民会館·諏訪神社前→諏訪神社, 1963-03 桶屋町→公会堂前, 2023-01-04 市民会館→市役所 (근거 등급 중간)",
+"n_maya_cable|高尾": "kinki_2-021: data/imports/wiki こうべ未来都市機構摩耶ケーブル線 rev109834079 「1973年2月1日 高尾駅を摩耶ケーブル下駅と改称」「2001年3月17日 摩耶駅を虹駅と改称」 (근거 등급 높음)",
+"n_maya_cable|摩耶ケーブル下": "kinki_2-021: data/imports/wiki こうべ未来都市機構摩耶ケーブル線 rev109834079 「1973年2月1日 高尾駅を摩耶ケーブル下駅と改称」「2001年3月17日 摩耶駅を虹駅と改称」 (근거 등급 높음)",
+"n_nijino|摩耶": "kinki_2-021: data/imports/wiki こうべ未来都市機構摩耶ケーブル線 rev109834079 「1973年2月1日 高尾駅を摩耶ケーブル下駅と改称」「2001年3月17日 摩耶駅を虹駅と改称」 (근거 등급 높음)",
+"n_kanda_nippo_main|苅田": "kyushu_2-20: 日豊本線 rev111420360 「1959年10月1日：苅田駅の読みを「かりた」から「かんだ」に変更」 (근거 등급 높음)",
+"n_iwakuni|麻里布": "K11 r_gantoku_line 같은 날 같은 이름(岩国 둘): ja.wikipedia 西岩国駅 연혁 「1929年4月5日 岩国駅として開業（それまでの山陽本線岩国駅はこの時麻里布駅に改称）」「1942年4月1日 西岩国駅に改称（麻里布駅を再び岩国駅へ改称）」 (근거 등급 높음)",
+"n_utsubohonmachi|靱南通": "W3 names_b oldname:n_utsubohonmachi:靭南通: https://dl.ndl.go.jp/pid/1692321 「西区 머리칸 「…茂左衛門橋 靱南 西区役所 西長堀北二…」」 높음; data/imports/wiki 大阪市電靱本町線 rev111464221 「1951年7月15日：茂左衛門橋停留場、靱南通停留場（2代、もとの太郎助橋停留場）が復活 … 1961年6月1日 靱南通停留場を靱本町停留場に改称」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_20337004 靭南通 1951–1960 → 靭本町 1961–1963」 중간 (근거 등급 높음)",
+"n_stadium_city_south|稲佐橋通": "W3 names_b oldname:n_stadium_city_south:稲佐橋通: data/imports/wiki 長崎電気軌道本線 rev110993491 「1957年12月19日：…銭座町 - 長崎駅前の経路が変更。旧線上に存在した稲佐橋通・八千代町各停留場を新線上に移転し、それぞれ船蔵町・御船町各停留場へ改称」 중간; https://ja.wikipedia.org/wiki/スタジアムシティサウス停留場 (station.json) 「1915年11月16日：稲佐橋通停留場として開業。1957年12月19日：ルート変更により旧線上の停留場が廃止、新線上へ移設し船蔵町停留場に改称」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_22415014 稲佐橋通 1950–1956 (지금 자리에서 172 m, 구선)」 중간 (근거 등급 중간×4)",
+"n_somuta_ishiki_line_shinshoin_ishiki_old_route|草牟田町": "W3 names_b oldname:n_somuta_ishiki_line_shinshoin_ishiki_old_route:草牟田町: https://dl.ndl.go.jp/pid/1184221 「『地方鉄道及軌道一覧』昭和15年11月1日現在(鉄道省) 鹿児島市 「…西鹿兒島驛前 柿本寺通、草牟田町 草牟田町」(구간 끝 이름)」 높음; https://dl.ndl.go.jp/pid/1257892 「『軌道一覽』大正14年8月1日調 「…柿本寺通.草牟田町」」 높음; https://dl.ndl.go.jp/pid/1264033 「『軌道一覧』昭和2年7月1日 「…柿本寺通.草牟田町」」 높음 (근거 등급 높음)",
+"n_namidabashi|新川": "W3 names_b audit2:kyushu_2-45: https://ja.wikipedia.org/wiki/涙橋停留場 (rev 108208777) 「1917年11月3日：…郡元駅として設置 … 1959年10月1日：新川停留場に改名。1967年1月1日：涙橋停留場に改名。」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_22303007 郡元 1950–1958 / 新川 1959–1966 / 涙橋 1967–」 중간 (근거 등급 중간×2)",
+"n_shirahamakaisuiyokujomae|女学校前": "W3 names_b audit2:kyushu_2-44: https://ja.wikipedia.org/wiki/白浜海水浴場前駅 (rev 110185517) 「1932年11月15日：口之津鉄道により女学校前駅として開設。…1973年（昭和48年）10月1日：再開設。同時に白浜海水浴場前駅に改称」 중간; data/imports/wiki 島原鉄道線 rev111517354 「女学校前駅（後の白浜海水浴場前駅）開業」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「N05는 이 역을 1973년부터만 기록(1950–1972 없음)」 중간 (근거 등급 높음)",
+"n_yuemmaebasueigyosho|到津車庫前": "W3 names_b oldname:n_yuemmaebasueigyosho:到津車庫前: data/imports/wiki 西鉄北九州線 rev111195863 「到津車庫は1985年（昭和60年）10月の部分廃止時にバス営業所になった（注: 最寄り停留場は到津車庫前停留場で、車庫廃止に伴い遊園前バス営業所停留場に改称した）」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_22425032 到津車庫前 1950–1991」 중간 (근거 등급 중간×2)",
+"n_mikurasugahara|御蔵菅原通": "W3 names_b b2:k11_27: https://ja.wikipedia.org/wiki/呉市電 (rev 105517988) 「1954年7月10日 呉線をまたぐ呉陸橋の完成により、川原石 - 西本通三丁目間 0.7 km再開、西本通三丁目停留場を廃止し西本通六丁目との間に呉陸橋停留場設置」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_21301034 新栄橋筋 1950–1953 / 呉陸橋 1954–1966; EB03_21301029 堺橋労働会館前 1950–1958 / 中通三丁目 195…」 중간; data/imports/wiki 神戸市電尻池線 rev99345266 「1961年（昭和36年）以前 … 菅原通5丁目停留場を御蔵菅原通停留場に改称。御蔵菅原通停留場を御蔵菅原停留場に改称。」 중간 (근거 등급 중간×3)",
+"n_chuo_1_chome|元寺小路": "W3 names_b oldname:n_chuo_1_chome:元寺小路: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303020 中央一丁目 999–1975 / 元寺小路 999」 중간 (근거 등급 높음)",
+"n_funacho|舟丁南警察署前": "W3 names_b oldname:n_funacho:舟丁南警察署前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304007 舟丁 1950–999 / 舟丁 999–1975 / 舟丁南警察署前 999」 중간 (근거 등급 높음)",
+"n_gorin_2_chome|鹿島通": "W3 names_b oldname:n_gorin_2_chome:鹿島通: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307010 五輪二丁目 999–1975 / 鹿島通·鹿島通東警察署前 999」 중간 (근거 등급 높음)",
+"n_gorinitchomekokuritsubyoiniriguchi|国立病院前": "W3 names_b oldname:n_gorinitchomekokuritsubyoiniriguchi:国立病院前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307009 五輪一丁目国立病院入口 999–1975 / 国立病院前 999」 중간 (근거 등급 높음)",
+"n_hachiman_2_chome|八幡町二丁目": "W3 names_b oldname:n_hachiman_2_chome:八幡町二丁目: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12306004 八幡町二丁目 1950–999 / 八幡三丁目 999–1975」 중간 (근거 등급 높음)",
+"n_ichibanchoyubinkyokumae|東一番丁": "W3 names_b oldname:n_ichibanchoyubinkyokumae:東一番丁仙台郵便局前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303005 東一番丁 1950–999 / 一番町郵便局前 999–1975 / 一番町中央郵便局前·東一番丁仙台郵便局前 999」 중간 (근거 등급 높음)",
+"n_ichibanchoyubinkyokumae|東一番丁仙台郵便局前": "W3 names_b oldname:n_ichibanchoyubinkyokumae:東一番丁仙台郵便局前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303005 東一番丁 1950–999 / 一番町郵便局前 999–1975 / 一番町中央郵便局前·東一番丁仙台郵便局前 999」 중간 (근거 등급 높음)",
+"n_itsutsubashi_sendai_city|五ッ橋通": "W3 names_b oldname:n_itsutsubashi_sendai_city:五ッ橋通: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304003 五ッ橋通 1950–999 / 五橋電通局前 999–1975 / 五ッ橋通電通局前 999」 중간 (근거 등급 높음)",
+"n_itsutsubashi_sendai_city|五ッ橋通電通局前": "W3 names_b oldname:n_itsutsubashi_sendai_city:五ッ橋通: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304003 五ッ橋通 1950–999 / 五橋電通局前 999–1975 / 五ッ橋通電通局前 999」 중간 (근거 등급 높음)",
+"n_katahiraitchomekensatsuchomae|片平丁": "W3 names_b oldname:n_katahiraitchomekensatsuchomae:片平丁検察庁家庭裁判所前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303007 片平丁 1950–999 / 片平一丁目検察庁前 999–1975 / 片平丁検察庁家庭裁判所前 999」 중간 (근거 등급 높음)",
+"n_katahiraitchomekensatsuchomae|片平丁検察庁家庭裁判所前": "W3 names_b oldname:n_katahiraitchomekensatsuchomae:片平丁検察庁家庭裁判所前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303007 片平丁 1950–999 / 片平一丁目検察庁前 999–1975 / 片平丁検察庁家庭裁判所前 999」 중간 (근거 등급 높음)",
+"n_koseibyoinmae|土橋通": "W3 names_b oldname:n_koseibyoinmae:土橋通: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12306002 新坂通 1950–999 / 厚生病院前 999–1975 / 土橋通 999」 중간 (근거 등급 높음)",
+"n_kotosaibanshomae|狐小路裁判所前": "W3 names_b oldname:n_kotosaibanshomae:狐小路裁判所前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303006 狐小路裁判所前 1950–999 / 裁判所前 999–1975」 중간 (근거 등급 높음)",
+"n_kotsukyokumae_loop_line_sendai_city|北二番丁車庫前": "W3 names_b oldname:n_kotsukyokumae_loop_line_sendai_city:北二番丁交通局前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303010 北二番丁車庫前 1950–999 / 交通局前 999–1975 / 北二番丁交通局前 999」 중간 (근거 등급 높음)",
+"n_kotsukyokumae_loop_line_sendai_city|北二番丁交通局前": "W3 names_b oldname:n_kotsukyokumae_loop_line_sendai_city:北二番丁交通局前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303010 北二番丁車庫前 1950–999 / 交通局前 999–1975 / 北二番丁交通局前 999」 중간 (근거 등급 높음)",
+"n_nagamachi_1_chome_sendai_tram|長町市場前": "W3 names_b oldname:n_nagamachi_1_chome_sendai_tram:長町市場前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304011 長町北町 1950–999 / 長町一丁目 999–1975 / 長町北町·長町市場前 999」 중간; https://dl.ndl.go.jp/pid/3458865 「『仙臺 : 産業と觀光』昭和17年版 p27 「市電愛宕橋又は長町市場前…下車」」 중간 (근거 등급 높음)",
+"n_nagamachi_3_chome|長町南町": "W3 names_b oldname:n_nagamachi_3_chome:長町南町: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304014 長町南町 1950–999(283 m) / EB03_12304013 長町三丁目·長町南町·長町南町宮城第二病院前 999(0 m)」 중간 (근거 등급 높음)",
+"n_odawara_1_chome|小田原車通": "W3 names_b oldname:n_odawara_1_chome:小田原車通: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307004 小田原一丁目 999–1975 / 小田原車通 999」 중간 (근거 등급 높음)",
+"n_odawara_2_chome|小田原弓の町": "W3 names_b oldname:n_odawara_2_chome:小田原弓の町: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307006 小田原二丁目 999–1975 / 小田原弓の町·小田原弓ノ町 999」 중간 (근거 등급 높음)",
+"n_omachinishikoenmae|大町一丁目": "W3 names_b oldname:n_omachinishikoenmae:大町一丁目西公園市立天文台前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303008 大町一丁目 1950–999 / 大町西公園前 999–1975 / 大町一丁目西公園前·大町一丁目西公園市立天文台前 999」 중간 (근거 등급 높음)",
+"n_omachinishikoenmae|大町一丁目西公園市立天文台前": "W3 names_b oldname:n_omachinishikoenmae:大町一丁目西公園市立天文台前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303008 大町一丁目 1950–999 / 大町西公園前 999–1975 / 大町一丁目西公園前·大町一丁目西公園市立天文台前 999」 중간 (근거 등급 높음)",
+"n_reja_center_mae|レジャーセンター北警察署前": "W3 names_b oldname:n_reja_center_mae:レジャーセンター北警察署前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303017 レジャーセンター前 1950–999 / レジャーセンター前 999–1975 / 北警察署前·中央警察署前 999」 중간 (근거 등급 높음)",
+"n_tokiwagigakuenmae|小田原金剛院丁": "W3 names_b oldname:n_tokiwagigakuenmae:小田原広丁: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307005 小田原金剛院丁 1950–999 / 常盤木学園前 999–1975 / 大行院丁·小田原広丁·金剛院丁 999」 중간 (근거 등급 높음)",
+"n_tokiwagigakuenmae|小田原広丁": "W3 names_b oldname:n_tokiwagigakuenmae:小田原広丁: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307005 小田原金剛院丁 1950–999 / 常盤木学園前 999–1975 / 大行院丁·小田原広丁·金剛院丁 999」 중간 (근거 등급 높음)",
+"n_tsutsujigaokakishodaimae|榴ヶ岡": "W3 names_b oldname:n_tsutsujigaokakishodaimae:榴ヶ岡釈迦堂前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307007 榴ヶ岡 1950–999 / 榴ヶ岡気象台前 999–1975 / 榴ヶ岡釈迦堂前 999」 중간 (근거 등급 높음)",
+"n_tsutsujigaokakishodaimae|榴ヶ岡釈迦堂前": "W3 names_b oldname:n_tsutsujigaokakishodaimae:榴ヶ岡釈迦堂前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12307007 榴ヶ岡 1950–999 / 榴ヶ岡気象台前 999–1975 / 榴ヶ岡釈迦堂前 999」 중간 (근거 등급 높음)",
+"n_yuseikyokumae|東二番丁逓信局前": "W3 names_b oldname:n_yuseikyokumae:東二番丁郵政局前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303004 東二番丁逓信局前 1950–999 / 郵政局前 999–1975 / 東二番丁郵政局前 999」 중간 (근거 등급 높음)",
+"n_yuseikyokumae|東二番丁郵政局前": "W3 names_b oldname:n_yuseikyokumae:東二番丁郵政局前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12303004 東二番丁逓信局前 1950–999 / 郵政局前 999–1975 / 東二番丁郵政局前 999」 중간 (근거 등급 높음)",
+"n_hachimanjinjamae|滝前丁": "W3 names_b oldname:n_hachimanjinjamae:八幡町: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12306005 滝前丁 1950–999 / 八幡神社前 999–1975 / 八幡町 999」 중간; data/imports/wiki 仙台市電 rev111123306 「1941年10月10日 八幡町二丁目 - 滝前丁 (0.4 km) 開通」 중간 (근거 등급 높음)",
+"n_nagamachishishomae|秋保電鉄前": "W3 names_b oldname:n_nagamachishishomae:長町車庫前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304015 秋保電鉄前 1950–999 / 長町支所前 999–1975 / 長町車庫前 999」 중간 (근거 등급 높음)",
+"n_tetsudokanrikyokumae|北目町通": "W3 names_b oldname:n_tetsudokanrikyokumae:北目町通国鉄ビル前: https://www.kotsu.city.sendai.jp/assets/img/kigyou/huzokukikan/10_rekisisyoukai.pdf 「p.13(본문 p.11) 그림 「市電の系統図（昭和35年7月時点）」 출처 「仙台市交通局編集『仙台市電－その50年』から」」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12304002 北目町通 1950–999 / 鉄道管理局前 999–1975 / 北目町通国鉄ビル前 999」 중간 (근거 등급 높음)",
+"n_senoekyokumae|瀬上本町": "W3 names_b oldname:n_senoekyokumae:瀬上本町: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_12421019 瀬上本町 1950–999 / 瀬上局前 999–1961·1962–1970 / 瀬上郵便局前 999」 낮음; data/imports/wiki 福島交通飯坂東線 rev109650637 「1963年（昭和38年）当時 … 文知褶通 - 信夫ヶ丘グランド前 - 大日堂前 … 新鎌田 - 瀬上局前 - 瀬上荒町」 중간; https://dl.ndl.go.jp/pid/920487 「『飯坂湯野温泉史』(1924) 「…鎌田、瀬上本町、同荒町…」」 중간 (근거 등급 중간×2)",
+"n_maidashi_3_chome|金平": "W3 names_b audit2:kyushu_1-021: audit2/out/kyushu_1/work/n05_oldname_cands.json 「21노선 99행」 None; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_22419002 金平 1962–1974 / 馬出三丁目 1975–1978; EB03_22425052 貞元 1950–1967 / 熊西 1968–1999; …」 중간; data/imports/wiki 熊本市電川尻線·熊本市交通局 「1927年4月19日：岡町 - 川尻町間開業 / 1945年5月6日 健軍線水前寺公園 - 三菱工場前間が開通」 중간; N05 EB03_22419002 宮地岳線 金平 1962–1974 → 馬出三丁目 1975–1978, 양 끝 해 숫자·범위 2년(규칙 2a). DB 정차 시작 1962와 맞음. 尾小屋鉄道 n_kanahira(金平)와는 무관 (근거 등급 중간×3)",
+"n_azabu_juban_toden|一ノ橋": "W3 names_c coord:n_azabu_juban_toden:一ノ橋: https://dl.ndl.go.jp/pid/1697381/1/39 「古川橋 / 三ノ橋 / 二ノ橋 / 一ノ橋 / 麻布中ノ橋 / 赤羽橋 (4계통 정류장 머리칸)」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_15314007 一ノ橋 1950–1967 → 麻布十番」 중간 (근거 등급 높음)",
+"n_tsukishima_toden|月島通八丁目": "W3 names_c coord:n_tsukishima_toden:月島通八丁目: https://dl.ndl.go.jp/pid/1697381/1/57 「三原橋 / 築地 / 勝鬨橋 / 月島通八丁目 / 月島通三丁目 / 新佃島 (11계통)」 높음; https://dl.ndl.go.jp/pid/1692315/1/91 「新佃島 / 月島三 / 月島八 (中央区 머리칸, 약칭)」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_15377005 月島通八丁目 1950–1964 → 月島」 중간 (근거 등급 높음)",
+"n_honmachi_1_chome|西堀端": "W3 names_c n05ren:n_honmachi_1_chome:西堀端: (伊予鉄道 2018-01-25 보도자료, names_dates round_4 기재) 「環状線「西堀端」電停とは異なる位置にある本町線の同名電停を「本町一丁目」に名称変更」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「伊予鉄道/本町線 西堀端 1950–2017」 중간 (근거 등급 높음)",
+"n_kita_aoyama_1_chome|青山一丁目": "W3 names_c n05ren:n_kita_aoyama_1_chome:青山一丁目: https://dl.ndl.go.jp/pid/1697381/1/36 「信濃町 / 権田原 / 青山一丁目 / 南町一丁目 / 墓地下」 높음; https://dl.ndl.go.jp/pid/1692315/1/172 「青山三 / 青山一 / 赤坂表町 / 豊川稲荷 (港区 행 머리칸, 쪽 그림 확인)」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_15318001 青山一丁目 1950–1966」 중간 (근거 등급 높음)",
+"n_kotodori|大江": "W3 names_c n05ren:n_kotodori:大江: https://ja.wikipedia.org/w/index.php?oldid=92163535 「1960年（昭和35年）7月1日 - 大江停留場を東港通停留場、六号地停留場を大江町停留場に改称 (年表 출전 『日本鉄道旅行地図帳』7号)」 중간; https://dl.ndl.go.jp/pid/1692322/1/43 「加福町 港東通 北頭 笠寺駅前 (港区 머리칸)」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東臨港線 大江 1951–1959, 港東通 1960–1973 (같은 좌표)」 중간 (근거 등급 높음)",
+"n_higashichiryu|知立": "W3 names_c n05ren:n_higashichiryu:知立: https://dl.ndl.go.jp/pid/1873236/1/186 「東知立 ひがしちりゅう 42.5 … / (知立) ちりゅう 42.5 … 昭34.4.1 三河線」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_17424019 知立 1950–1958 → 東知立」 중간 (근거 등급 높음)",
+"n_mikawa_chiryu_meitetsu_mikawa_old|知立": "W3 names_c n05ren:n_mikawa_chiryu_meitetsu_mikawa_old:知立: https://dl.ndl.go.jp/pid/1873236/1/187 「三河知立 MIKAWA-CHIRYU 34.9 愛知県碧海郡知立町」 높음; https://dl.ndl.go.jp/pid/1873236/1/186 「(知立) … 昭34.4.1 三河線」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_17429015 知立 1950–1958 → 三河知立」 중간 (근거 등급 높음)",
+"n_sumasuizokukammae|若宮町四丁目": "W3 names_c n05ren:n_sumasuizokukammae:若宮町四丁目: https://dl.ndl.go.jp/pid/1219133/1/6 「大橋九丁目 / 本庄町四丁目 / タカ取町二丁目 / 妙法寺川 / 若宮町四丁目 / 衣掛町 / 離宮道 (電車自動車路線図)」 높음; https://www.city.kobe.lg.jp/documents/32459/kinensi_2.pdf 「1957年（昭和32年) 須磨水族館開館」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「EB03_19330010 若宮町四丁目 1950–1956 → 須磨水族館前」 중간 (근거 등급 높음)",
+"n_ujina_5_chome|宇品四丁目": "W3 names_c n05ren:n_ujina_5_chome:宇品4丁目: https://ja.wikipedia.org/w/index.php?oldid=110400079 「1950年12月1日：再開業。1960年3月30日：宇品四丁目停留場に改称。1968年9月1日：宇品五丁目停留場に改称 (출전 『日本鉄道旅行地図帳』11 38頁・『広電が走る街…」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「宇品線 4丁目 1950–1959 / 宇品4丁目 1960–1967 / 宇品五丁目 1968– (같은 좌표)」 중간 (근거 등급 중간×2)",
+"n_kaminocho_bancho|城下": "W3 names_c n05ren:n_kaminocho_bancho:城下: https://ja.wikipedia.org/w/index.php?oldid=110644921 「御城下停留場は1921年～1923年に城下停留場に改称、1954年12月20日に上之町停留場に改称、1965年7月に移設、1968年6月1日に番町線廃線に伴い廃止 (『日本鉄道旅…」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「番町線 城下 1950–1953 → 上之町 1954–1964 (같은 좌표)」 중간 (근거 등급 중간×2)",
+"n_shiroshita_okayama|上之町": "W3 names_c n05ren:n_shiroshita_okayama:上之町: https://ja.wikipedia.org/w/index.php?oldid=110644921 「1968年6月1日：上之町停留場として再度復活。1970年10月17日：表町入口停留場に改称。1985年7月1日：100m起点方に移設、城下停留場に改称」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東山本線 上之町 1968–1969 / 表町入口 1970–1984 / 城下 1985– (4m)」 중간 (근거 등급 중간×2)",
+"n_omachi_2_chome|県庁前": "W3 names_c n05ren:n_omachi_2_chome:県庁前: https://ja.wikipedia.org/w/index.php?oldid=108630770 「1959年 … 月不明 - 県庁前停留所を大町二丁目停留所に、体育館前停留所を県庁前停留所に改称 (출전 「写真帖 秋田の路面電車」p.9)」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「秋田市 県庁前 1950–1958 → 大町二丁目 1959–1965」 중간 (근거 등급 중간×2)",
+"n_toyama_daigaku_mae|球場前": "W3 names_c n05ren:n_daigakumae_toyama_chiho:球場前: https://ja.wikipedia.org/w/index.php?oldid=110127305 「1954年3月20日 … 両停留場の間に球場前停留場を新設 / 1969年10月1日：球場前 - （旧）大学前間廃止し、大学前停留場に改称 / 2020年3月21日：富山大学前停…」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「呉羽線 球場前 1954–1968 / 大学前 1969–2019 / 富山大学前 2020–」 중간 (근거 등급 중간×2)",
+"n_toyama_daigaku_mae|大学前": "W3 names_c n05ren:n_daigakumae_toyama_chiho:球場前: https://ja.wikipedia.org/w/index.php?oldid=110127305 「1954年3月20日 … 両停留場の間に球場前停留場を新設 / 1969年10月1日：球場前 - （旧）大学前間廃止し、大学前停留場に改称 / 2020年3月21日：富山大学前停…」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「呉羽線 球場前 1954–1968 / 大学前 1969–2019 / 富山大学前 2020–」 중간 (근거 등급 중간×2)",
+"n_chuokuyakushomae|西11丁目": "W3 names_c n05ren:n_chuokuyakushomae:西11丁目: https://ja.wikipedia.org/w/index.php?oldid=108278837 「1918年8月12日「西11丁目」開業。1949年7月8日「交通局前」。1958年7月1日 交通局移転に伴い「西11丁目」に再改称。1962年6月1日「消防局前」。1972年4月…」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「1条線 交通局前 1950–1957 / 西11丁目 1958–1961 / 消防局前 1962–1971 (94m)」 중간 (근거 등급 중간×2)",
+"n_nishi_4_chome|三越前": "W3 names_c n05ren:n_nishi_4_chome_sapporo_city:三越前: https://ja.wikipedia.org/w/index.php?title=西4丁目停留場 「1949年7月8日：三越前停留場に改称。1965年8月1日：一条線の停留場を西4丁目停留場に改称」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「1条線 三越前 1950–1964 (0m), 西四丁目線 三越前 1950–1972 (56m, 별개)」 중간 (근거 등급 중간×2)",
+"n_choseiemmae|西保健所前": "W3 names_c n05ren:n_choseiemmae:西保健所前: https://ja.wikipedia.org/w/index.php?oldid=110980163 「最盛期の1958年ごろの系統 … 西保健所前（のちの長生園前）- 円山公園」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「1条線 西二十丁目 1950–1956 / 西保健所前 1957–1963 / 長生園前 1964–1972 (0m)」 중간 (근거 등급 중간×2)",
+"n_kujoomiya|九条大路大宮": "W3 names_c n05ren:n_kujoomiya:九条大路大宮: https://dl.ndl.go.jp/pid/1186026/1/166 「西大路七條 … 七條大宮 九條大路大宮 (10.6.1 특허 구간)」 높음; https://dl.ndl.go.jp/pid/1144956/1/141 「自大石橋至九條大路大宮間電車線工事」 높음; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「千本大宮線 九条大路大宮 1950 / 九条大宮 1951–1971 (92m); 九条線 九条大宮 1950–1977 (0m)」 중간 (근거 등급 높음)",
+"n_kamiokacho|東町": "W3 names_c n05ren:n_kamiokacho:東町: https://ja.wikipedia.org/w/index.php?oldid=110986155 「1950年頃 : 猪谷 - 東猪谷 - 茂住 - 杉山 - 土 - 鹿間 - 東町 / 茂住 - 東町（神岡町）間の軌道を撤去」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「神岡鉄道線 東町 1950 → 神岡町 1951–1965 [137.300118, 36.335159]」 중간 (근거 등급 중간×2)",
+"n_tonoshiroguchi|川久保": "W3 names_c n05ren:n_tonoshiroguchi:川久保: https://ja.wikipedia.org/wiki/殿城口駅 「1928年1月10日：…川久保駅として開業[官報]。… 1953年（昭和28年）：殿城口駅へ改称。」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「菅原(平)鹿沢線 川久保 1950–1952」 중간; https://dl.ndl.go.jp/pid/1873236/1/182 「殿城口 とのしろぐち TONOSHIROGUCHI 7.6」 높음 (근거 등급 높음)",
+"n_tsugaru_goshogawara|五所川原": "W3 names_c n05ren:n_tsugaru_goshogawara:五所川原: https://ja.wikipedia.org/wiki/津軽五所川原駅 「1956年（昭和31年）7月10日：国鉄五所川原駅より津軽鉄道線の駅が分離し、津軽五所川原駅に改称となる[6]」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「津軽鉄道線 五所川原 1950 → 津軽五所川原 1951–」 중간 (근거 등급 중간×2)",
+"n_nishitetsu_fukuoka_old|西鉄福岡": "W3 names_c n05ren:n_nishitetsu_fukuoka_old:西鉄福岡: https://dl.ndl.go.jp/pid/1873236/1/226 「大牟田線 西鉄福岡・大牟田間 (福岡市天神1丁目11番17号)」 높음; https://ja.wikipedia.org/wiki/西鉄福岡（天神）駅 「1942年9月22日：西鉄福岡駅に改称。… 2001年1月1日：西鉄福岡（天神）駅に改称」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「天神大牟田線 西鉄福岡 1950–2000」 중간 (근거 등급 높음)",
+"n_namba_osaka_metro|難波元町": "W3 names_c n05ren:n_namba_nankai:難波元町: https://ja.wikipedia.org/w/index.php?oldid=111580814 「1970年（昭和45年）3月11日：千日前線開業に伴い、難波元町駅を難波駅に統合」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「大阪市 3号線 難波元町 1965–1969 [135.49758, 34.66637]」 중간 (근거 등급 중간×2)",
+"n_kurobedaira|黒部御前": "W3 names_c n05ren:n_kurobedaira:黒部御前: https://ja.wikipedia.org/wiki/黒部平駅 「1969年7月20日：黒部ケーブルカーの黒部御前駅として開設。1970年…この年に黒部平駅と改称 (出典『立山黒部貫光30年史』477頁)」 중간; https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「鋼索線 立山黒部貫光 黒部御前 1969–1969」 중간 (근거 등급 중간×2)",
+"n_kumommyo|井戸川": "W3 station_a n05stop:n_kumommyo:長尾線:1950: https://ja.wikipedia.org/w/index.php?oldid=111480106 「高松琴平電気鉄道長尾線: 1915年 井戸駅（現在の公文明駅）を井戸川駅に改称 … 1951年3月1日 … 井戸川駅が廃止される … 1952年9月30日：公文明駅開業」 중간; 국토수치정보 N05 EB03_21436017 「長尾線 井戸川 1950-1950 / 公文明 1952- (같은 점 ID)」 중간 (근거 등급 중간×2)",
+"n_kochibashi|廿代町通": "W3 station_a n05stop:n_kochibashi:桟橋線:1950: https://ja.wikipedia.org/w/index.php?oldid=107029549 「高知橋停留場: 1928年2月16日…高知橋停留場が開業 / 1944年4月1日：南へ移転し廿代町通停留場に改称 / 1960年4月18日：廃止 / 2001年3月27日：高知橋…」 중간; 국토수치정보 N05 EB03_21442002 「桟橋線 廿代町通 1950-1959, 高知橋 2001- (같은 점 ID)」 중간 (근거 등급 중간×2)",
+"n_kishinosato_tamade|岸ノ里": "W3 station_a n05stop:n_kishinosato_tamade:高野線:1950: https://dl.ndl.go.jp/pid/1873236 「停車場一覧 昭和41年3月現在 南海 高野線: 汐見橋·芦原町·木津川·津守·西天下茶屋·(岸ノ里)·(帝塚山)… / 南海本線: …(天下茶屋)·(岸ノ里)·玉出…」 높음; https://dl.ndl.go.jp/pid/1692317 「大都市交通センサス 大阪 鉄道篇(1960) 〔高野線〕 汐見橋·芦原町·木津川·津守·西天下茶屋·岸里(ノ)·帝塚山…」 높음; https://ja.wikipedia.org/w/index.php?oldid=111041283 「岸里玉出駅: 1900年9月3日 … 高野鉄道の勝間駅が開業 / 1925年2月1日：高野線の阿部野駅を岸ノ里駅に改称 / 1993年4月18日 … 岸ノ里駅と玉出駅を統合し、岸…」 중간 (근거 등급 높음)",
+"n_suita_hankyu|市役所前": "W3 station_a n05stop:n_suita_hankyu:千里線:1950: https://dl.ndl.go.jp/pid/1692317 「大都市交通センサス 大阪 鉄道篇(1960) 駅別表 〔京阪神千里山線〕 天神橋·柴島·淡路·下新庄·吹田·市役所前·豊津·花壇町·大学前·千里山」 높음; https://ja.wikipedia.org/w/index.php?oldid=110996836 「吹田駅 (阪急): 1921年4月1日 … 東吹田駅、西吹田駅が設置 / 1943年10月1日 … 東吹田駅を吹田駅に、西吹田駅を市役所前駅に改称 / 1964年4月10日：吹田…」 중간; 국토수치정보 N05 EB03_19424005·EB03_19424007·EB03_19424006 「千里線 吹田 1950-1963(34.757564,135.51924) / 市役所前 1950-1963(34.75995,135.51674) / 吹田 1964-(34.…」 중간 (근거 등급 높음)",
+"n_yoshinobu|吉野": "W3 km_d archkm:l_yodo_line: https://dl.ndl.go.jp/pid/2958441/1/7 「鐵道省告示第三百三十號 … 松丸吉野生間 二粁六分 / 出目松丸間 三粁五分」 높음; https://ja.wikipedia.org/wiki/吉野生駅 (oldid 110694394) 「1933年8月1日：宇和島鉄道国有化。同時に移転し、吉野生駅に改称」 중간; https://dl.ndl.go.jp/pid/1020981/1/228 「松丸 14.3 / 吉野 1.6 15.9 (哩)」 높음 (근거 등급 높음)",
+"n_kariya_meitetsu|刈谷新": "W3 km_d archkm:l_mikawa_line: https://dl.ndl.go.jp/pid/3461950/1/114 「知立 .0 / (刈谷新) かりやしん 2.5 2.5 / 刈谷町 1.0 3.5 (哩)」 높음; https://dl.ndl.go.jp/pid/1020981/1/175 「刈谷新 2.5 15.4 / 刈谷町 1.0 16.4」 높음; ja.wikipedia 名鉄三河線 rev111573127(캐시) 「刈谷町（現在の刈谷市）、刈谷新（現在の刈谷）」 중간; 개칭(移転統合)일 ja.wikipedia 刈谷駅 「1927年11月10日：刈谷新駅を刈谷駅に移転統合」 중간 (근거 등급 높음)",
+"n_tsushima|新津島": "W3 km_d archkm:l_tsushima_line: https://dl.ndl.go.jp/pid/3461950/1/116 「藤浪 .8 7.8 / 津島口 .6 8.4 / 新津島 .4 8.8 (哩)」 높음; https://dl.ndl.go.jp/pid/1020981/1/179 「藤浪 .8 7.8 / 津島口 .6 8.4 / 新津島 .4 8.8」 높음; ja.wikipedia 名鉄津島線 rev110064748(캐시) 「1931年10月25日：新津島駅を尾西線の津島駅に統合」 중간 (근거 등급 높음)",
+"n_sotokanda_5_chome|末広町": "W3 station_b r7:tokyo_tram_oldname_gap: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東京都 노면 코드별 연도 이름(N05_011)」 중간; N05 東京都 上野線 「末広町」 1950-1964, 같은 자리 다음 해부터 지금 이름. N05 연 범위 규칙(names_b 규칙 2a·ⓒ: 시작 해 숫자·다음 이름 있음·어긋나는 자료 없음) (근거 등급 중간×3)",
+"n_asakusa_7_chome|聖天町": "W3 station_b r7:tokyo_tram_oldname_gap: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東京都 노면 코드별 연도 이름(N05_011)」 중간; N05 東京都 千住線 「聖天町」 1950-1966, 같은 자리 다음 해부터 지금 이름. N05 연 범위 규칙(names_b 규칙 2a·ⓒ: 시작 해 숫자·다음 이름 있음·어긋나는 자료 없음) (근거 등급 중간×3)",
+"n_asakusa_1_chome|田原町": "W3 station_b r7:tokyo_tram_oldname_gap: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東京都 노면 코드별 연도 이름(N05_011)」 중간; N05 東京都 吾妻橋線 「田原町」 1950-1965, 같은 자리 다음 해부터 지금 이름. N05 연 범위 규칙(names_b 규칙 2a·ⓒ: 시작 해 숫자·다음 이름 있음·어긋나는 자료 없음) (근거 등급 중간×3)",
+"n_shitayajinjamae|稲荷町": "W3 station_b r7:tokyo_tram_oldname_gap: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東京都 노면 코드별 연도 이름(N05_011)」 중간; N05 東京都 吾妻橋線 「稲荷町」 1950-1965, 같은 자리 다음 해부터 지금 이름. N05 연 범위 규칙(names_b 규칙 2a·ⓒ: 시작 해 숫자·다음 이름 있음·어긋나는 자료 없음) (근거 등급 중간×3)",
+"n_tokyoekiyaesuguchi|東京駅東口": "W3 station_b r7:tokyo_tram_oldname_gap: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東京都 노면 코드별 연도 이름(N05_011)」 중간; N05 東京都 土橋線 「東京駅東口」 1950-1952, 같은 자리 다음 해부터 지금 이름. N05 연 범위 규칙(names_b 규칙 2a·ⓒ: 시작 해 숫자·다음 이름 있음·어긋나는 자료 없음) (근거 등급 중간×3)",
+"n_arakawa_nichome|三河島": "W3 station_b r7:tokyo_tram_oldname_gap: https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html 「東京都 노면 코드별 연도 이름(N05_011)」 중간; N05 東京都 荒川線 「三河島」 1951-1960, 같은 자리 다음 해부터 지금 이름. N05 연 범위 규칙(names_b 규칙 2a·ⓒ: 시작 해 숫자·다음 이름 있음·어긋나는 자료 없음) (근거 등급 중간×3)",
+"n_nakashima|安芸中島": "ja.wikipedia 可部線 年表(로컬 캐시, data/candidates/renames_lines.json) 「1936-09-01 中島→安芸中島」「1956-06-01 休止中の安芸中島駅を中島駅として営業再開」(중간) + 私鉄・国鉄停車場一覧 1953.09.30(railforum 공개 PDF, 중간) 「安芸中島 駅 休止」 + N05 安芸中島 ~1955 (중간) — 중간 셋. 「休止中の安芸中島」은 年表 문장을 옛 이름으로 잘못 읽은 행이라 old_names_fix에서 뺌(audit K12) (susp_jnr 6회차) (W4 F1 2026-11-12)",
+"n_iwate_numakunai_igr_iwate_galaxy|沼宮内": "沼宮内 1891-09-01~2002-12-01(東北新幹線 개업 때 いわて沼宮内로 개칭): 1966 停車場一覧 쪽 그림 「沼宮内」(높음)와 위키 いわて沼宮内駅 (1966 停車場一覧 국철편 NDL pid 1873236 쪽 그림 높음, R6-G 3회차 2026-11-13; r5/out_misc/jr1966.json)",
+"n_biwako_hamaotsu|浜大津": "京津線 浜大津 1925-05-05~1981-04-12(그 노선 칸만, 1966 停車場一覧 높음), 1981-04-12 石坂線 역과 합친 뒤 2018-03-17까지 浜大津 (R6-L 2026-11-13)",
+"n_hamaotsu|浜大津東口": "石坂線 浜大津東口 1957-03-20~1981-04-12: N05 1957–1980 「浜大津東口」(중간)·위키 びわ湖浜大津駅 연혁(중간) (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json)",
+"n_higashiyama_sanjo": "古川町 → 東山三条 1949-11-25: 『鉄路五十年』(京阪 社史 1960, NDL 2493959 스니펫 높음). 위키 1950-01-07은 틀림 (2회차 audit 근거 조사 2026-11-13; r2out/audit)",
+"n_kashii_kaenmae": "香椎福日園前(仮停留場) 1941-04-01~1942-04-01 (2회차 audit 근거 조사 2026-11-13; r2out/audit)",
+"n_kitasuzaka": "豊洲 1923-03-26~1960-04-11(1944-01-11~1960-04-11 휴지): 1934 停車場一覧(높음)·『須高』 40호 스니펫 (2회차 audit 근거 조사 2026-11-13; r2out/audit)",
+"n_kawabe": "弘南黒石線 川部역 이름 弘南川部 1984-11-01~1986-04-01: 위키 川部駅·『第3セクター鉄道』 1992·『鉄道ピクトリアル』 1985 스니펫(중간 셋) (2회차 audit 근거 조사 2026-11-13; r2out/audit)",
+"n_takefu_shin": "武生新 → 越前武生 2010-03-25 → たけふ新 2023-02-25: 福井鉄道 2023-03 안내문(높음)·위키 たけふ新駅 (2회차 후속 근거 조사 2026-11-13; r2out/follow)",
+"n_nagamachi_1_chome_sendai_tram": " / 시작은 長町北町 끝([1936-01-17..1942-12-31], 『仙臺 : 産業と觀光』 昭和17年版·『鉄道ピクトリアル』 1962) (2회차 audit 근거 조사 2026-11-13; r2out/audit)",
+"n_enshu_mori": "二俣線 遠江森 1935-04-17~1987-03-15(天竜浜名湖鉄道 遠州森로): 1966 停車場一覧 역 줄·색인(높음)·위키 (2회차 audit 근거 조사 2026-11-13; r2out/audit)",
+"n_asunarou_yokkaichi": "内部・八王子線 近鉄四日市 1970-03-01~2015-04-01(四日市あすなろう鉄道 이관): 三重県 『みえ 県政だより』 2003-02·07(중간 둘)·위키 (3회차 날짜 보강 조사 2026-11-13; r3out/dates)",
+"n_yuigahama": "由比ヶ浜의 옛 이름 海岸通(~1950-07-15 복활 때 개칭): 『江ノ電六十年記』 1963(社史)·『江ノ電各駅停車』 1984·『地図で歩く路面電車の街』 1998 스니펫(중간 셋). 海岸院通은 근거 위키 하나라 넣지 않음 (4회차 근거 조사 2026-11-13; r4out)",
+"n_kujoomiya": " / 九条線 쪽에도 같은 이름: 『電車・自動車乗客交通調査実績』 昭和12年度(京都市電気局 1939)·『電気事業成績調書』 昭和13年度(높음) (4회차 근거 조사 2026-11-13; r4out)",
+"n_amagasaki": "JR 尼崎駅의 1949-01-01 전 이름 神崎(かんざき): 『鐵道停車場一覽』 昭和12年10月1日現在 「(塚本)つかもと (神崎)かんざき 立花」(NDL 1207554 koma 26, 높음), 위키 尼崎駅 (JR西日本) 「1949年1月1日：尼崎駅に改称」(중간). 尼崎港線 神崎乗降場→尼崎乗降場 표식 이름이 그때 이름을 따르게 함 (2회차 근거 조사 K26; r2out/audit)",
+"n_rakuyokokomae": "九条線 御前通 정류장의 1937~38 이름 九條大路御前通: 『電車・自動車乗客交通調査実績 昭和12年度施行』(京都市電気局 1939, NDL 1686709 koma 26 「勸進橋 九條大路大宮 九條大路御前通 烏丸六條」, 사업자 공시 높음). 1950 N05 이름은 九条御前通이라 바뀐 때는 [1938..1950] 범위, 九条御前通의 시작도 같은 범위로 둠. 읽기 근거 없음 (4회차 근거 조사 2026-11-13; r4out n_kujoomiya 「九条線 다른 정류장 같은 꼴 점검」)",
+"n_kujokintetsumae": "九条線 堀川 정류장의 1938~39 이름 九條大路堀川: 『[京都市電気局]電気事業成績調書 昭和13年度』(1940, NDL 1144959 koma 11 「至九條大路堀川 自九條大路大宮」, 높음). 1950 N05 이름은 九条堀川奈良電前이라 바뀐 때는 [1939..1950] 범위, 九条堀川奈良電前의 시작도 같은 범위로 둠. 읽기 근거 없음. 같은 자료의 九條大路油小路는 DB 어느 노드인지(九条車庫前?) 근거가 없어 넣지 않음 (4회차 근거 조사 2026-11-13; r4out)",
+"n_seki_nagaragawa|美濃関": "위키 長良川鉄道越美南線 年表 1986-12-11 「美濃関駅を関駅に…改称」(전환일, 같은 날 개칭 13역은 이미 정확일). N05 범위 대신 정확일 (8회차 W2 2026-11-15; audit3 chubu_1-002)",
+"n_shiodamachi|上本郷": "위키 上田電鉄別所線 年表 「1960年：上本郷駅を塩田町駅に改称」과 N05(上本郷 1964~65까지)가 엇갈려 끝을 범위 하나로(두 행이 이어 붙던 것 없앰) (8회차 W2 2026-11-15; audit3 chubu_1-003)",
+"n_kodomonokuni_meitetsu|洲崎": "위키 名鉄蒲郡線 年表 「1974年10月：…洲崎駅を再び移設」, 「1976年10月10日：洲崎駅をこどもの国駅に改称」. 이전(1974-10-10, 名古屋鉄道百年史) 뒤 개칭까지 새 자리 이름도 洲崎 (8회차 W2 2026-11-15; audit3 chubu_1-004)",
+"n_ekimae_odori|駅大通": "위키 豊橋鉄道東田本線 歴史 1950-08-26 「新線に駅大通（後の名豊ビル前）停留場…開業」, 1968-10-01 「駅大通停留場を名豊ビル前停留場に改称」, 1969-01-10 「名豊ビル前停留場を休止」. 2005-03-31 駅前大通 신설. 읽기 근거 없음 (8회차 W2 2026-11-15; audit3 chubu_1-005)",
+"n_ekimae_odori|名豊ビル前": "위키 豊橋鉄道東田本線 歴史 1950-08-26 「新線に駅大通（後の名豊ビル前）停留場…開業」, 1968-10-01 「駅大通停留場を名豊ビル前停留場に改称」, 1969-01-10 「名豊ビル前停留場を休止」. 2005-03-31 駅前大通 신설. 읽기 근거 없음 (8회차 W2 2026-11-15; audit3 chubu_1-005)",
+"n_hida_kamioka|飛騨船津": "위키 神岡鉄道神岡線 rev108483508 「…飛驒船津駅を飛驒神岡駅に、神岡駅を奥飛驒温泉口駅にそれぞれ改称」(1984-10-01). N05 범위 대신 정확일, 글자꼴만 다른 위키 행(飛驒船津)은 old_names_fix로 뺌(지금 이름 표기 騨에 맞춤) (8회차 W2 2026-11-15; audit3 chubu_2-19)",
+"n_okuhida_onsenguchi|神岡": "위키 神岡鉄道神岡線 rev108483508 「神岡駅を奥飛驒温泉口駅に…改称」(1984-10-01) (8회차 W2 2026-11-15; audit3 chubu_2-19)",
+"n_kamioka_kozanmae|神岡口": "위키 神岡鉄道神岡線 rev108483508 「1985年4月20日 - 神岡口駅を神岡鉱山前駅に改称」 (8회차 W2 2026-11-15; audit3 chubu_2-19)",
+"n_kagetsu_sojiji|花月園前": "위키 京急本線 年表 2020-03-14 「花月園前駅、仲木戸駅をそれぞれ花月総持寺駅、京急東神奈川駅に改称」 (8회차 W2 2026-11-15; audit3 kanto_2-009)",
+"n_keikyu_higashi_kanagawa|仲木戸": "위와 같음 (8회차 W2 2026-11-15; audit3 kanto_2-009)",
+"n_kinuta_hommura|砧": "위키 東急玉川線 「砧駅は1961年（昭和36年）2月1日に砧本村駅に改称された」 (8회차 W2 2026-11-15; audit3 kanto_2-010)",
+"n_horikawakoizumi|小泉町": "위키 富山地方鉄道富山軌道線 年表 1947-04-01 「女学校前停留場を小泉町停留場（旧）に改称」, 1950-05-15 「小泉町停留場（旧）を堀川小泉停留場に改称し、小泉町停留場新設」 (8회차 W2 2026-11-15; audit3 chubu_3-11)",
+"n_tokorozawamiyukicho|所沢飛行場前": "위키 西武新宿線 年表 「1938年6月3日 所沢駅 - 入曽駅間に所沢飛行場前駅開業」, 「1940年12月1日 所沢飛行場前駅を所沢御幸町駅に改称」 (8회차 W2 2026-11-15; audit3 kanto_3-12)",
+"n_kenchomae_akita_city|新国道": "위키 秋田市電 停留所一覧 「新国道→1954年8月1日スポーツセンター前→12月11日体育館前→県庁前」(県庁前 개칭일 미상, N05가 1959년에 県庁前 이전 이름을 마지막으로 보임 → 体育館前 끝 범위). 읽기 근거 없음 (8회차 W2 2026-11-15; audit3 tohoku_1-009)",
+"n_kenchomae_akita_city|スポーツセンター前": "위키 秋田市電 停留所一覧 「新国道→1954年8月1日スポーツセンター前→12月11日体育館前→県庁前」(県庁前 개칭일 미상, N05가 1959년에 県庁前 이전 이름을 마지막으로 보임 → 体育館前 끝 범위). 읽기 근거 없음 (8회차 W2 2026-11-15; audit3 tohoku_1-009)",
+"n_kenchomae_akita_city|体育館前": "위키 秋田市電 停留所一覧 「新国道→1954年8月1日スポーツセンター前→12月11日体育館前→県庁前」(県庁前 개칭일 미상, N05가 1959년에 県庁前 이전 이름을 마지막으로 보임 → 体育館前 끝 범위). 읽기 근거 없음 (8회차 W2 2026-11-15; audit3 tohoku_1-009) / 体育館前→県庁前 개칭은 「県庁前」 이름이 옛 県庁前(지금 大町二丁目 노드)에서 넘어온 때로, N05가 두 정류장 모두 1959년에 이름을 바꿈(옛 県庁前 ~[1959], 新国道 행 ~[1958..1959]) → [1959-01-01..1959-12-31]",
+"n_shogunno|遊園地": "위키 秋田市電 停留所一覧 「向山→遊園地→1950年12月19日将軍野」 (8회차 W2 2026-11-15; audit3 tohoku_1-009)",
+"n_jieitaimae_akita_city|保安隊前": "위키 秋田市電 停留所一覧 「1953年8月1日保安隊前→1954年7月1日自衛隊前」 (8회차 W2 2026-11-15; audit3 tohoku_1-009)",
+"n_shimmachi|弦巻": "위키 東急玉川線 「新町駅（しんまち/旧名：弦巻）」(중간)과 N05 玉川線 弦巻 1950–1951(중간, 독립): 개칭일 미상이라 끝을 범위 (8회차 W2 2026-11-15; audit3 kanto_3-13)",
+"n_tamagawayuen|身延山別院前": "위키 東急玉川線 「玉川遊園駅（旧名：身延山別院前）」과 N05 玉川線 身延山別院前 1950: 개칭일 미상이라 끝을 범위 (8회차 W2 2026-11-15; audit3 kanto_3-13)",
+"n_choseiemmae|西二十丁目": "같은 정류장 一条線 노드(n_choseiemmae_sapporo_transportation_service_promotion)와 같게: N05 같은 역 EB03_11323010 西二十丁目 1950–1956, 西保健所前 1957–1963. 두 노드 이름 일치 (8회차 W2 2026-11-15; audit3 hokkaido_1-008)",
+"n_sankoshita|県立原子力館前": "위키 茨城交通水浜線 정류장 표 三高下電停 비고(1958年以降 県立原子力館前に改称, 1964年以前に三高下に戻る, 중간) + N05 水浜線 県立原子力館前 EB03_13402015(중간, 독립). 날짜 미상이라 앞뒤 끝 모두 범위 (8회차 W2 2026-11-15; audit3 kanto_3-14)"
+},
+"n_teradomari": [
+[
+"大河津",
+null,
+"1986-11-01"
+]
+],
+"n_hon_yoshiwara": [
+[
+"吉原",
+"1950-04-18",
+"1956-04-10"
+]
+],
+"n_mitakeguchi": [
+[
+"御嵩",
+null,
+"1952-04-01"
+]
+],
+"n_kitarinzaiji": [
+[
+"車庫前",
+"1950-04-07",
+"1960-07-01"
+]
+],
+"n_awaraonsen": [
+[
+"金津",
+null,
+"1972-03-15"
+]
+],
+"n_nonoichi_kodaimae": [
+[
+"上野々市",
+"1931-08-11",
+"1963-04-11"
+],
+[
+"工専前",
+"1963-04-11",
+"1966-09-15"
+]
+],
+"n_cross_bay_mae": [["西新湊", "1949-06-20", "1985-03-XX"], ["新湊市役所前", "1985-03-XX", "2005-11-01"], ["射水市新湊庁舎前", "2005-11-01", "2016-10-11"], ["西新湊", "2016-10-11", "2023-09-01"]],
+"n_kamiyokoe": [
+[
+"横江",
+null,
+"1965-04-15"
+]
+],
+"n_ajinahigashi": [
+[
+"阿品",
+"1972-03-01",
+"2001-11-01"
+]
+],
+"n_eba": [
+[
+"江波口",
+"1954-01-08",
+"1963-XX-XX"
+]
+],
+"n_dentetsu_izumoshi": [
+[
+"出雲市",
+"1957-04-01",
+"1964-04-01"
+]
+],
+"n_oboke": [
+[
+"阿波赤野",
+null,
+"1950-10-01"
+]
+],
+"n_ube": [
+[
+"西宇部",
+"1943-05-01",
+"1964-10-01"
+]
+],
+"n_hon_yura": [
+[
+"阿知須",
+null,
+"1950-06-01"
+]
+],
+"n_iyo_izushi": [
+[
+"上老松",
+null,
+"1950-04-01"
+]
+],
+"n_onuma_koen": [
+[
+"大沼",
+null,
+"1964-05-01"
+]
+],
+"n_chiba_chuo": [
+[
+"京成千葉",
+"1931-11-18",
+"1987-04-01"
+]
+],
+"n_omotesando": [
+[
+"神宮前",
+"1939-09-16",
+"1972-10-20"
+]
+],
+"n_ryugasakishi": [
+[
+"佐貫",
+null,
+"2020-03-14"
+]
+],
+"n_otsuko": [
+[
+"関本",
+null,
+"1950-05-10"
+]
+],
+"n_todaimae_inogashira": [
+[
+"一高前",
+null,
+"1951-12-01"
+]
+],
+"n_kashima_soccer_stadium": [
+[
+"北鹿島",
+null,
+"1994-03-12"
+]
+],
+"n_tenkubashi_keikyu": [
+[
+"羽田",
+"1993-04-01",
+"1998-11-18"
+]
+],
+"n_haneda_airport_terminal_12": [
+[
+"羽田空港",
+"1998-11-18",
+"2010-10-21"
+]
+],
+"n_keisei_ueno": [
+[
+"上野公園",
+null,
+"1953-05-01"
+]
+],
+"n_funabashikeibajo": [
+[
+"京成花輪",
+null,
+"1950-07-05"
+]
+],
+"n_ginza": [
+[
+"西銀座",
+"1957-12-15",
+"1964-08-29",
+"l_marunouchi_line"
+]
+],
+"n_takashimadaira": [
+[
+"志村",
+"1968-12-27",
+"1969-08-01"
+]
+],
+"n_nodashi": [
+[
+"野田町",
+null,
+"1950-05-30"
+]
+],
+"n_yorokeikoku": [
+[
+"朝生原",
+null,
+"1954-12-01"
+]
+],
+"n_kazusa_tsurumai": [
+[
+"鶴舞町",
+null,
+"[1957-XX-XX..1958-XX-XX]"
+]
+],
+"n_higashi_narita_keisei": [
+[
+"成田空港",
+"1978-05-21",
+"1991-03-19"
+]
+],
+"n_chikatetsu_narimasu": [
+[
+"営団成増",
+"1983-06-24",
+"2004-04-01"
+]
+],
+"n_chikatetsu_akatsuka": [
+[
+"営団赤塚",
+"1983-06-24",
+"2004-04-01"
+]
+],
+"n_tamako_old": [
+[
+"狭山公園前",
+null,
+"1951-09-01"
+]
+],
+"n_idakiso": [
+[
+"伊太祁曽",
+null,
+"2006-04-01"
+]
+],
+"n_kobe_sannomiya_hankyu": [
+[
+"神戸",
+"1936-04-01",
+"1968-04-07"
+],
+[
+"三宮",
+"1968-04-07",
+"2013-12-21"
+]
+],
+"n_oji_koen": [
+[
+"西灘",
+"1936-04-01",
+"1984-06-01"
+]
+],
+"n_hieizan_sakamoto": [
+[
+"叡山",
+"1974-07-20",
+"1994-09-04"
+]
+],
+"n_omiya_hankyu": [
+[
+"京阪神京都",
+"1943-10-01",
+"1963-06-17"
+]
+],
+"n_cable_sanjo": [
+[
+"山上",
+"1960-04-22",
+"1965-04-01"
+]
+],
+"n_dome_mae_chiyozaki": [
+[
+"大阪ドーム前千代崎",
+"1997-08-29",
+"2006-12-24"
+]
+],
+"n_ikoma": [
+[
+"近畿日本生駒",
+"1944-06-01",
+"1964-10-01"
+]
+],
+"n_takeda_kintetsu_old": [
+[
+"奈良電竹田",
+"1940-04-05",
+"1963-10-01"
+]
+],
+"n_kintetsu_yao_old": [
+[
+"関急八尾",
+"1941-03-15",
+"1944-06-01"
+],
+[
+"近畿日本八尾",
+"1944-06-01",
+"1970-03-01"
+]
+],
+"n_unobe": [
+[
+"茨木",
+"1990-06-01",
+"1997-04-01"
+]
+],
+"n_keisan_kagaku_center": [
+[
+"京コンピュータ前",
+"2011-07-01",
+"2021-06-19"
+]
+],
+"n_nakayama_kannon": [
+[
+"中山",
+null,
+"2013-12-21"
+]
+],
+"n_kadancho": [
+[
+"千里山遊園",
+null,
+"1950-08-01"
+]
+],
+"n_sanyo_uozumi": [
+[
+"魚住",
+null,
+"1961-10-01"
+]
+],
+"n_sakura_kintetsu": [
+[
+"桜村",
+null,
+"1954-07-XX"
+]
+],
+"n_tsurumachi_2_chome": [
+[
+"鶴町車庫前",
+null,
+"1954-07-XX"
+]
+],
+"n_hommachi": [
+[
+"信濃橋",
+"1965-10-01",
+"1969-07-01",
+"l_yotsubashi_line"
+]
+],
+"n_kaminogo": [
+[
+"志摩磯部",
+null,
+"1970-03-01"
+]
+],
+"n_utsubohonmachi_4_chome": [
+[
+"茂左衛門橋",
+"1951-07-15",
+"1961-06-01"
+]
+],
+"n_minami_fukuoka": [
+[
+"雑餉隈",
+null,
+"1966-11-01"
+]
+],
+"n_onojo": [
+[
+"白木原",
+"1961-10-01",
+"1989-03-11"
+]
+],
+"n_kotochugakkomae": [
+[
+"市立病院前",
+"1948-10-10",
+"2015-05-01"
+]
+],
+"n_kami_kumamoto_kumamoto_city": [
+[
+"上熊本駅前",
+"1935-03-24",
+"2019-10-01"
+]
+],
+"n_heiwadori": [
+[
+"小倉",
+"1985-01-09",
+"1998-04-01"
+]
+],
+"n_kagami": [
+[
+"久里",
+null,
+"1950-05-20"
+]
+],
+"n_kuri": [
+[
+"上久里",
+"1930-03-01",
+"1950-05-20"
+]
+],
+"n_tamaeshogakkomae": [
+[
+"伊敷",
+"1952-08-10",
+"1962-04-01"
+]
+],
+"n_kaizuka_nishi_nippon_old": [
+[
+"西鉄多々良",
+"1950-04-20",
+"1954-03-05"
+],
+[
+"競輪場前",
+"1954-03-05",
+"[1961-XX-XX..1962-XX-XX]"
+]
+],
+"n_stadium_city_north": [
+[
+"井樋の口",
+null,
+"1966-09-20"
+],
+[
+"銭座町",
+"1966-09-20",
+"2024-10-01"
+]
+],
+"n_nishitetsu_fukuoka": [
+[
+"西鉄福岡",
+"1995-05-27",
+"2001-01-01"
+]
+],
+"n_shinden_kagoshima_city": [
+[
+"唐湊",
+"1952-06-01",
+"1957-03-29"
+],
+[
+"神田",
+"1957-03-29",
+"2015-XX-XX"
+]
+],
+"n_yudakinshuko": [
+[
+"陸中大石",
+"1962-12-01",
+"1991-06-20"
+]
+],
+"n_hachinohe": [
+[
+"尻内",
+null,
+"1971-04-01"
+],
+[
+"尻内",
+null,
+"1971-04-01"
+]
+],
+"n_higashi_fukushima": [
+[
+"瀬上",
+null,
+"1978-06-01"
+]
+],
+"n_takahata": [
+[
+"糠ノ目",
+null,
+"1991-03-16"
+]
+],
+"n_owani_onsen": [
+[
+"大鰐",
+null,
+"1991-03-16"
+]
+],
+"n_tsukioka": [
+[
+"天王新田",
+null,
+"1950-09-01"
+]
+],
+"n_honjo_azumabashi_toden": [
+[
+"吾妻橋二丁目",
+null,
+"[1959-XX-XX..1960-XX-XX]"
+]
+],
+"n_kawabe": [
+[
+"弘南川部",
+"1984-11-01",
+"1986-04-01",
+"l_kuroishi_line_konan"
+],
+[
+"弘南川部",
+"1984-11-01",
+"1986-04-01",
+"l_kuroishi_line_konan"
+]
+],
+"n_hanno_nagaragawa": [
+[
+"美濃洲原",
+"1927-04-10",
+"1956-12-20"
+]
+],
+"n_aizukogen_ozeguchi_aizu": [
+[
+"会津滝ノ原",
+"1953-11-08",
+"1986-10-09"
+],
+[
+"会津高原",
+"1986-10-09",
+"2006-03-18"
+]
+],
+"n_ichinosekirokujizoson": [
+[
+"六地蔵尊",
+"2009-08-23",
+"2010-08-23"
+]
+],
+"n_meganebashi": [
+[
+"賑橋",
+null,
+"2018-08-01"
+]
+],
+"n_suwajinja": [
+[
+"諏訪神社前",
+null,
+"2018-08-01"
+]
+],
+"n_shiyakusho": [
+[
+"桶屋町",
+null,
+"1963-03-XX"
+],
+[
+"公会堂前",
+"1963-03-XX",
+"2018-08-01"
+],
+[
+"市民会館",
+"2018-08-01",
+"2023-01-04"
+]
+],
+"n_maya_cable": [
+[
+"高尾",
+null,
+"1973-02-01"
+],
+[
+"摩耶ケーブル下",
+"1973-02-01",
+"2001-03-17"
+]
+],
+"n_nijino": [
+[
+"摩耶",
+null,
+"2001-03-17"
+]
+],
+"n_kanda_nippo_main": [
+[
+"苅田",
+null,
+"1959-10-01"
+]
+],
+"n_iwakuni": [
+[
+"麻里布",
+"1929-04-05",
+"1942-04-01"
+]
+],
+"n_tateyama_tateyama_kurobe_kanko": [
+[
+"千寿ヶ原",
+null,
+"1970-07-01"
+]
+],
+"n_gokokujinjamae": [
+[
+"玉里道",
+null,
+"1953-02-20"
+]
+],
+"n_dentetsuoya": [
+[
+"大屋",
+null,
+"1956-08-10"
+]
+],
+"n_toyota_mobility_toyama_g_square_gofuku_mae": [
+[
+"富山トヨペット本社前（五福末広町）",
+"2015-03-14",
+"2021-01-01"
+]
+],
+"n_juntendobyoimmae": [
+[
+"本郷元町",
+null,
+"[1964-XX-XX..1965-XX-XX]"
+]
+],
+"n_ishikicho": [
+[
+"上伊敷",
+null,
+"1962-04-01"
+]
+],
+"n_seikogakuimmae": [
+[
+"車庫前",
+null,
+"1962-07-12"
+]
+],
+"n_gomenmachi_tosaden_kotsu": [
+[
+"後免町駅前",
+null,
+"1974-07-26"
+]
+],
+"n_utsubohonmachi": [
+[
+"靱南通",
+"1951-07-15",
+"1961-06-01"
+]
+],
+"n_somuta_ishiki_line_shinshoin_ishiki_old_route": [
+[
+"草牟田町",
+null,
+"1952-08-10"
+]
+],
+"n_namidabashi": [
+[
+"新川",
+"1959-10-01",
+"1967-01-01"
+]
+],
+"n_shirahamakaisuiyokujomae": [
+[
+"女学校前",
+null,
+"1973-10-01"
+]
+],
+"n_yuemmaebasueigyosho": [
+[
+"到津車庫前",
+null,
+"[1985-10-20..1992-10-25]"
+]
+],
+"n_mikurasugahara": [
+[
+"御蔵菅原通",
+null,
+"[1950-01-01..1961-12-31]"
+]
+],
+"n_chuo_1_chome": [
+[
+"元寺小路",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_funacho": [
+[
+"舟丁南警察署前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_gorin_2_chome": [
+[
+"鹿島通",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_gorinitchomekokuritsubyoiniriguchi": [
+[
+"国立病院前",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_hachiman_2_chome": [
+[
+"八幡町二丁目",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_ichibanchoyubinkyokumae": [
+[
+"東一番丁",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"東一番丁仙台郵便局前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_itsutsubashi_sendai_city": [
+[
+"五ッ橋通",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"五ッ橋通電通局前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_katahiraitchomekensatsuchomae": [
+[
+"片平丁",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"片平丁検察庁家庭裁判所前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_koseibyoinmae": [
+[
+"土橋通",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_kotosaibanshomae": [
+[
+"狐小路裁判所前",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_kotsukyokumae_loop_line_sendai_city": [
+[
+"北二番丁車庫前",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"北二番丁交通局前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_nagamachi_1_chome_sendai_tram": [
+[
+"長町市場前",
+"[1936-01-17..1942-12-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_nagamachi_3_chome": [
+[
+"長町南町",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_odawara_1_chome": [
+[
+"小田原車通",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_odawara_2_chome": [
+[
+"小田原弓の町",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_omachinishikoenmae": [
+[
+"大町一丁目",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"大町一丁目西公園市立天文台前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_reja_center_mae": [
+[
+"レジャーセンター北警察署前",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_tokiwagigakuenmae": [
+[
+"小田原金剛院丁",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"小田原広丁",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_tsutsujigaokakishodaimae": [
+[
+"榴ヶ岡",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"榴ヶ岡釈迦堂前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_yuseikyokumae": [
+[
+"東二番丁逓信局前",
+null,
+"[1950-01-01..1960-07-31]"
+],
+[
+"東二番丁郵政局前",
+"[1950-01-01..1960-07-31]",
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_hachimanjinjamae": [
+[
+"滝前丁",
+null,
+"[1950-01-01..1960-07-31]"
+]
+],
+"n_nagamachishishomae": [
+[
+"秋保電鉄前",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_tetsudokanrikyokumae": [
+[
+"北目町通",
+null,
+"[1960-07-01..1976-03-31]"
+]
+],
+"n_senoekyokumae": [
+[
+"瀬上本町",
+null,
+"[1950-01-01..1961-12-31]"
+]
+],
+"n_maidashi_3_chome": [
+[
+"金平",
+null,
+"[1974-01-01..1975-12-31]"
+]
+],
+"n_azabu_juban_toden": [
+[
+"一ノ橋",
+null,
+"[1967-XX-XX..1968-XX-XX]"
+]
+],
+"n_tsukishima_toden": [
+[
+"月島通八丁目",
+null,
+"[1964-XX-XX..1965-XX-XX]"
+]
+],
+"n_honmachi_1_chome": [
+[
+"西堀端",
+null,
+"2018-03-01",
+"l_honmachi_line"
+]
+],
+"n_kita_aoyama_1_chome": [
+[
+"青山一丁目",
+null,
+"[1966-XX-XX..1967-XX-XX]"
+]
+],
+"n_kotodori": [
+[
+"大江",
+null,
+"1960-07-01"
+]
+],
+"n_higashichiryu": [
+[
+"知立",
+null,
+"1959-04-01"
+]
+],
+"n_mikawa_chiryu_meitetsu_mikawa_old": [
+[
+"知立",
+null,
+"1959-04-01"
+]
+],
+"n_sumasuizokukammae": [
+[
+"若宮町四丁目",
+null,
+"[1957-01-01..1957-12-31]"
+]
+],
+"n_ujina_5_chome": [
+[
+"宇品四丁目",
+"1960-03-30",
+"1968-09-01"
+]
+],
+"n_kaminocho_bancho": [
+[
+"城下",
+null,
+"1954-12-20"
+]
+],
+"n_shiroshita_okayama": [
+[
+"上之町",
+null,
+"1970-10-17"
+]
+],
+"n_omachi_2_chome": [
+[
+"県庁前",
+null,
+"[1959-01-01..1959-12-31]"
+]
+],
+"n_toyama_daigaku_mae": [
+[
+"球場前",
+"1954-03-20",
+"1969-10-01"
+],
+[
+"大学前",
+"1969-10-01",
+"2020-03-21"
+]
+],
+"n_chuokuyakushomae": [
+[
+"西11丁目",
+null,
+"1949-07-08"
+],
+[
+"西11丁目",
+"1958-07-01",
+"1962-06-01"
+]
+],
+"n_nishi_4_chome": [
+[
+"三越前",
+"1949-07-08",
+"1965-08-01",
+"l_ichijo_line"
+]
+],
+"n_choseiemmae": [["西保健所前", "[1956-XX-XX..1957-XX-XX]", "[1963-XX-XX..1964-XX-XX]"], ["西二十丁目", null, "[1956-XX-XX..1957-XX-XX]"]],
+"n_kujoomiya": [
+[
+"九条大路大宮",
+null,
+"[1950-XX-XX..1951-XX-XX]",
+"l_omiya_line"
+],
+[
+"九条大路大宮",
+null,
+"[1950-XX-XX..1951-XX-XX]",
+"l_kujo_line"
+]
+],
+"n_kamiokacho": [
+[
+"東町",
+null,
+"[1950-XX-XX..1951-XX-XX]"
+]
+],
+"n_tonoshiroguchi": [
+[
+"川久保",
+null,
+"[1953-01-01..1953-12-31]"
+]
+],
+"n_tsugaru_goshogawara": [
+[
+"五所川原",
+null,
+"1956-07-10"
+]
+],
+"n_nishitetsu_fukuoka_old": [
+[
+"西鉄福岡",
+"1942-09-22",
+"1995-05-27"
+]
+],
+"n_namba_osaka_metro": [
+[
+"難波元町",
+"1965-10-01",
+"1970-03-11",
+"l_yotsubashi_line"
+]
+],
+"n_kurobedaira": [
+[
+"黒部御前",
+"1969-07-20",
+"[1970-01-01..1970-12-31]"
+]
+],
+"n_kumommyo": [
+[
+"井戸川",
+null,
+"1951-03-01"
+]
+],
+"n_kochibashi": [
+[
+"廿代町通",
+"1944-04-01",
+"1960-04-18"
+]
+],
+"n_kishinosato_tamade": [
+[
+"岸ノ里",
+null,
+"1993-04-18"
+]
+],
+"n_suita_hankyu": [
+[
+"市役所前",
+null,
+"1964-04-10"
+]
+],
+"n_yoshinobu": [
+[
+"吉野",
+"1923-12-12",
+"1933-08-01"
+]
+],
+"n_kariya_meitetsu": [
+[
+"刈谷新",
+"1914-02-05",
+"1927-11-10"
+]
+],
+"n_tsushima": [
+[
+"新津島",
+"1914-01-23",
+"1931-10-25"
+]
+],
+"n_sotokanda_5_chome": [
+[
+"末広町",
+null,
+"[1964-XX-XX..1965-XX-XX]"
+]
+],
+"n_asakusa_7_chome": [
+[
+"聖天町",
+null,
+"[1966-XX-XX..1967-XX-XX]"
+]
+],
+"n_asakusa_1_chome": [
+[
+"田原町",
+null,
+"[1965-XX-XX..1966-XX-XX]"
+]
+],
+"n_shitayajinjamae": [
+[
+"稲荷町",
+null,
+"[1965-XX-XX..1966-XX-XX]"
+]
+],
+"n_tokyoekiyaesuguchi": [
+[
+"東京駅東口",
+null,
+"[1952-XX-XX..1953-XX-XX]"
+]
+],
+"n_arakawa_nichome": [
+[
+"三河島",
+null,
+"[1960-XX-XX..1961-XX-XX]"
+]
+],
+"n_nakashima": [
+[
+"安芸中島",
+"1936-09-01",
+"1956-06-01"
+]
+],
+"n_iwate_numakunai_igr_iwate_galaxy": [
+[
+"沼宮内",
+null,
+"2002-12-01"
+]
+],
+"n_higashiyama_sanjo": [
+[
+"古川町",
+null,
+"1949-11-25"
+]
+],
+"n_kashii_kaenmae": [
+[
+"香椎福日園前",
+"1941-04-01",
+"1942-04-01"
+]
+],
+"n_takefu_shin": [
+[
+"越前武生",
+"2010-03-25",
+"2023-02-25"
+]
+],
+"n_enshu_mori": [
+[
+"遠江森",
+"1935-04-17",
+"1987-03-15",
+"l_futamata_line"
+]
+],
+"n_asunarou_yokkaichi": [
+[
+"近鉄四日市",
+"1970-03-01",
+"2015-04-01"
+]
+],
+"n_yuigahama": [
+[
+"海岸通",
+"[1907-08-16..1915-12-31]",
+"1950-07-15"
+]
+],
+"n_seki_nagaragawa": [["美濃関", null, "1986-12-11"]],
+"n_shiodamachi": [["上本郷", null, "[1960-01-01..1965-12-31]"]],
+"n_kodomonokuni_meitetsu": [["洲崎", null, "1976-10-10"]],
+"n_ekimae_odori": [["駅大通", null, "1968-10-01"], ["名豊ビル前", "1968-10-01", "1969-01-10"]],
+"n_hida_kamioka": [["飛騨船津", null, "1984-10-01"]],
+"n_okuhida_onsenguchi": [["神岡", null, "1984-10-01"]],
+"n_kamioka_kozanmae": [["神岡口", null, "1985-04-20"]],
+"n_kagetsu_sojiji": [["花月園前", null, "2020-03-14"]],
+"n_keikyu_higashi_kanagawa": [["仲木戸", null, "2020-03-14"]],
+"n_kinuta_hommura": [["砧", null, "1961-02-01"]],
+"n_horikawakoizumi": [["小泉町", "1947-04-01", "1950-05-15"]],
+"n_tokorozawamiyukicho": [["所沢飛行場前", "1938-06-03", "1940-12-01"]],
+"n_kenchomae_akita_city": [["新国道", null, "1954-08-01"], ["スポーツセンター前", "1954-08-01", "1954-12-11"], ["体育館前", "1954-12-11", "[1959-01-01..1959-12-31]"]],
+"n_shogunno": [["遊園地", null, "1950-12-19"]],
+"n_jieitaimae_akita_city": [["保安隊前", "1953-08-01", "1954-07-01"]],
+"n_shimmachi": [["弦巻", null, "[1951-01-01..1952-12-31]"]],
+"n_tamagawayuen": [["身延山別院前", null, "[1950-01-01..1951-12-31]"]],
+"n_sankoshita": [["県立原子力館前", "[1958-01-01..1963-12-31]", "[1959-01-01..1964-12-31]"]],
+"n_hiroden_nishi_hiroshima": [["己斐", null, "2001-11-01", "l_hiroden_main_line"]],
+"n_kamimachi_1_chome": [["本丁筋一丁目", null, "1966-08-10"]],
+"n_kamimachi_3_chome": [["本丁筋三丁目", null, "1966-08-10"]],
+"n_kamimachi_4_chome": [["本丁筋四丁目", null, "1966-08-10"]],
+"n_kamimachi_5_chome": [["本丁筋五丁目", null, "1966-08-10"]],
+"n_sakae_kobe": [["電鉄栄", "1952-10-01", "1988-04-01"]],
+"n_kujoshimmichi": [["花園橋", null, "1964-10-01"]],
+"n_kintetsu_tambabashi": [["丹波橋", "1967-03-29", "1968-12-20"]],
+"n_yashima_tozanguchi": [["屋島神社前", null, "1950-04-16"]],
+"n_yashima_sanjo": [["屋島南嶺", null, "1950-04-16"]],
+"n_hiroshimako": [["宇品終点", null, "1960-03-30"], ["宇品", "1960-03-30", "2001-11-01"]],
+"_근거_r8w3": {"n_hiroden_nishi_hiroshima|己斐": "本線 계통(1912~2001)의 정류장 이름 己斐. 위키 広電西広島（己斐）駅 정류장 칸(本線, こい, 1912-12-08~2001-11-01)·연표 「2001年11月1日：己斐停留場を広電西広島駅に統合、広電西広島（己斐）駅に改称」(중간) + N05 EB03_21447021 本線 「己斐」 1950–2000(중간, 독립). 宮島線 쪽 이름(西広島·広電西広島)과 갈라 本線 한정 (8회차 W3 2026-11-15)", "n_kamimachi_1_chome|本丁筋一丁目": "위키 とさでん交通伊野線 r109689785 「1966年8月10日：町名変更により本丁筋一丁目 - 五丁目の各停留場を上町一丁目 - 五丁目に改称」(중간) + N05 伊野線 本丁筋一·三·四·五丁目 1950–1965(중간, 독립). 二丁目은 N05에 1950–65 기록이 없어 넣지 않음(근거 하나). 읽기 근거 없음(ja_as_is) (8회차 W3 2026-11-15)", "n_sakae_kobe|電鉄栄": "위키 神戸電鉄粟生線 연혁 1952-10-01 「木津駅・木幡駅・栄駅・大村駅を…電鉄栄駅…に改称」·1988-04-01 「電鉄栄駅…を…栄駅…に改称」(중간). 같은 날 개칭한 電鉄木津·電鉄木幡·電鉄大村은 이미 같은 기간(위키). N05 연 범위 행([1987..1988])보다 정확한 날 (8회차 W3 2026-11-15)", "n_kujoshimmichi|花園橋": "위키 大阪市電築港線 연표 「1964年10月1日：花園橋駅を九条新道駅に…改称」(같은 날 九条中通一丁目→九条南一丁目은 DB에 이미 1964-10-01) + N05 연 범위 [1963..1964](독립) (8회차 W3 2026-11-15)", "n_kintetsu_tambabashi|丹波橋": "위키 近鉄京都線 r110958649 「当初の正式駅名は両駅とも丹波橋駅」「12月20日…近鉄使用の丹波橋駅を近畿日本丹波橋駅として分離」 + 위키 丹波橋駅(역 문서) 「1968年12月20日：…近鉄専用ホームは近畿日本丹波橋駅として分離される」(문서 둘). 1967-03-29 近鉄 정차 재개~1968-12-20 (8회차 W3 2026-11-15)", "n_yashima_tozanguchi|屋島神社前": "위키 屋島登山鉄道屋島ケーブル r108130797 「1950年4月16日 屋島登山口 - 屋島山上間が営業再開。屋島神社前駅が屋島登山口駅、屋島南嶺駅が屋島山上駅へ改称」, 1929 개업 『官報』1929-05-03 인용 「屋島神社前…屋島南嶺」 (8회차 W3 2026-11-15)", "n_hiroshimako|宇品終点": "위키 広島港（宇品）停留場 r110700972 연표 「1951年4月1日：…宇品終点停留場として開業」「1960年3月30日：宇品停留場に改称」「2001年11月1日：広島港（宇品）停留場に改称」(『広電が走る街 今昔』 인용, 중간) + N05 EB03_21448020 宇品終点 1951–1959·宇品 1960–2001(중간, 독립). 1951~1967 옛 자리 이름은 이전 쌍 규칙으로 옛 노드에 옮겨짐 (8회차 W3 2026-11-15)"},
+"n_nissekibyoinmae": [["広島大学前", null, "2001-11-01"]],
+"n_motoujinaguchi": [["向宇品口", null, "2001-11-01"]],
+"_근거_r8w3b": {"n_nissekibyoinmae|広島大学前": "위키 広島電鉄宇品線 r110701130 「(2001年)11月1日：広島大学前・向宇品口・宇品各停留場の名称をそれぞれ日赤病院前・元宇品口・広島港（宇品）に…変更」(중간) + N05 연 범위 [2000..2001]·[2001..2002](독립). N05 연 범위를 정확한 날로 (8회차 W3 2026-11-15)", "n_motoujinaguchi|向宇品口": "위와 같음 (8회차 W3 2026-11-15)"},
+"_근거_r10d2": {"n_enshu_byoin|東田町": "奥山線 기점 東田町(1941~1958-06-01): 위키 遠州鉄道奥山線 rev111478140 「1958年6月1日：起点の東田町を遠鉄二俣電車線の遠州浜松と統合し、遠鉄浜松に改称」(중간) + N05-24 Station2 EB03_17402001 奥山線 「東田町」 1950–1957 → 「遠鉄浜松」 1958–1963, 같은 점(34.710408,137.733721)(중간, 독립). 鉄道線 遠州浜松(EB03_17457024 1950–1957)은 146 m 떨어진 다른 점이라 奥山線 쪽은 같은 자리 이름 바뀜으로 봄(노선도 -0.1 km는 위키 하나라 노드를 나누지 않음, U16). 읽기 근거 없음(일본어 표기 그대로) (10회차 D2 2026-11-16)"},
+"n_anamizu": [["のと穴水", "1988-03-25", "1991-09-01", "l_noto_line_noto"]],
+"n_okinami": [["立戸の浜", null, "1988-03-25"]],
+"_근거_r10g2": {"n_anamizu|のと穴水": "のと鉄道能登線 한정 1988-03-25~1991-09-01: 위키 のと鉄道能登線 rev109521647 1988-03-25 「穴水駅から分離し、のと穴水駅開業」·1991-09-01 「のと穴水駅を穴水駅に改称」(중간) + N05 EB03_16205026 のと穴水 [1991..1992](중간, 독립). N05 행이 시작 없이 노선 없이 들어가 国鉄能登線(~1988)·JR 七尾線(~1991) 화면까지 のと穴水로 덮던 것 (10회차 G2 2026-11-16; audit4 chubu_2-004)", "n_okinami|立戸の浜": "立戸の浜 → 沖波 1988-03-25(のと鉄道 전환 때 통년 영업과 함께 개칭): 위키 のと鉄道能登線 rev109521647 1987-04-01 「立戸の浜仮乗降場を（臨）立戸の浜駅に格上げ」, 1988-03-25 「（臨）立戸の浜駅を通年営業とし沖波駅に」(중간) + N05 EB03_16213006 [1987..1988](중간, 독립). 생성기가 N05 연 범위 끝을 표식 끝 둘(1987-04-01·1988-03-25) 가운데 앞의 것에 맞췄음(DB 전체 이 꼴 1곳) (10회차 G2 2026-11-16; audit4 chubu_2-005)", "n_biwako_hamaotsu|浜大津": "石山坂本線 浜大津는 처음부터 지금 자리(びわ湖浜大津 노드). 이름 浜大津 ~1957-03-20 → 浜大津東口 → 1981-04-12 浜大津 → 2018-03-17 びわ湖浜大津: N05 EB03_19407012 石山坂本線 浜大津 1950–1956·浜大津東口 1957–1980·浜大津 1981–2017 같은 점(중간) + 위키 京阪京津線 rev111210110 노선도 주 「石山坂本線は当初より現在地」(중간, 독립). 京津線 쪽 浜大津(1946–1981)는 n_hamaotsu. 1981 통합 전 이름은 石坂線 한정 행으로 둔다(이전 쌍 이름 옮김 규칙이 노선 무관 옛 이름을 옛 자리 n_hamaotsu로 옮기므로) (10회차 G2 2026-11-16; audit4 kinki_1-02)"},
+"n_ueda_ueda": [["電鉄上田", "1955-08-08", "1972-02-20", "l_sanadasoehi_line"]],
+"_근거_r11s1": {"n_ueda_ueda|電鉄上田": "上田交通 真田傍陽線 기점 電鉄上田 1955-08-08~1972-02-19(마지막 운행, 다음 날 폐지): 위키 上田駅 rev110964436 上田交通 電鉄上田駅 1955-08-08 国鉄駅에서 独立·1972-02-19 廃止(중간) + railforum 『昭和時代』 45117·45162·45278행 「電鉄上田」 1955.08.08~1972.02.20(중간, 독립). 1966 停車場一覧은 기점을 「(上田)」로만 적음. 真田傍陽線 한정 (11회차 R·S1)"}
 }

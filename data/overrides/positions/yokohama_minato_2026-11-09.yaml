@@ -1,0 +1,3 @@
+# 横浜臨港線(東海道本線 貨物支線 高島–東横浜–横浜港)의 새 노드 좌표 (docs/DESIGN.md 화물·연결선). 출처를 끄면 빠짐
+- {"node": "n_yokohama_minato", "lat": 35.45352778, "lon": 139.6393889, "quality": "approx", "source": "wikidata", "checked": "2026-11-10", "why": "横浜港駅 Wikidata Q11543223 좌표(駅本屋 쪽). 旅客 승강장 보존 자리는 동쪽 약 400m"}
+- {"node": "n_higashi_yokohama", "lat": 35.452306, "lon": 139.631472, "quality": "approx", "source": "wikipedia", "checked": "2026-11-09", "why": "東横浜 화물역 자리 (ja.wikipedia 東横浜駅 좌표)"}

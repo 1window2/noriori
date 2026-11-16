@@ -21,7 +21,7 @@ const after2000 = NetPeriod(
   toHi: DateSpan.maxDate,
 );
 
-NetStop stop(String routeId, int seq, String node, {NetPeriod period = ongoing}) => NetStop(
+NetStop stop(String routeId, int seq, String node, {NetPeriod period = ongoing, bool estimated = false}) => NetStop(
       routeId: routeId,
       seq: seq,
       node: node,
@@ -29,6 +29,7 @@ NetStop stop(String routeId, int seq, String node, {NetPeriod period = ongoing})
       isStop: true,
       isExtension: false,
       period: period,
+      kmEstimated: estimated,
     );
 
 NetAttr attr(
@@ -61,7 +62,7 @@ NetUnit unit(int n, String edge, String line, int meters) => NetUnit(
     );
 
 /// a-b는 2000년에 이설했다. 옛 선은 1000m, 새 선은 1200m다. b-c는 운휴 중이다.
-/// 고리 x-y-z는 닫힌 계통이다.
+/// 고리 x-y-z는 닫힌 계통이다. b의 km는 추정값이다.
 Network sample() => Network(
       NetworkData(
         routes: const [
@@ -102,7 +103,7 @@ Network sample() => Network(
         ],
         stops: [
           stop('r', 0, 'a'),
-          stop('r', 1, 'b'),
+          stop('r', 1, 'b', estimated: true),
           stop('r', 2, 'c'),
           stop('loop', 0, 'x'),
           stop('loop', 1, 'y'),
@@ -144,6 +145,13 @@ void main() {
   final network = sample();
   final resolver = RouteResolver(network);
   DateSpan day(String raw) => DateSpan.parse(raw);
+
+  test('km 추정값은 그 노선의 그 역에만 붙는다 (DESIGN §4.5)', () {
+    expect(network.kmEstimatedOn('l', 'b'), isTrue);
+    expect(network.kmEstimatedOn('l', 'a'), isFalse);
+    expect(network.kmEstimatedOn('m', 'b'), isFalse);
+    expect(network.kmEstimatedOn(null, 'b'), isFalse);
+  });
 
   group('이설', () {
     test('날짜를 모르면 어느 시기인지 묻는다', () {
@@ -260,6 +268,9 @@ void main() {
     final got = stationMarks(marks, alighted: const ['a'], visited: const ['c'], ridden: const ['a2', 'b', 'c']);
     expect(got.stepped, {1, 3});
     expect(got.passed, {2});
+    // 환승역 승강장 노드는 노드 단위다. 같은 묶음의 a2는 지나가기만 했다 (DESIGN §7.5)
+    expect(got.steppedNodes, {'a', 'c'});
+    expect(got.passedNodes, {'a2', 'b'});
   });
 
   group('선택기', () {
@@ -551,6 +562,66 @@ void main() {
       expect(RideInterpreter(closed).unridable(on('1990-01-01')), isFalse);
     });
 
+    test('정차 기간이 둘인 역은 그 사이 날짜에 서지 않는다 (印場 1905~1944·1995~)', () {
+      final twice = Network(
+        NetworkData(
+          routes: const [
+            NetRoute(id: 't', lineId: 'l', role: 'main', fromNode: 'p', toNode: 'q', closed: false, extendTo: []),
+          ],
+          edges: const [NetEdge(id: 'pq', n: 1, from: 'p', to: 'q', meters: 100)],
+          routeEdges: const [NetRouteEdge(routeId: 't', seq: 0, edgeId: 'pq')],
+          stops: [
+            stop('t', 0, 'p'),
+            const NetStop(
+              routeId: 't',
+              seq: 1,
+              node: 'q',
+              kmCum: null,
+              isStop: true,
+              isExtension: false,
+              period: ongoing,
+              gaps: [NetPeriod(fromLo: '1944-01-01', fromHi: '1944-12-31', toLo: '1995-12-22', toHi: '1995-12-22')],
+            ),
+          ],
+          attrs: [attr('pq', 'l')],
+          lives: [life('pq')],
+          units: const [],
+          publicNodes: const {'p', 'q'},
+          nodeGroups: const {},
+        ),
+      );
+      Ride on(String date) => Ride(
+            rideId: const RideId('r'),
+            datasetVersion: 'e',
+            createdAt: 0,
+            updatedAt: 1,
+            deviceId: 'd',
+            dateInput: date,
+            legs: const [
+              RideLeg(
+                seq: 0,
+                lineId: LineId('l'),
+                routeId: RouteId('t'),
+                fromNode: NodeId('p'),
+                toNode: NodeId('q'),
+                lineLabel: '',
+                fromLabel: '',
+                toLabel: '',
+              ),
+            ],
+          );
+      final interpreter = RideInterpreter(twice);
+      expect(interpreter.unridable(on('1970-05-01')), isTrue);
+      expect(interpreter.unridable(on('1996-01-01')), isFalse);
+      // 쉬기 시작한 해만 알면 그 해 안의 날짜는 막지 않는다
+      expect(interpreter.unridable(on('1944-06-01')), isFalse);
+      expect(interpreter.unridable(on('197X-XX-XX')), isTrue);
+      expect(interpreter.unridable(on('199X-XX-XX')), isFalse);
+      final rows = SelectorBuilder(twice).build('t', DateSpan.parse('1970-05-01'));
+      expect(rows.last.state, StopState.closed);
+      expect(rows.last.selectable, isFalse);
+    });
+
     test('분모 밖 구간은 저장 전 값에 나오지 않는다', () {
       final outside = Network(
         NetworkData(
@@ -628,6 +699,15 @@ void main() {
         ],
       );
       expect(RideInterpreter(network).ride(lost).status, ResolveStatus.unknownRef);
+    });
+
+    test('있는 계통이라도 판에 없는 역이면 확인 필요다', () {
+      final route = network.routes.values.first;
+      final known = network.stops(route.id).first.node;
+      final resolver = RouteResolver(network);
+      expect(resolver.expand(route.id, known, '사라진 역').status, ResolveStatus.unknownRef);
+      final other = network.stops(route.id).last.node;
+      expect(resolver.expand(route.id, known, other).status, isNot(ResolveStatus.unknownRef));
     });
 
     test('날짜가 없는 기록은 등록일이 유효 범위의 끝이다', () {

@@ -5,7 +5,15 @@ import 'network_data.dart';
 enum LifeState { open, suspended, maybeOpen, maybeSuspended, closed, before, unknown }
 
 /// 이 계통으로 그날 탈 수 있는 구간인가.
-enum Usable { ok, maybe, suspended, no }
+enum Usable {
+  ok,
+  maybe,
+  suspended,
+  no;
+
+  /// 경로를 찾을 때 지나갈 수 있다. 애매한 구간도 지난다.
+  bool get ridable => this == ok || this == maybe;
+}
 
 /// 계통 안의 구간 하나. 순번은 역 순번과 다를 수 있어 그래프로 다룬다 (ARCHITECTURE §3.5).
 final class RouteHop {
@@ -23,6 +31,22 @@ PeriodState stateOfPeriod(DateSpan? date, NetPeriod p) => stateOn(
       fromHi: p.fromHi,
       toLo: p.toLo,
       toHi: p.toHi,
+    );
+
+/// 끝이 없는 정차 공백(재개 미정의 정차 운휴, 陸羽西線 羽前前波 2022~). 그 날(날짜를 모르면 지금) 운휴 중이면 그 공백이다.
+/// 노선 운휴와 같게 「운휴」다. 앞뒤 칸이 운행 중인지는 칸 수명(edge_life)이 따로 안다 (사용자 결정 2026-11-16)
+NetPeriod? openStopGap(DateSpan? date, NetStop stop) {
+  for (final gap in stop.gaps) {
+    // 끝 없는 공백은 끝이 ongoing(가장 늦은 날)이다
+    if (gap.toLo != null && gap.toLo!.compareTo(DateSpan.maxDate) < 0) continue;
+    if (date == null || date.lo.compareTo(gap.fromHi ?? DateSpan.maxDate) >= 0) return gap;
+  }
+  return null;
+}
+
+/// 그 날짜 범위 전체가 정차 기간 사이 서지 않은 때에 드는가. 걸치기만 하면 거짓이다.
+bool inStopGap(DateSpan date, NetStop stop) => stop.gaps.any(
+      (gap) => date.lo.compareTo(gap.fromHi ?? DateSpan.maxDate) >= 0 && date.hi.compareTo(gap.toLo ?? '0000-01-01') < 0,
     );
 
 /// 하루 전 날짜. 기간의 끝은 첫 무효일이다.
@@ -64,6 +88,114 @@ final class Network {
     for (final unit in data.units) {
       (unit.carryover ? _unitsOn : _unitsOff)[unit.key] = unit;
     }
+    for (final row in data.oneWays) {
+      (_oneWay['${row.routeId}\u0000${row.edgeId}'] ??= []).add(row);
+    }
+    for (final row in data.stopDirections) {
+      (_stopDirection['${row.routeId}\u0000${row.node}'] ??= []).add(row);
+    }
+  }
+
+  final Map<String, List<NetOneWay>> _oneWay = {};
+
+  /// 한 방향 칸이 있는 계통인가.
+  bool hasOneWay(String routeId) => _oneWayRoutes.contains(routeId);
+  late final Set<String> _oneWayRoutes = {for (final row in data.oneWays) row.routeId};
+  final Map<String, List<NetStopDirection>> _stopDirection = {};
+
+  /// 그 계통에서 그 칸을 [from]에서 [to]로 지날 수 있는가 (DESIGN §8 한 방향 운행).
+  /// 날짜를 모르면 그 칸이 있던 모든 날에 반대 방향이 막혀 있을 때만 막는다.
+  bool passable(String routeId, String edge, String from, String to, DateSpan? date) {
+    final rows = _oneWay['$routeId\u0000$edge'];
+    if (rows == null) return true;
+    final against = [for (final row in rows) if (row.from != from || row.to != to) row.period];
+    if (against.isEmpty) return true;
+    if (date != null) return !against.any((period) => stateOfPeriod(date, period) == PeriodState.yes);
+    final life = _life[edge] ?? const <NetLife>[];
+    if (life.isEmpty) return true;
+    return !_coversAll(against, [for (final row in life) row.period]);
+  }
+
+  /// 그 계통에서 그 칸이 그날 한 방향이면 지나는 방향(앞 노드, 뒤 노드). 날짜를 모르면 [passable]과 같은 기준이다.
+  (String, String)? oneWayOf(String routeId, String edge, DateSpan? date) {
+    final rows = _oneWay['$routeId\u0000$edge'];
+    if (rows == null) return null;
+    for (final row in rows) {
+      if (!passable(routeId, edge, row.to, row.from, date)) return (row.from, row.to);
+    }
+    return null;
+  }
+
+  /// 그 계통에서 이웃한 두 역 사이 칸이 그날 모두 한 방향이면 그 방향(참이면 [p]에서 [q]로). 아니면 null이다.
+  /// 다른 역은 지나지 않고 숨은 노드만 거친다. 노선 일람의 갈매기표에 쓴다 (DESIGN §8 한 방향 운행).
+  bool? oneWayBetween(String routeId, String p, String q, DateSpan? date) {
+    if (!hasOneWay(routeId) || p == q) return null;
+    final others = {for (final stop in stops(routeId)) stop.node}..removeAll([p, q]);
+    final next = <String, List<RouteHop>>{};
+    for (final hop in hops(routeId)) {
+      (next[hop.a] ??= []).add(hop);
+      (next[hop.b] ??= []).add(hop);
+    }
+    final back = <String, (String, String)>{p: ('', '')};
+    final queue = [p];
+    for (var at = 0; at < queue.length && !back.containsKey(q); at++) {
+      final node = queue[at];
+      for (final hop in next[node] ?? const <RouteHop>[]) {
+        final other = hop.a == node ? hop.b : hop.a;
+        if (back.containsKey(other) || others.contains(other)) continue;
+        back[other] = (node, hop.edge);
+        queue.add(other);
+      }
+    }
+    if (!back.containsKey(q)) return null;
+    bool? way;
+    for (var node = q; node != p;) {
+      final (prev, edge) = back[node]!;
+      final one = oneWayOf(routeId, edge, date);
+      final forward = one == null ? null : (one.$1 == prev ? true : (one.$1 == node ? false : null));
+      if (forward == null || (way != null && way != forward)) return null;
+      way = forward;
+      node = prev;
+    }
+    return way;
+  }
+
+  /// 그 역이 그날 한 방향 열차만 받으면 그 행. 날짜를 모르면 그 정차가 있던 모든 날에 걸릴 때만이다 (DESIGN §8 한 방향 정차).
+  NetStopDirection? stopDirectionOf(String routeId, String node, DateSpan? date) {
+    final rows = _stopDirection['$routeId\u0000$node'];
+    if (rows == null) return null;
+    if (date != null) {
+      for (final row in rows) {
+        if (stateOfPeriod(date, row.period) == PeriodState.yes) return row;
+      }
+      return null;
+    }
+    final life = [
+      for (final stop in stops(routeId))
+        if (stop.node == node && stop.isStop) stop.period,
+    ];
+    if (life.isEmpty) return null;
+    for (final direction in const ['seq_up', 'seq_down']) {
+      final same = [for (final row in rows) if (row.direction == direction) row];
+      if (same.isNotEmpty && _coversAll([for (final row in same) row.period], life)) return same.first;
+    }
+    return null;
+  }
+
+  /// [cover] 기간들을 이으면 [life]의 처음부터 끝까지를 모두 덮는가. 범위로 적힌 끝은 좁은 쪽으로 본다.
+  static bool _coversAll(List<NetPeriod> cover, List<NetPeriod> life) {
+    final start = life.map((p) => p.fromLo ?? '0000-01-01').reduce((a, b) => a.compareTo(b) <= 0 ? a : b);
+    final end = life.map((p) => p.toHi ?? DateSpan.maxDate).reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
+    final spans = [
+      for (final p in cover) (p.fromHi ?? p.fromLo ?? '0000-01-01', p.toLo ?? p.toHi ?? DateSpan.maxDate),
+    ]..sort((a, b) => a.$1.compareTo(b.$1));
+    var reached = start;
+    for (final (from, to) in spans) {
+      if (from.compareTo(reached) > 0) return false;
+      if (to.compareTo(reached) > 0) reached = to;
+      if (reached.compareTo(end) >= 0) return true;
+    }
+    return reached.compareTo(end) >= 0;
   }
 
   final NetworkData data;
@@ -93,6 +225,10 @@ final class Network {
 
   final Map<String, NetRoute> routes = {};
   final Map<String, NetEdge> edges = {};
+
+  /// 이 판의 선로에 있는 역인가.
+  bool knowsNode(String node) => _nodes.contains(node);
+  late final Set<String> _nodes = {for (final edge in edges.values) ...[edge.from, edge.to]};
   final Map<String, List<String>> _lineRoutes = {};
   final Map<String, List<RouteHop>> _routeHops = {};
   final Map<String, List<NetStop>> _picks = {};
@@ -108,7 +244,30 @@ final class Network {
   List<NetStop> stops(String routeId) => _stops[routeId] ?? const [];
   List<NetStop> picks(String routeId) => _picks[routeId] ?? const [];
   List<String> routesOfLine(String lineId) => _lineRoutes[lineId] ?? const [];
+
+  /// 노선의 계통을 본선부터 늘어놓는다. 노선도와 가로 띠가 이 순서로 잇는다.
+  List<String> routesOfLineMainFirst(String lineId) => routesOfLine(lineId).toList()
+    ..sort((a, b) {
+      final x = routes[a]!.role == 'main' ? 0 : 1;
+      final y = routes[b]!.role == 'main' ? 0 : 1;
+      return x.compareTo(y);
+    });
   Set<String> routesAt(String node) => _stopRoutes[node] ?? const {};
+
+  /// 계통 안에서 두 노드를 바로 잇는 구간. 방향은 보지 않고 계통의 순서를 따른다.
+  List<String> edgesBetween(String routeId, String a, String b) =>
+      (_pairEdges[routeId] ??= _pairsOf(routeId))[_pair(a, b)] ?? const [];
+  final Map<String, Map<String, List<String>>> _pairEdges = {};
+
+  Map<String, List<String>> _pairsOf(String routeId) {
+    final byPair = <String, List<String>>{};
+    for (final hop in hops(routeId)) {
+      (byPair[_pair(hop.a, hop.b)] ??= []).add(hop.edge);
+    }
+    return byPair;
+  }
+
+  String _pair(String a, String b) => a.compareTo(b) < 0 ? '$a\u0000$b' : '$b\u0000$a';
 
   /// 그 역에 서는 계통 전체. 묶음의 다른 node에 서는 계통도 같은 역이다 (DESIGN §2.8 B).
   /// 순서는 노선 표를 따른다. ID는 이름이라 순서에 뜻이 없다.
@@ -148,10 +307,24 @@ final class Network {
   /// 노선도에 그리는 역인가. 신호장과 분기점은 아니다.
   bool isShown(String node) => _shown.contains(node);
 
+  /// 이 노선에서 이 역의 km가 추정값인가. 그 역에서 타거나 내린 기록은 km를 `?`로 보인다 (DESIGN §4.5).
+  bool kmEstimatedOn(String? lineId, String? node) =>
+      lineId != null && node != null && _estimated.contains('$lineId|$node');
+  /// 양 끝 중 하나라도 km가 추정값인 구간. 화면의 km는 `?`다 (DESIGN §4.5).
+  bool kmEstimatedBetween(String? lineId, String? from, String? to) =>
+      kmEstimatedOn(lineId, from) || kmEstimatedOn(lineId, to);
+  late final Set<String> _estimated = {
+    for (final stop in data.stops)
+      if (stop.kmEstimated) '${routes[stop.routeId]?.lineId}|${stop.node}',
+  };
+
   List<NetAttr> attrsOfEdge(String edge) => _attrs[edge] ?? const [];
 
-  int metersOf(Iterable<String> edgeIds) =>
-      edgeIds.fold(0, (sum, id) => sum + edges[id]!.meters);
+  /// 노선을 주면 그 노선 시대의 길이다. 3섹 전환 때 km가 바뀐 구간은 국철·JR 노선에서 옛 km다
+  int metersOf(Iterable<String> edgeIds, {String? lineId}) => edgeIds.fold(
+        0,
+        (sum, id) => sum + ((lineId == null ? null : data.eraMeters['$lineId\u0000$id']) ?? edges[id]!.meters),
+      );
 
   LifeState lifeOn(String edge, DateSpan? date) {
     if (date == null) return LifeState.unknown;
@@ -169,6 +342,8 @@ final class Network {
     if (best != null) return best;
     return allBefore ? LifeState.before : LifeState.closed;
   }
+
+  List<NetLife> livesOf(String edge) => _life[edge] ?? const [];
 
   /// 구간이 끝난 날. 아직 있으면 없다.
   String? endOf(String edge) {

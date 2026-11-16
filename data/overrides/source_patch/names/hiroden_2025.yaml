@@ -1,0 +1,5 @@
+# 広電 2025·2026 개편 전 계통 이름 (routes/hiroden_2025.yaml)
+- {"patch": "replace", "entity_type": "route", "id": "r_hiroden_main_line_hiroshima_matobacho", "lang": "ja", "text": "広島駅～的場町～稲荷町", "source": "hand"}
+- {"patch": "replace", "entity_type": "route", "id": "r_hiroden_main_line_hiroshima_matobacho", "lang": "ko", "text": "히로시마역~마토바쵸~이나리마치", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_minami_line_matobacho", "lang": "ja", "text": "的場町～比治山下", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_minami_line_matobacho", "lang": "ko", "text": "마토바쵸~히지야마시타", "source": "hand"}

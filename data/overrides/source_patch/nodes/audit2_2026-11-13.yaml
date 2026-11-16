@@ -1,0 +1,2 @@
+# 2회차 audit 근거 조사(2026-11-13): 같은 사업자·같은 역인데 다른 묶음이던 노드를 한 묶음으로
+- {"patch": "replace", "id": "n_yonejimaguchi_fushiki", "kind": "station", "group": "g_yonejimaguchi", "pref": "16", "why": "米島口: 加越能鉄道 高岡軌道線과 伏木線 분기 정류장으로 같은 역(40 m). 伏木線 1951-04-01~1971-09-01 (2회차 audit 근거 조사 2026-11-13; r2out/audit). 노드 합치기는 장치가 생기면"}

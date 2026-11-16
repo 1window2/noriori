@@ -1,0 +1,153 @@
+{
+ "설명": "노리츠부시 CSV의 노선명(路線名)을 공식 노선 구성의 계통·운행 계통으로 바꾸는 대응표 (DESIGN §10.2, 사용자 결정 2026-11-09). 가져오기는 이름이 맞는 계통을 먼저 찾고, 없거나 그 계통으로 펼칠 수 없으면 여기의 운행 계통으로 펼쳐 노선마다 나눈 한 기록으로 넣는다. 대상은 service(운행 계통 ID) 또는 route(계통 ID)",
+ "rows": {
+  "副都心線 (13号線)": {
+   "service": "s_fukutoshin_wakoshi",
+   "why": "노리츠부시 副都心線 和光市～渋谷 = 有楽町線 和光市–小竹向原 + 副都心線 小竹向原–渋谷"
+  },
+  "副都心線": {
+   "service": "s_fukutoshin_wakoshi",
+   "why": "괄호 없는 이름"
+  },
+  "1条線・山鼻線・山鼻西線・都心線": {
+   "service": "s_sapporo_streetcar",
+   "why": "노리츠부시 札幌市電 한 노선 = 一条線·山鼻西線·山鼻線·都心線"
+  },
+  "札幌市電": {
+   "service": "s_sapporo_streetcar",
+   "why": "통칭"
+  },
+  "桟橋線": {
+   "service": "s_tosaden_sambashi",
+   "why": "노리츠부시 桟橋線 高知駅前～桟橋通五丁目 = 駅前線 + 桟橋線"
+  },
+  "半蔵門線直通": {
+   "route": "r_isesaki_line_oshiage_hikifune",
+   "why": "노리츠부시 東武 半蔵門線直通 押上～曳舟 = 伊勢崎線 押上–曳舟"
+  },
+  "東成田線": {
+   "route": "r_higashi_narita_line",
+   "why": "노리츠부시 東成田線 [駒井野分岐点]～東成田 ⊂ 東成田線 京成成田–東成田"
+  },
+  "藤城線 (函館本線)": {
+   "route": "r_fujishiro_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "藤城線": {
+   "route": "r_fujishiro_line",
+   "why": "괄호 없는 이름"
+  },
+  "東海道貨物線 (東海道本線)": {
+   "route": "r_tokaido_freight_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "東海道貨物線": {
+   "route": "r_tokaido_freight_line",
+   "why": "괄호 없는 이름"
+  },
+  "高島線 (東海道本線)": {
+   "route": "r_takashima_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "高島線": {
+   "route": "r_takashima_line",
+   "why": "괄호 없는 이름"
+  },
+  "大崎支線 (大崎駅構内)": {
+   "route": "r_osaki_branch_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "大崎支線": {
+   "route": "r_osaki_branch_line",
+   "why": "괄호 없는 이름"
+  },
+  "山手貨物線 (山手線)": {
+   "route": "r_yamanote_freight_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "山手貨物線": {
+   "route": "r_yamanote_freight_line",
+   "why": "괄호 없는 이름"
+  },
+  "武蔵野南線 (武蔵野線)": {
+   "route": "r_musashino_south_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "武蔵野南線": {
+   "route": "r_musashino_south_line",
+   "why": "괄호 없는 이름"
+  },
+  "国立支線 (武蔵野線)": {
+   "route": "r_kunitachi_branch_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "国立支線": {
+   "route": "r_kunitachi_branch_line",
+   "why": "괄호 없는 이름"
+  },
+  "大宮支線 (武蔵野線)": {
+   "route": "r_omiya_branch_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "大宮支線": {
+   "route": "r_omiya_branch_line",
+   "why": "괄호 없는 이름"
+  },
+  "東北貨物線 (東北本線)": {
+   "route": "r_tohoku_freight_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "東北貨物線": {
+   "route": "r_tohoku_freight_line",
+   "why": "괄호 없는 이름"
+  },
+  "北方貨物線 (東海道本線)": {
+   "route": "r_hoppo_freight_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "北方貨物線": {
+   "route": "r_hoppo_freight_line",
+   "why": "괄호 없는 이름"
+  },
+  "梅田貨物線 (東海道本線)": {
+   "route": "r_umeda_freight_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "梅田貨物線": {
+   "route": "r_umeda_freight_line",
+   "why": "괄호 없는 이름"
+  },
+  "馬橋支線 (武蔵野線)": {
+   "route": "r_mabashi_branch_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "馬橋支線": {
+   "route": "r_mabashi_branch_line",
+   "why": "괄호 없는 이름"
+  },
+  "北小金支線 (武蔵野線)": {
+   "route": "r_kita_kogane_branch_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "北小金支線": {
+   "route": "r_kita_kogane_branch_line",
+   "why": "괄호 없는 이름"
+  },
+  "西浦和支線 (武蔵野線)": {
+   "route": "r_nishiurawa_branch_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "西浦和支線": {
+   "route": "r_nishiurawa_branch_line",
+   "why": "괄호 없는 이름"
+  },
+  "田端貨物線 (常磐線)": {
+   "route": "r_tabata_freight_line",
+   "why": "노리츠부시 별도 노선 → 모선의 지선 계통(분모 밖, 여객 영업 기간만)"
+  },
+  "田端貨物線": {
+   "route": "r_tabata_freight_line",
+   "why": "괄호 없는 이름"
+  }
+ }
+}

@@ -40,7 +40,7 @@ final class RideSummary {
   final TripId? tripId;
   final int? km10;
 
-  /// 운전 계통으로 입력한 기록. 표시용이다 (DESIGN §2.7).
+  /// 운행 계통으로 입력한 기록. 표시용이다 (DESIGN §2.7).
   final ServiceId? serviceId;
   final String? serviceName;
 
@@ -204,7 +204,7 @@ final class RecordQueries {
 
   /// 단위마다 마지막으로 탄 해. 해를 아는 기록만 든다. 폐선 컬렉션이 쓴다.
   Future<Map<int, int>> lastRideYears({required bool carryover}) async {
-    final unit = carryover ? 'unit_on' : 'unit_off';
+    final unit = _unit(carryover);
     final rows = await _db.customSelect(
       'SELECT e.$unit AS unit, max(substr(c.date, 1, 4)) AS last FROM ride_edge e '
       'JOIN ride_cache c ON c.ride_id = e.ride_id '
@@ -284,7 +284,7 @@ final class RecordQueries {
 
   /// 탄 단위와 그 단위의 최소 `effective_hi`.
   Stream<Map<int, String?>> watchUnitHits({required bool carryover}) {
-    final unit = carryover ? 'unit_on' : 'unit_off';
+    final unit = _unit(carryover);
     return _db.customSelect(
       'SELECT $unit AS unit, min(effective_hi) AS hi FROM ride_edge GROUP BY 1',
       readsFrom: {_db.rideEdgeTable},
@@ -304,9 +304,8 @@ final class RecordQueries {
   /// 이 구간을 지난 기록의 수.
   Future<int> countRidesOn(Set<int> edges) async {
     if (edges.isEmpty) return 0;
-    final marks = List.filled(edges.length, '?').join(', ');
     final row = await _db.customSelect(
-      'SELECT count(DISTINCT ride_id) AS n FROM ride_edge WHERE edge IN ($marks)',
+      'SELECT count(DISTINCT ride_id) AS n FROM ride_edge WHERE edge IN (${_marks(edges.length)})',
       variables: [for (final n in edges) d.Variable.withInt(n)],
     ).getSingle();
     return row.read<int>('n');
@@ -315,10 +314,8 @@ final class RecordQueries {
   /// 이 단위를 덮는 기록. 구간 끄기가 고칠 대상이다 (ARCHITECTURE §3.4).
   Future<List<RideId>> ridesCovering(Set<int> units, {required bool carryover}) async {
     if (units.isEmpty) return const [];
-    final unit = carryover ? 'unit_on' : 'unit_off';
-    final marks = List.filled(units.length, '?').join(', ');
     final rows = await _db.customSelect(
-      'SELECT DISTINCT ride_id FROM ride_edge WHERE $unit IN ($marks)',
+      'SELECT DISTINCT ride_id FROM ride_edge WHERE ${_unit(carryover)} IN (${_marks(units.length)})',
       variables: [for (final n in units) d.Variable.withInt(n)],
     ).get();
     return [for (final row in rows) RideId(row.read<String>('ride_id'))];
@@ -326,7 +323,7 @@ final class RecordQueries {
 
   /// 날짜 모름 기록으로 탄 단위.
   Stream<Set<int>> watchUndatedUnits({bool carryover = true}) => _db.customSelect(
-        "SELECT DISTINCT e.${carryover ? 'unit_on' : 'unit_off'} AS unit FROM ride_edge e "
+        'SELECT DISTINCT e.${_unit(carryover)} AS unit FROM ride_edge e '
         'JOIN ride_cache c ON c.ride_id = e.ride_id WHERE c.date IS NULL',
         readsFrom: {_db.rideEdgeTable, _db.rideCacheTable},
       ).watch().map((rows) => {for (final row in rows) row.read<int>('unit')});
@@ -339,6 +336,11 @@ final class RecordQueries {
         'UNION ALL SELECT max(updated_at) FROM trip)',
         readsFrom: {_db.rideTable, _db.visitTable, _db.tripTable},
       ).watchSingle().map((row) => row.readNullable<int>('at'));
+
+  /// 승계 설정에 맞는 단위 열.
+  String _unit(bool carryover) => carryover ? 'unit_on' : 'unit_off';
+
+  String _marks(int count) => List.filled(count, '?').join(', ');
 
   ResolveStatus _status(String wire) =>
       ResolveStatus.values.firstWhere((s) => s.wire == wire, orElse: () => ResolveStatus.error);

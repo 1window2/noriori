@@ -1,0 +1,2 @@
+# 사철 사업자 이력 (감사 EXT-010·SUC-010, 3차 2026-11-07)
+- {"patch": "replace", "id": "l_kamioka_railway_line", "name_ja": "神岡軌道", "type": "rail", "rule_class": "normal", "kana": "かみおかきどう", "family": "p9508109", "closed": true}

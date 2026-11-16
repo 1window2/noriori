@@ -1,0 +1,3 @@
+# 국철 폐지로 들어갔던 사철 이관 (감사 SUC-002·SUC-003). 黒石線 1984-11-01 弘南鉄道, 大畑線 1985-07-01 下北交通. 생성기(gen_n05 in_db 판정)가 N05의 사철 시기를 국철 표와 같은 노선으로 보아 빠뜨린 것. 재생성으로 원본에 생기면 지움
+- {"patch": "add", "id": "l_kuroishi_line_konan", "name_ja": "黒石線", "type": "rail", "rule_class": "normal", "kana": "こうなんてつどうくろいしせん", "family": "pkonan_railway_company", "closed": true}
+- {"patch": "add", "id": "l_ohata_line_shimokita", "name_ja": "大畑線", "type": "rail", "rule_class": "normal", "kana": "しもきたこうつうおおはたせん", "family": "pshimokita_kotsu", "closed": true}

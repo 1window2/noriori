@@ -1,0 +1,83 @@
+[
+{
+"line": "l_toyamako_line",
+"route": "r_toyamako_line",
+"a": "n_jogawara",
+"b": "n_hasumachi",
+"km": 1.3,
+"km_now": 1.2,
+"table": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0"
+},
+{
+"line": "l_toyamako_line",
+"route": "r_toyamako_line",
+"a": "n_hasumachi",
+"b": "n_hagiurashogakkomae",
+"km": 0.6,
+"km_now": 0.7,
+"table": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0"
+},
+{
+"line": "l_toyamako_line",
+"route": "r_toyamako_line",
+"a": "n_keirinjomae_toyama_chiho",
+"b": "n_iwasehama",
+"km": 0.5,
+"km_now": 0.4,
+"table": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0"
+},
+{
+"line": "l_hojo_line",
+"route": "r_hojo_line",
+"a": "n_harima_yokota",
+"b": "n_hojomachi",
+"km": 2.3,
+"km_now": 2.2,
+"table": "北条線 粟生 ～ 北条町 営業km: 13.8"
+},
+{
+"line": "l_ohata_line",
+"route": "r_ohata_line",
+"a": "n_ebikawa",
+"b": "n_tanabu",
+"km": 1.8,
+"km_now": 1.7,
+"table": "下北交通大畑線 下北 ～ 大畑 営業km: 18.0 (위키 下北交通大畑線 rev110559604 駅一覧, 旅客連絡運輸規則別表 中央書院 1987: 下北–海老川 1.4, 海老川–田名部 1.7, 田名部–樺山 4.8, 樺山–陸奥関根 2.7. 지금 edge km는 국철 값 1.8·2.6) / 8회차 W1b: 칸 km는 마지막 공식 값(下北交通, km_fix), 국철 시대 값을 국철 大畑線 시대 km로"
+},
+{
+"line": "l_ohata_line",
+"route": "r_ohata_line",
+"a": "n_kabayama",
+"b": "n_mutsu_sekine",
+"km": 2.6,
+"km_now": 2.7,
+"table": "下北交通大畑線 下北 ～ 大畑 営業km: 18.0 (위키 下北交通大畑線 rev110559604 駅一覧, 旅客連絡運輸規則別表 中央書院 1987: 下北–海老川 1.4, 海老川–田名部 1.7, 田名部–樺山 4.8, 樺山–陸奥関根 2.7. 지금 edge km는 국철 값 1.8·2.6) / 8회차 W1b: 칸 km는 마지막 공식 값(下北交通, km_fix), 국철 시대 값을 국철 大畑線 시대 km로"
+},
+{
+"line": "l_kagoshima_main_line",
+"route": "r_kagoshima_main_line",
+"a": "n_izumi_hisatsu_orange",
+"b": "n_nishi_izumi",
+"km": 2.3,
+"km_now": 2.7,
+"table": "鹿児島本線 八代～川内 JR 시대(~2004-03-13) 営業キロ: 노리츠부시 옛 표 900019704 「鹿児島本線 八代 ～ 川内 営業km: 116.9」 出水 65.6·西出水 67.9·高尾野 72.1 → 出水–西出水 2.3, 西出水–高尾野 4.2. 2004-03-13 肥薩おれんじ鉄道 이관 때 개정(지금 2.7·3.8). decisions 328 (8회차 W3 2026-11-15)"
+},
+{
+"line": "l_kagoshima_main_line",
+"route": "r_kagoshima_main_line",
+"a": "n_nishi_izumi",
+"b": "n_takaono",
+"km": 4.2,
+"km_now": 3.8,
+"table": "鹿児島本線 八代～川内 JR 시대(~2004-03-13) 営業キロ: 노리츠부시 옛 표 900019704 「鹿児島本線 八代 ～ 川内 営業km: 116.9」 出水 65.6·西出水 67.9·高尾野 72.1 → 出水–西出水 2.3, 西出水–高尾野 4.2. 2004-03-13 肥薩おれんじ鉄道 이관 때 개정(지금 2.7·3.8). decisions 328 (8회차 W3 2026-11-15)"
+},
+{
+"line": "l_kuroishi_line",
+"route": "r_kuroishi_line",
+"a": "n_kawabe",
+"b": "n_maedayashiki",
+"km": 3.0,
+"km_now": 2.9,
+"table": "国鉄 黒石線 川部 ～ 黒石 営業km: 6.6 (川部–前田屋敷 3.0, 前田屋敷–黒石 3.6; 1984-11-01 弘南鉄道 이관 뒤 川部–前田屋敷 2.9·前田屋敷–弘南黒石 3.3 = 6.2, 위키 弘南鉄道黒石線 rev111125380) / 9회차 S: 칸 km는 마지막 공식 값(弘南, km_fix), 국철 시대 값을 국철 黒石線 시대 km로 (3회차 tohoku_1-001)"
+}
+]

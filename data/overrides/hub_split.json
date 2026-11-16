@@ -1,0 +1,863 @@
+[
+{
+"node": "n_nemuro_nemuro_takushoku",
+"from": "n_nemuro",
+"why": "根室拓殖鉄道 根室駅은 국철 根室駅과 다른 지점(약 1km)의 별도 역. 두 역이 떨어져 있어 화물을 트럭에 빼앗김 (위키 根室拓殖鉄道 107467623)"
+},
+{
+"node": "n_higashi_aoyama_osaka",
+"from": "n_higashi_aoyama",
+"group": false,
+"why": "1975-11-23 新青山トンネル 새 선으로 東に2.7km 移転(東青山駅 111440026)"
+},
+{
+"node": "n_matsushima_tohoku_main",
+"from": "n_matsushima",
+"why": "초대 松島(山線)는 1962-07-01 폐지, 같은 날 海線의 新松島(1956~)가 2대 松島로 개칭. 1956~1962엔 松島·新松島로 따로 있었고 약 2.4 km 떨어짐(松島駅 111576541). moved.json에 넣으면 新松島 시절(1956~1962) 정차가 지워지므로 허브·묶음만 가름"
+},
+{
+"node": "n_nadachi_hokuriku_main",
+"from": "n_nadachi",
+"group": false,
+"why": "1969-09-29 北陸本線 복선 신선으로 移転(名立駅 108804869)"
+},
+{
+"node": "n_tadachi_chuo_main",
+"from": "n_tadachi",
+"group": false,
+"why": "1973-05-25 複線化로 旧位置より1.5km坂下寄りへ移転(田立駅 110192418)"
+},
+{
+"node": "n_nonai_aoimori_aoimori_railway_old",
+"from": "n_nonai_aoimori_aoimori_railway",
+"group": false,
+"why": "2011-03-12 青森寄りに1.6km移転(野内駅 109620273)"
+},
+{
+"node": "n_ikazaki_uchiko",
+"from": "n_ikazaki",
+"group": false,
+"why": "1986-03-03 予讃線新線 개업 때 約1.6km西の現在地へ移転(五十崎駅 110657141)"
+},
+{
+"node": "n_nishi_aoyama_osaka",
+"from": "n_nishi_aoyama",
+"group": false,
+"why": "1975-11-23 新青山トンネル 새 선으로 西に1.1km移転(西青山駅 109687422)"
+},
+{
+"node": "n_tsutsuishi_hokuriku_main",
+"from": "n_tsutsuishi",
+"group": false,
+"why": "1969-09-29 頸城トンネル 안 새 역으로 移転(筒石駅 110726053)"
+},
+{
+"node": "n_yahata_kagoshima_main",
+"from": "n_yahata",
+"group": false,
+"why": "1955-08-01 約1km西側へ移転(八幡駅 (福岡県) 110919454)"
+},
+{
+"node": "n_kaede_old",
+"from": "n_kaede",
+"group": false,
+"why": "1981 石勝線 개업으로 약 1 km 移転(楓駅 111421778, 1967년에도 한 번 移転)"
+},
+{
+"node": "n_koyanose_chikuho",
+"from": "n_koyanose",
+"why": "筑豊鉱業鉄道(鞍手軽便鉄道) 木屋瀬(1915~1950, 香月–野面)와 筑豊電気鉄道 木屋瀬(1958~)는 다른 노선의 다른 역, 약 1 km(筑豊鉄道 (2代) 96175349)"
+},
+{
+"node": "n_kawaraishi_kure_city_transportation_bureau",
+"from": "n_kawaraishi",
+"why": "呉市電 川原石 停留所는 海岸一丁目 교차점 부근 종점, 呉線 川原石駅과 연락 기술 없음(呉市電 105517988). JR 역은 1999년 海岸二丁目→三丁目로 500 m 移転(川原石駅 110541475)"
+},
+{
+"node": "n_mikawa_chiryu_meitetsu_mikawa_old",
+"from": "n_mikawa_chiryu_meitetsu_mikawa",
+"group": false,
+"why": "2024-03-16 約900m移転(三河知立駅 111029893)"
+},
+{
+"node": "n_tosa_ananai_dosan",
+"from": "n_tosa_ananai",
+"group": false,
+"why": "1954-03-30 和田トンネル 새 선으로 移転(土佐穴内駅 110668654)"
+},
+{
+"node": "n_orikasa",
+"from": "n_orikasa_sanriku",
+"group": false,
+"why": "2019-03-23 三陸鉄道 전환 때 旧駅から1km北側へ移転(織笠駅 108744289)"
+},
+{
+"node": "n_waka_sennin_kitakami",
+"from": "n_waka_sennin",
+"group": false,
+"why": "1962-12-01 湯田ダム로 루트 변경, 移転(和賀仙人駅 105772281)"
+},
+{
+"node": "n_osadakoen_oita_transportation_yabakei_old",
+"from": "n_osadakoen_oita_transportation_yabakei",
+"group": false,
+"why": "1944-03-01 770 m上ノ原寄りに移転(大貞公園駅 111056418)"
+},
+{
+"node": "n_ishiyagawa_ishiyagawa",
+"from": "n_ishiyagawa",
+"why": "神戸市電石屋川線 石屋川 停留場은 阪神 石屋川駅과 別の場所(約900m, 灘区 vs 東灘区)(神戸市電石屋川線 107416152)"
+},
+{
+"node": "n_no_hokuriku_main",
+"from": "n_no",
+"group": false,
+"why": "1969-09-29 新線으로 移転, 旧駅跡은 文化体育館(能生駅 109443757)"
+},
+{
+"node": "n_noda_hanshin",
+"from": "n_noda",
+"why": "JR 野田와 阪神 野田는 約500m離れており、乗り換え駅ではない(野田駅 (JR西日本) 109478458, 野田駅 (阪神) 111513004)"
+},
+{
+"node": "n_ashiyagawa_kokudo",
+"from": "n_ashiyagawa",
+"why": "阪神国道線 芦屋川(국도2호 위)과 阪急 芦屋川는 다른 곳. 国道線은 本線과도 연락이 나빴다고 기술(阪神国道線 110799720, 芦屋川駅 110396671)"
+},
+{
+"node": "n_kitamori_hanawa_old",
+"from": "n_kitamori_hanawa",
+"group": false,
+"why": "2015 平館寄り500m 移転(北森駅 108435583)"
+},
+{
+"node": "n_midoricho_odawarashinai",
+"from": "n_midoricho",
+"why": "箱根登山 小田原市内線 緑町(小田原駅前 0.3 km, 緑一丁目)과 大雄山線 緑町는 다른 곳(箱根登山鉄道小田原市内線 110985582, 緑町駅 109769741)"
+},
+{
+"node": "n_bashamichi_hommoku",
+"from": "n_bashamichi",
+"why": "みなとみらい線 馬車道駅 자리는 横浜市電 本町四丁目 停留所 쪽이고, 市電 馬車道 停留所는 다른 곳(横浜市電 108362204)"
+},
+{
+"node": "n_tamade_osaka_metro",
+"from": "n_tamade_nankai",
+"why": "地下鉄 玉出는 「他線への乗り換えのない駅」, 南海 岸里玉出(옛 玉出) 玉出口까지 650 m(玉出駅 109154768, 岸里玉出駅 111041283)"
+},
+{
+"node": "n_kitago_fukui_nan_etsu",
+"from": "n_kitago_fukui_fukubu",
+"why": "南越線 北府(きたごう)는 福武線 北府(きたご)와 別の駅, 読み・所在地も異なる. 南越線 시절 福武線 역은 西武生(北府駅 (南越線) 101435847, 北府駅 111543420)"
+},
+{
+"node": "n_mozumi_mitsui_mining_and_smelting",
+"from": "n_mozumi",
+"why": "神岡軌道 茂住는 国鉄 神岡線과 川を挟んだ対岸에 있었고 1962 여객 폐지, 神岡線 茂住(1966~)와 다른 자리(神岡軌道 110986155, 茂住駅 110034086)"
+},
+{
+"node": "n_kamiita",
+"from": "n_kami_ita",
+"why": "国鉄 添田線 上伊田와 平成筑豊 上伊田는 場所は異なる, 移転したものではない(약 400 m)(上伊田駅 108423508)"
+},
+{
+"node": "n_asakura_tosaden_kotsu",
+"from": "n_asakura",
+"why": "이 노드는 とさでん 伊野線 「朝倉」 停留場(乗換 없음)이고 JR 朝倉駅 앞 정류장은 이웃 「朝倉駅前」(n_asakura_ekimae)(朝倉停留場 111312194, 朝倉駅 (高知県) 111312178)"
+},
+{
+"node": "n_teradacho_osaka_city",
+"from": "n_teradacho",
+"why": "百済線 寺田町(0.0 km, 시내선 교차점)과 별도로 0.3 km에 城東線과 접속하는 「寺田町駅前」이 있었음(大阪市電百済線 111563981)"
+},
+{
+"node": "n_kameyama_sanyo",
+"from": "n_kameyama_bantan",
+"why": "山陽 亀山는 1991년까지 亀山御坊·電鉄亀山이라는 다른 이름, 国鉄 亀山(~1986)는 北方300m(亀山駅 (兵庫県) 109360888)"
+},
+{
+"node": "n_tsukiji_kachidokibashi",
+"from": "n_tsukiji",
+"why": "都電 築地 電停은 현재의 東銀座駅 위치에 있었음 — 日比谷線 築地와 다른 곳(東京都電車 110874184)"
+},
+{
+"node": "n_kojimashinden_daishi",
+"from": "n_kojimashinden",
+"group": false,
+"why": "1964-03-25 京急大師線 小島新田 移転(小島新田駅 108741953)"
+},
+{
+"node": "n_ino_tosaden_kotsu",
+"from": "n_ino_dosan",
+"why": "이 노드는 とさでん 「伊野」 停留場(종점, 乗換 없음)이고 JR 伊野駅 앞은 이웃 「伊野駅前」(伊野停留場 101769960, 伊野駅 111422386)"
+},
+{
+"node": "n_inaeicho_tsukiji_line_nagoya_city",
+"from": "n_inaeicho",
+"why": "稲永町(I, 2.5 km, ~1956)과 稲永町(II, 2.7 km)는 같은 築地線의 이웃 정류장. II는 1956-09-15까지 「西稲永」, 그날 I 폐지·II 개칭(名古屋市電築地線 92163572)"
+},
+{
+"node": "n_oarai_suihin_old",
+"from": "n_oarai_suihin",
+"group": false,
+"why": "1954-01-22 大洗駅が旧駅の南側に移転(茨城交通水浜線 109665329)"
+},
+{
+"node": "n_kannoura_asa_seaside_asato_old",
+"from": "n_kannoura_asa_seaside_asato",
+"group": false,
+"why": "2021-12-25 阿佐東線 0.1 km 연장, 甲浦 이전(甲浦信号場 107021034)"
+},
+{
+"node": "n_kami_nopporo_chitose",
+"from": "n_kami_nopporo",
+"group": false,
+"why": "1973 千歳線 이설, 旧駅は北西約1km(上野幌駅 111090560)"
+},
+{
+"node": "n_niigata_old",
+"from": "n_niigata",
+"group": false,
+"why": "1958-04-29 新潟駅 移転(新潟駅 111526782)"
+},
+{
+"node": "n_tatebori_minobu",
+"from": "n_tatebori",
+"group": false,
+"why": "1969-09-28 身延線 고가 신선으로 移転(竪堀駅 110308739)"
+},
+{
+"node": "n_sakuma_iida",
+"from": "n_sakuma",
+"group": false,
+"why": "1955-11-11 佐久間 – 大嵐 経路変更に伴い移転(佐久間駅 110660067)"
+},
+{
+"node": "n_takedao_fukuchiyama",
+"from": "n_takedao",
+"group": false,
+"why": "1986-08-01 生瀬–道場 新線으로 現在地に移転(武田尾駅 111202374)"
+},
+{
+"node": "n_sakoshi_ako",
+"from": "n_sakoshi",
+"why": "赤穂鉄道 坂越(9.4 km)는 赤穂線 坂越와 다른 자리(노선도상 赤穂線 교차 전), 시기 안 겹침(赤穂鉄道 109282965)"
+},
+{
+"node": "n_banshu_ako_ako",
+"from": "n_banshu_ako",
+"why": "赤穂鉄道 播州赤穂駅은 赤穂線の播州赤穂駅とは別駅(赤穂鉄道 109282965)"
+},
+{
+"node": "n_odara_ryobi",
+"from": "n_odara",
+"why": "西大寺鉄道 大多羅는 JR駅から西に約400m離れた位置(大多羅駅 111649481, 西大寺鉄道 109417111)"
+},
+{
+"node": "n_hiwa_hakubi",
+"from": "n_hiwa",
+"group": false,
+"why": "1970-09-07 複線化に伴い現在地に移転(日羽駅 111019291)"
+},
+{
+"node": "n_mitaki_kabe",
+"from": "n_mitaki",
+"group": false,
+"why": "1962 可部線 太田川放水路 동안→이설(三滝駅 110225140)"
+},
+{
+"node": "n_utazu_yosan",
+"from": "n_utazu",
+"group": false,
+"why": "1987 予讃線 坂出–丸亀 고가 이설(宇多津駅 110600002)"
+},
+{
+"node": "n_tosa_kitagawa_dosan",
+"from": "n_tosa_kitagawa",
+"group": false,
+"why": "1986-03-03 土讃線 経路変更, 大王信号場と統合して移転(土佐北川駅 110799132)"
+},
+{
+"node": "n_nishibun_aki",
+"from": "n_nishibun",
+"why": "ごめん・なはり線 西分는 安芸線 西分 跡에서 800m西側(西分駅 (土佐電気鉄道) 111331595)"
+},
+{
+"node": "n_nukabira_shihoro",
+"from": "n_nukabira",
+"group": false,
+"why": "1955-08-01 糠平ダム建設のため移転(糠平駅 109409276)"
+},
+{
+"node": "n_mine_shimizushinai_line_nishikubo_sodeshi_old_route",
+"from": "n_mine_shimizushinai",
+"group": false,
+"why": "1951-07-21 静岡鉄道 清水市内線 西久保–袖師 이설(静岡鉄道清水市内線 107659703, moved.json 기존 항목)"
+},
+{
+"node": "n_suzukijima_shimizushinai_line_nishikubo_sodeshi_old_route",
+"from": "n_suzukijima",
+"group": false,
+"why": "같은 이설(静岡鉄道清水市内線 107659703, moved.json 기존 항목)"
+},
+{
+"node": "n_somuta_ishiki_line_shinshoin_ishiki_old_route",
+"from": "n_somuta",
+"group": false,
+"why": "1952-08-10 鹿児島市電 伊敷線 新線 이설(鹿児島市電伊敷線 108122176, moved.json 기존 항목)"
+},
+{
+"node": "n_nakasomuta_ishiki_line_shinshoin_ishiki_old_route",
+"from": "n_nakasomuta",
+"group": false,
+"why": "같은 이설(鹿児島市電伊敷線 108122176, moved.json 기존 항목)"
+},
+{
+"node": "n_nishihino_hachioji",
+"from": "n_nishihino",
+"group": false,
+"why": "1976-04-01 日永–西日野 복구 때 当駅は0.1キロ日永方に移設(西日野駅 109414905). 후보 128개 밖"
+},
+{
+"node": "n_uchiko_uchiko",
+"from": "n_uchiko",
+"group": false,
+"why": "1986-03-03 予讃線新線 개업과 함께 旧駅から南西の現在地に移転(内子駅 110902744). 후보 128개 밖"
+},
+{
+"node": "n_takahata_yamagata_kotsu",
+"from": "n_takahata",
+"why": "山形交通 高畠線 高畠(시가지, 1922~1974)은 JR 高畠(옛 糠ノ目, 1991 개칭)에서 3.9km 떨어진 다른 역 (재평가 ST4-06)"
+},
+{
+"node": "n_shikama_sanyo",
+"from": "n_shikama",
+"why": "飾磨: 이름만 같고 929m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_tsukaguchi_hankyu",
+"from": "n_tsukaguchi",
+"why": "塚口: 이름만 같고 855m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_rokkoguchi",
+"from": "n_rokkoguchi_ishiyagawa",
+"why": "六甲口: 이름만 같고 817m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_hakushima_hiroshima_rapid_transit",
+"from": "n_hakushima_hiroden",
+"why": "白島: 이름만 같고 802m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_ajiyoshi_tokai_kotsu",
+"from": "n_ajiyoshi_meitetsu",
+"why": "味美: 이름만 같고 773m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_korimoto_kagoshima_city",
+"from": "n_korimoto",
+"why": "郡元: 이름만 같고 754m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_ashiya_hanshin",
+"from": "n_ashiya",
+"why": "芦屋: 이름만 같고 742m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_itami_hankyu",
+"from": "n_itami",
+"why": "伊丹: 이름만 같고 742m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_sumiyoshi_hanshin",
+"from": "n_sumiyoshi_tokaido_main",
+"why": "住吉: 이름만 같고 731m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_waseda_toei",
+"from": "n_waseda_tokyo_metro",
+"why": "早稲田: 이름만 같고 714m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_kojima_shimotsui",
+"from": "n_kojima",
+"why": "児島: 이름만 같고 705m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_suita_hankyu",
+"from": "n_suita",
+"why": "吹田: 이름만 같고 695m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_uji_keihan",
+"from": "n_uji",
+"why": "宇治: 이름만 같고 695m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_kotoni_sapporo_city",
+"from": "n_kotoni",
+"why": "琴似: 이름만 같고 690m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_jujo_kyoto_city",
+"from": "n_jujo_kintetsu",
+"why": "十条: 이름만 같고 687m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_miki_kobe",
+"from": "n_miki",
+"why": "三木: 이름만 같고 678m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_imazato_osaka_metro",
+"from": "n_imazato_kintetsu",
+"why": "今里: 이름만 같고 669m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_arashiyama_keifuku",
+"from": "n_arashiyama_hankyu",
+"why": "嵐山: 이름만 같고 656m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_oryuzako_miyazaki",
+"from": "n_oryuzako",
+"why": "折生迫: 이름만 같고 615m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_jono_kitakyushu_urban_monorail",
+"from": "n_jono",
+"why": "城野: 이름만 같고 614m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_uchiumi_miyazaki",
+"from": "n_uchiumi",
+"why": "内海: 이름만 같고 599m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_omiimazu",
+"from": "n_omi_imazu",
+"why": "近江今津: 이름만 같고 581m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_asakusa_tsukuba_express",
+"from": "n_asakusa_tobu",
+"why": "浅草: 이름만 같고 568m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_taniyama_kagoshima_city",
+"from": "n_taniyama",
+"why": "谷山: 이름만 같고 546m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_shinasahi",
+"from": "n_shin_asahi",
+"why": "新旭: 이름만 같고 531m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_katata_kojaku",
+"from": "n_katata",
+"why": "堅田: 이름만 같고 501m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_gumyoji_yokohama_city",
+"from": "n_gumyoji_keikyu",
+"why": "弘明寺: 이름만 같고 494m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_takasago_sanyo",
+"from": "n_takasago_takasago",
+"why": "高砂: 이름만 같고 488m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_kasuganomichi_hanshin",
+"from": "n_kasuganomichi_hankyu",
+"why": "春日野道: 이름만 같고 453m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_mitejima_kokudo",
+"from": "n_mitejima",
+"why": "御幣島: 이름만 같고 450m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_horita_nagoya_city",
+"from": "n_horita_meitetsu",
+"why": "堀田: 이름만 같고 435m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_higashi_sapporo",
+"from": "n_higashi_sapporo_chitose",
+"why": "東札幌: 이름만 같고 422m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_nakatsu_osaka_metro",
+"from": "n_nakatsu_hankyu",
+"why": "中津: 이름만 같고 393m 떨어진 다른 역. 환승 묶음 없음 (재평가 ST4-15)"
+},
+{
+"node": "n_bakurocho_toei",
+"from": "n_bakurocho",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_etchujima_toei",
+"from": "n_etchujima",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_otobashi_shimoegawa",
+"from": "n_otobashi",
+"why": "S2 successor_never_coexisted 452m: R04 HUB-尾頭橋: 市電 尾頭橋(~1971)과 JR 尾頭橋(1995~) 약 0.43~0.46 km, 시기 안 겹침; N05 下之一色線 尾頭橋–JR 尾頭橋 452 m"
+},
+{
+"node": "n_wani_kojaku",
+"from": "n_wani",
+"why": "S2 successor_never_coexisted 147m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_hira_kojaku",
+"from": "n_hira",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_omimaiko",
+"from": "n_omi_maiko",
+"why": "S2 successor_never_coexisted 193m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_kitakomatsu",
+"from": "n_kita_komatsu",
+"why": "S2 successor_never_coexisted 102m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_adogawa_kojaku",
+"from": "n_adogawa",
+"why": "S2 successor_never_coexisted 194m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_ebie_hanshin",
+"from": "n_ebie",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_emmachi_marutamachi",
+"from": "n_emmachi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_komorie_nishi_nippon",
+"from": "n_komorie",
+"why": "S2 successor_never_coexisted 573m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_tobata_nishi_nippon",
+"from": "n_tobata",
+"why": "S2 separate_station 486m: 戸畑停留場: 「国鉄鹿児島本線の戸畑駅からは約500m離れていた」; 西鉄北九州線 施設の特徴: 「門司停留場・戸畑停留場は、それぞれ国鉄門司駅・戸畑駅とは大きく離れていた」"
+},
+{
+"node": "n_jono_nishi_nippon",
+"from": "n_jono",
+"why": "S2 separate_station 664m: 西鉄北九州線 北方線 정류장: 「片野 - 城野駅前 - 富士見町 - 城野 - 北方車庫前」(城野駅前과 城野는 다른 정류장); 城野駅 (JR九州): 「西鉄北方線城野駅前停留場（廃止）」 절 — JR역 앞 정류장은 城野駅前; N05 北方線 城野 점–JR 城野 664 m"
+},
+{
+"node": "n_tayoshi_miyazaki",
+"from": "n_tayoshi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_minamikata_miyazaki",
+"from": "n_minamikata",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_kibana_miyazaki",
+"from": "n_kibana",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_sosanji_miyazaki",
+"from": "n_sosanji",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_kodomonokuni_miyazaki",
+"from": "n_kodomonokuni",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_aoshima_miyazaki",
+"from": "n_aoshima",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_torikai_nishi_nippon",
+"from": "n_torikai",
+"why": "S2 separate_station 777m: 鳥飼駅(国鉄 筑肥線) 문서에 城南線 정류장 연락 기술 없음; 西鉄福岡市内線 城南線: 「大濠 - 鳥飼 - 城西橋」; N05 城南線 鳥飼 점–筑肥線 鳥飼 777 m"
+},
+{
+"node": "n_meiji_jingumae_toei",
+"from": "n_meiji_jingumae",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_edogawabashi_edogawa",
+"from": "n_edogawabashi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_sakuradamon_hanzomon_line_toei",
+"from": "n_sakuradamon",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_shintomicho",
+"from": "n_shintomicho_tokyo_metro",
+"why": "S2 successor_never_coexisted 146m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_hanzomon_bancho_line_toei",
+"from": "n_hanzomon",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_suitengumae_toei",
+"from": "n_suitengumae",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_oebashi_osaka_city",
+"from": "n_oebashi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_sumikawa_jozankei",
+"from": "n_sumikawa",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_maruyama_koen_sapporo_transportation_service_promotion",
+"from": "n_maruyama_koen",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_yaotome_sendai",
+"from": "n_yaotome",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_fujisaki_nishi_nippon",
+"from": "n_fujisaki_fukuoka_subway",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_nishijin_nishi_nippon",
+"from": "n_nishijin_fukuoka_subway",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_tojinmachi_nishi_nippon",
+"from": "n_tojinmachi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_tenjin_loop_line_nishitetsu",
+"from": "n_tenjin",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_gofukumachi",
+"from": "n_gofukumachi_fukuoka_subway",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_ropponmatsu_nishi_nippon",
+"from": "n_ropponmatsu",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_yakuin_odori_nishi_nippon",
+"from": "n_yakuin_odori",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_shimoamazu",
+"from": "n_shimo_amazu",
+"why": "S2 successor_never_coexisted 277m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_gujo_hokutan",
+"from": "n_gujo_kyoto_tango_railway_willer_trains",
+"why": "S2 successor_never_coexisted 112m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_moriguchi",
+"from": "n_moriguchi_osaka_metro",
+"why": "S2 successor_never_coexisted 691m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_nakazakicho_osaka_city",
+"from": "n_nakazakicho",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_tanimachi_6_chome_osaka_city",
+"from": "n_tanimachi_6_chome",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_kitakagaya_osaka_city",
+"from": "n_kitakagaya",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_osakako_osaka_city",
+"from": "n_osakako",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_midoribashi_osaka_city",
+"from": "n_midoribashi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_nagahoribashi_osaka_city",
+"from": "n_nagahoribashi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_nagahoribashi_sakaisuji_line_osaka_city",
+"from": "n_nagahoribashi",
+"why": "S2 successor_never_coexisted 113m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_nishiohashi_osaka_city",
+"from": "n_nishiohashi",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_tateda_aki",
+"from": "n_tateda",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_yasu_aki",
+"from": "n_yasu_tosa_kuroshio",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_wajiki_aki",
+"from": "n_wajiki",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_akano_aki",
+"from": "n_akano",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_ananai_aki",
+"from": "n_ananai",
+"why": "S2 successor_never_coexisted 254m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_komoto",
+"from": "n_komoto_nagoya_rinkai_rapid_transit",
+"why": "S2 successor_never_coexisted 575m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_arako_shimonoishiki",
+"from": "n_arako",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_matsumori_meitetsu",
+"from": "n_matsumori_nagaragawa",
+"why": "S2 successor_never_coexisted 266m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_yakage_ikasa",
+"from": "n_yakage",
+"why": "S2 successor_never_coexisted 1114m: 시기 안 겹침(矢掛線 1967-04-01 폐지 / 井原鉄道 1999); N05 矢掛線 矢掛 점–井原鉄道 矢掛 1114 m"
+},
+{
+"node": "n_goryo_ikasa",
+"from": "n_goryo_ibara",
+"why": "S2 successor_never_coexisted Nonem: 井笠 神辺線 1922~1967-04-01, 井原鉄道 1999-01-11~ — 시기 안 겹침; N05에 井笠 御領 점 없음; DB 井笠 御領 좌표는 井原鉄道 御領 값 복사(station_database)"
+},
+{
+"node": "n_yuno_ikasa",
+"from": "n_yuno",
+"why": "S2 successor_never_coexisted 326m: 시기 안 겹침(1967 폐지 / 1999 개업); N05 神辺線 湯野 점–井原鉄道 湯野 326 m; 井笠鉄道: 「神辺線両備国分寺-湯野間の橋梁跡（井原鉄道湯野駅付近）」"
+},
+{
+"node": "n_katano_nishi_nippon",
+"from": "n_katano",
+"why": "S2 successor_never_coexisted 275m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_kitagata_nishi_nippon",
+"from": "n_kitagata_kitakyushu_urban_monorail",
+"why": "S2 successor_never_coexisted 479m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_hobara_fukushima",
+"from": "n_hobara",
+"why": "S2 successor_never_coexisted 795m: 保原駅(阿武隈急行, 1988~): 「市街地からは少し離れており」, 福島交通 保原(~1971)은 시가지의 保原バスセンター 자리; N05 福島交通 保原–阿武隈急行 保原 795 m"
+},
+{
+"node": "n_hobara_kaketa",
+"from": "n_hobara",
+"why": "S2 successor_never_coexisted 795m: 保原駅(阿武隈急行, 1988~): 「市街地からは少し離れており」, 福島交通 保原(~1971)은 시가지의 保原バスセンター 자리; N05 福島交通 保原–阿武隈急行 保原 795 m"
+},
+{
+"node": "n_yanagawa_fukushima",
+"from": "n_yanagawa_abukuma_express",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_okaji_okuyama",
+"from": "n_okaji",
+"why": "S2 successor_never_coexisted 0m: 두 노드의 정차 기간이 겹치지 않음(위 periods) → 걸어서 갈아탄 적이 없음"
+},
+{
+"node": "n_sugita_sugita",
+"from": "n_sugita_keikyu",
+"why": "S2 separate_station 576m: 横浜市電: 「杉田線 聖天橋 - 杉田間開通」, 路線 「杉田線 葦名橋 - 磯子 - 杉田(지명 링크 杉田 (横浜市))間」 — 종점은 지명, 역 연락 기술 없음; 杉田駅 (神奈川県): 横浜市電은 関連項目에만 있음; R06: N05 杉田 정류장은 聖天橋에서 남쪽 약 0.4 km 국도16호 쪽, "
+},
+{
+"node": "n_idogaya_idogaya",
+"from": "n_idogaya",
+"why": "S2 separate_station 279m: 井土ヶ谷駅: 「当駅前にも「井土ヶ谷駅前停留場」が設けられた」, 「横浜市電井土ケ谷線の井土ヶ谷駅前停留場が1956年4月1日の開業から1968年8月31日の廃止まで隣接」; N05 井土ヶ谷線 정류장 순서 …南太田四丁目–井土ヶ谷駅前–井土ヶ谷–鶴巻…, 井土ヶ谷 점은 京急역에서 279 m"
+},
+{
+"node": "n_ichida_meitetsu",
+"from": "n_ichida",
+"why": "c2:g_ichida: 豊川市内線 市田(愛知県)와 飯田線 市田(長野県)는 93.5 km 떨어진 다른 역. station.json 八幡駅 (愛知県) 野口駅を「市田駅に改称」(1946) (audit X1-31·X2-02·X2-03·chubu_3-001)"
+},
+{
+"node": "n_asashiobashi_osaka_city",
+"from": "n_asashiobashi",
+"why": "x:asashiobashi: 市電 築港線 朝潮橋(1951-07-15~1960-08-01)와 地下鉄 中央線 朝潮橋(1961-12-11~)는 영업이 안 겹친 후계 역 (S2 규칙, audit X1-34·X2-06·kinki_4-026)"
+},
+{
+"node": "n_asagaya_toei",
+"from": "n_asagaya",
+"why": "x:asagaya_suginami: 都電 杉並線 阿佐ヶ谷 정류장은 青梅街道 위, JR 역에서 남남동 약 0.75 km(N05 荻窪線 EB03_15387007). 다른 시설 (audit kanto_4-003)"
+},
+{
+"node": "n_uji_keihan_old",
+"from": "n_uji",
+"why": "京阪 宇治 옛 자리(역 이전 옛 노드)도 京阪 宇治처럼 JR 宇治 묶음에서 뗀다. 생성기가 옛 노드를 g_uji에 넣어 moved 처리가 g_uji_keihan을 다시 JR 묶음에 합쳤음(재설계 검증 2026-11-08)"
+},
+{
+"node": "n_osaka_umeda_hanshin",
+"from": "n_osaka_umeda_hankyu",
+"why": "阪神 大阪梅田와 阪急 大阪梅田는 따로 지은 다른 역(정밀 좌표 461 m, 사업자 다름). 같은 역 묶음(group)은 같은 시설만이라 떼고, 환승은 같은 이름 500 m 안 근거로 남는다. 감사2 C1 K07(group 안 먼 쌍)"
+},
+{
+"node": "n_kyobashi_osaka_metro",
+"from": "n_kyobashi",
+"why": "Osaka Metro 長堀鶴見緑地線 京橋는 JR·京阪 京橋와 따로 지은 역(정밀 좌표 431 m, 사업자 다름). 같은 역 묶음에서 떼고 환승은 같은 이름 500 m 안 근거로 남는다. 감사2 C1 K07(group 안 먼 쌍)"
+},
+{"node": "n_tambabashi_kyoto_city", "from": "n_tambabashi", "why": "京都市電 伏見線 丹波橋 정류장은 竹田街道 위(丹波橋通 교차점), 京阪 丹波橋에서 서쪽 약 0.7 km 떨어진 다른 정류장(N05 점 0.76 km, 사업자 다름). 같은 역 묶음(같은 시설)이 아니라 뗀다. 환승 쌍은 옛 안내도 근거가 없어 두지 않는다 (3회차 전수 점검 kinki_1-01, 8회차 W1b)"}
+]

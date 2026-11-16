@@ -192,6 +192,30 @@ class ImportController extends Notifier<ImportStep> {
       fromLabel = labels[result.fromNode] ?? fromLabel;
       toLabel = labels[result.toNode] ?? toLabel;
     }
+    // 운행 계통으로 펼친 행(노리츠부시 대응표)은 공식 구간마다 그 노선의 이름으로 적는다 (DESIGN §10.2)
+    List<RideLeg>? legs;
+    if (result is RowMatched && result.legs.isNotEmpty) {
+      legs = [];
+      for (final leg in result.legs) {
+        final names = await ref.read(packReaderProvider).nodeNames(
+          [leg.fromNode.value, leg.toNode.value],
+          lineId: leg.lineId.value,
+          date: row.row.dateInput == null ? null : DateSpan.parse(row.row.dateInput!).lo,
+        );
+        legs.add(RideLeg(
+          seq: leg.seq,
+          lineId: leg.lineId,
+          routeId: leg.routeId,
+          fromNode: leg.fromNode,
+          toNode: leg.toNode,
+          direction: leg.direction,
+          resolveAsOf: leg.resolveAsOf,
+          lineLabel: ref.read(nameBookProvider).lines[leg.lineId.value] ?? leg.lineId.value,
+          fromLabel: names[leg.fromNode.value] ?? leg.fromNode.value,
+          toLabel: names[leg.toNode.value] ?? leg.toNode.value,
+        ));
+      }
+    }
     return importedRide(
       row,
       edition: edition,
@@ -201,6 +225,7 @@ class ImportController extends Notifier<ImportStep> {
       fromLabel: fromLabel,
       toLabel: toLabel,
       fileName: fileName,
+      legs: legs,
     );
   }
 

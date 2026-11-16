@@ -2,7 +2,7 @@
 # 선로 원천에서 edge별 선형을 찾는다. N02 최신판부터 옛 판 순서로, 없으면 OSM에서 찾는다
 # OSM 유래 선형은 geometry/osm.yaml에만 쓴다. ODbL이라 master.sqlite, rail.pmtiles와 섞지 않는다
 # 역 좌표가 보간값인 노드는 선로 위 km 비율 지점으로 옮긴다. OSM 경로로는 옮기지 않는다
-import sys,os,re,json,struct,zipfile,io,math,heapq,collections,gzip,sqlite3
+import sys,os,re,json,struct,zipfile,math,heapq,collections,gzip,sqlite3
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
 Z=os.path.join(IMP,'n02')
@@ -105,7 +105,6 @@ ACTIVE={'rail','subway','light_rail','tram','narrow_gauge','monorail','funicular
 RAILBED=re.compile(r'廃線|線跡|線路跡|鉄道跡|軌道跡|鉄道敷|線敷|旧線')
 def load_osm():
     base=os.path.join(IMP,'osm')
-    if not os.path.isdir(base):return None
     fd=sorted(x for x in os.listdir(base) if os.path.isdir(os.path.join(base,x)))
     # 선로 스냅숏(overpass-)과 노반 스냅숏(railbed-)을 각각 가장 새 것으로 읽는다
     track=[x for x in fd if not x.startswith('railbed-')];bed=[x for x in fd if x.startswith('railbed-')]
@@ -144,11 +143,14 @@ km={k['edge']:k['km'] for k in load('km')}
 _db=sqlite3.connect(os.path.join(BUILD,'master.sqlite'))
 CUR={r[0] for r in _db.execute("select distinct edge_id from edge_attr where valid_to='ongoing'")}
 CLOSEY={}
-for e_,v_ in _db.execute("select edge_id,max(valid_to) from edge_life group by 1"):
-    if v_ and v_!='ongoing' and v_[:4].isdigit():CLOSEY[e_]=int(v_[:4])
+# 원문이 범위일 수 있어 상한 칸으로 본다
+for e_,v_ in _db.execute("select edge_id,max(case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end) from edge_life group by 1"):
+    if v_ and v_!='9999-12-31':CLOSEY[e_]=int(v_[:4])
 # 운행이 먼저 끝나고 법적 폐지가 늦은 구간. N05는 법적 폐지까지 선로를 남겨 두기도 한다
 LEGALY={e_:int(v_[:4]) for e_,v_ in _db.execute("select edge_id,max(legal_abolition) from edge_life group by 1") if v_ and v_[:4].isdigit()}
 STOPS={r[0] for r in _db.execute("select distinct node_id from route_stop where is_stop=1 and valid_to='ongoing'")}
+# km가 추정값인 노드 (route_stop.km_estimated). 좌표가 위치 근거로 더 낫다
+KEST={r[0] for r in _db.execute("select distinct node_id from route_stop where km_estimated=1")}
 LOPS=collections.defaultdict(set)
 ELINE=collections.defaultdict(set)
 for e_,l_,o_ in _db.execute("select distinct edge_id,line_id,operator_id from edge_attr"):
@@ -508,7 +510,7 @@ for mv in MOVED:
     ls=[lines[x] for e_ in edges if mv['old'] in (e_['a'],e_['b']) for x in ELINE.get(e_['id'],set())|{e_['seed_line']}]
     got=None
     for y in YEARS:
-        if ED[y]>=int(mv['date'][:4]):continue
+        if ED[y]>=int((lohi(mv['date'])[0] or mv['date'])[:4]):continue
         for t in sorted(LABEL[mv['old']]):
             for nm,co,c in STN[y].get(t,()):
                 if any(n02_names(nm)&key_names(l) for l in ls) and seglen(mid(c),b)>.1:got=got or mid(c)
@@ -534,6 +536,19 @@ def stop_on(n,lid,src,pt):
     return best[2] if best else None
 NK={n['id']:n.get('kind') for n in load('nodes')}
 def LT(eid):return tuple(sorted(ELINE.get(eid,set())|{ids[eid]['seed_line']}))
+ONT=.15     # 좌표가 선로 위에 있다고 볼 거리 (km)
+SHIFT=1.0   # 좌표 투영점과 km 비율 지점이 이만큼 넘게 다르면 좌표로 자르지 않는다 (km)
+# 다른 노드와 똑같은 좌표는 같은 이름의 다른 역이나 새 역에서 빌린 값일 수 있어 위치 근거로 쓰지 않는다
+SHARED=collections.Counter(Q(lonlat(n)) for n in pos if lonlat(n))
+def onpath(o,p,cum):
+    """좌표 o에서 경로 p까지의 거리와, 가장 가까운 점의 경로 위 누적 거리"""
+    best=(9e9,0.0);cs=math.cos(math.radians(o[1]))
+    for i_,(a,b) in enumerate(zip(p,p[1:])):
+        ax,ay=(a[0]-o[0])*cs,a[1]-o[1];bx,by=(b[0]-o[0])*cs,b[1]-o[1]
+        ex,ey=bx-ax,by-ay;t=max(0,min(1,-(ax*ex+ay*ey)/((ex*ex+ey*ey) or 1e-18)))
+        dd=111.0*math.hypot(ax+t*ex,ay+t*ey)
+        if dd<best[0]:best=(dd,cum[i_]+t*(cum[i_+1]-cum[i_]))
+    return best
 rows={};meta={};st=collections.Counter()
 # 1. 믿을 수 없는 노드가 낀 구간은 양쪽의 믿을 수 있는 노드 사이를 한 번에 찾아 km 비율로 자른다
 done_chain=set();CHAINFAIL=[]
@@ -568,9 +583,21 @@ for lid in sorted(byline):
         if not sure and all(lonlat(x) and x not in WEAK for x in seq[1:-1]):st['chain_skip']+=1;continue
         p=c['path'];L=c['L'];cum=[0.0]
         for a,b in zip(p,p[1:]):cum.append(cum[-1]+seglen(a,b))
+        # 자를 자리. 기본은 km 비율 지점이다. km가 추정값(앞뒤 역 가운데 등)인 노드는 좌표가 선로 위(ONT 안)에 있으면
+        # 그 좌표의 선상 투영점에서 자른다. 단 그렇게 자른 앞뒤 조각이 영업km 허용 범위(선형 검사의 ratio 기준) 안일 때만이다.
+        # 범위를 벗어나면 km와 좌표 중 하나가 틀린 것이니 km 비율을 그대로 두어 선형 검사가 잡게 한다.
+        # 다른 노드와 똑같은 좌표(빌린 좌표)는 쓰지 않는다. 순서가 뒤집히면 그 사슬은 km 비율로 둔다
+        cut=[sum(ks[:j+1])/K*L for j in range(len(ks)-1)]
+        def okk(l_,k_):return not k_ or .8*k_-.2<=l_<=1.2*k_+.2
+        for j in range(len(cut)):
+            nd=seq[j+1];o=lonlat(nd)
+            if not o or nd in WEAK or nd not in KEST or SHARED[Q(o)]!=1:continue
+            lat_,al_=onpath(o,p,cum)
+            if lat_>ONT or abs(al_-cut[j])>SHIFT:continue
+            lo_=cut[j-1] if j else 0.0;hi_=cut[j+1] if j+1<len(cut) else cum[-1]
+            if lo_+.005<al_<hi_-.005 and okk(al_-lo_,ks[j]) and okk(hi_-al_,ks[j+1]):cut[j]=al_;st['chain_proj']+=1
         i=0;acc=0.0;pieces=[];pts=[];cur=[p[0]]
-        for ki in ks[:-1]:
-            acc+=ki/K*L
+        for ki,acc in zip(ks[:-1],cut):
             while i+1<len(p) and cum[i+1]<acc:
                 i+=1;cur.append(p[i])
             f=(acc-cum[i])/((cum[i+1]-cum[i]) or 1e-9) if i+1<len(p) else 0
@@ -638,7 +665,9 @@ def ends_far(eid):
     if not r:return 9
     e=ids[eid];A,B=where(e['a']),where(e['b']);c=r['coords']
     return max(seglen(c[0],A) if A else 0,seglen(c[-1],B) if B else 0)
-if os.path.exists(N05Z) and source_on('n05'):
+if source_on('n05'):
+    # gen_n05가 남긴 별칭: 손 대조 노선의 N05 노선 이름 (真田傍陽線 ↔ 菅原鹿沢線)
+    N05ALIAS=json.load(open(os.path.join(CAND,'n05_alias.json'),encoding='utf-8'))
     zz=zipfile.ZipFile(N05Z);N5=[]
     for ft in json.loads(zz.read('UTF-8/N05-24_RailroadSection2.geojson').decode('utf-8'))['features']:
         p_=ft['properties'];g_=ft['geometry']
@@ -654,7 +683,7 @@ if os.path.exists(N05Z) and source_on('n05'):
         if e['id'] in CUR or ends_far(e['id'])<=.3:continue
         A,B=where(e['a']),where(e['b']);y=CLOSEY.get(e['id'])
         if not A or not B or not y:continue
-        lt=LT(e['id']);names={ncore(lines[x]['name_ja']) for x in lt}|{a for x in lt for a in N05AL.get(x,())}
+        lt=LT(e['id']);names={ncore(lines[x]['name_ja']) for x in lt}|{a for x in lt for a in N05AL.get(x,())}|{ncore(a) for x in lt for a in N05ALIAS.get(lines[x]['name_ja'],())}
         y2=max(y,LEGALY.get(e['id'],y))
         cand=set()
         for X in range(int(min(A[0],B[0])*20)-1,int(max(A[0],B[0])*20)+2):
@@ -672,7 +701,8 @@ if os.path.exists(N05Z) and source_on('n05'):
         # 영업km가 두 역의 직선거리보다 짧으면 km 쪽이 틀린 것이다. 직선거리로 길이를 맞춘다
         k=max(km.get(e['id']) or 0,seglen(A,B)*1.1)
         c=pick('n05',lt,A,B,k,True,1.2,1.2)
-        if not c or c['lvl']>=2 or c['far']>.5 or c['gap']>max(.3,.2*c['L']):st['n05_miss']+=1;continue
+        # 영업km의 두 배를 넘는 선은 다른 노선의 조각을 탄 것이다 (DB 감사 DBA-017: 前橋線 0.4km 구간에 15km 선)
+        if not c or c['lvl']>=2 or c['far']>.5 or c['gap']>max(.3,.2*c['L']) or c['L']>2*k+.5:st['n05_miss']+=1;continue
         if e['id'] in rows:st['n05_replace']+=1
         c['plat']='';rows[e['id']]=row(e['id'],c,c['path']);st['N05-24']+=1
         meta[e['id']]=dict(L=c['L'],own=round(c['own'],2),gap=round(c['gap'],2),src='n05',lvl=c['lvl'])

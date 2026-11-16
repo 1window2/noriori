@@ -143,7 +143,6 @@ class _Body extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final t = context.t.stats;
-    final tokens = context.tokens;
     final text = Theme.of(context).textTheme;
     final network = ref.watch(networkProvider);
     final book = ref.watch(nameBookProvider);
@@ -151,7 +150,6 @@ class _Body extends ConsumerWidget {
     final hits = ref.watch(unitHitsProvider).value ?? const <int, String?>{};
     final nodes = ref.watch(riddenNodesProvider).value ?? const <String>{};
     final total = data.total;
-    final percent = percentLabel(total);
     // 방문 역 수는 역 방문과 승하차역의 합이다. 완주율과 별도 지표다 (DESIGN §5.2)
     final stepped = ref.watch(stationMarksProvider).stepped;
     final visited = stepped.length;
@@ -170,22 +168,14 @@ class _Body extends ConsumerWidget {
     final startedLines = data.byLine.values.where((s) => s.started).length;
     final completeLines = data.byLine.values.where((s) => s.complete).length;
     final startedOperators = data.byOperator.values.where((s) => s.started).length;
+    Widget note(String label, {double top = 4}) => Padding(
+          padding: EdgeInsets.only(top: top),
+          child: Text(label, style: text.bodySmall),
+        );
     return ListView(
       padding: const EdgeInsets.fromLTRB(24, 4, 24, 24),
       children: [
-        Row(
-          crossAxisAlignment: CrossAxisAlignment.baseline,
-          textBaseline: TextBaseline.alphabetic,
-          children: [
-            // `<0.01%`은 통째로 쓴다
-            if (!percent.startsWith('<')) ...[
-              Text(percent.substring(0, percent.length - 1), style: text.displayMedium),
-              const SizedBox(width: 4),
-              Text('%', style: text.headlineMedium?.copyWith(fontWeight: FontWeight.w500, color: tokens.textMuted)),
-            ] else
-              Text(percent, style: text.headlineMedium),
-          ],
-        ),
+        _BigPercent(percent: percentLabel(total)),
         const SizedBox(height: 4),
         Text(
           [
@@ -194,11 +184,10 @@ class _Body extends ConsumerWidget {
           ].join(' · '),
           style: text.bodySmall?.copyWith(fontSize: 13),
         ),
+        // 날짜가 애매한 구간은 그해 분모에서 빼고 따로 센다 (DESIGN §5.4)
+        if (total.undecidedUnits > 0) note(t.undecided(n: total.undecidedUnits)),
         if (ref.watch(reviewProvider).value case final review? when review.rides > 0)
-          Padding(
-            padding: const EdgeInsets.only(top: 4),
-            child: Text(t.review(n: review.rides, km: kmLabel(review.meters)), style: text.bodySmall),
-          ),
+          note(t.review(n: review.rides, km: kmLabel(review.meters))),
         const SizedBox(height: 8),
         Meter(ratio: total.ratio, height: 8),
         const SizedBox(height: 16),
@@ -212,20 +201,14 @@ class _Body extends ConsumerWidget {
           ],
         ),
         if (ref.watch(totalKm10Provider).value case final km10? when km10 > 0)
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: Text(t.totalRidden(km: kmLabel(km10 * 100)), style: text.bodySmall),
-          ),
+          note(t.totalRidden(km: kmLabel(km10 * 100)), top: 8),
         if (visited > 0)
-          Padding(
-            padding: const EdgeInsets.only(top: 8),
-            child: Text(
-              [
-                t.visited(n: visited),
-                if (visitedClosed > 0) t.visitedClosed(n: visitedClosed),
-              ].join(' · '),
-              style: text.bodySmall,
-            ),
+          note(
+            [
+              t.visited(n: visited),
+              if (visitedClosed > 0) t.visitedClosed(n: visitedClosed),
+            ].join(' · '),
+            top: 8,
           ),
         // 폐선만 탔어도 기록은 있다. 수집과 연도별로 가는 입구를 숨기지 않는다
         if (hits.isEmpty)
@@ -240,12 +223,7 @@ class _Body extends ConsumerWidget {
           _EntryRow(
             label: context.t.collection.title,
             value: t.badges(
-              n: badgeCount(
-                lines: data.byLine.values,
-                operators: data.byOperator.values,
-                prefs: ref.watch(prefScoresProvider(basis)).values,
-                stations: stations,
-              ),
+              n: badgeCount(held: ref.watch(heldBadgesProvider).value ?? const {}, stations: stations),
             ),
             onTap: () => context.push('/stats/collection'),
           ),
@@ -271,30 +249,7 @@ class _Body extends ConsumerWidget {
           Text(t.nearly, style: text.titleSmall),
           const SizedBox(height: 8),
           for (final line in nearly)
-            Padding(
-              padding: const EdgeInsets.only(bottom: 10),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 3,
-                children: [
-                  Row(
-                    children: [
-                      Expanded(
-                        child: Text(
-                          book.lines[line.lineId] ?? line.lineId,
-                          style: text.bodyMedium?.copyWith(fontWeight: FontWeight.w500),
-                        ),
-                      ),
-                      Text(
-                        t.left(km: kmLabel(line.score.remainingMeters)),
-                        style: text.labelMedium,
-                      ),
-                    ],
-                  ),
-                  LineStripBar(strip: lineStrip(network, line)),
-                ],
-              ),
-            ),
+            _NearlyRow(name: book.lines[line.lineId] ?? line.lineId, line: line, strip: lineStrip(network, line)),
         ],
         const SizedBox(height: 20),
         Row(
@@ -314,6 +269,67 @@ class _Body extends ConsumerWidget {
           onRow: (id) => context.push('/line/$id'),
         ),
       ],
+    );
+  }
+}
+
+/// 맨 위의 큰 %. 숫자와 % 기호의 크기가 다르다.
+class _BigPercent extends StatelessWidget {
+  const _BigPercent({required this.percent});
+
+  final String percent;
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = context.tokens;
+    final text = Theme.of(context).textTheme;
+    return Row(
+      crossAxisAlignment: CrossAxisAlignment.baseline,
+      textBaseline: TextBaseline.alphabetic,
+      children: [
+        // `<0.01%`은 통째로 쓴다
+        if (!percent.startsWith('<')) ...[
+          Text(percent.substring(0, percent.length - 1), style: text.displayMedium),
+          const SizedBox(width: 4),
+          Text('%', style: text.headlineMedium?.copyWith(fontWeight: FontWeight.w500, color: tokens.textMuted)),
+        ] else
+          Text(percent, style: text.headlineMedium),
+      ],
+    );
+  }
+}
+
+/// 다 타 가는 노선 한 줄. 남은 거리와 위치 띠.
+class _NearlyRow extends StatelessWidget {
+  const _NearlyRow({required this.name, required this.line, required this.strip});
+
+  final String name;
+  final BrowseLine line;
+  final LineStrip strip;
+
+  @override
+  Widget build(BuildContext context) {
+    final text = Theme.of(context).textTheme;
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        spacing: 3,
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: Text(name, style: text.bodyMedium?.copyWith(fontWeight: FontWeight.w500)),
+              ),
+              Text(
+                context.t.stats.left(km: kmLabel(line.score.remainingMeters)),
+                style: text.labelMedium,
+              ),
+            ],
+          ),
+          LineStripBar(strip: strip),
+        ],
+      ),
     );
   }
 }

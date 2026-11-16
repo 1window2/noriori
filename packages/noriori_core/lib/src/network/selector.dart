@@ -20,6 +20,7 @@ final class SelectorLink {
     this.nextStop,
     this.terminal,
     this.midway = false,
+    this.reverseSpans = const [],
   });
 
   final int seq;
@@ -44,7 +45,48 @@ final class SelectorLink {
 
   /// 역이 아니라 역 사이의 선로에서 갈라진다 (DESIGN §8.1 역이 아닌 곳의 분기).
   final bool midway;
+
+  /// 끝 역 이어짐에서 열차가 진행 방향을 바꿔 상대 노선으로 들어가던 기간들(스위치백 직통, route_link_reverse, 11회차 S3). 표가 없는 옛 판은 비었다
+  final List<ReverseSpan> reverseSpans;
 }
+
+/// 스위치백 직통 표식 기간 하나. [lo]는 시작 하한, [hi]는 끝 상한이다(끝나지 않았으면 [DateSpan.maxDate]).
+final class ReverseSpan {
+  const ReverseSpan(this.lo, this.hi);
+
+  final String lo;
+  final String hi;
+}
+
+enum ReverseState { now, used }
+
+/// 그날 그 이음의 스위치백 표식. 날짜 모름(null)이면 어느 기간이든 걸린다. 걸리는 기간이 없으면 null,
+/// 걸리는 기간 가운데 끝나지 않은 것이 있으면 [ReverseState.now], 모두 끝났으면 [ReverseState.used]다 (11회차 S3)
+ReverseState? reverseOn(SelectorLink link, DateSpan? date) {
+  final spans = [
+    for (final span in link.reverseSpans)
+      if (date == null || (span.lo.compareTo(date.hi) <= 0 && date.lo.compareTo(span.hi) < 0)) span,
+  ];
+  if (spans.isEmpty) return null;
+  return spans.any((span) => span.hi == DateSpan.maxDate) ? ReverseState.now : ReverseState.used;
+}
+
+/// 끝난 연결 줄의 상대 역(다음 역·끝 역·다른 이름 역) 이름을 고를 날 (4회차 kyushu_2-007).
+///
+/// 그 연결이 끝난 날의 전날이다. 끝난 연결 줄은 그 연결이 있던 때의 이름(臼ノ浦線 「松浦線 다음 上佐々」, 2007 개칭 전)으로 적는다.
+/// 연결이 끝나지 않았거나, 고른 날에 아직 있는 연결이면 null이다(그날 또는 지금 이름).
+String? endedLinkNameDay(SelectorLink link, DateSpan? date) {
+  final end = link.validToHi;
+  if (end == null || end == DateSpan.maxDate) return null;
+  if (date != null && date.lo.compareTo(end) < 0) return null;
+  final parts = end.split('-').map(int.tryParse).toList();
+  if (parts.length != 3 || parts.contains(null)) return null;
+  final day = DateTime.utc(parts[0]!, parts[1]!, parts[2]!).subtract(const Duration(days: 1));
+  return day.toIso8601String().substring(0, 10);
+}
+
+/// 끝난 연결 줄 상대 역 이름을 이름 표에 둘 때의 열쇠. 노드 ID와 겹치지 않는다
+String endedLinkNameKey(String node, String? otherLine, String day) => '$node\u0000${otherLine ?? ''}\u0000$day';
 
 final class SelectorRow {
   const SelectorRow({
@@ -55,10 +97,18 @@ final class SelectorRow {
     required this.isExtension,
     required this.kmCum,
     required this.links,
+    this.kmEstimated = false,
     this.goneLinks = const [],
     this.savedAs,
     this.openYear,
     this.closeYear,
+    this.suspendedSince,
+    this.handedTo,
+    this.handedOn,
+    this.closedOn,
+    this.handedOnly = false,
+    this.beforeFloor = false,
+    this.handedEnded = false,
   });
 
   final int seq;
@@ -67,6 +117,9 @@ final class SelectorRow {
   final bool selectable;
   final bool isExtension;
   final double? kmCum;
+
+  /// km가 추정값이라 화면은 `? km` (DESIGN §4.5).
+  final bool kmEstimated;
   final List<SelectorLink> links;
 
   /// 그날 없던 연결. 체크박스를 켜면 3단계로 그린다.
@@ -78,6 +131,61 @@ final class SelectorRow {
   /// `2016~`, `~2017`에 쓰는 해.
   final String? openYear;
   final String? closeYear;
+
+  /// 운휴가 시작된 해(`운휴 2022~`). 그 날(날짜를 모르면 지금) 역 정차나 앞뒤 칸이 운휴일 때만 있다
+  final String? suspendedSince;
+
+  /// 이 노선의 정차가 이관으로 끝났으면 이어받은 노선과 그 날 (DESIGN §8.0.1 이관 구간).
+  /// 이 역의 `~연도`는 폐역이 아니라 이관이라 칩을 달지 않는다
+  final String? handedTo;
+  final String? handedOn;
+
+  /// 이어받은 노선(같은 사슬)도 지금은 이 역에 서지 않는다(神岡鉄道 2006 폐지, 野内（旧） 2011 이전).
+  /// 이관된 역은 이어받은 노선이 서야 지금 역이다 (DESIGN §8.0.1)
+  final bool handedEnded;
+
+  /// 지금 역인가. 폐역이 아니거나, 이관됐어도 이어받은 노선이 아직 선다 (DESIGN §8.0.1 이관 구간, §8 구분선)
+  bool get current => closeYear == null || (handedTo != null && !handedEnded);
+
+  /// 이 노선의 정차가 끝난 날(범위면 이른 끝). 이관 전에 폐역됐는지 가린다.
+  final String? closedOn;
+
+  /// 이 노선은 서지 않고 이어받은 노선만 서는 역이다(이관 뒤 새 역 しきぶ). 이 계통에는 숨은 노드로 있다.
+  /// 날짜 모름에서 이 역을 고르면 이어받은 노선 계통을 넘어 저장한다
+  final bool handedOnly;
+
+  /// 정차가 기록 하한(1950-01-01) 전에 모두 끝났다. 열람 전용 역처럼 꽉 찬 점으로 그리고 고를 수 없다 (사용자 결정 2026-11-08)
+  final bool beforeFloor;
+
+  SelectorRow _withLinks(List<SelectorLink> links, List<SelectorLink> goneLinks) => SelectorRow(
+        seq: seq,
+        node: node,
+        state: state,
+        selectable: selectable,
+        isExtension: isExtension,
+        kmCum: kmCum,
+        links: links,
+        kmEstimated: kmEstimated,
+        goneLinks: goneLinks,
+        savedAs: savedAs,
+        openYear: openYear,
+        closeYear: closeYear,
+        suspendedSince: suspendedSince,
+        handedTo: handedTo,
+        handedOn: handedOn,
+        closedOn: closedOn,
+        handedOnly: handedOnly,
+        beforeFloor: beforeFloor,
+        handedEnded: handedEnded,
+      );
+}
+
+/// 행 사이 구간의 끝난 해와 운휴 여부.
+final class SectionEnd {
+  const SectionEnd({this.year, this.suspended = false});
+
+  final String? year;
+  final bool suspended;
 }
 
 /// 계통과 탑승일로 선택기 행을 만든다 (ARCHITECTURE §2.5). DB를 읽지 않는다.
@@ -90,14 +198,11 @@ final class SelectorBuilder {
     String routeId,
     DateSpan? date, {
     List<SelectorLink> links = const [],
+    Map<int, NetPeriod> carryoverStops = const {},
   }) {
     final day = normalizeRideDate(date);
     final route = network.routes[routeId]!;
-    final adjacent = <String, List<String>>{};
-    for (final hop in network.hops(routeId)) {
-      (adjacent[hop.a] ??= []).add(hop.edge);
-      (adjacent[hop.b] ??= []).add(hop.edge);
-    }
+    final adjacent = _around(routeId);
     final bySeq = <int, List<SelectorLink>>{};
     final goneBySeq = <int, List<SelectorLink>>{};
     for (final link in links) {
@@ -105,15 +210,35 @@ final class SelectorBuilder {
       ((on ? bySeq : goneBySeq)[link.seq] ??= []).add(link);
     }
     final rows = <SelectorRow>[];
-    for (final stop in network.picks(routeId)) {
+    for (final pick in network.picks(routeId)) {
+      // 승계 켬이면 이관 전에 폐역된 역도 그 시기 정차역으로 본다 (DESIGN §2.9 E). 고를 수 있는지는 날짜가 정한다
+      final earlier = pick.isStop ? null : carryoverStops[pick.seq];
+      final stop = earlier == null
+          ? pick
+          : NetStop(
+              routeId: pick.routeId,
+              seq: pick.seq,
+              node: pick.node,
+              kmCum: pick.kmCum,
+              isStop: true,
+              isExtension: pick.isExtension,
+              period: earlier,
+              kmEstimated: pick.kmEstimated,
+            );
       if (!stop.isStop && !stop.isExtension) continue;
       if (!network.data.publicNodes.contains(stop.node)) continue;
       final around = adjacent[stop.node] ?? const <String>[];
       var (state, selectable) = _state(routeId, stop, around, day);
+      // 정차가 끝난 날 이 역이 다른 노선(같은 사슬)에 서면 폐역이 아니라 이관이다.
+      // 그 전날 이 노선 것이 아니었던 칸이면 앞 노선 시절에 끝난 역이다 (ふるさと銀河線의 釧北)
+      final ended = _ended(stop.period) ? stop.period.toLo : null;
+      final handedTo = ended == null || !_ownedUntil(route.lineId, around, ended)
+          ? null
+          : _earlierLine(route.lineId, stop.node, around, DateSpan.parse(ended));
       String? savedAs;
-      if (day != null && (state == StopState.beforeOpen || state == StopState.closed)) {
+      if (day != null && (state == StopState.beforeOpen || state == StopState.closed || earlier != null)) {
         savedAs = _earlierLine(route.lineId, stop.node, around, day);
-        if (savedAs != null) (state, selectable) = (StopState.open, true);
+        if (savedAs != null) (state, selectable) = _savedState(savedAs, around, day);
       }
       rows.add(SelectorRow(
         seq: stop.seq,
@@ -122,14 +247,289 @@ final class SelectorBuilder {
         selectable: selectable,
         isExtension: stop.isExtension,
         kmCum: stop.kmCum,
+        kmEstimated: stop.kmEstimated,
         links: bySeq[stop.seq] ?? const [],
         goneLinks: goneBySeq[stop.seq] ?? const [],
         savedAs: savedAs,
         openYear: yearLabel(stop.period.fromLo, stop.period.fromHi),
         closeYear: _ended(stop.period) ? yearLabel(stop.period.toLo, stop.period.toHi) : null,
+        suspendedSince: _suspendedSince(stop, around, day),
+        handedTo: handedTo,
+        handedOn: handedTo == null ? null : ended,
+        closedOn: ended,
+        beforeFloor: stop.period.toHi != null && stop.period.toHi!.compareTo(floorDate) < 0,
+        handedEnded: handedTo != null && !_servedLater(route.lineId, stop.node, around),
       ));
     }
     return rows;
+  }
+
+  /// 운휴가 시작된 해. 역 정차의 끝 없는 공백이 먼저고, 아니면 그 날 운휴인 앞뒤 칸의 운휴 시작 가운데 이른 것이다.
+  /// 날짜를 모르면 지금(끝 없는 운휴 행) 기준이다
+  String? _suspendedSince(NetStop stop, List<String> around, DateSpan? day) {
+    if (_ended(stop.period) && day == null) return null;
+    final gap = openStopGap(day, stop);
+    if (gap != null) return yearLabel(gap.fromLo, gap.fromHi);
+    NetPeriod? first;
+    for (final edge in around) {
+      for (final life in network.livesOf(edge)) {
+        if (!life.suspended) continue;
+        final on = day == null
+            ? life.period.toHi == null || life.period.toHi!.compareTo(DateSpan.maxDate) >= 0
+            : stateOfPeriod(day, life.period) == PeriodState.yes;
+        if (!on) continue;
+        if (first == null || (life.period.fromLo ?? '').compareTo(first.fromLo ?? '') < 0) first = life.period;
+      }
+    }
+    return first == null ? null : yearLabel(first.fromLo, first.fromHi);
+  }
+
+  /// 계통 안에서 노드마다 닿는 구간.
+  Map<String, List<String>> _around(String routeId) {
+    final adjacent = <String, List<String>>{};
+    for (final hop in network.hops(routeId)) {
+      (adjacent[hop.a] ??= []).add(hop.edge);
+      (adjacent[hop.b] ??= []).add(hop.edge);
+    }
+    return adjacent;
+  }
+
+  /// 이 계통의 구간을 이어받은 노선들의 계통 (DESIGN §8.0.1 이관 구간). 날짜와 상관없다.
+  /// 화면은 이 계통들의 `route_link`를 읽어 [fillHanded]에 넘긴다
+  Set<String> handRoutes(String routeId) {
+    final line = network.routes[routeId]!.lineId;
+    final lines = {
+      for (final hop in network.hops(routeId)) ..._successors(line, hop.edge),
+    };
+    return {
+      for (final other in lines) ...network.routesOfLine(other),
+    };
+  }
+
+  /// 이관 구간 안의 역 줄을 이어받은 노선의 역·환승·분기로 채운다 (DESIGN §8.0.1 B안).
+  ///
+  /// 이관 뒤 생긴 역(しきぶ, 西松任)은 이 계통에 숨은 노드로 있어서 이 계통의 순번과 누적 km로 끼운다.
+  /// 그래서 고르기·칠하기·저장이 이 계통 그대로 돌고, 날짜가 있으면 저장은 펼칠 때 그날 노선(이어받은 노선)으로 된다.
+  /// 구간 안 역의 연결은 이어받은 노선의 것으로 바꾸고, 이 노선 쪽 연결은 이어받은 노선에 없는 것만 남긴다
+  /// (이관 전에 끝난 옛 환승·분기. 그날은 끝났으니 폐선 표시다). [links]는 [handRoutes]의 계통별 연결이다.
+  /// 이관 전 날짜면 그대로다.
+  ///
+  /// 날짜를 모르면 두 쪽 역을 합친 모든 역이 나온다. 날짜 모름에도 구분선이 있어 구간 안은 이어받은 노선의 구간이고,
+  /// 날짜를 모르면 그 구간에 있던 역을 모두 고를 수 있어야 한다(DESIGN §8.0.1 상태표 아래). 이관 뒤 새 역을 골랐다면
+  /// 탄 날이 이관 뒤라는 뜻이라 저장은 이어받은 노선 계통으로 나눈다(기록 화면). 두 쪽에 다 있는 역끼리면 지금처럼 이 노선이다
+  List<SelectorRow> fillHanded(
+    String routeId,
+    List<SelectorRow> rows,
+    DateSpan? date, {
+    Map<String, List<SelectorLink>> links = const {},
+  }) {
+    if (!rows.any((row) => row.handedTo != null)) return rows;
+    final day = normalizeRideDate(date);
+    // 기준일보다 이른 날짜는 이관 전이다
+    if (date != null && day == null) return rows;
+    final line = network.routes[routeId]!.lineId;
+    final around = _around(routeId);
+    final aroundOf = <String, Map<String, List<String>>>{};
+    final out = [...rows];
+    final have = {for (final row in rows) row.seq};
+    for (final stop in network.stops(routeId)) {
+      if (stop.isStop || have.contains(stop.seq) || !network.data.publicNodes.contains(stop.node)) continue;
+      final edges = around[stop.node] ?? const <String>[];
+      var key = _handKey(line, edges);
+      if (key == null) continue;
+      // 이웃 역과 같은 노선으로 넘어갔으면 그 역의 이관 날을 따른다. 정차 기간과 구간 멤버십의 날이 달라도 구간이 갈리지 않게
+      for (final next in [_nearest(rows, stop.seq, before: true), _nearest(rows, stop.seq, before: false)]) {
+        if (next != null && next.handedTo == key!.$1 && next.handedOn != null) {
+          key = (next.handedTo!, next.handedOn!);
+          break;
+        }
+      }
+      final later = {for (final edge in edges) ..._successors(line, edge)};
+      final savedAs = day == null ? null : _dayLine(line, edges, day, later);
+      // 이어받은 노선도 그날 끝났으면 저장할 노선은 없지만 구간은 그대로 이관 구간이라 그 역을 폐역으로 둔다 (神岡鉄道 2006 폐지 뒤의 神岡大橋)
+      if (day != null && savedAs == null && !_handedBy(day, key!.$2)) continue;
+      final found = _stopOn(savedAs == null ? later : {savedAs}, stop.node, day);
+      if (found == null) continue;
+      final (other, at) = found;
+      final (state, selectable) = _state(other, at, (aroundOf[other] ??= _around(other))[stop.node] ?? const [], day);
+      final row = SelectorRow(
+        seq: stop.seq,
+        node: stop.node,
+        state: state,
+        selectable: selectable,
+        isExtension: false,
+        kmCum: stop.kmCum,
+        kmEstimated: stop.kmEstimated,
+        links: const [],
+        savedAs: savedAs,
+        openYear: yearLabel(at.period.fromLo, at.period.fromHi),
+        closeYear: _ended(at.period) ? yearLabel(at.period.toLo, at.period.toHi) : null,
+        handedTo: key!.$1,
+        handedOn: key.$2,
+        handedOnly: true,
+        handedEnded: !_servedLater(line, stop.node, edges),
+      );
+      final place = out.indexWhere((other) => other.seq > stop.seq);
+      out.insert(place < 0 ? out.length : place, row);
+    }
+    // 이어받은 노선의 연결을 노선·역별로 모은다. 연결의 순번은 그 노선 계통의 것이라 역으로 옮긴다
+    final byLine = <String, Map<String, List<SelectorLink>>>{};
+    for (final MapEntry(key: other, value: list) in links.entries) {
+      final otherLine = network.routes[other]?.lineId;
+      if (otherLine == null) continue;
+      final nodeOf = {for (final stop in network.picks(other)) stop.seq: stop.node};
+      for (final link in list) {
+        final node = nodeOf[link.seq];
+        if (node != null) ((byLine[otherLine] ??= {})[node] ??= []).add(link);
+      }
+    }
+    return [
+      for (final row in out)
+        if (row.handedTo != null && row.handedOn != null && (day == null || row.savedAs != null || _handedBy(day, row.handedOn!)))
+          _handLinks(row, line, day, byLine)
+        else
+          row,
+    ];
+  }
+
+  /// 구간 안 역의 연결. 날짜가 있으면 그날 노선의 것, 날짜를 모르면 이어받은 노선들의 것이다.
+  /// 이 노선이나 이 구간을 맡은 노선을 가리키는 연결은 구분선이 대신한다
+  SelectorRow _handLinks(
+    SelectorRow row,
+    String line,
+    DateSpan? day,
+    Map<String, Map<String, List<SelectorLink>>> byLine,
+  ) {
+    final lines = day == null ? byLine.keys.toSet() : {row.savedAs ?? row.handedTo!};
+    final band = {row.handedTo, row.savedAs, ...lines};
+    String place(SelectorLink link) => '${link.otherLineId}\u0000${link.otherNode}';
+    final seen = <String>{};
+    final theirs = [
+      for (final other in lines)
+        for (final link in byLine[other]?[row.node] ?? const <SelectorLink>[])
+          if (link.otherLineId != line &&
+              !band.contains(link.otherLineId) &&
+              seen.add('${link.kind}\u0000${place(link)}\u0000${link.validFromLo}\u0000${link.side}\u0000${link.flow}'))
+            _moved(link, row.seq),
+    ];
+    // 같은 자리의 연결은 이어받은 노선 것이 대신한다. 다만 이 노선 시대의 선로 연결(이어짐·분기)은 이어받은 노선 쪽에 선로 연결이 없으면 남긴다.
+    // 이어받은 노선의 환승만으로 덮으면 이관 전 선로 연결이 화면에서 사라진다 (二俣線 新所原 東海道本線 1936–1987 이어짐, 10회차 G1 chubu_1-014·S12)
+    bool track(SelectorLink link) => link.kind == 'continue' || link.kind == 'branch';
+    final taken = {for (final link in theirs) place(link)};
+    final takenTrack = {for (final link in theirs) if (track(link)) place(link)};
+    final mine = [
+      for (final link in [...row.links, ...row.goneLinks])
+        if (!band.contains(link.otherLineId) && (track(link) ? !takenTrack.contains(place(link)) : !taken.contains(place(link)))) link,
+    ];
+    final on = <SelectorLink>[];
+    final gone = <SelectorLink>[];
+    for (final link in [...theirs, ...mine]) {
+      (day == null || _linkOn(link, day) ? on : gone).add(link);
+    }
+    return row._withLinks(on, gone);
+  }
+
+  SelectorLink _moved(SelectorLink link, int seq) => SelectorLink(
+        seq: seq,
+        kind: link.kind,
+        otherLineId: link.otherLineId,
+        otherRouteId: link.otherRouteId,
+        validFromLo: link.validFromLo,
+        validToHi: link.validToHi,
+        side: link.side,
+        flow: link.flow,
+        otherNode: link.otherNode,
+        nextStop: link.nextStop,
+        terminal: link.terminal,
+        midway: link.midway,
+        reverseSpans: link.reverseSpans,
+      );
+
+  /// 그날이 이관된 날 뒤다. 이어받은 노선이 그날 서지 않아도 그 구간은 이관 구간이다 (DESIGN §8.0.1 구분선은 이관일 이후면 둔다)
+  static bool _handedBy(DateSpan day, String on) => day.lo.compareTo(on) >= 0;
+
+  /// [seq] 바로 앞(뒤) 역 줄.
+  SelectorRow? _nearest(List<SelectorRow> rows, int seq, {required bool before}) {
+    SelectorRow? found;
+    for (final row in rows) {
+      if (before ? row.seq < seq : row.seq > seq) {
+        found = row;
+        if (!before) break;
+      }
+    }
+    return found;
+  }
+
+  /// 이 구간에서 이 노선이 끝난 뒤 같은 사슬로 이어받은 노선들. 이 노선이 아직 달리면 없다.
+  Set<String> _successors(String line, String edge) {
+    final mine = network.attrsOf(edge, line);
+    if (mine.isEmpty || !mine.every((attr) => _ended(attr.period))) return const {};
+    final end = _lastEnd(mine);
+    final lineages = {for (final attr in mine) attr.lineageId};
+    return {
+      for (final attr in network.attrsOfEdge(edge))
+        if (attr.lineId != line &&
+            lineages.contains(attr.lineageId) &&
+            (attr.period.fromHi ?? attr.period.fromLo ?? '').compareTo(end) >= 0)
+          attr.lineId,
+    };
+  }
+
+  /// 같은 사슬의 다른 노선이 지금도 이 역에 서는가.
+  bool _servedLater(String line, String node, List<String> around) {
+    final lineages = {
+      for (final edge in around)
+        for (final attr in network.attrsOf(edge, line)) attr.lineageId,
+    };
+    final later = {
+      for (final edge in around)
+        for (final attr in network.attrsOfEdge(edge))
+          if (attr.lineId != line && lineages.contains(attr.lineageId)) attr.lineId,
+    };
+    return later.any((other) => network.routesOfLine(other).any((routeId) =>
+        network.stops(routeId).any((stop) => stop.isStop && stop.node == node && !_ended(stop.period))));
+  }
+
+  String _lastEnd(List<NetAttr> attrs) => attrs
+      .map((attr) => attr.period.toLo ?? attr.period.toHi!)
+      .reduce((end, to) => to.compareTo(end) > 0 ? to : end);
+
+  /// 숨은 노드가 드는 이관 구간 (이어받은 노선, 넘어간 날). 닿는 구간이 모두 이 노선에서 끝나 다른 노선이 이어받았을 때만 있다.
+  (String, String)? _handKey(String line, List<String> edges) {
+    (String, String)? key;
+    for (final edge in edges) {
+      if (_successors(line, edge).isEmpty) return null;
+      final end = _lastEnd(network.attrsOf(edge, line));
+      final (next, _) = network.attrOn(edge, line, DateSpan.parse(end));
+      if (next == null || next.lineId == line) return null;
+      key ??= (next.lineId, end);
+    }
+    return key;
+  }
+
+  /// 그날 이 구간을 맡은 이어받은 노선.
+  String? _dayLine(String line, List<String> edges, DateSpan day, Set<String> later) {
+    for (final edge in edges) {
+      final (attr, state) = network.attrOn(edge, line, day);
+      if (attr != null && state == PeriodState.yes && later.contains(attr.lineId)) return attr.lineId;
+    }
+    return null;
+  }
+
+  /// [lines]의 계통에서 그 역에 서는 행. 그날 서는 행이 먼저다.
+  (String, NetStop)? _stopOn(Iterable<String> lines, String node, DateSpan? day) {
+    (String, NetStop)? found;
+    for (final other in lines) {
+      for (final routeId in network.routesOfLine(other)) {
+        for (final stop in network.stops(routeId)) {
+          if (!stop.isStop || stop.node != node) continue;
+          final state = stateOfPeriod(day, stop.period);
+          if (day == null || state == PeriodState.yes || state == PeriodState.maybe) return (routeId, stop);
+          found ??= (routeId, stop);
+        }
+      }
+    }
+    return found;
   }
 
   bool _ended(NetPeriod period) {
@@ -142,55 +542,95 @@ final class SelectorBuilder {
     final day = normalizeRideDate(date);
     if (rows.length < 2) return const [];
     if (day == null) return List.filled(rows.length - 1, true);
-    final byPair = <String, List<String>>{};
-    for (final hop in network.hops(routeId)) {
-      (byPair[_pair(hop.a, hop.b)] ??= []).add(hop.edge);
-    }
+    // 숨은 끝 너머의 확장 행(`extend_to`) 사이에는 이 계통의 칸이 없다. 확장 행이 그날 있으면 이어진 것으로 보아
+    // 폐지 구분선을 긋지 않는다 (DESIGN §2.7 `extend_to`, 감사 2회차 K33 富山 新富町–電鉄富山駅・エスタ前)
+    final extended = {
+      for (final stop in network.picks(routeId))
+        if (stop.isExtension && const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, stop.period))) stop.seq,
+    };
+    return _between(
+      routeId,
+      rows,
+      (edges) => edges.any((edge) => network.edgeUsable(routeId, edge, day).ridable),
+      last: null,
+      empty: (a, b) => (a.isExtension || b.isExtension) && [a, b].every((row) => !row.isExtension || extended.contains(row.seq)),
+    );
+  }
+
+  /// 행과 다음 행 사이 구간이 끝난 해와, [today]에 운휴 중인가 (DESIGN §8 구분선, 재설계 R11).
+  /// 해는 구간 수명(없으면 이 노선 소속)이 끝난 날에서 읽고, 역의 폐역 연도로 짐작하지 않는다
+  List<SectionEnd> sectionEnds(String routeId, List<SelectorRow> rows, DateSpan today) {
+    final lineId = network.routes[routeId]!.lineId;
     final stops = network.stops(routeId);
     return [
       for (var i = 0; i + 1 < rows.length; i++)
         () {
-          final inside = [
-            for (var at = 0; at + 1 < stops.length; at++)
+          final edges = <String>{
+            for (var at = 0; at < stops.length; at++)
               if (stops[at].seq >= rows[i].seq && stops[at].seq < rows[i + 1].seq)
-                (byPair[_pair(stops[at].node, stops[at + 1].node)] ?? const <String>[]).any((edge) {
-                  final state = network.edgeUsable(routeId, edge, day);
-                  return state == Usable.ok || state == Usable.maybe;
-                }),
-          ];
-          return inside.isNotEmpty && inside.every((open) => open);
+                for (var to = at + 1; to < stops.length && to <= at + 4 && stops[to].seq <= rows[i + 1].seq; to++)
+                  ...network.edgesBetween(routeId, stops[at].node, stops[to].node),
+          };
+          final suspended = edges.any((edge) => network.lifeOn(edge, today) == LifeState.suspended);
+          String? lo, hi;
+          for (final edge in edges) {
+            NetPeriod? last;
+            // 수명은 운휴 행까지다. 운휴인 채 폐지된 칸은 폐지 신고일이 끝이다(高千穂線 ~2007·~2008. 운휴 시작 2005가 아님, 감사 2회차 K33).
+            // 이 노선 소속은 보통 폐지일까지라 같은 해가 나오고, 이관 뒤에 운휴·폐지된 칸만 달라진다
+            for (final period in [...network.livesOf(edge).map((l) => l.period), ...network.attrsOf(edge, lineId).map((a) => a.period)]) {
+              final to = period.toHi;
+              if (to == null || to.compareTo(DateSpan.maxDate) >= 0) continue;
+              if (last == null || to.compareTo(last.toHi!) > 0) last = period;
+            }
+            if (last == null) continue;
+            if (hi == null || last.toHi!.compareTo(hi) > 0) (lo, hi) = (last.toLo, last.toHi);
+          }
+          return SectionEnd(year: hi == null ? null : yearLabel(lo, hi), suspended: suspended);
         }(),
     ];
   }
 
   /// 행과 다음 행 사이를 이미 탔는가. 숨은 역을 지나면 사이의 구간을 다 타야 한다.
-  List<bool> riddenBetween(String routeId, List<SelectorRow> rows, Set<int> ridden) {
-    final byPair = <String, List<String>>{};
-    for (final hop in network.hops(routeId)) {
-      (byPair[_pair(hop.a, hop.b)] ??= []).add(hop.edge);
-    }
-    final stops = network.stops(routeId);
-    final gaps = <int, bool>{};
-    for (var i = 0; i + 1 < stops.length; i++) {
-      gaps[stops[i].seq] = (byPair[_pair(stops[i].node, stops[i + 1].node)] ?? const <String>[])
-          .any((edge) => ridden.contains(network.edges[edge]!.n));
-    }
-    final out = <bool>[];
-    for (var i = 0; i < rows.length; i++) {
-      if (i == rows.length - 1) {
-        out.add(false);
-        continue;
-      }
-      final inside = [
-        for (final stop in stops)
-          if (stop.seq >= rows[i].seq && stop.seq < rows[i + 1].seq) gaps[stop.seq] ?? false,
-      ];
-      out.add(inside.isNotEmpty && inside.every((value) => value));
-    }
-    return out;
-  }
+  List<bool> riddenBetween(String routeId, List<SelectorRow> rows, Set<int> ridden) => _between(
+        routeId,
+        rows,
+        (edges) => edges.any((edge) => ridden.contains(network.edges[edge]!.n)),
+        last: false,
+      );
 
-  String _pair(String a, String b) => a.compareTo(b) < 0 ? '$a\u0000$b' : '$b\u0000$a';
+  /// 계통 순서의 이웃 역 사이마다 [ok]한 칸이 덮는지 본다. 옛 선형과 새 선형의 역이 km 순으로 섞인 계통(常磐線 新地~山下)은
+  /// 그날의 칸이 몇 역 건너 이어지므로, 세 역 안에서 이어지는 칸이 그 사이를 덮으면 이어진 것이다
+  /// 사이에 이 계통의 역이 없는 칸(확장 행 사이)은 [empty]가 정하고, 없으면 끊긴 칸이다
+  List<bool> _between(
+    String routeId,
+    List<SelectorRow> rows,
+    bool Function(List<String> edges) ok, {
+    bool? last,
+    bool Function(SelectorRow a, SelectorRow b)? empty,
+  }) {
+    final stops = network.stops(routeId);
+    final covered = List.filled(stops.length, false);
+    for (var at = 0; at + 1 < stops.length; at++) {
+      for (var to = at + 1; to < stops.length && to <= at + 4; to++) {
+        if (!ok(network.edgesBetween(routeId, stops[at].node, stops[to].node))) continue;
+        for (var k = at; k < to; k++) {
+          covered[k] = true;
+        }
+      }
+    }
+    return [
+      for (var i = 0; i + 1 < rows.length; i++)
+        () {
+          final inside = [
+            for (var at = 0; at + 1 < stops.length; at++)
+              if (stops[at].seq >= rows[i].seq && stops[at].seq < rows[i + 1].seq) covered[at],
+          ];
+          if (inside.isEmpty) return empty?.call(rows[i], rows[i + 1]) ?? false;
+          return inside.every((open) => open);
+        }(),
+      if (last != null && rows.isNotEmpty) last,
+    ];
+  }
 
   (StopState, bool) _state(String routeId, NetStop stop, List<String> around, DateSpan? day) {
     final period = stateOfPeriod(day, stop.period);
@@ -202,6 +642,8 @@ final class SelectorBuilder {
     }
     if (day == null) return (StopState.unknown, true);
     if (period == PeriodState.before) return (StopState.beforeOpen, false);
+    if (openStopGap(day, stop) != null) return (StopState.suspended, false);
+    if (inStopGap(day, stop)) return (StopState.closed, false);
     if (period == PeriodState.after) return (StopState.closed, false);
     if (lines.contains(Usable.ok) && period == PeriodState.yes) return (StopState.open, true);
     if (lines.contains(Usable.ok) || lines.contains(Usable.maybe)) return (StopState.maybe, true);
@@ -210,6 +652,24 @@ final class SelectorBuilder {
       return (StopState.lineClosed, false);
     }
     return (StopState.noEdge, false);
+  }
+
+  /// 다른 노선으로 저장되는 역도 그 노선에서 그날 탈 수 있어야 고른다. 운휴면 운휴로 보인다 (いすみ鉄道 2024 운휴 중의 国鉄 木原線)
+  (StopState, bool) _savedState(String lineId, List<String> around, DateSpan day) {
+    final uses = [
+      for (final routeId in network.routesOfLine(lineId))
+        for (final edge in around) network.edgeUsable(routeId, edge, day),
+    ];
+    if (uses.any((u) => u.ridable)) return (StopState.open, true);
+    if (uses.contains(Usable.suspended)) return (StopState.suspended, false);
+    return (StopState.lineClosed, false);
+  }
+
+  /// [ended] 전날 이 역의 칸 가운데 하나가 이 노선 것이었는가.
+  bool _ownedUntil(String lineId, List<String> around, String ended) {
+    if (DateTime.tryParse(ended) == null) return true;
+    final day = DateSpan.parse(dayBefore(ended));
+    return around.any((edge) => network.attrOn(edge, lineId, day).$1?.lineId == lineId);
   }
 
   /// 이관 전 날짜는 같은 사슬의 앞 노선에서 정차 기간을 찾는다 (ARCHITECTURE §3.5).

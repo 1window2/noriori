@@ -36,40 +36,26 @@ class SettingsScreen extends ConsumerWidget {
               },
               trailing: Text(ref.watch(editionProvider)),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8,
-                children: [
-                  Text(context.t.settings.language, style: Theme.of(context).textTheme.titleMedium),
-                  SlidingChoice<AppLocale>(
-                    values: _languages.keys.toList(),
-                    label: (value) => _languages[value]!,
-                    selected: ref.watch(languageProvider),
-                    onChanged: (value) => ref.read(languageProvider.notifier).set(value),
-                  ),
-                ],
+            _Choice(
+              title: context.t.settings.language,
+              child: SlidingChoice<AppLocale>(
+                values: _languages.keys.toList(),
+                label: (value) => _languages[value]!,
+                selected: ref.watch(languageProvider),
+                onChanged: (value) => ref.read(languageProvider.notifier).set(value),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                spacing: 8,
-                children: [
-                  Text(context.t.settings.theme, style: Theme.of(context).textTheme.titleMedium),
-                  SlidingChoice<ThemeChoice>(
-                    values: ThemeChoice.values,
-                    label: (value) => switch (value) {
-                      ThemeChoice.light => context.t.settings.themeLight,
-                      ThemeChoice.dark => context.t.settings.themeDark,
-                      ThemeChoice.system => context.t.settings.themeSystem,
-                    },
-                    selected: ref.watch(themeChoiceProvider),
-                    onChanged: ref.read(themeChoiceProvider.notifier).set,
-                  ),
-                ],
+            _Choice(
+              title: context.t.settings.theme,
+              child: SlidingChoice<ThemeChoice>(
+                values: ThemeChoice.values,
+                label: (value) => switch (value) {
+                  ThemeChoice.light => context.t.settings.themeLight,
+                  ThemeChoice.dark => context.t.settings.themeDark,
+                  ThemeChoice.system => context.t.settings.themeSystem,
+                },
+                selected: ref.watch(themeChoiceProvider),
+                onChanged: ref.read(themeChoiceProvider.notifier).set,
               ),
             ),
             for (final (label, value, change) in [
@@ -99,29 +85,12 @@ class SettingsScreen extends ConsumerWidget {
               value: ref.watch(carryoverProvider),
               onChanged: (next) => ref.read(displayOptionsProvider.notifier).update(carryover: next),
             ),
-            ListTile(
-              title: Text(context.t.settings.data),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/settings/data'),
-            ),
-            ListTile(
-              title: Text(context.t.news.history),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/settings/news'),
-            ),
-            ListTile(
-              title: Text(context.t.deleted.title),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/settings/deleted'),
-            ),
-            ListTile(
-              title: Text(context.t.settings.sources),
-              trailing: const Icon(Icons.chevron_right),
-              onTap: () => context.push('/settings/sources'),
-            ),
-            ListTile(
-              title: Text(context.t.settings.licenses),
-              trailing: const Icon(Icons.chevron_right),
+            _Link(title: context.t.settings.data, onTap: () => context.push('/settings/data')),
+            _Link(title: context.t.news.history, onTap: () => context.push('/settings/news')),
+            _Link(title: context.t.deleted.title, onTap: () => context.push('/settings/deleted')),
+            _Link(title: context.t.settings.sources, onTap: () => context.push('/settings/sources')),
+            _Link(
+              title: context.t.settings.licenses,
               onTap: () => showLicensePage(
                 context: context,
                 applicationName: context.t.app.name,
@@ -133,5 +102,41 @@ class SettingsScreen extends ConsumerWidget {
             ),
           ],
         ),
+      );
+}
+
+/// 제목 아래의 고르기 단추 한 벌.
+class _Choice extends StatelessWidget {
+  const _Choice({required this.title, required this.child});
+
+  final String title;
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.fromLTRB(16, 12, 16, 8),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          spacing: 8,
+          children: [
+            Text(title, style: Theme.of(context).textTheme.titleMedium),
+            child,
+          ],
+        ),
+      );
+}
+
+/// 다른 화면으로 가는 줄.
+class _Link extends StatelessWidget {
+  const _Link({required this.title, required this.onTap});
+
+  final String title;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) => ListTile(
+        title: Text(title),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: onTap,
       );
 }

@@ -1,0 +1,15 @@
+# 선형 없는 29구간 조사의 옛 역 좌표 (docs/research/no-geometry-29-2026-11-05.md). 지금 영업하는 역은 없음. 출처를 끄면 빠짐
+- {"node": "n_funako", "lat": 37.346761, "lon": 139.917305, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "舟子 옛 자리(N05 1968–79)"}
+- {"node": "n_kuwabara", "lat": 37.333365, "lon": 139.917556, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "桑原 옛 자리(N05 1950–79)"}
+- {"node": "n_nishihino_hachioji", "lat": 34.952829, "lon": 136.59011, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "西日野 옛 자리, N05 八王子線에서 지금 역부터 0.1km"}
+- {"node": "n_minamimizuochi", "lat": 35.959965, "lon": 136.184719, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 鯖浦線 「水落」"}
+- {"node": "n_shinodayama_mie", "lat": 34.546386, "lon": 136.528019, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 선 위 km 3.6"}
+- {"node": "n_myosono", "lat": 34.50925, "lon": 136.493003, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 「御麻生園」"}
+- {"node": "n_minomiyakushi", "lat": 34.45748, "lon": 133.370013, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 鞆鉄道 선 위 km"}
+- {"node": "n_kanasaki", "lat": 34.413879, "lon": 133.384213, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 鞆鉄道 선 위 km"}
+- {"node": "n_iida", "lat": 34.812065, "lon": 137.922152, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 秋葉線 天王에서 0.9km"}
+- {"node": "n_junizakaue", "lat": 36.504723, "lon": 138.97549, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 伊香保線 入沢·御蔭 사이 km 보간"}
+- {"node": "n_teradomari_nagaoka", "lat": 37.633278, "lon": 138.7615, "quality": "approx", "source": "wikidata", "checked": "2026-11-05", "why": "Wikidata Q11457943 (初代 寺泊)"}
+- {"node": "n_shimacho", "lat": 35.174628, "lon": 136.889701, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 押切線·上江川線 갈림"}
+- {"node": "n_toyohira_8_chome", "lat": 43.048814, "lon": 141.375353, "quality": "approx", "source": "n05", "checked": "2026-11-05", "why": "N05 豊平線 豊平駅前"}
+- {"node": "n_higashi_kokura", "lat": 33.887719, "lon": 130.899389, "quality": "approx", "source": "wikidata", "checked": "2026-11-05", "why": "Wikidata Q5753650"}

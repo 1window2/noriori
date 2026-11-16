@@ -123,6 +123,9 @@
       "other": "타고 내렸거나 들른 역 $n곳"
     },
     "decade": "$year년대",
+    "undecided": {
+      "other": "판정 불가 $n구간"
+    },
     "review": {
       "other": "확인 필요 $n건 · $km km"
     },
@@ -150,9 +153,11 @@
     "carryoverHint": "끄면 JR에서 넘어간 구간은 새 노선으로 따로 셉니다"
   },
   "search": {
+    "showOnMap": "지도에서 보기",
     "hint": "노선이나 역 이름",
     "prompt": "노선이나 역을 찾아 시작하세요",
-    "none": "검색 결과가 없습니다"
+    "none": "검색 결과가 없습니다",
+    "archive": "열람 전용"
   },
   "session": {
     "laps": {
@@ -167,6 +172,7 @@
     "dateHint": "2015, 2015-03, 2015-03-14, 198X",
     "dateUnknown": "날짜 모름",
     "datePick": "달력에서 고르기",
+    "dateToday": "오늘",
     "dateBad": "날짜 형식을 확인해 주세요",
     "apply": "적용",
     "cancel": "취소",
@@ -178,12 +184,16 @@
     "noPath": "이 두 역 사이의 경로를 찾지 못했습니다",
     "state": {
       "maybe": "?",
-      "suspended": "운행 중단",
+      "suspended": "운휴",
+      "suspendedSince": "운휴 $year~",
       "until": "~$year",
       "since": "$year~",
       "span": "$from~$to"
     },
     "savedAs": "탑승일 기준 $line 구간",
+    "handSince": "$date부터 $line",
+    "handOpen": "노선 보기 ›",
+    "handNote": "이 구간은 그 노선으로 기록돼요",
     "chooseDirection": "어느 쪽으로 탔나요?",
     "directionKm": "$km km",
     "chooseRelocation": "어느 시기의 선로였나요?",
@@ -206,7 +216,6 @@
     "spokenTo": "도착역으로 선택됨",
     "showClosed": "폐역·폐선 표시",
     "showArchive": "기록할 수 없는 옛 역·노선도 표시",
-    "returnsTo": "한 바퀴 돌아 $name 도착",
     "clear": "선택 해제",
     "lap": "한 바퀴",
     "stops": {
@@ -218,27 +227,55 @@
     "from": "출발",
     "to": "도착",
     "whyClosed": "그 날짜에는 운영하지 않던 역입니다",
+    "onlyDown": "하행만",
+    "onlyUp": "상행만",
+    "onlyOneWay": "한 방향만",
+    "spokenOnlyDown": "하행 열차만 정차",
+    "spokenOnlyUp": "상행 열차만 정차",
+    "spokenOnlyOneWay": "한 방향 열차만 정차",
+    "stopDownTitle": "$name에는 하행 열차만 서요",
+    "stopUpTitle": "$name에는 상행 열차만 서요",
+    "stopOneWayTitle": "$name에는 한 방향 열차만 서요",
+    "towardOnly": "$name 방면으로만 탈 수 있어요",
+    "sectionTitle": "한 방향으로만 다니는 구간이에요",
+    "sectionDetail": "이 방향으로는 열차가 다니지 않아요",
+    "aroundTitle": "한 방향으로만 도는 구간이에요",
+    "aroundDetail": "돌아가는 길 $km km로 셉니다",
+    "reverse": "방향 바꾸기",
+    "onlyAlight": "하차전용",
+    "alightTitle": "하차전용 역이에요",
+    "alightDetail": "도착역으로만 고를 수 있어요",
     "whySuspended": "그 날짜에는 운행이 중단된 구간입니다",
     "bound": "$names 방면",
     "spokenClosed": "$year년 폐지",
+    "spokenSuspendedSince": "$year년부터 운휴",
+    "pastKari": "가",
+    "pastRinji": "임",
+    "spokenPastKari": "예전 가승강장",
+    "spokenPastRinji": "예전 임시역",
     "spokenBranch": "$line, $next 분기",
+    "reverseNow": "이 역에서 진행 방향을 바꿔 $line 직통합니다",
+    "reverseUsed": "이 역에서 진행 방향을 바꿔 $line 직통하는 열차가 있었습니다",
+    "spokenReverse": "방향 바꿈",
     "leaving": "$name에서 출발",
     "progress": "$num / $den km ($percent)",
     "leaveTitle": "고른 역이 사라집니다",
     "leaveBody": "다른 노선으로 넘어가면 지금 고른 역은 지워집니다.",
     "leave": "넘어가기",
     "unridableTitle": "그 날짜에는 탈 수 없는 구간입니다",
-    "unridableSave": "폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.",
-    "unridableDate": "폐지 뒤나 개업 전, 운행 중단 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.",
+    "unridableSave": "폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 기록하지 않았습니다.",
+    "unridableDate": "폐지 뒤나 개업 전, 운휴 중이었거나 고른 역에 열차가 서지 않던 날입니다. 탑승일은 그대로 둡니다.",
     "unridableOk": "확인",
     "repick": "다른 역을 누르면 처음부터 다시 고릅니다",
     "closedUnknown": "폐지 구간",
+    "suspendedSection": "운휴 중",
     "relocationOld": "옛 선로 · $km km",
     "relocationNew": "새 선로 · $km km",
     "spokenOpen": "영업 중",
     "spokenRidden": "탄 역"
   },
   "data": {
+    "osBackupLarge": "기록 파일이 20MB를 넘어 Android 클라우드 백업에 들어가지 않을 수 있어요. 백업 폴더를 골라 두세요",
     "title": "백업과 복원",
     "folder": "백업 폴더",
     "folderHint": "앱을 지워도 남는 곳을 고르세요",
@@ -350,7 +387,7 @@
     },
     "n03": {
       "name": "국토수치정보 행정구역 (N03)",
-      "use": "일본 윤곽과 도도부현 경계",
+      "use": "일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
     "stationDatabase": {
@@ -409,7 +446,7 @@
     "toAlighted": "도착역에서 실제로 내렸음",
     "save": "저장",
     "delete": "삭제",
-    "unridable": "폐지 뒤나 개업 전, 운행 중단 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.",
+    "unridable": "폐지 뒤나 개업 전, 운휴 중이었거나 기록한 역에 열차가 서지 않던 날입니다. 기록은 바뀌지 않았습니다.",
     "failed": "저장하지 못했습니다. 기록은 바뀌지 않았습니다"
   },
   "lineDetail": {
@@ -418,7 +455,6 @@
     "allTime": "폐지 구간 포함",
     "km": "$num / $den km",
     "completeCurrent": "현재 구간 완주",
-    "completeAllTime": "폐지 구간 포함 완주",
     "selfScore": "전체 통계에 들어가지 않는 노선입니다. 이 노선의 거리만으로 진행률을 셉니다",
     "open": "노선 상세",
     "record": "이 노선 기록하기",
@@ -443,8 +479,8 @@
     "visitDated": "방문일을 바꿨습니다"
   },
   "service": {
-    "kind": "운전 계통",
-    "none": "그 날짜에 운행하지 않던 운전 계통입니다",
+    "kind": "운행 계통",
+    "none": "그 날짜에 운행하지 않던 운행 계통입니다",
     "save": "기록하기",
     "failed": "이 구간은 기록할 수 없습니다. 날짜를 확인해 주세요"
   },
@@ -458,6 +494,12 @@
       "other": "기록 $n건"
     },
     "fileDelete": "이 파일 기록 모두 지우기",
+    "fileDeleteTitle": {
+      "other": "기록 $n건을 지울까요?"
+    },
+    "fileDeleteBody": "$file에서 가져온 기록을 모두 지웁니다. 설정의 삭제한 기록에서 되살릴 수 있습니다.",
+    "fileDeleteConfirm": "삭제",
+    "fileDeleteCancel": "취소",
     "fileDeleted": {
       "other": "기록 $n건을 지웠습니다"
     }
@@ -473,7 +515,6 @@
     "operators": "회사",
     "prefs": "도도부현",
     "stations": "역",
-    "allTime": "폐선 포함",
     "stationGoal": "역 $n곳",
     "empty": "아직 없습니다",
     "closed": "폐선",
@@ -580,7 +621,10 @@
     "unmapped": "지도에 없음",
     "visited": "이 역에 가 봤음",
     "visitedHint": "완주율에는 들지 않고 지도의 점만 칠합니다",
-    "noVisits": "역 방문 기록이 없습니다. 지도에서 역을 눌러 남길 수 있습니다"
+    "noVisits": "역 방문 기록이 없습니다. 지도에서 역을 눌러 남길 수 있습니다",
+    "pickerLabel": "이 자리를 지나는 노선",
+    "partlyClosed": "이 구간 폐지",
+    "closed": "폐선"
   },
   "prefNames": [
     "홋카이도",

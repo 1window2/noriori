@@ -88,12 +88,22 @@ class LineTile extends ConsumerWidget {
                   style: text.labelSmall?.copyWith(color: tokens.textMuted),
                 ),
               LineStripBar(strip: row.strip),
+              // 양 끝 역 이름은 칸을 반씩 쓰고 넘치면 줄인다. 영어 이름은 길어 끝 이름이 칸을 넘곤 했다 (세 언어 전수 점검 2026-11-12)
               Row(
                 children: [
                   Expanded(
-                    child: Text(row.startName ?? '', style: text.labelSmall),
+                    child: Text(row.startName ?? '', style: text.labelSmall, maxLines: 1, overflow: TextOverflow.ellipsis),
                   ),
-                  Text(row.endName ?? '', style: text.labelSmall),
+                  const SizedBox(width: 8),
+                  Flexible(
+                    child: Text(
+                      row.endName ?? '',
+                      style: text.labelSmall,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      textAlign: TextAlign.end,
+                    ),
+                  ),
                 ],
               ),
             ],

@@ -43,6 +43,14 @@ final class _Span {
   String lastLine;
 }
 
+/// 날짜를 아는 만큼만 적는다. 범위가 한 달이면 「2024-01-XX」, 한 해면 「1973-XX-XX」 (DESIGN §8.0 날짜 꼴)
+String _precise(String lo, String? hi) {
+  if (hi == null || hi == lo || hi == DateSpan.maxDate) return lo;
+  if (lo.substring(0, 7) == hi.substring(0, 7)) return '${lo.substring(0, 7)}-XX';
+  if (lo.substring(0, 4) == hi.substring(0, 4)) return '${lo.substring(0, 4)}-XX-XX';
+  return lo;
+}
+
 List<_Span> _merge(Iterable<(NetPeriod, String)> rows) {
   String key(NetPeriod period) => period.fromLo ?? '';
   final sorted = rows.toList()..sort((a, b) => key(a.$1).compareTo(key(b.$1)));
@@ -54,15 +62,18 @@ List<_Span> _merge(Iterable<(NetPeriod, String)> rows) {
     final joined = tail != null &&
         (tail.to == null || period.fromLo == null || period.fromLo!.compareTo(tail.to!) <= 0);
     if (!joined) {
-      spans.add(_Span(period.fromLo, end, lineId, lineId));
+      final from = period.fromLo == null ? null : _precise(period.fromLo!, period.fromHi);
+      spans.add(_Span(from, end == null ? null : _precise(end, period.toHi), lineId, lineId));
       continue;
     }
     if (tail.to == null) continue;
-    tail.lastLine = lineId;
+    // 마지막 노선은 영업을 가장 늦게까지 이어 간 노선이다. 먼저 끝난 노선이 뒤에 정렬돼도 덮어쓰지 않는다 (留萌 2023 폐역이 1987 폐지 羽幌線으로 나오던 것)
     if (open) {
       tail.to = null;
+      tail.lastLine = lineId;
     } else if (end != null && end.compareTo(tail.to!) > 0) {
-      tail.to = end;
+      tail.to = _precise(end, period.toHi);
+      tail.lastLine = lineId;
     }
   }
   return spans;

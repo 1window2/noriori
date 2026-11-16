@@ -249,6 +249,18 @@ void main() {
       expect(result.endNode, 'd');
     });
 
+    test('숨은 역은 끝 역 이름으로 고르지 않는다', () {
+      const line = BrowseLine(
+        lineId: 'l',
+        score: Score(numMeters: 0, denMeters: 0, numUnits: 0, denUnits: 0),
+        edgeIds: {'cd', 'de'},
+        riddenEdgeIds: {},
+      );
+      final result = lineStrip(stripNetwork, line);
+      expect(result.startNode, 'd');
+      expect(result.endNode, 'e');
+    });
+
     test('양 끝 역을 안다', () {
       final result = strip(const {});
       expect(result.startNode, 'a');

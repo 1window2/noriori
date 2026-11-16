@@ -1,0 +1,10 @@
+# 가짜 역 전수 검증 (2026-11-09) 보정 행
+- {"patch": "add", "entity_type": "node", "id": "n_kawanishi_kokutetsumae", "lang": "ja", "text": "川西国鉄前", "kana": "かわにしこくてつまえ", "source": "wikipedia", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_kawanishi_kokutetsumae", "lang": "ko", "text": "카와니시코쿠테츠마에", "source": "rule", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_kawanishi_kokutetsumae", "lang": "en", "text": "Kawanishi-Kokutetsumae", "source": "wikidata", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_kawanishi_kokutetsumae", "lang": "ja", "text": "池田駅前", "kana": "いけだえきまえ", "source": "wikipedia", "valid_to": "1965-04-01", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_kawanishi_kokutetsumae", "lang": "ko", "text": "이케다에키마에", "source": "hand", "valid_to": "1965-04-01", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_kawanishi_kokutetsumae", "lang": "en", "text": "Ikeda-Ekimae", "source": "hand", "valid_to": "1965-04-01", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_tomidanishiguchi", "lang": "ja", "text": "富田西口", "kana": "とみだにしぐち", "source": "wikipedia", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_tomidanishiguchi", "lang": "ko", "text": "토미다니시구치", "source": "estimated", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}
+- {"patch": "add", "entity_type": "node", "id": "n_tomidanishiguchi", "lang": "en", "text": "Tomidanishiguchi", "source": "rule", "why": "가짜 역 전수 검증(2026-11-09): 노선도 옆 칸 끼우기(검토 안 된 후보)로만 생기던 노드. 그 끼우기를 끊어 직접 둔다"}

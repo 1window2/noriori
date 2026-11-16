@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:convert';
 import 'dart:math';
 import 'dart:typed_data';
 
@@ -296,6 +297,17 @@ final totalKm10Provider = StreamProvider<int>(
   (ref) => ref.watch(recordQueriesProvider).watchTotalKm10(),
 );
 
+/// 지도에서 보여 줄 역. 검색의 「지도에서 보기」가 정하고 지도가 그 역으로 옮겨 간다 (사용자 요청 2026-11-16).
+/// 같은 역을 다시 골라도 옮기도록 차례 번호를 함께 둔다
+final mapFocusProvider = NotifierProvider<MapFocus, ({String node, int seq})?>(MapFocus.new);
+
+final class MapFocus extends Notifier<({String node, int seq})?> {
+  @override
+  ({String node, int seq})? build() => null;
+
+  void focus(String node) => state = (node: node, seq: (state?.seq ?? 0) + 1);
+}
+
 /// 지도에 혼자 보이는 노선. 노선 상세가 켜고 지도가 끈다.
 final soloLineIdProvider = NotifierProvider<SoloLineId, String?>(SoloLineId.new);
 
@@ -368,6 +380,29 @@ final scoreTableProvider = Provider.family<AsyncValue<ScoreTable>, ScoreBasis>(
         ),
       ),
 );
+
+const _badgeSetting = 'badges.earned';
+
+/// 지니는 현행 완주 배지 (DESIGN §3.3). 한 번 얻은 배지는 설정 표에 남겨 새 역이 생겨도 잃지 않는다.
+/// 설정 표는 백업에 들어가므로 복원해도 남는다.
+final heldBadgesProvider = FutureProvider<Set<String>>((ref) async {
+  final store = SettingStore(ref.watch(sessionProvider).db);
+  final raw = await store.read(_badgeSetting);
+  final earned = raw == null ? <String>{} : {...(jsonDecode(raw) as List<dynamic>).cast<String>()};
+  // 탄 기록을 읽기 전에는 판정하지 않는다. 빈 기록으로 판정하면 얻은 배지를 지운다
+  final table = ref.watch(scoreTableProvider(const BasisCurrent())).value;
+  if (table == null || ref.watch(unitHitsProvider).value == null) return earned;
+  final held = heldBadges(
+    earned,
+    lines: table.byLine,
+    operators: table.byOperator,
+    prefs: ref.watch(prefScoresProvider(const BasisCurrent())),
+  );
+  if (held.length != earned.length || !held.containsAll(earned)) {
+    await store.write(_badgeSetting, jsonEncode(held.toList()..sort()));
+  }
+  return held;
+});
 
 /// 현행/폐선 → 분류 → 회사 → 노선.
 final browseTreeProvider = Provider.family<AsyncValue<BrowseTree>, BrowseEra>(

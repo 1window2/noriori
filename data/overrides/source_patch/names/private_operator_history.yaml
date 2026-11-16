@@ -1,0 +1,301 @@
+# operators/private_operator_history.yaml 사업자 이름
+- {"patch": "add", "entity_type": "operator", "id": "o_shin_keisei_electric_railway", "lang": "ja", "text": "新京成電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shin_keisei_electric_railway", "lang": "ko", "text": "신케이세이 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shin_keisei_electric_railway", "lang": "en", "text": "Shin-Keisei Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_prefectural_urban_development", "lang": "ja", "text": "大阪府都市開発", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_prefectural_urban_development", "lang": "ko", "text": "오사카부 도시개발", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_prefectural_urban_development", "lang": "en", "text": "Osaka Prefectural Urban Development", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_semboku_rapid_railway", "lang": "ja", "text": "泉北高速鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_semboku_rapid_railway", "lang": "ko", "text": "센보쿠 고속철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_semboku_rapid_railway", "lang": "en", "text": "Semboku Rapid Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_wakayama_railway", "lang": "ja", "text": "和歌山鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_wakayama_railway", "lang": "ko", "text": "와카야마 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_wakayama_railway", "lang": "en", "text": "Wakayama Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_wakayama_electric_tramway", "lang": "ja", "text": "和歌山電気軌道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_wakayama_electric_tramway", "lang": "ko", "text": "와카야마 전기궤도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_wakayama_electric_tramway", "lang": "en", "text": "Wakayama Electric Tramway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mie_electric_railway", "lang": "ja", "text": "三重電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mie_electric_railway", "lang": "ko", "text": "미에 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mie_electric_railway", "lang": "en", "text": "Mie Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nara_electric_railway", "lang": "ja", "text": "奈良電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nara_electric_railway", "lang": "ko", "text": "나라 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nara_electric_railway", "lang": "en", "text": "Nara Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shigi_ikoma_electric_railway", "lang": "ja", "text": "信貴生駒電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shigi_ikoma_electric_railway", "lang": "ko", "text": "시기이코마 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shigi_ikoma_electric_railway", "lang": "en", "text": "Shigi-Ikoma Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yamato_railway", "lang": "ja", "text": "大和鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yamato_railway", "lang": "ko", "text": "야마토 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yamato_railway", "lang": "en", "text": "Yamato Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_chiba_kyuko_electric_railway", "lang": "ja", "text": "千葉急行電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_chiba_kyuko_electric_railway", "lang": "ko", "text": "치바 급행전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_chiba_kyuko_electric_railway", "lang": "en", "text": "Chiba Kyuko Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_teito_rapid_transit_authority", "lang": "ja", "text": "帝都高速度交通営団", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_teito_rapid_transit_authority", "lang": "ko", "text": "제도고속도교통영단", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_teito_rapid_transit_authority", "lang": "en", "text": "Teito Rapid Transit Authority", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hokushin_kyuko_electric_railway", "lang": "ja", "text": "北神急行電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hokushin_kyuko_electric_railway", "lang": "ko", "text": "호쿠신 급행전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hokushin_kyuko_electric_railway", "lang": "en", "text": "Hokushin Kyuko Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tamano_city", "lang": "ja", "text": "玉野市", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tamano_city", "lang": "ko", "text": "타마노시", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tamano_city", "lang": "en", "text": "Tamano City", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kashima_sangu_railway", "lang": "ja", "text": "鹿島参宮鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kashima_sangu_railway", "lang": "ko", "text": "카시마 산구 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kashima_sangu_railway", "lang": "en", "text": "Kashima Sangu Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ueda_kotsu", "lang": "ja", "text": "上田交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ueda_kotsu", "lang": "ko", "text": "우에다 교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ueda_kotsu", "lang": "en", "text": "Ueda Kotsu", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_port_transport_system", "lang": "ja", "text": "大阪港トランスポートシステム", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_port_transport_system", "lang": "ko", "text": "오사카항 트랜스포트 시스템", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_port_transport_system", "lang": "en", "text": "Osaka Port Transport System", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_beppu_cable_railway", "lang": "ja", "text": "別府鋼索鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_beppu_cable_railway", "lang": "ko", "text": "벳푸 강삭철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_beppu_cable_railway", "lang": "en", "text": "Beppu Cable Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_beppu_kokusai_kanko", "lang": "ja", "text": "別府国際観光", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_beppu_kokusai_kanko", "lang": "ko", "text": "벳푸 국제관광", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_beppu_kokusai_kanko", "lang": "en", "text": "Beppu Kokusai Kanko", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_okamoto_seisakusho", "lang": "ja", "text": "岡本製作所", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_okamoto_seisakusho", "lang": "ko", "text": "오카모토 제작소", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_okamoto_seisakusho", "lang": "en", "text": "Okamoto Seisakusho", "source": "hand"}
+- {"patch": "replace", "entity_type": "operator", "id": "o_ueda_maruko_electric_railway", "lang": "ko", "text": "우에다 마루코 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_akiu_electric_railway", "lang": "ja", "text": "秋保電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_akiu_electric_railway", "lang": "ko", "text": "아키우 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_akiu_electric_railway", "lang": "en", "text": "Akiu Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_saidaiji_railway", "lang": "ja", "text": "西大寺鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_saidaiji_railway", "lang": "ko", "text": "사이다이지 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_saidaiji_railway", "lang": "en", "text": "Saidaiji Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sempoku_railway", "lang": "ja", "text": "仙北鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sempoku_railway", "lang": "ko", "text": "센포쿠 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sempoku_railway", "lang": "en", "text": "Sempoku Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurihara_railway", "lang": "ja", "text": "栗原鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurihara_railway", "lang": "ko", "text": "쿠리하라 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurihara_railway", "lang": "en", "text": "Kurihara Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurihara_electric_railway", "lang": "ja", "text": "栗原電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurihara_electric_railway", "lang": "ko", "text": "쿠리하라 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurihara_electric_railway", "lang": "en", "text": "Kurihara Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_miyagi_chuo_kotsu", "lang": "ja", "text": "宮城中央交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_miyagi_chuo_kotsu", "lang": "ko", "text": "미야기 중앙교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_miyagi_chuo_kotsu", "lang": "en", "text": "Miyagi Chuo Kotsu", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sanin_chuo_railway", "lang": "ja", "text": "山陰中央鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sanin_chuo_railway", "lang": "ko", "text": "산인 중앙철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sanin_chuo_railway", "lang": "en", "text": "San'in Chuo Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_bibai_railway", "lang": "ja", "text": "美唄鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_bibai_railway", "lang": "ko", "text": "비바이 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_bibai_railway", "lang": "en", "text": "Bibai Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_katakami_railway", "lang": "ja", "text": "片上鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_katakami_railway", "lang": "ko", "text": "카타카미 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_katakami_railway", "lang": "en", "text": "Katakami Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fujita_kogyo", "lang": "ja", "text": "藤田興業", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fujita_kogyo", "lang": "ko", "text": "후지타 흥업", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fujita_kogyo", "lang": "en", "text": "Fujita Kogyo", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kosaka_railway", "lang": "ja", "text": "小坂鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kosaka_railway", "lang": "ko", "text": "코사카 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kosaka_railway", "lang": "en", "text": "Kosaka Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagaoka_railway", "lang": "ja", "text": "長岡鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagaoka_railway", "lang": "ko", "text": "나가오카 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagaoka_railway", "lang": "en", "text": "Nagaoka Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tochio_railway", "lang": "ja", "text": "栃尾鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tochio_railway", "lang": "ko", "text": "토치오 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tochio_railway", "lang": "en", "text": "Tochio Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tochio_electric_railway", "lang": "ja", "text": "栃尾電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tochio_electric_railway", "lang": "ko", "text": "토치오 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tochio_electric_railway", "lang": "en", "text": "Tochio Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ugo_railway", "lang": "ja", "text": "羽後鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ugo_railway", "lang": "ko", "text": "우고 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ugo_railway", "lang": "en", "text": "Ugo Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shimane_railway", "lang": "ja", "text": "島根鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shimane_railway", "lang": "ko", "text": "시마네 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_shimane_railway", "lang": "en", "text": "Shimane Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_izumo_railway", "lang": "ja", "text": "出雲鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_izumo_railway", "lang": "ko", "text": "이즈모 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_izumo_railway", "lang": "en", "text": "Izumo Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ichibata_denki_tetsudo", "lang": "ja", "text": "一畑電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ichibata_denki_tetsudo", "lang": "ko", "text": "이치바타 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_ichibata_denki_tetsudo", "lang": "en", "text": "Ichibata Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hanamaki_onsen_electric_railway", "lang": "ja", "text": "花巻温泉電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hanamaki_onsen_electric_railway", "lang": "ko", "text": "하나마키 온천전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hanamaki_onsen_electric_railway", "lang": "en", "text": "Hanamaki Onsen Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_iwate_chuo_bus", "lang": "ja", "text": "岩手中央バス", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_iwate_chuo_bus", "lang": "ko", "text": "이와테 중앙버스", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_iwate_chuo_bus", "lang": "en", "text": "Iwate Chuo Bus", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsui_mining", "lang": "ja", "text": "三井鉱山", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsui_mining", "lang": "ko", "text": "미츠이 광산", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsui_mining", "lang": "en", "text": "Mitsui Mining", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsubishi_oyubari_tanko", "lang": "ja", "text": "三菱大夕張炭礦", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsubishi_oyubari_tanko", "lang": "ko", "text": "미츠비시 오유바리 탄광", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsubishi_oyubari_tanko", "lang": "en", "text": "Mitsubishi Oyubari Tanko", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsubishi_coal_mining", "lang": "ja", "text": "三菱石炭鉱業", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsubishi_coal_mining", "lang": "ko", "text": "미츠비시 석탄광업", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mitsubishi_coal_mining", "lang": "en", "text": "Mitsubishi Coal Mining", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yubetsu_tanko_railway", "lang": "ja", "text": "雄別炭礦鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yubetsu_tanko_railway", "lang": "ko", "text": "유베츠 탄광철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yubetsu_tanko_railway", "lang": "en", "text": "Yubetsu Tanko Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_onahama_rinko_railway", "lang": "ja", "text": "小名浜臨港鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_onahama_rinko_railway", "lang": "ko", "text": "오나하마 임항철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_onahama_rinko_railway", "lang": "en", "text": "Onahama Rinko Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_taguchi_railway", "lang": "ja", "text": "田口鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_taguchi_railway", "lang": "ko", "text": "타구치 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_taguchi_railway", "lang": "en", "text": "Taguchi Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_sulphur", "lang": "ja", "text": "日本硫黄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_sulphur", "lang": "ko", "text": "일본 유황", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_sulphur", "lang": "en", "text": "Nippon Sulphur", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_sulphur_kanko_railway", "lang": "ja", "text": "日本硫黄観光鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_sulphur_kanko_railway", "lang": "ko", "text": "일본 유황 관광철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_sulphur_kanko_railway", "lang": "en", "text": "Nippon Sulphur Kanko Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_nickel", "lang": "ja", "text": "日本ニッケル", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_nickel", "lang": "ko", "text": "일본 니켈", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nippon_nickel", "lang": "en", "text": "Nippon Nickel", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hirosaki_electric_railway", "lang": "ja", "text": "弘前電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hirosaki_electric_railway", "lang": "ko", "text": "히로사키 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hirosaki_electric_railway", "lang": "en", "text": "Hirosaki Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_teshio_railway", "lang": "ja", "text": "天塩鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_teshio_railway", "lang": "ko", "text": "테시오 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_teshio_railway", "lang": "en", "text": "Teshio Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tosa_electric_railway", "lang": "ja", "text": "土佐電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tosa_electric_railway", "lang": "ko", "text": "토사 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tosa_electric_railway", "lang": "en", "text": "Tosa Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kamioka_mining", "lang": "ja", "text": "神岡鉱業", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kamioka_mining", "lang": "ko", "text": "카미오카 광업", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kamioka_mining", "lang": "en", "text": "Kamioka Mining", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_towada_railway", "lang": "ja", "text": "十和田鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_towada_railway", "lang": "ko", "text": "토와다 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_towada_railway", "lang": "en", "text": "Towada Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_chikuho_mining_railway", "lang": "ja", "text": "筑豊鉱業鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_chikuho_mining_railway", "lang": "ko", "text": "치쿠호 광업철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_chikuho_mining_railway", "lang": "en", "text": "Chikuho Mining Railway", "source": "hand"}
+- {"patch": "replace", "entity_type": "line", "id": "l_kamioka_railway_line", "lang": "ja", "text": "神岡軌道", "kana": "かみおかきどう", "source": "hand"}
+- {"patch": "replace", "entity_type": "line", "id": "l_kamioka_railway_line", "lang": "en", "text": "Kamioka Tramway", "source": "hand"}
+- {"patch": "replace", "entity_type": "line", "id": "l_aki_line", "lang": "ko", "text": "토사 전기철도 아키선", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tokyo_kyuko_electric_railway", "lang": "ja", "text": "東京急行電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tokyo_kyuko_electric_railway", "lang": "ko", "text": "도쿄 급행전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tokyo_kyuko_electric_railway", "lang": "en", "text": "Tokyu Corporation", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fujikyuko", "lang": "ja", "text": "富士急行", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fujikyuko", "lang": "ko", "text": "후지급행", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fujikyuko", "lang": "en", "text": "Fujikyuko", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hakone_tozan_railway", "lang": "ja", "text": "箱根登山鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hakone_tozan_railway", "lang": "ko", "text": "하코네 등산철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hakone_tozan_railway", "lang": "en", "text": "Hakone Tozan Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_gakunan_railway", "lang": "ja", "text": "岳南鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_gakunan_railway", "lang": "ko", "text": "가쿠난 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_gakunan_railway", "lang": "en", "text": "Gakunan Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mizushima_kogyo_toshi_kaihatsu", "lang": "ja", "text": "水島工業都市開発", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mizushima_kogyo_toshi_kaihatsu", "lang": "ko", "text": "미즈시마 공업도시개발", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_mizushima_kogyo_toshi_kaihatsu", "lang": "en", "text": "Mizushima Kogyo Toshi Kaihatsu", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurashiki_city_transportation_bureau", "lang": "ja", "text": "倉敷市交通局", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurashiki_city_transportation_bureau", "lang": "ko", "text": "쿠라시키시 교통국", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kurashiki_city_transportation_bureau", "lang": "en", "text": "Kurashiki City Transportation Bureau", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_maya_cable_railway", "lang": "ja", "text": "摩耶鋼索鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_maya_cable_railway", "lang": "ko", "text": "마야 강삭철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_maya_cable_railway", "lang": "en", "text": "Maya Cable Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokkogoe_arima_railway", "lang": "ja", "text": "六甲越有馬鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokkogoe_arima_railway", "lang": "ko", "text": "롯코고에 아리마 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokkogoe_arima_railway", "lang": "en", "text": "Rokkogoe Arima Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokko_maya_railway", "lang": "ja", "text": "六甲摩耶鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokko_maya_railway", "lang": "ko", "text": "롯코 마야 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokko_maya_railway", "lang": "en", "text": "Rokko Maya Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_city_urban_development_corporation", "lang": "ja", "text": "神戸市都市整備公社", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_city_urban_development_corporation", "lang": "ko", "text": "고베시 도시정비공사", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_city_urban_development_corporation", "lang": "en", "text": "Kobe City Urban Development Corporation", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_sumai_machizukuri_kosha", "lang": "ja", "text": "神戸すまいまちづくり公社", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_sumai_machizukuri_kosha", "lang": "ko", "text": "고베 스마이 마치즈쿠리 공사", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_sumai_machizukuri_kosha", "lang": "en", "text": "Kobe Sumai Machizukuri Kosha", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_jukankyo_seibi_kosha", "lang": "ja", "text": "神戸住環境整備公社", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_jukankyo_seibi_kosha", "lang": "ko", "text": "고베 주환경정비공사", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_jukankyo_seibi_kosha", "lang": "en", "text": "Kobe Jukankyo Seibi Kosha", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokkosan_kanko", "lang": "ja", "text": "六甲山観光", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokkosan_kanko", "lang": "ko", "text": "롯코산 관광", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_rokkosan_kanko", "lang": "en", "text": "Mt. Rokko Cable Car & Tourism Company", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sunzu_railway", "lang": "ja", "text": "駿豆鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sunzu_railway", "lang": "ko", "text": "슨즈 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sunzu_railway", "lang": "en", "text": "Sunzu Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tateyama_kaihatsu_railway", "lang": "ja", "text": "立山開発鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tateyama_kaihatsu_railway", "lang": "ko", "text": "타테야마 개발철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tateyama_kaihatsu_railway", "lang": "en", "text": "Tateyama Kaihatsu Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_gobo_rinko_railway", "lang": "ja", "text": "御坊臨港鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_gobo_rinko_railway", "lang": "ko", "text": "고보 임항철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_gobo_rinko_railway", "lang": "en", "text": "Gobo Rinko Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hitachi_unyu_tokyo_monorail", "lang": "ja", "text": "日立運輸東京モノレール", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hitachi_unyu_tokyo_monorail", "lang": "ko", "text": "히타치 운수 도쿄 모노레일", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hitachi_unyu_tokyo_monorail", "lang": "en", "text": "Hitachi Unyu Tokyo Monorail", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_matsumoto_electric_railway", "lang": "ja", "text": "松本電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_matsumoto_electric_railway", "lang": "ko", "text": "마츠모토 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_matsumoto_electric_railway", "lang": "en", "text": "Matsumoto Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_keihanshin_kyuko_electric_railway", "lang": "ja", "text": "京阪神急行電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_keihanshin_kyuko_electric_railway", "lang": "ko", "text": "케이한신 급행전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_keihanshin_kyuko_electric_railway", "lang": "en", "text": "Keihanshin Kyuko Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_keio_teito_electric_railway", "lang": "ja", "text": "京王帝都電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_keio_teito_electric_railway", "lang": "ko", "text": "케이오 제도전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_keio_teito_electric_railway", "lang": "en", "text": "Keio Teito Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_enoshima_kamakura_kanko", "lang": "ja", "text": "江ノ島鎌倉観光", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_enoshima_kamakura_kanko", "lang": "ko", "text": "에노시마 카마쿠라 관광", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_enoshima_kamakura_kanko", "lang": "en", "text": "Enoshima Kamakura Kanko", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_railway", "lang": "ja", "text": "流山鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_railway", "lang": "ko", "text": "나가레야마 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_railway", "lang": "en", "text": "Nagareyama Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_electric_railway", "lang": "ja", "text": "流山電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_electric_railway", "lang": "ko", "text": "나가레야마 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_electric_railway", "lang": "en", "text": "Nagareyama Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_dentetsu", "lang": "ja", "text": "流山電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_dentetsu", "lang": "ko", "text": "나가레야마 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nagareyama_dentetsu", "lang": "en", "text": "Nagareyama Dentetsu", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sobu_nagareyama_electric_railway", "lang": "ja", "text": "総武流山電鉄", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sobu_nagareyama_electric_railway", "lang": "ko", "text": "소부 나가레야마 전철", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_sobu_nagareyama_electric_railway", "lang": "en", "text": "Sobu Nagareyama Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_denki_tetsudo", "lang": "ja", "text": "神戸電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_denki_tetsudo", "lang": "ko", "text": "고베 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kobe_denki_tetsudo", "lang": "en", "text": "Kobe Denki Tetsudo", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nose_electric_tramway", "lang": "ja", "text": "能勢電気軌道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nose_electric_tramway", "lang": "ko", "text": "노세 전기궤도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_nose_electric_tramway", "lang": "en", "text": "Nose Electric Tramway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_toyohashi_kotsu", "lang": "ja", "text": "豊橋交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_toyohashi_kotsu", "lang": "ko", "text": "토요하시 교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_toyohashi_kotsu", "lang": "en", "text": "Toyohashi Kotsu", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_joshin_denki_tetsudo", "lang": "ja", "text": "上信電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_joshin_denki_tetsudo", "lang": "ko", "text": "조신 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_joshin_denki_tetsudo", "lang": "en", "text": "Joshin Denki Tetsudo", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fukushima_electric_railway", "lang": "ja", "text": "福島電気鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fukushima_electric_railway", "lang": "ko", "text": "후쿠시마 전기철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_fukushima_electric_railway", "lang": "en", "text": "Fukushima Electric Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_miyafuku_railway", "lang": "ja", "text": "宮福鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_miyafuku_railway", "lang": "ko", "text": "미야후쿠 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_miyafuku_railway", "lang": "en", "text": "Miyafuku Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hokuso_kaihatsu_railway", "lang": "ja", "text": "北総開発鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hokuso_kaihatsu_railway", "lang": "ko", "text": "호쿠소 개발철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hokuso_kaihatsu_railway", "lang": "en", "text": "Hokuso Kaihatsu Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tokyo_waterfront_new_transit", "lang": "ja", "text": "東京臨海新交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tokyo_waterfront_new_transit", "lang": "ko", "text": "도쿄 임해신교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tokyo_waterfront_new_transit", "lang": "en", "text": "Tokyo Waterfront New Transit", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yokohama_new_transit", "lang": "ja", "text": "横浜新都市交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yokohama_new_transit", "lang": "ko", "text": "요코하마 신도시교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yokohama_new_transit", "lang": "en", "text": "Yokohama New Transit", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_rapid_railway", "lang": "ja", "text": "大阪高速鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_rapid_railway", "lang": "ko", "text": "오사카 고속철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_osaka_rapid_railway", "lang": "en", "text": "Osaka Rapid Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kamoto_railway", "lang": "ja", "text": "鹿本鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kamoto_railway", "lang": "ko", "text": "카모토 철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_kamoto_railway", "lang": "en", "text": "Kamoto Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tsukubasan_cable_railway", "lang": "ja", "text": "筑波山鋼索鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tsukubasan_cable_railway", "lang": "ko", "text": "츠쿠바산 강삭철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_tsukubasan_cable_railway", "lang": "en", "text": "Tsukubasan Cable Railway", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_takao_kanko", "lang": "ja", "text": "高尾観光", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_takao_kanko", "lang": "ko", "text": "타카오 관광", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_takao_kanko", "lang": "en", "text": "Takao Kanko", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_otama_kanko_kaihatsu", "lang": "ja", "text": "大多摩観光開発", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_otama_kanko_kaihatsu", "lang": "ko", "text": "오타마 관광개발", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_otama_kanko_kaihatsu", "lang": "en", "text": "Otama Kanko Kaihatsu", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_cable", "lang": "ja", "text": "八栗ケーブル", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_cable", "lang": "ko", "text": "야쿠리 케이블", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_cable", "lang": "en", "text": "Yakuri Cable", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_hashikura_cable", "lang": "ja", "text": "八栗箸蔵ケーブル", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_hashikura_cable", "lang": "ko", "text": "야쿠리 하시쿠라 케이블", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_hashikura_cable", "lang": "en", "text": "Yakuri Hashikura Cable", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hobashira_cable", "lang": "ja", "text": "帆柱ケーブル", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hobashira_cable", "lang": "ko", "text": "호바시라 케이블", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_hobashira_cable", "lang": "en", "text": "Hobashira Cable", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_dream_kotsu", "lang": "ja", "text": "ドリーム交通", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_dream_kotsu", "lang": "ko", "text": "드림 교통", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_dream_kotsu", "lang": "en", "text": "Dream Kotsu", "source": "hand"}
+- {"patch": "replace", "entity_type": "operator", "id": "o_mt_rokko_cable_car_and_tourism_company", "lang": "en", "text": "Kobe Rokko Railway", "source": "hand"}
+- {"patch": "replace", "entity_type": "line", "id": "l_odawarashinai_line", "lang": "ko", "text": "하코네 등산철도 오다와라 시내선", "source": "hand", "checked": "2026-11-07"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_tozan_railway", "lang": "ja", "text": "八栗登山鉄道", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_tozan_railway", "lang": "ko", "text": "야쿠리 등산철도", "source": "hand"}
+- {"patch": "add", "entity_type": "operator", "id": "o_yakuri_tozan_railway", "lang": "en", "text": "Yakuri Tozan Railway", "source": "hand"}

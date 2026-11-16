@@ -1,0 +1,3 @@
+# 가짜 역 전수 검증 (2026-11-09) 보정 행
+- {"patch": "add", "date": "1917-09-02", "type": "open_stop", "route": "r_myoken_line", "node": "n_kawanishi_kokutetsumae", "source": "wikipedia", "why": "가짜 역 전수 검증(2026-11-09): 宝塚本線 끼우기가 끊겨 events_fix로 옮기던 妙見線 정차 사건을 직접 둔다. 能勢電鉄妙見線 oldid=110790216, 川西国鉄前駅 oldid=104307594"}
+- {"patch": "add", "date": "1981-12-20", "type": "close_stop", "route": "r_myoken_line", "node": "n_kawanishi_kokutetsumae", "source": "wikipedia", "why": "가짜 역 전수 검증(2026-11-09): 宝塚本線 끼우기가 끊겨 events_fix로 옮기던 妙見線 정차 사건을 직접 둔다. 能勢電鉄妙見線 oldid=110790216, 川西国鉄前駅 oldid=104307594"}

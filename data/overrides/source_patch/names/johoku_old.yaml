@@ -1,0 +1,4 @@
+# 伊予鉄道 城北線 옛 上一万 (DECISIONS 31번)
+- {"patch": "add", "entity_type": "node", "id": "n_kamiichiman_johoku_old", "lang": "ja", "text": "上一万（旧）", "kana": "かみいちまん", "source": "wikipedia"}
+- {"patch": "add", "entity_type": "node", "id": "n_kamiichiman_johoku_old", "lang": "ko", "text": "카미이치만(구)", "source": "rule"}
+- {"patch": "add", "entity_type": "node", "id": "n_kamiichiman_johoku_old", "lang": "en", "text": "Kamiichiman (old)", "source": "rule"}

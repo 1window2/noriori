@@ -127,3 +127,23 @@ TripTableCompanion tripToRow(Trip trip) => TripTableCompanion.insert(
       title: trip.title,
       note: Value(trip.note),
     );
+
+ChangeNote noteFromRow(ChangeReportRow row) => ChangeNote(
+      noteId: row.id,
+      edition: row.edition,
+      body: row.body,
+      createdAt: row.createdAt,
+      updatedAt: row.updatedAt,
+      deletedAt: row.deletedAt,
+      deviceId: row.deviceId,
+    );
+
+ChangeReportRow noteToRow(ChangeNote note) => ChangeReportRow(
+      id: note.id,
+      createdAt: note.createdAt,
+      updatedAt: note.updatedAt,
+      deletedAt: note.deletedAt,
+      deviceId: note.deviceId,
+      edition: note.edition,
+      body: note.body,
+    );

@@ -1,0 +1,330 @@
+{
+ "accessed": "2026-11-05",
+ "crs": "WGS84",
+ "coord_order_paths": "lon,lat",
+ "items": [
+  {
+   "id": "iyotetsu_johoku_old_kamiichiman",
+   "name": "伊予鉄道 城北線 上一万（旧, 〜1969-11-30）",
+   "conclusion": "上一万交差点の南西角（平和通南側・勝山通り西側, 旧中一万町, 現 平和通一丁目1番）。跡地は いよてつロフティ上一万（平和通1丁目1-1, 1999年2月竣工 12階）",
+   "lat": 33.84716,
+   "lon": 132.77515,
+   "error_m": 25,
+   "method": "GSI ort_old10(1961-69)オルソで旧曲線軌道敷を判読 + 跡地マンション位置(a-heya地図値, OSM建物way 344221825重心) + 社公式ブログ(駐車場跡地)",
+   "site_building": {
+    "name": "いよてつロフティ上一万",
+    "address": "愛媛県松山市平和通1丁目1-1",
+    "built": "1999-02",
+    "floors": "地上12階・地下1階 SRC 100戸",
+    "lat": 33.847151,
+    "lon": 132.775117
+   },
+   "old_alignment_lonlat": [
+    [
+     132.77295,
+     33.848028
+    ],
+    [
+     132.773733,
+     33.848022
+    ],
+    [
+     132.774019,
+     33.847973
+    ],
+    [
+     132.774234,
+     33.847881
+    ],
+    [
+     132.774375,
+     33.84777
+    ],
+    [
+     132.774502,
+     33.847609
+    ],
+    [
+     132.774565,
+     33.847509
+    ],
+    [
+     132.77462,
+     33.8474
+    ],
+    [
+     132.7747,
+     33.847278
+    ],
+    [
+     132.774861,
+     33.847242
+    ],
+    [
+     132.775022,
+     33.847207
+    ],
+    [
+     132.775183,
+     33.847171
+    ],
+    [
+     132.775344,
+     33.847144
+    ]
+   ],
+   "alignment_error_m": "赤十字病院前–平和通一丁目は現線と同一(±5); 平和通横断 ±15; 中一万町内曲線 ±10",
+   "km_check": {
+    "published": "古町起点2.8 (練兵場前2.5+0.3), 1934/1937 鉄道停車場一覧",
+    "measured_from_current_sekijuji_stop_m": 245,
+    "to_katsuyama_frontage_m": 270
+   },
+   "distances_m": {
+    "heiwadori1_stop": 78,
+    "current_kamiichiman_stop": 74,
+    "intersection_signal": 50
+   },
+   "correction": "前メモの「交差点北側」は誤り→南西角",
+   "confidence": "block: high; point ±25m: medium-high",
+   "sources": [
+    {
+     "title": "伊予鉄公式ブログ マンションの地下に電車の重要施設が！？ (2023-04-21)",
+     "url": "https://iyotetsublog.com/2023/04/21/post-4602/",
+     "quote": "いよてつロフティ上一万は1999年、当時の上一万駐車場跡地に地上12階・地下1階鉄骨鉄筋コンクリート造で建設されました。"
+    },
+    {
+     "title": "ja.wikipedia 上一万停留場 (raw)",
+     "url": "https://ja.wikipedia.org/wiki/上一万停留場",
+     "quote": "環状線開通とともに駅舎は解体され、跡地は伊予鉄直営の駐車場になった。現在はその駐車場も廃止され、跡地には高層マンションが建っている"
+    },
+    {
+     "title": "a-heya.com いよてつロフティ上一万",
+     "url": "https://www.a-heya.com/building/detail/02748",
+     "quote": "所在地 愛媛県松山市平和通１丁目 … 1999年02月/12階建 … 総戸数 100戸 (map lat 33.847151 lng 132.775117)"
+    },
+    {
+     "title": "GSI 地理院タイル ort_old10 (1961-1969 オルソ) z17",
+     "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/{z}/{x}/{y}.png",
+     "note": "撮影年月日・写真番号は未確認"
+    },
+    {
+     "title": "GSI 地理院タイル gazo1 (1974-78)",
+     "url": "https://cyberjapandata.gsi.go.jp/xyz/gazo1/{z}/{x}/{y}.jpg"
+    },
+    {
+     "title": "GSI 住所検索 平和通一丁目1番",
+     "url": "https://msearch.gsi.go.jp/address-search/AddressSearch?q=愛媛県松山市平和通一丁目1-1",
+     "result": [
+      132.774796,
+      33.847271
+     ]
+    },
+    {
+     "title": "OpenStreetMap API map extract",
+     "url": "https://api.openstreetmap.org/api/0.6/map?bbox=132.7725,33.8455,132.7765,33.8482"
+    }
+   ]
+  },
+  {
+   "id": "kotoden_nagao_old_route_1945_1951",
+   "name": "高松琴平電気鉄道 長尾線 琴電高松–花園 旧経路 (1945-07-30〜1951-12-25)",
+   "conclusion": "琴電高松から志度線線路を東へ旧出晴跡まで→出晴東で南東へ曲がり、南南東の直線（現 塩上町〜花園町一丁目の斜め路地 OSM way 58258285）→34.33613N 134.05781E付近で現長尾線に合流→現線路で花園（当時 花園信号所）",
+   "path_lonlat": [
+    [
+     134.0533,
+     34.33955
+    ],
+    [
+     134.05365,
+     34.33955
+    ],
+    [
+     134.05389,
+     34.33957
+    ],
+    [
+     134.05413,
+     34.33964
+    ],
+    [
+     134.0548,
+     34.33945
+    ],
+    [
+     134.05542,
+     34.33925
+    ],
+    [
+     134.056,
+     34.33889
+    ],
+    [
+     134.05628,
+     34.3385
+    ],
+    [
+     134.056413,
+     34.338195
+    ],
+    [
+     134.056787,
+     34.337705
+    ],
+    [
+     134.057333,
+     34.336963
+    ],
+    [
+     134.057673,
+     34.336504
+    ],
+    [
+     134.057814,
+     34.336131
+    ],
+    [
+     134.058031,
+     34.335955
+    ],
+    [
+     134.058277,
+     34.335673
+    ],
+    [
+     134.058523,
+     34.335346
+    ],
+    [
+     134.058722,
+     34.335081
+    ],
+    [
+     134.059143,
+     34.334517
+    ],
+    [
+     134.059307,
+     34.334345
+    ],
+    [
+     134.059441,
+     34.334174
+    ]
+   ],
+   "error_m": {
+    "kotoden_takamatsu_to_dehare": 10,
+    "curve_east_of_dehare": 30,
+    "straight_alley": 10,
+    "junction_to_hanazono": 5
+   },
+   "junction_with_1951_line": {
+    "lat": 34.33613,
+    "lon": 134.05781,
+    "note": "現花園駅から瓦町方へ約0.27km"
+   },
+   "dehare_site": {
+    "lat": 34.3395,
+    "lon": 134.054167,
+    "source": "ja.wikipedia 出晴駅 座標"
+   },
+   "hanazono": {
+    "lat": 34.334174,
+    "lon": 134.059441,
+    "km_current": 0.9
+   },
+   "km": {
+    "published_original": null,
+    "measured_kotoden_takamatsu_to_hanazono_km": 0.89,
+    "measured_range_km": [
+     0.85,
+     1.0
+    ],
+    "measured_dehare_to_hanazono_km": 0.81,
+    "validation": "同手法で現経路 瓦町→花園 0.91km (公式0.9)",
+    "cross_check": "出晴–長尾 戦前14.4 vs 0.81+13.7=14.5",
+    "to_kitahigashiguchi": "現キロ程と±0.1km以内（花園以南は同一線路）"
+   },
+   "stations_1946_1951": [
+    {
+     "name": "琴電高松",
+     "status": "始発"
+    },
+    {
+     "name": "出晴",
+     "status": "1945-07-30廃止"
+    },
+    {
+     "name": "花園",
+     "status": "1949-04頃までに花園信号所（交換用と解釈）; 1954-08-01駅昇格"
+    },
+    {
+     "name": "御坊川",
+     "status": "1943頃休止, 1946時刻表休止, 1949-01まで記載, 1949-04頃廃止"
+    },
+    {
+     "name": "木太西口",
+     "status": "1943頃休止(1946時刻表休止), 1954-08-01廃止; 期間中の営業再開記述なし（休止継続が有力・未確定）"
+    },
+    {
+     "name": "林道",
+     "status": "1934廃止〜1954-08-01再開業; 期間中なし"
+    },
+    {
+     "name": "木太東口",
+     "status": "営業; 琴電高松の次の営業停車駅の可能性大"
+    }
+   ],
+   "confidence": {
+    "route": "high-medium",
+    "curve_shape": "medium",
+    "km": "measured, not original (medium)",
+    "stations": "medium (wiki-based)"
+   },
+   "not_found": [
+    "1945-51 公式キロ程 (NDL lab 全文検索 0件: 長尾線 花園 / 琴電高松 長尾 / 高松琴平電気鉄道 長尾線 粁)",
+    "花園信号所 設置日",
+    "1951-12-26 経路変更 認可原文",
+    "1945-50 米軍空中写真 (GSI ort_USA10 範囲外)"
+   ],
+   "sources": [
+    {
+     "title": "今昔マップ on the web 高松 1928 (昭和3年測図 1/25000)",
+     "url": "https://ktgis.net/kjmapw/kjtilemap/takamatsu/00/{z}/{x}/{y}.png (TMS)"
+    },
+    {
+     "title": "今昔マップ on the web 高松 1969 (昭和44年改測)",
+     "url": "https://ktgis.net/kjmapw/kjtilemap/takamatsu/01/{z}/{x}/{y}.png (TMS)"
+    },
+    {
+     "title": "GSI ort_old10 (1961-69)",
+     "url": "https://cyberjapandata.gsi.go.jp/xyz/ort_old10/{z}/{x}/{y}.png"
+    },
+    {
+     "title": "OpenStreetMap API map extract",
+     "url": "https://api.openstreetmap.org/api/0.6/map?bbox=134.0490,34.3320,134.0680,34.3420",
+     "note": "way 58258285, 97923416, 1565358141"
+    },
+    {
+     "title": "ja.wikipedia 出晴駅",
+     "url": "https://ja.wikipedia.org/wiki/出晴駅",
+     "quote": "現在の瓦町駅志度線口東側に位置した。"
+    },
+    {
+     "title": "ja.wikipedia 御坊川駅",
+     "url": "https://ja.wikipedia.org/wiki/御坊川駅",
+     "quote": "現在の御坊川第一踏切付近（御坊川鉄橋西詰。花園駅より約100 m長尾駅方面）に位置した。/ 1949年1月までは御坊川駅の記載があるが、同年4月には記載がなく、花園信号所（現・花園駅）の記載がある。"
+    },
+    {
+     "title": "ja.wikipedia 木太西口駅",
+     "url": "https://ja.wikipedia.org/wiki/木太西口駅",
+     "quote": "1943年（昭和18年）頃：休止 (1946年の時刻表では休止扱い)"
+    },
+    {
+     "title": "ja.wikipedia 花園駅 (香川県)",
+     "url": "https://ja.wikipedia.org/wiki/花園駅_(香川県)",
+     "quote": "1954年8月1日 花園信号所が駅に昇格、花園駅として開業。 キロ程 0.9km（瓦町起点）"
+    }
+   ]
+  }
+ ]
+}

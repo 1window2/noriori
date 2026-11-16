@@ -2,7 +2,16 @@ import 'network.dart';
 
 /// 지도 점의 상태 (DESIGN §5.3). 값은 역 묶음의 정수 키다.
 final class StationMarks {
-  const StationMarks({this.stepped = const {}, this.passed = const {}});
+  const StationMarks({
+    this.stepped = const {},
+    this.passed = const {},
+    this.steppedNodes = const {},
+    this.passedNodes = const {},
+  });
+
+  /// 노드 단위. 환승역의 승강장 노드는 실제로 탄 노선(노드)에만 표시한다 (DESIGN §7.5).
+  final Set<String> steppedNodes;
+  final Set<String> passedNodes;
 
   /// 승하차했거나 방문한 역. 꽉 찬 원이다.
   final Set<int> stepped;
@@ -34,8 +43,11 @@ StationMarks stationMarks(
     for (final node in alighted) ?group(node),
     for (final node in visited) ?group(node),
   };
+  final steppedNodes = {...alighted, ...visited};
   return StationMarks(
     stepped: stepped,
     passed: {for (final node in ridden) ?group(node)}.difference(stepped),
+    steppedNodes: steppedNodes,
+    passedNodes: ridden.toSet().difference(steppedNodes),
   );
 }

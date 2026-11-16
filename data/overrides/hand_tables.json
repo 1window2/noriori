@@ -24,7 +24,10 @@
    "쓰는 곳": "tools/gen_source.py",
    "값": {
     "手宮線": "1985-11-05",
-    "日田彦山線": "2027-03-31",
+    "日田彦山線": [
+     "2023-08-28",
+     "2027-03-31"
+    ],
     "宇品線": "1986-10-01"
    }
   },
@@ -32,7 +35,6 @@
    "설명": "",
    "쓰는 곳": "tools/gen_source.py",
    "값": {
-    "半蔵門線直通": "東武鉄道",
     "秩父鉄道連絡線": "西武鉄道",
     "松田連絡線": "小田急電鉄",
     "鵜沼連絡線": "名古屋鉄道",
@@ -68,7 +70,7 @@
    }
   },
   "NOSD": {
-   "설명": "station_database 역에 붙이지 않는 역. 같은 이름의 다른 자리 (東唐津: 1983년, 楓: 1981년, 常磐線 新地·坂元·山下: 2016년 이전 전의 옛 역) 常磐線 옛 해안 선로 (2016년 이전 전). 사업자 이름 대신 부품 ID로 가린다",
+   "설명": "station_database 역에 붙이지 않는 역. 같은 이름의 다른 자리 (東唐津: 1983년, 楓: 1981년, 常磐線 新地·坂元·山下: 2016년 이전 전의 옛 역) 常磐線 옛 해안 선로 (2016년 이전 전). 사업자 이름 대신 부품 ID로 가린다 / 横浜臨港線(100000105)의 〈貨〉高島는 山陽本線 高島가 아니라 高島線의 高島(n_takashima_freight) / 博覧会 한정 면허선 5개(2026-11-10)의 역은 이름이 흔해 다른 곳 역에 붙지 않게 함 / 2026-11-11 넣은 東田本線 市民病院線·よみうりランドモノレール·よかトピアガイドウェイバス의 역은 이름이 흔해 다른 곳 역에 붙지 않게 함 / 2026-11-11 넣은 旅館 鋼索 5개(玄妙遊園ロマンスカー·狼煙山ケーブルカー·兵衛旅館鋼索鉄道·新宮観光リフトカー·箕面鋼索鉄道)의 역은 이름이 흔해(浦島·山下·山上 등) 다른 곳 역에 붙지 않게 함 / 2026-11-12 넣은 東田本線 옛 선로(駅前–松葉町–新銭町–神明)의 이음 역 神明은 豊橋 역 자료가 없어 이름만 같은 福井 神明(station_database)에 붙던 것을 막음 (W3 E1)",
    "쓰는 곳": "tools/gen_source.py",
    "값": [
     [
@@ -98,6 +100,162 @@
     [
      "黒部峡谷鉄道",
      "森石"
+    ],
+    [
+     "100000105",
+     "高島"
+    ],
+    [
+     "51901011",
+     "美術館"
+    ],
+    [
+     "51901011",
+     "シーサイドパーク"
+    ],
+    [
+     "52901011",
+     "桜木町ゲート"
+    ],
+    [
+     "52901011",
+     "フェスティバル広場"
+    ],
+    [
+     "50901011",
+     "中央口"
+    ],
+    [
+     "50901011",
+     "エキスポランド"
+    ],
+    [
+     "50901011",
+     "東口"
+    ],
+    [
+     "50901011",
+     "日本庭園"
+    ],
+    [
+     "50901011",
+     "北口"
+    ],
+    [
+     "50901011",
+     "西口"
+    ],
+    [
+     "50901011",
+     "水曜広場"
+    ],
+    [
+     "51902011",
+     "北ゲート"
+    ],
+    [
+     "51902011",
+     "国際広場"
+    ],
+    [
+     "51902011",
+     "南ゲート"
+    ],
+    [
+     "49902011",
+     "北ゲート"
+    ],
+    [
+     "49902011",
+     "西ゲート"
+    ],
+    [
+     "49902011",
+     "EXPOドーム"
+    ],
+    [
+     "42070021",
+     "城海津"
+    ],
+    [
+     "42070021",
+     "市民病院前"
+    ],
+    [
+     "50902011",
+     "遊園地"
+    ],
+    [
+     "50902011",
+     "大駐車場"
+    ],
+    [
+     "50902011",
+     "サッカー場前"
+    ],
+    [
+     "50902011",
+     "スカイロード前"
+    ],
+    [
+     "51903011",
+     "東ゲート"
+    ],
+    [
+     "51903011",
+     "パビリオン東"
+    ],
+    [
+     "51903011",
+     "パビリオン西"
+    ],
+    [
+     "51903011",
+     "遊戯施設前"
+    ],
+    [
+     "52902011",
+     "浦島"
+    ],
+    [
+     "52902011",
+     "乙姫"
+    ],
+    [
+     "52903011",
+     "赤島"
+    ],
+    [
+     "52903011",
+     "狼煙山"
+    ],
+    [
+     "52904011",
+     "萬年"
+    ],
+    [
+     "52904011",
+     "向陽"
+    ],
+    [
+     "52905011",
+     "丹鶴"
+    ],
+    [
+     "52905011",
+     "二の丸"
+    ],
+    [
+     "52906011",
+     "山下"
+    ],
+    [
+     "52906011",
+     "山上"
+    ],
+    [
+     "豊橋鉄道",
+     "神明"
     ]
    ]
   },
@@ -132,6 +290,27 @@
      "src": "n05",
      "pref": "6",
      "why": "高畠線 高畠. 奥羽本線 高畠(옛 糠ノ目)의 좌표가 붙어 있었다. N05 역 점"
+    },
+    "n_akashima_urashima": {
+     "lat": 33.621,
+     "lon": 135.9464,
+     "src": "hand",
+     "pref": "30",
+     "why": "赤島 浦島観光 狼煙山ケーブルカー(和歌山県那智勝浦町 狼煙半島). 지리원 항공사진 손 판독 좌표가 N03 행정구역 다각형(해안선 단순화) 밖이라 도도부현이 비어 손으로 和歌山県(30)을 줌. 좌표는 node_fix와 같음 (2026-11-11)"
+    },
+    "n_noroshiyama": {
+     "lat": 33.62031,
+     "lon": 135.94697,
+     "src": "hand",
+     "pref": "30",
+     "why": "狼煙山 浦島観光 狼煙山ケーブルカー(和歌山県那智勝浦町 狼煙半島). 지리원 항공사진 손 판독 좌표가 N03 행정구역 다각형(해안선 단순화) 밖이라 도도부현이 비어 손으로 和歌山県(30)을 줌. 좌표는 node_fix와 같음 (2026-11-11)"
+    },
+    "n_yoshiokakaitei": {
+     "lat": 41.44183,
+     "lon": 140.23966,
+     "src": "n02",
+     "pref": "1",
+     "why": "海峡線 吉岡海底(1988–2014). 원천(station_database 주소)이 青森(2)이라 계통 위 北海道 역이 둘로 보였음. 위키 海峡線 rev111124231 駅一覧 吉岡海底 행 「北海道 松前郡福島町」(중간) + 吉岡海底駅 문서 所在地 北海道松前郡福島町(중간). 좌표는 그대로(N02) (10회차 G2 2026-11-16; audit4 tohoku_1-007)"
     }
    }
   },
@@ -143,8 +322,7 @@
     "ディズニーリゾートライン": "2001-07-27",
     "ユーカリが丘線": "1983-09-22",
     "阿佐東線": "2020-10-23",
-    "金沢シーサイド線": "2019-03-31",
-    "1条線・山鼻線・山鼻西線・都心線": "2015-12-20"
+    "金沢シーサイド線": "2019-03-31"
    }
   },
   "BYLINEKO": {
@@ -253,12 +431,16 @@
    }
   },
   "FORCE_PAIR": {
-   "설명": "",
+   "설명": "승계로 볼 (앞 노선 부품 이름, 뒤 노선 부품 이름). 이름 겹침이 둘뿐이어도 승계다. 앞 노선이 N05·폐선 표의 옛 노선 부품(g old)이면 이 표의 짝만 승계로 본다: 사업자별로 나뉜 공용 선로를 물리 칸 하나로 두고 앞 노선이 닫힌 날 그 구간을 뒤 노선으로 이관한다(같은 lineage, 같은 이름 역은 한 노드). 北九州線→筑豊電気鉄道: 黒崎駅前–(黒崎車庫前)–西黒崎–熊西는 2000-11-26 전 西鉄 北九州線 선로(筑豊 열차 乗り入れ), 그날 北九州線 폐지와 함께 筑豊電気鉄道가 第2種鉄道事業者(위키 筑豊電気鉄道 r111591469 「黒崎駅前 - 熊西間の第2種鉄道事業者となる」, 西鉄北九州線 r111195863; 2회차 결정 U03·U04, 회귀 kyushu_1-001·kyushu_2-015, 7회차 구조 2026-11-14)",
    "쓰는 곳": "tools/gen_source.py",
    "값": [
     [
      "牟岐線",
      "阿佐東線"
+    ],
+    [
+     "北九州線",
+     "筑豊電気鉄道"
     ]
    ]
   },
@@ -297,8 +479,13 @@
     "日高本線": [
      [
       "鵡川",
-      "様似",
+      "静内",
       "2015-01-07"
+     ],
+     [
+      "静内",
+      "様似",
+      "2015-02-28"
      ]
     ],
     "岩泉線": [
@@ -346,7 +533,7 @@
    }
   },
   "OPENFIX": {
-   "설명": "표에 개업일이 없거나 틀린 구간: 노선 -> [(역, 역, 개업일)]. N05 노선은 위키 문서에서 확인한 값",
+   "설명": "표에 개업일이 없거나 틀린 구간: 노선 -> [(역, 역, 개업일)]. N05 노선은 위키 문서에서 확인한 값. 新潟 옛 선로가 본선과 같이 쓰던 칸(숨은 上沼垂로 가른 표 행)은 옛 개업일",
    "쓰는 곳": "tools/gen_source.py",
    "값": {
     "西尾線": [
@@ -382,6 +569,20 @@
       "大船",
       "ドリームランド",
       "1966-XX-XX"
+     ]
+    ],
+    "信越本線": [
+     [
+      "越後石山",
+      "上沼垂",
+      "1897-11-20"
+     ]
+    ],
+    "白新線": [
+     [
+      "上沼垂",
+      "東新潟",
+      "1956-04-15"
      ]
     ]
    }
@@ -441,6 +642,510 @@
     "長崎電気軌道",
     "阪堺電気軌道",
     "鹿児島市交通局"
+   ]
+  },
+  "TRAMCO_CLOSED": {
+   "설명": "지하철도 있는 공영 사업자. 폐지된 노선은 모두 市電·都電(路面電車, 軌道)이라 tram으로 둔다. 현행 노선(지하철)은 그대로 rail (위키 札幌市電 110980163 등 각 市電 문서)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    "東京都交通局",
+    "名古屋市交通局",
+    "大阪市交通局",
+    "横浜市交通局",
+    "京都市交通局",
+    "神戸市交通局",
+    "札幌市交通局",
+    "仙台市交通局",
+    "呉市交通局",
+    "秋田市交通局",
+    "川崎市交通局"
+   ]
+  },
+  "TRAMKO": {
+   "설명": "공영 노면전차의 한국어 이름 머리. 사업자 이름(〇〇시 지하철, 〇〇시 교통국) 대신 쓴다. 「〇〇 시영 전차」(rail-history 「삿포로 시전(시영전차)」, 나무위키식), 都電은 「도덴」 (사용자 결정 2026-11-07)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "東京都交通局": "도덴",
+    "札幌市交通局": "삿포로 시영 전차",
+    "札幌市交通事業振興公社": "삿포로 시영 전차",
+    "函館市企業局交通部": "하코다테 시영 전차",
+    "仙台市交通局": "센다이 시영 전차",
+    "秋田市交通局": "아키타 시영 전차",
+    "川崎市交通局": "가와사키 시영 전차",
+    "横浜市交通局": "요코하마 시영 전차",
+    "名古屋市交通局": "나고야 시영 전차",
+    "京都市交通局": "교토 시영 전차",
+    "大阪市交通局": "오사카 시영 전차",
+    "神戸市交通局": "고베 시영 전차",
+    "呉市交通局": "구레 시영 전차",
+    "熊本市交通局": "구마모토 시영 전차",
+    "鹿児島市交通局": "가고시마 시영 전차"
+   }
+  },
+  "SUBWAYCO": {
+   "설명": "지하철 사업자. 이 사업자의 rail 노선은 지상 구간이 있어도 subway (사용자 결정 2026-11-07). 노면전차·모노레일·AGT 노선은 각 표가 먼저 정함",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    "東京地下鉄",
+    "東京都交通局",
+    "大阪市高速電気軌道",
+    "大阪市交通局",
+    "札幌市交通局",
+    "仙台市交通局",
+    "横浜市交通局",
+    "名古屋市交通局",
+    "京都市交通局",
+    "神戸市交通局",
+    "福岡市交通局"
+   ]
+  },
+  "SUBWAYKO": {
+   "설명": "공영 지하철 노선의 한국어 이름 머리. 사업자 이름(〇〇시 교통국) 대신 쓴다. 나무위키 제목이 있는 노선은 그 제목 그대로 (재평가 D02·LN-N04, 2026-11-07)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": {
+    "札幌市交通局": "삿포로 시영 지하철",
+    "仙台市交通局": "센다이시 지하철",
+    "横浜市交通局": "요코하마 시영 지하철",
+    "名古屋市交通局": "나고야 시영 지하철",
+    "京都市交通局": "교토 시영 지하철",
+    "神戸市交通局": "고베 시영 지하철",
+    "福岡市交通局": "후쿠오카시 지하철"
+   }
+  },
+  "LINETYPE": {
+   "설명": "사업자·노선 이름으로 못 가리는 노선 종류 (사업자, 노선, 종류). 종류: rail, subway, tram, monorail, agt, maglev, guideway_bus, cable, trolley. 사철 궤도선은 위키 분류 「日本の路面電車路線」을 따름(재평가 LN-T01·T02·T03) / 琴平参宮電鉄 琴平線: 「軌道線である丸亀線・琴平線」, 회사 문서 분류 「かつて存在した日本の路面電車路線」(琴平参宮電鉄 oldid=108925565, 2026-11-08 newlines NL-12)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "小田急電鉄",
+     "向ヶ丘遊園モノレール線",
+     "monorail"
+    ],
+    [
+     "山陽電気軌道",
+     "長関線",
+     "tram"
+    ],
+    [
+     "三重交通",
+     "中山線",
+     "tram"
+    ],
+    [
+     "三重交通",
+     "二見線",
+     "tram"
+    ],
+    [
+     "三重交通",
+     "内宮線",
+     "tram"
+    ],
+    [
+     "山陽電気軌道",
+     "幡生線",
+     "tram"
+    ],
+    [
+     "旭川市街軌道",
+     "近文線",
+     "tram"
+    ],
+    [
+     "アルピコ交通",
+     "浅間線",
+     "tram"
+    ],
+    [
+     "福島交通",
+     "保原線",
+     "tram"
+    ],
+    [
+     "福島交通",
+     "掛田線",
+     "tram"
+    ],
+    [
+     "福島交通",
+     "梁川線",
+     "tram"
+    ],
+    [
+     "福島交通",
+     "飯坂東線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "北九州線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "吉塚線",
+     "tram"
+    ],
+    [
+     "阪神電気鉄道",
+     "甲子園線",
+     "tram"
+    ],
+    [
+     "東急電鉄",
+     "玉川線",
+     "tram"
+    ],
+    [
+     "南海電気鉄道",
+     "平野線",
+     "tram"
+    ],
+    [
+     "阪神電気鉄道",
+     "北大阪線",
+     "tram"
+    ],
+    [
+     "旭川市街軌道",
+     "近文線 北海道神社前–競馬場北口前",
+     "tram"
+    ],
+    [
+     "福島交通",
+     "飯坂東線 聖光学院前–伊達駅前",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "貫通線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "呉服町線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "城南線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "戸畑線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "枝光線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "北方線",
+     "tram"
+    ],
+    [
+     "山陽電気軌道",
+     "大和町線",
+     "tram"
+    ],
+    [
+     "大阪市高速電気軌道",
+     "南港ポートタウン線",
+     "agt"
+    ],
+    [
+     "東京都交通局",
+     "日暮里・舎人ライナー",
+     "agt"
+    ],
+    [
+     "西武鉄道",
+     "山口線",
+     "agt"
+    ],
+    [
+     "名古屋鉄道",
+     "モンキーパークモノレール線",
+     "monorail"
+    ],
+    [
+     "姫路市",
+     "姫路市営モノレール",
+     "monorail"
+    ],
+    [
+     "名古屋市交通局協力会",
+     "東山公園モノレール",
+     "monorail"
+    ],
+    [
+     "ドリーム開発",
+     "ドリームランド線",
+     "monorail"
+    ],
+    [
+     "愛知高速交通",
+     "東部丘陵線",
+     "maglev"
+    ],
+    [
+     "名古屋ガイドウェイバス",
+     "ガイドウェイバス志段味線",
+     "guideway_bus"
+    ],
+    [
+     "名古屋鉄道",
+     "岐阜市内線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "岐阜市内線 忠節支線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "美濃町線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "田神線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "高富線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "鏡島線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "岡崎市内線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "福岡線",
+     "tram"
+    ],
+    [
+     "名古屋鉄道",
+     "起線",
+     "tram"
+    ],
+    [
+     "大分交通",
+     "別大線",
+     "tram"
+    ],
+    [
+     "大分交通",
+     "別大線 別府駅前支線",
+     "tram"
+    ],
+    [
+     "阪神電気鉄道",
+     "国道線",
+     "tram"
+    ],
+    [
+     "静岡鉄道",
+     "静岡市内線",
+     "tram"
+    ],
+    [
+     "静岡鉄道",
+     "清水市内線",
+     "tram"
+    ],
+    [
+     "静岡鉄道",
+     "清水市内線 西久保–袖師 旧線",
+     "tram"
+    ],
+    [
+     "静岡鉄道",
+     "秋葉線",
+     "tram"
+    ],
+    [
+     "小田急箱根",
+     "小田原市内線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "大牟田市内線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "循環線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "循環線 博多築港前–千鳥橋",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "循環線 旧線",
+     "tram"
+    ],
+    [
+     "西日本鉄道",
+     "福島線",
+     "tram"
+    ],
+    [
+     "豊橋鉄道",
+     "柳生橋支線",
+     "tram"
+    ],
+    [
+     "北陸鉄道",
+     "松金線",
+     "tram"
+    ],
+    [
+     "加越能鉄道",
+     "伏木線",
+     "tram"
+    ],
+    [
+     "山陽電気軌道",
+     "唐戸線",
+     "tram"
+    ],
+    [
+     "東武鉄道",
+     "前橋線",
+     "tram"
+    ],
+    [
+     "東武鉄道",
+     "高崎線",
+     "tram"
+    ],
+    [
+     "東武鉄道",
+     "伊香保線",
+     "tram"
+    ],
+    [
+     "茨城交通",
+     "水浜線",
+     "tram"
+    ],
+    [
+     "山梨交通",
+     "電車線",
+     "tram"
+    ],
+    [
+     "京福電気鉄道",
+     "嵐山本線",
+     "tram"
+    ],
+    [
+     "京福電気鉄道",
+     "北野線",
+     "tram"
+    ],
+    [
+     "富山地方鉄道",
+     "富山港線",
+     "tram"
+    ],
+    [
+     "とさでん交通",
+     "安芸線",
+     "rail"
+    ],
+    [
+     "士別軌道",
+     "士別軌道線",
+     "rail"
+    ],
+    [
+     "琴平参宮電鉄",
+     "琴平線",
+     "tram"
+    ],
+    [
+     "エイチ・エス・エス・ティ",
+     "横浜博線",
+     "maglev"
+    ],
+    [
+     "横浜エスケイ",
+     "横浜SK",
+     "cable"
+    ],
+    [
+     "日本万国博覧会協会",
+     "万国博モノレール",
+     "monorail"
+    ],
+    [
+     "沖縄国際海洋博覧会協会",
+     "KRT線",
+     "agt"
+    ],
+    [
+     "2005年日本国際博覧会協会",
+     "愛・地球博線",
+     "guideway_bus"
+    ],
+    [
+     "よみうりランド",
+     "よみうりランドモノレール",
+     "monorail"
+    ],
+    [
+     "アジア太平洋博覧会協会",
+     "よかトピアガイドウェイバス",
+     "guideway_bus"
+    ],
+    [
+     "なかや旅館",
+     "玄妙遊園ロマンスカー",
+     "cable"
+    ],
+    [
+     "浦島観光",
+     "狼煙山ケーブルカー",
+     "cable"
+    ],
+    [
+     "兵衛旅館",
+     "兵衛旅館鋼索鉄道",
+     "cable"
+    ],
+    [
+     "和歌山観光",
+     "新宮観光リフトカー",
+     "cable"
+    ],
+    [
+     "大阪観光",
+     "箕面鋼索鉄道",
+     "cable"
+    ],
+    [
+     "立山黒部貫光",
+     "鋼索線（黒部ケーブルカー）",
+     "cable"
+    ]
    ]
   },
   "TRAMLN": {
@@ -576,7 +1281,8 @@
     "泉北高速鉄道": "南海電気鉄道",
     "横浜新都市交通": "横浜シーサイドライン",
     "アイジーアールいわて銀河鉄道": "IGRいわて銀河鉄道",
-    "WILLER　TRAINS": "京都丹後鉄道（WILLER TRAINS）"
+    "WILLER　TRAINS": "京都丹後鉄道（WILLER TRAINS）",
+    "土佐電気鉄道": "とさでん交通"
    }
   },
   "N05AL": {
@@ -612,7 +1318,7 @@
    }
   },
   "OPERATORS": {
-   "설명": "Wikidata에서 찾지 못한 사업자",
+   "설명": "Wikidata에서 찾지 못한 사업자 / 2026-11-08 newlines 새 사업자 5(赤城登山鉄道·伊香保ケーブル鉄道·屋島登山鉄道·住友金属鉱山·秋田臨海鉄道): 일본어 위키 표제 읽기를 헵번식으로, 住友金属鉱山은 공식 영문 사명. 井華鉱業·別子鉱業은 읽기 원문이 없어 넣지 않음 / 2026-11-11 旅館 鋼索 사업자 5(なかや旅館·浦島観光·兵衛旅館·和歌山観光·大阪観光)와 三井三池港務所: 일반 읽기의 헵번식(회사 공식 영문 미확인)",
    "쓰는 곳": "tools/gen_en_names.py",
    "값": {
     "JR東日本": "JR East",
@@ -675,7 +1381,63 @@
     "山鹿温泉鉄道": "Yamaga Onsen Railway",
     "天塩炭礦鉄道": "Teshio Tanko Railway",
     "防石鉄道": "Boseki Railway",
-    "赤穂鉄道": "Ako Railway"
+    "赤穂鉄道": "Ako Railway",
+    "上田交通": "Ueda Kotsu",
+    "山梨交通": "Yamanashi Kotsu",
+    "新潟交通": "Niigata Kotsu",
+    "松尾鉱業": "Matsuo Mining",
+    "花巻電鉄": "Hanamaki Electric Railway",
+    "釧路臨港鉄道": "Kushiro Rinko Railway",
+    "井笠鉄道": "Ikasa Railway",
+    "姫路市": "Himeji City",
+    "日ノ丸自動車": "Hinomaru Jidosha",
+    "福島臨海鉄道": "Fukushima Rinkai Railway",
+    "筑豊鉄道": "Chikuho Railway",
+    "夕張鉄道": "Yubari Railway",
+    "根室拓殖鉄道": "Nemuro Takushoku Railway",
+    "宮崎交通": "Miyazaki Kotsu",
+    "江若鉄道": "Kojaku Railway",
+    "旭川電気軌道": "Asahikawa Electric Tramway",
+    "旭川市街軌道": "Asahikawa Shigai Kido",
+    "荒尾市": "Arao City",
+    "三井金属鉱業": "Mitsui Mining and Smelting",
+    "士別軌道": "Shibetsu Kido",
+    "岩手開発鉄道": "Iwate Kaihatsu Railway",
+    "三菱鉱業": "Mitsubishi Mining",
+    "大沼電鉄": "Onuma Electric Railway",
+    "羽幌炭礦鉄道": "Haboro Tanko Railway",
+    "雄別炭礦": "Yubetsu Tanko",
+    "沙流鉄道": "Saru Railway",
+    "常総筑波鉄道": "Joso Tsukuba Railway",
+    "日本鉱業": "Nippon Mining",
+    "上武鉄道": "Jobu Railway",
+    "北恵那鉄道": "Kita-Ena Railway",
+    "仙南交通": "Sennan Kotsu",
+    "大阪市交通局": "Osaka Municipal Transportation Bureau",
+    "秋田市交通局": "Akita City Transportation Bureau",
+    "呉市交通局": "Kure City Transportation Bureau",
+    "川崎市交通局": "Kawasaki City Transportation Bureau",
+    "山陽電気軌道": "Sanyo Electric Tramway",
+    "名古屋市交通局協力会": "Nagoya City Transportation Bureau Cooperative Association",
+    "赤城登山鉄道": "Akagi Tozan Railway",
+    "伊香保ケーブル鉄道": "Ikaho Cable Railway",
+    "屋島登山鉄道": "Yashima Tozan Railway",
+    "住友金属鉱山": "Sumitomo Metal Mining",
+    "秋田臨海鉄道": "Akita Rinkai Railway",
+    "横浜博覧会協会": "Yokohama Exposition Association",
+    "エイチ・エス・エス・ティ": "HSST Corporation",
+    "横浜エスケイ": "Yokohama SK",
+    "日本万国博覧会協会": "Japan Association for the 1970 World Exposition",
+    "沖縄国際海洋博覧会協会": "Okinawa International Ocean Exposition Association",
+    "2005年日本国際博覧会協会": "Japan Association for the 2005 World Exposition",
+    "よみうりランド": "Yomiuriland",
+    "アジア太平洋博覧会協会": "Asian-Pacific Exposition Association",
+    "なかや旅館": "Nakaya Ryokan",
+    "浦島観光": "Urashima Kanko",
+    "兵衛旅館": "Hyoe Ryokan",
+    "和歌山観光": "Wakayama Kanko",
+    "大阪観光": "Osaka Kanko",
+    "三井三池港務所": "Mitsui Miike Port Authority"
    }
   },
   "READINGS": {
@@ -704,7 +1466,6 @@
     "丸ノ内線方南町支線": "Marunouchi Line Honancho Branch",
     "夕張線登川支線": "Yubari Line Noborikawa Branch",
     "名城線・名港線": "Meijo-Meiko Line",
-    "1条線・山鼻線・山鼻西線・都心線": "Sapporo Streetcar",
     "天神大牟田線": "Tenjin-Omuta Line",
     "国際文化公園都市線": "Kokusai Bunka Koen Toshi Line",
     "西九州線": "Nishi-Kyushu Line",
@@ -728,7 +1489,6 @@
     "モンキーパークモノレール線": "Monkey Park Monorail",
     "秩父鉄道連絡線": "Chichibu Railway Connecting Line",
     "北しなの線": "Kita-Shinano Line",
-    "半蔵門線直通": "Hanzomon Line Through Service",
     "松田連絡線": "Matsuda Connecting Line",
     "鵜沼連絡線": "Unuma Connecting Line",
     "新ノ口連絡線": "Ninokuchi Connecting Line",
@@ -763,51 +1523,220 @@
     "赤迫支線": "Akasako Branch Line",
     "桜町支線": "Sakuramachi Branch Line",
     "大浦支線": "Oura Branch Line",
-    "蛍茶屋支線": "Hotarujaya Branch Line"
+    "蛍茶屋支線": "Hotarujaya Branch Line",
+    "一条線": "Ichijo Line",
+    "山鼻西線": "Yamahana-Nishi Line",
+    "山鼻線": "Yamahana Line",
+    "都心線": "Toshin Line",
+    "駅前線": "Ekimae Line",
+    "玄妙遊園ロマンスカー": "Genmyo Yuen Romance Car",
+    "狼煙山ケーブルカー": "Noroshiyama Cable Car",
+    "兵衛旅館鋼索鉄道": "Hyoe Ryokan Cable",
+    "新宮観光リフトカー": "Shingu Kanko Lift Car",
+    "箕面鋼索鉄道": "Minoo Cable",
+    "鋼索線（黒部ケーブルカー）": "Kurobe Cable Car",
+    "三池鉄道本線": "Miike Railway Main Line"
    }
   },
   "NOCONT": {
-   "설명": "같은 역에서 만나도 직통 운행하지 않는 노선 쌍 (노선 이름 일본어)",
+   "설명": "같은 역에서 만나도 선로가 이어지지 않는(직통하지 않는) 노선 쌍. 노선 ID 쌍이고 그 두 노선이 만나는 모든 역에 건다. 근거 없는 자동 연결 후보와 노선도 이어짐 행을 지운다. 한 역에만 걸 때는 JUNCTION_NOT. 한 번도 쓰이지 않는 행이 있으면 gen_wiki가 멈춘다 (2회차 종합 K02: 일본어 이름 키가 짧은 노선 이름과 안 맞아 행이 먹지 않던 일)",
+   "쓰는 곳": "tools/gen_wiki.py",
    "값": [
     [
-     "東横線",
-     "田園都市線"
+     "l_toyoko_line",
+     "l_den_en_toshi_line"
     ],
     [
-     "銀座線",
-     "半蔵門線"
+     "l_ginza_line",
+     "l_hanzomon_line"
     ],
     [
-     "銀座線",
-     "副都心線"
+     "l_ginza_line",
+     "l_fukutoshin_line"
     ],
     [
-     "半蔵門線",
-     "東横線"
+     "l_hanzomon_line",
+     "l_toyoko_line"
     ],
     [
-     "副都心線",
-     "半蔵門線"
+     "l_fukutoshin_line",
+     "l_hanzomon_line"
     ],
     [
-     "副都心線",
-     "田園都市線"
+     "l_fukutoshin_line",
+     "l_den_en_toshi_line"
     ],
     [
-     "京都線",
-     "奈良線"
+     "l_kyoto_line",
+     "l_nara_line"
     ],
     [
-     "国分寺線",
-     "多摩湖線"
+     "l_kokubunji_line",
+     "l_tamako_line"
     ],
     [
-     "吉野線",
-     "橿原線"
+     "l_yoshino_line",
+     "l_kashihara_line"
     ],
     [
-     "東急多摩川線",
-     "池上線"
+     "l_tokyu_tamagawa_line",
+     "l_ikegami_line"
+    ],
+    [
+     "l_oshiage_line",
+     "l_hanzomon_line"
+    ],
+    [
+     "l_asakusa_line",
+     "l_hanzomon_line"
+    ],
+    [
+     "l_mita_line",
+     "l_namboku_line_tokyo_metro"
+    ],
+    [
+     "l_tohoku_shinkansen",
+     "l_tokaido_shinkansen"
+    ],
+    [
+     "l_keiyo_line",
+     "l_tokaido_main_line"
+    ],
+    [
+     "l_keiyo_line",
+     "l_tohoku_main_line"
+    ],
+    [
+     "l_keiyo_line",
+     "l_sobu_main_line"
+    ],
+    [
+     "l_tohoku_main_line",
+     "l_sobu_main_line"
+    ],
+    [
+     "l_yamaguchi_line_seibu",
+     "l_sayama_line"
+    ],
+    [
+     "l_nanko_port_town_line",
+     "l_yotsubashi_line"
+    ],
+    [
+     "l_kaigan_line",
+     "l_seishin_line"
+    ],
+    [
+     "l_kaigan_line",
+     "l_yamate_line"
+    ],
+    [
+     "l_toba_line",
+     "l_sangu_line"
+    ],
+    [
+     "l_shima_line",
+     "l_sangu_line"
+    ],
+    [
+     "l_shinonoi_line",
+     "l_shinano_railway_line"
+    ],
+    [
+     "l_tazawako_line",
+     "l_iwate_galaxy_railway_line"
+    ],
+    [
+     "l_yamada_line",
+     "l_iwate_galaxy_railway_line"
+    ],
+    [
+     "l_keihanna_line",
+     "l_ikoma_line"
+    ],
+    [
+     "l_nagoya_main_line",
+     "l_kakamigahara_line"
+    ],
+    [
+     "l_shido_line",
+     "l_nagao_line"
+    ],
+    [
+     "l_takahama_line",
+     "l_gunchu_line"
+    ],
+    [
+     "l_yokogawara_line",
+     "l_gunchu_line"
+    ],
+    [
+     "l_kokubunji_line",
+     "l_seibuen_line"
+    ],
+    [
+     "l_kawagoe_line",
+     "l_takasaki_line"
+    ],
+    [
+     "l_tokaido_main_line",
+     "l_yamanote_line"
+    ],
+    [
+     "l_chuo_main_line",
+     "l_kansai_main_line"
+    ],
+    [
+     "l_furano_line",
+     "l_hakodate_main_line"
+    ],
+    [
+     "l_furano_line",
+     "l_soya_main_line"
+    ],
+    [
+     "l_hisatsu_line",
+     "l_hisatsu_orange_line"
+    ],
+    [
+     "l_sanin_main_line",
+     "l_nara_line"
+    ],
+    [
+     "l_tsurumi_line",
+     "l_tokaido_main_line"
+    ],
+    [
+     "l_tsurumi_line",
+     "l_musashino_line"
+    ],
+    [
+     "l_kitakyushu_line",
+     "l_kitagata_line"
+    ],
+    [
+     "l_negishi_line",
+     "l_yokosuka_line"
+    ],
+    [
+     "l_senseki_line",
+     "l_senzan_line"
+    ],
+    [
+     "l_hakata_minami_line",
+     "l_kagoshima_main_line"
+    ],
+    [
+     "l_horikawa_line",
+     "l_imadegawa_line"
+    ],
+    [
+     "l_horikawa_line",
+     "l_karasuma_line_kyoto_tram"
+    ],
+    [
+     "l_horikawa_line",
+     "l_kawaramachi_line"
     ]
    ]
   },
@@ -830,6 +1759,2234 @@
    "값": {
     "日本万国博覧会協会": "박람회장 안 교통 (유원지 안 철도와 같음)"
    }
+  },
+  "CONN_LABEL": {
+   "설명": "원자료가 회사 이름만 적은 현행 노선의 한국어 노선명. 위키 문서 제목을 근거로 공식 노선명을 붙인다",
+   "쓰는 곳": "tools/conn.py",
+   "값": {
+    "津軽鉄道": "츠가루 철도선",
+    "いわて銀河鉄道": "이와테 은하철도선",
+    "青い森鉄道": "아오이모리 철도선",
+    "秋田内陸縦貫鉄道": "아키타내륙종관철도 아키타 내륙선",
+    "由利高原鉄道": "유리 고원철도 쵸카이산로쿠선",
+    "阿武隈急行": "아부쿠마 급행선",
+    "会津鉄道": "아이즈 철도 아이즈선",
+    "秩父鉄道": "치치부 철도 치치부 본선",
+    "埼玉高速鉄道": "사이타마 고속철도선",
+    "いすみ鉄道": "이스미 철도 이스미선",
+    "わたらせ渓谷鐵道": "와타라세 계곡철도 와타라세 계곡선",
+    "芝山鉄道": "시바야마 철도선",
+    "小湊鉄道": "코미나토 철도선",
+    "上信電鉄": "조신 전철 조신선",
+    "上毛電気鉄道": "조모 전기철도 조모선",
+    "真岡鐵道": "모오카 철도 모오카선",
+    "東京臨海高速鉄道": "도쿄 임해고속철도 린카이선",
+    "東葉高速鉄道": "토요 고속철도 토요 고속선",
+    "箱根登山鉄道": "오다큐 하코네 철도선",
+    "北総鉄道": "호쿠소 철도 호쿠소선",
+    "富士急行": "후지산로쿠 전기철도 후지급행선",
+    "しなの鉄道": "시나노 철도선",
+    "黒部峡谷鉄道": "쿠로베 협곡철도 본선",
+    "伊豆急行": "이즈 급행선",
+    "天竜浜名湖鉄道": "텐류하마나코 철도 텐류하마나코선",
+    "遠州鉄道": "엔슈 철도선",
+    "愛知環状鉄道": "아이치 환상철도선",
+    "明知鉄道": "아케치 철도 아케치선",
+    "樽見鉄道": "타루미 철도 타루미선",
+    "伊勢鉄道": "이세 철도 이세선",
+    "信楽高原鐵道": "시가라키 고원철도 시가라키선",
+    "嵯峨野観光鉄道": "사가노 관광철도 사가노 관광선",
+    "水間鉄道": "미즈마 철도 미즈마선",
+    "北条鉄道": "호조 철도 호조선",
+    "智頭急行": "치즈 급행 치즈선",
+    "紀州鉄道": "키슈 철도선",
+    "若桜鉄道": "와카사 철도 와카사선",
+    "水島臨海鉄道": "미즈시마 임해철도 미즈시마 본선",
+    "井原鉄道": "이바라 철도 이바라선",
+    "甘木鉄道": "아마기 철도 아마기선",
+    "北九州高速鉄道": "키타큐슈 고속철도 코쿠라선",
+    "筑豊電気鉄道": "치쿠호 전기철도선",
+    "島原鉄道": "시마바라 철도선",
+    "肥薩おれんじ鉄道": "히사츠 오렌지 철도선",
+    "福島臨海鉄道": "후쿠시마 임해철도 본선"
+   }
+  },
+  "SAME_STATION": {
+   "설명": "이름이 바뀌었거나 표기가 달라 같은 이름 규칙으로 묶이지 않는 같은 역. [이름, 이름, 근거]. 2km 안의 두 이름 역을 한 역 묶음으로 본다 (DESIGN §2.9)",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "糠ノ目",
+     "高畠",
+     "奥羽本線 糠ノ目駅は1991年に高畠駅へ改称。山形交通高畠線の起点"
+    ],
+    [
+     "金津",
+     "芦原温泉",
+     "北陸本線 金津駅は1972年に芦原温泉駅へ改称。京福永平寺線・三国線の起点"
+    ],
+    [
+     "中津",
+     "中津",
+     "大分交通耶馬渓線・国鉄 中津駅は同じ駅"
+    ],
+    [
+     "伊予立花",
+     "伊予立花",
+     "伊予鉄道 横河原線・森松線の同じ駅"
+    ],
+    [
+     "丹後山田",
+     "与謝野",
+     "KTR 宮津線 丹後山田駅은 2015-04-01 与謝野駅으로 개칭한 같은 역 (감사 TOP-10)"
+    ]
+   ]
+  },
+  "SAME_NODE": {
+   "설명": "두 표에 다른 이름으로 나오는 같은 역. 한 노드로 묶어 계통이 이어지게 한다. [노선 이름, 이름, 이름, 근거]",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "島原鉄道線",
+     "島原港",
+     "島原外港",
+     "島原外港駅は2019-10-01に島原港駅へ改称した同じ駅。1960-11-11 開業前は南の列車が島原湊(島原船津)から出た (島原鉄道線 revid 111517354)"
+    ],
+    [
+     "三国線|北陸本線",
+     "金津",
+     "芦原温泉",
+     "北陸本線 金津駅は1972-03-01に芦原温泉駅へ改称。国鉄 三国線は同じ日に廃止された金津起点の支線で、同じ国鉄の同じ駅 (DESIGN §2.8 B, DB 감사 DBA-011)"
+    ],
+    [
+     "森松線|横河原線",
+     "伊予立花",
+     "いよ立花",
+     "伊予鉄道 森松線は横河原線 伊予立花(現 いよ立花)から分かれた。同じ会社の同じ駅 (DESIGN §2.8 B, DB 감사 DBA-012)"
+    ],
+    [
+     "会津線",
+     "芦ノ牧温泉",
+     "芦ノ牧温泉",
+     "国鉄 会津線 옛 선로(1932~1980)의 이음 역. 国鉄 会津線 역은 会津鉄道 会津線 노드를 함께 쓴다 (DB 감사 DBA-004)"
+    ],
+    [
+     "会津線",
+     "湯野上温泉",
+     "湯野上温泉",
+     "위와 같은 옛 선로의 다른 끝 (DB 감사 DBA-004)"
+    ],
+    [
+     "小坂井支線|飯田線",
+     "小坂井",
+     "小坂井",
+     "名鉄 小坂井支線(1926~1954)의 끝 小坂井는 豊川鉄道(지금 JR 飯田線) 小坂井와 같은 역. 「名鉄伊奈駅から当駅までを結ぶ名鉄小坂井支線が存在し、2つの鉄道路線の乗換駅となっていた」(小坂井駅 oldid=110037633), N05 名古屋本線 小坂井 점이 飯田線 小坂井 점과 같은 좌표 (2026-11-11)"
+    ],
+    [
+     "足尾線",
+     "神土",
+     "神戸",
+     "国鉄 足尾線 옛 선로 계통(r_ashio_line_godo_ashio_sori, 神土–草木–沢入 1912~1973-06-27)의 神土는 지금 神戸(わたらせ渓谷鐵道, 옛 이름 神土 ~1989-03-29)와 같은 역. 1973-06-27 草木ダム으로 神土–沢入 선로만 付け替え, 역은 옮기지 않음(1966 『停車場一覧』 411706 神土 ごうど 26.4 = DB, NDL 1873236 koma 79). 5 m 떨어진 노드 둘(n_godo_ashio → n_godo_watarase_keikoku)을 합침 (DESIGN §2.8 B, 2회차 결정 U04, 3회차 근거 조사 K19·회귀 kanto_1-002)"
+    ],
+    [
+     "枕崎線|万世線",
+     "加世田",
+     "加世田",
+     "南薩鉄道 万世線은 같은 회사 枕崎線(→鹿児島交通) 加世田에서 갈라진 지선(위키 加世田駅 「1916年10月22日：万世線当駅 - 薩摩大崎町間開業」). 같은 사업자의 같은 역이라 한 노드(n_kaseda_nansatsu → n_kaseda_kagoshima_kotsu, 좌표 같음·같은 group) (DESIGN §2.8 B, 2회차 결정 U04, 3회차 회귀 kyushu_1-013)"
+    ],
+    [
+     "東田本線|柳生橋支線",
+     "新川",
+     "新川",
+     "豊橋鉄道 柳生橋支線(1953-10-17~1976-03-07)은 같은 회사 東田本線 新川에서 갈라짐. 같은 사업자의 같은 정류장이라 한 노드(n_shinkawa_yagyubashi_branch → n_shinkawa_toyohashi, 같은 group, 63 m) (DESIGN §2.8 B, 2회차 결정 U04, 3회차 회귀 chubu_3-011)"
+    ],
+    [
+     "貝塚線|循環線|循環線 博多築港前–千鳥橋",
+     "千鳥橋",
+     "千鳥橋",
+     "西鉄 宮地岳線(貝塚線) 千鳥橋(元 西鉄博多)과 福岡市内線 循環線 千鳥橋, 循環線 博多築港前–千鳥橋 표의 千鳥橋는 같은 西日本鉄道의 같은 정류장(세 노드 좌표 같음, 1954-03-05 宮地岳線 西鉄博多–西鉄多々良 改軌·市内線 편입 뒤 직통, 3Y 건넘선). 위키 西鉄貝塚線 r111320593 「千鳥橋（元の西鉄博多）」·西鉄福岡市内線 r110542419 「千鳥橋には複線の3Y形亘り線」. 공개 ID는 n_chidoribashi_kaizuka(재설계 전 판부터 있던 ID)로, 노드 나누기(node_split)로 생긴 n_chidoribashi_fukuoka_tram과 표 노드 n_chidoribashi_loop_line_hakatachikkomae_chidoribashi는 removed.json (DESIGN §2.8 B, 2회차 결정 U04, 회귀 kyushu_2-030) (7회차 구조 2026-11-14; r6out/B)"
+    ],
+    [
+     "循環線|循環線 博多築港前–千鳥橋",
+     "博多築港前",
+     "博多築港前",
+     "같은 循環線의 博多築港前: 循環線 표와 循環線 博多築港前–千鳥橋 표(N05가 따로 낸 0.3 km 토막)의 博多築港前는 좌표가 같은 한 정류장. 千鳥橋와 같은 까닭으로 n_hakatachikkomae 하나로(n_hakatachikkomae_loop_line_hakatachikkomae_chidoribashi는 removed.json) (U04) (7회차 구조 2026-11-14; r6out/B)"
+    ],
+    [
+     "丸岡線|三国芦原線",
+     "西長田",
+     "西長田ゆりの里",
+     "京福電気鉄道 丸岡線(1931-06-15 丸岡–西長田 연장~1968-07-11)의 끝 西長田는 같은 회사 三国芦原線 西長田(지금 西長田ゆりの里)와 같은 역(위키 丸岡線 「丸岡駅 - 西長田駅間」, n05_fix 丸岡線 note). 같은 사업자의 같은 역이라 丸岡線 노드를 三国芦原線 노드 n_nishinagata_yurinosato로 합쳐 한 노드(3 m, 옛 ID는 id_rename.json merge) (DESIGN §2.8 B, 2회차 결정 U04, 3회차 전수 점검 chubu_2-15, 8회차 W1b)"
+    ]
+   ]
+  },
+  "HIDDEN_INSERT": {
+   "설명": "노리츠부시 표에 없는 정차하지 않는 분기점. 표의 km 자리에 숨은 역으로 넣는다. [표 제목 앞부분, 이름, km, 근거]",
+   "쓰는 곳": "tools/gen_source.py, tools/gen_n05.py",
+   "값": [
+    [
+     "信越本線 (直江津-新潟)",
+     "上沼垂",
+     134.4,
+     "上沼垂信号場. 1958-04-28까지 信越本線은 여기서 沼垂·初代 新潟로 갔다 (信越本線 노선도 BSkm)"
+    ],
+    [
+     "白新線",
+     "上沼垂",
+     1.9,
+     "上沼垂信号場. 1956-04-15~1958-04-28 白新線은 여기서 沼垂로 갔다"
+    ]
+   ]
+  },
+  "THROUGH": {
+   "설명": "근거로 확인한 직통 (gen_wiki가 이어짐 junction으로 넣고 기간을 싣는다). 한쪽만 끝나고 상대가 지나가는 직통, 기간 한정 직통, 스위치백 직통, 신칸센·노면전차 직통처럼 자동 규칙이 못 만드는 것. 행 {a, b, at:[a 노드, b 노드], from, to, src, why[, a_route, b_route, a_side, b_side]}. *_route는 그 쪽 계통(지선)을 가리키고, *_side는 그 쪽이 지나가는 역일 때 갈라지는 방향(up·down)이다. 노면전차↔철도 직통(U06)과 정기 직통 없는 선로 접속(U02)도 넣는다. NOCONT보다 이긴다 (직통·환승 전수 점검 2026-11-09)",
+   "쓰는 곳": "tools/gen_wiki.py",
+   "값": [
+    {"a": "l_mikawa_line", "b": "l_nagoya_main_line", "at": ["n_chiryu", "n_chiryu"], "from": "1959-04-01", "to": null, "src": "NDL 13098851 koma 522 『名古屋鉄道百年史』(1994) 연표 1959-04-01 「知立駅移転…三河線知立～三河知立間…使用開始」; https://ja.wikipedia.org/wiki/名鉄三河線 (r111573127) 「知立駅経由（名古屋本線直通）で名古屋へ向かう…名古屋方面への直通電車を取り止めた」; 위키 名鉄名古屋本線 노선도(r110530063) 知立 행 ABZ", "why": "知立(1959-04-01 지금 자리) 구내에서 三河線과 名古屋本線이 선로로 이어짐. 1959 이전 전에는 知立連絡線(知立信号所 경유)으로 직통했고, 새 知立 개업 뒤 三河線–名古屋 직통이 새 知立을 지나게 됨(百年史 연표 높음 + 위키 三河線 서술·名古屋本線 노선도 중간). 지금도 노선도에 접속이 그려져 끝은 두지 않음. 회귀 chubu_3-025 (7회차 2026-11-14; r7out/E) / 방면: 三河線→名古屋本線은 名古屋 쪽, 名古屋本線→三河線은 山線(猿投)·海線(碧南) 두 쪽. 두 노선이 모두 지나는 X자라 선형으로 방면을 못 정함(위키 名鉄三河線 rev111573127 「かつては海線、山線ともに本線直通特急が運転されていた」「知立駅経由（名古屋本線直通）で名古屋へ向かう」, 9회차 L K67)", "a_toward": "n_meitetsu_nagoya", "b_toward": ["n_sanage", "n_hekinan"]},
+    {
+     "a": "l_hibiya_line",
+     "b": "l_toyoko_line",
+     "at": [
+      "n_naka_meguro_tokyo_metro",
+      "n_naka_meguro_tokyu_railways"
+     ],
+     "from": "1964-08-29",
+     "to": "2013-03-16",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%B8%AD%E7%9B%AE%E9%BB%92%E9%A7%85&oldid=110796252",
+     "why": "中目黒 東京メトロ日比谷線→東急東横線 (R4, 높음)"
+    },
+    {
+     "a": "l_hibiya_line",
+     "b": "l_isesaki_line",
+     "at": [
+      "n_kita_senju_tokyo_metro",
+      "n_kita_senju_tobu"
+     ],
+     "from": "1962-05-31",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%8C%97%E5%8D%83%E4%BD%8F%E9%A7%85&oldid=111690404",
+     "why": "北千住 東京メトロ日比谷線→東武伊勢崎線 (R4, 높음)"
+    },
+    {
+     "a": "l_tozai_line_tokyo_metro",
+     "b": "l_chuo_main_line",
+     "at": [
+      "n_nakano_tokyo_metro",
+      "n_nakano"
+     ],
+     "from": "1966-04-28",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%B8%AD%E9%87%8E%E9%A7%85_%28%E6%9D%B1%E4%BA%AC%E9%83%BD%29&oldid=111291031",
+     "why": "中野 東京メトロ東西線→中央本線 (R4, 높음)"
+    },
+    {
+     "a": "l_tozai_line_tokyo_metro",
+     "b": "l_sobu_main_line",
+     "at": [
+      "n_nishi_funabashi_tokyo_metro",
+      "n_nishi_funabashi"
+     ],
+     "from": "1969-04-08",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E8%88%B9%E6%A9%8B%E9%A7%85&oldid=111640343",
+     "why": "西船橋 東京メトロ東西線→総武本線 (R4, 높음)"
+    },
+    {
+     "a": "l_chiyoda_line",
+     "b": "l_odawara_line",
+     "at": [
+      "n_yoyogi_uehara_tokyo_metro",
+      "n_yoyogi_uehara_odakyu"
+     ],
+     "from": "1978-03-31",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%A3%E3%80%85%E6%9C%A8%E4%B8%8A%E5%8E%9F%E9%A7%85&oldid=110650989",
+     "why": "代々木上原 東京メトロ千代田線→小田急小田原線 (R4, 높음)"
+    },
+    {
+     "a": "l_keikyu_main_line",
+     "b": "l_asakusa_line",
+     "at": [
+      "n_sengakuji_keikyu",
+      "n_sengakuji_toei"
+     ],
+     "from": "1968-06-21",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%B3%89%E5%B2%B3%E5%AF%BA%E9%A7%85&oldid=110943347",
+     "why": "泉岳寺 京急本線→都営地下鉄浅草線 (R4, 높음)"
+    },
+    {
+     "a": "l_chiyoda_line",
+     "b": "l_joban_line",
+     "at": [
+      "n_ayase_tokyo_metro",
+      "n_ayase"
+     ],
+     "from": "1971-04-20",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%B6%BE%E7%80%AC%E9%A7%85&oldid=111651345",
+     "why": "綾瀬 東京メトロ千代田線→常磐線 (R4, 중간) / 綾瀬는 두 노선 모두 지나가는 역이라 분기로 그림: 千代田線 쪽은 北綾瀬 쪽(아래), 常磐線 쪽은 北千住 쪽(위)으로 갈라짐(감사2 kanto_1-032·kanto_1-033)",
+     "a_side": "down",
+     "b_side": "up"
+    },
+    {
+     "a": "l_rinkai_line",
+     "b": "l_yamanote_line",
+     "at": [
+      "n_osaki_tokyo_waterfront_area_rapid_transit",
+      "n_osaki"
+     ],
+     "from": "2002-12-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%A7%E5%B4%8E%E9%A7%85&oldid=111579432",
+     "why": "大崎 東京臨海高速鉄道りんかい線→山手線 (R4, 높음)"
+    },
+    {
+     "a": "l_tokaido_main_line",
+     "b": "l_yamanote_line",
+     "at": [
+      "n_osaki",
+      "n_osaki"
+     ],
+     "from": "1980-10-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E5%A4%A7%E4%BA%95%E9%A7%85&oldid=111579453",
+     "why": "大崎 大崎支線→山手線 (R4, 높음) / 大崎支線은 東海道本線 지선 계통(공식 노선 구성 2026-11-09)"
+    },
+    {
+     "a": "l_tokyu_shin_yokohama_line",
+     "b": "l_toyoko_line",
+     "at": [
+      "n_hiyoshi_tokyu_railways",
+      "n_hiyoshi_tokyu_railways"
+     ],
+     "from": "2023-03-18",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%97%A5%E5%90%89%E9%A7%85_%28%E7%A5%9E%E5%A5%88%E5%B7%9D%E7%9C%8C%29&oldid=111651645",
+     "why": "日吉 東急新横浜線→東急東横線 (R4, 높음)"
+    },
+    {
+     "a": "l_sotetsu_shin_yokohama_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_hazawa_yokohama_kokudai_sotetsu",
+      "n_hazawa_yokohama_kokudai"
+     ],
+     "from": "2019-11-30",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%BE%BD%E6%B2%A2%E6%A8%AA%E6%B5%9C%E5%9B%BD%E5%A4%A7%E9%A7%85&oldid=111641437",
+     "why": "羽沢横浜国大 相鉄新横浜線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_toyoko_line",
+     "b": "l_minatomirai_line",
+     "at": [
+      "n_yokohama_tokyu_railways",
+      "n_yokohama_yokohama_minatomirai"
+     ],
+     "from": "2004-02-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%A8%AA%E6%B5%9C%E9%A7%85&oldid=111579577",
+     "why": "横浜 東急東横線→横浜高速鉄道みなとみらい線 (R5, 높음)"
+    },
+    {
+     "a": "l_hakone_tozan_train",
+     "b": "l_odawara_line",
+     "at": [
+      "n_odawara_odakyu_hakone",
+      "n_odawara_odakyu"
+     ],
+     "from": "1950-08-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%8F%E7%94%B0%E5%8E%9F%E9%A7%85&oldid=111559904",
+     "why": "小田原 小田急箱根鉄道線→小田急小田原線 (R4, 높음)"
+    },
+    {"a": "l_otsuki_line", "b": "l_chuo_main_line", "at": ["n_otsuki_fujikyu", "n_otsuki"], "from": "[1950-01-01..1962-04-14]", "to": null, "src": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%A7%E6%9C%88%E9%A7%85&oldid=111132018", "why": "大月 富士山麓電気鉄道大月線→中央本線 (R4, 높음) / 시작(10회차 D1): 위키 富士山麓電気鉄道富士急行線 rev111485365 年表 「1934年7月1日：東京駅 - 富士吉田駅間に臨時列車「高嶺」の直通運転を開始」(전전), 「1962年4月14日：新宿駅 - 河口湖駅間に急行「かわぐち」運転開始」「1986年11月1日：急行「かわぐち」廃止」, 지금은 臨時快速·特急 직통. 1950–1962 직통 근거가 없어 시작을 범위로(None을 줄임)"},
+    {
+     "a": "l_seibu_chichibu_line",
+     "b": "l_chichibu_railway_connecting_line",
+     "at": [
+      "n_seibu_chichibu",
+      "n_seibu_chichibu"
+     ],
+     "from": "1989-04-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E6%AD%A6%E7%A7%A9%E7%88%B6%E9%A7%85&oldid=110856618",
+     "why": "西武秩父 西武秩父線→西武秩父鉄道連絡線 (R4, 높음)"
+    },
+    {
+     "a": "l_chichibu_railway_connecting_line",
+     "b": "l_chichibu_main_line",
+     "at": [
+      "n_ohanabatake",
+      "n_ohanabatake"
+     ],
+     "from": "1989-04-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E6%AD%A6%E7%A7%A9%E7%88%B6%E9%A7%85&oldid=110856618",
+     "why": "御花畑 西武秩父鉄道連絡線→秩父鉄道秩父本線 (R4, 높음)"
+    },
+    {
+     "a": "l_izu_kyuko_line",
+     "b": "l_ito_line",
+     "at": [
+      "n_ito_izukyu",
+      "n_ito"
+     ],
+     "from": "1961-12-10",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BC%8A%E6%9D%B1%E9%A7%85&oldid=111452184",
+     "why": "伊東 伊豆急行線→伊東線 (R4, 높음)"
+    },
+    {
+     "a": "l_ito_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_atami",
+      "n_atami"
+     ],
+     "from": "1935-03-30",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%86%B1%E6%B5%B7%E9%A7%85&oldid=110536355",
+     "why": "熱海 伊東線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_shibayama_railway_line",
+     "b": "l_higashi_narita_line",
+     "at": [
+      "n_higashi_narita_shibayama",
+      "n_higashi_narita_keisei"
+     ],
+     "from": "2002-10-27",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E6%88%90%E7%94%B0%E9%A7%85&oldid=110967390",
+     "why": "東成田 芝山鉄道線→京成東成田線 (R4, 높음)"
+    },
+    {
+     "a": "l_hokuso_line",
+     "b": "l_keisei_main_line",
+     "at": [
+      "n_keisei_takasago_hokuso",
+      "n_keisei_takasago_keisei"
+     ],
+     "from": "1991-03-31",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E6%88%90%E9%AB%98%E7%A0%82%E9%A7%85&oldid=111660896",
+     "why": "京成高砂 北総鉄道北総線→京成本線 (R4, 높음)"
+    },
+    {
+     "a": "l_tsurumai_line",
+     "b": "l_inuyama_line",
+     "at": [
+      "n_kami_otai_nagoya_city",
+      "n_kami_otai_meitetsu"
+     ],
+     "from": "1993-08-12",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%B8%8A%E5%B0%8F%E7%94%B0%E4%BA%95%E9%A7%85&oldid=110879926",
+     "why": "上小田井 名古屋市営地下鉄鶴舞線→名鉄犬山線 (R4, 높음)"
+    },
+    {
+     "a": "l_hakozaki_line",
+     "b": "l_fukuoka_subway_airport_line",
+     "at": [
+      "n_nakasu_kawabata",
+      "n_nakasu_kawabata"
+     ],
+     "from": "1982-04-20",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%B8%AD%E6%B4%B2%E5%B7%9D%E7%AB%AF%E9%A7%85&oldid=110973449",
+     "why": "中洲川端 福岡市地下鉄箱崎線→福岡市地下鉄空港線 (R4, 높음)"
+    },
+    {
+     "a": "l_karasuma_line",
+     "b": "l_kyoto_line",
+     "at": [
+      "n_takeda_kyoto_city",
+      "n_takeda_kintetsu"
+     ],
+     "from": "1988-08-28",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%AB%B9%E7%94%B0%E9%A7%85_%28%E4%BA%AC%E9%83%BD%E5%BA%9C%29&oldid=111667065",
+     "why": "竹田 京都市営地下鉄烏丸線→近鉄京都線 (R4, 높음)"
+    },
+    {
+     "a": "l_tozai_line_kyoto_city",
+     "b": "l_keishin_line",
+     "at": [
+      "n_misasagi_kyoto_city",
+      "n_misasagi_keihan"
+     ],
+     "from": "1997-10-12",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%BE%A1%E9%99%B5%E9%A7%85&oldid=110952400",
+     "why": "御陵 京都市営地下鉄東西線→京阪京津線 (R4, 높음)"
+    },
+    {
+     "a": "l_nakanoshima_line",
+     "b": "l_keihan_main_line",
+     "at": [
+      "n_temmabashi_keihan",
+      "n_temmabashi_keihan"
+     ],
+     "from": "2008-10-19",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%A9%E6%BA%80%E6%A9%8B%E9%A7%85&oldid=109293707",
+     "why": "天満橋 京阪中之島線→京阪本線 (R4, 높음)"
+    },
+    {
+     "a": "l_hanshin_namba_line",
+     "b": "l_hanshin_main_line",
+     "at": [
+      "n_amagasaki_hanshin",
+      "n_amagasaki_hanshin"
+     ],
+     "from": "2009-03-20",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%BC%E5%B4%8E%E9%A7%85_%28%E9%98%AA%E7%A5%9E%29&oldid=110894170",
+     "why": "尼崎 阪神なんば線→阪神本線 (R4, 높음)"
+    },
+    {
+     "a": "l_jr_tozai_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_amagasaki",
+      "n_amagasaki"
+     ],
+     "from": "1997-03-08",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%BC%E5%B4%8E%E9%A7%85_%28JR%E8%A5%BF%E6%97%A5%E6%9C%AC%29&oldid=110847022",
+     "why": "尼崎 JR東西線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_jr_tozai_line",
+     "b": "l_katamachi_line",
+     "at": [
+      "n_kyobashi",
+      "n_kyobashi"
+     ],
+     "from": "1997-03-08",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E6%A9%8B%E9%A7%85_%28%E5%A4%A7%E9%98%AA%E5%BA%9C%29&oldid=111392924",
+     "why": "京橋 JR東西線→片町線 (R5, 높음)"
+    },
+    {
+     "a": "l_myoken_line",
+     "b": "l_takarazuka_main_line",
+     "at": [
+      "n_kawanishi_noseguchi_nose",
+      "n_kawanishi_noseguchi_hankyu"
+     ],
+     "from": "1997-11-17",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B7%9D%E8%A5%BF%E8%83%BD%E5%8B%A2%E5%8F%A3%E9%A7%85&oldid=111369418",
+     "why": "川西能勢口 能勢電鉄妙見線→阪急宝塚本線 (R4, 중간) / 방면: 特急「日生エクスプレス」 日生中央 - 川西能勢口 - 阪急大阪梅田(위키 能勢電鉄妙見線 rev111724024) → 妙見線에서 宝塚本線은 大阪梅田 쪽, 宝塚本線에서 妙見線은 山下(日生線) 쪽. 3회차 kinki_2-003",
+     "a_toward": "n_osaka_umeda_hankyu",
+     "b_toward": "n_yamashita_nose"
+    },
+    {
+     "a": "l_nara_line_kintetsu",
+     "b": "l_osaka_line",
+     "at": [
+      "n_fuse",
+      "n_fuse"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B8%83%E6%96%BD%E9%A7%85&oldid=111605065",
+     "why": "布施 近鉄奈良線→近鉄大阪線 (R4, 높음)"
+    },
+    {
+     "a": "l_tenri_line",
+     "b": "l_kashihara_line",
+     "at": [
+      "n_hirahata",
+      "n_hirahata"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B9%B3%E7%AB%AF%E9%A7%85&oldid=108862347",
+     "why": "平端 近鉄天理線→近鉄橿原線 (R4, 높음)"
+    },
+    {
+     "a": "l_kyoto_main_line",
+     "b": "l_takarazuka_main_line",
+     "at": [
+      "n_juso",
+      "n_juso"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%8D%81%E4%B8%89%E9%A7%85&oldid=110661048",
+     "why": "十三 阪急京都本線→阪急宝塚本線 (R4, 높음)"
+    },
+    {
+     "a": "l_chizu_express_line",
+     "b": "l_sanyo_main_line",
+     "at": [
+      "n_kamigori_chizu_express",
+      "n_kamigori"
+     ],
+     "from": "1994-12-03",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%B8%8A%E9%83%A1%E9%A7%85&oldid=111689656",
+     "why": "上郡 智頭急行智頭線→山陽本線 (R4, 높음)"
+    },
+    {
+     "a": "l_chizu_express_line",
+     "b": "l_inbi_line",
+     "at": [
+      "n_chizu_chizu_express",
+      "n_chizu"
+     ],
+     "from": "1994-12-03",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%99%BA%E9%A0%AD%E9%A7%85&oldid=110665890",
+     "why": "智頭 智頭急行智頭線→因美線 (R4, 높음)"
+    },
+    {
+     "a": "l_hokuhoku_line",
+     "b": "l_joetsu_line",
+     "at": [
+      "n_muikamachi_hokuetsu_express",
+      "n_muikamachi"
+     ],
+     "from": "1997-03-22",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%85%AD%E6%97%A5%E7%94%BA%E9%A7%85&oldid=111684858",
+     "why": "六日町 北越急行ほくほく線→上越線 (R4, 높음)"
+    },
+    {
+     "a": "l_hokuhoku_line",
+     "b": "l_shinetsu_main_line",
+     "at": [
+      "n_saigata_hokuetsu_express",
+      "n_saigata"
+     ],
+     "from": "1997-03-22",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%8A%80%E6%BD%9F%E9%A7%85&oldid=110063207",
+     "why": "犀潟 北越急行ほくほく線→信越本線 (R4, 높음)"
+    },
+    {
+     "a": "l_ise_line_ise",
+     "b": "l_kansai_main_line",
+     "at": [
+      "n_kawarada",
+      "n_kawarada"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%B2%B3%E5%8E%9F%E7%94%B0%E9%A7%85&oldid=109071995",
+     "why": "河原田 伊勢鉄道伊勢線→関西本線 (R4, 높음)"
+    },
+    {
+     "a": "l_ise_line_ise",
+     "b": "l_kisei_main_line",
+     "at": [
+      "n_tsu",
+      "n_tsu"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%B4%A5%E9%A7%85&oldid=110551017",
+     "why": "津 伊勢鉄道伊勢線→紀勢本線 (R4, 높음)"
+    },
+    {
+     "a": "l_asa_line",
+     "b": "l_dosan_line",
+     "at": [
+      "n_gomen_tosa_kuroshio",
+      "n_gomen"
+     ],
+     "from": "2002-07-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%BE%8C%E5%85%8D%E9%A7%85&oldid=111406739",
+     "why": "後免 土佐くろしお鉄道ごめん・なはり線→土讃線 (R4, 높음)"
+    },
+    {
+     "a": "l_yodo_line",
+     "b": "l_nakamura_line_tosa_kuroshio",
+     "at": [
+      "n_wakai",
+      "n_wakai"
+     ],
+     "from": "1988-04-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%8B%A5%E4%BA%95%E9%A7%85&oldid=110693610",
+     "why": "若井 予土線→土佐くろしお鉄道中村線 (R4, 높음)"
+    },
+    {
+     "a": "l_ibara_line",
+     "b": "l_fukuen_line",
+     "at": [
+      "n_kannabe_ibara",
+      "n_kannabe"
+     ],
+     "from": "1999-01-11",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%A5%9E%E8%BE%BA%E9%A7%85&oldid=110940643",
+     "why": "神辺 井原鉄道井原線→福塩線 (R4, 높음)"
+    },
+    {
+     "a": "l_senzan_line",
+     "b": "l_ou_main_line",
+     "at": [
+      "n_uzen_chitose",
+      "n_uzen_chitose"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%BE%BD%E5%89%8D%E5%8D%83%E6%AD%B3%E9%A7%85&oldid=110994077",
+     "why": "羽前千歳 仙山線→奥羽本線 (R4, 높음)"
+    },
+    {
+     "a": "l_kusatsu_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_kusatsu",
+      "n_kusatsu"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%8D%89%E6%B4%A5%E9%A7%85_%28%E6%BB%8B%E8%B3%80%E7%9C%8C%29&oldid=110630467",
+     "why": "草津 草津線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_sayama_line",
+     "b": "l_ikebukuro_line",
+     "at": [
+      "n_nishi_tokorozawa",
+      "n_nishi_tokorozawa"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E6%89%80%E6%B2%A2%E9%A7%85&oldid=111164569",
+     "why": "西所沢 西武狭山線→西武池袋線 (R4, 높음)"
+    },
+    {
+     "a": "l_meguro_line",
+     "b": "l_toyoko_line",
+     "at": [
+      "n_den_en_chofu",
+      "n_den_en_chofu"
+     ],
+     "from": "2000-08-06",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%94%B0%E5%9C%92%E8%AA%BF%E5%B8%83%E9%A7%85&oldid=110928440",
+     "why": "田園調布 東急目黒線→東急東横線 (R4, 높음)"
+    },
+    {
+     "a": "l_joetsu_line",
+     "b": "l_joetsu_shinkansen",
+     "at": [
+      "n_echigo_yuzawa",
+      "n_echigo_yuzawa"
+     ],
+     "from": "1990-12-20",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%B6%8A%E5%BE%8C%E6%B9%AF%E6%B2%A2%E9%A7%85&oldid=110940467",
+     "why": "越後湯沢 上越線→上越新幹線 (R6, 높음) / 上越新幹線 쪽에서는 上越線 ガーラ湯沢 지선 계통(표준궤)으로 갈라짐(감사2 kanto_1-029·chubu_2-01)",
+     "a_route": "r_joetsu_line_echigo_yuzawa_gala_yuzawa"
+    },
+    {
+     "a": "l_takamori_line_minami_aso",
+     "b": "l_hohi_main_line",
+     "at": [
+      "n_tateno",
+      "n_tateno"
+     ],
+     "from": "2023-07-15",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%AB%8B%E9%87%8E%E9%A7%85_%28%E7%86%8A%E6%9C%AC%E7%9C%8C%29&oldid=111047348",
+     "why": "立野 南阿蘇鉄道高森線→豊肥本線 (R4, 중간)"
+    },
+    {
+     "a": "l_hakata_minami_line",
+     "b": "l_sanyo_shinkansen",
+     "at": [
+      "n_hakata",
+      "n_hakata"
+     ],
+     "from": "1990-04-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%8D%9A%E5%A4%9A%E9%A7%85&oldid=111616046",
+     "why": "博多 博多南線→山陽新幹線 (R6, 높음)"
+    },
+    {
+     "a": "l_honshi_bisan_line",
+     "b": "l_uno_line",
+     "at": [
+      "n_chayamachi",
+      "n_chayamachi"
+     ],
+     "from": "1988-03-20",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%8C%B6%E5%B1%8B%E7%94%BA%E9%A7%85&oldid=111277282",
+     "why": "茶屋町 本四備讃線→宇野線 (R4, 높음) / 시작 1988-03-20(위키 本四備讃線 「茶屋町駅 - 児島駅間暫定開業」, 감사2 chugoku_shikoku_2-024)"
+    },
+    {
+     "a": "l_tokoname_line",
+     "b": "l_nagoya_main_line",
+     "at": [
+      "n_jingu_mae",
+      "n_jingu_mae"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%A5%9E%E5%AE%AE%E5%89%8D%E9%A7%85&oldid=109708699",
+     "why": "神宮前 名鉄常滑線→名鉄名古屋本線 (R4, 높음)"
+    },
+    {
+     "a": "l_kosei_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_yamashina",
+      "n_yamashina"
+     ],
+     "from": "1974-07-20",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B1%B1%E7%A7%91%E9%A7%85&oldid=111390081",
+     "why": "山科 湖西線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_ou_main_line",
+     "b": "l_tohoku_shinkansen",
+     "at": [
+      "n_fukushima_ou_main",
+      "n_fukushima_ou_main"
+     ],
+     "from": "1992-07-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%A6%8F%E5%B3%B6%E9%A7%85_%28%E7%A6%8F%E5%B3%B6%E7%9C%8C%29&oldid=111588831",
+     "why": "福島 奥羽本線→東北新幹線 (R6, 높음)"
+    },
+    {
+     "a": "l_tazawako_line",
+     "b": "l_tohoku_shinkansen",
+     "at": [
+      "n_morioka",
+      "n_morioka"
+     ],
+     "from": "1997-03-22",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%9B%9B%E5%B2%A1%E9%A7%85&oldid=111046457",
+     "why": "盛岡 田沢湖線→東北新幹線 (R6, 높음)"
+    },
+    {
+     "a": "l_iwate_galaxy_railway_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_morioka",
+      "n_morioka"
+     ],
+     "from": "2002-12-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%9B%9B%E5%B2%A1%E9%A7%85&oldid=111046457",
+     "why": "盛岡 IGRいわて銀河鉄道いわて銀河鉄道線→東北本線 (R4, 높음)"
+    },
+    {
+     "a": "l_hanawa_line",
+     "b": "l_iwate_galaxy_railway_line",
+     "at": [
+      "n_koma",
+      "n_koma"
+     ],
+     "from": "2002-12-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%A5%BD%E6%91%A9%E9%A7%85&oldid=110297676",
+     "why": "好摩 花輪線→IGRいわて銀河鉄道いわて銀河鉄道線 (R4, 높음)"
+    },
+    {
+     "a": "l_hokuriku_main_line",
+     "b": "l_ir_ishikawa_railway_line",
+     "at": [
+      "n_kanazawa",
+      "n_kanazawa"
+     ],
+     "from": "2015-03-14",
+     "to": "2024-03-16",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E9%87%91%E6%B2%A2%E9%A7%85&oldid=111082759",
+     "why": "金沢 北陸本線→IRいしかわ鉄道線 (R5, 높음)"
+    },
+    {
+     "a": "l_nanao_line",
+     "b": "l_ir_ishikawa_railway_line",
+     "at": [
+      "n_tsubata",
+      "n_tsubata"
+     ],
+     "from": "2015-03-14",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%B4%A5%E5%B9%A1%E9%A7%85&oldid=111628314",
+     "why": "津幡 七尾線→IRいしかわ鉄道線 (R4, 높음)"
+    },
+    {
+     "a": "l_aoimori_railway_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_hachinohe",
+      "n_hachinohe"
+     ],
+     "from": "2002-12-01",
+     "to": "2010-12-04",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%85%AB%E6%88%B8%E9%A7%85&oldid=111681484",
+     "why": "八戸 青い森鉄道線→東北本線 (R5, 높음)"
+    },
+    {
+     "a": "l_ominato_line",
+     "b": "l_aoimori_railway_line",
+     "at": [
+      "n_noheji",
+      "n_noheji"
+     ],
+     "from": "2010-12-04",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E9%87%8E%E8%BE%BA%E5%9C%B0%E9%A7%85&oldid=110750805",
+     "why": "野辺地 大湊線→青い森鉄道線 (R4, 중간)"
+    },
+    {
+     "a": "l_kita_shinano_line",
+     "b": "l_shinetsu_main_line",
+     "at": [
+      "n_nagano",
+      "n_nagano"
+     ],
+     "from": "2015-03-14",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E9%95%B7%E9%87%8E%E9%A7%85&oldid=111656404",
+     "why": "長野 しなの鉄道北しなの線→信越本線 (R5, 높음)"
+    },
+    {
+     "a": "l_iiyama_line",
+     "b": "l_kita_shinano_line",
+     "at": [
+      "n_toyono_iiyama",
+      "n_toyono_iiyama"
+     ],
+     "from": "2015-03-14",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%B1%8A%E9%87%8E%E9%A7%85&oldid=110637662",
+     "why": "豊野 飯山線→しなの鉄道北しなの線 (R4, 높음)"
+    },
+    {
+     "a": "l_myoko_haneuma_line",
+     "b": "l_shinetsu_main_line",
+     "at": [
+      "n_naoetsu",
+      "n_naoetsu"
+     ],
+     "from": "2015-03-14",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%9B%B4%E6%B1%9F%E6%B4%A5%E9%A7%85&oldid=111143827",
+     "why": "直江津 えちごトキめき鉄道妙高はねうまライン→信越本線 (R4, 높음)"
+    },
+    {
+     "a": "l_etsumi_hoku_line",
+     "b": "l_hapi_line_fukui_line",
+     "at": [
+      "n_echizen_hanando",
+      "n_echizen_hanando"
+     ],
+     "from": "2024-03-16",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%B6%8A%E5%89%8D%E8%8A%B1%E5%A0%82%E9%A7%85&oldid=110309297",
+     "why": "越前花堂 越美北線→ハピラインふくい線 (R4, 높음)"
+    },
+    {
+     "a": "l_shinetsu_main_line",
+     "b": "l_shinano_railway_line",
+     "at": [
+      "n_shinonoi",
+      "n_shinonoi"
+     ],
+     "from": "1997-10-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%AF%A0%E3%83%8E%E4%BA%95%E9%A7%85&oldid=110287514",
+     "why": "篠ノ井 信越本線→しなの鉄道線 (R5, 높음)"
+    },
+    {
+     "a": "l_kagoshima_main_line",
+     "b": "l_hisatsu_orange_line",
+     "at": [
+      "n_yatsushiro",
+      "n_yatsushiro"
+     ],
+     "from": "2004-03-13",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%85%AB%E4%BB%A3%E9%A7%85&oldid=110917849",
+     "why": "八代 鹿児島本線→肥薩おれんじ鉄道線 (R4, 높음)"
+    },
+    {
+     "a": "l_chikuhi_line",
+     "b": "l_karatsu_line",
+     "at": [
+      "n_karatsu",
+      "n_karatsu"
+     ],
+     "from": "1983-03-22",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%94%90%E6%B4%A5%E9%A7%85&oldid=111358700",
+     "why": "唐津 筑肥線→唐津線 (R4, 높음)"
+    },
+    {
+     "a": "l_oito_line",
+     "b": "l_shinonoi_line",
+     "at": [
+      "n_matsumoto",
+      "n_matsumoto"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%BE%E6%9C%AC%E9%A7%85&oldid=111460126",
+     "why": "松本 大糸線→篠ノ井線 (R4, 높음)"
+    },
+    {
+     "a": "l_taketoyo_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_obu",
+      "n_obu"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%A7%E5%BA%9C%E9%A7%85&oldid=110160848",
+     "why": "大府 武豊線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_minobu_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_fuji",
+      "n_fuji"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%AF%8C%E5%A3%AB%E9%A7%85&oldid=110513823",
+     "why": "富士 身延線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_suigun_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_asaka_nagamori",
+      "n_asaka_nagamori"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%AE%89%E7%A9%8D%E6%B0%B8%E7%9B%9B%E9%A7%85&oldid=111494504",
+     "why": "安積永盛 水郡線→東北本線 (R4, 높음)"
+    },
+    {
+     "a": "l_nippo_main_line",
+     "b": "l_kagoshima_main_line",
+     "at": [
+      "n_kokura",
+      "n_kokura"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%8F%E5%80%89%E9%A7%85_%28%E7%A6%8F%E5%B2%A1%E7%9C%8C%29&oldid=111403682",
+     "why": "小倉 日豊本線→鹿児島本線 (R4, 높음)"
+    },
+    {
+     "a": "l_hitahikosan_line",
+     "b": "l_nippo_main_line",
+     "at": [
+      "n_jono",
+      "n_jono"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%9F%8E%E9%87%8E%E9%A7%85_%28JR%E4%B9%9D%E5%B7%9E%29&oldid=111006747",
+     "why": "城野 日田彦山線→日豊本線 (R4, 높음)"
+    },
+    {
+     "a": "l_chitose_line",
+     "b": "l_hakodate_main_line",
+     "at": [
+      "n_shiroishi_chitose",
+      "n_shiroishi_chitose"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%99%BD%E7%9F%B3%E9%A7%85_%28JR%E5%8C%97%E6%B5%B7%E9%81%93%29&oldid=111645494",
+     "why": "白石 千歳線→函館本線 (R4, 높음)"
+    },
+    {
+     "a": "l_narita_line",
+     "b": "l_joban_line",
+     "at": [
+      "n_abiko",
+      "n_abiko"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%88%91%E5%AD%AB%E5%AD%90%E9%A7%85_%28%E5%8D%83%E8%91%89%E7%9C%8C%29&oldid=111508265",
+     "why": "我孫子 成田線→常磐線 (R4, 높음)"
+    },
+    {
+     "a": "l_togane_line",
+     "b": "l_sotobo_line",
+     "at": [
+      "n_oami",
+      "n_oami"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%A4%A7%E7%B6%B2%E9%A7%85&oldid=110714870",
+     "why": "大網 東金線→外房線 (R4, 높음)"
+    },
+    {
+     "a": "l_yokohama_line",
+     "b": "l_tokaido_main_line",
+     "at": [
+      "n_higashi_kanagawa",
+      "n_higashi_kanagawa"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E7%A5%9E%E5%A5%88%E5%B7%9D%E9%A7%85&oldid=109902459",
+     "why": "東神奈川 横浜線→東海道本線 (R4, 높음)"
+    },
+    {
+     "a": "l_chuo_main_line",
+     "b": "l_yamanote_line",
+     "at": [
+      "n_yoyogi",
+      "n_yoyogi"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%A3%E3%80%85%E6%9C%A8%E9%A7%85&oldid=111566898",
+     "why": "代々木 中央本線→山手線 (R4, 높음)"
+    },
+    {
+     "a": "l_chuo_main_line",
+     "b": "l_yamanote_line",
+     "at": [
+      "n_shinjuku",
+      "n_shinjuku"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%96%B0%E5%AE%BF%E9%A7%85&oldid=111566871",
+     "why": "新宿 中央本線→山手線 (R4, 높음)"
+    },
+    {
+     "a": "l_chuo_main_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_kanda_chuo_main",
+      "n_kanda_chuo_main"
+     ],
+     "from": "1919-03-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%A5%9E%E7%94%B0%E9%A7%85_%28%E6%9D%B1%E4%BA%AC%E9%83%BD%29&oldid=111579075",
+     "why": "神田 中央本線→東北本線 (R4, 높음)"
+    },
+    {
+     "a": "l_sobu_main_line",
+     "b": "l_chuo_main_line",
+     "at": [
+      "n_ochanomizu",
+      "n_ochanomizu"
+     ],
+     "from": "1932-07-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%BE%A1%E8%8C%B6%E3%83%8E%E6%B0%B4%E9%A7%85&oldid=111642625",
+     "why": "御茶ノ水 総武本線→中央本線 (R4, 높음)"
+    },
+    {
+     "a": "l_yamanote_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_tabata_tohoku_main",
+      "n_tabata_tohoku_main"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%94%B0%E7%AB%AF%E9%A7%85&oldid=111566707",
+     "why": "田端 山手線→東北本線 (R4, 높음)"
+    },
+    {
+     "a": "l_miyafuku_line",
+     "b": "l_sanin_main_line",
+     "at": [
+      "n_fukuchiyama_kyoto_tango_railway_willer_trains",
+      "n_fukuchiyama"
+     ],
+     "from": "1988-07-16",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%A6%8F%E7%9F%A5%E5%B1%B1%E9%A7%85&oldid=111369748",
+     "why": "福知山 京都丹後鉄道宮福線→山陰本線 (R4, 높음)"
+    },
+    {"a": "l_aichi_loop_line", "b": "l_chuo_main_line", "at": ["n_kozoji_aichi_loop", "n_kozoji"], "from": "2005-03-01", "to": null, "src": "https://ja.wikipedia.org/w/index.php?title=%E9%AB%98%E8%94%B5%E5%AF%BA%E9%A7%85&oldid=109222496", "why": "高蔵寺 愛知環状鉄道線→中央本線 (R4, 중간) / 시작(10회차 D1): 위키 愛知環状鉄道 rev111178734 「2005年3月1日 - 愛知万博の開催…に合わせて、エキスポシャトルの運行を開始」「10月1日 - 愛知環状鉄道線とJR中央本線名古屋駅間の直通…」, 「高蔵寺駅でJR線と線路を接続し、名古屋駅からの直通列車「エキスポシャトル」」; 위키 高蔵寺駅 rev109222496 「2004年10月11日：愛知環状鉄道線との直通運転設備が完成」, 지금 「一部の列車が瀬戸口駅より中央本線経由で名古屋駅方面へ…直通」. 1988 개업~2005 직통 없음(None을 2005-03-01로)"},
+    {
+     "a": "l_otsuki_line",
+     "b": "l_kawaguchiko_line",
+     "at": [
+      "n_fujisan",
+      "n_fujisan"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%AF%8C%E5%A3%AB%E5%B1%B1%E9%A7%85&oldid=111372222",
+     "why": "富士山 富士山麓電気鉄道大月線→富士山麓電気鉄道河口湖線 (R4, 중간)"
+    },
+    {"a": "l_miyajima_line", "b": "l_hiroden_main_line", "at": ["n_hiroden_nishi_hiroshima", "n_hiroden_nishi_hiroshima"], "from": "1958-06-20", "to": null, "src": "https://ja.wikipedia.org/w/index.php?title=%E5%BA%83%E9%9B%BB%E8%A5%BF%E5%BA%83%E5%B3%B6%EF%BC%88%E5%B7%B1%E6%96%90%EF%BC%89%E9%A7%85&oldid=111218008", "why": "広電西広島 広島電鉄宮島線→広島電鉄本線 (R6, 높음) / 시작(10회차 D1, 전수 점검 4회차 chugoku_shikoku_1-006): 위키 広島電鉄本線 rev110701122 年表 「1958年6月20日：午前ラッシュ時に広島駅前・宇品十三丁目 - 草津（宮島線）間で直通運転開始」「1962年1月10日：恒常ダイヤ…」; 위키 広島電鉄宮島線 rev110659845 같은 1958-06-20 직통 시작. 1962-01-01은 두 근거와 맞지 않아 정기 직통 시작 1958-06-20으로"},
+    {
+     "a": "l_chikuho_electric_railroad",
+     "b": "l_kitakyushu_line",
+     "at": [
+      "n_kumanishi",
+      "n_kumanishi"
+     ],
+     "from": "1956-03-21",
+     "to": "2000-11-26",
+     "b_side": "down",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E9%BB%92%E5%B4%8E%E9%A7%85&oldid=111448415",
+     "why": "筑豊電気鉄道→北九州線(黒崎駅前 쪽) 직통 (R6, 중간). 黒崎駅前–熊西를 물리 칸 하나로 두면서(FORCE_PAIR 北九州線→筑豊電気鉄道) 2000-11-26 전 筑豊 노선 칸은 熊西부터라 이음 자리를 黒崎駅前에서 熊西로 옮김(北九州線 쪽 방면은 黒崎駅前 쪽 = 순번이 작아지는 down). 시작은 筑豊 熊西–筑豊中間 개업 1956-03-21(노리츠부시 표) (7회차 구조 2026-11-14)"
+    },
+    {
+     "a": "l_fukubu_line",
+     "b": "l_mikuni_awara_line",
+     "at": [
+      "n_tawaramachi_fukui",
+      "n_tawaramachi_echizen"
+     ],
+     "from": "2016-03-27",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%94%B0%E5%8E%9F%E7%94%BA%E9%A7%85_%28%E7%A6%8F%E4%BA%95%E7%9C%8C%29&oldid=110422138",
+     "why": "田原町 福井鉄道福武線→えちぜん鉄道三国芦原線 (R6, 높음)"
+    },
+    {
+     "a": "l_nanao_line",
+     "b": "l_nanao_line_noto",
+     "at": [
+      "n_wakura_onsen",
+      "n_wakura_onsen"
+     ],
+     "from": "1991-09-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%92%8C%E5%80%89%E6%B8%A9%E6%B3%89%E9%A7%85&oldid=111443085",
+     "why": "和倉温泉 七尾線→のと鉄道七尾線 (R4, 중간)"
+    },
+    {"a": "l_kobe_kosoku_line_hankyu", "b": "l_kobe_kosoku_line_hanshin", "at": ["n_shinkaichi_hankyu", "n_shinkaichi_hanshin"], "from": "1968-04-07", "to": "2010-10-01", "src": "https://ja.wikipedia.org/w/index.php?title=%E6%96%B0%E9%96%8B%E5%9C%B0%E9%A7%85&oldid=111581306", "why": "新開地 阪急神戸高速線→阪神神戸高速線 (R4, 중간) / 방면: 阪急 열차는 西代 쪽(山陽 須磨浦公園까지), 山陽 열차는 阪急 쪽 三宮(六甲까지). 위키 山陽電気鉄道本線 「1998年2月15日に阪神との直通特急が運転開始されるまでは、山陽電鉄の列車が阪急神戸本線の六甲駅まで、阪神・阪急の主に特急が当線の須磨浦公園駅まで乗り入れていた」 (9회차 L K67) / 끝 고침(10회차 D1, 전수 점검 4회차 kinki_2-001): 1998-02-15에 끝난 것은 阪急 열차의 山陽 직통이고, 山陽 열차는 그 뒤에도 西代→新開地→阪急 神戸三宮로 직통. 위키 山陽電気鉄道本線 rev111474989 지금 운행 「普通 ←阪急神戸三宮 2本」, 「2006年10月28日のダイヤ改正で昼間時の阪急三宮駅発着が再開」; 위키 阪急神戸高速線 rev110635157 「1998年2月15日改正で再び両駅に停車…2001年3月10日改正で山陽特急の乗り入れ自体が廃止」, 2010-10-01 뒤 「山陽は単に乗り入れてくる形」. 新開地 阪神神戸高速線↔阪急神戸高速線 여객 직통은 지금까지(끝을 비움) / 끝 2010-10-01: 그날부터 같은 직통을 새 행(新開地가 阪急神戸高速線 끝 역인 시기)이 맡음", "a_toward": "n_nishidai_hanshin", "b_toward": "n_kobe_sannomiya_hankyu"},
+    {
+     "a": "l_shido_line",
+     "b": "l_nagao_line",
+     "at": [
+      "n_kawaramachi_takamatsu_kotohira",
+      "n_kawaramachi_takamatsu_kotohira"
+     ],
+     "from": "1951-12-26",
+     "to": "1994-06-26",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E7%93%A6%E7%94%BA%E9%A7%85&oldid=111284977",
+     "why": "瓦町（旧 琴電高松） 高松琴平電気鉄道志度線↔高松琴平電気鉄道長尾線 기간 한정 직통 (R1) / 끝 1994-06-26(위키 志度線 rev111442761 「瓦町駅改良工事着手に伴い琴平線・長尾線と分断され、孤立線となる」, 감사2 chugoku_shikoku_2-015)"
+    },
+    {
+     "a": "l_kokubunji_line",
+     "b": "l_seibuen_line",
+     "at": [
+      "n_higashi_murayama",
+      "n_higashi_murayama"
+     ],
+     "from": "1948-04-01",
+     "to": "2022-03-12",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E6%AD%A6%E5%9B%BD%E5%88%86%E5%AF%BA%E7%B7%9A&oldid=111288562",
+     "why": "東村山 西武国分寺線↔西武西武園線 기간 한정 직통 (R1)"
+    },
+    {
+     "a": "l_sasebo_line",
+     "b": "l_nishi_kyushu_line",
+     "at": [
+      "n_sasebo",
+      "n_sasebo"
+     ],
+     "from": "2009-03-14",
+     "to": "2020-03-14",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BD%90%E4%B8%96%E4%BF%9D%E9%A7%85&oldid=111358220",
+     "why": "佐世保 佐世保線↔松浦鉄道西九州線 기간 한정 직통 (R1)"
+    },
+    {
+     "a": "l_yurakucho_line",
+     "b": "l_tojo_main_line",
+     "at": [
+      "n_wakoshi_tokyo_metro",
+      "n_wakoshi_tobu"
+     ],
+     "from": "1987-08-25",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%92%8C%E5%85%89%E5%B8%82%E9%A7%85&oldid=111526784",
+     "why": "和光市 有楽町線→東上線 相互直通 (R4, 높음). 和光市–小竹向原은 有楽町線 선로(공식 노선 구성 2026-11-09). 사업자마다 나뉜 노드라 at 두 노드가 다름"
+    },
+    {
+     "a": "l_sendai_airport_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_natori_sendai_airport_transit",
+      "n_natori"
+     ],
+     "from": "2007-03-18",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%90%8D%E5%8F%96%E9%A7%85&oldid=111571036",
+     "why": "名取 仙台空港線→東北本線 仙台 직통 (R4, 중간). 사업자마다 나뉜 노드라 at 두 노드가 다름"
+    },
+    {
+     "a": "l_hokuriku_main_line",
+     "b": "l_ir_ishikawa_railway_line",
+     "at": [
+      "n_kanazawa",
+      "n_kanazawa"
+     ],
+     "from": "2015-03-14",
+     "to": "2024-03-16",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E9%87%91%E6%B2%A2%E9%A7%85&oldid=111082759",
+     "why": "金沢 北陸本線↔IRいしかわ鉄道線 (R5, 높음). 2015–2024 金沢는 두 선의 끝, 2024 뒤 金沢는 IR 중간역이라 시기별 끝 역(compile era_end)으로 이어짐"
+    },
+    {
+     "a": "l_aoimori_railway_line",
+     "b": "l_tohoku_main_line",
+     "at": [
+      "n_hachinohe",
+      "n_hachinohe"
+     ],
+     "from": "2002-12-01",
+     "to": "2010-12-04",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%85%AB%E6%88%B8%E9%A7%85&oldid=111681484",
+     "why": "八戸 青い森鉄道線↔東北本線 (R5, 높음). 2002–2010 八戸는 두 선의 끝이라 시기별 끝 역(compile era_end)으로 이어짐"
+    },
+    {
+     "a": "l_fukutoshin_line",
+     "b": "l_yurakucho_line",
+     "at": [
+      "n_kotake_mukaihara_tokyo_metro",
+      "n_kotake_mukaihara_tokyo_metro"
+     ],
+     "from": "1994-12-07",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%8F%E7%AB%B9%E5%90%91%E5%8E%9F%E9%A7%85",
+     "why": "小竹向原 副都心線(1994~2008 有楽町線 新線)→和光市 방면. 副都心線은 공식으로 小竹向原부터라 和光市 쪽은 有楽町線 선로로 직통(공식 노선 구성 2026-11-09)"
+    },
+    {
+     "a": "l_fukutoshin_line",
+     "b": "l_seibu_yurakucho_line",
+     "at": [
+      "n_kotake_mukaihara_tokyo_metro",
+      "n_kotake_mukaihara_seibu"
+     ],
+     "from": "1994-12-07",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B0%8F%E7%AB%B9%E5%90%91%E5%8E%9F%E9%A7%85",
+     "why": "小竹向原 副都心線→西武有楽町線 相互直通(공식 노선 구성 2026-11-09)"
+    },
+    {
+     "a": "l_koromo_line",
+     "b": "l_okazakishinai_line",
+     "at": [
+      "n_okazaki_ida",
+      "n_okazaki_ida"
+     ],
+     "from": null,
+     "to": "1962-06-17",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%90%8D%E9%89%84%E6%8C%99%E6%AF%8D%E7%B7%9A&oldid=96437285",
+     "why": "岡崎井田 挙母線↔岡崎市内線: 「岡崎井田 - 大樹寺間は軌道線の岡崎市内線の車両で運行され、実態として同線の一部」. 철도↔노면전차 직통(U06), 감사2 chubu_2-11"
+    },
+    {
+     "a": "l_gomen_line",
+     "b": "l_aki_line",
+     "at": [
+      "n_gomenmachi_tosaden_kotsu",
+      "n_gomenmachi_tosaden_kotsu"
+     ],
+     "from": "1954-07-05",
+     "to": "1974-04-01",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%9C%9F%E4%BD%90%E9%9B%BB%E6%B0%97%E9%89%84%E9%81%93%E5%AE%89%E8%8A%B8%E7%B7%9A&oldid=111330992",
+     "why": "後免町 後免線→安芸線: 「1954年7月5日：軌道線車両による高知市内 - 手結間直通運転開始」「1974年4月1日：廃止」. 철도↔노면전차 직통(U06), 감사2 chugoku_shikoku_1-005"
+    },
+    {
+     "a": "l_seibu_yurakucho_line",
+     "b": "l_yurakucho_line",
+     "at": [
+      "n_kotake_mukaihara_seibu",
+      "n_kotake_mukaihara_tokyo_metro"
+     ],
+     "from": "1983-10-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%A5%BF%E6%AD%A6%E6%9C%89%E6%A5%BD%E7%94%BA%E7%B7%9A&oldid=111514914",
+     "why": "小竹向原 西武有楽町線→有楽町線: 1983-10-01 小竹向原 - 新桜台 개업 때 「有楽町線の延伸区間のように扱わ」れ, 지금도 「主に有楽町線・副都心線との直通列車が運行」. 감사2 kanto_3-04"
+    },
+    {"a": "l_tsukuba_line", "b": "l_joban_line", "at": ["n_tsuchiura_tsukuba", "n_tsuchiura"], "from": "[1950-01-01..1979-12-31]", "to": "[1984-01-01..1985-01-01]", "src": "https://ja.wikipedia.org/w/index.php?title=%E7%AD%91%E6%B3%A2%E9%89%84%E9%81%93%E7%AD%91%E6%B3%A2%E7%B7%9A&oldid=110717630", "why": "土浦 筑波線→常磐線: 臨時 「常磐線上野駅から土浦駅を経由し筑波駅まで直通する列車」(1984年まで). 감사2 kanto_3-24 / 기간(10회차 D1): 위키 筑波鉄道筑波線 rev110717630 臨時 「筑波」 「1984年まで春季秋季を中心に設定」, 정차역 「（1979年時点）」. 1979 전 시작과 1984년 안 끝 날은 근거가 없어 범위(전 기간 None..None을 줄임)"},
+    {"a": "l_tsukuba_line", "b": "l_mito_line", "at": ["n_iwase_tsukuba", "n_iwase"], "from": "[1950-01-01..1959-11-30]", "to": "[1965-03-19..1969-12-31]", "src": "https://ja.wikipedia.org/w/index.php?title=%E7%AD%91%E6%B3%A2%E9%89%84%E9%81%93%E7%AD%91%E6%B3%A2%E7%B7%9A&oldid=110717630", "why": "岩瀬 筑波線→水戸線: 「1960年9月20日：水戸線小山駅までの乗り入れを開始」「1965年3月19日：水戸線乗り入れを廃止」, 「つくば山」 日立 - 岩瀬 - 筑波 직통(1960년대까지). 선로 연결(U02). 감사2 kanto_3-24 / 기간(10회차 D1): 위키 筑波鉄道筑波線 rev110717630 「しらぎく」 1959–1963년 11월 真鍋–岩瀬–笠間, 「1960年9月20日：水戸線小山駅までの乗り入れを開始」「1965年3月19日：水戸線乗り入れを廃止」, 「つくば山」 「1960年代まで」 日立–友部–岩瀬–筑波. 1959 전 시작과 1965–1969 끝은 근거가 없어 범위"},
+    {
+     "a": "l_yakage_line",
+     "b": "l_ikasa_line",
+     "at": [
+      "n_kitagawa_ikasa",
+      "n_kitagawa_ikasa"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%95%E7%AC%A0%E9%89%84%E9%81%93%E6%9C%AC%E7%B7%9A&oldid=110826603",
+     "why": "北川 矢掛線→井笠鉄道本線: 노선도 「北川駅」 다음 행 exABZgr 矢掛線(같은 762mm). 정기 직통 없어도 선로 연결이면 분기(U02), 감사2 chugoku_shikoku_1-009"
+    },
+    {
+     "a": "l_kannabe_line",
+     "b": "l_ikasa_line",
+     "at": [
+      "n_ibara_ikasa",
+      "n_ibara_ikasa"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%95%E7%AC%A0%E9%89%84%E9%81%93%E7%A5%9E%E8%BE%BA%E7%B7%9A&oldid=110826600",
+     "why": "井原 神辺線↔井笠鉄道本線: 神辺線 노선도 井原駅 다음 exSTR+l exABZlr 「本線→」, 本線 노선도 井原駅 exABZr+r 神辺線. 선로 연결(U02), 감사2 chugoku_shikoku_1-009"
+    },
+    {
+     "a": "l_matsuda_connecting_line",
+     "b": "l_gotemba_line",
+     "at": [
+      "n_matsuda_odakyu",
+      "n_matsuda"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%BE%A1%E6%AE%BF%E5%A0%B4%E7%B7%9A&oldid=111270900",
+     "why": "松田 松田連絡線→御殿場線: 「松田駅で小田急小田原線に連絡線経由で連絡しており、この連絡線を経由して…特急「ふじさん」号（旧・「あさぎり」号）が新宿駅 - 御殿場駅間で運行」. 감사2 kanto_2-026"
+    },
+    {
+     "a": "l_unuma_connecting_line",
+     "b": "l_takayama_main_line",
+     "at": [
+      "n_unuma_meitetsu",
+      "n_unuma"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%90%8D%E9%89%84%E5%90%84%E5%8B%99%E5%8E%9F%E7%B7%9A&oldid=111435319",
+     "why": "鵜沼 鵜沼連絡線→高山本線: 名鉄各務原線 노선도 「鵜沼連絡線」 행 다음 eABZg+4 「JR東海：高山本線」(선로 접속). 감사2 chubu_3-005·chubu_3-006 / 여객 직통: 名鉄 神宮前발 特急「北アルプス」가 鵜沼駅 - 高山駅間을 달림(2001-09-30까지, 準急「たかやま」 1965-08-05부터). 위키 高山本線 rev111504365 「2001年9月30日までは、鵜沼駅 - 高山駅間では、名古屋鉄道神宮前駅からの特急「北アルプス」が1日1往復だけ運転されていた」 (9회차 L, 다른 노드 이어짐 여객 근거)"
+    },
+    {"a": "l_jozankei_railway_line", "b": "l_chitose_line", "at": ["n_higashi_sapporo_jozankei", "n_higashi_sapporo_chitose"], "from": "1931-07-25", "to": "1969-10-01", "src": "https://ja.wikipedia.org/w/index.php?title=%E5%AE%9A%E5%B1%B1%E6%B8%93%E9%89%84%E9%81%93%E7%B7%9A&oldid=109021513", "why": "東札幌 定山渓鉄道線→千歳線(옛 선): 노선도 東札幌駅 다음 xABZgl 「千歳線（旧線）」(선로 접속, U02). 감사2 hokkaido_1-003 / 여객 직통: 위키 定山渓鉄道線 rev109021513 年表 1931-07-25 「苗穂駅への電車乗り入れを開始」, 1957-08-12 「気動車による国鉄札幌駅への乗り入れを開始」 (9회차 L, 다른 노드 이어짐 여객 근거) / 기간(10회차 D1): 위키 定山渓鉄道線 rev109021513 年表 1931-07-25 「苗穂駅への電車乗り入れを開始」, 1957-08-12 「気動車による国鉄札幌駅への乗り入れを開始。これに先立ち…同区間への電車乗り入れを中止」, 1969-10-01 「国鉄札幌駅への乗り入れを廃止」(노선 폐지 1969-11-01보다 한 달 앞). 전 기간(None..None)을 직통 기간으로 줄임"},
+    {
+     "a": "l_hirano_line_nankai",
+     "b": "l_hankai_line",
+     "at": [
+      "n_imaike",
+      "n_imaike_hankai"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E9%98%AA%E5%A0%BA%E9%9B%BB%E6%B0%97%E8%BB%8C%E9%81%93%E9%98%AA%E5%A0%BA%E7%B7%9A&oldid=111440345",
+     "why": "今池 南海平野線→阪堺線: 阪堺線 노선도 今池 아래 eABZgl 「南海：平野線」(같은 南海 궤도선의 분기, 1980 平野線 폐지까지). 감사2 kinki_1-026 / 여객 직통: 위키 南海平野線 rev111691357 駅一覧 「阪堺線直通」 칸(恵美須町–今池), 最終日 「平野発・恵美須町行最終電車」 (9회차 L, 다른 노드 이어짐 여객 근거)"
+    },
+    {
+     "a": "l_miyafuku_line",
+     "b": "l_fukuchiyama_line",
+     "at": [
+      "n_fukuchiyama_kyoto_tango_railway_willer_trains",
+      "n_fukuchiyama"
+     ],
+     "from": "[1988-07-16..1996-03-16]",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E9%83%BD%E4%B8%B9%E5%BE%8C%E9%89%84%E9%81%93%E5%AE%AE%E7%A6%8F%E7%B7%9A&oldid=111379181",
+     "why": "福知山 宮福線↔福知山線: 宮福線 노선도 福知山駅 「JR西：福知山線 / 山陰本線」 접속(같은 역 선로 연결, U02. 宮福線→山陰本線 직통 행과 같은 날). 감사2 kinki_1-009 / 여객 직통: 위키 京都丹後鉄道宮福線 rev111379181 年表 1996-03-16 「新大阪駅発着の特急「文殊」「タンゴディスカバリー」…運転開始」(福知山線 경유). 1988 개업부터 1996 사이 福知山線 직통 근거는 못 찾아 시작을 범위로 둠 (9회차 L, 다른 노드 이어짐 여객 근거)"
+    },
+    {
+     "a": "l_ohata_line_shimokita",
+     "b": "l_ominato_line",
+     "at": [
+      "n_shimokita",
+      "n_shimokita"
+     ],
+     "from": "1985-07-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E4%B8%8B%E5%8C%97%E4%BA%A4%E9%80%9A%E5%A4%A7%E7%95%91%E7%B7%9A&oldid=110559604",
+     "why": "下北 下北交通大畑線→大湊線 선로 접속. 「下北駅で大湊線から分岐」, 노선도 下北 BHF 칸에서 갈라지는 선이 옛 연결(e) 표시 없이 그려짐(같은 꼴의 弘南鉄道黒石線 川部 노선도는 eABZ로 옛 연결을 표시). 감사2 C1 K01(끝 역 판정 없음), 신뢰 중간"
+    },
+    {
+     "a": "l_shinetsu_main_line",
+     "a_route": "r_shinetsu_main_line_niigata_old_sekiya",
+     "b": "l_echigo_line",
+     "at": [
+      "n_sekiya",
+      "n_sekiya"
+     ],
+     "from": "1951-06-25",
+     "to": "1951-12-15",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E8%B6%8A%E5%BE%8C%E7%B7%9A&oldid=111454860",
+     "why": "関屋 信越本線 지선(新潟(旧)–関屋)→越後線. 「新潟駅（旧） - 関屋駅間の貨物線（信越本線支線）が敷設され、両線が信濃川を渡って接続された」, 지선 여객 영업 1951-06-25~12-15(그 뒤 越後線 편입). 감사2 C1 K01"
+    },
+    {
+     "a": "l_chiba_urban_monorail_line_2",
+     "b": "l_chiba_urban_monorail_line_1",
+     "at": [
+      "n_chiba_chiba_urban_monorail",
+      "n_chiba_chiba_urban_monorail"
+     ],
+     "from": "1995-08-01",
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%8D%83%E8%91%89%E9%83%BD%E5%B8%82%E3%83%A2%E3%83%8E%E3%83%AC%E3%83%BC%E3%83%AB2%E5%8F%B7%E7%B7%9A&oldid=109519873",
+     "why": "千葉 2号線→1号線. 「千葉駅で1号線と分岐」, 「1号線千葉みなと駅 - 千葉駅間と直通運転開始」(1995-08-01), 노선도 hABZgr. 1999~2002 계통 분리 때도 선로는 이어짐. 감사2 C1 K01"
+    },
+    {
+     "a": "l_kozakai_branch_line",
+     "b": "l_iida_line",
+     "at": [
+      "n_kozakai",
+      "n_kozakai"
+     ],
+     "from": null,
+     "to": "1954-12-25",
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E5%90%8D%E9%89%84%E5%B0%8F%E5%9D%82%E4%BA%95%E6%94%AF%E7%B7%9A&oldid=108772869",
+     "why": "小坂井 名鉄小坂井支線→飯田線(豊川鉄道). 「豊川鉄道（飯田線の前身）豊川駅まで直通運転開始」(1926), 「飯田線に乗り入れる豊川稲荷への正月輸送の臨時急行」, 1954-12-25 폐지. 감사2 C1 K01"
+    },
+    {
+     "a": "l_musashino_line",
+     "b": "l_keiyo_line",
+     "b_route": "r_keiyo_line_ichikawashiohama_minami_funabashi",
+     "at": [
+      "n_nishi_funabashi",
+      "n_nishi_funabashi"
+     ],
+     "from": null,
+     "to": null,
+     "src": "https://ja.wikipedia.org/w/index.php?title=%E6%AD%A6%E8%94%B5%E9%87%8E%E7%B7%9A&oldid=111444149",
+     "why": "西船橋 武蔵野線→京葉線 지선(市川塩浜·南船橋 방면). 「多くの列車が西船橋駅から京葉線に直通しており」, 京葉線 rev111484128 「2つの支線は…武蔵野線列車か貨物列車しか走行しておらず」. 감사2 kanto_2-038(1회차 재발) / 방면: 市川塩浜(東京) 쪽과 南船橋(海浜幕張) 쪽 둘 다(위키 武蔵野線 rev111444149 「日中時間帯は…東京駅発着と南船橋駅発着が交互に運行」), 두 방면이 선형으로 모두 곧아 방면 칸으로 적음 (9회차 L K67)",
+     "a_toward": [
+      "n_ichikawashiohama",
+      "n_minami_funabashi"
+     ]
+    },
+    {
+     "a": "l_minami_line",
+     "b": "l_hiroden_main_line",
+     "at": [
+      "n_matobacho",
+      "n_matobacho"
+     ],
+     "from": "1944-12-27",
+     "to": "2025-08-03",
+     "b_side": "down",
+     "src": "NDL 3294726 koma 89 『鉄道ピクトリアル』44(臨時増刊) 1994-07; NDL 3294823 koma 105 同 50(臨時増刊) 2000-07; NDL 13944348 koma 63 『日本の路面電車 現役路線編』(2000); https://ja.wikipedia.org/w/index.php?oldid=110659772",
+     "why": "的場町 広電 皆実線→本線(広島駅 쪽) 직통. 「広島駅と軍港である宇品を結ぶ皆実線が作られた」(1994), 「宇品と広島駅を結ぶ皆実線(的場-皆実町3丁目間の2,504m)が1944」(2000, 다른 필자), 「昭和19年(1944)12月27日には比治山線(現在の皆実線)」(2000) — 위키 「すべての電車が本線および宇品線に直通する」와 독립 중간 둘 이상. 끝은 2025-08-03 広島駅–的場町 폐지(駅前大橋線 개업). b_side down: 本線 계통(r_hiroden_main_line_hiroshima_matobacho, 広島駅 기점)을 広島駅 쪽에서 내려오는 열차가 곧장 皆実線으로 들어가고 皆実線 열차는 広島駅 쪽(猿猴橋町)으로 이어짐(compile의 반대 화면 방향 규칙) (4회차 근거 조사 2026-11-13; r4out chugoku_shikoku_1-006)"
+    },
+    {
+     "a": "l_uemachi_line",
+     "b": "l_hankai_line",
+     "at": [
+      "n_sumiyoshi_hankai",
+      "n_sumiyoshi_hankai"
+     ],
+     "from": "[1913-07-02..1985-12-31]",
+     "to": "2016-01-31",
+     "src": "NDL 13172060 koma 48 『全国鉄道事情大研究 大阪南部・和歌山篇』(1993); NDL 13224825 koma 22 『鉄道総合年表 1972-93』; NDL 3294590 koma 35 『鉄道ピクトリアル』35(臨時増刊) 1985-12; https://ja.wikipedia.org/w/index.php?oldid=111440345",
+     "why": "住吉 阪堺 上町線→阪堺線(我孫子道·浜寺駅前 쪽) 선로 연결. 「上町線電車の半数が住吉-我孫子道間に乗り入れる」(1993), 「(上町線…阪堺線住吉～我孫子道間)をワンマン運転化」(1993), 1985-12 계통 설명(我孫子道 出入庫系統) — 1985년 전에는 확실(중간 셋+위키). 설치일은 근거 없음: 시작은 두 노선이 住吉에 함께 선 첫날(DB 阪堺線 住吉 1911-12-01)부터 1985년 말까지의 범위 b_side up: 阪堺線에서 上町線으로 가는 쪽은 天王寺 방면(神ノ木)과 짝이고 上町線 열차는 阪堺線을 我孫子道·浜寺駅前 쪽으로 내려감(근거 「住吉-我孫子道間に乗り入れる」) (4회차 근거 조사 2026-11-13; r4out kinki_1-014). 2016-01-31 住吉–住吉公園 폐지 전에는 住吉가 上町線 중간 역이라 이 토막은 분기로 나오고, 그 뒤는 끝 이어짐(아래 행)으로 나눔. 분기 토막의 시작은 연결 시작과 上町線 住吉–住吉公園 개업(1913-07-02, DB) 중 늦은 날이라 [1913-07-02..1985-12-31]. 住吉가 上町線 끝이던 1911-12-01~1913-07-02에 연결이 있었는지는 근거 없어 넣지 않음 (K01, 2026-11-14)",
+     "b_side": "up"
+    },
+    {
+     "a": "l_uemachi_line",
+     "b": "l_hankai_line",
+     "at": [
+      "n_sumiyoshi_hankai",
+      "n_sumiyoshi_hankai"
+     ],
+     "from": "2016-01-31",
+     "to": null,
+     "src": "NDL 13172060 koma 48 『全国鉄道事情大研究 大阪南部・和歌山篇』(1993); NDL 13224825 koma 22 『鉄道総合年表 1972-93』; NDL 3294590 koma 35 『鉄道ピクトリアル』35(臨時増刊) 1985-12; https://ja.wikipedia.org/w/index.php?oldid=111440345",
+     "why": "住吉 阪堺 上町線→阪堺線(我孫子道·浜寺駅前 쪽) 선로 연결. 「上町線電車の半数が住吉-我孫子道間に乗り入れる」(1993), 「(上町線…阪堺線住吉～我孫子道間)をワンマン運転化」(1993), 1985-12 계통 설명(我孫子道 出入庫系統) — 1985년 전에는 확실(중간 셋+위키). 설치일은 근거 없음: 시작은 두 노선이 住吉에 함께 선 첫날(DB 阪堺線 住吉 1911-12-01)부터 1985년 말까지의 범위 b_side up: 阪堺線에서 上町線으로 가는 쪽은 天王寺 방면(神ノ木)과 짝이고 上町線 열차는 阪堺線을 我孫子道·浜寺駅前 쪽으로 내려감(근거 「住吉-我孫子道間に乗り入れる」) (4회차 근거 조사 2026-11-13; r4out kinki_1-014). 2016-01-31 住吉–住吉公園 폐지(위키 上町線)로 住吉가 上町線 끝 역이 된 뒤의 끝 이어짐 (K01, 2026-11-14)",
+     "b_side": "up"
+    },
+    {
+     "a": "l_senseki_line",
+     "b": "l_ishinomaki_line",
+     "at": [
+      "n_ishinomaki",
+      "n_ishinomaki"
+     ],
+     "from": "[1990-07-21..2016-08-06]",
+     "to": null,
+     "b_side": "up",
+     "src": "https://www.jreast.co.jp/sendai/upload-images/2016/06/sensekitohokuline.pdf (JR東日本 仙台支社 2016-06-29 「仙石東北ライン一部列車の女川駅直通運転の開始について」, 제목·날짜); https://response.jp/article/2016/06/30/277710.html; https://ja.wikipedia.org/w/index.php?oldid=111322221",
+     "why": "石巻 仙石線→石巻線 선로 연결. 2016-08-06부터 仙石東北ライン 1왕복이 石巻을 거쳐 女川까지 직통(JR 보도 자료 제목·レスポンス·위키). 1990-07-21 駅舎 통합 전에는 仙石線이 따로 頭端式 2면 2선 승강장이라 연결 없음(위키 石巻駅). 연결 시작이 1990 통합 때인지 2016 직통 때인지는 근거 없어 범위. 지금까지 위키 노선도·자동 행이 1928-11-22부터 잇던 것을 이 행이 대신함. b_side up: 위키 石巻線 노선도(rev111464534) 행과 같은 값. 石巻線을 올라오는(小牛田 쪽에서 오는 반대) 쪽과 짝이라 仙石線 열차는 石巻線을 女川 쪽으로 이어감(2016 직통 방면과 맞음) (3회차 근거 조사 2026-11-13; r3out K01)"
+    },
+    {"a": "l_keio_line", "b": "l_shinjuku_line_toei", "at": ["n_shinjuku_keio", "n_shinjuku_toei"], "from": "1980-03-16", "to": null, "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E7%8E%8B%E6%96%B0%E7%B7%9A&oldid=111094481", "why": "京王線(新宿 노드에 京王新線 新線新宿–初台 칸을 함께 둠)과 都営新宿線은 新線新宿(都営 노드 n_shinjuku_toei)에서 이어짐. 위키 京王新線 노선도·「京王新線を走る都営10-300形電車」(중간) + 이미 있던 위키 노선도 이어짐 행(京王線 rev111519832). 이어지는 노드를 新宿三丁目로 잘못 고르던 것을 노드 지정으로 고침. 3회차 kanto_2-008 (판 2026-11-15.1, W1a) / 여객 직통: 위키 京王線 rev111519832 年表 1980-03-16 「都営地下鉄新宿線開通、相互直通運転開始」 (9회차 L)"},
+    {"a": "l_yamanote_line", "b": "l_tokaido_main_line", "at": ["n_shinagawa", "n_shinagawa"], "from": "1925-11-01", "to": null, "src": "https://ja.wikipedia.org/w/index.php?title=%E5%B1%B1%E6%89%8B%E7%B7%9A&oldid=111774144", "why": "운전 계통 山手線은 東海道本線(東京–品川)·東北本線(田端–東京)을 합쳐 1925-11-01부터 환상 운전(위키 山手線 rev111774144 「経由路線=東北本線（田端駅 - 東京駅間）東海道本線（東京駅 - 品川駅間）」 「1925年（大正14年）11月1日から環状運転」, 産経 2025-11-01 인용). 田端 행(東北本線)과 대칭으로 品川에서 東海道本線 田町·東京 쪽으로 이어짐. 3회차 kanto_3-02", "a_toward": "n_tokyo", "b_toward": "n_osaki"},
+    {"a": "l_hokuso_line", "b": "l_matsudo_line", "at": ["n_kita_hatsutomi_hokuso", "n_kita_hatsutomi"], "from": "1979-03-09", "to": "1992-07-08", "src": "https://ja.wikipedia.org/w/index.php?title=%E5%8C%97%E7%B7%8F%E9%89%84%E9%81%93%E5%8C%97%E7%B7%8F%E7%B7%9A&oldid=111140937", "why": "北総線 1期(北初富–小室, 1979-03-09 개업)는 新京成線(지금 京成松戸線)에 들어가 松戸까지 직통, 1992-07-08 新鎌ヶ谷 개업과 함께 직통 폐지(위키 北総鉄道北総線 rev111140937, 和久田『私鉄史ハンドブック』1993 p.63 인용). 「北初富駅東側の新京成線との分岐点付近の連絡線」. 3회차 kanto_1-009", "a_route": "r_hokuso_line_kita_hatsutomi_hokuso_nishi_shiroi", "a_toward": "n_matsudo_keisei"},
+    {"a": "l_katsuyama_eiheiji_line", "b": "l_eiheiji_line", "at": ["n_eiheijiguchi", "n_higashifuruichi"], "from": "1925-09-16", "to": "2001-06-25", "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E7%A6%8F%E9%9B%BB%E6%B0%97%E9%89%84%E9%81%93%E6%B0%B8%E5%B9%B3%E5%AF%BA%E7%B7%9A&oldid=108719970", "why": "永平寺線은 東古市(지금 永平寺口)에서 越前本線(勝山永平寺線)과 선로로 이어짐: 위키 えちぜん鉄道勝山永平寺線 rev111511386 노선도 「eABZg+l …永平寺線」「eABZgr …京福:永平寺線」, 위키 京福電気鉄道永平寺線 rev108719970(1969 金津–東古市 폐지, 2001-06-24 휴지). 두 노드(越前本線 永平寺口·永平寺線 東古市)는 같은 역. 3회차 chubu_2-14 / 방면: 越前本線→永平寺線은 永平寺 쪽, 永平寺線→越前本線은 福井 쪽(위키 京福電気鉄道永平寺線 rev108719970 「永平寺発福井行き」「福井駅から直通の臨時特急列車」, 9회차 L K67)", "a_toward": "n_eiheiji", "b_toward": "n_fukui_echizen"},
+    {"a": "l_kyoto_main_line", "b": "l_senri_line", "at": ["n_awaji", "n_awaji"], "from": null, "to": null, "src": "https://ja.wikipedia.org/w/index.php?title=%E6%B7%A1%E8%B7%AF%E9%A7%85&oldid=111695967", "why": "淡路는 X자 교차에 연결선 둘: 「京都本線の十三駅から千里線の北千里駅へ向かう線路と、京都本線の京都河原町駅から千里線の天神橋筋六丁目駅へ向かう線路」(위키 淡路駅 rev111695967, 配線図 출처 川島令三『全線・全駅・全配線』7권). 환승①과 함께 분기 두 줄(北千里 방면·天神橋筋六丁目 방면). 3회차 kinki_2-008 (판 2026-11-15.1, W1a)", "a_toward": ["n_kita_senri", "n_kunijima"], "b_toward": ["n_juso", "n_kyoto_kawaramachi"]},
+    {
+     "a": "l_nanao_line_noto",
+     "b": "l_nanao_line",
+     "at": [
+      "n_nanao",
+      "n_nanao"
+     ],
+     "from": "1991-09-01",
+     "to": null,
+     "src": "ja.wikipedia 七尾線 「七尾駅 - 和倉温泉駅間はのと鉄道も第二種鉄道事業者」; ja.wikipedia のと鉄道七尾線",
+     "why": "七尾–和倉温泉은 JR 七尾線 선로를 のと鉄道가 함께 쓰는 공용 선로(SHARED_TRACK, U03)라 七尾 노드를 하나로 합쳤다. のと鉄道 계통은 七尾에서 JR 선로로 이어진다(U02 선로 접속). 8회차 W1b"
+    },
+    {
+     "a": "l_ibara_line",
+     "b": "l_hakubi_line",
+     "at": [
+      "n_soja",
+      "n_soja"
+     ],
+     "from": "1999-01-11",
+     "to": null,
+     "src": "ja.wikipedia 井原鉄道井原線 「総社駅 - 清音駅間はJR伯備線との共用区間」",
+     "why": "井原鉄道는 総社–清音에서 伯備線 선로를 함께 쓴다(SHARED_TRACK, U03). 総社 노드를 합쳐 끝 역에서 伯備線 선로로 이어짐(U02). 8회차 W1b"
+    },
+    {
+     "a": "l_ibara_line",
+     "b": "l_kibi_line",
+     "at": [
+      "n_soja",
+      "n_soja"
+     ],
+     "from": "1999-01-11",
+     "to": null,
+     "src": "ja.wikipedia 井原鉄道井原線(総社–清音 伯備線 공용), ja.wikipedia 吉備線(総社에서 伯備線과 접속)",
+     "why": "井原鉄道와 吉備線은 総社 구내에서 같은 伯備線 선로에 붙어 선로가 이어진다(정기 직통 없음, U02 선로 접속). 総社 노드를 합친 뒤 판정(SHARED_TRACK, U03). 8회차 W1b"
+    },
+{"a": "l_chitose_line", "b": "l_hakodate_main_line", "at": ["n_naebo_old", "n_naebo_old"], "from": "1926-08-21", "to": "1973-09-09", "src": "https://ja.wikipedia.org/w/index.php?oldid=111061740", "why": "千歳線 옛 선(苗穂–東札幌–北広島, 1926-08-21~1973-09-09)은 옛 苗穂역에서 函館本線과 선로로 이어져 갈라짐(위키 千歳線 廃止区間 「苗穂駅 - 東札幌駅間 (3.1 km)」, 函館本線 선로 위 역에서 출발). 계통 첫 역을 옛 자리 n_naebo_old로 옮기며(n05_fix 苗穂【旧】) 분기 판정이 없어진 것을 채움. 函館本線 쪽은 白石(旭川) 쪽으로 갈라짐 (8회차 W2 2026-11-15; audit3 hokkaido_1-001)", "a_route": "r_chitose_line_naebo_kita_hiroshima", "b_side": "down"},
+{"a": "l_kobe_main_line", "b": "l_kobe_kosoku_line_sanyo", "at": ["n_kobe_sannomiya_hankyu", "n_sannomiya_sanyo"], "from": "1968-04-07", "to": "1998-02-15", "src": "https://ja.wikipedia.org/w/index.php?oldid=111474989", "why": "神戸三宮 阪急神戸本線↔山陽 神戸高速線: 위키 山陽電気鉄道本線 rev111474989 「1998年2月15日に阪神との直通特急が運転開始されるまでは、山陽電鉄の列車が阪急神戸本線の六甲駅まで、阪神・阪急の主に特急が当線の須磨浦公園駅まで乗り入れていた」. 1998-02-15 뒤는 환승 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_kobe_kosoku_line_hankyu", "b": "l_sanyo_main_line_sanyo", "at": ["n_nishidai_hankyu", "n_nishidai_sanyo"], "from": "1968-04-07", "to": "1998-02-15", "src": "https://ja.wikipedia.org/w/index.php?oldid=111474989", "why": "西代 阪急神戸高速線↔山陽本線: 위키 山陽電気鉄道本線 rev111474989 「1998年2月15日…までは…阪神・阪急の主に特急が当線の須磨浦公園駅まで乗り入れていた」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_kobe_kosoku_line_hanshin", "b": "l_sanyo_main_line_sanyo", "at": ["n_nishidai_hanshin", "n_nishidai_sanyo"], "from": "1968-04-07", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111474989", "why": "西代 阪神神戸高速線↔山陽本線: 위키 山陽電気鉄道本線 rev111474989 「西代駅を通るほとんどの列車が阪神神戸高速線に直通し」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_hanshin_main_line", "b": "l_kobe_kosoku_line_sanyo", "at": ["n_motomachi_hanshin", "n_motomachi_sanyo"], "from": "1968-04-07", "to": "2010-10-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111454992", "why": "元町 阪神本線↔山陽 神戸高速線(2010-10-01 山陽 第二種 폐지까지): 위키 阪神本線 rev111454992 「元町駅からは…神戸高速線と直通運転しており、同線を介して大阪梅田駅から山陽電気鉄道本線の山陽姫路駅まで直通する「直通特急」」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_komaki_line", "b": "l_kamiiida_line", "at": ["n_kamiiida_meitetsu", "n_kamiiida_nagoya_city"], "from": "2003-03-27", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=108883804", "why": "上飯田 名鉄小牧線↔上飯田線: 위키 名鉄小牧線 rev108883804 「名古屋市営地下鉄上飯田線との相互直通運転をワンマン運転で開始し、名城線の平安通駅まで直通」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_akasako_branch_line", "b": "l_nagasaki_tram_main_line", "at": ["n_sumiyoshi_nagasaki_tram_akasako_branch", "n_sumiyoshi_nagasaki_tram_nagasaki_tram_main"], "from": null, "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110003846", "why": "住吉 長崎電気軌道 赤迫支線↔本線: 위키 長崎電気軌道赤迫支線 rev110003846 「事実上の本線の延伸区間…1号・2号・3号各系統が運行されており、いずれも長崎駅前停留場まで本線に乗り入れている」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_namba_line", "b": "l_hanshin_namba_line", "at": ["n_osaka_namba_kintetsu", "n_osaka_namba_hanshin"], "from": "2009-03-20", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111064764", "why": "大阪難波 近鉄難波線↔阪神なんば線: 위키 近鉄難波線 rev111064764 「2009年（平成21年）3月20日：阪神なんば線と相互直通運転開始」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_senri_line", "b": "l_sakaisuji_line", "at": ["n_tenjimbashisuji_6_chome_hankyu", "n_tenjimbashisuji_6_chome_osaka_metro"], "from": "1969-12-06", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=109783576", "why": "天神橋筋六丁目 阪急千里線↔堺筋線: 위키 阪急千里線 rev109783576 「天神橋筋六丁目駅から大阪市高速電気軌道 (Osaka Metro) 堺筋線と相互直通運転を行っており」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_chikuhi_line", "b": "l_fukuoka_subway_airport_line", "at": ["n_meinohama", "n_meinohama_fukuoka_subway"], "from": "1983-03-22", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110909455", "why": "姪浜 筑肥線↔空港線: 위키 筑肥線 rev110909455 「1983年（昭和58年）3月22日に姪浜駅 - 唐津駅間の電化および福岡市地下鉄空港線との直通運転開始」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_isesaki_line", "b": "l_hanzomon_line", "at": ["n_oshiage_tobu", "n_oshiage_tokyo_metro"], "from": "2003-03-19", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111559422", "why": "押上 東武伊勢崎線↔半蔵門線: 위키 東武伊勢崎線 rev111559422 「押上駅から東京メトロ半蔵門線・東急田園都市線（10両編成）との相互直通運転」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_oshiage_line", "b": "l_asakusa_line", "at": ["n_oshiage_keisei", "n_oshiage_toei"], "from": "1960-12-04", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110685499", "why": "押上 京成押上線↔浅草線: 위키 京成押上線 rev110685499 「1960年に都営1号線（現在の浅草線）と直通運転が開始され」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_tokyu_shin_yokohama_line", "b": "l_sotetsu_shin_yokohama_line", "at": ["n_shin_yokohama_tokyu_railways", "n_shin_yokohama_sotetsu"], "from": "2023-03-18", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111490953", "why": "新横浜 東急新横浜線↔相鉄新横浜線: 위키 東急新横浜線 rev111490953 「相鉄新横浜線を経由して相鉄本線、相鉄いずみ野線との相互直通運転」(2023-03-18 개업) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_kinugawa_line", "b": "l_aizu_kinugawa_line", "at": ["n_shin_fujiwara_tobu", "n_shin_fujiwara_yagan"], "from": "1986-10-09", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111044830", "why": "新藤原 東武鬼怒川線↔野岩鉄道: 위키 東武鬼怒川線 rev111044830 「1986年（昭和61年）10月9日 野岩鉄道会津鬼怒川線が開業し、直通運転を開始」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_aizu_line_aizu", "b": "l_aizu_kinugawa_line", "at": ["n_aizukogen_ozeguchi_aizu", "n_aizukogen_ozeguchi_yagan"], "from": "1990-10-12", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=108995651", "why": "会津高原尾瀬口 会津鉄道会津線↔野岩鉄道: 위키 会津鉄道会津線 rev108995651 「1990年（平成2年）10月12日：会津田島駅 - 会津高原駅間が直流1,500 Vで電化。東武鉄道・野岩鉄道と相互直通運転を開始」. 그 전(1986–1990, 국철 会津線 시절 포함)은 환승 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_midosuji_line", "b": "l_namboku_line_kita_osaka_kyuko", "at": ["n_esaka_osaka_metro", "n_esaka_kita_osaka_kyuko"], "from": "1970-02-24", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111315085", "why": "江坂 御堂筋線↔北大阪急行: 위키 Osaka Metro御堂筋線 rev111315085 「江坂駅から北大阪急行電鉄南北線（北大阪急行線）と相互直通運転を行っており」(1970-02-24 北大阪急行 개업) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_toyoko_line", "b": "l_fukutoshin_line", "at": ["n_shibuya_tokyu_railways", "n_shibuya_tokyo_metro"], "from": "2013-03-16", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111564452", "why": "渋谷 東急東横線↔副都心線: 위키 東急東横線 rev111564452 「3月16日に副都心線直通開始」「2013年（平成25年）3月15日の副都心線との相互直通運転開始までは…頭端式ホーム」. 2008-06-14 副都心線 渋谷 개업부터 2013-03-16 전은 환승 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_den_en_toshi_line", "b": "l_hanzomon_line", "at": ["n_shibuya_tokyu_railways", "n_shibuya_tokyo_metro"], "from": "1978-08-01", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111498924", "why": "渋谷 東急田園都市線↔半蔵門線: 위키 東急田園都市線 rev111498924 「渋谷駅からさらに半蔵門線へ直通運転を行う現在の運転系統が確立」(1978-08-01 半蔵門線 渋谷–青山一丁目 개업) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_meguro_line", "b": "l_namboku_line_tokyo_metro", "at": ["n_meguro_tokyu_railways", "n_meguro_tokyo_metro"], "from": "2000-09-26", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110905097", "why": "目黒 東急目黒線↔南北線: 위키 東急目黒線 rev110905097 「目黒駅からは地下鉄線への相互直通運転…東京メトロ南北線・埼玉高速鉄道…都営地下鉄三田線」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_meguro_line", "b": "l_mita_line", "at": ["n_meguro_tokyu_railways", "n_meguro_tokyo_metro"], "from": "2000-09-26", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110905097", "why": "目黒 東急目黒線↔三田線: 위키 東急目黒線 rev110905097 「都営地下鉄三田線西高島平駅までに乗り入れる系統」 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_tozai_line_tokyo_metro", "b": "l_toyo_rapid_railway_line", "at": ["n_nishi_funabashi_tokyo_metro", "n_nishi_funabashi_toyo_rapid"], "from": "1996-04-27", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111572190", "why": "西船橋 東西線↔東葉高速線: 위키 東京メトロ東西線 rev111572190 「4月27日：東葉高速鉄道東葉高速線（西船橋 - 東葉勝田台間）が開業し、営団との相互直通運転開始」(1996) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_toyota_line", "b": "l_tsurumai_line", "at": ["n_akaike_meitetsu", "n_akaike_nagoya_city"], "from": "1979-07-29", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=109783176", "why": "赤池 名鉄豊田線↔鶴舞線: 위키 名鉄豊田線 rev109783176 「途中駅のホーム番号は全列車が直通する地下鉄鶴舞線に合わせられており」(1979-07-29 개업) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_namboku_line_tokyo_metro", "b": "l_saitama_rapid_railway_line", "at": ["n_akabane_iwabuchi_tokyo_metro", "n_akabane_iwabuchi_saitama"], "from": "2001-03-28", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110801164", "why": "赤羽岩淵 南北線↔埼玉高速鉄道線: 위키 東京メトロ南北線 rev110801164 「相互直通運転をしている埼玉高速鉄道線」(2001-03-28 개업) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_keihanna_line", "b": "l_osaka_metro_chuo_line", "at": ["n_nagata_kintetsu", "n_nagata_osaka_metro"], "from": "1986-10-01", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110958524", "why": "長田 近鉄けいはんな線(東大阪線)↔中央線: 위키 近鉄けいはんな線 rev110958524 「Osaka Metro中央線と相互直通運転を行い」(1986-10-01 東大阪線 개업) (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_kashima_line", "b": "l_oarai_kashima_line", "at": ["n_kashima_soccer_stadium", "n_kashima_soccer_stadium_kashima_rinkai"], "from": "1994-03-12", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111584634", "why": "鹿島サッカースタジアム 鹿島線↔大洗鹿島線: 위키 鹿島線 rev111584634 「鹿島線の同区間に大洗鹿島線の列車が乗り入れる形態」「2011年…4月16日…鹿島臨海鉄道大洗鹿島線との直通運転再開」. 1994-03-12 전은 通過 경계라 확장 행이 맡음 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124)"},
+{"a": "l_abukuma_express_line", "b": "l_tohoku_main_line", "at": ["n_fukushima_abukuma_express", "n_fukushima_ou_main"], "from": "1988-07-01", "to": "2004-03-13", "src": "https://ja.wikipedia.org/w/index.php?oldid=111170784", "why": "福島 阿武隈急行線↔東北本線: 위키 阿武隈急行線 rev111170784 「福島駅（矢野目信号場） - 槻木駅が電化…東北本線郡山駅 - 阿武隈急行線富野駅間で相互直通運転開始」(1988-07-01 전선 개업). 奥羽本線과는 여객 직통 근거 없어 환승 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124) / 끝(10회차 D1, 전수 점검 4회차 tohoku_1-001·tohoku_2-002): 위키 阿武隈急行線 rev111170784 「かつては東北本線福島駅 - 郡山駅間とも相互直通運転を行っていた」「2004年（平成16年）3月13日のダイヤ改正で廃止された」. 그 뒤 福島는 다른 노드라 환승, 槻木(같은 노드) 이어짐은 그대로"},
+{"a": "l_kosaka_line", "b": "l_hanaoka_line", "at": ["n_odate_kosaka", "n_odate_hanaoka"], "from": "[1962-10-01..1963-10-01]", "to": "[1963-10-02..1985-04-01]", "src": "https://ja.wikipedia.org/w/index.php?oldid=110437621", "why": "大館 小坂線↔花岡線: 위키 小坂製錬小坂線 rev110437621 「1963年10月1日改正 上下とも9本、全列車が花岡線に直通」. 小坂線 改軌(1962) 전은 궤간 달라 직통 없음, 1985-04-01 花岡線 여객 폐지까지 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124) / 기간(10회차 D1): 위키 小坂製錬小坂線 rev110437621 「1962年10月1日 : 全線の軌間を1,067mmに改軌」, 「1963年10月1日改正 上下とも9本、全列車が花岡線に直通」, 「1984年6月1日当時 1日4往復…所要時間は全線36-38分」(小坂線 안 시간이라 직통이 그때 남았는지 근거 없음); 위키 同和鉱業花岡線 rev108597698 「1951年…1067mmへ改軌（小坂線の改軌は1962年）」. 확실한 것은 1963-10-01 직통뿐이라 시작·끝을 범위로"},
+{"a": "l_kisei_main_line", "b": "l_nankai_main_line", "at": ["n_wakayamashi", "n_wakayamashi_nankai"], "from": "[1951-04-01..1951-05-31]", "to": "1985-03-13", "src": "https://ja.wikipedia.org/w/index.php?oldid=111257602", "why": "和歌山市 紀勢本線↔南海本線: 위키 紀勢本線 rev111257602 「1985年（昭和60年）3月13日：南海本線からの直通列車が廃止」「この区間では1985年3月13日まで「きのくに」などの…南海…難波駅からの直通列車」, 1959-07-15 「新宮駅 - 東和歌山駅（現・和歌山駅）間で南海難波駅発着の客車を併結」. 1950 뒤 시작일은 근거 없어 범위. 1985-03-13 뒤는 甲種 수송뿐이라 환승 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124) / 시작(10회차 D1): 위키 きのくに (列車) rev109168272 「国鉄・南海直通優等列車沿革」 1940-08-08 「南海鉄道の直通廃止」, 1950-10-01 臨時快速 「黒潮」 설정, 1951-05-07 「またこのころ、「黒潮」に南海線直通難波駅発着の編成が充当される…国鉄所有車両が乗り入れる形」, 「1952年5月頃より：「黒潮」の難波駅発着編成に南海所有客車サハ4801形客車の使用を開始」. 전후 첫날은 「このころ」라 1950-10-01~1952-05 범위 / 시작 좁힘: 위키 南海サハ4801形客車 rev105890703 「南海鉄道の南紀（紀勢西線）直通列車は1951年（昭和26年）4月に復活」(きのくに 문서 「1951年5月7日…このころ」와 함께 1951-04~05)"},
+{"a": "l_hobara_line", "b": "l_kaketa_line", "at": ["n_hobara_fukushima", "n_hobara_kaketa"], "from": "[1926-12-02..1934-08-25]", "to": "1971-04-12", "src": "https://ja.wikipedia.org/w/index.php?oldid=109650637", "why": "保原 保原線↔掛田線: 위키 福島交通飯坂東線 rev109650637 1963年当時 「伊達 - 掛田間40分」(伊達駅前–保原線–保原–掛田線 직통). 시작일은 근거 없어 범위. 掛田線↔梁川線 직통 근거는 없어 환승 (9회차 L, 다른 노드 이어짐 여객 근거, X 넘김 K124) / 시작(10회차 D1, 전수 점검 4회차 tohoku_1-003): 인용한 「伊達 - 掛田間40分」은 같은 문서 「1934年（昭和9年）8月25日改正当時」 항목이라 시작 범위 상한을 1934-08-25로. 1969年4月 「長岡分岐点 - 掛田間と長岡分岐点 - 梁川間に各2往復客貨混合列車」(1950 뒤 직통)"},
+    {"a": "l_sunzu_line", "b": "l_tokaido_main_line", "at": ["n_mishima_izuhakone", "n_mishima"], "from": "1949-10-09", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110893299; https://ja.wikipedia.org/w/index.php?oldid=111772764; https://ja.wikipedia.org/w/index.php?oldid=111489393", "why": "三島 駿豆線↔東海道本線 여객 직통: 위키 伊豆箱根鉄道駿豆線 rev110893299 年表 「1949年10月9日：東京から国鉄の準急「いでゆ」が乗り入れ開始」「1950年10月7日：東京から国鉄の準急「あまぎ」…乗り入れ開始」, 지금도 「特急「踊り子」が…乗り入れる」; 위키 三島駅 rev111772764 「東京駅発着で東海道本線と駿豆線を直通運転する特急「踊り子」」(독립 문서 둘, 중간 둘). 방면은 東京 쪽(踊り子). 1965–의 大垣발 準急「するが」 등 서쪽 직통은 기간 근거가 모자라 방면에 넣지 않음 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_tokyo"},
+    {"a": "l_nikko_line_tobu", "b": "l_tohoku_main_line", "at": ["n_kurihashi_tobu", "n_kurihashi"], "from": "2006-03-18", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111096124; https://ja.wikipedia.org/w/index.php?oldid=111544956", "why": "栗橋 東武日光線↔東北本線(宇都宮線) 여객 직통: 위키 東武日光線 rev111096124 年表 2006-03-18 「栗橋駅構内にJR宇都宮線（東北本線）との連絡線を設置し、JR新宿駅 - 東武日光駅・鬼怒川温泉駅間で特急列車の直通運転を開始」; 위키 栗橋駅 rev111544956 「2006年3月18日：…連絡線が設置され、直通特急「（スペーシア）日光・きぬがわ」が運行を開始」. 두 노선 모두 지나가는 역이라 방면: 東武 쪽 열차는 東北本線 大宮(新宿) 쪽, JR 쪽 열차는 東武日光 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_omiya", "b_toward": "n_tobu_nikko"},
+    {"a": "l_yashiro_line", "b": "l_shinetsu_main_line", "at": ["n_yashiro_nagano", "n_yashiro_shinano"], "from": "[1950-01-01..1961-05-01]", "to": "1982-11-15", "src": "https://ja.wikipedia.org/w/index.php?oldid=109795657; https://ja.wikipedia.org/w/index.php?oldid=111478017; https://ja.wikipedia.org/w/index.php?oldid=111142901", "why": "屋代 長野電鉄屋代線(河東線)↔信越本線 여객 직통: 위키 長野電鉄河東線 rev109795657 年表 「1961年5月1日：屋代駅 - 信州中野駅間経由で国鉄上野駅から山の内線湯田中駅までの直通列車…運転開始」「1962年3月1日：国鉄直通列車を通年運転開始」「1982年11月15日：国鉄直通急行「志賀」廃止」; 위키 長野電鉄屋代線 rev111478017 「急行「志賀」「丸池」など国鉄信越本線上野駅方面からの直通列車…1982年11月15日に廃止」; 위키 屋代駅 rev111142901 「1937年3月：信越本線と河東線のあいだで直通列車が運行される」. 1950–1961 사이 직통 여부는 근거가 없어 시작을 범위로. 방면은 上野(軽井沢) 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_karuizawa"},
+    {"a": "l_yunomae_line", "b": "l_hisatsu_line", "at": ["n_hitoyoshi_onsen", "n_hitoyoshi"], "from": "[1950-01-01..1972-03-15]", "to": "1989-10-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111331037; https://ja.wikipedia.org/w/index.php?oldid=110875213", "why": "人吉 국철 湯前線↔肥薩線 여객 직통: 위키 くま川鉄道湯前線 rev111331037 「1982年8月時点では9往復が運行されており、一部は八代駅・熊本駅に直通していた」; 위키 かわせみ やませみ(옛 急行「くまがわ」) rev110875213 「1972年3月15日：…「くまがわ」の下り列車を湯前線湯前行きとする」「1973年10月1日：…門司港駅 - 湯前駅間の運行とする」, 1989-03-11 熊本–人吉로 줄임. 끝은 1989-03-11(急行) 또는 1989-10-01 くま川鉄道 이관 중 하나라 범위, 시작은 1972 전 근거가 없어 범위. 방면은 八代 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사) / 끝은 이관일 1989-10-01: 이관 뒤에도 急行 くまがわ가 くま川鉄道 湯前까지 직통(『鉄道ジャーナル』 1989-12 「JR車両はそのまま急行<くまがわ>として熊本へ直通」, https://dl.ndl.go.jp/pid/3330328) — 이관 뒤 행이 이어받음 (11회차 R·S2)", "a_toward": "n_yatsushiro"},
+    {"a": "l_shimabara_railway_line", "b": "l_nagasaki_main_line", "at": ["n_isahaya_shimabara", "n_isahaya"], "from": "1958-04-11", "to": "1980-10-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111517354; https://ja.wikipedia.org/w/index.php?oldid=111761349", "why": "諫早 島原鉄道線↔長崎本線 여객 직통: 위키 島原鉄道線 rev111517354 「1958年（昭和33年）から諫早駅より国鉄長崎本線に乗り入れて長崎駅まで直通運転を開始…1960年…博多駅までの直通運転を開始…国鉄線への乗り入れは1980年（昭和55年）まで」, 年表 「1958年4月11日 国鉄線への直通運転を開始」「1980年10月1日 国鉄線への直通運転を廃止」; 위키 諫早駅 rev111761349 「国鉄時代に島原鉄道の列車が国鉄へ乗り入れていた名残として…渡り線…急行列車が長崎駅・佐世保駅・小倉駅まで乗り入れていた」. 방면은 長崎 쪽과 博多(佐賀) 쪽. 大村線(佐世保) 직통은 기간 근거가 없어 넣지 않음 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": ["n_nagasaki", "n_saga"]},
+    {"a": "l_haborotanko_railway_line", "b": "l_haboro_line", "at": ["n_chikubetsu_haboro_tanko", "n_chikubetsu"], "from": "1958-12-01", "to": "1970-12-15", "src": "https://ja.wikipedia.org/w/index.php?oldid=111444200; https://ja.wikipedia.org/w/index.php?oldid=109463497", "why": "築別 羽幌炭礦鉄道↔羽幌線 여객 직통: 위키 羽幌炭礦鉄道 rev111444200 「1958年（昭和33年）から気動車の運行を開始…国鉄定期列車に併結して羽幌駅まで乗り入れ」, 年表 「12月1日：築別 - 羽幌間国鉄乗り入れ開始」, 1970-10-10 「2往復は羽幌線に乗り入れ、羽幌駅発着」, 1970-12-15 폐지; 위키 築別駅 rev109463497 「1970年までは羽幌炭礦鉄道が接続し、旅客車は国鉄の車両に連結する形で…羽幌駅まで乗」. 방면은 羽幌 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_haboro"},
+    {"a": "l_taguchi_line", "b": "l_iida_line", "at": ["n_hon_nagashino_taguchi", "n_hon_nagashino"], "from": "[1950-01-01..1963-03-24]", "to": "1963-03-25", "src": "https://ja.wikipedia.org/w/index.php?oldid=111618531; https://ja.wikipedia.org/w/index.php?oldid=111083474", "why": "本長篠 田口線↔飯田線 여객 직통: 위키 豊橋鉄道田口線 rev111618531 「飯田線成立後の戦後になると、朝夕の2往復が飯田線の国電…に併結されて豊橋まで直通運転された（1963年〈昭和38年〉3月24日まで）」, 年表 「1963年3月25日 - 国鉄飯田線豊橋駅への直通運転廃止」; 위키 飯田線 rev111083474 「戦後には本長篠駅から分岐していた田口鉄道に乗り入れる紅葉狩り列車など」. 전후 시작일은 근거가 없어 범위. 방면은 豊橋 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_toyohashi"},
+    {"a": "l_enshu_railway_line", "b": "l_futamata_line", "at": ["n_nishi_kajima_enshu", "n_nishi_kajima_tenryu_hamanako"], "from": "1958-11-01", "to": "1966-10-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111535907; https://ja.wikipedia.org/w/index.php?oldid=111384682; https://ja.wikipedia.org/w/index.php?oldid=111520663", "why": "西鹿島 遠州鉄道鉄道線↔国鉄 二俣線 여객 직통: 위키 遠州鉄道鉄道線 rev111535907 年表 「11月1日：遠州鉄道の気動車が国鉄二俣線遠江二俣駅（現・天竜二俣駅）まで直通運転開始」(1958)「1966年10月1日：国鉄二俣線直通運転廃止」; 위키 西鹿島駅 rev111384682 「1958年11月1日：遠鉄の気動車が国鉄二俣線の遠江二俣駅まで乗り入れ開始」「1966年10月1日：遠鉄気動車の二俣線乗り入れが廃止」; 위키 遠州鉄道 rev111520663 「二俣線乗り入れ用として1958-1959年に国鉄から払い下げを受けたキハ800形」. 방면은 遠江二俣 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_tenryu_futamata"},
+    {"a": "l_keishin_line", "b": "l_ishiyama_sakamoto_line", "at": ["n_hamaotsu", "n_biwako_hamaotsu"], "from": "[1950-01-01..1954-01-25]", "to": "1981-04-12", "src": "https://ja.wikipedia.org/w/index.php?oldid=111210110; https://ja.wikipedia.org/w/index.php?oldid=107968078", "why": "浜大津 京津線(京津 浜大津)↔石山坂本線(浜大津東口) 여객 직통: 위키 京阪京津線 rev111210110 年表 1948-02-01 「三条大橋駅 - 石山坂本線石山寺駅間直通運転を開始」, 1949-08-07 「三条大橋 - 石山直通列車を一時中止」, 1954-01-25 「浜大津経由の三条駅 - 石山寺駅間の急行運転が開始」 (10회차 메인: G2 구조에 맞춰 京津線 쪽은 浜大津(2) n_hamaotsu, 石坂線 쪽은 처음부터 지금 자리 n_biwako_hamaotsu), 1957年1月 「三条駅発で17 - 18時台の3本のみが石山寺駅へ直通」, 1981-04-12 개정 「石山坂本線石山寺駅直通の準急列車と全ての急行列車が廃止」; 위키 京阪石山坂本線 rev107968078 「かつては急行・準急が石山寺駅 - 浜大津駅 - 三条駅間で設定され…京津線との直通運転が行われていたが、浜大津駅統合の際に廃止」. 1949 중지 뒤 다시 시작한 날은 1954-01-25까지의 범위. 1981 통합 뒤 같은 노드의 선로 연결은 그대로(U02). 방면은 石山寺 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_ishiyamadera"},
+    {"a": "l_keihan_main_line", "b": "l_kyoto_line", "at": ["n_tambabashi", "n_tambabashi"], "from": "1945-12-21", "to": "1968-12-20", "src": "https://ja.wikipedia.org/w/index.php?oldid=110862391; https://ja.wikipedia.org/w/index.php?oldid=110958649; https://ja.wikipedia.org/w/index.php?oldid=110777277", "why": "丹波橋 京阪本線↔奈良電(近鉄京都線) 상호 직통: 위키 丹波橋駅 rev110862391 「1945年12月21日：奈良電気鉄道・堀内駅を統合。奈良電との共同駅となり、相互乗り入れ開始」「奈良電が近鉄に吸収合併され近鉄京都線となっても継続して相互直通運転」; 위키 近鉄京都線 rev110958649 1967-03-29 「1年間は丹波橋駅・近鉄丹波橋駅の併用…普通と京阪直通列車は丹波橋駅を使用」, 「かつては京阪本線との直通運転を行っていた」; 위키 奈良電気鉄道 rev110777277 「戦後には京阪・近鉄いずれの路線とも直通運転を行っていた」. 1968-12-20 丹波橋 공용 끝. 방면: 京阪 열차는 奈良電 桃山御陵前(奈良) 쪽, 奈良電 열차는 京阪 三条 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "b_route": "r_kyoto_line_fushimi_kintetsu_momoyamagoryo_mae", "a_toward": "n_momoyamagoryo_mae", "b_toward": "n_sanjo_keihan_keihan_main"},
+    {"a": "l_inuyama_line", "b": "l_takayama_main_line", "at": ["n_shin_unuma", "n_unuma"], "from": "1965-08-05", "to": "1972-09-27", "src": "https://ja.wikipedia.org/w/index.php?oldid=111186144; https://ja.wikipedia.org/w/index.php?oldid=111504365; https://ja.wikipedia.org/w/index.php?oldid=111029974", "why": "新鵜沼–鵜沼 名鉄犬山線↔高山本線 여객 직통(鵜沼連絡線 정비 전): 위키 名鉄特急 rev111186144 「1965年8月5日 …国鉄（現在のJR）高山本線へ直通する準急「たかやま」が神宮前駅 - 高山駅間に運転を開始」, 정차 「新鵜沼駅（転線）鵜沼駅」, 「1972年9月27日 新鵜沼駅構内の名鉄犬山線と高山本線を結ぶ短絡線を整備（配線変更）し、鵜沼駅での折り返し運転を廃止」; 위키 高山本線 rev111504365(名鉄 神宮前발 직통 特急「北アルプス」). 1972-09-27부터는 鵜沼連絡線 행이 맡음. 방면은 高山 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사) / 셋째 근거: 위키 新鵜沼駅 rev111029974 「当時の配線では省線鵜沼駅東側で高山本線とつながっておらず、一旦スイッチバックして鵜沼駅に入線する必要が生じた。1972年…鵜沼連絡線」, 위키 高山本線 rev111504365 「キハ8000系（名古屋鉄道） - 準急・急行「たかやま」…1965年8月5日より」", "a_toward": "n_takayama"},
+    {"a": "l_toyama_chiho_main_line", "b": "l_takayama_main_line", "at": ["n_dentetsu_toyama_old", "n_toyama"], "from": "1970-07-15", "to": "[1983-11-01..1984-07-01]", "src": "https://ja.wikipedia.org/w/index.php?oldid=111186144; https://ja.wikipedia.org/w/index.php?oldid=111392356", "why": "富山 富山地方鉄道本線↔高山本線 여객 직통(名鉄–国鉄–富山地鉄 3사 직통 「北アルプス」): 위키 名鉄特急 rev111186144 「1970年7月15日 「たかやま」を「北アルプス」と改称。同時に夏季（4 - 11月）は飛驒古川駅 - 富山地方鉄道立山線立山駅間の延長運転」「1984年7月1日 …季節延長運転を廃止。事実上、1983年夏季ダイヤ限りで富山地鉄への乗り入れも廃止」; 위키 富山地方鉄道本線 rev111392356 「1970年 - 1983年には名鉄 - 国鉄 - 富山地方鉄道の3社直通運行で特急「北アルプス」が立山まで乗り入れ」, 「富山駅構内の渡り線には交直セクション」. 열차는 国鉄 富山 1번선에서 연결선으로 地鉄 本線에 들어가 電鉄富山 승강장을 지나지 않으나, 地鉄 쪽 계통 끝(電鉄富山)에서 잇는 것으로 그림 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)"},
+    {"a": "l_toyama_chiho_main_line", "b": "l_hokuriku_main_line", "at": ["n_dentetsu_toyama_old", "n_toyama"], "from": "1971-XX-XX", "to": "1986-11-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=110229035; https://ja.wikipedia.org/w/index.php?oldid=111392356; https://ja.wikipedia.org/w/index.php?oldid=111774640", "why": "富山 富山地方鉄道本線↔北陸本線 여객 직통(電鉄富山 옛 자리 시기): 위키 富山地方鉄道立山線 rev110229035 「1971年 立山黒部アルペンルートが開通。国鉄のスキー列車が立山線へ乗り入れ開始」「JR西日本は1999年11月を最後に乗り入れがなくなっている」; 위키 富山地方鉄道本線 rev111392356 「以前は日本国有鉄道（国鉄）・西日本旅客鉄道（JR西日本）…から富山より特急・急行列車が乗り入れていた…1999年までJR西日本から…「スーパー雷鳥立山」「サンダーバード立山」」; 위키 富山駅 rev111774640 「JR富山駅1番のりばから富山地方鉄道本線へ交直デッドセクション付きの連絡線が存在し、国鉄時代の1970年代から1980年代にかけては…急行「立山」…「うなづき」「むろどう」」. 電鉄富山 1986-11-01 이전(n_dentetsu_toyama_old) 몫. 방면은 金沢(大阪) 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_kanazawa"},
+    {"a": "l_toyama_chiho_main_line", "b": "l_hokuriku_main_line", "at": ["n_dentetsu_toyama", "n_toyama"], "from": "1986-11-01", "to": "[1999-11-01..1999-12-01]", "src": "https://ja.wikipedia.org/w/index.php?oldid=110229035; https://ja.wikipedia.org/w/index.php?oldid=111392356; https://ja.wikipedia.org/w/index.php?oldid=111774640", "why": "富山 富山地方鉄道本線↔北陸本線 여객 직통(電鉄富山 지금 자리 시기, 1999년 11월까지): 근거는 옛 자리 행과 같음(위키 富山地方鉄道立山線 rev110229035 「JR西日本は1999年11月を最後に乗り入れがなくなっている」, 위키 富山駅 rev111774640 1990-07-21 「富山地方鉄道線直通特別急行「リゾート立山」の運転を開始」). 끝은 1999년 11월 안 날이 없어 범위. 방면은 金沢(大阪) 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_kanazawa"},
+    {"a": "l_tojo_main_line", "b": "l_chichibu_main_line", "at": ["n_yorii_tobu", "n_yorii_chichibu"], "from": "1949-04-03", "to": "1992-03-31", "src": "https://ja.wikipedia.org/w/index.php?oldid=111367697; https://ja.wikipedia.org/w/index.php?oldid=110119954; https://ja.wikipedia.org/w/index.php?oldid=111153790", "why": "寄居 東武東上本線→秩父鉄道 여객 직통(片乗り入れ): 위키 東武東上本線 rev111367697 年表 「1949年4月3日：秩父鉄道への片乗り入れを開始」「1992年3月31日：秩父鉄道への片乗り入れを廃止」; 위키 寄居駅 rev110119954 「1992年（平成4年）春までは、東上本線から秩父線への直通特急が当駅を介して直通運転を実施」; 위키 秩父鉄道 rev111153790 「東武東上本線から乗入れ列車運転開始」「1992年…東武東上本線からの乗り入れ中止」. 방면은 長瀞 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사)", "a_toward": "n_nagatoro"},
+    {"a": "l_oigawa_main_line", "b": "l_tokaido_main_line", "at": ["n_kanaya_oigawa", "n_kanaya"], "from": "1969-04-26", "to": "1984-10-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111519970; https://ja.wikipedia.org/w/index.php?oldid=111272146", "why": "金谷 大井川本線↔東海道本線 여객 직통: 위키 大井川鐵道大井川本線 rev111519970 年表 「1969年4月26日：静岡駅から国鉄の快速「奥大井」が千頭駅まで乗入れ開始」「1973年10月7日：浜松駅から国鉄の快速「すまた」が千頭駅まで乗り入れ開始」, 「翌1984年（昭和59年）9月30日の「すまた」を最後に国鉄列車乗り入れは打ち切り」. 방면은 静岡 쪽과 浜松 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사) / 둘째 근거: 위키 金谷駅 rev111272146 「静岡駅や浜松駅から直通列車が運転されていた頃は、大井川鐵道と接続する渡り線が設置されていた」", "a_toward": ["n_shizuoka", "n_hamamatsu"]},
+    {"a": "l_minato_line", "b": "l_joban_line", "at": ["n_katsuta_hitachinaka_seaside", "n_katsuta"], "from": "[1950-01-01..1963-06-19]", "to": "[1990-07-01..1991-04-01]", "src": "https://ja.wikipedia.org/w/index.php?oldid=111406453; https://ja.wikipedia.org/w/index.php?oldid=110784651; https://ja.wikipedia.org/w/index.php?oldid=111719547", "why": "勝田 湊線↔常磐線 여객 직통: 위키 ひたちなか海浜鉄道湊線 rev111406453 年表 「1963年（昭和38年）6月20日 - 国鉄水戸駅までの直通運転廃止」, 「1963年までは水戸駅までの直通運転もあった。1990年度まで夏季に国鉄・JR東日本常磐線上野駅からの直通運転もあった」「1990年度までは海水浴シーズンに…上野駅から臨時急行「あじがうら」が阿字ヶ浦駅まで乗り入れていた」(공식 臨時 여객 영업); 위키 勝田駅 rev110784651 「かつては…湊線と常磐線を接続する渡り線」. 시작은 1950 뒤 근거가 없어 범위, 끝은 1990년도 여름. 방면은 水戸(上野) 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사) / 둘째 근거: 위키 阿字ヶ浦駅 rev111719547 「かつて上野駅から臨時急行「あじがうら号」が運…」(7両 유효장)", "a_toward": "n_mito"},
+    {"a": "l_arida_railway_line", "b": "l_kisei_main_line", "at": ["n_fujinami", "n_fujinami_kisei_main"], "from": "[1950-04-01..1950-04-30]", "to": "1992-12-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=109051399; https://ja.wikipedia.org/w/index.php?oldid=109776113", "why": "藤並 有田鉄道線↔紀勢本線 여객 직통: 위키 有田鉄道線 rev109051399 「1950年4月から紀勢西線の湯浅駅まで乗り入れるようになり」「紀勢本線への乗り入れは、信楽高原鐵道列車衝突事故の後の1992年（平成4年）12月1日に廃止」. 방면은 湯浅 쪽 (10회차 D1, 다른 노드 이어짐 여객 직통 근거 심층 조사) / 둘째 근거: 위키 湯浅駅 rev109776113 年表 「1950年（昭和25年）4月：有田鉄道の当駅乗り入れ開始」「1992年（平成4年）12月1日：有田鉄道の当駅乗り入れが廃止」", "a_toward": "n_yuasa"},
+    {"a": "l_kiryu_line", "b": "l_jomo_line", "at": ["n_akagi_tobu", "n_akagi_jomo"], "from": "[1950-01-01..1962-12-31]", "to": "[1963-01-01..1964-01-01]", "src": "https://ja.wikipedia.org/w/index.php?oldid=111009706; https://ja.wikipedia.org/w/index.php?oldid=110994647", "why": "赤城 東武桐生線→上毛線 여객 직통: 위키 東武桐生線 rev111009706 「構内踏切を渡ると上毛線中央前橋駅方面への線路が続いており、昭和前期から中期にかけて桐生線からの直通運転が行われていた」; 위키 赤城登山鉄道 rev110994647 「赤城駅から上毛電気鉄道上毛線に乗り入れる急行「じょうもう」も運行されていた（1963年に廃止）」. 1950 뒤 첫날·1963년 안 끝 날은 근거가 없어 범위. 방면은 中央前橋 쪽. 전수 점검 4회차 kanto_1-002 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_chuo_maebashi"},
+    {"a": "l_ena_railway_line", "b": "l_fukushimarinkai_railway_line", "at": ["n_sakaecho", "n_sakaecho_fukushima_rinkai"], "from": "1953-01-12", "to": "1966-02-15", "src": "https://ja.wikipedia.org/w/index.php?oldid=111389371; https://ja.wikipedia.org/w/index.php?oldid=108817377; https://ja.wikipedia.org/w/index.php?oldid=105334360", "why": "栄町 江名鉄道↔小名浜臨港鉄道(지금 福島臨海鉄道) 여객 직통: 위키 福島臨海鉄道 rev111389371 年表 「1953年1月12日 - 江名鉄道栄町 - 江名間開業に伴い、小名浜 - 栄町間を延伸開業し、泉 - 江名間直通運転」「1966年2月15日 - 江名鉄道休止に伴い…同鉄道との直通運転を中止」; 위키 福島臨海鉄道本線 rev108817377(泉–江名 직통 열차), 위키 江名鉄道 rev105334360 「車両も自前のものを持たず、延長線のような存在」. 두 노선 모두 栄町이 끝 역. 전수 점검 4회차 tohoku_1-002 (10회차 D1, 전수 점검 4회차 직통 지적 반영)"},
+    {"a": "l_fushiki_line", "b": "l_takaoka_tramway_line", "at": ["n_yonejimaguchi_fushiki", "n_yonejimaguchi"], "from": "1948-04-10", "to": "1971-09-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=108783568; https://ja.wikipedia.org/w/index.php?oldid=111306973", "why": "米島口 伏木線↔高岡軌道線 여객 직통: 위키 加越能鉄道伏木線 rev108783568 「地鉄高岡 - 伏木港間 7.3 kmの高岡軌道線の一部として開業」「線籍上は高岡軌道線の一部であった」; 위키 万葉線 rev111306973 「当時は伏木線（または高伏線）と呼ばれていた」. 高岡–伏木港를 한 軌道로 운행해 米島口에서 갈라짐(노면전차 같은 사업자). 1971-09-01 伏木線 폐지까지. 방면은 高岡 쪽. 전수 점검 4회차 chubu_3-009 (10회차 D1, 전수 점검 4회차 직통 지적 반영) / 방면: 高岡軌道線 쪽은 米島口에서 高岡(앞 순번)에서 온 열차가 伏木線으로 갈라짐(b_side down, 앱 시뮬 S12: 중간 역 끝 이어짐 금지)", "a_toward": "n_takaoka_manyosen", "b_side": "down"},
+    {"a": "l_toyamachitetsuimizu_line", "b": "l_shin_minatoko_line", "at": ["n_koshinokata_toyamachitetsuimizu", "n_koshinokata"], "from": "1930-12-23", "to": "1966-04-05", "src": "https://ja.wikipedia.org/w/index.php?oldid=111306973; https://ja.wikipedia.org/w/index.php?oldid=111471223", "why": "越ノ潟 射水線↔新湊港線(옛 射水線 越ノ潟–新湊) 여객 직통: 위키 万葉線 rev111306973 年表 1966-04-05 「射水線のうち新湊駅 - 越ノ潟駅間を富山地方鉄道から加越能鉄道に譲渡し新湊港線とする」; 위키 富山地方鉄道射水線 rev111471223 「1959年4月1日 - …西町 - 新富山 - 地鉄高岡間において直通運転を開始」. 1966-04-05 전 新富山–新湊은 한 노선(射水線)이라 열차가 越ノ潟를 그대로 지나감. 시작은 越ノ潟–新湊 칸의 射水線 소속 시작(edge_attr 1930-12-23). 전수 점검 4회차 chubu_3-010 (10회차 D1, 전수 점검 4회차 직통 지적 반영)"},
+    {"a": "l_shido_line", "b": "l_kotohira_line", "at": ["n_kawaramachi_takamatsu_kotohira", "n_kawaramachi_takamatsu_kotohira"], "from": "1953-10-20", "to": "1994-06-26", "src": "https://ja.wikipedia.org/w/index.php?oldid=111442761; https://ja.wikipedia.org/w/index.php?oldid=111480091", "why": "瓦町 志度線→琴平線(築港線) 高松築港 여객 직통(瓦町 스위치백): 위키 高松琴平電気鉄道志度線 rev111442761 「かつては琴平線・長尾線と同様に高松築港発着（瓦町駅でスイッチバック）であったが、1994年に開始された瓦町駅改良工事により…」; 위키 高松琴平電気鉄道琴平線 rev111480091 「1953年10月20日：築港線を複線から単線並列に変更。旧下り線を架線電圧600 Vに降圧し、志度線が乗り入れ」. 방면은 高松築港(片原町) 쪽. 栗林公園 쪽 여객 직통 근거는 없음. 전수 점검 4회차 chugoku_shikoku_2-001 (10회차 D1, 전수 점검 4회차 직통 지적 반영) / 스위치백: 志度線 열차는 瓦町에서 진행 방향을 바꿔 高松築港 쪽으로 들어감(위키 志度線 「瓦町駅でスイッチバック」, 선형 각 36°; 鉄道ピクトリアル 1995-01·1995-10 「高松築港に直通していた志度線列車が瓦町止」 11회차 R) (11회차 S3)", "a_toward": "n_takamatsu_chikko", "reverse": true},
+    {"a": "l_keishin_line", "b": "l_ishiyama_sakamoto_line", "at": ["n_biwako_hamaotsu", "n_biwako_hamaotsu"], "from": "1981-04-12", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=107968078; https://ja.wikipedia.org/w/index.php?oldid=108833898", "why": "びわ湖浜大津 京津線↔石山坂本線 같은 노드 선로 연결(U02): 1981-04-12 浜大津駅 統合 뒤 두 선이 한 역에서 이어짐(위키 京阪石山坂本線 rev107968078 「浜大津駅統合…両線相互間が同一ホーム上で乗り換え」, junction_side 「京津線と石山坂本線の連絡線は石山寺側」). 통합 전 다른 노드 여객 직통 행(京津 浜大津↔浜大津東口)이 노드를 지정해 통합 뒤 같은 노드 연결이 빠지므로 이 행으로 이음(정기 여객 직통은 1981-04-12 폐지, 선로 연결만) (10회차 D1)", "a_toward": "n_ishiyamadera"},
+    {"a": "l_toyamachitetsuimizu_line", "b": "l_tramway_kureha_line", "at": ["n_shintoyama", "n_toyota_mobility_toyama_g_square_gofuku_mae"], "from": "1950-12-31", "to": "1961-07-18", "src": "https://ja.wikipedia.org/w/index.php?oldid=111471223; https://ja.wikipedia.org/w/index.php?oldid=111714160", "why": "新富山 射水線→富山軌道線 여객 직통(1기, 西町까지): 위키 富山地方鉄道射水線 rev111471223 「1950年12月31日から富山軌道線への直通運転（西町停留場まで）を開始」「新富山駅 - 西町停留場間の直通運転は1961年7月18日に廃止」; 위키 富山地方鉄道富山軌道線 rev111714160 「新富山駅前…から射水線に乗り入れる系統」「射水線乗り入れ系統：西町（後年は富山駅前） - <新富山 - 新高岡…>」. 철도↔노면전차 직통(U06). 방면은 安野屋(西町) 쪽. 전수 점검 4회차 chubu_3-004 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_yasunoya"},
+    {"a": "l_toyamachitetsuimizu_line", "b": "l_tramway_kureha_line", "at": ["n_shintoyama", "n_toyota_mobility_toyama_g_square_gofuku_mae"], "from": "1977-08-31", "to": "1980-04-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111471223; https://ja.wikipedia.org/w/index.php?oldid=111714160", "why": "新富山 射水線→富山軌道線 여객 직통(2기, 富山駅前까지 1日6往復): 위키 富山地方鉄道射水線 rev111471223 「1977年8月31日から富山駅前駅への乗り入れを1日6往復…で、17年ぶりに再開」(1980-04-01 射水線 폐지까지); 위키 富山地方鉄道富山軌道線 rev111714160 「1977年（昭和52年）8月より、射水線の新富山駅前 - 富山駅前間への乗り入れを再開…その射水線自体が1980年（昭和55年）4月に廃止」. 방면은 安野屋 쪽. 전수 점검 4회차 chubu_3-004 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_yasunoya"},
+    {"a": "l_sasazu_line", "b": "l_tramway_main_line", "at": ["n_minami_toyama", "n_minami_toyama_ekimae"], "from": "[1950-10-01..1950-11-01]", "to": "1967-10-10", "src": "https://ja.wikipedia.org/w/index.php?oldid=111471220; https://ja.wikipedia.org/w/index.php?oldid=111714160", "why": "南富山 笹津線→富山軌道線 여객 직통: 위키 富山地方鉄道笹津線 rev111471220 「笹津線の富山軌道線への直通運転は『富山地方鉄道50年史』においては1950年10月1日より実施されたとあるが、実際には同年11月1日より行われた」「1967年（昭和42年）10月10日より笹津線の富山軌道線直通運転…取りやめ」; 위키 富山地方鉄道富山軌道線 rev111714160 「南富山駅前から笹津線に乗り入れる系統」「笹津線乗り入れ系統：富山駅前（当初は西町） - <南富山 - 地鉄笹津>」. 시작은 두 날짜가 엇갈려 범위. 전수 점검 4회차 chubu_3-005 (10회차 D1, 전수 점검 4회차 직통 지적 반영)"},
+    {"a": "l_keishin_line", "b": "l_keihan_main_line", "at": ["n_sanjo_keihan_keihan_main", "n_sanjo_keihan_keihan_main"], "from": "[1950-01-01..1956-01-15]", "to": "1961-11-23", "src": "https://ja.wikipedia.org/w/index.php?oldid=111210110; https://ja.wikipedia.org/w/index.php?oldid=109665258", "why": "三条 京津線↔京阪本線 여객 직통(60型 びわこ号·臨時): 위키 京阪京津線 rev111210110 1949-07-16 「土曜・日曜・祝日に限り天満橋駅 - 浜大津駅間直通の「びわこ号」運転再開」, 1956-01-15 「八幡町 - 浜大津間直通臨時急行「やわた」号」, 1961-11-23 「60型による京阪線への直通運転を中止」; 위키 京阪60型電車 rev109665258 「京阪本線への直通運転も、初詣、初午、…ひらかた大菊人形展への観覧列車などといった臨時列車扱いで実施」「直通運転は1961年（昭和36年）11月23日の浜大津－枚方…」. 위키 京阪本線(「びわこ号」 「戦時中消滅」)과 엇갈려 1950 뒤 첫날은 확실한 1956-01-15까지 범위. 두 노선 모두 三条이 끝 역. 전수 점검 4회차 kinki_1-04 (10회차 D1, 전수 점검 4회차 직통 지적 반영) 京津線 三条는 1949-11-25~1987-05-24 京阪本線 三条와 한 역이라 at은 같은 노드(나뉜 역 규칙, 11회차 S1)"},
+    {"a": "l_sangi_line", "b": "l_kansai_main_line", "at": ["n_tomida_sangi", "n_tomida"], "from": "1952-12-01", "to": "1964-10-01", "src": "https://ja.wikipedia.org/w/index.php?oldid=111510770; https://ja.wikipedia.org/w/index.php?oldid=111744696", "why": "富田 三岐線→関西本線 四日市 여객 직통: 위키 三岐鉄道三岐線 rev111510770 年表 「1952年12月1日 富田駅から国鉄四日市駅まで旅客列車直通運転開始」「1964年10月1日 …旅客列車直通運転廃止」(『三岐鉄道50年の歩み』); 위키 四日市駅 rev111744696 「1952年（昭和27年）12月1日：四日市駅から三岐鉄道三岐線へ直通する旅客列車が運行開始」「1964年（昭和39年）10月1日：三岐線直通旅客列車が廃止」. 방면은 四日市 쪽. 전수 점검 4회차 kinki_2-008·kinki_3-001 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_route": "r_sangi_line_tomida_sangi_oyachi_sangi", "a_toward": "n_yokkaichi"},
+    {"a": "l_kamikochi_line", "b": "l_shinonoi_line", "at": ["n_matsumoto_alpico_kotsu", "n_matsumoto"], "from": "1967-07-15", "to": "[1973-01-01..1973-07-10]", "src": "https://ja.wikipedia.org/w/index.php?oldid=111379529; https://ja.wikipedia.org/w/index.php?oldid=111764397", "why": "松本 上高地線↔篠ノ井線 여객 직통(国鉄 急行 「こまくさ」→「上高地」): 위키 アルピコ交通上高地線 rev111379529 「1967年（昭和42年）7月15日：中央本線（西線）・篠ノ井線から気動車による名古屋駅始発の国鉄急行列車「こまくさ号」が新島々駅まで直通乗り入れ開始（1970年ごろから「上高地」に改称）」「1973年 中央本線（西線）電化に伴い「上高地」直通乗り入れ終了」; 위키 松本駅 rev111764397 「名古屋駅 - 新島々駅間運行の臨時急行「こまくさ」・「上高地」（1967年-1973年）が乗り入れる」. 끝은 1973년 中央西線 전철화(1973-07-10)까지 범위. 방면은 塩尻 쪽. 전수 점검 4회차 chubu_2-002·chubu_3-008 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_shiojiri"},
+    {"a": "l_imazu_line", "b": "l_kobe_main_line", "at": ["n_nishinomiya_kitaguchi", "n_nishinomiya_kitaguchi"], "from": "[1957-10-01..1957-10-31]", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111135883; https://ja.wikipedia.org/w/index.php?oldid=110631417; https://ja.wikipedia.org/w/index.php?oldid=111103909", "why": "西宮北口 今津線↔神戸本線 여객 직통(연락선 9号線): 위키 阪急神戸本線 rev111135883 準急 「平日朝ラッシュ時に今津線からの直通列車として…宝塚発大阪梅田行き…西宮北口駅では神戸本線との連絡線である9号線を通過」「1957年10月に運転を開始」; 위키 阪急今津線 rev110631417 「西宮北口駅構内には、神戸本線と今津北線を結ぶ連絡線（9号線）があり…平日朝ラッシュ時に宝塚発大阪梅田行きの準急」; 위키 西宮北口駅 rev111103909 「今津線と直通する列車」. 같은 노드라도 노선도 접속 행이 없어 근거 행으로 넣음. 방면: 今津線 열차는 大阪梅田 쪽, 神戸本線 열차는 宝塚 쪽. 전수 점검 4회차 kinki_2-002 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_osaka_umeda_hankyu", "b_toward": "n_takarazuka_hankyu"},
+    {"a": "l_osaka_higashi_line", "b": "l_katamachi_line", "at": ["n_hanaten", "n_hanaten"], "from": "2008-03-15", "to": "2019-03-16", "src": "https://ja.wikipedia.org/w/index.php?oldid=110987726; https://ja.wikipedia.org/w/index.php?oldid=111446646", "why": "放出 おおさか東線↔片町線 여객 직통(直通快速 奈良–尼崎): 위키 おおさか東線 rev110987726 「2008年3月15日から2019年3月15日までは、放出駅から片町線（学研都市線）を経て」JR東西線 尼崎까지 직통, 「2019年3月16日より尼崎駅発着から新大阪駅発着に変更」; 위키 片町線 rev111446646 廃止列車 直通快速 「おおさか東線が部分開業した2008年3月15日から同線が全線開業する前日である2019年3月15日まで、直通快速が奈良駅 - 尼崎駅間に」. 방면: おおさか東線 열차는 片町線 京橋 쪽, 片町線 쪽은 おおさか東線 久宝寺 쪽. 전수 점검 4회차 kinki_3-003 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_kyobashi", "b_toward": "n_kyuhoji"},
+    {"a": "l_noto_line_hokuriku", "b": "l_nanao_line", "at": ["n_hakui_hokuriku", "n_hakui"], "from": "[1950-01-01..1972-06-24]", "to": "1972-06-25", "src": "https://ja.wikipedia.org/w/index.php?oldid=111452129; https://ja.wikipedia.org/w/index.php?oldid=106808745", "why": "羽咋 北陸鉄道能登線↔七尾線 여객 직통(金沢발 臨時): 위키 七尾線 rev111452129 1972-06-25 「金沢駅発着の北鉄能登線乗り入れ（臨時）も廃止」; 위키 北陸鉄道能登線 rev106808745 運行形態 「金沢からの直通臨時列車が乗り入れていた」, 1934-01-01 「国鉄七尾線からの直通初詣列車が能登一ノ宮まで乗り入れ」. 臨時라도 공식 여객 영업. 1950 뒤 첫날은 근거 없어 범위. 방면은 津幡(金沢) 쪽. 전수 점검 4회차 chubu_2-007 (10회차 D1, 전수 점검 4회차 직통 지적 반영)", "a_toward": "n_tsubata"},
+    {"a": "l_yoro_line", "b": "l_nagoya_line", "at": ["n_kuwana_yoro", "n_kuwana_kintetsu"], "from": "[1950-01-01..1959-09-25]", "to": "[1959-09-26..1959-12-12]", "src": "https://ja.wikipedia.org/w/index.php?oldid=111579867; https://ja.wikipedia.org/w/index.php?oldid=111029029", "why": "桑名 養老線↔近鉄名古屋線 여객 직통(名古屋線 1067 mm 시절): 위키 養老鉄道養老線 rev111579867 「名古屋線が1067mm軌間の狭軌だった頃は名古屋線との直通運転列車があった」; 위키 近鉄名古屋線 rev111029029 1959-12-12 「…養老線と伊勢線との直通を廃止」, 改軌 1959-11-19~27, 伊勢湾台風 1959-09-26 불통. 1950 뒤 첫날·끝 날은 근거가 없어 범위. 전수 점검 4회차 chubu_3-015·kinki_2-004 (10회차 D1, 전수 점검 4회차 직통 지적 반영)"},
+    {"a": "l_honmachi_line", "b": "l_jonan_line", "at": ["n_honmachi_1_chome", "n_nishihoribata"], "from": "[1948-07-01..2018-03-01]", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111310023; https://ja.wikipedia.org/w/index.php?oldid=108902228", "why": "本町一丁目(西堀端) 本町線↔城南線 여객 직통(6号線): 위키 伊予鉄道本町線 rev111310023 運行形態 「本町六丁目 - 本町一丁目 - 松山市駅」「本町線全区間を通る」, 2018-03-01 「6号線の起終点を道後温泉から松山市に変更」; 위키 伊予鉄道花園線 rev108902228 운행 계통 「6号線 松山市駅 - 本町一丁目 - 本町六丁目」. 같은 사업자 노면전차 계통 직통. 시작은 근거가 없어 범위. 전수 점검 4회차 chugoku_shikoku_1-001·2-002 (10회차 D1, 전수 점검 4회차 직통 지적 반영)"},
+    {"a": "l_kobe_kosoku_line_hankyu", "b": "l_kobe_kosoku_line_hanshin", "at": ["n_shinkaichi_hankyu", "n_shinkaichi_hanshin"], "from": "2010-10-01", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111474989; https://ja.wikipedia.org/w/index.php?oldid=110635157", "why": "新開地 阪急神戸高速線(2010-10-01부터 新開地–神戸三宮)↔阪神神戸高速線(西代–新開地) 여객 직통: 山陽 열차가 西代→新開地→阪急 神戸三宮로 직통(위키 山陽電気鉄道本線 rev111474989 지금 운행 「普通 ←阪急神戸三宮」, 「2006年10月28日…昼間時の阪急三宮駅発着が再開」; 위키 阪急神戸高速線 rev110635157 2010-10-01 뒤 「山陽は単に乗り入れてくる形」). 2010-10-01 사업 구간 정리로 新開地가 阪急神戸高速線의 끝 역이 되어 그날부터 행을 나눔(감사 K01 시기별 끝 역) (10회차 D1, 전수 점검 4회차 kinki_2-001)", "a_toward": "n_nishidai_hanshin", "b_toward": "n_kobe_sannomiya_hankyu"},
+{"a": "l_haijima_line", "b": "l_tamako_line", "at": ["n_hagiyama", "n_hagiyama"], "from": "1958-09-16", "to": null, "a_toward": "n_yasaka_seibu", "b_toward": "n_kodaira", "src": "https://ja.wikipedia.org/w/index.php?oldid=111534521; https://ja.wikipedia.org/w/index.php?oldid=109391352", "why": "萩山(1958 지금 자리로 이설) 구내에서 拝島線(옛 上水線·小平線)과 多摩湖線이 선로로 이어지고 小平–萩山–多摩湖 직통(위키 西武拝島線 rev111534521 「1958年（昭和33年）に萩山駅を移設。小平駅 - 萩山駅 - 多摩湖駅間の直通運転を開始」, 「小平駅 - 萩山駅間には…多摩湖線多摩湖方面の各駅停車の一部が乗り入れ」; 위키 西武多摩湖線 rev109391352 「萩山駅 - 多摩湖駅間において拝島線・新宿線への直通列車が多数運転」). 拝島線 쪽은 小平 쪽에서 들어와 多摩湖線 八坂 쪽으로, 多摩湖線 쪽은 八坂 쪽에서 들어와 拝島線 小平 쪽으로. 시작일은 萩山 이설일(DB 정차). 4회차 kanto_1-003 (11회차 S2 2026-11-16)"},
+{"a": "l_rumoi_railway", "b": "l_rumoi_main_line", "at": ["n_ebishima_rumoi", "n_ebishima"], "from": "1956-05-15", "to": "1969-05-01", "src": "https://dl.ndl.go.jp/pid/3294271; https://dl.ndl.go.jp/pid/12671004; https://dl.ndl.go.jp/pid/3294673", "why": "留萠鉄道 気動車가 恵比島에서 留萠本線으로 들어가 深川까지 직통. 1962년 『鉄道ピクトリアル』 「国鉄線へ直通運転の私鉄車両」 표에 「留萠鉄道 気動車 1956.5.15 恵比島 深川 20.7」. 끝은 1969-05-01 休止(위키). (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_makurazaki_line", "b": "l_kagoshima_main_line", "at": ["n_ijuin_kagoshima_kotsu", "n_ijuin"], "from": "1949-02-19", "to": "1983-06-21", "src": "https://dl.ndl.go.jp/pid/3330205; https://dl.ndl.go.jp/pid/9574373; https://dl.ndl.go.jp/pid/3294553", "why": "南薩鉄道(鹿児島交通) 열차가 伊集院에서 鹿児島本線으로 西鹿児島까지 직통(1960년엔 国鉄 オハ35 객차 1왕복, 1977·1979년엔 하루 3왕복). 끝 1983-06-21 豪雨(위키). (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_yamaga_onsen_railway_line", "b": "l_kagoshima_main_line", "at": ["n_ueki_yamaga_onsen", "n_ueki"], "from": "[1950-12-01..1954-12-08]", "to": "1957-07-26", "src": "https://dl.ndl.go.jp/pid/13828049; https://dl.ndl.go.jp/pid/3000196; https://dl.ndl.go.jp/pid/13331720", "why": "山鹿温泉鉄道 気動車가 植木에서 鹿児島本線으로 熊本까지 乗り入れ(국철 『鉄道公報』 1954-12-08이 西里駅에서 「山鹿温泉鉄道株式会社所属直通運転気動車」 여객 취급을 고시, 『日本現勢』 1957 「うち植木-熊本間は国鉄乘入れ」). 시작은 위키 1950-12와 和久田 『私鉄百年史』 「国鉄直通1954」가 엇갈려, 1954-12-08(공보로 운행 확인)을 상한으로 한 범위로 둔다. 끝 1957-07-26 수해(위키, 運輸界 1957-10 수해 서술과 맞음). (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_yuen_railway_line", "b": "l_hohi_main_line", "at": ["n_minami_kumamoto_yuen", "n_minami_kumamoto"], "from": "1960-05-01", "to": "1964-03-31", "src": "https://dl.ndl.go.jp/pid/13331720; https://dl.ndl.go.jp/pid/12065385; https://dl.ndl.go.jp/pid/3294358", "why": "熊延鉄道 気動車가 南熊本에서 豊肥本線으로 水前寺까지 乗り入れ(和久田 「熊延鉄道が南熊本-水前寺間…乗入れを開始」, 竹重 「ヂハ201や202という乗入専用車」). 기간은 위키 1960-05-01~1964-03-31(폐지). (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_choshi_electric_railway_line", "b": "l_sobu_main_line", "at": ["n_choshi_choshi", "n_choshi"], "from": "1955-04-17", "to": "[1960-10-01..1960-10-31]", "src": "https://dl.ndl.go.jp/pid/3294738; https://dl.ndl.go.jp/pid/12060783; https://dl.ndl.go.jp/pid/13155401", "why": "国鉄 臨時快速 「房総の休日」(毎休日 운행, 해마다 정해 운행한 공식 여객 열차)이 新宿–(銚子)–外川으로 銚子電鉄에 乗り入れ. 『鉄道ピクトリアル』 1995 사진 설명 「銚子電鉄へ乗入れた「房総の休日」号 犬吠付近 '60.9」. 끝은 위키 「1960年10月末まで」. (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_oarai_kashima_line", "b": "l_joban_line", "at": ["n_mito_kashima_rinkai", "n_mito"], "from": "1985-07-24", "to": "1988-08-08", "src": "RJ 1985-08·RP 1985-11·『鹿島臨海鉄道30年史』 67コマ(시작 1985-07-24); RP 1988-11(마지막 확인 운행 1988-07-30·31·08-06·07, 근거 하나지만 운행 뒤 기사로 날짜 넷을 적음, 사용자 결정 2026-11-16 「확인된 마지막 운행 기준」); 1989·1990 운행 근거 없음, 1991 특급 乗入れ 계획 중지(運輸界 1991-07·RJ 1991-10·いのちと健康 1991-06) (11회차 R2·R3); https://dl.ndl.go.jp/pid/3330276; https://dl.ndl.go.jp/pid/3330303; ja.wikipedia 鹿島臨海鉄道大洗鹿島線 rev111477759 (『時刻表』1985年7月号·1986年6月号 인용)", "why": "国鉄 夏季 海水浴 臨時急行 「おおあらい」가 水戸에서 大洗鹿島線 大洗까지 乗り入れ. 1985(『鉄道ジャーナル』 1985-11 お盆 臨時 3急行 あじがうら·おおあらい), 1986(위키 時刻表 1986-06), 1987(『鉄道ジャーナル』 1987-11 「鹿島線直通の海水浴臨時列車<おおあらい>」)로 해마다 정해 운행 → 臨時 규칙상 인정. 끝 해는 미확정이라 범위(위키 「開業後の数年間」, 하한 1987 여름 확인). 끝 범위 상한 1991은 앞 회차가 본 時刻表 범위로, 근거가 아니라 탐색 한계다. (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_matsuokogyo_railway_line", "b": "l_hanawa_line", "at": ["n_obuke_matsuo_mining", "n_obuke"], "from": "[1962-01-01..1962-03-09]", "to": "[1965-01-31..1969-12-12]", "src": "https://dl.ndl.go.jp/pid/2262964; https://dl.ndl.go.jp/pid/1810378; https://dl.ndl.go.jp/pid/7887672", "why": "国鉄 스키·여름 시즌 직통 열차(上野발 「銀嶺八幡平」 1962 봄 매주 금요일, 夏 急行 「八幡平」 1962-07-22~08-25, 盛岡발 準急 시즌 직통)가 大更에서 松尾鉱業鉄道 東八幡平(옛 屋敷台)까지 乗り入れ. 해마다 시즌에 정해 운행(1962·1963·1964·1965 확인). 시작은 1961–62 겨울 시즌(週刊サンケイ 1962-03-12 기사가 상한). 끝은 위키 年表 1969-12-12 全列車運休·1970-02-01 旅客営業廃止가 상한, 마지막 확인 1965-01(山と渓谷). 1970-12 週刊ベースボール의 「1月~4月…直通準急」는 여객 폐지 뒤 글이라 쓰지 않음. (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_mikuni_line", "b": "l_mikuni_awara_line", "at": ["n_ashihara", "n_awara_yunomachi"], "from": "1946-08-15", "to": "[1950-03-01..1950-07-31]", "src": "https://dl.ndl.go.jp/pid/8322414; ja.wikipedia 三国線 rev109109773 1946-08-15 「三国線の列車が京福芦原駅 - 三国港駅間へ乗り入れ」, 「旅客列車のみ1950年3月廃止」", "why": "国鉄 三国線 열차가 芦原에서 京福 芦原–三国港 구간으로 片乗り入れ. 『交通年鑑 昭和23・24年版』 연표 昭和21-08-15 「省三國線金津芦原間營業復活 / 省列車三國線直通運轉開始 / 京福電鐵芦原接續全取扱開始」(위키 1946-08-15와 같은 날). 끝은 위키 「旅客列車のみ1950年3月廃止」와 「1950年7月号時刻表にも2往復」가 한 문서 안에서 엇갈려 범위. 기록 범위 안은 1950-01-01부터 몇 달. (11회차 R, 판정 표 c1에서 옮김) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_ikegami_line", "b": "l_tokyu_tamagawa_line", "at": ["n_kamata_tokyu_railways", "n_kamata_tokyu_railways"], "from": "[2000-08-06..2004-07-31]", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=110811270; https://ja.wikipedia.org/w/index.php?oldid=110978784", "why": "蒲田(같은 노드) 池上線↔東急多摩川線 朝夕 여객 직통(五反田·雪が谷大塚행, 입출고 겸함). 시작은 東急多摩川線 발족(2000-08-06)~2004-07 서술 시점 범위 (11회차 R, 전수 점검 4회차 kanto_1-005) (11회차 S2 반영 2026-11-16) / 스위치백: 두 노선이 蒲田에서 같은 쪽으로 나가 직통 열차는 방향을 바꿈(위키 東急池上線 「蒲田駅でスイッチバックして東急多摩川線へ乗り入れる多摩川駅発着の列車」, 선형 각 3°) (11회차 S3)", "reverse": true},
+{"a": "l_yunomae_line_kumagawa", "b": "l_hisatsu_line", "at": ["n_hitoyoshi_onsen", "n_hitoyoshi"], "from": "1989-10-01", "to": "[1992-01-01..1993-12-31]", "src": "https://dl.ndl.go.jp/pid/3330328; https://dl.ndl.go.jp/pid/13162752; https://dl.ndl.go.jp/pid/3294684", "why": "人吉 くま川鉄道湯前線↔肥薩線: 이관 뒤 急行 くまがわ 湯前 직통(1989-12·1991-07·1991-12 확인), 끝은 위키 「1993年ごろまで」 범위 (11회차 R) (11회차 S2 반영 2026-11-16)"},
+{"a": "l_kojaku_railway_line", "b": "l_tokaido_main_line", "at": ["n_biwako_hamaotsu_kojaku", "n_biwako_hamaotsu_kojaku"], "b_route": "r_tokaido_main_line_zeze_hamaotsu", "from": "1947-01-25", "to": "1965-07-10", "a_toward": "n_zeze", "src": "https://dl.ndl.go.jp/pid/3453292 (大阪鉄道局史 399コマ); https://dl.ndl.go.jp/pid/8322414 (交通年鑑 昭和23・24年版 82コマ); https://dl.ndl.go.jp/pid/13318212 (京阪電気鉄道 車両発達史 35コマ); https://ja.wikipedia.org/w/index.php?oldid=110542243", "why": "江若 여객 열차(気動車)가 浜大津에서 国鉄 東海道本線 貨物支線(膳所–浜大津)으로 膳所까지 乗り入れ. 법적 노선은 국철(江若 면허 없음, 江若 営業キロ 51.0은 浜大津 기점). 『大阪鉄道局史』(1950) 「江若鉄道膳所乘入に伴い浜大津膳所連動を変更す」, 『交通年鑑 昭和23・24年版』 「省濱大津膳所間江若鐵道線路共用に…列車乘入による營業開始」, 『京阪電気鉄道』(1991) 「浜大津-膳所間の江若鉄道の乗入れ気動車」(서로 독립 중간 셋). 1965-07-10 乗り入れ 폐지(위키 江若鉄道·京阪石山坂本線 年表) (11회차 R·S2 2026-11-16)"},
+{"a": "l_osaka_line", "b": "l_nagoya_line", "at": ["n_ise_nakagawa", "n_ise_nakagawa"], "from": "1959-12-12", "to": "1963-03-21", "src": "『運転協会誌』51(8) 2009-08 10コマ; 『鉄道ジャーナル』10(13) 1976-12 26コマ; https://ja.wikipedia.org/w/index.php?oldid=110287982; https://ja.wikipedia.org/w/index.php?oldid=111364868", "why": "伊勢中川 大阪線↔名古屋線 名阪 여객 직통(스위치백): 名古屋線 改軌 뒤 1959-12-12부터 名阪 직통이 伊勢中川 승강장에서 방향을 바꿈(『運転協会誌』2009-08 「12月12日から『新ビスタカー』10100系による名阪直通運転(伊勢中川駅でスイッチバック)を開始」), 1961-03-29 中川短絡線 개통 뒤 甲特急은 短絡線, 乙特急은 1963-03-21까지 스위치백(위키 伊勢中川駅 rev110287982 「名阪乙特急…は従来どおり伊勢中川駅でスイッチバックを行っていたが、1963年3月21日から乙特急も短絡線を使用」, 鉄道ジャーナル 1976-12 「中川短絡線が開通し,伊勢中川でのスイッチバックを解消」). 두 노선 모두 伊勢中川 끝이고 선형 각 7° (11회차 S3)", "passenger_only": true, "reverse": true},
+{"a": "l_osaka_line", "b": "l_nagoya_line", "at": ["n_ise_nakagawa", "n_ise_nakagawa"], "from": "1963-03-21", "to": "2018-03-17", "src": "『近鉄 1』(カラーブックス) 保育社 1998-03 67コマ; https://ja.wikipedia.org/w/index.php?oldid=110287982; https://ja.wikipedia.org/w/index.php?oldid=111364868; https://ja.wikipedia.org/w/index.php?oldid=111029029", "why": "伊勢中川 大阪線→名古屋線 일반 열차 직통(스위치백): 短絡線을 쓰지 않고 伊勢中川에 서서 방향을 바꾸는 열차(『近鉄 1』 1998 「中川短絡線を通らず、中川駅に立ち寄ってスイッチバックしている」), 마지막은 名張発近鉄名古屋行 急行 2018-03-16까지(위키 伊勢中川駅 rev110287982·近鉄大阪線 rev111364868·近鉄名古屋線 rev111029029, 같은 계열). 스위치백 직통이 1963 뒤에도 있었음은 독립 둘(『近鉄 1』 1998, 위키), 끝 날짜 2018-03-17은 위키 한 계열(伊勢中川駅·大阪線·名古屋線 세 문서가 같은 「2018年3月16日まで」)이다. 범위 끝으로 두면 기간 밖 선로 연결 행과 이어지지 않고 환승 토막이 생겨 날짜로 둔다(표식 기간만 바뀌고 이음 행은 그대로). 名古屋線→大阪線 방향 스위치백 직통 근거는 없어 大阪線 쪽만 표식 (11회차 S3)", "passenger_only": true, "reverse": "a"},
+{"a": "l_yunoyama_line", "b": "l_nagoya_line", "at": ["n_kintetsu_yokkaichi", "n_kintetsu_yokkaichi"], "from": "1964-03-23", "to": "1971-12-08", "src": "https://ja.wikipedia.org/w/index.php?oldid=108899897; https://ja.wikipedia.org/w/index.php?oldid=111069175; 『中日新聞四日市関係記事索引 第2集』1995 43コマ; 『最近20年のあゆみ』近畿日本鉄道 1980 124コマ", "why": "近鉄四日市 湯の山線→名古屋線 여객 직통: 湯の山線 칸은 近鉄四日市 북쪽 끝에서 갈라져 近鉄名古屋 쪽 직통은 방향을 바꿈(선형 각 31°), 남쪽(伊勢中川·大阪線 직통 특급) 쪽은 곧게 이어짐(150°). 시작 1964-03-23 「近鉄名古屋線と準急列車の直通運転開始」(위키 近鉄湯の山線 rev108899897), 『中日新聞四日市関係記事索引』 「名古屋-湯の山に直通準急 昭和39年3月21日」. 끝 1971-12-08 「高架化工事開始により名古屋線 - 湯の山線の直通運転休止」(위키 近鉄四日市駅 rev111069175, 『80年のあゆみ』 p213 인용), 사업자 사사 『最近20年のあゆみ』(1980) 「…高架化工事に伴い湯の山特急、四日市・湯の山間折り返し」. 고가화 뒤 재개(1982 臨時急行, 1997-03-18 名古屋線 직통 특급 폐지)는 재개일 근거가 없어 넣지 않음. 4회차 kinki_3-009 (11회차 S3)", "a_toward": ["n_kintetsu_nagoya", "n_ise_nakagawa"], "passenger_only": true, "reverse": true},
+{"a": "l_shinonoi_line", "b": "l_chuo_main_line", "at": ["n_shiojiri", "n_shiojiri"], "from": null, "to": "1982-05-17", "src": "https://ja.wikipedia.org/w/index.php?oldid=111778298; 『交通技術』29(13) 1974-12 11コマ; 『交通技術』35(11) 1980-10 9コマ; 『地図情報』2(1) 1982-08 17コマ", "why": "옛 塩尻(1982-05-17 이전 전) 篠ノ井線↔中央西線 여객 직통(しなの·ちくま)은 塩尻에서 스위치백: 위키 塩尻駅 rev111778298 「中央本線の東京方面（中央東線）と名古屋方面（中央西線）がスルー可能な配線…中央西線と篠ノ井線の間を直通する列車（「しなの」・「ちくま」など）がスイッチバックを強いられていた」 「1982年5月17日：移転」, 『交通技術』1974-12 「中央西線対篠ノ井線のスイッチバックのため平面交差」, 『地図情報』1982-08 「中央本線塩尻駅移設完成…中央西線対篠ノ井線のスイッチバック運転の解消」. 中央東線↔篠ノ井線은 곧게 이어짐이라 표식은 篠ノ井線 끝 이어짐(中央西線 洗馬 쪽)만. 노드가 지금 자리라 선형 각(165°)은 옛 배선을 담지 못함(감사 K196 확인 목록) (11회차 S3)", "passenger_only": true, "reverse": "a"},
+{"a": "l_otsuki_line", "b": "l_kawaguchiko_line", "at": ["n_fujisan", "n_fujisan"], "from": "1950-08-24", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111781514; 『鉄道ピクトリアル』11(1) 1961-01 27コマ; 『鉄道ジャーナル』28(7) 1994-07 39コマ; 『運転協会誌』35(5) 1993-05 24コマ", "why": "富士山(옛 富士吉田) 大月線↔河口湖線 여객 직통(스위치백): 위키 富士山駅 rev111781514 「1950年8月24日：河口湖線がスイッチバックの線形で河口湖まで開業」, 鉄道ピクトリアル 1961-01 「河口湖行の電車はここでスイッチ·バックを行なう」, 運転協会誌 1993-05 「河口湖線が開通し,この駅でスイッチバックして河口湖に向かう」. 선형 각 0° (11회차 S3)", "reverse": true},
+{"a": "l_tazawako_line", "b": "l_ou_main_line", "at": ["n_omagari_ou_main", "n_omagari_ou_main"], "from": "1997-03-22", "to": null, "src": "https://ja.wikipedia.org/w/index.php?oldid=111465873; 『鉄道ジャーナル』33(6) 1999-06 8コマ; 『運輸と経済』57(10) 1997-10 46コマ", "why": "大曲 田沢湖線→奥羽本線 秋田 쪽 여객 직통(秋田新幹線 こまち, 스위치백): 위키 田沢湖線 rev111465873 「秋田新幹線が開業した際には大曲駅でスイッチバックを行って奥羽本線秋田駅へ至る方式」, 鉄道ジャーナル 1999-06 「<こまち>が走るルートは大曲でスイッチバックの線形」, 運輸と経済 1997-10 「スイッチバックの大曲」. 1997-03-22 개업 전 1067 시대 横手 쪽 직통은 곧게 이어짐(선로 연결 자동 행 그대로) (11회차 S3)", "a_toward": "n_akita", "passenger_only": true, "reverse": true},
+{"a": "l_nagao_line", "b": "l_kotohira_line", "at": ["n_kawaramachi_takamatsu_kotohira", "n_kawaramachi_takamatsu_kotohira"], "from": "1994-06-26", "to": null, "src": "https://dl.ndl.go.jp/pid/3294734; https://dl.ndl.go.jp/pid/3294746; https://dl.ndl.go.jp/pid/3330401", "why": "瓦町 長尾線→琴平線(築港線) 高松築港 여객 직통: 1994-06-26 志度線 瓦町 끊기와 함께 시작(鉄道ピクトリアル 1995-01 「1994.6.26に志度線の瓦町打切りと,長尾線の高松築港直通運転を実施」·1995-10, 鉄道ジャーナル 1996-01). 1988년엔 長尾線 線内運転(鉄道ジャーナル 1988-08). 선로 연결은 1951~(자동 행, 기간 밖에도 남음). 방면 高松築港 쪽 (11회차 R, 4회차 chugoku_shikoku_2-004; 11회차 S3)", "a_toward": "n_takamatsu_chikko", "passenger_only": true},
+{"a": "l_shindaikumachi_line", "b": "l_akitashinai_line", "at": ["n_omoteteppomachi", "n_omoteteppomachi"], "from": "1922-01-21", "to": "[1951-02-07..1952-04-01]", "a_toward": "n_tsuchizaki_akita_city", "src": "https://ja.wikipedia.org/w/index.php?oldid=108630770 (秋田市電 年表 1951-02-07 「支線と化した表鉄砲町 - 新大工町間を新大工町線とする」, 각주 없음, 중간 1건); 『鉄道統計資料』 昭和6~9年度(NDL 인터넷 공개) 区間 「新大工町、土崎」·「秋田驛前、縣廳前」 두 갈래(높음, 전쟁 전 구조)", "why": "新大工町–土崎는 1951-02-07 新大工町線으로 지선이 되기 전까지 본선이었다(위키 年表). 1950-09-01 保戸野(表鉄砲町)–県庁前 개통 뒤 新大工町 전차가 県庁前 쪽으로 직통했다는 자료는 없고 N05 선형 추론뿐이라, 그 기간 끝 이어짐 방면을 土崎 쪽으로 둔다. 근거 중간 1건이라 확인 목록(근거 부족)에 남김 (11회차 R5, 2026-11-17)"}
+
+]
+  },
+  "JUNCTION_NOT": {
+   "설명": "그 역의 그 노선 쌍은 선로가 이어지지 않음(from·to가 있으면 그 기간만, 예: 분단). 행 {line, other|other_route, at, why[, from, to]}. 양쪽 화면 행에 함께 걸고 위키 노선도 행·자동 행을 지운다(근거 THROUGH 행은 빼고). 한 번도 쓰이지 않는 행이 있으면 gen_wiki가 멈춘다 (2회차 종합 K02)",
+   "쓰는 곳": "tools/gen_wiki.py",
+   "값": [
+     {"line": "l_aoyama_line", "other": "l_tengenjibashi_line", "at": "n_shibuya_ekimae", "why": "渋谷駅前에서 青山線과 天現寺橋線은 같은 정류장(1957-03-26 집약)이지만 레일은 끝까지 이어지지 않음(위키 東京都電車 rev110874184 「青山線と天現寺橋線のレールは最後まで繋がっていなかった」). 환승으로. 감사1 kanto_3-020 (6회차 근거 조사 2026-11-14; r6out/B)"},
+    {
+     "line": "l_hanshin_main_line",
+     "other": "l_kitaosaka_line",
+     "at": "n_noda_hanshin",
+     "why": "北大阪線 野田는 国道線과 이어진 별도 노면 승강장으로 本線과 선로가 이어지지 않음(위키 阪神北大阪線 rev110507999 노선도). 감사2 kinki_1-021"
+    },
+    {
+     "line": "l_joetsu_line",
+     "other": "l_shinetsu_main_line",
+     "at": "n_takasaki",
+     "why": "高崎에서 두 노선은 高崎線에서 각각 갈라지고 서로 곧게 이어지지 않음(옛 NOCONT 이름 쌍 행을 역 한정으로 좁힘. 宮内에서는 上越線 열차가 信越本線 長岡로 이어짐)"
+    },
+    {
+     "line": "l_sasebo_line",
+     "other": "l_nishi_kyushu_line",
+     "at": "n_sasebo",
+     "why": "佐世保에서 두 노선은 각자 끝나는 승강장. 기간 한정 직통(2009–2020)은 THROUGH 행으로만 둠(옛 NOCONT 이름 쌍 행을 역 한정으로 좁힘. 有田에서는 선로가 이어짐)"
+    },
+    {
+     "line": "l_chikuhi_line",
+     "other": "l_nishi_kyushu_line",
+     "at": "n_imari",
+     "from": "2002-03-01",
+     "why": "伊万里: 「2002年3月1日：伊万里駅新駅舎完成に伴い筑肥線・西九州線間が分断」(위키 松浦鉄道西九州線 rev110495488, 筑肥線 rev110909455). 감사2 kyushu_2-23"
+    },
+    {
+     "line": "l_yunoyama_line",
+     "other": "l_nagoya_line",
+     "at": "n_kintetsu_yokkaichi",
+     "to": "1964-03-01",
+     "why": "湯の山線은 「改軌 1964年3月1日（762 mm → 1,435 mm）」 전까지 762 mm라 名古屋線과 선로가 이어지지 않았다(위키 近鉄湯の山線 rev108899897 「標準軌に改軌…近鉄名古屋線と直通運転を開始」)"
+    },
+    {
+     "line": "l_kuroishi_line_konan",
+     "other": "l_ou_main_line",
+     "at": "n_kawabe",
+     "why": "弘南鉄道黒石線(1984~1998) 川部: 노선도의 奥羽本線 연결이 옛 연결(eABZq+r)이고 역표 주석 「弘南移管後は4番線使用」(위키 弘南鉄道黒石線 rev111125380). 국철 黒石線 시기 연결은 l_kuroishi_line 행. 감사2 C1 K01"
+    },
+    {
+     "line": "l_kuroishi_line_konan",
+     "other": "l_gono_line",
+     "at": "n_kawabe",
+     "why": "弘南鉄道黒石線(1984~1998) 川部: 위 奥羽本線 행과 같은 근거(rev111125380, 弘南 이관 뒤 4番線을 따로 씀, 연결은 eABZ 옛 연결). 감사2 C1 K01"
+    },
+    {
+     "line": "l_utsube_line",
+     "other": "l_nagoya_line",
+     "at": "n_suwa_kintetsu",
+     "why": "諏訪(~1956): 内部線은 軌間 762 mm(위키 四日市あすなろう鉄道内部線 rev110826270), 名古屋線은 1959-11 改軌 전 1067 mm(위키 近鉄名古屋線 rev111029029)라 선로가 이어지지 않음. 궤간 표에 두 노선 행이 없어 판정으로 둠. 감사2 C1 K01"
+    },
+    {
+     "line": "l_otemachi_line",
+     "other": "l_honmachi_line",
+     "at": "n_nishihoribata",
+     "why": "결정 138: 伊予鉄 本町線↔大手町線 이어짐은 자동(derived) 행뿐이고 근거가 약해(D1 확인) 근거가 생길 때까지 만들지 않음 (W4 F2 2026-11-12)"
+    },
+    {
+     "line": "l_honmachi_line",
+     "other": "l_otemachi_line",
+     "at": "n_honmachi_1_chome",
+     "why": "결정 138: 伊予鉄 本町線↔大手町線 이어짐은 자동(derived) 행뿐이고 근거가 약해(D1 확인) 근거가 생길 때까지 만들지 않음 (W4 F2 2026-11-12)"
+    },
+    {
+     "line": "l_akechi_line_akechi",
+     "other": "l_chuo_main_line",
+     "at": "n_ena",
+     "why": "明知鉄道 발족(1985-11-16) 때 中央本線과의 연락선 철거(위키 明知鉄道明知線 「明知鉄道発足時に中央本線との連絡線が撤去」, 중간) (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_hojo_line_hojo",
+     "other": "l_kakogawa_line",
+     "at": "n_ao",
+     "why": "第三セクター化(1985-04-01)로 선로 분단(위키 北条鉄道北条線 「第三セクター化により線路も分断」, 중간) (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_tenryu_hamanako_line",
+     "other": "l_tokaido_main_line",
+     "at": "n_shinjohara",
+     "why": "東海道本線 직통은 1987-03-14까지, 跨線橋 철거로 天竜浜名湖鉄道 발족 뒤 선로 분단(위키 新所原駅, 중간) (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_asato_line",
+     "other": "l_mugi_line",
+     "at": "n_awa_kainan",
+     "why": "DMV 전환 공사로 阿佐東線 선로와 분단(위키 阿波海南駅 「阿佐東線の線路とは分断された」, 중간) (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_chiyoda_line",
+     "other": "l_hibiya_line",
+     "at": "n_kita_senju_tokyo_metro",
+     "why": "北千住에서 千代田線은 町屋方 両渡り線으로 자기 노선 안에서만 되돌아가고 日比谷線은 東武 배선뿐, 두 선은 連絡通路로 갈아탐. 千代田線의 다른 노선 연결선은 霞ケ関 有楽町線 連絡線뿐(위키 北千住駅·千代田線, 부재 근거 중간) (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_aichi_loop_line",
+     "other": "l_tokaido_main_line",
+     "at": "n_okazaki",
+     "from": "2004-11-15",
+     "why": "愛知環状鉄道 0번선 전용 선로 증설(2004-11-15)로 東海道本線 上り線 역주행 직통 종료(위키 岡崎駅·岡多線, 중간) (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_amagi_line_amagi",
+     "other": "l_kagoshima_main_line",
+     "at": "n_kiyama_amagi",
+     "why": "基山에서 甘木鉄道는 「JRとは線路が繋がっていない」(위키 基山駅, 중간). 끊긴 날을 찾을 때까지 甘木鉄道 기간 전체를 환승으로 (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_koumi_line",
+     "other": "l_shinano_railway_line",
+     "at": "n_komoro",
+     "why": "小諸에서 小海線과 しなの鉄道는 「レールは分断」(위키 小諸駅, 중간). 끊긴 날을 찾을 때까지 しなの鉄道 기간(1997-10-01~) 전체를 환승으로 (derived 이어짐 선로 검증 R5-A p11, 2026-11-12)"
+    },
+    {
+     "line": "l_etsumi_nan_line_nagaragawa",
+     "other": "l_taita_line",
+     "at": "n_mino_ota",
+     "from": "2006-07-01",
+     "why": "美濃太田駅 構内改良工事(2006年6月)로 「長良川鉄道越美南線との連絡ポイントが切られた」(위키 美濃太田駅, 중간). 일 단위 날짜를 몰라 6월 말 다음 날(2006-07-01)부터로 둠(날짜 대략) (derived 이어짐 선로 검증 R5-A p12, 2026-11-12)"
+    },
+    {
+     "line": "l_etsumi_nan_line_nagaragawa",
+     "other": "l_takayama_main_line",
+     "at": "n_mino_ota",
+     "from": "2006-07-01",
+     "why": "美濃太田駅 構内改良工事(2006年6月)로 「長良川鉄道越美南線との連絡ポイントが切られた」(위키 美濃太田駅, 중간). 일 단위 날짜를 몰라 6월 말 다음 날(2006-07-01)부터로 둠(날짜 대략) (derived 이어짐 선로 검증 R5-A p12, 2026-11-12)"
+    },
+    {
+     "line": "l_ishiwara_line",
+     "other": "l_sarue_line",
+     "at": "n_kinshicho_ekimae",
+     "why": "都電 石原線 錦糸町駅前(総武線 錦糸町역 북쪽 四ツ目通)과 猿江線 錦糸町駅前(역 남쪽 광장 앞)은 선로를 사이에 두고 약 175 m 떨어진 다른 정류장이고 선로가 이어지지 않음(地理院 ort_old10 1961–69 z17 판독, n05_fix 노트 「선로 안 이어짐」). 두 노선이 한 노드를 쓰던 탓에 「끝 역에서 만나는 같은 사업자 노선 쌍」 자동 이어짐(1958-05-29~1971-03-18)이 생겼던 것을 지움. 노드는 compile node_split으로 나눔 (3회차 선형 조사 2026-11-13; r3out/geo n_kinshicho_ekimae)"
+    },
+    {"line": "l_shido_line", "other": "l_kotohira_line", "at": "n_kawaramachi_takamatsu_kotohira", "from": "1994-06-26", "why": "1994-06-26부터 志度線은 瓦町 개량 공사로 琴平線·長尾線과 선로가 끊긴 고립선(위키 高松琴平電気鉄道志度線 rev111442761 「瓦町駅改良工事着手に伴い琴平線・長尾線と分断され、孤立線となる」, 長尾線 THROUGH 행과 같은 근거). 그 뒤 琴平線은 환승. 3회차 chugoku_shikoku_2-002 (판 2026-11-15.1, W1a)"},
+    {"line": "l_tohoku_main_line", "route": "r_tohoku_main_line_nippori_akabane", "other": "l_joban_line", "at": "n_nippori", "why": "尾久 경유 지선(列車線)은 日暮里에 승강장이 없고 「全列車が上野方面に乗り入れ」(위키 日暮里駅 rev111072425), 常磐線과는 上野 쪽 복복선으로 따로 달려 日暮里에서 선로가 이어지지 않음. 3회차 tohoku_2-006"},
+    {"line": "l_tohoku_main_line", "route": "r_tohoku_main_line_nippori_akabane", "other": "l_akabane_line", "at": "n_akabane", "why": "赤羽에서 「当駅より上野方面は経路も異なり、電車線は田端方面、列車線は尾久方面を経由する」(위키 赤羽駅 rev111558707): 尾久 경유 列車線은 川口·大宮 쪽 列車線으로만 이어지고 赤羽線(十条 쪽)과는 이어지지 않음(선형도 같은 쪽으로 나란히 2°). 3회차 tohoku_2-006"},
+    {"line": "l_tohoku_main_line", "route": "r_tohoku_main_line_nippori_akabane", "other_route": "r_tohoku_main_line_akabane_omiya", "at": "n_akabane", "why": "尾久 경유 列車線과 埼京線(武蔵浦和 경유 지선)은 赤羽에서 선로가 이어지지 않음(위키 赤羽駅 rev111558707 「列車線は尾久方面」, 埼京線은 赤羽線 十条 쪽과 이어짐). 3회차 tohoku_2-006"},
+    {"line": "l_tohoku_main_line", "route": "r_tohoku_main_line_akabane_omiya", "other_route": "r_tohoku_main_line_nippori_akabane", "at": "n_akabane", "why": "위 행과 짝(埼京線 화면에서 尾久 경유 지선으로 이어짐 없음). 3회차 tohoku_2-006"},
+    {"line": "l_seibuen_line", "route": "r_seibuen_line", "other_route": "r_seibuen_line_higashi_murayama_murayamachosuichi", "at": "n_higashi_murayama", "why": "西武園線 두 계통(東村山–西武園, 東村山–村山貯水池)은 東村山에서 같은 선로로 나가 野口信号所(~1951)에서 갈라짐(위키 西武西武園線 rev109698618 노선도 「野口信号所 -1951」 eABZgl). 역에서 이어진 것이 아니라 끝 이어짐이 아님(村山貯水池 쪽 칸 선형이 없어 선형 규칙으로 못 거름). 3회차 kanto_3-11 (판 2026-11-15.1, W1a)"},
+{"line": "l_noto_line_noto", "other": "l_nanao_line", "at": "n_anamizu", "from": "1988-03-25", "to": "1991-09-01", "why": "1988-03-25~1991-09-01 のと鉄道能登線 역은 JR 穴水에서 갈라 따로 연 のと穴水駅이었고 金沢 직통 急行「能登路」는 能登線内 운행을 멈췄다가 1991-09-01(のと穴水→穴水 개칭, のと鉄道七尾線 개업)에 재개 (위키 のと鉄道能登線 rev109521647 年表 1988-03-25 「急行「能登路」の能登線内での運転を中止」「穴水駅から分離し、のと穴水駅開業」, 1991-09-01 「のと穴水駅を穴水駅に改称」「急行「能登路」の能登線内での運転を再開」). 그 기간은 환승. 4회차 chubu_2-003 (11회차 S2 2026-11-16)"},
+{"line": "l_honmachi_line", "other": "l_johoku_line_iyotetsu", "at": "n_honmachi_6_chome", "why": "本町線 끝 本町六丁目에서 城北線과 선로가 이어지지 않음(위키 伊予鉄道本町線 rev111310023 「ただし終点の本町六丁目停留場では、城北線と線路は繋がっていない」). 환승으로. 4회차 chugoku_shikoku_1-002 (11회차 S2 2026-11-16)"},
+{"line": "l_kashii_line", "other": "l_katsuta_line", "at": "n_umi", "why": "香椎線·勝田線 宇美는 따로 떨어진 역 시설(약 100 m)이고 노선도에도 선로 접속 없이 갈아타기(HUB)만 그려짐(위키 勝田線 rev111030903 「宇美駅は、香椎線・勝田線がそれぞれ別の駅施設を有していた」「双方の宇美駅は約100 mほど離れており」, 노선도 宇美 행 ABZ 없음). 환승으로. 4회차 kyushu_1-004 (11회차 S2 2026-11-16)"},
+{"line": "l_tokaido_main_line", "route": "r_umeda_freight_line", "other_route": "r_tokaido_main_line", "at": "n_osaka", "why": "梅田貨物線의 大阪 지하 승강장(2023-03-18 개업, うめきたエリア)은 梅田貨物線 선로 위에 있고 東海道本線(JR京都線) 지상 승강장과 선로가 이어지지 않음: 梅田貨物線은 新大阪을 나와 淀川을 건넌 뒤 旅客線과 갈라져 지하로 들어감(위키 梅田貨物線 rev111568936 「新大阪駅を出て淀川を渡った先で東海道本線（JR京都線）旅客線と分かれると…地下へと潜っていき」 「2023年（令和5年）3月18日のダイヤ改正で大阪駅の地下ホームが開業」). 福島 통과 경계로 大阪가 그 계통 정차 끝이 되어도 東海道本線 본선 계통 끝 이어짐이 아님. 4회차 kinki_1-07 (11회차 S2 2026-11-16)"},
+{"line": "l_wakayama_line", "route": "r_wakayama_line_tainose_wakayamashi", "other_route": "r_wakayama_line_tainose_wakayama", "at": "n_tainose", "why": "和歌山線 短絡線(1962–1972 여객 이력 계통)과 紀和 쪽 옛 경로는 田井ノ瀬에서 같은 쪽으로 갈라져 서로 직통하려면 방향을 바꿔야 하고, 短絡線 여객 열차(準急 「はまゆう」)는 和歌山線 본선(王寺 쪽)에서 들어갔다(車輛工学 1962-05 경로도 「奈良 東和歌山 白浜口 (和歌山線)(紀勢本線)」, 鉄道ピクトリアル 2000-03 「和歌山線を経由する「はまゆう」なども走り」). 두 계통 사이 이어짐을 두지 않음 (11회차 S3)"},
+{"line": "l_wakayama_line", "route": "r_wakayama_line_tainose_wakayama", "other_route": "r_wakayama_line_tainose_wakayamashi", "at": "n_tainose", "why": "和歌山線 短絡線(1962–1972 여객 이력 계통)과 紀和 쪽 옛 경로는 田井ノ瀬에서 같은 쪽으로 갈라져 서로 직통하려면 방향을 바꿔야 하고, 短絡線 여객 열차(準急 「はまゆう」)는 和歌山線 본선(王寺 쪽)에서 들어갔다(車輛工学 1962-05 경로도 「奈良 東和歌山 白浜口 (和歌山線)(紀勢本線)」, 鉄道ピクトリアル 2000-03 「和歌山線を経由する「はまゆう」なども走り」). 두 계통 사이 이어짐을 두지 않음 (11회차 S3)"}
+]
+  },
+  "LINE_AXIS": {
+   "설명": "공식 기점이 정해진 노선. 표가 끝 구간을 따로 적어 기점이 다른 계통이 둘 이상 생기거나 계통 방향이 공식과 거꾸로인 곳을 기점 역부터 한 줄 계통으로 잇는다. [회사, 노선(생성기 노선 이름), 기점 역, 근거]",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "頸城鉄道",
+     "頸城鉄道",
+     "新黒井",
+     "공식 頸城鉄道線은 新黒井 0.0–百間町 5.4–浦川原 15.0 한 줄(분기 없음). 위키 頸城鉄道線 노선 데이터·노선도, 1966 『停車場一覧』 (3회차 전수 점검 chubu_2-13, 2회차 known)"
+    ],
+    [
+     "名古屋鉄道",
+     "三河線",
+     "西中金",
+     "공식 三河線 営業キロ는 한 축: 폐지 전 西中金 0.0 → 猿投 8.6 → 碧南 48.4 → 吉良吉田 64.8(위키 名鉄三河線 노선 데이터·역 목록 営業キロ). 지금 영업 구간 첫 역 猿投가 0.0이 되고 폐지 구간은 음수(compile km 원점 규칙) (3회차 chubu_2-12)"
+    ],
+    [
+     "羽後交通",
+     "横荘線",
+     "横手",
+     "공식 기점 横手 0.0 → 樋ノ口 6.3 … 二井山 26.1(위키 羽後交通横荘線 역 목록 営業キロ) (3회차 tohoku_2-014)"
+    ],
+    [
+     "羽後交通",
+     "雄勝線",
+     "湯沢",
+     "공식 雄勝線은 湯沢 기점 한 줄: 湯沢 0.0 → 西馬音内 8.9 → 梺 11.7(1967-12-01 西馬音内–梺 폐지). 위키 羽後交通雄勝線 rev109987197 駅一覧 「湯沢駅 - 羽後山田駅 … 西馬音内駅 - 元西馬音内駅 - 梺駅」·노선 데이터 起点 湯沢 (3회차 tohoku_1-025, 1회차 #034·2회차 #038, 9회차 S)"
+    ]
+   ]
+  },
+  "LINE_PREFIX": {
+   "설명": "노선 이름의 사업자 머리(상표). 사업자·사명이 바뀐 노선의 시대 이름(compile)을 만들 때 지금 이름에서 떼고 붙이는 머리다. 표에 없는 사업자는 사업자 이름(株式会社 뗌)·한국어·영어 이름, 국철·JR은 머리 없음. [사업자 ID, ja, ko, en, 근거] (2회차 결정 U08·U10, 8회차 W1b)",
+   "쓰는 곳": "tools/compile.py",
+   "값": [
+    [
+     "o_keihanshin_kyuko_electric_railway",
+     "阪急",
+     "한큐",
+     "Hankyu",
+     "京阪神急行電鉄 시대에도 「阪急」 상표(위키 阪急電鉄 「1943年…京阪神急行電鉄…通称・阪急」)"
+    ],
+    [
+     "o_hankyu_corporation",
+     "阪急",
+     "한큐",
+     "Hankyu",
+     "지금 노선 이름 머리(lines_ja 阪急○○線)"
+    ],
+    [
+     "o_tokyo_kyuko_electric_railway",
+     "東急",
+     "도큐",
+     "Tokyu",
+     "東京急行電鉄 시대 상표 「東急」(위키 東急電鉄)"
+    ],
+    [
+     "o_tokyu_railways",
+     "東急",
+     "도큐",
+     "Tokyu",
+     "지금 노선 이름 머리"
+    ],
+    [
+     "o_keio_teito_electric_railway",
+     "京王",
+     "케이오",
+     "Keio",
+     "京王帝都電鉄 시대 상표 「京王」(위키 京王電鉄)"
+    ],
+    [
+     "o_keio",
+     "京王",
+     "케이오",
+     "Keio",
+     "지금 노선 이름 머리"
+    ],
+    [
+     "o_kintetsu_railway",
+     "近鉄",
+     "킨테츠",
+     "Kintetsu",
+     "近畿日本鉄道 상표 「近鉄」"
+    ],
+    [
+     "o_nagoya_railroad",
+     "名鉄",
+     "메이테츠",
+     "Meitetsu",
+     "名古屋鉄道 상표 「名鉄」"
+    ],
+    [
+     "o_nishi_nippon_railroad",
+     "西鉄",
+     "니시테츠",
+     "Nishitetsu",
+     "西日本鉄道 상표 「西鉄」"
+    ],
+    [
+     "o_keikyu",
+     "京急",
+     "케이큐",
+     "Keikyu",
+     "京浜急行電鉄 상표 「京急」"
+    ],
+    [
+     "o_keisei_electric_railway",
+     "京成",
+     "케이세이",
+     "Keisei",
+     "京成電鉄 상표 「京成」"
+    ],
+    [
+     "o_odakyu_electric_railway",
+     "小田急",
+     "오다큐",
+     "Odakyu",
+     "小田急電鉄 상표 「小田急」"
+    ],
+    [
+     "o_tobu_railway",
+     "東武",
+     "도부",
+     "Tobu",
+     "東武鉄道 상표 「東武」"
+    ],
+    [
+     "o_seibu_railway",
+     "西武",
+     "세이부",
+     "Seibu",
+     "西武鉄道 상표 「西武」"
+    ],
+    [
+     "o_sagami_railway",
+     "相鉄",
+     "소테츠",
+     "Sotetsu",
+     "相模鉄道 상표 「相鉄」"
+    ],
+    [
+     "o_nankai_electric_railway",
+     "南海",
+     "난카이",
+     "Nankai",
+     "南海電気鉄道 상표 「南海」"
+    ],
+    [
+     "o_keihan_electric_railway",
+     "京阪",
+     "케이한",
+     "Keihan",
+     "京阪電気鉄道 상표 「京阪」"
+    ],
+    [
+     "o_hanshin_electric_railway",
+     "阪神",
+     "한신",
+     "Hanshin",
+     "阪神電気鉄道 상표 「阪神」"
+    ],
+    [
+     "o_tokyo_metro",
+     "東京メトロ",
+     "도쿄메트로",
+     "Tokyo Metro",
+     "東京地下鉄 상표(hand_tables COSHORT)"
+    ],
+    [
+     "o_teito_rapid_transit_authority",
+     "営団",
+     "에이단",
+     "Eidan",
+     "帝都高速度交通営団 시대 통칭 「営団」(위키 帝都高速度交通営団 「営団地下鉄」)"
+    ],
+    [
+     "o_shin_keisei_electric_railway",
+     "新京成",
+     "신케이세이",
+     "Shin-Keisei",
+     "新京成電鉄 상표 「新京成」(위키 新京成電鉄)"
+    ]
+   ]
+  },
+  "SHARED_TRACK": {
+   "설명": "사업자별로 나뉜 공용 선로(2회차 결정 U03). 두 노선이 함께 여객 영업하는 구간의 역은 한 노드, 칸은 물리 칸 하나로 두고 노선·사업자마다 멤버십(edge_attr) 행을 둔다. [노선 이름(생성기 부품 이름, |로 여럿), [구간 역 이름], 근거]",
+   "쓰는 곳": "tools/gen_source.py",
+   "값": [
+    [
+     "三田線|南北線",
+     [
+      "目黒",
+      "白金台",
+      "白金高輪"
+     ],
+     "目黒–白金高輪 2.3 km는 東京メトロ 南北線과 都営 三田線이 함께 쓰는 선로(東京メトロ 第一種, 都営 第二種). 두 노선 모두 営業キロ에 넣고 역은 공용(위키 都営地下鉄三田線·東京メトロ南北線 「目黒駅 - 白金高輪駅間は東京地下鉄との共用区間」) (2회차 결정 U03, 3회차 kanto_2-007)"
+    ],
+    [
+     "七尾線",
+     [
+      "七尾",
+      "和倉温泉"
+     ],
+     "JR 七尾線 七尾–和倉温泉 5.1 km를 のと鉄道 七尾線이 第二種으로 함께 영업(위키 七尾線 「七尾駅 - 和倉温泉駅間はのと鉄道も第二種鉄道事業者」) (2회차 결정 U03)"
+    ],
+    [
+     "伯備線|井原線",
+     [
+      "総社",
+      "清音"
+     ],
+     "総社–清音 3.4 km는 JR 伯備線 선로를 井原鉄道가 第二種으로 함께 영업(위키 井原鉄道井原線 「総社駅 - 清音駅間はJR伯備線との共用区間」) (2회차 결정 U03)"
+    ],
+    [
+     "関西空港線|空港線",
+     [
+      "りんくうタウン",
+      "関西空港"
+     ],
+     "りんくうタウン–関西空港 6.9 km(関西国際空港連絡橋)는 JR 関西空港線과 南海 空港線이 함께 쓰는 선로(新関西国際空港 第三種, JR·南海 第二種) (위키 関西空港線·南海空港線) (2회차 결정 U03)"
+    ]
+   ]
+  },
+  "PREFIX_KANA": {
+   "설명": "노선 이름 사업자 머리의 읽기. 같은 가족·종류 노선 이름 머리 맞춤(compile, U08)으로 머리를 붙인 노선의 읽기 앞에 붙인다. 회사·통칭 읽기는 각 회사 위키 첫 문장(とでん·にしてつ·なんかい …) [머리, 읽기]",
+   "쓰는 곳": "tools/compile.py",
+   "값": [
+    [
+     "都電",
+     "とでん"
+    ],
+    [
+     "名古屋市電",
+     "なごやしでん"
+    ],
+    [
+     "神戸市電",
+     "こうべしでん"
+    ],
+    [
+     "西鉄",
+     "にしてつ"
+    ],
+    [
+     "横浜市電",
+     "よこはましでん"
+    ],
+    [
+     "福島交通",
+     "ふくしまこうつう"
+    ],
+    [
+     "南海",
+     "なんかい"
+    ],
+    [
+     "山陽電気軌道",
+     "さんようでんききどう"
+    ],
+    [
+     "富山地方鉄道",
+     "とやまちほうてつどう"
+    ],
+    [
+     "阪神",
+     "はんしん"
+    ],
+    [
+     "熊本市電",
+     "くまもとしでん"
+    ],
+    [
+     "仙台市電",
+     "せんだいしでん"
+    ],
+    [
+     "東急",
+     "とうきゅう"
+    ]
+   ]
+  },
+  "THROUGH_REVIEWED": {
+   "설명": "직통 판정 표(THROUGH에 넣지 않은 판정). 같은 역 묶음에서 환승으로만 이어진 두 노선 쌍을 여객 직통 근거로 판정한 결과다. verdict b=화물·선로만(환승 확정), c=근거 부족·엇갈림, c1=여객 직통 근거가 하나뿐(독립 둘째 근거를 찾으면 THROUGH로). b는 감사 K142 후보에서 빼고, c·c1은 K142에 계속 남긴다 (10회차 D1)",
+   "쓰는 곳": "tools/audit_ext.py K142",
+   "값": [
+    {
+     "a": "l_hakodate_main_line",
+     "b": "l_bibai_railway_line",
+     "at": [
+      "n_bibai",
+      "n_bibai_mitsubishi_mining"
+     ],
+     "verdict": "b",
+     "why": "화물 직통: 석탄 연락 운송만, 여객은 美唄 共同使用駅에서 갈아탐(美唄鉄道는 자사 混合列車·気動車로 美唄–炭山만 운행). 函館本線 本線·南美唄支線 모두",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=105973586; https://ja.wikipedia.org/w/index.php?oldid=111025286"
+    },
+    {
+     "a": "l_sangu_line",
+     "b": "l_shima_line",
+     "at": [
+      "n_toba",
+      "n_toba_old"
+     ],
+     "verdict": "b",
+     "why": "화물 직통: 参宮線과 志摩線이 선로로 이어져 화물차만 직통, 여객은 갈아탐(사용자 확인 2026-11-16)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=111697814"
+    },
+    {
+     "a": "l_sunzu_line",
+     "b": "l_tramway_ho_line",
+     "at": [
+      "n_mishima_hirokoji",
+      "n_mishima_hirokoji_tramway"
+     ],
+     "verdict": "b",
+     "why": "선로만: 軌道線 영업 열차의 三島町 직통은 1949-04-01 폐지, 그 뒤 回送만(1959-09-07 연결선 철거)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=110893299; https://ja.wikipedia.org/w/index.php?oldid=111452276"
+    },
+    {
+     "a": "l_aizu_line",
+     "b": "l_aizu_kinugawa_line",
+     "at": [
+      "n_aizukogen_ozeguchi_aizu",
+      "n_aizukogen_ozeguchi_yagan"
+     ],
+     "verdict": "b",
+     "why": "국철 会津線(1986–1987)은 비전화라 野岩鉄道와 직통 없음. 상호 직통은 会津鉄道 시기 1990-10-12부터(그 행은 THROUGH)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=110280945; https://ja.wikipedia.org/w/index.php?oldid=108995651"
+    },
+    {
+     "a": "l_abukuma_express_line",
+     "b": "l_ou_main_line",
+     "at": [
+      "n_fukushima_abukuma_express",
+      "n_fukushima_ou_main"
+     ],
+     "verdict": "b",
+     "why": "阿武隈急行은 矢野目信号場에서 東北本線으로 들어와 福島에 닿고 직통도 東北本線(郡山)뿐. 奥羽本線 직통 서술 없음",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=111170784; https://ja.wikipedia.org/w/index.php?oldid=111706242"
+    },
+    {
+     "a": "l_eiheiji_line",
+     "b": "l_mikuni_line",
+     "at": [
+      "n_awaraonsen_eiheiji",
+      "n_awaraonsen"
+     ],
+     "verdict": "b",
+     "why": "共用駅·개업만 확인, 여객 직통 서술 없음(600V 전철·国鉄 비전화선) / 1955 運輸審議会半年報 「…乗入れ…つないでゆきたいと思つている」(희망, 직통 없음) (11회차 R)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=108719970; https://ja.wikipedia.org/w/index.php?oldid=111650293"
+    },
+    {
+     "a": "l_kaketa_line",
+     "b": "l_yanagawa_line",
+     "at": [
+      "n_hobara_kaketa",
+      "n_hobara_fukushima"
+     ],
+     "verdict": "b",
+     "why": "운행은 伊達·福島발 掛田행·梁川행과 保原–掛田·保原–梁川 구간만 확인, 掛田↔梁川 직통 서술 없음 / 계통 福島–掛田·福島–梁川(観光東北 1959, 福島民報年鑑 1964·1965), 掛田↔梁川 직통 없음 (11회차 R)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=109650637"
+    },
+    {
+     "a": "l_nagoya_line",
+     "b": "l_ise_line_kintetsu",
+     "at": [
+      "n_edobashi_old",
+      "n_edobashi"
+     ],
+     "verdict": "c",
+     "why": "근거 엇갈림: 近鉄名古屋線 문서 1959-12-12 「養老線と伊勢線との直通を廃止」 vs 近鉄伊勢線 문서 「戦後は線内運転のみ」. 1950–1959 직통 여부 미확정",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=111029029; https://ja.wikipedia.org/w/index.php?oldid=109441905",
+     "next": "『近畿日本鉄道 100年のあゆみ』, 1950년대 近鉄 時刻表"
+    },
+    {
+     "a": "l_akita_rinkai_railway_line",
+     "b": "l_ou_main_line",
+     "at": [
+      "n_tsuchizaki",
+      "n_tsuchizaki"
+     ],
+     "verdict": "c1",
+     "why": "臨時 여객 직통(근거 하나): 위키 秋田臨海鉄道線 1986-07-18~08-25 臨時旅客列車 「アッキー号」 秋田駅→秋田港線→秋田博前. 계통이 확장 행으로 끝나는 구조(L 몫)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=110115668",
+     "next": "1986 時刻表 秋田 臨時 欄"
+    },
+    {
+     "a": "l_akita_nairiku_line",
+     "b": "l_ou_main_line",
+     "at": [
+      "n_takanosu_akita_nairiku_jukan",
+      "n_takanosu"
+     ],
+     "verdict": "c",
+     "why": "臨時(弘前さくらまつり 등) 직통이 있었다는 감사 지적. 정기 직통 없음. 단발 臨時를 이어짐으로 둘지 사용자 판단(설계 판단)",
+     "src": "https://ja.wikipedia.org/w/index.php?oldid=111364809",
+     "next": "秋田内陸縦貫鉄道 臨時列車 記録"
+    }
+   ]
   }
  }
 }

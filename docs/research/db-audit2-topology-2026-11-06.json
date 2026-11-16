@@ -1,0 +1,194 @@
+[
+ {
+  "id": "TOP-01",
+  "severity": "오류",
+  "problem": "route_link가 상대 노선마다 후보 하나만 골라(pick), 같은 노선의 다른 계통·다른 노드가 맡던 기간의 환승·분기 행이 없음. 반대쪽 화면과 비대칭 20행",
+  "evidence": "(계통,역,상대 노선) 60 (같은 node 10, linked hub 26, 같은 group 24). 芸備線 広島→広電本線 1926–2025 없음(2025-08-03~만), 唐津線 山本→筑肥線 1929–1935 없음, 小浜線 敦賀→北陸本線 1917–1957 없음, 山陽本線 横川→可部線 옛 경로 1928–1962 없음, 琴平線 河原町→長尾線 옛 경로 1927–1951 없음",
+  "fix": "tools/compile.py route_link: 후보를 상대 계통별로 묶고 기간이 겹치지 않는 후보(옛·새 노드)마다 행을 만듦. pick()은 같은 기간에 겹치는 후보 사이에서만",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-02",
+  "severity": "오류",
+  "problem": "route_link의 kind(continue/branch)와 flow(through/up/down)를 오늘 상태(is_cur)로 정해 겹침 기간 전체에 씀. 역의 끝·통과 상태가 바뀐 날에서 행을 나누지 않음",
+  "evidence": "85행: continue인데 그 기간 일부는 끝 역 아님 25 (根室本線 富良野→富良野線 1900–, 日高本線 鵡川→富内線 1943–1986, 東北本線 盛岡→山田線 1923–, 北陸本線 敦賀→小浜線 1957–, 播但線 姫路→山陽本線 1894–), flow=through인데 상대가 내내 끝남 30 (東北本線 八戸→青い森 2002–2010, 北陸新幹線 金沢 2015–2024), flow=up/down인데 일부 기간 지나감 30 (東海道本線 横浜→東横線 1928–, 東横線은 2004까지 桜木町으로 지남)",
+  "fix": "tools/compile.py: 링크 기간을 자기·상대 계통의 정차 시작·끝과 인접 edge 집계 경계에서 쪼개고 기간마다 isend·flow_of·next·terminal을 그날 기준으로 계산",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-03",
+  "severity": "오류",
+  "problem": "junction이 위키 노선도 이름에 맞는 이관 뒤 노선 하나에만 붙어(gen_wiki.py `for oid in by_ja[nm]: …; break`), 같은 역의 JR 노선이나 이관 전 국철 노선쌍의 분기·끝 이어짐이 환승으로만 나옴",
+  "evidence": "9역 18행: 篠ノ井 篠ノ井線↔信越本線 1900–, 盛岡 田沢湖線↔東北本線 1921–, 八代 肥薩線↔鹿児島本線 1908–, 直江津 北陸本線↔信越本線 1911–2015·ひすい↔信越本線 2015–, 穴水 七尾線↔能登線 1959–1988, 金田 伊田線→糸田線(平成筑豊) 1989–, 北見 石北本線→池北線 1912–1989, 角館 田沢湖線→角館線 1970–1986, 有田 佐世保線→松浦線 1898–1988, 宮津 宮津線(KTR)→宮福線, 今泉 長井線→米坂線. 기존 행은 kind=transfer",
+  "fix": "tools/gen_wiki.py junction 생성: 고른 상대 노선과 같은 lineage(이관 전후)인 노선도 그 역에 공존하면 행 생성. 손 보정은 data/overrides에 junction 추가 표(사유 필수)",
+  "confidence": "중간 (篠ノ井·八代·直江津·盛岡는 높음)"
+ },
+ {
+  "id": "TOP-04",
+  "severity": "오류",
+  "problem": "같은 노선 지선·옛 경로 계통이 부모에 다시 닿는 끝에서 부모 화면의 분기 행이 없음. gen_wiki.py 파생 junction이 at=r['from']만 만들고, from이 부모 계통에 없는 지선은 부모 쪽 행이 0",
+  "evidence": "45끝 (森, 北広島, 錦糸町, 赤羽, 大宮, 浦上, 伊予大洲 …), 부모 쪽 행이 하나도 없는 지선 10 (千歳線 苗穂–北広島, 総武本線 御茶ノ水–錦糸町, 身延線 富士–入山瀬, 予讃線 新谷–伊予大洲, 可部線 横川–安芸長束, 足尾線 神土–沢入, 小泉線 太田–東小泉, 長尾線 河原町–林道, 城南線 平和通一丁目–上一万, 白新線 沼垂–新崎)",
+  "fix": "tools/gen_wiki.py '같은 노선의 지선은 분기역에서 계통으로 가리킨다': 부모 계통 정차역에 닿는 끝마다 행",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-05",
+  "severity": "오류",
+  "problem": "広電 循環線(2026-03-28 분리)을 稲荷町–的場町 1912-11-23, 的場町–比治山下 1944-12-27부터 둠. 1912–2025 本線·皆実線 귀속이 틀리고 本線 계통이 2025년 전 끊김, 2025-08-03 휴지 없음",
+  "evidence": "data/source/events/private.yaml 1562·1563행 (source noritsubushi). 위키 広島電鉄循環線 110778621 「旧本線の一部（稲荷町 - 的場町間）と旧皆実線（的場町 - 比治山下間）の区間を分離・統合して2026年に開業」, 広島電鉄本線 110701122 「2026年3月28日より循環線として分離」. e_009620·e_009621·e_009622",
+  "fix": "data/overrides/events_fix.json: e_009620 l_hiroden_main_line 1912-11-23 개업, e_009621·9622 l_minami_line 1944-12-27 개업, 2025-08-03 휴지, 2026-03-28 l_loop_line transfer+재개",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-06",
+  "severity": "오류",
+  "problem": "공식 노선의 토막·옛 경로를 별도 line으로 둠(§2.7 노선=공식 명칭, 경로는 계통). 완주율이 둘로 나뉘고 토막 노선의 노드가 따로 생김(DBA-013 博多築港前·千鳥橋 원인)",
+  "evidence": "8노선: 循環線 博多築港前–千鳥橋·循環線 旧線(西鉄), 循環線 花京院–仙台駅前(n05_fix 「환상선을 한 줄로 쓸 수 없어 나눔」), 押切線 柳橋–志摩町, 東郊線 高辻–滝子, 鯖浦線 鯖江–越前平井, 清水市内線 西久保–袖師 旧線, 伊敷線 新照院–伊敷 旧線",
+  "fix": "data/overrides/n05_fix.json 해당 항목의 db_line_id를 부모 노선으로 → tools/gen_n05.py가 부모의 계통(branch, 순환은 closed)으로. 공식 단위가 따로인 것은 원문 확인 뒤 남김",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-07",
+  "severity": "오류",
+  "problem": "선로 위 km가 바뀐 역 이전인데 moved.json 짝 없음. 다른 group이라 방문 역 둘, （旧） 없음",
+  "evidence": "桑原(n_kuwabara)→芦ノ牧温泉南(국철 시절 이름 桑原) 1980-12-01 166m; 伊敷→玉江小学校前, 玉里道→護国神社前 1952-08-10 (n05_fix 伊敷線 메모 「玉江小学校前=1952 새 선의 伊敷」「護国神社前=옛 玉里道」); 崎守町→崎守 1968-09-19 (n05_fix 室蘭本線 메모 「崎守町仮乗降場…을 옮겨 崎守로 개칭」). 의심: 西鉄栄町→新栄町 1970-04-28 205m",
+  "fix": "data/overrides/moved.json 4쌍 추가(西鉄栄町은 확인 뒤), 새 노드 옛 이름은 old_names_fix.json",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-08",
+  "severity": "오류",
+  "problem": "moved 처리가 옛 정차 끝의 하한만 이전일과 비교해, 연도만 아는 끝(XX)은 상한이 이전일 뒤로 남음",
+  "evidence": "8쌍: 金山橋→金山 1989-07-09(옛 끝 1989-XX-XX), 平田橋 1991-10-27, 境川 1980-09-20, 大篠津 2008-06-15, 大長 1997-04-01, 大井田 1986-03-25, 東風連 2022-03-12, 原町田 1980-04-01",
+  "fix": "tools/compile.py moved 블록 `(lohi(s['valid_to'])[0] or '9999')>d` → 상한 [1] 기준으로 자름",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-09",
+  "severity": "오류",
+  "problem": "옛 선로 계통이 본선 edge를 그대로 써 같은 구간을 두 계통으로 같은 기간에 고를 수 있음",
+  "evidence": "r_hokuriku_main_line_kurikara_isurugi: edge e_003094(본선과 같음), 정차 1909-06-15~2015-03-14. n05_fix 「北陸本線 倶利伽羅–石動 旧線」은 1955-12-05 폐지(새 倶利伽羅トンネル, km 6.9→6.8)인데 gen_source.py build_chain이 shared edge를 재사용해 폐지가 사라짐. r_hakushin_line_higashi_niigata_nuttari(沼垂～新崎, 1956–1958 계통): 大形·新崎 정차 ongoing → 大形–新崎 e_002170 본선과 겹침",
+  "fix": "tools/gen_source.py build_chain: join 옛 선로가 본선과 같은 노드쌍이면 alt='old' 병렬 edge+relocate. 白新線은 stop_dates.json으로 大形·新崎 정차를 1958-04-29에 자르거나 계통을 沼垂–上沼垂로",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-10",
+  "severity": "오류",
+  "problem": "같은 역인데 group·hub가 없어 환승 행 0, 방문 역 둘. hand_tables SAME_STATION 「糠ノ目=高畠」「中津=中津」이 있는데 gen_source.py 묶음이 dist(pt)를 써 좌표가 나중에 붙는 노드(n05·wikidata)에서 1e9로 조용히 무시됨",
+  "evidence": "中津: n_nakatsu(JR)·n_nakatsu_oita_transportation(wikidata) 7m, g_nakatsu / g_nakatsu_oita_transportation, 1913–1975 환승 행 0. 糠ノ目: n_nukanome(wikidata)·n_takahata 15m, 1922–1974 환승 행 0. 丹後山田(n05)=与謝野(옛 丹後山田) 6m 다른 group(hub는 있음)",
+  "fix": "tools/gen_source.py 그룹 단계: 좌표 없는 노드는 최종 좌표로 다시 재거나 SAME_STATION은 거리 없이 묶고, 적용 못 한 항목은 실패로",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-11",
+  "severity": "오류",
+  "problem": "100m 안 환승역인데 hub도 group도 없어 그 기간 환승 행 0",
+  "evidence": "前橋(両毛線 n_maebashi)–前橋駅前(東武 前橋線) 71m; 津軽二股(津軽線)–津軽今別(海峡線 1988–2016) 86m (2016 뒤 奥津軽いまべつ hub만 있음)",
+  "fix": "data/source/hubs/hubs.yaml 생성(gen_wiki.py hub 초안)에 추가, 이름이 다른 쌍은 data/overrides/hub_pairs.json",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-12",
+  "severity": "의심",
+  "problem": "같은 group인데 hub가 아닌 노드 사이 route_link 없음. §2.9 표시 결정표 3순위(같은 node·같은 group·같은 hub → 환승 캡슐)와 compile(near=hub 구성원만)이 어긋남",
+  "evidence": "86 (계통,역,상대 노선), 60 group. 早稲田(都電–東西線 0.71km), 芦屋(JR–阪神 0.74km), 浅草(都営·東武·メトロ–TX 0.57km), 琴似, 塚口, 伊丹",
+  "fix": "결정 필요: DESIGN §2.9 표를 'hub(또는 같은 node)'로 좁히거나 compile.py near에 같은 group 추가",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-13",
+  "severity": "의심",
+  "problem": "노면전차 정류장을 지하철역 노드에 합침 (S5·DBA-015와 같은 유형의 새 예)",
+  "evidence": "n_asakusa_toei: 都営浅草線(1960–)+都電 千住線(1908–1971), 선형 끝 0.35km; n_itabashi_honcho: 三田線(1968–)+都電 志村線(1944–1966), 0.30km",
+  "fix": "정류장 자리를 원문으로 확인해 노드 분리 (n05_fix 해당 노선)",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-14",
+  "severity": "의심",
+  "problem": "국철 시절 같은 역(같은 사업자)이 노드·group 둘",
+  "evidence": "鷹ノ巣(奥羽本線)–阿仁合線 鷹ノ巣(1934–1986, 지금 秋田内陸 鷹巣) 92m, 다른 group; 人吉(肥薩線)–湯前線 人吉(1924–1989, 지금 人吉温泉) 111m, 다른 group",
+  "fix": "국철 시절 같은 역이면 같은 group (hand_tables SAME_STATION, TOP-10 고침과 함께)",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-15",
+  "severity": "의심",
+  "problem": "津軽今別(海峡線 1988–2016)과 奥津軽いまべつ(北海道新幹線 2016–)이 같은 선로 위 같은 시설·같은 회사인데 노드·group 둘, moved 없음",
+  "evidence": "n_tsugaruimabetsu 2016-03-26 끝, n_okutsugaru_imabetsu 2016-03-26 시작, 83m, 다른 group",
+  "fix": "같은 group 또는 moved.json",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-16",
+  "severity": "오류",
+  "problem": "archive_stop.km이 그 계통 km_cum 축과 다름(앞뒤 공개 역 km 사이가 아님). 옛 km 축·반대 방향",
+  "evidence": "27행: 筑前庄 1.6 (西新 8.9–姪浜 11.7 사이), 京急 浜川 3.1 (鮫洲 3.9–立会川 4.7), 西鉄 甘木線 7역 반대 방향, 三河線 北寺津 47.2 (寺津 7.9 옆)",
+  "fix": "tools/gen_wiki.py 열람 역 생성: 앞뒤 공개 역의 위키 km와 km_cum 차로 옮기고, 못 옮기면 km NULL(§4.5 ? km)",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-17",
+  "severity": "의심",
+  "problem": "archive_stop.after_id NULL 22 (§14 표는 after 필수), after–before 사이에 그때 있던 공개 정차역이 낌 4",
+  "evidence": "富内線 4역(沼ノ端–豊城 옛 구간인데 鵡川 앞에 km 4.8~19.7), 京王 停車場前, 天理線 2, 湯の山線·内部線 4 등; 자리: 東日野, 藤島神社前, 北山口, 東山東",
+  "fix": "옛 구간은 계통·열람 노선으로, before만 있는 행은 '계통 앞' 뜻을 DESIGN §4.5에 적기. 자리는 gen_wiki.py after 선택",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-18",
+  "severity": "의심",
+  "problem": "新潟 옛 경로 계통(亀田–沼垂–新潟(旧))의 亀田 정차가 ongoing이라 信越本線 亀田의 분기 행이 1897–ongoing, 1958 뒤 next 없음",
+  "evidence": "route_link r_shinetsu_main_line seq 85 → r_shinetsu_main_line_echigo_ishiyama_niigata_shinetsu_main, next/terminal NULL",
+  "fix": "tools/compile.py: 계통의 다른 정차가 모두 끝난 날 끝 정차도 자름",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-19",
+  "severity": "정보",
+  "problem": "parallel_runs.json period가 데이터 겹침과 다름 3(compile은 attr로 다시 재 영향 없음), 병주 true 판정인데 숨은 노드 경계라 그려지지 않는 칸 3(양 노선 6)",
+  "evidence": "上沼垂–新潟·今宮–新今宮·小倉–西小倉 period 끝 1987-04-01 vs 겹침 ~9999; 上沼垂 2칸, 嘉穂信号場–下山田",
+  "fix": "판정을 false(칸 안 갈라짐)로 바꾸거나 메모, period 갱신",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-20",
+  "severity": "정보",
+  "problem": "junction 중 두 노선이 그 역에 함께 정차한 날이 없는 행 168, 노드가 상대 노선 노드가 아닌 행 64(near로 처리)",
+  "evidence": "예 l_aizu_line↔l_aizu_line_aizu 西若松, l_tagawa_line→l_ita_line_heisei_chikuho 田川伊田",
+  "fix": "gen_wiki.py에서 공존 없는 쌍 제거",
+  "confidence": "높음"
+ },
+ {
+  "id": "TOP-21",
+  "severity": "정보",
+  "problem": "위상 판정(hub·group·환승)을 흔드는 좌표",
+  "evidence": "新垂井(n02 approx) 垂井에서 73m, 塩竈(塩釜線, n05) 本塩釜에서 31m — 실제로는 떨어진 역",
+  "fix": "④ 좌표 감사로 넘김",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-22",
+  "severity": "정보",
+  "problem": "열람 전용 노선 at 역이 그 노선 영업 때 정차역 아님 2, 열람 역 after가 그 기간 계통에 없음 65",
+  "evidence": "西鉄 北方線 at=川原口(1985 모노레일, 北方線 1980 폐지), 西遠鉄道 at=宮口(1940 개업, 西遠 1937 폐지)",
+  "fix": "순서 표시용이면 그대로, 아니면 gen_wiki.py at 선택",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-23",
+  "severity": "정보",
+  "problem": "甲浦 옛 노드 이름이 「甲浦(鉄道駅)」이라 （旧） 표시 규칙 밖",
+  "evidence": "n_kannoura_asa_seaside_asato_old",
+  "fix": "④ 이름 감사로 넘김",
+  "confidence": "중간"
+ },
+ {
+  "id": "TOP-24",
+  "severity": "정보",
+  "problem": "숨은 노드 export_name 괄호 표기가 갈림",
+  "evidence": "괄호 10 ([上沼垂], [枇杷島分岐点] …), 괄호 없음 9 (嘉穂, 東高島, 高島, 田端信号場, 新小岩信号場, 支線接続点, 三岐朝明信号所, 吹田貨物ターミナル 등)",
+  "fix": "노리츠부시 표기 확인 뒤 gen_source.py export_name 규칙 통일",
+  "confidence": "낮음"
+ }
+]

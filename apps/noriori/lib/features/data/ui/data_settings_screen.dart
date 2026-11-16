@@ -66,6 +66,9 @@ class DataSettingsScreen extends ConsumerWidget {
             subtitle: state.failed ? Text(t.lastFailed) : null,
             trailing: Text(last == null ? t.never : formatTime(last)),
           ),
+          // 기록 파일이 커서 Android 클라우드 백업에 들어가지 않을 수 있다 (ARCHITECTURE §3.7)
+          if (ref.watch(osBackupLargeProvider).value ?? false)
+            ListTile(leading: const Icon(Icons.info_outline), title: Text(t.osBackupLarge)),
           ListTile(
             title: Text(t.backupNow),
             enabled: folder != null && folder.granted && !state.running,

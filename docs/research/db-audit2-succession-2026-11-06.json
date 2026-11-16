@@ -1,0 +1,122 @@
+[
+ {
+  "id": "SUC-001",
+  "severity": "오류",
+  "problem": "富山港線: 국철·JR 사슬(lg8269~8271, lg6852~6853)이 2006-04-29 富山ライトレール이 놓은 노면 구간 e_005133~e_005137(富山–富山駅北–…–奥田中学校前, 1.2km)에 얹혀 1924·1927년부터 열려 있음. JR 富山口역이 없고 インテック本社前 노드에 노선별 이름 「富山口」로 붙음. 富山–富山駅北(2020-03-21 개업)도 1927년부터. RTL 계통의 富山 정차가 2006-03-01부터",
+  "evidence": "route_stop r_toyamako_line: 富山0.0-富山駅北0.1-…-インテック本社前0.5(is_stop 1, 1924-07-23~2006-03-01)-…-岩瀬浜7.7. edge_life e_005133 1927-12-15~. station.json 富山口駅(JR西日本, 城北町, 1924-07-23~2006-03-01), インテック本社前停留場(2006-04-29 개업), 奥田中学校前駅(2006-04-29 개업). 노리츠부시 국철 표 富山～富山口 0.7 + 富山口～岩瀬浜 7.3 = 8.0 (DB 7.7), 지철 표 富山駅～【旧】富山駅北 0.1 2020-03-21",
+  "fix": "tools/gen_source.py의 JR 폐선 표↔후계 사철 표 역 맞춤(issucc/shared_i): JR 富山–富山口–(노면 구간 합류점, 奥田中学校前 부근)을 JR 전용 edge로 두고 2006-03-01 close, 합류점–岩瀬浜만 transfer(+운휴 ~2006-04-29), 富山駅北–奥田中学校前 2006-04-29 open(o_toyama_light_rail), 富山–富山駅北 2020-03-21 open(o_toyama_chiho_railway). n_intec_honsha_mae의 노선별 이름 富山口 삭제, JR 富山口 노드 신설. 합류점은 노선도로 확인",
+  "confidence": 0.9
+ },
+ {
+  "id": "SUC-002",
+  "severity": "오류",
+  "problem": "黒石線: 1984-11-01 弘南鉄道 이관(1998-04-01 폐지)이 국철 close로 들어가 사슬이 1984년에 끝남. 弘南鉄道 黒石線 노선·멤버십 없음. closed_section이 1984 폐지로 보여 줌",
+  "evidence": "l_kuroishi_line 2 edge 6.6km 1912-08-15~1984-11-01, 후속 없음 (events/jr.yaml 3744행 close). station.json 川部駅 「1984年11月1日：黒石線が弘南鉄道に転換」「1998年4月1日：弘南鉄道黒石線廃止」, 前田屋敷駅 사업자 弘南鉄道 폐지 1998-04-01. candidates/n05_report.json 묶음 [黒石線 弘南鉄道, 黒石線 日本国有鉄道] closed_year 1998 → in_db",
+  "fix": "tools/gen_n05.py 720~726행 in_db 판정: 묶음에 표에 없는 사업자가 있고 closed_year가 표의 폐지보다 늦으면 이어지는 부분을 따로 냄. 사건: 1984-11-01 transfer l_kuroishi_line(국철) → o_konan_railway_company 새 노선, 1998-04-01 close. DESIGN §4.6 이관 뒤 폐지 구간으로 normal",
+  "confidence": 0.95
+ },
+ {
+  "id": "SUC-003",
+  "severity": "오류",
+  "problem": "大畑線: 1985-07-01 下北交通 이관(2001-04-01 폐지)이 국철 close로 들어가 사슬이 끊김. 사업자 下北交通이 operator 표에 없음",
+  "evidence": "l_ohata_line 7 edge 18.0km 1939-12-06~1985-07-01, 후속 없음 (events/jr.yaml 3705행). station.json 田名部駅 사업자 下北交通, 폐지 2001-04-01. n05_report.json [大畑線 下北交通, 大畑線 日本国有鉄道] closed_year 2001 → in_db",
+  "fix": "tools/gen_n05.py (SUC-002와 같은 판정). o_shimokita_kotsu(general_private) 추가, 1985-07-01 transfer, 2001-04-01 close",
+  "confidence": 0.95
+ },
+ {
+  "id": "SUC-004",
+  "severity": "오류",
+  "problem": "宮福線 1988-07-16~2015-03-31 사업자가 宮福鉄道·北近畿タンゴ鉄道가 아니라 WILLER. hand_tables.json OPHIST의 宮福線 행이 사건으로 나오지 않음",
+  "evidence": "edge_attr l_miyafuku_line 13 edge 30.4km 전부 o_kyoto_tango_railway_willer_trains 1988-07-16~ongoing. events/private.yaml 1428행 open. station.json 宮津駅 「1989年8月1日：宮福鉄道が北近畿タンゴ鉄道に改称」, 福知山駅 「1988年7月16日：宮福鉄道（後の北近畿タンゴ鉄道）宮福線が開業」. gen_source.py 979~982행은 JR 이관(xfer) 갈래에서만 OPHIST 적용",
+  "fix": "tools/gen_source.py: OPHIST를 사철 표 open에도 적용(개업 o_kitakinki_tango_railway, 2015-04-01 같은 노선 transfer → WILLER). 쓰이지 않은 OPHIST 행은 오류로",
+  "confidence": 0.9
+ },
+ {
+  "id": "SUC-005",
+  "severity": "오류",
+  "problem": "甘木線 筑後小郡(n_chikugogori, km 3.4)이 1986-04-01 甘木鉄道 전환 때 약 500m 옮기며 小郡(n_ogori, km 3.8)으로 바뀌었는데 node_move가 없고 역 묶음이 g_chikugogori·g_ogori로 다름",
+  "evidence": "route_stop r_amagi_line n_chikugogori 정차 1939-04-28~1986-04-01, r_amagi_line_amagi n_ogori 정차 1986-04-01~. 좌표 약 370m. station.json 小郡駅 「1986年4月1日：甘木鉄道に転換。同時に約500メートル甘木寄りの…そばに移転し、小郡駅に改称」. 이관 날 앞 계통 정차가 끝나고 뒤 계통에 없는 역 검사에서 이 1건(織笠（旧）는 node_move 있음)",
+  "fix": "data/overrides/moved.json에 {old: n_chikugogori, new: n_ogori, date: 1986-04-01}. 옛 노드 표시(이름이 달라 (구) 꼬리 여부) 결정",
+  "confidence": 0.9
+ },
+ {
+  "id": "SUC-006",
+  "severity": "오류",
+  "problem": "N05로 들어온 사업자 6곳의 category가 기본값 general_private: 大阪市交通局·秋田市交通局·呉市交通局·川崎市交通局(→public), 姫路市(→public 또는 monorail), 名古屋市交通局協力会(→monorail)",
+  "evidence": "operator 표. 노리츠부시에 있는 사업자 182곳은 회사 코드 앞자리와 category가 모두 일치(30=public, 50=monorail). gen_source.py category()가 N05 해시 코드에 general_private를 돌려줌",
+  "fix": "tools/gen_source.py category(): N05 사업자용 손 표(hand_tables.json에 사업자→분류)를 둠",
+  "confidence": 0.8
+ },
+ {
+  "id": "SUC-007",
+  "severity": "의심",
+  "problem": "DBA-023 고침이 route_stop r_chihoku_line n_okamedo에 길이 0 기간(1989-06-04~1989-06-04)을 만듦. 앞 계통에서 이관 전 날짜에 이 통과 노드의 기간이 없음",
+  "evidence": "route_stop 길이 0 행 1 (이전 감사 규칙 「같은 길이 0 기간 금지」 0 → 1). 노드가 e_006052·e_006053을 나눔. compile.py 「계통이 끝난 뒤에 생긴 역…시작을 끝에 맞춰」 단락",
+  "fix": "tools/compile.py DBA-023 단락: is_stop=0 통과 행은 그 계통 인접 edge 멤버십 기간으로 두거나 만들지 않음",
+  "confidence": 0.7
+ },
+ {
+  "id": "SUC-008",
+  "severity": "의심",
+  "problem": "모노레일인데 line.type이 rail: l_himejishiei_monorail(姫路市営モノレール), l_higashiyamakoen(東山公園モノレール). モンキーパークモノレール線은 알려짐",
+  "evidence": "line 표, names ja. 둘 다 N05 폐선",
+  "fix": "tools/gen_n05.py에서 노선 종류 지정 (감사 ③·④와 겹침)",
+  "confidence": 0.85
+ },
+ {
+  "id": "SUC-009",
+  "severity": "의심",
+  "problem": "阿佐東線 DMV 전환 운휴 2020-12-01~2021-12-24가 edge_life에 없음",
+  "evidence": "l_asato_line 4 edge 모두 끊김 없이 open. station.json 阿波海南駅 「12月1日：海部駅 - 甲浦駅間のDMV関連工事開始に伴い…代行バス」, 甲浦駅 「翌25日のDMVの運行開始」",
+  "fix": "data/overrides/events_fix.json add: suspend 2020-12-01, resume 2021-12-25 (l_asato_line 阿波海南–甲浦). JR 牟岐線 牟岐–阿波海南 대행 기간도 확인 (감사 ① 영역)",
+  "confidence": 0.75
+ },
+ {
+  "id": "SUC-010",
+  "severity": "의심",
+  "problem": "[알려짐] 사철 사명 변경·사철 사이 이관 이력 없음. 사철 노선은 개업부터 지금 회사. N05 폐선은 섞여 있어 玉野市営電気鉄道에는 첫 회사 備南電気鉄道가 1953~1972 내내 붙음",
+  "evidence": "사업자가 둘 이상인 노선 207개 중 사철은 宮津線·富山港線 2개. 예: 御堂筋線 o_osaka_metro 1933~, 銀座線 o_tokyo_metro 1927~, l_sapporo_streetcar 振興公社 1931~ (폐지 지선은 札幌市交通局), 勝山永平寺線 えちぜん 1914~, 北神線 神戸市 1988~, 泉北線 南海 1971~. db-status.md 알려진 한계",
+  "fix": "결정 필요: 수록하면 gen_source.py에 사철 이력 손 표(OPHIST 확장). 수록하지 않으면 gen_n05.py가 N05 묶음의 마지막 회사로 통일",
+  "confidence": 0.9
+ },
+ {
+  "id": "SUC-011",
+  "severity": "정보",
+  "problem": "[알려짐 S7] 이관 구간 27곳의 국철 시대 km가 노리츠부시 국철 표와 0.1~0.5km 다름. 승계 끔 역대 분모 −4.6km",
+  "evidence": "예: 樽見線 24.0/23.6, 宮津線 84.0/83.6, 中村線 43.4/43.0, 信越本線 横川–篠ノ井 76.8/76.3",
+  "fix": "DESIGN §14 edge_km 노선 열 추가 여부 결정 (이전 감사 S7)",
+  "confidence": 0.9
+ },
+ {
+  "id": "SUC-012",
+  "severity": "정보",
+  "problem": "앱 Network.lineOnDate가 계통의 첫 구간으로 앞 노선을 골라, 앞 노선이 여럿인 リアス線(4)·秋田内陸線(2)에서 이관 전 날짜 제목이 틀릴 수 있음. 저장은 edge별 attrOn이라 맞음",
+  "evidence": "packages/noriori_core/lib/src/network/network.dart lineOnDate, apps/noriori/.../record_session_controller.dart shownLine. 데이터: 뒤 계통 r_rias_line의 앞 노선 l_kuji_line·l_miyako_line·l_sakari_line·l_yamada_line",
+  "fix": "앱: 고른 구간(또는 고른 역 사이)의 edge로 앞 노선을 고름. 데이터 변경 없음",
+  "confidence": 0.7
+ },
+ {
+  "id": "SUC-013",
+  "severity": "정보",
+  "problem": "神戸高速線 4노선(阪急·阪神·山陽·神鉄)이 1968-04-07부터 각 회사 멤버십. 1968~1988은 神戸高速鉄道가 제1종 영업, 노리츠부시 표는 1988-04-01부터",
+  "evidence": "events/private.yaml 934·956·1525·1781행 source hand. 노리츠부시 pr·tm 神戸高速線 표 개업 1988-04-01",
+  "fix": "손 값의 결정 기록 확인. 바꾸면 1968~1988 사업자를 o_kobe_rapid_railway로 두고 1988-04-01 사철→사철 transfer",
+  "confidence": 0.6
+ },
+ {
+  "id": "SUC-014",
+  "severity": "정보",
+  "problem": "docs/db-status.md의 역대 분모(켬 34,303.2, 끔 36,503.2)와 edge 수 13,728이 이 판(34,304.1, 36,504.1, 13,730)과 다름",
+  "evidence": "denominator 표, edge 표",
+  "fix": "python3 -I tools/status.py 재실행",
+  "confidence": 0.95
+ },
+ {
+  "id": "SUC-015",
+  "severity": "정보",
+  "problem": "to만·from만·within transfer, continues, set_class, relocate 사건이 0건이라 compile.py의 해당 갈래와 §2.8 E 표 6줄 중 4줄이 데이터로 확인되지 않음. relocate는 새 구간에 rule_class 기본 등급을 주고, from을 못 찾은 transfer는 새 사슬을 만듦",
+  "evidence": "events 8,171건 유형 집계, compile.py 사건 루프",
+  "fix": "이 갈래를 쓰는 사건을 넣을 때 db_regression에 사례 추가",
+  "confidence": 0.8
+ }
+]

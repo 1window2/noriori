@@ -1,0 +1,4948 @@
+[
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_nishi_kakegawa",
+  "station": "西掛川",
+  "km_noritsubushi": 1.9,
+  "km_db": 1.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1954-10-10~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_sakuragi_tenryu_hamanako",
+  "station": "遠江桜木",
+  "km_noritsubushi": 4.1,
+  "km_db": 4.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1935-04-17~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_hosoya_tenryu_hamanako",
+  "station": "細谷",
+  "km_noritsubushi": 6.1,
+  "km_db": 6.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1956-05-10~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_haranoya",
+  "station": "原谷",
+  "km_noritsubushi": 8.0,
+  "km_db": 7.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1935-04-17~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_towata",
+  "station": "戸綿",
+  "km_noritsubushi": 12.1,
+  "km_db": 12.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1960-04-20~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_enshu_mori",
+  "station": "遠江森",
+  "km_noritsubushi": 12.9,
+  "km_db": 12.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1935-04-17~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_totomi_ichinomiya",
+  "station": "遠江一宮",
+  "km_noritsubushi": 16.5,
+  "km_db": 16.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_shikiji",
+  "station": "敷地",
+  "km_noritsubushi": 20.0,
+  "km_db": 19.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_toyooka_tenryu_hamanako",
+  "station": "野部",
+  "km_noritsubushi": 23.1,
+  "km_db": 23.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_kaminobe",
+  "station": "上野部",
+  "km_noritsubushi": 24.5,
+  "km_db": 24.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1955-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_tenryu_futamata",
+  "station": "遠江二俣",
+  "km_noritsubushi": 26.3,
+  "km_db": 26.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_futamata_hommachi",
+  "station": "二俣本町",
+  "km_noritsubushi": 26.9,
+  "km_db": 26.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1956-12-15~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_nishi_kajima_tenryu_hamanako",
+  "station": "西鹿島",
+  "km_noritsubushi": 28.6,
+  "km_db": 28.5,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_gansuiji",
+  "station": "岩水寺",
+  "km_noritsubushi": 30.5,
+  "km_db": 30.3,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_miyaguchi",
+  "station": "宮口",
+  "km_noritsubushi": 32.4,
+  "km_db": 32.3,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_miyakoda",
+  "station": "都田",
+  "km_noritsubushi": 37.8,
+  "km_db": 37.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1940-06-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_kanasashi",
+  "station": "金指",
+  "km_noritsubushi": 42.0,
+  "km_db": 41.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1938-04-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_kiga",
+  "station": "気賀",
+  "km_noritsubushi": 45.0,
+  "km_db": 44.8,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1938-04-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_nishi_kiga",
+  "station": "西気賀",
+  "km_noritsubushi": 47.8,
+  "km_db": 47.7,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1938-04-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_sunza",
+  "station": "寸座",
+  "km_noritsubushi": 49.5,
+  "km_db": 49.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1955-05-06~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_hamanako_sakume",
+  "station": "佐久米",
+  "km_noritsubushi": 50.8,
+  "km_db": 50.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1938-04-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_higashi_tsuzuki",
+  "station": "東都筑",
+  "km_noritsubushi": 52.0,
+  "km_db": 51.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1953-07-08~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_tsuzuki",
+  "station": "都筑",
+  "km_noritsubushi": 53.4,
+  "km_db": 53.3,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1938-04-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_mikkabi",
+  "station": "三ヶ日",
+  "km_noritsubushi": 55.8,
+  "km_db": 55.6,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1936-12-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_ona",
+  "station": "尾奈",
+  "km_noritsubushi": 58.2,
+  "km_db": 58.1,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1936-12-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_chibata",
+  "station": "知波田",
+  "km_noritsubushi": 63.1,
+  "km_db": 62.9,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1936-12-01~1987-03-15"
+ },
+ {
+  "line_ja": "二俣線",
+  "table_title": "二俣線 掛川 ～ 新所原 営業km: 67.9",
+  "route_id": "r_futamata_line",
+  "node_id": "n_shinjohara",
+  "station": "新所原",
+  "km_noritsubushi": 67.9,
+  "km_db": 67.7,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-15",
+  "confidence": "high",
+  "evidence": "天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「国鉄二俣線（67.9 km）廃止。…（67.7km）開業」 / 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207 「「国鉄」は旧・日本国有鉄道時代の営業キロ」",
+  "note": "駅一覧의 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 역마다 일치. 2024-10-01 운임 개정 때의 「一部駅の営業キロ改定」는 전환 뒤 신설역(森町病院前·岡地·大森)만 바뀜(판 100924504과 대조) — 국철 시대 역은 1987년 값 그대로.",
+  "db_stop_valid": "1936-12-01~1987-03-15"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_higashi_ogaki",
+  "station": "東大垣",
+  "km_noritsubushi": 2.8,
+  "km_db": 2.7,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_yokoya",
+  "station": "横屋",
+  "km_noritsubushi": 4.7,
+  "km_db": 4.5,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1960-02-15~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_jukujo",
+  "station": "十九条",
+  "km_noritsubushi": 5.7,
+  "km_db": 5.5,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_mieji",
+  "station": "美江寺",
+  "km_noritsubushi": 7.6,
+  "km_db": 7.5,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_kitagata_makuwa",
+  "station": "本巣北方",
+  "km_noritsubushi": 10.9,
+  "km_db": 10.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_itonuki",
+  "station": "糸貫",
+  "km_noritsubushi": 13.6,
+  "km_db": 13.4,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_motosu",
+  "station": "美濃本巣",
+  "km_noritsubushi": 16.3,
+  "km_db": 16.2,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_kochibora",
+  "station": "木知原",
+  "km_noritsubushi": 20.4,
+  "km_db": 20.2,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1958-01-15~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_tanigumi_guchi",
+  "station": "谷汲口",
+  "km_noritsubushi": 21.7,
+  "km_db": 21.6,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1956-03-20~1984-10-06"
+ },
+ {
+  "line_ja": "樽見線",
+  "table_title": "樽見線 大垣 ～ 美濃神海 営業km: 24.0",
+  "route_id": "r_tarumi_line",
+  "node_id": "n_komi_tarumi",
+  "station": "美濃神海",
+  "km_noritsubushi": 24.0,
+  "km_db": 23.6,
+  "diff": -0.4,
+  "seg_diff": -0.3,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-06",
+  "confidence": "high",
+  "evidence": "樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「国鉄樽見線 (24.0 km) 廃止、樽見鉄道樽見線 (23.6 km) 開業」 / 樽見鉄道樽見線 https://ja.wikipedia.org/w/index.php?oldid=110813860 「キロ程下段は国鉄時代の営業キロ」",
+  "note": "노선도·駅一覧에 3섹 km와 국철 km가 나란히 있고 각각 DB·노리츠부시와 일치. 역 이전 기록 없음.",
+  "db_stop_valid": "1958-04-29~1984-10-06"
+ },
+ {
+  "line_ja": "七尾線",
+  "table_title": "七尾線 和倉温泉 ～ 輪島 営業km: 48.4",
+  "route_id": "r_nanao_line",
+  "node_id": "n_kasashiho",
+  "station": "笠師保",
+  "km_noritsubushi": 7.5,
+  "km_db": 7.6,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1991-09-01",
+  "confidence": "medium",
+  "evidence": "七尾線 https://ja.wikipedia.org/w/index.php?oldid=111452129 「津幡駅 - 能登中島駅間 43.8 M → 70.6 km」 / のと鉄道七尾線 https://ja.wikipedia.org/w/index.php?oldid=109555930 （요약: 能登中島 累計 16.3（七尾起点、和倉温泉 5.1））",
+  "note": "JR 和倉温泉 59.5km(津幡 기점) + 11.1 = 70.6 → 국철·JR 시대 能登中島는 和倉温泉에서 11.1(노리츠부시와 같음). のと鉄道 값은 16.3−5.1=11.2(DB). 和倉温泉–穴水 총연장 28.0은 같고 笠師保·能登中島 두 역만 0.1 이동 → 1991 のと鉄道 이관 때 역 km 재설정으로 판단. 笠師保는 직접 근거 없이 같은 패턴으로 추정. 역 이전 기록 없음.",
+  "db_stop_valid": "1928-10-31~1991-09-01"
+ },
+ {
+  "line_ja": "七尾線",
+  "table_title": "七尾線 和倉温泉 ～ 輪島 営業km: 48.4",
+  "route_id": "r_nanao_line",
+  "node_id": "n_noto_nakajima",
+  "station": "能登中島",
+  "km_noritsubushi": 11.1,
+  "km_db": 11.2,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1991-09-01",
+  "confidence": "medium",
+  "evidence": "七尾線 https://ja.wikipedia.org/w/index.php?oldid=111452129 「津幡駅 - 能登中島駅間 43.8 M → 70.6 km」 / のと鉄道七尾線 https://ja.wikipedia.org/w/index.php?oldid=109555930 （요약: 能登中島 累計 16.3（七尾起点、和倉温泉 5.1））",
+  "note": "JR 和倉温泉 59.5km(津幡 기점) + 11.1 = 70.6 → 국철·JR 시대 能登中島는 和倉温泉에서 11.1(노리츠부시와 같음). のと鉄道 값은 16.3−5.1=11.2(DB). 和倉温泉–穴水 총연장 28.0은 같고 笠師保·能登中島 두 역만 0.1 이동 → 1991 のと鉄道 이관 때 역 km 재설정으로 판단. 笠師保는 직접 근거 없이 같은 패턴으로 추정. 역 이전 기록 없음.",
+  "db_stop_valid": "1928-10-31~1991-09-01"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_bira",
+  "station": "比良",
+  "km_noritsubushi": 7.5,
+  "km_db": 7.6,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1959-06-15~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_ushitsu",
+  "station": "宇出津",
+  "km_noritsubushi": 32.8,
+  "km_db": 32.7,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1960-04-17~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_hane_noto",
+  "station": "羽根",
+  "km_noritsubushi": 35.4,
+  "km_db": 35.3,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_oura_noto",
+  "station": "能登小浦",
+  "km_noritsubushi": 37.1,
+  "km_db": 37.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_jomon_mawaki",
+  "station": "真脇",
+  "km_noritsubushi": 38.5,
+  "km_db": 38.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_tsukumowan_ogi",
+  "station": "能登小木",
+  "km_noritsubushi": 40.5,
+  "km_db": 40.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_shiromaru_noto",
+  "station": "能登白丸",
+  "km_noritsubushi": 42.6,
+  "km_db": 42.5,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_kuri_kawashiri",
+  "station": "能登川尻",
+  "km_noritsubushi": 44.5,
+  "km_db": 44.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_matsunami",
+  "station": "松波",
+  "km_noritsubushi": 46.6,
+  "km_db": 46.4,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1963-10-01~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_koiji",
+  "station": "恋路(臨)",
+  "km_noritsubushi": 48.3,
+  "km_db": 48.2,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_ushima",
+  "station": "鵜島",
+  "km_noritsubushi": 49.1,
+  "km_db": 49.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_minami_kuromaru",
+  "station": "南黒丸",
+  "km_noritsubushi": 50.2,
+  "km_db": 50.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_ukai_noto",
+  "station": "能登鵜飼",
+  "km_noritsubushi": 51.8,
+  "km_db": 51.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_uedo",
+  "station": "上戸",
+  "km_noritsubushi": 54.5,
+  "km_db": 54.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_iida_noto",
+  "station": "珠洲飯田",
+  "km_noritsubushi": 56.2,
+  "km_db": 56.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_shoin",
+  "station": "正院",
+  "km_noritsubushi": 59.1,
+  "km_db": 59.0,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "能登線",
+  "table_title": "能登線 穴水 ～ 蛸島 営業km: 61.1",
+  "route_id": "r_noto_line",
+  "node_id": "n_takojima",
+  "station": "蛸島",
+  "km_noritsubushi": 61.1,
+  "km_db": 61.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-25",
+  "confidence": "high",
+  "evidence": "のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 「JR能登線 (61.1 km) 廃止、のと鉄道能登線 … (61.0 km) 開業」 / のと鉄道能登線 https://ja.wikipedia.org/w/index.php?oldid=109521647 （요약: JR時代の営業キロ（駅一覧の列））",
+  "note": "駅一覧 「JR時代の営業キロ」열이 노리츠부시와 30역 모두 일치, 「営業キロ」열이 DB와 일치. 개업 구간 km(鵜川–宇出津 9.9 등)도 노리츠부시 쪽.",
+  "db_stop_valid": "1964-09-21~1988-03-25"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_intec_honsha_mae",
+  "station": "富山口",
+  "km_noritsubushi": 0.7,
+  "km_db": 0.5,
+  "diff": -0.2,
+  "seg_diff": -0.2,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "DB가 JR 富山口(1987 이전 후 위치, 0.7km)를 LRT インテック本社前 노드(0.5km)로 잇고 있음. 같은 장소가 아님 — 노드 모델 문제. JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_shimokui",
+  "station": "下奥井",
+  "km_noritsubushi": 2.3,
+  "km_db": 2.1,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_etchunakajima",
+  "station": "越中中島",
+  "km_noritsubushi": 3.5,
+  "km_db": 3.3,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_jogawara",
+  "station": "城川原",
+  "km_noritsubushi": 4.5,
+  "km_db": 4.3,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_hasumachi",
+  "station": "蓮町",
+  "km_noritsubushi": 5.8,
+  "km_db": 5.5,
+  "diff": -0.3,
+  "seg_diff": -0.1,
+  "cause": "realign",
+  "causes": [
+   "realign",
+   "remeasure"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_hagiurashogakkomae",
+  "station": "大広田",
+  "km_noritsubushi": 6.4,
+  "km_db": 6.2,
+  "diff": -0.2,
+  "seg_diff": 0.1,
+  "cause": "realign",
+  "causes": [
+   "realign",
+   "remeasure"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_higashiiwase",
+  "station": "東岩瀬",
+  "km_noritsubushi": 6.9,
+  "km_db": 6.7,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_keirinjomae_toyama_chiho",
+  "station": "(臨)競輪場前",
+  "km_noritsubushi": 7.5,
+  "km_db": 7.3,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "富山港線",
+  "table_title": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0",
+  "route_id": "r_toyamako_line",
+  "node_id": "n_iwasehama",
+  "station": "岩瀬浜",
+  "km_noritsubushi": 8.0,
+  "km_db": 7.7,
+  "diff": -0.3,
+  "seg_diff": -0.1,
+  "cause": "realign",
+  "causes": [
+   "realign",
+   "remeasure"
+  ],
+  "date": "2006-04-29",
+  "confidence": "high",
+  "evidence": "富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「本線（2006年廃止） 富山駅 (0.0 km) - 富山口駅 (0.7 km) - 下奥井駅 (2.3 km)」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「路線距離（営業キロ）：全長7.7 km」 / 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 「富山駅北停留場 - 2020年廃止・富山駅 - インテック本社前間（富山駅起点 0.1 km）」",
+  "note": "JR 富山港線(8.0km)의 富山–下奥井 구간은 2006 富山ライトレール 개업 때 노면 신선(富山駅北–奥田中学校前)으로 바뀌어 폐지(富山口駅 2006-03-01 폐지). 2020-03-21 南北接続으로 기점이 富山駅(富山駅北 0.1km 앞)이 됨. DB의 JR 시대 계통 r_toyamako_line(1924~2006)이 LRT 노드·km(富山口=インテック本社前 0.5 등)로 만들어져 있어, 下奥井 이후 전 역이 −0.2(새 진입선 2.3→2.1). 下奥井–岩瀬浜 옛 JR 선로 구간도 5.7→5.6으로 0.1 짧아짐(역간 ±0.1 재설정: 蓮町·岩瀬浜 −0.3).",
+  "db_stop_valid": "1924-07-23~2006-03-01"
+ },
+ {
+  "line_ja": "越美南線",
+  "table_title": "越美南線 美濃太田 ～ 北濃 営業km: 72.2",
+  "route_id": "r_etsumi_nan_line",
+  "node_id": "n_yasaka_nagaragawa",
+  "station": "半在",
+  "km_noritsubushi": 29.3,
+  "km_db": 29.4,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-12-11",
+  "confidence": "low",
+  "evidence": "長良川鉄道越美南線 https://ja.wikipedia.org/w/index.php?oldid=110660132 「国鉄越美南線 (72.2km) 廃止、長良川鉄道越美南線 (72.1km) 開業（二日町駅 - 北濃駅間 -0.1km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 越美南線 美濃太田 - 北濃 72.2 km）",
+  "note": "北濃 −0.1은 문서가 二日町–北濃 改キロ로 명시(high). 半在(八坂)·美濃山田(山田)·大島 +0.1은 앞뒤 역이 그대로인 단독 0.1 이동: 문서에 기록 없음, 세 역 문서(八坂駅 110049334·山田駅 110080115·大島駅 110080399)에 이전 기록 없음. 2007·2011 판에도 국철 열 없음. 전환 때 역별 km 재설정으로 추정(국철 역별 km의 두 번째 출처 못 찾음).",
+  "db_stop_valid": "1952-07-01~1986-12-11"
+ },
+ {
+  "line_ja": "越美南線",
+  "table_title": "越美南線 美濃太田 ～ 北濃 営業km: 72.2",
+  "route_id": "r_etsumi_nan_line",
+  "node_id": "n_yamada_nagaragawa",
+  "station": "美濃山田",
+  "km_noritsubushi": 53.9,
+  "km_db": 54.0,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-12-11",
+  "confidence": "low",
+  "evidence": "長良川鉄道越美南線 https://ja.wikipedia.org/w/index.php?oldid=110660132 「国鉄越美南線 (72.2km) 廃止、長良川鉄道越美南線 (72.1km) 開業（二日町駅 - 北濃駅間 -0.1km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 越美南線 美濃太田 - 北濃 72.2 km）",
+  "note": "北濃 −0.1은 문서가 二日町–北濃 改キロ로 명시(high). 半在(八坂)·美濃山田(山田)·大島 +0.1은 앞뒤 역이 그대로인 단독 0.1 이동: 문서에 기록 없음, 세 역 문서(八坂駅 110049334·山田駅 110080115·大島駅 110080399)에 이전 기록 없음. 2007·2011 판에도 국철 열 없음. 전환 때 역별 km 재설정으로 추정(국철 역별 km의 두 번째 출처 못 찾음).",
+  "db_stop_valid": "1932-07-09~1986-12-11"
+ },
+ {
+  "line_ja": "越美南線",
+  "table_title": "越美南線 美濃太田 ～ 北濃 営業km: 72.2",
+  "route_id": "r_etsumi_nan_line",
+  "node_id": "n_oshima_nagaragawa",
+  "station": "大島",
+  "km_noritsubushi": 64.2,
+  "km_db": 64.3,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-12-11",
+  "confidence": "low",
+  "evidence": "長良川鉄道越美南線 https://ja.wikipedia.org/w/index.php?oldid=110660132 「国鉄越美南線 (72.2km) 廃止、長良川鉄道越美南線 (72.1km) 開業（二日町駅 - 北濃駅間 -0.1km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 越美南線 美濃太田 - 北濃 72.2 km）",
+  "note": "北濃 −0.1은 문서가 二日町–北濃 改キロ로 명시(high). 半在(八坂)·美濃山田(山田)·大島 +0.1은 앞뒤 역이 그대로인 단독 0.1 이동: 문서에 기록 없음, 세 역 문서(八坂駅 110049334·山田駅 110080115·大島駅 110080399)에 이전 기록 없음. 2007·2011 판에도 국철 열 없음. 전환 때 역별 km 재설정으로 추정(국철 역별 km의 두 번째 출처 못 찾음).",
+  "db_stop_valid": "1955-03-01~1986-12-11"
+ },
+ {
+  "line_ja": "越美南線",
+  "table_title": "越美南線 美濃太田 ～ 北濃 営業km: 72.2",
+  "route_id": "r_etsumi_nan_line",
+  "node_id": "n_hokuno",
+  "station": "北濃",
+  "km_noritsubushi": 72.2,
+  "km_db": 72.1,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-12-11",
+  "confidence": "high",
+  "evidence": "長良川鉄道越美南線 https://ja.wikipedia.org/w/index.php?oldid=110660132 「国鉄越美南線 (72.2km) 廃止、長良川鉄道越美南線 (72.1km) 開業（二日町駅 - 北濃駅間 -0.1km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 越美南線 美濃太田 - 北濃 72.2 km）",
+  "note": "北濃 −0.1은 문서가 二日町–北濃 改キロ로 명시(high). 半在(八坂)·美濃山田(山田)·大島 +0.1은 앞뒤 역이 그대로인 단독 0.1 이동: 문서에 기록 없음, 세 역 문서(八坂駅 110049334·山田駅 110080115·大島駅 110080399)에 이전 기록 없음. 2007·2011 판에도 국철 열 없음. 전환 때 역별 km 재설정으로 추정(국철 역별 km의 두 번째 출처 못 찾음).",
+  "db_stop_valid": "1934-08-16~1986-12-11"
+ },
+ {
+  "line_ja": "神岡線",
+  "table_title": "神岡線 猪谷 ～ 神岡 営業km: 20.3",
+  "route_id": "r_kamioka_line",
+  "node_id": "n_hida_nakayama",
+  "station": "飛騨中山",
+  "km_noritsubushi": 2.4,
+  "km_db": 2.3,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-01",
+  "confidence": "high",
+  "evidence": "神岡鉄道神岡線 https://ja.wikipedia.org/w/index.php?oldid=108483508 「国鉄神岡線 (20.3km) 廃止、神岡鉄道神岡線 … (19.9km) が開業」 / 神岡鉄道神岡線 https://ja.wikipedia.org/w/index.php?oldid=108483508 （요약: 駅一覧 「転換後」「国鉄時代」 두 열: 飛驒中山 2.3/2.4, 神岡鉱山前 16.9/17.1, 奥飛驒温泉口 19.9/20.3） / 奥飛騨温泉口駅 https://ja.wikipedia.org/w/index.php?oldid=110034427 「国鉄時代は2代目駅舎から南へ400メートル…線路が延びていたため」",
+  "note": "노선 문서의 두 열이 노리츠부시·DB와 각각 일치. 종점 神岡(奥飛騨温泉口) −0.4는 역 문서 설명대로 국철 시대 km 끝점이 역사보다 400m 남쪽(선로 끝)까지였던 것을 전환 때 줄인 것(역 자체 이전 아님).",
+  "db_stop_valid": "1966-10-06~1984-10-01"
+ },
+ {
+  "line_ja": "神岡線",
+  "table_title": "神岡線 猪谷 ～ 神岡 営業km: 20.3",
+  "route_id": "r_kamioka_line",
+  "node_id": "n_kamioka_kozanmae",
+  "station": "神岡口",
+  "km_noritsubushi": 17.1,
+  "km_db": 16.9,
+  "diff": -0.2,
+  "seg_diff": -0.2,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-01",
+  "confidence": "high",
+  "evidence": "神岡鉄道神岡線 https://ja.wikipedia.org/w/index.php?oldid=108483508 「国鉄神岡線 (20.3km) 廃止、神岡鉄道神岡線 … (19.9km) が開業」 / 神岡鉄道神岡線 https://ja.wikipedia.org/w/index.php?oldid=108483508 （요약: 駅一覧 「転換後」「国鉄時代」 두 열: 飛驒中山 2.3/2.4, 神岡鉱山前 16.9/17.1, 奥飛驒温泉口 19.9/20.3） / 奥飛騨温泉口駅 https://ja.wikipedia.org/w/index.php?oldid=110034427 「国鉄時代は2代目駅舎から南へ400メートル…線路が延びていたため」",
+  "note": "노선 문서의 두 열이 노리츠부시·DB와 각각 일치. 종점 神岡(奥飛騨温泉口) −0.4는 역 문서 설명대로 국철 시대 km 끝점이 역사보다 400m 남쪽(선로 끝)까지였던 것을 전환 때 줄인 것(역 자체 이전 아님).",
+  "db_stop_valid": "1966-10-06~1984-10-01"
+ },
+ {
+  "line_ja": "神岡線",
+  "table_title": "神岡線 猪谷 ～ 神岡 営業km: 20.3",
+  "route_id": "r_kamioka_line",
+  "node_id": "n_okuhida_onsenguchi",
+  "station": "神岡",
+  "km_noritsubushi": 20.3,
+  "km_db": 19.9,
+  "diff": -0.4,
+  "seg_diff": -0.4,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-10-01",
+  "confidence": "high",
+  "evidence": "神岡鉄道神岡線 https://ja.wikipedia.org/w/index.php?oldid=108483508 「国鉄神岡線 (20.3km) 廃止、神岡鉄道神岡線 … (19.9km) が開業」 / 神岡鉄道神岡線 https://ja.wikipedia.org/w/index.php?oldid=108483508 （요약: 駅一覧 「転換後」「国鉄時代」 두 열: 飛驒中山 2.3/2.4, 神岡鉱山前 16.9/17.1, 奥飛驒温泉口 19.9/20.3） / 奥飛騨温泉口駅 https://ja.wikipedia.org/w/index.php?oldid=110034427 「国鉄時代は2代目駅舎から南へ400メートル…線路が延びていたため」",
+  "note": "국철 km 끝점이 역사 남쪽 400m 선로 끝까지였음 → 전환 때 끝점 재설정(역사 이전 아님). 노선 문서의 두 열이 노리츠부시·DB와 각각 일치. 종점 神岡(奥飛騨温泉口) −0.4는 역 문서 설명대로 국철 시대 km 끝점이 역사보다 400m 남쪽(선로 끝)까지였던 것을 전환 때 줄인 것(역 자체 이전 아님).",
+  "db_stop_valid": "1966-10-06~1984-10-01"
+ },
+ {
+  "line_ja": "明知線",
+  "table_title": "明知線 恵那 ～ 明知 営業km: 25.2",
+  "route_id": "r_akechi_line",
+  "node_id": "n_higashino_akechi",
+  "station": "東野",
+  "km_noritsubushi": 2.7,
+  "km_db": 2.6,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-11-16",
+  "confidence": "high",
+  "evidence": "明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄明知線 (25.2 km) 廃止。明知鉄道明知線 … (25.1 km) 開業」 / 明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄…旧・日本国有鉄道時代の営業キロ。」",
+  "note": "駅一覧 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 일치.",
+  "db_stop_valid": "1933-05-24~1985-11-16"
+ },
+ {
+  "line_ja": "明知線",
+  "table_title": "明知線 恵那 ～ 明知 営業km: 25.2",
+  "route_id": "r_akechi_line",
+  "node_id": "n_agi",
+  "station": "阿木",
+  "km_noritsubushi": 10.0,
+  "km_db": 9.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-11-16",
+  "confidence": "high",
+  "evidence": "明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄明知線 (25.2 km) 廃止。明知鉄道明知線 … (25.1 km) 開業」 / 明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄…旧・日本国有鉄道時代の営業キロ。」",
+  "note": "駅一覧 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 일치.",
+  "db_stop_valid": "1933-05-24~1985-11-16"
+ },
+ {
+  "line_ja": "明知線",
+  "table_title": "明知線 恵那 ～ 明知 営業km: 25.2",
+  "route_id": "r_akechi_line",
+  "node_id": "n_iibama",
+  "station": "飯羽間",
+  "km_noritsubushi": 12.8,
+  "km_db": 12.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-11-16",
+  "confidence": "high",
+  "evidence": "明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄明知線 (25.2 km) 廃止。明知鉄道明知線 … (25.1 km) 開業」 / 明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄…旧・日本国有鉄道時代の営業キロ。」",
+  "note": "駅一覧 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 일치.",
+  "db_stop_valid": "1959-01-10~1985-11-16"
+ },
+ {
+  "line_ja": "明知線",
+  "table_title": "明知線 恵那 ～ 明知 営業km: 25.2",
+  "route_id": "r_akechi_line",
+  "node_id": "n_hanashiro_onsen",
+  "station": "花白",
+  "km_noritsubushi": 18.4,
+  "km_db": 18.3,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-11-16",
+  "confidence": "high",
+  "evidence": "明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄明知線 (25.2 km) 廃止。明知鉄道明知線 … (25.1 km) 開業」 / 明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄…旧・日本国有鉄道時代の営業キロ。」",
+  "note": "駅一覧 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 일치.",
+  "db_stop_valid": "1967-11-15~1985-11-16"
+ },
+ {
+  "line_ja": "明知線",
+  "table_title": "明知線 恵那 ～ 明知 営業km: 25.2",
+  "route_id": "r_akechi_line",
+  "node_id": "n_yamaoka",
+  "station": "山岡",
+  "km_noritsubushi": 19.8,
+  "km_db": 19.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-11-16",
+  "confidence": "high",
+  "evidence": "明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄明知線 (25.2 km) 廃止。明知鉄道明知線 … (25.1 km) 開業」 / 明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄…旧・日本国有鉄道時代の営業キロ。」",
+  "note": "駅一覧 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 일치.",
+  "db_stop_valid": "1934-06-24~1985-11-16"
+ },
+ {
+  "line_ja": "明知線",
+  "table_title": "明知線 恵那 ～ 明知 営業km: 25.2",
+  "route_id": "r_akechi_line",
+  "node_id": "n_akechi_akechi",
+  "station": "明知",
+  "km_noritsubushi": 25.2,
+  "km_db": 25.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-11-16",
+  "confidence": "high",
+  "evidence": "明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄明知線 (25.2 km) 廃止。明知鉄道明知線 … (25.1 km) 開業」 / 明知鉄道明知線 https://ja.wikipedia.org/w/index.php?oldid=111570096 「国鉄…旧・日本国有鉄道時代の営業キロ。」",
+  "note": "駅一覧 「国鉄」열이 노리츠부시와, 「累計」열이 DB와 일치.",
+  "db_stop_valid": "1934-06-24~1985-11-16"
+ },
+ {
+  "line_ja": "三木線",
+  "table_title": "三木線 厄神 ～ 三木 営業km: 6.8",
+  "route_id": "r_miki_line",
+  "node_id": "n_miki",
+  "station": "三木",
+  "km_noritsubushi": 6.8,
+  "km_db": 6.6,
+  "diff": -0.2,
+  "seg_diff": -0.2,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-04-01",
+  "confidence": "high",
+  "evidence": "三木鉄道三木線 https://ja.wikipedia.org/w/index.php?oldid=111315588 「三木鉄道に転換。別所 - 三木間改キロ (-0.2 km)」",
+  "note": "",
+  "db_stop_valid": "1917-01-23~1985-04-01"
+ },
+ {
+  "line_ja": "北条線",
+  "table_title": "北条線 粟生 ～ 北条町 営業km: 13.8",
+  "route_id": "r_hojo_line",
+  "node_id": "n_hojomachi",
+  "station": "北条町",
+  "km_noritsubushi": 13.8,
+  "km_db": 13.6,
+  "diff": -0.2,
+  "seg_diff": -0.2,
+  "cause": "move",
+  "causes": [
+   "remeasure",
+   "move"
+  ],
+  "date": "1985-04-01 / 2001-11-20",
+  "confidence": "high",
+  "evidence": "北条鉄道北条線 https://ja.wikipedia.org/w/index.php?oldid=111326969 「北条鉄道に転換。播磨横田駅 - 北条町駅間改キロ (-0.1km)」 / 北条鉄道北条線 https://ja.wikipedia.org/w/index.php?oldid=111326969 「北条町駅移転 (-0.1km)」 / 北条町駅 https://ja.wikipedia.org/w/index.php?oldid=111138857 「0.1km南へ移転、新駅舎使用開始」",
+  "note": "차 0.2 = 1985 전환 改キロ −0.1 + 2001 역 이전 −0.1. DB는 2001년 이후 위치 km 하나만 가짐.",
+  "db_stop_valid": "1915-03-03~1985-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_shisho",
+  "station": "四所",
+  "km_noritsubushi": 5.5,
+  "km_db": 5.4,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1924-04-12~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_shinonome_kyoto_tango_railway_willer_trains",
+  "station": "東雲",
+  "km_noritsubushi": 9.1,
+  "km_db": 8.9,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1924-04-12~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_tango_kanzaki",
+  "station": "丹後神崎",
+  "km_noritsubushi": 12.8,
+  "km_db": 12.7,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1957-06-22~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_tango_yura",
+  "station": "丹後由良",
+  "km_noritsubushi": 14.6,
+  "km_db": 14.4,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1924-04-12~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_kunda",
+  "station": "栗田",
+  "km_noritsubushi": 20.3,
+  "km_db": 20.2,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1924-04-12~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_miyazu",
+  "station": "宮津",
+  "km_noritsubushi": 24.9,
+  "km_db": 24.7,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1924-04-12~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_amanohashidate",
+  "station": "天橋立",
+  "km_noritsubushi": 29.3,
+  "km_db": 29.1,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1925-07-31~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_iwatakiguchi",
+  "station": "岩滝口",
+  "km_noritsubushi": 32.9,
+  "km_db": 32.8,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1925-07-31~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_yosano",
+  "station": "丹後山田",
+  "km_noritsubushi": 35.8,
+  "km_db": 35.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1925-07-31~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_kyotango_omiya",
+  "station": "丹後大宮",
+  "km_noritsubushi": 42.9,
+  "km_db": 42.7,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1925-11-03~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_mineyama",
+  "station": "峰山",
+  "km_noritsubushi": 48.5,
+  "km_db": 48.3,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1925-11-03~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_amino",
+  "station": "網野",
+  "km_noritsubushi": 55.7,
+  "km_db": 55.5,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1926-12-25~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_yuhigaura_kitsu_onsen",
+  "station": "丹後木津",
+  "km_noritsubushi": 61.3,
+  "km_db": 61.1,
+  "diff": -0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1931-12-25~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_shotenkyo",
+  "station": "丹後神野",
+  "km_noritsubushi": 66.6,
+  "km_db": 66.5,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1932-08-10~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_kabutoyama",
+  "station": "甲山",
+  "km_noritsubushi": 69.8,
+  "km_db": 69.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1962-03-01~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_kumihama",
+  "station": "久美浜",
+  "km_noritsubushi": 72.1,
+  "km_db": 72.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1929-12-15~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_konotori_no_sato",
+  "station": "但馬三江",
+  "km_noritsubushi": 80.8,
+  "km_db": 80.6,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1929-12-15~1990-04-01"
+ },
+ {
+  "line_ja": "宮津線",
+  "table_title": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0",
+  "route_id": "r_miyazu_line",
+  "node_id": "n_toyooka",
+  "station": "豊岡",
+  "km_noritsubushi": 84.0,
+  "km_db": 83.6,
+  "diff": -0.4,
+  "seg_diff": -0.2,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1990-04-01",
+  "confidence": "high",
+  "evidence": "北近畿タンゴ鉄道宮津線 https://ja.wikipedia.org/w/index.php?oldid=110081372 「営業キロが変更され (84.0 km→83.6 km)」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 宮津線 84.0 km）",
+  "note": "역별 국철 km의 두 번째 출처는 없으나 총연장 변경이 이관일에 명시. 역 이전 기록 없음(宮津駅 등 역 문서의 「移転」은 본사 이전).",
+  "db_stop_valid": "1929-12-15~1990-04-01"
+ },
+ {
+  "line_ja": "若桜線",
+  "table_title": "若桜線 郡家 ～ 若桜 営業km: 19.2",
+  "route_id": "r_wakasa_line",
+  "node_id": "n_hayabusa",
+  "station": "隼",
+  "km_noritsubushi": 4.5,
+  "km_db": 4.4,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-10-14",
+  "confidence": "high",
+  "evidence": "若桜鉄道若桜線 https://ja.wikipedia.org/w/index.php?oldid=111467097 「国鉄時代は、隼駅・八東駅・丹比駅の営業キロがそれぞれ0.1km若桜寄りに設定されていた」",
+  "note": "2011 판(40590282)에도 「国鉄時代の営業キロ」열이 있어 노리츠부시와 일치.",
+  "db_stop_valid": "1930-01-20~1987-10-14"
+ },
+ {
+  "line_ja": "若桜線",
+  "table_title": "若桜線 郡家 ～ 若桜 営業km: 19.2",
+  "route_id": "r_wakasa_line",
+  "node_id": "n_hatto",
+  "station": "八東",
+  "km_noritsubushi": 9.9,
+  "km_db": 9.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-10-14",
+  "confidence": "high",
+  "evidence": "若桜鉄道若桜線 https://ja.wikipedia.org/w/index.php?oldid=111467097 「国鉄時代は、隼駅・八東駅・丹比駅の営業キロがそれぞれ0.1km若桜寄りに設定されていた」",
+  "note": "2011 판(40590282)에도 「国鉄時代の営業キロ」열이 있어 노리츠부시와 일치.",
+  "db_stop_valid": "1930-12-01~1987-10-14"
+ },
+ {
+  "line_ja": "若桜線",
+  "table_title": "若桜線 郡家 ～ 若桜 営業km: 19.2",
+  "route_id": "r_wakasa_line",
+  "node_id": "n_tampi",
+  "station": "丹比",
+  "km_noritsubushi": 13.6,
+  "km_db": 13.5,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-10-14",
+  "confidence": "high",
+  "evidence": "若桜鉄道若桜線 https://ja.wikipedia.org/w/index.php?oldid=111467097 「国鉄時代は、隼駅・八東駅・丹比駅の営業キロがそれぞれ0.1km若桜寄りに設定されていた」",
+  "note": "2011 판(40590282)에도 「国鉄時代の営業キロ」열이 있어 노리츠부시와 일치.",
+  "db_stop_valid": "1930-12-01~1987-10-14"
+ },
+ {
+  "line_ja": "伊勢線",
+  "table_title": "伊勢線 南四日市 ～ 津 営業km: 26.0",
+  "route_id": "r_ise_line",
+  "node_id": "n_suzuka",
+  "station": "鈴鹿",
+  "km_noritsubushi": 7.3,
+  "km_db": 7.5,
+  "diff": 0.2,
+  "seg_diff": 0.2,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-27",
+  "confidence": "low",
+  "evidence": "伊勢鉄道伊勢線 https://ja.wikipedia.org/w/index.php?oldid=111657198 「国鉄伊勢線廃止、伊勢鉄道伊勢線 河原田駅 - 津駅間 (22.3 km) が開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊勢線 河原田 - 津 22.3 km）",
+  "note": "河原田–津 총연장 22.3은 국철·3섹 같음. 鈴鹿~河芸가 +0.2, 東一身田 +0.1(河原田–鈴鹿 3.6→3.8, 河芸–東一身田 3.1→3.0, 東一身田–津 3.0→2.9). 역 이전 기록 없음. 국철 역별 km는 노리츠부시 하나뿐(2007·2011 판에 국철 열 없음) → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1973-09-01~1987-03-27"
+ },
+ {
+  "line_ja": "伊勢線",
+  "table_title": "伊勢線 南四日市 ～ 津 営業km: 26.0",
+  "route_id": "r_ise_line",
+  "node_id": "n_tamagaki",
+  "station": "玉垣",
+  "km_noritsubushi": 10.5,
+  "km_db": 10.7,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-27",
+  "confidence": "low",
+  "evidence": "伊勢鉄道伊勢線 https://ja.wikipedia.org/w/index.php?oldid=111657198 「国鉄伊勢線廃止、伊勢鉄道伊勢線 河原田駅 - 津駅間 (22.3 km) が開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊勢線 河原田 - 津 22.3 km）",
+  "note": "河原田–津 총연장 22.3은 국철·3섹 같음. 鈴鹿~河芸가 +0.2, 東一身田 +0.1(河原田–鈴鹿 3.6→3.8, 河芸–東一身田 3.1→3.0, 東一身田–津 3.0→2.9). 역 이전 기록 없음. 국철 역별 km는 노리츠부시 하나뿐(2007·2011 판에 국철 열 없음) → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1973-09-01~1987-03-27"
+ },
+ {
+  "line_ja": "伊勢線",
+  "table_title": "伊勢線 南四日市 ～ 津 営業km: 26.0",
+  "route_id": "r_ise_line",
+  "node_id": "n_suzuka_circuit_ino",
+  "station": "稲生",
+  "km_noritsubushi": 12.6,
+  "km_db": 12.8,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-27",
+  "confidence": "low",
+  "evidence": "伊勢鉄道伊勢線 https://ja.wikipedia.org/w/index.php?oldid=111657198 「国鉄伊勢線廃止、伊勢鉄道伊勢線 河原田駅 - 津駅間 (22.3 km) が開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊勢線 河原田 - 津 22.3 km）",
+  "note": "河原田–津 총연장 22.3은 국철·3섹 같음. 鈴鹿~河芸가 +0.2, 東一身田 +0.1(河原田–鈴鹿 3.6→3.8, 河芸–東一身田 3.1→3.0, 東一身田–津 3.0→2.9). 역 이전 기록 없음. 국철 역별 km는 노리츠부시 하나뿐(2007·2011 판에 국철 열 없음) → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1973-09-01~1987-03-27"
+ },
+ {
+  "line_ja": "伊勢線",
+  "table_title": "伊勢線 南四日市 ～ 津 営業km: 26.0",
+  "route_id": "r_ise_line",
+  "node_id": "n_nakaseko",
+  "station": "中瀬古",
+  "km_noritsubushi": 16.2,
+  "km_db": 16.4,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-27",
+  "confidence": "low",
+  "evidence": "伊勢鉄道伊勢線 https://ja.wikipedia.org/w/index.php?oldid=111657198 「国鉄伊勢線廃止、伊勢鉄道伊勢線 河原田駅 - 津駅間 (22.3 km) が開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊勢線 河原田 - 津 22.3 km）",
+  "note": "河原田–津 총연장 22.3은 국철·3섹 같음. 鈴鹿~河芸가 +0.2, 東一身田 +0.1(河原田–鈴鹿 3.6→3.8, 河芸–東一身田 3.1→3.0, 東一身田–津 3.0→2.9). 역 이전 기록 없음. 국철 역별 km는 노리츠부시 하나뿐(2007·2011 판에 국철 열 없음) → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1973-09-01~1987-03-27"
+ },
+ {
+  "line_ja": "伊勢線",
+  "table_title": "伊勢線 南四日市 ～ 津 営業km: 26.0",
+  "route_id": "r_ise_line",
+  "node_id": "n_kawage",
+  "station": "河芸",
+  "km_noritsubushi": 19.9,
+  "km_db": 20.1,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-27",
+  "confidence": "low",
+  "evidence": "伊勢鉄道伊勢線 https://ja.wikipedia.org/w/index.php?oldid=111657198 「国鉄伊勢線廃止、伊勢鉄道伊勢線 河原田駅 - 津駅間 (22.3 km) が開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊勢線 河原田 - 津 22.3 km）",
+  "note": "河原田–津 총연장 22.3은 국철·3섹 같음. 鈴鹿~河芸가 +0.2, 東一身田 +0.1(河原田–鈴鹿 3.6→3.8, 河芸–東一身田 3.1→3.0, 東一身田–津 3.0→2.9). 역 이전 기록 없음. 국철 역별 km는 노리츠부시 하나뿐(2007·2011 판에 국철 열 없음) → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1973-09-01~1987-03-27"
+ },
+ {
+  "line_ja": "伊勢線",
+  "table_title": "伊勢線 南四日市 ～ 津 営業km: 26.0",
+  "route_id": "r_ise_line",
+  "node_id": "n_higashi_ishinden",
+  "station": "東一身田",
+  "km_noritsubushi": 23.0,
+  "km_db": 23.1,
+  "diff": 0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-03-27",
+  "confidence": "low",
+  "evidence": "伊勢鉄道伊勢線 https://ja.wikipedia.org/w/index.php?oldid=111657198 「国鉄伊勢線廃止、伊勢鉄道伊勢線 河原田駅 - 津駅間 (22.3 km) が開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊勢線 河原田 - 津 22.3 km）",
+  "note": "河原田–津 총연장 22.3은 국철·3섹 같음. 鈴鹿~河芸가 +0.2, 東一身田 +0.1(河原田–鈴鹿 3.6→3.8, 河芸–東一身田 3.1→3.0, 東一身田–津 3.0→2.9). 역 이전 기록 없음. 국철 역별 km는 노리츠부시 하나뿐(2007·2011 판에 국철 열 없음) → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1973-09-01~1987-03-27"
+ },
+ {
+  "line_ja": "信楽線",
+  "table_title": "信楽線 貴生川 ～ 信楽 営業km: 14.8",
+  "route_id": "r_shigaraki_line",
+  "node_id": "n_kumoi",
+  "station": "雲井",
+  "km_noritsubushi": 10.3,
+  "km_db": 10.2,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-13",
+  "confidence": "high",
+  "evidence": "信楽高原鐵道信楽線 https://ja.wikipedia.org/w/index.php?oldid=111078977 「JR信楽線 (14.8 km) 廃止、信楽高原鐵道信楽線 (14.7 km) 開業」 / 信楽高原鐵道信楽線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=40048597 （요약: 国鉄時代の営業キロ 雲井 10.3 勅旨 12.5 信楽 14.8）",
+  "note": "",
+  "db_stop_valid": "1933-05-08~1987-07-13"
+ },
+ {
+  "line_ja": "信楽線",
+  "table_title": "信楽線 貴生川 ～ 信楽 営業km: 14.8",
+  "route_id": "r_shigaraki_line",
+  "node_id": "n_chokushi",
+  "station": "勅旨",
+  "km_noritsubushi": 12.5,
+  "km_db": 12.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-13",
+  "confidence": "high",
+  "evidence": "信楽高原鐵道信楽線 https://ja.wikipedia.org/w/index.php?oldid=111078977 「JR信楽線 (14.8 km) 廃止、信楽高原鐵道信楽線 (14.7 km) 開業」 / 信楽高原鐵道信楽線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=40048597 （요약: 国鉄時代の営業キロ 雲井 10.3 勅旨 12.5 信楽 14.8）",
+  "note": "",
+  "db_stop_valid": "1963-06-01~1987-07-13"
+ },
+ {
+  "line_ja": "信楽線",
+  "table_title": "信楽線 貴生川 ～ 信楽 営業km: 14.8",
+  "route_id": "r_shigaraki_line",
+  "node_id": "n_shigaraki",
+  "station": "信楽",
+  "km_noritsubushi": 14.8,
+  "km_db": 14.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-13",
+  "confidence": "high",
+  "evidence": "信楽高原鐵道信楽線 https://ja.wikipedia.org/w/index.php?oldid=111078977 「JR信楽線 (14.8 km) 廃止、信楽高原鐵道信楽線 (14.7 km) 開業」 / 信楽高原鐵道信楽線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=40048597 （요약: 国鉄時代の営業キロ 雲井 10.3 勅旨 12.5 信楽 14.8）",
+  "note": "",
+  "db_stop_valid": "1933-05-08~1987-07-13"
+ },
+ {
+  "line_ja": "常磐線",
+  "table_title": "常磐線 駒ヶ嶺 ～ 浜吉田 営業km: 18.2",
+  "route_id": "r_joban_line",
+  "node_id": "n_hamayoshida",
+  "station": "浜吉田",
+  "km_noritsubushi": 18.2,
+  "km_db": 18.8,
+  "diff": 0.6,
+  "seg_diff": 0.6,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2016-12-10",
+  "confidence": "high",
+  "evidence": "常磐線 https://ja.wikipedia.org/w/index.php?oldid=111451044 「駒ケ嶺 - 浜吉田間で計+0.6kmの改キロ」 / 浜吉田駅 https://ja.wikipedia.org/w/index.php?oldid=111628500 「山下駅が移転したため、当駅と山下間の営業キロが…4.2キロメートルに変更」",
+  "note": "震災 뒤 내륙 이설(新地·坂元·山下 이전). DB는 옛 역 노드(n_*_old)에 옛 km를 두지만 浜吉田에는 새 km만 있어, 2016년 이전 계통에서 山下(旧)–浜吉田가 4.5km(실제 3.9)로 됨.",
+  "db_stop_valid": "1897-11-10~ongoing"
+ },
+ {
+  "line_ja": "吾妻線",
+  "table_title": "吾妻線 岩島 ～ 長野原草津口 営業km: 11.8",
+  "route_id": "r_agatsuma_line",
+  "node_id": "n_kawarayu_onsen",
+  "station": "川原湯温泉",
+  "km_noritsubushi": 5.9,
+  "km_db": 6.5,
+  "diff": 0.6,
+  "seg_diff": 0.6,
+  "cause": "move",
+  "causes": [
+   "realign",
+   "move"
+  ],
+  "date": "2014-10-01",
+  "confidence": "high",
+  "evidence": "吾妻線 https://ja.wikipedia.org/w/index.php?oldid=111452472 「新線切り換えに伴い、川原湯温泉駅が新線上に移転し、同時に同区間を改キロ (-0.3 km)」 / 川原湯温泉駅 https://ja.wikipedia.org/w/index.php?oldid=110005693 「10月1日：移転し、新駅舎にて営業を再開」",
+  "note": "八ッ場ダム 新線 切替. DB는 川原湯温泉 노드 하나(1946~)에 새 위치 km(岩島+6.5)를 써서 1946~2014 옛 선로 시대에도 새 km가 나옴.",
+  "db_stop_valid": "1946-04-20~ongoing"
+ },
+ {
+  "line_ja": "吾妻線",
+  "table_title": "吾妻線 岩島 ～ 長野原草津口 営業km: 11.8",
+  "route_id": "r_agatsuma_line",
+  "node_id": "n_naganohara_kusatsuguchi",
+  "station": "長野原草津口",
+  "km_noritsubushi": 11.8,
+  "km_db": 11.5,
+  "diff": -0.3,
+  "seg_diff": -0.9,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2014-10-01",
+  "confidence": "high",
+  "evidence": "吾妻線 https://ja.wikipedia.org/w/index.php?oldid=111452472 「新線切り換えに伴い、川原湯温泉駅が新線上に移転し、同時に同区間を改キロ (-0.3 km)」 / 川原湯温泉駅 https://ja.wikipedia.org/w/index.php?oldid=110005693 「10月1日：移転し、新駅舎にて営業を再開」",
+  "note": "八ッ場ダム 新線 切替. DB는 川原湯温泉 노드 하나(1946~)에 새 위치 km(岩島+6.5)를 써서 1946~2014 옛 선로 시대에도 새 km가 나옴.",
+  "db_stop_valid": "1946-04-20~ongoing"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_orimoto",
+  "station": "折本",
+  "km_noritsubushi": 4.7,
+  "km_db": 4.6,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1912-04-01~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_kugeta",
+  "station": "久下田",
+  "km_noritsubushi": 8.6,
+  "km_db": 8.5,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1912-04-01~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_terauchi",
+  "station": "寺内",
+  "km_noritsubushi": 12.7,
+  "km_db": 12.6,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1912-04-01~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_moka",
+  "station": "真岡",
+  "km_noritsubushi": 16.5,
+  "km_db": 16.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1912-04-01~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_kita_mooka",
+  "station": "北真岡",
+  "km_noritsubushi": 18.1,
+  "km_db": 18.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1955-04-01~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_nishidai_moka",
+  "station": "西田井",
+  "km_noritsubushi": 21.3,
+  "km_db": 21.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1913-07-11~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_mashiko",
+  "station": "益子",
+  "km_noritsubushi": 25.2,
+  "km_db": 25.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1913-07-11~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_nanai",
+  "station": "七井",
+  "km_noritsubushi": 28.5,
+  "km_db": 28.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1913-07-11~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_tatara_moka",
+  "station": "多田羅",
+  "km_noritsubushi": 31.3,
+  "km_db": 31.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1955-04-01~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_ichihana",
+  "station": "市塙",
+  "km_noritsubushi": 34.4,
+  "km_db": 34.3,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1920-12-15~1988-04-11"
+ },
+ {
+  "line_ja": "真岡線",
+  "table_title": "真岡線 下館 ～ 茂木 営業km: 42.0",
+  "route_id": "r_moka_line",
+  "node_id": "n_motegi",
+  "station": "茂木",
+  "km_noritsubushi": 42.0,
+  "km_db": 41.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-11",
+  "confidence": "high",
+  "evidence": "真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「JR真岡線廃止 (-42.0 km) 。真岡鐵道真岡線開業 (41.9 km)」 / 真岡鐵道真岡線 https://ja.wikipedia.org/w/index.php?oldid=111629245 「<!-- 真岡鐵道転換時に下館駅 - 折本駅間0.1 km短縮-->（숨은 주석）」",
+  "note": "下館–折本 한 구간만 0.1 짧아져 이후 11역이 모두 −0.1.",
+  "db_stop_valid": "1920-12-15~1988-04-11"
+ },
+ {
+  "line_ja": "丸森線",
+  "table_title": "丸森線 丸森 ～ 槻木 営業km: 17.4",
+  "route_id": "r_marumori_line",
+  "node_id": "n_kakuda",
+  "station": "角田",
+  "km_noritsubushi": 5.7,
+  "km_db": 5.8,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-07-01",
+  "confidence": "low",
+  "evidence": "阿武隈急行線 https://ja.wikipedia.org/w/index.php?oldid=111170784 「国鉄丸森線の槻木駅 - 丸森駅 (17.4 km) が廃止。同区間が…転換開業」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 丸森線 17.4 km）",
+  "note": "총연장 17.4 불변, 角田만 단독 0.1 이동(丸森 기준 5.7→5.8). 角田駅 문서(111627350)에 이전 기록 없음. 국철 역별 km 두 번째 출처 없음 → 전환 때 역 km 재설정으로 추정.",
+  "db_stop_valid": "1968-04-01~1986-07-01"
+ },
+ {
+  "line_ja": "仙石線",
+  "table_title": "仙石線 陸前大塚 ～ 陸前小野 営業km: 6.4",
+  "route_id": "r_senseki_line",
+  "node_id": "n_nobiru",
+  "station": "野蒜",
+  "km_noritsubushi": 3.2,
+  "km_db": 2.6,
+  "diff": -0.6,
+  "seg_diff": -0.6,
+  "cause": "move",
+  "causes": [
+   "realign",
+   "move"
+  ],
+  "date": "2015-05-30",
+  "confidence": "high",
+  "evidence": "仙石線 https://ja.wikipedia.org/w/index.php?oldid=111464374 「新線へ切り替えられる陸前大塚駅 - 陸前小野駅間を改キロ (-1.2 km)」 / 野蒜駅 https://ja.wikipedia.org/w/index.php?oldid=111588253 「3月14日：営業再開に先立ち、この日より営業キロを移設後のものに変更」",
+  "note": "震災 뒤 내륙 이설(野蒜·東名 이전). 改キロ 시행은 2015-03-14, 새 선로 개업 2015-05-30. DB는 野蒜 노드 하나(1928~)에 새 km를 씀.",
+  "db_stop_valid": "1928-04-10~ongoing"
+ },
+ {
+  "line_ja": "仙石線",
+  "table_title": "仙石線 陸前大塚 ～ 陸前小野 営業km: 6.4",
+  "route_id": "r_senseki_line",
+  "node_id": "n_rikuzen_ono",
+  "station": "陸前小野",
+  "km_noritsubushi": 6.4,
+  "km_db": 5.2,
+  "diff": -1.2,
+  "seg_diff": -0.6,
+  "cause": "realign",
+  "causes": [
+   "realign"
+  ],
+  "date": "2015-05-30",
+  "confidence": "high",
+  "evidence": "仙石線 https://ja.wikipedia.org/w/index.php?oldid=111464374 「新線へ切り替えられる陸前大塚駅 - 陸前小野駅間を改キロ (-1.2 km)」 / 野蒜駅 https://ja.wikipedia.org/w/index.php?oldid=111588253 「3月14日：営業再開に先立ち、この日より営業キロを移設後のものに変更」",
+  "note": "震災 뒤 내륙 이설(野蒜·東名 이전). 改キロ 시행은 2015-03-14, 새 선로 개업 2015-05-30. DB는 野蒜 노드 하나(1928~)에 새 km를 씀.",
+  "db_stop_valid": "1928-04-10~ongoing"
+ },
+ {
+  "line_ja": "石巻線",
+  "table_title": "石巻線 浦宿 ～ 女川 営業km: 2.5",
+  "route_id": "r_ishinomaki_line",
+  "node_id": "n_onagawa",
+  "station": "女川",
+  "km_noritsubushi": 2.5,
+  "km_db": 2.3,
+  "diff": -0.2,
+  "seg_diff": -0.2,
+  "cause": "move",
+  "causes": [
+   "move"
+  ],
+  "date": "2015-03-21",
+  "confidence": "high",
+  "evidence": "石巻線 https://ja.wikipedia.org/w/index.php?oldid=111464534 「運転再開に先立ち、浦宿駅 - 女川駅を改キロ (-0.2 km)」 / 女川駅 https://ja.wikipedia.org/w/index.php?oldid=111571105 「当駅が約200メートル内陸側に移設」",
+  "note": "改キロ 2015-03-14, 새 역 2015-03-21. DB는 女川 노드 하나(1939~)에 새 km를 씀.",
+  "db_stop_valid": "1939-10-07~ongoing"
+ },
+ {
+  "line_ja": "盛線",
+  "table_title": "盛線 盛 ～ 吉浜 営業km: 21.5",
+  "route_id": "r_sakari_line",
+  "node_id": "n_rikuzen_akasaki",
+  "station": "陸前赤崎",
+  "km_noritsubushi": 3.6,
+  "km_db": 3.7,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 盛線 盛 - 吉浜 21.5 km） / 三陸鉄道南リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652864 （요약: 陸前赤崎 3.7 … 吉浜 21.6） / 三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「南リアス線として盛駅 - 釜石駅間 (36.6 km) が転換・開業…うち吉浜駅 - 釜石駅間 (15.0 km) は新設」",
+  "note": "국철 盛線 21.5(특정지방교통선 표·노리츠부시) → 三陸鉄道 21.6(36.6−15.0). 盛–陸前赤崎 3.6→3.7 한 구간에서 생겨 이후 역 모두 +0.1. 陸前赤崎는 2013-04-03에 釜石 쪽 100m 이전했지만 2011년 판에 이미 3.7이라 이전이 원인 아님. 단, リアス線 문서 연혁은 국철 개업 구간을 「盛駅 - 綾里駅間 (9.1 km)」「綾里駅 - 吉浜駅間 (12.5 km)」(합 21.6)로 적어 위키 안에서 어긋남 → 국철 값 21.5/21.6 확정은 1차 자료 필요.",
+  "db_stop_valid": "1970-03-01~1984-04-01"
+ },
+ {
+  "line_ja": "盛線",
+  "table_title": "盛線 盛 ～ 吉浜 営業km: 21.5",
+  "route_id": "r_sakari_line",
+  "node_id": "n_ryori",
+  "station": "綾里",
+  "km_noritsubushi": 9.0,
+  "km_db": 9.1,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 盛線 盛 - 吉浜 21.5 km） / 三陸鉄道南リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652864 （요약: 陸前赤崎 3.7 … 吉浜 21.6） / 三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「南リアス線として盛駅 - 釜石駅間 (36.6 km) が転換・開業…うち吉浜駅 - 釜石駅間 (15.0 km) は新設」",
+  "note": "국철 盛線 21.5(특정지방교통선 표·노리츠부시) → 三陸鉄道 21.6(36.6−15.0). 盛–陸前赤崎 3.6→3.7 한 구간에서 생겨 이후 역 모두 +0.1. 陸前赤崎는 2013-04-03에 釜石 쪽 100m 이전했지만 2011년 판에 이미 3.7이라 이전이 원인 아님. 단, リアス線 문서 연혁은 국철 개업 구간을 「盛駅 - 綾里駅間 (9.1 km)」「綾里駅 - 吉浜駅間 (12.5 km)」(합 21.6)로 적어 위키 안에서 어긋남 → 국철 값 21.5/21.6 확정은 1차 자료 필요.",
+  "db_stop_valid": "1970-03-01~1984-04-01"
+ },
+ {
+  "line_ja": "盛線",
+  "table_title": "盛線 盛 ～ 吉浜 営業km: 21.5",
+  "route_id": "r_sakari_line",
+  "node_id": "n_horei",
+  "station": "甫嶺",
+  "km_noritsubushi": 14.2,
+  "km_db": 14.3,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 盛線 盛 - 吉浜 21.5 km） / 三陸鉄道南リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652864 （요약: 陸前赤崎 3.7 … 吉浜 21.6） / 三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「南リアス線として盛駅 - 釜石駅間 (36.6 km) が転換・開業…うち吉浜駅 - 釜石駅間 (15.0 km) は新設」",
+  "note": "국철 盛線 21.5(특정지방교통선 표·노리츠부시) → 三陸鉄道 21.6(36.6−15.0). 盛–陸前赤崎 3.6→3.7 한 구간에서 생겨 이후 역 모두 +0.1. 陸前赤崎는 2013-04-03에 釜石 쪽 100m 이전했지만 2011년 판에 이미 3.7이라 이전이 원인 아님. 단, リアス線 문서 연혁은 국철 개업 구간을 「盛駅 - 綾里駅間 (9.1 km)」「綾里駅 - 吉浜駅間 (12.5 km)」(합 21.6)로 적어 위키 안에서 어긋남 → 국철 값 21.5/21.6 확정은 1차 자료 필요.",
+  "db_stop_valid": "1973-07-01~1984-04-01"
+ },
+ {
+  "line_ja": "盛線",
+  "table_title": "盛線 盛 ～ 吉浜 営業km: 21.5",
+  "route_id": "r_sakari_line",
+  "node_id": "n_sanriku",
+  "station": "三陸",
+  "km_noritsubushi": 16.9,
+  "km_db": 17.0,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 盛線 盛 - 吉浜 21.5 km） / 三陸鉄道南リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652864 （요약: 陸前赤崎 3.7 … 吉浜 21.6） / 三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「南リアス線として盛駅 - 釜石駅間 (36.6 km) が転換・開業…うち吉浜駅 - 釜石駅間 (15.0 km) は新設」",
+  "note": "국철 盛線 21.5(특정지방교통선 표·노리츠부시) → 三陸鉄道 21.6(36.6−15.0). 盛–陸前赤崎 3.6→3.7 한 구간에서 생겨 이후 역 모두 +0.1. 陸前赤崎는 2013-04-03에 釜石 쪽 100m 이전했지만 2011년 판에 이미 3.7이라 이전이 원인 아님. 단, リアス線 문서 연혁은 국철 개업 구간을 「盛駅 - 綾里駅間 (9.1 km)」「綾里駅 - 吉浜駅間 (12.5 km)」(합 21.6)로 적어 위키 안에서 어긋남 → 국철 값 21.5/21.6 확정은 1차 자료 필요.",
+  "db_stop_valid": "1973-07-01~1984-04-01"
+ },
+ {
+  "line_ja": "盛線",
+  "table_title": "盛線 盛 ～ 吉浜 営業km: 21.5",
+  "route_id": "r_sakari_line",
+  "node_id": "n_yoshihama_sanriku",
+  "station": "吉浜",
+  "km_noritsubushi": 21.5,
+  "km_db": 21.6,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 盛線 盛 - 吉浜 21.5 km） / 三陸鉄道南リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652864 （요약: 陸前赤崎 3.7 … 吉浜 21.6） / 三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「南リアス線として盛駅 - 釜石駅間 (36.6 km) が転換・開業…うち吉浜駅 - 釜石駅間 (15.0 km) は新設」",
+  "note": "국철 盛線 21.5(특정지방교통선 표·노리츠부시) → 三陸鉄道 21.6(36.6−15.0). 盛–陸前赤崎 3.6→3.7 한 구간에서 생겨 이후 역 모두 +0.1. 陸前赤崎는 2013-04-03에 釜石 쪽 100m 이전했지만 2011년 판에 이미 3.7이라 이전이 원인 아님. 단, リアス線 문서 연혁은 국철 개업 구간을 「盛駅 - 綾里駅間 (9.1 km)」「綾里駅 - 吉浜駅間 (12.5 km)」(합 21.6)로 적어 위키 안에서 어긋남 → 국철 값 21.5/21.6 확정은 1차 자료 필요.",
+  "db_stop_valid": "1973-07-01~1984-04-01"
+ },
+ {
+  "line_ja": "宮古線",
+  "table_title": "宮古線 宮古 ～ 田老 営業km: 12.8",
+  "route_id": "r_miyako_line",
+  "node_id": "n_ichinowatari",
+  "station": "一の渡",
+  "km_noritsubushi": 6.3,
+  "km_db": 6.2,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「宮古線として宮古駅 - 田老駅間 (12.8 km) が開業」 / 三陸鉄道北リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652865 （요약: 一の渡 6.2 … 田老 12.7）",
+  "note": "국철 12.8 → 三陸鉄道 12.7. 역 이전 기록 없음.",
+  "db_stop_valid": "1972-02-27~1984-04-01"
+ },
+ {
+  "line_ja": "宮古線",
+  "table_title": "宮古線 宮古 ～ 田老 営業km: 12.8",
+  "route_id": "r_miyako_line",
+  "node_id": "n_taro",
+  "station": "田老",
+  "km_noritsubushi": 12.8,
+  "km_db": 12.7,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「宮古線として宮古駅 - 田老駅間 (12.8 km) が開業」 / 三陸鉄道北リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652865 （요약: 一の渡 6.2 … 田老 12.7）",
+  "note": "국철 12.8 → 三陸鉄道 12.7. 역 이전 기록 없음.",
+  "db_stop_valid": "1972-02-27~1984-04-01"
+ },
+ {
+  "line_ja": "久慈線",
+  "table_title": "久慈線 普代 ～ 久慈 営業km: 26.0",
+  "route_id": "r_kuji_line",
+  "node_id": "n_rikuchu_noda",
+  "station": "陸中野田",
+  "km_noritsubushi": 14.9,
+  "km_db": 15.0,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「久慈線として久慈駅 - 普代駅間 (26.0 km) が開業」 / 三陸鉄道北リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652865 （요약: 普代 44.9 … 久慈 71.0（宮古起点））",
+  "note": "국철 26.0 → 三陸鉄道 26.1(71.0−44.9). 野田玉川–陸中野田 3.9→4.0 한 구간에서 생김. 역 이전 기록 없음.",
+  "db_stop_valid": "1975-07-20~1984-04-01"
+ },
+ {
+  "line_ja": "久慈線",
+  "table_title": "久慈線 普代 ～ 久慈 営業km: 26.0",
+  "route_id": "r_kuji_line",
+  "node_id": "n_rikuchu_ube",
+  "station": "陸中宇部",
+  "km_noritsubushi": 18.3,
+  "km_db": 18.4,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「久慈線として久慈駅 - 普代駅間 (26.0 km) が開業」 / 三陸鉄道北リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652865 （요약: 普代 44.9 … 久慈 71.0（宮古起点））",
+  "note": "국철 26.0 → 三陸鉄道 26.1(71.0−44.9). 野田玉川–陸中野田 3.9→4.0 한 구간에서 생김. 역 이전 기록 없음.",
+  "db_stop_valid": "1975-07-20~1984-04-01"
+ },
+ {
+  "line_ja": "久慈線",
+  "table_title": "久慈線 普代 ～ 久慈 営業km: 26.0",
+  "route_id": "r_kuji_line",
+  "node_id": "n_kuji_hachinohe",
+  "station": "久慈",
+  "km_noritsubushi": 26.0,
+  "km_db": 26.1,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1984-04-01",
+  "confidence": "medium",
+  "evidence": "三陸鉄道リアス線 https://ja.wikipedia.org/w/index.php?oldid=111310120 「久慈線として久慈駅 - 普代駅間 (26.0 km) が開業」 / 三陸鉄道北リアス線（2011年版） https://ja.wikipedia.org/w/index.php?oldid=39652865 （요약: 普代 44.9 … 久慈 71.0（宮古起点））",
+  "note": "국철 26.0 → 三陸鉄道 26.1(71.0−44.9). 野田玉川–陸中野田 3.9→4.0 한 구간에서 생김. 역 이전 기록 없음.",
+  "db_stop_valid": "1975-07-20~1984-04-01"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_monden",
+  "station": "門田",
+  "km_noritsubushi": 4.8,
+  "km_db": 4.9,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1927-11-01~1987-07-16"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_ashinomaki_onsen_minami",
+  "station": "桑原",
+  "km_noritsubushi": 17.6,
+  "km_db": 17.7,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1980-12-01~1987-07-16"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_aizu_shimogo",
+  "station": "楢原",
+  "km_noritsubushi": 31.0,
+  "km_db": 31.1,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1934-12-27~1987-07-16"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_aizu_nagano",
+  "station": "会津長野",
+  "km_noritsubushi": 37.2,
+  "km_db": 37.3,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1934-12-27~1987-07-16"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_nakaarai",
+  "station": "中荒井",
+  "km_noritsubushi": 45.7,
+  "km_db": 45.8,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1947-12-12~1987-07-16"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_aizu_arakai",
+  "station": "荒海",
+  "km_noritsubushi": 49.1,
+  "km_db": 49.2,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1947-12-12~1987-07-16"
+ },
+ {
+  "line_ja": "会津線",
+  "table_title": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4",
+  "route_id": "r_aizu_line",
+  "node_id": "n_nanatsugatake_tozanguchi",
+  "station": "糸沢",
+  "km_noritsubushi": 53.0,
+  "km_db": 53.1,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1987-07-16",
+  "confidence": "low",
+  "evidence": "会津鉄道会津線 https://ja.wikipedia.org/w/index.php?oldid=108995651 「会津鉄道による第一種鉄道事業が開始（西若松駅 - 会津高原駅間 57.4 km）」 / 特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 会津線 57.4 km）",
+  "note": "총연장 57.4 불변. 7역이 +0.1, 그 다음 역은 원래대로(역별 반올림 위치만 바뀐 꼴). 역 문서에 전환기 이전 기록 없음(桑原=芦ノ牧温泉南은 1980 大川ダム 선로 이설로 이전했으나 국철 시대 일이고 앞뒤 역 km는 같음). 국철 역별 km 두 번째 출처 없음 → 전환 때 역별 재설정으로 추정.",
+  "db_stop_valid": "1953-11-08~1987-07-16"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_miyauchi_yamagata",
+  "station": "宮内町",
+  "km_noritsubushi": 3.1,
+  "km_db": 3.0,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1913-10-26~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_orihata",
+  "station": "西宮内",
+  "km_noritsubushi": 4.5,
+  "km_db": 4.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1959-06-01~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_ringo",
+  "station": "梨郷",
+  "km_noritsubushi": 6.9,
+  "km_db": 6.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1913-10-26~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_imaizumi",
+  "station": "今泉",
+  "km_noritsubushi": 12.3,
+  "km_db": 12.2,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1914-11-15~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_tokiniwa",
+  "station": "時庭",
+  "km_noritsubushi": 15.0,
+  "km_db": 14.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1914-11-15~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_nagai_yamagata",
+  "station": "長井",
+  "km_noritsubushi": 18.4,
+  "km_db": 18.3,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1914-11-15~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_uzen_narita",
+  "station": "羽前成田",
+  "km_noritsubushi": 21.1,
+  "km_db": 21.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1922-12-11~1988-10-25"
+ },
+ {
+  "line_ja": "長井線",
+  "table_title": "長井線 赤湯 ～ 荒砥 営業km: 30.6",
+  "route_id": "r_nagai_line",
+  "node_id": "n_arato",
+  "station": "荒砥",
+  "km_noritsubushi": 30.6,
+  "km_db": 30.5,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-10-25",
+  "confidence": "medium",
+  "evidence": "山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「長井線 (-30.6 km) を廃止。…フラワー長井線 (30.5 km) が開業」 / 山形鉄道フラワー長井線 https://ja.wikipedia.org/w/index.php?oldid=110839979 「赤湯 - 梨郷間 (6.9 km) が長井軽便線として開業」",
+  "note": "개업 구간 赤湯–梨郷 6.9는 노리츠부시(6.9)와 같고 DB(6.8)와 다름 → 국철 값은 노리츠부시 쪽. 역 이전 기록 없음(長井駅 「移転」은 2019 임시역사).",
+  "db_stop_valid": "1923-04-22~1988-10-25"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_jomon_ogata",
+  "station": "小ヶ田",
+  "km_noritsubushi": 3.8,
+  "km_db": 3.7,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-12-10~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_onodai",
+  "station": "大野台",
+  "km_noritsubushi": 6.2,
+  "km_db": 6.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1965-04-20~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_aikawa_akita_nairiku_jukan",
+  "station": "合川",
+  "km_noritsubushi": 9.9,
+  "km_db": 9.7,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1934-12-10~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_kamisugi_akita_nairiku_jukan",
+  "station": "上杉",
+  "km_noritsubushi": 12.2,
+  "km_db": 12.1,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1965-11-21~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_yonaizawa",
+  "station": "米内沢",
+  "km_noritsubushi": 15.1,
+  "km_db": 15.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1934-12-10~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_katsurase",
+  "station": "桂瀬",
+  "km_noritsubushi": 20.6,
+  "km_db": 20.5,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1935-11-15~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_ani_maeda_onsen",
+  "station": "阿仁前田",
+  "km_noritsubushi": 25.3,
+  "km_db": 25.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1935-11-15~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_maeda_minami",
+  "station": "前田南",
+  "km_noritsubushi": 27.2,
+  "km_db": 27.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-12-10~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_kobuchi_akita_nairiku_jukan",
+  "station": "小淵",
+  "km_noritsubushi": 29.2,
+  "km_db": 29.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1936-09-25~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_aniai",
+  "station": "阿仁合",
+  "km_noritsubushi": 33.1,
+  "km_db": 33.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1936-09-25~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_arase",
+  "station": "荒瀬",
+  "km_noritsubushi": 35.5,
+  "km_db": 35.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-10-15~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_kayakusa",
+  "station": "萱草",
+  "km_noritsubushi": 38.3,
+  "km_db": 38.1,
+  "diff": -0.2,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-10-15~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_okashinai",
+  "station": "笑内",
+  "km_noritsubushi": 41.0,
+  "km_db": 40.9,
+  "diff": -0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-10-15~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_iwanome",
+  "station": "岩野目",
+  "km_noritsubushi": 43.4,
+  "km_db": 43.3,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-10-15~1986-11-01"
+ },
+ {
+  "line_ja": "阿仁合線",
+  "table_title": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1",
+  "route_id": "r_aniai_line",
+  "node_id": "n_hitachinai",
+  "station": "比立内",
+  "km_noritsubushi": 46.1,
+  "km_db": 46.0,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 阿仁合線 鷹ノ巣 - 比立内 46.1 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 比立内 累計 46.0）",
+  "note": "국철 46.1 → 秋田内陸線 46.0. 역 이전 기록 없음.",
+  "db_stop_valid": "1963-10-15~1986-11-01"
+ },
+ {
+  "line_ja": "角館線",
+  "table_title": "角館線 松葉 ～ 角館 営業km: 19.2",
+  "route_id": "r_kakunodate_line",
+  "node_id": "n_ugo_nagatoro",
+  "station": "羽後長戸呂",
+  "km_noritsubushi": 2.8,
+  "km_db": 2.9,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "low",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 角館線 角館 - 松葉 19.2 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 松葉 75.0 … 角館 94.2（19.2））",
+  "note": "총연장 19.2 불변, 羽後長戸呂·西明寺 두 역만 +0.1. 역 이전 기록 없음. 추정.",
+  "db_stop_valid": "1970-11-01~1986-11-01"
+ },
+ {
+  "line_ja": "角館線",
+  "table_title": "角館線 松葉 ～ 角館 営業km: 19.2",
+  "route_id": "r_kakunodate_line",
+  "node_id": "n_saimyouji",
+  "station": "西明寺",
+  "km_noritsubushi": 11.8,
+  "km_db": 11.9,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-11-01",
+  "confidence": "low",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 角館線 角館 - 松葉 19.2 km） / 秋田内陸縦貫鉄道秋田内陸線 https://ja.wikipedia.org/w/index.php?oldid=111364809 （요약: 松葉 75.0 … 角館 94.2（19.2））",
+  "note": "총연장 19.2 불변, 羽後長戸呂·西明寺 두 역만 +0.1. 역 이전 기록 없음. 추정.",
+  "db_stop_valid": "1970-11-01~1986-11-01"
+ },
+ {
+  "line_ja": "矢島線",
+  "table_title": "矢島線 羽後本荘 ～ 羽後矢島 営業km: 23.0",
+  "route_id": "r_yashima_line",
+  "node_id": "n_kurosawa_yuri_kogen",
+  "station": "羽後黒沢",
+  "km_noritsubushi": 9.6,
+  "km_db": 9.5,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-10-01",
+  "confidence": "low",
+  "evidence": "由利高原鉄道鳥海山ろく線 https://ja.wikipedia.org/w/index.php?oldid=109784322 「羽後本荘 - 前郷間 (11.6 km) を開業」 / 由利高原鉄道鳥海山ろく線 https://ja.wikipedia.org/w/index.php?oldid=109784322 「前郷 - 西滝沢間 (4.1 km) 延伸開業」",
+  "note": "총연장 23.0 불변. 前郷: 개업 구간(羽後本荘–前郷 11.6, 前郷–西滝沢 4.1)이 노리츠부시와 같고 DB(11.7, 4.0)와 다름 → 국철 값은 노리츠부시 쪽, 전환 때 바뀜. 羽後黒沢(−0.1)은 직접 근거 없음.",
+  "db_stop_valid": "1922-08-01~1985-10-01"
+ },
+ {
+  "line_ja": "矢島線",
+  "table_title": "矢島線 羽後本荘 ～ 羽後矢島 営業km: 23.0",
+  "route_id": "r_yashima_line",
+  "node_id": "n_maego",
+  "station": "前郷",
+  "km_noritsubushi": 11.6,
+  "km_db": 11.7,
+  "diff": 0.1,
+  "seg_diff": 0.2,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1985-10-01",
+  "confidence": "medium",
+  "evidence": "由利高原鉄道鳥海山ろく線 https://ja.wikipedia.org/w/index.php?oldid=109784322 「羽後本荘 - 前郷間 (11.6 km) を開業」 / 由利高原鉄道鳥海山ろく線 https://ja.wikipedia.org/w/index.php?oldid=109784322 「前郷 - 西滝沢間 (4.1 km) 延伸開業」",
+  "note": "총연장 23.0 불변. 前郷: 개업 구간(羽後本荘–前郷 11.6, 前郷–西滝沢 4.1)이 노리츠부시와 같고 DB(11.7, 4.0)와 다름 → 국철 값은 노리츠부시 쪽, 전환 때 바뀜. 羽後黒沢(−0.1)은 직접 근거 없음.",
+  "db_stop_valid": "1922-08-01~1985-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_shinano_oiwake",
+  "station": "信濃追分",
+  "km_noritsubushi": 18.3,
+  "km_db": 18.4,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1909-06-25~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_miyota",
+  "station": "御代田",
+  "km_noritsubushi": 24.2,
+  "km_db": 24.4,
+  "diff": 0.2,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-12-01~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_hirahara",
+  "station": "平原",
+  "km_noritsubushi": 29.9,
+  "km_db": 29.5,
+  "diff": -0.4,
+  "seg_diff": -0.6,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1952-01-10~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_komoro",
+  "station": "小諸",
+  "km_noritsubushi": 33.6,
+  "km_db": 33.2,
+  "diff": -0.4,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-12-01~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_shigeno",
+  "station": "滋野",
+  "km_noritsubushi": 39.5,
+  "km_db": 39.1,
+  "diff": -0.4,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1923-10-01~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_tanaka",
+  "station": "田中",
+  "km_noritsubushi": 42.9,
+  "km_db": 42.5,
+  "diff": -0.4,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-12-01~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_oya_shinano",
+  "station": "大屋",
+  "km_noritsubushi": 46.4,
+  "km_db": 45.9,
+  "diff": -0.5,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1896-01-20~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_ueda_hokuriku_shinkansen",
+  "station": "上田",
+  "km_noritsubushi": 51.6,
+  "km_db": 51.2,
+  "diff": -0.4,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-08-15~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_nishi_ueda",
+  "station": "西上田",
+  "km_noritsubushi": 56.0,
+  "km_db": 55.6,
+  "diff": -0.4,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1920-06-01~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_sakaki",
+  "station": "坂城",
+  "km_noritsubushi": 62.0,
+  "km_db": 61.6,
+  "diff": -0.4,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-08-15~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_togura",
+  "station": "戸倉",
+  "km_noritsubushi": 66.6,
+  "km_db": 66.1,
+  "diff": -0.5,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1912-02-11~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_yashiro_shinano",
+  "station": "屋代",
+  "km_noritsubushi": 71.6,
+  "km_db": 71.1,
+  "diff": -0.5,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-08-15~1997-10-01"
+ },
+ {
+  "line_ja": "信越本線",
+  "table_title": "信越本線 横川 ～ 篠ノ井 営業km: 76.8",
+  "route_id": "r_shinetsu_main_line",
+  "node_id": "n_shinonoi",
+  "station": "篠ノ井",
+  "km_noritsubushi": 76.8,
+  "km_db": 76.3,
+  "diff": -0.5,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1997-10-01",
+  "confidence": "high",
+  "evidence": "しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「JR東日本時代は軽井沢 - 篠ノ井間は65.6 kmであったが転換時に改キロされ、しなの鉄道線としては65.1 km」 / しなの鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111555376 「御代田 - 平原（5.7 km→5.1 km）」",
+  "note": "문서가 바뀐 구간 6개를 모두 적음: 中軽井沢–信濃追分 3.1→3.2, 信濃追分–御代田 5.9→6.0, 御代田–平原 5.7→5.1, 田中–大屋 3.5→3.4, 大屋–上田 5.2→5.3, 坂城–戸倉 4.6→4.5. 13역 차가 이 6구간 합과 정확히 맞음.",
+  "db_stop_valid": "1888-08-15~ongoing"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_nishi_ohara",
+  "station": "西大原",
+  "km_noritsubushi": 1.8,
+  "km_db": 1.7,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1960-06-20~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_kazusa_azuma",
+  "station": "上総東",
+  "km_noritsubushi": 5.3,
+  "km_db": 5.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1930-04-01~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_nittano",
+  "station": "新田野",
+  "km_noritsubushi": 7.5,
+  "km_db": 7.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1960-06-20~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_kuniyoshi",
+  "station": "国吉",
+  "km_noritsubushi": 8.9,
+  "km_db": 8.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1930-04-01~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_kazusa_nakagawa",
+  "station": "上総中川",
+  "km_noritsubushi": 12.0,
+  "km_db": 11.9,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1930-04-01~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_otaki_isumi",
+  "station": "大多喜",
+  "km_noritsubushi": 15.9,
+  "km_db": 15.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1930-04-01~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_koyamatsu",
+  "station": "小谷松",
+  "km_noritsubushi": 18.3,
+  "km_db": 18.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1960-06-20~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_higashi_fusamoto",
+  "station": "東総元",
+  "km_noritsubushi": 19.7,
+  "km_db": 19.6,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1937-02-01~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_kugahara_isumi",
+  "station": "久我原",
+  "km_noritsubushi": 20.9,
+  "km_db": 20.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1960-06-20~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_fusamoto",
+  "station": "総元",
+  "km_noritsubushi": 22.3,
+  "km_db": 22.2,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1933-08-25~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_nishihata",
+  "station": "西畑",
+  "km_noritsubushi": 25.2,
+  "km_db": 25.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1937-02-01~1988-03-24"
+ },
+ {
+  "line_ja": "木原線",
+  "table_title": "木原線 大原 ～ 上総中野 営業km: 26.9",
+  "route_id": "r_kihara_line",
+  "node_id": "n_kazusa_nakano_isumi",
+  "station": "上総中野",
+  "km_noritsubushi": 26.9,
+  "km_db": 26.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-03-24",
+  "confidence": "high",
+  "evidence": "いすみ鉄道いすみ線 https://ja.wikipedia.org/w/index.php?oldid=111570795 「大原駅 - 西大原駅間を1.8 kmから1.7 kmに改キロ」 / 西大原駅 https://ja.wikipedia.org/w/index.php?oldid=104057508 「大原駅との営業キロを1.8 kmから1.7 kmに改キロ」",
+  "note": "",
+  "db_stop_valid": "1934-08-26~1988-03-24"
+ },
+ {
+  "line_ja": "牟岐線",
+  "table_title": "牟岐線 阿波海南 ～ 海部 営業km: 1.5",
+  "route_id": "r_mugi_line",
+  "node_id": "n_kaifu",
+  "station": "海部",
+  "km_noritsubushi": 1.5,
+  "km_db": 1.4,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "2020-11-01",
+  "confidence": "high",
+  "evidence": "阿佐海岸鉄道阿佐東線 https://ja.wikipedia.org/w/index.php?oldid=110828866 「DMV化に伴う改キロにより、阿波海南 - 海部間は従来の1.5 kmから1.4 kmに」 / 海部駅 https://ja.wikipedia.org/w/index.php?oldid=108908209 「JR時代の阿波海南駅 - 当駅間は1.5 kmであった」",
+  "note": "JR 牟岐線 阿波海南–海部 폐지·阿佐東線 편입 2020-11-01(사업 허가 2020-10-23). DB r_mugi_line의 JR 시대 海部(~2020-11-01)에 阿佐東線 km 1.4가 들어 있음.",
+  "db_stop_valid": "1973-10-01~2020-11-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_wakai",
+  "station": "若井",
+  "km_noritsubushi": 4.3,
+  "km_db": 4.4,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1963-12-18~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_kaina",
+  "station": "荷稲",
+  "km_noritsubushi": 13.7,
+  "km_db": 13.8,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1963-12-18~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_iyoki",
+  "station": "伊与喜",
+  "km_noritsubushi": 17.9,
+  "km_db": 18.1,
+  "diff": 0.2,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1963-12-18~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_tosa_saga",
+  "station": "土佐佐賀",
+  "km_noritsubushi": 20.7,
+  "km_db": 20.8,
+  "diff": 0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1963-12-18~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_tosa_shirahama",
+  "station": "土佐白浜",
+  "km_noritsubushi": 23.9,
+  "km_db": 24.1,
+  "diff": 0.2,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_ariigawa",
+  "station": "有井川",
+  "km_noritsubushi": 27.5,
+  "km_db": 27.6,
+  "diff": 0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_tosa_kamikawaguchi",
+  "station": "土佐上川口",
+  "km_noritsubushi": 29.0,
+  "km_db": 29.2,
+  "diff": 0.2,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_ukibuchi",
+  "station": "浮鞭",
+  "km_noritsubushi": 31.5,
+  "km_db": 31.7,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_tosa_irino",
+  "station": "土佐入野",
+  "km_noritsubushi": 34.1,
+  "km_db": 34.3,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_nishi_ogata",
+  "station": "西大方",
+  "km_noritsubushi": 37.0,
+  "km_db": 37.2,
+  "diff": 0.2,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "中村線",
+  "table_title": "中村線 窪川 ～ 中村 営業km: 43.4",
+  "route_id": "r_nakamura_line",
+  "node_id": "n_nakamura",
+  "station": "中村",
+  "km_noritsubushi": 43.4,
+  "km_db": 43.0,
+  "diff": -0.4,
+  "seg_diff": -0.6,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "high",
+  "evidence": "土佐くろしお鉄道中村線 https://ja.wikipedia.org/w/index.php?oldid=110024806 「同時に営業キロが改定され、国鉄・JR時代と比較して全線で0.4km短縮 (43.0km)」",
+  "note": "역별로 +0.1~+0.2 늘고 西大方–中村 6.4→5.8로 줄어 합계 −0.4. 개업 구간 土佐佐賀–中村 22.7(연혁)은 노리츠부시와 같음.",
+  "db_stop_valid": "1970-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "鹿児島本線",
+  "table_title": "鹿児島本線 八代 ～ 川内 営業km: 116.9",
+  "route_id": "r_kagoshima_main_line",
+  "node_id": "n_nishi_izumi",
+  "station": "西出水",
+  "km_noritsubushi": 67.9,
+  "km_db": 68.3,
+  "diff": 0.4,
+  "seg_diff": 0.4,
+  "cause": "error_noritsubushi",
+  "causes": [
+   "error_noritsubushi"
+  ],
+  "date": "",
+  "confidence": "medium",
+  "evidence": "肥薩おれんじ鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111381282 （요약: 門司港からの累計営業キロは…JR九州時代の2004年3月時点の値：出水 297.9 西出水 300.6） / 西出水駅 https://ja.wikipedia.org/w/index.php?oldid=110241198 （요약: キロ程 68.3 km（八代起点）門司港から300.6）",
+  "note": "JR 시대 門司港 누계 300.6 − 八代 232.3 = 68.3으로 DB와 같고, 出水–西出水 2.7·西出水–高尾野 3.8도 JR·おれんじ 같음. 노리츠부시 67.9는 出水–西出水 2.3 / 西出水–高尾野 4.2가 되어 다른 어떤 자료와도 안 맞음. 역 문서 연혁에 이전·改キロ 없음 → 노리츠부시 오기로 판단(1차 자료 미확인이라 medium).",
+  "db_stop_valid": "1923-10-15~2004-03-13"
+ },
+ {
+  "line_ja": "甘木線",
+  "table_title": "甘木線 基山 ～ 甘木 営業km: 14.0",
+  "route_id": "r_amagi_line",
+  "node_id": "n_matsuzaki_amagi",
+  "station": "筑後松崎",
+  "km_noritsubushi": 6.5,
+  "km_db": 6.4,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 甘木線 基山 - 甘木 14.0 km） / 甘木鉄道甘木線 https://ja.wikipedia.org/w/index.php?oldid=109367916 「路線距離（営業キロ）：13.7km」 / 甘木鉄道甘木線 https://ja.wikipedia.org/w/index.php?oldid=109367916 「筑後小郡駅を400m東へ移転の上で小郡駅に」",
+  "note": "국철 14.0 → 13.7. 筑後小郡 400m 이전(소郡 3.8)은 이 표의 차이 원인이 아님(DB에 옛 筑後小郡 노드 3.4가 통과역으로 있음). 筑後松崎 −0.1, 高田–甘木 2.2→1.9.",
+  "db_stop_valid": "1939-04-28~1986-04-01"
+ },
+ {
+  "line_ja": "甘木線",
+  "table_title": "甘木線 基山 ～ 甘木 営業km: 14.0",
+  "route_id": "r_amagi_line",
+  "node_id": "n_amagi_amagi",
+  "station": "甘木",
+  "km_noritsubushi": 14.0,
+  "km_db": 13.7,
+  "diff": -0.3,
+  "seg_diff": -0.3,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1986-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 甘木線 基山 - 甘木 14.0 km） / 甘木鉄道甘木線 https://ja.wikipedia.org/w/index.php?oldid=109367916 「路線距離（営業キロ）：13.7km」 / 甘木鉄道甘木線 https://ja.wikipedia.org/w/index.php?oldid=109367916 「筑後小郡駅を400m東へ移転の上で小郡駅に」",
+  "note": "국철 14.0 → 13.7. 筑後小郡 400m 이전(소郡 3.8)은 이 표의 차이 원인이 아님(DB에 옛 筑後小郡 노드 3.4가 통과역으로 있음). 筑後松崎 −0.1, 高田–甘木 2.2→1.9.",
+  "db_stop_valid": "1939-04-28~1986-04-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_sagarahanganjoji",
+  "station": "東人吉",
+  "km_noritsubushi": 1.6,
+  "km_db": 1.5,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1937-04-01~1989-10-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_higo_nishinomura",
+  "station": "肥後西村",
+  "km_noritsubushi": 5.9,
+  "km_db": 5.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1924-03-30~1989-10-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_asagiri_kumagawa",
+  "station": "免田",
+  "km_noritsubushi": 15.1,
+  "km_db": 15.0,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1924-03-30~1989-10-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_higashi_menda",
+  "station": "東免田",
+  "km_noritsubushi": 17.5,
+  "km_db": 17.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1963-04-05~1989-10-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_taragi",
+  "station": "多良木",
+  "km_noritsubushi": 19.9,
+  "km_db": 19.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1924-03-30~1989-10-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_taragishorenji",
+  "station": "東多良木",
+  "km_noritsubushi": 21.8,
+  "km_db": 21.7,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1963-04-05~1989-10-01"
+ },
+ {
+  "line_ja": "湯前線",
+  "table_title": "湯前線 人吉 ～ 湯前 営業km: 24.9",
+  "route_id": "r_yunomae_line",
+  "node_id": "n_yunomae",
+  "station": "湯前",
+  "km_noritsubushi": 24.9,
+  "km_db": 24.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 湯前線 人吉 - 湯前 24.9 km） / くま川鉄道湯前線 https://ja.wikipedia.org/w/index.php?oldid=111331037 「路線距離（営業キロ）：24.8 km」",
+  "note": "국철 24.9 → 24.8. 2026-09-20 川村 이전(相良十島)은 이 표 범위 밖(DB 川村 4.4 그대로). 多良木 1998 역사 20m 이동은 km 영향 없음.",
+  "db_stop_valid": "1924-03-30~1989-10-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_zoshuku",
+  "station": "蔵宿",
+  "km_noritsubushi": 3.9,
+  "km_db": 3.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1898-08-07~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_higashi_yamashiro",
+  "station": "東山代",
+  "km_noritsubushi": 16.2,
+  "km_db": 16.3,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1930-03-21~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_uranosaki",
+  "station": "浦ノ崎",
+  "km_noritsubushi": 24.9,
+  "km_db": 24.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1930-10-01~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_mikuriya_matsuura",
+  "station": "肥前御厨",
+  "km_noritsubushi": 41.5,
+  "km_db": 41.6,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1935-08-06~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_emukae_shikamachi",
+  "station": "江迎",
+  "km_noritsubushi": 59.9,
+  "km_db": 60.0,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1939-01-25~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_senryugataki",
+  "station": "潜竜",
+  "km_noritsubushi": 66.3,
+  "km_db": 66.5,
+  "diff": 0.2,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1939-01-25~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_kouda",
+  "station": "肥前神田",
+  "km_noritsubushi": 70.2,
+  "km_db": 70.3,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1934-02-11~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_masaru",
+  "station": "真申",
+  "km_noritsubushi": 77.6,
+  "km_db": 77.7,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1945-03-01~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_ainoura",
+  "station": "相浦",
+  "km_noritsubushi": 79.6,
+  "km_db": 79.7,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1920-03-27~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_kami_ainoura",
+  "station": "上相浦",
+  "km_noritsubushi": 81.6,
+  "km_db": 81.7,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1920-03-27~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_hidariishi",
+  "station": "左石",
+  "km_noritsubushi": 87.5,
+  "km_db": 87.4,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1920-03-27~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_kita_sasebo",
+  "station": "北佐世保",
+  "km_noritsubushi": 90.7,
+  "km_db": 90.6,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1935-11-09~1988-04-01"
+ },
+ {
+  "line_ja": "松浦線",
+  "table_title": "松浦線 有田 ～ 佐世保 営業km: 93.9",
+  "route_id": "r_matsuura_line",
+  "node_id": "n_sasebo",
+  "station": "佐世保",
+  "km_noritsubushi": 93.9,
+  "km_db": 93.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1988-04-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 松浦線 有田 - 佐世保 93.9 km） / 松浦鉄道西九州線 https://ja.wikipedia.org/w/index.php?oldid=110495488 「路線距離（営業キロ）：93.8 km」",
+  "note": "국철 93.9 → 93.8. 13역이 ±0.1~0.2로 오르내림(역별 재설정). 真申·上相浦·左石 등의 「移転」은 1943·1945 국철 시대 일.",
+  "db_stop_valid": "1935-11-09~1988-04-01"
+ },
+ {
+  "line_ja": "田川線",
+  "table_title": "田川線 行橋 ～ 伊田 営業km: 26.3",
+  "route_id": "r_tagawa_line",
+  "node_id": "n_toyotsu_heisei_chikuho",
+  "station": "豊津",
+  "km_noritsubushi": 5.0,
+  "km_db": 4.9,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "low",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 田川線 行橋 - 田川伊田 26.3 km） / 平成筑豊鉄道田川線 https://ja.wikipedia.org/w/index.php?oldid=110948388 「区間（営業キロ）：行橋駅 - 田川伊田駅間 26.3 km」",
+  "note": "총연장 불변, 豊津 −0.1·崎山 +0.1만 다름. 역 이전 기록 없음. 추정.",
+  "db_stop_valid": "1895-08-15~1989-10-01"
+ },
+ {
+  "line_ja": "田川線",
+  "table_title": "田川線 行橋 ～ 伊田 営業km: 26.3",
+  "route_id": "r_tagawa_line",
+  "node_id": "n_sakiyama",
+  "station": "崎山",
+  "km_noritsubushi": 12.3,
+  "km_db": 12.4,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "low",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 田川線 行橋 - 田川伊田 26.3 km） / 平成筑豊鉄道田川線 https://ja.wikipedia.org/w/index.php?oldid=110948388 「区間（営業キロ）：行橋駅 - 田川伊田駅間 26.3 km」",
+  "note": "총연장 불변, 豊津 −0.1·崎山 +0.1만 다름. 역 이전 기록 없음. 추정.",
+  "db_stop_valid": "1954-04-20~1989-10-01"
+ },
+ {
+  "line_ja": "高千穂線",
+  "table_title": "高千穂線 延岡 ～ 高千穂 営業km: 50.1",
+  "route_id": "r_takachiho_line",
+  "node_id": "n_mukabaki",
+  "station": "行縢",
+  "km_noritsubushi": 6.9,
+  "km_db": 6.8,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-04-28",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 高千穂線 延岡 - 高千穂 50.1 km） / 高千穂鉄道高千穂線 https://ja.wikipedia.org/w/index.php?oldid=111478046 「路線距離（営業キロ）：50.0 km」",
+  "note": "국철 50.1 → 50.0. 역별 ±0.1 오르내림. 역 이전 기록 없음.",
+  "db_stop_valid": "1935-02-20~1989-04-28"
+ },
+ {
+  "line_ja": "高千穂線",
+  "table_title": "高千穂線 延岡 ～ 高千穂 営業km: 50.1",
+  "route_id": "r_takachiho_line",
+  "node_id": "n_hosomi",
+  "station": "細見",
+  "km_noritsubushi": 10.5,
+  "km_db": 10.4,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-04-28",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 高千穂線 延岡 - 高千穂 50.1 km） / 高千穂鉄道高千穂線 https://ja.wikipedia.org/w/index.php?oldid=111478046 「路線距離（営業キロ）：50.0 km」",
+  "note": "국철 50.1 → 50.0. 역별 ±0.1 오르내림. 역 이전 기록 없음.",
+  "db_stop_valid": "1957-02-01~1989-04-28"
+ },
+ {
+  "line_ja": "高千穂線",
+  "table_title": "高千穂線 延岡 ～ 高千穂 営業km: 50.1",
+  "route_id": "r_takachiho_line",
+  "node_id": "n_kawazuru",
+  "station": "川水流",
+  "km_noritsubushi": 17.2,
+  "km_db": 17.1,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-04-28",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 高千穂線 延岡 - 高千穂 50.1 km） / 高千穂鉄道高千穂線 https://ja.wikipedia.org/w/index.php?oldid=111478046 「路線距離（営業キロ）：50.0 km」",
+  "note": "국철 50.1 → 50.0. 역별 ±0.1 오르내림. 역 이전 기록 없음.",
+  "db_stop_valid": "1936-04-12~1989-04-28"
+ },
+ {
+  "line_ja": "高千穂線",
+  "table_title": "高千穂線 延岡 ～ 高千穂 営業km: 50.1",
+  "route_id": "r_takachiho_line",
+  "node_id": "n_makimine",
+  "station": "槇峰",
+  "km_noritsubushi": 29.0,
+  "km_db": 29.1,
+  "diff": 0.1,
+  "seg_diff": 0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-04-28",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 高千穂線 延岡 - 高千穂 50.1 km） / 高千穂鉄道高千穂線 https://ja.wikipedia.org/w/index.php?oldid=111478046 「路線距離（営業キロ）：50.0 km」",
+  "note": "국철 50.1 → 50.0. 역별 ±0.1 오르내림. 역 이전 기록 없음.",
+  "db_stop_valid": "1939-10-11~1989-04-28"
+ },
+ {
+  "line_ja": "高千穂線",
+  "table_title": "高千穂線 延岡 ～ 高千穂 営業km: 50.1",
+  "route_id": "r_takachiho_line",
+  "node_id": "n_hyuga_yato",
+  "station": "日向八戸",
+  "km_noritsubushi": 31.4,
+  "km_db": 31.5,
+  "diff": 0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-04-28",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 高千穂線 延岡 - 高千穂 50.1 km） / 高千穂鉄道高千穂線 https://ja.wikipedia.org/w/index.php?oldid=111478046 「路線距離（営業キロ）：50.0 km」",
+  "note": "국철 50.1 → 50.0. 역별 ±0.1 오르내림. 역 이전 기록 없음.",
+  "db_stop_valid": "1939-10-11~1989-04-28"
+ },
+ {
+  "line_ja": "高千穂線",
+  "table_title": "高千穂線 延岡 ～ 高千穂 営業km: 50.1",
+  "route_id": "r_takachiho_line",
+  "node_id": "n_takachiho",
+  "station": "高千穂",
+  "km_noritsubushi": 50.1,
+  "km_db": 50.0,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-04-28",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 高千穂線 延岡 - 高千穂 50.1 km） / 高千穂鉄道高千穂線 https://ja.wikipedia.org/w/index.php?oldid=111478046 「路線距離（営業キロ）：50.0 km」",
+  "note": "국철 50.1 → 50.0. 역별 ±0.1 오르내림. 역 이전 기록 없음.",
+  "db_stop_valid": "1972-07-22~1989-04-28"
+ },
+ {
+  "line_ja": "伊田線",
+  "table_title": "伊田線 直方 ～ 伊田 営業km: 16.2",
+  "route_id": "r_ita_line",
+  "node_id": "n_nakaizumi",
+  "station": "中泉",
+  "km_noritsubushi": 4.4,
+  "km_db": 4.3,
+  "diff": -0.1,
+  "seg_diff": -0.1,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊田線 直方 - 田川伊田 16.2 km） / 平成筑豊鉄道伊田線 https://ja.wikipedia.org/w/index.php?oldid=110948384 「区間（営業キロ）：直方駅 - 田川伊田駅間 16.1 km」",
+  "note": "直方–中泉 4.4→4.3 한 구간에서 생겨 이후 5역 모두 −0.1.",
+  "db_stop_valid": "1898-02-09~1989-10-01"
+ },
+ {
+  "line_ja": "伊田線",
+  "table_title": "伊田線 直方 ～ 伊田 営業km: 16.2",
+  "route_id": "r_ita_line",
+  "node_id": "n_akaike_heisei_chikuho",
+  "station": "赤池",
+  "km_noritsubushi": 8.6,
+  "km_db": 8.5,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊田線 直方 - 田川伊田 16.2 km） / 平成筑豊鉄道伊田線 https://ja.wikipedia.org/w/index.php?oldid=110948384 「区間（営業キロ）：直方駅 - 田川伊田駅間 16.1 km」",
+  "note": "直方–中泉 4.4→4.3 한 구간에서 생겨 이후 5역 모두 −0.1.",
+  "db_stop_valid": "1937-06-25~1989-10-01"
+ },
+ {
+  "line_ja": "伊田線",
+  "table_title": "伊田線 直方 ～ 伊田 営業km: 16.2",
+  "route_id": "r_ita_line",
+  "node_id": "n_kanada",
+  "station": "金田",
+  "km_noritsubushi": 9.9,
+  "km_db": 9.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊田線 直方 - 田川伊田 16.2 km） / 平成筑豊鉄道伊田線 https://ja.wikipedia.org/w/index.php?oldid=110948384 「区間（営業キロ）：直方駅 - 田川伊田駅間 16.1 km」",
+  "note": "直方–中泉 4.4→4.3 한 구간에서 생겨 이후 5역 모두 −0.1.",
+  "db_stop_valid": "1893-02-11~1989-10-01"
+ },
+ {
+  "line_ja": "伊田線",
+  "table_title": "伊田線 直方 ～ 伊田 営業km: 16.2",
+  "route_id": "r_ita_line",
+  "node_id": "n_hoshii",
+  "station": "糒",
+  "km_noritsubushi": 12.9,
+  "km_db": 12.8,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊田線 直方 - 田川伊田 16.2 km） / 平成筑豊鉄道伊田線 https://ja.wikipedia.org/w/index.php?oldid=110948384 「区間（営業キロ）：直方駅 - 田川伊田駅間 16.1 km」",
+  "note": "直方–中泉 4.4→4.3 한 구간에서 생겨 이후 5역 모두 −0.1.",
+  "db_stop_valid": "1900-09-17~1989-10-01"
+ },
+ {
+  "line_ja": "伊田線",
+  "table_title": "伊田線 直方 ～ 伊田 営業km: 16.2",
+  "route_id": "r_ita_line",
+  "node_id": "n_tagawa_ita",
+  "station": "伊田",
+  "km_noritsubushi": 16.2,
+  "km_db": 16.1,
+  "diff": -0.1,
+  "seg_diff": 0.0,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 伊田線 直方 - 田川伊田 16.2 km） / 平成筑豊鉄道伊田線 https://ja.wikipedia.org/w/index.php?oldid=110948384 「区間（営業キロ）：直方駅 - 田川伊田駅間 16.1 km」",
+  "note": "直方–中泉 4.4→4.3 한 구간에서 생겨 이후 5역 모두 −0.1.",
+  "db_stop_valid": "1899-03-25~1989-10-01"
+ },
+ {
+  "line_ja": "糸田線",
+  "table_title": "糸田線 金田 ～ 後藤寺 営業km: 6.9",
+  "route_id": "r_itoda_line",
+  "node_id": "n_itoda",
+  "station": "糸田",
+  "km_noritsubushi": 4.1,
+  "km_db": 3.4,
+  "diff": -0.7,
+  "seg_diff": -0.7,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "medium",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 糸田線 金田 - 田川後藤寺 6.9 km） / 平成筑豊鉄道糸田線 https://ja.wikipedia.org/w/index.php?oldid=110948386 「金田駅 - 田川後藤寺駅間 6.8 km」 / 糸田駅 https://ja.wikipedia.org/w/index.php?oldid=110435424 「豊前大熊 - 宮床間（宮床駅から豊前大熊方に1.4km地点）に糸田駅開業」",
+  "note": "국철 金田–糸田 4.1 / 糸田–後藤寺 2.8 → 平成筑豊 3.4 / 3.4. 糸田(옛 宮床駅) 역은 이전 기록 없음. 국철 4.1은 金宮鉄道 옛 糸田역(노선도상 2.7km 지점)에 宮床까지 1.4km를 더한 값과 같아, 사철 매수 때 거리를 그대로 이어받은 것으로 보이고 전환 때 실측으로 고친 것으로 판단. 糸田–後藤寺 +0.6은 같은 선로인데 늘어 설명 근거 없음(1897 개업 구간 2.8의 마일 환산 탓 추정).",
+  "db_stop_valid": "1897-10-20~1989-10-01"
+ },
+ {
+  "line_ja": "糸田線",
+  "table_title": "糸田線 金田 ～ 後藤寺 営業km: 6.9",
+  "route_id": "r_itoda_line",
+  "node_id": "n_tagawa_gotoji",
+  "station": "後藤寺",
+  "km_noritsubushi": 6.9,
+  "km_db": 6.8,
+  "diff": -0.1,
+  "seg_diff": 0.6,
+  "cause": "remeasure",
+  "causes": [
+   "remeasure"
+  ],
+  "date": "1989-10-01",
+  "confidence": "low",
+  "evidence": "特定地方交通線 https://ja.wikipedia.org/w/index.php?oldid=110268122 （요약: 糸田線 金田 - 田川後藤寺 6.9 km） / 平成筑豊鉄道糸田線 https://ja.wikipedia.org/w/index.php?oldid=110948386 「金田駅 - 田川後藤寺駅間 6.8 km」 / 糸田駅 https://ja.wikipedia.org/w/index.php?oldid=110435424 「豊前大熊 - 宮床間（宮床駅から豊前大熊方に1.4km地点）に糸田駅開業」",
+  "note": "국철 金田–糸田 4.1 / 糸田–後藤寺 2.8 → 平成筑豊 3.4 / 3.4. 糸田(옛 宮床駅) 역은 이전 기록 없음. 국철 4.1은 金宮鉄道 옛 糸田역(노선도상 2.7km 지점)에 宮床까지 1.4km를 더한 값과 같아, 사철 매수 때 거리를 그대로 이어받은 것으로 보이고 전환 때 실측으로 고친 것으로 판단. 糸田–後藤寺 +0.6은 같은 선로인데 늘어 설명 근거 없음(1897 개업 구간 2.8의 마일 환산 탓 추정).",
+  "db_stop_valid": "1897-10-20~1989-10-01"
+ }
+]

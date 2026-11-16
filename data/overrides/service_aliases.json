@@ -1,0 +1,446 @@
+{
+ "奥久慈清流ライン": {
+  "line": "水郡線",
+  "ko": "오쿠쿠지 세이류 라인",
+  "why": "水郡線 전체(지선 포함)의 애칭(2011-07-16 결정).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=水郡線&oldid=111454451"
+  ]
+ },
+ "奥の細道湯けむりライン": {
+  "line": "陸羽東線",
+  "ko": "오쿠노호소미치 유케무리 라인",
+  "why": "陸羽東線 전체의 애칭(1999-12-04 사용 개시).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=陸羽東線&oldid=111464846",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "奥の細道最上川ライン": {
+  "line": "陸羽西線",
+  "ko": "오쿠노호소미치 모가미가와 라인",
+  "why": "陸羽西線 전체의 애칭(1999-12-04 사용 개시).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=陸羽西線&oldid=111464997",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "銀河ドリームライン釜石線": {
+  "line": "釜石線",
+  "ko": "긴가 드림 라인 카마이시선",
+  "why": "釜石線 전체의 애칭(1995-03-01).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=釜石線&oldid=111465812",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "ドラゴンレール大船渡線": {
+  "line": "大船渡線",
+  "ko": "드래곤 레일 오후나토선",
+  "why": "大船渡線의 애칭(BRT 구간 포함 선형에서 유래, 철도는 一ノ関–気仙沼 전체).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=大船渡線&oldid=111465764",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "十和田八幡平四季彩ライン": {
+  "line": "花輪線",
+  "ko": "토와다하치만타이 시키사이 라인",
+  "why": "花輪線 전체의 애칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=花輪線&oldid=111465898",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "はまなすベイライン大湊線": {
+  "line": "大湊線",
+  "ko": "하마나스 베이 라인 오미나토선",
+  "why": "大湊線 전체의 애칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=大湊線&oldid=111466007",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "ゆうゆうあぶくまライン": {
+  "line": "磐越東線",
+  "ko": "유유 아부쿠마 라인",
+  "why": "磐越東線 전체의 애칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=磐越東線&oldid=111569532",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "八ヶ岳高原線": {
+  "line": "小海線",
+  "ko": "야츠가타케 고원선",
+  "why": "小海線 전체의 애칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=小海線&oldid=111617669",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "利府線": {
+  "line": "東北本線",
+  "route": "r_tohoku_main_line_iwakiri_rifu",
+  "ko": "리후선",
+  "why": "東北本線 지선 岩切–利府의 통칭(JR東日本 노선표, 仙石東北ライン 문서). DB 계통 하나 전체라 계통 대신 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691",
+   "https://ja.wikipedia.org/w/index.php?title=仙石東北ライン&oldid=110809385"
+  ]
+ },
+ "南武支線": {
+  "line": "南武線",
+  "route": "r_nambu_line_shitte_hama_kawasaki",
+  "ko": "난부 지선",
+  "why": "南武線 지선 尻手–浜川崎의 통칭(안내는 「南武線 浜川崎方面」). DB 계통 하나 전체라 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=南武線&oldid=111552537",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "浜川崎支線": {
+  "line": "南武線",
+  "route": "r_nambu_line_shitte_hama_kawasaki",
+  "ko": "하마카와사키 지선",
+  "why": "南武支線의 다른 통칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=南武線&oldid=111552537",
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "京浜東北・根岸線": {
+  "service": "s_keihin_tohoku",
+  "ko": "케이힌토호쿠·네기시선",
+  "why": "大宮–大船이 한 계통으로 운행되어 함께 부르는 이름.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=京浜東北線&oldid=111688556"
+  ]
+ },
+ "東北縦貫線": {
+  "service": "s_ueno_tokyo",
+  "ko": "도호쿠 종관선",
+  "why": "上野東京ライン(東北本線 上野–東京 列車線 복원)의 공사 때 이름.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=上野東京ライン&oldid=110893206"
+  ]
+ },
+ "中央線快速": {
+  "service": "s_chuo_rapid",
+  "ko": "츄오선 쾌속",
+  "why": "中央快速線의 JR 안내 이름(위키 문서 제목).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=中央線快速&oldid=111482985"
+  ]
+ },
+ "中央・総武線各駅停車": {
+  "service": "s_chuo_sobu_local",
+  "ko": "츄오·소부선 각역정차",
+  "why": "中央・総武緩行線의 JR 안내 이름.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=中央・総武緩行線&oldid=111482954"
+  ]
+ },
+ "中央緩行線": {
+  "service": "s_chuo_sobu_local",
+  "ko": "츄오 완행선",
+  "why": "中央・総武緩行線의 中央本線 쪽 이름(JR東日本 노선표).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "総武緩行線": {
+  "service": "s_chuo_sobu_local",
+  "ko": "소부 완행선",
+  "why": "中央・総武緩行線의 総武本線 쪽 이름(JR東日本 노선표).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "常磐快速線": {
+  "service": "s_joban_rapid",
+  "ko": "조반 쾌속선",
+  "why": "常磐線快速의 다른 이름(위키 문서 제목).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=常磐快速線&oldid=111606134"
+  ]
+ },
+ "常磐緩行線": {
+  "service": "s_joban_local",
+  "ko": "조반 완행선",
+  "why": "常磐線各駅停車의 다른 이름(위키 문서 제목).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=常磐緩行線&oldid=111442965"
+  ]
+ },
+ "相鉄線直通": {
+  "service": "s_sotetsu_jr",
+  "ko": "소테츠선 직통",
+  "why": "JR東日本 노선표의 이름.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東日本旅客鉄道&oldid=111600691"
+  ]
+ },
+ "フルーツライン左沢線": {
+  "service": "s_fruit_line",
+  "ko": "프루츠 라인 아테라자와선",
+  "why": "시판 시각표 표기.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=左沢線&oldid=111532459"
+  ]
+ },
+ "長野行新幹線": {
+  "service": "s_nagano_shinkansen",
+  "ko": "나가노행 신칸센",
+  "why": "長野新幹線 시절 수도권 역의 안내 이름(옛 계통 후보와 함께).",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=長野新幹線&oldid=111124433"
+  ]
+ },
+ "JRゆめ咲線": {
+  "line": "桜島線",
+  "line_id": "l_sakurajima_line",
+  "ko": "JR 유메사키선",
+  "since": "2001-03-01",
+  "why": "桜島線 西九条–桜島 전체의 애칭(2001-03-01 유니버설시티역 개업 때 제정). 「旅客案内において正式路線名の「桜島線」と案内されることはほとんどない」. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=桜島線&oldid=111682718"
+  ]
+ },
+ "万葉まほろば線": {
+  "line": "桜井線",
+  "line_id": "l_sakurai_line",
+  "ko": "만요 마호로바선",
+  "since": "2010-03-13",
+  "why": "桜井線 奈良–高田 전체의 애칭(2010-03-13). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=桜井線&oldid=110989680"
+  ]
+ },
+ "学研都市線": {
+  "line": "片町線",
+  "line_id": "l_katamachi_line",
+  "ko": "각켄토시선",
+  "since": "1988-03-13",
+  "why": "片町線의 애칭(1988-03-13). 지금 공식 片町線 木津–京橋 전체와 같음. 1997-03-08 전의 京橋–片町도 애칭 범위였으므로 노선 별칭으로 충분. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=片町線&oldid=111446646",
+   "https://ja.wikipedia.org/w/index.php?title=アーバンネットワーク&oldid=110083266"
+  ]
+ },
+ "宇野みなと線": {
+  "line": "宇野線",
+  "line_id": "l_uno_line",
+  "ko": "우노미나토선",
+  "since": "2016-03-26",
+  "why": "「宇野みなと線という愛称が2016年3月26日から使用」(岡山–宇野 전체). 岡山–茶屋町은 瀬戸大橋線과 겹침. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=宇野線&oldid=111378845"
+  ]
+ },
+ "桃太郎線": {
+  "line": "吉備線",
+  "line_id": "l_kibi_line",
+  "ko": "모모타로선",
+  "since": "2016-03-26",
+  "why": "吉備線 岡山–総社 전체의 애칭(2016-03-26). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=吉備線&oldid=110986845"
+  ]
+ },
+ "学園都市線": {
+  "line": "札沼線",
+  "line_id": "l_sassho_line",
+  "ko": "가쿠엔토시선",
+  "since": "1991-03-16",
+  "why": "札沼線 桑園–北海道医療大学 전체의 애칭(1991-03-16). 열차는 札幌 발착이나 애칭 구간을 札幌부터로 정한 근거는 못 찾음. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=札沼線&oldid=111330194"
+  ]
+ },
+ "ゆふ高原線": {
+  "line": "久大本線",
+  "line_id": "l_kyudai_main_line",
+  "ko": "유후고겐선",
+  "why": "久大本線 전체의 애칭(1989-03-15 발표). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=久大本線&oldid=109478242"
+  ]
+ },
+ "阿蘇高原線": {
+  "line": "豊肥本線",
+  "line_id": "l_hohi_main_line",
+  "ko": "아소고겐선",
+  "why": "豊肥本線 전체의 애칭(1989-03-15 발표). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=豊肥本線&oldid=111300140"
+  ]
+ },
+ "あまくさみすみ線": {
+  "line": "三角線",
+  "line_id": "l_misumi_line",
+  "ko": "아마쿠사미스미선",
+  "since": "2011-09-01",
+  "why": "三角線 전체의 애칭(2011-09-01). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=三角線&oldid=111000610"
+  ]
+ },
+ "阿波室戸シーサイドライン": {
+  "line": "牟岐線",
+  "line_id": "l_mugi_line",
+  "ko": "아와무로토 시사이드 라인",
+  "since": "2002-07-01",
+  "why": "牟岐線 전체의 애칭(2002-07-01 사용 시작). 2020년까지는 阿佐海岸鉄道 阿佐東線에도 쓰였음. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=牟岐線&oldid=111002477"
+  ]
+ },
+ "よしの川ブルーライン": {
+  "line": "徳島線",
+  "line_id": "l_tokushima_line",
+  "ko": "요시노가와 블루 라인",
+  "since": "2000-07-01",
+  "why": "徳島線 전체의 애칭(2000-07-01). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=徳島線&oldid=111002251"
+  ]
+ },
+ "しまんとグリーンライン": {
+  "line": "予土線",
+  "line_id": "l_yodo_line",
+  "ko": "시만토 그린 라인",
+  "since": "1997-07-27",
+  "why": "予土線 전체의 애칭(1997-07-27). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=予土線&oldid=111003597"
+  ]
+ },
+ "東武アーバンパークライン": {
+  "line": "東武野田線",
+  "line_id": "l_noda_line",
+  "ko": "도부 어반 파크 라인",
+  "why": "野田線 大宮–船橋 전체의 애칭. 시작일은 이번에 확인 못 함. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東武野田線&oldid=111355825"
+  ]
+ },
+ "アーバンパークライン": {
+  "line": "東武野田線",
+  "line_id": "l_noda_line",
+  "ko": "어반 파크 라인",
+  "why": "東武アーバンパークライン의 줄임. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東武野田線&oldid=111355825"
+  ]
+ },
+ "成田スカイアクセス線": {
+  "line": "京成成田空港線",
+  "line_id": "l_narita_airport_line",
+  "ko": "나리타 스카이 액세스선",
+  "since": "2010-07-17",
+  "why": "京成成田空港線 京成高砂–成田空港 전체의 통칭(2010-07-17 개업). DB 계통 이름 「成田空港線 (成田スカイアクセス)」에도 들어 있음. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=京成成田空港線&oldid=111165141"
+  ]
+ },
+ "東武東上線": {
+  "line": "東武東上本線",
+  "line_id": "l_tojo_main_line",
+  "ko": "도부 도조선",
+  "why": "東上本線 池袋–寄居 전체의 통칭(infobox 「通称=東武東上線、東上線」). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東武東上本線&oldid=111367697"
+  ]
+ },
+ "東上線": {
+  "line": "東武東上本線",
+  "line_id": "l_tojo_main_line",
+  "ko": "도조선",
+  "why": "위와 같음. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=東武東上本線&oldid=111367697"
+  ]
+ },
+ "東京さくらトラム": {
+  "line": "都電荒川線",
+  "line_id": "l_arakawa_line",
+  "ko": "도쿄 사쿠라 트램",
+  "why": "荒川線 三ノ輪橋–早稲田 전체의 애칭(2017-04-28 결정 발표). 안내는 「東京さくらトラム（都電荒川線）」처럼 함께 씀. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=都電荒川線&oldid=111442830"
+  ]
+ },
+ "ニューシャトル": {
+  "line": "埼玉新都市交通伊奈線",
+  "line_id": "l_new_shuttle",
+  "ko": "뉴셔틀",
+  "why": "伊奈線 大宮–内宿 전체의 애칭(「ニューシャトルの愛称が付けられている」). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=埼玉新都市交通伊奈線&oldid=111659448"
+  ]
+ },
+ "ゆりかもめ": {
+  "line": "ゆりかもめ東京臨海新交通臨海線",
+  "line_id": "l_yurikamome_line",
+  "ko": "유리카모메",
+  "why": "東京臨海新交通臨海線 新橋–豊洲 전체의 애칭(회사 이름도 같음). DB 노선 이름에 이미 들어 있으나 정확히 맞는 검색어로 둠. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=ゆりかもめ&oldid=109999938"
+  ]
+ },
+ "ポートライナー": {
+  "line": "神戸新交通ポートアイランド線",
+  "line_id": "l_port_island_line",
+  "ko": "포트 라이너",
+  "why": "ポートアイランド線 三宮–神戸空港(순환부 포함) 전체의 애칭(「愛称はポートライナー」). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=神戸新交通ポートアイランド線&oldid=110789768"
+  ]
+ },
+ "六甲ライナー": {
+  "line": "神戸新交通六甲アイランド線",
+  "line_id": "l_rokko_island_line",
+  "ko": "롯코 라이너",
+  "why": "六甲アイランド線 住吉–マリンパーク 전체의 애칭. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=神戸新交通六甲アイランド線&oldid=111529733"
+  ]
+ },
+ "リニモ": {
+  "line": "愛知高速交通東部丘陵線",
+  "line_id": "l_linimo",
+  "ko": "리니모",
+  "why": "東部丘陵線 藤が丘–八草 전체의 애칭. 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=愛知高速交通東部丘陵線&oldid=110863121"
+  ]
+ },
+ "ゆとりーとライン": {
+  "line": "名古屋ガイドウェイバスガイドウェイバス志段味線",
+  "line_id": "l_guideway_bus_shidami_line",
+  "ko": "유토리토 라인",
+  "why": "「当線および当線と直通して一般道路を走行する平面区間を含む運行系統についてゆとりーとラインの愛称」. 궤도 구간(大曽根–小幡緑地)은 노선 전체와 같아 별칭. 일반도로 구간은 DB의 버스 구간 노선(l_yutorito_line_bus)이라 이 별칭에 넣지 않음.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=名古屋ガイドウェイバスガイドウェイバス志段味線&oldid=111471119"
+  ]
+ },
+ "九頭竜線": {
+  "line": "越美北線",
+  "line_id": "l_etsumi_hoku_line",
+  "ko": "구즈류선",
+  "why": "越美北線 越前花堂–九頭竜湖 전체의 애칭(「旅客案内上はこの愛称が用いられている」). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=越美北線&oldid=111467014"
+  ]
+ },
+ "万葉あかね線": {
+  "line": "近江鉄道八日市線",
+  "line_id": "l_yokaichi_line",
+  "ko": "만요 아카네선",
+  "why": "近江鉄道 八日市線 八日市–近江八幡 전체의 애칭(2013-03-16 本線 애칭과 함께로 보이나 八日市線 문서엔 날짜 없음). 공식 노선 전체와 범위가 같은 애칭이라 계통이 아니라 검색 별칭.",
+  "src": [
+   "https://ja.wikipedia.org/w/index.php?title=近江鉄道八日市線&oldid=108616013"
+  ]
+ }
+}

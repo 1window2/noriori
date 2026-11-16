@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 일본어 위키백과 노선 문서를 revid와 함께 저속으로 받아 둔다. 이미 받은 문서는 건너뛴다
-import csv,sys,re,json,os,time,gzip,hashlib,urllib.parse,urllib.request,urllib.error
+import sys,re,json,os,time,gzip,hashlib,urllib.parse,urllib.request,urllib.error
 TITLES,OUT=sys.argv[1:3]
 UA={'User-Agent':'noriori-data/0.1 (personal open-source rail record app; low rate)'}
 API='https://ja.wikipedia.org/w/api.php?format=json&formatversion=2&'

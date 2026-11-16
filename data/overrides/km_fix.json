@@ -19,8 +19,14 @@
 },
 {
 "a": "n_omurai",
+"b": "n_tenjin_kameido",
+"km": 0.1,
+"why": "위와 같다. 小村井–曳舟 1.4를 옛 天神(曳舟 1.3, 1957 폐지, docs/research/insert-check-2026-11-06.md)에서 나눔"
+},
+{
+"a": "n_tenjin_kameido",
 "b": "n_hikifune",
-"km": 1.4,
+"km": 1.3,
 "why": "위와 같다"
 },
 {
@@ -78,10 +84,10 @@
 "why": "函館本線. 苗穂駅 2018년 이전을 반영. 위키백과 札幌 286.3, 苗穂 288.2. 실제 선로 1.95"
 },
 {
-"a": "n_naebo",
+"a": "n_naebo_old",
 "b": "n_shiroishi_chitose",
-"km": 3.9,
-"why": "위와 같다. 합은 그대로"
+"km": 3.6,
+"why": "위와 같다. 합은 그대로 / 2026-11-13: 옛 苗穂(288.5) 노드를 넣어 칸이 나뉨 — 옛 苗穂–白石 3.6(292.1−288.5)"
 },
 {
 "a": "n_chihaya",
@@ -94,5 +100,377 @@
 "b": "n_yoshizuka",
 "km": 1.4,
 "why": "위와 같다"
+},
+{
+"a": "n_miyauchi_hiroden",
+"b": "n_ja_hiroshima_byoin_mae",
+"km": 0.5,
+"why": "宮島線. 広島電鉄 공식 路線一覧 宮内 11.4, JA広島病院前 11.9, 地御前 12.3 (역 infobox 11.9). 표 값 11.8이 틀림. 합은 그대로"
+},
+{
+"a": "n_ja_hiroshima_byoin_mae",
+"b": "n_jigozen",
+"km": 0.4,
+"why": "위와 같다"
+},
+{
+"a": "n_ekimae",
+"b": "n_ekimae_odori",
+"km": 0.3,
+"why": "東田本線. 위키백과 停留場一覧·노선도·역 infobox 모두 駅前 0.0, 駅前大通 0.3, 新川 0.6. 실제 선로 0.29, 0.31. 사업자 공표 자료는 못 구함"
+},
+{
+"a": "n_ekimae_odori",
+"b": "n_shinkawa_toyohashi",
+"km": 0.3,
+"why": "위와 같다"
+},
+{
+"a": "n_kita_sukematsu",
+"b": "n_matsunohama",
+"km": 1.0,
+"why": "南海本線. 2012-08-04 下り線高架化로 松ノ浜 역 중심이 和歌山市 쪽으로 약 86m 옮겨 19.4→19.5 (交通新聞 2012-08-08). 위키백과 松ノ浜 19.5, 泉大津 20.4. 합은 그대로. 2012년 전 값(0.9, 1.0)은 넣지 않음"
+},
+{
+"a": "n_matsunohama",
+"b": "n_izumiotsu",
+"km": 0.9,
+"why": "위와 같다"
+},
+{
+"a": "n_hirakatashi",
+"b": "n_goten_yama",
+"km": 1.7,
+"why": "京阪本線. 2011-05-28 御殿山을 出町柳 쪽으로 0.1 改キロ. 위키백과 御殿山 23.5, 牧野 25.5. 합은 그대로. 2011년 전 값(1.6, 2.1)은 넣지 않음"
+},
+{
+"a": "n_goten_yama",
+"b": "n_makino_keihan",
+"km": 2.0,
+"why": "위와 같다"
+},
+{
+"a": "n_edamitsu",
+"b": "n_yahata_kagoshima_main",
+"km": 2.1,
+"why": "鹿児島本線 옛 선로(1999-07-02 スペースワールド 경유 새 선로로 바뀌며 1.0 短縮). 옛 枝光–八幡 합 3.2 (새 선로 2.2). 칸별 값은 못 찾아 실제 선로 2.02, 1.11 비로 나눔"
+},
+{
+"a": "n_yahata_kagoshima_main",
+"b": "n_yahata",
+"km": 1.1,
+"why": "위와 같다"
+},
+{
+"a": "n_hagoromo",
+"b": "n_kyarabashi",
+"km": 0.9,
+"why": "南海高師浜線 지금 営業キロ 1.4(羽衣–伽羅橋 0.9, 伽羅橋–高師浜 0.5): 南海 鉄道事業 핸드북 2024·2025 キロ程表 「伽羅橋 0.9 高師浜 1.4」, 2025-03-26 보도자료 「高師浜線（羽衣駅～高師浜駅間（営業キロ程：1.4km））」. 2021-05-22 휴지 때 羽衣駅 고가 이설로 0.1km 줄어든 값(南海高師浜線 oldid=110185750). 이설 전 1.0/1.5는 기간 km 칸이 없어 넣지 않음(운행 재개 2024-04-06 뒤 기록은 이 값과 같음). 노리츠부시 표는 1.0/1.5 (3차 대조 r3 misc1, 2026-11-11)"
+},
+{
+"a": "n_ijuin_kagoshima_kotsu",
+"b": "n_kami_hioki",
+"km": 4.4,
+"why": "枕崎線(鹿児島交通). 위키 rev108274748 路線距離（営業キロ）「伊集院 - 枕崎間 49.6 km」, 역 표 上日置 4.4. 노선도는 伊集院을 0.214에 두고(上日置 4.424, 枕崎 49.568) 그 값을 빼 0.2 짧아졌음. 첫 칸에 더함"
+},
+{
+"a": "n_nakamozu_nankai",
+"b": "n_nakamozundojomae",
+"km": 0.9,
+"why": "南海高野線 rev110646583 노선도(岸里玉出 기점) 中百舌鳥 9.5, 「10.4 （臨）中百舌鳥運動場前駅」, 白鷺 10.5. km 추정(N05 점) 14.6을 위키 값 15.0으로"
+},
+{
+"a": "n_nakamozundojomae",
+"b": "n_shirasagi",
+"km": 0.1,
+"why": "위와 같다"
+},
+{
+"a": "n_gamagori_kyoteijo_mae",
+"b": "n_shiozu",
+"km": 0.5,
+"why": "名鉄蒲郡線 rev110580493 노선도 蒲郡競艇場前 15.3, 「15.8 塩津駅 1953-68」, 蒲郡 17.6. km 추정(N05 점) 16.5를 위키 값으로. 합은 그대로"
+},
+{
+"a": "n_shiozu",
+"b": "n_gamagori_meitetsu",
+"km": 1.8,
+"why": "위와 같다"
+},
+{
+"a": "n_satsumako",
+"b": "n_izaku",
+"km": 1.2,
+"why": "鹿児島交通 枕崎線. 日本国有鉄道『停車場一覧 昭和41年3月現在』(NDL pid 1873236) 枕崎線(국철 연락운수 역): 吹上浜→伊作 2.1, 伊作→南吹上浜 1.8, 阿多→加世田 2.3, 加世田→上加世田 2.0, 干河 36.4→津貫 38.0(1.6)→上津貫 40.3(2.3). 위키 표(rev108274748)는 津貫이 0.9 어긋남. 薩摩湖는 연락운수 역이 아니라 표에 없어 吹上浜–薩摩湖 0.9는 그대로 두고 薩摩湖–伊作에서 맞춤 (근거 탐색 km 2회차, 높음)"
+},
+{
+"a": "n_izaku",
+"b": "n_minami_fukiagehama",
+"km": 1.8,
+"why": "위와 같다"
+},
+{
+"a": "n_ata",
+"b": "n_kaseda_kagoshima_kotsu",
+"km": 2.3,
+"why": "위와 같다"
+},
+{
+"a": "n_kaseda_kagoshima_kotsu",
+"b": "n_kami_kaseda",
+"km": 2.0,
+"why": "위와 같다"
+},
+{
+"a": "n_higo",
+"b": "n_tsunuki",
+"km": 1.6,
+"why": "위와 같다"
+},
+{
+"a": "n_tsunuki",
+"b": "n_kami_tsunuki",
+"km": 2.3,
+"why": "위와 같다"
+},
+{
+"a": "n_higashitamade",
+"b": "n_tsukanishi",
+"km": 0.4,
+"why": "W3 km_d audit2:kinki_1-027: km/results.json audit2:kinki_1-027 (A, 1966 停車場一覧 pid 1873236) 「東玉出 3.2→塚西 3.6(0.4)→東粉浜 4.2(0.6), 축 +0.1」 높음; ja.wikipedia 阪堺電気軌道阪堺線 rev111440345 「塚西 3.5 / 御陵前 10.1」 중간; 塚西 누계 3.5(1966 停車場一覧 東玉出 3.2→塚西 3.6→東粉浜 4.2, 축 +0.1) (근거 등급 높음)"
+},
+{
+"a": "n_tsukanishi",
+"b": "n_higashikohama",
+"km": 0.6,
+"why": "W3 km_d audit2:kinki_1-027: km/results.json audit2:kinki_1-027 (A, 1966 停車場一覧 pid 1873236) 「東玉出 3.2→塚西 3.6(0.4)→東粉浜 4.2(0.6), 축 +0.1」 높음; ja.wikipedia 阪堺電気軌道阪堺線 rev111440345 「塚西 3.5 / 御陵前 10.1」 중간; 위와 같다 (근거 등급 높음)"
+},
+{
+"a": "n_daido_toyosato",
+"b": "n_taishibashi_imaichi",
+"km": 1.8,
+"why": "W3 km_d audit2:kinki_1-034: ; 大道豊里 1.9 → 太子橋今市 3.7. 5회차 선형(N02) 누계 太子橋今市 3.764·清水 4.915·蒲生四丁目 8.536·鴫野 9.429(井高野 기점), 계통 차 −0.07 보정 뒤 위키 3.7·4.9·8.5·9.4와 맞음(중간 둘, 清水는 선형 4.85로 하나 반 — 노리츠부시 네 역이 똑같이 0.1 작은 계통 차라 함께 채택) (근거 등급 미상)"
+},
+{
+"a": "n_shimizu_osaka_metro",
+"b": "n_shimmori_furuichi",
+"km": 0.9,
+"why": "W3 km_d audit2:kinki_1-034: ; 清水 4.9 → 新森古市 5.8. 5회차 선형(N02) 누계 太子橋今市 3.764·清水 4.915·蒲生四丁目 8.536·鴫野 9.429(井高野 기점), 계통 차 −0.07 보정 뒤 위키 3.7·4.9·8.5·9.4와 맞음(중간 둘, 清水는 선형 4.85로 하나 반 — 노리츠부시 네 역이 똑같이 0.1 작은 계통 차라 함께 채택) (근거 등급 미상)"
+},
+{
+"a": "n_sekime_seiiku",
+"b": "n_gamo_4_chome",
+"km": 1.4,
+"why": "W3 km_d audit2:kinki_1-034: ; 関目成育 7.1 → 蒲生四丁目 8.5. 5회차 선형(N02) 누계 太子橋今市 3.764·清水 4.915·蒲生四丁目 8.536·鴫野 9.429(井高野 기점), 계통 차 −0.07 보정 뒤 위키 3.7·4.9·8.5·9.4와 맞음(중간 둘, 清水는 선형 4.85로 하나 반 — 노리츠부시 네 역이 똑같이 0.1 작은 계통 차라 함께 채택) (근거 등급 미상)"
+},
+{
+"a": "n_shigino_osaka_metro",
+"b": "n_midoribashi",
+"km": 1.2,
+"why": "W3 km_d audit2:kinki_1-034: ; 鴫野 9.4 → 緑橋 10.6. 5회차 선형(N02) 누계 太子橋今市 3.764·清水 4.915·蒲生四丁目 8.536·鴫野 9.429(井高野 기점), 계통 차 −0.07 보정 뒤 위키 3.7·4.9·8.5·9.4와 맞음(중간 둘, 清水는 선형 4.85로 하나 반 — 노리츠부시 네 역이 똑같이 0.1 작은 계통 차라 함께 채택) (근거 등급 미상)"
+},
+{
+"a": "n_cable_sakamoto",
+"b": "n_horaioka",
+"km": 0.3,
+"why": "W3 km_d audit2:kinki_3-028: https://tabi-mag.jp/hieizan-railway/ 「(검색 요약) 全長2025m」 낮음; 5회차 선형 누계 ケーブル坂本 0 → ほうらい丘 0.297 → もたて山 1.683 → ケーブル延暦寺 1.951, ja.wikipedia 坂本ケーブル 0.3·1.7과 맞음(중간 둘, 노리츠부시 0.4·1.6 버림) (근거 등급 낮음)"
+},
+{
+"a": "n_horaioka",
+"b": "n_motateyama",
+"km": 1.4,
+"why": "W3 km_d audit2:kinki_3-028: https://tabi-mag.jp/hieizan-railway/ 「(검색 요약) 全長2025m」 낮음; 5회차 선형 누계 ケーブル坂本 0 → ほうらい丘 0.297 → もたて山 1.683 → ケーブル延暦寺 1.951, ja.wikipedia 坂本ケーブル 0.3·1.7과 맞음(중간 둘, 노리츠부시 0.4·1.6 버림) (근거 등급 낮음)"
+},
+{
+"a": "n_motateyama",
+"b": "n_cable_enryakuji",
+"km": 0.3,
+"why": "W3 km_d audit2:kinki_3-028: https://tabi-mag.jp/hieizan-railway/ 「(검색 요약) 全長2025m」 낮음; 5회차 선형 누계 ケーブル坂本 0 → ほうらい丘 0.297 → もたて山 1.683 → ケーブル延暦寺 1.951, ja.wikipedia 坂本ケーブル 0.3·1.7과 맞음(중간 둘, 노리츠부시 0.4·1.6 버림) (근거 등급 낮음)"
+},
+{
+"a": "n_utazu_yosan",
+"b": "n_marugame",
+"km": 3.6,
+"why": "予讃線 옛 宇多津(1897–1987-10-02 이전 전)–丸亀 3.6: 『鉄道停車場一覧』 1937(NDL pid 1207554)·1966(pid 1873236) 둘 다 驛間 3.6(쪽 그림, 높음 둘). DB 2.6은 지금 宇多津–丸亀 값 (R5-A p15 F, 2026-11-13)"
+},
+{
+"a": "n_naebo",
+"b": "n_naebo_old",
+"km": 0.3,
+"why": "苗穂 이전(2018-11-17) 지금 자리 288.2–옛 자리 288.5 (2회차 후속 근거 조사 2026-11-13; r2out/follow)"
+},
+{
+"a": "n_ebikawa",
+"b": "n_tanabu",
+"km": 1.7,
+"why": "下北交通 大畑線 海老川–田名部 1.7(위키 下北交通大畑線 rev110559604 駅一覧, 旅客連絡運輸規則別表 中央書院 1987). 1985 이관 뒤 마지막 공식 値. 국철 시대 1.8은 km_era_hand (3회차 tohoku_2-001, 8회차 W1b)"
+},
+{
+"a": "n_kabayama",
+"b": "n_mutsu_sekine",
+"km": 2.7,
+"why": "下北交通 大畑線 樺山–陸奥関根 2.7(같은 근거). 국철 시대 2.6은 km_era_hand (3회차 tohoku_2-001, 8회차 W1b)"
+},
+{
+"a": "n_tohoaenmae",
+"b": "n_miyashita_fukushima_rinkai",
+"km": 0.5,
+"why": "福島臨海鉄道本線 宮下 3.6(위키 福島臨海鉄道本線 노선도 「3.582 宮下駅」, 駅一覧 「宮下駅 (3.6 km)」). 東邦亜鉛前–宮下 0.6→0.5 (8회차 W2 2026-11-15; audit3 tohoku_1-012)"
+},
+{
+"a": "n_miyashita_fukushima_rinkai",
+"b": "n_suisomae",
+"km": 0.8,
+"why": "위와 같음. 宮下–水素前 0.7→0.8(水素前 누계는 그대로) (8회차 W2 2026-11-15; audit3 tohoku_1-012)"
+},
+{
+"a": "n_yasugi",
+"b": "n_arashima",
+"km": 4.8,
+"why": "山陰本線 荒島 336.6: 日本国有鉄道『停車場一覧』昭和41年3月(NDL pid 1873236) 安来→荒島 4.8·荒島→揖屋 5.6(높음), 위키 山陰本線 rev111452828 노선도 安来 331.8·荒島 336.6·揖屋 342.2(중간). 노리츠부시 336.8(5.0/5.4)은 동기화 대응표 차이로 봄. decisions 329 「공식 1차 자료 우선」 (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_arashima",
+"b": "n_iya",
+"km": 5.6,
+"why": "山陰本線 荒島 336.6: 日本国有鉄道『停車場一覧』昭和41年3月(NDL pid 1873236) 安来→荒島 4.8·荒島→揖屋 5.6(높음), 위키 山陰本線 rev111452828 노선도 安来 331.8·荒島 336.6·揖屋 342.2(중간). 노리츠부시 336.8(5.0/5.4)은 동기화 대응표 차이로 봄. decisions 329 「공식 1차 자료 우선」 (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_ebisucho_hiroden",
+"b": "n_hatchobori_hiroden",
+"km": 0.1,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_koamicho",
+"b": "n_tenmacho",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_kanonmachi",
+"b": "n_nishikanonmachi",
+"km": 0.2,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_fukushimacho",
+"b": "n_hiroden_nishi_hiroshima",
+"km": 0.7,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_shiyakushomae_hiroden",
+"b": "n_takanobashi",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_takanobashi",
+"b": "n_nissekibyoinmae",
+"km": 0.2,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_nissekibyoinmae",
+"b": "n_hirodenhonshamae",
+"km": 0.5,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_miyukibashi",
+"b": "n_minamimachi_6_chome",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_minamimachi_6_chome",
+"b": "n_hirodaifuzokugakkomae",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_ujina_3_chome",
+"b": "n_ujina_4_chome",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_ujina_4_chome",
+"b": "n_ujina_5_chome",
+"km": 0.3,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_kaigandori",
+"b": "n_motoujinaguchi",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_funairikawaguchicho",
+"b": "n_funairiminami",
+"km": 0.6,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_funairiminami",
+"b": "n_eba",
+"km": 0.3,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_betsuinmae",
+"b": "n_yokogawa_1_chome",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_yokogawa_1_chome",
+"b": "n_yokogawa_hiroden",
+"km": 0.2,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_hatchobori_hiroden",
+"b": "n_jogakuinmae",
+"km": 0.4,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_jogakuinmae",
+"b": "n_shukkeienmae",
+"km": 0.3,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_shukkeienmae",
+"b": "n_kateisaibanshomae",
+"km": 0.2,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_kateisaibanshomae",
+"b": "n_hakushima_hiroden",
+"km": 0.3,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15)"
+},
+{
+"a": "n_ujina_5_chome",
+"b": "n_keirinjoiriguchi",
+"km": 0.1,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15) (宇品五丁目 4.7–海岸通 5.0 사이 0.3을 폐지 정류장 競輪場入口 앞뒤로 0.1·0.2 나눔, 추정)"
+},
+{
+"a": "n_keirinjoiriguchi",
+"b": "n_kaigandori",
+"km": 0.2,
+"why": "広島電鉄 공식 「路線一覧・運行系統」 区間距離(https://www.hiroden.co.jp/train/route-guide/route-distance.html 2026-11-15 열람, 높음). 노리츠부시 표와 0.1 km씩 엇갈려 사업자 공표값으로(宮島線 JA広島病院前 선례, 같은 규칙으로 広電 전 노선 대조) (8회차 W3 2026-11-15) (宇品五丁目 4.7–海岸通 5.0 사이 0.3을 폐지 정류장 競輪場入口 앞뒤로 0.1·0.2 나눔, 추정)"
+},
+{
+"a": "n_kawabe",
+"b": "n_maedayashiki",
+"km": 2.9,
+"why": "弘南鉄道 黒石線 川部–前田屋敷 2.9(위키 弘南鉄道黒石線 rev111125380 노선도 「2.9 前田屋敷」「6.2 黒石駅」, 年表 「弘南川部 - 弘南黒石間 (6.2 km) となる」). 1984-11-01 이관·渡り線 이설 뒤 마지막 공식 값. 국철 黒石線 시대 3.0은 km_era_hand (3회차 tohoku_1-001, 9회차 S 단위 km 규칙)"
 }
 ]

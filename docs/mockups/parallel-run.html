@@ -1,0 +1,285 @@
+<meta charset="utf-8">
+<title>병주 구간 표시 비교</title>
+<meta name="viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+/* 두 칸 고정 높이: 왼쪽은 위키 원본 종이, 오른쪽은 앱 화면 */
+:root{--bg:#EEF0EC;--panel:#FBFBF8;--fg:#1B1F1D;--mut:#6A716C;--faint:#A9AFAA;--line:#D9DCD5;--main:#1B1F1D;--ride:#1766D6;--on:#E2ECFB;--onfg:#114FA8;--brline:#9AA19B;--brtext:#5F6661;--goneline:#E3E6E0;--gonetext:#BFC4BE;--hover:#1B1F1D;--ui:"IBM Plex Sans KR",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;--paper:#FFFFFF;--paperfg:#202122;--paperlink:#0B57C2;--papermut:#54595D;--paperhi:#FFF1B8}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141715;--panel:#1C201D;--fg:#ECEFEA;--mut:#A0A7A1;--faint:#6E756F;--line:#343A35;--main:#F1F3EE;--ride:#6EA8FF;--on:#1D3355;--onfg:#BCD5FF;--brline:#7C847D;--brtext:#AEB5AF;--goneline:#2F3530;--gonetext:#59605A;--hover:#F1F3EE;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141715;--panel:#1C201D;--fg:#ECEFEA;--mut:#A0A7A1;--faint:#6E756F;--line:#343A35;--main:#F1F3EE;--ride:#6EA8FF;--on:#1D3355;--onfg:#BCD5FF;--brline:#7C847D;--brtext:#AEB5AF;--goneline:#2F3530;--gonetext:#59605A;--hover:#F1F3EE;color-scheme:dark}
+html,body{height:100%}
+body{background:var(--bg);color:var(--fg);font-family:var(--ui);display:flex;flex-direction:column;overflow:hidden;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:12px;gap:10px;box-sizing:border-box}
+*{box-sizing:border-box}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--ride);outline-offset:1px}
+.top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+h1{font-size:16px;font-weight:600;margin:0;white-space:nowrap}
+.tabs,.seg{display:flex;gap:2px;background:var(--line);padding:2px;border-radius:8px}
+.tabs button,.seg button{padding:5px 10px;font-size:13px;border-radius:6px;color:var(--mut);display:flex;gap:6px;align-items:baseline;white-space:nowrap}
+.tabs button[aria-pressed=true],.seg button[aria-pressed=true]{background:var(--panel);color:var(--fg);font-weight:500}
+.tabs small{font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+.opt{display:flex;gap:12px;font-size:13px;color:var(--mut);margin-left:auto;flex-wrap:wrap}
+.opt label{display:flex;gap:5px;align-items:center;cursor:pointer}
+.vis{display:flex;flex-wrap:wrap;gap:6px 14px;padding:8px 12px;font-size:13px;color:var(--mut);border-bottom:1px solid var(--line)}
+.vis label{display:flex;gap:5px;align-items:center;cursor:pointer;min-height:24px}
+.seg{display:none}
+.panes{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:10px}
+.pane{min-height:0;min-width:0;display:flex;flex-direction:column;border-radius:10px;overflow:hidden;position:relative}
+.ph{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:8px 12px;font-size:12.5px;flex-wrap:wrap}
+.ph b{font-weight:600;font-size:13px}
+.ph b small{font-weight:400;font-size:12px;color:var(--mut);margin-left:6px}
+#wp{background:var(--paper);color:var(--paperfg);color-scheme:light}
+#wp .ph{border-bottom:1px solid #E4E6E8;color:var(--papermut)}
+#wp .ph b{color:var(--paperfg)}
+#w{flex:1;overflow:auto;padding:6px 10px 40px;font-size:12px;line-height:20px;position:relative}
+.sec{font-size:12px;font-weight:600;color:var(--papermut);padding:12px 0 4px;background:var(--paper)}
+.wr{display:flex;height:20px;white-space:nowrap;align-items:center;cursor:default}
+.wr.s{cursor:pointer}
+.wr.hi{background:var(--paperhi)}
+.dg{flex:none;display:flex;justify-content:center;width:var(--dgw)}
+.c{width:20px;height:20px;background-size:20px 20px;background-repeat:no-repeat;flex:none}
+.wk{flex:none;width:58px;text-align:right;padding-right:8px;color:var(--papermut);font-variant-numeric:tabular-nums;font-size:11.5px;overflow:hidden}
+.wt{flex:none}
+.wr.s .wt{color:var(--paperlink)}
+.src{font-size:11.5px;color:var(--papermut);padding:14px 0 0;white-space:normal;line-height:1.6;max-width:44em}
+.src a{color:var(--paperlink)}
+#op{background:var(--panel)}
+#op .ph{border-bottom:1px solid var(--line);color:var(--mut)}
+#o{flex:1;overflow:auto;overscroll-behavior:contain}
+#ow{max-width:420px;margin:0 auto}
+svg{display:block;width:100%;height:auto}
+.hit{fill:var(--hover);fill-opacity:0;cursor:pointer}
+.hit:hover{fill-opacity:.05}
+.hit:focus-visible{outline:none;stroke:var(--ride);stroke-width:1.5;fill-opacity:.05}
+.hit.flash{fill:var(--ride);fill-opacity:.14}
+.n{font-size:15px;font-weight:500;fill:var(--fg)}
+.nx{font-size:14px;font-weight:400;fill:var(--gonetext)}
+.nx .j,.kmx{fill:var(--gonetext)}
+.j{font-size:12px;fill:var(--mut)}
+.km{font-size:12px;fill:var(--mut);font-variant-numeric:tabular-nums}
+.km.kmx{fill:var(--gonetext)}
+.bl{font-size:13px;fill:var(--brtext)}
+.bl.o{font-size:12px}
+.tl{font-size:12px;fill:var(--brtext)}
+.tl .g,.tl.g,.bl.g,.bd.g{fill:var(--gonetext)}
+.tl .sep{fill:var(--faint)}
+.pn{font-size:9.5px;font-weight:600;fill:var(--brtext)}
+.pn.g{fill:var(--gonetext)}
+.bd{font-size:11.5px;fill:var(--brtext)}
+.bar{border-top:1px solid var(--line);padding:9px 12px;padding-bottom:max(9px,env(safe-area-inset-bottom,0px));display:flex;gap:10px;align-items:center;justify-content:space-between;font-size:13.5px;min-height:52px;flex-wrap:wrap}
+.bar .sum{min-width:0}
+.bar small{display:block;color:var(--mut);font-size:12px;font-variant-numeric:tabular-nums}
+.btns{display:flex;gap:6px}
+.b{padding:7px 12px;border-radius:7px;font-size:13px;border:1px solid var(--line)}
+.b.p{background:var(--ride);color:#fff;border-color:var(--ride);font-weight:500}
+:root[data-theme="dark"] .b.p{color:#0B1A33}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .b.p{color:#0B1A33}}
+.toast{position:absolute;left:50%;bottom:64px;transform:translateX(-50%);background:var(--fg);color:var(--panel);padding:8px 12px;border-radius:8px;font-size:13px;max-width:calc(100% - 32px);text-align:center;width:max-content}
+@media (max-width:760px){
+ .panes{grid-template-columns:minmax(0,1fr)}
+ .seg{display:flex}
+ .pane[data-off="1"]{display:none}
+ .opt{margin-left:0}
+ .tabs small{display:none}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+<style>
+/* 이 비교 페이지만의 배치: 사례마다 지금(A)과 나란한 선(B)을 나란히, 좁으면 한 줄씩 */
+html,body{height:auto}
+body{overflow:auto;display:block}
+.lead{font-size:13px;color:var(--mut);line-height:1.6;margin:6px 0 10px;max-width:66em}
+.tabs{flex-wrap:wrap}
+.case{margin-top:6px}
+.cap{display:flex;flex-wrap:wrap;gap:4px 10px;align-items:baseline;margin:4px 0 8px}
+.cap b{font-size:14.5px;font-weight:600}
+.cap span{font-size:12.5px;color:var(--mut)}
+.kind{font-size:11px;padding:1px 7px;border-radius:9px;border:1px solid var(--brline);color:var(--brtext)}
+.kind.h{border-style:dashed}
+.cmp{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;align-items:start}
+.cmp .pane{background:var(--panel)}
+.cmp .ph{border-bottom:1px solid var(--line);color:var(--mut);flex-direction:column;align-items:flex-start;gap:2px}
+.cmp .ph b{color:var(--fg)}
+.cmp .ow{max-width:420px;margin:0 auto;width:100%}
+.foot{font-size:12px;color:var(--mut);line-height:1.65;margin-top:14px;max-width:66em}
+.foot p{margin:0 0 6px}
+@media (max-width:760px){.cmp{grid-template-columns:minmax(0,1fr)!important}}
+@media (min-width:761px) and (max-width:1100px){#ends4{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+</style>
+<div class="top"><h1>병주 구간 표시 비교</h1></div>
+<p class="lead">승인 시안의 노선도(환승 캡슐·번호 묶음·분기 곡선) 그대로이고, 끝 이어짐(직통·이어지는 노선)까지 넣었고, 병주 구간만 B 방식(상대 노선을 줄기 옆 가는 선으로 함께 그리고, 그 노선이 서는 역에 작은 점, 들어오고 나가는 곳은 분기 줄)으로 바꿨습니다. 실제 사례의 역·km·환승은 지금 DB(판 2026-11-05.11) route_link 값입니다.</p>
+<section class="case"><div class="cap"><b>직통 이어짐과 끝 너머 병주 상대가 한 역에 함께 있을 때</b><span class="kind">실제 DB · 유라쿠초선 코타케무카이하라</span><span>지금 DB(폐선 포함)에서 이 경우는 여기 하나입니다. B′ 바탕에 끝 이어짐 두 줄만 네 방식으로</span></div><div class="cmp" id="ends4" style="grid-template-columns:repeat(4,minmax(0,1fr))"></div></section>
+<h2 style="font-size:15px;font-weight:600;margin:18px 0 6px">사례별 비교</h2>
+<div class="tabs" id="tabs" role="group" aria-label="사례"></div>
+<div id="view"></div>
+<div class="foot">
+<p><b>사례 조사</b>: 같은 두 역을 서로 다른 공식 노선이 함께 잇는 칸은 지금 DB에 영업 중 20칸, 폐선까지 24칸입니다. 같은 칸을 셋 이상이 함께 쓰는 곳, 보는 노선의 끝에서 끝까지 병주하는 곳, 같은 상대가 두 토막 이상 병주하는 곳은 폐선까지 넣어도 0이라 그리지 않았습니다. 끝 이어짐(직통·이어지는 노선)은 앱과 같이 노선마다 한 줄이고, 그 역을 지나가는 노선이면 방면을 둘 적습니다.</p>
+<p><b>병주 판정</b> (사용자 결정 2026-11-06): 같은 선로를 함께 쓰거나 바로 옆 선로로 나란히 달릴 때만 그립니다. 지하철의 별도 터널(表参道–渋谷 銀座線·半蔵門線, 霞ケ関 주변, 市ケ谷–飯田橋, 大通–さっぽろ, 大国町–なんば)과 梅田貨物線의 지하 구간은 병주가 아니라 지금처럼 환승입니다. 후보 24칸 중 병주 16칸, 칸별 근거는 data/overrides/parallel_runs.json.</p>
+</div>
+<script>
+const D=[{"key": "nippo", "name": "닛포 본선", "ja": "日豊本線", "what": "노선 첫 역부터 상대가 함께 달림. 상대는 첫 역 너머(모지 쪽)에서 들어와 사실상 직통 역할을 하고, 두 번째 역에서 나감", "st": [{"k": "코쿠라", "j": "小倉", "m": 0.0, "x": 0, "y": "", "b": [], "p": [{"l": "가고시마 본선", "j": "鹿児島本線", "t": 1, "dir": "d", "id": "l_kagoshima_main_line"}, {"l": "키타큐슈 모노레일 코쿠라선", "j": "小倉線", "t": 0, "dir": "d", "id": "l_kokura_line"}, {"l": "산요 신칸센", "j": "山陽新幹線", "t": 1, "dir": "d", "id": "l_sanyo_shinkansen"}], "end": null, "ends": []}, {"k": "니시코쿠라", "j": "西小倉", "m": 0.8, "x": 0, "y": "", "b": [], "p": [{"l": "가고시마 본선", "j": "鹿児島本線", "t": 1, "dir": "d", "id": "l_kagoshima_main_line"}], "end": null, "ends": []}, {"k": "미나미코쿠라", "j": "南小倉", "m": 3.5, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "조노", "j": "城野", "m": 6.1, "x": 0, "y": "", "b": [], "p": [{"l": "히타히코산선", "j": "日田彦山線", "t": 0, "dir": "d", "id": "l_hitahikosan_line"}], "end": null, "ends": []}, {"k": "아베야마코엔", "j": "安部山公園", "m": 8.4, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "시모소네", "j": "下曽根", "m": 11.6, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "쿠사미", "j": "朽網", "m": 15.0, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "칸다", "j": "苅田", "m": 18.6, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}], "pars": [{"id": "l_kagoshima_main_line", "l": "가고시마 본선", "j": "鹿児島本線", "runs": [{"a": 0, "b": 1, "beyond": true, "in": {"n": "모지", "d": "모지코"}, "out": {"n": "큐슈코다이마에", "d": "가고시마"}}]}], "beyond": true}, {"key": "hanshin_namba", "name": "한신난바선", "ja": "阪神なんば線", "what": "첫 역 너머(고베 쪽)에서 들어오는 상대가 사실상 직통 역할. 끝 역에서는 다른 회사 노선으로 바로 이어짐", "st": [{"k": "아마가사키", "j": "尼崎", "m": 0.0, "x": 0, "y": "", "b": [], "p": [{"l": "한신 본선", "j": "本線", "t": 1, "dir": "d", "id": "l_hanshin_main_line"}], "end": null, "ends": []}, {"k": "다이모츠", "j": "大物", "m": 0.9, "x": 0, "y": "", "b": [], "p": [{"l": "한신 본선", "j": "本線", "t": 1, "dir": "d", "id": "l_hanshin_main_line"}], "end": null, "ends": []}, {"k": "데키지마", "j": "出来島", "m": 2.3, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "후쿠", "j": "福", "m": 3.3, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "덴포", "j": "伝法", "m": 4.8, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "치도리바시", "j": "千鳥橋", "m": 5.5, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "니시쿠조", "j": "西九条", "m": 6.3, "x": 0, "y": "", "b": [], "p": [{"l": "오사카 순환선", "j": "大阪環状線", "t": 1, "dir": "d", "id": "l_osaka_loop_line"}, {"l": "사쿠라지마선", "j": "桜島線", "t": 0, "dir": "u", "id": "l_sakurajima_line"}], "end": null, "ends": []}, {"k": "쿠조", "j": "九条", "m": 7.6, "x": 0, "y": "", "b": [], "p": [{"l": "오사카메트로 츄오선", "j": "中央線", "t": 1, "dir": "d", "id": "l_osaka_metro_chuo_line"}], "end": null, "ends": []}, {"k": "돔마에", "j": "ドーム前", "m": 8.2, "x": 0, "y": "", "b": [], "p": [{"l": "오사카메트로 나가호리츠루미료쿠치선", "j": "長堀鶴見緑地線", "t": 1, "dir": "d", "id": "l_nagahori_tsurumi_ryokuchi_line"}], "end": null, "ends": []}, {"k": "사쿠라가와", "j": "桜川", "m": 9.0, "x": 0, "y": "", "b": [], "p": [{"l": "난카이 고야선", "j": "高野線", "t": 0, "dir": "u", "id": "l_koya_line"}, {"l": "오사카메트로 센니치마에선", "j": "千日前線", "t": 1, "dir": "d", "id": "l_sennichimae_line"}], "end": null, "ends": []}, {"k": "오사카난바", "j": "大阪難波", "m": 10.1, "x": 0, "y": "", "b": [], "p": [{"l": "간사이 본선", "j": "関西本線", "t": 0, "dir": "u", "id": "l_kansai_main_line"}, {"l": "오사카메트로 미도스지선", "j": "御堂筋線", "t": 1, "dir": "d", "id": "l_midosuji_line"}, {"l": "난카이 본선", "j": "南海本線", "t": 0, "dir": "u", "id": "l_nankai_main_line"}, {"l": "오사카메트로 센니치마에선", "j": "千日前線", "t": 1, "dir": "d", "id": "l_sennichimae_line"}, {"l": "오사카메트로 요츠바시선", "j": "四つ橋線", "t": 1, "dir": "d", "id": "l_yotsubashi_line"}], "end": null, "ends": [{"l": "킨테츠 난바선", "j": "難波線", "id": "l_namba_line", "side": "d", "n": "킨테츠닛폰바시"}]}], "pars": [{"id": "l_hanshin_main_line", "l": "한신 본선", "j": "本線", "runs": [{"a": 0, "b": 1, "beyond": true, "in": {"n": "데야시키", "d": "모토마치"}, "out": {"n": "쿠이세", "d": "오사카우메다"}}]}], "beyond": true}, {"key": "yurakucho", "name": "유라쿠초선 (코타케무카이하라–코지마치)", "ja": "有楽町線", "what": "첫 역에서 다른 노선으로 바로 이어지는데, 병주 상대도 첫 역 너머(와코시 쪽)에서 들어옴 (複々線)", "st": [{"k": "코타케무카이하라", "j": "小竹向原", "m": 0.0, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": [{"l": "세이부 유라쿠초선", "j": "西武有楽町線", "id": "l_seibu_yurakucho_line", "side": "u", "n": "신사쿠라다이"}, {"l": "도쿄메트로 후쿠토신선", "j": "副都心線", "id": "l_fukutoshin_line", "side": "u", "n": "히카와다이·센카와 방면"}]}, {"k": "센카와", "j": "千川", "m": 1.0, "x": 0, "y": "", "b": [], "p": [{"l": "도쿄메트로 후쿠토신선", "j": "副都心線", "t": 1, "dir": "d", "id": "l_fukutoshin_line"}], "end": null, "ends": []}, {"k": "카나메초", "j": "要町", "m": 2.0, "x": 0, "y": "", "b": [], "p": [{"l": "도쿄메트로 후쿠토신선", "j": "副都心線", "t": 1, "dir": "d", "id": "l_fukutoshin_line"}], "end": null, "ends": []}, {"k": "이케부쿠로", "j": "池袋", "m": 3.2, "x": 0, "y": "", "b": [], "p": [{"l": "아카바네선", "j": "赤羽線", "t": 0, "dir": "d", "id": "l_akabane_line"}, {"l": "도쿄메트로 후쿠토신선", "j": "副都心線", "t": 1, "dir": "d", "id": "l_fukutoshin_line"}, {"l": "세이부 이케부쿠로선", "j": "池袋線", "t": 0, "dir": "u", "id": "l_ikebukuro_line"}, {"l": "도쿄메트로 마루노우치선", "j": "丸ノ内線", "t": 0, "dir": "d", "id": "l_marunouchi_line"}, {"l": "도부 도조 본선", "j": "東上本線", "t": 0, "dir": "u", "id": "l_tojo_main_line"}, {"l": "야마노테선", "j": "山手線", "t": 1, "dir": "d", "id": "l_yamanote_line"}], "end": null, "ends": []}, {"k": "히가시이케부쿠로", "j": "東池袋", "m": 4.1, "x": 0, "y": "", "b": [], "p": [{"l": "도덴 아라카와선", "j": "荒川線", "t": 1, "dir": "d", "id": "l_arakawa_line"}], "end": null, "ends": []}, {"k": "고코쿠지", "j": "護国寺", "m": 5.2, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "에도가와바시", "j": "江戸川橋", "m": 6.5, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "이다바시", "j": "飯田橋", "m": 8.1, "x": 0, "y": "", "b": [], "p": [{"l": "츄오 본선", "j": "中央本線", "t": 1, "dir": "d", "id": "l_chuo_main_line"}, {"l": "도쿄메트로 난보쿠선", "j": "南北線", "t": 1, "dir": "d", "id": "l_namboku_line_tokyo_metro"}, {"l": "도에이 오에도선", "j": "大江戸線", "t": 1, "dir": "d", "id": "l_oedo_line"}, {"l": "도쿄메트로 도자이선", "j": "東西線", "t": 1, "dir": "d", "id": "l_tozai_line_tokyo_metro"}], "end": null, "ends": []}, {"k": "이치가야", "j": "市ケ谷", "m": 9.2, "x": 0, "y": "", "b": [], "p": [{"l": "츄오 본선", "j": "中央本線", "t": 1, "dir": "d", "id": "l_chuo_main_line"}, {"l": "도쿄메트로 난보쿠선", "j": "南北線", "t": 1, "dir": "d", "id": "l_namboku_line_tokyo_metro"}, {"l": "도에이 신주쿠선", "j": "新宿線", "t": 1, "dir": "d", "id": "l_shinjuku_line_toei"}], "end": null, "ends": []}, {"k": "코지마치", "j": "麹町", "m": 10.1, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}], "pars": [{"id": "l_fukutoshin_line", "l": "도쿄메트로 후쿠토신선", "j": "副都心線", "runs": [{"a": 0, "b": 3, "beyond": true, "in": {"n": "히카와다이", "d": "와코시"}, "out": {"n": "조시가야", "d": "시부야"}}]}], "beyond": true}, {"key": "takarazuka", "name": "한큐 타카라즈카 본선", "ja": "宝塚本線", "what": "두 노선이 같은 역에서 시작해 중간 역 하나를 함께 지나 갈라짐", "st": [{"k": "오사카우메다", "j": "大阪梅田", "m": 0.0, "x": 0, "y": "", "b": [], "p": [{"l": "한신 본선", "j": "本線", "t": 0, "dir": "d", "id": "l_hanshin_main_line"}, {"l": "한큐 고베 본선", "j": "神戸本線", "t": 0, "dir": "d", "id": "l_kobe_main_line"}, {"l": "오사카메트로 미도스지선", "j": "御堂筋線", "t": 1, "dir": "d", "id": "l_midosuji_line"}, {"l": "오사카 순환선", "j": "大阪環状線", "t": 1, "dir": "d", "id": "l_osaka_loop_line"}, {"l": "오사카메트로 타니마치선", "j": "谷町線", "t": 1, "dir": "d", "id": "l_tanimachi_line"}, {"l": "도카이도 본선", "j": "東海道本線", "t": 1, "dir": "d", "id": "l_tokaido_main_line"}, {"l": "우메다 화물선", "j": "梅田貨物線", "t": 1, "dir": "d", "id": "l_umeda_freight_line"}, {"l": "오사카메트로 요츠바시선", "j": "四つ橋線", "t": 0, "dir": "d", "id": "l_yotsubashi_line"}], "end": null, "ends": []}, {"k": "나카츠", "j": "中津", "m": 0.9, "x": 0, "y": "", "b": [], "p": [{"l": "한큐 고베 본선", "j": "神戸本線", "t": 1, "dir": "d", "id": "l_kobe_main_line"}], "end": null, "ends": []}, {"k": "쥬소", "j": "十三", "m": 2.4, "x": 0, "y": "", "b": [], "p": [{"l": "한큐 고베 본선", "j": "神戸本線", "t": 1, "dir": "d", "id": "l_kobe_main_line"}, {"l": "한큐 교토 본선", "j": "京都本線", "t": 0, "dir": "d", "id": "l_kyoto_main_line"}], "end": null, "ends": []}, {"k": "미쿠니", "j": "三国", "m": 4.4, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "쇼나이", "j": "庄内", "m": 6.0, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "핫토리텐진", "j": "服部天神", "m": 7.5, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "소네", "j": "曽根", "m": 8.7, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "오카마치", "j": "岡町", "m": 9.5, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}], "pars": [{"id": "l_kobe_main_line", "l": "한큐 고베 본선", "j": "神戸本線", "runs": [{"a": 0, "b": 2, "in": null, "out": {"n": "칸자키가와", "d": "고베산노미야"}}]}], "beyond": false}, {"key": "kagoshima", "name": "가고시마 본선 (모지코–에다미츠)", "ja": "鹿児島本線", "what": "노선 중간 역에서 상대가 시작해 다음 역에서 나감", "st": [{"k": "모지코", "j": "門司港", "m": 0.0, "x": 0, "y": "", "b": [], "p": [{"l": "헤이세이 치쿠호 철도 모지코 레트로 관광선", "j": "門司港レトロ観光線", "t": 0, "dir": "d", "id": "l_mojiko_retro_scenic_line"}], "end": null, "ends": []}, {"k": "코모리에", "j": "小森江", "m": 4.0, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "모지", "j": "門司", "m": 5.5, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "코쿠라", "j": "小倉", "m": 11.0, "x": 0, "y": "", "b": [], "p": [{"l": "키타큐슈 모노레일 코쿠라선", "j": "小倉線", "t": 0, "dir": "d", "id": "l_kokura_line"}, {"l": "닛포 본선", "j": "日豊本線", "t": 0, "dir": "d", "id": "l_nippo_main_line"}, {"l": "산요 신칸센", "j": "山陽新幹線", "t": 1, "dir": "d", "id": "l_sanyo_shinkansen"}], "end": null, "ends": []}, {"k": "니시코쿠라", "j": "西小倉", "m": 11.8, "x": 0, "y": "", "b": [], "p": [{"l": "닛포 본선", "j": "日豊本線", "t": 1, "dir": "d", "id": "l_nippo_main_line"}], "end": null, "ends": []}, {"k": "큐슈코다이마에", "j": "九州工大前", "m": 15.3, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "토바타", "j": "戸畑", "m": 17.2, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "에다미츠", "j": "枝光", "m": 20.0, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}], "pars": [{"id": "l_nippo_main_line", "l": "닛포 본선", "j": "日豊本線", "runs": [{"a": 3, "b": 4, "in": null, "out": {"n": "미나미코쿠라", "d": "가고시마"}}]}], "beyond": false}, {"key": "fukutoshin", "name": "후쿠토신선", "ja": "副都心線", "what": "중간 역에서 상대가 시작해 정차역 둘을 함께 지나 중간 역에서 나감. 끝 역에서는 다른 회사 노선으로 바로 이어짐", "st": [{"k": "와코시", "j": "和光市", "m": 0.0, "x": 0, "y": "", "b": [], "p": [{"l": "도부 도조 본선", "j": "東上本線", "t": 1, "dir": "d", "id": "l_tojo_main_line"}], "end": null, "ends": []}, {"k": "치카테츠나리마스", "j": "地下鉄成増", "m": 2.2, "x": 0, "y": "", "b": [], "p": [{"l": "도부 도조 본선", "j": "東上本線", "t": 1, "dir": "d", "id": "l_tojo_main_line"}], "end": null, "ends": []}, {"k": "치카테츠아카츠카", "j": "地下鉄赤塚", "m": 3.6, "x": 0, "y": "", "b": [], "p": [{"l": "도부 도조 본선", "j": "東上本線", "t": 1, "dir": "d", "id": "l_tojo_main_line"}], "end": null, "ends": []}, {"k": "헤이와다이", "j": "平和台", "m": 5.4, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "히카와다이", "j": "氷川台", "m": 6.8, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "코타케무카이하라", "j": "小竹向原", "m": 8.3, "x": 0, "y": "", "b": [], "p": [{"l": "세이부 유라쿠초선", "j": "西武有楽町線", "t": 0, "dir": "u", "id": "l_seibu_yurakucho_line"}], "end": null, "ends": []}, {"k": "센카와", "j": "千川", "m": 9.4, "x": 0, "y": "", "b": [], "p": [{"l": "도쿄메트로 유라쿠초선", "j": "有楽町線", "t": 1, "dir": "d", "id": "l_yurakucho_line"}], "end": null, "ends": []}, {"k": "카나메초", "j": "要町", "m": 10.4, "x": 0, "y": "", "b": [], "p": [{"l": "도쿄메트로 유라쿠초선", "j": "有楽町線", "t": 1, "dir": "d", "id": "l_yurakucho_line"}], "end": null, "ends": []}, {"k": "이케부쿠로", "j": "池袋", "m": 11.3, "x": 0, "y": "", "b": [], "p": [{"l": "아카바네선", "j": "赤羽線", "t": 0, "dir": "u", "id": "l_akabane_line"}, {"l": "세이부 이케부쿠로선", "j": "池袋線", "t": 0, "dir": "u", "id": "l_ikebukuro_line"}, {"l": "도쿄메트로 마루노우치선", "j": "丸ノ内線", "t": 0, "dir": "d", "id": "l_marunouchi_line"}, {"l": "도부 도조 본선", "j": "東上本線", "t": 0, "dir": "u", "id": "l_tojo_main_line"}, {"l": "야마노테선", "j": "山手線", "t": 1, "dir": "d", "id": "l_yamanote_line"}, {"l": "도쿄메트로 유라쿠초선", "j": "有楽町線", "t": 1, "dir": "d", "id": "l_yurakucho_line"}], "end": null, "ends": []}, {"k": "조시가야", "j": "雑司が谷", "m": 13.1, "x": 0, "y": "", "b": [], "p": [{"l": "도덴 아라카와선", "j": "荒川線", "t": 1, "dir": "d", "id": "l_arakawa_line"}], "end": null, "ends": []}, {"k": "니시와세다", "j": "西早稲田", "m": 14.6, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "히가시신주쿠", "j": "東新宿", "m": 15.5, "x": 0, "y": "", "b": [], "p": [{"l": "도에이 오에도선", "j": "大江戸線", "t": 1, "dir": "d", "id": "l_oedo_line"}], "end": null, "ends": []}, {"k": "신주쿠산초메", "j": "新宿三丁目", "m": 16.6, "x": 0, "y": "", "b": [], "p": [{"l": "도쿄메트로 마루노우치선", "j": "丸ノ内線", "t": 1, "dir": "d", "id": "l_marunouchi_line"}, {"l": "도에이 신주쿠선", "j": "新宿線", "t": 1, "dir": "d", "id": "l_shinjuku_line_toei"}], "end": null, "ends": []}, {"k": "키타산도", "j": "北参道", "m": 18.0, "x": 0, "y": "", "b": [], "p": [], "end": null, "ends": []}, {"k": "메이지진구마에〈하라주쿠〉", "j": "明治神宮前", "m": 19.2, "x": 0, "y": "", "b": [], "p": [{"l": "도쿄메트로 치요다선", "j": "千代田線", "t": 1, "dir": "d", "id": "l_chiyoda_line"}, {"l": "야마노테선", "j": "山手線", "t": 1, "dir": "d", "id": "l_yamanote_line"}], "end": null, "ends": []}, {"k": "시부야", "j": "渋谷", "m": 20.2, "x": 0, "y": "", "b": [], "p": [{"l": "도큐 덴엔토시선", "j": "田園都市線", "t": 0, "dir": "u", "id": "l_den_en_toshi_line"}, {"l": "도쿄메트로 긴자선", "j": "銀座線", "t": 0, "dir": "u", "id": "l_ginza_line"}, {"l": "도쿄메트로 한조몬선", "j": "半蔵門線", "t": 0, "dir": "u", "id": "l_hanzomon_line"}, {"l": "케이오 이노카시라선", "j": "井の頭線", "t": 0, "dir": "u", "id": "l_inogashira_line"}, {"l": "야마노테선", "j": "山手線", "t": 1, "dir": "d", "id": "l_yamanote_line"}], "end": null, "ends": [{"l": "도큐 도요코선", "j": "東横線", "id": "l_toyoko_line", "side": "d", "n": "다이칸야마"}]}], "pars": [{"id": "l_yurakucho_line", "l": "도쿄메트로 유라쿠초선", "j": "有楽町線", "runs": [{"a": 5, "b": 8, "in": null, "out": {"n": "히가시이케부쿠로", "d": "신키바"}}]}], "beyond": false}];
+const W=380,T=66,NX=114,LX=198,SX=82,QX=99,BR=6,DX=18;
+const yr=v=>v===true?"?":v;
+const $=s=>document.querySelector(s);
+const esc=s=>String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const est=(s,z)=>[...String(s)].reduce((a,c)=>a+(/[가-힣]/.test(c)?z*.93:c===" "?z*.3:z*.6),0);
+const S={line:0,plan:"a",old:true,arc:true};
+const L=()=>D[S.line];
+// 거른 뒤에도 종점에서 끝나는 병주 토막을 잇는다
+const keep=(v,f)=>{const r=v.filter(f);r.ends=v.ends;return r};
+// 끝 이어짐 한 줄. 1 곧게(지금), 2 둘 다 오른쪽으로 꺾어 글씨로, 3 병주 상대만 꺾음, 4 직통 글씨만 왼쪽으로
+function endRow(P,e,y,hy,i,stub){
+ const st=S.endStyle||1,cy=hy+9,dash=d=>P.deco.push(`<path d="${d}" stroke="var(--brline)" stroke-dasharray="3 4"/>`);
+ const label=x=>P.txt.push(`<text x="${x}" y="${hy+13}" class="bl">${esc(e.l)}</text><text x="${Math.max(x===NX?LX:0,x+est(e.l,13)+10)}" y="${hy+13}" class="bd">${esc(e.n)}</text>`);
+ if(e.lane){
+  P.parTop[e.key]=hy+6;
+  if(st===2||st===3)dash(`M${NX-8} ${cy}H${e.px+BR}A${BR} ${BR} 0 0 0 ${e.px} ${cy+BR}V${hy+24}`);else dash(`M${e.px} ${hy+6}V${hy+24}`);
+  label(NX);return;
+ }
+ if(st===2){dash(`M${T} ${y-13}V${cy+BR}A${BR} ${BR} 0 0 1 ${T+BR} ${cy}H${NX-8}`);label(NX);return}
+ if(st===4){dash(`M${T} ${y-13}V${hy+19}`);label(T+10);return}
+ stub(e,y-13,hy+26,i,hy);
+}
+// 병주 선이 시작하는 곳: 위 분기 줄에서 들어오거나, 상대의 기점인 역 노드에서
+function parStart(P,r){
+ if(P.parTop[r.key]!=null)return `M${r.px} ${P.parTop[r.key]+18}`;
+ if(P.parIn[r.key]!=null){const c=P.parIn[r.key];return `M${QX-5} ${c}L${r.px+BR} ${c}A${BR} ${BR} 0 0 0 ${r.px} ${c+BR}`}
+ const y=P.y[r.a];return `M${T} ${y}L${r.px-BR} ${y}A${BR} ${BR} 0 0 1 ${r.px} ${y+BR}`;
+}
+// B: 병주 구간 역의 환승 캡슐에서 상대를 빼고, 들어오는 역 위·나가는 역 아래에 분기 줄을 둔다. 겹치는 상대는 줄기 쪽으로 한 칸 안쪽 선
+function variant(l,plan){
+ const st=l.st.map(s=>({...s,b:[...s.b],p:[...s.p],pp:[],ends:[...(s.ends||[])]}));
+ if(plan==="a")return st;
+ const lanes=[];st.ends=[];
+ l.pars.forEach((p,pi)=>p.runs.forEach((r,ri)=>{
+  let k=0;while(lanes.some(q=>q.k===k&&!(q.b<r.a||q.a>r.b)))k++;lanes.push({k,a:r.a,b:r.b});
+  const px=SX-8*k,key=pi+"-"+ri;
+  for(let i=r.a;i<=r.b;i++){const s=st[i];if(s.p.some(e=>e.id===p.id))s.pp.push(px);s.p=s.p.filter(e=>e.id!==p.id)}
+  st[r.a].ends=st[r.a].ends.filter(e=>e.id!==p.id);
+  if(r.in&&plan==="c"&&r.beyond)st[0].ends.push({l:p.l,j:p.j,n:r.in.n+" › "+r.in.d,side:"u",lane:true,key,px});
+  else if(r.in)st[r.a].b.push({l:p.l,j:p.j,n:r.in.n,d:r.in.d,side:"u",parIn:key});
+  if(r.out)st[r.b].b.push({l:p.l,j:p.j,n:r.out.n,d:r.out.d,side:"d",parOut:true,key,px,a:r.a});
+  else st.ends.push({key,px,a:r.a,b:r.b});
+ }));
+ return st;
+}
+function layout(){
+ const l=L(),show=e=>(S.old||!e.x)&&(S.arc||!e.h),st=keep(variant(l,S.plan),show);
+ const P={st,y:[],h:[],stat:"",hits:[],txt:[],stems:[],deco:[],badge:[],parIn:{},parTop:{}};
+ const tailOf=b=>b.x?"~"+yr(b.x):b.since?b.since+"~":"";
+ const lxOf=b=>Math.max(LX,NX+est(b.l,13)+10);
+ const wide=b=>!!b.n&&est(`${b.n} › ${b.d}`,11.5)>W-lxOf(b)-12-(tailOf(b)?40:0);
+ const preds=b=>S.old&&b.pred?b.pred:[];
+ const rowH=b=>29+15*preds(b).length+(wide(b)?14:0);
+ // 가지 한 줄: 이어받기 전 이름은 위에 흐리게, 지금 이름은 그 아래에
+ const drawRow=(b,i,ry)=>{
+  let yy=ry;
+  preds(b).forEach(p=>{P.txt.push(`<text x="${NX}" y="${yy+12}" class="bl o g">${esc(p.l)}</text><text x="${W-12}" y="${yy+12}" text-anchor="end" class="bd g">~${esc(p.y)}</text>`);yy+=15});
+  const gc=b.x?" g":"",tail=S.old?tailOf(b):"";
+  P.txt.push(`<text x="${NX}" y="${yy+13}" class="bl${gc}">${esc(b.l)}</text>`);
+  if(tail)P.txt.push(`<text x="${W-12}" y="${yy+13}" text-anchor="end" class="bd${gc}">${esc(tail)}</text>`);
+  const a=`${b.n} › ${b.d}`;
+  if(wide(b))P.txt.push(`<text x="${NX}" y="${yy+28}" class="bd${gc}">${esc(a)}</text>`);
+  else if(b.n)P.txt.push(`<text x="${lxOf(b)}" y="${yy+13}" class="bd${gc}">${esc(a)}</text>`);
+  P.hits.push({i,b,x:0,y:ry,h:rowH(b),kind:"b"});
+  return yy+9;
+ };
+ const stub=(b,y0,y1,i,hy)=>{
+  P.deco.push(`<path d="M${T} ${y0}V${y1}" stroke="var(--brline)" stroke-dasharray="3 4"/>`);
+  P.txt.push(`<text x="${NX}" y="${hy+13}" class="bl">${esc(b.l)}</text><text x="${Math.max(LX,NX+est(b.l,13)+10)}" y="${hy+13}" class="bd">${esc(b.n)}</text>`);
+  P.hits.push({i,b,x:0,y:hy,h:29,kind:"b"});
+ };
+ let cur=8;
+ st.forEach((s,i)=>{
+  const bs=s.b.filter(show),ps=s.x?[]:s.p.filter(show);
+  const ups=bs.filter(b=>b.side==="u"),dns=bs.filter(b=>b.side!=="u");
+  const hc=s.x?32:46,eU=i===0?(s.ends||[]).filter(e=>e.side==="u"):[],endU=eU.length>0;
+  const upH=ups.reduce((a,b)=>a+rowH(b),0)+eU.length*30;
+  const y=cur+upH+(upH?4:0)+hc/2;
+  eU.forEach((e,q)=>endRow(P,e,y,cur+q*30,i,stub));
+  let uy=cur+eU.length*30;
+  ups.forEach(b=>{const cy=drawRow(b,i,uy);
+   if(b.parIn)P.parIn[b.parIn]=cy;else P.stems.push({x:!!b.x,d:`M${T} ${y}L${SX-BR} ${y}A${BR} ${BR} 0 0 0 ${SX} ${y-BR}L${SX} ${cy+BR}A${BR} ${BR} 0 0 1 ${SX+BR} ${cy}L${QX-5} ${cy}`});
+   P.deco.push(`<circle cx="${QX}" cy="${cy}" r="5" fill="var(--panel)" stroke="${b.x?"var(--goneline)":"var(--brline)"}"/>`);
+   uy+=rowH(b)});
+  P.y.push(y);
+  const kw=s.k.length*14,jw=s.j.length*12,av=W-NX-58,nc=s.x?"nx":"n";
+  let extra=0;
+  if(kw+6+jw<=av){P.txt.push(`<text x="${NX}" y="${y+5}" class="${nc}">${esc(s.k)}<tspan class="j" dx="6">${esc(s.j)}</tspan></text>`)}
+  else if(kw<=av){P.txt.push(`<text x="${NX}" y="${y+2}" class="${nc}">${esc(s.k)}</text><text x="${NX}" y="${y+17}" class="j" style="font-size:11px">${esc(s.j)}</text>`);extra=4}
+  else{const n=Math.floor(av/14),ls=[];for(let q=0;q<s.k.length;q+=n)ls.push(s.k.slice(q,q+n));ls.forEach((t,q)=>P.txt.push(`<text x="${NX}" y="${y+5+q*19}" class="${nc}">${esc(t)}</text>`));P.txt.push(`<text x="${NX}" y="${y+3+ls.length*19}" class="j" style="font-size:11px">${esc(s.j)}</text>`);extra=(ls.length-1)*19+16}
+  P.txt.push(`<text x="${W-12}" y="${y+4}" text-anchor="end" class="km${s.x?" kmx":""}">${s.nk?"?":s.m.toFixed(1)}</text>`);
+  if(s.x)P.txt.push(`<text x="${W-52}" y="${y+4}" text-anchor="end" class="bd g">~${esc(s.y||"?")}</text>`);
+  // 환승: 세로선 모양이 같은 노선을 한 점에 묶고, 묶음이 둘 이상이면 왼쪽부터 번호를 붙인다
+  let cy=y+22+extra;
+  const lim=W-NX-12,lab=e=>e.l+(e.v?`(${e.v})`:"")+(e.x?` ~${yr(e.x)}`:"");
+  const flowOf=e=>e.t?"b":e.dir||"d";
+  const groups=["b","u","d"].map(f=>({f,m:ps.filter(e=>flowOf(e)===f)})).filter(g=>g.m.length);
+  const marker=(n,cx,yy,gone,rd)=>`<circle cx="${cx}" cy="${yy}" r="${rd}" fill="var(--panel)" stroke="${gone?"var(--goneline)":"var(--brline)"}" stroke-width="1.6"/><text x="${cx}" y="${yy+3.4}" text-anchor="middle" class="pn${gone?" g":""}">${n}</text>`;
+  const write=(items,x,w)=>{
+   items.filter(e=>preds(e).length).forEach(e=>{
+    preds(e).forEach(p=>{P.txt.push(`<text x="${x}" y="${cy+3}" class="tl g">${esc(p.l)} ~${esc(p.y)}</text>`);cy+=15});
+    P.txt.push(`<text x="${x}" y="${cy+3}" class="tl">${esc(e.l)} ${esc(e.since)}~</text>`);cy+=16});
+   const flow=[];
+   items.filter(e=>!preds(e).length).forEach(e=>{const op=e.l.split(" ")[0],g=e.v&&!e.x&&flow.find(f=>f.v===e.v&&!f.x&&f.l.split(" ")[0]===op),add=g&&"·"+e.l.slice(op.length+1);
+    if(g&&est(lab(g)+add,12)<=w)g.l+=add;else flow.push({...e})});
+   let line=[],lw=0;
+   const flush=()=>{if(!line.length)return;P.txt.push(`<text x="${x}" y="${cy+3}" class="tl">${line.map((e,q)=>`${q?'<tspan class="sep"> · </tspan>':""}<tspan${e.x?' class="g"':""}>${esc(lab(e))}</tspan>`).join("")}</text>`);cy+=16;line=[];lw=0};
+   flow.forEach(e=>{const t=est(lab(e),12),sep=est(" · ",12);if(line.length&&lw+sep+t>w)flush();lw+=(line.length?sep:0)+t;line.push(e)});flush();
+  };
+  const numbered=groups.length>1;
+  if(numbered)groups.forEach((g,k)=>{const top=cy;write(g.m,NX+18,lim-18);P.txt.push(marker(k+1,NX+7,top-1,g.m.every(e=>e.x),6.5))});
+  else if(ps.length)write(ps,NX,lim);
+  const capH=cy-(y+22+extra);
+  if(groups.length){
+   const n=groups.length,lo=T-DX*n,rd=numbered?6.5:4.5;
+   groups.forEach((g,k)=>{const cx=T-DX*(n-k),gone=g.m.every(e=>e.x),c=gone?"var(--goneline)":"var(--brline)";
+    const up=g.f!=="d",dn=g.f!=="u";
+    // 연속된 환승역의 점선이 겹치지 않도록 역 사이 절반 안에서 끝낸다
+    P.deco.push(`<path d="M${cx} ${up?y-18:y}V${dn?y+18:y}" stroke="${c}"/>`);
+    [[21,3,.8],[26,2,.45]].forEach(([d,l,o])=>P.deco.push(`<path d="${up?`M${cx} ${y-d}v-${l}`:""}${dn?`M${cx} ${y+d}v${l}`:""}" stroke="${c}" stroke-opacity="${o}"/>`));
+    if(numbered)P.badge.push(marker(k+1,cx,y,gone,rd));
+    else P.deco.push(`<circle cx="${cx}" cy="${y}" r="${rd}" fill="var(--panel)" stroke="${c}"/>`)});
+   P.deco.push(`<rect x="${lo-10}" y="${y-13}" width="${T+13-(lo-10)}" height="26" rx="13" fill="none" stroke="${ps.every(e=>e.x)?"var(--goneline)":"var(--brline)"}" stroke-width="1.5"/>`);
+  }
+  const top=y-hc/2,hb=hc+extra+(capH?capH-4:0);
+  P.hits.push({i,x:0,y:top,h:hb,kind:"s"});
+  let ry=top+hb+(capH?2:s.x?0:-1);
+  dns.forEach(b=>{const cy2=drawRow(b,i,ry);
+   if(b.parOut)P.stems.push({par:true,d:parStart(P,b)+`L${b.px} ${cy2-BR}A${BR} ${BR} 0 0 0 ${b.px+BR} ${cy2}L${QX-5} ${cy2}`});
+   else P.stems.push({x:!!b.x,d:b.e?`M${T} ${cy2-BR-6}V${cy2-BR}A${BR} ${BR} 0 0 0 ${T+BR} ${cy2}L${QX-5} ${cy2}`:`M${T} ${y}L${SX-BR} ${y}A${BR} ${BR} 0 0 1 ${SX} ${y+BR}L${SX} ${cy2-BR}A${BR} ${BR} 0 0 0 ${SX+BR} ${cy2}L${QX-5} ${cy2}`});
+   P.deco.push(`<circle cx="${QX}" cy="${cy2}" r="5" fill="var(--panel)" stroke="${b.x?"var(--goneline)":"var(--brline)"}"/>`);
+   ry+=rowH(b)});
+  (i===st.length-1?(s.ends||[]).filter(e=>e.side==="d"):[]).forEach(e=>{stub(e,y+13,ry+20,i,ry+6);ry+=36});
+  cur=dns.length||capH?ry+6:top+hb+((i<st.length-1&&st[i+1].x)?0:0);
+ });
+ (st.ends||[]).forEach(e=>{const yb=P.y[e.b];P.stems.push({par:true,d:parStart(P,e)+`L${e.px} ${yb-BR}A${BR} ${BR} 0 0 1 ${e.px-BR} ${yb}L${T} ${yb}`})});
+ st.forEach((s,i)=>(s.pp||[]).forEach(px=>P.deco.push(`<circle cx="${px}" cy="${P.y[i]}" r="4" fill="var(--panel)" stroke="var(--brline)" stroke-width="2"/>`)));
+ P.H=cur+24;
+ return P;
+}
+function svgOf(){
+ const P=layout(),o=[],m=[];
+ for(let i=0;i<P.st.length-1;i++)o.push(`<path d="M${T} ${P.y[i]}V${P.y[i+1]}" stroke="var(--main)" stroke-width="9"/>`);
+ P.st.forEach((s,i)=>m.push(`<circle cx="${T}" cy="${P.y[i]}" r="8.5" fill="var(--panel)" stroke="var(--main)" stroke-width="3.5"/>`));
+ const stem=p=>`<path d="${p.d}" stroke="${p.x?"var(--goneline)":"var(--brline)"}"${p.par?' stroke-opacity=".75"':""}/>`;
+ return `<svg viewBox="0 0 ${W} ${P.H}" role="img" aria-label="${esc(L().name)} 세로 노선도"><g fill="none" stroke-width="2.5" stroke-linejoin="round">${P.stems.map(stem).join("")}</g><g fill="none" stroke-width="2.5">${P.deco.join("")}</g><g fill="none">${o.join("")}</g><g>${m.join("")}</g>${P.badge.join("")}${P.txt.join("")}</svg>`;
+}
+function renderEnds(){
+ const k=D.findIndex(l=>l.key==="yurakucho"),src=D[k],keep_=S.line;
+ const cut={...src,st:src.st.slice(0,5),pars:src.pars.map(p=>({...p,runs:p.runs.filter(r=>r.b<5)})).filter(p=>p.runs.length)};
+ D.push(cut);S.line=D.length-1;S.plan="c";
+ const html=[[1,"1 지금처럼","두 점선이 곧게 위로"],[2,"2 둘 다 꺾기","점선이 각자 글씨로 꺾여 들어감"],[3,"3 병주 상대만 꺾기","직통은 곧게, 병주 상대만 꺾음"],[4,"4 직통 글씨만 왼쪽으로","직통 줄 글씨를 줄기 바로 옆에"]].map(([v,t,d])=>{S.endStyle=v;return `<section class="pane" aria-label="${esc(t)}"><div class="ph"><b>${esc(t)}</b><span>${esc(d)}</span></div><div class="ow">${svgOf()}</div></section>`}).join("");
+ D.pop();S.line=keep_;S.endStyle=1;
+ $("#ends4").innerHTML=html;
+}
+function render(){
+ $("#tabs").innerHTML=D.map((l,i)=>`<button aria-pressed="${i===S.line}" data-i="${i}">${esc(l.name)}<small>${esc(l.ja)}</small></button>`).join("");
+ const l=L();
+ const panes=[["a","A 지금","환승 캡슐과 끝 이어짐"],["b","B 나란한 선","상대 노선을 줄기 옆에 함께 그림"],...(l.beyond?[["c","B′ 끝 이어짐으로","끝 너머에서 오는 병주 상대를 끝 이어짐 줄에서 그대로 내려 그림"]]:[])].map(([p,t,d])=>{S.plan=p;return `<section class="pane" aria-label="${esc(t)}"><div class="ph"><b>${esc(t)}</b><span>${esc(d)}</span></div><div class="ow">${svgOf()}</div></section>`}).join("");
+ $("#view").innerHTML=`<div class="case"><div class="cap"><b>${esc(l.name)}</b><span class="kind">실제 DB</span><span>${esc(l.what)}</span></div><div class="cmp" style="grid-template-columns:repeat(${l.beyond?3:2},minmax(0,1fr))">${panes}</div></div>`;
+}
+$("#tabs").onclick=e=>{const b=e.target.closest("button");if(b){S.line=+b.dataset.i;render()}};
+renderEnds();render();
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>{renderEnds();render()});
+</script>

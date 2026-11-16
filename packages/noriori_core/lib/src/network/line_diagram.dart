@@ -18,10 +18,14 @@ final class DiagramStop {
     required this.gone,
     required this.others,
     this.closeYear,
+    this.kmEstimated = false,
   });
 
   final String node;
   final double? kmCum;
+
+  /// km가 추정값이라 화면은 `? km` (DESIGN §4.5).
+  final bool kmEstimated;
 
   /// 오늘은 없는 역.
   final bool gone;
@@ -94,8 +98,6 @@ final class LineDiagram {
   final Score selfScore;
 }
 
-String _pair(String a, String b) => a.compareTo(b) < 0 ? '$a\u0000$b' : '$b\u0000$a';
-
 /// [hits]는 탄 단위다. 본선이 먼저고 나머지는 팩의 순서다.
 LineDiagram lineDiagram(
   Network network,
@@ -105,67 +107,12 @@ LineDiagram lineDiagram(
   bool carryover = true,
 }) {
   final day = DateSpan.parse(today);
-  final routes = network.routesOfLine(lineId).toList()
-    ..sort((a, b) {
-      final x = network.routes[a]!.role == 'main' ? 0 : 1;
-      final y = network.routes[b]!.role == 'main' ? 0 : 1;
-      return x.compareTo(y);
-    });
+  final routes = network.routesOfLineMainFirst(lineId);
   final seen = <int, NetUnit>{};
   final diagrams = <RouteDiagram>[];
   for (final routeId in routes) {
-    final byPair = <String, List<String>>{};
-    for (final hop in network.hops(routeId)) {
-      (byPair[_pair(hop.a, hop.b)] ??= []).add(hop.edge);
-    }
-    // 공식 구간이 숨은 분기점에서 시작하는 짧은 노선은 연장 역까지 넣어야 그릴 수 있다
-    final own = network.stops(routeId);
-    final all = own.where((stop) => network.isShown(stop.node)).length < 2 ? network.picks(routeId) : own;
-    final stops = <DiagramStop>[];
+    final (stops, cells) = _stopsAndCells(network, lineId, routeId, day);
     final routeUnits = <int, NetUnit>{};
-    // 칸마다 지나는 구간. 표시 역 앞의 숨은 노드까지 한 칸에 든다
-    final cells = <List<String>>[];
-    final cellOf = <String, int>{};
-    var pending = <String>[];
-    for (final (at, stop) in all.indexed) {
-      if (at > 0) {
-        for (final edge in byPair[_pair(all[at - 1].node, stop.node)] ?? const <String>[]) {
-          if (!pending.contains(edge)) pending.add(edge);
-        }
-      }
-      if (network.isShown(stop.node)) {
-        if (stops.isNotEmpty) {
-          cells.add(pending);
-          pending = [];
-        }
-        stops.add(DiagramStop(
-          node: stop.node,
-          kmCum: stop.kmCum,
-          gone: const {PeriodState.after, PeriodState.before}.contains(stateOfPeriod(day, stop.period)),
-          closeYear: stop.period.toHi == null || stop.period.toHi == DateSpan.maxDate
-              ? null
-              : yearLabel(stop.period.toLo, stop.period.toHi),
-          others: [
-            for (final other in network.routesAt(stop.node))
-              if (other != routeId && network.routes[other]!.lineId == lineId) other,
-          ],
-        ));
-      }
-      cellOf.putIfAbsent(stop.node, () => stops.isEmpty ? 0 : stops.length - 1);
-    }
-    // 첫 역 앞의 숨은 분기점은 첫 칸에, 끝 역 뒤의 것은 끝 칸에 든다
-    if (cells.isNotEmpty) cells.last.addAll(pending.where((e) => !cells.last.contains(e)));
-    // 이웃하지 않은 역을 잇는 옛 선로는 그 역들 사이의 칸마다 든다
-    final placed = {for (final cell in cells) ...cell};
-    for (final hop in network.hops(routeId)) {
-      if (placed.contains(hop.edge)) continue;
-      final a = cellOf[hop.a];
-      final b = cellOf[hop.b];
-      if (a == null || b == null) continue;
-      for (var at = a < b ? a : b; at < (a < b ? b : a) && at < cells.length; at++) {
-        cells[at].add(hop.edge);
-      }
-    }
     final sections = <DiagramSection>[];
     final heldUnits = <int, NetUnit>{};
     for (final (at, cell) in cells.indexed) {
@@ -227,6 +174,69 @@ LineDiagram lineDiagram(
     selfScore: Score(numMeters: done, denMeters: total, numUnits: doneUnits, denUnits: seen.length),
   );
 }
+
+/// 계통 하나의 표시 역과 칸. 칸마다 지나는 구간이고 표시 역 앞의 숨은 노드까지 한 칸에 든다.
+(List<DiagramStop>, List<List<String>>) _stopsAndCells(
+  Network network,
+  String lineId,
+  String routeId,
+  DateSpan day,
+) {
+  // 공식 구간이 숨은 분기점에서 시작하는 짧은 노선은 연장 역까지 넣어야 그릴 수 있다
+  // 그 계통에서 서지 않는 역(연장 칸도 아닌 통과 노드)은 그리지 않는다. 기록 화면(selector)과 같은 규칙이다
+  // (筑豊電鉄 계통이 지나기만 하는 黒崎車庫前: 北九州線 시절 1999 폐지, 7회차 2026-11-14)
+  bool shown(NetStop stop) => network.isShown(stop.node) && (stop.isStop || stop.isExtension);
+  final own = network.stops(routeId);
+  final all = own.where(shown).length < 2 ? network.picks(routeId) : own;
+  final stops = <DiagramStop>[];
+  final cells = <List<String>>[];
+  final cellOf = <String, int>{};
+  var pending = <String>[];
+  for (final (at, stop) in all.indexed) {
+    if (at > 0) {
+      for (final edge in network.edgesBetween(routeId, all[at - 1].node, stop.node)) {
+        if (!pending.contains(edge)) pending.add(edge);
+      }
+    }
+    if (shown(stop)) {
+      if (stops.isNotEmpty) {
+        cells.add(pending);
+        pending = [];
+      }
+      stops.add(_diagramStop(network, lineId, routeId, stop, day));
+    }
+    cellOf.putIfAbsent(stop.node, () => stops.isEmpty ? 0 : stops.length - 1);
+  }
+  // 첫 역 앞의 숨은 분기점은 첫 칸에, 끝 역 뒤의 것은 끝 칸에 든다
+  if (cells.isNotEmpty) cells.last.addAll(pending.where((e) => !cells.last.contains(e)));
+  // 이웃하지 않은 역을 잇는 옛 선로는 그 역들 사이의 칸마다 든다
+  final placed = {for (final cell in cells) ...cell};
+  for (final hop in network.hops(routeId)) {
+    if (placed.contains(hop.edge)) continue;
+    final a = cellOf[hop.a];
+    final b = cellOf[hop.b];
+    if (a == null || b == null) continue;
+    for (var at = a < b ? a : b; at < (a < b ? b : a) && at < cells.length; at++) {
+      cells[at].add(hop.edge);
+    }
+  }
+  return (stops, cells);
+}
+
+DiagramStop _diagramStop(Network network, String lineId, String routeId, NetStop stop, DateSpan day) =>
+    DiagramStop(
+      node: stop.node,
+      kmCum: stop.kmCum,
+      kmEstimated: stop.kmEstimated,
+      gone: const {PeriodState.after, PeriodState.before}.contains(stateOfPeriod(day, stop.period)),
+      closeYear: stop.period.toHi == null || stop.period.toHi == DateSpan.maxDate
+          ? null
+          : yearLabel(stop.period.toLo, stop.period.toHi),
+      others: [
+        for (final other in network.routesAt(stop.node))
+          if (other != routeId && network.routes[other]!.lineId == lineId) other,
+      ],
+    );
 
 /// 노선 상세 위의 가로 띠. 본선부터 잇고 같은 구간은 한 번만 센다.
 LineStrip diagramStrip(LineDiagram diagram) {

@@ -1,0 +1,11 @@
+# 5회차 구조 패치(2026-11-13)
+# 노드 합치기(hand_tables SAME_NODE 足尾線 神土=神戸) 뒤 생성기 규칙 이름이 끝 역의 지금 이름(神戸)을 따라가 옛 계통 이름이 바뀌는 것을 막음
+- {"patch": "replace", "entity_type": "route", "id": "r_ashio_line_godo_ashio_sori", "lang": "ja", "text": "神土～沢入", "source": "hand", "why": "国鉄 足尾線 옛 선로 계통(1912~1973-06-27)의 끝 역 이름은 그때 神土(ごうど, 1966 『停車場一覧』 NDL 1873236 koma 79). 노드를 n_godo_watarase_keikoku(지금 神戸)로 합친 뒤에도 계통 이름은 그때 이름"}
+# 長崎 蛍茶屋支線 浜町アーケード: 西浜町 노드의 蛍茶屋支線 쪽 승강장이 2018-08-01 독립·개칭(駅番号 36). 노선 한정 기간 이름
+- {"patch": "add", "entity_type": "node", "id": "n_nishihamanomachi", "lang": "ja", "text": "浜町アーケード", "kana": "はまのまちあーけーど", "source": "hand", "line": "l_hotarujaya_branch_line", "valid_from": "2018-08-01", "why": "乗りものニュース 2018-09-16 「長崎の路面電車、13停留場を一挙改称のワケ」(https://trafficnews.jp/post/81465, 「「西浜町(アーケード入口)」停留場は…後者が「浜町アーケード」に改称」)와 위키 浜町アーケード停留場 rev109340638(「2018年8月1日：アーケード入口側の乗り場を浜町アーケード停留場として独立・改称」, よみがな はまのまちアーケード) 독립 중간 둘 (4회차 근거 조사 2026-11-13; r4out kyushu_1-025)"}
+- {"patch": "add", "entity_type": "node", "id": "n_nishihamanomachi", "lang": "ko", "text": "하마노마치아케이드", "source": "namuwiki", "checked": "2026-11-13", "line": "l_hotarujaya_branch_line", "valid_from": "2018-08-01", "why": "나무위키 표기(data/imports/namuwiki/names_ko.json 「浜町アーケード|はまのまちあーけーど」)"}
+- {"patch": "add", "entity_type": "node", "id": "n_nishihamanomachi", "lang": "en", "text": "Hamanomachiakedo", "source": "rule", "line": "l_hotarujaya_branch_line", "valid_from": "2018-08-01", "why": "역 이름 영어 규칙(en_rules.station_reading はまのまちあーけーど). 공식 영문 표기 근거를 찾으면 바꿈"}
+# 高千穂線 日之影温泉: 노리츠부시 표 오기 「日之影」(그런 역명 시기 없음: 1939-10-11 日ノ影 → 1995-01-01 日之影温泉, 1966 『停車場一覧』 日ノ影). 기간 없는 노선 한정 행이 1939~1995 日ノ影을 가려 뺀다. 표기는 가져오기용 별칭으로 남김(source_patch/aliases/r5struct_2026-11-13.yaml)
+- {"patch": "drop", "entity_type": "node", "id": "n_hinokage_onsen", "lang": "ja", "text": "日之影", "source": "noritsubushi", "line": "l_takachiho_line", "kana": "ひのかげ", "why": "3회차 감사 K14 「日之影/日ノ影」·회귀 kyushu_1-047 (r3out/audit, 2회차 근거 1966 一覧 日ノ影)"}
+- {"patch": "drop", "entity_type": "node", "id": "n_hinokage_onsen", "lang": "ko", "text": "히노카게", "source": "rule", "line": "l_takachiho_line", "checked": "2026-11-13", "why": "위 행의 한국어"}
+- {"patch": "drop", "entity_type": "node", "id": "n_hinokage_onsen", "lang": "en", "text": "Hinokage", "source": "rule", "line": "l_takachiho_line", "why": "위 행의 영어"}

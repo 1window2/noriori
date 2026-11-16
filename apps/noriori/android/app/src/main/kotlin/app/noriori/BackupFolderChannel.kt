@@ -47,6 +47,8 @@ class BackupFolderChannel(private val activity: Activity, messenger: BinaryMesse
                 tree?.let { mapOf("name" to label(it), "granted" to granted(it)) },
             )
             "pick" -> {
+                // 선택 창이 이미 떠 있으면 앞 요청을 잃지 않게 새 요청을 취소로 답한다
+                if (pending != null) return result.success(null)
                 pending = result
                 activity.startActivityForResult(Intent(Intent.ACTION_OPEN_DOCUMENT_TREE), PICK_REQUEST)
             }

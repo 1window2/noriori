@@ -29,6 +29,8 @@ class FilePickChannel(private val activity: Activity, messenger: BinaryMessenger
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
         if (call.method != "pick") return result.notImplemented()
+        // 선택 창이 이미 떠 있으면 앞 요청을 잃지 않게 새 요청을 취소로 답한다
+        if (pending != null) return result.success(null)
         pending = result
         val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
             .addCategory(Intent.CATEGORY_OPENABLE)

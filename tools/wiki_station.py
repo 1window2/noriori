@@ -34,8 +34,9 @@ def blocks(t):
         o.append(t[i:j])
     return o
 def strip_tmpl(s):
-    """각주 틀은 안쪽 날짜가 인포박스 값으로 읽히므로 괄호 짝까지 지운다"""
-    for m in list(re.finditer(r'\{\{\s*(?:Refnest|refnest|Efn|efn|Efn2|efn2|注釈|R|Sfn|sfn|Refn|refn|要出典|要出典範囲|Cite[^|}]*)\b',s))[::-1]:
+    """각주 틀과 정비 틀은 안쪽 날짜가 인포박스 값으로 읽히므로 괄호 짝까지 지운다.
+    정비 틀의 date=는 태그를 단 날이다 (綾ノ町 開業年月日 '時期不詳{{いつ|date=2024年1月}}')"""
+    for m in list(re.finditer(r'\{\{\s*(?:Refnest|refnest|Efn|efn|Efn2|efn2|注釈|R|Sfn|sfn|Refn|refn|要出典|要出典範囲|いつ|要検証|要検証範囲|疑問点|要説明|誰|どこ|独自研究|独自研究範囲|Cite[^|}]*)\s*[|}]',s))[::-1]:
         i=m.start();d=0;j=i
         while j<len(s)-1:
             if s[j:j+2]=='{{':d+=1;j+=2;continue
@@ -45,7 +46,7 @@ def strip_tmpl(s):
                 continue
             j+=1
         s=s[:i]+s[j:]
-    return s
+    return re.sub(r'\|\s*date\s*=\s*\d{4}年\d{1,2}月','',s)
 def clean(s):
     s=re.sub(r'<ref[^>]*?/>','',s);s=re.sub(r'<ref.*?</ref>','',s,flags=re.S);s=re.sub(r'<!--.*?-->','',s,flags=re.S)
     s=strip_tmpl(s)

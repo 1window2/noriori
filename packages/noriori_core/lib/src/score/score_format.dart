@@ -19,6 +19,11 @@ String kmLabel(int meters) {
   return '${countLabel(tenths ~/ 10)}.${tenths % 10}';
 }
 
+/// 추정 km 글자. 営業キロ를 몰라 추정한 값은 숫자 뒤에 `?`를 붙인다 (54.1? km, DESIGN §4.5).
+///
+/// 확실하지 않은 것은 숫자이고 단위는 아니므로 물음표는 숫자에 붙인다.
+String kmLabelOf(int meters, {required bool estimated}) => estimated ? '${kmLabel(meters)}?' : kmLabel(meters);
+
 /// 완주율 글자. 내림이라 다 타기 전에는 100%가 아니다.
 ///
 /// 탄 구간이 있으면 0%로 보이지 않게 소수를 늘린다. 막 시작한 사람에게 0.0%는 틀린 말이다.

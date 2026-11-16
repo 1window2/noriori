@@ -1,9 +1,9 @@
 #!/bin/bash
-# 앱 아이콘을 apps/noriori/icon/의 SVG에서 만든다. 쓰는 법: gen_icons.sh [a3|b5]. rsvg-convert가 필요하다 (brew install librsvg)
+# 앱 아이콘을 apps/noriori/icon/의 SVG에서 만든다. 쓰는 법: gen_icons.sh [front]. rsvg-convert가 필요하다 (brew install librsvg)
 # Android는 적응형 아이콘(배경색 + 앞그림)과 옛 기기용 PNG, iOS는 AppIcon 세트의 모든 크기를 다시 쓴다
 set -eo pipefail
 cd "$(dirname "$0")/.."
-name=${1:-a3}
+name=${1:-front}
 src=apps/noriori/icon
 [ -f "$src/$name.svg" ] || { echo "$src/$name.svg가 없습니다"; exit 1; }
 bg=$(cat "$src/$name.background")

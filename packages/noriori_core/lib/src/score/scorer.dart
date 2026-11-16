@@ -34,12 +34,16 @@ final class Score {
     required this.denMeters,
     required this.numUnits,
     required this.denUnits,
+    this.undecidedUnits = 0,
   });
 
   final int numMeters;
   final int denMeters;
   final int numUnits;
   final int denUnits;
+
+  /// 특정 연도에서 날짜가 애매해 분모·분자에서 뺀 단위 수 (DESIGN §5.4 판정 불가).
+  final int undecidedUnits;
 
   /// 0.1% 단위. 내림이라 99.95%가 100.0%로 보이지 않고, 전 구간을 탔을 때만 1000이다.
   int get permille => denMeters == 0 ? 0 : numMeters * 1000 ~/ denMeters;
@@ -54,6 +58,7 @@ final class Score {
 }
 
 /// 판정은 여기 하나다. SQL은 탄 단위별 최소 `effective_hi`만 준다 (ARCHITECTURE §3.1).
+/// 특정 연도는 그해에 확실히 영업한 단위만 센다. 애매한 단위는 [unitUndecided]이고 분모·분자 모두에서 빠진다 (DESIGN §5.4).
 bool unitCounts(NetUnit unit, ScoreBasis basis, {required String today}) {
   if (!unit.normal) return false;
   final lo = unit.dateLo;
@@ -62,9 +67,26 @@ bool unitCounts(NetUnit unit, ScoreBasis basis, {required String today}) {
     BasisAllTime() => true,
     BasisCurrent() => (lo == null || lo.compareTo(today) <= 0) &&
         today.compareTo(hi ?? DateSpan.maxDate) < 0,
-    BasisYear(:final year) => (lo ?? '0000-01-01').compareTo('${year + 1}-01-01') < 0 &&
-        (hi ?? DateSpan.maxDate).compareTo('$year-01-01') > 0,
+    BasisYear(:final year) => _mayRunIn(unit, year) && _surelyRanIn(unit, year),
   };
+}
+
+/// 그해와 겹칠 수 있지만 확실하지 않은 분모 단위. 화면에는 `판정 불가 n구간`으로 따로 센다 (DESIGN §5.4).
+bool unitUndecided(NetUnit unit, int year) =>
+    unit.normal && _mayRunIn(unit, year) && !_surelyRanIn(unit, year);
+
+bool _mayRunIn(NetUnit unit, int year) =>
+    (unit.dateLo ?? '0000-01-01').compareTo('${year + 1}-01-01') < 0 &&
+    (unit.dateHi ?? DateSpan.maxDate).compareTo('$year-01-01') > 0;
+
+/// 개업이 늦어도 그해 안이고 폐지가 이르러도 그해 첫날 이후다. 폐지 연도만 아는 구간은 그해에 영업한 것으로 친다.
+bool _surelyRanIn(NetUnit unit, int year) {
+  final fromHi = unit.fromHi;
+  final toLo = unit.toLo;
+  return fromHi != null &&
+      fromHi.compareTo('${year + 1}-01-01') < 0 &&
+      toLo != null &&
+      toLo.compareTo('$year-01-01') >= 0;
 }
 
 /// 연도 기준은 유효 날짜 범위가 그해 말까지 끝나는 기록만 센다.
@@ -85,7 +107,9 @@ Score computeScore({
   var denMeters = 0;
   var numUnits = 0;
   var denUnits = 0;
+  var undecided = 0;
   for (final unit in units) {
+    if (basis case BasisYear(:final year) when unitUndecided(unit, year)) undecided++;
     if (!unitCounts(unit, basis, today: today)) continue;
     denMeters += unit.meters;
     denUnits++;
@@ -99,6 +123,7 @@ Score computeScore({
     denMeters: denMeters,
     numUnits: numUnits,
     denUnits: denUnits,
+    undecidedUnits: undecided,
   );
 }
 

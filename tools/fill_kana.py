@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 이름이 비어 있는 역·노선·회사와 열람 전용 역의 읽기를 모은다
-import json,re,sys,os
+import json,re,sys
 sys.path.insert(0,'tools')
 from lib import *
 g=json.load(open('data/candidates/gen_report.json',encoding='utf-8'))

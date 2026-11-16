@@ -1,8 +1,11 @@
 import 'dart:async';
+import 'dart:io';
 
+import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:noriori_core/noriori_core.dart';
 import 'package:noriori_store/noriori_store.dart';
+import 'package:path_provider/path_provider.dart';
 
 import '../../../app/session_providers.dart';
 import '../platform/channel_backup_folder.dart';
@@ -10,6 +13,13 @@ import '../platform/channel_backup_folder.dart';
 export 'package:noriori_core/noriori_core.dart' show BackupNotice;
 export 'package:noriori_store/noriori_store.dart'
     show BackupCandidate, CandidateState, RestoreMerged, RestoreOutcome, RestoreRefused;
+
+/// Android 클라우드 백업의 한계에 가까운가 (ARCHITECTURE §3.7). iOS는 OS 백업을 보장으로 치지 않아 알리지 않는다
+final osBackupLargeProvider = FutureProvider.autoDispose<bool>((ref) async {
+  if (!Platform.isAndroid) return false;
+  final support = await getApplicationSupportDirectory();
+  return osBackupTooLarge(await StorePaths(Directory(support.path)).osBackupBytes());
+});
 
 const _lastAtKey = 'backup.last_at';
 const _failedKey = 'backup.failed';
@@ -54,10 +64,6 @@ final backupFolderProvider = Provider<ChannelBackupFolder>((ref) => const Channe
 final backupControllerProvider =
     NotifierProvider<BackupController, BackupState>(BackupController.new);
 
-final _lastChangeProvider = StreamProvider<int?>(
-  (ref) => ref.watch(recordQueriesProvider).watchLastChange(),
-);
-
 /// 지도 홈에 띄울 안내. 판단은 core가 한다.
 final backupNoticeProvider = Provider<BackupNotice?>((ref) {
   final state = ref.watch(backupControllerProvider);
@@ -69,7 +75,7 @@ final backupNoticeProvider = Provider<BackupNotice?>((ref) {
     unreadable: state.unreadable.isNotEmpty,
     needsMerge: state.needsMerge.isNotEmpty,
     lastBackupAt: state.lastAt,
-    lastChangeAt: ref.watch(_lastChangeProvider).value,
+    lastChangeAt: ref.watch(lastChangeProvider).value,
     now: ref.read(nowProvider)(),
   );
 });
@@ -87,7 +93,15 @@ final class BackupController extends Notifier<BackupState> {
   SettingStore get _settings => SettingStore(ref.read(sessionProvider).db);
 
   Future<void> _load() async {
-    final folder = await ref.read(backupFolderProvider).status();
+    final FolderStatus? folder;
+    try {
+      folder = await ref.read(backupFolderProvider).status();
+    } on Object catch (e) {
+      // 폴더 상태를 못 읽으면 백업이 도는지 알 수 없다. 지도 홈에 실패로 알린다
+      debugPrint('백업 폴더 상태 실패: $e');
+      state = const BackupState(failed: true);
+      return;
+    }
     final last = await _settings.read(_lastAtKey);
     final failed = await _settings.read(_failedKey);
     state = BackupState(

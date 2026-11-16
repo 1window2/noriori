@@ -27,6 +27,28 @@ python3 -I tools/status.py
 
 `tools/status.py`는 `docs/db-status.md`를 다시 씁니다. 다른 곳에 쓰려면 경로를 인자로 줍니다.
 
+## 컴파일 단계 보정
+
+`imports/`가 없는 체크아웃(CI, 원격 작업 환경)에서도 바로 빌드에 반영되는 보정 표입니다. 생성기(`gen_*`)가 읽는 표는 `source/`를 다시 만들어야 반영됩니다.
+
+| 파일 | 내용 |
+|---|---|
+| `overrides/events_fix.json` | 생성기가 빠뜨리거나 틀리게 쓴 사건을 재생성 전까지 고친다. `match`+`set`은 사건 하나를 찾아 값을 바꾸고, `add`는 사건을 더한다. 재생성으로 `source/`가 맞아져 쓰이지 않게 된 행은 `compile.py` 오류(`events_fix_unused`)라 그때 지운다 |
+| `overrides/edge_dates.json` | 구간 시작일 (`노드|노드` → EDTF) |
+| `overrides/stop_dates.json`, `moved.json`, `extend.json`, `hub_pairs.json`, `hub_not.json`, `junction_side.json` | 역 기간, 역 이전, 숨은 끝 너머, 환승 묶음, 분기 방향 |
+| `overrides/kana.json`, `kana_est.json`, `kana_evidence.json` | 역 읽기(`node:이름` → 가나). `kana.json`은 근거가 있는 읽기, `kana_est.json`은 근거가 모자란 읽기(출처 `estimated`, 한자로 추정했거나 근거가 중간 하나뿐인 조사 값)다. 조사한 읽기의 근거(공식 정거장 목록 쪽, railforum 행 등)는 `kana_evidence.json`에 행마다 남기고, 확정 규칙(높음 하나, 또는 서로 독립인 중간 둘. railforum의 두 목록은 하나로, 현행 지명 읽기는 세지 않음)을 넘은 것만 `confirmed: true`로 `kana.json`에 둔다 |
+| `overrides/one_way.json`, `stop_direction.json` | 한 방향 운행 구간(운행 순서의 역 목록)과 한 방향 정차·하차전용 역(`direction`, `label`, `use`). 기간과 근거(`why`)를 행마다 적는다 (DESIGN §8) |
+| `overrides/stop_status.json` | 仮乗降場·臨時駅이던 기간(`node`, `kind` kari/rinji, `from`, `to`). `line`이 있으면 그 노선에서만 표시한다(없으면 그 기간에 서는 모든 노선) |
+| `overrides/invariant_exceptions.json` | 날짜별 도달성 검사 예외. `provisional: true`는 재생성이나 자료 보강으로 지울 임시 예외 |
+| `overrides/geometry_exceptions.json` | 선형 검사 예외 |
+
+생성기가 읽어 `source/`를 다시 만들어야 반영되는 표 가운데 칸 설명이 필요한 것:
+
+| 파일 | 내용 |
+|---|---|
+| `overrides/line_gauge.json` | 노선(또는 `from_node`–`to_node` 구간)의 궤간·선로 방식 기간(`gauge` mm, `system`, `valid_from`, `valid_to`, `evidence`, `why`). `gen_source.py`가 노선 행의 `gauge`로 넘기고 `compile.py`가 `line_gauge` 표로 내며 선로 이음 판정에 쓴다(궤간이나 방식 묶음이 다르면 분기·끝 이어짐을 내지 않음, 그 역에 걸리는 구간 행이 노선 전체 행보다 앞섬). `system`은 rail·tram·third_rail·agt·monorail·linear·maglev·cable·rubber_guided·guideway_bus·trolley·bus. 없는 노선을 가리키면 생성이 멈춘다 |
+| `overrides/renames_hand.json` | 손 개칭 `노드 → [[옛 이름, 시작, 끝(, 노선)]]`. 4번째 원소가 있으면 그 노선에서만 쓴 기간 이름(노선별 이름 행)이 된다 |
+
 ## 앱에 팩 넣기
 
 ```bash
@@ -85,7 +107,7 @@ python3 -I tools/osm_fetch.py railbed                            # OSM 폐선 �
 1. station_database. 같은 이름의 다른 사업자 역과 좌표가 같은 경우가 많습니다. 다른 지방의 같은 이름 역 좌표가 붙은 노드는 묶음 판정 전에 `overrides/hand_tables.json`의 `POSFIX`로 고칩니다. N05로 넣은 옛 폐선의 역은 station_database에 없거나 N05 역 점에서 1.5km 넘게 떨어지면 N05 역 점을 씁니다.
 2. Wikidata, 또는 앞뒤 역에서 km로 보간한 값 (`interpolated`).
 3. 현행 역이 자기 사업자의 N02 승강장 선분에서 300m 넘게 떨어지면 승강장 가운데. 묶음과 환승 판정이 끝난 뒤에 고칩니다. 거리로 판정하는 값이 교정 때문에 흔들리면 안 되기 때문입니다.
-4. `overrides/node_fix.json`의 `lat`, `lon`. 원천에 좌표가 없는 신호장, 연락선 분기, 옛 역입니다. `pos_src`에 출처, `pos_note`에 근거를 적습니다.
+4. `overrides/node_fix.json`의 `lat`, `lon`. 원천에 좌표가 없는 신호장, 연락선 분기, 옛 역입니다. `pos_src`에 출처, `pos_note`에 근거를 적습니다. 생성기가 만들지 않고 `overrides/source_patch/nodes`로 넣은 노드는 node_fix가 닿지 않으므로 같은 노드의 `source_patch/positions` 행에 좌표·`quality`·`source`를 적습니다(손 판독은 `hand`). node_fix의 `"kana": null`은 다른 이름에서 가져온 틀린 읽기를 지우라는 뜻이고, 그 읽기로 만든 한국어·영어 이름도 지워 일본어 표기 그대로(`ja_as_is`)가 됩니다.
 5. `gen_geometry.py`가 옮긴 값. 보간 좌표와 지금 서지 않는 옛 역은 N02 선로 위 km 지점으로, 역 이전(`overrides/moved.json`)의 옛 역은 이전 전 N02 판의 승강장으로 옮깁니다.
 
 공개 ID는 영어 이름입니다 (ARCHITECTURE §4.2). 새 노선을 넣어 표에 없는 ID가 생기면 `gen_source.py`가 멈춥니다. 그때는 `NORIORI_NEW_IDS=1 bash tools/all.sh`로 내부 키를 그대로 내고, `python3 -I tools/new_ids.py`로 영어 이름 ID를 `imports/id_map.json`에 더한 뒤 `bash tools/all.sh`를 다시 돌립니다. 시드를 동결할 때 `ids.lock`을 만듭니다. 계통별 표 km 대조는 `candidates/n_routes.json`이 있을 때만 `compile.py`가 합니다.

@@ -1,0 +1,2 @@
+# 伊予鉄道 城北線 옛 上一万 (DECISIONS 31번)
+- {"patch": "add", "node": "n_kamiichiman_johoku_old", "lat": 33.84716, "lon": 132.77515, "quality": "approx", "checked": "2026-11-05", "source": "hand"}

@@ -16,8 +16,10 @@ import 'complete_card.dart';
 import 'line_stem.dart';
 import 'ride_ticket.dart';
 import 'session_date.dart';
+import 'session_lines.dart' show askLap;
+import 'session_save_bar.dart' show LapCounter;
 
-/// 운전 계통 입력. 한 줄 노선도에서 고르고 공식 노선별 분해를 보여 준 뒤 저장한다 (DESIGN §8).
+/// 운행 계통 입력. 한 줄 노선도에서 고르고 공식 노선별 분해를 보여 준 뒤 저장한다 (DESIGN §8).
 class ServiceSessionScreen extends ConsumerStatefulWidget {
   const ServiceSessionScreen({super.key, required this.serviceId});
 
@@ -56,22 +58,7 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
       return;
     }
     if (!controller.asksLap(stop)) return controller.tap(stop);
-    final lap = await showDialog<bool>(
-      context: context,
-      builder: (context) => SimpleDialog(
-        title: Text(state.nameOf(stop.node)),
-        children: [
-          SimpleDialogOption(
-            onPressed: () => Navigator.pop(context, false),
-            child: Text(session.clear),
-          ),
-          SimpleDialogOption(
-            onPressed: () => Navigator.pop(context, true),
-            child: Text(session.lap),
-          ),
-        ],
-      ),
-    );
+    final lap = await askLap(context, state.nameOf(stop.node));
     if (lap == null) return;
     if (lap) {
       controller.pickLap();
@@ -151,68 +138,18 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
               itemCount: stops.length,
               itemBuilder: (context, index) {
                 final stop = stops[index];
-                final open = state.open.contains(stop.node);
-                final isFrom = index == state.from?.index;
-                final isTo = index == state.to?.index;
-                final end = isFrom || isTo;
-                final mark = marks.of(network, stop.node);
-                final passing = state.passes(stop.node);
-                final away = state.stopsAway(stop);
-                return InkWell(
+                return _StopRow(
+                  stop: stop,
+                  name: state.nameOf(stop.node),
+                  open: state.open.contains(stop.node),
+                  isFrom: stop.index == state.from?.index,
+                  isTo: stop.index == state.to?.index,
+                  mark: marks.of(network, stop.node),
+                  passing: state.passes(stop.node),
+                  away: state.stopsAway(stop),
+                  above: stem(index - 1),
+                  below: stem(index),
                   onTap: () => _tap(stop),
-                  child: CustomPaint(
-                    painter: LineNodePainter(
-                      above: stem(index - 1),
-                      aboveWidth: 6,
-                      below: stem(index),
-                      belowWidth: 6,
-                      ring: end || passing || mark != StationMark.none
-                          ? tokens.lineRidden
-                          : (open ? tokens.text : tokens.textClosed),
-                      fill: end || mark == StationMark.stepped ? tokens.lineRidden : tokens.surface,
-                    ),
-                    child: ConstrainedBox(
-                      constraints: const BoxConstraints(minHeight: 56),
-                      child: Row(
-                        spacing: 10,
-                        children: [
-                          const SizedBox(width: lineStemColumn - 10),
-                          Expanded(
-                            child: Text(
-                              state.nameOf(stop.node),
-                              style: text.titleMedium?.copyWith(
-                                fontWeight: end ? FontWeight.w700 : FontWeight.w500,
-                                color: open ? tokens.text : tokens.textClosed,
-                              ),
-                            ),
-                          ),
-                          if (end)
-                            Text(
-                              isFrom ? session.from : session.to,
-                              style: text.bodySmall?.copyWith(
-                                color: tokens.lineRidden,
-                                fontWeight: FontWeight.w700,
-                              ),
-                            ),
-                          if (away != null)
-                            Text(
-                              session.away(n: away),
-                              style: text.bodySmall?.copyWith(color: tokens.textMuted),
-                            ),
-                          Padding(
-                            padding: const EdgeInsets.only(right: 16),
-                            child: Text(
-                              (stop.meters / 1000).toStringAsFixed(1),
-                              style: text.bodySmall?.copyWith(
-                                color: open ? tokens.textMuted : tokens.textClosed,
-                                fontFeatures: tabularFigures,
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
                 );
               },
             ),
@@ -247,22 +184,7 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
                           ),
                         ],
                       ),
-                    if (state.isLap)
-                      Row(
-                        children: [
-                          Text(session.laps(n: state.laps), style: text.labelLarge),
-                          IconButton(
-                            tooltip: session.lapLess,
-                            icon: const Icon(Icons.remove),
-                            onPressed: state.laps > 1 ? () => controller.setLaps(state.laps - 1) : null,
-                          ),
-                          IconButton(
-                            tooltip: session.lapMore,
-                            icon: const Icon(Icons.add),
-                            onPressed: () => controller.setLaps(state.laps + 1),
-                          ),
-                        ],
-                      ),
+                    if (state.isLap) LapCounter(laps: state.laps, onChanged: controller.setLaps),
                     if (summary.isNotEmpty)
                       Text(
                         [
@@ -281,6 +203,9 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
                                   to: state.nameOf(to.node),
                                   km: kmLabel(meters),
                                 ),
+                              // 길이 둘 이상이라 저장 뒤 수정 화면에서 고른다
+                              (final from?, final to?, null) when state.legs != null =>
+                                '${state.nameOf(from.node)} → ${state.nameOf(to.node)}',
                               _ => session.noPath,
                             },
                             style: text.labelLarge,
@@ -300,6 +225,103 @@ class _ServiceSessionScreenState extends ConsumerState<ServiceSessionScreen> wit
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+/// 계통의 역 한 줄. 누르면 출발역이나 도착역이 된다.
+class _StopRow extends StatelessWidget {
+  const _StopRow({
+    required this.stop,
+    required this.name,
+    required this.open,
+    required this.isFrom,
+    required this.isTo,
+    required this.mark,
+    required this.passing,
+    required this.away,
+    required this.above,
+    required this.below,
+    required this.onTap,
+  });
+
+  final ServiceStop stop;
+  final String name;
+
+  /// 그날 영업하는 역이다.
+  final bool open;
+  final bool isFrom;
+  final bool isTo;
+  final StationMark mark;
+
+  /// 고른 구간이 지나는 역이다.
+  final bool passing;
+  final int? away;
+  final Color? above;
+  final Color? below;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final session = context.t.session;
+    final tokens = context.tokens;
+    final text = Theme.of(context).textTheme;
+    final end = isFrom || isTo;
+    return InkWell(
+      onTap: onTap,
+      child: CustomPaint(
+        painter: LineNodePainter(
+          above: above,
+          aboveWidth: 6,
+          below: below,
+          belowWidth: 6,
+          ring: end || passing || mark != StationMark.none
+              ? tokens.lineRidden
+              : (open ? tokens.text : tokens.textClosed),
+          fill: end || mark == StationMark.stepped ? tokens.lineRidden : tokens.surface,
+        ),
+        child: ConstrainedBox(
+          constraints: const BoxConstraints(minHeight: 56),
+          child: Row(
+            spacing: 10,
+            children: [
+              const SizedBox(width: lineStemColumn - 10),
+              Expanded(
+                child: Text(
+                  name,
+                  style: text.titleMedium?.copyWith(
+                    fontWeight: end ? FontWeight.w700 : FontWeight.w500,
+                    color: open ? tokens.text : tokens.textClosed,
+                  ),
+                ),
+              ),
+              if (end)
+                Text(
+                  isFrom ? session.from : session.to,
+                  style: text.bodySmall?.copyWith(
+                    color: tokens.lineRidden,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
+              if (away case final count?)
+                Text(
+                  session.away(n: count),
+                  style: text.bodySmall?.copyWith(color: tokens.textMuted),
+                ),
+              Padding(
+                padding: const EdgeInsets.only(right: 16),
+                child: Text(
+                  (stop.meters / 1000).toStringAsFixed(1),
+                  style: text.bodySmall?.copyWith(
+                    color: open ? tokens.textMuted : tokens.textClosed,
+                    fontFeatures: tabularFigures,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }

@@ -115,9 +115,15 @@ class _SessionDateDialogState extends State<SessionDateDialog> {
               errorText: _bad ? t.dateBad : null,
             ),
           ),
-          Align(
-            alignment: Alignment.centerLeft,
-            child: TextButton(onPressed: _pick, child: Text(t.datePick)),
+          // 오늘은 누르면 바로 적용한다 (사용자 요청 2026-11-08)
+          Row(
+            children: [
+              TextButton(onPressed: _pick, child: Text(t.datePick)),
+              TextButton(
+                onPressed: () => Navigator.pop(context, DateAnswer(widget.today)),
+                child: Text(t.dateToday),
+              ),
+            ],
           ),
         ],
       ),

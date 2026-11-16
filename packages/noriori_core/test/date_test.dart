@@ -17,13 +17,24 @@ void main() {
       expect(DateSpan.parse('201X-XX-XX').isDay, isFalse);
     });
 
+    test('100년과 범위 [A..B]', () {
+      final century = DateSpan.parse('19XX-XX-XX');
+      expect((century.lo, century.hi), ('1900-01-01', '1999-12-31'));
+      final range = DateSpan.parse('[1950-XX-XX..1965-04-XX]');
+      expect((range.lo, range.hi), ('1950-01-01', '1965-04-30'));
+      expect(DateSpan.parse('[..1950-12-31]').lo, '0000-01-01');
+      expect(DateSpan.parse('[1960-03-XX..]').hi, DateSpan.maxDate);
+      expect(() => DateSpan.parse('[1970-XX-XX..1960-XX-XX]'), throwsFormatException);
+    });
+
     test('ongoing은 끝이 없다', () {
       expect(DateSpan.parse('ongoing').hi, DateSpan.maxDate);
     });
 
     test('해석할 수 없는 값은 거부한다', () {
       expect(() => DateSpan.parse('1985/05/01'), throwsFormatException);
-      expect(() => DateSpan.parse('19XX-XX-XX'), throwsFormatException);
+      expect(() => DateSpan.parse('XXXX-XX-XX'), throwsFormatException);
+      expect(() => DateSpan.parse('19X5-XX-XX'), throwsFormatException);
     });
   });
 
@@ -109,6 +120,9 @@ void main() {
     expect(yearLabel('1970-01-01', '1979-12-31'), '197?');
     expect(yearLabel('1970-01-01', '1985-12-31'), '?');
     expect(yearLabel(null, null), '?');
+    // 다음 해 1월 1일에서 끝나는 범위는 그 해다 (DESIGN §5.4, 10회차 G1 kanto_2-014 武田)
+    expect(yearLabel('1949-09-01', '1950-01-01'), '1949');
+    expect(yearLabel('1949-09-01', '1950-01-02'), '?');
   });
 
   test('숫자가 아닌 입력과 없는 달은 형식 오류다', () {

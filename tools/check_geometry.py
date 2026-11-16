@@ -13,6 +13,9 @@ TRACK=.3       # 역과 자기 구간 선로의 거리 (km)
 SPIKE=.05      # 되돌아가는 꺾임으로 볼 다리 길이 (km)
 m=sqlite3.connect(os.path.join(BUILD,'master.sqlite'))
 cur={r[0] for r in m.execute("select distinct edge_id from edge_attr where valid_to='ongoing'")}
+# 나뉜 역(station_split)의 같은 km 점 칸은 컴파일이 두 노드 좌표 직선으로 만드는 0 km 칸이라 원본(data/source)에 없다 (11회차 S1)
+if m.execute("select 1 from sqlite_master where type='table' and name='station_split'").fetchone():
+    cur-={r[0] for r in m.execute("select edge_id from station_split where edge_id is not null")}
 edges={e['id']:e for e in load('edges')}
 km={k['edge']:k['km'] for k in load('km')}
 geo={g['edge']:g for g in load('geometry')}
@@ -36,6 +39,7 @@ def name(e):
     x=edges[e];return f"{ln[x['seed_line']]} {ja.get(x['a'],x['a'])}~{ja.get(x['b'],x['b'])}"
 F=collections.defaultdict(list)    # 검사 이름 → (대상, 설명)
 adj=collections.defaultdict(list)
+LEN={};RAT=[]
 for e in sorted(cur):
     x=edges[e];k=km.get(e) or 0
     for n in (x['a'],x['b']):
@@ -47,7 +51,9 @@ for e in sorted(cur):
     if '新幹線' in ln[x['seed_line']]:
         A,B=pos.get(x['a']),pos.get(x['b'])
         if A and B and l>1.4*d(A,B)+1:F['ratio'].append((e,f"{name(e)} 신칸센 직선 {d(A,B):.2f} 길이 {l:.2f}"))
-    elif k and not(.8*k-.2<=l<=1.2*k+.2):F['ratio'].append((e,f"{name(e)} 영업 {k} 길이 {l:.2f} {g['source']}"))
+    else:
+        LEN[e]=l
+        if k and not(.8*k-.2<=l<=1.2*k+.2):RAT.append((e,f"{name(e)} 영업 {k} 길이 {l:.2f} {g['source']}"))
     pl=g.get('plat','')
     for n,p,t in ((x['a'],c[0],'a'),(x['b'],c[-1],'b')):
         if n in pos and d(pos[n],p)>(PLAT if t in pl else END):F['end'].append((e,f"{name(e)} {ja.get(n,n)} 끝점 {d(pos[n],p):.2f}km"))
@@ -57,6 +63,28 @@ for e in sorted(cur):
         if d(a,b)>SPIKE and d(b,q)>SPIKE:
             dot=u[0]*v[0]*cs*cs+u[1]*v[1];nn=math.hypot(u[0]*cs,u[1])*math.hypot(v[0]*cs,v[1])
             if nn and dot/nn>.5:F['spike'].append((e,f"{name(e)} 되돌아감 ({b[1]:.5f},{b[0]:.5f}) {g['source']}"))
+# 신호장·분기점·화물역은 승객이 타고 내리는 역이 아니다. 그 km는 장내 중심 같은 명목값이고, 그 노드에서 나눈 구간에는
+# 이웃 역 쪽 km 어긋남(名古屋 이전 뒤에도 그대로 둔 km 등)이 한쪽에 몰린다. 그런 노드에서 같은 노선의 두 구간만 만나면
+# 둘을 이은 영업km 합과 선형 길이 합으로 다시 재고, 이어서도 벗어날 때만 실패로 둔다
+NK={n_['id']:n_.get('kind') for n_ in load('nodes')}
+UF={}
+def root(e):
+    while UF.get(e,e)!=e:e=UF[e]
+    return e
+for n_,es_ in adj.items():
+    if NK.get(n_) not in ('signal','junction','freight'):continue
+    bl=collections.defaultdict(list)
+    for e_ in es_:bl[edges[e_]['seed_line']].append(e_)
+    for v_ in bl.values():
+        if len(v_)==2 and all(x in LEN for x in v_):UF[root(v_[0])]=root(v_[1])
+GRP=collections.defaultdict(list)
+for e_ in LEN:GRP[root(e_)].append(e_)
+for e_,s_ in RAT:
+    g_=GRP[root(e_)]
+    if len(g_)>1:
+        K_=sum(km.get(x) or 0 for x in g_);L_=sum(LEN[x] for x in g_)
+        if .8*K_-.2<=L_<=1.2*K_+.2:F['ratio_joined'].append((e_,s_));continue
+    F['ratio'].append((e_,s_))
 def endof(e,n):
     c=geo[e]['coords'];return c[0] if edges[e]['a']==n else c[-1]
 def isplat(e,n):return ('a' if edges[e]['a']==n else 'b') in geo[e].get('plat','')
@@ -104,7 +132,7 @@ closed=[e for e in edges if e not in cur]
 ck=sum(km.get(e) or 0 for e in closed)
 gk=sum(km.get(e) or 0 for e in closed if e in geo)
 src=collections.Counter(g['source'] for g in geo.values())
-rep=dict(current=len(cur),found=dict(tot),failed=len(fails),exceptions=len(exc),closed=dict(edges=len(closed),km=round(ck,1),with_geometry=sum(1 for e in closed if e in geo),km_with_geometry=round(gk,1)),source=dict(src),fails=[list(x) for x in fails])
+rep=dict(current=len(cur),found=dict(tot),ratio_joined=[list(x) for x in F['ratio_joined']],failed=len(fails),exceptions=len(exc),closed=dict(edges=len(closed),km=round(ck,1),with_geometry=sum(1 for e in closed if e in geo),km_with_geometry=round(gk,1)),source=dict(src),fails=[list(x) for x in fails])
 json.dump(rep,open(os.path.join(BUILD,'check_geometry.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 print('선형 검사',{k:v for k,v in rep.items() if k!='fails'})
 for c,t,s in fails[:int(sys.argv[1]) if len(sys.argv)>1 else 40]:print(' ',c,t,s)

@@ -1,0 +1,806 @@
+{
+ "generated": "2026-11-05",
+ "n05": "N05-24",
+ "edges": [
+  {
+   "edge": "e_010574",
+   "line": "会津線",
+   "a": "芦ノ牧温泉",
+   "b": "舟子",
+   "db_km": 12.2,
+   "cls": "A_km_wrong",
+   "verdict": "fixable_n05_with_km_fix",
+   "confidence": "high",
+   "cause": "route km_estimated: whole 上三寄–湯野上 12.2 assigned to first edge; e_010575/e_010576 are 0.0",
+   "corrected_km": {
+    "e_010574": 6.0,
+    "e_010575": 1.9,
+    "e_010576": 4.3
+   },
+   "positions": [
+    {
+     "node": "n_funako",
+     "lat": 37.346761,
+     "lon": 139.917305,
+     "basis": "N05 舟子 1968–1979 point (old site); current source pos is 1980–86 new site"
+    },
+    {
+     "node": "n_kuwabara",
+     "lat": 37.333365,
+     "lon": 139.917556,
+     "basis": "N05 桑原 1950–1979 point (old site)"
+    }
+   ],
+   "n05": {
+    "feature": 320,
+    "years": "1953-1979",
+    "chainage": {
+     "上三寄": 46.712,
+     "舟子": 40.77,
+     "桑原": 38.916,
+     "湯野上": 34.611
+    },
+    "paths": [
+     5.95,
+     1.85,
+     4.3
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=108995651 (会津鉄道会津線: 5,833 m→5,825 m付替, 芦ノ牧温泉10.5/湯野上温泉22.7)",
+    "https://ja.wikipedia.org/w/index.php?oldid=109700527 (大川ダム公園駅: 舟子仮乗降場1968開設, 1980移設)",
+    "https://ja.wikipedia.org/w/index.php?oldid=109700550 (芦ノ牧温泉南駅: 桑原駅1980移転)"
+   ]
+  },
+  {
+   "edge": "e_007547",
+   "line": "大阪線",
+   "a": "西青山(新)",
+   "b": "西青山(旧)",
+   "db_km": 1.1,
+   "cls": "B_wrong_track",
+   "verdict": "fixable_n05_old_track_only",
+   "confidence": "high",
+   "cause": "1975–9999 new-line feature mixed into graph (y1=1975)",
+   "corrected_km": {
+    "e_007547": "1.1 ok (wiki 西に1.1km移転); along old track 1.38"
+   },
+   "positions": [
+    {
+     "node": "n_nishi_aoyama_osaka",
+     "lat": 34.671448,
+     "lon": 136.250983,
+     "basis": "N05 西青山 1950–1974 (already in build)"
+    }
+   ],
+   "n05": {
+    "features": [
+     1579,
+     1573
+    ],
+    "years": "1961-1974",
+    "paths": [
+     1.38
+    ]
+   },
+   "fix": "use features with N05_005e < closing year",
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=109687422 (西青山駅: 駅が西に1.1キロメートル移転)",
+    "https://ja.wikipedia.org/w/index.php?oldid=111606116 (近鉄大阪線: 実キロ約1.3km短縮, 93.738→95.054)"
+   ]
+  },
+  {
+   "edge": "e_007549",
+   "line": "大阪線",
+   "a": "東青山(旧)",
+   "b": "東青山(新)",
+   "db_km": 3.8,
+   "cls": "B_wrong_track",
+   "verdict": "fixable_n05_old_track_only",
+   "confidence": "high",
+   "cause": "new 東青山 snapped to new-line track; shortest path detours to junction and back (8.65)",
+   "corrected_km": {
+    "e_007549": "3.8 ok (N05 old track 3.80; wiki 2.7 km is straight-line)"
+   },
+   "positions": [
+    {
+     "node": "n_higashi_aoyama_osaka",
+     "lat": 34.67573,
+     "lon": 136.291318,
+     "basis": "N05 東青山 1950–1974"
+    }
+   ],
+   "n05": {
+    "features": [
+     1579,
+     1573
+    ],
+    "paths": [
+     3.8
+    ],
+    "snap_new_station_to_old_track_km": 0.14,
+    "check": "old 1.38+3.72+3.80=8.90 vs new 7.66 → 1.24 ≈ official 1.316"
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=111440026 (東青山駅: 駅が東に2.7キロメートル移転)",
+    "https://ja.wikipedia.org/w/index.php?oldid=111606116"
+   ]
+  },
+  {
+   "edge": "e_004393",
+   "line": "土讃線",
+   "a": "土佐穴内(旧)",
+   "b": "土佐穴内(新)",
+   "db_km": 0.1,
+   "cls": "B_wrong_track+moved",
+   "verdict": "fixable_n05_old_track_only_with_km_or_model_change",
+   "confidence": "high",
+   "cause": "0.1 is the 改キロ difference (2.7→2.8), not physical; old node copies new coords",
+   "corrected_km": {
+    "e_004393": "1.0–1.1 physical (old track 1.0 + 0.1 connector) or remodel old route 大田口–旧土佐穴内(2.7)–大杉(4.9)"
+   },
+   "positions": [
+    {
+     "node": "n_tosa_ananai_dosan",
+     "lat": 33.785631,
+     "lon": 133.701938,
+     "basis": "N05 土佐穴内 1950–1953"
+    }
+   ],
+   "n05": {
+    "feature": 2119,
+    "years": "1951-1953",
+    "chainage": {
+     "大田口": 118.847,
+     "旧土佐穴内": 116.066,
+     "新駅投影": 115.068,
+     "大杉": 111.103
+    }
+   },
+   "station_moved": {
+    "moved": true,
+    "date": "1954-03-30",
+    "straight_km": 0.89
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110668654 (土佐穴内駅: 1954-03-30 和田トンネル付替で移転; 6-01改キロ 大田口2.7→2.8, 大杉4.9→4.0)"
+   ]
+  },
+  {
+   "edge": "e_009157",
+   "line": "八王子線",
+   "a": "西日野",
+   "b": "西日野(旧)",
+   "db_km": 0.2,
+   "cls": "C_same_position",
+   "verdict": "fixable_n05_with_old_position",
+   "confidence": "medium-high",
+   "cause": "N05 has one 西日野 point for all years; old node copies new coords",
+   "corrected_km": {
+    "e_009157": 0.1
+   },
+   "positions": [
+    {
+     "node": "n_nishihino_hachioji",
+     "lat": 34.952829,
+     "lon": 136.59011,
+     "basis": "0.1 km along N05 八王子線 1965–75 (#1624) from current station toward 伊勢八王子"
+    }
+   ],
+   "station_moved": {
+    "moved": true,
+    "date": "1976-04-01",
+    "km": 0.1
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=109414905 (西日野駅: 当駅は0.1キロ日永方に移設, 近鉄100年のあゆみ p.688)"
+   ]
+  },
+  {
+   "edge": "e_012209",
+   "line": "士別軌道線",
+   "a": "二十二線",
+   "b": "二十七線",
+   "db_km": 0.0,
+   "cls": "A_km_wrong",
+   "verdict": "fixable_n05_with_km_fix",
+   "confidence": "high",
+   "corrected_km": {
+    "上士別–二十二線": 3.9,
+    "e_012209": 2.9,
+    "e_012210": 2.7
+   },
+   "n05": {
+    "paths": [
+     3.9,
+     2.68,
+     3.31
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110659295 (士別軌道: 上士別11.9/二十二線15.8/二十七線18.7/奥士別21.4)"
+   ]
+  },
+  {
+   "edge": "e_012210",
+   "line": "士別軌道線",
+   "a": "二十七線",
+   "b": "奥士別",
+   "db_km": 0.0,
+   "cls": "A_km_wrong",
+   "verdict": "fixable_n05_with_km_fix",
+   "confidence": "high",
+   "corrected_km": {
+    "e_012210": 2.7
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110659295"
+   ]
+  },
+  {
+   "edge": "e_012525",
+   "line": "鯖浦線",
+   "a": "南水落",
+   "b": "越前平井",
+   "db_km": 1.8,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "high",
+   "positions": [
+    {
+     "node": "n_minamimizuochi",
+     "lat": 35.959965,
+     "lon": 136.184719,
+     "basis": "N05 鯖浦線 「水落」 1950–1972 (old name); add 水落 to names"
+    }
+   ],
+   "n05": {
+    "paths": [
+     1.69,
+     1.83
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110885826 (福井鉄道鯖浦線: 1959-07-20 水落→南水落 改称)"
+   ]
+  },
+  {
+   "edge": "e_011587",
+   "line": "松阪線",
+   "a": "花岡",
+   "b": "篠田山",
+   "db_km": 1.9,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "medium",
+   "cause": "N05 篠田山 point = 駅部田 point (ch 2.28) inconsistent with km 3.6; N05 track chainage matches km for 花岡 1.706/蛸路 5.756",
+   "positions": [
+    {
+     "node": "n_shinodayama_mie",
+     "lat": 34.546386,
+     "lon": 136.528019,
+     "basis": "N05 大石線 #1707 chainage 3.6"
+    }
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=107260639 (三重電気鉄道松阪線: 篠田山 3.6, 「第二次世界大戦頃に駅部田より改称」今尾2008)"
+   ]
+  },
+  {
+   "edge": "e_011594",
+   "line": "松阪線",
+   "a": "庄",
+   "b": "御麻生薗",
+   "db_km": 1.3,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "high",
+   "positions": [
+    {
+     "node": "n_myosono",
+     "lat": 34.50925,
+     "lon": 136.493003,
+     "basis": "N05 「御麻生園」 point (spelling 園)"
+    }
+   ],
+   "n05": {
+    "paths": [
+     1.27,
+     2.13
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=107260639"
+   ]
+  },
+  {
+   "edge": "e_011595",
+   "line": "松阪線",
+   "a": "御麻生薗",
+   "b": "大師口",
+   "db_km": 2.2,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "high",
+   "positions": [],
+   "note": "same fix as e_011594",
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=107260639"
+   ]
+  },
+  {
+   "edge": "e_011406",
+   "line": "鞆鉄道線",
+   "a": "妙見",
+   "b": "水呑薬師",
+   "db_km": 1.3,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "high",
+   "positions": [
+    {
+     "node": "n_minomiyakushi",
+     "lat": 34.45748,
+     "lon": 133.370013,
+     "basis": "N05 鞆鉄道 #1056 chainage 4.7(+0.094); OSM bus stop 水呑薬師 node 4570272270 at 34.458067,133.369836 (60 m)"
+    }
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=109391405 (鞆鉄道線 km 今尾2009)"
+   ]
+  },
+  {
+   "edge": "e_011410",
+   "line": "鞆鉄道線",
+   "a": "田尻村",
+   "b": "金崎",
+   "db_km": 1.2,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "medium",
+   "positions": [
+    {
+     "node": "n_kanasaki",
+     "lat": 34.413879,
+     "lon": 133.384213,
+     "basis": "N05 #1056 chainage, 2.3 km before 鞆"
+    }
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=109391405"
+   ]
+  },
+  {
+   "edge": "e_012672",
+   "line": "秋葉線",
+   "a": "天王",
+   "b": "飯田",
+   "db_km": 0.9,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "medium",
+   "cause": "N05 飯田 point at 0.35 km from 天王 ≈ 中飯田 (8.4) position; DB lacks 中飯田",
+   "positions": [
+    {
+     "node": "n_iida",
+     "lat": 34.812065,
+     "lon": 137.922152,
+     "basis": "N05 秋葉線 #1499 chainage 0.919 from 天王"
+    }
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110863172 (静岡鉄道秋葉線: 天王8.1/中飯田8.4/飯田9.0/観音寺9.4)"
+   ]
+  },
+  {
+   "edge": "e_012387",
+   "line": "伊香保線",
+   "a": "入沢",
+   "b": "拾弐坂上",
+   "db_km": 1.0,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "medium",
+   "positions": [
+    {
+     "node": "n_junizakaue",
+     "lat": 36.504723,
+     "lon": 138.97549,
+     "basis": "interpolated by km between 入沢 ch3.460 and 御蔭 ch5.132 on N05 #554"
+    }
+   ],
+   "n05": {
+    "paths": [
+     0.84
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=109351547 (東武伊香保軌道線: 入沢3.3/拾弐坂上4.3/御蔭5.3; 全線12.6 vs N05 10.1)"
+   ]
+  },
+  {
+   "edge": "e_012354",
+   "line": "東川線",
+   "a": "旭正",
+   "b": "上旭正",
+   "db_km": 1.2,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix_loose",
+   "confidence": "low-medium",
+   "positions": [
+    {
+     "node": "n_kyokusei",
+     "lat": 43.731158,
+     "lon": 142.447395,
+     "basis": "interpolated ch 6.9 on N05 #158 between 坂ノ上 and 上旭正; N05 puts 旭正 80 m from 上旭正 (wrong)"
+    }
+   ],
+   "n05": {
+    "paths": [
+     0.86
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=109457668 (旭川電気軌道東川線: 坂ノ上7.7/旭正8.4/上旭正9.6, both 交換可能駅)"
+   ]
+  },
+  {
+   "edge": "e_011085",
+   "line": "長岡線",
+   "a": "寺泊海水浴",
+   "b": "寺泊(初代)",
+   "db_km": 1.2,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "high",
+   "cause": "n_teradomari_nagaoka copies 寺泊新道 coords",
+   "positions": [
+    {
+     "node": "n_teradomari_nagaoka",
+     "lat": 37.633278,
+     "lon": 138.7615,
+     "basis": "Wikidata Q11457943 (CC0)"
+    }
+   ],
+   "n05": {
+    "feature": 1206,
+    "note": "寺泊(初代) projects at ch 1.235 from 寺泊海水浴 (off 0.076)"
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=108108259 (越後交通長岡線: 寺泊新道36.1/寺泊海水浴38.0/寺泊温泉38.5/寺泊初代39.2)",
+    "https://www.wikidata.org/wiki/Q11457943"
+   ]
+  },
+  {
+   "edge": "e_009949",
+   "line": "藤崎線",
+   "a": "藤崎宮前(旧)",
+   "b": "広町",
+   "db_km": 0.2,
+   "cls": "C_identity",
+   "verdict": "fixable_n05_with_node_split_and_alias",
+   "confidence": "high",
+   "positions": [
+    {
+     "node": "藤崎宮前(旧) new node or route override",
+     "lat": 32.80833,
+     "lon": 130.71472,
+     "basis": "N05 菊池線 1950–53 / 坪井線 1954–69 藤崎宮前"
+    }
+   ],
+   "alias": [
+    "菊池線",
+    "坪井線"
+   ],
+   "n05": {
+    "paths": [
+     0.25
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110373980 (熊本電気鉄道藤崎線: 藤崎宮前駅（旧）; 1954-06-01 上熊本–藤崎宮前 廃止→坪井線)"
+   ]
+  },
+  {
+   "edge": "e_013188",
+   "line": "伏木線",
+   "a": "米島口",
+   "b": "米島",
+   "db_km": 0.5,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "high",
+   "positions": [
+    {
+     "node": "n_yonejimaguchi_fushiki",
+     "lat": 36.772144,
+     "lon": 137.038527,
+     "basis": "N05 米島口 1951–1970 (Wikidata Q8054924 36.7728,137.039)"
+    },
+    {
+     "node": "n_yonejima",
+     "lat": 36.777465,
+     "lon": 137.04046,
+     "basis": "N05 米島 (伏木線 999–1958, 高岡軌道線 1959–1970); current pos is 1950 米島=later 米島口"
+    }
+   ],
+   "n05": {
+    "paths": [
+     0.61
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=108783568 (加越能鉄道伏木線: 米島 0.5)"
+   ]
+  },
+  {
+   "edge": "e_013058",
+   "line": "勝鬨橋線",
+   "a": "勝鬨橋",
+   "b": "月島",
+   "db_km": 0.8,
+   "cls": "C_identity",
+   "verdict": "fixable_n05_with_node_split_and_alias",
+   "confidence": "high",
+   "cause": "DB 月島 is subway node n_tsukishima_toei",
+   "positions": [
+    {
+     "node": "new node 月島(都電)=月島通八丁目",
+     "lat": 35.659647,
+     "lon": 139.778083,
+     "basis": "N05 月島線 月島通八丁目 1950–64 / 月島 1965–71"
+    }
+   ],
+   "alias": [
+    "月島線"
+   ],
+   "n05": {
+    "paths": [
+     0.82
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110874184 (東京都電車: 1946-04-06 勝鬨橋 - 月島八丁目間開業)"
+   ]
+  },
+  {
+   "edge": "e_013262",
+   "line": "栄町線",
+   "a": "車道",
+   "b": "西裏",
+   "db_km": 0.2,
+   "cls": "C_identity",
+   "verdict": "fixable_n05_with_node_split",
+   "confidence": "medium-high",
+   "cause": "DB 車道 is subway 桜通線 node; N05 「車道」 point is at 栄町線 end = 3.9 km = 西裏",
+   "positions": [
+    {
+     "node": "n_nishiura_sakaemachi",
+     "lat": 35.169121,
+     "lon": 136.927566,
+     "basis": "N05 栄町線 #1418 end (3.903 km)"
+    },
+    {
+     "node": "車道(tram) new node",
+     "lat": 35.169554,
+     "lon": 136.925455,
+     "basis": "N05 #1418 ch 3.703"
+    }
+   ],
+   "n05": {
+    "paths": [
+     0.2
+    ]
+   },
+   "note": "西裏 stop abolished 1944 (is_stop should be 0 after)",
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=108442282 (名古屋市電栄町線: 車道3.7, 旧・西裏3.9 覚王山線との境界, 1944廃止)"
+   ]
+  },
+  {
+   "edge": "e_013384",
+   "line": "押切線",
+   "a": "泥江町",
+   "b": "志摩町",
+   "db_km": 0.2,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "medium-high",
+   "positions": [
+    {
+     "node": "n_shimacho",
+     "lat": 35.174628,
+     "lon": 136.889701,
+     "basis": "N05 押切線 #1445 turn west / junction with 上江川線; 0.655 km from 柳橋 (DB 0.7)"
+    }
+   ],
+   "n05": {
+    "paths": [
+     0.32
+    ]
+   },
+   "note": "志摩町 stop abolished 1944 (junction only after)",
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=108442217 (名古屋市電押切線: 旧・志摩町0.7 押切線・上江川線境界, -1944)"
+   ]
+  },
+  {
+   "edge": "e_013334",
+   "line": "豊平線",
+   "a": "豊平五丁目",
+   "b": "豊平8丁目",
+   "db_km": 0.4,
+   "cls": "C_position",
+   "verdict": "fixable_n05_with_position_fix",
+   "confidence": "medium-high",
+   "positions": [
+    {
+     "node": "n_toyohira_8_chome",
+     "lat": 43.048814,
+     "lon": 141.375353,
+     "basis": "N05 豊平線 豊平駅前 1950–1970"
+    }
+   ],
+   "n05": {
+    "paths": [
+     0.41
+    ]
+   },
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110980163 (札幌市電: 豊平8丁目＝旧豊平駅前; 1966-10-01 引込線廃止・国道36号上へ移設)"
+   ]
+  },
+  {
+   "edge": "e_013325",
+   "line": "豊平線",
+   "a": "すすきの",
+   "b": "松竹座前",
+   "db_km": 0.1,
+   "cls": "C_identity",
+   "verdict": "straight_line_between_n05_points",
+   "confidence": "medium",
+   "positions": [
+    {
+     "node": "すすきの(市電)",
+     "lat": 43.05556,
+     "lon": 141.35273,
+     "basis": "N05 山鼻線 すすきの; DB node is subway 南北線"
+    }
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110980163"
+   ]
+  },
+  {
+   "edge": "e_012900",
+   "line": "兵庫線",
+   "a": "楠公前",
+   "b": "神戸駅前",
+   "db_km": 0.2,
+   "cls": "C_alias",
+   "verdict": "fixable_n05_alias_or_straight",
+   "confidence": "medium-high",
+   "positions": [],
+   "alias": [
+    "1号線",
+    "2号線"
+   ],
+   "note": "N05 3号線(兵庫線) starts at 神戸駅前; straight 0.14 km between N05 points",
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=111147052 (神戸市電: 第三号線 兵庫線 楠公前 - 築島 - 西柳原)"
+   ]
+  },
+  {
+   "edge": "e_012907",
+   "line": "湊川線",
+   "a": "湊川公園西口",
+   "b": "湊川公園",
+   "db_km": 0.5,
+   "cls": "D_bogus_edge",
+   "verdict": "likely_remove_edge_merge_stop",
+   "confidence": "medium",
+   "cause": "N05: 湊川公園 (1950–999) and 湊川公園西口 (999–1967) same point & ID EB03_19338001 = rename; DB inserts 湊川公園 (subway node, km_estimated) as intermediate stop",
+   "recommendation": "merge 湊川線 湊川公園 into 湊川公園西口; use N05 3号線 #1875 (0.483 km) for 湊川公園西口–新開地 0.5",
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=111147052 (神戸市電: 第三号線 湊川線 新開地 - 湊川公園西口)"
+   ]
+  },
+  {
+   "edge": "e_004958",
+   "line": "日田彦山線",
+   "a": "妙見",
+   "b": "東小倉",
+   "db_km": 2.5,
+   "cls": "D_needs_source",
+   "verdict": "needs_source",
+   "confidence": "high (diagnosis)",
+   "cause": "N05 添田線 1950–1955 ends at 妙見; section 妙見–東小倉 not in any N05 edition",
+   "positions": [
+    {
+     "node": "n_higashi_kokura",
+     "lat": 33.887944,
+     "lon": 130.899472,
+     "basis": "ja.wikipedia coord (Wikidata Q5753650 33.887719,130.899389); DB pos 0.37 km SW"
+    }
+   ],
+   "geometry_sources": [
+    "OSM railway=abandoned (ODbL) — not verified (Overpass failed)",
+    "GSI 旧版地形図/空中写真 1948–1962 tracing",
+    "fallback: straight 妙見→東小倉 2.18 km (ratio 0.87) as approx"
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=110206752 (東小倉駅: 1956-11-19 旅客廃止, 1962-10-01 貨物支線廃止)"
+   ]
+  },
+  {
+   "edge": "e_012299",
+   "line": "日頃市線",
+   "a": "盛",
+   "b": "猪川",
+   "db_km": 2.0,
+   "cls": "D_conflict",
+   "verdict": "needs_source",
+   "confidence": "low",
+   "cause": "wiki 2.0 km vs N05 point (0.90 km along track) which agrees with Wikidata Q118518419 (39.093639,141.706194)",
+   "positions": [
+    {
+     "node": "n_ikawa_iwate",
+     "lat": 39.093602,
+     "lon": 141.705833,
+     "basis": "N05/Wikidata (if km wrong)"
+    },
+    {
+     "node": "n_ikawa_iwate(alt)",
+     "lat": 39.099349,
+     "lon": 141.696258,
+     "basis": "N05 #345 chainage 2.0 from 盛 (if km right)"
+    }
+   ],
+   "geometry_sources": [
+    "N05 #345 sub-line (line still exists as freight)",
+    "鉄道要覧/停車場変遷大事典 for km"
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=105919190 (岩手開発鉄道日頃市線: 猪川 盛駅起点2.0km, 1992廃止)"
+   ]
+  },
+  {
+   "edge": "e_006271",
+   "line": "芦屋線",
+   "a": "筑前芦屋",
+   "b": "芦屋乗降場",
+   "db_km": 0.7,
+   "cls": "D_uncertain_positions",
+   "verdict": "approx_only",
+   "confidence": "low",
+   "positions": [
+    {
+     "node": "n_chikuzenashiya",
+     "lat": 33.8884,
+     "lon": 130.666625,
+     "basis": "wiki coord (aerial-photo guess)"
+    },
+    {
+     "node": "n_ashiyajokojo",
+     "lat": 33.890075,
+     "lon": 130.663475,
+     "basis": "wiki coord; Wikidata Q48763405 33.890099,130.6635013; N05 point 33.88696,130.66855 is 0.6 km SE"
+    }
+   ],
+   "note": "straight 0.35 km; N05 track ends at 5.92 km from 遠賀川",
+   "geometry_sources": [
+    "GSI aerial photos 1947–1961"
+   ],
+   "sources": [
+    "https://ja.wikipedia.org/w/index.php?oldid=108525786 (芦屋線: 遠賀川–筑前芦屋5.5, 乗降場6.2; 筑前芦屋は基地外の運転室)",
+    "https://ja.wikipedia.org/w/index.php?oldid=108244718",
+    "https://ja.wikipedia.org/w/index.php?oldid=104693598"
+   ]
+  }
+ ],
+ "tool_changes": [
+  "closed edges: prefer N05 features with N05_005e < closing year (大阪線, 土讃線)",
+  "aliases: 藤崎線→菊池線/坪井線, 勝鬨橋線→月島線, 兵庫線→1号線/2号線; old/variant names 水落 (南水落), 御麻生園 (御麻生薗)",
+  "station sanity: compare N05 chainage vs DB km along the line; when one middle station is off with compensating neighbours, place it by chainage on the N05 track"
+ ]
+}

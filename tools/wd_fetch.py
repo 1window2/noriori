@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # Wikidata(CC0)에서 일본 철도역의 날짜·읽기·좌표를 한 번에 받는다
-import sys,json,urllib.parse,urllib.request,time
+import sys,urllib.parse,urllib.request,time
 OUT=sys.argv[1]
 Q='''SELECT ?s ?ja ?ko ?en ?kana ?open ?close ?dis ?inc ?coord ?lineLabel WHERE {
  ?s wdt:P31/wdt:P279* wd:Q55488; wdt:P17 wd:Q17.

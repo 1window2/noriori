@@ -1,0 +1,1409 @@
+[
+{
+"line": "l_nanao_line",
+"route": "r_nanao_line",
+"a": "n_tatsuruhama",
+"b": "n_kasashiho",
+"km": 4.0,
+"km_now": 4.1,
+"table": "七尾線 和倉温泉 ～ 輪島 営業km: 48.4"
+},
+{
+"line": "l_nanao_line",
+"route": "r_nanao_line",
+"a": "n_noto_nakajima",
+"b": "n_nishigishi",
+"km": 6.3,
+"km_now": 6.2,
+"table": "七尾線 和倉温泉 ～ 輪島 営業km: 48.4"
+},
+{
+"line": "l_miki_line",
+"route": "r_miki_line",
+"a": "n_bessho",
+"b": "n_miki",
+"km": 1.5,
+"km_now": 1.3,
+"table": "三木線 厄神 ～ 三木 営業km: 6.8"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_kubokawa",
+"b": "n_wakai",
+"km": 4.3,
+"km_now": 4.4,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_kaina",
+"b": "n_iyoki",
+"km": 4.2,
+"km_now": 4.3,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_iyoki",
+"b": "n_tosa_saga",
+"km": 2.8,
+"km_now": 2.7,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_tosa_saga",
+"b": "n_tosa_shirahama",
+"km": 3.2,
+"km_now": 3.3,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_tosa_shirahama",
+"b": "n_ariigawa",
+"km": 3.6,
+"km_now": 3.5,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_ariigawa",
+"b": "n_tosa_kamikawaguchi",
+"km": 1.5,
+"km_now": 1.6,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_nakamura_line",
+"route": "r_nakamura_line",
+"a": "n_nishi_ogata",
+"b": "n_nakamura",
+"km": 6.4,
+"km_now": 5.8,
+"table": "中村線 窪川 ～ 中村 営業km: 43.4"
+},
+{
+"line": "l_marumori_line",
+"route": "r_marumori_line",
+"a": "n_marumori",
+"b": "n_kakuda",
+"km": 5.7,
+"km_now": 5.8,
+"table": "丸森線 丸森 ～ 槻木 営業km: 17.4"
+},
+{
+"line": "l_marumori_line",
+"route": "r_marumori_line",
+"a": "n_kakuda",
+"b": "n_oka_abukuma_express",
+"km": 4.5,
+"km_now": 4.4,
+"table": "丸森線 丸森 ～ 槻木 営業km: 17.4"
+},
+{
+"line": "l_kuji_line",
+"route": "r_kuji_line",
+"a": "n_noda_tamagawa",
+"b": "n_rikuchu_noda",
+"km": 3.9,
+"km_now": 4.0,
+"table": "久慈線 普代 ～ 久慈 営業km: 26.0"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_kakegawa",
+"b": "n_nishi_kakegawa",
+"km": 1.9,
+"km_now": 1.8,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_nishi_kajima_tenryu_hamanako",
+"b": "n_gansuiji",
+"km": 1.9,
+"km_now": 1.8,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_gansuiji",
+"b": "n_miyaguchi",
+"km": 1.9,
+"km_now": 2.0,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_kanasashi",
+"b": "n_kiga",
+"km": 3.0,
+"km_now": 2.9,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_kiga",
+"b": "n_nishi_kiga",
+"km": 2.8,
+"km_now": 2.9,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_tsuzuki",
+"b": "n_mikkabi",
+"km": 2.4,
+"km_now": 2.3,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_mikkabi",
+"b": "n_ona",
+"km": 2.4,
+"km_now": 2.5,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_futamata_line",
+"route": "r_futamata_line",
+"a": "n_ona",
+"b": "n_chibata",
+"km": 4.9,
+"km_now": 4.8,
+"table": "二俣線 掛川 ～ 新所原 営業km: 67.9"
+},
+{
+"line": "l_ise_line",
+"route": "r_ise_line",
+"a": "n_kawarada",
+"b": "n_suzuka",
+"km": 3.6,
+"km_now": 3.8,
+"table": "伊勢線 南四日市 ～ 津 営業km: 26.0"
+},
+{
+"line": "l_ise_line",
+"route": "r_ise_line",
+"a": "n_kawage",
+"b": "n_higashi_ishinden",
+"km": 3.1,
+"km_now": 3.0,
+"table": "伊勢線 南四日市 ～ 津 営業km: 26.0"
+},
+{
+"line": "l_ise_line",
+"route": "r_ise_line",
+"a": "n_higashi_ishinden",
+"b": "n_tsu",
+"km": 3.0,
+"km_now": 2.9,
+"table": "伊勢線 南四日市 ～ 津 営業km: 26.0"
+},
+{
+"line": "l_ita_line",
+"route": "r_ita_line",
+"a": "n_nogata",
+"b": "n_nakaizumi",
+"km": 4.4,
+"km_now": 4.3,
+"table": "伊田線 直方 ～ 伊田 営業km: 16.2"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_nishi_wakamatsu",
+"b": "n_monden",
+"km": 4.8,
+"km_now": 4.9,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_monden",
+"b": "n_ashinomaki_onsen",
+"km": 5.7,
+"km_now": 5.6,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_okawa_dam_koen",
+"b": "n_ashinomaki_onsen_minami",
+"km": 1.4,
+"km_now": 1.5,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_ashinomaki_onsen_minami",
+"b": "n_yunokami_onsen",
+"km": 5.1,
+"km_now": 5.0,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_yagoshima",
+"b": "n_aizu_shimogo",
+"km": 3.0,
+"km_now": 3.1,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_aizu_shimogo",
+"b": "n_yoson_koen",
+"km": 4.1,
+"km_now": 4.0,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_yoson_koen",
+"b": "n_aizu_nagano",
+"km": 2.1,
+"km_now": 2.2,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_aizu_nagano",
+"b": "n_tajima_koko_mae",
+"km": 2.3,
+"km_now": 2.2,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_aizu_tajima",
+"b": "n_nakaarai",
+"km": 3.7,
+"km_now": 3.8,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_aizu_line",
+"route": "r_aizu_line",
+"a": "n_nanatsugatake_tozanguchi",
+"b": "n_aizukogen_ozeguchi_aizu",
+"km": 4.4,
+"km_now": 4.3,
+"table": "会津線 西若松 ～ 会津高原(旧会津滝ノ原) 営業km: 57.4"
+},
+{
+"line": "l_shigaraki_line",
+"route": "r_shigaraki_line",
+"a": "n_kibukawa",
+"b": "n_kumoi",
+"km": 10.3,
+"km_now": 10.2,
+"table": "信楽線 貴生川 ～ 信楽 営業km: 14.8"
+},
+{
+"line": "l_shinetsu_main_line",
+"route": "r_shinetsu_main_line",
+"a": "n_naka_karuizawa",
+"b": "n_shinano_oiwake",
+"km": 3.1,
+"km_now": 3.2,
+"table": "信越本線 横川 ～ 篠ノ井 営業km: 76.8"
+},
+{
+"line": "l_shinetsu_main_line",
+"route": "r_shinetsu_main_line",
+"a": "n_shinano_oiwake",
+"b": "n_miyota",
+"km": 5.9,
+"km_now": 6.0,
+"table": "信越本線 横川 ～ 篠ノ井 営業km: 76.8"
+},
+{
+"line": "l_shinetsu_main_line",
+"route": "r_shinetsu_main_line",
+"a": "n_miyota",
+"b": "n_hirahara",
+"km": 5.7,
+"km_now": 5.1,
+"table": "信越本線 横川 ～ 篠ノ井 営業km: 76.8"
+},
+{
+"line": "l_shinetsu_main_line",
+"route": "r_shinetsu_main_line",
+"a": "n_tanaka",
+"b": "n_oya_shinano",
+"km": 3.5,
+"km_now": 3.4,
+"table": "信越本線 横川 ～ 篠ノ井 営業km: 76.8"
+},
+{
+"line": "l_shinetsu_main_line",
+"route": "r_shinetsu_main_line",
+"a": "n_oya_shinano",
+"b": "n_ueda_hokuriku_shinkansen",
+"km": 5.2,
+"km_now": 5.3,
+"table": "信越本線 横川 ～ 篠ノ井 営業km: 76.8"
+},
+{
+"line": "l_shinetsu_main_line",
+"route": "r_shinetsu_main_line",
+"a": "n_sakaki",
+"b": "n_togura",
+"km": 4.6,
+"km_now": 4.5,
+"table": "信越本線 横川 ～ 篠ノ井 営業km: 76.8"
+},
+{
+"line": "l_miyako_line",
+"route": "r_miyako_line",
+"a": "n_miyako",
+"b": "n_ichinowatari",
+"km": 6.3,
+"km_now": 6.2,
+"table": "宮古線 宮古 ～ 田老 営業km: 12.8"
+},
+{
+"line": "l_miyako_line",
+"route": "r_miyako_line",
+"a": "n_ichinowatari",
+"b": "n_sabane",
+"km": 2.8,
+"km_now": 2.9,
+"table": "宮古線 宮古 ～ 田老 営業km: 12.8"
+},
+{
+"line": "l_miyako_line",
+"route": "r_miyako_line",
+"a": "n_sabane",
+"b": "n_taro",
+"km": 3.7,
+"km_now": 3.6,
+"table": "宮古線 宮古 ～ 田老 営業km: 12.8"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_nishi_maizuru",
+"b": "n_shisho",
+"km": 5.5,
+"km_now": 5.4,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_shisho",
+"b": "n_shinonome_kyoto_tango_railway_willer_trains",
+"km": 3.6,
+"km_now": 3.5,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_shinonome_kyoto_tango_railway_willer_trains",
+"b": "n_tango_kanzaki",
+"km": 3.7,
+"km_now": 3.8,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_tango_kanzaki",
+"b": "n_tango_yura",
+"km": 1.8,
+"km_now": 1.7,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_tango_yura",
+"b": "n_kunda",
+"km": 5.7,
+"km_now": 5.8,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_kunda",
+"b": "n_miyazu",
+"km": 4.6,
+"km_now": 4.5,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_amanohashidate",
+"b": "n_iwatakiguchi",
+"km": 3.6,
+"km_now": 3.7,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_yosano",
+"b": "n_kyotango_omiya",
+"km": 7.1,
+"km_now": 7.0,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_yuhigaura_kitsu_onsen",
+"b": "n_shotenkyo",
+"km": 5.3,
+"km_now": 5.4,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_kumihama",
+"b": "n_konotori_no_sato",
+"km": 8.7,
+"km_now": 8.6,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_miyazu_line",
+"route": "r_miyazu_line",
+"a": "n_konotori_no_sato",
+"b": "n_toyooka",
+"km": 3.2,
+"km_now": 3.0,
+"table": "宮津線 西舞鶴 ～ 豊岡 営業km: 84.0"
+},
+{
+"line": "l_akechi_line",
+"route": "r_akechi_line",
+"a": "n_ena",
+"b": "n_higashino_akechi",
+"km": 2.7,
+"km_now": 2.6,
+"table": "明知線 恵那 ～ 明知 営業km: 25.2"
+},
+{
+"line": "l_akechi_line",
+"route": "r_akechi_line",
+"a": "n_iibama",
+"b": "n_iwamura",
+"km": 2.2,
+"km_now": 2.3,
+"table": "明知線 恵那 ～ 明知 営業km: 25.2"
+},
+{
+"line": "l_akechi_line",
+"route": "r_akechi_line",
+"a": "n_iwamura",
+"b": "n_hanashiro_onsen",
+"km": 3.4,
+"km_now": 3.3,
+"table": "明知線 恵那 ～ 明知 営業km: 25.2"
+},
+{
+"line": "l_kihara_line",
+"route": "r_kihara_line",
+"a": "n_ohara",
+"b": "n_nishi_ohara",
+"km": 1.8,
+"km_now": 1.7,
+"table": "木原線 大原 ～ 上総中野 営業km: 26.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_arita",
+"b": "n_zoshuku",
+"km": 3.9,
+"km_now": 3.8,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_zoshuku",
+"b": "n_ogi_matsuura",
+"km": 2.2,
+"km_now": 2.3,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_imari",
+"b": "n_higashi_yamashiro",
+"km": 3.2,
+"km_now": 3.3,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_higashi_yamashiro",
+"b": "n_kusuku",
+"km": 2.4,
+"km_now": 2.3,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_kubara",
+"b": "n_uranosaki",
+"km": 3.2,
+"km_now": 3.1,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_uranosaki",
+"b": "n_imabuku",
+"km": 2.6,
+"km_now": 2.7,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_matsuura",
+"b": "n_mikuriya_matsuura",
+"km": 5.9,
+"km_now": 6.0,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_mikuriya_matsuura",
+"b": "n_higashi_tabira",
+"km": 4.8,
+"km_now": 4.7,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_tabira_hiradoguchi",
+"b": "n_emukae_shikamachi",
+"km": 8.7,
+"km_now": 8.8,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_emukae_shikamachi",
+"b": "n_senryugataki",
+"km": 6.4,
+"km_now": 6.5,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_senryugataki",
+"b": "n_yoshii_matsuura",
+"km": 2.5,
+"km_now": 2.3,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_yoshii_matsuura",
+"b": "n_kouda",
+"km": 1.4,
+"km_now": 1.5,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_kouda",
+"b": "n_seiho_koukou_mae",
+"km": 2.2,
+"km_now": 2.1,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_koura",
+"b": "n_masaru",
+"km": 1.8,
+"km_now": 1.9,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_kami_ainoura",
+"b": "n_nakazato",
+"km": 2.4,
+"km_now": 2.3,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_kaize_matsuura",
+"b": "n_hidariishi",
+"km": 2.0,
+"km_now": 1.9,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_kita_sasebo",
+"b": "n_naka_sasebo",
+"km": 1.9,
+"km_now": 2.0,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_matsuura_line",
+"route": "r_matsuura_line",
+"a": "n_naka_sasebo",
+"b": "n_sasebo",
+"km": 1.3,
+"km_now": 1.2,
+"table": "松浦線 有田 ～ 佐世保 営業km: 93.9"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_ogaki",
+"b": "n_higashi_ogaki",
+"km": 2.8,
+"km_now": 2.7,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_higashi_ogaki",
+"b": "n_yokoya",
+"km": 1.9,
+"km_now": 1.8,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_jukujo",
+"b": "n_mieji",
+"km": 1.9,
+"km_now": 2.0,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_kitagata_makuwa",
+"b": "n_itonuki",
+"km": 2.7,
+"km_now": 2.6,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_itonuki",
+"b": "n_motosu",
+"km": 2.7,
+"km_now": 2.8,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_motosu",
+"b": "n_kochibora",
+"km": 4.1,
+"km_now": 4.0,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_kochibora",
+"b": "n_tanigumi_guchi",
+"km": 1.3,
+"km_now": 1.4,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_tarumi_line",
+"route": "r_tarumi_line",
+"a": "n_tanigumi_guchi",
+"b": "n_komi_tarumi",
+"km": 2.3,
+"km_now": 2.0,
+"table": "樽見線 大垣 ～ 美濃神海 営業km: 24.0"
+},
+{
+"line": "l_yunomae_line",
+"route": "r_yunomae_line",
+"a": "n_hitoyoshi_onsen",
+"b": "n_sagarahanganjoji",
+"km": 1.6,
+"km_now": 1.5,
+"table": "湯前線 人吉 ～ 湯前 営業km: 24.9"
+},
+{
+"line": "l_yunomae_line",
+"route": "r_yunomae_line",
+"a": "n_sagarahanganjoji",
+"b": "n_kawamura_kumagawa",
+"km": 2.8,
+"km_now": 2.9,
+"table": "湯前線 人吉 ～ 湯前 営業km: 24.9"
+},
+{
+"line": "l_yunomae_line",
+"route": "r_yunomae_line",
+"a": "n_kawamura_kumagawa",
+"b": "n_higo_nishinomura",
+"km": 1.5,
+"km_now": 1.4,
+"table": "湯前線 人吉 ～ 湯前 営業km: 24.9"
+},
+{
+"line": "l_yunomae_line",
+"route": "r_yunomae_line",
+"a": "n_higo_nishinomura",
+"b": "n_ichibu_kumagawa",
+"km": 3.3,
+"km_now": 3.4,
+"table": "湯前線 人吉 ～ 湯前 営業km: 24.9"
+},
+{
+"line": "l_yunomae_line",
+"route": "r_yunomae_line",
+"a": "n_kinoe",
+"b": "n_asagiri_kumagawa",
+"km": 3.8,
+"km_now": 3.7,
+"table": "湯前線 人吉 ～ 湯前 営業km: 24.9"
+},
+{
+"line": "l_mugi_line",
+"route": "r_mugi_line",
+"a": "n_awa_kainan",
+"b": "n_kaifu",
+"km": 1.5,
+"km_now": 1.4,
+"table": "牟岐線 阿波海南 ～ 海部 営業km: 1.5"
+},
+{
+"line": "l_amagi_line",
+"route": "r_amagi_line",
+"a": "n_chikugogori",
+"b": "n_matsuzaki_amagi",
+"km": 3.1,
+"km_now": 3.0,
+"table": "甘木線 基山 ～ 甘木 営業km: 14.0"
+},
+{
+"line": "l_amagi_line",
+"route": "r_amagi_line",
+"a": "n_matsuzaki_amagi",
+"b": "n_nishitachiarai",
+"km": 1.9,
+"km_now": 2.0,
+"table": "甘木線 基山 ～ 甘木 営業km: 14.0"
+},
+{
+"line": "l_amagi_line",
+"route": "r_amagi_line",
+"a": "n_takata_amagi",
+"b": "n_amagi_amagi",
+"km": 2.2,
+"km_now": 1.9,
+"table": "甘木線 基山 ～ 甘木 営業km: 14.0"
+},
+{
+"line": "l_tagawa_line",
+"route": "r_tagawa_line",
+"a": "n_yukuhashi",
+"b": "n_toyotsu_heisei_chikuho",
+"km": 5.0,
+"km_now": 4.9,
+"table": "田川線 行橋 ～ 伊田 営業km: 26.3"
+},
+{
+"line": "l_tagawa_line",
+"route": "r_tagawa_line",
+"a": "n_toyotsu_heisei_chikuho",
+"b": "n_saigawa",
+"km": 4.7,
+"km_now": 4.8,
+"table": "田川線 行橋 ～ 伊田 営業km: 26.3"
+},
+{
+"line": "l_tagawa_line",
+"route": "r_tagawa_line",
+"a": "n_saigawa",
+"b": "n_sakiyama",
+"km": 2.6,
+"km_now": 2.7,
+"table": "田川線 行橋 ～ 伊田 営業km: 26.3"
+},
+{
+"line": "l_tagawa_line",
+"route": "r_tagawa_line",
+"a": "n_sakiyama",
+"b": "n_yusubaru",
+"km": 4.6,
+"km_now": 4.5,
+"table": "田川線 行橋 ～ 伊田 営業km: 26.3"
+},
+{
+"line": "l_sakari_line",
+"route": "r_sakari_line",
+"a": "n_sakari",
+"b": "n_rikuzen_akasaki",
+"km": 3.6,
+"km_now": 3.7,
+"table": "盛線 盛 ～ 吉浜 営業km: 21.5"
+},
+{
+"line": "l_moka_line",
+"route": "r_moka_line",
+"a": "n_shimodate",
+"b": "n_orimoto",
+"km": 4.7,
+"km_now": 4.6,
+"table": "真岡線 下館 ～ 茂木 営業km: 42.0"
+},
+{
+"line": "l_yashima_line",
+"route": "r_yashima_line",
+"a": "n_ayukawa_yuri_kogen",
+"b": "n_kurosawa_yuri_kogen",
+"km": 2.2,
+"km_now": 2.1,
+"table": "矢島線 羽後本荘 ～ 羽後矢島 営業km: 23.0"
+},
+{
+"line": "l_yashima_line",
+"route": "r_yashima_line",
+"a": "n_kurosawa_yuri_kogen",
+"b": "n_maego",
+"km": 2.0,
+"km_now": 2.2,
+"table": "矢島線 羽後本荘 ～ 羽後矢島 営業km: 23.0"
+},
+{
+"line": "l_yashima_line",
+"route": "r_yashima_line",
+"a": "n_maego",
+"b": "n_nishitakisawa",
+"km": 4.1,
+"km_now": 4.0,
+"table": "矢島線 羽後本荘 ～ 羽後矢島 営業km: 23.0"
+},
+{
+"line": "l_kamioka_line",
+"route": "r_kamioka_line",
+"a": "n_inotani",
+"b": "n_hida_nakayama",
+"km": 2.4,
+"km_now": 2.3,
+"table": "神岡線 猪谷 ～ 神岡 営業km: 20.3"
+},
+{
+"line": "l_kamioka_line",
+"route": "r_kamioka_line",
+"a": "n_hida_nakayama",
+"b": "n_mozumi",
+"km": 2.8,
+"km_now": 2.9,
+"table": "神岡線 猪谷 ～ 神岡 営業km: 20.3"
+},
+{
+"line": "l_kamioka_line",
+"route": "r_kamioka_line",
+"a": "n_urushiyama_kamioka",
+"b": "n_kamioka_kozanmae",
+"km": 7.7,
+"km_now": 7.5,
+"table": "神岡線 猪谷 ～ 神岡 営業km: 20.3"
+},
+{
+"line": "l_kamioka_line",
+"route": "r_kamioka_line",
+"a": "n_kamioka_kozanmae",
+"b": "n_hida_kamioka",
+"km": 1.0,
+"km_now": 1.2,
+"table": "神岡線 猪谷 ～ 神岡 営業km: 20.3"
+},
+{
+"line": "l_kamioka_line",
+"route": "r_kamioka_line",
+"a": "n_hida_kamioka",
+"b": "n_okuhida_onsenguchi",
+"km": 2.2,
+"km_now": 1.8,
+"table": "神岡線 猪谷 ～ 神岡 営業km: 20.3"
+},
+{
+"line": "l_itoda_line",
+"route": "r_itoda_line",
+"a": "n_buzen_okuma",
+"b": "n_itoda",
+"km": 2.6,
+"km_now": 1.9,
+"table": "糸田線 金田 ～ 後藤寺 営業km: 6.9"
+},
+{
+"line": "l_itoda_line",
+"route": "r_itoda_line",
+"a": "n_itoda",
+"b": "n_tagawa_gotoji",
+"km": 2.8,
+"km_now": 3.4,
+"table": "糸田線 金田 ～ 後藤寺 営業km: 6.9"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_nakai",
+"b": "n_bira",
+"km": 2.2,
+"km_now": 2.3,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_bira",
+"b": "n_kanami",
+"km": 3.0,
+"km_now": 2.9,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_fujinami_noto",
+"b": "n_ushitsu",
+"km": 2.8,
+"km_now": 2.7,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_kuri_kawashiri",
+"b": "n_matsunami",
+"km": 2.1,
+"km_now": 2.0,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_matsunami",
+"b": "n_koiji",
+"km": 1.7,
+"km_now": 1.8,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_iida_noto",
+"b": "n_suzu",
+"km": 1.2,
+"km_now": 1.3,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_noto_line",
+"route": "r_noto_line",
+"a": "n_suzu",
+"b": "n_shoin",
+"km": 1.7,
+"km_now": 1.6,
+"table": "能登線 穴水 ～ 蛸島 営業km: 61.1"
+},
+{
+"line": "l_wakasa_line",
+"route": "r_wakasa_line",
+"a": "n_inaba_funaoka",
+"b": "n_hayabusa",
+"km": 2.1,
+"km_now": 2.0,
+"table": "若桜線 郡家 ～ 若桜 営業km: 19.2"
+},
+{
+"line": "l_wakasa_line",
+"route": "r_wakasa_line",
+"a": "n_hayabusa",
+"b": "n_abe",
+"km": 2.6,
+"km_now": 2.7,
+"table": "若桜線 郡家 ～ 若桜 営業km: 19.2"
+},
+{
+"line": "l_wakasa_line",
+"route": "r_wakasa_line",
+"a": "n_abe",
+"b": "n_hatto",
+"km": 2.8,
+"km_now": 2.7,
+"table": "若桜線 郡家 ～ 若桜 営業km: 19.2"
+},
+{
+"line": "l_wakasa_line",
+"route": "r_wakasa_line",
+"a": "n_tampi",
+"b": "n_wakasa",
+"km": 5.6,
+"km_now": 5.7,
+"table": "若桜線 郡家 ～ 若桜 営業km: 19.2"
+},
+{
+"line": "l_kakunodate_line",
+"route": "r_kakunodate_line",
+"a": "n_matsuba",
+"b": "n_ugo_nagatoro",
+"km": 2.8,
+"km_now": 2.9,
+"table": "角館線 松葉 ～ 角館 営業km: 19.2"
+},
+{
+"line": "l_kakunodate_line",
+"route": "r_kakunodate_line",
+"a": "n_ugo_nagatoro",
+"b": "n_yatsu_akita_nairiku_jukan",
+"km": 5.1,
+"km_now": 5.0,
+"table": "角館線 松葉 ～ 角館 営業km: 19.2"
+},
+{
+"line": "l_kakunodate_line",
+"route": "r_kakunodate_line",
+"a": "n_yatsu_akita_nairiku_jukan",
+"b": "n_saimyouji",
+"km": 3.9,
+"km_now": 4.0,
+"table": "角館線 松葉 ～ 角館 営業km: 19.2"
+},
+{
+"line": "l_kakunodate_line",
+"route": "r_kakunodate_line",
+"a": "n_saimyouji",
+"b": "n_ugo_ota",
+"km": 3.1,
+"km_now": 3.0,
+"table": "角館線 松葉 ～ 角館 営業km: 19.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_hanno_nagaragawa",
+"b": "n_yasaka_nagaragawa",
+"km": 3.2,
+"km_now": 3.3,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_yasaka_nagaragawa",
+"b": "n_oya_nagaragawa",
+"km": 2.5,
+"km_now": 2.4,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_gujo_hachiman",
+"b": "n_yamada_nagaragawa",
+"km": 7.0,
+"km_now": 7.1,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_yamada_nagaragawa",
+"b": "n_tokunaga",
+"km": 2.0,
+"km_now": 1.9,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_onaka",
+"b": "n_oshima_nagaragawa",
+"km": 1.8,
+"km_now": 1.9,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_oshima_nagaragawa",
+"b": "n_mino_shirotori",
+"km": 1.9,
+"km_now": 1.8,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_etsumi_nan_line",
+"route": "r_etsumi_nan_line",
+"a": "n_shirotori_kogen",
+"b": "n_hokuno",
+"km": 2.6,
+"km_now": 2.5,
+"table": "越美南線 美濃太田 ～ 北濃 営業km: 72.2"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_akayu",
+"b": "n_miyauchi_yamagata",
+"km": 3.1,
+"km_now": 3.0,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_ringo",
+"b": "n_nishi_otsuka",
+"km": 3.4,
+"km_now": 3.5,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_nishi_otsuka",
+"b": "n_imaizumi",
+"km": 2.0,
+"km_now": 1.9,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_tokiniwa",
+"b": "n_minami_nagai",
+"km": 2.3,
+"km_now": 2.4,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_minami_nagai",
+"b": "n_nagai_yamagata",
+"km": 1.1,
+"km_now": 1.0,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_uzen_narita",
+"b": "n_koguwa",
+"km": 3.5,
+"km_now": 3.6,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_nagai_line",
+"route": "r_nagai_line",
+"a": "n_ayukai",
+"b": "n_arato",
+"km": 2.7,
+"km_now": 2.6,
+"table": "長井線 赤湯 ～ 荒砥 営業km: 30.6"
+},
+{
+"line": "l_aniai_line",
+"route": "r_aniai_line",
+"a": "n_takanosu_akita_nairiku_jukan",
+"b": "n_jomon_ogata",
+"km": 3.8,
+"km_now": 3.7,
+"table": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1"
+},
+{
+"line": "l_aniai_line",
+"route": "r_aniai_line",
+"a": "n_onodai",
+"b": "n_aikawa_akita_nairiku_jukan",
+"km": 3.7,
+"km_now": 3.6,
+"table": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1"
+},
+{
+"line": "l_aniai_line",
+"route": "r_aniai_line",
+"a": "n_aikawa_akita_nairiku_jukan",
+"b": "n_kamisugi_akita_nairiku_jukan",
+"km": 2.3,
+"km_now": 2.4,
+"table": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1"
+},
+{
+"line": "l_aniai_line",
+"route": "r_aniai_line",
+"a": "n_arase",
+"b": "n_kayakusa",
+"km": 2.8,
+"km_now": 2.7,
+"table": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1"
+},
+{
+"line": "l_aniai_line",
+"route": "r_aniai_line",
+"a": "n_kayakusa",
+"b": "n_okashinai",
+"km": 2.7,
+"km_now": 2.8,
+"table": "阿仁合線 鷹ノ巣 ～ 比立内 営業km: 46.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_nishi_nobeoka",
+"b": "n_mukabaki",
+"km": 2.8,
+"km_now": 2.7,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_hosomi",
+"b": "n_hyuga_okamoto",
+"km": 1.1,
+"km_now": 1.2,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_soki",
+"b": "n_kawazuru",
+"km": 2.6,
+"km_now": 2.5,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_kawazuru",
+"b": "n_kamizaki",
+"km": 2.7,
+"km_now": 2.8,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_kamegasaki",
+"b": "n_makimine",
+"km": 2.6,
+"km_now": 2.7,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_hyuga_yato",
+"b": "n_gomi",
+"km": 1.5,
+"km_now": 1.4,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_takachiho_line",
+"route": "r_takachiho_line",
+"a": "n_amanoiwato",
+"b": "n_takachiho",
+"km": 2.2,
+"km_now": 2.1,
+"table": "高千穂線 延岡 ～ 高千穂 営業km: 50.1"
+},
+{
+"line": "l_toyamako_line",
+"route": "r_toyamako_line",
+"a": "n_jogawara",
+"b": "n_hasumachi",
+"km": 1.3,
+"km_now": 1.2,
+"table": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0"
+},
+{
+"line": "l_toyamako_line",
+"route": "r_toyamako_line",
+"a": "n_hasumachi",
+"b": "n_hagiurashogakkomae",
+"km": 0.6,
+"km_now": 0.7,
+"table": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0"
+},
+{
+"line": "l_toyamako_line",
+"route": "r_toyamako_line",
+"a": "n_keirinjomae_toyama_chiho",
+"b": "n_iwasehama",
+"km": 0.5,
+"km_now": 0.4,
+"table": "富山港線 富山 ～ 岩瀬浜 営業km: 8.0"
+},
+{
+"line": "l_hojo_line",
+"route": "r_hojo_line",
+"a": "n_harima_yokota",
+"b": "n_hojomachi",
+"km": 2.3,
+"km_now": 2.2,
+"table": "北条線 粟生 ～ 北条町 営業km: 13.8"
+},
+{"line": "l_kitakyushu_line", "route": "r_kitakyushu_line", "a": "n_kurosaki_ekimae", "b": "n_kurosakishakomae", "km": 0.2, "km_now": 0.1, "table": "西鉄 北九州線 黒崎駅前～黒崎車庫前 0.2(지난 판 北九州線 누계 24.3→24.5), 黒崎駅前～熊西 합계 0.7(N05 北九州線 표, 1999-12 黒崎駅前 86 m 이전 전). 지금 筑豊電気鉄道 같은 구간 0.1·0.6. 칸을 筑豊과 한 벌로 합친 뒤(7회차 2026-11-14) 北九州線 시대 km를 지키려고"},
+{"line": "l_kagoshima_main_line", "route": "r_kagoshima_main_line", "a": "n_izumi_hisatsu_orange", "b": "n_nishi_izumi", "km": 2.3, "km_now": 2.7, "table": "鹿児島本線 八代～川内 JR 시대(~2004-03-13) 営業キロ: 노리츠부시 옛 표 900019704 「鹿児島本線 八代 ～ 川内 営業km: 116.9」 出水 65.6·西出水 67.9·高尾野 72.1 → 出水–西出水 2.3, 西出水–高尾野 4.2. 2004-03-13 肥薩おれんじ鉄道 이관 때 개정(지금 2.7·3.8). decisions 328 (8회차 W3 2026-11-15)"},
+{"line": "l_kagoshima_main_line", "route": "r_kagoshima_main_line", "a": "n_nishi_izumi", "b": "n_takaono", "km": 4.2, "km_now": 3.8, "table": "鹿児島本線 八代～川内 JR 시대(~2004-03-13) 営業キロ: 노리츠부시 옛 표 900019704 「鹿児島本線 八代 ～ 川内 営業km: 116.9」 出水 65.6·西出水 67.9·高尾野 72.1 → 出水–西出水 2.3, 西出水–高尾野 4.2. 2004-03-13 肥薩おれんじ鉄道 이관 때 개정(지금 2.7·3.8). decisions 328 (8회차 W3 2026-11-15)"}
+]

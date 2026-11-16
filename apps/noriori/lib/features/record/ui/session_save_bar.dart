@@ -14,6 +14,7 @@ import '../controller/record_session_controller.dart';
 import 'complete_card.dart';
 import 'ride_ticket.dart';
 import 'session_date.dart' show showUnridable;
+import 'session_lines.dart' show handDate;
 
 /// 이설 질문의 답. 바깥을 눌러 닫으면 답이 아니라 취소다.
 final class _RelocationAnswer {
@@ -69,7 +70,18 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
             for (final option in options)
               SimpleDialogOption(
                 onPressed: () => Navigator.pop(context, _RelocationAnswer(option)),
-                child: Text(relocationLabel(context, options, option)),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 2,
+                  children: [
+                    Text(relocationLabel(context, options, option)),
+                    // 길마다 존속 기간을 작게 적는다 (사용자 요청 2026-11-08)
+                    Text(
+                      relocationSpan(options, option),
+                      style: Theme.of(context).textTheme.bodySmall?.copyWith(color: context.tokens.textMuted),
+                    ),
+                  ],
+                ),
               ),
             SimpleDialogOption(
               onPressed: () => Navigator.pop(context, const _RelocationAnswer(null)),
@@ -123,7 +135,7 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
       (_?, _?, Expansion(saved: true, meters: final meters?)) => t.summary(
           from: state.nameOf(from!.node),
           to: state.nameOf(to!.node),
-          km: kmLabel(meters * (state.isLap ? state.laps : 1)),
+          km: kmLabelOf(meters * (state.isLap ? state.laps : 1), estimated: state.kmEstimated),
         ),
       (_?, _?, Expansion(status: ResolveStatus.needsInput)) =>
         '${state.nameOf(from!.node)} → ${state.nameOf(to!.node)}',
@@ -179,22 +191,7 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
                     ),
                   ],
                 ),
-              if (state.isLap)
-                Row(
-                  children: [
-                    Text(t.laps(n: state.laps), style: text.labelLarge),
-                    IconButton(
-                      tooltip: t.lapLess,
-                      icon: const Icon(Icons.remove),
-                      onPressed: state.laps > 1 ? () => controller.setLaps(state.laps - 1) : null,
-                    ),
-                    IconButton(
-                      tooltip: t.lapMore,
-                      icon: const Icon(Icons.add),
-                      onPressed: () => controller.setLaps(state.laps + 1),
-                    ),
-                  ],
-                ),
+              if (state.isLap) LapCounter(laps: state.laps, onChanged: controller.setLaps),
               SummaryActions(
                 summary: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -230,6 +227,42 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
       ),
     );
   }
+}
+
+/// 한 바퀴 기록의 바퀴 수. 하나 아래로는 줄지 않는다.
+class LapCounter extends StatelessWidget {
+  const LapCounter({super.key, required this.laps, required this.onChanged});
+
+  final int laps;
+  final ValueChanged<int> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t.session;
+    return Row(
+      children: [
+        Text(t.laps(n: laps), style: Theme.of(context).textTheme.labelLarge),
+        IconButton(
+          tooltip: t.lapLess,
+          icon: const Icon(Icons.remove),
+          onPressed: laps > 1 ? () => onChanged(laps - 1) : null,
+        ),
+        IconButton(
+          tooltip: t.lapMore,
+          icon: const Icon(Icons.add),
+          onPressed: () => onChanged(laps + 1),
+        ),
+      ],
+    );
+  }
+}
+
+/// 그 길을 쓴 기간. 가장 이른 길은 기록 하한 전부터라 끝만 적는다 (`~1968.8.5`, `1968.8.5~`).
+String relocationSpan(List<RelocationOption> options, RelocationOption option) {
+  final first = options.every((other) => option.asOf.compareTo(other.asOf) <= 0);
+  final from = first ? '' : handDate(option.asOf);
+  final to = option.until == null ? '' : handDate(option.until!);
+  return '$from~$to';
 }
 
 /// 이설이 한 번이면 옛 선로와 새 선로로, 더 많으면 시점으로 적는다 (DESIGN §2.8).

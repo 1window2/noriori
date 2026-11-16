@@ -1,0 +1,40 @@
+# 노드 위치 조사 R21·R22의 옛 역·정류장 좌표. 国土数値情報 鉄道時系列(N05) 2024판의 그 시기 역 점, 産業会館前만 N05 선형 위 보간. 非商用 조건, 출처를 끄면 빠짐
+- {"node": "n_niigata_old", "lat": 37.914212, "lon": 139.058528, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 信越線·越後線 新潟 1950–1957 점(1958-04-29 이전 전 자리)"}
+- {"node": "n_sakuma_iida", "lat": 35.091052, "lon": 137.804675, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 飯田線 佐久間 1950-1954 점"}
+- {"node": "n_takedao_fukuchiyama", "lat": 34.85695, "lon": 135.308396, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 福知山線 武田尾 1950-1985 점"}
+- {"node": "n_tatebori_minobu", "lat": 35.167069, "lon": 138.64968, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 身延線 竪堀 1950-1968 점"}
+- {"node": "n_tosa_kitagawa_dosan", "lat": 33.71287, "lon": 133.68757, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 土讃本線 土佐北川 1963-1985 점"}
+- {"node": "n_hiwa_hakubi", "lat": 34.712861, "lon": 133.686143, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 伯備線 日羽 1956-1969 점"}
+- {"node": "n_mitaki_kabe", "lat": 34.416984, "lon": 132.452267, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 可部線 三滝 1950-1961 점"}
+- {"node": "n_kami_nopporo_chitose", "lat": 43.024933, "lon": 141.477468, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 千歳線 上野幌 1950-1972 점"}
+- {"node": "n_mine_shimizushinai_line_nishikubo_sodeshi_old_route", "lat": 35.035734, "lon": 138.492611, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 清水市内線 嶺 1950-1952 점"}
+- {"node": "n_suzukijima_shimizushinai_line_nishikubo_sodeshi_old_route", "lat": 35.039604, "lon": 138.496372, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 清水市内線 鈴木島 1950-1952 점"}
+- {"node": "n_nakasomuta_ishiki_line_shinshoin_ishiki_old_route", "lat": 31.602832, "lon": 130.539451, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 伊敷線 中草牟田 1950-1951 점"}
+- {"node": "n_ishiki", "lat": 31.610843, "lon": 130.533819, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 伊敷線 伊敷 (yb 999)-1951 점"}
+- {"node": "n_tamazatomichi", "lat": 31.606767, "lon": 130.537905, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 伊敷線 玉里道 1950-1951 점"}
+- {"node": "n_rikuchuoishi", "lat": 39.303472, "lon": 140.820244, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 横黒線 陸中大石 1950–1961 점(1962 이전 전 자리)"}
+- {"node": "n_takaoka_manyosen", "lat": 36.741553, "lon": 137.015077, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "万葉線 高岡駅 2014-03-29 駅ビル 이전 뒤 자리, N05 2014– 점. station_database 좌표는 옛 高岡駅前 자리"}
+- {"node": "n_hojomachi", "lat": 34.929136, "lon": 134.832168, "quality": "precise", "source": "n02_2024", "checked": "2026-11-11", "why": "N02 2024 北条鉄道 北条線 「北条町」 승강장 선분 가운데(N05 2001– 점과 같음). station_database 좌표는 선로에서 북쪽 약 70 m. 현행 역이라 precise (kinki_1-041)"}
+- {"node": "n_ofuna_dream", "lat": 35.356032, "lon": 139.530844, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 ドリームランド線 大船 1966-2001 점"}
+- {"node": "n_sakoshi_ako", "lat": 34.772757, "lon": 134.420265, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 赤穂鉄道 坂越 1950-1950 점"}
+- {"node": "n_banshu_ako_ako", "lat": 34.752365, "lon": 134.395606, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 赤穂鉄道 播州赤穂 1950-1950 점"}
+- {"node": "n_odara_ryobi", "lat": 34.667172, "lon": 134.001029, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 西大寺鉄道 大多羅 1955-1961 점"}
+- {"node": "n_yaotome_sendai", "lat": 38.313957, "lon": 140.886089, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 仙台鉄道 八乙女 1950-1955 점"}
+- {"node": "n_nishibun_aki", "lat": 33.518341, "lon": 133.7975, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 安芸線 西分 1950–1973 점"}
+- {"node": "n_horai_kojaku", "lat": 35.182729, "lon": 135.914809, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 江若鉄道 蓬莱 1950-1968 점"}
+- {"node": "n_yonejimaguchi_fushiki", "lat": 36.772144, "lon": 137.038527, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 伏木線 米島口 1951–1958 점(高岡軌道線 1959–1970 같은 점). 좌표 없던 노드"}
+- {"node": "n_yonejima", "lat": 36.777465, "lon": 137.04046, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 伏木線 米島 ～1958 점. 지금 좌표는 米島口 자리였음"}
+- {"node": "n_takamicho", "lat": 36.782084, "lon": 137.042502, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 高岡軌道線 「高見町」 ～1970 점(= 高美町)"}
+- {"node": "n_takahata_yamagata_kotsu", "lat": 38.005366, "lon": 140.193771, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "좌표는 그대로, N05 출처라 approx"}
+- {"node": "n_okinebu", "lat": 43.338078, "lon": 145.709059, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 根室拓殖鉄道 「沖根辺」 1950–1958 점(= 沖根部)"}
+- {"node": "n_kyowagakko", "lat": 43.328737, "lon": 145.68156, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 根室拓殖鉄道 「共和学校前」 1950–1958 점"}
+- {"node": "n_kiyosenmae", "lat": 33.325781, "lon": 131.495699, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 別大線 「亀陽泉通」 1950–1971 점(= 亀陽泉前)"}
+- {"node": "n_sangyokaikanmae", "lat": 39.717893, "lon": 140.118155, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 秋田市 선형 위 木内前–大町二丁目 사이 가운데(旭川橋梁 동쪽). N05에 産業会館前 점은 없음"}
+- {"node": "n_kenchomae_akita_city", "lat": 39.72047, "lon": 140.108141, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 秋田市 県庁前 1959–1965 점(옛 新国道 자리)"}
+- {"node": "n_arako_shimonoishiki", "lat": 35.136982, "lon": 136.855852, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 下之一色線 荒子 1950-1968 점"}
+- {"node": "n_asano_ichinomiya", "lat": 35.294319, "lon": 136.829684, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 一宮線 浅野 1950-1964 점"}
+- {"node": "n_inden", "lat": 35.298417, "lon": 136.814317, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 一宮線 印田 1950-1964 점"}
+- {"node": "n_fube", "lat": 33.546279, "lon": 131.429607, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 宇佐参宮線 封戸 1952-1964 점"}
+- {"node": "n_minami_isurugi", "lat": 36.660736, "lon": 136.862138, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 加越線 南石動 1950-1971 점"}
+- {"node": "n_yoda_ueda_maruko", "lat": 36.345043, "lon": 138.260416, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 西丸子線 依田 1950–1962 점. station_database에서 御岳堂와 뒤바뀌어 있었음"}
+- {"node": "n_mitakedo_ueda_maruko", "lat": 36.340529, "lon": 138.263673, "quality": "approx", "source": "n05", "checked": "2026-11-07", "why": "N05 西丸子線 御岳堂 1950–1962 점. station_database에서 依田와 뒤바뀌어 있었음"}

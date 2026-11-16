@@ -36,7 +36,9 @@ est=n.execute("select count(*) from name where lang='ko' and source='estimated'"
 wk=ver.get('위키 km 대조')
 nm_=ver.get('현행 역 이름')
 pos=ver['위치']
-geo=dict((a or 'none',b) for a,b in ver['선형 있는 edge'])
+# 행은 (선 유무, 출처, 수)다. 출처 열이 생기기 전 판은 (선 유무, 수)였다
+geo=collections.Counter()
+for row in ver['선형 있는 edge']:geo[row[0] or 'none']+=row[-1]
 curgeo=rep.get('geometry_rate')
 last=one('select count(*) from edge_life where last_service is not null')
 reason=dict(m.execute('select close_reason,count(*) from edge_life where close_reason is not null group by 1'))
@@ -126,7 +128,7 @@ out+=f"""
 | `lines_ko.json`, `lines_kana.json` | 원자료 이름과 공식 노선명이 다른 노선의 한글 이름과 읽기 |
 | `kana.json`, `kana_est.json` | 역 읽기. `kana_est.json`의 일부는 한자로 추정한 값이고 한글 이름 출처가 `estimated`로 표시됩니다 ({est}건) |
 | `operators_ko.json`, `names_ko.json` | 사업자와 개별 역의 한글 이름 |
-| `services.json` | 운전 계통 16개 |
+| `services.json` | 운행 계통 16개 |
 | `old_hand.json`, `old_history.json` | 문서에서 옮긴 옛 노선과 구간별 이력 |
 
 코드 안의 표: 3섹 개명 대응(`RENAME`), BRT 첫날(`BRTDAY`), 재해 뒤 마지막 운행일(`SVC`), 앞선 사업자(`OPHIST`), 열람 전용 폐지일(`ARCH_CLOSE`).
@@ -137,7 +139,7 @@ out+=f"""
 - **`rail.pmtiles`**: 선형과 역 점만 들어 있습니다. 설계의 작은 기본 배경과 도도부현 경계선은 아직 없습니다.
 - **`manifest.json`**: 해시까지 만들었고 ed25519 서명은 비어 있습니다. 서명 키는 공개 전에 사용자가 만듭니다.
 - **도도부현 경계 km**: 근사값입니다.
-- **운전 계통**: {one('select count(*) from service')}개만 수록했습니다.
+- **운행 계통**: {one('select count(*) from service')}개만 수록했습니다.
 - **사철 사명 변경 이력**: 노리츠부시 표가 현재 회사 기준이라 대부분 수록하지 않았습니다. 富山港線, 宮津線, 宮福線만 앞선 사업자를 넣었습니다.
 - **현행 노선의 옛 구간 이력**: 옛 폐선 43개는 구간별 개업·폐지·휴지를 문서에서 옮겼습니다. 노리츠부시 표의 사철 폐선은 표에 있는 값 그대로입니다.
 - **열람 전용 폐선**: km를 못 구한 노선은 기록할 수 없습니다 (名鉄岐阜市内線, 西鉄北九州線 등). 北九州線은 옛 노면전차망 제외 규칙의 경계에 있습니다.

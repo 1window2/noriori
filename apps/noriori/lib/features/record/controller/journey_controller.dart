@@ -21,7 +21,8 @@ final class JourneyCommands {
 
   final Ref _ref;
 
-  Future<Change> save(Journey journey, {required String title, required String? date}) async {
+  /// 그날 탈 수 없는 노선이 하나라도 있으면 저장하지 않고 null을 준다 (DESIGN §2.8 J).
+  Future<Change?> save(Journey journey, {required String title, required String? date}) async {
     final session = _ref.read(sessionProvider);
     final network = _ref.read(networkProvider);
     final book = _ref.read(nameBookProvider);
@@ -34,39 +35,36 @@ final class JourneyCommands {
     final day = date == null ? null : DateSpan.parse(date);
     String id() => uuidV7(millis: now, randomBytes: secureRandomBytes());
     final trip = Trip(tripId: TripId(id()), title: title, createdAt: now, updatedAt: now, deviceId: device);
-    return session.records.apply(
-      Change(
-        before: const [],
-        after: [
-          trip,
-          for (final leg in journey.legs)
-            Ride(
-              rideId: RideId(id()),
-              datasetVersion: session.pack.edition,
-              createdAt: now,
-              updatedAt: now,
-              deviceId: device,
-              dateInput: date,
-              tripId: trip.tripId,
-              legs: [
-                RideLeg(
-                  seq: 0,
-                  lineId: LineId(leg.lineId),
-                  routeId: RouteId(leg.routeId),
-                  fromNode: NodeId(leg.from),
-                  toNode: NodeId(leg.to),
-                  direction: network.routes[leg.routeId]!.closed
-                      ? resolver.record(leg.routeId, leg.from, leg.to, date: day).direction
-                      : null,
-                  lineLabel: book.lines[leg.lineId] ?? leg.lineId,
-                  fromLabel: names[leg.from] ?? leg.from,
-                  toLabel: names[leg.to] ?? leg.to,
-                ),
-              ],
+    final rides = [
+      for (final leg in journey.legs)
+        Ride(
+          rideId: RideId(id()),
+          datasetVersion: session.pack.edition,
+          createdAt: now,
+          updatedAt: now,
+          deviceId: device,
+          dateInput: date,
+          tripId: trip.tripId,
+          legs: [
+            RideLeg(
+              seq: 0,
+              lineId: LineId(leg.lineId),
+              routeId: RouteId(leg.routeId),
+              fromNode: NodeId(leg.from),
+              toNode: NodeId(leg.to),
+              direction: network.routes[leg.routeId]!.closed
+                  ? resolver.record(leg.routeId, leg.from, leg.to, date: day).direction
+                  : null,
+              lineLabel: book.lines[leg.lineId] ?? leg.lineId,
+              fromLabel: names[leg.from] ?? leg.from,
+              toLabel: names[leg.to] ?? leg.to,
             ),
-        ],
-      ),
-    );
+          ],
+        ),
+    ];
+    final interpreter = RideInterpreter(network);
+    if (rides.any(interpreter.unridable)) return null;
+    return session.records.apply(Change(before: const [], after: [trip, ...rides]));
   }
 
   Future<void> undo(Change change) =>

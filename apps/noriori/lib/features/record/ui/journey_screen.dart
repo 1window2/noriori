@@ -51,6 +51,10 @@ class _JourneyScreenState extends ConsumerState<JourneyScreen> with GuardedWrite
     final t = context.t;
     final commands = ref.read(journeyCommandsProvider);
     final change = await commands.save(journey, title: '${_from!.name} → ${_to!.name}', date: _date);
+    if (change == null) {
+      if (mounted) await showUnridable(context, t.session.unridableSave);
+      return;
+    }
     if (mounted) router.go('/record');
     showUndoSnack(
       messenger,
@@ -123,11 +127,12 @@ class _LegRow extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final names = ref.watch(_legNames((leg.from, leg.to))).value ?? const <String, String>{};
+    final estimated = ref.watch(networkProvider).kmEstimatedBetween(leg.lineId, leg.from, leg.to);
     return ListTile(
       contentPadding: const EdgeInsets.symmetric(horizontal: 24),
       title: Text(line),
       subtitle: Text('${names[leg.from] ?? ''} → ${names[leg.to] ?? ''}'),
-      trailing: Text('${kmLabel(leg.meters)} km'),
+      trailing: Text('${kmLabelOf(leg.meters, estimated: estimated)} km'),
     );
   }
 }
@@ -165,7 +170,7 @@ class _StationPickerState extends ConsumerState<_StationPicker> {
           title: TextField(
             autofocus: true,
             autocorrect: false,
-            enableSuggestions: false,
+            // enableSuggestions: false는 안드로이드에서 visiblePassword 입력이 되어 Gboard가 한국어·일본어를 끈다
             decoration: InputDecoration(hintText: t.stationHint, border: InputBorder.none),
             onChanged: (value) => setState(() => _text = value),
           ),

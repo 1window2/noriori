@@ -69,16 +69,7 @@ final class RecordStore {
           rides: await allRides(),
           visits: await allVisits(),
           changeNotes: [
-            for (final row in await _db.select(_db.changeReportTable).get())
-              ChangeNote(
-                noteId: row.id,
-                edition: row.edition,
-                body: row.body,
-                createdAt: row.createdAt,
-                updatedAt: row.updatedAt,
-                deletedAt: row.deletedAt,
-                deviceId: row.deviceId,
-              ),
+            for (final row in await _db.select(_db.changeReportTable).get()) noteFromRow(row),
           ],
           settings: {for (final row in settings) row.key: row.value},
         );
@@ -115,12 +106,18 @@ final class RecordStore {
     return [for (final row in rows) rideFromRow(row, byRide[row.id] ?? const [])];
   }
 
-  /// 삭제 표시된 기록. 구간 켜기가 되살릴 조각을 찾는다.
+  /// 삭제 표시된 기록. 구간 켜기가 되살릴 조각을 찾고, 삭제한 기록 화면이 보여 준다.
   Future<List<Ride>> deletedRides() async {
     final rows = await (_db.select(_db.rideTable)..where((t) => t.deletedAt.isNotNull())).get();
     return [
       for (final row in rows) rideFromRow(row, await _legsOf(row.id)),
     ];
+  }
+
+  /// 삭제 표시된 역 방문. 삭제한 기록 화면이 보여 준다.
+  Future<List<Visit>> deletedVisits() async {
+    final rows = await (_db.select(_db.visitTable)..where((t) => t.deletedAt.isNotNull())).get();
+    return [for (final row in rows) visitFromRow(row)];
   }
 
   Future<List<Visit>> allVisits() async {
@@ -129,28 +126,17 @@ final class RecordStore {
   }
 
   Future<int?> _stampOf(UserRecord row) async {
-    final query = switch (row) {
-      Ride() => _db.selectOnly(_db.rideTable)
-        ..addColumns([_db.rideTable.updatedAt])
-        ..where(_db.rideTable.id.equals(row.id)),
-      Visit() => _db.selectOnly(_db.visitTable)
-        ..addColumns([_db.visitTable.updatedAt])
-        ..where(_db.visitTable.id.equals(row.id)),
-      Trip() => _db.selectOnly(_db.tripTable)
-        ..addColumns([_db.tripTable.updatedAt])
-        ..where(_db.tripTable.id.equals(row.id)),
-      ChangeNote() => _db.selectOnly(_db.changeReportTable)
-        ..addColumns([_db.changeReportTable.updatedAt])
-        ..where(_db.changeReportTable.id.equals(row.id)),
+    final (TableInfo<Table, Object?> table, GeneratedColumn<String> id, GeneratedColumn<int> stamp) = switch (row) {
+      Ride() => (_db.rideTable, _db.rideTable.id, _db.rideTable.updatedAt),
+      Visit() => (_db.visitTable, _db.visitTable.id, _db.visitTable.updatedAt),
+      Trip() => (_db.tripTable, _db.tripTable.id, _db.tripTable.updatedAt),
+      ChangeNote() => (_db.changeReportTable, _db.changeReportTable.id, _db.changeReportTable.updatedAt),
     };
+    final query = _db.selectOnly(table)
+      ..addColumns([stamp])
+      ..where(id.equals(row.id));
     final result = await query.getSingleOrNull();
-    if (result == null) return null;
-    return result.read(switch (row) {
-      Ride() => _db.rideTable.updatedAt,
-      Visit() => _db.visitTable.updatedAt,
-      Trip() => _db.tripTable.updatedAt,
-      ChangeNote() => _db.changeReportTable.updatedAt,
-    });
+    return result?.read(stamp);
   }
 
   Future<List<RideLegRow>> _legsOf(String rideId) => (_db.select(_db.rideLegTable)
@@ -162,17 +148,7 @@ final class RecordStore {
         Ride() => _writeRide(row),
         Visit() => _writeVisit(row),
         Trip() => _db.into(_db.tripTable).insertOnConflictUpdate(tripToRow(row)),
-        ChangeNote() => _db.into(_db.changeReportTable).insertOnConflictUpdate(
-              ChangeReportRow(
-                id: row.id,
-                createdAt: row.createdAt,
-                updatedAt: row.updatedAt,
-                deletedAt: row.deletedAt,
-                deviceId: row.deviceId,
-                edition: row.edition,
-                body: row.body,
-              ),
-            ),
+        ChangeNote() => _db.into(_db.changeReportTable).insertOnConflictUpdate(noteToRow(row)),
       };
 
   Future<void> _writeRide(Ride ride) async {

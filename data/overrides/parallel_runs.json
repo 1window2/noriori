@@ -1,0 +1,1179 @@
+{
+ "설명": "병주 판정 (DESIGN §8.1, 사용자 결정 2026-11-06). 같은 두 역을 서로 다른 공식 노선이 같은 기간에 함께 잇는 칸마다 판정한다. 두 노선이 하나의 선로 시설을 이루면 병주: 선로 공용·이중 등록(shared), 복복선·삼복선·같은 구조물 위 병행(adjacent, 위아래로 겹친 線路別複々線 포함). 따로 건설된 별개 노선이 같은 길 아래·옆을 지날 뿐이거나 칸 안에서 갈라지면 병주 아님(separate). 판정 단위는 한 칸. 새 후보 칸이 생기면 여기에 판정을 더한다",
+ "rows": [
+  {
+   "lines": [
+    "l_yokohama_subway_line_3",
+    "l_green_line"
+   ],
+   "nodes": [
+    "n_center_kita",
+    "n_center_minami"
+   ],
+   "names": [
+    "3号線",
+    "4号線",
+    "センター北",
+    "センター南"
+   ],
+   "period": [
+    "2008-03-30",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "横浜市営地下鉄グリーンライン: センター北 - センター南間は地上の高架橋区間. 두 노선이 같은 고가 위에 나란히"
+  },
+  {
+   "lines": [
+    "l_kamiyamada_line",
+    "l_urushio_line"
+   ],
+   "nodes": [
+    "n_kaho_signal",
+    "n_shimo_yamada"
+   ],
+   "names": [
+    "上山田線",
+    "漆生線",
+    "n_kaho_signal",
+    "下山田"
+   ],
+   "period": [
+    "1966-03-10",
+    "1986-04-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "漆生線: 嘉穂信号場 - 下山田 (1.7km) は上山田線と重複"
+  },
+  {
+   "lines": [
+    "l_ise_line",
+    "l_kansai_main_line"
+   ],
+   "nodes": [
+    "n_kawarada",
+    "n_minami_yokkaichi"
+   ],
+   "names": [
+    "伊勢線",
+    "関西本線",
+    "河原田",
+    "南四日市"
+   ],
+   "period": [
+    "1973-09-01",
+    "1987-03-27"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "伊勢鉄道伊勢線: 関西本線 南四日市와 津 사이 단락선. 河原田까지는 関西本線 선로"
+  },
+  {
+   "lines": [
+    "l_fukutoshin_line",
+    "l_yurakucho_line"
+   ],
+   "nodes": [
+    "n_kotake_mukaihara_tokyo_metro",
+    "n_senkawa"
+   ],
+   "names": [
+    "副都心線",
+    "有楽町線",
+    "小竹向原",
+    "千川"
+   ],
+   "period": [
+    "1994-12-07",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "東京メトロ有楽町線: 池袋駅までは当線の直下を走る線路別複々線 (위아래로 겹친 한 시설)"
+  },
+  {
+   "lines": [
+    "l_fukutoshin_line",
+    "l_yurakucho_line"
+   ],
+   "nodes": [
+    "n_ikebukuro_tokyo_metro",
+    "n_kanamecho"
+   ],
+   "names": [
+    "副都心線",
+    "有楽町線",
+    "池袋",
+    "要町"
+   ],
+   "period": [
+    "1994-12-07",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "東京メトロ有楽町線: 池袋駅までは当線の直下を走る線路別複々線 (위아래로 겹친 한 시설)"
+  },
+  {
+   "lines": [
+    "l_fukutoshin_line",
+    "l_yurakucho_line"
+   ],
+   "nodes": [
+    "n_kanamecho",
+    "n_senkawa"
+   ],
+   "names": [
+    "副都心線",
+    "有楽町線",
+    "要町",
+    "千川"
+   ],
+   "period": [
+    "1994-12-07",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "東京メトロ有楽町線: 池袋駅までは当線の直下を走る線路別複々線 (위아래로 겹친 한 시설)"
+  },
+  {
+   "lines": [
+    "l_kitagojo_line",
+    "l_teppoku_line"
+   ],
+   "nodes": [
+    "n_nishi_5_chome",
+    "n_sapporo_ekimae"
+   ],
+   "names": [
+    "北5条線",
+    "鉄北線",
+    "西五丁目",
+    "札幌駅前"
+   ],
+   "period": [
+    "1932-12-10",
+    "1971-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "n05_fix 札幌市交通局 鉄北線 note: 札幌駅前–西5丁目는 北五条線 궤도"
+  },
+  {
+   "lines": [
+    "l_chiyoda_line",
+    "l_marunouchi_line"
+   ],
+   "nodes": [
+    "n_kasumigaseki_tokyo_metro",
+    "n_kokkai_gijido_mae"
+   ],
+   "names": [
+    "千代田線",
+    "丸ノ内線",
+    "霞ヶ関",
+    "国会議事堂前"
+   ],
+   "period": [
+    "1972-10-20",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "지하철 별도 터널 (선 간격 200m 넘음)"
+  },
+  {
+   "lines": [
+    "l_chiyoda_line",
+    "l_hibiya_line"
+   ],
+   "nodes": [
+    "n_hibiya_tokyo_metro",
+    "n_kasumigaseki_tokyo_metro"
+   ],
+   "names": [
+    "千代田線",
+    "日比谷線",
+    "日比谷",
+    "霞ヶ関"
+   ],
+   "period": [
+    "1971-03-20",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "지하철 별도 터널 (선 간격 200m 넘음)"
+  },
+  {
+   "lines": [
+    "l_namboku_line_tokyo_metro",
+    "l_yurakucho_line"
+   ],
+   "nodes": [
+    "n_ichigaya_tokyo_metro",
+    "n_iidabashi_tokyo_metro"
+   ],
+   "names": [
+    "南北線",
+    "有楽町線",
+    "市ケ谷",
+    "飯田橋"
+   ],
+   "period": [
+    "1996-03-26",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "따로 건설된 별개 노선이 같은 外堀 쪽 길 아래를 지남(선 간격 중앙 28m). 한 시설이 아님"
+  },
+  {
+   "lines": [
+    "l_namboku_line_sapporo_city",
+    "l_toho_line"
+   ],
+   "nodes": [
+    "n_odori",
+    "n_sapporo_sapporo_city"
+   ],
+   "names": [
+    "南北線",
+    "東豊線",
+    "大通",
+    "さっぽろ"
+   ],
+   "period": [
+    "1988-12-02",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "지하철 별도 터널 (선 간격 200m 넘음)"
+  },
+  {
+   "lines": [
+    "l_osaka_loop_line",
+    "l_tokaido_main_line"
+   ],
+   "nodes": [
+    "n_fukushima_osaka_loop",
+    "n_osaka"
+   ],
+   "names": [
+    "大阪環状線",
+    "梅田貨物線",
+    "福島",
+    "大阪"
+   ],
+   "period": [
+    "1988-04-24",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "梅田貨物線: 大阪駅(うめきた) 지하 승강장에서 福島 쪽으로 지하. 大阪環状線은 고가"
+  },
+  {
+   "lines": [
+    "l_midosuji_line",
+    "l_yotsubashi_line"
+   ],
+   "nodes": [
+    "n_daikokucho",
+    "n_namba_osaka_metro"
+   ],
+   "names": [
+    "御堂筋線",
+    "四つ橋線",
+    "大国町",
+    "なんば"
+   ],
+   "period": [
+    "1965-10-01",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "지하철 별도 터널, 다른 길 아래"
+  },
+  {
+   "lines": [
+    "l_keisei_main_line",
+    "l_narita_airport_line"
+   ],
+   "nodes": [
+    "n_airport_terminal_2_keisei",
+    "n_narita_airport_terminal_1_keisei"
+   ],
+   "names": [
+    "本線",
+    "成田空港線",
+    "空港第2ビル",
+    "成田空港"
+   ],
+   "period": [
+    "2010-07-17",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "京成 本線과 成田空港線이 空港第2ビル–成田空港을 단선 둘로 나란히"
+  },
+  {
+   "lines": [
+    "l_hanshin_main_line",
+    "l_hanshin_namba_line"
+   ],
+   "nodes": [
+    "n_amagasaki_hanshin",
+    "n_daimotsu"
+   ],
+   "names": [
+    "本線",
+    "阪神なんば線",
+    "尼崎",
+    "大物"
+   ],
+   "period": [
+    "1928-12-28",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "阪神なんば線: 本線と並行する尼崎駅 - 大物駅間"
+  },
+  {
+   "lines": [
+    "l_katamachi_line",
+    "l_osaka_higashi_line"
+   ],
+   "nodes": [
+    "n_hanaten",
+    "n_shigino"
+   ],
+   "names": [
+    "片町線",
+    "おおさか東線",
+    "放出",
+    "鴫野"
+   ],
+   "period": [
+    "2019-03-16",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "おおさか東線 鴫野–放出은 片町線(学研都市線)과 같은 구간 이중 등록"
+  },
+  {
+   "lines": [
+    "l_hakushin_line",
+    "l_shinetsu_main_line"
+   ],
+   "nodes": [
+    "n_kami_nuttari",
+    "n_niigata"
+   ],
+   "names": [
+    "白新線",
+    "信越本線",
+    "n_kami_nuttari",
+    "新潟"
+   ],
+   "period": [
+    "1958-04-29",
+    "1987-04-01"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "白新線: 上沼垂信号場 - 新潟駅間は信越本線と共用…複々線 / 上沼垂信号場 - 沼垂駅間は信越本線と重複"
+  },
+  {
+   "lines": [
+    "l_hakushin_line",
+    "l_shinetsu_main_line"
+   ],
+   "nodes": [
+    "n_kami_nuttari",
+    "n_nuttari"
+   ],
+   "names": [
+    "白新線",
+    "信越本線",
+    "n_kami_nuttari",
+    "沼垂"
+   ],
+   "period": [
+    "1956-04-15",
+    "1958-04-29"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "白新線: 上沼垂信号場 - 新潟駅間は信越本線と共用…複々線 / 上沼垂信号場 - 沼垂駅間は信越本線と重複"
+  },
+  {
+   "lines": [
+    "l_kobe_main_line",
+    "l_takarazuka_main_line"
+   ],
+   "nodes": [
+    "n_nakatsu_hankyu",
+    "n_osaka_umeda_hankyu"
+   ],
+   "names": [
+    "神戸本線",
+    "宝塚本線",
+    "中津",
+    "大阪梅田"
+   ],
+   "period": [
+    "1926-07-05",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "阪急 梅田–十三 3복선(神戸·宝塚·京都)이 나란히"
+  },
+  {
+   "lines": [
+    "l_kobe_main_line",
+    "l_takarazuka_main_line"
+   ],
+   "nodes": [
+    "n_juso",
+    "n_nakatsu_hankyu"
+   ],
+   "names": [
+    "神戸本線",
+    "宝塚本線",
+    "十三",
+    "中津"
+   ],
+   "period": [
+    "1926-07-05",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "阪急 梅田–十三 3복선(神戸·宝塚·京都)이 나란히"
+  },
+  {
+   "lines": [
+    "l_ginza_line",
+    "l_hanzomon_line"
+   ],
+   "nodes": [
+    "n_omotesando",
+    "n_shibuya_tokyo_metro"
+   ],
+   "names": [
+    "銀座線",
+    "半蔵門線",
+    "表参道",
+    "渋谷"
+   ],
+   "period": [
+    "1978-08-01",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "따로 건설된 별개 노선이 같은 青山通り 아래를 지남(선 간격 중앙 14m). 銀座線은 渋谷 3층 고가, 半蔵門線은 지하. 한 시설이 아님"
+  },
+  {
+   "lines": [
+    "l_kansai_main_line",
+    "l_osaka_loop_line"
+   ],
+   "nodes": [
+    "n_imamiya",
+    "n_shin_imamiya"
+   ],
+   "names": [
+    "関西本線",
+    "大阪環状線",
+    "今宮",
+    "新今宮"
+   ],
+   "period": [
+    "1961-04-25",
+    "1987-04-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "大阪環状線: 今宮駅 - 天王寺駅間2.2 kmは関西本線との重複区間"
+  },
+  {
+   "lines": [
+    "l_kagoshima_main_line",
+    "l_nippo_main_line"
+   ],
+   "nodes": [
+    "n_kokura",
+    "n_nishi_kokura"
+   ],
+   "names": [
+    "鹿児島本線",
+    "日豊本線",
+    "小倉",
+    "西小倉"
+   ],
+   "period": [
+    "1902-12-27",
+    "1987-04-01"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "日豊本線 기점 小倉에서 西小倉까지 鹿児島本線과 나란히(이중 등록)"
+  },
+  {
+   "lines": [
+    "l_kakuozan_line",
+    "l_higashiyama_line"
+   ],
+   "nodes": [
+    "n_ikeshita",
+    "n_kakuozan"
+   ],
+   "names": [
+    "覚王山線",
+    "東山線",
+    "池下",
+    "覚王山"
+   ],
+   "period": [
+    "1963-04-01",
+    "1967-02-01"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "名古屋市電 覚王山線은 広小路 노면, 地下鉄 東山線은 그 아래 지하. 따로 건설된 별개 선로 (R04 조사)"
+  },
+  {
+   "lines": [
+    "l_nishinoda_line",
+    "l_noda_line_osaka_city"
+   ],
+   "nodes": [
+    "n_tamagawacho_3_chome",
+    "n_tamagawacho_4_chome"
+   ],
+   "names": [
+    "西野田線",
+    "野田線",
+    "玉川町三丁目",
+    "玉川町四丁目"
+   ],
+   "period": [
+    "1918-04-25",
+    "1964-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "大阪市電 玉川町三丁目–四丁目 0.2km는 西野田線 특허 구간을 野田線 계통(20·21·28系統)이 함께 씀. 西野田線으로는 1932 비영업선화 (R03 조사)"
+  },
+  {
+   "lines": [
+    "l_yosan_line",
+    "l_kotoku_line"
+   ],
+   "nodes": [
+    "n_takamatsu_kotoku",
+    "n_takamatsu_kotoku_old"
+   ],
+   "names": [
+    "予讃線",
+    "高徳線",
+    "高松",
+    "高松(旧)"
+   ],
+   "period": [
+    "1925-08-01",
+    "2001-05-27"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "高松駅 2001-05-27 이전 전의 옛 자리까지 두 노선이 각자 승강장으로 들어감(역 이전 옛 자리 칸, 0.1 km). 같은 선로 시설이 아니라 병주로 그리지 않음"
+  },
+  {
+   "lines": [
+    "l_keisei_main_line",
+    "l_higashi_narita_line"
+   ],
+   "nodes": [
+    "n_keisei_narita",
+    "n_komaino_junction"
+   ],
+   "names": [
+    "京成本線",
+    "東成田線",
+    "京成成田",
+    "駒井野分岐点"
+   ],
+   "period": [
+    "1991-03-19",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "京成東成田線 문서(oldid=111310004) 「路線距離：7.1 km（うち6.0 kmは本線と重複）」: 京成成田～駒井野信号場는 1991-03-19부터 本線과 같은 선로의 이중 등록(공식 노선 구성 2026-11-09)"
+  },
+  {
+   "lines": [
+    "l_keisei_main_line",
+    "l_narita_line"
+   ],
+   "nodes": [
+    "n_airport_terminal_2_keisei",
+    "n_narita_airport_terminal_1_keisei"
+   ],
+   "names": [
+    "京成本線",
+    "成田線",
+    "空港第2ビル",
+    "成田空港"
+   ],
+   "period": [
+    "1991-03-19",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "成田空港·空港第2ビル: JR 成田線(空港支線)과 京成은 成田空港 터널 같은 구조물 안에서 각자 선로로 나란히 달림(선형 90% 넘게 10 m 안 겹침). 2회차 종합 K09"
+  },
+  {
+   "lines": [
+    "l_narita_airport_line",
+    "l_narita_line"
+   ],
+   "nodes": [
+    "n_airport_terminal_2_keisei",
+    "n_narita_airport_terminal_1_keisei"
+   ],
+   "names": [
+    "京成成田空港線",
+    "成田線",
+    "空港第2ビル",
+    "成田空港"
+   ],
+   "period": [
+    "2010-07-17",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "adjacent",
+   "why": "成田空港·空港第2ビル: 京成成田空港線(成田スカイアクセス)과 JR 成田線은 같은 터널 구조물 안에서 나란히. 2회차 종합 K09"
+  },
+  {
+   "lines": [
+    "l_nanao_line_noto",
+    "l_nanao_line"
+   ],
+   "nodes": [
+    "n_nanao",
+    "n_wakura_onsen"
+   ],
+   "names": [
+    "のと鉄道七尾線",
+    "七尾線",
+    "七尾",
+    "和倉温泉"
+   ],
+   "period": [
+    "1991-09-01",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "七尾–和倉温泉: のと鉄道(제2종)가 JR 七尾線 선로를 함께 씀(1991-09-01~). 2회차 종합 K09·U03(chubu_2-09)"
+  },
+  {
+   "lines": [
+    "l_ibara_line",
+    "l_hakubi_line"
+   ],
+   "nodes": [
+    "n_soja",
+    "n_kiyone"
+   ],
+   "names": [
+    "井原鉄道井原線",
+    "伯備線",
+    "総社",
+    "清音"
+   ],
+   "period": [
+    "1999-01-11",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "総社–清音: 井原鉄道 井原線은 JR 伯備線 선로에 乗り入れ(같은 선로). 2회차 종합 K09·U03(chugoku_shikoku_1-014)"
+  },
+  {
+   "lines": [
+    "l_nankai_airport_line",
+    "l_kansai_airport_line"
+   ],
+   "nodes": [
+    "n_rinku_town",
+    "n_kansai_airport"
+   ],
+   "names": [
+    "南海空港線",
+    "関西空港線",
+    "りんくうタウン",
+    "関西空港"
+   ],
+   "period": [
+    "1994-06-15",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "りんくうタウン–関西空港: 関西空港連絡橋 선로를 南海·JR이 함께 씀(新関西国際空港 제3종). 2회차 종합 K09·U03(kinki_2-045)"
+  },
+  {
+   "lines": [
+    "l_mita_line",
+    "l_namboku_line_tokyo_metro"
+   ],
+   "nodes": [
+    "n_meguro_tokyo_metro",
+    "n_shirokanedai_tokyo_metro"
+   ],
+   "names": [
+    "都営地下鉄三田線",
+    "東京メトロ南北線",
+    "目黒",
+    "白金台"
+   ],
+   "period": [
+    "2000-09-26",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "目黒–白金高輪: 都営三田線과 東京メトロ南北線이 같은 선로를 함께 씀(2000-09-26~). 2회차 종합 K09·U03(kanto_2-044)"
+  },
+  {
+   "lines": [
+    "l_mita_line",
+    "l_namboku_line_tokyo_metro"
+   ],
+   "nodes": [
+    "n_shirokanedai_tokyo_metro",
+    "n_shirokane_takanawa_tokyo_metro"
+   ],
+   "names": [
+    "都営地下鉄三田線",
+    "東京メトロ南北線",
+    "白金台",
+    "白金高輪"
+   ],
+   "period": [
+    "2000-09-26",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "目黒–白金高輪: 都営三田線과 東京メトロ南北線이 같은 선로를 함께 씀(2000-09-26~). 2회차 종합 K09·U03(kanto_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_hanakuma_sanyo",
+    "n_sannomiya_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪急神戸高速線",
+    "花隈",
+    "三宮"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神·山陽의 神戸高速線은 神戸高速鉄道(제3종) 東西線 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_kosoku_kobe_sanyo",
+    "n_hanakuma_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪急神戸高速線",
+    "高速神戸",
+    "花隈"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神·山陽의 神戸高速線은 神戸高速鉄道(제3종) 東西線 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_hanshin",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_kosoku_kobe_hanshin",
+    "n_shinkaichi_hanshin"
+   ],
+   "names": [
+    "阪神神戸高速線",
+    "阪急神戸高速線",
+    "高速神戸",
+    "新開地"
+   ],
+   "period": [
+    "1968-04-07",
+    "9999-12-31"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神 神戸高速線은 新開地–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_shinkaichi_sanyo",
+    "n_kosoku_kobe_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪急神戸高速線",
+    "新開地",
+    "高速神戸"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神·山陽의 神戸高速線은 神戸高速鉄道(제3종) 東西線 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hanshin"
+   ],
+   "nodes": [
+    "n_shinkaichi_sanyo",
+    "n_kosoku_kobe_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪神神戸高速線",
+    "新開地",
+    "高速神戸"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪神·山陽 神戸高速線은 元町–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_hanshin",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_shinkaichi_hanshin",
+    "n_daikai_hanshin"
+   ],
+   "names": [
+    "阪神神戸高速線",
+    "阪急神戸高速線",
+    "新開地",
+    "大開"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神 神戸高速線은 新開地–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_daikai_sanyo",
+    "n_shinkaichi_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪急神戸高速線",
+    "大開",
+    "新開地"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神·山陽의 神戸高速線은 神戸高速鉄道(제3종) 東西線 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hanshin"
+   ],
+   "nodes": [
+    "n_daikai_sanyo",
+    "n_shinkaichi_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪神神戸高速線",
+    "大開",
+    "新開地"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪神·山陽 神戸高速線은 元町–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_hanshin",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_daikai_hanshin",
+    "n_kosoku_nagata_hanshin"
+   ],
+   "names": [
+    "阪神神戸高速線",
+    "阪急神戸高速線",
+    "大開",
+    "高速長田"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神 神戸高速線은 新開地–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_kosoku_nagata_sanyo",
+    "n_daikai_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪急神戸高速線",
+    "高速長田",
+    "大開"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神·山陽의 神戸高速線은 神戸高速鉄道(제3종) 東西線 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hanshin"
+   ],
+   "nodes": [
+    "n_kosoku_nagata_sanyo",
+    "n_daikai_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪神神戸高速線",
+    "高速長田",
+    "大開"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪神·山陽 神戸高速線은 元町–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_hanshin",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_kosoku_nagata_hanshin",
+    "n_nishidai_hanshin"
+   ],
+   "names": [
+    "阪神神戸高速線",
+    "阪急神戸高速線",
+    "高速長田",
+    "西代"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神 神戸高速線은 新開地–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hankyu"
+   ],
+   "nodes": [
+    "n_nishidai_sanyo",
+    "n_kosoku_nagata_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪急神戸高速線",
+    "西代",
+    "高速長田"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪急·阪神·山陽의 神戸高速線은 神戸高速鉄道(제3종) 東西線 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hanshin"
+   ],
+   "nodes": [
+    "n_nishidai_sanyo",
+    "n_kosoku_nagata_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪神神戸高速線",
+    "西代",
+    "高速長田"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪神·山陽 神戸高速線은 元町–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hanshin"
+   ],
+   "nodes": [
+    "n_nishi_motomachi_sanyo",
+    "n_motomachi_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪神神戸高速線",
+    "西元町",
+    "元町"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪神·山陽 神戸高速線은 元町–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_kobe_kosoku_line_sanyo",
+    "l_kobe_kosoku_line_hanshin"
+   ],
+   "nodes": [
+    "n_kosoku_kobe_sanyo",
+    "n_nishi_motomachi_sanyo"
+   ],
+   "names": [
+    "山陽電気鉄道神戸高速線",
+    "阪神神戸高速線",
+    "高速神戸",
+    "西元町"
+   ],
+   "period": [
+    "1968-04-07",
+    "2010-10-01"
+   ],
+   "parallel": true,
+   "how": "shared",
+   "why": "神戸高速線: 阪神·山陽 神戸高速線은 元町–西代 같은 선로의 사업자별 이중 등록. 2회차 종합 K09·U03(kinki_2-044)"
+  },
+  {
+   "lines": [
+    "l_guideway_bus_shidami_line",
+    "l_meijo_line"
+   ],
+   "nodes": [
+    "n_nagoya_dome_mae_yada_nagoya_guideway_bus",
+    "n_sunadabashi_nagoya_guideway_bus"
+   ],
+   "names": [
+    "名古屋ガイドウェイバスガイドウェイバス志段味線",
+    "名古屋市営地下鉄名城線",
+    "ナゴヤドーム前矢田",
+    "砂田橋"
+   ],
+   "period": [
+    "2001-03-23",
+    "9999-12-31"
+   ],
+   "parallel": false,
+   "how": "separate",
+   "why": "ナゴヤドーム前矢田–砂田橋: ゆとりーとライン(고가 가이드웨이)과 名城線(지하)은 같은 길 위·아래를 따로 지나는 다른 시설. 2회차 종합 K09"
+  },
+{"lines": ["l_nagoya_main_line", "l_mikawa_line"], "nodes": ["n_chiryu_signal", "n_mikawa_chiryu_meitetsu_mikawa_old"], "names": ["名古屋本線", "三河線", "知立信号場", "知立(2대, 지금 三河知立（旧）)"], "period": ["1950-09-17", "1959-04-01"], "parallel": false, "how": "separate", "why": "三河線 知立連絡線(1950-09-17~1959-04-01)은 三河線 쪽에서 따로 놓은 연락 선로로 知立信号場에서 名古屋本線에 합류(source_patch 知立連絡線 근거). 나뉜 역 규칙(split_period)으로 1959-04-01 전 名古屋本線도 2대 知立 한 노드에 서게 되어 생긴 후보 칸 (11회차 S1)"}
+ ]
+}

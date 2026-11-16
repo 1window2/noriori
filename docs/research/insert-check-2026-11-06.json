@@ -1,0 +1,1494 @@
+[
+ {
+  "family": "jr",
+  "line": "石勝線",
+  "name": "高松",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "北海道炭礦汽船 夕張炭礦専用鉄道（新夕張–夕張丁未, 1927-01-08〜1951-12-01）"
+  },
+  "evidence": "ja.wikipedia 石勝線 oldid=110939982 (BS 도표·연표); 北海道炭礦汽船夕張鉄道線 oldid=110051170（「中間の高松に乗降場が設けられ、従業員輸送」）",
+  "note": "石勝線 夕張 끝역 너머 별도 열(exKRW 분기)의 탄광 전용철도 역. 종업원용 승강장이라 일반 여객역도 아님. 夕張–占冠 사이에 넣으면 안 됨"
+ },
+ {
+  "family": "jr",
+  "line": "石勝線",
+  "name": "夕張町丁未",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "北海道炭礦汽船 夕張炭礦専用鉄道（新夕張–夕張丁未）"
+  },
+  "evidence": "ja.wikipedia 石勝線 oldid=110939982 (BS 도표·연표); 北海道炭礦汽船夕張鉄道線 oldid=110051170",
+  "note": "전용철도 종점(exKHSTe). 石勝線 역 아님"
+ },
+ {
+  "family": "jr",
+  "line": "宗谷本線",
+  "name": "西永山",
+  "verdict": "OK",
+  "correct": {
+   "close": "1967-11-01"
+  },
+  "evidence": "ja.wikipedia 宗谷本線 oldid=111330293 (BS 도표·연표)",
+  "note": "北旭川(화물, 1968 개설)은 우리 역 목록에 없으므로 앞역 新旭川가 맞음"
+ },
+ {
+  "family": "jr",
+  "line": "石北本線",
+  "name": "下相ノ内",
+  "verdict": "OK",
+  "correct": {
+   "km": 163.9,
+   "open": "1950-11-01",
+   "close": "1967-10-01"
+  },
+  "evidence": "ja.wikipedia 石北本線 oldid=110395242 (BS 도표·연표)",
+  "note": "도표 km가 괄호 \"(163.9)\"라 생성기가 못 읽음"
+ },
+ {
+  "family": "jr",
+  "line": "石北本線",
+  "name": "美野",
+  "verdict": "OK",
+  "correct": {
+   "km": 196.9,
+   "open": "1946-07",
+   "close": "1956년 이후(時期不詳)"
+  },
+  "evidence": "ja.wikipedia 石北本線 oldid=110395242 (BS 도표·연표)",
+  "note": "폐지일 불명(본문 1956년 이후, 도표 \"1958以降\"). 범위 안이므로 OK. km 괄호값"
+ },
+ {
+  "family": "jr",
+  "line": "吾妻線",
+  "name": "嬬恋",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "草軽電気鉄道線 (l_kusakaru_electric_railway_line, 기존 노드 n_tsumagoi)",
+   "close": "1960"
+  },
+  "evidence": "ja.wikipedia 吾妻線 oldid=111452472 (BS 도표·연표); 草軽電気鉄道 oldid=109946491 BS (36.8 嬬恋駅 1919-1960)",
+  "note": "吾妻線 도표에 그려진 草軽 열(exHST). 작업 트리에 吾妻線 중복 노드 n_tsumagoi_agatsuma가 생김"
+ },
+ {
+  "family": "jr",
+  "line": "吾妻線",
+  "name": "上州三原",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "草軽電気鉄道線 (기존 노드 n_joshu_mihara)",
+   "close": "1962"
+  },
+  "evidence": "ja.wikipedia 吾妻線 oldid=111452472 (BS 도표·연표); 草軽電気鉄道 oldid=109946491 (37.9 上州三原駅 1926-1962)",
+  "note": "草軽 역"
+ },
+ {
+  "family": "jr",
+  "line": "釜石線",
+  "name": "関口",
+  "verdict": "OK",
+  "correct": {
+   "km": 51.7,
+   "open": "1926-08-15",
+   "close": "1950-10-10"
+  },
+  "evidence": "ja.wikipedia 釜石線 oldid=111465812 (BS 도표·연표)",
+  "note": "岩手軽便鉄道 구선(1950-10-10 개궤·신선 전환으로 폐지) 위의 역. 같은 노선 青笹–岩手上郷 사이. km 괄호값"
+ },
+ {
+  "family": "jr",
+  "line": "只見線",
+  "name": "黒又川",
+  "verdict": "OK",
+  "correct": {
+   "open": "1954-12-10",
+   "close": "1965-07-16"
+  },
+  "evidence": "ja.wikipedia 只見線 oldid=111454822 (BS 도표·연표)",
+  "note": "仮乗降場"
+ },
+ {
+  "family": "jr",
+  "line": "羽越本線",
+  "name": "加治川",
+  "verdict": "OK",
+  "correct": {
+   "open": "1934-04-06",
+   "close": "1962-08-01"
+  },
+  "evidence": "ja.wikipedia 羽越本線 oldid=111580331 (BS 도표·연표)",
+  "note": "仮乗降場(観桜 임시)"
+ },
+ {
+  "family": "jr",
+  "line": "越後線",
+  "name": "万代",
+  "verdict": "NOT_PASSENGER",
+  "correct": {
+   "line": "信越本線 貨物支線(上沼垂–万代)"
+  },
+  "evidence": "ja.wikipedia 越後線 oldid=111454860 (BS 도표·연표); 越後線 본문 「上沼垂駅 - 万代駅（貨物駅）間の信越本線貨物支線」",
+  "note": "화물역. 越後線 여객역 아님"
+ },
+ {
+  "family": "jr",
+  "line": "総武本線",
+  "name": "京成千葉",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "京成千葉線 (l_chiba_line) — 京成千葉駅(初代), 1958 이전(현 千葉中央 계보)"
+  },
+  "evidence": "ja.wikipedia 総武本線 oldid=111504919 (BS 도표·연표)",
+  "note": "국철 千葉 옆에 그려진 京成 열(vSTR-exKHSTe). 총무본선·외방선 양쪽에 중복 노드 n_keisei_chiba_sobu_main이 생김"
+ },
+ {
+  "family": "jr",
+  "line": "外房線",
+  "name": "京成千葉",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "京成千葉線 (l_chiba_line) — 京成千葉駅(初代), 1958 이전(현 千葉中央 계보)"
+  },
+  "evidence": "ja.wikipedia 外房線 oldid=111443283 (BS 도표·연표)",
+  "note": "국철 千葉 옆에 그려진 京成 열(vSTR-exKHSTe). 총무본선·외방선 양쪽에 중복 노드 n_keisei_chiba_sobu_main이 생김"
+ },
+ {
+  "family": "jr",
+  "line": "久留里線",
+  "name": "上総山本",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1937-04-20",
+   "suspended": "1947",
+   "close": "1956-07-01"
+  },
+  "evidence": "ja.wikipedia 久留里線 oldid=111534802 (BS 도표·연표)",
+  "note": "1947년 휴지 → 1956-07-01 휴지 중 폐지. 1950년 이후 영업 없음"
+ },
+ {
+  "family": "jr",
+  "line": "飯田線",
+  "name": "遠山口",
+  "verdict": "OK",
+  "correct": {
+   "open": "1937-03-01",
+   "close": "1951-08-01"
+  },
+  "evidence": "ja.wikipedia 飯田線 oldid=111083474 (BS 도표·연표)",
+  "note": "平岡ダム 건설로 바뀐 구선 위의 역(같은 노선, 平岡–為栗)"
+ },
+ {
+  "family": "jr",
+  "line": "紀勢本線",
+  "name": "狗子ノ川",
+  "verdict": "OK",
+  "correct": {
+   "open": "1925-03-10",
+   "close": "1967-10-01"
+  },
+  "evidence": "ja.wikipedia 紀勢本線 oldid=111257602 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "jr",
+  "line": "伯備線",
+  "name": "酒津",
+  "verdict": "OK",
+  "correct": {
+   "open": "1954-04-01",
+   "close": "1962-06-01"
+  },
+  "evidence": "ja.wikipedia 伯備線 oldid=111531409 (BS 도표·연표)",
+  "note": "酒津公園 観桜용 仮停車場"
+ },
+ {
+  "family": "jr",
+  "line": "呉線",
+  "name": "狩留賀浜",
+  "verdict": "OK",
+  "correct": {
+   "open": "1928-07-07",
+   "close": "1967-08-01"
+  },
+  "evidence": "ja.wikipedia 呉線 oldid=111046476 (BS 도표·연표)",
+  "note": "구선(ex열) 위 계절 仮停車場. 현 かるが浜(72.2)와 다른 역"
+ },
+ {
+  "family": "jr",
+  "line": "呉線",
+  "name": "安芸浜崎",
+  "verdict": "OK",
+  "correct": {
+   "open": "1926-07-21",
+   "close": "1967-08-01"
+  },
+  "evidence": "ja.wikipedia 呉線 oldid=111046476 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "jr",
+  "line": "山陰本線",
+  "name": "白兎",
+  "verdict": "OK",
+  "correct": {
+   "close": "1969-03-01"
+  },
+  "evidence": "ja.wikipedia 山陰本線 oldid=111452828 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "jr",
+  "line": "山陰本線",
+  "name": "清水寺",
+  "verdict": "OK",
+  "correct": {
+   "open": "1915-03-31",
+   "close": "1964-10-01"
+  },
+  "evidence": "ja.wikipedia 山陰本線 oldid=111452828 (BS 도표·연표)",
+  "note": "폐지와 함께 清水寺信号場(1964-1982)로 바뀜"
+ },
+ {
+  "family": "jr",
+  "line": "予讃線",
+  "name": "九王",
+  "verdict": "UNSURE",
+  "correct": null,
+  "evidence": "ja.wikipedia 予讃線 oldid=111002174 (BS 도표·연표)",
+  "note": "도표 \"九王乗降場 -1967?\" 뿐, 본문·역 문서에 개폐일 없음. 폐지 연도 미확인"
+ },
+ {
+  "family": "jr",
+  "line": "予讃線",
+  "name": "椿宮",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "市坪",
+   "date": "1964-10-01",
+   "open": "1933-01-21"
+  },
+  "evidence": "ja.wikipedia 予讃線 oldid=111002174 (BS 도표·연표); 市坪駅 oldid=110979240 (역사 첫 줄이 椿宮仮乗降場)",
+  "note": "椿宮大祭 때만 여는 임시 승강장이 1964년 市坪駅으로 승격. 별도 역이 아니라 市坪의 전신 → moved.json/이름 이력으로"
+ },
+ {
+  "family": "jr",
+  "line": "牟岐線",
+  "name": "金磯",
+  "verdict": "OK",
+  "correct": {
+   "open": "1916-12-15",
+   "close": "1962-07-18"
+  },
+  "evidence": "ja.wikipedia 牟岐線 oldid=111002477 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "jr",
+  "line": "日豊本線",
+  "name": "心岳寺",
+  "verdict": "OK",
+  "correct": {
+   "open": "1908-07-28",
+   "close": "1967-08-01"
+  },
+  "evidence": "ja.wikipedia 日豊本線 oldid=111420360 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "jr",
+  "line": "勝田線",
+  "name": "旅石",
+  "verdict": "NOT_PASSENGER",
+  "correct": {
+   "line": "香椎線(貨物) 旅石支線 (酒殿/志免–旅石)",
+   "close": "1960-12-15"
+  },
+  "evidence": "ja.wikipedia 勝田線 oldid=111030903 (BS 도표·연표); 旅石駅 oldid=111024153 「貨物専用駅」",
+  "note": "勝田線 역 아님(香椎線 화물지선 KBSTe 열). archive a_tatomi의 after도 n_tabiishi를 가리킴"
+ },
+ {
+  "family": "jr",
+  "line": "深名線",
+  "name": "下政和",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "政和温泉",
+   "date": "1961-12-01",
+   "km": 56.4,
+   "open": "1955-08-20"
+  },
+  "evidence": "ja.wikipedia 深名線 oldid=111317864 (BS 도표·연표); 政和温泉駅 oldid=109464352 「200 m深川方に移転して政和温泉仮乗降場に改称」",
+  "note": "같은 승강장의 이전·개칭"
+ },
+ {
+  "family": "jr",
+  "line": "池北線",
+  "name": "釧北",
+  "verdict": "OK",
+  "correct": {
+   "open": "1948-07-01 (열차 정차 시작; 仮乗降場 설정일 불명)",
+   "close": "1957-06-01"
+  },
+  "evidence": "ja.wikipedia 北海道ちほく高原鉄道ふるさと銀河線 oldid=111532351 (BS 도표·연표); 釧北仮乗降場 oldid=109414925",
+  "note": "1916년은 信号所 개설일. 보선 직원 가족용 局設定 仮乗降場"
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "亀戸線",
+  "name": "十間橋通",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1928-04-15",
+   "suspended": "1945-03-10",
+   "close": "1958-10-22"
+  },
+  "evidence": "ja.wikipedia 東武亀戸線 oldid=109609171 (BS 도표·연표); 十間橋通駅 oldid=103513231",
+  "note": "공습 휴지 후 재개 없이 폐지"
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "亀戸線",
+  "name": "天神",
+  "verdict": "OK",
+  "correct": {
+   "open": "1925-09-04 (재개업)",
+   "suspended": "1956-10-31",
+   "close": "1957-05-20"
+  },
+  "evidence": "ja.wikipedia 東武亀戸線 oldid=109609171 (BS 도표·연표); 天神駅 (東京都) oldid=103545352",
+  "note": "1956-10까지 영업"
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "鬼怒川線",
+  "name": "鬼怒大瀞",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1930-07-06",
+   "suspended": "1944-10-25",
+   "close": "1954-11-16"
+  },
+  "evidence": "ja.wikipedia 東武鬼怒川線 oldid=111044830 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "宇都宮線",
+  "name": "花房町",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1932-04-01",
+   "suspended": "1944-06-30",
+   "close": "1954-09-24"
+  },
+  "evidence": "ja.wikipedia 東武宇都宮線 oldid=111355508 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "野田線",
+  "name": "加倉",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1945-04-30",
+   "close": "1950-08-01"
+  },
+  "evidence": "ja.wikipedia 東武野田線 oldid=111355825 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "野田線",
+  "name": "渋江",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1945-04-30",
+   "close": "1950-08-01"
+  },
+  "evidence": "ja.wikipedia 東武野田線 oldid=111355825 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "野田線",
+  "name": "武州川辺",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1945-05-20",
+   "close": "1950-07-05"
+  },
+  "evidence": "ja.wikipedia 東武野田線 oldid=111355825 (BS 도표·연표)",
+  "note": "도표의 \"-1955\"는 틀림(본문 1950-07-05)"
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "野田線",
+  "name": "北柏",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1933-06-03 (柏競馬場前)",
+   "suspended": "1945-04-30",
+   "close": "1955-07-05"
+  },
+  "evidence": "ja.wikipedia 東武野田線 oldid=111355825 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptobu_railway",
+  "line": "越生線",
+  "name": "森戸",
+  "verdict": "NOT_PASSENGER",
+  "correct": {
+   "close": "1959-09-01"
+  },
+  "evidence": "ja.wikipedia 東武越生線 oldid=109891717 (BS 도표·연표); 森戸駅 oldid=101149676 「貨物駅」",
+  "note": "자갈 반출용 화물역"
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "池袋線",
+  "name": "天覧山",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1931-04-01",
+   "suspended": "1945-02-03",
+   "close": "1954-10-10"
+  },
+  "evidence": "ja.wikipedia 西武池袋線 oldid=111500033 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "新宿線",
+  "name": "西鷺宮",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1942-09-05",
+   "suspended": "1944-08-20",
+   "close": "1953-01-15"
+  },
+  "evidence": "ja.wikipedia 西武新宿線 oldid=110605452 (BS 도표·연표); 西鷺宮駅 oldid=111358864",
+  "note": ""
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "新宿線",
+  "name": "東小平",
+  "verdict": "OK",
+  "correct": {
+   "open": "1940-04-23",
+   "close": "1954-10-10"
+  },
+  "evidence": "ja.wikipedia 西武新宿線 oldid=110605452 (BS 도표·연표); 東小平駅 oldid=109054204",
+  "note": "휴지 기록 없음(1944년부터 분뇨 수송 화물 겸업). 1954 小平에 통합"
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "新宿線",
+  "name": "所沢御幸町",
+  "verdict": "OK",
+  "correct": {
+   "close": "1951-06-11"
+  },
+  "evidence": "ja.wikipedia 西武新宿線 oldid=110605452 (BS 도표·연표)",
+  "note": "1.4 km 북쪽에 北所沢(현 新所沢)을 새로 냄 — 거리가 멀어 별도 역으로 둠"
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "多摩湖線",
+  "name": "東国分寺",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1933-04-06",
+   "suspended": "1945-02-03",
+   "close": "1954-10-10"
+  },
+  "evidence": "ja.wikipedia 西武多摩湖線 oldid=109391352 (BS 도표·연표)",
+  "note": "「休止中の東国分寺駅廃止」"
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "多摩湖線",
+  "name": "桜堤",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1933-09-11 (移転)",
+   "suspended": "1945-02-03",
+   "close": "1953-01-15"
+  },
+  "evidence": "ja.wikipedia 西武多摩湖線 oldid=109391352 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "多摩湖線",
+  "name": "一橋大学",
+  "verdict": "OK",
+  "correct": {
+   "close": "1966-07-01"
+  },
+  "evidence": "ja.wikipedia 西武多摩湖線 oldid=109391352 (BS 도표·연표)",
+  "note": "小平学園과 통합해 사이에 一橋学園 신설"
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "多摩湖線",
+  "name": "小平学園",
+  "verdict": "OK",
+  "correct": {
+   "close": "1966-07-01"
+  },
+  "evidence": "ja.wikipedia 西武多摩湖線 oldid=109391352 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "多摩湖線",
+  "name": "厚生村",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1939-01",
+   "suspended": "1945-02-03",
+   "close": "1953-01-15"
+  },
+  "evidence": "ja.wikipedia 西武多摩湖線 oldid=109391352 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pseibu_railway",
+  "line": "狭山線",
+  "name": "上山口",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944-02-28",
+   "close": "1954-10-10"
+  },
+  "evidence": "ja.wikipedia 西武狭山線 oldid=110094282 (BS 도표·연표)",
+  "note": "「休止中の下山口駅と上山口駅を廃止」"
+ },
+ {
+  "family": "pkeisei_electric_railway",
+  "line": "本線",
+  "name": "寛永寺坂",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1933-12-10",
+   "suspended": "1947-08-21",
+   "close": "1953-02-23"
+  },
+  "evidence": "ja.wikipedia 京成本線 oldid=111343993 (BS 도표·연표); 寛永寺坂駅 oldid=110582440",
+  "note": "1946-11 재개 후 1947-08 다시 휴지, 휴지 중 폐지"
+ },
+ {
+  "family": "pkeio",
+  "line": "井の頭線",
+  "name": "東大前",
+  "verdict": "OK",
+  "correct": {
+   "close": "1965"
+  },
+  "evidence": "ja.wikipedia 京王井の頭線 oldid=110906662 (BS 도표·연표)",
+  "note": "駒場와 통합해 駒場東大前"
+ },
+ {
+  "family": "pkeio",
+  "line": "井の頭線",
+  "name": "駒場",
+  "verdict": "OK",
+  "correct": {
+   "close": "1965"
+  },
+  "evidence": "ja.wikipedia 京王井の頭線 oldid=110906662 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptokyu_railways",
+  "line": "東横線",
+  "name": "工業都市",
+  "verdict": "OK",
+  "correct": {
+   "close": "1953-04-01"
+  },
+  "evidence": "ja.wikipedia 東急東横線 oldid=111564452 (BS 도표·연표)",
+  "note": "武蔵小杉에 통합"
+ },
+ {
+  "family": "ptokyu_railways",
+  "line": "東横線",
+  "name": "神奈川",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1926-02-14",
+   "suspended": "1945-07-25",
+   "close": "1950-04-08"
+  },
+  "evidence": "ja.wikipedia 東急東横線 oldid=111564452 (BS 도표·연표); 神奈川駅 (東急) oldid=109859190",
+  "note": ""
+ },
+ {
+  "family": "ptokyu_railways",
+  "line": "池上線",
+  "name": "桐ヶ谷",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1945-07-25",
+   "close": "1953"
+  },
+  "evidence": "ja.wikipedia 東急池上線 oldid=110728994 (BS 도표·연표)",
+  "note": "「1945年に休止し1953年に廃止した桐ヶ谷駅」"
+ },
+ {
+  "family": "ptokyu_railways",
+  "line": "池上線",
+  "name": "旗ヶ岡",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "旗の台",
+   "date": "1951-05-01",
+   "open": "1927-08-28"
+  },
+  "evidence": "ja.wikipedia 東急池上線 oldid=110728994 (BS 도표·연표); 旗の台駅 oldid=110928365 「210メートル五反田寄り…1951年5月1日 旗ヶ岡駅が旗の台駅と統合。池上線駅設備を現在地へ移設」",
+  "note": "池上線 旗の台 홈의 전신(210 m 이전)"
+ },
+ {
+  "family": "psagami_railway",
+  "line": "本線",
+  "name": "古河電線",
+  "verdict": "OK",
+  "correct": {
+   "open": "1934-08-20",
+   "close": "1957-01"
+  },
+  "evidence": "ja.wikipedia 相鉄本線 oldid=111119625 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "名古屋本線",
+  "name": "東知立",
+  "verdict": "OK",
+  "correct": {
+   "open": "1923-06-01 (新知立) / 1959-04-01 東知立로 분리·개칭",
+   "close": "1968-01-07"
+  },
+  "evidence": "ja.wikipedia 名鉄名古屋本線 oldid=110530063 (BS 도표·연표); 東知立駅 oldid=111030157",
+  "note": "1941–1959년엔 知立(2대)의 본선 쪽. DB의 知立 노드 이력이 1959 이전 위치를 이미 쓰는지 확인 필요"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "名古屋本線",
+  "name": "東笠寺",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1927-12-23",
+   "suspended": "1944",
+   "close": "1967-04-15"
+  },
+  "evidence": "ja.wikipedia 名鉄名古屋本線 oldid=110530063 (BS 도표·연표); 東笠寺駅 oldid=111201493 「再開することなく」",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "名古屋本線",
+  "name": "木曽川橋",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "名鉄尾西線 玉ノ井–木曽川港 구간(旧 木曽川線)",
+   "suspended": "1944-03-21",
+   "close": "1959-11-25"
+  },
+  "evidence": "ja.wikipedia 名鉄名古屋本線 oldid=110530063 (BS 도표·연표); 木曽川橋駅 oldid=93258350",
+  "note": "名古屋本線 역 아님. 게다가 1944 휴지 후 재개 없음"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "名古屋本線",
+  "name": "広江",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "加納",
+   "prev_km": 98.7,
+   "next": "名鉄岐阜",
+   "next_km": 99.8,
+   "km": 99.1,
+   "open": "1914-06-02",
+   "close": "1968-01-07"
+  },
+  "evidence": "ja.wikipedia 名鉄名古屋本線 oldid=110530063 (BS 도표·연표); 広江駅 oldid=104207614",
+  "note": "다음 역으로 잡힌 「加納 99.4」는 1942년 이전에 없어진 加納(初代) 행. 다음 역은 名鉄岐阜"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "三河線",
+  "name": "北寺津",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "prev": "三河楠",
+   "prev_km": 45.7,
+   "next": "寺津",
+   "next_km": 47.7,
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄三河線 oldid=111573127 (BS 도표·연표)",
+  "note": "휴지 중 폐지. 앞역 「寺津 47.1」은 1927년 폐지된 寺津(I) 행이라 이웃도 틀림"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "蒲郡線",
+  "name": "拾石",
+  "verdict": "OK",
+  "correct": {
+   "close": "1968-10-01"
+  },
+  "evidence": "ja.wikipedia 名鉄蒲郡線 oldid=110580493 (BS 도표·연표)",
+  "note": "塩津와 통합해 蒲郡競艇場前"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "蒲郡線",
+  "name": "竹谷",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1937-03-09",
+   "suspended": "1944",
+   "close": "1953-01-01"
+  },
+  "evidence": "ja.wikipedia 名鉄蒲郡線 oldid=110580493 (BS 도표·연표)",
+  "note": "江畑와 통합해 塩津 신설(휴지 중). 다음 역 蒲郡 km 17.1은 蒲郡(仮) 행 값, 실제 17.6"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "蒲郡線",
+  "name": "江畑",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1937-05-11",
+   "suspended": "1944",
+   "close": "1953-01-01"
+  },
+  "evidence": "ja.wikipedia 名鉄蒲郡線 oldid=110580493 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "河和線",
+  "name": "加木屋",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "km": 3.4,
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄河和線 oldid=110213891 (BS 도표·연표)",
+  "note": "「休止中の加木屋駅、浦島駅、時志駅廃止」"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "河和線",
+  "name": "浦島",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "km": 21.4,
+   "open": "1933-07-10",
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄河和線 oldid=110213891 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "河和線",
+  "name": "時志",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "km": 26.3,
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄河和線 oldid=110213891 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "各務原線",
+  "name": "安良田",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1931-09-05 (부활)",
+   "suspended": "1944",
+   "close": "1958-01-10"
+  },
+  "evidence": "ja.wikipedia 名鉄各務原線 oldid=111435319 (BS 도표·연표); 安良田駅 oldid=110985257",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "広見線",
+  "name": "愛岐",
+  "verdict": "OK",
+  "correct": {
+   "close": "1969-03-16"
+  },
+  "evidence": "ja.wikipedia 名鉄広見線 oldid=110535786 (BS 도표·연표)",
+  "note": "帷子·春里와 통합해 西可児"
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "広見線",
+  "name": "帷子",
+  "verdict": "OK",
+  "correct": {
+   "close": "1969-03-16"
+  },
+  "evidence": "ja.wikipedia 名鉄広見線 oldid=110535786 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "広見線",
+  "name": "前波",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄広見線 oldid=110535786 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "尾西線",
+  "name": "南津島",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄尾西線 oldid=108970954 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "尾西線",
+  "name": "西宮後",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944",
+   "close": "1969-04-05"
+  },
+  "evidence": "ja.wikipedia 名鉄尾西線 oldid=108970954 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "豊川線",
+  "name": "白鳥",
+  "verdict": "OK",
+  "correct": {
+   "close": "1953-12-16"
+  },
+  "evidence": "ja.wikipedia 名鉄豊川線 oldid=111504991 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "奈良線",
+  "name": "孔舎衛坂",
+  "verdict": "OK",
+  "correct": {
+   "close": "1964-07-23"
+  },
+  "evidence": "ja.wikipedia 近鉄奈良線 oldid=110923443 (BS 도표·연표)",
+  "note": "旧 生駒トンネル 구선 위의 역(같은 노선)"
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "奈良線",
+  "name": "油阪",
+  "verdict": "OK",
+  "correct": {
+   "close": "1969-12-09"
+  },
+  "evidence": "ja.wikipedia 近鉄奈良線 oldid=110923443 (BS 도표·연표)",
+  "note": "併用軌道 지하화로 폐지"
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "名古屋線",
+  "name": "揖斐川",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1948-09-01",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 近鉄名古屋線 oldid=111029029 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "名古屋線",
+  "name": "町屋",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1945-06-01",
+   "close": "1947-03-14"
+  },
+  "evidence": "ja.wikipedia 近鉄名古屋線 oldid=111029029 (BS 도표·연표)",
+  "note": "폐지가 1947-03-14로 기록 범위(1950-) 밖. 도표 \"-1952以前\"을 연도로 읽은 것"
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "名古屋線",
+  "name": "諏訪",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "近鉄四日市",
+   "date": "1956-09-23",
+   "prev": "川原町",
+   "next": "四日市(旧)"
+  },
+  "evidence": "ja.wikipedia 近鉄名古屋線 oldid=111029029 (BS 도표·연표); 近鉄名古屋線 본문 「近畿日本四日市駅移転（諏訪駅から駅名変更）」",
+  "note": "近鉄四日市의 전신. 구선은 川原町–諏訪–四日市–(鹿化川分岐)–新正. 또 n_asunarou_yokkaichi에 「諏訪」(1929-01-30〜1956-09-23) 이름이 이미 있어 같은 역이 두 노드가 됨 — 하나로 합칠 것"
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "名古屋線",
+  "name": "四日市",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "諏訪",
+   "prev_km": 42.0,
+   "next": "新正",
+   "next_km": 40.7,
+   "km": null,
+   "close": "1956-09-23"
+  },
+  "evidence": "ja.wikipedia 近鉄名古屋線 oldid=111029029 (BS 도표·연표); 近鉄名古屋線 본문 1956-09-23 경로 변경",
+  "note": "伊勢電 四日市駅(国鉄四日市駅前). 1956년 이전 구선 위라 近鉄四日市(1956 개업)와 이웃이 될 수 없음"
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "湯の山線",
+  "name": "堀木",
+  "verdict": "UNSURE",
+  "correct": {
+   "suspended": "1952년 이전(시기 불명)",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 近鉄湯の山線 oldid=108899897 (BS 도표·연표)",
+  "note": "「1952年：この年までに…休止」. 1950–52 영업 여부 불명. 1944년 휴지라면 NO_SERVICE"
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "湯の山線",
+  "name": "製絨所前",
+  "verdict": "UNSURE",
+  "correct": {
+   "suspended": "1952년 이전",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 近鉄湯の山線 oldid=108899897 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "湯の山線",
+  "name": "小生",
+  "verdict": "UNSURE",
+  "correct": {
+   "suspended": "1952년 이전",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 近鉄湯の山線 oldid=108899897 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "湯の山線",
+  "name": "神森",
+  "verdict": "UNSURE",
+  "correct": {
+   "suspended": "1952년 이전",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 近鉄湯の山線 oldid=108899897 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pkintetsu_railway",
+  "line": "湯の山線",
+  "name": "宿野",
+  "verdict": "UNSURE",
+  "correct": {
+   "suspended": "1952년 이전",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 近鉄湯の山線 oldid=108899897 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnankai_electric_railway",
+  "line": "南海本線",
+  "name": "龍神",
+  "verdict": "OK",
+  "correct": {
+   "open": "1912-12-20",
+   "close": "1955-04-21"
+  },
+  "evidence": "ja.wikipedia 南海本線 oldid=111120385 (BS 도표·연표)",
+  "note": "堺에 통합"
+ },
+ {
+  "family": "pnankai_electric_railway",
+  "line": "加太線",
+  "name": "島橋",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "南海北島支線 (l_kitajima_branch_line): 北島–島橋–東松江",
+   "close": "1966-12-01"
+  },
+  "evidence": "ja.wikipedia 南海加太線 oldid=110697328 (BS 도표·연표); 南海北島支線 oldid=111513395",
+  "note": "加太線 紀ノ川–東松江(옛 松江線) 위가 아님. 1950-07-25 운전 계통이 紀ノ川 경유로 바뀌기 전 加太線 본선, 1955-02-15부터 北島支線"
+ },
+ {
+  "family": "pkeihan_electric_railway",
+  "line": "京阪本線",
+  "name": "片町",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "天満橋",
+   "prev_km": 1.3,
+   "next": "京橋",
+   "next_km": 3.0,
+   "km": 2.3,
+   "close": "1969-11-30"
+  },
+  "evidence": "ja.wikipedia 京阪本線 oldid=111466840 (BS 도표·연표)",
+  "note": "앞역 「京橋 1.8」은 1910년 폐지된 京橋(1) 행. 1955-01-01 野田橋→片町 개칭이므로 1950–54는 野田橋 이름"
+ },
+ {
+  "family": "pkeihan_electric_railway",
+  "line": "京阪本線",
+  "name": "豊野",
+  "verdict": "OK",
+  "correct": {
+   "close": "1963"
+  },
+  "evidence": "ja.wikipedia 京阪本線 oldid=111466840 (BS 도표·연표)",
+  "note": "1947-02-05 영업 재개"
+ },
+ {
+  "family": "pkeihan_electric_railway",
+  "line": "京阪本線",
+  "name": "塩小路",
+  "verdict": "NOT_PASSENGER",
+  "correct": {
+   "close": "1955-06-25"
+  },
+  "evidence": "ja.wikipedia 京阪本線 oldid=111466840 (BS 도표·연표); 京阪本線 본문 「貨物専用駅の塩小路駅も廃駅」",
+  "note": "화물 전용역"
+ },
+ {
+  "family": "pkeihan_electric_railway",
+  "line": "石山坂本線",
+  "name": "別所",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "大津市役所前",
+   "date": "1967-09-24"
+  },
+  "evidence": "ja.wikipedia 京阪石山坂本線 oldid=107968078 (BS 도표·연표); 大津市役所前駅 oldid=108612783 「0.3 km坂本寄りの現在地に移転」",
+  "note": "같은 역(別所)의 이전"
+ },
+ {
+  "family": "phankyu_corporation",
+  "line": "千里線",
+  "name": "天神橋",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "天神橋筋六丁目",
+   "date": "1969-12"
+  },
+  "evidence": "ja.wikipedia 阪急千里線 oldid=109783576 (BS 도표·연표); 天神橋筋六丁目駅 oldid=110576498 「前身となる阪急単独駅の天神橋駅」",
+  "note": ""
+ },
+ {
+  "family": "phankyu_corporation",
+  "line": "千里線",
+  "name": "花壇町",
+  "verdict": "OK",
+  "correct": {
+   "close": "1964-04-10"
+  },
+  "evidence": "ja.wikipedia 阪急千里線 oldid=109783576 (BS 도표·연표)",
+  "note": "大学前와 사이에 関大前 신설"
+ },
+ {
+  "family": "phankyu_corporation",
+  "line": "千里線",
+  "name": "大学前",
+  "verdict": "OK",
+  "correct": {
+   "open": "1922-05-01",
+   "close": "1964-04-10"
+  },
+  "evidence": "ja.wikipedia 阪急千里線 oldid=109783576 (BS 도표·연표)",
+  "note": "1944-09 휴지, 1946-06-25 재개"
+ },
+ {
+  "family": "phankyu_corporation",
+  "line": "宝塚本線",
+  "name": "花屋敷",
+  "verdict": "OK",
+  "correct": {
+   "close": "1962-05-01"
+  },
+  "evidence": "ja.wikipedia 阪急宝塚本線 oldid=109449986 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "phankyu_corporation",
+  "line": "宝塚本線",
+  "name": "雲雀丘",
+  "verdict": "OK",
+  "correct": {
+   "close": "1961-01-16"
+  },
+  "evidence": "ja.wikipedia 阪急宝塚本線 oldid=109449986 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "psanyo_electric_railway",
+  "line": "本線",
+  "name": "五色山",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1943-11-20",
+   "close": "1951-10-01"
+  },
+  "evidence": "ja.wikipedia 山陽電気鉄道本線 oldid=111474989 (BS 도표·연표)",
+  "note": "「休止中の五色山駅廃止」"
+ },
+ {
+  "family": "psanyo_electric_railway",
+  "line": "本線",
+  "name": "歌敷山",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "霞ヶ丘",
+   "date": "1964-06-01",
+   "open": "1917-04-12"
+  },
+  "evidence": "ja.wikipedia 山陽電気鉄道本線 oldid=111474989 (BS 도표·연표); 霞ヶ丘駅 (兵庫県) oldid=110734555 (역사가 歌敷山駅 개업부터 시작, 약 300 m 서쪽)",
+  "note": ""
+ },
+ {
+  "family": "phokuriku_railroad",
+  "line": "浅野川線",
+  "name": "新須崎",
+  "verdict": "OK",
+  "correct": {
+   "open": "1925-05-10",
+   "close": "1961"
+  },
+  "evidence": "ja.wikipedia 北陸鉄道浅野川線 oldid=110436321 (BS 도표·연표)",
+  "note": "km 불명"
+ },
+ {
+  "family": "pkanto_railway",
+  "line": "常総線",
+  "name": "野殿",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1938-12-01",
+   "suspended": "1945-09-10",
+   "close": "1950년경"
+  },
+  "evidence": "ja.wikipedia 関東鉄道常総線 oldid=111302196 (BS 도표·연표); 野殿駅 oldid=106581304",
+  "note": ""
+ },
+ {
+  "family": "pkanto_railway",
+  "line": "竜ヶ崎線",
+  "name": "南中島",
+  "verdict": "OK",
+  "correct": {
+   "open": "1900-08-14",
+   "close": "1957"
+  },
+  "evidence": "ja.wikipedia 関東鉄道竜ヶ崎線 oldid=110936971 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pkanto_railway",
+  "line": "竜ヶ崎線",
+  "name": "門倉",
+  "verdict": "OK",
+  "correct": {
+   "open": "1900-08-14",
+   "close": "1957"
+  },
+  "evidence": "ja.wikipedia 関東鉄道竜ヶ崎線 oldid=110936971 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "psangi_railway",
+  "line": "北勢線",
+  "name": "稗田前",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1938-05-03",
+   "suspended": "1944-07-01",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 三岐鉄道北勢線 oldid=111413633 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "psangi_railway",
+  "line": "北勢線",
+  "name": "大木",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944-07-01",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 三岐鉄道北勢線 oldid=111413633 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "psangi_railway",
+  "line": "北勢線",
+  "name": "畑新田",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944-07-01",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 三岐鉄道北勢線 oldid=111413633 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pyokkaichi_asunarou_railway",
+  "line": "八王子線",
+  "name": "東日野",
+  "verdict": "UNSURE",
+  "correct": {
+   "suspended": "1952년 이전",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 四日市あすなろう鉄道八王子線 oldid=108178557 (BS 도표·연표)",
+  "note": "湯の山線과 같은 「1952年までに休止」 표현"
+ },
+ {
+  "family": "pfukui_railway",
+  "line": "福武線",
+  "name": "藤島神社前",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "商工会議所前",
+   "prev_km": 18.4,
+   "next": "足羽山公園口",
+   "next_km": 18.9,
+   "km": 18.6,
+   "close": "1962-04-01"
+  },
+  "evidence": "ja.wikipedia 福井鉄道福武線 oldid=110219742 (BS 도표·연표)",
+  "note": "생성기가 停留場을 앵커로 안 써서 赤十字前–田原町으로 너무 넓게 잡음"
+ },
+ {
+  "family": "pfukui_railway",
+  "line": "福武線",
+  "name": "毛矢町",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "足羽山公園口(当時 公園口)",
+   "date": "1962-04-01"
+  },
+  "evidence": "ja.wikipedia 福井鉄道福武線 oldid=110219742 (BS 도표·연표); 福武線 본문 「毛矢町停留場を移転し公園口停留場に改称」",
+  "note": "이웃도 틀림(赤十字前–田原町)"
+ },
+ {
+  "family": "pfukui_railway",
+  "line": "福武線",
+  "name": "松本通",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "仁愛女子高校",
+   "prev_km": 20.2,
+   "next": "田原町",
+   "next_km": 20.9,
+   "km": 20.4,
+   "close": "1964-12-11"
+  },
+  "evidence": "ja.wikipedia 福井鉄道福武線 oldid=110219742 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pechizen_railway",
+  "line": "勝山永平寺線",
+  "name": "市荒川",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "越前竹原",
+   "date": "1955-09-01",
+   "open": "1914-02-11"
+  },
+  "evidence": "ja.wikipedia えちぜん鉄道勝山永平寺線 oldid=111511386 (BS 도표·연표); 越前竹原駅 oldid=111203617 「市荒川駅を移設の上、駅名を越前竹原駅に改称」",
+  "note": ""
+ },
+ {
+  "family": "pohmi_railway",
+  "line": "多賀線",
+  "name": "土田",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "open": "1914-03-08",
+   "suspended": "1943-10",
+   "close": "1953-10"
+  },
+  "evidence": "ja.wikipedia 近江鉄道多賀線 oldid=108615996 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnose_electric_railway",
+  "line": "妙見線",
+  "name": "矢問",
+  "verdict": "OK",
+  "correct": {
+   "open": "1916-09-05",
+   "close": "1953-08-21"
+  },
+  "evidence": "ja.wikipedia 能勢電鉄妙見線 oldid=110790216 (BS 도표·연표)",
+  "note": "구선(旧猪名川橋梁) 위. 鶯の森 신설과 같은 날 폐지라 둘은 공존하지 않음"
+ },
+ {
+  "family": "pichibata_electric_railway",
+  "line": "北松江線",
+  "name": "一畑",
+  "verdict": "WRONG_LINE",
+  "correct": {
+   "line": "一畑電気鉄道 一畑口(小境灘)–一畑 지선 3.3 km",
+   "suspended": "1944-12-10",
+   "close": "1960"
+  },
+  "evidence": "ja.wikipedia 一畑電車北松江線 oldid=109550463 (BS 도표·연표)",
+  "note": "一畑口에서 갈라지는 지선 종점(exKBHFe). 게다가 1944 휴지 후 재개 없음"
+ },
+ {
+  "family": "pichibata_electric_railway",
+  "line": "北松江線",
+  "name": "古曽志",
+  "verdict": "OK",
+  "correct": {
+   "close": "1964-04-01"
+  },
+  "evidence": "ja.wikipedia 一畑電車北松江線 oldid=109550463 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pichibata_electric_railway",
+  "line": "北松江線",
+  "name": "浜佐陀",
+  "verdict": "OK",
+  "correct": {
+   "close": "1964-04-01"
+  },
+  "evidence": "ja.wikipedia 一畑電車北松江線 oldid=109550463 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "ptosaden_kotsu",
+  "line": "伊野線",
+  "name": "北山口",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "北内",
+   "prev_km": 9.9,
+   "next": "北山",
+   "next_km": 10.3,
+   "km": null,
+   "close": "1960-11-01"
+  },
+  "evidence": "ja.wikipedia とさでん交通伊野線 oldid=109689785 (BS 도표·연표); 伊野線 본문 「北山口停留場と塩崎停留場を統合し北山停留場を新設」",
+  "note": "停留場이 앵커에서 빠져 枝川–伊野로 잡힘"
+ },
+ {
+  "family": "ptosaden_kotsu",
+  "line": "伊野線",
+  "name": "塩崎",
+  "verdict": "WRONG_PLACE",
+  "correct": {
+   "prev": "北山",
+   "prev_km": 10.3,
+   "next": "鳴谷",
+   "next_km": 10.8,
+   "km": null,
+   "close": "1960-11-01"
+  },
+  "evidence": "ja.wikipedia とさでん交通伊野線 oldid=109689785 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "piga_railway",
+  "line": "伊賀線",
+  "name": "鍵屋辻",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1945-06-01",
+   "close": "1969-05-15"
+  },
+  "evidence": "ja.wikipedia 伊賀鉄道伊賀線 oldid=110828730 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pryutetsu",
+  "line": "流山線",
+  "name": "大谷口",
+  "verdict": "OK",
+  "correct": {
+   "open": "1916-03-14",
+   "close": "1953-12-24"
+  },
+  "evidence": "ja.wikipedia 流鉄流山線 oldid=110958843 (BS 도표·연표); 小金城趾駅 oldid=110349610",
+  "note": "小金城趾 개업과 같은 날 폐지(문서상 이전이 아닌 별개 역)"
+ },
+ {
+  "family": "pnishi_nippon_railroad",
+  "line": "宮地岳線",
+  "name": "宮地嶽",
+  "verdict": "MOVED",
+  "correct": {
+   "moved_to": "宮地岳",
+   "date": "1951-07-01",
+   "open": "1925-07-01"
+  },
+  "evidence": "ja.wikipedia 西鉄貝塚線 oldid=111320593 (BS 도표·연표); 宮地岳駅 oldid=108806430 「1951年7月1日：駅移転」",
+  "note": "같은 역의 이전(津屋崎 연장)"
+ },
+ {
+  "family": "phokuriku_railroad",
+  "line": "能美線",
+  "name": "濁池",
+  "verdict": "OK",
+  "correct": {
+   "close": "1951-06-30"
+  },
+  "evidence": "ja.wikipedia 北陸鉄道能美線 oldid=110557473 (BS 도표·연표)",
+  "note": ""
+ },
+ {
+  "family": "pnagoya_railroad",
+  "line": "谷汲線",
+  "name": "長瀬茶所",
+  "verdict": "NO_SERVICE",
+  "correct": {
+   "suspended": "1944",
+   "close": "1958-05-01"
+  },
+  "evidence": "ja.wikipedia 名鉄谷汲線 oldid=107868825 (BS 도표·연표)",
+  "note": "1946년 豊木만 재개, 長瀬茶所는 재개 기록 없음"
+ }
+]

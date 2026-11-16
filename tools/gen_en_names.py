@@ -1,18 +1,23 @@
 # -*- coding: utf-8 -*-
-# 노선·사업자·계통·운전 계통의 영어 이름을 만든다 (DESIGN §9.1).
+# 노선·사업자·계통·운행 계통의 영어 이름을 만든다 (DESIGN §9.1).
 # 순서는 공식 표기(data/overrides/en_fix.json), Wikidata 영어 라벨, 히라가나 읽기의 헵번식(장음 기호 없이)이다.
 # 일반명사만 남는 노선 이름에는 회사 약칭을 붙인다 (en_fix.json의 operator_short).
 #   python3 -I tools/gen_en_names.py [--dry]
 # 라벨은 data/overrides/wikidata_labels.json이다. {kind: {일본어 이름: [[항목, 영어, 형식], ...]}}, CC0.
 # 라벨을 새로 받는 일은 수집 단계에서 따로 한다. 이 도구는 네트워크를 쓰지 않는다.
-import json,os,re,sqlite3,sys,unicodedata
+import glob,json,os,re,sqlite3,sys,unicodedata
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'tools'))
-from en_rules import hepburn,load_fix
-from lib import HT,source_on
+from en_rules import hepburn,load_fix,fix_station
+from lib import HT,source_on,_rows,ROOT as _ROOT
 
-# 운전 계통은 표가 짧아 손으로 적는다
-SERVICES=HT['SERVICES']
+# 운행 계통은 표가 짧아 손으로 적는다. 운행 계통 정의(services.json)에 en이 있으면 그것을 쓴다
+# 정의에서 빠진 옛 운행 계통 ID(湘南新宿ライン _ty·_ys 등)의 이름은 만들지 않는다
+_sv=json.load(open(os.path.join(ROOT,'data','overrides','services.json'),encoding='utf-8'))
+SERVICES={k:v for k,v in HT['SERVICES'].items() if k in {s['id'] for s in _sv}}
+for _s in _sv:
+    # 범위의 en dash는 계통 이름처럼 ~로 쓴다 (Nara Line (Kyoto~Nara)). 영어 이름은 ASCII만이다
+    if _s.get('en'):SERVICES[_s['id']]=_s['en'].replace('–','~').replace('—','~')
 # Wikidata에서 찾지 못한 사업자
 OPERATORS=HT['OPERATORS']
 # 노선 읽기 앞에 붙는 회사 약칭. 일본어 이름에는 없고 읽기에만 있어 뗀다
@@ -24,7 +29,7 @@ GENERIC=re.compile('^(でんきてつどう|ちほうてつどう|てつどう|�
 # 읽기가 없는 노선. 노면전차 계통과 연락선이 대부분이다
 READINGS=HT['READINGS']
 # 일반명사뿐인 이름. 회사 약칭(en_fix.json의 operator_short)을 붙인다
-GENERIC_NAMES=('Main Line','Airport Line','Line 1','Line 2')
+GENERIC_NAMES=('Main Line','Airport Line','Line 1','Line 2','Connecting Line')
 LINE_ENDS=(('新幹線','しんかんせん','Shinkansen'),('本線','ほんせん','Main Line'),('支線','しせん','Branch Line'),
            ('モノレール線','ものれーるせん','Monorail'),('モノレール','ものれーる','Monorail'),('鋼索線','こうさくせん','Cable Line'),
            ('線','せん','Line'))
@@ -125,7 +130,7 @@ def check(rows):
 
 def main():
     # 출처 스위치에서 Wikidata를 끄면 라벨을 쓰지 않는다 (data/sources.json)
-    on=json.load(open(os.path.join(ROOT,'data','sources.json'),encoding='utf-8'))['sources']['wikidata']['on']
+    on=source_on('wikidata')
     labels=json.load(open(os.path.join(ROOT,'data','overrides','wikidata_labels.json'),encoding='utf-8')) if on else {}
     fix=load_fix()
     dry='--dry' in sys.argv
@@ -136,7 +141,8 @@ def main():
         if x['lang']=='ja' and not x.get('line'):
             ja.setdefault((x['entity_type'],x['id']),x['text'])
             if x.get('kana'):kana.setdefault((x['entity_type'],x['id']),x['kana'])
-    en_node={x['id']:x['text'] for x in names if x['entity_type']=='node' and x['lang']=='en'}
+    # 지금 이름만 쓴다. 기간 있는 옛 이름 행이 덮으면 계통 이름이 옛 역명이 된다 (Shin-Aomori~Oshimaono)
+    en_node={x['id']:x['text'] for x in names if x['entity_type']=='node' and x['lang']=='en' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to')}
     count={}
     for (kind,_),text in ja.items():count[(kind,text)]=count.get((kind,text),0)+1
     bad={'bad':{'Q4167410','Q13406463','Q5','Q55488','Q953806'}}
@@ -164,16 +170,57 @@ def main():
         if kind=='line':
             company=owner.get(id_)
             read=own_reading(text,kana.get((kind,id_)),operator_en.get(company),common_prefix(groups.get(company,[])))
-            made=line_name(text,read)
+            parts=text.split(' ',1);reads=(kana.get((kind,id_)) or '').split(' ',1)
+            if len(parts)==2 and len(reads)==2 and parts[1].endswith('支線') and reads[1].endswith('しせん'):
+                # 본선 이름 뒤에 갈래를 적은 지선 (別大線 別府駅前支線 → Betsudai Line Beppu-Ekimae Branch)
+                base=parts[1][:-2];base_read=reads[1][:-3]
+                made=f"{line_name(parts[0],reads[0])} {fix_station(base,base_read,'',set()) or titled(base_read,base)} Branch"
+            elif len(parts)==2 and len(reads)==2 and (re.search('[–~]',parts[1]) or parts[1].endswith('旧線')):
+                # 본선 이름 뒤에 구간이나 옛 선로를 적은 계통 (循環線 花京院–仙台駅前 → Junkan Line (Kakyoin~Sendai-Ekimae), 清水市内線 西久保–袖師 旧線)
+                tail_ja=parts[1];tail_rd=reads[1];old=''
+                if tail_ja.endswith('旧線'):
+                    tail_ja=tail_ja[:-2].strip();tail_rd=re.sub(r'\s*きゅうせん$','',tail_rd).strip();old=' Old Route'
+                st=[x for x in re.split(r'[–~]',tail_ja) if x];rs=tail_rd.split(' ') if tail_rd else []
+                seg=''
+                if st and len(st)==len(rs):seg=' ('+'~'.join(fix_station(a,b,'',set()) or titled(b,a) for a,b in zip(st,rs))+')'
+                made=f"{line_name(parts[0],reads[0])}{seg}{old}" if (seg or not st) else None
+            else:made=line_name(text,read)
             # 일반명사만 남으면 어느 노선인지 모른다 (Keisei Main Line, Keikyu Airport Line)
-            if made in GENERIC_NAMES:made=f"{fix['operator_short'][company]['en']} {made}"
+            # 짧은 이름이 없는 회사(옛 폐선의 회사)는 정식 영어 이름을 붙인다 (Hokuriku Railroad Connecting Line)
+            if made in GENERIC_NAMES:made=f"{(fix['operator_short'].get(company) or {}).get('en') or operator_en.get(company) or ''} {made}".strip()
         else:made=OPERATORS.get(text)
         if made:add(kind,id_,clean(made),'rule')
         else:missing.append((kind,id_,text))
     for id_,text in SERVICES.items():add('service',id_,text,'hand')
     routes={x['id'] for x in names if x['entity_type']=='route'}
-    for route,a,b in master.execute('select id,from_node,to_node from route'):
-        if route in routes and a in en_node and b in en_node:add('route',route,f'{en_node[a]}~{en_node[b]}','rule')
+    # 끝 역 너머 역 이전 옛 자리는 계통 이름에 쓰지 않는다. 지금 끝 역이다 (gen_source와 같음)
+    site={x['id']:x['new_node'] for f_ in glob.glob(os.path.join(ROOT,'data','overrides','wiki_insert_moves*.json')) for x in json.load(open(f_,encoding='utf-8')) if x.get('old') and x.get('terminal') and not x.get('hold')}
+    # 컴파일이 만든 계통(지선 승격·숨은 끝 계통)은 생성기 이름 행이 없다. 같은 규칙으로 일본어·한국어·영어를 모두 단다 (2회차 종합 K14)
+    base_={(x['id'],x['lang']):x['text'] for x in names if x['entity_type']=='node' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to')}
+    route_ja={x['id']:x['text'] for x in names if x['entity_type']=='route' and x['lang']=='ja'}
+    # 컴파일 단계 보정(source_patch)으로 더한 계통(日光鋼索線 등 새 노선)도 이름을 단다. 생성 중 컴파일에는 그 계통과 끝 역이 없어 보정 행의 이름으로 찾는다 (2회차 종합 K14)
+    _sp=lambda m:[x for x in _rows(os.path.join(_ROOT,'data','overrides','source_patch',m)) if x.get('patch')=='add']
+    for x in _sp('names'):
+        if x['entity_type']=='node' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to'):
+            base_.setdefault((x['id'],x['lang']),x['text'])
+            if x['lang']=='en':en_node.setdefault(x['id'],x['text'])
+    _have={r for r, in master.execute('select id from route')}
+    _pr=[(x['id'],x['from'],x['to']) for x in _sp('routes') if x['id'] not in _have]
+    # 보정 행이 이미 이름을 단 계통·언어는 두지 않는다(같은 키가 둘이면 컴파일이 멈춘다)
+    _pn={(x['id'],x['lang']) for x in _sp('names') if x['entity_type']=='route'}
+    routes|={i for i,lg in _pn if lg=='ja'}
+    for route,a,b in list(master.execute('select id,from_node,to_node from route'))+_pr:
+        a,b=site.get(a,a),site.get(b,b)
+        if route not in routes:
+            for lang_,sep_ in (('ja','～'),('ko','~')):
+                if (a,lang_) in base_ and (b,lang_) in base_:
+                    rows.append({'entity_type':'route','id':route,'lang':lang_,'text':f'{base_[(a,lang_)]}{sep_}{base_[(b,lang_)]}','source':'rule'})
+                    stats[('route_'+lang_,'rule')]=stats.get(('route_'+lang_,'rule'),0)+1
+        if a in en_node and b in en_node and (route,'en') not in _pn:
+            # 일본어 계통 이름에 （旧）가 없으면 영어에도 (old)를 붙이지 않는다 (gen_source가 같은 계통 같은 이름 （旧）를 계통 이름에서 뗌)
+            ea,eb=en_node[a],en_node[b]
+            if '（旧）' not in route_ja.get(route,'（旧）'):ea,eb=(re.sub(r' \(old\)$','',x) for x in (ea,eb))
+            add('route',route,f'{ea}~{eb}','rule')
     check(rows+[x for x in names if x['entity_type']=='node' and x['lang']=='en'])
     print(sorted(stats.items()))
     print('못 만든 것',len(missing),missing[:40])

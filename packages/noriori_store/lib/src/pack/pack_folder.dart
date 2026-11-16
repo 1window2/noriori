@@ -41,19 +41,19 @@ final class InstalledPack {
   String get railTiles => file('rail.pmtiles');
 
   /// N02에 없는 선로. ODbL이라 파일을 나눈다. 없으면 그 구간은 그리지 않는다.
-  String? get osmRailTiles {
-    final path = file('rail-osm.pmtiles');
-    return File(path).existsSync() ? path : null;
-  }
+  String? get osmRailTiles => _optional('rail-osm.pmtiles');
 
   /// 일본 윤곽과 도도부현 경계. 없으면 온라인 배경만 쓴다.
-  String? get baseTiles {
-    final path = file('base.pmtiles');
-    return File(path).existsSync() ? path : null;
-  }
+  String? get baseTiles => _optional('base.pmtiles');
 
   /// 라틴 글리프 주소 틀. 없으면 온라인 글리프를 쓴다.
   String? get glyphs => File(file('glyph-0-255.pbf')).existsSync() ? file('glyph-{range}.pbf') : null;
+
+  /// 판에 없어도 되는 파일. 있을 때만 경로를 준다.
+  String? _optional(String name) {
+    final path = file(name);
+    return File(path).existsSync() ? path : null;
+  }
 }
 
 /// `datasets/` 폴더. 활성 판을 저장하지 않고 시작할 때마다 폴더에서 고른다 (ARCHITECTURE §3.6).

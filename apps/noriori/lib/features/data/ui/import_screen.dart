@@ -23,21 +23,7 @@ class ImportScreen extends ConsumerWidget {
         ImportFailed() => _Pick(message: t.failed),
         ImportReady(:final fileName, :final plan) => _Review(fileName: fileName, plan: plan),
         ImportDone(:final count, :final undated) => _Finished(count: count, undated: undated),
-        ImportFullReady(:final fileName, :final contents) => Padding(
-            padding: const EdgeInsets.all(24),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              spacing: 20,
-              children: [
-                Text(fileName, style: Theme.of(context).textTheme.titleMedium),
-                Text(t.fullHint(count: contents.rowCount)),
-                FilledButton(
-                  onPressed: ref.read(importControllerProvider.notifier).confirmFull,
-                  child: Text(t.confirm(n: contents.rowCount, count: countLabel(contents.rowCount))),
-                ),
-              ],
-            ),
-          ),
+        ImportFullReady(:final fileName, :final contents) => _FullReview(fileName: fileName, rows: contents.rowCount),
         ImportMerged(:final count) => _Pick(message: t.merged(n: count)),
       },
     );
@@ -64,6 +50,34 @@ class _Pick extends ConsumerWidget {
           ],
         ),
       );
+}
+
+/// noriori 완전판 CSV. 행 수만 보여 주고 확인을 받는다.
+class _FullReview extends ConsumerWidget {
+  const _FullReview({required this.fileName, required this.rows});
+
+  final String fileName;
+  final int rows;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final t = context.t.importing;
+    return Padding(
+      padding: const EdgeInsets.all(24),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        spacing: 20,
+        children: [
+          Text(fileName, style: Theme.of(context).textTheme.titleMedium),
+          Text(t.fullHint(count: rows)),
+          FilledButton(
+            onPressed: ref.read(importControllerProvider.notifier).confirmFull,
+            child: Text(t.confirm(n: rows, count: countLabel(rows))),
+          ),
+        ],
+      ),
+    );
+  }
 }
 
 class _Review extends ConsumerStatefulWidget {

@@ -9,13 +9,15 @@ WIKI='https://ja.wikipedia.org/w/api.php'
 SD='https://github.com/Seo-4d696b75/station_database'
 NAMU='https://huggingface.co/datasets/heegyu/namuwiki'
 # 스냅샷이 아니라 도구가 만든 파일. 받은 날이 없다
-MADE={'n02/stations_2024.json':'tools/n02_stations.py','stationdb/old_lines.json':'tools/gen_old.py'}
+MADE={'n02/stations_2024.json':'tools/n02_stations.py','stationdb/old_lines.json':'tools/gen_old.py','n05/lines.json':'tools/gen_n05.py'}
 FIXED={'noritsubushi/lines.json':'https://www.noritsubushi.org/','wikidata/stations.json':'https://query.wikidata.org/sparql',
        'wiki/kana.json':WIKI,'wiki/station.json':WIKI,'wiki/titles.txt':WIKI,'wiki/titles2.txt':WIKI,'wiki/titles3.txt':WIKI,'wiki/old_titles.json':WIKI}
 def url_of(rel):
     if rel in FIXED:return FIXED[rel]
     if rel.startswith('stationdb/'):return SD
     if rel.startswith('osm/'):return 'https://overpass-api.de/api/interpreter'
+    if rel.startswith('n03/'):return 'https://nlftp.mlit.go.jp/ksj/gml/data/N03/N03-2025/'+os.path.basename(rel)
+    if rel.startswith('glyphs/'):return 'https://tiles.openfreemap.org/fonts/Noto%20Sans%20Regular/'+os.path.basename(rel)
     if rel.startswith('n02/') or rel.startswith('n05/'):
         y=os.path.basename(rel).split('_')[0]
         return f'https://nlftp.mlit.go.jp/ksj/gml/data/{y[:3]}/{y}/{os.path.basename(rel)}'

@@ -1,0 +1,1485 @@
+{
+ "설명": "노면전차 운행 계통표에서 계통이 노선 경계를 넘어가는 곳 (3회차 kanto_1-007·tohoku_1-007, 판 2026-11-15.1). 행 {at, x, y, x_toward, y_toward, system, why, src}: 계통이 노선 x에서 at을 지나 노선 y로 넘어감. y_toward는 그 계통이 y에서 향하는 역(y 쪽 다음 방면), x_toward는 반대로 x에서 향하는 역. compile이 x↔y 선로 연결(분기·끝 이어짐)의 근거로 쓰고(손 확인 행처럼) 방면을 그 역 쪽으로 고른다. audit_ext K47이 모든 행에 선로 연결이 있는지 본다. 東京都電車 행은 위키 運転系統表를 파싱해 만들었다(tools/dev/tram_systems_parse.py 결과를 손으로 확인).",
+ "rows": [
+  {
+   "at": "n_mita_toden",
+   "x": "l_shinagawa_line",
+   "y": "l_kanasugi_line",
+   "x_toward": "n_shinagawa_ekimae",
+   "y_toward": "n_shimbashi_toden",
+   "system": "1系統",
+   "why": "都電 1系統: 品川駅前 -（l_shinagawa_line）- 三田 -（l_kanasugi_line）- 新橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_shimbashi_toden",
+   "x": "l_kanasugi_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_mita_toden",
+   "y_toward": "n_sudacho",
+   "system": "1系統",
+   "why": "都電 1系統: 三田 -（l_kanasugi_line）- 新橋 -（l_hondori_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sudacho",
+   "x": "l_hondori_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_shimbashi_toden",
+   "y_toward": "n_ueno_ekimae",
+   "system": "1系統",
+   "why": "都電 1系統: 新橋 -（l_hondori_line）- 須田町 -（l_ueno_line）- 上野駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_mita_line_toden",
+   "y": "l_kandabashi_line",
+   "x_toward": "n_mita_toden",
+   "y_toward": "n_kandabashi",
+   "system": "2系統",
+   "why": "都電 2系統: 三田 -（l_mita_line_toden）- 日比谷公園 -（l_kandabashi_line）- 神田橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kandabashi",
+   "x": "l_kandabashi_line",
+   "y": "l_suidobashi_line",
+   "x_toward": "n_hibiyakoen",
+   "y_toward": "n_bunkyokuyakushomae",
+   "system": "2系統",
+   "why": "都電 2系統: 日比谷公園 -（l_kandabashi_line）- 神田橋 -（l_suidobashi_line）- 文京区役所前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_bunkyokuyakushomae",
+   "x": "l_suidobashi_line",
+   "y": "l_hakusan_line",
+   "x_toward": "n_kandabashi",
+   "y_toward": "n_hakusanue",
+   "system": "2系統",
+   "why": "都電 2系統: 神田橋 -（l_suidobashi_line）- 文京区役所前 -（l_hakusan_line）- 白山上",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hakusanue",
+   "x": "l_hakusan_line",
+   "y": "l_sugamo_line",
+   "x_toward": "n_bunkyokuyakushomae",
+   "y_toward": "n_toyodaigakumae",
+   "system": "2系統",
+   "why": "都電 2系統: 文京区役所前 -（l_hakusan_line）- 白山上 -（l_sugamo_line）- 東洋大学前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_fudanotsuji",
+   "x": "l_shinagawa_line",
+   "y": "l_fudanotsuji_line",
+   "x_toward": "n_shinagawa_ekimae",
+   "y_toward": "n_iigura_1_chome",
+   "system": "3系統",
+   "why": "都電 3系統: 品川駅前 -（l_shinagawa_line）- 札ノ辻 -（l_fudanotsuji_line）- 飯倉一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_iigura_1_chome",
+   "x": "l_fudanotsuji_line",
+   "y": "l_roppongi_line",
+   "x_toward": "n_fudanotsuji",
+   "y_toward": "n_kamiyacho",
+   "system": "3系統",
+   "why": "都電 3系統: 札ノ辻 -（l_fudanotsuji_line）- 飯倉一丁目 -（l_roppongi_line）- 神谷町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kamiyacho",
+   "x": "l_roppongi_line",
+   "y": "l_toranomon_line",
+   "x_toward": "n_iigura_1_chome",
+   "y_toward": "n_toranomon_toei",
+   "system": "3系統",
+   "why": "都電 3系統: 飯倉一丁目 -（l_roppongi_line）- 神谷町 -（l_toranomon_line）- 虎ノ門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_toranomon_toei",
+   "x": "l_toranomon_line",
+   "y": "l_tameike_line",
+   "x_toward": "n_kamiyacho",
+   "y_toward": "n_yotsuyamitsuke",
+   "system": "3系統",
+   "why": "都電 3系統: 神谷町 -（l_toranomon_line）- 虎ノ門 -（l_tameike_line）- 四谷見附",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_yotsuyamitsuke",
+   "x": "l_tameike_line",
+   "y": "l_ushigome_line",
+   "x_toward": "n_toranomon_toei",
+   "y_toward": "n_iidabashi_toden",
+   "system": "3系統",
+   "why": "都電 3系統: 虎ノ門 -（l_tameike_line）- 四谷見附 -（l_ushigome_line）- 飯田橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_seishokomae",
+   "x": "l_gotanda_line",
+   "y": "l_meguro_line_toei",
+   "x_toward": "n_gotanda_ekimae",
+   "y_toward": "n_gyoranzakashita",
+   "system": "4系統",
+   "why": "都電 4系統: 五反田駅前 -（l_gotanda_line）- 清正公前 -（l_meguro_line_toei）- 魚籃坂下",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_gyoranzakashita",
+   "x": "l_meguro_line_toei",
+   "y": "l_isarago_line",
+   "x_toward": "n_seishokomae",
+   "y_toward": "n_furukawabashi_furukawa",
+   "system": "4系統",
+   "why": "都電 4系統: 清正公前 -（l_meguro_line_toei）- 魚籃坂下 -（l_isarago_line）- 古川橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_furukawabashi_furukawa",
+   "x": "l_isarago_line",
+   "y": "l_furukawa_line",
+   "x_toward": "n_gyoranzakashita",
+   "y_toward": "n_kanasugibashi",
+   "system": "4系統",
+   "why": "都電 4系統: 魚籃坂下 -（l_isarago_line）- 古川橋 -（l_furukawa_line）- 金杉橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kanasugibashi",
+   "x": "l_furukawa_line",
+   "y": "l_kanasugi_line",
+   "x_toward": "n_furukawabashi_furukawa",
+   "y_toward": "n_shimbashi_toden",
+   "system": "4系統",
+   "why": "都電 4系統: 古川橋 -（l_furukawa_line）- 金杉橋 -（l_kanasugi_line）- 新橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_shimbashi_toden",
+   "x": "l_kanasugi_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_kanasugibashi",
+   "y_toward": "n_ginza_2_chome",
+   "system": "4系統",
+   "why": "都電 4系統: 金杉橋 -（l_kanasugi_line）- 新橋 -（l_hondori_line）- 銀座二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_gyoranzakashita",
+   "x": "l_meguro_line_toei",
+   "y": "l_isarago_line",
+   "x_toward": "n_meguro_ekimae",
+   "y_toward": "n_furukawabashi_furukawa",
+   "system": "5系統",
+   "why": "都電 5系統: 目黒駅前 -（l_meguro_line_toei）- 魚籃坂下 -（l_isarago_line）- 古川橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_furukawabashi_furukawa",
+   "x": "l_isarago_line",
+   "y": "l_furukawa_line",
+   "x_toward": "n_gyoranzakashita",
+   "y_toward": "n_shibazonobashi",
+   "system": "5系統",
+   "why": "都電 5系統: 魚籃坂下 -（l_isarago_line）- 古川橋 -（l_furukawa_line）- 芝園橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_shibazonobashi",
+   "x": "l_furukawa_line",
+   "y": "l_mita_line_toden",
+   "x_toward": "n_furukawabashi_furukawa",
+   "y_toward": "n_hibiyakoen",
+   "system": "5系統",
+   "why": "都電 5系統: 古川橋 -（l_furukawa_line）- 芝園橋 -（l_mita_line_toden）- 日比谷公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_mita_line_toden",
+   "y": "l_kandabashi_line",
+   "x_toward": "n_shibazonobashi",
+   "y_toward": "n_babasakimon",
+   "system": "5系統",
+   "why": "都電 5系統: 芝園橋 -（l_mita_line_toden）- 日比谷公園 -（l_kandabashi_line）- 馬場先門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_babasakimon",
+   "x": "l_kandabashi_line",
+   "y": "l_hatchobori_line",
+   "x_toward": "n_hibiyakoen",
+   "y_toward": "n_eitaibashi",
+   "system": "5系統",
+   "why": "都電 5系統: 日比谷公園 -（l_kandabashi_line）- 馬場先門 -（l_hatchobori_line）- 永代橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_minami_aoyama_5_chome",
+   "x": "l_aoyama_line",
+   "y": "l_kasumicho_line",
+   "x_toward": "n_shibuya_ekimae",
+   "y_toward": "n_tameike",
+   "system": "6系統",
+   "why": "都電 6系統: 渋谷駅前 -（l_aoyama_line）- 南青山五丁目 -（l_kasumicho_line）- 溜池",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_tameike",
+   "x": "l_kasumicho_line",
+   "y": "l_tameike_line",
+   "x_toward": "n_minami_aoyama_5_chome",
+   "y_toward": "n_toranomon_toei",
+   "system": "6系統",
+   "why": "都電 6系統: 南青山五丁目 -（l_kasumicho_line）- 溜池 -（l_tameike_line）- 虎ノ門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_toranomon_toei",
+   "x": "l_tameike_line",
+   "y": "l_horaibashi_line",
+   "x_toward": "n_tameike",
+   "y_toward": "n_shimbashi_toden",
+   "system": "6系統",
+   "why": "都電 6系統: 溜池 -（l_tameike_line）- 虎ノ門 -（l_horaibashi_line）- 新橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kita_aoyama_1_chome",
+   "x": "l_shinanomachi_line",
+   "y": "l_hiroo_line_toei",
+   "x_toward": "n_yotsuya_sanchome_toei",
+   "y_toward": "n_tengenjibashi",
+   "system": "7系統",
+   "why": "都電 7系統: 四谷三丁目 -（l_shinanomachi_line）- 北青山一丁目 -（l_hiroo_line_toei）- 天現寺橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_tengenjibashi",
+   "x": "l_hiroo_line_toei",
+   "y": "l_furukawa_line",
+   "x_toward": "n_kita_aoyama_1_chome",
+   "y_toward": "n_furukawabashi_furukawa",
+   "system": "7系統",
+   "why": "都電 7系統: 北青山一丁目 -（l_hiroo_line_toei）- 天現寺橋 -（l_furukawa_line）- 古川橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_furukawabashi_furukawa",
+   "x": "l_furukawa_line",
+   "y": "l_isarago_line",
+   "x_toward": "n_tengenjibashi",
+   "y_toward": null,
+   "system": "7系統",
+   "why": "都電 7系統: 天現寺橋 -（l_furukawa_line）- 古川橋 -（l_isarago_line）- 泉岳寺",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_shibuyabashi",
+   "x": "l_nakameguro_line",
+   "y": "l_tengenjibashi_line",
+   "x_toward": "n_naka_meguro",
+   "y_toward": "n_tengenjibashi",
+   "system": "8系統",
+   "why": "都電 8系統: 中目黒 -（l_nakameguro_line）- 渋谷橋 -（l_tengenjibashi_line）- 天現寺橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_tengenjibashi",
+   "x": "l_tengenjibashi_line",
+   "y": "l_furukawa_line",
+   "x_toward": "n_shibuyabashi",
+   "y_toward": "n_akabanebashi_toden",
+   "system": "8系統",
+   "why": "都電 8系統: 渋谷橋 -（l_tengenjibashi_line）- 天現寺橋 -（l_furukawa_line）- 赤羽橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_akabanebashi_toden",
+   "x": "l_furukawa_line",
+   "y": "l_fudanotsuji_line",
+   "x_toward": "n_tengenjibashi",
+   "y_toward": "n_iigura_1_chome",
+   "system": "8系統",
+   "why": "都電 8系統: 天現寺橋 -（l_furukawa_line）- 赤羽橋 -（l_fudanotsuji_line）- 飯倉一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_iigura_1_chome",
+   "x": "l_fudanotsuji_line",
+   "y": "l_roppongi_line",
+   "x_toward": "n_akabanebashi_toden",
+   "y_toward": "n_kamiyacho",
+   "system": "8系統",
+   "why": "都電 8系統: 赤羽橋 -（l_fudanotsuji_line）- 飯倉一丁目 -（l_roppongi_line）- 神谷町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kamiyacho",
+   "x": "l_roppongi_line",
+   "y": "l_toranomon_line",
+   "x_toward": "n_iigura_1_chome",
+   "y_toward": "n_sakuradamon_hanzomon_line_toei",
+   "system": "8系統",
+   "why": "都電 8系統: 飯倉一丁目 -（l_roppongi_line）- 神谷町 -（l_toranomon_line）- 桜田門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sakuradamon_hanzomon_line_toei",
+   "x": "l_toranomon_line",
+   "y": "l_hanzomon_line_toei",
+   "x_toward": "n_kamiyacho",
+   "y_toward": "n_hibiyakoen",
+   "system": "8系統",
+   "why": "都電 8系統: 神谷町 -（l_toranomon_line）- 桜田門 -（l_hanzomon_line_toei）- 日比谷公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_hanzomon_line_toei",
+   "y": "l_tsukiji_line",
+   "x_toward": "n_sakuradamon_hanzomon_line_toei",
+   "y_toward": "n_tsukiji_kachidokibashi",
+   "system": "8系統",
+   "why": "都電 8系統: 桜田門 -（l_hanzomon_line_toei）- 日比谷公園 -（l_tsukiji_line）- 築地",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_miyakezaka",
+   "x": "l_aoyama_line",
+   "y": "l_hanzomon_line_toei",
+   "x_toward": "n_shibuya_ekimae",
+   "y_toward": "n_hibiyakoen",
+   "system": "9系統",
+   "why": "都電 9系統: 渋谷駅前 -（l_aoyama_line）- 三宅坂 -（l_hanzomon_line_toei）- 日比谷公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_hanzomon_line_toei",
+   "y": "l_tsukiji_line",
+   "x_toward": "n_miyakezaka",
+   "y_toward": "n_kayabacho_tsukiji",
+   "system": "9系統",
+   "why": "都電 9系統: 三宅坂 -（l_hanzomon_line_toei）- 日比谷公園 -（l_tsukiji_line）- 茅場町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kayabacho_tsukiji",
+   "x": "l_tsukiji_line",
+   "y": "l_shinohashi_line",
+   "x_toward": "n_hibiyakoen",
+   "y_toward": "n_hamachonakanohashi",
+   "system": "9系統",
+   "why": "都電 9系統: 日比谷公園 -（l_tsukiji_line）- 茅場町 -（l_shinohashi_line）- 浜町中ノ橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_roppongi_toden",
+   "x": "l_roppongi_line",
+   "y": "l_kasumicho_line",
+   "x_toward": "n_kita_aoyama_1_chome",
+   "y_toward": "n_tameike",
+   "system": "9系統",
+   "why": "都電 9系統: 青山一丁目 -（l_roppongi_line）- 六本木 -（l_kasumicho_line）- 溜池",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_tameike",
+   "x": "l_kasumicho_line",
+   "y": "l_tameike_line",
+   "x_toward": "n_roppongi_toden",
+   "y_toward": "n_toranomon_toei",
+   "system": "9系統",
+   "why": "都電 9系統: 六本木 -（l_kasumicho_line）- 溜池 -（l_tameike_line）- 虎ノ門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_toranomon_toei",
+   "x": "l_tameike_line",
+   "y": "l_toranomon_line",
+   "x_toward": "n_tameike",
+   "y_toward": "n_sakuradamon_hanzomon_line_toei",
+   "system": "9系統",
+   "why": "都電 9系統: 溜池 -（l_tameike_line）- 虎ノ門 -（l_toranomon_line）- 桜田門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kamiyacho",
+   "x": "l_roppongi_line",
+   "y": "l_toranomon_line",
+   "x_toward": "n_kita_aoyama_1_chome",
+   "y_toward": "n_sakuradamon_hanzomon_line_toei",
+   "system": "9系統",
+   "why": "都電 9系統: 青山一丁目 -（l_roppongi_line）- 神谷町 -（l_toranomon_line）- 桜田門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_miyakezaka",
+   "x": "l_aoyama_line",
+   "y": "l_hanzomon_line_toei",
+   "x_toward": "n_shibuya_ekimae",
+   "y_toward": "n_hanzomon_bancho_line_toei",
+   "system": "10系統",
+   "why": "都電 10系統: 渋谷駅前 -（l_aoyama_line）- 三宅坂 -（l_hanzomon_line_toei）- 半蔵門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hanzomon_bancho_line_toei",
+   "x": "l_hanzomon_line_toei",
+   "y": "l_bancho_line_toei",
+   "x_toward": "n_miyakezaka",
+   "y_toward": "n_kudanue",
+   "system": "10系統",
+   "why": "都電 10系統: 三宅坂 -（l_hanzomon_line_toei）- 半蔵門 -（l_bancho_line_toei）- 九段上",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kudanue",
+   "x": "l_bancho_line_toei",
+   "y": "l_kudan_line",
+   "x_toward": "n_hanzomon_bancho_line_toei",
+   "y_toward": "n_ogawamachi_toden",
+   "system": "10系統",
+   "why": "都電 10系統: 半蔵門 -（l_bancho_line_toei）- 九段上 -（l_kudan_line）- 小川町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ogawamachi_toden",
+   "x": "l_kudan_line",
+   "y": "l_ryogokubashi_line",
+   "x_toward": "n_kudanue",
+   "y_toward": "n_sudacho",
+   "system": "10系統",
+   "why": "都電 10系統: 九段上 -（l_kudan_line）- 小川町 -（l_ryogokubashi_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_yotsuya_sanchome_toei",
+   "x": "l_shinanomachi_line",
+   "y": "l_shinjuku_line_toden",
+   "x_toward": "n_kita_aoyama_1_chome",
+   "y_toward": "n_yotsuyamitsuke",
+   "system": "10系統",
+   "why": "都電 10系統: 青山一丁目 -（l_shinanomachi_line）- 四谷三丁目 -（l_shinjuku_line_toden）- 四谷見附",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_yotsuyamitsuke",
+   "x": "l_shinjuku_line_toden",
+   "y": "l_ushigome_line",
+   "x_toward": "n_yotsuya_sanchome_toei",
+   "y_toward": "n_ichigayamitsuke",
+   "system": "10系統",
+   "why": "都電 10系統: 四谷三丁目 -（l_shinjuku_line_toden）- 四谷見附 -（l_ushigome_line）- 市ヶ谷見附",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ichigayamitsuke",
+   "x": "l_ushigome_line",
+   "y": "l_ichigaya_line",
+   "x_toward": "n_yotsuyamitsuke",
+   "y_toward": "n_kudanue",
+   "system": "10系統",
+   "why": "都電 10系統: 四谷見附 -（l_ushigome_line）- 市ヶ谷見附 -（l_ichigaya_line）- 九段上",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hanzomon_bancho_line_toei",
+   "x": "l_shinjuku_line_toden",
+   "y": "l_hanzomon_line_toei",
+   "x_toward": "n_shinjuku_ekimae",
+   "y_toward": "n_hibiyakoen",
+   "system": "11系統",
+   "why": "都電 11系統: 新宿駅前 -（l_shinjuku_line_toden）- 半蔵門 -（l_hanzomon_line_toei）- 日比谷公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_hanzomon_line_toei",
+   "y": "l_tsukiji_line",
+   "x_toward": "n_hanzomon_bancho_line_toei",
+   "y_toward": "n_tsukiji_kachidokibashi",
+   "system": "11系統",
+   "why": "都電 11系統: 半蔵門 -（l_hanzomon_line_toei）- 日比谷公園 -（l_tsukiji_line）- 築地",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_tsukiji_kachidokibashi",
+   "x": "l_tsukiji_line",
+   "y": "l_kachidokibashi_line",
+   "x_toward": "n_hibiyakoen",
+   "y_toward": "n_tsukishima_toden",
+   "system": "11系統",
+   "why": "都電 11系統: 日比谷公園 -（l_tsukiji_line）- 築地 -（l_kachidokibashi_line）- 月島",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_yotsuyamitsuke",
+   "x": "l_shinjuku_line_toden",
+   "y": "l_ushigome_line",
+   "x_toward": "n_shinjuku_ekimae",
+   "y_toward": "n_ichigayamitsuke",
+   "system": "12系統",
+   "why": "都電 12系統: 新宿駅前 -（l_shinjuku_line_toden）- 四谷見附 -（l_ushigome_line）- 市ヶ谷見附",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kudanue",
+   "x": "l_ichigaya_line",
+   "y": "l_kudan_line",
+   "x_toward": "n_ichigayamitsuke",
+   "y_toward": "n_ogawamachi_toden",
+   "system": "12系統",
+   "why": "都電 12系統: 市ヶ谷見附 -（l_ichigaya_line）- 九段上 -（l_kudan_line）- 小川町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ogawamachi_toden",
+   "x": "l_kudan_line",
+   "y": "l_ryogokubashi_line",
+   "x_toward": "n_kudanue",
+   "y_toward": "n_ryogoku_2_chome",
+   "system": "12系統",
+   "why": "都電 12系統: 九段上 -（l_kudan_line）- 小川町 -（l_ryogokubashi_line）- 両国二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ryogoku_2_chome",
+   "x": "l_ryogokubashi_line",
+   "y": "l_ryogoku_station_spur_line",
+   "x_toward": "n_ogawamachi_toden",
+   "y_toward": "n_ryogoku_ekimae",
+   "system": "12系統",
+   "why": "都電 12系統: 小川町 -（l_ryogokubashi_line）- 両国二丁目 -（l_ryogoku_station_spur_line）- 両国駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_yotsuyasankocho",
+   "x": "l_shinjuku_line_toden",
+   "y": "l_tsunohazu_line",
+   "x_toward": "n_shinjuku_ekimae",
+   "y_toward": "n_iidabashi_toden",
+   "system": "13系統",
+   "why": "都電 13系統: 新宿駅前 -（l_shinjuku_line_toden）- 四谷三光町 -（l_tsunohazu_line）- 飯田橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_iidabashi_toden",
+   "x": "l_tsunohazu_line",
+   "y": "l_ochanomizu_line",
+   "x_toward": "n_yotsuyasankocho",
+   "y_toward": "n_akihabaraekihigashiguchi",
+   "system": "13系統",
+   "why": "都電 13系統: 四谷三光町 -（l_tsunohazu_line）- 飯田橋 -（l_ochanomizu_line）- 秋葉原駅東口",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_akihabaraekihigashiguchi",
+   "x": "l_ochanomizu_line",
+   "y": "l_izumibashi_line",
+   "x_toward": "n_iidabashi_toden",
+   "y_toward": "n_suitengumae_toei",
+   "system": "13系統",
+   "why": "都電 13系統: 飯田橋 -（l_ochanomizu_line）- 秋葉原駅東口 -（l_izumibashi_line）- 水天宮前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_koenji_1_chome",
+   "x": "l_koenji_line",
+   "y": "l_ogikubo_line",
+   "x_toward": "n_shinjuku_ekimae",
+   "y_toward": null,
+   "system": "14系統（杉並線）",
+   "why": "都電 14系統（杉並線）: 新宿駅前 -（l_koenji_line）- 高円寺一丁目 -（l_ogikubo_line）- 荻窪駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_omokagebashi",
+   "x": "l_totsuka_line",
+   "y": "l_arakawa_line",
+   "x_toward": "n_takadanobaba_ekimae",
+   "y_toward": "n_waseda_toei",
+   "system": "15系統",
+   "why": "都電 15系統: 高田馬場駅前 -（l_totsuka_line）- 面影橋 -（l_arakawa_line）- 早稲田",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_waseda_toei",
+   "x": "l_arakawa_line",
+   "y": "l_edogawa_line",
+   "x_toward": "n_omokagebashi",
+   "y_toward": "n_kudanshita_toden",
+   "system": "15系統",
+   "why": "都電 15系統: 面影橋 -（l_arakawa_line）- 早稲田 -（l_edogawa_line）- 九段下",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kudanshita_toden",
+   "x": "l_edogawa_line",
+   "y": "l_kudan_line",
+   "x_toward": "n_waseda_toei",
+   "y_toward": "n_ogawamachi_toden",
+   "system": "15系統",
+   "why": "都電 15系統: 早稲田 -（l_edogawa_line）- 九段下 -（l_kudan_line）- 小川町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ogawamachi_toden",
+   "x": "l_kudan_line",
+   "y": "l_kandabashi_line",
+   "x_toward": "n_kudanshita_toden",
+   "y_toward": "n_otemachi_toden",
+   "system": "15系統",
+   "why": "都電 15系統: 九段下 -（l_kudan_line）- 小川町 -（l_kandabashi_line）- 大手町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_otemachi_toden",
+   "x": "l_kandabashi_line",
+   "y": "l_chiyodabashi_line",
+   "x_toward": "n_ogawamachi_toden",
+   "y_toward": "n_kayabacho_tsukiji",
+   "system": "15系統",
+   "why": "都電 15系統: 小川町 -（l_kandabashi_line）- 大手町 -（l_chiyodabashi_line）- 茅場町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_denzuinmae",
+   "x": "l_otsuka_line",
+   "y": "l_tomizaka_line",
+   "x_toward": "n_otsuka_ekimae",
+   "y_toward": "n_bunkyokuyakushomae",
+   "system": "16系統",
+   "why": "都電 16系統: 大塚駅前 -（l_otsuka_line）- 伝通院前 -（l_tomizaka_line）- 文京区役所前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_bunkyokuyakushomae",
+   "x": "l_tomizaka_line",
+   "y": "l_kiridoshi_line",
+   "x_toward": "n_denzuinmae",
+   "y_toward": "n_ueno_hirokoji_toei",
+   "system": "16系統",
+   "why": "都電 16系統: 伝通院前 -（l_tomizaka_line）- 文京区役所前 -（l_kiridoshi_line）- 上野広小路",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ueno_hirokoji_toei",
+   "x": "l_kiridoshi_line",
+   "y": "l_umayabashi_line",
+   "x_toward": "n_bunkyokuyakushomae",
+   "y_toward": "n_honjo_1_chome",
+   "system": "16系統",
+   "why": "都電 16系統: 文京区役所前 -（l_kiridoshi_line）- 上野広小路 -（l_umayabashi_line）- 本所一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_honjo_1_chome",
+   "x": "l_umayabashi_line",
+   "y": "l_narihira_line",
+   "x_toward": "n_ueno_hirokoji_toei",
+   "y_toward": "n_ishiwara_1_chome",
+   "system": "16系統",
+   "why": "都電 16系統: 上野広小路 -（l_umayabashi_line）- 本所一丁目 -（l_narihira_line）- 石原町一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ishiwara_1_chome",
+   "x": "l_narihira_line",
+   "y": "l_ishiwara_line",
+   "x_toward": "n_honjo_1_chome",
+   "y_toward": "n_kinshicho_ekimae",
+   "system": "16系統",
+   "why": "都電 16系統: 本所一丁目 -（l_narihira_line）- 石原町一丁目 -（l_ishiwara_line）- 錦糸町駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_gokokujimae",
+   "x": "l_ikebukuro_line_toei",
+   "y": "l_gokokuji_line",
+   "x_toward": "n_ikebukuro_ekimae",
+   "y_toward": "n_otsuka_3_chome",
+   "system": "17系統",
+   "why": "都電 17系統: 池袋駅前 -（l_ikebukuro_line_toei）- 護国寺前 -（l_gokokuji_line）- 大塚三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_otsuka_3_chome",
+   "x": "l_gokokuji_line",
+   "y": "l_otsuka_line",
+   "x_toward": "n_gokokujimae",
+   "y_toward": "n_denzuinmae",
+   "system": "17系統",
+   "why": "都電 17系統: 護国寺前 -（l_gokokuji_line）- 大塚三丁目 -（l_otsuka_line）- 伝通院前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_denzuinmae",
+   "x": "l_otsuka_line",
+   "y": "l_tomizaka_line",
+   "x_toward": "n_otsuka_3_chome",
+   "y_toward": "n_bunkyokuyakushomae",
+   "system": "17系統",
+   "why": "都電 17系統: 大塚三丁目 -（l_otsuka_line）- 伝通院前 -（l_tomizaka_line）- 文京区役所前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_bunkyokuyakushomae",
+   "x": "l_tomizaka_line",
+   "y": "l_suidobashi_line",
+   "x_toward": "n_denzuinmae",
+   "y_toward": "n_shintokiwabashi",
+   "system": "17系統",
+   "why": "都電 17系統: 伝通院前 -（l_tomizaka_line）- 文京区役所前 -（l_suidobashi_line）- 新常盤橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_shintokiwabashi",
+   "x": "l_suidobashi_line",
+   "y": "l_dobashi_line",
+   "x_toward": "n_bunkyokuyakushomae",
+   "y_toward": "n_sukiyabashi",
+   "system": "17系統",
+   "why": "都電 17系統: 文京区役所前 -（l_suidobashi_line）- 新常盤橋 -（l_dobashi_line）- 数寄屋橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sugamoshakomae",
+   "x": "l_itabashi_line",
+   "y": "l_sugamo_line",
+   "x_toward": "n_itabashi_ekimae",
+   "y_toward": "n_hakusanue",
+   "system": "18系統",
+   "why": "都電 18系統: 板橋駅前 -（l_itabashi_line）- 巣鴨車庫前 -（l_sugamo_line）- 白山上",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hakusanue",
+   "x": "l_sugamo_line",
+   "y": "l_hakusan_line",
+   "x_toward": "n_sugamoshakomae",
+   "y_toward": "n_bunkyokuyakushomae",
+   "system": "18系統",
+   "why": "都電 18系統: 巣鴨車庫前 -（l_sugamo_line）- 白山上 -（l_hakusan_line）- 文京区役所前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_bunkyokuyakushomae",
+   "x": "l_hakusan_line",
+   "y": "l_suidobashi_line",
+   "x_toward": "n_hakusanue",
+   "y_toward": "n_kandabashi",
+   "system": "18系統",
+   "why": "都電 18系統: 白山上 -（l_hakusan_line）- 文京区役所前 -（l_suidobashi_line）- 神田橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_asukayama",
+   "x": "l_arakawa_line",
+   "y": "l_asukayama_line",
+   "x_toward": "n_oji_ekimae",
+   "y_toward": "n_komagome_ekimae",
+   "system": "19系統",
+   "why": "都電 19系統: 王子駅前 -（l_arakawa_line）- 飛鳥山 -（l_asukayama_line）- 駒込駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_komagome_ekimae",
+   "x": "l_asukayama_line",
+   "y": "l_komagome_line",
+   "x_toward": "n_asukayama",
+   "y_toward": "n_mukogaoka_2_chome",
+   "system": "19系統",
+   "why": "都電 19系統: 飛鳥山 -（l_asukayama_line）- 駒込駅前 -（l_komagome_line）- 向丘二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_mukogaoka_2_chome",
+   "x": "l_komagome_line",
+   "y": "l_hongo_line",
+   "x_toward": "n_komagome_ekimae",
+   "y_toward": "n_sotokanda_2_chome",
+   "system": "19系統",
+   "why": "都電 19系統: 駒込駅前 -（l_komagome_line）- 向丘二丁目 -（l_hongo_line）- 外神田二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sotokanda_2_chome",
+   "x": "l_hongo_line",
+   "y": "l_ochanomizu_line",
+   "x_toward": "n_mukogaoka_2_chome",
+   "y_toward": "n_manseibashi",
+   "system": "19系統",
+   "why": "都電 19系統: 向丘二丁目 -（l_hongo_line）- 外神田二丁目 -（l_ochanomizu_line）- 万世橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_manseibashi",
+   "x": "l_ochanomizu_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_sotokanda_2_chome",
+   "y_toward": "n_sudacho",
+   "system": "19系統",
+   "why": "都電 19系統: 外神田二丁目 -（l_ochanomizu_line）- 万世橋 -（l_ueno_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sudacho",
+   "x": "l_ueno_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_manseibashi",
+   "y_toward": "n_tori_3_chome",
+   "system": "19系統",
+   "why": "都電 19系統: 万世橋 -（l_ueno_line）- 須田町 -（l_hondori_line）- 通三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_gokokujimae",
+   "x": "l_otowa_line",
+   "y": "l_gokokuji_line",
+   "x_toward": "n_edogawabashi_edogawa",
+   "y_toward": "n_sengoku_1_chome",
+   "system": "20系統",
+   "why": "都電 20系統: 江戸川橋 -（l_otowa_line）- 護国寺前 -（l_gokokuji_line）- 千石一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sengoku_1_chome",
+   "x": "l_gokokuji_line",
+   "y": "l_dozaka_line",
+   "x_toward": "n_gokokujimae",
+   "y_toward": "n_uenokoen",
+   "system": "20系統",
+   "why": "都電 20系統: 護国寺前 -（l_gokokuji_line）- 千石一丁目 -（l_dozaka_line）- 上野公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_uenokoen",
+   "x": "l_dozaka_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_sengoku_1_chome",
+   "y_toward": "n_sudacho",
+   "system": "20系統",
+   "why": "都電 20系統: 千石一丁目 -（l_dozaka_line）- 上野公園 -（l_ueno_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_senjuohashi_kitasenju",
+   "x": "l_kitasenju_line",
+   "y": "l_minowa_line",
+   "x_toward": "n_senju_4_chome",
+   "y_toward": "n_ueno_ekimae",
+   "system": "21系統",
+   "why": "都電 21系統: 千住四丁目 -（l_kitasenju_line）- 千住大橋 -（l_minowa_line）- 上野駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ueno_ekimae",
+   "x": "l_minowa_line",
+   "y": "l_izumibashi_line",
+   "x_toward": "n_senjuohashi_kitasenju",
+   "y_toward": "n_suitengumae_toei",
+   "system": "21系統",
+   "why": "都電 21系統: 千住大橋 -（l_minowa_line）- 上野駅前 -（l_izumibashi_line）- 水天宮前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_komagata_2_chome",
+   "x": "l_senju_line",
+   "y": "l_kuramae_line",
+   "x_toward": "n_minami_senju_senju",
+   "y_toward": null,
+   "system": "22系統",
+   "why": "都電 22系統: 南千住 -（l_senju_line）- 駒形二丁目 -（l_kuramae_line）- 浅草橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_asakusabashi_toden",
+   "x": "l_kuramae_line",
+   "y": "l_muromachi_line",
+   "x_toward": "n_komagata_2_chome",
+   "y_toward": "n_muromachi_3_chome",
+   "system": "22系統",
+   "why": "都電 22系統: 駒形二丁目 -（l_kuramae_line）- 浅草橋 -（l_muromachi_line）- 室町三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_muromachi_3_chome",
+   "x": "l_muromachi_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_asakusabashi_toden",
+   "y_toward": "n_shimbashi_toden",
+   "system": "22系統",
+   "why": "都電 22系統: 浅草橋 -（l_muromachi_line）- 室町三丁目 -（l_hondori_line）- 新橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_monzen_nakacho_toden",
+   "x": "l_takabashi_line",
+   "y": "l_tsukishima_line",
+   "x_toward": null,
+   "y_toward": "n_tsukishima_toden",
+   "system": "23系統",
+   "why": "都電 23系統: 緑町一丁目 -（l_takabashi_line）- 門前仲町 -（l_tsukishima_line）- 月島",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_honjo_azumabashi_toden",
+   "x": "l_narihira_line",
+   "y": "l_azumabashi_line",
+   "x_toward": "n_fukujinbashi",
+   "y_toward": "n_ueno_ekimae",
+   "system": "24系統",
+   "why": "都電 24系統: 福神橋 -（l_narihira_line）- 本所吾妻橋 -（l_azumabashi_line）- 上野駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ueno_ekimae",
+   "x": "l_azumabashi_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_honjo_azumabashi_toden",
+   "y_toward": "n_sudacho",
+   "system": "24系統",
+   "why": "都電 24系統: 本所吾妻橋 -（l_azumabashi_line）- 上野駅前 -（l_ueno_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kinshibori",
+   "x": "l_komatsugawa_line",
+   "y": "l_kotobashi_line",
+   "x_toward": "n_nishiarakawa",
+   "y_toward": "n_ryogoku_2_chome",
+   "system": "25系統",
+   "why": "都電 25系統: 西荒川 -（l_komatsugawa_line）- 錦糸堀 -（l_kotobashi_line）- 両国二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ryogoku_2_chome",
+   "x": "l_kotobashi_line",
+   "y": "l_ryogokubashi_line",
+   "x_toward": "n_kinshibori",
+   "y_toward": "n_ogawamachi_toden",
+   "system": "25系統",
+   "why": "都電 25系統: 錦糸堀 -（l_kotobashi_line）- 両国二丁目 -（l_ryogokubashi_line）- 小川町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ogawamachi_toden",
+   "x": "l_ryogokubashi_line",
+   "y": "l_kandabashi_line",
+   "x_toward": "n_ryogoku_2_chome",
+   "y_toward": "n_hibiyakoen",
+   "system": "25系統",
+   "why": "都電 25系統: 両国二丁目 -（l_ryogokubashi_line）- 小川町 -（l_kandabashi_line）- 日比谷公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_oji_ekimae",
+   "x": "l_arakawa_line",
+   "y": "l_akabane_line_toei",
+   "x_toward": null,
+   "y_toward": "n_akabane_toei",
+   "system": "27系統",
+   "why": "都電 27系統: 熊ノ前 -（l_arakawa_line）- 王子駅前 -（l_akabane_line_toei）- 赤羽",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_toyokoenmae",
+   "x": "l_sarue_line",
+   "y": "l_susaki_line",
+   "x_toward": "n_kinshicho_ekimae_sarue_line",
+   "y_toward": "n_eitaibashi",
+   "system": "28系統",
+   "why": "都電 28系統: 錦糸町駅前 -（l_sarue_line）- 東陽公園前 -（l_susaki_line）- 永代橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_eitaibashi",
+   "x": "l_susaki_line",
+   "y": "l_chiyodabashi_line",
+   "x_toward": "n_toyokoenmae",
+   "y_toward": "n_marunouchi_1_chome",
+   "system": "28系統",
+   "why": "都電 28系統: 東陽公園前 -（l_susaki_line）- 永代橋 -（l_chiyodabashi_line）- 丸ノ内一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_marunouchi_1_chome",
+   "x": "l_chiyodabashi_line",
+   "y": "l_marunouchi_line_toei",
+   "x_toward": "n_eitaibashi",
+   "y_toward": "n_tochomae_toei",
+   "system": "28系統",
+   "why": "都電 28系統: 永代橋 -（l_chiyodabashi_line）- 丸ノ内一丁目 -（l_marunouchi_line_toei）- 都庁前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sakaigawa_kasaibashi",
+   "x": "l_kasaibashi_line",
+   "y": "l_sunamachi_line",
+   "x_toward": "n_kasaibashi",
+   "y_toward": "n_suijinmori",
+   "system": "29系統",
+   "why": "都電 29系統: 葛西橋 -（l_kasaibashi_line）- 境川 -（l_sunamachi_line）- 水神森",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_suijinmori",
+   "x": "l_sunamachi_line",
+   "y": "l_komatsugawa_line",
+   "x_toward": "n_sakaigawa_kasaibashi",
+   "y_toward": "n_kinshibori",
+   "system": "29系統",
+   "why": "都電 29系統: 境川 -（l_sunamachi_line）- 水神森 -（l_komatsugawa_line）- 錦糸堀",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kinshibori",
+   "x": "l_komatsugawa_line",
+   "y": "l_kotobashi_line",
+   "x_toward": "n_suijinmori",
+   "y_toward": "n_ryogoku_2_chome",
+   "system": "29系統",
+   "why": "都電 29系統: 水神森 -（l_komatsugawa_line）- 錦糸堀 -（l_kotobashi_line）- 両国二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ryogoku_2_chome",
+   "x": "l_kotobashi_line",
+   "y": "l_ryogokubashi_line",
+   "x_toward": "n_kinshibori",
+   "y_toward": "n_sudacho",
+   "system": "29系統",
+   "why": "都電 29系統: 錦糸堀 -（l_kotobashi_line）- 両国二丁目 -（l_ryogokubashi_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_honjo_azumabashi_toden",
+   "x": "l_mukojima_line",
+   "y": "l_azumabashi_line",
+   "x_toward": "n_higashi_mukojima_3_chome",
+   "y_toward": "n_ueno_ekimae",
+   "system": "30系統",
+   "why": "都電 30系統: 東向島三丁目 -（l_mukojima_line）- 本所吾妻橋 -（l_azumabashi_line）- 上野駅前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kuramae_1_chome",
+   "x": "l_senzoku_line",
+   "y": "l_kuramae_line",
+   "x_toward": null,
+   "y_toward": null,
+   "system": "31系統",
+   "why": "都電 31系統: 三ノ輪車庫 -（l_senzoku_line）- 蔵前一丁目 -（l_kuramae_line）- 浅草橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_asakusabashi_toden",
+   "x": "l_kuramae_line",
+   "y": "l_muromachi_line",
+   "x_toward": "n_kuramae_1_chome",
+   "y_toward": "n_marunouchi_1_chome",
+   "system": "31系統",
+   "why": "都電 31系統: 蔵前一丁目 -（l_kuramae_line）- 浅草橋 -（l_muromachi_line）- 丸ノ内一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_marunouchi_1_chome",
+   "x": "l_muromachi_line",
+   "y": "l_marunouchi_line_toei",
+   "x_toward": "n_asakusabashi_toden",
+   "y_toward": "n_tochomae_toei",
+   "system": "31系統",
+   "why": "都電 31系統: 浅草橋 -（l_muromachi_line）- 丸ノ内一丁目 -（l_marunouchi_line_toei）- 都庁前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kita_aoyama_1_chome",
+   "x": "l_shinanomachi_line",
+   "y": "l_roppongi_line",
+   "x_toward": "n_yotsuya_sanchome_toei",
+   "y_toward": "n_hamamatsucho_1_chome",
+   "system": "33系統",
+   "why": "都電 33系統: 四谷三丁目 -（l_shinanomachi_line）- 北青山一丁目 -（l_roppongi_line）- 浜松町一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_tengenjibashi",
+   "x": "l_tengenjibashi_line",
+   "y": "l_furukawa_line",
+   "x_toward": "n_shibuya_ekimae",
+   "y_toward": "n_furukawabashi_furukawa",
+   "system": "34系統",
+   "why": "都電 34系統: 渋谷駅前 -（l_tengenjibashi_line）- 天現寺橋 -（l_furukawa_line）- 古川橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kandabashi",
+   "x": "l_suidobashi_line",
+   "y": "l_kandabashi_line",
+   "x_toward": "n_bunkyokuyakushomae",
+   "y_toward": "n_hibiyakoen",
+   "system": "35系統",
+   "why": "都電 35系統: 文京区役所前 -（l_suidobashi_line）- 神田橋 -（l_kandabashi_line）- 日比谷公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_kandabashi_line",
+   "y": "l_mita_line_toden",
+   "x_toward": "n_kandabashi",
+   "y_toward": "n_nishi_shimbashi_1_chome",
+   "system": "35系統",
+   "why": "都電 35系統: 神田橋 -（l_kandabashi_line）- 日比谷公園 -（l_mita_line_toden）- 西新橋一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sumiyoshicho_2_chome",
+   "x": "l_sarue_line",
+   "y": "l_shinohashi_line",
+   "x_toward": "n_kinshicho_ekimae_sarue_line",
+   "y_toward": "n_kayabacho_tsukiji",
+   "system": "36系統",
+   "why": "都電 36系統: 錦糸町駅前 -（l_sarue_line）- 住吉町二丁目 -（l_shinohashi_line）- 茅場町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kayabacho_tsukiji",
+   "x": "l_shinohashi_line",
+   "y": "l_tsukiji_line",
+   "x_toward": "n_sumiyoshicho_2_chome",
+   "y_toward": "n_tsukiji_kachidokibashi",
+   "system": "36系統",
+   "why": "都電 36系統: 住吉町二丁目 -（l_shinohashi_line）- 茅場町 -（l_tsukiji_line）- 築地",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_hibiyakoen",
+   "x": "l_mita_line_toden",
+   "y": "l_kandabashi_line",
+   "x_toward": "n_mita_toden",
+   "y_toward": "n_ogawamachi_toden",
+   "system": "37系統",
+   "why": "都電 37系統: 三田 -（l_mita_line_toden）- 日比谷公園 -（l_kandabashi_line）- 小川町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ogawamachi_toden",
+   "x": "l_kandabashi_line",
+   "y": "l_ryogokubashi_line",
+   "x_toward": "n_hibiyakoen",
+   "y_toward": "n_awajicho_awajicho",
+   "system": "37系統",
+   "why": "都電 37系統: 日比谷公園 -（l_kandabashi_line）- 小川町 -（l_ryogokubashi_line）- 淡路町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_awajicho_awajicho",
+   "x": "l_ryogokubashi_line",
+   "y": "l_awajicho_line",
+   "x_toward": "n_ogawamachi_toden",
+   "y_toward": "n_sotokanda_3_chome",
+   "system": "37系統",
+   "why": "都電 37系統: 小川町 -（l_ryogokubashi_line）- 淡路町 -（l_awajicho_line）- 外神田三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sotokanda_3_chome",
+   "x": "l_awajicho_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_awajicho_awajicho",
+   "y_toward": "n_uenokoen",
+   "system": "37系統",
+   "why": "都電 37系統: 淡路町 -（l_awajicho_line）- 外神田三丁目 -（l_ueno_line）- 上野公園",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_uenokoen",
+   "x": "l_ueno_line",
+   "y": "l_dozaka_line",
+   "x_toward": "n_sotokanda_3_chome",
+   "y_toward": "n_sendagi_2_chome",
+   "system": "37系統",
+   "why": "都電 37系統: 外神田三丁目 -（l_ueno_line）- 上野公園 -（l_dozaka_line）- 千駄木二丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_kinshibori",
+   "x": "l_kotobashi_line",
+   "y": "l_komatsugawa_line",
+   "x_toward": "n_kinshiborishakomae",
+   "y_toward": "n_suijinmori",
+   "system": "38系統",
+   "why": "都電 38系統: 錦糸堀車庫前 -（l_kotobashi_line）- 錦糸堀 -（l_komatsugawa_line）- 水神森",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_suijinmori",
+   "x": "l_komatsugawa_line",
+   "y": "l_sunamachi_line",
+   "x_toward": "n_kinshibori",
+   "y_toward": "n_toyokoenmae",
+   "system": "38系統",
+   "why": "都電 38系統: 錦糸堀 -（l_komatsugawa_line）- 水神森 -（l_sunamachi_line）- 東陽公園前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_toyokoenmae",
+   "x": "l_sunamachi_line",
+   "y": "l_susaki_line",
+   "x_toward": "n_suijinmori",
+   "y_toward": "n_eitaibashi",
+   "system": "38系統",
+   "why": "都電 38系統: 水神森 -（l_sunamachi_line）- 東陽公園前 -（l_susaki_line）- 永代橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_eitaibashi",
+   "x": "l_susaki_line",
+   "y": "l_chiyodabashi_line",
+   "x_toward": "n_toyokoenmae",
+   "y_toward": "n_nihombashi_toden",
+   "system": "38系統",
+   "why": "都電 38系統: 東陽公園前 -（l_susaki_line）- 永代橋 -（l_chiyodabashi_line）- 日本橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_omagari",
+   "x": "l_edogawa_line",
+   "y": "l_tomizaka_line",
+   "x_toward": "n_waseda_toei",
+   "y_toward": "n_bunkyokuyakushomae",
+   "system": "39系統",
+   "why": "都電 39系統: 早稲田 -（l_edogawa_line）- 大曲 -（l_tomizaka_line）- 文京区役所前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_bunkyokuyakushomae",
+   "x": "l_tomizaka_line",
+   "y": "l_kiridoshi_line",
+   "x_toward": "n_omagari",
+   "y_toward": "n_ueno_hirokoji_toei",
+   "system": "39系統",
+   "why": "都電 39系統: 大曲 -（l_tomizaka_line）- 文京区役所前 -（l_kiridoshi_line）- 上野広小路",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_ueno_hirokoji_toei",
+   "x": "l_kiridoshi_line",
+   "y": "l_umayabashi_line",
+   "x_toward": "n_bunkyokuyakushomae",
+   "y_toward": "n_umayabashi",
+   "system": "39系統",
+   "why": "都電 39系統: 文京区役所前 -（l_kiridoshi_line）- 上野広小路 -（l_umayabashi_line）- 厩橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_uenokoen",
+   "x": "l_dozaka_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_shinmeichoshakomae",
+   "y_toward": "n_sudacho",
+   "system": "40系統",
+   "why": "都電 40系統: 神明町車庫前 -（l_dozaka_line）- 上野公園 -（l_ueno_line）- 須田町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sudacho",
+   "x": "l_ueno_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_uenokoen",
+   "y_toward": "n_ginza_7_chome",
+   "system": "40系統",
+   "why": "都電 40系統: 上野公園 -（l_ueno_line）- 須田町 -（l_hondori_line）- 銀座七丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_shimbashi_toden",
+   "x": "l_kanasugi_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_mita_toden",
+   "y_toward": "n_muromachi_3_chome",
+   "system": "臨時1系統",
+   "why": "都電 臨時1系統: 三田 -（l_kanasugi_line）- 新橋 -（l_hondori_line）- 室町三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_muromachi_3_chome",
+   "x": "l_hondori_line",
+   "y": "l_muromachi_line",
+   "x_toward": "n_shimbashi_toden",
+   "y_toward": "n_asakusabashi_toden",
+   "system": "臨時1系統",
+   "why": "都電 臨時1系統: 新橋 -（l_hondori_line）- 室町三丁目 -（l_muromachi_line）- 浅草橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_asakusabashi_toden",
+   "x": "l_muromachi_line",
+   "y": "l_kuramae_line",
+   "x_toward": "n_muromachi_3_chome",
+   "y_toward": "n_kaminarimon",
+   "system": "臨時1系統",
+   "why": "都電 臨時1系統: 室町三丁目 -（l_muromachi_line）- 浅草橋 -（l_kuramae_line）- 雷門",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_gokokujimae",
+   "x": "l_ikebukuro_line_toei",
+   "y": "l_gokokuji_line",
+   "x_toward": "n_ikebukuro_ekimae",
+   "y_toward": "n_sengoku_1_chome",
+   "system": "臨時20系統",
+   "why": "都電 臨時20系統: 池袋駅前 -（l_ikebukuro_line_toei）- 護国寺前 -（l_gokokuji_line）- 千石一丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_uenokoen",
+   "x": "l_dozaka_line",
+   "y": "l_ueno_line",
+   "x_toward": "n_sengoku_1_chome",
+   "y_toward": "n_ueno_hirokoji_toei",
+   "system": "臨時20系統",
+   "why": "都電 臨時20系統: 千石一丁目 -（l_dozaka_line）- 上野公園 -（l_ueno_line）- 上野広小路",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sudacho",
+   "x": "l_ueno_line",
+   "y": "l_hondori_line",
+   "x_toward": "n_uenokoen",
+   "y_toward": "n_tori_3_chome",
+   "system": "臨時20系統",
+   "why": "都電 臨時20系統: 上野公園 -（l_ueno_line）- 須田町 -（l_hondori_line）- 通三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_asakusabashi_toden",
+   "x": "l_kuramae_line",
+   "y": "l_muromachi_line",
+   "x_toward": "n_kaminarimon",
+   "y_toward": "n_muromachi_3_chome",
+   "system": "臨時22系統",
+   "why": "都電 臨時22系統: 雷門 -（l_kuramae_line）- 浅草橋 -（l_muromachi_line）- 室町三丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_sakaigawa_kasaibashi",
+   "x": "l_kasaibashi_line",
+   "y": "l_sunamachi_line",
+   "x_toward": "n_kasaibashi",
+   "y_toward": "n_toyokoenmae",
+   "system": "臨時29系統",
+   "why": "都電 臨時29系統: 葛西橋 -（l_kasaibashi_line）- 境川 -（l_sunamachi_line）- 東陽公園前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_toyokoenmae",
+   "x": "l_sunamachi_line",
+   "y": "l_susaki_line",
+   "x_toward": "n_sakaigawa_kasaibashi",
+   "y_toward": "n_eitaibashi",
+   "system": "臨時29系統",
+   "why": "都電 臨時29系統: 境川 -（l_sunamachi_line）- 東陽公園前 -（l_susaki_line）- 永代橋",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_honjo_azumabashi_toden",
+   "x": "l_mukojima_line",
+   "y": "l_narihira_line",
+   "x_toward": "n_higashi_mukojima_3_chome",
+   "y_toward": "n_midori_1_chome",
+   "system": "臨時30系統",
+   "why": "都電 臨時30系統: 寺島町二丁目 -（l_mukojima_line）- 吾妻橋二丁目 -（l_narihira_line）- 東両国緑町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_midori_1_chome",
+   "x": "l_narihira_line",
+   "y": "l_takabashi_line",
+   "x_toward": "n_honjo_azumabashi_toden",
+   "y_toward": "n_monzen_nakacho_toden",
+   "system": "臨時30系統",
+   "why": "都電 臨時30系統: 吾妻橋二丁目 -（l_narihira_line）- 東両国緑町 -（l_takabashi_line）- 門前仲町",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_monzen_nakacho_toden",
+   "x": "l_takabashi_line",
+   "y": "l_tsukishima_line",
+   "x_toward": "n_midori_1_chome",
+   "y_toward": "n_tsukishima_toden",
+   "system": "臨時30系統",
+   "why": "都電 臨時30系統: 東両国緑町 -（l_takabashi_line）- 門前仲町 -（l_tsukishima_line）- 月島通八丁目",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E6%9D%B1%E4%BA%AC%E9%83%BD%E9%9B%BB%E8%BB%8A&oldid=110874184 運転系統表"
+  },
+  {
+   "at": "n_chuo_3_chome",
+   "x": "l_nagamachi_line",
+   "y": "l_loop_line_sendai_city",
+   "x_toward": null,
+   "y_toward": "n_sendai_ekimae",
+   "system": "1",
+   "why": "仙台市電 1系統: 長町駅前 - 中央三丁目 - 仙台駅前 - 県庁市役所前 …",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9B%BB&oldid=111123306 系統"
+  },
+  {
+   "at": "n_chuo_3_chome",
+   "x": "l_nagamachi_line",
+   "y": "l_loop_line_sendai_city",
+   "x_toward": null,
+   "y_toward": "n_ichibanchoyubinkyokumae",
+   "system": "2",
+   "why": "仙台市電 2系統: 長町駅前 - 中央三丁目 - 一番町郵便局前 - 交通局前 …",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9B%BB&oldid=111123306 系統"
+  },
+  {
+   "at": "n_daigakubyoinmae_hachimammachi",
+   "x": "l_hachimammachi_line",
+   "y": "l_loop_line_sendai_city",
+   "x_toward": null,
+   "y_toward": "n_kenchoshiyakushomae",
+   "system": "1",
+   "why": "仙台市電 1系統: … 県庁市役所前 - 大学病院前 - 八幡神社前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9B%BB&oldid=111123306 系統"
+  },
+  {
+   "at": "n_daigakubyoinmae_hachimammachi",
+   "x": "l_hachimammachi_line",
+   "y": "l_loop_line_sendai_city",
+   "x_toward": null,
+   "y_toward": "n_kotsukyokumae_loop_line_sendai_city",
+   "system": "2",
+   "why": "仙台市電 2系統: … 交通局前 - 大学病院前 - 八幡神社前",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9B%BB&oldid=111123306 系統"
+  },
+  {
+   "at": "n_futsukamachi",
+   "x": "l_kitasendai_line",
+   "y": "l_loop_line_sendai_city",
+   "x_toward": null,
+   "y_toward": "n_kenchoshiyakushomae",
+   "system": "3",
+   "why": "仙台市電 3系統: 北仙台駅前 - 二日町 - 県庁市役所前 …",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9B%BB&oldid=111123306 系統"
+  },
+  {
+   "at": "n_futsukamachi",
+   "x": "l_kitasendai_line",
+   "y": "l_loop_line_sendai_city",
+   "x_toward": null,
+   "y_toward": "n_kotsukyokumae_loop_line_sendai_city",
+   "system": "4",
+   "why": "仙台市電 4系統: 北仙台駅前 - 二日町 - 交通局前 …",
+   "src": "https://ja.wikipedia.org/w/index.php?title=%E4%BB%99%E5%8F%B0%E5%B8%82%E9%9B%BB&oldid=111123306 系統"
+  }
+ ]
+}

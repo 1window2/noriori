@@ -123,6 +123,9 @@
     "visited": {
       "other": "乗降・訪問した駅 $n駅"
     },
+    "undecided": {
+      "other": "判定不可 $n区間"
+    },
     "review": {
       "other": "要確認 $n件 · $km km"
     },
@@ -150,9 +153,11 @@
     "carryoverHint": "オフにするとJRから移管された区間を新しい路線として数えます"
   },
   "search": {
+    "showOnMap": "地図で見る",
     "hint": "路線名・駅名",
     "prompt": "路線や駅を検索して始めましょう",
-    "none": "見つかりませんでした"
+    "none": "見つかりませんでした",
+    "archive": "閲覧のみ"
   },
   "session": {
     "laps": {
@@ -167,6 +172,7 @@
     "dateHint": "2015, 2015-03, 2015-03-14, 198X",
     "dateUnknown": "日付不明",
     "datePick": "カレンダーから選ぶ",
+    "dateToday": "今日",
     "dateBad": "日付の形式を確認してください",
     "apply": "適用",
     "cancel": "キャンセル",
@@ -179,11 +185,15 @@
     "state": {
       "maybe": "?",
       "suspended": "運休",
+      "suspendedSince": "運休 $year~",
       "until": "~$year",
       "since": "$year~",
       "span": "$from~$to"
     },
     "savedAs": "当時は$line",
+    "handSince": "$dateから$line",
+    "handOpen": "路線を見る ›",
+    "handNote": "この区間はその路線で記録されます",
     "chooseDirection": "どちら回りで乗りましたか？",
     "directionKm": "$km km",
     "chooseRelocation": "どの時期の線路でしたか？",
@@ -206,7 +216,6 @@
     "spokenTo": "降車駅に選択",
     "showClosed": "廃駅・廃線を表示",
     "showArchive": "記録対象外の駅・路線も表示",
-    "returnsTo": "$nameに戻る",
     "clear": "解除",
     "lap": "1周",
     "stops": {
@@ -218,10 +227,36 @@
     "from": "乗車",
     "to": "降車",
     "whyClosed": "その日付には営業していなかった駅です",
+    "onlyDown": "下りのみ",
+    "onlyUp": "上りのみ",
+    "onlyOneWay": "片方向のみ",
+    "spokenOnlyDown": "下り列車のみ停車",
+    "spokenOnlyUp": "上り列車のみ停車",
+    "spokenOnlyOneWay": "片方向の列車のみ停車",
+    "stopDownTitle": "$nameには下り列車のみ停車します",
+    "stopUpTitle": "$nameには上り列車のみ停車します",
+    "stopOneWayTitle": "$nameには片方向の列車のみ停車します",
+    "towardOnly": "$name方面にのみ乗車できます",
+    "sectionTitle": "一方向にのみ運転する区間です",
+    "sectionDetail": "この方向には列車が走っていません",
+    "aroundTitle": "一方向にのみ回る区間です",
+    "aroundDetail": "回り道の$km kmとして数えます",
+    "reverse": "方向を反転",
+    "onlyAlight": "降車専用",
+    "alightTitle": "降車専用の駅です",
+    "alightDetail": "降車駅としてのみ選べます",
     "whySuspended": "その日付には運休中の区間です",
     "bound": "$names方面",
     "spokenClosed": "$year年廃止",
+    "spokenSuspendedSince": "$year年から運休",
+    "pastKari": "仮",
+    "pastRinji": "臨",
+    "spokenPastKari": "かつての仮乗降場",
+    "spokenPastRinji": "かつての臨時駅",
     "spokenBranch": "$line、$next方面の分岐",
+    "reverseNow": "この駅で進行方向を変えて$lineへ直通します",
+    "reverseUsed": "この駅で進行方向を変えて$lineへ直通する列車がありました",
+    "spokenReverse": "スイッチバック",
     "leaving": "$nameから乗車",
     "progress": "$num / $den km ($percent)",
     "leaveTitle": "選択が解除されます",
@@ -233,12 +268,14 @@
     "unridableOk": "OK",
     "repick": "別の駅をタップすると選び直せます",
     "closedUnknown": "廃止区間",
+    "suspendedSection": "運休中",
     "relocationOld": "旧線 · $km km",
     "relocationNew": "新線 · $km km",
     "spokenOpen": "営業中",
     "spokenRidden": "乗車済み"
   },
   "data": {
+    "osBackupLarge": "記録ファイルが20MBを超え、Androidのクラウドバックアップに含まれない場合があります。バックアップフォルダを選んでください",
     "title": "バックアップと復元",
     "folder": "バックアップフォルダ",
     "folderHint": "アプリを削除しても残る場所を選んでください",
@@ -350,7 +387,7 @@
     },
     "n03": {
       "name": "国土数値情報 行政区域データ (N03)",
-      "use": "日本の輪郭と都道府県境",
+      "use": "日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
     "stationDatabase": {
@@ -418,7 +455,6 @@
     "allTime": "廃止区間含む",
     "km": "$num / $den km",
     "completeCurrent": "完乗",
-    "completeAllTime": "廃止区間含め完乗",
     "selfScore": "全体の集計対象外の路線です。この路線の中だけで乗車率を計算します。",
     "open": "路線詳細",
     "record": "この路線を記録する",
@@ -458,6 +494,12 @@
       "other": "記録 $n件"
     },
     "fileDelete": "ファイルごと削除",
+    "fileDeleteTitle": {
+      "other": "記録$n件を削除しますか？"
+    },
+    "fileDeleteBody": "$fileから取り込んだ記録をすべて削除します。設定の「削除した記録」から元に戻せます。",
+    "fileDeleteConfirm": "削除",
+    "fileDeleteCancel": "キャンセル",
     "fileDeleted": {
       "other": "記録$n件を削除しました"
     }
@@ -473,7 +515,6 @@
     "operators": "事業者",
     "prefs": "都道府県",
     "stations": "駅",
-    "allTime": "廃線含む",
     "stationGoal": "$n駅",
     "empty": "まだありません",
     "closed": "廃線",
@@ -580,7 +621,10 @@
     "unmapped": "地図に表示なし",
     "visited": "この駅に行ったことがある",
     "visitedHint": "完乗率には含まれず、地図の丸だけが塗られます",
-    "noVisits": "駅訪問の記録はありません。地図で駅をタップすると残せます。"
+    "noVisits": "駅訪問の記録はありません。地図で駅をタップすると残せます。",
+    "pickerLabel": "この場所を通る路線",
+    "partlyClosed": "この区間は廃止",
+    "closed": "廃線"
   },
   "prefNames": [
     "北海道",

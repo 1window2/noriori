@@ -57,6 +57,10 @@ int millisToNextJstDay(int utcMillis) {
 /// 해가 정해지면 `2017`, 연대까지만 알면 `201?`, 모르면 `?` (DESIGN §8).
 String yearLabel(String? lo, String? hi) {
   if (lo == null || hi == null) return '?';
+  // 범위가 다음 해 1월 1일에서 끝나면 그 해 안이다. 1월 1일 하루 가능성으로 연도를 버리지 않는다
+  // (DESIGN §5.4 「1월 1일 폐지 가능성 하나로 빼지 않음」. 열람 전용 武田 [1949-09-01..1950-01-01] → 1949, 10회차 G1 kanto_2-014)
+  final loYear = int.tryParse(lo.substring(0, 4));
+  if (loYear != null && hi == '${(loYear + 1).toString().padLeft(4, '0')}-01-01' && lo != hi) return lo.substring(0, 4);
   if (lo.substring(0, 4) == hi.substring(0, 4)) return lo.substring(0, 4);
   if (lo.substring(0, 3) == hi.substring(0, 3)) return '${lo.substring(0, 3)}?';
   return '?';
@@ -68,7 +72,8 @@ String yearLabel(String? lo, String? hi) {
 String? fileDate(String? raw) {
   if (raw == null) return null;
   try {
-    DateSpan.parse(raw);
+    // EDTF 모양이어도 달력에 없는 날(2015-02-30)은 입력란처럼 받지 않는다
+    if (DateSpan.parse(raw).isDay) parseDateInput(raw);
     return raw;
   } on FormatException {
     return parseDateInput(raw);

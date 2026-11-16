@@ -18,13 +18,13 @@ NetStop stop(String routeId, int seq, String node, {bool shown = true}) => NetSt
       period: ongoing,
     );
 
-NetAttr attr(String edge, String line) => NetAttr(
+NetAttr attr(String edge, String line, {NetPeriod period = ongoing}) => NetAttr(
       edgeId: edge,
       lineId: line,
       operatorId: 'o',
       lineageId: 'lg-$line',
       carryoverGroup: 'c-$line',
-      period: ongoing,
+      period: period,
     );
 
 NetUnit unit(int n, String edge, String line, int meters) => NetUnit(
@@ -97,6 +97,47 @@ Network sample() {
           unit(value.$3, key, lineOf[key]!, value.$3 * 1000),
       ],
       publicNodes: const {'a', 'b', 'c', 'd', 'p', 'x', 'y', 'z'},
+      nodeGroups: const {},
+    ),
+  );
+}
+
+NetPeriod between(String from, String to) => NetPeriod(fromLo: from, fromHi: from, toLo: to, toHi: to);
+
+/// 열린 노선 e-f-g-k. f-g는 1970년에 옛 역 o를 거치던 선로에서 옮겼고, e-f는 1980년에 열었다.
+/// 날짜 없는 e→k는 e-f와 함께 있던 날이 있는 새 선로 하나로 펼쳐진다 (中央本線 田立과 みどり湖의 모양).
+Network relocated() {
+  const edges = {
+    'ef': ('e', 'f', 11, '1980-01-01', DateSpan.maxDate),
+    'fg': ('f', 'g', 12, '1970-01-01', DateSpan.maxDate),
+    'fo': ('f', 'o', 13, '1955-01-01', '1970-01-01'),
+    'og': ('o', 'g', 14, '1955-01-01', '1970-01-01'),
+    'gk': ('g', 'k', 15, '1955-01-01', DateSpan.maxDate),
+  };
+  return Network(
+    NetworkData(
+      routes: const [
+        NetRoute(id: 'rv', lineId: 'v', role: 'main', fromNode: 'e', toNode: 'k', closed: false, extendTo: []),
+      ],
+      edges: [
+        for (final MapEntry(:key, :value) in edges.entries)
+          NetEdge(id: key, n: value.$3, from: value.$1, to: value.$2, meters: 1000),
+      ],
+      routeEdges: [
+        for (final (seq, edge) in edges.keys.indexed) NetRouteEdge(routeId: 'rv', seq: seq + 1, edgeId: edge),
+      ],
+      stops: [for (final (seq, node) in ['e', 'f', 'o', 'g', 'k'].indexed) stop('rv', seq + 1, node)],
+      attrs: [
+        for (final MapEntry(:key, :value) in edges.entries) attr(key, 'v', period: between(value.$4, value.$5)),
+      ],
+      lives: [
+        for (final MapEntry(:key, :value) in edges.entries)
+          NetLife(edgeId: key, suspended: false, period: between(value.$4, value.$5)),
+      ],
+      units: [
+        for (final MapEntry(:key, :value) in edges.entries) unit(value.$3, key, 'v', 1000),
+      ],
+      publicNodes: const {'e', 'f', 'o', 'g', 'k'},
       nodeGroups: const {},
     ),
   );
@@ -304,5 +345,21 @@ void main() {
     expect(solo.edges, {1, 2, 3, 4});
     expect(solo.ridden, {2}, reason: 'm 노선의 구간은 들지 않는다');
     expect(solo.nodes, {'a', 'b', 'c', 'd'});
+  });
+
+  test('날짜 없는 기록의 조각은 원래 지난 이설 선형을 날짜로 지킨다', () {
+    final moved = relocated();
+    final interpreter = RideInterpreter(moved);
+    final whole = ride([leg(0, 'rv', 'v', 'e', 'k')]);
+    expect({for (final hit in interpreter.ride(whole).edges) hit.edge}, {11, 12, 15});
+    // e-f를 끄면 f→k는 옛·새 선형이 둘 다 남는다. 새 선형을 고른 날로 적는다
+    final done = cut(moved, whole, {11}) as CutDone;
+    final kept = done.after.singleWhere((r) => !r.isDeleted);
+    expect(kept.legs.single.resolveAsOf, '1970-01-01');
+    expect({for (final hit in interpreter.ride(kept).edges) hit.edge}, {12, 15});
+    // 선형이 하나로 남는 조각은 답을 적지 않는다
+    final front = (cut(moved, whole, {15}) as CutDone).after.singleWhere((r) => !r.isDeleted);
+    expect(front.legs.single.resolveAsOf, isNull);
+    expect({for (final hit in interpreter.ride(front).edges) hit.edge}, {11, 12});
   });
 }

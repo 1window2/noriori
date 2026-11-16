@@ -7,7 +7,9 @@ import appsim
 N=int(sys.argv[1]) if len(sys.argv)>1 else 6000
 A=appsim.App()
 R=random.Random(20261102)
-rids=sorted(A.routes)
+# 여객 영업 이력이 없는 화물선(rule_class hidden)은 앱 판에 없다. 대조표에서도 뺀다 (9회차 F)
+_hid={l for (l,) in A.db.execute("select id from line where rule_class='hidden'")}
+rids=sorted(r for r in A.routes if A.routes[r]['line_id'] not in _hid)
 def rec(rid,a,b,date):
     d=appsim.normalize_date(date)
     r=A.expand_any(rid,a,b,d)
@@ -15,6 +17,11 @@ def rec(rid,a,b,date):
     if r['status']=='invalid' and d is not None and r.get('reason') in('no-path-on-date','not-closed-on-date'):
         r=A.expand_any(rid,a,b,None);demoted=True
     return r,demoted
+# 거리는 구간마다 그 노선의 km다. 3섹 전환 전 노선은 국철 시대 km (DESIGN §2.9 E, 앱 RouteResolver와 같음)
+ERA_M={(x['line_id'],x['edge_id']):x['m'] for x in A.db.execute('SELECT line_id,edge_id,m FROM edge_km_era')}
+def meters(r,rid):
+    legs=r.get('legs') or {A.routes[rid]['line_id']:r.get('edges',[])}
+    return sum(ERA_M[(l,e)]/1000 if (l,e) in ERA_M else A.km[e] for l,es in legs.items() for e in es)
 DATES=[None,'1969-01-01','1970-XX-XX','1975-06-XX','1985-03-14','198X-XX-XX','1987-04-01','1990-07-01','2000-XX-XX','2005-10-01','2010-06-15','2015-03-14','2015-03-XX','2020-XX-XX','2026-11-01']
 out=[]
 for i in range(N):
@@ -24,7 +31,7 @@ for i in range(N):
     a,b=R.sample(st,2)
     date=R.choice(DATES)
     r,dem=rec(rid,a['node_id'],b['node_id'],date)
-    row=dict(route=rid,a=a['node_id'],b=b['node_id'],date=date,status=r['status'],edges=r.get('edges',[]),m=None if r.get('km') is None else sum(A.km[e] for e in r.get('edges',[])),demoted=dem,reason=r.get('reason'))
+    row=dict(route=rid,a=a['node_id'],b=b['node_id'],date=date,status=r['status'],edges=r.get('edges',[]),m=None if r.get('km') is None else meters(r,rid),demoted=dem,reason=r.get('reason'))
     row['m']=None if row['m'] is None else round(row['m']*1000)
     if r.get('nodes'):row['nodes']=r['nodes']
     if r.get('direction'):row['direction']=r['direction']

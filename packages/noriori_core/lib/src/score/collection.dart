@@ -6,32 +6,28 @@ import 'scorer.dart';
 /// 탄 역 수 배지의 기준 (DESIGN §3.3).
 const stationMilestones = [100, 500, 1000, 3000];
 
-/// 수집 화면의 한 칸. 저장하지 않고 지금 기록으로 계산한다.
+/// 수집 화면의 한 칸. 진행률은 지금 기록으로 계산하고, 배지만 얻은 것을 기억한다.
 final class CollectionItem<K> {
-  const CollectionItem({required this.key, required this.score, this.allTime = false});
+  const CollectionItem({required this.key, required this.score, this.kept = false});
 
   final K key;
   final Score score;
 
-  /// 폐지 구간이 있는 노선에서 그 구간까지 다 탔다.
-  final bool allTime;
+  /// 전에 현행 완주 배지를 얻었고 새 역·연장으로 지금은 100%가 아니다. 배지는 남는다 (DESIGN §3.3).
+  final bool kept;
 
-  bool get complete => score.complete;
+  bool get complete => score.complete || kept;
 }
 
-/// 폐지 구간이 없으면 폐선 포함 값이 현재 값과 같아 따로 말할 것이 없다.
-bool _beyond(Score current, Score? all) =>
-    all != null && all.complete && all.denMeters > current.denMeters;
-
-/// 탄 적 있는 것만 고른다. 완주가 먼저이고 나머지는 많이 탄 순서다.
+/// 탄 적 있는 것만 고른다. 완주가 먼저이고 나머지는 많이 탄 순서다. [held]는 얻은 배지의 열쇠다.
 List<CollectionItem<K>> collectionItems<K extends Comparable<dynamic>>(
   Map<K, Score> scores, {
-  Map<K, Score> allTime = const {},
+  Set<K> held = const {},
 }) {
   final items = [
     for (final MapEntry(:key, value: score) in scores.entries)
       if (score.started)
-        CollectionItem(key: key, score: score, allTime: _beyond(score, allTime[key])),
+        CollectionItem(key: key, score: score, kept: !score.complete && held.contains(key)),
   ];
   // 비율이 같으면 들어온 순서다. ID는 이름이라 ID 순이면 회사 이름의 알파벳 순이 된다
   final order = {for (final (index, key) in scores.keys.indexed) key: index};
@@ -44,15 +40,38 @@ List<CollectionItem<K>> collectionItems<K extends Comparable<dynamic>>(
     });
 }
 
-/// 얻은 배지 수. 완주한 노선, 회사, 도도부현과 넘긴 역 수 기준의 합이다.
-int badgeCount({
-  required Iterable<Score> lines,
-  required Iterable<Score> operators,
-  required Iterable<Score> prefs,
-  required int stations,
-}) =>
-    [...lines, ...operators, ...prefs].where((score) => score.complete).length +
-    stationMilestones.where((goal) => stations >= goal).length;
+/// 배지의 열쇠. 설정 표에 저장한다.
+String lineBadge(String lineId) => 'line:$lineId';
+String operatorBadge(String operatorId) => 'operator:$operatorId';
+String prefBadge(int pref) => 'pref:$pref';
+
+/// 지금 지니는 현행 완주 배지 (DESIGN §3.3, 사용자 결정 2026-11-05).
+///
+/// 지금 완주한 것과 전에 얻은 것의 합이다. 한 번 얻으면 새 역·연장으로 100%가 아니게 되어도 남고,
+/// 그 노선(회사, 도도부현)의 탄 기록을 모두 지우면 사라진다. 노선이 다 폐지되어 현행 점수가 없어져도 남는다.
+/// 역대 완주 배지는 없다.
+Set<String> heldBadges(
+  Set<String> earned, {
+  required Map<String, Score> lines,
+  required Map<String, Score> operators,
+  required Map<int, Score> prefs,
+}) {
+  final scores = {
+    for (final MapEntry(:key, :value) in lines.entries) lineBadge(key): value,
+    for (final MapEntry(:key, :value) in operators.entries) operatorBadge(key): value,
+    for (final MapEntry(:key, :value) in prefs.entries) prefBadge(key): value,
+  };
+  return {
+    for (final MapEntry(:key, :value) in scores.entries)
+      if (value.complete || (value.started && earned.contains(key))) key,
+    for (final key in earned)
+      if (!scores.containsKey(key)) key,
+  };
+}
+
+/// 얻은 배지 수. 지니는 현행 완주 배지와 넘긴 역 수 기준의 합이다.
+int badgeCount({required Set<String> held, required int stations}) =>
+    held.length + stationMilestones.where((goal) => stations >= goal).length;
 
 /// 아직 안 탄 구간 하나.
 final class RemainingSection {

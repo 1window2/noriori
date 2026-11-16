@@ -41,15 +41,32 @@ final class _FilterPaint implements MapPaintPort {
 
 /// 지도에서 누른 것.
 final class MapFeature {
-  const MapFeature.station(String this.node) : edge = null, marker = null;
+  const MapFeature.station(String this.node)
+      : edges = const [],
+        marker = null,
+        at = null,
+        nodes = const [],
+        lines = const {};
 
-  const MapFeature.edge(int this.edge) : node = null, marker = null;
+  /// 환승역의 승강장 노드나 통합 노드 (DESIGN §7.5). [lines]가 비면 [nodes]의 모든 노선이다.
+  const MapFeature.platform(this.nodes, {this.lines = const {}, this.at})
+      : node = null,
+        edges = const [],
+        marker = null;
 
-  const MapFeature.marker(int this.marker) : node = null, edge = null;
+  /// 손가락 범위 안의 선로 전부 (DESIGN §7.4). [at]은 누른 자리의 화면 좌표(논리 픽셀)다.
+  const MapFeature.edges(this.edges, {this.at}) : node = null, marker = null, nodes = const [], lines = const {};
+
+  const MapFeature.marker(int this.marker) : node = null, edges = const [], at = null, nodes = const [], lines = const {};
 
   final String? node;
-  final int? edge;
+
+  /// 타일의 edge 번호 `n`. 겹친 순서 그대로이고 중복은 없다.
+  final List<int> edges;
   final int? marker;
+  final Offset? at;
+  final List<String> nodes;
+  final Set<String> lines;
 }
 
 /// 일본 전체. 첫 화면은 빈 바다 대신 이 범위에 꽉 맞춘다.
@@ -113,7 +130,10 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     if (map == null || sheet == null) return;
     // Android는 눌린 자리와 사각형이 물리 픽셀이고 iOS는 논리 픽셀이다
     final android = Theme.of(context).platform == TargetPlatform.android;
-    final reach = 16.0 * (android ? MediaQuery.devicePixelRatioOf(context) : 1);
+    final scale = android ? MediaQuery.devicePixelRatioOf(context) : 1.0;
+    final reach = 16.0 * scale;
+    final origin = (context.findRenderObject() as RenderBox?)?.localToGlobal(Offset.zero) ?? Offset.zero;
+    final tap = origin + Offset(point.x / scale, point.y / scale);
     final box = Rect.fromCenter(
       center: Offset(point.x, point.y),
       width: reach * 2,
@@ -128,6 +148,15 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       final map = markers.first! as Map<Object?, Object?>;
       final id = (map['properties'] as Map<Object?, Object?>)['m'];
       if (id is num && mounted) sheet(MapFeature.marker(id.toInt()));
+      return;
+    }
+    // 환승역: 승강장 노드는 그 노선, 통합 노드는 역 전체 (DESIGN §7.5)
+    final transfer = await at([platformLayer, hubNodeLayer]);
+    if (transfer.isNotEmpty) {
+      final props = ((transfer.first! as Map<Object?, Object?>)['properties'] as Map<Object?, Object?>);
+      List<String> split(Object? v) => v is String && v.isNotEmpty ? v.split(',') : const [];
+      final nodes = split(props['nodes']);
+      if (nodes.isNotEmpty && mounted) sheet(MapFeature.platform(nodes, lines: split(props['lines']).toSet(), at: tap));
       return;
     }
     final stations = await at([
@@ -158,8 +187,11 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       final node = props(stations.first)['node'];
       if (node is String) sheet(MapFeature.station(node));
     } else if (lines.isNotEmpty) {
-      final edge = props(lines.first)['n'];
-      if (edge is num) sheet(MapFeature.edge(edge.toInt()));
+      final edges = {
+        for (final line in lines)
+          if (props(line)['n'] case final num edge) edge.toInt(),
+      };
+      if (edges.isNotEmpty) sheet(MapFeature.edges(edges.toList(), at: tap));
     }
   }
 
@@ -222,6 +254,9 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       await map.setLayerVisibility('$stationClosedLayer$suffix', showClosed);
       await map.setLayerVisibility('$stationNameLayer$suffix', _showNames);
     }
+    for (final id in transferLayers) {
+      await map.setFilter(id, transferFilter(showClosed: showClosed, year: year));
+    }
     await _applyMarkers(map, solo, showClosed);
     await _applyHeat(map);
     final marks = ref.read(stationMarksProvider);
@@ -232,6 +267,12 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     for (final suffix in _suffixes) {
       await map.setFilter('$stationPassedLayer$suffix', markFilter(shown(marks.passed), showClosed: showClosed));
       await map.setFilter('$stationSteppedLayer$suffix', markFilter(shown(marks.stepped), showClosed: showClosed));
+      if (suffix.isEmpty) {
+        for (final (passed, stepped) in const [(hubPassedLayer, hubSteppedLayer), (platformPassedLayer, platformSteppedLayer)]) {
+          await map.setFilter(passed, transferMarkFilter(marks.passedNodes, showClosed: showClosed));
+          await map.setFilter(stepped, transferMarkFilter(marks.steppedNodes, showClosed: showClosed));
+        }
+      }
       await map.setFilter('$stationLayer$suffix', stationFilter(closed: false, ridden: ridden, year: year));
       await map.setFilter('$stationClosedLayer$suffix', stationFilter(closed: true, ridden: ridden, year: year));
       await map.setFilter(
@@ -240,7 +281,6 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       );
     }
   }
-
 
   /// 통계의 타일 지도와 같은 값으로 칠한다.
   Future<void> _applyHeat(MapLibreMapController map) async {
@@ -258,9 +298,6 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       await map.setFilter('$heatLayer$level', heatFilter(prefs));
     }
   }
-
-  /// 수록 기준일의 해.
-  static const _firstYear = floorYear;
 
   void _toggleYear(int thisYear) {
     setState(() => _year = _year == null ? thisYear : null);
@@ -337,6 +374,9 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     await map.addImage(markerRiddenImage, red);
   }
 
+  /// 마지막으로 화면을 맞춘 단독 보기 노선.
+  String? _fittedLine;
+
   /// 단독 보기를 켜면 그 노선에 맞춘다.
   Future<void> _fitLine(SoloLine solo) async {
     final box = await ref.read(packReaderProvider).boundsOf(solo.nodes);
@@ -355,6 +395,21 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
         bottom: widget.sheetHeight + 88,
       ),
     );
+  }
+
+  /// 지도가 아직 준비되지 않았을 때 받은 역. 스타일이 다 올라오면 옮긴다
+  String? _pendingFocus;
+
+  /// 그 역을 가운데 두고 역 이름과 환승 연결선이 보이는 배율로 옮긴다
+  Future<void> _focusNode(String node) async {
+    if (_map == null || _painter == null) {
+      _pendingFocus = node;
+      return;
+    }
+    final at = (await ref.read(packReaderProvider).nodePositions([node]))[node];
+    if (at == null || !mounted) return;
+    _fitted = true;
+    await _map?.animateCamera(CameraUpdate.newLatLngZoom(LatLng(at.$1, at.$2), 14));
   }
 
   Future<void> _fitJapan() async {
@@ -382,9 +437,20 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     ref.listen(stationMarksProvider, (_, next) => _refreshMap());
     ref.listen(displayOptionsProvider, (_, next) => _refreshMap());
     ref.listen(mapMarkersProvider, (_, next) => _refreshMap());
+    ref.listen(mapFocusProvider, (_, next) {
+      if (next != null) unawaited(_focusNode(next.node));
+    });
     ref.listen(soloLineProvider, (before, next) {
       unawaited(_repaint());
-      if (next != null && before == null) unawaited(_fitLine(next));
+      // 단독 보기의 노선이 바뀔 때마다 맞춘다. 기록으로 탄 구간만 바뀐 때는 그대로 둔다
+      // (켜져 있는 채로 다른 노선으로 바꾸면 앞 노선 자리에 남던 것, 7회차 화면 시험 2026-11-14)
+      final lineId = ref.read(soloLineIdProvider);
+      if (next == null) {
+        _fittedLine = null;
+      } else if (lineId != _fittedLine) {
+        _fittedLine = lineId;
+        unawaited(_fitLine(next));
+      }
     });
     final showClosed = ref.watch(displayOptionsProvider).showClosed;
     final tokens = context.tokens;
@@ -422,7 +488,12 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
           },
           onStyleLoadedCallback: () {
             _painter = _FilterPaint(_map!, _suffixes, ref.read(networkProvider).closedEdges);
-            if (!_fitted) {
+            // 지도가 새로 만들어졌으면 이미 맡겨진 역부터 보인다
+            final pending = _pendingFocus ?? (_fitted ? null : ref.read(mapFocusProvider)?.node);
+            _pendingFocus = null;
+            if (pending != null) {
+              unawaited(_focusNode(pending));
+            } else if (!_fitted) {
               _fitted = true;
               unawaited(_fitJapan());
             }
@@ -483,67 +554,12 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
                     elevated: true,
                     onTap: () => ref.read(soloLineIdProvider.notifier).set(null),
                   ),
-                if (_heat && _heatInView)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: tokens.paper,
-                        borderRadius: BorderRadius.circular(14),
-                        boxShadow: softShadow,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          spacing: 3,
-                          children: [
-                            Text('0%', style: Theme.of(context).textTheme.labelSmall),
-                            for (final opacity in heatLevels)
-                              SizedBox(
-                                width: 20,
-                                height: 8,
-                                child: ColoredBox(color: tokens.lineRidden.withValues(alpha: opacity)),
-                              ),
-                            Text('50%+', style: Theme.of(context).textTheme.labelSmall),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
+                if (_heat && _heatInView) const _HeatLegend(),
                 if (_year case final year?)
-                  Padding(
-                    padding: const EdgeInsets.only(top: 8),
-                    child: DecoratedBox(
-                      decoration: BoxDecoration(
-                        color: tokens.paper,
-                        borderRadius: BorderRadius.circular(14),
-                        boxShadow: softShadow,
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.fromLTRB(14, 6, 6, 8),
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Row(
-                              children: [
-                                Text(context.t.stats.yearLabel(year: year), style: Theme.of(context).textTheme.titleMedium),
-                                Expanded(
-                                  child: Slider(
-                                    value: year.toDouble(),
-                                    min: _firstYear.toDouble(),
-                                    max: double.parse(ref.watch(todayProvider).substring(0, 4)),
-                                    divisions: int.parse(ref.watch(todayProvider).substring(0, 4)) - _firstYear,
-                                    onChanged: (value) => _slide(value.round()),
-                                  ),
-                                ),
-                              ],
-                            ),
-                            Text(t.yearHint, style: Theme.of(context).textTheme.bodySmall),
-                          ],
-                        ),
-                      ),
-                    ),
+                  _YearPanel(
+                    year: year,
+                    last: int.parse(ref.watch(todayProvider).substring(0, 4)),
+                    onChanged: _slide,
                   ),
                 ?widget.notice,
               ],
@@ -553,12 +569,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
         Positioned(
           right: 14,
           bottom: widget.sheetHeight + 14,
-          child: DecoratedBox(
-            decoration: BoxDecoration(
-              color: tokens.paper,
-              borderRadius: BorderRadius.circular(14),
-              boxShadow: softShadow,
-            ),
+          child: _Floating(
             child: IconButton(
               tooltip: t.wholeJapan,
               icon: Icon(Icons.zoom_out_map, size: 22, color: tokens.text),
@@ -571,6 +582,99 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       ],
     );
   }
+}
+
+/// 지도 위에 뜬 판. 범례, 타임 슬라이더, 전국 보기 단추가 같이 쓴다.
+class _Floating extends StatelessWidget {
+  const _Floating({required this.child});
+
+  final Widget child;
+
+  @override
+  Widget build(BuildContext context) => DecoratedBox(
+        decoration: BoxDecoration(
+          color: context.tokens.paper,
+          borderRadius: BorderRadius.circular(14),
+          boxShadow: softShadow,
+        ),
+        child: child,
+      );
+}
+
+/// 히트맵 범례. 칠하는 단계와 같은 옅기로 그린다.
+class _HeatLegend extends StatelessWidget {
+  const _HeatLegend();
+
+  @override
+  Widget build(BuildContext context) {
+    final tokens = context.tokens;
+    return Padding(
+      padding: const EdgeInsets.only(top: 8),
+      child: _Floating(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            spacing: 3,
+            children: [
+              Text('0%', style: Theme.of(context).textTheme.labelSmall),
+              for (final opacity in heatLevels)
+                SizedBox(
+                  width: 20,
+                  height: 8,
+                  child: ColoredBox(color: tokens.lineRidden.withValues(alpha: opacity)),
+                ),
+              Text('50%+', style: Theme.of(context).textTheme.labelSmall),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+/// 타임 슬라이더. 수록 기준일의 해부터 올해까지 고른다.
+class _YearPanel extends StatelessWidget {
+  const _YearPanel({required this.year, required this.last, required this.onChanged});
+
+  final int year;
+
+  /// 올해.
+  final int last;
+  final ValueChanged<int> onChanged;
+
+  /// 수록 기준일의 해.
+  static const _firstYear = floorYear;
+
+  @override
+  Widget build(BuildContext context) => Padding(
+        padding: const EdgeInsets.only(top: 8),
+        child: _Floating(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(14, 6, 6, 8),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  children: [
+                    Text(context.t.stats.yearLabel(year: year), style: Theme.of(context).textTheme.titleMedium),
+                    Expanded(
+                      child: Slider(
+                        value: year.toDouble(),
+                        min: _firstYear.toDouble(),
+                        max: last.toDouble(),
+                        divisions: last - _firstYear,
+                        onChanged: (value) => onChanged(value.round()),
+                      ),
+                    ),
+                  ],
+                ),
+                Text(context.t.map.yearHint, style: Theme.of(context).textTheme.bodySmall),
+              ],
+            ),
+          ),
+        ),
+      );
 }
 
 class _SearchBar extends StatelessWidget {

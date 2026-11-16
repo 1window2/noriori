@@ -22,12 +22,55 @@ void main() {
     await db.close();
   });
 
+  // 옛 길은 2011-03-12 지진 운휴로 끝나 2016 이설 때 다시 열리지 않았다. 탈 수 있던 마지막 날이 기준이다
+  test('이설 길 고르기는 길마다 그 길을 그만 쓴 날을 안다 (常磐線 新地~山下)', () {
+    final options = RouteResolver(network).relocationOptions('r_joban_line', 'n_komagamine', 'n_hamayoshida');
+    expect(options, hasLength(2));
+    final old = options.firstWhere((o) => o.until != null);
+    expect(old.until, '2011-03-12');
+    expect(options.where((o) => o.until == null).single.asOf.compareTo('2016-12-10'), greaterThanOrEqualTo(0));
+  }, skip: skip);
+
+  test('날짜를 모르는 이설 구간은 방향이 아니라 길을 묻는다 (常磐線 駒ケ嶺~浜吉田)', () {
+    final result = RouteResolver(network).expand('r_joban_line', 'n_komagamine', 'n_hamayoshida');
+    expect(result.status, ResolveStatus.needsInput);
+    expect(result.reason, ExpandReason.relocatedParallel);
+    expect(result.options, hasLength(2));
+  }, skip: skip);
+
   test('역 시트는 묶음의 다른 node에 서는 노선도 모두 보여 준다', () {
     final lines = {
       for (final route in network.routesAtStation('n_sendai_sendai_city')) network.routes[route]!.lineId,
     };
     expect(lines, containsAll(['l_tohoku_main_line', 'l_tohoku_shinkansen', 'l_namboku_line_sendai_city']));
     expect(network.routesAtStation('n_sendai_senseki'), network.routesAtStation('n_sendai_sendai_city'));
+  }, skip: skip);
+
+  test('오늘 영업하는 분모 노선은 모두 기록 탭의 현행 목록에 나온다 (DESIGN §8.0)', () {
+    // 폐선 쪽은 승계 사슬의 지금 이름으로 묶이므로 노선 이름이 아니라 단위로 맞춘다 (core_parity 시험)
+    final day = DateSpan.parse(today);
+    final shown = {for (final line in browseTree(network, era: BrowseEra.current, hits: const {}, today: today).lines) line.lineId};
+    final running = {
+      for (final attr in network.data.attrs)
+        if (stateOfPeriod(day, attr.period) == PeriodState.yes &&
+            (network.unitOf(attr.lineId, attr.edgeId, carryover: true)?.normal ?? false))
+          attr.lineId,
+    };
+    expect(running.difference(shown), isEmpty);
+    expect(running.length, greaterThan(500));
+  }, skip: skip);
+
+  test('화물·연결선은 모선의 지선 계통이고 목록에 따로 나오지 않으며 요약 합계는 그대로다 (공식 노선 구성 2026-11-09)', () {
+    final tree = browseTree(network, era: BrowseEra.current, hits: const {}, today: today);
+    final shown = {for (final line in tree.lines) line.lineId};
+    expect(shown.intersection({'l_tokaido_freight_line', 'l_fujishiro_line', 'l_osaki_branch_line', 'l_umeda_freight_line'}), isEmpty);
+    expect(shown, containsAll(['l_hakodate_main_line', 'l_tokaido_main_line']));
+    expect(network.routes['r_fujishiro_line']!.lineId, 'l_hakodate_main_line');
+    expect(network.routes['r_umeda_freight_line']!.lineId, 'l_tokaido_main_line');
+    // 요약 합계는 분모 단위만이다. 지선 계통의 칸은 분모 밖이라 모선 합계가 늘지 않는다
+    final table = scoreTable(network, hits: const {}, basis: const BasisCurrent(), carryover: true, today: today);
+    expect(tree.total.denMeters, table.total.denMeters);
+    expect(tree.categories.fold<int>(0, (sum, c) => sum + c.score.denMeters), table.total.denMeters);
   }, skip: skip);
 
   Ride ride(String route, String from, String to, String? date, {bool alighted = true}) => Ride(
@@ -53,7 +96,7 @@ void main() {
         ],
       );
 
-  group('오사카 환상선 운전 계통', skip: skip, () {
+  group('오사카 환상선 운행 계통', skip: skip, () {
     double? km(String from, String to, {required bool up}) {
       final splitter = ServiceSplitter(network);
       final service = network.data.services.firstWhere((item) => item.id == 's_osaka_loop');
@@ -202,5 +245,62 @@ void main() {
       expect(sameDay.map((item) => item.node), isNot(contains('n_fukui')));
       expect(sameDay.map((item) => item.node), isNot(contains('n_tsuruga')));
     });
+
+    test('폐역 소식의 노선은 그 역에 마지막까지 선 노선이다', () {
+      // 留萌는 1987 폐지 羽幌線이 아니라 留萌本線과 함께 2023-04-01에 없어졌다. 노선과 같은 날이라 노선 소식에 든다
+      expect(news.where((item) => item.node == 'n_rumoi_rumoi_main'), isEmpty);
+      expect(
+        news.where((item) => item.kind == NewsKind.lineClosed && item.lineId == 'l_rumoi_main_line').map((item) => item.date),
+        contains('2023-04-01'),
+      );
+    });
   });
+
+  // 판 데이터에 정차역이 아직 없어도 규칙은 여기서 지킨다. 정차역을 솎은 판을 만들어 모든 역일 때와 맞춘다
+  test('운행 계통 화면에 정차역만 두어도 저장 분해와 km는 모든 역일 때와 같다', () {
+    final splitter = ServiceSplitter(network);
+    List<(String, String, String)> keys(List<RideLeg>? legs) =>
+        [for (final leg in legs ?? const <RideLeg>[]) (leg.routeId.value, leg.fromNode.value, leg.toNode.value)];
+    int? km(List<RideLeg>? legs) => legs == null
+        ? null
+        : interpreter
+            .ride(Ride(rideId: const RideId('r'), legs: legs, datasetVersion: 'e', createdAt: 0, updatedAt: 0, deviceId: 'd'))
+            .km10;
+    var compared = 0;
+    for (final service in network.data.services) {
+      final all = splitter.stops(service, null);
+      if (all.length < 4) continue;
+      final edition = splitter.edition(service, null)!;
+      // 양 끝과 세 역마다 하나에만 선다. 노선이 바뀌는 역에 서지 않는 곳이 생긴다
+      final thin = NetService(id: service.id, closed: service.closed, editions: [
+        NetServiceEdition(
+          validFrom: edition.validFrom,
+          validTo: edition.validTo,
+          parts: edition.parts,
+          stops: {
+            for (final (at, stop) in all.indexed)
+              if (at == 0 || at == all.length - 1 || at % 3 == 0) stop.node,
+          },
+        ),
+      ]);
+      final thinAll = splitter.stops(thin, null);
+      final shown = splitter.halts(thin, null);
+      expect(shown.length, lessThan(thinAll.length), reason: service.id);
+      for (var a = 0; a < shown.length; a += 2) {
+        for (var b = a + 1; b < shown.length; b += 3) {
+          if (shown[a].node == shown[b].node) continue;
+          for (final up in service.closed ? const [true, false] : const [true]) {
+            List<RideLeg>? legs(NetService s, List<ServiceStop> stops, ServiceStop from, ServiceStop to) =>
+                splitter.legs(s, stops, from, to, date: null, up: up, lineName: (id) => id, nodeName: (node) => node);
+            final thinLegs = legs(thin, thinAll, shown[a], shown[b]);
+            final fullLegs = legs(service, all, all[shown[a].index], all[shown[b].index]);
+            expect(keys(thinLegs), keys(fullLegs), reason: '${service.id} ${shown[a].node}~${shown[b].node}');
+            expect(km(thinLegs), km(fullLegs));
+            compared++;
+          }
+        }
+      }
+    }
+    expect(compared, greaterThan(100));
+  }, skip: skip);
 }

@@ -33,7 +33,10 @@ final class FilePickChannel: NSObject, UIDocumentPickerDelegate {
         result(FlutterMethodNotImplemented)
         return
       }
-      self?.pending = result
+      guard let self else { return }
+      // 선택 창이 이미 떠 있으면 앞 요청을 잃지 않게 새 요청을 취소로 답한다
+      guard self.pending == nil else { return result(nil) }
+      self.pending = result
       let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.data], asCopy: true)
       picker.delegate = self
       var top = UIApplication.shared.connectedScenes
@@ -44,16 +47,19 @@ final class FilePickChannel: NSObject, UIDocumentPickerDelegate {
   }
 
   func documentPicker(_ controller: UIDocumentPickerViewController, didPickDocumentsAt urls: [URL]) {
-    defer { pending = nil }
-    guard let url = urls.first else {
-      pending?(nil)
-      return
-    }
-    do {
-      let data = try Data(contentsOf: url)
-      pending?(["name": url.lastPathComponent, "bytes": FlutterStandardTypedData(bytes: data)])
-    } catch {
-      pending?(FlutterError(code: "file_pick", message: "\(error)", details: nil))
+    guard let result = pending else { return }
+    pending = nil
+    guard let url = urls.first else { return result(nil) }
+    // 큰 파일도 화면을 멈추지 않게 읽기는 뒤에서 한다 (Android와 같음)
+    DispatchQueue.global(qos: .userInitiated).async {
+      do {
+        let data = try Data(contentsOf: url)
+        DispatchQueue.main.async {
+          result(["name": url.lastPathComponent, "bytes": FlutterStandardTypedData(bytes: data)])
+        }
+      } catch {
+        DispatchQueue.main.async { result(FlutterError(code: "file_pick", message: "\(error)", details: nil)) }
+      }
     }
   }
 
@@ -88,8 +94,12 @@ final class BackupFolderChannel: NSObject, UIDocumentPickerDelegate {
           ? nil : ["name": "", "granted": false])
         return
       }
-      result(["name": url.lastPathComponent, "granted": true])
+      // 책갈피가 풀려도 접근이 막히면 다시 골라야 한다 (Android의 유지된 권한 확인과 같음)
+      let granted = url.startAccessingSecurityScopedResource()
+      if granted { url.stopAccessingSecurityScopedResource() }
+      result(["name": url.lastPathComponent, "granted": granted])
     case "pick":
+      guard pending == nil else { return result(nil) }
       pending = result
       let picker = UIDocumentPickerViewController(forOpeningContentTypes: [.folder])
       picker.delegate = self

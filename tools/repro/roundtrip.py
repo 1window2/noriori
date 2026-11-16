@@ -61,7 +61,7 @@ for rid in A.routes:
 print(f'{time.time()-t:.0f}s')
 for k,v in sorted(stat.items(),key=str):print(k,v)
 for k,v in ex.items():print(k,len(v),v[:5])
-# 운전 계통
+# 운행 계통
 st=collections.Counter();ex2=[]
 for sid,closed in d.execute('select id,closed from service').fetchall():
     for dd in (None,'1990-06-01','2010-06-01','2026-06-01'):

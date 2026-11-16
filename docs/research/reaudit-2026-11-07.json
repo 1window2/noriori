@@ -1,0 +1,1171 @@
+{
+ "stations": [
+  {
+   "id": "ST4-01",
+   "severity": "error",
+   "area": "names/marker",
+   "entity": "n_imagawa, n_sashiu, n_tatsutagawa (+ n_keirinjoiriguchi)",
+   "what": "끝이 XXXX-XX-XX인 stop_status 행을 compile이 끝 없음으로 풀어, 지금 보통 역인 3곳이 오늘도 仮乗降場·臨時駅 표시로 나온다: 今川 「今川仮乗降場」(0000-01-01~끝 없음, 같은 기간 「(臨)今川」도 겹침), 佐志生 「佐志生仮乗降場」(1947-10-01~), 竜田川 「(臨)竜田川」(1926-11-01~). ko·en도 같다 (이마가와 가승강장, Sashiu (temp.), (임)타츠타가와)",
+   "evidence": "names.name: 이 세 노드의 표시 행은 line_id가 있고 valid_to가 NULL. route_stop은 모두 ongoing (r_uetsu_main_line 1987-04-01~, r_nippo_main_line 1947-10-01~, r_ikoma_line 1926-11-01~). 이름 조회 순서(노선 고유+날짜 우선, DESIGN §14.2)라 오늘 화면에 나온다. 위키: 佐志生駅 「1950年1月10日 旅客業務取扱開始し停車場化」(oldid 110407567), 竜田川駅 「1930年12月19日 常置駅化」(oldid 107939633). 今川駅(oldid 102293199)은 仮·臨 기간 둘 다 XXXX",
+   "fix": "stop_status.json의 to를 날짜로: 佐志生 1950-01-10, 竜田川 1930-12-19, 今川은 원문 확인(모르면 적어도 1987-04-01 이전으로 닫음). compile.py는 to가 XXXX인 행을 끝 없음으로 풀지 말고 오류(stop_status_unknown_to)로 멈추게. from이 XXXX인 행(今川, 競輪場入口)이 0000-01-01이 되는 것도 같이 막음"
+  },
+  {
+   "id": "ST4-02",
+   "severity": "error",
+   "area": "names/marker",
+   "entity": "n_nishinisenkarijokojo, n_juyongokarijokojo, n_jurokugokarijokojo (根北線)",
+   "what": "기본 이름에 「仮乗降場」이 박혀 있어 표시가 두 번 붙고, ko·en은 仮乗降場까지 음차: ja 「十六号仮乗降場仮乗降場」, ko 「주로쿠고카리조코조 가승강장」, en 「Jurokugokarijokojo (temp.)」. 西二線·十四号도 같은 모양",
+   "evidence": "names.name 기본 행 ja 十六号仮乗降場 / ko 주로쿠고카리조코조 / en Jurokugokarijokojo, 표시 행 l_kompoku_line 1958-01-01~1970-12-01. stop_status.json에 세 노드 kari 행 있음. 위키 根北線(oldid 106728356): 「1958年月日不明：西二線、十四号、十六号の各仮乗降場を新設」. 같은 부류로 乗降場을 음차한 기본 이름 芦屋乗降場(아시야조코조), 本通乗降場(혼도리조코조)도 있음",
+   "fix": "기본 이름을 西二線·十四号·十六号(にしにせん·じゅうよんごう·じゅうろくごう, 니시니센·주욘고·주로쿠고)로 바꾸고 표시는 stop_status에 맡김. 芦屋乗降場·本通乗降場은 仮乗降場 계열이면 stop_status로 옮기고, 아니면 ko·en을 乗降場 앞까지만 음차"
+  },
+  {
+   "id": "ST4-03",
+   "severity": "error",
+   "area": "names/kana",
+   "entity": "옛 역 노드 12+: n_tabatake, n_utsuno_bandai_express, n_numajiri, n_funayori, n_ipponden, n_shimokamo, n_kokkyodaira, n_kanayamabashi_atsuta, n_shinkawa_yagyubashi_branch, n_manabe, n_kitajima, n_omiimazu",
+   "what": "N05·위키로 넣은 옛 역의 kana를 같은 한자의 다른 역에서 가져와 ko(나무위키 제목·규칙)도 틀림. §9.2의 「읽기가 다르면 같은 제목을 쓰지 않음」 위반. 田畑(奥山線) たばた→たばたけ(타바타→타바타케), 内野(磐梯急行) うちの→うつの, 沼尻(磐梯急行) ぬましり→ぬまじり, 舟寄 ふなよせ→ふなより, 一本田 いっぽんてん→いっぽんでん, 下加茂 しもがも→しもかも(시모가모→시모카모), 国境平 くにざかいだいら→こっきょうだいら, 金山橋(熱田線) かなやま→かなやまばし(ko 카나야마), 新川(柳生橋支線) にっかわ→しんかわ(닛카와→신카와), 真鍋 まなべしんごうじょ→まなべ(ko 마나베신고조), 北島 きたじましせん(ko 키타지마시센), 近江今津(江若) おおみいまづ→おうみいまづ",
+   "evidence": "위키 캐시 station.json: 田畑駅 (静岡県) 遠州鉄道奥山線 たばたけ, 内野駅 (福島県) 磐梯急行 うつの, 沼尻駅 (福島県) ぬまじり. API 첫 문단: 舟寄駅(oldid 111144635) ふなより, 一本田駅(111144759) いっぽんでん, 下加茂駅(105596302) しもかも, 新川停留場(111306141) しんかわ, 真鍋信号所(101942530, 1981年まで真鍋駅). 草軽電気鉄道(109946491) 「国境平駅/こっきょうだいら」. 탐지: Wikidata en 라벨(Tabatake, Utsuno, Numajiri, Funayori, Ipponden, Shimokamo, Kokkyodaira, Kanayamabashi)과 kana의 헵번 변환이 어긋나는 42노드(wikipedia+n05) 중 확인한 것",
+   "fix": "kana를 고치고 ko를 규칙으로 다시 만듦(나무위키 제목은 같은 읽기일 때만). 나머지 의심(吾妻(草軽) en Agatsuma, 栗平(草軽) Kuridaira, 谷所 Yatoko, 日越 Higoshi, 小代 Koyo, 昭和町(n_showamachi) Showamachi, 白兎(山陰本線) Shirosagi)은 원문 확인. 생성기에서 N05 역의 kana를 이름만으로 다른 역에서 빌리지 않게"
+  },
+  {
+   "id": "ST4-04",
+   "severity": "error",
+   "area": "names/en",
+   "entity": "n_category_kinuta_hommura, n_category_nakakochi, n_shimtomi, n_mikayamaguchi, n_shimonagase",
+   "what": "틀린 영어 이름: 「Category:Kinuta-hommura」「Category:Nakakochi」(위키데이터 분류 문서 라벨이 들어감, ID에도 category_), 新富 「Shimtomi」(Shintomi), 三ヶ山口 「Mikayamaguchi」(みけやまぐち → Mikeyamaguchi), 上長瀬 「Shimonagase」(下長瀬의 라벨이 붙음)",
+   "evidence": "names.name en source=wikidata. 위키: 新富駅(oldid 109445796) しんとみ, 三ヶ山口駅(110783899) みけやまぐち, 上長瀬駅(101512931) かみながせ·下長瀬駅(101512873)은 별개 역. ID도 en에서 나와 n_category_*, n_shimonagase, n_shimtomi로 굳기 직전(ARCHITECTURE §4.2 ID 동결 전)",
+   "fix": "en_fix.json에 Kinuta-hommura, Nakakochi, Shintomi, Mikeyamaguchi, Kami-Nagase. ID 동결 전에 ID도 바로잡음"
+  },
+  {
+   "id": "ST4-05",
+   "severity": "error",
+   "area": "positions",
+   "entity": "moved.json 옛 노드 16: n_niigata_old, n_sakuma_iida, n_nukabira_shihoro, n_takedao_fukuchiyama, n_tatebori_minobu, n_utazu_yosan, n_tosa_kitagawa_dosan, n_hiwa_hakubi, n_mitaki_kabe, n_kami_nopporo_chitose, n_mine_*_old_route, n_suzukijima_*_old_route, n_somuta_*_old_route, n_nakasomuta_*_old_route, n_ishiki, n_tamazatomichi",
+   "what": "선로 위 km가 바뀐 이전(§2.2)인데 옛 노드 좌표가 새 노드와 0 m로 같음 (陸中大石–ゆだ錦秋湖도 4 m). 지도에서 옛 역이 새 역 위에 겹치고, 옛 계통 선형 끝이 새 역에 붙음",
+   "evidence": "node_move 58쌍 중 16쌍 거리 0 m (node_position 같은 값, 대부분 station_database). data/README 「역 좌표」 5단계는 옛 역을 이전 전 N02 판 승강장으로 옮긴다고 함. 위키: 竪堀駅 「約400m西の現在の位置に移転」, 宇多津駅 개업 때 자리 「現在の宇多津6号公園がある場所」, 新潟駅 「1958年4月29日 現在地に移転開業」, 佐久間駅 「1955年11月11日 経路変更に伴い移転」, 糠平駅 「1955年8月1日 糠平ダム建設のため移転。改キロ」",
+   "fix": "옛 노드에 이전 전 좌표(N02 2005·2008판 승강장 또는 N05 역 점)를 node_fix.json으로 넣고, gen_geometry가 moved 옛 노드를 옮기지 못한 이유(DBA-014로 나중에 넣은 쌍)를 고침"
+  },
+  {
+   "id": "ST4-06",
+   "severity": "error",
+   "area": "identity/group",
+   "entity": "g_takahata (n_takahata_yamagata_kotsu)",
+   "what": "山形交通 高畠線 高畠(시가지, 1922~1974)을 JR 高畠(옛 糠ノ目)·山形交通 糠ノ目와 한 역 묶음에 넣음. 3.9 km 떨어진 다른 역이고 이름만 같음 (JR 糠ノ目가 1991년 高畠로 개칭)",
+   "evidence": "node.group_id 셋 다 g_takahata, 거리 3,874 m (n_takahata_yamagata_kotsu–n_takahata). 묶음은 §2.8 B의 「같은 역」 단위라 방문 역 수·지도 캡슐이 합쳐짐. TOP-10 수정(糠ノ目=高畠 묶기) 뒤 이름 기본 묶음이 번진 것으로 보임",
+   "fix": "n_takahata_yamagata_kotsu를 따로 묶음(g_takahata_yamagata_kotsu)으로. 糠ノ目(山形交通)–JR 高畠 묶음은 유지"
+  },
+  {
+   "id": "ST4-07",
+   "severity": "error",
+   "area": "identity/duplicate",
+   "entity": "n_godo_ashio (足尾線 神戸)",
+   "what": "足尾線 옛 경로 계통 r_ashio_line_godo_ashio_sori(神戸–草木, 1912~1973)가 같은 역 神戸를 별도 노드 n_godo_ashio로 시작. 같은 회사(국철) 같은 역인데 노드·묶음이 따로이고 환승 묶음도 없어 본선 화면과 이어지지 않음. 이름도 국철 시절 「神土」가 아니라 「神戸」",
+   "evidence": "n_godo_ashio와 n_godo_watarase_keikoku 거리 5 m, group 다름, hub 없음. n_godo_watarase_keikoku는 l_ashio_line 노선별 이름 「神土」를 가짐. §2.8 B: 같은 사업자의 같은 역은 노드 하나. TODO의 이설 옛 계통 목록(西青山·東青山·田立·土佐穴内·八幡·内子·五十崎)에 없음",
+   "fix": "옛 경로 계통의 시작을 n_godo_watarase_keikoku로 바꾸고 n_godo_ashio는 지움(redirect). 못 하면 최소한 같은 group+hub, 이름은 「神土」"
+  },
+  {
+   "id": "ST4-08",
+   "severity": "error",
+   "area": "identity/duplicate",
+   "entity": "n_shinkawa_yagyubashi_branch (豊橋鉄道 柳生橋支線 新川)",
+   "what": "柳生橋支線의 新川을 東田本線 新川(n_shinkawa_toyohashi)과 다른 노드로 둠. 같은 회사 같은 정류장(지선이 新川에서 갈라짐)이라 노드 하나여야 함. kana·ko도 にっかわ·닛카와로 틀림(ST4-03)",
+   "evidence": "두 노드 거리 7 m, 같은 group, hub 없음. 위키 豊橋鉄道東田本線(oldid 111617936) 「新川から分岐していた柳生橋支線」, 노선도에 [3] 新川停留場에서 柳生橋支線 분기",
+   "fix": "지선 계통 시작을 n_shinkawa_toyohashi로 합치고 n_shinkawa_yagyubashi_branch는 redirect"
+  },
+  {
+   "id": "ST4-09",
+   "severity": "error",
+   "area": "identity/hub",
+   "entity": "n_nagamachi_sennan / n_nagamachi, n_katamachi_keihan_main / n_katamachi_katamachi",
+   "what": "이름도 자리도 같은 환승역인데 묶음·환승 묶음이 없어 기록 화면에 환승이 0: 秋保電気鉄道 長町(1914~1961)–国鉄 長町, 京阪 片町(1910~1969)–国鉄 片町",
+   "evidence": "두 쌍 모두 거리 0 m, group 다름, hub 없음. 위키 秋保電気鉄道(oldid 109457775) 노선도: 起点 長町가 国鉄東北本線 長町駅에 붙어 그려짐. 京阪本線(111466840) 노선도: 片町駅(-1969)이 HUB 기호로 片町線과 이어짐",
+   "fix": "같은 group(이름 기본)과 hub로 묶음. 생성기의 이름 기본 묶음이 이 둘을 놓친 원인(좌표 출처 wikidata·SD 혼합) 확인"
+  },
+  {
+   "id": "ST4-10",
+   "severity": "error",
+   "area": "stops",
+   "entity": "r_seto_line_horikawa (名鉄瀬戸線 堀川 계통)",
+   "what": "堀川 계통의 공용 구간 정차가 모두 노선 개업일 1905-04-02(또는 1906·1911)~ongoing. 늦게 생긴 역(瓢箪山 1936, 北山 1927, 新瀬戸 1927, 旭前 1942, 森下 1915)이 개업 전부터 정차역이고, 印場은 1944 휴지·1969 폐지·1995 재개인데 1905~끊김 없이 정차. 그 기간 날짜로 印場 등을 고를 수 있음",
+   "evidence": "route_stop r_seto_line_horikawa seq 5~22 valid_from 1905-04-02 (일부 1906·1911), valid_to ongoing. 같은 노선 r_seto_line은 瓢箪山 1936-06-03, 北山 1927-07-01, 印場 1995-12-22, 旭前 1942-XX-XX, 新瀬戸 1927-02-01. 위키 印場駅 연혁 「1905年4月2日 開業 / 1944年 休止 / 1969年4月5日 廃止 / 1995年12月22日 復活」",
+   "fix": "堀川 계통 정차 기간을 본 계통의 역별 기간과 같게(印場은 1905-04-02~1944와 1995~ 두 토막). 공용 구간 정차를 1976-02-15 뒤까지 둘 필요가 있는지도 확인(TOP-09와 같은 유형)"
+  },
+  {
+   "id": "ST4-11",
+   "severity": "error",
+   "area": "stops",
+   "entity": "r_namboku_line_kita_osaka_kyuko_kaijo (北大阪急行 会場線)",
+   "what": "1970년 만박 임시 계통에 緑地公園을 1970-02-24부터 둠. 緑地公園駅 개업은 1975-03-30. 江坂·緑地公園·桃山台이 이 임시 계통에서 ongoing",
+   "evidence": "route_stop: 会場線 seq1 n_ryokuchi_koen 1970-02-24~ongoing, 본 계통 r_namboku_line_kita_osaka_kyuko seq1 1975-03-30~. 위키 station.json 緑地公園駅 open 1975-03-30",
+   "fix": "会場線의 緑地公園 정차 행을 지우고(또는 is_stop=0), 공용 구간 정차는 1970-09-14에서 끝냄"
+  },
+  {
+   "id": "ST4-12",
+   "severity": "warn",
+   "area": "names/period",
+   "entity": "기간 있는 옛 이름 407행, 노선별 이름 115행",
+   "what": "개칭 전 이름이 일본어에만 있음. 기간 있는 ja 407행 중 ko는 59행, en은 0행. 노선별 ja 115행 중 en 0행. 한국어·영어 화면은 옛 기간에도 지금 이름을 보여 줌. 仮乗降場·臨時駅 표시 행도 ko·en은 지금 이름 위에 붙음",
+   "evidence": "예: n_miyajima_boat_race ja 「(臨)競艇場前」 1954~2019인데 ko 「(임)미야지마보트레이스죠」, en 「Miyajima Boat Race (seasonal)」. n_anan 1936~1966 ja 阿波富岡, ko 행 없음(아난 표시). n_eiheijiguchi는 2003년 전 이름 東古市 행 자체가 없음. 2차 감사 S2-01(의심)이 아직 열려 있음",
+   "fix": "옛 ja 이름마다 ko(나무위키 옛 제목 또는 규칙)·en(규칙) 행을 같은 기간으로 생성. compile의 표시 행도 언어별 옛 이름을 고르게 됨"
+  },
+  {
+   "id": "ST4-13",
+   "severity": "warn",
+   "area": "names/marker",
+   "entity": "stop_status 49기간 (48노드)",
+   "what": "仮乗降場·臨時駅 기간이 그 노드의 어느 정차 기간과도 겹치지 않아 표시가 안 나오고 그 시절을 기록할 수 없음. 42기간은 1950년 이후에 걸림. 대부분 仮乗降場에서 駅으로 오른 역인데 정차 시작이 승격일",
+   "evidence": "예: 都賀 仮 1965-09-30~1968-03-28 / 정차 1968-03-28~; 神楽岡·西御料·西瑞穂·西聖和 仮 1957-12-01~1958-03-25 / 정차 1958-03-25~; 東新潟 仮 1958-02-01~1978-10-02 / 정차 1978-10-02~; 安比高原 仮 1957~1961; かるが浜 臨 1928~1967 / 정차 1999~. temporary-stops-2026-11-06(「DB 날짜 불일치 21」)과 TODO가 다루는 부류이나 지금 수는 49",
+   "fix": "정차 시작을 仮·臨 시작으로 당김(stop_dates.json). 1950년 전에 끝난 7기간은 기록 범위 밖이라 그대로 둬도 됨"
+  },
+  {
+   "id": "ST4-14",
+   "severity": "warn",
+   "area": "names/marker",
+   "entity": "정차가 지위 기간보다 먼저 시작 19건",
+   "what": "정차가 仮·臨 기간보다 먼저 시작하는데 그 앞 지위 기록이 없음. 일부는 보통 역에서 내려간 것이라 맞지만, 일부는 이름·자리·지위가 빠짐",
+   "evidence": "政和温泉: 정차 1955-08-20~, 仮 1961-12-01~ (위키 政和温泉駅: 1955 「下政和仮乗降場」으로 개업, 1961 200m 이전·개칭 → 옛 이름·仮 기간·이전이 빠짐). 信濃白鳥: 정차 1925~끊김 없음 (위키: 1944-06-01 廃止, 1946-06-01 仮乗降場으로 재개). 北見平和: 정차 1949-10-20, 위키 개업 1949-10-24",
+   "fix": "역별로 고침: 政和温泉 1955~1961 下政和 이름+仮, 信濃白鳥 1944~1946 정차 끊기, 北見平和 시작 1949-10-24"
+  },
+  {
+   "id": "ST4-15",
+   "severity": "warn",
+   "area": "identity/group",
+   "entity": "같은 group인데 다른 역인 같은 이름 쌍 약 30",
+   "what": "이름만 같고 400~930 m 떨어진 다른 역(환승 묶음 없음, 같은 기간 영업)을 한 역 묶음에 둠. 방문 역 수와 지도 점이 하나로 합쳐짐. 판단 필요(TOP-12와 연결)",
+   "evidence": "예(거리 m): 飾磨 JR/山陽 929, 塚口 JR/阪急 855, 六甲口 817, 白島 広電/アストラム 802, 味美 名鉄/城北線 773, 郡元 JR/市電 754, 伊丹 JR/阪急 742, 芦屋 JR/阪神 742, 住吉 阪神/JR·六甲ライナー 731, 早稲田 都電/メトロ 714, 児島 705, 宇治 JR/京阪 695, 吹田 JR/阪急 695, 琴似 690, 十条 687, 三木 678, 今里 近鉄/地下鉄 669, 嵐山 嵐電/阪急 656, 城野 614, 浅草 TX/기타 568, 谷山 546, 弘明寺 494, 高砂 488, 春日野道 453, 堀田 435, 中津 393. samename-hubs-2026-11-07은 hub 쌍만 판정해 이 묶음들은 다루지 않음",
+   "fix": "§2.8 B 기준(같은 역)을 정함: 걸어서 갈아타지 않는 같은 이름 다른 역은 묶음을 가름. 남길 쌍은 hub도 둠"
+  },
+  {
+   "id": "ST4-16",
+   "severity": "warn",
+   "area": "identity/hub",
+   "entity": "환승 묶음 사슬 55개",
+   "what": "300 m 근접을 사슬로 이어 묶음 지름이 1 km를 넘음. compile의 linked()가 350 m·문서 근거로 걸러 환승 행은 줄지만, hub 표 자체는 앱에 그대로 감. hub_not.json의 すすきの–豊水すすきの 쌍이 같은 hub에 들어 있음",
+   "evidence": "hub_hosui_susukino = 豊水すすきの·西4丁目·大通·松竹座前·すすきの×2·狸小路, hub_hon_kawagoe(川越–川越市 989 m), hub_keisei_ueno 9노드(上野–仲御徒町 798 m), hub_ginza 13노드(日比谷公園–東銀座 989 m), hub_airport_terminal_2(空港第2ビル–成田空港 1,079 m). 환승 행이 있는 400 m 넘는 쌍 83 중 근거가 약한 것: 阪急嵐山–嵐電嵯峨 680 m, 東成田–成田空港 718 m, 清水–新清水 701 m",
+   "fix": "hub를 linked()로 걸러진 쌍의 연결 성분으로 다시 만들거나, 지름 상한을 hub 생성에도 적용. 위 세 쌍은 근거 확인"
+  },
+  {
+   "id": "ST4-17",
+   "severity": "warn",
+   "area": "identity/hub",
+   "entity": "환승 묶음이 없는 가까운 환승역 (이름 다름)",
+   "what": "150 m 안, 같은 기간, 다른 이름이라 묶음·hub가 없어 환승 표시 0",
+   "evidence": "京津三条–三条(京阪) 76 m, 名鉄岐阜–新岐阜駅前(岐阜市内線) 109 m, 富山–富山駅北(富山港線, 2006~2020) 118 m, 伏見(地下鉄)–広小路伏見(市電) 113 m, 大津町(瀬戸線)–大津橋(市電) 57 m, 堀川(瀬戸線)–景雲橋(市電) 71 m. TOP-11의 津軽二股–津軽今別(86 m)도 아직 hub 없음(津軽二股만 hub_okutsugaru_imabetsu). 위키 名鉄岐阜市内線(oldid 111042701) 新岐阜駅前, 富山地方鉄道富山軌道線(109684687) 富山駅北",
+   "fix": "hub_pairs.json에 더함"
+  },
+  {
+   "id": "ST4-18",
+   "severity": "warn",
+   "area": "identity/duplicate",
+   "entity": "n_higashifuruichi / n_eiheijiguchi",
+   "what": "京福 永平寺線 東古市(~2002)와 勝山永平寺線 永平寺口(2003년 東古市에서 개칭)는 같은 회사 같은 역인데 노드·묶음이 둘. 永平寺口에는 옛 이름 東古市 행도 없음",
+   "evidence": "두 노드 좌표 같음(0 m), group 다름, 같은 hub. 2차 감사 S2-15가 아직 열려 있음",
+   "fix": "노드를 합치거나 최소한 같은 group. 永平寺口에 ~2003 「東古市」 기간 이름"
+  },
+  {
+   "id": "ST4-19",
+   "severity": "warn",
+   "area": "identity/duplicate",
+   "entity": "근접 0 km 쌍 10 (n05·보간)",
+   "what": "서로 다른 역이 km도 좌표도 같음(이웃 역 위에 보간): 杵築市/若宮, 土/杉山, 沖根部/引臼, 共和学校/沖根婦, 金古/清里, 泉尾梅の町二丁目/三丁目, 池上中門/日本鋼管池上正門前, 亀陽泉前/弁天前, 鶴町二丁目/鶴町車庫前, 大町二丁目/産業会館前(+県庁前). 大町二丁目(~1963)→産業会館前(1963~)은 개칭한 같은 정류장일 수 있음",
+   "evidence": "route_stop km_cum 같음(예: r_kunisaki_line 若宮·杵築市 둘 다 5.1), node_position 같음. 2차 감사 I2-01(알려짐, 14묶음) 중 남은 것",
+   "fix": "노선도 km로 나누고 좌표를 다시 보간. 秋田市電 大町二丁目·産業会館前은 개칭 확인 뒤 노드 하나로"
+  },
+  {
+   "id": "ST4-20",
+   "severity": "warn",
+   "area": "identity/duplicate",
+   "entity": "n_inaeicho / n_inaeicho_tsukiji_line_nagoya_city (名古屋市電 稲永町)",
+   "what": "같은 계통에 稲永町 두 노드(2.5 km, 2.7 km)가 1925~1956 함께 정차. 위키 노선도는 稲永町(I) -1956, 稲永町(II)로 그려 이전으로 보임",
+   "evidence": "route_stop r_tsukiji_line_nagoya_city seq4 1917-06-16~1956-09-15, seq5 1925-07-01~1971-12-01, 거리 167 m. 위키 名古屋市電築地線(oldid 92163572) 「稲永町電停 (I) -1956」, 「稲永町電停 (II)」",
+   "fix": "(II)의 개업일 확인 뒤 moved.json 짝으로(1956-09-15) 또는 기간 고침"
+  },
+  {
+   "id": "ST4-21",
+   "severity": "warn",
+   "area": "names/en",
+   "entity": "같은 역 이름의 영어 표기 갈림·훈령식",
+   "what": "같은 ja·kana인데 en이 하이픈·대소문자만 다른 묶음 27 (Gakko-Mae/GAKKO-MAE/Gakkomae, Daigaku-mae/Daigakumae 등). 위키데이터 훈령식 라벨 10 (Kitakomatu, Higasiaoyama, Daisyogun, Heizima, Terazi, Azikata, Azikatatyugakumae, Kurosakityugakumae, Zaikeduka, Hurari). 丁目 규칙 이름은 m 규칙을 안 따름(Honmachi 1-chome, Shinmachi 1-chome; 다른 곳은 Shimmachi). 옛·새 노드 en이 다름(Higashi-Karatsu / Higashikaratsu (old))",
+   "evidence": "names.name en, source wikidata·rule. §9.1은 헵번식, ん은 b·p·m 앞에서 m",
+   "fix": "훈령식 라벨은 규칙 값으로 덮고(en_fix.json), (old) 표시는 새 노드 en에 붙여 만듦. 하이픈 통일은 S2-07 결정과 함께"
+  },
+  {
+   "id": "ST4-22",
+   "severity": "warn",
+   "area": "positions",
+   "entity": "n_yonejimaguchi_fushiki",
+   "what": "공개 노드인데 좌표가 없음(node_position lat/lon NULL, quality none). 같은 회사 같은 정류장 n_yonejimaguchi와 따로",
+   "evidence": "2차 감사 S2-11이 아직 열려 있음",
+   "fix": "n_yonejimaguchi로 합치거나 좌표를 넣음"
+  },
+  {
+   "id": "ST4-23",
+   "severity": "warn",
+   "area": "positions",
+   "entity": "n_shintarui (新垂井)",
+   "what": "新垂井 좌표가 垂井에서 73 m(n02 approx). 新垂井은 下り 별선의 다른 역으로 약 3 km 떨어짐",
+   "evidence": "Wikidata Q11501538 좌표와 2,931 m 차이. 2차 감사 TOP-21(정보)이 아직 열려 있음",
+   "fix": "N02 legacy 또는 N05 역 점으로 고침"
+  },
+  {
+   "id": "ST4-24",
+   "severity": "warn",
+   "area": "stops",
+   "entity": "route_stop 날짜 NULL 38행",
+   "what": "EDTF가 아니라 NULL인 정차 기간: 끝 NULL 27(呉市電 本通三·六·八丁目, 旭川電気軌道 東川線·東旭川線, 熊本 川尻線, 別大線 白木海水浴場 등), 시작 NULL 11(横浜市電 久保山線 6, 花園橋線 5). 앱은 판정 불가로 처리하나 노선이 1960년대에 끝났으니 끝은 적어도 그날로 묶을 수 있음",
+   "evidence": "route_stop valid_to IS NULL 27(그중 is_stop=1 26), valid_from IS NULL 11. 예: r_shinai_line n_hondori_3_chome 1909-10-31~NULL, 노선 edge_attr 끝 1967-12-18",
+   "fix": "모르는 끝은 ..노선 폐지일 범위의 EDTF로(예: 1967-12-XX 또는 범위), 시작은 노선 개업일 이후로 묶음"
+  },
+  {
+   "id": "ST4-25",
+   "severity": "info",
+   "area": "names/marker",
+   "entity": "표시 행 68 (65노드)",
+   "what": "仮·臨 표시를 그 노드가 언젠가 서는 모든 노선에 붙여, 그 기간에 서지 않는 노선에도 행이 있음(예: 愛冠 ふるさと銀河線 1946~1952, 東久根別 道南いさりび鉄道線 1986~1987, 東中山 京成本線 1935~1953). 지금은 화면에 안 나와 해는 없음",
+   "evidence": "compile.py _stop_lines는 기간을 보지 않고 노선을 모음",
+   "fix": "그 기간에 정차가 있는 노선에만 생성"
+  },
+  {
+   "id": "ST4-26",
+   "severity": "info",
+   "area": "names/marker",
+   "entity": "臨時駅 일본어 괄호, 仮駅 이름",
+   "what": "臨時駅 ja 표시는 반각 「(臨)」인데 DESIGN §9.1.2는 「（臨）〇〇」. 공사 중 仮駅 이름 土居下（仮）·千里中央（仮）은 ko 「(임시)」, en 「(temp.)」라 仮乗降場 표시 (temp.)와 영어가 같아짐",
+   "evidence": "compile.py MARK ja=(臨){}. names.name n_doishita_kari, n_senri_chuo_kari",
+   "fix": "문서와 코드 중 하나로 맞춤. 仮駅 en은 (temporary station) 등으로 구분"
+  },
+  {
+   "id": "ST4-27",
+   "severity": "info",
+   "area": "names/ko",
+   "entity": "n_meiji_jingumae",
+   "what": "ko가 「메이지진구마에〈하라주쿠〉」인데 ja는 「明治神宮前」(공식 明治神宮前〈原宿〉). 부역명이 한쪽에만 있음",
+   "evidence": "names.name ko source namuwiki",
+   "fix": "ja에 〈原宿〉을 넣거나 ko에서 뗌(부역명 처리 A2-06과 함께)"
+  },
+  {
+   "id": "ST4-28",
+   "severity": "info",
+   "area": "positions",
+   "entity": "도도부현 불일치 9",
+   "what": "좌표의 도도부현과 node.pref가 다름. 6은 경계 위 역(山崎 26/27, 高の原 29/26, 滝山·絹延橋 28/27, 追分 25/26, 平岩 15/20), 3은 n05 approx(国境平 20/10, 左門殿橋 27/28, 東猪谷 21/16)",
+   "evidence": "data/base/pref.geojson 점 포함 검사. 바다 쪽이라 어느 도도부현에도 안 드는 47은 해안 단순화 영향",
+   "fix": "경계 역은 그대로. 東猪谷(岐阜県)은 좌표를 岐阜 쪽으로"
+  },
+  {
+   "id": "ST4-29",
+   "severity": "info",
+   "area": "positions",
+   "entity": "이웃 역 직선거리 > km 23쌍",
+   "what": "직선거리가 영업 km보다 1.25배+0.4 km 넘게 긴 쌍. 최대 名鉄一宮線 本山–浅野 3.75 km/2.2 km, 印田–花岡町 1.97/0.5. 印田의 station_database 주소가 「浅野西屋敷」",
+   "evidence": "23쌍 모두 폐선 구간(양 끝이 지금 영업하는 쌍 0). 2차 감사 S2-12(45쌍)에서 줄었음",
+   "fix": "名鉄一宮線 역 좌표를 N05로"
+  },
+  {
+   "id": "ST4-30",
+   "severity": "info",
+   "area": "identity",
+   "entity": "2차 감사·TODO 항목 중 아직 열린 것 확인",
+   "what": "社尺別 가짜 노드(n_sha_shakubetsu_nemuro_main, 3.2 km) 남음. 이설 옛 계통 노드(東青山 2.8 km, 田立 1.5 km, 五十崎 1.4 km, 西青山 1.3 km, 八幡 1.1 km, 土佐穴内 0.9 km, 内子)가 새 역과 같은 group. 守口·小本·尾頭橋·杉田·磯子는 같은 group+hub 그대로. 米島口(S2-11), 東古市(S2-15), 新垂井(TOP-21), 津軽今別(TOP-11) 위 항목 참고",
+   "evidence": "master.sqlite node·hub_member 대조. TODO 「같은 이름 환승 묶음 남은 것」 「이설 옛 계통」 항목과 같음",
+   "fix": "TODO 진행대로"
+  },
+  {
+   "id": "ST4-31",
+   "severity": "info",
+   "area": "identity",
+   "entity": "moved.json 정합",
+   "what": "moved.json 58쌍 모두 옛 노드 정차 끝 ≤ 이전일, 새 노드의 같은 노선 정차 시작 ≥ 이전일, 같은 group. 어긋남 0",
+   "evidence": "node_move × route_stop 대조",
+   "fix": "없음 (좌표만 ST4-06)"
+  },
+  {
+   "id": "ST4-32",
+   "severity": "info",
+   "area": "names",
+   "entity": "기본 이름 완비",
+   "what": "공개 노드 13,674개 모두 기본 ja·ko·en 한 행씩, 빈 값·중복 없음. 같은 ja+kana인데 ko가 다른 경우 0. pack-master와 master의 역 관련 표(node, node_position, route_stop, hub, hub_member, station_group, node_move, platform, station_hub, station_platform) 행 단위 동일",
+   "evidence": "names.sqlite, master.sqlite, pack-master.sqlite",
+   "fix": "없음"
+  }
+ ],
+ "lines": [
+  {
+   "id": "LN-T01",
+   "severity": "error",
+   "area": "type",
+   "entity": "l_gifushinai_line, l_gifushinai_line_chusetsu_branch, l_minomachi_line, l_tagami_line, l_takatomi_line, l_kagashima_line, l_okazakishinai_line, l_fukuoka_line, l_okoshi_line, l_betsudai_line, l_betsudai_line_beppu_ekimae_branch, l_kokudo_line, l_shizuokashinai_line, l_shimizushinai_line, l_shimizushinai_line_nishikubo_sodeshi_old_route, l_akiha_line, l_odawarashinai_line, l_omutashinai_line, l_loop_line_nishitetsu, l_loop_line_hakatachikkomae_chidoribashi, l_loop_line_old_route, l_fukushima_line, l_yagyubashi_branch_line, l_shokin_line, l_fushiki_line, l_karato_line, l_maebashi_line, l_takasaki_line_tobu, l_ikaho_line, l_suihin_line, l_densha_line",
+   "what": "사철 노면전차(시내선·궤도선) 31노선이 type=rail. TRAMCO·TRAMCO_CLOSED·TRAMLN이 사업자·노선명으로만 tram을 정해서, 名鉄·西鉄·静岡鉄道·大分交通·阪神·東武 등 일반 사철의 궤도선이 빠짐 (EXT-018 고친 뒤 남은 것: 공영 市電은 고쳐졌고 사철 쪽이 남음)",
+   "evidence": "모두 일본어 위키 분류 「(かつて存在した)日本の路面電車路線」. 예: 名鉄岐阜市内線 https://ja.wikipedia.org/w/index.php?oldid=111042701, 名鉄美濃町線 https://ja.wikipedia.org/w/index.php?oldid=108797585, 阪神国道線 https://ja.wikipedia.org/w/index.php?oldid=110799720 (種類 「軌道（路面電車）」), 大分交通別大線 https://ja.wikipedia.org/w/index.php?oldid=111534738, 静岡鉄道静岡市内線 https://ja.wikipedia.org/w/index.php?oldid=108836901, 箱根登山鉄道小田原市内線 https://ja.wikipedia.org/w/index.php?oldid=110985582, 西鉄福岡市内線 https://ja.wikipedia.org/w/index.php?oldid=110542419, 東武伊香保軌道線 https://ja.wikipedia.org/w/index.php?oldid=109351547, 茨城交通水浜線 https://ja.wikipedia.org/w/index.php?oldid=109665329, 山梨交通電車線 https://ja.wikipedia.org/w/index.php?oldid=109167468, 加越能鉄道伏木線 https://ja.wikipedia.org/w/index.php?oldid=108783568, 北陸鉄道松金線 https://ja.wikipedia.org/w/index.php?oldid=109946449",
+   "fix": "hand_tables.json TRAMLN에 (사업자, 노선) 31쌍 추가 → type=tram. 지도 색·필터가 type을 쓰면 함께 바뀜"
+  },
+  {
+   "id": "LN-T02",
+   "severity": "warn",
+   "area": "type",
+   "entity": "l_arashiyama_main_line, l_kitano_line, l_toyamako_line_toyama_chiho, l_higashikawa_line, l_higashiasahikawa_line, l_hanamakionsen_line, l_namari_line, l_marugame_line, l_sakaide_line, l_tadotsu_line, l_densha_line_niigata, l_onuma_electric_railway_line",
+   "what": "노면전차로 분류되는 rail 12노선. 嵐電 2노선(京福嵐山本線 種類 「軌道（路面電車）」), 富山地方鉄道富山港線(LRT, 2020년부터 軌道線과 직통; 宇都宮ライトレール은 tram인데 이쪽은 rail), 旭川電気軌道 2, 花巻電鉄 2, 琴平参宮電鉄 3, 新潟交通電車線, 大沼電鉄",
+   "evidence": "京福電気鉄道嵐山本線 https://ja.wikipedia.org/w/index.php?oldid=107213873 種類 「軌道法 軌道（路面電車）」·분류 日本の路面電車路線; 京福北野線 https://ja.wikipedia.org/w/index.php?oldid=107746920; 富山地方鉄道富山港線 https://ja.wikipedia.org/w/index.php?oldid=111320508 분류 日本の路面電車路線; 旭川電気軌道東旭川線 https://ja.wikipedia.org/w/index.php?oldid=108863898; 花巻電鉄 https://ja.wikipedia.org/w/index.php?oldid=109665479; 琴平参宮電鉄 https://ja.wikipedia.org/w/index.php?oldid=108925565; 新潟交通電車線 https://ja.wikipedia.org/w/index.php?oldid=111527081",
+   "fix": "사용자 판단: 「併用軌道가 있는 궤도선=tram」 같은 기준을 정해 TRAMLN에 반영. 최소한 富山港線(宇都宮과 같은 LRT)과 嵐電은 tram 권장"
+  },
+  {
+   "id": "LN-T03",
+   "severity": "warn",
+   "area": "type",
+   "entity": "l_aki_line, l_shibetsu_tramway_line",
+   "what": "tram인데 노면전차가 아닌 2노선. 土佐電気鉄道安芸線(後免–安芸)은 지방철도법 철도선으로 시내 직통만 했고, 士別軌道는 비전철 궤도(가솔린·증기)",
+   "evidence": "土佐電気鉄道安芸線 https://ja.wikipedia.org/w/index.php?oldid=111330992 (路面電車 분류 없음); 士別軌道 https://ja.wikipedia.org/w/index.php?oldid=110659295 (분류 かつて存在した日本の軌道事業者만)",
+   "fix": "type=rail"
+  },
+  {
+   "id": "LN-N01",
+   "severity": "error",
+   "area": "names",
+   "entity": "l_chuohonsemmusashinokyogijo_line (武蔵野競技場線, 국철 1951–1959)",
+   "what": "ko 「츄오혼센무사시노쿄기조선」, en 「Chuohonsemmusashinokyogijo Line」, kana 「ちゅうおうほんせんむさしのきょうぎじょうせん」. N05 읽기에 「中央本線」이 붙은 채 규칙 변환되어 표시 이름(武蔵野競技場線)에 없는 글자가 들어가고 띄어쓰기 없이 뭉쳐짐. ID도 같은 꼴",
+   "evidence": "names.sqlite line ja=武蔵野競技場線 kana source=n05; ko·en source=rule",
+   "fix": "kana むさしのきょうぎじょうせん, ko 「무사시노 경기장선」(競技場은 일반 한자어 → 한국 한자음, §9.3), en 「Musashino Kyogijo Line」. ID 동결 전이면 l_musashino_kyogijo_line으로"
+  },
+  {
+   "id": "LN-N02",
+   "severity": "error",
+   "area": "names",
+   "entity": "l_odawarashinai_line (箱根登山鉄道小田原市内線, 1888–1956)",
+   "what": "사업자가 1888~1956 내내 o_odakyu_hakone(小田急箱根, 2024-04-01 사명)이라 ko가 「오다큐 하코네 오다와라 시내선」. 폐지 당시 사업자는 箱根登山鉄道. 사업자 이름이 기간 없이 지금 이름 하나라 생긴 시대착오",
+   "evidence": "edge_attr l_odawarashinai_line operator o_odakyu_hakone 1888-10-01~1956-06-01; 위키 箱根登山鉄道小田原市内線 https://ja.wikipedia.org/w/index.php?oldid=110985582",
+   "fix": "ko 「하코네 등산철도 오다와라 시내선」. 사업자 이름에 기간(箱根登山鉄道 ~2024-03-31)을 두거나, 폐선의 표시 사업자를 OPHIST로 따로 둠. type도 tram(LN-T01)"
+  },
+  {
+   "id": "LN-N03",
+   "severity": "warn",
+   "area": "names",
+   "entity": "en 약 35노선 (예: l_gifushinai_line, l_kasaderaencho_line, l_josotsukubatetsudokinugawa_line, l_toyamachitetsuimizu_line, l_nihonkogyosaganoseki_railway, l_kawasakishiden, l_himejishiei_monorail, l_higashiyamakoen, l_fukushimarinkai_railway_line, 大阪市電 8노선)",
+   "what": "영어 이름이 읽기를 통째로 이어 붙임: 市内(Gifushinai·Okazakishinai·Omutashinai·Odawarashinai·Shimizushinai·Shizuokashinai·Akitashinai), 延長(Kasaderaencho·Shimizuguchiencho·Takaokaencho), 회사명 혼입(Josotsukubatetsudokinugawa=常総筑波鉄道+鬼怒川, Toyamachitetsuimizu=富山地鉄+射水, Nihonkogyosaganoseki), 交通·鉱業·拓殖·臨海·炭礦(Miyazakikotsu, Chikuhokogyo, Matsuokogyo, Nemurotakushoku, Fukushimarinkai, Haborotanko), 市電·市営(Kawasakishiden, Himejishiei), 「Monorail」 누락(Higashiyamakoen), 大阪市電 복합 지명 8개(Higashinodakasugaecho 등). A2-10의 線→sen 4건과는 별개",
+   "evidence": "names.sqlite line en source=rule. 예: 常総筑波鉄道鬼怒川線 kana じょうそうつくばてつどうきぬがわせん → Josotsukubatetsudokinugawa Line",
+   "fix": "§9.1 규칙대로 일반명사를 번역: 市内線 City Line, 延長線 Extension Line, 鉄道 Railway, 交通 Kotsu(띄움), 市電 Tram; 회사명 부분은 떼거나 띄움 (Kinugawa Line, Imizu Line, Kawasaki City Tram, Himeji Monorail, Higashiyama Park Monorail, Fukushima Rinkai Railway Main Line)"
+  },
+  {
+   "id": "LN-N04",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_namboku_line_sapporo_city, l_tozai_line_sapporo_city, l_toho_line",
+   "what": "札幌市営地下鉄 3노선 ko가 「삿포로시 지하철 …」(source=rule). 일본어 이름이 「市営」이고, 다른 시영 지하철(고베·교토·나고야·요코하마)은 「〇〇 시영 지하철」. 仙台·福岡(일본어도 市地下鉄)은 나무위키 제목이라 그대로 둬도 됨",
+   "evidence": "names.sqlite ko source=rule; namuwiki 가져오기(names_lines.json)도 rule로 만든 값",
+   "fix": "나무위키 제목 확인 후, 없으면 「삿포로 시영 지하철 난보쿠선/토자이선/토호선」"
+  },
+  {
+   "id": "LN-N05",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_sanyo_main_line_sanyo, l_kobe_kosoku_line_sanyo, l_aboshi_line",
+   "what": "같은 사업자(山陽電気鉄道)인데 ko 앞머리가 다름: 本線 「산요 전철 본선」(rule), 神戸高速線 「산요 전철 고베 고속선」, 網干線 「산요 전기철도 아보시선」(namuwiki). 나무위키 가져오기에는 本線도 「산요 전기철도 본선」이 있지만 키가 「山陽電鉄本線」이라 짝을 못 찾음",
+   "evidence": "data/imports/namuwiki/names_lines.json: 山陽電鉄本線 → 산요 전기철도 본선 (namuwiki)",
+   "fix": "本線 「산요 전기철도 본선」, 神戸高速線 「산요 전기철도 고베 고속선」 (또는 operators_ko 짧은 이름을 한쪽으로 통일)"
+  },
+  {
+   "id": "LN-N06",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_saito_line, l_asa_line",
+   "what": "ko가 일본어 표시 이름과도 나무위키 제목과도 다름. 大阪モノレール彩都線 ko 「오사카 모노레일 국제문화공원도시선」(hand, 공식명 직역) — 나무위키 「오사카 모노레일 사이토선」. 土佐くろしお鉄道ごめん・なはり線 ko 「토사쿠로시오 철도 아사선」(hand, 공식명 阿佐線) — 표시는 ごめん・なはり線",
+   "evidence": "names_lines.json: 大阪モノレール彩都線 → 오사카 모노레일 사이토선 (namuwiki); 土佐くろしお鉄道ごめん・なはり線 → 토사쿠로시오 철도 고멘·나하리선 (hand). 위키 大阪モノレール彩都線 https://ja.wikipedia.org/w/index.php?oldid=110412974",
+   "fix": "「오사카 모노레일 사이토선」, 「토사쿠로시오 철도 고멘·나하리선」 (공식명은 ko 별칭으로)"
+  },
+  {
+   "id": "LN-N07",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_yamate_line",
+   "what": "神戸市営地下鉄山手線 ko 「고베 시영 지하철 세이신·야마테선」. 나무위키 통합 문서 제목을 한 노선에 씀. 같은 회사 西神線은 「…세이신선」이라 山手線 화면에 다른 노선 이름이 섞임 (内子線 「요산선·우치코선」과 같은 꼴, 그쪽은 A2-08)",
+   "evidence": "names.sqlite ko source=namuwiki; 위키 神戸市営地下鉄西神・山手線 https://ja.wikipedia.org/w/index.php?oldid=111504974 (세 노선을 한 문서가 다룸)",
+   "fix": "「고베 시영 지하철 야마테선」"
+  },
+  {
+   "id": "LN-N08",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_meijo_line, l_meijo_meiko_line",
+   "what": "名古屋市営地下鉄 名城線 ko 「메이죠선」(namuwiki)과 名城線・名港線 ko 「메이조선·메이코선」(hand)이 한 회사 안에서 죠/조가 다름",
+   "evidence": "names.sqlite ko source namuwiki / hand",
+   "fix": "「나고야 시영 지하철 메이죠선·메이코선」으로 맞춤"
+  },
+  {
+   "id": "LN-N09",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_kunitachi_branch_line, l_omiya_branch_line, l_nishiurawa_branch_line, l_mabashi_branch_line, l_kita_kogane_branch_line",
+   "what": "武蔵野線 지선 5노선의 ko·en에 부모 노선이 없음 (ko 「키타코가네 지선」, en 「Kita-Kogane Branch Line」). 일본어 표시는 「武蔵野線北小金支線」이고, 같은 꼴의 夕張線登川支線은 ko 「유바리선 노보리카와 지선」",
+   "evidence": "names.sqlite line ko/en",
+   "fix": "ko 「무사시노선 키타코가네 지선」 등, en 「Musashino Line Kita-Kogane Branch」 등"
+  },
+  {
+   "id": "LN-N10",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_hirose_line, l_tachikue_line, l_hanamakionsen_line",
+   "what": "ko 앞머리가 마지막 기간의 사업자가 아님. 一畑電気鉄道 広瀬線(~1960)·立久恵線(~1965) ko 「이치바타 전차 …」(一畑電車는 2006년 회사, 사업자 표는 一畑電気鉄道); 花巻電鉄花巻温泉線 ko 「하나마키 전철 …」인데 마지막 사업자는 岩手中央バス(1971~1972). 같은 경우인 西大寺鉄道線 「료비 버스 …」, 仙北鉄道登米線 「미야기 버스 …」, 秋保電気鉄道 「센난 교통 …」은 규칙대로라 서로 어긋남",
+   "evidence": "edge_attr 마지막 operator: o_ichibata_electric_railway(이치바타 전기철도), 岩手中央バス 1971~",
+   "fix": "一畑 2노선 「이치바타 전기철도 히로세선/타치쿠에선」, 花巻温泉線 「이와테 중앙버스 하나마키 온천선」 (또는 규칙을 「폐선은 위키 제목의 회사」로 바꿔 西大寺·仙北·秋保를 맞춤)"
+  },
+  {
+   "id": "LN-N11",
+   "severity": "warn",
+   "area": "names",
+   "entity": "l_kamioka_railway_line, l_hanzomon_line_through_service",
+   "what": "공식명 별칭 문제. 三井金属鉱業 神岡軌道: alias official이 표시와 같은 「神岡軌道」(공식 노선명은 神岡鉄道線). 半蔵門線直通(東武, 押上–曳舟): 표시가 위키 제목도 공식명도 아니고 official 별칭이 없음 (공식은 伊勢崎線의 일부)",
+   "evidence": "docs/research/ja-display-2026-11-07.json: l_kamioka_railway_line official 「神岡鉄道線」, l_hanzomon_line_through_service display 제안 「東武伊勢崎線 押上–曳舟」",
+   "fix": "神岡軌道 official 별칭을 「神岡鉄道線」으로. 半蔵門線直通은 official 「伊勢崎線」 별칭 추가, 표시는 사용자 결정(제안값 東武伊勢崎線 押上–曳舟)"
+  },
+  {
+   "id": "LN-N12",
+   "severity": "info",
+   "area": "names",
+   "entity": "l_shinkin_line 외",
+   "what": "화물선 표기 불일치: 新金貨物線 ko 「신킨선」/en 「Shinkin Line」, 다른 화물선은 「타바타 화물선 / Tabata Freight Line」. ko 끝 「선」 차이 20건(나무위키 「…철도」 제목, 신칸센)과 ja에 線이 없는데 ko에 「선」 11건(北丹鉄道 「호쿠탄 철도선」 등)은 규칙 범위 안이라 정보",
+   "evidence": "names.sqlite",
+   "fix": "「신킨 화물선 / Shinkin Freight Line」"
+  },
+  {
+   "id": "LN-S01",
+   "severity": "error",
+   "area": "structure",
+   "entity": "l_tateyama_cable_car",
+   "what": "立山黒部貫光의 떨어진 두 강삭선을 한 노선으로 둠: 본선 계통이 黒部ケーブルカー(黒部湖–黒部平 0.8km), 지선 계통이 立山ケーブルカー(立山–美女平 1.3km). 표시 이름은 立山ケーブルカー, 노선 km 2.1 (위키 1.3). 토폴로지 감사 정보 항목(「확인 필요」)을 확인함",
+   "evidence": "노리츠부시: 「立山黒部貫光 鋼索線 (黒部ケーブルカー) 黒部湖～黒部平 0.8」과 「鋼索線 (立山ケーブルカー) 立山～美女平 1.3」이 별개 노선. 위키 立山ケーブルカー 路線距離 1.3 km",
+   "fix": "黒部ケーブルカー를 새 line(l_kurobe_cable_car, ja 立山黒部貫光黒部ケーブルカー, official 鋼索線, ko 「타테야마 쿠로베 관광 쿠로베 케이블카」)으로 분리. 立山ケーブルカー 계통을 main으로"
+  },
+  {
+   "id": "LN-S02",
+   "severity": "error",
+   "area": "time",
+   "entity": "l_yotsubashi_line / e_009443 (大国町–花園町)",
+   "what": "四つ橋線 첫 구간의 개업일이 1917-05-10 (edge_life·edge_attr·events_fix). 昭和17년을 1917로 바꾼 오류. 노선 개업일이 1917로 보이고, 같은 계통 大国町 정차도 1938-04-21부터",
+   "evidence": "위키 Osaka Metro四つ橋線 https://ja.wikipedia.org/w/index.php?oldid=111580814 「開業 1942年（昭和17年）5月10日」. data/overrides/events_fix.json의 match date 「1917-05-10」. docs/research/operator-history-2026-11-07.md에 적혔으나 사업자만 고치고 날짜는 남음(TODO에 없음)",
+   "fix": "원본 이벤트 날짜를 1942-05-10으로, events_fix match도 같이. 四つ橋線 계통의 大国町 정차 시작 1942-05-10"
+  },
+  {
+   "id": "LN-S03",
+   "severity": "warn",
+   "area": "time",
+   "entity": "l_negishi_line (横浜–桜木町), l_mugi_line (徳島–中田), l_fukutoshin_line (和光市–池袋)",
+   "what": "노선이 생기기 전·바뀌기 전 기간이 지금 노선에 귀속됨 (기록 범위 1950년 이후 부분). 横浜–桜木町은 1964년 根岸線이 되기 전 東海道本線인데 1872년부터 根岸線; 徳島–中田 9.2km는 1961-04-01 牟岐線 편입 전 小松島線인데 1913년부터 牟岐線(그래서 1961년 전 小松島線은 中田–小松島 1.9km만 남음); 和光市–小竹向原(1983/1987)·小竹向原–池袋(1994)는 2008년까지 有楽町線(新線)인데 개업부터 副都心線. 그 시절 탑승을 당시 노선으로 고를 수 없음 (§4.1 「이름은 탑승일 기준」)",
+   "evidence": "edge_attr e_000785 l_negishi_line 1872-06-12~ (위키 根岸線 https://ja.wikipedia.org/w/index.php?oldid=111389338 「開業 1872年6月12日（東海道本線の一部として）、1964年5月19日（桜木町 - 磯子間）」); e_004330~e_004334 l_mugi_line 1913-04-20~ (위키 小松島線 https://ja.wikipedia.org/w/index.php?oldid=107273631 「1961年4月1日 : 小松島線の中田 - 小松島と徳島 - 中田間が分離され、後者が牟岐線に編入」); l_fukutoshin_line 1983-06-24~ (위키 東京メトロ副都心線 https://ja.wikipedia.org/w/index.php?oldid=111385037 開業 2008年6月14日)",
+   "fix": "구간별 transfer로 나눔: 東海道本線→根岸線 1964-05-19, 小松島線→牟岐線 1961-04-01(小松島線 계통을 徳島–小松島로), 有楽町線→副都心線 2008-06-14. 같은 꼴(JR 노선 분리·편입)을 1950년 이후 전체에서 한 번 검색"
+  },
+  {
+   "id": "LN-S04",
+   "severity": "info",
+   "area": "structure",
+   "entity": "r_ikawa_line, r_shinetsu_main_line_echigo_ishiyama_niigata_shinetsu_main, r_namboku_line_kita_osaka_kyuko_kaijo",
+   "what": "route_edge 순서가 한 줄 경로가 아님(옛 선로 edge가 뒤에 붙거나 순서가 섞임). route_stop은 맞음. 井川線은 1990년 이전 옛 선로(大加島·川根唐沢·犬間)를 새 선로와 같은 계통에 km 순으로 끼워 넣어 옛 接岨峡温泉 km(15.6)이 새 km(15.5)로 보임. 常磐線·吾妻線·仙石線·石巻線은 TODO 구선로 2단계라 제외",
+   "evidence": "chk_struct.py: broken_chain 6, km_vs_edges 5 (井川線 25.5 vs edge 합 31.3)",
+   "fix": "井川線 옛 선로를 별도 계통(r_ikawa_line_old)으로 두거나 TODO 구선로 2단계 목록에 추가"
+  },
+  {
+   "id": "LN-S05",
+   "severity": "info",
+   "area": "structure",
+   "entity": "l_sambashi_line, l_sapporo_streetcar, l_meijo_line",
+   "what": "공식 노선 단위와 다른 묶음(노리츠부시와 같음): とさでん 桟橋線에 高知駅前–はりまや橋 0.8km 포함(위키 桟橋線은 はりまや橋 기점 2.4km), 札幌市電 4개 공식선을 한 노선, 名城線은 4号線만(17.5km, 위키 26.4km는 2号線 대曽根–金山 포함)",
+   "evidence": "위키 とさでん交通桟橋線 https://ja.wikipedia.org/w/index.php?oldid=108470759 起点 はりまや橋 総延長 2.4 km; 노리츠부시 「桟橋線 高知駅前～桟橋通五丁目 3.2」",
+   "fix": "현행 유지 가능(노리츠부시·鉄道要覧 기준). DESIGN §2.7 예외 목록에 적어 둠"
+  },
+  {
+   "id": "LN-S06",
+   "severity": "info",
+   "area": "km",
+   "entity": "현행 노선 560개 (일본어 위키 노선 문서가 있는 것)",
+   "what": "営業キロ·路線距離·総延長 대조: 438 일치, 36 차이는 立山(LN-S01)을 빼면 모두 설명됨(여러 구간 합, 같은 회사 겹침 구간 귀속, 화물 지선 제외, 日田彦山線 BRT 구간, 名城線 4号線). 역별 km는 노리츠부시 현행 표 626행과 대조해 실제 차이 0(20행은 이전 역·환상선 짝짓기 산물, 위키 역 일람으로 확인: 苗穂 288.2, 箱崎 75.0, 土佐新荘 170.6, 船尾 3.4, 上伊万里 24.1, 亀戸水神 0.7, 竹鼻 8.6 모두 DB와 같음). 작은 것: 伊予鉄道城南線 南堀端 3.2(위키 3.1), 宇都宮ライトレール 14.5(위키 14.6, 노리츠부시 14.5)",
+   "evidence": "lines/work/kmcmp2.json, norikm.json",
+   "fix": "없음 (城南線 南堀端만 원문 확인)"
+  },
+  {
+   "id": "LN-S07",
+   "severity": "info",
+   "area": "km",
+   "entity": "edge_km_era",
+   "what": "221 edge, 35노선 모두 국철·JR → 3섹 이관 구간의 국철 계통(樽見線·宮津線·中村線 등). 이관 아닌 노선에 붙은 행 없음",
+   "evidence": "master.sqlite edge_km_era",
+   "fix": "없음"
+  },
+  {
+   "id": "LN-L01",
+   "severity": "info",
+   "area": "links",
+   "entity": "route_link",
+   "what": "branch 473·continue 1,590·transfer 5,373행. 분기·이어짐의 상대 노드가 상대 노선 계통에 없는 행 0(ゆとりーと 버스 1행은 설계), 자기 자신 연결 0. bus_section은 l_yutorito_line_bus만. continue인데 기간 일부에서 자기 계통 끝이 아닌 행 29(根室本線 富良野·新得, 東北本線 盛岡, 日高本線 鵡川 등)는 TODO TOP-02~04(기간별 분할)에 해당해 따로 올리지 않음. 北大阪急行 会場線 continue는 계통이 1970-09-14에 끝났는데 valid_to=ongoing",
+   "evidence": "lines/work/links.py 결과",
+   "fix": "会場線 행 valid_to를 1970-09-14로 (TOP 작업 때 함께)"
+  }
+ ],
+ "operators": [
+  {
+   "id": "OP4-001",
+   "severity": "high",
+   "area": "history",
+   "entity": "o_tokyu_railways (東急 10노선 중 9: 池上·目黒·多摩川·砧·世田谷·東横·大井町·田園都市·こどもの国)",
+   "what": "東急電鉄(2019년 분사 법인)이 1922년부터 내내 사업자. 2019-09-30까지는 東京急行電鉄",
+   "evidence": "ja wiki 東急電鉄 rev 111426988: 「東京急行電鉄株式会社が『東急株式会社』に商号を変更…同年10月1日に同社の鉄軌道事業を会社分割方式で分社化」. N05-24: 東横線·池上線 등 東京急行電鉄 ~2018, 東急電鉄 2019~. DB edge_attr o_tokyu_railways 106행, 최소 valid_from 1922-10-06",
+   "fix": "새 사업자 東京急行電鉄(major_private) 추가, 2019-10-01 이전 개업 open의 operator를 東京急行電鉄로, 2019-10-01 transfer → o_tokyu_railways. 砧線(1969 폐지)은 전 기간 東京急行電鉄. 新横浜線(2023)은 그대로"
+  },
+  {
+   "id": "OP4-002",
+   "severity": "high",
+   "area": "history",
+   "entity": "o_fujikyu_railway (大月線·河口湖線)",
+   "what": "富士急行 시대(1960-05-30~2022-03-31)가 없음. 1929~지금 내내 富士山麓電気鉄道 하나",
+   "evidence": "ja wiki 富士急行 rev 111516183: 「1926年9月18日に富士山麓電気鉄道株式会社として設立され、1960年5月30日に現在の富士急行株式会社へ社名変更」「鉄道事業については2022年4月より富士山麓電気鉄道（2代目法人）に分社化」. N05-24 大月線·河口湖線: 富士山麓電気鉄道 ~1959, 富士急行 1960~2021, 富士山麓電気鉄道 2022~",
+   "fix": "富士急行(general_private) 추가. 1960-05-30 transfer 富士山麓→富士急行, 2022-04-01 transfer 富士急行→富士山麓電気鉄道(2대). 1대·2대를 같은 ID로 둘지 결정"
+  },
+  {
+   "id": "OP4-003",
+   "severity": "high",
+   "area": "history",
+   "entity": "o_odakyu_hakone (小田急箱根鉄道線·鋼索線, 箱根登山鉄道小田原市内線)",
+   "what": "小田急箱根(2024-04-01 상호)가 1888/1919/1921부터 사업자. 1956년에 끝난 小田原市内線까지 小田急箱根로 표시. 2024-03-31까지는 箱根登山鉄道",
+   "evidence": "ja wiki 小田急箱根 rev 110506809: 「2024年4月1日付で小田急箱根ホールディングス他2社と合併し、『箱根登山鉄道株式会社』より現商号に変更」. N05-24 鉄道線·鋼索線: 箱根登山鉄道 ~2023, 小田急箱根 2024~. DB 25행 최소 1888-10-01",
+   "fix": "箱根登山鉄道(general_private) 추가. 鉄道線·鋼索線은 2024-04-01 transfer, 小田原市内線은 전 기간 箱根登山鉄道 (2004 같은 이름 분사는 생략)"
+  },
+  {
+   "id": "OP4-004",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_gakunan_electric_train (岳南鉄道線)",
+   "what": "岳南電車가 1949년부터 사업자. 2013-03-31까지는 岳南鉄道",
+   "evidence": "ja wiki 岳南電車岳南鉄道線 rev 111490170: 「2013年（平成25年）4月1日 : 路線の運営を岳南鉄道から岳南電車に移管」. N05-24: 岳南鉄道 ~2012, 岳南電車 2013~",
+   "fix": "岳南鉄道(general_private) 추가, 2013-04-01 transfer"
+  },
+  {
+   "id": "OP4-005",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_mizushima_rinkai_railway (水島本線)",
+   "what": "水島臨海鉄道가 1948년부터 사업자. 실제로는 水島工業都市開発 1948~1952-03-31, 倉敷市交通局 1952-04-01~1970-03-31",
+   "evidence": "ja wiki 水島臨海鉄道水島本線 rev 111477880: 「1952年4月1日：倉敷市に譲渡。倉敷市交通局運営の市営鉄道となる」「1970年4月1日：水島臨海鉄道に移管」. 水島臨海鉄道 rev 110599269 「設立 1970年2月2日」. N05-24 水島本線: 水島工業都市開発 1950~51, 倉敷市 1952~69, 水島臨海鉄道 1970~",
+   "fix": "水島工業都市開発(general_private)·倉敷市交通局(public) 추가, 1952-04-01·1970-04-01 transfer"
+  },
+  {
+   "id": "OP4-006",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_kurobe_gorge_railway (黒部峡谷鉄道本線)",
+   "what": "黒部峡谷鉄道(1971 설립)가 1953-11-16 여객 개시부터 사업자. 1971-06-30까지는 関西電力",
+   "evidence": "ja wiki 黒部峡谷鉄道 rev 111588021: 「1971年5月4日に関西電力の完全子会社として、黒部峡谷鉄道が設立され、同年7月1日に関西電力からこの鉄道の地方鉄道事業を譲り受けて発足」",
+   "fix": "1953-11-16~1971-07-01을 関西電力로. 지금 o_kansai_electric_power_company는 category cable(관전 터널 트롤리버스)이라, 그대로 쓸지 별도 ID를 둘지 결정. 1971-07-01 transfer"
+  },
+  {
+   "id": "OP4-007",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_kobe_future_city (摩耶ケーブル線)",
+   "what": "こうべ未来都市機構(2023 인수)가 1925년부터 사업자. 사이의 회사 5개가 없음",
+   "evidence": "ja wiki こうべ未来都市機構摩耶ケーブル線 rev 109834079: 1955-05-07 운행 재개(摩耶鋼索鉄道), 「1975年10月29日 - 六甲越有馬鉄道と合併し六甲摩耶鉄道の路線となる」, 2000-04-25 神戸市都市整備公社, 2013-01-01 神戸すまいまちづくり公社로 개칭, 2022-05-01 神戸住環境整備公社로 개칭, 2023-04-01 こうべ未来都市機構로 이관. N05-24 摩耶ケーブル線도 같은 순서",
+   "fix": "摩耶鋼索鉄道 → 六甲摩耶鉄道(1975-10-29) → 神戸市都市整備公社(2000-04-25) → 神戸すまいまちづくり公社(2013-01-01) → 神戸住環境整備公社(2022-05-01) → こうべ未来都市機構(2023-04-01). 1995~2001 휴지는 EXT-008 몫"
+  },
+  {
+   "id": "OP4-008",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_mt_rokko_cable_car_and_tourism_company (六甲ケーブル線)",
+   "what": "神戸六甲鉄道(2024 상호)가 1932년부터 사업자",
+   "evidence": "ja wiki 神戸六甲鉄道六甲ケーブル線 rev 111408407: 六甲越有馬鉄道 개업, 1975-10-29 六甲摩耶鉄道, 2013-10-01 「六甲摩耶鉄道と…阪神総合レジャーとの合併により六甲山観光の路線となる」, 2024-04-01 「六甲山観光が神戸六甲鉄道に社名変更」. N05-24 같은 순서",
+   "fix": "六甲越有馬鉄道 → 六甲摩耶鉄道(1975-10-29) → 六甲山観光(2013-10-01) → 神戸六甲鉄道(2024-04-01). en 이름 「Mt. Rokko Cable Car & Tourism Company」는 六甲山観光 시절 영문명이라 함께 고침"
+  },
+  {
+   "id": "OP4-009",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_jukkoku_pass (十国鋼索線)",
+   "what": "十国峠(2021-12-01 분할 신설)가 1956년 개업부터 사업자",
+   "evidence": "ja wiki 十国峠十国鋼索線 rev 111175436: 「1956年10月16日：駿豆鉄道株式会社により十国鋼索線が開業」「1957年6月1日：駿豆鉄道が伊豆箱根鉄道株式会社に社名変更」「2021年12月1日：伊豆箱根鉄道より…会社分割し、十国峠株式会社を新設」",
+   "fix": "駿豆鉄道 1956-10-16 → 伊豆箱根鉄道 1957-06-01 → 十国峠 2021-12-01"
+  },
+  {
+   "id": "OP4-010",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_chikuho_electric_railroad (筑豊電気鉄道 黒崎駅前–西黒崎–熊西, e_010883·e_010884)",
+   "what": "1951년 설립 회사가 1914-06-25부터 이 두 칸의 사업자. 1950~2000-11-25는 西鉄 北九州線 구간",
+   "evidence": "ja wiki 筑豊電気鉄道 rev 111591469: 「1951年2月15日：設立」「1956年3月21日：貞元（現在の熊西）- 筑豊中間間が開業」「2000年11月26日：黒崎駅前 - 熊西間の第2種鉄道事業者となる」. 西鉄北九州線 rev 111195863: 「2015年3月1日 黒崎駅前 - 熊西間を筑豊電気鉄道が承継」",
+   "fix": "1950~2000-11-26은 西日本鉄道(北九州線). 北九州線 자체가 DB에 없어(옛 노면전차망 누락, EXT-001 계열) 노선을 넣을 때 함께 고침. 그 전에는 이 두 칸의 1956년 전 행이 筑豊電鉄로 보이지 않게 개업일을 확인"
+  },
+  {
+   "id": "OP4-011",
+   "severity": "medium",
+   "area": "history",
+   "entity": "l_shima_line e_007843 (近鉄志摩線 白木–五知 옛 선로, r_shima_line_shiraki_gochi)",
+   "what": "1964·1965 이관에서 빠져 1993-09-11 폐지까지 三重交通로 남음. 같은 날 노선의 다른 14칸은 三重電気鉄道→近鉄",
+   "evidence": "DB edge_attr: e_007843 o_mie_kotsu 1929-07-23~1993-09-11. 같은 노선 e_007828~e_007837은 1964-02-01 三重電気鉄道, 1965-04-01 近畿日本鉄道. 노선별 동시 사업자 검사에서 JR 경계 노선을 빼면 유일한 사철 사례 (栗原 1칸은 알려진 개업일 문제)",
+   "fix": "transfer 범위에 옛 선로 edge(route_only)를 포함: 1964-02-01 三重電気鉄道, 1965-04-01 近畿日本鉄道"
+  },
+  {
+   "id": "OP4-012",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_tateyama_kurobe_kanko (立山ケーブルカー)",
+   "what": "立山黒部貫光가 1954년부터 사업자. 2005-09-30까지는 立山開発鉄道",
+   "evidence": "ja wiki 立山黒部貫光立山ケーブルカー rev 106810241: 「2005年（平成17年）10月1日：立山黒部貫光の路線となる」「2005年に立山黒部貫光と合併するまでは立山開発鉄道が運営していた」. N05-24 鋼索線: 立山開発鉄道 → 立山黒部貫光 2005",
+   "fix": "立山開発鉄道(cable) 추가, 2005-10-01 transfer"
+  },
+  {
+   "id": "OP4-013",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_kishu_railway (紀州鉄道線)",
+   "what": "紀州鉄道가 1931년부터 사업자. 1972-12-31까지는 御坊臨港鉄道",
+   "evidence": "ja wiki 紀州鉄道線 rev 111329127: 「1973年（昭和48年）1月1日 - 御坊臨港鉄道から紀州鉄道に事業譲渡」. N05-24: 御坊臨港鉄道 → 紀州鉄道",
+   "fix": "御坊臨港鉄道 추가, 1973-01-01 transfer"
+  },
+  {
+   "id": "OP4-014",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_tokyo_monorail (東京モノレール羽田空港線)",
+   "what": "1967-11-01~1981-05-27의 日立運輸東京モノレール 시대가 없음",
+   "evidence": "ja wiki 東京モノレール rev 111669937: 「1967年11月1日 - …3社が合併（存続会社は東京モノレール株式会社）し、日立運輸東京モノレール株式会社に商号変更」, 1981-05-28 「東京モノレール株式会社に商号変更」. N05-24 같은 기간",
+   "fix": "日立運輸東京モノレール(monorail) 추가, 1967-11-01·1981-05-28 transfer"
+  },
+  {
+   "id": "OP4-015",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_alpico_kotsu (上高地線)",
+   "what": "アルピコ交通(2011 상호)가 1921년부터 사업자. 2011-03-31까지는 松本電気鉄道",
+   "evidence": "ja wiki アルピコ交通 rev 111152857: 「2011年（平成23年）4月1日 - グループの川中島バス・諏訪バスを吸収合併、アルピコ交通に社名変更」. N05-24 上高地線: 松本電気鉄道 ~2010, アルピコ交通 2011~",
+   "fix": "松本電気鉄道 추가, 2011-04-01 transfer"
+  },
+  {
+   "id": "OP4-016",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_hankyu_corporation (阪急 10노선: 宝塚本線·箕面·神戸本線·伊丹·今津·甲陽·京都本線·千里·嵐山·神戸高速線)",
+   "what": "1973-03-31까지의 京阪神急行電鉄 시대가 없음 (사명 변경)",
+   "evidence": "ja wiki 阪急電鉄 rev 111592743: 「1973年（昭和48年）、阪急電鉄に社名を変更」「4月1日 阪急電鉄株式会社に商号変更」. N05-24 阪急 10노선 모두 京阪神急行電鉄 ~1972, 阪急電鉄 1973~",
+   "fix": "京阪神急行電鉄(major_private) 추가, 1973-04-01 transfer (결정 2: 사명 변경 = transfer). 2005 같은 이름 분사는 생략"
+  },
+  {
+   "id": "OP4-017",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_keio (京王 6노선)",
+   "what": "1998-06-30까지의 京王帝都電鉄 시대가 없음",
+   "evidence": "ja wiki 京王線 rev 111519832: 「1998年（平成10年）7月1日 - 経営会社が京王電鉄に」. N05-24 京王 6노선: 京王帝都電鉄 ~1997, 京王電鉄 1998~",
+   "fix": "京王帝都電鉄(major_private) 추가, 1998-07-01 transfer"
+  },
+  {
+   "id": "OP4-018",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_izuhakone_railway (駿豆線·大雄山線·軌道線)",
+   "what": "1957-05-31까지의 駿豆鉄道 시대가 없음",
+   "evidence": "ja wiki 伊豆箱根鉄道駿豆線 rev 110893299: 「1940年11月28日：駿豆鉄道に改称」「1957年（昭和32年）6月1日：伊豆箱根鉄道に」. N05-24 駿豆線·大雄山線: 駿豆鉄道 ~1956",
+   "fix": "駿豆鉄道 추가(十国鋼索線 1956과 같은 ID), 1957-06-01 transfer"
+  },
+  {
+   "id": "OP4-019",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_enoshima_electric_railway (江ノ島電鉄線)",
+   "what": "1949-08-01~1981-08-31의 江ノ島鎌倉観光 시대가 없음",
+   "evidence": "ja wiki 江ノ島電鉄線 rev 110256385: 1949 「8月1日 江ノ島鎌倉観光に社名変更」, 1981 「9月1日 江ノ島電鉄に社名」. N05-24: 江ノ島鎌倉観光 1950~1980",
+   "fix": "江ノ島鎌倉観光 추가, 1950-01-01 시점 사업자로 두고 1981-09-01 transfer"
+  },
+  {
+   "id": "OP4-020",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_ryutetsu (流山線)",
+   "what": "流鉄(2008 상호)가 1916년부터 사업자. 사명 4번 변경이 없음",
+   "evidence": "ja wiki 流鉄流山線 rev 110958843: 1951-11-28 流山電気鉄道, 1967-06-20 流山電鉄, 1971-01-20 総武流山電鉄, 2008-08-01 流鉄. N05-24 같은 순서",
+   "fix": "流山鉄道(1950 시점) → 流山電気鉄道 → 流山電鉄 → 総武流山電鉄 → 流鉄. 옛 노선명 総武流山線은 TODO의 기간 있는 이름 문제와 같은 길"
+  },
+  {
+   "id": "OP4-021",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_kobe_electric_railway (有馬·三田·粟生·神戸高速線)",
+   "what": "1988-03-31까지의 神戸電気鉄道 시대가 없음",
+   "evidence": "ja wiki 神戸電鉄 rev 111534108: 1949-04-30 「神戸電気鉄道株式会社に社名変更」, 1988 「4月1日 - 神戸電鉄株式会社に」. N05-24: 神戸電気鉄道 ~1987",
+   "fix": "神戸電気鉄道 추가(당시 분류는 준대형으로 볼 근거 있음: 準大手私鉄 rev 111356547 「神戸電鉄は…2004年版までは準大手民鉄に分類」), 1988-04-01 transfer. 公園都市線(1991)은 그대로"
+  },
+  {
+   "id": "OP4-022",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_nose_electric_railway (妙見線·妙見の森ケーブル)",
+   "what": "1978-09-30까지의 能勢電気軌道 시대가 없음",
+   "evidence": "ja wiki 能勢電鉄 rev 111270221: 「1978年（昭和53年）10月1日 - 能勢電鉄株式会社に社名変更」. N05-24 妙見線·鋼索線: 能勢電気軌道 ~1977",
+   "fix": "能勢電気軌道 추가, 1978-10-01 transfer. 日生線(1978-12-12)은 그대로"
+  },
+  {
+   "id": "OP4-023",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_toyohashi_railroad (東田本線·柳生橋支線)",
+   "what": "1954-07-21까지의 豊橋交通 시대가 없음",
+   "evidence": "ja wiki 豊橋鉄道東田本線 rev 111495141: 「1949年9月1日：豊橋電気軌道が豊橋交通に社名変更」「1954年7月22日：豊橋交通が豊橋鉄道に社名変更」. N05-24 東田本線·柳生橋支線: 豊橋交通 1950~1953",
+   "fix": "豊橋交通 추가, 1954-07-22 transfer (渥美線 1954-10-01 이관과 별개)"
+  },
+  {
+   "id": "OP4-024",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_joshin_electric_railway_company (上信線)",
+   "what": "1964-05-10까지의 上信電気鉄道 시대가 없음",
+   "evidence": "ja wiki 上信電鉄 rev 111567409: 「1964年5月11日：上信電鉄へ社名変更」. N05-24: 上信電気鉄道 ~1963",
+   "fix": "上信電気鉄道 추가, 1964-05-11 transfer"
+  },
+  {
+   "id": "OP4-025",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_fukushima_transportation (飯坂線)",
+   "what": "1962-07-11까지의 福島電気鉄道 시대가 없음",
+   "evidence": "ja wiki 福島交通飯坂線 rev 109896933: 「1962年7月12日：福島電気鉄道が福島交通に社名変更」. N05-24 飯坂線·梁川線 등: 福島電気鉄道 ~1961",
+   "fix": "福島電気鉄道 추가, 1962-07-12 transfer"
+  },
+  {
+   "id": "OP4-026",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_kitakinki_tango_railway (宮福線)",
+   "what": "1988-07-16~1989-07-31의 宮福鉄道 시대가 없음",
+   "evidence": "ja wiki 京都丹後鉄道宮福線 rev 111379181: 「1989年8月1日：宮福鉄道が北近畿タンゴ鉄道株式会社に商号変更」. N05-24: 宮福鉄道 1988",
+   "fix": "宮福鉄道 추가, 1989-08-01 transfer (SUC-004에서 고친 2015 이관과 별개)"
+  },
+  {
+   "id": "OP4-027",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_hokuso_railway (北総線)",
+   "what": "2004-06-30까지의 北総開発鉄道 시대가 없음",
+   "evidence": "ja wiki 北総鉄道 rev 110993753: 「7月1日：商号を北総鉄道株式会社に変更、同時に北総・公団線を『北総線』と改称」(2004)",
+   "fix": "北総開発鉄道 추가, 2004-07-01 transfer"
+  },
+  {
+   "id": "OP4-028",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_yurikamome (東京臨海新交通臨海線)",
+   "what": "1995-11-01~1998-03-31의 東京臨海新交通 시대가 없음",
+   "evidence": "ja wiki ゆりかもめ (企業) rev 111669361: 1998 「4月1日 - 商号を株式会社ゆりかもめに変更」. N05-24: 東京臨海新交通 1995~1997",
+   "fix": "東京臨海新交通(agt) 추가, 1998-04-01 transfer"
+  },
+  {
+   "id": "OP4-029",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_yokohama_seaside_line (金沢シーサイドライン)",
+   "what": "2013-09-30까지의 横浜新都市交通 시대가 없음",
+   "evidence": "ja wiki 横浜シーサイドライン rev 111052668: 「平成25年10月1日横浜新都市交通株式会社は株式会社横浜シーサイドラインに」. N05-24: 横浜新都市交通 → 2013",
+   "fix": "横浜新都市交通(agt) 추가, 2013-10-01 transfer"
+  },
+  {
+   "id": "OP4-030",
+   "severity": "medium",
+   "area": "history",
+   "entity": "o_osaka_monorail (大阪モノレール本線·彩都線)",
+   "what": "2020-05-31까지의 大阪高速鉄道 시대가 없음",
+   "evidence": "ja wiki 大阪モノレール本線 rev 111054270: 「2020年（令和2年）6月1日：運営会社が大阪高速鉄道株式会社から大阪モノレール株式会社に社名変更」. N05-24 같음",
+   "fix": "大阪高速鉄道(monorail) 추가, 2020-06-01 transfer"
+  },
+  {
+   "id": "OP4-031",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_yamaga_onsen_railway (山鹿温泉鉄道線)",
+   "what": "1952-06-03까지의 鹿本鉄道 시대가 없음",
+   "evidence": "ja wiki 山鹿温泉鉄道 rev 108138489: 「1952年（昭和27年）6月4日：社名を山鹿温泉鉄道に改称」. N05-24: 鹿本鉄道 → 山鹿温泉鉄道 1952",
+   "fix": "鹿本鉄道 추가, 1952-06-04 transfer"
+  },
+  {
+   "id": "OP4-032",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_tsukuba_kanko_railway (筑波山鋼索鉄道線)",
+   "what": "1999-09-30까지의 筑波山鋼索鉄道 시대가 없음",
+   "evidence": "ja wiki 筑波観光鉄道筑波山鋼索鉄道線 rev 110897602: 「1999年10月1日 筑波山鋼索鉄道が筑波山ロープウェーを合併し筑波観光鉄道に社名変更」",
+   "fix": "筑波山鋼索鉄道(cable) 추가, 1999-10-01 transfer"
+  },
+  {
+   "id": "OP4-033",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_takao_tozan_electric_railway (高尾山ケーブルカー)",
+   "what": "1952-05-27까지의 高尾観光 시대가 없음",
+   "evidence": "ja wiki 高尾登山電鉄 rev 111593273: 「1948年6月28日に社名を高尾観光と変更」「1952年（昭和27年）5月28日 高尾登山電鉄に社名変更」. N05-24 高尾鋼索線: 高尾観光 → 1952",
+   "fix": "高尾観光(cable) 추가, 1952-05-28 transfer"
+  },
+  {
+   "id": "OP4-034",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_mitake_tozan_railway (御岳山ケーブルカー)",
+   "what": "1961-06-30까지의 大多摩観光開発 시대가 없음 (1951-06-29 재개 때 회사)",
+   "evidence": "ja wiki 御岳登山鉄道 rev 110599275: 「1947年10月31日 - 大多摩観光開発に社名変更」「1961年7月1日 - 御岳登山鉄道に社名変更」",
+   "fix": "大多摩観光開発(cable) 추가, 1961-07-01 transfer"
+  },
+  {
+   "id": "OP4-035",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_shikoku_cable (八栗ケーブル)",
+   "what": "1964-12-28 재개 뒤 회사 이름 둘(八栗ケーブル, 八栗箸蔵ケーブル)이 없음",
+   "evidence": "ja wiki 四国ケーブル rev 111627500: 「1964年6月26日 八栗ケーブルとして設立」「1970年11月14日 八栗箸蔵ケーブルに社名変更」「1987年8月1日 四国ケーブルに社名変更」",
+   "fix": "재개 open을 八栗ケーブル로, 1970-11-14 八栗箸蔵ケーブル, 1987-08-01 四国ケーブル"
+  },
+  {
+   "id": "OP4-036",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_dream_kaihatsu (ドリームランド線 1966~1967)",
+   "what": "운행 당시 회사는 ドリーム交通. ドリーム開発는 1982년 이후 이름",
+   "evidence": "ja wiki ドリーム開発ドリームランド線 rev 109710235: 「営業当時の社名はドリーム交通、路線名はモノレール大船線である」. N05-24: ドリーム交通 1966~1981",
+   "fix": "사업자 이름을 ドリーム交通로 바꾸거나 ドリーム交通를 새로 두고 운행 기간 전체를 그쪽으로"
+  },
+  {
+   "id": "OP4-037",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_sarakura_tozan_railway (帆柱ケーブル線)",
+   "what": "2015년까지의 帆柱ケーブル 시대가 없음 (상호 변경일은 2015년 4월 무렵, 정확한 날은 원문 확인)",
+   "evidence": "ja wiki 皿倉登山鉄道帆柱ケーブル線 rev 111580630: 「帆柱ケーブル株式会社:来月から名称を変更…社名も皿倉登山鉄道へ」(毎日 2015-03-28 인용). N05-24: 帆柱ケーブル → 皿倉登山鉄道 2015",
+   "fix": "帆柱ケーブル 추가, 날짜 확인 뒤 transfer"
+  },
+  {
+   "id": "OP4-038",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_tokyu_railways / こどもの国線 1967~1987",
+   "what": "1987-03-31까지 면허 사업자는 こどもの国協会(東急은 운전 위탁). DB는 개업부터 東急",
+   "evidence": "ja wiki 東急こどもの国線 rev 110889458: 「こどもの国協会が施設を保有し、東急に運転管理を委託する形で営業されていたが、1987年4月1日、…鉄道事業法施行により、協会が第三種鉄道事業者、東急が第二種」. N05-24: こどもの国協会 1967~1986",
+   "fix": "SUC-013(神戸高速 1968~1988)과 같은 판단 문제. 같은 기준으로 정함"
+  },
+  {
+   "id": "OP4-039",
+   "severity": "low",
+   "area": "history",
+   "entity": "o_kubiki_railway (頸城鉄道線)",
+   "what": "1944~1971 회사 이름은 頸城鉄道自動車. ophist2가 「행 없음」으로 남긴 항목",
+   "evidence": "docs/research/operator-history-2-2026-11-07.md 「頸城鉄道: 1944~1971 회사 이름은 頸城鉄道自動車」. ja wiki 頸城鉄道線 rev 111271002",
+   "fix": "사업자 ja 이름을 頸城鉄道自動車로 고치거나(이 노선 전 기간 해당) 두 이름을 기간으로 나눔"
+  },
+  {
+   "id": "OP4-040",
+   "severity": "low",
+   "area": "category",
+   "entity": "o_hokushin_kyuko_electric_railway",
+   "what": "category semi_major_private. 준대형 목록에 없음",
+   "evidence": "ja wiki 準大手私鉄 rev 111356547: 현재 3社(北大阪急行·山陽·神戸高速)와 과거(相模鉄道, 神戸電鉄 등)에 北神急行이 없음. 노리츠부시 코드는 이미 없어진 회사라 대조 불가. 분류는 station_database 회사 코드에서 옴(gen_source.category)",
+   "fix": "general_private로 바꾸거나 출처를 적음"
+  },
+  {
+   "id": "OP4-041",
+   "severity": "low",
+   "area": "category",
+   "entity": "o_aichi_rapid_transit (愛知高速交通 東部丘陵線)",
+   "what": "category general_private. 노리츠부시 코드는 54010(54 계열 = 8분류 밖, 자기부상)",
+   "evidence": "data/imports/noritsubushi/lines.json: 愛知高速交通 c=54010. 다른 현행 사업자 전부는 노리츠부시 코드와 분류가 일치(대조 전수)",
+   "fix": "8분류에 자기부상이 없으므로 agt로 둘지 general_private를 유지할지 결정해 적음"
+  },
+  {
+   "id": "OP4-042",
+   "severity": "medium",
+   "area": "name",
+   "entity": "o_keifuku_electric_railroad / o_keifuku_electric_railroad_fukui",
+   "what": "같은 회사(京福電気鉄道)가 두 ID. ja·ko·en 이름이 셋 다 같아 사업자별 통계·목록에서 같은 이름이 두 줄로 나옴",
+   "evidence": "names.sqlite: 京福電気鉄道 / 케이후쿠 전기철도 / Keifuku Electric Railroad 가 두 ID에 똑같이 있음. 福井 쪽은 2003-02-01에 끝남",
+   "fix": "하나로 합치거나, 둘로 둘 이유가 있으면 표시 이름을 구별(예: 「京福電気鉄道（福井）」 「케이후쿠 전기철도(후쿠이)」)"
+  },
+  {
+   "id": "OP4-043",
+   "severity": "low",
+   "area": "name",
+   "entity": "o_ichibata_denki_tetsudo / o_ichibata_electric_railway",
+   "what": "다른 회사(一畑電気鉄道, 一畑電車)인데 en 이름이 둘 다 Ichibata Electric Railway",
+   "evidence": "names.sqlite operator en 중복 검사. ophist2 보고에도 적혀 있음",
+   "fix": "一畑電気鉄道 en을 Ichibata Denki Tetsudo 등으로 구별"
+  },
+  {
+   "id": "OP4-044",
+   "severity": "low",
+   "area": "name",
+   "entity": "o_kashima_sangu_railway",
+   "what": "ko 「카시마 산구 철도」: 参宮을 일본어 음으로 적음. operators_ko.json은 「카시마 참궁철도」",
+   "evidence": "data/overrides/source_patch/names/private_operator_history.yaml 42행이 operators_ko.json 값을 덮음. 규칙(§9.3, 2026-11-07 결정): 일반 한자어는 한국 한자음 (같은 DB의 琴平参宮電鉄은 「코토히라 참궁전철」)",
+   "fix": "source_patch 행을 「카시마 참궁철도」로 맞춤"
+  },
+  {
+   "id": "OP4-045",
+   "severity": "low",
+   "area": "name",
+   "entity": "o_teito_rapid_transit_authority",
+   "what": "ko 「제도 고속도 교통영단」이 operators_ko.json 「제도고속도교통영단」(나무위키 표기)과 다름",
+   "evidence": "operators_ko.json vs names.sqlite 대조에서 차이 2건 중 하나",
+   "fix": "덮어쓰는 행을 찾아 나무위키 표기로 맞추거나 operators_ko.json을 고침"
+  },
+  {
+   "id": "OP4-046",
+   "severity": "low",
+   "area": "name",
+   "entity": "공영 교통국 7곳 ko (札幌·仙台·福岡: 「○○시 지하철」, 京都·名古屋·横浜·神戸: 「○○ 시영 지하철」)",
+   "what": "노면전차도 운영한 교통국인데 ko 사업자 이름이 「지하철」. 같은 종류가 「오사카시 교통국」「하코다테시 교통국」「가고시마시 교통국」과도 섞임. 1950~70년대 시전 기록의 사업자가 「삿포로시 지하철」 등으로 보임",
+   "evidence": "operators_ko.json 값(노선 제목 앞부분에서 뽑음). 노선 이름은 「삿포로 시영 전차 …」로 따로 맞음",
+   "fix": "사업자 이름은 「○○시 교통국」(交通局 한자음)으로 통일하고, 노선 표시 이름 접두는 지금처럼 노선 쪽 값으로"
+  },
+  {
+   "id": "OP4-047",
+   "severity": "low",
+   "area": "name",
+   "entity": "o_fujikyu_railway·o_dowa_mining ko",
+   "what": "「후지산로쿠 전기철도」(山麓 = 산록), 「토와 광업」(同和 = 동화)이 일반 한자어를 일본어 음으로 적음",
+   "evidence": "operators_ko.json. §9.3 규칙 표(일반 한자어는 한국 한자음)",
+   "fix": "나무위키 표제가 없으면 「후지 산록 전기철도」, 「동화 광업」. 富士急行을 새로 넣으면 「후지큐」(나무위키 노선 제목 앞부분) 확인"
+  },
+  {
+   "id": "OP4-048",
+   "severity": "low",
+   "area": "unused",
+   "entity": "o_chikuho_railway, o_oyubari_railway",
+   "what": "edge_attr에 한 번도 안 쓰이는 사업자 2개",
+   "evidence": "edge_attr operator_id 대조. 筑豊鉄道는 1952년 사명인데 여객이 1950-12-08에 끝남, 大夕張鉄道는 ophist2에서 三菱鉱業 등으로 바뀌며 빠짐",
+   "fix": "operators·names에서 지움 (사용자 기록이 사업자 ID를 저장하지 않으면 영향 없음)"
+  }
+ ],
+ "display": [
+  {
+   "id": "D01",
+   "severity": "error",
+   "screen": "record_session",
+   "lang": "all",
+   "what": "탑승일 기준 다른 노선으로 저장(savedAs)되는 행이 그날 운행 중단 구간이어도 '영업·선택 가능'으로 바뀜. 고르면 저장 단계에서 '탈 수 없는 구간' 경고로 거절됨",
+   "evidence": "packages/noriori_core/lib/src/network/selector.dart:132-135 (savedAs면 무조건 (open,true)). 실측: 国鉄 木原線(r_kihara_line) 2026-11-07 → 大原~上総中野 12쌍 모두 open/selectable, 저장 시 demoted(いすみ鉄道 2024-10-05~ suspended). 高森線(r_takamori_line) 2016-06-01·2020-01-15, 盛線·久慈線·三陸リアス線 2011-04-01도 같음 (display/savedas_out.txt, session_out.txt PAIR-FAIL)",
+   "fix": "_earlierLine으로 savedAs를 찾은 뒤에도 그 역 주변 edge의 edgeUsable(savedAs 노선 계통 기준)이 suspended/no면 state=suspended, selectable=false로 둔다"
+  },
+  {
+   "id": "D02",
+   "severity": "error",
+   "screen": "record_tab_browse,stats,line_header",
+   "lang": "ko",
+   "what": "한국어 사업자 이름이 지하철 브랜드라 노면전차 노선 묶음 제목이 틀림. 폐선 탭 '공영'에서 삿포로·센다이·요코하마·나고야·교토·고베 시전(市電) 폐선이 '…시 지하철/시영 지하철' 아래에 나옴. 세션 머리글 회사명·통계 회사 목록도 같음",
+   "evidence": "o_sapporo_city_transportation_bureau='삿포로시 지하철'(폐선 삿포로 시영 전차 5노선 12.7km), o_sendai_city_transportation_bureau='센다이시 지하철'(센다이 시영 전차 4노선), o_transportation_bureau_city_of_yokohama='요코하마 시영 지하철'(시영 전차 12노선), o_transportation_bureau_city_of_nagoya='나고야 시영 지하철'(시영 전차 29노선 74.8km), 교토·고베도 같음. ja/en은 交通局/Transportation Bureau라 문제없음 (display/browse_out.txt)",
+   "fix": "operators_ko.json에서 교통국 이름을 '삿포로시 교통국'처럼 사업자명으로 바꾸고, 지하철 브랜드는 노선 이름 머리에만 둔다"
+  },
+  {
+   "id": "D03",
+   "severity": "warn",
+   "screen": "record_session(transfer list)",
+   "lang": "ko,en",
+   "what": "같은 회사 환승을 한 조각으로 묶을 때 '첫 단어'를 회사명으로 보고 지워서 한국어 글이 깨짐",
+   "evidence": "session_lines.dart _entries: owner=name.split(' ').first. 실측 173건 중 예: '고베 전철 아리마선·전철 고베 고속선(미나토가와)', '이요 철도 군츄선·철도 타카하마선(마츠야마시)', '도야마 지방철도 후지코시선·지방철도 카미다키선', '가고시마 시영 전차 제2기선·시영 전차 토소선', '나고야 시영 지하철 히가시야마선·시영 지하철 메이조선·메이코선', '도카이도 본선·신칸센(나고야)' (display/session_out.txt MERGE)",
+   "fix": "그 노선 사업자의 화면 이름(book.operators)이나 두 이름의 공통 앞 단어열(단어 단위 최장 공통 접두)을 지운다. 접두가 사업자명이 아닐 때(도카이도 본선·도카이도 신칸센)는 지우지 않는다"
+  },
+  {
+   "id": "D04",
+   "severity": "warn",
+   "screen": "record_session,save_ticket",
+   "lang": "all",
+   "what": "국철 시대 km(edge_km_era)가 있는 35노선에서 한 화면의 km가 서로 다름: 역 km 열은 현행 km, 저장·티켓 거리는 국철 km, 머리글 노선 길이는 승계 켬이면 현행·끔이면 국철 km",
+   "evidence": "甘木線(JNR): 역 km 끝 13.7, 저장 거리 14.0km, 머리글 승계 켬 13.7/끔 14.0. 宮津線 83.6/84.0, 中村線 43.0/43.4, 樽見線 23.6/24.0, 信越本線(1980) 326.6/327.1, 久慈線 26.1/26.0 (display/era.dart 출력)",
+   "fix": "SelectorRow.kmCum을 노선별 era km로 다시 누적하거나(eraMeters), 머리글·티켓·역 km가 같은 기준(승계 설정 따라)을 쓰게 맞춘다"
+  },
+  {
+   "id": "D05",
+   "severity": "warn",
+   "screen": "record_tab_browse(closed)",
+   "lang": "all",
+   "what": "폐선 탭 노선 줄의 위치 띠 아래 양 끝 역 이름이 빈 채로 나옴(42노선). 폐지 구간이 본선 계통 밖(옛 계통)에 있으면 lineStrip이 startNode/endNode를 못 정함",
+   "evidence": "筑肥線 68.3km, 函館本線 17.7km, 根室本線 41.1km, 千歳線 21.9km, 室蘭本線 16.0km, 東北本線 27.4km 등 (display/browse_out.txt 'null→null')",
+   "fix": "lineStrip에서 본선이 아니어도 처음 넣은 구간의 계통으로 first/last를 정하고, 끊긴 토막이 여럿이면 첫 토막 기준으로 적는다"
+  },
+  {
+   "id": "D06",
+   "severity": "warn",
+   "screen": "search",
+   "lang": "ja",
+   "what": "일본어 이름에 읽기(kana)가 없는 39노선은 히라가나·가타카나로 찾지 못함",
+   "evidence": "'えばせん'·'エバセン'→0건(広島電鉄江波線), 'けんぐんせん'(熊本市電健軍線), 'はくしません'(広電白島線), 'あかさこしせん'(長崎電気軌道赤迫支線) 0건, 'くろいしせん'은 국철 黒石線만 나오고 弘南鉄道黒石線 없음. names.sqlite line ja kana 비어 있음 39/1036",
+   "fix": "lines_ja 표시 이름을 넣을 때 공식명 읽기를 kana로 채우고, 빈 kana를 검사에 넣는다"
+  },
+  {
+   "id": "D07",
+   "severity": "warn",
+   "screen": "search",
+   "lang": "ko",
+   "what": "한국어 표기 흔들림(쵸/초, 죠/조, 쥬/주)을 검색이 맞추지 않아 한쪽 표기로는 못 찾음. 같은 회사 노선 안에서도 표기가 다름",
+   "evidence": "'하마마츠초'→JR 浜松町(ko '하마마츠쵸', namuwiki) 못 찾음, 규칙 이름은 '초'(608행) 나무위키는 '쵸'(119행). 나고야 시영 지하철 '메이조선·메이코선' vs '메이죠선'",
+   "fix": "foldSearchText에서 쵸→초, 죠→조, 쥬→주, 챠→차, 쟈→자를 접고, 같은 판에서 같은 일본어 음절은 한 표기로 맞춘다"
+  },
+  {
+   "id": "D08",
+   "severity": "warn",
+   "screen": "search",
+   "lang": "ja,ko",
+   "what": "흔히 쓰는 통칭·구자체로 찾으면 0건",
+   "evidence": "'アストラムライン'·'아스트람' 0건(en 'Astram'은 찾음), '東京さくらトラム' 0건, '大井川鉄道' 0건(표기 大井川鐵道), '一関' 0건(一ノ関), '霞が関' 0건 (display/search_out.txt)",
+   "fix": "alias(kind=common)에 통칭을 넣고, 검색 접기에 鐵→鉄 등 구자체 몇 개와 ノ/ヶ 생략을 더한다"
+  },
+  {
+   "id": "D09",
+   "severity": "warn",
+   "screen": "all screens with line names",
+   "lang": "en",
+   "what": "영어 노선 이름에 회사가 없어 47개 이름이 둘 이상 노선에 겹침. 환승 목록·뉴스·지도 노선 시트·'Part of $line on that date'에서 구별 안 됨",
+   "evidence": "Tozai Line×4(삿포로·센다이·교토·도쿄메트로), Namboku Line×4, Kobe Kosoku Line×4, Takamori Line(국철/南阿蘇鉄道), Noto Line×3, Loop Line×3 등. ko/ja는 겹침 0",
+   "fix": "en 노선 표시 이름에 ko/ja처럼 사업자 머리(Tokyo Metro Tozai Line)를 붙이거나, 겹치는 이름만 회사를 괄호로 붙인다"
+  },
+  {
+   "id": "D10",
+   "severity": "warn",
+   "screen": "all screens with line names",
+   "lang": "en",
+   "what": "규칙으로 만든 영어 노선 이름의 로마자 이어 붙이기가 읽기 어려움",
+   "evidence": "Akitashinai/Gifushinai/Okazakishinai/Omutashinai/Shizuokashinai Line(市内線), Hanamakionsen Line, Kasaderaencho/Takaokaencho/Shimizuguchiencho Line(延長線), Tsukijisen Branch Line, Yagumahigashisentozai Connecting Line, Yamaguchisen'otogi Line, Sangen'yashinchitose Line. JR 'San'yo Main Line'과 山陽電鉄 'Sanyo Main Line'이 아포스트로피로만 구별",
+   "fix": "市内線→City Line, 延長線→Extension, 支線→Branch, 温泉→Onsen처럼 형태소를 띄어 쓰고 회사 머리를 붙인다"
+  },
+  {
+   "id": "D11",
+   "severity": "warn",
+   "screen": "record_tab_browse,session_header",
+   "lang": "ko",
+   "what": "同和鉱業 한국어 이름 오기",
+   "evidence": "o_dowa_mining ko='토와 광업' (どうわ → '도와 광업'). en 'Dowa Mining'",
+   "fix": "operators_ko.json 수정"
+  },
+  {
+   "id": "D12",
+   "severity": "warn",
+   "screen": "map",
+   "lang": "all",
+   "what": "환승역 통합 노드(station_hub kind=representative)가 이름만 같은 떨어진 역을 한 노드로 묶고 z13에서 연결선(spoke)을 그림",
+   "evidence": "芦屋 JR–阪神 0.80km, 伊丹 JR–阪急 0.74km, 宇治 JR–京阪 0.73km, 琴似 JR–地下鉄 0.72km, 嵐山 阪急–嵐電 0.72km, 早稲田 都電–メトロ 0.74km, 東青山 현·옛 위치 2.77km, 田立 1.48km, 五十崎 1.32km (31개 spoke > 0.4km)",
+   "fix": "hub_split.json에 이 쌍을 더하거나 representative 묶음은 거리 상한(예 0.4km)을 넘으면 따로 둔다. 역 이전(옛·새 위치)은 통합 노드 대신 옛 위치 점만 둔다"
+  },
+  {
+   "id": "D13",
+   "severity": "warn",
+   "screen": "network_news",
+   "lang": "all",
+   "what": "날짜가 달 단위(2024-01)인 역 개업을 소식은 그 달 1일로 적어 거짓 정밀도",
+   "evidence": "阪堺 綾ノ町 stationOpened 2024-01-01 (route_stop valid_from 2024-01, lo..hi=2024-01-01..2024-01-31) → '2024년 1월 1일'. 최근 200건 중 1건",
+   "fix": "NewsItem에 원래 기간 문자열(valid_from 원문)을 두고 dateText에 그대로 넘긴다"
+  },
+  {
+   "id": "D14",
+   "severity": "info",
+   "screen": "search",
+   "lang": "all",
+   "what": "검색 결과 노선 줄의 회사 부제가 여러 회사 노선에서 하나만 나옴(세션 머리글은 모두 나옴)",
+   "evidence": "line_search_controller: attrs.last.operatorId. 東海道本線→JR東日本만, 山陽本線·関西本線·北陸新幹線→JR西日本만, 中央本線→JR東日本만 (9노선)",
+   "fix": "network.operatorsOn(lineId, today)를 ' · '로 이어 쓴다"
+  },
+  {
+   "id": "D15",
+   "severity": "info",
+   "screen": "network_news",
+   "lang": "all",
+   "what": "소식의 역 이름은 기간 없는 이름이라 임시역 표식이 빠지고, 역 이전은 폐역+개업 두 줄로 나옴",
+   "evidence": "2019-04-20 'J빌리지역 개업'(당시 (임)J빌리지), 2026-09-20 くま川鉄道 '카와무라역 폐역'+'사가라토시마역 개업'(node_move 있음), 2024-03-16 三河知立(旧)/三河知立. 広電 循環線 2026-03-28 거짓 개업·폐역은 없음(통과)",
+   "fix": "node_move가 있는 쌍은 '이전' 한 줄로 합치고, 이름은 lineId·날짜로 고른다"
+  },
+  {
+   "id": "D16",
+   "severity": "info",
+   "screen": "record_session(route chips)",
+   "lang": "ko,en",
+   "what": "본선이 아닌 계통 2개에 ko/en 이름이 없어 계통 칩이 일본어로 나옴",
+   "evidence": "r_minami_line_matobacho '稲荷町～段原一丁目～比治山下'(広電 皆実線 옛 계통), r_chichibu_railway_connecting_line_branch '西武秩父～西武秩父（影森方）'",
+   "fix": "route 이름 ko/en 보충"
+  },
+  {
+   "id": "D17",
+   "severity": "info",
+   "screen": "record_session(archive)",
+   "lang": "en",
+   "what": "열람 전용 옛 역·노선 이름(archive 487개)에 영어가 없어 영어 화면에 일본어가 나옴",
+   "evidence": "names.sqlite archive: ja 487, ko 487, en 0",
+   "fix": "규칙 로마자로 en을 만든다"
+  },
+  {
+   "id": "D18",
+   "severity": "info",
+   "screen": "line_header,lists,search",
+   "lang": "ja",
+   "what": "일본어 표시 이름이 위키 문서 제목 규칙이라 회사명이 겹쳐 길게 읽힘(규칙대로이나 가독성 낮음)",
+   "evidence": "名古屋ガイドウェイバスガイドウェイバス志段味線, 舞浜リゾートラインディズニーリゾートライン, 横浜シーサイドライン金沢シーサイドライン, IGRいわて銀河鉄道いわて銀河鉄道線, ゆりかもめ東京臨海新交通臨海線",
+   "fix": "사용자 결정 사항. 바꾼다면 회사명과 공식명이 겹치는 15개만 공식명 또는 통칭으로"
+  },
+  {
+   "id": "D19",
+   "severity": "info",
+   "screen": "record_session",
+   "lang": "all",
+   "what": "역 이름 표식 체계가 둘: 仮乗降場는 꼬리('아훈 가승강장', 'Afun (temp.)'), 臨時駅은 머리('(임)', '(臨)') + en '(seasonal)'. 비계절 임시역에도 seasonal",
+   "evidence": "(臨)秋田港(2017~2026 크루즈 임시역)·(臨)競輪場前 → 'Akitako (seasonal)'. n_doishita_kari는 기간 없는 '도이시타(임시)'로 또 다른 꼴",
+   "fix": "en은 '(temporary)'로 통일하거나 원자료 구분에 맞춘다. ko 꼴 하나로"
+  },
+  {
+   "id": "D20",
+   "severity": "info",
+   "screen": "record_session",
+   "lang": "all",
+   "what": "날짜를 과거로 바꾸면 머리글 km는 그날 길이인데, 이미 탄 노선이면 오늘 기준 진행률(num/den)로 바뀌어 같은 화면에서 기준이 섞임",
+   "evidence": "record_session_screen.dart: lineScore(BasisCurrent, 오늘) started면 progress, 아니면 lineUnits(그날) km",
+   "fix": "날짜가 있으면 그날 단위로 점수를 다시 내거나, 진행률일 때도 '오늘 기준'을 밝힌다"
+  },
+  {
+   "id": "D21",
+   "severity": "info",
+   "screen": "record_session",
+   "lang": "all",
+   "what": "폐지·운휴 틈 양쪽의 영업역이 이웃한 선택 가능 행이 됨. 고르면 저장이 거절됨(틈은 3단계 선으로 그려짐)",
+   "evidence": "根室本線 2026-11-07 富良野→新得, 信越本線 横川→軽井沢, 豊肥本線 2016-07-12 阿蘇→肥後大津, 志摩線 1988-03-15 白木→五知",
+   "fix": "도착역을 고를 때 openGaps로 이어지지 않는 역은 흐리게 하거나 바로 안내"
+  },
+  {
+   "id": "D22",
+   "severity": "info",
+   "screen": "record_session(save)",
+   "lang": "all",
+   "what": "다른 계통에서 이어 온 출발역(across) 저장은 모든 구간 lineLabel을 지금 화면 노선 이름으로, 역 이름은 lineId 없이 고름(仮乗降場 표식 빠짐). 기록 편집 화면 구간 제목에 그대로 보임",
+   "evidence": "record_session_controller.dart:697-713 _acrossLegs: lineLabel=book.lines[shownLine], nodeNames(result.nodes, date:) lineId 없음",
+   "fix": "구간마다 leg.lineId의 그날 노선 이름과 lineId로 고른 역 이름을 쓴다"
+  },
+  {
+   "id": "D23",
+   "severity": "info",
+   "screen": "map",
+   "lang": "all",
+   "what": "환승 묶음(hub_member)이 300m 근접 사슬로 1km 넘게 이어짐. 지도에서는 z8 표시 여부에만 쓰여 영향 작음",
+   "evidence": "hub_airport_terminal_2: 空港第2ビル–成田空港 1.08km, hub_ginza: 日比谷公園–三原橋 1.01km, hub_hon_kawagoe: 川越–川越市 0.99km, hub_arashiyama_hankyu: 嵐山–嵯峨嵐山 0.93km (verified=0)",
+   "fix": "사슬 지름 상한을 두거나 hub_split에 더한다"
+  },
+  {
+   "id": "D24",
+   "severity": "info",
+   "screen": "map",
+   "lang": "all",
+   "what": "배경 지도 北方領土·竹島 제외 확인(통과)",
+   "evidence": "python3 -I tools/base_exclude.py --check → '배경 제외 영역 비어 있음'. 앱에 실린 base.pmtiles(빌드본과 동일)를 tippecanoe-decode로 z5·z7·z10 해당 타일을 풀어 land/pref 점이 없음(知床 끝 145.36E만 걸림). edge_pref 누락 0, 도도부현 이름 47개 3언어",
+   "fix": "없음"
+  },
+  {
+   "id": "D25",
+   "severity": "info",
+   "screen": "localization",
+   "lang": "all",
+   "what": "i18n 키 누락 없음(ko/ja는 .one 복수형만 없음, 정상). 변수 뒤 조사 직접 붙임 없음. UI 하드코딩 문자열 없음(디버그 로그 제외)",
+   "evidence": "en 535키, ko/ja 각 505키(.one 30개 제외), 자리표시자 일치",
+   "fix": "없음"
+  },
+  {
+   "id": "D26",
+   "severity": "info",
+   "screen": "record_session",
+   "lang": "ko",
+   "what": "고베 시영 지하철 l_yamate_line ko만 '세이신·야마테선'(ja 山手線, en Yamate Line). 같은 회사 l_seishin_line '세이신선'이 따로 있어 헷갈림",
+   "evidence": "names.sqlite line ko",
+   "fix": "ko를 '야마테선'으로 맞춘다"
+  }
+ ]
+}

@@ -124,6 +124,10 @@
       "other": "$n stations visited"
     },
     "decade": "${year}s",
+    "undecided": {
+      "one": "$n section undetermined",
+      "other": "$n sections undetermined"
+    },
     "review": {
       "one": "$n ride needs review · $km km",
       "other": "$n rides need review · $km km"
@@ -153,9 +157,11 @@
     "carryoverHint": "When off, sections transferred from JR count as new lines"
   },
   "search": {
+    "showOnMap": "Show on map",
     "hint": "Line or station name",
     "prompt": "Find a line or station to start",
-    "none": "No results"
+    "none": "No results",
+    "archive": "View only"
   },
   "session": {
     "laps": {
@@ -172,6 +178,7 @@
     "dateHint": "2015, 2015-03, 2015-03-14, 198X",
     "dateUnknown": "No date",
     "datePick": "Pick from calendar",
+    "dateToday": "Today",
     "dateBad": "Please check the date format",
     "apply": "Apply",
     "cancel": "Cancel",
@@ -184,11 +191,15 @@
     "state": {
       "maybe": "?",
       "suspended": "Suspended",
-      "until": "until $year",
-      "since": "from $year",
-      "span": "$from–$to"
+      "suspendedSince": "Suspended $year~",
+      "until": "~$year",
+      "since": "$year~",
+      "span": "$from~$to"
     },
     "savedAs": "Part of $line on that date",
+    "handSince": "$line from $date",
+    "handOpen": "Open line ›",
+    "handNote": "Rides here are saved to that line",
     "chooseDirection": "Which way did you ride?",
     "directionKm": "$km km",
     "chooseRelocation": "Which alignment did you ride?",
@@ -212,23 +223,48 @@
     "spokenTo": "Selected as arrival",
     "showClosed": "Closed stations",
     "showArchive": "Historic stations",
-    "returnsTo": "Back to $name",
     "clear": "Clear",
     "lap": "One full loop",
     "stops": {
       "one": "$n station",
       "other": "$n stations"
     },
-    "closedSection": "Closed in $year",
+    "closedSection": "~$year closed",
     "archiveStop": "$name closed in $year and can't be logged",
     "archiveLine": "$name is a historic line and can't be logged",
     "from": "From",
     "to": "To",
     "whyClosed": "This station wasn't open on that date",
+    "onlyDown": "Down only",
+    "onlyUp": "Up only",
+    "onlyOneWay": "One way",
+    "spokenOnlyDown": "Down trains only",
+    "spokenOnlyUp": "Up trains only",
+    "spokenOnlyOneWay": "Trains in one direction only",
+    "stopDownTitle": "Only down trains stop at $name",
+    "stopUpTitle": "Only up trains stop at $name",
+    "stopOneWayTitle": "Trains stop at $name in one direction only",
+    "towardOnly": "You can only ride toward $name",
+    "sectionTitle": "Trains run one way on this section",
+    "sectionDetail": "No trains run in this direction",
+    "aroundTitle": "This loop runs one way",
+    "aroundDetail": "Counted the long way round: $km km",
+    "reverse": "Reverse direction",
+    "onlyAlight": "Exit only",
+    "alightTitle": "Alighting-only stop",
+    "alightDetail": "You can only choose it as your arrival",
     "whySuspended": "This section was suspended on that date",
     "bound": "For $names",
     "spokenClosed": "Closed in $year",
+    "spokenSuspendedSince": "Suspended since $year",
+    "pastKari": "temp.",
+    "pastRinji": "seasonal",
+    "spokenPastKari": "formerly a temporary stop",
+    "spokenPastRinji": "formerly a seasonal station",
     "spokenBranch": "$line, branch to $next",
+    "reverseNow": "Trains reverse here and run through to the $line",
+    "reverseUsed": "Trains used to reverse here and run through to the $line",
+    "spokenReverse": "reverses direction",
     "leaving": "From $name",
     "progress": "$num / $den km ($percent)",
     "leaveTitle": "Your selection will be cleared",
@@ -240,12 +276,14 @@
     "unridableOk": "OK",
     "repick": "Tap another station to start over",
     "closedUnknown": "Closed section",
+    "suspendedSection": "Suspended",
     "relocationOld": "Old alignment · $km km",
     "relocationNew": "New alignment · $km km",
     "spokenOpen": "open",
     "spokenRidden": "ridden"
   },
   "data": {
+    "osBackupLarge": "Your records are over 20 MB and may not fit in Android cloud backup. Choose a backup folder",
     "title": "Backup and restore",
     "folder": "Backup folder",
     "folderHint": "Choose a location that stays after you uninstall the app",
@@ -367,7 +405,7 @@
     },
     "n03": {
       "name": "National Land Numerical Information: Administrative Zones (N03)",
-      "use": "Outline of Japan and prefecture borders",
+      "use": "Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
     "stationDatabase": {
@@ -435,7 +473,6 @@
     "allTime": "All time",
     "km": "$num / $den km",
     "completeCurrent": "Completed (current)",
-    "completeAllTime": "Completed (all time)",
     "selfScore": "Not counted in your totals. Progress is based on this line alone",
     "open": "Line details",
     "record": "Log a ride on this line",
@@ -477,6 +514,13 @@
       "other": "$n rides"
     },
     "fileDelete": "Delete all",
+    "fileDeleteTitle": {
+      "one": "Delete $n ride?",
+      "other": "Delete $n rides?"
+    },
+    "fileDeleteBody": "This deletes every ride imported from $file. You can bring them back from Deleted rides in Settings.",
+    "fileDeleteConfirm": "Delete",
+    "fileDeleteCancel": "Cancel",
     "fileDeleted": {
       "one": "Deleted $n ride",
       "other": "Deleted $n rides"
@@ -493,7 +537,6 @@
     "operators": "Operators",
     "prefs": "Prefectures",
     "stations": "Stations",
-    "allTime": "All time",
     "stationGoal": "$n stations",
     "empty": "Nothing yet",
     "closed": "Closed",
@@ -608,7 +651,10 @@
     "unmapped": "Not on map",
     "visited": "I've been to this station",
     "visitedHint": "Doesn't count toward completion. It only fills in the dot on the map",
-    "noVisits": "No station visits yet. Tap a station on the map to add one"
+    "noVisits": "No station visits yet. Tap a station on the map to add one",
+    "pickerLabel": "Lines through this spot",
+    "partlyClosed": "Closed here",
+    "closed": "Closed line"
   },
   "prefNames": [
     "Hokkaido",

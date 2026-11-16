@@ -1,0 +1,1525 @@
+{
+ "설명": "여객 영업 이력이 없는 화물 전용 구간·화물역 (화물 규칙 1, 사용자 결정 2026-11-09·9회차 F). 모선마다 숨은 노선(rule_class hidden) 하나, 화물 지선마다 계통 하나. tools/dev/freight_hidden.py가 source_patch/*/zz_f9_freight.yaml로 펼친다. path는 [노드, 모선 기점 아닌 이 계통 안 누적 km, 새 노드면 {name, pref, pos}]. 근거 등급: 화물역 존재·km는 『鉄道停車場一覧 昭和41年3月1日現在』(日本国有鉄道, NDL pid 1873236, 높음) 또는 사업자 사사, 날짜는 노선 문서 年表(위키, 중간·官報/鉄道公報 인용). 1987-04-01 뒤까지 남은 구간은 JR 화물 사업자 행이 없어 이번에는 넣지 않음",
+ "rows": [
+  {
+   "name": "志摩線 賢島–真珠港",
+   "parent": "l_shima_line",
+   "line": "l_shima_line_freight",
+   "line_name": "志摩線（貨物）",
+   "family": "pkintetsu_railway",
+   "gauge": 1067,
+   "gauge_src": "ja.wikipedia 真珠港駅 oldid=109413483 「軌間は狭軌（1067 mm）で建設された」",
+   "route": "r_shima_line_freight",
+   "path": [
+    [
+     "n_kashikojima",
+     0.0
+    ],
+    [
+     "n_shinjuko",
+     0.3,
+     {
+      "name": "真珠港",
+      "pref": 24,
+      "pos": [
+       34.306222,
+       136.817028,
+       "wikipedia"
+      ],
+      "pos_why": "真珠港駅 oldid=109413483 座標 34°18′22.4″N 136°49′1.3″E"
+     }
+    ]
+   ],
+   "edges": [
+    "e_097001"
+   ],
+   "open": "1929-07-23",
+   "close": "1969-07-01",
+   "operators": [
+    [
+     null,
+     "o_mie_kotsu"
+    ],
+    [
+     "1964-02-01",
+     "o_mie_electric_railway"
+    ],
+    [
+     "1965-04-01",
+     "o_kintetsu_railway"
+    ]
+   ],
+   "km_src": "wikipedia:109413483",
+   "sources": [
+    "ja.wikipedia 真珠港駅 oldid=109413483",
+    "ja.wikipedia 近鉄志摩線 oldid=111151681",
+    "『官報』1929-07-31 「地方鉄道運輸開始」(NDL 2957242/10, 위키 인용)",
+    "近畿日本鉄道 『近畿日本鉄道100年のあゆみ』 2010 386쪽(위키 인용)"
+   ],
+   "why": "近鉄 志摩線 賢島–真珠港 0.3 km. 真珠港駅 oldid=109413483 「当初から貨物駅であり、賢島駅ですべての乗客を降ろし」「賢島駅から0.3 km」, 開業 1929-07-23(近鉄志摩線 oldid=111151681 「志摩電気鉄道が鳥羽駅 - 賢島駅 - 真珠港駅間を開業」, 官報 인용)·廃止 1969-07-01(「賢島駅 - 真珠港駅間が廃止」, 社史 인용). 1934 停車場一覧 「貨」·1966 一覧 「客」 엇갈림은 화물 규칙 쪽으로 정함(결정 기록 「真珠港」). 1950년 전 회사는 1950년 시점 회사(三重交通), 1964·1965 이관은 志摩線 본선과 같은 날"
+  },
+  {
+   "name": "根室本線 東釧路–天寧",
+   "parent": "l_nemuro_main_line",
+   "line": "l_nemuro_main_line_freight",
+   "line_name": "根室本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_nemuro_main_line_freight_tenneru",
+   "path": [
+    [
+     "n_higashi_kushiro",
+     0.0
+    ],
+    [
+     "n_tenneru",
+     1.5,
+     {
+      "name": "天寧",
+      "pref": 1
+     }
+    ]
+   ],
+   "open": "1940-01-15",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ138",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ138 https://dl.ndl.go.jp/pid/1873236/1/138",
+    "ja.wikipedia 根室本線 oldid=110395326"
+   ],
+   "why": "国鉄 根室本線 貨物支線 東釧路–天寧. 1966 停車場一覧(높음) 「貨」 天寧 駅間 1.5 km. 날짜는 위키 根室本線 oldid=110395326 年表 「1940-01-15 東釧路駅 - 天寧駅間の貨物支線が開業 / 1984-02-01 東釧路駅 - 天寧駅間の貨物支線を廃止 (-1.5 km)」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097002"
+   ]
+  },
+  {
+   "name": "根室本線 厚岸–浜厚岸",
+   "parent": "l_nemuro_main_line",
+   "line": "l_nemuro_main_line_freight",
+   "line_name": "根室本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_nemuro_main_line_freight_hama_akkeshi",
+   "path": [
+    [
+     "n_akkeshi",
+     0.0
+    ],
+    [
+     "n_hama_akkeshi",
+     1.2,
+     {
+      "name": "浜厚岸",
+      "pref": 1
+     }
+    ]
+   ],
+   "open": "1917-12-01",
+   "close": "1982-11-15",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ138",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ138 https://dl.ndl.go.jp/pid/1873236/1/138",
+    "ja.wikipedia 根室本線 oldid=110395326"
+   ],
+   "why": "国鉄 根室本線 貨物支線 厚岸–浜厚岸. 1966 停車場一覧(높음) 「貨」 浜厚岸 駅間 1.2 km. 날짜는 위키 根室本線 oldid=110395326 年表 「1917-12-01 厚岸駅 - 浜厚岸駅間 (1.2km) は貨物線 / 1982-11-15 厚岸駅 - 浜厚岸駅間の貨物支線が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097003"
+   ]
+  },
+  {
+   "name": "函館本線 小樽築港–浜小樽",
+   "parent": "l_hakodate_main_line",
+   "line": "l_hakodate_main_line_freight",
+   "line_name": "函館本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_hakodate_main_line_freight_hama_otaru",
+   "path": [
+    [
+     "n_otaru_chikko",
+     0.0
+    ],
+    [
+     "n_hama_otaru",
+     3.2,
+     {
+      "name": "浜小樽",
+      "pref": 1
+     }
+    ]
+   ],
+   "open": "1932-07-01",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ129",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ129 https://dl.ndl.go.jp/pid/1873236/1/129",
+    "ja.wikipedia 函館本線 oldid=111583591"
+   ],
+   "why": "国鉄 函館本線 貨物支線 小樽築港–浜小樽. 1966 停車場一覧(높음) 「貨」 浜小樽 駅間 3.2 km. 날짜는 위키 函館本線 oldid=111583591 年表 「1932-07-01 小樽築港駅 - 浜小樽駅間の貨物支線が開業 / 1984-02-01 同 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097004"
+   ]
+  },
+  {
+   "name": "函館本線 桑園–札幌市場",
+   "parent": "l_hakodate_main_line",
+   "line": "l_hakodate_main_line_freight",
+   "line_name": "函館本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_hakodate_main_line_freight_sapporo_shijo",
+   "path": [
+    [
+     "n_soen",
+     0.0
+    ],
+    [
+     "n_sapporo_shijo",
+     1.6,
+     {
+      "name": "札幌市場",
+      "pref": 1
+     }
+    ]
+   ],
+   "open": "1959-12-15",
+   "close": "1978-10-02",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ130",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ130 https://dl.ndl.go.jp/pid/1873236/1/130",
+    "ja.wikipedia 函館本線 oldid=111583591"
+   ],
+   "why": "国鉄 函館本線 貨物支線 桑園–札幌市場. 1966 停車場一覧(높음) 「貨」 札幌市場 駅間 1.6 km. 날짜는 위키 函館本線 oldid=111583591 年表 「1959-12-15 桑園駅 - 札幌市場駅間に貨物支線が開業 / 1978-10-02 桑園駅 - 札幌市場駅間…両貨物支線が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097005"
+   ]
+  },
+  {
+   "name": "函館本線 近文–旭川大町",
+   "parent": "l_hakodate_main_line",
+   "line": "l_hakodate_main_line_freight",
+   "line_name": "函館本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_hakodate_main_line_freight_asahikawa_omachi",
+   "path": [
+    [
+     "n_chikabumi",
+     0.0
+    ],
+    [
+     "n_asahikawa_omachi",
+     2.9,
+     {
+      "name": "旭川大町",
+      "pref": 1
+     }
+    ]
+   ],
+   "open": "[1950-01-15..1950-01-25]",
+   "close": "1978-10-02",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ130",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ130 https://dl.ndl.go.jp/pid/1873236/1/130",
+    "ja.wikipedia 函館本線 oldid=111583591"
+   ],
+   "why": "国鉄 函館本線 貨物支線 近文–旭川大町. 1966 停車場一覧(높음) 「貨」 旭川大町 駅間 2.9 km. 날짜는 위키 函館本線 oldid=111583591 年表 「1950-01-25 近文駅 - 旭川大町駅間の貨物支線が開業 / 1978-10-02 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 개업일은 1966 一覧 開業 欄(OCR 「昭25.1.15」)과 위키 1950-01-25가 갈려 범위로 둠",
+   "edges": [
+    "e_097006"
+   ]
+  },
+  {
+   "name": "室蘭本線 室蘭–西室蘭",
+   "parent": "l_muroran_main_line",
+   "line": "l_muroran_main_line_freight",
+   "line_name": "室蘭本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_muroran_main_line_freight_nishi_muroran",
+   "path": [
+    [
+     "n_muroran_old",
+     0.0
+    ],
+    [
+     "n_nishi_muroran",
+     1.4,
+     {
+      "name": "西室蘭",
+      "pref": 1
+     }
+    ]
+   ],
+   "open": "1960-05-10",
+   "close": "1985-03-14",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ134",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ134 https://dl.ndl.go.jp/pid/1873236/1/134",
+    "ja.wikipedia 室蘭本線 oldid=110959208"
+   ],
+   "why": "国鉄 室蘭本線 貨物支線 室蘭–西室蘭. 1966 停車場一覧(높음) 「貨」 西室蘭 駅間 1.4 km. 날짜는 위키 室蘭本線 oldid=110959208 年表 「1960-05-10 室蘭駅 - （貨）西室蘭駅 (1.4 km) の貨物支線が開業 / 1985-03-14 室蘭駅（2代） - （貨）西室蘭駅 (1.4 km)の貨物支線を廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 기점은 1997 이전 전 室蘭(2대) 자리 노드",
+   "edges": [
+    "e_097007"
+   ]
+  },
+  {
+   "name": "八戸線 本八戸–湊",
+   "parent": "l_hachinohe_line",
+   "line": "l_hachinohe_line_freight",
+   "line_name": "八戸線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_hachinohe_line_freight_minato_hachinohe",
+   "path": [
+    [
+     "n_hon_hachinohe",
+     0.0
+    ],
+    [
+     "n_minato_hachinohe",
+     2.7,
+     {
+      "name": "湊",
+      "pref": 2
+     }
+    ]
+   ],
+   "open": "1894-10-01",
+   "close": "1985-03-14",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ85",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ85 https://dl.ndl.go.jp/pid/1873236/1/85",
+    "ja.wikipedia 八戸線 oldid=111465986"
+   ],
+   "why": "国鉄 八戸線 貨物支線 本八戸–湊. 1966 停車場一覧(높음) 「貨」 湊 駅間 2.7 km. 날짜는 위키 八戸線 oldid=111465986 年表 「1894-10-01 八ノ戸駅 - 湊駅間を延伸開業 / 1944-04-01 八戸駅 - 湊駅間の旅客営業を休止 / 1985-03-14 本八戸駅 - 湊駅間を廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 여객은 1944-04-01 휴지 뒤 다시 열리지 않아 1950 뒤 여객 영업 없음(1950 전 여객은 기록 범위 밖)",
+   "edges": [
+    "e_097008"
+   ]
+  },
+  {
+   "name": "石巻線 女川–女川港",
+   "parent": "l_ishinomaki_line",
+   "line": "l_ishinomaki_line_freight",
+   "line_name": "石巻線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_ishinomaki_line_freight_onagawako",
+   "path": [
+    [
+     "n_onagawa_old",
+     0.0
+    ],
+    [
+     "n_onagawako",
+     1.4,
+     {
+      "name": "女川港",
+      "pref": 4
+     }
+    ]
+   ],
+   "open": "1958-08-11",
+   "close": "1980-08-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ96",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ96 https://dl.ndl.go.jp/pid/1873236/1/96",
+    "ja.wikipedia 石巻線 oldid=111464534"
+   ],
+   "why": "国鉄 石巻線 貨物支線 女川–女川港. 1966 停車場一覧(높음) 「貨」 女川港 駅間 1.4 km. 날짜는 위키 石巻線 oldid=111464534 年表 「1958-08-11 女川駅 - 女川港駅 (1.4 km) 間の貨物線が開業 / 1980-08-01 女川駅 - 女川港駅 (1.4 km) 間が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 기점은 2011 전 女川 옛 자리 노드",
+   "edges": [
+    "e_097009"
+   ]
+  },
+  {
+   "name": "常磐線 水戸–那珂川",
+   "parent": "l_joban_line",
+   "line": "l_joban_line_freight",
+   "line_name": "常磐線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_joban_line_freight_nakagawa_mito",
+   "path": [
+    [
+     "n_mito",
+     0.0
+    ],
+    [
+     "n_nakagawa_mito",
+     1.1,
+     {
+      "name": "那珂川",
+      "pref": 8
+     }
+    ]
+   ],
+   "open": "1890-11-26",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ76",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ76 https://dl.ndl.go.jp/pid/1873236/1/76",
+    "ja.wikipedia 常磐線 oldid=111451044"
+   ],
+   "why": "国鉄 常磐線 貨物支線 水戸–那珂川. 1966 停車場一覧(높음) 「貨」 那珂川 駅間 1.1 km. 날짜는 위키 常磐線 oldid=111451044 年表 「1890-11-26 水戸鉄道 貨物支線 水戸 - 那珂川間開業 / 1984-02-01 貨物支線 水戸 - 那珂川間廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097010"
+   ]
+  },
+  {
+   "name": "七尾線 七尾–七尾港",
+   "parent": "l_nanao_line",
+   "line": "l_nanao_line_freight",
+   "line_name": "七尾線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_nanao_line_freight_nanaoko",
+   "path": [
+    [
+     "n_nanao",
+     0.0
+    ],
+    [
+     "n_nanaoko",
+     2.1,
+     {
+      "name": "七尾港",
+      "pref": 17
+     }
+    ]
+   ],
+   "open": "1898-04-24",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ38",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ38 https://dl.ndl.go.jp/pid/1873236/1/38",
+    "ja.wikipedia 七尾線 oldid=111452129"
+   ],
+   "why": "国鉄 七尾線 貨物支線 七尾–七尾港. 1966 停車場一覧(높음) 「貨」 七尾港 駅間 2.1 km. 날짜는 위키 七尾線 oldid=111452129 年表 「1898-04-24 七尾駅 - 矢田新駅間は貨物営業のみ / 1929-12-05 七尾駅 - 七尾港駅間の旅客営業が廃止 / 1984-02-01 貨物支線 七尾駅 - 七尾港駅間 (2.1 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 여객은 1929-12-05 폐지(1950 전, 기록 범위 밖)",
+   "edges": [
+    "e_097011"
+   ]
+  },
+  {
+   "name": "関西本線 四日市–四日市港",
+   "parent": "l_kansai_main_line",
+   "line": "l_kansai_main_line_freight",
+   "line_name": "関西本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_kansai_main_line_freight_yokkaichiko",
+   "path": [
+    [
+     "n_yokkaichi",
+     0.0
+    ],
+    [
+     "n_yokkaichiko",
+     2.5,
+     {
+      "name": "四日市港",
+      "pref": 24
+     }
+    ]
+   ],
+   "open": "1920-12-21",
+   "close": "1985-03-14",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ64",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ64 https://dl.ndl.go.jp/pid/1873236/1/64",
+    "ja.wikipedia 関西本線 oldid=110839616"
+   ],
+   "why": "国鉄 関西本線 貨物支線 四日市–四日市港. 1966 停車場一覧(높음) 「貨」 四日市港 駅間 2.5 km. 날짜는 위키 関西本線 oldid=110839616 年表 「1920-12-21 貨物支線 四日市駅 - 四日市港駅間が開業 / 1985-03-14 貨物支線 四日市駅 - 四日市港駅間 (2.5km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097012"
+   ]
+  },
+  {
+   "name": "東海道本線 膳所–浜大津",
+   "parent": "l_tokaido_main_line",
+   "line": "l_tokaido_main_line_freight",
+   "line_name": "東海道本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_tokaido_main_line_freight_hama_otsu_freight",
+   "path": [
+    [
+     "n_zeze",
+     0.0
+    ],
+    [
+     "n_hama_otsu_freight",
+     2.2,
+     {
+      "name": "浜大津",
+      "pref": 25
+     }
+    ]
+   ],
+   "open": "1880-07-15",
+   "close": "1969-11-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ26",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ26 https://dl.ndl.go.jp/pid/1873236/1/26",
+    "ja.wikipedia 東海道本線 oldid=111445893"
+   ],
+   "why": "国鉄 東海道本線 貨物支線 膳所–浜大津. 1966 停車場一覧(높음) 「貨」 浜大津 駅間 2.2 km. 날짜는 위키 東海道本線 oldid=111445893 年表 「貨物支線（浜大津線・1969年廃止） 膳所駅 (0.0 km) - 浜大津駅 (2.2 km) / 1913年以前は大津線。旅客営業廃止と同時に東海道本線の貨物支線に変更」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 국철 浜大津(화물)은 京阪·江若 浜大津와 다른 노드로 둠. 국철 여객은 1913 폐지(1950 전). 다만 1947-01-25~1965-07-10에는 江若鉄道 여객 열차가 이 화물 지선(三線軌条)에 乗り入れ했다(위키 江若鉄道 rev110542243 「1947年から1965年までの間は国鉄の貨物支線を介して膳所駅まで乗り入れていた」, 위키 京阪石山坂本線 rev107968078 1965-07-10 「江若鉄道車両の浜大津駅 - 膳所駅間乗り入れを廃止」). 그 여객 이력(1947-01-25~1965-07-10)은 법적 노선대로 東海道本線 지선 계통 膳所～浜大津(江若 浜大津 노드, 분모 밖)으로 기록하고 이 숨은 화물 칸은 화물역 浜大津까지 그대로 둔다 (10회차 G1 kinki_1-09·kinki_2-011, 11회차 R 확정 「국철 노선에 乗入」·S2)",
+   "edges": [
+    "e_097013"
+   ]
+  },
+  {
+   "name": "東海道本線 沼津–沼津港",
+   "parent": "l_tokaido_main_line",
+   "line": "l_tokaido_main_line_freight",
+   "line_name": "東海道本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_tokaido_main_line_freight_numazuko",
+   "path": [
+    [
+     "n_numazu",
+     0.0
+    ],
+    [
+     "n_numazuko",
+     3.0,
+     {
+      "name": "沼津港",
+      "pref": 22
+     }
+    ]
+   ],
+   "open": "1899-06-15",
+   "close": "1974-09-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25 https://dl.ndl.go.jp/pid/1873236/1/25",
+    "ja.wikipedia 東海道本線 oldid=111445893"
+   ],
+   "why": "国鉄 東海道本線 貨物支線 沼津–沼津港. 1966 停車場一覧(높음) 「貨」 沼津港 駅間 3.0 km. 날짜는 위키 東海道本線 oldid=111445893 年表 「1907-11-01 貨物支線（蛇松線、後の沼津港線）…正式開業 / 1947-07-01 改キロ、0.2km短縮 / 1974-09-01 貨物支線（沼津港線） 沼津駅 - 沼津港駅間 (3.0 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 개업일은 1966 一覧 開業 欄(明32.6.15)",
+   "edges": [
+    "e_097014"
+   ]
+  },
+  {
+   "name": "東海道本線 横浜港–山下埠頭",
+   "parent": "l_tokaido_main_line",
+   "line": "l_tokaido_main_line_freight",
+   "line_name": "東海道本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_tokaido_main_line_freight_yamashita_futo",
+   "path": [
+    [
+     "n_yokohama_minato",
+     0.0
+    ],
+    [
+     "n_yamashita_futo",
+     2.0,
+     {
+      "name": "山下埠頭",
+      "pref": 14
+     }
+    ]
+   ],
+   "open": "1965-07-01",
+   "close": "1986-11-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25 https://dl.ndl.go.jp/pid/1873236/1/25",
+    "ja.wikipedia 高島線 oldid=111509021"
+   ],
+   "why": "国鉄 東海道本線 貨物支線 横浜港–山下埠頭. 1966 停車場一覧(높음) 「貨」 山下埠頭 駅間 2.0 km. 날짜는 위키 高島線 oldid=111509021 年表 「1965-07-01 貨物支線 横浜港 - 山下埠頭間 (2.0 km) が開業 / 1986-11-01 高島線 横浜港信号場 - 山下埠頭駅間 (2.0 km) …が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097015"
+   ]
+  },
+  {
+   "name": "東海道本線 高島–表高島",
+   "parent": "l_tokaido_main_line",
+   "line": "l_tokaido_main_line_freight",
+   "line_name": "東海道本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_tokaido_main_line_freight_omote_takashima",
+   "path": [
+    [
+     "n_takashima_freight",
+     0.0
+    ],
+    [
+     "n_omote_takashima",
+     1.3,
+     {
+      "name": "表高島",
+      "pref": 14
+     }
+    ]
+   ],
+   "open": "1934-06-15",
+   "close": "1982-11-15",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25 https://dl.ndl.go.jp/pid/1873236/1/25",
+    "ja.wikipedia 高島線 oldid=111509021"
+   ],
+   "why": "国鉄 東海道本線 貨物支線 高島–表高島. 1966 停車場一覧(높음) 「貨」 表高島 駅間 1.3 km. 날짜는 위키 高島線 oldid=111509021 年表 「1934-06-15 貨物支線 高島 - 表高島間 (1.3 km)…が開業 / 1982-11-15 貨物支線 高島 - 表高島間 (1.3 km)…廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097016"
+   ]
+  },
+  {
+   "name": "東海道本線 高島–横浜市場",
+   "parent": "l_tokaido_main_line",
+   "line": "l_tokaido_main_line_freight",
+   "line_name": "東海道本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_tokaido_main_line_freight_yokohama_shijo_takashima",
+   "path": [
+    [
+     "n_takashima_freight",
+     0.0
+    ],
+    [
+     "n_yokohama_shijo",
+     2.6,
+     {
+      "name": "横浜市場",
+      "pref": 14
+     }
+    ]
+   ],
+   "open": "1934-06-15",
+   "close": "1955-01-17",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25 https://dl.ndl.go.jp/pid/1873236/1/25",
+    "ja.wikipedia 高島線 oldid=111509021"
+   ],
+   "why": "国鉄 東海道本線 貨物支線 高島–横浜市場. 1966 停車場一覧(높음) 「貨」  km. 날짜는 위키 高島線 oldid=111509021 年表 「1934-06-15 高島 - 山内町間 (2.6 km) が開業 / 1955-01-17 横浜市場駅への貨物支線の起点を高島駅から東高島駅に」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 山内町은 1944-12-01 横浜市場로 개칭. 1955-01-17 기점이 東高島로 바뀌어 이 칸은 닫고 東高島–横浜市場 계통이 이음",
+   "edges": [
+    "e_097017"
+   ]
+  },
+  {
+   "name": "東海道本線 東高島–横浜市場",
+   "parent": "l_tokaido_main_line",
+   "line": "l_tokaido_main_line_freight",
+   "line_name": "東海道本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_tokaido_main_line_freight_yokohama_shijo",
+   "path": [
+    [
+     "n_higashi_takashima",
+     0.0
+    ],
+    [
+     "n_yokohama_shijo",
+     1.2,
+     {
+      "name": "横浜市場",
+      "pref": 14
+     }
+    ]
+   ],
+   "open": "1955-01-17",
+   "close": "1982-11-15",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ25 https://dl.ndl.go.jp/pid/1873236/1/25",
+    "ja.wikipedia 高島線 oldid=111509021"
+   ],
+   "why": "国鉄 東海道本線 貨物支線 東高島–横浜市場. 1966 停車場一覧(높음) 「貨」 横浜市場 駅間 1.2 km. 날짜는 위키 高島線 oldid=111509021 年表 「1955-01-17 横浜市場駅への貨物支線の起点を高島駅から東高島に / 1982-11-15 東高島 - 横浜市場間 (1.2 km) 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097018"
+   ]
+  },
+  {
+   "name": "山陽本線 姫路–姫路市場",
+   "parent": "l_sanyo_main_line",
+   "line": "l_sanyo_main_line_freight",
+   "line_name": "山陽本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_sanyo_main_line_freight_himeji_shijo",
+   "path": [
+    [
+     "n_himeji",
+     0.0
+    ],
+    [
+     "n_himeji_shijo",
+     1.5,
+     {
+      "name": "姫路市場",
+      "pref": 28
+     }
+    ]
+   ],
+   "open": "1957-03-27",
+   "close": "1979-11-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ48",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ48 https://dl.ndl.go.jp/pid/1873236/1/48",
+    "ja.wikipedia 山陽本線 oldid=111054473"
+   ],
+   "why": "国鉄 山陽本線 貨物支線 姫路–姫路市場. 1966 停車場一覧(높음) 「貨」 姫路市場 駅間 1.5 km. 날짜는 위키 山陽本線 oldid=111054473 年表 「1957-03-27 貨物支線 姫路駅 - 姫路市場駅間 (1.5 km) が開業 / 1979-11-01 同 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097019"
+   ]
+  },
+  {
+   "name": "山陽本線 兵庫–新川–兵庫港",
+   "parent": "l_sanyo_main_line",
+   "line": "l_sanyo_main_line_freight",
+   "line_name": "山陽本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_sanyo_main_line_freight_hyogoko",
+   "path": [
+    [
+     "n_hyogo",
+     0.0
+    ],
+    [
+     "n_shinkawa_hyogo",
+     1.5,
+     {
+      "name": "新川",
+      "pref": 28
+     }
+    ],
+    [
+     "n_hyogoko",
+     3.4,
+     {
+      "name": "兵庫港",
+      "pref": 28
+     }
+    ]
+   ],
+   "open": "1933-06-21",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ48",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ48 https://dl.ndl.go.jp/pid/1873236/1/48",
+    "ja.wikipedia 山陽本線 oldid=111054473"
+   ],
+   "why": "国鉄 山陽本線 貨物支線 兵庫–新川–兵庫港. 1966 停車場一覧(높음) 「貨」 新川 駅間 1.5; 兵庫港 駅間 1.9 km. 날짜는 위키 山陽本線 oldid=111054473 年表 「1919-10-15 兵庫臨港線 新川荷扱所が駅に変更され新川駅が開業 / 1933-06-21 兵庫臨港線 新川駅 - 兵庫港駅間 (1.9 km) が開業 / 1984-02-01 兵庫臨港線 兵庫駅 - 新川駅 - 神戸市場駅間 (2.7 km)、新川駅 - 兵庫港駅間 (1.9 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 兵庫–新川은 和田岬線 선로를 新川分岐点까지 같이 써서 분기점 노드 없이 兵庫에서 잇는 칸",
+   "edges": [
+    "e_097020",
+    "e_097021"
+   ],
+   "seg_dates": [
+    [
+     "1919-10-15",
+     "1984-02-01"
+    ],
+    [
+     "1933-06-21",
+     "1984-02-01"
+    ]
+   ]
+  },
+  {
+   "name": "山陽本線 新川–神戸市場",
+   "parent": "l_sanyo_main_line",
+   "line": "l_sanyo_main_line_freight",
+   "line_name": "山陽本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_sanyo_main_line_freight_kobe_shijo",
+   "path": [
+    [
+     "n_shinkawa_hyogo",
+     0.0
+    ],
+    [
+     "n_kobe_shijo",
+     1.2,
+     {
+      "name": "神戸市場",
+      "pref": 28
+     }
+    ]
+   ],
+   "open": "[1932-12-16..1932-12-31]",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ48",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ48 https://dl.ndl.go.jp/pid/1873236/1/48",
+    "ja.wikipedia 山陽本線 oldid=111054473"
+   ],
+   "why": "国鉄 山陽本線 貨物支線 新川–神戸市場. 1966 停車場一覧(높음) 「貨」 神戸市場 駅間 1.2 km. 날짜는 위키 山陽本線 oldid=111054473 年表 「1984-02-01 兵庫臨港線 兵庫駅 - 新川駅 - 神戸市場駅間 (2.7 km)…が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 개업은 1966 一覧 開業 欄 OCR 「…7.12.16」(昭7)뿐이라 범위",
+   "edges": [
+    "e_097022"
+   ]
+  },
+  {
+   "name": "紀勢本線 新宮–熊野地",
+   "parent": "l_kisei_main_line",
+   "line": "l_kisei_main_line_freight",
+   "line_name": "紀勢本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_kisei_main_line_freight_kumanoji",
+   "path": [
+    [
+     "n_shingu",
+     0.0
+    ],
+    [
+     "n_kumanoji",
+     1.5,
+     {
+      "name": "熊野地",
+      "pref": 30
+     }
+    ]
+   ],
+   "open": "1938-05-20",
+   "close": "1982-11-15",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ70",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ70 https://dl.ndl.go.jp/pid/1873236/1/70",
+    "ja.wikipedia 紀勢本線 oldid=111257602"
+   ],
+   "why": "国鉄 紀勢本線 貨物支線 新宮–熊野地. 1966 停車場一覧(높음) 「貨」 熊野地 駅間 1.5 km. 날짜는 위키 紀勢本線 oldid=111257602 年表 「1938-05-20 新宮駅 - 熊野地駅間の貨物支線 (1.5 km) が開業…熊野地駅が貨物駅に変更 / 1982-11-15 貨物支線 新宮駅 - 熊野地駅間 (1.5 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097023"
+   ]
+  },
+  {
+   "name": "紀勢本線 紀伊由良–由良内",
+   "parent": "l_kisei_main_line",
+   "line": "l_kisei_main_line_freight",
+   "line_name": "紀勢本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_kisei_main_line_freight_yurauchi",
+   "path": [
+    [
+     "n_kii_yura",
+     0.0
+    ],
+    [
+     "n_yurauchi",
+     2.0,
+     {
+      "name": "由良内",
+      "pref": 30
+     }
+    ]
+   ],
+   "open": "1929-04-21",
+   "close": "1968-06-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ70",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ70 https://dl.ndl.go.jp/pid/1873236/1/70",
+    "ja.wikipedia 紀勢本線 oldid=111257602"
+   ],
+   "why": "国鉄 紀勢本線 貨物支線 紀伊由良–由良内. 1966 停車場一覧(높음) 「貨」 由良内 駅間 2.0 km. 날짜는 위키 紀勢本線 oldid=111257602 年表 「1929-04-21 貨物支線 紀伊由良駅 - 由良内駅間…が開業 / 1968-06-01 貨物支線 紀伊由良駅 - 由良内駅間 (2.0 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097024"
+   ]
+  },
+  {
+   "name": "山陰本線 東松江–馬潟港",
+   "parent": "l_sanin_main_line",
+   "line": "l_sanin_main_line_freight",
+   "line_name": "山陰本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_sanin_main_line_freight_magatako",
+   "path": [
+    [
+     "n_higashi_matsue",
+     0.0
+    ],
+    [
+     "n_magatako",
+     1.0,
+     {
+      "name": "馬潟港",
+      "pref": 32
+     }
+    ]
+   ],
+   "open": "1930-04-01",
+   "close": "1975-04-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ60",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ60 https://dl.ndl.go.jp/pid/1873236/1/60",
+    "ja.wikipedia 山陰本線 oldid=111452828"
+   ],
+   "why": "国鉄 山陰本線 貨物支線 東松江–馬潟港. 1966 停車場一覧(높음) 「貨」 馬潟港 駅間 1.0 km. 날짜는 위키 山陰本線 oldid=111452828 年表 「1930-04-01 貨物支線 馬潟駅 - 馬潟港駅間 (1.0 km) が開業 / 1975-04-01 貨物支線の東松江駅 - 馬潟港駅間 (1.0 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097025"
+   ]
+  },
+  {
+   "name": "山陰本線 西浜田–浜田港",
+   "parent": "l_sanin_main_line",
+   "line": "l_sanin_main_line_freight",
+   "line_name": "山陰本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_sanin_main_line_freight_hamadako",
+   "path": [
+    [
+     "n_nishi_hamada",
+     0.0
+    ],
+    [
+     "n_hamadako",
+     2.3,
+     {
+      "name": "浜田港",
+      "pref": 32
+     }
+    ]
+   ],
+   "open": "1955-08-01",
+   "close": "1982-11-07",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ60",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ60 https://dl.ndl.go.jp/pid/1873236/1/60",
+    "ja.wikipedia 山陰本線 oldid=111452828"
+   ],
+   "why": "国鉄 山陰本線 貨物支線 西浜田–浜田港. 1966 停車場一覧(높음) 「貨」 浜田港 駅間 2.3 km. 날짜는 위키 山陰本線 oldid=111452828 年表 「1955-08-01 貨物支線 西浜田駅 - 浜田港駅間 (2.3 km) が開業 / 1982-11-07 同 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097026"
+   ]
+  },
+  {
+   "name": "予讃線 多度津–浜多度津",
+   "parent": "l_yosan_line",
+   "line": "l_yosan_line_freight",
+   "line_name": "予讃線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_yosan_line_freight_hama_tadotsu",
+   "path": [
+    [
+     "n_tadotsu",
+     0.0
+    ],
+    [
+     "n_hama_tadotsu",
+     2.2,
+     {
+      "name": "浜多度津",
+      "pref": 37
+     }
+    ]
+   ],
+   "open": "1913-12-20",
+   "close": "1979-07-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ105",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ105 https://dl.ndl.go.jp/pid/1873236/1/105",
+    "ja.wikipedia 予讃線 oldid=111002174"
+   ],
+   "why": "国鉄 予讃線 貨物支線 多度津–浜多度津. 1966 停車場一覧(높음) 「貨」 浜多度津 駅間 2.2 km. 날짜는 위키 予讃線 oldid=111002174 年表 「1913-12-20 これまでの多度津駅が（貨）浜多度津駅となり、貨物支線多度津駅 - 浜多度津駅間が開業 / 1979-07-01 貨物支線 多度津駅 - 浜多度津駅間が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097027"
+   ]
+  },
+  {
+   "name": "予讃線 坂出–坂出港",
+   "parent": "l_yosan_line",
+   "line": "l_yosan_line_freight",
+   "line_name": "予讃線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_yosan_line_freight_sakaideko",
+   "path": [
+    [
+     "n_sakaide",
+     0.0
+    ],
+    [
+     "n_sakaideko",
+     2.9,
+     {
+      "name": "坂出港",
+      "pref": 37
+     }
+    ]
+   ],
+   "open": "1949-12-27",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ105",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ105 https://dl.ndl.go.jp/pid/1873236/1/105",
+    "ja.wikipedia 予讃線 oldid=111002174"
+   ],
+   "why": "国鉄 予讃線 貨物支線 坂出–坂出港. 1966 停車場一覧(높음) 「貨」 坂出港 駅間 2.9 km. 날짜는 위키 予讃線 oldid=111002174 年表 「1949-12-27 貨物支線 坂出駅 - 坂出港駅間が開業 / 1984-02-01 貨物支線坂出駅 - 坂出港駅間廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 1966 一覧 OCR 이름은 「取出港」(坂出港 오독), 開業 昭24.12.27 같음",
+   "edges": [
+    "e_097028"
+   ]
+  },
+  {
+   "name": "鹿児島本線 黒崎–黒崎港",
+   "parent": "l_kagoshima_main_line",
+   "line": "l_kagoshima_main_line_freight",
+   "line_name": "鹿児島本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_kagoshima_main_line_freight_kurosakiko",
+   "path": [
+    [
+     "n_kurosaki",
+     0.0
+    ],
+    [
+     "n_kurosakiko",
+     2.1,
+     {
+      "name": "黒崎港",
+      "pref": 40
+     }
+    ]
+   ],
+   "open": "1953-04-01",
+   "close": "1982-02-28",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ111",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ111 https://dl.ndl.go.jp/pid/1873236/1/111",
+    "ja.wikipedia 鹿児島本線 oldid=111169723"
+   ],
+   "why": "国鉄 鹿児島本線 貨物支線 黒崎–黒崎港. 1966 停車場一覧(높음) 「貨」 黒崎港 駅間 2.1 km. 날짜는 위키 鹿児島本線 oldid=111169723 年表 「1953-04-01 貨物支線 黒崎駅 - 黒崎港駅間が開業 / 1982-02-28 同 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097029"
+   ]
+  },
+  {
+   "name": "鹿児島本線 鹿児島–鹿児島港",
+   "parent": "l_kagoshima_main_line",
+   "line": "l_kagoshima_main_line_freight",
+   "line_name": "鹿児島本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_kagoshima_main_line_freight_kagoshimako",
+   "path": [
+    [
+     "n_kagoshima",
+     0.0
+    ],
+    [
+     "n_kagoshimako",
+     1.9,
+     {
+      "name": "鹿児島港",
+      "pref": 46
+     }
+    ]
+   ],
+   "open": "1953-05-01",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ111",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ111 https://dl.ndl.go.jp/pid/1873236/1/111",
+    "ja.wikipedia 鹿児島本線 oldid=111169723"
+   ],
+   "why": "国鉄 鹿児島本線 貨物支線 鹿児島–鹿児島港. 1966 停車場一覧(높음) 「貨」 鹿児島港 駅間 1.9 km. 날짜는 위키 鹿児島本線 oldid=111169723 年表 「1953-05-01 鹿児島駅 - 鹿児島港駅間 開業 / 1984-02-01 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097030"
+   ]
+  },
+  {
+   "name": "日豊本線 西大分–大分港",
+   "parent": "l_nippo_main_line",
+   "line": "l_nippo_main_line_freight",
+   "line_name": "日豊本線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_nippo_main_line_freight_oitako",
+   "path": [
+    [
+     "n_nishi_oita",
+     0.0
+    ],
+    [
+     "n_oitako",
+     2.0,
+     {
+      "name": "大分港",
+      "pref": 44
+     }
+    ]
+   ],
+   "open": "1955-12-01",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ122",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ122 https://dl.ndl.go.jp/pid/1873236/1/122",
+    "ja.wikipedia 日豊本線 oldid=111420360"
+   ],
+   "why": "国鉄 日豊本線 貨物支線 西大分–大分港. 1966 停車場一覧(높음) 「貨」 大分港 駅間 2.0 km. 날짜는 위키 日豊本線 oldid=111420360 年表 「1955-12-01 西大分駅 - 大分港駅間の貨物支線（大分港臨港線）が開業 / 1984-02-01 同 廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097031"
+   ]
+  },
+  {
+   "name": "富山港線 富山–奥田",
+   "parent": "l_toyamako_line",
+   "line": "l_toyamako_line_freight",
+   "line_name": "富山港線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_toyamako_line_freight_okuda_toyama",
+   "path": [
+    [
+     "n_toyama",
+     0.0
+    ],
+    [
+     "n_okuda_toyama",
+     1.9,
+     {
+      "name": "奥田",
+      "pref": 16
+     }
+    ]
+   ],
+   "open": "1938-08-24",
+   "close": "1984-02-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ39",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ39 https://dl.ndl.go.jp/pid/1873236/1/39",
+    "ja.wikipedia 富山港線 oldid=111320508"
+   ],
+   "why": "国鉄 富山港線 貨物支線 富山–奥田. 1966 停車場一覧(높음) 「貨」 奥田 駅間 1.9 km. 날짜는 위키 富山港線 oldid=111320508 年表 「1938-08-24 運河線（貨物線） 富山駅 - 日曹工場前駅間 (2.1 km) が開業 / 1943 改キロ 0.2 km短縮 / 1984-02-01 貨物支線 富山駅 - 奥田駅間 (1.9 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 1950년 전 사업자(富山市営·富岩鉄道·富山地方鉄道)는 1950년 시점(국철)으로 접음",
+   "edges": [
+    "e_097032"
+   ]
+  },
+  {
+   "name": "富山港線 大広田–富山港",
+   "parent": "l_toyamako_line",
+   "line": "l_toyamako_line_freight",
+   "line_name": "富山港線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_toyamako_line_freight_toyamako",
+   "path": [
+    [
+     "n_hagiurashogakkomae",
+     0.0
+    ],
+    [
+     "n_toyamako",
+     1.4,
+     {
+      "name": "富山港",
+      "pref": 16
+     }
+    ]
+   ],
+   "open": "1936-12-27",
+   "close": "1986-11-01",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ39",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ39 https://dl.ndl.go.jp/pid/1873236/1/39",
+    "ja.wikipedia 富山港線 oldid=111320508"
+   ],
+   "why": "国鉄 富山港線 貨物支線 大広田–富山港. 1966 停車場一覧(높음) 「貨」 富山港 駅間 1.4 km. 날짜는 위키 富山港線 oldid=111320508 年表 「1936-12-27 貨物支線 西ノ宮信号所 - 岩瀬埠頭駅間 (0.5 km) が開業 / 1943 大広田駅 - 富山港駅間改キロ、0.9 km延長 / 1986-11-01 貨物支線 大広田駅 - 富山港駅間 (1.4 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 1950년 전 사업자는 1950년 시점(국철)으로 접음",
+   "edges": [
+    "e_097033"
+   ]
+  },
+  {
+   "name": "南武線 矢向–川崎河岸",
+   "parent": "l_nambu_line",
+   "line": "l_nambu_line_freight",
+   "line_name": "南武線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_nambu_line_freight_kawasaki_kashi",
+   "path": [
+    [
+     "n_yako",
+     0.0
+    ],
+    [
+     "n_kawasaki_kashi",
+     1.7,
+     {
+      "name": "川崎河岸",
+      "pref": 14
+     }
+    ]
+   ],
+   "open": "1927-03-09",
+   "close": "1972-05-25",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ27",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ27 https://dl.ndl.go.jp/pid/1873236/1/27",
+    "ja.wikipedia 南武線 oldid=111552537"
+   ],
+   "why": "国鉄 南武線 貨物支線 矢向–川崎河岸. 1966 停車場一覧(높음) 「貨」 川崎河岸 駅間 1.7 km. 날짜는 위키 南武線 oldid=111552537 年表 「1927-03-09 貨物支線 矢向駅 - 川崎河岸駅間…が開業 / 1972-05-25 貨物支線 矢向駅 - 川崎河岸駅間 (1.7 km) が廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 1950년 전 사업자(南武鉄道)는 1950년 시점(국철)으로 접음",
+   "edges": [
+    "e_097034"
+   ]
+  },
+  {
+   "name": "宮田線 磯光–新菅牟田–菅牟田",
+   "parent": "l_miyada_line",
+   "line": "l_miyada_line_freight",
+   "line_name": "宮田線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_miyada_line_freight_sugamuta",
+   "path": [
+    [
+     "n_isomitsu",
+     0.0
+    ],
+    [
+     "n_shin_sugamuta",
+     0.9,
+     {
+      "name": "新菅牟田",
+      "pref": 40
+     }
+    ],
+    [
+     "n_sugamuta",
+     2.2,
+     {
+      "name": "菅牟田",
+      "pref": 40
+     }
+    ]
+   ],
+   "open": "1915-12-01",
+   "close": "1977-07-20",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ126",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ126 https://dl.ndl.go.jp/pid/1873236/1/126",
+    "ja.wikipedia 宮田線 oldid=107180161"
+   ],
+   "why": "国鉄 宮田線 貨物支線 磯光–新菅牟田–菅牟田. 1966 停車場一覧(높음) 「貨」 新菅牟田 駅間 0.9; 菅牟田 駅間 1.3 km. 날짜는 위키 宮田線 oldid=107180161 年表 「1977-07-20 磯光 - 菅牟田間 (2.2 km) の貨物支線を廃止。新菅牟田駅、菅牟田駅を廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 개업은 1966 一覧 新菅牟田 開業 欄(大4.12.1). 菅牟田(2대)는 1910-10-15부터지만 1950 뒤 꼴(新菅牟田 경유) 기준",
+   "edges": [
+    "e_097035",
+    "e_097036"
+   ]
+  },
+  {
+   "name": "日田彦山線 豊前川崎–第一大任",
+   "parent": "l_hitahikosan_line",
+   "line": "l_hitahikosan_line_freight",
+   "line_name": "日田彦山線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_hitahikosan_line_freight_daiichi_oto",
+   "path": [
+    [
+     "n_buzen_kawasaki",
+     0.0
+    ],
+    [
+     "n_daiichi_oto",
+     0.9,
+     {
+      "name": "第一大任",
+      "pref": 40
+     }
+    ]
+   ],
+   "open": "1899-07-10",
+   "close": "1974-12-10",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ122",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ122 https://dl.ndl.go.jp/pid/1873236/1/122",
+    "ja.wikipedia 日田彦山線 oldid=110324185"
+   ],
+   "why": "国鉄 日田彦山線 貨物支線 豊前川崎–第一大任. 1966 停車場一覧(높음) 「貨」 第一大任 駅間 0.9 km. 날짜는 위키 日田彦山線 oldid=110324185 年表 「1899-07-10 川崎駅 - 第一大任駅間（マイル設定なし）の貨物支線を開業 / 1974-12-10 豊前川崎駅 - 第一大任駅間 (0.9km) の貨物支線を廃止」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖",
+   "edges": [
+    "e_097037"
+   ]
+  },
+  {
+   "name": "幸袋線 幸袋–伊岐須",
+   "parent": "l_kobukuro_line",
+   "line": "l_kobukuro_line_freight",
+   "line_name": "幸袋線（貨物）",
+   "family": "jr",
+   "gauge": 1067,
+   "route": "r_kobukuro_line_freight_ikisu",
+   "path": [
+    [
+     "n_kobukuro",
+     0.0
+    ],
+    [
+     "n_ikisu",
+     2.5,
+     {
+      "name": "伊岐須",
+      "pref": 40
+     }
+    ]
+   ],
+   "open": "1899-12-26",
+   "close": "1969-12-08",
+   "operators": [
+    [
+     null,
+     "o_japanese_national_railways"
+    ]
+   ],
+   "km_src": "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ127",
+   "date_src": "wikipedia",
+   "sources": [
+    "日本国有鉄道『鉄道停車場一覧 昭和41年3月1日現在』(NDL pid 1873236) コマ127 https://dl.ndl.go.jp/pid/1873236/1/127",
+    "ja.wikipedia 幸袋線 oldid=106494274"
+   ],
+   "why": "国鉄 幸袋線 貨物支線 幸袋–伊岐須. 1966 停車場一覧(높음) 「貨」 伊岐須 駅間 2.5 km. 날짜는 위키 幸袋線 oldid=106494274 年表 「1899-12-26 伊岐須分岐点 - 伊岐須間の貨物支線を開業 / 1969-12-08 小竹 - 二瀬間の全線と貨物支線（幸袋 - 伊岐須間）を廃止 / 幸袋駅 - 川津信号場 (1.6) - （貨）伊岐須駅 (2.5)」(중간). 여객 영업 기간이 1950년 뒤에 없어 숨은 노선(화물 규칙 1). km는 1950 뒤 값이고 1950 전 km 바뀜은 기록 범위 밖. 幸袋–川津信号場 1.6 km는 본선 선로를 같이 써서 분기 신호장 노드 없이 幸袋에서 잇는 칸",
+   "edges": [
+    "e_097038"
+   ]
+  }
+ ]
+}

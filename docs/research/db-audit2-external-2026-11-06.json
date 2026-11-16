@@ -1,0 +1,234 @@
+[
+ {
+  "id": "EXT-001",
+  "severity": "오류",
+  "problem": "옛 노면전차망 대량 누락: 현행 노선이 섞인 N05 묶음을 통째로 current(현행 일부)로 판정해 1950~1978년에 폐지된 궤도선 약 120개(N05 선 길이 약 430km, 근사)가 기록 노선·열람 전용 어디에도 없음. 東京都電 44(本通線·品川線·上野線·九段線 등), 大阪市電 약 29, 名古屋市電 18, 京都市電 8(四条·今出川·河原町·烏丸·東山·北大路·西大路·七条·伏見·梅津), 横浜市電 6, 西鉄福岡市内線 貫線·呉服町線, 富山 東部線·宮下線, 熊本 黒髪線·坪井線, 神戸 5·6号線, 仙台 長町線·北仙台線, 札幌 西4丁目線·西20丁目線, 函館 本線 ガス会社前–函館駅前·東雲線",
+  "evidence": "data/candidates/n05_report.json 東京·大阪·札幌 묶음 result=current. DB 1955-06-30 東京都交通局 95.9km vs 東京都電車 https://ja.wikipedia.org/w/index.php?oldid=110874184 「最盛期（1955年頃）には営業キロ約213 km」; DB 1957 京都 24.6km vs 京都市電 https://ja.wikipedia.org/w/index.php?oldid=111408161 「最盛期は76.8km」; DB 1959-04-01 名古屋(지하철 제외) 72.9km vs 名古屋市電 https://ja.wikipedia.org/w/index.php?oldid=106345723 「総延長106.3kmで最大」; 西鉄福岡市内線 https://ja.wikipedia.org/w/index.php?oldid=110542419 貫通線 11.9 등이 DB에 없음(循環線만); 函館市企業局交通部 https://ja.wikipedia.org/w/index.php?oldid=111537183 「ガス会社前 - 函館駅前 (1.8 km)：1993年4月1日廃止」. SD 西鉄福岡市内線(貫通線) 32역이 DB와 겹침 12%",
+  "fix": "n05_report 판정을 묶음이 아니라 N05 (사업자,노선) 단위로 하고, 모든 선분이 1950~2025에 끝나는 노선을 따로 판정. 도시별 위키 노선 목록으로 공식 궤도선을 넣음(§4.4). 검사: N05에서 1950~2025에 끝나는 (사업자,노선) 중 DB 노선·열람 전용·skip 사유 어디에도 없는 것 0",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-002",
+  "severity": "오류",
+  "problem": "§4.4 결정(2026-11-04, 옛 노면전차망 v1.0 수록) 전의 out·skip tram_network 판정이 n05_fix.json에 남아 빠짐: 西鉄 北九州線·北方線·戸畑線·枝光線(열람 전용), 福岡市内線 吉塚線, 福島交通 軌道線 4, 南海 和歌山軌道線, 山陽電気軌道 長関·大和·幡生線, 三重交通 神都線(열람 전용), 旭川市街軌道, 富山 山室線, 阪神 甲子園線·北大阪線, 南海 平野線(神戸 平野線과 이름 충돌), 東急玉川線(열람 전용 날짜 NULL), 松本電鉄浅間線(열람 전용), 土佐電 新地線",
+  "evidence": "n05_fix.json 「옛 노면전차망(併用軌道 중심 시내 궤도선). 다음 단계 §4.4」, 「西日本鉄道 北九州線: skip tram_network」. 西鉄北九州線 https://ja.wikipedia.org/w/index.php?oldid=111613506 「北九州本線=29.4km（最大時）、戸畑線=5.5km、枝光線=4.8km、北方線=4.6km」, 폐지 2000-11-26. 南海平野線 https://ja.wikipedia.org/w/index.php?oldid=111663904 「今池 - 平野間 5.9 km」. 東急玉川線 https://ja.wikipedia.org/w/index.php?oldid=111505383. archive_line a_tokyutamagawa_line opened/closed NULL",
+  "fix": "해당 항목을 line 판정(km 없으면 §4.5 ? km·N05 겹침 추정)으로 바꾸고 「다음 단계 §4.4」 문구를 n05_fix에서 없앰. 이름만으로 맞추지 말고 사업자까지 대조",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-003",
+  "severity": "오류",
+  "problem": "N05에도 없는 폐선 北陸鉄道金沢市内線(1967-02-11 전폐, 12.5km)이 DB에 없음. N05가 1950년 뒤 폐선의 닫힌 목록이 아님",
+  "evidence": "N05 北陸鉄道 노선 12개에 金沢市内線 없음. 北陸鉄道金沢市内線 https://ja.wikipedia.org/w/index.php?oldid=110887244 「1963年6月1日時点の集計で営業キロ12.5キロメートル」. 日本の廃止鉄道路線一覧 https://ja.wikipedia.org/w/index.php?oldid=111656893 石川県 항목",
+  "fix": "金沢市内線을 위키 원문으로 넣고, 廃止鉄道路線一覧의 미대조 링크 211개를 폐지 연도로 걸러 N05 밖 폐선을 더 찾음",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-004",
+  "severity": "오류",
+  "problem": "국철→사철 이관 뒤 폐지된 弘南鉄道黒石線(川部–黒石 6.2km, 1984-11-01~1998-04-01)과 下北交通大畑線(下北–大畑 18.0km, 1985-07-01~2001-04-01)이 없음. DB는 국철 기간(~1984·~1985)에서 끝나고 사업자 下北交通도 없음",
+  "evidence": "弘南鉄道黒石線 https://ja.wikipedia.org/w/index.php?oldid=111125380 event1=1984年11月1日 close=1998-04-01 linelength_km=6.2; 下北交通大畑線 https://ja.wikipedia.org/w/index.php?oldid=110559604 event1=1985年7月1日 close=2001-04-01 linelength_km=18.0; station_database line 99223·99224; N05 「弘南鉄道 黒石線」 last 1997, 「下北交通 大畑線」 last 2000",
+  "fix": "transfer 1984-11-01(弘南鉄道)·1985-07-01(下北交通 신설), close 1998-04-01·2001-04-01. 弘南 기간 km 6.2(국철 6.6). 검사: N05 마지막 연도가 DB 노선 마지막 해보다 늦은 노선 점검",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-005",
+  "severity": "오류",
+  "problem": "中央本線 지선 下河原線 国分寺–東京競馬場前(5.6km, 여객 1934-04-02~1973-03-31)이 없음. 노드 東京競馬場前도 없음",
+  "evidence": "下河原線 https://ja.wikipedia.org/w/index.php?oldid=106016782 「国分寺駅 - 東京競馬場前駅間（5.6 km）開業」「前日の3月31日を最後に旅客営業を終え」; N05 「日本国有鉄道 中央本線東京競馬場前支線(1934-1973)」 result=current; SD JR中央線(快速) 東京競馬場前 1934-04-02~1973-04-01",
+  "fix": "中央本線 지선 계통 国分寺–東京競馬場前 5.6km, 1973-04-01 여객 폐지. 1947~1952 여객 휴지 여부 원문 확인",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-006",
+  "severity": "오류",
+  "problem": "현행 사철·JR 노선의 부분 폐지 구간 9곳 누락: 京阪京津線 京津三条–御陵(약 3.6km, 1997-10-12), 北陸鉄道石川線 白菊町–野町(0.8km, 여객 1970-04-01·폐지 1972-09-20), 紀州鉄道 西御坊–日高川(0.7km, 1989-04-01), 能勢電鉄 川西能勢口–川西国鉄前(0.6km, 1981-12-20), 名鉄瀬戸線 堀川–土居下(1976-02-15, 土居下(仮) ~1978-08-20), 大井川 井川線 (旧)川根市代–川根長島 旧線(1990-10-02, DB는 1959~1990 사이 이 구간 선로 없음), 長崎本線 長崎–長崎港(1.1km, 1982-11-14), 名鉄安城支線 南安城–安城(1.1km, 여객 1951-03-21~1961-07-30), 北大阪急行 会場線(1970-02-24~09-14)",
+  "evidence": "京阪京津線 https://ja.wikipedia.org/w/index.php?oldid=111210110 日付2=1997年10月12日; 北陸鉄道石川線 https://ja.wikipedia.org/w/index.php?oldid=111645952; 紀州鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111329127; 能勢電鉄妙見線 https://ja.wikipedia.org/w/index.php?oldid=110790216; 名鉄瀬戸線 https://ja.wikipedia.org/w/index.php?oldid=111605367; 大井川鐵道井川線 https://ja.wikipedia.org/w/index.php?oldid=110204189; 長崎本線 https://ja.wikipedia.org/w/index.php?oldid=111384902; 名鉄安城支線 https://ja.wikipedia.org/w/index.php?oldid=111030345; 北大阪急行電鉄南北線 https://ja.wikipedia.org/w/index.php?oldid=111622054. station_database 폐역 京津三条·白菊町·日高川·川西国鉄前·土居下·犬間·川根唐沢·長崎港·万国博中央口",
+  "fix": "각 구간을 원 노선의 폐지 계통으로 추가. 검사: SD의 1950년 뒤 폐역 중 DB 이름·별칭·열람 전용에 없는 것 0(지금 140, 표기 차이 제외 필요)",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-007",
+  "severity": "오류",
+  "problem": "폐역 누락: 名鉄西尾線 東富田(上横須賀–吉良吉田, 1915-08-05~1969-04-05), 島原鉄道 龍石(1929-05-17~2008-04-01)",
+  "evidence": "名鉄西尾線 https://ja.wikipedia.org/w/index.php?oldid=110631706 「1969年4月5日：東富田駅廃止」「上横須賀駅 - 吉良吉田駅間」; 島原鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111517354 노선도 exBHF 63.4 龍石駅, 「1929年5月17日 … 龍石駅開業」; SD 3000315 東富田",
+  "fix": "두 역을 계통 정차로 추가",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-008",
+  "severity": "오류",
+  "problem": "강삭선 전시 휴지·폐지 뒤 1950년 이후 재개가 빠짐(1차 E1의 미확인분): 西信貴鋼索線 1944-01-07~1957-03-21, 御岳登山鉄道 1944~1951-06-29, 天橋立鋼索鉄道 1944-02-11 폐지~1951-08-12 재개업, 別府ラクテンチ 1944~1950-06-16·2003-11-25~2004-03-21·2008-12-01~2009-07-18. DB는 모두 개업부터 계속 open",
+  "evidence": "近鉄西信貴鋼索線 https://ja.wikipedia.org/w/index.php?oldid=111580551 休止=1944年1月7日 再開=1957年3月21日; 御岳登山鉄道 https://ja.wikipedia.org/w/index.php?oldid=110599275; 丹後海陸交通天橋立鋼索鉄道 https://ja.wikipedia.org/w/index.php?oldid=108500455 廃止=1944年2月11日 再開=1951年8月12日; ラクテンチ別府ラクテンチケーブル線 https://ja.wikipedia.org/w/index.php?oldid=111581988",
+  "fix": "events_fix.json에 suspend·resume(天橋立은 close·open과 사업자 변경) 추가",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-009",
+  "severity": "오류",
+  "problem": "上野懸垂線 2019-11-01 휴지가 없어 2023-12-27 폐지까지 영업 중",
+  "evidence": "東京都交通局上野懸垂線 https://ja.wikipedia.org/w/index.php?oldid=111618130 休止=2019年11月1日 廃止=2023年12月27日; DB e_010933 open 1957-12-17~2023-12-27 last_service NULL",
+  "fix": "suspended 2019-11-01~2023-12-27 또는 last_service 2019-10-31",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-010",
+  "severity": "오류",
+  "problem": "사철 사이 사업자 전환·합병·개칭 이력이 없음(DESIGN §2.2가 예로 든 新京成線→京成松戸線 포함). 사철 노선은 개업부터 지금 사업자 하나, 노선 이름 1,033행 모두 valid_from NULL. 확인한 15노선 전부: 松戸線(新京成 ~2025-03-31), 泉北線(泉北高速 ~2025-03-31), 札幌市電(交通局 ~2020-03-31), 貴志川線(南海 ~2006), 伊賀線·養老線(近鉄 ~2007), 北勢線(近鉄 ~2003), 内部線(近鉄 ~2015), 近鉄京都線(奈良電 ~1963), 生駒線·東信貴鋼索線(信貴生駒 ~1964), 千原線(千葉急行 ~1998), 高岡軌道線(加越能 ~2002), えちぜん鉄道 2선(京福 ~2003), 宮福線(~2015), 別所線",
+  "evidence": "edge_attr l_matsudo_line 京成 1947-12-27~ 23행, l_semboku_line 南海 1971-04-01~, l_sapporo_streetcar 公社 1931~; 京成電鉄 https://ja.wikipedia.org/w/index.php?oldid=111486838 「2025年4月1日に子会社の新京成電鉄を吸収合併」; 近鉄東信貴鋼索線 https://ja.wikipedia.org/w/index.php?oldid=108605068 「1964年10月1日：近畿日本鉄道に合併」; DESIGN §2.2 「合併と共に路線名が変わればrename追加 (新京成線 → 京成松戸線)」",
+  "fix": "transfer(같은 line, 새 operator)와 rename으로 이력 추가, 이름에 기간. 1950년 뒤 사건부터. 검사: N05_003 사업자명이 기간 중 바뀌는데 DB 사업자가 하나뿐인 노선",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-011",
+  "severity": "오류",
+  "problem": "広電 2025-08-03 개편: 的場町–稲荷町·的場町–段原一丁目–比治山下의 휴지(2025-08-03~2026-03-28)가 없고, 이 구간이 1912/1944년부터 循環線 귀속(원래 本線·皆実線, 2026-03-28 循環線 분리)",
+  "evidence": "広島電鉄本線 https://ja.wikipedia.org/w/index.php?oldid=110701122 「的場町 - 稲荷町間は同日より休止、2026年3月28日より循環線として分離」; 広島電鉄皆実線 https://ja.wikipedia.org/w/index.php?oldid=110659772 「的場町 - 比治山下間は循環ルートへの切り替えのため休止」; DB l_loop_line e_009621·e_009622 open 1944-12-27~ongoing",
+  "fix": "2026-03-28까지 本線·皆実線 귀속, 2025-08-03~2026-03-28 suspended, 2026-03-28 transfer→循環線",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-012",
+  "severity": "오류",
+  "problem": "豊橋鉄道東田本線의 1950년 이전 선로(駅前–神明–札木–市役所前, 東田坂上–本社前–東田)가 없어 1950-01-01~08-25 駅前–市役所前, 1950-01-01~04-06 東田 쪽을 탈 수 없음. 개업일도 DB 1925-07-21 vs 원문 1925-07-14",
+  "evidence": "豊橋鉄道東田本線 https://ja.wikipedia.org/w/index.php?oldid=111617936 「1925年7月14日：…本線 駅前 - 神明 - 札木十字路間 (0.8 km)…が開業」「1950年4月7日：東田坂上 - 車庫前 - 東田間の新線」「7月15日」「8月26日：駅前 - 神明間下りを駅大通の新線経由、上りを広小路通の旧線経由」; DB e_009104~e_009106 1950-08-26~, e_009107 1950-07-15~, e_009112 1950-04-07~",
+  "fix": "옛 선로 edge와 1950년 경로 변경(상하선 분리 기간 포함)을 넣음",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-013",
+  "severity": "오류",
+  "problem": "日田彦山線 옛 선로 石田–妙見–東小倉의 legal_abolition이 2027-03-31(添田–夜明 폐지 예정일이 퍼진 것으로 보임). 실제 1962-10-01",
+  "evidence": "DB e_004957·e_004958 open 1915-04-01~1956-11-19 legal_abolition 2027-03-31; 日田彦山線 https://ja.wikipedia.org/w/index.php?oldid=110324185 「1962年10月1日：東小倉駅 - 石田駅間 (6.5km) の貨物支線を廃止」",
+  "fix": "legal_abolition 1962-10-01",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-014",
+  "severity": "오류",
+  "problem": "大井川本線 2022-09-24 전선 운휴 중 金谷–家山(~2022-12-16), 家山–川根温泉笹間渡(~2023-10-01) 운휴가 없음. DB는 川根温泉笹間渡–千頭만 suspended",
+  "evidence": "大井川鐵道大井川本線 https://ja.wikipedia.org/w/index.php?oldid=111519970 「9月24日：台風15号…当面全線見合わせ」「12月16日：金谷駅 - 家山駅間の運行を再開」「2023年10月1日：家山駅 - 川根温泉笹間渡駅間の運行を再開」",
+  "fix": "두 구간 suspended 추가",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-015",
+  "severity": "의심",
+  "problem": "肥薩線 吉松–隼人 운휴 시작: DB 2025-08-09, 원문 2025-08-07",
+  "evidence": "肥薩線 https://ja.wikipedia.org/w/index.php?oldid=111006182 「8月7日：大雨の影響で吉松駅 - 隼人駅間…当面の間運休」; DB e_004581~e_004589 suspended 2025-08-09~2026-07-12",
+  "fix": "JR九州 발표로 날짜 확정",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-016",
+  "severity": "의심",
+  "problem": "小湊鉄道 2026-09 운휴: DB가 上総牛久–里見 09-21, 里見–上総中野 09-20로 나눔(원문은 上総牛久–上総中野 9月20日). 6/29~7월, 8/13~9/19 운휴는 없음",
+  "evidence": "小湊鉄道線 https://ja.wikipedia.org/w/index.php?oldid=111355226 2026年 연혁",
+  "fix": "09-20으로 통일, 짧은 재해 운휴 수록 기준 결정",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-017",
+  "severity": "의심",
+  "problem": "0.1km 차이 7역(DB=노리츠부시, 위키 노선도만 다름): 宮島線 高須 1.3/1.4·JA広島病院前 11.8/11.9, 天竜浜名湖線 森町病院前 13.6/13.5·岡地 43.5/43.4·大森 65.0/64.9, 上町線 住吉公園 4.5/4.6, 東田本線 駅前大通 0.2/0.3",
+  "evidence": "広島電鉄宮島線 https://ja.wikipedia.org/w/index.php?oldid=110659845, 天竜浜名湖鉄道天竜浜名湖線 https://ja.wikipedia.org/w/index.php?oldid=111643207, 阪堺電気軌道上町線 https://ja.wikipedia.org/w/index.php?oldid=108923053, 豊橋鉄道東田本線 https://ja.wikipedia.org/w/index.php?oldid=111617936; noritsubushi lines.json",
+  "fix": "사업자 공표 営業キロ로 확인",
+  "confidence": "낮음"
+ },
+ {
+  "id": "EXT-018",
+  "severity": "의심",
+  "problem": "옛 시내 노면전차 폐선 120노선 중 113노선이 type=rail(志村線, 番町線, 札の辻線, 靱本町線, 堀川線 등). 東山公園モノレール도 rail",
+  "evidence": "line 표 (도시 교통국 사업자의 폐선)",
+  "fix": "궤도선 tram, 모노레일 monorail로",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-019",
+  "severity": "의심",
+  "problem": "현행 노선의 N05 폐역 중 DB 이름·400m 안 노드가 없는 역: 両毛線 9(東前橋, 東足利, 葉鹿 등), 名鉄犬山線 4(九ノ坪, 宮後, 小折口, 稲荷前), 相鉄本線 3(二ツ橋, 二俣下川, 新川島), 名鉄豊川線 3, 富山地鉄立山線 3(上横江, 粟巣野, 芦峅寺), 遠州鉄道 2, 熊本電鉄菊池線 2(富, 花房), 島原 2",
+  "evidence": "N05-24 Station2 (005e 1950~2025)",
+  "fix": "정식 역이면 추가, 仮乗降場이면 1차 S1과 같은 결정",
+  "confidence": "낮음"
+ },
+ {
+  "id": "EXT-020",
+  "severity": "의심",
+  "problem": "열람 전용 a_okazakiekimae(岡崎新)가 西尾線 南安城–碧海古井 사이(1951 폐지). 岡崎新은 옛 西尾線(岡崎新–西尾口, 1943 휴지) 역",
+  "evidence": "archive_stop a_okazakiekimae after=n_minami_anjo before=n_hekikai_furui; 名鉄西尾線 https://ja.wikipedia.org/w/index.php?oldid=110631706",
+  "fix": "원문으로 자리 확인",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-021",
+  "severity": "의심",
+  "problem": "京成 현행 180.3km vs 공식 178.8km(+1.5). 東成田線이 DB 1.1km(공식 7.1km)",
+  "evidence": "京成電鉄 https://ja.wikipedia.org/w/index.php?oldid=111486838 「2025年4月1日時点で178.8 km」",
+  "fix": "本線·成田空港線·東成田線 공용 구간 계상 확인",
+  "confidence": "낮음"
+ },
+ {
+  "id": "EXT-022",
+  "severity": "의심",
+  "problem": "[알려짐 S7 계열] 牟岐線 阿波海南–海部 edge km 1.4(JR 시절 1.5, 1.4는 2021 阿佐東線 값)",
+  "evidence": "노리츠부시 「牟岐線 阿波海南 ～ 海部 1.5 廃止日 2020-11-01」, 「阿佐東線 阿波海南（モードインターチェンジ）～海部 1.4」",
+  "fix": "1차 S7과 함께 결정",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-023",
+  "severity": "정보",
+  "problem": "JR 6사 총 営業キロ 모두 공식값과 맞음(차이는 명세상 제외 구간뿐): 北海道 2152.7+海峡線 87.8=2240.5, 東日本 7191.1+화물 지선=7302.2, 東海 1970.8+城北線 11.2=1982.0, 西日本 4881.7−1.6+화물 17.4=4897.5, 四国 853.7, 九州 2313.4+添田–夜明 29.2=2342.6",
+  "evidence": "北海道旅客鉄道 https://ja.wikipedia.org/w/index.php?oldid=111617736, 東日本旅客鉄道 https://ja.wikipedia.org/w/index.php?oldid=111600691, 東海旅客鉄道 https://ja.wikipedia.org/w/index.php?oldid=111519812, 西日本旅客鉄道 https://ja.wikipedia.org/w/index.php?oldid=111392482 + データで見るJR西日本2025 pp.54-57, 四国旅客鉄道 https://ja.wikipedia.org/w/index.php?oldid=111169668, 九州旅客鉄道 https://ja.wikipedia.org/w/index.php?oldid=111656025",
+  "fix": "없음",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-024",
+  "severity": "정보",
+  "problem": "대형 사철 총 km 일치: 東武 463.3, 名鉄 444.2, 西武 176.6, 小田急 120.5, 京王 84.7, 京急 87.0, 西鉄 106.1, 相鉄 42.2(厚木線 제외), 東京メトロ 195.0, 近鉄 501.1, 南海 169.1, 京阪 91.1, 阪神 48.9, Osaka Metro 141.0, 都交通局 130.9. 東急은 공식 線名 기준으로 일치",
+  "evidence": "각 사 위키 문서(본문 표에 revid)",
+  "fix": "없음",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-025",
+  "severity": "정보",
+  "problem": "2023~2026 개업·폐지·운휴 21건 중 17건이 날짜·역·km 일치(相鉄·東急新横浜線, 七隈線, 留萌本線 2단계, 南阿蘇, 宇都宮LRT 19역, 日田彦山 BRT, 妙見の森, 北陸新幹線·ハピライン·IR, 箕面萱野, 根室本線, スカイレール, 立山トロリーバス, 夢洲, 陸羽西線, 黒部峡谷, 北上線, 久留里線). 나머지는 EXT-009~011·015",
+  "evidence": "본문 §4 표",
+  "fix": "없음",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-026",
+  "severity": "정보",
+  "problem": "예정 폐지일이 없음: 久留里線 久留里–上総亀山·津軽線 新中小国信号場–三厩(2027-04-01), 名鉄広見線 新可児–御嵩(2029-04-01), 弘南鉄道大鰐線(2028-04). 日田彦山線만 2027-03-31이 있음",
+  "evidence": "久留里線 https://ja.wikipedia.org/w/index.php?oldid=111534802 「廃止予定日を2027年4月1日とする…廃止届」; 名鉄広見線 https://ja.wikipedia.org/w/index.php?oldid=110535786",
+  "fix": "예정일 수록 여부를 하나로 정함",
+  "confidence": "높음"
+ },
+ {
+  "id": "EXT-027",
+  "severity": "정보",
+  "problem": "石巻線 2015-03-14 浦宿–女川 改キロ(−0.2km)가 km_change로 없어 2015년 전 탑승 km가 0.2 짧음",
+  "evidence": "石巻線 https://ja.wikipedia.org/w/index.php?oldid=111464534",
+  "fix": "km_change 추가. 같은 종류 전수 조사",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-028",
+  "severity": "정보",
+  "problem": "[알려짐] 1950년 뒤 폐지인데 열람 전용: 小田急向ヶ丘遊園モノレール(2001), 井笠鉄道 神辺·矢掛線(1967), 三重交通神都線(1961), 荒尾市営(1964), 赤城登山鉄道(1968), 大浜線(1980), 西鉄 北九州 4선(EXT-002). 위키에 역 목록이 있어 §4.5 승격 대상",
+  "evidence": "archive_line closed≥1950 11행; 小田急電鉄 https://ja.wikipedia.org/w/index.php?oldid=111357345 「向ヶ丘遊園駅から向ヶ丘遊園正門駅までの間1.1 km」",
+  "fix": "§4.5 승격",
+  "confidence": "중간"
+ },
+ {
+  "id": "EXT-029",
+  "severity": "정보",
+  "problem": "[알려짐] 臨時駅 牟岐線 田井ノ浜 없음(1차 S2)",
+  "evidence": "station_database JR牟岐線",
+  "fix": "1차 S2 결정",
+  "confidence": "높음"
+ }
+]

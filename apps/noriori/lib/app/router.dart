@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:noriori_core/noriori_core.dart' show BrowseEra;
+import 'package:noriori_core/noriori_core.dart' show BrowseEra, stationLines, tappedLines;
 
 import '../features/data/ui/backup_notice_bar.dart';
 import '../features/data/ui/news_screens.dart';
@@ -115,14 +115,20 @@ class _Map extends ConsumerWidget {
       );
       return;
     }
-    final network = ref.read(networkProvider);
-    final edges = network.edges.values.where((edge) => edge.n == feature.edge);
-    if (edges.isEmpty) return;
-    final lines = {for (final attr in network.attrsOfEdge(edges.first.id)) attr.lineId}.toList();
+    final lines = feature.nodes.isNotEmpty
+        ? stationLines(ref.read(networkProvider), feature.nodes, only: feature.lines, today: ref.read(todayProvider))
+        : tappedLines(ref.read(networkProvider), feature.edges, today: ref.read(todayProvider));
+    if (lines.isEmpty) return;
+    final at = feature.at;
+    // 겹친 노선은 화면을 바꾸지 않고 누른 자리 근처에서 고른다 (DESIGN §7.4)
+    if (lines.length > 1 && at != null) {
+      await showLinePicker(context, ref, at: at, lines: lines);
+      return;
+    }
     await showModalBottomSheet<void>(
       context: context,
       isScrollControlled: true,
-      builder: (context) => LineSheet(lineIds: lines),
+      builder: (context) => LineSheet(lineIds: [for (final line in lines) line.lineId]),
     );
   }
 
@@ -159,13 +165,15 @@ final _browse = GoRoute(
   ],
 );
 
-class _TabShell extends StatelessWidget {
+class _TabShell extends ConsumerWidget {
   const _TabShell({required this.shell});
 
   final StatefulNavigationShell shell;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    // 완주한 순간에 배지를 남긴다. 통계 화면을 열기 전에 새 판이 들어와도 잃지 않게 (DESIGN §3.3)
+    ref.listen(heldBadgesProvider, (_, _) {});
     final tabs = context.t.tabs;
     final tokens = context.tokens;
     final text = Theme.of(context).textTheme;

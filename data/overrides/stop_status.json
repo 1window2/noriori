@@ -1,0 +1,3703 @@
+[
+{"node": "n_koiji", "kind": "kari", "from": "1964-09-21", "to": "1969-10-01", "name": "恋路仮停車場", "source": "ja.wikipedia のと鉄道能登線 rev109521647 年表 1964-09-21 「恋路仮停車場…開業」, 1969-10-01 「恋路仮停車場を恋路臨時乗降場に変更」, 1987-04-01 「恋路臨時乗降場を（臨）恋路駅に変更」(중간) + 역 문서 rev111635263(중간) (10회차 G2 2026-11-16; audit4 chubu_2-006)"},
+{"node": "n_koiji", "kind": "kari", "from": "1969-10-01", "to": "1987-04-01", "name": "恋路臨時乗降場", "source": "ja.wikipedia のと鉄道能登線 rev109521647 年表 1964-09-21 「恋路仮停車場…開業」, 1969-10-01 「恋路仮停車場を恋路臨時乗降場に変更」, 1987-04-01 「恋路臨時乗降場を（臨）恋路駅に変更」(중간) + 역 문서 rev111635263(중간) (10회차 G2 2026-11-16; audit4 chubu_2-006)"},
+{"node": "n_koiji", "kind": "rinji", "from": "1987-04-01", "to": "1988-03-25", "name": "恋路駅", "source": "ja.wikipedia のと鉄道能登線 rev109521647 年表 1964-09-21 「恋路仮停車場…開業」, 1969-10-01 「恋路仮停車場を恋路臨時乗降場に変更」, 1987-04-01 「恋路臨時乗降場を（臨）恋路駅に変更」(중간) + 역 문서 rev111635263(중간) (10회차 G2 2026-11-16; audit4 chubu_2-006)"},
+{
+"node": "n_nishi_sendai_highland",
+"kind": "rinji",
+"from": "1987-03-21",
+"to": "2014-03-15",
+"name": "西仙台ハイランド駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101445887"
+},
+{
+"node": "n_yatsumori",
+"kind": "kari",
+"from": "1937-11-10",
+"to": "1987-03-31",
+"name": "八ツ森駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=106704129"
+},
+{
+"node": "n_yatsumori",
+"kind": "rinji",
+"from": "1987-03-31",
+"to": "2014-03-15",
+"name": "八ツ森駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=106704129"
+},
+{
+"node": "n_kakinoki",
+"kind": "kari",
+"from": "1951-03-01",
+"to": "1987-04-01",
+"name": "柿ノ木駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109307217"
+},
+{
+"node": "n_kakinoki",
+"kind": "rinji",
+"from": "2013-03-16",
+"to": "2015-03-14",
+"name": "柿ノ木駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109307217"
+},
+{
+"node": "n_shinshihoro",
+"kind": "kari",
+"from": "1966-10-01",
+"to": "1987-03-23",
+"name": "新士幌仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109409088"
+},
+{
+"node": "n_denryokushomae",
+"kind": "kari",
+"from": "1963-11-01",
+"to": "1987-03-23",
+"name": "電力所前仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109409214"
+},
+{
+"node": "n_yanaba_ski_jo_mae",
+"kind": "rinji",
+"from": "1985-12-24",
+"to": "2019-03-16",
+"name": "ヤナバスキー場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109175933"
+},
+{
+"node": "n_chito",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "2006-03-18",
+"name": "智東駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111274409"
+},
+{
+"node": "n_miyajima_boat_race",
+"kind": "rinji",
+"from": "1954-10-31",
+"to": null,
+"name": "宮島ボートレース場駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109246603"
+},
+{
+"node": "n_keirinjomae_toyama_chiho",
+"kind": "kari",
+"from": "1959-04-18",
+"to": "1987-04-01",
+"name": "競輪場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111647780"
+},
+{
+"node": "n_keirinjomae_toyama_chiho",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "2006-03-01",
+"name": "競輪場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111647780"
+},
+{
+"node": "n_kairakuen",
+"kind": "rinji",
+"from": "1925-02-02",
+"to": null,
+"name": "偕楽園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108520338"
+},
+{
+"node": "n_minamiuryu",
+"kind": "kari",
+"from": "1956-11-16",
+"to": "1972-06-19",
+"name": "南雨竜仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101519691"
+},
+{
+"node": "n_nakauryu",
+"kind": "kari",
+"from": "1956-11-16",
+"to": "1972-06-19",
+"name": "中雨竜仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101519484"
+},
+{
+"node": "n_uembetsu",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1990-03-10",
+"name": "雨煙別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464346"
+},
+{
+"node": "n_omagari_shinmei",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1976-02-01",
+"name": "大曲仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464384"
+},
+{
+"node": "n_utsunai",
+"kind": "kari",
+"from": "1949-04-01",
+"to": "1956-11-19",
+"name": "宇津内仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464414"
+},
+{
+"node": "n_fukinodai",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1990-03-10",
+"name": "蕗ノ台駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464423"
+},
+{
+"node": "n_shirakaba",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1990-03-10",
+"name": "白樺駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464429"
+},
+{
+"node": "n_motonishi",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1985-04-01",
+"name": "元西仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463988"
+},
+{
+"node": "n_jurokugosen",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1985-04-01",
+"name": "十六号線仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464015"
+},
+{
+"node": "n_joto_shokotsu",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1985-04-01",
+"name": "上東仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464074"
+},
+{
+"node": "n_okuto",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1985-04-01",
+"name": "奥東仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464091"
+},
+{
+"node": "n_yuchinnai",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1985-04-01",
+"name": "雄鎮内仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464130"
+},
+{
+"node": "n_gokazan",
+"kind": "kari",
+"from": "1958-07-01",
+"to": "1987-03-20",
+"name": "五鹿山仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441351"
+},
+{
+"node": "n_fukushima_yumo",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-03-20",
+"name": "福島仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441379"
+},
+{
+"node": "n_shibushi_yumo",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-03-20",
+"name": "志撫子仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441718"
+},
+{
+"node": "n_hamatokotan",
+"kind": "kari",
+"from": "1956-08-20",
+"to": "1987-03-20",
+"name": "浜床丹仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441778"
+},
+{
+"node": "n_wakasato",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-03-20",
+"name": "若里仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441986"
+},
+{
+"node": "n_sakaibashi",
+"kind": "kari",
+"from": "1956-12-20",
+"to": "1987-03-20",
+"name": "堺橋仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442064"
+},
+{
+"node": "n_koseizawa",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-03-20",
+"name": "興生沢仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442088"
+},
+{
+"node": "n_momijibashi",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-03-20",
+"name": "紅葉橋仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442116"
+},
+{
+"node": "n_higashitomioka",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-03-20",
+"name": "東富丘仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442211"
+},
+{
+"node": "n_tosa",
+"kind": "kari",
+"from": "1956-01-07",
+"to": "1972-02-08",
+"name": "土佐仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=86807734"
+},
+{
+"node": "n_tokoroko",
+"kind": "kari",
+"from": "1956-01-07",
+"to": "1972-02-08",
+"name": "常呂港仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442274"
+},
+{
+"node": "n_nakanotoro",
+"kind": "kari",
+"from": "1956-01-07",
+"to": "1972-02-08",
+"name": "中能取仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442302"
+},
+{
+"node": "n_futamichuo",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-03-20",
+"name": "二見中央仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442346"
+},
+{
+"node": "n_omagari_yumo",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-03-20",
+"name": "大曲仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442376"
+},
+{
+"node": "n_kyoei_shiranuka",
+"kind": "kari",
+"from": "1974-07-25",
+"to": "1983-10-23",
+"name": "共栄仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109411469"
+},
+{
+"node": "n_asahidori",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1985-04-01",
+"name": "旭通仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109438095"
+},
+{
+"node": "n_toyohoro_aioi",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1985-04-01",
+"name": "豊幌仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109438204"
+},
+{
+"node": "n_tatsumi",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1985-04-01",
+"name": "達美仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=89990749"
+},
+{
+"node": "n_kokomae",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1985-04-01",
+"name": "高校前仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109440943"
+},
+{
+"node": "n_taisho_aioi",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1985-04-01",
+"name": "大昭仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=98646387"
+},
+{
+"node": "n_kaitaku",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1985-04-01",
+"name": "開拓仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441149"
+},
+{
+"node": "n_inawashirokohan",
+"kind": "rinji",
+"from": "1986-07-20",
+"to": "2007-XX-XX",
+"name": "猪苗代湖畔駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102560141"
+},
+{
+"node": "n_hanaoka",
+"kind": "kari",
+"from": "1956-08-20",
+"to": "1987-03-30",
+"name": "花岡仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110136132"
+},
+{
+"node": "n_tomioka_haboro",
+"kind": "kari",
+"from": "1956-05-13",
+"to": "1987-03-30",
+"name": "富岡仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=86977807"
+},
+{
+"node": "n_senmatsu",
+"kind": "kari",
+"from": "1963-06-01",
+"to": "1987-03-30",
+"name": "千松仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=95654930"
+},
+{
+"node": "n_banyanosawa",
+"kind": "kari",
+"from": "1955-03-26",
+"to": "1987-03-30",
+"name": "番屋ノ沢仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110783291"
+},
+{
+"node": "n_okotsu",
+"kind": "kari",
+"from": "1956-09-01",
+"to": "1987-03-30",
+"name": "興津仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=87335511"
+},
+{
+"node": "n_shimonotaki",
+"kind": "kari",
+"from": "1956-11-01",
+"to": "1972-02-08",
+"name": "下ノ滝仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463471"
+},
+{
+"node": "n_keimei",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-03-30",
+"name": "啓明仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=86978419"
+},
+{
+"node": "n_kitasato",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1970-09-07",
+"name": "北里仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463704"
+},
+{
+"node": "n_kantaku",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-03-30",
+"name": "干拓仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=100267612"
+},
+{
+"node": "n_nakakawaguchi",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-03-30",
+"name": "中川口仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102558055"
+},
+{
+"node": "n_nishifuraoi",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1970-09-07",
+"name": "西振老仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463724"
+},
+{
+"node": "n_sakukaeshi",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-03-30",
+"name": "作返仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101379938"
+},
+{
+"node": "n_okinami",
+"kind": "kari",
+"from": "1960-07-08",
+"to": "1987-04-01",
+"name": "立戸の浜仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111186897"
+},
+{
+"node": "n_okinami",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1988-03-25",
+"name": "立戸の浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111186897"
+},
+{
+"node": "n_tonbetsu",
+"kind": "kari",
+"from": "1956-02-26",
+"to": "1985-07-01",
+"name": "頓別仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109457517"
+},
+{
+"node": "n_toyohama_kohin_north",
+"kind": "kari",
+"from": "1956-02-26",
+"to": "1985-07-01",
+"name": "豊浜仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109457549"
+},
+{
+"node": "n_yamausu",
+"kind": "kari",
+"from": "1956-02-26",
+"to": "1985-07-01",
+"name": "山臼仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109457615"
+},
+{
+"node": "n_motosawaki",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1985-07-15",
+"name": "元沢木仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463760"
+},
+{
+"node": "n_omukyoei",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1985-07-15",
+"name": "雄武共栄仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463775"
+},
+{
+"node": "n_higashichugakkomae",
+"kind": "kari",
+"from": "1973-04-01",
+"to": "1984-04-01",
+"name": "東中学校前仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101770357"
+},
+{
+"node": "n_balloon_saga",
+"kind": "rinji",
+"from": "1989-11-18",
+"to": null,
+"name": "バルーンさが駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107122138"
+},
+{
+"node": "n_hachiman",
+"kind": "rinji",
+"from": "1928-04-27",
+"to": "1929-12-16",
+"name": "八幡駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109851344"
+},
+{
+"node": "n_komaiko",
+"kind": "rinji",
+"from": "1903-07-11",
+"to": "1964-04-10",
+"name": "小舞子駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108390162"
+},
+{
+"node": "n_gala_yuzawa",
+"kind": "rinji",
+"from": "1990-12-20",
+"to": null,
+"name": "ガーラ湯沢駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110346485"
+},
+{
+"node": "n_joetsu_kokusai_ski_jo_mae",
+"kind": "rinji",
+"from": "1997-12-27",
+"to": "2003-04-01",
+"name": "上越国際スキー場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110940479"
+},
+{
+"node": "n_jokoji",
+"kind": "rinji",
+"from": "1920-08-15",
+"to": "1924-01-01",
+"name": "定光寺駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110104978"
+},
+{
+"node": "n_higashi_kiyokawa",
+"kind": "rinji",
+"from": "1978-10-02",
+"to": "1987-04-01",
+"name": "東清川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109226758"
+},
+{
+"node": "n_juniko",
+"kind": "rinji",
+"from": "1959-09-15",
+"to": "1988-02-01",
+"name": "十二湖駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101722702"
+},
+{
+"node": "n_wespa_tsubakiyama",
+"kind": "rinji",
+"from": "2001-12-01",
+"to": "2002-12-01",
+"name": "ウェスパ椿山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108962658"
+},
+{
+"node": "n_senjojiki",
+"kind": "rinji",
+"from": "1954-07-07",
+"to": "1987-10-01",
+"name": "千畳敷駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101723236"
+},
+{
+"node": "n_omoshiroyama_kogen",
+"kind": "kari",
+"from": "1937-11-10",
+"to": "1969-10-01",
+"name": "面白山高原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111322983"
+},
+{
+"node": "n_omoshiroyama_kogen",
+"kind": "rinji",
+"from": "1969-10-01",
+"to": "1988-03-13",
+"name": "面白山高原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111322983"
+},
+{
+"node": "n_imaihama_kaigan",
+"kind": "rinji",
+"from": "1962-07-07",
+"to": "1969-03-01",
+"name": "今井浜海岸駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109795050"
+},
+{
+"node": "n_playpia_shirahama",
+"kind": "rinji",
+"from": "1986-08-01",
+"to": "2012-03-17",
+"name": "プレイピア白浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109201801"
+},
+{
+"node": "n_chitose_uchibo",
+"kind": "rinji",
+"from": "1927-05-20",
+"to": "1930-08-01",
+"name": "千歳駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110178312"
+},
+{
+"node": "n_inaho",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "稲穂駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111551302"
+},
+{
+"node": "n_inazumi_koen",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "稲積公園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110919242"
+},
+{
+"node": "n_hassamu_chuo",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "発寒中央駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110919502"
+},
+{
+"node": "n_takasago_hakodate_main",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "高砂駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111090604"
+},
+{
+"node": "n_nihon_heso_koen",
+"kind": "rinji",
+"from": "1985-07-15",
+"to": "1987-12-23",
+"name": "日本へそ公園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109673753"
+},
+{
+"node": "n_heiwa",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "平和駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111090515"
+},
+{
+"node": "n_donzurubo",
+"kind": "rinji",
+"from": "1937-12-XX",
+"to": "[1952-01-01..1962-12-31]",
+"name": "屯鶴峰駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111198142"
+},
+{
+"node": "n_nishikinohama",
+"kind": "rinji",
+"from": "1936-06-XX",
+"to": "1938-10-01",
+"name": "二色浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111453798"
+},
+{
+"node": "n_ikenoura_seaside",
+"kind": "rinji",
+"from": "1989-07-16",
+"to": "2020-03-14",
+"name": "池の浦シーサイド駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107681309"
+},
+{
+"node": "n_panke",
+"kind": "kari",
+"from": "1957-12-03",
+"to": "1987-04-01",
+"name": "班渓駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464478"
+},
+{
+"node": "n_panke",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1987-12-01",
+"name": "班渓駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464478"
+},
+{
+"node": "n_kochi_shogyo_mae",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-03-XX",
+"name": "高知商業前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110682182"
+},
+{
+"node": "n_edagawa",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "枝川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110995993"
+},
+{
+"node": "n_namegawa_island",
+"kind": "rinji",
+"from": "1970-07-02",
+"to": "1987-04-01",
+"name": "行川アイランド駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111145950"
+},
+{
+"node": "n_akashicho",
+"kind": "rinji",
+"from": "1945-05-06",
+"to": "1950-11-01",
+"name": "明石町駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110099008"
+},
+{
+"node": "n_shin_yayoi",
+"kind": "kari",
+"from": "1959-11-01",
+"to": "1987-04-01",
+"name": "新弥生駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456060"
+},
+{
+"node": "n_shin_yayoi",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1987-11-10",
+"name": "新弥生駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456060"
+},
+{
+"node": "n_shirakibaru",
+"kind": "rinji",
+"from": "1946-XX-XX",
+"to": "1950-05-06",
+"name": "白木原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111267458"
+},
+{
+"node": "n_higashi_hanazono",
+"kind": "rinji",
+"from": "1929-11-22",
+"to": "1967-12-20",
+"name": "東花園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111501669"
+},
+{
+"node": "n_ayameike",
+"kind": "rinji",
+"from": "1923-09-09",
+"to": "1924-09-XX",
+"name": "菖蒲池駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110459334"
+},
+{
+"node": "n_wakasa_wada",
+"kind": "rinji",
+"from": "1925-06-26",
+"to": "1934-06-01",
+"name": "若狭和田駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111465942"
+},
+{
+"node": "n_funahirayama",
+"kind": "kari",
+"from": "1947-XX-XX",
+"to": "1954-02-01",
+"name": "船平山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111179020"
+},
+{
+"node": "n_funahirayama",
+"kind": "kari",
+"from": "1954-02-01",
+"to": "1961-04-01",
+"name": "船平山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111179020"
+},
+{
+"node": "n_gembudo",
+"kind": "rinji",
+"from": "1912-03-02",
+"to": "1918-04-21",
+"name": "玄武洞駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109190508"
+},
+{
+"node": "n_yabase",
+"kind": "rinji",
+"from": "1928-07-04",
+"to": "1938-08-20",
+"name": "八橋駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110956730"
+},
+{
+"node": "n_nawa",
+"kind": "kari",
+"from": "1909-03-11",
+"to": "1912-01-31",
+"name": "名和駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110957470"
+},
+{
+"node": "n_nawa",
+"kind": "rinji",
+"from": "1912-01-31",
+"to": "1955-02-10",
+"name": "名和駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110957470"
+},
+{
+"node": "n_kita_matsudo",
+"kind": "rinji",
+"from": "1952-05-01",
+"to": "1958-12-25",
+"name": "北松戸駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109425611"
+},
+{
+"node": "n_j_village",
+"kind": "rinji",
+"from": "2019-04-20",
+"to": "2020-03-14",
+"name": "Jヴィレッジ駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111220383"
+},
+{
+"node": "n_akui",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "鮎喰駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110845399"
+},
+{
+"node": "n_korimoto",
+"kind": "rinji",
+"from": "1986-12-01",
+"to": "1987-04-01",
+"name": "郡元駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110270382"
+},
+{
+"node": "n_usuki_ibusuki_makurazaki",
+"kind": "rinji",
+"from": "1986-12-01",
+"to": "1987-04-01",
+"name": "宇宿駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110270399"
+},
+{
+"node": "n_shokutomidorihakurankai",
+"kind": "rinji",
+"from": "1990-08-08",
+"to": "1990-09-17",
+"name": "食と緑博覧会駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110421175"
+},
+{
+"node": "n_undokoen",
+"kind": "rinji",
+"from": "1984-03-18",
+"to": "1987-04-01",
+"name": "運動公園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110421248"
+},
+{
+"node": "n_abeyamakoen",
+"kind": "rinji",
+"from": "1987-03-09",
+"to": "1987-04-01",
+"name": "安部山公園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111627243"
+},
+{
+"node": "n_hasugaike",
+"kind": "rinji",
+"from": "1986-12-01",
+"to": "1987-04-01",
+"name": "蓮ケ池駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110804037"
+},
+{
+"node": "n_amagasaki_center_pool_mae",
+"kind": "rinji",
+"from": "1952-09-14",
+"to": "1963-12-10",
+"name": "尼崎センタープール前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110058929"
+},
+{
+"node": "n_higashi_nakayama",
+"kind": "rinji",
+"from": "1935-10-04",
+"to": "1953-09-01",
+"name": "東中山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111105107"
+},
+{
+"node": "n_shinkawa",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "新川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109340112"
+},
+{
+"node": "n_taihei",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "太平駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109183312"
+},
+{
+"node": "n_yurigahara",
+"kind": "rinji",
+"from": "1986-06-28",
+"to": "1987-04-01",
+"name": "百合が原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109183330"
+},
+{
+"node": "n_oi_keibajo_mae",
+"kind": "rinji",
+"from": "1965-05-27",
+"to": "1967-06-01",
+"name": "大井競馬場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111580306"
+},
+{
+"node": "n_bentenjima",
+"kind": "rinji",
+"from": "1907-06-15",
+"to": "1916-09-01",
+"name": "弁天島駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111186455"
+},
+{
+"node": "n_mikawa_otsuka",
+"kind": "rinji",
+"from": "1953-07-08",
+"to": "1960-03-01",
+"name": "三河大塚駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109458917"
+},
+{
+"node": "n_taisei",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "大成駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107635061"
+},
+{
+"node": "n_hakurindai",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "柏林台駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109401927"
+},
+{
+"node": "n_kita_kamakura",
+"kind": "rinji",
+"from": "1927-05-20",
+"to": "1930-10-01",
+"name": "北鎌倉駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111389940"
+},
+{
+"node": "n_family_koemmae",
+"kind": "rinji",
+"from": "1979-07-01",
+"to": "1985-11-28",
+"name": "ファミリー公園前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108874007"
+},
+{
+"node": "n_shirahigehama",
+"kind": "rinji",
+"from": "1951-07-01",
+"to": "1969-11-01",
+"name": "白鬚浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109592235"
+},
+{
+"node": "n_keirinjomae",
+"kind": "rinji",
+"from": "1950-04-20",
+"to": "1964-03-20",
+"name": "競輪場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=103501357"
+},
+{
+"node": "n_aoyagigahama",
+"kind": "rinji",
+"from": "1949-07-01",
+"to": "1969-11-01",
+"name": "青柳ヶ浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=103501451"
+},
+{
+"node": "n_omimaikominamiguchi",
+"kind": "rinji",
+"from": "1953-07-01",
+"to": "1969-11-01",
+"name": "近江舞子南口駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=103501454"
+},
+{
+"node": "n_awagasaki_kaigan",
+"kind": "rinji",
+"from": "1952-XX-XX",
+"to": "1972-09-01",
+"name": "粟ヶ崎海岸駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102133143"
+},
+{
+"node": "n_awa_tomida",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "阿波富田駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111606593"
+},
+{
+"node": "n_tatsutagawa",
+"kind": "rinji",
+"from": "1926-11-01",
+"to": "1930-12-19",
+"name": "竜田川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107939633"
+},
+{
+"node": "n_higashiyama_kintetsu",
+"kind": "rinji",
+"from": "1927-09-21",
+"to": "1951-09-10",
+"name": "東山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109318403"
+},
+{
+"node": "n_segoshi",
+"kind": "kari",
+"from": "1926-07-01",
+"to": "1969-10-01",
+"name": "瀬越駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111151105"
+},
+{
+"node": "n_segoshi",
+"kind": "rinji",
+"from": "1969-10-01",
+"to": "1987-04-01",
+"name": "瀬越駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111151105"
+},
+{
+"node": "n_minami_nagayama",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "南永山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108740842"
+},
+{
+"node": "n_nishi_kitami",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "西北見駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108467073"
+},
+{
+"node": "n_itoshino",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "愛し野駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108467184"
+},
+{
+"node": "n_akitako",
+"kind": "rinji",
+"from": "2017-08-03",
+"to": "2025-11-15",
+"name": "秋田港駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110465722"
+},
+{
+"node": "n_osawanomachiyakiyama",
+"kind": "rinji",
+"from": "1918-06-01",
+"to": "1926-07-12",
+"name": "大沢野町八木山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=98556855"
+},
+{
+"node": "n_kadomatsu",
+"kind": "rinji",
+"from": "1987-03-09",
+"to": "1987-04-01",
+"name": "門松駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111018524"
+},
+{
+"node": "n_kita_karuizawa",
+"kind": "rinji",
+"from": "1918-06-15",
+"to": "1919-09-22",
+"name": "北軽井沢駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111511449"
+},
+{
+"node": "n_seibuen",
+"kind": "rinji",
+"from": "1950-05-23",
+"to": "1951-03-01",
+"name": "西武園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109220697"
+},
+{
+"node": "n_higashi_kunebetsu",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "東久根別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111464045"
+},
+{
+"node": "n_kushiro_shitsugen",
+"kind": "rinji",
+"from": "1988-07-23",
+"to": "1996-12-01",
+"name": "釧路湿原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108178042"
+},
+{
+"node": "n_hosooka",
+"kind": "rinji",
+"from": "2023-03-18",
+"to": null,
+"name": "細岡駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442883"
+},
+{
+"node": "n_seiryu_miharashi",
+"kind": "rinji",
+"from": "2019-03-19",
+"to": null,
+"name": "清流みはらし駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101134449"
+},
+{
+"node": "n_nishi_urakami",
+"kind": "rinji",
+"from": "1987-03-09",
+"to": "1987-04-01",
+"name": "西浦上駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110318503"
+},
+{
+"node": "n_tomidahama",
+"kind": "rinji",
+"from": "1907-07-01",
+"to": "1928-03-01",
+"name": "富田浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110160919"
+},
+{
+"node": "n_abikocho",
+"kind": "rinji",
+"from": "1930-01-01",
+"to": "1944-05-01",
+"name": "我孫子町駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111357351"
+},
+{
+"node": "n_bankokuhakunishiguchi",
+"kind": "rinji",
+"from": "1969-11-10",
+"to": "1970-09-14",
+"name": "万国博西口駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110537799"
+},
+{
+"node": "n_ashidaki",
+"kind": "rinji",
+"from": "1937-04-01",
+"to": "1944-06-01",
+"name": "足滝駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111532280"
+},
+{
+"node": "n_fuchu_usaka",
+"kind": "rinji",
+"from": "2008-03-15",
+"to": "2014-03-15",
+"name": "婦中鵜坂駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109634759"
+},
+{
+"node": "n_sanuki_mure",
+"kind": "rinji",
+"from": "1986-11-01",
+"to": "1987-04-01",
+"name": "讃岐牟礼駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110986962"
+},
+{
+"node": "n_sasabaru",
+"kind": "rinji",
+"from": "1987-03-09",
+"to": "1987-04-01",
+"name": "笹原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110687863"
+},
+{
+"node": "n_tsuga",
+"kind": "kari",
+"from": "1965-09-30",
+"to": "1968-03-28",
+"name": "都賀駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111120182"
+},
+{
+"node": "n_samamai",
+"kind": "kari",
+"from": "1950-XX-XX",
+"to": "1959-05-01",
+"name": "様舞駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111606080"
+},
+{
+"node": "n_omori_chihoku",
+"kind": "kari",
+"from": "1968-10-01",
+"to": "1987-04-01",
+"name": "大森駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109413681"
+},
+{
+"node": "n_aikappu",
+"kind": "kari",
+"from": "1946-09-10",
+"to": "1952-03-25",
+"name": "愛冠駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111430648"
+},
+{
+"node": "n_sasamori",
+"kind": "kari",
+"from": "1948-08-01",
+"to": "1987-04-01",
+"name": "笹森駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109414381"
+},
+{
+"node": "n_toyozumi",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1959-11-01",
+"name": "豊住駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109414991"
+},
+{
+"node": "n_nishi_kunneppu",
+"kind": "kari",
+"from": "1956-XX-XX",
+"to": "1959-11-01",
+"name": "西訓子府駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109415049"
+},
+{
+"node": "n_nishitomi",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1959-11-01",
+"name": "西富駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110831139"
+},
+{
+"node": "n_honami",
+"kind": "kari",
+"from": "1957-XX-XX",
+"to": "1959-11-01",
+"name": "穂波駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109415587"
+},
+{
+"node": "n_hinode",
+"kind": "kari",
+"from": "1947-02-11",
+"to": "1950-01-15",
+"name": "日ノ出駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109415670"
+},
+{
+"node": "n_hirosato",
+"kind": "kari",
+"from": "1955-09-XX",
+"to": "1959-11-01",
+"name": "広郷駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109415687"
+},
+{
+"node": "n_hokkosha",
+"kind": "kari",
+"from": "1948-05-XX",
+"to": "1959-11-01",
+"name": "北光社駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109415716"
+},
+{
+"node": "n_nagatani",
+"kind": "kari",
+"from": "1969-04-25",
+"to": "1987-04-01",
+"name": "長谷駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111175155"
+},
+{
+"node": "n_musashi_koganei",
+"kind": "kari",
+"from": "1924-04-04",
+"to": "1926-01-15",
+"name": "武蔵小金井駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111638396"
+},
+{
+"node": "n_kokokei",
+"kind": "kari",
+"from": "1951-03-01",
+"to": "1952-04-01",
+"name": "古虎渓駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110104984"
+},
+{
+"node": "n_ichitsubo",
+"kind": "kari",
+"from": "1933-01-21",
+"to": "1964-10-01",
+"name": "市坪駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110979240"
+},
+{
+"node": "n_funako",
+"kind": "kari",
+"from": "1968-10-17",
+"to": "1980-12-01",
+"name": "大川ダム公園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109700527"
+},
+{
+"node": "n_dosokohama",
+"kind": "kari",
+"from": "1956-12-15",
+"to": "1960-03-15",
+"name": "土底浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111031219"
+},
+{
+"node": "n_jogehama",
+"kind": "kari",
+"from": "1950-07-25",
+"to": "1952-07-25",
+"name": "上下浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110971239"
+},
+{
+"node": "n_kasashima",
+"kind": "kari",
+"from": "1951-03-01",
+"to": "1952-07-01",
+"name": "笠島駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109199232"
+},
+{
+"node": "n_uzura",
+"kind": "kari",
+"from": "1948-12-01",
+"to": "1953-10-01",
+"name": "鶉駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=105100326"
+},
+{
+"node": "n_onakayama",
+"kind": "kari",
+"from": "1946-12-01",
+"to": "1950-01-15",
+"name": "大中山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109091994"
+},
+{
+"node": "n_oshima_numajiri",
+"kind": "kari",
+"from": "1945-06-01",
+"to": "1987-04-01",
+"name": "渡島沼尻駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109878953"
+},
+{
+"node": "n_niyama",
+"kind": "kari",
+"from": "1943-XX-XX",
+"to": "1987-04-01",
+"name": "仁山信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109158686"
+},
+{
+"node": "n_higashiyama",
+"kind": "kari",
+"from": "1949-08-01",
+"to": "1987-04-01",
+"name": "東山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=105330548"
+},
+{
+"node": "n_himekawa_hakodate_main",
+"kind": "kari",
+"from": "1951-05-19",
+"to": "1987-04-01",
+"name": "姫川信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111506238"
+},
+{
+"node": "n_hon_ishikura",
+"kind": "kari",
+"from": "1948-07-01",
+"to": "1987-04-01",
+"name": "本石倉駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108740944"
+},
+{
+"node": "n_kitatoyotsu",
+"kind": "kari",
+"from": "1944-07-01",
+"to": "1987-04-01",
+"name": "北豊津信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102533398"
+},
+{
+"node": "n_koshunai",
+"kind": "kari",
+"from": "1948-11-05",
+"to": "1952-04-10",
+"name": "光珠内駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=106894692"
+},
+{
+"node": "n_komatsukawa",
+"kind": "kari",
+"from": "1950-07-25",
+"to": "1951-12-25",
+"name": "小松川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101674020"
+},
+{
+"node": "n_harima_yokota",
+"kind": "kari",
+"from": "1961-10-01",
+"to": "1961-12-20",
+"name": "播磨横田駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111047388"
+},
+{
+"node": "n_osatsu",
+"kind": "kari",
+"from": "1958-03-01",
+"to": "1958-07-01",
+"name": "長都駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111090569"
+},
+{
+"node": "n_kamijo",
+"kind": "kari",
+"from": "1951-03-01",
+"to": "1951-10-01",
+"name": "上条駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=104787161"
+},
+{
+"node": "n_kodo_kabe",
+"kind": "kari",
+"from": "1956-11-19",
+"to": "1956-12-20",
+"name": "河戸駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110637946"
+},
+{
+"node": "n_imaida",
+"kind": "kari",
+"from": "1956-11-19",
+"to": "1956-12-20",
+"name": "今井田駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110638022"
+},
+{
+"node": "n_kegi",
+"kind": "kari",
+"from": "1956-11-19",
+"to": "1956-12-20",
+"name": "毛木駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110638396"
+},
+{
+"node": "n_shigosen",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-04-01",
+"name": "四号線駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102858338"
+},
+{
+"node": "n_naka_nayoro",
+"kind": "kari",
+"from": "1947-09-21",
+"to": "1950-01-15",
+"name": "中名寄駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464452"
+},
+{
+"node": "n_yabumi",
+"kind": "kari",
+"from": "1956-10-30",
+"to": "1959-11-01",
+"name": "矢文駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464463"
+},
+{
+"node": "n_gifubashi",
+"kind": "kari",
+"from": "1956-10-30",
+"to": "1959-11-01",
+"name": "岐阜橋駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464468"
+},
+{
+"node": "n_ninohashi",
+"kind": "kari",
+"from": "1947-12-25",
+"to": "1950-01-15",
+"name": "二ノ橋駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109467896"
+},
+{
+"node": "n_kosei_nayoro_main",
+"kind": "kari",
+"from": "1956-04-30",
+"to": "1987-04-01",
+"name": "幸成駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464471"
+},
+{
+"node": "n_rokko",
+"kind": "kari",
+"from": "1959-04-20",
+"to": "1987-04-01",
+"name": "六興駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464472"
+},
+{
+"node": "n_hokko",
+"kind": "kari",
+"from": "1957-11-01",
+"to": "1959-11-01",
+"name": "北興駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109468023"
+},
+{
+"node": "n_asahigaoka_nayoro_main",
+"kind": "kari",
+"from": "1956-09-01",
+"to": "1987-04-01",
+"name": "旭ヶ丘駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464483"
+},
+{
+"node": "n_toyono_nayoro_main",
+"kind": "kari",
+"from": "1947-02-11",
+"to": "1950-01-15",
+"name": "豊野駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109468048"
+},
+{
+"node": "n_tomioka_nayoro_main",
+"kind": "kari",
+"from": "1956-09-01",
+"to": "1987-04-01",
+"name": "富丘駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464490"
+},
+{
+"node": "n_ippommatsu_nayoro_main",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1987-04-01",
+"name": "一本松駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464494"
+},
+{
+"node": "n_kodo_nayoro_main",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-04-01",
+"name": "弘道駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111583920"
+},
+{
+"node": "n_asahi_nayoro_main",
+"kind": "kari",
+"from": "1947-09-10",
+"to": "1956-09-20",
+"name": "旭駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109475212"
+},
+{
+"node": "n_kawanishi_nayoro_main",
+"kind": "kari",
+"from": "1957-08-01",
+"to": "1959-11-01",
+"name": "川西駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109475225"
+},
+{
+"node": "n_hokuyu",
+"kind": "kari",
+"from": "1966-10-01",
+"to": "1987-04-01",
+"name": "北湧駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464501"
+},
+{
+"node": "n_kyoshin",
+"kind": "kari",
+"from": "1955-12-01",
+"to": "1959-11-01",
+"name": "共進駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102884018"
+},
+{
+"node": "n_ebikawa",
+"kind": "kari",
+"from": "1960-XX-XX",
+"to": "1966-12-15",
+"name": "海老川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110549092"
+},
+{
+"node": "n_hakuba_oike",
+"kind": "kari",
+"from": "1947-12-01",
+"to": "1948-09-25",
+"name": "白馬大池駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111031401"
+},
+{
+"node": "n_chikuni",
+"kind": "kari",
+"from": "1961-12-23",
+"to": "1962-12-25",
+"name": "千国駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110985181"
+},
+{
+"node": "n_megumino_tempoku",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-04-01",
+"name": "恵野駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109455649"
+},
+{
+"node": "n_shumaro",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-04-01",
+"name": "周磨駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109455697"
+},
+{
+"node": "n_kamikoma_tempoku",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "上駒駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109455948"
+},
+{
+"node": "n_kotobuki",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "寿駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456030"
+},
+{
+"node": "n_tokiwa_tempoku",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "常盤駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456215"
+},
+{
+"node": "n_yasubetsu",
+"kind": "kari",
+"from": "1956-11-19",
+"to": "1987-04-01",
+"name": "安別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456275"
+},
+{
+"node": "n_hikojomae",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "飛行場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456305"
+},
+{
+"node": "n_uennai",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "宇遠内駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109457348"
+},
+{
+"node": "n_kita_kanaoka",
+"kind": "kari",
+"from": "1950-01-18",
+"to": "1952-02-25",
+"name": "北金岡駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109247893"
+},
+{
+"node": "n_shimokawazoi",
+"kind": "kari",
+"from": "1950-07-25",
+"to": "1954-05-01",
+"name": "下川沿駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111083283"
+},
+{
+"node": "n_asahikawa_yojo",
+"kind": "kari",
+"from": "1957-02-01",
+"to": "1973-09-29",
+"name": "旭川四条駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111199630"
+},
+{
+"node": "n_kita_nagayama_old",
+"kind": "kari",
+"from": "1947-12-XX",
+"to": "1959-11-01",
+"name": "北永山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450609"
+},
+{
+"node": "n_minami_pippu",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1959-11-01",
+"name": "南比布駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108308459"
+},
+{
+"node": "n_kita_pippu",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1959-11-01",
+"name": "北比布駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108308467"
+},
+{
+"node": "n_higashi_rokusen",
+"kind": "kari",
+"from": "1956-01-XX",
+"to": "1959-11-01",
+"name": "東六線駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450653"
+},
+{
+"node": "n_kita_kembuchi",
+"kind": "kari",
+"from": "1959-11-01",
+"to": "1987-04-01",
+"name": "北剣淵駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111002157"
+},
+{
+"node": "n_shimo_shibetsu",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1959-11-01",
+"name": "下士別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108595704"
+},
+{
+"node": "n_mizuho",
+"kind": "kari",
+"from": "1956-09-01",
+"to": "1987-04-01",
+"name": "瑞穂駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110317398"
+},
+{
+"node": "n_nisshin_soya_main",
+"kind": "kari",
+"from": "1955-12-01",
+"to": "1959-11-01",
+"name": "日進駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450728"
+},
+{
+"node": "n_hokusei",
+"kind": "kari",
+"from": "1956-07-01",
+"to": "1959-11-01",
+"name": "北星駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108727278"
+},
+{
+"node": "n_chihoku_old",
+"kind": "kari",
+"from": "1959-11-01",
+"to": "1987-04-01",
+"name": "智北駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109127989"
+},
+{
+"node": "n_minami_bifuka",
+"kind": "kari",
+"from": "1956-07-01",
+"to": "1959-11-01",
+"name": "南美深駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450893"
+},
+{
+"node": "n_hatsuno",
+"kind": "kari",
+"from": "1948-06-XX",
+"to": "1959-11-01",
+"name": "初野駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108872130"
+},
+{
+"node": "n_toyoshimizu",
+"kind": "kari",
+"from": "1946-10-10",
+"to": "1950-01-15",
+"name": "豊清水信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109918840"
+},
+{
+"node": "n_teshiogawa_onsen",
+"kind": "kari",
+"from": "1956-07-01",
+"to": "1987-04-01",
+"name": "天塩川温泉駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109655656"
+},
+{
+"node": "n_kotohira_soya_main",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "琴平駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110126510"
+},
+{
+"node": "n_shimonakagawa",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1959-11-01",
+"name": "下中川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109810764"
+},
+{
+"node": "n_nukanan",
+"kind": "kari",
+"from": "1955-12-02",
+"to": "1987-04-01",
+"name": "糠南駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111172028"
+},
+{
+"node": "n_kamionoppunai",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-04-01",
+"name": "上雄信内駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108886173"
+},
+{
+"node": "n_minamishimonuma",
+"kind": "kari",
+"from": "1957-02-01",
+"to": "1987-04-01",
+"name": "南下沼駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108856959"
+},
+{
+"node": "n_asahihama",
+"kind": "kari",
+"from": "1969-09-20",
+"to": "1987-04-01",
+"name": "旭浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109393193"
+},
+{
+"node": "n_toyoizumi",
+"kind": "kari",
+"from": "1949-09-15",
+"to": "1960-10-01",
+"name": "豊泉駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109393299"
+},
+{
+"node": "n_sakimori",
+"kind": "kari",
+"from": "1955-11-01",
+"to": "1968-09-19",
+"name": "崎守駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109393596"
+},
+{
+"node": "n_kaguraoka",
+"kind": "kari",
+"from": "1957-12-01",
+"to": "1958-03-25",
+"name": "神楽岡駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109409002"
+},
+{
+"node": "n_nishi_goryo",
+"kind": "kari",
+"from": "1957-12-01",
+"to": "1958-03-25",
+"name": "西御料駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109408992"
+},
+{
+"node": "n_nishi_mizuho",
+"kind": "kari",
+"from": "1957-12-01",
+"to": "1958-03-25",
+"name": "西瑞穂駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111606189"
+},
+{
+"node": "n_nishi_seiwa",
+"kind": "kari",
+"from": "1957-12-01",
+"to": "1958-03-25",
+"name": "西聖和駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111157642"
+},
+{
+"node": "n_nihozu",
+"kind": "kari",
+"from": "1972-04-10",
+"to": "1987-04-01",
+"name": "仁保津駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111177875"
+},
+{
+"node": "n_kami_yamaguchi",
+"kind": "kari",
+"from": "1953-03-15",
+"to": "1953-04-10",
+"name": "上山口駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111178351"
+},
+{
+"node": "n_honmataga",
+"kind": "kari",
+"from": "1970-04-01",
+"to": "1987-04-01",
+"name": "本俣賀駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111179209"
+},
+{
+"node": "n_yamagishi",
+"kind": "kari",
+"from": "1951-01-10",
+"to": "1952-02-10",
+"name": "山岸駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108250509"
+},
+{
+"node": "n_higashihama",
+"kind": "kari",
+"from": "1949-07-01",
+"to": "1950-01-01",
+"name": "東浜駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111037349"
+},
+{
+"node": "n_oiwa",
+"kind": "kari",
+"from": "1949-07-01",
+"to": "1950-01-01",
+"name": "大岩駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111059467"
+},
+{
+"node": "n_horonai_sumiyoshi",
+"kind": "kari",
+"from": "1950-01-20",
+"to": "1958-08-05",
+"name": "幌内住吉駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111417764"
+},
+{
+"node": "n_sakaemachi",
+"kind": "kari",
+"from": "1980-10-01",
+"to": "1987-04-01",
+"name": "栄町駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111421348"
+},
+{
+"node": "n_yayoi",
+"kind": "kari",
+"from": "1948-01-25",
+"to": "1951-12-20",
+"name": "弥生駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111417712"
+},
+{
+"node": "n_kofuku",
+"kind": "kari",
+"from": "1956-08-26",
+"to": "1956-11-01",
+"name": "幸福駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111160113"
+},
+{
+"node": "n_fukushima_takamatsu",
+"kind": "kari",
+"from": "1949-09-15",
+"to": "1950-01-10",
+"name": "福島高松駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110421618"
+},
+{
+"node": "n_arimagawa",
+"kind": "kari",
+"from": "1946-09-01",
+"to": "1947-07-01",
+"name": "有間川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108804841"
+},
+{
+"node": "n_sashiu",
+"kind": "kari",
+"from": "1947-10-01",
+"to": "1950-01-10",
+"name": "佐志生駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110407567"
+},
+{
+"node": "n_higashicho",
+"kind": "kari",
+"from": "1977-09-01",
+"to": "1987-04-01",
+"name": "東町駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109535129"
+},
+{
+"node": "n_miinohara",
+"kind": "kari",
+"from": "1949-12-24",
+"to": "1958-09-01",
+"name": "三井野原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111122754"
+},
+{
+"node": "n_hokkaido_iryodaigaku",
+"kind": "kari",
+"from": "1981-12-01",
+"to": "1982-04-01",
+"name": "北海道医療大学駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111106426"
+},
+{
+"node": "n_osatsunai",
+"kind": "kari",
+"from": "1959-12-01",
+"to": "1987-04-01",
+"name": "於札内駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111489928"
+},
+{
+"node": "n_nishinisen",
+"kind": "kari",
+"from": "1958-XX-XX",
+"to": "1970-12-01",
+"name": "西二線仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=103682265"
+},
+{
+"node": "n_juyongo",
+"kind": "kari",
+"from": "1958-XX-XX",
+"to": "1970-12-01",
+"name": "十四号仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=103682404"
+},
+{
+"node": "n_jurokugo",
+"kind": "kari",
+"from": "1958-XX-XX",
+"to": "1970-12-01",
+"name": "十六号仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=103682482"
+},
+{
+"node": "n_shikagoe",
+"kind": "kari",
+"from": "1966-09-29",
+"to": "1986-11-01",
+"name": "鹿越仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111303271"
+},
+{
+"node": "n_higashi_shikagoe",
+"kind": "kari",
+"from": "XXXX-XX-XX",
+"to": "1946-03-01",
+"name": "東鹿越駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111252616"
+},
+{
+"node": "n_karikachi",
+"kind": "kari",
+"from": "1951-04-01",
+"to": "1966-09-30",
+"name": "狩勝信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107264088"
+},
+{
+"node": "n_furuse",
+"kind": "kari",
+"from": "1954-07-01",
+"to": "1987-04-01",
+"name": "古瀬信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109402343"
+},
+{
+"node": "n_nishi_shoro",
+"kind": "kari",
+"from": "1951-04-01",
+"to": "1952-03-05",
+"name": "西庶路駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109402522"
+},
+{
+"node": "n_inashibetsu",
+"kind": "kari",
+"from": "1959-10-07",
+"to": "1987-04-01",
+"name": "稲士別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109401979"
+},
+{
+"node": "n_higashi_nemuro",
+"kind": "kari",
+"from": "1961-02-01",
+"to": "1961-09-01",
+"name": "東根室駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110606449"
+},
+{
+"node": "n_tawa",
+"kind": "kari",
+"from": "1961-04-10",
+"to": "1987-04-01",
+"name": "多和駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109448994"
+},
+{
+"node": "n_koshin",
+"kind": "kari",
+"from": "1962-05-01",
+"to": "1967-04-01",
+"name": "光進駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109449952"
+},
+{
+"node": "n_hiraito",
+"kind": "kari",
+"from": "1961-10-01",
+"to": "1967-04-01",
+"name": "平糸駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450374"
+},
+{
+"node": "n_kaiei",
+"kind": "kari",
+"from": "1961-10-01",
+"to": "1987-04-01",
+"name": "開栄駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450112"
+},
+{
+"node": "n_yabe",
+"kind": "kari",
+"from": "1950-09-01",
+"to": "1957-10-01",
+"name": "矢部駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111481898"
+},
+{
+"node": "n_kashin",
+"kind": "kari",
+"from": "1959-12-06",
+"to": "1960-12-26",
+"name": "歌神駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110117877"
+},
+{
+"node": "n_yamatsuriyama",
+"kind": "kari",
+"from": "1932-04-02",
+"to": "1937-03-27",
+"name": "矢祭山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109689178"
+},
+{
+"node": "n_naka_suda",
+"kind": "kari",
+"from": "1948-XX-XX",
+"to": "1955-03-05",
+"name": "中須田駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109381004"
+},
+{
+"node": "n_maruyama",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "円山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111441826"
+},
+{
+"node": "n_kami_tadoshi",
+"kind": "kari",
+"from": "1946-06-01",
+"to": "1950-01-15",
+"name": "上多度志駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109945868"
+},
+{
+"node": "n_uma",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "宇摩駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109949497"
+},
+{
+"node": "n_shimo_horonari",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "下幌成駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109983106"
+},
+{
+"node": "n_shin_nariu",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "新成生駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464308"
+},
+{
+"node": "n_kami_horokanai",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "上幌加内駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464324"
+},
+{
+"node": "n_shintomi",
+"kind": "kari",
+"from": "1955-09-02",
+"to": "1956-09-20",
+"name": "新富駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109445796"
+},
+{
+"node": "n_kyoei_shinmei",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "共栄駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464392"
+},
+{
+"node": "n_kohan",
+"kind": "kari",
+"from": "1956-05-01",
+"to": "1987-04-01",
+"name": "湖畔駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110310292"
+},
+{
+"node": "n_kitami_heiwa",
+"kind": "kari",
+"from": "1949-10-24",
+"to": "1954-01-01",
+"name": "北見平和駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109442320"
+},
+{
+"node": "n_kita_ichiyan",
+"kind": "kari",
+"from": "1954-11-XX",
+"to": "1955-07-20",
+"name": "北一已駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109457666"
+},
+{
+"node": "n_kita_chippubetsu",
+"kind": "kari",
+"from": "1956-07-01",
+"to": "1987-04-01",
+"name": "北秩父別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109128049"
+},
+{
+"node": "n_mappu",
+"kind": "kari",
+"from": "1956-07-01",
+"to": "1987-04-01",
+"name": "真布駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108747741"
+},
+{
+"node": "n_higashihoronuka",
+"kind": "kari",
+"from": "1963-12-01",
+"to": "1987-04-01",
+"name": "東幌糠駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102553108"
+},
+{
+"node": "n_sakuraba",
+"kind": "kari",
+"from": "1963-12-01",
+"to": "1987-04-01",
+"name": "桜庭駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=99811711"
+},
+{
+"node": "n_afun",
+"kind": "kari",
+"from": "1963-12-01",
+"to": "1987-04-01",
+"name": "阿分駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109460576"
+},
+{
+"node": "n_nobusha",
+"kind": "kari",
+"from": "1963-12-01",
+"to": "1987-04-01",
+"name": "信砂駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102802004"
+},
+{
+"node": "n_shumonbetsu",
+"kind": "kari",
+"from": "1963-12-01",
+"to": "1987-04-01",
+"name": "朱文別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109461108"
+},
+{
+"node": "n_hashibetsu",
+"kind": "kari",
+"from": "1963-12-01",
+"to": "1987-04-01",
+"name": "箸別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109461186"
+},
+{
+"node": "n_higashi_niigata",
+"kind": "kari",
+"from": "1958-02-01",
+"to": "1978-10-02",
+"name": "東新潟駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110685327"
+},
+{
+"node": "n_nunokawa",
+"kind": "kari",
+"from": "1947-09-20",
+"to": "1956-09-20",
+"name": "布川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109441191"
+},
+{
+"node": "n_kita_hinode",
+"kind": "kari",
+"from": "1960-05-02",
+"to": "1987-04-01",
+"name": "北日ノ出駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108740938"
+},
+{
+"node": "n_shogunzan",
+"kind": "kari",
+"from": "1960-05-02",
+"to": "1987-04-01",
+"name": "将軍山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111533572"
+},
+{
+"node": "n_aizan",
+"kind": "kari",
+"from": "1960-05-02",
+"to": "1987-04-01",
+"name": "愛山駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110314840"
+},
+{
+"node": "n_toun",
+"kind": "kari",
+"from": "1960-05-02",
+"to": "1987-04-01",
+"name": "東雲駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108607725"
+},
+{
+"node": "n_kamikoshi",
+"kind": "kari",
+"from": "1975-12-25",
+"to": "1983-01-10",
+"name": "上越信号場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111583951"
+},
+{
+"node": "n_kyu_shirataki",
+"kind": "kari",
+"from": "1947-02-11",
+"to": "1987-04-01",
+"name": "旧白滝駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110138200"
+},
+{
+"node": "n_inaushi",
+"kind": "kari",
+"from": "1956-11-01",
+"to": "1987-04-01",
+"name": "伊奈牛駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109874910"
+},
+{
+"node": "n_shinsakaeno",
+"kind": "kari",
+"from": "1946-12-01",
+"to": "1987-04-01",
+"name": "新栄野駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109426634"
+},
+{
+"node": "n_ikuno_sekihoku_main",
+"kind": "kari",
+"from": "1946-12-01",
+"to": "1987-04-01",
+"name": "生野駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109454508"
+},
+{
+"node": "n_hakuyo",
+"kind": "kari",
+"from": "1957-12-01",
+"to": "1987-04-01",
+"name": "柏陽駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109426764"
+},
+{
+"node": "n_nishi_memambetsu",
+"kind": "kari",
+"from": "1947-02-11",
+"to": "1950-01-15",
+"name": "西女満別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109426820"
+},
+{
+"node": "n_eda",
+"kind": "kari",
+"from": "1948-10-01",
+"to": "1987-03-31",
+"name": "江田駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109140704"
+},
+{
+"node": "n_higashi_gejo",
+"kind": "kari",
+"from": "1951-04-XX",
+"to": "1953-01-10",
+"name": "東下条駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=104536651"
+},
+{
+"node": "n_usuya",
+"kind": "kari",
+"from": "1947-12-25",
+"to": "1950-01-15",
+"name": "臼谷駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109462482"
+},
+{
+"node": "n_hirabayashi",
+"kind": "kari",
+"from": "1950-XX-XX",
+"to": "1957-10-01",
+"name": "平林駅",
+"source": "『停車場一覧』昭和41年3月(https://dl.ndl.go.jp/pid/1873236, 높음) 「300313 客 平林 ひらばやし 3.6 51.6 … 昭32.10.1」(駅 개업) + https://ja.wikipedia.org/w/index.php?oldid=110289741 「1950年 月日不明：平林仮乗降場が開業」(중간). 위키의 1952-05-15 駅 변경은 공식 목록이 반박 (결정 123, dates_east 4회차, W3 E2 2026-11-12)"
+},
+{
+"node": "n_minamichokai",
+"kind": "kari",
+"from": "1951-XX-XX",
+"to": "1952-01-16",
+"name": "南鳥海駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110749903"
+},
+{
+"node": "n_haki",
+"kind": "kari",
+"from": "1942-12-21",
+"to": "1947-03-01",
+"name": "葉木駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101143934"
+},
+{
+"node": "n_kyusendo",
+"kind": "kari",
+"from": "1942-12-21",
+"to": "1947-03-01",
+"name": "球泉洞駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109339844"
+},
+{
+"node": "n_oroen",
+"kind": "kari",
+"from": "1944-07-01",
+"to": "1985-XX-XX",
+"name": "尾路遠仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102559220"
+},
+{
+"node": "n_sakaeoka",
+"kind": "kari",
+"from": "1948-07-01",
+"to": "1956-09-20",
+"name": "栄丘駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109463764"
+},
+{
+"node": "n_appi_kogen",
+"kind": "kari",
+"from": "1957-01-03",
+"to": "1961-12-28",
+"name": "安比高原駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110761088"
+},
+{
+"node": "n_katsuradai",
+"kind": "kari",
+"from": "1967-04-01",
+"to": "1987-04-01",
+"name": "桂台駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111524095"
+},
+{
+"node": "n_yukaba",
+"kind": "kari",
+"from": "[1971-03-01..1971-04-01]",
+"to": "1987-04-01",
+"name": "行波駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111662569"
+},
+{
+"node": "n_sogai",
+"kind": "kari",
+"from": "1961-10-01",
+"to": "1961-12-20",
+"name": "曽我井駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109475739"
+},
+{
+"node": "n_shin_yubetsu",
+"kind": "kari",
+"from": "1947-XX-XX",
+"to": "1953-04-11",
+"name": "新雄別駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111030590"
+},
+{
+"node": "n_masumicho",
+"kind": "kari",
+"from": "1951-XX-XX",
+"to": "1956-09-01",
+"name": "真澄町駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111030592"
+},
+{
+"node": "n_shinano_shiratori",
+"kind": "kari",
+"from": "1946-06-01",
+"to": "1950-01-28",
+"name": "信濃白鳥駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=106599441"
+},
+{
+"node": "n_sugisaki",
+"kind": "kari",
+"from": "1952-12-25",
+"to": "1955-10-15",
+"name": "杉崎駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107979802"
+},
+{
+"node": "n_noi",
+"kind": "kari",
+"from": "1972-11-XX",
+"to": "1973-11-XX",
+"name": "野井仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109909488"
+},
+{
+"node": "n_okawa_dam_koen",
+"kind": "kari",
+"from": "1980-12-01",
+"to": "1987-04-01",
+"name": "大川ダム公園駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109700527"
+},
+{
+"node": "n_torinosawa",
+"kind": "kari",
+"from": "1948-11-01",
+"to": "1971-07-01",
+"name": "鳥ノ沢仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109426807"
+},
+{
+"node": "n_mino",
+"kind": "kari",
+"from": "1946-07-XX",
+"to": "1958-XX-XX",
+"name": "美野仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109426797"
+},
+{
+"node": "n_okashima",
+"kind": "kari",
+"from": "1981-08-01",
+"to": "1990-10-02",
+"name": "大加島仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=101445246"
+},
+{
+"node": "n_uramoto",
+"kind": "kari",
+"from": "1949-12-16",
+"to": "1950-01-28",
+"name": "浦本",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110876965"
+},
+{
+"node": "n_higashikoetoi",
+"kind": "rinji",
+"from": "1987-06-01",
+"to": "1987-06-02",
+"name": "東声問",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109457261"
+},
+{
+"node": "n_fuihappuhama",
+"kind": "rinji",
+"from": "1989-08-09",
+"to": "1993-09-24",
+"name": "フイハップ浜",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110956597"
+},
+{
+"node": "n_shizunaikaisuiyokujo",
+"kind": "rinji",
+"from": "1991-07-20",
+"to": "1992-08-24",
+"name": "静内海水浴場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107246040"
+},
+{
+"node": "n_hamanakakaisuiyokujo",
+"kind": "rinji",
+"from": "1989-07-23",
+"to": "1995-08-08",
+"name": "浜中海水浴場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109462200"
+},
+{
+"node": "n_kamiji",
+"kind": "kari",
+"from": "1977-05-25",
+"to": "1985-03-14",
+"name": "神路",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109450935"
+},
+{
+"node": "n_jomon",
+"kind": "kari",
+"from": "1951-04-01",
+"to": "1975-07-01",
+"name": "常紋",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109426676"
+},
+{
+"node": "n_genseikaen",
+"kind": "kari",
+"from": "1964-06-01",
+"to": "1978-10-02",
+"name": "原生花園",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=104308927"
+},
+{
+"node": "n_genseikaen",
+"kind": "rinji",
+"from": "1987-07-01",
+"to": null,
+"name": "原生花園",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=104308927"
+},
+{
+"node": "n_katsuragawa_hakodate_main",
+"kind": "kari",
+"from": "19XX-XX-XX",
+"to": "1987-04-01",
+"name": "桂川",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102512975"
+},
+{
+"node": "n_washinosu",
+"kind": "kari",
+"from": "1949-08-01",
+"to": "1987-04-01",
+"name": "鷲ノ巣",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111513914"
+},
+{
+"node": "n_sakimoricho",
+"kind": "kari",
+"from": "1955-11-01",
+"to": "1968-09-19",
+"name": "崎守町",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109393596"
+},
+{
+"node": "n_higashifuren",
+"kind": "kari",
+"from": "XXXX-XX-XX",
+"to": "1956-09-20",
+"name": "東風連",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110917514"
+},
+{
+"node": "n_onne",
+"kind": "kari",
+"from": "XXXX-XX-XX",
+"to": "1956-09-20",
+"name": "恩根",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109440989"
+},
+{
+"node": "n_higashioiwake",
+"kind": "kari",
+"from": "1948-XX-XX",
+"to": "1965-03-01",
+"name": "小安平",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111578142"
+},
+{
+"node": "n_kita_funaoka",
+"kind": "rinji",
+"from": "1944-10-01",
+"to": "1948-07-01",
+"name": "北舟岡",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111516028"
+},
+{
+"node": "n_kita_funaoka",
+"kind": "kari",
+"from": "19XX-XX-XX",
+"to": "1987-04-01",
+"name": "北舟岡",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111516028"
+},
+{
+"node": "n_monju",
+"kind": "kari",
+"from": "1946-11-01",
+"to": "1947-02-20",
+"name": "文珠",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110093732"
+},
+{
+"node": "n_seiwa_onsen",
+"kind": "kari",
+"from": "1955-08-20",
+"to": "1987-04-01",
+"name": "政和温泉",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464352"
+},
+{
+"node": "n_seiwa_onsen",
+"kind": "rinji",
+"from": "1987-04-01",
+"to": "1990-03-10",
+"name": "政和温泉",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109464352"
+},
+{
+"node": "n_hariusu",
+"kind": "rinji",
+"from": "1990-09-01",
+"to": "2006-03-18",
+"name": "張碓",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109375061"
+},
+{
+"node": "n_kashima_soccer_stadium",
+"kind": "rinji",
+"from": "1994-03-12",
+"to": null,
+"name": "鹿島サッカースタジアム",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111424802"
+},
+{
+"node": "n_koboro",
+"kind": "kari",
+"from": "1967-10-01",
+"to": "1987-04-01",
+"name": "小幌",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110357701"
+},
+{
+"node": "n_tagokura",
+"kind": "rinji",
+"from": "2001-12-01",
+"to": "2013-03-16",
+"name": "田子倉",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110334768"
+},
+{
+"node": "n_yoshiokakaitei",
+"kind": "rinji",
+"from": "2006-08-28",
+"to": "2014-03-15",
+"name": "吉岡海底",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108950026"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "1986-07-26",
+"to": "[1986-08-01..1986-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1987-06-01..1987-08-31]",
+"to": "[1987-07-01..1987-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1988-06-01..1988-08-31]",
+"to": "[1988-07-01..1988-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1989-06-01..1989-08-31]",
+"to": "[1989-07-01..1989-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1990-06-01..1990-08-31]",
+"to": "[1990-07-01..1990-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1991-06-01..1991-08-31]",
+"to": "[1991-07-01..1991-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1992-06-01..1992-08-31]",
+"to": "[1992-07-01..1992-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1993-06-01..1993-08-31]",
+"to": "[1993-07-01..1993-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1994-06-01..1994-08-31]",
+"to": "[1994-07-01..1994-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_tofugaura_kaigan",
+"kind": "rinji",
+"from": "[1999-06-01..1999-08-31]",
+"to": "[1999-07-01..1999-09-30]",
+"name": "十府ヶ浦",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109571097"
+},
+{
+"node": "n_shirahamakaigan",
+"kind": "rinji",
+"from": "1986-07-26",
+"to": "1992-XX-XX",
+"name": "白浜海岸",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111310120"
+},
+{
+"node": "n_higashishiojiri",
+"kind": "kari",
+"from": "1949-10-01",
+"to": "1983-07-05",
+"name": "東塩尻",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110039794"
+},
+{
+"node": "n_bankokuhaku_chuoguchi",
+"kind": "rinji",
+"from": "1970-02-24",
+"to": "1970-09-14",
+"name": "万国博中央口",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110035540"
+},
+{
+"node": "n_ichinosekirokujizoson",
+"kind": "rinji",
+"from": "2009-08-23",
+"to": "2009-08-25",
+"name": "一ノ堰六地蔵尊",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=97828425"
+},
+{
+"node": "n_ichinosekirokujizoson",
+"kind": "rinji",
+"from": "2010-08-23",
+"to": "2010-08-25",
+"name": "一ノ堰六地蔵尊",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=97828425"
+},
+{
+"node": "n_ichinosekirokujizoson",
+"kind": "rinji",
+"from": "2011-08-23",
+"to": "2011-08-25",
+"name": "一ノ堰六地蔵尊",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=97828425"
+},
+{
+"node": "n_ichinosekirokujizoson",
+"kind": "rinji",
+"from": "2012-08-23",
+"to": "2012-08-25",
+"name": "一ノ堰六地蔵尊",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=97828425"
+},
+{
+"node": "n_ichinosekirokujizoson",
+"kind": "rinji",
+"from": "2013-08-23",
+"to": "2013-08-25",
+"name": "一ノ堰六地蔵尊",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=97828425"
+},
+{
+"node": "n_ryokkafeaumekoji",
+"kind": "rinji",
+"from": "1994-09-23",
+"to": "1994-11-21",
+"name": "緑化フェア梅小路",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=99416541"
+},
+{
+"node": "n_sekaihonohaku",
+"kind": "rinji",
+"from": "1996-07-01",
+"to": "1996-10-16",
+"name": "世界焱博",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=98260855"
+},
+{
+"node": "n_keirinjoiriguchi",
+"kind": "rinji",
+"from": "[1950-01-01..1995-12-31]",
+"to": "2002-08-31",
+"name": "競輪場入口",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110701130"
+},
+{
+"node": "n_imagawa",
+"kind": "rinji",
+"from": "XXXX-XX-XX",
+"to": "1987-04-01",
+"name": "今川",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102293199"
+},
+{
+"node": "n_nunohara",
+"kind": "kari",
+"from": "1953-XX-XX",
+"to": "1987-04-01",
+"name": "布原",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111019601"
+},
+{
+"node": "n_tanoshiri",
+"kind": "kari",
+"from": "1956-11-19",
+"to": "1956-12-20",
+"name": "田之尻",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110641468"
+},
+{
+"node": "n_karugahama_old",
+"kind": "rinji",
+"from": "1928-07-10",
+"to": "194X-XX-XX",
+"name": "狩留賀浜",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110541503"
+},
+{
+"node": "n_karugahama_old",
+"kind": "rinji",
+"from": "1952-XX-XX",
+"to": "1967-08-01",
+"name": "狩留賀浜",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110541503"
+},
+{
+"node": "n_to_no_hetsuri",
+"kind": "kari",
+"from": "1960-04-29",
+"to": "1969-11-17",
+"name": "塔のへつり",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109700652"
+},
+{
+"node": "n_iwappara_skiing_ground",
+"kind": "kari",
+"from": "1933-12-08",
+"to": "1946-XX-XX",
+"name": "岩原スキー場前",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110940464"
+},
+{
+"node": "n_iwappara_skiing_ground",
+"kind": "rinji",
+"from": "1952-12-20",
+"to": "1987-04-01",
+"name": "岩原スキー場前",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110940464"
+},
+{
+"node": "n_kirihamakaisuiyokujo",
+"kind": "rinji",
+"from": "1985-07-27",
+"to": "1986-08-01",
+"name": "切浜海水浴場駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=104020379"
+},
+{
+"node": "n_kirihamabichi",
+"kind": "rinji",
+"from": "1994-07-23",
+"to": "1996-08-21",
+"name": "きりはまビーチ駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=104020379"
+},
+{
+"node": "n_kuo",
+"kind": "kari",
+"from": "1961-XX-XX",
+"to": "1967-XX-XX",
+"name": "九王",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111002174"
+},
+{
+"node": "n_lavender_farm",
+"kind": "rinji",
+"from": "1999-06-11",
+"to": null,
+"name": "ラベンダー畑",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111565660"
+},
+{
+"node": "n_tainohama",
+"kind": "rinji",
+"from": "[1960-07-03..1964-07-11]",
+"to": null,
+"name": "田井ノ浜",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110752415"
+},
+{
+"node": "n_jinaigurandomae",
+"kind": "rinji",
+"from": "1992-09-10",
+"to": null,
+"name": "仁愛グランド前",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=106396061"
+},
+{
+"node": "n_tsushimanomiya",
+"kind": "kari",
+"from": "1915-05-07",
+"to": "1969-10-01",
+"name": "津島ノ宮",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111256333"
+},
+{
+"node": "n_tsushimanomiya",
+"kind": "rinji",
+"from": "1969-10-01",
+"to": null,
+"name": "津島ノ宮",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111256333"
+},
+{
+"node": "n_kita_engaru",
+"kind": "kari",
+"from": "[1950-01-01..1956-11-19]",
+"to": "1959-11-01",
+"name": "学田仮乗降場",
+"source": "https://ja.wikipedia.org/wiki/北遠軽駅"
+},
+{
+"node": "n_detohama",
+"kind": "kari",
+"from": "1950-07-25",
+"to": "1951-12-25",
+"name": "出戸仮乗降場",
+"source": "https://ja.wikipedia.org/wiki/出戸浜駅"
+},
+{
+"node": "n_kajikawa",
+"kind": "kari",
+"from": "1934-04-06",
+"to": "1962-08-01",
+"name": "加治川仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111580331"
+},
+{
+"node": "n_kashima_soccer_stadium_kashima_rinkai",
+"kind": "rinji",
+"from": "1994-03-12",
+"to": null,
+"name": "鹿島サッカースタジアム駅",
+"source": "https://ja.wikipedia.org/wiki/鹿島サッカースタジアム駅"
+},
+{
+"node": "n_kizugawa_kyoto",
+"kind": "rinji",
+"from": "1948-07-01",
+"to": "1965-08-23",
+"name": "木津川駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110958649"
+},
+{
+"node": "n_goshobashi",
+"kind": "kari",
+"from": "[1931-09-12..1964-07-31]",
+"to": "1964-08-01",
+"name": "御所橋駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108116481"
+},
+{
+"node": "n_kyoteijo",
+"kind": "rinji",
+"from": "[1932-09-07..1969-10-29]",
+"to": "1969-10-30",
+"name": "競艇場停留場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111190448"
+},
+{
+"node": "n_wakamiya_kunisaki",
+"kind": "rinji",
+"from": "[1922-07-07..1966-03-31]",
+"to": "1966-04-01",
+"name": "若宮駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107272303"
+},
+{
+"node": "n_kurotsuzaki",
+"kind": "rinji",
+"from": "[1935-11-30..1964-08-31]",
+"to": "1964-09-01",
+"name": "黒津崎駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=107272303"
+},
+{
+"node": "n_camp_car",
+"kind": "rinji",
+"from": "1947-03-27",
+"to": "1951-07-01",
+"name": "キャンプ・カー駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110985233"
+},
+{
+"node": "n_sorachibuto",
+"kind": "kari",
+"from": "[1940-09-15..1951-12-31]",
+"to": "[1966-01-01..1969-10-31]",
+"name": "空知太仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=102647858"
+},
+{
+"node": "n_koshiji_hakodate",
+"kind": "kari",
+"from": "1951-06-XX",
+"to": "1962-04-XX",
+"name": "越路仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111593796"
+},
+{
+"node": "n_funatsukiba",
+"kind": "kari",
+"from": "1984-08-02",
+"to": "1986-09-01",
+"name": "船着場仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110980094"
+},
+{
+"node": "n_shirousagi_nagai",
+"kind": "kari",
+"from": "1925-07-06",
+"to": "1969-03-01",
+"name": "白兎仮停車場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111452828"
+},
+{
+"node": "n_kiyomizudera",
+"kind": "kari",
+"from": "1915-03-31",
+"to": "1964-10-01",
+"name": "清水寺仮停車場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111452828"
+},
+{
+"node": "n_nakamozundojomae",
+"kind": "rinji",
+"from": "1949-07-30",
+"to": "1958-05-10",
+"name": "中百舌鳥運動場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110646583"
+},
+{
+"node": "n_sakazu",
+"kind": "rinji",
+"from": "1954-04-01",
+"to": "1962-06-01",
+"name": "酒津仮停車場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111531409"
+},
+{
+"node": "n_akihamasaki",
+"kind": "kari",
+"from": "1926-07-21",
+"to": "1967-08-01",
+"name": "安芸浜崎仮停車場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111046476"
+},
+{
+"node": "n_kanaiso",
+"kind": "kari",
+"from": "1940-09-01",
+"to": "1962-07-18",
+"name": "金磯仮停車場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111002477"
+},
+{
+"node": "n_minami_onoda",
+"kind": "kari",
+"from": "1947-10-01",
+"to": "1962-03-15",
+"name": "小野田港北口乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110993965"
+},
+{
+"node": "n_shioyakaisuiyokujomae",
+"kind": "rinji",
+"from": "1951-XX-XX",
+"to": "1970-XX-XX",
+"name": "塩屋海水浴場前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111442761"
+},
+{
+"node": "n_kitairie",
+"kind": "kari",
+"from": "1948-07-01",
+"to": "1964-09-30",
+"name": "北入江仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110959208"
+},
+{
+"node": "n_shimoainonai",
+"kind": "kari",
+"from": "1950-11-01",
+"to": "1967-10-01",
+"name": "下相ノ内仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110395242"
+},
+{
+"node": "n_koseibyoimmae",
+"kind": "kari",
+"from": "1955-12-25",
+"to": "1966-10-01",
+"name": "厚生病院前仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109306648"
+},
+{
+"node": "n_ironai",
+"kind": "kari",
+"from": "1949-09-01",
+"to": "1962-05-15",
+"name": "色内仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=108368885"
+},
+{
+"node": "n_bampakuchuo",
+"kind": "rinji",
+"from": "1985-03-14",
+"to": "1985-09-16",
+"name": "万博中央駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111451044"
+},
+{
+"node": "n_tonohama_kagoshima_main",
+"kind": "kari",
+"from": "1951-07-23",
+"to": "1955-03-08",
+"name": "唐浜仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111169723"
+},
+{
+"node": "n_shingakuji",
+"kind": "kari",
+"from": "1908-07-28",
+"to": "1967-08-01",
+"name": "心岳寺仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111420360"
+},
+{
+"node": "n_totorokaisuiyokujo",
+"kind": "kari",
+"from": "1954-08-XX",
+"to": "[1954-08-XX..1954-12-31]",
+"name": "土々呂海水浴場仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111420360"
+},
+{
+"node": "n_shidahama",
+"kind": "kari",
+"from": "1962-07-20",
+"to": "1967-08-21",
+"name": "志田浜仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111454759"
+},
+{
+"node": "n_mukai_noshiro",
+"kind": "kari",
+"from": "1949-02-XX",
+"to": "1952-01-25",
+"name": "向能代仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111472962"
+},
+{
+"node": "n_yokoiso",
+"kind": "kari",
+"from": "1949-XX-XX",
+"to": "1954-12-25",
+"name": "横磯仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111472962"
+},
+{
+"node": "n_kasose",
+"kind": "kari",
+"from": "1949-XX-XX",
+"to": "1954-11-20",
+"name": "風合瀬仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111472962"
+},
+{
+"node": "n_kuromatagawa",
+"kind": "kari",
+"from": "1954-12-10",
+"to": "1965-07-16",
+"name": "黒又川仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111454822"
+},
+{
+"node": "n_yabukami",
+"kind": "kari",
+"from": "1951-03-01",
+"to": "1951-10-01",
+"name": "藪神仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111454822"
+},
+{
+"node": "n_uonuma_tanaka",
+"kind": "kari",
+"from": "1951-03-01",
+"to": "1951-10-01",
+"name": "魚沼田中仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111454822"
+},
+{
+"node": "n_fotodekki",
+"kind": "rinji",
+"from": "1986-07-26",
+"to": "1986-09-01",
+"name": "フォトデッキ駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111451918"
+},
+{
+"node": "n_nagoya_kyujo_seimonmae",
+"kind": "rinji",
+"from": "1987-07-01",
+"to": "1994-10-08",
+"name": "ナゴヤ球場正門前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111445893"
+},
+{
+"node": "n_tsushimaguchi",
+"kind": "kari",
+"from": "1959-10-10",
+"to": "[1959-10-14..1959-11-10]",
+"name": "津島口仮乗降場",
+"source": "https://web.archive.org/web/20201207112121/https://www.meitetsu.co.jp/recommend/library/exhibition/detail/1239687_5073.html"
+},
+{
+"node": "n_ayubuchi",
+"kind": "rinji",
+"from": "1932-12-22",
+"to": "1965-09-17",
+"name": "鮎淵駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111618531 豊橋鉄道田口線 「（臨）鮎淵駅」(중간); 地方鉄道軌道統計年報 田口鉄道 정거장 수 FY1949~51 10 고정(https://dl.ndl.go.jp/pid/2474639/1/17, 높음·간접)에 들지 않음. 운행 철(여름)은 추정이라 연중 정차에 臨時 표시 (station_a audit2:chubu_3-043, W3 E2 2026-11-12)"
+},
+{
+"node": "n_shirakikaisuiyokujo",
+"kind": "rinji",
+"from": "[1900-05-10..1950-01-01]",
+"to": "[1950-01-01..1969-03-31]",
+"name": "白木海水浴場停留場",
+"line": "l_betsudai_line",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111534738 大分交通別大線 노선도 「白木海水浴場停留場（臨）」(중간), N05 1950–999(중간), 1969-03 停留場一覧에 없음 (station_a extra:betsudai_shiraki_kaisuiyokujo, W3 E2 2026-11-12)"
+},
+{
+"node": "n_kitafukui",
+"kind": "kari",
+"from": "1949-07-10",
+"to": "1951-09-01",
+"name": "北福井仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111217659 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_oana",
+"kind": "kari",
+"from": "1949-12-20",
+"to": "1963-03-10",
+"name": "大穴仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110882040 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_nukabira_dam",
+"kind": "kari",
+"from": "1956-XX-XX",
+"to": "[1957-XX-XX..1987-03-23]",
+"name": "糠平ダム仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109409245 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_kami_otoineppu",
+"kind": "rinji",
+"from": "1987-11-10",
+"to": "1989-05-01",
+"name": "上音威子府駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110080471 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_kitatombetsu",
+"kind": "kari",
+"from": "[1951-XX-XX..1957-XX-XX]",
+"to": "1967-10-01",
+"name": "北頓別仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109456248 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_tempokuzakae",
+"kind": "kari",
+"from": "[1950-XX-XX..1956-11-19]",
+"to": "1965-10-XX",
+"name": "天北栄仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=109455425 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_sempoku",
+"kind": "kari",
+"from": "1948-07-01",
+"to": "1957-06-01",
+"name": "釧北仮乗降場",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=111532351 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_akita_hakumae",
+"kind": "rinji",
+"from": "1986-07-18",
+"to": "1986-08-25",
+"name": "秋田博前駅",
+"source": "https://ja.wikipedia.org/w/index.php?oldid=110833316 (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_kakusa",
+"kind": "kari",
+"from": "1959-07-20",
+"to": "[1959-07-21..1987-04-01]",
+"name": "加草仮乗降場",
+"source": "高山拡志『旧国鉄・JR鉄道線廃止停車場一覧』1996 「加草(仮乗降場・局設定)[日豊本線]」 NDL 스니펫(중간) (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_komatsushimako",
+"kind": "kari",
+"from": "1940-03-15",
+"to": "1985-03-14",
+"name": "小松島港仮乗降場",
+"source": "ja.wikipedia 小松島港仮乗降場 (audit_ext K26 규칙 제안의 「（仮）」 표기) (audit_ext K26 근거 조사 R6-G 2026-11-12)"
+},
+{
+"node": "n_jinyamachi",
+"kind": "kari",
+"from": "1950-12-01",
+"to": "1953-07-15",
+"name": "陣屋町仮乗降場",
+"source": "1966 停車場一覧 역 승격일과 DB 첫 정차(仮乗降場 개설) 차이, 위키 역 문서 (R6-G 3회차 2026-11-13)"
+},
+{
+"node": "n_nishinagayama",
+"kind": "kari",
+"from": "1955-XX-XX",
+"to": "1959-11-01",
+"name": "西永山仮乗降場",
+"source": "1966 停車場一覧 역 승격일과 DB 첫 정차(仮乗降場 개설) 차이, 위키 역 문서 (R6-G 3회차 2026-11-13)"
+},
+{
+"node": "n_amagasaki",
+"kind": "kari",
+"from": "1911-09-06",
+"to": "1969-04-30",
+"name": "尼崎乗降場",
+"route": "r_fukuchiyama_line_tsukaguchi_amagasakiko",
+"source": "尼崎港線(塚口–尼崎港) 尼崎는 본역과 다른 乗降場: 1911-09-06 「神崎乗降場」 개설(운임·시각표상 본역과 같은 취급) → 1949-01-01 「尼崎乗降場」. 위키 尼崎駅 (JR西日本) 연혁(중간), 『兵庫県統計書』 1927 「神崎乘降場 金樂寺驛 尼崎驛」(NDL 972579 koma 14, 중간). 福知山線 본선 계통에는 걸지 않으려고 계통 한정(route) (2회차 근거 조사 K26; r2out/audit, 3회차 회귀 kinki_1-011·kinki_2-015)"
+},
+{
+"node": "n_amagasaki",
+"kind": "rinji",
+"from": "1969-04-30",
+"to": "1981-04-01",
+"name": "尼崎臨時乗降場",
+"route": "r_fukuchiyama_line_tsukaguchi_amagasakiko",
+"source": "1969-04-30 「尼崎臨時乗降場」 → 1981-04-01 尼崎港線 여객 폐지로 폐지. 위키 尼崎駅 (JR西日本) 연혁(중간), 『鉄道廃線跡を歩く 6』 1999 「築堤上にあった尼崎臨時乗降場のホームや階段」(NDL 13936011 koma 63, 중간) (2회차 근거 조사 K26; r2out/audit)"
+},
+{
+"node": "n_nabekura",
+"kind": "kari",
+"from": "1962-07-17",
+"to": "1963-10-01",
+"name": "鍋倉仮停車場",
+"source": "ja.wikipedia 山口線 年表 「1962年7月17日：鍋倉仮停車場が開業」「1963年10月1日：鍋倉仮停車場が鍋倉駅に変更」(曽根 『日本鉄道旅行地図帳』 인용, 중간). 仮停車場은 kari(결정 104) (3회차 chugoku_shikoku_2-019, 8회차 W1b)"
+},
+{
+"node": "n_yokoshima",
+"kind": "kari",
+"from": "1952-07-05",
+"to": "1969-07-01",
+"name": "横島仮停車場",
+"source": "ja.wikipedia 長崎本線 노선도 「（仮）横島駅 1952-1969」·年表 「7月5日 【仮停車場新設】横島」「7月1日 【仮停車場廃止】横島」(중간). 仮停車場은 kari(결정 104) (3회차 kyushu_2-13, 8회차 W1b)"
+},
+{"node": "n_sodeshi_shizuoka", "kind": "kari", "from": "1926-07-03", "to": "1969-10-01", "name": "袖師仮停車場", "source": "https://ja.wikipedia.org/w/index.php?oldid=111445893 (年表 1926-07-03 「袖師仮停車場が開業」, 1969-10-01 「袖師仮停車場を（臨）袖師駅に変更」; 8회차 W2 audit3 chubu_3-15)"},
+{"node": "n_sodeshi_shizuoka", "kind": "rinji", "from": "1969-10-01", "to": "1971-10-01", "name": "袖師駅", "source": "https://ja.wikipedia.org/w/index.php?oldid=111445893 (1971-10-01 「（臨）袖師駅が廃止」; 8회차 W2 audit3 chubu_3-15)"},
+{"node": "n_yuzawa_kusakaru", "kind": "rinji", "from": "1936-07-10", "to": "1960-04-25", "name": "湯沢駅", "source": "https://ja.wikipedia.org/w/index.php?oldid=109946491 (「1936年7月10日 湯沢駅開業。夏期のみ営業の臨時駅」, 노선도 「1936-1959? 臨時駅」; 끝은 노선 폐지일; 8회차 W2 audit3 kanto_2-011)"},
+{"node": "n_okudokai", "kind": "kari", "from": "1953-11-06", "to": "1962-11-01", "name": "奥洞海仮停車場", "route": "r_chikuho_main_line", "source": "위키 筑豊本線 年表 「1953年11月6日：奥洞海仮停車場を新設」「1962年11月1日：奥洞海仮停車場を駅に改める」 + N05 筑豊線 奥洞海 1953–(중간 둘). 仮停車場은 kari로 통일(결정 104) (8회차 W3 2026-11-15)"},
+{"node": "n_katao_sa", "kind": "rinji", "from": "1925-07-15", "to": "[1950-01-02..]", "name": "片男佐", "source": "西鉄 宮地岳線 (臨)片男佐: 위키 西鉄貝塚線 연표 「1925年7月15日 新香椎（現在の西鉄香椎） - 和白間に（臨）片男佐駅開業。廃止日不明」(중간) + N05 EB03_22419013 片男佐 1950–(끝 해 미상)(중간, 독립). N05 점이 西鉄香椎–香椎花園前 사이라 그 사이, km 추정. 폐지 1950 뒤 미상(범위). 臨時駅이라 영업한 해 전체가 기록 가능(DESIGN §9.1.2) (8회차 W3 2026-11-15)"},
+{"node": "n_shimo_seiwa", "kind": "kari", "from": "1955-08-20", "to": "1961-12-01", "name": "下政和", "source": "https://ja.wikipedia.org/w/index.php?oldid=111317864 (深名線 「下政和仮乗降場」; 1961-12-01 이전 전 옛 자리, 10회차 D2)"},
+{"node": "n_kyobashi_okayama", "kind": "rinji", "from": "1995-12-24", "to": null, "name": "京橋停留場", "route": "r_higashiyama_main_line", "source": "ja.wikipedia 京橋停留場 (API 2026-11-16) 「1995年12月24日：臨時駅として開業」「備前岡山京橋朝市開催日のうち、毎年5月と10月のみ停車する臨時停留場」(今尾 2009 인용, 중간) + N05 EB03_21417015 東山本線 京橋 1995–(중간, 독립) (10회차 G2 2026-11-16; audit4 chugoku_shikoku_1-007)"}
+]

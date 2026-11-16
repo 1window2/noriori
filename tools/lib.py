@@ -24,7 +24,7 @@ def znorm(n):
     n=re.sub(r'[（(]旧.*?[)）]','',n)
     n=re.sub(r'[〈<(（].*?[〉>)）]','',n)
     n=n.split('/')[0].split('／')[0]
-    n=n.replace('ヶ','ケ').replace('ヵ','ケ').replace('ｹ','ケ').replace('之','ノ').replace('﨑','崎').replace('髙','高').replace('塚','塚').replace('槇','槙').replace('渕','淵').replace('澤','沢').replace('濱','浜').replace('瀧','滝').replace('條','条').replace('龍','竜').replace('驛','駅').replace('國','国').replace('會','会').replace('櫻','桜').replace('廣','広').replace('德','徳').replace('諌','諫')
+    n=n.replace('ヶ','ケ').replace('ヵ','ケ').replace('ｹ','ケ').replace('之','ノ').replace('﨑','崎').replace('髙','高').replace('塚','塚').replace('槇','槙').replace('渕','淵').replace('澤','沢').replace('濱','浜').replace('瀧','滝').replace('條','条').replace('龍','竜').replace('驛','駅').replace('國','国').replace('會','会').replace('櫻','桜').replace('廣','広').replace('德','徳').replace('諌','諫').replace('萠','萌')
     n=n.replace('【旧】','')
     n=re.sub(r'([一二三四五六七八九])丁目',lambda m:str('一二三四五六七八九'.index(m.group(1))+1)+'丁目',n)
     n=re.sub(r'\s+','',n)
@@ -64,6 +64,8 @@ def edtf(d):
     d=unicodedata.normalize('NFKC',str(d)).strip()
     if d in('','NULL','null','0000-00-00','?'):return None
     if re.match(r'^\d{4}-(\d\d|XX)-(\d\d|XX)$',d) and 'X' in d:return d
+    # 손 대조 표의 범위 날짜(士別軌道 여객 끝 1955年度 [1955-04-01..1956-03-31])는 그대로 둔다
+    if re.match(r'^\[\d{4}-\d\d-\d\d\.\.\d{4}-\d\d-\d\d\]$',d):return d
     m=re.match(r'^(\d{4})-(\d{2})-(\d{2})',d)
     if m:
         y,mo,da=m.groups()
@@ -75,17 +77,47 @@ def edtf(d):
     m=re.match(r'^(\d{4})$',d)
     if m:return f'{d}-XX-XX'
     return None
-DIM=[31,29,31,30,31,30,31,31,30,31,30,31]
+def _dim(y,m):
+    """그달의 날 수. 평년 2월은 28일"""
+    if m==2:return 29 if (y%4==0 and (y%100!=0 or y%400==0)) else 28
+    return [31,28,31,30,31,30,31,31,30,31,30,31][m-1]
+_RANGE=re.compile(r'^\[(.*)\.\.(.*)\]$')
 def lohi(e):
-    """EDTF를 (가장 이른 날, 가장 늦은 날)로. None은 (None,None), ongoing은 ('9999-12-31',)*2"""
+    """EDTF를 (가장 이른 날, 가장 늦은 날)로. None은 (None,None), ongoing은 ('9999-12-31',)*2.
+    하루·달·해·10년·100년(1955-04-01, 1955-04-XX, 1955-XX-XX, 195X-XX-XX, 19XX-XX-XX)과
+    그 사이 어느 날인지 모르는 범위 [A..B]·[..B]·[A..]를 받는다 (EDTF 「하나의 값」 표기)"""
     if e is None:return (None,None)
     if e=='ongoing':return ('9999-12-31','9999-12-31')
+    m=_RANGE.match(e)
+    if m:
+        a,b=m.groups()
+        lo=lohi(a)[0] if a else '0000-01-01'
+        hi=lohi(b)[1] if b else '9999-12-31'
+        if lo>hi:raise ValueError(f'날짜 범위가 거꾸로: {e}')
+        return (lo,hi)
+    # 원 자료의 해 모름(XXXX)은 생성기가 받아 쓰도록 「아무 때나」로 읽는다. 출력 DB에는 남지 않는다 (compile check_dates)
+    if e.startswith('XXXX'):return ('0000-01-01','9999-12-31')
+    if not re.match(r'^(\d{4}|\d{3}X|\d{2}XX)-(\d\d|XX)-(\d\d|XX)$',e):raise ValueError(f'EDTF 해석 불가: {e}')
     y,m,d=e.split('-')
     if 'X' in y:
+        if m!='XX' or d!='XX':raise ValueError(f'EDTF 해석 불가: {e}')
         a=y.replace('X','0');b=y.replace('X','9');return (f'{a}-01-01',f'{b}-12-31')
-    if m=='XX':return (f'{y}-01-01',f'{y}-12-31')
-    if d=='XX':return (f'{y}-{m}-01',f'{y}-{m}-{DIM[int(m)-1]:02d}')
+    if m=='XX':
+        if d!='XX':raise ValueError(f'EDTF 해석 불가: {e}')
+        return (f'{y}-01-01',f'{y}-12-31')
+    if not 1<=int(m)<=12:raise ValueError(f'달이 아님: {e}')
+    if d=='XX':return (f'{y}-{m}-01',f'{y}-{m}-{_dim(int(y),int(m)):02d}')
+    if not 1<=int(d)<=_dim(int(y),int(m)):raise ValueError(f'날이 아님: {e}')
     return (e,e)
+
+def year_status(valid_from,valid_to,y):
+    """Y년 분모 판정 (DESIGN §5.4). 'yes' 확실히 영업, 'unknown' 판정 불가, None 영업 안 함.
+    애매한 단위는 분모·분자 모두에서 빼고 판정 불가로 센다. 폐지 연도만 아는 구간은 그해에 영업한 것으로 친다"""
+    f_lo,f_hi=lohi(valid_from);t_lo,t_hi=lohi(valid_to)
+    a,b=f'{y}-01-01',f'{y+1}-01-01'
+    if not((f_lo or '0000-01-01')<b and (t_hi or '9999-12-31')>a):return None
+    if f_hi is not None and f_hi<b and t_lo is not None and t_hi>a and t_lo>=a:return 'yes'
+    return 'unknown'
 
 def dump(path,items,head=None):
     """YAML의 부분집합으로 쓴다: 항목마다 JSON 흐름 표기 한 줄"""
@@ -93,17 +125,84 @@ def dump(path,items,head=None):
     with open(p,'w',encoding='utf-8') as o:
         if head:o.write('# '+head+'\n')
         for x in items:o.write('- '+json.dumps(x,ensure_ascii=False,separators=(', ',': '))+'\n')
-def load(mod):
-    """모듈 폴더의 모든 .yaml을 항목 목록으로 읽는다"""
-    r=[];d=os.path.join(SRC,mod)
+def _rows(d):
+    r=[]
     if not os.path.isdir(d):return r
     for f in sorted(os.listdir(d)):
         if not f.endswith('.yaml'):continue
         for l in open(os.path.join(d,f),encoding='utf-8'):
             if l.startswith('- '):r.append(json.loads(l[2:]))
     return r
+# 생성(gen_*)이 놓친 값을 원천에서 다시 찾아 둔 보정. data/source는 재생성 때 비워지므로 overrides에 둔다.
+# 선형은 원본에 없는 edge만 채우고, 좌표는 그 노드의 원본 값을 바꾼다. 출처를 끄면 빠진다 (DESIGN §2.10)
+_FILL={'geometry':('edge','source',{'N05-24':'n05'}),'positions':('node','source',{'n05':'n05'})}
+# 원본과 같은 형식의 보정 행 (data/overrides/source_patch/<모듈>.yaml). 생성기를 돌릴 수 없을 때 생성기가 만들었어야 할 행을 넣는다.
+# 행마다 "patch": "add"(그 키가 원본에 없어야 함), "replace"(있어야 함) 또는 "drop"(있어야 함, 그 행을 뺀다). 어긋나면 멈춘다: 재생성으로 원본에 생긴 행은 지우라는 뜻이다.
+# 이름은 한 개체·언어에 노선별·기간별 행이 여럿이라 노선·기간까지 키로 본다(그래야 노선 전용 이름 행 하나만 더하거나 뺄 수 있다). drop은 생성기 표가 잘못 낸 행(노리츠부시 표 오기)을 뺄 때만 쓴다
+_PATCH_KEY={'operators':'id','groups':'id','edges':'id','nodes':'id','routes':'id','lines':'id','km':'edge','positions':'node','geometry':'edge','events':None,'names':('entity_type','id','lang','line','valid_from','valid_to'),'aliases':('entity_type','id','lang','text','kind'),'stops':None}
+def _patch(mod,r):
+    rows=_rows(os.path.join(ROOT,'data','overrides','source_patch',mod))
+    # 보정 행은 다 만든 원본에 얹는 컴파일 단계용이다. 생성 도중(NORIORI_GEN, tools/all.sh)에는 영어 이름처럼 아직 없는 원본이 있고,
+    # 새 ID 모드(NORIORI_NEW_IDS=1)의 원본은 내부 키라 공개 ID로 쓴 행이 맞지 않는다. 둘 다 마지막 컴파일에서 합친다
+    if not rows or os.environ.get('NORIORI_NEW_IDS') or os.environ.get('NORIORI_GEN'):return r
+    key=_PATCH_KEY[mod];k=(lambda x:tuple(x.get(f) for f in key)) if isinstance(key,tuple) else (lambda x:x[key])
+    have={k(x):i for i,x in enumerate(r)} if key else {}
+    added={};drop=set()
+    for x in rows:
+        x=dict(x);op=x.pop('patch');x.pop('why',None)
+        if op=='add':
+            if key and k(x) in have:raise SystemExit(f'source_patch/{mod}: {k(x)}가 원본에 이미 있습니다. 보정 행을 지우세요')
+            r.append(x)
+            # 앞 파일이 더한 행을 뒤 파일이 replace로 고칠 수 있게 따로 적어 둔다 (옛 선로 칸의 km를 근거 조사로 고침).
+            # 더하기 겹침 검사는 원본만 본다. 이름처럼 같은 키에 기간 행이 여럿인 표가 있다
+            if key:added[k(x)]=len(r)-1
+        elif op=='replace':
+            if not key or (k(x) not in have and k(x) not in added):raise SystemExit(f'source_patch/{mod}: {k(x) if key else x}가 원본에 없습니다')
+            r[have[k(x)] if k(x) in have else added[k(x)]]=x
+        elif op=='drop':
+            if not key or k(x) not in have:raise SystemExit(f'source_patch/{mod}: 뺄 {k(x) if key else x}가 원본에 없습니다')
+            drop.add(have[k(x)])
+        else:raise SystemExit(f'source_patch/{mod}: patch는 add·replace·drop')
+    return [x for i,x in enumerate(r) if i not in drop] if drop else r
+def load(mod):
+    """모듈 폴더의 모든 .yaml을 항목 목록으로 읽는다. 선형·좌표는 overrides의 보정을 더한다"""
+    r=_patch(mod,_rows(os.path.join(SRC,mod))) if mod in _PATCH_KEY else _rows(os.path.join(SRC,mod))
+    if mod in _FILL:
+        key,tag,src=_FILL[mod]
+        fill=[x for x in _rows(os.path.join(ROOT,'data','overrides',mod)) if source_on(src.get(x.get(tag),x.get(tag)))]
+        if mod=='geometry':
+            have={x[key] for x in r}
+            r+=[x for x in fill if x[key] not in have]
+        else:
+            by={x[key]:x for x in fill}
+            r=[by.pop(x[key],x) for x in r]+list(by.values())
+    return r
 def load_geo():
     """master.sqlite, rail.pmtiles에 넣는 선형. OSM 선형은 ODbL이라 빠진다 (설계 §2.11)"""
     return [g for g in load('geometry') if g.get('source')!='osm']
 def stable(*a):
     return hashlib.md5('|'.join(map(str,a)).encode()).hexdigest()[:8]
+
+def official(rows):
+    """노리츠부시 표를 공식 노선 구성으로 바꾼다 (data/overrides/official_lines.json, 사용자 결정 2026-11-09).
+    노리츠부시가 『鉄道要覧』과 다르게 나눈 노선(副都心線 和光市–小竹向原 등)을 법적 소속대로 다시 쓴다. 쓰이지 않는 행은 멈춘다"""
+    OF=json.load(open(os.path.join(ROOT,'data','overrides','official_lines.json'),encoding='utf-8'))['rows']
+    by={r['id']:i for i,r in enumerate(rows)}
+    drop=set()
+    for x in OF:
+        if x['op']=='add':
+            if x['set']['id'] in by:raise SystemExit(f"official_lines: {x['set']['id']}가 이미 있습니다")
+            rows.append(dict(x['set']));continue
+        if x['id'] not in by:raise SystemExit(f"official_lines: 노리츠부시 표에 {x['id']}가 없습니다")
+        if x['op']=='replace':rows[by[x['id']]]=dict(rows[by[x['id']]],**x['set'])
+        elif x['op']=='drop':drop.add(x['id'])
+        else:raise SystemExit(f"official_lines: op는 replace·drop·add")
+    return [r for r in rows if r['id'] not in drop]
+def hidden_insert(rows):
+    """노리츠부시 표에 정차하지 않는 분기점을 km 자리에 숨은 역([이름])으로 넣는다 (hand_tables HIDDEN_INSERT)"""
+    for t,name,k,_ in HT['HIDDEN_INSERT']:
+        for r in rows:
+            if not r['t'].startswith(t) or any(s[0].strip('[]')==name for s in r['s']):continue
+            i=next((i for i,s in enumerate(r['s']) if float(s[1])>k),len(r['s']))
+            r['s'].insert(i,['['+name+']',str(k) if isinstance(r['s'][0][1],str) else k])
+    return rows

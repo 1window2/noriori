@@ -28,29 +28,29 @@ class _CollectionScreenState extends ConsumerState<CollectionScreen> {
     final network = ref.watch(networkProvider);
     final book = ref.watch(nameBookProvider);
     final current = ref.watch(scoreTableProvider(const BasisCurrent())).value;
-    final allTime = ref.watch(scoreTableProvider(const BasisAllTime())).value;
     if (current == null) return Scaffold(appBar: AppBar(title: Text(t.title)));
     final prefs = ref.watch(prefScoresProvider(const BasisCurrent()));
-    final prefsAll = ref.watch(prefScoresProvider(const BasisAllTime()));
+    // 배지는 현행 완주만이고 한 번 얻으면 남는다 (DESIGN §3.3)
+    final held = ref.watch(heldBadgesProvider).value ?? const <String>{};
     final nodes = ref.watch(riddenNodesProvider).value ?? const <String>{};
     final stations = {for (final node in nodes) network.data.nodeGroups[node] ?? node}.length;
     final cells = switch (_group) {
       _Group.lines => [
-          for (final item in collectionItems(current.byLine, allTime: allTime?.byLine ?? const <String, Score>{}))
+          for (final item in collectionItems(current.byLine, held: {for (final key in current.byLine.keys) if (held.contains(lineBadge(key))) key}))
             _Cell(
               name: book.lines[item.key] ?? item.key,
               score: item.score,
-              allTime: item.allTime,
+              complete: item.complete,
               onTap: () => context.push('/line/${item.key}'),
             ),
         ],
       _Group.operators => [
-          for (final item in collectionItems(current.byOperator, allTime: allTime?.byOperator ?? const <String, Score>{}))
-            _Cell(name: book.operators[item.key] ?? item.key, score: item.score, allTime: item.allTime),
+          for (final item in collectionItems(current.byOperator, held: {for (final key in current.byOperator.keys) if (held.contains(operatorBadge(key))) key}))
+            _Cell(name: book.operators[item.key] ?? item.key, score: item.score, complete: item.complete),
         ],
       _Group.prefs => [
-          for (final item in collectionItems(prefs, allTime: prefsAll))
-            _Cell(name: context.t.prefNames[item.key - 1], score: item.score, allTime: item.allTime),
+          for (final item in collectionItems(prefs, held: {for (final key in prefs.keys) if (held.contains(prefBadge(key))) key}))
+            _Cell(name: context.t.prefNames[item.key - 1], score: item.score, complete: item.complete),
         ],
       _Group.closed => const <Widget>[],
       _Group.stations => [
@@ -136,6 +136,7 @@ class _ClosedList extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final t = context.t.collection;
     final book = ref.watch(nameBookProvider);
+    final network = ref.watch(networkProvider);
     final text = Theme.of(context).textTheme;
     return switch (ref.watch(_closedProvider)) {
       AsyncValue(hasValue: true, value: (final rides, _)?) when rides.isEmpty =>
@@ -164,7 +165,9 @@ class _ClosedList extends ConsumerWidget {
                     if (ride.yearsBefore case final years? when years > 0) t.closedAfter(n: years),
                   ].join(' · '),
                 ),
-                trailing: Text('${kmLabel(ride.meters)} km'),
+                trailing: Text(
+                  network.kmEstimatedBetween(ride.lineId, ride.from, ride.to) ? '? km' : '${kmLabel(ride.meters)} km',
+                ),
                 onTap: () => context.push('/line/${ride.lineId}'),
               ),
           ],
@@ -176,18 +179,20 @@ class _ClosedList extends ConsumerWidget {
 }
 
 class _Cell extends StatelessWidget {
-  const _Cell({required this.name, required this.score, this.allTime = false, this.onTap});
+  const _Cell({required this.name, required this.score, this.complete, this.onTap});
 
   final String name;
   final Score score;
-  final bool allTime;
+
+  /// 배지를 지녔는가. 정하지 않으면 지금 완주했는지로 본다
+  final bool? complete;
   final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     final tokens = context.tokens;
     final text = Theme.of(context).textTheme;
-    final done = score.complete;
+    final done = complete ?? score.complete;
     return Material(
       color: tokens.paper,
       shape: RoundedRectangleBorder(
@@ -212,9 +217,7 @@ class _Cell extends StatelessWidget {
                   style: text.bodySmall?.copyWith(fontWeight: done ? FontWeight.w700 : FontWeight.w500),
                 ),
               ),
-              if (allTime)
-                Text(context.t.collection.allTime, style: text.labelSmall?.copyWith(color: tokens.lineRidden))
-              else if (!done)
+              if (!done)
                 Text(percentLabel(score), style: text.labelSmall?.copyWith(color: tokens.textMuted)),
             ],
           ),

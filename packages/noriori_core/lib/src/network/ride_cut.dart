@@ -1,3 +1,4 @@
+import '../date/date_span.dart';
 import '../ids.dart';
 import '../records/derived.dart';
 import '../records/record.dart';
@@ -154,6 +155,7 @@ List<RideLeg> _legsOf(
     final from = atStart ? leg.fromNode.value : group.first.from;
     final to = atEnd ? leg.toNode.value : group.last.to;
     final sameRoute = group.first.route == leg.routeId.value;
+    final direction = atStart && atEnd ? leg.direction : leg.direction ?? expansions[index].direction;
     legs.add(
       RideLeg(
         seq: legs.length,
@@ -161,8 +163,9 @@ List<RideLeg> _legsOf(
         routeId: RouteId(group.first.route),
         fromNode: NodeId(from),
         toNode: NodeId(to),
-        direction: atStart && atEnd ? leg.direction : leg.direction ?? expansions[index].direction,
-        resolveAsOf: leg.resolveAsOf,
+        direction: direction,
+        resolveAsOf: leg.resolveAsOf ??
+            (atStart && atEnd || leg.resolveUnknown ? null : _keptAlignment(network, ride, group, from, to, direction)),
         resolveUnknown: leg.resolveUnknown,
         lineLabel: leg.lineLabel,
         fromLabel: atStart ? leg.fromLabel : nameOf(from),
@@ -171,4 +174,26 @@ List<RideLeg> _legsOf(
     );
   }
   return legs;
+}
+
+/// 잘린 조각이 이설 선형을 다시 물으면 원래 지난 선형의 날짜. 묻지 않으면 null이다.
+///
+/// 날짜 없는 기록은 경로의 칸이 모두 함께 있던 날로 선형이 하나로 정해진다. 그 날을 정한 칸을 잘라 내면
+/// 옛·새 선형이 둘 다 남는다 (中央本線 上諏訪→勝川에서 みどり湖 쪽을 끄면 田立 옛·새 선형). 사용자가 고를 때와
+/// 같게 그 선형의 날짜를 `resolve_as_of`로 적는다 (DESIGN §2.8 D).
+String? _keptAlignment(Network network, Ride ride, List<_Hop> group, String from, String to, String? direction) {
+  final resolver = RouteResolver(network);
+  final raw = ride.dateInput;
+  final date = raw == null ? null : DateSpan.parse(raw);
+  final route = group.first.route;
+  Expansion expand(String? asOf) => resolver.record(route, from, to,
+      date: date, direction: direction, asOf: asOf == null ? null : DateSpan.parse(asOf), askDirection: true);
+  final plain = expand(null);
+  if (plain.reason != ExpandReason.relocatedParallel) return null;
+  final want = {for (final hop in group) hop.edge};
+  for (final option in plain.options) {
+    final got = expand(option.asOf);
+    if (got.saved && got.edges.length == want.length && want.containsAll(got.edges)) return option.asOf;
+  }
+  return null;
 }

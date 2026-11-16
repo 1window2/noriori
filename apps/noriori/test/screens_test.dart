@@ -10,7 +10,9 @@ import 'package:noriori/app/theme/tokens.dart';
 import 'package:noriori/app/widgets/line_strip_bar.dart';
 import 'package:noriori/app/widgets/meter.dart';
 import 'package:noriori/app/widgets/summary_actions.dart';
+import 'package:noriori/features/data/controller/deleted_controller.dart';
 import 'package:noriori/features/data/ui/blocked_start_screen.dart';
+import 'package:noriori/features/data/ui/deleted_screen.dart';
 import 'package:noriori/features/data/controller/import_controller.dart';
 import 'package:noriori/features/data/ui/import_screen.dart';
 import 'package:noriori/features/map/map_style.dart';
@@ -20,6 +22,7 @@ import 'package:noriori/features/record/controller/record_session_controller.dar
 import 'package:noriori/features/record/ui/browse_screens.dart';
 import 'package:noriori/features/record/ui/record_list_screen.dart';
 import 'package:noriori/features/record/ui/ride_ticket.dart';
+import 'package:noriori/features/record/ui/ride_tile.dart';
 import 'package:noriori/features/stats/ui/activity_screen.dart';
 import 'package:noriori/features/stats/controller/visits_controller.dart';
 import 'package:noriori/features/stats/ui/stats_screen.dart';
@@ -187,6 +190,36 @@ void main() {
       expect(find.textContaining('날짜 모름'), findsNothing);
     });
 
+    testWidgets('파일 기록 모두 지우기는 먼저 묻고, 취소하면 아무것도 지우지 않는다', (tester) async {
+      const ride = Ride(
+        rideId: RideId('r'),
+        legs: [],
+        datasetVersion: 'e',
+        createdAt: 0,
+        updatedAt: 0,
+        deviceId: 'd',
+      );
+      await tester.pumpWidget(
+        _app(const ImportedFilesSection(), [
+          importedFilesProvider.overrideWith((ref) async => {'noritsubushi:a.csv': [ride, ride]}),
+        ]),
+      );
+      await tester.pumpAndSettle();
+      await tester.tap(find.text('이 파일 기록 모두 지우기'));
+      await tester.pumpAndSettle();
+      expect(find.text('기록 2건을 지울까요?'), findsOneWidget);
+      expect(find.textContaining('a.csv에서 가져온 기록을 모두 지웁니다'), findsOneWidget);
+      final delete = tester.widget<FilledButton>(find.widgetWithText(FilledButton, '삭제'));
+      final context = tester.element(find.text('삭제'));
+      expect(delete.style?.backgroundColor?.resolve({}), Theme.of(context).colorScheme.error);
+      // 취소가 왼쪽, 삭제가 오른쪽
+      expect(tester.getCenter(find.text('취소')).dx, lessThan(tester.getCenter(find.text('삭제')).dx));
+      await tester.tap(find.text('취소'));
+      await tester.pumpAndSettle();
+      expect(find.byType(AlertDialog), findsNothing);
+      expect(find.byType(SnackBar), findsNothing);
+    });
+
     testWidgets('넣을 것이 없으면 버튼을 막는다', (tester) async {
       final plan = ImportPlan(rows: [_imported(matched, ImportState.existing)], broken: const []);
       await tester.pumpWidget(
@@ -252,6 +285,25 @@ void main() {
       expect(railFilter(closed: false).length, 2);
     });
 
+    test('환승역 배치와 간접 환승 선도 타임 슬라이더와 폐선 끄기를 따른다 (사용자 지시 2026-11-16)', () {
+      final filter = jsonEncode(transferFilter(showClosed: true, year: 1965));
+      expect(filter, contains('["<=",["coalesce",["get","fy"],0],1965]'));
+      expect(filter, isNot(contains('closed')));
+      expect(jsonEncode(transferFilter(showClosed: false)), contains('["==",["get","closed"],0]'));
+      expect(transferLayers, containsAll([walkLayer, spokeLayer, platformLayer, hubNodeLayer, hubNameLayer]));
+    });
+
+    test('역 이름이 겹치면 지금 역 이름이 먼저다 (都電 岩本町이 都営 岩本町을 가리지 않음)', () {
+      final style = jsonDecode(
+        railStyle(tiles: '/x/rail.pmtiles', glyphs: '/x/glyph-{range}.pbf', tokens: AppTokens.light),
+      ) as Map<String, Object?>;
+      final layers = (style['layers'] as List).cast<Map<String, Object?>>();
+      for (final id in [stationNameLayer, hubNameLayer]) {
+        final layer = layers.firstWhere((l) => l['id'] == id);
+        expect((layer['layout'] as Map)['symbol-sort-key'], ['get', 'closed']);
+      }
+    });
+
     test('내장 배경이 있으면 바다가 바탕이고 경계는 내장 층이다', () {
       final style = jsonDecode(
         railStyle(tiles: '/x/rail.pmtiles', baseTiles: '/x/base.pmtiles', glyphs: '/x/glyph-{range}.pbf', tokens: AppTokens.dark),
@@ -296,6 +348,61 @@ void main() {
       expect(land['background-color'], '#14171c');
       expect(layers.map((l) => l['id']), containsAll([riddenCurrentLayer, riddenClosedLayer]));
     });
+  });
+
+  testWidgets('탄 역이나 내린 역의 km가 추정값이면 기록 목록의 km는 숫자 뒤에 ?를 붙인다 (54.1? km, DESIGN §4.5)', (tester) async {
+    final network = Network(
+      const NetworkData(
+        routes: [
+          NetRoute(id: 'r', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'c', closed: false, extendTo: []),
+        ],
+        edges: [],
+        routeEdges: [],
+        stops: [
+          NetStop(routeId: 'r', seq: 0, node: 'a', kmCum: 0, isStop: true, isExtension: false, period: _ongoing),
+          NetStop(
+            routeId: 'r',
+            seq: 1,
+            node: 'b',
+            kmCum: 0.8,
+            isStop: true,
+            isExtension: false,
+            period: _ongoing,
+            kmEstimated: true,
+          ),
+          NetStop(routeId: 'r', seq: 2, node: 'c', kmCum: 1.2, isStop: true, isExtension: false, period: _ongoing),
+        ],
+        attrs: [],
+        lives: [],
+        units: [],
+        publicNodes: {'a', 'b', 'c'},
+        nodeGroups: {},
+        operators: [],
+        lineOrder: ['l'],
+      ),
+    );
+    RideSummary ride(String to, int km10) => RideSummary(
+          rideId: RideId(to),
+          status: ResolveStatus.ok,
+          lineLabel: '시험선',
+          fromLabel: 'A',
+          toLabel: to.toUpperCase(),
+          lineId: 'l',
+          fromNode: 'a',
+          toNode: to,
+          date: '2026-11-01',
+          dateInput: '2026-11-01',
+          km10: km10,
+        );
+    await tester.pumpWidget(
+      _app(
+        Column(children: [RideTile(ride: ride('b', 8)), RideTile(ride: ride('c', 12))]),
+        [networkProvider.overrideWithValue(network)],
+      ),
+    );
+    expect(find.text('0.8? km'), findsOneWidget);
+    expect(find.text('1.2 km'), findsOneWidget);
+    expect(find.text('0.8 km'), findsNothing);
   });
 
   testWidgets('통계는 탄 만큼 보여 주고 표시는 내림이다', (tester) async {
@@ -407,6 +514,7 @@ void main() {
       addTearDown(tester.view.reset);
       await tester.pumpWidget(
         _app(const ActivityScreen(), [
+          networkProvider.overrideWithValue(_network()),
           todayProvider.overrideWithValue('2026-11-03'),
           rideSummariesProvider.overrideWith((ref) => Stream.value(rides)),
         ]),
@@ -517,6 +625,7 @@ void main() {
   testWidgets('기록이 없으면 첫 기록을 안내한다', (tester) async {
     await tester.pumpWidget(
       _app(const RecordListScreen(), [
+        networkProvider.overrideWithValue(_network()),
         rideListProvider.overrideWith((ref) => Stream.value(const [])),
       ]),
     );
@@ -527,6 +636,7 @@ void main() {
   testWidgets('기록 목록은 확인이 필요한 기록을 숨기지 않는다', (tester) async {
     await tester.pumpWidget(
       _app(const RecordListScreen(), [
+        networkProvider.overrideWithValue(_network()),
         rideListProvider.overrideWith(
           (ref) => Stream.value(const [
             RideSummary(
@@ -549,6 +659,7 @@ void main() {
   testWidgets('기록을 길게 누르면 여러 개를 고를 수 있다', (tester) async {
     await tester.pumpWidget(
       _app(const RecordListScreen(), [
+        networkProvider.overrideWithValue(_network()),
         rideListProvider.overrideWith(
           (ref) => Stream.value(const [
             RideSummary(

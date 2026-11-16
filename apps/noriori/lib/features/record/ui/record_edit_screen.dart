@@ -180,15 +180,24 @@ class _FormState extends ConsumerState<_Form> {
     final messenger = ScaffoldMessenger.of(context);
     final t = context.t.record;
     final commands = ref.read(recordCommandsProvider);
-    final change = await commands.delete(widget.ride.rideId);
+    final Change? change;
+    try {
+      change = await commands.delete(widget.ride.rideId);
+    } on Object catch (error) {
+      debugPrint('삭제 실패: $error');
+      messenger.showSnackBar(SnackBar(content: Text(context.t.editRide.failed)));
+      if (mounted) setState(() => _saving = false);
+      return;
+    }
     if (mounted) router.pop();
-    if (change == null) return;
-    showUndoSnack(
-      messenger,
-      message: t.deleted,
-      undoLabel: t.undo,
-      onUndo: () => commands.undo(change),
-    );
+    if (change case final done?) {
+      showUndoSnack(
+        messenger,
+        message: t.deleted,
+        undoLabel: t.undo,
+        onUndo: () => commands.undo(done),
+      );
+    }
   }
 
   @override
@@ -211,7 +220,7 @@ class _FormState extends ConsumerState<_Form> {
         for (final leg in ride.legs)
           Padding(
             padding: const EdgeInsets.only(bottom: 4),
-            child: Text('${leg.lineLabel} · ${leg.fromLabel} → ${leg.toLabel}', style: text.titleMedium),
+            child: Text(_legTitle(leg), style: text.titleMedium),
           ),
         const SizedBox(height: 12),
         field(_date, t.date, error: _badDate ? context.t.session.dateBad : null),
@@ -260,7 +269,7 @@ class _FormState extends ConsumerState<_Form> {
             style: text.titleSmall,
           ),
           if (questions.length > 1)
-            Text('${question.leg.lineLabel} · ${question.leg.fromLabel} → ${question.leg.toLabel}', style: text.bodySmall),
+            Text(_legTitle(question.leg), style: text.bodySmall),
           for (final answer in [...question.answers, const _Answer(unknown: true)])
             ListTile(
               contentPadding: EdgeInsets.zero,
@@ -286,6 +295,9 @@ class _FormState extends ConsumerState<_Form> {
 }
 
 String _legKey(RideLeg leg) => '${leg.routeId.value}|${leg.fromNode.value}|${leg.toNode.value}';
+
+/// `노선 · 출발 → 도착`.
+String _legTitle(RideLeg leg) => '${leg.lineLabel} · ${leg.fromLabel} → ${leg.toLabel}';
 
 /// 경로 질문의 답 하나.
 final class _Answer {

@@ -1,0 +1,11 @@
+# 전수 대조 2회차 wave 3 좌표 (근거 탐색 반영). 옛 역은 国土数値情報 鉄道時系列(N05) 2024판의 그 시기 역 점(非商用 조건, 출처를 끄면 빠짐)
+- {"node": "n_tsushimaguchi", "lat": 35.1819, "lon": 136.7338, "quality": "approx", "source": "wikipedia", "checked": "2026-11-12", "why": "근거 탐색 1회차 audit2:chubu_3-049: 名鉄津島線 津島口 仮乗降場(1959). 津島(35.17798,136.73100)에서 藤浪 쪽 선로 방향으로 약 500 m(名鉄資料館 「津島駅の約500m北」). 오차 ±150 m"}
+- {"node": "n_zuidohigashiguchi", "lat": 34.89784, "lon": 135.4285, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 2회차: 能勢電鉄妙見線 「隧道東口」 N05 1950– 점"}
+- {"node": "n_nagasuna", "lat": 35.42091, "lon": 133.34877, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 2회차: 法勝寺電鉄線 「長砂」 N05 1950– 점"}
+- {"node": "n_minamiuryu", "lat": 43.631411, "lon": 141.872228, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_11225034 札沼線 「南雨竜」 1956–1971 점(지금 값과 251 m)"}
+- {"node": "n_nakauryu", "lat": 43.657263, "lon": 141.890109, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_11225036 札沼線 「中雨竜」 1956–1971 점(지금 값과 272 m)"}
+- {"node": "n_kawamukai", "lat": 44.394247, "lon": 143.287291, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_11239022 名寄本線 「川向」 1950–1965 점(지금 값과 650 m)"}
+- {"node": "n_hanabusa", "lat": 32.947966, "lon": 130.782404, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_22410024 菊池線 「花房」 1950–1954 점(지금 값과 626 m)"}
+- {"node": "n_kago", "lat": 31.289321, "lon": 130.291975, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_22407022 枕崎線 「鹿籠」 1950–1963 점(지금 값과 191 m)"}
+- {"node": "n_munakatajinjamae", "lat": 35.414668, "lon": 133.352206, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_21446003 米子法勝寺線 「宗形神社前」 1950–1952 점(지금 값과 450 m)"}
+- {"node": "n_motorijinjamae", "lat": 34.572855, "lon": 136.522758, "quality": "approx", "source": "n05", "checked": "2026-11-12", "why": "근거 탐색 5회차: 보간 좌표 대신 N05 Station2 EB03_18436015 伊勢線 「公園下」(本居神社前의 N05 표기) 1950–1960 점(지금 값과 153 m)"}

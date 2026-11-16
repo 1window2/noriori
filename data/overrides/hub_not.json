@@ -1,6 +1,174 @@
 [
-[
-"すすきの",
-"豊水すすきの"
-]
+
+{
+"node": "n_akihabara",
+"with": "n_iwamotocho_toden",
+"why": "c4:hub_akihabara(+c1:n_iwamotocho 분리 뒤 노면 쪽): 都電 岩本町(~1972)은 414 m, 같은 노선 이웃 秋葉原駅東口가 秋葉原 앞 정류장. 秋葉原駅 乗換의 岩本町는 都営新宿線(n_iwamotocho, 그대로 둠)"
+},
+{
+"node": "n_akihabara_tokyo_metro",
+"with": "n_iwamotocho_toden",
+"why": "c4:hub_akihabara(+c1:n_iwamotocho 분리 뒤 노면 쪽): 위와 같음"
+},
+{
+"node": "n_hon_kawagoe",
+"with": "n_kawagoe_tobu",
+"why": "c4:hub_hon_kawagoe: 774 m. 本川越의 東武 환승은 같은 노선 이웃 川越市"
+},
+{
+"node": "n_kameido",
+"with": "n_suijinmori",
+"why": "c4:hub_kameido: 都電 水神森(147 m)의 같은 노선 이웃 亀戸駅前(1917~1972)이 亀戸 앞 정류장"
+},
+{
+"node": "n_kameido_tobu",
+"with": "n_suijinmori",
+"why": "c4:hub_kameido: 위와 같음"
+},
+{
+"node": "n_shimoajiharacho",
+"with": "n_tsuruhashi",
+"why": "c4:hub_shimoajiharacho: 市電 下味原町의 같은 노선 이웃 鶴橋(1927~1969)가 鶴橋 앞 정류장"
+},
+{
+"node": "n_shimoajiharacho",
+"with": "n_tsuruhashi_kintetsu",
+"why": "c4:hub_shimoajiharacho: 위와 같음"
+},
+{
+"node": "n_dobutsuen_mae",
+"with": "n_kasumicho",
+"why": "c4:hub_dobutsuen_mae: 市電 霞町의 같은 노선 이웃 市電 動物園前(1918~1966)이 地下鉄 動物園前 앞 정류장"
+},
+{
+"node": "n_goshobashi",
+"with": "n_onomichi",
+"why": "c4:hub_goshobashi: 尾道鉄道 御所橋의 같은 노선 이웃 尾道(1933~1964)가 国鉄 尾道 앞 (audit chugoku_shikoku_1-023)"
+},
+{
+"node": "n_chofu",
+"with": "n_kyoteijo",
+"why": "c4:hub_chofu: 山陽電気軌道 競艇場의 같은 노선 이웃 長府駅(1932~1969)이 国鉄 長府 앞 (audit chugoku_shikoku_1-023)"
+},
+{
+"node": "n_ekinishiguchi",
+"with": "n_shimonoseki",
+"why": "c4:hub_ekinishiguchi: 駅西口의 같은 노선 이웃 下関駅(1946~1971)이 下関 앞 (audit chugoku_shikoku_1-023)"
+},
+{
+"node": "n_hikata",
+"with": "n_nokamidenshamae",
+"why": "c4:hub_hikata: 野上電車前의 같은 노선 이웃 日方(1929~1971)이 野上電鉄 日方 앞"
+},
+{
+"node": "n_ryosekidori",
+"with": "n_tosa_otsu",
+"why": "c4:hub_ichijobashi: 479 m. 같은 노선 이웃 一条橋(1911~)가 더 가까움 (audit chugoku_shikoku_2-024)"
+},
+{
+"node": "n_honchodori_6_chome",
+"with": "n_shin_nakano",
+"why": "c4:hub_honchodori_5_chome: 같은 노선의 더 가까운 정류장이 新中野와 환승"
+},
+{
+"node": "n_fudosommae",
+"with": "n_monzen_nakacho_tokyo_metro",
+"why": "c4:hub_fudosommae: 같은 노선 이웃 都電 門前仲町이 地下鉄 門前仲町 앞"
+},
+{
+"node": "n_hosui_susukino",
+"with": "n_nishi_4_chome",
+"why": "c4:hub_hosui_susukino: 591 m. 東豊線 이웃 大通가 西4丁目의 환승 (audit hokkaido_1-021)"
+},
+{
+"node": "n_nishi_4_chome",
+"with": "n_susukino_sapporo_city",
+"why": "c4:hub_hosui_susukino(+c1:n_susukino_sapporo_city 분리 뒤 지하철 쪽): 361 m. 市電 이웃 すすきの 정류장이 地下鉄 すすきの의 환승"
+},
+{
+"node": "n_nishi_4_chome",
+"with": "n_susukino_sapporo_tram",
+"why": "c4:hub_hosui_susukino(+분리 뒤 옛 市電 すすきの): 같은 市電 정류장 사이 361 m, 환승 아님"
+},
+{
+"node": "n_nishi_4_chome_sapporo_city",
+"with": "n_susukino_sapporo_city",
+"why": "c4:hub_hosui_susukino(+분리 뒤 지하철 쪽): 364 m. 같은 노선 이웃 大通가 西4丁目 환승"
+},
+{
+"node": "n_odori",
+"with": "n_susukino_sapporo_tsc",
+"why": "c4:hub_hosui_susukino: 506 m. 東豊線 이웃 豊水すすきの·市電 西4丁目이 더 가까움"
+},
+{
+"node": "n_shochikuzamae",
+"with": "n_susukino_sapporo_tsc",
+"why": "c4:hub_hosui_susukino: 옛 市電 松竹座前(~1971)의 같은 노선 이웃 すすきの가 이 정류장. 市電끼리"
+},
+{
+"node": "n_susukino_sapporo_city",
+"with": "n_tanukikoji",
+"why": "c4:hub_hosui_susukino(+분리 뒤 지하철 쪽): 168 m. 地下鉄 すすきの의 市電 환승은 すすきの 정류장"
+},
+{
+"node": "n_hosui_susukino",
+"with": "n_susukino_sapporo_city",
+"why": "기존 이름 행 [\"すすきの\",\"豊水すすきの\"]을 노드 행으로 바꿈: 南北線 すすきの–東豊線 豊水すすきの는 환승 아님. 市電 すすきの(n_susukino_sapporo_tsc)는 豊水すすきの駅 乗換 「乗継指定停留場」이라 남김 (c4:hub_hosui_susukino 근거)"
+},
+{
+"node": "n_minatogawa",
+"with": "n_minatogawakoennishiguchi",
+"why": "c4:hub_minatogawa: 市電 湊川公園西口의 같은 노선 이웃 湊川公園(1922~)이 湊川 앞"
+},
+{
+"node": "n_sanoyabashi",
+"with": "n_shinsaibashi",
+"why": "c4:hub_kita_horiedori_1_chome: 市電 佐野屋橋(1953~1961)의 같은 노선 이웃 市電 心斎橋(1908~1961)가 地下鉄 心斎橋 앞"
+},
+{
+"node": "n_fujisakigu_mae",
+"with": "n_hirocho_kumamoto_city",
+"why": "c4:hub_fujisakigu_mae: 市電 広町(1954~1970)의 같은 노선 이웃 市電 藤崎宮前이 電鉄 藤崎宮前 앞"
+},
+{
+"node": "n_fujisakigumae",
+"with": "n_hirocho",
+"why": "c4:hub_fujisakigu_mae: 電鉄 広町(~1954)의 같은 노선 이웃 電鉄 藤崎宮前이 市電 藤崎宮前 앞"
+},
+{
+"node": "n_awajicho_awajicho",
+"with": "n_ochanomizu",
+"why": "都電 淡路町–御茶ノ水 514m, 新御茶ノ水를 사이에 둔 사슬일 뿐 직접 환승 아님 (감사2 kanto_3-09)"
+},
+{
+"node": "n_awajicho_awajicho",
+"with": "n_ochanomizu_toei",
+"why": "698m 사슬 (감사2 kanto_3-09)"
+},
+
+{
+"node": "n_arashiyama_hankyu",
+"with": "n_randensaga",
+"why": "阪急嵐山–嵐電嵯峨 680 m. 역 문서 乗換 칸(doc) 근거뿐이고 500 m를 넘음. 嵐電嵐山(656 m)을 hub_split으로 뗀 것과 같은 기준 (사용자 판단 U01, 감사2 kinki_1-040)"
+},
+{
+"node": "n_ryogoku_toden",
+"with": "n_ryogoku",
+"why": "都電 両国(両国橋 서쪽, 日本橋 쪽)은 隅田川 건너 JR 両国와 537m — 이름만 같음. 감사2 kanto_3-08 (hub_split 대신: 나눈 노드라 hub_not으로)"
+},
+{
+"node": "n_tsuchizaki_akita_city",
+"with": "n_tsuchizaki",
+"why": "秋田市電 土崎는 奥羽本線 土崎駅에서 약 900 m 남쪽의 별개 역(이름은 마을 土崎港町에서 옴). 공식 연락 근거 없음: ja.wikipedia 秋田市電 rev 108630770 「奥羽本線の土崎駅から約900mほど南に離れた別駅」, 『秋田市商工人名録』大正13年 NDL pid 919335 p127 광고 「秋田市より土崎港へ往復」(중간) (환승 조사 R5 2026-11-12)"
+},
+{
+"node": "n_imazato",
+"with": "n_imazato_kintetsu",
+"why": "大阪市電 今里 終点은 1947년까지 「大今里」(지명)였고 近鉄 今里와 약 900 m. 같은 자리 地下鉄 今里도 「乗り換え駅ではない」, 市電↔近鉄은 鶴橋에서 갈아탐: ja.wikipedia 今里駅 (近鉄) rev 109956841, 大阪市電鶴橋線 rev 90281526(중간) (환승 조사 R5 2026-11-12)"
+},
+{"node": "n_ryogoku_toden", "with": "n_ryogoku_ekimae", "why": "都電 両国(両国橋 서쪽)과 両国駅前(引込線, JR 両国 앞)은 隅田川 건너 약 0.48 km 다른 정류장 — 이름만 같음. 감사2 kanto_3-08 (6회차 근거 조사 2026-11-14; r6out/B)"},
+{"node": "n_honshamae", "with": "n_mito", "why": "茨城交通 水浜線 本社前(옛 柵町)은 水戸駅前 다음 정류장. 水戸駅 환승은 水戸駅前이 맡고 本社前은 근거 없음(179 m). 감사1 kanto_1-022 (6회차 근거 조사 2026-11-14; r6out/B)"},
+{"node": "n_sannomiyahankyumae", "with": "n_kobe_sannomiya_hanshin", "why": "神戸市電 三宮阪急前은 阪急 神戸三宮 앞 정류장. 阪神 三宮 환승은 따로 있는 三宮阪神前이 맡음(위키 神戸市電 노선도 三宮阪急前·三宮阪神前 두 행), 194 m지만 근거 없음(U05). 감사 kinki_3-069 (6회차 근거 조사 2026-11-14; r6out/B)"},
+{"node": "n_mikawa_kusu", "with": "n_heisakaguchi", "why": "名鉄平坂支線 平坂口의 三河線 환승 상대는 三河平坂(약 450 m)뿐. 三河楠(약 690 m)은 환승 아님: 위키 名鉄平坂支線 rev110635441 「三河線の駅は三河平坂駅で、平坂口駅の北東約450m」, 노선도 「平坂口駅／左：三河平坂駅」 (8회차 W2 2026-11-15; audit3 chubu_2-11)"},
+{"node": "n_takasago_takasago", "with": "n_takasago_sanyo", "why": "국철 高砂線 高砂–山陽 高砂(486 m)은 같은 이름 근거였으나 그 시기 山陽 역 이름은 電鉄高砂(~1991)라 이름 근거가 맞지 않음. 실제 연락은 高砂北口–電鉄高砂(이미 있음, 위키 高砂線 노선도). 같은 이름 판정을 그날 이름으로 하는 규칙은 생성기 요청 (8회차 W3 2026-11-15)"}
 ]

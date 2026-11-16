@@ -16,7 +16,7 @@ def jong(sy,code):
 def hira(k):
     return ''.join(chr(ord(c)-0x60) if 'ァ'<=c<='ヶ' else c for c in k)
 # 'う'로 시작하는 고유어 형태소. 이름에 그 한자가 있으면 앞 음절의 장음이 아니다
-UMORPH=(('うら','浦'),('うみ','海'),('うし','牛'),('うち','内'),('うえ','上'),('うわ','上'),('うた','歌'),('うね','畝'),('うさ','鵜'),('うさ','宇'),('うじ','宇'),('うと','宇'),('うつ','宇'),('うわ','宇'),('う','由宇'),('うお','魚'),('うさ','兎'),('うち','有知'))
+UMORPH=(('うら','浦'),('うみ','海'),('うし','牛'),('うち','内'),('うえ','上'),('うわ','上'),('うた','歌'),('うね','畝'),('うさ','鵜'),('うさ','宇'),('うじ','宇'),('うと','宇'),('うつ','宇'),('うわ','宇'),('う','由宇'),('うお','魚'),('うさ','兎'),('うち','有知'),('うら','裏'),('うね','畝'))
 # 이름의 가타카나는 소리가 아니라 원어로 옮긴다
 LOAN={
 'センター':'센터','ターミナル':'터미널','トロッコ':'토롯코','ビル':'빌','ダム':'댐','ドーム':'돔','キャンパス':'캠퍼스',
@@ -56,8 +56,12 @@ def conv(k,name=''):
     keep=set()
     for m,c in UMORPH+(('うら','のうら'),('うし','うしく')):
         if c in name and '河内' not in name:
-            for x in re.finditer(m,k):
-                if x.start()==0 or k[x.start()-1] not in 'ょゅ':keep.add(x.start())
+            # 그 한자의 읽기로 볼 자리만 지킨다. 이름 속 한자 위치와 읽기 속 위치가 가까운 것 하나씩이다
+            # (上野公園 うえのこうえん의 こうえん 속 うえ는 上이 아니다)
+            cand=[x.start() for x in re.finditer(m,k)]
+            for p in (y.start() for y in re.finditer(re.escape(c),name)):
+                best=min(cand,key=lambda s:abs(s/len(k)-p/len(name)),default=None)
+                if best is not None and abs(best/len(k)-p/len(name))<=.3:keep.add(best)
     o=[];i=0;last=None;dropped=False
     while i<len(k):
         two=k[i:i+2]
@@ -81,11 +85,28 @@ def conv(k,name=''):
         i+=1
     return ''.join(o)
 FIX={'토쿄':'도쿄','쿄토':'교토','코베':'고베'}
+# 옛 국명 접두(能登·陸前 등). 역 이름 앞에 붙은 국명은 따로 읽는다: 접두와 뒤 지명 사이의 장음을 합치지 않고(能登小木 노토오기), 영어는 하이픈으로 뗀다(Rikuzen-Takata).
+# en_rules.py가 같은 표를 쓴다 (2회차 종합 K17)
+PROVINCE=(('陸前','りくぜん','Rikuzen'),('陸中','りくちゅう','Rikuchu'),('陸奥','むつ','Mutsu'),('羽前','うぜん','Uzen'),('羽後','うご','Ugo'),('岩代','いわしろ','Iwashiro'),
+    ('磐城','いわき','Iwaki'),('常陸','ひたち','Hitachi'),('下野','しもつけ','Shimotsuke'),('上総','かずさ','Kazusa'),('下総','しもうさ','Shimosa'),('武蔵','むさし','Musashi'),
+    ('相模','さがみ','Sagami'),('越後','えちご','Echigo'),('越中','えっちゅう','Etchu'),('越前','えちぜん','Echizen'),('能登','のと','Noto'),('加賀','かが','Kaga'),
+    ('若狭','わかさ','Wakasa'),('信濃','しなの','Shinano'),('美濃','みの','Mino'),('飛騨','ひだ','Hida'),('三河','みかわ','Mikawa'),('尾張','おわり','Owari'),
+    ('伊勢','いせ','Ise'),('近江','おうみ','Omi'),('丹波','たんば','Tamba'),('丹後','たんご','Tango'),('但馬','たじま','Tajima'),('播磨','はりま','Harima'),
+    ('紀伊','きい','Kii'),('備前','びぜん','Bizen'),('備中','びっちゅう','Bitchu'),('備後','びんご','Bingo'),('美作','みまさか','Mimasaka'),('安芸','あき','Aki'),
+    ('周防','すおう','Suo'),('長門','ながと','Nagato'),('石見','いわみ','Iwami'),('出雲','いずも','Izumo'),('因幡','いなば','Inaba'),('伯耆','ほうき','Hoki'),
+    ('阿波','あわ','Awa'),('讃岐','さぬき','Sanuki'),('伊予','いよ','Iyo'),('土佐','とさ','Tosa'),('筑前','ちくぜん','Chikuzen'),('筑後','ちくご','Chikugo'),
+    ('豊前','ぶぜん','Buzen'),('豊後','ぶんご','Bungo'),('肥前','ひぜん','Hizen'),('肥後','ひご','Higo'),('日向','ひゅうが','Hyuga'),('大隅','おおすみ','Osumi'),('薩摩','さつま','Satsuma'))
+def province(nm,k):
+    """국명 접두와 나머지 (접두, 접두 읽기, 영어, 나머지 이름, 나머지 읽기). 나머지가 두 글자 이상일 때만"""
+    for j,h,e in PROVINCE:
+        if nm.startswith(j) and hira(k).startswith(h) and len(nm)-len(j)>=1 and len(k)-len(h)>=2 and nm[len(j)] not in 'ノの之ケヶ':
+            return j,h,e,nm[len(j):],hira(k)[len(h):]
+    return None
 # 읽기만으로 정할 수 없는 지명 형태소
 MORPH=(('桟橋','さんばし','잔교'),('直方','のおがた','노가타'),('真岡','もおか','모오카'),('穴生','あのお','아노'),('穴太','あのお','아노'),('青海','おうみ','오미'),('椎名','しいな','시나'),('椎柴','しいしば','시시바'))
 # 지명이 아닌 한자어는 한국 한자음으로 읽는다. 일본어 읽기를 그대로 옮기면 읽기 어렵다 (사용자 지시, 2026-11-03: 太平洋石炭販売輸送臨港線)
 # 한자와 읽기가 둘 다 맞을 때만 바꾼다. 긴 말을 먼저 본다
-SINO=sorted((('太平洋','たいへいよう','태평양'),('石炭','せきたん','석탄'),('販売','はんばい','판매'),('輸送','ゆそう','수송'),('臨港','りんこう','임항'),
+SINO=sorted((('循環','じゅんかん','순환'),('太平洋','たいへいよう','태평양'),('石炭','せきたん','석탄'),('販売','はんばい','판매'),('輸送','ゆそう','수송'),('臨港','りんこう','임항'),
     ('臨海','りんかい','임해'),('電気','でんき','전기'),('市営','しえい','시영'),('縦貫','じゅうかん','종관'),('支線','しせん','지선'),('軌道','きどう','궤도'),
     ('鉱業','こうぎょう','광업'),('炭鉱','たんこう','탄광'),('森林','しんりん','삼림'),('専用','せんよう','전용'),('貨物','かもつ','화물'),('拓殖','たくしょく','척식'),
     ('殖産','しょくさん','식산'),('開発','かいはつ','개발'),('産業','さんぎょう','산업'),('製紙','せいし','제지'),('興業','こうぎょう','흥업'),('汽船','きせん','기선'),
@@ -101,8 +122,12 @@ PLACE=(('東京','とうきょう','도쿄'),('京都','きょうと','교토'),
 # 표는 재배포하지 않는 원천 스냅샷이라 data/imports에 둔다
 NW={}
 _f=os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data','imports','namuwiki','names_ko.json')
-# 출처 스위치에서 나무위키를 끄면 규칙 표기만 쓴다 (data/sources.json)
-if not os.environ.get('NW_OFF') and json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data','sources.json'),encoding='utf-8'))['sources']['namuwiki']['on'] and os.path.exists(_f):NW=json.load(open(_f,encoding='utf-8'))
+# 출처 스위치에서 나무위키를 끄면 규칙 표기만 쓴다 (data/sources.json). Wikidata를 끄면 Wikidata 라벨로 고른 표기를 버린다
+# NW_OFF는 나무위키 표기가 필요 없는 생성기(gen_old, gen_wiki)가 스스로 켜는 내부 값이다
+from lib import source_on
+if not os.environ.get('NW_OFF') and source_on('namuwiki'):
+    # 표의 'rule' 행은 예전 규칙으로 만든 값을 굳혀 둔 것이라 쓰지 않는다. 규칙을 고치면 다시 만들어진다 (地方事務所裏 치호지무쇼라, 雄鎮内 유우친나이)
+    NW={k:v for k,v in json.load(open(_f,encoding='utf-8')).items() if (source_on('wikidata') or 'wikidata' not in v[1]) and v[1]!='rule'}
 def station(k,name='',sino=False):
     # 이름의 가타카나 구간은 표기 사전으로, 나머지는 읽기 규칙으로 옮긴다
     nm=re.sub(r'[（(].*?[)）]','',name)
@@ -122,14 +147,17 @@ def station(k,name='',sino=False):
             gap=' ' if left and not any(c[0].endswith(x) for x,_,_ in SINO) else ''
             gap2=' ' if right and (j=='鉄道' or not any(c[1].startswith(x) for x,_,_ in SINO)) else ''
             return left+gap+r+gap2+right
+    # 空港은 港보다 먼저 본다. 港 규칙이 「空港」을 「空」+항(쿠항)으로 자른다
+    if '空港' in nm and 'くうこう' in k:
+        a,b=k.split('くうこう',1);c=nm.split('空港',1)
+        return (station(a,c[0]) if a else '')+'공항'+(station(b,c[1]) if b else '')
     if nm.endswith('港') and k.endswith('こう') and len(nm)>1:
         return station(k[:-2],nm[:-1])+'항'
     for j_,h_,r_ in PLACE:
         if nm.startswith(j_) and k.startswith(h_) and len(nm)>len(j_):
             return r_+station(k[len(h_):],nm[len(j_):])
-    if '空港' in nm and 'くうこう' in k:
-        a,b=k.split('くうこう',1);c=nm.split('空港',1)
-        return (station(a,c[0]) if a else '')+'공항'+(station(b,c[1]) if b else '')
+    pv=province(nm,k)
+    if pv:return conv(pv[1],pv[0])+station(pv[4],pv[3])
     prefix=''
     if nm.startswith('JR') and k.startswith('じぇいあーる'):
         prefix='JR ';k=k[len('じぇいあーる'):];nm=nm[2:]

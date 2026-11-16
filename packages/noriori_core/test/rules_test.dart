@@ -42,6 +42,20 @@ void main() {
       expect(pickName(rows), '기본');
     });
 
+    test('날짜를 몰라도 지금 이어지는 노선 고유 이름(지금 臨時駅)을 쓰고, 끝난 것은 쓰지 않는다', () {
+      const now = [
+        NameRow(text: '田井ノ浜'),
+        NameRow(text: '(臨)田井ノ浜', lineId: 'l', validFrom: '1960-07-03'),
+      ];
+      expect(pickName(now, lineId: 'l'), '(臨)田井ノ浜');
+      expect(pickName(now, lineId: 'm'), '田井ノ浜');
+      const past = [
+        NameRow(text: '原生花園'),
+        NameRow(text: '原生花園仮乗降場', lineId: 'l', validFrom: '1964-06-01', validTo: '1978-10-02'),
+      ];
+      expect(pickName(past, lineId: 'l'), '原生花園');
+    });
+
     test('기간의 끝 날은 그 이름이 아니다', () {
       expect(pickName(rows, date: '2000-01-01'), '기본');
     });
@@ -71,6 +85,57 @@ void main() {
           dateLo: lo,
           dateHi: hi,
         );
+
+    test('특정 연도는 확실히 영업한 단위만 세고 애매하면 판정 불가로 뺀다 (DESIGN §5.4)', () {
+      NetUnit span(String? from, String to) {
+        final f = from == null ? null : DateSpan.parse(from);
+        final t = DateSpan.parse(to);
+        return NetUnit(
+          n: 1,
+          key: 'u',
+          carryover: true,
+          edgeId: 'e',
+          meters: 1000,
+          normal: true,
+          dateLo: f?.lo,
+          dateHi: t.hi,
+          fromHi: f?.hi,
+          toLo: t.lo,
+        );
+      }
+
+      bool counts(NetUnit u, int y) => unitCounts(u, BasisYear(y), today: '2026-11-02');
+      // 개업일을 모르면 어느 해에도 확실하지 않다
+      final unknown = span(null, '1969-10-01');
+      expect(counts(unknown, 1960), isFalse);
+      expect(unitUndecided(unknown, 1960), isTrue);
+      expect(unitUndecided(unknown, 1970), isFalse);
+      // 폐지 연도만 알면 그해에 영업한 것으로 친다
+      final closedYear = span('1950-04-01', '1972-XX-XX');
+      expect(counts(closedYear, 1972), isTrue);
+      expect(counts(closedYear, 1973), isFalse);
+      expect(unitUndecided(closedYear, 1972), isFalse);
+      // 개업 연도만 알아도 그해에 센다
+      expect(counts(span('1972-XX-XX', 'ongoing'), 1972), isTrue);
+      // 연대까지만 알면 그 연대 안의 해는 판정 불가, 그 뒤는 확실하다
+      final decade = span('197X-XX-XX', 'ongoing');
+      expect(counts(decade, 1975), isFalse);
+      expect(unitUndecided(decade, 1975), isTrue);
+      expect(counts(decade, 1980), isTrue);
+      // 1월 1일 폐지는 그해에 영업하지 않았다
+      expect(counts(span('1950-04-01', '1972-01-01'), 1972), isFalse);
+      expect(unitUndecided(span('1950-04-01', '1972-01-01'), 1972), isFalse);
+      // 현행과 역대는 날짜 불확실성과 무관하다
+      expect(unitCounts(unknown, const BasisAllTime(), today: '2026-11-02'), isTrue);
+      final score = computeScore(
+        units: [unknown, closedYear],
+        hits: const {},
+        basis: const BasisYear(1960),
+        today: '2026-11-02',
+      );
+      expect(score.denUnits, 1);
+      expect(score.undecidedUnits, 1);
+    });
 
     final units = [
       unit(1, 1000, lo: '1900-01-01', hi: DateSpan.maxDate),
@@ -143,6 +208,12 @@ void main() {
   });
 
   group('백업 안내', () {
+    test('OS 백업 크기가 20MB를 넘으면 설정에서 알린다 (ARCHITECTURE §3.7)', () {
+      expect(osBackupTooLarge(20 * 1024 * 1024), isFalse);
+      expect(osBackupTooLarge(20 * 1024 * 1024 + 1), isTrue);
+      expect(osBackupTooLarge(0), isFalse);
+    });
+
     const day = 24 * 60 * 60 * 1000;
     BackupNotice? notice({
       bool hasFolder = true,
@@ -196,27 +267,38 @@ void main() {
   group('수집', () {
     Score score(int num, int den) => Score(numMeters: num, denMeters: den, numUnits: num, denUnits: den);
 
-    test('완주가 먼저이고 안 탄 것은 빠진다', () {
+    test('완주가 먼저이고 안 탄 것은 빠진다. 전에 얻은 배지는 완주 칸으로 남는다', () {
       final items = collectionItems(
         {'a': score(3, 10), 'b': score(5, 5), 'c': score(0, 5), 'd': score(9, 10)},
-        allTime: {'b': score(8, 8), 'a': score(3, 10)},
+        held: {'d'},
       );
       expect(items.map((item) => item.key), ['b', 'd', 'a']);
-      expect(items.first.allTime, isTrue);
-      final same = collectionItems({'b': score(5, 5)}, allTime: {'b': score(5, 5)});
-      expect(same.single.allTime, isFalse, reason: '폐지 구간이 없는 노선');
+      expect(items[1].kept, isTrue);
+      expect(items[1].complete, isTrue);
+      expect(items.first.kept, isFalse, reason: '지금 완주한 것은 남긴 배지가 아니다');
     });
 
-    test('배지는 완주와 넘긴 역 수의 합이다', () {
+    test('현행 완주 배지는 한 번 얻으면 남고, 그 노선 기록을 다 지우면 사라진다 (DESIGN §3.3)', () {
+      Set<String> held(Set<String> earned, Map<String, Score> lines) =>
+          heldBadges(earned, lines: lines, operators: const {}, prefs: const {});
+      // 지금 완주하면 얻는다
+      expect(held({}, {'l': score(5, 5)}), {lineBadge('l')});
+      // 새 역·연장으로 100%가 아니게 되어도 남는다
+      expect(held({lineBadge('l')}, {'l': score(5, 7)}), {lineBadge('l')});
+      // 그 노선의 탄 기록을 모두 지우면 사라진다
+      expect(held({lineBadge('l')}, {'l': score(0, 7)}), isEmpty);
+      // 다 폐지되어 현행 점수가 없어도 남는다
+      expect(held({lineBadge('gone')}, const {}), {lineBadge('gone')});
+      // 얻은 적 없는 미완주는 배지가 아니다
+      expect(held({}, {'m': score(4, 5)}), isEmpty);
       expect(
-        badgeCount(
-          lines: [score(5, 5), score(1, 5)],
-          operators: [score(5, 5)],
-          prefs: const [],
-          stations: 600,
-        ),
-        4,
+        heldBadges({}, lines: const {}, operators: {'o': score(2, 2)}, prefs: {13: score(1, 1)}),
+        {operatorBadge('o'), prefBadge(13)},
       );
+    });
+
+    test('배지는 지니는 완주 배지와 넘긴 역 수의 합이다', () {
+      expect(badgeCount(held: {lineBadge('a'), operatorBadge('o')}, stations: 600), 4);
     });
 
     test('가까운 곳은 50km 안만 가까운 순으로 보인다', () {
@@ -318,5 +400,8 @@ void main() {
     expect(fileDate('198X-XX-XX'), '198X-XX-XX');
     expect(fileDate('2015/3/14'), '2015-03-14');
     expect(() => fileDate('어제'), throwsFormatException);
+    expect(() => fileDate('2015-02-30'), throwsFormatException, reason: '달력에 없는 날');
+    expect(() => fileDate('2015-02-29'), throwsFormatException, reason: '윤년이 아니다');
+    expect(fileDate('2016-02-29'), '2016-02-29');
   });
 }

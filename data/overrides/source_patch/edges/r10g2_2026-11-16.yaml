@@ -1,0 +1,3 @@
+# 10회차 G2 데이터 고침의 칸 보정 (2026-11-16)
+- {"patch": "replace", "id": "e_008164", "a": "n_biwako_hamaotsu", "b": "n_hamaotsu", "seed_line": "l_keishin_line", "route_only": "r_keishin_line", "why": "[浜大津] 浜大津(2)(n_hamaotsu)는 京津線 1946–1981 끝 역(北側の船溜跡)이라 이 칸은 京津線 칸이다. 石坂線은 처음부터 지금 자리(びわ湖浜大津)를 지난다: 위키 京阪京津線 rev111210110 노선도 주 「石山坂本線は当初より現在地」 + N05 EB02_19406 京津線 1950–1980 선이 びわ湖浜大津 남쪽에서 북으로 浜大津(2)까지(중간 둘) (10회차 G2 2026-11-16; audit4 kinki_1-02)"}
+- {"patch": "replace", "id": "e_008165", "a": "n_biwako_hamaotsu", "b": "n_miidera", "seed_line": "l_ishiyama_sakamoto_line", "why": "[浜大津] 石坂線 びわ湖浜大津–三井寺 바로(0.5): 위와 같음. N05 EB02_19407 石山坂本線 1950–9999 선이 같은 선 (10회차 G2 2026-11-16; audit4 kinki_1-02)"}

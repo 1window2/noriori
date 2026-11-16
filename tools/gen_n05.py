@@ -8,11 +8,17 @@
 import sys,os,re,json,gzip,hashlib,collections,math,zipfile
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
+from decimal import Decimal as _Dec,ROUND_HALF_UP as _HUP
+def dround(x,n=1):
+    """km 반올림은 사사오입이다. float round()는 15.85를 15.8로 내린다(이진 표현·은행가 반올림). 6자리에서 float 잡음을 먼저 지운다"""
+    return None if x is None else float(_Dec(repr(round(x,6))).quantize(_Dec(1).scaleb(-n),rounding=_HUP))
 import wparse as w
 CUT='1950-01-01'
 WIKI=os.path.join(IMP,'wiki')
 OUT=os.path.join(IMP,'n05','lines.json')
 REP=os.path.join(CAND,'n05_report.json')
+# 노선마다 위키 원문을 사람이 읽고 만든 정답 표. 있으면 자동 대조 결과 대신 쓴다 (역, km, 구간별 개업·폐지·휴지, 역 기간)
+FIXF=os.path.join(ROOT,'data','overrides','n05_fix.json')
 def seglen(a,b):
     q=math.radians((a[1]+b[1])/2);return math.hypot((a[1]-b[1])*111,(a[0]-b[0])*111*math.cos(q))
 def yr(v):
@@ -22,9 +28,19 @@ def sn(s):
     """역 이름 대조용. 괄호, 駅·停留場, 표의 표시 기호, 가나 표기 차이를 지운다"""
     s=re.sub(r'[（(].*?[)）]','',(s or '').strip().strip('*[]').replace('【旧】',''))
     s=re.sub(r'(駅|停留場|停留所|停車場|仮乗降場|乗降場|信号場)$','',s.strip())
-    return znorm(s.replace('ヶ','ケ').replace('ヵ','カ').replace('之','ノ').replace('の','ノ'))
+    s=znorm(s.replace('ヶ','ケ').replace('ヵ','カ').replace('之','ノ').replace('の','ノ')).translate(VARIANT)
+    # 위키는 「相生町4丁目」, N05는 「相生町四丁目」처럼 숫자를 다르게 쓴다
+    return re.sub(r'\d+',lambda m:kanji_num(int(m.group())),s)
+def kanji_num(n):
+    d='〇一二三四五六七八九'
+    if n<10:return d[n]
+    if n<100:return ('' if n//10==1 else d[n//10])+'十'+(d[n%10] if n%10 else '')
+    return ''.join(d[int(c)] for c in str(n))
+# 위키와 N05가 서로 다르게 쓰는 이체자 (藪波/薮波, 白旗城趾前/白旗城址前, 田峯/田峰, 舘合/館合)
+VARIANT=str.maketrans({'薮':'藪','址':'趾','峰':'峯','館':'舘','嶋':'島','嶌':'島','邊':'辺','邉':'辺','冨':'富','曾':'曽'})
 
 # ---- N05 노선 묶음. 같은 선로를 잇는 기록(사업자 교체, 개칭)을 하나로 본다
+ALLST=collections.defaultdict(list)   # 모든 N05 역. 이름 → 역들
 def groups():
     z=zipfile.ZipFile(os.path.join(IMP,'n05','N05-24_GML.zip'))
     R=[]
@@ -70,6 +86,8 @@ def groups():
         p=f['properties'];g=f['geometry'];c=g['coordinates']
         c=c[len(c)//2] if g['type']=='LineString' else (c if g['type']=='Point' else c[0][len(c[0])//2])
         ST[(p['N05_002'],p['N05_003'])].append(dict(name=p['N05_011'],yb=yr(p['N05_005b']),ye=yr(p['N05_005e']),pt=(round(c[0],6),round(c[1],6))))
+    for v in ST.values():
+        for s_ in v:ALLST[sn(s_['name'])].append(s_)
     CITY=re.compile(r'(市|都|市交通局|市電気局)$')
     TRAMNAME=re.compile(r'市内線|軌道線|国道線|市電|電気軌道|路面|併用軌道|築港線|循環線')
     out=[]
@@ -89,7 +107,7 @@ def groups():
                 st[k]['yb']=yb
         kinds=sorted({r['kind'] for r in recs})
         tram=('3' in kinds and any(CITY.search(r['op']) for r in recs)) or any(TRAMNAME.search(r['line']) for r in recs)
-        out.append(dict(names=[list(n) for n in names],closed_year=max(ends)+1,cls='current' if alive else ('tram' if tram else 'line'),stations=sorted(st.values(),key=lambda s:(s['ye'] or 0,s['name']))))
+        out.append(dict(names=[list(n) for n in names],closed_year=max(ends)+1,cls='current' if alive else ('tram' if tram else 'line'),stations=sorted(st.values(),key=lambda s:(s['ye'] or 0,s['name'])),pts=[p for i in ix for p in SAMP[i]]))
     out.sort(key=lambda x:(x['cls'],x['closed_year'],x['names']))
     return out
 
@@ -147,7 +165,7 @@ def table(rec):
         if between and o:
             run=0.0;c2=[]
             for a,b,k in o:
-                run=round(run+(b or 0),1);c2.append((a,run,k))
+                run=dround(run+(b or 0));c2.append((a,run,k))
             o=c2
         if len(o)>len(best):best=o
     return best
@@ -192,7 +210,7 @@ def variants(rec):
     if t and any(b[1] is not None and a[1] is not None and b[1]<a[1] for a,b in zip(t,t[1:])):
         run=0.0;c=[]
         for a,k,kn in t:
-            run=round(run+(k or 0),1);c.append((a,run,kn))
+            run=dround(run+(k or 0));c.append((a,run,kn))
         o.append(('table',c))
     o+=[('prose',p)]
     # 같은 이름이 잇달아 나오면(신호소와 역, 옛 위치) 하나로, 떨어져 나오면 거기서 나눈다 (지선)
@@ -262,9 +280,8 @@ def titles(x):
         o+=[line+'線' if not line.endswith('線') else line,op+'線',op+'鉄道線',op]
     return list(dict.fromkeys(o))
 # ---- 이미 있는 노선: 노리츠부시 표와 옛 폐선 표의 역 위치
-N=json.load(open(os.path.join(IMP,'noritsubushi','lines.json'),encoding='utf-8'))
-_o=os.path.join(IMP,'stationdb','old_lines.json')
-if os.path.exists(_o):N+=json.load(open(_o,encoding='utf-8'))
+N=hidden_insert(official(json.load(open(os.path.join(IMP,'noritsubushi','lines.json'),encoding='utf-8'))))
+N+=json.load(open(os.path.join(IMP,'stationdb','old_lines.json'),encoding='utf-8'))
 POS=collections.defaultdict(list)
 for r in N:
     for lab,k in r['s']:POS[sn(lab)].append((r['id'],float(k),r['t']))
@@ -308,6 +325,17 @@ def judge(x,used=()):
     if sum(1 for r in rows if r[1] is not None)<2:return dict(title=t,revid=rec.get('revid'),order=order),f'위키에 영업km 없음 ({t})'
     nokm=[r[0] for r in rows if r[1] is None];rows=[r for r in rows if r[1] is not None]
     if len(nokm)>max(1,.25*(len(rows)+len(nokm))):return dict(title=t,revid=rec.get('revid'),order=order),f'위키 노선도에 km가 빠진 역이 {len(nokm)}개 ({t})'
+    # 끝 역이 다른 회사 노선의 N05 역이면 그 역에서 갈라지는 노선이다 (有田鉄道 藤並, 出石鉄道 江原). N05 선로가 그 역에 닿고 km가 맞을 때만 잇는다
+    ext=[]
+    for end,nb in ((0,1),(-1,-2)):
+        if len(rows)<2:break
+        r,q=rows[end],rows[nb]
+        if sn(r[0]) in names5 or sn(q[0]) not in names5:continue
+        dk=abs(r[1]-q[1])
+        for c in ALLST.get(sn(r[0]),()):
+            if (c['ye'] or 9999)<1950 or min(seglen(c['pt'],p) for p in x['pts'])>.3:continue
+            if any(seglen(c['pt'],s['pt'])<=dk*1.1+.4 and dk<=seglen(c['pt'],s['pt'])*3+1.5 for s in names5[sn(q[0])]):
+                names5[sn(r[0])].append(c);ext.append(r[0]);break
     # N05에 없는 끝 역은 1950년 전에 없어진 구간이다. 가운데의 N05에 없는 역은 확인되지 않아 뺀다
     while rows and sn(rows[0][0]) not in names5:rows=rows[1:]
     while rows and sn(rows[-1][0]) not in names5:rows=rows[:-1]
@@ -318,7 +346,7 @@ def judge(x,used=()):
     if not all(a<b for a,b in zip(km,km[1:])):
         if all(a>b for a,b in zip(km,km[1:])):rows=[(a,km[0]-k,c) for a,k,c in rows]
         else:return dict(title=t,revid=rec.get('revid'),order=order),f'km가 단조롭지 않음 ({t})'
-    base=rows[0][1];rows=[(a,round(k-base,1),c) for a,k,c in rows]
+    base=rows[0][1];rows=[(a,dround(k-base),c) for a,k,c in rows]
     # 역마다 N05 점 하나. 같은 이름이 여럿이면 앞 역에서 가까운 것
     pick=[];prev=None
     for a,k,c in rows:
@@ -339,7 +367,7 @@ def judge(x,used=()):
             if sn(q['name']) in got or re.search(r'(荷扱所|信号所|信号場|貨物)$',q['name']) or (q['ye'] or 0)<y0-1 or (q['yb'] or 0)>y0:continue
             if seglen(q['pt'],sa['pt'])+seglen(q['pt'],sb['pt'])<=d*1.1+.2:miss.append((q['name'],a,b));got.add(sn(q['name']))
     if len(miss)>max(1,.25*len(rows)):return dict(title=t,revid=rec.get('revid'),order=order),f'위키 목록에 없는 N05 역이 {len(miss)}개 ({t})'
-    return dict(title=t,revid=rec.get('revid'),rec=rec,kind=kind,rows=rows,pick=pick,drop=drop,miss=miss,km_bad=bad,share=round(share,2)),'ok'
+    return dict(title=t,revid=rec.get('revid'),rec=rec,kind=kind,rows=rows,pick=pick,drop=drop,miss=miss,km_bad=bad,share=round(share,2),ext=ext),'ok'
 
 def sections(rows,pick,hist,key,body=''):
     """구간별 해와 날짜. key가 'ye'면 폐지, 'yb'면 개업. N05 역 기간으로 해를 정하고 위키 연혁에서 같은 해·같은 구간의 날짜를 찾는다"""
@@ -419,6 +447,9 @@ def naming(pick):
     if line.startswith(op):line=line[len(op):] or line
     if line in('本線','線','鉄道線'):line=op+'線'
     return line,op,False
+def tags(xs):
+    """출처 태그 합치기. 이미 합친 태그(wikipedia+n05)도 나눠 한 번씩만 쓴다"""
+    return '+'.join(sorted({t for x in xs if x for t in x.split('+')}))
 def make(x,j,CO,seen):
     """판정을 통과한 역 목록으로 노리츠부시 표 모양의 행을 만든다. (보고, 행)"""
     r0=dict(title=j['title'],revid=j['revid'])
@@ -438,7 +469,7 @@ def make(x,j,CO,seen):
         r_=next(r for r in N if r['t']==(cov[a_-1] if a_ else cov[b_]))
         ns_=[sn(q) for q,_ in r_['s']]
         if (ns_[0]==sn(jn))==(sn(rows[0][0])==sn(jn)):
-            tot=rows[-1][1];rows=[(q,round(tot-k,1),c) for q,k,c in reversed(rows)];pick=pick[::-1]
+            tot=rows[-1][1];rows=[(q,dround(tot-k),c) for q,k,c in reversed(rows)];pick=pick[::-1]
     hist=history(j['rec'])
     close=sections(rows,pick,hist,'ye',j['rec'].get('wikitext') or '')
     if all(d<CUT for _,_,d,_ in close):return dict(r0,result='archive',why='모든 구간이 기준일 전에 폐지',order=[r[0] for r in rows]),None
@@ -446,7 +477,7 @@ def make(x,j,CO,seen):
     while close and close[0][2]<CUT:k=close[0][1];rows=rows[k:];pick=pick[k:];close=[(a-k,b-k,d,s) for a,b,d,s in close[1:]]
     while close and close[-1][2]<CUT:k=close[-1][0];rows=rows[:k+1];pick=pick[:k+1];close=close[:-1]
     if any(d<CUT for _,_,d,_ in close):return dict(r0,result='archive',why='가운데 구간이 기준일 전에 폐지',order=[r[0] for r in rows]),None
-    base=rows[0][1];rows=[(a,round(k-base,1),c) for a,k,c in rows]
+    base=rows[0][1];rows=[(a,dround(k-base),c) for a,k,c in rows]
     # N05의 첫 해 1950은 '1950년 이전부터'다. 그 구간의 개업일은 위키 연혁이나 인포박스의 가장 이른 개업일
     first=sorted([d for d in [infobox_open(j['rec']),first_open(j['rec'],[a for a,_,_ in rows])] if d])
     # 역 이름이 없는 연혁 줄밖에 없으면 그 문서의 가장 이른 개업 줄 (노선 문서이므로 그 노선의 개업이다)
@@ -459,22 +490,266 @@ def make(x,j,CO,seen):
     for a,b,d,s in sections(rows,pick,hist,'yb'):
         if s=='n05':opn.append((a,b,first[0],'wikipedia') if first else (a,b,None,None))
         else:opn.append((a,b,d,s))
+    # 가운데 역이 이웃 역보다 먼저 N05에서 사라졌거나 늦게 나타났으면 그 해를 역 기간으로 쓴다. 해는 N05가 마지막으로 그 역을 그린 해의 다음 해
+    # N05는 사업자·위치가 바뀌면 같은 역을 기록 여럿으로 나눈다. 같은 이름의 1km 안 기록을 합쳐 본다
+    def span(i):
+        q=[c for c in x['stations']+[pick[i]] if sn(c['name'])==sn(pick[i]['name']) and seglen(c['pt'],pick[i]['pt'])<1]
+        return min(c['yb'] or 1950 for c in q),max(c['ye'] or 9999 for c in q)
+    sp=[span(i) for i in range(len(rows))]
+    sclose={};sopen={}
+    for i in range(1,len(rows)-1):
+        (yb,ye),(pb,pe),(nb_,ne)=sp[i],sp[i-1],sp[i+1]
+        if ye<min(pe,ne) and ye<9999:sclose[rows[i][0]]=f'{ye+1}-XX-XX'
+        if yb>max(pb,nb_,1950):sopen[rows[i][0]]=f'{yb}-XX-XX'
     lname,op,jr=naming(pick)
     if (op,lname) in seen:return dict(r0,result='in_db',why=f'같은 노선의 다른 N05 묶음: {op} {lname}'),None
     seen.add((op,lname))
-    c='9' if jr else CO.get(op) or '9'+hashlib.md5(op.encode()).hexdigest()[:6]
+    c='9' if jr else CO.get(HT['OPAL'].get(op,op)) or CO.get(op) or '9'+hashlib.md5(op.encode()).hexdigest()[:6]
     t=f'乗車区間の選択【{lname}】' if jr or lname.startswith(op) else f'乗車区間の選択【{op} {lname}】'
-    sec=lambda a,b,d:[f'{rows[a][0]}～{rows[b][0]}',str(round(rows[b][1]-rows[a][1],1)),d]
+    sec=lambda a,b,d:[f'{rows[a][0]}～{rows[b][0]}',str(dround(rows[b][1]-rows[a][1])),d]
     h=[[['区間','営業km','開業日']]+[sec(a,b,d) for a,b,d,_ in opn if d],[['区間','営業km','廃止日']]+[sec(a,b,d) for a,b,d,_ in close]]
     rv=j['revid']
     row=dict(g='old',c=c,cn=op,id='n05'+hashlib.md5((op+lname).encode()).hexdigest()[:6],t=t,h=[x_ for x_ in h if len(x_)>1],
-             s=[[a,k] for a,k,_ in rows],revid=rv,jr=jr,
-             src=dict(km=f'wikipedia:{rv}',stop='wikipedia+n05',line='n05',open='+'.join(sorted({s for *_,s in opn if s})) or None,close='+'.join(sorted({s for *_,s in close})),op='n05'),
+             s=[[('*' if a in sclose else '')+a,k] for a,k,_ in rows],revid=rv,jr=jr,sclose=sclose,sopen=sopen,
+             src=dict(km=f'wikipedia:{rv}',stop='wikipedia+n05',line='n05',open=tags(s for *_,s in opn) or None,close=tags(s for *_,s in close),op='n05'),
              legal=[[rows[a][0],rows[b][0],d] for a,b,d,_ in close],
-             n05pt={a:[s_['pt'][1],s_['pt'][0]] for (a,_,_),s_ in zip(rows,pick)},
+             n05pt={('*' if a in sclose else '')+a:[s_['pt'][1],s_['pt'][0]] for (a,_,_),s_ in zip(rows,pick)},
              kana={a:k for a,_,k in rows if k},arch=[m for m in j['miss'] if m[1] in {r_[0] for r_ in rows} and m[2] in {r_[0] for r_ in rows}],line_kana=lead_kana(j['rec'],lname) or ((lead_kana(j['rec'],lname[:-1]) or '')+'せん' if lname.endswith('線') and lead_kana(j['rec'],lname[:-1]) else None))
-    return dict(r0,result='ok',why='ok',line=f'{op} {lname}',kind=j['kind'],stations=len(rows),dropped=j['drop'],missing=[m[0] for m in j['miss']],km_bad=j['km_bad'],
+    return dict(r0,result='ok',why='ok',line=f'{op} {lname}',kind=j['kind'],stations=len(rows),extended=j['ext'],stop_close=sclose,stop_open=sopen,dropped=j['drop'],missing=[m[0] for m in j['miss']],km_bad=j['km_bad'],
                 close=[d for *_,d,_ in close],close_src=row['src']['close'],open=[d for *_,d,_ in opn],trimmed=trimmed),row
+
+def kana_of(f,o,names):
+    """역 읽기: 손 대조 표, 자동 대조 행, 위키 역 목록 표 순서"""
+    k={}
+    rec=doc(f['title']) if f.get('title') else None
+    if rec:
+        for _,rows in variants(rec):
+            for a,_,kn in rows:
+                if kn:k.setdefault(sn(a),kn)
+    # names는 집합이라 순서가 실행마다 다르다. 출력 파일이 늘 같도록 정렬한다
+    out={a:k[sn(a)] for a in sorted(names) if sn(a) in k}
+    out.update({a:v for a,v in (o.get('kana') or {}).items() if a in names})
+    out.update({a:v for a,v in (f.get('kana') or {}).items() if a in names})
+    return dict(sorted(out.items()))
+def estimate_km(f,x):
+    """営業キロ를 모르는 역(XX)의 km를 N05 선로 위 위치로 나눠 추정한다 (DESIGN §4.5 `? km`).
+    앞뒤 km를 아는 역 사이 거리를 N05 선 위 거리 비율로 나눈다. N05 역 점이 없으면 그대로 둔다. 추정한 역은 f['km_est']에 더한다"""
+    import n05_overlay as ov
+    num=lambda k:isinstance(k,(int,float)) or bool(re.match(r'^[\d.]+$',str(k)))
+    st=[list(s_) for s_ in f['stations']]
+    if isinstance(st[0][0],list) or all(num(k) for _,k in st) or x is None:return st
+    est=set(f.get('km_est') or [])
+    # 위키 표기와 N05 점 이름이 다른 역 (n05_stop: 위키 이름 -> N05 이름)
+    al=f.get('n05_stop') or {};sk=lambda a:sn(al.get(a,a))
+    segs=[];pts={}
+    for line,op in {tuple(n) for n in x['names']}:
+        sg,sp=ov.load(line,op);segs+=sg
+        for nm,pt in sp.items():pts.setdefault(sn(nm),pt)
+    for i,(a,k) in enumerate(st if segs else []):
+        if num(k) or sk(a) not in pts:continue
+        lo=next((j for j in range(i-1,-1,-1) if num(st[j][1])),None);hi=next((j for j in range(i+1,len(st)) if num(st[j][1])),None)
+        if lo is None or hi is None or sk(st[lo][0]) not in pts or sk(st[hi][0]) not in pts:continue
+        d1=ov.along(segs,pts[sk(st[lo][0])],pts[sk(a)])[0];d2=ov.along(segs,pts[sk(a)],pts[sk(st[hi][0])])[0]
+        if not d1 or not d2:continue
+        k0,k1=float(st[lo][1]),float(st[hi][1])
+        st[i][1]=dround(k0+(k1-k0)*d1/(d1+d2));est.add(a)
+    # 좌표도 없으면 앞뒤 km를 아는 역 사이를 모르는 역 수로 고르게 나눈다. 이웃 역 km를 그대로 받으면 0 km 칸이 되고 좌표 보간도
+    # 이웃 좌표를 복사한다 (추정 km 조사 2026-11-09: 若宮·浅間線 등 17역). 0.1 km로 가를 수 없을 만큼 좁거나 끝 역이면 이웃 자리에 둔다
+    for i,(a,k) in enumerate(st):
+        if num(k) or a.startswith('['):continue
+        hi=next((j for j in range(i+1,len(st)) if num(st[j][1])),None);lo=next((j for j in range(i-1,-1,-1) if num(st[j][1])),None)
+        if hi is None and lo is None:continue
+        if hi is not None and lo is not None:
+            run=[j for j in range(lo+1,hi) if not st[j][0].startswith('[')];k0,k1=float(st[lo][1]),float(st[hi][1])
+            v=dround(k0+(k1-k0)*(run.index(i)+1)/(len(run)+1))
+            if k0<v<k1:st[i][1]=v;est.add(a);continue
+        st[i][1]=float(st[hi if hi is not None else lo][1]);est.add(a)
+    f['km_est']=sorted(est)
+    return st
+_FIXK=None
+def _parent_key(key):
+    """손 대조 표에서 이 항목을 「부모 항목 + 공백 + 부제」로 품는 가장 긴 다른 항목(넣는 항목만). 없으면 None"""
+    global _FIXK
+    if _FIXK is None:
+        _F=json.load(open(FIXF,encoding='utf-8'))['lines'] if os.path.exists(FIXF) else {}
+        _FIXK={k for k,v in _F.items() if v.get('verdict','skip' if v.get('kind')=='skip' else 'ok')=='ok' and not v.get('join_at')}
+    ps=[k for k in _FIXK if key.startswith(k+' ') and k!=key]
+    return max(ps,key=len) if ps else None
+def fixrow(key,f,x,old,CO):
+    """손 대조 표 한 항목으로 노리츠부시 표 모양의 행을 만든다. km를 모르는 역은 estimate_km이 추정한다"""
+    op,lname=key.split(' ',1)
+    num=lambda k:isinstance(k,(int,float)) or bool(re.match(r'^[\d.]+$',str(k)))
+    st=estimate_km(f,x)
+    al=f.get('n05_stop') or {};sk=lambda a:sn(al.get(a,a))
+    known=[(a,float(k)) for a,k in st if num(k)]
+    if len(known)<2:raise SystemExit(f'n05_fix {key}: km를 아는 역이 둘 미만')
+    base=known[0][1];kmof={a:dround(k-base) for a,k in known}
+    order=[a for a,_ in st]
+    def snap(a):
+        """km를 모르는 구간 끝은 앞쪽의 km를 아는 역으로 붙인다"""
+        if a in kmof:return a
+        if a not in order:raise SystemExit(f'n05_fix {key}: 구간 끝 {a}가 stations에 없음')
+        i=order.index(a)
+        return next((b for b in reversed(order[:i]) if b in kmof),None) or next(b for b in order[i:] if b in kmof)
+    arch=[]
+    for i,(a,k) in enumerate(st):
+        if num(k):continue
+        lo=next((b for b in reversed(order[:i]) if b in kmof),None);hi=next((b for b in order[i+1:] if b in kmof),None)
+        if lo and hi:arch.append([a,lo,hi])
+        else:print('n05_fix 끝 역의 km를 몰라 뺌',key,a)
+    # 역 점: N05 묶음의 같은 이름 역, 없으면 다른 노선의 N05 역 중 앞 역에서 가까운 것
+    # N05 묶음이 없는 구간(N05가 그리지 않은 국철 여객 지선, 小野田線 西沖山–助田–居能)은 역 점 없이 둔다. 선형 없이 표식만 그린다 (DESIGN §7.3)
+    xst=(x or {}).get('stations') or []
+    pt={};prev=None
+    for a,_ in known:
+        cs=[q for q in xst if sn(q['name'])==sk(a)] or [q for q in ALLST.get(sk(a),()) if prev is None or seglen(q['pt'],prev)<30]
+        if cs:
+            q=min(cs,key=lambda q:seglen(prev,q['pt']) if prev else 0);pt[a]=q['pt'];prev=q['pt']
+    # 폐지일을 모르는 폐역은 N05가 마지막으로 그린 해의 다음 해
+    def n05end(a):
+        # N05는 모르는 끝 해를 999로 적는다. 묶음에 없으면(노선 이름이 N05와 다른 손 대조 노선) 같은 이름의 N05 역 중 이 노선 역 점 가까이(3km) 있는 것
+        qs=[q for q in xst if sn(q['name'])==sk(a)]
+        if not qs:
+            near=[pt[b] for b in pt]
+            qs=[q for q in ALLST.get(sk(a),()) if any(seglen(q['pt'],p_)<3 for p_ in near)]
+        ye=max([q['ye'] for q in qs if q['ye'] and 1800<q['ye']<9999] or [0])
+        if not ye:
+            # N05가 그 역을 그렸지만 끝 해를 모르면(999) 그린 첫 해 뒤 어느 날, 노선이 닫히기 전에 없어졌다 (2회차 종합 K18: 阪神北大阪線 上浦江, 西鉄 天籟寺·西門通).
+            # 하한을 개업일로 두면 1950년 탑승이 「모름」이 된다. 시작 해 999는 「1949년 이전」이라 기준일(1950)로 본다
+            yb=[max(1950,q['yb'] if q['yb'] and 1800<q['yb']<9999 else 1950) for q in qs if q['ye']==999]
+            if yb:
+                try:hi=max(lohi(c[0])[1] for x_,y_,*c in f['close'] if c and c[0])
+                except ValueError:hi=None
+                if not hi or hi>=f'{max(yb)}-01-01':return f"[{max(yb)}-01-01..{hi or ''}]"
+            print('n05_fix 폐지일을 모르는 역이 N05에도 없음',key,a);return None
+        return f'{ye+1}-XX-XX'
+    shut={a:(d if d and not d.startswith('XXXX') else n05end(a)) for a,d in (f.get('stop_close') or {}).items()}
+    # 옮겨 간 역의 옛 자리(【旧】)는 그 역을 지나는 구간이 닫힐 때 함께 없어진다
+    for a,_ in st:
+        if '【旧】' in a and not shut.get(a):
+            i=order.index(a)
+            ds=[c[0] for x_,y_,*c in f['close'] if x_ in order and y_ in order and min(order.index(x_),order.index(y_))<=i<=max(order.index(x_),order.index(y_))]
+            # 닿는 구간이 모두 닫혀야 역도 없어진다
+            if ds:shut[a]=max(ds)
+    lab=lambda a:('*' if a in shut else '')+a
+    def sec(a,b,d):
+        a,b=snap(a),snap(b)
+        return [f'{a}～{b}',str(dround(abs(kmof[b]-kmof[a]))),d]
+    rv=f.get('revid')
+    o=old or {}
+    jr=o.get('jr',op=='日本国有鉄道')
+    # 같은 노선의 한 토막·지선·옛 선로 항목(「仙台市交通局 循環線 花京院–仙台駅前」, 「上田交通 真田傍陽線 傍陽支線」)은 부모 항목(「仙台市交通局 循環線」)과 같은 노선이다.
+    # 제목을 「부모 노선 (부제)」 꼴로 내서 생성기가 같은 노선의 다른 계통으로 싣게 한다. 노선 수·완주 단위가 둘로 갈리지 않게 (DESIGN §2.7, 3회차 전수 점검 K30·kyushu_1-008·tohoku_1-005·tohoku_1-006·kyushu_1-009, 8회차 W1b)
+    pk_=_parent_key(key)
+    tl_=lname if pk_ is None else pk_.split(' ',1)[1]+' ('+key[len(pk_)+1:]+')'
+    t=o.get('t') or (f'乗車区間の選択【{tl_}】' if jr or tl_.startswith(op) else f'乗車区間の選択【{op} {tl_}】')
+    row=dict(g='old',c=o.get('c') or ('9' if jr else CO.get(HT['OPAL'].get(op,op)) or CO.get(op) or '9'+hashlib.md5(op.encode()).hexdigest()[:6]),cn=o.get('cn',op),
+             id=o.get('id') or 'n05'+hashlib.md5((op+lname).encode()).hexdigest()[:6],t=t,
+             h=[x_ for x_ in ([['区間','営業km','開業日']]+[sec(a,b,d) for a,b,d in f['open']],[['区間','営業km','廃止日']]+[sec(a,b,c[0]) for a,b,*c in f['close']]) if len(x_)>1],
+             s=[[lab(a),kmof[a]] for a,_ in known],revid=rv,jr=jr,subsec=pk_ is not None and not o.get('t'),
+             src=dict(km=f'wikipedia:{rv}',stop='wikipedia+n05',line='n05',open='wikipedia',close='wikipedia',op='n05'),
+             legal=[[snap(a),snap(b),(c[1] if len(c)>1 and c[1] else c[0])] for a,b,*c in f['close']],
+             svc=[[snap(a),snap(b),d] for a,b,d in f.get('service_end') or []],
+             susp=[[snap(a),snap(b),d0,'wikipedia',d1] for a,b,d0,d1 in f.get('suspend') or []],
+             sclose={a:d for a,d in shut.items() if a in kmof},sopen={a:d for a,d in (f.get('stop_open') or {}).items() if a in kmof},sdate_src='wikipedia',
+             n05pt={lab(a):[pt[a][1],pt[a][0]] for a,_ in known if a in pt},
+             km_est=[a for a in f.get('km_est') or [] if a in kmof],
+             kana=kana_of(f,o,set(kmof)|{a for a,_,_ in arch}),arch=arch,line_kana=f.get('line_kana') or o.get('line_kana') or (lead_kana(doc(f['title']) or {},lname) if f.get('title') else None))
+    return row
+def group_of(G,f):
+    """손 대조 항목의 N05 묶음. 이름 목록이 같은 묶음, 없으면 [노선, 사업자]가 하나라도 겹치는 묶음"""
+    want=[list(n) for n in f.get('n05_names') or []]
+    if not want:return None
+    return next((x for x in G if x['names']==want),None) or next((x for x in G if any(n in x['names'] for n in want)),None)
+def apply_fix(G,GROUP,out,rep,CO):
+    """손 대조 표를 자동 대조 결과 위에 얹는다. 표에 없는 노선은 자동 결과를 그대로 둔다"""
+    if not os.path.exists(FIXF):return out,rep
+    FIX=json.load(open(FIXF,encoding='utf-8'))['lines']
+    # 2차 대조의 kind: line·join은 넣는 항목, skip은 넣지 않는 항목(판정 근거로만 남김)
+    for f in FIX.values():f.setdefault('verdict','skip' if f.get('kind')=='skip' else 'ok')
+    byrow={id(row):k for k,(x,row) in GROUP.items()}
+    keep=[]
+    for row in out:
+        k=byrow.get(id(row))
+        f=FIX.get(k)
+        if f is None:keep.append(row);continue
+        if f['verdict']=='ok':keep.append(fixrow(k,f,GROUP[k][0],row,CO))
+    # 이음(join) 항목은 뒤에 본다. host 표가 이 표의 다른 손 대조 노선(N05로만 들어온 노선)일 수 있다. 나온 행 순서는 표 순서 그대로 둔다(edge 번호)
+    res_=collections.defaultdict(list);head_=list(keep)
+    for k,f in sorted(FIX.items(),key=lambda kv:bool(kv[1].get('join_at'))):
+        if k in GROUP or f['verdict']!='ok':continue
+        keep=res_[k]
+        if f.get('join_at'):
+            # 이미 있는 노선의 빠진 구간이나 옛 선로. 그 노선의 표와 같은 회사·노선 이름으로 행을 만들어 이음 역에서 한 계통으로 잇는다
+            # join_at은 이음 역 이름들이다. 옛 선로는 양 끝이 이음 역이다
+            joins=set(f['join_at'] if isinstance(f['join_at'],list) else [f['join_at']])
+            segs=f['stations'] if isinstance(f['stations'][0][0],list) else [f['stations']]
+            x=group_of(G,f)
+            for i,st_ in enumerate(segs):
+                names_={a for a,_ in st_};jn=names_&joins
+                jn_={a.strip('[]') for a in jn}
+                if not jn:raise SystemExit(f'n05_fix {k}: 토막 {i}에 이음 역이 없음')
+                # 이음 역이 모두 있는 기존 표. 노선 이름이 맞는 표, 없으면 같은 회사의 표 (국철 노선은 뒤에 3섹·JR로 넘어가 회사 이름이 다르다)
+                line_=k.split(' ')[1]
+                # 다른 노선과 만나는 끝(三河線 吉良吉田는 西尾線 역)도 있어, 이음 역 하나라도 있는 표를 본다
+                # 기존 표는 노리츠부시·old_lines 표, 거기 없으면 이 대조가 만든 N05 표(柳生橋支線·美濃町線처럼 N05로만 들어온 노선)다
+                n05rows_=[r_ for r_ in head_+[q_ for v_ in res_.values() for q_ in v_] if not r_.get('join')]
+                host=None
+                for pool_ in (N,n05rows_):
+                    cands=sorted((r_ for r_ in pool_ if jn_&{q_.strip('*[]') for q_,_ in r_['s']}),key=lambda r_:-len(jn_&{q_.strip('*[]') for q_,_ in r_['s']}))
+                    host=next((r_ for r_ in cands if line_ in r_['t']),None) or next((r_ for r_ in cands if r_.get('cn')==k.split(' ',1)[0]),None)
+                    if host:break
+                # 이음 역이 옛 이름으로만 적힌 표(国鉄 会津線의 上三寄·湯野上)는 이름으로 못 찾는다. host에 그 표 제목을 적는다 (DB 감사 DBA-004)
+                if f.get('host'):
+                    host=next((r_ for r_ in N+n05rows_ if r_['t'].startswith(f['host'])),None)
+                    if host is None:raise SystemExit(f'n05_fix {k}: host 표 {f["host"]}가 없음')
+                if host is None:raise SystemExit(f'n05_fix {k}: 이음 역 {sorted(jn)}가 있는 기존 표가 없음')
+                part=dict(f,stations=st_,open=[o_ for o_ in f['open'] if {o_[0],o_[1]}<=names_],close=[c_ for c_ in f['close'] if {c_[0],c_[1]}<=names_],
+                          service_end=[c_ for c_ in f.get('service_end') or [] if {c_[0],c_[1]}<=names_],suspend=[c_ for c_ in f.get('suspend') or [] if {c_[0],c_[1]}<=names_])
+                row=fixrow(k,part,x,dict(c=host['c'],cn=host.get('cn'),jr=bool(host.get('jr')) or host['g'] in('jr','jrx') or str(host['c'])=='9',t=host['t'],id='n05'+hashlib.md5(f'{k}|{i}'.encode()).hexdigest()[:6]),CO)
+                # 이음 역은 기존 표의 역과 같은 방법으로 역 자료에 붙도록 N05 점을 주지 않는다
+                for j_ in jn:row['n05pt'].pop(j_,None)
+                row['join']=True
+                # branch: 이음 역 사이를 본선 선로와 같이 쓰는 옛 경로(新潟, 長尾線). 이 칸은 본선 edge를 쓴다
+                if f.get('branch'):row['shared']=True
+                # 양 끝이 이음 역인 옛 선로는 같은 노선의 지선 계통으로 둔다 (東海道本線 (美濃赤坂線)처럼 제목에 괄호 부제).
+                # 본선 계통의 대체 경로로 붙이면 정차 순서와 km 누계가 본선 기준과 섞인다
+                if len(jn)>=2 or f.get('branch'):
+                    m_=re.search(r'【(?:.* )?(.+?)(?: \((.+?)\))?】',host['t'])
+                    base_=m_.group(1) if m_ else re.match(r'^(.+?)(?: \(.+?\))? \S',host['t']).group(1)
+                    a_,b_=st_[0][0],st_[-1][0]
+                    tag_='旧線' if '이설' in (f.get('note') or '') else ''
+                    row['t']=f"{base_} ({a_}・{b_}{tag_}) {a_} ～ {b_} 営業km: {row['s'][-1][1]}"
+                keep.append(row)
+            continue
+        # 자동 대조가 놓친 노선. 손 대조 표의 N05 묶음 이름으로 역 점을 찾는다. 지선은 본선의 묶음, 없으면 노선 이름이 든 묶음
+        op_,ln_=k.split(' ',1)
+        x=group_of(G,f) or next((GROUP[p_][0] for p_ in GROUP if k.startswith(p_+' ')),None) or next((x for x in G if any(ln_==l or ln_.endswith(l) for l,_ in x['names']) and any(op_ in o for _,o in x['names'])),None)
+        if x is None:raise SystemExit(f'n05_fix {k}: N05 묶음 {f.get("n05_names")}가 없음')
+        keep.append(fixrow(k,f,x,None,CO))
+    keep=head_+[r_ for k in FIX for r_ in res_.get(k,[])]
+    def arch(k,f):
+        """열람 전용으로 내린 노선. gen_extra가 이름과 역 순서로 열람 전용 노선을 만든다"""
+        st=f.get('stations') or []
+        return dict(result='archive',why=f['why'],hand=True,name=k.split(' ',1)[1],revid=f.get('revid'),
+                    order=[a for a,_ in st] if st and not isinstance(st[0][0],list) else None)
+    for r in rep:
+        f=FIX.get(r.get('line'))
+        if f:r.update(dict(result='ok',why='손 대조 (n05_fix)',hand=True) if f['verdict']=='ok' else arch(r['line'],f))
+    have={r.get('line') for r in rep}
+    for k,f in FIX.items():
+        if k in have or f['verdict'] not in ('ok','archive'):continue
+        x=group_of(G,f)
+        base=dict(names=f.get('n05_names'),line=k,closed_year=x['closed_year'] if x else None)
+        rep.append(dict(base,result='ok',why='손 대조로 찾음 (n05_fix)',hand=True) if f['verdict']=='ok' else dict(base,**arch(k,f)))
+    # 선형 찾기(gen_geometry)는 노선 이름으로 N05 선을 고른다. 이름이 N05와 다른 노선을 위해 묶음의 N05 노선 이름을 별칭으로 남긴다
+    alias=collections.defaultdict(set)
+    for k,f in FIX.items():
+        if f['verdict']!='ok':continue
+        x=GROUP.get(k,(None,))[0] or group_of(G,f) or next((GROUP[p_][0] for p_ in GROUP if k.startswith(p_+' ')),None)
+        if x:alias[k.split(' ',1)[1]]|={l for l,_ in x['names']}
+    json.dump({k:sorted(v) for k,v in sorted(alias.items())},open(os.path.join(CAND,'n05_alias.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
+    return keep,rep
 
 if __name__=='__main__':
     os.makedirs(os.path.dirname(OUT),exist_ok=True);os.makedirs(CAND,exist_ok=True)
@@ -483,7 +758,7 @@ if __name__=='__main__':
         print('N05가 꺼져 있습니다');sys.exit(0)
     G=groups()
     CO={r.get('cn'):str(r['c']) for r in N if r.get('cn') and r['g'] in('pr','old')}
-    rep=[];out=[];seen=set()
+    rep=[];out=[];seen=set();GROUP={}
     for x in G:
         r0=dict(names=x['names'],closed_year=x['closed_year'],n05_stations=len(x['stations']))
         if x['cls']!='line':rep.append(dict(r0,result=x['cls'],why={'tram':'옛 노면전차망 (다음 단계, §4.4)','current':'현행 노선의 일부'}[x['cls']]));continue
@@ -491,7 +766,8 @@ if __name__=='__main__':
         if sc:rep.append(dict(r0,result='out',why=sc));continue
         # 노리츠부시 표나 옛 폐선 표 하나에 N05 역 이름의 60% 이상(셋 이상)이 있으면 이미 있는 노선이다
         S={sn(s_['name']) for s_ in x['stations']}
-        hit=collections.Counter(rid for n_ in S for rid in {p_[2] for p_ in POS.get(n_,())})
+        # 동점이면 먼저 센 표가 이긴다. 집합 순서가 해시에 따라 바뀌지 않게 정렬해서 센다
+        hit=collections.Counter(rid for n_ in sorted(S) for rid in sorted({p_[2] for p_ in POS.get(n_,())}))
         if hit and S:
             t_,c_=hit.most_common(1)[0]
             if c_>=3 and c_>=.6*len(S):rep.append(dict(r0,result='in_db',why=f'이미 있음: {t_}'));continue
@@ -508,7 +784,7 @@ if __name__=='__main__':
             r,row=make(x,j,CO,seen)
             if r['why'].startswith('같은 노선의 다른'):break
             res.append(r)
-            if row:out.append(row)
+            if row:out.append(row);GROUP[r['line']]=(x,row)
             # 끝 역은 다른 노선과 만나는 역일 수 있어 남긴다
             used|={id(q) for q in j['pick'][1:-1]}|{id(q) for q in x['stations'] if sn(q['name']) in {sn(a) for a,_,_ in j['rows'][1:-1]}}
             if len([s_ for s_ in x['stations'] if id(s_) not in used])<3:break
@@ -516,6 +792,7 @@ if __name__=='__main__':
         # 판정되지 않고 남은 N05 역
         left=sorted({q['name'] for q in x['stations'] if id(q) not in used} - {a for r in res for a in (r.get('order') or [])})
         if res and res[0]['result']!='archive' and len(left)>=3:rep[-1]['left']=left
+    out,rep=apply_fix(G,GROUP,out,rep,CO)
     json.dump(out,open(OUT,'w',encoding='utf-8'),ensure_ascii=False)
     json.dump(dict(report=rep),open(REP,'w',encoding='utf-8'),ensure_ascii=False,indent=0)
     c=collections.Counter(r['result'] for r in rep)

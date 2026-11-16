@@ -1,0 +1,2080 @@
+{
+"n_aikawa_hankyu|吹田": {
+"kana": "すいた",
+"ko": "스이타",
+"en": "Suita"
+},
+"n_aikawa_hankyu|吹田町": {
+"kana": "すいたまち",
+"ko": "스이타마치",
+"en": "Suitamachi"
+},
+"n_aira_osumi|姶良": {
+"kana": "あいら",
+"ko": "아이라",
+"en": "Aira"
+},
+"n_akaji|あかじ": {
+"kana": "あかじ",
+"ko": "아카지",
+"en": "Akaji"
+},
+"n_akechi_akechi|明知": {
+"kana": "あけち",
+"ko": "아케치",
+"en": "Akechi"
+},
+"n_aki_yaguchi|矢口": {
+"kana": "やぐち",
+"ko": "야구치",
+"en": "Yaguchi"
+},
+"n_anan|阿波富岡": {
+"kana": "あわとみおか",
+"ko": "아와토미오카",
+"en": "Awatomioka"
+},
+"n_arimatsu|有松裏": {
+"kana": "ありまつうら",
+"ko": "아리마츠우라",
+"en": "Arimatsuura"
+},
+"n_arisugawa|嵯峨野": {
+"kana": "さがの",
+"ko": "사가노",
+"en": "Sagano"
+},
+"n_asaka_tobu|膝折": {
+"kana": "ひざおり",
+"ko": "히자오리",
+"en": "Hizaori"
+},
+"n_ashikagashi|足利町": {
+"kana": "あしかがまち",
+"ko": "아시카가마치",
+"en": "Ashikagamachi"
+},
+"n_asunarou_yokkaichi|近畿日本四日市": {
+"kana": "きんきにっぽんよっかいち",
+"ko": "킨키닛폰욧카이치",
+"en": "Kinkinippon'yokkaichi"
+},
+"n_asuwayamakoenguchi|公園口": {
+"kana": "こうえんぐち",
+"ko": "코엔구치",
+"en": "Koenguchi"
+},
+"n_asuwayamakoenguchi|毛矢町": {
+"kana": "けやまち",
+"ko": "케야마치",
+"en": "Keyamachi"
+},
+"n_awa_kawabata|川端": {
+"kana": "かわばた",
+"ko": "카와바타",
+"en": "Kawabata"
+},
+"n_ayukawa_yuri_kogen|羽後鮎川": {
+"kana": "うごあゆかわ",
+"ko": "우고아유카와",
+"en": "Ugoayukawa"
+},
+"n_azumi_oiwake|アルプス追分": {
+"kana": "あるぷすおいわけ",
+"ko": "알프스오이와케",
+"en": "Alps-Oiwake"
+},
+"n_biwako_hamaotsu|浜大津": {
+"kana": "はまおおつ",
+"ko": "하마오츠",
+"en": "Hamaotsu"
+},
+"n_buzen_zenkoji|四日市": {
+"kana": "よっかいち",
+"ko": "욧카이치",
+"en": "Yokkaichi"
+},
+"n_cable_hachimangu_sanjo|男山": {
+"kana": "おとこやま",
+"ko": "오토코야마",
+"en": "Otokoyama"
+},
+"n_chikkocho|和歌山港": {
+"kana": "わかやまこう",
+"ko": "와카야마항",
+"en": "Wakayamako"
+},
+"n_chikuzen_miyada|桐野": {
+"kana": "きりの",
+"ko": "키리노",
+"en": "Kirino"
+},
+"n_chitose_konan|津軽千年": {
+"kana": "つがるちとせ",
+"ko": "츠가루치토세",
+"en": "Tsugaruchitose"
+},
+"n_daigakumae_ueda|本州大学前": {
+"kana": "ほんしゅうだいがくまえ",
+"ko": "혼슈다이가쿠마에",
+"en": "Honshudaigakumae"
+},
+"n_daisenji|上滝公園下": {
+"kana": "かみだきこうえんした",
+"ko": "카미다키코엔시타",
+"en": "Kamidakikoenshita"
+},
+"n_daisenji|大川寺公園": {
+"kana": "だいせんじこうえん",
+"ko": "다이센지코엔",
+"en": "Daisenjikoen"
+},
+"n_daisenji|大川寺遊園": {
+"kana": "だいせんじゆうえん",
+"ko": "다이센지유엔",
+"en": "Daisenjiyuen"
+},
+"n_daiyamuko|大谷向今市": {
+"kana": "だいやむこういまいち",
+"ko": "다이야무코이마이치",
+"en": "Daiyamukoimaichi"
+},
+"n_ebisu_kobe|久留美": {
+"kana": "くるみ",
+"ko": "쿠루미",
+"en": "Kurumi"
+},
+"n_echizen_takehara|市荒川": {
+"kana": "いちあらかわ",
+"ko": "이치아라카와",
+"en": "Ichiarakawa"
+},
+"n_enoshima|片瀬": {
+"kana": "かたせ",
+"ko": "카타세",
+"en": "Katase"
+},
+"n_enshu_kobayashi|新原": {
+"kana": "しんばら",
+"ko": "신바라",
+"en": "Shimbara"
+},
+"n_enshu_komatsu|小松": {
+"kana": "こまつ",
+"ko": "코마츠",
+"en": "Komatsu"
+},
+"n_enshu_nishigasaki|西ヶ崎": {
+"kana": "にしがさき",
+"ko": "니시가사키",
+"en": "Nishigasaki"
+},
+"n_enshu_shibamoto|芝本": {
+"kana": "しばもと",
+"ko": "시바모토",
+"en": "Shibamoto"
+},
+"n_fuchu|府中町": {
+"kana": "ふちゅうまち",
+"ko": "후츄마치",
+"en": "Fuchumachi"
+},
+"n_fujikyu_highland|ハイランド": {
+"kana": "はいらんど",
+"ko": "하이랜드",
+"en": "Highland"
+},
+"n_fujimatsu|今川": {
+"kana": "いまがわ",
+"ko": "이마가와",
+"en": "Imagawa"
+},
+"n_fujinomori|師団前": {
+"kana": "しだんまえ",
+"ko": "시단마에",
+"en": "Shidammae"
+},
+"n_fujisakigu_mae|北千反畑": {
+"kana": "きたせんだんばた",
+"ko": "키타센단바타",
+"en": "Kitasendambata"
+},
+"n_fushimi_inari|稲荷神社前": {
+"kana": "いなりじんじゃまえ",
+"ko": "이나리진자마에",
+"en": "Inarijinjamae"
+},
+"n_fushimi_momoyama|伏見": {
+"kana": "ふしみ",
+"ko": "후시미",
+"en": "Fushimi"
+},
+"n_fuso|下野": {
+"kana": "しもの",
+"ko": "시모노",
+"en": "Shimono"
+},
+"n_fuso|高雄": {
+"kana": "たかお",
+"ko": "타카오",
+"en": "Takao"
+},
+"n_gakugei_daigaku|碑文谷": {
+"kana": "ひもんや",
+"ko": "히몬야",
+"en": "Himon'ya"
+},
+"n_gakugei_daigaku|第一師範": {
+"kana": "だいいちしはん",
+"ko": "다이이치시한",
+"en": "Daiichishihan"
+},
+"n_gakugei_daigaku|青山師範": {
+"kana": "あおやましはん",
+"ko": "아오야마시한",
+"en": "Aoyamashihan"
+},
+"n_gohyakukoku|立山町": {
+"kana": "たてやままち",
+"ko": "타테야마마치",
+"en": "Tateyamamachi"
+},
+"n_gokaku|五和": {
+"kana": "ごか",
+"ko": "고카",
+"en": "Goka"
+},
+"n_gomenmachi_tosaden_kotsu|後免町駅前": {
+"kana": "ごめんまちえきまえ",
+"ko": "고멘마치에키마에",
+"en": "Gomemmachi-Ekimae"
+},
+"n_gonokomae|一野坪": {
+"kana": "いちのつぼ",
+"ko": "이치노츠보",
+"en": "Ichinotsubo"
+},
+"n_goyu|本御油": {
+"kana": "もとごゆ",
+"ko": "모토고유",
+"en": "Motogoyu"
+},
+"n_hachiman|遠州八幡": {
+"kana": "えんしゅうはちまん",
+"ko": "엔슈하치만",
+"en": "Enshuhachiman"
+},
+"n_hamayoshida|吉田": {
+"kana": "よしだ",
+"ko": "요시다",
+"en": "Yoshida"
+},
+"n_haneda_airport_terminal_1|羽田空港": {
+"kana": "はねだくうこう",
+"ko": "하네다공항",
+"en": "Haneda Airport"
+},
+"n_haneda_airport_terminal_1|羽田空港第1ビル": {
+"kana": "はねだくうこうだいいちびる",
+"ko": "하네다공항다이이치빌",
+"en": "Haneda Airport Terminal 1"
+},
+"n_haneda_airport_terminal_2|羽田空港第2ビル": {
+"kana": "はねだくうこうだいにびる",
+"ko": "하네다공항다이니빌",
+"en": "Haneda Airport Terminal 2"
+},
+"n_hashimashiyakushomae|竹鼻": {
+"kana": "たけはな",
+"ko": "타케하나",
+"en": "Takehana"
+},
+"n_hashimashiyakushomae|羽島": {
+"kana": "はしま",
+"ko": "하시마",
+"en": "Hashima"
+},
+"n_hashimashiyakushomae|西竹鼻": {
+"kana": "にしたけはな",
+"ko": "니시타케하나",
+"en": "Nishitakehana"
+},
+"n_hatsushiba|西村": {
+"kana": "にしむら",
+"ko": "니시무라",
+"en": "Nishimura"
+},
+"n_hatsutomi|鎌ヶ谷初富": {
+"kana": "かまがやはつとみ",
+"ko": "카마가야하츠토미",
+"en": "Kamagayahatsutomi"
+},
+"n_heiwadai_ryutetsu|赤城": {
+"kana": "あかぎ",
+"ko": "아카기",
+"en": "Akagi"
+},
+"n_heiwadai_ryutetsu|赤城台": {
+"kana": "あかぎだい",
+"ko": "아카기다이",
+"en": "Akagidai"
+},
+"n_higashi_agano|虎秀": {
+"kana": "こしゅう",
+"ko": "코슈",
+"en": "Koshu"
+},
+"n_higashi_ainonai|東相ノ内": {
+"kana": "ひがしあいのない",
+"ko": "히가시아이노나이",
+"en": "Higashiainonai"
+},
+"n_higashi_fushimi|上保谷": {
+"kana": "かみほうや",
+"ko": "카미호야",
+"en": "Kamihoya"
+},
+"n_higashi_kishiwada|阪和岸和田": {
+"kana": "はんわきしわだ",
+"ko": "한와키시와다",
+"en": "Hanwakishiwada"
+},
+"n_higashi_nagoyako|西六号": {
+"kana": "にしろくごう",
+"ko": "니시로쿠고",
+"en": "Nishirokugo"
+},
+"n_higashi_shiogama|東塩竈": {
+"kana": "ひがししおがま",
+"ko": "히가시시오가마",
+"en": "Higashishiogama"
+},
+"n_hikuma|島ノ郷": {
+"kana": "しまのごう",
+"ko": "시마노고",
+"en": "Shimanogo"
+},
+"n_hikuma|遠州島ノ郷": {
+"kana": "えんしゅうしまのごう",
+"ko": "엔슈시마노고",
+"en": "Enshushimanogo"
+},
+"n_hikuma|遠州曳馬": {
+"kana": "えんしゅうひくま",
+"ko": "엔슈히쿠마",
+"en": "Enshuhikuma"
+},
+"n_hirai_iyotetsu|平井河原": {
+"kana": "ひらいがわら",
+"ko": "히라이가와라",
+"en": "Hiraigawara"
+},
+"n_hirano_fukushima_transportation|明神町": {
+"kana": "みょうじんまち",
+"ko": "묘진마치",
+"en": "Myojimmachi"
+},
+"n_hiroden_miyajimaguchi|広電宮島": {
+"kana": "ひろでんみやじま",
+"ko": "히로덴미야지마",
+"en": "Hirodemmiyajima"
+},
+"n_hirodenajina|田尻": {
+"kana": "たじり",
+"ko": "타지리",
+"en": "Tajiri"
+},
+"n_hirodenhatsukaichi|廿日市町": {
+"kana": "はつかいちまち",
+"ko": "하츠카이치마치",
+"en": "Hatsukaichimachi"
+},
+"n_hirodenhatsukaichi|電車廿日市": {
+"kana": "でんしゃはつかいち",
+"ko": "덴샤하츠카이치",
+"en": "Denshahatsukaichi"
+},
+"n_hirodenitsukaichi|五日市町": {
+"kana": "いつかいちまち",
+"ko": "이츠카이치마치",
+"en": "Itsukaichimachi"
+},
+"n_hirodenitsukaichi|電車五日市": {
+"kana": "でんしゃいつかいち",
+"ko": "덴샤이츠카이치",
+"en": "Denshaitsukaichi"
+},
+"n_hirosaki_gakuindai_mae|西弘前": {
+"kana": "にしひろさき",
+"ko": "니시히로사키",
+"en": "Nishihirosaki"
+},
+"n_hirosaki_higashikomae|東工業高前": {
+"kana": "ひがしこうぎょうこうまえ",
+"ko": "히가시코교코마에",
+"en": "Higashikogyokomae"
+},
+"n_hirosaki_higashikomae|松森町": {
+"kana": "まつもりまち",
+"ko": "마츠모리마치",
+"en": "Matsumorimachi"
+},
+"n_hiroshima_hiroden|広島駅前": {
+"kana": "ひろしまえきまえ",
+"ko": "히로시마에키마에",
+"en": "Hiroshima-Ekimae"
+},
+"n_hitachi_aoyagi|青柳": {
+"kana": "あおやぎ",
+"ko": "아오야기",
+"en": "Aoyagi"
+},
+"n_hitachi_ota|太田": {
+"kana": "おおた",
+"ko": "오타",
+"en": "Ota"
+},
+"n_hodogaya|程ヶ谷": {
+"kana": "ほどがや",
+"ko": "호도가야",
+"en": "Hodogaya"
+},
+"n_hon_shiogama|本塩竈": {
+"kana": "ほんしおがま",
+"ko": "혼시오가마",
+"en": "Honshiogama"
+},
+"n_hosokura_mine_park_mae|細倉": {
+"kana": "ほそくら",
+"ko": "호소쿠라",
+"en": "Hosokura"
+},
+"n_ichiba_kobe|電鉄市場": {
+"kana": "でんてついちば",
+"ko": "덴테츠이치바",
+"en": "Dentetsuichiba"
+},
+"n_ichinohe|一ノ戸": {
+"kana": "いちのへ",
+"ko": "이치노헤",
+"en": "Ichinohe"
+},
+"n_ichitsubo|椿宮": {
+"kana": "つばきのみや",
+"ko": "츠바키노미야",
+"en": "Tsubakinomiya"
+},
+"n_inokashira_koen|井ノ頭公園": {
+"kana": "いのかしらこうえん",
+"ko": "이노카시라코엔",
+"en": "Inokashirakoen"
+},
+"n_inuboh|燈台前": {
+"kana": "とうだいまえ",
+"ko": "토다이마에",
+"en": "Todaimae"
+},
+"n_inuyama_yuen|犬山橋": {
+"kana": "いぬやまばし",
+"ko": "이누야마바시",
+"en": "Inuyamabashi"
+},
+"n_iohji_mae|仏坂上": {
+"kana": "ほとけざかうえ",
+"ko": "호토케자카우에",
+"en": "Hotokezakaue"
+},
+"n_ise_matsumoto|松本村": {
+"kana": "まつもとむら",
+"ko": "마츠모토무라",
+"en": "Matsumotomura"
+},
+"n_ise_nakahara|参急中原": {
+"kana": "さんきゅうなかはら",
+"ko": "산큐나카하라",
+"en": "Sankyunakahara"
+},
+"n_ishikawa_konan|新石川": {
+"kana": "しんいしかわ",
+"ko": "신이시카와",
+"en": "Shin'ishikawa"
+},
+"n_iwasehama|岩瀬港": {
+"kana": "いわせみなと",
+"ko": "이와세미나토",
+"en": "Iwaseminato"
+},
+"n_iwashiroshimizu|清水役場前": {
+"kana": "しみずやくばまえ",
+"ko": "시미즈야쿠바마에",
+"en": "Shimizuyakubamae"
+},
+"n_iwata_tokaido_main|新中泉": {
+"kana": "しんなかいずみ",
+"ko": "신나카이즈미",
+"en": "Shinnakaizumi"
+},
+"n_iwate_futsukamachi|二日町": {
+"kana": "ふつかまち",
+"ko": "후츠카마치",
+"en": "Futsukamachi"
+},
+"n_iwate_kawaguchi|川口": {
+"kana": "かわぐち",
+"ko": "카와구치",
+"en": "Kawaguchi"
+},
+"n_iwato|馬寄": {
+"kana": "まより",
+"ko": "마요리",
+"en": "Mayori"
+},
+"n_iyo_tachibana|伊予立花": {
+"kana": "いよたちばな",
+"ko": "이요타치바나",
+"en": "Iyotachibana"
+},
+"n_iyo_tachibana|立花": {
+"kana": "たちばな",
+"ko": "타치바나",
+"en": "Tachibana",
+"why": "옛 이름 立花(1893–1927)에 지금 이름 伊予立花 읽기(いよたちばな)가 들어 있었다. 1927-03-01 伊予立花로 개칭(같은 파일 「n_iyo_tachibana|伊予立花」). 신뢰 중간, 원문 재확인 권장"
+},
+"n_izu_nagaoka|南條": {
+"kana": "なんじょう",
+"ko": "난조",
+"en": "Nanjo"
+},
+"n_izumiotsu|大津": {
+"kana": "おおつ",
+"ko": "오츠",
+"en": "Otsu"
+},
+"n_izumo_jinzai|出雲大社口": {
+"kana": "いずもたいしゃぐち",
+"ko": "이즈모타이샤구치",
+"en": "Izumotaishaguchi"
+},
+"n_izumo_science_center_park_town_mae|今市上町": {
+"kana": "いまいちかみまち",
+"ko": "이마이치카미마치",
+"en": "Imaichikamimachi"
+},
+"n_izumo_science_center_park_town_mae|大和紡前": {
+"kana": "だいわぼうまえ",
+"ko": "다이와보마에",
+"en": "Daiwabomae"
+},
+"n_jatco_mae|日産前": {
+"kana": "にっさんまえ",
+"ko": "닛산마에",
+"en": "Nissammae"
+},
+"n_jidosha_gakko_mae|遠州市場": {
+"kana": "えんしゅういちば",
+"ko": "엔슈이치바",
+"en": "Enshuichiba"
+},
+"n_jinaijoshikoko|裁判所前": {
+"kana": "さいばんしょまえ",
+"ko": "사이반쇼마에",
+"en": "Saibanshomae"
+},
+"n_jingu_marutamachi|丸太町": {
+"kana": "まるたまち",
+"ko": "마루타마치",
+"en": "Marutamachi"
+},
+"n_joshu_ichinomiya|一ノ宮": {
+"kana": "いちのみや",
+"ko": "이치노미야",
+"en": "Ichinomiya"
+},
+"n_joshu_nanokaichi|七日市": {
+"kana": "なのかいち",
+"ko": "나노카이치",
+"en": "Nanokaichi"
+},
+"n_joshu_tomioka|富岡": {
+"kana": "とみおか",
+"ko": "토미오카",
+"en": "Tomioka"
+},
+"n_kagaiwauchi|岩内": {
+"kana": "いわうち",
+"ko": "이와우치",
+"en": "Iwauchi"
+},
+"n_kami_kumamoto|池田": {
+"kana": "いけだ",
+"ko": "이케다",
+"en": "Ikeda"
+},
+"n_kamijima|遠州上島": {
+"kana": "えんしゅうかみじま",
+"ko": "엔슈카미지마",
+"en": "Enshukamijima"
+},
+"n_kamisakaemachi|長等公園下": {
+"kana": "ながらこうえんした",
+"ko": "나가라코엔시타",
+"en": "Nagarakoenshita"
+},
+"n_kanaya_nagoya_guideway_bus|守山市民病院": {
+"kana": "もりやましみんびょういん",
+"ko": "모리야마시민뵤인",
+"en": "Moriyamashimimbyoin"
+},
+"n_kanazonocho_9_chome|二軒屋": {
+"kana": "にけんや",
+"ko": "니켄야",
+"en": "Niken'ya"
+},
+"n_kanazonocho_9_chome|薬大前": {
+"kana": "やくだいまえ",
+"ko": "야쿠다이마에",
+"en": "Yakudaimae"
+},
+"n_kanazonocho_9_chome|薬専前": {
+"kana": "やくせんまえ",
+"ko": "야쿠센마에",
+"en": "Yakusemmae"
+},
+"n_kariyashi|刈谷町": {
+"kana": "かりやまち",
+"ko": "카리야마치",
+"en": "Kariyamachi"
+},
+"n_kasumigaoka_sanyo|歌敷山": {
+"kana": "うたしきやま",
+"ko": "우타시키야마",
+"en": "Utashikiyama"
+},
+"n_kasumigaseki_tobu|的場": {
+"kana": "まとば",
+"ko": "마토바",
+"en": "Matoba"
+},
+"n_kawachi_amami|天美車庫前": {
+"kana": "あまみしゃこまえ",
+"ko": "아마미샤코마에",
+"en": "Amamishakomae"
+},
+"n_kawachi_hanazono|大軌花園": {
+"kana": "だいきはなぞの",
+"ko": "다이키하나조노",
+"en": "Daikihanazono"
+},
+"n_kawachi_hanazono|花園": {
+"kana": "はなぞの",
+"ko": "하나조노",
+"en": "Hanazono"
+},
+"n_kawachi_kosaka|大軌小阪": {
+"kana": "だいきこさか",
+"ko": "다이키코사카",
+"en": "Daikikosaka"
+},
+"n_kawachi_kosaka|小阪": {
+"kana": "こさか",
+"ko": "코사카",
+"en": "Kosaka"
+},
+"n_kawanishi_ikeda|池田": {
+"kana": "いけだ",
+"ko": "이케다",
+"en": "Ikeda"
+},
+"n_kawanishi_kokutetsumae|池田駅前": {
+"kana": "いけだえきまえ",
+"ko": "이케다에키마에",
+"en": "Ikeda-Ekimae"
+},
+"n_kawayu_onsen|川湯": {
+"kana": "かわゆ",
+"ko": "카와유",
+"en": "Kawayu"
+},
+"n_kazusa_ichinomiya|一ノ宮": {
+"kana": "いちのみや",
+"ko": "이치노미야",
+"en": "Ichinomiya"
+},
+"n_kazusa_yamada|養老川": {
+"kana": "ようろうがわ",
+"ko": "요로가와",
+"en": "Yorogawa"
+},
+"n_keikyu_nagasawa|京浜長沢": {
+"kana": "けいひんながさわ",
+"ko": "케이힌나가사와",
+"en": "Keihinnagasawa"
+},
+"n_keisei_hikifune|曳舟": {
+"kana": "ひきふね",
+"ko": "히키후네",
+"en": "Hikifune"
+},
+"n_keisei_inage|稲毛": {
+"kana": "いなげ",
+"ko": "이나게",
+"en": "Inage"
+},
+"n_keisei_kanamachi|金町": {
+"kana": "かなまち",
+"ko": "카나마치",
+"en": "Kanamachi"
+},
+"n_keisei_makuhari|幕張": {
+"kana": "まくはり",
+"ko": "마쿠하리",
+"en": "Makuhari"
+},
+"n_keisei_tateishi|立石": {
+"kana": "たていし",
+"ko": "타테이시",
+"en": "Tateishi"
+},
+"n_kii_hosokawa|細川": {
+"kana": "ほそかわ",
+"ko": "호소카와",
+"en": "Hosokawa"
+},
+"n_kii_kamiya|神谷": {
+"kana": "かみや",
+"ko": "카미야",
+"en": "Kamiya"
+},
+"n_kii_sano|秋津野": {
+"kana": "あきつの",
+"ko": "아키츠노",
+"en": "Akitsuno"
+},
+"n_kintetsu_gose|南和御所町": {
+"kana": "なんわごせまち",
+"ko": "난와고세마치",
+"en": "Nanwagosemachi"
+},
+"n_kintetsu_hatta|参急八田": {
+"kana": "さんきゅうはった",
+"ko": "산큐핫타",
+"en": "Sankyuhatta"
+},
+"n_kintetsu_hatta|近畿日本八田": {
+"kana": "きんきにっぽんはった",
+"ko": "킨키닛폰핫타",
+"en": "Kinkinipponhatta"
+},
+"n_kintetsu_hatta|関急八田": {
+"kana": "かんきゅうはった",
+"ko": "칸큐핫타",
+"en": "Kankyuhatta"
+},
+"n_kintetsu_kanie|参急蟹江": {
+"kana": "さんきゅうかにえ",
+"ko": "산큐카니에",
+"en": "Sankyukanie"
+},
+"n_kintetsu_kanie|近畿日本蟹江": {
+"kana": "きんきにっぽんかにえ",
+"ko": "킨키닛폰카니에",
+"en": "Kinkinipponkanie"
+},
+"n_kintetsu_kanie|関急蟹江": {
+"kana": "かんきゅうかにえ",
+"ko": "칸큐카니에",
+"en": "Kankyukanie"
+},
+"n_kintetsu_shimoda|下田": {
+"kana": "しもだ",
+"ko": "시모다",
+"en": "Shimoda"
+},
+"n_kintetsu_yao|八尾": {
+"kana": "やお",
+"ko": "야오",
+"en": "Yao"
+},
+"n_kintetsu_yao|大軌八尾": {
+"kana": "だいきやお",
+"ko": "다이키야오",
+"en": "Daikiyao"
+},
+"n_kintetsu_yatomi|関急弥富": {
+"kana": "かんきゅうやとみ",
+"ko": "칸큐야토미",
+"en": "Kankyuyatomi"
+},
+"n_kinugawa_onsen|下滝": {
+"kana": "しもたき",
+"ko": "시모타키",
+"en": "Shimotaki"
+},
+"n_kinugawa_onsen|大滝": {
+"kana": "おおたき",
+"ko": "오타키",
+"en": "Otaki"
+},
+"n_kita_hosono|おかめ前": {
+"kana": "おかめまえ",
+"ko": "오카메마에",
+"en": "Okamemae"
+},
+"n_kitagata_chitosemachi|千歳町": {
+"kana": "ちとせまち",
+"ko": "치토세마치",
+"en": "Chitosemachi"
+},
+"n_kitagata_higashiguchi|森町": {
+"kana": "もりまち",
+"ko": "모리마치",
+"en": "Morimachi"
+},
+"n_kitagawachi|赤河内": {
+"kana": "あかがわち",
+"ko": "아카가와치",
+"en": "Akagawachi"
+},
+"n_kitamachi|若宮": {
+"kana": "わかみや",
+"ko": "와카미야",
+"en": "Wakamiya"
+},
+"n_kitasui|東門": {
+"kana": "とうもん",
+"ko": "토몬",
+"en": "Tomon"
+},
+"n_kitsunegasaki|上原": {
+"kana": "うわはら",
+"ko": "우와하라",
+"en": "Uwahara"
+},
+"n_kitsunegasaki|狐ヶ崎ヤングランド前": {
+"kana": "きつねがさきやんぐらんどまえ",
+"ko": "키츠네가사키영랜드마에",
+"en": "Kitsunegasaki Young Land-mae"
+},
+"n_kitsunegasaki|遊園前": {
+"kana": "ゆうえんまえ",
+"ko": "유엔마에",
+"en": "Yuemmae"
+},
+"n_kiwa_kisei_main|和歌山": {
+"kana": "わかやま",
+"ko": "와카야마",
+"en": "Wakayama"
+},
+"n_kizu_kobe|電鉄木津": {
+"kana": "でんてつきづ",
+"ko": "덴테츠키즈",
+"en": "Dentetsukizu"
+},
+"n_koboke|西宇": {
+"kana": "にしう",
+"ko": "니시우",
+"en": "Nishiu"
+},
+"n_kojima_shimotsui|味野": {
+"kana": "あじの",
+"ko": "아지노",
+"en": "Ajino"
+},
+"n_konan_meitetsu|古知野": {
+"kana": "こちの",
+"ko": "코치노",
+"en": "Kochino"
+},
+"n_korien|香里": {
+"kana": "こうり",
+"ko": "코리",
+"en": "Kori"
+},
+"n_kosagoe|小佐越前": {
+"kana": "こさごえまえ",
+"ko": "코사고에마에",
+"en": "Kosagoemae"
+},
+"n_koshigoe|谷戸": {
+"kana": "やと",
+"ko": "야토",
+"en": "Yato"
+},
+"n_kotoden_kotohira|琴平": {
+"kana": "ことひら",
+"ko": "코토히라",
+"en": "Kotohira"
+},
+"n_kotoden_yashima|屋島登山口": {
+"kana": "やしまとざんぐち",
+"ko": "야시마토잔구치",
+"en": "Yashimatozanguchi"
+},
+"n_kumanishi|貞元": {
+"kana": "さだもと",
+"ko": "사다모토",
+"en": "Sadamoto"
+},
+"n_kurihara_tamachi|田町": {
+"kana": "たまち",
+"ko": "타마치",
+"en": "Tamachi"
+},
+"n_kurikoma|岩ヶ崎": {
+"kana": "いわがさき",
+"ko": "이와가사키",
+"en": "Iwagasaki"
+},
+"n_kurobe|三日市": {
+"kana": "みっかいち",
+"ko": "밋카이치",
+"en": "Mikkaichi"
+},
+"n_kuroishi_konan|弘南黒石": {
+"kana": "こうなんくろいし",
+"ko": "코난쿠로이시",
+"en": "Konankuroishi"
+},
+"n_kusatsuminami|中央魚市場前": {
+"kana": "ちゅうおううおいちばまえ",
+"ko": "츄오우오이치바마에",
+"en": "Chuouoichibamae"
+},
+"n_kusatsuminami|荒手": {
+"kana": "あらて",
+"ko": "아라테",
+"en": "Arate"
+},
+"n_kyotanabe|田辺": {
+"kana": "たなべ",
+"ko": "타나베",
+"en": "Tanabe"
+},
+"n_kyoteijo_mae|常久": {
+"kana": "つねひさ",
+"ko": "츠네히사",
+"en": "Tsunehisa"
+},
+"n_kyoto_kawaramachi|河原町": {
+"kana": "かわらまち",
+"ko": "카와라마치",
+"en": "Kawaramachi"
+},
+"n_machikata|兼平": {
+"kana": "かねひら",
+"ko": "카네히라",
+"en": "Kanehira"
+},
+"n_masuo_kintetsu|西桑名": {
+"kana": "にしくわな",
+"ko": "니시쿠와나",
+"en": "Nishikuwana"
+},
+"n_matsue_english_garden_mae|C.ティファニー庭園美術館前": {
+"kana": "しーてぃふぁにーていえんびじゅつかんまえ",
+"ko": "C.티파니테이엔비주츠칸마에",
+"en": "C. Tiffany Teien Bijutsukan-mae"
+},
+"n_meiden_akasaka|愛電赤坂": {
+"kana": "あいでんあかさか",
+"ko": "아이덴아카사카",
+"en": "Aiden'akasaka"
+},
+"n_meiden_nagasawa|愛電長沢": {
+"kana": "あいでんながさわ",
+"ko": "아이덴나가사와",
+"en": "Aidennagasawa"
+},
+"n_meiden_yamanaka|愛電山中": {
+"kana": "あいでんやまなか",
+"ko": "아이덴야마나카",
+"en": "Aiden'yamanaka"
+},
+"n_meitetsu_nagoya|新名古屋": {
+"kana": "しんなごや",
+"ko": "신나고야",
+"en": "Shinnagoya"
+},
+"n_midori_dai|工学部前": {
+"kana": "こうがくぶまえ",
+"ko": "코가쿠부마에",
+"en": "Kogakubumae"
+},
+"n_midori_dai|帝大工学部前": {
+"kana": "ていだいこうがくぶまえ",
+"ko": "테이다이코가쿠부마에",
+"en": "Teidaikogakubumae"
+},
+"n_midori_dai|浜海岸": {
+"kana": "はまかいがん",
+"ko": "하마카이간",
+"en": "Hamakaigan"
+},
+"n_midori_dai|黒砂": {
+"kana": "くろすな",
+"ko": "쿠로스나",
+"en": "Kurosuna"
+},
+"n_mikawa_ogihara|荻原": {
+"kana": "おぎはら",
+"ko": "오기하라",
+"en": "Ogihara"
+},
+"n_mikawa_tahara|田原": {
+"kana": "たはら",
+"ko": "타하라",
+"en": "Tahara"
+},
+"n_miki_kobe|三木福有橋": {
+"kana": "みきふくありばし",
+"ko": "미키후쿠아리바시",
+"en": "Mikifukuaribashi"
+},
+"n_miki_kobe|電鉄三木": {
+"kana": "でんてつみき",
+"ko": "덴테츠미키",
+"en": "Dentetsumiki"
+},
+"n_miki_uenomaru|三木東口": {
+"kana": "みきひがしぐち",
+"ko": "미키히가시구치",
+"en": "Mikihigashiguchi"
+},
+"n_miki_uenomaru|上の丸": {
+"kana": "うえのまる",
+"ko": "우에노마루",
+"en": "Uenomaru"
+},
+"n_minami_fukiagehama|入来": {
+"kana": "いりき",
+"ko": "이리키",
+"en": "Iriki"
+},
+"n_minami_fukiagehama|入来ノ浜": {
+"kana": "いりきのはま",
+"ko": "이리키노하마",
+"en": "Irikinohama"
+},
+"n_minami_hiragishi|霊園前": {
+"kana": "れいえんまえ",
+"ko": "레이엔마에",
+"en": "Reiemmae"
+},
+"n_minami_nakagawa|中川町": {
+"kana": "なかがわまち",
+"ko": "나카가와마치",
+"en": "Nakagawamachi"
+},
+"n_minami_oyubari|二股": {
+"kana": "ふたまた",
+"ko": "후타마타",
+"en": "Futamata"
+},
+"n_minami_sakae|病院前": {
+"kana": "びょういんまえ",
+"ko": "뵤인마에",
+"en": "Byoimmae"
+},
+"n_minami_sakae|陸軍病院前": {
+"kana": "りくぐんびょういんまえ",
+"ko": "리쿠군뵤인마에",
+"en": "Rikugumbyoimmae"
+},
+"n_minami_sakaide|常陸酒出": {
+"kana": "ひたちさかいで",
+"ko": "히타치사카이데",
+"en": "Hitachisakaide"
+},
+"n_minami_takasaki|下和田": {
+"kana": "しもわだ",
+"ko": "시모와다",
+"en": "Shimowada"
+},
+"n_minatocho|コロムビア前": {
+"kana": "ころむびあまえ",
+"ko": "컬럼비아마에",
+"en": "Columbia-mae"
+},
+"n_misono_chuo_koen|北浜": {
+"kana": "きたはま",
+"ko": "키타하마",
+"en": "Kitahama"
+},
+"n_misono_chuo_koen|北浜中学校前": {
+"kana": "きたはまちゅうがっこうまえ",
+"ko": "키타하마츄갓코마에",
+"en": "Kitahamachugakkomae"
+},
+"n_mitsukuchi_hokuriku_nomi|三口": {
+"kana": "みつくち",
+"ko": "미츠쿠치",
+"en": "Mitsukuchi"
+},
+"n_mitsutoge|小沼": {
+"kana": "こぬま",
+"ko": "코누마",
+"en": "Konuma"
+},
+"n_miyajima_boat_race|競艇場前": {
+"kana": "きょうていじょうまえ",
+"ko": "쿄테이조마에",
+"en": "Kyoteijomae"
+},
+"n_miyajimaguchi|宮島": {
+"kana": "みやじま",
+"ko": "미야지마",
+"en": "Miyajima"
+},
+"n_mizuno|今村": {
+"kana": "いまむら",
+"ko": "이마무라",
+"en": "Imamura"
+},
+"n_moriguchishi|守口": {
+"kana": "もりぐち",
+"ko": "모리구치",
+"en": "Moriguchi"
+},
+"n_moriyama_jieitai_mae|二十軒家": {
+"kana": "にじっけんや",
+"ko": "니짓켄야",
+"en": "Nijikken'ya"
+},
+"n_moriyama_jieitai_mae|守山市": {
+"kana": "もりやまし",
+"ko": "모리야마시",
+"en": "Moriyamashi"
+},
+"n_moriyama_jieitai_mae|守山町": {
+"kana": "もりやまちょう",
+"ko": "모리야마초",
+"en": "Moriyamacho"
+},
+"n_moto_kasadera|笠寺": {
+"kana": "かさでら",
+"ko": "카사데라",
+"en": "Kasadera"
+},
+"n_muda|吉野": {
+"kana": "よしの",
+"ko": "요시노",
+"en": "Yoshino"
+},
+"n_musashi_hikida|病院前": {
+"kana": "びょういんまえ",
+"ko": "뵤인마에",
+"en": "Byoimmae"
+},
+"n_musashi_koyama|小山": {
+"kana": "こやま",
+"ko": "코야마",
+"en": "Koyama"
+},
+"n_musashi_ranzan|菅谷": {
+"kana": "すがや",
+"ko": "스가야",
+"en": "Sugaya"
+},
+"n_myorenji|妙蓮寺前": {
+"kana": "みょうれんじまえ",
+"ko": "묘렌지마에",
+"en": "Myorenjimae"
+},
+"n_naganohara_kusatsuguchi|長野原": {
+"kana": "ながのはら",
+"ko": "나가노하라",
+"en": "Naganohara"
+},
+"n_nagato_nagasawa|長沢": {
+"kana": "ながさわ",
+"ko": "나가사와",
+"en": "Nagasawa"
+},
+"n_nakamiyori_onsen|中三依": {
+"kana": "なかみより",
+"ko": "나카미요리",
+"en": "Nakamiyori"
+},
+"n_nakayamadera|中山": {
+"kana": "なかやま",
+"ko": "나카야마",
+"en": "Nakayama"
+},
+"n_namiita_kaigan|浪板": {
+"kana": "なみいた",
+"ko": "나미이타",
+"en": "Namiita"
+},
+"n_naruto_naruto|ゑびす前": {
+"kana": "えびすまえ",
+"ko": "에비스마에",
+"en": "Ebisumae"
+},
+"n_nawa_meitetsu|名和村": {
+"kana": "なわむら",
+"ko": "나와무라",
+"en": "Nawamura"
+},
+"n_neyagawashi|寝屋川": {
+"kana": "ねやがわ",
+"ko": "네야가와",
+"en": "Neyagawa"
+},
+"n_nichizengu|秋月": {
+"kana": "あきづき",
+"ko": "아키즈키",
+"en": "Akizuki"
+},
+"n_nihon_rhine_imawatari|今渡": {
+"kana": "いまわたり",
+"ko": "이마와타리",
+"en": "Imawatari"
+},
+"n_niisato|武井": {
+"kana": "たけい",
+"ko": "타케이",
+"en": "Takei"
+},
+"n_niita|熟田": {
+"kana": "じゅくだ",
+"ko": "주쿠다",
+"en": "Jukuda"
+},
+"n_nirayama|北條": {
+"kana": "ほうじょう",
+"ko": "호조",
+"en": "Hojo"
+},
+"n_nishi_iwakuni|岩国": {
+"kana": "いわくに",
+"ko": "이와쿠니",
+"en": "Iwakuni"
+},
+"n_nishi_kuwana_old|大山田": {
+"kana": "おおやまだ",
+"ko": "오야마다",
+"en": "Oyamada",
+"why": "역 이전 옛 자리의 옛 이름. old_names_kana.json 「n_nishi_kuwana|大山田」=おおやまだ(새 자리 키)라 옛 자리 노드에서 못 찾음. （旧）·(구)·(old)는 gen_source OLDMARK가 붙인다"
+},
+"n_nishi_kuwana|大山田": {
+"kana": "おおやまだ",
+"ko": "오야마다",
+"en": "Oyamada"
+},
+"n_nishi_nasuno|那須": {
+"kana": "なす",
+"ko": "나스",
+"en": "Nasu"
+},
+"n_nishi_nobuto|千葉海岸": {
+"kana": "ちばかいがん",
+"ko": "치바카이간",
+"en": "Chibakaigan"
+},
+"n_nishi_shiogama|西塩竈": {
+"kana": "にししおがま",
+"ko": "니시시오가마",
+"en": "Nishishiogama"
+},
+"n_nishinomiya|西ノ宮": {
+"kana": "にしのみや",
+"ko": "니시노미야",
+"en": "Nishinomiya"
+},
+"n_nishiojisanjo|三条口": {
+"kana": "さんじょうぐち",
+"ko": "산조구치",
+"en": "Sanjoguchi"
+},
+"n_nishitetsu_fukuma|筑前福間": {
+"kana": "ちくぜんふくま",
+"ko": "치쿠젠후쿠마",
+"en": "Chikuzenfukuma"
+},
+"n_nishitetsu_ginsui|九鉄銀水": {
+"kana": "きゅうてつぎんすい",
+"ko": "큐테츠긴스이",
+"en": "Kyutetsuginsui"
+},
+"n_nishitetsu_ginsui|銀水": {
+"kana": "ぎんすい",
+"ko": "긴스이",
+"en": "Ginsui"
+},
+"n_nishitetsu_gojo|五条": {
+"kana": "ごじょう",
+"ko": "고조",
+"en": "Gojo"
+},
+"n_nishitetsu_hirao|九鉄平尾": {
+"kana": "きゅうてつひらお",
+"ko": "큐테츠히라오",
+"en": "Kyutetsuhirao"
+},
+"n_nishitetsu_hirao|平尾": {
+"kana": "ひらお",
+"ko": "히라오",
+"en": "Hirao"
+},
+"n_nishitetsu_kashii|新香椎": {
+"kana": "しんかしい",
+"ko": "신카시이",
+"en": "Shinkashii"
+},
+"n_nishitetsu_koga|新古賀": {
+"kana": "しんこが",
+"ko": "신코가",
+"en": "Shinkoga"
+},
+"n_nishitetsu_kurume|九鉄久留米": {
+"kana": "きゅうてつくるめ",
+"ko": "큐테츠쿠루메",
+"en": "Kyutetsukurume"
+},
+"n_nishitetsu_nakashima|中島": {
+"kana": "なかしま",
+"ko": "나카시마",
+"en": "Nakashima"
+},
+"n_nishitetsu_nakashima|九鉄中島": {
+"kana": "きゅうてつなかしま",
+"ko": "큐테츠나카시마",
+"en": "Kyutetsunakashima"
+},
+"n_nishitetsu_ogori|九鉄小郡": {
+"kana": "きゅうてつおごおり",
+"ko": "큐테츠오고리",
+"en": "Kyutetsuogori"
+},
+"n_nishitetsu_ogori|小郡": {
+"kana": "おごおり",
+"ko": "오고리",
+"en": "Ogori"
+},
+"n_nishitetsu_wataze|九鉄渡瀬": {
+"kana": "きゅうてつわたぜ",
+"ko": "큐테츠와타제",
+"en": "Kyutetsuwataze"
+},
+"n_nishitetsu_wataze|渡瀬": {
+"kana": "わたぜ",
+"ko": "와타제",
+"en": "Wataze"
+},
+"n_nishitetsu_yanagawa|九鉄柳河": {
+"kana": "きゅうてつやながわ",
+"ko": "큐테츠야나가와",
+"en": "Kyutetsuyanagawa"
+},
+"n_nishitetsu_yanagawa|柳河": {
+"kana": "やながわ",
+"ko": "야나가와",
+"en": "Yanagawa"
+},
+"n_nishitetsu_yanagawa|西鉄柳河": {
+"kana": "にしてつやながわ",
+"ko": "니시테츠야나가와",
+"en": "Nishitetsuyanagawa"
+},
+"n_noborito_odakyu|登戸多摩川": {
+"kana": "のぼりとたまがわ",
+"ko": "노보리토타마가와",
+"en": "Noboritotamagawa"
+},
+"n_noborito_odakyu|稲田多摩川": {
+"kana": "いなだたまがわ",
+"ko": "이나다타마가와",
+"en": "Inadatamagawa"
+},
+"n_noborito|登戸多摩川": {
+"kana": "のぼりとたまがわ",
+"ko": "노보리토타마가와",
+"en": "Noboritotamagawa"
+},
+"n_noborito|稲田多摩川": {
+"kana": "いなだたまがわ",
+"ko": "이나다타마가와",
+"en": "Inadatamagawa"
+},
+"n_nonoichi_hokuriku|野々市連絡": {
+"kana": "ののいちれんらく",
+"ko": "노노이치렌라쿠",
+"en": "Nonoichirenraku"
+},
+"n_nukajutaku_mae|大額": {
+"kana": "おおぬか",
+"ko": "오누카",
+"en": "Onuka"
+},
+"n_oizumi_gakuen|東大泉": {
+"kana": "ひがしおおいずみ",
+"ko": "히가시오이즈미",
+"en": "Higashioizumi"
+},
+"n_oizumihigashi|大泉": {
+"kana": "おおいずみ",
+"ko": "오이즈미",
+"en": "Oizumi"
+},
+"n_ojingoryomae|御陵前": {
+"kana": "ごりょうまえ",
+"ko": "고료마에",
+"en": "Goryomae"
+},
+"n_okazakikoen_mae|西岡崎": {
+"kana": "にしおかざき",
+"ko": "니시오카자키",
+"en": "Nishiokazaki"
+},
+"n_okurayama_tokyu_railways|太尾": {
+"kana": "ふとお",
+"ko": "후토오",
+"en": "Futoo"
+},
+"n_omama|大間々町": {
+"kana": "おおままちょう",
+"ko": "오마마초",
+"en": "Omamacho"
+},
+"n_omiya_hankyu|京阪京都": {
+"kana": "けいはんきょうと",
+"ko": "케이한쿄토",
+"en": "Keihankyoto"
+},
+"n_omi|長篠": {
+"kana": "ながしの",
+"ko": "나가시노",
+"en": "Nagashino"
+},
+"n_ono_kobe|電鉄小野": {
+"kana": "でんてつおの",
+"ko": "덴테츠오노",
+"en": "Dentetsuono"
+},
+"n_onomachi_meitetsu|大野": {
+"kana": "おおの",
+"ko": "오노",
+"en": "Ono"
+},
+"n_orihata|西宮内": {
+"kana": "にしみやうち",
+"ko": "니시미야우치",
+"en": "Nishimiyauchi"
+},
+"n_osaka_umeda_hankyu|梅田": {
+"kana": "うめだ",
+"ko": "우메다",
+"en": "Umeda"
+},
+"n_osaka_umeda_hanshin|梅田": {
+"kana": "うめだ",
+"ko": "우메다",
+"en": "Umeda"
+},
+"n_osakasayamashi|狭山遊園前": {
+"kana": "さやまゆうえんまえ",
+"ko": "사야마유엔마에",
+"en": "Sayamayuemmae"
+},
+"n_osumi_koyama|高山": {
+"kana": "こうやま",
+"ko": "코야마",
+"en": "Koyama"
+},
+"n_osumi_takasu|高須": {
+"kana": "たかす",
+"ko": "타카스",
+"en": "Takasu"
+},
+"n_otomaru|粟田": {
+"kana": "あわた",
+"ko": "아와타",
+"en": "Awata"
+},
+"n_otsu_shiyakusho_mae|兵営前": {
+"kana": "へいえいまえ",
+"ko": "헤이에이마에",
+"en": "Heieimae"
+},
+"n_otsu_shiyakusho_mae|別所": {
+"kana": "べっしょ",
+"ko": "벳쇼",
+"en": "Bessho"
+},
+"n_owani|弘南大鰐": {
+"kana": "こうなんおおわに",
+"ko": "코난오와니",
+"en": "Konan'owani"
+},
+"n_owari_asahi|新居": {
+"kana": "あらい",
+"ko": "아라이",
+"en": "Arai"
+},
+"n_owari_asahi|旭新居": {
+"kana": "あさひあらい",
+"ko": "아사히아라이",
+"en": "Asahiarai"
+},
+"n_owari_ichinomiya|尾張一ノ宮": {
+"kana": "おわりいちのみや",
+"ko": "오와리이치노미야",
+"en": "Owariichinomiya"
+},
+"n_rokudoji|新湊": {
+"kana": "しんみなと",
+"ko": "신미나토",
+"en": "Shimminato"
+},
+"n_rokumanji|六萬寺": {
+"kana": "ろくまんじ",
+"ko": "로쿠만지",
+"en": "Rokumanji"
+},
+"n_rokumanji|牟礼": {
+"kana": "むれ",
+"ko": "무레",
+"en": "Mure"
+},
+"n_ryoanji|竜安寺道": {
+"kana": "りょうあんじみち",
+"ko": "료안지미치",
+"en": "Ryoanjimichi"
+},
+"n_saga_arashiyama|嵯峨": {
+"kana": "さが",
+"ko": "사가",
+"en": "Saga"
+},
+"n_saginomiya_enshu|共同": {
+"kana": "きょうどう",
+"ko": "쿄도",
+"en": "Kyodo"
+},
+"n_saginomiya_enshu|遠州共同": {
+"kana": "えんしゅうきょうどう",
+"ko": "엔슈쿄도",
+"en": "Enshukyodo"
+},
+"n_saishun_iryo_center_mae|再春荘前": {
+"kana": "さいしゅんそうまえ",
+"ko": "사이슌소마에",
+"en": "Saishunsomae"
+},
+"n_sakuramachi_mae|中学前": {
+"kana": "ちゅうがくまえ",
+"ko": "츄가쿠마에",
+"en": "Chugakumae"
+},
+"n_sanno_meitetsu|ナゴヤ球場前": {
+"kana": "なごやきゅうじょうまえ",
+"ko": "나고야큐조마에",
+"en": "Nagoyakyujomae"
+},
+"n_sanno_meitetsu|中日球場前": {
+"kana": "ちゅうにちきゅうじょうまえ",
+"ko": "츄니치큐조마에",
+"en": "Chunichikyujomae"
+},
+"n_sannohe|三ノ戸": {
+"kana": "さんのへ",
+"ko": "산노헤",
+"en": "Sannohe"
+},
+"n_sanoshi|佐野町": {
+"kana": "さのまち",
+"ko": "사노마치",
+"en": "Sanomachi"
+},
+"n_sanyo_aboshi|電鉄網干": {
+"kana": "でんてつあぼし",
+"ko": "덴테츠아보시",
+"en": "Dentetsuaboshi"
+},
+"n_sanyojogakuenmae|山陽女子大前": {
+"kana": "さんようじょしだいまえ",
+"ko": "산요조시다이마에",
+"en": "San'yojoshidaimae"
+},
+"n_sanyojogakuenmae|山陽女学園": {
+"kana": "さんようじょがくえん",
+"ko": "산요조가쿠엔",
+"en": "San'yojogakuen"
+},
+"n_sanzenseishimae|松原": {
+"kana": "まつばら",
+"ko": "마츠바라",
+"en": "Matsubara"
+},
+"n_sattsuru|札鶴": {
+"kana": "さっつる",
+"ko": "삿츠루",
+"en": "Sattsuru"
+},
+"n_sayamagaoka|三ヶ島村": {
+"kana": "みかじまむら",
+"ko": "미카지마무라",
+"en": "Mikajimamura"
+},
+"n_seibijo|羽田整備場": {
+"kana": "はねだせいびじょう",
+"ko": "하네다세이비조",
+"en": "Hanedaseibijo"
+},
+"n_seiwa_onsen|下政和": {
+"kana": "しもせいわ",
+"ko": "시모세이와",
+"en": "Shimoseiwa"
+},
+"n_sekime_takadono|関目": {
+"kana": "せきめ",
+"ko": "세키메",
+"en": "Sekime"
+},
+"n_sekishi|松木": {
+"kana": "まつき",
+"ko": "마츠키",
+"en": "Matsuki"
+},
+"n_sekishi|遠州松木": {
+"kana": "えんしゅうまつき",
+"ko": "엔슈마츠키",
+"en": "Enshumatsuki"
+},
+"n_sembayashi|森小路": {
+"kana": "もりしょうじ",
+"ko": "모리쇼지",
+"en": "Morishoji"
+},
+"n_sessokyo_onsen|川根長島": {
+"kana": "かわねながしま",
+"ko": "카와네나가시마",
+"en": "Kawanenagashima"
+},
+"n_seto_shiyakusho_mae|追分": {
+"kana": "おいわけ",
+"ko": "오이와케",
+"en": "Oiwake"
+},
+"n_shakujii_koen|石神井": {
+"kana": "しゃくじい",
+"ko": "샤쿠지이",
+"en": "Shakujii"
+},
+"n_shibata_meitetsu|星崎": {
+"kana": "ほしざき",
+"ko": "호시자키",
+"en": "Hoshizaki"
+},
+"n_shichirigahama|田辺": {
+"kana": "たなべ",
+"ko": "타나베",
+"en": "Tanabe"
+},
+"n_shichirigahama|行合": {
+"kana": "ゆきあい",
+"ko": "유키아이",
+"en": "Yukiai"
+},
+"n_shigisanshita|信貴山口": {
+"kana": "しぎさんぐち",
+"ko": "시기산구치",
+"en": "Shigisanguchi"
+},
+"n_shikamachi|末吉": {
+"kana": "すえよし",
+"ko": "스에요시",
+"en": "Sueyoshi"
+},
+"n_shikamura|四ヶ村": {
+"kana": "しかむら",
+"ko": "시카무라",
+"en": "Shikamura"
+},
+"n_shima_ujinaga|大和": {
+"kana": "やまと",
+"ko": "야마토",
+"en": "Yamato"
+},
+"n_shin_kiyosu|西清洲": {
+"kana": "にしきよす",
+"ko": "니시키요스",
+"en": "Nishikiyosu"
+},
+"n_shin_shimizu|清水相生町": {
+"kana": "しみずあいおいちょう",
+"ko": "시미즈아이오이초",
+"en": "Shimizuaioicho"
+},
+"n_shin_takatoku|高徳": {
+"kana": "たかとく",
+"ko": "타카토쿠",
+"en": "Takatoku"
+},
+"n_shin_tokorozawa_shinjuku_line_seibu|所沢御幸町": {
+"kana": "ところざわみゆきちょう",
+"ko": "토코로자와미유키초",
+"en": "Tokorozawamiyukicho"
+},
+"n_shinano_kawada|町川田": {
+"kana": "まちかわだ",
+"ko": "마치카와다",
+"en": "Machikawada"
+},
+"n_shintetsu_rokko|六甲北口": {
+"kana": "ろっこうきたぐち",
+"ko": "롯코키타구치",
+"en": "Rokkokitaguchi"
+},
+"n_shintetsu_rokko|六甲登山口": {
+"kana": "ろっこうとざんぐち",
+"ko": "롯코토잔구치",
+"en": "Rokkotozanguchi"
+},
+"n_shintsukatani|塚谷": {
+"kana": "つかたに",
+"ko": "츠카타니",
+"en": "Tsukatani"
+},
+"n_shiraitodai|北多磨": {
+"kana": "きたたま",
+"ko": "키타타마",
+"en": "Kitatama"
+},
+"n_shiretoko_shari|斜里": {
+"kana": "しゃり",
+"ko": "샤리",
+"en": "Shari"
+},
+"n_shishiorikarakuwa|鹿折": {
+"kana": "ししおり",
+"ko": "시시오리",
+"en": "Shishiori"
+},
+"n_shitennoji_mae_yuhigaoka|四天王寺前": {
+"kana": "してんのうじまえ",
+"ko": "시텐노지마에",
+"en": "Shitennojimae"
+},
+"n_shiyakushomae_gifushinai|今沢町": {
+"kana": "いまざわちょう",
+"ko": "이마자와초",
+"en": "Imazawacho"
+},
+"n_shiyakushomae_gifushinai|八ツ寺町": {
+"kana": "やつでらまち",
+"ko": "야츠데라마치",
+"en": "Yatsuderamachi"
+},
+"n_shiyakushomae_gifushinai|裁判所前": {
+"kana": "さいばんしょまえ",
+"ko": "사이반쇼마에",
+"en": "Saibanshomae"
+},
+"n_shiyakushomae_gifushinai|郵便局前": {
+"kana": "ゆうびんきょくまえ",
+"ko": "유빈쿄쿠마에",
+"en": "Yubinkyokumae"
+},
+"n_shoko_center_iriguchi|井口病院前": {
+"kana": "いのくちびょういんまえ",
+"ko": "이노쿠치뵤인마에",
+"en": "Inokuchibyoimmae"
+},
+"n_shoko_center_iriguchi|荒手車庫前": {
+"kana": "あらてしゃこまえ",
+"ko": "아라테샤코마에",
+"en": "Arateshakomae"
+},
+"n_shudaikyosochukomae|修大附属鈴峯前": {
+"kana": "しゅうだいふぞくすずがみねまえ",
+"ko": "슈다이후조쿠스즈가미네마에",
+"en": "Shudaifuzokusuzugaminemae"
+},
+"n_shudaikyosochukomae|実践女学校前": {
+"kana": "じっせんじょがっこうまえ",
+"ko": "짓센조갓코마에",
+"en": "Jissenjogakkomae"
+},
+"n_shudaikyosochukomae|鈴峯女子大前": {
+"kana": "すずがみねじょしだいまえ",
+"ko": "스즈가미네조시다이마에",
+"en": "Suzugaminejoshidaimae"
+},
+"n_shudaikyosochukomae|鈴峯女専前": {
+"kana": "すずがみねじょせんまえ",
+"ko": "스즈가미네조센마에",
+"en": "Suzugaminejosemmae"
+},
+"n_sugihashi|鳥矢崎": {
+"kana": "とやさき",
+"ko": "토야사키",
+"en": "Toyasaki"
+},
+"n_sukenobu|遠州助信": {
+"kana": "えんしゅうすけのぶ",
+"ko": "엔슈스케노부",
+"en": "Enshusukenobu"
+},
+"n_sumikawa_jozankei|北茨木": {
+"kana": "きたいばらき",
+"ko": "키타이바라키",
+"en": "Kitaibaraki"
+},
+"n_suwacho|市役所前": {
+"kana": "しやくしょまえ",
+"ko": "시야쿠쇼마에",
+"en": "Shiyakushomae"
+},
+"n_suzukicho|味の素前": {
+"kana": "あじのもとまえ",
+"ko": "아지노모토마에",
+"en": "Ajinomotomae"
+},
+"n_suzurandai_nishiguchi|小部西口": {
+"kana": "おうぶにしぐち",
+"ko": "오부니시구치",
+"en": "Obunishiguchi"
+},
+"n_suzurandai_nishiguchi|鈴蘭ダンスホール前": {
+"kana": "すずらんだんすほーるまえ",
+"ko": "스즈란댄스홀마에",
+"en": "Suzuran Dance Hall-mae"
+},
+"n_takadashi|高田町": {
+"kana": "たかだまち",
+"ko": "타카다마치",
+"en": "Takadamachi"
+},
+"n_takamatsu_chikko|築港": {
+"kana": "ちっこう",
+"ko": "칫코",
+"en": "Chikko"
+},
+"n_takaoka_ekimae|地鉄高岡": {
+"kana": "ちてつたかおか",
+"ko": "치테츠타카오카",
+"en": "Chitetsutakaoka"
+},
+"n_takaoka_ekimae|新高岡": {
+"kana": "しんたかおか",
+"ko": "신타카오카",
+"en": "Shintakaoka"
+},
+"n_takehana|栄町": {
+"kana": "さかえまち",
+"ko": "사카에마치",
+"en": "Sakaemachi"
+},
+"n_tamba_takeda|竹田": {
+"kana": "たけだ",
+"ko": "타케다",
+"en": "Takeda"
+},
+"n_tanabu|本田名部": {
+"kana": "ほんたなぶ",
+"ko": "혼타나부",
+"en": "Hontanabu"
+},
+"n_tarobogu_mae|太郎坊": {
+"kana": "たろぼう",
+"ko": "타로보",
+"en": "Tarobo"
+},
+"n_tatara_tobu|中野": {
+"kana": "なかの",
+"ko": "나카노",
+"en": "Nakano"
+},
+"n_tatsunokuchi_onsen|辰口": {
+"kana": "たつのくち",
+"ko": "타츠노쿠치",
+"en": "Tatsunokuchi"
+},
+"n_tedori_onsen|上野": {
+"kana": "かみの",
+"ko": "카미노",
+"en": "Kamino"
+},
+"n_tenjimbashisuji_6_chome_hankyu|天神橋": {
+"kana": "てんじんばし",
+"ko": "텐진바시",
+"en": "Tenjimbashi"
+},
+"n_tenkubashi_tokyo_monorail|羽田": {
+"kana": "はねだ",
+"ko": "하네다",
+"en": "Haneda"
+},
+"n_tokachi_shimizu|清水": {
+"kana": "しみず",
+"ko": "시미즈",
+"en": "Shimizu"
+},
+"n_tokiwadaira|金ヶ作": {
+"kana": "かねがさく",
+"ko": "카네가사쿠",
+"en": "Kanegasaku"
+},
+"n_tokyo_skytree|業平橋": {
+"kana": "なりひらばし",
+"ko": "나리히라바시",
+"en": "Narihirabashi"
+},
+"n_tonami|出町": {
+"kana": "でまち",
+"ko": "데마치",
+"en": "Demachi"
+},
+"n_tondabayashi_nishiguchi|学校前": {
+"kana": "がっこうまえ",
+"ko": "갓코마에",
+"en": "Gakkomae"
+},
+"n_toritsu_daigaku|府立高等": {
+"kana": "ふりつこうとう",
+"ko": "후리츠코토",
+"en": "Furitsukoto"
+},
+"n_toritsu_daigaku|柿ノ木坂": {
+"kana": "かきのきざか",
+"ko": "카키노키자카",
+"en": "Kakinokizaka"
+},
+"n_toritsu_daigaku|都立高校": {
+"kana": "とりつこうこう",
+"ko": "토리츠코코",
+"en": "Toritsukoko"
+},
+"n_toritsu_kasei|府立家政": {
+"kana": "ふりつかせい",
+"ko": "후리츠카세이",
+"en": "Furitsukasei"
+},
+"n_towadashi|三本木": {
+"kana": "さんぼんぎ",
+"ko": "산본기",
+"en": "Sambongi"
+},
+"n_toyoake|阿野": {
+"kana": "あの",
+"ko": "아노",
+"en": "Ano"
+},
+"n_tsunashima|綱島温泉": {
+"kana": "つなしまおんせん",
+"ko": "츠나시마온센",
+"en": "Tsunashimaonsen"
+},
+"n_tsurumi_ono|工業学校前": {
+"kana": "こうぎょうがっこうまえ",
+"ko": "코교갓코마에",
+"en": "Kogyogakkomae"
+},
+"n_tsuzumigataki|皷ヶ滝": {
+"kana": "つづみがたき",
+"ko": "츠즈미가타키",
+"en": "Tsuzumigataki"
+},
+"n_tsuzumigataki|皷滝": {
+"kana": "つづみがたき",
+"ko": "츠즈미가타키",
+"en": "Tsuzumigataki"
+},
+"n_ube_shinkawa|宇部": {
+"kana": "うべ",
+"ko": "우베",
+"en": "Ube"
+},
+"n_ugawa_yusenji|遊泉寺": {
+"kana": "ゆうせんじ",
+"ko": "유센지",
+"en": "Yusenji"
+},
+"n_uguisuzawa_kogyokoko_mae|駒場": {
+"kana": "こまば",
+"ko": "코마바",
+"en": "Komaba"
+},
+"n_unshu_hirata|平田市": {
+"kana": "ひらたし",
+"ko": "히라타시",
+"en": "Hiratashi"
+},
+"n_ushibuchi|田窪": {
+"kana": "たのくぼ",
+"ko": "타노쿠보",
+"en": "Tanokubo"
+},
+"n_wakae_iwata|若江": {
+"kana": "わかえ",
+"ko": "와카에",
+"en": "Wakae"
+},
+"n_yamase|山崎": {
+"kana": "やまさき",
+"ko": "야마사키",
+"en": "Yamasaki"
+},
+"n_yamashiro_aodani|青谷梅林": {
+"kana": "あおだにばいりん",
+"ko": "아오다니바이린",
+"en": "Aodanibairin"
+},
+"n_yanaizu_meitetsu|西柳津": {
+"kana": "にしやないづ",
+"ko": "니시야나이즈",
+"en": "Nishiyanaizu"
+},
+"n_yokogawa_hiroden|横川駅前": {
+"kana": "よこがわえきまえ",
+"ko": "요코가와에키마에",
+"en": "Yokogawa-Ekimae"
+},
+"n_yoshiwara_gakunan_electric_train|鈴川": {
+"kana": "すずかわ",
+"ko": "스즈카와",
+"en": "Suzukawa"
+},
+"n_yoshiwara|鈴川": {
+"kana": "すずかわ",
+"ko": "스즈카와",
+"en": "Suzukawa"
+},
+"n_yufuin|北由布": {
+"kana": "きたゆふ",
+"ko": "키타유후",
+"en": "Kitayufu"
+},
+"n_yunoyama_onsen|湯ノ山": {
+"kana": "ゆのやま",
+"ko": "유노야마",
+"en": "Yunoyama"
+},
+"n_zushihayama|新逗子": {
+"kana": "しんずし",
+"ko": "신즈시",
+"en": "Shinzushi"
+},
+"n_ube|西宇部": {
+"kana": "にしうべ",
+"ko": "니시우베",
+"en": "Nishi-Ube"
+},
+"n_omotesando|神宮前": {
+"kana": "じんぐうまえ",
+"ko": "진구마에",
+"en": "Jingumae"
+},
+"n_tsukumowan_ogi|能登小木": {
+"kana": "のとおぎ",
+"ko": "노토오기",
+"en": "Noto-Ogi"
+},
+"n_kanda_nippo_main|苅田": {
+"kana": "かりた",
+"ko": "카리타",
+"en": "Karita"
+},
+"n_kodomonokuni_meitetsu|洲崎": {"kana": "すさき", "ko": "스사키", "en": "Susaki"}
+}

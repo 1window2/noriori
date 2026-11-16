@@ -1,0 +1,35 @@
+# 추정 km 역이 이웃 역 km를 그대로 받아 0 km 칸이 된 17역의 앞뒤 칸 (추정 km 조사 2026-11-09). N05 선 위 투영, 손 후보, 순서 나눔
+- {"patch": "replace", "edge": "e_011797", "km": 0.5, "source": "n05_estimate", "why": "[別大線] 弁天前 km는 원문에 없음. N05 별대선 선 위 照波園前→弁天前 0.533, 弁天前→亀陽泉通(=亀陽泉前) 0.301로 17.0–17.8을 나눠 17.5(추정 km 그대로). 원래 0.8은 estimate_km이 亀陽泉前 km를 복사해 생김"}
+- {"patch": "replace", "edge": "e_011798", "km": 0.3, "source": "n05_estimate", "why": "위와 같다. 0.0 edge 해소"}
+- {"patch": "replace", "edge": "e_012657", "km": 0.6, "source": "n05_estimate", "why": "[宮崎交通線] 飛行場 km는 노선도에 없음. N05 飛行場前(EB03_22438003) 점을 선 위에 투영: 田吉→0.552, →南方 1.652 → 2.0+2.3×0.25=2.6(추정 km). 원래 2.3/0.0은 南方 km 복사"}
+- {"patch": "replace", "edge": "e_012658", "km": 1.7, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012913", "km": 2.4, "source": "n05_estimate", "why": "[根室拓殖鉄道] 共和学校(仮) km 없음. N05 「共和学校前」 점 선 위 투영 友知→2.240, →沖根婦 1.274 → 8.2(추정 km). 원래 3.7/0.0은 沖根婦 km 복사"}
+- {"patch": "replace", "edge": "e_012914", "km": 1.3, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012915", "km": 1.4, "source": "n05_estimate", "why": "[根室拓殖鉄道] 沖根部(仮) km 없음. N05 「沖根辺」(=沖根部) 점 투영 沖根婦→1.374, →婦羅理 2.456 → 10.9(추정). 引臼은 같은 방법 12.1"}
+- {"patch": "replace", "edge": "e_012916", "km": 1.2, "source": "n05_estimate", "why": "위와 같다. 0.0 edge 해소"}
+- {"patch": "replace", "edge": "e_012063", "km": 0.9, "source": "n05_estimate", "why": "[国東線] 若宮 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음"}
+- {"patch": "replace", "edge": "e_012064", "km": 0.9, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012446", "km": 2.5, "source": "n05_estimate", "why": "[神岡鉄道線] 杉山 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 1910 「土 - 杉山間5km」는 茂住(7.5)와 같은 자리가 되어 근사값으로 봄. 확신 낮음"}
+- {"patch": "replace", "edge": "e_012447", "km": 2.5, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012878", "km": 0.7, "source": "n05_estimate", "why": "[高崎線(伊香保軌道)] 金古 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 노선도의 金古郵便局前(11.1)이나 金古常仙寺前(10.7)과 같은 정류장일 수 있음(사람 확인)"}
+- {"patch": "replace", "edge": "e_012879", "km": 0.7, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012895", "km": 0.2, "source": "n05_estimate", "why": "[浅間線] 国府町 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 값은 n05_fix의 km_xx_candidates"}
+- {"patch": "replace", "edge": "e_012896", "km": 0.2, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012899", "km": 0.3, "source": "n05_estimate", "why": "[浅間線] 警察署前 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 값은 n05_fix의 km_xx_candidates"}
+- {"patch": "replace", "edge": "e_012900", "km": 0.3, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012901", "km": 0.2, "source": "n05_estimate", "why": "[浅間線] 日の出町 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 값은 n05_fix의 km_xx_candidates"}
+- {"patch": "replace", "edge": "e_012902", "km": 0.2, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_012904", "km": 0.2, "source": "n05_estimate", "why": "[浅間線] 元町 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 값은 n05_fix의 km_xx_candidates"}
+- {"patch": "replace", "edge": "e_012905", "km": 0.3, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_013346", "km": 0.2, "source": "n05_estimate", "why": "[三軒家新千歳線] 泉尾梅の町二丁目 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음"}
+- {"patch": "replace", "edge": "e_013347", "km": 0.2, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_013430", "km": 0.1, "source": "n05_estimate", "why": "[秋田市内線] 産業会館前 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 다리(旭川橋梁) 앞이라 1.1보다 작음"}
+- {"patch": "replace", "edge": "e_013431", "km": 0.1, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_013484", "km": 0.3, "source": "n05_estimate", "why": "[湊川線] 湊川公園 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음. 0.25를 반올림. 좌표의 station_database 행은 1983 개업 지하철 湊川公園이라 버림"}
+- {"patch": "replace", "edge": "e_013485", "km": 0.2, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_013612", "km": 0.2, "source": "n05_estimate", "why": "[川崎市電] 日本鋼管池上正門前 km는 원천에 없고 N05 점도 없음. 앞뒤 km를 아는 역 사이 순서로 나눔(추정 km, 화면 ? km). 원래 값은 estimate_km이 다음 역 km를 복사해 0.0 edge가 생겼음"}
+- {"patch": "replace", "edge": "e_013613", "km": 0.2, "source": "n05_estimate", "why": "위와 같다"}
+- {"patch": "replace", "edge": "e_013740", "km": 0.5, "source": "n05_estimate", "why": "[本牧線] 정류장 km 원문 없음. N05 선 위 투영 十二天→大鳥中学校前 0.516, →本牧三渓園終点 0.597 → 4.8/4.9(추정). 표의 4.9/4.9는 반올림 겹침"}
+- {"patch": "replace", "edge": "e_013741", "km": 0.1, "source": "n05_estimate", "why": "위와 같다. 0.0 edge 해소"}
+- {"patch": "replace", "edge": "e_015060", "km": 0.1, "source": "n05_estimate", "why": "[神奈川線] km 원문 없음. N05 점이 洲崎神社前과 19 m라 0.02가 0.0으로 반올림됨. 같은 칸 두 역은 최소 0.1 km로 둠(추정, 위치 사람 확인)"}
+- {"patch": "replace", "edge": "e_015061", "km": 0.2, "source": "n05_estimate", "why": "위와 같다(0.3 합 유지)"}

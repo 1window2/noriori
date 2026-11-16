@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -193,6 +194,15 @@ void main() {
       expect(state.appBuild, 1);
       expect(await session.db.select(session.db.rideCacheTable).get(), hasLength(2));
     });
+  });
+
+  test('OS 백업 크기는 user.sqlite와 -wal의 합이다', () async {
+    expect(await paths.osBackupBytes(), 0);
+    paths.support.createSync(recursive: true);
+    paths.userDb.writeAsBytesSync(List.filled(300, 0));
+    expect(await paths.osBackupBytes(), 300);
+    File('${paths.userDb.path}-wal').writeAsBytesSync(List.filled(45, 0));
+    expect(await paths.osBackupBytes(), 345);
   });
 
   group('user.sqlite', () {
@@ -534,8 +544,10 @@ void main() {
     assets = MemoryAssets(real, edition: 'real');
     final session = await ready();
     final summary = await PackReader(session.db).summary();
-    expect(summary.stations, 11771);
-    expect(summary.lines, 836);
+    // 기준값은 같은 빌드의 compile.py 보고다. 판이 바뀌어도 손으로 고칠 숫자가 없다
+    final report = jsonDecode(File(p.join(build.path, 'report.json')).readAsStringSync()) as Map<String, dynamic>;
+    expect(summary.stations, report['public_nodes']);
+    expect(summary.lines, report['lines']);
   }, timeout: const Timeout(Duration(minutes: 1)));
 }
 

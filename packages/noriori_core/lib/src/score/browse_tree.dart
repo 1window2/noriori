@@ -14,10 +14,14 @@ final class BrowseLine {
     required this.score,
     this.edgeIds = const {},
     this.riddenEdgeIds = const {},
+    this.outside = false,
   });
 
   final String lineId;
   final Score score;
+
+  /// 별선·단락선(extra)만 있는 노선. 노선 자체의 km로 세고 회사·분류·요약 합계에는 들지 않는다 (DESIGN §8.0).
+  final bool outside;
 
   /// 이 줄에 드는 구간. 위치 띠의 범위다.
   final Set<String> edgeIds;
@@ -65,7 +69,8 @@ final class BrowseTree {
   /// 두 회사가 나눠 가진 노선은 하나로 센다.
   Map<String, Score> get _byLine {
     final out = <String, Score>{};
-    for (final line in lines) {
+    // 분모 밖 줄은 요약의 노선 수에 들지 않는다
+    for (final line in lines.where((line) => !line.outside)) {
       final held = out[line.lineId];
       final score = line.score;
       out[line.lineId] = held == null
@@ -98,7 +103,7 @@ final class BrowseTree {
   List<BrowseLine> nearlyComplete({int limit = 3}) {
     final open = [
       for (final line in lines)
-        if (line.score.started && !line.score.complete) line,
+        if (!line.outside && line.score.started && !line.score.complete) line,
     ]..sort((a, b) => a.score.remainingMeters.compareTo(b.score.remainingMeters));
     return open.take(limit).toList();
   }
@@ -139,6 +144,14 @@ BrowseTree browseTree(
   }
   Score of(Iterable<NetUnit> units) =>
       computeScore(units: units, hits: hits, basis: basis, today: today);
+  // 별선·단락선(extra)만 있는 노선도 줄로 둔다. 그 줄은 노선 자체의 km로 세고 회사·분류·요약 합계에는 넣지 않는다 (DESIGN §8.0)
+  final outside = <String, Map<String, Set<NetUnit>>>{};
+  final counted = <int, NetUnit>{};
+  for (final (unit, attr) in _outsideOwners(network, era, today, carryover)) {
+    if (byLine[attr.operatorId]?.containsKey(attr.lineId) ?? false) continue;
+    ((outside[attr.operatorId] ??= {})[attr.lineId] ??= {}).add(counted[unit.n] ??= _counted(unit));
+  }
+  outside.forEach((operator, lines) => lines.removeWhere((lineId, _) => _hasCounted(byLine, lineId)));
   final lineOrder = {for (final (i, id) in network.data.lineOrder.indexed) id: i};
   final categories = <BrowseCategory>[];
   for (final category in browseCategories) {
@@ -146,18 +159,20 @@ BrowseTree browseTree(
     final units = <NetUnit>{};
     for (final operator in network.data.operators) {
       if (operator.category != category) continue;
-      final lines = byLine[operator.id];
-      if (lines == null) continue;
-      units.addAll(byOperator[operator.id]!);
+      final lines = {...?byLine[operator.id], ...?outside[operator.id]};
+      if (lines.isEmpty) continue;
+      final mine = byOperator[operator.id] ?? const <NetUnit>{};
+      units.addAll(mine);
       operators.add(BrowseOperator(
         operatorId: operator.id,
-        score: of(byOperator[operator.id]!),
+        score: of(mine),
         lines: [
           for (final lineId in lines.keys.toList()
             ..sort((a, b) => (lineOrder[a] ?? 0).compareTo(lineOrder[b] ?? 0)))
             BrowseLine(
               lineId: lineId,
               score: of(lines[lineId]!),
+              outside: !(byLine[operator.id]?.containsKey(lineId) ?? false),
               edgeIds: {for (final unit in lines[lineId]!) unit.edgeId},
               riddenEdgeIds: {
                 for (final unit in lines[lineId]!)
@@ -199,3 +214,32 @@ Iterable<(NetUnit, NetAttr)> _closedOwners(Network network, String today, bool c
 }
 
 String _end(NetAttr attr) => attr.period.toHi ?? DateSpan.maxDate;
+
+/// 분모 밖(extra·outside) 구간. 현행은 오늘 영업하는 것, 폐선은 오늘 영업하지 않는 것이다.
+Iterable<(NetUnit, NetAttr)> _outsideOwners(Network network, BrowseEra era, String today, bool carryover) sync* {
+  final day = DateSpan.parse(today);
+  for (final attr in network.data.attrs) {
+    final unit = network.unitOf(attr.lineId, attr.edgeId, carryover: carryover);
+    if (unit == null || unit.normal) continue;
+    final running = stateOfPeriod(day, attr.period) == PeriodState.yes;
+    if (running == (era == BrowseEra.current)) yield (unit, attr);
+  }
+}
+
+/// 다른 회사 쪽에서라도 분모 단위가 있는 노선은 그 단위로 센다.
+bool _hasCounted(Map<String, Map<String, Set<NetUnit>>> byLine, String lineId) =>
+    byLine.values.any((lines) => lines.containsKey(lineId));
+
+/// 노선 자체 진행률을 내려고 분모 밖 단위를 센다. 이 값은 그 줄에만 쓴다.
+NetUnit _counted(NetUnit unit) => NetUnit(
+      n: unit.n,
+      key: unit.key,
+      carryover: unit.carryover,
+      edgeId: unit.edgeId,
+      meters: unit.meters,
+      normal: true,
+      dateLo: unit.dateLo,
+      dateHi: unit.dateHi,
+      fromHi: unit.fromHi,
+      toLo: unit.toLo,
+    );

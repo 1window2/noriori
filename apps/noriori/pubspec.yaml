@@ -1,7 +1,7 @@
 name: noriori
 description: 일본 철도 탑승 기록 앱
 publish_to: none
-version: 0.1.0+1
+version: 1.0.0+1
 resolution: workspace
 
 environment:
@@ -28,6 +28,8 @@ dependencies:
 
 dev_dependencies:
   flutter_test:
+    sdk: flutter
+  integration_test:
     sdk: flutter
   lints: ^6.1.0
 

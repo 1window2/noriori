@@ -1,0 +1,3 @@
+- {"patch": "replace", "entity_type": "route", "id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "lang": "ja", "text": "瓦町～木太東口", "source": "rule"}
+- {"patch": "replace", "entity_type": "route", "id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "lang": "ko", "text": "카와라마치~키타히가시구치", "source": "rule"}
+- {"patch": "replace", "entity_type": "route", "id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "lang": "en", "text": "Kawaramachi~Kita-Higashiguchi", "source": "rule"}

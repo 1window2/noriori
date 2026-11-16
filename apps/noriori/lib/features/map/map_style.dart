@@ -66,6 +66,16 @@ List<Object> yearFilter(int year) => [
       ['>=', ['coalesce', ['get', 'ty'], 9999], year],
     ];
 
+/// 환승역 배치(통합 노드·승강장·연결선)와 간접 환승 선의 층. 역 점과 같이 폐선을 끄면 끝난 것을 지우고,
+/// 옛 철도망을 보면 그해에 있던 것만 남긴다 (사용자 지시 2026-11-16)
+const transferLayers = [spokeLayer, walkLayer, platformLayer, hubNodeLayer, hubNameLayer];
+
+List<Object> transferFilter({required bool showClosed, int? year}) => [
+      'all',
+      if (!showClosed) ['==', ['get', 'closed'], 0],
+      if (year != null) ...yearFilter(year),
+    ];
+
 /// 안 탄 선까지 그리는 층의 필터. [only]를 주면 그 구간만 남긴다 (노선 단독 보기).
 List<Object> railFilter({required bool closed, Set<int>? only, int? year}) => [
       'all',
@@ -78,6 +88,8 @@ List<Object> railFilter({required bool closed, Set<int>? only, int? year}) => [
 /// 역 점. [ridden]을 주면 그 역 묶음만 남긴다. 승차만 볼 때 빈 땅에 역이 떠 있으면 안 된다.
 List<Object> stationFilter({required bool closed, Set<int>? ridden, int? year}) => [
       'all',
+      // 환승역 배치에 들어간 역은 통합 노드·승강장 노드가 대신 그린다 (§7.5)
+      ['!', ['has', 'sh']],
       ['==', ['get', 'closed'], if (closed) 1 else 0],
       if (year != null) ...yearFilter(year),
       if (ridden != null)
@@ -87,7 +99,16 @@ List<Object> stationFilter({required bool closed, Set<int>? ridden, int? year}) 
 /// 지도 점의 상태를 고르는 필터. 비면 아무것도 고르지 않는다.
 List<Object> markFilter(Set<int> groups, {required bool showClosed}) => [
       'all',
+      // 환승역의 탄 표시는 통합 노드와 탄 노선의 승강장 노드에 따로 그린다 (§7.5)
+      ['!', ['has', 'sh']],
       if (groups.isEmpty) ['==', ['get', 'g'], -1] else _matchInts('g', groups),
+      if (!showClosed) ['==', ['get', 'closed'], 0],
+    ];
+
+/// 환승역의 탄 표시. 통합 노드 자리와 승강장 노드 자리에 노드마다 점이 있어 [nodes]로 고른다 (§7.5).
+List<Object> transferMarkFilter(Set<String> nodes, {required bool showClosed}) => [
+      'all',
+      if (nodes.isEmpty) ['==', ['get', 'node'], ''] else ['match', ['get', 'node'], nodes.toList()..sort(), true, false],
       if (!showClosed) ['==', ['get', 'closed'], 0],
     ];
 
@@ -98,6 +119,7 @@ List<Object> markerFilter(Set<int> ids) =>
 /// 역 이름. 폐선을 끄면 폐역 이름도 함께 지운다.
 List<Object> stationNameFilter({required bool showClosed, Set<int>? ridden, int? year}) => [
       'all',
+      ['!', ['has', 'sh']],
       if (year != null) ...yearFilter(year),
       // 폐역 이름은 z13부터다 (DESIGN §7.2)
       [
@@ -153,6 +175,18 @@ const stationNameLayer = 'station-name';
 const stationClosedLayer = 'station-closed';
 const stationPassedLayer = 'station-passed';
 const stationSteppedLayer = 'station-stepped';
+
+/// 환승역 (DESIGN §7.5). 통합 노드는 늘 보이고 승강장 노드와 연결선은 많이 확대한 뒤부터다.
+const hubNodeLayer = 'hubnode';
+const hubNameLayer = 'hubnode-name';
+const platformLayer = 'platform';
+const spokeLayer = 'spoke';
+const walkLayer = 'walk';
+const platformMinZoom = 13.0;
+const platformPassedLayer = 'platform-passed';
+const platformSteppedLayer = 'platform-stepped';
+const hubPassedLayer = 'hubnode-passed';
+const hubSteppedLayer = 'hubnode-stepped';
 
 List<Map<String, Object>> _railLayers(String source, String suffix, AppTokens tokens) => [
       {
@@ -304,6 +338,8 @@ List<Map<String, Object>> _stationMarks(String source, String suffix, AppTokens 
             'text-size': 11,
             'text-offset': [0, 0.9],
             'text-anchor': 'top',
+            // 이름이 겹치면 지금 역 이름이 먼저 자리를 잡는다. 폐역(都電 岩本町)이 현행 역(都営 岩本町)의 이름을 가리지 않게 (11회차 시뮬레이터 시험)
+            'symbol-sort-key': ['get', 'closed'],
           },
           'paint': {
             // 폐역은 노드뿐 아니라 이름도 현행과 확연히 구분되게 흐리다 (사용자 지시)
@@ -323,6 +359,138 @@ List<Map<String, Object>> _stationMarks(String source, String suffix, AppTokens 
             'text-halo-width': 1.2,
           },
         },
+    ];
+
+/// 연결선은 선로보다 가늘고 반투명하며 선로 아래에 그린다. 기록과 무관한 표시다 (§7.5)
+List<Map<String, Object>> _spokes(AppTokens tokens) => [
+      {
+        'id': spokeLayer,
+        'type': 'line',
+        'source': 'rail',
+        'source-layer': 'spoke',
+        'minzoom': platformMinZoom,
+        'layout': {'line-cap': 'round'},
+        'paint': {
+          'line-color': _hex(tokens.textMuted),
+          'line-width': 1,
+          'line-opacity': ['case', ['==', ['get', 'closed'], 1], 0.2, 0.45],
+        },
+      },
+    ];
+
+/// 간접 환승(徒歩連絡) 연결선. 서로 다른 역 점 사이를 주황 점선으로 잇는다 (§7.5, 사용자 결정 2026-11-08)
+List<Map<String, Object>> _walks(AppTokens tokens) => [
+      {
+        'id': walkLayer,
+        'type': 'line',
+        'source': 'rail',
+        'source-layer': 'walk',
+        'minzoom': 11,
+        'layout': {'line-cap': 'round'},
+        'paint': {
+          'line-color': _hex(tokens.walkTransfer),
+          'line-width': 1.5,
+          'line-dasharray': const [1, 2],
+          'line-opacity': ['case', ['==', ['get', 'closed'], 1], 0.35, 0.9],
+        },
+      },
+    ];
+
+List<Map<String, Object>> _transfer(AppTokens tokens) => [
+      {
+        'id': platformLayer,
+        'type': 'circle',
+        'source': 'rail',
+        'source-layer': 'platform',
+        'minzoom': platformMinZoom,
+        'paint': {
+          // 환승역의 승강장 점은 보통 역 점보다 작고, 통합 노드는 크다 (목업 C, 사용자 결정 2026-11-07)
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 13, 2.0, 16, 2.8],
+          'circle-color': _hex(tokens.surface),
+          'circle-stroke-color': [
+            'case',
+            ['==', ['get', 'closed'], 1],
+            _hex(tokens.lineClosedUnridden),
+            _hex(tokens.lineUnridden),
+          ],
+          'circle-stroke-width': 1,
+          'circle-opacity': ['case', ['==', ['get', 'closed'], 1], 0.6, 1],
+          'circle-stroke-opacity': ['case', ['==', ['get', 'closed'], 1], 0.6, 1],
+        },
+      },
+      {
+        'id': hubNodeLayer,
+        'type': 'circle',
+        'source': 'rail',
+        'source-layer': 'hubnode',
+        'paint': {
+          'circle-radius': ['interpolate', ['linear'], ['zoom'], 9, 2.8, 14, 7],
+          'circle-color': _hex(tokens.surface),
+          'circle-stroke-color': [
+            'case',
+            ['==', ['get', 'closed'], 1],
+            _hex(tokens.lineClosedUnridden),
+            _hex(tokens.lineUnridden),
+          ],
+          'circle-stroke-width': 2,
+          'circle-opacity': _stationFade,
+          'circle-stroke-opacity': _stationFade,
+        },
+      },
+      for (final (id, layer, solid) in const [
+        (hubPassedLayer, 'hubmark', false),
+        (hubSteppedLayer, 'hubmark', true),
+        (platformPassedLayer, 'platformmark', false),
+        (platformSteppedLayer, 'platformmark', true),
+      ])
+        {
+          'id': id,
+          'type': 'circle',
+          'source': 'rail',
+          'source-layer': layer,
+          if (layer == 'platformmark') 'minzoom': platformMinZoom,
+          'filter': transferMarkFilter(const {}, showClosed: true),
+          'paint': {
+            'circle-radius': layer == 'hubmark'
+                ? ['interpolate', ['linear'], ['zoom'], 13, 4.2, 16, 5.6]
+                : ['interpolate', ['linear'], ['zoom'], 13, 2.4, 16, 3.2],
+            'circle-color': solid
+                ? ['case', ['==', ['get', 'closed'], 1], _hex(tokens.lineClosedRidden), _hex(tokens.lineRidden)]
+                : _hex(tokens.surface),
+            'circle-stroke-color': ['case', ['==', ['get', 'closed'], 1], _hex(tokens.lineClosedRidden), _hex(tokens.lineRidden)],
+            'circle-stroke-width': 1.5,
+          },
+        },
+      {
+        'id': hubNameLayer,
+        'type': 'symbol',
+        'source': 'rail',
+        'source-layer': 'hubnode',
+        'minzoom': 9.5,
+        'layout': {
+          'text-field': [
+            'coalesce',
+            ['get', LocaleSettings.currentLocale.languageCode],
+            ['get', 'ja'],
+          ],
+          'text-font': ['Noto Sans Regular'],
+          'text-size': 11,
+          // 커진 통합 노드(반지름 7, 테 2)와 겹치지 않게 내린다
+          'text-offset': [0, 1.1],
+          'text-anchor': 'top',
+          'symbol-sort-key': ['get', 'closed'],
+        },
+        'paint': {
+          'text-color': [
+            'case',
+            ['==', ['get', 'closed'], 1],
+            _hex(tokens.lineClosedUnridden),
+            _hex(tokens.text),
+          ],
+          'text-halo-color': _hex(tokens.land),
+          'text-halo-width': 1.2,
+        },
+      },
     ];
 
 List<Map<String, Object>> _markers(String source, String suffix, AppTokens tokens) => [
@@ -429,9 +597,12 @@ String railStyle({
             ],
           },
         },
+        ..._spokes(tokens),
+        ..._walks(tokens),
         ..._railLayers('rail', '', tokens),
         if (osmTiles != null) ..._railLayers('rail-osm', osmSuffix, tokens),
         ..._stationDots('rail', '', tokens),
+        ..._transfer(tokens),
         if (osmTiles != null) ..._stationDots('rail-osm', osmSuffix, tokens),
         // 위치 미확인 구간은 짧게 사라지는 꼬리만 남긴다 (DESIGN §7.3)
         ..._markers('rail', '', tokens),

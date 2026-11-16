@@ -1,0 +1,15 @@
+# 재설계 통합(int_stations)으로 끼워 넣은 옛 역(data/overrides/wiki_insert_stations.json)의 좌표. 国土数値情報 鉄道時系列(N05) 2024판의 그 시기 역 점(非商用 조건), 위키 문서 좌표는 source wikipedia. 출처를 끄면 빠짐. 노드 ID는 새 ID 규칙으로 정해질 값이라 new_ids 뒤 대조 필요
+- {"node": "n_kitairie", "lat": 42.53363, "lon": 140.78214, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "北入江(室蘭本線) N05 역 점, 수집 EB03_11222010"}
+- {"node": "n_nukabira_dam", "lat": 43.37092, "lon": 143.21625, "quality": "approx", "source": "wikipedia", "checked": "2026-11-08", "why": "糠平ダム(士幌線) 위키 문서 좌표, 수집 EB03_11207015"}
+- {"node": "n_tempokuzakae", "lat": 44.82261, "lon": 142.26861, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "天北栄(天北線) N05 역 점, 수집 EB03_11238003"}
+- {"node": "n_kitatombetsu", "lat": 45.13506, "lon": 142.35593, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "北頓別(天北線) N05 역 점, 수집 EB03_11238017"}
+- {"node": "n_nojomae", "lat": 43.04687, "lon": 142.09658, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "農場前(大夕張鉄道) N05 역 점, 수집 EB03_11425005"}
+- {"node": "n_chuo_1_chome", "lat": 38.26294, "lon": 140.88038, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "中央一丁目(循環線 花京院–仙台駅前) N05 역 점, 수집 EB03_12303020"}
+- {"node": "n_oana", "lat": 36.79197, "lon": 138.98595, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "大穴(上越線) N05 역 점, 수집 EB03_13205016"}
+- {"node": "n_bampakuchuo", "lat": 36.00782, "lon": 140.15846, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "万博中央(常磐線) N05 역 점, 수집 EB03_13211023"}
+- {"node": "n_ayubuchi", "lat": 35.0827, "lon": 137.55249, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "鮎淵(田口線) N05 역 점, 수집 EB03_17416012"}
+- {"node": "n_hommachidori", "lat": 36.062139, "lon": 136.217306, "quality": "approx", "source": "wikipedia", "checked": "2026-11-08", "why": "本町通り(福武線) 위키 문서 좌표, 수집 chubu_1-026"}
+- {"node": "n_harusato", "lat": 35.40871, "lon": 137.01732, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "春里(広見線) N05 역 점, 수집 chubu_2-074"}
+- {"node": "n_umizuka", "lat": 34.4432, "lon": 135.3571, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "海塚(水間線) N05 역 점, 수집 EB03_18461002/貝塚南"}
+- {"node": "n_kirihamabichi", "lat": 35.658417, "lon": 134.744167, "quality": "approx", "source": "wikipedia", "checked": "2026-11-08", "why": "きりはまビーチ(山陰本線 臨時駅) ja.wikipedia きりはまビーチ駅 oldid=104020379 「座標 = 35°39′30.3″N 134°44′39.0″E」「キロ程 = 167.6」「所在地 = 竹野町切浜字ハツダニ」. 선로 위(0.007 km), 竹野에서 1.6 km라 km와 맞음. N05 역 점(35.65511,134.72079; 수집 n05#11:EB03_21228044)은 竹野에서 4.0 km로 相谷信号場(oldid=100515096, 170.0 km) 자리라 버림. 竹野駅 oldid=109201317 「当駅 - 相谷信号場間に…きりはまビーチ駅」"}
+- {"node": "n_gokenya", "lat": 34.56413, "lon": 133.74842, "quality": "approx", "source": "n05", "checked": "2026-11-08", "why": "五軒屋(水島本線) N05 역 점, 수집 n05#52:EB03_21510005:五軒屋:1950-1951"}

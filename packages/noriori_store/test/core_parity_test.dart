@@ -200,7 +200,8 @@ void main() {
     var lines = 0;
     for (final category in closed.categories) {
       for (final operator in category.operators) {
-        lines += operator.lines.fold(0, (sum, line) => sum + line.score.denMeters);
+        // 별선·단락선만 있는 줄은 합계에 들지 않는다 (DESIGN §8.0)
+        lines += operator.lines.where((line) => !line.outside).fold(0, (sum, line) => sum + line.score.denMeters);
       }
     }
     expect(lines, closed.total.denMeters);
@@ -220,7 +221,7 @@ void main() {
     final seen = <String, int>{};
     for (final category in current.categories) {
       for (final operator in category.operators) {
-        for (final line in operator.lines) {
+        for (final line in operator.lines.where((line) => !line.outside)) {
           seen[line.lineId] = (seen[line.lineId] ?? 0) + line.score.denMeters;
         }
       }

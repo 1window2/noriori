@@ -33,7 +33,8 @@
 "old": "n_shimbashi_yurikamome_old",
 "new": "n_shimbashi_yurikamome",
 "date": "2001-03-22",
-"note": "ゆりかもめ 新橋 仮駅から本駅へ"
+"note": "ゆりかもめ 新橋 仮駅から本駅へ",
+"km_change": "新橋–有明 11.9→12.0 (+0.1, 仮駅→本駅 移転·延伸). 위키 東京臨海新交通臨海線 「開業当初の新橋駅は現在の位置より100 m有明駅寄りの仮駅」 — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
 },
 {
 "old": "n_osadakoen_oita_transportation_yabakei_old",
@@ -44,8 +45,9 @@
 {
 "old": "n_kannoura_asa_seaside_asato_old",
 "new": "n_kannoura_asa_seaside_asato",
-"date": "2020-10-23",
-"note": "甲浦 阿佐東線0.1km延伸"
+"date": "2021-12-25",
+"note": "甲浦 阿佐東線0.1km延伸. DMV 운행 시작(노리츠부시 표의 개업일, STOPCLOSE와 같음)",
+"km_change": "宍喰–甲浦 2.4→2.5 (+0.1 改キロ, 『令和3年度 鉄道要覧』174頁 인용 위키 阿佐海岸鉄道阿佐東線 「甲浦駅…+0.1 km移設」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
 },
 {
 "old": "n_funagoya",
@@ -62,14 +64,17 @@
 {
 "old": "n_takaoka_ekimae",
 "new": "n_takaoka_manyosen",
+"renamed": true,
 "date": "2014-03-29",
-"note": "万葉線 高岡駅前 이전, 高岡駅로 개칭"
+"note": "万葉線 高岡駅前 이전, 高岡駅로 개칭",
+"km_change": "高岡駅停留場 移転で 0.1 km 延長 (위키 万葉線 「高岡駅停留場の移転に伴い、0.1 km延長」, 高岡駅 「駅ビル1階へ移転」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
 },
 {
 "old": "n_fukui_ekimae",
 "new": "n_fukui_fukui",
 "date": "2016-03-27",
-"note": "福井鉄道 福井駅前 이전, 福井駅로 개칭"
+"note": "福井鉄道 福井駅前 이전, 福井駅로 개칭",
+"km_change": "駅前線 延長 +0.1 (위키 福井鉄道福武線 「駅前線を延長して福井駅前停留場を福井駅西口広場に移設」, DB 20.1→20.2) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
 },
 {
 "old": "n_kanayamabashi",
@@ -80,8 +85,8 @@
 {
 "old": "n_susaki_meitetsu",
 "new": "n_kodomonokuni_meitetsu",
-"date": "1952-10-01",
-"note": "洲崎駅 서쪽으로 이전 (1976 こどもの国로 개칭)"
+"date": "1974-10-10",
+"note": "洲崎駅(2代, 1952-10-01 이전·재개) 蒲郡寄り 0.4 km 이전·こどもの国로 개칭. n_susaki_meitetsu는 初代(1936~1944, 자리 판단 불가)와 2代를 한 노드로 둠. 『名古屋鉄道百年史』 年表 「10.10洲崎駅蒲郡寄りに0.4km移設」"
 },
 {
 "old": "n_hiratabashi",
@@ -154,5 +159,1033 @@
 "new": "n_yamashita",
 "date": "2016-12-10",
 "note": "山下駅 常磐線 相馬〜浜吉田間の内陸移設で移転"
-}
+},
+{
+"old": "n_hiwa_hakubi",
+"new": "n_hiwa",
+"date": "1970-09-07",
+"note": "日羽駅 伯備線 선로 바꿈으로 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_sakuma_iida",
+"new": "n_sakuma",
+"date": "1955-11-11",
+"note": "佐久間駅 佐久間ダム 수몰로 飯田線 신선 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_no_hokuriku_main",
+"new": "n_no",
+"date": "1969-09-29",
+"note": "能生駅 北陸本線 신선(頸城トンネル 등)으로 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_tsutsuishi_hokuriku_main",
+"new": "n_tsutsuishi",
+"date": "1969-09-29",
+"note": "筒石駅 같은 날 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_nadachi_hokuriku_main",
+"new": "n_nadachi",
+"date": "1969-09-29",
+"note": "名立駅 같은 날 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_waka_sennin_kitakami",
+"new": "n_waka_sennin",
+"date": "1962-12-01",
+"note": "和賀仙人駅 湯田ダム 수몰로 北上線 신선 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_nukabira_shihoro",
+"new": "n_nukabira",
+"date": "1955-08-01",
+"note": "糠平駅 糠平ダム 수몰로 士幌線 신선 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_tatebori_minobu",
+"new": "n_tatebori",
+"date": "1969-09-28",
+"note": "竪堀駅 身延線 신선(고가)으로 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_kojimashinden_daishi",
+"new": "n_kojimashinden",
+"date": "1964-03-25",
+"note": "小島新田駅 京急大師線 이전. DB 감사 D3 (2026-11-05): 옛·새 노드가 같은 기간에 함께 정차역이던 것"
+},
+{
+"old": "n_kami_nopporo_chitose",
+"new": "n_kami_nopporo",
+"date": "1973-09-09",
+"note": "千歳線 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_mitaki_kabe",
+"new": "n_mitaki",
+"date": "1962-10-01",
+"note": "可部線 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_niigata_old",
+"new": "n_niigata",
+"date": "1958-04-29",
+"note": "新潟駅 이전 (DB 감사 DBA-014)"
+},
+{
+"old": "n_takedao_fukuchiyama",
+"new": "n_takedao",
+"date": "1986-08-01",
+"note": "福知山線 生瀬–道場 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_tosa_kitagawa_dosan",
+"new": "n_tosa_kitagawa",
+"date": "1986-03-03",
+"note": "土讃線 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_utazu_yosan",
+"new": "n_utazu",
+"date": "1987-10-02",
+"note": "予讃線 坂出–丸亀 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_mine_shimizushinai_line_nishikubo_sodeshi_old_route",
+"new": "n_mine_shimizushinai",
+"date": "1951-07-21",
+"note": "静岡鉄道 清水市内線 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_suzukijima_shimizushinai_line_nishikubo_sodeshi_old_route",
+"new": "n_suzukijima",
+"date": "1951-07-21",
+"note": "같은 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_nakasomuta_ishiki_line_shinshoin_ishiki_old_route",
+"new": "n_nakasomuta",
+"date": "1952-08-10",
+"note": "鹿児島市電 伊敷線 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_somuta_ishiki_line_shinshoin_ishiki_old_route",
+"new": "n_somuta",
+"date": "1952-08-10",
+"note": "같은 이설 (DB 감사 DBA-014)"
+},
+{
+"old": "n_rikuchuoishi",
+"new": "n_yudakinshuko",
+"date": "1962-12-01",
+"note": "北上線 湯田ダム 이설. ゆだ錦秋湖 본선 정차도 이날부터 (DB 감사 DBA-014)"
+},
+{
+"old": "n_chikugogori",
+"new": "n_ogori",
+"date": "1986-04-01",
+"note": "筑後小郡駅 甘木鉄道 전환 날 甘木寄り 약 500m 이전·小郡으로 개칭 (小郡駅 문서, 감사 SUC-005)"
+},
+{
+"old": "n_kuwabara",
+"new": "n_ashinomaki_onsen_minami",
+"date": "1980-12-01",
+"note": "会津線 桑原駅 大川ダム 付替 때 新線 위로 이전 (1987 芦ノ牧温泉南으로 개칭, 감사 TOP-07)"
+},
+{
+"old": "n_ishiki",
+"new": "n_tamaeshogakkomae",
+"date": "1952-08-10",
+"note": "鹿児島市電 伊敷線 新線 개업 때 伊敷 정류장 이전 (n05_fix 伊敷線 메모 「玉江小学校前=1952 새 선의 伊敷」, 감사 TOP-07)"
+},
+{
+"old": "n_tamazatomichi",
+"new": "n_gokokujinjamae",
+"date": "1952-08-10",
+"note": "같은 이설. 옛 玉里道 = 護国神社前 (n05_fix 伊敷線 메모, 감사 TOP-07)"
+},
+{
+"old": "n_sakimoricho",
+"new": "n_sakimori",
+"date": "1968-09-19",
+"note": "室蘭本線 崎守町仮乗降場을 옮겨 崎守駅으로 개칭 (n05_fix 室蘭本線 메모, 감사 TOP-07)"
+},
+{
+"old": "n_hojomachi_old",
+"new": "n_hojomachi",
+"date": "2001-11-20",
+"note": "北条町駅 0.1km南へ移転 (구선로 보정, docs/research/realign-patches-2026-11-06.md)"
+},
+{
+"old": "n_funako",
+"new": "n_okawa_dam_koen",
+"date": "1980-12-01",
+"note": "舟子仮乗降場 大川ダム建設に伴う移設 (1987 舟子駅, 1987-07-16 大川ダム公園駅に改称)"
+},
+{
+"old": "n_oarai_suihin_old",
+"new": "n_oarai_suihin",
+"date": "1954-01-22",
+"note": "1954-01-22 大洗駅が旧駅の南側に移転(茨城交通水浜線 109665329)"
+},
+{
+"old": "n_nishihino_hachioji",
+"new": "n_nishihino",
+"date": "1976-04-01",
+"note": "1976-04-01 日永–西日野 복구 때 当駅は0.1キロ日永方に移設(西日野駅 109414905). 후보 128개 밖",
+"km_change": "日永–西日野 1.4→1.3 (-0.1, 위키 西日野駅 109414905 「当駅は0.1キロ日永方に移設」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_doishita",
+"new": "n_doishita_kari",
+"date": "1976-02-15",
+"note": "土居下駅 0.4km清水寄りに仮設移転"
+},
+{
+"old": "n_kawaneichishiro",
+"new": "n_abt_ichishiro",
+"date": "1990-10-02",
+"note": "川根市代駅 移転しアプトいちしろ駅に改称"
+},
+{
+"old": "n_senri_chuo_kari",
+"new": "n_senri_chuo_kita_osaka_kyuko",
+"date": "1970-09-14",
+"note": "千里中央駅 会場線上の仮設駅から現在地へ"
+},
+{
+"old": "n_motoichiba",
+"new": "n_yunoki",
+"date": "1969-09-28",
+"note": "本市場駅 身延線経路変更で移転・柚木駅に改称. 옛 노드는 DB에 있음. 수집 EB03_14202002(높음): station.json 柚木駅 (静岡県富士市) hist 「線路移設に伴い現在地に移転、柚木駅…に改称」"
+},
+{
+"old": "n_tadachi_chuo_main",
+"new": "n_tadachi",
+"date": "1973-05-25",
+"note": "田立駅 移転・経路変更. 옛 노드는 DB에 있음. 수집 EB03_17202018(높음): 中央本線 r111456828: 「田立駅|(I) -1973」"
+},
+{
+"old": "n_higashi_aoyama_osaka",
+"new": "n_higashi_aoyama",
+"date": "1975-11-23",
+"note": "東青山駅 移転・経路変更. 옛 노드는 DB에 있음. 수집 EB03_18410043(높음): station.json 東青山駅 hist: 「駅が東に2.7キロメートル移転」"
+},
+{
+"old": "n_nishi_aoyama_osaka",
+"new": "n_nishi_aoyama",
+"date": "1975-11-23",
+"note": "西青山駅 移転・経路変更. 옛 노드는 DB에 있음. 수집 EB03_18410042(높음): station.json 西青山駅 hist: 「駅が西に1.1キロメートル移転」"
+},
+{
+"old": "n_ikazaki_uchiko",
+"new": "n_ikazaki",
+"date": "1986-03-03",
+"note": "五十崎駅 移転（km 변화 확인됨）. 옛 노드는 DB에 있음. 수집 EB03_21204004(높음): 内子線 r111003743 노선도 「5.3|五十崎駅|（I）1920-1986」「3.7|五十崎駅|（II）1986-」"
+},
+{
+"old": "n_uchiko_uchiko",
+"new": "n_uchiko",
+"date": "1986-03-03",
+"note": "内子駅 移転（km 변화 확인됨）. 옛 노드는 DB에 있음. 수집 EB03_21204005(높음): 内子線 r111003743 노선도 「6.8|内子駅|（I）1920-1986」「5.3|内子駅|（II）1986-」"
+},
+{
+"old": "n_tosa_ananai_dosan",
+"new": "n_tosa_ananai",
+"date": "1954-03-30",
+"note": "土佐穴内駅 移転（km 변화 확인됨）. 옛 노드는 DB에 있음. 수집 EB03_21210020(높음): 土讃線 r111124356 「大田口駅 - 大杉駅間を和田トンネル…経由の新線に切り替え、土佐穴内駅を新線上に移転」"
+},
+{
+"old": "n_yahata_kagoshima_main",
+"new": "n_yahata",
+"date": "1955-08-01",
+"note": "八幡駅 移転（km 변화 확인됨）. 옛 노드는 DB에 있음. 수집 EB03_22202011(높음): station.json 八幡駅 (福岡県) hist 「約1km（営業キロで1.1km）西側へ移転し…2.1km→3.2km」 / 1999-07-02 枝光–八幡 경로 변경으로 km 축이 바뀌어 옛·새 km 차(22.1·22.2)가 거리와 맞지 않는 것이 정상(3회차 근거 조사 2026-11-13)",
+"realigned": true
+},
+{
+"old": "n_nishitetsusakaemachi",
+"new": "n_shin_sakaemachi",
+"date": "1970-04-28",
+"note": "新栄町駅 移転（km 변화 확인됨）. 옛 노드는 DB에 있음. 수집 EB03_22420048(높음): 西鉄天神大牟田線 r111320592 「西鉄栄町駅を福岡寄りに221m移転し、新栄町駅と改称」(1970-04-28)"
+},
+{
+"old": "n_tokorozawamiyukicho",
+"new": "n_shin_tokorozawa_shinjuku_line_seibu",
+"date": "1951-06-11",
+"note": "所沢御幸町駅を1.4km北へ移設し北所沢駅開業. 옛 노드는 DB에 있음. 수집 kanto_2-043(높음): ja.wikipedia 新所沢駅 rev108594204 「所沢御幸町駅を1.4km北へ移設し北所沢駅を開業」"
+},
+{
+"old": "n_otsukahonmachi",
+"new": "n_sagamino",
+"renamed": true,
+"date": "1975-08-17",
+"note": "大塚本町駅を移転しさがみ野駅に改称. 옛 노드는 DB에 있음. 수집 kanto_2-044(높음): 相鉄本線 r111119625 「大塚本町駅を移転し、さがみ野駅に改称」"
+},
+{
+"old": "n_hamaotsu",
+"new": "n_biwako_hamaotsu",
+"date": "1981-04-12",
+"note": "京津線 浜大津駅を石山坂本線 浜大津駅に統合. 옛 노드는 DB에 있음. 수집 kinki_2-047(중간): 京阪京津線 r111210110 노선도 「11.2*|浜大津駅|(2) 1946-1981」「11.1*|びわ湖浜大津駅|(3) 1981-」",
+"km_change": "京津線 7.6→7.5 (-0.1, 위키 京阪京津線 r111210110 노선도 「11.2 浜大津駅 (2) 1946-1981」「11.1 びわ湖浜大津駅 (3) 1981-」). 옮긴 것은 京津線 역이고 石坂線 역은 처음부터 지금 자리(10회차 G2 kinki_1-02에서 뒤바뀐 쪽을 바로잡음) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_muroran_old",
+"new": "n_muroran",
+"date": "1997-10-01",
+"note": "室蘭駅 1997 移転, 母恋–室蘭 -1.1 km. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_11222052(높음): 室蘭本線 r110959208 노선도 「室蘭駅(II) 1897-1997」 8.1, 「室蘭駅(III) 1997-」 7.0"
+},
+{
+"old": "n_kita_nagayama_old",
+"new": "n_kita_nagayama",
+"date": "1990-04-07",
+"note": "北永山駅 1990 旭川方へ移転改キロ -0.6 km. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_11237007(높음): station.json 北永山駅 hist 「11.4 km 地点…に移転改キロ（-0.6 km）」"
+},
+{
+"old": "n_kurihashi_old",
+"new": "n_kurihashi",
+"date": "1951-01-01",
+"note": "栗橋駅 利根川橋梁改修で東京方へ0.2 km移転・改キロ. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_12207030(중간): station.json 栗橋駅 hist 「営業キロを改訂（東京方に0.2km 移転）」"
+},
+{
+"old": "n_furukawa_old",
+"new": "n_furukawa",
+"date": "1980-11-01",
+"note": "陸前古川駅 小牛田方へ0.3 km移転・古川に改称. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_12231004(중간): 陸羽東線 r111464846 「陸前古川駅を小牛田側へ0.3 km移転の上、古川駅に改称」"
+},
+{
+"old": "n_hosokura",
+"new": "n_hosokura_mine_park_mae",
+"date": "1990-06-16",
+"note": "細倉駅 0.2 km移転・細倉マインパーク前駅に改称. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_12405016(높음): ja.wikipedia くりはら田園鉄道線 rev111302759 노선도 「細倉駅 -1990」 25.5, 「細倉マインパーク前駅」 25.7"
+},
+{
+"old": "n_daishimae_old",
+"new": "n_daishimae",
+"date": "1968-12-01",
+"note": "大師前駅 環七拡幅で移転 -0.1 km. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_13420002(높음): 東武大師線 r111201076 「環七通り拡幅のため大師前駅移転。0.1 km短縮」"
+},
+{
+"old": "n_minami_sakurai_tobu_old",
+"new": "n_minami_sakurai_tobu",
+"date": "1956-12-23",
+"note": "南桜井駅 米島駅位置へ移転・統合. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_13421012(높음): 東武野田線 r111355825 노선도 「南桜井駅 (1) -1956」 19.8, 「(2) 1956-」 20.6"
+},
+{
+"old": "n_kinugawa_onsen_old",
+"new": "n_kinugawa_onsen",
+"date": "1964-10-08",
+"note": "鬼怒川温泉駅 下今市方へ1.2 km移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_13428008(높음): 東武鬼怒川線 r111044830 노선도 「鬼怒川温泉駅 (I) -1964」 13.6, 「(II) 1964-」 12.4"
+},
+{
+"old": "n_keio_hachioji_old",
+"new": "n_keio_hachioji",
+"date": "1963-12-11",
+"note": "東八王子駅 北野寄りへ190 m移転（路線短縮）・京王八王子駅に改称. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_14410034(중간): ja.wikipedia 京王八王子駅 rev111059835 「北野寄りへの190m移転（路線短縮）」"
+},
+{
+"old": "n_minatocho_old",
+"new": "n_minatocho",
+"date": "1956-10-18",
+"note": "港町駅 京浜川崎寄りに300 m移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_14418002(높음): 京急大師線 r110654966 노선도 「港町駅 (I) -1956」 1.5, 「(II) 1956-」 1.2"
+},
+{
+"old": "n_seibu_kyujo_mae_old",
+"new": "n_seibu_kyujo_mae",
+"date": "1978-11-30",
+"note": "狭山湖駅 西所沢方へ0.3 km移設. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_14429004(높음): 西武狭山線 r110094282 「1978年…11月30日 - 狭山湖駅移設 (-0.3km)」"
+},
+{
+"old": "n_tamako_old",
+"new": "n_tamako",
+"date": "1961-09-20",
+"note": "多摩湖駅 0.4 km延伸・移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_14434011(높음): 西武多摩湖線 r109391352 「9月20日：多摩湖駅移転 (+0.4 km)」"
+},
+{
+"old": "n_mizuochi_old",
+"new": "n_mizuochi",
+"date": "1959-07-20",
+"note": "水落駅 鯖浦線連絡線分岐位置へ300 m移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_16432008(높음): 福井鉄道福武線 r110219742 노선도 「水落駅 (I) -1959」 6.9, 「(II) 1959-」 7.3"
+},
+{
+"old": "n_hatta_old",
+"new": "n_hatta",
+"date": "2002-04-07",
+"note": "八田駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17208002(중간): 関西本線 r110839616: 「八田駅が高架化され、名古屋方面に0.5km移転」"
+},
+{
+"old": "n_shin_toyohashi_old",
+"new": "n_shin_toyohashi",
+"date": "[1972-04-01..1973-03-31]",
+"note": "新豊橋駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17418001(중간): station.json 新豊橋駅 hist: 「移転、0.1km短縮」 / 이전일 범위: 위키 豊橋鉄道渥美線 rev111550386 年表 「1972年度（昭和47年度） 新豊橋駅付近、0.1km短縮」(今尾恵介 2008 인용) → 1972 회계연도 (8회차 W2 2026-11-15; audit3 chubu_1-010)"
+},
+{
+"old": "n_morishita_meitetsu_old",
+"new": "n_morishita_meitetsu",
+"date": "[1956-01-01..1956-12-31]",
+"note": "稲荷山駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17419007(중간): 名鉄瀬戸線 r110713307: 「4.4*|森下駅 (I) -1956」"
+},
+{
+"old": "n_okazakikoen_mae_old",
+"new": "n_okazakikoen_mae",
+"date": "1976-12-01",
+"note": "岡崎公園前駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17424014(높음): station.json 岡崎公園前駅 hist: 「1976年（昭和51年）12月1日 - 現在地に移転」"
+},
+{
+"old": "n_hekinan_chuo_old",
+"new": "n_hekinan_chuo",
+"date": "1981-12-14",
+"note": "碧南中央駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17429026(높음): station.json 碧南中央駅 hist: 「碧南中央駅に改称し移設」"
+},
+{
+"old": "n_nishinokuchi_old",
+"new": "n_nishinokuchi",
+"date": "2004-12-15",
+"note": "西ノ口駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17433020(높음): station.json 西ノ口駅 hist: 「移転に伴う営業キロ改定は2005年1月29日実施」"
+},
+{
+"old": "n_higashi_nagoyako_old",
+"new": "n_higashi_nagoyako",
+"date": "1990-11-25",
+"note": "東名古屋港駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17434002(높음): station.json 東名古屋港駅 hist: 「営業キロを0.4 km大江側に移転」"
+},
+{
+"old": "n_futto_old",
+"new": "n_futto",
+"date": "1972-04-01",
+"note": "布土駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17436022(높음): station.json 布土駅 hist: 「四海波駅を統合し、太田川寄りに900m移設」"
+},
+{
+"old": "n_enakyoguchi_old",
+"new": "n_enakyoguchi",
+"date": "1963-01-16",
+"note": "恵那峡口駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_17406002(높음): 北恵那鉄道線 r106241480: 「{{BSkm|1.0|1.779}}|恵那峡口駅 （初代）」"
+},
+{
+"old": "n_ise_tajiri",
+"new": "n_ichishi",
+"date": "1968-10-01",
+"note": "一志駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18201005(중간): station.json 一志駅 hist: 「0.3 km松阪寄りへ移転し、一志駅（いちしえき）に改称」"
+},
+{
+"old": "n_minatomachi",
+"new": "n_jr_namba",
+"date": "1989-12-28",
+"note": "JR難波駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18203052(높음): 関西本線 r110839616: 「湊町駅が移転し、改キロを実施 (-0.2km)」"
+},
+{
+"old": "n_kami_old",
+"new": "n_kami",
+"date": "1963-04-01",
+"note": "加美駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18203045(중간): 関西本線 r110839616: 「加美駅が平野方面に0.3km移転」"
+},
+{
+"old": "n_shimizuura_old",
+"new": "n_shimizuura",
+"date": "1961-09-01",
+"note": "冷水浦駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18210060(높음): 紀勢本線 r111257602: 「冷水浦駅が和歌山方面に0.4 km移転」"
+},
+{
+"old": "n_kintetsu_yao_old",
+"new": "n_kintetsu_yao",
+"date": "1978-12-17",
+"note": "近鉄八尾駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18410009(높음): 近鉄大阪線 r111364868: 「9.2|近鉄八尾駅 -1978」"
+},
+{
+"old": "n_takeda_kintetsu_old",
+"new": "n_takeda_kintetsu",
+"date": "1987-07-09",
+"note": "竹田駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18419005(높음): station.json 竹田駅 (京都府) hist: 「約350メートル京都方の現在地に移転」"
+},
+{
+"old": "n_kintetsu_hatta_old",
+"new": "n_kintetsu_hatta",
+"date": "2005-05-21",
+"note": "近鉄八田駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18430005(높음): station.json 近鉄八田駅 hist: 「同線のみ近鉄名古屋駅寄りに約200メートル移転」"
+},
+{
+"old": "n_edobashi_old",
+"new": "n_edobashi",
+"date": "[1959-06-01..1959-08-31]",
+"note": "江戸橋駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18430040(높음): station.json 江戸橋駅 hist: 「1959年（昭和34年）6月：100メートル北へ移転」"
+},
+{
+"old": "n_sakai_nankai_old",
+"new": "n_sakai_nankai",
+"date": "1985-05-07",
+"note": "堺駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_18442012(높음): station.json 堺駅 hist: 「堺駅と龍神駅を統合。統合後の駅名は堺駅とし旧龍神駅難波寄りに移転」"
+},
+{
+"old": "n_kawanishi_ikeda_old",
+"new": "n_kawanishi_ikeda",
+"date": "1980-09-03",
+"note": "川西池田駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_19203006(중간): station.json 川西池田駅 hist: 「北伊丹駅方面に0.2km移転し、橋上駅舎化」"
+},
+{
+"old": "n_keihan_ishiyama_old",
+"new": "n_keihan_ishiyama",
+"date": "2005-04-01",
+"note": "京阪石山駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_19407003(높음): 京阪石山坂本線 r107968078: 「京阪石山駅が西へ168m（営業キロ上は0.2km）移設」"
+},
+{
+"old": "n_bessho_keihan",
+"new": "n_otsu_shiyakusho_mae",
+"date": "1967-09-24",
+"note": "大津市役所前駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_19407014(높음): station.json 大津市役所前駅 hist: 「従来より0.3 km坂本寄りの現在地に移転」"
+},
+{
+"old": "n_yamashita_nose_old",
+"new": "n_yamashita_nose",
+"date": "1976-04-11",
+"note": "山下駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_19419012(중간): 能勢電鉄妙見線 r110790216 「山下駅付近高架化。0.1km短縮」(1976-04-11)"
+},
+{
+"old": "n_uji_keihan_old",
+"new": "n_uji_keihan",
+"date": "1995-06-17",
+"note": "宇治駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_20404008(높음): 京阪宇治線 r109938945 「宇治駅が移転し、0.2km短縮」(1995-06-17)"
+},
+{
+"old": "n_takamatsu_kotoku_old",
+"new": "n_takamatsu_kotoku",
+"date": "2001-05-13",
+"note": "高松駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21203002, EB03_21206001(높음): 高徳線 r111300567 「高松駅移転。0.3 km延長」(1959-09-15)「高松駅移転。0.3 km短縮」(2001-05-13)"
+},
+{
+"old": "n_naruto_naruto_old",
+"new": "n_naruto_naruto",
+"date": "1970-03-01",
+"note": "鳴門駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21207007(중간): ja.wikipedia 鳴門駅 rev110796842 「200 m延伸して現位置に移動」(1970-03-01)"
+},
+{
+"old": "n_bizen_nishiichi_old",
+"new": "n_bizen_nishiichi",
+"date": "1968-09-25",
+"note": "備前西市駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21216003(높음): ja.wikipedia 備前西市駅 rev110644133 「宇野駅寄りに250 m移転」(1968-09-25)"
+},
+{
+"old": "n_uno_old",
+"new": "n_uno",
+"date": "1994-12-03",
+"note": "宇野駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21216015(높음): 宇野線 r111378845 「宇野駅の移転により改キロ (-0.1 km)」(1994-12-03)"
+},
+{
+"old": "n_kawaraishi_old",
+"new": "n_kawaraishi",
+"date": "1999-02-07",
+"note": "川原石駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21221019(중간): 呉線 r111046476 「川原石駅が0.5km海田市駅方面へ移転」(1999-02-07)"
+},
+{
+"old": "n_kami_yagi_old",
+"new": "n_kami_yagi",
+"date": "1953-11-01",
+"note": "上八木駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21222010(중간): station.json 上八木駅 hist 「梅林駅方面に0.4km移転」(1953-11-01)"
+},
+{
+"old": "n_tambaguchi_old",
+"new": "n_tambaguchi",
+"date": "1976-03-16",
+"note": "丹波口駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21228003(중간): station.json 丹波口駅 hist 「高架化にともない、北へ500メートルの位置に移転」"
+},
+{
+"old": "n_sakugiguchi_old",
+"new": "n_sakugiguchi",
+"date": "1976-11-06",
+"note": "作木口駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21238002(높음): 三江線 r111030960 노선도 「84.6|作木口駅|-1976」「84.9|作木口駅|1976-」"
+},
+{
+"old": "n_ichinomiya_old",
+"new": "n_ichinomiya",
+"date": "1987-XX-XX",
+"note": "一宮駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21434010(높음): 高松琴平電気鉄道琴平線 r111480091 노선도 「9.7|一宮駅|-1987」「10.0|一宮駅|1987-」"
+},
+{
+"old": "n_kyujomae_mizushima_rinkai_old",
+"new": "n_kyujomae_mizushima_rinkai",
+"date": "1982-XX-XX",
+"note": "球場前駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_21510002(높음): ja.wikipedia 球場前駅 (岡山県) rev111060705 「元々は旧国道2号付近（倉敷市中島、倉敷市起点2.5km）」"
+},
+{
+"old": "n_umi_no_nakamichi_old",
+"new": "n_umi_no_nakamichi",
+"date": "1987-03-09",
+"note": "海ノ中道駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_22203002(중간): 香椎線 r111001445 노선도 「2.8|海ノ中道駅|(I) -1987」「2.1|(II) 1987-」"
+},
+{
+"old": "n_chikuzen_habu_old",
+"new": "n_chikuzen_habu",
+"date": "1951-01-20",
+"note": "筑前垣生駅 移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_22221009(중간): station.json 筑前垣生駅 hist 「筑前植木寄りに300m移転する」(1951-01-20)"
+},
+{
+"old": "n_nishitetsu_fukuoka_old",
+"new": "n_nishitetsu_fukuoka",
+"date": "1995-05-27",
+"note": "西鉄福岡（天神）駅 移転（km 변화 확인됨）. 옛 자리 노드는 wiki_insert_moves.json. 수집 EB03_22420001(높음): ja.wikipedia 西鉄福岡（天神）駅 rev111401510 「正式に営業キロでも南に100m移動」(1995-05-27)"
+},
+{
+"old": "n_uchinada_old",
+"new": "n_uchinada",
+"renamed": true,
+"date": "1960-05-14",
+"note": "粟ヶ崎遊園前駅 0.1km 海側へ移転, 内灘駅に改称. 옛 자리 노드는 wiki_insert_moves.json. 수집 chubu_1-035(중간): ja.wikipedia 内灘駅 rev109300905 「粟ヶ崎遊園前駅を0.1km海側へ移転し内灘駅に改称」"
+},
+{
+"old": "n_dentetsu_toyama_old",
+"new": "n_dentetsu_toyama",
+"date": "1986-11-01",
+"note": "電鉄富山駅 移設 0.1km短縮. 옛 자리 노드는 wiki_insert_moves.json. 수집 chubu_2-014(높음): 富山地方鉄道本線 r111392356 노선도 「-0.1|電鉄富山駅|(I) -1986」"
+},
+{
+"old": "n_chihoku_old",
+"new": "n_chihoku",
+"date": "1991-11-01",
+"note": "智北駅 旭川方へ120m移設 改キロ0.1km. 옛 자리 노드는 wiki_insert_moves.json. 수집 hokkaido_1-033(높음): 宗谷本線 r111330293 「智北駅を旭川方に移転。改キロ（0.1km）」"
+},
+{
+"old": "n_nishi_kuwana_old",
+"new": "n_nishi_kuwana",
+"date": "1977-05-11",
+"note": "西桑名駅 桑名駅東南側に移転 0.1km短縮. 옛 자리 노드는 wiki_insert_moves.json. 수집 kinki_1-023(중간): ja.wikipedia 西桑名駅 rev111572619 「1977年5月11日：桑名駅東南側に移転」(5月1日説 주석)",
+"km_change": "西桑名–馬道 0.1 km 短縮 (改キロ, 위키 三岐鉄道北勢線 r111413633 「西桑名駅移転。西桑名 - 馬道間0.1 km短縮」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_utashikiyama",
+"new": "n_kasumigaoka_sanyo",
+"renamed": true,
+"date": "1964-06-01",
+"note": "五色山駅と歌敷山駅が合併し霞ヶ丘駅開業. 옛 자리 노드는 wiki_insert_moves.json. 수집 kinki_4-005(높음): 山陽電気鉄道本線 r111474989 노선도 「11.0|歌敷山駅|-1964」「10.7|霞ヶ丘駅」"
+},
+{
+"old": "n_shimanokoshi_old",
+"new": "n_shimanokoshi",
+"date": "2014-04-06",
+"note": "島越駅 震災後 再建で移転(125.4→125.6). 옛 자리 노드는 wiki_insert_moves.json. 수집 tohoku_1-014(높음): 三陸鉄道リアス線 r111310120 노선도 「125.4|島越駅|(I) -2011」「125.6|島越駅|(II) 2014-」"
+},
+{
+"old": "n_iizaka_onsen_old",
+"new": "n_iizaka_onsen",
+"date": "1982-12-21",
+"note": "飯坂温泉駅 100m花水坂寄りへ移転 0.1km短縮. 옛 자리 노드는 wiki_insert_moves.json. 수집 tohoku_1-017(높음): 福島交通飯坂線 r109896933 「飯坂温泉駅が移転し0.1km短縮」(1982-12-21)"
+},
+{
+"old": "n_sagae_old",
+"new": "n_sagae",
+"date": "2002-02-16",
+"note": "寒河江駅 北山形側に0.1km移転. 옛 자리 노드는 wiki_insert_moves.json. 수집 tohoku_1-020(중간): 左沢線 r111532459 「寒河江駅を北山形側に0.1km移転」(2002-02-16)",
+"km_change": "寒河江 15.4→15.3 (-0.1, 위키 左沢線 r111532459 「寒河江駅を北山形側に0.1km移転」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_oga_oga_old",
+"new": "n_oga_oga",
+"date": "2018-07-01",
+"note": "男鹿駅移転 羽立-男鹿 -0.2km(2018-07-01). 옛 자리 노드는 wiki_insert_moves.json. 근거 ja.wikipedia 男鹿駅 oldid=110664888 (r3 geo 조사 2026-11-08로 근거 문장 바로잡음)"
+},
+{
+"old": "n_shin_hamamatsu_old",
+"new": "n_shin_hamamatsu",
+"date": "1985-12-01",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_shin_tsudanuma_old",
+"new": "n_shin_tsudanuma",
+"date": "1968-05-14",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_suwa_kintetsu",
+"new": "n_kintetsu_yokkaichi",
+"date": "1956-09-23",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_hozukyo_old",
+"new": "n_hozukyo",
+"date": "1989-03-05",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_umahori_old",
+"new": "n_umahori",
+"date": "1989-03-05",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_nobiru_old",
+"new": "n_nobiru",
+"date": "2015-05-30",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_kawarayu_onsen_old",
+"new": "n_kawarayu_onsen",
+"realigned": true,
+"date": "2014-10-01",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why. realigned: 八ッ場ダム 付け替え로 岩島–長野原草津口이 새 선(2014-10-01, 위키 吾妻線 「岩島駅 - 長野原草津口駅間の新線へ」)으로 바뀌어 옛 km 36.4·새 km 37.0의 차가 두 자리 거리(약 1.4 km)와 맞지 않음 (6회차 2026-11-14; r6out/B)"
+},
+{
+"old": "n_haneda_tokyo_monorail",
+"new": "n_tenkubashi_tokyo_monorail",
+"date": "1993-09-27",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_hakusan_old",
+"new": "n_hakusan",
+"date": "1951-12-15",
+"note": "옛 경로 통합(int_oldroutes)의 옛 자리 노드. 근거는 source_patch oldroutes_2026-11-08 행의 why"
+},
+{
+"old": "n_tona_old",
+"new": "n_tona",
+"date": "2015-05-30",
+"note": "東名駅 移転(仙石線 復旧 경로 이설, 野蒜와 함께). 옛 자리 좌표는 ja.wikipedia 東名駅 oldid=111588287 旧駅 좌표(N05 1950–2014 점과 0.02 km)"
+},
+{
+"old": "n_shibushi_old",
+"new": "n_shibushi_nichinan",
+"date": "1990-02-20",
+"note": "志布志駅移転 0.1km短縮. 옛 자리 노드는 wiki_insert_moves.json. 수집 kyushu_2-022(높음): 日南線 r111131181 「【改キロ】志布志駅が移転し0.1 km短縮」(1990-02-20)",
+"km_change": "【改キロ】志布志駅が移転し0.1 km短縮 (위키 日南線 r111131181, 높음), 志布志駅 「北東方向に約70m移設」 — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_onagawa_old",
+"new": "n_onagawa",
+"date": "2015-03-21",
+"note": "女川駅 移転(약 200 m 내륙, 浦宿–女川 2.5→2.3 km). 옛 자리 노드는 wiki_insert_moves.json relabel(石巻線 옛 부품 끝 역). 근거: 石巻線 oldid=111464534 「距離は2.5 kmから2.3 kmに短縮」, 女川駅 oldid=111571105 「約200メートル内陸側に移設」"
+},
+{
+"old": "n_kaizuka_nishi_nippon_old",
+"new": "n_kaizuka_nishi_nippon",
+"date": "1985-08-30",
+"note": "貝塚駅 津屋崎方に160 m 移転, 営業キロ 0.2 km 短縮. 옛 자리 노드는 wiki_insert_moves.json(기점 너머 행 + 市内線 貝塚線 옛 부품 끝 역 relabel). 근거: 西鉄貝塚線 oldid=111320593, 貝塚駅 oldid=111189893"
+},
+{
+"old": "n_hatagaoka",
+"new": "n_hatanodai",
+"renamed": true,
+"date": "1951-05-01",
+"note": "旗ヶ岡駅 移転・東洗足と統合して旗の台. 옛 자리 노드는 wiki_insert_moves.json. 근거 ja.wikipedia 旗の台駅 oldid=110928365"
+},
+{
+"old": "n_tenri_kintetsu_old",
+"new": "n_tenri_kintetsu",
+"date": "1964-10-30",
+"note": "近鉄 天理駅 이전(4.7 → 4.5 km). 옛 자리 노드는 wiki_insert_moves.json"
+},
+{
+"old": "n_kanisawa",
+"new": "n_sakurambo_higashine",
+"date": "1999-12-04",
+"note": "蟹沢駅 山形寄りに0.6km移転してさくらんぼ東根駅に改称(山形新幹線 新庄延伸). 옛 자리 노드는 wiki_insert_moves.json. 근거 ja.wikipedia さくらんぼ東根駅 oldid=110591217"
+},
+{
+"old": "n_kitabamba",
+"new": "n_shimbamba",
+"date": "1976-10-15",
+"note": "北馬場駅·南馬場駅을 통합해 두 역 가운데에 新馬場駅. 옛 자리 노드는 wiki_insert_moves.json. 근거 ja.wikipedia 新馬場駅 oldid=110430422"
+},
+{
+"old": "n_minamibamba",
+"new": "n_shimbamba",
+"date": "1976-10-15",
+"note": "北馬場駅·南馬場駅을 통합해 두 역 가운데에 新馬場駅. 옛 자리 노드는 wiki_insert_moves.json. 근거 ja.wikipedia 新馬場駅 oldid=110430422"
+},
+{
+"old": "n_fukushimacho_old",
+"new": "n_fukushimacho",
+"date": "1964-09-01",
+"note": "広電 福島町停留場 1964-09-01 線路付け替えにより軌道とともに移転(옛 자리는 지금보다 약 160 m 북쪽, 都町 경유 옛 경로 위). 옛 자리 노드는 n05_fix 「広島電鉄 本線 観音町–己斐 旧線」의 福島町【旧】. 근거 ja.wikipedia 福島町停留場 oldid=111215991"
+},
+{
+"old": "n_nishinomiya_hanshin_old",
+"new": "n_nishinomiya_hanshin",
+"date": "2001-03-03",
+"note": "西宮駅 200 m東側（大阪梅田寄り）に移設・高架化 (16.9→16.7)"
+},
+{
+"old": "n_keihin_zushi",
+"new": "n_zushihayama",
+"date": "1985-03-02",
+"note": "京浜逗子(5.7 km)·逗子海岸(6.1 km)을 합쳐 新逗子(지금 逗子・葉山, 5.9 km)로 옮김 (2회차 종합 K25 kanto_3-01, B6a 넘김). 위키 京急逗子線 「1985年3月2日 - 京浜逗子駅と逗子海岸駅を統合し、中間地点に新逗子駅を開設」, N05 京浜逗子 1963–1984·逗子海岸 1950–1984 점(약 0.2 km)"
+},
+{
+"old": "n_zushi_kaigan",
+"new": "n_zushihayama",
+"date": "1985-03-02",
+"note": "위와 같은 통합 (2회차 종합 K25 kanto_3-01)"
+},
+{
+"old": "n_yasawa",
+"new": "n_shin_hanamaki",
+"date": "1985-03-14",
+"note": "釜石線 矢沢(6.0 km)이 新花巻(6.4 km) 개업으로 폐지 (2회차 종합 K25 tohoku_1-026, B6a 넘김). 위키 釜石線 「矢沢駅を廃止、新花巻駅を新設（実質的に矢沢駅の移転改称）」, N05 矢沢 1950–1984 점과 新花巻 1985– 점 약 0.46 km"
+},
+{
+"old": "n_keisei_chiba_old",
+"new": "n_chiba_chuo",
+"date": "1958-02-10",
+"note": "京成千葉線 京成千葉(I)을 区画整理로 지금 千葉中央 자리로 옮김 (2회차 종합 K25 kanto_1-011, B6a 보류분). 위키 京成千葉線 年表 1958-02-10 「京成千葉駅をその跡である現在の千葉中央駅の場所に移転」. 옛 자리만 지금 역 묶음으로 옮기는 compile 규칙 뒤에 넣음(옛 자리가 이름으로 묶인 지금 京成千葉와 千葉中央이 합쳐지지 않게)"
+},
+{
+"old": "n_haneda_airport_keikyu_old",
+"new": "n_tenkubashi_keikyu",
+"date": "1993-04-01",
+"note": "京急空港線 (初代)羽田空港(1991-01-16 営業休止)이 1993-04-01 羽田(지금 天空橋) 개업으로 폐지된 같은 역 (2회차 종합 K25, B6a 보류분). 위키 京急空港線 「1993年に羽田駅（現在の天空橋駅）が空港島内に開業」, B6a 옛 경로 n05_fix 행 「(初代)羽田空港은 1993-04-01 羽田駅(지금 天空橋)이 개업하며 폐지」"
+},
+{
+"old": "n_hagiyama_old",
+"new": "n_hagiyama",
+"date": "1958-09-16",
+"note": "근거 탐색 km_d 최종(audit2 — pseibu_railway 多摩湖線 萩山 옛 자리 4.3 km (W3 E1 2026-11-12)"
+},
+{
+"old": "n_shimojima_old",
+"new": "n_shimojima",
+"date": "[1932-01-01..1932-12-31]",
+"note": "근거 탐색 km_d 최종(archkm — jr 飯田線 下島 옛 자리 175.1 km (W3 E1 2026-11-12)"
+},
+{
+"old": "n_sumaura_koen_old",
+"new": "n_sumaura_koen",
+"date": "1957-09-18",
+"note": "근거 탐색 km_d 최종(audit2 — psanyo_electric_railway 本線 須磨浦公園 옛 자리 5.4 km (W3 E1 2026-11-12)"
+},
+{
+"old": "n_tsuzumigataki_old",
+"new": "n_tsuzumigataki",
+"date": "1969-05-25",
+"note": "근거 탐색 km_d 최종(audit2 — pnose_electric_railway 妙見線 鼓滝 옛 자리 3.4 km (W3 E1 2026-11-12)"
+},
+{
+"old": "n_ogoso_old",
+"new": "n_ogoso",
+"date": "1959-05-01",
+"note": "근거 탐색 km_d 최종(rem — pyokkaichi_asunarou_railway 内部線 小古曽 옛 자리 4.9 km (W3 E1 2026-11-12)",
+"km_change": "小古曽 4.9→5.0 (+0.1, 위키 四日市あすなろう鉄道内部線 「内部方に0.1 km移設の上営業再開」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_keikyu_tomioka_old",
+"new": "n_keikyu_tomioka",
+"date": "1955-12-01",
+"note": "근거 탐색 km_d 최종(audit2 — pkeikyu 本線 京急富岡 옛 자리 37.0 km (W3 E1 2026-11-12)"
+},
+{
+"old": "n_azumada_old",
+"new": "n_azumada",
+"date": "1950-04-07",
+"note": "근거 탐색 station_b 7회차(r7:toyohashi_count_reconcile): 豊橋 東田本線 東田은 1950-04-07 복선 新線 개업 때 옛 단선 선로 끝(東田(옛), 노선도 0.4**)에서 지금 자리로 옮김. 위키 연표 「東田坂上 - 本社前 - 東田間の単線旧線は非営業の車庫線に変更」 (W3 E1 2026-11-12)"
+},
+{
+"old": "n_hommachi_old",
+"new": "n_hommachi",
+"date": "1969-07-01",
+"lines": [
+"l_osaka_metro_chuo_line"
+],
+"note": "근거 탐색 station_a 3회차(b6a — posaka_metro 中央線 本町 옛 자리 12.4 km (W4 F2 2026-11-12)"
+},
+{
+"old": "n_toba_kintetsu_old",
+"new": "n_toba_kintetsu",
+"date": "1970-03-01",
+"lines": [
+"l_shima_line"
+],
+"note": "근거 탐색 km_d 최종(audit2 — pkintetsu_railway 志摩線 鳥羽 옛 자리 0.9 km (W4 F2 2026-11-12)",
+"km_change": "志摩線 中之郷–鳥羽 0.9→1.0 (위키 近鉄志摩線 「鳥羽駅を国鉄鳥羽駅北側に移設」, N05 옛·새 점 134 m: 진짜 이전) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_itami_hankyu_kari",
+"new": "n_itami_hankyu",
+"date": "1998-11-21",
+"lines": [
+"l_itami_line"
+],
+"note": "근거 탐색 station_a 3회차(b6a — phankyu_corporation 伊丹線 伊丹 옛 자리 2.7 km (W4 F2 2026-11-12)"
+},
+{
+"old": "n_sendai_senseki_old",
+"new": "n_sendai_senseki",
+"date": "2000-03-11",
+"lines": [
+"l_senseki_line"
+],
+"note": "근거 탐색 a644 최종(chk — jr 仙石線 仙台 옛 자리 km 추정 (W4 F2 2026-11-12)"
+},
+{
+"old": "n_higashioiwake_old",
+"new": "n_higashioiwake",
+"date": "1981-06-01",
+"note": "東追分 역 이전(옛 자리 km 21.9) (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"
+},
+{
+"old": "n_hori_boseki_old",
+"new": "n_hori_boseki",
+"date": "1958-03-20",
+"note": "堀 역 이전(옛 자리 km 18.7) (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"
+},
+{
+"old": "n_oiwake_keihan_old",
+"new": "n_oiwake_keihan",
+"date": "1979-09-30",
+"note": "追分 역 이전(옛 자리 km 3.6) (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"
+},
+{
+"old": "n_kyobashi_keihan_old",
+"new": "n_kyobashi_keihan",
+"date": "1969-11-30",
+"note": "京橋 역 이전(옛 자리 km 3.2) (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"
+},
+{
+"old": "n_nakayamajuku_old",
+"new": "n_nakayamajuku",
+"date": "1997-03-22",
+"note": "中山宿 역 이전(옛 자리 km 20.1) (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"
+},
+{
+"old": "n_higashi_isahaya_old",
+"new": "n_higashi_isahaya",
+"date": "1990-03-01",
+"note": "東諫早 역 이전(옛 자리 km 97.5) (회귀·audit_ext 근거 조사 R6-G relocations.json, 2026-11-12)"
+},
+{
+"old": "n_tenjimbashi_senri_old",
+"new": "n_tenjimbashisuji_6_chome_hankyu",
+"date": "1969-12-06",
+"note": "千里線 天神橋 고가 끝역 → 지하 天神橋筋六丁目(옛 자리 km 0.2) (열람 전용 2회차 조사 2026-11-13; r2out/archive)"
+},
+{
+"old": "n_ichiarakawa_old",
+"new": "n_echizen_takehara",
+"date": "1955-09-01",
+"note": "市荒川 → 越前竹原 이전(옛 자리 km 19.7) (열람 전용 2회차 조사 2026-11-13; r2out/archive)"
+},
+{
+"old": "n_naebo_old",
+"new": "n_naebo",
+"date": "2018-11-17",
+"note": "函館本線 苗穂 이전(옛 자리 km 288.5) (2회차 후속 근거 조사 2026-11-13; r2out/follow)"
+},
+{
+"old": "n_imazu_hankyu_old",
+"new": "n_imazu_hankyu",
+"date": "1993-05-23",
+"km_official": true,
+"note": "今津線 今津 이전(옛 자리 km 9.6) (2회차 후속 근거 조사 2026-11-13; r2out/follow). 공식 km 차 0.3(1966 『停車場一覧』 今津 9.6, 지금 9.3)이 실제 이동 약 35 m(地理院 옛 항공사진, 옛 승강장 가운데 ±15 m)보다 큼 (6회차 2026-11-14; r6out/A1)"
+},
+{
+"old": "n_higashiyama_kintetsu_old",
+"new": "n_higashiyama_kintetsu",
+"date": "1993-01-29",
+"note": "生駒線 東山 이전(옛 자리 km 7.1) (2회차 후속 근거 조사 2026-11-13; r2out/follow)",
+"km_change": "生駒線 7.1→7.0 (위키 近鉄生駒線 「元山上口駅 - 萩の台駅間が線路移設され、0.2km短縮。東山駅が移設」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다 (9회차 S, 3회차 kanto_3-18·tohoku_1-016)"
+},
+{
+"old": "n_takadahonzan_old",
+"new": "n_takadahonzan",
+"date": "1955-07-15",
+"note": "高田本山駅 逆川分岐–江戸橋 경로 변경으로 이전(15.1→14.7). 옛 자리 노드·옛 경로는 source_patch r5old. [近鉄名古屋線 옛 高田本山] 『鉄道停車場一覧』昭和12年(1937, NDL pid 1207554 コマ210) 「高田本山 41.6 一身田町平野 / 江戸橋 1.8 43.4」(높음) → 江戸橋（旧）–高田本山（旧） 1.8, "
+},
+{
+"old": "n_misasagi_keihan_old",
+"new": "n_misasagi_keihan",
+"date": "1997-10-12",
+"note": "京津線 御陵 지상역 → 지하역(東西線 직통) 이전. 옛 자리·옛 지상 선로는 source_patch r5old. 1966 一覧 御陵 3.9"
+},
+{
+"old": "n_hakata_old",
+"new": "n_hakata",
+"date": "1963-12-01",
+"note": "博多駅 吉塚–博多–竹下·筑前簑島 경로 변경으로 지금 자리 고가 이전(鹿児島本線 78.0→지금 78.2 축). 옛 자리·옛 경로는 source_patch r5old"
+},
+{
+"old": "n_chiba_old",
+"new": "n_chiba",
+"date": "1963-04-28",
+"note": "千葉駅 이전(総武本線 39.9→39.2, 房総東線 기점). 옛 자리 노드는 wiki_insert_moves.json, 外房線 옛 끝은 source_patch r5old. 日本国有鉄道公示第223号"
+},
+{
+"old": "n_hon_chiba_old",
+"new": "n_hon_chiba",
+"date": "1958-02-01",
+"note": "本千葉駅 같은 선로 위 0.6 km 蘇我 쪽 이전(千葉 기점 1.2→1.8). 옛 자리는 source_patch r5old. 日本国有鉄道公示第13号"
+},
+{
+"old": "n_yubiso_old",
+"new": "n_yubiso",
+"date": "1967-09-28",
+"realigned": true,
+"note": "湯檜曽駅 新湯檜曽信号場 자리로 이전(65.9→62.7). 옛 자리 노드는 wiki_insert_moves.json. 日本国有鉄道公示第451号. realigned: 옛 자리는 湯檜曽ループ 너머라 선로 3.2 km가 직선 0.45 km(1967 新清水トンネル 下り線으로 경로가 둘로 갈림) — 감사 K25 3배 규칙에서 뺌"
+},
+{
+"old": "n_sakurajima_old_first",
+"new": "n_sakurajima_old",
+"date": "1966-03-01",
+"note": "桜島駅 初代→2代 동쪽 500 m 이전(安治川口–桜島 2.1→1.6). source_patch r5old. 『鉄道公報』4936号"
+},
+{
+"old": "n_sakurajima_old",
+"new": "n_sakurajima",
+"date": "1999-04-01",
+"note": "桜島駅 2代→지금 자리 USJ 경로 변경으로 남쪽 100 m 이전(1.6→1.7). source_patch r5old. 『鉄道ジャーナル』1999-07"
+},
+{
+"old": "n_takizawa_old",
+"new": "n_takizawa",
+"date": "1967-09-29",
+"note": "滝沢駅 복선 별선으로 이전(547.6→547.5, 서쪽 약 300 m에서). 옛 자리·옛 별선은 source_patch r5old. 『東北本線黒磯・青森間線増工事誌』·鉄道公報 1967-09-21"
+},
+{
+"old": "n_chiba_chiba_urban_monorail_old",
+"new": "n_chiba_chiba_urban_monorail",
+"date": "1995-08-01",
+"note": "千葉都市モノレール 2号線 千葉 仮駅(200 m 앞) → 지금 千葉. 옛 자리 노드는 wiki_insert_moves.json"
+},
+{
+"old": "n_temmabashi_keihan_old",
+"new": "n_temmabashi_keihan",
+"date": "1963-04-16",
+"note": "京阪 天満橋 지상 종점(1.5) → 지하역(1.3), 淀屋橋 연장과 같은 날. 옛 자리 노드는 wiki_insert_moves.json (6회차 2026-11-14; r6out/A2)"
+},
+{
+"old": "n_shidenkawasaki_old",
+"new": "n_shidenkawasaki",
+"date": "1950-08-18",
+"note": "川崎市電 市電川崎 0.110 km 연장 이설. 옛 자리 노드는 wiki_insert_moves.json (6회차 2026-11-14; r6out/A2)"
+},
+{
+"old": "n_ogikubo_ekimae_old",
+"new": "n_ogikubo_ekimae",
+"date": "[1955-06-01..1956-06-30]",
+"renamed": true,
+"note": "都電 杉並線 荻窪(남쪽) → 荻窪駅前(북쪽) 이설과 개칭, 날짜는 자료 넷이 엇갈려 범위. 옛 자리 노드는 wiki_insert_moves.json (7회차 근거 조사 2026-11-14; r7out/E)"
+},
+{
+"old": "n_kasugayama_old",
+"new": "n_kasugayama",
+"date": "2002-XX-XX",
+"note": "信越本線 春日山 이전(옛 187.6 → 188.0), 해 2002 근거 둘(위키·N05). 옛 자리 노드는 wiki_insert_moves.json (6회차 r6out/A2 자리·km, 7회차 해 근거 2026-11-14; r7out/E)"
+},
+{
+"old": "n_miyoshi_kumamoto_old",
+"new": "n_miyoshi_kumamoto",
+"date": "2022-10-10",
+"note": "熊本電鉄 菊池線 御代志 2022-10-10 이설(옛 10.8 → 새 10.6, 약 225 m). 옛 자리 노드는 wiki_insert_moves.json relabel (付替·御代志以北 두 부품) (7회차 구조 2026-11-14)"
+},
+{
+"old": "n_kitauchi_old",
+"new": "n_kitauchi",
+"date": "2007-03-18",
+"note": "和歌山線 北宇智 2007-03-18 스위치백 해소(옛 막다른 선 승강장 31.6 → 본선 위 새 승강장 31.5). 옛 자리 노드·옛 선로 칸은 source_patch r7struct_2026-11-14 (7회차 구조 2026-11-14)"
+},
+{"old": "n_shikagoe_old", "new": "n_shikagoe", "date": "1966-09-29", "note": "鹿越 金山ダム 건설로 新線 위로 이설(91.2 → 88.4, 仮乗降場로): 위키 根室本線 노선도 「91.2 鹿越駅 1900-1966」「88.4 鹿越仮乗降場 1966-1986」, DB 정차 경계 1966-09-29(옛 칸 닫힘·새 칸 열림)와 같음. N05 鹿越 1950–1965 점·1982–1985 점이 1 km 떨어짐 (8회차 W2 2026-11-15; audit3 hokkaido_1-009)"},
+{"old": "n_kojima_shimotsui_old", "new": "n_kojima_shimotsui", "date": "[1987-08-01..1987-12-31]", "note": "下津井電鉄 児島 1987년 이전(옛 자리 마지막 해 안, 0.2 km 단축): 위키 下津井電鉄線 r111486305 연표 「8月 - 児島駅の改築移転工事…開始される。同年中に児島駅移転、0.2km短縮」, 노선도 「14.5 児島駅 -1987」「14.7 児島駅 1987-廃止まで」, 역 표 備前赤崎–児島 1.1·累計 6.3, 「下津井 - 児島間6.3kmの廃止申請」(1990)(중간) + 下津井電鉄 鉄道事業部 『ナローゲージよ永遠に! 資料集約編』 1990(NDL pid 13331721) 「児島駅を300m起点側に移転したため、現在の6.26…」(사업자 자료) + N05-24 Station2 EB03_21432010 児島 점이 1950–1985 (34.469507,133.804697) → 1986–1990 (34.468162,133.803522)로 약 180 m 옮김(중간, 독립). 1972-04-01 「児島駅が移転される」는 km가 그대로(14.5, 児島–下津井 6.5 유지)이고 N05 점도 1950–1985 같아 노드를 나누지 않음(결정 7·U15). 옛 노드 = 1913~1987 자리 (8회차 W3 2026-11-15)"},
+{"old": "n_takamatsu_chikko_old", "new": "n_takamatsu_chikko", "date": "1955-09-10", "note": "琴電 琴平線 築港 仮駅 1948-12-26~1955-09-10: 위키 高松琴平電気鉄道琴平線 r111480091 「12月26日：築港線 築港（現在の高松築港が開業するまでの仮駅）- 片原町間が開業」「1955年9月10日：高松築港駅（現在の駅）開業。仮駅廃止」(중간) + N05 EB03_21434002 築港 1950–1954 점(34.348978,134.049705)과 EB03_21434001 高松築港 1955– 점이 약 200 m(중간, 독립) → 결정 7 세 조건. 옛 자리 km는 N05 점을 선로 위로 재 0.2(片原町까지 0.7, 추정) (8회차 W3 2026-11-15)"},
+{"old": "n_hiroshimako_old", "new": "n_hiroshimako", "date": "1967-10-01", "note": "広電 宇品線 宇品終点(→1960 宇品) 1951-04-01~1967-10-01 옛 자리: 위키 広島港（宇品）停留場 r110700972 「1951年4月1日：宇品線が向宇品から延伸し、宇品終点停留場として開業」「1967年10月1日：県営桟橋の移転に伴い停留場を移設」(158 m 남쪽), 広島電鉄宇品線 r110701130 「宇品停留場移転。0.2km延長」 + N05 EB03_21448020 宇品終点 1951–1966 점(중간, 독립). km: 지금 広島港 5.9에서 2003 연장 0.1·1967 연장 0.2를 빼 5.6(元宇品口까지 0.2, 1951 연장 200 m와 맞음). 2003-03-29 0.1 km 이전(3대째)은 km 기간 표가 없어 노드 하나로 둠(남은 것) (8회차 W3 2026-11-15)"},
+{"old": "n_hon_shiogama_old", "new": "n_hon_shiogama", "date": "1981-11-01", "note": "本塩釜駅 西塩釜–東塩釜 高架化で移転. 옛 자리 노드는 wiki_insert_moves.json", "km_change": "西塩釜–本塩釜 0.6→0.8, 本塩釜–東塩釜 1.4→1.2 (『停車場一覧 昭和41年3月現在』 NDL pid 1873236 높음 → 노리츠부시 지금 값). 공식 営業キロ가 바뀐 이전 (10회차 D2 2026-11-16)"},
+{"old": "n_higashi_shiogama_old", "new": "n_higashi_shiogama", "date": "1981-11-01", "note": "東塩釜駅 西塩釜–東塩釜 高架化で移転. 옛 자리 노드는 wiki_insert_moves.json", "km_change": "本塩釜–東塩釜 1.4→1.2, 東塩釜–陸前浜田 3.3→3.1 (『停車場一覧 昭和41年3月現在』 높음 → 노리츠부시). 공식 営業キロ가 바뀐 이전 (10회차 D2 2026-11-16)"},
+{"old": "n_shimo_seiwa", "new": "n_seiwa_onsen", "date": "1961-12-01", "note": "下政和仮乗降場 200mほど深川寄りに移転し政和温泉仮乗降場に改称. 옛 자리 노드는 wiki_insert_moves.json", "km_change": "(56.4)→56.2 위키 深名線 노선도(仮乗降場 実キロ) + N05 점 약 240 m (10회차 D2 2026-11-16)"},
+{"old": "n_heijima_old", "new": "n_heijima", "date": "[1971-04-24..1971-06-01]", "note": "新潟交通 電車線 平島 関屋分水路 공사로 경로 변경·이전. 옛 자리 노드는 wiki_insert_moves.json (10회차 G2 2026-11-16; audit4 chubu_1-008)", "km_change": "東関屋–平島 경로 변경 +0.3 km(위키 新潟交通電車線 rev111527081 「東関屋 - 平島間経路変更 (+0.3 km)。平島駅移転」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다"},
+{"old": "n_saginoyuonsenmae_old", "new": "n_saginoyuonsenmae", "date": "[1950-01-01..1952-12-31]", "note": "一畑 広瀬線 温泉前 0.2 km 荒島 쪽 이전(1955-01-01 鷺湯温泉前로 개칭). 옛 자리 노드는 wiki_insert_moves.json (10회차 G2 2026-11-16; audit4 chugoku_shikoku_1-011)", "km_change": "温泉前 6.8→6.6(위키 一畑電気鉄道広瀬線 노선도 「6.6 鷺湯温泉前駅」「6.8 温泉前駅」, 年表 「0.2 km荒島寄りに移転」) — 공식 営業キロ가 바뀐 이전이라 옛 자리 노드로 옛 km를 나타낸다"}
 ]

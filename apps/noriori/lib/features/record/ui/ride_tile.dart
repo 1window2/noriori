@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:noriori_core/noriori_core.dart';
 
 import '../../../app/date_text.dart';
+import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
 import '../../../i18n/strings.g.dart';
 import '../controller/record_list_controller.dart';
 
 /// 기록 목록과 여정 화면의 한 줄.
-class RideTile extends StatelessWidget {
+class RideTile extends ConsumerWidget {
   const RideTile({super.key, required this.ride});
 
   final RideSummary ride;
@@ -25,9 +27,12 @@ class RideTile extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final t = context.t.record;
     final km = ride.km10;
+    // 탄 역이나 내린 역의 km가 추정값이면 km 자리에 `?`를 보인다 (DESIGN §4.5)
+    final network = ref.watch(networkProvider);
+    final estimated = network.kmEstimatedBetween(ride.lineId, ride.fromNode, ride.toNode);
     final raw = ride.shownDate;
     final text = Theme.of(context).textTheme;
     final parts = [
@@ -55,7 +60,7 @@ class RideTile extends StatelessWidget {
           ),
           if (km != null)
             Text(
-              t.km(km: kmLabel(km * 100)),
+              t.km(km: kmLabelOf(km * 100, estimated: estimated)),
               style: text.bodyMedium?.copyWith(fontWeight: FontWeight.w700, fontFeatures: tabularFigures),
             ),
         ],

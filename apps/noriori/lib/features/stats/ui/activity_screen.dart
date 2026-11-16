@@ -40,6 +40,7 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
     final picked = _day ?? latest;
     final detail = picked == null ? null : days[picked];
     final summaries = ref.watch(rideSummariesProvider).value ?? const [];
+    final network = ref.watch(networkProvider);
     return Scaffold(
       appBar: AppBar(title: Text(t.activity)),
       body: ListView(
@@ -88,7 +89,12 @@ class _ActivityScreenState extends ConsumerState<ActivityScreen> {
                   contentPadding: const EdgeInsets.symmetric(horizontal: 16),
                   title: Text('${ride.fromLabel} → ${ride.toLabel}'),
                   subtitle: Text(ride.lineLabel),
-                  trailing: ride.km10 == null ? null : Text('${kmLabel(ride.km10! * 100)} km'),
+                  trailing: switch (ride.km10) {
+                    null => null,
+                    // 탄 역이나 내린 역의 km가 추정값이면 숫자 뒤에 `?`를 붙인다(54.1? km, DESIGN §4.5)
+                    final km10 => Text(
+                        '${kmLabelOf(km10 * 100, estimated: network.kmEstimatedBetween(ride.lineId, ride.fromNode, ride.toNode))} km'),
+                  },
                   onTap: () => context.push('/record/${ride.rideId.value}'),
                 ),
           ],

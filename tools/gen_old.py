@@ -4,6 +4,10 @@
 import sys,os,re,json,csv,gzip,hashlib,collections
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
+from decimal import Decimal as _Dec,ROUND_HALF_UP as _HUP
+def dround(x,n=1):
+    """km 반올림은 사사오입이다. float round()는 15.85를 15.8로 내린다(이진 표현·은행가 반올림). 6자리에서 float 잡음을 먼저 지운다"""
+    return None if x is None else float(_Dec(repr(round(x,6))).quantize(_Dec(1).scaleb(-n),rounding=_HUP))
 import wparse as w
 os.environ['NW_OFF']='1'
 import conn
@@ -69,7 +73,7 @@ def table_km(rec):
         if between and o:
             run=0.0;c2=[]
             for a,b in o:
-                run=round(run+b,1);c2.append((a,run))
+                run=dround(run+b);c2.append((a,run))
             o=c2
         if len(o)>len(best):best=o
     return best
@@ -141,7 +145,7 @@ for l in SL:
     if len(seq)<2:rep['too_short']+=1;continue
     if miss==0 and all(a[1]!=b[1] for a,b in zip(seq,seq[1:])):
         base=seq[0][1]
-        s2=[[n,round(abs(k-base),1)] for n,k in seq]
+        s2=[[n,dround(abs(k-base))] for n,k in seq]
         if all(a[1]<b[1] for a,b in zip(s2,s2[1:])):
             i=info(rec or {})
             co,c,t=owner(t,i.get('op',''))
@@ -156,7 +160,7 @@ for l in SL:
     if len(wr)<len(seq)-1 or not all(x[1]<y[1] for x,y in zip(wr,wr[1:])):wr=table_km(rec)
     if len(wr)>=max(2,len(seq)-2) and all(x[1]<y[1] for x,y in zip(wr,wr[1:])):
         i=info(rec or {});co,c,t2=owner(t,i.get('op',''))
-        base=wr[0][1];s2=[[a,round(b-base,1)] for a,b in wr]
+        base=wr[0][1];s2=[[a,dround(b-base)] for a,b in wr]
         oh=[['区間','営業km','開業日'],[f"{wr[0][0]}～{wr[-1][0]}",str(s2[-1][1]),jd(i.get('open')) or '']]
         ch=[['区間','営業km','廃止日'],[f"{wr[0][0]}～{wr[-1][0]}",str(s2[-1][1]),cd]]
         g_,c_,cn_=('tm','9','旧国鉄・JR各社') if l['company_code']=='0' else ('old',c,co)
@@ -180,7 +184,7 @@ for t in olds:
     rows=[(a,b) for a,b in rows_of(rec) if b is not None] or table_km(rec)
     if rows and sum(1 for a,b in rows if znorm(a) in Nnames)/len(rows)>=.6:rep['old_in_n']+=1;continue
     if False:
-        base=rows[0][1];s2=[[a,round(abs(b-base),1)] for a,b in rows]
+        base=rows[0][1];s2=[[a,dround(abs(b-base))] for a,b in rows]
         if all(x[1]<y[1] for x,y in zip(s2,s2[1:])) and not any(x[0] in Nnames and False for x in s2):
             co,c,t2=owner(t,i.get('op',''))
             oh=[['区間','営業km','開業日'],[f"{rows[0][0]}～{rows[-1][0]}",str(s2[-1][1]),jd(i.get('open')) or '']]
@@ -224,7 +228,7 @@ for o in out:
     a0,b0=live[0],live[-1]+1
     if a0>0 or b0<len(s0)-1:rep2['trimmed']+=1
     base=s0[a0][1]
-    o['s']=[[x[0],round(x[1]-base,1)] for x in s0[a0:b0+1]]
+    o['s']=[[x[0],dround(x[1]-base)] for x in s0[a0:b0+1]]
     # 개업 경계로만 쓴 역은 폐지 전에 사라졌으므로 역 목록에 남기지 않는다
     bound={x for r in rows for x in r[:2]}
     extra={a_ for a_,k_ in H.get('add_stops') or [] if a_ not in bound}
@@ -235,7 +239,7 @@ for o in out:
         e=k
         while e+1<b0 and close[e+1]==close[k] and legal[e+1]==legal[k]:e+=1
         if close[k]:
-            new.append([f'{s0[k][0]}～{s0[e+1][0]}',str(round(s0[e+1][1]-s0[k][1],1)),close[k]])
+            new.append([f'{s0[k][0]}～{s0[e+1][0]}',str(dround(s0[e+1][1]-s0[k][1])),close[k]])
             if legal[k]:lg.append([s0[k][0],s0[e+1][0],legal[k]])
         k=e+1
     o['h'][1]=new;o['src']['close']='wikipedia'   # 구간 이력은 위키 문서에서 사람이 옮겼다
@@ -246,7 +250,7 @@ for o in out:
         def snap(x):
             return x if x in names else next((y[0] for y in s0[idx[x]+1:] if y[0] in names),x)
         op=[[snap(r[0]),snap(r[1]),r[2]] for r in op]
-        o['h'][0]=[['区間','営業km','開業日']]+[[f'{r[0]}～{r[1]}',str(round(abs(s0[idx[r[1]]][1]-s0[idx[r[0]]][1]),1)),r[2]] for r in op if r[0]!=r[1] and r[0] in names and r[1] in names]
+        o['h'][0]=[['区間','営業km','開業日']]+[[f'{r[0]}～{r[1]}',str(dround(abs(s0[idx[r[1]]][1]-s0[idx[r[0]]][1]))),r[2]] for r in op if r[0]!=r[1] and r[0] in names and r[1] in names]
     nm2={x[0] for x in o['s']}
     sv=[r for r in H.get('service_end') or [] if r[0] in nm2 and r[1] in nm2]
     if sv:o['svc']=sv

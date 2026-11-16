@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 # 감사 지적이 고쳐졌는지 DB에서 다시 본다
-import sqlite3,json,sys,collections
+import sqlite3,json
 d=sqlite3.connect('build/master.sqlite');n=sqlite3.connect('build/names.sqlite')
 d.row_factory=sqlite3.Row
 nm={}

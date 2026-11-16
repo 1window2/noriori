@@ -1,0 +1,210 @@
+{
+ "설명": "DB 감사 2026-11-06(docs/research/db-audit-2026-11-06.md)의 고침 목록. 확신하는 것만 넣었고 의심 항목은 보고서 4절에 있음. fix가 파일 값이면 그 파일의 기존 형식을 따름. 대상 판 2026-11-06.1 (build/master.sqlite md5 f451365e).",
+ "fixes": [
+  {
+   "id": "DBA-001",
+   "severity": "오류",
+   "problem": "筑豊電気鉄道 西黒崎(n_nishi_kurosaki)가 현행 정차역. 실제로는 2021-10-01 휴지, 2026-07-31 폐지",
+   "evidence": "위키 캐시 西黒崎駅 연혁 「2021年（令和3年）10月1日：…営業を休止」「2026年（令和8年）7月31日：廃止」; station_database station.csv 9990902 closed=1 closed_date 2026-07-31; DB route_stop r_chikuho_electric_railroad seq1 1992-10-25~ongoing",
+   "fix": {"file": "data/overrides/stop_dates.json", "key": "r_chikuho_electric_railroad|n_nishi_kurosaki", "value": ["1992-10-25", "2021-10-01"]},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-002",
+   "severity": "오류",
+   "problem": "根室本線 金山(n_kanayama_nemuro_main, 2024-04-01 폐지) 좌표가 보간값으로 실제 역에서 6.2km",
+   "evidence": "DB node_position 43.185891,142.452501 interpolated/approx; station_database station.csv 1110614 「金山(北海道)」 43.136115,142.416201 closed_date 2024-04-01. 인접 edge e_000282·e_000283 선형 끝에서 3.3~5.6km",
+   "fix": {"file": "data/overrides/node_fix.json", "key": "n_kanayama_nemuro_main", "value": {"lat": 43.136115, "lon": 142.416201, "quality": "precise", "source": "station_database"}},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-003",
+   "severity": "오류",
+   "problem": "根室本線 1966년 폐지 옛 선로 두 구간(落合–狩勝–新内–新得, 金山–鹿越–東鹿越) 5 edge의 last_service가 2016-08-30 (valid_to 1966-09-30/29보다 뒤)",
+   "evidence": "data/source/events/jr.yaml 275·279행 \"last_service\": \"2016-08-30\"; 원인 data/overrides/hand_tables.json 根室本線 [東鹿越, 新得, 2016-08-30](2016 태풍 불통)이 같은 노선 이름의 옛 선로 계통 close에도 붙음",
+   "fix": "generator change: tools/gen_source.py 990~1000행 close 사건의 last_service — hand 표(東鹿越–新得) 적용을 그 표의 두 역 사이 본선 구간으로 한정하고 owned 옛 선로 계통(r_nemuro_main_line_ochiai_shintoku, r_nemuro_main_line_kanayama_nemuro_main_higashi_shikagoe)에는 붙이지 않음. 결과 두 close 사건의 last_service 없음",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-004",
+   "severity": "오류",
+   "problem": "会津線 옛 선로 芦ノ牧温泉–舟子–桑原–湯野上温泉(1932-12-22~1980-12-01) 3 edge(e_010574~576)가 会津鉄道(l_aizu_line_aizu, o_aizu_railway) 귀속. 실제 国鉄 会津線",
+   "evidence": "data/source/events/private.yaml 2087행 open operator o_aizu_railway line l_aizu_line_aizu 1932-12-22; data/overrides/n05_fix.json 「日本国有鉄道 会津線 芦ノ牧温泉–湯野上温泉 旧線」 db_line_id l_aizu_line; 会津鉄道 이관일 1987-07-16. join 항목 51개 중 db_line_id와 컴파일 결과가 다른 것은 이것 하나",
+   "fix": "generator change: n05_fix join 항목을 적용하는 곳(tools/gen_n05.py → tools/gen_source.py)이 title(会津鉄道会津線)이나 노선 이름이 아니라 db_line_id로 노선·사업자를 정함. 결과 r_aizu_line_aizu_ashinomaki_onsen_yunokami_onsen은 l_aizu_line의 계통(id는 r_aizu_line_ashinomaki_onsen_yunokami_onsen 등), open operator o_japanese_national_railways",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-005",
+   "severity": "오류",
+   "problem": "小田急箱根 鋼索線이 1921~ 계속 영업. 1944-02-11~1950-06-30 운행 없음 (1950년 첫 반년이 기록 가능으로 나옴)",
+   "evidence": "위키 小田急箱根鋼索線 revid 110163011 「1944年2月10日限りで運行を休止」「運行を再開したのは1950年7月1日から」; DB edge_life e_009009~013 1921-12-01~ongoing open",
+   "fix": {"file": "data/overrides/events_fix.json", "key": "add (2행)", "value": [
+     {"why": "箱根登山 鋼索線 전시 휴지 (위키 小田急箱根鋼索線 110163011)", "add": {"date": "1944-02-11", "type": "suspend", "line": "l_hakone_tozan_cable_car", "edges": ["n_gora..n_sounzan"], "source": "wikipedia"}},
+     {"why": "위와 같은 칸의 재개", "add": {"date": "1950-07-01", "type": "resume", "line": "l_hakone_tozan_cable_car", "edges": ["n_gora..n_sounzan"], "source": "wikipedia"}}]},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-006",
+   "severity": "오류",
+   "problem": "筑波山鋼索鉄道線이 1925~ 계속 영업. 1944-02-11 폐지, 1954-11-03 재개",
+   "evidence": "위키 筑波観光鉄道筑波山鋼索鉄道線 revid 110897602 「不要不急線として廃止」「11月3日 営業再開」(1954); DB e_010897 1925-10-12~ongoing open",
+   "fix": {"file": "data/overrides/events_fix.json", "key": "add (2행)", "value": [
+     {"why": "筑波山ケーブル 전시 폐지~재개 (위키 110897602). 京阪 鋼索線·妙見の森과 같이 운휴로 둠", "add": {"date": "1944-02-11", "type": "suspend", "line": "l_mount_tsukuba_cable_car", "edges": ["n_miyawaki..n_tsukubasancho"], "source": "wikipedia"}},
+     {"why": "위와 같은 칸의 재개", "add": {"date": "1954-11-03", "type": "resume", "line": "l_mount_tsukuba_cable_car", "edges": ["n_miyawaki..n_tsukubasancho"], "source": "wikipedia"}}]},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-007",
+   "severity": "오류",
+   "problem": "摩耶ケーブル線이 1925~ 계속 영업. 1944-02-11 휴지, 1955-05-07 재개",
+   "evidence": "위키 こうべ未来都市機構摩耶ケーブル線 revid 109834079 「高尾 - 摩耶間が休止」「1955年…5月7日 - 高尾駅 - 摩耶駅間が運行再開」; DB e_010453 1925-01-06~ongoing open",
+   "fix": {"file": "data/overrides/events_fix.json", "key": "add (2행)", "value": [
+     {"why": "摩耶ケーブル 전시 휴지 (위키 109834079)", "add": {"date": "1944-02-11", "type": "suspend", "line": "l_maya_cable_line", "edges": ["n_maya_cable..n_nijino"], "source": "wikipedia"}},
+     {"why": "위와 같은 칸의 재개", "add": {"date": "1955-05-07", "type": "resume", "line": "l_maya_cable_line", "edges": ["n_maya_cable..n_nijino"], "source": "wikipedia"}}]},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-008",
+   "severity": "오류",
+   "problem": "八栗ケーブル이 1931~ 계속 영업. 1944-02-11 휴지, 1960-12-25 폐지, 1964-12-28 재개",
+   "evidence": "위키 四国ケーブル八栗ケーブル revid 106894877 「1944年…2月11日…休止」「1960年…12月25日…廃止」 인포박스 「再開 = 1964年12月28日」; DB e_010902 1931-02-15~ongoing open",
+   "fix": {"file": "data/overrides/events_fix.json", "key": "add (2행)", "value": [
+     {"why": "八栗ケーブル 전시 휴지 (위키 106894877). 1960 폐지~1964 재개는 기록 범위상 운휴와 같아 京阪 鋼索線 방식으로 둠. 폐지·신규 개업으로 나눌지는 §2.9 부활 규칙으로 판단", "add": {"date": "1944-02-11", "type": "suspend", "line": "l_yakuri_cable", "edges": ["n_yakuri_tozan_guchi..n_yakuri_sanjo"], "source": "wikipedia"}},
+     {"why": "위와 같은 칸의 재개", "add": {"date": "1964-12-28", "type": "resume", "line": "l_yakuri_cable", "edges": ["n_yakuri_tozan_guchi..n_yakuri_sanjo"], "source": "wikipedia"}}]},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-009",
+   "severity": "오류",
+   "problem": "大山鋼索線이 1931~ 계속 영업. 1944-02-05 폐지·철거, 1965-07-11 大山観光電鉄이 재개",
+   "evidence": "위키 大山観光電鉄大山鋼索線 revid 110078955 「1944年…2月5日：不要不急線として追分 - 下社間を廃止」「1965年…7月11日：大山観光電鉄 追分 - 下社間 0.8 km が開業」; DB e_010447·e_010448 1931-08-01~ongoing open",
+   "fix": {"file": "data/overrides/events_fix.json", "key": "add (2행)", "value": [
+     {"why": "大山ケーブル 전시 폐지~재개 (위키 110078955)", "add": {"date": "1944-02-05", "type": "suspend", "line": "l_oyama_cable_line", "edges": ["n_oyama_cable..n_afurijinja"], "source": "wikipedia"}},
+     {"why": "위와 같은 칸의 재개", "add": {"date": "1965-07-11", "type": "resume", "line": "l_oyama_cable_line", "edges": ["n_oyama_cable..n_afurijinja"], "source": "wikipedia"}}]},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-010",
+   "severity": "오류",
+   "problem": "노드 도도부현이 좌표와 다름 33개 (伊香保線·前橋線 16: 43→10, 東武 高崎線 8: 38→10, 草軽電気鉄道線 6: 20→10, 神岡鉄道線 2: 23→21, 米坂線 玉川口 1: 15→6). edge_pref도 따라 틀림(熊本 12.3km, 愛媛 2.4km 등 36행)",
+   "evidence": "node_position 좌표를 data/base/pref.geojson(N03 단순화)에 넣은 결과와 node.pref 비교, 적힌 현 경계까지 1.1~795km. 예 n_ikaho 36.49,138.92 pref 43; n_otemachi(東武 高崎線) pref 38; n_do 神岡 pref 23",
+   "fix": {"file": "generator change: 노드 pref를 정하는 곳(tools/gen_source.py의 nodes pref=(sd or {}).get('prefecture'), N05 노드는 tools/gen_n05.py) — 이름으로 짝지은 station_database 행이 다른 현이면 쓰지 않고 좌표를 N03(pref.geojson)에 넣어 정함", "key": "node.pref", "value": {"10": ["n_maebashi_ekimae", "n_shokokaigishomae_ikaho", "n_kawaramachi_ikaho", "n_motojuku", "n_urajuku", "n_hachimanura", "n_irisawa", "n_junizakaue", "n_okage", "n_oriharashita", "n_ropponmatsu_ikaho", "n_ohinataryoyoshomae", "n_hanareyama", "n_mizusawa_ikaho", "n_miharashishita", "n_ikaho", "n_honmachi_2_chome", "n_tamachi_3_chome", "n_sumiyoshicho_takasaki_line_tobu", "n_otemachi", "n_shinmachikobanmae", "n_honmachi_2_chome_takasaki_line_tobu", "n_aioicho_takasaki_line_tobu", "n_honmachi_1_chome_takasaki_line_tobu", "n_agatsuma", "n_kita_karuizawa", "n_yuzawa_kusakaru", "n_kuridaira", "n_kumanotaira", "n_nidoage"], "21": ["n_do", "n_sugiyama_mitsui_mining_and_smelting"], "6": ["n_tamagawaguchi"]}},
+   "confidence": "high (玉川口은 경계 1.1km라 medium)"
+  },
+  {
+   "id": "DBA-011",
+   "severity": "오류",
+   "problem": "같은 회사의 같은 역이 노드 둘: 国鉄 三国線 金津(n_kanazu, g_kanazu)과 北陸本線 芦原温泉(n_awaraonsen, g_awaraonsen, 1972년 金津에서 개칭), 3m. 방문 역이 둘로 세어지고 n_awaraonsen에 옛 이름 金津이 없음",
+   "evidence": "node_position 36.214533,136.235036 / 36.214542,136.235069; n_kanazu는 r_mikuni_line seq0 1911-12-15~1972-03-01만; DESIGN §2.8 B 「같은 사업자의 같은 역은 … 한 node」. 京福 金津(n_awaraonsen_eiheiji)은 이미 g_awaraonsen",
+   "fix": "generator change: 三国線의 시작 노드를 n_awaraonsen으로 (gen_source.py 이름 대응표 RENAME/SAME_NODE에 三国線 金津 = 北陸本線 芦原温泉), n_awaraonsen에 ja 옛 이름 「金津」 valid_to 1972-03-01. n_kanazu는 시드 동결 전이라 사라져도 됨",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-012",
+   "severity": "오류",
+   "problem": "伊予鉄道 森松線 伊予立花(n_iyotachibana, 1896~1965)과 横河原線 いよ立花(n_iyo_tachibana, 옛 이름 伊予立花 1927~1981)이 노드 둘, 43m, 다른 group",
+   "evidence": "names.sqlite n_iyo_tachibana 옛 이름 「伊予立花」 1927-03-01~1981-XX-XX; 森松線은 伊予立花에서 横河原線과 갈라짐(森松線 계통 seq0); DESIGN §2.8 B",
+   "fix": "generator change: 森松線 시작 노드를 n_iyo_tachibana로 합침 (이름이 시기에 따라 달라 이름 키로 못 합친 것. 옛 이름 표를 짝짓기에 씀)",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-013",
+   "severity": "오류",
+   "problem": "같은 정류장이 노드 둘 (같은 사업자, 0~23m, 같은 기간 정차): 西鉄 博多築港前, 千鳥橋 (循環線 vs 博多築港前–千鳥橋 계통), 豊橋鉄道 新川 (東田本線 vs 柳生橋支線)",
+   "evidence": "n_hakatachikkomae ↔ n_hakatachikkomae_loop_line_hakatachikkomae_chidoribashi 0m 1911~1979 겹침; n_chidoribashi_kaizuka ↔ n_chidoribashi_loop_line_hakatachikkomae_chidoribashi 0m; n_shinkawa_toyohashi ↔ n_shinkawa_yagyubashi_branch 23m 1953~1976 겹침; 모두 같은 group",
+   "fix": "generator change: N05 노면전차 새 노선을 넣을 때(tools/gen_n05.py) 같은 사업자·같은 이름·50m 안의 기존 노드를 재사용 (DESIGN §4.4 「같은 회사의 지금 노선과 만나는 정류장은 같은 역」을 폐선끼리도 적용)",
+   "confidence": "medium"
+  },
+  {
+   "id": "DBA-014",
+   "severity": "오류",
+   "problem": "옛 선로 계통의 옛 노드 11개에 moved.json이 없음 (node_move 없음, 좌표가 새 노드와 같음)",
+   "evidence": "같은 회사·같은 이름·같은 group·0m(陸中大石 4m)·정차 기간이 맞닿고 겹치지 않음, 옛 노드는 옛 경로 계통에만 있음. DESIGN §2.2 「km가 바뀌면 … moved.json으로 이전일에서 기간을 가르며」. 陸中大石은 옛 선형(e_001679·680) 끝에서 1.57km",
+   "fix": {"file": "data/overrides/moved.json", "key": "append", "value": [
+     {"old": "n_kami_nopporo_chitose", "new": "n_kami_nopporo", "date": "1973-09-09", "note": "千歳線 이설"},
+     {"old": "n_mitaki_kabe", "new": "n_mitaki", "date": "1962-10-01", "note": "可部線 이설"},
+     {"old": "n_niigata_old", "new": "n_niigata", "date": "1958-04-29", "note": "新潟駅 이전"},
+     {"old": "n_takedao_fukuchiyama", "new": "n_takedao", "date": "1986-08-01", "note": "福知山線 生瀬–道場 이설"},
+     {"old": "n_tosa_kitagawa_dosan", "new": "n_tosa_kitagawa", "date": "1986-03-03", "note": "土讃線 이설"},
+     {"old": "n_utazu_yosan", "new": "n_utazu", "date": "1987-10-02", "note": "予讃線 坂出–丸亀 이설"},
+     {"old": "n_mine_shimizushinai_line_nishikubo_sodeshi_old_route", "new": "n_mine_shimizushinai", "date": "1951-07-21", "note": "静岡鉄道 清水市内線 이설"},
+     {"old": "n_suzukijima_shimizushinai_line_nishikubo_sodeshi_old_route", "new": "n_suzukijima", "date": "1951-07-21", "note": "같은 이설"},
+     {"old": "n_nakasomuta_ishiki_line_shinshoin_ishiki_old_route", "new": "n_nakasomuta", "date": "1952-08-10", "note": "鹿児島市電 伊敷線 이설"},
+     {"old": "n_somuta_ishiki_line_shinshoin_ishiki_old_route", "new": "n_somuta", "date": "1952-08-10", "note": "같은 이설"},
+     {"old": "n_rikuchuoishi", "new": "n_yudakinshuko", "date": "1962-12-01", "note": "北上線 湯田ダム 이설. ゆだ錦秋湖 본선 정차도 이날부터"}]},
+   "confidence": "high (구조). 옛 좌표는 별도로 찾아야 함 (사용자 결정 2026-11-05)"
+  },
+  {
+   "id": "DBA-015",
+   "severity": "오류",
+   "problem": "都電 一之江線 瑞江 정류장(1925~1952)이 都営新宿線 瑞江역(1986~) 노드 n_mizue를 씀. 두 자리가 1.4km 떨어진 다른 정류장",
+   "evidence": "n_mizue 좌표 = station_database 9930419(지하철역); 一之江線 edge e_012755·e_012756 N05 선형 끝에서 1.46·1.44km; 정차 기간 1925-12-31~1952-05-19와 1986-09-14~ 은 겹치지 않음",
+   "fix": "generator change: tools/gen_n05.py가 기존 노드를 재사용할 때 거리 조건(예 300m)을 둠. 一之江線 瑞江는 새 노드(N05 점 좌표, 같은 group g_mizue는 이름 규칙대로)로",
+   "confidence": "medium"
+  },
+  {
+   "id": "DBA-016",
+   "severity": "오류",
+   "problem": "狩勝信号場이 1951-04-01~1966-09-30 仮乗降場(여객 취급)인데 숨은 신호장. 이름이 없어 ID가 n_, group이 g_",
+   "evidence": "위키 根室本線 revid 110395326 연혁 「狩勝信号場、西庶路信号場が仮乗降場に変更され」(1951-04-01); n05_fix.json 「日本国有鉄道 根室本線 落合–新得 旧線（狩勝峠）」 note 「仮乗降場으로 여객 취급해 넣음」; DB route_stop r_nemuro_main_line_ochiai_shintoku seq1 n_ is_stop 0 1951-04-01~1966-09-30; 같은 날 바뀐 西庶路는 공개 역",
+   "fix": "generator change: 이 정차를 is_stop 1로 (n05_fix stations의 「狩勝信号場」을 정차역으로), 노드 ID n_karikachi (id_map), ja 「狩勝信号場」 kana 「かりかちしんごうじょう」, kind는 마지막 종류라 signal 유지 가능(§2.2 역↔신호장 전환). group g_karikachi",
+   "confidence": "medium"
+  },
+  {
+   "id": "DBA-017",
+   "severity": "오류",
+   "problem": "前橋線 e_012396(前橋駅前–商工会議所前 0.4km)·e_012397(商工会議所前–曲輪町 0.7km)의 N05 선형이 15.28km·14.21km",
+   "evidence": "edge_shape polyline 길이(haversine 합) vs edge_km; 두 끝은 역 300m 안이라 check_geometry가 못 잡음",
+   "fix": "generator change: tools/gen_geometry.py N05 선택에 길이/영업km 비율 조건(예 0.5~2.0)을 더하고 두 edge는 다시 찾거나 선형 없음으로(표식). 당장은 data/overrides/geometry_exceptions.json·closed_geometry 쪽에서 두 edge의 N05 선형을 빼면 됨",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-018",
+   "severity": "오류",
+   "problem": "공개 ID에 이름 아닌 빈 꼬리: n_futaba_, n_heiwa_, n_kuriyama_, n_nopporo_, n_shikanotani_, n_suehiro_ (夕張鉄道), g_futaba_, g_heiwa_, g_suehiro_",
+   "evidence": "ID 정규식 ^[a-z]+_[a-z0-9_]*[a-z0-9]$ 위반; 같은 이름 JR 역 n_futaba 등이 있어 회사 약칭이 붙어야 하는데 빈 문자열. ARCHITECTURE §4.2 「_b 같은 이름 아닌 꼬리 금지」. 시드 동결 전",
+   "fix": {"file": "data/imports/id_map.json (공개하지 않음, 사람이 고침) 또는 generator change: tools/new_ids.py short()가 빈 문자열을 돌려주면 멈춤", "key": "ids", "value": {"n_futaba_": "n_futaba_yubari", "n_heiwa_": "n_heiwa_yubari", "n_kuriyama_": "n_kuriyama_yubari", "n_nopporo_": "n_nopporo_yubari", "n_shikanotani_": "n_shikanotani_yubari", "n_suehiro_": "n_suehiro_yubari", "g_futaba_": "g_futaba_yubari", "g_heiwa_": "g_heiwa_yubari", "g_suehiro_": "g_suehiro_yubari"}},
+   "confidence": "high (문제) / medium (새 이름: o_yubari_railway의 약칭 yubari 가정)"
+  },
+  {
+   "id": "DBA-019",
+   "severity": "오류",
+   "problem": "역 영어 이름 206개가 §9.1 「ん은 b, p, m 앞에서 m」을 따르지 않음 (source=rule). 노선 이름은 따름",
+   "evidence": "names.sqlite en source=rule, 같은 노드 ja kana에 ん+ば·ぱ·ま행, en에 n+b/p/m: 236개 중 206 (예 n_banbacho Banbacho/ばんばちょう, n_buzenmasuda Buzenmasuda, n_gionbashi Gionbashi). tools/en_rules.py 52행은 규칙을 구현(노선 l_kammachi_line Kammachi Line)",
+   "fix": "generator change: tools/gen_source.py의 역 영어 이름 규칙 변환을 tools/en_rules.py의 로마자 함수로 바꿈 (source=wikidata·공식 표기는 그대로)",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-020",
+   "severity": "오류",
+   "problem": "영어 역명 앞 공백 5개: n_1_chome ' 1-chome', n_2_chome, n_4_chome, n_5_chome, n_6_chome (旭川電気軌道 東旭川線 一丁目~六丁目)",
+   "evidence": "names.sqlite en text가 공백으로 시작; tools/en_rules.py 106행 f\"{place(...)} {number(...)}-chome\"에서 지명 부분이 빔",
+   "fix": "generator change: tools/en_rules.py chome 규칙에서 지명이 비면 공백 없이 '1-chome'. 결과 '1-chome','2-chome','4-chome','5-chome','6-chome'",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-021",
+   "severity": "오류",
+   "problem": "읽기(kana)에 괄호 주석이 섞임 30개 (역 13, 노선 17)",
+   "evidence": "names.sqlite ja kana에 （…）/(…): n_narita_airport_terminal_1 'なりたくうこう（なりただいいちたーみなる）', n_airport_terminal_2(_keisei), n_narita_airport_terminal_1_keisei, n_kintetsu_yokkaichi, n_nishitetsu_fukuoka, n_shinden_kagoshima_city, n_toyota_mobility_toyama_g_square_gofuku_mae, n_hasumachi, n_hiroden_nishi_hiroshima, n_hiroshimako, n_hatsukaichishiyakushomae, n_keisan_kagaku_center; 노선 l_koumi_line 'こうみせん(やつがたけこうげんせん)', l_hanawa_line, l_aterazawa_line, l_rikuu_east_line, l_rikuu_west_line, l_sakurajima_line, l_fukuchiyama_line, l_etsumi_hoku_line, l_sanyo_main_line, l_honshi_bisan_line, l_sanin_main_line, l_kashii_line, l_sasaguri_line, l_hisatsu_line, l_kyudai_main_line, l_hohi_main_line, l_kitto_line",
+   "fix": "generator change: kana를 쓰는 곳(gen_source.py 노드 kana·노선 kana)에서 （…）·(…)를 지움. 역명 자체에 괄호가 있는 西鉄福岡（天神）·神田（交通局前）·蓮町（馬場記念公園前）·トヨタモビリティ…（五福末広町）·廿日市市役所前(平良)은 괄호 안 읽기를 남기되 괄호 글자만 지움(にしてつふくおかてんじん 등)",
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-022",
+   "severity": "오류",
+   "problem": "읽기가 다른 역이 한 나무위키 제목을 나눠 씀: 大川線 江島 n_eshima(えしま)='에지마', 射水線 打出 n_uchiide(うちいで)='우치데'",
+   "evidence": "names.sqlite ko source=namuwiki; 같은 제목을 쓰는 n_ejima(えじま, 飯田線), n_uchide(うちで, 阪神)와 읽기가 다름. DESIGN §2.6 「읽기가 다른 키의 나무위키 제목 공유 금지」, §9.2 「규칙으로 돌림」",
+   "fix": {"file": "data/overrides/names_ko.json", "key": ["n_eshima", "n_uchiide"], "value": {"n_eshima": "에시마", "n_uchiide": "우치이데"}},
+   "confidence": "high"
+  },
+  {
+   "id": "DBA-023",
+   "severity": "오류",
+   "problem": "r_chihoku_line seq6 n_okamedo(岡女堂) 통과 행의 기간이 1995-09-04~1989-06-04 (시작 > 끝)",
+   "evidence": "route_stop valid_from_lo 1995-09-04 > valid_to_hi 1989-06-04; 国鉄·JR 池北線 계통은 1989-06-04에 끝나고 岡女堂은 ちほく高原鉄道 시대 1995 개업",
+   "fix": "generator change: compile.py가 open_stop 날짜가 계통 노선 멤버십 끝보다 뒤인 행은 그 계통에 넣지 않음(또는 컴파일 오류). 이 행은 지워짐",
+   "confidence": "high"
+  }
+ ]
+}

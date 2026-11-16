@@ -1,0 +1,4922 @@
+[
+ {
+  "line_id": "l_aboshi_line",
+  "ja": "山陽電気鉄道網干線",
+  "ko": "산요 전기철도 아보시선",
+  "en_now": "Aboshi Line",
+  "en_new": "Sanyo Electric Railway Aboshi Line",
+  "why": "일본어 표시 이름의 머리 山陽電気鉄道 → Sanyo Electric Railway"
+ },
+ {
+  "line_id": "l_aizu_kinugawa_line",
+  "ja": "野岩鉄道会津鬼怒川線",
+  "ko": "야간 철도 아이즈키누가와선",
+  "en_now": "Aizu Kinugawa Line",
+  "en_new": "Yagan Railway Aizu Kinugawa Line",
+  "why": "일본어 표시 이름의 머리 野岩鉄道 → Yagan Railway"
+ },
+ {
+  "line_id": "l_aizu_line_aizu",
+  "ja": "会津鉄道会津線",
+  "ko": "아이즈 철도 아이즈선",
+  "en_now": "Aizu Line",
+  "en_new": "Aizu Railway Aizu Line",
+  "why": "일본어 표시 이름의 머리 会津鉄道 → Aizu Railway"
+ },
+ {
+  "line_id": "l_akasako_branch_line",
+  "ja": "長崎電気軌道赤迫支線",
+  "ko": "나가사키 전기궤도 아카사코 지선",
+  "en_now": "Akasako Branch Line",
+  "en_new": "Nagasaki Electric Tramway Akasako Branch Line",
+  "why": "일본어 표시 이름의 머리 長崎電気軌道 → Nagasaki Electric Tramway"
+ },
+ {
+  "line_id": "l_akechi_line_akechi",
+  "ja": "明知鉄道明知線",
+  "ko": "아케치 철도 아케치선",
+  "en_now": "Akechi Line",
+  "en_new": "Akechi Railway Akechi Line",
+  "why": "일본어 표시 이름의 머리 明知鉄道 → Akechi Railway"
+ },
+ {
+  "line_id": "l_aki_line",
+  "ja": "土佐電気鉄道安芸線",
+  "ko": "토사 전기철도 아키선",
+  "en_now": "Aki Line",
+  "en_new": "Tosa Electric Railway Aki Line",
+  "why": "일본어 표시 이름의 머리 土佐電気鉄道 → Tosa Electric Railway"
+ },
+ {
+  "line_id": "l_akiha_line",
+  "ja": "静岡鉄道秋葉線",
+  "ko": "시즈오카 철도 아키하선",
+  "en_now": "Akiha Line",
+  "en_new": "Shizuoka Railway Akiha Line",
+  "why": "일본어 표시 이름의 머리 静岡鉄道 → Shizuoka Railway"
+ },
+ {
+  "line_id": "l_akita_nairiku_line",
+  "ja": "秋田内陸縦貫鉄道秋田内陸線",
+  "ko": "아키타 내륙종관철도 아키타 내륙선",
+  "en_now": "Akita Nairiku Line",
+  "en_new": "Akita Nairiku Jukan Railway Akita Nairiku Line",
+  "why": "일본어 표시 이름의 머리 秋田内陸縦貫鉄道 → Akita Nairiku Jukan Railway"
+ },
+ {
+  "line_id": "l_akitashinai_line",
+  "ja": "秋田市電秋田市内線",
+  "ko": "아키타 시영 전차 아키타 시내선",
+  "en_now": "Akitashinai Line",
+  "en_new": "Akita City Tram City Line",
+  "why": "市内線 → City Line. 머리 Akita City Tram에 도시 이름이 있어 겹쳐 적지 않음. 일본어 표시 이름의 머리 秋田市電 → Akita City Tram"
+ },
+ {
+  "line_id": "l_akiu_line",
+  "ja": "秋保電気鉄道",
+  "ko": "센난 교통 아키우선",
+  "en_now": "Akiu Line",
+  "en_new": "Akiu Electric Railway",
+  "why": "표시 이름 秋保電気鉄道에 맞춤"
+ },
+ {
+  "line_id": "l_amagasakikaigan_line",
+  "ja": "阪神尼崎海岸線",
+  "ko": "한신 아마가사키카이간선",
+  "en_now": "Amagasakikaigan Line",
+  "en_new": "Hanshin Amagasaki Kaigan Line",
+  "why": "尼崎+海岸을 띄움 (阪神 공식 표기). 일본어 표시 이름의 머리 阪神 → Hanshin"
+ },
+ {
+  "line_id": "l_amagi_line_amagi",
+  "ja": "甘木鉄道甘木線",
+  "ko": "아마기 철도 아마기선",
+  "en_now": "Amagi Line",
+  "en_new": "Amagi Railway Amagi Line",
+  "why": "일본어 표시 이름의 머리 甘木鉄道 → Amagi Railway"
+ },
+ {
+  "line_id": "l_amagi_line_nishi_nippon",
+  "ja": "西鉄甘木線",
+  "ko": "니시테츠 아마기선",
+  "en_now": "Amagi Line",
+  "en_new": "Nishitetsu Amagi Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_ao_line",
+  "ja": "神戸電鉄粟生線",
+  "ko": "고베 전철 아오선",
+  "en_now": "Ao Line",
+  "en_new": "Kobe Electric Railway Ao Line",
+  "why": "일본어 표시 이름의 머리 神戸電鉄 → Kobe Electric Railway"
+ },
+ {
+  "line_id": "l_aoicho_line",
+  "ja": "名古屋市電葵町線",
+  "ko": "나고야 시영 전차 아오이초선",
+  "en_now": "Aoicho Line",
+  "en_new": "Nagoya City Tram Aoicho Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_arakawa_line",
+  "ja": "都電荒川線",
+  "ko": "도덴 아라카와선",
+  "en_now": "Arakawa Line",
+  "en_new": "Toden Arakawa Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_arashiyama_line",
+  "ja": "阪急嵐山線",
+  "ko": "한큐 아라시야마선",
+  "en_now": "Arashiyama Line",
+  "en_new": "Hankyu Arashiyama Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_arashiyama_main_line",
+  "ja": "京福電気鉄道嵐山本線",
+  "ko": "케이후쿠 전기철도 아라시야마 본선",
+  "en_now": "Arashiyama Main Line",
+  "en_new": "Keifuku Electric Railroad Arashiyama Main Line",
+  "why": "일본어 표시 이름의 머리 京福電気鉄道 → Keifuku Electric Railroad"
+ },
+ {
+  "line_id": "l_arima_line",
+  "ja": "神戸電鉄有馬線",
+  "ko": "고베 전철 아리마선",
+  "en_now": "Arima Line",
+  "en_new": "Kobe Electric Railway Arima Line",
+  "why": "일본어 표시 이름의 머리 神戸電鉄 → Kobe Electric Railway"
+ },
+ {
+  "line_id": "l_asa_line",
+  "ja": "土佐くろしお鉄道ごめん・なはり線",
+  "ko": "토사쿠로시오 철도 아사선",
+  "en_now": "Asa Line",
+  "en_new": "Tosa Kuroshio Railway Gomen-Nahari Line",
+  "why": "표시 이름 ごめん・なはり線(공식명 阿佐線)에 맞춤. 일본어 표시 이름의 머리 土佐くろしお鉄道 → Tosa Kuroshio Railway"
+ },
+ {
+  "line_id": "l_asakusa_line",
+  "ja": "都営地下鉄浅草線",
+  "ko": "도에이 아사쿠사선",
+  "en_now": "Asakusa Line",
+  "en_new": "Toei Asakusa Line",
+  "why": "일본어 표시 이름의 머리 都営地下鉄 → Toei"
+ },
+ {
+  "line_id": "l_asanogawa_line",
+  "ja": "北陸鉄道浅野川線",
+  "ko": "호쿠리쿠 철도 아사노가와선",
+  "en_now": "Asanogawa Line",
+  "en_new": "Hokuriku Railroad Asanogawa Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_asato_line",
+  "ja": "阿佐海岸鉄道阿佐東線",
+  "ko": "아사 해안철도 아사토선",
+  "en_now": "Asato Line",
+  "en_new": "Asa Seaside Railway Asato Line",
+  "why": "일본어 표시 이름의 머리 阿佐海岸鉄道 → Asa Seaside Railway"
+ },
+ {
+  "line_id": "l_atsumi_line",
+  "ja": "豊橋鉄道渥美線",
+  "ko": "토요하시 철도 아츠미선",
+  "en_now": "Atsumi Line",
+  "en_new": "Toyohashi Railroad Atsumi Line",
+  "why": "일본어 표시 이름의 머리 豊橋鉄道 → Toyohashi Railroad"
+ },
+ {
+  "line_id": "l_atsuta_line",
+  "ja": "名古屋市電熱田線",
+  "ko": "나고야 시영 전차 아츠타선",
+  "en_now": "Atsuta Line",
+  "en_new": "Nagoya City Tram Atsuta Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_awaji_kotsu_line",
+  "ja": "淡路交通鉄道線",
+  "ko": "아와지 교통선",
+  "en_now": "Awaji Kotsu Line",
+  "en_new": "Awaji Kotsu Railway Line",
+  "why": "표시 이름 淡路交通鉄道線에 맞춤"
+ },
+ {
+  "line_id": "l_awajicho_line",
+  "ja": "都電淡路町線",
+  "ko": "도덴 아와지초선",
+  "en_now": "Awajicho Line",
+  "en_new": "Toden Awajicho Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_awazu_line",
+  "ja": "北陸鉄道粟津線",
+  "ko": "호쿠리쿠 철도 아와즈선",
+  "en_now": "Awazu Line",
+  "en_new": "Hokuriku Railroad Awazu Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_azumada_main_line",
+  "ja": "豊橋鉄道東田本線",
+  "ko": "토요하시 철도 아즈마다 본선",
+  "en_now": "Azumada Main Line",
+  "en_new": "Toyohashi Railroad Azumada Main Line",
+  "why": "일본어 표시 이름의 머리 豊橋鉄道 → Toyohashi Railroad"
+ },
+ {
+  "line_id": "l_bancho_line",
+  "ja": "岡山電気軌道番町線",
+  "ko": "오카야마 전기궤도 반초선",
+  "en_now": "Bancho Line",
+  "en_new": "Okayama Electric Tramway Bancho Line",
+  "why": "일본어 표시 이름의 머리 岡山電気軌道 → Okayama Electric Tramway"
+ },
+ {
+  "line_id": "l_bancho_line_toei",
+  "ja": "都電番町線",
+  "ko": "도덴 반초선",
+  "en_now": "Bancho Line",
+  "en_new": "Toden Bancho Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_bansei_line",
+  "ja": "南薩鉄道万世線",
+  "ko": "난사츠 철도 반세이선",
+  "en_now": "Bansei Line",
+  "en_new": "Nansatsu Railway Bansei Line",
+  "why": "일본어 표시 이름의 머리 南薩鉄道 → Nansatsu Railway"
+ },
+ {
+  "line_id": "l_bessho_line",
+  "ja": "上田電鉄別所線",
+  "ko": "우에다 전철 벳쇼선",
+  "en_now": "Bessho Line",
+  "en_new": "Ueda Electric Railway Bessho Line",
+  "why": "일본어 표시 이름의 머리 上田電鉄 → Ueda Electric Railway"
+ },
+ {
+  "line_id": "l_betsudai_line",
+  "ja": "大分交通別大線",
+  "ko": "오이타 교통 베츠다이선",
+  "en_now": "Betsudai Line",
+  "en_new": "Oita Kotsu Betsudai Line",
+  "why": "일본어 표시 이름의 머리 大分交通 → Oita Kotsu"
+ },
+ {
+  "line_id": "l_betsudai_line_beppu_ekimae_branch",
+  "ja": "大分交通別大線 別府駅前支線",
+  "ko": "오이타 교통 베츠다이선 벳푸에키마에 지선",
+  "en_now": "Betsudai Line Beppu-Ekimae Branch",
+  "en_new": "Oita Kotsu Betsudai Line Beppu-Ekimae Branch",
+  "why": "일본어 표시 이름의 머리 大分交通 → Oita Kotsu"
+ },
+ {
+  "line_id": "l_bisai_line",
+  "ja": "名鉄尾西線",
+  "ko": "메이테츠 비사이선",
+  "en_now": "Bisai Line",
+  "en_new": "Meitetsu Bisai Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_blue_line_line_1",
+  "ja": "横浜市営地下鉄1号線",
+  "ko": "요코하마 시영 지하철 1호선",
+  "en_now": "Blue Line (Line 1)",
+  "en_new": "Yokohama Municipal Subway Blue Line (Line 1)",
+  "why": "일본어 표시 이름의 머리 横浜市営地下鉄 → Yokohama Municipal Subway"
+ },
+ {
+  "line_id": "l_blue_line_line_3",
+  "ja": "横浜市営地下鉄3号線",
+  "ko": "요코하마 시영 지하철 3호선",
+  "en_now": "Blue Line (Line 3)",
+  "en_new": "Yokohama Municipal Subway Blue Line (Line 3)",
+  "why": "일본어 표시 이름의 머리 横浜市営地下鉄 → Yokohama Municipal Subway"
+ },
+ {
+  "line_id": "l_chiba_line",
+  "ja": "京成千葉線",
+  "ko": "케이세이 치바선",
+  "en_now": "Chiba Line",
+  "en_new": "Keisei Chiba Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_chichibu_main_line",
+  "ja": "秩父鉄道秩父本線",
+  "ko": "치치부 철도 치치부 본선",
+  "en_now": "Chichibu Main Line",
+  "en_new": "Chichibu Railway Chichibu Main Line",
+  "why": "일본어 표시 이름의 머리 秩父鉄道 → Chichibu Railway"
+ },
+ {
+  "line_id": "l_chichibu_railway_connecting_line",
+  "ja": "西武秩父鉄道連絡線",
+  "ko": "세이부 치치부 철도 연락선",
+  "en_now": "Chichibu Railway Connecting Line",
+  "en_new": "Seibu Chichibu Railway Connecting Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_chihara_line",
+  "ja": "京成千原線",
+  "ko": "케이세이 치하라선",
+  "en_now": "Chihara Line",
+  "en_new": "Keisei Chihara Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_chikko_line",
+  "ja": "名鉄築港線",
+  "ko": "메이테츠 칫코선",
+  "en_now": "Chikko Line",
+  "en_new": "Meitetsu Chikko Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_chikko_line_nagoya_city",
+  "ja": "名古屋市電築港線",
+  "ko": "나고야 시영 전차 칫코선",
+  "en_now": "Chikko Line",
+  "en_new": "Nagoya City Tram Chikko Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_chikuhokogyo_railway_line",
+  "ja": "筑豊鉱業鉄道線",
+  "ko": "치쿠호 광업철도선",
+  "en_now": "Chikuhokogyo Railway Line",
+  "en_new": "Chikuho Mining Railway Line",
+  "why": "筑豊+鉱業 띄움, 사업자 영어 이름 Chikuho Mining Railway와 맞춤"
+ },
+ {
+  "line_id": "l_chiran_line",
+  "ja": "鹿児島交通知覧線",
+  "ko": "가고시마 교통 치란선",
+  "en_now": "Chiran Line",
+  "en_new": "Kagoshima Kotsu Chiran Line",
+  "why": "일본어 표시 이름의 머리 鹿児島交通 → Kagoshima Kotsu"
+ },
+ {
+  "line_id": "l_chita_new_line",
+  "ja": "名鉄知多新線",
+  "ko": "메이테츠 치타 신선",
+  "en_now": "Chita New Line",
+  "en_new": "Meitetsu Chita New Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_chiyoda_line",
+  "ja": "東京メトロ千代田線",
+  "ko": "도쿄메트로 치요다선",
+  "en_now": "Chiyoda Line",
+  "en_new": "Tokyo Metro Chiyoda Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_chizu_express_line",
+  "ja": "智頭急行智頭線",
+  "ko": "치즈 급행 치즈선",
+  "en_now": "Chizu Express Line",
+  "en_new": "Chizu Express Chizu Line",
+  "why": "표시 이름 智頭急行智頭線에 맞춤 (공식 영문 Chizu Express Chizu Line). 일본어 표시 이름의 머리 智頭急行 → Chizu Express"
+ },
+ {
+  "line_id": "l_chojamachi_line",
+  "ja": "横浜市電長者町線",
+  "ko": "요코하마 시영 전차 초자마치선",
+  "en_now": "Chojamachi Line",
+  "en_new": "Yokohama City Tram Chojamachi Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_chokai_sanroku_line",
+  "ja": "由利高原鉄道鳥海山ろく線",
+  "ko": "유리 고원철도 초카이산로쿠선",
+  "en_now": "Chokai Sanroku Line",
+  "en_new": "Yuri Kogen Railway Chokai Sanroku Line",
+  "why": "일본어 표시 이름의 머리 由利高原鉄道 → Yuri Kogen Railway"
+ },
+ {
+  "line_id": "l_chuohonsemmusashinokyogijo_line",
+  "ja": "武蔵野競技場線",
+  "ko": "츄오혼센무사시노쿄기조선",
+  "en_now": "Chuohonsemmusashinokyogijo Line",
+  "en_new": "Musashino Kyogijo Line",
+  "why": "LN-N01. 읽기에 섞인 中央本線을 뗌. 武蔵野+競技場을 띄움"
+ },
+ {
+  "line_id": "l_chuoichiba_line",
+  "ja": "横浜市電中央市場線",
+  "ko": "요코하마 시영 전차 츄오이치바선",
+  "en_now": "Chuoichiba Line",
+  "en_new": "Yokohama City Tram Chuo Ichiba Line",
+  "why": "中央+市場을 띄움. 일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_dachi_line",
+  "ja": "東濃鉄道駄知線",
+  "ko": "토노 철도 다치선",
+  "en_now": "Dachi Line",
+  "en_new": "Tono Railway Dachi Line",
+  "why": "일본어 표시 이름의 머리 東濃鉄道 → Tono Railway"
+ },
+ {
+  "line_id": "l_daishi_line",
+  "ja": "京急大師線",
+  "ko": "케이큐 다이시선",
+  "en_now": "Daishi Line",
+  "en_new": "Keikyu Daishi Line",
+  "why": "일본어 표시 이름의 머리 京急 → Keikyu"
+ },
+ {
+  "line_id": "l_daiyuzan_line",
+  "ja": "伊豆箱根鉄道大雄山線",
+  "ko": "이즈하코네 철도 다이유잔선",
+  "en_now": "Daiyuzan Line",
+  "en_new": "Izuhakone Railway Daiyuzan Line",
+  "why": "일본어 표시 이름의 머리 伊豆箱根鉄道 → Izuhakone Railway"
+ },
+ {
+  "line_id": "l_dazaifu_line",
+  "ja": "西鉄太宰府線",
+  "ko": "니시테츠 다자이후선",
+  "en_now": "Dazaifu Line",
+  "en_new": "Nishitetsu Dazaifu Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_den_en_toshi_line",
+  "ja": "東急田園都市線",
+  "ko": "도큐 덴엔토시선",
+  "en_now": "Den-en-toshi Line",
+  "en_new": "Tokyu Den-en-toshi Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_densha_line",
+  "ja": "山梨交通電車線",
+  "ko": "야마나시 교통 전차선",
+  "en_now": "Densha Line",
+  "en_new": "Yamanashi Kotsu Electric Line",
+  "why": "電車線 → Electric Line (Densha는 일반명사). 일본어 표시 이름의 머리 山梨交通 → Yamanashi Kotsu"
+ },
+ {
+  "line_id": "l_densha_line_niigata",
+  "ja": "新潟交通電車線",
+  "ko": "니가타 교통 전차선",
+  "en_now": "Densha Line",
+  "en_new": "Niigata Kotsu Electric Line",
+  "why": "電車線 → Electric Line (Densha는 일반명사). 일본어 표시 이름의 머리 新潟交通 → Niigata Kotsu"
+ },
+ {
+  "line_id": "l_dobashi_line",
+  "ja": "都電土橋線",
+  "ko": "도덴 도바시선",
+  "en_now": "Dobashi Line",
+  "en_new": "Toden Dobashi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_dobutsuen_line",
+  "ja": "京王動物園線",
+  "ko": "케이오 동물원선",
+  "en_now": "Dobutsuen Line",
+  "en_new": "Keio Dobutsuen Line",
+  "why": "일본어 표시 이름의 머리 京王 → Keio"
+ },
+ {
+  "line_id": "l_domyoji_line",
+  "ja": "近鉄道明寺線",
+  "ko": "킨테츠 도묘지선",
+  "en_now": "Domyoji Line",
+  "en_new": "Kintetsu Domyoji Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_dozaka_line",
+  "ja": "都電動坂線",
+  "ko": "도덴 도자카선",
+  "en_now": "Dozaka Line",
+  "en_new": "Toden Dozaka Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_dreamland_line",
+  "ja": "ドリーム開発ドリームランド線",
+  "ko": "드림 개발 드림랜드선",
+  "en_now": "Dreamland Line",
+  "en_new": "Dream Kaihatsu Dreamland Line",
+  "why": "일본어 표시 이름의 머리 ドリーム開発 → Dream Kaihatsu"
+ },
+ {
+  "line_id": "l_eba_line",
+  "ja": "広島電鉄江波線",
+  "ko": "히로시마 전철 에바선",
+  "en_now": "Eba Line",
+  "en_new": "Hiroden Eba Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_edogawa_line",
+  "ja": "都電江戸川線",
+  "ko": "도덴 에도가와선",
+  "en_now": "Edogawa Line",
+  "en_new": "Toden Edogawa Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_eiheiji_line",
+  "ja": "京福電気鉄道永平寺線",
+  "ko": "케이후쿠 전기철도 에이헤이지선",
+  "en_now": "Eiheiji Line",
+  "en_new": "Keifuku Electric Railroad Eiheiji Line",
+  "why": "일본어 표시 이름의 머리 京福電気鉄道 → Keifuku Electric Railroad"
+ },
+ {
+  "line_id": "l_eizan_main_line",
+  "ja": "叡山電鉄叡山本線",
+  "ko": "에이잔 전철 에이잔 본선",
+  "en_now": "Eizan Main Line",
+  "en_new": "Eizan Electric Railway Eizan Main Line",
+  "why": "일본어 표시 이름의 머리 叡山電鉄 → Eizan Electric Railway"
+ },
+ {
+  "line_id": "l_enoshima_line_odakyu",
+  "ja": "小田急江ノ島線",
+  "ko": "오다큐 에노시마선",
+  "en_now": "Enoshima Line",
+  "en_new": "Odakyu Enoshima Line",
+  "why": "일본어 표시 이름의 머리 小田急 → Odakyu"
+ },
+ {
+  "line_id": "l_enoshima_line_shonan_monorail",
+  "ja": "湘南モノレール江の島線",
+  "ko": "쇼난 모노레일 에노시마선",
+  "en_now": "Enoshima Line",
+  "en_new": "Shonan Monorail Enoshima Line",
+  "why": "일본어 표시 이름의 머리 湘南モノレール → Shonan Monorail"
+ },
+ {
+  "line_id": "l_etsumi_nan_line_nagaragawa",
+  "ja": "長良川鉄道越美南線",
+  "ko": "나가라가와 철도 에츠미난선",
+  "en_now": "Etsumi-Nan Line",
+  "en_new": "Nagaragawa Railway Etsumi-Nan Line",
+  "why": "일본어 표시 이름의 머리 長良川鉄道 → Nagaragawa Railway"
+ },
+ {
+  "line_id": "l_first_phase_line",
+  "ja": "鹿児島市電第一期線",
+  "ko": "가고시마 시영 전차 제1기선",
+  "en_now": "First Phase Line",
+  "en_new": "Kagoshima City Tram First Phase Line",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_flower_nagai_line",
+  "ja": "山形鉄道フラワー長井線",
+  "ko": "야마가타 철도 플라워 나가이선",
+  "en_now": "Flower Nagai Line",
+  "en_new": "Yamagata Railway Flower Nagai Line",
+  "why": "일본어 표시 이름의 머리 山形鉄道 → Yamagata Railway"
+ },
+ {
+  "line_id": "l_fudanotsuji_line",
+  "ja": "都電札の辻線",
+  "ko": "도덴 후다노츠지선",
+  "en_now": "Fudanotsuji Line",
+  "en_new": "Toden Fudanotsuji Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_fujikoshi_line",
+  "ja": "富山地方鉄道不二越線",
+  "ko": "도야마 지방철도 후지코시선",
+  "en_now": "Fujikoshi Line",
+  "en_new": "Toyama Chiho Railway Fujikoshi Line",
+  "why": "일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_fujisaki_line",
+  "ja": "熊本電気鉄道藤崎線",
+  "ko": "구마모토 전기철도 후지사키선",
+  "en_now": "Fujisaki Line",
+  "en_new": "Kumamoto Electric Railway Fujisaki Line",
+  "why": "일본어 표시 이름의 머리 熊本電気鉄道 → Kumamoto Electric Railway"
+ },
+ {
+  "line_id": "l_fukubu_line",
+  "ja": "福井鉄道福武線",
+  "ko": "후쿠이 철도 후쿠부선",
+  "en_now": "Fukubu Line",
+  "en_new": "Fukui Railway Fukubu Line",
+  "why": "일본어 표시 이름의 머리 福井鉄道 → Fukui Railway"
+ },
+ {
+  "line_id": "l_fukuoka_line",
+  "ja": "名鉄福岡線",
+  "ko": "메이테츠 후쿠오카선",
+  "en_now": "Fukuoka Line",
+  "en_new": "Meitetsu Fukuoka Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_fukuoka_subway_airport_line",
+  "ja": "福岡市地下鉄空港線",
+  "ko": "후쿠오카시 지하철 공항선",
+  "en_now": "Fukuoka Subway Airport Line",
+  "en_new": "Fukuoka City Subway Airport Line",
+  "why": "머리 Fukuoka City Subway에 맞춤. 일본어 표시 이름의 머리 福岡市地下鉄 → Fukuoka City Subway"
+ },
+ {
+  "line_id": "l_fukushima_line",
+  "ja": "西鉄福島線",
+  "ko": "니시테츠 후쿠시마선",
+  "en_now": "Fukushima Line",
+  "en_new": "Nishitetsu Fukushima Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_fukushimarinkai_railway_line",
+  "ja": "福島臨海鉄道本線",
+  "ko": "후쿠시마 임해철도 본선",
+  "en_now": "Fukushimarinkai Railway Line",
+  "en_new": "Fukushima Rinkai Railway Main Line",
+  "why": "福島+臨海 띄움, 本線 → Main Line"
+ },
+ {
+  "line_id": "l_fukutoshin_line",
+  "ja": "東京メトロ副都心線",
+  "ko": "도쿄메트로 후쿠토신선",
+  "en_now": "Fukutoshin Line",
+  "en_new": "Tokyo Metro Fukutoshin Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_furukawa_line",
+  "ja": "都電古川線",
+  "ko": "도덴 후루카와선",
+  "en_now": "Furukawa Line",
+  "en_new": "Toden Furukawa Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_furusato_ginga_line",
+  "ja": "北海道ちほく高原鉄道ふるさと銀河線",
+  "ko": "홋카이도 치호쿠 고원철도 후루사토 긴가선",
+  "en_now": "Furusato Ginga Line",
+  "en_new": "Hokkaido Chihoku Kogen Railway Furusato Ginga Line",
+  "why": "일본어 표시 이름의 머리 北海道ちほく高原鉄道 → Hokkaido Chihoku Kogen Railway"
+ },
+ {
+  "line_id": "l_fushiki_line",
+  "ja": "加越能鉄道伏木線",
+  "ko": "카에츠노 철도 후시키선",
+  "en_now": "Fushiki Line",
+  "en_new": "Kaetsuno Railway Fushiki Line",
+  "why": "일본어 표시 이름의 머리 加越能鉄道 → Kaetsuno Railway"
+ },
+ {
+  "line_id": "l_gamagori_line",
+  "ja": "名鉄蒲郡線",
+  "ko": "메이테츠 가마고리선",
+  "en_now": "Gamagori Line",
+  "en_new": "Meitetsu Gamagori Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_gifushinai_line",
+  "ja": "名鉄岐阜市内線",
+  "ko": "메이테츠 기후시내선",
+  "en_now": "Gifushinai Line",
+  "en_new": "Meitetsu Gifu City Line",
+  "why": "市内線은 일반명사 → City Line (영어 위키 Gifu City Line). Shinai는 영어 독자에게 뜻이 없음. 일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_gifushinai_line_chusetsu_branch",
+  "ja": "名鉄岐阜市内線 忠節支線",
+  "ko": "메이테츠 기후시내선 츄세츠 지선",
+  "en_now": "Gifushinai Line Chusetsu Branch",
+  "en_new": "Meitetsu Gifu City Line Chusetsu Branch",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_ginza_line",
+  "ja": "東京メトロ銀座線",
+  "ko": "도쿄메트로 긴자선",
+  "en_now": "Ginza Line",
+  "en_new": "Tokyo Metro Ginza Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_gokokuji_line",
+  "ja": "都電護国寺線",
+  "ko": "도덴 고코쿠지선",
+  "en_now": "Gokokuji Line",
+  "en_new": "Toden Gokokuji Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_gomen_line",
+  "ja": "とさでん交通後免線",
+  "ko": "토사덴 교통 고멘선",
+  "en_now": "Gomen Line",
+  "en_new": "Tosaden Kotsu Gomen Line",
+  "why": "일본어 표시 이름의 머리 とさでん交通 → Tosaden Kotsu"
+ },
+ {
+  "line_id": "l_gose_line",
+  "ja": "近鉄御所線",
+  "ko": "킨테츠 고세선",
+  "en_now": "Gose Line",
+  "en_new": "Kintetsu Gose Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_green_line",
+  "ja": "横浜市営地下鉄グリーンライン",
+  "ko": "요코하마 시영 지하철 4호선",
+  "en_now": "Green Line",
+  "en_new": "Yokohama Municipal Subway Green Line",
+  "why": "일본어 표시 이름의 머리 横浜市営地下鉄 → Yokohama Municipal Subway"
+ },
+ {
+  "line_id": "l_guideway_bus_shidami_line",
+  "ja": "名古屋ガイドウェイバスガイドウェイバス志段味線",
+  "ko": "나고야 가이드웨이버스 시다미선",
+  "en_now": "Guideway Bus Shidami Line",
+  "en_new": "Nagoya Guideway Bus Shidami Line",
+  "why": "머리 Nagoya와 이어 Nagoya Guideway Bus. 일본어 표시 이름의 머리 名古屋ガイドウェイバス → Nagoya"
+ },
+ {
+  "line_id": "l_gunchu_line",
+  "ja": "伊予鉄道郡中線",
+  "ko": "이요 철도 군츄선",
+  "en_now": "Gunchu Line",
+  "en_new": "Iyotetsu Gunchu Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_gyoko_line",
+  "ja": "名古屋市電行幸線",
+  "ko": "나고야 시영 전차 교코선",
+  "en_now": "Gyoko Line",
+  "en_new": "Nagoya City Tram Gyoko Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_haborotanko_railway_line",
+  "ja": "羽幌炭礦鉄道線",
+  "ko": "하보로 탄광철도선",
+  "en_now": "Haborotanko Railway Line",
+  "en_new": "Haboro Tanko Railway Line",
+  "why": "羽幌+炭礦 띄움 (사업자 영어 이름과 맞춤)"
+ },
+ {
+  "line_id": "l_hachimammachi_line",
+  "ja": "仙台市電八幡町線",
+  "ko": "센다이 시영 전차 하치만마치선",
+  "en_now": "Hachimammachi Line",
+  "en_new": "Sendai City Tram Hachimammachi Line",
+  "why": "일본어 표시 이름의 머리 仙台市電 → Sendai City Tram"
+ },
+ {
+  "line_id": "l_hachioji_line",
+  "ja": "四日市あすなろう鉄道八王子線",
+  "ko": "욧카이치 아스나로 철도 하치오지선",
+  "en_now": "Hachioji Line",
+  "en_new": "Yokkaichi Asunarou Railway Hachioji Line",
+  "why": "일본어 표시 이름의 머리 四日市あすなろう鉄道 → Yokkaichi Asunarou Railway"
+ },
+ {
+  "line_id": "l_haijima_line",
+  "ja": "西武拝島線",
+  "ko": "세이부 하이지마선",
+  "en_now": "Haijima Line",
+  "en_new": "Seibu Haijima Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_hakodate_tram_main_line",
+  "ja": "函館市電本線",
+  "ko": "하코다테 시영 전차 본선",
+  "en_now": "Hakodate Tram Main Line",
+  "en_new": "Hakodate City Tram Main Line",
+  "why": "머리 Hakodate City Tram에 맞춤. 일본어 표시 이름의 머리 函館市電 → Hakodate City Tram"
+ },
+ {
+  "line_id": "l_hakozaki_line",
+  "ja": "福岡市地下鉄箱崎線",
+  "ko": "후쿠오카시 지하철 하코자키선",
+  "en_now": "Hakozaki Line",
+  "en_new": "Fukuoka City Subway Hakozaki Line",
+  "why": "일본어 표시 이름의 머리 福岡市地下鉄 → Fukuoka City Subway"
+ },
+ {
+  "line_id": "l_hakushima_line",
+  "ja": "広島電鉄白島線",
+  "ko": "히로시마 전철 하쿠시마선",
+  "en_now": "Hakushima Line",
+  "en_new": "Hiroden Hakushima Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_hanamakionsen_line",
+  "ja": "花巻電鉄花巻温泉線",
+  "ko": "하나마키 전철 하나마키 온천선",
+  "en_now": "Hanamakionsen Line",
+  "en_new": "Hanamaki Electric Railway Hanamaki Onsen Line",
+  "why": "花巻+温泉을 띄움 (Onsen은 영어 표기 관용). 일본어 표시 이름의 머리 花巻電鉄 → Hanamaki Electric Railway"
+ },
+ {
+  "line_id": "l_hanaoka_line",
+  "ja": "同和鉱業花岡線",
+  "ko": "토와 광업 하나오카선",
+  "en_now": "Hanaoka Line",
+  "en_new": "Dowa Mining Hanaoka Line",
+  "why": "일본어 표시 이름의 머리 同和鉱業 → Dowa Mining"
+ },
+ {
+  "line_id": "l_hanazono_line",
+  "ja": "伊予鉄道花園線",
+  "ko": "이요 철도 하나조노선",
+  "en_now": "Hanazono Line",
+  "en_new": "Iyotetsu Hanazono Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_hanazonobashi_line",
+  "ja": "横浜市電花園橋線",
+  "ko": "요코하마 시영 전차 하나조노바시선",
+  "en_now": "Hanazonobashi Line",
+  "en_new": "Yokohama City Tram Hanazonobashi Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_hankai_line",
+  "ja": "阪堺電気軌道阪堺線",
+  "ko": "한카이 전기궤도 한카이선",
+  "en_now": "Hankai Line",
+  "en_new": "Hankai Tramway Hankai Line",
+  "why": "일본어 표시 이름의 머리 阪堺電気軌道 → Hankai Tramway"
+ },
+ {
+  "line_id": "l_hankai_line_osaka_municipal_transportation_bureau",
+  "ja": "大阪市電阪堺線",
+  "ko": "오사카 시영 전차 한카이선",
+  "en_now": "Hankai Line",
+  "en_new": "Osaka City Tram Hankai Line",
+  "why": "일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_hanzomon_line",
+  "ja": "東京メトロ半蔵門線",
+  "ko": "도쿄메트로 한조몬선",
+  "en_now": "Hanzomon Line",
+  "en_new": "Tokyo Metro Hanzomon Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_hanzomon_line_through_service",
+  "ja": "半蔵門線直通",
+  "ko": "도부 한조몬선 직통선",
+  "en_now": "Hanzomon Line Through Service",
+  "en_new": "Tobu Isesaki Line (Oshiage~Hikifune)",
+  "why": "ja 표시 이름 제안(東武伊勢崎線 押上–曳舟)에 맞춤. 사용자 결정 필요"
+ },
+ {
+  "line_id": "l_hanzomon_line_toei",
+  "ja": "都電半蔵門線",
+  "ko": "도덴 한조몬선",
+  "en_now": "Hanzomon Line",
+  "en_new": "Toden Hanzomon Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_haranomachi_line",
+  "ja": "仙台市電原町線",
+  "ko": "센다이 시영 전차 하라노마치선",
+  "en_now": "Haranomachi Line",
+  "en_new": "Sendai City Tram Haranomachi Line",
+  "why": "일본어 표시 이름의 머리 仙台市電 → Sendai City Tram"
+ },
+ {
+  "line_id": "l_harutake_line",
+  "ja": "熊本市電春竹線",
+  "ko": "구마모토 시영 전차 하루타케선",
+  "en_now": "Harutake Line",
+  "en_new": "Kumamoto City Tram Harutake Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_hashima_line",
+  "ja": "名鉄羽島線",
+  "ko": "메이테츠 하시마선",
+  "en_now": "Hashima Line",
+  "en_new": "Meitetsu Hashima Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_heisaka_branch_line",
+  "ja": "名鉄平坂支線",
+  "ko": "메이테츠 헤이사카 지선",
+  "en_now": "Heisaka Branch Line",
+  "en_new": "Meitetsu Heisaka Branch Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_hibiya_line",
+  "ja": "東京メトロ日比谷線",
+  "ko": "도쿄메트로 히비야선",
+  "en_now": "Hibiya Line",
+  "en_new": "Tokyo Metro Hibiya Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_higashi_narita_line",
+  "ja": "京成東成田線",
+  "ko": "케이세이 히가시나리타선",
+  "en_now": "Higashi-Narita Line",
+  "en_new": "Keisei Higashi-Narita Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_higashiasahikawa_line",
+  "ja": "旭川電気軌道東旭川線",
+  "ko": "아사히카와 전기궤도 히가시아사히카와선",
+  "en_now": "Higashiasahikawa Line",
+  "en_new": "Asahikawa Electric Tramway Higashi-Asahikawa Line",
+  "why": "東+旭川을 띄움. 일본어 표시 이름의 머리 旭川電気軌道 → Asahikawa Electric Tramway"
+ },
+ {
+  "line_id": "l_higashikataha_line",
+  "ja": "名古屋市電東片端線",
+  "ko": "나고야 시영 전차 히가시카타하선",
+  "en_now": "Higashikataha Line",
+  "en_new": "Nagoya City Tram Higashikataha Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_higashikawa_line",
+  "ja": "旭川電気軌道東川線",
+  "ko": "아사히카와 전기궤도 히가시카와선",
+  "en_now": "Higashikawa Line",
+  "en_new": "Asahikawa Electric Tramway Higashikawa Line",
+  "why": "일본어 표시 이름의 머리 旭川電気軌道 → Asahikawa Electric Tramway"
+ },
+ {
+  "line_id": "l_higashinodakasugaecho_line",
+  "ja": "大阪市電東野田沢上江町線",
+  "ko": "오사카 시영 전차 히가시노다카스가에초선",
+  "en_now": "Higashinodakasugaecho Line",
+  "en_new": "Osaka City Tram Higashinoda-Kasugaecho Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_higashishigi_cable_line",
+  "ja": "近鉄東信貴鋼索線",
+  "ko": "킨테츠 히가시시기 강삭선",
+  "en_now": "Higashishigi Cable Line",
+  "en_new": "Kintetsu Higashi-Shigi Cable Line",
+  "why": "짝인 Nishi-Shigi Cable Line과 맞춤. 일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_higashiyama_line",
+  "ja": "名古屋市営地下鉄東山線",
+  "ko": "나고야 시영 지하철 히가시야마선",
+  "en_now": "Higashiyama Line",
+  "en_new": "Nagoya Municipal Subway Higashiyama Line",
+  "why": "일본어 표시 이름의 머리 名古屋市営地下鉄 → Nagoya Municipal Subway"
+ },
+ {
+  "line_id": "l_higashiyama_main_line",
+  "ja": "岡山電気軌道東山本線",
+  "ko": "오카야마 전기궤도 히가시야마 본선",
+  "en_now": "Higashiyama Main Line",
+  "en_new": "Okayama Electric Tramway Higashiyama Main Line",
+  "why": "일본어 표시 이름의 머리 岡山電気軌道 → Okayama Electric Tramway"
+ },
+ {
+  "line_id": "l_higashiyamakoen",
+  "ja": "名古屋市交通局協力会東山公園モノレール",
+  "ko": "나고야시 교통국 협력회 히가시야마코엔 모노레일",
+  "en_now": "Higashiyamakoen",
+  "en_new": "Higashiyama Koen Monorail",
+  "why": "Monorail 누락·이어 붙임 (LN-N03). 東山公園 역 공식 표기 Higashiyama Koen"
+ },
+ {
+  "line_id": "l_higashiyamakoen_line",
+  "ja": "名古屋市電東山公園線",
+  "ko": "나고야 시영 전차 히가시야마코엔선",
+  "en_now": "Higashiyamakoen Line",
+  "en_new": "Nagoya City Tram Higashiyama Koen Line",
+  "why": "東山+公園을 띄움 (名古屋 지하철 역 공식 표기 Higashiyama Koen). 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_hikoroichi_line",
+  "ja": "岩手開発鉄道日頃市線",
+  "ko": "이와테 개발철도 히코로이치선",
+  "en_now": "Hikoroichi Line",
+  "en_new": "Iwate Kaihatsu Railway Hikoroichi Line",
+  "why": "일본어 표시 이름의 머리 岩手開発鉄道 → Iwate Kaihatsu Railway"
+ },
+ {
+  "line_id": "l_himejishiei_monorail",
+  "ja": "姫路市交通局モノレール線",
+  "ko": "히메지 모노레일",
+  "en_now": "Himejishiei Monorail",
+  "en_new": "Himeji City Monorail",
+  "why": "市営 → City. Monorail 앞 이어 붙임 해소 (LN-N03)"
+ },
+ {
+  "line_id": "l_hirano_line",
+  "ja": "神戸市電平野線",
+  "ko": "고베 시영 전차 히라노선",
+  "en_now": "Hirano Line",
+  "en_new": "Kobe City Tram Hirano Line",
+  "why": "일본어 표시 이름의 머리 神戸市電 → Kobe City Tram"
+ },
+ {
+  "line_id": "l_hiromi_line",
+  "ja": "名鉄広見線",
+  "ko": "메이테츠 히로미선",
+  "en_now": "Hiromi Line",
+  "en_new": "Meitetsu Hiromi Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_hiroo_line_toei",
+  "ja": "都電広尾線",
+  "ko": "도덴 히로오선",
+  "en_now": "Hiroo Line",
+  "en_new": "Toden Hiroo Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_hirose_line",
+  "ja": "一畑電気鉄道広瀬線",
+  "ko": "이치바타 전차 히로세선",
+  "en_now": "Hirose Line",
+  "en_new": "Ichibata Electric Railway Hirose Line",
+  "why": "일본어 표시 이름의 머리 一畑電気鉄道 → Ichibata Electric Railway"
+ },
+ {
+  "line_id": "l_hojo_line_hojo",
+  "ja": "北条鉄道北条線",
+  "ko": "호조 철도 호조선",
+  "en_now": "Hojo Line",
+  "en_new": "Hojo Railway Hojo Line",
+  "why": "일본어 표시 이름의 머리 北条鉄道 → Hojo Railway"
+ },
+ {
+  "line_id": "l_hokusei_line",
+  "ja": "三岐鉄道北勢線",
+  "ko": "산기 철도 호쿠세이선",
+  "en_now": "Hokusei Line",
+  "en_new": "Sangi Railway Hokusei Line",
+  "why": "일본어 표시 이름의 머리 三岐鉄道 → Sangi Railway"
+ },
+ {
+  "line_id": "l_hokushin_line",
+  "ja": "神戸市営地下鉄北神線",
+  "ko": "고베 시영 지하철 호쿠신선",
+  "en_now": "Hokushin Line",
+  "en_new": "Kobe Municipal Subway Hokushin Line",
+  "why": "일본어 표시 이름의 머리 神戸市営地下鉄 → Kobe Municipal Subway"
+ },
+ {
+  "line_id": "l_hokuso_line",
+  "ja": "北総鉄道北総線",
+  "ko": "호쿠소 철도 호쿠소선",
+  "en_now": "Hokuso Line",
+  "en_new": "Hokuso Railway Hokuso Line",
+  "why": "일본어 표시 이름의 머리 北総鉄道 → Hokuso Railway"
+ },
+ {
+  "line_id": "l_hommoku_line",
+  "ja": "横浜市電本牧線",
+  "ko": "요코하마 시영 전차 혼모쿠선",
+  "en_now": "Hommoku Line",
+  "en_new": "Yokohama City Tram Hommoku Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_hongo_line",
+  "ja": "都電本郷線",
+  "ko": "도덴 혼고선",
+  "en_now": "Hongo Line",
+  "en_new": "Toden Hongo Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_honmachi_line",
+  "ja": "伊予鉄道本町線",
+  "ko": "이요 철도 혼마치선",
+  "en_now": "Honmachi Line",
+  "en_new": "Iyotetsu Honmachi Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_horai_yachigashira_line",
+  "ja": "函館市電宝来・谷地頭線",
+  "ko": "하코다테 시영 전차 호라이·야치가시라선",
+  "en_now": "Horai-Yachigashira Line",
+  "en_new": "Hakodate City Tram Horai-Yachigashira Line",
+  "why": "일본어 표시 이름의 머리 函館市電 → Hakodate City Tram"
+ },
+ {
+  "line_id": "l_horikawa_line",
+  "ja": "京都市電堀川線",
+  "ko": "교토 시영 전차 호리카와선",
+  "en_now": "Horikawa Line",
+  "en_new": "Kyoto City Tram Horikawa Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_hoshu_line",
+  "ja": "大分交通豊州線",
+  "ko": "오이타 교통 호슈선",
+  "en_now": "Hoshu Line",
+  "en_new": "Oita Kotsu Hoshu Line",
+  "why": "일본어 표시 이름의 머리 大分交通 → Oita Kotsu"
+ },
+ {
+  "line_id": "l_hotarujaya_branch_line",
+  "ja": "長崎電気軌道蛍茶屋支線",
+  "ko": "나가사키 전기궤도 호타루자야 지선",
+  "en_now": "Hotarujaya Branch Line",
+  "en_new": "Nagasaki Electric Tramway Hotarujaya Branch Line",
+  "why": "일본어 표시 이름의 머리 長崎電気軌道 → Nagasaki Electric Tramway"
+ },
+ {
+  "line_id": "l_hyogo_line",
+  "ja": "神戸市電兵庫線",
+  "ko": "고베 시영 전차 효고선",
+  "en_now": "Hyogo Line",
+  "en_new": "Kobe City Tram Hyogo Line",
+  "why": "일본어 표시 이름의 머리 神戸市電 → Kobe City Tram"
+ },
+ {
+  "line_id": "l_ibara_line",
+  "ja": "井原鉄道井原線",
+  "ko": "이바라 철도 이바라선",
+  "en_now": "Ibara Line",
+  "en_new": "Ibara Railway Ibara Line",
+  "why": "일본어 표시 이름의 머리 井原鉄道 → Ibara Railway"
+ },
+ {
+  "line_id": "l_ibaraki_line",
+  "ja": "茨城交通茨城線",
+  "ko": "이바라키 교통 이바라키선",
+  "en_now": "Ibaraki Line",
+  "en_new": "Ibaraki Kotsu Ibaraki Line",
+  "why": "일본어 표시 이름의 머리 茨城交通 → Ibaraki Kotsu"
+ },
+ {
+  "line_id": "l_ibi_line",
+  "ja": "名鉄揖斐線",
+  "ko": "메이테츠 이비선",
+  "en_now": "Ibi Line",
+  "en_new": "Meitetsu Ibi Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_ichinoe_line",
+  "ja": "都電一之江線",
+  "ko": "도덴 이치노에선",
+  "en_now": "Ichinoe Line",
+  "en_new": "Toden Ichinoe Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_ichinomiya_line",
+  "ja": "名鉄一宮線",
+  "ko": "메이테츠 이치노미야선",
+  "en_now": "Ichinomiya Line",
+  "en_new": "Meitetsu Ichinomiya Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_idogaya_line",
+  "ja": "横浜市電井土ヶ谷線",
+  "ko": "요코하마 시영 전차 이도가야선",
+  "en_now": "Idogaya Line",
+  "en_new": "Yokohama City Tram Idogaya Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_iga_line",
+  "ja": "伊賀鉄道伊賀線",
+  "ko": "이가 철도 이가선",
+  "en_now": "Iga Line",
+  "en_new": "Iga Railway Iga Line",
+  "why": "일본어 표시 이름의 머리 伊賀鉄道 → Iga Railway"
+ },
+ {
+  "line_id": "l_iizaka_line",
+  "ja": "福島交通飯坂線",
+  "ko": "후쿠시마 교통 이자카선",
+  "en_now": "Iizaka Line",
+  "en_new": "Fukushima Kotsu Iizaka Line",
+  "why": "일본어 표시 이름의 머리 福島交通 → Fukushima Kotsu"
+ },
+ {
+  "line_id": "l_ikaho_line",
+  "ja": "東武伊香保線",
+  "ko": "도부 이카호선",
+  "en_now": "Ikaho Line",
+  "en_new": "Tobu Ikaho Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_ikasa_line",
+  "ja": "井笠鉄道本線",
+  "ko": "이카사 철도 이카사선",
+  "en_now": "Ikasa Line",
+  "en_new": "Ikasa Railway Main Line",
+  "why": "표시 이름 井笠鉄道本線. 일본어 표시 이름의 머리 井笠鉄道 → Ikasa Railway"
+ },
+ {
+  "line_id": "l_ikawa_line",
+  "ja": "大井川鐵道井川線",
+  "ko": "오이가와 철도 이카와선",
+  "en_now": "Ikawa Line",
+  "en_new": "Oigawa Railway Ikawa Line",
+  "why": "일본어 표시 이름의 머리 大井川鐵道 → Oigawa Railway"
+ },
+ {
+  "line_id": "l_ikebukuro_line",
+  "ja": "西武池袋線",
+  "ko": "세이부 이케부쿠로선",
+  "en_now": "Ikebukuro Line",
+  "en_new": "Seibu Ikebukuro Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_ikebukuro_line_toei",
+  "ja": "都電池袋線",
+  "ko": "도덴 이케부쿠로선",
+  "en_now": "Ikebukuro Line",
+  "en_new": "Toden Ikebukuro Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_ikegami_line",
+  "ja": "東急池上線",
+  "ko": "도큐 이케가미선",
+  "en_now": "Ikegami Line",
+  "en_new": "Tokyu Ikegami Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_ikoma_cable_line",
+  "ja": "近鉄生駒鋼索線",
+  "ko": "킨테츠 이코마 강삭선",
+  "en_now": "Ikoma Cable Line",
+  "en_new": "Kintetsu Ikoma Cable Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_ikoma_line",
+  "ja": "近鉄生駒線",
+  "ko": "킨테츠 이코마선",
+  "en_now": "Ikoma Line",
+  "en_new": "Kintetsu Ikoma Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_imazatosuji_line",
+  "ja": "Osaka Metro今里筋線",
+  "ko": "오사카메트로 이마자토스지선",
+  "en_now": "Imazatosuji Line",
+  "en_new": "Osaka Metro Imazatosuji Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_imazu_line",
+  "ja": "阪急今津線",
+  "ko": "한큐 이마즈선",
+  "en_now": "Imazu Line",
+  "en_new": "Hankyu Imazu Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_inari_line",
+  "ja": "京都市電稲荷線",
+  "ko": "교토 시영 전차 이나리선",
+  "en_now": "Inari Line",
+  "en_new": "Kyoto City Tram Inari Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_ino_line",
+  "ja": "とさでん交通伊野線",
+  "ko": "토사덴 교통 이노선",
+  "en_now": "Ino Line",
+  "en_new": "Tosaden Kotsu Ino Line",
+  "why": "일본어 표시 이름의 머리 とさでん交通 → Tosaden Kotsu"
+ },
+ {
+  "line_id": "l_inogashira_line",
+  "ja": "京王井の頭線",
+  "ko": "케이오 이노카시라선",
+  "en_now": "Inogashira Line",
+  "en_new": "Keio Inogashira Line",
+  "why": "일본어 표시 이름의 머리 京王 → Keio"
+ },
+ {
+  "line_id": "l_inuyama_line",
+  "ja": "名鉄犬山線",
+  "ko": "메이테츠 이누야마선",
+  "en_now": "Inuyama Line",
+  "en_new": "Meitetsu Inuyama Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_isarago_line",
+  "ja": "都電伊皿子線",
+  "ko": "도덴 이사라고선",
+  "en_now": "Isarago Line",
+  "en_new": "Toden Isarago Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_ise_line_ise",
+  "ja": "伊勢鉄道伊勢線",
+  "ko": "이세 철도 이세선",
+  "en_now": "Ise Line",
+  "en_new": "Ise Railway Ise Line",
+  "why": "일본어 표시 이름의 머리 伊勢鉄道 → Ise Railway"
+ },
+ {
+  "line_id": "l_ise_line_kintetsu",
+  "ja": "近鉄伊勢線",
+  "ko": "킨테츠 이세선",
+  "en_now": "Ise Line",
+  "en_new": "Kintetsu Ise Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_isesaki_line",
+  "ja": "東武伊勢崎線",
+  "ko": "도부 이세사키선",
+  "en_now": "Isesaki Line",
+  "en_new": "Tobu Isesaki Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_ishikawa_line",
+  "ja": "北陸鉄道石川線",
+  "ko": "호쿠리쿠 철도 이시카와선",
+  "en_now": "Ishikawa Line",
+  "en_new": "Hokuriku Railroad Ishikawa Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_ishiki_line",
+  "ja": "鹿児島市電伊敷線",
+  "ko": "가고시마 시영 전차 이시키선",
+  "en_now": "Ishiki Line",
+  "en_new": "Kagoshima City Tram Ishiki Line",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_ishiki_line_shinshoin_ishiki_old_route",
+  "ja": "鹿児島市電伊敷線 新照院–伊敷 旧線",
+  "ko": "가고시마 시영 전차 이시키선 신쇼인–이시키 구선",
+  "en_now": "Ishiki Line (Shinshoin~Ishiki) Old Route",
+  "en_new": "Kagoshima City Tram Ishiki Line (Shinshoin~Ishiki) Old Route",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_ishiwara_line",
+  "ja": "都電石原線",
+  "ko": "도덴 이시와라선",
+  "en_now": "Ishiwara Line",
+  "en_new": "Toden Ishiwara Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_ishiyagawa_line",
+  "ja": "神戸市電石屋川線",
+  "ko": "고베 시영 전차 이시야가와선",
+  "en_now": "Ishiyagawa Line",
+  "en_new": "Kobe City Tram Ishiyagawa Line",
+  "why": "일본어 표시 이름의 머리 神戸市電 → Kobe City Tram"
+ },
+ {
+  "line_id": "l_ishiyama_sakamoto_line",
+  "ja": "京阪石山坂本線",
+  "ko": "케이한 이시야마사카모토선",
+  "en_now": "Ishiyama Sakamoto Line",
+  "en_new": "Keihan Ishiyama Sakamoto Line",
+  "why": "일본어 표시 이름의 머리 京阪 → Keihan"
+ },
+ {
+  "line_id": "l_isogo_line",
+  "ja": "横浜市電磯子線",
+  "ko": "요코하마 시영 전차 이소고선",
+  "en_now": "Isogo Line",
+  "en_new": "Yokohama City Tram Isogo Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_isumi_line",
+  "ja": "いすみ鉄道いすみ線",
+  "ko": "이스미 철도 이스미선",
+  "en_now": "Isumi Line",
+  "en_new": "Isumi Railway Isumi Line",
+  "why": "일본어 표시 이름의 머리 いすみ鉄道 → Isumi Railway"
+ },
+ {
+  "line_id": "l_ita_line_heisei_chikuho",
+  "ja": "平成筑豊鉄道伊田線",
+  "ko": "헤이세이 치쿠호 철도 이타선",
+  "en_now": "Ita Line",
+  "en_new": "Heisei Chikuho Railway Ita Line",
+  "why": "일본어 표시 이름의 머리 平成筑豊鉄道 → Heisei Chikuho Railway"
+ },
+ {
+  "line_id": "l_itami_line",
+  "ja": "阪急伊丹線",
+  "ko": "한큐 이타미선",
+  "en_now": "Itami Line",
+  "en_new": "Hankyu Itami Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_itayado_line",
+  "ja": "神戸市電板宿線",
+  "ko": "고베 시영 전차 이타야도선",
+  "en_now": "Itayado Line",
+  "en_new": "Kobe City Tram Itayado Line",
+  "why": "일본어 표시 이름의 머리 神戸市電 → Kobe City Tram"
+ },
+ {
+  "line_id": "l_itoda_line_heisei_chikuho",
+  "ja": "平成筑豊鉄道糸田線",
+  "ko": "헤이세이 치쿠호 철도 이토다선",
+  "en_now": "Itoda Line",
+  "en_new": "Heisei Chikuho Railway Itoda Line",
+  "why": "일본어 표시 이름의 머리 平成筑豊鉄道 → Heisei Chikuho Railway"
+ },
+ {
+  "line_id": "l_iwaicho_line",
+  "ja": "名古屋市電岩井町線",
+  "ko": "나고야 시영 전차 이와이초선",
+  "en_now": "Iwaicho Line",
+  "en_new": "Nagoya City Tram Iwaicho Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_iwakura_branch_line",
+  "ja": "名鉄岩倉支線",
+  "ko": "메이테츠 이와쿠라 지선",
+  "en_now": "Iwakura Branch Line",
+  "en_new": "Meitetsu Iwakura Branch Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_izumino_line",
+  "ja": "相鉄いずみ野線",
+  "ko": "소테츠 이즈미노선",
+  "en_now": "Izumino Line",
+  "en_new": "Sotetsu Izumino Line",
+  "why": "일본어 표시 이름의 머리 相鉄 → Sotetsu"
+ },
+ {
+  "line_id": "l_johoku_line_iyotetsu",
+  "ja": "伊予鉄道城北線",
+  "ko": "이요 철도 죠호쿠선",
+  "en_now": "Johoku Line",
+  "en_new": "Iyotetsu Johoku Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_johoku_line_tokai_kotsu",
+  "ja": "JR東海交通事業城北線",
+  "ko": "JR 도카이 교통사업 죠호쿠선",
+  "en_now": "Johoku Line",
+  "en_new": "Tokai Kotsu Jigyo Johoku Line",
+  "why": "일본어 표시 이름의 머리 JR東海交通事業 → Tokai Kotsu Jigyo"
+ },
+ {
+  "line_id": "l_jomo_line",
+  "ja": "上毛電気鉄道上毛線",
+  "ko": "조모 전기철도 조모선",
+  "en_now": "Jomo Line",
+  "en_new": "Jomo Electric Railway Jomo Line",
+  "why": "일본어 표시 이름의 머리 上毛電気鉄道 → Jomo Electric Railway"
+ },
+ {
+  "line_id": "l_jonan_line",
+  "ja": "伊予鉄道城南線",
+  "ko": "이요 철도 죠난선",
+  "en_now": "Jonan Line",
+  "en_new": "Iyotetsu Jonan Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_joshin_line",
+  "ja": "上信電鉄上信線",
+  "ko": "조신 전철 조신선",
+  "en_now": "Joshin Line",
+  "en_new": "Joshin Electric Railway Joshin Line",
+  "why": "일본어 표시 이름의 머리 上信電鉄 → Joshin Electric Railway"
+ },
+ {
+  "line_id": "l_joso_line",
+  "ja": "関東鉄道常総線",
+  "ko": "칸토 철도 조소선",
+  "en_now": "Joso Line",
+  "en_new": "Kanto Railway Joso Line",
+  "why": "일본어 표시 이름의 머리 関東鉄道 → Kanto Railway"
+ },
+ {
+  "line_id": "l_josotsukubatetsudokinugawa_line",
+  "ja": "常総筑波鉄道鬼怒川線",
+  "ko": "조소츠쿠바 철도 키누가와선",
+  "en_now": "Josotsukubatetsudokinugawa Line",
+  "en_new": "Joso Tsukuba Railway Kinugawa Line",
+  "why": "읽기에 섞인 회사 이름(常総筑波鉄道)을 뗌. 일본어 표시 이름의 머리 常総筑波鉄道 → Joso Tsukuba Railway"
+ },
+ {
+  "line_id": "l_kachidokibashi_line",
+  "ja": "都電勝鬨橋線",
+  "ko": "도덴 카치도키바시선",
+  "en_now": "Kachidokibashi Line",
+  "en_new": "Toden Kachidokibashi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_kada_line",
+  "ja": "南海加太線",
+  "ko": "난카이 카다선",
+  "en_now": "Kada Line",
+  "en_new": "Nankai Kada Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_kaetsu_line",
+  "ja": "加越能鉄道加越線",
+  "ko": "카에츠노 철도 카에츠선",
+  "en_now": "Kaetsu Line",
+  "en_new": "Kaetsuno Railway Kaetsu Line",
+  "why": "일본어 표시 이름의 머리 加越能鉄道 → Kaetsuno Railway"
+ },
+ {
+  "line_id": "l_kagashima_line",
+  "ja": "名鉄鏡島線",
+  "ko": "메이테츠 카가시마선",
+  "en_now": "Kagashima Line",
+  "en_new": "Meitetsu Kagashima Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_kaigan_line",
+  "ja": "神戸市営地下鉄海岸線",
+  "ko": "고베 시영 지하철 카이간선",
+  "en_now": "Kaigan Line",
+  "en_new": "Kobe Municipal Subway Kaigan Line",
+  "why": "일본어 표시 이름의 머리 神戸市営地下鉄 → Kobe Municipal Subway"
+ },
+ {
+  "line_id": "l_kaizuka_line",
+  "ja": "西鉄貝塚線",
+  "ko": "니시테츠 카이즈카선",
+  "en_now": "Kaizuka Line",
+  "en_new": "Nishitetsu Kaizuka Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_kakamigahara_line",
+  "ja": "名鉄各務原線",
+  "ko": "메이테츠 카카미가하라선",
+  "en_now": "Kakamigahara Line",
+  "en_new": "Meitetsu Kakamigahara Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_kameido_line",
+  "ja": "東武亀戸線",
+  "ko": "도부 카메이도선",
+  "en_now": "Kameido Line",
+  "en_new": "Tobu Kameido Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_kami_kumamoto_line",
+  "ja": "熊本市電上熊本線",
+  "ko": "구마모토 시영 전차 카미쿠마모토선",
+  "en_now": "Kami-Kumamoto Line",
+  "en_new": "Kumamoto City Tram Kami-Kumamoto Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_kamidaki_line",
+  "ja": "富山地方鉄道上滝線",
+  "ko": "도야마 지방철도 카미다키선",
+  "en_now": "Kamidaki Line",
+  "en_new": "Toyama Chiho Railway Kamidaki Line",
+  "why": "일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_kamiiida_line",
+  "ja": "名古屋市営地下鉄上飯田線",
+  "ko": "나고야 시영 지하철 카미이다선",
+  "en_now": "Kamiiida Line",
+  "en_new": "Nagoya Municipal Subway Kamiiida Line",
+  "why": "일본어 표시 이름의 머리 名古屋市営地下鉄 → Nagoya Municipal Subway"
+ },
+ {
+  "line_id": "l_kamikochi_line",
+  "ja": "アルピコ交通上高地線",
+  "ko": "알피코 교통 카미코치선",
+  "en_now": "Kamikochi Line",
+  "en_new": "Alpico Kotsu Kamikochi Line",
+  "why": "일본어 표시 이름의 머리 アルピコ交通 → Alpico Kotsu"
+ },
+ {
+  "line_id": "l_kamioka_line_kamioka",
+  "ja": "神岡鉄道神岡線",
+  "ko": "카미오카 철도 카미오카선",
+  "en_now": "Kamioka Line",
+  "en_new": "Kamioka Railway Kamioka Line",
+  "why": "일본어 표시 이름의 머리 神岡鉄道 → Kamioka Railway"
+ },
+ {
+  "line_id": "l_kammachi_line",
+  "ja": "鹿児島市電上町線",
+  "ko": "가고시마 시영 전차 칸마치선",
+  "en_now": "Kammachi Line",
+  "en_new": "Kagoshima City Tram Kammachi Line",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_kanaiwa_line",
+  "ja": "北陸鉄道金石線",
+  "ko": "호쿠리쿠 철도 카나이와선",
+  "en_now": "Kanaiwa Line",
+  "en_new": "Hokuriku Railroad Kanaiwa Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_kanamachi_line",
+  "ja": "京成金町線",
+  "ko": "케이세이 카나마치선",
+  "en_now": "Kanamachi Line",
+  "en_new": "Keisei Kanamachi Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_karasuma_line",
+  "ja": "京都市営地下鉄烏丸線",
+  "ko": "교토 시영 지하철 카라스마선",
+  "en_now": "Karasuma Line",
+  "en_new": "Kyoto Municipal Subway Karasuma Line",
+  "why": "일본어 표시 이름의 머리 京都市営地下鉄 → Kyoto Municipal Subway"
+ },
+ {
+  "line_id": "l_karato_line",
+  "ja": "山陽電気軌道唐戸線",
+  "ko": "산요 전기궤도 카라토선",
+  "en_now": "Karato Line",
+  "en_new": "Sanyo Electric Tramway Karato Line",
+  "why": "일본어 표시 이름의 머리 山陽電気軌道 → Sanyo Electric Tramway"
+ },
+ {
+  "line_id": "l_kasaderaencho_line",
+  "ja": "名古屋市電笠寺延長線",
+  "ko": "나고야 시영 전차 카사데라 연장선",
+  "en_now": "Kasaderaencho Line",
+  "en_new": "Nagoya City Tram Kasadera Extension Line",
+  "why": "延長線 → Extension Line (神戸 西神延伸線 Seishin Extension Line과 같은 말). 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_kasahara_line",
+  "ja": "東濃鉄道笠原線",
+  "ko": "토노 철도 카사하라선",
+  "en_now": "Kasahara Line",
+  "en_new": "Tono Railway Kasahara Line",
+  "why": "일본어 표시 이름의 머리 東濃鉄道 → Tono Railway"
+ },
+ {
+  "line_id": "l_kasaibashi_line",
+  "ja": "都電葛西橋線",
+  "ko": "도덴 카사이바시선",
+  "en_now": "Kasaibashi Line",
+  "en_new": "Toden Kasaibashi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_kashihara_line",
+  "ja": "近鉄橿原線",
+  "ko": "킨테츠 카시하라선",
+  "en_now": "Kashihara Line",
+  "en_new": "Kintetsu Kashihara Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_kashima_rinko_line",
+  "ja": "鹿島臨海鉄道鹿島臨港線",
+  "ko": "카시마 임해철도 카시마 임항선",
+  "en_now": "Kashima Rinko Line",
+  "en_new": "Kashima Rinkai Railway Kashima Rinko Line",
+  "why": "일본어 표시 이름의 머리 鹿島臨海鉄道 → Kashima Rinkai Railway"
+ },
+ {
+  "line_id": "l_kasumicho_line",
+  "ja": "都電霞町線",
+  "ko": "도덴 카스미초선",
+  "en_now": "Kasumicho Line",
+  "en_new": "Toden Kasumicho Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_katakami_railway",
+  "ja": "同和鉱業片上鉄道線",
+  "ko": "토와 광업 카타카미 철도선",
+  "en_now": "Katakami Railway",
+  "en_new": "Katakami Railway Line",
+  "why": "표시 이름 同和鉱業片上鉄道線. 노선 이름이 철도 이름이라 머리 없음"
+ },
+ {
+  "line_id": "l_katano_line",
+  "ja": "京阪交野線",
+  "ko": "케이한 카타노선",
+  "en_now": "Katano Line",
+  "en_new": "Keihan Katano Line",
+  "why": "일본어 표시 이름의 머리 京阪 → Keihan"
+ },
+ {
+  "line_id": "l_katayamazu_line",
+  "ja": "北陸鉄道片山津線",
+  "ko": "호쿠리쿠 철도 카타야마즈선",
+  "en_now": "Katayamazu Line",
+  "en_new": "Hokuriku Railroad Katayamazu Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_kato_line",
+  "ja": "長野電鉄河東線",
+  "ko": "나가노 전철 키지마선",
+  "en_now": "Kato Line",
+  "en_new": "Nagano Electric Railway Kato Line",
+  "why": "일본어 표시 이름의 머리 長野電鉄 → Nagano Electric Railway"
+ },
+ {
+  "line_id": "l_katsuyama_eiheiji_line",
+  "ja": "えちぜん鉄道勝山永平寺線",
+  "ko": "에치젠 철도 카츠야마에이헤이지선",
+  "en_now": "Katsuyama Eiheiji Line",
+  "en_new": "Echizen Railway Katsuyama Eiheiji Line",
+  "why": "일본어 표시 이름의 머리 えちぜん鉄道 → Echizen Railway"
+ },
+ {
+  "line_id": "l_kawaguchiko_line",
+  "ja": "富士山麓電気鉄道河口湖線",
+  "ko": "후지산로쿠 전기철도 카와구치코선",
+  "en_now": "Kawaguchiko Line",
+  "en_new": "Fujikyu Railway Kawaguchiko Line",
+  "why": "일본어 표시 이름의 머리 富士山麓電気鉄道 → Fujikyu Railway"
+ },
+ {
+  "line_id": "l_kawasakishiden",
+  "ja": "川崎市電",
+  "ko": "가와사키 시영 전차",
+  "en_now": "Kawasakishiden",
+  "en_new": "Kawasaki City Tram",
+  "why": "市電 → City Tram (다른 시덴과 같은 꼴)"
+ },
+ {
+  "line_id": "l_kawashiri_line",
+  "ja": "熊本市電川尻線",
+  "ko": "구마모토 시영 전차 카와시리선",
+  "en_now": "Kawashiri Line",
+  "en_new": "Kumamoto City Tram Kawashiri Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_keibajo_line",
+  "ja": "京王競馬場線",
+  "ko": "케이오 경마장선",
+  "en_now": "Keibajo Line",
+  "en_new": "Keio Keibajo Line",
+  "why": "일본어 표시 이름의 머리 京王 → Keio"
+ },
+ {
+  "line_id": "l_keihanna_line",
+  "ja": "近鉄けいはんな線",
+  "ko": "킨테츠 케이한나선",
+  "en_now": "Keihanna Line",
+  "en_new": "Kintetsu Keihanna Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_keishin_line",
+  "ja": "京阪京津線",
+  "ko": "케이한 케이신선",
+  "en_now": "Keishin Line",
+  "en_new": "Keihan Keishin Line",
+  "why": "일본어 표시 이름의 머리 京阪 → Keihan"
+ },
+ {
+  "line_id": "l_kengun_line",
+  "ja": "熊本市電健軍線",
+  "ko": "구마모토 시영 전차 켄군선",
+  "en_now": "Kengun Line",
+  "en_new": "Kumamoto City Tram Kengun Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_kikuchi_line",
+  "ja": "熊本電気鉄道菊池線",
+  "ko": "구마모토 전기철도 키쿠치선",
+  "en_now": "Kikuchi Line",
+  "en_new": "Kumamoto Electric Railway Kikuchi Line",
+  "why": "일본어 표시 이름의 머리 熊本電気鉄道 → Kumamoto Electric Railway"
+ },
+ {
+  "line_id": "l_kimmei_line",
+  "ja": "北陸鉄道金名線",
+  "ko": "호쿠리쿠 철도 킨메이선",
+  "en_now": "Kimmei Line",
+  "en_new": "Hokuriku Railroad Kimmei Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_kintetsu_connecting_line",
+  "ja": "三岐鉄道近鉄連絡線",
+  "ko": "산기 철도 킨테츠 연락선",
+  "en_now": "Kintetsu Connecting Line",
+  "en_new": "Sangi Railway Kintetsu Connecting Line",
+  "why": "일본어 표시 이름의 머리 三岐鉄道 → Sangi Railway"
+ },
+ {
+  "line_id": "l_kinugawa_line",
+  "ja": "東武鬼怒川線",
+  "ko": "도부 키누가와선",
+  "en_now": "Kinugawa Line",
+  "en_new": "Tobu Kinugawa Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_kinuta_line",
+  "ja": "東急砧線",
+  "ko": "도큐 키누타선",
+  "en_now": "Kinuta Line",
+  "en_new": "Tokyu Kinuta Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_kiryu_line",
+  "ja": "東武桐生線",
+  "ko": "도부 키류선",
+  "en_now": "Kiryu Line",
+  "en_new": "Tobu Kiryu Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_kishigawa_line",
+  "ja": "和歌山電鐵貴志川線",
+  "ko": "와카야마 전철 키시가와선",
+  "en_now": "Kishigawa Line",
+  "en_new": "Wakayama Electric Railway Kishigawa Line",
+  "why": "일본어 표시 이름의 머리 和歌山電鐵 → Wakayama Electric Railway"
+ },
+ {
+  "line_id": "l_kita_kogane_branch_line",
+  "ja": "武蔵野線北小金支線",
+  "ko": "키타코가네 지선",
+  "en_now": "Kita-Kogane Branch Line",
+  "en_new": "Musashino Line Kita-Kogane Branch",
+  "why": "武蔵野線 지선. Musashino Line ~ Branch (夕張線 登川支線·丸ノ内線 方南町支線과 같은 꼴). 일본어 표시 이름의 머리 武蔵野線 → Musashino Line"
+ },
+ {
+  "line_id": "l_kita_matsue_line",
+  "ja": "一畑電車北松江線",
+  "ko": "이치바타 전차 키타마츠에선",
+  "en_now": "Kita-Matsue Line",
+  "en_new": "Ichibata Electric Railway Kita-Matsue Line",
+  "why": "일본어 표시 이름의 머리 一畑電車 → Ichibata Electric Railway"
+ },
+ {
+  "line_id": "l_kita_shinano_line",
+  "ja": "しなの鉄道北しなの線",
+  "ko": "시나노 철도 키타시나노선",
+  "en_now": "Kita-Shinano Line",
+  "en_new": "Shinano Railway Kita-Shinano Line",
+  "why": "일본어 표시 이름의 머리 しなの鉄道 → Shinano Railway"
+ },
+ {
+  "line_id": "l_kitaena_railway_line",
+  "ja": "北恵那鉄道線",
+  "ko": "키타에나 철도선",
+  "en_now": "Kitaena Railway Line",
+  "en_new": "Kita-Ena Railway Line",
+  "why": "사업자 영어 이름 Kita-Ena Railway와 맞춤"
+ },
+ {
+  "line_id": "l_kitagojo_line",
+  "ja": "札幌市電北5条線",
+  "ko": "삿포로 시영 전차 키타고조선",
+  "en_now": "Kitagojo Line",
+  "en_new": "Sapporo City Tram Kita-Gojo Line",
+  "why": "北+5条를 띄움. 일본어 표시 이름의 머리 札幌市電 → Sapporo City Tram"
+ },
+ {
+  "line_id": "l_kitajima_branch_line",
+  "ja": "南海北島支線",
+  "ko": "난카이 키타지마 지선",
+  "en_now": "Kitajima Branch Line",
+  "en_new": "Nankai Kitajima Branch Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_kitano_line",
+  "ja": "京福電気鉄道北野線",
+  "ko": "케이후쿠 전기철도 키타노선",
+  "en_now": "Kitano Line",
+  "en_new": "Keifuku Electric Railroad Kitano Line",
+  "why": "일본어 표시 이름의 머리 京福電気鉄道 → Keifuku Electric Railroad"
+ },
+ {
+  "line_id": "l_kitasenju_line",
+  "ja": "都電北千住線",
+  "ko": "도덴 키타센주선",
+  "en_now": "Kitasenju Line",
+  "en_new": "Toden Kitasenju Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_kobe_kosoku_line_hankyu",
+  "ja": "阪急神戸高速線",
+  "ko": "한큐 고베 고속선",
+  "en_now": "Kobe Kosoku Line",
+  "en_new": "Hankyu Kobe Kosoku Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_kobe_kosoku_line_hanshin",
+  "ja": "阪神神戸高速線",
+  "ko": "한신 고베 고속선",
+  "en_now": "Kobe Kosoku Line",
+  "en_new": "Hanshin Kobe Kosoku Line",
+  "why": "일본어 표시 이름의 머리 阪神 → Hanshin"
+ },
+ {
+  "line_id": "l_kobe_kosoku_line_kobe",
+  "ja": "神戸電鉄神戸高速線",
+  "ko": "고베 전철 고베 고속선",
+  "en_now": "Kobe Kosoku Line",
+  "en_new": "Kobe Electric Railway Kobe Kosoku Line",
+  "why": "일본어 표시 이름의 머리 神戸電鉄 → Kobe Electric Railway"
+ },
+ {
+  "line_id": "l_kobe_kosoku_line_sanyo",
+  "ja": "山陽電気鉄道神戸高速線",
+  "ko": "산요 전철 고베 고속선",
+  "en_now": "Kobe Kosoku Line",
+  "en_new": "Sanyo Electric Railway Kobe Kosoku Line",
+  "why": "일본어 표시 이름의 머리 山陽電気鉄道 → Sanyo Electric Railway"
+ },
+ {
+  "line_id": "l_kobe_main_line",
+  "ja": "阪急神戸本線",
+  "ko": "한큐 고베 본선",
+  "en_now": "Kobe Main Line",
+  "en_new": "Hankyu Kobe Main Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_kodomonokuni_line",
+  "ja": "東急こどもの国線",
+  "ko": "도큐 코도모노쿠니선",
+  "en_now": "Kodomonokuni Line",
+  "en_new": "Tokyu Kodomonokuni Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_koen_toshi_line",
+  "ja": "神戸電鉄公園都市線",
+  "ko": "고베 전철 공원도시선",
+  "en_now": "Koen-Toshi Line",
+  "en_new": "Kobe Electric Railway Koen-Toshi Line",
+  "why": "일본어 표시 이름의 머리 神戸電鉄 → Kobe Electric Railway"
+ },
+ {
+  "line_id": "l_kogai_line",
+  "ja": "呉市電郊外線",
+  "ko": "구레 시영 전차 교외선",
+  "en_now": "Kogai Line",
+  "en_new": "Kure City Tram Suburban Line",
+  "why": "郊外線 → Suburban Line (짝인 市内線과 맞춤). 일본어 표시 이름의 머리 呉市電 → Kure City Tram"
+ },
+ {
+  "line_id": "l_koizumi_line",
+  "ja": "東武小泉線",
+  "ko": "도부 코이즈미선",
+  "en_now": "Koizumi Line",
+  "en_new": "Tobu Koizumi Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_kokubunji_line",
+  "ja": "西武国分寺線",
+  "ko": "세이부 코쿠분지선",
+  "en_now": "Kokubunji Line",
+  "en_new": "Seibu Kokubunji Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_kokudo_line",
+  "ja": "阪神国道線",
+  "ko": "한신 코쿠도선",
+  "en_now": "Kokudo Line",
+  "en_new": "Hanshin Kokudo Line",
+  "why": "일본어 표시 이름의 머리 阪神 → Hanshin"
+ },
+ {
+  "line_id": "l_kokura_line",
+  "ja": "北九州高速鉄道小倉線",
+  "ko": "키타큐슈 모노레일 코쿠라선",
+  "en_now": "Kokura Line",
+  "en_new": "Kitakyushu Monorail Kokura Line",
+  "why": "일본어 표시 이름의 머리 北九州高速鉄道 → Kitakyushu Monorail"
+ },
+ {
+  "line_id": "l_komaki_line",
+  "ja": "名鉄小牧線",
+  "ko": "메이테츠 코마키선",
+  "en_now": "Komaki Line",
+  "en_new": "Meitetsu Komaki Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_komatsu_line",
+  "ja": "北陸鉄道小松線",
+  "ko": "호쿠리쿠 철도 코마츠선",
+  "en_now": "Komatsu Line",
+  "en_new": "Hokuriku Railroad Komatsu Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_komatsugawa_line",
+  "ja": "都電小松川線",
+  "ko": "도덴 코마츠가와선",
+  "en_now": "Komatsugawa Line",
+  "en_new": "Toden Komatsugawa Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_konan_line",
+  "ja": "弘南鉄道弘南線",
+  "ko": "코난 철도 코난선",
+  "en_now": "Konan Line",
+  "en_new": "Konan Railway Konan Line",
+  "why": "일본어 표시 이름의 머리 弘南鉄道 → Konan Railway"
+ },
+ {
+  "line_id": "l_koromo_line",
+  "ja": "名鉄挙母線",
+  "ko": "메이테츠 코로모선",
+  "en_now": "Koromo Line",
+  "en_new": "Meitetsu Koromo Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_kosaka_line",
+  "ja": "小坂製錬小坂線",
+  "ko": "코사카 제련 코사카선",
+  "en_now": "Kosaka Line",
+  "en_new": "Kosaka Smelting Kosaka Line",
+  "why": "일본어 표시 이름의 머리 小坂製錬 → Kosaka Smelting"
+ },
+ {
+  "line_id": "l_kotobashi_line",
+  "ja": "都電江東橋線",
+  "ko": "도덴 코토바시선",
+  "en_now": "Kotobashi Line",
+  "en_new": "Toden Kotobashi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_kotohira_line",
+  "ja": "高松琴平電気鉄道琴平線",
+  "ko": "코토덴 코토히라선",
+  "en_now": "Kotohira Line",
+  "en_new": "Kotoden Kotohira Line",
+  "why": "일본어 표시 이름의 머리 高松琴平電気鉄道 → Kotoden"
+ },
+ {
+  "line_id": "l_kowa_line",
+  "ja": "名鉄河和線",
+  "ko": "메이테츠 코와선",
+  "en_now": "Kowa Line",
+  "en_new": "Meitetsu Kowa Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_koya_line",
+  "ja": "南海高野線",
+  "ko": "난카이 고야선",
+  "en_now": "Koya Line",
+  "en_new": "Nankai Koya Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_koyo_line",
+  "ja": "阪急甲陽線",
+  "ko": "한큐 코요선",
+  "en_now": "Koyo Line",
+  "en_new": "Hankyu Koyo Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_kubiki_railway",
+  "ja": "頸城鉄道線",
+  "ko": "쿠비키 철도선",
+  "en_now": "Kubiki Railway",
+  "en_new": "Kubiki Railway Line",
+  "why": "표시 이름 頸城鉄道線에 맞춤"
+ },
+ {
+  "line_id": "l_kuboyama_line",
+  "ja": "横浜市電久保山線",
+  "ko": "요코하마 시영 전차 쿠보야마선",
+  "en_now": "Kuboyama Line",
+  "en_new": "Yokohama City Tram Kuboyama Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_kudara_line",
+  "ja": "大阪市電百済線",
+  "ko": "오사카 시영 전차 쿠다라선",
+  "en_now": "Kudara Line",
+  "en_new": "Osaka City Tram Kudara Line",
+  "why": "일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_kujo_line",
+  "ja": "京都市電九条線",
+  "ko": "교토 시영 전차 쿠조선",
+  "en_now": "Kujo Line",
+  "en_new": "Kyoto City Tram Kujo Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_kumagaya_line",
+  "ja": "東武熊谷線",
+  "ko": "도부 쿠마가야선",
+  "en_now": "Kumagaya Line",
+  "en_new": "Tobu Kumagaya Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_kunisaki_line",
+  "ja": "大分交通国東線",
+  "ko": "오이타 교통 쿠니사키선",
+  "en_now": "Kunisaki Line",
+  "en_new": "Oita Kotsu Kunisaki Line",
+  "why": "일본어 표시 이름의 머리 大分交通 → Oita Kotsu"
+ },
+ {
+  "line_id": "l_kunitachi_branch_line",
+  "ja": "武蔵野線国立支線",
+  "ko": "쿠니타치 지선",
+  "en_now": "Kunitachi Branch Line",
+  "en_new": "Musashino Line Kunitachi Branch",
+  "why": "武蔵野線 지선. 일본어 표시 이름의 머리 武蔵野線 → Musashino Line"
+ },
+ {
+  "line_id": "l_kurama_line",
+  "ja": "叡山電鉄鞍馬線",
+  "ko": "에이잔 전철 쿠라마선",
+  "en_now": "Kurama Line",
+  "en_new": "Eizan Electric Railway Kurama Line",
+  "why": "일본어 표시 이름의 머리 叡山電鉄 → Eizan Electric Railway"
+ },
+ {
+  "line_id": "l_kurihama_line",
+  "ja": "京急久里浜線",
+  "ko": "케이큐 쿠리하마선",
+  "en_now": "Kurihama Line",
+  "en_new": "Keikyu Kurihama Line",
+  "why": "일본어 표시 이름의 머리 京急 → Keikyu"
+ },
+ {
+  "line_id": "l_kurobe_gorge_main_line",
+  "ja": "黒部峡谷鉄道本線",
+  "ko": "쿠로베 협곡철도 본선",
+  "en_now": "Kurobe Gorge Main Line",
+  "en_new": "Kurobe Gorge Railway Main Line",
+  "why": "머리 Kurobe Gorge Railway에 맞춤. 일본어 표시 이름의 머리 黒部峡谷鉄道 → Kurobe Gorge Railway"
+ },
+ {
+  "line_id": "l_kyoto_line",
+  "ja": "近鉄京都線",
+  "ko": "킨테츠 교토선",
+  "en_now": "Kyoto Line",
+  "en_new": "Kintetsu Kyoto Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_kyoto_main_line",
+  "ja": "阪急京都本線",
+  "ko": "한큐 교토 본선",
+  "en_now": "Kyoto Main Line",
+  "en_new": "Hankyu Kyoto Main Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_loop_line",
+  "ja": "広島電鉄循環線",
+  "ko": "히로시마 전철 순환선",
+  "en_now": "Loop Line",
+  "en_new": "Hiroden Loop Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_loop_line_hakatachikkomae_chidoribashi",
+  "ja": "西鉄福岡市内線循環線 博多築港前–千鳥橋",
+  "ko": "니시테츠 순환선 하카타칫코마에–치도리바시",
+  "en_now": "Loop Line (Hakatachikkomae~Chidoribashi)",
+  "en_new": "Nishitetsu Fukuoka City Tram Loop Line (Hakatachikkomae~Chidoribashi)",
+  "why": "일본어 표시 이름의 머리 西鉄福岡市内線 → Nishitetsu Fukuoka City Tram"
+ },
+ {
+  "line_id": "l_loop_line_kakyoin_sendai_ekimae",
+  "ja": "仙台市電循環線 花京院–仙台駅前",
+  "ko": "센다이 시영 전차 순환선 카쿄인–센다이에키마에",
+  "en_now": "Loop Line (Kakyoin~Sendai-Ekimae)",
+  "en_new": "Sendai City Tram Loop Line (Kakyoin~Sendai-Ekimae)",
+  "why": "일본어 표시 이름의 머리 仙台市電 → Sendai City Tram"
+ },
+ {
+  "line_id": "l_loop_line_nishitetsu",
+  "ja": "西鉄福岡市内線循環線",
+  "ko": "니시테츠 순환선",
+  "en_now": "Loop Line",
+  "en_new": "Nishitetsu Fukuoka City Tram Loop Line",
+  "why": "일본어 표시 이름의 머리 西鉄福岡市内線 → Nishitetsu Fukuoka City Tram"
+ },
+ {
+  "line_id": "l_loop_line_old_route",
+  "ja": "西鉄福岡市内線循環線 旧線",
+  "ko": "니시테츠 순환선 구선",
+  "en_now": "Loop Line Old Route",
+  "en_new": "Nishitetsu Fukuoka City Tram Loop Line Old Route",
+  "why": "일본어 표시 이름의 머리 西鉄福岡市内線 → Nishitetsu Fukuoka City Tram"
+ },
+ {
+  "line_id": "l_loop_line_sendai_city",
+  "ja": "仙台市電循環線",
+  "ko": "센다이 시영 전차 순환선",
+  "en_now": "Loop Line",
+  "en_new": "Sendai City Tram Loop Line",
+  "why": "일본어 표시 이름의 머리 仙台市電 → Sendai City Tram"
+ },
+ {
+  "line_id": "l_mabashi_branch_line",
+  "ja": "武蔵野線馬橋支線",
+  "ko": "마바시 지선",
+  "en_now": "Mabashi Branch Line",
+  "en_new": "Musashino Line Mabashi Branch",
+  "why": "武蔵野線 지선. 일본어 표시 이름의 머리 武蔵野線 → Musashino Line"
+ },
+ {
+  "line_id": "l_maebashi_line",
+  "ja": "東武前橋線",
+  "ko": "도부 마에바시선",
+  "en_now": "Maebashi Line",
+  "en_new": "Tobu Maebashi Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_makurazaki_line",
+  "ja": "鹿児島交通枕崎線",
+  "ko": "가고시마 교통 마쿠라자키선",
+  "en_now": "Makurazaki Line",
+  "en_new": "Kagoshima Kotsu Makurazaki Line",
+  "why": "일본어 표시 이름의 머리 鹿児島交通 → Kagoshima Kotsu"
+ },
+ {
+  "line_id": "l_marugame_line",
+  "ja": "琴平参宮電鉄丸亀線",
+  "ko": "코토히라 참궁전철 마루가메선",
+  "en_now": "Marugame Line",
+  "en_new": "Kotohira Sangu Electric Railway Marugame Line",
+  "why": "일본어 표시 이름의 머리 琴平参宮電鉄 → Kotohira Sangu Electric Railway"
+ },
+ {
+  "line_id": "l_maruko_line",
+  "ja": "上田丸子電鉄丸子線",
+  "ko": "우에다 마루코 전철 마루코선",
+  "en_now": "Maruko Line",
+  "en_new": "Ueda Maruko Electric Railway Maruko Line",
+  "why": "일본어 표시 이름의 머리 上田丸子電鉄 → Ueda Maruko Electric Railway"
+ },
+ {
+  "line_id": "l_marunouchi_line",
+  "ja": "東京メトロ丸ノ内線",
+  "ko": "도쿄메트로 마루노우치선",
+  "en_now": "Marunouchi Line",
+  "en_new": "Tokyo Metro Marunouchi Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_marunouchi_line_honancho_branch",
+  "ja": "東京メトロ丸ノ内線方南町支線",
+  "ko": "도쿄메트로 마루노우치선 호난초 지선",
+  "en_now": "Marunouchi Line Honancho Branch",
+  "en_new": "Tokyo Metro Marunouchi Line Honancho Branch",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_maruoka_line",
+  "ja": "京福電気鉄道丸岡線",
+  "ko": "케이후쿠 전기철도 마루오카선",
+  "en_now": "Maruoka Line",
+  "en_new": "Keifuku Electric Railroad Maruoka Line",
+  "why": "일본어 표시 이름의 머리 京福電気鉄道 → Keifuku Electric Railroad"
+ },
+ {
+  "line_id": "l_marutamachi_line",
+  "ja": "京都市電丸太町線",
+  "ko": "교토 시영 전차 마루타마치선",
+  "en_now": "Marutamachi Line",
+  "en_new": "Kyoto City Tram Marutamachi Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_matsuda_connecting_line",
+  "ja": "小田急松田連絡線",
+  "ko": "오다큐 마츠다 연락선",
+  "en_now": "Matsuda Connecting Line",
+  "en_new": "Odakyu Matsuda Connecting Line",
+  "why": "일본어 표시 이름의 머리 小田急 → Odakyu"
+ },
+ {
+  "line_id": "l_matsudo_line",
+  "ja": "京成松戸線",
+  "ko": "케이세이 마츠도선",
+  "en_now": "Matsudo Line",
+  "en_new": "Keisei Matsudo Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_matsuokogyo_railway_line",
+  "ja": "松尾鉱業鉄道線",
+  "ko": "마츠오 광업철도선",
+  "en_now": "Matsuokogyo Railway Line",
+  "en_new": "Matsuo Mining Railway Line",
+  "why": "松尾+鉱業 띄움, 사업자 영어 이름 Matsuo Mining과 맞춤"
+ },
+ {
+  "line_id": "l_matsusaka_line",
+  "ja": "三重電気鉄道松阪線",
+  "ko": "미에 전기철도 마츠사카선",
+  "en_now": "Matsusaka Line",
+  "en_new": "Mie Electric Railway Matsusaka Line",
+  "why": "일본어 표시 이름의 머리 三重電気鉄道 → Mie Electric Railway"
+ },
+ {
+  "line_id": "l_matsushimaminamiokajima_line",
+  "ja": "大阪市電松島南恩加島線",
+  "ko": "오사카 시영 전차 마츠시마미나미오카지마선",
+  "en_now": "Matsushimaminamiokajima Line",
+  "en_new": "Osaka City Tram Matsushima-Minamiokajima Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_meguro_line",
+  "ja": "東急目黒線",
+  "ko": "도큐 메구로선",
+  "en_now": "Meguro Line",
+  "en_new": "Tokyu Meguro Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_meidocho_line",
+  "ja": "名古屋市電明道町線",
+  "ko": "나고야 시영 전차 메이도초선",
+  "en_now": "Meidocho Line",
+  "en_new": "Nagoya City Tram Meidocho Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_meijo_line",
+  "ja": "名古屋市営地下鉄名城線",
+  "ko": "나고야 시영 지하철 메이죠선",
+  "en_now": "Meijo Line",
+  "en_new": "Nagoya Municipal Subway Meijo Line",
+  "why": "일본어 표시 이름의 머리 名古屋市営地下鉄 → Nagoya Municipal Subway"
+ },
+ {
+  "line_id": "l_meijo_meiko_line",
+  "ja": "名古屋市営地下鉄名城線・名港線",
+  "ko": "나고야 시영 지하철 메이조선·메이코선",
+  "en_now": "Meijo-Meiko Line",
+  "en_new": "Nagoya Municipal Subway Meijo-Meiko Line",
+  "why": "일본어 표시 이름의 머리 名古屋市営地下鉄 → Nagoya Municipal Subway"
+ },
+ {
+  "line_id": "l_midosuji_line",
+  "ja": "Osaka Metro御堂筋線",
+  "ko": "오사카메트로 미도스지선",
+  "en_now": "Midosuji Line",
+  "en_new": "Osaka Metro Midosuji Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_mikawa_line",
+  "ja": "名鉄三河線",
+  "ko": "메이테츠 미카와선",
+  "en_now": "Mikawa Line",
+  "en_new": "Meitetsu Mikawa Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_miki_line_miki",
+  "ja": "三木鉄道三木線",
+  "ko": "미키 철도 미키선",
+  "en_now": "Miki Line",
+  "en_new": "Miki Railway Miki Line",
+  "why": "일본어 표시 이름의 머리 三木鉄道 → Miki Railway"
+ },
+ {
+  "line_id": "l_mikuni_awara_line",
+  "ja": "えちぜん鉄道三国芦原線",
+  "ko": "에치젠 철도 미쿠니아와라선",
+  "en_now": "Mikuni Awara Line",
+  "en_new": "Echizen Railway Mikuni Awara Line",
+  "why": "일본어 표시 이름의 머리 えちぜん鉄道 → Echizen Railway"
+ },
+ {
+  "line_id": "l_minami_line",
+  "ja": "広島電鉄皆実線",
+  "ko": "히로시마 전철 미나미선",
+  "en_now": "Minami Line",
+  "en_new": "Hiroden Minami Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_minami_osaka_line",
+  "ja": "近鉄南大阪線",
+  "ko": "킨테츠 미나미오사카선",
+  "en_now": "Minami-Osaka Line",
+  "en_new": "Kintetsu Minami-Osaka Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_minato_line",
+  "ja": "ひたちなか海浜鉄道湊線",
+  "ko": "히타치나카 해빈철도 미나토선",
+  "en_now": "Minato Line",
+  "en_new": "Hitachinaka Seaside Railway Minato Line",
+  "why": "일본어 표시 이름의 머리 ひたちなか海浜鉄道 → Hitachinaka Seaside Railway"
+ },
+ {
+  "line_id": "l_minatogawa_line",
+  "ja": "神戸市電湊川線",
+  "ko": "고베 시영 전차 미나토가와선",
+  "en_now": "Minatogawa Line",
+  "en_new": "Kobe City Tram Minatogawa Line",
+  "why": "일본어 표시 이름의 머리 神戸市電 → Kobe City Tram"
+ },
+ {
+  "line_id": "l_minomachi_line",
+  "ja": "名鉄美濃町線",
+  "ko": "메이테츠 미노마치선",
+  "en_now": "Minomachi Line",
+  "en_new": "Meitetsu Minomachi Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_minoo_line",
+  "ja": "阪急箕面線",
+  "ko": "한큐 미노오선",
+  "en_now": "Minoo Line",
+  "en_new": "Hankyu Minoo Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_minowa_line",
+  "ja": "都電三ノ輪線",
+  "ko": "도덴 미노와선",
+  "en_now": "Minowa Line",
+  "en_new": "Toden Minowa Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_mita_line",
+  "ja": "都営地下鉄三田線",
+  "ko": "도에이 미타선",
+  "en_now": "Mita Line",
+  "en_new": "Toei Mita Line",
+  "why": "일본어 표시 이름의 머리 都営地下鉄 → Toei"
+ },
+ {
+  "line_id": "l_miyafuku_line",
+  "ja": "京都丹後鉄道宮福線",
+  "ko": "교토 탄고 철도 미야후쿠선",
+  "en_now": "Miyafuku Line",
+  "en_new": "Kyoto Tango Railway Miyafuku Line",
+  "why": "일본어 표시 이름의 머리 京都丹後鉄道 → Kyoto Tango Railway"
+ },
+ {
+  "line_id": "l_miyajidake_line",
+  "ja": "西鉄宮地岳線",
+  "ko": "니시테츠 미야지다케선",
+  "en_now": "Miyajidake Line",
+  "en_new": "Nishitetsu Miyajidake Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_miyajima_line",
+  "ja": "広島電鉄宮島線",
+  "ko": "히로시마 전철 미야지마선",
+  "en_now": "Miyajima Line",
+  "en_new": "Hiroden Miyajima Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_miyakojimamoriguchi_line",
+  "ja": "大阪市電都島守口線",
+  "ko": "오사카 시영 전차 미야코지마모리구치선",
+  "en_now": "Miyakojimamoriguchi Line",
+  "en_new": "Osaka City Tram Miyakojima-Moriguchi Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_miyamae_line",
+  "ja": "函館市電宮前線",
+  "ko": "하코다테 시영 전차 미야마에선",
+  "en_now": "Miyamae Line",
+  "en_new": "Hakodate City Tram Miyamae Line",
+  "why": "일본어 표시 이름의 머리 函館市電 → Hakodate City Tram"
+ },
+ {
+  "line_id": "l_miyazaki_kuko_line",
+  "ja": "宮崎空港線",
+  "ko": "미야자키 공항선",
+  "en_now": "Miyazaki Kuko Line",
+  "en_new": "Miyazaki Airport Line",
+  "why": "JR九州 공식 영문. Kuko는 空港 미번역"
+ },
+ {
+  "line_id": "l_miyazakikotsu_line",
+  "ja": "宮崎交通線",
+  "ko": "미야자키 교통",
+  "en_now": "Miyazakikotsu Line",
+  "en_new": "Miyazaki Kotsu Line",
+  "why": "宮崎+交通 띄움"
+ },
+ {
+  "line_id": "l_miyazu_line_kyoto_tango_railway_willer_trains",
+  "ja": "北近畿タンゴ鉄道宮津線",
+  "ko": "키타킨키 탄고 철도 미야즈선",
+  "en_now": "Miyazu Line",
+  "en_new": "Kitakinki Tango Railway Miyazu Line",
+  "why": "일본어 표시 이름의 머리 北近畿タンゴ鉄道 → Kitakinki Tango Railway"
+ },
+ {
+  "line_id": "l_mizuma_line",
+  "ja": "水間鉄道水間線",
+  "ko": "미즈마 철도 미즈마선",
+  "en_now": "Mizuma Line",
+  "en_new": "Mizuma Railway Mizuma Line",
+  "why": "일본어 표시 이름의 머리 水間鉄道 → Mizuma Railway"
+ },
+ {
+  "line_id": "l_mizushima_main_line",
+  "ja": "水島臨海鉄道水島本線",
+  "ko": "미즈시마 임해철도 미즈시마 본선",
+  "en_now": "Mizushima Main Line",
+  "en_new": "Mizushima Rinkai Railway Mizushima Main Line",
+  "why": "일본어 표시 이름의 머리 水島臨海鉄道 → Mizushima Rinkai Railway"
+ },
+ {
+  "line_id": "l_mojiko_retro_scenic_line",
+  "ja": "平成筑豊鉄道門司港レトロ観光線",
+  "ko": "헤이세이 치쿠호 철도 모지코 레트로 관광선",
+  "en_now": "Mojiko Retro Scenic Line",
+  "en_new": "Heisei Chikuho Railway Mojiko Retro Scenic Line",
+  "why": "머리 붙임"
+ },
+ {
+  "line_id": "l_moka_line_moka",
+  "ja": "真岡鐵道真岡線",
+  "ko": "모오카 철도 모오카선",
+  "en_now": "Moka Line",
+  "en_new": "Moka Railway Moka Line",
+  "why": "일본어 표시 이름의 머리 真岡鐵道 → Moka Railway"
+ },
+ {
+  "line_id": "l_monkey_park_monorail",
+  "ja": "名鉄モンキーパークモノレール線",
+  "ko": "메이테츠 몽키파크 모노레일선",
+  "en_now": "Monkey Park Monorail",
+  "en_new": "Meitetsu Monkey Park Monorail",
+  "why": "名鉄 머리 (영어 위키 Meitetsu Monkey Park Monorail Line). 일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_morimatsu_line",
+  "ja": "伊予鉄道森松線",
+  "ko": "이요 철도 모리마츠선",
+  "en_now": "Morimatsu Line",
+  "en_new": "Iyotetsu Morimatsu Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_mukogawa_line",
+  "ja": "阪神武庫川線",
+  "ko": "한신 무코가와선",
+  "en_now": "Mukogawa Line",
+  "en_new": "Hanshin Mukogawa Line",
+  "why": "일본어 표시 이름의 머리 阪神 → Hanshin"
+ },
+ {
+  "line_id": "l_mukojima_line",
+  "ja": "都電向島線",
+  "ko": "도덴 무코지마선",
+  "en_now": "Mukojima Line",
+  "en_new": "Toden Mukojima Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_myoken_line",
+  "ja": "能勢電鉄妙見線",
+  "ko": "노세 전철 묘켄선",
+  "en_now": "Myoken Line",
+  "en_new": "Nose Electric Railway Myoken Line",
+  "why": "일본어 표시 이름의 머리 能勢電鉄 → Nose Electric Railway"
+ },
+ {
+  "line_id": "l_myokennomori_cable",
+  "ja": "能勢電鉄妙見の森ケーブル",
+  "ko": "노세 전철 묘켄노모리 케이블",
+  "en_now": "Myokennomori Cable",
+  "en_new": "Myoken-no-Mori Cable",
+  "why": "妙見の森을 띄움 (能勢電鉄 공식 표기). 머리 없음: 케이블카, 이름만으로 구별"
+ },
+ {
+  "line_id": "l_myoko_haneuma_line",
+  "ja": "えちごトキめき鉄道妙高はねうまライン",
+  "ko": "에치고 토키메키 철도 묘코 하네우마 라인",
+  "en_now": "Myoko Haneuma Line",
+  "en_new": "Echigo Tokimeki Railway Myoko Haneuma Line",
+  "why": "일본어 표시 이름의 머리 えちごトキめき鉄道 → Echigo Tokimeki Railway"
+ },
+ {
+  "line_id": "l_naebo_line",
+  "ja": "札幌市電苗穂線",
+  "ko": "삿포로 시영 전차 나에보선",
+  "en_now": "Naebo Line",
+  "en_new": "Sapporo City Tram Naebo Line",
+  "why": "일본어 표시 이름의 머리 札幌市電 → Sapporo City Tram"
+ },
+ {
+  "line_id": "l_nagahama_line",
+  "ja": "呉市電長浜線",
+  "ko": "구레 시영 전차 나가하마선",
+  "en_now": "Nagahama Line",
+  "en_new": "Kure City Tram Nagahama Line",
+  "why": "일본어 표시 이름의 머리 呉市電 → Kure City Tram"
+ },
+ {
+  "line_id": "l_nagahori_tsurumi_ryokuchi_line",
+  "ja": "Osaka Metro長堀鶴見緑地線",
+  "ko": "오사카메트로 나가호리츠루미료쿠치선",
+  "en_now": "Nagahori Tsurumi-ryokuchi Line",
+  "en_new": "Osaka Metro Nagahori Tsurumi-ryokuchi Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_nagano_line_kintetsu",
+  "ja": "近鉄長野線",
+  "ko": "킨테츠 나가노선",
+  "en_now": "Nagano Line",
+  "en_new": "Kintetsu Nagano Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_nagano_line_nagano",
+  "ja": "長野電鉄長野線",
+  "ko": "나가노 전철 나가노선",
+  "en_now": "Nagano Line",
+  "en_new": "Nagano Electric Railway Nagano Line",
+  "why": "일본어 표시 이름의 머리 長野電鉄 → Nagano Electric Railway"
+ },
+ {
+  "line_id": "l_nagao_line",
+  "ja": "高松琴平電気鉄道長尾線",
+  "ko": "코토덴 나가오선",
+  "en_now": "Nagao Line",
+  "en_new": "Kotoden Nagao Line",
+  "why": "일본어 표시 이름의 머리 高松琴平電気鉄道 → Kotoden"
+ },
+ {
+  "line_id": "l_nagaoka_line",
+  "ja": "越後交通長岡線",
+  "ko": "에치고 교통 나가오카선",
+  "en_now": "Nagaoka Line",
+  "en_new": "Echigo Kotsu Nagaoka Line",
+  "why": "일본어 표시 이름의 머리 越後交通 → Echigo Kotsu"
+ },
+ {
+  "line_id": "l_nagareyama_line",
+  "ja": "流鉄流山線",
+  "ko": "류테츠 나가레야마선",
+  "en_now": "Nagareyama Line",
+  "en_new": "Ryutetsu Nagareyama Line",
+  "why": "일본어 표시 이름의 머리 流鉄 → Ryutetsu"
+ },
+ {
+  "line_id": "l_nagasaki_tram_main_line",
+  "ja": "長崎電気軌道本線",
+  "ko": "나가사키 전기궤도 본선",
+  "en_now": "Nagasaki Tram Main Line",
+  "en_new": "Nagasaki Electric Tramway Main Line",
+  "why": "머리 Nagasaki Electric Tramway에 맞춤. 일본어 표시 이름의 머리 長崎電気軌道 → Nagasaki Electric Tramway"
+ },
+ {
+  "line_id": "l_nagoya_line",
+  "ja": "近鉄名古屋線",
+  "ko": "킨테츠 나고야선",
+  "en_now": "Nagoya Line",
+  "en_new": "Kintetsu Nagoya Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_nagoya_main_line",
+  "ja": "名鉄名古屋本線",
+  "ko": "메이테츠 나고야 본선",
+  "en_now": "Nagoya Main Line",
+  "en_new": "Meitetsu Nagoya Main Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_nakagawa_connecting_line",
+  "ja": "近鉄中川短絡線",
+  "ko": "킨테츠 나카가와 단락선",
+  "en_now": "Nakagawa Connecting Line",
+  "en_new": "Kintetsu Nakagawa Connecting Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_nakamura_line_nagoya_city",
+  "ja": "名古屋市電中村線",
+  "ko": "나고야 시영 전차 나카무라선",
+  "en_now": "Nakamura Line",
+  "en_new": "Nagoya City Tram Nakamura Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_nakamura_line_tosa_kuroshio",
+  "ja": "土佐くろしお鉄道中村線",
+  "ko": "토사쿠로시오 철도 나카무라선",
+  "en_now": "Nakamura Line",
+  "en_new": "Tosa Kuroshio Railway Nakamura Line",
+  "why": "일본어 표시 이름의 머리 土佐くろしお鉄道 → Tosa Kuroshio Railway"
+ },
+ {
+  "line_id": "l_nakanoshima_line",
+  "ja": "京阪中之島線",
+  "ko": "케이한 나카노시마선",
+  "en_now": "Nakanoshima Line",
+  "en_new": "Keihan Nakanoshima Line",
+  "why": "일본어 표시 이름의 머리 京阪 → Keihan"
+ },
+ {
+  "line_id": "l_namari_line",
+  "ja": "花巻電鉄鉛線",
+  "ko": "하나마키 전철 나마리선",
+  "en_now": "Namari Line",
+  "en_new": "Hanamaki Electric Railway Namari Line",
+  "why": "일본어 표시 이름의 머리 花巻電鉄 → Hanamaki Electric Railway"
+ },
+ {
+  "line_id": "l_namba_line",
+  "ja": "近鉄難波線",
+  "ko": "킨테츠 난바선",
+  "en_now": "Namba Line",
+  "en_new": "Kintetsu Namba Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_namboku_line_kita_osaka_kyuko",
+  "ja": "北大阪急行電鉄南北線",
+  "ko": "키타오사카 급행전철 난보쿠선",
+  "en_now": "Namboku Line",
+  "en_new": "Kita-Osaka Kyuko Namboku Line",
+  "why": "일본어 표시 이름의 머리 北大阪急行電鉄 → Kita-Osaka Kyuko"
+ },
+ {
+  "line_id": "l_namboku_line_sapporo_city",
+  "ja": "札幌市営地下鉄南北線",
+  "ko": "삿포로시 지하철 난보쿠선",
+  "en_now": "Namboku Line",
+  "en_new": "Sapporo Municipal Subway Namboku Line",
+  "why": "일본어 표시 이름의 머리 札幌市営地下鉄 → Sapporo Municipal Subway"
+ },
+ {
+  "line_id": "l_namboku_line_sendai_city",
+  "ja": "仙台市地下鉄南北線",
+  "ko": "센다이시 지하철 난보쿠선",
+  "en_now": "Namboku Line",
+  "en_new": "Sendai Subway Namboku Line",
+  "why": "일본어 표시 이름의 머리 仙台市地下鉄 → Sendai Subway"
+ },
+ {
+  "line_id": "l_namboku_line_tokyo_metro",
+  "ja": "東京メトロ南北線",
+  "ko": "도쿄메트로 난보쿠선",
+  "en_now": "Namboku Line",
+  "en_new": "Tokyo Metro Namboku Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_nan_etsu_line",
+  "ja": "福井鉄道南越線",
+  "ko": "후쿠이 철도 난에츠선",
+  "en_now": "Nan-Etsu Line",
+  "en_new": "Fukui Railway Nan-Etsu Line",
+  "why": "일본어 표시 이름의 머리 福井鉄道 → Fukui Railway"
+ },
+ {
+  "line_id": "l_nanakuma_line",
+  "ja": "福岡市地下鉄七隈線",
+  "ko": "후쿠오카시 지하철 나나쿠마선",
+  "en_now": "Nanakuma Line",
+  "en_new": "Fukuoka City Subway Nanakuma Line",
+  "why": "일본어 표시 이름의 머리 福岡市地下鉄 → Fukuoka City Subway"
+ },
+ {
+  "line_id": "l_nanao_line_noto",
+  "ja": "のと鉄道七尾線",
+  "ko": "노토 철도 나나오선",
+  "en_now": "Nanao Line",
+  "en_new": "Noto Railway Nanao Line",
+  "why": "일본어 표시 이름의 머리 のと鉄道 → Noto Railway"
+ },
+ {
+  "line_id": "l_nanko_port_town_line",
+  "ja": "Osaka Metro南港ポートタウン線",
+  "ko": "오사카메트로 난코 포트타운선",
+  "en_now": "Nanko Port Town Line",
+  "en_new": "Osaka Metro Nanko Port Town Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_nara_line_kintetsu",
+  "ja": "近鉄奈良線",
+  "ko": "킨테츠 나라선",
+  "en_now": "Nara Line",
+  "en_new": "Kintetsu Nara Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_narihira_line",
+  "ja": "都電業平線",
+  "ko": "도덴 나리히라선",
+  "en_now": "Narihira Line",
+  "en_new": "Toden Narihira Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_narita_airport_line",
+  "ja": "京成成田空港線",
+  "ko": "케이세이 나리타 공항선",
+  "en_now": "Narita Airport Line",
+  "en_new": "Keisei Narita Airport Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_negishi_line_yokohama_city",
+  "ja": "横浜市電根岸線",
+  "ko": "요코하마 시영 전차 네기시선",
+  "en_now": "Negishi Line",
+  "en_new": "Yokohama City Tram Negishi Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_nemurotakushoku_railway_line",
+  "ja": "根室拓殖鉄道線",
+  "ko": "네무로 척식철도선",
+  "en_now": "Nemurotakushoku Railway Line",
+  "en_new": "Nemuro Takushoku Railway Line",
+  "why": "根室+拓殖 띄움 (사업자 영어 이름과 맞춤)"
+ },
+ {
+  "line_id": "l_nihonkai_hisui_line",
+  "ja": "えちごトキめき鉄道日本海ひすいライン",
+  "ko": "에치고 토키메키 철도 니혼카이 히스이 라인",
+  "en_now": "Nihonkai Hisui Line",
+  "en_new": "Echigo Tokimeki Railway Nihonkai Hisui Line",
+  "why": "일본어 표시 이름의 머리 えちごトキめき鉄道 → Echigo Tokimeki Railway"
+ },
+ {
+  "line_id": "l_nihonkogyosaganoseki_railway",
+  "ja": "日本鉱業佐賀関鉄道",
+  "ko": "일본 광업 사가노세키 철도",
+  "en_now": "Nihonkogyosaganoseki Railway",
+  "en_new": "Saganoseki Railway",
+  "why": "읽기에 섞인 회사 이름(日本鉱業)을 뗌. 노선 이름이 철도 이름이라 머리 없음"
+ },
+ {
+  "line_id": "l_nikko_line_tobu",
+  "ja": "東武日光線",
+  "ko": "도부 닛코선",
+  "en_now": "Nikko Line",
+  "en_new": "Tobu Nikko Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_nikko_tramway_line",
+  "ja": "東武日光軌道線",
+  "ko": "도부 닛코 궤도선",
+  "en_now": "Nikko Tramway Line",
+  "en_new": "Tobu Nikko Tramway Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_ninokuchi_connecting_line",
+  "ja": "近鉄新ノ口連絡線",
+  "ko": "킨테츠 니노쿠치 연락선",
+  "en_now": "Ninokuchi Connecting Line",
+  "en_new": "Kintetsu Ninokuchi Connecting Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_nishi_kyushu_line",
+  "ja": "松浦鉄道西九州線",
+  "ko": "마츠우라 철도 니시큐슈선",
+  "en_now": "Nishi-Kyushu Line",
+  "en_new": "Matsuura Railway Nishi-Kyushu Line",
+  "why": "일본어 표시 이름의 머리 松浦鉄道 → Matsuura Railway"
+ },
+ {
+  "line_id": "l_nishi_shigi_cable_line",
+  "ja": "近鉄西信貴鋼索線",
+  "ko": "킨테츠 니시시기 강삭선",
+  "en_now": "Nishi-Shigi Cable Line",
+  "en_new": "Kintetsu Nishi-Shigi Cable Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_nishidotomboritennoji_line",
+  "ja": "大阪市電西道頓堀天王寺線",
+  "ko": "오사카 시영 전차 니시도톤보리텐노지선",
+  "en_now": "Nishidotomboritennoji Line",
+  "en_new": "Osaka City Tram Nishidotombori-Tennoji Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_nishikigawa_seiryu_line",
+  "ja": "錦川鉄道錦川清流線",
+  "ko": "니시키가와 철도 니시키가와세이류선",
+  "en_now": "Nishikigawa Seiryu Line",
+  "en_new": "Nishikigawa Railway Nishikigawa Seiryu Line",
+  "why": "일본어 표시 이름의 머리 錦川鉄道 → Nishikigawa Railway"
+ },
+ {
+  "line_id": "l_nishimaruko_line",
+  "ja": "上田丸子電鉄西丸子線",
+  "ko": "우에다 마루코 전철 니시마루코선",
+  "en_now": "Nishimaruko Line",
+  "en_new": "Ueda Maruko Electric Railway Nishimaruko Line",
+  "why": "일본어 표시 이름의 머리 上田丸子電鉄 → Ueda Maruko Electric Railway"
+ },
+ {
+  "line_id": "l_nishinodasakurajima_line",
+  "ja": "大阪市電西野田桜島線",
+  "ko": "오사카 시영 전차 니시노다사쿠라지마선",
+  "en_now": "Nishinodasakurajima Line",
+  "en_new": "Osaka City Tram Nishinoda-Sakurajima Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_nishio_line",
+  "ja": "名鉄西尾線",
+  "ko": "메이테츠 니시오선",
+  "en_now": "Nishio Line",
+  "en_new": "Meitetsu Nishio Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_nishiurawa_branch_line",
+  "ja": "武蔵野線西浦和支線",
+  "ko": "니시우라와 지선",
+  "en_now": "Nishiurawa Branch Line",
+  "en_new": "Musashino Line Nishi-Urawa Branch",
+  "why": "武蔵野線 지선. 역 공식 표기 Nishi-Urawa. 일본어 표시 이름의 머리 武蔵野線 → Musashino Line"
+ },
+ {
+  "line_id": "l_nissei_line",
+  "ja": "能勢電鉄日生線",
+  "ko": "노세 전철 닛세이선",
+  "en_now": "Nissei Line",
+  "en_new": "Nose Electric Railway Nissei Line",
+  "why": "일본어 표시 이름의 머리 能勢電鉄 → Nose Electric Railway"
+ },
+ {
+  "line_id": "l_noda_line",
+  "ja": "東武野田線",
+  "ko": "도부 노다선",
+  "en_now": "Noda Line",
+  "en_new": "Tobu Noda Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_noguchi_line",
+  "ja": "別府鉄道野口線",
+  "ko": "베후 철도 노구치선",
+  "en_now": "Noguchi Line",
+  "en_new": "Befu Railway Noguchi Line",
+  "why": "일본어 표시 이름의 머리 別府鉄道 → Befu Railway"
+ },
+ {
+  "line_id": "l_nomi_line",
+  "ja": "北陸鉄道能美線",
+  "ko": "호쿠리쿠 철도 노미선",
+  "en_now": "Nomi Line",
+  "en_new": "Hokuriku Railroad Nomi Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_noto_line_hokuriku",
+  "ja": "北陸鉄道能登線",
+  "ko": "호쿠리쿠 철도 노토선",
+  "en_now": "Noto Line",
+  "en_new": "Hokuriku Railroad Noto Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_noto_line_noto",
+  "ja": "のと鉄道能登線",
+  "ko": "노토 철도 노토선",
+  "en_now": "Noto Line",
+  "en_new": "Noto Railway Noto Line",
+  "why": "일본어 표시 이름의 머리 のと鉄道 → Noto Railway"
+ },
+ {
+  "line_id": "l_oarai_kashima_line",
+  "ja": "鹿島臨海鉄道大洗鹿島線",
+  "ko": "카시마 임해철도 오아라이카시마선",
+  "en_now": "Oarai Kashima Line",
+  "en_new": "Kashima Rinkai Railway Oarai Kashima Line",
+  "why": "일본어 표시 이름의 머리 鹿島臨海鉄道 → Kashima Rinkai Railway"
+ },
+ {
+  "line_id": "l_obanazawa_line",
+  "ja": "山形交通尾花沢線",
+  "ko": "야마가타 교통 오바나자와선",
+  "en_now": "Obanazawa Line",
+  "en_new": "Yamagata Kotsu Obanazawa Line",
+  "why": "일본어 표시 이름의 머리 山形交通 → Yamagata Kotsu"
+ },
+ {
+  "line_id": "l_obihirobu_line",
+  "ja": "十勝鉄道帯広部線",
+  "ko": "토카치 철도 오비히로부선",
+  "en_now": "Obihirobu Line",
+  "en_new": "Tokachi Railway Obihiro-bu Line",
+  "why": "帯広+部를 띄움. 일본어 표시 이름의 머리 十勝鉄道 → Tokachi Railway"
+ },
+ {
+  "line_id": "l_obihirobu_line_obihiroodori_branch",
+  "ja": "十勝鉄道帯広部線 帯広大通支線",
+  "ko": "토카치 철도 오비히로부선 오비히로오도리 지선",
+  "en_now": "Obihirobu Line Obihiroodori Branch",
+  "en_new": "Tokachi Railway Obihiro-bu Line Obihiro-Odori Branch",
+  "why": "帯広+部, 帯広+大通을 띄움. 일본어 표시 이름의 머리 十勝鉄道 → Tokachi Railway"
+ },
+ {
+  "line_id": "l_odawara_line",
+  "ja": "小田急小田原線",
+  "ko": "오다큐 오다와라선",
+  "en_now": "Odawara Line",
+  "en_new": "Odakyu Odawara Line",
+  "why": "일본어 표시 이름의 머리 小田急 → Odakyu"
+ },
+ {
+  "line_id": "l_odawarashinai_line",
+  "ja": "箱根登山鉄道小田原市内線",
+  "ko": "오다큐 하코네 오다와라 시내선",
+  "en_now": "Odawarashinai Line",
+  "en_new": "Hakone Tozan Railway Odawara City Line",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 箱根登山鉄道 → Hakone Tozan Railway"
+ },
+ {
+  "line_id": "l_oe_line",
+  "ja": "名古屋市電大江線",
+  "ko": "나고야 시영 전차 오에선",
+  "en_now": "Oe Line",
+  "en_new": "Nagoya City Tram Oe Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_oedo_line",
+  "ja": "都営地下鉄大江戸線",
+  "ko": "도에이 오에도선",
+  "en_now": "Oedo Line",
+  "en_new": "Toei Oedo Line",
+  "why": "일본어 표시 이름의 머리 都営地下鉄 → Toei"
+ },
+ {
+  "line_id": "l_ogachi_line",
+  "ja": "羽後交通雄勝線",
+  "ko": "우고 교통 오가치선",
+  "en_now": "Ogachi Line",
+  "en_new": "Ugo Kotsu Ogachi Line",
+  "why": "일본어 표시 이름의 머리 羽後交通 → Ugo Kotsu"
+ },
+ {
+  "line_id": "l_ogose_line",
+  "ja": "東武越生線",
+  "ko": "도부 오고세선",
+  "en_now": "Ogose Line",
+  "en_new": "Tobu Ogose Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_ohmi_main_line",
+  "ja": "近江鉄道本線",
+  "ko": "오미 철도 본선",
+  "en_now": "Ohmi Main Line",
+  "en_new": "Ohmi Railway Main Line",
+  "why": "머리 Ohmi Railway에 맞춤. 일본어 표시 이름의 머리 近江鉄道 → Ohmi Railway"
+ },
+ {
+  "line_id": "l_oigawa_main_line",
+  "ja": "大井川鐵道大井川本線",
+  "ko": "오이가와 철도 오이가와 본선",
+  "en_now": "Oigawa Main Line",
+  "en_new": "Oigawa Railway Oigawa Main Line",
+  "why": "일본어 표시 이름의 머리 大井川鐵道 → Oigawa Railway"
+ },
+ {
+  "line_id": "l_oimachi_line",
+  "ja": "東急大井町線",
+  "ko": "도큐 오이마치선",
+  "en_now": "Oimachi Line",
+  "en_new": "Tokyu Oimachi Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_okawa_line",
+  "ja": "西鉄大川線",
+  "ko": "니시테츠 오카와선",
+  "en_now": "Okawa Line",
+  "en_new": "Nishitetsu Okawa Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_okazakishinai_line",
+  "ja": "名鉄岡崎市内線",
+  "ko": "메이테츠 오카자키 시내선",
+  "en_now": "Okazakishinai Line",
+  "en_new": "Meitetsu Okazaki City Line",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_okoshi_line",
+  "ja": "名鉄起線",
+  "ko": "메이테츠 오코시선",
+  "en_now": "Okoshi Line",
+  "en_new": "Meitetsu Okoshi Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_okuyama_line",
+  "ja": "遠州鉄道奥山線",
+  "ko": "엔슈 철도 오쿠야마선",
+  "en_now": "Okuyama Line",
+  "en_new": "Enshu Railway Okuyama Line",
+  "why": "일본어 표시 이름의 머리 遠州鉄道 → Enshu Railway"
+ },
+ {
+  "line_id": "l_omiya_branch_line",
+  "ja": "武蔵野線大宮支線",
+  "ko": "오미야 지선",
+  "en_now": "Omiya Branch Line",
+  "en_new": "Musashino Line Omiya Branch",
+  "why": "武蔵野線 지선. 일본어 표시 이름의 머리 武蔵野線 → Musashino Line"
+ },
+ {
+  "line_id": "l_omiya_line",
+  "ja": "京都市電大宮線",
+  "ko": "교토 시영 전차 오미야선",
+  "en_now": "Omiya Line",
+  "en_new": "Kyoto City Tram Omiya Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_omori_line",
+  "ja": "函館市電大森線",
+  "ko": "하코다테 시영 전차 오모리선",
+  "en_now": "Omori Line",
+  "en_new": "Hakodate City Tram Omori Line",
+  "why": "일본어 표시 이름의 머리 函館市電 → Hakodate City Tram"
+ },
+ {
+  "line_id": "l_omutashinai_line",
+  "ja": "西鉄大牟田市内線",
+  "ko": "니시테츠 오무타 시내선",
+  "en_now": "Omutashinai Line",
+  "en_new": "Nishitetsu Omuta City Line",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_osaka_line",
+  "ja": "近鉄大阪線",
+  "ko": "킨테츠 오사카선",
+  "en_now": "Osaka Line",
+  "en_new": "Kintetsu Osaka Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_oshiage_line",
+  "ja": "京成押上線",
+  "ko": "케이세이 오시아게선",
+  "en_now": "Oshiage Line",
+  "en_new": "Keisei Oshiage Line",
+  "why": "일본어 표시 이름의 머리 京成 → Keisei"
+ },
+ {
+  "line_id": "l_oshikiri_line",
+  "ja": "名古屋市電押切線",
+  "ko": "나고야 시영 전차 오시키리선",
+  "en_now": "Oshikiri Line",
+  "en_new": "Nagoya City Tram Oshikiri Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_oshikiri_line_yanagibashi_shimacho",
+  "ja": "名古屋市電押切線 柳橋–志摩町",
+  "ko": "나고야 시영 전차 오시키리선 야나기바시–시마초",
+  "en_now": "Oshikiri Line (Yanagibashi~Shimacho)",
+  "en_new": "Nagoya City Tram Oshikiri Line (Yanagibashi~Shimacho)",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_oshikirijoshin_connecting_line",
+  "ja": "名古屋市電押切浄心連絡線",
+  "ko": "나고야 시영 전차 오시키리조신 연락선",
+  "en_now": "Oshikirijoshin Connecting Line",
+  "en_new": "Nagoya City Tram Oshikiri-Joshin Connecting Line",
+  "why": "押切+浄心 두 지명을 띄움. 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_osho_line",
+  "ja": "羽後交通横荘線",
+  "ko": "우고 교통 오쇼선",
+  "en_now": "Osho Line",
+  "en_new": "Ugo Kotsu Osho Line",
+  "why": "일본어 표시 이름의 머리 羽後交通 → Ugo Kotsu"
+ },
+ {
+  "line_id": "l_otemachi_line",
+  "ja": "伊予鉄道大手町線",
+  "ko": "이요 철도 오테마치선",
+  "en_now": "Otemachi Line",
+  "en_new": "Iyotetsu Otemachi Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_oto_line",
+  "ja": "京阪鴨東線",
+  "ko": "케이한 오토선",
+  "en_now": "Oto Line",
+  "en_new": "Keihan Oto Line",
+  "why": "일본어 표시 이름의 머리 京阪 → Keihan"
+ },
+ {
+  "line_id": "l_otsuka_line",
+  "ja": "都電大塚線",
+  "ko": "도덴 오츠카선",
+  "en_now": "Otsuka Line",
+  "en_new": "Toden Otsuka Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_otsuki_line",
+  "ja": "富士山麓電気鉄道大月線",
+  "ko": "후지산로쿠 전기철도 오츠키선",
+  "en_now": "Otsuki Line",
+  "en_new": "Fujikyu Railway Otsuki Line",
+  "why": "일본어 표시 이름의 머리 富士山麓電気鉄道 → Fujikyu Railway"
+ },
+ {
+  "line_id": "l_oura_branch_line",
+  "ja": "長崎電気軌道大浦支線",
+  "ko": "나가사키 전기궤도 오우라 지선",
+  "en_now": "Oura Branch Line",
+  "en_new": "Nagasaki Electric Tramway Oura Branch Line",
+  "why": "일본어 표시 이름의 머리 長崎電気軌道 → Nagasaki Electric Tramway"
+ },
+ {
+  "line_id": "l_owani_line",
+  "ja": "弘南鉄道大鰐線",
+  "ko": "코난 철도 오와니선",
+  "en_now": "Owani Line",
+  "en_new": "Konan Railway Owani Line",
+  "why": "일본어 표시 이름의 머리 弘南鉄道 → Konan Railway"
+ },
+ {
+  "line_id": "l_owariyabashi_line",
+  "ja": "横浜市電尾張屋橋線",
+  "ko": "요코하마 시영 전차 오와리야바시선",
+  "en_now": "Owariyabashi Line",
+  "en_new": "Yokohama City Tram Owariyabashi Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_oyubari_railway",
+  "ja": "三菱石炭鉱業大夕張鉄道線",
+  "ko": "오유바리 철도선",
+  "en_now": "Oyubari Railway",
+  "en_new": "Oyubari Railway Line",
+  "why": "표시 이름 三菱石炭鉱業大夕張鉄道線. 노선 이름이 철도 이름이라 머리 없음"
+ },
+ {
+  "line_id": "l_port_island_line",
+  "ja": "神戸新交通ポートアイランド線",
+  "ko": "고베 신교통 포트아일랜드선",
+  "en_now": "Port Island Line",
+  "en_new": "Kobe New Transit Port Island Line",
+  "why": "일본어 표시 이름의 머리 神戸新交通 → Kobe New Transit"
+ },
+ {
+  "line_id": "l_rias_line",
+  "ja": "三陸鉄道リアス線",
+  "ko": "산리쿠 철도 리아스선",
+  "en_now": "Rias Line",
+  "en_new": "Sanriku Railway Rias Line",
+  "why": "일본어 표시 이름의 머리 三陸鉄道 → Sanriku Railway"
+ },
+ {
+  "line_id": "l_rinko_line",
+  "ja": "釧路臨港鉄道臨港線",
+  "ko": "쿠시로 임항철도 임항선",
+  "en_now": "Rinko Line",
+  "en_new": "Kushiro Rinko Railway Rinko Line",
+  "why": "일본어 표시 이름의 머리 釧路臨港鉄道 → Kushiro Rinko Railway"
+ },
+ {
+  "line_id": "l_rokkakubashi_line",
+  "ja": "横浜市電六角橋線",
+  "ko": "요코하마 시영 전차 롯카쿠바시선",
+  "en_now": "Rokkakubashi Line",
+  "en_new": "Yokohama City Tram Rokkakubashi Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_rokko_island_line",
+  "ja": "神戸新交通六甲アイランド線",
+  "ko": "고베 신교통 롯코 아일랜드선",
+  "en_now": "Rokko Island Line",
+  "en_new": "Kobe New Transit Rokko Island Line",
+  "why": "일본어 표시 이름의 머리 神戸新交通 → Kobe New Transit"
+ },
+ {
+  "line_id": "l_roppongi_line",
+  "ja": "都電六本木線",
+  "ko": "도덴 롯폰기선",
+  "en_now": "Roppongi Line",
+  "en_new": "Toden Roppongi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_ryugasaki_line",
+  "ja": "関東鉄道竜ヶ崎線",
+  "ko": "칸토 철도 류가사키선",
+  "en_now": "Ryugasaki Line",
+  "en_new": "Kanto Railway Ryugasaki Line",
+  "why": "일본어 표시 이름의 머리 関東鉄道 → Kanto Railway"
+ },
+ {
+  "line_id": "l_sagamihara_line",
+  "ja": "京王相模原線",
+  "ko": "케이오 사가미하라선",
+  "en_now": "Sagamihara Line",
+  "en_new": "Keio Sagamihara Line",
+  "why": "일본어 표시 이름의 머리 京王 → Keio"
+ },
+ {
+  "line_id": "l_saito_line",
+  "ja": "大阪モノレール彩都線",
+  "ko": "오사카 모노레일 국제문화공원도시선",
+  "en_now": "Saito Line",
+  "en_new": "Osaka Monorail Saito Line",
+  "why": "일본어 표시 이름의 머리 大阪モノレール → Osaka Monorail"
+ },
+ {
+  "line_id": "l_sakaemachi_line",
+  "ja": "名古屋市電栄町線",
+  "ko": "나고야 시영 전차 사카에마치선",
+  "en_now": "Sakaemachi Line",
+  "en_new": "Nagoya City Tram Sakaemachi Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_sakaide_line",
+  "ja": "琴平参宮電鉄坂出線",
+  "ko": "코토히라 참궁전철 사카이데선",
+  "en_now": "Sakaide Line",
+  "en_new": "Kotohira Sangu Electric Railway Sakaide Line",
+  "why": "일본어 표시 이름의 머리 琴平参宮電鉄 → Kotohira Sangu Electric Railway"
+ },
+ {
+  "line_id": "l_sakaisuji_line",
+  "ja": "Osaka Metro堺筋線",
+  "ko": "오사카메트로 사카이스지선",
+  "en_now": "Sakaisuji Line",
+  "en_new": "Osaka Metro Sakaisuji Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_sakura_dori_line",
+  "ja": "名古屋市営地下鉄桜通線",
+  "ko": "나고야 시영 지하철 사쿠라도리선",
+  "en_now": "Sakura-dori Line",
+  "en_new": "Nagoya Municipal Subway Sakura-dori Line",
+  "why": "일본어 표시 이름의 머리 名古屋市営地下鉄 → Nagoya Municipal Subway"
+ },
+ {
+  "line_id": "l_sakuramachi_branch_line",
+  "ja": "長崎電気軌道桜町支線",
+  "ko": "나가사키 전기궤도 사쿠라마치 지선",
+  "en_now": "Sakuramachi Branch Line",
+  "en_new": "Nagasaki Electric Tramway Sakuramachi Branch Line",
+  "why": "일본어 표시 이름의 머리 長崎電気軌道 → Nagasaki Electric Tramway"
+ },
+ {
+  "line_id": "l_sambashi_line",
+  "ja": "とさでん交通桟橋線",
+  "ko": "토사덴 교통 잔교선",
+  "en_now": "Sambashi Line",
+  "en_new": "Tosaden Kotsu Sambashi Line",
+  "why": "일본어 표시 이름의 머리 とさでん交通 → Tosaden Kotsu"
+ },
+ {
+  "line_id": "l_sanadasoehi_line",
+  "ja": "上田交通真田傍陽線",
+  "ko": "우에다 교통 사나다소에히선",
+  "en_now": "Sanadasoehi Line",
+  "en_new": "Ueda Kotsu Sanada-Soehi Line",
+  "why": "真田+傍陽 두 지명을 띄움. 일본어 표시 이름의 머리 上田交通 → Ueda Kotsu"
+ },
+ {
+  "line_id": "l_sanadasoehi_line_soehi_branch",
+  "ja": "上田交通真田傍陽線 傍陽支線",
+  "ko": "우에다 교통 사나다소에히선 소에히 지선",
+  "en_now": "Sanadasoehi Line Soehi Branch",
+  "en_new": "Ueda Kotsu Sanada-Soehi Line Soehi Branch",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 上田交通 → Ueda Kotsu"
+ },
+ {
+  "line_id": "l_sanda_line",
+  "ja": "神戸電鉄三田線",
+  "ko": "고베 전철 산다선",
+  "en_now": "Sanda Line",
+  "en_new": "Kobe Electric Railway Sanda Line",
+  "why": "일본어 표시 이름의 머리 神戸電鉄 → Kobe Electric Railway"
+ },
+ {
+  "line_id": "l_sangenyashinchitose_line",
+  "ja": "大阪市電三軒家新千歳線",
+  "ko": "오사카 시영 전차 산겐야신치토세선",
+  "en_now": "Sangen'yashinchitose Line",
+  "en_new": "Osaka City Tram Sangen'ya-Shinchitose Line",
+  "why": "三軒家+新千歳 두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_sangi_line",
+  "ja": "三岐鉄道三岐線",
+  "ko": "산기 철도 산기선",
+  "en_now": "Sangi Line",
+  "en_new": "Sangi Railway Sangi Line",
+  "why": "일본어 표시 이름의 머리 三岐鉄道 → Sangi Railway"
+ },
+ {
+  "line_id": "l_sano_line",
+  "ja": "東武佐野線",
+  "ko": "도부 사노선",
+  "en_now": "Sano Line",
+  "en_new": "Tobu Sano Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_sanyo_main_line_sanyo",
+  "ja": "山陽電気鉄道本線",
+  "ko": "산요 전철 본선",
+  "en_now": "Sanyo Main Line",
+  "en_new": "Sanyo Electric Railway Main Line",
+  "why": "머리 Sanyo Electric Railway. JR San'yo Main Line과 아포스트로피로만 갈리던 것을 해소. 일본어 표시 이름의 머리 山陽電気鉄道 → Sanyo Electric Railway"
+ },
+ {
+  "line_id": "l_sanzan_line",
+  "ja": "山形交通三山線",
+  "ko": "야마가타 교통 산잔선",
+  "en_now": "Sanzan Line",
+  "en_new": "Yamagata Kotsu Sanzan Line",
+  "why": "일본어 표시 이름의 머리 山形交通 → Yamagata Kotsu"
+ },
+ {
+  "line_id": "l_sapporo_streetcar",
+  "ja": "札幌市電",
+  "ko": "삿포로 시영 전차",
+  "en_now": "Sapporo Streetcar",
+  "en_new": "Sapporo City Tram",
+  "why": "市電 → City Tram. 같은 회사 옛 노선의 머리 Sapporo City Tram과 맞춤"
+ },
+ {
+  "line_id": "l_sasazu_line",
+  "ja": "富山地方鉄道笹津線",
+  "ko": "도야마 지방철도 사사즈선",
+  "en_now": "Sasazu Line",
+  "en_new": "Toyama Chiho Railway Sasazu Line",
+  "why": "일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_sayama_line",
+  "ja": "西武狭山線",
+  "ko": "세이부 사야마선",
+  "en_now": "Sayama Line",
+  "en_new": "Seibu Sayama Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_second_phase_line",
+  "ja": "鹿児島市電第二期線",
+  "ko": "가고시마 시영 전차 제2기선",
+  "en_now": "Second Phase Line",
+  "en_new": "Kagoshima City Tram Second Phase Line",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_seibuen_line",
+  "ja": "西武西武園線",
+  "ko": "세이부 세이부엔선",
+  "en_now": "Seibuen Line",
+  "en_new": "Seibu Seibuen Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_seiho_line",
+  "ja": "福井鉄道鯖浦線",
+  "ko": "후쿠이 철도 세이호선",
+  "en_now": "Seiho Line",
+  "en_new": "Fukui Railway Seiho Line",
+  "why": "일본어 표시 이름의 머리 福井鉄道 → Fukui Railway"
+ },
+ {
+  "line_id": "l_seihosensabaeechizenhirai",
+  "ja": "福井鉄道鯖浦線 鯖江–越前平井",
+  "ko": "후쿠이 철도 세이호선 사바에–에치젠히라이",
+  "en_now": "Seiho Line (Sabae~Echizenhirai)",
+  "en_new": "Fukui Railway Seiho Line (Sabae~Echizenhirai)",
+  "why": "일본어 표시 이름의 머리 福井鉄道 → Fukui Railway"
+ },
+ {
+  "line_id": "l_seikibashi_line",
+  "ja": "岡山電気軌道清輝橋線",
+  "ko": "오카야마 전기궤도 세이키바시선",
+  "en_now": "Seikibashi Line",
+  "en_new": "Okayama Electric Tramway Seikibashi Line",
+  "why": "일본어 표시 이름의 머리 岡山電気軌道 → Okayama Electric Tramway"
+ },
+ {
+  "line_id": "l_seishin_extension_line",
+  "ja": "神戸市営地下鉄西神延伸線",
+  "ko": "고베 시영 지하철 세이신 연신선",
+  "en_now": "Seishin Extension Line",
+  "en_new": "Kobe Municipal Subway Seishin Extension Line",
+  "why": "일본어 표시 이름의 머리 神戸市営地下鉄 → Kobe Municipal Subway"
+ },
+ {
+  "line_id": "l_seishin_line",
+  "ja": "神戸市営地下鉄西神線",
+  "ko": "고베 시영 지하철 세이신선",
+  "en_now": "Seishin Line",
+  "en_new": "Kobe Municipal Subway Seishin Line",
+  "why": "일본어 표시 이름의 머리 神戸市営地下鉄 → Kobe Municipal Subway"
+ },
+ {
+  "line_id": "l_semboku_line",
+  "ja": "南海泉北線",
+  "ko": "난카이 센보쿠선",
+  "en_now": "Semboku Line",
+  "en_new": "Nankai Semboku Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_sembon_line",
+  "ja": "京都市電千本線",
+  "ko": "교토 시영 전차 센본선",
+  "en_now": "Sembon Line",
+  "en_new": "Kyoto City Tram Sembon Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_sengencho_line",
+  "ja": "横浜市電浅間町線",
+  "ko": "요코하마 시영 전차 센겐초선",
+  "en_now": "Sengencho Line",
+  "en_new": "Yokohama City Tram Sengencho Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_senju_line",
+  "ja": "都電千住線",
+  "ko": "도덴 센주선",
+  "en_now": "Senju Line",
+  "en_new": "Toden Senju Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_sennichimae_line",
+  "ja": "Osaka Metro千日前線",
+  "ko": "오사카메트로 센니치마에선",
+  "en_now": "Sennichimae Line",
+  "en_new": "Osaka Metro Sennichimae Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_seno_line",
+  "ja": "スカイレールサービス広島短距離交通瀬野線",
+  "ko": "스카이레일 서비스 세노선",
+  "en_now": "Seno Line",
+  "en_new": "Skyrail Seno Line",
+  "why": "스카이레일 공식 브랜드 Skyrail을 머리로. 일본어 표시 이름의 머리 スカイレールサービス → Skyrail"
+ },
+ {
+  "line_id": "l_senri_line",
+  "ja": "阪急千里線",
+  "ko": "한큐 센리선",
+  "en_now": "Senri Line",
+  "en_new": "Hankyu Senri Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_senzoku_line",
+  "ja": "都電千束線",
+  "ko": "도덴 센조쿠선",
+  "en_now": "Senzoku Line",
+  "en_new": "Toden Senzoku Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_setagaya_line",
+  "ja": "東急世田谷線",
+  "ko": "도큐 세타가야선",
+  "en_now": "Setagaya Line",
+  "en_new": "Tokyu Setagaya Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_seto_line",
+  "ja": "名鉄瀬戸線",
+  "ko": "메이테츠 세토선",
+  "en_now": "Seto Line",
+  "en_new": "Meitetsu Seto Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_shido_line",
+  "ja": "高松琴平電気鉄道志度線",
+  "ko": "코토덴 시도선",
+  "en_now": "Shido Line",
+  "en_new": "Kotoden Shido Line",
+  "why": "일본어 표시 이름의 머리 高松琴平電気鉄道 → Kotoden"
+ },
+ {
+  "line_id": "l_shigaraki_line_shigaraki_kohgen",
+  "ja": "信楽高原鐵道信楽線",
+  "ko": "시가라키 고원철도 시가라키선",
+  "en_now": "Shigaraki Line",
+  "en_new": "Shigaraki Kohgen Railway Shigaraki Line",
+  "why": "일본어 표시 이름의 머리 信楽高原鐵道 → Shigaraki Kohgen Railway"
+ },
+ {
+  "line_id": "l_shigi_line",
+  "ja": "近鉄信貴線",
+  "ko": "킨테츠 시기선",
+  "en_now": "Shigi Line",
+  "en_new": "Kintetsu Shigi Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_shima_line",
+  "ja": "近鉄志摩線",
+  "ko": "킨테츠 시마선",
+  "en_now": "Shima Line",
+  "en_new": "Kintetsu Shima Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_shimizubu_line",
+  "ja": "十勝鉄道清水部線",
+  "ko": "토카치 철도 시미즈부선",
+  "en_now": "Shimizubu Line",
+  "en_new": "Tokachi Railway Shimizu-bu Line",
+  "why": "清水+部를 띄움. 일본어 표시 이름의 머리 十勝鉄道 → Tokachi Railway"
+ },
+ {
+  "line_id": "l_shimizuguchiencho_line",
+  "ja": "名古屋市電清水口延長線",
+  "ko": "나고야 시영 전차 시미즈구치 연장선",
+  "en_now": "Shimizuguchiencho Line",
+  "en_new": "Nagoya City Tram Shimizuguchi Extension Line",
+  "why": "延長線 → Extension Line. 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_shimizushinai_line",
+  "ja": "静岡鉄道清水市内線",
+  "ko": "시즈오카 철도 시미즈 시내선",
+  "en_now": "Shimizushinai Line",
+  "en_new": "Shizuoka Railway Shimizu City Line",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 静岡鉄道 → Shizuoka Railway"
+ },
+ {
+  "line_id": "l_shimizushinai_line_nishikubo_sodeshi_old_route",
+  "ja": "静岡鉄道清水市内線 西久保–袖師 旧線",
+  "ko": "시즈오카 철도 시미즈 시내선 니시쿠보–소데시 구선",
+  "en_now": "Shimizushinai Line (Nishikubo~Sodeshi) Old Route",
+  "en_new": "Shizuoka Railway Shimizu City Line (Nishikubo~Sodeshi) Old Route",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 静岡鉄道 → Shizuoka Railway"
+ },
+ {
+  "line_id": "l_shimoegawa_line",
+  "ja": "名古屋市電下江川線",
+  "ko": "나고야 시영 전차 시모에가와선",
+  "en_now": "Shimoegawa Line",
+  "en_new": "Nagoya City Tram Shimoegawa Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_shimonoishiki_line",
+  "ja": "名古屋市電下之一色線",
+  "ko": "나고야 시영 전차 시모노이시키선",
+  "en_now": "Shimonoishiki Line",
+  "en_new": "Nagoya City Tram Shimonoishiki Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_shimotsui_line",
+  "ja": "下津井電鉄線",
+  "ko": "시모츠이 전철 시모츠이선",
+  "en_now": "Shimotsui Line",
+  "en_new": "Shimotsui Electric Railway Line",
+  "why": "표시 이름 下津井電鉄線에 맞춤"
+ },
+ {
+  "line_id": "l_shimura_line",
+  "ja": "都電志村線",
+  "ko": "도덴 시무라선",
+  "en_now": "Shimura Line",
+  "en_new": "Toden Shimura Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_shin_minatoko_line",
+  "ja": "万葉線新湊港線",
+  "ko": "만요선 신미나토항선",
+  "en_now": "Shin-Minatoko Line",
+  "en_new": "Manyosen Shin-Minatoko Line",
+  "why": "일본어 표시 이름의 머리 万葉線 → Manyosen"
+ },
+ {
+  "line_id": "l_shinai_line",
+  "ja": "呉市電市内線",
+  "ko": "구레 시영 전차 시내선",
+  "en_now": "Shinai Line",
+  "en_new": "Kure City Tram City Line",
+  "why": "市内線 → City Line (呉市電). 일본어 표시 이름의 머리 呉市電 → Kure City Tram"
+ },
+ {
+  "line_id": "l_shindaikumachi_line",
+  "ja": "秋田市電新大工町線",
+  "ko": "아키타 시영 전차 신다이쿠마치선",
+  "en_now": "Shindaikumachi Line",
+  "en_new": "Akita City Tram Shindaikumachi Line",
+  "why": "일본어 표시 이름의 머리 秋田市電 → Akita City Tram"
+ },
+ {
+  "line_id": "l_shinjuku_line_seibu",
+  "ja": "西武新宿線",
+  "ko": "세이부 신주쿠선",
+  "en_now": "Shinjuku Line",
+  "en_new": "Seibu Shinjuku Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_shinjuku_line_toei",
+  "ja": "都営地下鉄新宿線",
+  "ko": "도에이 신주쿠선",
+  "en_now": "Shinjuku Line",
+  "en_new": "Toei Shinjuku Line",
+  "why": "일본어 표시 이름의 머리 都営地下鉄 → Toei"
+ },
+ {
+  "line_id": "l_shinkin_line",
+  "ja": "新金貨物線",
+  "ko": "신킨선",
+  "en_now": "Shinkin Line",
+  "en_new": "Shinkin Freight Line",
+  "why": "표시 이름 新金貨物線. 다른 貨物線(Freight Line)과 맞춤"
+ },
+ {
+  "line_id": "l_shirakawa_line",
+  "ja": "京都市電白川線",
+  "ko": "교토 시영 전차 시라카와선",
+  "en_now": "Shirakawa Line",
+  "en_new": "Kyoto City Tram Shirakawa Line",
+  "why": "일본어 표시 이름의 머리 京都市電 → Kyoto City Tram"
+ },
+ {
+  "line_id": "l_shiriike_line",
+  "ja": "神戸市電尻池線",
+  "ko": "고베 시영 전차 시리이케선",
+  "en_now": "Shiriike Line",
+  "en_new": "Kobe City Tram Shiriike Line",
+  "why": "일본어 표시 이름의 머리 神戸市電 → Kobe City Tram"
+ },
+ {
+  "line_id": "l_shiroyama_line",
+  "ja": "釧路臨港鉄道城山線",
+  "ko": "쿠시로 임항철도 시로야마선",
+  "en_now": "Shiroyama Line",
+  "en_new": "Kushiro Rinko Railway Shiroyama Line",
+  "why": "일본어 표시 이름의 머리 釧路臨港鉄道 → Kushiro Rinko Railway"
+ },
+ {
+  "line_id": "l_shizuoka_shimizu_line",
+  "ja": "静岡鉄道静岡清水線",
+  "ko": "시즈오카 철도 시즈오카시미즈선",
+  "en_now": "Shizuoka-Shimizu Line",
+  "en_new": "Shizuoka Railway Shizuoka-Shimizu Line",
+  "why": "일본어 표시 이름의 머리 静岡鉄道 → Shizuoka Railway"
+ },
+ {
+  "line_id": "l_shizuokashinai_line",
+  "ja": "静岡鉄道静岡市内線",
+  "ko": "시즈오카 철도 시즈오카 시내선",
+  "en_now": "Shizuokashinai Line",
+  "en_new": "Shizuoka Railway Shizuoka City Line",
+  "why": "市内線 → City Line. 일본어 표시 이름의 머리 静岡鉄道 → Shizuoka Railway"
+ },
+ {
+  "line_id": "l_shokin_line",
+  "ja": "北陸鉄道松金線",
+  "ko": "호쿠리쿠 철도 쇼킨선",
+  "en_now": "Shokin Line",
+  "en_new": "Hokuriku Railroad Shokin Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_soen_line",
+  "ja": "札幌市電桑園線",
+  "ko": "삿포로 시영 전차 소엔선",
+  "en_now": "Soen Line",
+  "en_new": "Sapporo City Tram Soen Line",
+  "why": "일본어 표시 이름의 머리 札幌市電 → Sapporo City Tram"
+ },
+ {
+  "line_id": "l_sugita_line",
+  "ja": "横浜市電杉田線",
+  "ko": "요코하마 시영 전차 스기타선",
+  "en_now": "Sugita Line",
+  "en_new": "Yokohama City Tram Sugita Line",
+  "why": "일본어 표시 이름의 머리 横浜市電 → Yokohama City Tram"
+ },
+ {
+  "line_id": "l_suihin_line",
+  "ja": "茨城交通水浜線",
+  "ko": "이바라키 교통 스이힌선",
+  "en_now": "Suihin Line",
+  "en_new": "Ibaraki Kotsu Suihin Line",
+  "why": "일본어 표시 이름의 머리 茨城交通 → Ibaraki Kotsu"
+ },
+ {
+  "line_id": "l_suizenji_line",
+  "ja": "熊本市電水前寺線",
+  "ko": "구마모토 시영 전차 스이젠지선",
+  "en_now": "Suizenji Line",
+  "en_new": "Kumamoto City Tram Suizenji Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_sukumo_line",
+  "ja": "土佐くろしお鉄道宿毛線",
+  "ko": "토사쿠로시오 철도 스쿠모선",
+  "en_now": "Sukumo Line",
+  "en_new": "Tosa Kuroshio Railway Sukumo Line",
+  "why": "일본어 표시 이름의 머리 土佐くろしお鉄道 → Tosa Kuroshio Railway"
+ },
+ {
+  "line_id": "l_sunamachi_line",
+  "ja": "都電砂町線",
+  "ko": "도덴 스나마치선",
+  "en_now": "Sunamachi Line",
+  "en_new": "Toden Sunamachi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_sunen_line",
+  "ja": "静岡鉄道駿遠線",
+  "ko": "시즈오카 철도 슨엔선",
+  "en_now": "Sun'en Line",
+  "en_new": "Shizuoka Railway Sun'en Line",
+  "why": "일본어 표시 이름의 머리 静岡鉄道 → Shizuoka Railway"
+ },
+ {
+  "line_id": "l_sunzu_line",
+  "ja": "伊豆箱根鉄道駿豆線",
+  "ko": "이즈하코네 철도 슨즈선",
+  "en_now": "Sunzu Line",
+  "en_new": "Izuhakone Railway Sunzu Line",
+  "why": "일본어 표시 이름의 머리 伊豆箱根鉄道 → Izuhakone Railway"
+ },
+ {
+  "line_id": "l_suzuka_line",
+  "ja": "近鉄鈴鹿線",
+  "ko": "킨테츠 스즈카선",
+  "en_now": "Suzuka Line",
+  "en_new": "Kintetsu Suzuka Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_tachikue_line",
+  "ja": "一畑電気鉄道立久恵線",
+  "ko": "이치바타 전차 타치쿠에선",
+  "en_now": "Tachikue Line",
+  "en_new": "Ichibata Electric Railway Tachikue Line",
+  "why": "일본어 표시 이름의 머리 一畑電気鉄道 → Ichibata Electric Railway"
+ },
+ {
+  "line_id": "l_tadotsu_line",
+  "ja": "琴平参宮電鉄多度津線",
+  "ko": "코토히라 참궁전철 타도츠선",
+  "en_now": "Tadotsu Line",
+  "en_new": "Kotohira Sangu Electric Railway Tadotsu Line",
+  "why": "일본어 표시 이름의 머리 琴平参宮電鉄 → Kotohira Sangu Electric Railway"
+ },
+ {
+  "line_id": "l_taga_line",
+  "ja": "近江鉄道多賀線",
+  "ko": "오미 철도 타가선",
+  "en_now": "Taga Line",
+  "en_new": "Ohmi Railway Taga Line",
+  "why": "일본어 표시 이름의 머리 近江鉄道 → Ohmi Railway"
+ },
+ {
+  "line_id": "l_tagami_line",
+  "ja": "名鉄田神線",
+  "ko": "메이테츠 타가미선",
+  "en_now": "Tagami Line",
+  "en_new": "Meitetsu Tagami Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_tagawa_line_heisei_chikuho",
+  "ja": "平成筑豊鉄道田川線",
+  "ko": "헤이세이 치쿠호 철도 타가와선",
+  "en_now": "Tagawa Line",
+  "en_new": "Heisei Chikuho Railway Tagawa Line",
+  "why": "일본어 표시 이름의 머리 平成筑豊鉄道 → Heisei Chikuho Railway"
+ },
+ {
+  "line_id": "l_taguchi_line",
+  "ja": "豊橋鉄道田口線",
+  "ko": "토요하시 철도 타구치선",
+  "en_now": "Taguchi Line",
+  "en_new": "Toyohashi Railroad Taguchi Line",
+  "why": "일본어 표시 이름의 머리 豊橋鉄道 → Toyohashi Railroad"
+ },
+ {
+  "line_id": "l_taisha_line_ichibata",
+  "ja": "一畑電車大社線",
+  "ko": "이치바타 전차 타이샤선",
+  "en_now": "Taisha Line",
+  "en_new": "Ichibata Electric Railway Taisha Line",
+  "why": "일본어 표시 이름의 머리 一畑電車 → Ichibata Electric Railway"
+ },
+ {
+  "line_id": "l_taishi_line",
+  "ja": "東武大師線",
+  "ko": "도부 다이시선",
+  "en_now": "Taishi Line",
+  "en_new": "Tobu Taishi Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_takachiho_line_takachiho",
+  "ja": "高千穂鉄道高千穂線",
+  "ko": "타카치호 철도 타카치호선",
+  "en_now": "Takachiho Line",
+  "en_new": "Takachiho Railway Takachiho Line",
+  "why": "일본어 표시 이름의 머리 高千穂鉄道 → Takachiho Railway"
+ },
+ {
+  "line_id": "l_takahama_line",
+  "ja": "伊予鉄道高浜線",
+  "ko": "이요 철도 타카하마선",
+  "en_now": "Takahama Line",
+  "en_new": "Iyotetsu Takahama Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_takahata_line",
+  "ja": "山形交通高畠線",
+  "ko": "야마가타 교통 타카하타선",
+  "en_now": "Takahata Line",
+  "en_new": "Yamagata Kotsu Takahata Line",
+  "why": "일본어 표시 이름의 머리 山形交通 → Yamagata Kotsu"
+ },
+ {
+  "line_id": "l_takamori_line_minami_aso",
+  "ja": "南阿蘇鉄道高森線",
+  "ko": "미나미아소 철도 타카모리선",
+  "en_now": "Takamori Line",
+  "en_new": "Minami-Aso Railway Takamori Line",
+  "why": "일본어 표시 이름의 머리 南阿蘇鉄道 → Minami-Aso Railway"
+ },
+ {
+  "line_id": "l_takao_line",
+  "ja": "京王高尾線",
+  "ko": "케이오 타카오선",
+  "en_now": "Takao Line",
+  "en_new": "Keio Takao Line",
+  "why": "일본어 표시 이름의 머리 京王 → Keio"
+ },
+ {
+  "line_id": "l_takaoka_line",
+  "ja": "名古屋市電高岳線",
+  "ko": "나고야 시영 전차 타카오카선",
+  "en_now": "Takaoka Line",
+  "en_new": "Nagoya City Tram Takaoka Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_takaoka_tramway_line",
+  "ja": "万葉線高岡軌道線",
+  "ko": "만요선 타카오카 궤도선",
+  "en_now": "Takaoka Tramway Line",
+  "en_new": "Manyosen Takaoka Tramway Line",
+  "why": "일본어 표시 이름의 머리 万葉線 → Manyosen"
+ },
+ {
+  "line_id": "l_takaokaencho_line",
+  "ja": "名古屋市電高岳延長線",
+  "ko": "나고야 시영 전차 타카오카 연장선",
+  "en_now": "Takaokaencho Line",
+  "en_new": "Nagoya City Tram Takaoka Extension Line",
+  "why": "延長線 → Extension Line. 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_takarazuka_main_line",
+  "ja": "阪急宝塚本線",
+  "ko": "한큐 타카라즈카 본선",
+  "en_now": "Takarazuka Main Line",
+  "en_new": "Hankyu Takarazuka Main Line",
+  "why": "일본어 표시 이름의 머리 阪急 → Hankyu"
+ },
+ {
+  "line_id": "l_takasaki_line_tobu",
+  "ja": "東武高崎線",
+  "ko": "도부 타카사키선",
+  "en_now": "Takasaki Line",
+  "en_new": "Tobu Takasaki Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_takashinohama_line",
+  "ja": "南海高師浜線",
+  "ko": "난카이 타카시노하마선",
+  "en_now": "Takashinohama Line",
+  "en_new": "Nankai Takashinohama Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_takatomi_line",
+  "ja": "名鉄高富線",
+  "ko": "메이테츠 타카토미선",
+  "en_now": "Takatomi Line",
+  "en_new": "Meitetsu Takatomi Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_takehana_line",
+  "ja": "名鉄竹鼻線",
+  "ko": "메이테츠 타케하나선",
+  "en_now": "Takehana Line",
+  "en_new": "Meitetsu Takehana Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_tama_line",
+  "ja": "小田急多摩線",
+  "ko": "오다큐 타마선",
+  "en_now": "Tama Line",
+  "en_new": "Odakyu Tama Line",
+  "why": "일본어 표시 이름의 머리 小田急 → Odakyu"
+ },
+ {
+  "line_id": "l_tamagawa_line",
+  "ja": "西武多摩川線",
+  "ko": "세이부 타마가와선",
+  "en_now": "Tamagawa Line",
+  "en_new": "Seibu Tamagawa Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_tamako_line",
+  "ja": "西武多摩湖線",
+  "ko": "세이부 타마코선",
+  "en_now": "Tamako Line",
+  "en_new": "Seibu Tamako Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_tanagawa_line",
+  "ja": "南海多奈川線",
+  "ko": "난카이 타나가와선",
+  "en_now": "Tanagawa Line",
+  "en_new": "Nankai Tanagawa Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_tanigumi_line",
+  "ja": "名鉄谷汲線",
+  "ko": "메이테츠 타니구미선",
+  "en_now": "Tanigumi Line",
+  "en_new": "Meitetsu Tanigumi Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_tanimachi_line",
+  "ja": "Osaka Metro谷町線",
+  "ko": "오사카메트로 타니마치선",
+  "en_now": "Tanimachi Line",
+  "en_new": "Osaka Metro Tanimachi Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_tanimachineyagawa_line",
+  "ja": "大阪市電谷町寝屋川線",
+  "ko": "오사카 시영 전차 타니마치네야가와선",
+  "en_now": "Tanimachineyagawa Line",
+  "en_new": "Osaka City Tram Tanimachi-Neyagawa Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_taniyama_line",
+  "ja": "鹿児島市電谷山線",
+  "ko": "가고시마 시영 전차 타니야마선",
+  "en_now": "Taniyama Line",
+  "en_new": "Kagoshima City Tram Taniyama Line",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_tarumi_line_tarumi",
+  "ja": "樽見鉄道樽見線",
+  "ko": "타루미 철도 타루미선",
+  "en_now": "Tarumi Line",
+  "en_new": "Tarumi Railway Tarumi Line",
+  "why": "일본어 표시 이름의 머리 樽見鉄道 → Tarumi Railway"
+ },
+ {
+  "line_id": "l_tasaki_line",
+  "ja": "熊本市電田崎線",
+  "ko": "구마모토 시영 전차 타사키선",
+  "en_now": "Tasaki Line",
+  "en_new": "Kumamoto City Tram Tasaki Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_tateyama_line",
+  "ja": "富山地方鉄道立山線",
+  "ko": "도야마 지방철도 타테야마선",
+  "en_now": "Tateyama Line",
+  "en_new": "Toyama Chiho Railway Tateyama Line",
+  "why": "일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_tawaramoto_line",
+  "ja": "近鉄田原本線",
+  "ko": "킨테츠 타와라모토선",
+  "en_now": "Tawaramoto Line",
+  "en_new": "Kintetsu Tawaramoto Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_temmabashizengenjicho_line",
+  "ja": "大阪市電天満橋善源寺町線",
+  "ko": "오사카 시영 전차 텐마바시젠겐지초선",
+  "en_now": "Temmabashizengenjicho Line",
+  "en_new": "Osaka City Tram Temmabashi-Zengenjicho Line",
+  "why": "두 지명을 띄움. 일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_tengenjibashi_line",
+  "ja": "都電天現寺橋線",
+  "ko": "도덴 텐겐지바시선",
+  "en_now": "Tengenjibashi Line",
+  "en_new": "Toden Tengenjibashi Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_tenjin_omuta_line",
+  "ja": "西鉄天神大牟田線",
+  "ko": "니시테츠 텐진오무타선",
+  "en_now": "Tenjin-Omuta Line",
+  "en_new": "Nishitetsu Tenjin-Omuta Line",
+  "why": "일본어 표시 이름의 머리 西鉄 → Nishitetsu"
+ },
+ {
+  "line_id": "l_tennoji_branch_line",
+  "ja": "南海天王寺支線",
+  "ko": "난카이 텐노지 지선",
+  "en_now": "Tennoji Branch Line",
+  "en_new": "Nankai Tennoji Branch Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_tenri_line",
+  "ja": "近鉄天理線",
+  "ko": "킨테츠 텐리선",
+  "en_now": "Tenri Line",
+  "en_new": "Kintetsu Tenri Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_tenryu_hamanako_line",
+  "ja": "天竜浜名湖鉄道天竜浜名湖線",
+  "ko": "텐류하마나코 철도 텐류하마나코선",
+  "en_now": "Tenryu Hamanako Line",
+  "en_new": "Tenryu Hamanako Railroad Tenryu Hamanako Line",
+  "why": "일본어 표시 이름의 머리 天竜浜名湖鉄道 → Tenryu Hamanako Railroad"
+ },
+ {
+  "line_id": "l_teppoku_line",
+  "ja": "札幌市電鉄北線",
+  "ko": "삿포로 시영 전차 텟포쿠선",
+  "en_now": "Teppoku Line",
+  "en_new": "Sapporo City Tram Teppoku Line",
+  "why": "일본어 표시 이름의 머리 札幌市電 → Sapporo City Tram"
+ },
+ {
+  "line_id": "l_toba_line",
+  "ja": "近鉄鳥羽線",
+  "ko": "킨테츠 토바선",
+  "en_now": "Toba Line",
+  "en_new": "Kintetsu Toba Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_tochio_line",
+  "ja": "越後交通栃尾線",
+  "ko": "에치고 교통 토치오선",
+  "en_now": "Tochio Line",
+  "en_new": "Echigo Kotsu Tochio Line",
+  "why": "일본어 표시 이름의 머리 越後交通 → Echigo Kotsu"
+ },
+ {
+  "line_id": "l_toho_line",
+  "ja": "札幌市営地下鉄東豊線",
+  "ko": "삿포로시 지하철 토호선",
+  "en_now": "Toho Line",
+  "en_new": "Sapporo Municipal Subway Toho Line",
+  "why": "일본어 표시 이름의 머리 札幌市営地下鉄 → Sapporo Municipal Subway"
+ },
+ {
+  "line_id": "l_tojo_main_line",
+  "ja": "東武東上本線",
+  "ko": "도부 도조 본선",
+  "en_now": "Tojo Main Line",
+  "en_new": "Tobu Tojo Main Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_tokadai_line",
+  "ja": "桃花台新交通桃花台線",
+  "ko": "토카다이 신교통 토카다이선",
+  "en_now": "Tokadai Line",
+  "en_new": "Tokadai New Transit Tokadai Line",
+  "why": "일본어 표시 이름의 머리 桃花台新交通 → Tokadai New Transit"
+ },
+ {
+  "line_id": "l_toko_line",
+  "ja": "名古屋市電東郊線",
+  "ko": "나고야 시영 전차 토코선",
+  "en_now": "Toko Line",
+  "en_new": "Nagoya City Tram Toko Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_toko_line_takatsuji_takiko",
+  "ja": "名古屋市電東郊線 高辻–滝子",
+  "ko": "나고야 시영 전차 토코선 타카츠지–타키코",
+  "en_now": "Toko Line (Takatsuji~Takiko)",
+  "en_new": "Nagoya City Tram Toko Line (Takatsuji~Takiko)",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_tokoname_line",
+  "ja": "名鉄常滑線",
+  "ko": "메이테츠 토코나메선",
+  "en_now": "Tokoname Line",
+  "en_new": "Meitetsu Tokoname Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_toshima_line",
+  "ja": "西武豊島線",
+  "ko": "세이부 토시마선",
+  "en_now": "Toshima Line",
+  "en_new": "Seibu Toshima Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_toso_line",
+  "ja": "鹿児島市電唐湊線",
+  "ko": "가고시마 시영 전차 토소선",
+  "en_now": "Toso Line",
+  "en_new": "Kagoshima City Tram Toso Line",
+  "why": "일본어 표시 이름의 머리 鹿児島市電 → Kagoshima City Tram"
+ },
+ {
+  "line_id": "l_toyama_chiho_main_line",
+  "ja": "富山地方鉄道本線",
+  "ko": "도야마 지방철도 본선",
+  "en_now": "Toyama Chiho Main Line",
+  "en_new": "Toyama Chiho Railway Main Line",
+  "why": "머리 Toyama Chiho Railway에 맞춤. 일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_toyamachitetsuimizu_line",
+  "ja": "富山地方鉄道射水線",
+  "ko": "도야마 지방철도 이미즈선",
+  "en_now": "Toyamachitetsuimizu Line",
+  "en_new": "Toyama Chiho Railway Imizu Line",
+  "why": "읽기에 섞인 회사 이름(富山地鉄)을 뗌. 일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_toyamako_line_toyama_chiho",
+  "ja": "富山地方鉄道富山港線",
+  "ko": "도야마 지방철도 도야마항선",
+  "en_now": "Toyamako Line",
+  "en_new": "Toyama Chiho Railway Toyamako Line",
+  "why": "일본어 표시 이름의 머리 富山地方鉄道 → Toyama Chiho Railway"
+ },
+ {
+  "line_id": "l_toyohira_line",
+  "ja": "札幌市電豊平線",
+  "ko": "삿포로 시영 전차 토요히라선",
+  "en_now": "Toyohira Line",
+  "en_new": "Sapporo City Tram Toyohira Line",
+  "why": "일본어 표시 이름의 머리 札幌市電 → Sapporo City Tram"
+ },
+ {
+  "line_id": "l_toyokawa_line",
+  "ja": "名鉄豊川線",
+  "ko": "메이테츠 토요카와선",
+  "en_now": "Toyokawa Line",
+  "en_new": "Meitetsu Toyokawa Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_toyoko_line",
+  "ja": "東急東横線",
+  "ko": "도큐 도요코선",
+  "en_now": "Toyoko Line",
+  "en_new": "Tokyu Toyoko Line",
+  "why": "일본어 표시 이름의 머리 東急 → Tokyu"
+ },
+ {
+  "line_id": "l_toyoma_line",
+  "ja": "仙北鉄道登米線",
+  "ko": "미야기 버스 토요마선",
+  "en_now": "Toyoma Line",
+  "en_new": "Sempoku Railway Toyoma Line",
+  "why": "일본어 표시 이름의 머리 仙北鉄道 → Sempoku Railway"
+ },
+ {
+  "line_id": "l_toyota_line",
+  "ja": "名鉄豊田線",
+  "ko": "메이테츠 토요타선",
+  "en_now": "Toyota Line",
+  "en_new": "Meitetsu Toyota Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_tozai_line_kyoto_city",
+  "ja": "京都市営地下鉄東西線",
+  "ko": "교토 시영 지하철 토자이선",
+  "en_now": "Tozai Line",
+  "en_new": "Kyoto Municipal Subway Tozai Line",
+  "why": "일본어 표시 이름의 머리 京都市営地下鉄 → Kyoto Municipal Subway"
+ },
+ {
+  "line_id": "l_tozai_line_sapporo_city",
+  "ja": "札幌市営地下鉄東西線",
+  "ko": "삿포로시 지하철 토자이선",
+  "en_now": "Tozai Line",
+  "en_new": "Sapporo Municipal Subway Tozai Line",
+  "why": "일본어 표시 이름의 머리 札幌市営地下鉄 → Sapporo Municipal Subway"
+ },
+ {
+  "line_id": "l_tozai_line_sendai_city",
+  "ja": "仙台市地下鉄東西線",
+  "ko": "센다이시 지하철 토자이선",
+  "en_now": "Tozai Line",
+  "en_new": "Sendai Subway Tozai Line",
+  "why": "일본어 표시 이름의 머리 仙台市地下鉄 → Sendai Subway"
+ },
+ {
+  "line_id": "l_tozai_line_tokyo_metro",
+  "ja": "東京メトロ東西線",
+  "ko": "도쿄메트로 도자이선",
+  "en_now": "Tozai Line",
+  "en_new": "Tokyo Metro Tozai Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_tramway_branch_line",
+  "ja": "富山地方鉄道富山軌道線支線",
+  "ko": "도야마 지방철도 궤도선 지선",
+  "en_now": "Tramway Branch Line",
+  "en_new": "Toyama Chiho Railway Tram Branch Line",
+  "why": "軌道線 支線. 일본어 표시 이름의 머리 富山地方鉄道富山 → Toyama Chiho Railway Tram"
+ },
+ {
+  "line_id": "l_tramway_ho_line",
+  "ja": "伊豆箱根鉄道軌道線",
+  "ko": "이즈하코네 철도 궤도선",
+  "en_now": "Tramway Line",
+  "en_new": "Izuhakone Railway Tramway Line",
+  "why": "일본어 표시 이름의 머리 伊豆箱根鉄道 → Izuhakone Railway"
+ },
+ {
+  "line_id": "l_tramway_kureha_line",
+  "ja": "富山地方鉄道富山軌道線呉羽線",
+  "ko": "도야마 지방철도 쿠레하선",
+  "en_now": "Tramway Kureha Line",
+  "en_new": "Toyama Chiho Railway Tram Kureha Line",
+  "why": "軌道線 呉羽線. 일본어 표시 이름의 머리 富山地方鉄道富山 → Toyama Chiho Railway Tram"
+ },
+ {
+  "line_id": "l_tramway_main_line",
+  "ja": "富山地方鉄道富山軌道線本線",
+  "ko": "도야마 지방철도 궤도선 본선",
+  "en_now": "Tramway Main Line",
+  "en_new": "Toyama Chiho Railway Tram Main Line",
+  "why": "軌道線 本線. 일본어 표시 이름의 머리 富山地方鉄道富山 → Toyama Chiho Railway Tram"
+ },
+ {
+  "line_id": "l_tramway_toyama_city_center_line",
+  "ja": "富山地方鉄道富山軌道線富山都心線",
+  "ko": "도야마 지방철도 도야마 도심선",
+  "en_now": "Tramway Toyama City Center Line",
+  "en_new": "Toyama Chiho Railway Tram City Center Line",
+  "why": "軌道線 富山都心線. 일본어 표시 이름의 머리 富山地方鉄道富山 → Toyama Chiho Railway Tram"
+ },
+ {
+  "line_id": "l_tramway_toyama_station_north_south_link",
+  "ja": "富山地方鉄道富山軌道線富山駅南北接続線",
+  "ko": "도야마 지방철도 도야마역 남북접속선",
+  "en_now": "Tramway Toyama Station North-South Link",
+  "en_new": "Toyama Chiho Railway Tram Toyama Station North-South Link",
+  "why": "軌道線 富山駅南北接続線. 일본어 표시 이름의 머리 富山地方鉄道富山 → Toyama Chiho Railway Tram"
+ },
+ {
+  "line_id": "l_tramway_yasunoya_line",
+  "ja": "富山地方鉄道富山軌道線安野屋線",
+  "ko": "도야마 지방철도 야스노야선",
+  "en_now": "Tramway Yasunoya Line",
+  "en_new": "Toyama Chiho Railway Tram Yasunoya Line",
+  "why": "軌道線 安野屋線. 일본어 표시 이름의 머리 富山地方鉄道富山 → Toyama Chiho Railway Tram"
+ },
+ {
+  "line_id": "l_trunk_line",
+  "ja": "熊本市電幹線",
+  "ko": "구마모토 시영 전차 간선",
+  "en_now": "Trunk Line",
+  "en_new": "Kumamoto City Tram Trunk Line",
+  "why": "일본어 표시 이름의 머리 熊本市電 → Kumamoto City Tram"
+ },
+ {
+  "line_id": "l_tsuchiyama_line",
+  "ja": "別府鉄道土山線",
+  "ko": "베후 철도 츠치야마선",
+  "en_now": "Tsuchiyama Line",
+  "en_new": "Befu Railway Tsuchiyama Line",
+  "why": "일본어 표시 이름의 머리 別府鉄道 → Befu Railway"
+ },
+ {
+  "line_id": "l_tsukiji_line",
+  "ja": "都電築地線",
+  "ko": "도덴 츠키지선",
+  "en_now": "Tsukiji Line",
+  "en_new": "Toden Tsukiji Line",
+  "why": "일본어 표시 이름의 머리 都電 → Toden"
+ },
+ {
+  "line_id": "l_tsukiji_line_nagoya_city",
+  "ja": "名古屋市電築地線",
+  "ko": "나고야 시영 전차 츠키지선",
+  "en_now": "Tsukiji Line",
+  "en_new": "Nagoya City Tram Tsukiji Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_tsukijisen_branch_line",
+  "ja": "名古屋市電築地線支線",
+  "ko": "나고야 시영 전차 츠키지선 지선",
+  "en_now": "Tsukijisen Branch Line",
+  "en_new": "Nagoya City Tram Tsukiji Line Branch",
+  "why": "線을 sen으로 붙인 것을 고침. 築地線支線 → Tsukiji Line Branch. 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_tsukuba_line",
+  "ja": "筑波鉄道筑波線",
+  "ko": "츠쿠바 철도 츠쿠바선",
+  "en_now": "Tsukuba Line",
+  "en_new": "Tsukuba Railway Tsukuba Line",
+  "why": "일본어 표시 이름의 머리 筑波鉄道 → Tsukuba Railway"
+ },
+ {
+  "line_id": "l_tsurumachi_line",
+  "ja": "大阪市電鶴町線",
+  "ko": "오사카 시영 전차 츠루마치선",
+  "en_now": "Tsurumachi Line",
+  "en_new": "Osaka City Tram Tsurumachi Line",
+  "why": "일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_tsurumai_line",
+  "ja": "名古屋市営地下鉄鶴舞線",
+  "ko": "나고야 시영 지하철 츠루마이선",
+  "en_now": "Tsurumai Line",
+  "en_new": "Nagoya Municipal Subway Tsurumai Line",
+  "why": "일본어 표시 이름의 머리 名古屋市営地下鉄 → Nagoya Municipal Subway"
+ },
+ {
+  "line_id": "l_tsushima_line",
+  "ja": "名鉄津島線",
+  "ko": "메이테츠 츠시마선",
+  "en_now": "Tsushima Line",
+  "en_new": "Meitetsu Tsushima Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_uehommachi_line",
+  "ja": "大阪市電上本町線",
+  "ko": "오사카 시영 전차 우에혼마치선",
+  "en_now": "Uehommachi Line",
+  "en_new": "Osaka City Tram Uehommachi Line",
+  "why": "일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_uemachi_line",
+  "ja": "阪堺電気軌道上町線",
+  "ko": "한카이 전기궤도 우에마치선",
+  "en_now": "Uemachi Line",
+  "en_new": "Hankai Tramway Uemachi Line",
+  "why": "일본어 표시 이름의 머리 阪堺電気軌道 → Hankai Tramway"
+ },
+ {
+  "line_id": "l_uji_line",
+  "ja": "京阪宇治線",
+  "ko": "케이한 우지선",
+  "en_now": "Uji Line",
+  "en_new": "Keihan Uji Line",
+  "why": "일본어 표시 이름의 머리 京阪 → Keihan"
+ },
+ {
+  "line_id": "l_ujina_line_hiroden",
+  "ja": "広島電鉄宇品線",
+  "ko": "히로시마 전철 우지나선",
+  "en_now": "Ujina Line",
+  "en_new": "Hiroden Ujina Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_unuma_connecting_line",
+  "ja": "名鉄鵜沼連絡線",
+  "ko": "메이테츠 우누마 연락선",
+  "en_now": "Unuma Connecting Line",
+  "en_new": "Meitetsu Unuma Connecting Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_usasangu_line",
+  "ja": "大分交通宇佐参宮線",
+  "ko": "오이타 교통 우사 참궁선",
+  "en_now": "Usasangu Line",
+  "en_new": "Oita Kotsu Usa Sangu Line",
+  "why": "宇佐+参宮을 띄움. 일본어 표시 이름의 머리 大分交通 → Oita Kotsu"
+ },
+ {
+  "line_id": "l_utsube_line",
+  "ja": "四日市あすなろう鉄道内部線",
+  "ko": "욧카이치 아스나로 철도 우츠베선",
+  "en_now": "Utsube Line",
+  "en_new": "Yokkaichi Asunarou Railway Utsube Line",
+  "why": "일본어 표시 이름의 머리 四日市あすなろう鉄道 → Yokkaichi Asunarou Railway"
+ },
+ {
+  "line_id": "l_utsubohommachi_line",
+  "ja": "大阪市電靱本町線",
+  "ko": "오사카 시영 전차 우츠보혼마치선",
+  "en_now": "Utsubohommachi Line",
+  "en_new": "Osaka City Tram Utsubohommachi Line",
+  "why": "일본어 표시 이름의 머리 大阪市電 → Osaka City Tram"
+ },
+ {
+  "line_id": "l_utsunomiya_line",
+  "ja": "東武宇都宮線",
+  "ko": "도부 우츠노미야선",
+  "en_now": "Utsunomiya Line",
+  "en_new": "Tobu Utsunomiya Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_wakasa_line_wakasa",
+  "ja": "若桜鉄道若桜線",
+  "ko": "와카사 철도 와카사선",
+  "en_now": "Wakasa Line",
+  "en_new": "Wakasa Railway Wakasa Line",
+  "why": "일본어 표시 이름의 머리 若桜鉄道 → Wakasa Railway"
+ },
+ {
+  "line_id": "l_wakayamako_line",
+  "ja": "南海和歌山港線",
+  "ko": "난카이 와카야마항선",
+  "en_now": "Wakayamako Line",
+  "en_new": "Nankai Wakayamako Line",
+  "why": "일본어 표시 이름의 머리 南海 → Nankai"
+ },
+ {
+  "line_id": "l_watarase_keikoku_line",
+  "ja": "わたらせ渓谷鐵道わたらせ渓谷線",
+  "ko": "와타라세 계곡철도 와타라세 계곡선",
+  "en_now": "Watarase Keikoku Line",
+  "en_new": "Watarase Keikoku Railway Watarase Keikoku Line",
+  "why": "일본어 표시 이름의 머리 わたらせ渓谷鐵道 → Watarase Keikoku Railway"
+ },
+ {
+  "line_id": "l_yabakei_line",
+  "ja": "大分交通耶馬渓線",
+  "ko": "오이타 교통 야바케이선",
+  "en_now": "Yabakei Line",
+  "en_new": "Oita Kotsu Yabakei Line",
+  "why": "일본어 표시 이름의 머리 大分交通 → Oita Kotsu"
+ },
+ {
+  "line_id": "l_yachiyo_line",
+  "ja": "十勝鉄道八千代線",
+  "ko": "토카치 철도 야치요선",
+  "en_now": "Yachiyo Line",
+  "en_new": "Tokachi Railway Yachiyo Line",
+  "why": "일본어 표시 이름의 머리 十勝鉄道 → Tokachi Railway"
+ },
+ {
+  "line_id": "l_yagi_connecting_line",
+  "ja": "近鉄八木連絡線",
+  "ko": "킨테츠 야기 연락선",
+  "en_now": "Yagi Connecting Line",
+  "en_new": "Kintetsu Yagi Connecting Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_yagoto_line",
+  "ja": "名古屋市電八事線",
+  "ko": "나고야 시영 전차 야고토선",
+  "en_now": "Yagoto Line",
+  "en_new": "Nagoya City Tram Yagoto Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_yagumahigashi_line",
+  "ja": "名古屋市電八熊東線",
+  "ko": "나고야 시영 전차 야구마히가시선",
+  "en_now": "Yagumahigashi Line",
+  "en_new": "Nagoya City Tram Yaguma-Higashi Line",
+  "why": "八熊+東를 띄움. 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_yagumahigashisentozai_connecting_line",
+  "ja": "名古屋市電八熊東線東西連絡線",
+  "ko": "나고야 시영 전차 야구마히가시선 토자이 연락선",
+  "en_now": "Yagumahigashisentozai Connecting Line",
+  "en_new": "Nagoya City Tram Yaguma-Higashi Line East-West Connecting Line",
+  "why": "線·東西를 붙여 읽은 것을 나눔. 東西連絡線 → East-West Connecting Line. 일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_yagyubashi_branch_line",
+  "ja": "豊橋鉄道柳生橋支線",
+  "ko": "토요하시 철도 야규바시 지선",
+  "en_now": "Yagyubashi Branch Line",
+  "en_new": "Toyohashi Railroad Yagyubashi Branch Line",
+  "why": "일본어 표시 이름의 머리 豊橋鉄道 → Toyohashi Railroad"
+ },
+ {
+  "line_id": "l_yaita_line",
+  "ja": "東武矢板線",
+  "ko": "도부 야이타선",
+  "en_now": "Yaita Line",
+  "en_new": "Tobu Yaita Line",
+  "why": "일본어 표시 이름의 머리 東武 → Tobu"
+ },
+ {
+  "line_id": "l_yamada_line_kintetsu",
+  "ja": "近鉄山田線",
+  "ko": "킨테츠 야마다선",
+  "en_now": "Yamada Line",
+  "en_new": "Kintetsu Yamada Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_yamaguchi_line_seibu",
+  "ja": "西武山口線",
+  "ko": "세이부 야마구치선",
+  "en_now": "Yamaguchi Line",
+  "en_new": "Seibu Yamaguchi Line",
+  "why": "일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_yamaguchicho_line",
+  "ja": "名古屋市電山口町線",
+  "ko": "나고야 시영 전차 야마구치초선",
+  "en_now": "Yamaguchicho Line",
+  "en_new": "Nagoya City Tram Yamaguchicho Line",
+  "why": "일본어 표시 이름의 머리 名古屋市電 → Nagoya City Tram"
+ },
+ {
+  "line_id": "l_yamaguchisenotogi_line",
+  "ja": "西武山口線 おとぎ線",
+  "ko": "세이부 야마구치선 오토기선",
+  "en_now": "Yamaguchisen'otogi Line",
+  "en_new": "Seibu Yamaguchi Line (Otogi Line)",
+  "why": "山口線 おとぎ線을 이어 붙인 것을 나눔. 일본어 표시 이름의 머리 西武 → Seibu"
+ },
+ {
+  "line_id": "l_yamanaka_line",
+  "ja": "北陸鉄道山中線",
+  "ko": "호쿠리쿠 철도 야마나카선",
+  "en_now": "Yamanaka Line",
+  "en_new": "Hokuriku Railroad Yamanaka Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_yamashiro_line",
+  "ja": "北陸鉄道山代線",
+  "ko": "호쿠리쿠 철도 야마시로선",
+  "en_now": "Yamashiro Line",
+  "en_new": "Hokuriku Railroad Yamashiro Line",
+  "why": "일본어 표시 이름의 머리 北陸鉄道 → Hokuriku Railroad"
+ },
+ {
+  "line_id": "l_yamate_line",
+  "ja": "神戸市営地下鉄山手線",
+  "ko": "고베 시영 지하철 세이신·야마테선",
+  "en_now": "Yamate Line",
+  "en_new": "Kobe Municipal Subway Yamate Line",
+  "why": "일본어 표시 이름의 머리 神戸市営地下鉄 → Kobe Municipal Subway"
+ },
+ {
+  "line_id": "l_yaotsu_line",
+  "ja": "名鉄八百津線",
+  "ko": "메이테츠 야오츠선",
+  "en_now": "Yaotsu Line",
+  "en_new": "Meitetsu Yaotsu Line",
+  "why": "일본어 표시 이름의 머리 名鉄 → Meitetsu"
+ },
+ {
+  "line_id": "l_yashiro_line",
+  "ja": "長野電鉄屋代線",
+  "ko": "나가노 전철 야시로선",
+  "en_now": "Yashiro Line",
+  "en_new": "Nagano Electric Railway Yashiro Line",
+  "why": "일본어 표시 이름의 머리 長野電鉄 → Nagano Electric Railway"
+ },
+ {
+  "line_id": "l_yokaichi_line",
+  "ja": "近江鉄道八日市線",
+  "ko": "오미 철도 요카이치선",
+  "en_now": "Yokaichi Line",
+  "en_new": "Ohmi Railway Yokaichi Line",
+  "why": "일본어 표시 이름의 머리 近江鉄道 → Ohmi Railway"
+ },
+ {
+  "line_id": "l_yokogawa_line",
+  "ja": "広島電鉄横川線",
+  "ko": "히로시마 전철 요코가와선",
+  "en_now": "Yokogawa Line",
+  "en_new": "Hiroden Yokogawa Line",
+  "why": "일본어 표시 이름의 머리 広島電鉄 → Hiroden"
+ },
+ {
+  "line_id": "l_yokogawara_line",
+  "ja": "伊予鉄道横河原線",
+  "ko": "이요 철도 요코가와라선",
+  "en_now": "Yokogawara Line",
+  "en_new": "Iyotetsu Yokogawara Line",
+  "why": "일본어 표시 이름의 머리 伊予鉄道 → Iyotetsu"
+ },
+ {
+  "line_id": "l_yoro_line",
+  "ja": "養老鉄道養老線",
+  "ko": "요로 철도 요로선",
+  "en_now": "Yoro Line",
+  "en_new": "Yoro Railway Yoro Line",
+  "why": "일본어 표시 이름의 머리 養老鉄道 → Yoro Railway"
+ },
+ {
+  "line_id": "l_yoshino_line",
+  "ja": "近鉄吉野線",
+  "ko": "킨테츠 요시노선",
+  "en_now": "Yoshino Line",
+  "en_new": "Kintetsu Yoshino Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_yotsubashi_line",
+  "ja": "Osaka Metro四つ橋線",
+  "ko": "오사카메트로 요츠바시선",
+  "en_now": "Yotsubashi Line",
+  "en_new": "Osaka Metro Yotsubashi Line",
+  "why": "일본어 표시 이름의 머리 Osaka Metro → Osaka Metro"
+ },
+ {
+  "line_id": "l_yukarigaoka_line",
+  "ja": "山万ユーカリが丘線",
+  "ko": "야마만 유카리가오카선",
+  "en_now": "Yukarigaoka Line",
+  "en_new": "Yamaman Yukarigaoka Line",
+  "why": "일본어 표시 이름의 머리 山万 → Yamaman"
+ },
+ {
+  "line_id": "l_yunohama_line",
+  "ja": "庄内交通湯野浜線",
+  "ko": "쇼나이 교통 유노하마선",
+  "en_now": "Yunohama Line",
+  "en_new": "Shonai Kotsu Yunohama Line",
+  "why": "일본어 표시 이름의 머리 庄内交通 → Shonai Kotsu"
+ },
+ {
+  "line_id": "l_yunokawa_line",
+  "ja": "函館市電湯の川線",
+  "ko": "하코다테 시영 전차 유노카와선",
+  "en_now": "Yunokawa Line",
+  "en_new": "Hakodate City Tram Yunokawa Line",
+  "why": "일본어 표시 이름의 머리 函館市電 → Hakodate City Tram"
+ },
+ {
+  "line_id": "l_yunomae_line_kumagawa",
+  "ja": "くま川鉄道湯前線",
+  "ko": "쿠마가와 철도 유노마에선",
+  "en_now": "Yunomae Line",
+  "en_new": "Kumagawa Railroad Yunomae Line",
+  "why": "일본어 표시 이름의 머리 くま川鉄道 → Kumagawa Railroad"
+ },
+ {
+  "line_id": "l_yunoyama_line",
+  "ja": "近鉄湯の山線",
+  "ko": "킨테츠 유노야마선",
+  "en_now": "Yunoyama Line",
+  "en_new": "Kintetsu Yunoyama Line",
+  "why": "일본어 표시 이름의 머리 近鉄 → Kintetsu"
+ },
+ {
+  "line_id": "l_yurakucho_line",
+  "ja": "東京メトロ有楽町線",
+  "ko": "도쿄메트로 유라쿠초선",
+  "en_now": "Yurakucho Line",
+  "en_new": "Tokyo Metro Yurakucho Line",
+  "why": "일본어 표시 이름의 머리 東京メトロ → Tokyo Metro"
+ },
+ {
+  "line_id": "l_zushi_line",
+  "ja": "京急逗子線",
+  "ko": "케이큐 즈시선",
+  "en_now": "Zushi Line",
+  "en_new": "Keikyu Zushi Line",
+  "why": "일본어 표시 이름의 머리 京急 → Keikyu"
+ }
+]

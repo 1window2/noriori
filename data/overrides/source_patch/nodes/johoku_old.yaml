@@ -1,0 +1,2 @@
+# 伊予鉄道 城北線 옛 上一万 (DECISIONS 31번)
+- {"patch": "add", "id": "n_kamiichiman_johoku_old", "kind": "station", "group": "g_kamiichiman", "pref": "38", "export_name": "上一万（旧）", "why": "伊予鉄道 城北線 1969-12-01 전 끝 정류장 上一万(城南線 上一万과 다른 정류장). 위치는 국토지리원 1961~69 항공사진의 궤도 부지와 跡地 いよてつロフティ上一万(平和通1丁目1-1), 오차 약 25m. km는 鉄道停車場一覧 1934·1937 (古町 2.8, 練兵場前=赤十字病院前 2.5에서 0.3). docs/research/locations-2026-11-05.md. 재생성으로 원본에 생기면 지움"}

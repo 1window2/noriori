@@ -1,0 +1,1294 @@
+[
+{
+"line": "l_ichijo_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "札幌市電一条線",
+"kana": null,
+"operator": "o_sapporo_city_transportation_bureau",
+"valid_from": "1927-12-01",
+"valid_to": "2020-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 札幌市電 rev110980163 「12月1日に路面電車が市営化」(1927)",
+"ja.wikipedia 札幌市電 rev110980163 「4月1日に上下分離方式が取られ」(2020)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 hokkaido_1-015. 1927-12-01 시영화부터 2020-04-01 振興公社 이관 전까지 札幌市(交通局). 지금 DB는 1973 폐지 구간 사업자를 振興公社로 둠 / 공식 노선 구성(2026-11-09): 札幌市電 4노선마다 같은 사업자 기간"
+},
+{
+"line": "l_yamahana_nishi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "札幌市電山鼻西線",
+"kana": null,
+"operator": "o_sapporo_city_transportation_bureau",
+"valid_from": "1927-12-01",
+"valid_to": "2020-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 札幌市電 rev110980163 「12月1日に路面電車が市営化」(1927)",
+"ja.wikipedia 札幌市電 rev110980163 「4月1日に上下分離方式が取られ」(2020)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 hokkaido_1-015. 1927-12-01 시영화부터 2020-04-01 振興公社 이관 전까지 札幌市(交通局). 지금 DB는 1973 폐지 구간 사업자를 振興公社로 둠 / 공식 노선 구성(2026-11-09): 札幌市電 4노선마다 같은 사업자 기간"
+},
+{
+"line": "l_yamahana_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "札幌市電山鼻線",
+"kana": null,
+"operator": "o_sapporo_city_transportation_bureau",
+"valid_from": "1927-12-01",
+"valid_to": "2020-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 札幌市電 rev110980163 「12月1日に路面電車が市営化」(1927)",
+"ja.wikipedia 札幌市電 rev110980163 「4月1日に上下分離方式が取られ」(2020)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 hokkaido_1-015. 1927-12-01 시영화부터 2020-04-01 振興公社 이관 전까지 札幌市(交通局). 지금 DB는 1973 폐지 구간 사업자를 振興公社로 둠 / 공식 노선 구성(2026-11-09): 札幌市電 4노선마다 같은 사업자 기간"
+},
+{
+"line": "l_toshin_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "札幌市電都心線",
+"kana": null,
+"operator": "o_sapporo_city_transportation_bureau",
+"valid_from": "2015-12-20",
+"valid_to": "2020-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 札幌市電 rev110980163 「12月1日に路面電車が市営化」(1927)",
+"ja.wikipedia 札幌市電 rev110980163 「4月1日に上下分離方式が取られ」(2020)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 hokkaido_1-015. 1927-12-01 시영화부터 2020-04-01 振興公社 이관 전까지 札幌市(交通局). 지금 DB는 1973 폐지 구간 사업자를 振興公社로 둠 / 공식 노선 구성(2026-11-09): 札幌市電 4노선마다 같은 사업자 기간"
+},
+{
+"line": "l_nichinan_line",
+"from_node": "n_kitago",
+"to_node": "n_shibushi_nichinan",
+"name_ja": "志布志線",
+"kana": "しぶしせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1935-04-15",
+"valid_to": "1963-05-08",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 日南線 rev111131181 「【編入】志布志線 志布志 - 北郷」(1963-05-08)",
+"ja.wikipedia 日南線 rev111131181 「北郷 - 志布志間は、当初、志布志線の一部として開業した」"
+],
+"why": "소속: l_shibushi_line. 수집 kyushu_2-002·lh-shibushi-nichinan. 구간별 개업(1935-04-15 志布志–榎原 ~ 1941-10-28 北郷)부터 志布志線. 읽기는 DB 志布志線(노리츠부시)"
+},
+{
+"line": "l_sekisho_line",
+"from_node": "n_oiwake_muroran_main",
+"to_node": "n_shin_yubari",
+"name_ja": "夕張線",
+"kana": "ゆうばりせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1981-10-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 石勝線 rev110939982 「追分駅 - 夕張駅（初代）間…が夕張線となる」",
+"ja.wikipedia 石勝線 rev110939982 「新夕張駅 - 夕張駅（初代）間が夕張支線となり、石勝線に改称」"
+],
+"why": "수집 lh-sekisho-yubari. 1909-10-12 線路名称 제정부터 1981-10-01 石勝線 개칭까지 夕張線. 夕張 끝은 옛 자리(1985·1990 이전, 이전 담당)라 끝 노드는 지금 노드로 둠. 읽기는 DB 夕張線登川支線 읽기 앞부분"
+},
+{
+"line": "l_sekisho_line",
+"from_node": "n_shin_yubari",
+"to_node": "n_yubari",
+"name_ja": "夕張線",
+"kana": "ゆうばりせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1981-10-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 石勝線 rev110939982 「追分駅 - 夕張駅（初代）間…が夕張線となる」",
+"ja.wikipedia 石勝線 rev110939982 「新夕張駅 - 夕張駅（初代）間が夕張支線となり、石勝線に改称」"
+],
+"why": "수집 lh-sekisho-yubari. 1909-10-12 線路名称 제정부터 1981-10-01 石勝線 개칭까지 夕張線. 夕張 끝은 옛 자리(1985·1990 이전, 이전 담당)라 끝 노드는 지금 노드로 둠. 읽기는 DB 夕張線登川支線 읽기 앞부분"
+},
+{
+"line": "l_teshio_tanko_railway_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "天塩鉄道線",
+"kana": null,
+"operator": "o_teshio_railway",
+"valid_from": "1941-12-18",
+"valid_to": "1959-05-30",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 天塩炭砿鉄道 rev105760740 「天塩炭礦鉄道に社名変更」(1959-05-30)"
+],
+"why": "수집 lh-teshio-tanko. 사업자 天塩鉄道 시기 노선 이름(사명 변경과 함께 바뀜). 사업자 기간은 지금 DB에 이미 있음"
+},
+{
+"line": "l_tadami_line",
+"from_node": "n_aizu_wakamatsu",
+"to_node": "n_aizu_bange",
+"name_ja": "会津線",
+"kana": "あいづせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1926-10-15",
+"valid_to": "1971-08-29",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 只見線 rev111454822 「会津若松駅 - 小出駅（135.2 km）を新たに只見線とする」",
+"ja.wikipedia 只見線 rev111454822 「会津線会津若松駅 - 会津坂下駅間（21」"
+],
+"why": "소속: l_aizu_line. 수집 lh-tadami-aizu. 구간 개업일(DB 정차 시작과 같음)부터 1971-08-29 只見線 편입까지 会津線. 읽기는 DB 会津線(노리츠부시)"
+},
+{
+"line": "l_tadami_line",
+"from_node": "n_aizu_bange",
+"to_node": "n_aizu_yanaizu",
+"name_ja": "会津線",
+"kana": "あいづせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1928-11-20",
+"valid_to": "1971-08-29",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 只見線 rev111454822 「会津若松駅 - 小出駅（135.2 km）を新たに只見線とする」",
+"ja.wikipedia 只見線 rev111454822 「会津線会津若松駅 - 会津坂下駅間（21」"
+],
+"why": "소속: l_aizu_line. 수집 lh-tadami-aizu. 구간 개업일(DB 정차 시작과 같음)부터 1971-08-29 只見線 편입까지 会津線. 읽기는 DB 会津線(노리츠부시)"
+},
+{
+"line": "l_tadami_line",
+"from_node": "n_aizu_yanaizu",
+"to_node": "n_aizu_miyashita",
+"name_ja": "会津線",
+"kana": "あいづせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1941-10-28",
+"valid_to": "1971-08-29",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 只見線 rev111454822 「会津若松駅 - 小出駅（135.2 km）を新たに只見線とする」",
+"ja.wikipedia 只見線 rev111454822 「会津線会津若松駅 - 会津坂下駅間（21」"
+],
+"why": "소속: l_aizu_line. 수집 lh-tadami-aizu. 구간 개업일(DB 정차 시작과 같음)부터 1971-08-29 只見線 편입까지 会津線. 읽기는 DB 会津線(노리츠부시)"
+},
+{
+"line": "l_tadami_line",
+"from_node": "n_aizu_miyashita",
+"to_node": "n_aizu_kawaguchi",
+"name_ja": "会津線",
+"kana": "あいづせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1956-09-20",
+"valid_to": "1971-08-29",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 只見線 rev111454822 「会津若松駅 - 小出駅（135.2 km）を新たに只見線とする」",
+"ja.wikipedia 只見線 rev111454822 「会津線会津若松駅 - 会津坂下駅間（21」"
+],
+"why": "소속: l_aizu_line. 수집 lh-tadami-aizu. 구간 개업일(DB 정차 시작과 같음)부터 1971-08-29 只見線 편입까지 会津線. 읽기는 DB 会津線(노리츠부시)"
+},
+{
+"line": "l_tadami_line",
+"from_node": "n_aizu_kawaguchi",
+"to_node": "n_tadami",
+"name_ja": "会津線",
+"kana": "あいづせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1963-08-20",
+"valid_to": "1971-08-29",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 只見線 rev111454822 「会津若松駅 - 小出駅（135.2 km）を新たに只見線とする」",
+"ja.wikipedia 只見線 rev111454822 「会津線会津若松駅 - 会津坂下駅間（21」"
+],
+"why": "소속: l_aizu_line. 수집 lh-tadami-aizu. 구간 개업일(DB 정차 시작과 같음)부터 1971-08-29 只見線 편입까지 会津線. 읽기는 DB 会津線(노리츠부시)"
+},
+{
+"line": "l_ou_main_line",
+"from_node": "n_yamagata",
+"to_node": "n_kita_yamagata",
+"name_ja": "左沢線",
+"kana": "あてらざわせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1921-07-20",
+"valid_to": "1987-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 左沢線 rev111532459 「山形駅 - 北山形駅間は奥羽本線にも属する重複区間」",
+"ja.wikipedia 左沢線 rev111532459 「左沢軽便線…として山形 - 羽前長崎間が開業」(1921-07-20)"
+],
+"why": "소속: l_aterazawa_line (奥羽本線과 겹침, 奥羽本線 소속은 그대로). 수집 lh-aterazawa-yamagata. 1921-07-20 山形 기점 개업(그때 이름 左沢軽便線)부터 1987-04-01 분할민영화 때 겹침 해소까지"
+},
+{
+"line": "l_agatsuma_line",
+"from_node": "n_shibukawa",
+"to_node": "n_naganohara_kusatsuguchi",
+"name_ja": "長野原線",
+"kana": "ながのはらせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1945-01-02",
+"valid_to": "1971-03-07",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 吾妻線 rev111606108 「路線名を長野原線から吾妻線に改称」"
+],
+"why": "수집 lh-agatsuma-naganohara. 1945-01-02 渋川–長野原 개업부터 1971-03-07 長野原–大前 개업·개칭까지 長野原線. 읽기는 DB 長野原線(노리츠부시)"
+},
+{
+"line": "l_naganohara_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "吾妻線",
+"kana": "あがつません",
+"operator": null,
+"valid_from": "1971-03-07",
+"valid_to": "1971-05-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 吾妻線 rev111606108 「営業時の路線名は長野原線であったが当区間休止時に当区間含め吾妻線に改称」"
+],
+"why": "소속: l_agatsuma_line. 수집 lh-agatsuma-naganohara. 休止 중이던 長野原–太子가 1971-03-07 吾妻線으로 개칭된 뒤 1971-05-01 폐지"
+},
+{
+"line": "l_joetsu_line",
+"from_node": "n_takasaki",
+"to_node": "n_shin_maebashi",
+"name_ja": "両毛線",
+"kana": "りょうもうせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1957-12-20",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 両毛線 rev111452524 「1957年に同区間が両毛線から分離され、重複は解消した」",
+"ja.wikipedia 井野駅 (群馬県) rev109947014 「高崎 - 新前橋間の重複を解消し、上越線の所属に変更」"
+],
+"why": "소속: l_ryomo_line (上越線 개업 뒤는 겹침). 수집 lh-ryomo-takasaki. 1909-10-12 線路名称(両毛線 小山–高崎)부터 1957-12-20 겹침 해소까지. 끝 날짜는 井野駅 문서 1957-12-20 항목"
+},
+{
+"line": "l_negishi_line",
+"from_node": "n_yokohama",
+"to_node": "n_sakuragicho",
+"name_ja": "東海道本線",
+"kana": "とうかいどうほんせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1915-08-15",
+"valid_to": "1964-05-19",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 根岸線 rev111389338 「桜木町駅 - 磯子駅間が開業した1964年に横浜駅を境に根岸線とされた」",
+"ja.wikipedia 根岸線 rev111389338 「8月15日：横浜駅（2代目）が開業」(1915)"
+],
+"why": "소속: l_tokaido_main_line (支線). 수집 lh-negishi-sakuragicho. 横浜(2대) 개업 1915-08-15(DB 정차 시작)부터 1964-05-19 根岸線 개업까지"
+},
+{
+"line": "l_oimachi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "田園都市線",
+"kana": "でんえんとしせん",
+"operator": "o_tokyo_kyuko_electric_railway",
+"valid_from": "1963-10-11",
+"valid_to": "1979-08-12",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 東急大井町線 rev110872403 「1963年10月11日（田園都市線に改称）」",
+"ja.wikipedia 東急大井町線 rev110872403 「大井町 - 二子玉川園間が大井町線として分離され」"
+],
+"why": "소속: l_den_en_toshi_line. 수집 lh-tokyu-oimachi-denentoshi. 大井町–二子玉川가 1963-10-11~1979-08-12 田園都市線. 읽기는 DB 東急田園都市線에서 「とうきゅう」를 뗀 것"
+},
+{
+"line": "l_den_en_toshi_line",
+"from_node": "n_futako_tamagawa",
+"to_node": "n_mizonokuchi",
+"name_ja": "大井町線",
+"kana": "おおいまちせん",
+"operator": "o_tokyo_kyuko_electric_railway",
+"valid_from": "1943-07-01",
+"valid_to": "1963-10-11",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 東急大井町線 rev110872403 「二子読売園 - 溝ノ口間の軌間を…改軌し、大井町線に編入」",
+"ja.wikipedia 東急大井町線 rev110872403 「1963年10月11日（田園都市線に改称）」"
+],
+"why": "소속: l_oimachi_line. 수집 lh-tokyu-oimachi-denentoshi. 1943-07-01 改軌·편입부터 1963-10-11까지 大井町線. 읽기는 DB 東急大井町線에서 「とうきゅう」를 뗀 것"
+},
+{
+"line": "l_den_en_toshi_line",
+"from_node": "n_shibuya_tokyu_railways",
+"to_node": "n_futako_tamagawa",
+"name_ja": "新玉川線",
+"kana": null,
+"operator": "o_tokyo_kyuko_electric_railway",
+"valid_from": "1977-04-07",
+"valid_to": "2000-08-06",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 東急田園都市線 rev111498924 「新玉川線と田園都市線が統合され、渋谷 - 中央林間間が田園都市線となる」"
+],
+"why": "수집 lh-tokyu-oimachi-denentoshi. 1977-04-07 개업(DB 정차 시작)부터 2000-08-06 통합까지 新玉川線"
+},
+{
+"line": "l_yanagase_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "北陸本線",
+"kana": "ほくりくほんせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1957-10-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 柳ヶ瀬線 rev109665048 「木ノ本 - 柳ヶ瀬 - 敦賀間の旧線を柳ヶ瀬線として分離」(1957-10-01)"
+],
+"why": "소속: l_hokuriku_main_line. 수집 lh-yanagase-hokuriku. 1909-10-12 線路名称(그때 표기 北陸線)부터 1957-10-01 분리까지. 지금 DB는 1882년부터 柳ヶ瀬線으로 보임(R10)"
+},
+{
+"line": "l_yashiro_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "河東線",
+"kana": null,
+"operator": null,
+"valid_from": "1926-09-30",
+"valid_to": "2002-09-18",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 長野電鉄屋代線 rev111478017 「以前は正式には河東線の一部であり「屋代線」は通称であった」",
+"ja.wikipedia 長野電鉄長野線 rev110624450 「長野駅 - 湯田中駅間を長野線と名称変更」(2002-09-18)"
+],
+"why": "소속: l_kato_line. 수집 lh-nagaden-kato. 1926-09-30 長野電鉄 사명 변경(그 전 河東鉄道)부터 2002-09-18 노선 재편까지 정식 이름 河東線"
+},
+{
+"line": "l_nagano_line_nagano",
+"from_node": "n_suzaka",
+"to_node": "n_shinshunakano",
+"name_ja": "河東線",
+"kana": null,
+"operator": null,
+"valid_from": "1926-09-30",
+"valid_to": "2002-09-18",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 長野電鉄長野線 rev110624450 「須坂駅 - 信州中野駅間は河東線の一部」",
+"ja.wikipedia 長野電鉄長野線 rev110624450 「河東線須坂駅 - 信州中野駅間と山ノ内線を…長野線と名称変更」(2002-09-18)"
+],
+"why": "소속: l_kato_line. 수집 lh-nagaden-kato. 1926-09-30부터 2002-09-18까지 河東線"
+},
+{
+"line": "l_nagano_line_nagano",
+"from_node": "n_shinshunakano",
+"to_node": "n_yudanaka",
+"name_ja": "山ノ内線",
+"kana": null,
+"operator": null,
+"valid_from": "1927-08-27",
+"valid_to": "2002-09-18",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 長野電鉄長野線 rev110624450 「平穏線が山の内線へ名称変更」",
+"ja.wikipedia 長野電鉄長野線 rev110624450 「信州中野駅 - 湯田中駅間は山ノ内線であった」"
+],
+"why": "수집 lh-nagaden-kato. 1927-08-27 平穏線→山の内線 개칭부터 2002-09-18까지. 표기는 위키 연혁의 山の内線과 노선 설명의 山ノ内線이 섞여 있어 2002년 기사 표기를 씀"
+},
+{
+"line": "l_fushiki_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "高岡軌道線",
+"kana": "たかおかきどうせん",
+"operator": "o_toyama_chiho_railway",
+"valid_from": "1948-04-10",
+"valid_to": "1959-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 加越能鉄道伏木線 rev108783568 「線籍上は高岡軌道線の一部であった」"
+],
+"why": "소속: l_takaoka_tramway_line. 수집 lh-takaoka-fushiki. 1948-04-10 개업부터 1959-04-01 加越能鉄道 양도까지(사업자 富山地方鉄道)"
+},
+{
+"line": "l_fushiki_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "高岡軌道線",
+"kana": "たかおかきどうせん",
+"operator": null,
+"valid_from": "1959-04-01",
+"valid_to": "1971-09-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 加越能鉄道伏木線 rev108783568 「線籍上は高岡軌道線の一部であった」",
+"ja.wikipedia 加越能鉄道伏木線 rev108783568 「加越能鉄道に譲渡」(1959-04-01)"
+],
+"why": "소속: l_takaoka_tramway_line. 수집 lh-takaoka-fushiki. 1959-04-01 양도 뒤 1971-09-01 폐지까지 선적상 高岡軌道線(伏木線은 통칭). 읽기는 DB 万葉線高岡軌道線에서 「まんようせん」을 뗀 것"
+},
+{
+"line": "l_kisei_main_line",
+"from_node": "n_kameyama_kansai_main",
+"to_node": "n_taki_kisei_main",
+"name_ja": "参宮線",
+"kana": "さんぐうせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1959-07-15",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 紀勢本線 rev111257602 「参宮線の亀山駅 - 多気駅間を編入」",
+"ja.wikipedia 多気駅 「参宮線の当駅から亀山方…紀勢本線に編入」(1959-07-15)"
+],
+"why": "소속: l_sangu_line. 수집 lh-sangu-kisei. 1909-10-12 線路名称부터 1959-07-15 紀勢本線 편입까지 参宮線"
+},
+{
+"line": "l_kisei_main_line",
+"from_node": "n_kiwa_kisei_main",
+"to_node": "n_wakayamashi",
+"name_ja": "和歌山線",
+"kana": "わかやません",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1972-03-15",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 和歌山線 rev110989741 「紀和駅 - 国社分界点 - 和歌山市駅間…が紀勢本線に編入」",
+"ja.wikipedia 紀勢本線 rev111257602 「和歌山線の紀和駅 - 国社分界点 - 和歌山市駅間が紀勢本線に編入」(1972-03-15)"
+],
+"why": "소속: l_wakayama_line. 수집 lh-wakayama-kiwa-wakayamashi. 1909-10-12 線路名称부터 1972-03-15 편입까지 和歌山線"
+},
+{
+"line": "l_kitajima_branch_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "加太線",
+"kana": "かだせん",
+"operator": null,
+"valid_from": "1942-02-01",
+"valid_to": "1955-02-15",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 南海北島支線 rev111513395 「紀ノ川 - 加太間を加太支線…、北島 - 東松江間を北島支線に変更」"
+],
+"why": "소속: l_kada_line. 수집 lh-kada-kitajima. 1942-02-01 南海鉄道 加太線부터 1955-02-15 개편까지(1944-06-01~1947-06-01 사업자 近畿日本鉄道, DB는 南海로 둠). 읽기는 DB 南海加太線에서 「なんかい」를 뗀 것"
+},
+{
+"line": "l_kada_line",
+"from_node": "n_kinokawa",
+"to_node": "n_higashi_matsue_nankai",
+"name_ja": "松江線",
+"kana": null,
+"operator": null,
+"valid_from": "1944-10-01",
+"valid_to": "1955-02-15",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 南海加太線 rev110697328 「7月25日：松江線の旅客営業開始」(1950)",
+"ja.wikipedia 南海北島支線 rev111513395 「紀ノ川 - 加太間を加太支線…に変更」"
+],
+"why": "수집 lh-kada-kitajima. 1944-10-01 화물선 개업(DB 紀ノ川 정차 시작)부터 1955-02-15 加太支線 편입까지 松江線"
+},
+{
+"line": "l_kainan_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "和歌山軌道線海南線",
+"kana": null,
+"operator": "o_wakayama_electric_tramway",
+"valid_from": "[1947-03-01..1947-03-31]",
+"valid_to": "1961-11-XX",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 南海和歌山軌道線 rev111210581 「11月には南海電気鉄道と合」(1961)",
+"ja.wikipedia 南海和歌山軌道線 rev111210581 「1947年（昭和22年）3月」(和歌山電気軌道)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 lh-wakayama-kido-operator. 和歌山電気軌道 독립(1947년 3월, 날짜 모름)부터 南海 합병(1961년 11월, 날짜 모름)까지. 지금 DB는 1909년부터 南海로 둠"
+},
+{
+"line": "l_shimmachi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "和歌山軌道線新町線",
+"kana": null,
+"operator": "o_wakayama_electric_tramway",
+"valid_from": "[1947-03-01..1947-03-31]",
+"valid_to": "1961-11-XX",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 南海和歌山軌道線 rev111210581 「11月には南海電気鉄道と合」(1961)",
+"ja.wikipedia 南海和歌山軌道線 rev111210581 「1947年（昭和22年）3月」(和歌山電気軌道)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 lh-wakayama-kido-operator. 和歌山電気軌道 독립(1947년 3월, 날짜 모름)부터 南海 합병(1961년 11월, 날짜 모름)까지. 지금 DB는 1909년부터 南海로 둠"
+},
+{
+"line": "l_wakaura_branch_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "和歌山軌道線和歌浦支線",
+"kana": null,
+"operator": "o_wakayama_electric_tramway",
+"valid_from": "[1947-03-01..1947-03-31]",
+"valid_to": "1961-11-XX",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 南海和歌山軌道線 rev111210581 「11月には南海電気鉄道と合」(1961)",
+"ja.wikipedia 南海和歌山軌道線 rev111210581 「1947年（昭和22年）3月」(和歌山電気軌道)"
+],
+"why": "사업자 기간만(이름 변화 없음). 수집 lh-wakayama-kido-operator. 和歌山電気軌道 독립(1947년 3월, 날짜 모름)부터 南海 합병(1961년 11월, 날짜 모름)까지. 지금 DB는 1909년부터 南海로 둠"
+},
+{
+"line": "l_senri_line",
+"from_node": "n_tenjimbashisuji_6_chome_hankyu",
+"to_node": "n_awaji",
+"name_ja": "京都本線",
+"kana": "きょうとほんせん",
+"operator": "o_keihanshin_kyuko_electric_railway",
+"valid_from": "1949-12-01",
+"valid_to": "1959-02-18",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 阪急千里線 rev109783576 「京都本線の天神橋駅 - 淡路駅間を千里山線に編入」",
+"ja.wikipedia 阪急京都本線 rev110983908 「新京阪線は阪急に残され京都本線となった」(1949)"
+],
+"why": "소속: l_kyoto_main_line. 수집 lh-kyoto-senri. 1949-12-01 京阪 분리로 京都本線이 된 때부터 1959-02-18 千里山線 편입까지. 읽기는 DB 阪急京都本線에서 「はんきゅう」를 뗀 것"
+},
+{
+"line": "l_senri_line",
+"from_node": "n_tenjimbashisuji_6_chome_hankyu",
+"to_node": "n_awaji",
+"name_ja": "千里山線",
+"kana": null,
+"operator": "o_keihanshin_kyuko_electric_railway",
+"valid_from": "1959-02-18",
+"valid_to": "1967-03-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 阪急千里線 rev109783576 「京都本線の天神橋駅 - 淡路駅間を千里山線に編入」",
+"ja.wikipedia 阪急千里線 rev109783576 「新千里山駅 - 北千里駅間が開業し千里線に改称」"
+],
+"why": "수집 lh-kyoto-senri. 1959-02-18 편입부터 1967-03-01 千里線 개칭까지"
+},
+{
+"line": "l_senri_line",
+"from_node": "n_awaji",
+"to_node": "n_senriyama",
+"name_ja": "千里山線",
+"kana": null,
+"operator": "o_keihanshin_kyuko_electric_railway",
+"valid_from": "1943-10-01",
+"valid_to": "1967-03-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 阪急千里線 rev109783576 「新千里山駅 - 北千里駅間が開業し千里線に改称」",
+"ja.wikipedia 吹田駅 (阪急) 「会社合併により…京阪神急行電鉄…の駅となる」(1943-10-01)"
+],
+"why": "수집 lh-kyoto-senri. 京阪神急行電鉄 출범 1943-10-01부터(이름 千里山線은 그 전부터) 1967-03-01 千里線 개칭까지"
+},
+{
+"line": "l_mugi_line",
+"from_node": "n_tokushima",
+"to_node": "n_chuden",
+"name_ja": "小松島線",
+"kana": "こまつしません",
+"operator": "o_japanese_national_railways",
+"valid_from": "1922-09-02",
+"valid_to": "1961-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 牟岐線 rev111002477 「牟岐線を徳島駅 - 牟岐駅間、小松島線を中田駅 - 小松島駅間に変更」",
+"ja.wikipedia 牟岐線 rev111002477 「小松島軽便線を小松島線に改称」"
+],
+"why": "소속: l_komatsushima_line. 수집 lh-komatsushima-mugi. 1922-09-02 小松島軽便線→小松島線 개칭부터 1961-04-01 牟岐線 편입까지"
+},
+{
+"line": "l_karatsu_line",
+"from_node": "n_yamamoto",
+"to_node": "n_karatsu",
+"name_ja": "筑肥線",
+"kana": "ちくひせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1983-03-22",
+"valid_to": "1987-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 筑肥線 rev110909455 「唐津駅 - 山本駅間が唐津線との重複区間となったが」",
+"ja.wikipedia 筑肥線 rev110909455 「唐津駅 - 山本駅間が唐津線の単独扱いに戻った」"
+],
+"why": "소속: l_chikuhi_line (唐津線과 겹침, 唐津線 소속은 그대로). 수집 lh-chikuhi-karatsu-yamamoto. 1983-03-22 筑肥線 전철화·편입부터 분할민영화 1987-04-01까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_ishida",
+"to_node": "n_kawara",
+"name_ja": "添田線",
+"kana": "そえだせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1943-05-01",
+"valid_to": "1956-03-15",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」"
+],
+"why": "수집 lh-hitahikosan-names. 1943-05-01 小倉鉄道 국유화로 添田線(초대, 東小倉–添田)이 됨. 1956-03-15 日田線 통합까지. 읽기는 DB 添田線(노리츠부시)"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_ishida",
+"to_node": "n_higashi_kokura",
+"name_ja": "添田線",
+"kana": "そえだせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1943-05-01",
+"valid_to": "1956-03-15",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」"
+],
+"why": "수집 lh-hitahikosan-names. 石田–東小倉도 1956-03-15까지 添田線(초대)"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_ishida",
+"to_node": "n_higashi_kokura",
+"name_ja": "日田線",
+"kana": null,
+"operator": "o_japanese_national_railways",
+"valid_from": "1956-03-15",
+"valid_to": "1956-11-19",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」"
+],
+"why": "수집 lh-hitahikosan-names. 1956-03-15 日田線 통합부터 1956-11-19 여객 폐지(지금 DB 정차 끝)까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_ishida",
+"to_node": "n_kawara",
+"name_ja": "日田線",
+"kana": null,
+"operator": "o_japanese_national_railways",
+"valid_from": "1956-03-15",
+"valid_to": "1960-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」",
+"ja.wikipedia 日田彦山線 rev110324185 「日田線から香春駅 - 大任駅 - 添田駅間を添田線（2代）に分離」"
+],
+"why": "수집 lh-hitahikosan-names. 1956-03-15부터 1960-04-01 日田彦山線 개칭까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_jono",
+"to_node": "n_ishida",
+"name_ja": "日田線",
+"kana": null,
+"operator": "o_japanese_national_railways",
+"valid_from": "1956-11-19",
+"valid_to": "1960-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」",
+"ja.wikipedia 日田彦山線 rev110324185 「日田線から香春駅 - 大任駅 - 添田駅間を添田線（2代）に分離」"
+],
+"why": "수집 lh-hitahikosan-names. 城野–石田 1956-11-19 개업(DB 정차 시작)부터 1960-04-01까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_kawara",
+"to_node": "n_tagawa_ita",
+"name_ja": "日田線",
+"kana": null,
+"operator": "o_japanese_national_railways",
+"valid_from": "1957-10-01",
+"valid_to": "1960-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」",
+"ja.wikipedia 日田彦山線 rev110324185 「日田線から香春駅 - 大任駅 - 添田駅間を添田線（2代）に分離」"
+],
+"why": "수집 lh-hitahikosan-names. 香春–伊田 1957-10-01 개업부터 1960-04-01까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_tagawa_ita",
+"to_node": "n_soeda",
+"name_ja": "田川線",
+"kana": "たがわせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1909-10-12",
+"valid_to": "1960-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「国有鉄道線路名称制定により、田川線を行橋駅 - 添田駅間とする」"
+],
+"why": "소속: l_tagawa_line. 수집 lh-hitahikosan-names. 1909-10-12 線路名称(田川線 行橋–添田)부터 1960-04-01 日田彦山線 편입까지. 읽기는 DB 田川線(노리츠부시)"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_soeda",
+"to_node": "n_hikosan",
+"name_ja": "田川線",
+"kana": "たがわせん",
+"operator": "o_japanese_national_railways",
+"valid_from": "1942-08-25",
+"valid_to": "1956-03-15",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」"
+],
+"why": "소속: l_tagawa_line. 수집 lh-hitahikosan-names. 西添田–彦山 1942-08-25 田川線 연장부터 1956-03-15 日田線 편입까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_soeda",
+"to_node": "n_yoake",
+"name_ja": "日田線",
+"kana": null,
+"operator": "o_japanese_national_railways",
+"valid_from": "1956-03-15",
+"valid_to": "1960-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」",
+"ja.wikipedia 日田彦山線 rev110324185 「日田線から香春駅 - 大任駅 - 添田駅間を添田線（2代）に分離」"
+],
+"why": "수집 lh-hitahikosan-names. 添田–夜明(彦山–大行司는 1956-03-15 개업) 1956-03-15부터 1960-04-01까지"
+},
+{
+"line": "l_hitahikosan_line",
+"from_node": "n_daigyoji",
+"to_node": "n_yoake",
+"name_ja": "彦山線",
+"kana": null,
+"operator": "o_japanese_national_railways",
+"valid_from": "1937-08-22",
+"valid_to": "1956-03-15",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」"
+],
+"why": "수집 lh-hitahikosan-names. 夜明–宝珠山 1937-08-22, 宝珠山–大行司 1946-09-20 개업, 1956-03-15 日田線 편입까지 彦山線"
+},
+{
+"line": "l_soeda_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "日田線",
+"kana": null,
+"operator": null,
+"valid_from": "1956-03-15",
+"valid_to": "1960-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 日田彦山線 rev110324185 「添田線に田川線添田駅 - 彦山駅間および彦山線を編入し日田線を」",
+"ja.wikipedia 日田彦山線 rev110324185 「小倉鉄道を戦時買収により国有化、東小倉駅 - 添田駅間 (27.3km) を添田線とする」",
+"ja.wikipedia 日田彦山線 rev110324185 「日田線から香春駅 - 大任駅 - 添田駅間を添田線（2代）に分離」"
+],
+"why": "소속: l_hitahikosan_line (日田線이 1960 日田彦山線으로 개칭). 수집 lh-hitahikosan-names. 香春–添田가 1956-03-15~1960-04-01 日田線, 그 뒤 添田線(2대)"
+},
+{
+"line": "l_kaizuka_line",
+"from_node": "n_kaizuka_nishi_nippon",
+"to_node": "n_nishitetsu_shingu",
+"name_ja": "宮地岳線",
+"kana": "みやじだけせん",
+"operator": null,
+"valid_from": "1942-09-22",
+"valid_to": "2007-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 西鉄貝塚線 rev111320593 「9月22日 西日本鉄道に改称、同社の宮地嶽線（宮地岳線）となる」(1942)",
+"ja.wikipedia 西鉄貝塚線 rev111320593 「同時に路線名も貝塚線に改称」(2007-04-01)"
+],
+"why": "소속: l_miyajidake_line. 수집 lh-miyajidake-kaizuka. 1942-09-22 西日本鉄道 宮地岳線(표기 宮地嶽線도)부터 2007-04-01 貝塚線 개칭까지. 읽기는 DB 西鉄宮地岳線에서 「にしてつ」를 뗀 것"
+},
+{
+"line": "l_kaizuka_line",
+"from_node": "n_chidoribashi_kaizuka",
+"to_node": "n_kaizuka_nishi_nippon",
+"name_ja": "宮地岳線",
+"kana": "みやじだけせん",
+"operator": null,
+"valid_from": "1942-09-22",
+"valid_to": "1954-03-05",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 西鉄貝塚線 rev111320593 「9月22日 西日本鉄道に改称、同社の宮地嶽線（宮地岳線）となる」(1942)",
+"ja.wikipedia 西鉄貝塚線 rev111320593 「西鉄博多方面の区間は…西鉄福岡市内線へ編入」(1954-03-05)"
+],
+"why": "소속: l_miyajidake_line. 수집 lh-miyajidake-kaizuka. 千鳥橋–貝塚도 1954-03-05 福岡市内線 편입 전까지 宮地岳線. 1954~1979 소속(編入/乗り入れ)은 사람 확인 몫으로 넣지 않음"
+},
+{
+"line": "l_chihara_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "千葉急行線",
+"kana": "ちばきゅうこうせん",
+"operator": "o_chiba_kyuko_electric_railway",
+"valid_from": "1992-04-01",
+"valid_to": "1998-10-01",
+"kind": "name",
+"evidence": [
+"build master line_period: l_chihara_line 행 0; edge_attr: o_chiba_kyuko_electric_railway 1992-04-01~1998-10-01"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_hakone_tozan_train",
+"from_node": null,
+"to_node": null,
+"name_ja": "箱根登山鉄道鉄道線",
+"kana": "はこねとざんてつどうてつどうせん",
+"operator": "o_hakone_tozan_railway",
+"valid_from": null,
+"valid_to": "2024-04-01",
+"kind": "name",
+"evidence": [
+"edge_attr: o_hakone_tozan_railway ~2024-04-01, o_odakyu_hakone 2024-04-01~; build master line_period: 두 노선 행 0"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_hakone_tozan_cable_car",
+"from_node": null,
+"to_node": null,
+"name_ja": "箱根登山鉄道鋼索線",
+"kana": "はこねとざんてつどうこうさくせん",
+"operator": "o_hakone_tozan_railway",
+"valid_from": null,
+"valid_to": "2024-04-01",
+"kind": "name",
+"evidence": [
+"edge_attr: o_hakone_tozan_railway ~2024-04-01, o_odakyu_hakone 2024-04-01~; build master line_period: 두 노선 행 0"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_osumi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "古江線",
+"kana": "ふるえせん",
+"operator": null,
+"valid_from": null,
+"valid_to": "1972-09-09",
+"kind": "name",
+"evidence": [
+"大隅線 rev110914996: 1972年9月9日 … 全通。古江線を大隅線と改称; 高千穂鉄道高千穂線 rev111478046: 1972年7月22日：日ノ影 - 高千穂間を延伸開業し高千穂線と改称; 西鉄天神大牟田線 rev111320592: 線名を大牟田線から天神大牟田線に改称"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_takachiho_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "日ノ影線",
+"kana": "ひのかげせん",
+"operator": null,
+"valid_from": null,
+"valid_to": "1972-07-22",
+"kind": "name",
+"evidence": [
+"大隅線 rev110914996: 1972年9月9日 … 全通。古江線を大隅線と改称; 高千穂鉄道高千穂線 rev111478046: 1972年7月22日：日ノ影 - 高千穂間を延伸開業し高千穂線と改称; 西鉄天神大牟田線 rev111320592: 線名を大牟田線から天神大牟田線に改称"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_tenjin_omuta_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大牟田線",
+"kana": "おおむたせん",
+"operator": "o_nishi_nippon_railroad",
+"valid_from": null,
+"valid_to": "2001-01-01",
+"kind": "name",
+"evidence": [
+"大隅線 rev110914996: 1972年9月9日 … 全通。古江線を大隅線と改称; 高千穂鉄道高千穂線 rev111478046: 1972年7月22日：日ノ影 - 高千穂間を延伸開業し高千穂線と改称; 西鉄天神大牟田線 rev111320592: 線名を大牟田線から天神大牟田線に改称"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_tateyama_line",
+"from_node": "n_terada_toyama_chiho",
+"to_node": "n_iwakuraji",
+"name_ja": "五百石線",
+"kana": "ごひゃっこくせん",
+"operator": null,
+"valid_from": null,
+"valid_to": "1969-04-01",
+"kind": "member",
+"evidence": [
+"ja.wikipedia 富山地方鉄道立山線 年表 1969-04-01"
+],
+"why": "1969-04-01 立山線 편입 전 寺田–岩峅寺는 五百石線"
+},
+{
+"line": "l_akita_nairiku_line",
+"from_node": "n_takanosu_akita_nairiku_jukan",
+"to_node": "n_hitachinai",
+"name_ja": "秋田内陸北線",
+"kana": "あきたないりくほくせん",
+"ko": "아키타 나이리쿠 북선",
+"en": "Akita Nairiku North Line",
+"operator": null,
+"valid_from": "1986-11-01",
+"valid_to": "1989-04-01",
+"kind": "name",
+"evidence": [
+"data/imports/wiki 秋田内陸縦貫鉄道秋田内陸線 rev111364809 「秋田内陸北線…秋田内陸南線」 1986-11-01 転換, 1989-04-01 全通で秋田内陸線"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_akita_nairiku_line",
+"from_node": "n_matsuba",
+"to_node": "n_kakunodate",
+"name_ja": "秋田内陸南線",
+"kana": "あきたないりくなんせん",
+"ko": "아키타 나이리쿠 남선",
+"en": "Akita Nairiku South Line",
+"operator": null,
+"valid_from": "1986-11-01",
+"valid_to": "1989-04-01",
+"kind": "name",
+"evidence": [
+"data/imports/wiki 秋田内陸縦貫鉄道秋田内陸線 rev111364809 「秋田内陸北線…秋田内陸南線」 1986-11-01 転換, 1989-04-01 全通で秋田内陸線"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_iwaizumi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "小本線",
+"kana": "おもとせん",
+"ko": "오모토선",
+"en": "Omoto Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "1972-02-06",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 岩泉線 「1972年2月6日 浅内 - 岩泉間延伸開業、小本線を岩泉線に改称」"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_akiu_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "秋保電気鉄道線",
+"kana": "あきうでんきてつどうせん",
+"ko": "아키우 전기철도선",
+"en": "Akiu Electric Railway Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "1959-07-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 仙南交通秋保線 「1959年7月1日 仙南交通に合併」"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_toyoma_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "仙北鉄道登米線",
+"kana": "せんぽくてつどうとよません",
+"ko": "센보쿠 철도 토요마선",
+"en": "Sempoku Railway Toyoma Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "1964-04-14",
+"kind": "name",
+"evidence": [
+"登米線 사업자 기간: 仙北鉄道 ~1964-04-14, 宮城バス 1964-04-14~ (DB edge_attr); N05 「宮城バス 登米線」"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_miyazu_line_kyoto_tango_railway_willer_trains",
+"from_node": null,
+"to_node": null,
+"name_ja": "北近畿タンゴ鉄道宮津線",
+"kana": "きたきんきたんごてつどうみやづせん",
+"ko": "키타킨키 탄고 철도 미야즈선",
+"en": "Kitakinki Tango Railway Miyazu Line",
+"operator": null,
+"valid_from": "1990-04-01",
+"valid_to": "2015-04-01",
+"kind": "name",
+"evidence": [
+"data/imports/wiki 京都丹後鉄道宮舞線·宮豊線 문서: 2015-04-01 WILLER TRAINS(京都丹後鉄道) 운행 시작"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_semboku_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "泉北高速鉄道線",
+"kana": "せんぼくこうそくてつどうせん",
+"ko": "센보쿠 고속철도선",
+"en": "Semboku Rapid Railway Line",
+"operator": null,
+"valid_from": "1971-04-01",
+"valid_to": "2025-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_utsube_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "近鉄内部線",
+"kana": "きんてつうつべせん",
+"ko": "킨테츠 우츠베선",
+"en": "Kintetsu Utsube Line",
+"operator": null,
+"valid_from": "1965-04-01",
+"valid_to": "2015-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_hachioji_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "近鉄八王子線",
+"kana": "きんてつはちおうじせん",
+"ko": "킨테츠 하치오지선",
+"en": "Kintetsu Hachioji Line",
+"operator": null,
+"valid_from": "1965-04-01",
+"valid_to": "2015-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_uemachi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "南海上町線",
+"kana": "なんかいうえまちせん",
+"ko": "난카이 우에마치선",
+"en": "Nankai Uemachi Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "1980-12-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_hankai_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "南海阪堺線",
+"kana": "なんかいはんかいせん",
+"ko": "난카이 한카이선",
+"en": "Nankai Hankai Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "1980-12-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_midosuji_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄御堂筋線",
+"kana": "おおさかしえいちかてつみどうすじせん",
+"ko": "오사카 시영 지하철 미도스지선",
+"en": "Osaka Municipal Subway Midosuji Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_tanimachi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄谷町線",
+"kana": "おおさかしえいちかてつたにまちせん",
+"ko": "오사카 시영 지하철 타니마치선",
+"en": "Osaka Municipal Subway Tanimachi Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_yotsubashi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄四つ橋線",
+"kana": "おおさかしえいちかてつよつばしせん",
+"ko": "오사카 시영 지하철 요츠바시선",
+"en": "Osaka Municipal Subway Yotsubashi Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_osaka_metro_chuo_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄中央線",
+"kana": "おおさかしえいちかてつちゅうおうせん",
+"ko": "오사카 시영 지하철 추오선",
+"en": "Osaka Municipal Subway Chuo Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_sennichimae_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄千日前線",
+"kana": "おおさかしえいちかてつせんにちまえせん",
+"ko": "오사카 시영 지하철 센니치마에선",
+"en": "Osaka Municipal Subway Sennichimae Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_sakaisuji_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄堺筋線",
+"kana": "おおさかしえいちかてつさかいすじせん",
+"ko": "오사카 시영 지하철 사카이스지선",
+"en": "Osaka Municipal Subway Sakaisuji Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_nagahori_tsurumi_ryokuchi_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄長堀鶴見緑地線",
+"kana": "おおさかしえいちかてつながほりつるみりょくちせん",
+"ko": "오사카 시영 지하철 나가호리츠루미료쿠치선",
+"en": "Osaka Municipal Subway Nagahori Tsurumi-ryokuchi Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_imazatosuji_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "大阪市営地下鉄今里筋線",
+"kana": "おおさかしえいちかてついまざとすじせん",
+"ko": "오사카 시영 지하철 이마자토스지선",
+"en": "Osaka Municipal Subway Imazatosuji Line",
+"operator": null,
+"valid_from": null,
+"valid_to": "2018-04-01",
+"kind": "name",
+"evidence": [
+"사업자 변경(결정 3): 2025-04-01 南海 합병, 2015-04-01 四日市あすなろう鉄道, 1980-12-01 阪堺電気軌道 분리, 2018-04-01 Osaka Metro 민영화"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_osaka_metro_chuo_line",
+"from_node": "n_cosmosquare",
+"to_node": "n_osakako",
+"name_ja": "OTSテクノポート線",
+"kana": "おーてぃーえすてくのぽーとせん",
+"ko": "OTS 테크노포트선",
+"en": "OTS Technoport Line",
+"operator": "o_osaka_port_transport_system",
+"valid_from": "1997-12-18",
+"valid_to": "2005-07-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia Osaka Metro中央線 「2005年7月1日：OTSテクノポート線を中央線に編入」"
+],
+"why": "노선 옛 이름(결정 3)"
+},
+{
+"line": "l_matsudo_line",
+"from_node": null,
+"to_node": null,
+"name_ja": "新京成線",
+"kana": "しんけいせいせん",
+"operator": "o_shin_keisei_electric_railway",
+"valid_from": "1947-12-27",
+"valid_to": "2025-04-01",
+"kind": "name",
+"evidence": [
+"ja.wikipedia 京成松戸線 rev111480624 「1947年（昭和22年）12月27日 - 新京成電鉄新京成線として…開業」「2025年3月31日までは新京成電鉄によって運営され、路線名は新京成線（しんけいせいせん…）」「2025年（令和7年）4月1日 - 京成電鉄への吸収合併に伴い、同社の松戸線へ路線名を変更」",
+"新京成電鉄 공식 누리집 https://www.shinkeisei.co.jp/ (web.archive.org 20240601060009 사본) 「新京成線は、平常通り運転しています。」"
+],
+"why": "사업자 시대 노선 이름 규칙(compile operator_era)이 지금 이름 머리만 바꿔 만든 「新京成松戸線」은 없던 이름이다. 新京成電鉄 시대 노선 이름은 「新京成線」(노선 이름 자체가 달랐던 꼴, 9회차 N; 3회차 kinki_1-11 일반화). 기간은 edge_attr 사업자 기간과 같음"
+},
+{"line": "l_marunouchi_line", "from_node": "n_shinjuku_tokyo_metro", "to_node": "n_ogikubo_tokyo_metro", "name_ja": "荻窪線", "kana": null, "operator": "o_teito_rapid_transit_authority", "valid_from": "1961-02-08", "valid_to": "1972-04-01", "kind": "name", "evidence": ["『私鉄統計年報』 昭和35年度·昭和36年度(運輸省鉄道監督局, NDL pid 2473344·2473345) 차량표 사업자 「帝都高速度交通営団」 노선 칸 「銀座線·丸の内線·荻窪線·日比谷線」(높음, 공식 통계에 노선 이름으로 따로 있음)", "ja.wikipedia 東京メトロ丸ノ内線 rev111274806 「1972年4月1日：荻窪線を丸ノ内線に名称統一」(중간)"], "why": "노선 이름 자체가 달랐던 시대(구간 이름): 新宿–荻窪는 1961-02-08 개업(DB 정차 시작)부터 1972-04-01 名称統一까지 荻窪線. 읽기 근거 없음(추정 금지) (9회차 N N-07, 10회차 D2 2026-11-16)"},
+{"line": "l_marunouchi_line_honancho_branch", "from_node": "n_nakano_sakaue_tokyo_metro", "to_node": "n_honancho", "name_ja": "荻窪線", "kana": null, "operator": "o_teito_rapid_transit_authority", "valid_from": "1961-02-08", "valid_to": "1972-04-01", "kind": "name", "evidence": ["『私鉄統計年報』 昭和35年度·昭和36年度(運輸省鉄道監督局, NDL pid 2473344·2473345) 차량표 사업자 「帝都高速度交通営団」 노선 칸 「銀座線·丸の内線·荻窪線·日比谷線」(높음, 공식 통계에 노선 이름으로 따로 있음)", "ja.wikipedia 東京メトロ丸ノ内線 rev111274806 「1972年4月1日：荻窪線を丸ノ内線に名称統一」(중간)"], "why": "中野坂上–方南町(1961-02-08~1962-03-23 순차 개업)도 荻窪線의 일부. 1972-04-01 丸ノ内線(분기선)으로 名称統一. 읽기 근거 없음 (9회차 N N-07, 10회차 D2 2026-11-16)"}
+]

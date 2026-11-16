@@ -1,0 +1,322 @@
+[
+ {
+  "id": "A2-01",
+  "severity": "오류",
+  "problem": "伊香保線 商工会議所前과 前橋線 商工会議所前(다른 정류장)이 노드 하나 n_shokokaigishomae_ikaho. DBA-017 좌표 보정 뒤 伊香保線 구간이 끊김",
+  "evidence": "r_ikaho_line seq3(渋川四ツ角 0.9km–河原町 1.3km)와 r_maebashi_line seq1(前橋駅前 0.0–曲輪町 1.1)에 같은 노드. node_fix.json 좌표 36.386615,139.071083(前橋). 渋川四ツ角–商工会議所前 0.2km에 직선 13.58km, 商工会議所前–河原町 0.2km에 13.91km. e_012381·e_012382 선형 없음(선형 없는 edge 11→13)",
+  "fix": "tools/gen_n05.py 노드 재사용 조건에서 두 정류장을 나눔: 前橋線에 새 노드(n_shokokaigishomae_maebashi), node_fix.json 좌표를 그 노드로 옮기고 伊香保線 노드는 이웃 사이 보간. 다시 빌드 뒤 e_012381·382 N05 선형 확인",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-02",
+  "severity": "오류",
+  "problem": "일본어 표시 이름에 station_database 동명 구분 괄호가 남음 (기본 43, 노선별 1)",
+  "evidence": "source=station_database 기본 ja 43: 曙町(茨城), 旭町(石川), 梅林(岐阜), 大学前(新潟), 大学前(茨城), 藤江(石川), 袋町(新潟), 服部(石川), 広瀬(石川), 石田(山形), 岩本(石川), 岩田(岐阜), 片上(岡山), 競輪場前(岐阜), 北府(南越線), 北山(和歌山), 清水(岐阜), 高校前(新潟), 米町(石川), 松森(名古屋鉄道), 宮下(新潟), 長瀬(岐阜), 中田(石川), 中野(岐阜), 中野(青森), 中ノ庄(石川), 中山(岡山), 楡原(新潟), 太田(新潟), 大池(新潟), 大島(石川), 幸町(北海道), 佐々木(石川), 関(岐阜), 清水(岡山), 新関(岐阜), 新田(岐阜), 新田(山形), 滝(石川), 玉川(北海道), 打越(石川), 上野(山形), 結城(岐阜); 노선별 n_akechi_meitetsu 八百津線 明智(名古屋鉄道). station.csv 같은 행의 original_name은 괄호 없음(9943703,21082,広瀬(石川),広瀬,…). ko·en은 괄호 없음",
+  "fix": "tools/gen_source.py: station_database 이름은 original_name 열을 씀. 계통 이름 3개(片上(岡山)～柵原 등)도 다시 생성",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-03",
+  "severity": "오류",
+  "problem": "노리츠부시 주석이 든 일본어 이름 (기본 1, 노선별 8)",
+  "evidence": "n_tokyo_skytree 기본 ja 'とうきょうスカイツリー／押上'(kana とうきょうすかいつりー). 노선별: n_koiji 能登線 '恋路(臨)', n_aizukogen_ozeguchi_aizu 国鉄会津線 '会津高原(旧会津滝ノ原)', n_amagasaki 福知山線 '尼崎（臨時乗降場）', n_yamato_yagi 橿原線 '大和八木／八木西口', n_nishihamanomachi 蛍茶屋支線 '西浜町／浜町アーケード', n_awa_kainan 阿佐東線 '阿波海南（モードインターチェンジ）', n_osaka 梅田貨物線 '大阪（うめきた）'. 의심: 甲浦（モードインターチェンジ）, 甲浦(鉄道駅), 雲泉寺(ラクテンチ下), 乙原(ラクテンチ上)",
+  "fix": "gen_source.py에서 노리츠부시 이름의 ／·(臨)·(旧…)·괄호 주석을 떼고 원문은 noritsubushi 별칭으로만 둠. 낱개는 data/overrides/node_fix.json(이름). 会津高原 노선별 이름은 会津滝ノ原",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-04",
+  "severity": "오류",
+  "problem": "옛 이름 ko 읽기를 먼 곳의 같은 한자 역에서 가져오거나 지금 이름을 그대로 씀",
+  "evidence": "gen_source.py 1309~1311행 byname[znorm(old)] 전국 조회. n_osumi_koyama 高山→타카야마(岐阜 高山 790km, 맞는 읽기 こうやま), n_kagaiwauchi 岩内→이와나이(北海道 801km, いわうち), n_musashi_koyama 小山→오야마(栃木 78km, こやま), n_naganohara_kusatsuguchi 長野原(~1991)→나가노하라쿠사츠구치(같은 역 노선별 ko는 나가노하라), n_shin_tokorozawa 所沢御幸町→신토코로자와. 의심: n_owari_asahi 新居→니이(伊賀 97km), n_enshu_kobayashi 新原→신바루(福岡 684km). ko 옛 이름 116 중 5km 안 SD 동명 역 24, SD 없음 44, 먼 역뿐 48",
+  "fix": "gen_source.py: 옛 이름이 지금 이름의 일부면 지금 kana에서 잘라 씀, SD 동명 역은 노드에서 가까운 것만, 없으면 ko 옛 이름을 만들지 않거나 estimated. 낱개는 old_names_fix.json·kana.json",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-05",
+  "severity": "오류",
+  "problem": "本町二丁目 2역의 kana가 ほんまちさんちょうめ, ko가 혼마치산초메",
+  "evidence": "n_honmachi_2_chome_osaka_municipal_transportation_bureau(靭本町線 seq7), n_honmachi_2_chome_takasaki_line_tobu(東武 高崎線 seq5): ja 本町二丁目, kana ほんまちさんちょうめ, ko 혼마치산초메(rule), en Honmachi 2-chome. 이웃 seq에 本町三丁目",
+  "fix": "data/overrides/kana.json에 두 노드 'ほんまちにちょうめ'. 다시 생성하면 ko 혼마치니초메",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-06",
+  "severity": "오류",
+  "problem": "부역명 괄호 처리가 언어마다 달라 en이 읽기를 통째로 이어 붙임, kana에 공백",
+  "evidence": "n_hasumachi 蓮町（馬場記念公園前） en 'Hasumachibabakinenkoemmae' ko '하스마치'; n_hatsukaichishiyakushomae 廿日市市役所前(平良) en 'Hatsukaichishiyakushomaehera'; n_shinden_kagoshima_city 神田（交通局前） en 'Shindenkotsukyokumae' ko '신덴'; n_toyota_mobility_toyama_g_square_gofuku_mae kana 'とよたもびりてぃとやま じーすくえあ…'(공백). 괄호 있는 공식 이름 11 중 kana 5는 부역명 넣고 6은 뺌",
+  "fix": "gen_source.py: en은 en_rules.plainkana를 거친 읽기로 만들고, kana의 부역명 포함 여부를 하나로 정함. 공백 제거",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-07",
+  "severity": "오류",
+  "problem": "甲浦 옛·새 노드(node_move)인데 옛 노드에 （旧）·(구)·(old) 표시가 없고 ko·en이 같음",
+  "evidence": "node_move n_kannoura_asa_seaside_asato_old→n_kannoura_asa_seaside_asato 2021-12-25. ja '甲浦(鉄道駅)'/'甲浦（モードインターチェンジ）', ko 둘 다 '칸노우라', en 둘 다 'Kannoura', moved 별칭 없음. DESIGN §2.2 옛 역 표시 규칙",
+  "fix": "gen_source.py 옛 노드 표시: 노리츠부시 괄호 주석을 뗀 이름으로 같은 이름 판정. 결과 甲浦（旧）/칸노우라(구)/Kannoura (old)",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-08",
+  "severity": "오류",
+  "problem": "노선 읽기(kana)가 노선 이름의 읽기가 아님",
+  "evidence": "l_nakagawa_connecting_line 中川短絡線 'いせなかがわ'; l_nishi_kyushu_line 西九州線 'まつうらてつどう'; l_yamashiro_line 山代線 'ほくりくてつどうやましろえん'; l_uchiko_line 内子線 'よさん・うちこせん'; l_kamidaki_line 上滝線 'とやまちてつふじこし・かみだきせん'; l_tramway_ho_line 軌道線 'きどうほう'; l_disney_resort_line 'でぃずにーりぞーとらいんせん'; l_tokyo_monorail_haneda_airport_line 'とうきょうものれーる'; l_sapporo_streetcar 1条線・山鼻線・山鼻西線・都心線 'さっぽろしでん'",
+  "fix": "data/overrides/lines_kana.json에 바른 읽기. 검색 색인과 여기서 만든 ko·en(A2-09·A2-10) 함께 바뀜",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-09",
+  "severity": "오류",
+  "problem": "노선 한국어 이름이 깨짐 (N05 복합 이름 13, 기타 5)",
+  "evidence": "l_loop_line_hakatachikkomae_chidoribashi '니시테츠 준칸센하카타칫코마에치도리바시', l_betsudai_line_beppu_ekimae_branch '베츠다이센벳푸에키마에 지선', l_ishiki_line_shinshoin_ishiki_old_route '가고시마시 교통국 이시키센신쇼인이시키큐선', l_yamaguchisenotogi_line '세이부 야마구치센오토기선' 등 13 (ja에 공백·– 있는 노선 전부); l_awaji_kotsu_line 淡路交通線 '테츠도선'; l_katayamazu_line '호쿠리츠 철도 카타야마즈선'(호쿠리쿠 오타); l_tramway_ho_line '이즈하코네 철도 궤도 호'; l_uchiko_line '요산선·우치코선'; l_kamidaki_line '도야마 지방철도 후지코시·카미다키선'",
+  "fix": "tools/ko.py line(): 공백 단위로 나눠 線·支線·旧線과 'A–B' 구간을 따로 옮김(en처럼 '순환선 (A~B)'). 낱개는 data/overrides/lines_ko.json",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-10",
+  "severity": "오류",
+  "problem": "노선 영어 이름에 線이 sen으로 남거나 틀린 읽기에서 나옴",
+  "evidence": "l_yamaguchisenotogi_line \"Yamaguchisen'otogi Line\"(山口線 おとぎ線), l_yagumahigashisentozai_connecting_line 'Yagumahigashisentozai Connecting Line'(八熊東線東西連絡線), l_tsukijisen_branch_line 'Tsukijisen Branch Line'(築地線支線), l_tramway_ho_line 'Tramway Ho Line'(軌道線, kana きどうほう)",
+  "fix": "tools/gen_en_names.py line_name(): 이름 중간의 線·공백을 나눔. A2-08 읽기 고침. 낱개는 en_fix.json",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-11",
+  "severity": "오류",
+  "problem": "계통 이름이 끝 역의 지금 이름보다 낡음 (ko 11, ja·en 일부)",
+  "evidence": "r_oyama_cable_line ko '오야마코사쿠센~아후리진자'(끝 역 ko 오야마케이블), r_mount_tsukuba_cable_car '미야와키~츠쿠바산코사쿠테츠도센'(츠쿠바산초), r_jukkokutoge_cable_car '줏코쿠코사쿠센~짓코쿠토게산초', r_ueno_zoo_monorail_line '…~우에노켄스이센', r_hiroden_main_line·…_hiroshima_matobacho '히로시마~'(히로시마역), r_hanazono_line ja '松山市駅前～南堀端'(끝 역 松山市駅)·ko '마츠야마시~', r_seikan_tunnel_tappi_shako_line '세이칸톤네루키넨칸~', r_yunomae_line_kumagawa ko '히토요시~유노마에'(ja는 人吉温泉～湯前), r_higashiyama_main_line ko, r_johoku_line_iyotetsu ja·ko·en '古町～平和通一丁目'(끝 노드는 source_patch의 上一万（旧）)",
+  "fix": "계통 이름을 tools/compile.py에서 최종 노드 이름(names_ko.json·source_patch 적용 뒤)으로 만들거나 gen_source.py에서 손 보정 뒤로 옮김",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-12",
+  "severity": "오류",
+  "problem": "구성원이 똑같은 환승 묶음이 두 개씩 (108쌍)",
+  "evidence": "hub 1,100 중 216개가 108쌍. 한쪽 source [\"station_database\",\"proximity_300m\"], 다른 쪽 [\"wikipedia\"]. 예 hub_mita·hub_tamachi(n_mita,n_tamachi), hub_harajuku·hub_harajuku_meiji_jingumae, hub_shin_sapporo·hub_shin_sapporo_shin_sapporo_sapporo_city. 노드 384개가 hub 둘 이상",
+  "fix": "tools/gen_wiki.py: 같은 구성원의 hub가 있으면 새로 만들지 않고 source에 wikipedia를 더함",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-13",
+  "severity": "오류",
+  "problem": "규칙 영어 역명에서 ん+모음의 n' 누락 (§9.1)",
+  "evidence": "source=rule 역 중 kana에 ん+あ行·や行이 있는 50개 모두 '없음. 예 n_shinobihiro 'Shinobihiro'(しんおびひろ), n_kanonmachi 'Kanommachi'(かんおんまち), n_shinyashiki, n_gozenyama, n_anyoji, n_kudanue. en_rules.station_reading()이 romaji()를 씀(노선은 hepburn()이라 \"Sun'en Line\")",
+  "fix": "tools/en_rules.py station_reading(): ん 뒤 모음에 ' 삽입, .title() 대신 첫 글자만 대문자",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-14",
+  "severity": "오류",
+  "problem": "東山・おかでんチャギントンミュージアム駅 ko가 개칭 전 이름",
+  "evidence": "n_higashiyama_okaden_chuggington_museum ja '東山・おかでんチャギントンミュージアム駅', en 'Higashiyama-Okaden Chuggington Museum', ko(hand) '히가시야마·오카덴뮤지엄역'",
+  "fix": "data/overrides/names_ko.json: 나무위키 제목 확인 뒤 '히가시야마·오카덴차깅턴뮤지엄역' 꼴",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-15",
+  "severity": "오류",
+  "problem": "노선 ko에서 일반 한자어 循環을 준칸으로 음차 (§9.3 한국 한자음)",
+  "evidence": "l_loop_line_nishitetsu '니시테츠 준칸선', l_loop_line_sendai_city '센다이시 지하철 준칸선', l_loop_line_old_route, l_loop_line_hakatachikkomae_chidoribashi, l_loop_line_kakyoin_sendai_ekimae, l_yagumahigashisentozai_connecting_line(…토자이 연락선). 広電 循環線은 hand '히로시마 전철 순환선'",
+  "fix": "tools/ko.py SINO 표에 循環 じゅんかん 순환 (東西 등도 확인)",
+  "confidence": "높음"
+ },
+ {
+  "id": "A2-16",
+  "severity": "오류",
+  "problem": "松江イングリッシュガーデン前 en이 외래어 변환 없이 읽기 그대로",
+  "evidence": "n_matsue_english_garden_mae en 'Matsueingurisshugademmae'(rule). en_rules.KATAKANA에 イングリッシュガーデン 있음. ID와 이름 불일치 3건 중 하나",
+  "fix": "data/overrides/en_fix.json 'Matsue English Garden-mae'. en_rules.katakana() 조건 확인",
+  "confidence": "높음"
+ },
+ {
+  "id": "S2-01",
+  "severity": "의심",
+  "problem": "옛 이름·노선별 이름이 ja에만 있고 ko·en·kana가 비어 있음",
+  "evidence": "기간 있는 ja 397행 중 ko 116, en 0, kana 0. 노선별 ja 115 중 ko 114(n_nishi_5_chome 鉄北線 西5丁目 없음), en 0, kana 0. 예 n_noborito 稲田多摩川(1927~1955) ko 없음 → 한국어 화면은 노보리토",
+  "fix": "옛 이름 ko·en·kana를 생성할지 결정. 생성하면 A2-04를 먼저 고친 뒤 gen_source.py·gen_en_names.py",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-02",
+  "severity": "의심",
+  "problem": "노선 kana 앞에 회사 읽기가 붙음 (노리츠부시 읽기 그대로)",
+  "evidence": "kana 있는 노선 997 중 262. 예 l_aboshi_line 網干線 'さんようでんてつあぼしせん', l_hachioji_line 'よっかいちあすなろうてつどうはちおうじせん', l_toho_line 'さっぽろしえいちかてつとうほうせん', l_hanzomon_line 'とうきょうめとろはんぞうもんせん'. gen_en_names.own_reading()은 en을 만들 때만 뗌",
+  "fix": "kana를 이름의 읽기로 보면 own_reading 결과를 kana로 저장(gen_source.py/gen_en_names.py). 회사 이름 검색은 사업자 이름으로",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-03",
+  "severity": "의심",
+  "problem": "회사 이름 노선 kana에 せん이 없음",
+  "evidence": "약 45. l_aichi_loop_line 愛知環状鉄道線 'あいちかんじょうてつどう', l_arida_railway_line 'ありだてつどう', l_tsukuba_express_line 'つくばえくすぷれす', l_izu_kyuko_line 'いずきゅうこう'",
+  "fix": "lines_kana.json 또는 S2-02 처리에서 せん 보충",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-04",
+  "severity": "의심",
+  "problem": "노선별 이름이 드러낸 역 합침: 八木西口, 尼崎港線 尼崎",
+  "evidence": "n_yamato_yagi 橿原線 노선별 ja '大和八木／八木西口', 橿原線 계통에 八木西口 노드 없음(seq13 大和八木). n_amagasaki 福知山線 '尼崎（臨時乗降場）', r_fukuchiyama_line_tsukaguchi_amagasakiko 尼崎 2.5km–金楽寺 3.0km에 직선 0.94km",
+  "fix": "八木西口을 역 방문 단위로 둘지 결정(近鉄 営業キロ상 같은 역). 尼崎港線 尼崎 임시승강장 위치를 원문으로 확인해 노드 분리 여부 판정",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-05",
+  "severity": "의심",
+  "problem": "사철 노선 ko에 사업자 짧은 이름이 없음 (§9.3)",
+  "evidence": "국철·JR 밖 사업자 노선 중 ko에 사업자 이름 없는 44(rule 34, hand 9, namuwiki 1). l_hojo_line_hojo(北条鉄道) '호조선' = l_hojo_line(国鉄) '호조선', 같은 꼴 神岡線·三木線·高千穂線. 会津線은 hand '아이즈 철도 아이즈선'",
+  "fix": "tools/ko.py line() 또는 lines_ko.json에서 사업자 짧은 이름 + 노선",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-06",
+  "severity": "의심",
+  "problem": "노면전차를 운영한 교통국의 ko 짧은 이름이 '지하철'",
+  "evidence": "o_sendai_city_transportation_bureau ko '센다이시 지하철'이 仙台市電 循環線에, 名古屋市交通局 '나고야 시영 지하철'이 市電 押切線·東郊線 등에 붙음",
+  "fix": "data/overrides/operators_ko.json: '센다이시 교통국' 꼴로",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-07",
+  "severity": "의심",
+  "problem": "영어 -mae와 접두 하이픈 표기가 갈림",
+  "evidence": "前로 끝나는 686: 붙임 mae 535, -mae 124, -Mae 17, 'GAKKO-MAE'(n_gakko_mae_kujukuri) 1, ' Mae' 1. 東·西·南·北·新 접두: rule 하이픈 32/붙임 206/띄움 13, wikidata 787/137/26",
+  "fix": "표기 하나를 정해 en_rules·en_fix.json. GAKKO-MAE는 바로 고침",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-08",
+  "severity": "의심",
+  "problem": "일반명사만 남은 노선 영어 이름에 회사 약칭 없음 (§9.1)",
+  "evidence": "'Loop Line' 3: l_loop_line(広電), l_loop_line_nishitetsu, l_loop_line_sendai_city",
+  "fix": "en_fix.json operator_short",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-09",
+  "severity": "의심",
+  "problem": "읽기가 다른 같은 한자 역이 나무위키 제목을 나눠 씀 (§9.2 CI 규칙)",
+  "evidence": "穴太 n_anoh あのう / n_anoo あのお 둘 다 namuwiki '아노'; 大和田 n_owada_oigawa おわだ / n_owada 등 おおわだ 모두 namuwiki '오와다'. 近江今津는 [알려짐]",
+  "fix": "한쪽 source를 rule로(글자는 같음). names_ko.json",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-10",
+  "severity": "의심",
+  "problem": "환승 묶음 ID가 JR 역 이름 우선 규칙(§2.10)과 다름",
+  "evidence": "JR 노드 하나만 든 hub 125개의 ID가 그 JR 노드 줄기가 아님. 예 hub_keikyu_tsurumi(n_tsurumi), hub_mizonokuchi(n_musashi_mizonokuchi), hub_kitashichijodori(n_sapporo), hub_otemachi_toei(n_tokyo)",
+  "fix": "시드 동결 전에 hub 생성기(gen_wiki.py 등) 이름 규칙 적용. A2-12와 함께",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-11",
+  "severity": "의심",
+  "problem": "伏木線 米島口가 万葉線 米島口와 다른 노드·group이고 좌표 none, 이름에 근년 부역명",
+  "evidence": "n_yonejimaguchi_fushiki(l_fushiki_line 1948-04-10~1971-09-01, 加越能鉄道) quality none; n_yonejimaguchi(l_takaoka_tramway_line 1948~). 두 노드 모두 ja '米島口アルビス米島店前', kana よねじまぐち",
+  "fix": "같은 정류장이면 한 노드(§2.8 B, hand_tables SAME_NODE). 아니면 이름을 米島口로, 좌표는 万葉線 米島口 근처 approx",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-12",
+  "severity": "의심",
+  "problem": "이웃 역 직선거리가 km보다 큼 (45쌍)",
+  "evidence": "직선 > km×1.15+0.3: N05 좌표 17, 폐역 SD 10, 현행 SD 7, 추정 km 6, 이설 옛·새 3, 보간·손 2(A2-01). 현행: 肥薩線 大隅横川–植村 km 2.0/직선 2.7, 武豊線 半田–東成岩 1.7/2.3, りんかい線 天王洲アイル–品川シーサイド 1.1/1.6 (나머지 なんば·車道·松島–高城町은 설계)",
+  "fix": "외부 대조 감사(5)에서 km·좌표 1차 자료 확인",
+  "confidence": "낮음"
+ },
+ {
+  "id": "S2-13",
+  "severity": "의심",
+  "problem": "master에 없는 열람 전용 ID의 이름이 names.sqlite에 남음",
+  "evidence": "44 ID 88행(archive_lines.json drop 35·exclude 9). 예 a_kamakama_line 蒲蒲線(계획선), a_railway_rentaienshu_line, a_kusakaru_electric_railway",
+  "fix": "tools/compile.py: names 적재에 열람 전용 필터를 같이 적용",
+  "confidence": "높음"
+ },
+ {
+  "id": "S2-14",
+  "severity": "의심",
+  "problem": "ID 모양: 線을 sen으로 이어 붙인 노선 ID, line_line",
+  "evidence": "l_seihosensabaeechizenhirai(鯖浦線 鯖江–越前平井), l_yamaguchisenotogi_line, l_yagumahigashisentozai_connecting_line, l_tsukijisen_branch_line, l_blue_line_line_1·_3",
+  "fix": "시드 동결 전 new_ids.py/id_map.json으로 다시 매김(공개 전이라 redirect 불필요)",
+  "confidence": "중간"
+ },
+ {
+  "id": "S2-15",
+  "severity": "의심",
+  "problem": "20m 안 또는 같은 좌표의 다른 group 노드",
+  "evidence": "丹後山田(n_tangoyamada)=与謝野 6m, 西長田=西長田ゆりの里 4m, 芦原=あわら湯のまち 14m, 古川=よしかわ 15m, 亀川=亀川駅前 7m, 中津 2노드 7m 등 12쌍; 같은 좌표 東古市=永平寺口(SD), 南方=南方(宮崎)",
+  "fix": "같은 역이면 같은 group(§2.8 B). 위상 감사(3)와 대조",
+  "confidence": "낮음"
+ },
+ {
+  "id": "S2-16",
+  "severity": "의심",
+  "problem": "N05 좌표인데 quality precise",
+  "evidence": "n_takahata_yamagata_kotsu 38.005366,140.193771 source n05 quality precise (N05 공간 오차 수백 m, LICENSE.md)",
+  "fix": "positions 생성(gen_source.py)에서 n05 출처는 approx",
+  "confidence": "중간"
+ },
+ {
+  "id": "I2-01",
+  "severity": "정보",
+  "problem": "다른 group 공개 역의 같은 좌표 14묶음 30노드 [알려짐 S6, 18→14]",
+  "evidence": "産業会館前=大町二丁目=県庁前, 弁天前=亀陽泉前 등. n05·interpolated 11묶음",
+  "fix": "N05 점 다시 맞춤",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-02",
+  "severity": "정보",
+  "problem": "선형 끝이 역에서 300m 넘게 떨어진 edge 42 [알려짐 43]",
+  "evidence": "현행 26(なんば 0.59km 등 한 노드의 떨어진 승강장), 폐역 16(瑞江 1.46km, 陸中大石 1.57km 등)",
+  "fix": "1차 감사 항목대로",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-03",
+  "severity": "정보",
+  "problem": "선형 없는 edge 13, 점 하나뿐인 선형 9",
+  "evidence": "선형 없음 = 1차 11 + e_012381·e_012382(A2-01). 점 하나 선형 9개(e_011443 등)는 모두 km 0 edge",
+  "fix": "A2-01을 고치면 2개 회복",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-04",
+  "severity": "정보",
+  "problem": "kana의 ・ 30자, 공백 23자",
+  "evidence": "44행. 万座・鹿沢口 'まんざ・かざわぐち', N05 노선 '真田傍陽線 傍陽支線' kana 공백. 검색 fold가 지움",
+  "fix": "정렬 키로 쓸 때만 지움",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-05",
+  "severity": "정보",
+  "problem": "사업자·계통 kana 없음, reading_source·source_title 0행, checked는 ko만",
+  "evidence": "operator 282·route 1,133 kana NULL. name 49,902행 reading_source·source_title 모두 NULL (§9.2는 위키백과 읽기 확인을 reading_source에)",
+  "fix": "§9.2대로 채울지 결정",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-06",
+  "severity": "정보",
+  "problem": "별칭 완전 중복 55",
+  "evidence": "계통 noritsubushi 53(r_tokaido_main_line 東海道本線 등), 옛 이름 2(関急蟹江, 関急八田)",
+  "fix": "compile.py 별칭 적재에서 중복 제거",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-07",
+  "severity": "정보",
+  "problem": "n05_fill 선형 55개가 다른 파일에도 있음, e_090001은 source_patch 출처",
+  "evidence": "n05_fill 111 중 n05 43·n02 3·osm 9 겹침(n02·osm 12개는 master가 안 씀). e_090001 geometry_source n05인데 n05.yaml에 없음(source_patch/geometry/nagao_old.yaml)",
+  "fix": "쓰이지 않는 n05_fill 줄 정리. n05 출처를 끌 때 source_patch 선형도 빠지는지 확인",
+  "confidence": "높음"
+ },
+ {
+  "id": "I2-08",
+  "severity": "정보",
+  "problem": "[알려짐] 항목 재측정",
+  "evidence": "계통 ko·en 없음 16, 열람 전용 en 없음 498, 노선 kana 없음 36, n_honmachi_2_chome 이름 本町三丁目, Honmachi 15(의도), en의 · 6, e_090002 hand, 近江今津 제목 공유",
+  "fix": "1차 감사대로",
+  "confidence": "높음"
+ }
+]

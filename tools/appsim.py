@@ -14,6 +14,7 @@
 """
 import argparse
 import collections
+import heapq
 import json
 import os
 import random
@@ -23,7 +24,11 @@ import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 SCRATCH = os.path.dirname(HERE)
-TODAY = "2026-11-01"
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from lib import AS_OF  # noqa: E402
+
+# 판의 기준일. 시험의 "오늘"은 판과 같이 움직인다
+TODAY = AS_OF
 FLOOR = "1950-01-01"   # §4.6 기준일
 MAXD = "9999-12-31"
 
@@ -35,6 +40,10 @@ def edtf_range(v):
         return (None, None)
     if v == "ongoing":
         return (MAXD, MAXD)
+    # 그 사이 어느 날인지 모르는 범위 [A..B] (lib.lohi와 같다)
+    m = re.fullmatch(r"\[(.*)\.\.(.*)\]", v)
+    if m:
+        return (edtf_range(m[1])[0] if m[1] else "0000-01-01", edtf_range(m[2])[1] if m[2] else MAXD)
     m = re.fullmatch(r"(\d{4})-(\d{2})-(\d{2})", v)
     if m:
         return (v, v)
@@ -50,6 +59,9 @@ def edtf_range(v):
     m = re.fullmatch(r"(\d{3})X-XX-XX", v)
     if m:
         return (f"{m[1]}0-01-01", f"{m[1]}9-12-31")
+    m = re.fullmatch(r"(\d{2})XX-XX-XX", v)
+    if m:
+        return (f"{m[1]}00-01-01", f"{m[1]}99-12-31")
     raise ValueError(f"EDTF 해석 불가: {v!r}")
 
 
@@ -92,9 +104,25 @@ def overlaps_year(y, f_lo, t_hi):
     return lo < b and hi > a
 
 
+def year_certain(y, valid_from, valid_to):
+    """Y년에 확실히 영업했는가 (§5.4). 애매하면 분모·분자에서 빼고 판정 불가로 센다.
+    폐지 연도만 아는 구간은 그해에 영업한 것으로 친다. 컴파일과 따로 명세에서 옮긴 판정이다."""
+    f_lo, f_hi = edtf_range(valid_from)
+    t_lo, t_hi = edtf_range(valid_to)
+    if not overlaps_year(y, f_lo, t_hi):
+        return False
+    return f_hi is not None and f_hi < f"{y + 1}-01-01" and t_lo is not None and t_lo >= f"{y}-01-01"
+
+
 # ------------------------------------------------------------------ DB ----
 class App:
     """앱의 데이터 계층에 해당. 앱처럼 master에 names를 ATTACH."""
+
+    def edge_between(self, a, b):
+        """두 역 사이의 edge. edge 번호는 역 하나만 끼워도 밀리므로 시험은 번호를 쓰지 않는다"""
+        rows = self.db.execute("SELECT id FROM edge WHERE (from_node=? AND to_node=?) OR (from_node=? AND to_node=?)", (a, b, b, a)).fetchall()
+        assert len(rows) == 1, (a, b, rows)
+        return rows[0][0]
 
     def __init__(self, master=None, names=None, today=TODAY):
         master = master or os.path.join(SCRATCH, "build", "master.sqlite")
@@ -118,6 +146,8 @@ class App:
             self._life[r["edge_id"]].append(dict(r))
         self.edges = {r["id"]: dict(r) for r in self.db.execute("SELECT * FROM edge")}
         self.km = {r["edge_id"]: r["km"] for r in self.db.execute("SELECT * FROM edge_km")}
+        # 승계 끔 단위는 3섹 전환 때 다시 잰 구간을 국철 시대 km로 센다 (DESIGN §2.9 E)
+        self.era = {(r["line_id"], r["edge_id"]): r["km"] for r in self.db.execute("SELECT * FROM edge_km_era")}
         self._edge_routes = collections.defaultdict(list)
         self._route_edges = collections.defaultdict(list)
         for r in self.db.execute("SELECT route_id,seq,edge_id FROM route_edge ORDER BY route_id,seq"):
@@ -125,10 +155,26 @@ class App:
             self._route_edges[r["route_id"]].append((r["seq"], r["edge_id"]))
         self._stops = collections.defaultdict(list)
         self._picks = collections.defaultdict(list)      # 선택기 행 (extend_to 포함)
+        # 정차 기간 사이에 서지 않던 기간 (여름 임시역 등, stop_dates.json 여러 기간). 앱 inStopGap과 같다
+        self._stop_gaps = collections.defaultdict(list)
+        if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='route_stop_gap'").fetchone():
+            for r in self.db.execute("SELECT * FROM route_stop_gap"):
+                self._stop_gaps[(r["route_id"], r["seq"])].append((r["gap_from_hi"], r["gap_to_lo"]))
         for r in self.db.execute("SELECT * FROM route_stop ORDER BY route_id,seq"):
             self._picks[r["route_id"]].append(dict(r))
             if not r["is_extension"]:
                 self._stops[r["route_id"]].append(dict(r))
+        # 한 방향 운행 칸과 한 방향 정차 (DESIGN §8). 앱 Network.passable·stopDirectionOf와 같다
+        self._one_way = collections.defaultdict(list)
+        self._one_way_routes = set()
+        if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='edge_one_way'").fetchone():
+            for r in self.db.execute("SELECT * FROM edge_one_way"):
+                self._one_way[(r["route_id"], r["edge_id"])].append(dict(r))
+                self._one_way_routes.add(r["route_id"])
+        self._stop_direction = collections.defaultdict(list)
+        if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='stop_direction'").fetchone():
+            for r in self.db.execute("SELECT * FROM stop_direction"):
+                self._stop_direction[(r["route_id"], r["node_id"])].append(dict(r))
         self.public = {r[0] for r in self.db.execute("SELECT id FROM node_public")}
         self.node_kind = {r[0]: r[1] for r in self.db.execute("SELECT id,kind FROM node")}
         self.units = {}
@@ -291,6 +337,8 @@ class App:
                 state, sel = "unknown", True
             elif st == "before":
                 state, sel = "before_open", False
+            elif self.in_stop_gap(d, s):
+                state, sel = "closed", False
             elif st == "after":
                 state, sel = "closed", False
             elif "ok" in line_states and st == "yes":
@@ -326,20 +374,133 @@ class App:
         if not stops:
             return out
         out[stops[0]["seq"]] = 0.0
-        for p, q in zip(stops, stops[1:]):
-            es = cands.get(frozenset((p["node_id"], q["node_id"])), [])
-            if d is not None:
-                es2 = [e for e in es if self.edge_usable(route_id, e, d)[0] in ("ok", "maybe", "suspended")]
-                es = es2 or es
-            if not es:
+        # 옛 자리 노드(역 이전)는 새 자리 역과 km 순으로 섞여 있다. 바로 다음 역과 칸이 없으면 세 칸 안의 역으로 잇는다 (S1과 같은 규칙)
+        i = 0
+        while i < len(stops) - 1:
+            p = stops[i]
+            got = None
+            for usable in ((True, False) if d is not None else (False,)):
+                for j in range(i + 1, min(i + 4, len(stops))):
+                    es = cands.get(frozenset((p["node_id"], stops[j]["node_id"])), [])
+                    if usable:
+                        es = [e for e in es if self.edge_usable(route_id, e, d)[0] in ("ok", "maybe", "suspended")]
+                    if es:
+                        got = (j, es)
+                        break
+                if got:
+                    break
+            if not got:
                 return out
+            j, es = got
             # 날짜 모름이면 현행 쪽(마지막 행)을 택하지 않고 route_edge 앞쪽 값
             cum += self.km[es[0]]
-            out[q["seq"]] = round(cum, 1)
+            out[stops[j]["seq"]] = round(cum, 1)
+            i = j
         return out
 
+    # ------------ 한 방향 (DESIGN §8) -------------
+    @staticmethod
+    def _covers_all(cover, life):
+        """cover 기간들을 이으면 life의 처음부터 끝까지를 모두 덮는가. 범위로 적힌 끝은 좁은 쪽으로 본다."""
+        start = min(r["valid_from_lo"] or "0000-01-01" for r in life)
+        end = max(r["valid_to_hi"] or MAXD for r in life)
+        spans = sorted((r["valid_from_hi"] or r["valid_from_lo"] or "0000-01-01", r["valid_to_lo"] or r["valid_to_hi"] or MAXD) for r in cover)
+        reached = start
+        for f, t in spans:
+            if f > reached:
+                return False
+            if t > reached:
+                reached = t
+            if reached >= end:
+                return True
+        return reached >= end
+
+    def passable(self, route_id, edge, x, y, d):
+        rows = self._one_way.get((route_id, edge))
+        if not rows:
+            return True
+        against = [r for r in rows if r["from_node"] != x or r["to_node"] != y]
+        if not against:
+            return True
+        if d is not None:
+            return not any(state_on(d, r["valid_from_lo"], r["valid_from_hi"], r["valid_to_lo"], r["valid_to_hi"]) == "yes" for r in against)
+        life = self._life.get(edge) or []
+        if not life:
+            return True
+        return not self._covers_all(against, life)
+
+    def stop_direction_of(self, route_id, node, d):
+        rows = self._stop_direction.get((route_id, node))
+        if not rows:
+            return None
+        if d is not None:
+            return next((r for r in rows if state_on(d, r["valid_from_lo"], r["valid_from_hi"], r["valid_to_lo"], r["valid_to_hi"]) == "yes"), None)
+        life = [s for s in self._stops[route_id] if s["node_id"] == node and s["is_stop"]]
+        if not life:
+            return None
+        for direction in ("seq_up", "seq_down"):
+            same = [r for r in rows if r["direction"] == direction]
+            if same and self._covers_all(same, life):
+                return same[0]
+        return None
+
+    def seq_direction(self, route_id, a, b):
+        nodes = [s["node_id"] for s in self._stops[route_id]]
+        fa = nodes.index(a) if a in nodes else -1
+        fb = nodes.index(b) if b in nodes else -1
+        return "seq_up" if fb > fa else "seq_down"
+
+    def _refuses_at(self, route_id, n, direction, d, departing):
+        r = self.stop_direction_of(route_id, n, d)
+        if r is None:
+            return False
+        use = r["use"] if "use" in r.keys() else None
+        return r["direction"] != direction or (departing and use == "alight") or (not departing and use == "board")
+
+    def _refuses(self, route_id, a, b, direction, d):
+        return self._refuses_at(route_id, a, direction, d, True) or self._refuses_at(route_id, b, direction, d, False)
+
+    def _shortest_path(self, a, b, edges, pass_=None):
+        """길이(km)가 가장 짧은 길. 앱 _shortestPath와 같다."""
+        g = collections.defaultdict(list)
+        for e, x, y in edges:
+            g[x].append((y, e))
+            g[y].append((x, e))
+        if a == b or a not in g or b not in g:
+            return None
+        best = {a: 0}
+        back = {}
+        done = set()
+        heap = [(0, 0, a)]
+        tick = 0
+        while heap:
+            c, _, n = heapq.heappop(heap)
+            if n in done or c > best.get(n, float("inf")):
+                continue
+            if n == b:
+                break
+            done.add(n)
+            for m, e in g[n]:
+                if m in done or (pass_ and not pass_(e, n, m)):
+                    continue
+                cost = c + round(self.km[e] * 1000)
+                if cost >= best.get(m, float("inf")):
+                    continue
+                best[m] = cost
+                back[m] = (n, e, m)
+                tick += 1
+                heapq.heappush(heap, (cost, tick, m))
+        if b not in back:
+            return None
+        out = []
+        at = b
+        while at != a:
+            out.append(back[at])
+            at = back[at][0]
+        return out[::-1]
+
     # ------------ 2. 탑승 펼치기 -------------
-    def _simple_paths(self, route_id, a, b, edges, limit=64):
+    def _simple_paths(self, route_id, a, b, edges, limit=64, pass_=None):
         """무향 다중 그래프에서 a→b 단순 경로 전부."""
         g = collections.defaultdict(list)
         for e, x, y in edges:
@@ -355,6 +516,8 @@ class App:
                 res.append(list(path))
                 return
             for m, e in g[n]:
+                if pass_ and not pass_(e, n, m):
+                    continue
                 if m in seen:
                     continue
                 seen.add(m)
@@ -371,7 +534,6 @@ class App:
 
     def ring_nodes(self, route_id):
         """계통 그래프의 2-core(고리). 꼬리(올가미의 放射部)를 떼어 낸다."""
-        deg = collections.Counter()
         adj = collections.defaultdict(set)
         for _, _, x, y in self.route_edges(route_id):
             adj[x].add(y)
@@ -415,8 +577,18 @@ class App:
                 es = [e for e in es if self.edge_usable(route_id, e, d)[0] in ("ok", "maybe")]
                 if not es:
                     return dict(status="invalid", reason="not-closed-on-date", km=None)
-                hops.append(es[0])
-        return dict(status="ok", km=round(sum(self.km[e] for e in hops), 1), edges=hops, direction=direction)
+                hops.append((p["node_id"], es[0], q["node_id"]))
+        # 고른 역에서 시작하게 돌리고 방향대로 지나는지 본다 (앱 _fromStart와 같은 순서)
+        nodes = [hops[0][0]] + [h[2] for h in hops] if hops else []
+        at = nodes.index(start) if start in nodes else 0
+        ring_ = bool(nodes) and nodes[0] == nodes[-1]
+        if at > 0 and ring_:
+            hops = hops[at:] + hops[:at]
+        walk = [(x, e, y) for x, e, y in hops] if direction != "seq_down" else [(y, e, x) for x, e, y in reversed(hops)]
+        if any(not self.passable(route_id, e, x, y, d) for x, e, y in walk):
+            return dict(status="invalid", reason="one-way", km=None)
+        es = [e for _, e, _ in walk]
+        return dict(status="ok", km=round(sum(self.km[e] for e in es), 1), edges=es, direction=direction)
 
     def relocation_options(self, route_id, a, b):
         """날짜 모름에서 평행 edge가 갈릴 때 보여 줄 선형 목록(§2.8 D).
@@ -433,12 +605,12 @@ class App:
         for d in sorted(dates):
             if d < FLOOR:
                 continue
-            r = self.expand(route_id, a, b, d)
+            r = self.expand(route_id, a, b, d, listing=True)
             if r["status"] == "ok":
                 seen.setdefault(tuple(sorted(r["edges"])), dict(as_of=d, km=r["km"]))
         return list(seen.values())
 
-    def expand(self, route_id, a, b, date=None, direction=None, as_of=None, resolve_unknown=False):
+    def expand(self, route_id, a, b, date=None, direction=None, as_of=None, resolve_unknown=False, listing=False):
         """(계통, 출발, 도착, 날짜) → edge 목록과 km.
 
         status: ok / partial / needs_input / invalid / unknown_ref (§2.8 N)
@@ -461,7 +633,17 @@ class App:
                 use.append((e, x, y))
             else:
                 bad.append((e, u, why))
-        paths = self._simple_paths(route_id, a, b, use)
+        pass_ = lambda e, x, y: self.passable(route_id, e, x, y, d)
+        paths = self._simple_paths(route_id, a, b, use, pass_=pass_)
+        # 한 방향 칸 때문에만 길이 없으면 그 이유로 알린다 (앱과 같음)
+        if not paths and self._simple_paths(route_id, a, b, use):
+            return dict(status="invalid", edges=[], km=None, d=d, reason="one-way")
+        dated = False
+        if d is None:
+            # 모든 칸이 함께 있던 날이 있는 경로만 남긴다. 그런 경로가 하나도 없으면(옛 자리 갈래와 새 선로 사이 이웃 역) 그대로 둔다
+            together = [p for p in paths if self._one_day(p)]
+            dated = bool(together)
+            paths = together or paths
         if not paths:
             # 어떤 날이라도 경로가 있는가
             anyp = self._simple_paths(route_id, a, b, [(e, x, y) for _, e, x, y in all_edges])
@@ -473,6 +655,10 @@ class App:
         for p in paths:
             groups[tuple(n for n, _, _ in p)].append(p)
         node_paths = list(groups)
+        # 고리는 닫힌 계통에만 있다. 날짜를 모를 때 열린 계통에서 갈린 경로가 저마다 한날에 있던 길이면 옛·새 선형이다 (앱 route_resolver와 같음)
+        if len(node_paths) > 1 and not self.routes[route_id]["closed"] and dated:
+            groups[node_paths[0]] = [p for np in node_paths for p in groups[np]]
+            node_paths = node_paths[:1]
         if len(node_paths) > 1:
             if direction in ("seq_up", "seq_down"):
                 node_paths = [np for np in node_paths
@@ -482,9 +668,19 @@ class App:
             elif direction is None and self.routes[route_id]["closed"]:
                 node_paths.sort(key=lambda np: sum(self.km[e] for _, e, _ in groups[np][0]))
                 node_paths = node_paths[:1]      # 기본은 짧은 쪽 (§8)
+            elif resolve_unknown:
+                ps = [p for np in node_paths for p in groups[np]]
+                common = set(e for _, e, _ in ps[0])
+                for p in ps[1:]:
+                    common &= set(e for _, e, _ in p)
+                return self._result(route_id, [e for _, e, _ in ps[0] if e in common], d, "partial", ps[0])
             else:
                 return dict(status="needs_input", edges=[], km=None, reason="ambiguous-path",
                             options=[round(sum(self.km[e] for _, e, _ in groups[np][0]), 1) for np in node_paths])
+        closed = self.routes[route_id]["closed"]
+        if closed and direction in ("seq_up", "seq_down") and route_id in self._one_way_routes \
+                and self.path_direction(route_id, groups[node_paths[0]][0]) != direction:
+            return dict(status="invalid", edges=[], km=None, d=d, reason="one-way")
         chosen = groups[node_paths[0]]
         if len(chosen) > 1:
             if resolve_unknown:
@@ -493,9 +689,30 @@ class App:
                     common &= set(e for _, e, _ in p)
                 es = [e for _, e, _ in chosen[0] if e in common]
                 return self._result(route_id, es, d, "partial", chosen[0])
+            # 선형 목록을 만드는 중이면 다시 목록을 만들지 않는다 (앱과 같음, 무한 재귀 방지)
             return dict(status="needs_input", edges=[], km=None, reason="relocated-parallel",
-                        options=self.relocation_options(route_id, a, b))
-        return self._result(route_id, [e for _, e, _ in chosen[0]], d, "ok", chosen[0])
+                        options=[] if listing else self.relocation_options(route_id, a, b))
+        r = self._result(route_id, [e for _, e, _ in chosen[0]], d, "ok", chosen[0])
+        way = r["direction"] if closed else self.seq_direction(route_id, a, b)
+        if self._refuses(route_id, a, b, way, d):
+            return dict(status="invalid", edges=[], km=None, d=d, reason="stop-direction")
+        r["around"] = False
+        if closed and direction is None and not listing and route_id in self._one_way_routes:
+            free = self._simple_paths(route_id, a, b, use)
+            if free and min(sum(self.km[e] for _, e, _ in p) for p in free) < sum(self.km[e] for e in r["edges"]) - 1e-9:
+                r["around"] = True
+        return r
+
+    def _one_day(self, path):
+        """경로의 칸이 모두 함께 있던 날이 있는가 (옛 선로와 새 선로를 섞은 고리 경로를 뺀다)"""
+        lo, hi = "0000-01-01", MAXD
+        for _, e, _ in path:
+            rows = self._attrs[e]
+            if not rows:
+                continue
+            lo = max(lo, min(r["valid_from_lo"] or "0000-01-01" for r in rows))
+            hi = min(hi, max(r["valid_to_hi"] or MAXD for r in rows))
+        return lo < hi
 
     def _result(self, route_id, es, d, status, path):
         line = self.routes[route_id]["line_id"]
@@ -523,11 +740,24 @@ class App:
         r["saved_date"] = None if demoted else d
         return r
 
-    # ------------ 운전 계통 -------------
+    # ------------ 운행 계통 -------------
+    def service_parts(self, service_id, d=None):
+        """그날 판의 부분. 앱처럼 날짜와 겹치는 판 중 마지막, 날짜 모름이면 마지막 판이다. 판 표가 없는 옛 판은 부분 전부다."""
+        if not self.db.execute("SELECT 1 FROM sqlite_master WHERE name='service_edition'").fetchone():
+            return self.db.execute("SELECT * FROM service_part WHERE service_id=? ORDER BY seq", (service_id,)).fetchall()
+        eds = self.db.execute("SELECT * FROM service_edition WHERE service_id=? ORDER BY edition", (service_id,)).fetchall()
+        pick = eds[-1]["edition"] if eds else 0
+        if d is not None:
+            lo, hi = edtf_range(d)
+            hit = [e["edition"] for e in eds if (e["valid_from_lo"] or "0000-01-01") <= hi and lo < (e["valid_to_hi"] or MAXD)]
+            if hit:
+                pick = hit[-1]
+        return self.db.execute("SELECT * FROM service_part WHERE service_id=? AND edition=? ORDER BY seq", (service_id, pick)).fetchall()
+
     def service_chain(self, service_id, date=None):
         """service_part를 이어 붙여 (route, node, edge, node) 목록과 끊긴 곳을 돌려준다."""
         d = normalize_date(date)
-        parts = self.db.execute("SELECT * FROM service_part WHERE service_id=? ORDER BY seq", (service_id,)).fetchall()
+        parts = self.service_parts(service_id, d)
         hops, gaps = [], []
         prev_end = None
         for p in parts:
@@ -597,11 +827,24 @@ class App:
                 if u in ("ok", "maybe"):
                     edges.append((e, x, y))
                     owner[e] = rid
-        ps = self._simple_paths(routes[0], a, b, edges)
-        if not ps:
-            return dict(status="invalid", km=None)
-        ps.sort(key=lambda p: sum(self.km[e] for _, e, _ in p))
-        p = ps[0]
+        # 가장 짧은 길 하나만 쓴다 (앱 _expandCross와 같음, 고리가 많은 그래프의 단순 경로 전수 탐색을 피함)
+        p = self._shortest_path(a, b, edges, pass_=lambda e, x, y: self.passable(owner[e], e, x, y, d))
+        if p is None:
+            return dict(status="invalid", km=None, reason="one-way" if self._shortest_path(a, b, edges) else None)
+        pieces = []
+        for hop in p:
+            if not pieces or owner[pieces[-1][-1][1]] != owner[hop[1]]:
+                pieces.append([])
+            pieces[-1].append(hop)
+
+        def way(piece):
+            rid = owner[piece[0][1]]
+            return self.path_direction(rid, piece) if self.routes[rid]["closed"] else self.seq_direction(rid, piece[0][0], piece[-1][2])
+
+        def refused(piece, n, departing):
+            return self._refuses_at(owner[piece[0][1]], n, way(piece), d, departing)
+        if refused(pieces[0], a, True) or refused(pieces[-1], b, False):
+            return dict(status="invalid", km=None, reason="stop-direction")
         legs = collections.OrderedDict()
         for _, e, _x in p:
             legs.setdefault(owner[e], []).append(e)
@@ -649,8 +892,8 @@ class App:
         """§2.8 J 유효 날짜 범위의 끝. created 상한은 입력 날짜가 없는 기록에만 쓴다."""
         ends = self._end_stops(ride)
         date = ride.get("date")
-        # 입력한 날에 아직 개업하지 않은 승하차역이 있으면 교집합이 비어 날짜 모름이다
-        if date and any(all((s["valid_from_lo"] or "") > edtf_range(date)[1] and s["valid_from_lo"] for s in rows) for rows in ends):
+        # 입력한 날에 아직 개업하지 않았거나 정차 기간 사이라 서지 않은 승하차역이 있으면 교집합이 비어 날짜 모름이다
+        if date and any(all(((s["valid_from_lo"] or "") > edtf_range(date)[1] and s["valid_from_lo"]) or self.in_stop_gap(date, s) for s in rows) for rows in ends):
             date = None
         import datetime
         def last_day(end):
@@ -672,6 +915,11 @@ class App:
         if date and hi < edtf_range(date)[0]:
             hi = bound(None)
         return hi
+
+    def in_stop_gap(self, date, s):
+        """정차 기간 사이라 그날 서지 않았는가 (앱 inStopGap)."""
+        lo, hi = edtf_range(date)
+        return any(lo >= (f or "9999-12-31") and hi < (t or "0000-01-01") for f, t in self._stop_gaps[(s["route_id"], s["seq"])])
 
     def _end_stops(self, ride):
         """승하차한 끝의 정차 행. 잘린 끝은 통과라 안 본다. 그날 맡은 노선의 계통에서 찾는다."""
@@ -705,8 +953,20 @@ class App:
                 if (f_lo is None or f_lo <= self.today) and self.today < (t_hi or MAXD):
                     out[k] = u
             else:
-                if overlaps_year(int(basis), f_lo, t_hi):
+                if year_certain(int(basis), u["valid_from"], u["valid_to"]):
                     out[k] = u
+        return out
+
+    def undecided_units(self, year, carryover, cls="normal"):
+        """Y년 판정 불가 단위: 그해와 겹칠 수 있지만 확실하지 않음 (§5.4)."""
+        out = {}
+        for (k, c), u in self.units.items():
+            if c != carryover or u["class"] != cls:
+                continue
+            f_lo = edtf_range(u["valid_from"])[0]
+            t_hi = edtf_range(u["valid_to"])[1]
+            if overlaps_year(year, f_lo, t_hi) and not year_certain(year, u["valid_from"], u["valid_to"]):
+                out[k] = u
         return out
 
     def completion(self, rides, basis, carryover, scope_edges=None):
@@ -764,7 +1024,14 @@ class App:
                         if s["node_id"] != row["node"] or not s["is_stop"]:
                             continue
                         if state_on(d, s["valid_from_lo"], s["valid_from_hi"], s["valid_to_lo"], s["valid_to_hi"]) in ("yes", "maybe"):
-                            row["state"], row["selectable"] = "open", True
+                            # 저장될 노선에서 그날 탈 수 있어야 고른다. 운휴면 운휴 (Dart selector _savedState와 같음)
+                            uses = [self.edge_usable(r2, e2, d)[0] for r2 in self.line_routes[attr["line_id"]] for e2 in adj[row["node"]]]
+                            if any(u in ("ok", "maybe") for u in uses):
+                                row["state"], row["selectable"] = "open", True
+                            elif "suspended" in uses:
+                                row["state"], row["selectable"] = "suspended", False
+                            else:
+                                row["state"], row["selectable"] = "line_closed", False
                             row["saved_as"] = attr["line_id"]
                             row["km_on_date"] = row["km_on_date"]
         return rows
@@ -862,15 +1129,24 @@ def scenarios(A, R):
     x = A.expand_cross("n_new_chitose_airport", "n_numanohata", T, ls)
     R.add("A9", "같은 노선 계통 넘기 千歳線 新千歳空港→沼ノ端 (§2.8 F)", "21.0km = 공항지선 2.6 + 본선 18.4, 南千歳에서 2 leg", f"{x['km']} {[(k, round(sum(A.km[e] for e in v), 1)) for k, v in x['legs'].items()]}",
           approx(x["km"], 21.0) and len(x["legs"]) == 2)
-    x = A.lap("r_disney_resort_line", "n_resort_gateway", T)
-    y = A.lap("r_sapporo_streetcar", "n_nishi_4_chome", T)
-    z = A.lap("r_sapporo_streetcar", "n_nishi_4_chome", "2010-06-01")
-    w = A.record("r_sapporo_streetcar", "n_nishi_4_chome", "n_nishi_4_chome", T, direction="seq_up")
-    R.add("A11b", "저장·재해석에서 from==to + 방향은 한 바퀴", "札幌市電 8.9km", f"{w['status']} {w['km']}", w["status"] == "ok" and approx(w["km"], 8.9))
-    w = A.record("r_sapporo_streetcar", "n_nishi_4_chome", "n_nishi_4_chome", "2010-06-01", direction="seq_up")
+    # ディズニーリゾートライン은 반시계 한 방향이라 계통 순서의 반대(seq_down)로만 돈다 (DESIGN §8 한 방향 운행)
+    x = A.lap("r_disney_resort_line", "n_resort_gateway", T, direction="seq_down")
+    # 札幌市電은 법적 4노선(一条線·山鼻西線·山鼻線·都心線)으로 나눴으므로(공식 노선 구성 2026-11-09) 한 노선 고리는 ユーカリが丘線으로 본다
+    y = A.lap("r_yukarigaoka_line", "n_koen", T)
+    z = A.lap("r_yukarigaoka_line", "n_koen", "1983-01-01")
+    w = A.record("r_disney_resort_line", "n_resort_gateway", "n_resort_gateway", T, direction="seq_down")
+    R.add("A11b", "저장·재해석에서 from==to + 방향은 한 바퀴", "ディズニーリゾートライン 5.0km", f"{w['status']} {w['km']}", w["status"] == "ok" and approx(w["km"], 5.0))
+    w = A.record("r_disney_resort_line", "n_resort_gateway", "n_resort_gateway", T, direction="seq_up")
+    v = A.record("r_yukarigaoka_line", "n_chugakko", "n_joshidai", T)
+    u = A.record("r_fujishiro_line", "n_onuma", "n_nanae", T)
+    q = A.record("r_joban_line", "n_mito", "n_kairakuen", "2026-02-20")
+    R.add("A11d", "한 방향 운행·정차 (DESIGN §8)", "디즈니 반대 한 바퀴 one-way, ユーカリが丘 中学校→女子大 돌아 2.3km, 藤城線 大沼→七飯 one-way, 水戸→偕楽園 stop-direction",
+          f"{w.get('reason')} / {v['km']} {v.get('around')} / {u.get('reason')} / {q.get('reason')}",
+          w.get("reason") == "one-way" and approx(v["km"] or 0, 2.3) and v.get("around") and u.get("reason") == "one-way" and q.get("reason") == "stop-direction")
+    w = A.record("r_yukarigaoka_line", "n_koen", "n_koen", "1983-01-01", direction="seq_up")
     R.add("A11c", "고리가 없던 날의 한 바퀴는 날짜 모름으로 저장", "ok, 날짜 없음", f"{w['status']} {w['saved_date']}", w["status"] == "ok" and w["saved_date"] is None)
-    R.add("A11", "닫힌 계통 한 바퀴 (route.closed=1)", "ディズニーリゾートライン 5.0km, 札幌市電 8.9km, 札幌市電 2010은 아직 안 닫힘(2015-12-20 都心線)", f"{x['km']} / {y['km']} / 2010 {z['status']} {z.get('reason')}",
-          approx(x["km"], 5.0) and approx(y["km"], 8.9) and z["status"] == "invalid")
+    R.add("A11", "닫힌 계통 한 바퀴 (route.closed=1)", "ディズニーリゾートライン 5.0km, ユーカリが丘線 고리, 1983-01-01은 아직 안 닫힘(1983-09-22 井野)", f"{x['km']} / {y['km']} / 1983 {z['status']} {z.get('reason')}",
+          approx(x["km"], 5.0) and y["status"] != "invalid" and z["status"] == "invalid")
     m = A.db.execute("SELECT count(*) FROM route WHERE closed=1 AND line_id LIKE '%meijou%'").fetchone()[0]
     x = A.expand_cross("n_kanayama_nagoya_city", "n_aratama_bashi", T, ["r_meijo_line", "r_meijo_meiko_line"])
     R.add("A10", "名城線 순환 (§2.7 설계: closed: true)", "closed=1 계통 또는 closed service, 일주 26.4km", f"closed 계통 {m}개, 노선 2개로 나뉨(名城線 17.5 / 名城線・名港線 8.9+6.0), 名城線 service 없음", None,
@@ -878,7 +1154,6 @@ def scenarios(A, R):
 
     # ---- B. 숨은 노드·직통 -----------------------------------------------
     r1, r2 = "r_nagoya_main_line", "r_inuyama_line"
-    has_pick = "n_meitetsu_nagoya" in [s["node_id"] for s in A._stops[r2]]
     svc = A.db.execute("SELECT count(*) FROM service_part WHERE route_id IN (?,?)", (r1, r2)).fetchone()[0]
     R.add("B1", "名鉄名古屋→犬山 입력 경로 (extend_to 또는 service, §2.8 F)", "犬山線 화면에서 東枇杷島까지 extend_to, 또는 service 존재",
           f"犬山線 extend_to={A.routes[r2]['extend_to']}, is_extension 행 {sum(q['is_extension'] for q in A.picker(r2, T))}, 名鉄 service 부품 {svc}개, 犬山線 첫 선택 역={A.picker(r2, T)[0]['name']}",
@@ -1025,12 +1300,14 @@ def scenarios(A, R):
     st = A.record(r, a, b, "2013-06-01")
     R.add("D2b", "常磐線 駒ケ嶺→浜吉田 2013 (2011~2016 불통)", "운휴 → 날짜 모름", f"saved_date={st['saved_date']} demoted={st['demoted']} km={st['km']}", st["demoted"], "옛 edge가 2016-12-10까지 open")
 
+    # 女川는 역 이전 옛 자리 노드(n_onagawa_old, 2015-03-21 전)와 새 자리 노드가 따로다 (wiki_insert_moves relabel, 재설계 결정 7).
+    # 2010은 옛 자리까지 2.5km, 2020은 새 자리까지 2.3km, 2010에 새 자리는 그날 경로가 없다
     r = "r_ishinomaki_line"
-    a, b = "n_urashuku", "n_onagawa"
-    x, y, u = A.expand(r, a, b, "2010-06-01"), A.expand(r, a, b, "2020-06-01"), A.expand(r, a, b, None)
-    R.add("D3", "石巻線 浦宿→女川", "2010 2.5km(옛), 2020 2.3km(새, 2015-03-21), 날짜 모름 2안", f"{x['km']} / {y['km']} / {u['status']} {u.get('options')}",
-          approx(x["km"], 2.5) and approx(y["km"], 2.3) and u["status"] == "needs_input" and len(u["options"]) == 2)
-    st = A.record(r, a, b, "2013-06-01")
+    a, b, b0 = "n_urashuku", "n_onagawa", "n_onagawa_old"
+    x, y, u, v = A.expand(r, a, b0, "2010-06-01"), A.expand(r, a, b, "2020-06-01"), A.expand(r, a, b, None), A.expand(r, a, b, "2010-06-01")
+    R.add("D3", "石巻線 浦宿→女川", "2010 女川(旧) 2.5km, 2020 女川 2.3km(2015-03-21), 2010 새 자리 그날 경로 없음, 날짜 모름 새 자리 2.3km", f"{x['km']} / {y['km']} / {v['status']} / {u['status']} {u['km']}",
+          approx(x["km"], 2.5) and approx(y["km"], 2.3) and v["status"] == "invalid" and u["status"] == "ok" and approx(u["km"], 2.3))
+    st = A.record(r, a, b0, "2013-06-01")
     R.add("D3b", "石巻線 浦宿→女川 2013 (2011~2015 불통)", "운휴 → 날짜 모름", f"saved_date={st['saved_date']} demoted={st['demoted']}", st["demoted"], "옛 edge가 2015-03-21까지 open")
     xx = A.db.execute("SELECT count(*), sum(successor_edge_id IS NULL) FROM edge_link").fetchone()
     R.add("D4", "edge_link (옛 선로 → 새 선로)", "successor_edge_id가 새 edge를 가리킴", f"{xx[0]}행 중 NULL {xx[1]}", xx[1] == 0, "우회: 같은 양 끝 + valid_to=valid_from")
@@ -1043,8 +1320,9 @@ def scenarios(A, R):
     R.add("E1", "三江線 江津→三次", "2017 108.1km 날짜 유지, 2019 날짜 모름 저장, 2018-03-31 유지, 04-01 모름", f"{x['km']} {x['saved_date']} / {y['km']} {y['saved_date']} / {l1['saved_date']} / {l2['saved_date']}",
           approx(x["km"], 108.1) and x["saved_date"] and y["saved_date"] is None and y["status"] == "ok" and l1["saved_date"] and l2["saved_date"] is None)
     p = A.picker(r, "2019-06-01")
-    R.add("E1b", "三江線 2019 역 선택기", "35역 모두 회색(이미 폐지), 날짜 모름이면 35역 선택", f"선택 {sum(q['selectable'] for q in p)} 상태 {collections.Counter(q['state'] for q in p)} / 모름 {sum(q['selectable'] for q in A.picker(r, None))}",
-          sum(q["selectable"] for q in p) == 0 and sum(q["selectable"] for q in A.picker(r, None)) == 35)
+    # 野井仮乗降場(1972~1973 수해 때)까지 36역
+    R.add("E1b", "三江線 2019 역 선택기", "37역 모두 회색(이미 폐지), 날짜 모름이면 37역 선택", f"선택 {sum(q['selectable'] for q in p)} 상태 {collections.Counter(q['state'] for q in p)} / 모름 {sum(q['selectable'] for q in A.picker(r, None))}",
+          sum(q["selectable"] for q in p) == 0 and sum(q["selectable"] for q in A.picker(r, None)) == 37)
     ride = dict(date=None, edges=A.ride_of(y)["edges"], created=T)
     c17 = A.completion([ride], "2017", "on", set(y["edges"]))
     c18 = A.completion([ride], "2018", "on", set(y["edges"]))
@@ -1059,7 +1337,7 @@ def scenarios(A, R):
     u = A.picker(r, "2020-04-20")
     R.add("E2b", "札沼線 2020-04-20 역 선택기", "桑園~北海道医療大学 13역 선택(ロイズタウン은 2022 개업이라 제외), 그 뒤 불가", f"선택 {sum(q['selectable'] for q in u)}역, 마지막 선택 {[q['name'] for q in u if q['selectable']][-1]}",
           sum(q["selectable"] for q in u) == 13)
-    e0 = A.db.execute("SELECT legal_abolition, last_service FROM edge_life WHERE edge_id='e_000128'").fetchone()
+    e0 = A.db.execute("SELECT legal_abolition, last_service FROM edge_life WHERE edge_id=? ORDER BY valid_from_lo DESC LIMIT 1", (A.edge_between("n_toyogaoka", "n_sappinai"),)).fetchone()   # 운휴로 행이 나뉘면 마지막 행(폐지)
     R.add("E2c", "札沼線 법적 폐지일·마지막 운행일 둘 다 저장", "last_service=2020-04-17, legal=2020-05-07", tuple(e0), tuple(e0) == ("2020-05-07", "2020-04-17"))
 
     r = "r_sekisho_line_shin_yubari_yubari"
@@ -1078,8 +1356,9 @@ def scenarios(A, R):
     p = {q["name"]: q["state"] for q in A.picker(r, "2017-06-01")}
     den = A.completion([], "2017", "on", set(x["edges"]))
     denc = A.completion([], "current", "on", set(x["edges"]))
-    R.add("E5", "根室本線 東鹿越→新得 2017 (2016-08-31 불통)", "41.5km, 2017 운휴 → 날짜 모름, 幾寅 '운휴' 표시, 2017 분모 포함(§2.8 J), 현행 분모 제외", f"{x['km']} saved={x['saved_date']} / 2016-08-30 saved={y['saved_date']} / 幾寅={p.get('幾寅')} / 2017분모 {den['den_km']} / 현행 {denc['den_km']}",
-          approx(x["km"], 41.5) and x["saved_date"] is None and y["saved_date"] and p.get("幾寅") == "suspended" and den["den_km"] == 41.5 and denc["den_km"] == 0)
+    # 재개 없이 2024-04-01 폐지로 끝난 불통이라 마지막 운행 다음 날(2016-08-31)로 소급해 닫힌다 (DESIGN §2.2 「운행을 다시 시작하지 않고 끝난 휴지」, 결정 122)
+    R.add("E5", "根室本線 東鹿越→新得 2017 (2016-08-31 불통, 2024-04-01 폐지)", "41.5km, 2017 → 날짜 모름, 幾寅 폐역, 2017 분모 제외(2016-08-31 소급 폐지), 현행 분모 제외", f"{x['km']} saved={x['saved_date']} / 2016-08-30 saved={y['saved_date']} / 幾寅={p.get('幾寅')} / 2017분모 {den['den_km']} / 현행 {denc['den_km']}",
+          approx(x["km"], 41.5) and x["saved_date"] is None and y["saved_date"] and p.get("幾寅") == "closed" and den["den_km"] == 0 and denc["den_km"] == 0)
 
     # ---- F. 기준일 ------------------------------------------------------
     r = "r_tokaido_main_line"
@@ -1090,8 +1369,9 @@ def scenarios(A, R):
     a, b = "n_minami_otaru", "n_temiya"
     x, y = A.record(r, a, b, "1960-06-01"), A.record(r, a, b, "1980-06-01")
     e = A.route_edges(r)[0][1]
-    lg = A.db.execute("SELECT legal_abolition,valid_to FROM edge_life WHERE edge_id=?", (e,)).fetchone()
-    al = A.completion([], "alltime", "on", {e})
+    # 1943~48 여객 휴지가 있어 마지막 기간 행을 본다
+    lg = A.db.execute("SELECT legal_abolition,valid_to FROM edge_life WHERE edge_id=? ORDER BY valid_from DESC", (e,)).fetchone()
+    al = A.completion([], "alltime", "on", {x[1] for x in A.route_edges(r)})
     R.add("F2", "手宮線 南小樽→手宮", "2.8km. 여객 1962 끝·법적 1985. 1960년 탑승은 날짜 유지, 여객 영업 뒤(1980)는 날짜 모름, 역대 분모 2.8", f"{x['km']} saved={x['saved_date']}, 1980 saved={y['saved_date']}, 법적={lg[0]} 영업끝={lg[1]}, 역대 분모 {al['den_km']}",
           approx(x["km"], 2.8) and x["saved_date"] == "1960-06-01" and y["saved_date"] is None and lg[0] == "1985-11-05" and al["den_km"] == 2.8)
     r = "r_kobukuro_line"
@@ -1117,8 +1397,9 @@ def scenarios(A, R):
     p24 = collections.Counter(q["state"] for q in A.picker(r, "2024-06-01"))
     es = set(z["edges"])
     y19, y24 = A.completion([], "2019", "on", es), A.completion([], "2024", "on", es)
-    R.add("G2", "日田彦山線 添田→夜明", "29.2km, 2019 운휴·2024 폐지 모두 날짜 모름, 역 상태 suspended/closed, 2019 분모 포함, 2024 제외", f"{x['saved_date']} / {y['saved_date']} / 2017-07-05 {z['saved_date']} / 2019 {dict(p19)} / 2024 {dict(p24)} / 분모 2019 {y19['den_km']} 2024 {y24['den_km']}",
-          approx(z["km"], 29.2) and x["saved_date"] is None and y["saved_date"] is None and p19["suspended"] >= 9 and p24["closed"] >= 9 and y19["den_km"] == 29.2 and y24["den_km"] == 0)
+    # 2017-07-05 마지막 운행 뒤 재개 없이 BRT로 끝나 2017-07-06으로 소급해 닫힌다(사유 brt 그대로, 결정 122)
+    R.add("G2", "日田彦山線 添田→夜明", "29.2km, 2017-07-05 유지, 2019·2024 날짜 모름, 역 상태 closed, 2019·2024 분모 제외", f"{x['saved_date']} / {y['saved_date']} / 2017-07-05 {z['saved_date']} / 2019 {dict(p19)} / 2024 {dict(p24)} / 분모 2019 {y19['den_km']} 2024 {y24['den_km']}",
+          approx(z["km"], 29.2) and z["saved_date"] and x["saved_date"] is None and y["saved_date"] is None and p19["closed"] >= 9 and p24["closed"] >= 9 and y19["den_km"] == 0 and y24["den_km"] == 0)
     la = A.db.execute("SELECT DISTINCT legal_abolition FROM edge_life WHERE edge_id=?", (x["edges"][0],)).fetchall()
     R.add("G2b", "日田彦山線 legal_abolition 값", "2027-03-31 (폐지 예정일, ja.wikipedia 日田彦山線)", [tuple(q) for q in la if q[0]], any(q[0] == "2027-03-31" for q in la))
 
@@ -1164,6 +1445,7 @@ def scenarios(A, R):
     R.add("H4c", "범위 날짜도 멤버십과 교차 (§2.8 J)", "201X 三江線 끝 2018-03-31", f"{x['saved_date']} 끝={h}", h == "2018-03-31")
     q = A.db.execute("""SELECT s.route_id, s.node_id, s.valid_to_hi FROM route_stop s JOIN route r ON r.id=s.route_id
         WHERE s.is_stop=1 AND s.valid_to_hi<? AND r.closed=0 AND s.seq>0
+          AND s.node_id NOT IN (SELECT old_node FROM node_move)
           AND s.seq<(SELECT max(seq) FROM route_stop t WHERE t.route_id=s.route_id AND t.valid_to='ongoing')
           AND EXISTS(SELECT 1 FROM route_stop t WHERE t.route_id=s.route_id AND t.seq<s.seq AND t.valid_to='ongoing' AND t.is_stop=1)
         ORDER BY s.route_id, s.seq LIMIT 1""", (A.today,)).fetchone()
@@ -1194,10 +1476,13 @@ def scenarios(A, R):
     R.add("I1", "名鉄·JR 豊橋~平井信号場 공동 사용", "飯田線 4.4 / 名古屋本線 豊橋→伊奈 5.0, 단위 겹치지 않음, 名鉄 탑승이 JR 분모를 채우지 않음", f"{jr['km']} / {me['km']} / 교집합 {len(uj & um)} / JR 분모 채움 {c['num_km']}/{c['den_km']}",
           approx(jr["km"], 4.4) and approx(me["km"], 5.0) and not (uj & um) and c["num_km"] == 0)
     na = A.expand("r_namboku_line_tokyo_metro", "n_meguro_tokyo_metro", "n_shirokane_takanawa_tokyo_metro", T)
-    mi = A.expand("r_mita_line", "n_meguro_toei", "n_shirokane_takanawa_toei", T)
+    # 目黒–白金高輪는 공용 선로 한 벌(역 노드·칸 하나, SHARED_TRACK U03, 8회차 W1b)
+    mi = A.expand("r_mita_line", "n_meguro_tokyo_metro", "n_shirokane_takanawa_tokyo_metro", T)
     ra = A.ride_of(na, T)
-    c = A.completion([ra], "current", "on", set(mi["edges"]))
-    gs = A.db.execute("SELECT group_id FROM node WHERE id IN ('n_meguro_tokyo_metro','n_meguro_toei','n_meguro_tokyu_railways')").fetchall()
+    # 공용 선로는 칸이 하나라 칸으로 자르면 두 노선 단위가 함께 잡힌다. 南北線 탑승이 三田線 단위(노선, 칸)를 채우지 않는지 단위로 본다
+    _xu = {A.unit_of(l, e, "on") for l, e in ra["edges"]} & {A.unit_of("l_mita_line", e, "on") for e in mi["edges"]}
+    c = dict(num_km=round(sum(A.denom_units("current", "on")[k]["km"] for k in _xu if k in A.denom_units("current", "on")), 1))
+    gs = A.db.execute("SELECT group_id FROM node WHERE id IN ('n_meguro_tokyo_metro','n_meguro_tokyu_railways')").fetchall()
     tk = A.expand("r_meguro_line", "n_meguro_tokyu_railways", "n_den_en_chofu", T)
     shared = set(tk["edges"]) & set(na["edges"])
     R.add("I2", "東京メトロ·都営 目黒~白金高輪 공유, 東急 目黒線", "두 사업자 각 2.3km·단위 분리, 東急 目黒線은 선로 공유 없음(目黒 역 group만 같음)", f"南北線 {na['km']} 三田線 {mi['km']}, 교차 크레딧 {c['num_km']}, 東急 공유 edge {len(shared)}, group {sorted({g[0] for g in gs})}",
@@ -1209,7 +1494,7 @@ def scenarios(A, R):
     R.add("I3", "JR 예외 金山~名古屋 (§2.7 표)", "中央本線 3.3·東海道本線 3.3 각각 집계, 中央本線 탑승은 東海道本線 미승", f"{c1['km']} / {t1['km']} / 다른 edge {set(c1['edges']) != set(t1['edges'])} / 교차 {cc['num_km']}",
           approx(c1["km"], 3.3) and approx(t1["km"], 3.3) and cc["num_km"] == 0)
 
-    # ---- J. 분모 밖 -----------------------------------------------------
+    # ---- J. 옛 사철 폐선 ------------------------------------------------
     r = "r_nomi_line"
     a, b = "n_tsurugi", "n_shin_terai"
     x = A.record(r, a, b, None)
@@ -1218,8 +1503,9 @@ def scenarios(A, R):
     cur, al = A.completion([rd], "current", "on", es), A.completion([rd], "alltime", "on", es)
     cl = {q[0] for q in A.db.execute("SELECT DISTINCT class FROM denominator_unit WHERE edge_id IN (%s)" % ",".join("?" * len(es)), tuple(es))}
     tot = A.completion([rd], "alltime", "on")
-    R.add("J1", "사철 폐선 北陸鉄道 能美線(1980)", "기록 ok, 등급 outside, 현행·역대 분모 0, 전체 분자 0", f"{x['status']} {x['km']}km, class={cl}, 현행 {cur['den_km']}, 역대 {al['den_km']}, 전체 분자 {tot['num_km']}",
-          x["status"] == "ok" and cl == {"outside"} and cur["den_km"] == 0 and al["den_km"] == 0 and tot["num_km"] == 0)
+    # N05 대조가 끝나 처음부터 사철이던 2000년 전 폐선도 분모 안이다 (판 2026-11-04.2)
+    R.add("J1", "사철 폐선 北陸鉄道 能美線(1980)", "기록 ok, 등급 normal, 현행 분모 0, 역대 분모와 전체 분자에 그 km", f"{x['status']} {x['km']}km, class={cl}, 현행 {cur['den_km']}, 역대 {al['den_km']}, 전체 분자 {tot['num_km']}",
+          x["status"] == "ok" and cl == {"normal"} and cur["den_km"] == 0 and approx(al["den_km"], x["km"]) and approx(tot["num_km"], x["km"]))
     x = A.record(r, a, b, "1975-06-01")
     R.add("J1b", "能美線 1975 날짜 입력", "1980까지 영업이라 날짜 유지", f"{x['status']} saved={x['saved_date']} km={x['km']}", x["saved_date"] == "1975-06-01")
     r = "r_umeda_freight_line"
@@ -1233,15 +1519,25 @@ def scenarios(A, R):
     # ---- K. 연도 분모 ---------------------------------------------------
     rnd = random.Random(20261101)
     years = sorted(rnd.sample(range(1970, 2027), 3))
+    # 승계 끔 단위의 km는 단위(승계 묶음, 칸)의 모든 행이 그 시대 노선일 때만 그 시대 km다(compile 단위 규칙). 국철→3섹은 끔에서 단위가 나뉘어 늘 그렇고,
+    # 사철 사이 이관(西鉄 北九州線→筑豊電鉄 黒崎駅前–熊西)은 끔에서도 한 단위라 지금 km다 (7회차 2026-11-14)
+    off_rows = collections.defaultdict(list)
+    for e, rows in A._attrs.items():
+        for a in rows:
+            off_rows[a["carryover_group"], e].append(a)
+    def off_km(g, e):
+        rows = off_rows[g, e]
+        era = [A.era[(a["line_id"], e)] for a in rows if (a["line_id"], e) in A.era]
+        return era[0] if era and len(era) == len(rows) else A.km[e]
     for y in years:
         units_on, units_off = {}, {}
         for e, rows in A._attrs.items():
             for a in rows:
                 if a["denominator_class"] != "normal":
                     continue
-                if overlaps_year(y, a["valid_from_lo"], a["valid_to_hi"]):
+                if year_certain(y, a["valid_from"], a["valid_to"]):
                     units_on[a["lineage_id"] + ":" + e] = A.km[e]
-                    units_off[a["carryover_group"] + ":" + e] = A.km[e]
+                    units_off[a["carryover_group"] + ":" + e] = off_km(a["carryover_group"], e)
         t = A.db.execute("SELECT km,unit_count FROM denominator WHERE scope='all' AND basis=? AND carryover='on'", (str(y),)).fetchone()
         dn = A.denom_units(str(y), "off")
         R.add(f"K{y}", f"{y}년 분모 재계산 (edge_attr, 하루라도 영업)", f"denominator 표 {t[0]}km {t[1]}단위와 일치", f"켬 {round(sum(units_on.values()), 1)}km {len(units_on)}단위 / 끔 {round(sum(units_off.values()), 1)}km {len(units_off)}단위 (끔은 표 없음, unit 합 {round(sum(v['km'] for v in dn.values()), 1)})",
@@ -1253,9 +1549,10 @@ def scenarios(A, R):
     rows = A.db.execute("SELECT carryover,basis,count(*) FROM denominator WHERE scope='all' GROUP BY 1").fetchall()
     c = A.db.execute("SELECT count(*) FROM denominator WHERE carryover='off' AND basis<>'alltime'").fetchone()[0]
     R.add("K-off", "승계 끔의 현행·연도 분모 행 (§2.8 E 두 방식 미리 계산)", "denominator에 off 행 존재", f"off 행은 alltime 1개뿐, 현행·연도 off 행 {c}개", None, "denominator_unit에서 합산하면 됨. 우회 가능")
-    null_km = round(sum(A.km[e] for e, rows in A._attrs.items() if any(a["valid_from_lo"] is None and a["denominator_class"] == "normal" for a in rows)), 1)
     y70 = [k for k, v in A.denom_units("1970", "on").items() if edtf_range(v["valid_from"])[0] is None]
-    R.add("K-null", "개업일 NULL 단위의 연도 분모 (§5.4 판정 불가)", "확실한 해에만 분모. 애매하면 판정 불가로 분리(certainty)", f"valid_from NULL normal 단위가 1970년 분모에 {len(y70)}개 {round(sum(A.units[(k, 'on')]['km'] for k in y70), 1)}km 포함. certainty 컬럼 없음", not y70, "denominator가 NULL을 '항상 영업'으로 세어 연도 분모가 부풀려짐")
+    u69 = A.undecided_units(1969, "on")
+    nul69 = [k for k, v in A.units.items() if k[1] == "on" and v["class"] == "normal" and v["valid_from"] is None and overlaps_year(1969, None, edtf_range(v["valid_to"])[1])]
+    R.add("K-null", "개업일 NULL 단위의 연도 분모 (§5.4 판정 불가)", "확실한 해에만 분모. 애매하면 판정 불가로 분리", f"1970년 분모의 개업일 NULL 단위 {len(y70)}개, 1969년 판정 불가 {len(u69)}단위 {round(sum(v['km'] for v in u69.values()), 1)}km (개업일 NULL {len(nul69)})", not y70 and all(k[0] in u69 for k in nul69), "denominator가 NULL을 '항상 영업'으로 세어 연도 분모가 부풀려짐")
 
     save = A.today
     A.today = "2018-03-31"
@@ -1267,7 +1564,7 @@ def scenarios(A, R):
 
     # ---- L. 기록 승계 부가 ----------------------------------------------
     r = "r_shinetsu_main_line"
-    a = A.db.execute("SELECT DISTINCT carryover_group FROM edge_attr WHERE edge_id='e_002187'").fetchall()
+    a = A.db.execute("SELECT DISTINCT carryover_group FROM edge_attr WHERE edge_id=?", (A.edge_between("n_karuizawa", "n_naka_karuizawa"),)).fetchall()
     R.add("L1", "§2.8 E 표: 국철→JR 유지, JR→타사 새 값", "o_japanese_national_railways·o_jr_east 같은 group, しなの 다른 group", [tuple(q) for q in a], len(a) == 2)
     ride = dict(date=None, edges=A.ride_of(A.record("r_sanko_line", "n_gotsu", "n_miyoshi", None))["edges"], created="2026-11-01")
     R.add("L2", "§2.8 J 날짜 없는 기록 유효 끝", "2018-03-31", A.effective_hi(ride), A.effective_hi(ride) == "2018-03-31")
@@ -1313,37 +1610,81 @@ def sweep(A, R):
     gaps, unused, kmdiff = [], collections.Counter(), []
     for rid, stops in A._stops.items():
         cands = collections.defaultdict(list)
+        deg = collections.Counter()
         for _, e, a, b in A.route_edges(rid):
+            if not cands[frozenset((a, b))]:
+                deg[a] += 1
+                deg[b] += 1
             cands[frozenset((a, b))].append(e)
         used = set()
-        cum = 0.0
+        # 기점 너머 옛 자리는 음수 km다 (지금 끝 역 기준, 高松（旧）)
+        cum = (stops[0]["km_cum"] or 0.0) if stops else 0.0
         # 나란한 옛 선로(이설)의 역은 새 선로의 역과 km 순으로 섞여 있다. 바로 다음 역과 이어지지 않으면
         # 세 칸 안의 역과 이어지는지 보고, 건너뛴 역은 앞뒤 세 칸 안의 역과 따로 이어져야 한다
         i = 0
         skipped = []
         while i < len(stops) - 1:
             p = stops[i]
-            j = next((j for j in range(i + 1, min(i + 4, len(stops))) if cands.get(frozenset((p["node_id"], stops[j]["node_id"])))), None)
+            js = [j for j in range(i + 1, min(i + 4, len(stops))) if cands.get(frozenset((p["node_id"], stops[j]["node_id"])))]
+            # 막다른 옛 자리(仙人峠·立山仮·新潟(旧))는 km 순으로 사이에 끼어도 사슬의 다음 역이 아니다. 갈래가 둘 이상인 역을 먼저 고르고, 모두 막다른 역이면 뒤쪽 것을 고른다
+            nonleaf = [j for j in js if deg[stops[j]["node_id"]] > 1]
+            j = nonleaf[0] if nonleaf else (js[-1] if js else None)
             if j is None:
+                # 남은 역이 모두 앞쪽 역에 매달린 막다른 옛 자리면 끊김이 아니다 (아래 건너뛴 역 검사로 이웃을 확인)
+                rest = stops[i + 1:]
+                if all(deg[x["node_id"]] == 1 for x in rest):
+                    skipped += rest
+                    break
                 gaps.append((rid, p["seq"], p["node_id"], stops[i + 1]["node_id"]))
                 break
             q = stops[j]
             es = cands[frozenset((p["node_id"], q["node_id"]))]
             used.update(es)
             skipped += stops[i + 1:j]
-            if j == i + 1:
-                cum += A.km[es[0]]
-                if abs(cum - (q["km_cum"] or 0)) > 0.051:
+            # 본선 계통의 옛 선로(route_only가 그 계통) 칸은 km_cum이 지금 km 축 위 자리라 옛 선로 길이와 다를 수 있다 (옛 선로 비율 배치, compile _alt_scale)
+            oldhop = A.routes[rid]["role"] == "main" and all(A.edges[x]["route_only"] == rid for x in es)
+            if j == i + 1 and oldhop:
+                cum = q["km_cum"] or cum
+            elif j == i + 1:
+                # 노선 시대 km(edge_km_era)가 있으면 계통 누계도 그 값으로 센다 (compile이 km_cum을 era km로 낸다)
+                era = (A.routes[rid]["line_id"], es[0]) in A.era
+                cum += A.era[(A.routes[rid]["line_id"], es[0])] if era else A.km[es[0]]
+                # era km를 역 사이에 비율로 나눈 칸은 0.1 반올림 차이가 날 수 있다 (伊田線·丸森線 등)
+                if abs(cum - (q["km_cum"] or 0)) > (0.151 if era else 0.051):
                     kmdiff.append((rid, q["seq"], round(cum, 1), q["km_cum"]))
             cum = q["km_cum"] or cum
             i = j
         for x in skipped:
             k = stops.index(x)
-            nb = [y for y in stops[max(0, k - 3):k + 4] if y is not x and cands.get(frozenset((x["node_id"], y["node_id"])))]
+            # 막다른 옛 자리는 갈라진 역이 몇 칸 떨어져 있어도 된다 (新潟(旧)은 白山에서 갈라지고 사이에 白山(旧)·上所·新潟)
+            win = stops if deg[x["node_id"]] == 1 else stops[max(0, k - 3):k + 4]
+            nb = [y for y in win if y is not x and cands.get(frozenset((x["node_id"], y["node_id"])))]
             if not nb:
                 gaps.append((rid, x["seq"], x["node_id"], None))
             for y in nb:
                 used.update(cands[frozenset((x["node_id"], y["node_id"]))])
+        # 본선 계통의 옛 선로(route_only가 그 계통) 사슬과 같은 두 역을 바로 잇는 지금 칸은 옛 자리 역이 km 순으로 사이에 끼어
+        # 위 사슬 걷기에서 건너뛰어진다. 두 끝이 그 옛 선로 사슬로도 이어지면 그날 경로로 쓰인다 (田立: 南木曽–田立 新線와 南木曽–田立(旧)–田立)
+        if A.routes[rid]["role"] == "main":
+            oadj = collections.defaultdict(set)
+            for _, e, a_, b_ in A.route_edges(rid):
+                if A.edges[e]["route_only"] == rid:
+                    oadj[a_].add(b_)
+                    oadj[b_].add(a_)
+            def _oldpath(x, y):
+                seen, st_ = {x}, [x]
+                while st_:
+                    n_ = st_.pop()
+                    for m_ in oadj[n_]:
+                        if m_ == y:
+                            return True
+                        if m_ not in seen:
+                            seen.add(m_)
+                            st_.append(m_)
+                return False
+            for _, e, a_, b_ in A.route_edges(rid):
+                if e not in used and A.edges[e]["route_only"] != rid and _oldpath(a_, b_):
+                    used.add(e)
         for _, e, _, _ in A.route_edges(rid):
             if e not in used:
                 unused[rid] += 1
@@ -1383,43 +1724,57 @@ def sweep(A, R):
             cut.append((rid, d, p["name"], q["name"]))
     R.add("S4", "무작위 4000회: 선택 가능한 두 역을 펼치기", "ok 또는 needs_input. 끊김은 중간 폐지·운휴로 설명", dict(stat), not any(x[-1] == "no-path-ever" for x in bad),
           f"km 불일치·경로 없음 {len(bad)}건 {bad[:4]}. 그날 끊긴 사례 {cut[:5]}")
-    hist = stat.get("invalid:no-path-on-date", 0)
-    # S5 운전 계통
+    # S5 운행 계통
+    # 판마다 부분이 이어지고 각 부분이 날짜 없이 펼쳐지는가. 그날의 운휴(肥薩線 등)는 정의의 끊김이 아니다
     res = {}
+    has_ed = A.db.execute("SELECT 1 FROM sqlite_master WHERE name='service_edition'").fetchone()
     for (sid,) in A.db.execute("SELECT id FROM service").fetchall():
-        hops, gaps = A.service_chain(sid, T)
+        rows = A.db.execute("SELECT * FROM service_part WHERE service_id=? ORDER BY " + ("edition, seq" if has_ed else "seq"), (sid,)).fetchall()
+        gaps, prev = [], None
+        _grp = lambda n: A.db.execute("select coalesce(group_id, id) from node where id=?", (n,)).fetchone()[0] if n else n
+        for p in rows:
+            ed = p["edition"] if has_ed else 0
+            # 같은 역 묶음(group)의 다른 노드로 넘어가도 이어진다 (compile _sv_grp와 같음, 長崎 住吉)
+            if prev is not None and prev[0] == ed and _grp(prev[1]) != _grp(p["from_node"]):
+                gaps.append((ed, prev[1], p["from_node"]))
+            x = A.expand(p["route_id"], p["from_node"], p["to_node"], None)
+            if x["status"] not in ("ok", "needs_input"):
+                gaps.append((ed, p["route_id"], p["from_node"], p["to_node"], x["status"], x.get("reason")))
+            prev = (ed, p["to_node"])
         res[sid] = gaps
     badsvc = {k: v for k, v in res.items() if v}
-    R.add("S5", "운전 계통 16개 이어짐", "전부 이어짐", f"끊김 {len(badsvc)}개 {badsvc}", not badsvc)
+    R.add("S5", f"운행 계통 {len(res)}개 이어짐", "전부 이어짐", f"끊김 {len(badsvc)}개 {badsvc}", not badsvc)
     # S6 단위 대응
     miss = 0
     for e, rows in A._attrs.items():
         for a in rows:
+            # 여객 영업 이력이 없는 화물선(hidden)은 DB에만 두어 단위가 없다 (사용자 결정 2026-11-09)
+            if a["denominator_class"] == "hidden":
+                continue
             for c, k in (("on", a["lineage_id"]), ("off", a["carryover_group"])):
                 if (k + ":" + e, c) not in A.units:
                     miss += 1
     R.add("S6", "edge_attr 모든 행이 denominator_unit에 단위가 있는가", "누락 0", miss, miss == 0)
     # S7 등급 규칙
-    jr_ops = {r[0] for r in A.db.execute("SELECT id FROM operator WHERE category='jr'")}
     by_unit = collections.defaultdict(list)
     for e, rows in A._attrs.items():
         for a in rows:
             by_unit[(a["lineage_id"], e)].append(a)
-    wrong_out, wrong_norm, old_norm = [], [], []
+    wrong_out, old_norm = [], []
     for (lg, e), rows in by_unit.items():
         legal0 = [l["legal_abolition"] for l in A._life[e] if l["legal_abolition"]]
-        hi = max(legal0) if legal0 else max(a["valid_to_hi"] or MAXD for a in rows)   # §4.6 법적 폐지일 기준
-        anyjr = any(a["operator_id"] in jr_ops for a in rows)
+        # §4.6 법적 폐지일 기준. 폐선 뒤 같은 칸이 다시 열려 같은 계보로 이어지면(open+continues: 湯の川線 1945 폐지·1959 재개업, 八栗ケーブル) 단위의 끝은
+        # 옛 폐지일이 아니라 단위 행들의 가장 늦은 끝이다. 둘 중 늦은 쪽을 쓴다 (9회차 S)
+        hi = max(legal0 + [a["valid_to_hi"] or MAXD for a in rows])
         cl = {a["denominator_class"] for a in rows}
         legal = max((l["legal_abolition"] or "") for l in A._life[e]) if A._life[e] else ""
-        if "outside" in cl and (hi >= "2000-01-01" or (anyjr and hi >= "1969-12-08")):
+        # N05 대조가 끝나 새로 들어온 폐선도 분모 안이다 (판 2026-11-04.2). outside는 대조 중인 범위가 생길 때만 쓴다
+        if "outside" in cl:
             wrong_out.append((lg, e, hi))
-        if "normal" in cl and FLOOR <= hi < ("1969-12-08" if anyjr else "2000-01-01"):
-            wrong_norm.append((lg, e, hi, rows[0]["line_id"]))
-        if "normal" in cl and hi < FLOOR and (legal or hi) < FLOOR:
+        if "normal" in cl and hi < FLOOR:
             old_norm.append((lg, e, hi, rows[0]["line_id"], legal))
-    R.add("S7", "§4.6 등급: outside는 새로 들어오는 폐선만 (1950~1969 국철·JR, 처음부터 사철이던 1950~1999)", "규칙 위반 0", f"outside 위반 {len(wrong_out)}, 사철 그 기간인데 normal {len(wrong_norm)}개 노선 {sorted({x[3] for x in wrong_norm})[:8]}, 기준일 전 폐지인데 normal {len(old_norm)} {sorted({x[3] for x in old_norm})[:6]}",
-          not wrong_out and not wrong_norm and not old_norm)
+    R.add("S7", "§4.6 등급: N05 대조가 끝나 1950~1969 국철·JR과 처음부터 사철이던 1950~1999 폐선도 분모 안 (outside 0)", "규칙 위반 0", f"outside {len(wrong_out)}, 기준일 전 폐지인데 normal {len(old_norm)} {sorted({x[3] for x in old_norm})[:6]}",
+          not wrong_out and not old_norm)
     # S8 이관 옛 계통의 정차역
     miss = []
     for rid, stops in A._stops.items():
@@ -1439,6 +1794,10 @@ def sweep(A, R):
         for rid in A.routes:
             for q in A.picker(rid, d):
                 if q["state"] in ("no_edge", "line_closed"):
+                    # 이설 전 선로를 같은 노선의 지선 계통(○○旧線)에 둔 곳은 그 계통에서 그날 고를 수 있으면 모순이 아니다
+                    line = A.routes[rid]["line_id"]
+                    if any(r2 != rid and A.routes[r2]["line_id"] == line and any(x["node"] == q["node"] and x["selectable"] for x in A.picker(r2, d)) for r2 in A.routes):
+                        continue
                     st = next(x for x in A._picks[rid] if x["seq"] == q["seq"])
                     key = q["state"] + ("/valid_to NULL" if st["valid_to"] is None else "")
                     c[key] += 1
@@ -1447,7 +1806,11 @@ def sweep(A, R):
           "valid_to NULL 11행은 선로 상태로 걸러져 선택 불가로 나옴. route_stop만 보면 영업 중으로 오판")
     # S10 숨은 끝
     hid = []
+    # 여객 영업 이력이 없는 화물선(rule_class hidden)은 기록할 수 없어 끝 확장이 필요 없다 (9회차 F)
+    _hidl = {l for (l,) in A.db.execute("SELECT id FROM line WHERE rule_class='hidden'")}
     for rid, r in A.routes.items():
+        if r["line_id"] in _hidl:
+            continue
         for end in (r["from_node"], r["to_node"]):
             if A.node_kind.get(end) != "station":
                 hid.append((rid, A.line_name(r["line_id"]), end, A.node_kind.get(end)))
@@ -1463,15 +1826,34 @@ def sweep(A, R):
     ring = [rid for rid in A.routes if A.ring_nodes(rid) and not A.routes[rid]["closed"]]
     R.add("S11", "고리가 있는데 closed=0 인 계통 / 같은 역 두 번", "0", f"같은 역 두 번 {dup[:6]}, 고리 {[(r, A.line_name(A.routes[r]['line_id'])) for r in ring][:8]}, closed_from 값 {A.db.execute('SELECT count(*) FROM route WHERE closed_from IS NOT NULL').fetchone()[0]}개", not dup)
     # S12 continue
-    rows = A.db.execute("SELECT route_id,seq,other_line_id FROM route_link WHERE kind='continue'").fetchall()
+    rows = A.db.execute("SELECT route_id,seq,other_line_id,valid_from,valid_to FROM route_link WHERE kind='continue'").fetchall()
     ends = 0
     for r in rows:
         st = A._stops[r["route_id"]]
         seqs = [s["seq"] for s in st]
+        # 계통 끝 너머 확장 행에 단 끝 이어짐(吾妻橋線 本所吾妻橋, 9회차 L)은 계통 끝 바깥이라 끝 이음이다
+        if not any(s["seq"] == r["seq"] for s in st) and any(s["seq"] == r["seq"] and s["is_extension"] for s in A._picks[r["route_id"]]):
+            ends += 1
+            continue
         node = next(s["node_id"] for s in st if s["seq"] == r["seq"])
         ln = A.routes[r["route_id"]]["line_id"]
         gone = [e for _, e, x, y in A.route_edges(r["route_id"]) if node in (x, y) and A.attr_on(e, ln, T, follow_lineage=False)[0] is None]
-        if r["seq"] in (seqs[0], seqs[-1]) or gone:
+        # 오늘 고를 수 있는 역의 첫·끝이면 지금 소속 구간의 끝이다 (新潟 옛 경로의 大形: 앞쪽은 숨은 분기점을 지나 닫힌 구간)
+        live = [q["seq"] for q in A.picker(r["route_id"], T) if q["selectable"]]
+        # 날짜가 있는 이음은 그 이음이 생긴 첫날의 선택기로 본다. 이미 끝난 이음(옛 경로 계통과의 continue, 三岐線 1931~1985)과
+        # 그때는 끝 역이었다가 연장으로 지나가는 역이 된 직통(시기별 끝 역, compile.era_end: 泉岳寺 1968·綾瀬 1971·盛岡 1997)
+        past = False
+        if r["valid_from"] and re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["valid_from"]):
+            # 기준일(1950-01-01) 전 날짜는 선택기가 날짜 모름으로 보므로 기준일부터 본다
+            then = [q["seq"] for q in A.picker(r["route_id"], max(r["valid_from"], "1950-01-01")) if q["selectable"]]
+            past = bool(then) and r["seq"] in (min(then), max(then))
+            # 그날 이 역에 닿는 이 계통 칸 한쪽이 그 노선에 아직 없으면 그날 이 역은 끝이다. 계통이 두 토막으로 나뉜 때(拝島線 1958–1962:
+            # 小平–萩山과 小川–玉川上水 사이 萩山–小川 개업 전)에는 선택기 첫·끝 역만으로는 가운데 끝 역을 못 본다 (11회차 S2, 4회차 kanto_1-003)
+            if not past:
+                d_ = max(r["valid_from"], "1950-01-01")
+                es_ = [e for _, e, x, y in A.route_edges(r["route_id"]) if node in (x, y)]
+                past = len(es_) >= 2 and any(A.attr_on(e, ln, d_, follow_lineage=False)[0] is None for e in es_)
+        if r["seq"] in (seqs[0], seqs[-1]) or gone or past or (live and r["seq"] in (min(live), max(live))):
             ends += 1
     R.add("S12", "continue 행이 끝 역이나 지금 소속 구간의 끝에 있는가 (§2.9 표 1행)", "표시 결정표: 중간 역의 continue는 분기로 그림. 1행 이하", f"{len(rows)}행 중 {ends}", len(rows) - ends <= 1, "중간 역의 continue는 표시 결정표에 맞는 행이 없음")
     # S13 junction 기간
@@ -1492,7 +1874,7 @@ def sweep(A, R):
     # S14 재해 운휴 복구 사례
     known = [("山田線 宮古→釜石 2015", "r_yamada_line", "宮古", "釜石", "2015-01-01"),
              ("常磐線 竜田→富岡 2015", "r_joban_line", "竜田", "富岡", "2015-01-01"),
-             ("石巻線 浦宿→女川 2013", "r_ishinomaki_line", "浦宿", "女川", "2013-06-01"),
+             ("石巻線 浦宿→女川 2013", "r_ishinomaki_line", "浦宿", "女川（旧）", "2013-06-01"),
              ("仙石線 高城町→陸前小野 2013", "r_senseki_line", "高城町", "陸前小野", "2013-06-01"),
              ("只見線 会津川口→只見 2015", "r_tadami_line", "会津川口", "只見", "2015-06-01"),
              ("名松線 家城→伊勢奥津 2012", "r_meisho_line", "家城", "伊勢奥津", "2012-06-01"),
@@ -1515,16 +1897,22 @@ def sweep(A, R):
             opts = [o for o in A.relocation_options(rid, na[-1], nb[-1]) if o["as_of"] <= d]
             es = A.expand(rid, na[-1], nb[-1], max(opts, key=lambda o: o["as_of"])["as_of"])["edges"] if opts else A.expand(rid, na[-1], nb[-1], None, resolve_unknown=True)["edges"]
         res[name] = dict(collections.Counter(A.life_on(e, d)[0] for e in es))
-    caught = sum(1 for v in res.values() if isinstance(v, dict) and v.get("suspended") and not v.get("open"))
-    R.add("S14", "재해 불통 13건이 edge_life에 있는가", "전 구간 suspended", f"{caught}/13 잡힘. {res}", caught == len(known),
+    # 운휴 중이면 suspended, 재개 없이 폐지·이설로 끝났으면 운휴 시작으로 소급해 closed다(日高本線·石巻線 옛 女川·仙石線 옛 선로·津軽線 中小国–三厩, 결정 122)
+    caught = sum(1 for v in res.values() if isinstance(v, dict) and (v.get("suspended") or v.get("closed")) and not v.get("open"))
+    R.add("S14", "재해 불통 13건이 edge_life에 있는가", "전 구간 suspended, 폐지·이설로 끝난 곳은 소급 closed", f"{caught}/13 잡힘. {res}", caught == len(known),
           "suspended 행은 폐지로 끝난 구간(SVC 표 7개 노선)에만 있음. 복구됐거나 아직 불통인 구간은 없음")
     # S15 archive 연결
     bad = 0
     for r in A.db.execute("SELECT * FROM archive_stop"):
+        # 열람 전용 노선에 단 역은 계통이 없다 (결정 133)
+        if r["archive_line_id"]:
+            continue
         if r["route_id"] not in A.routes:
             bad += 1
             continue
         ns = [s["node_id"] for s in A._stops[r["route_id"]]]
+        # 앞 자리는 같은 계통의 열람 전용 역 ID도 된다 (DESIGN §4.5 「after는 앞의 열람 전용 역 ID도 쓸 수 있습니다」, 9회차 S 기준일 전 정차의 열람 전용)
+        ns += [x[0] for x in A.db.execute("SELECT id FROM archive_stop WHERE route_id=?", (r["route_id"],))]
         if r["after_id"] not in ns and r["after_id"] is not None:
             bad += 1
     R.add("S15", "archive_stop의 위치가 계통 노드를 가리키는가", "0 위반", f"{bad}건 / 442", bad == 0)
@@ -1566,7 +1954,11 @@ def sweep2(A, R):
     R.add("S19", "공개 노드·노선 이름 언어별 빠짐", "0", f"node {miss}, line {l}", not any(miss.values()) and l == 0)
     # S20 숨은 분기의 부모 화면 표시
     miss, have = [], 0
+    # 여객 영업 이력이 없는 화물선(rule_class hidden)은 앱 어디에도 나오지 않는다. 부모 화면에 분기 줄이 없어야 맞다 (9회차 F)
+    _hid = {l for (l,) in A.db.execute("SELECT id FROM line WHERE rule_class='hidden'")}
     for rid, r in A.routes.items():
+        if r["line_id"] in _hid:
+            continue
         for end in (r["from_node"], r["to_node"]):
             if A.node_kind.get(end) == "station":
                 continue
@@ -1588,21 +1980,23 @@ DESIGN_14_1 = {
     "hub_member": "hub_id node_id valid_from valid_to source verified",
     "junction": "id line_id other_line_id other_route_id node_id edge_id side continue valid_from valid_to source verified",
     "lineage_stage": "lineage_id seq line_id from_node to_node valid_from valid_to",
-    "archive_stop": "id line_id route_id after_id before_id opened closed km source",
-    "archive_line": "id line_id at_node opened closed source",
+    "archive_stop": "id line_id route_id after_id before_id opened closed km source legal_abolition archive_line_id seq",
+    "archive_line": "id line_id at_node opened closed source legal_abolition",
     "node_position": "node_id lat lon quality checked valid_from valid_to",
     "node_public": "(view)",
     "route": "id line_id role from_node to_node via_nodes closed closed_from extend_to map_coverage",
     "route_edge": "route_id seq edge_id valid_from valid_to",
     "route_stop": "route_id seq node_id km_cum is_stop is_extension valid_from valid_to",
     "route_link": "route_id seq other_line_id other_route_id kind side at_edge other_node next_stop_node terminal_node flow flow_source valid_from valid_to",
+    "route_link_reverse": "route_id seq other_line_id next_stop_node valid_from valid_to",
     "edge": "id from_node to_node seed_line route_only geometry_quality geometry_source",
     "edge_life": "edge_id valid_from valid_to status last_service legal_abolition close_reason",
     "edge_km": "edge_id km valid_from valid_to",
     "edge_attr": "id edge_id line_id operator_id lineage_id carryover_group denominator_class valid_from valid_to",
     "service": "id closed valid_from valid_to",
-    "service_part": "service_id seq route_id from_node to_node",
-    "service_stop": "service_id seq node_id",
+    "service_edition": "service_id edition valid_from valid_to all_stops",
+    "service_part": "service_id edition seq route_id from_node to_node",
+    "service_stop": "service_id edition seq node_id",
     "edge_link": "edge_id successor_edge_id kind",
     "line": "id type rule_class",
     "operator": "id category",
@@ -1667,6 +2061,8 @@ def main():
             print("FAIL", r["id"], r["title"])
     if args.json:
         json.dump(dict(rows=R.rows, schema=diff), open(args.json, "w", encoding="utf8"), ensure_ascii=False, indent=1)
+    if c.get("FAIL"):
+        raise SystemExit(f"앱 시뮬 FAIL {c['FAIL']}")
 
 
 if __name__ == "__main__":

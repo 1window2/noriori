@@ -49,17 +49,17 @@
 "reason": "선은 맞다. N02와 OSM 모두 2.57km, 역간 직선 2.46km인데 위키백과와 표가 같은 공식 영업km다. 선로가 이설돼도 공식 km는 그대로 남는 경우로 본다"
 },
 {
-"edge_key": "l_hanzomon_line_through_service|n_oshiage_tobu|n_hikifune",
-"checks": [
-"ratio"
-],
-"reason": "선은 맞다. 押上~曳舟 사이의 東武 선로가 N02 1.22km, OSM 1.36km, 역간 직선 0.92km다. 영업 2.4km는 半蔵門線 직통 계통 표의 값으로 물리 길이가 아니다"
-},
-{
 "edge_key": "l_seikan_tunnel_tappi_shako_line|n_seikan_tunnel_museum|n_taikenkodo",
 "checks": [
 "ratio"
 ],
 "reason": "선은 맞다. 사갱 케이블카로 N02 2024와 OSM 모두 두 역 사이를 0.25km로 그린다 (직선 0.25km). 영업 0.8km는 경사 터널 길이이고 N02와 OSM에 평면 좌표로 그보다 긴 선이 없다"
+},
+{
+"edge_key": "l_tokaido_main_line|n_ogaki|n_shintarui",
+"checks": [
+"ratio"
+],
+"reason": "선은 맞다. 新垂井 경유 迂回線(新垂井線, 1944~)은 지금도 下り 특급·화물이 다니는 선로라 N02 2024 선을 쓴다(선 길이 11.26 km). 영업 8.1 km는 물리 길이가 아니라 垂井 경유와 같게 매긴 값이다: ja.wikipedia 新垂井駅 oldid=109133001 「キロ程 = 418.1」「駅間A = 8.1」, 垂井駅 oldid=109377855 「キロ程= 418.1」로 두 역의 キロ程이 같고, 新垂井駅 문서에 「直線距離で約3km離れていた」. 大垣–新垂井 직선만 9.9 km라 8.1 km 선은 있을 수 없다"
 }
 ]

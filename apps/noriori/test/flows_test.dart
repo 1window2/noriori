@@ -4,6 +4,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_riverpod/misc.dart' show Override;
@@ -18,9 +19,11 @@ import 'package:noriori/features/record/controller/record_session_controller.dar
 import 'package:noriori/features/record/ui/browse_screens.dart';
 import 'package:noriori/features/record/ui/continue_sheet.dart';
 import 'package:noriori/features/record/ui/line_tile.dart';
+import 'package:noriori/features/record/ui/one_way_bubble.dart';
 import 'package:noriori/features/record/ui/record_edit_screen.dart';
 import 'package:noriori/features/record/ui/record_session_screen.dart';
 import 'package:noriori/features/record/ui/session_date.dart';
+import 'package:noriori/features/record/ui/switchback_mark.dart';
 import 'package:noriori/features/stats/ui/stats_screen.dart';
 import 'package:noriori/i18n/strings.g.dart';
 import 'package:noriori_core/noriori_core.dart';
@@ -67,10 +70,12 @@ final class _Rig {
 
   String line(String name) => world.books[AppLocale.ko]!.lines.entries.firstWhere((e) => e.value == name).key;
 
-  List<Override> overrides({String? today}) => [
+  List<Override> overrides({String? today, AppLocale locale = AppLocale.ko}) => [
         sessionProvider.overrideWithValue(session),
         networkProvider.overrideWithValue(world.network),
-        nameBookProvider.overrideWithValue(world.books[AppLocale.ko]!),
+        nameBookProvider.overrideWithValue(world.books[locale]!),
+        if (locale != AppLocale.ko)
+          packReaderProvider.overrideWithValue(PackReader(session.db, languages: nameLanguages(locale))),
         editionProvider.overrideWithValue(session.pack.edition),
         if (today != null) todayProvider.overrideWithValue(today),
       ];
@@ -87,8 +92,10 @@ Future<_Rig> _open({RecordInterpreter Function(RecordInterpreter)? interpreter})
     connect: openDirect,
     interpreter: (db) async {
       final network = Network(await NetworkReader(db).read());
-      final book = await PackReader(db).nameBook();
-      world = PackWorld(network: network, books: {for (final locale in AppLocale.values) locale: book});
+      // 언어마다 노선·역 이름이 다르다. 전수 화면 점검은 세 언어로 돈다
+      world = PackWorld(network: network, books: {
+        for (final locale in AppLocale.values) locale: await PackReader(db, languages: nameLanguages(locale)).nameBook(),
+      });
       final real = RideInterpreter(network);
       return interpreter == null ? real : interpreter(real);
     },
@@ -109,12 +116,12 @@ GoRouter _router(Widget home) => GoRouter(
       ],
     );
 
-Widget _app(GoRouter router, ProviderContainer container) => TranslationProvider(
+Widget _app(GoRouter router, ProviderContainer container, {AppLocale locale = AppLocale.ko}) => TranslationProvider(
       child: UncontrolledProviderScope(
         container: container,
         child: MaterialApp.router(
           theme: appTheme(Brightness.light),
-          locale: const Locale('ko'),
+          locale: Locale(locale.languageCode),
           supportedLocales: AppLocaleUtils.supportedLocales,
           localizationsDelegates: GlobalMaterialLocalizations.delegates,
           routerConfig: router,
@@ -127,6 +134,16 @@ Future<void> _frames(WidgetTester tester, [int count = 20]) async {
   for (var i = 0; i < count; i++) {
     await tester.pump(const Duration(milliseconds: 16));
   }
+}
+
+/// 화면 글자에 새어 나온 내부 ID(`n_…`, `r_…`, `l_…` 등). 이름 행이 없으면 ID가 그대로 나온다
+final _idLike = RegExp(r'\b[nrlega]_[a-z0-9_]{3,}\b');
+String? _leakedId(WidgetTester tester) {
+  for (final paragraph in tester.allRenderObjects.whereType<RenderParagraph>()) {
+    final match = _idLike.firstMatch(paragraph.text.toPlainText());
+    if (match != null) return match.group(0);
+  }
+  return null;
 }
 
 void _phone(WidgetTester tester) {
@@ -545,6 +562,106 @@ void main() {
     expect(state.rows.any((row) => row.closeYear == '2021' && !row.selectable), isTrue);
   });
 
+  testWidgets('운휴로 끊긴 연결은 끝난 해 대신 운휴 중으로 적는다 (外房線 大原의 いすみ線, 10회차 G1 kanto_3-007)', skip: _skip != null, (tester) async {
+    // 전수 화면 점검과 같은 좁은 폰·큰 글자 (사용자 지시 2026-11-12: 세 언어)
+    for (final (width, scale, locale) in const [(360.0, 1.3, AppLocale.ko), (360.0, 1.3, AppLocale.en), (360.0, 1.3, AppLocale.ja)]) {
+      LocaleSettings.setLocaleSync(locale);
+      tester.view.physicalSize = Size(width * 3, 844 * 3);
+      tester.view.devicePixelRatio = 3;
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-16', locale: locale));
+      final session = container.read(recordSessionProvider.notifier);
+      await tester.runAsync(() => session.open(lineId: 'l_sotobo_line', routeId: 'r_sotobo_line'));
+      final router = _router(const Text('처음'));
+      await tester.pumpWidget(_app(router, container, locale: locale));
+      await _frames(tester, 2);
+      unawaited(router.push<void>('/record/session?back=1'));
+      await _frames(tester, 12);
+      final state = container.read(recordSessionProvider);
+      expect(state.lines.whereType<BranchLine>().any((line) => line.item.suspended && line.item.link.otherLineId == 'l_isumi_line'), isTrue);
+      final word = switch (locale) { AppLocale.ko => '운휴 중', AppLocale.en => 'Suspended', AppLocale.ja => '運休中' };
+      await tester.scrollUntilVisible(find.textContaining(word), 300, scrollable: find.descendant(of: find.byType(ListView).last, matching: find.byType(Scrollable)).first);
+      expect(find.textContaining(word), findsWidgets);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      container.dispose();
+    }
+    // 세션 화면이 남긴 지연 타이머를 흘려 보낸다
+    await tester.pump(const Duration(seconds: 10));
+    LocaleSettings.setLocaleSync(AppLocale.ko);
+    tester.view.reset();
+    tester.platformDispatcher.clearTextScaleFactorTestValue();
+  });
+
+  testWidgets('첫 역 앞의 열람 전용 역은 첫 역 위에 보인다 (志度線 瓦町 앞 中野町·藤塚·公園前, 10회차 G1 chugoku_shikoku_2-003)', skip: _skip != null, (tester) async {
+    for (final locale in AppLocale.values) {
+      LocaleSettings.setLocaleSync(locale);
+      tester.view.physicalSize = const Size(360 * 3, 844 * 3);
+      tester.view.devicePixelRatio = 3;
+      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-16', locale: locale));
+      final session = container.read(recordSessionProvider.notifier);
+      await tester.runAsync(() => session.open(lineId: 'l_shido_line', routeId: 'r_shido_line'));
+      final router = _router(const Text('처음'));
+      await tester.pumpWidget(_app(router, container, locale: locale));
+      await _frames(tester, 2);
+      unawaited(router.push<void>('/record/session?back=1'));
+      await _frames(tester, 12);
+      final state = container.read(recordSessionProvider);
+      final top = state.lines.takeWhile((line) => line is! StopLine).whereType<ArchiveLine>().toList();
+      expect(top.length, greaterThanOrEqualTo(3));
+      expect(top.every((line) => line.gap == -1), isTrue);
+      expect(tester.takeException(), isNull);
+      await tester.pumpWidget(const SizedBox());
+      container.dispose();
+    }
+    // 세션 화면이 남긴 지연 타이머를 흘려 보낸다
+    await tester.pump(const Duration(seconds: 10));
+    LocaleSettings.setLocaleSync(AppLocale.ko);
+    tester.view.reset();
+    tester.platformDispatcher.clearTextScaleFactorTestValue();
+  });
+
+  testWidgets('끝 역 스위치백 직통은 점선 왼쪽 표식을 누르면 말풍선으로 알린다 (富士山 大月線→河口湖線, 11회차 S3)', skip: _skip != null, (tester) async {
+    for (final locale in AppLocale.values) {
+      LocaleSettings.setLocaleSync(locale);
+      tester.view.physicalSize = const Size(360 * 3, 844 * 3);
+      tester.view.devicePixelRatio = 3;
+      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-16', locale: locale));
+      final session = container.read(recordSessionProvider.notifier);
+      await tester.runAsync(() => session.open(lineId: 'l_otsuki_line', routeId: 'r_otsuki_line'));
+      final router = _router(const Text('처음'));
+      await tester.pumpWidget(_app(router, container, locale: locale));
+      await _frames(tester, 2);
+      unawaited(router.push<void>('/record/session?back=1'));
+      await _frames(tester, 12);
+      final state = container.read(recordSessionProvider);
+      final end = state.lines.whereType<EndLine>().where((line) => line.items.first.link.otherLineId == 'l_kawaguchiko_line');
+      // 표식 칸이 없는 옛 판이면 표식도 없다
+      if (end.isEmpty || !end.first.items.any((item) => reverseOn(item.link, DateSpan.parse('2026-11-16')) != null)) {
+        await tester.pumpWidget(const SizedBox());
+        container.dispose();
+        continue;
+      }
+      final mark = find.byType(SwitchbackMark);
+      await tester.scrollUntilVisible(mark, 300, scrollable: find.descendant(of: find.byType(ListView).last, matching: find.byType(Scrollable)).first);
+      await tester.tap(mark.first);
+      await tester.pump();
+      final word = switch (locale) { AppLocale.ko => '진행 방향을 바꿔', AppLocale.en => 'Trains reverse here', AppLocale.ja => '進行方向を変えて' };
+      expect(find.textContaining(word), findsOneWidget);
+      expect(tester.takeException(), isNull);
+      OneWayBubble.dismiss();
+      await tester.pumpWidget(const SizedBox());
+      container.dispose();
+    }
+    // 세션 화면과 말풍선이 남긴 지연 타이머를 흘려 보낸다
+    await tester.pump(const Duration(seconds: 10));
+    LocaleSettings.setLocaleSync(AppLocale.ko);
+    tester.view.reset();
+    tester.platformDispatcher.clearTextScaleFactorTestValue();
+  });
+
   testWidgets('환승 묶음이 둘 이상이면 번호를 붙인다', skip: _skip != null, (tester) async {
     _phone(tester);
     final container = await _session(tester, rig, rig.line('도카이도 본선'), today: '2026-11-02');
@@ -702,6 +819,154 @@ void main() {
     expect((await tester.runAsync(() => queries.watchVisits().first))!, isEmpty);
   });
 
+  /// 北陸本線을 열고 [from], [to] 역을 골라 저장한다. 저장한 기록과 목록의 요약을 돌려준다 (DESIGN §8.0.1 이관 구간).
+  Future<(Ride, RideSummary)> saveOnHokuriku(
+    WidgetTester tester,
+    String from,
+    String to, {
+    bool dateUnknown = false,
+  }) async {
+    final container = await _session(tester, rig, 'l_hokuriku_main_line', today: '2026-11-07', dateUnknown: dateUnknown);
+    final session = container.read(recordSessionProvider.notifier);
+    SelectorRow at(String node) => container.read(recordSessionProvider).rows.singleWhere((row) => row.node == node);
+    session.clearPicks();
+    session.tap(at(from));
+    session.tap(at(to));
+    await _frames(tester, 3);
+    final state = container.read(recordSessionProvider);
+    expect(state.preview?.saved, isTrue);
+    // 고른 두 역 사이가 칠해진다
+    expect(state.rows.where((row) => state.isPicked(row.seq)).map((row) => row.node), containsAll([from, to]));
+    final before = (await tester.runAsync(rig.live))!.length;
+    await tester.tap(find.text('기록하기'));
+    await tester.runAsync(() => Future<void>.delayed(const Duration(milliseconds: 200)));
+    await _frames(tester, 30);
+    final rides = (await tester.runAsync(rig.live))!;
+    expect(rides.length, before + 1);
+    final saved = rides.reduce((a, b) => a.createdAt >= b.createdAt ? a : b);
+    final list = (await tester.runAsync(() => RecordQueries(rig.session.db).watchRides().first))!;
+    return (saved, list.singleWhere((ride) => ride.rideId == saved.rideId));
+  }
+
+  testWidgets('이관 뒤 날짜에 구간 안의 새 역을 골라 저장하면 이어받은 노선과 그 km로 저장된다', skip: _skip != null, (tester) async {
+    _phone(tester);
+    final (saved, summary) = await saveOnHokuriku(tester, 'n_shikibu', 'n_fukui');
+    final derived = RideInterpreter(rig.world.network).ride(saved);
+    // ハピラインふくい線 しきぶ 33.3km → 福井 54.0km
+    expect([for (final leg in derived.legs) (leg.lineId, leg.km10)], [('l_hapi_line_fukui_line', 207)]);
+    expect(derived.date, '2026-11-07');
+    expect(summary.lineId, 'l_hapi_line_fukui_line');
+    expect(summary.km10, 207);
+    expect(summary.lineLabel, '하피라인 후쿠이선');
+  });
+
+  testWidgets('국철 쪽 역에서 이관 뒤 새 역까지 고르면 두 노선에 나눠 저장된다', skip: _skip != null, (tester) async {
+    _phone(tester);
+    final (saved, summary) = await saveOnHokuriku(tester, 'n_shin_hikida', 'n_shikibu');
+    final derived = RideInterpreter(rig.world.network).ride(saved);
+    // 新疋田 39.2km → 敦賀 45.9km는 北陸本線, 敦賀 → しきぶ 33.3km는 ハピラインふくい線
+    expect([for (final leg in derived.legs) (leg.lineId, leg.km10)], [
+      ('l_hokuriku_main_line', 67),
+      ('l_hapi_line_fukui_line', 333),
+    ]);
+    expect(summary.km10, 400);
+  });
+
+  testWidgets('날짜 모름에서 이관 뒤 새 역을 고르면 이어받은 노선 계통으로 저장된다', skip: _skip != null, (tester) async {
+    _phone(tester);
+    final (saved, summary) = await saveOnHokuriku(tester, 'n_shikibu', 'n_fukui', dateUnknown: true);
+    expect(saved.dateInput, isNull);
+    expect([for (final leg in saved.legs) (leg.lineId, leg.routeId, leg.fromNode, leg.toNode, leg.lineLabel)], [
+      ('l_hapi_line_fukui_line', 'r_hapi_line_fukui_line', 'n_shikibu', 'n_fukui', '하피라인 후쿠이선'),
+    ]);
+    expect(summary.km10, 207);
+  });
+
+  testWidgets('뒤쪽 역을 먼저 누르면 그 역이 출발역, 다음에 누른 역이 도착역으로 저장된다', skip: _skip != null, (tester) async {
+    _phone(tester);
+    final (saved, summary) = await saveOnHokuriku(tester, 'n_fukui', 'n_shikibu', dateUnknown: true);
+    expect([for (final leg in saved.legs) (leg.fromNode, leg.toNode)], [('n_fukui', 'n_shikibu')]);
+    expect(summary.km10, 207);
+  });
+
+
+
+
+
+
+  group('한 방향 운행·정차 (DESIGN §8)', () {
+    Future<(ProviderContainer, SelectorRow Function(String))> open(WidgetTester tester, String line, String route, {String? date}) async {
+      final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-07'));
+      addTearDown(container.dispose);
+      final session = container.read(recordSessionProvider.notifier);
+      await tester.runAsync(() async {
+        await session.open(lineId: line, routeId: route);
+        if (date != null) await session.setDate(date);
+      });
+      SelectorRow at(String node) => container.read(recordSessionProvider).rows.firstWhere((row) => row.node == node);
+      return (container, at);
+    }
+
+    testWidgets('한 방향 순환을 거꾸로 고르면 돌아가는 길로 받고 알린다', skip: _skip != null, (tester) async {
+      final (container, at) = await open(tester, 'l_yukarigaoka_line', 'r_yukarigaoka_line');
+      final session = container.read(recordSessionProvider.notifier);
+      expect(container.read(recordSessionProvider).oneWayGaps.whereType<bool>(), isNotEmpty);
+      expect(session.tap(at('n_chugakko')), isNull);
+      final note = session.tap(at('n_joshidai'));
+      expect(note?.kind, OneWayKind.around);
+      final state = container.read(recordSessionProvider);
+      // 中学校→井野→公園→女子大 = 0.8 + 0.6 + 0.9
+      expect(state.preview?.meters, 2300);
+      expect(state.ways, isNull);
+      // 방향 바꾸기는 女子大→中学校로 바로 간다
+      expect(session.reverse(note!), isNull);
+      expect(container.read(recordSessionProvider).preview?.meters, 800);
+    });
+
+    testWidgets('한 방향 열차만 서는 역을 거꾸로 고르면 받지 않고, 방향 바꾸기로 뒤집는다', skip: _skip != null, (tester) async {
+      final (container, at) = await open(tester, 'l_joban_line', 'r_joban_line', date: '2026-02-20');
+      final session = container.read(recordSessionProvider.notifier);
+      final kairakuen = at('n_kairakuen');
+      expect(container.read(recordSessionProvider).stopDirections[kairakuen.seq]?.label, 'down');
+      session.tap(at('n_mito'));
+      final note = session.tap(kairakuen);
+      expect(note?.kind, OneWayKind.stop);
+      expect(note?.label, 'down');
+      var state = container.read(recordSessionProvider);
+      expect(state.from?.node, 'n_mito');
+      expect(state.to, isNull);
+      session.reverse(note!);
+      state = container.read(recordSessionProvider);
+      expect((state.from?.node, state.to?.node), ('n_kairakuen', 'n_mito'));
+      expect(state.preview?.saved, isTrue);
+    });
+
+    testWidgets('하차전용 역은 첫 탭에서 바로 알리고 출발역으로 받지 않는다', skip: _skip != null, (tester) async {
+      final (container, at) = await open(tester, 'l_joban_line', 'r_joban_line', date: '1960-03-01');
+      final session = container.read(recordSessionProvider.notifier);
+      final kairakuen = at('n_kairakuen');
+      expect(container.read(recordSessionProvider).stopDirections[kairakuen.seq]?.use, 'alight');
+      final note = session.tap(kairakuen);
+      expect((note?.kind, note?.alight, note?.canReverse), (OneWayKind.stop, true, false));
+      expect(container.read(recordSessionProvider).from, isNull);
+      // 도착역으로는 고를 수 있다
+      session.tap(at('n_akatsuka_joban'));
+      expect(session.tap(kairakuen), isNull);
+      expect(container.read(recordSessionProvider).preview?.saved, isTrue);
+    });
+
+    testWidgets('한 방향으로만 다니는 구간을 거꾸로 고르면 받지 않는다', skip: _skip != null, (tester) async {
+      final (container, at) = await open(tester, 'l_hakodate_main_line', 'r_fujishiro_line');
+      final session = container.read(recordSessionProvider.notifier);
+      session.tap(at('n_onuma'));
+      final note = session.tap(at('n_nanae'));
+      expect(note?.kind, OneWayKind.section);
+      expect(container.read(recordSessionProvider).to, isNull);
+      session.reverse(note!);
+      expect(container.read(recordSessionProvider).preview?.saved, isTrue);
+    });
+  });
+
   test('경로가 끝을 넘으면 그 사이만 칠한다', () {
     SelectorRow row(int seq, String node) => SelectorRow(
           seq: seq,
@@ -715,10 +980,165 @@ void main() {
     final rows = [row(0, 'x'), row(1, 'y'), row(2, 'z'), row(3, 'x')];
     final wrapped = PickedPath.of(rows, const ['z', 'x']);
     expect(wrapped.below, {2});
-    expect(wrapped.above, {3});
     expect(wrapped.stops, {0, 2, 3});
     final plain = PickedPath.of(rows, const ['x', 'hidden', 'y', 'z']);
     expect(plain.below, {0, 1});
-    expect(plain.above, {1, 2});
   });
+
+  // 전수 화면 점검: 모든 계통의 세션 화면과 모든 분류의 노선 일람을 좁은 폰·큰 글자로 끝까지 내려 그리기 오류(넘침 등)가 없는지 본다.
+  // 오래 걸려 FULL_RENDER=1일 때만 돈다 (`FULL_RENDER=1 flutter test test/flows_test.dart --plain-name 전수`)
+  final full = Platform.environment['FULL_RENDER'] == '1' ? null : 'FULL_RENDER=1일 때만';
+  // 영어는 글이 길어 칩·줄이 넘치기 쉽다. 한국어만이 아니라 세 언어 모두 좁은 폰·큰 글자로 본다 (사용자 지시 2026-11-12)
+  for (final (width, scale, locale) in const [
+    (390.0, 1.0, AppLocale.ko),
+    (360.0, 1.3, AppLocale.ko),
+    (390.0, 1.0, AppLocale.en),
+    (360.0, 1.3, AppLocale.en),
+    (360.0, 1.3, AppLocale.ja),
+  ]) {
+    testWidgets('전수: 모든 계통의 세션 화면을 끝까지 내려도 그리기 오류가 없다 (폭 $width, 글자 $scale배, ${locale.languageCode})',
+        skip: _skip != null || full != null, (tester) async {
+      LocaleSettings.setLocaleSync(locale);
+      addTearDown(() => LocaleSettings.setLocaleSync(AppLocale.ko));
+      tester.view.physicalSize = Size(width * 3, 844 * 3);
+      tester.view.devicePixelRatio = 3;
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      addTearDown(tester.view.reset);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final network = rig.world.network;
+      final failures = <String>[];
+      var screens = 0, steps = 0;
+      final only = Platform.environment['FULL_RENDER_ROUTE'];
+      // 한 계통만 보거나 FULL_RENDER_VERBOSE=1이면 넘친 위젯과 글을 알 수 있게 오류 내용을 모두 찍는다
+      if (only != null || Platform.environment['FULL_RENDER_VERBOSE'] == '1') {
+        final previous = FlutterError.onError;
+        FlutterError.onError = (details) {
+          // ignore: avoid_print
+          print(details.toString());
+          previous?.call(details);
+        };
+        addTearDown(() => FlutterError.onError = previous);
+      }
+      for (final routeId in network.routes.keys.where((r) => only == null || r == only).toList()..sort()) {
+        for (final unknown in const [false, true]) {
+          final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-11', locale: locale));
+          final session = container.read(recordSessionProvider.notifier);
+          await tester.runAsync(
+            () => session.open(lineId: network.routes[routeId]!.lineId, routeId: routeId, dateUnknown: unknown),
+          );
+          final router = _router(const Text('처음'));
+          await tester.pumpWidget(_app(router, container, locale: locale));
+          await _frames(tester, 2);
+          unawaited(router.push<void>('/record/session?back=1'));
+          await _frames(tester, 12);
+          Object? error = tester.takeException();
+          var leaked = _leakedId(tester);
+          final list = find.byType(ListView);
+          for (var step = 0; error == null && list.evaluate().isNotEmpty && step < 200; step++) {
+            final scrollable = tester.state<ScrollableState>(
+              find.descendant(of: list.last, matching: find.byType(Scrollable)).first,
+            );
+            if (scrollable.position.pixels >= scrollable.position.maxScrollExtent) break;
+            await tester.drag(list.last, const Offset(0, -600), warnIfMissed: false);
+            await _frames(tester, 4);
+            error = tester.takeException();
+            leaked ??= _leakedId(tester);
+            steps++;
+          }
+          screens++;
+          if (only != null) {
+            final rows = container.read(recordSessionProvider).rows.length;
+            // ignore: avoid_print
+            print('$routeId 행 $rows, 내림 $steps, 보이는 줄 ${find.byType(ListView).evaluate().length}');
+          }
+          if (error != null) failures.add('$routeId ${unknown ? '날짜 모름' : '오늘'}: ${'$error'.split('\n').first}');
+          if (leaked != null) failures.add('$routeId ${unknown ? '날짜 모름' : '오늘'}: 화면에 ID $leaked');
+          await tester.pumpWidget(const SizedBox());
+          container.dispose();
+        }
+      }
+      // 세션 화면이 남긴 지연 타이머를 흘려 보낸다
+      await tester.pump(const Duration(seconds: 10));
+      // ignore: avoid_print
+      print('세션 화면 $screens개, 내림 $steps번, 오류 ${failures.length}');
+      if (only == null) expect(screens, network.routes.length * 2);
+      expect(failures, isEmpty, reason: failures.take(30).join('\n'));
+    }, timeout: const Timeout(Duration(hours: 2)));
+
+    testWidgets('전수: 모든 분류·사업자의 노선 일람을 끝까지 내려도 그리기 오류가 없다 (폭 $width, 글자 $scale배, ${locale.languageCode})',
+        skip: _skip != null || full != null, (tester) async {
+      LocaleSettings.setLocaleSync(locale);
+      addTearDown(() => LocaleSettings.setLocaleSync(AppLocale.ko));
+      if (Platform.environment['FULL_RENDER_VERBOSE'] == '1') {
+        final previous = FlutterError.onError;
+        FlutterError.onError = (details) {
+          // ignore: avoid_print
+          print(details.toString());
+          previous?.call(details);
+        };
+        addTearDown(() => FlutterError.onError = previous);
+      }
+      tester.view.physicalSize = Size(width * 3, 844 * 3);
+      tester.view.devicePixelRatio = 3;
+      tester.platformDispatcher.textScaleFactorTestValue = scale;
+      addTearDown(tester.view.reset);
+      addTearDown(tester.platformDispatcher.clearTextScaleFactorTestValue);
+      final network = rig.world.network;
+      final failures = <String>[];
+      for (final era in BrowseEra.values) {
+        final tree = browseTree(network, era: era, hits: const {}, today: '2026-11-11');
+        for (final category in tree.categories) {
+          for (final operator in category.operators) {
+            final container = ProviderContainer(
+              overrides: [
+                ...rig.overrides(today: '2026-11-11', locale: locale),
+                unitHitsProvider.overrideWith((ref) => Stream.value(const <int, String?>{})),
+              ],
+            );
+            await tester.pumpWidget(
+              _app(
+                _router(LineListScreen(era: era, category: category.category, operatorId: operator.operatorId)),
+                container,
+                locale: locale,
+              ),
+            );
+            await _frames(tester, 6);
+            Object? error = tester.takeException();
+            var leaked = _leakedId(tester);
+            final list = find.byType(Scrollable);
+            for (var step = 0; error == null && list.evaluate().isNotEmpty && step < 100; step++) {
+              final scrollable = tester.state<ScrollableState>(list.first);
+              if (scrollable.position.pixels >= scrollable.position.maxScrollExtent) break;
+              await tester.drag(list.first, const Offset(0, -600), warnIfMissed: false);
+              await _frames(tester, 3);
+              error = tester.takeException();
+              leaked ??= _leakedId(tester);
+            }
+            if (error != null && failures.isEmpty) {
+              // 넘친 가로 줄의 글자를 찾아 적는다
+              for (final flex in tester.allRenderObjects.whereType<RenderFlex>()) {
+                if (flex.direction != Axis.horizontal) continue;
+                var used = 0.0;
+                flex.visitChildren((child) => used += (child as RenderBox).size.width);
+                if (used <= flex.size.width + 0.5) continue;
+                final texts = <String>[];
+                void walk(RenderObject node) {
+                  if (node is RenderParagraph) texts.add(node.text.toPlainText());
+                  node.visitChildren(walk);
+                }
+                walk(flex);
+                // ignore: avoid_print
+                print('넘침 ${used - flex.size.width}: ${texts.join(' | ')}');
+              }
+            }
+            if (error != null) failures.add('${era.name} ${category.category} ${operator.operatorId}: ${'$error'.split('\n').first}');
+            if (leaked != null) failures.add('${era.name} ${category.category} ${operator.operatorId}: 화면에 ID $leaked');
+            await tester.pumpWidget(const SizedBox());
+            container.dispose();
+          }
+        }
+      }
+      expect(failures, isEmpty, reason: failures.take(30).join('\n'));
+    }, timeout: const Timeout(Duration(hours: 1)));
+  }
 }

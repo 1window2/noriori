@@ -1,0 +1,5429 @@
+{
+ "meta": {
+  "generated": "2026-11-09",
+  "scope": "노리츠부시(data/imports/noritsubushi/lines.json) 현행 노선 629개와 국토수치정보 N02-24(data/imports/n02/N02-24_GML.zip), build/master.sqlite 현행 edge 9,913개(노드 쌍 9,893개) 전수 대조",
+  "official_sources": [
+   "N02-24 RailroadSection/Station (路線名·運営会社)",
+   "ja.wikipedia (『鉄道要覧』 인용 문단, oldid 고정)",
+   "東京メトロ 営業状況 (web.archive.org 사본)",
+   "日本地下鉄協会 地下鉄事業の現況 (web.archive.org 사본)"
+  ],
+  "km_tolerance": 0.1,
+  "note": "『鉄道要覧』 원본은 직접 보지 못함. 위키 인용·N02로 대신함"
+ },
+ "rows": [
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "10090100",
+    "title": "副都心線 (13号線) 和光市 ～ 渋谷 営業km: 20.2",
+    "section": "和光市～小竹向原",
+    "km": 8.3
+   },
+   "official": {
+    "line": "東京地下鉄 8号線有楽町線",
+    "section": "和光市～新木場",
+    "km": 28.3,
+    "source_url": "https://web.archive.org/web/20260123151158/https://www.tokyometro.jp/corporate/enterprise/passenger_rail/transportation/lines/index.html",
+    "quote": "有楽町線（和光市～新木場間）28.3キロ"
+   },
+   "db_now": "노리츠부시와 같음: l_fukutoshin_line이 和光市–小竹向原 5칸(e_007289–e_007293)을 가짐, l_yurakucho_line은 小竹向原부터",
+   "confidence": "높음",
+   "proposed_action": "공식으로: 5칸을 l_yurakucho_line으로 옮기고 r_fukutoshin_line은 小竹向原～渋谷 11.9km로. 副都心線 열차의 和光市 직통은 운행 계통(services)으로",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "10090100",
+     "section": "和光市～小竹向原"
+    },
+    "to": [
+     {
+      "line": "l_yurakucho_line",
+      "section": "和光市～小竹向原",
+      "edges": [
+       "e_007289",
+       "e_007290",
+       "e_007291",
+       "e_007292",
+       "e_007293"
+      ]
+     }
+    ]
+   },
+   "also": [
+    {
+     "source_url": "https://web.archive.org/web/20211017105609/https://www.jametro.or.jp/upload/data/UklSNCUrzToN.pdf",
+     "quote": "副都心線 小竹向原～渋谷 11.9"
+    },
+    {
+     "source_url": "https://ja.wikipedia.org/w/index.php?title=東京メトロ副都心線&oldid=111385037",
+     "quote": "正式には有楽町線にのみ属している"
+    },
+    {
+     "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+     "file": "data/imports/n02/N02-24_GML.zip",
+     "quote": "N02-24 13号線副都心線 역 11개(小竹向原～渋谷), 和光市–小竹向原 선형은 8号線有楽町線만"
+    }
+   ]
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "10090070",
+    "title": "有楽町線 (8号線) 小竹向原 ～ 新木場 営業km: 20.0",
+    "section": "小竹向原～新木場",
+    "km": 20.0
+   },
+   "official": {
+    "line": "東京地下鉄 8号線有楽町線",
+    "section": "和光市～新木場",
+    "km": 28.3,
+    "source_url": "https://web.archive.org/web/20260123151158/https://www.tokyometro.jp/corporate/enterprise/passenger_rail/transportation/lines/index.html",
+    "quote": "有楽町線（和光市～新木場間）28.3キロ"
+   },
+   "db_now": "노리츠부시와 같음: r_yurakucho_line 小竹向原～新木場 20.0",
+   "confidence": "높음",
+   "proposed_action": "위 행과 한 묶음. 有楽町線 분모 20.0→28.3, 副都心線 20.2→11.9 (합계 40.2 그대로)",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "10090070",
+     "section": "小竹向原～新木場"
+    },
+    "to": [
+     {
+      "line": "l_yurakucho_line",
+      "section": "小竹向原～新木場"
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "10030020",
+    "title": "東成田線 [駒井野分岐点] ～ 東成田 営業km: 1.1",
+    "section": "[駒井野分岐点]～東成田",
+    "km": 1.1
+   },
+   "official": {
+    "line": "京成電鉄 東成田線",
+    "section": "京成成田～東成田",
+    "km": 7.1,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=京成東成田線&oldid=111310004",
+    "quote": "路線距離：7.1 km（うち6.0 kmは本線と重複）"
+   },
+   "db_now": "노리츠부시와 같음: 東成田線은 駒井野分岐점부터 1.1km(e_006731), 京成成田–駒井野(e_006728, 6.0km)는 本線만",
+   "confidence": "중간",
+   "proposed_action": "결정 필요: 『鉄道要覧』 이중 등록이라 예외 목록(JR 4곳)에 사철 이중 등록으로 추가하면 東成田線에 京成成田–駒井野 병행 edge(shared) 추가, 분모 +6.0. 추가하지 않으면 현행 유지",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "10030020",
+     "section": "[駒井野分岐点]～東成田"
+    },
+    "to": [
+     {
+      "line": "l_higashi_narita_line",
+      "section": "駒井野分岐点～東成田",
+      "edges": [
+       "e_006731"
+      ]
+     }
+    ]
+   },
+   "also": [
+    {
+     "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+     "file": "data/imports/n02/N02-24_GML.zip",
+     "quote": "N02-24 東成田線 역에 京成成田 포함, 本線과 같은 좌표 선형 6.04km"
+    }
+   ]
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110010010",
+    "title": "乗車区間の選択【東武鉄道 半蔵門線直通】",
+    "section": "押上～曳舟",
+    "km": 2.4
+   },
+   "official": {
+    "line": "東武鉄道 伊勢崎線",
+    "section": "押上～曳舟 (とうきょうスカイツリー～曳舟 線増)",
+    "km": 1.3,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=東武伊勢崎線&oldid=111687491",
+    "quote": "押上駅 - 曳舟駅間はとうきょうスカイツリー駅 - 曳舟駅間の線増扱い"
+   },
+   "db_now": "l_hanzomon_line_through_service(extra, 분모 밖)가 e_010248 押上–曳舟 2.4km를 가짐",
+   "confidence": "높음",
+   "proposed_action": "공식으로: e_010248을 l_isesaki_line의 병행 선증 칸(adjacent)으로, km 1.3. 분모는 本線 とうきょうスカイツリー–曳舟 1.3과 같은 구간이라 extra 유지",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "110010010",
+     "section": "押上～曳舟"
+    },
+    "to": [
+     {
+      "line": "l_isesaki_line",
+      "section": "押上～曳舟(선증)",
+      "edges": [
+       "e_010248"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100024701",
+    "title": "乗車区間の選択【藤城線 (函館本線)】",
+    "section": "七飯～大沼",
+    "km": 13.2
+   },
+   "official": {
+    "line": "函館本線",
+    "section": "七飯～大沼",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 函館線 선형이 七飯–大沼(藤城線)을 덮음"
+   },
+   "db_now": "l_fujishiro_line (rule_class extra, 분모 밖)이 e_006337를 가짐. 여객: 하행 특급·보통 운행(여객 운임은 本線 경유 계산)",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 函館本線. 별도 노선 대신 l_hakodate_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100024701",
+     "section": "七飯～大沼"
+    },
+    "to": [
+     {
+      "line": "l_hakodate_main_line",
+      "section": "七飯～大沼",
+      "edges": [
+       "e_006337"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000101",
+    "title": "乗車区間の選択【東海道貨物線 (東海道本線)】",
+    "section": "鶴見～東戸塚",
+    "km": 16.0
+   },
+   "official": {
+    "line": "東海道本線",
+    "section": "鶴見～東戸塚",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_tokaido_freight_line (rule_class extra, 분모 밖)이 e_006338를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 東海道本線. 별도 노선 대신 l_tokaido_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000101",
+     "section": "鶴見～東戸塚"
+    },
+    "to": [
+     {
+      "line": "l_tokaido_main_line",
+      "section": "鶴見～東戸塚",
+      "edges": [
+       "e_006338"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000104",
+    "title": "乗車区間の選択【高島線 (東海道本線)】",
+    "section": "鶴見～桜木町",
+    "km": 8.5
+   },
+   "official": {
+    "line": "東海道本線",
+    "section": "鶴見～桜木町",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_takashima_line (rule_class extra, 분모 밖)이 e_006339,e_006340,e_006341를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 東海道本線. 별도 노선 대신 l_tokaido_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000104",
+     "section": "鶴見～桜木町"
+    },
+    "to": [
+     {
+      "line": "l_tokaido_main_line",
+      "section": "鶴見～桜木町",
+      "edges": [
+       "e_006339",
+       "e_006340",
+       "e_006341"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000301",
+    "title": "乗車区間の選択【大崎支線 (大崎駅構内)】",
+    "section": "大崎～西大井",
+    "km": 2.2
+   },
+   "official": {
+    "line": "東海道本線(品鶴線 연결)",
+    "section": "大崎～西大井",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_osaki_branch_line (rule_class extra, 분모 밖)이 e_006342를 가짐. 여객: 湘南新宿ライン·相鉄直通 정기 운행",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 東海道本線(品鶴線 연결). 별도 노선 대신 l_tokaido_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000301",
+     "section": "大崎～西大井"
+    },
+    "to": [
+     {
+      "line": "l_tokaido_main_line",
+      "section": "大崎～西大井",
+      "edges": [
+       "e_006342"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000302",
+    "title": "乗車区間の選択【山手貨物線 (山手線)】",
+    "section": "駒込～田端信号場",
+    "km": 1.6
+   },
+   "official": {
+    "line": "山手線",
+    "section": "駒込～田端信号場",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 山手線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_yamanote_freight_line (rule_class extra, 분모 밖)이 e_006343를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 山手線. 별도 노선 대신 l_yamanote_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000302",
+     "section": "駒込～田端信号場"
+    },
+    "to": [
+     {
+      "line": "l_yamanote_line",
+      "section": "駒込～田端信号場",
+      "edges": [
+       "e_006343"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000701",
+    "title": "乗車区間の選択【武蔵野南線 (武蔵野線)】",
+    "section": "鶴見～府中本町",
+    "km": 28.8
+   },
+   "official": {
+    "line": "武蔵野線",
+    "section": "鶴見～府中本町",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "大宮支線（旅客運賃・料金は原則として南浦和駅経由で計算）"
+   },
+   "db_now": "l_musashino_south_line (rule_class extra, 분모 밖)이 e_006344를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 武蔵野線. 별도 노선 대신 l_musashino_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000701",
+     "section": "鶴見～府中本町"
+    },
+    "to": [
+     {
+      "line": "l_musashino_line",
+      "section": "鶴見～府中本町",
+      "edges": [
+       "e_006344"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000702",
+    "title": "乗車区間の選択【国立支線 (武蔵野線)】",
+    "section": "新小平～国立",
+    "km": 5.0
+   },
+   "official": {
+    "line": "武蔵野線",
+    "section": "新小平～国立",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "大宮支線（旅客運賃・料金は原則として南浦和駅経由で計算）"
+   },
+   "db_now": "l_kunitachi_branch_line (rule_class extra, 분모 밖)이 e_006345를 가짐. 여객: 임시 여객만",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 武蔵野線. 별도 노선 대신 l_musashino_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000702",
+     "section": "新小平～国立"
+    },
+    "to": [
+     {
+      "line": "l_musashino_line",
+      "section": "新小平～国立",
+      "edges": [
+       "e_006345"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000703",
+    "title": "乗車区間の選択【大宮支線 (武蔵野線)】",
+    "section": "西浦和～与野",
+    "km": 4.9
+   },
+   "official": {
+    "line": "武蔵野線",
+    "section": "西浦和～与野",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "大宮支線（旅客運賃・料金は原則として南浦和駅経由で計算）"
+   },
+   "db_now": "l_omiya_branch_line (rule_class extra, 분모 밖)이 e_006346를 가짐. 여객: むさしの号 정기(운임은 南浦和 경유)",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 武蔵野線. 별도 노선 대신 l_musashino_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000703",
+     "section": "西浦和～与野"
+    },
+    "to": [
+     {
+      "line": "l_musashino_line",
+      "section": "西浦和～与野",
+      "edges": [
+       "e_006346"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000704",
+    "title": "乗車区間の選択【西浦和支線 (武蔵野線)】",
+    "section": "武蔵浦和～与野",
+    "km": 5.2
+   },
+   "official": {
+    "line": "武蔵野線",
+    "section": "武蔵浦和～与野",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "大宮支線（旅客運賃・料金は原則として南浦和駅経由で計算）"
+   },
+   "db_now": "l_nishiurawa_branch_line (rule_class extra, 분모 밖)이 e_006347를 가짐. 여객: しもうさ号 정기",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 武蔵野線. 별도 노선 대신 l_musashino_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000704",
+     "section": "武蔵浦和～与野"
+    },
+    "to": [
+     {
+      "line": "l_musashino_line",
+      "section": "武蔵浦和～与野",
+      "edges": [
+       "e_006347"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000705",
+    "title": "乗車区間の選択【馬橋支線 (武蔵野線)】",
+    "section": "南流山～馬橋",
+    "km": 3.7
+   },
+   "official": {
+    "line": "武蔵野線",
+    "section": "南流山～馬橋",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "大宮支線（旅客運賃・料金は原則として南浦和駅経由で計算）"
+   },
+   "db_now": "l_mabashi_branch_line (rule_class extra, 분모 밖)이 e_006348를 가짐. 여객: 임시 여객만",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 武蔵野線. 별도 노선 대신 l_musashino_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000705",
+     "section": "南流山～馬橋"
+    },
+    "to": [
+     {
+      "line": "l_musashino_line",
+      "section": "南流山～馬橋",
+      "edges": [
+       "e_006348"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000706",
+    "title": "乗車区間の選択【北小金支線 (武蔵野線)】",
+    "section": "南流山～北小金",
+    "km": 2.9
+   },
+   "official": {
+    "line": "武蔵野線",
+    "section": "南流山～北小金",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "大宮支線（旅客運賃・料金は原則として南浦和駅経由で計算）"
+   },
+   "db_now": "l_kita_kogane_branch_line (rule_class extra, 분모 밖)이 e_006349를 가짐. 여객: しもうさ号 정기",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 武蔵野線. 별도 노선 대신 l_musashino_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000706",
+     "section": "南流山～北小金"
+    },
+    "to": [
+     {
+      "line": "l_musashino_line",
+      "section": "南流山～北小金",
+      "edges": [
+       "e_006349"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100010401",
+    "title": "乗車区間の選択【東北貨物線 (東北本線)】",
+    "section": "田端信号場～上中里",
+    "km": 1.7
+   },
+   "official": {
+    "line": "東北本線",
+    "section": "田端信号場～上中里",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東北線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_tohoku_freight_line (rule_class extra, 분모 밖)이 e_006350를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 東北本線. 별도 노선 대신 l_tohoku_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100010401",
+     "section": "田端信号場～上中里"
+    },
+    "to": [
+     {
+      "line": "l_tohoku_main_line",
+      "section": "田端信号場～上中里",
+      "edges": [
+       "e_006350"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100010601",
+    "title": "乗車区間の選択【田端貨物線 (常磐線)】",
+    "section": "田端信号場～三河島",
+    "km": 1.6
+   },
+   "official": {
+    "line": "常磐線(노리츠부시 표기)",
+    "section": "田端信号場～三河島",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 常磐線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_tabata_freight_line (rule_class extra, 분모 밖)이 e_006351를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 常磐線(노리츠부시 표기). 별도 노선 대신 l_joban_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100010601",
+     "section": "田端信号場～三河島"
+    },
+    "to": [
+     {
+      "line": "l_joban_line",
+      "section": "田端信号場～三河島",
+      "edges": [
+       "e_006351"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100017401",
+    "title": "乗車区間の選択【新金線 (総武本線)】",
+    "section": "小岩～金町",
+    "km": 8.9
+   },
+   "official": {
+    "line": "総武本線",
+    "section": "小岩～金町",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 総武線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_shinkin_line (rule_class extra, 분모 밖)이 e_006353,e_006354를 가짐. 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 総武本線. 별도 노선 대신 l_sobu_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100017401",
+     "section": "小岩～金町"
+    },
+    "to": [
+     {
+      "line": "l_sobu_main_line",
+      "section": "小岩～金町",
+      "edges": [
+       "e_006353",
+       "e_006354"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000102",
+    "title": "乗車区間の選択【北方貨物線 (東海道本線)】",
+    "section": "吹田貨物ターミナル～尼崎",
+    "km": 12.2
+   },
+   "official": {
+    "line": "東海道本線",
+    "section": "吹田貨物ターミナル～尼崎",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형이 이 구간을 덮음"
+   },
+   "db_now": "l_hoppo_freight_line (rule_class extra, 분모 밖)이 e_006355를 가짐. 여객: 임시 여객만",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 東海道本線. 별도 노선 대신 l_tokaido_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000102",
+     "section": "吹田貨物ターミナル～尼崎"
+    },
+    "to": [
+     {
+      "line": "l_tokaido_main_line",
+      "section": "吹田貨物ターミナル～尼崎",
+      "edges": [
+       "e_006355"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "100000103",
+    "title": "乗車区間の選択【梅田貨物線 (東海道本線)】",
+    "section": "吹田貨物ターミナル～福島",
+    "km": 10.0
+   },
+   "official": {
+    "line": "東海道本線",
+    "section": "吹田貨物ターミナル～福島",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=梅田貨物線&oldid=111568936",
+    "quote": "吹田貨物ターミナル駅 - 西九条駅間 12.6 km"
+   },
+   "db_now": "l_umeda_freight_line (rule_class extra, 분모 밖)이 e_006356,e_006357,e_006358를 가짐. 여객: はるか·くろしお 정기(2023-03~), 운임은 東海道本線(旅客線) 경유",
+   "confidence": "중간",
+   "proposed_action": "법적 소속은 東海道本線. 별도 노선 대신 l_tokaido_main_line의 지선 계통(분모 밖 extra 유지)으로 옮기는 안. 여객 영업km가 따로 없는 구간이라 분모에는 넣지 않음 / km: 요람 기준 吹田(貨)～西九条 12.6, 노리츠부시 福島 끝 10.0도 확인 필요",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "100000103",
+     "section": "吹田貨物ターミナル～福島"
+    },
+    "to": [
+     {
+      "line": "l_tokaido_main_line",
+      "section": "吹田貨物ターミナル～福島",
+      "edges": [
+       "e_006356",
+       "e_006357",
+       "e_006358"
+      ],
+      "extra": true
+     }
+    ]
+   }
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110020010",
+    "title": "乗車区間の選択【西武鉄道 秩父鉄道連絡線 (長瀞方面)】",
+    "section": "西武秩父（通過）～御花畑方",
+    "km": 0.2
+   },
+   "official": {
+    "line": null,
+    "section": "西武秩父（通過）～御花畑方",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 이 연결선 독립 노선 없음(인접 노선 선형에 포함되거나 없음)"
+   },
+   "db_now": "l_chichibu_railway_connecting_line (extra, 분모 밖) e_010249",
+   "confidence": "낮음",
+   "proposed_action": "秩父鉄道 직통 연결선. 법적 소속 미확인(웹 대조 안 함). 현행 extra 유지, 소속 노선은 추후 확인",
+   "sync_mapping": null
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110020020",
+    "title": "乗車区間の選択【西武鉄道 秩父鉄道連絡線 (三峰口方面)】",
+    "section": "西武秩父～影森方",
+    "km": 0.1
+   },
+   "official": {
+    "line": null,
+    "section": "西武秩父～影森方",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 이 연결선 독립 노선 없음(인접 노선 선형에 포함되거나 없음)"
+   },
+   "db_now": "l_chichibu_railway_connecting_line (extra, 분모 밖) e_010250",
+   "confidence": "낮음",
+   "proposed_action": "秩父鉄道 직통 연결선. 법적 소속 미확인(웹 대조 안 함). 현행 extra 유지, 소속 노선은 추후 확인",
+   "sync_mapping": null
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110050010",
+    "title": "乗車区間の選択【小田急電鉄 松田連絡線】",
+    "section": "新松田～松田",
+    "km": 0.3
+   },
+   "official": {
+    "line": null,
+    "section": "新松田～松田",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 이 연결선 독립 노선 없음(인접 노선 선형에 포함되거나 없음)"
+   },
+   "db_now": "l_matsuda_connecting_line (extra, 분모 밖) e_010251",
+   "confidence": "낮음",
+   "proposed_action": "JR御殿場線 연결선(ふじさん 직통). 법적 소속 미확인(웹 대조 안 함). 현행 extra 유지, 소속 노선은 추후 확인",
+   "sync_mapping": null
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110110010",
+    "title": "乗車区間の選択【近畿日本鉄道 八木連絡線】",
+    "section": "大和八木（上本町方）～八木西口",
+    "km": 0.2
+   },
+   "official": {
+    "line": null,
+    "section": "大和八木（上本町方）～八木西口",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 이 연결선 독립 노선 없음(인접 노선 선형에 포함되거나 없음)"
+   },
+   "db_now": "l_yagi_connecting_line (extra, 분모 밖) e_010253",
+   "confidence": "낮음",
+   "proposed_action": "近鉄 구내 연결선. 법적 소속 미확인(웹 대조 안 함). 현행 extra 유지, 소속 노선은 추후 확인",
+   "sync_mapping": null
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110110020",
+    "title": "乗車区間の選択【近畿日本鉄道 新ノ口連絡線】",
+    "section": "大和八木～新ノ口",
+    "km": 1.4
+   },
+   "official": {
+    "line": null,
+    "section": "大和八木～新ノ口",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 이 연결선 독립 노선 없음(인접 노선 선형에 포함되거나 없음)"
+   },
+   "db_now": "l_ninokuchi_connecting_line (extra, 분모 밖) e_010254",
+   "confidence": "낮음",
+   "proposed_action": "近鉄 大阪線–橿原線 연결선. 법적 소속 미확인(웹 대조 안 함). 현행 extra 유지, 소속 노선은 추후 확인",
+   "sync_mapping": null
+  },
+  {
+   "category": "1 구간 소속",
+   "noritsubushi": {
+    "id": "110110030",
+    "title": "乗車区間の選択【近畿日本鉄道 中川短絡線】",
+    "section": "伊勢中川 短絡線",
+    "km": 0.4
+   },
+   "official": {
+    "line": null,
+    "section": "伊勢中川 短絡線",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 이 연결선 독립 노선 없음(인접 노선 선형에 포함되거나 없음)"
+   },
+   "db_now": "l_nakagawa_connecting_line (extra, 분모 밖) e_010255",
+   "confidence": "낮음",
+   "proposed_action": "近鉄 대阪線–名古屋線 단락선. 법적 소속 미확인(웹 대조 안 함). 현행 extra 유지, 소속 노선은 추후 확인",
+   "sync_mapping": null
+  },
+  {
+   "category": "2 기종점·경계",
+   "noritsubushi": {
+    "id": "4203",
+    "title": "中央本線 (神田-代々木) 神田 ～ 代々木 営業km: 8.3",
+    "section": "代々木～新宿 (중앙선 쪽에 없음)",
+    "km": 0.7
+   },
+   "official": {
+    "line": "JR東日本 山手線 (중복 구간)",
+    "section": "代々木～新宿",
+    "km": 0.7,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=中央本線&oldid=111456828",
+    "quote": "代々木駅 - 新宿駅間は山手線"
+   },
+   "db_now": "노리츠부시와 같음(山手線만, e_000694)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지. N02-24는 中央線 선형도 그리지만 『鉄道要覧』은 山手線 소속이라 N02 쪽이 운행 선형",
+   "sync_mapping": null,
+   "also": [
+    {
+     "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+     "file": "data/imports/n02/N02-24_GML.zip",
+     "quote": "N02-24 中央線 선형이 代々木–新宿을 지남(역 목록엔 東京 없음)"
+    }
+   ]
+  },
+  {
+   "category": "2 기종점·경계",
+   "noritsubushi": {
+    "id": "4203",
+    "title": "中央本線 (神田-代々木) 神田 ～ 代々木 営業km: 8.3",
+    "section": "東京～神田 (중앙선 쪽에 없음)",
+    "km": 1.3
+   },
+   "official": {
+    "line": "JR東日本 東北線 (중복 구간)",
+    "section": "東京～神田",
+    "km": 1.3,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=中央本線&oldid=111456828",
+    "quote": "東京駅 - 神田駅の間は重複する東北本線の一部"
+   },
+   "db_now": "노리츠부시와 같음(東北本線만, e_001088)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null
+  },
+  {
+   "category": "2 기종점·경계",
+   "noritsubushi": {
+    "id": "2201",
+    "title": "大阪環状線 天王寺 ～ 新今宮 営業km: 20.7",
+    "section": "新今宮～天王寺 (환상선 쪽에 없음)",
+    "km": 1.0
+   },
+   "official": {
+    "line": "JR西日本 関西線",
+    "section": "新今宮～天王寺",
+    "km": 1.0,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 大阪環状線 선형이 新今宮–天王寺도 지남(운행 선형)"
+   },
+   "db_now": "노리츠부시와 같음(関西本線만, e_002887)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지. 공식 大阪環状線은 天王寺～新今宮 20.7(大阪 경유)",
+   "sync_mapping": null
+  },
+  {
+   "category": "2 기종점·경계",
+   "noritsubushi": {
+    "id": "10050020",
+    "title": "江ノ島線 [相模大野分岐点] ～ 片瀬江ノ島 営業km: 27.4",
+    "section": "[相模大野分岐点]～片瀬江ノ島",
+    "km": 27.4
+   },
+   "official": {
+    "line": "小田急電鉄 江ノ島線",
+    "section": "相模大野分岐点～片瀬江ノ島",
+    "km": 27.4,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=小田急江ノ島線&oldid=110106271",
+    "quote": "路線距離：27.4km（相模大野分岐点から）"
+   },
+   "db_now": "노리츠부시와 같음(r_enoshima_line_odakyu: n_sagami_ono_junction 기점)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지. N02-24는 江ノ島線 역에 相模大野를 넣고 위키 정보상자는 27.6(相模大野역 기준 옛 표기)",
+   "sync_mapping": null
+  },
+  {
+   "category": "2 기종점·경계",
+   "noritsubushi": {
+    "id": "42150010",
+    "title": "三岐線 三岐朝明信号所 ～ 西藤原 営業km: 25.5",
+    "section": "三岐朝明信号所～西藤原",
+    "km": 25.5
+   },
+   "official": {
+    "line": "三岐鉄道 三岐線",
+    "section": "富田～西藤原",
+    "km": 26.6,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=三岐鉄道三岐線&oldid=111510770",
+    "quote": "富田駅 - 三岐朝明信号場間は貨物列車専用"
+   },
+   "db_now": "노리츠부시와 같음(三岐朝明信号場 기점, 富田–三岐朝明 1.1km 없음)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지(여객 열차 없는 화물 전용 구간). 요람 기점 富田는 별칭·메모로만",
+   "sync_mapping": null
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090030",
+    "title": "丸ノ内線方南町支線 (4号線) 中野坂上 ～ 方南町 営業km: 3.2",
+    "section": "中野坂上～方南町",
+    "km": 3.2
+   },
+   "official": {
+    "line": "4号線丸ノ内線分岐線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「4号線丸ノ内線分岐線」"
+   },
+   "db_now": "DB 이름: l_marunouchi_line_honancho_branch=東京メトロ丸ノ内線方南町支線",
+   "confidence": "높음",
+   "proposed_action": "표기 차이. 공식 「丸ノ内線分岐線」을 별칭으로",
+   "sync_mapping": null,
+   "nori_name": "丸ノ内線方南町支線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30080020",
+    "title": "名城線・名港線 (2号線) 大曽根 ～ 名古屋港 営業km: 14.9",
+    "section": "大曽根～名古屋港",
+    "km": 14.9
+   },
+   "official": {
+    "line": "2号線名城線 + 2号線名港線(N02는 통칭으로 나눔)",
+    "section": null,
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=名古屋市営地下鉄名城線&oldid=111618069",
+    "quote": "2号線名城線及び名港線"
+   },
+   "db_now": "DB 이름: l_meijo_meiko_line=名古屋市営地下鉄名城線・名港線",
+   "confidence": "높음",
+   "proposed_action": "노리츠부시가 법적 2号線과 같음. 현행 유지",
+   "sync_mapping": null,
+   "nori_name": "名城線・名港線 (2号線)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "44110030",
+    "title": "桟橋線 高知駅前 ～ 桟橋通五丁目 営業km: 3.2",
+    "section": "高知駅前～桟橋通五丁目",
+    "km": 3.2
+   },
+   "official": {
+    "line": "駅前線(高知駅前～はりまや橋) + 桟橋線(はりまや橋～桟橋通五丁目)",
+    "section": null,
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=とさでん交通桟橋線&oldid=108470759",
+    "quote": "桟橋線…はりまや橋停留場と桟橋通五丁目停留場を結ぶ"
+   },
+   "db_now": "DB 이름: l_sambashi_line=とさでん交通桟橋線",
+   "confidence": "높음",
+   "proposed_action": "노선 분리 필요(7 법적 소속 행 참고)",
+   "sync_mapping": null,
+   "nori_name": "桟橋線 (高知駅前～桟橋通五丁目)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40005010",
+    "title": "乗車区間の選択【札幌市交通事業振興公社 1条線・山鼻線・山鼻西線・都心線】",
+    "section": "西4丁目～西4丁目",
+    "km": 8.9
+   },
+   "official": {
+    "line": "一条線·山鼻西線·山鼻線·都心線 4노선",
+    "section": null,
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=札幌市電&oldid=110980163",
+    "quote": "以下の4路線からなり"
+   },
+   "db_now": "DB 이름: l_sapporo_streetcar=札幌市電",
+   "confidence": "높음",
+   "proposed_action": "노선 분리 필요(7 법적 소속 행 참고)",
+   "sync_mapping": null,
+   "nori_name": "1条線・山鼻線・山鼻西線・都心線 (한 노선)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "41250010",
+    "title": "乗車区間の選択【東京臨海高速鉄道 りんかい線】",
+    "section": "新木場～大崎",
+    "km": 12.2
+   },
+   "official": {
+    "line": "臨海副都心線",
+    "section": null,
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=東京臨海高速鉄道りんかい線&oldid=111648445",
+    "quote": "臨海副都心線が開業"
+   },
+   "db_now": "DB 이름: l_rinkai_line=東京臨海高速鉄道りんかい線",
+   "confidence": "높음",
+   "proposed_action": "공식 이름 별칭 추가",
+   "sync_mapping": null,
+   "nori_name": "りんかい線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "44060010",
+    "title": "乗車区間の選択【智頭急行 智頭急行線】",
+    "section": "上郡～智頭",
+    "km": 56.1
+   },
+   "official": {
+    "line": "智頭線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「智頭線」"
+   },
+   "db_now": "DB 이름: l_chizu_express_line=智頭急行智頭線",
+   "confidence": "높음",
+   "proposed_action": "공식 이름 별칭 추가",
+   "sync_mapping": null,
+   "nori_name": "智頭急行線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "41240010",
+    "title": "乗車区間の選択【首都圏新都市鉄道 つくばエクスプレス線】",
+    "section": "秋葉原～つくば",
+    "km": 58.3
+   },
+   "official": {
+    "line": "常磐新線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「常磐新線」"
+   },
+   "db_now": "DB 이름: l_tsukuba_express_line=首都圏新都市鉄道つくばエクスプレス",
+   "confidence": "높음",
+   "proposed_action": "공식 이름 별칭 추가",
+   "sync_mapping": null,
+   "nori_name": "つくばエクスプレス線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "52050010",
+    "title": "乗車区間の選択【高尾登山電鉄 ケーブルカー】",
+    "section": "清滝～高尾山",
+    "km": 1.0
+   },
+   "official": {
+    "line": "高尾鋼索線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「高尾鋼索線」"
+   },
+   "db_now": "DB 이름: l_takao_tozan_cable_car=高尾山ケーブルカー",
+   "confidence": "높음",
+   "proposed_action": "공식 이름 별칭 추가",
+   "sync_mapping": null,
+   "nori_name": "ケーブルカー"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "52150010",
+    "title": "乗車区間の選択【皿倉登山鉄道 皿倉山ケーブルカー】",
+    "section": "山麓～山上",
+    "km": 1.1
+   },
+   "official": {
+    "line": "帆柱ケーブル線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「帆柱ケーブル線」"
+   },
+   "db_now": "DB 이름: l_sarakurayama_cable_car=皿倉登山鉄道帆柱ケーブル線",
+   "confidence": "높음",
+   "proposed_action": "공식 이름 별칭 추가",
+   "sync_mapping": null,
+   "nori_name": "皿倉山ケーブルカー"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "51050010",
+    "title": "乗車区間の選択【横浜シーサイドライン 金沢シーサイド線】",
+    "section": "新杉田～金沢八景",
+    "km": 10.8
+   },
+   "official": {
+    "line": "金沢シーサイドライン",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「金沢シーサイドライン」"
+   },
+   "db_now": "DB 이름: l_kanazawa_seaside_line=横浜シーサイドライン金沢シーサイドライン",
+   "confidence": "높음",
+   "proposed_action": "공식 이름 별칭 추가",
+   "sync_mapping": null,
+   "nori_name": "金沢シーサイド線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "52090010",
+    "title": "乗車区間の選択【鞍馬寺 鞍馬山鋼索鉄道線】",
+    "section": "山門～多宝塔",
+    "km": 0.2
+   },
+   "official": {
+    "line": "鞍馬山鋼索鉄道",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「鞍馬山鋼索鉄道」"
+   },
+   "db_now": "DB 이름: l_kuramayama_cable_line=鞍馬寺鞍馬山鋼索鉄道",
+   "confidence": "높음",
+   "proposed_action": "표기 차이만",
+   "sync_mapping": null,
+   "nori_name": "鞍馬山鋼索鉄道線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "45010010",
+    "title": "乗車区間の選択【筑豊電気鉄道 筑豊電気鉄道】",
+    "section": "黒崎駅前～筑豊直方",
+    "km": 16.0
+   },
+   "official": {
+    "line": "筑豊電気鉄道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「筑豊電気鉄道線」"
+   },
+   "db_now": "DB 이름: l_chikuho_electric_railroad=筑豊電気鉄道",
+   "confidence": "높음",
+   "proposed_action": "표기 차이만",
+   "sync_mapping": null,
+   "nori_name": "筑豊電気鉄道"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "41140010",
+    "title": "乗車区間の選択【小湊鉄道 小湊鉄道線】",
+    "section": "五井～上総中野",
+    "km": 39.1
+   },
+   "official": {
+    "line": "小湊鐵道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 운영사·路線名 「小湊鐵道」"
+   },
+   "db_now": "DB 이름: l_kominato_railway_line=小湊鉄道線",
+   "confidence": "높음",
+   "proposed_action": "자체(鐵) 차이. 공식 표기 별칭",
+   "sync_mapping": null,
+   "nori_name": "小湊鉄道線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "50070020",
+    "title": "国際文化公園都市線 (彩都線) 万博記念公園 ～ 彩都西 営業km: 6.8",
+    "section": "万博記念公園～彩都西",
+    "km": 6.8
+   },
+   "official": {
+    "line": "国際文化公園都市モノレール線(彩都線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「国際文化公園都市モノレール線」"
+   },
+   "db_now": "DB 이름: l_saito_line=大阪モノレール彩都線",
+   "confidence": "높음",
+   "proposed_action": "표기 차이만",
+   "sync_mapping": null,
+   "nori_name": "国際文化公園都市線 (彩都線)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "50030010",
+    "title": "乗車区間の選択【東京モノレール 東京モノレール羽田空港線】",
+    "section": "モノレール浜松町～羽田空港第2ターミナル",
+    "km": 17.8
+   },
+   "official": {
+    "line": "東京モノレール羽田線(N02-24, 옛 이름)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東京モノレール羽田線」"
+   },
+   "db_now": "DB 이름: l_tokyo_monorail_haneda_airport_line=東京モノレール羽田空港線",
+   "confidence": "높음",
+   "proposed_action": "N02 쪽이 옛 이름. 현행 유지",
+   "sync_mapping": null,
+   "nori_name": "東京モノレール羽田空港線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "20010010",
+    "title": "松戸線 松戸 ～ 京成津田沼 営業km: 26.5",
+    "section": "松戸～京成津田沼",
+    "km": 26.5
+   },
+   "official": {
+    "line": "新京成線(新京成電鉄, N02-24 시점)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 운영사 「新京成電鉄」"
+   },
+   "db_now": "DB 이름: l_matsudo_line=京成松戸線",
+   "confidence": "높음",
+   "proposed_action": "2025-04 합병 뒤 이름. 노리츠부시가 최신. 현행 유지",
+   "sync_mapping": null,
+   "nori_name": "松戸線 (京成電鉄)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "20020010",
+    "title": "泉北線 中百舌鳥 ～ 和泉中央 営業km: 14.3",
+    "section": "中百舌鳥～和泉中央",
+    "km": 14.3
+   },
+   "official": {
+    "line": "泉北高速鉄道線(泉北高速鉄道, N02-24 시점)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 운영사 「泉北高速鉄道」"
+   },
+   "db_now": "DB 이름: l_semboku_line=南海泉北線",
+   "confidence": "높음",
+   "proposed_action": "2025-04 합병 뒤 이름. 현행 유지",
+   "sync_mapping": null,
+   "nori_name": "泉北線 (南海電気鉄道)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40100030",
+    "title": "乗車区間の選択【三陸鉄道 リアス線】",
+    "section": "盛～久慈",
+    "km": 163.0
+   },
+   "official": {
+    "line": "北リアス線·南リアス線·リアス線(N02-24 옛 구분)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 北リアス線·南リアス線 따로"
+   },
+   "db_now": "DB 이름: l_rias_line=三陸鉄道リアス線",
+   "confidence": "높음",
+   "proposed_action": "N02 쪽이 옛 구분(2019 통합 전). 현행 유지",
+   "sync_mapping": null,
+   "nori_name": "リアス線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "44040065",
+    "title": "循環線 稲荷町 ～ 比治山下 営業km: 1.2",
+    "section": "稲荷町～比治山下",
+    "km": 1.2
+   },
+   "official": {
+    "line": "本線(稲荷町–的場町)·皆実線(的場町–比治山下) (N02-24 시점)",
+    "section": null,
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=広島電鉄皆実線&oldid=110659772",
+    "quote": "的場町 - 比治山下間を循環線として分離"
+   },
+   "db_now": "DB 이름: l_loop_line=広島電鉄循環線",
+   "confidence": "높음",
+   "proposed_action": "2026-03-28 법적 분리. 노리츠부시가 최신. 현행 유지",
+   "sync_mapping": null,
+   "nori_name": "循環線 (稲荷町～比治山下)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10080010",
+    "title": "本線 横浜 ～ 海老名 営業km: 24.6",
+    "section": "横浜～海老名",
+    "km": 24.6
+   },
+   "official": {
+    "line": "相鉄本線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「相鉄本線」"
+   },
+   "db_now": "DB 이름: l_sotetsu_main_line=相鉄本線",
+   "confidence": "높음",
+   "proposed_action": "표기 차이만",
+   "sync_mapping": null,
+   "nori_name": "本線 (相模鉄道)"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10080030",
+    "title": "いずみ野線 二俣川 ～ 湘南台 営業km: 11.3",
+    "section": "二俣川～湘南台",
+    "km": 11.3
+   },
+   "official": {
+    "line": "相鉄いずみ野線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「相鉄いずみ野線」"
+   },
+   "db_now": "DB 이름: l_izumino_line=相鉄いずみ野線",
+   "confidence": "높음",
+   "proposed_action": "표기 차이만",
+   "sync_mapping": null,
+   "nori_name": "いずみ野線"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "24701",
+    "title": "函館本線 函館 ～ 旭川 営業km: 423.1",
+    "section": "函館～旭川",
+    "km": 423.1
+   },
+   "official": {
+    "line": "函館線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「函館線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "24702",
+    "title": "函館本線 (砂原回り) 大沼 ～ 森 営業km: 35.3",
+    "section": "大沼～森",
+    "km": 35.3
+   },
+   "official": {
+    "line": "函館線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「函館線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "26001",
+    "title": "室蘭本線 長万部 ～ 岩見沢 営業km: 211.0",
+    "section": "長万部～岩見沢",
+    "km": 211.0
+   },
+   "official": {
+    "line": "室蘭線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「室蘭線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "26002",
+    "title": "室蘭本線 (室蘭支線) 東室蘭 ～ 室蘭 営業km: 7.0",
+    "section": "東室蘭～室蘭",
+    "km": 7.0
+   },
+   "official": {
+    "line": "室蘭線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「室蘭線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "26301",
+    "title": "日高本線 苫小牧 ～ 鵡川 営業km: 30.5",
+    "section": "苫小牧～鵡川",
+    "km": 30.5
+   },
+   "official": {
+    "line": "日高線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「日高線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "26701",
+    "title": "根室本線 (滝川～富良野) 滝川 ～ 富良野 営業km: 54.6",
+    "section": "滝川～富良野",
+    "km": 54.6
+   },
+   "official": {
+    "line": "根室線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「根室線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "26703",
+    "title": "根室本線 (新得～根室) 新得 ～ 根室 営業km: 307.5",
+    "section": "新得～根室",
+    "km": 307.5
+   },
+   "official": {
+    "line": "根室線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「根室線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "27301",
+    "title": "宗谷本線 旭川 ～ 稚内 営業km: 259.4",
+    "section": "旭川～稚内",
+    "km": 259.4
+   },
+   "official": {
+    "line": "宗谷線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「宗谷線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "28101",
+    "title": "石北本線 新旭川 ～ 網走 営業km: 234.0",
+    "section": "新旭川～網走",
+    "km": 234.0
+   },
+   "official": {
+    "line": "石北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「石北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "28301",
+    "title": "釧網本線 東釧路 ～ 網走 営業km: 166.2",
+    "section": "東釧路～網走",
+    "km": 166.2
+   },
+   "official": {
+    "line": "釧網線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「釧網線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "101",
+    "title": "東海道本線 東京 ～ 熱海 営業km: 104.6",
+    "section": "東京～熱海",
+    "km": 104.6
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "104",
+    "title": "東海道本線 (品鶴線) 品川 ～ 鶴見 営業km: 17.8",
+    "section": "品川～鶴見",
+    "km": 17.8
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "107",
+    "title": "東海道本線 (相鉄直通線) 鶴見 ～ 羽沢横浜国大 営業km: 8.8",
+    "section": "鶴見～羽沢横浜国大",
+    "km": 8.8
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "4201",
+    "title": "中央本線 新宿 ～ 塩尻 営業km: 211.8",
+    "section": "新宿～塩尻",
+    "km": 211.8
+   },
+   "official": {
+    "line": "中央線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「中央線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "4203",
+    "title": "中央本線 (神田-代々木) 神田 ～ 代々木 営業km: 8.3",
+    "section": "神田～代々木",
+    "km": 8.3
+   },
+   "official": {
+    "line": "中央線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「中央線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "4204",
+    "title": "中央本線 (辰野経由) 岡谷 ～ 塩尻 営業km: 27.7",
+    "section": "岡谷～塩尻",
+    "km": 27.7
+   },
+   "official": {
+    "line": "中央線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「中央線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10401",
+    "title": "東北本線 東京 ～ 盛岡 営業km: 535.3",
+    "section": "東京～盛岡",
+    "km": 535.3
+   },
+   "official": {
+    "line": "東北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10402",
+    "title": "東北本線 (尾久経由) 日暮里 ～ 赤羽 営業km: 7.6",
+    "section": "日暮里～赤羽",
+    "km": 7.6
+   },
+   "official": {
+    "line": "東北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10403",
+    "title": "東北本線 (埼京線) 赤羽 ～ 大宮 営業km: 18.0",
+    "section": "赤羽～大宮",
+    "km": 18.0
+   },
+   "official": {
+    "line": "東北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10404",
+    "title": "東北本線 (利府支線) 岩切 ～ 利府 営業km: 4.2",
+    "section": "岩切～利府",
+    "km": 4.2
+   },
+   "official": {
+    "line": "東北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10407",
+    "title": "東北本線 (仙石東北ライン) 松島 ～ 高城町 営業km: 0.3",
+    "section": "松島～高城町",
+    "km": 0.3
+   },
+   "official": {
+    "line": "東北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "14901",
+    "title": "奥羽本線 福島 ～ 青森 営業km: 484.5",
+    "section": "福島～青森",
+    "km": 484.5
+   },
+   "official": {
+    "line": "奥羽線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「奥羽線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "16001",
+    "title": "羽越本線 新津 ～ 秋田 営業km: 271.7",
+    "section": "新津～秋田",
+    "km": 271.7
+   },
+   "official": {
+    "line": "羽越線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「羽越線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "16601",
+    "title": "信越本線 (高崎-横川) 高崎 ～ 横川 営業km: 29.7",
+    "section": "高崎～横川",
+    "km": 29.7
+   },
+   "official": {
+    "line": "信越線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「信越線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "16801",
+    "title": "信越本線 (篠ノ井-長野) 篠ノ井 ～ 長野 営業km: 9.3",
+    "section": "篠ノ井～長野",
+    "km": 9.3
+   },
+   "official": {
+    "line": "信越線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「信越線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "16803",
+    "title": "信越本線 (直江津-新潟) 直江津 ～ 新潟 営業km: 136.3",
+    "section": "直江津～新潟",
+    "km": 136.3
+   },
+   "official": {
+    "line": "信越線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「信越線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "17401",
+    "title": "総武本線 東京 ～ 銚子 営業km: 120.5",
+    "section": "東京～銚子",
+    "km": 120.5
+   },
+   "official": {
+    "line": "総武線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「総武線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "17402",
+    "title": "総武本線 (御茶ノ水) 御茶ノ水 ～ 錦糸町 営業km: 4.3",
+    "section": "御茶ノ水～錦糸町",
+    "km": 4.3
+   },
+   "official": {
+    "line": "総武線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「総武線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "102",
+    "title": "東海道本線 熱海 ～ 米原 営業km: 341.3",
+    "section": "熱海～米原",
+    "km": 341.3
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "105",
+    "title": "東海道本線 (美濃赤坂線) 大垣 ～ 美濃赤坂 営業km: 5.0",
+    "section": "大垣～美濃赤坂",
+    "km": 5.0
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "106",
+    "title": "東海道本線 (新垂井経由) 大垣 ～ 関ヶ原 営業km: 13.8",
+    "section": "大垣～関ヶ原",
+    "km": 13.8
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "3901",
+    "title": "高山本線 岐阜 ～ 猪谷 営業km: 189.2",
+    "section": "岐阜～猪谷",
+    "km": 189.2
+   },
+   "official": {
+    "line": "高山線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「高山線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "4202",
+    "title": "中央本線 塩尻 ～ 名古屋 営業km: 174.8",
+    "section": "塩尻～名古屋",
+    "km": 174.8
+   },
+   "official": {
+    "line": "中央線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「中央線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "9101",
+    "title": "関西本線 名古屋 ～ 亀山 営業km: 59.9",
+    "section": "名古屋～亀山",
+    "km": 59.9
+   },
+   "official": {
+    "line": "関西線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「関西線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10101",
+    "title": "紀勢本線 亀山 ～ 新宮 営業km: 180.2",
+    "section": "亀山～新宮",
+    "km": 180.2
+   },
+   "official": {
+    "line": "紀勢線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「紀勢線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "103",
+    "title": "東海道本線 米原 ～ 神戸 営業km: 143.6",
+    "section": "米原～神戸",
+    "km": 143.6
+   },
+   "official": {
+    "line": "東海道線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「東海道線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "2801",
+    "title": "北陸本線 米原 ～ 敦賀 営業km: 45.9",
+    "section": "米原～敦賀",
+    "km": 45.9
+   },
+   "official": {
+    "line": "北陸線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「北陸線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "3902",
+    "title": "高山本線 猪谷 ～ 富山 営業km: 36.6",
+    "section": "猪谷～富山",
+    "km": 36.6
+   },
+   "official": {
+    "line": "高山線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「高山線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "5201",
+    "title": "山陽本線 神戸 ～ 下関 営業km: 528.1",
+    "section": "神戸～下関",
+    "km": 528.1
+   },
+   "official": {
+    "line": "山陽線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「山陽線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "5203",
+    "title": "山陽本線 (和田岬線) 兵庫 ～ 和田岬 営業km: 2.7",
+    "section": "兵庫～和田岬",
+    "km": 2.7
+   },
+   "official": {
+    "line": "山陽線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「山陽線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "7901",
+    "title": "山陰本線 京都 ～ 幡生 営業km: 673.8",
+    "section": "京都～幡生",
+    "km": 673.8
+   },
+   "official": {
+    "line": "山陰線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「山陰線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "7902",
+    "title": "山陰本線 (仙崎支線) 長門市 ～ 仙崎 営業km: 2.2",
+    "section": "長門市～仙崎",
+    "km": 2.2
+   },
+   "official": {
+    "line": "山陰線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「山陰線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "9102",
+    "title": "関西本線 亀山 ～ JR難波 営業km: 115.0",
+    "section": "亀山～JR難波",
+    "km": 115.0
+   },
+   "official": {
+    "line": "関西線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「関西線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10102",
+    "title": "紀勢本線 新宮 ～ 和歌山市 営業km: 204.0",
+    "section": "新宮～和歌山市",
+    "km": 204.0
+   },
+   "official": {
+    "line": "紀勢線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「紀勢線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "5202",
+    "title": "山陽本線 下関 ～ 門司 営業km: 6.3",
+    "section": "下関～門司",
+    "km": 6.3
+   },
+   "official": {
+    "line": "山陽線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「山陽線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "19701",
+    "title": "鹿児島本線 門司港 ～ 八代 営業km: 232.3",
+    "section": "門司港～八代",
+    "km": 232.3
+   },
+   "official": {
+    "line": "鹿児島線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「鹿児島線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "19702",
+    "title": "鹿児島本線 (川内以南) 川内 ～ 鹿児島 営業km: 49.3",
+    "section": "川内～鹿児島",
+    "km": 49.3
+   },
+   "official": {
+    "line": "鹿児島線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「鹿児島線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "21201",
+    "title": "長崎本線 鳥栖 ～ 長崎 営業km: 125.3",
+    "section": "鳥栖～長崎",
+    "km": 125.3
+   },
+   "official": {
+    "line": "長崎線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「長崎線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "21202",
+    "title": "長崎本線 (長与回り) 喜々津 ～ 浦上 営業km: 23.5",
+    "section": "喜々津～浦上",
+    "km": 23.5
+   },
+   "official": {
+    "line": "長崎線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「長崎線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "22201",
+    "title": "久大本線 久留米 ～ 大分 営業km: 141.5",
+    "section": "久留米～大分",
+    "km": 141.5
+   },
+   "official": {
+    "line": "久大線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「久大線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "22401",
+    "title": "豊肥本線 大分 ～ 熊本 営業km: 148.0",
+    "section": "大分～熊本",
+    "km": 148.0
+   },
+   "official": {
+    "line": "豊肥線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「豊肥線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "22601",
+    "title": "日豊本線 小倉 ～ 鹿児島 営業km: 462.6",
+    "section": "小倉～鹿児島",
+    "km": 462.6
+   },
+   "official": {
+    "line": "日豊線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「日豊線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "23801",
+    "title": "筑豊本線 若松 ～ 原田 営業km: 66.1",
+    "section": "若松～原田",
+    "km": 66.1
+   },
+   "official": {
+    "line": "筑豊線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「筑豊線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090010",
+    "title": "銀座線 (3号線) 浅草 ～ 渋谷 営業km: 14.2",
+    "section": "浅草～渋谷",
+    "km": 14.2
+   },
+   "official": {
+    "line": "3号線銀座線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「3号線銀座線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090020",
+    "title": "丸ノ内線 (4号線) 池袋 ～ 荻窪 営業km: 24.2",
+    "section": "池袋～荻窪",
+    "km": 24.2
+   },
+   "official": {
+    "line": "4号線丸ノ内線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「4号線丸ノ内線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090040",
+    "title": "日比谷線 (2号線) 北千住 ～ 中目黒 営業km: 20.3",
+    "section": "北千住～中目黒",
+    "km": 20.3
+   },
+   "official": {
+    "line": "2号線日比谷線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「2号線日比谷線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090050",
+    "title": "東西線 (5号線) 中野 ～ 西船橋 営業km: 30.8",
+    "section": "中野～西船橋",
+    "km": 30.8
+   },
+   "official": {
+    "line": "5号線東西線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「5号線東西線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090060",
+    "title": "千代田線 (9号線) 代々木上原 ～ 北綾瀬 営業km: 24.0",
+    "section": "代々木上原～北綾瀬",
+    "km": 24.0
+   },
+   "official": {
+    "line": "9号線千代田線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「9号線千代田線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090070",
+    "title": "有楽町線 (8号線) 小竹向原 ～ 新木場 営業km: 20.0",
+    "section": "小竹向原～新木場",
+    "km": 20.0
+   },
+   "official": {
+    "line": "8号線有楽町線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「8号線有楽町線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090080",
+    "title": "半蔵門線 (11号線) 渋谷 ～ 押上 営業km: 16.8",
+    "section": "渋谷～押上",
+    "km": 16.8
+   },
+   "official": {
+    "line": "11号線半蔵門線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「11号線半蔵門線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090090",
+    "title": "南北線 (7号線) 目黒 ～ 赤羽岩淵 営業km: 21.3",
+    "section": "目黒～赤羽岩淵",
+    "km": 21.3
+   },
+   "official": {
+    "line": "7号線南北線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「7号線南北線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10090100",
+    "title": "副都心線 (13号線) 和光市 ～ 渋谷 営業km: 20.2",
+    "section": "和光市～渋谷",
+    "km": 20.2
+   },
+   "official": {
+    "line": "13号線副都心線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「13号線副都心線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10140010",
+    "title": "京都本線 十三 ～ 京都河原町 営業km: 45.3",
+    "section": "十三～京都河原町",
+    "km": 45.3
+   },
+   "official": {
+    "line": "京都線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「京都線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10140040",
+    "title": "神戸本線 大阪梅田 ～ 神戸三宮 営業km: 32.3",
+    "section": "大阪梅田～神戸三宮",
+    "km": 32.3
+   },
+   "official": {
+    "line": "神戸線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「神戸線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "10140080",
+    "title": "宝塚本線 大阪梅田 ～ 宝塚 営業km: 24.5",
+    "section": "大阪梅田～宝塚",
+    "km": 24.5
+   },
+   "official": {
+    "line": "宝塚線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「宝塚線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "JR 「本線」 → 요람 「線」"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30050010",
+    "title": "浅草線 (1号線) 西馬込 ～ 押上 営業km: 18.3",
+    "section": "西馬込～押上",
+    "km": 18.3
+   },
+   "official": {
+    "line": "1号線浅草線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「1号線浅草線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30050020",
+    "title": "三田線 (6号線) 目黒 ～ 西高島平 営業km: 26.5",
+    "section": "目黒～西高島平",
+    "km": 26.5
+   },
+   "official": {
+    "line": "6号線三田線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「6号線三田線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30050030",
+    "title": "新宿線 (10号線) 新宿 ～ 本八幡 営業km: 23.5",
+    "section": "新宿～本八幡",
+    "km": 23.5
+   },
+   "official": {
+    "line": "10号線新宿線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「10号線新宿線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30050040",
+    "title": "大江戸線 (12号線) 都庁前 ～ 光が丘 営業km: 40.7",
+    "section": "都庁前～光が丘",
+    "km": 40.7
+   },
+   "official": {
+    "line": "12号線大江戸線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「12号線大江戸線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30080010",
+    "title": "東山線 (1号線) 高畑 ～ 藤が丘 営業km: 20.6",
+    "section": "高畑～藤が丘",
+    "km": 20.6
+   },
+   "official": {
+    "line": "1号線東山線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「1号線東山線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30080030",
+    "title": "名城線 (4号線) 大曽根 ～ 金山 営業km: 17.5",
+    "section": "大曽根～金山",
+    "km": 17.5
+   },
+   "official": {
+    "line": "4号線名城線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「4号線名城線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30080040",
+    "title": "鶴舞線 (3号線) 上小田井 ～ 赤池 営業km: 20.4",
+    "section": "上小田井～赤池",
+    "km": 20.4
+   },
+   "official": {
+    "line": "3号線鶴舞線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「3号線鶴舞線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30080050",
+    "title": "桜通線 (6号線) 太閤通（旧中村区役所） ～ 徳重 営業km: 19.1",
+    "section": "太閤通（旧中村区役所）～徳重",
+    "km": 19.1
+   },
+   "official": {
+    "line": "6号線桜通線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「6号線桜通線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30130010",
+    "title": "空港線 (1号線) 姪浜 ～ 福岡空港 営業km: 13.1",
+    "section": "姪浜～福岡空港",
+    "km": 13.1
+   },
+   "official": {
+    "line": "1号線(空港線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「1号線(空港線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30130020",
+    "title": "箱崎線 (2号線) 中洲川端 ～ 貝塚 営業km: 4.7",
+    "section": "中洲川端～貝塚",
+    "km": 4.7
+   },
+   "official": {
+    "line": "2号線(箱崎線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「2号線(箱崎線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30130030",
+    "title": "七隈線 (3号線) 橋本 ～ 博多 営業km: 13.6",
+    "section": "橋本～博多",
+    "km": 13.6
+   },
+   "official": {
+    "line": "3号線(七隈線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「3号線(七隈線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40300050",
+    "title": "軌道線本線 電鉄富山駅・エスタ前 ～ 南富山駅前 営業km: 3.6",
+    "section": "電鉄富山駅・エスタ前～南富山駅前",
+    "km": 3.6
+   },
+   "official": {
+    "line": "本線(軌道)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「本線(軌道)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "富山 軌道線 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40300060",
+    "title": "軌道線支線 電鉄富山駅・エスタ前 ～ 丸の内 営業km: 1.0",
+    "section": "電鉄富山駅・エスタ前～丸の内",
+    "km": 1.0
+   },
+   "official": {
+    "line": "支線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「支線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "富山 軌道線 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40300070",
+    "title": "軌道線安野屋線 丸の内 ～ 安野屋 営業km: 0.6",
+    "section": "丸の内～安野屋",
+    "km": 0.6
+   },
+   "official": {
+    "line": "安野屋線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「安野屋線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "富山 軌道線 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40300080",
+    "title": "軌道線呉羽線 安野屋 ～ 富山大学前 営業km: 1.2",
+    "section": "安野屋～富山大学前",
+    "km": 1.2
+   },
+   "official": {
+    "line": "呉羽線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「呉羽線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "富山 軌道線 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40300090",
+    "title": "軌道線富山都心線 丸の内 ～ 西町 営業km: 0.9",
+    "section": "丸の内～西町",
+    "km": 0.9
+   },
+   "official": {
+    "line": "富山都心線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「富山都心線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "富山 軌道線 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "40300100",
+    "title": "軌道線富山駅南北接続線 支線接続点 ～ 富山駅 営業km: 0.2",
+    "section": "支線接続点～富山駅",
+    "km": 0.2
+   },
+   "official": {
+    "line": "富山駅南北接続線",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「富山駅南北接続線」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "富山 軌道線 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100010",
+    "title": "御堂筋線 (1号線) 江坂 ～ 中百舌鳥 営業km: 24.5",
+    "section": "江坂～中百舌鳥",
+    "km": 24.5
+   },
+   "official": {
+    "line": "1号線(御堂筋線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「1号線(御堂筋線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100020",
+    "title": "谷町線 (2号線) 大日 ～ 八尾南 営業km: 28.1",
+    "section": "大日～八尾南",
+    "km": 28.1
+   },
+   "official": {
+    "line": "2号線(谷町線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「2号線(谷町線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100030",
+    "title": "四つ橋線 (3号線) 西梅田 ～ 住之江公園 営業km: 11.4",
+    "section": "西梅田～住之江公園",
+    "km": 11.4
+   },
+   "official": {
+    "line": "3号線(四つ橋線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「3号線(四つ橋線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100040",
+    "title": "中央線 (4号線) 夢洲 ～ 長田 営業km: 21.1",
+    "section": "夢洲～長田",
+    "km": 21.1
+   },
+   "official": {
+    "line": "4号線(中央線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「4号線(中央線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100050",
+    "title": "千日前線 (5号線) 野田阪神 ～ 南巽 営業km: 12.6",
+    "section": "野田阪神～南巽",
+    "km": 12.6
+   },
+   "official": {
+    "line": "5号線(千日前線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「5号線(千日前線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100060",
+    "title": "堺筋線 (6号線) 天神橋筋六丁目 ～ 天下茶屋 営業km: 8.5",
+    "section": "天神橋筋六丁目～天下茶屋",
+    "km": 8.5
+   },
+   "official": {
+    "line": "6号線(堺筋線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「6号線(堺筋線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100070",
+    "title": "長堀鶴見緑地線 (7号線) 大正 ～ 門真南 営業km: 15.0",
+    "section": "大正～門真南",
+    "km": 15.0
+   },
+   "official": {
+    "line": "7号線(長堀鶴見緑地線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「7号線(長堀鶴見緑地線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "3 노선 이름",
+   "noritsubushi": {
+    "id": "30100080",
+    "title": "今里筋線 (8号線) 井高野 ～ 今里 営業km: 11.9",
+    "section": "井高野～今里",
+    "km": 11.9
+   },
+   "official": {
+    "line": "8号線(今里筋線)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「8号線(今里筋線)」"
+   },
+   "db_now": "노리츠부시 이름(관용 표기)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(표기 관례). 요람 이름을 별칭으로",
+   "sync_mapping": null,
+   "systematic": "지하철 「N号線」 접두"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": "110010010",
+    "title": "乗車区間の選択【東武鉄道 半蔵門線直通】",
+    "section": "押上～曳舟",
+    "km": 2.4
+   },
+   "official": {
+    "line": "東武鉄道 伊勢崎線",
+    "section": "押上～曳舟",
+    "km": 1.3,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=東武伊勢崎線&oldid=111687491",
+    "quote": "とうきょうスカイツリー駅（押上駅） - 曳舟駅間 (1.3 km)"
+   },
+   "db_now": "e_010248 km 2.4 (노리츠부시와 같음)",
+   "confidence": "높음",
+   "proposed_action": "km 1.3으로(1 구간 소속 행과 함께)",
+   "sync_mapping": null
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": "100000103",
+    "title": "乗車区間の選択【梅田貨物線 (東海道本線)】",
+    "section": "吹田貨物ターミナル～福島",
+    "km": 10.0
+   },
+   "official": {
+    "line": "JR西日本 東海道線(梅田貨物線)",
+    "section": "吹田貨物ターミナル～西九条",
+    "km": 12.6,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=梅田貨物線&oldid=111568936",
+    "quote": "吹田貨物ターミナル駅 - 西九条駅間 12.6 km"
+   },
+   "db_now": "e_006356–e_006358 합 10.0, 끝이 福島",
+   "confidence": "중간",
+   "proposed_action": "끝 역·km 재확인(분모 밖 extra라 집계 영향 없음)",
+   "sync_mapping": null
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": "10030020",
+    "title": "東成田線 [駒井野分岐点] ～ 東成田 営業km: 1.1",
+    "section": "[駒井野分岐点]～東成田",
+    "km": 1.1
+   },
+   "official": {
+    "line": "京成電鉄 東成田線",
+    "section": "京成成田～東成田",
+    "km": 7.1,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=京成東成田線&oldid=111310004",
+    "quote": "路線距離：7.1 km（うち6.0 kmは本線と重複）"
+   },
+   "db_now": "1.1 (노리츠부시와 같음)",
+   "confidence": "높음",
+   "proposed_action": "1 구간 소속 행 결정에 따름",
+   "sync_mapping": null
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "小海線",
+    "section": "佐久広瀬～佐久海ノ口～海尻",
+    "km": [
+     4.5,
+     2.7
+    ]
+   },
+   "official": {
+    "line": "小海線",
+    "section": "佐久広瀬～佐久海ノ口～海尻",
+    "km": [
+     4.8,
+     2.4
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 4.8/2.4"
+   },
+   "db_now": "DB(=노리츠부시) 역간 4.5/2.7, 佐久海ノ口 위치가 -0.3km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_koumi_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "仙石線",
+    "section": "陸前大塚～東名～野蒜",
+    "km": [
+     1.6,
+     1.0
+    ]
+   },
+   "official": {
+    "line": "仙石線",
+    "section": "陸前大塚～東名～野蒜",
+    "km": [
+     1.4,
+     1.2
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 1.4/1.2"
+   },
+   "db_now": "DB(=노리츠부시) 역간 1.6/1.0, 東名 위치가 +0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_senseki_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "外房線",
+    "section": "勝浦～鵜原～上総興津",
+    "km": [
+     3.6,
+     2.7
+    ]
+   },
+   "official": {
+    "line": "外房線",
+    "section": "勝浦～鵜原～上総興津",
+    "km": [
+     3.4,
+     2.9
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 3.4/2.9"
+   },
+   "db_now": "DB(=노리츠부시) 역간 3.6/2.7, 鵜原 위치가 +0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_sotobo_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "飯田線",
+    "section": "相月～城西～向市場",
+    "km": [
+     1.8,
+     3.0
+    ]
+   },
+   "official": {
+    "line": "飯田線",
+    "section": "相月～城西～向市場",
+    "km": [
+     2.0,
+     2.8
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 2.0/2.8"
+   },
+   "db_now": "DB(=노리츠부시) 역간 1.8/3.0, 城西 위치가 -0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_iida_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "山陰本線",
+    "section": "安来～荒島～揖屋",
+    "km": [
+     5.0,
+     5.4
+    ]
+   },
+   "official": {
+    "line": "山陰本線",
+    "section": "安来～荒島～揖屋",
+    "km": [
+     4.8,
+     5.6
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 4.8/5.6"
+   },
+   "db_now": "DB(=노리츠부시) 역간 5.0/5.4, 荒島 위치가 +0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_sanin_main_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "指宿枕崎線",
+    "section": "薩摩塩屋～白沢～薩摩板敷",
+    "km": [
+     2.0,
+     2.5
+    ]
+   },
+   "official": {
+    "line": "指宿枕崎線",
+    "section": "薩摩塩屋～白沢～薩摩板敷",
+    "km": [
+     1.2,
+     3.3
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 1.2/3.3"
+   },
+   "db_now": "DB(=노리츠부시) 역간 2.0/2.5, 白沢 위치가 +0.8km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_ibusuki_makurazaki_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "東急東横線",
+    "section": "日吉～綱島～大倉山",
+    "km": [
+     2.2,
+     1.7
+    ]
+   },
+   "official": {
+    "line": "東急東横線",
+    "section": "日吉～綱島～大倉山",
+    "km": [
+     2.0,
+     1.9
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 2.0/1.9"
+   },
+   "db_now": "DB(=노리츠부시) 역간 2.2/1.7, 綱島 위치가 +0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_toyoko_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "東京メトロ南北線",
+    "section": "溜池山王～永田町～四ツ谷",
+    "km": [
+     0.7,
+     1.5
+    ]
+   },
+   "official": {
+    "line": "東京メトロ南北線",
+    "section": "溜池山王～永田町～四ツ谷",
+    "km": [
+     0.9,
+     1.3
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 0.9/1.3"
+   },
+   "db_now": "DB(=노리츠부시) 역간 0.7/1.5, 永田町 위치가 -0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_namboku_line_tokyo_metro"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "三岐鉄道北勢線",
+    "section": "西別所～蓮花寺～在良",
+    "km": [
+     1.3,
+     0.8
+    ]
+   },
+   "official": {
+    "line": "三岐鉄道北勢線",
+    "section": "西別所～蓮花寺～在良",
+    "km": [
+     1.5,
+     0.6
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 1.5/0.6"
+   },
+   "db_now": "DB(=노리츠부시) 역간 1.3/0.8, 蓮花寺 위치가 -0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_hokusei_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "えちぜん鉄道勝山永平寺線",
+    "section": "志比堺～永平寺口～下志比",
+    "km": [
+     1.6,
+     1.0
+    ]
+   },
+   "official": {
+    "line": "えちぜん鉄道勝山永平寺線",
+    "section": "志比堺～永平寺口～下志比",
+    "km": [
+     0.8,
+     1.8
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 0.8/1.8"
+   },
+   "db_now": "DB(=노리츠부시) 역간 1.6/1.0, 永平寺口 위치가 +0.8km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_katsuyama_eiheiji_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "土佐くろしお鉄道ごめん・なはり線",
+    "section": "和食～赤野～穴内",
+    "km": [
+     1.4,
+     4.0
+    ]
+   },
+   "official": {
+    "line": "土佐くろしお鉄道ごめん・なはり線",
+    "section": "和食～赤野～穴内",
+    "km": [
+     1.8,
+     3.6
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 1.8/3.6"
+   },
+   "db_now": "DB(=노리츠부시) 역간 1.4/4.0, 赤野 위치가 -0.4km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_asa_line"
+  },
+  {
+   "category": "4 영업km",
+   "noritsubushi": {
+    "id": null,
+    "title": "上田電鉄別所線",
+    "section": "赤坂上～上田原～寺下",
+    "km": [
+     0.5,
+     1.1
+    ]
+   },
+   "official": {
+    "line": "上田電鉄別所線",
+    "section": "赤坂上～上田原～寺下",
+    "km": [
+     0.7,
+     0.9
+    ],
+    "source_url": "data/candidates/wiki_km.json (ja.wikipedia 노선도 km, 가져온 판은 각 노선 문서)",
+    "quote": "위키 노선도 역간 0.7/0.9"
+   },
+   "db_now": "DB(=노리츠부시) 역간 0.5/1.1, 上田原 위치가 -0.2km 다름. 노선 합계는 같음",
+   "confidence": "낮음",
+   "proposed_action": "요람 본문 확인 전에는 현행 유지(위키 노선도는 『鉄道要覧』 아님)",
+   "sync_mapping": null,
+   "route": "r_bessho_line"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "11901",
+    "title": "日光線 宇都宮 ～ 日光 営業km: 40.5",
+    "section": "文挾",
+    "km": null
+   },
+   "official": {
+    "line": "文挟",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「文挟」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "noritsubushi 별칭 유지, 공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "11901",
+     "station": "文挾"
+    },
+    "to": [
+     {
+      "station": "文挟"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "7201",
+    "title": "可部線 横川 ～ あき亀山 営業km: 15.6",
+    "section": "下祇園",
+    "km": null
+   },
+   "official": {
+    "line": "下祗園",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「下祗園」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "7201",
+     "station": "下祇園"
+    },
+    "to": [
+     {
+      "station": "下祗園"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "21201",
+    "title": "長崎本線 鳥栖 ～ 長崎 営業km: 125.3",
+    "section": "東諌早",
+    "km": null
+   },
+   "official": {
+    "line": "東諫早",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「東諫早」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "21201",
+     "station": "東諌早"
+    },
+    "to": [
+     {
+      "station": "東諫早"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "10010100",
+    "title": "宇都宮線 新栃木 ～ 東武宇都宮 営業km: 24.3",
+    "section": "江曽島",
+    "km": null
+   },
+   "official": {
+    "line": "江曾島",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「江曾島」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "10010100",
+     "station": "江曽島"
+    },
+    "to": [
+     {
+      "station": "江曾島"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "43190010",
+    "title": "妙見線 川西能勢口 ～ 妙見口 営業km: 12.2",
+    "section": "鶯の森",
+    "km": null
+   },
+   "official": {
+    "line": "鴬の森",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「鴬の森」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "43190010",
+     "station": "鶯の森"
+    },
+    "to": [
+     {
+      "station": "鴬の森"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44080020",
+    "title": "大社線 川跡 ～ 出雲大社前 営業km: 8.3",
+    "section": "遙堪",
+    "km": null
+   },
+   "official": {
+    "line": "遥堪",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「遥堪」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "44080020",
+     "station": "遙堪"
+    },
+    "to": [
+     {
+      "station": "遥堪"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44110020",
+    "title": "後免線 後免町 ～ はりまや橋 営業km: 10.9",
+    "section": "小籠通",
+    "km": null
+   },
+   "official": {
+    "line": "小篭通",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「小篭通」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "44110020",
+     "station": "小籠通"
+    },
+    "to": [
+     {
+      "station": "小篭通"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "43180010",
+    "title": "乗車区間の選択【和歌山電鐵 貴志川線】",
+    "section": "伊太祁曽",
+    "km": null
+   },
+   "official": {
+    "line": "伊太祈曽",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「伊太祈曽」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "공식 표기 별칭 추가",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "43180010",
+     "station": "伊太祁曽"
+    },
+    "to": [
+     {
+      "station": "伊太祈曽"
+     }
+    ]
+   },
+   "kind": "표기(異体字)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44020010",
+    "title": "東山本線 岡山駅前 ～ 東山・おかでんチャギントンミュージアム駅 営業km: 3.1",
+    "section": "東山・おかでんチャギントンミュージアム駅",
+    "km": null
+   },
+   "official": {
+    "line": "東山・おかでんミュージアム",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「東山・おかでんミュージアム」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지, 별칭",
+   "sync_mapping": null,
+   "kind": "이름(부명칭)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "40290010",
+    "title": "新湊港線 越ノ潟 ～ 六渡寺 営業km: 4.9",
+    "section": "クロスベイ前（旧西新湊）",
+    "km": null
+   },
+   "official": {
+    "line": "第一イン新湊クロスベイ前",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「第一イン新湊クロスベイ前」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지, 별칭",
+   "sync_mapping": null,
+   "kind": "이름(명명권)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "40290020",
+    "title": "高岡軌道線 高岡駅 ～ 六渡寺 営業km: 8.0",
+    "section": "米島口アルビス米島店前",
+    "km": null
+   },
+   "official": {
+    "line": "米島口",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「米島口」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지, 별칭",
+   "sync_mapping": null,
+   "kind": "이름(명명권)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "45040020",
+    "title": "本線 住吉 ～ 崇福寺（旧正覚寺下） 営業km: 7.0",
+    "section": "スタジアムシティノース（旧銭座町）",
+    "km": null
+   },
+   "official": {
+    "line": "銭座町(N02-24 옛 이름)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「銭座町(N02-24 옛 이름)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "이름(개칭, N02 옛)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "45040020",
+    "title": "本線 住吉 ～ 崇福寺（旧正覚寺下） 営業km: 7.0",
+    "section": "スタジアムシティサウス（旧宝町）",
+    "km": null
+   },
+   "official": {
+    "line": "宝町(N02-24 옛 이름)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「宝町(N02-24 옛 이름)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "이름(개칭, N02 옛)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44100080",
+    "title": "大手町線 古町 ～ 西堀端 営業km: 1.4",
+    "section": "松山駅前",
+    "km": null
+   },
+   "official": {
+    "line": "JR松山駅前",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「JR松山駅前」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지, 별칭",
+   "sync_mapping": null,
+   "kind": "이름"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44100080",
+    "title": "大手町線 古町 ～ 西堀端 営業km: 1.4",
+    "section": "大手町",
+    "km": null
+   },
+   "official": {
+    "line": "大手町駅前",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「大手町駅前」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지, 별칭",
+   "sync_mapping": null,
+   "kind": "이름"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44100090",
+    "title": "花園線 松山市駅前 ～ 南堀端 営業km: 0.4",
+    "section": "松山市駅前",
+    "km": null
+   },
+   "official": {
+    "line": "松山市駅",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「松山市駅」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지, 별칭",
+   "sync_mapping": null,
+   "kind": "이름"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "45100010",
+    "title": "乗車区間の選択【くま川鉄道 湯前線】",
+    "section": "多良木青蓮寺（旧 東多良木）",
+    "km": null
+   },
+   "official": {
+    "line": "東多良木(N02-24 옛 이름)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「東多良木(N02-24 옛 이름)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "이름(개칭)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "10010010",
+    "title": "伊勢崎線 浅草 ～ 伊勢崎 営業km: 114.5",
+    "section": "とうきょうスカイツリー／押上 (한 역으로 표기)",
+    "km": null
+   },
+   "official": {
+    "line": "とうきょうスカイツリー, 押上 (두 역)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「とうきょうスカイツリー, 押上 (두 역)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "가져오기 때 本線은 n_tokyo_skytree, 押上 지선은 n_oshiage_tobu로",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "10010010",
+     "station": "とうきょうスカイツリー／押上 (한 역으로 표기)"
+    },
+    "to": [
+     {
+      "station": "とうきょうスカイツリー, 押上 (두 역)"
+     }
+    ]
+   },
+   "kind": "역 합침"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "10110070",
+    "title": "橿原線 大和西大寺 ～ 橿原神宮前 営業km: 23.8",
+    "section": "大和八木／八木西口 (한 역으로 표기)",
+    "km": null
+   },
+   "official": {
+    "line": "大和八木, 八木西口 (두 역)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「大和八木, 八木西口 (두 역)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지(노리츠부시 관례), 가져오기 표에 두 노드 대응",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "10110070",
+     "station": "大和八木／八木西口 (한 역으로 표기)"
+    },
+    "to": [
+     {
+      "station": "大和八木, 八木西口 (두 역)"
+     }
+    ]
+   },
+   "kind": "역 합침"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "45040050",
+    "title": "蛍茶屋支線 西浜町／浜町アーケード ～ 蛍茶屋 営業km: 2.2",
+    "section": "西浜町／浜町アーケード",
+    "km": null
+   },
+   "official": {
+    "line": "西浜町, 浜町アーケード",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「西浜町, 浜町アーケード」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "가져오기 표에 대응",
+   "sync_mapping": {
+    "from": {
+     "nori_id": "45040050",
+     "station": "西浜町／浜町アーケード"
+    },
+    "to": [
+     {
+      "station": "西浜町, 浜町アーケード"
+     }
+    ]
+   },
+   "kind": "역 합침"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44040020",
+    "title": "宇品線 紙屋町 ～ 広島港 営業km: 5.9",
+    "section": "紙屋町",
+    "km": null
+   },
+   "official": {
+    "line": "紙屋町東, 紙屋町西 (N02 둘로)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「紙屋町東, 紙屋町西 (N02 둘로)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지(법적으로 한 정류장: 広島電鉄本線 문서 「正式には紙屋町のまま」)",
+   "sync_mapping": null,
+   "kind": "역 나눔"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "17101",
+    "title": "越後線 柏崎 ～ 新潟 営業km: 83.8",
+    "section": "上所",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 신역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "5201",
+    "title": "山陽本線 神戸 ～ 下関 営業km: 528.1",
+    "section": "手柄山平和公園",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 신역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "22601",
+    "title": "日豊本線 小倉 ～ 鹿児島 営業km: 462.6",
+    "section": "仙巌園",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 신역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "42240010",
+    "title": "乗車区間の選択【ハピラインふくい ハピラインふくい線】",
+    "section": "しきぶ",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 신역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "44040050",
+    "title": "皆実線 稲荷町 ～ 皆実町六丁目 営業km: 2.2",
+    "section": "松川町",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 신역(2025-08-03)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "30100040",
+    "title": "中央線 (4号線) 夢洲 ～ 長田 営業km: 21.1",
+    "section": "夢洲",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 신역(2025-01-19)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "21201",
+    "title": "長崎本線 鳥栖 ～ 長崎 営業km: 125.3",
+    "section": "(臨)バルーンさが",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 없음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 없음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "임시역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "19101",
+    "title": "牟岐線 徳島 ～ 阿波海南 営業km: 77.8",
+    "section": "(없음)",
+    "km": null
+   },
+   "official": {
+    "line": "田井ノ浜",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「田井ノ浜」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "DB는 이미 있음(r_mugi_line 45.7). 가져오기 때 노리츠부시엔 대응 없음",
+   "sync_mapping": null,
+   "kind": "임시역(노리츠부시 없음)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "18301",
+    "title": "予讃線 高松 ～ 宇和島 営業km: 297.6",
+    "section": "(없음)",
+    "km": null
+   },
+   "official": {
+    "line": "津島ノ宮",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「津島ノ宮」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "중간",
+   "proposed_action": "DB는 이미 있음(r_yosan_line 39.8)",
+   "sync_mapping": null,
+   "kind": "임시역(노리츠부시 없음)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "45100010",
+    "title": "乗車区間の選択【くま川鉄道 湯前線】",
+    "section": "(없음)",
+    "km": null
+   },
+   "official": {
+    "line": "川村",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「川村」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "낮음",
+   "proposed_action": "くま川鉄道 川村역 현황 미확인. 확인 후 결정",
+   "sync_mapping": null,
+   "kind": "역 유무(미확인)"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "24701",
+    "title": "函館本線 函館 ～ 旭川 営業km: 423.1",
+    "section": "*二股, *仁山",
+    "km": null
+   },
+   "official": {
+    "line": "二股, 仁山 (N02-24에 있음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「二股, 仁山 (N02-24에 있음)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 폐역·신호장화"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "26703",
+    "title": "根室本線 (新得～根室) 新得 ～ 根室 営業km: 307.5",
+    "section": "*東根室",
+    "km": null
+   },
+   "official": {
+    "line": "東根室 (N02-24에 있음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「東根室 (N02-24에 있음)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 폐역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "26701",
+    "title": "根室本線 (滝川～富良野) 滝川 ～ 富良野 営業km: 54.6",
+    "section": "*東滝川",
+    "km": null
+   },
+   "official": {
+    "line": "東滝川 (N02-24에 있음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station 「東滝川 (N02-24에 있음)」"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 폐역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "27301",
+    "title": "宗谷本線 旭川 ～ 稚内 営業km: 259.4",
+    "section": "*雄信内, *抜海, *南幌延",
+    "km": null
+   },
+   "official": {
+    "line": "(N02-24에 있음)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (N02-24에 있음)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "kind": "N02 이후 폐역"
+  },
+  {
+   "category": "5 역 목록·표기",
+   "noritsubushi": {
+    "id": "103",
+    "title": "東海道本線 米原 ～ 神戸 営業km: 143.6",
+    "section": "吹田貨物ターミナル (역 목록에 있음)",
+    "km": null
+   },
+   "official": {
+    "line": "(여객역 아님)",
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 Station (여객역 아님)"
+   },
+   "db_now": "DB 역 이름은 노리츠부시 표기(별칭 kind=noritsubushi)",
+   "confidence": "높음",
+   "proposed_action": "DB는 정차역으로 두지 않음. 현행 유지",
+   "sync_mapping": null,
+   "kind": "비여객 지점"
+  },
+  {
+   "category": "6 커버리지",
+   "noritsubushi": {
+    "id": "900025001",
+    "title": "海峡線 中小国 ～ 木古内 営業km: 87.8",
+    "section": "中小国～木古内",
+    "km": 87.8
+   },
+   "official": {
+    "line": "JR北海道 海峡線",
+    "section": "中小国～木古内",
+    "km": 87.8,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=海峡線&oldid=111124231",
+    "quote": "中小国駅 - 木古内駅間 87.8 km"
+   },
+   "db_now": "l_kaikyo_line은 끝난 노선(현재 edge 없음). 같은 선로는 北海道新幹線",
+   "confidence": "중간",
+   "proposed_action": "현행 유지 권장(2016-03-26 이후 정기 여객 없음, 노리츠부시도 폐지 취급). 『鉄道要覧』·N02-24엔 노선이 남아 있음을 메모로",
+   "sync_mapping": null
+  },
+  {
+   "category": "6 커버리지",
+   "noritsubushi": {
+    "id": "900026501",
+    "title": "留萌本線 深川 ～ 増毛 営業km: 66.8",
+    "section": "深川～増毛",
+    "km": 66.8
+   },
+   "official": {
+    "line": "JR北海道 留萌線",
+    "section": "深川～石狩沼田",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 留萌線 深川～石狩沼田 있음"
+   },
+   "db_now": "끝난 노선",
+   "confidence": "높음",
+   "proposed_action": "N02-24가 2026-04-01 폐지 전 자료. 현행 유지",
+   "sync_mapping": null
+  },
+  {
+   "category": "6 커버리지",
+   "noritsubushi": {
+    "id": "900022702",
+    "title": "日田彦山線 添田 ～ 夜明 営業km: 29.2",
+    "section": "添田～夜明",
+    "km": 29.2
+   },
+   "official": {
+    "line": "JR九州 日田彦山線",
+    "section": "添田～夜明",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24에 添田～夜明 철도 선형·역 있음"
+   },
+   "db_now": "끝난 구간(BRT)",
+   "confidence": "높음",
+   "proposed_action": "N02-24가 BRT 전환(2023-08-28) 반영 전. 현행 유지",
+   "sync_mapping": null
+  },
+  {
+   "category": "6 커버리지",
+   "noritsubushi": {
+    "id": null,
+    "title": "(노리츠부시 없음)",
+    "section": "富田～三岐朝明信号場",
+    "km": null
+   },
+   "official": {
+    "line": "三岐鉄道 三岐線",
+    "section": "富田～三岐朝明信号場",
+    "km": 1.1,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=三岐鉄道三岐線&oldid=111510770",
+    "quote": "富田駅 - 三岐朝明信号場間は貨物列車専用"
+   },
+   "db_now": "없음",
+   "confidence": "중간",
+   "proposed_action": "화물 전용이라 현행 유지",
+   "sync_mapping": null
+  },
+  {
+   "category": "6 커버리지",
+   "noritsubushi": {
+    "id": "jrx/prx 24건",
+    "title": "乗車区間の選択【…貨物線/支線/連絡線】",
+    "section": null,
+    "km": null
+   },
+   "official": {
+    "line": null,
+    "section": null,
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24엔 별도 노선 없음(모선 선형에 포함)"
+   },
+   "db_now": "rule_class extra로 수록(분모 밖)",
+   "confidence": "높음",
+   "proposed_action": "1 구간 소속의 해당 행대로 모선 소속으로 정리",
+   "sync_mapping": null
+  },
+  {
+   "category": "6 커버리지",
+   "noritsubushi": {
+    "id": "44100060",
+    "title": "城南線 (大手町線側) 平和通一丁目 ～ 上一万 営業km: 0.1",
+    "section": "平和通一丁目～上一万",
+    "km": 0.1
+   },
+   "official": {
+    "line": "伊予鉄道 連絡線(N02-24 이름)",
+    "section": "平和通一丁目～上一万",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 路線名 「連絡線」"
+   },
+   "db_now": "노리츠부시 「城南線 (大手町線側)」와 같음",
+   "confidence": "낮음",
+   "proposed_action": "이름만 다름. 공식 노선명 확인 필요(웹 미확인)",
+   "sync_mapping": null
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "10090100",
+    "title": "副都心線 (13号線) 和光市 ～ 渋谷 営業km: 20.2",
+    "section": "和光市～渋谷",
+    "km": 20.2
+   },
+   "official": {
+    "line": "l_yurakucho_line (8号線有楽町線)",
+    "section": "和光市～小竹向原",
+    "km": null,
+    "source_url": "https://web.archive.org/web/20260123151158/https://www.tokyometro.jp/corporate/enterprise/passenger_rail/transportation/lines/index.html",
+    "quote": "和光市～小竹向原間8.3キロは有楽町線の線路を使用"
+   },
+   "db_now": "edge_attr: l_fukutoshin_line",
+   "confidence": "높음",
+   "proposed_action": "line_id를 l_yurakucho_line으로",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_007289",
+    "e_007290",
+    "e_007291",
+    "e_007292",
+    "e_007293"
+   ],
+   "lines_now": "l_fukutoshin_line",
+   "legal_owner": "l_yurakucho_line (8号線有楽町線)",
+   "kind": "비소유 노선이 가짐"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "110010010",
+    "title": "乗車区間の選択【東武鉄道 半蔵門線直通】",
+    "section": "押上～曳舟",
+    "km": 2.4
+   },
+   "official": {
+    "line": "l_isesaki_line (伊勢崎線 선증)",
+    "section": "押上～曳舟",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=東武伊勢崎線&oldid=111687491",
+    "quote": "とうきょうスカイツリー駅 - 曳舟駅間の線増扱い"
+   },
+   "db_now": "edge_attr: l_hanzomon_line_through_service (extra)",
+   "confidence": "높음",
+   "proposed_action": "l_isesaki_line의 병행(adjacent) 칸으로, km 1.3, 분모 밖",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_010248"
+   ],
+   "lines_now": "l_hanzomon_line_through_service (extra)",
+   "legal_owner": "l_isesaki_line (伊勢崎線 선증)",
+   "kind": "비소유 노선이 가짐"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100024701",
+    "title": "乗車区間の選択【藤城線 (函館本線)】",
+    "section": "七飯～大沼",
+    "km": 13.2
+   },
+   "official": {
+    "line": "l_hakodate_main_line (函館本線)",
+    "section": "七飯～大沼",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 函館線 선형"
+   },
+   "db_now": "edge_attr: l_fujishiro_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_hakodate_main_line의 지선 계통으로 옮김(extra 유지). 여객: 하행 특급·보통 운행(여객 운임은 本線 경유 계산)",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006337"
+   ],
+   "lines_now": "l_fujishiro_line (extra)",
+   "legal_owner": "l_hakodate_main_line (函館本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000101",
+    "title": "乗車区間の選択【東海道貨物線 (東海道本線)】",
+    "section": "鶴見～東戸塚",
+    "km": 16.0
+   },
+   "official": {
+    "line": "l_tokaido_main_line (東海道本線)",
+    "section": "鶴見～東戸塚",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형"
+   },
+   "db_now": "edge_attr: l_tokaido_freight_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_tokaido_main_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006338"
+   ],
+   "lines_now": "l_tokaido_freight_line (extra)",
+   "legal_owner": "l_tokaido_main_line (東海道本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000104",
+    "title": "乗車区間の選択【高島線 (東海道本線)】",
+    "section": "鶴見～桜木町",
+    "km": 8.5
+   },
+   "official": {
+    "line": "l_tokaido_main_line (東海道本線)",
+    "section": "鶴見～桜木町",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형"
+   },
+   "db_now": "edge_attr: l_takashima_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_tokaido_main_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006339",
+    "e_006340",
+    "e_006341"
+   ],
+   "lines_now": "l_takashima_line (extra)",
+   "legal_owner": "l_tokaido_main_line (東海道本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000301",
+    "title": "乗車区間の選択【大崎支線 (大崎駅構内)】",
+    "section": "大崎～西大井",
+    "km": 2.2
+   },
+   "official": {
+    "line": "l_tokaido_main_line (東海道本線(品鶴線 연결))",
+    "section": "大崎～西大井",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형"
+   },
+   "db_now": "edge_attr: l_osaki_branch_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_tokaido_main_line의 지선 계통으로 옮김(extra 유지). 여객: 湘南新宿ライン·相鉄直通 정기 운행",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006342"
+   ],
+   "lines_now": "l_osaki_branch_line (extra)",
+   "legal_owner": "l_tokaido_main_line (東海道本線(品鶴線 연결))",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000302",
+    "title": "乗車区間の選択【山手貨物線 (山手線)】",
+    "section": "駒込～田端信号場",
+    "km": 1.6
+   },
+   "official": {
+    "line": "l_yamanote_line (山手線)",
+    "section": "駒込～田端信号場",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 山手線 선형"
+   },
+   "db_now": "edge_attr: l_yamanote_freight_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_yamanote_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006343"
+   ],
+   "lines_now": "l_yamanote_freight_line (extra)",
+   "legal_owner": "l_yamanote_line (山手線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000701",
+    "title": "乗車区間の選択【武蔵野南線 (武蔵野線)】",
+    "section": "鶴見～府中本町",
+    "km": 28.8
+   },
+   "official": {
+    "line": "l_musashino_line (武蔵野線)",
+    "section": "鶴見～府中本町",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "旅客運賃・料金は原則として南浦和駅経由で計算"
+   },
+   "db_now": "edge_attr: l_musashino_south_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_musashino_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006344"
+   ],
+   "lines_now": "l_musashino_south_line (extra)",
+   "legal_owner": "l_musashino_line (武蔵野線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000702",
+    "title": "乗車区間の選択【国立支線 (武蔵野線)】",
+    "section": "新小平～国立",
+    "km": 5.0
+   },
+   "official": {
+    "line": "l_musashino_line (武蔵野線)",
+    "section": "新小平～国立",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "旅客運賃・料金は原則として南浦和駅経由で計算"
+   },
+   "db_now": "edge_attr: l_kunitachi_branch_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_musashino_line의 지선 계통으로 옮김(extra 유지). 여객: 임시 여객만",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006345"
+   ],
+   "lines_now": "l_kunitachi_branch_line (extra)",
+   "legal_owner": "l_musashino_line (武蔵野線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000703",
+    "title": "乗車区間の選択【大宮支線 (武蔵野線)】",
+    "section": "西浦和～与野",
+    "km": 4.9
+   },
+   "official": {
+    "line": "l_musashino_line (武蔵野線)",
+    "section": "西浦和～与野",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "旅客運賃・料金は原則として南浦和駅経由で計算"
+   },
+   "db_now": "edge_attr: l_omiya_branch_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_musashino_line의 지선 계통으로 옮김(extra 유지). 여객: むさしの号 정기(운임은 南浦和 경유)",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006346"
+   ],
+   "lines_now": "l_omiya_branch_line (extra)",
+   "legal_owner": "l_musashino_line (武蔵野線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000704",
+    "title": "乗車区間の選択【西浦和支線 (武蔵野線)】",
+    "section": "武蔵浦和～与野",
+    "km": 5.2
+   },
+   "official": {
+    "line": "l_musashino_line (武蔵野線)",
+    "section": "武蔵浦和～与野",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "旅客運賃・料金は原則として南浦和駅経由で計算"
+   },
+   "db_now": "edge_attr: l_nishiurawa_branch_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_musashino_line의 지선 계통으로 옮김(extra 유지). 여객: しもうさ号 정기",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006347"
+   ],
+   "lines_now": "l_nishiurawa_branch_line (extra)",
+   "legal_owner": "l_musashino_line (武蔵野線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000705",
+    "title": "乗車区間の選択【馬橋支線 (武蔵野線)】",
+    "section": "南流山～馬橋",
+    "km": 3.7
+   },
+   "official": {
+    "line": "l_musashino_line (武蔵野線)",
+    "section": "南流山～馬橋",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "旅客運賃・料金は原則として南浦和駅経由で計算"
+   },
+   "db_now": "edge_attr: l_mabashi_branch_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_musashino_line의 지선 계통으로 옮김(extra 유지). 여객: 임시 여객만",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006348"
+   ],
+   "lines_now": "l_mabashi_branch_line (extra)",
+   "legal_owner": "l_musashino_line (武蔵野線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000706",
+    "title": "乗車区間の選択【北小金支線 (武蔵野線)】",
+    "section": "南流山～北小金",
+    "km": 2.9
+   },
+   "official": {
+    "line": "l_musashino_line (武蔵野線)",
+    "section": "南流山～北小金",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=武蔵野線&oldid=111444149",
+    "quote": "旅客運賃・料金は原則として南浦和駅経由で計算"
+   },
+   "db_now": "edge_attr: l_kita_kogane_branch_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_musashino_line의 지선 계통으로 옮김(extra 유지). 여객: しもうさ号 정기",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006349"
+   ],
+   "lines_now": "l_kita_kogane_branch_line (extra)",
+   "legal_owner": "l_musashino_line (武蔵野線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100010401",
+    "title": "乗車区間の選択【東北貨物線 (東北本線)】",
+    "section": "田端信号場～上中里",
+    "km": 1.7
+   },
+   "official": {
+    "line": "l_tohoku_main_line (東北本線)",
+    "section": "田端信号場～上中里",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東北線 선형"
+   },
+   "db_now": "edge_attr: l_tohoku_freight_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_tohoku_main_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006350"
+   ],
+   "lines_now": "l_tohoku_freight_line (extra)",
+   "legal_owner": "l_tohoku_main_line (東北本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100010601",
+    "title": "乗車区間の選択【田端貨物線 (常磐線)】",
+    "section": "田端信号場～三河島",
+    "km": 1.6
+   },
+   "official": {
+    "line": "l_joban_line (常磐線(노리츠부시 표기))",
+    "section": "田端信号場～三河島",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 常磐線 선형"
+   },
+   "db_now": "edge_attr: l_tabata_freight_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_joban_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006351"
+   ],
+   "lines_now": "l_tabata_freight_line (extra)",
+   "legal_owner": "l_joban_line (常磐線(노리츠부시 표기))",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100017401",
+    "title": "乗車区間の選択【新金線 (総武本線)】",
+    "section": "小岩～金町",
+    "km": 8.9
+   },
+   "official": {
+    "line": "l_sobu_main_line (総武本線)",
+    "section": "小岩～金町",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 総武線 선형"
+   },
+   "db_now": "edge_attr: l_shinkin_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_sobu_main_line의 지선 계통으로 옮김(extra 유지). 여객: 이 조사 시점의 판단은 틀림, 여객 영업 기간은 아래 「정정」",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006353",
+    "e_006354"
+   ],
+   "lines_now": "l_shinkin_line (extra)",
+   "legal_owner": "l_sobu_main_line (総武本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000102",
+    "title": "乗車区間の選択【北方貨物線 (東海道本線)】",
+    "section": "吹田貨物ターミナル～尼崎",
+    "km": 12.2
+   },
+   "official": {
+    "line": "l_tokaido_main_line (東海道本線)",
+    "section": "吹田貨物ターミナル～尼崎",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형"
+   },
+   "db_now": "edge_attr: l_hoppo_freight_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_tokaido_main_line의 지선 계통으로 옮김(extra 유지). 여객: 임시 여객만",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006355"
+   ],
+   "lines_now": "l_hoppo_freight_line (extra)",
+   "legal_owner": "l_tokaido_main_line (東海道本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "100000103",
+    "title": "乗車区間の選択【梅田貨物線 (東海道本線)】",
+    "section": "吹田貨物ターミナル～福島",
+    "km": 10.0
+   },
+   "official": {
+    "line": "l_tokaido_main_line (東海道本線)",
+    "section": "吹田貨物ターミナル～福島",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 東海道線 선형"
+   },
+   "db_now": "edge_attr: l_umeda_freight_line (extra)",
+   "confidence": "중간",
+   "proposed_action": "l_tokaido_main_line의 지선 계통으로 옮김(extra 유지). 여객: はるか·くろしお 정기(2023-03~), 운임은 東海道本線(旅客線) 경유",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006356",
+    "e_006357",
+    "e_006358"
+   ],
+   "lines_now": "l_umeda_freight_line (extra)",
+   "legal_owner": "l_tokaido_main_line (東海道本線)",
+   "kind": "화물·연결선 별도 노선(법적으로 모선 소속)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "10030020",
+    "title": "東成田線 [駒井野分岐点] ～ 東成田 営業km: 1.1",
+    "section": "[駒井野分岐点]～東成田",
+    "km": 1.1
+   },
+   "official": {
+    "line": "l_keisei_main_line + l_higashi_narita_line (요람 이중 등록)",
+    "section": "京成成田～駒井野信号場",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=京成東成田線&oldid=111310004",
+    "quote": "うち6.0 kmは本線と重複"
+   },
+   "db_now": "edge_attr: l_keisei_main_line",
+   "confidence": "중간",
+   "proposed_action": "결정 필요: 사철 이중 등록을 예외로 인정하면 l_higashi_narita_line 병행(shared) edge 추가",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_006728"
+   ],
+   "lines_now": "l_keisei_main_line",
+   "legal_owner": "l_keisei_main_line + l_higashi_narita_line (요람 이중 등록)",
+   "kind": "소유 노선 빠짐(이중 등록)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "44110030",
+    "title": "桟橋線 高知駅前 ～ 桟橋通五丁目 営業km: 3.2",
+    "section": "高知駅前～桟橋通五丁目",
+    "km": 3.2
+   },
+   "official": {
+    "line": "駅前線 (とさでん交通)",
+    "section": "高知駅前～はりまや橋",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=とさでん交通桟橋線&oldid=108470759",
+    "quote": "かつては現在の駅前線を含めた…区間を桟橋線と称する"
+   },
+   "db_now": "edge_attr: l_sambashi_line",
+   "confidence": "높음",
+   "proposed_action": "새 노선 駅前線(高知駅前～はりまや橋 0.8)으로 분리, l_sambashi_line은 はりまや橋～桟橋通五丁目 2.4",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_010070",
+    "e_010071",
+    "e_010072",
+    "e_010073"
+   ],
+   "lines_now": "l_sambashi_line",
+   "legal_owner": "駅前線 (とさでん交通)",
+   "kind": "노선 합침(법적으로 두 노선)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "40005010",
+    "title": "乗車区間の選択【札幌市交通事業振興公社 1条線・山鼻線・山鼻西線・都心線】",
+    "section": "西4丁目～西4丁目",
+    "km": 8.9
+   },
+   "official": {
+    "line": "一条線 (札幌市交通事業振興公社)",
+    "section": "西4丁目～西15丁目",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=札幌市電&oldid=110980163",
+    "quote": "以下の4路線からなり"
+   },
+   "db_now": "edge_attr: l_sapporo_streetcar",
+   "confidence": "높음",
+   "proposed_action": "l_sapporo_streetcar를 4노선으로 나누거나, 현 노선 유지 + 계통 메모(결정 필요)",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_010749",
+    "e_010750",
+    "e_010751"
+   ],
+   "lines_now": "l_sapporo_streetcar",
+   "legal_owner": "一条線 (札幌市交通事業振興公社)",
+   "kind": "노선 합침(법적으로 네 노선)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "40005010",
+    "title": "乗車区間の選択【札幌市交通事業振興公社 1条線・山鼻線・山鼻西線・都心線】",
+    "section": "西4丁目～西4丁目",
+    "km": 8.9
+   },
+   "official": {
+    "line": "山鼻西線 (札幌市交通事業振興公社)",
+    "section": "西15丁目～中央図書館前",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=札幌市電&oldid=110980163",
+    "quote": "以下の4路線からなり"
+   },
+   "db_now": "edge_attr: l_sapporo_streetcar",
+   "confidence": "높음",
+   "proposed_action": "l_sapporo_streetcar를 4노선으로 나누거나, 현 노선 유지 + 계통 메모(결정 필요)",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_010752",
+    "e_010753",
+    "e_010754",
+    "e_010755",
+    "e_010756",
+    "e_010757",
+    "e_010758",
+    "e_010759"
+   ],
+   "lines_now": "l_sapporo_streetcar",
+   "legal_owner": "山鼻西線 (札幌市交通事業振興公社)",
+   "kind": "노선 합침(법적으로 네 노선)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "40005010",
+    "title": "乗車区間の選択【札幌市交通事業振興公社 1条線・山鼻線・山鼻西線・都心線】",
+    "section": "西4丁目～西4丁目",
+    "km": 8.9
+   },
+   "official": {
+    "line": "山鼻線 (札幌市交通事業振興公社)",
+    "section": "中央図書館前～すすきの",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=札幌市電&oldid=110980163",
+    "quote": "以下の4路線からなり"
+   },
+   "db_now": "edge_attr: l_sapporo_streetcar",
+   "confidence": "높음",
+   "proposed_action": "l_sapporo_streetcar를 4노선으로 나누거나, 현 노선 유지 + 계통 메모(결정 필요)",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_010760",
+    "e_010761",
+    "e_010762",
+    "e_010763",
+    "e_010764",
+    "e_010765",
+    "e_010766",
+    "e_010767",
+    "e_010768",
+    "e_010769",
+    "e_010770"
+   ],
+   "lines_now": "l_sapporo_streetcar",
+   "legal_owner": "山鼻線 (札幌市交通事業振興公社)",
+   "kind": "노선 합침(법적으로 네 노선)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": "40005010",
+    "title": "乗車区間の選択【札幌市交通事業振興公社 1条線・山鼻線・山鼻西線・都心線】",
+    "section": "西4丁目～西4丁目",
+    "km": 8.9
+   },
+   "official": {
+    "line": "都心線 (札幌市交通事業振興公社)",
+    "section": "すすきの～西4丁目",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=札幌市電&oldid=110980163",
+    "quote": "以下の4路線からなり"
+   },
+   "db_now": "edge_attr: l_sapporo_streetcar",
+   "confidence": "높음",
+   "proposed_action": "l_sapporo_streetcar를 4노선으로 나누거나, 현 노선 유지 + 계통 메모(결정 필요)",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_010771",
+    "e_010772"
+   ],
+   "lines_now": "l_sapporo_streetcar",
+   "legal_owner": "都心線 (札幌市交通事業振興公社)",
+   "kind": "노선 합침(법적으로 네 노선)"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": null,
+    "title": null,
+    "section": "稲荷町～的場町",
+    "km": null
+   },
+   "official": {
+    "line": "l_loop_line (현행이 맞음; N02는 本線(N02-24))",
+    "section": "稲荷町～的場町",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=広島電鉄本線&oldid=110701122",
+    "quote": "的場町 - 稲荷町間を循環線として分離"
+   },
+   "db_now": "edge_attr: l_loop_line",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_009828"
+   ],
+   "lines_now": "l_loop_line",
+   "legal_owner": "l_loop_line (현행이 맞음; N02는 本線(N02-24))",
+   "kind": "N02와 다르나 DB가 맞음"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": null,
+    "title": null,
+    "section": "的場町～比治山下",
+    "km": null
+   },
+   "official": {
+    "line": "l_loop_line (현행이 맞음; N02는 皆実線(N02-24))",
+    "section": "的場町～比治山下",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=広島電鉄皆実線&oldid=110659772",
+    "quote": "的場町 - 比治山下間を循環線として分離"
+   },
+   "db_now": "edge_attr: l_loop_line",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_009829",
+    "e_009830"
+   ],
+   "lines_now": "l_loop_line",
+   "legal_owner": "l_loop_line (현행이 맞음; N02는 皆実線(N02-24))",
+   "kind": "N02와 다르나 DB가 맞음"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": null,
+    "title": null,
+    "section": "代々木～新宿",
+    "km": null
+   },
+   "official": {
+    "line": "l_yamanote_line (현행이 맞음; N02는 山手線+中央線(N02-24 선형))",
+    "section": "代々木～新宿",
+    "km": null,
+    "source_url": "https://ja.wikipedia.org/w/index.php?title=中央本線&oldid=111456828",
+    "quote": "代々木駅 - 新宿駅間は山手線"
+   },
+   "db_now": "edge_attr: l_yamanote_line",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_000694"
+   ],
+   "lines_now": "l_yamanote_line",
+   "legal_owner": "l_yamanote_line (현행이 맞음; N02는 山手線+中央線(N02-24 선형))",
+   "kind": "N02와 다르나 DB가 맞음"
+  },
+  {
+   "category": "7 법적 소속 (DB 전수)",
+   "noritsubushi": {
+    "id": null,
+    "title": null,
+    "section": "新今宮～天王寺",
+    "km": null
+   },
+   "official": {
+    "line": "l_kansai_main_line (현행이 맞음; N02는 関西線+大阪環状線(N02-24 선형))",
+    "section": "新今宮～天王寺",
+    "km": null,
+    "source_url": "https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N02-2024.html",
+    "quote": "N02-24 大阪環状線·関西線 선형이 둘 다 지남(운행 선형). 노리츠부시 大阪環状線 天王寺～新今宮 20.7"
+   },
+   "db_now": "edge_attr: l_kansai_main_line",
+   "confidence": "높음",
+   "proposed_action": "현행 유지",
+   "sync_mapping": null,
+   "edge_ids": [
+    "e_002887"
+   ],
+   "lines_now": "l_kansai_main_line",
+   "legal_owner": "l_kansai_main_line (현행이 맞음; N02는 関西線+大阪環状線(N02-24 선형))",
+   "kind": "N02와 다르나 DB가 맞음"
+  }
+ ]
+}

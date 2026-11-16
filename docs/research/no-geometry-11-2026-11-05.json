@@ -1,0 +1,591 @@
+{
+ "date": "2026-11-05",
+ "status": "partial (deadline moved up)",
+ "items": [
+  {
+   "edge": "e_004393",
+   "name": "土讃線 土佐穴内(旧)–土佐穴内(新)",
+   "verdict": "fixable now",
+   "confidence": "high",
+   "rows": [
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_004393",
+      "source": "N05-24",
+      "coords": [
+       [
+        133.70194,
+        33.78563
+       ],
+       [
+        133.7008,
+        33.78507
+       ],
+       [
+        133.70029,
+        33.7846
+       ],
+       [
+        133.69988,
+        33.78405
+       ],
+       [
+        133.69959,
+        33.78356
+       ],
+       [
+        133.69921,
+        33.78242
+       ],
+       [
+        133.69907,
+        33.78161
+       ],
+       [
+        133.699,
+        33.78092
+       ],
+       [
+        133.6987,
+        33.78014
+       ],
+       [
+        133.69819,
+        33.77944
+       ],
+       [
+        133.69766,
+        33.779
+       ],
+       [
+        133.69668,
+        33.77851
+       ],
+       [
+        133.69649,
+        33.77844
+       ],
+       [
+        133.69613,
+        33.77919
+       ]
+      ]
+     }
+    },
+    {
+     "file": "source_patch/km",
+     "row": {
+      "patch": "replace",
+      "edge": "e_004393",
+      "km": 1.0,
+      "source": "n05+wikipedia:110668654"
+     }
+    }
+   ],
+   "note": "N05 土讃線 옛 선 #2119(1951–53)/#2123(1950) 옛 역 점에서 0.998 km 따라간 뒤 새 역(n_tosa_ananai, 0.089 km)까지 접속선. 0.1은 改キロ 차(「土佐穴内駅」revid 110668654)라 물리 거리 1.0~1.1. km를 0.1로 두려면 geometry만 넣어도 됨(source_patch add는 비율 검사 안 받음)."
+  },
+  {
+   "edge": "e_004958",
+   "name": "日田彦山線 妙見–東小倉",
+   "verdict": "needs GSI old aerial/map tracing (unfinished)",
+   "confidence": "low",
+   "rows": [
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_004958",
+      "source": "hand",
+      "quality": "approx",
+      "coords": [
+       [
+        130.895564,
+        33.86847
+       ],
+       [
+        130.899389,
+        33.887719
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "N05 添田線 #2317(1950–55)은 妙見(33.86847/130.895564)에서 끝남. 東小倉 쪽 1km 안 N05 선은 鹿児島線·北九州線뿐 → N05에 구간 없음 재확인. 직선 2.18 km(DB 2.5) 임시안. 国土地理院 1948~1962 空中写真 판독은 이번 시간 안에 못 함."
+  },
+  {
+   "edge": "e_006271",
+   "name": "芦屋線 筑前芦屋–芦屋乗降場",
+   "verdict": "needs GSI 1947–61 aerial (unfinished)",
+   "confidence": "low",
+   "rows": [
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_006271",
+      "source": "hand",
+      "quality": "approx",
+      "coords": [
+       [
+        130.666625,
+        33.8884
+       ],
+       [
+        130.668551,
+        33.886958
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "N05 芦屋線 #2413은 乗降場 점(33.88696/130.66855)에 길이 0인 조각뿐. 筑前芦屋 DB 좌표는 N05 선에서 0.239 km. 지금 두 노드 좌표 직선(≈0.24 km, DB 0.7)만 가능. 이전 조사 권고(위키 좌표 두 점)는 乗降場 좌표 교체가 먼저 필요."
+  },
+  {
+   "edge": "e_012299",
+   "name": "日頃市線 盛–猪川",
+   "verdict": "geometry fixable now; km needs 鉄道要覧/私鉄要覧 (NDL not checked)",
+   "confidence": "geometry high / km low",
+   "rows": [
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_012299",
+      "source": "N05-24",
+      "coords": [
+       [
+        141.71064,
+        39.08693
+       ],
+       [
+        141.70955,
+        39.08984
+       ],
+       [
+        141.70893,
+        39.09114
+       ],
+       [
+        141.70862,
+        39.09178
+       ],
+       [
+        141.70825,
+        39.09243
+       ],
+       [
+        141.70799,
+        39.09268
+       ],
+       [
+        141.70765,
+        39.09297
+       ],
+       [
+        141.70713,
+        39.09327
+       ],
+       [
+        141.70674,
+        39.09343
+       ],
+       [
+        141.70583,
+        39.0936
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "N05 日頃市線 #345(1960–91)/#346(1950–59), 盛→猪川 N05 점 0.897 km. 猪川 위치는 N05·Wikidata 일치. km 2.0(위키)과 0.9 불일치는 미해결 — NDL 鉄道要覧 확인 못 함."
+  },
+  {
+   "edge": "e_012354",
+   "name": "東川線 旭正–上旭正",
+   "verdict": "fixable now",
+   "confidence": "medium",
+   "rows": [
+    {
+     "file": "positions/research_29.yaml (또는 새 파일)",
+     "row": {
+      "node": "n_kyokusei",
+      "lat": 43.731158,
+      "lon": 142.447395,
+      "quality": "approx",
+      "source": "n05",
+      "checked": "2026-11-05",
+      "why": "N05 東川線 坂ノ上·上旭正 사이 km 보간"
+     }
+    },
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_012354",
+      "source": "N05-24",
+      "coords": [
+       [
+        142.44739,
+        43.73116
+       ],
+       [
+        142.44926,
+        43.73012
+       ],
+       [
+        142.45513,
+        43.72696
+       ],
+       [
+        142.45591,
+        43.72653
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "이전 조사의 旭正 좌표가 빌드에 안 들어가 있음(현재 43.726956/142.455134 = 上旭正 옆 80 m). N05 #158로 0.855 km(DB 1.2, ratio 0.71)."
+  },
+  {
+   "edge": "e_012900",
+   "name": "兵庫線 楠公前–神戸駅前",
+   "verdict": "fixable now",
+   "confidence": "high",
+   "rows": [
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_012900",
+      "source": "N05-24",
+      "coords": [
+       [
+        135.17645,
+        34.68075
+       ],
+       [
+        135.17666,
+        34.68088
+       ],
+       [
+        135.17675,
+        34.68091
+       ],
+       [
+        135.1768,
+        34.68091
+       ],
+       [
+        135.17686,
+        34.6809
+       ],
+       [
+        135.1769,
+        34.68088
+       ],
+       [
+        135.17727,
+        34.68052
+       ],
+       [
+        135.17742,
+        34.68037
+       ],
+       [
+        135.17745,
+        34.68031
+       ],
+       [
+        135.17747,
+        34.68025
+       ],
+       [
+        135.17746,
+        34.67982
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "N05 #1867(1950–69, 이름 1号線/2号線/栄町線 중 하나) 위 0.183 km, 두 역 점 모두 선 위(snap 0). DB 0.2와 일치."
+  },
+  {
+   "edge": "e_012907",
+   "name": "湊川線 湊川公園西口–湊川公園",
+   "verdict": "needs verification (merge likely); unfinished",
+   "confidence": "medium",
+   "rows": [],
+   "note": "N05 湊川公園/湊川公園西口 같은 ID EB03_19338001 → 改称 가능성 높음. DB 湊川公園(n_minatogawa_koen)은 지하철 노드(valid_to None)로 시영 전차 route에 잘못 끼임. 권고: route_stop에서 n_minatogawa_koen 제거, 湊川公園西口–新開地 0.5에 N05 #1875(0.342 km 이상, 이번엔 新開地 끝까지 못 잼). 「神戸市電湊川線」·NDL 원문 확인 못 함."
+  },
+  {
+   "edge": "e_013058",
+   "name": "勝鬨橋線 勝鬨橋–月島",
+   "verdict": "fixable now (node split)",
+   "confidence": "high",
+   "rows": [
+    {
+     "file": "source_patch/nodes",
+     "row": {
+      "patch": "add",
+      "id": "n_tsukishimadori_8_chome_toden",
+      "kind": "station",
+      "group": "g_tsukishimadori_8_chome_toden",
+      "pref": "13",
+      "export_name": "月島通八丁目",
+      "why": "都電 勝鬨橋線·月島線 종점(1965년부터 「月島」). 지하철 月島역과 다른 곳"
+     }
+    },
+    {
+     "file": "source_patch/positions",
+     "row": {
+      "patch": "add",
+      "node": "n_tsukishimadori_8_chome_toden",
+      "lat": 35.659647,
+      "lon": 139.778083,
+      "quality": "approx",
+      "checked": "2026-11-05",
+      "source": "n05"
+     }
+    },
+    {
+     "file": "source_patch/names",
+     "row": {
+      "patch": "add",
+      "entity_type": "node",
+      "id": "n_tsukishimadori_8_chome_toden",
+      "lang": "ja",
+      "text": "月島通八丁目",
+      "kana": "つきしまどおりはっちょうめ",
+      "source": "wikipedia"
+     }
+    },
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_013058(재연결 후 id)",
+      "source": "N05-24",
+      "coords": [
+       [
+        139.77238,
+        35.66497
+       ],
+       [
+        139.77371,
+        35.66367
+       ],
+       [
+        139.77478,
+        35.6625
+       ],
+       [
+        139.7758,
+        35.66139
+       ],
+       [
+        139.77697,
+        35.66019
+       ],
+       [
+        139.77754,
+        35.65955
+       ],
+       [
+        139.77764,
+        35.65949
+       ],
+       [
+        139.77781,
+        35.65948
+       ],
+       [
+        139.77808,
+        35.65965
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "N05 勝鬨橋線 #895(0.503) + 月島線 #958(0.315) = 0.818 km(DB 0.8). edge/route_stop의 to_node를 새 노드로 바꾸는 edges/routes 행 필요(id 체계상 e_0900xx 새 edge 권장)."
+  },
+  {
+   "edge": "e_013188",
+   "name": "伏木線 米島口–米島",
+   "verdict": "fixable now",
+   "confidence": "high",
+   "rows": [
+    {
+     "file": "positions",
+     "row": {
+      "node": "n_yonejimaguchi_fushiki",
+      "lat": 36.772144,
+      "lon": 137.038527,
+      "quality": "approx",
+      "source": "n05",
+      "checked": "2026-11-05",
+      "why": "N05 伏木線 米島口(1951–70)"
+     }
+    },
+    {
+     "file": "positions",
+     "row": {
+      "node": "n_yonejima",
+      "lat": 36.777465,
+      "lon": 137.04046,
+      "quality": "approx",
+      "source": "n05",
+      "checked": "2026-11-05",
+      "why": "N05 伏木線 米島(999–1970)"
+     }
+    },
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_013188",
+      "source": "N05-24",
+      "coords": [
+       [
+        137.03853,
+        36.77214
+       ],
+       [
+        137.04046,
+        36.77746
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "n_yonejimaguchi_fushiki 좌표 없음(none). N05 #1215/#1216 0.613 km(DB 0.5). n_yonejimaguchi_fushiki는 현역 정차 없음(위치 보정 가능). 같은 이름 현역 노드 n_yonejimaguchi(高岡軌道線, 36.7718/137.0384, N05 점과 50 m)가 따로 있어 같은 group으로 묶거나 그 좌표를 써도 됨."
+  },
+  {
+   "edge": "e_013262",
+   "name": "栄町線 車道–西裏",
+   "verdict": "fixable now (node split)",
+   "confidence": "medium-high",
+   "rows": [
+    {
+     "file": "source_patch/nodes",
+     "row": {
+      "patch": "add",
+      "id": "n_kurumamichi_shiden",
+      "kind": "station",
+      "group": "g_kurumamichi",
+      "pref": "23",
+      "export_name": "車道",
+      "why": "名古屋市電 栄町線 車道 정류장(広小路車道交差点). 지하철 車道역 0.5 km 북쪽과 다름"
+     }
+    },
+    {
+     "file": "source_patch/positions",
+     "row": {
+      "patch": "add",
+      "node": "n_kurumamichi_shiden",
+      "lat": 35.169554,
+      "lon": 136.925455,
+      "quality": "approx",
+      "checked": "2026-11-05",
+      "source": "n05"
+     }
+    },
+    {
+     "file": "source_patch/names",
+     "row": {
+      "patch": "add",
+      "entity_type": "node",
+      "id": "n_kurumamichi_shiden",
+      "lang": "ja",
+      "text": "車道",
+      "kana": "くるまみち",
+      "source": "wikipedia"
+     }
+    },
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_013262(재연결 후 id)",
+      "source": "N05-24",
+      "coords": [
+       [
+        136.92545,
+        35.16955
+       ],
+       [
+        136.92566,
+        35.16955
+       ],
+       [
+        136.92602,
+        35.16954
+       ],
+       [
+        136.92634,
+        35.16949
+       ],
+       [
+        136.92681,
+        35.16937
+       ],
+       [
+        136.92757,
+        35.16912
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "N05 栄町線 #1418(1963–66)/#1420(1950–62) 0.200 km = DB 0.2. 新栄町–車道 edge도 새 노드로 옮겨야 함."
+  },
+  {
+   "edge": "e_013325",
+   "name": "豊平線 すすきの–松竹座前",
+   "verdict": "fixable now (node fix)",
+   "confidence": "medium",
+   "rows": [
+    {
+     "file": "source_patch/geometry",
+     "row": {
+      "patch": "add",
+      "edge": "e_013325",
+      "source": "N05-24",
+      "coords": [
+       [
+        141.35273,
+        43.05556
+       ],
+       [
+        141.35335,
+        43.05564
+       ],
+       [
+        141.35338,
+        43.05552
+       ],
+       [
+        141.35361,
+        43.05551
+       ],
+       [
+        141.35384,
+        43.05554
+       ],
+       [
+        141.35397,
+        43.05556
+       ],
+       [
+        141.35494,
+        43.0557
+       ]
+      ]
+     }
+    }
+   ],
+   "note": "DB すすきの는 지하철 南北線 노드. 札幌市電 すすきの(N05 山鼻線 점 43.05556/141.35273) 노드를 써야 함 — 기존 시전 노드 n_susukino_sapporo_tsc(l_sapporo_streetcar, 현역)가 있음 → edge from_node를 n_susukino_sapporo_tsc로 바꾸는 edges/routes replace 행 권장(n_susukino_sapporo_city는 南北線 전용으로). 두 노드 좌표 43.05578/141.353257은 N05 山鼻線 すすきの 점과 50 m. N05 豊平線 #119(1950–70) 0.142 km + 山鼻線 점까지 0.05 km 접속 = 약 0.20 km(DB 0.1 추정)."
+  }
+ ]
+}

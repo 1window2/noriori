@@ -129,6 +129,21 @@ final class RideLeg {
   final String lineLabel;
   final String fromLabel;
   final String toLabel;
+
+  /// 경로 답만 바꾼 사본.
+  RideLeg _answered({required String? direction, required String? asOf, required bool unknown}) => RideLeg(
+        seq: seq,
+        lineId: lineId,
+        routeId: routeId,
+        fromNode: fromNode,
+        toNode: toNode,
+        direction: direction,
+        resolveAsOf: asOf,
+        resolveUnknown: unknown,
+        lineLabel: lineLabel,
+        fromLabel: fromLabel,
+        toLabel: toLabel,
+      );
 }
 
 final class Ride extends UserRecord {
@@ -191,18 +206,10 @@ final class Ride extends UserRecord {
       rideId: rideId,
       legs: [
         for (final leg in legs)
-          RideLeg(
-            seq: leg.seq,
-            lineId: leg.lineId,
-            routeId: leg.routeId,
-            fromNode: leg.fromNode,
-            toNode: leg.toNode,
+          leg._answered(
             direction: leg.direction,
-            resolveAsOf: moved ? null : leg.resolveAsOf,
-            resolveUnknown: !moved && leg.resolveUnknown,
-            lineLabel: leg.lineLabel,
-            fromLabel: leg.fromLabel,
-            toLabel: leg.toLabel,
+            asOf: moved ? null : leg.resolveAsOf,
+            unknown: !moved && leg.resolveUnknown,
           ),
       ],
       datasetVersion: datasetVersion,
@@ -225,7 +232,7 @@ final class Ride extends UserRecord {
     );
   }
 
-  /// 경로 답을 그 구간에만 붙인다. 운전 계통은 구간마다 답이 다르다 (DESIGN §2.8 D).
+  /// 경로 답을 그 구간에만 붙인다. 운행 계통은 구간마다 답이 다르다 (DESIGN §2.8 D).
   Ride answered(
     bool Function(RideLeg leg) where, {
     String? direction,
@@ -237,19 +244,7 @@ final class Ride extends UserRecord {
         legs: [
           for (final leg in legs)
             if (where(leg))
-              RideLeg(
-                seq: leg.seq,
-                lineId: leg.lineId,
-                routeId: leg.routeId,
-                fromNode: leg.fromNode,
-                toNode: leg.toNode,
-                direction: direction ?? leg.direction,
-                resolveAsOf: asOf,
-                resolveUnknown: unknown,
-                lineLabel: leg.lineLabel,
-                fromLabel: leg.fromLabel,
-                toLabel: leg.toLabel,
-              )
+              leg._answered(direction: direction ?? leg.direction, asOf: asOf, unknown: unknown)
             else
               leg,
         ],
@@ -316,26 +311,14 @@ final class Ride extends UserRecord {
       );
 
   @override
-  Ride withMeta({required int updatedAt, required int? deletedAt}) => Ride(
-        rideId: rideId,
+  Ride withMeta({required int updatedAt, required int? deletedAt}) => piece(
+        id: rideId,
         legs: legs,
-        datasetVersion: datasetVersion,
-        createdAt: createdAt,
-        updatedAt: updatedAt,
-        deviceId: deviceId,
-        deletedAt: deletedAt,
-        tripId: tripId,
-        dateInput: dateInput,
-        times: times,
-        trainName: trainName,
-        carNo: carNo,
-        note: note,
-        serviceId: serviceId,
         transferNodes: transferNodes,
         fromAlighted: fromAlighted,
         toAlighted: toAlighted,
-        importSource: importSource,
-        importRaw: importRaw,
+        updatedAt: updatedAt,
+        deletedAt: deletedAt,
       );
 }
 

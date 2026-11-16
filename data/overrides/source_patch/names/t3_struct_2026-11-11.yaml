@@ -1,0 +1,4 @@
+# 信越本線 지선 新潟（旧）–白山–関屋 계통 이름 (구조 감사 2026-11-11, triage t3_struct)
+- {"patch": "add", "entity_type": "route", "id": "r_shinetsu_main_line_niigata_old_sekiya", "lang": "ja", "text": "新潟（旧）～関屋", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_shinetsu_main_line_niigata_old_sekiya", "lang": "ko", "text": "니가타(구)~세키야", "source": "hand"}
+- {"patch": "add", "entity_type": "route", "id": "r_shinetsu_main_line_niigata_old_sekiya", "lang": "en", "text": "Niigata (old)~Sekiya", "source": "hand"}

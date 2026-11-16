@@ -8,7 +8,7 @@ def load_fix():
     return json.load(open(os.path.join(ROOT,'data','overrides','en_fix.json'),encoding='utf-8'))
 
 # 훈독 낱말의 첫 글자. 長音처럼 보여도 앞 글자와 다른 낱말이라 줄이면 안 된다 (丸ノ内, 松浦, 箕面)
-WORD_START={'内':'うち','浦':'うら','牛':'うし','魚':'うお','海':'うみ','尾':'お','箕面':'お'}
+WORD_START={'内':'うち','浦':'うら','裏':'うら','牛':'うし','魚':'うお','海':'うみ','兎':'うさぎ','畝':'うね','上':'うえ','尾':'お','箕面':'お'}
 # 宇는 う 한 글자라 앞이 う 줄이면 구별되지 않는다 (陸中宇部, 由宇)
 AFTER_O='おこそとのほもよろごぞどぼぽょ'
 # 한 낱말로 읽는 말. 앞 표의 한자가 있어도 장음이다
@@ -17,14 +17,16 @@ ONE_WORD=('青海','神海','河内')
 def mark_words(kana,ja):
     """일본어 이름을 보고 읽기에 낱말 경계 |를 넣는다"""
     if not ja or any(w in ja for w in ONE_WORD):return kana
-    if '宇' in ja:kana=re.sub(f'(?<=[{AFTER_O}])う(?=[じつわみべ])','|う',kana)
+    # う 줄 뒤도 같다 (近鉄宇治山田 きんてつうじやまだ → Kintetsuujiyamada)
+    if '宇' in ja:kana=re.sub(f'(?<=[{AFTER_O}うくすつぬふむゆるぐずづぶぷゅ])う(?=[じつわみべ])','|う',kana)
     for kanji,read in WORD_START.items():
         if kanji not in ja:continue
-        after=ja[ja.index(kanji)+len(kanji):]
+        before=ja.index(kanji);after=ja[before+len(kanji):]
         def cut(m):
             # 한자 뒤의 글자 수와 읽기 뒤의 글자 수가 맞아야 그 한자의 읽기다 (雄鎮内의 ゆうちんない는 아니다)
+            # 앞도 같다. 한자 앞 글자마다 읽기가 한 글자 이상이다 (上越 じょうえつ의 うえ는 上이 아니다)
             tail=len(m.string)-m.end()
-            return '|'+read if (tail>=len(after) if after else tail==0) else read
+            return '|'+read if (tail>=len(after) if after else tail==0) and (len(kanji)>1 or (before and m.start()>=before)) else read
         kana=re.sub(f'(?<=[{AFTER_O}うくすつぬふむゆるぐずづぶぷゅ])'+read,cut,kana)
     return kana
 
@@ -54,8 +56,13 @@ def hepburn(kana,ja=None):
     return ''.join(o)
 
 def station_reading(kana,ja=None):
-    """역 이름의 규칙 표기. 낱말 하나로 붙여 쓴다"""
-    return romaji(contract(kana,ja)).title()
+    """역 이름의 규칙 표기. 낱말 하나로 붙여 쓴다. 옛 국명 접두(陸前高田)는 하이픈으로 뗀다(Rikuzen-Takata, 2회차 종합 K17)"""
+    from ko import province
+    pv=province(ja or '',kana or '')
+    if pv:return pv[2]+'-'+station_reading(pv[4],pv[3])
+    # ん은 b, p, m 앞에서 m, 모음 앞에서 n'이다 (§9.1, 감사 A2-13). 첫 글자만 대문자라 n' 뒤는 소문자다
+    h=hepburn(kana,ja)
+    return h[:1].upper()+h[1:]
 
 # 가타카나 외래어. 읽기대로 옮기면 Keburu, Monoreru가 된다. 긴 낱말이 먼저다
 KATAKANA={
@@ -103,7 +110,8 @@ TERMINAL=re.compile(r'^(.*)空港第(\d)(?:・第(\d))?ターミナル$')
 
 def chome(ja,kana,known):
     m=CHOME.match(ja)
-    return m and f"{place(m.group(1),CHOME_READ.sub('',kana),known)} {number(m.group(2))}-chome"
+    # 지명 없이 丁目만인 정류장은 앞에 띄어 쓰지 않는다 (旭川電気軌道 一丁目)
+    return m and f"{place(m.group(1),CHOME_READ.sub('',kana),known)} {number(m.group(2))}-chome".lstrip()
 
 def ekimae(ja,kana,known):
     m=EKIMAE.match(ja)
@@ -143,7 +151,13 @@ def fix_station(ja,kana,text,known,keep=()):
     ja=plainja(ja);kana=plainkana(kana)
     if not kana:return None
     if chome(ja,kana,known) and text in keep:return None
-    return chome(ja,kana,known) or ekimae(ja,kana,known) or terminal(ja,kana,known) or katakana(ja,kana,known,text)
+    return chome(ja,kana,known) or ekimae(ja,kana,known) or terminal(ja,kana,known) or katakana(ja,kana,known,text) or eki(ja,kana,known)
+
+def eki(ja,kana,known):
+    """이름이 「駅」으로 끝나는 정류장(広島駅, 須磨駅)은 -eki를 붙여 같은 이름 철도역과 가른다 (2회차 종합 K17)"""
+    if len(ja)>1 and ja.endswith('駅') and kana.endswith('えき') and len(kana)>2:
+        return f"{place(ja[:-1],kana[:-2],known)}-eki"
+    return None
 
 def fix_nodes(names):
     """gen_source.py가 일본어와 읽기를 확정한 뒤 부른다. en 행의 글자만 바꾼다 (행 순서는 그대로)"""
@@ -152,7 +166,9 @@ def fix_nodes(names):
     for x in names:
         if x['entity_type']!='node' or x['lang']!='ja' or x.get('line') or x.get('valid_to'):continue
         if x['id'] not in ja:ja[x['id']]=x['text'];kana[x['id']]=plainkana(x.get('kana'))
-    rows=[x for x in names if x['entity_type']=='node' and x['lang']=='en']
+    # 기간 있는 옛 이름 행은 그 시절 읽기로 이미 만들었다. 지금 이름 읽기로 덮지 않는다 (재평가 ST4-12)
+    # 노선 전용 행(line)은 그 노선 표기의 읽기로 이미 만들었다. 지금 이름 읽기로 덮지 않는다
+    rows=[x for x in names if x['entity_type']=='node' and x['lang']=='en' and not x.get('valid_from') and not x.get('valid_to') and not x.get('line')]
     # 규칙 이름은 확정된 읽기로 다시 만든다. node_fix.json이 읽기를 고치기 전에 만든 값이 남아 있다
     for x in rows:
         if x['source']=='rule' and kana.get(x['id']):x['text']=station_reading(kana[x['id']],plainja(ja[x['id']]))
@@ -168,3 +184,11 @@ def fix_nodes(names):
         if x['source']=='hand' or i not in ja:continue
         made=fix_station(ja[i],kana[i],x['text'],known,keep)
         if made:x['text']=made;x['source']='rule'
+    # 기간 있는 옛 이름의 규칙 영어도 같은 규칙(駅前 -Ekimae, 丁目 -chome 등)을 그 시절 이름·읽기로 적용한다
+    old_ja={(x['id'],x.get('valid_to')):(x['text'],plainkana(x.get('kana'))) for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and x.get('valid_to')}
+    for x in names:
+        if x['entity_type']!='node' or x['lang']!='en' or x.get('line') or not x.get('valid_to') or x.get('source')!='rule':continue
+        j_,k_=old_ja.get((x['id'],x['valid_to']),(None,None))
+        if j_ and k_:
+            made=fix_station(j_,k_,x['text'],known,keep)
+            if made:x['text']=made

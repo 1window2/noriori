@@ -1,0 +1,10463 @@
+{
+ "n_2_chome": [
+  [
+   "東旭川市街",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11402008"
+  ]
+ ],
+ "n_abozaki": [
+  [
+   "吾妻崎",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_22441010"
+  ]
+ ],
+ "n_adogawa_kojaku": [
+  [
+   "安曇",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_19411023"
+  ]
+ ],
+ "n_afurijinja": [
+  [
+   "下社",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_14458003"
+  ]
+ ],
+ "n_agemasunaga": [
+  [
+   "増永",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_22301006"
+  ],
+  [
+   "九紡前",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1951-XX-XX..1963-XX-XX]",
+   "EB03_22301006"
+  ]
+ ],
+ "n_aichidaigakumae": [
+  [
+   "高師口",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_17418005"
+  ],
+  [
+   "大学前",
+   "[1967-XX-XX..1968-XX-XX]",
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_17418005"
+  ]
+ ],
+ "n_aichikyuhaku_kinen_koen": [
+  [
+   "万博会場",
+   null,
+   "[2005-XX-XX..2006-XX-XX]",
+   "EB03_17504007"
+  ]
+ ],
+ "n_aikawa_akita_nairiku_jukan": [
+  [
+   "羽後上大野",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_12508005"
+  ]
+ ],
+ "n_aikawa_hankyu": [
+  [
+   "吹田東口",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_19422006"
+  ]
+ ],
+ "n_aino_shimabara": [
+  [
+   "愛野村",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_22441009"
+  ]
+ ],
+ "n_ainonai": [
+  [
+   "相ノ内",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_11232036"
+  ]
+ ],
+ "n_ainosato_koen": [
+  [
+   "釜谷臼",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_11225010"
+  ]
+ ],
+ "n_aioi_nagaragawa": [
+  [
+   "美濃相生",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502025"
+  ]
+ ],
+ "n_aioicho_transportation_bureau_city_of_yokohama": [
+  [
+   "太田町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_14316002"
+  ]
+ ],
+ "n_aizu_arakai": [
+  [
+   "荒海",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507018"
+  ]
+ ],
+ "n_aizu_hinohara": [
+  [
+   "会津檜原",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_12224015"
+  ]
+ ],
+ "n_aizu_shimogo": [
+  [
+   "楢原",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507011"
+  ]
+ ],
+ "n_ajinahigashi": [
+  [
+   "地御前県病院前",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_21453019"
+  ]
+ ],
+ "n_akada": [
+  [
+   "蜷川",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16424004"
+  ]
+ ],
+ "n_akagi_jomo": [
+  [
+   "新大間々",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_13441018"
+  ]
+ ],
+ "n_akagi_tobu": [
+  [
+   "新大間々",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_13424008"
+  ]
+ ],
+ "n_akaike_nagaragawa": [
+  [
+   "郡上赤池",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502023"
+  ]
+ ],
+ "n_akakura_onsen": [
+  [
+   "富沢",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_12231018"
+  ],
+  [
+   "羽前赤倉",
+   "[1951-XX-XX..1952-XX-XX]",
+   "[1997-XX-XX..1998-XX-XX]",
+   "EB03_12231018"
+  ]
+ ],
+ "n_akamondori": [
+  [
+   "三輪町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_17313004"
+  ]
+ ],
+ "n_akasaka": [
+  [
+   "延命寺",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22425018"
+  ]
+ ],
+ "n_akasaka_8_chome": [
+  [
+   "新坂町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15312009"
+  ]
+ ],
+ "n_akatsuki_gakuenmae": [
+  [
+   "萱生",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18440006"
+  ]
+ ],
+ "n_akechi_meitetsu": [
+  [
+   "伏見口",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_17445013"
+  ]
+ ],
+ "n_akigawa": [
+  [
+   "西秋留",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14206004"
+  ]
+ ],
+ "n_akihabaraekihigashiguchi": [
+  [
+   "秋葉原駅前",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_15332007"
+  ]
+ ],
+ "n_akishima": [
+  [
+   "昭和前",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_14205005"
+  ]
+ ],
+ "n_amidaike": [
+  [
+   "北堀江通四丁目",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_20355007"
+  ]
+ ],
+ "n_amusement_park": [
+  [
+   "多摩湖ホテル前",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14424001"
+  ],
+  [
+   "西武遊園地",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1978-XX-XX..1979-XX-XX]",
+   "EB03_14424001"
+  ]
+ ],
+ "n_anamizu": [
+  [
+   "のと穴水",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_16205026"
+  ]
+ ],
+ "n_anamori_inari": [
+  [
+   "稲荷橋",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_14417004"
+  ]
+ ],
+ "n_ani_maeda_onsen": [
+  [
+   "阿仁前田",
+   null,
+   "[2020-XX-XX..2021-XX-XX]",
+   "EB03_12508009"
+  ]
+ ],
+ "n_antoku": [
+  [
+   "安中村",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_22441027"
+  ]
+ ],
+ "n_aonuma": [
+  [
+   "入沢",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_16219018"
+  ]
+ ],
+ "n_aoyama_meitetsu": [
+  [
+   "南成岩",
+   null,
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_17436016"
+  ]
+ ],
+ "n_aoyamacho": [
+  [
+   "阿保",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18410040"
+  ]
+ ],
+ "n_appi_kogen": [
+  [
+   "龍ヶ森",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_12218007"
+  ]
+ ],
+ "n_arakawa_nanachome": [
+  [
+   "三河島八丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15382005"
+  ]
+ ],
+ "n_arakawakuyakushomae": [
+  [
+   "三河島二丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15382003"
+  ]
+ ],
+ "n_arakawayuenchimae": [
+  [
+   "尾久町六丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15382012"
+  ],
+  [
+   "西尾久七丁目",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[1982-XX-XX..1983-XX-XX]",
+   "EB03_15382012"
+  ]
+ ],
+ "n_aramachi_toyama_chiho": [
+  [
+   "木町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16417009"
+  ]
+ ],
+ "n_aramachinissekibyoimmae": [
+  [
+   "日赤病院前",
+   null,
+   "[1949-XX-XX..1975-XX-XX]",
+   "EB03_12304004"
+  ],
+  [
+   "荒町",
+   "[1949-XX-XX..1975-XX-XX]",
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12304004"
+  ]
+ ],
+ "n_arasawa": [
+  [
+   "荒沢",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417015"
+  ]
+ ],
+ "n_arate_nishi_nippon": [
+  [
+   "堂山",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22428006"
+  ]
+ ],
+ "n_arato_1_chome": [
+  [
+   "衛戍病院前",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429021"
+  ]
+ ],
+ "n_ariakeyue": [
+  [
+   "島鉄湯江",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441017"
+  ]
+ ],
+ "n_ariigawa": [
+  [
+   "東大方",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_21504008"
+  ]
+ ],
+ "n_arimaguchi": [
+  [
+   "唐櫃",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19412015"
+  ],
+  [
+   "有馬温泉口",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_19412015"
+  ]
+ ],
+ "n_arimineguchi": [
+  [
+   "小見",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_16426013"
+  ]
+ ],
+ "n_asagiri_kumagawa": [
+  [
+   "免田",
+   null,
+   "[2008-XX-XX..2009-XX-XX]",
+   "EB03_22502008"
+  ]
+ ],
+ "n_asahi_sobu_main": [
+  [
+   "旭町",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_13208037"
+  ]
+ ],
+ "n_asahigaoka_nayoro_main": [
+  [
+   "秋里",
+   null,
+   "[1956-XX-XX..1988-XX-XX]",
+   "EB03_11239018"
+  ]
+ ],
+ "n_asahimachi": [
+  [
+   "朝日チエン前",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_16434005"
+  ]
+ ],
+ "n_asamushi_onsen": [
+  [
+   "浅虫",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_12207181"
+  ]
+ ],
+ "n_ashinomaki_onsen": [
+  [
+   "上三寄",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507005"
+  ]
+ ],
+ "n_aso": [
+  [
+   "浅生通",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22428002"
+  ]
+ ],
+ "n_aso_hohi_main": [
+  [
+   "坊中",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22217018"
+  ]
+ ],
+ "n_aso_shimodajo": [
+  [
+   "阿蘇下田",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_22510004"
+  ],
+  [
+   "阿蘇下田城ふれあい温泉",
+   "[1992-XX-XX..1993-XX-XX]",
+   "[2022-XX-XX..2023-XX-XX]",
+   "EB03_22510004"
+  ]
+ ],
+ "n_asuka": [
+  [
+   "橘寺",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18429003"
+  ]
+ ],
+ "n_atsumi_onsen": [
+  [
+   "温海",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_12233026"
+  ]
+ ],
+ "n_awa_yamakawa": [
+  [
+   "湯立",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_21208016"
+  ]
+ ],
+ "n_awara_yunomachi": [
+  [
+   "芦原湯町",
+   null,
+   "[2002-XX-XX..2003-XX-XX]",
+   "EB03_16502018"
+  ]
+ ],
+ "n_azabu_juban_toden": [
+  [
+   "一ノ橋",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15314007"
+  ]
+ ],
+ "n_azuma": [
+  [
+   "山田村",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_22441011"
+  ]
+ ],
+ "n_bakurochoiriguchi": [
+  [
+   "高等学校前",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_13402003"
+  ]
+ ],
+ "n_bancho": [
+  [
+   "七番町口",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21419005"
+  ]
+ ],
+ "n_bandai_atami": [
+  [
+   "岩代熱海",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_12223004"
+  ]
+ ],
+ "n_bandaimachi": [
+  [
+   "大寺",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_12223013"
+  ]
+ ],
+ "n_befu_sanyo": [
+  [
+   "電鉄別府",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417032"
+  ]
+ ],
+ "n_bekkai": [
+  [
+   "西別",
+   null,
+   "[1975-XX-XX..1976-XX-XX]",
+   "EB03_11235018"
+  ]
+ ],
+ "n_bell_mae": [
+  [
+   "花堂南",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_16432017"
+  ]
+ ],
+ "n_beppo": [
+  [
+   "上別保",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_11231054"
+  ]
+ ],
+ "n_bijutsukantoshokanmae": [
+  [
+   "森合",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_12420003"
+  ]
+ ],
+ "n_biwako_hamaotsu": [
+  [
+   "浜大津東口",
+   null,
+   "[1980-XX-XX..1981-XX-XX]",
+   "EB03_19407012"
+  ]
+ ],
+ "n_bungo_kiyokawa": [
+  [
+   "牧口",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22217028"
+  ]
+ ],
+ "n_bunkyokuyakushomae": [
+  [
+   "春日町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15338001"
+  ]
+ ],
+ "n_bunsui": [
+  [
+   "地蔵堂",
+   null,
+   "[1982-XX-XX..1983-XX-XX]",
+   "EB03_16217015"
+  ]
+ ],
+ "n_cable_enryakuji": [
+  [
+   "叡山中堂",
+   null,
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_19450004"
+  ]
+ ],
+ "n_cable_hachimangu_guchi": [
+  [
+   "八幡口",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_20407001"
+  ],
+  [
+   "八幡町",
+   "[1956-XX-XX..1957-XX-XX]",
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_20407001"
+  ],
+  [
+   "八幡市",
+   "[1976-XX-XX..1977-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_20407001"
+  ]
+ ],
+ "n_cable_hachimangu_sanjo": [
+  [
+   "八幡宮",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_20407002"
+  ],
+  [
+   "男山山上",
+   "[1956-XX-XX..1957-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_20407002"
+  ]
+ ],
+ "n_cable_hiei": [
+  [
+   "四明ヶ岳",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_19408002"
+  ]
+ ],
+ "n_cable_sakamoto": [
+  [
+   "坂本",
+   null,
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_19450001"
+  ]
+ ],
+ "n_cable_yase": [
+  [
+   "西塔橋",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_19408001"
+  ],
+  [
+   "ケーブル八瀬遊園",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_19408001"
+  ]
+ ],
+ "n_chayamakyoto_geijutsudaigaku": [
+  [
+   "茶山",
+   null,
+   "[2022-XX-XX..2023-XX-XX]",
+   "EB03_19444003"
+  ]
+ ],
+ "n_chiba_minato": [
+  [
+   "千葉港",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_13209016"
+  ]
+ ],
+ "n_chichibugaura_shimabara": [
+  [
+   "中央高校前",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22441026"
+  ],
+  [
+   "職業訓練校前",
+   "[1989-XX-XX..1990-XX-XX]",
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_22441026"
+  ],
+  [
+   "技術専門校前",
+   "[1994-XX-XX..1995-XX-XX]",
+   "[1995-XX-XX..1996-XX-XX]",
+   "EB03_22441026"
+  ]
+ ],
+ "n_chikuni": [
+  [
+   "千国崎",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_16221033"
+  ]
+ ],
+ "n_chikusa_ekimae": [
+  [
+   "千種橋東",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_17309001"
+  ]
+ ],
+ "n_chippubetsu": [
+  [
+   "筑紫",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11236003"
+  ]
+ ],
+ "n_chitetsu_building_mae": [
+  [
+   "桜町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_16417012"
+  ],
+  [
+   "郵便局前",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_16417012"
+  ]
+ ],
+ "n_chitose_3_chome": [
+  [
+   "千歳町",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15375009"
+  ]
+ ],
+ "n_chitosecho": [
+  [
+   "警察署前",
+   null,
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_11338003"
+  ]
+ ],
+ "n_chiyoda_asahikawa": [
+  [
+   "公有地",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11401006"
+  ]
+ ],
+ "n_chiyogadai": [
+  [
+   "千代ヶ岱",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_11338006"
+  ]
+ ],
+ "n_chiyozakibashi": [
+  [
+   "松島町二丁目",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_20343002"
+  ]
+ ],
+ "n_chofu_sanyo": [
+  [
+   "長府駅前",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_21427001"
+  ]
+ ],
+ "n_chogo": [
+  [
+   "新長後",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_14407009"
+  ]
+ ],
+ "n_chokoku_no_mori": [
+  [
+   "二の平",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_14459011"
+  ]
+ ],
+ "n_choseiemmae_sapporo_transportation_service_promotion": [
+  [
+   "西二十丁目",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_11323010"
+  ],
+  [
+   "西保健所前",
+   "[1956-XX-XX..1957-XX-XX]",
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_11323010"
+  ]
+ ],
+ "n_chudenmae": [
+  [
+   "白神社前",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_21448004"
+  ]
+ ],
+ "n_chuo_3_chome": [
+  [
+   "東五番丁",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303002"
+  ]
+ ],
+ "n_chuoichibadori": [
+  [
+   "西高校前",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_11327009"
+  ]
+ ],
+ "n_chuokuyakushomae": [
+  [
+   "交通局前",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_11323006"
+  ],
+  [
+   "消防局前",
+   "[1957-XX-XX..1958-XX-XX]",
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_11323006"
+  ]
+ ],
+ "n_chuomachi": [
+  [
+   "中央区",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425039"
+  ]
+ ],
+ "n_chuooroshiurishijomae": [
+  [
+   "八千代通",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_17348009"
+  ]
+ ],
+ "n_chuotoshokanmae": [
+  [
+   "学芸大学前",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_11324010"
+  ],
+  [
+   "教育大学前",
+   "[1965-XX-XX..1966-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_11324010"
+  ],
+  [
+   "西屯田通",
+   "[1986-XX-XX..1987-XX-XX]",
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_11324010"
+  ]
+ ],
+ "n_chuoyubinkyokumae": [
+  [
+   "道庁西門通",
+   null,
+   "[1951-XX-XX..1959-XX-XX]",
+   "EB03_11327003"
+  ],
+  [
+   "道庁裏門通",
+   "[1951-XX-XX..1959-XX-XX]",
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_11327003"
+  ]
+ ],
+ "n_daigaku": [
+  [
+   "大学前",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_22509046"
+  ]
+ ],
+ "n_daigakubyoinmae": [
+  [
+   "県庁市役所前",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_17451015"
+  ]
+ ],
+ "n_daigakumae_echigo_kotsu": [
+  [
+   "四郎丸",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_16407004"
+  ]
+ ],
+ "n_daigakumae_ibaraki_kotsu": [
+  [
+   "南袴塚",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_13401006"
+  ]
+ ],
+ "n_daigakumae_toyama_chiho": [
+  [
+   "五福",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_16420005"
+  ]
+ ],
+ "n_daigakumae_ueda": [
+  [
+   "下本郷",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_16402008"
+  ]
+ ],
+ "n_daigakushita": [
+  [
+   "三島学校下",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_17420011"
+  ]
+ ],
+ "n_daikomae": [
+  [
+   "成田山前",
+   null,
+   "[1950-XX-XX..1967-XX-XX]",
+   "EB03_13434003"
+  ]
+ ],
+ "n_daikumachi": [
+  [
+   "大工町広小路",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_13402007"
+  ]
+ ],
+ "n_daimyo_2_chome": [
+  [
+   "大名町",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429017"
+  ]
+ ],
+ "n_dainikokomae": [
+  [
+   "女学校前",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14453007"
+  ]
+ ],
+ "n_daishibashi": [
+  [
+   "産業道路",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_14418006"
+  ]
+ ],
+ "n_daiunjimae": [
+  [
+   "大雲寺町",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_21418006"
+  ]
+ ],
+ "n_daiyonsunamachishogakko": [
+  [
+   "南砂町一丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15378009"
+  ]
+ ],
+ "n_danbara_1_chome": [
+  [
+   "大畑町",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_21452003"
+  ],
+  [
+   "段原大畑町",
+   "[1968-XX-XX..1969-XX-XX]",
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_21452003"
+  ]
+ ],
+ "n_denshajigyoshomae": [
+  [
+   "廟塔前",
+   null,
+   "[1964-XX-XX..1974-XX-XX]",
+   "EB03_11324009"
+  ]
+ ],
+ "n_denshakomae": [
+  [
+   "地蔵下",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417016"
+  ]
+ ],
+ "n_dentetsu_izumoshi": [
+  [
+   "出雲今市",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_21406001"
+  ]
+ ],
+ "n_dentetsu_kurobe": [
+  [
+   "西三日市",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_16421026"
+  ],
+  [
+   "電鉄桜井",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1988-XX-XX..1989-XX-XX]",
+   "EB03_16421026"
+  ]
+ ],
+ "n_dentetsu_toyama_station_esta_mae": [
+  [
+   "富山駅前",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_16417013"
+  ]
+ ],
+ "n_detohama": [
+  [
+   "出戸",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_12228002"
+  ]
+ ],
+ "n_dobutsueniriguchi": [
+  [
+   "古小烏",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22432005"
+  ]
+ ],
+ "n_dogo_onsen": [
+  [
+   "道後",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21413001"
+  ]
+ ],
+ "n_dogokoen": [
+  [
+   "公園前",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_21413002"
+  ]
+ ],
+ "n_dokkyodaigakumae": [
+  [
+   "松原団地",
+   null,
+   "[2016-XX-XX..2017-XX-XX]",
+   "EB03_13418019"
+  ]
+ ],
+ "n_doshokubutsueniriguchi": [
+  [
+   "動物園前",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_22312007"
+  ],
+  [
+   "動植物園前",
+   "[1991-XX-XX..1992-XX-XX]",
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_22312007"
+  ]
+ ],
+ "n_dozakashita": [
+  [
+   "駒込動坂町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15333010"
+  ]
+ ],
+ "n_eba": [
+  [
+   "江波口",
+   null,
+   "[1949-XX-XX..1954-XX-XX]",
+   "EB03_21451008"
+  ]
+ ],
+ "n_ebino": [
+  [
+   "加久藤",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22220014"
+  ]
+ ],
+ "n_ebino_iino": [
+  [
+   "飯野",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22220012"
+  ]
+ ],
+ "n_ebino_uwae": [
+  [
+   "上江",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22220013"
+  ]
+ ],
+ "n_ebisucho_hiroden": [
+  [
+   "流川",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21447007"
+  ],
+  [
+   "流川町",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21447007"
+  ]
+ ],
+ "n_echizen_kaihotsu": [
+  [
+   "開発",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_16501004"
+  ]
+ ],
+ "n_echizen_shinbo": [
+  [
+   "新保",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_16501005"
+  ]
+ ],
+ "n_edamitsuhommachi": [
+  [
+   "北本町",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22428008"
+  ]
+ ],
+ "n_einodaigakkomae": [
+  [
+   "有畜農業指導所前",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_12413009"
+  ],
+  [
+   "研修所前",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[1979-XX-XX..1980-XX-XX]",
+   "EB03_12413009"
+  ]
+ ],
+ "n_ekimae_4_chome": [
+  [
+   "人参町",
+   null,
+   "[1964-XX-XX..1978-XX-XX]",
+   "EB03_22431017"
+  ]
+ ],
+ "n_emmachi_marutamachi": [
+  [
+   "西ノ京円町",
+   null,
+   "[1950-XX-XX..1977-XX-XX]",
+   "EB03_19312011"
+  ]
+ ],
+ "n_emukae_shikamachi": [
+  [
+   "江迎",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22509034"
+  ]
+ ],
+ "n_ena": [
+  [
+   "大井",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_17202025"
+  ]
+ ],
+ "n_enkobashicho": [
+  [
+   "猿猴橋",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21447002"
+  ]
+ ],
+ "n_enshu_byoin": [
+  [
+   "遠鉄浜松",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_17457003"
+  ]
+ ],
+ "n_enshu_kando": [
+  [
+   "神戸村",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_17410012"
+  ]
+ ],
+ "n_fujiedahommachi": [
+  [
+   "岡出山",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17410003"
+  ]
+ ],
+ "n_fujikawa": [
+  [
+   "岩淵",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_17204010"
+  ]
+ ],
+ "n_fujikoshi": [
+  [
+   "山室",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_16422002"
+  ]
+ ],
+ "n_fujimicho_nishi_nippon": [
+  [
+   "園芸学校前",
+   null,
+   "[1950-XX-XX..1979-XX-XX]",
+   "EB03_22426012"
+  ]
+ ],
+ "n_fujisan": [
+  [
+   "富士吉田",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_14450016"
+  ]
+ ],
+ "n_fukaboricho": [
+  [
+   "深堀競輪場通",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_11338011"
+  ]
+ ],
+ "n_fukkodaimae": [
+  [
+   "筑前新宮",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_22202028"
+  ]
+ ],
+ "n_fukuchiyama_shimin_byoin_guchi": [
+  [
+   "厚中問屋",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19502002"
+  ]
+ ],
+ "n_fukudaimae_nishifukui": [
+  [
+   "西福井",
+   null,
+   "[2002-XX-XX..2003-XX-XX]",
+   "EB03_16502004"
+  ]
+ ],
+ "n_fukui_joshi_daimyomachi": [
+  [
+   "市役所前",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_16432024"
+  ]
+ ],
+ "n_fukuno_nagaragawa": [
+  [
+   "郡上福野",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502021"
+  ]
+ ],
+ "n_fukuokacho": [
+  [
+   "土呂",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_17427022"
+  ]
+ ],
+ "n_funabashikeibajo": [
+  [
+   "船橋競馬場前",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_13408026"
+  ],
+  [
+   "センター競馬場前",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_13408026"
+  ]
+ ],
+ "n_funairimachi": [
+  [
+   "舟入仲町",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_21451003"
+  ]
+ ],
+ "n_funairiminami": [
+  [
+   "江波口",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_21451007"
+  ],
+  [
+   "グランド口",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21451007"
+  ],
+  [
+   "舟入南町",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_21451007"
+  ]
+ ],
+ "n_furitsudaigakumae": [
+  [
+   "西京大学前",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_19313006"
+  ]
+ ],
+ "n_furukawaarumimae": [
+  [
+   "白崖下",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417017"
+  ]
+ ],
+ "n_futaba": [
+  [
+   "長塚",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_13211064"
+  ]
+ ],
+ "n_futako_shinchi": [
+  [
+   "二子新地前",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_14443008"
+  ]
+ ],
+ "n_futako_tamagawa": [
+  [
+   "二子玉川園",
+   null,
+   "[1999-XX-XX..2000-XX-XX]",
+   "EB03_14442015"
+  ]
+ ],
+ "n_futomi_sassho": [
+  [
+   "石狩太美",
+   null,
+   "[2021-XX-XX..2022-XX-XX]",
+   "EB03_11225011"
+  ]
+ ],
+ "n_futsukamachi": [
+  [
+   "勾当台通北四番丁",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303013"
+  ]
+ ],
+ "n_gasugaishamae": [
+  [
+   "亀田",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11336015"
+  ]
+ ],
+ "n_genbaku_dome_mae": [
+  [
+   "相生橋",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_21447011"
+  ]
+ ],
+ "n_genbakushiryokan": [
+  [
+   "浜口町",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22415010"
+  ]
+ ],
+ "n_gengahashi": [
+  [
+   "源ヶ橋",
+   null,
+   "[1950-XX-XX..1967-XX-XX]",
+   "EB03_20358003"
+  ]
+ ],
+ "n_gotsu": [
+  [
+   "石見江津",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_21228113"
+  ]
+ ],
+ "n_gujo_yamato": [
+  [
+   "美濃弥富",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502030"
+  ]
+ ],
+ "n_gurandomae": [
+  [
+   "中学校通",
+   null,
+   "[1950-XX-XX..1962-XX-XX]",
+   "EB03_21424003"
+  ]
+ ],
+ "n_gyodashi": [
+  [
+   "行田",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14437006"
+  ]
+ ],
+ "n_hachiman": [
+  [
+   "繭市場前",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_17457004"
+  ]
+ ],
+ "n_hachiman_1_chome": [
+  [
+   "八幡町一丁目",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12306003"
+  ]
+ ],
+ "n_hachimangumae": [
+  [
+   "安久津",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_12428006"
+  ]
+ ],
+ "n_hachimanjinjamae": [
+  [
+   "滝前丁",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12306005"
+  ]
+ ],
+ "n_hachimantai": [
+  [
+   "小豆沢",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_12218015"
+  ]
+ ],
+ "n_hachimori": [
+  [
+   "椿",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_12229008"
+  ]
+ ],
+ "n_hachirogata": [
+  [
+   "一日市",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_12225071"
+  ]
+ ],
+ "n_hachirogata_akita_chuo": [
+  [
+   "一日市",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_12401001"
+  ]
+ ],
+ "n_hadano": [
+  [
+   "大秦野",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14405039"
+  ]
+ ],
+ "n_hagiurashogakkomae": [
+  [
+   "大広田",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_16208010"
+  ]
+ ],
+ "n_haguro_meitetsu": [
+  [
+   "明治村口",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_17447016"
+  ]
+ ],
+ "n_hakodate_arena_mae": [
+  [
+   "市民会館前",
+   null,
+   "[2015-XX-XX..2016-XX-XX]",
+   "EB03_11338014"
+  ]
+ ],
+ "n_hakodate_dock_mae": [
+  [
+   "弁天",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_11336001"
+  ],
+  [
+   "函館ドック前",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_11336001"
+  ]
+ ],
+ "n_hakuba": [
+  [
+   "信濃四ツ谷",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_16221030"
+  ]
+ ],
+ "n_hakubutsukansanjusangendomae": [
+  [
+   "三十三間堂前",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_19319002"
+  ]
+ ],
+ "n_hakusan_1_chome": [
+  [
+   "八千代町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15338004"
+  ]
+ ],
+ "n_hakusan_5_chome": [
+  [
+   "小石川原町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_15339003"
+  ],
+  [
+   "南部原町",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15339003"
+  ]
+ ],
+ "n_hakusanmae": [
+  [
+   "県庁前",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_16430001"
+  ]
+ ],
+ "n_hakusanshita_toei": [
+  [
+   "指ヶ谷町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15338005"
+  ]
+ ],
+ "n_hakushima_hiroden": [
+  [
+   "白島終点",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21449006"
+  ]
+ ],
+ "n_hama_koshimizu": [
+  [
+   "古樋",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_11234022"
+  ]
+ ],
+ "n_hama_saroma": [
+  [
+   "下佐呂間",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_11217006"
+  ]
+ ],
+ "n_hamakita": [
+  [
+   "遠州貴布袮",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_17457014"
+  ]
+ ],
+ "n_hamanako_sakume": [
+  [
+   "佐久米",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_17506029"
+  ]
+ ],
+ "n_hamaokacho": [
+  [
+   "池新田",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_17410030"
+  ]
+ ],
+ "n_hamayamakoen_kitaguchi": [
+  [
+   "鎗ヶ崎",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_21407004"
+  ]
+ ],
+ "n_hanabatacho": [
+  [
+   "公会堂前",
+   null,
+   "[1950-XX-XX..1960-XX-XX]",
+   "EB03_22310007"
+  ],
+  [
+   "お城前",
+   "[1950-XX-XX..1960-XX-XX]",
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22310007"
+  ],
+  [
+   "熊本城市民会館前",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_22310007"
+  ],
+  [
+   "熊本城前",
+   "[1984-XX-XX..1985-XX-XX]",
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_22310007"
+  ]
+ ],
+ "n_hanamaki_airport": [
+  [
+   "二枚橋",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_12207136"
+  ]
+ ],
+ "n_hanashiro_onsen": [
+  [
+   "花白",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_17501008"
+  ]
+ ],
+ "n_haneda_airport_terminal_12": [
+  [
+   "羽田空港国内線ターミナル",
+   null,
+   "[2010-XX-XX..2019-XX-XX]",
+   "EB03_14417006"
+  ]
+ ],
+ "n_haneda_airport_terminal_3_keikyu": [
+  [
+   "羽田空港国際線ターミナル",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_14417008"
+  ]
+ ],
+ "n_haneda_airport_terminal_3_tokyo_monorail": [
+  [
+   "羽田空港国際線ビル",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_15413008"
+  ]
+ ],
+ "n_hanno_nagaragawa": [
+  [
+   "木野",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502016"
+  ]
+ ],
+ "n_hanshimpakumae": [
+  [
+   "甲子園阪神パーク前",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_19437006"
+  ]
+ ],
+ "n_harajo": [
+  [
+   "南有馬",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_22441039"
+  ]
+ ],
+ "n_haraojima": [
+  [
+   "岡山練馬場",
+   null,
+   "[1950-XX-XX..1954-XX-XX]",
+   "EB03_21456008"
+  ]
+ ],
+ "n_harimacho": [
+  [
+   "本荘",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417031"
+  ]
+ ],
+ "n_harutakemachi": [
+  [
+   "春竹町本通",
+   null,
+   "[1950-XX-XX..1969-XX-XX]",
+   "EB03_22317005"
+  ]
+ ],
+ "n_hata_alpico_kotsu": [
+  [
+   "波多",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_16446012"
+  ]
+ ],
+ "n_hatsukaichishiyakushomae": [
+  [
+   "平良",
+   null,
+   "[2005-XX-XX..2006-XX-XX]",
+   "EB03_21453015"
+  ]
+ ],
+ "n_hattori_tenjin": [
+  [
+   "服部",
+   null,
+   "[2012-XX-XX..2013-XX-XX]",
+   "EB03_19425006"
+  ]
+ ],
+ "n_hayashisaki_matsuekaigan": [
+  [
+   "電鉄林崎",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417023"
+  ]
+ ],
+ "n_hazakawa": [
+  [
+   "由加",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_21216011"
+  ]
+ ],
+ "n_heiwajima": [
+  [
+   "学校裏",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_14416011"
+  ]
+ ],
+ "n_heiwakoen": [
+  [
+   "松山町",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22415009"
+  ]
+ ],
+ "n_hekinan": [
+  [
+   "大浜港",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17429027"
+  ]
+ ],
+ "n_hibarigaoka_seibu": [
+  [
+   "田無町",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_14425014"
+  ]
+ ],
+ "n_hibayama": [
+  [
+   "備後熊野",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_21219012"
+  ]
+ ],
+ "n_hida_kamioka": [
+  [
+   "飛騨船津",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_16201006"
+  ]
+ ],
+ "n_higashi_2_chome": [
+  [
+   "中通二丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15384003"
+  ]
+ ],
+ "n_higashi_asakusa_1_chome": [
+  [
+   "吉野町三丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15364006"
+  ]
+ ],
+ "n_higashi_asakusa_2_chome": [
+  [
+   "山谷町",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15364007"
+  ],
+  [
+   "浅草山谷",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15364007"
+  ]
+ ],
+ "n_higashi_azabu_1_chome": [
+  [
+   "飯倉四丁目",
+   null,
+   "[1950-XX-XX..1966-XX-XX]",
+   "EB03_15313002"
+  ]
+ ],
+ "n_higashi_funaoka": [
+  [
+   "横橋",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_12506023"
+  ]
+ ],
+ "n_higashi_gejo": [
+  [
+   "熊渡",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_12223035"
+  ]
+ ],
+ "n_higashi_hachimori": [
+  [
+   "八森",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_12229007"
+  ]
+ ],
+ "n_higashi_hanazono": [
+  [
+   "ラグビー場前",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_18414007"
+  ]
+ ],
+ "n_higashi_ikebukuro_1_chome": [
+  [
+   "日出町三丁目",
+   null,
+   "[1950-XX-XX..1966-XX-XX]",
+   "EB03_15344004"
+  ],
+  [
+   "池袋東一丁目",
+   "[1950-XX-XX..1966-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15344004"
+  ]
+ ],
+ "n_higashi_ikebukuro_yonchome": [
+  [
+   "日出二丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15382025"
+  ],
+  [
+   "日出町二丁目",
+   "[1966-XX-XX..1967-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15344003"
+  ]
+ ],
+ "n_higashi_jujo": [
+  [
+   "下十条",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_12207012"
+  ]
+ ],
+ "n_higashi_kagashima": [
+  [
+   "弘法東口",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_17452006"
+  ]
+ ],
+ "n_higashi_kanda": [
+  [
+   "家政高校前",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_16407008"
+  ]
+ ],
+ "n_higashi_kashiwazaki": [
+  [
+   "比角",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_16217002"
+  ]
+ ],
+ "n_higashi_matsue": [
+  [
+   "馬潟",
+   null,
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_21228087"
+  ]
+ ],
+ "n_higashi_matsuyama": [
+  [
+   "武州松山",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_14446030"
+  ]
+ ],
+ "n_higashi_muko": [
+  [
+   "東向日町",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_19422019"
+  ]
+ ],
+ "n_higashi_mukojima": [
+  [
+   "玉ノ井",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_13418005"
+  ]
+ ],
+ "n_higashi_mukojima_1_chome": [
+  [
+   "寺島町一丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15369005"
+  ]
+ ],
+ "n_higashi_mukojima_3_chome": [
+  [
+   "寺島町二丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15369006"
+  ]
+ ],
+ "n_higashi_nakatsu": [
+  [
+   "大貞",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22214020"
+  ]
+ ],
+ "n_higashi_niigata": [
+  [
+   "新潟操車場前",
+   null,
+   "[1977-XX-XX..1978-XX-XX]",
+   "EB03_16214009"
+  ]
+ ],
+ "n_higashi_ogu_sanchome": [
+  [
+   "下尾久",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15382008"
+  ],
+  [
+   "尾久町一丁目",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15382008"
+  ]
+ ],
+ "n_higashi_okayama": [
+  [
+   "西大寺",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21211037"
+  ]
+ ],
+ "n_higashi_shimotsui": [
+  [
+   "下津井東",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_21432015"
+  ]
+ ],
+ "n_higashi_tabira": [
+  [
+   "田平",
+   null,
+   "[1988-XX-XX..1989-XX-XX]",
+   "EB03_22509029"
+  ]
+ ],
+ "n_higashi_ueno_1_chome": [
+  [
+   "西町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15361003"
+  ]
+ ],
+ "n_higashi_yamatoshi": [
+  [
+   "青梅橋",
+   null,
+   "[1978-XX-XX..1979-XX-XX]",
+   "EB03_14431004"
+  ]
+ ],
+ "n_higashihachimantai": [
+  [
+   "屋敷台",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_12426004"
+  ]
+ ],
+ "n_higashihonganjimae_kyoto_city": [
+  [
+   "烏丸六条",
+   null,
+   "[1950-XX-XX..1973-XX-XX]",
+   "EB03_19308021"
+  ]
+ ],
+ "n_higashiishikawa": [
+  [
+   "金毘羅前",
+   null,
+   "[1950-XX-XX..1970-XX-XX]",
+   "EB03_13401002"
+  ]
+ ],
+ "n_higashiitachibori": [
+  [
+   "立売堀南通",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_20316010"
+  ]
+ ],
+ "n_higashikanda": [
+  [
+   "豊島町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15322005"
+  ]
+ ],
+ "n_higashino_danchi": [
+  [
+   "渋沢農場前",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_12412010"
+  ]
+ ],
+ "n_higashishioda": [
+  [
+   "鈴子",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_16403004"
+  ]
+ ],
+ "n_higashisuna_4_chome": [
+  [
+   "北砂町七丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15381005"
+  ]
+ ],
+ "n_higashitakikawa": [
+  [
+   "幌倉",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11231002"
+  ]
+ ],
+ "n_higashiyama_kintetsu": [
+  [
+   "茸山",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_18417007"
+  ]
+ ],
+ "n_hijiri_kogen": [
+  [
+   "麻績",
+   null,
+   "[1975-XX-XX..1976-XX-XX]",
+   "EB03_16220011"
+  ]
+ ],
+ "n_hinagu_onsen": [
+  [
+   "日奈久",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_22202100"
+  ]
+ ],
+ "n_hinokage_onsen": [
+  [
+   "日ノ影",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_22503015"
+  ]
+ ],
+ "n_hiraoka": [
+  [
+   "満島",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_17205043"
+  ]
+ ],
+ "n_hiratacho_kawashiri": [
+  [
+   "平田",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_22314008"
+  ]
+ ],
+ "n_hirayamajoshi_koen": [
+  [
+   "平山",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_14410031"
+  ]
+ ],
+ "n_hirodaifuzokugakkomae": [
+  [
+   "皆実分校前",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_21448011"
+  ],
+  [
+   "広大教養部前",
+   "[1954-XX-XX..1955-XX-XX]",
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21448011"
+  ],
+  [
+   "広大付属高校前",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_21448011"
+  ]
+ ],
+ "n_hiroden_miyajimaguchi": [
+  [
+   "電車宮島",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21453022"
+  ]
+ ],
+ "n_hirodenhonshamae": [
+  [
+   "電鉄前",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_21448008"
+  ]
+ ],
+ "n_hirokoji_manyosen": [
+  [
+   "湶町",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_16506006"
+  ]
+ ],
+ "n_hirokojifushimi": [
+  [
+   "南園町",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_17308004"
+  ],
+  [
+   "伏見通",
+   "[1951-XX-XX..1952-XX-XX]",
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_17308004"
+  ]
+ ],
+ "n_hirokojihonmachi": [
+  [
+   "広小路七丁目",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_17308006"
+  ]
+ ],
+ "n_hirono_golf_jo_mae": [
+  [
+   "広野新開",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19413010"
+  ]
+ ],
+ "n_hiroo_1_chome": [
+  [
+   "下通二丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15384005"
+  ]
+ ],
+ "n_hirosaki_higashikomae": [
+  [
+   "南弘前",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_12406002"
+  ]
+ ],
+ "n_hirosaki_konan": [
+  [
+   "弘南弘前",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_12406001"
+  ]
+ ],
+ "n_hirusawa": [
+  [
+   "駄子町",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_12428007"
+  ]
+ ],
+ "n_hiyoshi": [
+  [
+   "殿田",
+   null,
+   "[1995-XX-XX..1996-XX-XX]",
+   "EB03_21228018"
+  ]
+ ],
+ "n_hiyoshikomae": [
+  [
+   "近見",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_22314010"
+  ]
+ ],
+ "n_hofu": [
+  [
+   "三田尻",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_21211107"
+  ]
+ ],
+ "n_hofu_boseki": [
+  [
+   "三田尻",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_21455001"
+  ]
+ ],
+ "n_hokkaido_iryodaigaku": [
+  [
+   "大学前",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_11225013"
+  ]
+ ],
+ "n_hokkaikokimae": [
+  [
+   "野幌バス停留所",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_11420002"
+  ]
+ ],
+ "n_hokudaibyoinmae": [
+  [
+   "大学病院前",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_11326006"
+  ]
+ ],
+ "n_hon_hachinohe": [
+  [
+   "八戸",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_12219003"
+  ]
+ ],
+ "n_hon_komagome_2_chome": [
+  [
+   "北部原町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15339004"
+  ]
+ ],
+ "n_hon_komagome_6_chome": [
+  [
+   "西丸町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15339006"
+  ]
+ ],
+ "n_hondori_hiroden": [
+  [
+   "革屋町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21448002"
+  ]
+ ],
+ "n_hongo_2_chome": [
+  [
+   "本郷一丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15336003"
+  ]
+ ],
+ "n_hongooiwake": [
+  [
+   "本郷追分町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15336008"
+  ]
+ ],
+ "n_honjo_1_chome": [
+  [
+   "厩橋一丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15361009"
+  ]
+ ],
+ "n_honjo_azumabashi_toden": [
+  [
+   "吾妻橋二丁目",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_15368007"
+  ]
+ ],
+ "n_honkawacho": [
+  [
+   "左官町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21447012"
+  ]
+ ],
+ "n_honmachi_1_chome": [
+  [
+   "野球場前",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21416002"
+  ]
+ ],
+ "n_honmachi_3_chome": [
+  [
+   "札ノ辻",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21416003"
+  ]
+ ],
+ "n_honmachi_4_chome": [
+  [
+   "本町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21416004"
+  ]
+ ],
+ "n_honmachi_6_chome": [
+  [
+   "本町7丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21412003"
+  ]
+ ],
+ "n_honmokusankeienshuten": [
+  [
+   "本牧三渓園前",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_14307016"
+  ]
+ ],
+ "n_honmyojiiriguchi": [
+  [
+   "本妙寺前",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_22313010"
+  ]
+ ],
+ "n_honshamae": [
+  [
+   "柵町",
+   null,
+   "[1949-XX-XX..1950-XX-XX]",
+   "EB03_13402014"
+  ]
+ ],
+ "n_horaicho": [
+  [
+   "蓬莱町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_11339002"
+  ]
+ ],
+ "n_horinouchi": [
+  [
+   "横須賀堀ノ内",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_14416050"
+  ],
+  [
+   "横須賀堀内",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_14420001"
+  ]
+ ],
+ "n_horiuchi_koen": [
+  [
+   "碧海堀内",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_17427005"
+  ]
+ ],
+ "n_horonai_sumiyoshi": [
+  [
+   "住吉",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11226005"
+  ]
+ ],
+ "n_hottoyuda": [
+  [
+   "陸中川尻",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_12213011"
+  ]
+ ],
+ "n_hozenbyoinmae": [
+  [
+   "四条橋",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11330002"
+  ]
+ ],
+ "n_hyuga_shintomi": [
+  [
+   "三納代",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22214082"
+  ]
+ ],
+ "n_hyugashi": [
+  [
+   "富高",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_22214074"
+  ]
+ ],
+ "n_ichibanchoyubinkyokumae": [
+  [
+   "東一番丁",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303005"
+  ]
+ ],
+ "n_ichibataguchi": [
+  [
+   "小境灘",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_21406014"
+  ]
+ ],
+ "n_ido": [
+  [
+   "真行寺",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_21436016"
+  ]
+ ],
+ "n_iida_noto": [
+  [
+   "珠洲飯田",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213027"
+  ]
+ ],
+ "n_iidabashi_1_chome": [
+  [
+   "飯田町一丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15348002"
+  ]
+ ],
+ "n_ikenohata_2_chome": [
+  [
+   "池之端七軒町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15333003"
+  ]
+ ],
+ "n_ikuta": [
+  [
+   "東生田",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_14405020"
+  ]
+ ],
+ "n_imado": [
+  [
+   "吉野町二丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15364005"
+  ]
+ ],
+ "n_inashi": [
+  [
+   "伊那町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17205085"
+  ]
+ ],
+ "n_inokuchi_hiroden": [
+  [
+   "井ノ口",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21453008"
+  ]
+ ],
+ "n_irieguchi": [
+  [
+   "入江下",
+   null,
+   "[1951-XX-XX..1970-XX-XX]",
+   "EB03_21427021"
+  ]
+ ],
+ "n_iriya_2_chome": [
+  [
+   "入谷町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15362005"
+  ]
+ ],
+ "n_irumashi": [
+  [
+   "豊岡町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_14425025"
+  ]
+ ],
+ "n_iryo_center": [
+  [
+   "先端医療センター前",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_19505010"
+  ]
+ ],
+ "n_isahayahigashikoukou": [
+  [
+   "諫早東高校前",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441008"
+  ]
+ ],
+ "n_isakida": [
+  [
+   "縄瀬",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_22238020"
+  ]
+ ],
+ "n_isawa_onsen": [
+  [
+   "石和",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_14204051"
+  ]
+ ],
+ "n_iseshi": [
+  [
+   "山田",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_18202006"
+  ]
+ ],
+ "n_iseshi_ekimae": [
+  [
+   "山田駅前",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_18453001"
+  ]
+ ],
+ "n_iseshi_kintetsu": [
+  [
+   "山田",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_18435013"
+  ]
+ ],
+ "n_ishibashi_handai_mae": [
+  [
+   "石橋",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_19425011"
+  ]
+ ],
+ "n_ishibashi_nagasaki_tram": [
+  [
+   "大浦石橋",
+   null,
+   "[1982-XX-XX..1983-XX-XX]",
+   "EB03_22416008"
+  ]
+ ],
+ "n_ishikicho": [
+  [
+   "上伊敷",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_22307010"
+  ]
+ ],
+ "n_ishinkokomae": [
+  [
+   "西川町二丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_17350011"
+  ]
+ ],
+ "n_ishiwara_1_chome": [
+  [
+   "石原町一丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15368003"
+  ]
+ ],
+ "n_ishiwara_2_chome": [
+  [
+   "石原町二丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15370002"
+  ]
+ ],
+ "n_ishiwara_3_chome": [
+  [
+   "石原町三丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15370003"
+  ]
+ ],
+ "n_ishiyamadera": [
+  [
+   "石山螢谷",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_19407001"
+  ]
+ ],
+ "n_isogo_sugita": [
+  [
+   "磯子浜小学校前",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_14321011"
+  ]
+ ],
+ "n_itabashi_honcho_toden": [
+  [
+   "板橋十丁目",
+   null,
+   "[1950-XX-XX..1965-XX-XX]",
+   "EB03_15341004"
+  ]
+ ],
+ "n_itano": [
+  [
+   "板西",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_21206022"
+  ]
+ ],
+ "n_itoi": [
+  [
+   "小糸魚",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_11222032"
+  ]
+ ],
+ "n_iwaizumi_omoto": [
+  [
+   "小本",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_12503003"
+  ]
+ ],
+ "n_iwaki": [
+  [
+   "平",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_12222001"
+  ]
+ ],
+ "n_iwamotocho_2_chome": [
+  [
+   "元岩井町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15332005"
+  ]
+ ],
+ "n_iwamuro": [
+  [
+   "和納",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16217020"
+  ]
+ ],
+ "n_iwane": [
+  [
+   "巖根",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_13213008"
+  ]
+ ],
+ "n_iwashimizu_hachimangu": [
+  [
+   "八幡町",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_20403029"
+  ],
+  [
+   "八幡市",
+   "[1976-XX-XX..1977-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_20403029"
+  ]
+ ],
+ "n_iyoshi": [
+  [
+   "南郡中",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_21203065"
+  ]
+ ],
+ "n_izokukaikanmae": [
+  [
+   "北部中学通",
+   null,
+   "[1957-XX-XX..1971-XX-XX]",
+   "EB03_22405034"
+  ]
+ ],
+ "n_izumo_jinzai": [
+  [
+   "神西",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_21228097"
+  ]
+ ],
+ "n_izumo_taisha_mae": [
+  [
+   "大社神門",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_21407005"
+  ]
+ ],
+ "n_izumoshi": [
+  [
+   "出雲今市",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_21228095"
+  ]
+ ],
+ "n_izumoshi_ichibata": [
+  [
+   "出雲今市",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_21405001"
+  ]
+ ],
+ "n_izurodori": [
+  [
+   "石燈籠通",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_22302006"
+  ]
+ ],
+ "n_jiyugaoka_tokyu_railways": [
+  [
+   "自由ヶ丘",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14438007"
+  ]
+ ],
+ "n_joetsumyoko_echigo_tokimeki": [
+  [
+   "脇野田",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_16215017"
+  ]
+ ],
+ "n_jomon_mawaki": [
+  [
+   "真脇",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213017"
+  ]
+ ],
+ "n_jomon_ogata": [
+  [
+   "小ヶ田",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_12508003"
+  ]
+ ],
+ "n_joto_jomo": [
+  [
+   "一毛町",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_13441002"
+  ]
+ ],
+ "n_jr_matsuyama_ekimae": [
+  [
+   "国鉄駅前",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_21414003"
+  ]
+ ],
+ "n_jr_miyamaki": [
+  [
+   "上田辺",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_20203021"
+  ]
+ ],
+ "n_jugo": [
+  [
+   "遊園地",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11401013"
+  ]
+ ],
+ "n_jukkokutoge_sancho": [
+  [
+   "十国峠",
+   null,
+   "[2021-XX-XX..2022-XX-XX]",
+   "EB03_14402002"
+  ]
+ ],
+ "n_jukkokutoge_sanroku": [
+  [
+   "十国登り口",
+   null,
+   "[2021-XX-XX..2022-XX-XX]",
+   "EB03_14402001"
+  ]
+ ],
+ "n_juo": [
+  [
+   "川尻",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_13211043"
+  ]
+ ],
+ "n_kabutoyama": [
+  [
+   "甲山",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19501016"
+  ]
+ ],
+ "n_kadancho": [
+  [
+   "女子学院前",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19424009"
+  ]
+ ],
+ "n_kadoma_shi_keihan": [
+  [
+   "新門真",
+   null,
+   "[1974-XX-XX..1975-XX-XX]",
+   "EB03_20403015"
+  ]
+ ],
+ "n_kadotayashiki": [
+  [
+   "放送局筋",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21417012"
+  ],
+  [
+   "国清寺前",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21417012"
+  ]
+ ],
+ "n_kagaonsen": [
+  [
+   "作見",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_16203032"
+  ]
+ ],
+ "n_kagetsu_sojiji": [
+  [
+   "花月園前",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_14416021"
+  ]
+ ],
+ "n_kagoshima_chuo": [
+  [
+   "西鹿児島",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_22202096"
+  ]
+ ],
+ "n_kagoshima_chuo_ekimae": [
+  [
+   "西鹿児島駅前",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_22304004"
+  ]
+ ],
+ "n_kagurazaka_toei": [
+  [
+   "肴町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_15351003"
+  ]
+ ],
+ "n_kai_yamato": [
+  [
+   "初鹿野",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_14204045"
+  ]
+ ],
+ "n_kaigataonsen": [
+  [
+   "海潟",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_22239023"
+  ]
+ ],
+ "n_kaihatsukensetsubumae": [
+  [
+   "土木現業所前",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_11348002"
+  ]
+ ],
+ "n_kaiomaru": [
+  [
+   "越ノ潟口",
+   null,
+   "[1998-XX-XX..1999-XX-XX]",
+   "EB03_16507007"
+  ]
+ ],
+ "n_kairakuen": [
+  [
+   "公園下",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_13211034"
+  ]
+ ],
+ "n_kajiyacho": [
+  [
+   "柿本寺通",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_22304002"
+  ]
+ ],
+ "n_kakamigahara_shiyakusho_mae": [
+  [
+   "運動場前",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_17448011"
+  ],
+  [
+   "各務原飛行場",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_17448011"
+  ]
+ ],
+ "n_kakyoin": [
+  [
+   "花京院通",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303019"
+  ]
+ ],
+ "n_kamakurakokomae": [
+  [
+   "日坂",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_14404009"
+  ]
+ ],
+ "n_kameyama_sanyo": [
+  [
+   "電鉄亀山",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417045"
+  ]
+ ],
+ "n_kami_nagawa": [
+  [
+   "上長流",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11203002"
+  ]
+ ],
+ "n_kamichikami": [
+  [
+   "蓮台寺",
+   null,
+   "[1950-XX-XX..1960-XX-XX]",
+   "EB03_22314009"
+  ],
+  [
+   "上近見町",
+   "[1950-XX-XX..1960-XX-XX]",
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22314009"
+  ]
+ ],
+ "n_kamifujimae": [
+  [
+   "上富士前町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15333012"
+  ]
+ ],
+ "n_kamigora": [
+  [
+   "早雲館",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14460005"
+  ]
+ ],
+ "n_kamihonmachi": [
+  [
+   "南田町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16417007"
+  ]
+ ],
+ "n_kamikitacho": [
+  [
+   "沼崎",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_12207173"
+  ]
+ ],
+ "n_kamikyokusei": [
+  [
+   "上公有地",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11401011"
+  ]
+ ],
+ "n_kamimiyori_shiobara_onsenguchi": [
+  [
+   "下野上三依",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_13514007"
+  ],
+  [
+   "上三依塩原",
+   "[1987-XX-XX..1988-XX-XX]",
+   "[2005-XX-XX..2006-XX-XX]",
+   "EB03_13514007"
+  ]
+ ],
+ "n_kaminaka": [
+  [
+   "三宅",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_19204012"
+  ]
+ ],
+ "n_kaminome": [
+  [
+   "西岩出山",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12231011"
+  ]
+ ],
+ "n_kaminoyama_onsen": [
+  [
+   "上ノ山",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_12225015"
+  ]
+ ],
+ "n_kamioka_kozanmae": [
+  [
+   "神岡口",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_16201005"
+  ]
+ ],
+ "n_kamitomino_1_chome": [
+  [
+   "富野",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22425020"
+  ]
+ ],
+ "n_kamitomino_3_chome": [
+  [
+   "上富野",
+   null,
+   "[1952-XX-XX..1984-XX-XX]",
+   "EB03_22425019"
+  ]
+ ],
+ "n_kamiya_3_chome": [
+  [
+   "王子北町",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15383007"
+  ]
+ ],
+ "n_kamono": [
+  [
+   "加茂野口",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502003"
+  ]
+ ],
+ "n_kanagawa_keikyu": [
+  [
+   "京浜神奈川",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_14416027"
+  ]
+ ],
+ "n_kanayamacho": [
+  [
+   "山口町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21447006"
+  ]
+ ],
+ "n_kanazonocho_4_chome": [
+  [
+   "金園町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_17449002"
+  ]
+ ],
+ "n_kanehana": [
+  [
+   "奔無加",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11232032"
+  ]
+ ],
+ "n_kanenomachi": [
+  [
+   "六橋",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_16408008"
+  ]
+ ],
+ "n_kani": [
+  [
+   "広見",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_17203006"
+  ]
+ ],
+ "n_kanigawa": [
+  [
+   "ライン遊園",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_17445008"
+  ]
+ ],
+ "n_kano_meitetsu": [
+  [
+   "安良田町",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_17424065"
+  ]
+ ],
+ "n_kanonmachi": [
+  [
+   "西天満町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21447017"
+  ]
+ ],
+ "n_kanzaki_nagasaki_main": [
+  [
+   "肥前神埼",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_22209006"
+  ]
+ ],
+ "n_karashimacho": [
+  [
+   "東辛島町",
+   null,
+   "[1949-XX-XX..1950-XX-XX]",
+   "EB03_22310006"
+  ]
+ ],
+ "n_kashiharajingu_mae": [
+  [
+   "橿原神宮駅",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18420017"
+  ]
+ ],
+ "n_kashii_kaenmae": [
+  [
+   "運動場前",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_22419014"
+  ]
+ ],
+ "n_kashima_soccer_stadium_kashima_rinkai": [
+  [
+   "北鹿島",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_13502015"
+  ]
+ ],
+ "n_kashitajinjamae": [
+  [
+   "香下",
+   null,
+   "[1950-XX-XX..1952-XX-XX]",
+   "EB03_22402008"
+  ]
+ ],
+ "n_kasuga_2_chome": [
+  [
+   "同心町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15345002"
+  ]
+ ],
+ "n_kasugacho": [
+  [
+   "春日二丁目",
+   null,
+   "[1949-XX-XX..1950-XX-XX]",
+   "EB03_17408004"
+  ]
+ ],
+ "n_kasugaicho": [
+  [
+   "別田",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_14204050"
+  ]
+ ],
+ "n_katahiraitchomekensatsuchomae": [
+  [
+   "片平丁",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303007"
+  ]
+ ],
+ "n_katamachi_keihan_main": [
+  [
+   "野田橋",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_20403004"
+  ]
+ ],
+ "n_katano_nishi_nippon": [
+  [
+   "三郎丸",
+   null,
+   "[1950-XX-XX..1979-XX-XX]",
+   "EB03_22426009"
+  ]
+ ],
+ "n_katanoshi": [
+  [
+   "交野",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_20406006"
+  ]
+ ],
+ "n_katsunumabudokyo": [
+  [
+   "勝沼",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_14204046"
+  ]
+ ],
+ "n_katsuyamacho": [
+  [
+   "御宝町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21413006"
+  ]
+ ],
+ "n_kawabe": [
+  [
+   "弘南川部",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_12202001"
+  ]
+ ],
+ "n_kawabe_yuri_kogen": [
+  [
+   "羽後川辺",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_12510011"
+  ]
+ ],
+ "n_kawachinagano_kintetsu": [
+  [
+   "長野",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_18426009"
+  ]
+ ],
+ "n_kawachinagano_nankai": [
+  [
+   "長野",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_18451026"
+  ]
+ ],
+ "n_kawagoe_tomisuhara": [
+  [
+   "富洲原",
+   null,
+   "[2008-XX-XX..2009-XX-XX]",
+   "EB03_18430018"
+  ]
+ ],
+ "n_kawanishi_noseguchi_hankyu": [
+  [
+   "能勢口",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_19425013"
+  ]
+ ],
+ "n_kawanishi_noseguchi_nose": [
+  [
+   "能勢口",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_19419002"
+  ]
+ ],
+ "n_kawaramachi_kumamoto_city": [
+  [
+   "長六橋",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_22314001"
+  ]
+ ],
+ "n_kawaramachi_takamatsu_kotohira": [
+  [
+   "琴電高松",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_21434004"
+  ]
+ ],
+ "n_kawarayu_onsen_old": [
+  [
+   "川原湯",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_13206012"
+  ]
+ ],
+ "n_kawasaki_ekimae": [
+  [
+   "省線川崎駅前",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14301002"
+  ]
+ ],
+ "n_kawatabi_onsen": [
+  [
+   "川渡",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12231013"
+  ]
+ ],
+ "n_kayamachi_6_chome": [
+  [
+   "三津口",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21412002"
+  ]
+ ],
+ "n_kazashi": [
+  [
+   "白木崎",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22425006"
+  ]
+ ],
+ "n_kazunohanawa": [
+  [
+   "陸中花輪",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_12218017"
+  ]
+ ],
+ "n_keihan_otsukyo": [
+  [
+   "皇子山",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_19407015"
+  ]
+ ],
+ "n_keihan_yamashina": [
+  [
+   "山科駅前",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_19406007"
+  ]
+ ],
+ "n_keihan_zeze": [
+  [
+   "膳所駅前",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_19407009"
+  ]
+ ],
+ "n_keihankokudoguchi": [
+  [
+   "九条大路壬生通",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19320007"
+  ]
+ ],
+ "n_keihoku": [
+  [
+   "幕別",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_11238029"
+  ]
+ ],
+ "n_keikyu_higashi_kanagawa": [
+  [
+   "仲木戸",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_14416026"
+  ]
+ ],
+ "n_keikyu_kamata": [
+  [
+   "京浜蒲田",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416014"
+  ]
+ ],
+ "n_keikyu_kawasaki": [
+  [
+   "京浜川崎",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416017"
+  ]
+ ],
+ "n_keikyu_kurihama": [
+  [
+   "湘南久里浜",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14420004"
+  ],
+  [
+   "京浜久里浜",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14420004"
+  ]
+ ],
+ "n_keikyu_otsu": [
+  [
+   "湘南大津",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14416051"
+  ],
+  [
+   "京浜大津",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416051"
+  ]
+ ],
+ "n_keikyu_shin_koyasu": [
+  [
+   "京浜新子安",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416023"
+  ]
+ ],
+ "n_keikyu_taura": [
+  [
+   "湘南田浦",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14416044"
+  ],
+  [
+   "京浜田浦",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416044"
+  ]
+ ],
+ "n_keikyu_tomioka": [
+  [
+   "湘南富岡",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14416039"
+  ],
+  [
+   "京浜富岡",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416039"
+  ]
+ ],
+ "n_keikyu_tsurumi": [
+  [
+   "京浜鶴見",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416020"
+  ]
+ ],
+ "n_keisan_kagaku_center": [
+  [
+   "ポートアイランド南",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_19505011"
+  ]
+ ],
+ "n_keisei_chiba": [
+  [
+   "国鉄千葉駅前",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_13409010"
+  ]
+ ],
+ "n_keisei_nishifuna": [
+  [
+   "葛飾",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_13408022"
+  ]
+ ],
+ "n_ken_sogo_undojo": [
+  [
+   "運動場前",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_17408008"
+  ]
+ ],
+ "n_kenchodori": [
+  [
+   "内山下",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_21417006"
+  ],
+  [
+   "県庁通",
+   "[1969-XX-XX..1970-XX-XX]",
+   "[2002-XX-XX..2003-XX-XX]",
+   "EB03_21417006"
+  ]
+ ],
+ "n_kenchomae_akita_city": [
+  [
+   "新国道",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_12301006"
+  ]
+ ],
+ "n_kenchomae_kobe_city": [
+  [
+   "山手",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_19322003"
+  ]
+ ],
+ "n_kengunkobanmae": [
+  [
+   "健軍派出所前",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_22312008"
+  ]
+ ],
+ "n_kenritsu_daigaku": [
+  [
+   "横須賀公郷",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14416049"
+  ],
+  [
+   "京浜安浦",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14416049"
+  ],
+  [
+   "京急安浦",
+   "[1986-XX-XX..1987-XX-XX]",
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_14416049"
+  ]
+ ],
+ "n_kenritsushukeijomae": [
+  [
+   "地蔵岱",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_12414007"
+  ]
+ ],
+ "n_kiba_2_chome": [
+  [
+   "木場一丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15376007"
+  ]
+ ],
+ "n_kiba_5_chome": [
+  [
+   "木場三丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15376008"
+  ]
+ ],
+ "n_kibogaoka_kokomae": [
+  [
+   "土手ノ内",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_22413014"
+  ]
+ ],
+ "n_kichijojimae": [
+  [
+   "吉祥寺町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15334002"
+  ]
+ ],
+ "n_kido_nanzoin_mae": [
+  [
+   "城戸",
+   null,
+   "[2002-XX-XX..2003-XX-XX]",
+   "EB03_22204008"
+  ]
+ ],
+ "n_kikuchi": [
+  [
+   "隈府",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_22410027"
+  ]
+ ],
+ "n_kikugawa": [
+  [
+   "堀ノ内",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17204028"
+  ]
+ ],
+ "n_kimachidori_2_chome": [
+  [
+   "北鍛冶町",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303012"
+  ]
+ ],
+ "n_kimitsu": [
+  [
+   "周西",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_13213010"
+  ]
+ ],
+ "n_kinosaki_onsen": [
+  [
+   "城崎",
+   null,
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_21228041"
+  ]
+ ],
+ "n_kintaichi_onsen": [
+  [
+   "金田一",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12207160"
+  ]
+ ],
+ "n_kintetsu_gose": [
+  [
+   "近鉄日本御所",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18427004"
+  ]
+ ],
+ "n_kintetsu_nagashima": [
+  [
+   "近畿日本長島",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18430012"
+  ]
+ ],
+ "n_kintetsu_nagoya": [
+  [
+   "近畿日本名古屋",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18430001"
+  ]
+ ],
+ "n_kintetsu_nara": [
+  [
+   "近畿日本奈良",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18414022"
+  ]
+ ],
+ "n_kintetsu_shimoda": [
+  [
+   "近畿日本下田",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18410020"
+  ]
+ ],
+ "n_kintetsu_shinjo": [
+  [
+   "近鉄日本新庄",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18427002"
+  ]
+ ],
+ "n_kintetsu_tambabashi": [
+  [
+   "近畿日本丹波橋",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18419007"
+  ]
+ ],
+ "n_kintetsu_tomida_kintetsu": [
+  [
+   "近畿日本富田",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18430019"
+  ]
+ ],
+ "n_kintetsu_yatomi": [
+  [
+   "近畿日本弥富",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18430011"
+  ]
+ ],
+ "n_kinuta_hommura": [
+  [
+   "砧",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15402004"
+  ]
+ ],
+ "n_kira_yoshida": [
+  [
+   "三河吉田",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_17427017"
+  ]
+ ],
+ "n_kirishima_onsen": [
+  [
+   "牧園",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_22206023"
+  ],
+  [
+   "霧島西口",
+   "[1961-XX-XX..1962-XX-XX]",
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_22206023"
+  ]
+ ],
+ "n_kita_aoyama_3_chome": [
+  [
+   "青山五丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15354009"
+  ]
+ ],
+ "n_kita_engaru": [
+  [
+   "学田",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11239039"
+  ]
+ ],
+ "n_kita_gojo_11_chome": [
+  [
+   "北高校通",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11327005"
+  ],
+  [
+   "桑園十一丁目",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_11327005"
+  ],
+  [
+   "陵雲中学校通",
+   "[1954-XX-XX..1955-XX-XX]",
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_11327005"
+  ]
+ ],
+ "n_kita_ichiyan": [
+  [
+   "北一己",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_11236002"
+  ]
+ ],
+ "n_kita_koshigaya": [
+  [
+   "武州大沢",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_13418024"
+  ]
+ ],
+ "n_kita_nagano": [
+  [
+   "吉田",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_16215006"
+  ]
+ ],
+ "n_kita_naganuma": [
+  [
+   "長沼",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11420008"
+  ]
+ ],
+ "n_kita_nagaoka": [
+  [
+   "城岡",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_16215044"
+  ]
+ ],
+ "n_kita_shin_yokohama": [
+  [
+   "新横浜北",
+   null,
+   "[1998-XX-XX..1999-XX-XX]",
+   "EB03_14303010"
+  ]
+ ],
+ "n_kita_ueno_1_chome": [
+  [
+   "下車坂町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15365002"
+  ]
+ ],
+ "n_kitagata_1_chome": [
+  [
+   "新町",
+   null,
+   "[1950-XX-XX..1979-XX-XX]",
+   "EB03_22426016"
+  ]
+ ],
+ "n_kitagata_makuwa": [
+  [
+   "本巣北方",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_17505006"
+  ]
+ ],
+ "n_kitagatashakomae": [
+  [
+   "本社前",
+   null,
+   "[1950-XX-XX..1979-XX-XX]",
+   "EB03_22426014"
+  ]
+ ],
+ "n_kitago_fukui_fukubu": [
+  [
+   "西武生",
+   null,
+   "[2009-XX-XX..2010-XX-XX]",
+   "EB03_16432002"
+  ]
+ ],
+ "n_kitahachibanchojidosodanjomae": [
+  [
+   "北八番丁",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_12305003"
+  ]
+ ],
+ "n_kitahiyama": [
+  [
+   "東瀬棚",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_11201010"
+  ]
+ ],
+ "n_kitakami": [
+  [
+   "黒沢尻",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_12207133"
+  ]
+ ],
+ "n_kitakukamiyacho": [
+  [
+   "宮堀",
+   null,
+   "[1950-XX-XX..1971-XX-XX]",
+   "EB03_15383006"
+  ]
+ ],
+ "n_kitakurihama": [
+  [
+   "湘南井田",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_14420003"
+  ]
+ ],
+ "n_kitamoto": [
+  [
+   "北本宿",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_13204006"
+  ]
+ ],
+ "n_kitanii_matsumotodaigakumae": [
+  [
+   "北新",
+   null,
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_16446007"
+  ]
+ ],
+ "n_kitaojishimmachi": [
+  [
+   "学芸大学前",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_19313009"
+  ]
+ ],
+ "n_kitarinzaiji": [
+  [
+   "車庫前",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_17417014"
+  ]
+ ],
+ "n_kitashimmachi": [
+  [
+   "上り立町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16453004"
+  ]
+ ],
+ "n_kitasuna_2_chome": [
+  [
+   "北砂町一丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15378006"
+  ]
+ ],
+ "n_kitasuna_3_chome": [
+  [
+   "北砂町二丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15378005"
+  ]
+ ],
+ "n_kitasuna_4_chome": [
+  [
+   "北砂町四丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15381003"
+  ]
+ ],
+ "n_kitasuna_7_chome": [
+  [
+   "南砂町六丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15381004"
+  ]
+ ],
+ "n_kitsukishi": [
+  [
+   "杵築町",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_22404005"
+  ]
+ ],
+ "n_kiyomizumichi": [
+  [
+   "東山松原",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19314018"
+  ]
+ ],
+ "n_kiyosatocho": [
+  [
+   "上斜里",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_11234017"
+  ]
+ ],
+ "n_kobai": [
+  [
+   "紅梅町",
+   null,
+   "[1952-XX-XX..1991-XX-XX]",
+   "EB03_22425047"
+  ]
+ ],
+ "n_kobata": [
+  [
+   "電鉄木幡",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_19413006"
+  ]
+ ],
+ "n_kobayashi_kitto": [
+  [
+   "小林町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_22220010"
+  ]
+ ],
+ "n_koboguchi": [
+  [
+   "弘法西口",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_17452007"
+  ]
+ ],
+ "n_kogakubumae": [
+  [
+   "大学通",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_22305007"
+  ]
+ ],
+ "n_kogane": [
+  [
+   "黄金蘂",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_11222016"
+  ]
+ ],
+ "n_kohinata_4_chome": [
+  [
+   "清水谷町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15345004"
+  ]
+ ],
+ "n_kohoku_nagasaki_main": [
+  [
+   "肥前山口",
+   null,
+   "[2021-XX-XX..2022-XX-XX]",
+   "EB03_22209013"
+  ]
+ ],
+ "n_koishihama": [
+  [
+   "小石浜",
+   null,
+   "[2008-XX-XX..2009-XX-XX]",
+   "EB03_12502005"
+  ]
+ ],
+ "n_koishikawa_1_chome": [
+  [
+   "初音町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15338002"
+  ]
+ ],
+ "n_koishikawa_4_chome": [
+  [
+   "竹早町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15345003"
+  ]
+ ],
+ "n_koka": [
+  [
+   "大原市場",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_18204003"
+  ]
+ ],
+ "n_kokimae": [
+  [
+   "日工前",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_13436002"
+  ]
+ ],
+ "n_kokutetsu_ekimae": [
+  [
+   "停車場前",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417001"
+  ]
+ ],
+ "n_komagane": [
+  [
+   "赤穂",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_17205079"
+  ]
+ ],
+ "n_komagomefujimae": [
+  [
+   "駒込富士前町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15334003"
+  ]
+ ],
+ "n_komakokomae": [
+  [
+   "小笠原新田",
+   null,
+   "[1950-XX-XX..1961-XX-XX]",
+   "EB03_14453022"
+  ]
+ ],
+ "n_komatsugawa_4_chome": [
+  [
+   "小松川",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_15379009"
+  ]
+ ],
+ "n_komeicho": [
+  [
+   "北前新田",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_17317007"
+  ]
+ ],
+ "n_komemachi": [
+  [
+   "大坂町九丁目",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425022"
+  ]
+ ],
+ "n_komi_tarumi": [
+  [
+   "美濃神海",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_17505013"
+  ]
+ ],
+ "n_konan_fukuda": [
+  [
+   "臨港福田",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21420004"
+  ]
+ ],
+ "n_konan_izumita": [
+  [
+   "臨港泉田",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21420003"
+  ]
+ ],
+ "n_konan_kusatsu": [
+  [
+   "深川",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_18204005"
+  ]
+ ],
+ "n_konan_shimpo": [
+  [
+   "臨港新保",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21420002"
+  ]
+ ],
+ "n_konanshogakkomae": [
+  [
+   "柏中学前",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_11325004"
+  ],
+  [
+   "山鼻20条",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_11325004"
+  ]
+ ],
+ "n_konotori_no_sato": [
+  [
+   "但馬三江",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19501018"
+  ]
+ ],
+ "n_korakucho": [
+  [
+   "南前新田",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_17317009"
+  ]
+ ],
+ "n_koseibyoinmae": [
+  [
+   "新坂通",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12306002"
+  ]
+ ],
+ "n_koshiengobancho": [
+  [
+   "甲子園六番町",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_19437003"
+  ]
+ ],
+ "n_koshigaya": [
+  [
+   "越ヶ谷",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_13418023"
+  ]
+ ],
+ "n_koshimachi": [
+  [
+   "古志",
+   null,
+   "[1950-XX-XX..1953-XX-XX]",
+   "EB03_21405002"
+  ]
+ ],
+ "n_kotobuki_3_chome": [
+  [
+   "桂町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15361007"
+  ]
+ ],
+ "n_kotobuki_fujikyu": [
+  [
+   "暮地",
+   null,
+   "[1980-XX-XX..1981-XX-XX]",
+   "EB03_14450012"
+  ]
+ ],
+ "n_kotsukyokumae_loop_line_sendai_city": [
+  [
+   "北二番丁車庫前",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303010"
+  ]
+ ],
+ "n_kouda": [
+  [
+   "肥前神田",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22509039"
+  ]
+ ],
+ "n_kowada_uonuma": [
+  [
+   "小粟田原",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_16211004"
+  ]
+ ],
+ "n_kudankita_3_chome": [
+  [
+   "九段三丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15357002"
+  ]
+ ],
+ "n_kugahara_tokyu_railways": [
+  [
+   "久ヶ原",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14441012"
+  ]
+ ],
+ "n_kuhonjikosaten": [
+  [
+   "郵政局前",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_22311002"
+  ],
+  [
+   "電報局前",
+   "[1958-XX-XX..1959-XX-XX]",
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_22311002"
+  ]
+ ],
+ "n_kujokintetsumae": [
+  [
+   "九条堀川奈良電前",
+   null,
+   "[1950-XX-XX..1963-XX-XX]",
+   "EB03_19320005"
+  ],
+  [
+   "九条奈良電前",
+   "[1950-XX-XX..1963-XX-XX]",
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_19320005"
+  ]
+ ],
+ "n_kujoshichihonmatsu": [
+  [
+   "九条大路七本松",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_19320009"
+  ]
+ ],
+ "n_kujoshimmichi": [
+  [
+   "花園橋",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_20310008"
+  ]
+ ],
+ "n_kumamoto_kosen_mae": [
+  [
+   "電波高専前",
+   null,
+   "[2012-XX-XX..2013-XX-XX]",
+   "EB03_22410014"
+  ]
+ ],
+ "n_kumamotojoshiyakushomae": [
+  [
+   "市役所前",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_22310008"
+  ]
+ ],
+ "n_kumanoshi": [
+  [
+   "紀伊木本",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_18210004"
+  ]
+ ],
+ "n_kuramae_2_chome": [
+  [
+   "蔵前三丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15363004"
+  ]
+ ],
+ "n_kurate_muroki": [
+  [
+   "新延",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_22226003"
+  ]
+ ],
+ "n_kurayoshi": [
+  [
+   "上井",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_21228068"
+  ]
+ ],
+ "n_kuri_kawashiri": [
+  [
+   "能登川尻",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213020"
+  ]
+ ],
+ "n_kurohime": [
+  [
+   "柏原",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_16215011"
+  ]
+ ],
+ "n_kuronagi": [
+  [
+   "後曳",
+   "1953-11-16",
+   "[1958-01-01..1971-12-31]",
+   "EB03_16450004"
+  ]
+ ],
+ "n_kurosawa_yuri_kogen": [
+  [
+   "羽後黒沢",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_12510005"
+  ]
+ ],
+ "n_kurumazakijinja": [
+  [
+   "車折",
+   null,
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_19409011"
+  ]
+ ],
+ "n_kusatsu_hiroden": [
+  [
+   "草津町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_21453005"
+  ]
+ ],
+ "n_kusatsuminami": [
+  [
+   "中央市場前",
+   null,
+   "[1978-XX-XX..1979-XX-XX]",
+   "EB03_21453006"
+  ]
+ ],
+ "n_kushima": [
+  [
+   "福島仲町",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_22238012"
+  ]
+ ],
+ "n_kuwamizukosaten": [
+  [
+   "神水町",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22312005"
+  ],
+  [
+   "神水橋",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_22312005"
+  ],
+  [
+   "神水・市民病院前",
+   "[2010-XX-XX..2011-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22312005"
+  ]
+ ],
+ "n_kyomachi_onsen": [
+  [
+   "京町",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22220015"
+  ]
+ ],
+ "n_kyomachibori_4_chome": [
+  [
+   "京町堀通四丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_20355003"
+  ]
+ ],
+ "n_kyoshin": [
+  [
+   "一区中通",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11239037"
+  ]
+ ],
+ "n_kyotango_omiya": [
+  [
+   "口大野",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_19501011"
+  ],
+  [
+   "丹後大宮",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19501011"
+  ]
+ ],
+ "n_kyotoekihachijoguchi": [
+  [
+   "京都駅南口",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_19304003"
+  ]
+ ],
+ "n_kyukan_iryo_center_mae": [
+  [
+   "高岡市庁前",
+   null,
+   "[1979-XX-XX..1980-XX-XX]",
+   "EB03_16506005"
+  ],
+  [
+   "本丸会館前",
+   "[1979-XX-XX..1980-XX-XX]",
+   "[2013-XX-XX..2014-XX-XX]",
+   "EB03_16506005"
+  ]
+ ],
+ "n_kyusendo": [
+  [
+   "大阪間",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22206010"
+  ]
+ ],
+ "n_kyushukodaimae": [
+  [
+   "新中原",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22202007"
+  ]
+ ],
+ "n_machida_odakyu": [
+  [
+   "新原町田",
+   null,
+   "[1975-XX-XX..1976-XX-XX]",
+   "EB03_14405027"
+  ]
+ ],
+ "n_machiya_ekimae": [
+  [
+   "町屋一丁目",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_15382006"
+  ]
+ ],
+ "n_maeda_nishi_nippon": [
+  [
+   "西前田",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425044"
+  ]
+ ],
+ "n_maedagakkomae": [
+  [
+   "下シ沢",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_12417021"
+  ]
+ ],
+ "n_makifudomae": [
+  [
+   "馬木",
+   null,
+   "[1950-XX-XX..1953-XX-XX]",
+   "EB03_21405003"
+  ]
+ ],
+ "n_makubetsu": [
+  [
+   "止若",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_11231032"
+  ]
+ ],
+ "n_marunouchi_toyama_chiho": [
+  [
+   "総曲輪",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_16418004"
+  ]
+ ],
+ "n_maruyama_kobe": [
+  [
+   "電鉄丸山",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_19412003"
+  ]
+ ],
+ "n_masagosakaue": [
+  [
+   "真砂町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15346002"
+  ]
+ ],
+ "n_mashu": [
+  [
+   "弟子屈",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_11234012"
+  ]
+ ],
+ "n_masuda": [
+  [
+   "石見益田",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_21224028"
+  ]
+ ],
+ "n_matobacho": [
+  [
+   "的場",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21447003"
+  ]
+ ],
+ "n_matsubara_tokyu_railways": [
+  [
+   "玉電松原",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_14444009"
+  ]
+ ],
+ "n_matsue_english_garden_mae": [
+  [
+   "古江",
+   null,
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_21406022"
+  ],
+  [
+   "ルイス・C．ティファニー庭園美術館前",
+   "[2000-XX-XX..2001-XX-XX]",
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_21406022"
+  ]
+ ],
+ "n_matsue_shinjiko_onsen": [
+  [
+   "北松江",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_21406024"
+  ],
+  [
+   "松江温泉",
+   "[1969-XX-XX..1970-XX-XX]",
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_21406024"
+  ]
+ ],
+ "n_matsugaya_1_chome": [
+  [
+   "清島町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15367003"
+  ]
+ ],
+ "n_matsunohama": [
+  [
+   "助松",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_18442021"
+  ]
+ ],
+ "n_matsuo_hachimantai": [
+  [
+   "岩手松尾",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_12218006"
+  ]
+ ],
+ "n_matsuo_shimabara": [
+  [
+   "松尾町",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441019"
+  ]
+ ],
+ "n_matsuo_taisha": [
+  [
+   "松尾",
+   null,
+   "[2012-XX-XX..2013-XX-XX]",
+   "EB03_19423003"
+  ]
+ ],
+ "n_matsushima": [
+  [
+   "新松島",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_12207110"
+  ]
+ ],
+ "n_matsushima_2_chome": [
+  [
+   "松島四丁目",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_21435006"
+  ]
+ ],
+ "n_matsushimakoemmae": [
+  [
+   "松島町一丁目",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_20314001"
+  ]
+ ],
+ "n_matsuura": [
+  [
+   "志佐",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_22509025"
+  ]
+ ],
+ "n_matsuzaki_amagi": [
+  [
+   "筑後松崎",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_22501005"
+  ]
+ ],
+ "n_maya_cable": [
+  [
+   "高尾",
+   null,
+   "[1975-XX-XX..1976-XX-XX]",
+   "EB03_19342001"
+  ],
+  [
+   "摩耶ケーブル下",
+   "[1975-XX-XX..1976-XX-XX]",
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_19342001"
+  ]
+ ],
+ "n_medical_center": [
+  [
+   "市民病院前",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22416005"
+  ]
+ ],
+ "n_meganebashi": [
+  [
+   "賑橋",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22418002"
+  ]
+ ],
+ "n_meitetsu_gifu": [
+  [
+   "新岐阜",
+   null,
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_17424067"
+  ]
+ ],
+ "n_midori": [
+  [
+   "上札鶴",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_11234015"
+  ]
+ ],
+ "n_midori_1_chome": [
+  [
+   "東両国緑町",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15368001"
+  ]
+ ],
+ "n_midori_2_chome": [
+  [
+   "緑町二丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15372004"
+  ]
+ ],
+ "n_midori_3_chome": [
+  [
+   "緑町三丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15372005"
+  ]
+ ],
+ "n_midorigaoka_kobe": [
+  [
+   "広野野球場前",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_19413009"
+  ]
+ ],
+ "n_midorigaoka_tokyu_railways": [
+  [
+   "緑ヶ丘",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14442009"
+  ]
+ ],
+ "n_mihagino": [
+  [
+   "香春口五丁目",
+   null,
+   "[1950-XX-XX..1979-XX-XX]",
+   "EB03_22426006"
+  ]
+ ],
+ "n_mihama": [
+  [
+   "河原市",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_19204005"
+  ]
+ ],
+ "n_mikadodai": [
+  [
+   "有度学校前",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_17408011"
+  ]
+ ],
+ "n_mikawa_banetsu_west": [
+  [
+   "白崎",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_12223033"
+  ]
+ ],
+ "n_mikuriya_matsuura": [
+  [
+   "肥前御厨",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22509027"
+  ]
+ ],
+ "n_mimata": [
+  [
+   "東都城",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_22214096"
+  ]
+ ],
+ "n_minami_aoyama_1_chome": [
+  [
+   "南町一丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15318002"
+  ]
+ ],
+ "n_minami_aoyama_2_chome": [
+  [
+   "青山三丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15354007"
+  ]
+ ],
+ "n_minami_aoyama_5_chome": [
+  [
+   "青山六丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15354012"
+  ]
+ ],
+ "n_minami_chitose": [
+  [
+   "千歳空港",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_11224013"
+  ]
+ ],
+ "n_minami_hanyu": [
+  [
+   "須影",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_13418038"
+  ]
+ ],
+ "n_minami_hyuga": [
+  [
+   "岩脇",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_22214076"
+  ]
+ ],
+ "n_minami_kagoshima_ekimae": [
+  [
+   "競馬場前",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_22303008"
+  ],
+  [
+   "南港入口",
+   "[1955-XX-XX..1956-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_22303008"
+  ]
+ ],
+ "n_minami_kariyasu": [
+  [
+   "苅安",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502022"
+  ]
+ ],
+ "n_minami_machida_grandberry_park": [
+  [
+   "南町田",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_14443025"
+  ]
+ ],
+ "n_minami_okayama": [
+  [
+   "汽車会社前",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21420007"
+  ]
+ ],
+ "n_minami_sendai": [
+  [
+   "陸前中田",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_12207099"
+  ]
+ ],
+ "n_minami_senri": [
+  [
+   "新千里山",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_19424013"
+  ]
+ ],
+ "n_minamichokai": [
+  [
+   "鳥海",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_12233041"
+  ]
+ ],
+ "n_minamimachi_4_chome": [
+  [
+   "泉町広小路",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_13402010"
+  ]
+ ],
+ "n_minamimachi_6_chome": [
+  [
+   "専売公社前",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_21448010"
+  ],
+  [
+   "皆実町3丁目",
+   "[1961-XX-XX..1962-XX-XX]",
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_21448010"
+  ]
+ ],
+ "n_minamisuna_2_chome": [
+  [
+   "南砂町四丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15378010"
+  ]
+ ],
+ "n_minamisuna_3_chome": [
+  [
+   "南砂町三丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15378008"
+  ]
+ ],
+ "n_minamisuna_5_chome": [
+  [
+   "南砂町二丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15381002"
+  ]
+ ],
+ "n_minatojima": [
+  [
+   "市民病院前",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_19505005"
+  ]
+ ],
+ "n_mine": [
+  [
+   "吉則",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_21227006"
+  ]
+ ],
+ "n_mino_meitetsu": [
+  [
+   "新美濃町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17449024"
+  ]
+ ],
+ "n_mino_yosan": [
+  [
+   "高瀬大坊",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_21203018"
+  ]
+ ],
+ "n_minoshi": [
+  [
+   "美濃町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17502012"
+  ]
+ ],
+ "n_misaki_koen_nankai": [
+  [
+   "南淡輪",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_18442041"
+  ]
+ ],
+ "n_misato_sangi": [
+  [
+   "宇賀渓口",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_18440012"
+  ]
+ ],
+ "n_misawa_aoimori": [
+  [
+   "古間木",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_12207171"
+  ]
+ ],
+ "n_misawa_towada_kanko": [
+  [
+   "古間木",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_12412001"
+  ]
+ ],
+ "n_mishima_tamachi": [
+  [
+   "三島町",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_14403003"
+  ]
+ ],
+ "n_misotenjinmae": [
+  [
+   "味噌天神",
+   null,
+   "[1949-XX-XX..1950-XX-XX]",
+   "EB03_22311004"
+  ]
+ ],
+ "n_misuji_2_chome": [
+  [
+   "三筋町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15361006"
+  ]
+ ],
+ "n_mitoshirocho": [
+  [
+   "千代田区役所前",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_15326006"
+  ]
+ ],
+ "n_mitsuya": [
+  [
+   "吊橋",
+   null,
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_16444007"
+  ]
+ ],
+ "n_miyanosaka_keihan": [
+  [
+   "中宮",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_20406002"
+  ]
+ ],
+ "n_miyauchi_yamagata": [
+  [
+   "宮内町",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_12505003"
+  ]
+ ],
+ "n_miyazaki_jingu": [
+  [
+   "花ヶ島",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_22214086"
+  ]
+ ],
+ "n_miyoshi": [
+  [
+   "備後十日市",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_21219024"
+  ]
+ ],
+ "n_mizuho_kuyakusho_nagoya_tram": [
+  [
+   "瑞穂通三丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_17338014"
+  ]
+ ],
+ "n_mizuhodori_1_chome": [
+  [
+   "市民病院前",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17338013"
+  ],
+  [
+   "市立大学病院前",
+   "[1955-XX-XX..1956-XX-XX]",
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_17338013"
+  ]
+ ],
+ "n_mizuma_kannon": [
+  [
+   "水間",
+   null,
+   "[2008-XX-XX..2009-XX-XX]",
+   "EB03_18461012"
+  ]
+ ],
+ "n_mogami": [
+  [
+   "羽前向町",
+   null,
+   "[1998-XX-XX..1999-XX-XX]",
+   "EB03_12231020"
+  ]
+ ],
+ "n_mokichi_kinenkan_mae": [
+  [
+   "北上ノ山",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_12225016"
+  ]
+ ],
+ "n_momozono_nishi_nippon": [
+  [
+   "桃園町",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425045"
+  ]
+ ],
+ "n_morimachi": [
+  [
+   "竹の久保通",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_22415028"
+  ]
+ ],
+ "n_moritabokujomae": [
+  [
+   "膝森",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_12413010"
+  ]
+ ],
+ "n_motateyama": [
+  [
+   "裳立山遊園地",
+   null,
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_19450003"
+  ]
+ ],
+ "n_motoasakusa_1_chome": [
+  [
+   "竹町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15361004"
+  ]
+ ],
+ "n_motoasakusa_3_chome": [
+  [
+   "小島町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15361005"
+  ]
+ ],
+ "n_motomachihokugimmae": [
+  [
+   "清水北銀前",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_16455003"
+  ]
+ ],
+ "n_motomiyacho": [
+  [
+   "泥田",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22427009"
+  ]
+ ],
+ "n_motosu": [
+  [
+   "美濃本巣",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_17505009"
+  ]
+ ],
+ "n_motoujinaguchi": [
+  [
+   "向宇品",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_21448019"
+  ],
+  [
+   "向宇品口",
+   "[1968-XX-XX..1969-XX-XX]",
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_21448019"
+  ]
+ ],
+ "n_mukogaoka_1_chome": [
+  [
+   "蓬莱町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15336009"
+  ]
+ ],
+ "n_mukogaoka_2_chome": [
+  [
+   "本郷肴町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15334001"
+  ]
+ ],
+ "n_mukogaoka_yuen": [
+  [
+   "稲田登戸",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_14405019"
+  ]
+ ],
+ "n_mukojima_2_chome": [
+  [
+   "向島三丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15369003"
+  ]
+ ],
+ "n_mukojima_5_chome": [
+  [
+   "向島須崎町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15369004"
+  ]
+ ],
+ "n_murayama": [
+  [
+   "楯岡",
+   null,
+   "[1998-XX-XX..1999-XX-XX]",
+   "EB03_12225030"
+  ]
+ ],
+ "n_muromibashi": [
+  [
+   "西ノ庄",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429030"
+  ]
+ ],
+ "n_musashinodai": [
+  [
+   "車返",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_14410021"
+  ]
+ ],
+ "n_mutsuai_nichidaimae": [
+  [
+   "六会",
+   null,
+   "[1997-XX-XX..1998-XX-XX]",
+   "EB03_14407011"
+  ]
+ ],
+ "n_myokenguchi": [
+  [
+   "妙見",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_19419017"
+  ]
+ ],
+ "n_myoko_kogen": [
+  [
+   "田口",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_16215012"
+  ]
+ ],
+ "n_nagaishidori": [
+  [
+   "秋葉通",
+   null,
+   "[1950-XX-XX..1971-XX-XX]",
+   "EB03_22405022"
+  ]
+ ],
+ "n_nagamachi_1_chome_sendai_tram": [
+  [
+   "長町北町",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12304011"
+  ]
+ ],
+ "n_nagamachishishomae": [
+  [
+   "秋保電鉄前",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12304015"
+  ]
+ ],
+ "n_nagaokakyo": [
+  [
+   "神足",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_19201024"
+  ]
+ ],
+ "n_nagarekawadori": [
+  [
+   "別府桟橋",
+   null,
+   "[1950-XX-XX..1971-XX-XX]",
+   "EB03_22405023"
+  ]
+ ],
+ "n_nagasakidaigaku": [
+  [
+   "家野町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_22415005"
+  ],
+  [
+   "長崎大学前",
+   "[1965-XX-XX..1966-XX-XX]",
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22415005"
+  ]
+ ],
+ "n_nagatoshi": [
+  [
+   "正明市",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_21227012"
+  ]
+ ],
+ "n_nagawa": [
+  [
+   "長流",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11222012"
+  ]
+ ],
+ "n_nagiso": [
+  [
+   "三留野",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_17202017"
+  ]
+ ],
+ "n_nagoyako_nagoya_tram": [
+  [
+   "築港",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_17317013"
+  ]
+ ],
+ "n_naka_karuizawa": [
+  [
+   "沓掛",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_16215076"
+  ]
+ ],
+ "n_nakafuhonshamae": [
+  [
+   "中府",
+   null,
+   "[1950-XX-XX..1962-XX-XX]",
+   "EB03_21424004"
+  ]
+ ],
+ "n_nakajuku": [
+  [
+   "板橋八丁目",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_15341003"
+  ]
+ ],
+ "n_nakamura_koen_nagoya_tram": [
+  [
+   "中村公園前",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_17316007"
+  ]
+ ],
+ "n_nakashima": [
+  [
+   "安芸中島",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_21222011"
+  ]
+ ],
+ "n_nakayamadaira_onsen": [
+  [
+   "中山平",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12231016"
+  ]
+ ],
+ "n_nakazato": [
+  [
+   "肥前中里",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22509049"
+  ]
+ ],
+ "n_namidabashi": [
+  [
+   "新川",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_22303007"
+  ]
+ ],
+ "n_namikicho": [
+  [
+   "臨港藤田",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21420005"
+  ],
+  [
+   "岡南藤田",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[1977-XX-XX..1978-XX-XX]",
+   "EB03_21420005"
+  ]
+ ],
+ "n_namporo": [
+  [
+   "南幌向",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_11420006"
+  ]
+ ],
+ "n_nanabancho": [
+  [
+   "三番町",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_17349005"
+  ]
+ ],
+ "n_nanatsugatake_tozanguchi": [
+  [
+   "糸沢",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507020"
+  ]
+ ],
+ "n_naniwacho": [
+  [
+   "栄町",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_20362002"
+  ]
+ ],
+ "n_nanjo": [
+  [
+   "鯖波",
+   null,
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_16203016"
+  ]
+ ],
+ "n_nanotsuguchi": [
+  [
+   "船津町",
+   null,
+   "[1950-XX-XX..1978-XX-XX]",
+   "EB03_22431009"
+  ]
+ ],
+ "n_naokawa": [
+  [
+   "神原",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22214060"
+  ]
+ ],
+ "n_naruko_gotenyu": [
+  [
+   "東鳴子",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12231014"
+  ]
+ ],
+ "n_naruko_onsen": [
+  [
+   "鳴子",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12231015"
+  ]
+ ],
+ "n_naruomukogawajoshidai_mae": [
+  [
+   "鳴尾",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_19431013"
+  ]
+ ],
+ "n_nasushiobara": [
+  [
+   "東那須野",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_12207048"
+  ]
+ ],
+ "n_natori": [
+  [
+   "増田",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_12207098"
+  ]
+ ],
+ "n_nayabashihigashi": [
+  [
+   "納屋橋",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_17308003"
+  ]
+ ],
+ "n_negishi_4_chome": [
+  [
+   "金杉一丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15365004"
+  ]
+ ],
+ "n_negishi_5_chome": [
+  [
+   "金杉二丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15365006"
+  ]
+ ],
+ "n_negishi_ekimae": [
+  [
+   "中根岸町二丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_14308004"
+  ]
+ ],
+ "n_neyagawakoen": [
+  [
+   "東寝屋川",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_20203011"
+  ]
+ ],
+ "n_nezu_1_chome": [
+  [
+   "根津宮永町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15333004"
+  ]
+ ],
+ "n_nezu_2_chome": [
+  [
+   "根津八重垣町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15333005"
+  ]
+ ],
+ "n_nichinan": [
+  [
+   "吾田",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22238004"
+  ]
+ ],
+ "n_nichudori": [
+  [
+   "交通部前",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22303002"
+  ],
+  [
+   "交通局前",
+   "[1951-XX-XX..1952-XX-XX]",
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_22303002"
+  ]
+ ],
+ "n_nihonodorikenchomae": [
+  [
+   "県庁前",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_14315004"
+  ]
+ ],
+ "n_nikaho": [
+  [
+   "羽後平沢",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_12233049"
+  ]
+ ],
+ "n_nikkofurumiya": [
+  [
+   "古宮",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434007"
+  ]
+ ],
+ "n_nikkohonkozaki": [
+  [
+   "本幸崎",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434002"
+  ]
+ ],
+ "n_nikkokarako": [
+  [
+   "辛幸",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434006"
+  ]
+ ],
+ "n_nikkokoshuki": [
+  [
+   "小志生木",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434005"
+  ]
+ ],
+ "n_nikkoohira": [
+  [
+   "大平",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434003"
+  ]
+ ],
+ "n_nikkoojuki": [
+  [
+   "大志生木",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434004"
+  ]
+ ],
+ "n_nikkosaganoseki": [
+  [
+   "佐賀関",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22434009"
+  ]
+ ],
+ "n_ninohe": [
+  [
+   "北福岡",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12207158"
+  ]
+ ],
+ "n_niseko": [
+  [
+   "狩太",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_11218045"
+  ]
+ ],
+ "n_nishi_15_chome": [
+  [
+   "交通局前",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_11323007"
+  ],
+  [
+   "医大病院前",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_11323007"
+  ]
+ ],
+ "n_nishi_chofu": [
+  [
+   "上石原",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_14410019"
+  ]
+ ],
+ "n_nishi_furukawa": [
+  [
+   "中新田",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_12231006"
+  ]
+ ],
+ "n_nishi_furukawa_sendai": [
+  [
+   "中新田",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_12409019"
+  ]
+ ],
+ "n_nishi_hiroshima": [
+  [
+   "己斐",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_21211075"
+  ]
+ ],
+ "n_nishi_izumo": [
+  [
+   "知井宮",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_21228096"
+  ]
+ ],
+ "n_nishi_muko": [
+  [
+   "西向日町",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_19422018"
+  ]
+ ],
+ "n_nishi_namerikawa": [
+  [
+   "水橋口",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_16421015"
+  ]
+ ],
+ "n_nishi_obihiro": [
+  [
+   "伏古",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11231027"
+  ]
+ ],
+ "n_nishi_okoppe": [
+  [
+   "瀬戸牛",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_11239011"
+  ]
+ ],
+ "n_nishi_ono": [
+  [
+   "五国寺",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_16408006"
+  ]
+ ],
+ "n_nishi_osaki": [
+  [
+   "上岩出山",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12231008"
+  ]
+ ],
+ "n_nishi_sadowara": [
+  [
+   "佐土原",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_22237002"
+  ]
+ ],
+ "n_nishi_shimbashi_1_chome": [
+  [
+   "田村町一丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15309003"
+  ]
+ ],
+ "n_nishi_shimbashi_3_chome": [
+  [
+   "田村町四丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15310006"
+  ]
+ ],
+ "n_nishi_takanosu": [
+  [
+   "西ノ鷹巣",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_12508002"
+  ]
+ ],
+ "n_nishi_tomioka": [
+  [
+   "病院前",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_13440014"
+  ]
+ ],
+ "n_nishi_ueda": [
+  [
+   "北塩尻",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_16215086"
+  ]
+ ],
+ "n_nishi_yamana": [
+  [
+   "入野",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_13440006"
+  ]
+ ],
+ "n_nishiazabu": [
+  [
+   "霞町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15318004"
+  ]
+ ],
+ "n_nishigahara_1_chome": [
+  [
+   "上中里町",
+   null,
+   "[1950-XX-XX..1960-XX-XX]",
+   "EB03_15335003"
+  ]
+ ],
+ "n_nishigahara_yonchome": [
+  [
+   "滝野川",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_15382019"
+  ]
+ ],
+ "n_nishigawaryokudokoen": [
+  [
+   "西川",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_21417002"
+  ]
+ ],
+ "n_nishiharue_heartpia": [
+  [
+   "西春江",
+   null,
+   "[2016-XX-XX..2017-XX-XX]",
+   "EB03_16502012"
+  ]
+ ],
+ "n_nishiitachibori": [
+  [
+   "立売堀北通五丁目",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_20355005"
+  ]
+ ],
+ "n_nishijin_nishi_nippon": [
+  [
+   "西新町",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429026"
+  ]
+ ],
+ "n_nishikagashima": [
+  [
+   "合渡橋",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_17452010"
+  ]
+ ],
+ "n_nishikata_1_chome": [
+  [
+   "小石川柳町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15338003"
+  ]
+ ],
+ "n_nishikicho_loop_line_sendai_city": [
+  [
+   "光禅寺通",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303018"
+  ]
+ ],
+ "n_nishikuyakushomae": [
+  [
+   "扇田町",
+   null,
+   "[1950-XX-XX..1969-XX-XX]",
+   "EB03_14312005"
+  ]
+ ],
+ "n_nishinomiyanishiguchi": [
+  [
+   "夙川橋",
+   null,
+   "[1950-XX-XX..1973-XX-XX]",
+   "EB03_19436028"
+  ]
+ ],
+ "n_nishiohashi_osaka_city": [
+  [
+   "西長堀北通二丁目",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_20343006"
+  ]
+ ],
+ "n_nishioyodo": [
+  [
+   "浦江",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_19435005"
+  ]
+ ],
+ "n_nishisenjuichijo": [
+  [
+   "南11条",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_11324005"
+  ]
+ ],
+ "n_nishisenjuyojo": [
+  [
+   "南14条",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_11324006"
+  ]
+ ],
+ "n_nishisenkujoasahiyamakoendori": [
+  [
+   "南9条",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_11324004"
+  ],
+  [
+   "西線9条",
+   "[1956-XX-XX..1957-XX-XX]",
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_11324004"
+  ],
+  [
+   "旭山公園通",
+   "[1972-XX-XX..1973-XX-XX]",
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_11324004"
+  ]
+ ],
+ "n_nishisenrokujo": [
+  [
+   "南6条",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_11324003"
+  ]
+ ],
+ "n_nishitetsuchihaya": [
+  [
+   "名香野",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_22419010"
+  ]
+ ],
+ "n_nishitetsuguraundohoterumae": [
+  [
+   "西鉄本社前",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429016"
+  ]
+ ],
+ "n_nishitetsuokawa": [
+  [
+   "榎津",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_22423010"
+  ]
+ ],
+ "n_nishiwakishi": [
+  [
+   "野村",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_19205013"
+  ]
+ ],
+ "n_nishiyama_koen": [
+  [
+   "下鯖江",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_16432007"
+  ]
+ ],
+ "n_nissekibyoinmae": [
+  [
+   "大学前",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_21448007"
+  ],
+  [
+   "広島大学前",
+   "[1963-XX-XX..1964-XX-XX]",
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_21448007"
+  ]
+ ],
+ "n_noda_osaka_city": [
+  [
+   "野田駅前",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_20327005"
+  ]
+ ],
+ "n_nodaoi": [
+  [
+   "野田追",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11218020"
+  ]
+ ],
+ "n_nogakubumae": [
+  [
+   "農大前",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_21436012"
+  ]
+ ],
+ "n_nogeodori": [
+  [
+   "緑橋",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_14314002"
+  ]
+ ],
+ "n_nogeyamayuenchiiriguchi": [
+  [
+   "野毛町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14314003"
+  ]
+ ],
+ "n_nokendai": [
+  [
+   "谷津坂",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_14416040"
+  ]
+ ],
+ "n_nomineagari": [
+  [
+   "寺井",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_16203037"
+  ]
+ ],
+ "n_norinkokomae": [
+  [
+   "釜無川",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14453015"
+  ]
+ ],
+ "n_obase_nishikodai_mae": [
+  [
+   "小波瀬",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_22214009"
+  ]
+ ],
+ "n_odashi": [
+  [
+   "石見大田",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_21228103"
+  ]
+ ],
+ "n_oecho": [
+  [
+   "六号地",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_17315007"
+  ]
+ ],
+ "n_oga_oga_old": [
+  [
+   "船川",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_12228009"
+  ]
+ ],
+ "n_ogibashi_2_chome": [
+  [
+   "小名木川橋",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_15373006"
+  ]
+ ],
+ "n_ogoto_onsen": [
+  [
+   "雄琴",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_19202005"
+  ]
+ ],
+ "n_ogotoonsen": [
+  [
+   "雄琴",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_19411008"
+  ]
+ ],
+ "n_ogura": [
+  [
+   "奈良電小倉",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_18419010"
+  ]
+ ],
+ "n_ogura_nishi_nippon": [
+  [
+   "中町",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425041"
+  ]
+ ],
+ "n_ohori_nishi_nippon": [
+  [
+   "大濠町",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22432009"
+  ]
+ ],
+ "n_oji_3_chome": [
+  [
+   "尾長橋",
+   null,
+   "[1950-XX-XX..1971-XX-XX]",
+   "EB03_15383003"
+  ]
+ ],
+ "n_okachimachi_ekimae": [
+  [
+   "御徒町三丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15332011"
+  ]
+ ],
+ "n_okaido": [
+  [
+   "一番町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21413007"
+  ]
+ ],
+ "n_okaji": [
+  [
+   "気賀高校前",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_17506025"
+  ]
+ ],
+ "n_okayama_ekimae": [
+  [
+   "駅前",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_21417001"
+  ]
+ ],
+ "n_okazaki_ekimae": [
+  [
+   "岡崎新",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_17427018"
+  ]
+ ],
+ "n_okazakikoemmae": [
+  [
+   "東山二条",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_19314011"
+  ]
+ ],
+ "n_okinami": [
+  [
+   "立戸の浜",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213006"
+  ]
+ ],
+ "n_okuhida_onsenguchi": [
+  [
+   "神岡",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_16201008"
+  ]
+ ],
+ "n_okunakayama_kogen": [
+  [
+   "奥中山",
+   null,
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_12207154"
+  ]
+ ],
+ "n_okunodo": [
+  [
+   "奥堂町",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22430002"
+  ]
+ ],
+ "n_okutama": [
+  [
+   "氷川",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_14205025"
+  ]
+ ],
+ "n_omachi_toyama_chiho": [
+  [
+   "堀川大町",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_16417002"
+  ],
+  [
+   "南小泉",
+   "[1951-XX-XX..1952-XX-XX]",
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_16417002"
+  ]
+ ],
+ "n_omachinishikoenmae": [
+  [
+   "大町一丁目",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303008"
+  ]
+ ],
+ "n_omiyashogakkomae": [
+  [
+   "森小路町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_20324010"
+  ]
+ ],
+ "n_omori_kinjogakuin_mae": [
+  [
+   "大森",
+   null,
+   "[1991-XX-XX..1992-XX-XX]",
+   "EB03_17419020"
+  ]
+ ],
+ "n_omoshiroyama_kogen": [
+  [
+   "面白山",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_12208016"
+  ]
+ ],
+ "n_omura_kobe": [
+  [
+   "電鉄大村",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_19413015"
+  ]
+ ],
+ "n_omuroninnaji": [
+  [
+   "御室",
+   null,
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_19410006"
+  ]
+ ],
+ "n_onishi": [
+  [
+   "伊予大井",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_21203047"
+  ]
+ ],
+ "n_ono_shimabara": [
+  [
+   "小野村",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_22441004"
+  ],
+  [
+   "小野本町",
+   "[1963-XX-XX..1964-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441004"
+  ]
+ ],
+ "n_onomichikoko_shita": [
+  [
+   "大池",
+   null,
+   "[1950-XX-XX..1963-XX-XX]",
+   "EB03_21421007"
+  ]
+ ],
+ "n_onuma": [
+  [
+   "軍川",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_11218008"
+  ]
+ ],
+ "n_osaka_namba_kintetsu": [
+  [
+   "近鉄難波",
+   null,
+   "[2008-XX-XX..2009-XX-XX]",
+   "EB03_18409001"
+  ]
+ ],
+ "n_osaka_uehommachi": [
+  [
+   "上本町",
+   null,
+   "[2008-XX-XX..2009-XX-XX]",
+   "EB03_18409003"
+  ]
+ ],
+ "n_oshinozucho": [
+  [
+   "御崎口",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_21230009"
+  ]
+ ],
+ "n_otemachi_ekimae_iyotetsu": [
+  [
+   "江戸町駅前",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_21414004"
+  ]
+ ],
+ "n_otemachi_iyotetsu": [
+  [
+   "江戸町",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_21408010"
+  ]
+ ],
+ "n_otemon": [
+  [
+   "下ノ橋",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429020"
+  ]
+ ],
+ "n_otorichugakkomae": [
+  [
+   "本牧",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14307015"
+  ],
+  [
+   "本牧三渓園前",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_14307015"
+  ]
+ ],
+ "n_otowa_1_chome": [
+  [
+   "音羽七丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15343003"
+  ]
+ ],
+ "n_otowa_2_chome": [
+  [
+   "音羽三丁目",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15343002"
+  ]
+ ],
+ "n_otsuka_2_chome": [
+  [
+   "大塚窪町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15345006"
+  ]
+ ],
+ "n_otsuka_3_chome": [
+  [
+   "大塚仲町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15342004"
+  ]
+ ],
+ "n_otsuka_6_chome": [
+  [
+   "大塚坂下町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15344002"
+  ],
+  [
+   "大塚五丁目",
+   "[1966-XX-XX..1967-XX-XX]",
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15344002"
+  ]
+ ],
+ "n_otsukyo": [
+  [
+   "西大津",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_19202002"
+  ]
+ ],
+ "n_otsutachi": [
+  [
+   "立久恵",
+   null,
+   "[1950-XX-XX..1953-XX-XX]",
+   "EB03_21405009"
+  ]
+ ],
+ "n_oura_noto": [
+  [
+   "能登小浦",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213016"
+  ]
+ ],
+ "n_ourakaigandori": [
+  [
+   "大浦",
+   null,
+   "[1982-XX-XX..1983-XX-XX]",
+   "EB03_22416006"
+  ]
+ ],
+ "n_ouratenshudo": [
+  [
+   "弁天橋",
+   null,
+   "[1979-XX-XX..1980-XX-XX]",
+   "EB03_22416007"
+  ],
+  [
+   "大浦天主堂下",
+   "[1979-XX-XX..1980-XX-XX]",
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22416007"
+  ]
+ ],
+ "n_oya_nagaragawa": [
+  [
+   "美濃下川",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502020"
+  ]
+ ],
+ "n_oyakaigan": [
+  [
+   "大谷",
+   null,
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_12211012"
+  ]
+ ],
+ "n_oyama_cable": [
+  [
+   "追分",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_14458001"
+  ]
+ ],
+ "n_oyodo": [
+  [
+   "北浦江",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_19435006"
+  ]
+ ],
+ "n_puru_center_mae": [
+  [
+   "中根岸町三丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_14308005"
+  ]
+ ],
+ "n_rairaikyo": [
+  [
+   "松葉",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_12410011"
+  ]
+ ],
+ "n_rakurakuen": [
+  [
+   "楽々園遊園地",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_21453012"
+  ]
+ ],
+ "n_rakuyokokomae": [
+  [
+   "九条御前通",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19320010"
+  ]
+ ],
+ "n_randensaga": [
+  [
+   "嵯峨駅前",
+   null,
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_19409013"
+  ]
+ ],
+ "n_reikyukoentaiikukan": [
+  [
+   "島鉄本社前",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441022"
+  ]
+ ],
+ "n_rokko_cable_shita": [
+  [
+   "土橋",
+   null,
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_19452001"
+  ]
+ ],
+ "n_rokko_sanjo": [
+  [
+   "六甲山",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_19452002"
+  ]
+ ],
+ "n_rokuban_cho_6_chome": [
+  [
+   "二番道",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_17349004"
+  ]
+ ],
+ "n_ropeway_iriguchi": [
+  [
+   "西線19条",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11324008"
+  ],
+  [
+   "郵政研修所前",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_11324008"
+  ],
+  [
+   "ロープウェー入口",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_11324008"
+  ]
+ ],
+ "n_roppongi_5_chome": [
+  [
+   "三河台町",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15312006"
+  ]
+ ],
+ "n_roppongi_7_chome": [
+  [
+   "竜土町",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15312008"
+  ]
+ ],
+ "n_ryogoku_2_chome": [
+  [
+   "東両国二丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15322008"
+  ]
+ ],
+ "n_ryogoku_3_chome": [
+  [
+   "東両国三丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15372002"
+  ]
+ ],
+ "n_ryugasaki": [
+  [
+   "龍ヶ崎",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_13405005"
+  ]
+ ],
+ "n_ryukokudai_mae_fukakusa": [
+  [
+   "深草",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_20403036"
+  ]
+ ],
+ "n_ryusen_3_chome": [
+  [
+   "竜泉寺町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15362007"
+  ]
+ ],
+ "n_ryutsu_center": [
+  [
+   "新平和島",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_15413004"
+  ]
+ ],
+ "n_sadowara": [
+  [
+   "広瀬",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_22214083"
+  ]
+ ],
+ "n_sagamiko": [
+  [
+   "与瀬",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_14204035"
+  ]
+ ],
+ "n_sagarahanganjoji": [
+  [
+   "東人吉",
+   null,
+   "[1988-XX-XX..1989-XX-XX]",
+   "EB03_22502002"
+  ]
+ ],
+ "n_saginoyuonsenmae": [
+  [
+   "温泉前",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_21404010"
+  ]
+ ],
+ "n_saibanshomae_marutamachi": [
+  [
+   "堺町御門前",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_19316007"
+  ]
+ ],
+ "n_saidaijicho_okayama_geijutsu_sozo_gekijo_harenowa_mae": [
+  [
+   "西大寺町",
+   null,
+   "[2022-XX-XX..2023-XX-XX]",
+   "EB03_21417008"
+  ]
+ ],
+ "n_saidaijiichi": [
+  [
+   "西大寺町",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_21456001"
+  ]
+ ],
+ "n_sakado_tobu": [
+  [
+   "坂戸町",
+   null,
+   "[1975-XX-XX..1976-XX-XX]",
+   "EB03_14446027"
+  ]
+ ],
+ "n_sakae_kobe": [
+  [
+   "電鉄栄",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_19413007"
+  ]
+ ],
+ "n_sakaecho_toei": [
+  [
+   "飛鳥山下",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_15382015"
+  ]
+ ],
+ "n_sakaishi": [
+  [
+   "金岡",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18208009"
+  ]
+ ],
+ "n_sakakibara_onsenguchi": [
+  [
+   "佐田",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18410044"
+  ]
+ ],
+ "n_sakamoto_hieizanguchi": [
+  [
+   "坂本",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_19407022"
+  ]
+ ],
+ "n_sakuradoriotsu": [
+  [
+   "東桜町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_17311002"
+  ]
+ ],
+ "n_sakuragi_tenryu_hamanako": [
+  [
+   "遠江桜木",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_17506004"
+  ]
+ ],
+ "n_sakurai_meitetsu": [
+  [
+   "碧海桜井",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_17427006"
+  ]
+ ],
+ "n_sakurajimasanbashidori": [
+  [
+   "滑川",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_22302011"
+  ]
+ ],
+ "n_sakuramachi_nagasaki_tram": [
+  [
+   "小川町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_22417002"
+  ]
+ ],
+ "n_sakuramoto_kawasaki_city_transportation_bureau": [
+  [
+   "市電桜本",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_14301015"
+  ]
+ ],
+ "n_sambyakume": [
+  [
+   "岬之町",
+   null,
+   "[1950-XX-XX..1970-XX-XX]",
+   "EB03_21427020"
+  ]
+ ],
+ "n_sanjo_sarakura_tozan": [
+  [
+   "帆柱山",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_22435002"
+  ]
+ ],
+ "n_sanno": [
+  [
+   "山王筋",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22428009"
+  ]
+ ],
+ "n_sanroku": [
+  [
+   "小倉公園",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_22435001"
+  ]
+ ],
+ "n_sanyo_akashi": [
+  [
+   "電鉄明石",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417021"
+  ]
+ ],
+ "n_sanyo_himeji": [
+  [
+   "電鉄姫路",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417047"
+  ]
+ ],
+ "n_sanyo_shioya": [
+  [
+   "電鉄塩屋",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417010"
+  ]
+ ],
+ "n_sanyo_sone": [
+  [
+   "電鉄曽根",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417038"
+  ]
+ ],
+ "n_sanyo_suma": [
+  [
+   "電鉄須磨",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417008"
+  ]
+ ],
+ "n_sanyo_tarumi": [
+  [
+   "電鉄垂水",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417013"
+  ]
+ ],
+ "n_sanyo_temma": [
+  [
+   "電鉄天満",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19418005"
+  ]
+ ],
+ "n_sanyo_uozumi": [
+  [
+   "電鉄魚住",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417028"
+  ]
+ ],
+ "n_sapporoidaimae": [
+  [
+   "医大病院前",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_11323008"
+  ]
+ ],
+ "n_saroma": [
+  [
+   "中佐呂間",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_11241010"
+  ]
+ ],
+ "n_sarutahikojinjamae": [
+  [
+   "浦田町",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_18453010"
+  ]
+ ],
+ "n_sayamashi": [
+  [
+   "入間川",
+   null,
+   "[1978-XX-XX..1979-XX-XX]",
+   "EB03_14430028"
+  ]
+ ],
+ "n_seiaichuko_mae": [
+  [
+   "城南",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_12419011"
+  ]
+ ],
+ "n_seibuen_yuenchi": [
+  [
+   "遊園地西",
+   null,
+   "[2020-XX-XX..2021-XX-XX]",
+   "EB03_14436002"
+  ]
+ ],
+ "n_seibukagakumae": [
+  [
+   "若泉",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_14423005"
+  ]
+ ],
+ "n_seibuteomae": [
+  [
+   "交通局出張所前",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_11341004"
+  ],
+  [
+   "梁川車庫前",
+   "[1965-XX-XX..1966-XX-XX]",
+   "[1972-XX-XX..1973-XX-XX]",
+   "EB03_11341004"
+  ],
+  [
+   "開発建設部前",
+   "[1972-XX-XX..1973-XX-XX]",
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_11341004"
+  ]
+ ],
+ "n_seiho_koukou_mae": [
+  [
+   "上佐々",
+   null,
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_22509040"
+  ]
+ ],
+ "n_seiryu_shin_iwakuni": [
+  [
+   "御庄",
+   null,
+   "[2012-XX-XX..2013-XX-XX]",
+   "EB03_21508002"
+  ]
+ ],
+ "n_seishugakuenmae": [
+  [
+   "南16条",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11325006"
+  ],
+  [
+   "山鼻16条",
+   "[1958-XX-XX..1959-XX-XX]",
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_11325006"
+  ]
+ ],
+ "n_seitetsunishimommae": [
+  [
+   "緑町",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425043"
+  ]
+ ],
+ "n_seki_guchi_1_chome": [
+  [
+   "関口町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15348009"
+  ]
+ ],
+ "n_seki_nagaragawa": [
+  [
+   "美濃関",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502008"
+  ]
+ ],
+ "n_seki_shimouchi": [
+  [
+   "中濃西高前",
+   null,
+   "[2005-XX-XX..2006-XX-XX]",
+   "EB03_17502010"
+  ]
+ ],
+ "n_sekijujibyoinmae": [
+  [
+   "病院前",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_21412008"
+  ]
+ ],
+ "n_sekijujimae": [
+  [
+   "福井新",
+   null,
+   "[2009-XX-XX..2010-XX-XX]",
+   "EB03_16432019"
+  ]
+ ],
+ "n_sekiterasumae": [
+  [
+   "刃物会館前",
+   null,
+   "[2021-XX-XX..2022-XX-XX]",
+   "EB03_17502007"
+  ]
+ ],
+ "n_semi_onsen": [
+  [
+   "瀬見",
+   null,
+   "[1998-XX-XX..1999-XX-XX]",
+   "EB03_12231023"
+  ]
+ ],
+ "n_senbabashi": [
+  [
+   "塩屋町",
+   null,
+   "[1949-XX-XX..1950-XX-XX]",
+   "EB03_22313003"
+  ]
+ ],
+ "n_sendagi_2_chome": [
+  [
+   "駒込千駄木町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15333006"
+  ]
+ ],
+ "n_sendagi_3_chome": [
+  [
+   "駒込坂下町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15333008"
+  ]
+ ],
+ "n_sengen": [
+  [
+   "碁盤坂",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_11221006"
+  ]
+ ],
+ "n_sengoku_1_chome": [
+  [
+   "駕籠町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15333013"
+  ]
+ ],
+ "n_sengoku_2_chome": [
+  [
+   "丸山町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15342002"
+  ]
+ ],
+ "n_sengoku_3_chome": [
+  [
+   "氷川下町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15342003"
+  ]
+ ],
+ "n_senryugataki": [
+  [
+   "潜竜",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22509037"
+  ]
+ ],
+ "n_senzoku_2_chome": [
+  [
+   "千束町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15362006"
+  ]
+ ],
+ "n_setaka": [
+  [
+   "瀬高町",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_22202056"
+  ]
+ ],
+ "n_shibahara_handai_mae": [
+  [
+   "柴原",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_20501003"
+  ]
+ ],
+ "n_shichijokawaramachi": [
+  [
+   "七条内浜",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_19309019"
+  ]
+ ],
+ "n_shigakkoato": [
+  [
+   "大学病院前",
+   null,
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_22306002"
+  ]
+ ],
+ "n_shigeto": [
+  [
+   "天坪",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_21210024"
+  ]
+ ],
+ "n_shigisanguchi": [
+  [
+   "東高安",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_18411003"
+  ]
+ ],
+ "n_shigisanshita": [
+  [
+   "山下",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_18417002"
+  ]
+ ],
+ "n_shijokawaramachishinkyogoku": [
+  [
+   "四条河原町",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_19309014"
+  ]
+ ],
+ "n_shijosakaimachi": [
+  [
+   "大丸前",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_19318006"
+  ]
+ ],
+ "n_shikabe": [
+  [
+   "鷹待",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_11218110"
+  ]
+ ],
+ "n_shikadaigakumae": [
+  [
+   "運動場前",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425030"
+  ]
+ ],
+ "n_shikama_sanyo": [
+  [
+   "電鉄飾磨",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417044"
+  ]
+ ],
+ "n_shikinochugakkomae": [
+  [
+   "大坪町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_16506007"
+  ],
+  [
+   "向野",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1951-XX-XX..1958-XX-XX]",
+   "EB03_16506007"
+  ]
+ ],
+ "n_shima_isobe": [
+  [
+   "迫間",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_18438011"
+  ]
+ ],
+ "n_shimabara_funatsu": [
+  [
+   "島原湊",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_22441023"
+  ],
+  [
+   "南島原",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441023"
+  ]
+ ],
+ "n_shimabarako": [
+  [
+   "島原外港",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441024"
+  ]
+ ],
+ "n_shimin_koen_mae": [
+  [
+   "農大前",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17448010"
+  ],
+  [
+   "岐阜大学前",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1988-XX-XX..1989-XX-XX]",
+   "EB03_17448010"
+  ]
+ ],
+ "n_shiminkaikanmae": [
+  [
+   "須崎橋",
+   null,
+   "[1950-XX-XX..1978-XX-XX]",
+   "EB03_22431008"
+  ]
+ ],
+ "n_shiminkaikanmae_loop_line_sendai_city": [
+  [
+   "定禅寺通",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_12303009"
+  ],
+  [
+   "公会堂前",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1951-XX-XX..1975-XX-XX]",
+   "EB03_12303009"
+  ]
+ ],
+ "n_shimo_1_chome": [
+  [
+   "志茂町一丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15383008"
+  ]
+ ],
+ "n_shimo_2_chome": [
+  [
+   "志茂町三丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_15383009"
+  ]
+ ],
+ "n_shimo_kamoo": [
+  [
+   "赤坂",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_22223003"
+  ]
+ ],
+ "n_shimobe_onsen": [
+  [
+   "下部",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_14202020"
+  ]
+ ],
+ "n_shimochikami": [
+  [
+   "日吉",
+   null,
+   "[1950-XX-XX..1960-XX-XX]",
+   "EB03_22314011"
+  ],
+  [
+   "下近見町",
+   "[1950-XX-XX..1960-XX-XX]",
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_22314011"
+  ]
+ ],
+ "n_shimohyogo_kofuku": [
+  [
+   "下兵庫",
+   null,
+   "[2016-XX-XX..2017-XX-XX]",
+   "EB03_16502014"
+  ]
+ ],
+ "n_shimoishiki": [
+  [
+   "国立病院前",
+   null,
+   "[1962-XX-XX..1984-XX-XX]",
+   "EB03_22307009"
+  ]
+ ],
+ "n_shimonoseki_sanyo": [
+  [
+   "下関駅前",
+   null,
+   "[1950-XX-XX..1970-XX-XX]",
+   "EB03_21427024"
+  ]
+ ],
+ "n_shimosa_kozaki": [
+  [
+   "郡",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_13214006"
+  ]
+ ],
+ "n_shimura_sakaue_toden": [
+  [
+   "志村",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_15341009"
+  ]
+ ],
+ "n_shin_anjo": [
+  [
+   "今村",
+   null,
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_17424017"
+  ]
+ ],
+ "n_shin_daita": [
+  [
+   "代田二丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14415007"
+  ]
+ ],
+ "n_shin_fujieda": [
+  [
+   "藤枝新",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17410006"
+  ]
+ ],
+ "n_shin_fukuroi": [
+  [
+   "杜袋井",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17410052"
+  ],
+  [
+   "袋井駅前",
+   "[1955-XX-XX..1956-XX-XX]",
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17411001"
+  ]
+ ],
+ "n_shin_hakodate_hokuto": [
+  [
+   "渡島大野",
+   null,
+   "[2015-XX-XX..2016-XX-XX]",
+   "EB03_11218006"
+  ]
+ ],
+ "n_shin_hamamatsu_old": [
+  [
+   "旭町",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_17457021"
+  ]
+ ],
+ "n_shin_imamiya_ekimae": [
+  [
+   "南霞町",
+   null,
+   "[2013-XX-XX..2014-XX-XX]",
+   "EB03_20412002"
+  ]
+ ],
+ "n_shin_kani": [
+  [
+   "新広見",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_17445010"
+  ]
+ ],
+ "n_shin_kurashiki": [
+  [
+   "玉島",
+   null,
+   "[1974-XX-XX..1975-XX-XX]",
+   "EB03_21211046"
+  ]
+ ],
+ "n_shin_otaki": [
+  [
+   "徳舜瞥",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_11203008"
+  ]
+ ],
+ "n_shin_otsuka_otsuka": [
+  [
+   "大塚辻町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15345008"
+  ]
+ ],
+ "n_shin_sagara": [
+  [
+   "相良新",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_17410021"
+  ]
+ ],
+ "n_shin_seto": [
+  [
+   "尾張横山",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_17419029"
+  ]
+ ],
+ "n_shin_shimashima": [
+  [
+   "赤松",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_16446014"
+  ]
+ ],
+ "n_shin_shimonoseki": [
+  [
+   "長門一ノ宮",
+   null,
+   "[1974-XX-XX..1975-XX-XX]",
+   "EB03_21211120"
+  ]
+ ],
+ "n_shin_shirakawa": [
+  [
+   "磐城西郷",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_12207065"
+  ]
+ ],
+ "n_shin_shizuoka": [
+  [
+   "鷹匠町",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17408001"
+  ]
+ ],
+ "n_shin_suizenji_ekimae": [
+  [
+   "水前寺駅通",
+   null,
+   "[2010-XX-XX..2011-XX-XX]",
+   "EB03_22311005"
+  ]
+ ],
+ "n_shin_tokorozawa_shinjuku_line_seibu": [
+  [
+   "北所沢",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_14430026"
+  ]
+ ],
+ "n_shin_yamaguchi": [
+  [
+   "小郡",
+   null,
+   "[2002-XX-XX..2003-XX-XX]",
+   "EB03_19101015"
+  ]
+ ],
+ "n_shin_yubari": [
+  [
+   "紅葉山",
+   null,
+   "[1980-XX-XX..1981-XX-XX]",
+   "EB03_11230008"
+  ]
+ ],
+ "n_shinasahi": [
+  [
+   "新儀",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_19411024"
+  ]
+ ],
+ "n_shinchi_chukagai": [
+  [
+   "築町",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22415023"
+  ]
+ ],
+ "n_shinkyo": [
+  [
+   "神橋前",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417007"
+  ]
+ ],
+ "n_shinnan_yo": [
+  [
+   "周防富田",
+   null,
+   "[1979-XX-XX..1980-XX-XX]",
+   "EB03_21211103"
+  ]
+ ],
+ "n_shinnittetsu_mae": [
+  [
+   "加家",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_17433010"
+  ],
+  [
+   "東海製鉄前",
+   "[1963-XX-XX..1964-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_17433010"
+  ],
+  [
+   "富士製鉄前",
+   "[1966-XX-XX..1967-XX-XX]",
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_17433010"
+  ]
+ ],
+ "n_shinsakaeno": [
+  [
+   "野上",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_11232026"
+  ]
+ ],
+ "n_shintetsu_dojo": [
+  [
+   "道場川原",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_19414007"
+  ]
+ ],
+ "n_shintomicho_toyama_chiho": [
+  [
+   "神通町",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_16418002"
+  ]
+ ],
+ "n_shinyashiki": [
+  [
+   "新屋敷町",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_22302002"
+  ]
+ ],
+ "n_shinzo_kekkan_center": [
+  [
+   "循環器病センター",
+   null,
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_13441007"
+  ]
+ ],
+ "n_shiodamachi": [
+  [
+   "上本郷",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16402011"
+  ]
+ ],
+ "n_shioiri_keikyu": [
+  [
+   "横須賀汐留",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_14416047"
+  ]
+ ],
+ "n_shirahama": [
+  [
+   "白浜口",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18210037"
+  ]
+ ],
+ "n_shirakamidaketozanguchi": [
+  [
+   "陸奥黒崎",
+   null,
+   "[1999-XX-XX..2000-XX-XX]",
+   "EB03_12229013"
+  ]
+ ],
+ "n_shirakawadoriotsu": [
+  [
+   "南大津通",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_17313002"
+  ]
+ ],
+ "n_shiritsubyoinmae": [
+  [
+   "専売公社前",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_22305004"
+  ],
+  [
+   "たばこ産業前",
+   "[1984-XX-XX..1985-XX-XX]",
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_22305004"
+  ]
+ ],
+ "n_shiritsubyoinmae_omutashinai": [
+  [
+   "大牟田警察前",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_22424006"
+  ]
+ ],
+ "n_shiritsukokurabyoimmae": [
+  [
+   "小倉市立病院前",
+   null,
+   "[1950-XX-XX..1979-XX-XX]",
+   "EB03_22426003"
+  ]
+ ],
+ "n_shiritsumojibyoimmae": [
+  [
+   "市民病院前",
+   null,
+   "[1950-XX-XX..1984-XX-XX]",
+   "EB03_22425011"
+  ]
+ ],
+ "n_shiromaru_noto": [
+  [
+   "能登白丸",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213019"
+  ]
+ ],
+ "n_shiroshita_okayama": [
+  [
+   "表町入口",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_21417004"
+  ]
+ ],
+ "n_shirotori_kogen": [
+  [
+   "二日町",
+   null,
+   "[1995-XX-XX..1996-XX-XX]",
+   "EB03_17502036"
+  ]
+ ],
+ "n_shiseikanshogakkomae": [
+  [
+   "西創成学校前",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_11325012"
+  ],
+  [
+   "創成学校前",
+   "[1961-XX-XX..1962-XX-XX]",
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_11325012"
+  ],
+  [
+   "創成小学校前",
+   "[1981-XX-XX..1982-XX-XX]",
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_11325012"
+  ]
+ ],
+ "n_shitaya_2_chome": [
+  [
+   "坂本二丁目",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15365003"
+  ]
+ ],
+ "n_shitaya_3_chome": [
+  [
+   "金杉二丁目",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_15365005"
+  ],
+  [
+   "金杉仲通",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_15365005"
+  ]
+ ],
+ "n_shitayajinjamae": [
+  [
+   "東上野五丁目",
+   null,
+   "[1966-XX-XX..1971-XX-XX]",
+   "EB03_15367002"
+  ]
+ ],
+ "n_shiyakusho": [
+  [
+   "桶屋町",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_22417004"
+  ],
+  [
+   "公会堂前",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22417004"
+  ],
+  [
+   "市民会館",
+   "[2017-XX-XX..2018-XX-XX]",
+   "[2022-XX-XX..2023-XX-XX]",
+   "EB03_22417004"
+  ]
+ ],
+ "n_shiyakushomae": [
+  [
+   "中鉢石",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417006"
+  ]
+ ],
+ "n_shiyakushomae_kagoshima_city": [
+  [
+   "桟橋通",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_22302009"
+  ]
+ ],
+ "n_shiyakushomae_odawarashinai": [
+  [
+   "幸町交番前",
+   null,
+   "[1950-XX-XX..1955-XX-XX]",
+   "EB03_14449004"
+  ]
+ ],
+ "n_shiyakushomae_shimizushinai": [
+  [
+   "郵便局前",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_17407003"
+  ]
+ ],
+ "n_shogawamachi": [
+  [
+   "青島町",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_16410014"
+  ]
+ ],
+ "n_shokochukinmae": [
+  [
+   "上並木",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_14301003"
+  ]
+ ],
+ "n_shokokaigishomae": [
+  [
+   "木田四ツ辻",
+   null,
+   "[2015-XX-XX..2016-XX-XX]",
+   "EB03_16432020"
+  ]
+ ],
+ "n_shokubutsuemmae": [
+  [
+   "北大路橋",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_19313007"
+  ]
+ ],
+ "n_shonankaigankoen": [
+  [
+   "西方",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_14404006"
+  ]
+ ],
+ "n_shotenkyo": [
+  [
+   "丹後神野",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19501015"
+  ]
+ ],
+ "n_showa_nishi_nippon": [
+  [
+   "昭和町",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425033"
+  ]
+ ],
+ "n_shujitsugakuenmae": [
+  [
+   "一番町",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21419004"
+  ],
+  [
+   "一番町就実前",
+   "[1960-XX-XX..1961-XX-XX]",
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21419004"
+  ]
+ ],
+ "n_sodegaura": [
+  [
+   "楢葉",
+   null,
+   "[1973-XX-XX..1974-XX-XX]",
+   "EB03_13213007"
+  ]
+ ],
+ "n_soden": [
+  [
+   "忠節橋",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17451009"
+  ]
+ ],
+ "n_sodeshikeisatsushomae": [
+  [
+   "嶺駐在所前",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_17407012"
+  ]
+ ],
+ "n_sofukuji": [
+  [
+   "正覚寺下",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22415027"
+  ]
+ ],
+ "n_sogosando": [
+  [
+   "宗吾",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_13408040"
+  ]
+ ],
+ "n_soja": [
+  [
+   "西総社",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_21215010"
+  ]
+ ],
+ "n_sojodaigakumae": [
+  [
+   "熊本工大前",
+   null,
+   "[2003-XX-XX..2004-XX-XX]",
+   "EB03_22202072"
+  ]
+ ],
+ "n_soma": [
+  [
+   "中村",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_13211072"
+  ]
+ ],
+ "n_soneda": [
+  [
+   "電鉄福島",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_12420002"
+  ]
+ ],
+ "n_sotokanda_2_chome": [
+  [
+   "松住町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15323002"
+  ]
+ ],
+ "n_sotokanda_3_chome": [
+  [
+   "旅籠町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15323003"
+  ]
+ ],
+ "n_st_marys_hospital": [
+  [
+   "試験場前",
+   null,
+   "[2023-XX-XX..2024-XX-XX]",
+   "EB03_22420028"
+  ]
+ ],
+ "n_suhara_nagaragawa": [
+  [
+   "美濃洲原",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502015"
+  ]
+ ],
+ "n_suisankokomae": [
+  [
+   "下神白",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_12404002"
+  ]
+ ],
+ "n_suizokukanguchi": [
+  [
+   "県庁前",
+   null,
+   "[1995-XX-XX..1996-XX-XX]",
+   "EB03_22302010"
+  ],
+  [
+   "県庁跡",
+   "[1995-XX-XX..1996-XX-XX]",
+   "[1996-XX-XX..1997-XX-XX]",
+   "EB03_22302010"
+  ]
+ ],
+ "n_sundome_nishi": [
+  [
+   "上鯖江",
+   null,
+   "[2009-XX-XX..2010-XX-XX]",
+   "EB03_16432005"
+  ]
+ ],
+ "n_suruga_oyama": [
+  [
+   "駿河",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_14201009"
+  ]
+ ],
+ "n_suwajinja": [
+  [
+   "諏訪神社前",
+   null,
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22418006"
+  ]
+ ],
+ "n_suwashimmichi": [
+  [
+   "高等師範前",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_17425006"
+  ],
+  [
+   "新道",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_17425006"
+  ]
+ ],
+ "n_suzuka_circuit_ino": [
+  [
+   "稲生",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_18501005"
+  ]
+ ],
+ "n_suzukashi": [
+  [
+   "伊勢神戸",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_18434003"
+  ]
+ ],
+ "n_tabira_hiradoguchi": [
+  [
+   "平戸口",
+   null,
+   "[1988-XX-XX..1989-XX-XX]",
+   "EB03_22509031"
+  ]
+ ],
+ "n_tachikuekyo": [
+  [
+   "下立久恵",
+   null,
+   "[1950-XX-XX..1964-XX-XX]",
+   "EB03_21405008"
+  ]
+ ],
+ "n_taga_taisha_mae": [
+  [
+   "多賀",
+   null,
+   "[1997-XX-XX..1998-XX-XX]",
+   "EB03_18405004"
+  ]
+ ],
+ "n_tagata_jinja_mae": [
+  [
+   "久保一色",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_17447013"
+  ]
+ ],
+ "n_tagawa_gotoji": [
+  [
+   "後藤寺",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_22223006"
+  ]
+ ],
+ "n_tagawa_ita": [
+  [
+   "伊田",
+   null,
+   "[1981-XX-XX..1982-XX-XX]",
+   "EB03_22235010"
+  ]
+ ],
+ "n_taihei_1_chome": [
+  [
+   "太平町一丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15370004"
+  ]
+ ],
+ "n_taihei_3_chome": [
+  [
+   "太平町三丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15370005"
+  ]
+ ],
+ "n_taira": [
+  [
+   "多比良町",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_22441016"
+  ]
+ ],
+ "n_taisanji_oyama_kanko": [
+  [
+   "不動前",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_14458002"
+  ]
+ ],
+ "n_taishibashi": [
+  [
+   "土居町",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_20324012"
+  ]
+ ],
+ "n_taito_1_chome": [
+  [
+   "御徒町一丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15332009"
+  ]
+ ],
+ "n_taito_3_chome": [
+  [
+   "御徒町二丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15332010"
+  ]
+ ],
+ "n_tajima_koko_mae": [
+  [
+   "田部原",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507015"
+  ]
+ ],
+ "n_takaishi": [
+  [
+   "高石町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_18442019"
+  ]
+ ],
+ "n_takanawa_1_chome": [
+  [
+   "伊皿子",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15315003"
+  ]
+ ],
+ "n_takao": [
+  [
+   "淺川",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_14204034"
+  ]
+ ],
+ "n_takaragaike": [
+  [
+   "山端",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_19444006"
+  ]
+ ],
+ "n_takasago_sanyo": [
+  [
+   "電鉄高砂",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_19417035"
+  ]
+ ],
+ "n_takasagocho": [
+  [
+   "女学校西",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_21412005"
+  ],
+  [
+   "北味酒",
+   "[1951-XX-XX..1952-XX-XX]",
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_21412005"
+  ]
+ ],
+ "n_takase_yosan": [
+  [
+   "上高瀬",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_21203019"
+  ]
+ ],
+ "n_takashimaguchi": [
+  [
+   "今福鷹島口",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_22509022"
+  ]
+ ],
+ "n_takata_amagi": [
+  [
+   "筑前高田",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_22501010"
+  ]
+ ],
+ "n_takeda_kintetsu_old": [
+  [
+   "奈良電竹田",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_18419005"
+  ]
+ ],
+ "n_takefu_shin": [
+  [
+   "武生新",
+   null,
+   "[2009-XX-XX..2010-XX-XX]",
+   "EB03_16432001"
+  ],
+  [
+   "越前武生",
+   "[2009-XX-XX..2010-XX-XX]",
+   "[2022-XX-XX..2023-XX-XX]",
+   "EB03_16432001"
+  ]
+ ],
+ "n_takeo_onsen": [
+  [
+   "武雄",
+   null,
+   "[1974-XX-XX..1975-XX-XX]",
+   "EB03_22212005"
+  ]
+ ],
+ "n_takinogawa_5_chome": [
+  [
+   "御代ノ台",
+   null,
+   "[1950-XX-XX..1965-XX-XX]",
+   "EB03_15340005"
+  ]
+ ],
+ "n_takuhoku": [
+  [
+   "東篠路",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_11225008"
+  ]
+ ],
+ "n_tamachi_okayama": [
+  [
+   "市役所前",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_21418004"
+  ],
+  [
+   "中鉄バス前",
+   "[1953-XX-XX..1954-XX-XX]",
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_21418004"
+  ]
+ ],
+ "n_tamagawa_tokyu_railways": [
+  [
+   "多摩川園前",
+   null,
+   "[1976-XX-XX..1977-XX-XX]",
+   "EB03_14438009"
+  ],
+  [
+   "多摩川園",
+   "[1976-XX-XX..1977-XX-XX]",
+   "[1999-XX-XX..2000-XX-XX]",
+   "EB03_14438009"
+  ]
+ ],
+ "n_tamako": [
+  [
+   "西武遊園地",
+   null,
+   "[2020-XX-XX..2021-XX-XX]",
+   "EB03_14436001"
+  ]
+ ],
+ "n_tamana": [
+  [
+   "高瀬",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_22202066"
+  ]
+ ],
+ "n_tanesashi_kaigan": [
+  [
+   "種差",
+   null,
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_12219010"
+  ]
+ ],
+ "n_tanoshiri": [
+  [
+   "筒賀",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_21222023"
+  ]
+ ],
+ "n_taromaru_angelland": [
+  [
+   "太郎丸",
+   null,
+   "[2016-XX-XX..2017-XX-XX]",
+   "EB03_16502011"
+  ]
+ ],
+ "n_tatemachi": [
+  [
+   "郊外バス前",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_21447009"
+  ]
+ ],
+ "n_tatemachi_nishi_nippon": [
+  [
+   "田町裏",
+   null,
+   "[1950-XX-XX..1991-XX-XX]",
+   "EB03_22425027"
+  ]
+ ],
+ "n_tatsuokajo": [
+  [
+   "大奈良",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_16219020"
+  ]
+ ],
+ "n_tawaramoto": [
+  [
+   "近畿日本田原本",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_18420011"
+  ]
+ ],
+ "n_tazawako": [
+  [
+   "生保内",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_12234001"
+  ]
+ ],
+ "n_tedori_onsen": [
+  [
+   "手取遊園",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16442009"
+  ]
+ ],
+ "n_teikokusenimae": [
+  [
+   "絹紡前",
+   null,
+   "[1950-XX-XX..1970-XX-XX]",
+   "EB03_16434011"
+  ]
+ ],
+ "n_teine": [
+  [
+   "軽川",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_11218068"
+  ]
+ ],
+ "n_tenjin_loop_line_nishitetsu": [
+  [
+   "天神町",
+   null,
+   "[1950-XX-XX..1974-XX-XX]",
+   "EB03_22429015"
+  ]
+ ],
+ "n_tennocho_marutamachi": [
+  [
+   "岡崎東天王町",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_19316001"
+  ]
+ ],
+ "n_tenri": [
+  [
+   "丹波市",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_18206005"
+  ],
+  [
+   "天理市",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18206005"
+  ]
+ ],
+ "n_tenryu_futamata": [
+  [
+   "遠江二俣",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_17506016"
+  ]
+ ],
+ "n_teramachi": [
+  [
+   "寺町裏",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_21450002"
+  ]
+ ],
+ "n_teshio_nakagawa": [
+  [
+   "誉平",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11237042"
+  ]
+ ],
+ "n_teshio_yayoi": [
+  [
+   "初茶志内",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11229028"
+  ]
+ ],
+ "n_teshiogawa_onsen": [
+  [
+   "南咲来",
+   null,
+   "[1980-XX-XX..1981-XX-XX]",
+   "EB03_11237035"
+  ]
+ ],
+ "n_tetsudo_hakubutsukan": [
+  [
+   "大成",
+   null,
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_13505002"
+  ]
+ ],
+ "n_tetsudokanrikyokumae": [
+  [
+   "北目町通",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12304002"
+  ]
+ ],
+ "n_tobekeisatsushomae": [
+  [
+   "桜橋",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14312003"
+  ],
+  [
+   "石崎町",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14312003"
+  ]
+ ],
+ "n_tobetsu": [
+  [
+   "石狩当別",
+   null,
+   "[2021-XX-XX..2022-XX-XX]",
+   "EB03_11225012"
+  ]
+ ],
+ "n_tobu_dobutsu_koen": [
+  [
+   "杉戸",
+   null,
+   "[1980-XX-XX..1981-XX-XX]",
+   "EB03_13418032"
+  ]
+ ],
+ "n_tobu_ekimae": [
+  [
+   "松原町",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_13417002"
+  ]
+ ],
+ "n_todenzoshigaya": [
+  [
+   "雑司ヶ谷",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_15382026"
+  ]
+ ],
+ "n_toei": [
+  [
+   "三河長岡",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17205026"
+  ]
+ ],
+ "n_togari_nozawaonsen": [
+  [
+   "戸狩",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_16216010"
+  ]
+ ],
+ "n_tojiin_ritsumeikan_university_kinugasa_campus_mae": [
+  [
+   "等持院",
+   null,
+   "[2019-XX-XX..2020-XX-XX]",
+   "EB03_19410003"
+  ]
+ ],
+ "n_tokai": [
+  [
+   "石神",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_13211038"
+  ]
+ ],
+ "n_tokaidaigaku_mae": [
+  [
+   "大根",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_14405038"
+  ]
+ ],
+ "n_tokishi": [
+  [
+   "土岐津",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_17202029"
+  ]
+ ],
+ "n_tokishi_tono": [
+  [
+   "土岐津",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_17414001"
+  ]
+ ],
+ "n_tokiwadai_tobu": [
+  [
+   "武蔵常盤",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14446006"
+  ]
+ ],
+ "n_tokiwagigakuenmae": [
+  [
+   "小田原金剛院丁",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12307005"
+  ]
+ ],
+ "n_tokohadaigakumae": [
+  [
+   "浜松大学前",
+   null,
+   "[2012-XX-XX..2013-XX-XX]",
+   "EB03_17506023"
+  ]
+ ],
+ "n_tokushige_nagoya_geidai": [
+  [
+   "徳重",
+   null,
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_17442006"
+  ]
+ ],
+ "n_tokyo_big_sight": [
+  [
+   "国際展示場正門",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_15501011"
+  ]
+ ],
+ "n_tokyo_international_cruise_terminal": [
+  [
+   "船の科学館",
+   null,
+   "[2018-XX-XX..2019-XX-XX]",
+   "EB03_15501008"
+  ]
+ ],
+ "n_tokyoekimarunouchikitaguchi": [
+  [
+   "東京駅降車口",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_15327002"
+  ]
+ ],
+ "n_tokyoekimarunouchiminamiguchi": [
+  [
+   "東京駅乗車口",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_15327003"
+  ]
+ ],
+ "n_tomamu": [
+  [
+   "石勝高原",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_11230011"
+  ]
+ ],
+ "n_tominohara": [
+  [
+   "菊池",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_22410023"
+  ]
+ ],
+ "n_tomio": [
+  [
+   "鵄邑",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_18414015"
+  ]
+ ],
+ "n_tomizakaue": [
+  [
+   "富坂二丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15347003"
+  ]
+ ],
+ "n_tonda": [
+  [
+   "富田町",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_19422012"
+  ]
+ ],
+ "n_tori_3_chome": [
+  [
+   "八重洲通",
+   null,
+   "[1952-XX-XX..1953-XX-XX]",
+   "EB03_15321006"
+  ]
+ ],
+ "n_tosabori_4_chome": [
+  [
+   "江戸堀北通四丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_20313003"
+  ]
+ ],
+ "n_tosabori_5_chome": [
+  [
+   "江戸堀北通五丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_20313002"
+  ]
+ ],
+ "n_towada_minami": [
+  [
+   "毛馬内",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_12218019"
+  ]
+ ],
+ "n_toya_muroran_main": [
+  [
+   "虻田",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_11222009"
+  ]
+ ],
+ "n_toyo_5_chome": [
+  [
+   "深川平井町",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15373010"
+  ]
+ ],
+ "n_toyodaigakumae": [
+  [
+   "曙町",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_15339002"
+  ]
+ ],
+ "n_toyohashikoenmae": [
+  [
+   "球場前",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_17417009"
+  ],
+  [
+   "体育館前",
+   "[1962-XX-XX..1963-XX-XX]",
+   "[1995-XX-XX..1996-XX-XX]",
+   "EB03_17417009"
+  ]
+ ],
+ "n_toyohira_5_chome": [
+  [
+   "平岸街道",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_11330009"
+  ]
+ ],
+ "n_toyoizumi": [
+  [
+   "豊住",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_11222007"
+  ]
+ ],
+ "n_toyokawa_inari": [
+  [
+   "新豊川",
+   null,
+   "[1954-XX-XX..1955-XX-XX]",
+   "EB03_17425009"
+  ]
+ ],
+ "n_toyooka_tenryu_hamanako": [
+  [
+   "野部",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_17506014"
+  ]
+ ],
+ "n_toyosaka": [
+  [
+   "葛塚",
+   null,
+   "[1975-XX-XX..1976-XX-XX]",
+   "EB03_16214005"
+  ]
+ ],
+ "n_toyosumibashi": [
+  [
+   "豊住町",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_15373009"
+  ]
+ ],
+ "n_toyotashi": [
+  [
+   "挙母",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_17429009"
+  ]
+ ],
+ "n_tozanguchi": [
+  [
+   "生石口",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_18452015"
+  ]
+ ],
+ "n_tsubaki": [
+  [
+   "紀伊椿",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18210035"
+  ]
+ ],
+ "n_tsukishima_toden": [
+  [
+   "月島通八丁目",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15377005"
+  ]
+ ],
+ "n_tsukiyominomiyamae": [
+  [
+   "中村",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_18453009"
+  ]
+ ],
+ "n_tsukumowan_ogi": [
+  [
+   "能登小木",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213018"
+  ]
+ ],
+ "n_tsunan": [
+  [
+   "越後外丸",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_16216021"
+  ]
+ ],
+ "n_tsurumachishakomae": [
+  [
+   "鶴町四丁目",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_20361003"
+  ]
+ ],
+ "n_tsurumaki_onsen": [
+  [
+   "鶴巻",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_14405037"
+  ]
+ ],
+ "n_tsurushi": [
+  [
+   "谷村横町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_14450006"
+  ]
+ ],
+ "n_tsutsujigaoka_keio": [
+  [
+   "金子",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_14410014"
+  ]
+ ],
+ "n_uchigo": [
+  [
+   "綴",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_13211052"
+  ]
+ ],
+ "n_uehommachi_1_chome": [
+  [
+   "上町",
+   null,
+   "[1951-XX-XX..1952-XX-XX]",
+   "EB03_20346002"
+  ]
+ ],
+ "n_ueno_1_chome": [
+  [
+   "黒門町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15360005"
+  ]
+ ],
+ "n_ueno_zoo_east_garden": [
+  [
+   "本園",
+   null,
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_15305001"
+  ]
+ ],
+ "n_ueno_zoo_west_garden": [
+  [
+   "分園",
+   null,
+   "[2000-XX-XX..2001-XX-XX]",
+   "EB03_15305002"
+  ]
+ ],
+ "n_ujina_2_chome": [
+  [
+   "宇品13丁目",
+   null,
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_21448013"
+  ]
+ ],
+ "n_ujina_3_chome": [
+  [
+   "10丁目",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21448014"
+  ],
+  [
+   "宇品十丁目",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_21448014"
+  ]
+ ],
+ "n_ujina_4_chome": [
+  [
+   "七丁目",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21448015"
+  ],
+  [
+   "宇品7丁目",
+   "[1959-XX-XX..1960-XX-XX]",
+   "[1967-XX-XX..1968-XX-XX]",
+   "EB03_21448015"
+  ]
+ ],
+ "n_ujina_5_chome": [
+  [
+   "4丁目",
+   null,
+   "[1959-XX-XX..1960-XX-XX]",
+   "EB03_21448016"
+  ]
+ ],
+ "n_ukai_noto": [
+  [
+   "能登鵜飼",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_16213025"
+  ]
+ ],
+ "n_ukiha": [
+  [
+   "筑後千足",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_22216009"
+  ]
+ ],
+ "n_umegaecho": [
+  [
+   "梅ヶ枝町",
+   null,
+   "[1950-XX-XX..1968-XX-XX]",
+   "EB03_20330002"
+  ]
+ ],
+ "n_uoichibadori": [
+  [
+   "商工会議所前",
+   null,
+   "[1966-XX-XX..1967-XX-XX]",
+   "EB03_11336006"
+  ]
+ ],
+ "n_urakamishako": [
+  [
+   "西町車庫前",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_22415007"
+  ],
+  [
+   "浦上車庫前",
+   "[1965-XX-XX..1966-XX-XX]",
+   "[2017-XX-XX..2018-XX-XX]",
+   "EB03_22415007"
+  ]
+ ],
+ "n_urusanmachi": [
+  [
+   "蔚山町護国神社前",
+   null,
+   "[1949-XX-XX..1950-XX-XX]",
+   "EB03_22313005"
+  ]
+ ],
+ "n_urushiyama_kamioka": [
+  [
+   "西漆山",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_16201004"
+  ]
+ ],
+ "n_usuda": [
+  [
+   "三反田",
+   null,
+   "[1962-XX-XX..1963-XX-XX]",
+   "EB03_16219019"
+  ]
+ ],
+ "n_utanai": [
+  [
+   "宇戸内",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_11237044"
+  ]
+ ],
+ "n_utano": [
+  [
+   "高雄口",
+   null,
+   "[2006-XX-XX..2007-XX-XX]",
+   "EB03_19410007"
+  ]
+ ],
+ "n_utsubuki": [
+  [
+   "倉吉",
+   null,
+   "[1971-XX-XX..1972-XX-XX]",
+   "EB03_21237003"
+  ]
+ ],
+ "n_wado_kuroya": [
+  [
+   "黒谷",
+   null,
+   "[2007-XX-XX..2008-XX-XX]",
+   "EB03_14437026"
+  ]
+ ],
+ "n_wakabayashi_tokyu_railways": [
+  [
+   "玉電若林",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_14444003"
+  ]
+ ],
+ "n_wakana": [
+  [
+   "若菜辺",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11420018"
+  ]
+ ],
+ "n_wakoshi_tobu": [
+  [
+   "新倉",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_14446011"
+  ],
+  [
+   "大和町",
+   "[1950-XX-XX..1951-XX-XX]",
+   "[1969-XX-XX..1970-XX-XX]",
+   "EB03_14446011"
+  ]
+ ],
+ "n_wakura_onsen": [
+  [
+   "和倉",
+   null,
+   "[1979-XX-XX..1980-XX-XX]",
+   "EB03_16205020"
+  ]
+ ],
+ "n_waratenjimmae": [
+  [
+   "衣笠球場前",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_19312005"
+  ]
+ ],
+ "n_watanabe_dori_2_chome": [
+  [
+   "渡辺通三丁目",
+   null,
+   "[1950-XX-XX..1978-XX-XX]",
+   "EB03_22431013"
+  ]
+ ],
+ "n_yabe": [
+  [
+   "相模",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_14212014"
+  ]
+ ],
+ "n_yachiho": [
+  [
+   "佐久穂積",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_16219015"
+  ]
+ ],
+ "n_yachiyomachi": [
+  [
+   "御船町",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_22415017"
+  ]
+ ],
+ "n_yagumadai": [
+  [
+   "谷熊",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_17418017"
+  ]
+ ],
+ "n_yahiro_keisei": [
+  [
+   "荒川",
+   null,
+   "[1993-XX-XX..1994-XX-XX]",
+   "EB03_13412003"
+  ]
+ ],
+ "n_yakusa_aichi_loop": [
+  [
+   "万博八草",
+   null,
+   "[2004-XX-XX..2005-XX-XX]",
+   "EB03_17503018"
+  ]
+ ],
+ "n_yakusa_aichi_rapid_transit": [
+  [
+   "万博八草",
+   null,
+   "[2005-XX-XX..2006-XX-XX]",
+   "EB03_17504009"
+  ]
+ ],
+ "n_yamada_nagaragawa": [
+  [
+   "美濃山田",
+   null,
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502028"
+  ]
+ ],
+ "n_yamahanajukujo": [
+  [
+   "南19条",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_11325005"
+  ]
+ ],
+ "n_yamahanakujo": [
+  [
+   "中島橋通",
+   null,
+   "[1956-XX-XX..1957-XX-XX]",
+   "EB03_11325010"
+  ],
+  [
+   "中央保健所前",
+   "[1956-XX-XX..1957-XX-XX]",
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_11325010"
+  ]
+ ],
+ "n_yamanashishi": [
+  [
+   "日下部",
+   null,
+   "[1961-XX-XX..1962-XX-XX]",
+   "EB03_14204049"
+  ]
+ ],
+ "n_yamaoka": [
+  [
+   "遠山",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17501009"
+  ]
+ ],
+ "n_yamashita_tokyu_railways": [
+  [
+   "玉電山下",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_14444008"
+  ]
+ ],
+ "n_yamatocho": [
+  [
+   "富士見通",
+   null,
+   "[1950-XX-XX..1965-XX-XX]",
+   "EB03_15341005"
+  ]
+ ],
+ "n_yanagawacho": [
+  [
+   "梁川町開発建設部前",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_11341005"
+  ]
+ ],
+ "n_yasaka_nagaragawa": [
+  [
+   "半在",
+   null,
+   "[2005-XX-XX..2006-XX-XX]",
+   "EB03_17502018"
+  ]
+ ],
+ "n_yase_hieizanguchi": [
+  [
+   "八瀬",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_19444008"
+  ],
+  [
+   "八瀬遊園",
+   "[1964-XX-XX..1965-XX-XX]",
+   "[2001-XX-XX..2002-XX-XX]",
+   "EB03_19444008"
+  ]
+ ],
+ "n_yashima_yuri_kogen": [
+  [
+   "羽後矢島",
+   null,
+   "[1984-XX-XX..1985-XX-XX]",
+   "EB03_12510012"
+  ]
+ ],
+ "n_yasunoya": [
+  [
+   "安野屋町",
+   null,
+   "[1968-XX-XX..1969-XX-XX]",
+   "EB03_16419003"
+  ]
+ ],
+ "n_yatsu_keisei": [
+  [
+   "谷津遊園",
+   null,
+   "[1983-XX-XX..1984-XX-XX]",
+   "EB03_13408027"
+  ]
+ ],
+ "n_yobikomae": [
+  [
+   "西十三丁目",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_11327006"
+  ]
+ ],
+ "n_yokoe": [
+  [
+   "尖山",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_16426010"
+  ]
+ ],
+ "n_yokohamaekinishiguchi": [
+  [
+   "横浜駅裏口",
+   null,
+   "[1957-XX-XX..1958-XX-XX]",
+   "EB03_14310002"
+  ]
+ ],
+ "n_yokoyama_kobe": [
+  [
+   "電鉄横山",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_19414008"
+  ]
+ ],
+ "n_yomiuri_land_mae": [
+  [
+   "西生田",
+   null,
+   "[1963-XX-XX..1964-XX-XX]",
+   "EB03_14405021"
+  ]
+ ],
+ "n_yoneyama": [
+  [
+   "鉢崎",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_16215028"
+  ]
+ ],
+ "n_yosano": [
+  [
+   "野田川",
+   null,
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19501010"
+  ]
+ ],
+ "n_yoshida": [
+  [
+   "西吉田",
+   null,
+   "[1958-XX-XX..1959-XX-XX]",
+   "EB03_16217018"
+  ]
+ ],
+ "n_yoshii_matsuura": [
+  [
+   "肥前吉井",
+   null,
+   "[1987-XX-XX..1988-XX-XX]",
+   "EB03_22509038"
+  ]
+ ],
+ "n_yoshinogari_koen": [
+  [
+   "三田川",
+   null,
+   "[1992-XX-XX..1993-XX-XX]",
+   "EB03_22209005"
+  ]
+ ],
+ "n_yoson_koen": [
+  [
+   "会津落合",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507013"
+  ]
+ ],
+ "n_yrp_nobi": [
+  [
+   "野比",
+   null,
+   "[1997-XX-XX..1998-XX-XX]",
+   "EB03_14420005"
+  ]
+ ],
+ "n_yuasa": [
+  [
+   "紀伊湯浅",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_18210053"
+  ]
+ ],
+ "n_yubetsu": [
+  [
+   "下湧別",
+   null,
+   "[1953-XX-XX..1954-XX-XX]",
+   "EB03_11239042"
+  ]
+ ],
+ "n_yubinkyokumae": [
+  [
+   "岡山郵便局前",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_21418003"
+  ]
+ ],
+ "n_yudakogen": [
+  [
+   "岩手湯田",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_12213012"
+  ]
+ ],
+ "n_yudaonsen": [
+  [
+   "湯田",
+   null,
+   "[1960-XX-XX..1961-XX-XX]",
+   "EB03_21224007"
+  ]
+ ],
+ "n_yuhigaura_kitsu_onsen": [
+  [
+   "丹後木津",
+   null,
+   "[1989-XX-XX..1990-XX-XX]",
+   "EB03_19501014"
+  ],
+  [
+   "木津温泉",
+   "[1989-XX-XX..1990-XX-XX]",
+   "[2014-XX-XX..2015-XX-XX]",
+   "EB03_19501014"
+  ]
+ ],
+ "n_yukigaya_otsuka": [
+  [
+   "雪ヶ谷大塚",
+   null,
+   "[1965-XX-XX..1966-XX-XX]",
+   "EB03_14441010"
+  ]
+ ],
+ "n_yukisawa_onsen": [
+  [
+   "雪沢鉱泉",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_12407005"
+  ]
+ ],
+ "n_yunohora_onsen_guchi": [
+  [
+   "板取口",
+   null,
+   "[1955-XX-XX..1956-XX-XX]",
+   "EB03_17502014"
+  ],
+  [
+   "美濃立花",
+   "[1955-XX-XX..1956-XX-XX]",
+   "[1985-XX-XX..1986-XX-XX]",
+   "EB03_17502014"
+  ]
+ ],
+ "n_yunokami_onsen": [
+  [
+   "湯野上",
+   null,
+   "[1986-XX-XX..1987-XX-XX]",
+   "EB03_12507008"
+  ]
+ ],
+ "n_yuseikyokumae": [
+  [
+   "東二番丁逓信局前",
+   null,
+   "[1950-XX-XX..1975-XX-XX]",
+   "EB03_12303004"
+  ]
+ ],
+ "n_yushima_4_chome": [
+  [
+   "春木町",
+   null,
+   "[1964-XX-XX..1965-XX-XX]",
+   "EB03_15346004"
+  ]
+ ],
+ "n_yuya_onsen": [
+  [
+   "湯谷",
+   null,
+   "[1990-XX-XX..1991-XX-XX]",
+   "EB03_17205021"
+  ]
+ ],
+ "n_yuze_onsen": [
+  [
+   "湯瀬",
+   null,
+   "[1994-XX-XX..1995-XX-XX]",
+   "EB03_12218014"
+  ]
+ ],
+ "n_zao": [
+  [
+   "金井",
+   null,
+   "[1950-XX-XX..1951-XX-XX]",
+   "EB03_12225017"
+  ]
+ ],
+ "n_zasshonokuma": [
+  [
+   "西鉄雑餉隈",
+   null,
+   "[1970-XX-XX..1971-XX-XX]",
+   "EB03_22420007"
+  ]
+ ],
+"n_chiyoricho_2_chome": [["若松町通", null, "[1956-XX-XX..1957-XX-XX]", "EB03_21441009"]],
+"n_chiyoricho_3_chome": [["葛島西詰", null, "[1971-XX-XX..1972-XX-XX]", "EB03_21441011"]],
+"n_dentetsu_terminal_building_mae": [["浦戸町土電会館前", null, "[1972-XX-XX..1973-XX-XX]", "EB03_21441002"], ["とでん西武百貨店前", "[1972-XX-XX..1973-XX-XX]", "[1991-XX-XX..1992-XX-XX]", "EB03_21441002"]],
+"n_gomennakamachi": [["後免中町通", null, "[1951-XX-XX..1952-XX-XX]", "EB03_21441034"]],
+"n_gomennishimachi": [["後免西町通", null, "[1967-XX-XX..1968-XX-XX]", "EB03_21441033"]],
+"n_gurando_dori": [["乗出", null, "[1951-XX-XX..1952-XX-XX]", "EB03_21440007"]],
+"n_inoshogyomae": [["挟間橋", null, "[1962-XX-XX..1963-XX-XX]", "EB03_21440033"]],
+"n_kazurashimabashihigashizume": [["葛島東詰", null, "[2007-XX-XX..2008-XX-XX]", "EB03_21441012"]],
+"n_kenchomae_tosaden_kotsu": [["本町上二丁目", null, "[1952-XX-XX..1953-XX-XX]", "EB03_21440006"]],
+"n_kochijomae": [["公園通", null, "[1977-XX-XX..1978-XX-XX]", "EB03_21440005"]],
+"n_ujidanchimae": [["宇治学校前", null, "[1975-XX-XX..1976-XX-XX]", "EB03_21440029"]]
+}

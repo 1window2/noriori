@@ -3,16 +3,24 @@
 - {"id": "r_hakodate_main_line_sunagawa_kami_sunagawa", "line": "l_hakodate_main_line", "role": "branch", "from": "n_sunagawa", "to": "n_kami_sunagawa", "owned": true}
 - {"id": "r_hakodate_main_line_bibai_minami_bibai", "line": "l_hakodate_main_line", "role": "branch", "from": "n_bibai", "to": "n_minami_bibai", "owned": true}
 - {"id": "r_hakodate_main_line_onuma_mori", "line": "l_hakodate_main_line", "role": "branch", "from": "n_onuma", "to": "n_mori", "owned": true}
+- {"id": "r_fujishiro_line", "line": "l_hakodate_main_line", "role": "branch", "from": "n_nanae", "to": "n_onuma", "owned": true, "extra": true}
+- {"id": "r_hakodate_main_line_osamunai_ino_hakodate_main", "line": "l_hakodate_main_line", "role": "branch", "from": "n_osamunai", "to": "n_ino_hakodate_main", "owned": true}
 - {"id": "r_hokkaido_shinkansen", "line": "l_hokkaido_shinkansen", "role": "main", "from": "n_shin_aomori", "to": "n_shin_hakodate_hokuto"}
 - {"id": "r_sassho_line", "line": "l_sassho_line", "role": "main", "from": "n_soen", "to": "n_ishikari_numata"}
 - {"id": "r_chitose_line", "line": "l_chitose_line", "role": "main", "from": "n_numanohata", "to": "n_shiroishi_chitose"}
 - {"id": "r_chitose_line_minami_chitose_new_chitose_airport", "line": "l_chitose_line", "role": "branch", "from": "n_minami_chitose", "to": "n_new_chitose_airport", "owned": true}
+- {"id": "r_chitose_line_naebo_kita_hiroshima", "line": "l_chitose_line", "role": "branch", "from": "n_naebo_old", "to": "n_kita_hiroshima", "owned": true}
 - {"id": "r_sekisho_line", "line": "l_sekisho_line", "role": "main", "from": "n_minami_chitose", "to": "n_shintoku"}
 - {"id": "r_sekisho_line_shin_yubari_yubari", "line": "l_sekisho_line", "role": "branch", "from": "n_shin_yubari", "to": "n_yubari", "owned": true}
 - {"id": "r_muroran_main_line", "line": "l_muroran_main_line", "role": "main", "from": "n_oshamambe", "to": "n_iwamizawa"}
-- {"id": "r_muroran_main_line_higashi_muroran_muroran", "line": "l_muroran_main_line", "role": "branch", "from": "n_higashi_muroran", "to": "n_muroran", "owned": true}
+- {"id": "r_muroran_main_line_higashi_muroran_muroran", "line": "l_muroran_main_line", "role": "branch", "from": "n_higashi_muroran", "to": "n_muroran_old", "owned": true}
+- {"id": "r_muroran_main_line_shibun_iwamizawa", "line": "l_muroran_main_line", "role": "branch", "from": "n_shibun", "to": "n_iwamizawa", "owned": true}
+- {"id": "r_muroran_main_line_okishi_toyoura", "line": "l_muroran_main_line", "role": "branch", "from": "n_okishi", "to": "n_toyoura", "owned": true}
+- {"id": "r_muroran_main_line_kogane_moto_wanishi", "line": "l_muroran_main_line", "role": "branch", "from": "n_kogane", "to": "n_moto_wanishi", "owned": true}
 - {"id": "r_hidaka_main_line", "line": "l_hidaka_main_line", "role": "main", "from": "n_tomakomai", "to": "n_samani"}
 - {"id": "r_nemuro_main_line", "line": "l_nemuro_main_line", "role": "main", "from": "n_takikawa", "to": "n_nemuro"}
+- {"id": "r_nemuro_main_line_nokanan_shimanoshita", "line": "l_nemuro_main_line", "role": "branch", "from": "n_nokanan", "to": "n_shimanoshita", "owned": true}
+- {"id": "r_nemuro_main_line_ochiai_shintoku", "line": "l_nemuro_main_line", "role": "branch", "from": "n_ochiai", "to": "n_shintoku", "owned": true}
 - {"id": "r_furano_line", "line": "l_furano_line", "role": "main", "from": "n_asahikawa", "to": "n_furano"}
 - {"id": "r_soya_main_line", "line": "l_soya_main_line", "role": "main", "from": "n_asahikawa", "to": "n_wakkanai"}
 - {"id": "r_sekihoku_main_line", "line": "l_sekihoku_main_line", "role": "main", "from": "n_shin_asahikawa", "to": "n_abashiri"}
@@ -22,7 +30,14 @@
 - {"id": "r_tokaido_main_line_tsurumi_hazawa_yokohama_kokudai", "line": "l_tokaido_main_line", "role": "branch", "from": "n_tsurumi", "to": "n_hazawa_yokohama_kokudai", "owned": true}
 - {"id": "r_tokaido_main_line_ogaki_mino_akasaka", "line": "l_tokaido_main_line", "role": "branch", "from": "n_ogaki", "to": "n_mino_akasaka", "owned": true}
 - {"id": "r_tokaido_main_line_ogaki_sekigahara", "line": "l_tokaido_main_line", "role": "branch", "from": "n_ogaki", "to": "n_sekigahara", "owned": true}
+- {"id": "r_tokaido_freight_line", "line": "l_tokaido_main_line", "role": "branch", "from": "n_tsurumi", "to": "n_higashi_totsuka", "owned": true, "extra": true}
+- {"id": "r_takashima_line", "line": "l_tokaido_main_line", "role": "branch", "from": "n_tsurumi", "to": "n_sakuragicho", "owned": true, "extra": true}
+- {"id": "r_osaki_branch_line", "line": "l_tokaido_main_line", "role": "branch", "from": "n_osaki", "to": "n_nishi_oi", "owned": true, "extra": true}
+- {"id": "r_hoppo_freight_line", "line": "l_tokaido_main_line", "role": "branch", "from": "n_suita_freight_terminal", "to": "n_amagasaki", "owned": true, "extra": true}
+- {"id": "r_umeda_freight_line", "line": "l_tokaido_main_line", "role": "branch", "from": "n_suita_freight_terminal", "to": "n_fukushima_osaka_loop", "owned": true, "extra": true}
+- {"id": "r_yokohama_rinko_line", "line": "l_tokaido_main_line", "role": "branch", "from": "n_takashima_freight", "to": "n_yokohama_minato", "owned": true, "extra": true}
 - {"id": "r_yamanote_line", "line": "l_yamanote_line", "role": "main", "from": "n_shinagawa", "to": "n_tabata_tohoku_main"}
+- {"id": "r_yamanote_freight_line", "line": "l_yamanote_line", "role": "branch", "from": "n_komagome", "to": "n_tabata_signal", "owned": true, "extra": true}
 - {"id": "r_akabane_line", "line": "l_akabane_line", "role": "main", "from": "n_ikebukuro", "to": "n_akabane"}
 - {"id": "r_nambu_line", "line": "l_nambu_line", "role": "main", "from": "n_kawasaki", "to": "n_tachikawa"}
 - {"id": "r_nambu_line_shitte_hama_kawasaki", "line": "l_nambu_line", "role": "branch", "from": "n_shitte", "to": "n_hama_kawasaki", "owned": true}
@@ -30,6 +45,12 @@
 - {"id": "r_tsurumi_line_musashi_shiraishi_okawa", "line": "l_tsurumi_line", "role": "branch", "from": "n_musashi_shiraishi", "to": "n_okawa", "owned": true}
 - {"id": "r_tsurumi_line_asano_umi_shibaura", "line": "l_tsurumi_line", "role": "branch", "from": "n_asano", "to": "n_umi_shibaura", "owned": true}
 - {"id": "r_musashino_line", "line": "l_musashino_line", "role": "main", "from": "n_fuchu_hommachi", "to": "n_nishi_funabashi"}
+- {"id": "r_musashino_south_line", "line": "l_musashino_line", "role": "branch", "from": "n_tsurumi", "to": "n_fuchu_hommachi", "owned": true, "extra": true}
+- {"id": "r_kunitachi_branch_line", "line": "l_musashino_line", "role": "branch", "from": "n_shin_kodaira", "to": "n_kunitachi", "owned": true, "extra": true}
+- {"id": "r_omiya_branch_line", "line": "l_musashino_line", "role": "branch", "from": "n_nishi_urawa", "to": "n_yono", "owned": true, "extra": true}
+- {"id": "r_nishiurawa_branch_line", "line": "l_musashino_line", "role": "branch", "from": "n_musashi_urawa", "to": "n_yono", "owned": true, "extra": true}
+- {"id": "r_mabashi_branch_line", "line": "l_musashino_line", "role": "branch", "from": "n_minami_nagareyama", "to": "n_mabashi", "owned": true, "extra": true}
+- {"id": "r_kita_kogane_branch_line", "line": "l_musashino_line", "role": "branch", "from": "n_minami_nagareyama", "to": "n_kita_kogane", "owned": true, "extra": true}
 - {"id": "r_yokohama_line", "line": "l_yokohama_line", "role": "main", "from": "n_higashi_kanagawa", "to": "n_hachioji"}
 - {"id": "r_negishi_line", "line": "l_negishi_line", "role": "main", "from": "n_yokohama", "to": "n_ofuna"}
 - {"id": "r_yokosuka_line", "line": "l_yokosuka_line", "role": "main", "from": "n_ofuna", "to": "n_kurihama"}
@@ -44,14 +65,19 @@
 - {"id": "r_hachiko_line", "line": "l_hachiko_line", "role": "main", "from": "n_hachioji", "to": "n_kuragano"}
 - {"id": "r_koumi_line", "line": "l_koumi_line", "role": "main", "from": "n_kobuchizawa", "to": "n_komoro"}
 - {"id": "r_shinonoi_line", "line": "l_shinonoi_line", "role": "main", "from": "n_shiojiri", "to": "n_shinonoi"}
+- {"id": "r_shinonoi_line_nishijo_akashina", "line": "l_shinonoi_line", "role": "branch", "from": "n_nishijo", "to": "n_akashina", "owned": true}
 - {"id": "r_oito_line", "line": "l_oito_line", "role": "main", "from": "n_matsumoto", "to": "n_itoigawa"}
 - {"id": "r_tohoku_main_line", "line": "l_tohoku_main_line", "role": "main", "from": "n_tokyo", "to": "n_aomori", "hidden_stops": ["n_aoyama_igr_iwate_galaxy", "n_nonai_aoimori_aoimori_railway", "n_sugo", "n_tsutsui_aoimori"]}
 - {"id": "r_tohoku_main_line_nippori_akabane", "line": "l_tohoku_main_line", "role": "branch", "from": "n_nippori", "to": "n_akabane", "owned": true}
 - {"id": "r_tohoku_main_line_akabane_omiya", "line": "l_tohoku_main_line", "role": "branch", "from": "n_akabane", "to": "n_omiya", "owned": true}
 - {"id": "r_tohoku_main_line_iwakiri_rifu", "line": "l_tohoku_main_line", "role": "branch", "from": "n_iwakiri", "to": "n_rifu", "owned": true}
 - {"id": "r_tohoku_main_line_matsushima_takagimachi", "line": "l_tohoku_main_line", "role": "branch", "from": "n_matsushima", "to": "n_takagimachi", "owned": true}
+- {"id": "r_tohoku_freight_line", "line": "l_tohoku_main_line", "role": "branch", "from": "n_tabata_signal", "to": "n_kami_nakazato", "owned": true, "extra": true}
+- {"id": "r_tohoku_main_line_rifu_shinainuma", "line": "l_tohoku_main_line", "role": "branch", "from": "n_rifu", "to": "n_shinainuma", "owned": true}
+- {"id": "r_tohoku_main_line_nonai_aoimori_aoimori_railway_old_aomori", "line": "l_tohoku_main_line", "role": "branch", "from": "n_nonai_aoimori_aoimori_railway_old", "to": "n_aomori", "owned": true}
 - {"id": "r_tohoku_shinkansen", "line": "l_tohoku_shinkansen", "role": "main", "from": "n_tokyo", "to": "n_shin_aomori"}
 - {"id": "r_joban_line", "line": "l_joban_line", "role": "main", "from": "n_nippori", "to": "n_iwanuma"}
+- {"id": "r_tabata_freight_line", "line": "l_joban_line", "role": "branch", "from": "n_tabata_signal", "to": "n_mikawashima", "owned": true, "extra": true}
 - {"id": "r_suigun_line", "line": "l_suigun_line", "role": "main", "from": "n_mito", "to": "n_asaka_nagamori"}
 - {"id": "r_suigun_line_kami_sugaya_hitachi_ota", "line": "l_suigun_line", "role": "branch", "from": "n_kami_sugaya", "to": "n_hitachi_ota", "owned": true}
 - {"id": "r_kawagoe_line", "line": "l_kawagoe_line", "role": "main", "from": "n_omiya", "to": "n_komagawa"}
@@ -82,20 +108,24 @@
 - {"id": "r_ou_main_line", "line": "l_ou_main_line", "role": "main", "from": "n_fukushima_ou_main", "to": "n_aomori"}
 - {"id": "r_yonesaka_line", "line": "l_yonesaka_line", "role": "main", "from": "n_yonezawa", "to": "n_sakamachi"}
 - {"id": "r_aterazawa_line", "line": "l_aterazawa_line", "role": "main", "from": "n_kita_yamagata", "to": "n_aterazawa"}
-- {"id": "r_oga_line", "line": "l_oga_line", "role": "main", "from": "n_oiwake_oga", "to": "n_oga_oga"}
+- {"id": "r_oga_line", "line": "l_oga_line", "role": "main", "from": "n_oiwake_oga", "to": "n_oga_oga_old"}
 - {"id": "r_gono_line", "line": "l_gono_line", "role": "main", "from": "n_higashi_noshiro", "to": "n_kawabe"}
 - {"id": "r_tsugaru_line", "line": "l_tsugaru_line", "role": "main", "from": "n_aomori", "to": "n_minmaya"}
 - {"id": "r_uetsu_main_line", "line": "l_uetsu_main_line", "role": "main", "from": "n_niitsu", "to": "n_akita"}
-- {"id": "r_hakushin_line", "line": "l_hakushin_line", "role": "main", "from": "n_niigata", "to": "n_shibata"}
+- {"id": "r_hakushin_line", "line": "l_hakushin_line", "role": "main", "from": "n_niigata", "to": "n_shibata", "hidden_stops": ["n_kami_nuttari"]}
+- {"id": "r_hakushin_line_higashi_niigata_nuttari", "line": "l_hakushin_line", "role": "branch", "from": "n_nuttari", "to": "n_niizaki", "owned": true, "also": ["e_002235", "e_002236", "e_002237"], "hidden_stops": ["n_higashi_niigata", "n_kami_nuttari"]}
 - {"id": "r_rikuu_east_line", "line": "l_rikuu_east_line", "role": "main", "from": "n_kogota", "to": "n_shinjo_ou_main"}
 - {"id": "r_rikuu_west_line", "line": "l_rikuu_west_line", "role": "main", "from": "n_shinjo_ou_main", "to": "n_amarume"}
-- {"id": "r_shinetsu_main_line", "line": "l_shinetsu_main_line", "role": "main", "from": "n_takasaki", "to": "n_niigata", "hidden_stops": ["n_chikuma", "n_shinano_kokubunji", "n_tekuno_sakaki", "n_yashiro_koko_mae"]}
+- {"id": "r_shinetsu_main_line", "line": "l_shinetsu_main_line", "role": "main", "from": "n_takasaki", "to": "n_niigata", "hidden_stops": ["n_chikuma", "n_kami_nuttari", "n_shinano_kokubunji", "n_tekuno_sakaki", "n_yashiro_koko_mae"]}
+- {"id": "r_shinetsu_main_line_yokogawa_karuizawa", "line": "l_shinetsu_main_line", "role": "branch", "from": "n_yokokawa", "to": "n_karuizawa", "owned": true}
+- {"id": "r_shinetsu_main_line_echigo_ishiyama_niigata_shinetsu_main", "line": "l_shinetsu_main_line", "role": "branch", "from": "n_kameda", "to": "n_niigata_old", "owned": true, "also": ["e_002368", "e_002369"], "hidden_stops": ["n_echigo_ishiyama", "n_kami_nuttari"]}
 - {"id": "r_hokuriku_shinkansen", "line": "l_hokuriku_shinkansen", "role": "main", "from": "n_takasaki", "to": "n_tsuruga"}
 - {"id": "r_iiyama_line", "line": "l_iiyama_line", "role": "main", "from": "n_toyono_iiyama", "to": "n_echigo_kawaguchi"}
 - {"id": "r_echigo_line", "line": "l_echigo_line", "role": "main", "from": "n_kashiwazaki", "to": "n_niigata"}
 - {"id": "r_yahiko_line", "line": "l_yahiko_line", "role": "main", "from": "n_yahiko", "to": "n_echigo_nagasawa"}
 - {"id": "r_sobu_main_line", "line": "l_sobu_main_line", "role": "main", "from": "n_tokyo", "to": "n_choshi"}
 - {"id": "r_sobu_main_line_ochanomizu_kinshicho", "line": "l_sobu_main_line", "role": "branch", "from": "n_ochanomizu", "to": "n_kinshicho", "owned": true}
+- {"id": "r_shinkin_line", "line": "l_sobu_main_line", "role": "branch", "from": "n_koiwa", "to": "n_kanamachi", "owned": true, "extra": true}
 - {"id": "r_keiyo_line", "line": "l_keiyo_line", "role": "main", "from": "n_tokyo", "to": "n_soga"}
 - {"id": "r_keiyo_line_ichikawashiohama_minami_funabashi", "line": "l_keiyo_line", "role": "branch", "from": "n_ichikawashiohama", "to": "n_minami_funabashi", "owned": true}
 - {"id": "r_sotobo_line", "line": "l_sotobo_line", "role": "main", "from": "n_chiba", "to": "n_awa_kamogawa"}
@@ -110,10 +140,11 @@
 - {"id": "r_gotemba_line", "line": "l_gotemba_line", "role": "main", "from": "n_kozu", "to": "n_numazu"}
 - {"id": "r_minobu_line", "line": "l_minobu_line", "role": "main", "from": "n_fuji", "to": "n_kofu"}
 - {"id": "r_iida_line", "line": "l_iida_line", "role": "main", "from": "n_toyohashi", "to": "n_tatsuno_chuo_main"}
+- {"id": "r_iida_line_toyokawa_nishi_toyokawa", "line": "l_iida_line", "role": "branch", "from": "n_toyokawa", "to": "n_nishi_toyokawa", "owned": true}
 - {"id": "r_taketoyo_line", "line": "l_taketoyo_line", "role": "main", "from": "n_obu", "to": "n_taketoyo"}
 - {"id": "r_takayama_main_line", "line": "l_takayama_main_line", "role": "main", "from": "n_gifu", "to": "n_toyama"}
 - {"id": "r_taita_line", "line": "l_taita_line", "role": "main", "from": "n_tajimi", "to": "n_mino_ota"}
-- {"id": "r_kansai_main_line", "line": "l_kansai_main_line", "role": "main", "from": "n_nagoya", "to": "n_jr_namba"}
+- {"id": "r_kansai_main_line", "line": "l_kansai_main_line", "role": "main", "from": "n_nagoya", "to": "n_minatomachi"}
 - {"id": "r_kisei_main_line", "line": "l_kisei_main_line", "role": "main", "from": "n_kameyama_kansai_main", "to": "n_wakayamashi"}
 - {"id": "r_meisho_line", "line": "l_meisho_line", "role": "main", "from": "n_matsusaka", "to": "n_ise_okitsu"}
 - {"id": "r_sangu_line", "line": "l_sangu_line", "role": "main", "from": "n_taki_kisei_main", "to": "n_toba"}
@@ -124,6 +155,8 @@
 - {"id": "r_fukuchiyama_line", "line": "l_fukuchiyama_line", "role": "main", "from": "n_amagasaki", "to": "n_fukuchiyama"}
 - {"id": "r_fukuchiyama_line_tsukaguchi_amagasakiko", "line": "l_fukuchiyama_line", "role": "branch", "from": "n_tsukaguchi", "to": "n_amagasakiko", "owned": true}
 - {"id": "r_hokuriku_main_line", "line": "l_hokuriku_main_line", "role": "main", "from": "n_maibara", "to": "n_naoetsu", "hidden_stops": ["n_echigo_oshiage_hisuikaigan", "n_nishi_matto", "n_shikibu", "n_shin_toyamaguchi", "n_takaoka_yabunami"]}
+- {"id": "r_hokuriku_main_line_tsuruga_imajo", "line": "l_hokuriku_main_line", "role": "branch", "from": "n_tsuruga", "to": "n_imajo", "owned": true}
+- {"id": "r_hokuriku_main_line_tanihama_naoetsu", "line": "l_hokuriku_main_line", "role": "branch", "from": "n_tanihama", "to": "n_naoetsu", "owned": true}
 - {"id": "r_obama_line", "line": "l_obama_line", "role": "main", "from": "n_tsuruga", "to": "n_higashi_maizuru"}
 - {"id": "r_etsumi_hoku_line", "line": "l_etsumi_hoku_line", "role": "main", "from": "n_echizen_hanando", "to": "n_kuzuryuko"}
 - {"id": "r_nanao_line", "line": "l_nanao_line", "role": "main", "from": "n_tsubata", "to": "n_wajima"}
@@ -138,11 +171,12 @@
 - {"id": "r_ako_line", "line": "l_ako_line", "role": "main", "from": "n_aioi", "to": "n_higashi_okayama"}
 - {"id": "r_tsuyama_line", "line": "l_tsuyama_line", "role": "main", "from": "n_okayama", "to": "n_tsuyama"}
 - {"id": "r_kibi_line", "line": "l_kibi_line", "role": "main", "from": "n_okayama", "to": "n_soja"}
-- {"id": "r_uno_line", "line": "l_uno_line", "role": "main", "from": "n_okayama", "to": "n_uno"}
+- {"id": "r_uno_line", "line": "l_uno_line", "role": "main", "from": "n_okayama", "to": "n_uno_old"}
 - {"id": "r_honshi_bisan_line", "line": "l_honshi_bisan_line", "role": "main", "from": "n_chayamachi", "to": "n_utazu"}
 - {"id": "r_hakubi_line", "line": "l_hakubi_line", "role": "main", "from": "n_kurashiki", "to": "n_hoki_daisen"}
 - {"id": "r_geibi_line", "line": "l_geibi_line", "role": "main", "from": "n_bitchu_kojiro", "to": "n_hiroshima"}
 - {"id": "r_fukuen_line", "line": "l_fukuen_line", "role": "main", "from": "n_fukuyama", "to": "n_shiomachi"}
+- {"id": "r_fukuen_line_kawasa_bingo_mikawa", "line": "l_fukuen_line", "role": "branch", "from": "n_kawasa", "to": "n_bingo_mikawa", "owned": true}
 - {"id": "r_kure_line", "line": "l_kure_line", "role": "main", "from": "n_mihara", "to": "n_kaitaichi"}
 - {"id": "r_kabe_line", "line": "l_kabe_line", "role": "main", "from": "n_yokogawa", "to": "n_aki_kameyama_kabe"}
 - {"id": "r_kabe_line_kabe_sandankyo", "line": "l_kabe_line", "role": "branch", "from": "n_kabe_kabe", "to": "n_sandankyo", "owned": true}
@@ -157,7 +191,7 @@
 - {"id": "r_sanin_main_line_nagatoshi_senzaki", "line": "l_sanin_main_line", "role": "branch", "from": "n_nagatoshi", "to": "n_senzaki", "owned": true}
 - {"id": "r_maizuru_line", "line": "l_maizuru_line", "role": "main", "from": "n_ayabe", "to": "n_naka_maizuru"}
 - {"id": "r_inbi_line", "line": "l_inbi_line", "role": "main", "from": "n_tottori", "to": "n_higashi_tsuyama"}
-- {"id": "r_sakai_line", "line": "l_sakai_line", "role": "main", "from": "n_yonago", "to": "n_sakaiminato"}
+- {"id": "r_sakai_line", "line": "l_sakai_line", "role": "main", "from": "n_yonago", "to": "n_funatsukiba"}
 - {"id": "r_kisuki_line", "line": "l_kisuki_line", "role": "main", "from": "n_shinji", "to": "n_bingo_ochiai"}
 - {"id": "r_kusatsu_line", "line": "l_kusatsu_line", "role": "main", "from": "n_tsuge", "to": "n_kusatsu"}
 - {"id": "r_nara_line", "line": "l_nara_line", "role": "main", "from": "n_kyoto", "to": "n_kizu"}
@@ -169,18 +203,20 @@
 - {"id": "r_hanwa_line_otori_higashi_hagoromo", "line": "l_hanwa_line", "role": "branch", "from": "n_otori", "to": "n_higashi_hagoromo", "owned": true}
 - {"id": "r_kansai_airport_line", "line": "l_kansai_airport_line", "role": "main", "from": "n_hineno", "to": "n_kansai_airport"}
 - {"id": "r_hakata_minami_line", "line": "l_hakata_minami_line", "role": "main", "from": "n_hakata", "to": "n_hakata_minami"}
-- {"id": "r_yosan_line", "line": "l_yosan_line", "role": "main", "from": "n_takamatsu_kotoku", "to": "n_uwajima"}
+- {"id": "r_yosan_line", "line": "l_yosan_line", "role": "main", "from": "n_takamatsu_kotoku_old", "to": "n_uwajima"}
 - {"id": "r_yosan_line_mukaibara_uchiko", "line": "l_yosan_line", "role": "branch", "from": "n_mukaibara", "to": "n_uchiko", "owned": true}
 - {"id": "r_yosan_line_niiya_iyo_ozu", "line": "l_yosan_line", "role": "branch", "from": "n_niiya", "to": "n_iyo_ozu", "owned": true}
 - {"id": "r_uchiko_line", "line": "l_uchiko_line", "role": "main", "from": "n_uchiko", "to": "n_goro"}
+- {"id": "r_uchiko_line_kitayama_uchiko_uchiko_uchiko", "line": "l_uchiko_line", "role": "branch", "from": "n_kitayama_uchiko", "to": "n_uchiko_uchiko", "owned": true}
 - {"id": "r_yodo_line", "line": "l_yodo_line", "role": "main", "from": "n_wakai", "to": "n_kita_uwajima"}
-- {"id": "r_kotoku_line", "line": "l_kotoku_line", "role": "main", "from": "n_takamatsu_kotoku", "to": "n_tokushima"}
+- {"id": "r_kotoku_line", "line": "l_kotoku_line", "role": "main", "from": "n_takamatsu_kotoku_old", "to": "n_tokushima"}
 - {"id": "r_naruto_line", "line": "l_naruto_line", "role": "main", "from": "n_ikenotani", "to": "n_naruto_naruto"}
 - {"id": "r_tokushima_line", "line": "l_tokushima_line", "role": "main", "from": "n_tsukuda_dosan", "to": "n_sako"}
 - {"id": "r_mugi_line", "line": "l_mugi_line", "role": "main", "from": "n_tokushima", "to": "n_kaifu"}
 - {"id": "r_dosan_line", "line": "l_dosan_line", "role": "main", "from": "n_tadotsu", "to": "n_kubokawa"}
 - {"id": "r_kagoshima_main_line", "line": "l_kagoshima_main_line", "role": "main", "from": "n_mojiko", "to": "n_sendai_hisatsu_orange", "hidden_stops": ["n_shin_minamata_hisatsu_orange", "n_tanoura_otachimisaki_park"]}
 - {"id": "r_kagoshima_main_line_sendai_kagoshima", "line": "l_kagoshima_main_line", "role": "branch", "from": "n_sendai_hisatsu_orange", "to": "n_kagoshima", "owned": true}
+- {"id": "r_kagoshima_main_line_tobata_edamitsu", "line": "l_kagoshima_main_line", "role": "branch", "from": "n_tobata", "to": "n_edamitsu", "owned": true}
 - {"id": "r_kyushu_shinkansen", "line": "l_kyushu_shinkansen", "role": "main", "from": "n_hakata", "to": "n_kagoshima_chuo"}
 - {"id": "r_kashii_line", "line": "l_kashii_line", "role": "main", "from": "n_saitozaki", "to": "n_umi"}
 - {"id": "r_sasaguri_line", "line": "l_sasaguri_line", "role": "main", "from": "n_keisen", "to": "n_yoshizuka"}
@@ -202,7 +238,8 @@
 - {"id": "r_hohi_main_line", "line": "l_hohi_main_line", "role": "main", "from": "n_oita", "to": "n_kumamoto"}
 - {"id": "r_nippo_main_line", "line": "l_nippo_main_line", "role": "main", "from": "n_kokura", "to": "n_kagoshima"}
 - {"id": "r_hitahikosan_line", "line": "l_hitahikosan_line", "role": "main", "from": "n_jono", "to": "n_yoake"}
-- {"id": "r_nichinan_line", "line": "l_nichinan_line", "role": "main", "from": "n_minami_miyazaki", "to": "n_shibushi_nichinan"}
+- {"id": "r_hitahikosan_line_ishida_higashi_kokura", "line": "l_hitahikosan_line", "role": "branch", "from": "n_ishida", "to": "n_higashi_kokura", "owned": true}
+- {"id": "r_nichinan_line", "line": "l_nichinan_line", "role": "main", "from": "n_minami_miyazaki", "to": "n_shibushi_old"}
 - {"id": "r_miyazaki_kuko_line", "line": "l_miyazaki_kuko_line", "role": "main", "from": "n_tayoshi", "to": "n_miyazaki_airport"}
 - {"id": "r_kitto_line", "line": "l_kitto_line", "role": "main", "from": "n_miyakonojo", "to": "n_yoshimatsu"}
 - {"id": "r_chikuho_main_line", "line": "l_chikuho_main_line", "role": "main", "from": "n_wakamatsu", "to": "n_haruda"}
@@ -212,7 +249,7 @@
 - {"id": "r_okata_line", "line": "l_okata_line", "role": "main", "from": "n_okazaki", "to": "n_shin_toyota", "hidden_stops": ["n_daimon_aichi_loop", "n_mutsuna", "n_shin_uwagoromo", "n_suenohara"]}
 - {"id": "r_tarumi_line", "line": "l_tarumi_line", "role": "main", "from": "n_ogaki", "to": "n_komi_tarumi", "hidden_stops": ["n_morera_gifu", "n_oribe"]}
 - {"id": "r_sasayama_line", "line": "l_sasayama_line", "role": "main", "from": "n_sasayamaguchi", "to": "n_fukusumi"}
-- {"id": "r_mikuni_line", "line": "l_mikuni_line", "role": "main", "from": "n_kanazu", "to": "n_ashihara"}
+- {"id": "r_mikuni_line", "line": "l_mikuni_line", "role": "main", "from": "n_awaraonsen", "to": "n_ashihara"}
 - {"id": "r_noto_line", "line": "l_noto_line", "role": "main", "from": "n_anamizu", "to": "n_takojima", "hidden_stops": ["n_shichimi"]}
 - {"id": "r_toyamako_line", "line": "l_toyamako_line", "role": "main", "from": "n_toyama", "to": "n_iwasehama", "hidden_stops": ["n_awajima", "n_inujimashinmachi", "n_oaks_canal_park_hotel_toyama_mae", "n_okudachugakkomae", "n_ryukokutoyamakokomae", "n_toyamaekikita"]}
 - {"id": "r_etsumi_nan_line", "line": "l_etsumi_nan_line", "role": "main", "from": "n_mino_ota", "to": "n_hokuno", "hidden_stops": ["n_hakusan_nagataki", "n_kamimanba", "n_konno", "n_maehira_koen", "n_matsumori_nagaragawa", "n_minami_kodakara_onsen", "n_seki_shimouchi", "n_seki_shiyakusho_mae", "n_seki_tomioka", "n_sekiterasumae", "n_shizenen_mae", "n_umeyama"]}
@@ -233,15 +270,17 @@
 - {"id": "r_shigaraki_line", "line": "l_shigaraki_line", "role": "main", "from": "n_kibukawa", "to": "n_shigaraki", "hidden_stops": ["n_gyokukeijimae", "n_shigarakigushi"]}
 - {"id": "r_naganohara_line", "line": "l_naganohara_line", "role": "main", "from": "n_naganohara_kusatsuguchi", "to": "n_oshi"}
 - {"id": "r_ashio_line", "line": "l_ashio_line", "role": "main", "from": "n_kiryu", "to": "n_mato", "hidden_stops": ["n_motojuku_watarase_keikoku", "n_nakano_watarase_keikoku", "n_shimo_shinden", "n_undo_koen"]}
+- {"id": "r_ashio_line_godo_ashio_sori", "line": "l_ashio_line", "role": "branch", "from": "n_godo_watarase_keikoku", "to": "n_sori", "owned": true}
 - {"id": "r_moka_line", "line": "l_moka_line", "role": "main", "from": "n_shimodate", "to": "n_motegi", "hidden_stops": ["n_higuchi_moka", "n_kitayama_moka", "n_sasaharada", "n_shimodate_nikomae", "n_tenyaba"]}
 - {"id": "r_kawamata_line", "line": "l_kawamata_line", "role": "main", "from": "n_matsukawa", "to": "n_iwashiro_kawamata"}
 - {"id": "r_marumori_line", "line": "l_marumori_line", "role": "main", "from": "n_marumori", "to": "n_tsukinoki", "hidden_stops": ["n_kita_marumori", "n_minami_kakuda", "n_yokokura_abukuma_express"]}
-- {"id": "r_sakari_line", "line": "l_sakari_line", "role": "main", "from": "n_sakari", "to": "n_yoshihama_sanriku", "hidden_stops": ["n_koishihama"]}
+- {"id": "r_sakari_line", "line": "l_sakari_line", "role": "main", "from": "n_sakari", "to": "n_yoshihama_sanriku", "hidden_stops": ["n_koishihama", "n_shirahamakaigan"]}
 - {"id": "r_iwaizumi_line", "line": "l_iwaizumi_line", "role": "main", "from": "n_moichi", "to": "n_iwaizumi"}
 - {"id": "r_miyako_line", "line": "l_miyako_line", "role": "main", "from": "n_miyako", "to": "n_taro", "hidden_stops": ["n_yamaguchi_danchi"]}
 - {"id": "r_kuji_line", "line": "l_kuji_line", "role": "main", "from": "n_fudai", "to": "n_kuji_hachinohe", "hidden_stops": ["n_shiraikaigan", "n_tofugaura_kaigan"]}
 - {"id": "r_ohata_line", "line": "l_ohata_line", "role": "main", "from": "n_shimokita", "to": "n_ohata"}
-- {"id": "r_aizu_line", "line": "l_aizu_line", "role": "main", "from": "n_nishi_wakamatsu", "to": "n_aizukogen_ozeguchi_aizu", "hidden_stops": ["n_aizu_sanson_dojo", "n_amaya", "n_furusato_koen", "n_minami_wakamatsu", "n_to_no_hetsuri"]}
+- {"id": "r_aizu_line", "line": "l_aizu_line", "role": "main", "from": "n_nishi_wakamatsu", "to": "n_aizukogen_ozeguchi_aizu", "hidden_stops": ["n_aizu_sanson_dojo", "n_amaya", "n_furusato_koen", "n_ichinosekirokujizoson", "n_minami_wakamatsu", "n_to_no_hetsuri"]}
+- {"id": "r_aizu_line_ashinomaki_onsen_yunokami_onsen", "line": "l_aizu_line", "role": "branch", "from": "n_ashinomaki_onsen", "to": "n_yunokami_onsen", "owned": true}
 - {"id": "r_nitchu_line", "line": "l_nitchu_line", "role": "main", "from": "n_kitakata", "to": "n_atsushio"}
 - {"id": "r_nagai_line", "line": "l_nagai_line", "role": "main", "from": "n_akayu", "to": "n_arato", "hidden_stops": ["n_ayame_koen", "n_nanyo_shiyakusho", "n_shikinosato", "n_shirousagi"]}
 - {"id": "r_aniai_line", "line": "l_aniai_line", "role": "main", "from": "n_takanosu_akita_nairiku_jukan", "to": "n_hitachinai", "hidden_stops": ["n_nishi_takanosu"]}
@@ -252,7 +291,7 @@
 - {"id": "r_uonuma_line", "line": "l_uonuma_line", "role": "main", "from": "n_raikoji", "to": "n_nishi_ojiya"}
 - {"id": "r_kihara_line", "line": "l_kihara_line", "role": "main", "from": "n_ohara", "to": "n_kazusa_nakano_isumi", "hidden_stops": ["n_shiromigaoka"]}
 - {"id": "r_kajiyabara_line", "line": "l_kajiyabara_line", "role": "main", "from": "n_itano", "to": "n_kajiyabara"}
-- {"id": "r_komatsushima_line", "line": "l_komatsushima_line", "role": "main", "from": "n_chuden", "to": "n_komatsushima"}
+- {"id": "r_komatsushima_line", "line": "l_komatsushima_line", "role": "main", "from": "n_chuden", "to": "n_komatsushimako"}
 - {"id": "r_nakamura_line", "line": "l_nakamura_line", "role": "main", "from": "n_kubokawa", "to": "n_nakamura", "hidden_stops": ["n_kotsuka", "n_saga_koen", "n_uminoomukae"]}
 - {"id": "r_muroki_line", "line": "l_muroki_line", "role": "main", "from": "n_ongagawa", "to": "n_muroki"}
 - {"id": "r_katsuta_line", "line": "l_katsuta_line", "role": "main", "from": "n_yoshizuka", "to": "n_chikuzen_katsuta"}
@@ -262,7 +301,7 @@
 - {"id": "r_miyanojo_line", "line": "l_miyanojo_line", "role": "main", "from": "n_sendai_hisatsu_orange", "to": "n_satsuma_okuchi"}
 - {"id": "r_yunomae_line", "line": "l_yunomae_line", "role": "main", "from": "n_hitoyoshi_onsen", "to": "n_yunomae", "hidden_stops": ["n_koritsubyoinmae", "n_okadome_kofuku", "n_sagaratoshima", "n_shin_tsuruba"]}
 - {"id": "r_saga_line", "line": "l_saga_line", "role": "main", "from": "n_saga", "to": "n_setaka"}
-- {"id": "r_matsuura_line", "line": "l_matsuura_line", "role": "main", "from": "n_arita", "to": "n_sasebo", "hidden_stops": ["n_daigaku", "n_fukushimaguchi", "n_haze", "n_inotsuki", "n_kawahigashi_matsuura", "n_kurogou", "n_maehama", "n_matsuura_hatsudenshomae", "n_midaibashi", "n_motoyama_matsuura", "n_naka_tabira", "n_naruishi", "n_nishi_arita", "n_nishi_tabira", "n_nishikoba", "n_nonaka", "n_sasebo_chuo", "n_sato", "n_senpukuji", "n_suetachibana", "n_takaiwa_matsuura", "n_takashimaguchi", "n_tanagata", "n_yamadani", "n_yamanota"]}
+- {"id": "r_matsuura_line", "line": "l_matsuura_line", "role": "main", "from": "n_arita", "to": "n_sasebo", "hidden_stops": ["n_daigaku", "n_fukushimaguchi", "n_haze", "n_inotsuki", "n_kawahigashi_matsuura", "n_kurogou", "n_maehama", "n_matsuura_hatsudenshomae", "n_midaibashi", "n_motoyama_matsuura", "n_naka_tabira", "n_naruishi", "n_nishi_arita", "n_nishi_tabira", "n_nishikoba", "n_nonaka", "n_sasebo_chuo", "n_sato", "n_sekaihonohaku", "n_senpukuji", "n_suetachibana", "n_takaiwa_matsuura", "n_takashimaguchi", "n_tanagata", "n_yamadani", "n_yamanota"]}
 - {"id": "r_sechibaru_line", "line": "l_sechibaru_line", "role": "main", "from": "n_yoshii_matsuura", "to": "n_sechibaru"}
 - {"id": "r_usunoura_line", "line": "l_usunoura_line", "role": "main", "from": "n_saza", "to": "n_usunoura"}
 - {"id": "r_miyanoharu_line", "line": "l_miyanoharu_line", "role": "main", "from": "n_era", "to": "n_higo_oguni"}
@@ -272,8 +311,8 @@
 - {"id": "r_tagawa_line", "line": "l_tagawa_line", "role": "main", "from": "n_yukuhashi", "to": "n_tagawa_ita", "hidden_stops": ["n_aka", "n_genjii_no_mori", "n_higashi_saigawa_sanshiro", "n_imagawa_kappa", "n_kakishita_onsen_guchi", "n_kamiita", "n_miyakoizumi", "n_reiwa_costa_yukuhashi", "n_shin_toyotsu", "n_uchida"]}
 - {"id": "r_takachiho_line", "line": "l_takachiho_line", "role": "main", "from": "n_nobeoka", "to": "n_takachiho"}
 - {"id": "r_tsuma_line", "line": "l_tsuma_line", "role": "main", "from": "n_sadowara", "to": "n_sugiyasu"}
-- {"id": "r_shibushi_line", "line": "l_shibushi_line", "role": "main", "from": "n_nishi_miyakonojo", "to": "n_shibushi_nichinan"}
-- {"id": "r_osumi_line", "line": "l_osumi_line", "role": "main", "from": "n_shibushi_nichinan", "to": "n_kokubu_nippo_main"}
+- {"id": "r_shibushi_line", "line": "l_shibushi_line", "role": "main", "from": "n_nishi_miyakonojo", "to": "n_shibushi_old"}
+- {"id": "r_osumi_line", "line": "l_osumi_line", "role": "main", "from": "n_shibushi_old", "to": "n_kokubu_nippo_main"}
 - {"id": "r_katsuki_line", "line": "l_katsuki_line", "role": "main", "from": "n_nakama", "to": "n_katsuki"}
 - {"id": "r_ita_line", "line": "l_ita_line", "role": "main", "from": "n_nogata", "to": "n_tagawa_ita", "hidden_stops": ["n_akaji", "n_fujitana", "n_fureai_shoriki", "n_hitomi", "n_ichiba_heisei_chikuho", "n_kami_kanada", "n_minami_nogata_gotenguchi", "n_shimoita", "n_tagawa_municipal_hospital"]}
 - {"id": "r_itoda_line", "line": "l_itoda_line", "role": "main", "from": "n_kanada", "to": "n_tagawa_gotoji", "hidden_stops": ["n_matsuyama_heisei_chikuho", "n_oyabu"]}
@@ -296,8 +335,9 @@
 - {"id": "r_manji_line", "line": "l_manji_line", "role": "main", "from": "n_shibun", "to": "n_manji_tanzan"}
 - {"id": "r_tomiuchi_line", "line": "l_tomiuchi_line", "role": "main", "from": "n_mukawa", "to": "n_hidakacho"}
 - {"id": "r_rumoi_main_line", "line": "l_rumoi_main_line", "role": "main", "from": "n_fukagawa", "to": "n_mashike"}
-- {"id": "r_haboro_line", "line": "l_haboro_line", "role": "main", "from": "n_rumoi_haboro", "to": "n_horonobe"}
+- {"id": "r_haboro_line", "line": "l_haboro_line", "role": "main", "from": "n_rumoi_rumoi_main", "to": "n_horonobe"}
 - {"id": "r_shihoro_line", "line": "l_shihoro_line", "role": "main", "from": "n_obihiro", "to": "n_tokachi_mitsumata"}
+- {"id": "r_shihoro_line_shimizudani_horoka", "line": "l_shihoro_line", "role": "branch", "from": "n_shimizudani", "to": "n_horoka", "owned": true}
 - {"id": "r_hiroo_line", "line": "l_hiroo_line", "role": "main", "from": "n_obihiro", "to": "n_hiroo"}
 - {"id": "r_chihoku_line", "line": "l_chihoku_line", "role": "main", "from": "n_ikeda", "to": "n_kitami"}
 - {"id": "r_shiranuka_line", "line": "l_shiranuka_line", "role": "main", "from": "n_shiranuka", "to": "n_hokushin"}
@@ -312,24 +352,14 @@
 - {"id": "r_aioi_line", "line": "l_aioi_line", "role": "main", "from": "n_bihoro", "to": "n_kitami_aioi"}
 - {"id": "r_shibetsu_line", "line": "l_shibetsu_line", "role": "main", "from": "n_shibecha", "to": "n_nemuro_shibetsu"}
 - {"id": "r_shibetsu_line_nakashibetsu_attoko", "line": "l_shibetsu_line", "role": "branch", "from": "n_nakashibetsu", "to": "n_attoko", "owned": true}
-- {"id": "r_fujishiro_line", "line": "l_fujishiro_line", "role": "main", "from": "n_nanae", "to": "n_onuma"}
-- {"id": "r_tokaido_freight_line", "line": "l_tokaido_freight_line", "role": "main", "from": "n_tsurumi", "to": "n_higashi_totsuka"}
-- {"id": "r_takashima_line", "line": "l_takashima_line", "role": "main", "from": "n_tsurumi", "to": "n_sakuragicho"}
-- {"id": "r_osaki_branch_line", "line": "l_osaki_branch_line", "role": "main", "from": "n_osaki", "to": "n_nishi_oi"}
-- {"id": "r_yamanote_freight_line", "line": "l_yamanote_freight_line", "role": "main", "from": "n_komagome", "to": "n_tabata_signal"}
-- {"id": "r_musashino_south_line", "line": "l_musashino_south_line", "role": "main", "from": "n_tsurumi", "to": "n_fuchu_hommachi"}
-- {"id": "r_kunitachi_branch_line", "line": "l_kunitachi_branch_line", "role": "main", "from": "n_shin_kodaira", "to": "n_kunitachi"}
-- {"id": "r_omiya_branch_line", "line": "l_omiya_branch_line", "role": "main", "from": "n_nishi_urawa", "to": "n_yono"}
-- {"id": "r_nishiurawa_branch_line", "line": "l_nishiurawa_branch_line", "role": "main", "from": "n_musashi_urawa", "to": "n_yono"}
-- {"id": "r_mabashi_branch_line", "line": "l_mabashi_branch_line", "role": "main", "from": "n_minami_nagareyama", "to": "n_mabashi"}
-- {"id": "r_kita_kogane_branch_line", "line": "l_kita_kogane_branch_line", "role": "main", "from": "n_minami_nagareyama", "to": "n_kita_kogane"}
-- {"id": "r_tohoku_freight_line", "line": "l_tohoku_freight_line", "role": "main", "from": "n_tabata_signal", "to": "n_kami_nakazato"}
-- {"id": "r_tabata_freight_line", "line": "l_tabata_freight_line", "role": "main", "from": "n_tabata_signal", "to": "n_mikawashima"}
 - {"id": "r_akitako_line", "line": "l_akitako_line", "role": "main", "from": "n_tsuchizaki", "to": "n_akitako"}
-- {"id": "r_shinkin_line", "line": "l_shinkin_line", "role": "main", "from": "n_koiwa", "to": "n_kanamachi"}
-- {"id": "r_hoppo_freight_line", "line": "l_hoppo_freight_line", "role": "main", "from": "n_suita_freight_terminal", "to": "n_amagasaki"}
-- {"id": "r_umeda_freight_line", "line": "l_umeda_freight_line", "role": "main", "from": "n_suita_freight_terminal", "to": "n_fukushima_osaka_loop"}
 - {"id": "r_hanwa_freight_line", "line": "l_hanwa_freight_line", "role": "main", "from": "n_yao", "to": "n_sugimotocho"}
 - {"id": "r_kompoku_line", "line": "l_kompoku_line", "role": "main", "from": "n_shiretoko_shari", "to": "n_koshikawa"}
 - {"id": "r_yubari_line_noborikawa_branch", "line": "l_yubari_line_noborikawa_branch", "role": "main", "from": "n_shin_yubari", "to": "n_noborikawa"}
 - {"id": "r_ashiya_line", "line": "l_ashiya_line", "role": "main", "from": "n_ongagawa", "to": "n_ashiyajokojo"}
+- {"id": "r_chuohonsemmusashinokyogijo_line", "line": "l_musashino_kyogijo_line", "role": "main", "from": "n_mitaka", "to": "n_musashinokyogijomae"}
+- {"id": "r_shimogawara_line", "line": "l_shimogawara_line", "role": "main", "from": "n_kokubunji", "to": "n_tokyo_keibajo_mae"}
+- {"id": "r_shiogama_line", "line": "l_shiogama_line", "role": "main", "from": "n_rikuzen_sanno", "to": "n_shiogama_shiogama"}
+- {"id": "r_yunoki_line", "line": "l_yunoki_line", "role": "main", "from": "n_hidariishi", "to": "n_yunoki_yunoki"}
+- {"id": "r_yanagase_line", "line": "l_yanagase_line", "role": "main", "from": "n_kinomoto", "to": "n_tsuruga"}
+- {"id": "r_shinminato_line", "line": "l_shinminato_line", "role": "main", "from": "n_nomachi", "to": "n_shinminato"}

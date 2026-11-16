@@ -29,31 +29,23 @@ final class LineStrip {
 
 /// 본선부터 계통 순서로 구간을 늘어놓는다. 지선은 뒤에 잇고 같은 구간은 한 번만 센다.
 LineStrip lineStrip(Network network, BrowseLine line) {
-  final routes = network.routesOfLine(line.lineId).toList()
-    ..sort((a, b) {
-      final x = network.routes[a]!.role == 'main' ? 0 : 1;
-      final y = network.routes[b]!.role == 'main' ? 0 : 1;
-      return x.compareTo(y);
-    });
+  final routes = network.routesOfLineMainFirst(line.lineId);
   final ordered = <String>[];
   final seen = <String>{};
   String? first;
   String? last;
   for (final routeId in routes) {
-    final byPair = <String, List<String>>{};
-    for (final hop in network.hops(routeId)) {
-      (byPair[_pair(hop.a, hop.b)] ??= []).add(hop.edge);
-    }
     final stops = network.stops(routeId);
     for (var i = 0; i + 1 < stops.length; i++) {
       final p = stops[i].node;
       final q = stops[i + 1].node;
-      for (final edge in byPair[_pair(p, q)] ?? const <String>[]) {
+      for (final edge in network.edgesBetween(routeId, p, q)) {
         if (!line.edgeIds.contains(edge) || !seen.add(edge)) continue;
         ordered.add(edge);
+        // 끝 역 이름은 화면에 보이는 역에서만 고른다. 숨은 분기점·신호장은 이름이 없어 ID가 새어 나온다 (八木連絡線 大和八木 上本町방 분기)
         if (routeId == routes.first) {
-          first ??= p;
-          last = q;
+          if (network.isShown(p)) first ??= p;
+          if (network.isShown(q)) last = q;
         }
       }
     }
@@ -77,5 +69,3 @@ LineStrip lineStrip(Network network, BrowseLine line) {
   }
   return LineStrip(totalMeters: at, segments: segments, startNode: first, endNode: last);
 }
-
-String _pair(String a, String b) => a.compareTo(b) < 0 ? '$a\u0000$b' : '$b\u0000$a';
