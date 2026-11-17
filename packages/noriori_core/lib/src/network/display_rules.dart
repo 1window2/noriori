@@ -397,6 +397,15 @@ final class DisplayRules {
     return out;
   }();
 
+  /// 열람 전용 역 묶음이 없어진 해: 가장 늦은 폐역 해. 모르면 「?」(폐지 구간)
+  static String _latestYear(List<ArchiveStop> stops) {
+    final years = [
+      for (final stop in stops)
+        ?int.tryParse(stop.closedYear.length >= 4 ? stop.closedYear.substring(0, 4) : ''),
+    ];
+    return years.isEmpty ? '?' : '${years.reduce((a, b) => a > b ? a : b)}';
+  }
+
   /// 0 km 칸이 잇는 두 노드(나뉜 역 쌍). 양쪽 방향 모두 든다
   late final Set<String> _zeroPairs = {
     for (final edge in network.data.edges)
@@ -838,11 +847,17 @@ final class DisplayRules {
           ends.isEmpty ? null : ends.every((end) => end.items.every((item) => item.gone));
       final upEnds = topEnd ? _ends(continues, gap: index - 1, at: row, up: true).toList() : const <EndLine>[];
       final downEnds = bottomEnd ? _ends(continues, gap: index, at: row, up: false).toList() : const <EndLine>[];
-      // 첫 역 앞의 열람 전용 역은 맨 위에 둔다(첫 역 위 끝 이어짐·구분선보다 바깥)
+      // 첫 역 앞의 열람 전용 역은 맨 위에 둔다(첫 역 위 끝 이어짐·구분선보다 바깥).
+      // 첫 역 위가 폐지 구간이 아니면 그 묶음은 계통 끝 너머의 없어진 구간이라, 폐지 구간처럼 바깥에 폐지 해 구분선, 안쪽에 끝 구분선을 둔다.
+      // 없으면 지금 노선이 그 역들까지 이어지는 것처럼 보인다 (志度線 瓦町 앞 公園前·中野町·藤塚·東田町, 사용자 결정 2026-11-18)
       if (index == 0) {
-        for (final stop in places[-1] ?? const <ArchiveStop>[]) {
+        final beyond = places[-1] ?? const <ArchiveStop>[];
+        final fence = beyond.isNotEmpty && !topClosed;
+        if (fence) out.add(SectionLine(gap: -1, year: _latestYear(beyond), lanes: pass()));
+        for (final stop in beyond) {
           out.add(ArchiveLine(gap: -1, stop: stop, lanes: pass()));
         }
+        if (fence) out.add(SectionLine(gap: -1, lanes: pass()));
       }
       // 구분선은 끝 이어짐 줄 바깥에 둔다. 역과 끝 이어짐 사이에 끼면 점선 줄기가 끊긴다 (실화면 검수 2026-11-09, 肥前吉井)
       if (index == 0 && topClosed) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
@@ -999,6 +1014,9 @@ final class DisplayRules {
         }
       }
       out.addAll(downEnds);
+      // 끝 역 뒤의 열람 전용 역도 끝 너머 없어진 구간이다. 끝쪽 폐지 구간과 같이 끝 역 바로 아래에 폐지 해 구분선 하나만 둔다(그 뒤로 이어지는 구간이 없다)
+      final tail = index == rows.length - 1 ? places[index] ?? const <ArchiveStop>[] : const <ArchiveStop>[];
+      if (tail.isNotEmpty && alive(row)) out.add(SectionLine(gap: index, year: _latestYear(tail), lanes: pass()));
       for (final stop in places[index] ?? const <ArchiveStop>[]) {
         out.add(ArchiveLine(gap: index, stop: stop, lanes: pass()));
       }

@@ -541,10 +541,11 @@ void main() {
       km: null,
     );
 
-    test('끝역 뒤에 놓인다', () {
+    test('끝역 뒤에 놓이고, 끝 너머 없어진 구간이라 끝 역 바로 아래에 폐지 해 구분선이 선다', () {
       final out = lines([row(0, 'a'), row(1, 'z')], stops: const [pier]);
       expect(out.last, isA<ArchiveLine>());
       expect((out.last as ArchiveLine).gap, 1);
+      expect(out[out.length - 2], isA<SectionLine>().having((l) => l.year, 'year', '1945'));
     });
 
     test('앞 역을 모르면 뒤 역 앞에, 둘 다 모르면 km로 찾고 km순으로 놓는다', () {
@@ -1028,7 +1029,9 @@ void main() {
         ArchiveStop(id: 'x1', afterNode: null, beforeNode: 'a', closedYear: '1945', km: null),
         ArchiveStop(id: 'x2', afterNode: 'x1', beforeNode: null, closedYear: '1945', km: null),
       ]);
-      expect(out.first, isA<ArchiveLine>());
+      // 첫 역 앞 없어진 구간: 바깥(맨 위)에 폐지 해 구분선, 안쪽에 끝 구분선 (志度線 瓦町 앞, 사용자 결정 2026-11-18)
+      expect(out.first, isA<SectionLine>().having((l) => l.year, 'year', '1945'));
+      expect(out[1], isA<ArchiveLine>());
       final archives = out.whereType<ArchiveLine>().toList();
       expect(archives.map((a) => a.stop.id).toSet(), {'x1', 'x2'});
       expect(archives.every((a) => a.gap == -1), isTrue);
