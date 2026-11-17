@@ -81,8 +81,10 @@ for t,cols in (('edge_life',('valid_from','valid_to')),('edge_attr',('valid_from
         if r['valid_from_lo'] and r['valid_to_hi'] and r['valid_from_lo']>=r['valid_to_hi']:bad.append((t,'from>=to',r['valid_from'],r['valid_to'],r.get('edge_id') or (r.get('route_id'),r.get('node_id'))))
 put('날짜 형식·순서',bad)
 fut=[]
-for t in('edge_life','edge_attr'):
-    for r in m.execute(f"select * from {t} where valid_from_lo>'{TODAY}' or (valid_to<>'ongoing' and valid_to_hi>'{TODAY}')"):fut.append((t,dict(r).get('edge_id') or dict(r).get('node_id'),r['valid_from'],r['valid_to']))
+# 역 정차 기간도 본다. 폐지 범위의 끝이 열려 있으면(「[1950-01-02..]」) 오늘 화면에 「영업 중일 수도」로 그려진다.
+# 지금 역 목록(N02)에 없으면 그 판의 날짜로 끝을 막는다 (西鉄 甘木線 鏡 등 6역, 사용자 지적 2026-11-18)
+for t in('edge_life','edge_attr','route_stop'):
+    for r in m.execute(f"select * from {t} where (valid_from_lo>'{TODAY}' or (valid_to<>'ongoing' and valid_to_hi>'{TODAY}'))"+(' and is_stop=1' if t=='route_stop' else '')):fut.append((t,dict(r).get('edge_id') or (dict(r).get('route_id'),dict(r).get('node_id')),r['valid_from'],r['valid_to']))
 put('오늘 뒤 날짜',fut)
 # ---- edge_attr
 LR=collections.defaultdict(list)
@@ -534,6 +536,17 @@ for (t,i),v in nm.items():
         for l in ('ko','en'):
             if any(r[5]==vt and not r[3] and r[2]=='rule' and THEN[l].match(r[0]) for r in v.get(l,[])):rows.append((i,x,k,l))
 put('옛 이름에 읽기가 있는데 병기로 남음',rows)
+# 읽기가 있는 이름 행은 같은 (노선, 기간)의 한국어·영어가 있어야 하고, 일본어 표기 그대로(ja_as_is)나 한자·가나가 남으면 안 된다.
+# 읽기를 알면서 외국어를 못 단 것은 생성 단계의 빠짐이다 (열람 전용 역 영어 595·노선 영어 138, 2026-11-18 사용자 지적). 영어 이름은 컴파일 뒤에 들어오므로 여기서 본다
+_rw=[]
+for (t,i),v in nm.items():
+    if t=='node' and i not in pub:continue
+    for x,k,s_,li,vf,vt in v.get('ja',[]):
+        if not k:continue
+        for l in ('ko','en'):
+            y=[r for r in v.get(l,[]) if (r[3],r[4],r[5])==(li,vf,vt)]
+            if not y or any(r[2]=='ja_as_is' or (shown(l,r[0],r[2]) is not None and HK.search(shown(l,r[0],r[2]))) for r in y):_rw.append((t,i,l,x,li,vf,vt))
+put('읽기 있는데 한국어·영어 없음',_rw)
 put('kana가 히라가나 아님',[(i,x,k) for (t,i),v in nm.items() if t=='node' for x,k,*_ in v.get('ja',[]) if k and not re.fullmatch(r'[ぁ-ゟー・ 　0-9A-Za-zァ-ヶ（）()]+',k)])
 # 현대 가나 표기가 아님 (ぎをん, をごとおんせん). 원문 옛 표기를 그대로 옮긴 것이다
 put('kana에 옛 가나(を·ゐ·ゑ)',[(t,i,x,k) for (t,i),v in nm.items() for x,k,*_ in v.get('ja',[]) if k and re.search('[をゐゑ]',k)])

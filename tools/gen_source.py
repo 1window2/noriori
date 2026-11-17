@@ -812,16 +812,21 @@ for k,L in clusters.items():
     if kana_id in(None,'','NULL'):kana_id=KANA_ID.get('node:'+o0.name) or KANA_ID.get('node:'+o0.nm)
     # 표시 읽기 (2회차 종합 K13): 그 역 자료(station_database) → 그 노선 원문(N05 노선 표의 그 노선 kana) → 5km 안 같은 이름 Wikidata → 이름 열쇠 표(읽기가 하나뿐일 때만).
     # 먼 곳의 같은 글자 역 읽기(今福 いまぶく·いまふく, 平野町 ひらのちょう·ひらのまち)가 섞이면 안 된다
+    _wdu=False
     kana=(sd or {}).get('name_kana')
     if kana in(None,'','NULL'):kana=next((N5ST_LK[(q.lk,o.name)] for o,q in L if (q.lk,o.name) in N5ST_LK and o.name==o_name.name),None)
     if kana in(None,'','NULL'):
         _p0=(sd['lat_'],sd['lng_']) if sd else next((tuple(o.n05) for o in os_ if getattr(o,'n05',None)),None)
-        _wk=[x for x in WD.get(o0.nm,[]) if x.get('kana') and (dist(_p0,x['pt'])<5 if _p0 and x.get('pt') else True)]
-        # 5km 안에 없으면 같은 이름 항목들의 읽기가 하나뿐일 때만 쓴다 (小倉 こくら·おぐら처럼 갈리면 이름 열쇠 금지)
+        # 같은 이름 Wikidata 항목: 이 역 점 5km 안 항목이 있으면 그 읽기를 쓴다. 없으면, 좌표가 있어 다른 곳(5km 밖)으로 드러난 항목은 이 역이 아니라 버리고,
+        # 남은 항목(이 단계에 점이 없는 노드·좌표 없는 항목이라 확인할 수 없는 것)의 읽기가 하나로 같을 때만 쓴다.
+        # 예전에는 5km 밖 항목까지 읽기가 하나뿐이면 써서 115곳이 수백 km 밖 같은 글자 역의 읽기를 빌렸다(西鉄 甘木線 高島 たかしま, 別大 浜町 797km 등,
+        # 2026-11-18 사용자 지적 「같은 이름 역의 읽기를 빌리지 않는다」). 버린 읽기는 다음 근거(손 조사 표·이름 열쇠 가드)로 넘긴다
+        _wk=[x for x in WD.get(o0.nm,[]) if x.get('kana') and _p0 and x.get('pt') and dist(_p0,x['pt'])<5]
         if not _wk:
-            _wk=[x for x in WD.get(o0.nm,[]) if x.get('kana')]
+            _wk=[x for x in WD.get(o0.nm,[]) if x.get('kana') and not (_p0 and x.get('pt'))]
             if len({re.sub(r'(えき|エキ)$','',kata2hira(x['kana']).replace(' ','')) for x in _wk})>1:_wk=[]
         kana=_wk[0]['kana'] if _wk else None
+        _wdu=bool(kana) and not (_p0 and all(x.get('pt') for x in _wk) and all(dist(_p0,x['pt'])<5 for x in _wk))
         if kana:kana=re.sub(r'(えき|エキ|かりじょうこうじょう|しんごうじょう|ていりゅうじょう|じょうこうじょう)$','',kata2hira(kana).replace(' ',''))
     _nk=None
     if kana in(None,'','NULL'):
@@ -850,6 +855,11 @@ for k,L in clusters.items():
     n5pt=next((tuple(o.n05) for o in os_ if getattr(o,'n05',None)),None) if source_on('n05') else None
     nodes[i]=dict(id=i,cns=sorted({p_.cn for _,p_ in L}),kind=kind,group=None,pref=(sd or {}).get('prefecture'),name=o_name.name,nm=o_name.nm,kana=re.sub(r'〈.*?〉','',kana) if kana and kana!='NULL' else None,pt=pt,sd_only=bool(sd and len(byname.get(znorm(sd['name']),[]))==1 and len(st_lines[sd['code']])==1),sdname=(sd or {}).get('name'),sd=(sd or {}).get('id'),closed_sd=(sd or {}).get('closed'),sd_open=edtf((sd or {}).get('open_date')),sd_close=edtf((sd or {}).get('closed_date')),family=L[0][1].family,labels=sorted({o.name for o in os_}),by_line=sorted({(o.name,q.lk) for o,q in L if o.name!=o_name.name}),name_src=name_src,by_src={(o.name,q.lk):stop_src(o,q) for o,q in L})
     if _nk and nodes[i]['kana']:nodes[i]['_namekey']=_nk
+    if _wdu and nodes[i]['kana'] and not _nk:nodes[i]['_wdu']=o0.nm
+    # 「노드 ID|이름」 열쇠 읽기(old_names_kana.json)는 그 역 하나를 가리키는 손 조사 근거라 지금 이름에도 가장 먼저 쓴다. 이름 열쇠 표(kana.json)는
+    # 같은 이름 역을 가르지 못해 다른 역(山陽本線 열람 전용 遊園地前)에 번진다 (西武山口線 遊園地前, 2026-11-18)
+    _ik=OLDKANA0.get(i+'|'+o_name.name)
+    if _ik:nodes[i]['kana']=_ik;nodes[i].pop('_namekey',None);nodes[i].pop('_wdu',None)
     if not pt and n5pt:nodes[i].update(pt=n5pt,pt_src='n05',closed_sd='1')
     if kind!='station':nodes[i]['export_name']=('['+o0.name+']') if o0.hidden else o0.name
     n_of[k]=i
@@ -1583,13 +1593,27 @@ def namekey_ok(k_,nm_,cns_,pt_,kana_,id_=None):
     if s_[0]=='wiki' and _wcore(s_[1])!=znorm(k_.split(':',1)[1]):return False
     ops_=[b.get('ops','') for b in (WS.get(s_[1]) or {}).get('blocks',[])] if s_[0]=='wiki' else sorted(s_[1])
     if _opm(ops_,cns_):return True
-    if not _far_same(nm_,pt_,id_):return True
+    if not _far_same(nm_,pt_,id_):NK_ONLY.append((id_,nm_,kana_,s_[0]));return True
     return any(m['pt'] and pt_ and dist(m['pt'],pt_)<5 and kata2hira(m['kana']).replace(' ','')==kata2hira(kana_).replace(' ','') for m in _NMOWN.get(nm_,[]))
+# 확인 없이 받은 Wikidata 읽기(이 단계에 점이 없는 노드·좌표 없는 항목)는 좌표가 정해진 뒤 다시 본다. 좌표 보정 파일(data/overrides/positions)까지 반영한
+# 이 역 점에서 같은 이름 항목이 모두 5 km 밖이면 다른 곳의 역 읽기를 빌린 것이라 비운다 (손으로 넣은 西鉄 甘木線 高島, 2026-11-18)
+from lib import _FILL as _FILL0,_rows as _rows0
+_k0,_t0,_s0=_FILL0['positions']
+_POS0={x[_k0]:(x['lat'],x['lon']) for x in _rows0(os.path.join(ROOT,'data','overrides','positions')) if source_on(_s0.get(x.get(_t0),x.get(_t0))) and x.get('lat') is not None}
+WDU_DROP=[]
+for n in nodes.values():
+    if not n.get('_wdu'):continue
+    p_=_POS0.get(n['id']) or n['pt']
+    near_=[x for x in WD.get(n['_wdu'],[]) if x.get('kana') and x.get('pt')]
+    if p_ and near_ and not any(dist(p_,x['pt'])<5 for x in near_):WDU_DROP.append((n['id'],n['name'],n['kana']));n['kana']=None
+print('확인 없이 받은 Wikidata 읽기 좌표로 다시 봐 뺌',len(WDU_DROP),sorted(WDU_DROP)[:40])
+NK_ONLY=[]
 NAMEKEY_DROP=[]
 for n in nodes.values():
     if n.get('_namekey') and not namekey_ok(n['_namekey'],n['nm'],n['cns'],n['pt'],n['kana'],n['id']):
         NAMEKEY_DROP.append((n['id'],n['name'],n['kana'],KSRC[n['_namekey']][0]));n['kana']=None
 print('이름 열쇠 읽기 뺌(다른 역 읽기)',len(NAMEKEY_DROP),sorted(NAMEKEY_DROP)[:60])
+print('이름 열쇠 읽기 규칙②(같은 이름 노드 하나)로만 씀',len(NK_ONLY),sorted(NK_ONLY,key=str)[:200])
 
 # ---- 이름
 names=[];pend=[]

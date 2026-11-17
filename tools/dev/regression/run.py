@@ -107,6 +107,9 @@ def judge(c):
     if k=='hub':return frozenset((c['a'],c['b'])) in HP
     if k=='nohub':return frozenset((c['a'],c['b'])) not in HP
     if k=='nogroup':return not(GRP.get(c['a']) and GRP.get(c['a'])==GRP.get(c['b']))
+    # 12회차(2026-11-18): archname 열람 전용 행(역·노선)의 그 언어 이름 {aid, lang, text}, closeby 그 계통 정차 기간의 폐지 늦은 끝이 그날 이전 {route, node, by}
+    if k=='archname':return any(r[0]==c['lang'] and r[1]==c['text'] for r in NM['archive',c['aid']])
+    if k=='closeby':return bool(SPR[c['node']]) and all(t_!='ongoing' and (lohi(t_)[1] or '9999')<=c['by'] for rt,f_,t_ in SPR[c['node']] if rt==c['route'])
     if k=='archive':
         return any(rt==c['route'] and (not c.get('after') or a==c['after']) and (not c.get('before') or b==c['before']) and (c.get('km') is None or (km is not None and abs(km-c['km'])<.05)) for rt,a,b,km in ARCH[c['name']])
     if k=='edgekm':return any(abs(x-c['km'])<.05 for x in EK[frozenset((c['a'],c['b']))])

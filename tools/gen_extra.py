@@ -269,6 +269,10 @@ for a in arch:
     elif a['kind']=='stop' and kana:
         hk_=kata2hira(kana);e_=en_rules.station_reading(hk_,n);e_=en_rules.fix_station(n,hk_,e_,{}) or e_
         rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('node:'+n in GUESS) else 'rule'))
+    # 열람 전용 노선도 읽기가 있으면 노선 영어 이름 규칙(gen_en_names.line_name)으로 단다. 노선 138개가 한국어만 있고 영어가 없었다 (2026-11-18 사용자 지적)
+    elif a['kind']=='line' and KA.get(a['id']):
+        e_=line_name(n,kata2hira(KA[a['id']]))
+        if e_:rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('line:'+n in GUESS) else 'rule'))
 # 열람 전용 ID는 영어 이름이다 (DESIGN §2.10). 읽기를 로마자로 옮기고, 겹치면 노선 이름, 그래도 겹치면 앞 역 이름을 붙인다
 def slug(i):return re.sub(r'_line$','',re.sub(r'^[a-z]+_','',i or ''))
 JA={r['id']:r['text'] for r in rows if r['lang']=='ja'}
@@ -287,13 +291,39 @@ def _noread_id(b):
         c=base+('_'+w if w else '')
         if c not in taken:return c
     raise SystemExit(f'읽기 없는 열람 전용 역 ID를 정할 수 없습니다: {base}')
+# 역은 노드처럼 읽기의 로마자, 노선은 노선 ID처럼 영어 이름 (gen_en_names의 규칙)
+def _rbase(b,k):return 'a_'+(re.sub(r'[^a-z]+','_',unicodedata.normalize('NFKD',line_name(JA.get(b['id']),kata2hira(k))).encode('ascii','ignore').decode().lower()).strip('_') if b['kind']=='line' else romaji(k))
+# 이미 낸 읽기 기반 ID는 지킨다. 같은 읽기의 역이 새로 읽기를 얻으면 노선 이름 순서로 밑자리를 빼앗았다
+# (五日市線 武蔵上ノ原이 읽기를 얻자 青梅線 a_musashiuenohara가 a_musashiuenohara_ome로 밀림, 2026-11-18). 직전 커밋의 archive.yaml에서
+# (종류, 노선, 일본어 이름)이 같고 지금 읽기의 밑자리로 시작하는 ID면 그 행에 먼저 준다. 깨끗한 체크아웃(생성 단계 없음)에는 영향이 없다
+def _prev_ids():
+    import subprocess
+    def show(path):
+        r_=subprocess.run(['git','-C',ROOT,'show','HEAD:data/source/'+path],capture_output=True)
+        return r_.stdout.decode('utf-8') if r_.returncode==0 else ''
+    ja_={};out_={}
+    for ln_ in show('names/archive.yaml').splitlines():
+        if ln_.startswith('- {') and '"lang": "ja"' in ln_:
+            x_=json.loads(ln_[2:]);ja_[x_.get('entity_id') or x_.get('id')]=x_['text']
+    for ln_ in show('archive/archive.yaml').splitlines():
+        if ln_.startswith('- {'):
+            x_=json.loads(ln_[2:]);key_=(x_['kind'],x_.get('archive_line') or x_.get('line'),ja_.get(x_['id']))
+            out_.setdefault(key_,[]).append(x_['id'])
+    return out_
+PREV=_prev_ids()
+for b in out:
+    k=KA.get(b['id'])
+    if not k:continue
+    base=_rbase(b,k)
+    for pid in PREV.get((b['kind'],b.get('archive_line') or b.get('line'),JA.get(b['id'])),()):
+        if (pid==base or pid.startswith(base+'_')) and pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
 for b in sorted(out,key=lambda b:(b['id'] in LATE,b['kind'],b.get('line') or '',b.get('after') or '',b.get('seq') or 0,JA.get(b['id']) or '')):
+    if b['id'] in NEW:continue
     k=KA.get(b['id'])
     if not k and b.get('_noread'):
         c=_noread_id(b);taken.add(c);NEW[b['id']]=c;continue
     if not k:nokana.append(JA.get(b['id']));continue
-    # 역은 노드처럼 읽기의 로마자, 노선은 노선 ID처럼 영어 이름 (gen_en_names의 규칙)
-    base='a_'+(re.sub(r'[^a-z]+','_',unicodedata.normalize('NFKD',line_name(JA.get(b['id']),kata2hira(k))).encode('ascii','ignore').decode().lower()).strip('_') if b['kind']=='line' else romaji(k));c=base
+    base=_rbase(b,k);c=base
     for h in (slug(b.get('line')),slug(b.get('after') or b.get('at'))):
         if c not in taken:break
         if h:c=c+'_'+h

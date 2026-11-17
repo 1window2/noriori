@@ -1116,18 +1116,18 @@
 - {"date": "1950-04-10", "type": "open_stop", "route": "r_kaizuka_line", "node": "n_kaizuka_nishi_nippon", "source": "wikipedia"}
 - {"date": "1951-06-15", "type": "open_stop", "route": "r_kaizuka_line", "node": "n_nishitetsuchihaya", "source": "wikipedia"}
 - {"date": "1959-03-01", "type": "open_stop", "route": "r_kaizuka_line", "node": "n_kashii_miyamae", "source": "wikipedia"}
-- {"date": "[1950-01-02..]", "type": "close_stop", "route": "r_kaizuka_line", "node": "n_katao_sa", "source": "wikipedia"}
+- {"date": "[1950-01-02..2006-01-01]", "type": "close_stop", "route": "r_kaizuka_line", "node": "n_katao_sa", "source": "wikipedia"}
 - {"date": "1925-07-15", "type": "open_stop", "route": "r_kaizuka_line", "node": "n_katao_sa", "source": "wikipedia"}
 - {"date": "1941-04-01", "type": "open_stop", "route": "r_kaizuka_line", "node": "n_kashii_kaenmae", "source": "wikipedia"}
 - {"date": "1986-11-01", "type": "open_stop", "route": "r_kaizuka_line", "node": "n_tonoharu", "source": "wikipedia"}
 - {"date": "1915-10-15", "type": "open", "operator": "o_nishi_nippon_railroad", "line": "l_amagi_line_nishi_nippon", "edges": ["n_miyanojin..n_kitano_nishi_nippon"], "source": "noritsubushi"}
 - {"date": "1921-12-08", "type": "open", "operator": "o_nishi_nippon_railroad", "line": "l_amagi_line_nishi_nippon", "edges": ["n_kitano_nishi_nippon..n_amagi_nishi_nippon"], "source": "noritsubushi"}
 - {"date": "1924-04-12", "type": "open_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_miyanojin", "source": "wikipedia"}
-- {"date": "[1950-01-02..]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_shogunbaimae", "source": "wikipedia"}
-- {"date": "[1950-01-02..]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_kagami_amagi", "source": "wikipedia"}
-- {"date": "[1950-01-02..]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_takashima_amagi", "source": "wikipedia"}
-- {"date": "[1950-01-02..]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_some_amagi", "source": "wikipedia"}
-- {"date": "[1950-01-02..]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_shimohongo_amagi", "source": "wikipedia"}
+- {"date": "[1950-01-02..2006-01-01]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_shogunbaimae", "source": "wikipedia"}
+- {"date": "[1950-01-02..2006-01-01]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_kagami_amagi", "source": "wikipedia"}
+- {"date": "[1950-01-02..2006-01-01]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_takashima_amagi", "source": "wikipedia"}
+- {"date": "[1950-01-02..2006-01-01]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_some_amagi", "source": "wikipedia"}
+- {"date": "[1950-01-02..2006-01-01]", "type": "close_stop", "route": "r_amagi_line_nishi_nippon", "node": "n_shimohongo_amagi", "source": "wikipedia"}
 - {"date": "1910-03-15", "type": "open", "operator": "o_sanyo_electric_railway", "line": "l_sanyo_main_line_sanyo", "edges": ["n_nishidai_sanyo..n_sanyo_suma"], "source": "noritsubushi"}
 - {"date": "1913-05-11", "type": "open", "operator": "o_sanyo_electric_railway", "line": "l_sanyo_main_line_sanyo", "edges": ["n_sanyo_suma..n_sanyo_shioya"], "source": "noritsubushi"}
 - {"date": "1917-04-12", "type": "open", "operator": "o_sanyo_electric_railway", "line": "l_sanyo_main_line_sanyo", "edges": ["n_sanyo_shioya..n_sanyo_akashi"], "source": "noritsubushi"}

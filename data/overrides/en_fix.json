@@ -191,7 +191,6 @@
   "n_kitakomatsu": {"ja": "北小松", "en": "Kitakomatsu", "why": "재평가 ST4-21: 위키데이터 라벨이 훈령식(전 Kitakomatu). §9.1 헵번식 규칙값"},
   "n_kurosaki_chugakumae": {"ja": "黒埼中学前", "en": "Kurosakichugakumae", "why": "재평가 ST4-21: 위키데이터 라벨이 훈령식(전 Kurosakityugakumae). §9.1 헵번식 규칙값"},
   "n_teraji": {"ja": "寺地", "en": "Teraji", "why": "재평가 ST4-21: 위키데이터 라벨이 훈령식(전 Terazi). §9.1 헵번식 규칙값"},
-  "n_zaikezuka": {"ja": "在家塚", "en": "Zaikezuka", "why": "재평가 ST4-21: 위키데이터 라벨이 훈령식(전 Zaikeduka). §9.1 헵번식 규칙값"},
-  "n_shirousagi_nagai": {"ja": "白兎", "en": "Shirousagi", "why": "재평가 ST4-03 의심 목록 白兎: しろ|うさぎ 두 낱말이라 장음이 아님(전 Shirosagi). en_rules.WORD_START에 兎(うさぎ)가 없어 규칙도 Shirosagi를 냄"}
+  "n_zaikezuka": {"ja": "在家塚", "en": "Zaikezuka", "why": "재평가 ST4-21: 위키데이터 라벨이 훈령식(전 Zaikeduka). §9.1 헵번식 규칙값"}
 }
 }

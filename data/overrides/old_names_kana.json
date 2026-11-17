@@ -3834,5 +3834,21 @@
 "n_azabu_juban_toden|一ノ橋": {"kana": "いちのはし", "source": "『東京市統計年表』 第7回(1911, pid 806549) lab 전문 page 366(검색 표기 670) 「御茶ノ水萬世橋間 … 一ノ橋四谷鹽町間 Ichinohashi」(시영 전차 구간표) + railforum 『昭和時代』 기간 목록 텍스트 27574행 「一ノ橋 いちのはし」 1943.07.01~1908.12.29 이웃 二ノ橋·麻布中ノ橋 + railforum 『昭和時代』 기간 목록 텍스트 30162행 「一ノ橋 いちのはし」 1943.07.01~1944.10.05 이웃 二ノ橋·麻布中ノ橋 (11회차 R4)"},
 "n_asakusa_1_chome|田原町": {"kana": "たわらまち", "source": "『東京市統計年表』 第12回(pid 974755) lab page 511 「Kurumazakacho to Tawaramachi / Tawaramachi to Asakusabashi」 + railforum 『昭和時代』 기간 목록 텍스트 26589행 「田原町 たわらまち」 1929.09.24~1938.01.23 이웃 菊屋橋·雷門 + railforum 『昭和時代』 기간 목록 텍스트 26596행 「田原町 たわらまち」 1929.09.24~1904.03.18 이웃 菊屋橋·雷門 (11회차 R4)"},
 "n_higashikanda|豊島町": {"kana": "としまちょう", "source": "『大満洲帝国商工案内 [英文]』1937(NDL pid 1230911, lab page 403) 「Front of tram stop of Toshimacho, Kandaku」 + railforum 『昭和時代』 기간 목록 텍스트 26878행 「豊島町 としまちょう」 1929.08.10~1943.07.01 이웃 岩本町·浅草橋 + railforum 『昭和時代』 기간 목록 텍스트 29066행 「豊島町 としまちょう」 1943.07.01~1944.10.05 이웃 岩本町·浅草橋 (11회차 R4)"},
-"n_kujoshimmichi|花園橋": {"kana": "はなぞのばし", "source": "大阪市 『Statistical abstract for Osaka 7』(1917, NDL pid 1681508, 인터넷 공개) Table CXXIX Tramway 「From Harbour to Hanazonobashi」(lab 전문 page 101, 검색 표기 113) + 大阪市 『A glimpse of Osaka』(1934, pid 1900905, lab page 55) 「the first line, extending for 5 kilometres from Osaka harbour to Hanazonobashi」 (11회차 R4)"}
+"n_kujoshimmichi|花園橋": {"kana": "はなぞのばし", "source": "大阪市 『Statistical abstract for Osaka 7』(1917, NDL pid 1681508, 인터넷 공개) Table CXXIX Tramway 「From Harbour to Hanazonobashi」(lab 전문 page 101, 검색 표기 113) + 大阪市 『A glimpse of Osaka』(1934, pid 1900905, lab page 55) 「the first line, extending for 5 kilometres from Osaka harbour to Hanazonobashi」 (11회차 R4)"},
+"n_amusement_park|遊園地前": {
+ "kana": "ゆうえんちまえ",
+ "source": "jawiki「遊園地前駅 (埼玉県)」 역 정보칸 よみがな ゆうえんちまえ·첫 문장(중간; 사업자 西武鉄道 山口線, 좌표 35°46′2″N 139°26′27″E가 이 노드와 맞음) + Wikidata Q11082624(같은 역, 좌표 Point(139.441 35.7672)) 한국어 라벨 「유엔치마에역」(중간, 독립). 예전 읽기는 336 km 밖 尾小屋鉄道 遊園地前駅(Q130632662) 읽기를 빌린 것 (2026-11-18)"
+},
+"n_hachiman_toyokawa|八幡": {
+ "kana": "やわた",
+ "source": "jawiki「八幡駅 (愛知県)」 revid 108755609 역 정보칸 よみがな やわた·ローマ字 YAWATA(중간; 사업자 名古屋鉄道 豊川線, 좌표 34°49′45″N 137°21′7″E가 이 노드와 맞음) + Wikidata Q8050457(같은 역, 名鉄豊川線, Point(137.352 34.8292)) 한국어 라벨 「야와타역」·영어 「Yawata Station」(중간, 독립). 예전 읽기 はちまん은 같은 이름 다른 역 Wikidata 읽기를 빌린 것이라 틀렸음 (2026-11-18)"
+},
+"n_kitayama_tosaden_kotsu|北山": {
+ "kana": "きたやま",
+ "source": "jawiki「北山停留場」 revid 110996037 역 정보칸 よみがな きたやま·ローマ字 Kitayama(사업자 とさでん交通 伊野線, 좌표 33°32′56.82″N 133°26′18.65″E가 이 노드와 맞음: 그 역 자체 문서, 이름 열쇠 규칙 ①과 같은 기준). 예전 읽기는 같은 이름 다른 역 Wikidata 읽기를 빌린 것 (2026-11-18)"
+},
+"n_kyobashi_okayama|京橋": {
+ "kana": "きょうばし",
+ "source": "jawiki「京橋停留場」 revid 108520457 역 정보칸 よみがな きょうばし·ローマ字 Kyobashi(사업자 岡山電気軌道: 그 역 자체 문서, 이름 열쇠 규칙 ①과 같은 기준; 東山本線 노선도 행 [[京橋停留場]] (臨)). 예전 읽기는 같은 이름 다른 역 Wikidata 읽기를 빌린 것 (2026-11-18)"
+}
 }

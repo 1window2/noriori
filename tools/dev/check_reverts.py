@@ -31,6 +31,10 @@ def main():
             patch = run('git', 'show', commit, '--', path).stdout
             if not patch or run('git', 'apply', '--check', '-', data=patch).returncode != 0:
                 continue
+            # 덧붙이기만 한 덩어리는 앞뒤 줄이 같으면(새 함수 끝 「return out; }」이 앞 함수 끝과 같음) 한 번 더 들어갈 자리가 생긴다.
+            # 거꾸로도 들어가면 그 변경이 지금 트리에 있는 것이라 되돌림이 아니다 (f4ed85e pack_reader 오탐, 2026-11-18)
+            if run('git', 'apply', '--check', '-R', '-', data=patch).returncode == 0:
+                continue
             later = [c for c in commits[:at] if path in run('git', 'show', '--name-only', '--format=', c).stdout.decode().split()]
             bad.append((commit, path, later))
     for commit, path, later in bad:
