@@ -182,10 +182,13 @@ final class SelectorRow {
 
 /// 행 사이 구간의 끝난 해와 운휴 여부.
 final class SectionEnd {
-  const SectionEnd({this.year, this.suspended = false});
+  const SectionEnd({this.year, this.suspended = false, this.opens});
 
   final String? year;
   final bool suspended;
+
+  /// 고른 날에 아직 개업 전인 구간이 개업한 해. 그 날 화면에서는 폐지 해 대신 이 해를 적는다
+  final String? opens;
 }
 
 /// 계통과 탑승일로 선택기 행을 만든다 (ARCHITECTURE §2.5). DB를 읽지 않는다.
@@ -558,8 +561,10 @@ final class SelectorBuilder {
   }
 
   /// 행과 다음 행 사이 구간이 끝난 해와, [today]에 운휴 중인가 (DESIGN §8 구분선, 재설계 R11).
-  /// 해는 구간 수명(없으면 이 노선 소속)이 끝난 날에서 읽고, 역의 폐역 연도로 짐작하지 않는다
-  List<SectionEnd> sectionEnds(String routeId, List<SelectorRow> rows, DateSpan today) {
+  /// 해는 구간 수명(없으면 이 노선 소속)이 끝난 날에서 읽고, 역의 폐역 연도로 짐작하지 않는다.
+  /// [date]를 주면 그날 아직 개업 전인 구간(칸의 수명이 모두 그 뒤에 시작)의 개업 해도 낸다. 1950년 秋田市内線 秋田駅前–県庁前(1951 재개통)은
+  /// 「~1966 폐지」가 아니라 「1951년 개업」이다 (11회차 시뮬레이터 시험)
+  List<SectionEnd> sectionEnds(String routeId, List<SelectorRow> rows, DateSpan today, {DateSpan? date}) {
     final lineId = network.routes[routeId]!.lineId;
     final stops = network.stops(routeId);
     return [
@@ -585,7 +590,18 @@ final class SelectorBuilder {
             if (last == null) continue;
             if (hi == null || last.toHi!.compareTo(hi) > 0) (lo, hi) = (last.toLo, last.toHi);
           }
-          return SectionEnd(year: hi == null ? null : yearLabel(lo, hi), suspended: suspended);
+          String? opens;
+          if (date != null && edges.isNotEmpty && edges.every((edge) => network.lifeOn(edge, date) == LifeState.before)) {
+            String? first, firstHi;
+            for (final edge in edges) {
+              for (final life in network.livesOf(edge)) {
+                final from = life.period.fromLo;
+                if (from != null && (first == null || from.compareTo(first) < 0)) (first, firstHi) = (from, life.period.fromHi);
+              }
+            }
+            if (first != null) opens = yearLabel(first, firstHi ?? first);
+          }
+          return SectionEnd(year: hi == null ? null : yearLabel(lo, hi), suspended: suspended, opens: opens);
         }(),
     ];
   }

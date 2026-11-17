@@ -268,10 +268,13 @@ final class ArchiveLine extends SelectorLine {
 
 /// 폐지 구간의 경계. 위쪽이 영업, 아래쪽이 폐지면 [year]가 있다.
 final class SectionLine extends SelectorLine {
-  const SectionLine({required this.gap, this.year, this.suspended = false, super.lanes});
+  const SectionLine({required this.gap, this.year, this.suspended = false, this.opens, super.lanes});
 
   final int gap;
   final String? year;
+
+  /// 고른 날에 아직 개업 전인 구간이면 그 개업 해다. 폐지 해 대신 「1951년 개업」으로 적는다
+  final String? opens;
 
   /// 폐지가 아니라 운휴 중인 구간의 경계다. 「운휴 중」으로 적는다 (DESIGN §8 상태표, 디자인 감사 C08)
   final bool suspended;
@@ -389,6 +392,12 @@ final class DisplayRules {
     }
     return out;
   }();
+
+  /// 0 km 칸이 잇는 두 노드(나뉜 역 쌍). 양쪽 방향 모두 든다
+  late final Set<String> _zeroPairs = {
+    for (final edge in network.data.edges)
+      if (edge.meters == 0) ...['${edge.from}\u0000${edge.to}', '${edge.to}\u0000${edge.from}'],
+  };
 
   /// 끝난 연결이 상대 노선 칸의 운휴로 끝났는가. 연결이 끝난 날 그 역에 닿는 상대 노선 칸이 운휴에 들어가 지금도 운휴다
   bool _suspendedEnd(SelectorLink link, String node) {
@@ -689,7 +698,12 @@ final class DisplayRules {
     // 확장 행(숨은 끝 너머 역)은 선택만 돕는 행이라 그 옆 칸은 이 계통의 구간이 아니다. 가장 가까운 이 계통 칸의 상태를 이어받아
     // 확장 행과의 경계에 구분선이 생기지 않게 한다(영업 칸 옆이면 영업, 폐지 칸 옆이면 폐지. 山手·東北 화물선 三河島, 감사 2회차 K33, 吾妻橋線 本所吾妻橋)
     final raw = sectionGaps ?? openGaps;
-    bool beside(int index) => index + 1 < rows.length && (rows[index].isExtension || rows[index + 1].isExtension);
+    // 0 km 칸으로만 이어진 두 역 줄(나뉜 역의 나뉘기 전 노드와 나뉜 뒤 노드, 京阪 三条 → 京津三条) 사이는 구간이 아니다. 그 칸이
+    // 나뉜 날 끝나는 것을 구간 폐지로 읽으면 「~1987 폐지」 단계가 생기고 1990년 화면에 구분선이 남는다 (11회차 시뮬레이터 시험).
+    // 확장 행 옆 칸처럼 이웃 칸의 상태와 폐지 해를 따른다. km만 같은 옛 자리(新潟（旧）, 옛 선로가 있다)는 구간이다
+    bool sameSpot(SelectorRow a, SelectorRow b) => _zeroPairs.contains('${a.node}\u0000${b.node}');
+    bool beside(int index) =>
+        index + 1 < rows.length && (rows[index].isExtension || rows[index + 1].isExtension || sameSpot(rows[index], rows[index + 1]));
     int? home(int index) {
       for (var at = index - 1; at >= 0; at--) {
         if (!beside(at)) return at;
@@ -705,7 +719,12 @@ final class DisplayRules {
     ];
     // 첫 구간부터 폐지됐고 첫 역도 없어졌으면 구분선을 첫 역 위에 둔다. 첫 역 아래에 두면 첫 역만 남은 것처럼 보인다.
     // 첫 역이 지금 역이면 그 역은 폐지 구간 밖이라 아래에 둔다
-    final topClosed = gaps.isNotEmpty && !gaps.first && !rows.first.current;
+    // 날짜를 고른 화면에서는 그날 영업한 역도 구간 밖이다. 1950년 秋田市内線 県庁前(1963 폐역)은 그날 영업해, 개업 전 구간의 끝 구분선이
+    // 그 역 위에 온다 (11회차 시뮬레이터 시험)
+    bool alive(SelectorRow row) => date == null
+        ? row.current
+        : const [StopState.open, StopState.maybe, StopState.suspended].contains(row.state);
+    final topClosed = gaps.isNotEmpty && !gaps.first && !alive(rows.first);
     // 확장 행 옆 칸은 폐지 연도도 이웃 칸을 따른다. 확장 역 자신의 폐역 해로 새 폐지 단계가 생기지 않게 한다 (広井町線 菊井町)
     final yearOf = _closedYears(rows, gaps, sectionEnds);
     for (var index = 0; index < gaps.length; index++) {
@@ -719,6 +738,10 @@ final class DisplayRules {
       }
     }
     bool suspendedAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length && sectionEnds[gap].suspended;
+    String? opensAt(int gap) {
+      final at = gap >= 0 && beside(gap) ? home(gap) : gap;
+      return sectionEnds != null && at != null && at >= 0 && at < sectionEnds.length ? sectionEnds[at].opens : null;
+    }
     // 병주 토막 (DESIGN §8.1). 아직 시작하지 않은 토막은 빼고, 날짜를 모르면 끝난 토막도 흐리게 그린다.
     // 그날 이미 끝난 토막도 폐선 표시를 켜면 흐린 병주 선이다(北5条線 札幌駅前–西五丁目 1932–1971, 감사 2회차 K09).
     // 그 칸 역에서 상대와의 연결이 토막보다 늦게 끝나면 그 연결이 대신한다(西野田線 1932년 병주 끝, 1964년까지 환승).
@@ -818,10 +841,10 @@ final class DisplayRules {
         }
       }
       // 구분선은 끝 이어짐 줄 바깥에 둔다. 역과 끝 이어짐 사이에 끼면 점선 줄기가 끊긴다 (실화면 검수 2026-11-09, 肥前吉井)
-      if (index == 0 && topClosed) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), lanes: pass()));
+      if (index == 0 && topClosed) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
       // 폐지·운휴 구간이 지금 역에서 끝나면 끝 구분선을 그 역 위에 둔다. 아래에 두면 지금 역이 구간 안에 든다 (常磐線 新地~山下 이설).
       // 구간이 역 사이 한 칸뿐이면 시작 구분선과 같은 자리라 하나만 둔다
-      final endsHere = endsAt(rows, gaps, index);
+      final endsHere = endsAt(rows, gaps, index, alive: alive);
       if (endsHere && !(index == 1 ? !topClosed : gaps[index - 2])) out.add(SectionLine(gap: index - 1, lanes: pass()));
       out.addAll(upEnds);
       if (isFirst) {
@@ -897,7 +920,9 @@ final class DisplayRules {
           small: !options.showClosed && _isGoneStop(row),
           branchUpGone: ups.isNotEmpty && ups.every((item) => item.gone),
           branchDownGone: (downs.isNotEmpty || old.isNotEmpty) && downs.every((item) => item.gone),
+          // 개업 전 역의 「1951~」는 구분선 해와 같아도 지우지 않는다(지우면 개업 전인지 알 수 없다, 11회차 시뮬레이터 시험 秋田駅前)
           quiet: row.closeYear != null &&
+              row.state != StopState.beforeOpen &&
               (row.closeYear == yearOf[index - 1] || row.closeYear == yearOf[index]),
           returnsTo: closedRoute && rows.take(index).any((earlier) => earlier.node == row.node)
               ? row.node
@@ -982,9 +1007,17 @@ final class DisplayRules {
         final below = gaps[index];
         final above = index == 0 ? !topClosed : gaps[index - 1];
         final yearAbove = index == 0 ? (topClosed ? yearOf[0] : null) : yearOf[index - 1];
+        // 날짜를 고른 화면의 개업 전 구간은 개업 해마다 단계다(浅草線 1960년: 1968·1964·1963 개업)
+        final opensAbove = index == 0 ? (topClosed ? opensAt(0) : null) : opensAt(index - 1);
         // 폐지 단계마다 구분선과 날짜를 둔다 (DESIGN §8)
-        if (!endsHere && (below != above || (!below && yearOf[index] != yearAbove))) {
-          out.add(SectionLine(gap: index, year: below ? null : yearOf[index], suspended: !below && suspendedAt(index), lanes: pass()));
+        if (!endsHere && (below != above || (!below && (yearOf[index] != yearAbove || opensAt(index) != opensAbove)))) {
+          out.add(SectionLine(
+            gap: index,
+            year: below ? null : yearOf[index],
+            suspended: !below && suspendedAt(index),
+            opens: below ? null : opensAt(index),
+            lanes: pass(),
+          ));
         }
       }
     }
@@ -1117,12 +1150,13 @@ final class DisplayRules {
   ///
   /// 구분선은 구간 상태가 바뀌는 경계에만 둔다. 계통 맨 끝 역 아래에는 구간이 없으니 경계도 없다.
   /// 그 역이 다른 노선으로는 지금 서는 역이어도(北上線 横手, 美祢線 長門市) 끝 역 위에 구분선을 두지 않는다
-  static bool endsAt(List<SelectorRow> rows, List<bool> gaps, int index) =>
+  /// [alive]는 그 화면에서 역이 서 있는가다(기본은 지금 역). 날짜를 고른 화면은 그날 영업한 역도 든다
+  static bool endsAt(List<SelectorRow> rows, List<bool> gaps, int index, {bool Function(SelectorRow row)? alive}) =>
       index >= 1 &&
       index < gaps.length &&
       // 이관으로 끝난 역은 폐역이 아니다. 그 역에서 폐지 구간이 끝난다 (信越本線 横川–軽井沢).
       // 이어받은 노선도 그 역을 떠났으면 지금 역이 아니라 구간 안이다 (神岡線 神岡, 감사 2회차 K33)
-      rows[index].current &&
+      (alive ?? (row) => row.current)(rows[index]) &&
       !gaps[index - 1] &&
       gaps[index];
 

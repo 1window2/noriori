@@ -3663,6 +3663,9 @@ for rid,d in _rs.items():
                 continue
             if _c0 is not None:_par1950c.append((rid,u['p'],_c0,d0_));d0_=_c0;_c0=None
             par_rows.append((rid,u['p'],prow,seq[u['a']],seq[u['b']],json.dumps([seq[x] for x in st if u['a']<=x<=u['b'] and _grp(node[x]) in pstop]),inn[0],inn[1],out[0],out[1],d0_ if d0_!='0000-01-01' else None,d1_ if d1_<'9999' else None))
+# 행 순서를 고정한다. 상대 노선을 모은 집합의 순서가 빌드마다 달라 같은 칸 병주 줄의 바깥·안쪽 자리가 바뀌었다(京成本線 成田 成田線·成田空港線, 2026-11-17)
+# 같은 칸이면 먼저 시작한 병주가 앞(안쪽)이다
+par_rows.sort(key=lambda r_:(r_[0],r_[3],r_[4],r_[10] or '',r_[1],r_[11] or ''))
 t('route_parallel',['route_id','other_line_id','other_route_id','from_seq','to_seq','stop_seqs','in_next_stop','in_terminal','out_next_stop','out_terminal','valid_from_lo','valid_to_hi'],par_rows)
 print('병주 구간',len(par_rows),'1950 전에 끝나 뺀 토막',len(_par1950),'뺀 토막의 시작을 이어받은 첫 토막',len(_par1950c))
 succ={frozenset((e['a'],e['b'])):e['id'] for e in edges.values() if e.get('alt')!='old'}
@@ -3789,16 +3792,17 @@ for (_r2,_r1),_day in sorted(_pairs.items()):
 t('bus_section',['line_id','pattern','seq','stop_ja','valid_from','valid_to'],[(b_['line'],p_['name'],i_,n_,p_.get('since'),p_.get('until') or 'ongoing') for b_ in BUS for p_ in b_['patterns'] for i_,n_ in enumerate(p_['stops'])])
 db.executemany('insert into line values (?,?,?)',[(b_['line'],'bus',None) for b_ in BUS])
 t('route_link_carryover',['route_id','seq','other_line_id','other_route_id','kind','side','at_edge','other_node','next_stop_node','terminal_node','flow','flow_source','valid_from','valid_to'],_cl)
+# 재개·폐지가 정해지지 않은 역 정차 운휴(陸羽西線 羽前前波·高屋: 2022-05-14 운휴, 2026-01-16 노선 재개 뒤 全列車通過). 노선 운휴와 같게 「운휴」다.
+# 정차 행은 끝 없이 두고 끝 없는 공백(gap_to ongoing)을 단다. 앞뒤 칸이 운행 중인지는 칸 수명이 따로 안다. 폐지가 확정되면 결정 119대로
+# stop_dates로 마지막 정차 다음 날에 끝낸다 (사용자 결정 2026-11-16, data/overrides/stop_suspended.json)
+_SSP=os.path.join(ROOT,'data','overrides','stop_suspended.json');_nss=0
+for x_ in (json.load(open(_SSP,encoding='utf-8')) if os.path.exists(_SSP) else []):
+    hit_=[s for s in stops if s['route_id']==x_['route'] and s['node_id']==x_['node'] and s['is_stop'] and s.get('valid_to') in (None,'ongoing')]
+    if not hit_:err('stop_suspended',x_);continue
+    for s in hit_:stop_gaps.append((s,x_['from'],'ongoing'));_nss+=1
+print('재개 미정 역 정차 운휴',_nss)
 # 정차 기간 사이 서지 않은 때 (stop_dates의 여러 기간). gap_from은 앞 기간의 끝(그날부터 서지 않음), gap_to는 다음 기간의 시작
 t('route_stop_gap',['route_id','seq','node_id','gap_from','gap_from_lo','gap_from_hi','gap_to','gap_to_lo','gap_to_hi'],[(s['route_id'],s['seq'],s['node_id'])+per(0,a_)+per(0,b_) for s,a_,b_ in stop_gaps if s['is_stop']])
-# 법적 폐지 없이 정차만 끝난 역(全列車通過, 재개·폐지 미정, 陸羽西線 羽前前波·高屋). 정차 끝(그날부터 서지 않음)은 stop_dates에 두고,
-# 앱은 「~해」 대신 「전 열차 통과」로 적는다. 정차 끝이 그 날이 아니면 빌드를 멈춘다 (사용자 결정 2026-11-16, data/overrides/stop_passing.json)
-_SPP=os.path.join(ROOT,'data','overrides','stop_passing.json');_sp=[]
-for x_ in (json.load(open(_SPP,encoding='utf-8')) if os.path.exists(_SPP) else []):
-    if not any(s['route_id']==x_['route'] and s['node_id']==x_['node'] and s['is_stop'] and s.get('valid_to')==x_['from'] for s in stops):err('stop_passing',x_);continue
-    _sp.append((x_['route'],x_['node'],'passing',x_['from'],x_['source']))
-t('stop_end',['route_id','node_id','reason','valid_from','source'],_sp)
-print('전 열차 통과(폐지 미정) 역',len(_sp))
 t('route_stop_carryover',['route_id','seq','node_id','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],[(r_,q_,n_)+per(0,f_)+per(0,t_) for r_,q_,n_,f_,t_ in _cs])
 print('승계 켬 국철 시대 구선로',len(_cl),'폐역',len(_cs))
 # 한 방향 운행 칸과 한 방향 정차 (DESIGN §8 한 방향 운행·한 방향 정차, 사용자 결정 2026-11-12)
@@ -4218,6 +4222,8 @@ for s_ in stops:
     for f_,u_ in zip(cuts[::2],cuts[1::2]):
         # 시작≥끝인 토막은 서는 날이 없다 (K18). 정차 시작에서 바로 서지 않은 때(운휴로 시작)가 이어지면 앞 토막은 길이 0이라 조용히 뺀다
         if f_==u_==s_['valid_from']:continue
+        # 끝 없는 공백(재개 미정 정차 운휴, stop_suspended) 뒤 토막은 서는 날이 없다
+        if f_=='ongoing':continue
         if u_ not in (None,'ongoing') and _p_lo(f_)>=_p_hi(u_):WARN['route_stop_period_empty'].append((s_['route_id'],s_['node_id'],f_,u_));continue
         _rsp.append((s_['route_id'],s_['seq'],s_['node_id'],'stop')+per(0,f_)+per(0,u_))
 t('route_stop_period',['route_id','seq','node_id','kind','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],_rsp)

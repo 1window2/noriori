@@ -578,7 +578,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       archiveStops: stops,
       archiveBranches: branches,
       sectionGaps: sectionGaps,
-      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today)),
+      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
       undated: date == null,
       parallels: parallels,
       date: date,

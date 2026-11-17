@@ -18239,6 +18239,8 @@ null
 {"id": "T1-12", "round": 11, "cause": "T1", "cat": "wrong_transfer", "kind": "nohub", "a": "n_noda_hanshin", "b": "n_tamagawa_osaka_metro", "basis": "玉川 문서 乗換 「野田駅（JR大阪環状線）」을 阪神 野田에 맞춘 노드 오류. Osaka Metro 玉川 乗り換え路線은 JR線뿐(K205) (11회차 T1 2026-11-17)"},
 {"id": "T1-13", "round": 11, "cause": "T1", "cat": "wrong_transfer", "kind": "nohub", "a": "n_sannomiya", "b": "n_shin_kobe", "basis": "위키 JR神戸線 역 표 接続 칸의 山陽新幹線（新神戸駅）은 노선 단위 표기. 三ノ宮–新神戸 1297 m는 지하철 경유라 걸어서 갈아타는 쌍 아님(노드 맞춤 오류) (11회차 T1 2026-11-17)"},
 {"id": "T1-14", "round": 11, "cause": "T1", "cat": "wrong_transfer", "kind": "nohub", "a": "n_motomachi", "b": "n_shin_kobe", "basis": "위와 같음, 2020 m (11회차 T1 2026-11-17)"},
-{"id": "T1-15", "round": 11, "cause": "T1", "cat": "no_official", "kind": "nohub", "a": "n_shimbashi", "b": "n_shiodome_toei", "basis": "都営 汐留 乗り換え案内는 ゆりかもめ뿐, 都営 新橋는 銀座線·JR·ゆりかもめ, ゆりかもめ 汐留는 大江戸線뿐. 사업자 안내 없음(334 m, 문서 근거도 없음) (11회차 T1 2026-11-17)"}
+{"id": "T1-15", "round": 11, "cause": "T1", "cat": "no_official", "kind": "nohub", "a": "n_shimbashi", "b": "n_shiodome_toei", "basis": "都営 汐留 乗り換え案内는 ゆりかもめ뿐, 都営 新橋는 銀座線·JR·ゆりかもめ, ゆりかもめ 汐留는 大江戸線뿐. 사업자 안내 없음(334 m, 문서 근거도 없음) (11회차 T1 2026-11-17)"},
+{"id": "SIM-01", "cat": "stop", "kind": "stopgap", "route": "r_rikuu_west_line", "node": "n_uzen_zennami", "gap_from": "2022-05-14", "gap_to": "ongoing", "basis": "全列車通過(2026-01-16 재개 뒤에도 정차 없음, 폐지 아님)는 운휴와 같게 끝 없는 정차 공백(사용자 결정 2026-11-16). 3f42667 합치기에서 compile·stop_dates가 되돌려져 「폐역 2022」로 보였다 (11회차 시뮬레이터 시험 2026-11-17)", "round": 4, "cause": "merge"},
+{"id": "SIM-02", "cat": "stop", "kind": "stopgap", "route": "r_rikuu_west_line", "node": "n_takaya", "gap_from": "2022-05-14", "gap_to": "ongoing", "basis": "羽前前波와 같음 (11회차 시뮬레이터 시험 2026-11-17)", "round": 4, "cause": "merge"}
 ]
 }

@@ -49,6 +49,9 @@ for r_ in m.execute('select l.route_id,s.node_id,l.other_line_id,l.other_route_i
 XST=collections.defaultdict(list)
 for r_ in m.execute('select route_id,node_id,valid_from,valid_to from route_stop where is_extension=1'):XST[r_[0],r_[1]].append((r_[2],r_[3]))
 EXT={r_[0]:set(json.loads(r_[1] or '[]')) for r_ in m.execute('select id,extend_to from route')}
+# 정차 공백(route_stop_gap). 끝 없는 공백은 gap_to='ongoing'(재개 미정 정차 운휴, 11회차 시뮬레이터 시험: 합치기에서 되돌려진 것을 잡는다)
+SGAP=collections.defaultdict(list)
+for r_ in m.execute('select route_id,node_id,gap_from,gap_to from route_stop_gap'):SGAP[r_[0],r_[1]].append((r_[2],r_[3]))
 SDIR=collections.defaultdict(list)
 for r_ in m.execute('select route_id,node_id,direction,label,use,valid_from,valid_to from stop_direction'):SDIR[r_[0],r_[1]].append(r_[2:])
 def _on(v,day):
@@ -144,6 +147,7 @@ def judge(c):
         v=sorted(ELIFE[frozenset((c['a'],c['b']))],key=lambda r_:lohi(r_[0])[0] or '0000')
         return bool(v) and de(v[0][0],c['date'])
     # 계통 첫 역: {route, node} 확장 행을 뺀 순번 0 정차 노드
+    if k=='stopgap':return any(de(f_,c['gap_from']) and (t_==c.get('gap_to','ongoing') or de(t_,c.get('gap_to'))) for f_,t_ in SGAP[c['route'],c['node']])
     if k=='route_first':return RFIRST.get(c['route'])==c['node']
     # 열람 전용 중복 없음: {route?, name?} 같은 계통·같은 이름·같은 km 열람 전용 역이 둘 이상이면 남음
     if k=='archive_unique':

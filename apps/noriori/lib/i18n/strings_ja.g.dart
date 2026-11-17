@@ -168,7 +168,6 @@ class _Translations$map$ja implements Translations$map$ko {
 
 	// Translations
 	@override String get soloOff => '全路線を表示';
-	@override String get scoreLabel => '現行';
 	@override String get add => '記録';
 	@override String get search => '路線・駅を検索';
 	@override String get closed => '廃線';
@@ -361,6 +360,7 @@ class _Translations$session$ja implements Translations$session$ko {
 		other: '${n}駅',
 	);
 	@override String closedSection({required Object year}) => '~${year} 廃止';
+	@override String openedSection({required Object year}) => '${year}年開業';
 	@override String archiveStop({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です';
 	@override String archiveLine({required Object name}) => '${name}は記録対象外です';
 	@override String get from => '乗車';
@@ -1128,7 +1128,6 @@ extension on TranslationsJa {
 			'start.noSpaceBody' => '記録はそのまま残っています。空き容量を確保してからもう一度お試しください。',
 			'start.restoreAction' => '復元する',
 			'map.soloOff' => '全路線を表示',
-			'map.scoreLabel' => '現行',
 			'map.add' => '記録',
 			'map.search' => '路線・駅を検索',
 			'map.closed' => '廃線',
@@ -1286,6 +1285,7 @@ extension on TranslationsJa {
 			'session.lap' => '1周',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}駅', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} 廃止',
+			'session.openedSection' => ({required Object year}) => '${year}年開業',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です',
 			'session.archiveLine' => ({required Object name}) => '${name}は記録対象外です',
 			'session.from' => '乗車',

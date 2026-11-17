@@ -24,7 +24,6 @@
   },
   "map": {
     "soloOff": "모든 노선 보기",
-    "scoreLabel": "현재",
     "add": "기록",
     "search": "노선이나 역 찾기",
     "closed": "폐선",
@@ -222,6 +221,7 @@
       "other": "$n개 역"
     },
     "closedSection": "~$year 폐지",
+    "openedSection": "$year년 개업",
     "archiveStop": "$name: 폐역($year). 기록할 수 없는 옛 역입니다",
     "archiveLine": "$name: 기록할 수 없는 옛 노선입니다",
     "from": "출발",

@@ -24,7 +24,6 @@
   },
   "map": {
     "soloOff": "Show all lines",
-    "scoreLabel": "ridden",
     "add": "Add ride",
     "search": "Search lines and stations",
     "closed": "Closed lines",
@@ -230,6 +229,7 @@
       "other": "$n stations"
     },
     "closedSection": "~$year closed",
+    "openedSection": "opened in $year",
     "archiveStop": "$name closed in $year and can't be logged",
     "archiveLine": "$name is a historic line and can't be logged",
     "from": "From",

@@ -64,7 +64,9 @@ void main() {
       final route = network.routes[routeId]!;
       final buf = StringBuffer('# ${ln(route.lineId)} 계통 $routeId closed=${route.closed}\n');
       final screens = <Map<String, Object?>>[];
-      for (final raw in [today, null]) {
+      // RENDER_DATES=1990-11-17,1950-11-17 이면 그 날짜 화면도 펼친다(오늘은 RENDER_TODAY 그대로, 기록 화면에서 날짜를 고른 것과 같다)
+      final extra = (Platform.environment['RENDER_DATES'] ?? '').split(',').where((d) => d.isNotEmpty);
+      for (final raw in [today, ...extra, null]) {
         final date = raw == null ? null : DateSpan.parse(raw);
         const options = DisplayOptions();
         final builder = SelectorBuilder(network);
@@ -94,7 +96,7 @@ void main() {
           archiveStops: stops,
           archiveBranches: branches,
           sectionGaps: sectionGaps,
-          sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today)),
+          sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
           undated: date == null,
           parallels: parallels,
           date: date,
@@ -155,8 +157,8 @@ void main() {
               jl.add({'t': 'end', 'at': e.at.node, 'atSeq': e.at.seq, 'up': e.up, 'items': [for (final i in e.items) dj(i)]});
               buf.writeln('  ${e.up ? '▲' : '▼'} 끝이어짐${e.parallel == null ? '' : '(병주)'} ${e.items.map(dl).join(' · ')}');
             case final SectionLine sec:
-              jl.add({'t': 'section', 'gap': sec.gap, 'year': sec.year, 'suspended': sec.suspended});
-              buf.writeln('  - - - 구분선${sec.suspended ? ' 운휴 중' : sec.year == null ? '' : ' ~${sec.year} 폐지'}');
+              jl.add({'t': 'section', 'gap': sec.gap, 'year': sec.year, 'suspended': sec.suspended, if (sec.opens != null) 'opens': sec.opens});
+              buf.writeln('  - - - 구분선${sec.suspended ? ' 운휴 중' : sec.opens != null ? ' ${sec.opens} 개업' : sec.year == null ? '' : ' ~${sec.year} 폐지'}');
             case final TransferLine h:
               jl.add({'t': 'hand', 'line': h.lineId, 'on': h.on, 'at': h.at.node, 'atSeq': h.at.seq, 'whole': h.whole, 'back': h.back, 'closedYear': h.closedYear});
               buf.writeln('  = = = 이관${h.whole ? '(노선 전체)' : ''}${h.back ? ' 돌아옴' : ''} ${ln(h.lineId)} ${h.on}${h.closedYear == null ? '' : ' +~${h.closedYear} 폐지'}');

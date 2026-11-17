@@ -952,7 +952,11 @@ class _SectionTile extends ConsumerWidget {
                   children: [
                     Flexible(
                       child: Text(
-                        line.suspended ? context.t.session.suspendedSection : closedNote(context, year),
+                        line.suspended
+                            ? context.t.session.suspendedSection
+                            : line.opens != null
+                                ? context.t.session.openedSection(year: line.opens!)
+                                : closedNote(context, year),
                         style: text.bodySmall?.copyWith(color: tokens.textClosed),
                       ),
                     ),

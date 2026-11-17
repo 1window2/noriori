@@ -168,7 +168,6 @@ class _Translations$map$en implements Translations$map$ko {
 
 	// Translations
 	@override String get soloOff => 'Show all lines';
-	@override String get scoreLabel => 'ridden';
 	@override String get add => 'Add ride';
 	@override String get search => 'Search lines and stations';
 	@override String get closed => 'Closed lines';
@@ -369,6 +368,7 @@ class _Translations$session$en implements Translations$session$ko {
 		other: '${n} stations',
 	);
 	@override String closedSection({required Object year}) => '~${year} closed';
+	@override String openedSection({required Object year}) => 'opened in ${year}';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
@@ -1158,7 +1158,6 @@ extension on TranslationsEn {
 			'start.noSpaceBody' => 'Your rides are safe. Free up some space and try again.',
 			'start.restoreAction' => 'Restore',
 			'map.soloOff' => 'Show all lines',
-			'map.scoreLabel' => 'ridden',
 			'map.add' => 'Add ride',
 			'map.search' => 'Search lines and stations',
 			'map.closed' => 'Closed lines',
@@ -1316,6 +1315,7 @@ extension on TranslationsEn {
 			'session.lap' => 'One full loop',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} station', other: '${n} stations', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} closed',
+			'session.openedSection' => ({required Object year}) => 'opened in ${year}',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',

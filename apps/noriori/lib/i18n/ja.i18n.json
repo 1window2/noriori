@@ -24,7 +24,6 @@
   },
   "map": {
     "soloOff": "全路線を表示",
-    "scoreLabel": "現行",
     "add": "記録",
     "search": "路線・駅を検索",
     "closed": "廃線",
@@ -222,6 +221,7 @@
       "other": "$n駅"
     },
     "closedSection": "~$year 廃止",
+    "openedSection": "$year年開業",
     "archiveStop": "$name（$year年廃止）は記録対象外です",
     "archiveLine": "$nameは記録対象外です",
     "from": "乗車",

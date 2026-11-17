@@ -208,9 +208,6 @@ class Translations$map$ko {
 	/// ko: '모든 노선 보기'
 	String get soloOff => '모든 노선 보기';
 
-	/// ko: '현재'
-	String get scoreLabel => '현재';
-
 	/// ko: '기록'
 	String get add => '기록';
 
@@ -655,6 +652,9 @@ class Translations$session$ko {
 
 	/// ko: '~$year 폐지'
 	String closedSection({required Object year}) => '~${year} 폐지';
+
+	/// ko: '$year년 개업'
+	String openedSection({required Object year}) => '${year}년 개업';
 
 	/// ko: '$name: 폐역($year). 기록할 수 없는 옛 역입니다'
 	String archiveStop({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다';
@@ -2096,7 +2096,6 @@ extension on Translations {
 			'start.noSpaceBody' => '기록은 그대로 있습니다. 공간을 확보한 뒤 다시 시도해 주세요.',
 			'start.restoreAction' => '복원하기',
 			'map.soloOff' => '모든 노선 보기',
-			'map.scoreLabel' => '현재',
 			'map.add' => '기록',
 			'map.search' => '노선이나 역 찾기',
 			'map.closed' => '폐선',
@@ -2254,6 +2253,7 @@ extension on Translations {
 			'session.lap' => '한 바퀴',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}개 역', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} 폐지',
+			'session.openedSection' => ({required Object year}) => '${year}년 개업',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다',
 			'session.archiveLine' => ({required Object name}) => '${name}: 기록할 수 없는 옛 노선입니다',
 			'session.from' => '출발',

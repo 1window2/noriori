@@ -54,7 +54,7 @@ void main() {
       archiveStops: await reader.archiveStops(routeId),
       archiveBranches: await reader.archiveBranches(rows.map((row) => row.node)),
       sectionGaps: date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps,
-      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today)),
+      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
       undated: date == null,
       parallels: await reader.routeParallels(routeId),
       date: date,
