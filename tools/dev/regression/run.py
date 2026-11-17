@@ -215,6 +215,10 @@ def judge(c):
     if k=='parstart':
         v_=[f_ for (f_,) in m.execute('select valid_from_lo from route_parallel where route_id=? and other_line_id=?',(c['route'],c['other_line']))]
         return bool(v_) and min(f_ or '0000' for f_ in v_)==(c['valid_from'] or '0000')
+    # archorder: 그 계통(route)의 열람 전용 역을 앱처럼 계통 순번(seq) 순으로 읽었을 때 이름(names)이 그 차례로 나온다 (같은 자리 순서, 2026-11-17 志度線 瓦町 앞)
+    if k=='archorder':
+        got=[r[1] for (i_,) in m.execute('select id from archive_stop where route_id=? order by seq is null,seq,rowid',(c['route'],)) for r in NM['archive',i_] if r[0]=='ja' and not r[3] and not r[4] and not r[5] and r[1] in c['names']]
+        return got==c['names']
     return None
 ELIFE=collections.defaultdict(list)
 for a,b,f_,t_,st_,lg_,r_ in m.execute('select e.from_node,e.to_node,l.valid_from,l.valid_to,l.status,l.legal_abolition,l.close_reason from edge e join edge_life l on l.edge_id=e.id'):ELIFE[frozenset((a,b))].append((f_,t_,st_,lg_,r_))

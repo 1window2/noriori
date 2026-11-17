@@ -558,10 +558,11 @@ final class PackReader {
     ];
   }
 
-  /// 그 계통의 열람 전용 역.
+  /// 그 계통의 열람 전용 역. 계통 순번(seq)이 있는 행이 먼저 그 순서로, 나머지(옛 팩)는 넣은 순서(rowid)다.
   Future<List<ArchiveStop>> archiveStops(String routeId) async {
     final rows = await _db.customSelect(
-      'SELECT id, after_id, before_id, closed, km FROM master.archive_stop WHERE route_id = ?',
+      'SELECT id, after_id, before_id, closed, km, seq FROM master.archive_stop WHERE route_id = ? '
+      'ORDER BY seq IS NULL, seq, rowid',
       variables: [Variable.withString(routeId)],
     ).get();
     return [
@@ -572,6 +573,7 @@ final class PackReader {
           beforeNode: row.readNullable('before_id'),
           closedYear: _year(row.readNullable('closed')),
           km: row.readNullable('km'),
+          seq: row.readNullable('seq'),
         ),
     ];
   }

@@ -1035,6 +1035,26 @@ void main() {
       expect(out.indexWhere((l) => l is StopLine), greaterThan(out.lastIndexWhere((l) => l is ArchiveLine)));
     });
 
+    test('같은 자리의 여러 열람 전용 역은 계통 순번(seq) 순으로 놓이고, 순번이 없으면 예전처럼 km 순이다 (志度線 瓦町 앞)', () {
+      final rows = [row(0, 'a', km: 0), row(1, 'b', km: 1)];
+      // 받은 순서(DB에 들어간 순서)와 다른 순번. km를 모르는 역(손 행)과 아는 역이 섞여도 순번이 이긴다
+      final out = lines(rows, stops: const [
+        ArchiveStop(id: 'koen', afterNode: null, beforeNode: 'a', closedYear: '1945', km: null, seq: 1),
+        ArchiveStop(id: 'higashida', afterNode: null, beforeNode: 'a', closedYear: '1937', km: 0.5, seq: 4),
+        ArchiveStop(id: 'nakano', afterNode: null, beforeNode: 'a', closedYear: '1945', km: null, seq: 2),
+        ArchiveStop(id: 'fujitsuka', afterNode: null, beforeNode: 'a', closedYear: '1945', km: null, seq: 3),
+      ]);
+      expect(out.whereType<ArchiveLine>().map((a) => a.stop.id), ['koen', 'nakano', 'fujitsuka', 'higashida']);
+      expect(out.indexWhere((l) => l is StopLine), greaterThan(out.lastIndexWhere((l) => l is ArchiveLine)));
+      // 옛 팩(순번 없음)은 km 순, 모르는 km는 뒤
+      final old = lines(rows, stops: const [
+        ArchiveStop(id: 'p', afterNode: 'a', beforeNode: 'b', closedYear: '1940', km: null),
+        ArchiveStop(id: 'q', afterNode: 'a', beforeNode: 'b', closedYear: '1940', km: 0.7),
+        ArchiveStop(id: 'r', afterNode: 'a', beforeNode: 'b', closedYear: '1940', km: 0.3),
+      ]);
+      expect(old.whereType<ArchiveLine>().map((a) => a.stop.id), ['r', 'q', 'p']);
+    });
+
     test('병주 토막이 기간만 나뉘면 그날 토막 하나만 그린다 (のと鉄道七尾線 끝 輪島 ~2001 → 穴水)', () {
       final rows = [row(0, 'a'), row(1, 'b'), row(2, 'c')];
       const runs = [

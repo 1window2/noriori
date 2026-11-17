@@ -268,6 +268,9 @@ for a in arch:
 def slug(i):return re.sub(r'_line$','',re.sub(r'^[a-z]+_','',i or ''))
 JA={r['id']:r['text'] for r in rows if r['lang']=='ja'}
 NEW={};taken=set();nokana=[]
+# 은퇴한 공개 ID(id_rename.json의 옛 ID: 개명·합침으로 redirect가 걸린 ID)는 다시 쓰지 않는다. 읽기 없는 역의 자리 ID나 겹침 접미사가
+# 옛 ID로 돌아가면(志度線 東田町이 中野町의 옛 자리 ID a_shido_kawaramachi_takamatsu_kotohira를 가져감) redirect가 다른 역을 가리킨다 (2026-11-17)
+taken|={r_['old'] for r_ in json.load(open(os.path.join(ROOT,'data','overrides','id_rename.json'),encoding='utf-8'))['rows'] if r_.get('old')}
 # 읽기 근거가 없는 열람 전용 역(사람이 넣은 행)의 ID는 읽기 대신 자리로 정한다: a_<노선>_<앞 역>_<뒤 역> (앞뒤 역은 노드·열람 전용 ID에서 접두사를 뗀 영어 이름).
 # 같은 두 역 사이에 그런 역이 여럿이면 노선 방향 순서대로 second·third…를 붙인다(숫자·해시는 쓰지 않는다, DESIGN §2.10). 열람 전용 노선의 역은 그 열람 전용 노선 ID가 노선 자리다
 _ORD=['','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth']
@@ -292,6 +295,24 @@ for b in sorted(out,key=lambda b:(b['id'] in LATE,b['kind'],b.get('line') or '',
     if c in taken:raise SystemExit(f'열람 전용 ID가 겹칩니다: {c} ({JA.get(b["id"])})')
     taken.add(c);NEW[b['id']]=c
 if nokana:raise SystemExit(f'읽기가 없어 열람 전용 ID를 만들 수 없습니다 ({len(nokana)}): {nokana}. data/overrides/kana_est.json에 읽기를 넣으세요')
+# 같은 자리 열람 전용 역의 순서 단서 wiki_row = [노선, 부호 붙은 노선도 행 번호]. 그 노선 노선도(gen_wiki 보고서 wiki_rows.json)에서 같은 이름 역 꼴 행을 찾고
+# (같은 이름이 여럿이면 앞뒤 역 행에 가장 가까운 것), 앞 역 행에서 뒤 역 행 쪽으로 갈 때 번호가 커지면 +, 작아지면 −를 붙인다. 그래서 값이 작을수록 앞 역(after) 쪽이다.
+# 위키 행에서 나온 역과 손 행(_add·_noyear)이 같은 규칙을 탄다. 앞뒤 역이 노선도에 없거나 이름 행이 없으면 비운다. compile이 이것으로 계통 위 열람 전용 역 seq를 정한다 (2026-11-17 志度線 瓦町 앞)
+_wp=os.path.join(CAND,'wiki_rows.json');WROWS=json.load(open(_wp,encoding='utf-8')) if os.path.exists(_wp) else {}
+def _wiki_row(b):
+    W=WROWS.get(b.get('line'))
+    if not W or b.get('archive_line'):return None
+    nm=znorm(JA.get(b['id']) or '');rows_=[i for i,x in W['s'] if x==nm]
+    if not rows_:return None
+    nr=collections.defaultdict(list)
+    for i,x in W['n']:nr[x].append(i)
+    for k_,sg in (('after',1),('before',-1)):
+        if b.get(k_) not in nr:continue
+        i_,j_=min(((i,j) for i in rows_ for j in nr[b[k_]]),key=lambda p:abs(p[0]-p[1]))
+        return [b['line'],i_ if (i_-j_)*sg>0 else -i_]
+    return None
+for b in out:
+    if b['kind']=='stop' and (w_:=_wiki_row(b)):b['wiki_row']=w_
 out=[b for b in out if b['id'] not in SPILL];rows=[r for r in rows if r['id'] not in SPILL]
 for b in out:
     for k in ('after','before','archive_line'):

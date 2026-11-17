@@ -4030,6 +4030,52 @@ names=[x for x in names if not (x['entity_type']=='archive' and x['id'] in _adro
 ARCH_REDIRECT=sorted(_adrop.items())
 WARN['archive_stop_dup']=ARCH_REDIRECT
 print('같은 열람 전용 역 합침',len(ARCH_REDIRECT))
+# archive_stop.seq는 두 뜻이다. 둘은 route_id가 있는지로 갈려 섞이지 않는다 (DESIGN §4.5 표).
+#  ① 열람 전용 노선의 역(archive_line_id 있음, route_id 없음): 그 열람 전용 노선 안의 역 순서. 손 표(archive_fix seq) 값 그대로다.
+#  ② 계통 위 열람 전용 역(route_id 있음): 그 계통 진행 방향의 순번(1부터, 계통마다 따로). 앱은 같은 자리(두 정차 사이·첫 역 앞·끝 역 뒤)의 역을 이 순서로 놓는다.
+#     자리는 앞 역(after)의 계통 순번 뒤, 앞 역이 계통에 없으면 뒤 역(before) 앞, 앞뒤가 다른 열람 전용 역이면 그 역 자리, 둘 다 없으면 km로 찾는다(앱 _place와 같다).
+#     같은 자리 안에서는 1순위 둘 다 km가 있으면 km, 2순위 같은 노선 노선도의 행 순서(gen_extra wiki_row, 앞 역 쪽이 작다), 앞뒤가 서로를 가리키면 그 순서, 그 밖은 지금 행 순서(안정)다
+#     (2026-11-17 志度線 瓦町 앞 公園前·中野町·藤塚·東田町이 위키 행·손 행 따로 쌓여 노선도와 다른 순서로 보이던 것)
+def _aseq_cmp(x,y):
+    if x.get('before')==y['id'] or y.get('after')==x['id']:return -1
+    if y.get('before')==x['id'] or x.get('after')==y['id']:return 1
+    if x.get('km') is not None and y.get('km') is not None and x['km']!=y['km']:return -1 if x['km']<y['km'] else 1
+    wx,wy=x.get('wiki_row'),y.get('wiki_row')
+    if wx and wy and wx[0]==wy[0] and wx[1]!=wy[1]:return -1 if wx[1]<wy[1] else 1
+    return 0
+_abyr=collections.defaultdict(list)
+for a in archive:
+    if a.get('kind')=='stop' and not a.get('archive_line') and arch_route(a):_abyr[arch_route(a)].append(a)
+_ASEQ_CONFLICT=[]
+for rid_,L_ in _abyr.items():
+    R_=[x for x in by_route.get(rid_,[]) if not x.get('is_extension')]
+    _last={x['node_id']:i for i,x in enumerate(R_)};_first={}
+    for i,x in enumerate(R_):_first.setdefault(x['node_id'],i)
+    _byid={a['id']:a for a in L_};_slot={}
+    def _sl(a,depth=0):
+        if a['id'] in _slot:return _slot[a['id']]
+        v=None
+        if a.get('after') in _last:v=2*_last[a['after']]+1
+        elif a.get('before') in _first:v=2*_first[a['before']]-1
+        elif depth<20 and (a.get('after') in _byid or a.get('before') in _byid):v=_sl(_byid.get(a.get('after')) or _byid[a['before']],depth+1)
+        elif a.get('km') is not None:
+            j_=max((i for i,x in enumerate(R_) if x['km_cum'] is not None and x['km_cum']<=a['km']),default=None)
+            v=2*j_+1 if j_ is not None else -1
+        _slot[a['id']]=v if v is not None else 2*len(R_)+1
+        return _slot[a['id']]
+    G_=collections.defaultdict(list)
+    for a in L_:G_[_sl(a)].append(a)
+    n_=0
+    for k_ in sorted(G_):
+        o_=[]
+        for a in G_[k_]:
+            # 뒤에 와야 할 첫 역 앞에 끼운다. 순서를 정할 단서가 없는 역끼리는 지금 순서를 지킨다
+            j_=next((j for j,b in enumerate(o_) if _aseq_cmp(a,b)<0),len(o_))
+            if any(_aseq_cmp(a,b)>0 for b in o_[j_:]):_ASEQ_CONFLICT.append((rid_,a['id']))
+            o_.insert(j_,a)
+        for a in o_:n_+=1;a['seq']=n_
+WARN['archive_seq_conflict']=_ASEQ_CONFLICT
+print('계통 위 열람 전용 역 순번',sum(len(v) for v in _abyr.values()),'순서 단서 엇갈림',len(_ASEQ_CONFLICT),_ASEQ_CONFLICT[:6])
 t('archive_stop',['id primary key','line_id','route_id','after_id','before_id','opened','closed','km','source','legal_abolition','archive_line_id','seq'],[(a['id'],a.get('line'),None if a.get('archive_line') else arch_route(a),a.get('after'),a.get('before'),a.get('opened'),a.get('closed'),a.get('km'),a.get('source'),a.get('legal_abolition'),a.get('archive_line'),a.get('seq')) for a in archive if a.get('kind')=='stop'])
 # 동결 전 공개 ID 개명·합친 노드의 옛 ID (data/overrides/id_rename.json, 2회차 결정 U12). 새 ID가 이 판에 없거나 옛 ID가 아직 있으면 행이 틀린 것이다
 _IDR=[]

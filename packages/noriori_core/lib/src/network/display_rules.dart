@@ -11,6 +11,7 @@ final class ArchiveStop {
     required this.beforeNode,
     required this.closedYear,
     required this.km,
+    this.seq,
   });
 
   final String id;
@@ -18,6 +19,9 @@ final class ArchiveStop {
   final String? beforeNode;
   final String closedYear;
   final double? km;
+
+  /// 그 계통 진행 방향의 순번(archive_stop.seq, DESIGN §4.5). 같은 자리에 여럿이면 이 순서다. 옛 팩에는 없다.
+  final int? seq;
 }
 
 /// 열람 전용 노선. 역에서 갈라지는 줄로만 보인다.
@@ -1365,8 +1369,13 @@ final class DisplayRules {
         changed = true;
       }
     }
+    // 같은 자리는 계통 순번(seq) 순이다. 순번이 없는 옛 팩은 예전처럼 km 순(모르면 뒤)이다
     for (final list in places.values) {
-      list.sort((a, b) => (a.km ?? double.infinity).compareTo(b.km ?? double.infinity));
+      list.sort((a, b) {
+        final sa = a.seq, sb = b.seq;
+        if (sa != null && sb != null) return sa.compareTo(sb);
+        return (a.km ?? double.infinity).compareTo(b.km ?? double.infinity);
+      });
     }
     return places;
   }
