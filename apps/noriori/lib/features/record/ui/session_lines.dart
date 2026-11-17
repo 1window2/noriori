@@ -21,6 +21,13 @@ final class TrunkStyle {
 
   TrunkPiece get tail => TrunkPiece(tokens.selectorGone, SelectorRuler.closedWidth);
 
+  /// 그 자리(첫 역 앞 -1, 끝 역 뒤 = 마지막 역 번호)에 열람 전용 역이 있는가
+  bool archiveAt(int gap) => state.lines.any((line) => line is ArchiveLine && line.gap == gap);
+
+  /// 첫 역 앞·끝 역 뒤에는 역 사이 칸이 없다. 그 자리에 열람 전용 역이 있으면 사이 줄(끝 이어짐·구분선)도 폐지 구간 줄기로 잇는다.
+  /// 비워 두면 줄기가 구분선에서 끊겨 열람 전용 역 묶음이 노선과 떨어져 보였다 (志度線 瓦町 앞, 2026-11-18 사용자 지적)
+  TrunkPiece? beyond(int gap) => (gap < 0 || gap >= state.visible.length - 1) && archiveAt(gap) ? tail : null;
+
   TrunkPiece? gap(int gap) {
     final rows = state.visible;
     if (gap < 0 || gap >= rows.length - 1) return null;
@@ -118,18 +125,22 @@ class SessionLineTile extends StatelessWidget {
   Widget build(BuildContext context) => switch (line) {
         final StopLine stop => _StopTile(
             line: stop,
-            above: trunk.gap(stop.index - 1) ?? (stop.index == 0 && prev is ArchiveLine ? trunk.tail : null),
-            below: trunk.gap(stop.index) ?? (next is ArchiveLine ? trunk.tail : null),
+            above: trunk.gap(stop.index - 1) ?? (stop.index == 0 && prev is ArchiveLine ? trunk.tail : trunk.beyond(stop.index - 1)),
+            below: trunk.gap(stop.index) ?? (next is ArchiveLine ? trunk.tail : trunk.beyond(stop.index)),
           ),
-        final BranchLine branch => _BranchTile(line: branch, trunk: trunk.gap(branch.gap), fromStop: _fromStop(branch.up)),
-        final EndLine end => _EndTile(line: end, fromStop: _fromStop(end.up), trunk: trunk.gap(end.gap)),
+        final BranchLine branch => _BranchTile(line: branch, trunk: trunk.gap(branch.gap) ?? trunk.beyond(branch.gap), fromStop: _fromStop(branch.up)),
+        final EndLine end => _EndTile(line: end, fromStop: _fromStop(end.up), trunk: trunk.gap(end.gap) ?? trunk.beyond(end.gap)),
         final ArchiveLine archive => _ArchiveTile(
             line: archive,
             // 첫 역 앞(-1)의 열람 전용 역은 위로 잇는 것이 없고 아래 첫 역으로 이어진다 (10회차 G1 chugoku_shikoku_2-003)
             above: archive.gap < 0 ? (prev is ArchiveLine ? trunk.tail : null) : trunk.gap(archive.gap) ?? trunk.tail,
             below: archive.gap < 0 ? trunk.tail : trunk.gap(archive.gap) ?? (next is ArchiveLine ? trunk.tail : null),
           ),
-        final SectionLine section => _SectionTile(line: section, trunk: trunk.gap(section.gap)),
+        // 열람 전용 역 묶음 바깥(맨 위) 구분선은 줄기를 긋지 않는다. 묶음과 역 사이 구분선만 잇는다
+        final SectionLine section => _SectionTile(
+            line: section,
+            trunk: trunk.gap(section.gap) ?? (prev is ArchiveLine || (next is ArchiveLine && prev != null) ? trunk.beyond(section.gap) : null),
+          ),
         final TransferLine hand => _HandTile(line: hand, trunk: trunk.gap(hand.gap)),
       };
 }
@@ -868,6 +879,7 @@ class _ArchiveTile extends ConsumerWidget {
     final text = Theme.of(context).textTheme;
     final stop = line.stop;
     final name = state.archiveNames[stop.id] ?? stop.id;
+    final aside = state.archiveAside[stop.id];
     final year = context.t.session.state.until(year: stop.closedYear);
     final message = context.t.session.archiveStop(name: name, year: stop.closedYear);
     final km = stop.km;
@@ -891,7 +903,14 @@ class _ArchiveTile extends ConsumerWidget {
             child: Row(
               spacing: 10,
               children: [
-                Expanded(child: Text(name, style: style)),
+                Expanded(
+                  child: Text.rich(
+                    TextSpan(children: [
+                      TextSpan(text: name, style: style),
+                      if (aside != null) TextSpan(text: '  $aside', style: text.bodySmall?.copyWith(color: tokens.textClosed)),
+                    ]),
+                  ),
+                ),
                 Text(year, style: text.bodySmall?.copyWith(color: tokens.textClosed)),
                 Text(
                   km == null ? '?' : km.toStringAsFixed(1),

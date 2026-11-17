@@ -60,6 +60,7 @@ final class RecordSessionState {
     this.readings = const {},
     this.pastMarks = const {},
     this.archiveNames = const {},
+    this.archiveAside = const {},
     this.stopDirections = const {},
     this.oneWayGaps = const [],
     this.preview,
@@ -103,6 +104,9 @@ final class RecordSessionState {
   /// 날짜 모름일 때 예전에만 仮乗降場·臨時駅이었던 역 → kari·rinji (작은 표식).
   final Map<String, String> pastMarks;
   final Map<String, String> archiveNames;
+
+  /// 열람 전용 역 이름 옆에 작게 다는 글: 다른 언어판은 일본어 이름(현지 이름과 다를 때), 일본어판은 읽기. 역 줄과 같은 규칙이다 (2026-11-18 사용자 지적)
+  final Map<String, String> archiveAside;
 
   /// 그날 한 방향 열차만 서는 역 줄(순번) → 그 행 (DESIGN §8 한 방향 정차).
   final Map<int, NetStopDirection> stopDirections;
@@ -155,6 +159,7 @@ final class RecordSessionState {
     Map<String, String>? readings,
     Map<String, String>? pastMarks,
     Map<String, String>? archiveNames,
+    Map<String, String>? archiveAside,
     Map<int, NetStopDirection>? stopDirections,
     List<bool?>? oneWayGaps,
     Expansion? preview,
@@ -180,6 +185,7 @@ final class RecordSessionState {
         readings: readings ?? this.readings,
         pastMarks: pastMarks ?? this.pastMarks,
         archiveNames: archiveNames ?? this.archiveNames,
+        archiveAside: archiveAside ?? this.archiveAside,
         stopDirections: stopDirections ?? this.stopDirections,
         oneWayGaps: oneWayGaps ?? this.oneWayGaps,
         preview: clearPicks ? null : preview ?? this.preview,
@@ -623,10 +629,17 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final pastMarks = date == null && state.lineId != null
         ? await reader.pastTempMarks(rows.map((row) => row.node), state.lineId!, routeId: routeId)
         : const <String, String>{};
-    final archiveNames = await reader.archiveNames([
+    final archiveIds = [
       for (final stop in stops) stop.id,
       for (final branch in branches) branch.id,
-    ]);
+    ];
+    final archiveNames = await reader.archiveNames(archiveIds);
+    final archiveAside = reader.languages.first == 'ja'
+        ? await reader.archiveReadings(archiveIds)
+        : {
+            for (final MapEntry(key: id, value: ja) in (await reader.archiveNames(archiveIds, languages: const ['ja'])).entries)
+              if (ja != archiveNames[id]) id: ja,
+          };
     // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
     final stopDirections = <int, NetStopDirection>{
       for (final row in visible)
@@ -652,6 +665,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       readings: readings,
       pastMarks: pastMarks,
       archiveNames: archiveNames,
+      archiveAside: archiveAside,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
           : PickedPath.of(visible, state.preview!.nodes),
@@ -765,6 +779,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       readings: base.readings,
       pastMarks: base.pastMarks,
       archiveNames: base.archiveNames,
+      archiveAside: base.archiveAside,
       stopDirections: base.stopDirections,
       oneWayGaps: base.oneWayGaps,
       preview: preview,

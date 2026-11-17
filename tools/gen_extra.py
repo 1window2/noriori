@@ -3,7 +3,7 @@
 import sys,os,re,json,csv,collections,math
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
-import ko,conn,unicodedata
+import ko,conn,unicodedata,en_rules
 from gen_en_names import line_name
 KANA={}
 # 이름 열쇠 읽기의 출처 (gen_source KSRC와 같은 뜻): ('wiki', 문서 제목)·('hand',)·('est',)
@@ -264,6 +264,11 @@ for a in arch:
     rows.append(dict(entity_type='archive',id=a['id'],lang='ja',text=n,kana=kana,source='wikipedia'))
     rows.append(dict(entity_type='archive',id=a['id'],lang='ko',text=t,source='estimated' if ('node:'+n in GUESS or 'line:'+n in GUESS) else src,checked=TODAY))
     if a.get('_noread'):rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=n,source='ja_as_is'))
+    # 읽기가 있는 열람 전용 역은 노드와 같은 규칙(en_rules.station_reading, 장음 기호 없는 헵번)으로 영어 이름을 단다. 없으면 앱이 일본어 표기로 보여
+    # 영어 화면에서 열람 전용 역 대부분이 한자로 나왔다(839 중 영어 241, 그중 215는 일본어 그대로. 2026-11-18 사용자 지적)
+    elif a['kind']=='stop' and kana:
+        hk_=kata2hira(kana);e_=en_rules.station_reading(hk_,n);e_=en_rules.fix_station(n,hk_,e_,{}) or e_
+        rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('node:'+n in GUESS) else 'rule'))
 # 열람 전용 ID는 영어 이름이다 (DESIGN §2.10). 읽기를 로마자로 옮기고, 겹치면 노선 이름, 그래도 겹치면 앞 역 이름을 붙인다
 def slug(i):return re.sub(r'_line$','',re.sub(r'^[a-z]+_','',i or ''))
 JA={r['id']:r['text'] for r in rows if r['lang']=='ja'}

@@ -852,7 +852,8 @@ final class DisplayRules {
       // 없으면 지금 노선이 그 역들까지 이어지는 것처럼 보인다 (志度線 瓦町 앞 公園前·中野町·藤塚·東田町, 사용자 결정 2026-11-18)
       if (index == 0) {
         final beyond = places[-1] ?? const <ArchiveStop>[];
-        final fence = beyond.isNotEmpty && !topClosed;
+        // 한 역뿐이면 구간이라 부를 것이 없어 구분선을 두지 않는다(긴 점선이 오히려 읽기 어렵다, 사용자 결정 2026-11-18)
+        final fence = beyond.length > 1 && !topClosed;
         if (fence) out.add(SectionLine(gap: -1, year: _latestYear(beyond), lanes: pass()));
         for (final stop in beyond) {
           out.add(ArchiveLine(gap: -1, stop: stop, lanes: pass()));
@@ -1016,7 +1017,7 @@ final class DisplayRules {
       out.addAll(downEnds);
       // 끝 역 뒤의 열람 전용 역도 끝 너머 없어진 구간이다. 끝쪽 폐지 구간과 같이 끝 역 바로 아래에 폐지 해 구분선 하나만 둔다(그 뒤로 이어지는 구간이 없다)
       final tail = index == rows.length - 1 ? places[index] ?? const <ArchiveStop>[] : const <ArchiveStop>[];
-      if (tail.isNotEmpty && alive(row)) out.add(SectionLine(gap: index, year: _latestYear(tail), lanes: pass()));
+      if (tail.length > 1 && alive(row)) out.add(SectionLine(gap: index, year: _latestYear(tail), lanes: pass()));
       for (final stop in places[index] ?? const <ArchiveStop>[]) {
         out.add(ArchiveLine(gap: index, stop: stop, lanes: pass()));
       }

@@ -541,11 +541,21 @@ void main() {
       km: null,
     );
 
-    test('끝역 뒤에 놓이고, 끝 너머 없어진 구간이라 끝 역 바로 아래에 폐지 해 구분선이 선다', () {
+    test('끝역 뒤에 놓이고, 한 역뿐이면 구분선을 두지 않는다', () {
       final out = lines([row(0, 'a'), row(1, 'z')], stops: const [pier]);
       expect(out.last, isA<ArchiveLine>());
       expect((out.last as ArchiveLine).gap, 1);
-      expect(out[out.length - 2], isA<SectionLine>().having((l) => l.year, 'year', '1945'));
+      expect(out.whereType<SectionLine>(), isEmpty);
+    });
+
+    test('끝역 뒤 여러 역 묶음은 끝 역 바로 아래에 폐지 해 구분선이 선다', () {
+      final out = lines([row(0, 'a'), row(1, 'z')], stops: const [
+        pier,
+        ArchiveStop(id: 'pier2', afterNode: 'pier', beforeNode: null, closedYear: '1950', km: null),
+      ]);
+      expect(out.last, isA<ArchiveLine>());
+      final at = out.indexWhere((l) => l is ArchiveLine);
+      expect(out[at - 1], isA<SectionLine>().having((l) => l.year, 'year', '1950'));
     });
 
     test('앞 역을 모르면 뒤 역 앞에, 둘 다 모르면 km로 찾고 km순으로 놓는다', () {

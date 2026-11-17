@@ -597,6 +597,11 @@
   "dates_why": "결정 128: 휴지 시작 1943-12-26(closed), 법적 폐지 1945-XX-XX. 로컬 위키 캐시 각 노선 연표·폐역 목록 「…駅…YYYY年休止、YYYY年廃止」 기계 추출(중간, susp_private archive_stop_closed:r2) (W3 E2 2026-11-12) / {\"opened\": \"1928-04-15\"}: 鉄道停車場一覧 1934년판 https://dl.ndl.go.jp/pid/1212697/1/140 「虎橋通 … 吾嬬町西一丁目 昭和3.4.15」(높음) · 鉄道停車場一覧 1937년판 https://dl.ndl.go.jp/pid/1207554/1/169 「虎橋通 … 昭和3.4.15」(높음) · ja.wikipedia 東武亀戸線 https://ja.wikipedia.org/w/index.php?oldid=109609171 「1928年4月15日 亀戸線全線電化…同時に中間駅として…北十間駅…十間橋通駅・虎橋通駅が開業 (東武鉄道年史 p.206)」(중간) (가용) (dates_east final archdate:l_kameido_line) (W4 F1 2026-11-12)",
   "opened": "1928-04-15"
  },
+ "東田町@l_shido_line": {
+  "kana": "ひがしたまち",
+  "ko": "히가시타마치",
+  "why": "官報 1915-04-28 東讃電氣軌道 公園前·出晴間 운수영업 개시 구간표 「藤塚東田町間」 東田町 옆 독음 「ひがしたまち」(https://dl.ndl.go.jp/pid/2952926/1/7, 로그인 없이 공개, 높음); 『山林公報』(7) 1915-05 스니펫 「藤塚 ひがしたまち 東田町間」(중간). 名古屋市電 東田町(ひがしだまち)과 다른 역 (2026-11-18 사용자 지적)"
+ },
  "牛木@l_amagi_line_nishi_nippon": {
   "after": "n_mada",
   "before": "n_amagi_nishi_nippon",

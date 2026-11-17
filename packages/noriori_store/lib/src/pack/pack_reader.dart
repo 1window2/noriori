@@ -288,6 +288,19 @@ final class PackReader {
     return out;
   }
 
+  /// 열람 전용 역·노선의 일본어 읽기(히라가나). 한자 섞인 이름만, 근거가 있을 때만 (노드 nodeReadings와 같은 규칙)
+  Future<Map<String, String>> archiveReadings(Iterable<String> ids) async {
+    final list = ids.toSet().toList();
+    final grouped = await _nameRows('archive', list);
+    final out = <String, String>{};
+    for (final id in list) {
+      final row = pickNameRow(grouped[id]?['ja'] ?? const []);
+      final reading = row?.kana?.replaceAll(RegExp(r'[\s\u3000]'), '');
+      if (row != null && reading != null && reading.isNotEmpty && needsReading(row.text)) out[id] = reading;
+    }
+    return out;
+  }
+
   Future<bool> _hasNamesTable(String table) async =>
       (await _db.customSelect("SELECT 1 FROM names.sqlite_master WHERE type = 'table' AND name = ?",
               variables: [Variable.withString(table)]).get())
