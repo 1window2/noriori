@@ -1956,6 +1956,8 @@
 - {"line": "l_ochanomizu_line", "other": "l_ushigome_line", "at": "n_iidabashi_toei", "source": "derived", "verified": false, "valid": [null, "1970-03-27"], "continue": true}
 - {"line": "l_ushigome_line", "other": "l_ochanomizu_line", "at": "n_iidabashi_toei", "source": "derived", "verified": false, "valid": [null, "1970-03-27"], "continue": true}
 - {"line": "l_ofunato_line", "other": "l_tohoku_main_line", "at": "n_ichinoseki", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_ogano_line", "other": "l_aizawa_line", "at": "n_kamishiraishi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_aizawa_line", "other": "l_ogano_line", "at": "n_kamishiraishi", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
 - {"line": "l_ogose_line", "other": "l_tojo_main_line", "at": "n_sakado_tobu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_ohata_line", "other": "l_ominato_line", "at": "n_shimokita", "source": "derived", "verified": false, "valid": [null, "1985-07-01"], "continue": true}
 - {"line": "l_oimachi_line", "other": "l_den_en_toshi_line", "at": "n_futako_tamagawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}

@@ -4,6 +4,17 @@ import sqlite3,json,os,re,math,collections,csv,zipfile,unicodedata
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 B=os.path.join(ROOT,'build')
 m=sqlite3.connect(os.path.join(B,'master.sqlite'));n=sqlite3.connect(os.path.join(B,'names.sqlite'))
+# 사유를 달고 뺀 열람 전용 ID(archive_lines.json drop·drop_stop·exclude)의 일본어 이름. 컴파일이 그 고아 이름을 DB에 싣지 않게 된 뒤에도
+# 감사는 그 행을 「판정된 것」으로 본다(이미 기록 노선·화물역·같은 역·수록 밖). 원천 이름(data/source/names/archive.yaml)에서 읽는다 (12회차 M R6 2026-11-19)
+_AF0=json.load(open(os.path.join(ROOT,'data','overrides','archive_lines.json'),encoding='utf-8'))
+_DROPPED_IDS=set(_AF0.get('drop',{}))|set(_AF0.get('drop_stop',{}))|set(_AF0.get('exclude',{}))
+_DROPPED_JA={}
+for _l in open(os.path.join(ROOT,'data','source','names','archive.yaml'),encoding='utf-8'):
+    if _l.startswith('- {') and '"lang": "ja"' in _l:
+        _x=json.loads(_l[2:])
+        if (_x.get('entity_id') or _x.get('id')) in _DROPPED_IDS:_DROPPED_JA.setdefault(_x.get('entity_id') or _x.get('id'),[]).append(_x['text'])
+def dropped_ja(ids=None):
+    return [t for i,ts in _DROPPED_JA.items() if ids is None or i in ids for t in ts]
 m.row_factory=sqlite3.Row
 R=collections.OrderedDict()
 # 단계: report(원자료와의 차이 보고, 실패하지 않음)·err(결함, NORIORI_AUDIT_STRICT=1이면 실패)·warn(사람이 볼 후보). ids는 행에 나온 ID 전부(회귀 대조용)
@@ -79,7 +90,7 @@ for k,s in stops.items():
 all_names=set()
 for k,s in stops.items():
     for x in s:all_names|=names(x['node_id'])
-arch={nz(t) for t, in n.execute("select text from name where entity_type='archive' and lang='ja'")}
+arch={nz(t) for t, in n.execute("select text from name where entity_type='archive' and lang='ja'")}|{nz(t) for t in dropped_ja()}
 miss=[];closed_but_cur=[];cur_but_closed=[]
 sdopen=collections.defaultdict(list)
 for s in SD:
@@ -766,7 +777,7 @@ early=[];nomatch=[];nmiss=[];opbad=[]
 NLN=collections.defaultdict(set)
 for k,s_ in stops.items():
     for y in s_:NLN[y['node_id']].add(routes[k]['line_id'])
-archn={nz(x) for x, in n.execute("select text from name where entity_type='archive' and lang='ja'")}
+archn={nz(x) for x, in n.execute("select text from name where entity_type='archive' and lang='ja'")}|{nz(x) for x in dropped_ja()}
 for sid,v in NS.items():
     x=N2N[sid];yb=min(r['yb'] for r in v);ye=max(r['ye'] for r in v)
     if x is None:
@@ -1373,8 +1384,7 @@ k101=[];k101w=[];k101c=collections.Counter();k102=[];k102n=[];k101n=[]
 K102Q=[];K102H=[]
 # 앞 회차에 열람 전용 역에서 사유를 달고 뺀 행(archive_lines.json drop_stop: 화물역·전용선·같은 역)의 이름은 판정된 것으로 본다
 M_DROPN=set()
-for i_ in json.load(open(os.path.join(ROOT,'data','overrides','archive_lines.json'),encoding='utf-8')).get('drop_stop',{}):
-    for x_, in n.execute("select text from name where entity_type='archive' and entity_id=? and lang='ja'",(i_,)):M_DROPN.add(m_nz2(x_))
+for x_ in dropped_ja(set(_AF0.get('drop_stop',{}))):M_DROPN.add(m_nz2(x_))
 M_NS2=collections.defaultdict(set)
 for s_,v_ in NS.items():
     for rr in v_:
@@ -1442,7 +1452,7 @@ K103Q=[];K103W=[];k103c=collections.Counter()
 if _al:
     _t=open(_al[-1],encoding='utf-8').read()
     _OUT=re.compile(r'馬車|人車|森林鉄道|専用鉄道|専用線|専用軌道|簡易軌道|殖民軌道|無軌条|トロリーバス|貨物線|貨物専用|軍用線|工事軌道|砂利|会場内')
-    _nm=set(x for x, in n.execute("select text from name where lang='ja' and entity_type in ('line','archive','route')"))
+    _nm=set(x for x, in n.execute("select text from name where lang='ja' and entity_type in ('line','archive','route')"))|set(dropped_ja(set(_AF0.get('drop',{}))|set(_AF0.get('exclude',{}))))
     def _keys(s_):
         s_=re.sub(r'\s*[（(].*?[)）]','',s_).strip();o={s_}
         for a_ in list(o):o|={re.sub(r'線$','',a_),a_+'線',re.sub(r'(鉄道|電鉄|軌道|電気軌道|電気鉄道)$','',a_)}

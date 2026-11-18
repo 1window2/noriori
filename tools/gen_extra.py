@@ -271,7 +271,7 @@ for a in arch:
         rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('node:'+n in GUESS) else 'rule'))
     # 열람 전용 노선도 읽기가 있으면 노선 영어 이름 규칙(gen_en_names.line_name)으로 단다. 노선 138개가 한국어만 있고 영어가 없었다 (2026-11-18 사용자 지적)
     elif a['kind']=='line' and KA.get(a['id']):
-        e_=line_name(n,kata2hira(KA[a['id']]))
+        e_=line_name(n,kata2hira(KA[a['id']]),en=True)
         if e_:rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('line:'+n in GUESS) else 'rule'))
 # 열람 전용 ID는 영어 이름이다 (DESIGN §2.10). 읽기를 로마자로 옮기고, 겹치면 노선 이름, 그래도 겹치면 앞 역 이름을 붙인다
 def slug(i):return re.sub(r'_line$','',re.sub(r'^[a-z]+_','',i or ''))

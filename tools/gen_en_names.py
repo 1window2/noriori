@@ -69,7 +69,44 @@ def split_words(ja,kana):
     if kana_left:parts.append(titled(kana_left,ja))
     return ' '.join(p for p in parts if p)
 
-def line_name(ja,kana):
+# 영어 이름(표시)에만 쓰는 낱말. 이름 끝에서만 뜻으로 옮기는 회사 꼬리(電車·電気)와 어디서나 옮기는 낱말이다.
+# ID는 예전 규칙(split_words, 낱말 하나)으로 만들어 이미 낸 ID가 바뀌지 않는다 (12회차 M K103 2026-11-19: 札幌温泉電気軌道 → Sapporonsen였음)
+# 표의 낱말보다 먼저 뗄 긴 낱말(米子電車軌道: 軌道가 먼저면 Yonago Electric Railway Tramway)
+EN_FIRST=(('電車軌道','でんしゃきどう','Electric Tramway'),)
+EN_WORDS=(('温泉','おんせん','Onsen'),('電軌','でんき','Electric Tramway'),('電車','でんしゃ','Electric Railway'),('支社','ししゃ','Branch'))
+EN_TAILS=(('電気','でんき','Electric'),)
+
+def split_words_en(ja,kana):
+    """split_words와 같은 우선순위(낱말 표 순서)로 낱말 하나를 뗀 뒤, 그 앞뒤 조각에서 다시 낱말을 뗀다.
+    「앞에서부터」 고르면 겹치는 낱말(播電鉄道의 電鉄·鉄道)이 이름을 가른다(Ban Electric Railway Do)"""
+    parts=[];ja_left=ja;kana_left=kana
+    latin=re.match(r'[A-Za-z]+',ja_left)
+    if latin:
+        word=latin.group(0);read=''.join(LATIN.get(c.upper(),'') for c in word)
+        parts.append(word)
+        ja_left=ja_left[len(word):]
+        if kana_left.startswith(read):kana_left=kana_left[len(read):]
+    tail_en=None
+    for token,reading,english in EN_TAILS:
+        if ja_left.endswith(token) and len(ja_left)>len(token) and kana_left.endswith(reading):
+            ja_left,kana_left,tail_en=ja_left[:-len(token)],kana_left[:-len(reading)],english
+            break
+    words=EN_FIRST+WORDS+EN_WORDS
+    def go(j,k):
+        if not k:return []
+        for token,reading,english in words:
+            if token in j and reading in k:
+                kh,kt=k.split(reading,1)
+                jh,jt=j.split(token,1)
+                return go(jh,kh)+[english]+go(jt,kt)
+        return [titled(k,ja)]
+    parts+=go(ja_left,kana_left)
+    if tail_en:parts.append(tail_en)
+    return ' '.join(p for p in parts if p)
+
+def line_name(ja,kana,en=False):
+    """en이면 표시용 영어 이름(낱말 여럿), 아니면 ID용(예전 규칙)"""
+    split=split_words_en if en else split_words
     if ja in READINGS:return READINGS[ja]
     if not kana:return None
     for tail_ja,tail_kana,tail_en in LINE_ENDS:
@@ -77,9 +114,9 @@ def line_name(ja,kana):
         if ja.endswith(tail_ja) and (tail_kana in kana or tail_ja=='線'):
             root=ja[:-len(tail_ja)]
             read=re.sub(tail_kana+'$','',kana)
-            head=split_words(root,read)
+            head=split(root,read)
             return f'{head} {tail_en}'.strip()
-    return split_words(ja,kana)
+    return split(ja,kana)
 
 def pick(rows,kinds):
     """형식이 맞는 라벨 하나. 영어가 갈리면 쓰지 않는다"""
@@ -175,7 +212,7 @@ def main():
             if len(parts)==2 and len(reads)==2 and parts[1].endswith('支線') and reads[1].endswith('しせん'):
                 # 본선 이름 뒤에 갈래를 적은 지선 (別大線 別府駅前支線 → Betsudai Line Beppu-Ekimae Branch)
                 base=parts[1][:-2];base_read=reads[1][:-3]
-                made=f"{line_name(parts[0],reads[0])} {fix_station(base,base_read,'',set()) or titled(base_read,base)} Branch"
+                made=f"{line_name(parts[0],reads[0],en=True)} {fix_station(base,base_read,'',set()) or titled(base_read,base)} Branch"
             elif len(parts)==2 and len(reads)==2 and (re.search('[–~]',parts[1]) or parts[1].endswith('旧線')):
                 # 본선 이름 뒤에 구간이나 옛 선로를 적은 계통 (循環線 花京院–仙台駅前 → Junkan Line (Kakyoin~Sendai-Ekimae), 清水市内線 西久保–袖師 旧線)
                 tail_ja=parts[1];tail_rd=reads[1];old=''
@@ -184,8 +221,8 @@ def main():
                 st=[x for x in re.split(r'[–~]',tail_ja) if x];rs=tail_rd.split(' ') if tail_rd else []
                 seg=''
                 if st and len(st)==len(rs):seg=' ('+'~'.join(fix_station(a,b,'',set()) or titled(b,a) for a,b in zip(st,rs))+')'
-                made=f"{line_name(parts[0],reads[0])}{seg}{old}" if (seg or not st) else None
-            else:made=line_name(text,read)
+                made=f"{line_name(parts[0],reads[0],en=True)}{seg}{old}" if (seg or not st) else None
+            else:made=line_name(text,read,en=True)
             # 일반명사만 남으면 어느 노선인지 모른다 (Keisei Main Line, Keikyu Airport Line)
             # 짧은 이름이 없는 회사(옛 폐선의 회사)는 정식 영어 이름을 붙인다 (Hokuriku Railroad Connecting Line)
             if made in GENERIC_NAMES:made=f"{(fix['operator_short'].get(company) or {}).get('en') or operator_en.get(company) or ''} {made}".strip()

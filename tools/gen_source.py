@@ -813,8 +813,11 @@ for k,L in clusters.items():
     # 표시 읽기 (2회차 종합 K13): 그 역 자료(station_database) → 그 노선 원문(N05 노선 표의 그 노선 kana) → 5km 안 같은 이름 Wikidata → 이름 열쇠 표(읽기가 하나뿐일 때만).
     # 먼 곳의 같은 글자 역 읽기(今福 いまぶく·いまふく, 平野町 ひらのちょう·ひらのまち)가 섞이면 안 된다
     _wdu=False
-    kana=(sd or {}).get('name_kana')
-    if kana in(None,'','NULL'):kana=next((N5ST_LK[(q.lk,o.name)] for o,q in L if (q.lk,o.name) in N5ST_LK and o.name==o_name.name),None)
+    # 읽기 출처(names.reading_source, auto:경로). 어느 경로로 고른 읽기인지 남겨 같은 이름 역에서 빌린 읽기를 감사가 따로 볼 수 있게 한다 (12회차 M 2026-11-19 사용자 지적)
+    kana=(sd or {}).get('name_kana');_ksrc='auto:station_db' if kana not in(None,'','NULL') else None
+    if kana in(None,'','NULL'):
+        kana=next((N5ST_LK[(q.lk,o.name)] for o,q in L if (q.lk,o.name) in N5ST_LK and o.name==o_name.name),None)
+        if kana:_ksrc='auto:n05_line'
     if kana in(None,'','NULL'):
         _p0=(sd['lat_'],sd['lng_']) if sd else next((tuple(o.n05) for o in os_ if getattr(o,'n05',None)),None)
         # 같은 이름 Wikidata 항목: 이 역 점 5km 안 항목이 있으면 그 읽기를 쓴다. 없으면, 좌표가 있어 다른 곳(5km 밖)으로 드러난 항목은 이 역이 아니라 버리고,
@@ -827,16 +830,19 @@ for k,L in clusters.items():
             if len({re.sub(r'(えき|エキ)$','',kata2hira(x['kana']).replace(' ','')) for x in _wk})>1:_wk=[]
         kana=_wk[0]['kana'] if _wk else None
         _wdu=bool(kana) and not (_p0 and all(x.get('pt') for x in _wk) and all(dist(_p0,x['pt'])<5 for x in _wk))
+        if kana:_ksrc='auto:wikidata_unverified' if _wdu else 'auto:wikidata_5km'
         if kana:kana=re.sub(r'(えき|エキ|かりじょうこうじょう|しんごうじょう|ていりゅうじょう|じょうこうじょう)$','',kata2hira(kana).replace(' ',''))
     _nk=None
     if kana in(None,'','NULL'):
         kana=KANA.get('node:'+o0.name) or KANA.get('node:'+o0.nm)
-        if kana:_nk='node:'+o0.name if KANA.get('node:'+o0.name) else 'node:'+o0.nm
+        if kana:_nk='node:'+o0.name if KANA.get('node:'+o0.name) else 'node:'+o0.nm;_ksrc='auto:name_key'
     # 역 이전 옛 자리는 새 역의 옛 이름 읽기(old_names_kana.json 「새 역|옛 이름」)를 쓴다 (陸前古川, 湊町)
     _fid=next((o.force_id for o in os_ if getattr(o,'force_id',None)),None)
     _row=next((x for x in INS if x.get('id')==_fid and x.get('new_node')),None) if _fid else None
     if _row:
-        if kana in(None,'','NULL'):kana=OLDKANA0.get(_row['new_node']+'|'+o0.name)
+        if kana in(None,'','NULL'):
+            kana=OLDKANA0.get(_row['new_node']+'|'+o0.name)
+            if kana:_ksrc='auto:old_site_id_key'
         if kana_id in(None,'','NULL'):kana_id=OLDKANA0.get(_row['new_node']+'|'+o0.name)
     # 이름이 「駅」으로 끝나면 읽기도 えき로 끝난다(須磨駅 すまえき, 保土ヶ谷駅 ほどがやえき, 2회차 종합 K17). 한국어는 「역」, 영어는 -eki가 된다
     if kana not in(None,'','NULL') and o_name.name.endswith('駅') and not kata2hira(kana).endswith('えき'):kana=kata2hira(kana)+'えき'
@@ -856,10 +862,11 @@ for k,L in clusters.items():
     nodes[i]=dict(id=i,cns=sorted({p_.cn for _,p_ in L}),kind=kind,group=None,pref=(sd or {}).get('prefecture'),name=o_name.name,nm=o_name.nm,kana=re.sub(r'〈.*?〉','',kana) if kana and kana!='NULL' else None,pt=pt,sd_only=bool(sd and len(byname.get(znorm(sd['name']),[]))==1 and len(st_lines[sd['code']])==1),sdname=(sd or {}).get('name'),sd=(sd or {}).get('id'),closed_sd=(sd or {}).get('closed'),sd_open=edtf((sd or {}).get('open_date')),sd_close=edtf((sd or {}).get('closed_date')),family=L[0][1].family,labels=sorted({o.name for o in os_}),by_line=sorted({(o.name,q.lk) for o,q in L if o.name!=o_name.name}),name_src=name_src,by_src={(o.name,q.lk):stop_src(o,q) for o,q in L})
     if _nk and nodes[i]['kana']:nodes[i]['_namekey']=_nk
     if _wdu and nodes[i]['kana'] and not _nk:nodes[i]['_wdu']=o0.nm
+    if nodes[i]['kana']:nodes[i]['_ksrc']=_ksrc
     # 「노드 ID|이름」 열쇠 읽기(old_names_kana.json)는 그 역 하나를 가리키는 손 조사 근거라 지금 이름에도 가장 먼저 쓴다. 이름 열쇠 표(kana.json)는
     # 같은 이름 역을 가르지 못해 다른 역(山陽本線 열람 전용 遊園地前)에 번진다 (西武山口線 遊園地前, 2026-11-18)
     _ik=OLDKANA0.get(i+'|'+o_name.name)
-    if _ik:nodes[i]['kana']=_ik;nodes[i].pop('_namekey',None);nodes[i].pop('_wdu',None)
+    if _ik:nodes[i]['kana']=_ik;nodes[i].pop('_namekey',None);nodes[i].pop('_wdu',None);nodes[i]['_ksrc']='auto:id_key'
     if not pt and n5pt:nodes[i].update(pt=n5pt,pt_src='n05',closed_sd='1')
     if kind!='station':nodes[i]['export_name']=('['+o0.name+']') if o0.hidden else o0.name
     n_of[k]=i
@@ -1621,7 +1628,8 @@ TODAY=AS_OF
 def add(et,i,lang,text,**k):
     x=dict(entity_type=et,id=i,lang=lang,text=text);x.update({a:b for a,b in k.items() if b is not None});names.append(x)
 for n in nodes.values():
-    add('node',n['id'],'ja',JAFIX.get(n['id'],n['name']),kana=n['kana'],source='hand' if n['id'] in JAFIX else n['name_src'])
+    add('node',n['id'],'ja',JAFIX.get(n['id'],n['name']),kana=n['kana'],source='hand' if n['id'] in JAFIX else n['name_src'],
+        reading_source=n.get('_ksrc') if n['kana'] else None)
     w=n['wd'] or {}
     if n['kind']!='station':continue
     t=None;src=None
@@ -1996,7 +2004,9 @@ for x in names:
     if any(_covers(g,x['line']) for g in hit):_bl['covering_kept']+=1;continue
     _red.add((x['id'],x['line'],x['_lab']))
     for g in hit:
-        if not g.get('kana') and x.get('kana'):g['kana']=x['kana'];_bl['kana_moved']+=1
+        if not g.get('kana') and x.get('kana'):
+            g['kana']=x['kana'];_bl['kana_moved']+=1
+            if x.get('reading_source'):g['reading_source']=x['reading_source']
 _per={(y['id'],y.get('line'),y['_lab']):y for y in names if y.get('_period')}
 for x in names:
     k_=(x['id'],x.get('line'),x.get('_lab'))
@@ -2089,7 +2099,7 @@ for x in names:
     f=NFIX.get(x['id']) if x['entity_type']=='node' else None
     if f:
         if x['lang']=='ja':
-            if f.get('kana'):x['kana']=f['kana']
+            if f.get('kana'):x['kana']=f['kana'];x['reading_source']='hand:node_fix'
             if f.get('ja'):
                 aliases.append(dict(entity_type='node',id=x['id'],lang='ja',text=x['text'],kind='noritsubushi'));x['text']=f['ja'];x['source']='hand'
         elif f.get(x['lang']):x['text']=f[x['lang']];x['source']='hand'

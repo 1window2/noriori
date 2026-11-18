@@ -319,7 +319,6 @@
 - {"entity_type": "node", "id": "n_maisaka", "lang": "ja", "text": "馬郡", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maisaka", "lang": "ja", "text": "舞坂", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_aichi_mito", "lang": "ja", "text": "御油", "kind": "old_title"}
-- {"entity_type": "node", "id": "n_anjo", "lang": "ja", "text": "新安城", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_nagoya", "lang": "ja", "text": "名護屋", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_owari_ichinomiya", "lang": "ja", "text": "一ノ宮", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_owari_ichinomiya", "lang": "ja", "text": "尾張一ノ宮", "kind": "old_title"}

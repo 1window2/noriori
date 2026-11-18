@@ -105,8 +105,8 @@
 - {"entity_type": "line", "id": "l_daiyuzan_line", "lang": "en", "text": "Daiyuzan Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_dazaifu_line", "lang": "en", "text": "Dazaifu Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_den_en_toshi_line", "lang": "en", "text": "Den-en-toshi Line", "source": "rule"}
-- {"entity_type": "line", "id": "l_densha_line", "lang": "en", "text": "Densha Line", "source": "rule"}
-- {"entity_type": "line", "id": "l_densha_line_niigata", "lang": "en", "text": "Densha Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_densha_line", "lang": "en", "text": "Electric Railway Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_densha_line_niigata", "lang": "en", "text": "Electric Railway Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_disney_resort_line", "lang": "en", "text": "Disney Resort Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_dobashi_line", "lang": "en", "text": "Dobashi Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_dobutsuen_line", "lang": "en", "text": "Dobutsuen Line", "source": "rule"}
@@ -195,7 +195,7 @@
 - {"entity_type": "line", "id": "l_hakusan_line", "lang": "en", "text": "Hakusan Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hakushima_line", "lang": "en", "text": "Hakushima Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hakushin_line", "lang": "en", "text": "Hakushin Line", "source": "wikidata"}
-- {"entity_type": "line", "id": "l_hanamakionsen_line", "lang": "en", "text": "Hanamakionsen Line", "source": "rule"}
+- {"entity_type": "line", "id": "l_hanamakionsen_line", "lang": "en", "text": "Hanamaki Onsen Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hanaoka_line", "lang": "en", "text": "Hanaoka Line", "source": "rule"}
 - {"entity_type": "line", "id": "l_hanawa_line", "lang": "en", "text": "Hanawa Line", "source": "wikidata"}
 - {"entity_type": "line", "id": "l_hanazono_line", "lang": "en", "text": "Hanazono Line", "source": "rule"}
@@ -2902,3 +2902,5 @@
 - {"entity_type": "route", "id": "r_miyada_line_freight_sugamuta", "lang": "ja", "text": "磯光～菅牟田", "source": "rule"}
 - {"entity_type": "route", "id": "r_hitahikosan_line_freight_daiichi_oto", "lang": "ja", "text": "豊前川崎～第一大任", "source": "rule"}
 - {"entity_type": "route", "id": "r_kobukuro_line_freight_ikisu", "lang": "ja", "text": "幸袋～伊岐須", "source": "rule"}
+- {"entity_type": "route", "id": "r_aizawa_line", "lang": "ja", "text": "葛生～第三会沢", "source": "rule"}
+- {"entity_type": "route", "id": "r_ogano_line", "lang": "ja", "text": "上白石～大叶", "source": "rule"}

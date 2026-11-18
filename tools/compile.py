@@ -168,6 +168,10 @@ for _k,_v in _af.get('stop_closed',{}).items():
 for _k,_v in _af.get('stop_opened',{}).items():
     if _k not in _as or _as[_k].get('opened')==_v['date'] or _k in _af.get('drop_stop',{}):err('archive_lines_unused',_k)
     else:_as[_k]['opened']=_v['date']
+# 원천에 개업일이 빈 열람 전용 노선의 개업일(line_opened. 蹴上線 1895-04-01·南海 大浜支線 1912-04-01, 12회차 M R6)
+for _k,_v in _af.get('line_opened',{}).items():
+    if _k not in _al or _al[_k].get('opened')==_v['date']:err('archive_lines_unused',_k)
+    else:_al[_k]['opened']=_v['date']
 archive=[a for a in archive if not(a.get('kind')=='line' and (a['id'] in _af['drop'] or a['id'] in _af.get('exclude',{})))
     and not(a.get('kind')=='stop' and a['id'] in _af.get('drop_stop',{}))]
 # 휴지로 끝난 열람 전용 역·노선 (DESIGN §2.2 「운행을 다시 시작하지 않고 끝난 휴지」, 사용자 결정 128). 휴지 기록(suspended: 휴지 시작)이 있으면
@@ -3413,6 +3417,29 @@ def coverage_of(rid):
 # 선 유무와 노선 등급은 출처와 무관하게 본다 (DESIGN §2.11). 배포하는 선형 모양(edge_shape)만 OSM을 뺀다
 GEO_ALL={g['edge']:g for g in _SPLITP_GEO+load('geometry')}
 DRAWN=set(GEO_ALL)
+# 임시 운행만 있는 계통(정식 여객 영업 없이 단체·임시 열차만 다님, 新金線·田端貨物線 등)의 운행 토막.
+# 계통 사건(open·resume ~ suspend·close)으로 여객 토막을 만들고, 토막이 하나 이상이며 모두 7일 이하면 임시 운행만 있는 계통이다.
+# 정기 운행 기간이 있던 계통(高島線 1920–1960, 北小金支線 2003–2014)은 긴 토막이 있어 들지 않는다. 끝이 열린 토막(영업 중)도 들지 않는다.
+# 앱은 탭 「임시」 표시·운행일 칩·운행 없는 날의 흐린 그림에 쓴다 (사용자 결정 2026-11-19). valid_to는 다음 날(끝 제외)
+def _temp_windows():
+    import datetime as _dt
+    by_=collections.defaultdict(list)
+    for ev_ in events:
+        if ev_.get('route') and ev_['type'] in ('open','close','suspend','resume'):by_[ev_['route']].append((ev_['date'],ev_['type']))
+    out_=[]
+    for r_,evs_ in by_.items():
+        if r_ not in routes or not all(re.fullmatch(r'\d{4}-\d\d-\d\d',d_) for d_,_ in evs_):continue
+        win_,cur_=[],None
+        for d_,k_ in sorted(evs_,key=lambda x:(x[0],x[1] in ('suspend','close'))):
+            if k_ in ('open','resume'):cur_=cur_ or d_
+            elif cur_:win_.append((cur_,d_));cur_=None
+        if cur_ or not win_:continue
+        if all((_dt.date.fromisoformat(b_)-_dt.date.fromisoformat(a_)).days<=7 for a_,b_ in win_):
+            out_+=[(r_,a_,b_) for a_,b_ in win_]
+    return out_
+_TEMPW=_temp_windows()
+print('임시 운행만 계통',sorted({r_ for r_,_,_ in _TEMPW}),'토막',len(_TEMPW))
+t('route_temp_window',['route_id','valid_from','valid_to'],sorted(_TEMPW))
 t('route',['id primary key','line_id','role','from_node','to_node','via_nodes','closed','closed_from','extend_to','map_coverage'],[(r['id'],r['line'],r.get('role'),r['from'],r['to'],json.dumps(r.get('via',[])),int(bool(r.get('closed'))),r.get('closed_from'),json.dumps(r.get('extend_to',[])),coverage_of(r['id'])) for r in routes.values()])
 t('route_edge',['route_id','seq','edge_id'],[(rid,i,e['id']) for rid,S in route_edges.items() for i,e in enumerate(S)])
 # km를 N05 선 위 위치로 추정한 정차역 (DESIGN §4.5 `? km`). 화면은 km 대신 `?`
@@ -4766,7 +4793,9 @@ print('지금 이름과 같은 옛 이름 기간 행 뺌',len(_same_per),'행',_
 REPORT_SAME_PER=sorted(_same_per,key=str)
 db.execute('create table name (entity_type,entity_id,lang,text,kana,source,reading_source,source_title,checked,line_id,valid_from,valid_to)')
 check_dates('name',['entity_type','entity_id','lang','text','kana','source','reading_source','source_title','checked','line_id','valid_from','valid_to'],[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names])
-db.executemany('insert into name values (?,?,?,?,?,?,?,?,?,?,?,?)',[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names if x['entity_type']!='node' or x['id'] in pub])
+# 열람 전용 이름은 남은 열람 전용 행(drop·drop_stop·exclude로 뺀 것 제외)의 것만 싣는다. 뺀 ID의 이름만 남은 고아 109건(a_yomiurirando_monorail 등, 12회차 M R6)
+_arch_ids={a_['id'] for a_ in archive}
+db.executemany('insert into name values (?,?,?,?,?,?,?,?,?,?,?,?)',[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names if (x['entity_type']!='node' or x['id'] in pub) and (x['entity_type']!='archive' or x['id'] in _arch_ids)])
 # 역·노선별 仮乗降場·臨時駅 기간. 날짜 모름 화면의 표식에 쓴다 (사용자 결정 2026-11-07). valid_to NULL이면 지금도 仮·臨
 db.execute('create table stop_mark (node_id,line_id,kind,valid_from,valid_to)')
 # 끝 없는 표식은 지금도 仮·臨이라는 뜻이다 (날짜 원칙: ongoing)
