@@ -335,6 +335,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get noPath => 'No route found between these two stations';
 	@override late final _Translations$session$state$en state = _Translations$session$state$en._(_root);
 	@override String savedAs({required Object line}) => 'Part of ${line} on that date';
+	@override String movedTo({required Object name, required Object year}) => 'Moved to ${name} in ${year}';
 	@override String handSince({required Object line, required Object date}) => '${line} from ${date}';
 	@override String get handOpen => 'Open line ›';
 	@override String get handNote => 'Rides here are saved to that line';
@@ -1288,6 +1289,7 @@ extension on TranslationsEn {
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => 'Part of ${line} on that date',
+			'session.movedTo' => ({required Object name, required Object year}) => 'Moved to ${name} in ${year}',
 			'session.handSince' => ({required Object line, required Object date}) => '${line} from ${date}',
 			'session.handOpen' => 'Open line ›',
 			'session.handNote' => 'Rides here are saved to that line',
@@ -1651,9 +1653,9 @@ extension on TranslationsEn {
 			'prefNames.31' => 'Shimane',
 			'prefNames.32' => 'Okayama',
 			'prefNames.33' => 'Hiroshima',
-			'prefNames.34' => 'Yamaguchi',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.34' => 'Yamaguchi',
 			'prefNames.35' => 'Tokushima',
 			'prefNames.36' => 'Kagawa',
 			'prefNames.37' => 'Ehime',

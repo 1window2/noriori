@@ -190,6 +190,7 @@
       "span": "$from~$to"
     },
     "savedAs": "当時は$line",
+    "movedTo": "${year}年 ${name}へ移転",
     "handSince": "$dateから$line",
     "handOpen": "路線を見る ›",
     "handNote": "この区間はその路線で記録されます",

@@ -138,6 +138,7 @@ void main() {
             '${detail ? ' {${d.link.kind} ${d.link.validFromLo ?? ''}~${d.link.validToHi ?? ''}}' : ''}';
         final jl = <Map<String, Object?>>[];
         screens.add({'date': raw, 'rows': [for (final r in rows) {...rj(r), 'links': [for (final l in r.links) lk(l)], 'goneLinks': [for (final l in r.goneLinks) lk(l)]}], 'lines': jl});
+        final moved = await reader.movedNotes(rows.map((row) => row.node), lineId: route.lineId, date: date?.lo);
         buf.writeln('\n## 날짜 ${raw ?? '모름'} (행 ${rows.length}, 보이는 행 ${visible.length})');
         for (final line in lines) {
           switch (line) {
@@ -146,6 +147,8 @@ void main() {
               buf.writeln('● ${nm(r.node)} km=${r.kmEstimated ? '?' : r.kmCum?.toStringAsFixed(1)} 상태=${r.state.name}'
                   '${r.selectable ? '' : ' 못고름'}${r.openYear == null ? '' : ' 개업${r.openYear}'}${r.closeYear == null ? '' : ' 폐역${r.closeYear}'}'
                   '${r.savedAs == null ? '' : ' 저장=${ln(r.savedAs)}'}${r.handedOnly ? ' 이관뒤역' : ''}${s.small ? ' 작음' : ''}${s.returnsTo == null ? '' : ' 돌아옴'}');
+              // 이름까지 바뀐 옛 자리의 이전 표시(앱과 같은 PackReader.movedNotes)
+              if (moved[r.node] case final mv?) buf.writeln('    이전: ${mv.year} → ${mv.name}');
               jl.add({'t': 'stop', ...rj(r), 'transfers': [for (final g in s.transfers) {'flow': g.flow.name, 'items': [for (final i in g.items) dj(i)]}]});
               for (final g in s.transfers) {
                 buf.writeln('    환승${g.number == null ? '' : '#${g.number}'}(${g.flow.name}): ${g.items.map(dl).join(' · ')}');

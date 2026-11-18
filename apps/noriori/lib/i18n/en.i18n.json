@@ -196,6 +196,7 @@
       "span": "$from~$to"
     },
     "savedAs": "Part of $line on that date",
+    "movedTo": "Moved to ${name} in ${year}",
     "handSince": "$line from $date",
     "handOpen": "Open line ›",
     "handNote": "Rides here are saved to that line",

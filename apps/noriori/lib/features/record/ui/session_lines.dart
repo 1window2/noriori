@@ -453,6 +453,12 @@ class _StopTile extends ConsumerWidget {
                     t.savedAs(line: book.lines[saved] ?? saved),
                     style: text.bodySmall,
                   ),
+                // 이름까지 바뀐 옛 자리는 역명 바로 아래·환승 목록 위에 「~년 ~로 이전」 (사용자 결정 2026-11-18)
+                if (state.movedNotes[row.node] case final moved?)
+                  Text(
+                    t.movedTo(year: moved.year, name: koDirectional(context, moved.name)),
+                    style: text.bodySmall?.copyWith(color: tier3 ? tokens.textClosed : tokens.textMuted),
+                  ),
                 // 처음 역으로 돌아온 끝 행은 같은 역이라 글을 붙이지 않는다 (사용자 결정 2026-11-12)
                 if (returns == null && line.transfers.isNotEmpty)
                   _Transfers(
@@ -1162,6 +1168,15 @@ TextStyle? japaneseStyle(TextStyle? base) {
     fontSize: size * _jaScale,
     height: (base.height ?? 1.3) / _jaScale,
   );
+}
+
+/// 한국어판에서 이름 뒤 방향 조사(로/으로). 끝 글자에 받침이 있고 ㄹ이 아니면 「으로」다(신주쿠역으로·니가타로). 다른 언어는 이름 그대로
+String koDirectional(BuildContext context, String name) {
+  if (Localizations.localeOf(context).languageCode != 'ko' || name.isEmpty) return name;
+  final c = name.codeUnitAt(name.length - 1);
+  if (c < 0xAC00 || c > 0xD7A3) return '$name(으)로';
+  final jong = (c - 0xAC00) % 28;
+  return jong == 0 || jong == 8 ? '$name로' : '$name으로';
 }
 
 bool _fitsAfter(BuildContext context, InlineSpan head, InlineSpan tail, double width, {double extra = 0}) {

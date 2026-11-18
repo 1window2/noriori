@@ -61,6 +61,7 @@ final class RecordSessionState {
     this.pastMarks = const {},
     this.archiveNames = const {},
     this.archiveAside = const {},
+    this.movedNotes = const {},
     this.stopDirections = const {},
     this.oneWayGaps = const [],
     this.preview,
@@ -107,6 +108,9 @@ final class RecordSessionState {
 
   /// 열람 전용 역 이름 옆에 작게 다는 글: 다른 언어판은 일본어 이름(현지 이름과 다를 때), 일본어판은 읽기. 역 줄과 같은 규칙이다 (2026-11-18 사용자 지적)
   final Map<String, String> archiveAside;
+
+  /// 이름까지 바뀐 옛 자리의 이전 표시(옛 자리 노드 → 새 역 이름·옮긴 해)
+  final Map<String, ({String name, String year})> movedNotes;
 
   /// 그날 한 방향 열차만 서는 역 줄(순번) → 그 행 (DESIGN §8 한 방향 정차).
   final Map<int, NetStopDirection> stopDirections;
@@ -160,6 +164,7 @@ final class RecordSessionState {
     Map<String, String>? pastMarks,
     Map<String, String>? archiveNames,
     Map<String, String>? archiveAside,
+    Map<String, ({String name, String year})>? movedNotes,
     Map<int, NetStopDirection>? stopDirections,
     List<bool?>? oneWayGaps,
     Expansion? preview,
@@ -186,6 +191,7 @@ final class RecordSessionState {
         pastMarks: pastMarks ?? this.pastMarks,
         archiveNames: archiveNames ?? this.archiveNames,
         archiveAside: archiveAside ?? this.archiveAside,
+        movedNotes: movedNotes ?? this.movedNotes,
         stopDirections: stopDirections ?? this.stopDirections,
         oneWayGaps: oneWayGaps ?? this.oneWayGaps,
         preview: clearPicks ? null : preview ?? this.preview,
@@ -640,6 +646,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
             for (final MapEntry(key: id, value: ja) in (await reader.archiveNames(archiveIds, languages: const ['ja'])).entries)
               if (ja != archiveNames[id]) id: ja,
           };
+    final movedNotes = await reader.movedNotes(rows.map((row) => row.node), lineId: state.lineId, date: date?.lo);
     // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
     final stopDirections = <int, NetStopDirection>{
       for (final row in visible)
@@ -666,6 +673,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       pastMarks: pastMarks,
       archiveNames: archiveNames,
       archiveAside: archiveAside,
+      movedNotes: movedNotes,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
           : PickedPath.of(visible, state.preview!.nodes),
@@ -780,6 +788,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       pastMarks: base.pastMarks,
       archiveNames: base.archiveNames,
       archiveAside: base.archiveAside,
+      movedNotes: base.movedNotes,
       stopDirections: base.stopDirections,
       oneWayGaps: base.oneWayGaps,
       preview: preview,

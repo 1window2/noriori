@@ -568,6 +568,9 @@ class Translations$session$ko {
 	/// ko: '탑승일 기준 $line 구간'
 	String savedAs({required Object line}) => '탑승일 기준 ${line} 구간';
 
+	/// ko: '${year}년 ${name} 이전'
+	String movedTo({required Object year, required Object name}) => '${year}년 ${name} 이전';
+
 	/// ko: '$date부터 $line'
 	String handSince({required Object date, required Object line}) => '${date}부터 ${line}';
 
@@ -2226,6 +2229,7 @@ extension on Translations {
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => '탑승일 기준 ${line} 구간',
+			'session.movedTo' => ({required Object year, required Object name}) => '${year}년 ${name} 이전',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}부터 ${line}',
 			'session.handOpen' => '노선 보기 ›',
 			'session.handNote' => '이 구간은 그 노선으로 기록돼요',
@@ -2589,9 +2593,9 @@ extension on Translations {
 			'prefNames.31' => '시마네',
 			'prefNames.32' => '오카야마',
 			'prefNames.33' => '히로시마',
-			'prefNames.34' => '야마구치',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.34' => '야마구치',
 			'prefNames.35' => '도쿠시마',
 			'prefNames.36' => '카가와',
 			'prefNames.37' => '에히메',

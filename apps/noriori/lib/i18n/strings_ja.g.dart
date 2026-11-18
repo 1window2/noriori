@@ -329,6 +329,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get noPath => 'この2駅の間の経路が見つかりませんでした';
 	@override late final _Translations$session$state$ja state = _Translations$session$state$ja._(_root);
 	@override String savedAs({required Object line}) => '当時は${line}';
+	@override String movedTo({required Object year, required Object name}) => '${year}年 ${name}へ移転';
 	@override String handSince({required Object date, required Object line}) => '${date}から${line}';
 	@override String get handOpen => '路線を見る ›';
 	@override String get handNote => 'この区間はその路線で記録されます';
@@ -1258,6 +1259,7 @@ extension on TranslationsJa {
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => '当時は${line}',
+			'session.movedTo' => ({required Object year, required Object name}) => '${year}年 ${name}へ移転',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}から${line}',
 			'session.handOpen' => '路線を見る ›',
 			'session.handNote' => 'この区間はその路線で記録されます',
@@ -1621,9 +1623,9 @@ extension on TranslationsJa {
 			'prefNames.31' => '島根',
 			'prefNames.32' => '岡山',
 			'prefNames.33' => '広島',
-			'prefNames.34' => '山口',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.34' => '山口',
 			'prefNames.35' => '徳島',
 			'prefNames.36' => '香川',
 			'prefNames.37' => '愛媛',

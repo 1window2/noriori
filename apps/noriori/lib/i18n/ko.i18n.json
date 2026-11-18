@@ -190,6 +190,7 @@
       "span": "$from~$to"
     },
     "savedAs": "탑승일 기준 $line 구간",
+    "movedTo": "${year}년 ${name} 이전",
     "handSince": "$date부터 $line",
     "handOpen": "노선 보기 ›",
     "handNote": "이 구간은 그 노선으로 기록돼요",

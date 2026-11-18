@@ -517,6 +517,30 @@ final class PackReader {
           if (span.lo.compareTo(hi) < 0 && lo.compareTo(span.hi) < 0) span,
       ];
 
+  /// 역을 옮기면서 이름까지 바뀐 옛 자리의 「~년 ~로 이전」 표시: 옛 자리 노드 → (새 역 이름, 옮긴 해).
+  /// 옛 자리와 새 역의 일본어 이름이 「（旧）」를 빼고 같으면 「(구)」 표시로 관계가 보여 넣지 않는다(新潟（旧）).
+  /// 이름이 달라 다른 역처럼 보일 때만이다(東八王子 → 1963 京王八王子, 사용자 결정 2026-11-18). 표가 없는 옛 판이면 비어 있다
+  Future<Map<String, ({String name, String year})>> movedNotes(Iterable<String> ids, {String? lineId, String? date}) async {
+    final list = ids.toSet().toList();
+    if (list.isEmpty || !await _hasTable('node_move')) return const {};
+    final rows = await _db.customSelect(
+      'SELECT old_node, new_node, moved_on FROM master.node_move WHERE old_node IN (${List.filled(list.length, '?').join(',')})',
+      variables: [for (final id in list) Variable.withString(id)],
+    ).get();
+    final moves = {for (final r in rows) r.read<String>('old_node'): (node: r.read<String>('new_node'), day: r.read<String>('moved_on'))};
+    if (moves.isEmpty) return const {};
+    final oldJa = await nodeNames(moves.keys, lineId: lineId, date: date, languages: const ['ja']);
+    final newJa = await nodeNames(moves.values.map((m) => m.node), languages: const ['ja']);
+    final newName = await nodeNames(moves.values.map((m) => m.node));
+    String core(String s) => s.replaceAll(RegExp(r'\s*[（(](旧|구)[)）]\s*$'), '').trim();
+    return {
+      for (final MapEntry(key: old, value: m) in moves.entries)
+        if (oldJa[old] case final o?)
+          if (newJa[m.node] case final n? when core(o) != core(n) && m.day.length >= 4)
+            old: (name: newName[m.node] ?? n, year: m.day.substring(0, 4)),
+    };
+  }
+
   Future<bool> _hasTable(String name) async => (await _db.customSelect(
         "SELECT 1 FROM master.sqlite_master WHERE type = 'table' AND name = ?",
         variables: [Variable.withString(name)],
