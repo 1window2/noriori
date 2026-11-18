@@ -313,10 +313,16 @@ def _prev_ids():
 PREV=_prev_ids()
 for b in out:
     k=KA.get(b['id'])
-    if not k:continue
-    base=_rbase(b,k)
-    for pid in PREV.get((b['kind'],b.get('archive_line') or b.get('line'),JA.get(b['id'])),()):
-        if (pid==base or pid.startswith(base+'_')) and pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
+    pids=PREV.get((b['kind'],b.get('archive_line') or b.get('line'),JA.get(b['id'])),())
+    if k:
+        base=_rbase(b,k)
+        for pid in pids:
+            if (pid==base or pid.startswith(base+'_')) and pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
+    elif b.get('_noread'):
+        # 읽기 없는 역의 자리 ID(a_<노선>_<앞 역>_<뒤 역>_second…)도 지킨다. 같은 자리에 새 역이 들어오면 서수가 밀려 蛍川의 ID를
+        # 다른 역이 받았다(西鉄 甘木線 宮の陣 앞, 12회차 M 2026-11-18 build_diff). 같은 (종류, 노선, 이름)의 직전 ID를 먼저 준다
+        for pid in pids:
+            if pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
 for b in sorted(out,key=lambda b:(b['id'] in LATE,b['kind'],b.get('line') or '',b.get('after') or '',b.get('seq') or 0,JA.get(b['id']) or '')):
     if b['id'] in NEW:continue
     k=KA.get(b['id'])
@@ -324,7 +330,8 @@ for b in sorted(out,key=lambda b:(b['id'] in LATE,b['kind'],b.get('line') or '',
         c=_noread_id(b);taken.add(c);NEW[b['id']]=c;continue
     if not k:nokana.append(JA.get(b['id']));continue
     base=_rbase(b,k);c=base
-    for h in (slug(b.get('line')),slug(b.get('after') or b.get('at'))):
+    # 열람 전용 노선의 역은 노선 칸이 비어 있어 그 열람 전용 노선 ID로 꼬리를 단다(大口線 天神前 ← 다른 天神前과 겹침, 12회차 M)
+    for h in (slug(b.get('line') or b.get('archive_line')),slug(b.get('after') or b.get('at'))):
         if c not in taken:break
         if h:c=c+'_'+h
     if c in taken:raise SystemExit(f'열람 전용 ID가 겹칩니다: {c} ({JA.get(b["id"])})')

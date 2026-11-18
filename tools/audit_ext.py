@@ -1358,17 +1358,19 @@ put('K100 N05 역 기록(1950년 뒤) 판정 전체(참고)',k100a,20)
 def m_near_line(l,ids,km=15.0):
     pts_=[pos[x] for x in rnodes[l] if x in pos]
     for i_ in ids:
-        p_=pos.get(i_)
-        if p_ is None:
+        ps_=[pos[i_]] if i_ in pos else []
+        if not ps_:
+            # 열람 전용 역은 자리가 앞뒤 역 사이라 앞·뒤 역 점을 모두 본다. 앞 역 하나만 보면 뒤 역이 그 노선 위인 행(播但線 豆腐町 ← 姫路)을 놓쳤다 (12회차 M)
             r_=m.execute('select after_id,before_id from archive_stop where id=?',(i_,)).fetchone()
-            p_=next((pos[y] for y in (r_ or ()) if y in pos),None)
-        if p_ and any(hav(p_,q)<km for q in pts_):return i_
+            ps_=[pos[y] for y in (r_ or ()) if y in pos]
+        if any(hav(p_,q)<km for p_ in ps_ for q in pts_):return i_
     return None
 M_GN=collections.defaultdict(set)
 for i_,x_ in n.execute("select entity_id,text from name where lang='ja' and entity_type in ('node','archive')"):M_GN[m_nz2(x_)].add(i_)
 for i_ in pos:
     for x_ in anames(i_):M_GN[m_nz2(x_)].add(i_)
 k101=[];k101w=[];k101c=collections.Counter();k102=[];k102n=[];k101n=[]
+K102Q=[];K102H=[]
 # 앞 회차에 열람 전용 역에서 사유를 달고 뺀 행(archive_lines.json drop_stop: 화물역·전용선·같은 역)의 이름은 판정된 것으로 본다
 M_DROPN=set()
 for i_ in json.load(open(os.path.join(ROOT,'data','overrides','archive_lines.json'),encoding='utf-8')).get('drop_stop',{}):
@@ -1386,12 +1388,14 @@ for l in sorted(LDOC):
         t0=row_head(r['t']);m_=RW28.match(t0)
         if not m_ or NOSTN.search(r['t']):continue
         if not any(re.match(r'^(ex|e[A-Z]|x[A-Z]|uex|ke)',z) and re.search('BHF|HST',z) for z in icons):continue
-        cy=close_year(m_.group(2));nmz=nz(m_.group(1))
+        cy=close_year(m_.group(2))
+        # 노선도 행 이름 앞의 표지(#·+·*: 옛 선·별 기점 거리 표시)는 역 이름이 아니다. 떼지 않으면 들어간 역(実盛谷·泉福寺)과 이름이 맞지 않았다 (12회차 M)
+        _rn=re.sub(r'^[#+*]+','',m_.group(1));nmz=nz(_rn)
         if nmz in nm2n or nmz in tn or nmz in arch_l[l] or nmz in al or nmz in arch_l[None]:continue
         x=row_node(l,r,nm2n)
         if x and nmz in anames(x):continue
         key=l+'|'+m_.group(1);t_=MR['wiki'].get(key)
-        hit=m_near_line(l,M_GN.get(m_nz2(m_.group(1)),())) or ('drop_stop' if m_nz2(m_.group(1)) in M_DROPN else None)
+        hit=m_near_line(l,M_GN.get(m_nz2(_rn),())) or ('drop_stop' if m_nz2(_rn) in M_DROPN else None)
         if cy and cy>=1950:
             if t_:
                 k101c[t_['verdict']]+=1
@@ -1401,21 +1405,66 @@ for l in sorted(LDOC):
                 k101c['앞 회차 열람 전용 뺌 사유' if hit=='drop_stop' else '같은 이름 이웃 노선 역']+=1;k101n.append((ln(l),m_.group(1),cy,hit));continue
             k101.append((l,ln(l),m_.group(1),cy,r['t'][:30]))
         elif not cy:
+            # 연도 없는 행은 같은 이름 역이 그 노선 바로 곁(1.5km 안)일 때만 같은 역으로 본다. 15km로 보면 이름만 같은 다른 역이 섞였다
+            # (西鉄枝光線 競馬場前 ← 6.4km 밖 北九州モノレール 競馬場前, 長野電鉄河東線 井上 ← 14km 밖 다른 井上. 12회차 M 2026-11-18)
+            # 후보 전체에서 1.5km 안을 찾는다. 15km 안 첫 후보 하나만 다시 재면 집합 순서에 따라 결과가 바뀌었다(天神橋·豆腐町이 실행마다 오감)
+            if hit and hit!='drop_stop':hit=m_near_line(l,M_GN.get(m_nz2(_rn),()),km=1.5)
             # K102: 연도 없는 폐역 행인데 그 노선 15km 안 N05 기록(1950년 뒤, 규칙·판정표로 걸러지지 않은 것)이 같은 이름
             if hit or t_:
-                if t_ and t_['verdict']=='근거 부족':k101w.append((ln(l),m_.group(1),None,r['t'][:30],t_['why'][:60]))
+                # 추가 대기(근거는 있으나 손 행을 아직 못 넣음)도 근거 부족과 같이 경고로 남긴다 (12회차 M)
+                if t_ and t_['verdict'] in ('근거 부족','추가 대기'):k101w.append((ln(l),m_.group(1),None,r['t'][:30],(t_['verdict']+': '+t_['why'])[:60]))
+                # 같은 이름 이웃 역으로만 넘긴 행(판정표 없음)도 대기열로 남긴다. 이름만 같은 다른 역(市役所前 같은 흔한 이름)이 섞일 수 있다
+                if hit and not t_:K102H.append(dict(line=l,line_ja=ln(l),name=m_.group(1),row=r['t'],doc=LDOC[l]['title'],hit=hit))
                 continue
             pts_=[pos[q] for q in rnodes[l] if q in pos]
             ev=[s_ for s_ in sorted(M_NS2.get(m_nz2(m_.group(1)),())) if any(hav(NS[s_][-1]['pt'],q)<15 for q in pts_)]
             ev=[s_ for s_ in ev if not m_rule(s_,NS[s_]) or m_rule(s_,NS[s_])[0]=='근거 부족']
             if ev:k102.append((l,ln(l),m_.group(1),r['t'][:30],ev[:3]))
-            else:k102n.append((ln(l),m_.group(1),r['t'][:30]))
+            else:k102n.append((ln(l),m_.group(1),r['t'][:30]));K102Q.append(dict(line=l,line_ja=ln(l),name=m_.group(1),row=r['t'],doc=LDOC[l]['title'],nodes=[x for x in rnodes[l]][:0]))
 put('K101 위키 노선도 폐역(1950년 뒤 폐지)이 DB·열람 전용·이웃 노선 역·판정표 어디에도 없음',k101,40,lvl='err')
 put('K101 위키 노선도 폐역 판정 근거 부족(남은 것, 판정표)',k101w,60,lvl='warn')
 put('K101 위키 노선도 폐역 판정 갈래별 건수',sorted(k101c.items()),20)
 put('K101 위키 노선도 폐역을 같은 이름 이웃 노선 역·앞 회차 판정으로 본 행(참고, 이름만 같은 다른 역이 섞일 수 있어 판정표로 뒤집음)',k101n,60)
 put('K102 위키 노선도 연도 없는 폐역 행인데 N05에 1950년 뒤 같은 이름 기록(그 노선 15km 안)이 있고 DB·열람 전용·판정표에 없음',k102,40,lvl='err')
-put('K102 위키 노선도 연도 없는 폐역 행(N05·DB 근거 없음, 참고 목록)',k102n,40)
+# 참고 목록이던 것을 오류로 올린다. 판정 없이 보고서에만 쌓인 행에서 빠진 폐역 85곳(志度線 出晴·東田町 등)과 西鉄 甘木線 渕ノ上 등이 나왔다.
+# 행마다 판정표(missing_reviewed.json wiki: 정상·근거 부족)나 DB 행(archive_fix _noyear로 날짜를 준 열람 전용 역)이 있어야 한다 (12회차 M 2026-11-18)
+put('K102 위키 노선도 연도 없는 폐역 행이 DB·열람 전용·판정표 어디에도 없음(N05·DB 근거 없음)',k102n,40,lvl='err')
+# 조사 대기열: 판정표(missing_reviewed wiki)에도 DB에도 없는 연도 없는 폐역 행 전부 (12회차 2026-11-18)
+json.dump(K102Q,open(os.path.join(B,'k102_queue.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
+json.dump(K102H,open(os.path.join(B,'k102_hit_queue.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
+put('K102 위키 노선도 연도 없는 폐역 행을 같은 이름 이웃 역으로만 넘긴 것(판정표 없음, 참고)',[(x['line_ja'],x['name'],x['hit']) for x in K102H],40)
+# ---- K103 노선째 빠진 것: 위키 「日本の廃止鉄道路線一覧」의 항목이 DB 노선·열람 전용 노선·계통 이름이나 판정표(missing_reviewed lines)에 없음 (12회차 M 2026-11-18)
+# N05는 1950년 뒤 폐선의 닫힌 목록이 아니었다(北陸鉄道金沢市内線이 N05에도 DB에도 없음, 名鉄安城支線은 西尾線 묶음으로 넘어감). 노선 단위로 독립 목록과 대조한다.
+# 수록 밖 유형(DESIGN §4.1: 馬車鉄道·人車軌道·森林鉄道·専用線·貨物線·簡易軌道·無軌条電車 등)은 규칙으로 거른다. 판정이 다 붙기 전이라 지금은 경고다
+import glob as _glob
+_al=sorted(_glob.glob(os.path.join(ROOT,'data','imports','wiki_lists','abolished_lines_*.wikitext')))
+K103Q=[];k103c=collections.Counter()
+if _al:
+    _t=open(_al[-1],encoding='utf-8').read()
+    _OUT=re.compile(r'馬車|人車|森林鉄道|専用鉄道|専用線|専用軌道|簡易軌道|殖民軌道|無軌条|トロリーバス|貨物線|貨物専用|軍用線|工事軌道|砂利|会場内')
+    _nm=set(x for x, in n.execute("select text from name where lang='ja' and entity_type in ('line','archive','route')"))
+    def _keys(s_):
+        s_=re.sub(r'\s*[（(].*?[)）]','',s_).strip();o={s_}
+        for a_ in list(o):o|={re.sub(r'線$','',a_),a_+'線',re.sub(r'(鉄道|電鉄|軌道|電気軌道|電気鉄道)$','',a_)}
+        return {k for k in o if k}
+    _idx=set()
+    for x_ in _nm:_idx|=_keys(x_)
+    _pref=None
+    for _ln in _t.splitlines():
+        _m=re.match(r'^=+ *([^=]+?) *=+',_ln)
+        if _m:_pref=_m.group(1);continue
+        if not _ln.startswith('*') or _pref in (None,'関連項目'):continue
+        _links=re.findall(r'\[\[([^\]|#]+)(?:[|#][^\]]*)?\]\]',_ln)
+        if not _links:continue
+        _ti=_links[0]
+        if _keys(_ti)&_idx:k103c['DB에 있음']+=1;continue
+        if _OUT.search(_ln):k103c['수록 밖 유형']+=1;continue
+        _j=MR.get('lines',{}).get(_ti)
+        if _j:k103c[_j['verdict']]+=1;continue
+        K103Q.append(dict(pref=_pref,title=_ti,line=_ln.strip()))
+    json.dump(K103Q,open(os.path.join(B,'k103_queue.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
+put('K103 위키 폐선 목록 항목이 DB·열람 전용·판정표에 없음(노선째 빠졌을 수 있음, 판정 진행 중)',[(x['pref'],x['title'],x['line'][:60]) for x in K103Q],60,lvl='warn')
+put('K103 위키 폐선 목록 판정 갈래별 건수',sorted(k103c.items()),20)
 # ---- K142 근거 표 없는 여객 직통 후보 (10회차 D1, 전수 점검 4회차 일반화 요청) ----
 # 같은 역 묶음(group)의 두 노선이 그 역에서 환승으로만 이어진 쌍(노드가 같든 다르든)마다, 두 노선 위키 문서 본문에서 상대 노선 이름 앞뒤 80자 안에
 # 「直通|乗り入れ|乗入|併結」이 있으면 여객 직통 후보다. 근거 표 직통(THROUGH)이나 직통 판정 표(THROUGH_REVIEWED: 화물·선로만·근거 부족 판정)에 있는 쌍은 뺀다

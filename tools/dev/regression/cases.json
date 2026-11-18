@@ -18268,6 +18268,6 @@ null
 {"id": "R12-K03", "round": 5, "cause": "borrowed_reading", "kind": "kana", "node": "n_amusement_park", "text": "遊園地前", "kana": "ゆうえんちまえ", "basis": "12회차 사용자 지적 2026-11-18: 西武山口線 遊園地前 읽기를 이 역 근거(jawiki 遊園地前駅 (埼玉県) 정보칸, Wikidata Q11082624 한국어 라벨)로 다시 넣음"},
 {"id": "R12-K04", "round": 5, "cause": "borrowed_reading", "kind": "kana", "node": "n_kobe_sannomiya_hankyu", "text": "神戸三宮", "kana": "こうべさんのみや", "basis": "12회차 사용자 지적 2026-11-18: 확인할 수 없는 Wikidata 항목까지 버리면 현행역이 읽기를 잃었던 것. 다른 곳으로 드러난 항목만 버림"},
 {"id": "R12-K05", "round": 5, "cause": "borrowed_reading", "kind": "kana", "node": "n_hachiman_toyokawa", "text": "八幡", "kana": "やわた", "basis": "12회차 2026-11-18: 名鉄豊川線 八幡 읽기가 같은 이름 다른 역의 はちまん이었음. jawiki 정보칸 やわた + Wikidata 야와타역"},
-{"id": "R12-K06", "round": 5, "cause": "borrowed_reading", "kind": "nokana", "node": "n_shirousagi_nagai", "basis": "12회차 2026-11-18: 山陰本線 白兎仮停車場(鳥取) 읽기 しろうさぎ는 山形 長井線 白兎駅 읽기를 빌린 것. 이 역 읽기 근거 없음"}
+{"id": "R12-K06", "round": 5, "cause": "borrowed_reading", "kind": "kana", "node": "n_shirousagi_nagai", "text": "白兎", "kana": "はくと", "basis": "12회차 2026-11-18: 山陰本線 白兎仮停車場(鳥取)의 しろうさぎ는 山形 長井線 白兎駅 읽기를 빌린 것이었다. 국철 『停車場一覧』 1966년판·鉄道省 1934년판 「はくと」(높음, R7)"}
 ]
 }

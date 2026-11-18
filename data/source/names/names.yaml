@@ -9805,7 +9805,9 @@
 - {"entity_type": "node", "id": "n_suetsune", "lang": "ja", "text": "末恒", "kana": "すえつね", "source": "noritsubushi"}
 - {"entity_type": "node", "id": "n_suetsune", "lang": "ko", "text": "스에츠네", "source": "namuwiki", "checked": "2026-11-18"}
 - {"entity_type": "node", "id": "n_suetsune", "lang": "en", "text": "Suetsune", "source": "wikidata"}
-- {"entity_type": "node", "id": "n_shirousagi_nagai", "lang": "ja", "text": "白兎", "source": "wikipedia"}
+- {"entity_type": "node", "id": "n_shirousagi_nagai", "lang": "ja", "text": "白兎", "kana": "はくと", "source": "wikipedia"}
+- {"entity_type": "node", "id": "n_shirousagi_nagai", "lang": "ko", "text": "하쿠토", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "node", "id": "n_shirousagi_nagai", "lang": "en", "text": "Hakuto", "source": "rule"}
 - {"entity_type": "node", "id": "n_hogi", "lang": "ja", "text": "宝木", "kana": "ほうぎ", "source": "noritsubushi"}
 - {"entity_type": "node", "id": "n_hogi", "lang": "ko", "text": "호기", "source": "namuwiki", "checked": "2026-11-18"}
 - {"entity_type": "node", "id": "n_hogi", "lang": "en", "text": "Hogi", "source": "wikidata"}

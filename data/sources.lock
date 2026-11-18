@@ -2056,5 +2056,6 @@
 {"path": "data/imports/wiki/titles.txt", "size": 14241, "sha256": "d9fb2df659437bf420c6ae9b4270f2b56448efc0ff24ce969e7ae35fcc3c4c07", "received": "2026-11-01", "url": "https://ja.wikipedia.org/w/api.php"},
 {"path": "data/imports/wiki/titles2.txt", "size": 14079, "sha256": "f81d56260aca6e8af100298754abfa9fff4810d99236db164371be8d4b864564", "received": "2026-11-01", "url": "https://ja.wikipedia.org/w/api.php"},
 {"path": "data/imports/wiki/titles3.txt", "size": 7112, "sha256": "90c86f1e2773ffae70a0feaa44584d522c188dbce14bb78be5c1b784e0391b5c", "received": "2026-11-01", "url": "https://ja.wikipedia.org/w/api.php"},
+{"path": "data/imports/wiki_lists/abolished_lines_111656893.wikitext", "size": 44354, "sha256": "7d095d278d58ef54cb93ab8da805a1bee1085303b0b89a7815b264aa122deca1", "received": "2026-11-18", "url": null},
 {"path": "data/imports/wikidata/stations.json", "size": 45990608, "sha256": "ab82d3acee57dce93719dfe5681f73a15f812a26d4267afda74835c51c490048", "received": "2026-11-01", "url": "https://query.wikidata.org/sparql"}
 ]}
