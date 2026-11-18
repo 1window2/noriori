@@ -323,6 +323,10 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get cancel => 'キャンセル';
 	@override String get main => '本線';
 	@override String get pickFrom => '乗車駅を選んでください';
+	@override String get tempTag => '臨時';
+	@override String get tempNotice => '定期旅客列車なし（臨時列車の運行日のみ記録可）';
+	@override String get tempPickDay => '臨時列車の運行日を選んでください';
+	@override String get tempNoRun => 'この日は臨時列車が走っていません。上の運行日を押してください';
 	@override String get pickTo => '降車駅を選んでください';
 	@override String get save => '記録する';
 	@override String summary({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km';
@@ -1248,6 +1252,10 @@ extension on TranslationsJa {
 			'session.cancel' => 'キャンセル',
 			'session.main' => '本線',
 			'session.pickFrom' => '乗車駅を選んでください',
+			'session.tempTag' => '臨時',
+			'session.tempNotice' => '定期旅客列車なし（臨時列車の運行日のみ記録可）',
+			'session.tempPickDay' => '臨時列車の運行日を選んでください',
+			'session.tempNoRun' => 'この日は臨時列車が走っていません。上の運行日を押してください',
 			'session.pickTo' => '降車駅を選んでください',
 			'session.save' => '記録する',
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
@@ -1619,12 +1627,12 @@ extension on TranslationsJa {
 			'prefNames.27' => '兵庫',
 			'prefNames.28' => '奈良',
 			'prefNames.29' => '和歌山',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.30' => '鳥取',
 			'prefNames.31' => '島根',
 			'prefNames.32' => '岡山',
 			'prefNames.33' => '広島',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.34' => '山口',
 			'prefNames.35' => '徳島',
 			'prefNames.36' => '香川',

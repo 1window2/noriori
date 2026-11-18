@@ -128,12 +128,15 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     final stuck = state.rows.isNotEmpty && !state.rows.any((row) => row.selectable);
     final query = _query;
     final searching = query != null && query.isNotEmpty;
+    // 임시 운행만 있는 계통은 폐지·운휴 구분선을 그리지 않는다. 정식 개업·폐지가 없고 탭 아래 안내가 알린다 (사용자 결정 2026-11-19)
     final lines = searching
         ? [
             for (final line in state.lines)
               if (line is StopLine && _matches(state, line.row.node, query)) line,
           ]
-        : state.lines;
+        : state.isTemporary
+            ? [for (final line in state.lines) if (line is! SectionLine) line]
+            : state.lines;
     final trunk = TrunkStyle(state, gaps, tokens);
     return PopScope(
       // 분기로 넘어왔으면 뒤로 가기는 직전 노선이다
@@ -202,10 +205,13 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                       label: _routeLabel(choice),
                       selected: choice == routeId,
                       onTap: () => controller.selectRoute(choice),
+                      badge: state.tempRoutes.contains(choice) ? t.tempTag : null,
                     ),
                 ],
               ),
-            if (stuck)
+            if (state.isTemporary)
+              _TempNotice(state: state, onDay: (day) => controller.setDate(day))
+            else if (stuck)
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
                 child: Text(t.nonePickable, style: text.bodySmall),
@@ -303,3 +309,51 @@ class _DisplayBar extends ConsumerWidget {
     );
   }
 }
+
+/// 임시 운행만 있는 계통의 안내 한 줄과 운행일 칩. 칩을 누르면 그날로 바꾼다.
+/// 아래 끝 이어짐 점선과 붙지 않게 아래를 띄운다 (사용자 결정 2026-11-19, 목업 5판)
+class _TempNotice extends StatelessWidget {
+  const _TempNotice({required this.state, required this.onDay});
+
+  final RecordSessionState state;
+  final void Function(String day) onDay;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t.session;
+    final text = Theme.of(context).textTheme;
+    final tokens = context.tokens;
+    final day = state.dateInput == null ? null : DateSpan.parse(state.dateInput!).lo;
+    String label(({String from, String to}) w) {
+      final last = DateTime.parse(w.to).subtract(const Duration(days: 1)).toIso8601String().substring(0, 10);
+      return last == w.from ? dateText(context.t, w.from) : '${dateText(context.t, w.from)}–${dateText(context.t, last)}';
+    }
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 2, bottom: 10),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              t.tempNotice,
+              textAlign: TextAlign.center,
+              style: text.bodySmall?.copyWith(color: tokens.textMuted),
+            ),
+          ),
+          FilterPillRow(
+            pills: [
+              for (final w in state.tempWindows)
+                FilterPill(
+                  label: label(w),
+                  selected: day != null && w.from.compareTo(day) <= 0 && day.compareTo(w.to) < 0,
+                  onTap: () => onDay(w.from),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+

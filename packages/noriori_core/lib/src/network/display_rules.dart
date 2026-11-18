@@ -272,10 +272,14 @@ final class ArchiveLine extends SelectorLine {
 
 /// 폐지 구간의 경계. 위쪽이 영업, 아래쪽이 폐지면 [year]가 있다.
 final class SectionLine extends SelectorLine {
-  const SectionLine({required this.gap, this.year, this.suspended = false, this.opens, super.lanes});
+  const SectionLine({required this.gap, this.year, this.suspended = false, this.opens, this.stem, super.lanes});
 
   final int gap;
   final String? year;
+
+  /// 끝 이어짐 줄과 역 사이에 놓인 구분선이다. 끝 이어짐(다른 노선)으로 가는 점선 줄기가 이 줄을 끊기지 않고 지나간다.
+  /// 값은 그 이어짐이 모두 폐선인가다. 계통 끝에 닿은 폐지 구간은 다른 노선 줄 안쪽에서 시작하고 끝난다 (사용자 결정 2026-11-19)
+  final bool? stem;
 
   /// 고른 날에 아직 개업 전인 구간이면 그 개업 해다. 폐지 해 대신 「1951년 개업」으로 적는다
   final String? opens;
@@ -921,8 +925,11 @@ final class DisplayRules {
         }
         if (fence) out.add(SectionLine(gap: -1, lanes: pass()));
       }
-      // 구분선은 끝 이어짐 줄 바깥에 둔다. 역과 끝 이어짐 사이에 끼면 점선 줄기가 끊긴다 (실화면 검수 2026-11-09, 肥前吉井)
-      if (index == 0 && topClosed && !loneTop) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
+      // 계통 첫 구간부터 폐지면 구분선은 끝 이어짐(다른 노선) 줄 안쪽, 그 줄과 첫 역 사이에 둔다. 다른 노선까지 폐지 구간에 든 것처럼 읽히지 않게 한다.
+      // 점선 줄기는 구분선 줄을 지나 끊기지 않는다 (사용자 결정 2026-11-19. 2026-11-09 「끝 이어짐 바깥」 결정을 대신함, 肥前吉井는 줄기가 이어져 해결)
+      final topFence = index == 0 && topClosed && !loneTop;
+      final upEndsAny = upEnds.isNotEmpty || (isFirst && beyondUp.isNotEmpty);
+      if (topFence && !upEndsAny) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
       // 폐지·운휴 구간이 지금 역에서 끝나면 끝 구분선을 그 역 위에 둔다. 아래에 두면 지금 역이 구간 안에 든다 (常磐線 新地~山下 이설).
       // 구간이 역 사이 한 칸뿐이면 시작 구분선과 같은 자리라 하나만 둔다
       final endsHere = endsAt(rows, gaps, index, alive: alive);
@@ -942,6 +949,10 @@ final class DisplayRules {
           ));
           open.add(run);
         }
+      }
+      if (topFence && upEndsAny) {
+        out.add(SectionLine(
+            gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), stem: endsGone(upEnds) ?? false, lanes: pass()));
       }
       for (final (at, item) in ups.indexed) {
         out.add(
@@ -1062,6 +1073,12 @@ final class DisplayRules {
         out.add(_archiveBranch(row, index, branch,
             stacked: at < old.length - 1, endThrough: endsGone(downEnds), lanes: pass()));
       }
+      // 계통 끝 구간이 폐지면 아래로 이어지는 노선(끝 이어짐) 줄 앞에 닫는 구분선을 둔다. 이어지는 노선이 없으면 끝 역에서 끝나 닫는 선이 없다
+      // (사용자 결정 2026-11-19, 海峡線 木古内–江差線 / 白糠線 北進은 없음). 끝 너머 한 역뿐인 폐역(loneBottom)은 여는 구분선도 없어 닫지 않는다
+      final downEndsAny = downEnds.isNotEmpty || (isLast && beyondDown.isNotEmpty);
+      if (index == rows.length - 1 && downEndsAny && !alive(row) && (index == 0 ? topClosed : !gaps[index - 1]) && !loneBottom) {
+        out.add(SectionLine(gap: index, stem: endsGone(downEnds) ?? false, lanes: pass()));
+      }
       if (isLast) {
         final ends = downEnds;
         for (final run in beyondDown) {
@@ -1117,6 +1134,8 @@ final class DisplayRules {
     bool mine(SelectorLine line, SelectorRow row, bool up) => switch (line) {
           EndLine(:final at, up: final side) => side == up && at.seq == row.seq,
           BranchLine(:final at, up: final side) => side == up && at.seq == row.seq,
+          // 끝 이어짐 안쪽 구분선(점선 줄기가 지나감)도 그 역의 줄이다. 바깥으로 보내지 않는다 (사용자 결정 2026-11-19)
+          SectionLine(:final stem) => stem != null,
           _ => false,
         };
     for (var i = 0; i < out.length; i++) {

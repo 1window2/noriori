@@ -517,6 +517,24 @@ final class PackReader {
           if (span.lo.compareTo(hi) < 0 && lo.compareTo(span.hi) < 0) span,
       ];
 
+  /// 임시 운행만 있는 계통 모두. 계통 칩의 「임시」 표시에 쓴다
+  Future<Set<String>> tempRouteIds() async {
+    if (!await _hasTable('route_temp_window')) return const {};
+    final rows = await _db.customSelect('SELECT DISTINCT route_id FROM master.route_temp_window').get();
+    return {for (final row in rows) row.read<String>('route_id')};
+  }
+
+  /// 임시 운행만 있는 계통(정식 여객 영업 없이 임시·단체 열차만 다님, 新金線)의 운행 토막 [from, to). 그 밖의 계통이면 비어 있다.
+  /// 빌드가 계통 사건으로 정한다(토막이 모두 7일 이하, tools/compile.py route_temp_window). 표가 없는 옛 판이면 비어 있다
+  Future<List<({String from, String to})>> tempWindows(String routeId) async {
+    if (!await _hasTable('route_temp_window')) return const [];
+    final rows = await _db.customSelect(
+      'SELECT valid_from, valid_to FROM master.route_temp_window WHERE route_id = ? ORDER BY valid_from',
+      variables: [Variable(routeId)],
+    ).get();
+    return [for (final row in rows) (from: row.read<String>('valid_from'), to: row.read<String>('valid_to'))];
+  }
+
   /// 역을 옮기면서 이름까지 바뀐 옛 자리의 「~년 ~로 이전」 표시: 옛 자리 노드 → (새 역 이름, 옮긴 해).
   /// 옛 자리와 새 역의 일본어 이름이 「（旧）」를 빼고 같으면 「(구)」 표시로 관계가 보여 넣지 않는다(新潟（旧）).
   /// 이름이 달라 다른 역처럼 보일 때만이다(東八王子 → 1963 京王八王子, 사용자 결정 2026-11-18). 표가 없는 옛 판이면 비어 있다

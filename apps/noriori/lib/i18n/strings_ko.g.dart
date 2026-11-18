@@ -551,6 +551,18 @@ class Translations$session$ko {
 	/// ko: '출발역을 고르세요'
 	String get pickFrom => '출발역을 고르세요';
 
+	/// ko: '임시'
+	String get tempTag => '임시';
+
+	/// ko: '정기 여객 열차 미운행 구간(임시 열차 운행일만 기록 가능)'
+	String get tempNotice => '정기 여객 열차 미운행 구간(임시 열차 운행일만 기록 가능)';
+
+	/// ko: '임시 열차 운행일을 고르세요'
+	String get tempPickDay => '임시 열차 운행일을 고르세요';
+
+	/// ko: '이 날짜에는 임시 열차가 다니지 않았습니다. 위의 운행일을 눌러 보세요'
+	String get tempNoRun => '이 날짜에는 임시 열차가 다니지 않았습니다. 위의 운행일을 눌러 보세요';
+
 	/// ko: '도착역을 고르세요'
 	String get pickTo => '도착역을 고르세요';
 
@@ -2218,6 +2230,10 @@ extension on Translations {
 			'session.cancel' => '취소',
 			'session.main' => '본선',
 			'session.pickFrom' => '출발역을 고르세요',
+			'session.tempTag' => '임시',
+			'session.tempNotice' => '정기 여객 열차 미운행 구간(임시 열차 운행일만 기록 가능)',
+			'session.tempPickDay' => '임시 열차 운행일을 고르세요',
+			'session.tempNoRun' => '이 날짜에는 임시 열차가 다니지 않았습니다. 위의 운행일을 눌러 보세요',
 			'session.pickTo' => '도착역을 고르세요',
 			'session.save' => '기록하기',
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
@@ -2589,12 +2605,12 @@ extension on Translations {
 			'prefNames.27' => '효고',
 			'prefNames.28' => '나라',
 			'prefNames.29' => '와카야마',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.30' => '돗토리',
 			'prefNames.31' => '시마네',
 			'prefNames.32' => '오카야마',
 			'prefNames.33' => '히로시마',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.34' => '야마구치',
 			'prefNames.35' => '도쿠시마',
 			'prefNames.36' => '카가와',

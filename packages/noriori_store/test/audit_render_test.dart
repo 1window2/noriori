@@ -63,6 +63,9 @@ void main() {
       if (only.isNotEmpty && !only.contains(routeId)) continue;
       final route = network.routes[routeId]!;
       final buf = StringBuffer('# ${ln(route.lineId)} 계통 $routeId closed=${route.closed}\n');
+      // 임시 운행만 있는 계통의 운행 토막(앱과 같은 PackReader.tempWindows). 빌드가 토막을 잃으면 화면 대조에서 드러난다
+      final temp = await reader.tempWindows(routeId);
+      if (temp.isNotEmpty) buf.writeln('임시 운행만: ${[for (final w in temp) '${w.from}~${w.to}'].join(', ')}');
       final screens = <Map<String, Object?>>[];
       // RENDER_DATES=1990-11-17,1950-11-17 이면 그 날짜 화면도 펼친다(오늘은 RENDER_TODAY 그대로, 기록 화면에서 날짜를 고른 것과 같다)
       final extra = (Platform.environment['RENDER_DATES'] ?? '').split(',').where((d) => d.isNotEmpty);

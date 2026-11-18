@@ -496,7 +496,8 @@ void main() {
       expect(out.indexOf(section), lessThan(out.indexWhere((line) => line is StopLine)));
     });
 
-    test('첫 구간 폐지 구분선은 첫 역의 끝 이어짐 줄 바깥에 온다 (肥前吉井)', () {
+    // 사용자 결정 2026-11-19: 다른 노선(끝 이어짐) 줄 안쪽에 구분선을 두고, 점선 줄기가 그 줄을 지나간다 (2026-11-09 「바깥」 결정을 대신함)
+    test('첫 구간 폐지 구분선은 첫 역의 끝 이어짐 줄 안쪽, 그 줄과 첫 역 사이에 온다 (肥前吉井)', () {
       final out = lines(
         [
           row(0, 'a', closeYear: '1971', links: [link('continue', 'x', seq: 0, next: 'p')]),
@@ -507,8 +508,37 @@ void main() {
       final section = out.indexWhere((line) => line is SectionLine);
       final end = out.indexWhere((line) => line is EndLine);
       final stop = out.indexWhere((line) => line is StopLine);
-      expect(section, lessThan(end));
-      expect(end + 1, stop);
+      expect(end + 1, section);
+      expect(section + 1, stop);
+      expect((out[section] as SectionLine).stem, isNotNull);
+      expect((out[section] as SectionLine).year, '1971');
+    });
+
+    test('끝 구간이 폐지고 아래로 이어지는 노선이 있으면 그 줄 앞에 닫는 구분선을 둔다', () {
+      final out = lines(
+        [
+          row(0, 'a', closeYear: '2016'),
+          row(1, 'b', closeYear: '2016', links: [link('continue', 'y', seq: 1, next: 'q')]),
+        ],
+        open: const [false],
+      );
+      final stop = out.lastIndexWhere((line) => line is StopLine);
+      final end = out.indexWhere((line) => line is EndLine && !line.up);
+      expect(out[stop + 1], isA<SectionLine>());
+      expect((out[stop + 1] as SectionLine).stem, isNotNull);
+      expect(stop + 2, end);
+    });
+
+    test('끝 구간이 폐지여도 아래로 이어지는 노선이 없으면 닫는 구분선이 없다 (白糠線 北進)', () {
+      final out = lines(
+        [
+          row(0, 'a', closeYear: '1983'),
+          row(1, 'b', closeYear: '1983'),
+        ],
+        open: const [false],
+      );
+      final stop = out.lastIndexWhere((line) => line is StopLine);
+      expect(out.skip(stop + 1).whereType<SectionLine>(), isEmpty);
     });
 
     test('어느 구분선도 역과 그 역의 끝 이어짐 사이에 끼지 않는다', () {

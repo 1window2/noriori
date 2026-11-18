@@ -170,11 +170,15 @@ class FilterPill extends StatelessWidget {
     required this.selected,
     required this.onTap,
     this.elevated = false,
+    this.badge,
   });
 
   final String label;
   final bool selected;
   final VoidCallback onTap;
+
+  /// 이름 뒤의 작은 네모 표시(임시 운행만 있는 계통의 「임시」, 사용자 결정 2026-11-19)
+  final String? badge;
 
   /// 지도 위에 뜬 칩이다.
   final bool elevated;
@@ -201,12 +205,34 @@ class FilterPill extends StatelessWidget {
               border: selected || elevated ? null : Border.all(color: tokens.hairline),
               boxShadow: elevated ? softShadow : null,
             ),
-            child: Text(
-              label,
-              style: text.labelMedium?.copyWith(
-                fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
-                color: selected ? tokens.surface : tokens.textMuted,
-              ),
+            child: Row(
+              mainAxisSize: MainAxisSize.min,
+              spacing: 6,
+              children: [
+                Text(
+                  label,
+                  style: text.labelMedium?.copyWith(
+                    fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                    color: selected ? tokens.surface : tokens.textMuted,
+                  ),
+                ),
+                if (badge case final mark?)
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      border: Border.all(color: selected ? tokens.surface : tokens.textMuted),
+                    ),
+                    child: Text(
+                      mark,
+                      style: text.labelSmall?.copyWith(
+                        fontWeight: FontWeight.w700,
+                        color: selected ? tokens.surface : tokens.textMuted,
+                        height: 1.2,
+                      ),
+                    ),
+                  ),
+              ],
             ),
           ),
         ),

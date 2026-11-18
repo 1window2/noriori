@@ -31,6 +31,7 @@ TABLES = [
     ('계통 연결', 'master', 'select route_id, seq, kind, other_line_id, valid_from, valid_to from route_link'),
     ('열람 전용 역', 'master', 'select id, route_id, archive_line_id, after_id, before_id, seq, opened, closed from archive_stop'),
     ('열람 전용 노선', 'master', 'select id, at_node, closed from archive_line'),
+    ('임시 운행 토막', 'master', 'select route_id, valid_from, valid_to from route_temp_window'),
     ('이름', 'names', 'select entity_type, entity_id, lang, text, kana, line_id, valid_from, valid_to from name'),
 ]
 

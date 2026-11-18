@@ -198,13 +198,14 @@ class _StopTile extends ConsumerWidget {
   }
 
   /// 고를 수 없는 역을 누르면 이유를 알린다 (10-30 승인 목업).
-  void _whyNot(BuildContext context) {
+  void _whyNot(BuildContext context, RecordSessionState state) {
     final t = context.t.session;
     final messenger = ScaffoldMessenger.of(context);
     messenger.hideCurrentSnackBar();
     messenger.showSnackBar(
       SnackBar(
-        content: Text(line.row.state == StopState.suspended ? t.whySuspended : t.whyClosed),
+        // 임시 운행만 있는 계통은 폐지·운휴가 아니라 그날 임시 열차가 없던 것이다 (사용자 결정 2026-11-19)
+        content: Text(state.isTemporary ? t.tempNoRun : line.row.state == StopState.suspended ? t.whySuspended : t.whyClosed),
         persist: false,
       ),
     );
@@ -245,8 +246,14 @@ class _StopTile extends ConsumerWidget {
     final end = row.seq == state.from?.seq || row.seq == state.to?.seq;
     final mark = ref.watch(stationMarksProvider).of(ref.watch(networkProvider), row.node);
     final tier3 = !row.selectable;
-    final rowHeight = line.small ? 32.0 : (tier3 ? 40.0 : 48.0);
-    final style = tier3
+    // 임시 운행만 있는 계통: 운행일이 아닌 날의 역은 영업 역과 같은 크기의 흐린 원·흐린 이름이다(폐역의 작은 원·「~해」와 다르다).
+    // 끝난 해·운휴 표시는 어느 날에도 붙이지 않는다 (사용자 결정 2026-11-19, 목업 5판)
+    final temp = state.isTemporary;
+    final fade = temp && tier3;
+    final rowHeight = line.small ? 32.0 : (tier3 && !fade ? 40.0 : 48.0);
+    final style = fade
+        ? text.titleMedium?.copyWith(fontWeight: FontWeight.w500, color: tokens.textMuted)
+        : tier3
         ? closedNameStyle(text, tokens)
         : text.titleMedium?.copyWith(fontWeight: end ? FontWeight.w700 : FontWeight.w500, color: tokens.text);
     final nameLocale = japaneseOnlyLocale(name0: state.nameOf(row.node));
@@ -254,7 +261,7 @@ class _StopTile extends ConsumerWidget {
     final lineHeight = scaler.scale((style?.fontSize ?? 16) * (style?.height ?? 1.3));
     final top = ((rowHeight - lineHeight) / 2).clamp(2.0, 24.0);
     final centerY = top + lineHeight / 2;
-    final note = _note(context);
+    final note = temp ? null : _note(context);
     final name = state.nameOf(row.node);
     // 그날 한 방향 열차만 서는 역은 이름 뒤에 화살표 칩을 붙인다 (DESIGN §8 한 방향 정차, 사용자 결정 2026-11-12)
     final oneWay = state.stopDirections[row.seq];
@@ -287,7 +294,7 @@ class _StopTile extends ConsumerWidget {
     final onTransfers = !tier3 && (row.closeYear == null || row.handedTo != null) && line.transfers.isNotEmpty;
     // 1950년 전에 정차가 끝난 역은 열람 전용 역과 같은 꽉 찬 작은 점이다 (사용자 결정 2026-11-08)
     final archived = row.beforeFloor;
-    final circle = archived ? 3.5 : (tier3 ? 4.5 : 8.5);
+    final circle = archived ? 3.5 : (tier3 && !fade ? 4.5 : 8.5);
     final ring = end || picked || mark != StationMark.none
         ? tokens.lineRidden
         : (tier3 ? tokens.textClosed : tokens.text);
@@ -302,7 +309,7 @@ class _StopTile extends ConsumerWidget {
           _ => t.spokenOnlyOneWay,
         },
       if (km != null) t.spokenKm(km: km.toStringAsFixed(1)),
-      if (row.closeYear != null && row.handedTo == null)
+      if (!temp && row.closeYear != null && row.handedTo == null)
         t.spokenClosed(year: row.closeYear!)
       else if (row.suspendedSince != null && (row.state == StopState.suspended || row.state == StopState.unknown))
         t.spokenSuspendedSince(year: row.suspendedSince!)
@@ -325,20 +332,20 @@ class _StopTile extends ConsumerWidget {
       label: spoken,
       excludeSemantics: true,
       child: InkWell(
-        onTap: row.selectable ? () => _tap(context, ref, state) : () => _whyNot(context),
+        onTap: row.selectable ? () => _tap(context, ref, state) : () => _whyNot(context, state),
         child: CustomPaint(
           painter: StopPainter(
             lanes: line.lanes,
             laneStyle: laneStyleOf(tokens),
             endUp: switch (line.endUp) {
               null => null,
-              true => tokens.selectorGone,
-              false => tokens.lineUnridden,
+              true when !temp => tokens.selectorGone,
+              _ => tokens.lineUnridden,
             },
             endDown: switch (line.endDown) {
               null => null,
-              true => tokens.selectorGone,
-              false => tokens.lineUnridden,
+              true when !temp => tokens.selectorGone,
+              _ => tokens.lineUnridden,
             },
             centerY: centerY,
             above: above,
@@ -347,7 +354,7 @@ class _StopTile extends ConsumerWidget {
             fill: archived ? tokens.textClosed : (end || mark == StationMark.stepped ? tokens.lineRidden : tokens.surface),
             background: tokens.surface,
             radius: circle,
-            ringWidth: tier3 ? 2 : 3.5,
+            ringWidth: tier3 && !fade ? 2 : 3.5,
             selected: end,
             selectColor: tokens.lineRidden,
             dots: [
@@ -544,7 +551,9 @@ class _Transfers extends StatelessWidget {
         same.name = '${same.name}·${isJr(link.otherLineId) ? name : _withoutPrefix(name, same.first)}';
       } else {
         out.add(
-          _Entry(name, station, _tail(context, link, gone: item.gone, suspended: item.suspended), gone: item.gone, lineId: link.otherLineId),
+          state.isTemporary
+              ? _Entry(name, station, null, gone: false, lineId: link.otherLineId)
+              : _Entry(name, station, _tail(context, link, gone: item.gone, suspended: item.suspended), gone: item.gone, lineId: link.otherLineId),
         );
       }
     }
@@ -796,7 +805,8 @@ class _EndTile extends ConsumerWidget {
         ? context.t.session.bound(names: nexts.join('·'))
         : nexts.firstOrNull;
     final session = ref.read(recordSessionProvider.notifier);
-    final gone = line.items.every((item) => item.gone);
+    // 임시 운행만 있는 계통의 끝 이어짐(직통)은 상대 노선이 살아 있으면 어느 날에도 살아 있게 그린다 (사용자 결정 2026-11-19)
+    final gone = !state.isTemporary && line.items.every((item) => item.gone);
     final color = gone ? tokens.selectorGoneText : tokens.textMuted;
     // 끝난 이어짐은 분기 줄처럼 끝난 해를 붙인다 (실화면 검수 2026-11-08, 川内의 宮之城線)
     final tail = gone ? _tail(context, first, gone: true, suspended: line.items.first.suspended) : null;
@@ -970,6 +980,8 @@ class _SectionTile extends ConsumerWidget {
         dash: tokens.textClosed,
         lanes: line.lanes,
         laneStyle: laneStyleOf(tokens),
+        stem: switch (line.stem) { null => null, true => tokens.selectorGone, false => tokens.lineUnridden },
+        stemUp: line.gap < 0,
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 4, 12, 4),

@@ -556,10 +556,18 @@ class PlainPainter extends CustomPainter {
     this.centerY = 18,
     this.lanes = const [],
     this.laneStyle,
+    this.stem,
+    this.stemUp = true,
   });
 
   final List<LaneMark> lanes;
   final LaneStyle? laneStyle;
+
+  /// 끝 이어짐 안쪽 구분선 줄을 지나가는 점선 줄기의 색. [stemUp]이면 역이 아래(위쪽 끝 이어짐으로 간다).
+  /// 역 쪽 끝에서 4를 비우고, 줄 높이에 맞춰 박자를 조금 늘여 바깥 끝도 4를 비운다. 다음 끝 이어짐 줄은 박자를 이어 바로 시작해
+  /// 줄 경계에서 점이 겹치거나 벌어지지 않는다 (사용자 결정 2026-11-19)
+  final Color? stem;
+  final bool stemUp;
 
   final TrunkPiece? above;
   final TrunkPiece? below;
@@ -577,6 +585,19 @@ class PlainPainter extends CustomPainter {
       canvas.drawCircle(const Offset(SelectorRuler.trunkX, 0) + Offset(0, centerY), 4.5,
           Paint()..color = color);
     }
+    final through = stem;
+    if (through != null) {
+      const x = SelectorRuler.trunkX;
+      final length = size.height - 4;
+      final count = math.max(1, (length / 7).round());
+      final period = length / count;
+      final on = period * 3 / 7;
+      for (var i = 0; i < count; i++) {
+        final at = 4 + i * period;
+        final y = stemUp ? size.height - at : at;
+        canvas.drawLine(Offset(x, y), Offset(x, stemUp ? y - on : y + on), _stroke(through));
+      }
+    }
     final line = dash;
     if (line != null) {
       for (var x = 20.0; x < size.width - 16; x += 8) {
@@ -587,5 +608,5 @@ class PlainPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(PlainPainter old) =>
-      old.above?.color != above?.color || old.below?.color != below?.color || old.node != node;
+      old.above?.color != above?.color || old.below?.color != below?.color || old.node != node || old.stem != stem || old.stemUp != stemUp;
 }

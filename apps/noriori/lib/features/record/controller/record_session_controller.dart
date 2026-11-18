@@ -62,6 +62,8 @@ final class RecordSessionState {
     this.archiveNames = const {},
     this.archiveAside = const {},
     this.movedNotes = const {},
+    this.tempWindows = const [],
+    this.tempRoutes = const {},
     this.stopDirections = const {},
     this.oneWayGaps = const [],
     this.preview,
@@ -111,6 +113,17 @@ final class RecordSessionState {
 
   /// 이름까지 바뀐 옛 자리의 이전 표시(옛 자리 노드 → 새 역 이름·옮긴 해)
   final Map<String, ({String name, String year})> movedNotes;
+
+  /// 임시 운행만 있는 계통이면 그 운행 토막 [from, to). 비어 있으면 보통 계통이다 (사용자 결정 2026-11-19)
+  final List<({String from, String to})> tempWindows;
+
+  bool get isTemporary => tempWindows.isNotEmpty;
+
+  /// 이 노선의 계통 가운데 임시 운행만 있는 것(칩의 「임시」 표시)
+  final Set<String> tempRoutes;
+
+  /// 고른 날이 임시 열차 운행일인가. 날짜를 모르면 거짓이다
+  bool tempRunsOn(String? day) => day != null && tempWindows.any((w) => w.from.compareTo(day) <= 0 && day.compareTo(w.to) < 0);
 
   /// 그날 한 방향 열차만 서는 역 줄(순번) → 그 행 (DESIGN §8 한 방향 정차).
   final Map<int, NetStopDirection> stopDirections;
@@ -165,6 +178,8 @@ final class RecordSessionState {
     Map<String, String>? archiveNames,
     Map<String, String>? archiveAside,
     Map<String, ({String name, String year})>? movedNotes,
+    List<({String from, String to})>? tempWindows,
+    Set<String>? tempRoutes,
     Map<int, NetStopDirection>? stopDirections,
     List<bool?>? oneWayGaps,
     Expansion? preview,
@@ -192,6 +207,8 @@ final class RecordSessionState {
         archiveNames: archiveNames ?? this.archiveNames,
         archiveAside: archiveAside ?? this.archiveAside,
         movedNotes: movedNotes ?? this.movedNotes,
+        tempWindows: tempWindows ?? this.tempWindows,
+        tempRoutes: tempRoutes ?? this.tempRoutes,
         stopDirections: stopDirections ?? this.stopDirections,
         oneWayGaps: oneWayGaps ?? this.oneWayGaps,
         preview: clearPicks ? null : preview ?? this.preview,
@@ -647,6 +664,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
               if (ja != archiveNames[id]) id: ja,
           };
     final movedNotes = await reader.movedNotes(rows.map((row) => row.node), lineId: state.lineId, date: date?.lo);
+    final tempWindows = await reader.tempWindows(routeId);
+    final tempRoutes = await reader.tempRouteIds();
     // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
     final stopDirections = <int, NetStopDirection>{
       for (final row in visible)
@@ -674,6 +693,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       archiveNames: archiveNames,
       archiveAside: archiveAside,
       movedNotes: movedNotes,
+      tempWindows: tempWindows,
+      tempRoutes: tempRoutes,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
           : PickedPath.of(visible, state.preview!.nodes),
@@ -789,6 +810,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       archiveNames: base.archiveNames,
       archiveAside: base.archiveAside,
       movedNotes: base.movedNotes,
+      tempWindows: base.tempWindows,
+      tempRoutes: base.tempRoutes,
       stopDirections: base.stopDirections,
       oneWayGaps: base.oneWayGaps,
       preview: preview,

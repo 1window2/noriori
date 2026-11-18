@@ -329,6 +329,10 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get cancel => 'Cancel';
 	@override String get main => 'Main line';
 	@override String get pickFrom => 'Pick the departure station';
+	@override String get tempTag => 'Special';
+	@override String get tempNotice => 'No regular passenger trains (special-train days only)';
+	@override String get tempPickDay => 'Pick a special-train day';
+	@override String get tempNoRun => 'No special train ran on this date. Tap a running day above';
 	@override String get pickTo => 'Pick the arrival station';
 	@override String get save => 'Save ride';
 	@override String summary({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km';
@@ -1278,6 +1282,10 @@ extension on TranslationsEn {
 			'session.cancel' => 'Cancel',
 			'session.main' => 'Main line',
 			'session.pickFrom' => 'Pick the departure station',
+			'session.tempTag' => 'Special',
+			'session.tempNotice' => 'No regular passenger trains (special-train days only)',
+			'session.tempPickDay' => 'Pick a special-train day',
+			'session.tempNoRun' => 'No special train ran on this date. Tap a running day above',
 			'session.pickTo' => 'Pick the arrival station',
 			'session.save' => 'Save ride',
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
@@ -1649,12 +1657,12 @@ extension on TranslationsEn {
 			'prefNames.27' => 'Hyogo',
 			'prefNames.28' => 'Nara',
 			'prefNames.29' => 'Wakayama',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.30' => 'Tottori',
 			'prefNames.31' => 'Shimane',
 			'prefNames.32' => 'Okayama',
 			'prefNames.33' => 'Hiroshima',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.34' => 'Yamaguchi',
 			'prefNames.35' => 'Tokushima',
 			'prefNames.36' => 'Kagawa',
