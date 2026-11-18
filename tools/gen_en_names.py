@@ -33,7 +33,8 @@ GENERIC_NAMES=('Main Line','Airport Line','Line 1','Line 2','Connecting Line')
 LINE_ENDS=(('新幹線','しんかんせん','Shinkansen'),('本線','ほんせん','Main Line'),('支線','しせん','Branch Line'),
            ('モノレール線','ものれーるせん','Monorail'),('モノレール','ものれーる','Monorail'),('鋼索線','こうさくせん','Cable Line'),
            ('線','せん','Line'))
-WORDS=(('電気鉄道','でんきてつどう','Electric Railway'),('高速鉄道','こうそくてつどう','Rapid Railway'),('鉄道','てつどう','Railway'),
+# 電気軌道는 電気鉄道와 같이 「Electric Tramway」로 가른다(本庄電気軌道 → Honjodenki Tramway였음, 12회차 M K103 2026-11-18)
+WORDS=(('電気鉄道','でんきてつどう','Electric Railway'),('電気軌道','でんききどう','Electric Tramway'),('高速鉄道','こうそくてつどう','Rapid Railway'),('鉄道','てつどう','Railway'),
        ('電鉄','でんてつ','Electric Railway'),('軌道','きどう','Tramway'),('急行','きゅうこう','Kyuko'),('空港','くうこう','Airport'),
        ('連絡','れんらく','Connecting'),('短絡','たんらく','Connecting'))
 LATIN={'A':'えー','B':'びー','C':'しー','D':'でぃー','E':'いー','F':'えふ','G':'じー','H':'えいち','I':'あい','J':'じぇい','K':'けい',

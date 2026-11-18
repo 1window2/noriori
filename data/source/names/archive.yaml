@@ -2195,6 +2195,93 @@
 - {"entity_type": "archive", "id": "a_sano_tajima_tobu_sanoshi", "lang": "ja", "text": "越名", "kana": null, "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_sano_tajima_tobu_sanoshi", "lang": "ko", "text": "越名", "source": "ja_as_is", "checked": "2026-11-18"}
 - {"entity_type": "archive", "id": "a_sano_tajima_tobu_sanoshi", "lang": "en", "text": "越名", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_oshimakaigan_railway", "lang": "ja", "text": "渡島海岸鉄道", "kana": "おしまかいがんてつどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_oshimakaigan_railway", "lang": "ko", "text": "오시마카이간 철도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_oshimakaigan_railway", "lang": "en", "text": "Oshimakaigan Railway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yoichirinko_tramway", "lang": "ja", "text": "余市臨港軌道", "kana": "よいちりんこうきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yoichirinko_tramway", "lang": "ko", "text": "요이치 임항궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_yoichirinko_tramway", "lang": "en", "text": "Yoichirinko Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_muramatsu_tramway", "lang": "ja", "text": "村松軌道", "kana": "むらまつきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_muramatsu_tramway", "lang": "ko", "text": "무라마츠 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_muramatsu_tramway", "lang": "en", "text": "Muramatsu Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_seibuomiya_line", "lang": "ja", "text": "西武大宮線", "kana": "せいぶおおみやせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_seibuomiya_line", "lang": "ko", "text": "세이부오미야선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_seibuomiya_line", "lang": "en", "text": "Seibuomiya Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_honjo_electric_tramway", "lang": "ja", "text": "本庄電気軌道", "kana": "ほんじょうでんききどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_honjo_electric_tramway", "lang": "ko", "text": "혼조 전기궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_honjo_electric_tramway", "lang": "en", "text": "Honjo Electric Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_seiso_electric_tramway", "lang": "ja", "text": "成宗電気軌道", "kana": "せいそうでんききどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_seiso_electric_tramway", "lang": "ko", "text": "세이소 전기궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_seiso_electric_tramway", "lang": "en", "text": "Seiso Electric Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_sapporo_tramway", "lang": "ja", "text": "札幌軌道", "kana": "さっぽろきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_sapporo_tramway", "lang": "ko", "text": "삿포로 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_sapporo_tramway", "lang": "en", "text": "Sapporo Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_jonan_electric_railway", "lang": "ja", "text": "常南電気鉄道", "kana": "じょうなんでんきてつどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_jonan_electric_railway", "lang": "ko", "text": "조난 전기철도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_jonan_electric_railway", "lang": "en", "text": "Jonan Electric Railway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_choshiyuran_railway", "lang": "ja", "text": "銚子遊覧鉄道", "kana": "ちょうしゆうらんてつどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_choshiyuran_railway", "lang": "ko", "text": "초시유란 철도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_choshiyuran_railway", "lang": "en", "text": "Choshiyuran Railway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_omori_branch_line", "lang": "ja", "text": "大森支線", "kana": "おおもりしせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_omori_branch_line", "lang": "ko", "text": "오모리 지선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_omori_branch_line", "lang": "en", "text": "Omori Branch Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_agatsuma_tramway", "lang": "ja", "text": "吾妻軌道", "kana": "あがつまきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_agatsuma_tramway", "lang": "ko", "text": "아가츠마 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_agatsuma_tramway", "lang": "en", "text": "Agatsuma Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_musashichuo_electric_railway", "lang": "ja", "text": "武蔵中央電気鉄道", "kana": "むさしちゅうおうでんきてつどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_musashichuo_electric_railway", "lang": "ko", "text": "무사시츄오 전기철도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_musashichuo_electric_railway", "lang": "en", "text": "Musashichuo Electric Railway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_iwamura_electric_tramway", "lang": "ja", "text": "岩村電気軌道", "kana": "いわむらでんききどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_iwamura_electric_tramway", "lang": "ko", "text": "이와무라 전기궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_iwamura_electric_tramway", "lang": "en", "text": "Iwamura Electric Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_higashitsukiji_line", "lang": "ja", "text": "東築地線", "kana": "ひがしつきじせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_higashitsukiji_line", "lang": "ko", "text": "히가시츠키지선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_higashitsukiji_line", "lang": "en", "text": "Higashitsukiji Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_daibutsu_line", "lang": "ja", "text": "大仏線", "kana": "だいぶつせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_daibutsu_line", "lang": "ko", "text": "다이부츠선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_daibutsu_line", "lang": "en", "text": "Daibutsu Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kiyamachi_line", "lang": "ja", "text": "木屋町線", "kana": "きやまちせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kiyamachi_line", "lang": "ko", "text": "키야마치선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_kiyamachi_line", "lang": "en", "text": "Kiyamachi Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nakadachiuri_line", "lang": "ja", "text": "中立売線", "kana": "なかだちうりせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nakadachiuri_line", "lang": "ko", "text": "나카다치우리선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_nakadachiuri_line", "lang": "en", "text": "Nakadachiuri Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_demachi_line", "lang": "ja", "text": "出町線", "kana": "でまちせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_demachi_line", "lang": "ko", "text": "데마치선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_demachi_line", "lang": "en", "text": "Demachi Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_oike_line", "lang": "ja", "text": "御池線", "kana": "おいけせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_oike_line", "lang": "ko", "text": "오이케선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_oike_line", "lang": "en", "text": "Oike Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_hase_line", "lang": "ja", "text": "長谷線", "kana": "はせせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_hase_line", "lang": "ko", "text": "하세선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_hase_line", "lang": "en", "text": "Hase Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_okura_line", "lang": "ja", "text": "大蔵線", "kana": "おおくらせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_okura_line", "lang": "ko", "text": "오쿠라선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_okura_line", "lang": "en", "text": "Okura Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_iwakuni_electric_tramway", "lang": "ja", "text": "岩国電気軌道", "kana": "いわくにでんききどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_iwakuni_electric_tramway", "lang": "ko", "text": "이와쿠니 전기궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_iwakuni_electric_tramway", "lang": "en", "text": "Iwakuni Electric Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_matsuyama_electric_tramway", "lang": "ja", "text": "松山電気軌道", "kana": "まつやまでんききどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_matsuyama_electric_tramway", "lang": "ko", "text": "마츠야마 전기궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_matsuyama_electric_tramway", "lang": "en", "text": "Matsuyama Electric Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_tanoura_line", "lang": "ja", "text": "田ノ浦線", "kana": "たのうらせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_tanoura_line", "lang": "ko", "text": "타노우라선", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_tanoura_line", "lang": "en", "text": "Tanoura Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_asakura_tramway", "lang": "ja", "text": "朝倉軌道", "kana": "あさくらきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_asakura_tramway", "lang": "ko", "text": "아사쿠라 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_asakura_tramway", "lang": "en", "text": "Asakura Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_chuo_tramway", "lang": "ja", "text": "中央軌道", "kana": "ちゅうおうきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_chuo_tramway", "lang": "ko", "text": "츄오 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_chuo_tramway", "lang": "en", "text": "Chuo Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nanchiku_tramway", "lang": "ja", "text": "南筑軌道", "kana": "なんちくきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nanchiku_tramway", "lang": "ko", "text": "난치쿠 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_nanchiku_tramway", "lang": "en", "text": "Nanchiku Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_mizuma_tramway", "lang": "ja", "text": "三潴軌道", "kana": "みづまきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_mizuma_tramway", "lang": "ko", "text": "미즈마 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_mizuma_tramway", "lang": "en", "text": "Mizuma Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yanagawa_tramway", "lang": "ja", "text": "柳河軌道", "kana": "やながわきどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yanagawa_tramway", "lang": "ko", "text": "야나가와 궤도", "source": "rule", "checked": "2026-11-18"}
+- {"entity_type": "archive", "id": "a_yanagawa_tramway", "lang": "en", "text": "Yanagawa Tramway", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ja", "text": "北見鉄道", "kana": "きたみてつどう", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ko", "text": "키타미 철도", "source": "rule", "checked": "2026-11-18"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "en", "text": "Kitami Railway", "source": "rule"}

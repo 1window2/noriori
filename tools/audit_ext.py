@@ -1438,7 +1438,7 @@ put('K102 위키 노선도 연도 없는 폐역 행을 같은 이름 이웃 역�
 # 수록 밖 유형(DESIGN §4.1: 馬車鉄道·人車軌道·森林鉄道·専用線·貨物線·簡易軌道·無軌条電車 등)은 규칙으로 거른다. 판정이 다 붙기 전이라 지금은 경고다
 import glob as _glob
 _al=sorted(_glob.glob(os.path.join(ROOT,'data','imports','wiki_lists','abolished_lines_*.wikitext')))
-K103Q=[];k103c=collections.Counter()
+K103Q=[];K103W=[];k103c=collections.Counter()
 if _al:
     _t=open(_al[-1],encoding='utf-8').read()
     _OUT=re.compile(r'馬車|人車|森林鉄道|専用鉄道|専用線|専用軌道|簡易軌道|殖民軌道|無軌条|トロリーバス|貨物線|貨物専用|軍用線|工事軌道|砂利|会場内')
@@ -1460,10 +1460,15 @@ if _al:
         if _keys(_ti)&_idx:k103c['DB에 있음']+=1;continue
         if _OUT.search(_ln):k103c['수록 밖 유형']+=1;continue
         _j=MR.get('lines',{}).get(_ti)
-        if _j:k103c[_j['verdict']]+=1;continue
+        if _j:
+            k103c[_j['verdict']]+=1
+            if _j['verdict']!='정상':K103W.append((_pref,_ti,_j['verdict']))
+            continue
         K103Q.append(dict(pref=_pref,title=_ti,line=_ln.strip()))
     json.dump(K103Q,open(os.path.join(B,'k103_queue.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
-put('K103 위키 폐선 목록 항목이 DB·열람 전용·판정표에 없음(노선째 빠졌을 수 있음, 판정 진행 중)',[(x['pref'],x['title'],x['line'][:60]) for x in K103Q],60,lvl='warn')
+# 판정이 다 붙어(12회차 M, 갈래 셋) 판정 없는 항목은 오류다. 근거 부족·추가 대기는 재조사 대상이라 경고로 남긴다
+put('K103 위키 폐선 목록 항목이 DB·열람 전용·판정표에 없음(노선째 빠졌을 수 있음)',[(x['pref'],x['title'],x['line'][:60]) for x in K103Q],60,lvl='err')
+put('K103 위키 폐선 목록 판정이 근거 부족·추가 대기(재조사 중)',K103W,60,lvl='warn')
 put('K103 위키 폐선 목록 판정 갈래별 건수',sorted(k103c.items()),20)
 # ---- K142 근거 표 없는 여객 직통 후보 (10회차 D1, 전수 점검 4회차 일반화 요청) ----
 # 같은 역 묶음(group)의 두 노선이 그 역에서 환승으로만 이어진 쌍(노드가 같든 다르든)마다, 두 노선 위키 문서 본문에서 상대 노선 이름 앞뒤 80자 안에
