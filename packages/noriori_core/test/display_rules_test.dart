@@ -401,10 +401,26 @@ void main() {
       expect(out.whereType<BranchLine>(), isEmpty);
     });
 
+    // 끝 역 너머 폐지 구간이 한 역뿐이면 구분선 없이 그 역 줄에 폐지 해를 보인다 (사용자 결정 2026-11-18, 京王線 東八王子·宗谷本線 稚内桟橋)
+    test('끝 역 너머 폐역이 한 역뿐이면 구분선을 두지 않고 그 역의 폐지 해를 보인다', () {
+      final bottom = lines(
+        [row(0, 'a'), row(1, 'b'), row(2, 'c', closeYear: '1963')],
+        open: const [true, false],
+      );
+      expect(bottom.whereType<SectionLine>(), isEmpty);
+      expect(bottom.whereType<StopLine>().firstWhere((l) => l.row.node == 'c').quiet, isFalse);
+      final top = lines(
+        [row(0, 'z', closeYear: '1950'), row(1, 'a'), row(2, 'b')],
+        open: const [false, true],
+      );
+      expect(top.whereType<SectionLine>(), isEmpty);
+      expect(top.whereType<StopLine>().firstWhere((l) => l.row.node == 'z').quiet, isFalse);
+    });
+
     test('영업 구간과 폐지 구간의 경계에 구분선이 있다', () {
       final out = lines(
-        [row(0, 'a'), row(1, 'b'), row(2, 'c', closeYear: '2020')],
-        open: const [true, false],
+        [row(0, 'a'), row(1, 'b'), row(2, 'c', closeYear: '2020'), row(3, 'd', closeYear: '2020')],
+        open: const [true, false, false],
       );
       final section = out.whereType<SectionLine>().single;
       expect(section.gap, 1);
@@ -456,7 +472,7 @@ void main() {
       final gone = lines([handed(0, 'a'), handed(1, 'b'), handed(2, 'c')], open: const [false, false]);
       expect([for (final s in gone.whereType<SectionLine>()) s.gap], [-1]);
       // 이어받은 노선이 아직 서는 역도 계통 맨 끝이면 그 아래 구간이 없어 끝 구분선을 두지 않는다 (信越本線 横川–軽井沢를 끝에서 자른 꼴)
-      final kept = lines([row(0, 'a', closeYear: '1997', state: StopState.closed), handed(1, 'b', ended: false)], open: const [false]);
+      final kept = lines([row(0, 'a0', closeYear: '1997', state: StopState.closed), row(1, 'a', closeYear: '1997', state: StopState.closed), handed(2, 'b', ended: false)], open: const [false, false]);
       expect([for (final s in kept.whereType<SectionLine>()) s.gap], [-1]);
     });
 
@@ -498,11 +514,12 @@ void main() {
     test('어느 구분선도 역과 그 역의 끝 이어짐 사이에 끼지 않는다', () {
       final out = lines(
         [
-          row(0, 'a', closeYear: '1980'),
-          row(1, 'b', links: [link('continue', 'x', seq: 1, next: 'p')]),
-          row(2, 'c'),
+          row(0, 'a0', closeYear: '1980'),
+          row(1, 'a', closeYear: '1980'),
+          row(2, 'b', links: [link('continue', 'x', seq: 2, next: 'p')]),
+          row(3, 'c'),
         ],
-        open: const [false, true],
+        open: const [false, false, true],
       );
       final end = out.indexWhere((line) => line is EndLine && line.up);
       final stop = out.indexWhere((line) => line is StopLine && line.row.node == 'b');
@@ -643,12 +660,12 @@ void main() {
     });
 
     test('날짜를 모르면 줄기는 그대로 두고 구분선만 오늘 기준으로 그린다', () {
-      final rows = [row(0, 'a'), row(1, 'b', closeYear: '1990', state: StopState.unknown)];
+      final rows = [row(0, 'a'), row(1, 'b', closeYear: '1990', state: StopState.unknown), row(2, 'c', closeYear: '1990', state: StopState.unknown)];
       final lines = rules.lines(
         lineId: 'l',
         rows: rows,
-        openGaps: const [true],
-        sectionGaps: const [false],
+        openGaps: const [true, true],
+        sectionGaps: const [false, false],
         options: options,
         undated: true,
       );

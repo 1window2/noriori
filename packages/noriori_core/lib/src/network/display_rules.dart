@@ -786,6 +786,19 @@ final class DisplayRules {
     // 그 역 위에 온다 (11회차 시뮬레이터 시험)
     bool alive(SelectorRow row) => aliveOn(row);
     final topClosed = gaps.isNotEmpty && !gaps.first && !alive(rows.first);
+    // 끝 역 너머 폐지 구간이 노드 한 역뿐이고 그 너머에 열람 전용 역도 없으면 구분선을 두지 않는다. 열람 전용 한 역(宗谷本線 稚内桟橋)과 같은 규칙이다
+    // (사용자 결정 2026-11-18 「한 역에는 폐지 구간 점선을 그리지 않는다」를 노드 폐역에도: 京王線 東八王子). 대신 그 역 줄에 폐지 해를 보인다
+    final aliveIdx = [for (final (i, r) in rows.indexed) if (alive(r)) i];
+    final loneBottom = aliveIdx.isNotEmpty &&
+        aliveIdx.last == rows.length - 2 &&
+        aliveIdx.last < gaps.length &&
+        !gaps[aliveIdx.last] &&
+        (places[rows.length - 1] ?? const <ArchiveStop>[]).isEmpty;
+    final loneTop = aliveIdx.isNotEmpty &&
+        aliveIdx.first == 1 &&
+        topClosed &&
+        (places[-1] ?? const <ArchiveStop>[]).isEmpty &&
+        (places[0] ?? const <ArchiveStop>[]).isEmpty;
     // 확장 행 옆 칸은 폐지 연도도 이웃 칸을 따른다. 확장 역 자신의 폐역 해로 새 폐지 단계가 생기지 않게 한다 (広井町線 菊井町)
     final yearOf = _closedYears(rows, gaps, sectionEnds);
     for (var index = 0; index < gaps.length; index++) {
@@ -909,11 +922,11 @@ final class DisplayRules {
         if (fence) out.add(SectionLine(gap: -1, lanes: pass()));
       }
       // 구분선은 끝 이어짐 줄 바깥에 둔다. 역과 끝 이어짐 사이에 끼면 점선 줄기가 끊긴다 (실화면 검수 2026-11-09, 肥前吉井)
-      if (index == 0 && topClosed) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
+      if (index == 0 && topClosed && !loneTop) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
       // 폐지·운휴 구간이 지금 역에서 끝나면 끝 구분선을 그 역 위에 둔다. 아래에 두면 지금 역이 구간 안에 든다 (常磐線 新地~山下 이설).
       // 구간이 역 사이 한 칸뿐이면 시작 구분선과 같은 자리라 하나만 둔다
       final endsHere = endsAt(rows, gaps, index, alive: alive);
-      if (endsHere && !(index == 1 ? !topClosed : gaps[index - 2])) out.add(SectionLine(gap: index - 1, lanes: pass()));
+      if (endsHere && !(index == 1 ? !topClosed : gaps[index - 2]) && !(loneTop && index == 1)) out.add(SectionLine(gap: index - 1, lanes: pass()));
       out.addAll(upEnds);
       if (isFirst) {
         final ends = upEnds;
@@ -989,7 +1002,9 @@ final class DisplayRules {
           branchUpGone: ups.isNotEmpty && ups.every((item) => item.gone),
           branchDownGone: (downs.isNotEmpty || old.isNotEmpty) && downs.every((item) => item.gone),
           // 개업 전 역의 「1951~」는 구분선 해와 같아도 지우지 않는다(지우면 개업 전인지 알 수 없다, 11회차 시뮬레이터 시험 秋田駅前)
-          quiet: row.closeYear != null &&
+          quiet: !(loneTop && index == 0) &&
+              !(loneBottom && index == rows.length - 1) &&
+              row.closeYear != null &&
               row.state != StopState.beforeOpen &&
               (row.closeYear == yearOf[index - 1] || row.closeYear == yearOf[index]),
           returnsTo: closedRoute && rows.take(index).any((earlier) => earlier.node == row.node)
@@ -1081,7 +1096,7 @@ final class DisplayRules {
         // 날짜를 고른 화면의 개업 전 구간은 개업 해마다 단계다(浅草線 1960년: 1968·1964·1963 개업)
         final opensAbove = index == 0 ? (topClosed ? opensAt(0) : null) : opensAt(index - 1);
         // 폐지 단계마다 구분선과 날짜를 둔다 (DESIGN §8)
-        if (!endsHere && (below != above || (!below && (yearOf[index] != yearAbove || opensAt(index) != opensAbove)))) {
+        if (!endsHere && !(loneBottom && index == rows.length - 2) && (below != above || (!below && (yearOf[index] != yearAbove || opensAt(index) != opensAbove)))) {
           out.add(SectionLine(
             gap: index,
             year: below ? null : yearOf[index],
