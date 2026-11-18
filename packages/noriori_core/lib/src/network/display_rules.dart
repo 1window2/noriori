@@ -354,6 +354,11 @@ final class DisplayRules {
   /// 그날 있던 연결이라도 상대 노선이 그 역에서 오늘 영업하지 않으면 폐선 색이다.
   /// 끝난 날은 이 노선과의 연결이 끝난 날이 아니라 상대 계통의 그 역 정차가 끝난 날이다.
   /// 이관으로 이 노선 쪽 연결만 끝난 경우(2020년의 金沢 北陸新幹線)를 흐리게 그리지 않는다 (실화면 검수 2026-11-08)
+  /// 연결·병주가 「없어졌는가」를 가르는 날. 날짜를 고른 화면은 그 날(범위의 첫날), 아니면 오늘이다.
+  /// 예전에는 늘 오늘이라, 1990년 名鉄岐阜市内線처럼 지금은 없는 노선을 그 시절로 보면 그날 영업한 연결도 흐리게 「~2005」로 나왔다 (2026-11-18)
+  String? _viewDay;
+  String get _day => _viewDay ?? today;
+
   bool _gone(SelectorLink link, {required bool onDate, required String node}) {
     if (!onDate) return true;
     final route = link.otherRouteId;
@@ -368,10 +373,10 @@ final class DisplayRules {
         if (to == null || to.compareTo(DateSpan.maxDate) >= 0) return false;
         if (end == null || to.compareTo(end) > 0) end = to;
       }
-      if (found) return end!.compareTo(today) <= 0;
+      if (found) return end!.compareTo(_day) <= 0;
     }
     final end = link.validToHi;
-    return end != null && end.compareTo(today) <= 0;
+    return end != null && end.compareTo(_day) <= 0;
   }
 
   /// (노선, 노드)마다 지금도 운휴 중인 그 노선 칸이 운휴에 들어간 날들. 운휴가 끝나지 않은(또는 오늘 뒤에 끝나는) 칸만 본다
@@ -434,15 +439,19 @@ final class DisplayRules {
     // 사슬은 가장 늦게 끝나는 토막부터 잇는다. 앞 토막이 먼저 앞 노선을 가져가면 최신 토막에 앞 노선이 안 붙는다
     // (上田 しなの鉄道線: 1997–2019 토막이 信越本線을 가져가 날짜 모름 화면에서 信越本線이 사라짐, 10회차 G1 chubu_1-005)
     String endOf(DisplayLink item) => item.link.validToHi ?? DateSpan.maxDate;
-    final order = [...items]..sort((a, b) => endOf(b).compareTo(endOf(a)));
+    // 그날 있는 토막이 먼저다. 날짜를 고른 화면에서 가장 늦게 끝나는 토막이 그날 없던 것이면 그날 토막이 거기 묶여 흐리게 그려졌다
+    // (名鉄岐阜市内線 1990 徹明町: 美濃町線 1988–1999 직통이 1999–2005 토막에 묶임, 2026-11-18). 오늘 화면은 지금 토막이 가장 늦게 끝나 순서가 같다
+    final order = [...items]..sort((a, b) => a.gone != b.gone ? (a.gone ? 1 : -1) : endOf(b).compareTo(endOf(a)));
     final built = <DisplayLink, DisplayLink>{};
     for (final item in order) {
       if (taken.contains(item)) continue;
       // 두 번 이상 이관되면 옛 이름을 시간 순으로 쌓는다
       final earlier = <DisplayLink>[];
       final pieces = <DisplayLink>[];
+      // 이미 대표로 뽑힌 토막은 다시 묶지 않는다. 그날 토막이 먼저 뽑힌 뒤 그날 없던 늦은 토막에 묶여 지워졌다 (名鉄岐阜市内線 1990 徹明町)
       bool fresh(DisplayLink other) =>
           !identical(other, item) &&
+          !built.containsKey(other) &&
           !earlier.contains(other) &&
           !pieces.contains(other) &&
           !taken.contains(other) &&
@@ -697,14 +706,55 @@ final class DisplayRules {
     List<ParallelRun> parallels = const [],
     DateSpan? date,
   }) {
+    // 그리는 동안만 그 화면의 날을 기준으로 삼는다. 끝나면 오늘로 되돌려 다른 호출(환승 캡슐 등)에 남지 않게 한다
+    _viewDay = date?.lo;
+    try {
+      return _linesOn(
+        lineId: lineId,
+        rows: rows,
+        openGaps: openGaps,
+        options: options,
+        closedRoute: closedRoute,
+        archiveStops: archiveStops,
+        archiveBranches: archiveBranches,
+        sectionGaps: sectionGaps,
+        sectionEnds: sectionEnds,
+        undated: undated,
+        parallels: parallels,
+        date: date,
+      );
+    } finally {
+      _viewDay = null;
+    }
+  }
+
+  List<SelectorLine> _linesOn({
+    required String lineId,
+    required List<SelectorRow> rows,
+    required List<bool> openGaps,
+    required DisplayOptions options,
+    required bool closedRoute,
+    required List<ArchiveStop> archiveStops,
+    required List<ArchiveBranch> archiveBranches,
+    required List<bool>? sectionGaps,
+    required List<SectionEnd>? sectionEnds,
+    required bool undated,
+    required List<ParallelRun> parallels,
+    required DateSpan? date,
+  }) {
     final archive = options.showClosed && options.showArchive;
     final places = _place(rows, archive ? archiveStops : const []);
     final out = <SelectorLine>[];
     // 끝 이어짐의 기준은 마지막 현행 역이다. 뒤에 폐지 구간이 있어도 유지한다 (DESIGN §8.1)
     // 이관된 역은 이어받은 노선이 서는 지금 역이다. 이관 구간 앞 역에서 갈라지는 노선은 끝 이어짐이 아니라 분기다 (DESIGN §8.0.1 B안)
+    // 날짜를 고른 화면은 그날 영업한 역이 기준이다. 오늘 기준이면 지금은 없는 노선(名鉄岐阜市内線 1990, 끝 역 徹明町)에서
+    // 끝 역을 못 찾아 끝 이어짐(직통 美濃町線)이 분기로 그려졌다 (2026-11-18, 사례가 아니라 규칙으로)
+    bool aliveOn(SelectorRow row) => date == null
+        ? row.current
+        : const [StopState.open, StopState.maybe, StopState.suspended].contains(row.state);
     final current = [
       for (final (index, row) in rows.indexed)
-        if (row.current) index,
+        if (aliveOn(row)) index,
     ];
     final first = current.isEmpty ? 0 : current.first;
     final last = current.isEmpty ? rows.length - 1 : current.last;
@@ -734,9 +784,7 @@ final class DisplayRules {
     // 첫 역이 지금 역이면 그 역은 폐지 구간 밖이라 아래에 둔다
     // 날짜를 고른 화면에서는 그날 영업한 역도 구간 밖이다. 1950년 秋田市内線 県庁前(1963 폐역)은 그날 영업해, 개업 전 구간의 끝 구분선이
     // 그 역 위에 온다 (11회차 시뮬레이터 시험)
-    bool alive(SelectorRow row) => date == null
-        ? row.current
-        : const [StopState.open, StopState.maybe, StopState.suspended].contains(row.state);
+    bool alive(SelectorRow row) => aliveOn(row);
     final topClosed = gaps.isNotEmpty && !gaps.first && !alive(rows.first);
     // 확장 행 옆 칸은 폐지 연도도 이웃 칸을 따른다. 확장 역 자신의 폐역 해로 새 폐지 단계가 생기지 않게 한다 (広井町線 菊井町)
     final yearOf = _closedYears(rows, gaps, sectionEnds);
@@ -765,7 +813,7 @@ final class DisplayRules {
       final to = rows.indexWhere((row) => row.seq == run.toSeq);
       if (from < 0 || to <= from) continue;
       final end = run.validToHi;
-      var gone = end != null && end.compareTo(today) <= 0;
+      var gone = end != null && end.compareTo(_day) <= 0;
       if (date != null && (run.validFromLo ?? '0000').compareTo(date.hi) > 0) continue;
       if (date != null && end != null && end.compareTo(date.lo) <= 0) {
         final later = rows.sublist(from, to + 1).any((row) => [...row.links, ...row.goneLinks].any((link) =>

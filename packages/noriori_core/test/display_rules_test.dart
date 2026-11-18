@@ -751,7 +751,9 @@ void main() {
       expect(lines.whereType<TransferLine>().single.lineId, 'l_x');
     });
 
-    test('시기별 끝 역의 직통은 뒤 구간이 보이면 분기, 숨으면 끝 이어짐이다 (金沢 2015–2024)', () {
+    // 날짜를 고른 화면도 그날의 끝 역이 기준이다. 끝 역 너머 구간이 보여도 직통은 분기가 아니라 끝 이어짐(어깨로 비켜 곧게)이다.
+    // 예전에는 날짜 화면이 오늘 기준 끝 역을 써서 분기로 그렸다(名鉄岐阜市内線 1990 徹明町의 美濃町線, 사용자 규칙 2026-11-18)
+    test('시기별 끝 역의 직통은 뒤 구간이 보여도 숨어도 끝 이어짐이다 (金沢 2015–2024)', () {
       final rows = [
         row(0, 'a'),
         row(1, 'b', closeYear: '2024', handedTo: 'l_x', handedOn: '2024-03-16', links: [
@@ -761,8 +763,8 @@ void main() {
       ];
       final date = DateSpan.parse('2020-01-01');
       final shown = rules.lines(lineId: 'l', rows: rows, openGaps: const [true, false], options: options, date: date);
-      expect(shown.whereType<EndLine>(), isEmpty);
-      expect([for (final b in shown.whereType<BranchLine>()) (b.at.node, b.up)], [('b', false)]);
+      expect(shown.whereType<BranchLine>(), isEmpty);
+      expect([for (final e in shown.whereType<EndLine>()) (e.at.node, e.up)], [('b', false)]);
       const hide = DisplayOptions(showClosed: false);
       final kept = rules.visible(rows, hide);
       expect([for (final r in kept) r.node], ['a', 'b']);

@@ -246,10 +246,10 @@ class _StopTile extends ConsumerWidget {
     final mark = ref.watch(stationMarksProvider).of(ref.watch(networkProvider), row.node);
     final tier3 = !row.selectable;
     final rowHeight = line.small ? 32.0 : (tier3 ? 40.0 : 48.0);
-    final style = text.titleMedium?.copyWith(
-      fontWeight: tier3 ? FontWeight.w400 : (end ? FontWeight.w700 : FontWeight.w500),
-      color: tier3 ? tokens.textClosed : tokens.text,
-    );
+    final style = tier3
+        ? closedNameStyle(text, tokens)
+        : text.titleMedium?.copyWith(fontWeight: end ? FontWeight.w700 : FontWeight.w500, color: tokens.text);
+    final nameLocale = japaneseOnlyLocale(name0: state.nameOf(row.node));
     final scaler = MediaQuery.textScalerOf(context);
     final lineHeight = scaler.scale((style?.fontSize ?? 16) * (style?.height ?? 1.3));
     final top = ((rowHeight - lineHeight) / 2).clamp(2.0, 24.0);
@@ -390,10 +390,10 @@ class _StopTile extends ConsumerWidget {
                         final besideName = aside == null || _fitsAfter(
                           context,
                           TextSpan(children: [
-                            TextSpan(text: name, style: style),
+                            TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (past != null) TextSpan(text: ' ${past.label}', style: text.labelSmall),
                           ]),
-                          TextSpan(text: '  $aside', style: asideStyle, locale: const Locale('ja')),
+                          TextSpan(text: '  $aside', style: japaneseStyle(asideStyle), locale: const Locale('ja')),
                           box.maxWidth,
                           // 한 방향 칩은 글자 폭으로 잴 수 없어 넉넉히 더한다
                           extra: oneWay == null ? 0 : 72 * MediaQuery.textScalerOf(context).scale(1),
@@ -401,7 +401,7 @@ class _StopTile extends ConsumerWidget {
                         return Text.rich(
                         TextSpan(
                           children: [
-                            TextSpan(text: name, style: style),
+                            TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (oneWay != null)
                               WidgetSpan(
                                 alignment: PlaceholderAlignment.middle,
@@ -421,7 +421,7 @@ class _StopTile extends ConsumerWidget {
                               TextSpan(
                                 text: besideName ? '  $aside' : '\n$aside',
                                 locale: const Locale('ja'),
-                                style: asideStyle,
+                                style: japaneseStyle(asideStyle),
                               ),
                           ],
                         ),
@@ -883,7 +883,7 @@ class _ArchiveTile extends ConsumerWidget {
     final year = context.t.session.state.until(year: stop.closedYear);
     final message = context.t.session.archiveStop(name: name, year: stop.closedYear);
     final km = stop.km;
-    final style = text.bodyMedium?.copyWith(color: tokens.textClosed);
+    final style = closedNameStyle(text, tokens);
     return InkWell(
       onTap: () => ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message), persist: false),
@@ -906,8 +906,13 @@ class _ArchiveTile extends ConsumerWidget {
                 Expanded(
                   child: Text.rich(
                     TextSpan(children: [
-                      TextSpan(text: name, style: style),
-                      if (aside != null) TextSpan(text: '  $aside', style: text.bodySmall?.copyWith(color: tokens.textClosed)),
+                      TextSpan(
+                        text: name,
+                        style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
+                        locale: japaneseOnlyLocale(name0: name),
+                      ),
+                      if (aside != null)
+                        TextSpan(text: '  $aside', style: japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed)), locale: const Locale('ja')),
                     ]),
                   ),
                 ),
@@ -1130,6 +1135,35 @@ class _OneWayChip extends StatelessWidget {
 }
 
 /// [tail]이 [head] 마지막 줄의 남은 자리에 통째로 들어가는가. 화면과 같은 글자 배율로 잰다.
+/// 기록할 수 없는 폐역 줄과 열람 전용 역 줄의 이름은 같은 글자다. 예전에는 역 줄 16px·열람 전용 줄 14px로 갈려
+/// 한 노선 일람에서 폐역 글씨 크기가 제각각이었다 (西鉄 甘木線 将軍梅前·富安, 사용자 지적 2026-11-18)
+TextStyle? closedNameStyle(TextTheme text, AppTokens tokens) =>
+    text.titleMedium?.copyWith(fontWeight: FontWeight.w400, color: tokens.textClosed);
+
+final _hangul = RegExp(r'[\uAC00-\uD7A3\u3131-\u318E]');
+final _kanjiKana = RegExp(r'[\u3040-\u30FF\u3400-\u9FFF]');
+
+/// 한국어·영어 이름이 없어 일본어 표기 그대로 보이는 이름은 일본어 글꼴 모양으로 그린다. 앱 글꼴(Pretendard)에 한자가 없어
+/// 로캘 없이 그리면 시스템 대체 글꼴(중국어 모양)이 골라져 한글 이름보다 크고 모양이 다르다 (2026-11-18)
+Locale? japaneseOnlyLocale({required String name0}) =>
+    _kanjiKana.hasMatch(name0) && !_hangul.hasMatch(name0) ? const Locale('ja') : null;
+
+/// 일본어 글자(일본어로만 보이는 이름, 이름 옆 일본어·읽기)는 한 일본어 글꼴로, 한글과 같아 보이는 크기로 그린다.
+/// 앱 글꼴 Pretendard에는 한국 표준 한자(KS X 1001)만 있어, 競·馬·場·前은 Pretendard 한자(한글과 같은 크기, 약 0.87em)로,
+/// 将·国·蛍 같은 일본 신자체는 시스템 일본어 글꼴(1em)로 섞여 그려졌다. 그래서 같은 일본어 이름인 競馬場前과 将軍梅前의 크기가 달랐다
+/// (西鉄 甘木線, 사용자 지적 2026-11-18: 일본어만 있는 이름은 한국어 역 이름과 같은 크기). 줄 높이는 원래 글자와 같게 두어 줄기 정렬이 그대로다
+const _jaScale = 0.875;
+TextStyle? japaneseStyle(TextStyle? base) {
+  if (base == null) return null;
+  final size = base.fontSize ?? 14;
+  return base.copyWith(
+    fontFamily: 'Hiragino Sans',
+    fontFamilyFallback: const ['Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'Noto Sans JP'],
+    fontSize: size * _jaScale,
+    height: (base.height ?? 1.3) / _jaScale,
+  );
+}
+
 bool _fitsAfter(BuildContext context, InlineSpan head, InlineSpan tail, double width, {double extra = 0}) {
   TextPainter paint(InlineSpan span, double max) => TextPainter(
         text: span,
