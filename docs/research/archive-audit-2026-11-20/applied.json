@@ -1,0 +1,562 @@
+{
+ "stop_closed": {
+  "a_tsurumi_tsurumi_kokudo": {
+   "date": "1942-12-12",
+   "why": "ja.wikipedia 「本山駅 (神奈川県)」 oldid=110474318 역 문서 연혁(중간): 폐지 1942-12-12 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hitachinakasato": {
+   "date": "1941-08-01",
+   "why": "ja.wikipedia 「常陸中里駅」 oldid=109653428 역 문서 연혁(중간): 폐지 1941-08-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hitachimurata": {
+   "date": "1944-11-11",
+   "why": "ja.wikipedia 「常陸村田駅」 oldid=98046596 역 문서 연혁(중간): 휴지 1944-11-11 폐지 1944-11-11 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hamajiri": {
+   "date": "1940-11-01",
+   "why": "ja.wikipedia 「浜尻駅」 oldid=110390912 역 문서 연혁(중간): 폐지 1940-11-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hidaka": {
+   "date": "1940-11-01",
+   "why": "ja.wikipedia 「日高駅」 oldid=109957026 역 문서 연혁(중간): 폐지 1940-11-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_daiganji": {
+   "date": "1941-08-10",
+   "why": "ja.wikipedia 「大巌寺駅」 oldid=101119434 역 문서 연혁(중간): 폐지 1941-08-10 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_amijima": {
+   "date": "1913-11-15",
+   "why": "ja.wikipedia 「網島駅」 oldid=103077222 역 문서 연혁(중간): 폐지 1913-11-15 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_tatai": {
+   "date": "1925-02-17",
+   "why": "ja.wikipedia 「湛井駅」 oldid=106705256 역 문서 연혁(중간): 폐지 1925-02-17 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_akitoshima": {
+   "date": "1941-08-10",
+   "why": "ja.wikipedia 「安芸戸島駅」 oldid=98553532 역 문서 연혁(중간): 폐지 1941-08-10 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shimonagata": {
+   "date": "1941-08-10",
+   "why": "ja.wikipedia 「下長田駅」 oldid=98561985 역 문서 연혁(중간): 휴지 1941-08-10 폐지 1941-08-10 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_akioda": {
+   "date": "1941-08-10",
+   "why": "ja.wikipedia 「安芸小田駅」 oldid=98561927 역 문서 연혁(중간): 휴지 1941-08-10 폐지 1941-08-10 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_ishigahara": {
+   "date": "1941-08-10",
+   "why": "ja.wikipedia 「石ヶ原駅」 oldid=98561896 역 문서 연혁(중간): 휴지 1941-08-10 폐지 1941-08-10 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_akinakayama": {
+   "date": "1941-08-10",
+   "why": "ja.wikipedia 「安芸中山駅」 oldid=106410787 역 문서 연혁(중간): 휴지 1941-08-10 폐지 1941-08-10 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_akiyamamoto": {
+   "date": "1943-10-01",
+   "why": "ja.wikipedia 「安芸山本駅」 oldid=95727720 역 문서 연혁(중간): 휴지 1943-10-01 폐지 ? (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kabe_shimo_gion_furuichibashi": {
+   "date": "1943-10-01",
+   "why": "ja.wikipedia 「祇園駅 (広島県)」 oldid=95727800 역 문서 연혁(중간): 휴지 1943-10-01 폐지 ? (폐역 전수 대조 2026-11-20)"
+  },
+  "a_tomidaura": {
+   "date": "1941-08-01",
+   "why": "ja.wikipedia 「富田浦駅」 oldid=98529894 역 문서 연혁(중간): 폐지 1941-08-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_jouroku": {
+   "date": "1941-08-01",
+   "why": "ja.wikipedia 「丈六駅」 oldid=98529944 역 문서 연혁(중간): 휴지 1941-08-01 폐지 1941-08-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_yotsuibi": {
+   "date": "1945-03-01",
+   "why": "ja.wikipedia 「四ツ井樋駅」 oldid=98111607 역 문서 연혁(중간): 폐지 1945-03-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_daihikan": {
+   "date": "1944-04-13",
+   "why": "ja.wikipedia 「大悲観駅」 oldid=98111291 역 문서 연혁(중간): 폐지 1944-04-13 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_fukaushi": {
+   "date": "1943-08-01",
+   "why": "ja.wikipedia 「深牛駅」 oldid=111492771 역 문서 연혁(중간): 폐지 1943-08-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_ukeji": {
+   "date": "1946-09-11",
+   "legal_abolition": "1949-10-20",
+   "why": "ja.wikipedia 「請地駅」 oldid=111217721 廃止年月日(중간). 휴지 시작 1946-09-11는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_torabashidoori": {
+   "date": "1943-12-26",
+   "legal_abolition": "1945-03-10",
+   "why": "ja.wikipedia 「虎橋通駅」 oldid=103513283 廃止年月日(중간). 휴지 시작 1943-12-26는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_jukkenbashidoori": {
+   "date": "1945-03-10",
+   "legal_abolition": "1958-10-22",
+   "why": "ja.wikipedia 「十間橋通駅」 oldid=103513231 廃止年月日(중간). 휴지 시작 1945-03-10는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kitajukken": {
+   "date": "1945-03-10",
+   "legal_abolition": "1946-12-05",
+   "why": "ja.wikipedia 「北十間駅」 oldid=103513125 廃止年月日(중간). 휴지 시작 1945-03-10는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hanabusachou": {
+   "date": "1944-06-30",
+   "legal_abolition": "1954-09-24",
+   "why": "ja.wikipedia 「花房町駅」 oldid=111531592 廃止年月日(중간). 휴지 시작 1944-06-30는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kanaikubo": {
+   "date": "1945-04-15",
+   "why": "ja.wikipedia 「金井窪駅」 oldid=109166003 역 문서 연혁(중간): 폐지 1945-04-15 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_tenranzan": {
+   "date": "1945-02-03",
+   "legal_abolition": "1954-10-10",
+   "why": "ja.wikipedia 「天覧山駅」 oldid=102385370 廃止年月日(중간). 휴지 시작 1945-02-03는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_higashikokubunji": {
+   "date": "1945-02-03",
+   "legal_abolition": "1954-10-10",
+   "why": "ja.wikipedia 「東国分寺駅」 oldid=108973437 廃止年月日(중간). 휴지 시작 1945-02-03는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_sakurazutsumi": {
+   "date": "1945-02-03",
+   "legal_abolition": "1953-01-15",
+   "why": "ja.wikipedia 「桜堤駅」 oldid=108726463 廃止年月日(중간). 휴지 시작 1945-02-03는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kouseimura": {
+   "date": "1945-02-03",
+   "legal_abolition": "1953-01-15",
+   "why": "ja.wikipedia 「厚生村駅」 oldid=109054173 廃止年月日(중간). 휴지 시작 1945-02-03는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_doukanyamadoori": {
+   "date": "1943-10-01",
+   "why": "ja.wikipedia 「道灌山通駅」 oldid=106072096 역 문서 연혁(중간): 휴지 1943-10-01 폐지 1947-02-28 (폐역 전수 대조 2026-11-20)",
+   "legal_abolition": "1947-02-28"
+  },
+  "a_nishisenju": {
+   "date": "[1943-10-01..1943-10-31]",
+   "why": "ja.wikipedia 「西千住駅」 oldid=90882848 역 문서 연혁(중간): 휴지 [1943-10-01..1943-10-31] 폐지 1947-02-28 (폐역 전수 대조 2026-11-20)",
+   "legal_abolition": "1947-02-28"
+  },
+  "a_ebinakokubu": {
+   "date": "1943-04-01",
+   "why": "ja.wikipedia 「海老名国分駅」 oldid=107372654 역 문서 연혁(중간): 폐지 1943-04-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_michizuka": {
+   "date": "1945-06-01",
+   "legal_abolition": "1946-05-31",
+   "why": "ja.wikipedia 「道塚駅」 oldid=109114538 역 문서 연혁(중간): 휴지 1945-06-01, 폐지 1946-05-31 → 휴지 시작으로 소급(결과 기준 규칙) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_demura": {
+   "date": "1945-07-01",
+   "legal_abolition": "1949-06-01",
+   "why": "ja.wikipedia 「出村駅」 oldid=110892924 역 문서 연혁(중간): 휴지 1945-07-01, 폐지 1949-06-01 → 휴지 시작으로 소급(결과 기준 규칙) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kirin": {
+   "date": "1945-05-04",
+   "legal_abolition": "1949-06-01",
+   "why": "ja.wikipedia 「キリン駅」 oldid=109198870 역 문서 연혁(중간): 휴지 1945-05-04, 폐지 1949-06-01 → 휴지 시작으로 소급(결과 기준 규칙) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_higashikasadera": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1967-04-15",
+   "why": "ja.wikipedia 「東笠寺駅」 oldid=111201493 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_mashidaguchi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「増田口駅」 oldid=111030073 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_yatsurugi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「八剣駅」 oldid=111030206 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shimokawate": {
+   "date": "1942-04-01",
+   "why": "ja.wikipedia 「下川手駅」 oldid=104207609 역 문서 연혁(중간): 폐지 1942-04-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kagiya": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「加木屋駅」 oldid=110985323 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_urashima": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「浦島駅」 oldid=110985289 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_tokishi": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「時志駅」 oldid=105034570 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_moriyamaguchi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「守山口駅」 oldid=110586605 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kasaderamichi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「笠寺道駅」 oldid=110586635 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hiraike": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「平池駅」 oldid=111030293 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nenohana": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「根ノ鼻駅」 oldid=111029870 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_seko": {
+   "date": "1942-04-01",
+   "why": "ja.wikipedia 「瀬古駅」 oldid=99981677 역 문서 연혁(중간): 폐지 1942-04-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_higashiinuyama": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1946-03-01",
+   "why": "ja.wikipedia 「東犬山駅」 oldid=111233396 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_biwajimabashi": {
+   "date": "1949-08-01",
+   "why": "ja.wikipedia 「枇杷島橋駅」 oldid=111030248 역 문서 연혁(중간): 폐지 1949-08-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_niiya": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「新居屋駅」 oldid=111029980 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_minamitsushima": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「南津島駅」 oldid=98068855 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nishimiyaushiro": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「西宮後駅」 oldid=111030013 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kasamatsuguchi": {
+   "date": "1942-06-01",
+   "why": "ja.wikipedia 「笠松口駅」 oldid=99501681 역 문서 연혁(중간): 폐지 1942-06-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_daibutsumae": {
+   "date": "1913-04-26",
+   "why": "ja.wikipedia 「大仏前駅」 oldid=107404650 역 문서 연혁(중간): 폐지 1913-04-26 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kashio": {
+   "date": "1945-09-21",
+   "why": "ja.wikipedia 「鹿塩駅」 oldid=111632422 역 문서 연혁(중간): 폐지 1945-09-21 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_takarazuka_main_nakatsu_hankyu_juso": {
+   "date": "1926-07-02",
+   "why": "ja.wikipedia 「新淀川駅」 oldid=107980500 역 문서 연혁(중간): 폐지 1926-07-02 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shinikutagawa": {
+   "date": "1933-06-16",
+   "why": "ja.wikipedia 「新生田川駅」 oldid=111455438 역 문서 연혁(중간): 폐지 1933-06-16 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kurokawabara": {
+   "date": "1944-06-05",
+   "why": "ja.wikipedia 「黒川原駅」 oldid=101952356 역 문서 연혁(중간): 휴지 1944-06-05 폐지 1954-11-20 (폐역 전수 대조 2026-11-20)",
+   "legal_abolition": "1954-11-20"
+  },
+  "a_hatashinden": {
+   "date": "1944-07-01",
+   "legal_abolition": "1969-05-15",
+   "why": "ja.wikipedia 「畑新田駅」 oldid=98499450 廃止年月日(중간). 휴지 해 1944-07-01는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nishitoba": {
+   "date": "1935-10-01",
+   "why": "ja.wikipedia 「西鳥羽駅」 oldid=101757155 역 문서 연혁(중간): 폐지 1935-10-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_tsuchida": {
+   "date": "[1943-10-01..1943-10-31]",
+   "why": "ja.wikipedia 「土田駅」 oldid=104461403 역 문서 연혁(중간): 휴지 [1943-10-01..1943-10-31] 폐지 ? (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kagiyatsuji": {
+   "date": "1945-06-01",
+   "legal_abolition": "1969-05-15",
+   "why": "ja.wikipedia 「鍵屋辻駅」 oldid=109374950 廃止年月日(중간). 휴지 시작 1945-06-01는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_echizenshimozeki": {
+   "date": "1940-11-01",
+   "why": "ja.wikipedia 「越前下関駅」 oldid=107840038 역 문서 연혁(중간): 폐지 1940-11-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shinshimizusawa": {
+   "date": "1947-01-16",
+   "why": "ja.wikipedia 「新清水沢駅」 oldid=98392177 역 문서 연혁(중간): 폐지 1947-01-16 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kayaba": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「萱場駅」 oldid=104837026 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shikkebashi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「尻毛橋駅」 oldid=104837056 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_yatsumata": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「八ツ又駅」 oldid=109395706 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hachijouiwa": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「八丈岩駅」 oldid=110342880 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kido": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「城門駅」 oldid=94242646 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_igitsushi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「伊岐津志駅」 oldid=94242790 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nasuogawa": {
+   "date": "1939-06-01",
+   "why": "ja.wikipedia 「那須小川駅」 oldid=111531688 역 문서 연혁(중간): 폐지 1939-06-01 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_ukibuta": {
+   "date": "1949-12-22",
+   "why": "ja.wikipedia 「浮蓋駅」 oldid=109248180 역 문서 연혁(중간): 휴지 1949-12-22 폐지 1953-08-05 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_oikata": {
+   "date": "1949-12-22",
+   "why": "ja.wikipedia 「老方駅」 oldid=109248163 역 문서 연혁(중간): 휴지 1949-12-22 폐지 1953-08-05 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_miyazakiguchi": {
+   "date": "1944-XX-XX",
+   "legal_abolition": "1970-10-05",
+   "why": "ja.wikipedia 「宮崎口駅」 oldid=100074869 廃止年月日(중간). 휴지 해 1944-XX-XX는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kurono_nishiguchi": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「黒野西口駅」 oldid=98730060 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hachiojizaka": {
+   "date": "[1944-01-01..1944-12-31]",
+   "legal_abolition": "1969-04-05",
+   "why": "ja.wikipedia 「八王子坂駅」 oldid=98730101 廃止年月日(중간). 휴지 해 [1944-01-01..1944-12-31]는 그대로 (폐역 전수 대조 2026-11-20)"
+  }
+ },
+ "stop_opened": {
+  "a_hakodate_main_ginzan_shikaribetsu": {
+   "date": "1903-06-28",
+   "why": "ja.wikipedia 「山道駅」 oldid=96129721 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nambu_kuji_nambu_shukugawara": {
+   "date": "1934-04-01",
+   "why": "ja.wikipedia 「宿河原不動駅」 oldid=109125211 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_higashitachikawa": {
+   "date": "1929-12-11",
+   "why": "ja.wikipedia 「東立川駅」 oldid=108622783 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_sakunokuchi": {
+   "date": "1931-04-29",
+   "why": "ja.wikipedia 「作ノ口駅」 oldid=107113070 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_daiganji": {
+   "date": "1938-01-15",
+   "why": "ja.wikipedia 「大巌寺駅」 oldid=101119434 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_fujie": {
+   "date": "1923-08-19",
+   "why": "ja.wikipedia 「藤江駅」 oldid=111691910 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_akiyamamoto": {
+   "date": "1909-12-19",
+   "why": "ja.wikipedia 「安芸山本駅」 oldid=95727720 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kabe_shimo_gion_furuichibashi": {
+   "date": "1909-12-19",
+   "why": "ja.wikipedia 「祇園駅 (広島県)」 oldid=95727800 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kabe_bairin_kami_yagi_old": {
+   "date": "1923-08-19",
+   "why": "ja.wikipedia 「中八木駅」 oldid=110997322 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_uwajima": {
+   "date": "1914-10-18",
+   "why": "ja.wikipedia 「宇和島駅」 oldid=111776477 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_awanakahara": {
+   "date": "1916-07-01",
+   "why": "ja.wikipedia 「阿波中原駅」 oldid=99997668 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_tokushima_anabuki_kawata": {
+   "date": "1899-01-01",
+   "why": "ja.wikipedia 「船戸駅」 oldid=108294006 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hirose": {
+   "date": "1920-09-11",
+   "why": "ja.wikipedia 「佐土原駅」 oldid=111018674 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kamisasebo": {
+   "date": "1920-10-07",
+   "why": "ja.wikipedia 「上佐世保駅」 oldid=101210022 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_yotsuibi": {
+   "date": "1931-08-29",
+   "why": "ja.wikipedia 「四ツ井樋駅」 oldid=98111607 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kawagoekeibajoumae": {
+   "date": "1933-11-10",
+   "why": "ja.wikipedia 「川越競馬場前駅」 oldid=109054359 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shinootamachi": {
+   "date": "1926-02-14",
+   "why": "ja.wikipedia 「新太田町駅」 oldid=101709339 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_ikegami_kugahara_tokyu_railways_chidoricho": {
+   "date": "1920-05-19",
+   "why": "ja.wikipedia 「光明寺駅」 oldid=111269922 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shichikenchou": {
+   "date": "1949-09-01",
+   "why": "ja.wikipedia 「松原駅 (東京都)」 oldid=107629297 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_soujiji": {
+   "date": "1936-04-15",
+   "why": "ja.wikipedia 「総持寺駅」 oldid=109108362 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kirin": {
+   "date": "1932-07-25",
+   "why": "ja.wikipedia 「キリン駅」 oldid=109198870 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hiranuma": {
+   "date": "1931-12-26",
+   "why": "ja.wikipedia 「平沼駅 (京浜電気鉄道)」 oldid=109859369 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shinkawashima": {
+   "date": "1933-05-01",
+   "why": "ja.wikipedia 「新川島駅」 oldid=108308071 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_futamatashimokawa": {
+   "date": "1933-04-16",
+   "why": "ja.wikipedia 「二俣下川駅」 oldid=110746330 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_futatsubashi": {
+   "date": "1926-05-12",
+   "why": "ja.wikipedia 「二ツ橋駅」 oldid=108308797 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_higashikasadera": {
+   "date": "1927-12-23",
+   "why": "ja.wikipedia 「東笠寺駅」 oldid=111201493 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_inarimae": {
+   "date": "1912-08-06",
+   "why": "ja.wikipedia 「稲荷前駅」 oldid=110985284 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kooriguchi": {
+   "date": "1912-08-06",
+   "why": "ja.wikipedia 「小折口駅」 oldid=111029945 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_miyaushiro": {
+   "date": "1912-08-06",
+   "why": "ja.wikipedia 「宮後駅」 oldid=111029807 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_biwajimabashi": {
+   "date": "1912-03-29",
+   "why": "ja.wikipedia 「枇杷島橋駅」 oldid=111030248 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nukatabe": {
+   "date": "1915-02-07",
+   "why": "ja.wikipedia 「額田部駅」 oldid=111511095 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_daibutsumae": {
+   "date": "1910-04-15",
+   "why": "ja.wikipedia 「大仏前駅」 oldid=107404650 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kashio": {
+   "date": "1943-12-15",
+   "why": "ja.wikipedia 「鹿塩駅」 oldid=111632422 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_takarazuka_main_nakatsu_hankyu_juso": {
+   "date": "1910-03-10",
+   "why": "ja.wikipedia 「新淀川駅」 oldid=107980500 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_takarazuka_main_hibarigaoka_yamamoto_hankyu": {
+   "date": "1910-03-10",
+   "why": "ja.wikipedia 「山本駅 (兵庫県)」 oldid=110996654 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_hanshin_main_himejima_chibune": {
+   "date": "1921-01-05",
+   "why": "ja.wikipedia 「千船駅」 oldid=109854798 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shinikutagawa": {
+   "date": "1905-04-12",
+   "why": "ja.wikipedia 「新生田川駅」 oldid=111455438 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_sanyo_main_line_sanyo_itayado_sanyo_higashi_suma": {
+   "date": "1910-03-15",
+   "why": "ja.wikipedia 「東須磨駅」 oldid=110734404 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nagao_kawaramachi_takamatsu_kotohira_hanazono_takamatsu_kotohira": {
+   "date": "1912-04-30",
+   "why": "ja.wikipedia 「出晴駅」 oldid=104150419 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_yamasaki": {
+   "date": "1912-04-30",
+   "why": "ja.wikipedia 「山崎駅 (香川県)」 oldid=110514417 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nagao_nishi_maeda_takamatsu_kotohira_takata_takamatsu_kotohira": {
+   "date": "1912-04-30",
+   "why": "ja.wikipedia 「東前田駅」 oldid=110514410 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nagao_hiragi_gakuendori": {
+   "date": "1912-04-30",
+   "why": "ja.wikipedia 「妙徳寺駅」 oldid=110514412 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nagao_kumommyo_nagao_takamatsu_kotohira": {
+   "date": "1912-04-30",
+   "why": "ja.wikipedia 「長尾西駅」 oldid=110514414 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_yashimagurandomae": {
+   "date": "1911-11-18",
+   "why": "ja.wikipedia 「屋島グランド前駅」 oldid=110658942 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kashiharajinguumae": {
+   "date": "1923-03-21",
+   "why": "ja.wikipedia 「橿原神宮前駅」 oldid=110426141 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shinshimizusawa": {
+   "date": "1932-10-20",
+   "why": "ja.wikipedia 「新清水沢駅」 oldid=98392177 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_kawarabata": {
+   "date": "1926-11-01",
+   "why": "ja.wikipedia 「川原畑駅」 oldid=96096124 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_ichinomiya_iwakura_meitetsu": {
+   "date": "1912-03-29",
+   "why": "ja.wikipedia 「平野町駅」 oldid=111030294 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_idota": {
+   "date": "1917-03-19",
+   "why": "ja.wikipedia 「井戸田駅」 oldid=110985280 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_nakaichiba": {
+   "date": "1920-09-23",
+   "why": "ja.wikipedia 「中市場駅」 oldid=111030107 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_shagushi": {
+   "date": "1913-07-15",
+   "why": "ja.wikipedia 「社宮祠駅」 oldid=111029925 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  },
+  "a_murozono": {
+   "date": "1913-08-02",
+   "why": "ja.wikipedia 「室園駅」 oldid=110496404 開業年月日(중간) (폐역 전수 대조 2026-11-20)"
+  }
+ }
+}
