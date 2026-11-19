@@ -3858,5 +3858,24 @@
 "n_shirousagi_nagai|白兎": {
  "kana": "はくと",
  "source": "国鉄『停車場一覧』昭和41年版 https://dl.ndl.go.jp/pid/1873236/1/58 「640709 (仮)白兎 はくと HAKUTO 鳥取市白兎 大14.7.6」 높음(쪽 그림); 鉄道省『鉄道停車場一覧』昭和9年 https://dl.ndl.go.jp/pid/1212697/1/44 「白兎假停車場 はくと 末恒村内海」 높음; 1926년판 pid1020981 コマ77 「白兎 はくと Hakuto」. 仮停車場 부분은 秋里仮乗降場 선례처럼 かりていしゃじょう로 이음 (r7)"
-}
+},
+"n_inubushi|犬伏": {"kana": "いぬぶし", "source": "ja.wikipedia 犬伏駅 (栃木県) rev111531432 첫 줄 「犬伏駅（いぬぶしえき）は、栃木県佐野市…両毛線の駅（廃駅）」 [중간] (13회차 K1 2026-11-19)"},
+"n_sakaigawa|境川": {"kana": "さかいがわ", "source": "NDL 『鉄道停車場一覧』昭和12年版 pid 1207554 コマ195 名岐線 「境川 さかひがは」(그림 확인, 옛 가나 ひ→い 현대 표기로 바꿈) [높음]; NDL 『鉄道停車場一覧』昭和9年版 pid 1212697 コマ166 lab OCR 「境川さかひがは」(그림 미확인) [높음] (13회차 K1 2026-11-19)"},
+"n_susaki_meitetsu|洲崎": {"kana": "すさき", "source": "NDL 『鉄道停車場一覧』昭和12年版 pid 1207554 コマ202 三河鉄道 蒲郡線 東幡豆–西浦 사이 「洲崎 すさき」(그림 확인; lab OCR은 「すさぎ」로 잘못 읽음) [높음] (13회차 K1 2026-11-19)"},
+"n_kawamura_kumagawa|川村": {"kana": "かわむら", "source": "ja.wikipedia 相良十島駅(川村駅 (熊本県)에서 넘겨줌) rev111689976 「現在よりも950m湯前駅側に川村駅（かわむらえき）の名で設置」 [중간] (13회차 K1 2026-11-19)"},
+"n_yanagibashi|柳橋": {"kana": "やなぎばし", "source": "ja.wikipedia 柳橋駅 (富山県) rev108240178 첫 줄 「柳橋駅（やなぎばしえき）は、…黒部峡谷鉄道本線の駅」 [중간] (13회차 K1 2026-11-19)"},
+"n_shimokawa_hokutan|下川": {"kana": "しもかわ", "source": "ja.wikipedia 北丹鉄道 rev109374631(캐시) 역 일람 「下川駅 || しもかわ」 [중간] (13회차 K1 2026-11-19)"},
+"n_okamachi_kawashiri|岡町": {"kana": "おかまち", "source": "ja.wikipedia 岡町停留場 rev87568894(캐시) 첫 줄 「岡町停留場（おかまちていりゅうじょう）は、…熊本市電川尻線に属した電停」 [중간] (13회차 K1 2026-11-19)"},
+"n_kateisaibanshomae_hirano|家庭裁判所前": {"kana": "かていさいばんしょまえ", "source": "ja.wikipedia 神戸市電平野線 rev99345263(캐시) 정류장 일람 「家庭裁判所前 || かていさいばんしょまえ」 [중간] (13회차 K1 2026-11-19)"},
+"n_shiohama_kawasaki_city_transportation_bureau|塩浜": {"kana": "しおはま", "source": "ja.wikipedia 塩浜駅 (神奈川県) rev110985307 첫 줄 「塩浜駅（しおはまえき）は、…京浜急行電鉄大師線の駅および川崎市電の停留所」 [중간] (13회차 K1 2026-11-19)"},
+"n_tenjinyama_oshikirijoshin_connecting|天神山": {"kana": "てんじんやま", "source": "ja.wikipedia 名古屋市電押切浄心連絡線 rev108440862(캐시) 정류장 일람 「天神山（てんじんやま）」 [중간] (13회차 K1 2026-11-19)"},
+"n_yamashita_old|山下（旧）": {"kana": "やました", "source": "ja.wikipedia 山下駅 (宮城県) rev111627543 첫 줄 「山下駅（やましたえき）」, 2016-12-10 서쪽 약 1 km로 이설 전 옛 자리까지 같은 역 문서 [중간] (13회차 K1 2026-11-19)"},
+"n_kiyotaki|清滝": {"kana": "きよたき", "source": "ja.wikipedia 高尾登山電鉄 rev111593273 駅一覧 「清滝駅（きよたきえき、…）」 [중간] (13회차 K1 2026-11-19)"},
+"n_shiyakushomae_nagano|市役所前": {"kana": "しやくしょまえ", "source": "長野電鉄 공식 各駅情報 nagaden-net.co.jp/info/station/shiyakushomae 「【市役所前駅】 しやくしょまえ SHIYAKUSYOMAE」 [높음]; ja.wikipedia 市役所前駅 (長野県) rev111423263 첫 줄 [중간] (13회차 K1 2026-11-19)"},
+"n_nakatsu_oita_transportation|中津": {"kana": "なかつ", "source": "NDL 『鉄道停車場一覧』昭和12年版 pid 1207554 コマ243 耶馬渓鉄道 中津·守実間 「(中津) なかつ」(그림 확인) [높음]; ja.wikipedia 中津駅 (大分県) rev111063144 大分交通 耶馬渓線 역 정보 상자 「中津駅 なかつ」 [중간] (13회차 K1 2026-11-19)"},
+"n_kawabata_ueda_maruko|川端": {"kana": "かわばた", "source": "ja.wikipedia 川端駅 (長野県) rev101510365 첫 줄 「川端駅（かわばたえき）は、…上田丸子電鉄西丸子線の駅（廃駅）」 [중간] (13회차 K1 2026-11-19)"},
+"n_katamachi_keihan_main|片町": {"kana": "かたまち", "source": "ja.wikipedia 片町駅 rev108219744 첫 줄 「片町駅（かたまちえき）は、…西日本旅客鉄道・京阪電気鉄道の駅（廃駅）」, 京阪 역 정보 상자 「京阪 片町駅 かたまち」 [중간] (13회차 K1 2026-11-19)"},
+"n_abiko_osaka_metro|あびこ": {"kana": "あびこ", "source": "Osaka Metro 공식 station_guide(M28 쪽)·첫 화면 역 목록 「あびこ」(역 이름 자체가 히라가나) [높음]; ja.wikipedia 我孫子駅 (大阪府) rev110547058 첫 줄 「我孫子駅（あびこえき）は、…御堂筋線の駅」 [중간] (13회차 K1 2026-11-19)"},
+"n_katamachi_katamachi|片町": {"kana": "かたまち", "source": "NDL 『鉄道停車場一覧』昭和12年版 pid 1207554 コマ55 片町線 끝역 「片町 かたまち」(그림 확인) [높음]; ja.wikipedia 片町駅 rev108219744 JR 역 정보 상자 「かたまち」 [중간] (13회차 K1 2026-11-19)"},
+"n_sanjo_sarakura_tozan|山上": {"kana": "さんじょう", "source": "皿倉山ケーブルカー(帆柱ケーブル) 공식 sarakurayama-cablecar.co.jp/timetable/ 「Sanroku Station → Cable Car → Sanjo Station」(공식 로마자; 장음 표기 생략) [높음] (13회차 K1 2026-11-19); 나무위키 「산조역」 동음이의 문서 3. 山上駅 「산조역(사라쿠라 등산철도), 후쿠오카현 기타큐슈시 야하타히가시구에 위치한 사라쿠라 등산철도 사라쿠라야마 케이블카와 슬로프카의 역」(문서 머리 로마자 Sanjō) [중간] (13회차 2026-11-19 사용자 확인 요청)"}
 }

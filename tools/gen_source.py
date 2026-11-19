@@ -1595,7 +1595,12 @@ for n in nodes.values():
 def _wcore(t):return znorm(re.sub(r'(駅|停留場|停留所|電停|仮乗降場|乗降場|信号場)$','',re.sub(r'\s*[（(].*?[)）]\s*$','',t or '')))
 def namekey_ok(k_,nm_,cns_,pt_,kana_,id_=None):
     s_=KSRC.get(k_)
-    if not s_ or s_[0] in ('hand','est'):return True
+    if not s_:return True
+    # 손 읽기 표·추정 표(kana.json·kana_est.json)의 「node:이름」도 이름 하나에 읽기 하나다. 같은 이름 다른 노드가 5 km 밖(자리 모름 포함)에 있으면
+    # 어느 역 읽기인지 가를 수 없어 쓰지 않는다. 그 역 하나를 가리키는 읽기는 「노드 ID|이름」 열쇠(old_names_kana.json)로 넣는다
+    # (呉服町 ごふくちょう·ごふくまち, 清水町, 大和町처럼 町 읽기가 역마다 다름. 13회차 2026-11-19 사용자 지적)
+    # 다만 1 km 안 같은 이름 역(같은 교차점의 다른 회사 역)이 그 역 자신의 근거(역 자료·ID 지정 읽기 등)로 같은 읽기면 같은 곳 이름이라 쓴다 (大阪市電 片町 ← 片町線·京阪 片町)
+    if s_[0] in ('hand','est'):return not _far_same(nm_,pt_,id_) or any(m['id']!=id_ and m['pt'] and pt_ and dist(m['pt'],pt_)<1 and kata2hira(m['kana']).replace(' ','')==kata2hira(kana_).replace(' ','') for m in _NMOWN.get(nm_,[]))
     # 문서 제목이 그 이름이 아니면(넘겨주기로 지금 역 문서: 真脇 → 縄文真脇駅 じょうもんまわき, 加茂野口 → 加茂野駅) 다른 이름의 읽기다
     if s_[0]=='wiki' and _wcore(s_[1])!=znorm(k_.split(':',1)[1]):return False
     ops_=[b.get('ops','') for b in (WS.get(s_[1]) or {}).get('blocks',[])] if s_[0]=='wiki' else sorted(s_[1])
@@ -1613,6 +1618,8 @@ for n in nodes.values():
     p_=_POS0.get(n['id']) or n['pt']
     near_=[x for x in WD.get(n['_wdu'],[]) if x.get('kana') and x.get('pt')]
     if p_ and near_ and not any(dist(p_,x['pt'])<5 for x in near_):WDU_DROP.append((n['id'],n['name'],n['kana']));n['kana']=None
+    # 좌표 없는 Wikidata 항목의 읽기는 어느 역 것인지 모른다. 같은 이름 다른 노드가 5 km 밖에 있으면 그 역 항목일 수 있어 쓰지 않는다 (13회차 2026-11-19)
+    elif _far_same(n['nm'],p_,n['id']):WDU_DROP.append((n['id'],n['name'],n['kana']));n['kana']=None
 print('확인 없이 받은 Wikidata 읽기 좌표로 다시 봐 뺌',len(WDU_DROP),sorted(WDU_DROP)[:40])
 NK_ONLY=[]
 NAMEKEY_DROP=[]
@@ -1621,6 +1628,27 @@ for n in nodes.values():
         NAMEKEY_DROP.append((n['id'],n['name'],n['kana'],KSRC[n['_namekey']][0]));n['kana']=None
 print('이름 열쇠 읽기 뺌(다른 역 읽기)',len(NAMEKEY_DROP),sorted(NAMEKEY_DROP)[:60])
 print('이름 열쇠 읽기 규칙②(같은 이름 노드 하나)로만 씀',len(NK_ONLY),sorted(NK_ONLY,key=str)[:200])
+# 읽기가 비었거나 위에서 뺀 역은 그 역 자신의 위키 문서(「X駅 (県)」처럼 구별 꼬리가 붙은 제목 포함)에서 찾는다.
+# 문서 제목(넘겨주기면 넘어간 문서 제목)의 이름이 이 노드 이름과 같고, 역 정보칸의 사업자가 이 노드 사업자와 맞는 문서의 읽기만 쓴다.
+# 맞는 문서가 여럿인데 읽기가 갈리면 쓰지 않는다 (市役所前 長野電鉄 しやくしょまえ, 柳橋 黒部峡谷鉄道, 13회차 2026-11-19)
+_WSN=collections.defaultdict(list)
+for t_,d_ in WS.items():
+    m_=re.match(r'^(.+?)(駅|停留場|停留所|電停)(\s*[（(].*[)）])?$',t_)
+    if m_ and d_.get('blocks'):_WSN[znorm(m_.group(1))].append(d_)
+WIKI_OP_FILL=[]
+for n in nodes.values():
+    if n['kana'] or n['kind']!='station':continue
+    # 이름이 가나만으로 된 역(あびこ)은 이름이 곧 읽기다
+    if re.fullmatch(r'[ぁ-ゖァ-ヺー]+',n['name'] or ''):
+        n['kana']=kata2hira(n['name']);n['_ksrc']='auto:name_is_kana';n.pop('_namekey',None);WIKI_OP_FILL.append((n['id'],n['name'],n['kana']));continue
+    ks_=set()
+    for d_ in _WSN.get(n['nm'],[]):
+        if _wcore(d_.get('title'))!=n['nm']:continue
+        for b_ in d_['blocks']:
+            if b_.get('kana') and _opm([b_.get('ops','')],n['cns']):ks_.add(re.sub(r'(えき|ていりゅうじょう|ていりゅうしょ|でんてい)$','',kata2hira(b_['kana']).replace(' ','')))
+    if len(ks_)==1:
+        n['kana']=ks_.pop();n['_ksrc']='auto:wiki_station_op';n.pop('_namekey',None);WIKI_OP_FILL.append((n['id'],n['name'],n['kana']))
+print('그 역 위키 문서(사업자 일치)로 채운 읽기',len(WIKI_OP_FILL),sorted(WIKI_OP_FILL)[:80])
 
 # ---- 이름
 names=[];pend=[]

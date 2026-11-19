@@ -1480,6 +1480,57 @@ if _al:
 put('K103 위키 폐선 목록 항목이 DB·열람 전용·판정표에 없음(노선째 빠졌을 수 있음)',[(x['pref'],x['title'],x['line'][:60]) for x in K103Q],60,lvl='err')
 put('K103 위키 폐선 목록 판정이 근거 부족·추가 대기(재조사 중)',K103W,60,lvl='warn')
 put('K103 위키 폐선 목록 판정 갈래별 건수',sorted(k103c.items()),20)
+# ---- K104 열람 전용 역의 이름 열쇠 읽기가 다른 곳 같은 이름 역의 읽기 (13회차 2026-11-19 사용자 지적: 「한자가 같다고 같은 읽기를 붙이지 말 것」) ----
+# 읽기가 행 자신의 근거(archive_fix _add·이름@노선·이름 행)나 그 역 위키 문서가 아니라 이름만 맞춘 열쇠(손 읽기 표 node:이름·station_database)에서 왔는데,
+# 같은 이름의 노드가 그 역 노선에 서지 않고 앞뒤 역에서 5 km 밖에만 있으면 그 노드 읽기를 빌려 온 것일 수 있다. 생성기(gen_extra)가 막으므로 0이어야 한다
+_aks=os.path.join(ROOT,'data','candidates','archive_kana_src.json')
+K104=[]
+if os.path.exists(_aks):
+    _AKS=json.load(open(_aks,encoding='utf-8'))
+    _pos={r[0]:(r[1],r[2]) for r in m.execute('select node_id,lat,lon from node_position') if r[1] is not None}
+    _rl={r[0]:r[1] for r in m.execute('select id,line_id from route')}
+    _nl=collections.defaultdict(set)
+    for r in m.execute('select route_id,node_id from route_stop'):_nl[r[1]].add(_rl.get(r[0]))
+    _nn=collections.defaultdict(set)
+    for r in n.execute("select entity_id,text from name where entity_type='node' and lang='ja'"):_nn[r[1]].add(r[0])
+    def _d104(p,q):return math.hypot((p[0]-q[0])*111.2,(p[1]-q[1])*111.2*math.cos(math.radians(p[0])))
+    for r in m.execute('select id,line_id,after_id,before_id from archive_stop'):
+        src=_AKS.get(r[0])
+        # 위키 문서 읽기는 생성기가 문서 역 정보칸의 사업자·노선이 맞을 때도 받으므로(그 역 자신의 문서) 여기서 보지 않는다
+        if src not in ('hand','est','sd'):continue
+        t=n.execute("select text,kana from name where entity_type='archive' and lang='ja' and entity_id=?",(r[0],)).fetchone()
+        if not t or not t[1]:continue
+        ends=[_pos[x] for x in (r[2],r[3]) if x in _pos]
+        others=[x for x in _nn.get(t[0],()) if x not in (r[2],r[3])]
+        same=[x for x in others if r[1] in _nl[x] or (x in _pos and ends and min(_d104(_pos[x],e) for e in ends)<5)]
+        if others and not same:K104.append((r[0],t[0],t[1],src,sorted(others)[:3]))
+put('K104 열람 전용 역 읽기가 이름 열쇠로 다른 곳 같은 이름 역에서 옴',K104,60,lvl='err')
+# ---- K105 노드 읽기가 손 읽기 표·추정 표의 이름 열쇠(node:이름)에서 왔는데 같은 이름 노드가 5 km 밖에 있음 (13회차 2026-11-19) ----
+# 이름 하나에 읽기 하나인 표는 같은 이름 역을 가르지 못한다. 생성기(gen_source namekey_ok)가 막으므로 0이어야 한다. 그 역 읽기는 「노드 ID|이름」 열쇠로 넣는다
+_kh=json.load(open(os.path.join(ROOT,'data','overrides','kana.json'),encoding='utf-8'))
+_ke0=os.path.join(ROOT,'data','overrides','kana_est.json');_ke=json.load(open(_ke0,encoding='utf-8')) if os.path.exists(_ke0) else {}
+_pos5={r[0]:(r[1],r[2]) for r in m.execute('select node_id,lat,lon from node_position') if r[1] is not None}
+_cur=collections.defaultdict(list)
+for r in n.execute("select entity_id,text,kana,reading_source from name where entity_type='node' and lang='ja' and valid_from is null and valid_to is null"):_cur[r[1]].append(r)
+def _d105(p,q):return math.hypot((p[0]-q[0])*111.2,(p[1]-q[1])*111.2*math.cos(math.radians(p[0])))
+K105=[]
+for t,rs in _cur.items():
+    if len(rs)<2:continue
+    for r in rs:
+        if r[3]!='auto:name_key' or not r[2]:continue
+        k='node:'+t
+        if _kh.get(k)!=r[2] and _ke.get(k)!=r[2]:continue
+        far=[o[0] for o in rs if o[0]!=r[0] and not (o[0] in _pos5 and r[0] in _pos5 and _d105(_pos5[o[0]],_pos5[r[0]])<5)]
+        # 1 km 안 같은 이름 역이 자기 근거로 같은 읽기면 같은 곳 이름이라 생성기가 받는다 (gen_source namekey_ok)
+        own=[o for o in rs if o[0]!=r[0] and o[3]!='auto:name_key' and o[2]==r[2] and o[0] in _pos5 and r[0] in _pos5 and _d105(_pos5[o[0]],_pos5[r[0]])<1]
+        if far and not own:K105.append((r[0],t,r[2],sorted(far)[:3]))
+put('K105 노드 읽기가 이름 열쇠 손 표로 다른 곳 같은 이름 역과 공유',K105,60,lvl='err')
+# ---- K106 지금 운영 중인 역(여는 계통에 오늘도 정차)에 읽기가 없음 (13회차 2026-11-19 사용자 지시: 「모든 현재 운영 중인 역은 읽기가 있어야 한다」) ----
+K106=[]
+for r in m.execute("select distinct s.node_id from route_stop s join route r on r.id=s.route_id where s.is_stop=1 and s.valid_to='ongoing' and (r.closed is null or r.closed=0)"):
+    t=n.execute("select text,kana from name where entity_type='node' and lang='ja' and entity_id=? and valid_from is null and valid_to is null",(r[0],)).fetchone()
+    if not t or not t[1]:K106.append((r[0],t[0] if t else None))
+put('K106 지금 운영 중인 역에 읽기 없음',K106,60,lvl='err')
 # ---- K142 근거 표 없는 여객 직통 후보 (10회차 D1, 전수 점검 4회차 일반화 요청) ----
 # 같은 역 묶음(group)의 두 노선이 그 역에서 환승으로만 이어진 쌍(노드가 같든 다르든)마다, 두 노선 위키 문서 본문에서 상대 노선 이름 앞뒤 80자 안에
 # 「直通|乗り入れ|乗入|併結」이 있으면 여객 직통 후보다. 근거 표 직통(THROUGH)이나 직통 판정 표(THROUGH_REVIEWED: 화물·선로만·근거 부족 판정)에 있는 쌍은 뺀다

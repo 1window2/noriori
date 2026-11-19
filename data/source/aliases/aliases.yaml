@@ -1653,6 +1653,7 @@
 - {"entity_type": "node", "id": "n_dome_mae_chiyozaki", "lang": "ja", "text": "大阪ドーム前千代崎", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_shin_imamiya_ekimae", "lang": "ja", "text": "南霞町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_tennoji_ekimae", "lang": "ja", "text": "南海の公園東門", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tennoji_ekimae", "lang": "ja", "text": "公園東門", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maruyama_kobe", "lang": "ja", "text": "鷹取道", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maruyama_kobe", "lang": "ja", "text": "電鉄丸山", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_suzurandai", "lang": "ja", "text": "小部", "kind": "old_title"}
