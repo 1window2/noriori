@@ -776,14 +776,20 @@ junc=_out+[t_ for t_ in TH if not any(t_ is z_ for z_ in _out)]
 for j in junc:
     if j.pop('continue_',None):j['continue']=True
 # ── 같은 노선의 지선·옛 경로 계통은 양 끝에서 그 노드를 지나는 같은 노선 다른 계통으로 가리킨다(같은 궤간일 때만, ガーラ湯沢)
+ledges_at=collections.defaultdict(list)
+for e in edges:ledges_at[(e['seed_line'],e['a'])].append(e);ledges_at[(e['seed_line'],e['b'])].append(e)
+rid_line={q['id']:q['line'] for q in routes}
 for r in routes:
     if r.get('role')!='branch':continue
     p=rpath.get(r['id'])
     for x,nx_ in ((r['from'],p[1] if p and len(p)>1 else None),(r['to'],p[-2] if p and len(p)>1 else None)):
         others=[q for q in r_by_line[r['line']] if q['id']!=r['id'] and x in (rpath.get(q['id']) or ())]
-        if not others and p:continue
+        # 계통마다 한 줄로 고른 최단 경로(rpath)만 보면, 옛 선형과 새 선형이 함께 있는 노선에서 그 역을 지나지 않는 쪽 길이 골라져 분기가 빠진다
+        # (東北本線 松島 ← 松島–高城町, 西鉄 循環線 祇園町·柳橋 ← 옛 경로, ポートライナー 市民広場 ← 空港線). 이 계통 전용이 아닌 그 노선 칸이 그 역에 닿으면 지나가는 길이 있다
+        shared_=[(e['b'] if e['a']==x else e['a']) for e in ledges_at.get((r['line'],x),()) if e.get('route_only')!=r['id'] and (not e.get('route_only') or e['route_only'] in rid_line and rid_line[e['route_only']]==r['line'])]
+        if not others and not shared_ and p:continue
         if p and nx_:
-            nO={n for q in others for P in [rpath[q['id']]] for i,n in enumerate(P) if (i>0 and P[i-1]==x) or (i+1<len(P) and P[i+1]==x)}
+            nO={n for q in others for P in [rpath[q['id']]] for i,n in enumerate(P) if (i>0 and P[i-1]==x) or (i+1<len(P) and P[i+1]==x)}|set(shared_)
             per=compat(r['line'],x,nO,r['line'],x,{nx_})
             if not per:GCUT.append((r['line'],r['line'],x,r['id'],[None,'ongoing'],[]));stat['branch_gauge']+=1;continue
             vs=clipv([None,'ongoing'],per)

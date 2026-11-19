@@ -2394,11 +2394,21 @@ def _jnot_route(rid,n,oid,orr):
         if x_['route']==rid and x_['at']==n and ((x_.get('other_route') and x_['other_route']==orr) or (not x_.get('other_route') and x_.get('other')==oid)):
             _JNR_USED.add(i_);return True
     return False
-def _all_own(orid,own_pairs,day):
-    """상대 계통의 그날 열린 칸이 모두 이 계통 칸인가"""
-    op_=open_on(routes[orid]['line'],day)
-    rem_={f_ for f_ in _RPE.get(orid,{}) if f_ in op_}
-    return bool(rem_) and rem_<=own_pairs
+# 노선별 칸(edge ID)의 소속 기간. 같은 두 역 사이를 다른 선로로 잇는 옛 선형·새 선형은 다른 칸이다
+_lspanE=collections.defaultdict(lambda:collections.defaultdict(list))
+for a_ in attr:_lspanE[a_['line_id']][a_['edge_id']].append((lohi(a_['valid_from'])[0] or '0000',(lohi(a_['valid_to'])[0] or '9999-12-31') if a_['valid_to'] not in (None,'ongoing') else '9999-12-31'))
+def _all_own(orid,own_ids,day,own_pairs=frozenset()):
+    """상대 계통의 그날 열린 칸이 모두 이 계통 칸인가. 칸은 선로(edge ID)로 본다.
+    두 역 쌍으로 보면 같은 두 역 사이의 옛 선형과 새 선형이 한 칸으로 겹쳐, 옛 경로 계통이 본선으로 돌아오는 분기가 사라졌다
+    (信越本線 軽井沢 ← 横川–軽井沢 옛 선로, 篠ノ井線 西条·明科, 鹿児島本線 戸畑, 和歌山線 田井ノ瀬. 사용자 지적 2026-11-19)"""
+    # 여객 이력 계통(extra)은 같은 두 역 사이의 별선이어도 같은 노선 다른 계통과 잇지 않는다(和歌山線 短絡線 1962–1972, 정한 규칙 4회차 kinki_3-004). 그래서 역 쌍으로 본다
+    if routes[orid].get('extra'):
+        op_=open_on(routes[orid]['line'],day)
+        remp_={f_ for f_ in _RPE.get(orid,{}) if f_ in op_}
+        return bool(remp_) and remp_<=own_pairs
+    sp_=_lspanE[routes[orid]['line']]
+    rem_={e_['id'] for e_ in route_edges[orid] if any(f_<=day<u_ for f_,u_ in sp_.get(e_['id'],()))}
+    return bool(rem_) and rem_<=own_ids
 # 묶음은 사슬로 이어지므로 같은 묶음이라고 다 환승이 아니다 (日本橋~三越前~新日本橋).
 # 환승은 같은 노드·같은 group·채택한 환승 쌍(위 HUBPAIR)만이다 (spec route_link transfer 근원)
 def linked(a,b):
@@ -2552,6 +2562,7 @@ for s in stops:
     # 그 기간을 선로로 이은 상대 계통·종류 (같은 노선 다른 계통으로의 분기가 지나가는 계통과의 환승을 끊지 않게, 越後湯沢 9회차 L)
     linked_rt=collections.defaultdict(list)
     own_pairs={frozenset((e['a'],e['b'])) for e in route_edges[r['id']]}
+    own_ids={e['id'] for e in route_edges[r['id']]}
     # 제 계통 칸은 그날 이 노선 소속인 칸만이다. 다른 노선으로 넘어간 칸(和倉温泉–田鶴浜 1991 のと鉄道, 宮古–磯鶏 2019 リアス線)은 되돌아가는 방면이 아니다 (9회차 L, X K122)
     def _ownp(f_,day,own_pairs=own_pairs,ln_=r['line']):return f_ in own_pairs and f_ in open_on(ln_,day)
     ys_own={other(e,n) for e in route_edges[r['id']] if n in (e['a'],e['b'])}
@@ -2742,7 +2753,7 @@ for s in stops:
                               # 다만 곧게 나가는 방면이 그날 상대 노선의 다른 계통(옛 경로 계통)에 있으면 그쪽으로 잇는다 (방면별 계통 후보)
                               if not j.get('_toward') and _alt_cont(s,r,mp,oid,m,o,pd,ys_own,xs,_own,rr,group_near):continue
                       # 상대 계통의 그날 남은 칸이 모두 이 계통 칸이면 갈라지는 선로가 없다(外房線 蘇我: 1963 千葉(旧) 폐지 뒤 옛 경로 계통은 蘇我–本千葉만 남음)
-                      if kind=='branch' and oid==r['line'] and _all_own(o['route_id'],own_pairs,_rep_day(pd)):
+                      if kind=='branch' and oid==r['line'] and _all_own(o['route_id'],own_ids,_rep_day(pd),own_pairs):
                           WARN['branch_all_own'].append((r['id'],n,o['route_id'],pd))
                           if pd in linked_pd[oid]:linked_pd[oid].remove(pd)
                           continue

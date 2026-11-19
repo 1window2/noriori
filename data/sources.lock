@@ -1,4 +1,4 @@
-{"as_of": "2026-11-19", "tools": {"python": "3.9.6", "tippecanoe": "v2.79.0"}, "files": [
+{"as_of": "2026-11-20", "tools": {"python": "3.9.6", "tippecanoe": "v2.79.0"}, "files": [
 {"path": "data/imports/baseline_v9.json", "size": 3494492, "sha256": "25fd3fd53648a40826351f6a873c47634d551f11a8e7704a0091bbed0d5081d8", "received": "2026-11-08", "url": null},
 {"path": "data/imports/id_map.json", "size": 1547189, "sha256": "353ec7fd40cf86291ec2e914da49937fb5fc171fe836550c42a3b7384a99d31c", "received": "2026-11-12", "url": null},
 {"path": "data/imports/glyphs/0-255.pbf", "size": 76580, "sha256": "ef1f38a3f1978591e846e9eaddf8a54f7047f546fc6aaed7872cc53151a5de78", "received": "2026-11-03", "url": "https://tiles.openfreemap.org/fonts/Noto%20Sans%20Regular/0-255.pbf"},
