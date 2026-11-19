@@ -929,14 +929,28 @@ void main() {
       expect(later.whereType<StopLine>().first.transfers, isNotEmpty);
     });
 
-    test('겹치는 두 토막은 다른 자리에 선다', () {
+    test('겹치는 두 토막은 겹치는 칸에서 선 하나다 (사용자 결정 2026-11-20 成田空港)', () {
       final rows = [row(0, 'a'), row(1, 'b'), row(2, 'c'), row(3, 'd')];
       final out = run(rows, const [
         ParallelRun(otherLineId: 'private', fromSeq: 0, toSeq: 2),
         ParallelRun(otherLineId: 'other-jr', fromSeq: 1, toSeq: 3),
       ]);
       final middle = out.whereType<StopLine>().toList()[2];
-      expect(middle.lanes.map((mark) => mark.lane).toSet(), {0, 1});
+      expect(middle.lanes.map((mark) => mark.lane).toSet(), {0});
+      // 두 상대가 다 지나가는 줄도 자리는 하나다
+      expect(middle.lanes.length, 2);
+    });
+
+    test('같은 역으로 위에서 들어오는 상대 둘은 아래 줄이 위 줄로 가는 병주 선을 지나 보낸다', () {
+      final rows = [row(0, 'a'), row(1, 'b'), row(2, 'c')];
+      final out = run(rows, const [
+        ParallelRun(otherLineId: 'jr', fromSeq: 1, toSeq: 2, inNext: 'x', inTerminal: 'x'),
+        ParallelRun(otherLineId: 'access', fromSeq: 1, toSeq: 2, inNext: 'y', inTerminal: 'y'),
+      ]);
+      final ins = out.whereType<BranchLine>().where((line) => line.parallel != null).toList();
+      expect(ins.length, 2);
+      expect(ins.map((line) => line.parallel).toSet(), {0});
+      expect([for (final line in ins) line.stacked], [false, true]);
     });
   });
 

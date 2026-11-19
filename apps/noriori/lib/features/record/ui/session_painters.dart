@@ -204,7 +204,9 @@ void paintLanes(Canvas canvas, Size size, List<LaneMark> lanes, LaneStyle? style
   const x = SelectorRuler.trunkX;
   const r = SelectorRuler.bend;
   final y = centerY;
-  for (final mark in lanes) {
+  // 병주 선은 겹치는 칸에서 하나라 같은 자리에 여러 상대가 지날 수 있다. 흐린(끝난) 상대를 먼저 그려 현행 선이 위에 오게 한다
+  final ordered = [...lanes.where((mark) => mark.gone), ...lanes.where((mark) => !mark.gone)];
+  for (final mark in ordered) {
     final lx = laneX(mark.lane);
     final paint = _stroke(mark.gone ? style.gone : style.color, 2.5);
     switch (mark.role) {
@@ -484,9 +486,9 @@ class BranchPainter extends CustomPainter {
     paintLanes(canvas, size, lanes, laneStyle, y);
     final lane = parallel;
     if (lane != null) {
-      // 바깥의 다른 분기로 가는 줄기는 그대로 지나간다
-      if (stacked) canvas.drawLine(const Offset(sx, 0), Offset(sx, size.height), _stroke(through, 2.5));
       final lx = laneX(lane);
+      // 바깥 줄로 가는 다른 병주 상대는 같은 병주 선을 그대로 지나간다(병주 선은 겹치는 칸에서 하나다, 사용자 결정 2026-11-20)
+      if (stacked) canvas.drawLine(Offset(lx, 0), Offset(lx, size.height), _stroke(through, 2.5));
       final path = up
           ? (Path()
             ..moveTo(q - 5, y)

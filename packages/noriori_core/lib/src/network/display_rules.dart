@@ -938,11 +938,9 @@ final class DisplayRules {
         if (!options.showClosed || later) continue;
         gone = true;
       }
-      var lane = 0;
-      while (runs.any((other) => other.lane == lane && other.from <= to && from <= other.to)) {
-        lane++;
-      }
-      runs.add(_Run(run, from, to, lane, gone: gone));
+      // 병주 상대가 여럿이어도 겹치는 칸은 선 하나로 그린다. 들고 나는 곳에서 각자 갈라진다(분기 여럿이 줄기 하나를 함께 쓰는 것과 같다).
+      // 칸마다 자리를 나누면 京成本線 空港第2ビル–成田空港처럼 같은 칸을 달리는 상대(成田線·成田空港線)가 나란한 선 두 개로 보였다 (사용자 결정 2026-11-20)
+      runs.add(_Run(run, from, to, 0, gone: gone));
     }
     final skip = {
       for (final run in runs)
@@ -1069,15 +1067,16 @@ final class DisplayRules {
           ),
         );
       }
-      for (final run in midIn) {
+      // 위로 들어오는 상대가 여럿이면 위 줄부터 적고, 아래 줄은 위 줄로 가는 병주 선이 그대로 지나간다(stacked)
+      for (final (at, run) in midIn.indexed) {
         out.add(BranchLine(
           gap: index - 1,
           at: row,
           item: _laneLink(run, row, up: true),
           up: true,
-          stacked: false,
-          stemGone: run.gone,
-          throughGone: run.gone,
+          stacked: at > 0,
+          stemGone: midIn.take(at + 1).every((other) => other.gone),
+          throughGone: midIn.take(at).every((other) => other.gone),
           parallel: run.lane,
           lanes: pass(),
         ));
@@ -1124,15 +1123,15 @@ final class DisplayRules {
         ),
       );
       // 나가는 병주 상대는 역 바로 아래(가장 안쪽) 줄이다
-      for (final run in midOut) {
+      for (final (at, run) in midOut.indexed) {
         out.add(BranchLine(
           gap: index,
           at: row,
           item: _laneLink(run, row, up: false),
           up: false,
-          stacked: false,
-          stemGone: run.gone,
-          throughGone: run.gone,
+          stacked: at < midOut.length - 1,
+          stemGone: midOut.skip(at).every((other) => other.gone),
+          throughGone: midOut.skip(at + 1).every((other) => other.gone),
           parallel: run.lane,
           lanes: pass(run),
         ));
