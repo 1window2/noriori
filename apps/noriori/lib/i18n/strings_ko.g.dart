@@ -530,6 +530,9 @@ class Translations$session$ko {
 	/// ko: '날짜 모름'
 	String get dateUnknown => '날짜 모름';
 
+	/// ko: '날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요'
+	String get dateUnknownHint => '날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요';
+
 	/// ko: '달력에서 고르기'
 	String get datePick => '달력에서 고르기';
 
@@ -1858,12 +1861,6 @@ class Translations$session$state$ko {
 
 	/// ko: '$from~$to'
 	String span({required Object from, required Object to}) => '${from}~${to}';
-
-	/// ko: '→ 환승'
-	String get thenTransfer => '→ 환승';
-
-	/// ko: '→ 직통'
-	String get thenThrough => '→ 직통';
 }
 
 // Path: data.notice
@@ -2229,6 +2226,7 @@ extension on Translations {
 			'session.dateTitle' => '탑승일',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => '날짜 모름',
+			'session.dateUnknownHint' => '날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요',
 			'session.datePick' => '달력에서 고르기',
 			'session.dateToday' => '오늘',
 			'session.dateBad' => '날짜 형식을 확인해 주세요',
@@ -2250,8 +2248,6 @@ extension on Translations {
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
-			'session.state.thenTransfer' => '→ 환승',
-			'session.state.thenThrough' => '→ 직통',
 			'session.savedAs' => ({required Object line}) => '탑승일 기준 ${line} 구간',
 			'session.movedTo' => ({required Object year, required Object name}) => '${year}년 ${name} 이전',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}부터 ${line}',
@@ -2611,9 +2607,9 @@ extension on Translations {
 			'prefNames.25' => '교토',
 			'prefNames.26' => '오사카',
 			'prefNames.27' => '효고',
+			'prefNames.28' => '나라',
 			_ => null,
 		} ?? switch (path) {
-			'prefNames.28' => '나라',
 			'prefNames.29' => '와카야마',
 			'prefNames.30' => '돗토리',
 			'prefNames.31' => '시마네',

@@ -57,8 +57,6 @@ final class DisplayLink {
     required this.gone,
     this.before = const [],
     this.suspended = false,
-    this.then,
-    this.since,
   });
 
   final SelectorLink link;
@@ -72,13 +70,6 @@ final class DisplayLink {
 
   /// 같은 자리를 이어받기 전 노선. 선 없이 이름만 위에 적는다.
   final List<SelectorLink> before;
-
-  /// 끝난 연결이 같은 노선의 다른 종류로 이어졌다: 직통이 끝나고 환승만 남음(`transfer`), 환승이 직통으로 바뀜(`continue`).
-  /// 화면은 끝난 해 뒤에 「→ 환승」「→ 직통」을 붙인다 (사용자 결정 2026-11-19, 직통은 여객 직통 운전만 곧게 그림)
-  final String? then;
-
-  /// 지금 있는 연결인데 같은 노선의 다른 종류 연결이 이 날 끝났다(佐世保 환승: 직통 2020-03-14 끝). 화면은 「2020~」을 붙인다
-  final String? since;
 }
 
 enum TransferFlow { through, up, down, unknown }
@@ -507,28 +498,10 @@ final class DisplayRules {
           from = sameLine.first.link.validFromLo;
           continue;
         }
-        var found = [
+        final found = [
           for (final other in contig)
             if (other.link.terminal == head.link.terminal && _succeeds(other.link.otherLineId, line)) other,
         ];
-        // 같은 노선을 이어받았는데 연결(직통)이 끊겼다 다시 생긴 경우(佐世保: 国鉄 松浦線 ~1988 › 松浦鉄道西九州線 직통 2002~)는 날짜가 붙지 않아도 이어받은 것이다.
-        // 이때는 사슬(lineage)을 실제로 나눠야 한다(사슬 모름은 받지 않음). 앞 노선 가운데 가장 늦게 끝난 것을 잇는다 (사용자 결정 2026-11-19: 따로 줄 두지 말고 바로 밑에)
-        if (found.isEmpty) {
-          final gapped = [
-            for (final other in items)
-              if (fresh(other) &&
-                  other.link.terminal == head.link.terminal &&
-                  other.link.otherLineId != line &&
-                  other.link.validToHi != null &&
-                  other.link.validToHi!.compareTo(from) <= 0 &&
-                  _sharesLineage(other.link.otherLineId, line))
-                other,
-          ];
-          if (gapped.isNotEmpty) {
-            final last = gapped.map((other) => other.link.validToHi!).reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
-            found = [for (final other in gapped) if (other.link.validToHi == last) other];
-          }
-        }
         if (found.isEmpty) break;
         earlier.insertAll(0, found);
         head = found.first;
@@ -588,7 +561,7 @@ final class DisplayRules {
   }) {
     final archive = options.showClosed && options.showArchive;
     bool early(SelectorLink link) => link.validToHi != null && link.validToHi!.compareTo(floorDate) <= 0;
-    return _changes(row, kind, _chained([
+    return _chained([
       for (final link in row.links)
         if (link.kind == kind &&
             (archive || !early(link)) &&
@@ -599,48 +572,48 @@ final class DisplayRules {
         for (final link in row.goneLinks)
           if (link.kind == kind && (archive || !early(link)) && !skip.contains('${row.seq}\u0000${link.otherLineId}'))
             _display(link, _gone(link, onDate: false, node: row.node), row.node),
-    ]));
+    ].where((item) => _oneOnDay(row, item.link, skip)).toList());
   }
 
-  /// 같은 역에서 같은 노선(또는 같은 사슬)과의 직통과 환승이 시기에 따라 바뀐 것을 적는다.
-  /// 끝난 쪽은 끝난 날 다른 종류 연결이 이어서 있으면 [DisplayLink.then], 지금 있는 쪽은 다른 종류 연결이 그 기간 안에 끝났으면 그 날을 [DisplayLink.since]로 둔다
-  List<DisplayLink> _changes(SelectorRow row, String kind, List<DisplayLink> items) {
-    if (kind != 'continue' && kind != 'transfer') return items;
-    final otherKind = kind == 'continue' ? 'transfer' : 'continue';
-    final others = [for (final l in [...row.links, ...row.goneLinks]) if (l.kind == otherKind) l];
-    if (others.isEmpty) return items;
-    bool same(SelectorLink a, SelectorLink b) => a.otherLineId == b.otherLineId || _sharesLineage(a.otherLineId, b.otherLineId);
-    bool open(String? end) => end == null || end == DateSpan.maxDate;
-    return [
-      for (final item in items)
-        () {
-          final l = item.link;
-          final end = l.validToHi;
-          String? then;
-          String? since;
-          if (item.gone && !open(end)) {
-            final follows = others.any((o) =>
-                same(o, l) &&
-                (o.validFromLo == null || o.validFromLo!.compareTo(end!) <= 0) &&
-                (open(o.validToHi) || o.validToHi!.compareTo(end!) > 0));
-            if (follows) then = otherKind;
-          }
-          if (!item.gone) {
-            final ended = [
-              for (final o in others)
-                if (same(o, l) &&
-                    !open(o.validToHi) &&
-                    o.validToHi!.compareTo(today) <= 0 &&
-                    (l.validFromLo == null || l.validFromLo!.compareTo(o.validToHi!) <= 0))
-                  o.validToHi!,
-            ];
-            if (ended.isNotEmpty) since = ended.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
-          }
-          if (then == null && since == null) return item;
-          return DisplayLink(link: l, gone: item.gone, before: item.before, suspended: item.suspended, then: then, since: since);
-        }(),
+  /// 같은 노선(또는 같은 사슬을 이어받은 노선)과의 연결은 그 화면의 날(_day: 고른 날짜, 날짜 모름이면 오늘)에 맞는 것 하나만 보인다.
+  /// 직통·환승이 시기에 따라 바뀌었거나(佐世保 松浦鉄道), 이관으로 노선·회사 이름이 바뀐 경우(国鉄 松浦線 → 松浦鉄道西九州線)에도
+  /// 그 날 있던 연결만 그린다. 그 날 둘 다 있으면(직통 열차가 일부만 다님) 직통·분기를 보인다.
+  /// 그 날 있는 것이 없으면 그 날까지 가장 늦게 끝난 것 하나(폐선은 마지막 상태)이고, 그 날 뒤에 생긴 연결은 보이지 않는다.
+  /// 기간별 기록은 DB에 그대로 있고 날짜 칩으로 그 시절을 본다 (사용자 결정 2026-11-19)
+  bool _oneOnDay(SelectorRow row, SelectorLink link, Set<String> skip) {
+    const kinds = {'continue', 'transfer', 'branch'};
+    if (!kinds.contains(link.kind)) return true;
+    // 다른 노선은 같은 사슬을 나누고 두 연결의 기간이 겹치지 않을 때만(앞 노선이 끝나고 뒤 노선이 이어받음) 같은 노선으로 본다.
+    // 일부 구간만 넘어가 두 노선이 함께 있는 경우(越後線·信越本線)는 서로 다른 노선이다
+    bool overlap(SelectorLink a, SelectorLink b) =>
+        (a.validFromLo ?? '0000').compareTo(b.validToHi ?? DateSpan.maxDate) < 0 && (b.validFromLo ?? '0000').compareTo(a.validToHi ?? DateSpan.maxDate) < 0;
+    bool related(SelectorLink other) =>
+        other.otherLineId == link.otherLineId || (_sharesLineage(other.otherLineId, link.otherLineId) && !overlap(other, link));
+    final group = [for (final other in [...row.links, ...row.goneLinks]) if (kinds.contains(other.kind) && related(other)) other];
+    bool live(SelectorLink other) => row.links.contains(other) && !_gone(other, onDate: true, node: row.node);
+    final present = [for (final other in group) if (live(other)) other];
+    if (present.isNotEmpty) {
+      if (!present.contains(link)) return false;
+      // 그 날 직통(끝 이어짐)이 있으면 같은 노선 환승은 숨긴다(더 넓은 쪽 하나). 화면에 줄로 그려지지 않는 연결
+      // (병주 선이 대신하는 행 skip, 선로만 갈라지는 분기 branch)은 환승을 가리지 않는다 (尾西線 名鉄一宮, 越後線 吉田의 弥彦線)
+      return link.kind != 'transfer' || !present.any((other) => other.kind == 'continue' && !skip.contains('${row.seq}\u0000${other.otherLineId}'));
+    }
+    // 그 날 뒤에 생긴 연결은 보이지 않는다
+    bool future(SelectorLink other) => other.validFromLo != null && other.validFromLo!.compareTo(_day) > 0;
+    if (future(link)) return false;
+    // 방향(쪽·흐름)마다 그 날까지 가장 늦게 끝난 것 하나. 지나가는 역의 위·아래 두 방면은 따로 남는다(弥彦線 東三条)
+    String dir(SelectorLink other) => '${other.side ?? ''}|${other.flow ?? ''}';
+    final ended = [
+      for (final other in group)
+        if (dir(other) == dir(link) && !future(other) && other.validToHi != null && other.validToHi != DateSpan.maxDate && other.validToHi!.compareTo(_day) <= 0)
+          other.validToHi!,
     ];
+    // 끝난 날을 모르는 연결뿐이면 그대로 둔다
+    if (ended.isEmpty) return link.validToHi == null || link.validToHi == DateSpan.maxDate || link.validToHi!.compareTo(_day) > 0;
+    final last = ended.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
+    return link.validToHi == last;
   }
+
 
   /// 같은 상대 노선의 같은 쪽 줄이 기간만 이어서 나뉘었으면 하나만 그린다. 그날 있는 것, 둘 다 같으면 늦게 끝난 것을 남긴다
   /// (青山線·浅草線 泉岳寺: 연결 종류나 끝 역이 바뀌어 행이 기간별로 나뉜 것. 감사 3회차 kanto_1-002).
@@ -954,7 +927,7 @@ final class DisplayRules {
         if (item.before.isNotEmpty) return item;
         for (final t in transferChains) {
           if (t.link.otherLineId == item.link.otherLineId && t.link.validToHi != null && t.link.validToHi == item.link.validFromLo) {
-            return DisplayLink(link: item.link, gone: item.gone, suspended: item.suspended, before: t.before, then: item.then, since: item.since);
+            return DisplayLink(link: item.link, gone: item.gone, suspended: item.suspended, before: t.before);
           }
         }
         return item;

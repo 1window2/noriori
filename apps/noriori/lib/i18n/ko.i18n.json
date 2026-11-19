@@ -170,6 +170,7 @@
     "dateTitle": "탑승일",
     "dateHint": "2015, 2015-03, 2015-03-14, 198X",
     "dateUnknown": "날짜 모름",
+    "dateUnknownHint": "날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요",
     "datePick": "달력에서 고르기",
     "dateToday": "오늘",
     "dateBad": "날짜 형식을 확인해 주세요",
@@ -191,9 +192,7 @@
       "suspendedSince": "운휴 $year~",
       "until": "~$year",
       "since": "$year~",
-      "span": "$from~$to",
-      "thenTransfer": "→ 환승",
-      "thenThrough": "→ 직통"
+      "span": "$from~$to"
     },
     "savedAs": "탑승일 기준 $line 구간",
     "movedTo": "${year}년 ${name} 이전",

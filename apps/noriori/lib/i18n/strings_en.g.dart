@@ -322,6 +322,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get dateTitle => 'Ride date';
 	@override String get dateHint => '2015, 2015-03, 2015-03-14, 198X';
 	@override String get dateUnknown => 'No date';
+	@override String get dateUnknownHint => 'Date unknown: stations from all eras, connections as they last were';
 	@override String get datePick => 'Pick from calendar';
 	@override String get dateToday => 'Today';
 	@override String get dateBad => 'Please check the date format';
@@ -988,8 +989,6 @@ class _Translations$session$state$en implements Translations$session$state$ko {
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
 	@override String span({required Object from, required Object to}) => '${from}~${to}';
-	@override String get thenTransfer => '→ transfer';
-	@override String get thenThrough => '→ through';
 }
 
 // Path: data.notice
@@ -1277,6 +1276,7 @@ extension on TranslationsEn {
 			'session.dateTitle' => 'Ride date',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => 'No date',
+			'session.dateUnknownHint' => 'Date unknown: stations from all eras, connections as they last were',
 			'session.datePick' => 'Pick from calendar',
 			'session.dateToday' => 'Today',
 			'session.dateBad' => 'Please check the date format',
@@ -1298,8 +1298,6 @@ extension on TranslationsEn {
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
-			'session.state.thenTransfer' => '→ transfer',
-			'session.state.thenThrough' => '→ through',
 			'session.savedAs' => ({required Object line}) => 'Part of ${line} on that date',
 			'session.movedTo' => ({required Object name, required Object year}) => 'Moved to ${name} in ${year}',
 			'session.handSince' => ({required Object line, required Object date}) => '${line} from ${date}',
@@ -1659,9 +1657,9 @@ extension on TranslationsEn {
 			'prefNames.25' => 'Kyoto',
 			'prefNames.26' => 'Osaka',
 			'prefNames.27' => 'Hyogo',
+			'prefNames.28' => 'Nara',
 			_ => null,
 		} ?? switch (path) {
-			'prefNames.28' => 'Nara',
 			'prefNames.29' => 'Wakayama',
 			'prefNames.30' => 'Tottori',
 			'prefNames.31' => 'Shimane',

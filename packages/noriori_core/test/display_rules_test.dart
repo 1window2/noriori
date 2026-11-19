@@ -764,7 +764,7 @@ void main() {
       expect(lines.whereType<EndLine>().single.items.single.link.kind, 'continue');
     });
 
-    test('끝 역의 분기와 끝 이어짐이 다른 쪽이면 둘 다 남는다 (弥彦線 東三条)', () {
+    test('같은 노선이 분기에서 끝 이어짐으로 바뀌었으면 그 날 맞는 것 하나만 남는다 (弥彦線 東三条, 사용자 결정 2026-11-19)', () {
       final rows = [
         row(0, 'a'),
         row(1, 'b', links: [link('continue', 'l2', seq: 1, from: '1985-04-01')], gone: [
@@ -772,7 +772,7 @@ void main() {
         ]),
       ];
       final lines = rules.lines(lineId: 'l', rows: rows, openGaps: const [true], options: options, undated: true);
-      expect(lines.whereType<BranchLine>().single.up, isTrue);
+      expect(lines.whereType<BranchLine>(), isEmpty);
       expect(lines.whereType<EndLine>().single.up, isFalse);
     });
 
@@ -1051,11 +1051,12 @@ void main() {
       ]);
       final groups = r.transfers(row0, 'me', all, undated: true);
       final items = [for (final g in groups) ...g.items];
+      // 그 날(오늘) 있는 연결 하나만 보인다(사용자 결정 2026-11-19). 앞 노선 이름은 날짜 칩으로 그 시절을 볼 때 그 노선으로 나온다
       expect(items.map((i) => i.link.otherLineId), ['new']);
-      expect(items.single.before.map((b) => b.otherLineId), ['old']);
+      expect(items.single.before, isEmpty);
     });
 
-    test('같은 사슬을 이어받은 노선은 연결이 끊겼다 다시 생겨도 앞 노선을 이름으로 붙인다 (佐世保 松浦線 ~1988 › 松浦鉄道西九州線 직통 2002~)', () {
+    test('같은 사슬을 이어받은 노선은 그 날 맞는 연결 하나만 보이고, 사슬이 다르면 따로 둔다 (佐世保 松浦線 ~1988 · 松浦鉄道西九州線 직통 ~2020)', () {
       Network net(String oldLineage) => Network(NetworkData(
             routes: const [],
             edges: const [],
@@ -1091,31 +1092,14 @@ void main() {
                 .whereType<EndLine>())
               ...end.items,
           ];
+      // 그 날(오늘)에는 둘 다 끝났으니 가장 늦게 끝난 것 하나만 보인다(사용자 결정 2026-11-19: 그 날 맞는 연결 하나만)
       final chained = items(net('shared'));
       expect(chained.map((i) => i.link.otherLineId), ['new']);
-      expect(chained.single.before.map((b) => b.otherLineId), ['old']);
+      expect(chained.single.before, isEmpty);
       // 사슬이 다르면 날짜가 떨어진 두 노선은 따로 둔다
       final apart = items(net('other'));
       expect(apart.map((i) => i.link.otherLineId).toSet(), {'old', 'new'});
       expect(apart.every((i) => i.before.isEmpty), isTrue);
-    });
-
-    test('직통이 끝나고 환승만 남으면 끝난 직통에 「→ 환승」, 환승에 그 해부터를 적는다 (佐世保 2020, 2안)', () {
-      final r = DisplayRules(companies(), today: '2026-11-19');
-      final rows = [
-        row(0, 'a'),
-        row(1, 'x', links: [
-          link('transfer', 'private', seq: 1, flow: 'down', from: '1988-04-01'),
-        ], gone: [
-          link('continue', 'private', seq: 1, next: 'p', from: '2009-03-14', to: '2020-03-14', terminal: 't'),
-        ]),
-      ];
-      final out = r.lines(lineId: 'me', rows: rows, openGaps: const [true], options: all, closedRoute: false, archiveStops: const [], archiveBranches: const []);
-      final end = out.whereType<EndLine>().single.items.single;
-      expect(end.then, 'transfer');
-      final tr = r.transfers(rows[1], 'me', all).expand((g) => g.items).single;
-      expect(tr.since, '2020-03-14');
-      expect(tr.then, isNull);
     });
 
     test('같은 쪽 같은 노선 분기가 기간이 엇갈려 겹치면(옮겨 간 방면) 하나만 남는다 (東村山 西武園線)', () {

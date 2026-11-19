@@ -170,6 +170,7 @@
     "dateTitle": "乗車日",
     "dateHint": "2015, 2015-03, 2015-03-14, 198X",
     "dateUnknown": "日付不明",
+    "dateUnknownHint": "日付不明：駅は全期間、直通・乗換は最後の状態で表示します",
     "datePick": "カレンダーから選ぶ",
     "dateToday": "今日",
     "dateBad": "日付の形式を確認してください",
@@ -191,9 +192,7 @@
       "suspendedSince": "運休 $year~",
       "until": "~$year",
       "since": "$year~",
-      "span": "$from~$to",
-      "thenTransfer": "→ 乗換",
-      "thenThrough": "→ 直通"
+      "span": "$from~$to"
     },
     "savedAs": "当時は$line",
     "movedTo": "${year}年 ${name}へ移転",

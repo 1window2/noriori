@@ -316,6 +316,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get dateTitle => '乗車日';
 	@override String get dateHint => '2015, 2015-03, 2015-03-14, 198X';
 	@override String get dateUnknown => '日付不明';
+	@override String get dateUnknownHint => '日付不明：駅は全期間、直通・乗換は最後の状態で表示します';
 	@override String get datePick => 'カレンダーから選ぶ';
 	@override String get dateToday => '今日';
 	@override String get dateBad => '日付の形式を確認してください';
@@ -958,8 +959,6 @@ class _Translations$session$state$ja implements Translations$session$state$ko {
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
 	@override String span({required Object from, required Object to}) => '${from}~${to}';
-	@override String get thenTransfer => '→ 乗換';
-	@override String get thenThrough => '→ 直通';
 }
 
 // Path: data.notice
@@ -1247,6 +1246,7 @@ extension on TranslationsJa {
 			'session.dateTitle' => '乗車日',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => '日付不明',
+			'session.dateUnknownHint' => '日付不明：駅は全期間、直通・乗換は最後の状態で表示します',
 			'session.datePick' => 'カレンダーから選ぶ',
 			'session.dateToday' => '今日',
 			'session.dateBad' => '日付の形式を確認してください',
@@ -1268,8 +1268,6 @@ extension on TranslationsJa {
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
-			'session.state.thenTransfer' => '→ 乗換',
-			'session.state.thenThrough' => '→ 直通',
 			'session.savedAs' => ({required Object line}) => '当時は${line}',
 			'session.movedTo' => ({required Object year, required Object name}) => '${year}年 ${name}へ移転',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}から${line}',
@@ -1629,9 +1627,9 @@ extension on TranslationsJa {
 			'prefNames.25' => '京都',
 			'prefNames.26' => '大阪',
 			'prefNames.27' => '兵庫',
+			'prefNames.28' => '奈良',
 			_ => null,
 		} ?? switch (path) {
-			'prefNames.28' => '奈良',
 			'prefNames.29' => '和歌山',
 			'prefNames.30' => '鳥取',
 			'prefNames.31' => '島根',

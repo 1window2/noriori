@@ -176,6 +176,7 @@
     "dateTitle": "Ride date",
     "dateHint": "2015, 2015-03, 2015-03-14, 198X",
     "dateUnknown": "No date",
+    "dateUnknownHint": "Date unknown: stations from all eras, connections as they last were",
     "datePick": "Pick from calendar",
     "dateToday": "Today",
     "dateBad": "Please check the date format",
@@ -197,9 +198,7 @@
       "suspendedSince": "Suspended $year~",
       "until": "~$year",
       "since": "$year~",
-      "span": "$from~$to",
-      "thenTransfer": "→ transfer",
-      "thenThrough": "→ through"
+      "span": "$from~$to"
     },
     "savedAs": "Part of $line on that date",
     "movedTo": "Moved to ${name} in ${year}",

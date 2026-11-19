@@ -3331,12 +3331,13 @@ def _auto_plat():
     for s_ in stops:
         if s_['is_stop'] and s_['valid_to']=='ongoing':nl_[s_['node_id']].add(routes[s_['route_id']]['line'])
     out_={}
-    for n_,ls_ in nl_.items():
+    for n_,ls_ in sorted(nl_.items()):
         if len(ls_)<2 or n_ in PLAT or n_ not in pos_ or n_ not in nodes:continue
         o_=pos_[n_];cx_=math.cos(math.radians(o_[0]))
         def xy_(lon_,lat_):return ((lon_-o_[1])*111.32*cx_,(lat_-o_[0])*110.57)
         per_={}
-        for l_ in ls_:
+        # 노선 순서를 정해 두어야 빌드마다 행 순서가 같다(집합 순서는 실행마다 다름, 13회차 깨끗한 CI 대조)
+        for l_ in sorted(ls_):
             es_=[e_['id'] for e_ in adj[n_] if l_ in cur_[e_['id']] and e_['id'] in geo_]
             if len(es_)<2:continue
             best_=None
