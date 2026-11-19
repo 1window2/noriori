@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:noriori_core/noriori_core.dart';
-import 'package:noriori_store/noriori_store.dart' show NameBook;
 
 import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
@@ -953,10 +952,10 @@ class _EndTile extends ConsumerWidget {
                         ),
                       ),
                     ),
-                    _endText(context, text, tokens, book, name, where, tail, color),
+                    _endText(context, text, tokens, book.lines, name, where, tail, color),
                   ],
                 )
-              : _endText(context, text, tokens, book, name, where, tail, color),
+              : _endText(context, text, tokens, book.lines, name, where, tail, color),
         ),
       ),
     );
@@ -974,7 +973,7 @@ class _EndTile extends ConsumerWidget {
     );
   }
 
-  Widget _endText(BuildContext context, TextTheme text, AppTokens tokens, NameBook book, String name, String? where, String? tail, Color color) =>
+  Widget _endText(BuildContext context, TextTheme text, AppTokens tokens, Map<String, String> lineNames, String name, String? where, String? tail, Color color) =>
       Padding(
             padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 0, 12, 0),
             child: Align(
@@ -989,7 +988,7 @@ class _EndTile extends ConsumerWidget {
                     Padding(
                       padding: const EdgeInsets.only(top: 6),
                       child: Text(
-                        '${book.lines[old.otherLineId] ?? old.otherLineId ?? ''}  ${_tail(context, old, gone: true) ?? ''}',
+                        '${lineNames[old.otherLineId] ?? old.otherLineId ?? ''}  ${_tail(context, old, gone: true) ?? ''}',
                         style: text.bodyMedium?.copyWith(fontSize: 13, color: tokens.selectorGoneText),
                       ),
                     ),
