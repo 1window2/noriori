@@ -472,12 +472,9 @@ class BranchPainter extends CustomPainter {
     if (dots != null) {
       // 줄기가 이 줄을 지나가면 끝 이어짐 점선은 분기 줄기 칸으로 비켜 선다 (EndPainter와 같음)
       final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stemX;
-      final paint = _stroke(dots);
-      // 지나가는 줄기는 끝 이어짐 줄들과 같은 박자로 긋는다 (EndPainter와 같음)
-      _stacked((at) {
-        final dy = up ? size.height - at : at;
-        canvas.drawLine(Offset(x, dy), Offset(x, up ? dy - 3 : dy + 3), paint);
-      }, size.height, first: fromStop);
+      // 끝 이어짐 줄은 점선이 아니라 노드에서 이어지는 실선이고 끝 줄에서만 옅어진다. 지나가는 줄도 같은 굵기의 실선이다
+      // (사용자 결정 2026-11-19, 森의 渡島海岸鉄道 줄에서 점선이 남아 있었다 2026-11-20)
+      canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(dots, 2.5));
     }
     const sx = SelectorRuler.stemX;
     const r = SelectorRuler.bend;
@@ -553,15 +550,6 @@ class BranchPainter extends CustomPainter {
 /// 줄기 끝에서 이어지는 점선.
 /// 여러 줄에 걸친 점선 한 줄기. 줄마다 빈틈으로 끝나고 다음 줄은 점선으로 시작해, 경계에서 점선이 붙거나 겹치지 않는다.
 /// 역에 붙은 첫 줄만 4를 비우고 시작한다. 간격은 줄 높이에 맞춰 7 언저리로 고르게 늘인다 (실화면 검수 2026-11-08, 和歌山)
-void _stacked(void Function(double at) dash, double height, {required bool first}) {
-  final start = first ? 4.0 : 0.0;
-  final count = math.max(1, ((height - start) / 7).round());
-  final step = (height - start) / count;
-  for (var i = 0; i < count; i++) {
-    dash(start + step * i);
-  }
-}
-
 class EndPainter extends CustomPainter {
   const EndPainter({
     required this.color,
@@ -604,15 +592,9 @@ class EndPainter extends CustomPainter {
     final y = size.height / 2;
     paintLanes(canvas, size, lanes, laneStyle, y);
     final paint = _stroke(color);
-    // 점선은 모두 역 쪽 끝에서 4를 비우고 시작한다. 역 줄의 실선이 줄기와 병주 선에서 같은 길이로 끝난다
-    void dash(double at) {
-      final dy = up ? size.height - at : at;
-      canvas.drawLine(Offset(x, dy), Offset(x, up ? dy - 3 : dy + 3), paint);
-    }
-
     final lane = parallel;
     if (lane != null) {
-      if (trunkThrough) _stacked(dash, size.height, first: fromStop);
+      if (trunkThrough) canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(color, 2.5));
       const r = SelectorRuler.bend;
       const tx = SelectorRuler.textX - 8;
       final lx = laneX(lane);

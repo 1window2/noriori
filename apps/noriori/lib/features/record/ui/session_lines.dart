@@ -913,7 +913,8 @@ class _EndTile extends ConsumerWidget {
           : null,
       child: CustomPaint(
         painter: EndPainter(
-          color: gone ? tokens.selectorGone : tokens.lineUnridden,
+          // 묶음의 선은 그 묶음에 현행이 하나라도 있으면 현행색 하나로 옅어진다. 글줄(번호·이름)은 줄마다 제 색이다 (사용자 결정 2026-11-20)
+          color: (line.stackOf > 1 ? !line.stackLive : gone) ? tokens.selectorGone : tokens.lineUnridden,
           up: line.up,
           parallel: line.parallel,
           trunkThrough: line.trunkThrough,

@@ -245,11 +245,16 @@ final class EndLine extends SelectorLine {
     this.trunkThrough = false,
     this.stackAt = 0,
     this.stackOf = 1,
+    this.stackLive = false,
     super.lanes,
   });
 
   final int gap;
   final SelectorRow at;
+
+  /// 같은 끝 묶음에 그날 있는 노선이 하나라도 있다. 묶음의 옅어지는 선은 그 색(현행색) 하나로 그린다.
+  /// 줄마다 색을 바꾸면 현행·폐선이 섞인 묶음에서 선이 줄 경계에서 끊겨 보였다(網走 釧網本線·湧網線, 사용자 결정 2026-11-20)
+  final bool stackLive;
 
   /// 같은 끝에 이어지는 노선이 여럿이면 한 묶음으로 촘촘히 쌓는다 (사용자 결정 2026-11-08, A안).
   /// [stackAt] 0이 역에 가장 가까운 줄이고 그 줄만 점선을 길게 긋는다
@@ -1477,6 +1482,7 @@ final class DisplayRules {
                 trunkThrough: end.trunkThrough,
                 stackAt: end.stackAt,
                 stackOf: end.stackOf,
+                stackLive: end.stackLive,
                 lanes: end.lanes,
               );
             }
@@ -1661,7 +1667,12 @@ final class DisplayRules {
     for (final item in items) {
       (byLine[item.link.otherLineId] ??= []).add(item);
     }
-    final groups = byLine.values.toList();
+    // 그날 있는 노선을 역에 가까운 쪽에 둔다(목록도 현행이 먼저). 같은 처지끼리는 원래 순서다
+    bool gone(List<DisplayLink> group) => group.every((item) => item.gone);
+    final liveGroups = byLine.values.where((g) => !gone(g)), goneGroups = byLine.values.where(gone);
+    // 위쪽 끝은 목록 뒤쪽이 역에 가깝다
+    final groups = up ? [...goneGroups, ...liveGroups] : [...liveGroups, ...goneGroups];
+    final live = groups.any((g) => !gone(g));
     // 위쪽 끝은 바깥 줄부터 놓여 마지막이 역에 가깝다
     return [
       for (final (i, group) in groups.indexed)
@@ -1672,6 +1683,7 @@ final class DisplayRules {
           up: up,
           stackAt: up ? groups.length - 1 - i : i,
           stackOf: groups.length,
+          stackLive: live,
         ),
     ];
   }

@@ -379,6 +379,20 @@ void main() {
       expect(out.last, isA<EndLine>());
     });
 
+    test('같은 끝 직통 묶음은 현행을 역 가까이 두고, 현행이 하나라도 있으면 선은 현행색이다 (網走, 사용자 결정 2026-11-20)', () {
+      final out = lines([
+        row(0, 'a'),
+        row(1, 'b', links: [
+          link('continue', 'old', next: 'p', to: '1987-03-20'),
+          link('continue', 'now', next: 'q'),
+        ]),
+      ]);
+      final ends = out.whereType<EndLine>().toList();
+      expect([for (final e in ends) e.items.first.link.otherLineId], ['now', 'old']);
+      expect(ends.every((e) => e.stackLive), isTrue);
+      expect(ends.map((e) => e.stackAt), [0, 1]);
+    });
+
     test('역 사이 분기는 그 칸에 놓이고 역의 어깨를 만들지 않는다', () {
       final out = lines([
         row(0, 'a', links: [link('branch', 'x', seq: 0, midway: true)]),
