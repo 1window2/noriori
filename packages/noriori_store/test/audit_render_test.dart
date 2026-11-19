@@ -138,6 +138,7 @@ void main() {
             '${ln(d.link.otherLineId)}${d.link.otherNode == null ? '' : '@${lnm(d.link, d.link.otherNode)}'}'
             '${d.link.nextStop == null ? '' : ' 다음 ${lnm(d.link, d.link.nextStop)}'}${d.link.terminal == null ? '' : ' 끝 ${lnm(d.link, d.link.terminal)}'}'
             '${d.gone ? (d.suspended ? ' (운휴 중 ${d.link.validToHi ?? '?'}~)' : ' (끝남 ~${d.link.validToHi ?? '?'})') : ''}'
+            '${d.then == null ? '' : ' → ${d.then == 'transfer' ? '환승' : '직통'}'}${d.since == null ? '' : ' (${d.since}~)'}'
             '${detail ? ' {${d.link.kind} ${d.link.validFromLo ?? ''}~${d.link.validToHi ?? ''}}' : ''}';
         final jl = <Map<String, Object?>>[];
         screens.add({'date': raw, 'rows': [for (final r in rows) {...rj(r), 'links': [for (final l in r.links) lk(l)], 'goneLinks': [for (final l in r.goneLinks) lk(l)]}], 'lines': jl});

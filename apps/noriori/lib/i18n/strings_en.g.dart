@@ -988,6 +988,8 @@ class _Translations$session$state$en implements Translations$session$state$ko {
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
 	@override String span({required Object from, required Object to}) => '${from}~${to}';
+	@override String get thenTransfer => '→ transfer';
+	@override String get thenThrough => '→ through';
 }
 
 // Path: data.notice
@@ -1296,6 +1298,8 @@ extension on TranslationsEn {
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
+			'session.state.thenTransfer' => '→ transfer',
+			'session.state.thenThrough' => '→ through',
 			'session.savedAs' => ({required Object line}) => 'Part of ${line} on that date',
 			'session.movedTo' => ({required Object name, required Object year}) => 'Moved to ${name} in ${year}',
 			'session.handSince' => ({required Object line, required Object date}) => '${line} from ${date}',
@@ -1655,10 +1659,10 @@ extension on TranslationsEn {
 			'prefNames.25' => 'Kyoto',
 			'prefNames.26' => 'Osaka',
 			'prefNames.27' => 'Hyogo',
-			'prefNames.28' => 'Nara',
-			'prefNames.29' => 'Wakayama',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.28' => 'Nara',
+			'prefNames.29' => 'Wakayama',
 			'prefNames.30' => 'Tottori',
 			'prefNames.31' => 'Shimane',
 			'prefNames.32' => 'Okayama',

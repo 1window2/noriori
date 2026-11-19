@@ -237,16 +237,21 @@ class StopPainter extends CustomPainter {
         final cx = cxOf(index);
         final goesUp = dot.flow == TransferFlow.through || dot.flow == TransferFlow.up;
         final goesDown = dot.flow == TransferFlow.through || dot.flow == TransferFlow.down;
+        // 환승 다리는 자기 줄 안에서만 그린다. 줄이 낮으면(환승 모음 한 줄·없음) 위 줄의 아래 다리와 이 줄의 위 다리가 겹쳤다.
+        // 길이를 줄 끝까지 남은 높이(끝 2px 비움)로 줄이고, 실선·흐린 점의 비율은 그대로 둔다 (2026-11-19 사용자 지적)
         void leg(double sign) {
-          canvas.drawLine(Offset(cx, y), Offset(cx, y + sign * 18), _stroke(dot.color));
+          final room = (sign > 0 ? size.height - y : y) - 2;
+          final l = math.min(28.0, math.max(0.0, room));
+          if (l <= 0) return;
+          canvas.drawLine(Offset(cx, y), Offset(cx, y + sign * l * 18 / 28), _stroke(dot.color));
           canvas.drawLine(
-            Offset(cx, y + sign * 21),
-            Offset(cx, y + sign * 24),
+            Offset(cx, y + sign * l * 21 / 28),
+            Offset(cx, y + sign * l * 24 / 28),
             _stroke(dot.color.withValues(alpha: .8)),
           );
           canvas.drawLine(
-            Offset(cx, y + sign * 26),
-            Offset(cx, y + sign * 28),
+            Offset(cx, y + sign * l * 26 / 28),
+            Offset(cx, y + sign * l),
             _stroke(dot.color.withValues(alpha: .45)),
           );
         }

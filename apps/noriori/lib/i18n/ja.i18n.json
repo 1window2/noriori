@@ -191,7 +191,9 @@
       "suspendedSince": "運休 $year~",
       "until": "~$year",
       "since": "$year~",
-      "span": "$from~$to"
+      "span": "$from~$to",
+      "thenTransfer": "→ 乗換",
+      "thenThrough": "→ 直通"
     },
     "savedAs": "当時は$line",
     "movedTo": "${year}年 ${name}へ移転",

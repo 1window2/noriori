@@ -60,6 +60,22 @@ String? _tail(BuildContext context, SelectorLink link, {required bool gone, bool
   return gone && from != null ? t.since(year: from) : null;
 }
 
+/// 직통과 환승이 바뀐 것을 끝 글자 뒤에 붙인다. 끝난 쪽은 「~2020 → 환승」, 지금 있는 쪽은 「2020~」이다 (사용자 결정 2026-11-19, 2안)
+String? _withChange(BuildContext context, DisplayLink item, String? tail) {
+  final t = context.t.session.state;
+  final then = item.then;
+  if (item.gone && then != null) {
+    final arrow = then == 'transfer' ? t.thenTransfer : t.thenThrough;
+    return tail == null || tail.isEmpty ? arrow : '$tail $arrow';
+  }
+  final since = item.since;
+  if (!item.gone && since != null) {
+    final s = t.since(year: _year(since) ?? '?');
+    return tail == null || tail.isEmpty ? s : '$tail $s';
+  }
+  return tail;
+}
+
 /// 폐지 구간의 한 줄. 연도를 모르면 낱말만 적는다.
 String closedNote(BuildContext context, String year) {
   final t = context.t.session;
@@ -553,7 +569,7 @@ class _Transfers extends StatelessWidget {
         out.add(
           state.isTemporary
               ? _Entry(name, station, null, gone: false, lineId: link.otherLineId)
-              : _Entry(name, station, _tail(context, link, gone: item.gone, suspended: item.suspended), gone: item.gone, lineId: link.otherLineId),
+              : _Entry(name, station, _withChange(context, item, _tail(context, link, gone: item.gone, suspended: item.suspended)), gone: item.gone, lineId: link.otherLineId),
         );
       }
     }
@@ -607,7 +623,7 @@ class _Transfers extends StatelessWidget {
         children.add(
           Text(
             '${_lineName(item.link.otherLineId)}${_station(item.link)} '
-            '${item.gone ? _tail(context, item.link, gone: true, chained: true, suspended: item.suspended) ?? '' : context.t.session.state.since(year: _year(item.link.validFromLo) ?? '?')}',
+            '${item.gone ? _withChange(context, item, _tail(context, item.link, gone: true, chained: true, suspended: item.suspended)) ?? '' : context.t.session.state.since(year: _year(item.link.validFromLo) ?? '?')}',
             style: text.bodySmall?.copyWith(color: item.gone ? tokens.textClosed : tokens.textMuted),
           ),
         );
@@ -702,7 +718,7 @@ class _BranchTile extends ConsumerWidget {
     final at = state.nameOf(line.at.node);
     final other = link.otherNode == null ? '' : state.linkNameOf(link, link.otherNode!);
     final station = other.isEmpty || other == at ? '' : '($other)';
-    final tail = archive != null ? context.t.session.state.until(year: archive.closedYear) : _tail(context, link, gone: item.gone, suspended: item.suspended);
+    final tail = archive != null ? context.t.session.state.until(year: archive.closedYear) : _withChange(context, item, _tail(context, link, gone: item.gone, suspended: item.suspended));
     final color = item.gone ? tokens.selectorGoneText : tokens.textMuted;
     // 옛 이름 줄의 높이는 글자 크기를 따른다. 그림의 곡선 위치가 이 값을 쓴다
     final oldHeight = MediaQuery.textScalerOf(context).scale(16);
@@ -809,7 +825,7 @@ class _EndTile extends ConsumerWidget {
     final gone = !state.isTemporary && line.items.every((item) => item.gone);
     final color = gone ? tokens.selectorGoneText : tokens.textMuted;
     // 끝난 이어짐은 분기 줄처럼 끝난 해를 붙인다 (실화면 검수 2026-11-08, 川内의 宮之城線)
-    final tail = gone ? _tail(context, first, gone: true, suspended: line.items.first.suspended) : null;
+    final tail = _withChange(context, line.items.first, gone ? _tail(context, first, gone: true, suspended: line.items.first.suspended) : null);
     // 그날(날짜 모름이면 어느 때든) 진행 방향을 바꿔 들어가는 직통(스위치백)이 있던 끝 이어짐이면 점선 왼쪽에 표식을 둔다.
     // 문구는 걸리는 표식 기간이 모두 끝났으면 「있었습니다」다 (11회차 S3)
     final date = state.dateInput == null ? null : DateSpan.parse(state.dateInput!);
@@ -850,15 +866,44 @@ class _EndTile extends ConsumerWidget {
             padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 0, 12, 0),
             child: Align(
               alignment: Alignment.centerLeft,
-              child: Wrap(
-                spacing: 10,
-                crossAxisAlignment: WrapCrossAlignment.center,
+              // 이어받기 전 노선(같은 사슬)은 같은 줄 묶음 안에서 바로 위에 이름과 끝난 해만 적는다. 간격 없이 붙여 한 노선의 이어짐으로 읽힌다
+              // (佐世保: 松浦線 ~1988 / 松浦鉄道西九州線 ~2020 → 환승, 사용자 결정 2026-11-19)
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(name, style: text.bodyMedium?.copyWith(fontSize: 13, color: color)),
-                  if (where != null)
-                    Text(where, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
-                  if (tail != null)
-                    Text(tail, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
+                  for (final old in line.items.first.before)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Text(
+                        '${book.lines[old.otherLineId] ?? old.otherLineId ?? ''}  ${_tail(context, old, gone: true) ?? ''}',
+                        style: text.bodySmall?.copyWith(fontSize: 11.5, color: tokens.selectorGoneText),
+                      ),
+                    ),
+                  // 폭이 모자라면 방면 역·노선 이름을 말줄임하고 끝난 해·바뀜(「~2020 → 환승」)은 끝까지 보인다 (목업 2026-11-19)
+                  // 끝난 해·바뀜(「~2020 → 환승」)은 끝까지 보이고, 모자라면 방면 역부터, 그다음 노선 이름을 말줄임한다.
+                  // 끝 글자는 줄 폭의 60%까지만 차지해 아주 좁거나 글자가 클 때도 넘치지 않는다 (실화면 2026-11-19)
+                  LayoutBuilder(
+                    builder: (context, box) => Row(
+                      spacing: 10,
+                      children: [
+                        Flexible(
+                          flex: 6,
+                          child: Text(name, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodyMedium?.copyWith(fontSize: 13, color: color)),
+                        ),
+                        if (where != null)
+                          Flexible(
+                            flex: 1,
+                            child: Text(where, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
+                          ),
+                        if (tail != null)
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: box.maxWidth * .6),
+                            child: Text(tail, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
+                          ),
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),

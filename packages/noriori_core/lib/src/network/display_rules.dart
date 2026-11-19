@@ -52,7 +52,14 @@ final class DisplayOptions {
 
 /// 줄 하나에 그릴 연결.
 final class DisplayLink {
-  const DisplayLink({required this.link, required this.gone, this.before = const [], this.suspended = false});
+  const DisplayLink({
+    required this.link,
+    required this.gone,
+    this.before = const [],
+    this.suspended = false,
+    this.then,
+    this.since,
+  });
 
   final SelectorLink link;
 
@@ -65,6 +72,13 @@ final class DisplayLink {
 
   /// 같은 자리를 이어받기 전 노선. 선 없이 이름만 위에 적는다.
   final List<SelectorLink> before;
+
+  /// 끝난 연결이 같은 노선의 다른 종류로 이어졌다: 직통이 끝나고 환승만 남음(`transfer`), 환승이 직통으로 바뀜(`continue`).
+  /// 화면은 끝난 해 뒤에 「→ 환승」「→ 직통」을 붙인다 (사용자 결정 2026-11-19, 직통은 여객 직통 운전만 곧게 그림)
+  final String? then;
+
+  /// 지금 있는 연결인데 같은 노선의 다른 종류 연결이 이 날 끝났다(佐世保 환승: 직통 2020-03-14 끝). 화면은 「2020~」을 붙인다
+  final String? since;
 }
 
 enum TransferFlow { through, up, down, unknown }
@@ -348,6 +362,12 @@ final class DisplayRules {
     return a == null || b == null || a.intersection(b).isNotEmpty;
   }
 
+  /// 두 노선이 같은 사슬을 실제로 나누는가. 사슬을 모르면 거짓이다
+  bool _sharesLineage(String? a, String? b) {
+    final x = _lineages[a], y = _lineages[b];
+    return x != null && y != null && x.intersection(y).isNotEmpty;
+  }
+
   /// 같은 회사인가. 회사 판정은 이름이 아니라 `operator_id`다 (DESIGN §8.1).
   bool sameCompany(String? a, String? b) =>
       (_companies[a] ?? const <String>{}).intersection(_companies[b] ?? const <String>{}).isNotEmpty;
@@ -487,10 +507,28 @@ final class DisplayRules {
           from = sameLine.first.link.validFromLo;
           continue;
         }
-        final found = [
+        var found = [
           for (final other in contig)
             if (other.link.terminal == head.link.terminal && _succeeds(other.link.otherLineId, line)) other,
         ];
+        // 같은 노선을 이어받았는데 연결(직통)이 끊겼다 다시 생긴 경우(佐世保: 国鉄 松浦線 ~1988 › 松浦鉄道西九州線 직통 2002~)는 날짜가 붙지 않아도 이어받은 것이다.
+        // 이때는 사슬(lineage)을 실제로 나눠야 한다(사슬 모름은 받지 않음). 앞 노선 가운데 가장 늦게 끝난 것을 잇는다 (사용자 결정 2026-11-19: 따로 줄 두지 말고 바로 밑에)
+        if (found.isEmpty) {
+          final gapped = [
+            for (final other in items)
+              if (fresh(other) &&
+                  other.link.terminal == head.link.terminal &&
+                  other.link.otherLineId != line &&
+                  other.link.validToHi != null &&
+                  other.link.validToHi!.compareTo(from) <= 0 &&
+                  _sharesLineage(other.link.otherLineId, line))
+                other,
+          ];
+          if (gapped.isNotEmpty) {
+            final last = gapped.map((other) => other.link.validToHi!).reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
+            found = [for (final other in gapped) if (other.link.validToHi == last) other];
+          }
+        }
         if (found.isEmpty) break;
         earlier.insertAll(0, found);
         head = found.first;
@@ -550,7 +588,7 @@ final class DisplayRules {
   }) {
     final archive = options.showClosed && options.showArchive;
     bool early(SelectorLink link) => link.validToHi != null && link.validToHi!.compareTo(floorDate) <= 0;
-    return _chained([
+    return _changes(row, kind, _chained([
       for (final link in row.links)
         if (link.kind == kind &&
             (archive || !early(link)) &&
@@ -561,7 +599,47 @@ final class DisplayRules {
         for (final link in row.goneLinks)
           if (link.kind == kind && (archive || !early(link)) && !skip.contains('${row.seq}\u0000${link.otherLineId}'))
             _display(link, _gone(link, onDate: false, node: row.node), row.node),
-    ]);
+    ]));
+  }
+
+  /// 같은 역에서 같은 노선(또는 같은 사슬)과의 직통과 환승이 시기에 따라 바뀐 것을 적는다.
+  /// 끝난 쪽은 끝난 날 다른 종류 연결이 이어서 있으면 [DisplayLink.then], 지금 있는 쪽은 다른 종류 연결이 그 기간 안에 끝났으면 그 날을 [DisplayLink.since]로 둔다
+  List<DisplayLink> _changes(SelectorRow row, String kind, List<DisplayLink> items) {
+    if (kind != 'continue' && kind != 'transfer') return items;
+    final otherKind = kind == 'continue' ? 'transfer' : 'continue';
+    final others = [for (final l in [...row.links, ...row.goneLinks]) if (l.kind == otherKind) l];
+    if (others.isEmpty) return items;
+    bool same(SelectorLink a, SelectorLink b) => a.otherLineId == b.otherLineId || _sharesLineage(a.otherLineId, b.otherLineId);
+    bool open(String? end) => end == null || end == DateSpan.maxDate;
+    return [
+      for (final item in items)
+        () {
+          final l = item.link;
+          final end = l.validToHi;
+          String? then;
+          String? since;
+          if (item.gone && !open(end)) {
+            final follows = others.any((o) =>
+                same(o, l) &&
+                (o.validFromLo == null || o.validFromLo!.compareTo(end!) <= 0) &&
+                (open(o.validToHi) || o.validToHi!.compareTo(end!) > 0));
+            if (follows) then = otherKind;
+          }
+          if (!item.gone) {
+            final ended = [
+              for (final o in others)
+                if (same(o, l) &&
+                    !open(o.validToHi) &&
+                    o.validToHi!.compareTo(today) <= 0 &&
+                    (l.validFromLo == null || l.validFromLo!.compareTo(o.validToHi!) <= 0))
+                  o.validToHi!,
+            ];
+            if (ended.isNotEmpty) since = ended.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
+          }
+          if (then == null && since == null) return item;
+          return DisplayLink(link: l, gone: item.gone, before: item.before, suspended: item.suspended, then: then, since: since);
+        }(),
+    ];
   }
 
   /// 같은 상대 노선의 같은 쪽 줄이 기간만 이어서 나뉘었으면 하나만 그린다. 그날 있는 것, 둘 다 같으면 늦게 끝난 것을 남긴다
@@ -876,7 +954,7 @@ final class DisplayRules {
         if (item.before.isNotEmpty) return item;
         for (final t in transferChains) {
           if (t.link.otherLineId == item.link.otherLineId && t.link.validToHi != null && t.link.validToHi == item.link.validFromLo) {
-            return DisplayLink(link: item.link, gone: item.gone, suspended: item.suspended, before: t.before);
+            return DisplayLink(link: item.link, gone: item.gone, suspended: item.suspended, before: t.before, then: item.then, since: item.since);
           }
         }
         return item;

@@ -3317,6 +3317,44 @@ t('junction',['line_id','other_line_id','other_route_id','node_id','edge_id','si
 t('node_position',['node_id','lat','lon','quality','checked','source'],[(p['node'],p.get('lat'),p.get('lon'),p.get('quality'),p.get('checked'),p.get('source')) for p in positions])
 # 환승역의 노선별 승강장과 통합 노드 (DESIGN §7.5). 시각 표시일 뿐 기록·km·분모와 무관하다
 PLAT={x['node']:x for x in _rows_plat() if x['node'] in nodes and (x.get('source')!='n05' or source_on('n05'))}
+# 노선별 승강장 자리가 없는 공용 노드(한 노드를 여러 노선이 씀)는 지나가는 노선마다 역 점을 그 노선 선형 위 가장 가까운 점으로 옮긴 자리를 승강장으로 둔다.
+# 그 노선이 이 역에서 끝나면(이 노드에 닿는 지금 칸이 하나) 역 점 자리다. 종점에서 갈라지는 선형 끝을 다른 승강장으로 잘못 보지 않게 한다.
+# 옮긴 자리가 역 점에서 30m 넘게 떨어진 노선이 있을 때만 만든다. 그 밖(같은 회사 50m 안, 다른 회사 승강장 공유)은 아래 배치 규칙이 한 승강장으로 묶는다.
+# 木古内처럼 新幹線 선로가 역 점에서 떨어져 그려져 역 표시 없이 지나가 보이던 것 (13회차 2026-11-19 사용자 지적). 시각 표시일 뿐 기록·km와 무관하다
+def _auto_plat():
+    geo_={g['edge']:g['coords'] for g in load_geo()}
+    pos_={p_['node']:(p_['lat'],p_['lon']) for p_ in positions if p_.get('lat') is not None}
+    cur_=collections.defaultdict(set)
+    for a_ in attr:
+        if a_.get('valid_to')=='ongoing':cur_[a_['edge_id']].add(a_['line_id'])
+    nl_=collections.defaultdict(set)
+    for s_ in stops:
+        if s_['is_stop'] and s_['valid_to']=='ongoing':nl_[s_['node_id']].add(routes[s_['route_id']]['line'])
+    out_={}
+    for n_,ls_ in nl_.items():
+        if len(ls_)<2 or n_ in PLAT or n_ not in pos_ or n_ not in nodes:continue
+        o_=pos_[n_];cx_=math.cos(math.radians(o_[0]))
+        def xy_(lon_,lat_):return ((lon_-o_[1])*111.32*cx_,(lat_-o_[0])*110.57)
+        per_={}
+        for l_ in ls_:
+            es_=[e_['id'] for e_ in adj[n_] if l_ in cur_[e_['id']] and e_['id'] in geo_]
+            if len(es_)<2:continue
+            best_=None
+            for e_ in es_:
+                pts_=[xy_(*c_) for c_ in geo_[e_]]
+                for i_ in range(len(pts_)-1):
+                    (ax_,ay_),(bx_,by_)=pts_[i_],pts_[i_+1];dx_,dy_=bx_-ax_,by_-ay_;L_=dx_*dx_+dy_*dy_
+                    t_=0 if L_==0 else max(0,min(1,(-ax_*dx_-ay_*dy_)/L_));qx_,qy_=ax_+t_*dx_,ay_+t_*dy_
+                    d_=math.hypot(qx_,qy_)
+                    if best_ is None or d_<best_[0]:best_=(d_,qx_,qy_)
+            per_[l_]=best_
+        far_={l_:v_ for l_,v_ in per_.items() if v_ and v_[0]>0.03}
+        if not far_:continue
+        out_[n_]=dict(node=n_,lat=o_[0],lon=o_[1],source='auto_line_projection',lines={l_:(round(o_[0]+v_[2]/110.57,6),round(o_[1]+v_[1]/(111.32*cx_),6)) for l_,v_ in far_.items()})
+    return out_
+AUTO_PLAT=_auto_plat()
+PLAT.update(AUTO_PLAT)
+print('노선별 승강장 자동(공용 노드, 선형 투영)',len(AUTO_PLAT),sorted(AUTO_PLAT)[:80])
 t('platform',['node_id primary key','lat','lon','source'],[(n,x['lat'],x['lon'],x.get('source')) for n,x in sorted(PLAT.items())])
 def _layout():
     # 역 단위: hub와 같은 역 묶음을 이은 연결 성분

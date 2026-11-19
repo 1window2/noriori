@@ -191,7 +191,9 @@
       "suspendedSince": "운휴 $year~",
       "until": "~$year",
       "since": "$year~",
-      "span": "$from~$to"
+      "span": "$from~$to",
+      "thenTransfer": "→ 환승",
+      "thenThrough": "→ 직통"
     },
     "savedAs": "탑승일 기준 $line 구간",
     "movedTo": "${year}년 ${name} 이전",

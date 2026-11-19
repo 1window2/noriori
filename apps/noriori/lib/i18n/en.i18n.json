@@ -197,7 +197,9 @@
       "suspendedSince": "Suspended $year~",
       "until": "~$year",
       "since": "$year~",
-      "span": "$from~$to"
+      "span": "$from~$to",
+      "thenTransfer": "→ transfer",
+      "thenThrough": "→ through"
     },
     "savedAs": "Part of $line on that date",
     "movedTo": "Moved to ${name} in ${year}",

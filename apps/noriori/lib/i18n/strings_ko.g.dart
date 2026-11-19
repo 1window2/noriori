@@ -1858,6 +1858,12 @@ class Translations$session$state$ko {
 
 	/// ko: '$from~$to'
 	String span({required Object from, required Object to}) => '${from}~${to}';
+
+	/// ko: '→ 환승'
+	String get thenTransfer => '→ 환승';
+
+	/// ko: '→ 직통'
+	String get thenThrough => '→ 직통';
 }
 
 // Path: data.notice
@@ -2244,6 +2250,8 @@ extension on Translations {
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
+			'session.state.thenTransfer' => '→ 환승',
+			'session.state.thenThrough' => '→ 직통',
 			'session.savedAs' => ({required Object line}) => '탑승일 기준 ${line} 구간',
 			'session.movedTo' => ({required Object year, required Object name}) => '${year}년 ${name} 이전',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}부터 ${line}',
@@ -2603,10 +2611,10 @@ extension on Translations {
 			'prefNames.25' => '교토',
 			'prefNames.26' => '오사카',
 			'prefNames.27' => '효고',
-			'prefNames.28' => '나라',
-			'prefNames.29' => '와카야마',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.28' => '나라',
+			'prefNames.29' => '와카야마',
 			'prefNames.30' => '돗토리',
 			'prefNames.31' => '시마네',
 			'prefNames.32' => '오카야마',
