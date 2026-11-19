@@ -117,11 +117,12 @@ void main() {
     expect((await screen('r_nishinoda_line', today)).whereType<StopLine>().expand((line) => line.lanes), isEmpty);
   }, skip: skip);
 
-  test('이관된 상대 노선은 앞 노선 이름을 위에 두고 한 줄로 적는다 (十和田観光電鉄線 三沢의 東北本線 ~2010 › 青い森鉄道線)', () async {
-    final stop = stopAt(await screen('r_towada_kanko_electric_railway_line', today), 'n_misawa_towada_kanko');
-    final item = [for (final g in stop.transfers) ...g.items].single;
-    expect(item.link.otherLineId, 'l_aoimori_railway_line');
-    expect(item.before.map((link) => link.otherLineId), ['l_tohoku_main_line']);
+  test('이관된 상대 노선은 그 날의 노선 하나만 보인다 (十和田観光電鉄線 三沢: 오늘은 青い森鉄道線, 2000년은 東北本線, 사용자 결정 2026-11-19)', () async {
+    final now = [for (final g in stopAt(await screen('r_towada_kanko_electric_railway_line', today), 'n_misawa_towada_kanko').transfers) ...g.items].single;
+    expect(now.link.otherLineId, 'l_aoimori_railway_line');
+    expect(now.before, isEmpty);
+    final then = [for (final g in stopAt(await screen('r_towada_kanko_electric_railway_line', '2000-06-01'), 'n_misawa_towada_kanko').transfers) ...g.items].single;
+    expect(then.link.otherLineId, 'l_tohoku_main_line');
   }, skip: skip);
 
   test('맨 끝 역의 직통은 그 역이 이어받은 노선도 떠난 옛 자리여도 끝 이어짐이다 (信越本線 新潟（旧）)', () async {
