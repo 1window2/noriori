@@ -809,9 +809,9 @@
 - {"entity_type": "archive", "id": "a_kamiyamaguchi", "lang": "ja", "text": "上山口", "kana": "かみやまぐち", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kamiyamaguchi", "lang": "ko", "text": "카미야마구치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kamiyamaguchi", "lang": "en", "text": "Kamiyamaguchi", "source": "rule"}
-- {"entity_type": "archive", "id": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei", "lang": "ja", "text": "寛永寺坂", "kana": null, "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei", "lang": "ko", "text": "寛永寺坂", "source": "ja_as_is", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei", "lang": "en", "text": "寛永寺坂", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei", "lang": "ja", "text": "寛永寺坂", "kana": "かんえいじさか", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei", "lang": "ko", "text": "칸에이지사카", "source": "hand", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_keisei_main_hakubutsukan_dobutsuen_nippori_keisei", "lang": "en", "text": "Kan'eijisaka", "source": "rule"}
 - {"entity_type": "archive", "id": "a_doukanyamadoori", "lang": "ja", "text": "道灌山通", "kana": "どうかんやまどおり", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_doukanyamadoori", "lang": "ko", "text": "도칸야마도리", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_doukanyamadoori", "lang": "en", "text": "Dokan'yamadori", "source": "rule"}

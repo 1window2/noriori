@@ -1794,6 +1794,9 @@
   "dates_why": "결정 128: 휴지 시작 1945-02-03(closed), 법적 폐지 1953-XX-XX. 로컬 위키 캐시 각 노선 연표·폐역 목록 「…駅…YYYY年休止、YYYY年廃止」 기계 추출(중간, susp_private archive_stop_closed:r2) (W3 E2 2026-11-12)"
  },
  "寛永寺坂@l_keisei_main_line": {
+  "kana": "かんえいじさか",
+  "ko": "칸에이지사카",
+  "kana_why": "나무위키 「칸에이지사카역」 제목(2026-11-20 확인, 사용자 지적) · ja.wikipedia 「寛永寺坂駅」 oldid=110582440 첫 문장 「寛永寺坂駅（かんえいじさかえき）」(중간)",
   "closed": "[1943-01-01..1943-12-31]",
   "legal_abolition": "1953-XX-XX",
   "dates_why": "결정 128: 휴지 시작 [1943-01-01..1943-12-31](closed), 법적 폐지 1953-XX-XX. 로컬 위키 캐시 각 노선 연표·폐역 목록 「…駅…YYYY年休止、YYYY年廃止」 기계 추출(중간, susp_private archive_stop_closed:r2) (W3 E2 2026-11-12) / {\"opened\": \"1933-12-10\"}: ja.wikipedia 京成本線 https://ja.wikipedia.org/w/index.php?oldid=111343993 「1933年12月10日開業 (上野公園–日暮里 개업과 같은 날)」(중간) · 国立公文書館 簿冊 건명 「寛永寺坂停留場新設の件」 (鉄道免許・京成電気軌道全・昭和５～８年) https://www.digital.archives.go.jp/item/469649 「件名 年月日 昭和07年12月19日 (본문 비디지털화 — 건명·날짜만)」(중간(공문서 건명)) (가용(중간, 공문서 건명 보강)) (dates_east final archdate:l_keisei_main_line) (W4 F1 2026-11-12)",
