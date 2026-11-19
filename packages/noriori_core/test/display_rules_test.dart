@@ -94,6 +94,16 @@ Network companies() => Network(
       ),
     );
 
+/// 괄호(안내 줄)마다 (상태, 맨 위 줄, 맨 아래 줄, 해 또는 이어받은 노선)
+List<(NoticeKind, String, String, String?)> spans(List<SelectorLine> out) {
+  String name(BracketAnchor a) => switch (out.firstWhere(a.matches)) {
+        StopLine(:final row) => row.node,
+        ArchiveLine(:final stop) => stop.id,
+        _ => '?',
+      };
+  return [for (final n in out.whereType<NoticeLine>()) (n.kind, name(n.top), name(n.bottom), n.year ?? n.lineId)];
+}
+
 void main() {
   final rules = DisplayRules(companies(), today: '2026-11-02');
   const all = DisplayOptions();
@@ -402,78 +412,78 @@ void main() {
     });
 
     // 끝 역 너머 폐지 구간이 한 역뿐이면 구분선 없이 그 역 줄에 폐지 해를 보인다 (사용자 결정 2026-11-18, 京王線 東八王子·宗谷本線 稚内桟橋)
-    test('끝 역 너머 폐역이 한 역뿐이면 구분선을 두지 않고 그 역의 폐지 해를 보인다', () {
+    test('끝 역 너머 폐역이 한 역뿐이면 구분선 없이 괄호로 묶고 그 역의 폐지 해를 보인다', () {
       final bottom = lines(
         [row(0, 'a'), row(1, 'b'), row(2, 'c', closeYear: '1963')],
         open: const [true, false],
       );
       expect(bottom.whereType<SectionLine>(), isEmpty);
+      // 구분선은 없고, 한 역뿐인 폐지 구간도 괄호로는 묶는다 (사용자 확인 2026-11-19)
+      expect(spans(bottom), [(NoticeKind.closed, 'b', 'c', '1963')]);
       expect(bottom.whereType<StopLine>().firstWhere((l) => l.row.node == 'c').quiet, isFalse);
       final top = lines(
         [row(0, 'z', closeYear: '1950'), row(1, 'a'), row(2, 'b')],
         open: const [false, true],
       );
       expect(top.whereType<SectionLine>(), isEmpty);
+      expect(spans(top), [(NoticeKind.closed, 'z', 'a', '1950')]);
       expect(top.whereType<StopLine>().firstWhere((l) => l.row.node == 'z').quiet, isFalse);
     });
 
-    test('영업 구간과 폐지 구간의 경계에 구분선이 있다', () {
+    test('영업 구간과 폐지 구간: 폐지 칸을 괄호 하나로 묶고 안내는 괄호 맨 위 역 바로 아래에 둔다', () {
       final out = lines(
         [row(0, 'a'), row(1, 'b'), row(2, 'c', closeYear: '2020'), row(3, 'd', closeYear: '2020')],
         open: const [true, false, false],
       );
-      final section = out.whereType<SectionLine>().single;
-      expect(section.gap, 1);
-      expect(section.year, '2020');
+      expect(spans(out), [(NoticeKind.closed, 'b', 'd', '2020')]);
+      expect(out.whereType<SectionLine>(), isEmpty);
+      final b = out.indexWhere((line) => line is StopLine && line.row.node == 'b');
+      expect(out[b + 1], isA<NoticeLine>());
     });
 
-    test('이설로 폐지된 구간이 지금 역에서 끝나면 끝 구분선은 그 역 위에 온다', () {
+    test('이설로 폐지된 구간은 앞뒤 지금 역까지 괄호로 묶는다', () {
       // 駒ヶ嶺 · 新地 · 新地(旧) · 山下(旧) · 山下 · 浜吉田
       final out = lines(
         [row(0, 'z'), row(1, 'a'), row(2, 'a_old', closeYear: '2016'), row(3, 'b_old', closeYear: '2016'), row(4, 'b'), row(5, 'c')],
         open: const [true, false, false, false, true],
       );
-      final sections = out.whereType<SectionLine>().toList();
-      expect([for (final s in sections) s.gap], [1, 3]);
-      expect(sections.last.year, isNull);
-      final b = out.indexWhere((line) => line is StopLine && line.row.node == 'b');
-      expect(out.indexOf(sections.last), lessThan(b));
+      expect(spans(out), [(NoticeKind.closed, 'a', 'b', '2016')]);
+      final a = out.indexWhere((line) => line is StopLine && line.row.node == 'a');
+      expect(out[a + 1], isA<NoticeLine>());
     });
 
-    test('없어진 역에서 끝나는 폐지 구간은 그 역 아래에서 닫는다', () {
+    test('없어진 역에서 끝나는 폐지 구간은 그 역에서 괄호를 닫는다', () {
       final out = lines(
         [row(0, 'z'), row(1, 'a'), row(2, 'b', closeYear: '2020'), row(3, 'c')],
         open: const [true, false, true],
       );
-      expect([for (final s in out.whereType<SectionLine>()) s.gap], [1, 2]);
+      expect(spans(out), [(NoticeKind.closed, 'a', 'b', '2020')]);
     });
 
-    test('지금 역 사이 한 칸만 운휴면 구분선은 그 칸에 하나다', () {
+    test('지금 역 사이 한 칸만 탈 수 없으면 괄호는 그 칸 하나다', () {
       final out = lines(
         [row(0, 'z'), row(1, 'a'), row(2, 'b'), row(3, 'c')],
         open: const [true, false, true],
       );
-      expect([for (final s in out.whereType<SectionLine>()) s.gap], [1]);
+      expect(spans(out), [(NoticeKind.closed, 'a', 'b', '?')]);
     });
 
-    test('지금 역인 첫 역은 폐지 구간 밖에 두고, 맨 끝 역 위에는 경계가 없어 구분선을 두지 않는다', () {
+    test('첫 칸부터 끝 칸까지 폐지면 첫 역부터 끝 역까지 괄호 하나다', () {
       final out = lines(
         [row(0, 'a'), row(1, 'b', closeYear: '2016'), row(2, 'c', closeYear: '2016'), row(3, 'd')],
         open: const [false, false, false],
       );
-      final sections = out.whereType<SectionLine>().toList();
-      expect([for (final s in sections) s.gap], [0]);
-      expect(sections.first.year, '2016');
+      expect(spans(out), [(NoticeKind.closed, 'a', 'd', '2016')]);
     });
 
-    test('이어받은 노선도 떠난 끝 역은 지금 역이 아니라 끝 구분선을 따로 두지 않는다 (神岡線 神岡)', () {
+    test('이관 뒤 폐지된 칸은 이관보다 폐지가 앞선다 (神岡線 神岡, 信越本線 横川–軽井沢)', () {
       SelectorRow handed(int seq, String node, {bool ended = true}) => row(seq, node,
           closeYear: '1984', handedTo: 'x', handedOn: '1984-10-01', handedEnded: ended, state: StopState.closed, selectable: false);
       final gone = lines([handed(0, 'a'), handed(1, 'b'), handed(2, 'c')], open: const [false, false]);
-      expect([for (final s in gone.whereType<SectionLine>()) s.gap], [-1]);
-      // 이어받은 노선이 아직 서는 역도 계통 맨 끝이면 그 아래 구간이 없어 끝 구분선을 두지 않는다 (信越本線 横川–軽井沢를 끝에서 자른 꼴)
+      // 폐지 해는 구간 수명(sectionEnds)에서 읽는다. 이관으로 끝난 역의 폐역 해는 쓰지 않아 여기서는 모른다
+  expect(spans(gone), [(NoticeKind.closed, 'a', 'c', '?')]);
       final kept = lines([row(0, 'a0', closeYear: '1997', state: StopState.closed), row(1, 'a', closeYear: '1997', state: StopState.closed), handed(2, 'b', ended: false)], open: const [false, false]);
-      expect([for (final s in kept.whereType<SectionLine>()) s.gap], [-1]);
+      expect(spans(kept), [(NoticeKind.closed, 'a0', 'b', '1997')]);
     });
 
     test('맨 끝 역의 직통은 그 역이 폐역이어도 끝 이어짐이다 (信越本線 新潟（旧）)', () {
@@ -485,19 +495,17 @@ void main() {
       expect(out.whereType<BranchLine>(), isEmpty);
     });
 
-    test('첫 구간부터 폐지됐으면 구분선이 첫 역 위에 한 번만 온다', () {
+    test('첫 구간부터 폐지됐으면 첫 역 바로 아래에 안내가 한 번만 온다', () {
       final out = lines(
         [row(0, 'a', closeYear: '1989'), row(1, 'b', closeYear: '1989'), row(2, 'c', closeYear: '1989')],
         open: const [false, false],
       );
-      final section = out.whereType<SectionLine>().single;
-      expect(section.gap, -1);
-      expect(section.year, '1989');
-      expect(out.indexOf(section), lessThan(out.indexWhere((line) => line is StopLine)));
+      expect(spans(out), [(NoticeKind.closed, 'a', 'c', '1989')]);
+      expect(out.indexWhere((line) => line is NoticeLine), out.indexWhere((line) => line is StopLine) + 1);
     });
 
     // 사용자 결정 2026-11-19: 다른 노선(끝 이어짐) 줄 안쪽에 구분선을 두고, 점선 줄기가 그 줄을 지나간다 (2026-11-09 「바깥」 결정을 대신함)
-    test('첫 구간 폐지 구분선은 첫 역의 끝 이어짐 줄 안쪽, 그 줄과 첫 역 사이에 온다 (肥前吉井)', () {
+    test('첫 구간이 폐지여도 끝 이어짐 줄은 첫 역 바로 위이고 안내는 첫 역 아래다 (肥前吉井)', () {
       final out = lines(
         [
           row(0, 'a', closeYear: '1971', links: [link('continue', 'x', seq: 0, next: 'p')]),
@@ -505,16 +513,14 @@ void main() {
         ],
         open: const [false],
       );
-      final section = out.indexWhere((line) => line is SectionLine);
       final end = out.indexWhere((line) => line is EndLine);
       final stop = out.indexWhere((line) => line is StopLine);
-      expect(end + 1, section);
-      expect(section + 1, stop);
-      expect((out[section] as SectionLine).stem, isNotNull);
-      expect((out[section] as SectionLine).year, '1971');
+      expect(end + 1, stop);
+      expect(out[stop + 1], isA<NoticeLine>());
+      expect(spans(out), [(NoticeKind.closed, 'a', 'b', '1971')]);
     });
 
-    test('끝 구간이 폐지고 아래로 이어지는 노선이 있으면 그 줄 앞에 닫는 구분선을 둔다', () {
+    test('끝 구간이 폐지고 아래로 이어지는 노선이 있으면 그 줄은 끝 역 바로 아래다', () {
       final out = lines(
         [
           row(0, 'a', closeYear: '2016'),
@@ -524,9 +530,8 @@ void main() {
       );
       final stop = out.lastIndexWhere((line) => line is StopLine);
       final end = out.indexWhere((line) => line is EndLine && !line.up);
-      expect(out[stop + 1], isA<SectionLine>());
-      expect((out[stop + 1] as SectionLine).stem, isNotNull);
-      expect(stop + 2, end);
+      expect(stop + 1, end);
+      expect(spans(out), [(NoticeKind.closed, 'a', 'b', '2016')]);
     });
 
     test('끝 구간이 폐지여도 아래로 이어지는 노선이 없으면 닫는 구분선이 없다 (白糠線 北進)', () {
@@ -541,7 +546,7 @@ void main() {
       expect(out.skip(stop + 1).whereType<SectionLine>(), isEmpty);
     });
 
-    test('어느 구분선도 역과 그 역의 끝 이어짐 사이에 끼지 않는다', () {
+    test('안내 줄은 역과 그 역의 끝 이어짐 사이에 끼지 않는다', () {
       final out = lines(
         [
           row(0, 'a0', closeYear: '1980'),
@@ -554,7 +559,8 @@ void main() {
       final end = out.indexWhere((line) => line is EndLine && line.up);
       final stop = out.indexWhere((line) => line is StopLine && line.row.node == 'b');
       expect(end + 1, stop);
-      expect(out.sublist(0, end).whereType<SectionLine>(), isNotEmpty);
+      expect(spans(out), [(NoticeKind.closed, 'a0', 'b', '1980')]);
+      expect(out.indexWhere((line) => line is NoticeLine), lessThan(end));
     });
 
     test('분기선을 끄면 그 노선이 캡슐로 온다', () {
@@ -595,14 +601,15 @@ void main() {
       expect(out.whereType<SectionLine>(), isEmpty);
     });
 
-    test('끝역 뒤 여러 역 묶음은 끝 역 바로 아래에 폐지 해 구분선이 선다', () {
+    test('끝역 뒤 여러 역 묶음은 끝 역부터 묶음 끝까지 폐지 괄호이고 안내는 끝 역 바로 아래다', () {
       final out = lines([row(0, 'a'), row(1, 'z')], stops: const [
         pier,
         ArchiveStop(id: 'pier2', afterNode: 'pier', beforeNode: null, closedYear: '1950', km: null),
       ]);
       expect(out.last, isA<ArchiveLine>());
-      final at = out.indexWhere((l) => l is ArchiveLine);
-      expect(out[at - 1], isA<SectionLine>().having((l) => l.year, 'year', '1950'));
+      expect(spans(out), [(NoticeKind.closed, 'z', 'pier2', '1950')]);
+      final z = out.indexWhere((l) => l is StopLine && l.row.node == 'z');
+      expect(out[z + 1], isA<NoticeLine>());
     });
 
     test('앞 역을 모르면 뒤 역 앞에, 둘 다 모르면 km로 찾고 km순으로 놓는다', () {
@@ -684,7 +691,7 @@ void main() {
         openGaps: const [false, false, false],
         options: options,
       );
-      expect([for (final s in lines.whereType<SectionLine>()) s.year], ['1990', '2000']);
+      expect([for (final s in spans(lines)) s.$4], ['1990', '2000']);
       final stops = lines.whereType<StopLine>().toList();
       expect(stops[2].quiet, isTrue);
     });
@@ -699,7 +706,7 @@ void main() {
         options: options,
         undated: true,
       );
-      expect(lines.whereType<SectionLine>().single.year, '1990');
+      expect(spans(lines), [(NoticeKind.closed, 'a', 'c', '1990')]);
     });
 
     test('날짜를 모르면 체크박스를 꺼도 지금 없는 노선은 숨긴다', () {
@@ -795,7 +802,7 @@ void main() {
       final lines = rules.lines(lineId: 'l', rows: rows, openGaps: const [true, true], options: options);
       expect(lines.whereType<EndLine>(), isEmpty);
       expect([for (final b in lines.whereType<BranchLine>()) b.item.link.otherLineId], ['l2']);
-      expect(lines.whereType<TransferLine>().single.lineId, 'l_x');
+      expect(spans(lines), [(NoticeKind.hand, 'b', 'c', 'l_x')]);
     });
 
     // 날짜를 고른 화면도 그날의 끝 역이 기준이다. 끝 역 너머 구간이 보여도 직통은 분기가 아니라 끝 이어짐(어깨로 비켜 곧게)이다.
@@ -1135,9 +1142,10 @@ void main() {
         ArchiveStop(id: 'x1', afterNode: null, beforeNode: 'a', closedYear: '1945', km: null),
         ArchiveStop(id: 'x2', afterNode: 'x1', beforeNode: null, closedYear: '1945', km: null),
       ]);
-      // 첫 역 앞 없어진 구간: 바깥(맨 위)에 폐지 해 구분선, 안쪽에 끝 구분선 (志度線 瓦町 앞, 사용자 결정 2026-11-18)
-      expect(out.first, isA<SectionLine>().having((l) => l.year, 'year', '1945'));
-      expect(out[1], isA<ArchiveLine>());
+      // 첫 역 앞 없어진 구간: 묶음 맨 위 역부터 첫 역까지 폐지 괄호, 안내는 맨 위 역 바로 아래 (志度線 瓦町 앞)
+      expect(out.first, isA<ArchiveLine>());
+      expect(out[1], isA<NoticeLine>());
+      expect(spans(out), [(NoticeKind.closed, 'x1', 'a', '1945')]);
       final archives = out.whereType<ArchiveLine>().toList();
       expect(archives.map((a) => a.stop.id).toSet(), {'x1', 'x2'});
       expect(archives.every((a) => a.gap == -1), isTrue);
@@ -1251,8 +1259,9 @@ void main() {
         ext(4, 'konan', openYear: '1978', closeYear: '1983'),
       ];
       final out = rules.lines(lineId: 'me', rows: rows, openGaps: const [true, true, true, true], options: all);
-      final sections = out.whereType<SectionLine>().where((s) => s.year == null && !s.suspended).toList();
-      expect(sections.map((s) => s.gap), [2]);
+      // 확장 행 묶음 사이 구분선은 없앴다(확장 행 장치는 분기점 노드로 바뀐다, 5번 결정). 영업 칸이라 괄호도 없다
+      expect(out.whereType<SectionLine>(), isEmpty);
+      expect(spans(out), isEmpty);
     });
   });
 }

@@ -344,6 +344,9 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String handSince({required Object line, required Object date}) => '${line} from ${date}';
 	@override String get handOpen => 'Open line ›';
 	@override String get handNote => 'Rides here are saved to that line';
+	@override String get noticeClosedSub => 'Only rides before then can be saved';
+	@override String get noticeSuspendedSub => 'Only rides before the suspension can be saved';
+	@override String get noticeBeforeSub => 'Rides from the opening day on can be saved';
 	@override String get chooseDirection => 'Which way did you ride?';
 	@override String directionKm({required Object km}) => '${km} km';
 	@override String get chooseRelocation => 'Which alignment did you ride?';
@@ -374,7 +377,7 @@ class _Translations$session$en implements Translations$session$ko {
 		other: '${n} stations',
 	);
 	@override String closedSection({required Object year}) => '~${year} closed';
-	@override String openedSection({required Object year}) => 'opened in ${year}';
+	@override String openedSection({required Object year}) => 'Opens in ${year}';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
@@ -1303,6 +1306,9 @@ extension on TranslationsEn {
 			'session.handSince' => ({required Object line, required Object date}) => '${line} from ${date}',
 			'session.handOpen' => 'Open line ›',
 			'session.handNote' => 'Rides here are saved to that line',
+			'session.noticeClosedSub' => 'Only rides before then can be saved',
+			'session.noticeSuspendedSub' => 'Only rides before the suspension can be saved',
+			'session.noticeBeforeSub' => 'Rides from the opening day on can be saved',
 			'session.chooseDirection' => 'Which way did you ride?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => 'Which alignment did you ride?',
@@ -1327,7 +1333,7 @@ extension on TranslationsEn {
 			'session.lap' => 'One full loop',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} station', other: '${n} stations', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} closed',
-			'session.openedSection' => ({required Object year}) => 'opened in ${year}',
+			'session.openedSection' => ({required Object year}) => 'Opens in ${year}',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',
@@ -1655,11 +1661,11 @@ extension on TranslationsEn {
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',
 			'prefNames.25' => 'Kyoto',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.26' => 'Osaka',
 			'prefNames.27' => 'Hyogo',
 			'prefNames.28' => 'Nara',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.29' => 'Wakayama',
 			'prefNames.30' => 'Tottori',
 			'prefNames.31' => 'Shimane',

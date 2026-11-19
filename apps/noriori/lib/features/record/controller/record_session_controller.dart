@@ -611,6 +611,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       undated: date == null,
       parallels: parallels,
       date: date,
+      // 제목이 그날의 노선(같은 사슬의 뒤 노선)이면 그 노선으로의 이관 괄호는 그리지 않는다
+      shownLineId: network.lineOnDate(routeId, date),
     );
     final ids = <String>{
       for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],

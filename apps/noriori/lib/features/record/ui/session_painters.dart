@@ -1,4 +1,5 @@
 import 'dart:math' as math;
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:noriori_core/noriori_core.dart';
@@ -23,13 +24,19 @@ abstract final class SelectorRuler {
 
 /// 줄기 한 칸.
 final class TrunkPiece {
-  const TrunkPiece(this.color, this.width, {this.dashed = false, this.oneWay});
+  const TrunkPiece(this.color, this.width, {this.dashed = false, this.handed = false, this.oneWay, this.scroll});
 
   final Color color;
   final double width;
 
   /// 고른 구간 중 처음 타는 곳. 이미 탄 곳은 실선이다.
   final bool dashed;
+
+  /// 그날 다른 노선으로 기록되는 이관 구간의 칸. 현행과 같은 색·굵기의 점선이다 (사용자 결정 2026-11-19)
+  final bool handed;
+
+  /// 점선 박자를 목록 전체 위치에 고정하는 데 쓰는 목록 스크롤
+  final ScrollController? scroll;
 
   /// 한 방향으로만 다니는 칸. 참이면 목록 아래로, 거짓이면 위로 간다 (DESIGN §8 한 방향 운행).
   final bool? oneWay;
@@ -61,13 +68,116 @@ void _trunk(Canvas canvas, TrunkPiece? piece, double from, double to) {
     ..color = piece.color
     ..strokeWidth = piece.width;
   const x = SelectorRuler.trunkX;
-  if (!piece.dashed) {
+  if (!piece.dashed && !piece.handed) {
     canvas.drawLine(Offset(x, from), Offset(x, to), paint);
     return;
   }
-  for (var y = from; y < to; y += 15) {
-    canvas.drawLine(Offset(x, y), Offset(x, math.min(y + 10, to)), paint);
+  // 선택 구간 10–5, 이관 구간 12–5. 박자는 목록 전체 위치에 고정한다: 줄마다 따로 그려도 노드·줄 경계와 상관없이
+  // 괄호 구간 전체에서 같은 박자로 이어진다 (2026-11-19 사용자 지적, 軽井沢). 줄의 목록 안 위치 = 그림판 이동량 + 스크롤 위치다
+  final on = piece.dashed ? 10.0 : 12.0;
+  const off = 5.0;
+  final period = on + off;
+  if (to <= from) return;
+  final base = canvas.getTransform()[13] + (piece.scroll?.hasClients == true ? piece.scroll!.offset : 0);
+  var start = from - ((base + from) % period);
+  for (; start < to; start += period) {
+    final a = math.max(start, from), b = math.min(start + on, to);
+    if (b > a) canvas.drawLine(Offset(x, a), Offset(x, b), paint);
   }
+}
+
+/// 노드에서 멀어질수록 옅어지는 선 (사용자 결정 2026-11-19, 환승 다리·끝 이어짐의 점선을 대신함). [a1]에서 [a2]로 투명도가 바뀐다
+void _fadeLine(Canvas canvas, Offset from, Offset to, Color color, double width, {double a1 = 1, double a2 = 0}) {
+  if ((to - from).distance < 0.5) return;
+  canvas.drawLine(
+    from,
+    to,
+    Paint()
+      ..strokeWidth = width
+      // 선 방향 그대로 투명도가 바뀐다(세로선도 위아래로 옅어진다)
+      ..shader = ui.Gradient.linear(from, to, [color.withValues(alpha: color.a * a1), color.withValues(alpha: color.a * a2)]),
+  );
+}
+
+/// 괄호 한 토막 (사용자 결정 2026-11-19). 괄호 맨 위 줄이면 [start], 맨 아래 줄이면 [end]다
+final class BracketPiece {
+  const BracketPiece({required this.color, this.start = false, this.end = false});
+
+  final Color color;
+  final bool start;
+  final bool end;
+}
+
+/// 괄호 세로선 자리. 환승 점이 셋인 캡슐의 ①과 ② 사이 한가운데다
+const double bracketX = 30.5;
+
+/// 괄호를 그린다. [nodeY]가 있으면 그 줄의 역 노드 높이에 갈고리가 걸린다. 환승 캡슐이 괄호 자리까지 넓으면([pillLeft]) 갈고리는 캡슐 바로 아래·위에 걸리고,
+/// 괄호가 그 역을 지나기만 하면 캡슐 가까이에서 옅어졌다가 다시 진해진다. 한 역이 두 괄호의 끝과 시작이면 갈고리를 3씩 비킨다
+/// [nodeReach]는 노드 중심에서 테두리 바깥까지의 거리다. 갈고리는 노드 크기와 상관없이 테두리 3 앞에서 멈춘다(작은 폐역 노드에서 떠 보였다, 실화면 2026-11-19)
+void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double? nodeY, double? pillLeft, double nodeReach = 11}) {
+  if (pieces.isEmpty) return;
+  const bx = bracketX;
+  final wide = pillLeft != null && pillLeft < bx + 4;
+  final reach = SelectorRuler.trunkX - nodeReach - 3;
+  final hookEnd = pillLeft == null ? reach : (wide ? SelectorRuler.trunkX - 12 : math.min(reach, pillLeft - 5));
+  final shared = pieces.length > 1;
+  for (final piece in pieces) {
+    final paint = Paint()
+      ..color = piece.color
+      ..strokeWidth = 2
+      ..style = PaintingStyle.stroke
+      ..strokeCap = StrokeCap.round;
+    final y = nodeY;
+    if (y == null) {
+      canvas.drawLine(const Offset(bx, 0), Offset(bx, size.height), paint);
+      continue;
+    }
+    if (piece.start && !piece.end) {
+      final hy = wide ? y + 18 : y + (shared ? 3 : 0);
+      canvas.drawPath(
+        Path()
+          ..moveTo(hookEnd, hy)
+          ..lineTo(bx + 5, hy)
+          ..quadraticBezierTo(bx, hy, bx, hy + 5)
+          ..lineTo(bx, size.height),
+        paint,
+      );
+    } else if (piece.end && !piece.start) {
+      final hy = wide ? y - 18 : y - (shared ? 3 : 0);
+      canvas.drawPath(
+        Path()
+          ..moveTo(bx, 0)
+          ..lineTo(bx, hy - 5)
+          ..quadraticBezierTo(bx, hy, bx + 5, hy)
+          ..lineTo(hookEnd, hy),
+        paint,
+      );
+    } else if (wide) {
+      const f = 26.0;
+      final lo = y - 14, hi = y + 14;
+      if (lo - f > 0) canvas.drawLine(const Offset(bx, 0), Offset(bx, lo - f), paint);
+      _fadeLine(canvas, Offset(bx, math.max(0, lo - f)), Offset(bx, lo), piece.color, 2);
+      _fadeLine(canvas, Offset(bx, math.min(size.height, hi + f)), Offset(bx, hi), piece.color, 2);
+      if (hi + f < size.height) canvas.drawLine(Offset(bx, hi + f), Offset(bx, size.height), paint);
+    } else {
+      canvas.drawLine(const Offset(bx, 0), Offset(bx, size.height), paint);
+    }
+  }
+}
+
+/// 역 줄이 아닌 줄에 괄호를 겹쳐 그린다. [nodeY]는 열람 전용 역 줄처럼 노드가 있는 줄의 노드 높이다
+class BracketOverlay extends CustomPainter {
+  const BracketOverlay(this.pieces, {this.nodeY});
+
+  final List<BracketPiece> pieces;
+  final double? nodeY;
+
+  // 열람 전용 역 줄의 노드는 반지름 4.5의 찬 원이다
+  @override
+  void paint(Canvas canvas, Size size) => paintBrackets(canvas, size, pieces, nodeY: nodeY, nodeReach: 4.5);
+
+  @override
+  bool shouldRepaint(BracketOverlay old) => old.pieces.length != pieces.length || old.nodeY != nodeY;
 }
 
 Paint _stroke(Color color, [double width = 2]) => Paint()
@@ -128,15 +238,6 @@ void paintLanes(Canvas canvas, Size size, List<LaneMark> lanes, LaneStyle? style
   }
 }
 
-/// 3 그리고 4 쉬는 점선. 끝 이어짐 점선과 같은 박자다. [start]만큼 비우고 시작한다
-void _dashed(Canvas canvas, Path path, Paint paint, {double start = 0}) {
-  for (final metric in path.computeMetrics()) {
-    for (var at = start; at < metric.length; at += 7) {
-      canvas.drawPath(metric.extractPath(at, math.min(at + 3, metric.length)), paint);
-    }
-  }
-}
-
 /// 환승 점 하나.
 final class TransferDot {
   const TransferDot({required this.flow, required this.color, this.number});
@@ -167,10 +268,14 @@ class StopPainter extends CustomPainter {
     this.laneStyle,
     this.endUp,
     this.endDown,
+    this.brackets = const [],
   });
 
   final List<LaneMark> lanes;
   final LaneStyle? laneStyle;
+
+  /// 이 역 줄을 지나거나 여기서 걸리는 괄호 (사용자 결정 2026-11-19)
+  final List<BracketPiece> brackets;
 
   /// 줄기가 다른 노선으로 이어지는 쪽의 색. 역 노드에서 줄 끝까지 실선이고, 바깥 끝 이어짐 줄에서 점선이 된다
   final Color? endUp;
@@ -243,17 +348,8 @@ class StopPainter extends CustomPainter {
           final room = (sign > 0 ? size.height - y : y) - 2;
           final l = math.min(28.0, math.max(0.0, room));
           if (l <= 0) return;
-          canvas.drawLine(Offset(cx, y), Offset(cx, y + sign * l * 18 / 28), _stroke(dot.color));
-          canvas.drawLine(
-            Offset(cx, y + sign * l * 21 / 28),
-            Offset(cx, y + sign * l * 24 / 28),
-            _stroke(dot.color.withValues(alpha: .8)),
-          );
-          canvas.drawLine(
-            Offset(cx, y + sign * l * 26 / 28),
-            Offset(cx, y + sign * l),
-            _stroke(dot.color.withValues(alpha: .45)),
-          );
+          // 점선 대신 점에서 멀어질수록 옅어진다 (사용자 결정 2026-11-19)
+          _fadeLine(canvas, Offset(cx, y), Offset(cx, y + sign * l), dot.color, 2);
         }
 
         if (goesUp) leg(-1);
@@ -281,6 +377,14 @@ class StopPainter extends CustomPainter {
     canvas.drawCircle(Offset(x, y), radius, Paint()..color = fill);
     canvas.drawCircle(Offset(x, y), radius, _stroke(ring, ringWidth));
     if (selected) canvas.drawCircle(Offset(x, y), 13, _stroke(selectColor));
+    double? pillLeft;
+    final count = dots.length;
+    if (count > 0) {
+      const room = x - SelectorRuler.nodeGap - SelectorRuler.capsuleRadius - SelectorRuler.edge;
+      final gap = count > 1 ? math.min(SelectorRuler.dotGap, room / (count - 1)) : 0.0;
+      pillLeft = x - SelectorRuler.nodeGap - gap * (count - 1) - SelectorRuler.capsuleRadius;
+    }
+    paintBrackets(canvas, size, brackets, nodeY: y, pillLeft: pillLeft, nodeReach: math.max(radius + ringWidth / 2, selected ? 14.0 : 0.0));
   }
 
   void _number(Canvas canvas, String label, Offset at, Color color, double size) {
@@ -510,8 +614,7 @@ class EndPainter extends CustomPainter {
       const r = SelectorRuler.bend;
       const tx = SelectorRuler.textX - 8;
       final lx = laneX(lane);
-      _dashed(
-        canvas,
+      canvas.drawPath(
         up
             ? (Path()
               ..moveTo(lx, size.height)
@@ -523,20 +626,19 @@ class EndPainter extends CustomPainter {
               ..lineTo(lx, y - r)
               ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r), clockwise: false)
               ..lineTo(tx, y)),
-        paint,
-        start: 4,
+        paint..color = color.withValues(alpha: color.a * .6),
       );
       return;
     }
-    // 같은 끝의 노선 여럿은 줄마다 점선을 줄 끝까지 이어 맨 바깥 줄까지 한 줄기로 닿는다 (사용자 결정 2026-11-08)
+    // 점선 대신 역에서 멀어질수록 옅어진다 (사용자 결정 2026-11-19). 같은 끝의 노선 여럿은 줄마다 이어 맨 바깥 줄에서 다 옅어진다
+    Offset at(double d) => Offset(x, up ? size.height - d : d);
     if (stackOf > 1) {
-      _stacked(dash, size.height, first: fromStop);
+      final a1 = 1 - stackAt / stackOf, a2 = 1 - (stackAt + 1) / stackOf;
+      _fadeLine(canvas, at(0), at(size.height), color, 2.5, a1: a1, a2: a2);
       return;
     }
-    final length = math.min(size.height, 38.0);
-    for (var at = fromStop ? 4.0 : 0.0; at + 3 <= length; at += 7) {
-      dash(at);
-    }
+    // 역 줄 안의 실선(2.5)과 같은 굵기로 이어 옅어진다 (2026-11-19 사용자 지적)
+    _fadeLine(canvas, at(0), at(math.min(size.height, 40.0)), color, 2.5);
   }
 
   @override

@@ -595,6 +595,15 @@ class Translations$session$ko {
 	/// ko: '이 구간은 그 노선으로 기록돼요'
 	String get handNote => '이 구간은 그 노선으로 기록돼요';
 
+	/// ko: '그 전 날짜로만 기록할 수 있어요'
+	String get noticeClosedSub => '그 전 날짜로만 기록할 수 있어요';
+
+	/// ko: '운휴 전 날짜로만 기록할 수 있어요'
+	String get noticeSuspendedSub => '운휴 전 날짜로만 기록할 수 있어요';
+
+	/// ko: '개업한 뒤 날짜로 기록할 수 있어요'
+	String get noticeBeforeSub => '개업한 뒤 날짜로 기록할 수 있어요';
+
 	/// ko: '어느 쪽으로 탔나요?'
 	String get chooseDirection => '어느 쪽으로 탔나요?';
 
@@ -2253,6 +2262,9 @@ extension on Translations {
 			'session.handSince' => ({required Object date, required Object line}) => '${date}부터 ${line}',
 			'session.handOpen' => '노선 보기 ›',
 			'session.handNote' => '이 구간은 그 노선으로 기록돼요',
+			'session.noticeClosedSub' => '그 전 날짜로만 기록할 수 있어요',
+			'session.noticeSuspendedSub' => '운휴 전 날짜로만 기록할 수 있어요',
+			'session.noticeBeforeSub' => '개업한 뒤 날짜로 기록할 수 있어요',
 			'session.chooseDirection' => '어느 쪽으로 탔나요?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => '어느 시기의 선로였나요?',
@@ -2605,11 +2617,11 @@ extension on Translations {
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',
 			'prefNames.25' => '교토',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.26' => '오사카',
 			'prefNames.27' => '효고',
 			'prefNames.28' => '나라',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.29' => '와카야마',
 			'prefNames.30' => '돗토리',
 			'prefNames.31' => '시마네',

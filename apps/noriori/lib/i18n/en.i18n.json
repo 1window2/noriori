@@ -205,6 +205,9 @@
     "handSince": "$line from $date",
     "handOpen": "Open line ›",
     "handNote": "Rides here are saved to that line",
+    "noticeClosedSub": "Only rides before then can be saved",
+    "noticeSuspendedSub": "Only rides before the suspension can be saved",
+    "noticeBeforeSub": "Rides from the opening day on can be saved",
     "chooseDirection": "Which way did you ride?",
     "directionKm": "$km km",
     "chooseRelocation": "Which alignment did you ride?",
@@ -235,7 +238,7 @@
       "other": "$n stations"
     },
     "closedSection": "~$year closed",
-    "openedSection": "opened in $year",
+    "openedSection": "Opens in $year",
     "archiveStop": "$name closed in $year and can't be logged",
     "archiveLine": "$name is a historic line and can't be logged",
     "from": "From",

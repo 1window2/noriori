@@ -58,6 +58,7 @@ void main() {
       undated: date == null,
       parallels: await reader.routeParallels(routeId),
       date: date,
+      shownLineId: network.lineOnDate(routeId, date),
     );
   }
 
@@ -71,33 +72,43 @@ void main() {
       'r_yamanote_freight_line',
     ]) {
       for (final raw in [today, null]) {
-        expect((await screen(route, raw)).whereType<SectionLine>(), isEmpty, reason: '$route $raw');
+        expect((await screen(route, raw)).whereType<NoticeLine>().where((n) => n.kind != NoticeKind.hand), isEmpty, reason: '$route $raw');
       }
     }
   }, skip: skip);
 
-  test('통째 이관 뒤 폐지된 노선의 오늘 화면은 날짜 모름처럼 머리 띠 하나이고 끝 역 앞 빈 구분선이 없다 (神岡線·高千穂線)', () async {
+  test('통째 이관 뒤 폐지된 노선의 오늘·날짜 모름 화면은 첫 역부터 끝 역까지 폐지 괄호 하나다 (神岡線·高千穂線)', () async {
+    // 폐지일이 지난 칸은 이관보다 폐지가 앞선다 (사용자 결정 2026-11-19)
     for (final route in ['r_kamioka_line', 'r_takachiho_line']) {
       for (final raw in [today, null]) {
         final lines = await screen(route, raw);
-        expect(lines.whereType<TransferLine>().single.whole, isTrue, reason: '$route $raw');
-        expect(lines.whereType<SectionLine>().where((line) => line.year == null), isEmpty, reason: '$route $raw');
+        final notices = lines.whereType<NoticeLine>().toList();
+        expect([for (final n in notices) n.kind], [NoticeKind.closed], reason: '$route $raw');
+        expect(notices.single.top.matches(lines.whereType<StopLine>().first), isTrue, reason: '$route $raw');
+        expect(notices.single.bottom.matches(lines.whereType<StopLine>().last), isTrue, reason: '$route $raw');
       }
     }
-    // 재개 없이 폐지로 끝난 운휴는 운휴 시작(2005-09-06 태풍 불통)으로 소급해 닫히므로 구분선 연도도 그해다
+    // 재개 없이 폐지로 끝난 운휴는 운휴 시작(2005-09-06 태풍 불통)으로 소급해 닫히므로 안내의 해도 그해다
     // (DESIGN §2.2 「운행을 다시 시작하지 않고 끝난 휴지」, 결정 122. 법적 폐지 2007·2008은 legal_abolition)
     final takachiho = await screen('r_takachiho_line', today);
-    expect([for (final line in takachiho.whereType<SectionLine>()) line.year], ['2005']);
+    expect([for (final line in takachiho.whereType<NoticeLine>()) line.year], ['2005']);
+    // 폐지 전 날짜면 화면 제목이 이어받은 노선(高千穂鉄道高千穂線)이라 이관 괄호도 없다. 같은 노선으로의 이관 안내는 제목과 겹친다 (실화면 2026-11-19)
+    final before = await screen('r_takachiho_line', '2000-06-01');
+    expect(network.lineOnDate('r_takachiho_line', DateSpan.parse('2000-06-01')), 'l_takachiho_line_takachiho');
+    expect(before.whereType<NoticeLine>(), isEmpty);
   }, skip: skip);
 
-  test('이관 구간 안에서 이어받은 노선이 옮기거나 닫은 옛 자리는 구간을 끊지 않는다 (湯前線 川村, 東北本線 野内（旧）)', () async {
-    final yunomae = (await screen('r_yunomae_line', today)).whereType<TransferLine>().toList();
-    expect([for (final h in yunomae) (h.lineId, h.whole, h.back)], [('l_yunomae_line_kumagawa', true, false)]);
+  test('이관 구간 안에서 이어받은 노선이 옮기거나 닫은 옛 자리는 이관 괄호를 끊지 않는다 (湯前線 川村, 東北本線 野内（旧）)', () async {
+    // 오늘 화면은 제목이 くま川鉄道湯前線이라 괄호가 없다. 날짜 모름 화면(제목 湯前線)으로 본다
+    final yunomae = await screen('r_yunomae_line', null);
+    expect([for (final n in yunomae.whereType<NoticeLine>()) (n.kind, n.lineId)], [(NoticeKind.hand, 'l_yunomae_line_kumagawa')]);
     final tohoku = await screen('r_tohoku_main_line', today);
-    expect(tohoku.whereType<TransferLine>().where((h) => h.back), isEmpty);
     final nonai = tohoku.indexWhere((line) => line is StopLine && line.row.node == 'n_nonai_aoimori_aoimori_railway_old');
-    final band = tohoku.lastIndexWhere((line) => line is TransferLine, nonai);
-    expect((tohoku[band] as TransferLine).lineId, 'l_aoimori_railway_line');
+    final around = [
+      for (final n in tohoku.whereType<NoticeLine>())
+        if (tohoku.indexWhere(n.top.matches) < nonai && tohoku.indexWhere(n.bottom.matches) > nonai) n,
+    ];
+    expect([for (final n in around) (n.kind, n.lineId)], [(NoticeKind.hand, 'l_aoimori_railway_line')]);
   }, skip: skip);
 
   test('폐선 화면의 환승은 같은 노선이면 가장 늦게 끝난 연결을 남긴다 (枝光線 枝光駅前의 鹿児島本線)', () async {

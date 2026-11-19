@@ -135,9 +135,11 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
               if (line is StopLine && _matches(state, line.row.node, query)) line,
           ]
         : state.isTemporary
-            ? [for (final line in state.lines) if (line is! SectionLine) line]
+            ? [for (final line in state.lines) if (line is! SectionLine && line is! NoticeLine) line]
             : state.lines;
-    final trunk = TrunkStyle(state, gaps, tokens);
+    final trunk = TrunkStyle(state, gaps, tokens, scroll: _lines);
+    // 괄호는 검색 중에는 그리지 않는다(역만 추린 목록이라 범위가 없다)
+    final brackets = searching ? null : bracketPieces(lines, tokens, Theme.of(context).brightness);
     return PopScope(
       // 분기로 넘어왔으면 뒤로 가기는 직전 노선이다
       canPop: state.depth == 0,
@@ -160,23 +162,34 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(book.lines[shownLine] ?? ''),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        t.meta(
-                          operator: controller.operatorName,
-                          km: lineScore == null || !lineScore.started
-                              ? '${kmLabel(lineMeters)} km'
-                              : t.progress(
-                                  num: kmLabel(lineScore.numMeters),
-                                  den: kmLabel(lineScore.denMeters),
-                                  percent: percentLabel(lineScore),
-                                ),
+                    // 회사 이름이 길면 글자를 줄이지 않고 회사 이름만 말줄임한다. km·진행률은 끝까지 보인다.
+                    // 통째로 줄이면 「Tokyo Metropolitan Bureau of Transportation」이 읽을 수 없게 작아졌다 (실화면 2026-11-19)
+                    Builder(builder: (context) {
+                      final km = lineScore == null || !lineScore.started
+                          ? '${kmLabel(lineMeters)} km'
+                          : t.progress(
+                              num: kmLabel(lineScore.numMeters),
+                              den: kmLabel(lineScore.denMeters),
+                              percent: percentLabel(lineScore),
+                            );
+                      final parts = t.meta(operator: '\u0000', km: km).split('\u0000');
+                      // km 쪽은 줄 폭을 넘지 않게만 막고(아주 좁으면 그것도 말줄임), 남는 폭을 회사 이름이 쓴다
+                      return LayoutBuilder(
+                        builder: (context, box) => Row(
+                          children: [
+                            if (parts.first.isNotEmpty)
+                              Flexible(child: Text(parts.first, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall)),
+                            Flexible(
+                              child: Text(controller.operatorName, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall),
+                            ),
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: box.maxWidth),
+                              child: Text(parts.last, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall),
+                            ),
+                          ],
                         ),
-                        style: text.bodySmall,
-                      ),
-                    ),
+                      );
+                    }),
                   ],
                 ),
           actions: [
@@ -226,6 +239,8 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                 radius: const Radius.circular(4),
                 child: ListView.builder(
                   controller: _lines,
+                  // 줄마다 따로 쌓지 않아야 점선 박자를 목록 전체 위치로 맞출 수 있다(그림판 이동량에 줄 위치가 들어간다)
+                  addRepaintBoundaries: false,
                   padding: const EdgeInsets.only(bottom: 16),
                   itemCount: lines.length,
                   itemBuilder: (context, index) {
@@ -237,6 +252,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                         prev: index > 0 ? lines[index - 1] : null,
                         next: index + 1 < lines.length ? lines[index + 1] : null,
                         trunk: trunk,
+                        brackets: brackets?[index] ?? const [],
                       ),
                     );
                   },

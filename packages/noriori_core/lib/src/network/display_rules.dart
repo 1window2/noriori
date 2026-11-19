@@ -319,6 +319,52 @@ final class TransferLine extends SelectorLine {
   final String? closedYear;
 }
 
+/// 괄호로 묶는 구간의 상태 (사용자 결정 2026-11-19 「칸마다 그 날짜의 상태 하나」).
+/// 이관은 다른 노선으로 기록되는 구간, 나머지는 그날 탈 수 없는 구간이다
+enum NoticeKind { hand, closed, suspended, before }
+
+/// 괄호 끝이 걸리는 줄. 역 줄이면 [seq], 열람 전용 역 줄이면 [archive]다
+final class BracketAnchor {
+  const BracketAnchor({this.seq, this.archive});
+
+  final int? seq;
+  final String? archive;
+
+  bool matches(SelectorLine line) => switch (line) {
+        StopLine(:final row) => seq != null && row.seq == seq,
+        ArchiveLine(:final stop) => archive != null && stop.id == archive,
+        _ => false,
+      };
+}
+
+/// 괄호로 묶은 구간의 안내 (사용자 결정 2026-11-19, 폐지·이관 구분선을 대신함).
+/// 상태가 같은 칸이 이어지는 만큼 [top]부터 [bottom]까지 괄호 하나로 묶고, 이 줄은 괄호 맨 위 역(그 역에 딸린 아래쪽 분기·끝 이어짐 줄 다음) 바로 아래에 놓인다.
+/// 폐지일이 지난 칸은 이관보다 폐지가 앞선다. 날짜를 모르면 마지막 상태다
+final class NoticeLine extends SelectorLine {
+  const NoticeLine({
+    required this.kind,
+    required this.top,
+    required this.bottom,
+    this.lineId,
+    this.on,
+    this.year,
+    this.at,
+    super.lanes,
+  });
+
+  final NoticeKind kind;
+  final BracketAnchor top;
+  final BracketAnchor bottom;
+
+  /// 이관 구간이면 이어받은 노선과 넘어간 날, 「노선 보기」가 넘어갈 역
+  final String? lineId;
+  final String? on;
+  final SelectorRow? at;
+
+  /// 폐지 구간이면 폐지 해, 개업 전 구간이면 개업 해다. 모르면 '?'
+  final String? year;
+}
+
 /// `route_link`를 줄로 바꾼다 (ARCHITECTURE §3.3 `DisplayRules`, DESIGN §8.1).
 final class DisplayRules {
   DisplayRules(this.network, {required this.today});
@@ -760,6 +806,7 @@ final class DisplayRules {
     bool undated = false,
     List<ParallelRun> parallels = const [],
     DateSpan? date,
+    String? shownLineId,
   }) {
     // 그리는 동안만 그 화면의 날을 기준으로 삼는다. 끝나면 오늘로 되돌려 다른 호출(환승 캡슐 등)에 남지 않게 한다
     _viewDay = date?.lo;
@@ -777,6 +824,7 @@ final class DisplayRules {
         undated: undated,
         parallels: parallels,
         date: date,
+        shownLineId: shownLineId,
       );
     } finally {
       _viewDay = null;
@@ -796,6 +844,7 @@ final class DisplayRules {
     required bool undated,
     required List<ParallelRun> parallels,
     required DateSpan? date,
+    required String? shownLineId,
   }) {
     final archive = options.showClosed && options.showArchive;
     final places = _place(rows, archive ? archiveStops : const []);
@@ -1175,7 +1224,153 @@ final class DisplayRules {
         }
       }
     }
-    return attachEnds(handOver(out, lineId: lineId, undated: undated, date: date));
+    return _bracketize(
+      attachEnds(out),
+      rows: rows,
+      gaps: gaps,
+      yearOf: yearOf,
+      suspendedAt: suspendedAt,
+      opensAt: opensAt,
+      undated: undated,
+      date: date,
+      shownLineId: shownLineId,
+    );
+  }
+
+  /// 폐지·운휴·개업 전·이관 구분선을 괄호와 안내 줄로 바꾼다 (사용자 결정 2026-11-19).
+  ///
+  /// 역 사이 칸마다 그날의 상태를 하나만 정한다. 탈 수 없는 칸(폐지·운휴·개업 전)이 먼저고, 아니면 그 칸이 드는 이관 구간이다.
+  /// 이관 구간은 칸 위쪽 역의 이관 구간, 없으면 아래쪽 역의 이관 구간이다(구간 첫 역 앞 칸은 아래쪽 역이, 구간이 끝나는 역 앞 칸은 위쪽 역이 정한다).
+  /// 상태와 그 값(폐지 해·이어받은 노선)이 같은 칸이 이어지는 만큼 괄호 하나다. 열람 전용 역 묶음(2역 이상)이 끝 너머에 있으면 그 묶음도 폐지 괄호다.
+  /// 화면이 이미 그날의 노선([shownLineId], 같은 사슬의 뒤 노선)으로 바뀌었으면 그 노선으로의 이관은 괄호가 아니다.
+  /// 제목이 「三陸鉄道リアス線」인데 같은 노선으로 「이 구간은 그 노선으로 기록돼요」 괄호가 또 그려졌다 (실화면 2026-11-19 北条線, 전 노선 44계통)
+  List<SelectorLine> _bracketize(
+    List<SelectorLine> lines, {
+    required List<SelectorRow> rows,
+    required List<bool> gaps,
+    required Map<int, String> yearOf,
+    required bool Function(int gap) suspendedAt,
+    required String? Function(int gap) opensAt,
+    required bool undated,
+    required DateSpan? date,
+    required String? shownLineId,
+  }) {
+    final body = [for (final line in lines) if (line is! SectionLine && line is! TransferLine) line];
+    (String, String)? band(SelectorRow row) => switch (bandOf(row, undated: undated, date: date)) {
+          (final to, _) when to == shownLineId => null,
+          final hand => hand,
+        };
+    final spans = <_Span>[];
+    for (var gap = 0; gap + 1 < rows.length; gap++) {
+      NoticeKind? kind;
+      String key = '';
+      String? year, lineId, on;
+      SelectorRow? at;
+      if (gap < gaps.length && !gaps[gap]) {
+        if (suspendedAt(gap)) {
+          // 안내 제목에 운휴 시작 해를 붙인다(역 줄의 「운휴 2023~」과 짝). 시작 해가 다르면 다른 괄호다
+          kind = NoticeKind.suspended;
+          year = rows[gap].suspendedSince ?? rows[gap + 1].suspendedSince;
+          key = year ?? '';
+        } else if (opensAt(gap) case final opens?) {
+          kind = NoticeKind.before;
+          year = opens;
+          key = opens;
+        } else {
+          kind = NoticeKind.closed;
+          year = yearOf[gap] ?? '?';
+          key = year;
+        }
+      } else if (band(rows[gap]) ?? band(rows[gap + 1]) case (final to, final day)) {
+        kind = NoticeKind.hand;
+        lineId = to;
+        on = day;
+        key = '$to\u0000$day';
+        at = band(rows[gap]) != null ? rows[gap] : rows[gap + 1];
+      }
+      if (kind == null) continue;
+      final last = spans.isEmpty ? null : spans.last;
+      if (last != null && last.toRow == gap && last.kind == kind && last.key == key) {
+        last.toRow = gap + 1;
+      } else {
+        spans.add(_Span(kind, key, gap, gap + 1, year: year, lineId: lineId, on: on, at: at));
+      }
+    }
+    final notices = <(int, NoticeLine)>[];
+    int indexOfRow(SelectorRow row) => body.indexWhere((line) => line is StopLine && line.row.seq == row.seq);
+    // 괄호 맨 위 줄에 딸린 아래쪽 분기·끝 이어짐 다음이 안내 자리다
+    int after(int index) {
+      final top = body[index];
+      final seq = top is StopLine ? top.row.seq : null;
+      var at = index + 1;
+      while (at < body.length && seq != null) {
+        final line = body[at];
+        final mine = switch (line) {
+          BranchLine(:final at, :final up) => !up && at.seq == seq,
+          EndLine(:final at, :final up) => !up && at.seq == seq,
+          _ => false,
+        };
+        if (!mine) break;
+        at++;
+      }
+      return at;
+    }
+    for (final span in spans) {
+      // 끝 너머 폐역이 한 역뿐이어도 괄호로 묶는다. 「한 역에는 폐지 구간 점선을 그리지 않는다」(2026-11-18)는 긴 가로 점선 때문이었고,
+      // 괄호는 그 문제가 없다 (사용자 확인 2026-11-19 목업: 北条線 北条町–北条町（旧）, 信越本線 新潟（旧）–白山)
+      final topIndex = indexOfRow(rows[span.fromRow]);
+      if (topIndex < 0 || indexOfRow(rows[span.toRow]) < 0) continue;
+      notices.add((
+        after(topIndex),
+        NoticeLine(
+          kind: span.kind,
+          top: BracketAnchor(seq: rows[span.fromRow].seq),
+          bottom: BracketAnchor(seq: rows[span.toRow].seq),
+          lineId: span.lineId,
+          on: span.on,
+          at: span.at,
+          year: span.year,
+        ),
+      ));
+    }
+    // 끝 너머 열람 전용 역 묶음(2역 이상)은 그 묶음과 끝 역을 폐지 괄호로 묶는다 (한 역뿐이면 묶지 않는다, 사용자 결정 2026-11-18)
+    final firstStop = body.indexWhere((line) => line is StopLine);
+    final lastStop = body.lastIndexWhere((line) => line is StopLine);
+    if (firstStop > 0) {
+      final head = [for (final line in body.sublist(0, firstStop)) if (line is ArchiveLine) line];
+      if (head.length > 1) {
+        final top = head.first;
+        notices.add((
+          body.indexOf(top) + 1,
+          NoticeLine(
+            kind: NoticeKind.closed,
+            top: BracketAnchor(archive: top.stop.id),
+            bottom: BracketAnchor(seq: (body[firstStop] as StopLine).row.seq),
+            year: _latestYear([for (final line in head) line.stop]),
+          ),
+        ));
+      }
+    }
+    if (lastStop >= 0 && lastStop + 1 < body.length) {
+      final tail = [for (final line in body.sublist(lastStop + 1)) if (line is ArchiveLine) line];
+      if (tail.length > 1) {
+        notices.add((
+          after(lastStop),
+          NoticeLine(
+            kind: NoticeKind.closed,
+            top: BracketAnchor(seq: (body[lastStop] as StopLine).row.seq),
+            bottom: BracketAnchor(archive: tail.last.stop.id),
+            year: _latestYear([for (final line in tail) line.stop]),
+          ),
+        ));
+      }
+    }
+    // 뒤에서부터 넣어 앞 자리 번호가 밀리지 않게 한다. 같은 자리면 먼저 시작한 괄호의 안내가 위다
+    notices.sort((a, b) => b.$1.compareTo(a.$1));
+    for (final (index, notice) in notices) {
+      body.insert(index, notice);
+    }
+    return body;
   }
 
   /// 끝 이어짐 줄은 자기 역에 붙어 있어야 점선 줄기가 이어진다. 역과 끝 이어짐 사이에는 그 역의 분기·끝 이어짐 줄만 두고,
@@ -1542,4 +1737,18 @@ final class _Run {
   final int to;
   final int lane;
   final bool gone;
+}
+
+/// 괄호 하나. [fromRow]와 [toRow]는 그 화면 역 줄의 순번이다
+final class _Span {
+  _Span(this.kind, this.key, this.fromRow, this.toRow, {this.year, this.lineId, this.on, this.at});
+
+  final NoticeKind kind;
+  final String key;
+  final int fromRow;
+  int toRow;
+  final String? year;
+  final String? lineId;
+  final String? on;
+  final SelectorRow? at;
 }

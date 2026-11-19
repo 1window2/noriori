@@ -103,6 +103,7 @@ void main() {
           undated: date == null,
           parallels: parallels,
           date: date,
+          shownLineId: network.lineOnDate(routeId, date),
         );
         // 병주 상대의 다음 역·끝 역도 이름을 불러온다 (기록 화면과 같다)
         final ids = <String>{
@@ -168,6 +169,14 @@ void main() {
             case final TransferLine h:
               jl.add({'t': 'hand', 'line': h.lineId, 'on': h.on, 'at': h.at.node, 'atSeq': h.at.seq, 'whole': h.whole, 'back': h.back, 'closedYear': h.closedYear});
               buf.writeln('  = = = 이관${h.whole ? '(노선 전체)' : ''}${h.back ? ' 돌아옴' : ''} ${ln(h.lineId)} ${h.on}${h.closedYear == null ? '' : ' +~${h.closedYear} 폐지'}');
+            case final NoticeLine n:
+              String anchor(BracketAnchor b) => switch (lines.firstWhere(b.matches, orElse: () => n)) {
+                    StopLine(:final row) => row.node,
+                    ArchiveLine(:final stop) => stop.id,
+                    _ => '?',
+                  };
+              jl.add({'t': 'notice', 'kind': n.kind.name, 'top': anchor(n.top), 'bottom': anchor(n.bottom), 'year': n.year, 'line': n.lineId, 'on': n.on});
+              buf.writeln('  [ 괄호 ${n.kind.name} ${anchor(n.top)}~${anchor(n.bottom)}${n.year == null ? '' : ' ${n.year}'}${n.lineId == null ? '' : ' ${ln(n.lineId!)} ${n.on}'}');
             case final ArchiveLine a:
               jl.add({'t': 'archive', 'id': a.stop.id, 'gap': a.gap});
               buf.writeln('  ○ 열람전용역 ${archive[a.stop.id] ?? a.stop.id} ~${a.stop.closedYear} km=${a.stop.km}');

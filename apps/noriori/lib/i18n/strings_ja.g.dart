@@ -338,6 +338,9 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String handSince({required Object date, required Object line}) => '${date}から${line}';
 	@override String get handOpen => '路線を見る ›';
 	@override String get handNote => 'この区間はその路線で記録されます';
+	@override String get noticeClosedSub => 'それより前の日付でのみ記録できます';
+	@override String get noticeSuspendedSub => '運休前の日付でのみ記録できます';
+	@override String get noticeBeforeSub => '開業後の日付で記録できます';
 	@override String get chooseDirection => 'どちら回りで乗りましたか？';
 	@override String directionKm({required Object km}) => '${km} km';
 	@override String get chooseRelocation => 'どの時期の線路でしたか？';
@@ -1273,6 +1276,9 @@ extension on TranslationsJa {
 			'session.handSince' => ({required Object date, required Object line}) => '${date}から${line}',
 			'session.handOpen' => '路線を見る ›',
 			'session.handNote' => 'この区間はその路線で記録されます',
+			'session.noticeClosedSub' => 'それより前の日付でのみ記録できます',
+			'session.noticeSuspendedSub' => '運休前の日付でのみ記録できます',
+			'session.noticeBeforeSub' => '開業後の日付で記録できます',
 			'session.chooseDirection' => 'どちら回りで乗りましたか？',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => 'どの時期の線路でしたか？',
@@ -1625,11 +1631,11 @@ extension on TranslationsJa {
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',
 			'prefNames.25' => '京都',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.26' => '大阪',
 			'prefNames.27' => '兵庫',
 			'prefNames.28' => '奈良',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.29' => '和歌山',
 			'prefNames.30' => '鳥取',
 			'prefNames.31' => '島根',
