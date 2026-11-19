@@ -601,11 +601,11 @@ final class DisplayRules {
     // 그 날 뒤에 생긴 연결은 보이지 않는다
     bool future(SelectorLink other) => other.validFromLo != null && other.validFromLo!.compareTo(_day) > 0;
     if (future(link)) return false;
-    // 방향(쪽·흐름)마다 그 날까지 가장 늦게 끝난 것 하나. 지나가는 역의 위·아래 두 방면은 따로 남는다(弥彦線 東三条)
-    String dir(SelectorLink other) => '${other.side ?? ''}|${other.flow ?? ''}';
+    // 그 날까지 가장 늦게 끝난 상태 하나(종류와 상관없이). 같은 날 끝난 위·아래 두 방면은 함께 남는다.
+    // 종류별로 따로 고르면 屋代의 長野電鉄屋代線처럼 옛 분기(~1982)와 마지막 환승(~2012)이 함께 남았다
     final ended = [
       for (final other in group)
-        if (dir(other) == dir(link) && !future(other) && other.validToHi != null && other.validToHi != DateSpan.maxDate && other.validToHi!.compareTo(_day) <= 0)
+        if (!future(other) && other.validToHi != null && other.validToHi != DateSpan.maxDate && other.validToHi!.compareTo(_day) <= 0)
           other.validToHi!,
     ];
     // 끝난 날을 모르는 연결뿐이면 그대로 둔다
