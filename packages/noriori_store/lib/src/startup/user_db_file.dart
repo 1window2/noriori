@@ -28,13 +28,14 @@ final class UserDbFile {
 
   bool get hasQuarantine => _open.isNotEmpty;
 
+  // 폴더 목록 순서는 파일 시스템마다 다르다. 이름순으로 고정해 복원 화면의 순서가 기기마다 같게 한다
   List<File> get quarantined => [
         for (final entry in _open)
           if (entry is Directory)
             ...entry.listSync(recursive: true).whereType<File>()
           else if (entry is File)
             entry,
-      ];
+      ]..sort((a, b) => a.path.compareTo(b.path));
 
   /// 사용자가 복원을 마치고 화면을 닫았다. 다음 시작부터 보통 길로 간다.
   void closeQuarantine() {
