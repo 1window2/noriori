@@ -11,10 +11,12 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      # 모든 커밋의 작성자·커미터가 가명(noreply) 하나인지 본다. 다른 주소가 하나라도 있으면 멈춘다
+      # 모든 커밋의 작성자·커미터가 가명(noreply) 하나인지 본다. 다른 주소가 하나라도 있으면 멈춘다.
+      # GitHub 웹에서 squash merge하면 GitHub 서버가 커밋을 만든다(커미터 noreply@github.com, 작성자는 계정 기본 메일).
+      # 그 병합 커밋은 의도된 것이라 검사에서 빼고, 직접 만든 커밋만 본다 (PR #1·#2 병합 뒤 main CI 실패, 2026-11-20)
       - name: 커밋 신원 검사
         run: |
-          bad=$(git log --all --no-merges --format='%ae%n%ce' | sort -u | grep -vx '162031103+1window2@users.noreply.github.com' || true)
+          bad=$(git log --all --no-merges --format='%ae %ce' | awk '$2!="noreply@github.com"{print $1; print $2}' | sort -u | grep -vx '162031103+1window2@users.noreply.github.com' || true)
           if [ -n "$bad" ]; then echo "가명이 아닌 커밋 신원이 있습니다: $(echo "$bad" | wc -l)개"; exit 1; fi
       - uses: actions/setup-python@v5
         with:
