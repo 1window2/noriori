@@ -30,10 +30,11 @@ final class LocalBackupFolder implements BackupFolder {
   @override
   Future<List<String>> names() async {
     if (!directory.existsSync()) return const [];
+    // 폴더 목록 순서는 파일 시스템마다 다르다(APFS는 이름순, ext4는 해시순). 이름순으로 고정한다
     return [
       for (final entry in directory.listSync().whereType<File>())
         if (entry.path.endsWith('.json')) p.basename(entry.path),
-    ];
+    ]..sort();
   }
 
   @override

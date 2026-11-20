@@ -132,8 +132,13 @@ void main() {
       expect(await filesHolding('old7'), 3);
 
       // 복원을 마치면 옛 파일은 무변경이 되어 다시 회전한다.
-      final latest = BackupFile.decode((await folder.read((await folder.names()).first))!);
-      await next.store.merge(latest.contents);
+      // 옛 기록이 든 파일을 고른다. 폴더 목록의 첫 파일이 그 파일이라고 가정하지 않는다 (Linux CI에서 새 기기 파일이 먼저 나옴, 2026-11-20)
+      BackupFile? old;
+      for (final name in await folder.inner.names()) {
+        final file = BackupFile.decode((await folder.read(name))!);
+        if (file.contents.stamps.containsKey('old7')) old = file;
+      }
+      await next.store.merge(old!.contents);
       expect(await next.store.allRides(), hasLength(41));
       final report = await backup(next);
       expect(report.needsMerge, isEmpty);

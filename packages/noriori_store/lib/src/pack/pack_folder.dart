@@ -104,7 +104,9 @@ final class PackFolder {
     }
   }
 
-  Iterable<Directory> _entries() => root.listSync().whereType<Directory>();
+  // 폴더 목록 순서는 파일 시스템마다 다르다. 이름순으로 고정해 어느 기기에서나 같은 순서로 본다
+  Iterable<Directory> _entries() =>
+      root.listSync().whereType<Directory>().toList()..sort((a, b) => a.path.compareTo(b.path));
 
   List<Directory> _folders() => [
         for (final dir in _entries())
