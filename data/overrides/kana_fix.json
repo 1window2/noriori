@@ -4610,14 +4610,14 @@
 "source": "names.sqlite node kana: n_hanyu_chichibu=はにゅう; n_mitsumineguchi=みつみねぐち"
 },
 "route:r_chichibu_railway_connecting_line": {
-"text": "西武秩父（通過）～西武秩父（御花畑方）",
-"kana": "せいぶちちぶ（つうか）～せいぶちちぶ（おはなばたけがた）",
-"source": "names.sqlite node kana: name「西武秩父（通過）」=せいぶちちぶ + 구분 주석 （つうか）; name「西武秩父（御花畑方）」=せいぶちちぶ + 구분 주석 （おはなばたけがた）"
+"text": "分岐点（西武秩父）～御花畑",
+"kana": "ぶんきてん（せいぶちちぶ）～おはなばたけ",
+"source": "끝 노드 이름 規則(5번 결정 2026-11-20): 分岐点（西武秩父）=ぶんきてん+（せいぶちちぶ）, n_ohanabatake=おはなばたけ"
 },
 "route:r_chichibu_railway_connecting_line_branch": {
-"text": "西武秩父～西武秩父（影森方）",
-"kana": "せいぶちちぶ～せいぶちちぶ（かげもりがた）",
-"source": "names.sqlite node kana: n_seibu_chichibu=せいぶちちぶ; name「西武秩父（影森方）」=せいぶちちぶ + 구분 주석 （かげもりがた）"
+"text": "西武秩父～分岐点（御花畑）",
+"kana": "せいぶちちぶ～ぶんきてん（おはなばたけ）",
+"source": "끝 노드 이름 規則(5번 결정 2026-11-20): n_seibu_chichibu=せいぶちちぶ, 分岐点（御花畑）=ぶんきてん+（おはなばたけ）"
 },
 "route:r_chihara_line": {
 "text": "千葉中央～ちはら台",
@@ -7740,11 +7740,6 @@
 "kana": "いせしえきまえ～ないくうまえ",
 "source": "names.sqlite node kana: n_iseshi_ekimae=いせしえきまえ; n_naikumae=ないくうまえ"
 },
-"route:r_nakagawa_connecting_line": {
-"text": "伊勢中川（上本町方）～伊勢中川（名古屋方）",
-"kana": "いせなかがわ（うえほんまちがた）～いせなかがわ（なごやがた）",
-"source": "names.sqlite node kana: name「伊勢中川（上本町方）」=いせなかがわ + 구분 주석 （うえほんまちがた）; name「伊勢中川（名古屋方）」=いせなかがわ + 구분 주석 （なごやがた）"
-},
 "route:r_nakameguro_line": {
 "text": "渋谷橋～中目黒",
 "kana": "しぶやばし～なかめぐろ",
@@ -8006,9 +8001,9 @@
 "source": "names.sqlite node kana: n_kokutetsu_ekimae=こくてつえきまえ; n_umagaeshi=うまがえし"
 },
 "route:r_ninokuchi_connecting_line": {
-"text": "大和八木（上本町方）～新ノ口",
-"kana": "やまとやぎ（うえほんまちがた）～にのくち",
-"source": "names.sqlite node kana: name「大和八木（上本町方）」=やまとやぎ + 구분 주석 （うえほんまちがた）; n_ninokuchi=にのくち"
+"text": "分岐点（大和八木）～新ノ口",
+"kana": "ぶんきてん（やまとやぎ）～にのくち",
+"source": "끝 노드 이름 規則(5번 결정 2026-11-20): 分岐点（大和八木）=ぶんきてん+（やまとやぎ）, n_ninokuchi=にのくち"
 },
 "route:r_nippo_main_line": {
 "text": "小倉～鹿児島",
@@ -10341,9 +10336,9 @@
 "source": "names.sqlite node kana: n_fuji_tokachi=ふじ; n_yachiyo=やちよ"
 },
 "route:r_yagi_connecting_line": {
-"text": "大和八木（上本町方）～大和八木（八木西口）",
-"kana": "やまとやぎ（うえほんまちがた）～やまとやぎ（やぎにしぐち）",
-"source": "names.sqlite node kana: name「大和八木（上本町方）」=やまとやぎ + 구분 주석 （うえほんまちがた）; name「大和八木（八木西口）」=やまとやぎ + 구분 주석 （やぎにしぐち）"
+"text": "分岐点（大和八木）～大和八木",
+"kana": "ぶんきてん（やまとやぎ）～やまとやぎ",
+"source": "끝 노드 이름 規則(5번 결정 2026-11-20): 分岐点（大和八木）=ぶんきてん+（やまとやぎ）, n_yamato_yagi=やまとやぎ"
 },
 "route:r_yagoto_line": {
 "text": "大久手～八事",

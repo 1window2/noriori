@@ -7,7 +7,6 @@ final class NetRoute {
     required this.fromNode,
     required this.toNode,
     required this.closed,
-    required this.extendTo,
   });
 
   final String id;
@@ -16,7 +15,6 @@ final class NetRoute {
   final String fromNode;
   final String toNode;
   final bool closed;
-  final List<String> extendTo;
 }
 
 final class NetEdge {
@@ -136,7 +134,7 @@ final class NetStop {
     required this.node,
     required this.kmCum,
     required this.isStop,
-    required this.isExtension,
+    this.isEndPoint = false,
     required this.period,
     this.kmEstimated = false,
     this.gaps = const [],
@@ -147,7 +145,9 @@ final class NetStop {
   final String node;
   final double? kmCum;
   final bool isStop;
-  final bool isExtension;
+  /// 승하차 불가 끝 노드 행: 승객 정차가 있는 계통의 끝인데 서지 않는 노드(분기점·신호장·정류장이 없어진 경계점)와,
+  /// 그 노드를 지나는 다른 계통의 같은 노드. 노선 일람에 가운데가 회색인 노드로 보이고 고를 수 있다 (5번 결정 junction-nodes-rule, 2026-11-19)
+  final bool isEndPoint;
   final NetPeriod period;
 
   /// 정차 기간 사이 서지 않은 때 (印場 1944~1995). from이 서지 않기 시작한 날, to가 다시 선 날이다.

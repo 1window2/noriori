@@ -281,6 +281,7 @@
     "relocationOld": "旧線 · $km km",
     "relocationNew": "新線 · $km km",
     "spokenOpen": "営業中",
+    "spokenPassing": "旅客扱いなし",
     "spokenRidden": "乗車済み"
   },
   "data": {

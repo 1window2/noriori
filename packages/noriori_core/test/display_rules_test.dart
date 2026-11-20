@@ -21,7 +21,7 @@ SelectorRow row(
       node: node,
       state: state,
       selectable: selectable,
-      isExtension: false,
+      
       kmCum: km,
       links: links,
       goneLinks: gone,
@@ -1043,18 +1043,6 @@ void main() {
   });
 
   group('10회차 G1 (전수 점검 4회차)', () {
-    SelectorRow ext(int seq, String node, {String? openYear, String? closeYear}) => SelectorRow(
-          seq: seq,
-          node: node,
-          state: StopState.closed,
-          selectable: false,
-          isExtension: true,
-          kmCum: null,
-          links: const [],
-          openYear: openYear,
-          closeYear: closeYear,
-        );
-
     test('운휴로 비었다가 다시 이은 같은 노선 앞 토막 너머 이관 앞 노선도 잇는다 (上田 信越本線 ~1997 › しなの鉄道線)', () {
       final network = Network(NetworkData(
         routes: const [],
@@ -1276,20 +1264,6 @@ void main() {
       // 폐지로 끝난 연결은 운휴가 아니다
       final closed = rules.lines(lineId: 'me', rows: rows, openGaps: const [true, true], options: all);
       expect(closed.whereType<BranchLine>().single.item.suspended, isFalse);
-    });
-
-    test('계통 끝 너머 확장 묶음이 시기마다 다르면 묶음 사이에 글 없는 구분선 (鹿島線 北鹿島 너머)', () {
-      final rows = [
-        row(0, 'a'),
-        row(1, 'b'),
-        ext(2, 'koya', openYear: '1985', closeYear: '1994'),
-        ext(3, 'ikiri', openYear: '1978', closeYear: '1978'),
-        ext(4, 'konan', openYear: '1978', closeYear: '1983'),
-      ];
-      final out = rules.lines(lineId: 'me', rows: rows, openGaps: const [true, true, true, true], options: all);
-      // 확장 행 묶음 사이 구분선은 없앴다(확장 행 장치는 분기점 노드로 바뀐다, 5번 결정). 영업 칸이라 괄호도 없다
-      expect(out.whereType<SectionLine>(), isEmpty);
-      expect(spans(out), isEmpty);
     });
   });
 }

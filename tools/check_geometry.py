@@ -17,6 +17,8 @@ cur={r[0] for r in m.execute("select distinct edge_id from edge_attr where valid
 if m.execute("select 1 from sqlite_master where type='table' and name='station_split'").fetchone():
     cur-={r[0] for r in m.execute("select edge_id from station_split where edge_id is not null")}
 edges={e['id']:e for e in load('edges')}
+# 컴파일이 칸에 분기점을 끼워 나눈 칸(edge_insert, 5번 결정 2026-11-20)은 원본에 없다. 나누기 전 원본 칸이 원본 선형으로 검사된다
+cur&=set(edges)
 km={k['edge']:k['km'] for k in load('km')}
 geo={g['edge']:g for g in load('geometry')}
 pos={p['node']:(p['lon'],p['lat']) for p in load('positions') if p.get('lat') is not None}

@@ -332,7 +332,7 @@ names + aliases ─────────▶  names.sqlite (표시 이름·별
 | 날짜 | 날짜 정합성. 범위 날짜는 양 끝 시점에서 각각 검사 |
 | 수록 | 공개 노선마다 §4.1 등급을 판정, 등급 조건을 못 채우면 실패. 현행 노선이 `기록 가능` 조건을 못 채우면 등급을 내리지 않고 실패 |
 | 귀속 | 영업 중인 edge마다 `edge_attr`가 1행 이상. (line, edge)당 동시 행은 1개 |
-| 계통 | 끝 노드가 숨은 노드이거나 그 계통의 정차역이 아니면 `extend_to`나 그 끝을 지나는 service가 있어야 함 |
+| 계통 | 끝 노드가 숨은 노드이거나 그 계통의 정차역이 아니면 그 끝 노드 행을 고를 수 있어야 하고(승하차 불가 끝 노드), 그 끝에서 이어지는 노선으로의 끝 이어짐이나 그 끝을 지나는 service가 있어야 함 |
 | 거리 | 노선별 총 km를 출처 값과 대조. **사업자별 합계를 공표 총 영업km와 대조** (JR 도카이 1,970.8km). 멤버십이 둘 이상인 edge는 양쪽 공식 km를 비교 |
 | 교차 검증 | 역 목록·순서·영업km·폐지일을 모든 출처(노리츠부시, N05, 위키백과, station_database 등)끼리 대조. 맞는 값만 씀 (사용자 결정, 2026-11-04). 어긋나면 폐선은 등급을 내리고, 현행 노선은 CI 실패로 데이터를 고침. 현행 노선은 항상 기록 가능 |
 | 이름 | 공개되는 역·노선·사업자에 한글 이름과 `source`가 있어야 함. **한글에 일본어 글자 금지**, 읽기가 다른 키의 나무위키 제목 공유 금지, 출처 있는 값이 규칙으로 조용히 떨어지면 실패 |
@@ -362,21 +362,24 @@ names + aliases ─────────▶  names.sqlite (표시 이름·별
 # 공식 계통. 본선과 같은 구간을 달려도 자기 edge를 가짐
 - { id: r_tokaido_main_line_ogaki_mino_akasaka, line: l_tokaido_main_line, from: n_ogaki, to: n_mino_akasaka, role: branch }
 # routes/private.yaml — 공식 기점이 숨은 노드
-- { id: r_inuyama_line, line: l_inuyama_line, from: n_biwajima_junction, to: n_shin_unuma,
-    extend_to: [n_higashi_biwajima] }
+- { id: r_inuyama_line, line: l_inuyama_line, from: n_biwajima_junction, to: n_shin_unuma }
+# data/overrides/extend.json — 끝 이어짐 방면 자료(그 방면 첫 역): {"r_inuyama_line": {"start": ["n_higashi_biwajima"]}}
 ```
 - 빌드는 각 시점에서 **그 노선에 속한 edge만 남긴 부분 그래프**에서 `from → (via) → to` 경로를 찾습니다. 같은 양 끝의 신칸센 선로나 이관된 구간은 후보가 되지 않습니다. 결과는 파생 테이블 `route_edge`(계통, 순번, edge, 기간)입니다.
 - **공식 영업km에 따로 잡힌 계통은 같은 구간을 달려도 자기 edge를 둡니다** (`route_only`). 東海道本線의 美濃赤坂線 大垣~美濃赤坂 5.0km와 新垂井経由 大垣~関ヶ原 13.8km가 그렇습니다. 둘을 모두 세어야 JR 도카이 합계 1,970.8km가 맞고, 노리츠부시도 같습니다. 본선으로 탄 기록은 이 계통을 채우지 않습니다. `route_only`가 있는 edge는 그 계통의 경로 탐색에만 쓰입니다.
 - **CI 검사**: 모든 날짜 구간에서 각 노선의 집계 구간이 계통들로 **겹침·빠짐 없이** 나뉘는지.
 - 역 신설·부분 폐지가 있어도 계통 파일은 고칠 필요 없음. 기점·종점 쪽 폐지는 빌드가 그 시점에 영업 중인 범위로 자동으로 잘라 냄. 공식 단위가 시대마다 달라 경로가 달라지면 계통을 새로 둠.
-- **`extend_to`**: 계통 끝이 숨은 노드이면 화면 끝의 역에서 더 이어 고를 수 없습니다. 그 너머의 역을 적어 두면 선택기에 함께 보이고, 고르면 저장할 때 그 역이 속한 계통으로 leg를 나눕니다. `route_stop`에 `is_extension` 행으로 들어가고 km는 표시하지 않습니다. 정차하지 않는 공개 역에서 끝나는 계통도 같습니다.
+- **계통 끝 노드와 끝 이어짐** (5번 결정 2026-11-19, 2026-11-20 재구성): 계통 끝 너머 다른 노선의 역을 그 계통 역처럼 붙이던 확장 행(`extend_to`, `is_extension`)은 없앴습니다. 대신
+  - **승하차 불가 끝 노드**: 계통 끝 노드 행은 그 끝에 닿는 계통 칸이 영업한 기간 내내 고를 수 있습니다. 분기점·신호장, 정차 전·뒤의 역은 가운데가 회색인 노드로 그리고 km를 계산합니다. 그 노드를 지나는 다른 계통 화면에도 그 기간에 보입니다. 고를 수 있는 기간은 정차 기간과 따로 둡니다(정차·환승·임시역 표식·환승 쌍은 정차 기간으로만 봅니다).
+  - **끝 이어짐**: 끝 노드에서 이어지는 노선으로 `route_link` 이어짐(continue)과 반대쪽 갈림을 냅니다. 방면은 `data/overrides/extend.json`(손으로 정한 방면 자료: 그 방면 첫 역)이 먼저이고, 없으면 분기점이면 그 자리에서 갈라진 선로로, 공개 역이면 연결 근거 행으로, 들어온 방향에서 가장 곧게 나가는 쪽으로 정합니다. 끝 노드 한 구간 너머에 여객 직통 근거 행이 있으면 상대 노드(`other_node`) 이어짐입니다.
+  - 그 방향에 정차역이 없으면 다음 역·끝 역은 계통 끝 노드입니다(정차역이 없는 연락선). 생성기가 그 쌍을 이미 판정한 날(환승 포함)은 따르고, 기간은 두 계통이 그 노드에서 실제로 영업한 날만입니다.
 - **순환·올가미형 계통** (大江戸線 등. 大阪環状線과 名城線은 공식 노선이 열려 있어 순환 입력은 운행 계통이 맡음): `closed: true`. 순환은 기점과 종점이 같고, 올가미는 기점 또는 종점이 자기 계통의 중간역입니다 (大江戸線 都庁前). 역 순서는 (계통, 순번)으로 저장해 같은 역이 두 번 나와도 됨. 입력은 §8 "순환 입력". `via` 필수. 시대에 따라 닫히는 계통은 `closed_from`에 날짜를 적음.
 
 **지선 유형별 처리**
 | 유형 | 처리 |
 |---|---|
 | 역에서 갈라지는 지선 (千歳線 공항지선) | 지선 계통의 기점 = 분기역 노드. 분기역은 두 계통에 모두 나타남 |
-| 역이 아닌 지점에서 갈라지는 지선 (名鉄 枇杷島分岐点 등) | 분기점을 `kind: junction` 노드로 둠 → **신호장과 같이 화면에 노출 안 함**. 끝 구간 입력은 `extend_to`로 처리 |
+| 역이 아닌 지점에서 갈라지는 지선 (名鉄 枇杷島分岐点 등) | 분기점을 `kind: junction` 노드로 둠. 지도에는 그리지 않고, 그 노드에서 끝나는 계통 화면과 지나가는 계통 화면에 승하차 불가 끝 노드(회색 가운데)로 보임. 끝 너머는 끝 이어짐으로 입력 |
 | 같은 노선 안의 병행 경로 (函館本線 본선 vs 砂原支線, 둘 다 大沼–森) | 계통이 달라 구분됨. 그래서 기록에는 **계통 ID를 함께 저장** (노선 + 역 두 개만으로는 경로가 모호) |
 | 중간 폐지로 끊긴 노선 (根室本線) | 계통은 그대로 하나. 빌드가 시점별로 "현재 이어진 덩어리"를 계산하고, 화면은 한 노선도 안에서 폐지 구간을 3단계로 그림 (§8.1) |
 | 다른 노선과 겹치는 구간 (中央本線의 代々木–新宿 = 山手線) | 그 노선의 계통에 넣지 않음. 이어서 타는 입력은 운행 계통으로 (아래 "중복 구간") |
@@ -1855,9 +1858,9 @@ MapLibre의 512px 타일 기준입니다. 360dp 폭에서 일본 전체는 z4 �
 | `node_move` | old_node, new_node, moved_on — 선로 위 km가 바뀐 역 이전의 옛·새 노드 (`data/overrides/moved.json`). 재해석이 옛 노드 기록의 순서를 맞출 때 씀 (ARCHITECTURE §3.5). 판 2026-11-05.2에 26행 |
 | `station_split` | node_a, node_b, valid_from, valid_to, edge_id, source — 나뉜 역(`data/overrides/split_period.json`, 사용자 결정 2026-11-16). 나뉘기 전 [valid_from, valid_to) 동안 node_b 자리의 정차는 node_a다. edge_id는 node_b의 노선 선로에 넣은 같은 km 점(0 km) 칸(없으면 NULL). 판 2026-11-16.3에 7행 |
 | `node_public` (뷰) | 한 번이라도 정차역이었던 노드만. **앱은 이것만 사용** |
-| `route` | id, line_id, role(main/branch), from_node, to_node, via_nodes, closed, closed_from?, extend_to, map_coverage(full/partial/none, §2.11) |
+| `route` | id, line_id, role(main/branch), from_node, to_node, via_nodes, closed, closed_from?, map_coverage(full/partial/none, §2.11) |
 | `route_edge` | 파생: route_id, seq, edge_id — 계통의 구간 |
-| `route_stop` | 파생: route_id, seq, node_id, km_cum, is_stop, is_extension, valid_from·to(+lo/hi), km_estimated(営業キロ를 몰라 선 위 위치로 추정한 km. 화면은 `54.1? km`, §4.5). 키는 (route_id, seq, 기간) — 같은 역이 두 번 나와도 됨 |
+| `route_stop` | 파생: route_id, seq, node_id, km_cum, is_stop, is_end_point(어느 계통에서도 승객이 서지 않는 계통 끝 노드), valid_from·to(+lo/hi: 끝 노드 행은 고를 수 있는 기간, 정차가 아닌 동안은 route_stop_gap), km_estimated(営業キロ를 몰라 선 위 위치로 추정한 km. 화면은 `54.1? km`, §4.5). 키는 (route_id, seq, 기간) — 같은 역이 두 번 나와도 됨 |
 | `route_parallel` | 파생: route_id, other_line_id, other_route_id, from_seq, to_seq, stop_seqs(상대도 서는 역 순번, JSON), in_next_stop·in_terminal(상대가 들어오는 쪽 이웃 정차역·방면 끝 역), out_next_stop·out_terminal, valid_from_lo, valid_to_hi — 병주 토막 (§8.1). 판정은 `data/overrides/parallel_runs.json` |
 | `route_link` | 파생: route_id, seq, other_line_id, other_route_id?, kind(transfer/branch/continue), side?, at_edge, other_node?(다른 이름 역), next_stop_node?, terminal_node?, flow(through/up/down/unknown), flow_source(route/coord, 비면 판정 없음), valid_from·to — 역 선택기의 표시용 (§2.9, §8.1). `at_edge`면 `seq`는 위쪽 역 |
 | `route_link_reverse` | 파생: route_id, seq, other_line_id, next_stop_node?, valid_from·to — 끝 역 이어짐(같은 계통·순번·상대 노선·다음 역의 continue 행)에서 열차가 진행 방향을 바꿔 상대 노선으로 들어가던 기간(스위치백 직통, 근거 표 THROUGH reverse 행). 앱은 그날(날짜 모름이면 어느 때든) 이 기간이 걸리는 끝 이어짐 줄에 표식을 단다. 표가 없는 옛 판은 표식 없음 |

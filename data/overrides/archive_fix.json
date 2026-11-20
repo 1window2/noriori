@@ -51,6 +51,7 @@
   "note": "仁愛女子高校–田原町 사이 정류장 (위키 福井鉄道福武線 110219742 廃駅). 본선 福井–田原町 사이로 붙어 앞뒤 역이 계통에 없었음. km는 지선 계통 기준 (20.4−19.6)"
  },
  "_add": [
+  {"name": "橿原神宮前", "kana": "かしはらじんぐうまえ", "kind": "stop", "id": "a_kashiharajinguumae", "line": "l_kashihara_line", "route": "r_kashihara_line", "after": "n_unebigoryomae", "before": "n_kashiharajingu_mae", "opened": null, "closed": "1939-XX-XX", "km": null, "source": "wikipedia:109329472", "why": "위키 近鉄橿原線 rev109329472 「1939年7月28日：八木西口駅 - 神武御陵前駅 - 橿原神宮前駅間を廃止」(중간): 옛 橿原線 끝 역(1939 전)이라 1967 개업 新ノ口連絡線에 붙을 수 없음. 橿原線 옛 神武御陵前 다음, 지금 橿原神宮前 앞(km 모름) (10회차 G2 2026-11-16; audit4 kinki_2-010) / 2026-11-20: 新ノ口連絡線 노선도에서 뽑히던 행을 손 행으로 옮김(끝 노드 이름을 分岐点（大和八木）으로 바꾸자 그 노선도가 맞춰지지 않아 행이 빠짐, 5번 결정)"},
   {
    "name": "駅前",
    "kana": "えきまえ",
@@ -2677,7 +2678,6 @@
 "郡道筋@l_kitagata_line": {"line": "l_edamitsu_line", "route": "r_edamitsu_line", "after": "n_saiwaimachi", "before": "n_aso", "why": "위키 西鉄北九州線 rev111613506 map2(戸畑線・枝光線) 「幸町」「郡道筋停留場| -1942?」「0.4|浅生停留場」(중간): 枝光線 정류장. 北方線에 붙어 있던 것 (10회차 G2 2026-11-16; audit4 kyushu_1-006)"},
 "記念館前@l_kitagata_line": {"before": "n_kitagatashakomae", "km": 3.5, "why": "위키 西鉄北九州線 rev111613506 map3(北方線) 「3.5|記念館前停留場| -1942?」(중간): 城野(3.3)–北方車庫前(3.8) 사이 km (10회차 G2 2026-11-16; audit4 kyushu_1-006)"},
 "勝山橋@l_kitakyushu_line": {"after": "n_uomachi", "before": "n_muromachi", "why": "위키 西鉄北九州線 rev111613506 map 「12.4|魚町停留場」「勝山橋停留場|-1942?」「12.9|室町停留場」(중간): 魚町–室町 사이. 門司 바로 뒤로 붙어 있던 것 (10회차 G2 2026-11-16; audit4 kyushu_1-007)"},
-"橿原神宮前@l_ninokuchi_connecting_line": {"line": "l_kashihara_line", "route": "r_kashihara_line", "after": "n_unebigoryomae", "before": "n_kashiharajingu_mae", "why": "위키 近鉄橿原線 rev109329472 「1939年7月28日：八木西口駅 - 神武御陵前駅 - 橿原神宮前駅間を廃止」(중간): 옛 橿原線 끝 역(1939 전)이라 1967 개업 新ノ口連絡線에 붙을 수 없음. 橿原線 옛 神武御陵前 다음, 지금 橿原神宮前 앞(km 모름) (10회차 G2 2026-11-16; audit4 kinki_2-010)"},
 "与一谷@l_hosshoji_electric_railway_line": {"why": "위키 日ノ丸自動車法勝寺電鉄線 rev109457516 「猪小路 - 母里間にはかつて与一谷・不動尊の各駅が存在した」, 노선도 「←母里支線 -1959」(중간): 母里支線(阿賀–母里, 1944-02-11 휴지·1959-09-17 폐지) 역. 本線 法勝寺 뒤로 붙어 있던 것. 열람 전용 노선 母里線(a_mori_line)의 역으로 옮김(앞 역은 그 노선이 붙는 阿賀, 노선 방향 순서 seq). 기록 노선이 없어 line·route는 비움 (11회차 S2 2026-11-16; audit4 chugoku_shikoku_1-014) / 2026-11-20: 노선도 지선 규칙(gen_wiki branch → gen_extra)이 母里支線 역 전체(原·猪小路·与一谷·不動尊·母里)를 母里線으로 옮기므로 자리 손 값은 뺌"},
 "不動尊@l_hosshoji_electric_railway_line": {"why": "위키 日ノ丸自動車法勝寺電鉄線 rev109457516 「猪小路 - 母里間にはかつて与一谷・不動尊の各駅が存在した」, 노선도 「←母里支線 -1959」(중간): 母里支線(阿賀–母里, 1944-02-11 휴지·1959-09-17 폐지) 역. 本線 法勝寺 뒤로 붙어 있던 것. 열람 전용 노선 母里線(a_mori_line)의 역으로 옮김(앞 역은 그 노선이 붙는 阿賀, 노선 방향 순서 seq). 기록 노선이 없어 line·route는 비움 (11회차 S2 2026-11-16; audit4 chugoku_shikoku_1-014) / 2026-11-20: 노선도 지선 규칙(gen_wiki branch → gen_extra)이 母里支線 역 전체(原·猪小路·与一谷·不動尊·母里)를 母里線으로 옮기므로 자리 손 값은 뺌"},
 "_noyear": {

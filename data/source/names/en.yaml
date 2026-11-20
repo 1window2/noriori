@@ -2273,8 +2273,13 @@
 - {"entity_type": "route", "id": "r_kobe_kosoku_line_sanyo_kosoku_kobe_motomachi", "lang": "en", "text": "Kosoku Kobe~Motomachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_nanao_line_noto", "lang": "en", "text": "Nanao~Wajima", "source": "rule"}
 - {"entity_type": "route", "id": "r_noto_line_noto", "lang": "en", "text": "Anamizu~Takojima", "source": "rule"}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line", "lang": "en", "text": "Jct. (Seibu-Chichibu)~Ohanabatake", "source": "rule"}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line_branch", "lang": "en", "text": "Seibu-Chichibu~Jct. (Ohanabatake)", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsuda_connecting_line", "lang": "en", "text": "Shin-Matsuda~Matsuda", "source": "rule"}
 - {"entity_type": "route", "id": "r_unuma_connecting_line", "lang": "en", "text": "Shin-Unuma~Unuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_yagi_connecting_line", "lang": "en", "text": "Jct. (Yamato-Yagi)~Yamato-Yagi", "source": "rule"}
+- {"entity_type": "route", "id": "r_ninokuchi_connecting_line", "lang": "en", "text": "Jct. (Yamato-Yagi)~Ninokuchi", "source": "rule"}
+- {"entity_type": "route", "id": "r_nakagawa_connecting_line", "lang": "en", "text": "宮古 Jct.~黒田 Jct.", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_kita_osaka_kyuko", "lang": "en", "text": "Esaka~Minoh-kayano", "source": "rule"}
 - {"entity_type": "route", "id": "r_donan_isaribi_railway_line", "lang": "en", "text": "Goryokaku~Kikonai", "source": "rule"}
 - {"entity_type": "route", "id": "r_aoimori_railway_line", "lang": "en", "text": "Metoki~Aomori", "source": "rule"}
@@ -2848,6 +2853,8 @@
 - {"entity_type": "route", "id": "r_akita_rinkai_railway_line", "lang": "ko", "text": "아키타항~아키타하쿠마에", "source": "rule"}
 - {"entity_type": "route", "id": "r_akita_rinkai_railway_line", "lang": "en", "text": "Akitako~Akitahakumae", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagoya_minato_line", "lang": "ja", "text": "山王信号場～ナゴヤ球場正門前", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagoya_minato_line", "lang": "ko", "text": "산노 신호장~나고야큐조세이몬마에", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagoya_minato_line", "lang": "en", "text": "Sanno Signal~Nagoyakyujoseimommae", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakata_rinko_line", "lang": "ja", "text": "香椎～福岡ボート前", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakata_rinko_line", "lang": "ko", "text": "카시~후쿠오카보토마에", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakata_rinko_line", "lang": "en", "text": "Kashii~Fukuokabotomae", "source": "rule"}

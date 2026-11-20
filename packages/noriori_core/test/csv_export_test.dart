@@ -16,7 +16,7 @@ NetStop stop(int seq, String node) => NetStop(
       node: node,
       kmCum: null,
       isStop: true,
-      isExtension: false,
+      
       period: ongoing,
     );
 
@@ -40,7 +40,6 @@ Network network() => Network(
             fromNode: 'a',
             toNode: 'c',
             closed: false,
-            extendTo: [],
           ),
         ],
         edges: const [

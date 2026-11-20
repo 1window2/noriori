@@ -65,6 +65,37 @@ void main() {
   StopLine stopAt(List<SelectorLine> lines, String node) =>
       lines.whereType<StopLine>().firstWhere((line) => line.row.node == node);
 
+  // 5번 결정(2026-11-19, 입력 단계 재구성 2026-11-20): 확장 행 대신 승하차 불가 끝 노드와 끝 이어짐
+  Future<StopLine> endNode(String route, String? raw, String node) async => stopAt(await screen(route, raw), node);
+  bool continuesTo(StopLine line, String lineId) =>
+      line.row.links.any((l) => l.kind == 'continue' && l.otherLineId == lineId);
+
+  test('분기점 끝 노드는 가운데가 회색인 고를 수 있는 행이고 그 노선으로 끝 이어짐이 있다 (犬山線 枇杷島分岐点)', () async {
+    final end = await endNode('r_inuyama_line', today, 'n_biwajima_junction');
+    expect(end.row.passing, isTrue);
+    expect(end.row.selectable, isTrue);
+    expect(continuesTo(end, 'l_nagoya_main_line'), isTrue);
+  }, skip: skip);
+
+  test('그날 서지 않는 계통 끝 역은 회색 끝 노드이고 끝 너머 노선으로 이어진다 (大洗鹿島線 北鹿島 1990)', () async {
+    final end = await endNode('r_oarai_kashima_line', '1990-06-01', 'n_kashima_soccer_stadium_kashima_rinkai');
+    expect(end.row.passing, isTrue);
+    expect(continuesTo(end, 'l_kashima_line'), isTrue);
+  }, skip: skip);
+
+  test('끝 노드를 역 노드로 합쳐도 연락선은 그 역에 서지 않는다 (西武秩父鉄道連絡線 御花畑)', () async {
+    final lines = await screen('r_chichibu_railway_connecting_line', today);
+    expect(stopAt(lines, 'n_ohanabatake').row.passing, isTrue);
+    expect(stopAt(lines, 'n_seibu_chichibu_through').row.passing, isTrue);
+    expect(continuesTo(stopAt(lines, 'n_ohanabatake'), 'l_chichibu_main_line'), isTrue);
+  }, skip: skip);
+
+  test('지나가는 계통의 정차 공백 동안 그 노드가 다른 계통의 끝이면 끝 이어짐이 그 기간에도 있다 (広電 옛 경로 観音町 1960)', () async {
+    final end = await endNode('r_hiroden_main_line_tenmacho_hiroden_nishi_hiroshima', '1960-06-01', 'n_kanonmachi');
+    expect(end.row.passing, isTrue);
+    expect(continuesTo(end, 'l_hiroden_main_line'), isTrue);
+  }, skip: skip);
+
   test('확장 행 사이에는 폐지 구분선이 없다 (富山 新富町, 東北貨物線·山手貨物線 三河島)', () async {
     for (final route in [
       'r_tramway_toyama_station_north_south_link',

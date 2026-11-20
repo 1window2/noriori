@@ -1595,9 +1595,6 @@
 - {"entity_type": "archive", "id": "a_arata_kakamigahara", "lang": "ja", "text": "安良田", "kana": "あらた", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_arata_kakamigahara", "lang": "ko", "text": "아라타", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_arata_kakamigahara", "lang": "en", "text": "Arata", "source": "rule"}
-- {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "ja", "text": "橿原神宮前", "kana": "かしはらじんぐうまえ", "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "ko", "text": "카시하라진구마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "en", "text": "Kashiharajingumae", "source": "rule"}
 - {"entity_type": "archive", "id": "a_iizaka_fukushima_fukushima_transportation_soneda", "lang": "ja", "text": "栄町", "kana": null, "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_iizaka_fukushima_fukushima_transportation_soneda", "lang": "ko", "text": "栄町", "source": "ja_as_is", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_iizaka_fukushima_fukushima_transportation_soneda", "lang": "en", "text": "栄町", "source": "ja_as_is"}
@@ -1901,6 +1898,9 @@
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "ja", "text": "記念館前", "kana": null, "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "ko", "text": "記念館前", "source": "ja_as_is", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "en", "text": "記念館前", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "ja", "text": "橿原神宮前", "kana": "かしはらじんぐうまえ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "ko", "text": "카시하라진구마에", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "en", "text": "Kashiharajingumae", "source": "rule"}
 - {"entity_type": "archive", "id": "a_ekimae", "lang": "ja", "text": "駅前", "kana": "えきまえ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_ekimae", "lang": "ko", "text": "에키마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_ekimae", "lang": "en", "text": "Ekimae", "source": "rule"}

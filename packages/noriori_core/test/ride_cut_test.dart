@@ -14,7 +14,7 @@ NetStop stop(String routeId, int seq, String node, {bool shown = true}) => NetSt
       node: node,
       kmCum: seq.toDouble(),
       isStop: shown,
-      isExtension: false,
+      
       period: ongoing,
     );
 
@@ -59,9 +59,9 @@ Network sample() {
   return Network(
     NetworkData(
       routes: const [
-        NetRoute(id: 'rl', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'd', closed: false, extendTo: []),
-        NetRoute(id: 'rm', lineId: 'm', role: 'main', fromNode: 'h', toNode: 'p', closed: false, extendTo: []),
-        NetRoute(id: 'rr', lineId: 'r', role: 'main', fromNode: 'x', toNode: 'x', closed: true, extendTo: []),
+        NetRoute(id: 'rl', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'd', closed: false),
+        NetRoute(id: 'rm', lineId: 'm', role: 'main', fromNode: 'h', toNode: 'p', closed: false),
+        NetRoute(id: 'rr', lineId: 'r', role: 'main', fromNode: 'x', toNode: 'x', closed: true),
       ],
       edges: [
         for (final MapEntry(:key, :value) in edges.entries)
@@ -117,7 +117,7 @@ Network relocated() {
   return Network(
     NetworkData(
       routes: const [
-        NetRoute(id: 'rv', lineId: 'v', role: 'main', fromNode: 'e', toNode: 'k', closed: false, extendTo: []),
+        NetRoute(id: 'rv', lineId: 'v', role: 'main', fromNode: 'e', toNode: 'k', closed: false),
       ],
       edges: [
         for (final MapEntry(:key, :value) in edges.entries)

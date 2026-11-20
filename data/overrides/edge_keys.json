@@ -725,5 +725,10 @@
 "e_015332": "l_edamitsu_line|n_makiyama_nishi_nippon|n_arate_nishi_nippon",
 "e_015333": "l_edamitsu_line|n_arate_nishi_nippon|n_edamitsu_ekimae",
 "e_015334": "l_edamitsu_line|n_edamitsu_ekimae|n_edamitsuhommachi",
-"e_015374": "l_yakage_line|n_kawamo|n_yakage_ikasa"
+"e_015374": "l_yakage_line|n_kawamo|n_yakage_ikasa",
+"e_006643": "l_seibu_chichibu_line|n_yokoze|n_seibu_chichibu",
+"e_007689": "l_osaka_line|n_masuga|n_yamato_yagi",
+"e_007711": "l_osaka_line|n_kawai_takaoka|n_ise_nakagawa",
+"e_007883": "l_nagoya_line|n_ise_nakagawa|n_momozono",
+"e_010467": "l_chichibu_main_line|n_ohanabatake|n_kagemori"
 }

@@ -66,7 +66,7 @@ skipped = []
 confirmed = []
 for rid in sorted(by_route):
     st = DB.execute(
-        'select node_id, km_cum, km_estimated from route_stop where route_id=? and is_extension=0 order by seq', (rid,)
+        'select node_id, km_cum, km_estimated from route_stop where route_id=? order by seq', (rid,)
     ).fetchall()
     if not st:
         skipped.append((rid, None, '계통 없음'))

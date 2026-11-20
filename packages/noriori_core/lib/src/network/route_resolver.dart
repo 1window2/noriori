@@ -156,7 +156,7 @@ final class RouteResolver {
     return result.copyWith(demoted: demoted);
   }
 
-  /// 선택기에서 고른 두 역을 펼친다. 연장 역이면 그 역이 속한 계통으로 나눈다 (DESIGN §2.7).
+  /// 선택기에서 고른 두 역을 펼친다. 계통 끝은 승하차 불가 끝 노드까지라 그 계통 안에서 펼친다 (5번 결정 2026-11-19).
   Expansion expandAny(
     String routeId,
     String a,
@@ -175,31 +175,7 @@ final class RouteResolver {
         askDirection: askDirection);
     final route = network.routes[routeId];
     if (route == null) return const Expansion(status: ResolveStatus.unknownRef);
-    final extension = route.extendTo.toSet();
-    if (!extension.contains(a) && !extension.contains(b)) return plain(a, b);
-    final here = {
-      for (final hop in network.hops(routeId)) ...[hop.a, hop.b],
-    };
-    final parents = <String>[];
-    for (final node in {a, b}.intersection(extension)) {
-      for (final other in network.routesAt(node)) {
-        if (other == routeId) continue;
-        if (network.stops(other).any((s) => here.contains(s.node))) parents.add(other);
-      }
-    }
-    if (parents.isNotEmpty) {
-      final crossed = _expandCross(a, b, date, [routeId, ...parents]);
-      if (crossed.status == ResolveStatus.ok) return crossed;
-    }
-    // 부모 계통이 숨은 끝을 지나지 않는 연결선: 연장 역까지는 거리 없이 계통 안의 구간만 펼친다
-    final stops = network.stops(routeId);
-    final picked = {for (final stop in network.picks(routeId)) stop.node: stop.seq};
-    String anchor(String node) {
-      if (!extension.contains(node) || stops.any((s) => s.node == node)) return node;
-      return picked[node]! < stops.first.seq ? stops.first.node : stops.last.node;
-    }
-
-    return plain(anchor(a), anchor(b));
+    return plain(a, b);
   }
 
   Expansion expand(

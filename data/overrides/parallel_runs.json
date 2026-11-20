@@ -1174,6 +1174,7 @@
    "how": "separate",
    "why": "ナゴヤドーム前矢田–砂田橋: ゆとりーとライン(고가 가이드웨이)과 名城線(지하)은 같은 길 위·아래를 따로 지나는 다른 시설. 2회차 종합 K09"
   },
-{"lines": ["l_nagoya_main_line", "l_mikawa_line"], "nodes": ["n_chiryu_signal", "n_mikawa_chiryu_meitetsu_mikawa_old"], "names": ["名古屋本線", "三河線", "知立信号場", "知立(2대, 지금 三河知立（旧）)"], "period": ["1950-09-17", "1959-04-01"], "parallel": false, "how": "separate", "why": "三河線 知立連絡線(1950-09-17~1959-04-01)은 三河線 쪽에서 따로 놓은 연락 선로로 知立信号場에서 名古屋本線에 합류(source_patch 知立連絡線 근거). 나뉜 역 규칙(split_period)으로 1959-04-01 전 名古屋本線도 2대 知立 한 노드에 서게 되어 생긴 후보 칸 (11회차 S1)"}
- ]
+{"lines": ["l_nagoya_main_line", "l_mikawa_line"], "nodes": ["n_chiryu_signal", "n_mikawa_chiryu_meitetsu_mikawa_old"], "names": ["名古屋本線", "三河線", "知立信号場", "知立(2대, 지금 三河知立（旧）)"], "period": ["1950-09-17", "1959-04-01"], "parallel": false, "how": "separate", "why": "三河線 知立連絡線(1950-09-17~1959-04-01)은 三河線 쪽에서 따로 놓은 연락 선로로 知立信号場에서 名古屋本線에 합류(source_patch 知立連絡線 근거). 나뉜 역 규칙(split_period)으로 1959-04-01 전 名古屋本線도 2대 知立 한 노드에 서게 되어 생긴 후보 칸 (11회차 S1)"},
+{"lines": ["l_osaka_line", "l_yagi_connecting_line"], "nodes": ["n_yamato_yagi", "n_yamato_yagi_uehommachi_side"], "names": ["大阪線", "八木連絡線", "大和八木", "分岐点（大和八木）"], "period": ["1925-03-21", "1967-12-20"], "parallel": false, "how": "separate", "why": "近鉄 八木連絡線은 大和八木 서쪽 분기점(w′)에서 大阪線 본선과 갈라져 별도 선로로 八木西口 승강장에 든다(위키 大和八木駅 構内配線略図, 2026-11-19 조사). 같은 두 노드를 잇게 된 것은 끝 노드를 大和八木 노드로 합쳤기 때문(edge_insert, 2026-11-20)"}
+]
 }

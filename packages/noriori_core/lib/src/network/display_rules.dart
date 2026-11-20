@@ -867,15 +867,13 @@ final class DisplayRules {
     ];
     final first = current.isEmpty ? 0 : current.first;
     final last = current.isEmpty ? rows.length - 1 : current.last;
-    // 확장 행(숨은 끝 너머 역)은 선택만 돕는 행이라 그 옆 칸은 이 계통의 구간이 아니다. 가장 가까운 이 계통 칸의 상태를 이어받아
-    // 확장 행과의 경계에 구분선이 생기지 않게 한다(영업 칸 옆이면 영업, 폐지 칸 옆이면 폐지. 山手·東北 화물선 三河島, 감사 2회차 K33, 吾妻橋線 本所吾妻橋)
     final raw = sectionGaps ?? openGaps;
     // 0 km 칸으로만 이어진 두 역 줄(나뉜 역의 나뉘기 전 노드와 나뉜 뒤 노드, 京阪 三条 → 京津三条) 사이는 구간이 아니다. 그 칸이
     // 나뉜 날 끝나는 것을 구간 폐지로 읽으면 「~1987 폐지」 단계가 생기고 1990년 화면에 구분선이 남는다 (11회차 시뮬레이터 시험).
-    // 확장 행 옆 칸처럼 이웃 칸의 상태와 폐지 해를 따른다. km만 같은 옛 자리(新潟（旧）, 옛 선로가 있다)는 구간이다
+    // 이웃 칸의 상태와 폐지 해를 따른다. km만 같은 옛 자리(新潟（旧）, 옛 선로가 있다)는 구간이다
     bool sameSpot(SelectorRow a, SelectorRow b) => _zeroPairs.contains('${a.node}\u0000${b.node}');
     bool beside(int index) =>
-        index + 1 < rows.length && (rows[index].isExtension || rows[index + 1].isExtension || sameSpot(rows[index], rows[index + 1]));
+        index + 1 < rows.length && sameSpot(rows[index], rows[index + 1]);
     int? home(int index) {
       for (var at = index - 1; at >= 0; at--) {
         if (!beside(at)) return at;
@@ -908,7 +906,7 @@ final class DisplayRules {
         topClosed &&
         (places[-1] ?? const <ArchiveStop>[]).isEmpty &&
         (places[0] ?? const <ArchiveStop>[]).isEmpty;
-    // 확장 행 옆 칸은 폐지 연도도 이웃 칸을 따른다. 확장 역 자신의 폐역 해로 새 폐지 단계가 생기지 않게 한다 (広井町線 菊井町)
+    // 0 km 칸은 폐지 연도도 이웃 칸을 따른다
     final yearOf = _closedYears(rows, gaps, sectionEnds);
     for (var index = 0; index < gaps.length; index++) {
       final from = beside(index) ? home(index) : null;
@@ -1204,11 +1202,6 @@ final class DisplayRules {
       if (tail.length > 1 && alive(row)) out.add(SectionLine(gap: index, year: _latestYear(tail), lanes: pass()));
       for (final stop in places[index] ?? const <ArchiveStop>[]) {
         out.add(ArchiveLine(gap: index, stop: stop, lanes: pass()));
-      }
-      // 계통 끝 너머 확장 묶음이 시기마다 다르면(鹿島線 北鹿島 너머 1978–1983 臨港線 쪽, 1985–1994 大洗鹿島線 쪽) 묶음 사이에 글 없는 구분선을 둔다.
-      // 두 확장 역이 함께 선 해가 없으면 다른 묶음이다 (10회차 G1 kanto_2-012)
-      if (index + 1 < rows.length && rows[index].isExtension && rows[index + 1].isExtension && _apartYears(rows[index], rows[index + 1])) {
-        out.add(SectionLine(gap: index, lanes: pass()));
       }
       if (index < gaps.length) {
         final below = gaps[index];
@@ -1528,18 +1521,6 @@ final class DisplayRules {
               stopYear(rows[at]) ??
               '?',
     };
-  }
-
-  /// 두 역 줄이 함께 선 해가 없는가(개업·폐역 해로 본다. 모르는 해는 겹친다고 본다)
-  static bool _apartYears(SelectorRow a, SelectorRow b) {
-    int? year(String? raw, int fallback) {
-      if (raw == null) return fallback;
-      return raw.length >= 4 ? int.tryParse(raw.substring(0, 4)) : null;
-    }
-    final aFrom = year(a.openYear, 0), aTo = year(a.closeYear, 9999);
-    final bFrom = year(b.openYear, 0), bTo = year(b.closeYear, 9999);
-    if (aFrom == null || aTo == null || bFrom == null || bTo == null) return false;
-    return aTo < bFrom || bTo < aFrom;
   }
 
   /// 같은 상대·같은 칸의 병주 토막이 기간만 이어 나뉜 것(상대 계통의 다음 역·끝 역이 바뀐 날마다 나눔)은 하나만 그린다.

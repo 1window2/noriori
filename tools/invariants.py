@@ -38,7 +38,7 @@ def picks(A,rid,d):
 def ride_hits(A,rid,a,b,d):
     """저장 흐름 그대로 펼쳐 (노선, edge)를 돌려준다. 물어볼 경로는 답을 전부 시도한다"""
     res=[]
-    if {a,b}&set(A.routes[rid]['extend_to']):           # 끝 역 연장은 그 역의 계통으로 leg를 나눈다
+    if {a,b}&set([]):           # 끝 역 연장은 그 역의 계통으로 leg를 나눈다
         x=A.expand_any(rid,a,b,appsim.normalize_date(d))
         return set(A.ride_of(x,d)['edges']) if x['status']=='ok' else set()
     r=A.record(rid,a,b,d)
@@ -81,7 +81,7 @@ def reach(A):
                 if p['node']==q['node']:continue
                 h=ride_hits(A,rid,p['node'],q['node'],d) or widen(rows,i,lambda a,b:ride_hits(A,rid,a,b,d))
                 # 양 끝 연장 역이 둘 다 계통의 같은 끝으로 이어지면 이 계통의 승차가 아니다 (田端貨物線의 上中里·駒込). 앱도 경로 없음으로 막는다
-                ext=set(A.routes[rid]['extend_to'])
+                ext=set([])
                 if not h and not ({p['node'],q['node']}<=ext and A.expand_any(rid,p['node'],q['node'],appsim.normalize_date(d)).get('reason')=='same-node'):bad[rid]+=1
                 hits|=h
     print(f'[도달성] 계통 {len(A.routes)}, 펼치기 {calls}회, {time.time()-t:.0f}초, 탈 수 있는 (노선, edge) {len(hits)}')
@@ -116,7 +116,7 @@ def on_date(A):
     # 여객 영업 이력이 없는 화물선(hidden)은 아예 기록할 수 없다 (9회차 F)
     extra={l for l,c in A.db.execute('select id,rule_class from line') if c in ('extra','hidden')}
     for rid in A.routes:
-        line=A.routes[rid]['line_id'];ext=set(A.routes[rid]['extend_to'])
+        line=A.routes[rid]['line_id'];ext=set([])
         if line in extra:continue
         for d in dates_of(A,rid)+[FLOOR]:
             for _,e,_,_ in A.route_edges(rid):
@@ -145,7 +145,7 @@ def on_date(A):
         ed=A.edges[e];ends={ed['from_node'],ed['to_node']}
         for d in list(ds):
             for rid in A.routes:
-                if not ends&(set(A.routes[rid]['extend_to'])|{s['node_id'] for s in A._stops[rid]}):continue
+                if not ends&(set([])|{s['node_id'] for s in A._stops[rid]}):continue
                 rows=picks(A,rid,d);ok=False
                 for p,q in zip(rows,rows[1:]):
                     if p['node']==q['node']:continue
@@ -255,7 +255,7 @@ def cuts(A,n=6000):
     for _ in range(n):
         rid=r.choice(routes);ds=dates_of(A,rid)
         d=r.choice(ds) if ds and r.random()<.7 else None
-        rows=[x for x in picks(A,rid,d) if not x['is_extension']]
+        rows=[x for x in picks(A,rid,d) if not 0]
         if len(rows)<4:skip+=1;continue
         idx=sorted(r.sample(range(len(rows)),2))
         direction=r.choice(['seq_up','seq_down']) if A.routes[rid]['closed'] else None

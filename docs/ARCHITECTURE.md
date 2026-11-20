@@ -275,7 +275,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 |---|---|---|
 | `date/date_rules.dart` (`normalizeRideDate`, `parseDateInput`, `stateOn`, `jstDate`, `floorDate`) | 날짜, 구간 → 저장 날짜, 그날의 영업 상태 | §4.6 |
 | `SelectorBuilder` | `Network`, 계통, 탑승일 → `SelectorRow` 목록 | §8 |
-| `RouteResolver` | 선택 두 개, 날짜 → `Expansion`. 숨은 노드와 `is_extension`에서 leg 분할, 순환·올가미의 방향과 한 바퀴 | §2.8 D, F, G |
+| `RouteResolver` | 선택 두 개, 날짜 → `Expansion`. 숨은 노드에서 leg 분할, 순환·올가미의 방향과 한 바퀴 | §2.8 D, F, G |
 | `RideInterpreter` | 기록, `Network` → `RideDerived`. 그날의 `line_id`·`route_id` 맞추기, 유효 날짜 범위, 상태. 저장과 재해석이 같은 함수 | §2.8 J, N |
 | `ServiceSplitter` | 운행 계통, 탑승일 → 그날의 판, 정차역 행(`halts`), 공식 구간 legs. 분해는 서지 않는 역까지 넣은 판의 경로 전체(`stops`)로 함. 날짜 모름이면 마지막 판 | §2.7, §2.8 H |
 | `ride_cut.dart` | 구간 끄기(`cutSection`), 범위 지정 → 고친 기록 | §8.2 |
@@ -339,7 +339,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 | 올가미 방향 | 고리 위 다음 역으로 판정 |
 | 폐지일 없는 역 | 선로 상태까지 봄 |
 | 구간 영업 | `edge_life.status='suspended'` 기간은 탑승 불가, 역 방문은 가능 |
-| 숨은 끝 | `is_extension` 역을 고르면 그 역의 계통으로 leg 분할 |
+| 숨은 끝 | 승하차 불가 끝 노드(회색)를 고르면 그 노드에서 끝나는 탑승으로 저장(fromAlighted·toAlighted=false). 끝 너머는 끝 이어짐으로 상대 노선을 이어 고름 |
 | 분모 | 현행·연도·승계 끔은 `denominator_unit` 합산. 날짜가 불확실한 단위는 "판정 불가"로 뺌 |
 | 분기 기간 | `route_link`의 기간을 씀 |
 | 계통 칩 | 본선은 `본선`, 나머지는 `route` 이름(양 끝 역). `alias`는 CSV 변환 전용 |

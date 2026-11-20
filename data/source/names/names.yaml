@@ -5281,7 +5281,7 @@
 - {"entity_type": "node", "id": "n_ugo_ushijima", "lang": "ja", "text": "羽後牛島", "kana": "うごうしじま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ugo_ushijima", "lang": "ko", "text": "우고우시지마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ugo_ushijima", "lang": "en", "text": "Ugo-Ushijima", "source": "wikidata"}
-- {"entity_type": "node", "id": "n_kami_nuttari", "lang": "ja", "text": "上沼垂", "kana": "かみぬったり", "source": "noritsubushi", "reading_source": "auto:name_key"}
+- {"entity_type": "node", "id": "n_kami_nuttari", "lang": "ja", "text": "上沼垂信号場", "kana": "かみぬったりしんごうじょう", "source": "hand", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_higashi_niigata", "lang": "ja", "text": "東新潟", "kana": "ひがしにいがた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_higashi_niigata", "lang": "ko", "text": "히가시니가타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_higashi_niigata", "lang": "en", "text": "Higashi-Niigata", "source": "wikidata"}
@@ -14531,7 +14531,7 @@
 - {"entity_type": "node", "id": "n_keisei_narita", "lang": "ja", "text": "京成成田", "kana": "けいせいなりた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_keisei_narita", "lang": "ko", "text": "케이세이나리타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_keisei_narita", "lang": "en", "text": "Keisei Narita", "source": "wikidata"}
-- {"entity_type": "node", "id": "n_komaino_junction", "lang": "ja", "text": "駒井野分岐点", "source": "noritsubushi", "kana": "こまいのぶんきてん", "reading_source": "hand:node_fix"}
+- {"entity_type": "node", "id": "n_komaino_junction", "lang": "ja", "text": "駒井野信号場", "source": "hand", "kana": "こまいのしんごうじょう", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "ja", "text": "空港第2ビル", "kana": "くうこうだいにびる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "ko", "text": "공항제2빌딩", "source": "hand", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "en", "text": "Airport Terminal 2", "source": "hand"}
@@ -21576,7 +21576,7 @@
 - {"entity_type": "node", "id": "n_minami_toyama_ekimae", "lang": "ja", "text": "南富山駅前", "kana": "みなみとやまえきまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_minami_toyama_ekimae", "lang": "ko", "text": "미나미토야마에키마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_minami_toyama_ekimae", "lang": "en", "text": "Minami-Toyama-Ekimae", "source": "rule"}
-- {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "ja", "text": "支線接続点", "source": "noritsubushi"}
+- {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "ja", "text": "支線接続点", "source": "hand"}
 - {"entity_type": "node", "id": "n_shintomicho_toyama_chiho", "lang": "ja", "text": "新富町", "kana": "しんとみちょう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shintomicho_toyama_chiho", "lang": "ko", "text": "신토미초", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shintomicho_toyama_chiho", "lang": "en", "text": "Shintomicho", "source": "rule"}
@@ -29219,19 +29219,19 @@
 - {"entity_type": "node", "id": "n_akitako", "lang": "ko", "text": "아키타항", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_akitako", "lang": "en", "text": "Akitako", "source": "rule"}
 - {"entity_type": "node", "id": "n_shin_koiwa_signal", "lang": "ja", "text": "新小岩信号場", "source": "noritsubushi"}
-- {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "ja", "text": "西武秩父（通過）", "source": "noritsubushi"}
+- {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "ja", "text": "分岐点（西武秩父）", "source": "hand"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_ohanabatake_side", "lang": "ja", "text": "西武秩父（御花畑方）", "source": "noritsubushi"}
-- {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "ja", "text": "西武秩父（影森方）", "source": "noritsubushi"}
+- {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "ja", "text": "分岐点（御花畑）", "source": "hand"}
 - {"entity_type": "node", "id": "n_matsuda_odakyu", "lang": "ja", "text": "松田", "kana": "まつだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_matsuda_odakyu", "lang": "ko", "text": "마츠다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_matsuda_odakyu", "lang": "en", "text": "Matsuda", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_unuma_meitetsu", "lang": "ja", "text": "鵜沼", "kana": "うぬま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_unuma_meitetsu", "lang": "ko", "text": "우누마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_unuma_meitetsu", "lang": "en", "text": "Unuma", "source": "wikidata"}
-- {"entity_type": "node", "id": "n_yamato_yagi_uehommachi_side", "lang": "ja", "text": "大和八木（上本町方）", "source": "noritsubushi"}
+- {"entity_type": "node", "id": "n_yamato_yagi_uehommachi_side", "lang": "ja", "text": "分岐点（大和八木）", "source": "hand"}
 - {"entity_type": "node", "id": "n_yamato_yagi_yagi_nishiguchi", "lang": "ja", "text": "大和八木（八木西口）", "source": "noritsubushi"}
-- {"entity_type": "node", "id": "n_ise_nakagawa_uehommachi_side", "lang": "ja", "text": "伊勢中川（上本町方）", "source": "noritsubushi"}
-- {"entity_type": "node", "id": "n_ise_nakagawa_nagoya_side", "lang": "ja", "text": "伊勢中川（名古屋方）", "source": "noritsubushi"}
+- {"entity_type": "node", "id": "n_ise_nakagawa_uehommachi_side", "lang": "ja", "text": "宮古分岐", "source": "hand"}
+- {"entity_type": "node", "id": "n_ise_nakagawa_nagoya_side", "lang": "ja", "text": "黒田分岐", "source": "hand"}
 - {"entity_type": "node", "id": "n_esaka_kita_osaka_kyuko", "lang": "ja", "text": "江坂", "kana": "えさか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_esaka_kita_osaka_kyuko", "lang": "ko", "text": "에사카", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_esaka_kita_osaka_kyuko", "lang": "en", "text": "Esaka", "source": "wikidata"}
@@ -52135,6 +52135,16 @@
 - {"entity_type": "node", "id": "n_tabata_signal", "lang": "en", "text": "Tabata Signal", "source": "hand"}
 - {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ko", "text": "산기아사케", "source": "hand"}
 - {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "en", "text": "Sangi-Asake", "source": "hand"}
+- {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "ko", "text": "분기점(오하나바타케)", "source": "hand"}
+- {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "en", "text": "Jct. (Ohanabatake)", "source": "hand"}
+- {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "ko", "text": "분기점(세이부치치부)", "source": "hand"}
+- {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "en", "text": "Jct. (Seibu-Chichibu)", "source": "hand"}
+- {"entity_type": "node", "id": "n_yamato_yagi_uehommachi_side", "lang": "ko", "text": "분기점(야마토야기)", "source": "hand"}
+- {"entity_type": "node", "id": "n_yamato_yagi_uehommachi_side", "lang": "en", "text": "Jct. (Yamato-Yagi)", "source": "hand"}
+- {"entity_type": "node", "id": "n_ise_nakagawa_uehommachi_side", "lang": "ko", "text": "宮古 분기점", "source": "hand"}
+- {"entity_type": "node", "id": "n_ise_nakagawa_uehommachi_side", "lang": "en", "text": "宮古 Jct.", "source": "hand"}
+- {"entity_type": "node", "id": "n_ise_nakagawa_nagoya_side", "lang": "ko", "text": "黒田 분기점", "source": "hand"}
+- {"entity_type": "node", "id": "n_ise_nakagawa_nagoya_side", "lang": "en", "text": "黒田 Jct.", "source": "hand"}
 - {"entity_type": "node", "id": "n_kojo", "lang": "ko", "text": "코조", "source": "hand"}
 - {"entity_type": "node", "id": "n_kojo", "lang": "en", "text": "Kojo", "source": "hand"}
 - {"entity_type": "node", "id": "n_murodo", "lang": "ko", "text": "무로도", "source": "hand"}
@@ -52150,8 +52160,8 @@
 - {"entity_type": "node", "id": "n_suita_freight_terminal", "lang": "en", "text": "Suita Freight Terminal", "source": "hand"}
 - {"entity_type": "node", "id": "n_biwajima_junction", "lang": "ko", "text": "비와지마 분기점", "source": "hand"}
 - {"entity_type": "node", "id": "n_biwajima_junction", "lang": "en", "text": "Biwajima Junction", "source": "hand"}
-- {"entity_type": "node", "id": "n_komaino_junction", "lang": "ko", "text": "코마이노 분기점", "source": "hand"}
-- {"entity_type": "node", "id": "n_komaino_junction", "lang": "en", "text": "Komaino Junction", "source": "hand"}
+- {"entity_type": "node", "id": "n_komaino_junction", "lang": "ko", "text": "코마이노 신호장", "source": "hand"}
+- {"entity_type": "node", "id": "n_komaino_junction", "lang": "en", "text": "Komaino Signal", "source": "hand"}
 - {"entity_type": "node", "id": "n_sagami_ono_junction", "lang": "ko", "text": "사가미오노 분기점", "source": "hand"}
 - {"entity_type": "node", "id": "n_sagami_ono_junction", "lang": "en", "text": "Sagami-Ono Junction", "source": "hand"}
 - {"entity_type": "node", "id": "n_shimmei_toyohashi", "lang": "ko", "text": "신메이", "source": "hand"}
@@ -52305,8 +52315,10 @@
 - {"entity_type": "node", "id": "n_takasu", "lang": "ko", "text": "타카스", "source": "hand"}
 - {"entity_type": "node", "id": "n_tenjin_kameido", "lang": "ko", "text": "텐진", "source": "hand"}
 - {"entity_type": "node", "id": "n_tenjin_kameido", "lang": "en", "text": "Tenjin", "source": "hand"}
-- {"entity_type": "node", "id": "n_kami_nuttari", "lang": "en", "text": "Kaminuttari", "source": "rule"}
-- {"entity_type": "node", "id": "n_kami_nuttari", "lang": "ko", "text": "카미눗타리", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "node", "id": "n_kami_nuttari", "lang": "ko", "text": "카미눗타리 신호장", "source": "hand"}
+- {"entity_type": "node", "id": "n_kami_nuttari", "lang": "en", "text": "Kami-Nuttari Signal", "source": "hand"}
+- {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "ko", "text": "지선 접속점", "source": "hand"}
+- {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "en", "text": "Branch Connection", "source": "hand"}
 - {"entity_type": "node", "id": "n_funagoya", "lang": "en", "text": "Funagoya", "source": "rule"}
 - {"entity_type": "node", "id": "n_kanayamabashi", "lang": "en", "text": "Kanayamabashi", "source": "rule"}
 - {"entity_type": "node", "id": "n_takaoka_ekimae", "lang": "en", "text": "Takaoka-Ekimae", "source": "rule"}
@@ -53485,6 +53497,7 @@
 - {"entity_type": "route", "id": "r_tramway_toyama_city_center_line", "lang": "ja", "text": "丸の内～西町", "source": "rule"}
 - {"entity_type": "route", "id": "r_tramway_toyama_city_center_line", "lang": "ko", "text": "마루노우치~니시초", "source": "rule"}
 - {"entity_type": "route", "id": "r_tramway_toyama_station_north_south_link", "lang": "ja", "text": "支線接続点～富山", "source": "rule"}
+- {"entity_type": "route", "id": "r_tramway_toyama_station_north_south_link", "lang": "ko", "text": "지선 접속점~도야마", "source": "rule"}
 - {"entity_type": "route", "id": "r_toyamako_line_toyama_chiho", "lang": "ja", "text": "富山～岩瀬浜", "source": "rule"}
 - {"entity_type": "route", "id": "r_toyamako_line_toyama_chiho", "lang": "ko", "text": "도야마~이와세하마", "source": "rule"}
 - {"entity_type": "route", "id": "r_asanogawa_line", "lang": "ja", "text": "北鉄金沢～粟ヶ崎海岸", "source": "rule"}
@@ -53721,15 +53734,18 @@
 - {"entity_type": "route", "id": "r_nanao_line_noto", "lang": "ko", "text": "나나오~와지마", "source": "rule"}
 - {"entity_type": "route", "id": "r_noto_line_noto", "lang": "ja", "text": "穴水～蛸島", "source": "rule"}
 - {"entity_type": "route", "id": "r_noto_line_noto", "lang": "ko", "text": "아나미즈~타코지마", "source": "rule"}
-- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line", "lang": "ja", "text": "西武秩父（通過）～西武秩父（御花畑方）", "source": "rule"}
-- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line_branch", "lang": "ja", "text": "西武秩父～西武秩父（影森方）", "source": "rule"}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line", "lang": "ja", "text": "分岐点（西武秩父）～西武秩父（御花畑方）", "source": "rule"}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line_branch", "lang": "ja", "text": "西武秩父～分岐点（御花畑）", "source": "rule"}
+- {"entity_type": "route", "id": "r_chichibu_railway_connecting_line_branch", "lang": "ko", "text": "세이부치치부~분기점(오하나바타케)", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsuda_connecting_line", "lang": "ja", "text": "新松田～松田", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsuda_connecting_line", "lang": "ko", "text": "신마츠다~마츠다", "source": "rule"}
 - {"entity_type": "route", "id": "r_unuma_connecting_line", "lang": "ja", "text": "新鵜沼～鵜沼", "source": "rule"}
 - {"entity_type": "route", "id": "r_unuma_connecting_line", "lang": "ko", "text": "신우누마~우누마", "source": "rule"}
-- {"entity_type": "route", "id": "r_yagi_connecting_line", "lang": "ja", "text": "大和八木（上本町方）～大和八木（八木西口）", "source": "rule"}
-- {"entity_type": "route", "id": "r_ninokuchi_connecting_line", "lang": "ja", "text": "大和八木（上本町方）～新ノ口", "source": "rule"}
-- {"entity_type": "route", "id": "r_nakagawa_connecting_line", "lang": "ja", "text": "伊勢中川（上本町方）～伊勢中川（名古屋方）", "source": "rule"}
+- {"entity_type": "route", "id": "r_yagi_connecting_line", "lang": "ja", "text": "分岐点（大和八木）～大和八木（八木西口）", "source": "rule"}
+- {"entity_type": "route", "id": "r_ninokuchi_connecting_line", "lang": "ja", "text": "分岐点（大和八木）～新ノ口", "source": "rule"}
+- {"entity_type": "route", "id": "r_ninokuchi_connecting_line", "lang": "ko", "text": "분기점(야마토야기)~니노쿠치", "source": "rule"}
+- {"entity_type": "route", "id": "r_nakagawa_connecting_line", "lang": "ja", "text": "宮古分岐～黒田分岐", "source": "rule"}
+- {"entity_type": "route", "id": "r_nakagawa_connecting_line", "lang": "ko", "text": "宮古 분기점~黒田 분기점", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_kita_osaka_kyuko", "lang": "ja", "text": "江坂～箕面萱野", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_kita_osaka_kyuko", "lang": "ko", "text": "에사카~미노오카야노", "source": "rule"}
 - {"entity_type": "route", "id": "r_donan_isaribi_railway_line", "lang": "ja", "text": "五稜郭～木古内", "source": "rule"}

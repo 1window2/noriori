@@ -97,9 +97,9 @@ void main() {
 final station = Network(
   NetworkData(
     routes: const [
-      NetRoute(id: 'rp', lineId: 'p', role: 'main', fromNode: 'x', toNode: 'u', closed: false, extendTo: []),
-      NetRoute(id: 'rq', lineId: 'q', role: 'main', fromNode: 'x', toNode: 'v', closed: true, extendTo: []),
-      NetRoute(id: 'rr', lineId: 'r', role: 'main', fromNode: 'y', toNode: 'w', closed: false, extendTo: []),
+      NetRoute(id: 'rp', lineId: 'p', role: 'main', fromNode: 'x', toNode: 'u', closed: false),
+      NetRoute(id: 'rq', lineId: 'q', role: 'main', fromNode: 'x', toNode: 'v', closed: true),
+      NetRoute(id: 'rr', lineId: 'r', role: 'main', fromNode: 'y', toNode: 'w', closed: false),
     ],
     edges: const [
       NetEdge(id: 'ep', n: 11, from: 'x', to: 'u', meters: 100),
@@ -109,7 +109,7 @@ final station = Network(
     routeEdges: const [],
     stops: [
       for (final (route, node) in const [('rp', 'x'), ('rq', 'x'), ('rr', 'y')])
-        NetStop(routeId: route, seq: 0, node: node, kmCum: 0, isStop: true, isExtension: false, period: span('1900-01-01', DateSpan.maxDate)),
+        NetStop(routeId: route, seq: 0, node: node, kmCum: 0, isStop: true, period: span('1900-01-01', DateSpan.maxDate)),
     ],
     attrs: [
       attr('ep', 'p', span('1900-01-01', DateSpan.maxDate)),

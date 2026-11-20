@@ -94,7 +94,7 @@ final class SelectorRow {
     required this.node,
     required this.state,
     required this.selectable,
-    required this.isExtension,
+    this.passing = false,
     required this.kmCum,
     required this.links,
     this.kmEstimated = false,
@@ -115,7 +115,10 @@ final class SelectorRow {
   final String node;
   final StopState state;
   final bool selectable;
-  final bool isExtension;
+
+  /// 승하차 불가 끝 노드로 그린다: 가운데가 회색인 노드, 고를 수 있다(km 계산). 분기점·신호장, 그날 서지 않는 계통 끝 역
+  /// (大洗鹿島線 北鹿島 1985–1994, 三岐線 三岐朝明 1989~, 徳島線 佃 1935–1962). 이름은 그날 이름이다 (5번 결정 junction-nodes-rule, 2026-11-19)
+  final bool passing;
   final double? kmCum;
 
   /// km가 추정값이라 화면은 `? km` (DESIGN §4.5).
@@ -162,7 +165,7 @@ final class SelectorRow {
         node: node,
         state: state,
         selectable: selectable,
-        isExtension: isExtension,
+        passing: passing,
         kmCum: kmCum,
         links: links,
         kmEstimated: kmEstimated,
@@ -213,7 +216,9 @@ final class SelectorBuilder {
       ((on ? bySeq : goneBySeq)[link.seq] ??= []).add(link);
     }
     final rows = <SelectorRow>[];
-    for (final pick in network.picks(routeId)) {
+    final picks = network.picks(routeId);
+    final ends = {if (picks.isNotEmpty) picks.first.seq, if (picks.isNotEmpty) picks.last.seq};
+    for (final pick in picks) {
       // 승계 켬이면 이관 전에 폐역된 역도 그 시기 정차역으로 본다 (DESIGN §2.9 E). 고를 수 있는지는 날짜가 정한다
       final earlier = pick.isStop ? null : carryoverStops[pick.seq];
       final stop = earlier == null
@@ -224,14 +229,24 @@ final class SelectorBuilder {
               node: pick.node,
               kmCum: pick.kmCum,
               isStop: true,
-              isExtension: pick.isExtension,
+              isEndPoint: pick.isEndPoint,
               period: earlier,
               kmEstimated: pick.kmEstimated,
             );
-      if (!stop.isStop && !stop.isExtension) continue;
-      if (!network.data.publicNodes.contains(stop.node)) continue;
+      if (!stop.isStop && !stop.isEndPoint) continue;
+      if (!stop.isEndPoint && !network.data.publicNodes.contains(stop.node)) continue;
       final around = adjacent[stop.node] ?? const <String>[];
       var (state, selectable) = _state(routeId, stop, around, day);
+      // 승하차 불가 끝 노드: 분기점·신호장(서지 않는 노드), 또는 그날 서지 않는 계통 끝 역. 그날 지나는 칸이 있으면 고를 수 있다
+      var passing = false;
+      // 그날 서지 않는 역도 그날 영업하는 다른 계통이 거기서 끝나면 끝 노드다(長尾線 옛 경로 瓦町–花園 1945–1951의 끝 花園을 본선 일람에서 골라야 花園–御坊川을 탄다).
+      // 「어떤 여객 노선의 끝인 분기점은 그 지점을 지나는 다른 노선 일람에도 나온다」(사용자 결정 2026-11-19)
+      if ((!stop.isStop || (!_stopsOn(stop, day) && (ends.contains(stop.seq) || _endOfOther(routeId, stop.node, day)))) &&
+          _ridable(routeId, around, day)) {
+        state = StopState.open;
+        selectable = true;
+        passing = true;
+      }
       // 정차가 끝난 날 이 역이 다른 노선(같은 사슬)에 서면 폐역이 아니라 이관이다.
       // 그 전날 이 노선 것이 아니었던 칸이면 앞 노선 시절에 끝난 역이다 (ふるさと銀河線의 釧北)
       final ended = _ended(stop.period) ? stop.period.toLo : null;
@@ -248,7 +263,7 @@ final class SelectorBuilder {
         node: stop.node,
         state: state,
         selectable: selectable,
-        isExtension: stop.isExtension,
+        passing: passing,
         kmCum: stop.kmCum,
         kmEstimated: stop.kmEstimated,
         links: bySeq[stop.seq] ?? const [],
@@ -364,7 +379,6 @@ final class SelectorBuilder {
         node: stop.node,
         state: state,
         selectable: selectable,
-        isExtension: false,
         kmCum: stop.kmCum,
         kmEstimated: stop.kmEstimated,
         links: const [],
@@ -563,6 +577,34 @@ final class SelectorBuilder {
     return found;
   }
 
+  /// 그날(날짜를 모르면 마지막 상태) 이 역에 이 계통이 서는가.
+  bool _stopsOn(NetStop stop, DateSpan? day) {
+    if (day == null) return !_ended(stop.period);
+    if (inStopGap(day, stop)) return false;
+    return const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, stop.period));
+  }
+
+  /// 그날(날짜를 모르면 지금) 영업하는 다른 계통이 이 노드에서 끝나는가.
+  bool _endOfOther(String routeId, String node, DateSpan? day) {
+    for (final other in network.routesAt(node)) {
+      if (other == routeId) continue;
+      final route = network.routes[other];
+      if (route == null || (route.fromNode != node && route.toNode != node)) continue;
+      final rows = network.picks(other);
+      final alive = day == null
+          ? rows.any((row) => !_ended(row.period))
+          : rows.any((row) => const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, row.period)));
+      if (alive) return true;
+    }
+    return false;
+  }
+
+  /// 그날(날짜를 모르면 지금) 이 노드에 닿는 칸 하나라도 탈 수 있는가.
+  bool _ridable(String routeId, List<String> around, DateSpan? day) {
+    if (day != null) return around.any((edge) => network.edgeUsable(routeId, edge, day).ridable);
+    return around.any((edge) => network.livesOf(edge).any((life) => !life.suspended && (life.period.toHi == null || life.period.toHi!.compareTo(DateSpan.maxDate) >= 0)));
+  }
+
   bool _ended(NetPeriod period) {
     final end = period.toHi;
     return end != null && end.compareTo(DateSpan.maxDate) < 0;
@@ -573,18 +615,11 @@ final class SelectorBuilder {
     final day = normalizeRideDate(date);
     if (rows.length < 2) return const [];
     if (day == null) return List.filled(rows.length - 1, true);
-    // 숨은 끝 너머의 확장 행(`extend_to`) 사이에는 이 계통의 칸이 없다. 확장 행이 그날 있으면 이어진 것으로 보아
-    // 폐지 구분선을 긋지 않는다 (DESIGN §2.7 `extend_to`, 감사 2회차 K33 富山 新富町–電鉄富山駅・エスタ前)
-    final extended = {
-      for (final stop in network.picks(routeId))
-        if (stop.isExtension && const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, stop.period))) stop.seq,
-    };
     return _between(
       routeId,
       rows,
       (edges) => edges.any((edge) => network.edgeUsable(routeId, edge, day).ridable),
       last: null,
-      empty: (a, b) => (a.isExtension || b.isExtension) && [a, b].every((row) => !row.isExtension || extended.contains(row.seq)),
     );
   }
 
@@ -679,11 +714,6 @@ final class SelectorBuilder {
   (StopState, bool) _state(String routeId, NetStop stop, List<String> around, DateSpan? day) {
     final period = stateOfPeriod(day, stop.period);
     final lines = [for (final edge in around) network.edgeUsable(routeId, edge, day)];
-    if (stop.isExtension && day != null) {
-      return period == PeriodState.yes || period == PeriodState.maybe
-          ? (StopState.open, true)
-          : (StopState.closed, false);
-    }
     if (day == null) return (StopState.unknown, true);
     if (period == PeriodState.before) return (StopState.beforeOpen, false);
     if (openStopGap(day, stop) != null) return (StopState.suspended, false);

@@ -14,7 +14,7 @@ NetStop _stop(String routeId, int seq, String node) => NetStop(
       node: node,
       kmCum: null,
       isStop: true,
-      isExtension: false,
+      
       period: ongoing,
     );
 
@@ -68,8 +68,8 @@ NetService _service({bool withStops = true}) => NetService(
 Network _network(NetService service) => Network(
       NetworkData(
         routes: const [
-          NetRoute(id: 'r1', lineId: 'l1', role: 'main', fromNode: 'a', toNode: 'd', closed: false, extendTo: []),
-          NetRoute(id: 'r2', lineId: 'l2', role: 'main', fromNode: 'd', toNode: 'f', closed: false, extendTo: []),
+          NetRoute(id: 'r1', lineId: 'l1', role: 'main', fromNode: 'a', toNode: 'd', closed: false),
+          NetRoute(id: 'r2', lineId: 'l2', role: 'main', fromNode: 'd', toNode: 'f', closed: false),
         ],
         edges: const [
           NetEdge(id: 'ab', n: 1, from: 'a', to: 'b', meters: 1000),
@@ -219,7 +219,7 @@ void main() {
       NetServiceEdition(parts: [NetServicePart(routeId: 'r', from: 'a', to: 'c')]),
     ]);
     final relocated = Network(NetworkData(
-      routes: const [NetRoute(id: 'r', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'c', closed: false, extendTo: [])],
+      routes: const [NetRoute(id: 'r', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'c', closed: false)],
       edges: const [
         NetEdge(id: 'old', n: 1, from: 'a', to: 'b', meters: 1000),
         NetEdge(id: 'new', n: 2, from: 'a', to: 'x', meters: 700),

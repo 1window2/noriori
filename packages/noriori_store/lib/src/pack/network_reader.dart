@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:drift/drift.dart';
 import 'package:noriori_core/noriori_core.dart';
@@ -15,7 +14,7 @@ final class NetworkReader {
 
   Future<NetworkData> read() async {
     final routes = await _rows(
-      'SELECT id, line_id, role, from_node, to_node, closed, extend_to FROM master.route',
+      'SELECT id, line_id, role, from_node, to_node, closed FROM master.route',
     );
     final edges = await _rows('''
       SELECT e.id, e.n, e.from_node, e.to_node, k.m
@@ -25,7 +24,7 @@ final class NetworkReader {
       'SELECT route_id, seq, edge_id FROM master.route_edge ORDER BY route_id, seq',
     );
     final stops = await _rows('''
-      SELECT route_id, seq, node_id, km_cum, is_stop, is_extension, km_estimated,
+      SELECT route_id, seq, node_id, km_cum, is_stop, is_end_point, km_estimated,
              valid_from_lo, valid_from_hi, valid_to_lo, valid_to_hi
       FROM master.route_stop ORDER BY route_id, seq
     ''');
@@ -111,10 +110,6 @@ final class NetworkReader {
             fromNode: row.read('from_node'),
             toNode: row.read('to_node'),
             closed: row.read<int>('closed') != 0,
-            extendTo: [
-              for (final node in jsonDecode(row.read('extend_to')) as List<Object?>)
-                node! as String,
-            ],
           ),
       ],
       edges: [
@@ -143,7 +138,7 @@ final class NetworkReader {
             node: row.read('node_id'),
             kmCum: row.readNullable<double>('km_cum'),
             isStop: row.read<int>('is_stop') != 0,
-            isExtension: row.read<int>('is_extension') != 0,
+            isEndPoint: row.read<int>('is_end_point') != 0,
             kmEstimated: row.read<int>('km_estimated') != 0,
             period: _period(row),
             gaps: gapsOf['${row.read<String>('route_id')}|${row.read<int>('seq')}'] ?? const [],

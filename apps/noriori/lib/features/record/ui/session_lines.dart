@@ -390,6 +390,8 @@ class _StopTile extends ConsumerWidget {
       if (km != null) t.spokenKm(km: km.toStringAsFixed(1)),
       if (!temp && row.closeYear != null && row.handedTo == null)
         t.spokenClosed(year: row.closeYear!)
+      else if (row.passing)
+        t.spokenPassing
       else if (row.suspendedSince != null && (row.state == StopState.suspended || row.state == StopState.unknown))
         t.spokenSuspendedSince(year: row.suspendedSince!)
       else
@@ -431,7 +433,10 @@ class _StopTile extends ConsumerWidget {
             above: above,
             below: below,
             ring: ring,
-            fill: archived ? tokens.textClosed : (end || mark == StationMark.stepped ? tokens.lineRidden : tokens.surface),
+            // 승하차 불가 끝 노드(분기점·신호장, 그날 서지 않는 계통 끝 역)는 같은 크기·모양에 가운데만 회색이다 (junction-nodes-rule)
+            fill: archived
+                ? tokens.textClosed
+                : (end || mark == StationMark.stepped ? tokens.lineRidden : (row.passing ? tokens.textClosed : tokens.surface)),
             background: tokens.surface,
             radius: circle,
             ringWidth: tier3 && !fade ? 2 : 3.5,

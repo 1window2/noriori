@@ -63,9 +63,6 @@
 "r_chichibu_railway_connecting_line": {
 "start": [
 "n_yokoze"
-],
-"end": [
-"n_ohanabatake"
 ]
 },
 "r_chichibu_railway_connecting_line_branch": {
@@ -76,9 +73,6 @@
 "r_yagi_connecting_line": {
 "start": [
 "n_masuga"
-],
-"end": [
-"n_yamato_yagi"
 ]
 },
 "r_ninokuchi_connecting_line": {

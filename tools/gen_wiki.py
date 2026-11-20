@@ -115,9 +115,13 @@ def rkm(rid):
 st_line=collections.defaultdict(set)
 for l,S in adj.items():
     for n in sorted(S):st_line[n].add(l)
+# compile이 끝 노드를 역 노드로 합치는 곳(edge_insert merge, 5번 결정): 합쳐질 노드에 닿는 노선은 합친 역 노드에 닿는다
+_MERGED_INTO={}
+for r_ in json.load(open(os.path.join(ROOT,'data','overrides','edge_insert.json'),encoding='utf-8'))['rows']:
+    if r_.get('merge'):_MERGED_INTO.setdefault(r_['into'],set()).add(r_['merge'])
 def _meets(l,x):
     """노선 l이 노드 x에 닿는가. 이관으로 칸 없이 계통만 받은 노선(弘南鉄道黒石線)은 계통 경로로 본다"""
-    return l in st_line.get(x,()) or any(x in (r['from'],r['to']) or x in (rpath.get(r['id']) or ()) for r in r_by_line[l])
+    return any(l in st_line.get(y,()) or any(y in (r['from'],r['to']) or y in (rpath.get(r['id']) or ()) for r in r_by_line[l]) for y in {x}|_MERGED_INTO.get(x,set()))
 # 위키 문서 색인
 idx={}
 d=os.path.join(IMP,'wiki')

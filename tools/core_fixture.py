@@ -26,7 +26,7 @@ DATES=[None,'1969-01-01','1970-XX-XX','1975-06-XX','1985-03-14','198X-XX-XX','19
 out=[]
 for i in range(N):
     rid=R.choice(rids)
-    st=[s for s in A._picks[rid] if s['is_stop'] or s['is_extension']]
+    st=[s for s in A._picks[rid] if s['is_stop'] or 0]
     if len(st)<2:continue
     a,b=R.sample(st,2)
     date=R.choice(DATES)

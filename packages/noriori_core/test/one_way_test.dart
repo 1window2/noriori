@@ -11,7 +11,7 @@ NetStop stop(String routeId, int seq, String node) => NetStop(
       node: node,
       kmCum: null,
       isStop: true,
-      isExtension: false,
+      
       period: ongoing,
     );
 
@@ -29,8 +29,8 @@ NetAttr attr(String edge, String line) => NetAttr(
 Network sample() => Network(
       NetworkData(
         routes: const [
-          NetRoute(id: 'o', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'e', closed: false, extendTo: []),
-          NetRoute(id: 'loop', lineId: 'm', role: 'main', fromNode: 'x', toNode: 'x', closed: true, extendTo: []),
+          NetRoute(id: 'o', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'e', closed: false),
+          NetRoute(id: 'loop', lineId: 'm', role: 'main', fromNode: 'x', toNode: 'x', closed: true),
         ],
         edges: const [
           NetEdge(id: 'ab', n: 1, from: 'a', to: 'b', meters: 1000),

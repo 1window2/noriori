@@ -281,6 +281,7 @@
     "relocationOld": "옛 선로 · $km km",
     "relocationNew": "새 선로 · $km km",
     "spokenOpen": "영업 중",
+    "spokenPassing": "승하차 불가",
     "spokenRidden": "탄 역"
   },
   "data": {

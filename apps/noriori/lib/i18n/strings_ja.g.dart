@@ -420,6 +420,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String relocationOld({required Object km}) => '旧線 · ${km} km';
 	@override String relocationNew({required Object km}) => '新線 · ${km} km';
 	@override String get spokenOpen => '営業中';
+	@override String get spokenPassing => '旅客扱いなし';
 	@override String get spokenRidden => '乗車済み';
 }
 
@@ -1354,6 +1355,7 @@ extension on TranslationsJa {
 			'session.relocationOld' => ({required Object km}) => '旧線 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '新線 · ${km} km',
 			'session.spokenOpen' => '営業中',
+			'session.spokenPassing' => '旅客扱いなし',
 			'session.spokenRidden' => '乗車済み',
 			'data.osBackupLarge' => '記録ファイルが20MBを超え、Androidのクラウドバックアップに含まれない場合があります。バックアップフォルダを選んでください',
 			'data.title' => 'バックアップと復元',
@@ -1630,9 +1632,9 @@ extension on TranslationsJa {
 			'prefNames.22' => '愛知',
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',
-			'prefNames.25' => '京都',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.25' => '京都',
 			'prefNames.26' => '大阪',
 			'prefNames.27' => '兵庫',
 			'prefNames.28' => '奈良',

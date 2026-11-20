@@ -428,6 +428,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
 	@override String relocationNew({required Object km}) => 'New alignment · ${km} km';
 	@override String get spokenOpen => 'open';
+	@override String get spokenPassing => 'no passenger service';
 	@override String get spokenRidden => 'ridden';
 }
 
@@ -1384,6 +1385,7 @@ extension on TranslationsEn {
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
 			'session.relocationNew' => ({required Object km}) => 'New alignment · ${km} km',
 			'session.spokenOpen' => 'open',
+			'session.spokenPassing' => 'no passenger service',
 			'session.spokenRidden' => 'ridden',
 			'data.osBackupLarge' => 'Your records are over 20 MB and may not fit in Android cloud backup. Choose a backup folder',
 			'data.title' => 'Backup and restore',
@@ -1660,9 +1662,9 @@ extension on TranslationsEn {
 			'prefNames.22' => 'Aichi',
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',
-			'prefNames.25' => 'Kyoto',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.25' => 'Kyoto',
 			'prefNames.26' => 'Osaka',
 			'prefNames.27' => 'Hyogo',
 			'prefNames.28' => 'Nara',

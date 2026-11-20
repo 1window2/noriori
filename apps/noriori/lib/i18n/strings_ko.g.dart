@@ -833,6 +833,9 @@ class Translations$session$ko {
 	/// ko: '영업 중'
 	String get spokenOpen => '영업 중';
 
+	/// ko: '승하차 불가'
+	String get spokenPassing => '승하차 불가';
+
 	/// ko: '탄 역'
 	String get spokenRidden => '탄 역';
 }
@@ -2340,6 +2343,7 @@ extension on Translations {
 			'session.relocationOld' => ({required Object km}) => '옛 선로 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '새 선로 · ${km} km',
 			'session.spokenOpen' => '영업 중',
+			'session.spokenPassing' => '승하차 불가',
 			'session.spokenRidden' => '탄 역',
 			'data.osBackupLarge' => '기록 파일이 20MB를 넘어 Android 클라우드 백업에 들어가지 않을 수 있어요. 백업 폴더를 골라 두세요',
 			'data.title' => '백업과 복원',
@@ -2616,9 +2620,9 @@ extension on Translations {
 			'prefNames.22' => '아이치',
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',
-			'prefNames.25' => '교토',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.25' => '교토',
 			'prefNames.26' => '오사카',
 			'prefNames.27' => '효고',
 			'prefNames.28' => '나라',

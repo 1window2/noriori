@@ -354,23 +354,23 @@ void main() {
     final network = Network(
       const NetworkData(
         routes: [
-          NetRoute(id: 'r', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'c', closed: false, extendTo: []),
+          NetRoute(id: 'r', lineId: 'l', role: 'main', fromNode: 'a', toNode: 'c', closed: false),
         ],
         edges: [],
         routeEdges: [],
         stops: [
-          NetStop(routeId: 'r', seq: 0, node: 'a', kmCum: 0, isStop: true, isExtension: false, period: _ongoing),
+          NetStop(routeId: 'r', seq: 0, node: 'a', kmCum: 0, isStop: true, period: _ongoing),
           NetStop(
             routeId: 'r',
             seq: 1,
             node: 'b',
             kmCum: 0.8,
             isStop: true,
-            isExtension: false,
+            
             period: _ongoing,
             kmEstimated: true,
           ),
-          NetStop(routeId: 'r', seq: 2, node: 'c', kmCum: 1.2, isStop: true, isExtension: false, period: _ongoing),
+          NetStop(routeId: 'r', seq: 2, node: 'c', kmCum: 1.2, isStop: true, period: _ongoing),
         ],
         attrs: [],
         lives: [],

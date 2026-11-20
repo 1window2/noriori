@@ -31,7 +31,7 @@ NetRoute route(String id, String line, String role, String from, String to, {boo
       fromNode: from,
       toNode: to,
       closed: closed,
-      extendTo: const [],
+      
     );
 
 NetStop stop(String routeId, int seq, String node) => NetStop(
@@ -40,7 +40,7 @@ NetStop stop(String routeId, int seq, String node) => NetStop(
       node: node,
       kmCum: null,
       isStop: true,
-      isExtension: false,
+      
       period: ongoing,
     );
 

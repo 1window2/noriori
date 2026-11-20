@@ -20,7 +20,7 @@ def ln(i): return JA.get(('line', i), i) if i else '-'
 LIN = collections.defaultdict(set)
 for line, lg in m.execute('select line_id,lineage_id from edge_attr'): LIN[line].add(lg)
 ENDS = collections.defaultdict(set)
-for rid, lo, hi in m.execute('select route_id,min(seq),max(seq) from route_stop where is_stop=1 or is_extension=1 group by 1'): ENDS[rid] = {lo, hi}
+for rid, lo, hi in m.execute('select route_id,min(seq),max(seq) from route_stop where is_stop=1 or is_end_point=1 group by 1'): ENDS[rid] = {lo, hi}
 F = collections.OrderedDict()
 LVL = {}
 def put(key, lvl, row):

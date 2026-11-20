@@ -977,7 +977,7 @@ void main() {
           node: node,
           state: StopState.open,
           selectable: true,
-          isExtension: false,
+          
           kmCum: null,
           links: const [],
         );

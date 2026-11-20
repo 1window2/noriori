@@ -73,11 +73,9 @@ final class Network {
     }
     for (final stop in data.stops) {
       (_picks[stop.routeId] ??= []).add(stop);
-      if (!stop.isExtension) {
-        (_stops[stop.routeId] ??= []).add(stop);
-        (_stopRoutes[stop.node] ??= {}).add(stop.routeId);
-        if (stop.isStop && data.publicNodes.contains(stop.node)) _shown.add(stop.node);
-      }
+      (_stops[stop.routeId] ??= []).add(stop);
+      (_stopRoutes[stop.node] ??= {}).add(stop.routeId);
+      if (stop.isStop && data.publicNodes.contains(stop.node)) _shown.add(stop.node);
     }
     for (final attr in data.attrs) {
       (_attrs[attr.edgeId] ??= []).add(attr);

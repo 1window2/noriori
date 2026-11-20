@@ -134,7 +134,6 @@ class App:
         self.routes = {r["id"]: dict(r) for r in self.db.execute("SELECT * FROM route")}
         for r in self.routes.values():
             r["via_nodes"] = json.loads(r["via_nodes"] or "[]")
-            r["extend_to"] = json.loads(r["extend_to"] or "[]")
         self.line_routes = collections.defaultdict(list)
         for r in self.routes.values():
             self.line_routes[r["line_id"]].append(r["id"])
@@ -154,7 +153,7 @@ class App:
             self._edge_routes[r["edge_id"]].append(r["route_id"])
             self._route_edges[r["route_id"]].append((r["seq"], r["edge_id"]))
         self._stops = collections.defaultdict(list)
-        self._picks = collections.defaultdict(list)      # 선택기 행 (extend_to 포함)
+        self._picks = collections.defaultdict(list)      # 선택기 행
         # 정차 기간 사이에 서지 않던 기간 (여름 임시역 등, stop_dates.json 여러 기간). 앱 inStopGap과 같다
         self._stop_gaps = collections.defaultdict(list)
         if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='route_stop_gap'").fetchone():
@@ -162,7 +161,7 @@ class App:
                 self._stop_gaps[(r["route_id"], r["seq"])].append((r["gap_from_hi"], r["gap_to_lo"]))
         for r in self.db.execute("SELECT * FROM route_stop ORDER BY route_id,seq"):
             self._picks[r["route_id"]].append(dict(r))
-            if not r["is_extension"]:
+            if not 0:
                 self._stops[r["route_id"]].append(dict(r))
         # 한 방향 운행 칸과 한 방향 정차 (DESIGN §8). 앱 Network.passable·stopDirectionOf와 같다
         self._one_way = collections.defaultdict(list)
@@ -324,16 +323,14 @@ class App:
         rows = []
         for s in self._picks[route_id]:
             if not include_hidden:
-                if not s["is_stop"] and not s["is_extension"]:
+                if not s["is_stop"] and not s["is_end_point"]:
                     continue
-                if s["node_id"] not in self.public:
+                if s["node_id"] not in self.public and not s["is_end_point"]:
                     continue
             st = state_on(d, s["valid_from_lo"], s["valid_from_hi"], s["valid_to_lo"], s["valid_to_hi"])
             # 선로 상태
             line_states = [self.edge_usable(route_id, e, d)[0] for e in adj[s["node_id"]]]
-            if s["is_extension"] and d is not None:
-                state, sel = ("open", True) if st in ("yes", "maybe") else ("closed", False)
-            elif d is None:
+            if d is None:
                 state, sel = "unknown", True
             elif st == "before":
                 state, sel = "before_open", False
@@ -351,6 +348,13 @@ class App:
                 state, sel = "line_closed", False
             else:
                 state, sel = "no_edge", False
+            # 승하차 불가 끝 노드: 서지 않는 노드거나 그날 서지 않는 계통 끝 역. 그날 지나는 칸이 있으면 고를 수 있다 (앱 SelectorBuilder와 같다, junction-nodes-rule)
+            ends = (self._picks[route_id][0]["seq"], self._picks[route_id][-1]["seq"]) if self._picks[route_id] else ()
+            stops_on = (st in ("yes", "maybe") and not self.in_stop_gap(d, s)) if d is not None else (s["valid_to"] == "ongoing")
+            ridable = any(x in ("ok", "maybe") for x in line_states) if d is not None else any(self.edge_usable(route_id, e, self.today)[0] in ("ok", "maybe") for e in adj[s["node_id"]])
+            passing = False
+            if (not s["is_stop"] or (not stops_on and (s["seq"] in ends or self._end_of_other(route_id, s["node_id"], d)))) and ridable:
+                state, sel, passing = "open", True, True
             links = []
             for r in link_rows[s["seq"]]:
                 lf = edtf_range(r["valid_from"])[0]
@@ -361,8 +365,26 @@ class App:
             rows.append(dict(seq=s["seq"], node=s["node_id"],
                              name=self.name(s["node_id"], line, d), km_cum=s["km_cum"],
                              km_on_date=kmd.get(s["seq"]), state=state, selectable=sel, links=links,
-                             is_extension=s["is_extension"]))
+                             passing=passing))
         return rows
+
+    def _end_of_other(self, route_id, node, d):
+        """그날(날짜를 모르면 지금) 영업하는 다른 계통이 이 노드에서 끝나는가 (앱 SelectorBuilder._endOfOther와 같다)"""
+        if not hasattr(self, "_ends_at"):
+            self._ends_at = collections.defaultdict(list)
+            for rid_, r_ in self.routes.items():
+                for n_ in {r_["from_node"], r_["to_node"]}:
+                    self._ends_at[n_].append(rid_)
+        for rid in self._ends_at.get(node, ()):
+            if rid == route_id:
+                continue
+            for s in self._picks[rid]:
+                if d is None:
+                    if s["valid_to"] == "ongoing":
+                        return True
+                elif state_on(d, s["valid_from_lo"], s["valid_from_hi"], s["valid_to_lo"], s["valid_to_hi"]) in ("yes", "maybe"):
+                    return True
+        return False
 
     def km_axis(self, route_id, d):
         """그날 선로망으로 계산한 누적 km. seq→km. 끊겨서 못 구하면 해당 seq 없음."""
@@ -857,7 +879,7 @@ class App:
 
     def expand_any(self, route_id, a, b, date=None):
         """선택기에서 고른 두 역을 펼친다. extend_to 역이면 그 역이 속한 계통으로 leg를 나눈다 (§2.7)."""
-        ext = set(self.routes[route_id]["extend_to"])
+        ext = set([])
         if a not in ext and b not in ext:
             return self.expand(route_id, a, b, date)
         here = {n for _, _, x, y in self.route_edges(route_id) for n in (x, y)}
@@ -1155,9 +1177,10 @@ def scenarios(A, R):
     # ---- B. 숨은 노드·직통 -----------------------------------------------
     r1, r2 = "r_nagoya_main_line", "r_inuyama_line"
     svc = A.db.execute("SELECT count(*) FROM service_part WHERE route_id IN (?,?)", (r1, r2)).fetchone()[0]
-    R.add("B1", "名鉄名古屋→犬山 입력 경로 (extend_to 또는 service, §2.8 F)", "犬山線 화면에서 東枇杷島까지 extend_to, 또는 service 존재",
-          f"犬山線 extend_to={A.routes[r2]['extend_to']}, is_extension 행 {sum(q['is_extension'] for q in A.picker(r2, T))}, 名鉄 service 부품 {svc}개, 犬山線 첫 선택 역={A.picker(r2, T)[0]['name']}",
-          bool(A.routes[r2]["extend_to"]) or svc > 0, "extend_to가 있어도 東枇杷島는 끝 역이라 그 뒤 역은 名古屋本線 화면에서 잇거나 B1b 우회가 필요")
+    _b1 = A.picker(r2, T)
+    R.add("B1", "名鉄名古屋→犬山 입력 경로 (끝 노드 또는 service, §2.8 F)", "犬山線 화면 첫 줄이 고를 수 있는 끝 노드(枇杷島分岐点), 또는 service 존재",
+          f"犬山線 첫 선택 역={_b1[0]['name']} passing={_b1[0].get('passing')}, 名鉄 service 부품 {svc}개",
+          bool(_b1 and _b1[0].get('passing') and _b1[0]['selectable']) or svc > 0, "枇杷島分岐点–東枇杷島는 名古屋本線 화면에서 잇거나 B1b 우회")
     x = A.expand_cross("n_meitetsu_nagoya", "n_inuyama", T, [r1, r2])
     R.add("B1b", "名鉄名古屋→犬山 숨은 노드 자동 분할 (우회)", "28.2km = 名古屋本線 3.3 + 犬山線 24.9, 숨은 노드 1개, 분기점 이름 비공개",
           f"{x['km']} {x['line_km']} hidden={x['hidden']} public에 없음={[h not in A.public for h in x['hidden']]}",
@@ -1715,7 +1738,7 @@ def sweep(A, R):
             continue
         x = A.expand_any(rid, p["node"], q["node"], d)
         stat[x["status"] + (":" + x.get("reason", "") if x.get("reason") else "")] += 1
-        if x["status"] == "ok" and d is not None and not A.routes[rid]["closed"] and not p["is_extension"] and not q["is_extension"]:
+        if x["status"] == "ok" and d is not None and not A.routes[rid]["closed"] and not 0 and not 0:
             if p["km_on_date"] is not None and q["km_on_date"] is not None and abs(abs(p["km_on_date"] - q["km_on_date"]) - x["km"]) > 0.11:
                 bad.append((rid, d, p["name"], q["name"], x["km"], p["km_on_date"], q["km_on_date"]))
         if x["status"] == "invalid" and x.get("reason") == "no-path-ever":
@@ -1799,6 +1822,9 @@ def sweep(A, R):
                     if any(r2 != rid and A.routes[r2]["line_id"] == line and any(x["node"] == q["node"] and x["selectable"] for x in A.picker(r2, d)) for r2 in A.routes):
                         continue
                     st = next(x for x in A._picks[rid] if x["seq"] == q["seq"])
+                    # 서지 않는 끝 노드 행(분기점·신호장)은 역이 아니다. 그날 선로가 없으면 폐선 구간의 점으로 보인다 (junction-nodes-rule)
+                    if st["is_end_point"] and not st["is_stop"]:
+                        continue
                     key = q["state"] + ("/valid_to NULL" if st["valid_to"] is None else "")
                     c[key] += 1
                     samples.setdefault(key, (rid, d, q["name"]))
@@ -1815,8 +1841,9 @@ def sweep(A, R):
             if A.node_kind.get(end) != "station":
                 hid.append((rid, A.line_name(r["line_id"]), end, A.node_kind.get(end)))
     psg = [h for h in hid if "kamotsu" not in h[0]]
-    noext = [h for h in hid if not A.routes[h[0]]["extend_to"]]
-    R.add("S10", "계통 끝이 숨은 노드인데 extend_to 없음", "숨은 끝마다 extend_to", f"{len(hid)}개 끝(여객 {len(psg)}개) 중 extend_to 없는 끝 {len(noext)}: {sorted({h[1] for h in noext})}", not noext)
+    _endpt = {(s["route_id"], s["node_id"]) for st in A._picks.values() for s in st if s["is_end_point"]}
+    noext = [h for h in hid if (h[0], h[2]) not in _endpt and any(s["is_stop"] for s in A._picks[h[0]])]
+    R.add("S10", "계통 끝이 숨은 노드인데 끝 노드 행 아님", "정차가 있는 계통의 숨은 끝마다 끝 노드 행(is_end_point)", f"{len(hid)}개 끝(여객 {len(psg)}개) 중 끝 노드 행 아닌 끝 {len(noext)}: {sorted({h[1] for h in noext})}", not noext)
     # S11 closed
     dup = []
     for rid, st in A._stops.items():
@@ -1832,7 +1859,7 @@ def sweep(A, R):
         st = A._stops[r["route_id"]]
         seqs = [s["seq"] for s in st]
         # 계통 끝 너머 확장 행에 단 끝 이어짐(吾妻橋線 本所吾妻橋, 9회차 L)은 계통 끝 바깥이라 끝 이음이다
-        if not any(s["seq"] == r["seq"] for s in st) and any(s["seq"] == r["seq"] and s["is_extension"] for s in A._picks[r["route_id"]]):
+        if not any(s["seq"] == r["seq"] for s in st) and any(s["seq"] == r["seq"] and 0 for s in A._picks[r["route_id"]]):
             ends += 1
             continue
         node = next(s["node_id"] for s in st if s["seq"] == r["seq"])
@@ -1944,8 +1971,9 @@ def sweep2(A, R):
     # S18 공개 노드
     z = A.db.execute("SELECT kind,count(*) FROM node WHERE id IN (SELECT id FROM node_public) GROUP BY 1").fetchall()
     h = A.db.execute("SELECT count(*) FROM node WHERE kind<>'station'").fetchone()[0]
-    hn = A.db.execute("SELECT count(*) FROM nm.name WHERE entity_type='node' AND entity_id IN (SELECT id FROM node WHERE kind<>'station')").fetchone()[0]
-    R.add("S18", "node_public에 숨은 노드가 없는가", f"station만, 숨은 {h}개는 이름도 없음", f"{[tuple(q) for q in z]}, 숨은 노드 이름 {hn}행", all(q[0] == "station" for q in z) and hn == 0)
+    # 승하차 불가 끝 노드(분기점·신호장)는 노선 일람에 보여 이름이 있다 (5번 결정 junction-nodes-rule, 2026-11-19). 그 밖의 숨은 노드는 이름이 없다
+    hn = A.db.execute("SELECT count(*) FROM nm.name WHERE entity_type='node' AND entity_id IN (SELECT id FROM node WHERE kind<>'station' AND id NOT IN (SELECT node_id FROM route_stop WHERE is_end_point=1))").fetchone()[0]
+    R.add("S18", "node_public에 숨은 노드가 없는가", f"station만, 끝 노드가 아닌 숨은 {h}개는 이름도 없음", f"{[tuple(q) for q in z]}, 숨은 노드 이름 {hn}행", all(q[0] == "station" for q in z) and hn == 0)
     # S19 이름 채움
     miss = {}
     for lang in ("ja", "ko", "en"):
@@ -1962,10 +1990,15 @@ def sweep2(A, R):
         for end in (r["from_node"], r["to_node"]):
             if A.node_kind.get(end) == "station":
                 continue
-            parents = [p for p, st in A._stops.items() if p != rid and A.routes[p]["line_id"] != r["line_id"] and any(s["node_id"] == end for s in st)]
+            # 부모도 화면에 나오는 노선이어야 하고(화물 전용 숨은 노선 빼고), 두 계통이 함께 있던 기간이 있어야 한다(八木連絡線 ~1967-12-20 / 新ノ口連絡線 1967-12-20~)
+            def _span(x):
+                st_ = A._picks[x]
+                return (min((s["valid_from_lo"] or "0000") for s in st_), max(("9999" if s["valid_to"] == "ongoing" else (s["valid_to_hi"] or "9999")) for s in st_)) if st_ else ("9999", "0000")
+            parents = [p for p, st in A._stops.items() if p != rid and A.routes[p]["line_id"] != r["line_id"] and A.routes[p]["line_id"] not in _hid and any(s["node_id"] == end for s in st)
+                       and _span(p)[0] < _span(rid)[1] and _span(rid)[0] < _span(p)[1]]
             for p in parents:
                 c = A.db.execute("SELECT count(*) FROM route_link WHERE route_id=? AND other_line_id=?", (p, r["line_id"])).fetchone()[0]
-                if c or A.routes[p]["extend_to"] or r["extend_to"]:
+                if c:
                     have += 1
                 else:
                     miss.append((A.line_name(A.routes[p]["line_id"]), A.line_name(r["line_id"])))
@@ -1984,9 +2017,9 @@ DESIGN_14_1 = {
     "archive_line": "id line_id at_node opened closed source legal_abolition",
     "node_position": "node_id lat lon quality checked valid_from valid_to",
     "node_public": "(view)",
-    "route": "id line_id role from_node to_node via_nodes closed closed_from extend_to map_coverage",
+    "route": "id line_id role from_node to_node via_nodes closed closed_from map_coverage",
     "route_edge": "route_id seq edge_id valid_from valid_to",
-    "route_stop": "route_id seq node_id km_cum is_stop is_extension valid_from valid_to",
+    "route_stop": "route_id seq node_id km_cum is_stop is_end_point valid_from valid_to",
     "route_link": "route_id seq other_line_id other_route_id kind side at_edge other_node next_stop_node terminal_node flow flow_source valid_from valid_to",
     "route_link_reverse": "route_id seq other_line_id next_stop_node valid_from valid_to",
     "edge": "id from_node to_node seed_line route_only geometry_quality geometry_source",

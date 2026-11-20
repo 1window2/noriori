@@ -273,6 +273,6 @@ def sha(p):
     return h.hexdigest()
 files={x:dict(sha256=sha(os.path.join(BUILD,x)),size=os.path.getsize(os.path.join(BUILD,x))) for x in ('names.sqlite','rail.pmtiles','rail-osm.pmtiles','base.pmtiles',*GLYPHS) if os.path.exists(os.path.join(BUILD,x))}
 files['master.sqlite']=dict(sha256=sha(PACK),size=os.path.getsize(PACK))
-man=dict(edition=EDITION,schema_version=2,files=files)
+man=dict(edition=EDITION,schema_version=3,files=files)
 json.dump(man,open(os.path.join(BUILD,'manifest.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('tiles',n,os.path.getsize(out),'osm',no,os.path.getsize(oo) if no else 0)
