@@ -288,6 +288,19 @@ final class PackReader {
     return out;
   }
 
+  /// 열람 전용 역·노선의 일본어 읽기(히라가나). 한자 섞인 이름만, 근거가 있을 때만 (노드 nodeReadings와 같은 규칙)
+  Future<Map<String, String>> archiveReadings(Iterable<String> ids) async {
+    final list = ids.toSet().toList();
+    final grouped = await _nameRows('archive', list);
+    final out = <String, String>{};
+    for (final id in list) {
+      final row = pickNameRow(grouped[id]?['ja'] ?? const []);
+      final reading = row?.kana?.replaceAll(RegExp(r'[\s\u3000]'), '');
+      if (row != null && reading != null && reading.isNotEmpty && needsReading(row.text)) out[id] = reading;
+    }
+    return out;
+  }
+
   Future<bool> _hasNamesTable(String table) async =>
       (await _db.customSelect("SELECT 1 FROM names.sqlite_master WHERE type = 'table' AND name = ?",
               variables: [Variable.withString(table)]).get())
@@ -504,6 +517,48 @@ final class PackReader {
           if (span.lo.compareTo(hi) < 0 && lo.compareTo(span.hi) < 0) span,
       ];
 
+  /// 임시 운행만 있는 계통 모두. 계통 칩의 「임시」 표시에 쓴다
+  Future<Set<String>> tempRouteIds() async {
+    if (!await _hasTable('route_temp_window')) return const {};
+    final rows = await _db.customSelect('SELECT DISTINCT route_id FROM master.route_temp_window').get();
+    return {for (final row in rows) row.read<String>('route_id')};
+  }
+
+  /// 임시 운행만 있는 계통(정식 여객 영업 없이 임시·단체 열차만 다님, 新金線)의 운행 토막 [from, to). 그 밖의 계통이면 비어 있다.
+  /// 빌드가 계통 사건으로 정한다(토막이 모두 7일 이하, tools/compile.py route_temp_window). 표가 없는 옛 판이면 비어 있다
+  Future<List<({String from, String to})>> tempWindows(String routeId) async {
+    if (!await _hasTable('route_temp_window')) return const [];
+    final rows = await _db.customSelect(
+      'SELECT valid_from, valid_to FROM master.route_temp_window WHERE route_id = ? ORDER BY valid_from',
+      variables: [Variable(routeId)],
+    ).get();
+    return [for (final row in rows) (from: row.read<String>('valid_from'), to: row.read<String>('valid_to'))];
+  }
+
+  /// 역을 옮기면서 이름까지 바뀐 옛 자리의 「~년 ~로 이전」 표시: 옛 자리 노드 → (새 역 이름, 옮긴 해).
+  /// 옛 자리와 새 역의 일본어 이름이 「（旧）」를 빼고 같으면 「(구)」 표시로 관계가 보여 넣지 않는다(新潟（旧）).
+  /// 이름이 달라 다른 역처럼 보일 때만이다(東八王子 → 1963 京王八王子, 사용자 결정 2026-11-18). 표가 없는 옛 판이면 비어 있다
+  Future<Map<String, ({String name, String year})>> movedNotes(Iterable<String> ids, {String? lineId, String? date}) async {
+    final list = ids.toSet().toList();
+    if (list.isEmpty || !await _hasTable('node_move')) return const {};
+    final rows = await _db.customSelect(
+      'SELECT old_node, new_node, moved_on FROM master.node_move WHERE old_node IN (${List.filled(list.length, '?').join(',')})',
+      variables: [for (final id in list) Variable.withString(id)],
+    ).get();
+    final moves = {for (final r in rows) r.read<String>('old_node'): (node: r.read<String>('new_node'), day: r.read<String>('moved_on'))};
+    if (moves.isEmpty) return const {};
+    final oldJa = await nodeNames(moves.keys, lineId: lineId, date: date, languages: const ['ja']);
+    final newJa = await nodeNames(moves.values.map((m) => m.node), languages: const ['ja']);
+    final newName = await nodeNames(moves.values.map((m) => m.node));
+    String core(String s) => s.replaceAll(RegExp(r'\s*[（(](旧|구)[)）]\s*$'), '').trim();
+    return {
+      for (final MapEntry(key: old, value: m) in moves.entries)
+        if (oldJa[old] case final o?)
+          if (newJa[m.node] case final n? when core(o) != core(n) && m.day.length >= 4)
+            old: (name: newName[m.node] ?? n, year: m.day.substring(0, 4)),
+    };
+  }
+
   Future<bool> _hasTable(String name) async => (await _db.customSelect(
         "SELECT 1 FROM master.sqlite_master WHERE type = 'table' AND name = ?",
         variables: [Variable.withString(name)],
@@ -558,10 +613,11 @@ final class PackReader {
     ];
   }
 
-  /// 그 계통의 열람 전용 역.
+  /// 그 계통의 열람 전용 역. 계통 순번(seq)이 있는 행이 먼저 그 순서로, 나머지(옛 팩)는 넣은 순서(rowid)다.
   Future<List<ArchiveStop>> archiveStops(String routeId) async {
     final rows = await _db.customSelect(
-      'SELECT id, after_id, before_id, closed, km FROM master.archive_stop WHERE route_id = ?',
+      'SELECT id, after_id, before_id, closed, km, seq FROM master.archive_stop WHERE route_id = ? '
+      'ORDER BY seq IS NULL, seq, rowid',
       variables: [Variable.withString(routeId)],
     ).get();
     return [
@@ -572,6 +628,7 @@ final class PackReader {
           beforeNode: row.readNullable('before_id'),
           closedYear: _year(row.readNullable('closed')),
           km: row.readNullable('km'),
+          seq: row.readNullable('seq'),
         ),
     ];
   }

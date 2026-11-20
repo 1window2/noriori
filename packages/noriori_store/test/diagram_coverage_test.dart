@@ -50,6 +50,7 @@ void main() {
             undated: date == null,
             parallels: parallels,
             date: date,
+            shownLineId: network.lineOnDate(routeId, date),
           );
           drawn++;
           final shown = <SelectorLink>{};
@@ -85,6 +86,8 @@ void main() {
                 count('폐지 구분선');
               case TransferLine():
                 count('이관 구분선');
+              case NoticeLine(:final kind):
+                count('괄호 ${kind.name}');
             }
           }
           // 날짜를 모를 때는 그 계통의 모든 연결이 후보다. 그림에 안 나온 것을 종류별로 센다

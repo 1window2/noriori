@@ -645,7 +645,11 @@ void main() {
         continue;
       }
       final mark = find.byType(SwitchbackMark);
-      await tester.scrollUntilVisible(mark, 300, scrollable: find.descendant(of: find.byType(ListView).last, matching: find.byType(Scrollable)).first);
+      final list = find.descendant(of: find.byType(ListView).last, matching: find.byType(Scrollable)).first;
+      await tester.scrollUntilVisible(mark, 300, scrollable: list);
+      // 끝 줄이 화면 아래 저장 막대 밑에 걸리면 조금 더 올린다(바뀜 표기로 환승 줄이 길어져 끝 줄이 내려감, 2026-11-19)
+      await tester.drag(list, const Offset(0, -200));
+      await tester.pumpAndSettle();
       await tester.tap(mark.first);
       await tester.pump();
       final word = switch (locale) { AppLocale.ko => '진행 방향을 바꿔', AppLocale.en => 'Trains reverse here', AppLocale.ja => '進行方向を変えて' };

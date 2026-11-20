@@ -116,6 +116,27 @@ void main() {
     expect(meters, total);
   }, skip: skip);
 
+  // 임시 운행만 있는 계통(新金線)은 노리츠부시가 아무 날이나 기록하게 둔다. 운행일이 아닌 날의 행은 버리지 않고 날짜 모름으로 넣는다 (사용자 결정 2026-11-19)
+  test('임시 운행만 있는 계통의 운행일 밖 노리츠부시 행은 날짜 모름으로 들어간다', () async {
+    if (skip != null) return;
+    final dir = masterFile.absolute.parent.path;
+    final db = UserDb(openDirect(File(':memory:')));
+    await db.customStatement("ATTACH 'file:$dir/names.sqlite?mode=ro&immutable=1' AS names");
+    await db.customStatement("ATTACH 'file:$dir/master.sqlite?mode=ro&immutable=1' AS master");
+    final names = await PackReader(db).importNames();
+    await db.close();
+    final file = parseNoritsubushiCsv([
+      '会社名,路線名,乗車開始駅,乗車終了駅,乗車キロ,乗車日',
+      'JR東日本,総武本線 (新金線),小岩,金町,8.9,2016-08-27',
+      'JR東日本,総武本線 (新金線),小岩,金町,8.9,2020-01-01',
+      'JR東日本,総武本線 (新金線),小岩,金町,8.9,0000-00-00',
+    ].join('\n'));
+    final plan = planImport(file, CsvMatcher(network, names), const {}, idOf: uuidV5);
+    expect(plan.missed, isEmpty);
+    expect([for (final row in plan.rows) (row.result as RowMatched).routeId], everyElement('r_shinkin_line'));
+    expect([for (final row in plan.rows) row.undated], [false, true, false]);
+  });
+
   test('펼치기 결과가 같다', () {
     final resolver = RouteResolver(network);
     final rows = (table['expand']! as List<Object?>).cast<Map<String, Object?>>();

@@ -130,6 +130,8 @@ class _SessionSaveBarState extends ConsumerState<SessionSaveBar> with GuardedWri
     final from = state.from;
     final to = state.to;
     final title = switch ((from, to, preview)) {
+      // 임시 운행만 있는 계통에서 운행일이 아닌 날이면 운행일부터 고르게 한다 (사용자 결정 2026-11-19)
+      (null, _, _) when state.isTemporary && !state.rows.any((row) => row.selectable) => t.tempPickDay,
       (null, _, _) => t.pickFrom,
       (final start?, null, _) => t.leaving(name: state.nameOf(start.node)),
       (_?, _?, Expansion(saved: true, meters: final meters?)) => t.summary(

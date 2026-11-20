@@ -49,6 +49,9 @@ for r_ in m.execute('select l.route_id,s.node_id,l.other_line_id,l.other_route_i
 XST=collections.defaultdict(list)
 for r_ in m.execute('select route_id,node_id,valid_from,valid_to from route_stop where is_extension=1'):XST[r_[0],r_[1]].append((r_[2],r_[3]))
 EXT={r_[0]:set(json.loads(r_[1] or '[]')) for r_ in m.execute('select id,extend_to from route')}
+# 정차 공백(route_stop_gap). 끝 없는 공백은 gap_to='ongoing'(재개 미정 정차 운휴, 11회차 시뮬레이터 시험: 합치기에서 되돌려진 것을 잡는다)
+SGAP=collections.defaultdict(list)
+for r_ in m.execute('select route_id,node_id,gap_from,gap_to from route_stop_gap'):SGAP[r_[0],r_[1]].append((r_[2],r_[3]))
 SDIR=collections.defaultdict(list)
 for r_ in m.execute('select route_id,node_id,direction,label,use,valid_from,valid_to from stop_direction'):SDIR[r_[0],r_[1]].append(r_[2:])
 def _on(v,day):
@@ -104,6 +107,9 @@ def judge(c):
     if k=='hub':return frozenset((c['a'],c['b'])) in HP
     if k=='nohub':return frozenset((c['a'],c['b'])) not in HP
     if k=='nogroup':return not(GRP.get(c['a']) and GRP.get(c['a'])==GRP.get(c['b']))
+    # 12회차(2026-11-18): archname 열람 전용 행(역·노선)의 그 언어 이름 {aid, lang, text}, closeby 그 계통 정차 기간의 폐지 늦은 끝이 그날 이전 {route, node, by}
+    if k=='archname':return any(r[0]==c['lang'] and r[1]==c['text'] for r in NM['archive',c['aid']])
+    if k=='closeby':return bool(SPR[c['node']]) and all(t_!='ongoing' and (lohi(t_)[1] or '9999')<=c['by'] for rt,f_,t_ in SPR[c['node']] if rt==c['route'])
     if k=='archive':
         return any(rt==c['route'] and (not c.get('after') or a==c['after']) and (not c.get('before') or b==c['before']) and (c.get('km') is None or (km is not None and abs(km-c['km'])<.05)) for rt,a,b,km in ARCH[c['name']])
     if k=='edgekm':return any(abs(x-c['km'])<.05 for x in EK[frozenset((c['a'],c['b']))])
@@ -144,6 +150,7 @@ def judge(c):
         v=sorted(ELIFE[frozenset((c['a'],c['b']))],key=lambda r_:lohi(r_[0])[0] or '0000')
         return bool(v) and de(v[0][0],c['date'])
     # 계통 첫 역: {route, node} 확장 행을 뺀 순번 0 정차 노드
+    if k=='stopgap':return any(de(f_,c['gap_from']) and (t_==c.get('gap_to','ongoing') or de(t_,c.get('gap_to'))) for f_,t_ in SGAP[c['route'],c['node']])
     if k=='route_first':return RFIRST.get(c['route'])==c['node']
     # 열람 전용 중복 없음: {route?, name?} 같은 계통·같은 이름·같은 km 열람 전용 역이 둘 이상이면 남음
     if k=='archive_unique':
@@ -211,6 +218,10 @@ def judge(c):
     if k=='parstart':
         v_=[f_ for (f_,) in m.execute('select valid_from_lo from route_parallel where route_id=? and other_line_id=?',(c['route'],c['other_line']))]
         return bool(v_) and min(f_ or '0000' for f_ in v_)==(c['valid_from'] or '0000')
+    # archorder: 그 계통(route)의 열람 전용 역을 앱처럼 계통 순번(seq) 순으로 읽었을 때 이름(names)이 그 차례로 나온다 (같은 자리 순서, 2026-11-17 志度線 瓦町 앞)
+    if k=='archorder':
+        got=[r[1] for (i_,) in m.execute('select id from archive_stop where route_id=? order by seq is null,seq,rowid',(c['route'],)) for r in NM['archive',i_] if r[0]=='ja' and not r[3] and not r[4] and not r[5] and r[1] in c['names']]
+        return got==c['names']
     return None
 ELIFE=collections.defaultdict(list)
 for a,b,f_,t_,st_,lg_,r_ in m.execute('select e.from_node,e.to_node,l.valid_from,l.valid_to,l.status,l.legal_abolition,l.close_reason from edge e join edge_life l on l.edge_id=e.id'):ELIFE[frozenset((a,b))].append((f_,t_,st_,lg_,r_))

@@ -60,6 +60,10 @@ final class RecordSessionState {
     this.readings = const {},
     this.pastMarks = const {},
     this.archiveNames = const {},
+    this.archiveAside = const {},
+    this.movedNotes = const {},
+    this.tempWindows = const [],
+    this.tempRoutes = const {},
     this.stopDirections = const {},
     this.oneWayGaps = const [],
     this.preview,
@@ -103,6 +107,23 @@ final class RecordSessionState {
   /// 날짜 모름일 때 예전에만 仮乗降場·臨時駅이었던 역 → kari·rinji (작은 표식).
   final Map<String, String> pastMarks;
   final Map<String, String> archiveNames;
+
+  /// 열람 전용 역 이름 옆에 작게 다는 글: 다른 언어판은 일본어 이름(현지 이름과 다를 때), 일본어판은 읽기. 역 줄과 같은 규칙이다 (2026-11-18 사용자 지적)
+  final Map<String, String> archiveAside;
+
+  /// 이름까지 바뀐 옛 자리의 이전 표시(옛 자리 노드 → 새 역 이름·옮긴 해)
+  final Map<String, ({String name, String year})> movedNotes;
+
+  /// 임시 운행만 있는 계통이면 그 운행 토막 [from, to). 비어 있으면 보통 계통이다 (사용자 결정 2026-11-19)
+  final List<({String from, String to})> tempWindows;
+
+  bool get isTemporary => tempWindows.isNotEmpty;
+
+  /// 이 노선의 계통 가운데 임시 운행만 있는 것(칩의 「임시」 표시)
+  final Set<String> tempRoutes;
+
+  /// 고른 날이 임시 열차 운행일인가. 날짜를 모르면 거짓이다
+  bool tempRunsOn(String? day) => day != null && tempWindows.any((w) => w.from.compareTo(day) <= 0 && day.compareTo(w.to) < 0);
 
   /// 그날 한 방향 열차만 서는 역 줄(순번) → 그 행 (DESIGN §8 한 방향 정차).
   final Map<int, NetStopDirection> stopDirections;
@@ -155,6 +176,10 @@ final class RecordSessionState {
     Map<String, String>? readings,
     Map<String, String>? pastMarks,
     Map<String, String>? archiveNames,
+    Map<String, String>? archiveAside,
+    Map<String, ({String name, String year})>? movedNotes,
+    List<({String from, String to})>? tempWindows,
+    Set<String>? tempRoutes,
     Map<int, NetStopDirection>? stopDirections,
     List<bool?>? oneWayGaps,
     Expansion? preview,
@@ -180,6 +205,10 @@ final class RecordSessionState {
         readings: readings ?? this.readings,
         pastMarks: pastMarks ?? this.pastMarks,
         archiveNames: archiveNames ?? this.archiveNames,
+        archiveAside: archiveAside ?? this.archiveAside,
+        movedNotes: movedNotes ?? this.movedNotes,
+        tempWindows: tempWindows ?? this.tempWindows,
+        tempRoutes: tempRoutes ?? this.tempRoutes,
         stopDirections: stopDirections ?? this.stopDirections,
         oneWayGaps: oneWayGaps ?? this.oneWayGaps,
         preview: clearPicks ? null : preview ?? this.preview,
@@ -578,10 +607,12 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       archiveStops: stops,
       archiveBranches: branches,
       sectionGaps: sectionGaps,
-      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today)),
+      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
       undated: date == null,
       parallels: parallels,
       date: date,
+      // 제목이 그날의 노선(같은 사슬의 뒤 노선)이면 그 노선으로의 이관 괄호는 그리지 않는다
+      shownLineId: network.lineOnDate(routeId, date),
     );
     final ids = <String>{
       for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],
@@ -623,10 +654,20 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final pastMarks = date == null && state.lineId != null
         ? await reader.pastTempMarks(rows.map((row) => row.node), state.lineId!, routeId: routeId)
         : const <String, String>{};
-    final archiveNames = await reader.archiveNames([
+    final archiveIds = [
       for (final stop in stops) stop.id,
       for (final branch in branches) branch.id,
-    ]);
+    ];
+    final archiveNames = await reader.archiveNames(archiveIds);
+    final archiveAside = reader.languages.first == 'ja'
+        ? await reader.archiveReadings(archiveIds)
+        : {
+            for (final MapEntry(key: id, value: ja) in (await reader.archiveNames(archiveIds, languages: const ['ja'])).entries)
+              if (ja != archiveNames[id]) id: ja,
+          };
+    final movedNotes = await reader.movedNotes(rows.map((row) => row.node), lineId: state.lineId, date: date?.lo);
+    final tempWindows = await reader.tempWindows(routeId);
+    final tempRoutes = await reader.tempRouteIds();
     // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
     final stopDirections = <int, NetStopDirection>{
       for (final row in visible)
@@ -652,6 +693,10 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       readings: readings,
       pastMarks: pastMarks,
       archiveNames: archiveNames,
+      archiveAside: archiveAside,
+      movedNotes: movedNotes,
+      tempWindows: tempWindows,
+      tempRoutes: tempRoutes,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
           : PickedPath.of(visible, state.preview!.nodes),
@@ -765,6 +810,10 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       readings: base.readings,
       pastMarks: base.pastMarks,
       archiveNames: base.archiveNames,
+      archiveAside: base.archiveAside,
+      movedNotes: base.movedNotes,
+      tempWindows: base.tempWindows,
+      tempRoutes: base.tempRoutes,
       stopDirections: base.stopDirections,
       oneWayGaps: base.oneWayGaps,
       preview: preview,

@@ -507,7 +507,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                _SearchBar(label: t.search, score: score, tag: t.scoreLabel),
+                _SearchBar(label: t.search, score: score),
                 FilterPillRow(
                   left: 0,
                   clip: Clip.none,
@@ -678,11 +678,10 @@ class _YearPanel extends StatelessWidget {
 }
 
 class _SearchBar extends StatelessWidget {
-  const _SearchBar({required this.label, required this.score, required this.tag});
+  const _SearchBar({required this.label, required this.score});
 
   final String label;
   final Score? score;
-  final String tag;
 
   @override
   Widget build(BuildContext context) {
@@ -705,21 +704,13 @@ class _SearchBar extends StatelessWidget {
             Expanded(
               child: Text(label, style: text.bodyMedium?.copyWith(fontSize: 15, color: tokens.textMuted)),
             ),
+            // 완주율은 지금 노선망 기준이라 「현재」 꼬리표를 붙이지 않는다. 사용자는 원래 지금 노선의 몇 %를 탔는지를 기대한다 (사용자 결정 2026-11-17)
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
               decoration: BoxDecoration(color: tokens.text, borderRadius: BorderRadius.circular(999)),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                crossAxisAlignment: CrossAxisAlignment.baseline,
-                textBaseline: TextBaseline.alphabetic,
-                spacing: 5,
-                children: [
-                  Text(
-                    value == null ? '–' : percentLabel(value),
-                    style: text.titleSmall?.copyWith(fontSize: 15, color: tokens.surface),
-                  ),
-                  Text(tag, style: text.labelSmall?.copyWith(color: tokens.surface)),
-                ],
+              child: Text(
+                value == null ? '–' : percentLabel(value),
+                style: text.titleSmall?.copyWith(fontSize: 15, color: tokens.surface),
               ),
             ),
           ],

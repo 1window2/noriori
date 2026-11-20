@@ -319,7 +319,6 @@
 - {"entity_type": "node", "id": "n_maisaka", "lang": "ja", "text": "馬郡", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maisaka", "lang": "ja", "text": "舞坂", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_aichi_mito", "lang": "ja", "text": "御油", "kind": "old_title"}
-- {"entity_type": "node", "id": "n_anjo", "lang": "ja", "text": "新安城", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_nagoya", "lang": "ja", "text": "名護屋", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_owari_ichinomiya", "lang": "ja", "text": "一ノ宮", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_owari_ichinomiya", "lang": "ja", "text": "尾張一ノ宮", "kind": "old_title"}
@@ -1654,6 +1653,7 @@
 - {"entity_type": "node", "id": "n_dome_mae_chiyozaki", "lang": "ja", "text": "大阪ドーム前千代崎", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_shin_imamiya_ekimae", "lang": "ja", "text": "南霞町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_tennoji_ekimae", "lang": "ja", "text": "南海の公園東門", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tennoji_ekimae", "lang": "ja", "text": "公園東門", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maruyama_kobe", "lang": "ja", "text": "鷹取道", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maruyama_kobe", "lang": "ja", "text": "電鉄丸山", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_suzurandai", "lang": "ja", "text": "小部", "kind": "old_title"}

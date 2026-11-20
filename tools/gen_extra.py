@@ -3,7 +3,7 @@
 import sys,os,re,json,csv,collections,math
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
-import ko,conn,unicodedata
+import ko,conn,unicodedata,en_rules
 from gen_en_names import line_name
 KANA={}
 # 이름 열쇠 읽기의 출처 (gen_source KSRC와 같은 뜻): ('wiki', 문서 제목)·('hand',)·('est',)
@@ -44,7 +44,7 @@ _RL={r['id']:r.get('line') for r in load('routes')}
 _NLINE=collections.defaultdict(set)
 for x in load('stops'):_NLINE[x['node']].add(_RL.get(x['route']))
 def _km(p,q):return math.hypot((p[0]-q[0])*111.2,(p[1]-q[1])*111.2*math.cos(math.radians(p[0])))
-def _same_place(a,nm):
+def _same_place_nm(a,nm):
     """같은 이름 노드가 그 열람 전용 역의 노선에 서거나 앞뒤 역에서 5 km 안이면 같은 곳의 같은 이름(옛 자리·옛 정류장)이다"""
     nb_=[_POS[x] for x in (a.get('after'),a.get('before')) if x in _POS]
     return any(a.get('line') in _NLINE[m] or (m in _POS and any(_km(_POS[m],q)<5 for q in nb_)) for m in _NAMEN.get(nm,()))
@@ -198,14 +198,45 @@ for a in (json.load(open(_r,encoding='utf-8')).get('report',[]) if os.path.exist
     if i in seen:continue
     seen.add(i)
     arch.append(dict(kind='line',id=i,name=n,at=at,closed=f"{a['closed_year']}-XX-XX",source=f"wikipedia:{a.get('revid')}" if a.get('revid') else 'n05'))
+# 노선도 끝 너머에 그려진 지선 역(gen_wiki branch: 분기 행 「←母里支線」의 앞말과 이름이 맞는 묶음)은 그 지선의 열람 전용 노선 역으로 옮긴다.
+# 노선 이름이 「앞말+線」「앞말+支線」인 열람 전용 노선이 하나뿐이고, 손 값(archive_fix)으로 자리를 잡지 않아 아직 끝 역 너머(앞뒤 한쪽 없음)인 역만 옮긴다.
+# 순서(seq)는 노선도 행 순서, 앞 역은 분기 행 바로 위 역이다. 맞는 노선이 없으면 그대로 두고 알린다 (日ノ丸自動車法勝寺電鉄線 母里支線, 2026-11-20 사용자 지적)
+_BRL=collections.defaultdict(set)
+for a in arch:
+    if a.get('kind')=='line':
+        for sfx in ('支線','線'):
+            if znorm(a.get('name') or '').endswith(sfx):_BRL[znorm(a['name'])[:-len(sfx)]].add(a['id'])
+_bro=collections.defaultdict(list);BRANCH_KEEP=[]
+for a in arch:
+    if a.get('kind')=='stop' and a.get('branch') and not (a.get('after') and a.get('before')) and not a.get('archive_line'):_bro[(a.get('line'),a['branch'],a['branch_at'])].append(a)
+for (ln_,root_,at_),xs in _bro.items():
+    ids_=sorted(_BRL.get(root_,()))
+    if len(ids_)!=1:BRANCH_KEEP+=[(ln_,root_,x.get('name')) for x in xs];continue
+    for k_,x in enumerate(sorted(xs,key=lambda x:x['brow']),1):x.update(archive_line=ids_[0],line=None,route=None,after=at_,before=None,km=None,seq=k_)
+for a in arch:
+    for k_ in ('branch','branch_at','brow'):a.pop(k_,None)
+if BRANCH_KEEP:print('노선도 지선 역인데 맞는 열람 전용 노선이 없어 그대로 둔 행',len(BRANCH_KEEP),BRANCH_KEEP[:12])
 if nokana_arch:raise SystemExit(f'읽기가 없어 열람 전용 노선을 만들 수 없습니다 ({len(nokana_arch)}): {nokana_arch}. data/overrides/kana.json에 line: 읽기를 넣으세요')
 _ARCHN=collections.Counter(znorm(a.get('name') or '') for a in arch if a.get('kind')=='stop')
+_ARCHBY=collections.defaultdict(list)
+for a in arch:
+    if a.get('kind')=='stop':_ARCHBY[znorm(a.get('name') or '')].append(a)
+def _arch_far(a,nm):
+    """같은 이름의 다른 열람 전용 역이 다른 곳(앞뒤 역끼리 5 km 넘게 떨어짐, 자리 모름 포함)에 있으면 참. 같은 역이 두 노선 노선도에 함께 실린 것(宮地嶽)은 같은 곳이다"""
+    pa=[_POS[y] for y in (a.get('after'),a.get('before')) if y in _POS]
+    for b in _ARCHBY.get(nm,()):
+        if b is a:continue
+        pb=[_POS[y] for y in (b.get('after'),b.get('before')) if y in _POS]
+        if not pa or not pb or min(_km(p,q) for p in pa for q in pb)>=5:return True
+    return False
 # 같은 이름 열람 전용 역이 놓인 노선들. 한 노선뿐이면(같은 역의 중복 행) 이름 키 보정 읽기는 그 역 것이다
 _ARCHL=collections.defaultdict(set)
 for a in arch:
     if a.get('kind')=='stop':_ARCHL[znorm(a.get('name') or '')].add(a.get('line') or a.get('archive_line'))
 _ANJ={a['id']:a.get('name') or '' for a in arch if a.get('kind')=='line'}
 out=[];rows=[];drop=[];KA={};LATE=set();SPILL=set()
+# 열람 전용 역 읽기의 출처: row(_add 행)·fix(archive_fix 이름·이름@노선 행)·wiki·hand·est·sd(이름 열쇠). 감사 K104가 이름 열쇠 읽기를 다시 본다
+AKSRC={}
 TODAY=AS_OF
 for a in arch:
     n=a.get('name')
@@ -218,6 +249,7 @@ for a in arch:
         if a.get('_fk2'):fix=dict(fix,**{k:v for k,v in FIX[a['_fk2']].items() if k in ('kana','ko')})
     if a['kind']=='stop':
         kana=a.get('add_kana') or fix.get('kana')
+        if kana:AKSRC[a['id']]='row' if a.get('add_kana') else 'fix'
         if not kana:
             k_=KANA.get('node:'+n);s_=KSRC.get('node:'+n) if k_ else None
             if not k_ and sdk.get(znorm(n)):k_=sdk[znorm(n)];s_=('sd',)
@@ -228,9 +260,16 @@ for a in arch:
                 bl_=(WS.get(s_[1]) or {}).get('blocks',[]) if s_[0]=='wiki' else []
                 ln_=a.get('line');mine_=_LOP.get(ln_,set())|({_LNJ.get(ln_,'')} if ln_ else set())|({_ANJ.get(a.get('archive_line'),'')} if a.get('archive_line') else set())
                 ok_=_pm([b.get('ops','') for b in bl_]+[b.get('lines','') for b in bl_],mine_) if bl_ else False
-                if not ok_ and ((not _NODEJA.get(znorm(n)) and _ARCHN[znorm(n)]<=1) or _same_place(a,znorm(n))):ok_=True
+                if not ok_ and ((not _NODEJA.get(znorm(n)) and not _arch_far(a,znorm(n))) or _same_place_nm(a,znorm(n))):ok_=True
                 if not ok_:NAMEKEY_DROP_A.append((a['id'],n,k_,s_[0]));k_=None
+            # 손 읽기 표(kana.json·kana_est.json)의 「node:이름」 열쇠도 이름 하나에 읽기 하나라, 같은 이름의 다른 곳 노드가 있으면 그 노드 읽기일 수 있다.
+            # 같은 이름 노드·다른 열람 전용 역이 없거나 같은 곳(그 노선에 서거나 앞뒤 역 5 km 안)일 때만 쓴다
+            # (志度線 東照宮前에 仙石線 東照宮前 n_toshogumae의 추정 읽기가 붙던 것, 13회차 2026-11-19. 같은 이름 함수가 아래에서 다시 정의되어
+            #  위 ③ 같은 곳 판정이 늘 거짓이던 것도 _same_place_nm으로 고침)
+            elif k_ and not ((not _NODEJA.get(znorm(n)) and not _arch_far(a,znorm(n))) or _same_place_nm(a,znorm(n))):
+                NAMEKEY_DROP_A.append((a['id'],n,k_,s_[0]+'_other_place'));k_=None
             kana=k_
+            if kana:AKSRC[a['id']]=s_[0]
         if kana:
             hk=kata2hira(kana);v=ko.NW.get(n+'|'+hk);t=v[0] if v else ko.station(hk,n)
             if v and v[1]=='namuwiki':src='namuwiki'   # 나무위키 제목이 있으면 규칙과 같아도 출처는 나무위키 (DESIGN §9.2)
@@ -262,12 +301,25 @@ for a in arch:
     if fix.get('ko'):t=fix['ko'];src='hand'
     KA[a['id']]=kana or (a.get('add_kana') or KANA.get('line:'+n) or KANA.get('node:'+n) or sdk.get('L'+znorm(n)) if a['kind']=='line' else None)
     rows.append(dict(entity_type='archive',id=a['id'],lang='ja',text=n,kana=kana,source='wikipedia'))
-    rows.append(dict(entity_type='archive',id=a['id'],lang='ko',text=t,source='estimated' if ('node:'+n in GUESS or 'line:'+n in GUESS) else src,checked=TODAY))
+    rows.append(dict(entity_type='archive',id=a['id'],lang='ko',text=t,source='ja_as_is' if a.get('_noread') else ('estimated' if ('node:'+n in GUESS or 'line:'+n in GUESS) else src),checked=TODAY))
+    # 읽기 없는 행은 추정 읽기 목록(GUESS)에 이름이 있어도 한국어가 일본어 표기 그대로다(이름 열쇠 추정 읽기를 다른 곳 역 것이라 뺀 행, 13회차)
     if a.get('_noread'):rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=n,source='ja_as_is'))
+    # 읽기가 있는 열람 전용 역은 노드와 같은 규칙(en_rules.station_reading, 장음 기호 없는 헵번)으로 영어 이름을 단다. 없으면 앱이 일본어 표기로 보여
+    # 영어 화면에서 열람 전용 역 대부분이 한자로 나왔다(839 중 영어 241, 그중 215는 일본어 그대로. 2026-11-18 사용자 지적)
+    elif a['kind']=='stop' and kana:
+        hk_=kata2hira(kana);e_=en_rules.station_reading(hk_,n);e_=en_rules.fix_station(n,hk_,e_,{}) or e_
+        rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('node:'+n in GUESS) else 'rule'))
+    # 열람 전용 노선도 읽기가 있으면 노선 영어 이름 규칙(gen_en_names.line_name)으로 단다. 노선 138개가 한국어만 있고 영어가 없었다 (2026-11-18 사용자 지적)
+    elif a['kind']=='line' and KA.get(a['id']):
+        e_=line_name(n,kata2hira(KA[a['id']]),en=True)
+        if e_:rows.append(dict(entity_type='archive',id=a['id'],lang='en',text=''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='estimated' if ('line:'+n in GUESS) else 'rule'))
 # 열람 전용 ID는 영어 이름이다 (DESIGN §2.10). 읽기를 로마자로 옮기고, 겹치면 노선 이름, 그래도 겹치면 앞 역 이름을 붙인다
 def slug(i):return re.sub(r'_line$','',re.sub(r'^[a-z]+_','',i or ''))
 JA={r['id']:r['text'] for r in rows if r['lang']=='ja'}
 NEW={};taken=set();nokana=[]
+# 은퇴한 공개 ID(id_rename.json의 옛 ID: 개명·합침으로 redirect가 걸린 ID)는 다시 쓰지 않는다. 읽기 없는 역의 자리 ID나 겹침 접미사가
+# 옛 ID로 돌아가면(志度線 東田町이 中野町의 옛 자리 ID a_shido_kawaramachi_takamatsu_kotohira를 가져감) redirect가 다른 역을 가리킨다 (2026-11-17)
+taken|={r_['old'] for r_ in json.load(open(os.path.join(ROOT,'data','overrides','id_rename.json'),encoding='utf-8'))['rows'] if r_.get('old')}
 # 읽기 근거가 없는 열람 전용 역(사람이 넣은 행)의 ID는 읽기 대신 자리로 정한다: a_<노선>_<앞 역>_<뒤 역> (앞뒤 역은 노드·열람 전용 ID에서 접두사를 뗀 영어 이름).
 # 같은 두 역 사이에 그런 역이 여럿이면 노선 방향 순서대로 second·third…를 붙인다(숫자·해시는 쓰지 않는다, DESIGN §2.10). 열람 전용 노선의 역은 그 열람 전용 노선 ID가 노선 자리다
 _ORD=['','second','third','fourth','fifth','sixth','seventh','eighth','ninth','tenth']
@@ -279,19 +331,74 @@ def _noread_id(b):
         c=base+('_'+w if w else '')
         if c not in taken:return c
     raise SystemExit(f'읽기 없는 열람 전용 역 ID를 정할 수 없습니다: {base}')
+# 역은 노드처럼 읽기의 로마자, 노선은 노선 ID처럼 영어 이름 (gen_en_names의 규칙)
+def _rbase(b,k):return 'a_'+(re.sub(r'[^a-z]+','_',unicodedata.normalize('NFKD',line_name(JA.get(b['id']),kata2hira(k))).encode('ascii','ignore').decode().lower()).strip('_') if b['kind']=='line' else romaji(k))
+# 이미 낸 읽기 기반 ID는 지킨다. 같은 읽기의 역이 새로 읽기를 얻으면 노선 이름 순서로 밑자리를 빼앗았다
+# (五日市線 武蔵上ノ原이 읽기를 얻자 青梅線 a_musashiuenohara가 a_musashiuenohara_ome로 밀림, 2026-11-18). 직전 커밋의 archive.yaml에서
+# (종류, 노선, 일본어 이름)이 같고 지금 읽기의 밑자리로 시작하는 ID면 그 행에 먼저 준다. 깨끗한 체크아웃(생성 단계 없음)에는 영향이 없다
+def _prev_ids():
+    import subprocess
+    def show(path):
+        r_=subprocess.run(['git','-C',ROOT,'show','HEAD:data/source/'+path],capture_output=True)
+        return r_.stdout.decode('utf-8') if r_.returncode==0 else ''
+    ja_={};out_={}
+    for ln_ in show('names/archive.yaml').splitlines():
+        if ln_.startswith('- {') and '"lang": "ja"' in ln_:
+            x_=json.loads(ln_[2:]);ja_[x_.get('entity_id') or x_.get('id')]=x_['text']
+    for ln_ in show('archive/archive.yaml').splitlines():
+        if ln_.startswith('- {'):
+            x_=json.loads(ln_[2:]);key_=(x_['kind'],x_.get('archive_line') or x_.get('line'),ja_.get(x_['id']))
+            out_.setdefault(key_,[]).append(x_['id'])
+    return out_
+PREV=_prev_ids()
+for b in out:
+    k=KA.get(b['id'])
+    pids=PREV.get((b['kind'],b.get('archive_line') or b.get('line'),JA.get(b['id'])),())
+    if k:
+        base=_rbase(b,k)
+        for pid in pids:
+            if (pid==base or pid.startswith(base+'_')) and pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
+        # 읽기를 새로 얻은 역(직전엔 자리 ID)도 직전 ID를 지킨다. 손 표(archive_lines 등)가 그 ID를 열쇠로 쓰고, 읽기가 생겼다고 공개 ID가 바뀌면 안 된다 (13회차 2026-11-19)
+        if b['id'] not in NEW:
+            for pid in pids:
+                if pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
+    elif b.get('_noread'):
+        # 읽기 없는 역의 자리 ID(a_<노선>_<앞 역>_<뒤 역>_second…)도 지킨다. 같은 자리에 새 역이 들어오면 서수가 밀려 蛍川의 ID를
+        # 다른 역이 받았다(西鉄 甘木線 宮の陣 앞, 12회차 M 2026-11-18 build_diff). 같은 (종류, 노선, 이름)의 직전 ID를 먼저 준다
+        for pid in pids:
+            if pid not in taken:taken.add(pid);NEW[b['id']]=pid;break
 for b in sorted(out,key=lambda b:(b['id'] in LATE,b['kind'],b.get('line') or '',b.get('after') or '',b.get('seq') or 0,JA.get(b['id']) or '')):
+    if b['id'] in NEW:continue
     k=KA.get(b['id'])
     if not k and b.get('_noread'):
         c=_noread_id(b);taken.add(c);NEW[b['id']]=c;continue
     if not k:nokana.append(JA.get(b['id']));continue
-    # 역은 노드처럼 읽기의 로마자, 노선은 노선 ID처럼 영어 이름 (gen_en_names의 규칙)
-    base='a_'+(re.sub(r'[^a-z]+','_',unicodedata.normalize('NFKD',line_name(JA.get(b['id']),kata2hira(k))).encode('ascii','ignore').decode().lower()).strip('_') if b['kind']=='line' else romaji(k));c=base
-    for h in (slug(b.get('line')),slug(b.get('after') or b.get('at'))):
+    base=_rbase(b,k);c=base
+    # 열람 전용 노선의 역은 노선 칸이 비어 있어 그 열람 전용 노선 ID로 꼬리를 단다(大口線 天神前 ← 다른 天神前과 겹침, 12회차 M)
+    for h in (slug(b.get('line') or b.get('archive_line')),slug(b.get('after') or b.get('at'))):
         if c not in taken:break
         if h:c=c+'_'+h
     if c in taken:raise SystemExit(f'열람 전용 ID가 겹칩니다: {c} ({JA.get(b["id"])})')
     taken.add(c);NEW[b['id']]=c
 if nokana:raise SystemExit(f'읽기가 없어 열람 전용 ID를 만들 수 없습니다 ({len(nokana)}): {nokana}. data/overrides/kana_est.json에 읽기를 넣으세요')
+# 같은 자리 열람 전용 역의 순서 단서 wiki_row = [노선, 부호 붙은 노선도 행 번호]. 그 노선 노선도(gen_wiki 보고서 wiki_rows.json)에서 같은 이름 역 꼴 행을 찾고
+# (같은 이름이 여럿이면 앞뒤 역 행에 가장 가까운 것), 앞 역 행에서 뒤 역 행 쪽으로 갈 때 번호가 커지면 +, 작아지면 −를 붙인다. 그래서 값이 작을수록 앞 역(after) 쪽이다.
+# 위키 행에서 나온 역과 손 행(_add·_noyear)이 같은 규칙을 탄다. 앞뒤 역이 노선도에 없거나 이름 행이 없으면 비운다. compile이 이것으로 계통 위 열람 전용 역 seq를 정한다 (2026-11-17 志度線 瓦町 앞)
+_wp=os.path.join(CAND,'wiki_rows.json');WROWS=json.load(open(_wp,encoding='utf-8')) if os.path.exists(_wp) else {}
+def _wiki_row(b):
+    W=WROWS.get(b.get('line'))
+    if not W or b.get('archive_line'):return None
+    nm=znorm(JA.get(b['id']) or '');rows_=[i for i,x in W['s'] if x==nm]
+    if not rows_:return None
+    nr=collections.defaultdict(list)
+    for i,x in W['n']:nr[x].append(i)
+    for k_,sg in (('after',1),('before',-1)):
+        if b.get(k_) not in nr:continue
+        i_,j_=min(((i,j) for i in rows_ for j in nr[b[k_]]),key=lambda p:abs(p[0]-p[1]))
+        return [b['line'],i_ if (i_-j_)*sg>0 else -i_]
+    return None
+for b in out:
+    if b['kind']=='stop' and (w_:=_wiki_row(b)):b['wiki_row']=w_
 out=[b for b in out if b['id'] not in SPILL];rows=[r for r in rows if r['id'] not in SPILL]
 for b in out:
     for k in ('after','before','archive_line'):
@@ -307,3 +414,4 @@ json.dump(drop,open(os.path.join(CAND,'archive_noname.json'),'w',encoding='utf-8
 print('열람 전용',len(out),'이름 없어 뺌',len(drop),drop[:30])
 print('열람 전용 이름 열쇠 읽기 뺌(다른 역 읽기)',len(NAMEKEY_DROP_A))
 json.dump(sorted(NAMEKEY_DROP_A),open(os.path.join(CAND,'archive_namekey_drop.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
+json.dump(AKSRC,open(os.path.join(CAND,'archive_kana_src.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0,sort_keys=True)

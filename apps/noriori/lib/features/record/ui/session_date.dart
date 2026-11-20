@@ -125,6 +125,11 @@ class _SessionDateDialogState extends State<SessionDateDialog> {
               ),
             ],
           ),
+          // 날짜 모름 화면의 기준을 알린다: 역은 모든 시기, 연결(직통·환승)은 마지막 상태 (사용자 결정 2026-11-19)
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Text(t.dateUnknownHint, style: Theme.of(context).textTheme.bodySmall?.copyWith(color: Theme.of(context).colorScheme.onSurfaceVariant)),
+          ),
         ],
       ),
       actions: [

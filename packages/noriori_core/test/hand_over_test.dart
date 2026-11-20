@@ -122,7 +122,7 @@ void main() {
     expect([for (final link in c.goneLinks) link.otherLineId], ['y']);
   });
 
-  test('구분선은 새 역 위에 한 번 놓인다', () {
+  test('이관 구간은 괄호 하나이고 안내는 괄호 맨 위 역 바로 아래에 한 번 놓인다', () {
     final got = rows('2026-11-07');
     final rules = DisplayRules(_network, today: '2026-11-07');
     final lines = rules.lines(
@@ -131,10 +131,12 @@ void main() {
       openGaps: List.filled(got.length - 1, true),
       options: const DisplayOptions(),
     );
-    final hands = lines.whereType<TransferLine>().toList();
+    // 이관 구간은 괄호 하나이고 안내는 괄호 맨 위 역 바로 아래다 (사용자 결정 2026-11-19)
+    final hands = lines.whereType<NoticeLine>().toList();
     expect(hands, hasLength(1));
-    expect(hands.single.at.node, 'n');
-    expect(lines.indexOf(hands.single), lines.indexWhere((line) => line is StopLine && line.row.node == 'n') - 1);
+    expect(hands.single.kind, NoticeKind.hand);
+    expect(hands.single.lineId, '3s');
+    expect(lines.indexOf(hands.single), lines.indexWhere(hands.single.top.matches) + 1);
   });
 
   test('새 역이 생기기 전 이관 뒤 날짜면 개업 전이라 고를 수 없다', () {

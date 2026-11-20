@@ -158,7 +158,116 @@ def lines_in(text):
                 used.append((p,p+len(n)));o.append(n);break
             p=t.find(n,p+1)
     return o
-junc=[];arch=[];stat=collections.Counter();seen=set();ARCH_OUT=[];KARI=[]
+# ---- 노선도에 폐지 해가 없는 폐역 행의 날짜를 같은 문서의 역 일람 표·年表·廃駅 목록에서 읽는다 (2026-11-17)
+_NYD=r'(\d{4})年(?:\s*[（(][^）)]{0,8}[）)])?\s*(?:(\d{1,2})月)?\s*(?:(\d{1,2})日)?'
+_NYSUF=r'(?:駅|停留場|停留所|停車場|乗降場|仮乗降場|仮停車場|仮停留場|仮駅|臨時乗降場|臨時停留場|臨時停車場|臨時駅)'
+def _nyclean(s):
+    s=re.sub(r'<!--.*?-->','',s,flags=re.S)
+    s=re.sub(r'<ref[^>]*/>|<ref[^>]*>.*?</ref>','',s,flags=re.S)
+    s=re.sub(r'\{\{(?:R|Sfn|sfn|efn|Refnest|refnest|NDLDC)\|[^{}]*\}\}','',s)
+    s=re.sub(r'\[\[(?:[^|\]]*\|)?([^\]]*)\]\]',r'\1',s)
+    s=re.sub(r"'''?|\{\{right\}\}|&nbsp;",'',s)
+    s=re.sub(r'style="[^"]*"\s*\|?|rowspan="\d+"\s*\|?|colspan="\d+"\s*\|?','',s)
+    # 「休止（廃止日不明）」의 廃止는 폐지일이 아니다
+    s=re.sub(r'[（(]?廃止日不明[)）]?|廃止時期不明|廃止年不明','',s)
+    return s
+def _nyday(y,mo,d,edge):
+    """해·달·날 → EDTF. edge 'lo'·'hi'는 「以前」「以降」의 열린 끝"""
+    if not y:return None
+    v=y+'-'+(f'{int(mo):02d}' if mo else 'XX')+'-'+(f'{int(d):02d}' if d else 'XX')
+    return v
+def _nyspan(head,y,mo,d):
+    """年表 머리말의 「以前」「以降」「頃」「-」을 범위로"""
+    v=_nyday(y,mo,d,None)
+    if re.search(r'以前|まで',head):return f'[..{y}-12-31]'
+    if re.search(r'以降',head):return f'[{y}-01-01..]'
+    m=re.search(r'(\d{4})年\s*[-–~～]\s*(\d{4})年頃',head)
+    if m:return f'[{m.group(1)}-01-01..{m.group(2)}-12-31]'
+    return v
+def noyear_dates(wt,name):
+    """같은 문서에서 그 역의 개업·폐지(휴지)를 읽는다. 결과 dict(src, opened, closed, kind 'close'|'susp', legal, skip 이유, text)"""
+    nm=re.escape(name)
+    # ① 역 일람 표: 이름 칸이 그 역인 행(노선도 BS 틀 덩어리는 뺀다)
+    for ch in re.split(r'\n\|-',wt):
+        if '{{BS' in ch:continue
+        c=_nyclean(ch.split('\n|}')[0]);cells=[x.strip().rstrip('*').strip() for x in re.split(r'\n[|!]|\|\||!!',c)]
+        if not any(re.sub(r'\s*[（(].*$','',x) in (name,name+'駅',name+'停留場') for x in cells):continue
+        t=' / '.join(x for x in cells if x)
+        r=dict(src='table',text=t[:200])
+        if re.search(r'未成|未開業|未開通|計画|予定|構想',t):return dict(r,skip='plan')
+        if re.search(r'貨物|（貨）|\(貨\)|信号',t):return dict(r,skip='freight')
+        cl=[m for m in re.finditer(_NYD+r'[^0-9/、。]{0,12}?(廃止|廃駅)',t)];su=[m for m in re.finditer(_NYD+r'[^0-9/、。]{0,12}?休止',t)]
+        op=re.search(_NYD+r'[^0-9/、。]{0,6}?(開設|開業|設置|新設)',t)
+        if re.search(r'移転|改称|統合',t) and not cl:return dict(r,skip='moved')
+        o=_nyday(*op.groups()[:3],None) if op else None
+        if su and (not cl or cl[0].start()>su[-1].start()):
+            return dict(r,kind='susp',opened=o,closed=_nyday(*su[-1].groups()[:3],None),legal=_nyday(*cl[-1].groups()[:3],None) if cl else None)
+        if cl:return dict(r,kind='close',opened=o,closed=_nyday(*cl[-1].groups()[:3],None),legal=None)
+        # 표 행은 있으나 날짜가 없다 → 年表로 넘어간다
+        break
+    # ② 年表·廃駅 목록의 글머리 행
+    yr=None;mo_=None;found=[];heads_={};head_in=''
+    for ln in wt.split('\n'):
+        if not ln.startswith('*'):continue
+        c=_nyclean(ln)
+        m=re.match(r'^\*\s*'+_NYD,c)
+        if m and not c.startswith('**'):yr=m.group(1);heads_={1:m.group(0)[1:].strip()}
+        # 廃駅 목록 「* 山道駅：1904年7月18日廃止」「* 長尾西駅：公文明駅 - 長尾駅間、1915年廃止」
+        m=re.match(r'^\*+\s*(?:（貨）|\(貨\))?'+nm+_NYSUF+r'(?:（[^）]*）)?\s*[：:（(\-–—]',c)
+        if m:
+            if re.match(r'^\*+\s*(?:（貨）|\(貨\))',c) or re.search(r'貨物|信号',c):found.append(dict(src='list',text=c[:200],skip='freight'));continue
+            cl=list(re.finditer(_NYD+r'[^0-9、。]{0,6}?(廃止|廃駅)',c));su=list(re.finditer(_NYD+r'[^0-9、。]{0,6}?休止',c))
+            op=re.search(_NYD+r'[^0-9、。]{0,6}?(開設|開業|設置|新設)',c)
+            o=_nyday(*op.groups()[:3],None) if op else None
+            if su:found.append(dict(src='list',text=c[:200],kind='susp',opened=o,closed=_nyday(*su[0].groups()[:3],None),legal=_nyday(*cl[-1].groups()[:3],None) if cl else None))
+            elif cl:found.append(dict(src='list',text=c[:200],kind='close',opened=o,closed=_nyday(*cl[-1].groups()[:3],None),legal=None))
+            continue
+        # 年表 행: 날짜 머리말 + 「A駅・B駅が廃止」. 머리말 뒤 쌍점이 없는 행(「** 6月1日 並木橋駅、新太田町駅休止」)은 날짜까지를 머리말로 본다
+        hm=re.match(r'^(\*+)\s*([^：:]{0,40}?)[：:]',c) or re.match(r'^(\*+)\s*((?:\d{4}年(?:\s*[（(][^）)]{0,8}[）)])?\s*)?\d{1,2}月(?:\d{1,2}日)?)\s',c) or re.match(r'^(\*+)\s*(\d{4}年(?:\s*[（(][^）)]{0,8}[）)])?\s*(?:[-–~～]\s*\d{4}年)?\s*(?:以前|以降|頃))\s',c)
+        # 날짜 머리말이 없는 더 깊은 글머리(「*** 武蔵小杉停留場・…が廃止」)는 바로 위 얕은 글머리의 날짜를 잇는다
+        lv_=len(c)-len(c.lstrip('*'))
+        if hm and (re.search(_NYD,hm.group(2)) or re.search(r'\d{1,2}月',hm.group(2)) or '同年' in hm.group(2)):heads_[lv_]=hm.group(2);[heads_.pop(k_) for k_ in [k_ for k_ in heads_ if k_>lv_]]
+        elif lv_>1 and any(k_<lv_ for k_ in heads_):
+            hm=re.match(r'^(\*+)()\s*',c);head_in=heads_[max(k_ for k_ in heads_ if k_<lv_)]
+        if not hm:continue
+        head=hm.group(2) or head_in
+        dm=re.search(_NYD,head);dd=re.search(r'(\d{1,2})月(?:(\d{1,2})日)?',head)
+        if dm:y,mo,d=dm.groups()
+        elif dd and yr:y,mo,d=yr,dd.group(1),dd.group(2)
+        elif re.search(r'同年',head) and yr:y,mo,d=yr,None,None
+        else:continue
+        body=c[hm.end():]
+        for sen in re.split(r'。',body):
+            # 「A駅・B駅が廃止」「A駅とB駅を統合し」「鏡田・池内・片山の各季節停留場を廃止」「【駅廃止】元油津、妻手橋、…」
+            p=re.search(r'(?:^|[、・ 　の）])((?:[^。：、・ 　]{1,14}?'+_NYSUF+r'(?:（[^）]*）)?[・、と])*)'+nm+_NYSUF+r'(?:（[^）]*）)?((?:[・、と][^。：、・ 　]{1,14}?'+_NYSUF+r'(?:（[^）]*）)?)*)(?:の両駅|の各駅|各駅)?(?:を|が|も|は)?(?:前日限りで|同時に)?(廃止|休止|廃駅|統合)(?!後)',sen)
+            if not p:p=re.search(r'(?:^|[、 　の）])((?:[^。：、・ 　]{1,10}・)*)'+nm+r'((?:・[^。：、・ 　]{1,10})*)の(?:各|両)(?:季節|臨時)?'+_NYSUF+r'(?:を|が|も)?(廃止|休止)',sen)
+            if not p:
+                q=re.search(r'【駅廃止】([^【]*)',sen)
+                if q and re.search(r'(?:^|[、\s])'+nm+r'(?:'+_NYSUF+r')?(?:[、\s]|$)',q.group(1)):p=re.match(r'()()(廃止)','廃止')
+            if not p:continue
+            # 화물: 그 역 이름 앞의 （貨） 표지, 또는 (【駅廃止】 목록이 아닌) 문장의 貨物·信号
+            if re.search(r'(?:（貨）|\(貨\))'+nm,sen) or ('【駅廃止】' not in sen and re.search(r'貨物|信号',sen)):found.append(dict(src='chron',text=sen[:200],skip='freight'));continue
+            v=_nyspan(head,y,mo,d)
+            found.append(dict(src='chron',text=(head+'：'+sen)[:200],kind='susp' if p.group(3)=='休止' else 'close',opened=None,closed=v,legal=None))
+        # 그 역의 재개 서술(「X駅が営業再開」「X駅を再開」)
+        if re.search(nm+_NYSUF+r'(?:（[^）]*）)?(?:が|を|も|は)?(?:営業|運転|旅客営業)?(?:再開|復活)',c):found.append(dict(src='chron',text=c[:200],skip='reopen'))
+    if not found:return None
+    if any(f.get('skip')=='reopen' for f in found):return dict(next(f for f in found if f.get('skip')=='reopen'))
+    if any(f.get('skip') for f in found):return dict(next(f for f in found if f.get('skip')))
+    # 휴지 뒤 폐지: 휴지 시작이 끝, 나중 폐지일은 법적 폐지
+    su=[f for f in found if f['kind']=='susp'];cl=[f for f in found if f['kind']=='close']
+    # 문서 안의 폐지(휴지) 해가 서로 다르면(戎 1901·1907) 판정하지 않는다
+    ys={str(f['closed']).strip('[.')[:4] for f in (su or cl)}
+    if len(ys)>1:return dict(found[0],skip='conflict',text=' // '.join(f['text'][:80] for f in found))
+    if su:
+        f=dict(su[0])
+        if cl and not f.get('legal'):f['legal']=cl[-1]['closed'] if not str(cl[-1]['closed']).startswith('[') else None
+        return f
+    return dict(cl[0])
+NYH=json.load(open(os.path.join(ROOT,'data','overrides','archive_fix.json'),encoding='utf-8')).get('_noyear',{});NYH_USED=set()
+junc=[];arch=[];stat=collections.Counter();seen=set();ARCH_OUT=[];KARI=[];NOYEAR=[]
+# 노선별 노선도 행 위치: 지금 역 행(노드)과 역 꼴 행(이름). gen_extra가 같은 자리 열람 전용 역의 순서(wiki_row)를 정할 때 쓴다(손 행 _add 포함)
+WROWS={}
 years={};kmcheck=[];unmatched=[];archnames=[];ins=[];kmrows={}
 STICON=re.compile(r'(BHF|HST|BST)')
 NOT=re.compile(r'専用|貨物|（社）|\(社\)|工場|車両|基地|信号|操車|車庫|機関区|運転所|検車|電留線|留置|発電|鉱|炭|森林|軌道|索道|ロープウェイ')
@@ -202,6 +311,24 @@ for lid_,l in lines.items():
     _mr=r_by_line[lid_][0] if r_by_line[lid_] else None
     _fa=[i for i,n in pos if _mr and n==_mr['from']];_fb=[i for i,n in pos if _mr and n==_mr['to']]
     flip_=bool(_fa and _fb and _fa[0]>_fb[-1])
+    # 노선도 맨 끝(맨 앞) 너머에 그려진 역 묶음이 이 노선의 연장이 아니라 중간 역에서 갈라진 지선일 수 있다(日ノ丸自動車法勝寺電鉄線: 阿賀 「←母里支線」,
+    # 母里支線 역 原·猪小路·与一谷·不動尊·母里가 法勝寺 뒤 다른 열에 그려짐, 2026-11-20 사용자 지적). 분기 아이콘(ABZ) 행의 표기 「…支線」「…線」 앞말이
+    # 너머 묶음의 역 이름과 같으면 그 묶음 전체를 그 분기 행 바로 위 역(branch_at)에서 갈라지는 지선의 역(branch)으로 표시한다. 옮기는 것은 gen_extra다
+    _ends=(min(posd),max(posd)) if posd else (None,None)
+    _stn=lambda q:(lambda m:znorm(re.sub(r'(仮|臨時)$','',m.group(1))) if m else None)(ST.match(flat[q]['t'].strip())) if any(STICON.search(x) for c in flat[q]['c'] for x in c) else None
+    _blk={side:{_stn(q) for q in qs}-{None} for side,qs in (('a',range(_ends[1]+1,len(flat))),('b',range(0,_ends[0]))) if _ends[0] is not None}
+    _br={}
+    for q in range(len(flat)):
+        if q in posd or not any('ABZ' in x for c in flat[q]['c'] for x in c):continue
+        lab_=re.sub(r'\s*-?\s*\d{4}.*$','',re.sub(r'[←→↑↓]','',flat[q]['t'])).strip()
+        root_=znorm(re.sub(r'(支線|線)$','',lab_)) if re.search(r'線$',lab_) else ''
+        at_=next((posd[z] for z in range(q,-1,-1) if z in posd),None)
+        for side,ns in _blk.items():
+            if root_ and root_ in ns and at_:_br[side]=(at_,root_)
+    _wr=WROWS[lid_]=dict(n=[[i,n] for i,n in pos],s=[])
+    for i,r in enumerate(flat):
+        m_=ST.match(r['t'].strip())
+        if m_ and i not in posd and any(STICON.search(x) for c in r['c'] for x in c):_wr['s'].append([i,znorm(re.sub(r'(仮|臨時)$','',m_.group(1)))])
     for i,r in enumerate(flat):
         icons=[x for c in r['c'] for x in c]
         m=ST.match(r['t'].strip())
@@ -231,7 +358,34 @@ for lid_,l in lines.items():
         y0,y1=m.group(2),m.group(3)
         closedicon=any(re.match(r'^(ue|ex|e[A-Z]|x[A-Z]|uex)',x) for x in icons if STICON.search(x))
         if not(closedicon or y1):continue
-        if not y1:continue
+        # 폐역 아이콘인데 노선도에 폐지 해가 없는 행(志度線 出晴·志度西口·東田町·白羽)은 같은 문서의 역 일람 표·年表·廃駅 목록에서
+        # 그 역의 폐지(휴지) 날짜를 읽는다(noyear_dates). 읽은 날짜가 기준일 전이면 열람 전용 역으로 만들고, 휴지 뒤 폐지는 휴지 시작이 끝·뒤 폐지일은
+        # 법적 폐지다(DESIGN 휴지·폐지 결과 기준). 未成·화물·이전·재개·날짜 엇갈림·열린 범위·기준일 뒤 폐지는 만들지 않고
+        # 이유와 함께 보고서(wiki_archive_kari.json noyear)에 남긴다. 같은 이름 노드와 자리가 겹치는 행은 gen_extra 자리·기간 판정(_known)이 뺀다. 기준일 뒤 폐지(post1950)는 기록 가능해야 하는데 빠진 역 후보다 (2026-11-17 사용자 지적)
+        NYD=None
+        if not y1:
+            nm_=re.sub(r'(仮|臨時)$','',m.group(1))
+            NYD=noyear_dates(rec.get('wikitext') or '',nm_)
+            # 규칙이 못 읽거나(날짜 없음·엇갈림·열린 범위) 잘못 읽는 행은 사람이 근거를 확인한 손 표(archive_fix.json "_noyear", 키 「이름@노선」)를 쓴다.
+            # drop은 만들지 않을 행(옛 경로라 자리를 못 정함 등), name은 노선도 표기 오기(南武是正→南武是政)를 고친 이름이다
+            h_=NYH.get(f'{nm_}@{lid_}')
+            if h_:
+                NYD=dict(src='hand',skip='hand_drop',text=h_['why']) if h_.get('drop') else dict(src='hand',kind='close',opened=h_.get('opened'),closed=h_['closed'],legal=h_.get('legal_abolition'),text=h_['why'],name=h_.get('name'))
+                NYH_USED.add(f'{nm_}@{lid_}')
+            why_=None
+            if NYD is None:why_='no_date'
+            elif NYD.get('skip'):why_=NYD['skip']
+            else:
+                c_=str(NYD['closed'])
+                hi_=c_[c_.index('..')+2:-1] if c_.startswith('[') else c_
+                if not hi_:why_='open_range'
+                elif hi_[:4]>='1950':why_='post1950'
+            if why_:
+                NOYEAR.append(dict(line=lid_,line_ja=l['name_ja'],name=nm_,open=y0,km=r['k'] or None,prev=ja.get(prevn),icons=icons,revid=rec['revid'],why=why_,found=NYD))
+                continue
+            y1=(str(NYD['closed']).strip('[.')[:4])
+            if NYD.get('name'):nm_=NYD['name']
+            if not y0 and NYD.get('opened'):y0=NYD['opened'][:4]
         kw=float(r['k']) if re.match(r'^[\d.]+$',r['k'] or '') else None
         pk=None;nk=None;pn=None;nn=None
         for q in range(i-1,-1,-1):
@@ -248,7 +402,7 @@ for lid_,l in lines.items():
         # 열람 전용 역 (2회차 종합 K24). 앞뒤 역이 둘 다 있고 이 노선 한 계통 위에 있으면 앞뒤를 계통 순서로 놓고 km를 앞뒤 역의 계통 km 사이로
         # 환산한다. 행은 빼지 않는다(열람 전용 ID는 이름 읽기로 정해져 한 행이 빠지면 같은 이름 다른 행 ID가 바뀐다). 화물 아이콘·다른 계통 사이·
         # 같은 역 사이·위키 km 범위 밖은 km를 비우고 보고서(wiki_archive_kari.json)에 남겨 removed·archive_fix로 판정한다
-        nm0=re.sub(r'(仮|臨時)$','',m.group(1))
+        nm0=(NYD.get('name') if NYD else None) or re.sub(r'(仮|臨時)$','',m.group(1))
         def _out(why):ARCH_OUT.append((l['name_ja'],nm0,ja.get(prevn),ja.get(nxt),why))
         nxt=next((posd[q] for q in sorted(posd) if q>i),None)
         if not any(re.search(r'BHF|HST',x) for x in icons) or re.search(r'[（(]貨[)）]',r['t']):_out('화물 아이콘')
@@ -290,8 +444,17 @@ for lid_,l in lines.items():
             aft,bef=(nxt,prevn) if flip_ else (prevn,nxt)
             K_=rkm(rid_) if rid_ else None;ka=ak(pq if prevn else nq)
             km_=dround(kw) if kw is not None and K_ and ka is not None and not flip_ and abs(K_.get(nb_,-99)-ka)<.5 else None
+            # 끝 역 너머인데 위키 km가 그 역의 안쪽이면(五日市線 옛 立川–拝島 구간의 역이 拝島 0 km에서 거꾸로 센 km) 같은 축이 아니다
+            if km_ is not None and nb_ in (K_ or {}) and ((aft is None and km_>K_[nb_]) or (bef is None and km_<K_[nb_])):km_=None
             if not nb_:_out('앞뒤 역 없음')
-        arch.append(dict(kind='stop',id='a_'+stable(lid_,m.group(1)),line=lid_,route=rid_,after=aft,before=bef,name=nm0,opened=(y0+'-XX-XX') if y0 else None,closed=(y1+'-XX-XX') if y1 else None,km=km_,source=f"wikipedia:{rec['revid']}"))
+        # 노선도 표기를 고친 이름(손 표 name)도 그 행 이름이다
+        if [i,znorm(nm0)] not in _wr['s']:_wr['s'].append([i,znorm(nm0)])
+        a_=dict(kind='stop',id='a_'+stable(lid_,m.group(1)),line=lid_,route=rid_,after=aft,before=bef,name=nm0,opened=(y0+'-XX-XX') if y0 else None,closed=(y1+'-XX-XX') if y1 else None,km=km_,source=f"wikipedia:{rec['revid']}")
+        if not pick_ and not (prevn and nxt) and _br.get('a' if prevn and not nxt else 'b'):a_.update(branch=_br['a' if prevn and not nxt else 'b'][1],branch_at=_br['a' if prevn and not nxt else 'b'][0],brow=i)
+        if NYD:
+            a_.update(opened=NYD.get('opened') or a_['opened'],closed=NYD['closed'],_ny=True)
+            if NYD.get('legal'):a_['legal_abolition']=NYD['legal']
+        arch.append(a_)
         stat['archive_stop']+=1
     kmrows[lid_]=[(n,float(flat[i]['k'])) for i,n in pos if re.match(r'^[\d.]+$',flat[i]['k'] or '')]
     # 위키 진행 방향과 계통 순서 비교
@@ -628,14 +791,20 @@ junc=_out+[t_ for t_ in TH if not any(t_ is z_ for z_ in _out)]
 for j in junc:
     if j.pop('continue_',None):j['continue']=True
 # ── 같은 노선의 지선·옛 경로 계통은 양 끝에서 그 노드를 지나는 같은 노선 다른 계통으로 가리킨다(같은 궤간일 때만, ガーラ湯沢)
+ledges_at=collections.defaultdict(list)
+for e in edges:ledges_at[(e['seed_line'],e['a'])].append(e);ledges_at[(e['seed_line'],e['b'])].append(e)
+rid_line={q['id']:q['line'] for q in routes}
 for r in routes:
     if r.get('role')!='branch':continue
     p=rpath.get(r['id'])
     for x,nx_ in ((r['from'],p[1] if p and len(p)>1 else None),(r['to'],p[-2] if p and len(p)>1 else None)):
         others=[q for q in r_by_line[r['line']] if q['id']!=r['id'] and x in (rpath.get(q['id']) or ())]
-        if not others and p:continue
+        # 계통마다 한 줄로 고른 최단 경로(rpath)만 보면, 옛 선형과 새 선형이 함께 있는 노선에서 그 역을 지나지 않는 쪽 길이 골라져 분기가 빠진다
+        # (東北本線 松島 ← 松島–高城町, 西鉄 循環線 祇園町·柳橋 ← 옛 경로, ポートライナー 市民広場 ← 空港線). 이 계통 전용이 아닌 그 노선 칸이 그 역에 닿으면 지나가는 길이 있다
+        shared_=[(e['b'] if e['a']==x else e['a']) for e in ledges_at.get((r['line'],x),()) if e.get('route_only')!=r['id'] and (not e.get('route_only') or e['route_only'] in rid_line and rid_line[e['route_only']]==r['line'])]
+        if not others and not shared_ and p:continue
         if p and nx_:
-            nO={n for q in others for P in [rpath[q['id']]] for i,n in enumerate(P) if (i>0 and P[i-1]==x) or (i+1<len(P) and P[i+1]==x)}
+            nO={n for q in others for P in [rpath[q['id']]] for i,n in enumerate(P) if (i>0 and P[i-1]==x) or (i+1<len(P) and P[i+1]==x)}|set(shared_)
             per=compat(r['line'],x,nO,r['line'],x,{nx_})
             if not per:GCUT.append((r['line'],r['line'],x,r['id'],[None,'ongoing'],[]));stat['branch_gauge']+=1;continue
             vs=clipv([None,'ongoing'],per)
@@ -678,9 +847,13 @@ os.makedirs(CAND,exist_ok=True)
 if TH_SKIP:print('THROUGH 행 중 노선이 그 노드를 지나지 않아 뺀 것',TH_SKIP)
 json.dump(dict(gauge_cut=GCUT,through_skip=TH_SKIP,derived=[(j['line'],j['other'],j['at'],j.get('side'),bool(j.get('continue'))) for j in junc if j['source']=='derived']),open(os.path.join(CAND,'junction_report.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 dump('junctions/wikipedia.yaml',junc,'위키 노선도에서 뽑은 분기. verified는 사람이 확인했다는 뜻')
+if set(NYH)-NYH_USED:raise SystemExit(f'archive_fix.json _noyear 행에 맞는 노선도 행이 없습니다: {sorted(set(NYH)-NYH_USED)}')
 _a={}
 for a in arch:_a.setdefault(a['id'],a)
-arch=list(_a.values())
+# 날짜를 문서 본문에서 읽은 행(_ny)은 같은 노선·같은 이름의 노선도 해 행이 있으면 그 행에 맡긴다
+_reg={(a['line'],a['name']) for a in _a.values() if not a.get('_ny')}
+arch=[a for a in _a.values() if not (a.get('_ny') and (a['line'],a['name']) in _reg)]
+for a in arch:a.pop('_ny',None)
 for _f in ('archive.yaml',):
     _p=os.path.join(SRC,'archive',_f)
     if os.path.exists(_p):os.remove(_p)
@@ -712,7 +885,8 @@ print('환승 쌍',len(pairs))
 json.dump(kmrows,open(os.path.join(CAND,'wiki_km.json'),'w',encoding='utf-8'),ensure_ascii=False)
 json.dump(unmatched,open(os.path.join(CAND,'wiki_unmatched.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 # 계통 자리를 못 정해 뺀 열람 전용 역(앞뒤 역이 한 계통 위에 없음·km 범위 밖)과 仮乗降場·臨時駅 표지 후보. 사람이 archive_fix·stop_status로 옮긴다
-json.dump(dict(archive_out=ARCH_OUT,kari=KARI),open(os.path.join(CAND,'wiki_archive_kari.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
+json.dump(WROWS,open(os.path.join(CAND,'wiki_rows.json'),'w',encoding='utf-8'),ensure_ascii=False)
+json.dump(dict(archive_out=ARCH_OUT,kari=KARI,noyear=NOYEAR),open(os.path.join(CAND,'wiki_archive_kari.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0)
 # 끼울 역 후보는 보고서다. 매번 새로 쓰고, 사람이 확인한 것만 data/overrides/wiki_insert*.json으로 옮긴다 (가짜 역 전수 검증 2026-11-09)
 _p=os.path.join(CAND,'wiki_insert.json')
 json.dump(ins,open(_p,'w',encoding='utf-8'),ensure_ascii=False,indent=0)

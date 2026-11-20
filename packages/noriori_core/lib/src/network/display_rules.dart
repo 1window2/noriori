@@ -11,6 +11,7 @@ final class ArchiveStop {
     required this.beforeNode,
     required this.closedYear,
     required this.km,
+    this.seq,
   });
 
   final String id;
@@ -18,6 +19,9 @@ final class ArchiveStop {
   final String? beforeNode;
   final String closedYear;
   final double? km;
+
+  /// 그 계통 진행 방향의 순번(archive_stop.seq, DESIGN §4.5). 같은 자리에 여럿이면 이 순서다. 옛 팩에는 없다.
+  final int? seq;
 }
 
 /// 열람 전용 노선. 역에서 갈라지는 줄로만 보인다.
@@ -48,7 +52,12 @@ final class DisplayOptions {
 
 /// 줄 하나에 그릴 연결.
 final class DisplayLink {
-  const DisplayLink({required this.link, required this.gone, this.before = const [], this.suspended = false});
+  const DisplayLink({
+    required this.link,
+    required this.gone,
+    this.before = const [],
+    this.suspended = false,
+  });
 
   final SelectorLink link;
 
@@ -236,11 +245,16 @@ final class EndLine extends SelectorLine {
     this.trunkThrough = false,
     this.stackAt = 0,
     this.stackOf = 1,
+    this.stackLive = false,
     super.lanes,
   });
 
   final int gap;
   final SelectorRow at;
+
+  /// 같은 끝 묶음에 그날 있는 노선이 하나라도 있다. 묶음의 옅어지는 선은 그 색(현행색) 하나로 그린다.
+  /// 줄마다 색을 바꾸면 현행·폐선이 섞인 묶음에서 선이 줄 경계에서 끊겨 보였다(網走 釧網本線·湧網線, 사용자 결정 2026-11-20)
+  final bool stackLive;
 
   /// 같은 끝에 이어지는 노선이 여럿이면 한 묶음으로 촘촘히 쌓는다 (사용자 결정 2026-11-08, A안).
   /// [stackAt] 0이 역에 가장 가까운 줄이고 그 줄만 점선을 길게 긋는다
@@ -268,10 +282,17 @@ final class ArchiveLine extends SelectorLine {
 
 /// 폐지 구간의 경계. 위쪽이 영업, 아래쪽이 폐지면 [year]가 있다.
 final class SectionLine extends SelectorLine {
-  const SectionLine({required this.gap, this.year, this.suspended = false, super.lanes});
+  const SectionLine({required this.gap, this.year, this.suspended = false, this.opens, this.stem, super.lanes});
 
   final int gap;
   final String? year;
+
+  /// 끝 이어짐 줄과 역 사이에 놓인 구분선이다. 끝 이어짐(다른 노선)으로 가는 점선 줄기가 이 줄을 끊기지 않고 지나간다.
+  /// 값은 그 이어짐이 모두 폐선인가다. 계통 끝에 닿은 폐지 구간은 다른 노선 줄 안쪽에서 시작하고 끝난다 (사용자 결정 2026-11-19)
+  final bool? stem;
+
+  /// 고른 날에 아직 개업 전인 구간이면 그 개업 해다. 폐지 해 대신 「1951년 개업」으로 적는다
+  final String? opens;
 
   /// 폐지가 아니라 운휴 중인 구간의 경계다. 「운휴 중」으로 적는다 (DESIGN §8 상태표, 디자인 감사 C08)
   final bool suspended;
@@ -301,6 +322,52 @@ final class TransferLine extends SelectorLine {
   final bool back;
   final bool whole;
   final String? closedYear;
+}
+
+/// 괄호로 묶는 구간의 상태 (사용자 결정 2026-11-19 「칸마다 그 날짜의 상태 하나」).
+/// 이관은 다른 노선으로 기록되는 구간, 나머지는 그날 탈 수 없는 구간이다
+enum NoticeKind { hand, closed, suspended, before }
+
+/// 괄호 끝이 걸리는 줄. 역 줄이면 [seq], 열람 전용 역 줄이면 [archive]다
+final class BracketAnchor {
+  const BracketAnchor({this.seq, this.archive});
+
+  final int? seq;
+  final String? archive;
+
+  bool matches(SelectorLine line) => switch (line) {
+        StopLine(:final row) => seq != null && row.seq == seq,
+        ArchiveLine(:final stop) => archive != null && stop.id == archive,
+        _ => false,
+      };
+}
+
+/// 괄호로 묶은 구간의 안내 (사용자 결정 2026-11-19, 폐지·이관 구분선을 대신함).
+/// 상태가 같은 칸이 이어지는 만큼 [top]부터 [bottom]까지 괄호 하나로 묶고, 이 줄은 괄호 맨 위 역(그 역에 딸린 아래쪽 분기·끝 이어짐 줄 다음) 바로 아래에 놓인다.
+/// 폐지일이 지난 칸은 이관보다 폐지가 앞선다. 날짜를 모르면 마지막 상태다
+final class NoticeLine extends SelectorLine {
+  const NoticeLine({
+    required this.kind,
+    required this.top,
+    required this.bottom,
+    this.lineId,
+    this.on,
+    this.year,
+    this.at,
+    super.lanes,
+  });
+
+  final NoticeKind kind;
+  final BracketAnchor top;
+  final BracketAnchor bottom;
+
+  /// 이관 구간이면 이어받은 노선과 넘어간 날, 「노선 보기」가 넘어갈 역
+  final String? lineId;
+  final String? on;
+  final SelectorRow? at;
+
+  /// 폐지 구간이면 폐지 해, 개업 전 구간이면 개업 해다. 모르면 '?'
+  final String? year;
 }
 
 /// `route_link`를 줄로 바꾼다 (ARCHITECTURE §3.3 `DisplayRules`, DESIGN §8.1).
@@ -337,6 +404,12 @@ final class DisplayRules {
     return a == null || b == null || a.intersection(b).isNotEmpty;
   }
 
+  /// 두 노선이 같은 사슬을 실제로 나누는가. 사슬을 모르면 거짓이다
+  bool _sharesLineage(String? a, String? b) {
+    final x = _lineages[a], y = _lineages[b];
+    return x != null && y != null && x.intersection(y).isNotEmpty;
+  }
+
   /// 같은 회사인가. 회사 판정은 이름이 아니라 `operator_id`다 (DESIGN §8.1).
   bool sameCompany(String? a, String? b) =>
       (_companies[a] ?? const <String>{}).intersection(_companies[b] ?? const <String>{}).isNotEmpty;
@@ -347,6 +420,11 @@ final class DisplayRules {
   /// 그날 있던 연결이라도 상대 노선이 그 역에서 오늘 영업하지 않으면 폐선 색이다.
   /// 끝난 날은 이 노선과의 연결이 끝난 날이 아니라 상대 계통의 그 역 정차가 끝난 날이다.
   /// 이관으로 이 노선 쪽 연결만 끝난 경우(2020년의 金沢 北陸新幹線)를 흐리게 그리지 않는다 (실화면 검수 2026-11-08)
+  /// 연결·병주가 「없어졌는가」를 가르는 날. 날짜를 고른 화면은 그 날(범위의 첫날), 아니면 오늘이다.
+  /// 예전에는 늘 오늘이라, 1990년 名鉄岐阜市内線처럼 지금은 없는 노선을 그 시절로 보면 그날 영업한 연결도 흐리게 「~2005」로 나왔다 (2026-11-18)
+  String? _viewDay;
+  String get _day => _viewDay ?? today;
+
   bool _gone(SelectorLink link, {required bool onDate, required String node}) {
     if (!onDate) return true;
     final route = link.otherRouteId;
@@ -361,10 +439,10 @@ final class DisplayRules {
         if (to == null || to.compareTo(DateSpan.maxDate) >= 0) return false;
         if (end == null || to.compareTo(end) > 0) end = to;
       }
-      if (found) return end!.compareTo(today) <= 0;
+      if (found) return end!.compareTo(_day) <= 0;
     }
     final end = link.validToHi;
-    return end != null && end.compareTo(today) <= 0;
+    return end != null && end.compareTo(_day) <= 0;
   }
 
   /// (노선, 노드)마다 지금도 운휴 중인 그 노선 칸이 운휴에 들어간 날들. 운휴가 끝나지 않은(또는 오늘 뒤에 끝나는) 칸만 본다
@@ -390,6 +468,21 @@ final class DisplayRules {
     return out;
   }();
 
+  /// 열람 전용 역 묶음이 없어진 해: 가장 늦은 폐역 해. 모르면 「?」(폐지 구간)
+  static String _latestYear(List<ArchiveStop> stops) {
+    final years = [
+      for (final stop in stops)
+        ?int.tryParse(stop.closedYear.length >= 4 ? stop.closedYear.substring(0, 4) : ''),
+    ];
+    return years.isEmpty ? '?' : '${years.reduce((a, b) => a > b ? a : b)}';
+  }
+
+  /// 0 km 칸이 잇는 두 노드(나뉜 역 쌍). 양쪽 방향 모두 든다
+  late final Set<String> _zeroPairs = {
+    for (final edge in network.data.edges)
+      if (edge.meters == 0) ...['${edge.from}\u0000${edge.to}', '${edge.to}\u0000${edge.from}'],
+  };
+
   /// 끝난 연결이 상대 노선 칸의 운휴로 끝났는가. 연결이 끝난 날 그 역에 닿는 상대 노선 칸이 운휴에 들어가 지금도 운휴다
   bool _suspendedEnd(SelectorLink link, String node) {
     final end = link.validToHi;
@@ -412,15 +505,19 @@ final class DisplayRules {
     // 사슬은 가장 늦게 끝나는 토막부터 잇는다. 앞 토막이 먼저 앞 노선을 가져가면 최신 토막에 앞 노선이 안 붙는다
     // (上田 しなの鉄道線: 1997–2019 토막이 信越本線을 가져가 날짜 모름 화면에서 信越本線이 사라짐, 10회차 G1 chubu_1-005)
     String endOf(DisplayLink item) => item.link.validToHi ?? DateSpan.maxDate;
-    final order = [...items]..sort((a, b) => endOf(b).compareTo(endOf(a)));
+    // 그날 있는 토막이 먼저다. 날짜를 고른 화면에서 가장 늦게 끝나는 토막이 그날 없던 것이면 그날 토막이 거기 묶여 흐리게 그려졌다
+    // (名鉄岐阜市内線 1990 徹明町: 美濃町線 1988–1999 직통이 1999–2005 토막에 묶임, 2026-11-18). 오늘 화면은 지금 토막이 가장 늦게 끝나 순서가 같다
+    final order = [...items]..sort((a, b) => a.gone != b.gone ? (a.gone ? 1 : -1) : endOf(b).compareTo(endOf(a)));
     final built = <DisplayLink, DisplayLink>{};
     for (final item in order) {
       if (taken.contains(item)) continue;
       // 두 번 이상 이관되면 옛 이름을 시간 순으로 쌓는다
       final earlier = <DisplayLink>[];
       final pieces = <DisplayLink>[];
+      // 이미 대표로 뽑힌 토막은 다시 묶지 않는다. 그날 토막이 먼저 뽑힌 뒤 그날 없던 늦은 토막에 묶여 지워졌다 (名鉄岐阜市内線 1990 徹明町)
       bool fresh(DisplayLink other) =>
           !identical(other, item) &&
+          !built.containsKey(other) &&
           !earlier.contains(other) &&
           !pieces.contains(other) &&
           !taken.contains(other) &&
@@ -526,8 +623,48 @@ final class DisplayRules {
         for (final link in row.goneLinks)
           if (link.kind == kind && (archive || !early(link)) && !skip.contains('${row.seq}\u0000${link.otherLineId}'))
             _display(link, _gone(link, onDate: false, node: row.node), row.node),
-    ]);
+    ].where((item) => _oneOnDay(row, item.link, skip)).toList());
   }
+
+  /// 같은 노선(또는 같은 사슬을 이어받은 노선)과의 연결은 그 화면의 날(_day: 고른 날짜, 날짜 모름이면 오늘)에 맞는 것 하나만 보인다.
+  /// 직통·환승이 시기에 따라 바뀌었거나(佐世保 松浦鉄道), 이관으로 노선·회사 이름이 바뀐 경우(国鉄 松浦線 → 松浦鉄道西九州線)에도
+  /// 그 날 있던 연결만 그린다. 그 날 둘 다 있으면(직통 열차가 일부만 다님) 직통·분기를 보인다.
+  /// 그 날 있는 것이 없으면 그 날까지 가장 늦게 끝난 것 하나(폐선은 마지막 상태)이고, 그 날 뒤에 생긴 연결은 보이지 않는다.
+  /// 기간별 기록은 DB에 그대로 있고 날짜 칩으로 그 시절을 본다 (사용자 결정 2026-11-19)
+  bool _oneOnDay(SelectorRow row, SelectorLink link, Set<String> skip) {
+    const kinds = {'continue', 'transfer', 'branch'};
+    if (!kinds.contains(link.kind)) return true;
+    // 다른 노선은 같은 사슬을 나누고 두 연결의 기간이 겹치지 않을 때만(앞 노선이 끝나고 뒤 노선이 이어받음) 같은 노선으로 본다.
+    // 일부 구간만 넘어가 두 노선이 함께 있는 경우(越後線·信越本線)는 서로 다른 노선이다
+    bool overlap(SelectorLink a, SelectorLink b) =>
+        (a.validFromLo ?? '0000').compareTo(b.validToHi ?? DateSpan.maxDate) < 0 && (b.validFromLo ?? '0000').compareTo(a.validToHi ?? DateSpan.maxDate) < 0;
+    bool related(SelectorLink other) =>
+        other.otherLineId == link.otherLineId || (_sharesLineage(other.otherLineId, link.otherLineId) && !overlap(other, link));
+    final group = [for (final other in [...row.links, ...row.goneLinks]) if (kinds.contains(other.kind) && related(other)) other];
+    bool live(SelectorLink other) => row.links.contains(other) && !_gone(other, onDate: true, node: row.node);
+    final present = [for (final other in group) if (live(other)) other];
+    if (present.isNotEmpty) {
+      if (!present.contains(link)) return false;
+      // 그 날 직통(끝 이어짐)이 있으면 같은 노선 환승은 숨긴다(더 넓은 쪽 하나). 화면에 줄로 그려지지 않는 연결
+      // (병주 선이 대신하는 행 skip, 선로만 갈라지는 분기 branch)은 환승을 가리지 않는다 (尾西線 名鉄一宮, 越後線 吉田의 弥彦線)
+      return link.kind != 'transfer' || !present.any((other) => other.kind == 'continue' && !skip.contains('${row.seq}\u0000${other.otherLineId}'));
+    }
+    // 그 날 뒤에 생긴 연결은 보이지 않는다
+    bool future(SelectorLink other) => other.validFromLo != null && other.validFromLo!.compareTo(_day) > 0;
+    if (future(link)) return false;
+    // 그 날까지 가장 늦게 끝난 상태 하나(종류와 상관없이). 같은 날 끝난 위·아래 두 방면은 함께 남는다.
+    // 종류별로 따로 고르면 屋代의 長野電鉄屋代線처럼 옛 분기(~1982)와 마지막 환승(~2012)이 함께 남았다
+    final ended = [
+      for (final other in group)
+        if (!future(other) && other.validToHi != null && other.validToHi != DateSpan.maxDate && other.validToHi!.compareTo(_day) <= 0)
+          other.validToHi!,
+    ];
+    // 끝난 날을 모르는 연결뿐이면 그대로 둔다
+    if (ended.isEmpty) return link.validToHi == null || link.validToHi == DateSpan.maxDate || link.validToHi!.compareTo(_day) > 0;
+    final last = ended.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
+    return link.validToHi == last;
+  }
+
 
   /// 같은 상대 노선의 같은 쪽 줄이 기간만 이어서 나뉘었으면 하나만 그린다. 그날 있는 것, 둘 다 같으면 늦게 끝난 것을 남긴다
   /// (青山線·浅草線 泉岳寺: 연결 종류나 끝 역이 바뀌어 행이 기간별로 나뉜 것. 감사 3회차 kanto_1-002).
@@ -674,22 +811,71 @@ final class DisplayRules {
     bool undated = false,
     List<ParallelRun> parallels = const [],
     DateSpan? date,
+    String? shownLineId,
+  }) {
+    // 그리는 동안만 그 화면의 날을 기준으로 삼는다. 끝나면 오늘로 되돌려 다른 호출(환승 캡슐 등)에 남지 않게 한다
+    _viewDay = date?.lo;
+    try {
+      return _linesOn(
+        lineId: lineId,
+        rows: rows,
+        openGaps: openGaps,
+        options: options,
+        closedRoute: closedRoute,
+        archiveStops: archiveStops,
+        archiveBranches: archiveBranches,
+        sectionGaps: sectionGaps,
+        sectionEnds: sectionEnds,
+        undated: undated,
+        parallels: parallels,
+        date: date,
+        shownLineId: shownLineId,
+      );
+    } finally {
+      _viewDay = null;
+    }
+  }
+
+  List<SelectorLine> _linesOn({
+    required String lineId,
+    required List<SelectorRow> rows,
+    required List<bool> openGaps,
+    required DisplayOptions options,
+    required bool closedRoute,
+    required List<ArchiveStop> archiveStops,
+    required List<ArchiveBranch> archiveBranches,
+    required List<bool>? sectionGaps,
+    required List<SectionEnd>? sectionEnds,
+    required bool undated,
+    required List<ParallelRun> parallels,
+    required DateSpan? date,
+    required String? shownLineId,
   }) {
     final archive = options.showClosed && options.showArchive;
     final places = _place(rows, archive ? archiveStops : const []);
     final out = <SelectorLine>[];
     // 끝 이어짐의 기준은 마지막 현행 역이다. 뒤에 폐지 구간이 있어도 유지한다 (DESIGN §8.1)
     // 이관된 역은 이어받은 노선이 서는 지금 역이다. 이관 구간 앞 역에서 갈라지는 노선은 끝 이어짐이 아니라 분기다 (DESIGN §8.0.1 B안)
+    // 날짜를 고른 화면은 그날 영업한 역이 기준이다. 오늘 기준이면 지금은 없는 노선(名鉄岐阜市内線 1990, 끝 역 徹明町)에서
+    // 끝 역을 못 찾아 끝 이어짐(직통 美濃町線)이 분기로 그려졌다 (2026-11-18, 사례가 아니라 규칙으로)
+    bool aliveOn(SelectorRow row) => date == null
+        ? row.current
+        : const [StopState.open, StopState.maybe, StopState.suspended].contains(row.state);
     final current = [
       for (final (index, row) in rows.indexed)
-        if (row.current) index,
+        if (aliveOn(row)) index,
     ];
     final first = current.isEmpty ? 0 : current.first;
     final last = current.isEmpty ? rows.length - 1 : current.last;
     // 확장 행(숨은 끝 너머 역)은 선택만 돕는 행이라 그 옆 칸은 이 계통의 구간이 아니다. 가장 가까운 이 계통 칸의 상태를 이어받아
     // 확장 행과의 경계에 구분선이 생기지 않게 한다(영업 칸 옆이면 영업, 폐지 칸 옆이면 폐지. 山手·東北 화물선 三河島, 감사 2회차 K33, 吾妻橋線 本所吾妻橋)
     final raw = sectionGaps ?? openGaps;
-    bool beside(int index) => index + 1 < rows.length && (rows[index].isExtension || rows[index + 1].isExtension);
+    // 0 km 칸으로만 이어진 두 역 줄(나뉜 역의 나뉘기 전 노드와 나뉜 뒤 노드, 京阪 三条 → 京津三条) 사이는 구간이 아니다. 그 칸이
+    // 나뉜 날 끝나는 것을 구간 폐지로 읽으면 「~1987 폐지」 단계가 생기고 1990년 화면에 구분선이 남는다 (11회차 시뮬레이터 시험).
+    // 확장 행 옆 칸처럼 이웃 칸의 상태와 폐지 해를 따른다. km만 같은 옛 자리(新潟（旧）, 옛 선로가 있다)는 구간이다
+    bool sameSpot(SelectorRow a, SelectorRow b) => _zeroPairs.contains('${a.node}\u0000${b.node}');
+    bool beside(int index) =>
+        index + 1 < rows.length && (rows[index].isExtension || rows[index + 1].isExtension || sameSpot(rows[index], rows[index + 1]));
     int? home(int index) {
       for (var at = index - 1; at >= 0; at--) {
         if (!beside(at)) return at;
@@ -705,7 +891,23 @@ final class DisplayRules {
     ];
     // 첫 구간부터 폐지됐고 첫 역도 없어졌으면 구분선을 첫 역 위에 둔다. 첫 역 아래에 두면 첫 역만 남은 것처럼 보인다.
     // 첫 역이 지금 역이면 그 역은 폐지 구간 밖이라 아래에 둔다
-    final topClosed = gaps.isNotEmpty && !gaps.first && !rows.first.current;
+    // 날짜를 고른 화면에서는 그날 영업한 역도 구간 밖이다. 1950년 秋田市内線 県庁前(1963 폐역)은 그날 영업해, 개업 전 구간의 끝 구분선이
+    // 그 역 위에 온다 (11회차 시뮬레이터 시험)
+    bool alive(SelectorRow row) => aliveOn(row);
+    final topClosed = gaps.isNotEmpty && !gaps.first && !alive(rows.first);
+    // 끝 역 너머 폐지 구간이 노드 한 역뿐이고 그 너머에 열람 전용 역도 없으면 구분선을 두지 않는다. 열람 전용 한 역(宗谷本線 稚内桟橋)과 같은 규칙이다
+    // (사용자 결정 2026-11-18 「한 역에는 폐지 구간 점선을 그리지 않는다」를 노드 폐역에도: 京王線 東八王子). 대신 그 역 줄에 폐지 해를 보인다
+    final aliveIdx = [for (final (i, r) in rows.indexed) if (alive(r)) i];
+    final loneBottom = aliveIdx.isNotEmpty &&
+        aliveIdx.last == rows.length - 2 &&
+        aliveIdx.last < gaps.length &&
+        !gaps[aliveIdx.last] &&
+        (places[rows.length - 1] ?? const <ArchiveStop>[]).isEmpty;
+    final loneTop = aliveIdx.isNotEmpty &&
+        aliveIdx.first == 1 &&
+        topClosed &&
+        (places[-1] ?? const <ArchiveStop>[]).isEmpty &&
+        (places[0] ?? const <ArchiveStop>[]).isEmpty;
     // 확장 행 옆 칸은 폐지 연도도 이웃 칸을 따른다. 확장 역 자신의 폐역 해로 새 폐지 단계가 생기지 않게 한다 (広井町線 菊井町)
     final yearOf = _closedYears(rows, gaps, sectionEnds);
     for (var index = 0; index < gaps.length; index++) {
@@ -719,6 +921,10 @@ final class DisplayRules {
       }
     }
     bool suspendedAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length && sectionEnds[gap].suspended;
+    String? opensAt(int gap) {
+      final at = gap >= 0 && beside(gap) ? home(gap) : gap;
+      return sectionEnds != null && at != null && at >= 0 && at < sectionEnds.length ? sectionEnds[at].opens : null;
+    }
     // 병주 토막 (DESIGN §8.1). 아직 시작하지 않은 토막은 빼고, 날짜를 모르면 끝난 토막도 흐리게 그린다.
     // 그날 이미 끝난 토막도 폐선 표시를 켜면 흐린 병주 선이다(北5条線 札幌駅前–西五丁目 1932–1971, 감사 2회차 K09).
     // 그 칸 역에서 상대와의 연결이 토막보다 늦게 끝나면 그 연결이 대신한다(西野田線 1932년 병주 끝, 1964년까지 환승).
@@ -729,7 +935,7 @@ final class DisplayRules {
       final to = rows.indexWhere((row) => row.seq == run.toSeq);
       if (from < 0 || to <= from) continue;
       final end = run.validToHi;
-      var gone = end != null && end.compareTo(today) <= 0;
+      var gone = end != null && end.compareTo(_day) <= 0;
       if (date != null && (run.validFromLo ?? '0000').compareTo(date.hi) > 0) continue;
       if (date != null && end != null && end.compareTo(date.lo) <= 0) {
         final later = rows.sublist(from, to + 1).any((row) => [...row.links, ...row.goneLinks].any((link) =>
@@ -737,11 +943,9 @@ final class DisplayRules {
         if (!options.showClosed || later) continue;
         gone = true;
       }
-      var lane = 0;
-      while (runs.any((other) => other.lane == lane && other.from <= to && from <= other.to)) {
-        lane++;
-      }
-      runs.add(_Run(run, from, to, lane, gone: gone));
+      // 병주 상대가 여럿이어도 겹치는 칸은 선 하나로 그린다. 들고 나는 곳에서 각자 갈라진다(분기 여럿이 줄기 하나를 함께 쓰는 것과 같다).
+      // 칸마다 자리를 나누면 京成本線 空港第2ビル–成田空港처럼 같은 칸을 달리는 상대(成田線·成田空港線)가 나란한 선 두 개로 보였다 (사용자 결정 2026-11-20)
+      runs.add(_Run(run, from, to, 0, gone: gone));
     }
     final skip = {
       for (final run in runs)
@@ -811,18 +1015,28 @@ final class DisplayRules {
           ends.isEmpty ? null : ends.every((end) => end.items.every((item) => item.gone));
       final upEnds = topEnd ? _ends(continues, gap: index - 1, at: row, up: true).toList() : const <EndLine>[];
       final downEnds = bottomEnd ? _ends(continues, gap: index, at: row, up: false).toList() : const <EndLine>[];
-      // 첫 역 앞의 열람 전용 역은 맨 위에 둔다(첫 역 위 끝 이어짐·구분선보다 바깥)
+      // 첫 역 앞의 열람 전용 역은 맨 위에 둔다(첫 역 위 끝 이어짐·구분선보다 바깥).
+      // 첫 역 위가 폐지 구간이 아니면 그 묶음은 계통 끝 너머의 없어진 구간이라, 폐지 구간처럼 바깥에 폐지 해 구분선, 안쪽에 끝 구분선을 둔다.
+      // 없으면 지금 노선이 그 역들까지 이어지는 것처럼 보인다 (志度線 瓦町 앞 公園前·中野町·藤塚·東田町, 사용자 결정 2026-11-18)
       if (index == 0) {
-        for (final stop in places[-1] ?? const <ArchiveStop>[]) {
+        final beyond = places[-1] ?? const <ArchiveStop>[];
+        // 한 역뿐이면 구간이라 부를 것이 없어 구분선을 두지 않는다(긴 점선이 오히려 읽기 어렵다, 사용자 결정 2026-11-18)
+        final fence = beyond.length > 1 && !topClosed;
+        if (fence) out.add(SectionLine(gap: -1, year: _latestYear(beyond), lanes: pass()));
+        for (final stop in beyond) {
           out.add(ArchiveLine(gap: -1, stop: stop, lanes: pass()));
         }
+        if (fence) out.add(SectionLine(gap: -1, lanes: pass()));
       }
-      // 구분선은 끝 이어짐 줄 바깥에 둔다. 역과 끝 이어짐 사이에 끼면 점선 줄기가 끊긴다 (실화면 검수 2026-11-09, 肥前吉井)
-      if (index == 0 && topClosed) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), lanes: pass()));
+      // 계통 첫 구간부터 폐지면 구분선은 끝 이어짐(다른 노선) 줄 안쪽, 그 줄과 첫 역 사이에 둔다. 다른 노선까지 폐지 구간에 든 것처럼 읽히지 않게 한다.
+      // 점선 줄기는 구분선 줄을 지나 끊기지 않는다 (사용자 결정 2026-11-19. 2026-11-09 「끝 이어짐 바깥」 결정을 대신함, 肥前吉井는 줄기가 이어져 해결)
+      final topFence = index == 0 && topClosed && !loneTop;
+      final upEndsAny = upEnds.isNotEmpty || (isFirst && beyondUp.isNotEmpty);
+      if (topFence && !upEndsAny) out.add(SectionLine(gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), lanes: pass()));
       // 폐지·운휴 구간이 지금 역에서 끝나면 끝 구분선을 그 역 위에 둔다. 아래에 두면 지금 역이 구간 안에 든다 (常磐線 新地~山下 이설).
       // 구간이 역 사이 한 칸뿐이면 시작 구분선과 같은 자리라 하나만 둔다
-      final endsHere = endsAt(rows, gaps, index);
-      if (endsHere && !(index == 1 ? !topClosed : gaps[index - 2])) out.add(SectionLine(gap: index - 1, lanes: pass()));
+      final endsHere = endsAt(rows, gaps, index, alive: alive);
+      if (endsHere && !(index == 1 ? !topClosed : gaps[index - 2]) && !(loneTop && index == 1)) out.add(SectionLine(gap: index - 1, lanes: pass()));
       out.addAll(upEnds);
       if (isFirst) {
         final ends = upEnds;
@@ -839,6 +1053,10 @@ final class DisplayRules {
           open.add(run);
         }
       }
+      if (topFence && upEndsAny) {
+        out.add(SectionLine(
+            gap: -1, year: yearOf[0], suspended: suspendedAt(0), opens: opensAt(0), stem: endsGone(upEnds) ?? false, lanes: pass()));
+      }
       for (final (at, item) in ups.indexed) {
         out.add(
           BranchLine(
@@ -854,15 +1072,16 @@ final class DisplayRules {
           ),
         );
       }
-      for (final run in midIn) {
+      // 위로 들어오는 상대가 여럿이면 위 줄부터 적고, 아래 줄은 위 줄로 가는 병주 선이 그대로 지나간다(stacked)
+      for (final (at, run) in midIn.indexed) {
         out.add(BranchLine(
           gap: index - 1,
           at: row,
           item: _laneLink(run, row, up: true),
           up: true,
-          stacked: false,
-          stemGone: run.gone,
-          throughGone: run.gone,
+          stacked: at > 0,
+          stemGone: midIn.take(at + 1).every((other) => other.gone),
+          throughGone: midIn.take(at).every((other) => other.gone),
           parallel: run.lane,
           lanes: pass(),
         ));
@@ -897,7 +1116,11 @@ final class DisplayRules {
           small: !options.showClosed && _isGoneStop(row),
           branchUpGone: ups.isNotEmpty && ups.every((item) => item.gone),
           branchDownGone: (downs.isNotEmpty || old.isNotEmpty) && downs.every((item) => item.gone),
-          quiet: row.closeYear != null &&
+          // 개업 전 역의 「1951~」는 구분선 해와 같아도 지우지 않는다(지우면 개업 전인지 알 수 없다, 11회차 시뮬레이터 시험 秋田駅前)
+          quiet: !(loneTop && index == 0) &&
+              !(loneBottom && index == rows.length - 1) &&
+              row.closeYear != null &&
+              row.state != StopState.beforeOpen &&
               (row.closeYear == yearOf[index - 1] || row.closeYear == yearOf[index]),
           returnsTo: closedRoute && rows.take(index).any((earlier) => earlier.node == row.node)
               ? row.node
@@ -905,15 +1128,15 @@ final class DisplayRules {
         ),
       );
       // 나가는 병주 상대는 역 바로 아래(가장 안쪽) 줄이다
-      for (final run in midOut) {
+      for (final (at, run) in midOut.indexed) {
         out.add(BranchLine(
           gap: index,
           at: row,
           item: _laneLink(run, row, up: false),
           up: false,
-          stacked: false,
-          stemGone: run.gone,
-          throughGone: run.gone,
+          stacked: at < midOut.length - 1,
+          stemGone: midOut.skip(at).every((other) => other.gone),
+          throughGone: midOut.skip(at + 1).every((other) => other.gone),
           parallel: run.lane,
           lanes: pass(run),
         ));
@@ -954,6 +1177,12 @@ final class DisplayRules {
         out.add(_archiveBranch(row, index, branch,
             stacked: at < old.length - 1, endThrough: endsGone(downEnds), lanes: pass()));
       }
+      // 계통 끝 구간이 폐지면 아래로 이어지는 노선(끝 이어짐) 줄 앞에 닫는 구분선을 둔다. 이어지는 노선이 없으면 끝 역에서 끝나 닫는 선이 없다
+      // (사용자 결정 2026-11-19, 海峡線 木古内–江差線 / 白糠線 北進은 없음). 끝 너머 한 역뿐인 폐역(loneBottom)은 여는 구분선도 없어 닫지 않는다
+      final downEndsAny = downEnds.isNotEmpty || (isLast && beyondDown.isNotEmpty);
+      if (index == rows.length - 1 && downEndsAny && !alive(row) && (index == 0 ? topClosed : !gaps[index - 1]) && !loneBottom) {
+        out.add(SectionLine(gap: index, stem: endsGone(downEnds) ?? false, lanes: pass()));
+      }
       if (isLast) {
         final ends = downEnds;
         for (final run in beyondDown) {
@@ -970,6 +1199,9 @@ final class DisplayRules {
         }
       }
       out.addAll(downEnds);
+      // 끝 역 뒤의 열람 전용 역도 끝 너머 없어진 구간이다. 끝쪽 폐지 구간과 같이 끝 역 바로 아래에 폐지 해 구분선 하나만 둔다(그 뒤로 이어지는 구간이 없다)
+      final tail = index == rows.length - 1 ? places[index] ?? const <ArchiveStop>[] : const <ArchiveStop>[];
+      if (tail.length > 1 && alive(row)) out.add(SectionLine(gap: index, year: _latestYear(tail), lanes: pass()));
       for (final stop in places[index] ?? const <ArchiveStop>[]) {
         out.add(ArchiveLine(gap: index, stop: stop, lanes: pass()));
       }
@@ -982,13 +1214,167 @@ final class DisplayRules {
         final below = gaps[index];
         final above = index == 0 ? !topClosed : gaps[index - 1];
         final yearAbove = index == 0 ? (topClosed ? yearOf[0] : null) : yearOf[index - 1];
+        // 날짜를 고른 화면의 개업 전 구간은 개업 해마다 단계다(浅草線 1960년: 1968·1964·1963 개업)
+        final opensAbove = index == 0 ? (topClosed ? opensAt(0) : null) : opensAt(index - 1);
         // 폐지 단계마다 구분선과 날짜를 둔다 (DESIGN §8)
-        if (!endsHere && (below != above || (!below && yearOf[index] != yearAbove))) {
-          out.add(SectionLine(gap: index, year: below ? null : yearOf[index], suspended: !below && suspendedAt(index), lanes: pass()));
+        if (!endsHere && !(loneBottom && index == rows.length - 2) && (below != above || (!below && (yearOf[index] != yearAbove || opensAt(index) != opensAbove)))) {
+          out.add(SectionLine(
+            gap: index,
+            year: below ? null : yearOf[index],
+            suspended: !below && suspendedAt(index),
+            opens: below ? null : opensAt(index),
+            lanes: pass(),
+          ));
         }
       }
     }
-    return attachEnds(handOver(out, lineId: lineId, undated: undated, date: date));
+    return _bracketize(
+      attachEnds(out),
+      rows: rows,
+      gaps: gaps,
+      yearOf: yearOf,
+      suspendedAt: suspendedAt,
+      opensAt: opensAt,
+      undated: undated,
+      date: date,
+      shownLineId: shownLineId,
+    );
+  }
+
+  /// 폐지·운휴·개업 전·이관 구분선을 괄호와 안내 줄로 바꾼다 (사용자 결정 2026-11-19).
+  ///
+  /// 역 사이 칸마다 그날의 상태를 하나만 정한다. 탈 수 없는 칸(폐지·운휴·개업 전)이 먼저고, 아니면 그 칸이 드는 이관 구간이다.
+  /// 이관 구간은 칸 위쪽 역의 이관 구간, 없으면 아래쪽 역의 이관 구간이다(구간 첫 역 앞 칸은 아래쪽 역이, 구간이 끝나는 역 앞 칸은 위쪽 역이 정한다).
+  /// 상태와 그 값(폐지 해·이어받은 노선)이 같은 칸이 이어지는 만큼 괄호 하나다. 열람 전용 역 묶음(2역 이상)이 끝 너머에 있으면 그 묶음도 폐지 괄호다.
+  /// 화면이 이미 그날의 노선([shownLineId], 같은 사슬의 뒤 노선)으로 바뀌었으면 그 노선으로의 이관은 괄호가 아니다.
+  /// 제목이 「三陸鉄道リアス線」인데 같은 노선으로 「이 구간은 그 노선으로 기록돼요」 괄호가 또 그려졌다 (실화면 2026-11-19 北条線, 전 노선 44계통)
+  List<SelectorLine> _bracketize(
+    List<SelectorLine> lines, {
+    required List<SelectorRow> rows,
+    required List<bool> gaps,
+    required Map<int, String> yearOf,
+    required bool Function(int gap) suspendedAt,
+    required String? Function(int gap) opensAt,
+    required bool undated,
+    required DateSpan? date,
+    required String? shownLineId,
+  }) {
+    final body = [for (final line in lines) if (line is! SectionLine && line is! TransferLine) line];
+    (String, String)? band(SelectorRow row) => switch (bandOf(row, undated: undated, date: date)) {
+          (final to, _) when to == shownLineId => null,
+          final hand => hand,
+        };
+    final spans = <_Span>[];
+    for (var gap = 0; gap + 1 < rows.length; gap++) {
+      NoticeKind? kind;
+      String key = '';
+      String? year, lineId, on;
+      SelectorRow? at;
+      if (gap < gaps.length && !gaps[gap]) {
+        if (suspendedAt(gap)) {
+          // 안내 제목에 운휴 시작 해를 붙인다(역 줄의 「운휴 2023~」과 짝). 시작 해가 다르면 다른 괄호다
+          kind = NoticeKind.suspended;
+          year = rows[gap].suspendedSince ?? rows[gap + 1].suspendedSince;
+          key = year ?? '';
+        } else if (opensAt(gap) case final opens?) {
+          kind = NoticeKind.before;
+          year = opens;
+          key = opens;
+        } else {
+          kind = NoticeKind.closed;
+          year = yearOf[gap] ?? '?';
+          key = year;
+        }
+      } else if (band(rows[gap]) ?? band(rows[gap + 1]) case (final to, final day)) {
+        kind = NoticeKind.hand;
+        lineId = to;
+        on = day;
+        key = '$to\u0000$day';
+        at = band(rows[gap]) != null ? rows[gap] : rows[gap + 1];
+      }
+      if (kind == null) continue;
+      final last = spans.isEmpty ? null : spans.last;
+      if (last != null && last.toRow == gap && last.kind == kind && last.key == key) {
+        last.toRow = gap + 1;
+      } else {
+        spans.add(_Span(kind, key, gap, gap + 1, year: year, lineId: lineId, on: on, at: at));
+      }
+    }
+    final notices = <(int, NoticeLine)>[];
+    int indexOfRow(SelectorRow row) => body.indexWhere((line) => line is StopLine && line.row.seq == row.seq);
+    // 괄호 맨 위 줄에 딸린 아래쪽 분기·끝 이어짐 다음이 안내 자리다
+    int after(int index) {
+      final top = body[index];
+      final seq = top is StopLine ? top.row.seq : null;
+      var at = index + 1;
+      while (at < body.length && seq != null) {
+        final line = body[at];
+        final mine = switch (line) {
+          BranchLine(:final at, :final up) => !up && at.seq == seq,
+          EndLine(:final at, :final up) => !up && at.seq == seq,
+          _ => false,
+        };
+        if (!mine) break;
+        at++;
+      }
+      return at;
+    }
+    for (final span in spans) {
+      // 끝 너머 폐역이 한 역뿐이어도 괄호로 묶는다. 「한 역에는 폐지 구간 점선을 그리지 않는다」(2026-11-18)는 긴 가로 점선 때문이었고,
+      // 괄호는 그 문제가 없다 (사용자 확인 2026-11-19 목업: 北条線 北条町–北条町（旧）, 信越本線 新潟（旧）–白山)
+      final topIndex = indexOfRow(rows[span.fromRow]);
+      if (topIndex < 0 || indexOfRow(rows[span.toRow]) < 0) continue;
+      notices.add((
+        after(topIndex),
+        NoticeLine(
+          kind: span.kind,
+          top: BracketAnchor(seq: rows[span.fromRow].seq),
+          bottom: BracketAnchor(seq: rows[span.toRow].seq),
+          lineId: span.lineId,
+          on: span.on,
+          at: span.at,
+          year: span.year,
+        ),
+      ));
+    }
+    // 끝 너머 열람 전용 역 묶음(2역 이상)은 그 묶음과 끝 역을 폐지 괄호로 묶는다 (한 역뿐이면 묶지 않는다, 사용자 결정 2026-11-18)
+    final firstStop = body.indexWhere((line) => line is StopLine);
+    final lastStop = body.lastIndexWhere((line) => line is StopLine);
+    if (firstStop > 0) {
+      final head = [for (final line in body.sublist(0, firstStop)) if (line is ArchiveLine) line];
+      if (head.length > 1) {
+        final top = head.first;
+        notices.add((
+          body.indexOf(top) + 1,
+          NoticeLine(
+            kind: NoticeKind.closed,
+            top: BracketAnchor(archive: top.stop.id),
+            bottom: BracketAnchor(seq: (body[firstStop] as StopLine).row.seq),
+            year: _latestYear([for (final line in head) line.stop]),
+          ),
+        ));
+      }
+    }
+    if (lastStop >= 0 && lastStop + 1 < body.length) {
+      final tail = [for (final line in body.sublist(lastStop + 1)) if (line is ArchiveLine) line];
+      if (tail.length > 1) {
+        notices.add((
+          after(lastStop),
+          NoticeLine(
+            kind: NoticeKind.closed,
+            top: BracketAnchor(seq: (body[lastStop] as StopLine).row.seq),
+            bottom: BracketAnchor(archive: tail.last.stop.id),
+            year: _latestYear([for (final line in tail) line.stop]),
+          ),
+        ));
+      }
+    }
+    // 뒤에서부터 넣어 앞 자리 번호가 밀리지 않게 한다. 같은 자리면 먼저 시작한 괄호의 안내가 위다
+    notices.sort((a, b) => b.$1.compareTo(a.$1));
+    for (final (index, notice) in notices) {
+      body.insert(index, notice);
+    }
+    return body;
   }
 
   /// 끝 이어짐 줄은 자기 역에 붙어 있어야 점선 줄기가 이어진다. 역과 끝 이어짐 사이에는 그 역의 분기·끝 이어짐 줄만 두고,
@@ -998,6 +1384,8 @@ final class DisplayRules {
     bool mine(SelectorLine line, SelectorRow row, bool up) => switch (line) {
           EndLine(:final at, up: final side) => side == up && at.seq == row.seq,
           BranchLine(:final at, up: final side) => side == up && at.seq == row.seq,
+          // 끝 이어짐 안쪽 구분선(점선 줄기가 지나감)도 그 역의 줄이다. 바깥으로 보내지 않는다 (사용자 결정 2026-11-19)
+          SectionLine(:final stem) => stem != null,
           _ => false,
         };
     for (var i = 0; i < out.length; i++) {
@@ -1094,6 +1482,7 @@ final class DisplayRules {
                 trunkThrough: end.trunkThrough,
                 stackAt: end.stackAt,
                 stackOf: end.stackOf,
+                stackLive: end.stackLive,
                 lanes: end.lanes,
               );
             }
@@ -1117,12 +1506,13 @@ final class DisplayRules {
   ///
   /// 구분선은 구간 상태가 바뀌는 경계에만 둔다. 계통 맨 끝 역 아래에는 구간이 없으니 경계도 없다.
   /// 그 역이 다른 노선으로는 지금 서는 역이어도(北上線 横手, 美祢線 長門市) 끝 역 위에 구분선을 두지 않는다
-  static bool endsAt(List<SelectorRow> rows, List<bool> gaps, int index) =>
+  /// [alive]는 그 화면에서 역이 서 있는가다(기본은 지금 역). 날짜를 고른 화면은 그날 영업한 역도 든다
+  static bool endsAt(List<SelectorRow> rows, List<bool> gaps, int index, {bool Function(SelectorRow row)? alive}) =>
       index >= 1 &&
       index < gaps.length &&
       // 이관으로 끝난 역은 폐역이 아니다. 그 역에서 폐지 구간이 끝난다 (信越本線 横川–軽井沢).
       // 이어받은 노선도 그 역을 떠났으면 지금 역이 아니라 구간 안이다 (神岡線 神岡, 감사 2회차 K33)
-      rows[index].current &&
+      (alive ?? (row) => row.current)(rows[index]) &&
       !gaps[index - 1] &&
       gaps[index];
 
@@ -1277,7 +1667,12 @@ final class DisplayRules {
     for (final item in items) {
       (byLine[item.link.otherLineId] ??= []).add(item);
     }
-    final groups = byLine.values.toList();
+    // 그날 있는 노선을 역에 가까운 쪽에 둔다(목록도 현행이 먼저). 같은 처지끼리는 원래 순서다
+    bool gone(List<DisplayLink> group) => group.every((item) => item.gone);
+    final liveGroups = byLine.values.where((g) => !gone(g)), goneGroups = byLine.values.where(gone);
+    // 위쪽 끝은 목록 뒤쪽이 역에 가깝다
+    final groups = up ? [...goneGroups, ...liveGroups] : [...liveGroups, ...goneGroups];
+    final live = groups.any((g) => !gone(g));
     // 위쪽 끝은 바깥 줄부터 놓여 마지막이 역에 가깝다
     return [
       for (final (i, group) in groups.indexed)
@@ -1288,6 +1683,7 @@ final class DisplayRules {
           up: up,
           stackAt: up ? groups.length - 1 - i : i,
           stackOf: groups.length,
+          stackLive: live,
         ),
     ];
   }
@@ -1331,8 +1727,13 @@ final class DisplayRules {
         changed = true;
       }
     }
+    // 같은 자리는 계통 순번(seq) 순이다. 순번이 없는 옛 팩은 예전처럼 km 순(모르면 뒤)이다
     for (final list in places.values) {
-      list.sort((a, b) => (a.km ?? double.infinity).compareTo(b.km ?? double.infinity));
+      list.sort((a, b) {
+        final sa = a.seq, sb = b.seq;
+        if (sa != null && sb != null) return sa.compareTo(sb);
+        return (a.km ?? double.infinity).compareTo(b.km ?? double.infinity);
+      });
     }
     return places;
   }
@@ -1347,4 +1748,18 @@ final class _Run {
   final int to;
   final int lane;
   final bool gone;
+}
+
+/// 괄호 하나. [fromRow]와 [toRow]는 그 화면 역 줄의 순번이다
+final class _Span {
+  _Span(this.kind, this.key, this.fromRow, this.toRow, {this.year, this.lineId, this.on, this.at});
+
+  final NoticeKind kind;
+  final String key;
+  final int fromRow;
+  int toRow;
+  final String? year;
+  final String? lineId;
+  final String? on;
+  final SelectorRow? at;
 }

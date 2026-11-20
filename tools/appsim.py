@@ -1038,7 +1038,7 @@ class App:
 
     def archive_rows(self, route_id):
         """열람 전용 역: 항상 선택 불가."""
-        return [dict(r) for r in self.db.execute("SELECT * FROM archive_stop WHERE route_id=?", (route_id,))]
+        return [dict(r) for r in self.db.execute("SELECT * FROM archive_stop WHERE route_id=? ORDER BY seq IS NULL, seq, rowid", (route_id,))]
 
 
 # ============================================================ 시나리오 ====

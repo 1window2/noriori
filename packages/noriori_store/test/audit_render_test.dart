@@ -63,8 +63,13 @@ void main() {
       if (only.isNotEmpty && !only.contains(routeId)) continue;
       final route = network.routes[routeId]!;
       final buf = StringBuffer('# ${ln(route.lineId)} 계통 $routeId closed=${route.closed}\n');
+      // 임시 운행만 있는 계통의 운행 토막(앱과 같은 PackReader.tempWindows). 빌드가 토막을 잃으면 화면 대조에서 드러난다
+      final temp = await reader.tempWindows(routeId);
+      if (temp.isNotEmpty) buf.writeln('임시 운행만: ${[for (final w in temp) '${w.from}~${w.to}'].join(', ')}');
       final screens = <Map<String, Object?>>[];
-      for (final raw in [today, null]) {
+      // RENDER_DATES=1990-11-17,1950-11-17 이면 그 날짜 화면도 펼친다(오늘은 RENDER_TODAY 그대로, 기록 화면에서 날짜를 고른 것과 같다)
+      final extra = (Platform.environment['RENDER_DATES'] ?? '').split(',').where((d) => d.isNotEmpty);
+      for (final raw in [today, ...extra, null]) {
         final date = raw == null ? null : DateSpan.parse(raw);
         const options = DisplayOptions();
         final builder = SelectorBuilder(network);
@@ -94,10 +99,11 @@ void main() {
           archiveStops: stops,
           archiveBranches: branches,
           sectionGaps: sectionGaps,
-          sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today)),
+          sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
           undated: date == null,
           parallels: parallels,
           date: date,
+          shownLineId: network.lineOnDate(routeId, date),
         );
         // 병주 상대의 다음 역·끝 역도 이름을 불러온다 (기록 화면과 같다)
         final ids = <String>{
@@ -136,6 +142,7 @@ void main() {
             '${detail ? ' {${d.link.kind} ${d.link.validFromLo ?? ''}~${d.link.validToHi ?? ''}}' : ''}';
         final jl = <Map<String, Object?>>[];
         screens.add({'date': raw, 'rows': [for (final r in rows) {...rj(r), 'links': [for (final l in r.links) lk(l)], 'goneLinks': [for (final l in r.goneLinks) lk(l)]}], 'lines': jl});
+        final moved = await reader.movedNotes(rows.map((row) => row.node), lineId: route.lineId, date: date?.lo);
         buf.writeln('\n## 날짜 ${raw ?? '모름'} (행 ${rows.length}, 보이는 행 ${visible.length})');
         for (final line in lines) {
           switch (line) {
@@ -144,6 +151,8 @@ void main() {
               buf.writeln('● ${nm(r.node)} km=${r.kmEstimated ? '?' : r.kmCum?.toStringAsFixed(1)} 상태=${r.state.name}'
                   '${r.selectable ? '' : ' 못고름'}${r.openYear == null ? '' : ' 개업${r.openYear}'}${r.closeYear == null ? '' : ' 폐역${r.closeYear}'}'
                   '${r.savedAs == null ? '' : ' 저장=${ln(r.savedAs)}'}${r.handedOnly ? ' 이관뒤역' : ''}${s.small ? ' 작음' : ''}${s.returnsTo == null ? '' : ' 돌아옴'}');
+              // 이름까지 바뀐 옛 자리의 이전 표시(앱과 같은 PackReader.movedNotes)
+              if (moved[r.node] case final mv?) buf.writeln('    이전: ${mv.year} → ${mv.name}');
               jl.add({'t': 'stop', ...rj(r), 'transfers': [for (final g in s.transfers) {'flow': g.flow.name, 'items': [for (final i in g.items) dj(i)]}]});
               for (final g in s.transfers) {
                 buf.writeln('    환승${g.number == null ? '' : '#${g.number}'}(${g.flow.name}): ${g.items.map(dl).join(' · ')}');
@@ -155,11 +164,19 @@ void main() {
               jl.add({'t': 'end', 'at': e.at.node, 'atSeq': e.at.seq, 'up': e.up, 'items': [for (final i in e.items) dj(i)]});
               buf.writeln('  ${e.up ? '▲' : '▼'} 끝이어짐${e.parallel == null ? '' : '(병주)'} ${e.items.map(dl).join(' · ')}');
             case final SectionLine sec:
-              jl.add({'t': 'section', 'gap': sec.gap, 'year': sec.year, 'suspended': sec.suspended});
-              buf.writeln('  - - - 구분선${sec.suspended ? ' 운휴 중' : sec.year == null ? '' : ' ~${sec.year} 폐지'}');
+              jl.add({'t': 'section', 'gap': sec.gap, 'year': sec.year, 'suspended': sec.suspended, if (sec.opens != null) 'opens': sec.opens});
+              buf.writeln('  - - - 구분선${sec.suspended ? ' 운휴 중' : sec.opens != null ? ' ${sec.opens} 개업' : sec.year == null ? '' : ' ~${sec.year} 폐지'}');
             case final TransferLine h:
               jl.add({'t': 'hand', 'line': h.lineId, 'on': h.on, 'at': h.at.node, 'atSeq': h.at.seq, 'whole': h.whole, 'back': h.back, 'closedYear': h.closedYear});
               buf.writeln('  = = = 이관${h.whole ? '(노선 전체)' : ''}${h.back ? ' 돌아옴' : ''} ${ln(h.lineId)} ${h.on}${h.closedYear == null ? '' : ' +~${h.closedYear} 폐지'}');
+            case final NoticeLine n:
+              String anchor(BracketAnchor b) => switch (lines.firstWhere(b.matches, orElse: () => n)) {
+                    StopLine(:final row) => row.node,
+                    ArchiveLine(:final stop) => stop.id,
+                    _ => '?',
+                  };
+              jl.add({'t': 'notice', 'kind': n.kind.name, 'top': anchor(n.top), 'bottom': anchor(n.bottom), 'year': n.year, 'line': n.lineId, 'on': n.on});
+              buf.writeln('  [ 괄호 ${n.kind.name} ${anchor(n.top)}~${anchor(n.bottom)}${n.year == null ? '' : ' ${n.year}'}${n.lineId == null ? '' : ' ${ln(n.lineId!)} ${n.on}'}');
             case final ArchiveLine a:
               jl.add({'t': 'archive', 'id': a.stop.id, 'gap': a.gap});
               buf.writeln('  ○ 열람전용역 ${archive[a.stop.id] ?? a.stop.id} ~${a.stop.closedYear} km=${a.stop.km}');

@@ -168,7 +168,6 @@ class _Translations$map$en implements Translations$map$ko {
 
 	// Translations
 	@override String get soloOff => 'Show all lines';
-	@override String get scoreLabel => 'ridden';
 	@override String get add => 'Add ride';
 	@override String get search => 'Search lines and stations';
 	@override String get closed => 'Closed lines';
@@ -323,6 +322,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get dateTitle => 'Ride date';
 	@override String get dateHint => '2015, 2015-03, 2015-03-14, 198X';
 	@override String get dateUnknown => 'No date';
+	@override String get dateUnknownHint => 'Date unknown: stations from all eras, connections as they last were';
 	@override String get datePick => 'Pick from calendar';
 	@override String get dateToday => 'Today';
 	@override String get dateBad => 'Please check the date format';
@@ -330,15 +330,23 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get cancel => 'Cancel';
 	@override String get main => 'Main line';
 	@override String get pickFrom => 'Pick the departure station';
+	@override String get tempTag => 'Special';
+	@override String get tempNotice => 'No regular passenger trains (special-train days only)';
+	@override String get tempPickDay => 'Pick a special-train day';
+	@override String get tempNoRun => 'No special train ran on this date. Tap a running day above';
 	@override String get pickTo => 'Pick the arrival station';
 	@override String get save => 'Save ride';
 	@override String summary({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km';
 	@override String get noPath => 'No route found between these two stations';
 	@override late final _Translations$session$state$en state = _Translations$session$state$en._(_root);
 	@override String savedAs({required Object line}) => 'Part of ${line} on that date';
+	@override String movedTo({required Object name, required Object year}) => 'Moved to ${name} in ${year}';
 	@override String handSince({required Object line, required Object date}) => '${line} from ${date}';
 	@override String get handOpen => 'Open line ›';
 	@override String get handNote => 'Rides here are saved to that line';
+	@override String get noticeClosedSub => 'Only rides before then can be saved';
+	@override String get noticeSuspendedSub => 'Only rides before the suspension can be saved';
+	@override String get noticeBeforeSub => 'Rides from the opening day on can be saved';
 	@override String get chooseDirection => 'Which way did you ride?';
 	@override String directionKm({required Object km}) => '${km} km';
 	@override String get chooseRelocation => 'Which alignment did you ride?';
@@ -369,6 +377,7 @@ class _Translations$session$en implements Translations$session$ko {
 		other: '${n} stations',
 	);
 	@override String closedSection({required Object year}) => '~${year} closed';
+	@override String openedSection({required Object year}) => 'Opens in ${year}';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
@@ -1158,7 +1167,6 @@ extension on TranslationsEn {
 			'start.noSpaceBody' => 'Your rides are safe. Free up some space and try again.',
 			'start.restoreAction' => 'Restore',
 			'map.soloOff' => 'Show all lines',
-			'map.scoreLabel' => 'ridden',
 			'map.add' => 'Add ride',
 			'map.search' => 'Search lines and stations',
 			'map.closed' => 'Closed lines',
@@ -1271,6 +1279,7 @@ extension on TranslationsEn {
 			'session.dateTitle' => 'Ride date',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => 'No date',
+			'session.dateUnknownHint' => 'Date unknown: stations from all eras, connections as they last were',
 			'session.datePick' => 'Pick from calendar',
 			'session.dateToday' => 'Today',
 			'session.dateBad' => 'Please check the date format',
@@ -1278,6 +1287,10 @@ extension on TranslationsEn {
 			'session.cancel' => 'Cancel',
 			'session.main' => 'Main line',
 			'session.pickFrom' => 'Pick the departure station',
+			'session.tempTag' => 'Special',
+			'session.tempNotice' => 'No regular passenger trains (special-train days only)',
+			'session.tempPickDay' => 'Pick a special-train day',
+			'session.tempNoRun' => 'No special train ran on this date. Tap a running day above',
 			'session.pickTo' => 'Pick the arrival station',
 			'session.save' => 'Save ride',
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
@@ -1289,9 +1302,13 @@ extension on TranslationsEn {
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => 'Part of ${line} on that date',
+			'session.movedTo' => ({required Object name, required Object year}) => 'Moved to ${name} in ${year}',
 			'session.handSince' => ({required Object line, required Object date}) => '${line} from ${date}',
 			'session.handOpen' => 'Open line ›',
 			'session.handNote' => 'Rides here are saved to that line',
+			'session.noticeClosedSub' => 'Only rides before then can be saved',
+			'session.noticeSuspendedSub' => 'Only rides before the suspension can be saved',
+			'session.noticeBeforeSub' => 'Rides from the opening day on can be saved',
 			'session.chooseDirection' => 'Which way did you ride?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => 'Which alignment did you ride?',
@@ -1316,6 +1333,7 @@ extension on TranslationsEn {
 			'session.lap' => 'One full loop',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} station', other: '${n} stations', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} closed',
+			'session.openedSection' => ({required Object year}) => 'Opens in ${year}',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',
@@ -1643,6 +1661,8 @@ extension on TranslationsEn {
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',
 			'prefNames.25' => 'Kyoto',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.26' => 'Osaka',
 			'prefNames.27' => 'Hyogo',
 			'prefNames.28' => 'Nara',
@@ -1652,8 +1672,6 @@ extension on TranslationsEn {
 			'prefNames.32' => 'Okayama',
 			'prefNames.33' => 'Hiroshima',
 			'prefNames.34' => 'Yamaguchi',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.35' => 'Tokushima',
 			'prefNames.36' => 'Kagawa',
 			'prefNames.37' => 'Ehime',

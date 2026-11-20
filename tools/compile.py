@@ -168,6 +168,10 @@ for _k,_v in _af.get('stop_closed',{}).items():
 for _k,_v in _af.get('stop_opened',{}).items():
     if _k not in _as or _as[_k].get('opened')==_v['date'] or _k in _af.get('drop_stop',{}):err('archive_lines_unused',_k)
     else:_as[_k]['opened']=_v['date']
+# 원천에 개업일이 빈 열람 전용 노선의 개업일(line_opened. 蹴上線 1895-04-01·南海 大浜支線 1912-04-01, 12회차 M R6)
+for _k,_v in _af.get('line_opened',{}).items():
+    if _k not in _al or _al[_k].get('opened')==_v['date']:err('archive_lines_unused',_k)
+    else:_al[_k]['opened']=_v['date']
 archive=[a for a in archive if not(a.get('kind')=='line' and (a['id'] in _af['drop'] or a['id'] in _af.get('exclude',{})))
     and not(a.get('kind')=='stop' and a['id'] in _af.get('drop_stop',{}))]
 # 휴지로 끝난 열람 전용 역·노선 (DESIGN §2.2 「운행을 다시 시작하지 않고 끝난 휴지」, 사용자 결정 128). 휴지 기록(suspended: 휴지 시작)이 있으면
@@ -2390,11 +2394,21 @@ def _jnot_route(rid,n,oid,orr):
         if x_['route']==rid and x_['at']==n and ((x_.get('other_route') and x_['other_route']==orr) or (not x_.get('other_route') and x_.get('other')==oid)):
             _JNR_USED.add(i_);return True
     return False
-def _all_own(orid,own_pairs,day):
-    """상대 계통의 그날 열린 칸이 모두 이 계통 칸인가"""
-    op_=open_on(routes[orid]['line'],day)
-    rem_={f_ for f_ in _RPE.get(orid,{}) if f_ in op_}
-    return bool(rem_) and rem_<=own_pairs
+# 노선별 칸(edge ID)의 소속 기간. 같은 두 역 사이를 다른 선로로 잇는 옛 선형·새 선형은 다른 칸이다
+_lspanE=collections.defaultdict(lambda:collections.defaultdict(list))
+for a_ in attr:_lspanE[a_['line_id']][a_['edge_id']].append((lohi(a_['valid_from'])[0] or '0000',(lohi(a_['valid_to'])[0] or '9999-12-31') if a_['valid_to'] not in (None,'ongoing') else '9999-12-31'))
+def _all_own(orid,own_ids,day,own_pairs=frozenset()):
+    """상대 계통의 그날 열린 칸이 모두 이 계통 칸인가. 칸은 선로(edge ID)로 본다.
+    두 역 쌍으로 보면 같은 두 역 사이의 옛 선형과 새 선형이 한 칸으로 겹쳐, 옛 경로 계통이 본선으로 돌아오는 분기가 사라졌다
+    (信越本線 軽井沢 ← 横川–軽井沢 옛 선로, 篠ノ井線 西条·明科, 鹿児島本線 戸畑, 和歌山線 田井ノ瀬. 사용자 지적 2026-11-19)"""
+    # 여객 이력 계통(extra)은 같은 두 역 사이의 별선이어도 같은 노선 다른 계통과 잇지 않는다(和歌山線 短絡線 1962–1972, 정한 규칙 4회차 kinki_3-004). 그래서 역 쌍으로 본다
+    if routes[orid].get('extra'):
+        op_=open_on(routes[orid]['line'],day)
+        remp_={f_ for f_ in _RPE.get(orid,{}) if f_ in op_}
+        return bool(remp_) and remp_<=own_pairs
+    sp_=_lspanE[routes[orid]['line']]
+    rem_={e_['id'] for e_ in route_edges[orid] if any(f_<=day<u_ for f_,u_ in sp_.get(e_['id'],()))}
+    return bool(rem_) and rem_<=own_ids
 # 묶음은 사슬로 이어지므로 같은 묶음이라고 다 환승이 아니다 (日本橋~三越前~新日本橋).
 # 환승은 같은 노드·같은 group·채택한 환승 쌍(위 HUBPAIR)만이다 (spec route_link transfer 근원)
 def linked(a,b):
@@ -2548,6 +2562,7 @@ for s in stops:
     # 그 기간을 선로로 이은 상대 계통·종류 (같은 노선 다른 계통으로의 분기가 지나가는 계통과의 환승을 끊지 않게, 越後湯沢 9회차 L)
     linked_rt=collections.defaultdict(list)
     own_pairs={frozenset((e['a'],e['b'])) for e in route_edges[r['id']]}
+    own_ids={e['id'] for e in route_edges[r['id']]}
     # 제 계통 칸은 그날 이 노선 소속인 칸만이다. 다른 노선으로 넘어간 칸(和倉温泉–田鶴浜 1991 のと鉄道, 宮古–磯鶏 2019 リアス線)은 되돌아가는 방면이 아니다 (9회차 L, X K122)
     def _ownp(f_,day,own_pairs=own_pairs,ln_=r['line']):return f_ in own_pairs and f_ in open_on(ln_,day)
     ys_own={other(e,n) for e in route_edges[r['id']] if n in (e['a'],e['b'])}
@@ -2738,7 +2753,7 @@ for s in stops:
                               # 다만 곧게 나가는 방면이 그날 상대 노선의 다른 계통(옛 경로 계통)에 있으면 그쪽으로 잇는다 (방면별 계통 후보)
                               if not j.get('_toward') and _alt_cont(s,r,mp,oid,m,o,pd,ys_own,xs,_own,rr,group_near):continue
                       # 상대 계통의 그날 남은 칸이 모두 이 계통 칸이면 갈라지는 선로가 없다(外房線 蘇我: 1963 千葉(旧) 폐지 뒤 옛 경로 계통은 蘇我–本千葉만 남음)
-                      if kind=='branch' and oid==r['line'] and _all_own(o['route_id'],own_pairs,_rep_day(pd)):
+                      if kind=='branch' and oid==r['line'] and _all_own(o['route_id'],own_ids,_rep_day(pd),own_pairs):
                           WARN['branch_all_own'].append((r['id'],n,o['route_id'],pd))
                           if pd in linked_pd[oid]:linked_pd[oid].remove(pd)
                           continue
@@ -3313,6 +3328,45 @@ t('junction',['line_id','other_line_id','other_route_id','node_id','edge_id','si
 t('node_position',['node_id','lat','lon','quality','checked','source'],[(p['node'],p.get('lat'),p.get('lon'),p.get('quality'),p.get('checked'),p.get('source')) for p in positions])
 # 환승역의 노선별 승강장과 통합 노드 (DESIGN §7.5). 시각 표시일 뿐 기록·km·분모와 무관하다
 PLAT={x['node']:x for x in _rows_plat() if x['node'] in nodes and (x.get('source')!='n05' or source_on('n05'))}
+# 노선별 승강장 자리가 없는 공용 노드(한 노드를 여러 노선이 씀)는 지나가는 노선마다 역 점을 그 노선 선형 위 가장 가까운 점으로 옮긴 자리를 승강장으로 둔다.
+# 그 노선이 이 역에서 끝나면(이 노드에 닿는 지금 칸이 하나) 역 점 자리다. 종점에서 갈라지는 선형 끝을 다른 승강장으로 잘못 보지 않게 한다.
+# 옮긴 자리가 역 점에서 30m 넘게 떨어진 노선이 있을 때만 만든다. 그 밖(같은 회사 50m 안, 다른 회사 승강장 공유)은 아래 배치 규칙이 한 승강장으로 묶는다.
+# 木古内처럼 新幹線 선로가 역 점에서 떨어져 그려져 역 표시 없이 지나가 보이던 것 (13회차 2026-11-19 사용자 지적). 시각 표시일 뿐 기록·km와 무관하다
+def _auto_plat():
+    geo_={g['edge']:g['coords'] for g in load_geo()}
+    pos_={p_['node']:(p_['lat'],p_['lon']) for p_ in positions if p_.get('lat') is not None}
+    cur_=collections.defaultdict(set)
+    for a_ in attr:
+        if a_.get('valid_to')=='ongoing':cur_[a_['edge_id']].add(a_['line_id'])
+    nl_=collections.defaultdict(set)
+    for s_ in stops:
+        if s_['is_stop'] and s_['valid_to']=='ongoing':nl_[s_['node_id']].add(routes[s_['route_id']]['line'])
+    out_={}
+    for n_,ls_ in sorted(nl_.items()):
+        if len(ls_)<2 or n_ in PLAT or n_ not in pos_ or n_ not in nodes:continue
+        o_=pos_[n_];cx_=math.cos(math.radians(o_[0]))
+        def xy_(lon_,lat_):return ((lon_-o_[1])*111.32*cx_,(lat_-o_[0])*110.57)
+        per_={}
+        # 노선 순서를 정해 두어야 빌드마다 행 순서가 같다(집합 순서는 실행마다 다름, 13회차 깨끗한 CI 대조)
+        for l_ in sorted(ls_):
+            es_=[e_['id'] for e_ in adj[n_] if l_ in cur_[e_['id']] and e_['id'] in geo_]
+            if len(es_)<2:continue
+            best_=None
+            for e_ in es_:
+                pts_=[xy_(*c_) for c_ in geo_[e_]]
+                for i_ in range(len(pts_)-1):
+                    (ax_,ay_),(bx_,by_)=pts_[i_],pts_[i_+1];dx_,dy_=bx_-ax_,by_-ay_;L_=dx_*dx_+dy_*dy_
+                    t_=0 if L_==0 else max(0,min(1,(-ax_*dx_-ay_*dy_)/L_));qx_,qy_=ax_+t_*dx_,ay_+t_*dy_
+                    d_=math.hypot(qx_,qy_)
+                    if best_ is None or d_<best_[0]:best_=(d_,qx_,qy_)
+            per_[l_]=best_
+        far_={l_:v_ for l_,v_ in per_.items() if v_ and v_[0]>0.03}
+        if not far_:continue
+        out_[n_]=dict(node=n_,lat=o_[0],lon=o_[1],source='auto_line_projection',lines={l_:(round(o_[0]+v_[2]/110.57,6),round(o_[1]+v_[1]/(111.32*cx_),6)) for l_,v_ in far_.items()})
+    return out_
+AUTO_PLAT=_auto_plat()
+PLAT.update(AUTO_PLAT)
+print('노선별 승강장 자동(공용 노드, 선형 투영)',len(AUTO_PLAT),sorted(AUTO_PLAT)[:80])
 t('platform',['node_id primary key','lat','lon','source'],[(n,x['lat'],x['lon'],x.get('source')) for n,x in sorted(PLAT.items())])
 def _layout():
     # 역 단위: hub와 같은 역 묶음을 이은 연결 성분
@@ -3413,6 +3467,29 @@ def coverage_of(rid):
 # 선 유무와 노선 등급은 출처와 무관하게 본다 (DESIGN §2.11). 배포하는 선형 모양(edge_shape)만 OSM을 뺀다
 GEO_ALL={g['edge']:g for g in _SPLITP_GEO+load('geometry')}
 DRAWN=set(GEO_ALL)
+# 임시 운행만 있는 계통(정식 여객 영업 없이 단체·임시 열차만 다님, 新金線·田端貨物線 등)의 운행 토막.
+# 계통 사건(open·resume ~ suspend·close)으로 여객 토막을 만들고, 토막이 하나 이상이며 모두 7일 이하면 임시 운행만 있는 계통이다.
+# 정기 운행 기간이 있던 계통(高島線 1920–1960, 北小金支線 2003–2014)은 긴 토막이 있어 들지 않는다. 끝이 열린 토막(영업 중)도 들지 않는다.
+# 앱은 탭 「임시」 표시·운행일 칩·운행 없는 날의 흐린 그림에 쓴다 (사용자 결정 2026-11-19). valid_to는 다음 날(끝 제외)
+def _temp_windows():
+    import datetime as _dt
+    by_=collections.defaultdict(list)
+    for ev_ in events:
+        if ev_.get('route') and ev_['type'] in ('open','close','suspend','resume'):by_[ev_['route']].append((ev_['date'],ev_['type']))
+    out_=[]
+    for r_,evs_ in by_.items():
+        if r_ not in routes or not all(re.fullmatch(r'\d{4}-\d\d-\d\d',d_) for d_,_ in evs_):continue
+        win_,cur_=[],None
+        for d_,k_ in sorted(evs_,key=lambda x:(x[0],x[1] in ('suspend','close'))):
+            if k_ in ('open','resume'):cur_=cur_ or d_
+            elif cur_:win_.append((cur_,d_));cur_=None
+        if cur_ or not win_:continue
+        if all((_dt.date.fromisoformat(b_)-_dt.date.fromisoformat(a_)).days<=7 for a_,b_ in win_):
+            out_+=[(r_,a_,b_) for a_,b_ in win_]
+    return out_
+_TEMPW=_temp_windows()
+print('임시 운행만 계통',sorted({r_ for r_,_,_ in _TEMPW}),'토막',len(_TEMPW))
+t('route_temp_window',['route_id','valid_from','valid_to'],sorted(_TEMPW))
 t('route',['id primary key','line_id','role','from_node','to_node','via_nodes','closed','closed_from','extend_to','map_coverage'],[(r['id'],r['line'],r.get('role'),r['from'],r['to'],json.dumps(r.get('via',[])),int(bool(r.get('closed'))),r.get('closed_from'),json.dumps(r.get('extend_to',[])),coverage_of(r['id'])) for r in routes.values()])
 t('route_edge',['route_id','seq','edge_id'],[(rid,i,e['id']) for rid,S in route_edges.items() for i,e in enumerate(S)])
 # km를 N05 선 위 위치로 추정한 정차역 (DESIGN §4.5 `? km`). 화면은 km 대신 `?`
@@ -3663,6 +3740,9 @@ for rid,d in _rs.items():
                 continue
             if _c0 is not None:_par1950c.append((rid,u['p'],_c0,d0_));d0_=_c0;_c0=None
             par_rows.append((rid,u['p'],prow,seq[u['a']],seq[u['b']],json.dumps([seq[x] for x in st if u['a']<=x<=u['b'] and _grp(node[x]) in pstop]),inn[0],inn[1],out[0],out[1],d0_ if d0_!='0000-01-01' else None,d1_ if d1_<'9999' else None))
+# 행 순서를 고정한다. 상대 노선을 모은 집합의 순서가 빌드마다 달라 같은 칸 병주 줄의 바깥·안쪽 자리가 바뀌었다(京成本線 成田 成田線·成田空港線, 2026-11-17)
+# 같은 칸이면 먼저 시작한 병주가 앞(안쪽)이다
+par_rows.sort(key=lambda r_:(r_[0],r_[3],r_[4],r_[10] or '',r_[1],r_[11] or ''))
 t('route_parallel',['route_id','other_line_id','other_route_id','from_seq','to_seq','stop_seqs','in_next_stop','in_terminal','out_next_stop','out_terminal','valid_from_lo','valid_to_hi'],par_rows)
 print('병주 구간',len(par_rows),'1950 전에 끝나 뺀 토막',len(_par1950),'뺀 토막의 시작을 이어받은 첫 토막',len(_par1950c))
 succ={frozenset((e['a'],e['b'])):e['id'] for e in edges.values() if e.get('alt')!='old'}
@@ -3789,16 +3869,17 @@ for (_r2,_r1),_day in sorted(_pairs.items()):
 t('bus_section',['line_id','pattern','seq','stop_ja','valid_from','valid_to'],[(b_['line'],p_['name'],i_,n_,p_.get('since'),p_.get('until') or 'ongoing') for b_ in BUS for p_ in b_['patterns'] for i_,n_ in enumerate(p_['stops'])])
 db.executemany('insert into line values (?,?,?)',[(b_['line'],'bus',None) for b_ in BUS])
 t('route_link_carryover',['route_id','seq','other_line_id','other_route_id','kind','side','at_edge','other_node','next_stop_node','terminal_node','flow','flow_source','valid_from','valid_to'],_cl)
+# 재개·폐지가 정해지지 않은 역 정차 운휴(陸羽西線 羽前前波·高屋: 2022-05-14 운휴, 2026-01-16 노선 재개 뒤 全列車通過). 노선 운휴와 같게 「운휴」다.
+# 정차 행은 끝 없이 두고 끝 없는 공백(gap_to ongoing)을 단다. 앞뒤 칸이 운행 중인지는 칸 수명이 따로 안다. 폐지가 확정되면 결정 119대로
+# stop_dates로 마지막 정차 다음 날에 끝낸다 (사용자 결정 2026-11-16, data/overrides/stop_suspended.json)
+_SSP=os.path.join(ROOT,'data','overrides','stop_suspended.json');_nss=0
+for x_ in (json.load(open(_SSP,encoding='utf-8')) if os.path.exists(_SSP) else []):
+    hit_=[s for s in stops if s['route_id']==x_['route'] and s['node_id']==x_['node'] and s['is_stop'] and s.get('valid_to') in (None,'ongoing')]
+    if not hit_:err('stop_suspended',x_);continue
+    for s in hit_:stop_gaps.append((s,x_['from'],'ongoing'));_nss+=1
+print('재개 미정 역 정차 운휴',_nss)
 # 정차 기간 사이 서지 않은 때 (stop_dates의 여러 기간). gap_from은 앞 기간의 끝(그날부터 서지 않음), gap_to는 다음 기간의 시작
 t('route_stop_gap',['route_id','seq','node_id','gap_from','gap_from_lo','gap_from_hi','gap_to','gap_to_lo','gap_to_hi'],[(s['route_id'],s['seq'],s['node_id'])+per(0,a_)+per(0,b_) for s,a_,b_ in stop_gaps if s['is_stop']])
-# 법적 폐지 없이 정차만 끝난 역(全列車通過, 재개·폐지 미정, 陸羽西線 羽前前波·高屋). 정차 끝(그날부터 서지 않음)은 stop_dates에 두고,
-# 앱은 「~해」 대신 「전 열차 통과」로 적는다. 정차 끝이 그 날이 아니면 빌드를 멈춘다 (사용자 결정 2026-11-16, data/overrides/stop_passing.json)
-_SPP=os.path.join(ROOT,'data','overrides','stop_passing.json');_sp=[]
-for x_ in (json.load(open(_SPP,encoding='utf-8')) if os.path.exists(_SPP) else []):
-    if not any(s['route_id']==x_['route'] and s['node_id']==x_['node'] and s['is_stop'] and s.get('valid_to')==x_['from'] for s in stops):err('stop_passing',x_);continue
-    _sp.append((x_['route'],x_['node'],'passing',x_['from'],x_['source']))
-t('stop_end',['route_id','node_id','reason','valid_from','source'],_sp)
-print('전 열차 통과(폐지 미정) 역',len(_sp))
 t('route_stop_carryover',['route_id','seq','node_id','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],[(r_,q_,n_)+per(0,f_)+per(0,t_) for r_,q_,n_,f_,t_ in _cs])
 print('승계 켬 국철 시대 구선로',len(_cl),'폐역',len(_cs))
 # 한 방향 운행 칸과 한 방향 정차 (DESIGN §8 한 방향 운행·한 방향 정차, 사용자 결정 2026-11-12)
@@ -4026,6 +4107,52 @@ names=[x for x in names if not (x['entity_type']=='archive' and x['id'] in _adro
 ARCH_REDIRECT=sorted(_adrop.items())
 WARN['archive_stop_dup']=ARCH_REDIRECT
 print('같은 열람 전용 역 합침',len(ARCH_REDIRECT))
+# archive_stop.seq는 두 뜻이다. 둘은 route_id가 있는지로 갈려 섞이지 않는다 (DESIGN §4.5 표).
+#  ① 열람 전용 노선의 역(archive_line_id 있음, route_id 없음): 그 열람 전용 노선 안의 역 순서. 손 표(archive_fix seq) 값 그대로다.
+#  ② 계통 위 열람 전용 역(route_id 있음): 그 계통 진행 방향의 순번(1부터, 계통마다 따로). 앱은 같은 자리(두 정차 사이·첫 역 앞·끝 역 뒤)의 역을 이 순서로 놓는다.
+#     자리는 앞 역(after)의 계통 순번 뒤, 앞 역이 계통에 없으면 뒤 역(before) 앞, 앞뒤가 다른 열람 전용 역이면 그 역 자리, 둘 다 없으면 km로 찾는다(앱 _place와 같다).
+#     같은 자리 안에서는 1순위 둘 다 km가 있으면 km, 2순위 같은 노선 노선도의 행 순서(gen_extra wiki_row, 앞 역 쪽이 작다), 앞뒤가 서로를 가리키면 그 순서, 그 밖은 지금 행 순서(안정)다
+#     (2026-11-17 志度線 瓦町 앞 公園前·中野町·藤塚·東田町이 위키 행·손 행 따로 쌓여 노선도와 다른 순서로 보이던 것)
+def _aseq_cmp(x,y):
+    if x.get('before')==y['id'] or y.get('after')==x['id']:return -1
+    if y.get('before')==x['id'] or x.get('after')==y['id']:return 1
+    if x.get('km') is not None and y.get('km') is not None and x['km']!=y['km']:return -1 if x['km']<y['km'] else 1
+    wx,wy=x.get('wiki_row'),y.get('wiki_row')
+    if wx and wy and wx[0]==wy[0] and wx[1]!=wy[1]:return -1 if wx[1]<wy[1] else 1
+    return 0
+_abyr=collections.defaultdict(list)
+for a in archive:
+    if a.get('kind')=='stop' and not a.get('archive_line') and arch_route(a):_abyr[arch_route(a)].append(a)
+_ASEQ_CONFLICT=[]
+for rid_,L_ in _abyr.items():
+    R_=[x for x in by_route.get(rid_,[]) if not x.get('is_extension')]
+    _last={x['node_id']:i for i,x in enumerate(R_)};_first={}
+    for i,x in enumerate(R_):_first.setdefault(x['node_id'],i)
+    _byid={a['id']:a for a in L_};_slot={}
+    def _sl(a,depth=0):
+        if a['id'] in _slot:return _slot[a['id']]
+        v=None
+        if a.get('after') in _last:v=2*_last[a['after']]+1
+        elif a.get('before') in _first:v=2*_first[a['before']]-1
+        elif depth<20 and (a.get('after') in _byid or a.get('before') in _byid):v=_sl(_byid.get(a.get('after')) or _byid[a['before']],depth+1)
+        elif a.get('km') is not None:
+            j_=max((i for i,x in enumerate(R_) if x['km_cum'] is not None and x['km_cum']<=a['km']),default=None)
+            v=2*j_+1 if j_ is not None else -1
+        _slot[a['id']]=v if v is not None else 2*len(R_)+1
+        return _slot[a['id']]
+    G_=collections.defaultdict(list)
+    for a in L_:G_[_sl(a)].append(a)
+    n_=0
+    for k_ in sorted(G_):
+        o_=[]
+        for a in G_[k_]:
+            # 뒤에 와야 할 첫 역 앞에 끼운다. 순서를 정할 단서가 없는 역끼리는 지금 순서를 지킨다
+            j_=next((j for j,b in enumerate(o_) if _aseq_cmp(a,b)<0),len(o_))
+            if any(_aseq_cmp(a,b)>0 for b in o_[j_:]):_ASEQ_CONFLICT.append((rid_,a['id']))
+            o_.insert(j_,a)
+        for a in o_:n_+=1;a['seq']=n_
+WARN['archive_seq_conflict']=_ASEQ_CONFLICT
+print('계통 위 열람 전용 역 순번',sum(len(v) for v in _abyr.values()),'순서 단서 엇갈림',len(_ASEQ_CONFLICT),_ASEQ_CONFLICT[:6])
 t('archive_stop',['id primary key','line_id','route_id','after_id','before_id','opened','closed','km','source','legal_abolition','archive_line_id','seq'],[(a['id'],a.get('line'),None if a.get('archive_line') else arch_route(a),a.get('after'),a.get('before'),a.get('opened'),a.get('closed'),a.get('km'),a.get('source'),a.get('legal_abolition'),a.get('archive_line'),a.get('seq')) for a in archive if a.get('kind')=='stop'])
 # 동결 전 공개 ID 개명·합친 노드의 옛 ID (data/overrides/id_rename.json, 2회차 결정 U12). 새 ID가 이 판에 없거나 옛 ID가 아직 있으면 행이 틀린 것이다
 _IDR=[]
@@ -4218,6 +4345,8 @@ for s_ in stops:
     for f_,u_ in zip(cuts[::2],cuts[1::2]):
         # 시작≥끝인 토막은 서는 날이 없다 (K18). 정차 시작에서 바로 서지 않은 때(운휴로 시작)가 이어지면 앞 토막은 길이 0이라 조용히 뺀다
         if f_==u_==s_['valid_from']:continue
+        # 끝 없는 공백(재개 미정 정차 운휴, stop_suspended) 뒤 토막은 서는 날이 없다
+        if f_=='ongoing':continue
         if u_ not in (None,'ongoing') and _p_lo(f_)>=_p_hi(u_):WARN['route_stop_period_empty'].append((s_['route_id'],s_['node_id'],f_,u_));continue
         _rsp.append((s_['route_id'],s_['seq'],s_['node_id'],'stop')+per(0,f_)+per(0,u_))
 t('route_stop_period',['route_id','seq','node_id','kind','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],_rsp)
@@ -4714,7 +4843,9 @@ print('지금 이름과 같은 옛 이름 기간 행 뺌',len(_same_per),'행',_
 REPORT_SAME_PER=sorted(_same_per,key=str)
 db.execute('create table name (entity_type,entity_id,lang,text,kana,source,reading_source,source_title,checked,line_id,valid_from,valid_to)')
 check_dates('name',['entity_type','entity_id','lang','text','kana','source','reading_source','source_title','checked','line_id','valid_from','valid_to'],[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names])
-db.executemany('insert into name values (?,?,?,?,?,?,?,?,?,?,?,?)',[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names if x['entity_type']!='node' or x['id'] in pub])
+# 열람 전용 이름은 남은 열람 전용 행(drop·drop_stop·exclude로 뺀 것 제외)의 것만 싣는다. 뺀 ID의 이름만 남은 고아 109건(a_yomiurirando_monorail 등, 12회차 M R6)
+_arch_ids={a_['id'] for a_ in archive}
+db.executemany('insert into name values (?,?,?,?,?,?,?,?,?,?,?,?)',[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names if (x['entity_type']!='node' or x['id'] in pub) and (x['entity_type']!='archive' or x['id'] in _arch_ids)])
 # 역·노선별 仮乗降場·臨時駅 기간. 날짜 모름 화면의 표식에 쓴다 (사용자 결정 2026-11-07). valid_to NULL이면 지금도 仮·臨
 db.execute('create table stop_mark (node_id,line_id,kind,valid_from,valid_to)')
 # 끝 없는 표식은 지금도 仮·臨이라는 뜻이다 (날짜 원칙: ongoing)

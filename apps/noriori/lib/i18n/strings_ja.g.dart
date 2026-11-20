@@ -168,7 +168,6 @@ class _Translations$map$ja implements Translations$map$ko {
 
 	// Translations
 	@override String get soloOff => '全路線を表示';
-	@override String get scoreLabel => '現行';
 	@override String get add => '記録';
 	@override String get search => '路線・駅を検索';
 	@override String get closed => '廃線';
@@ -317,6 +316,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get dateTitle => '乗車日';
 	@override String get dateHint => '2015, 2015-03, 2015-03-14, 198X';
 	@override String get dateUnknown => '日付不明';
+	@override String get dateUnknownHint => '日付不明：駅は全期間、直通・乗換は最後の状態で表示します';
 	@override String get datePick => 'カレンダーから選ぶ';
 	@override String get dateToday => '今日';
 	@override String get dateBad => '日付の形式を確認してください';
@@ -324,15 +324,23 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get cancel => 'キャンセル';
 	@override String get main => '本線';
 	@override String get pickFrom => '乗車駅を選んでください';
+	@override String get tempTag => '臨時';
+	@override String get tempNotice => '定期旅客列車なし（臨時列車の運行日のみ記録可）';
+	@override String get tempPickDay => '臨時列車の運行日を選んでください';
+	@override String get tempNoRun => 'この日は臨時列車が走っていません。上の運行日を押してください';
 	@override String get pickTo => '降車駅を選んでください';
 	@override String get save => '記録する';
 	@override String summary({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km';
 	@override String get noPath => 'この2駅の間の経路が見つかりませんでした';
 	@override late final _Translations$session$state$ja state = _Translations$session$state$ja._(_root);
 	@override String savedAs({required Object line}) => '当時は${line}';
+	@override String movedTo({required Object year, required Object name}) => '${year}年 ${name}へ移転';
 	@override String handSince({required Object date, required Object line}) => '${date}から${line}';
 	@override String get handOpen => '路線を見る ›';
 	@override String get handNote => 'この区間はその路線で記録されます';
+	@override String get noticeClosedSub => 'それより前の日付でのみ記録できます';
+	@override String get noticeSuspendedSub => '運休前の日付でのみ記録できます';
+	@override String get noticeBeforeSub => '開業後の日付で記録できます';
 	@override String get chooseDirection => 'どちら回りで乗りましたか？';
 	@override String directionKm({required Object km}) => '${km} km';
 	@override String get chooseRelocation => 'どの時期の線路でしたか？';
@@ -361,6 +369,7 @@ class _Translations$session$ja implements Translations$session$ko {
 		other: '${n}駅',
 	);
 	@override String closedSection({required Object year}) => '~${year} 廃止';
+	@override String openedSection({required Object year}) => '${year}年開業';
 	@override String archiveStop({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です';
 	@override String archiveLine({required Object name}) => '${name}は記録対象外です';
 	@override String get from => '乗車';
@@ -1128,7 +1137,6 @@ extension on TranslationsJa {
 			'start.noSpaceBody' => '記録はそのまま残っています。空き容量を確保してからもう一度お試しください。',
 			'start.restoreAction' => '復元する',
 			'map.soloOff' => '全路線を表示',
-			'map.scoreLabel' => '現行',
 			'map.add' => '記録',
 			'map.search' => '路線・駅を検索',
 			'map.closed' => '廃線',
@@ -1241,6 +1249,7 @@ extension on TranslationsJa {
 			'session.dateTitle' => '乗車日',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => '日付不明',
+			'session.dateUnknownHint' => '日付不明：駅は全期間、直通・乗換は最後の状態で表示します',
 			'session.datePick' => 'カレンダーから選ぶ',
 			'session.dateToday' => '今日',
 			'session.dateBad' => '日付の形式を確認してください',
@@ -1248,6 +1257,10 @@ extension on TranslationsJa {
 			'session.cancel' => 'キャンセル',
 			'session.main' => '本線',
 			'session.pickFrom' => '乗車駅を選んでください',
+			'session.tempTag' => '臨時',
+			'session.tempNotice' => '定期旅客列車なし（臨時列車の運行日のみ記録可）',
+			'session.tempPickDay' => '臨時列車の運行日を選んでください',
+			'session.tempNoRun' => 'この日は臨時列車が走っていません。上の運行日を押してください',
 			'session.pickTo' => '降車駅を選んでください',
 			'session.save' => '記録する',
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
@@ -1259,9 +1272,13 @@ extension on TranslationsJa {
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => '当時は${line}',
+			'session.movedTo' => ({required Object year, required Object name}) => '${year}年 ${name}へ移転',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}から${line}',
 			'session.handOpen' => '路線を見る ›',
 			'session.handNote' => 'この区間はその路線で記録されます',
+			'session.noticeClosedSub' => 'それより前の日付でのみ記録できます',
+			'session.noticeSuspendedSub' => '運休前の日付でのみ記録できます',
+			'session.noticeBeforeSub' => '開業後の日付で記録できます',
 			'session.chooseDirection' => 'どちら回りで乗りましたか？',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => 'どの時期の線路でしたか？',
@@ -1286,6 +1303,7 @@ extension on TranslationsJa {
 			'session.lap' => '1周',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}駅', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} 廃止',
+			'session.openedSection' => ({required Object year}) => '${year}年開業',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です',
 			'session.archiveLine' => ({required Object name}) => '${name}は記録対象外です',
 			'session.from' => '乗車',
@@ -1613,6 +1631,8 @@ extension on TranslationsJa {
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',
 			'prefNames.25' => '京都',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.26' => '大阪',
 			'prefNames.27' => '兵庫',
 			'prefNames.28' => '奈良',
@@ -1622,8 +1642,6 @@ extension on TranslationsJa {
 			'prefNames.32' => '岡山',
 			'prefNames.33' => '広島',
 			'prefNames.34' => '山口',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.35' => '徳島',
 			'prefNames.36' => '香川',
 			'prefNames.37' => '愛媛',

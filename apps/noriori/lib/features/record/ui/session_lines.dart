@@ -13,13 +13,26 @@ import 'switchback_mark.dart';
 
 /// 줄기 칸의 색. 칠하기는 고른 구간, 이미 탄 구간, 영업 상태 순이다.
 final class TrunkStyle {
-  const TrunkStyle(this.state, this.ridden, this.tokens);
+  TrunkStyle(this.state, this.ridden, this.tokens, {this.scroll}) : handed = handedGaps(state.lines);
+
+  /// 점선 박자를 목록 전체 위치에 맞추는 목록 스크롤
+  final ScrollController? scroll;
 
   final RecordSessionState state;
   final List<bool> ridden;
   final AppTokens tokens;
 
+  /// 그날 다른 노선으로 기록되는 이관 괄호 안의 칸 번호 (사용자 결정 2026-11-19)
+  final Set<int> handed;
+
   TrunkPiece get tail => TrunkPiece(tokens.selectorGone, SelectorRuler.closedWidth);
+
+  /// 그 자리(첫 역 앞 -1, 끝 역 뒤 = 마지막 역 번호)에 열람 전용 역이 있는가
+  bool archiveAt(int gap) => state.lines.any((line) => line is ArchiveLine && line.gap == gap);
+
+  /// 첫 역 앞·끝 역 뒤에는 역 사이 칸이 없다. 그 자리에 열람 전용 역이 있으면 사이 줄(끝 이어짐·구분선)도 폐지 구간 줄기로 잇는다.
+  /// 비워 두면 줄기가 구분선에서 끊겨 열람 전용 역 묶음이 노선과 떨어져 보였다 (志度線 瓦町 앞, 2026-11-18 사용자 지적)
+  TrunkPiece? beyond(int gap) => (gap < 0 || gap >= state.visible.length - 1) && archiveAt(gap) ? tail : null;
 
   TrunkPiece? gap(int gap) {
     final rows = state.visible;
@@ -27,14 +40,75 @@ final class TrunkStyle {
     final already = gap < ridden.length && ridden[gap];
     final oneWay = gap < state.oneWayGaps.length ? state.oneWayGaps[gap] : null;
     if (state.coversBelow(rows[gap].seq)) {
-      return TrunkPiece(tokens.lineRidden, SelectorRuler.openWidth, dashed: !already, oneWay: oneWay);
+      return TrunkPiece(tokens.lineRidden, SelectorRuler.openWidth, dashed: !already, oneWay: oneWay, scroll: scroll);
     }
     if (already) {
       return TrunkPiece(tokens.lineRiddenSoft, SelectorRuler.openWidth, oneWay: oneWay);
     }
     final open = gap >= state.openGaps.length || state.openGaps[gap];
-    return open ? TrunkPiece(tokens.text, SelectorRuler.openWidth, oneWay: oneWay) : tail;
+    return open ? TrunkPiece(tokens.text, SelectorRuler.openWidth, handed: handed.contains(gap), oneWay: oneWay, scroll: scroll) : tail;
   }
+}
+
+/// 이관 괄호 안의 칸 번호. 괄호 맨 위 역부터 맨 아래 역 앞까지다
+Set<int> handedGaps(List<SelectorLine> lines) {
+  final out = <int>{};
+  for (final notice in lines.whereType<NoticeLine>()) {
+    if (notice.kind != NoticeKind.hand) continue;
+    final top = lines.firstWhere(notice.top.matches, orElse: () => notice);
+    final bottom = lines.firstWhere(notice.bottom.matches, orElse: () => notice);
+    if (top is! StopLine || bottom is! StopLine) continue;
+    for (var gap = top.index; gap < bottom.index; gap++) {
+      out.add(gap);
+    }
+  }
+  return out;
+}
+
+/// 괄호와 안내 상자의 색. 이관은 바탕색에 가까운 베이지, 폐지는 붉은 계열, 운휴는 누런 계열, 개업 전은 회색이다 (사용자 결정 2026-11-19)
+({Color bracket, Color box, Color title, Color body}) noticeColors(NoticeKind kind, AppTokens tokens, Brightness brightness) {
+  final dark = brightness == Brightness.dark;
+  return switch (kind) {
+    NoticeKind.hand => (
+        bracket: tokens.textMuted,
+        box: dark ? const Color(0xFF2B2F36) : const Color(0xFFEDE6D8),
+        title: tokens.text,
+        body: tokens.textMuted,
+      ),
+    NoticeKind.closed => (
+        bracket: dark ? const Color(0xFFD98A80) : const Color(0xFFB9675B),
+        box: dark ? const Color(0xFF3A2624) : const Color(0xFFF6E2DD),
+        title: dark ? const Color(0xFFFFB3A8) : const Color(0xFF8E3324),
+        body: dark ? const Color(0xFFD9A59D) : const Color(0xFF7E4A41),
+      ),
+    NoticeKind.suspended => (
+        bracket: dark ? const Color(0xFFD1A85A) : const Color(0xFFA9802F),
+        box: dark ? const Color(0xFF3A3220) : const Color(0xFFF4EBD5),
+        title: dark ? const Color(0xFFF0CF8A) : const Color(0xFF7A5512),
+        body: dark ? const Color(0xFFCDB487) : const Color(0xFF6E5A35),
+      ),
+    NoticeKind.before => (
+        bracket: tokens.textClosed,
+        box: dark ? const Color(0xFF2A2E33) : const Color(0xFFECEAE4),
+        title: tokens.text,
+        body: tokens.textMuted,
+      ),
+  };
+}
+
+/// 줄마다 걸리는 괄호 토막. 안내 줄이 가리키는 맨 위 줄부터 맨 아래 줄까지다
+List<List<BracketPiece>> bracketPieces(List<SelectorLine> lines, AppTokens tokens, Brightness brightness) {
+  final out = List.generate(lines.length, (_) => <BracketPiece>[]);
+  for (final notice in lines.whereType<NoticeLine>()) {
+    final top = lines.indexWhere(notice.top.matches);
+    final bottom = lines.indexWhere(notice.bottom.matches);
+    if (top < 0 || bottom <= top) continue;
+    final color = noticeColors(notice.kind, tokens, brightness).bracket;
+    for (var i = top; i <= bottom; i++) {
+      out[i].add(BracketPiece(color: color, start: i == top, end: i == bottom));
+    }
+  }
+  return out;
 }
 
 String? _year(String? raw) => raw?.substring(0, 4);
@@ -104,9 +178,12 @@ LaneStyle laneStyleOf(AppTokens tokens) =>
 
 /// 선택기의 한 줄을 그린다.
 class SessionLineTile extends StatelessWidget {
-  const SessionLineTile({super.key, required this.line, this.prev, required this.next, required this.trunk});
+  const SessionLineTile({super.key, required this.line, this.prev, required this.next, required this.trunk, this.brackets = const []});
 
   final SelectorLine line;
+
+  /// 이 줄에 걸리는 괄호 토막 (사용자 결정 2026-11-19)
+  final List<BracketPiece> brackets;
   final SelectorLine? prev;
   final SelectorLine? next;
 
@@ -115,29 +192,42 @@ class SessionLineTile extends StatelessWidget {
   final TrunkStyle trunk;
 
   @override
-  Widget build(BuildContext context) => switch (line) {
+  Widget build(BuildContext context) {
+    final tile = _tile(context);
+    if (brackets.isEmpty || line is StopLine) return tile;
+    return CustomPaint(foregroundPainter: BracketOverlay(brackets, nodeY: line is ArchiveLine ? 18 : null), child: tile);
+  }
+
+  Widget _tile(BuildContext context) => switch (line) {
         final StopLine stop => _StopTile(
+            brackets: brackets,
             line: stop,
-            above: trunk.gap(stop.index - 1) ?? (stop.index == 0 && prev is ArchiveLine ? trunk.tail : null),
-            below: trunk.gap(stop.index) ?? (next is ArchiveLine ? trunk.tail : null),
+            above: trunk.gap(stop.index - 1) ?? (stop.index == 0 && prev is ArchiveLine ? trunk.tail : trunk.beyond(stop.index - 1)),
+            below: trunk.gap(stop.index) ?? (next is ArchiveLine ? trunk.tail : trunk.beyond(stop.index)),
           ),
-        final BranchLine branch => _BranchTile(line: branch, trunk: trunk.gap(branch.gap), fromStop: _fromStop(branch.up)),
-        final EndLine end => _EndTile(line: end, fromStop: _fromStop(end.up), trunk: trunk.gap(end.gap)),
+        final BranchLine branch => _BranchTile(line: branch, trunk: trunk.gap(branch.gap) ?? trunk.beyond(branch.gap), fromStop: _fromStop(branch.up)),
+        final EndLine end => _EndTile(line: end, fromStop: _fromStop(end.up), trunk: trunk.gap(end.gap) ?? trunk.beyond(end.gap)),
         final ArchiveLine archive => _ArchiveTile(
             line: archive,
             // 첫 역 앞(-1)의 열람 전용 역은 위로 잇는 것이 없고 아래 첫 역으로 이어진다 (10회차 G1 chugoku_shikoku_2-003)
             above: archive.gap < 0 ? (prev is ArchiveLine ? trunk.tail : null) : trunk.gap(archive.gap) ?? trunk.tail,
             below: archive.gap < 0 ? trunk.tail : trunk.gap(archive.gap) ?? (next is ArchiveLine ? trunk.tail : null),
           ),
-        final SectionLine section => _SectionTile(line: section, trunk: trunk.gap(section.gap)),
+        // 열람 전용 역 묶음 바깥(맨 위) 구분선은 줄기를 긋지 않는다. 묶음과 역 사이 구분선만 잇는다
+        final SectionLine section => _SectionTile(
+            line: section,
+            trunk: trunk.gap(section.gap) ?? (prev is ArchiveLine || (next is ArchiveLine && prev != null) ? trunk.beyond(section.gap) : null),
+          ),
         final TransferLine hand => _HandTile(line: hand, trunk: trunk.gap(hand.gap)),
+        final NoticeLine notice => _NoticeTile(line: notice, prev: prev, trunk: trunk),
       };
 }
 
 class _StopTile extends ConsumerWidget {
-  const _StopTile({required this.line, required this.above, required this.below});
+  const _StopTile({required this.line, required this.above, required this.below, this.brackets = const []});
 
   final StopLine line;
+  final List<BracketPiece> brackets;
   final TrunkPiece? above;
   final TrunkPiece? below;
 
@@ -187,13 +277,14 @@ class _StopTile extends ConsumerWidget {
   }
 
   /// 고를 수 없는 역을 누르면 이유를 알린다 (10-30 승인 목업).
-  void _whyNot(BuildContext context) {
+  void _whyNot(BuildContext context, RecordSessionState state) {
     final t = context.t.session;
     final messenger = ScaffoldMessenger.of(context);
     messenger.hideCurrentSnackBar();
     messenger.showSnackBar(
       SnackBar(
-        content: Text(line.row.state == StopState.suspended ? t.whySuspended : t.whyClosed),
+        // 임시 운행만 있는 계통은 폐지·운휴가 아니라 그날 임시 열차가 없던 것이다 (사용자 결정 2026-11-19)
+        content: Text(state.isTemporary ? t.tempNoRun : line.row.state == StopState.suspended ? t.whySuspended : t.whyClosed),
         persist: false,
       ),
     );
@@ -234,16 +325,22 @@ class _StopTile extends ConsumerWidget {
     final end = row.seq == state.from?.seq || row.seq == state.to?.seq;
     final mark = ref.watch(stationMarksProvider).of(ref.watch(networkProvider), row.node);
     final tier3 = !row.selectable;
-    final rowHeight = line.small ? 32.0 : (tier3 ? 40.0 : 48.0);
-    final style = text.titleMedium?.copyWith(
-      fontWeight: tier3 ? FontWeight.w400 : (end ? FontWeight.w700 : FontWeight.w500),
-      color: tier3 ? tokens.textClosed : tokens.text,
-    );
+    // 임시 운행만 있는 계통: 운행일이 아닌 날의 역은 영업 역과 같은 크기의 흐린 원·흐린 이름이다(폐역의 작은 원·「~해」와 다르다).
+    // 끝난 해·운휴 표시는 어느 날에도 붙이지 않는다 (사용자 결정 2026-11-19, 목업 5판)
+    final temp = state.isTemporary;
+    final fade = temp && tier3;
+    final rowHeight = line.small ? 32.0 : (tier3 && !fade ? 40.0 : 48.0);
+    final style = fade
+        ? text.titleMedium?.copyWith(fontWeight: FontWeight.w500, color: tokens.textMuted)
+        : tier3
+        ? closedNameStyle(text, tokens)
+        : text.titleMedium?.copyWith(fontWeight: end ? FontWeight.w700 : FontWeight.w500, color: tokens.text);
+    final nameLocale = japaneseOnlyLocale(name0: state.nameOf(row.node));
     final scaler = MediaQuery.textScalerOf(context);
     final lineHeight = scaler.scale((style?.fontSize ?? 16) * (style?.height ?? 1.3));
     final top = ((rowHeight - lineHeight) / 2).clamp(2.0, 24.0);
     final centerY = top + lineHeight / 2;
-    final note = _note(context);
+    final note = temp ? null : _note(context);
     final name = state.nameOf(row.node);
     // 그날 한 방향 열차만 서는 역은 이름 뒤에 화살표 칩을 붙인다 (DESIGN §8 한 방향 정차, 사용자 결정 2026-11-12)
     final oneWay = state.stopDirections[row.seq];
@@ -276,7 +373,7 @@ class _StopTile extends ConsumerWidget {
     final onTransfers = !tier3 && (row.closeYear == null || row.handedTo != null) && line.transfers.isNotEmpty;
     // 1950년 전에 정차가 끝난 역은 열람 전용 역과 같은 꽉 찬 작은 점이다 (사용자 결정 2026-11-08)
     final archived = row.beforeFloor;
-    final circle = archived ? 3.5 : (tier3 ? 4.5 : 8.5);
+    final circle = archived ? 3.5 : (tier3 && !fade ? 4.5 : 8.5);
     final ring = end || picked || mark != StationMark.none
         ? tokens.lineRidden
         : (tier3 ? tokens.textClosed : tokens.text);
@@ -291,7 +388,7 @@ class _StopTile extends ConsumerWidget {
           _ => t.spokenOnlyOneWay,
         },
       if (km != null) t.spokenKm(km: km.toStringAsFixed(1)),
-      if (row.closeYear != null && row.handedTo == null)
+      if (!temp && row.closeYear != null && row.handedTo == null)
         t.spokenClosed(year: row.closeYear!)
       else if (row.suspendedSince != null && (row.state == StopState.suspended || row.state == StopState.unknown))
         t.spokenSuspendedSince(year: row.suspendedSince!)
@@ -314,20 +411,21 @@ class _StopTile extends ConsumerWidget {
       label: spoken,
       excludeSemantics: true,
       child: InkWell(
-        onTap: row.selectable ? () => _tap(context, ref, state) : () => _whyNot(context),
+        onTap: row.selectable ? () => _tap(context, ref, state) : () => _whyNot(context, state),
         child: CustomPaint(
           painter: StopPainter(
+            brackets: brackets,
             lanes: line.lanes,
             laneStyle: laneStyleOf(tokens),
             endUp: switch (line.endUp) {
               null => null,
-              true => tokens.selectorGone,
-              false => tokens.lineUnridden,
+              true when !temp => tokens.selectorGone,
+              _ => tokens.lineUnridden,
             },
             endDown: switch (line.endDown) {
               null => null,
-              true => tokens.selectorGone,
-              false => tokens.lineUnridden,
+              true when !temp => tokens.selectorGone,
+              _ => tokens.lineUnridden,
             },
             centerY: centerY,
             above: above,
@@ -336,7 +434,7 @@ class _StopTile extends ConsumerWidget {
             fill: archived ? tokens.textClosed : (end || mark == StationMark.stepped ? tokens.lineRidden : tokens.surface),
             background: tokens.surface,
             radius: circle,
-            ringWidth: tier3 ? 2 : 3.5,
+            ringWidth: tier3 && !fade ? 2 : 3.5,
             selected: end,
             selectColor: tokens.lineRidden,
             dots: [
@@ -379,10 +477,10 @@ class _StopTile extends ConsumerWidget {
                         final besideName = aside == null || _fitsAfter(
                           context,
                           TextSpan(children: [
-                            TextSpan(text: name, style: style),
+                            TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (past != null) TextSpan(text: ' ${past.label}', style: text.labelSmall),
                           ]),
-                          TextSpan(text: '  $aside', style: asideStyle, locale: const Locale('ja')),
+                          TextSpan(text: '  $aside', style: japaneseStyle(asideStyle), locale: const Locale('ja')),
                           box.maxWidth,
                           // 한 방향 칩은 글자 폭으로 잴 수 없어 넉넉히 더한다
                           extra: oneWay == null ? 0 : 72 * MediaQuery.textScalerOf(context).scale(1),
@@ -390,7 +488,7 @@ class _StopTile extends ConsumerWidget {
                         return Text.rich(
                         TextSpan(
                           children: [
-                            TextSpan(text: name, style: style),
+                            TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (oneWay != null)
                               WidgetSpan(
                                 alignment: PlaceholderAlignment.middle,
@@ -410,7 +508,7 @@ class _StopTile extends ConsumerWidget {
                               TextSpan(
                                 text: besideName ? '  $aside' : '\n$aside',
                                 locale: const Locale('ja'),
-                                style: asideStyle,
+                                style: japaneseStyle(asideStyle),
                               ),
                           ],
                         ),
@@ -441,6 +539,12 @@ class _StopTile extends ConsumerWidget {
                   Text(
                     t.savedAs(line: book.lines[saved] ?? saved),
                     style: text.bodySmall,
+                  ),
+                // 이름까지 바뀐 옛 자리는 역명 바로 아래·환승 목록 위에 「~년 ~로 이전」 (사용자 결정 2026-11-18)
+                if (state.movedNotes[row.node] case final moved?)
+                  Text(
+                    t.movedTo(year: moved.year, name: koDirectional(context, moved.name)),
+                    style: text.bodySmall?.copyWith(color: tier3 ? tokens.textClosed : tokens.textMuted),
                   ),
                 // 처음 역으로 돌아온 끝 행은 같은 역이라 글을 붙이지 않는다 (사용자 결정 2026-11-12)
                 if (returns == null && line.transfers.isNotEmpty)
@@ -527,7 +631,9 @@ class _Transfers extends StatelessWidget {
         same.name = '${same.name}·${isJr(link.otherLineId) ? name : _withoutPrefix(name, same.first)}';
       } else {
         out.add(
-          _Entry(name, station, _tail(context, link, gone: item.gone, suspended: item.suspended), gone: item.gone, lineId: link.otherLineId),
+          state.isTemporary
+              ? _Entry(name, station, null, gone: false, lineId: link.otherLineId)
+              : _Entry(name, station, _tail(context, link, gone: item.gone, suspended: item.suspended), gone: item.gone, lineId: link.otherLineId),
         );
       }
     }
@@ -679,7 +785,8 @@ class _BranchTile extends ConsumerWidget {
     final tail = archive != null ? context.t.session.state.until(year: archive.closedYear) : _tail(context, link, gone: item.gone, suspended: item.suspended);
     final color = item.gone ? tokens.selectorGoneText : tokens.textMuted;
     // 옛 이름 줄의 높이는 글자 크기를 따른다. 그림의 곡선 위치가 이 값을 쓴다
-    final oldHeight = MediaQuery.textScalerOf(context).scale(16);
+    // 옛 이름은 노선 이름과 같은 크기로 적는다(위아래 줄 글자 크기가 달라 보이던 것, 실화면 2026-11-19)
+    final oldHeight = MediaQuery.textScalerOf(context).scale(19);
     final centerY = 24.0 + item.before.length * oldHeight;
     return Semantics(
       container: true,
@@ -722,7 +829,7 @@ class _BranchTile extends ConsumerWidget {
                       height: oldHeight,
                       child: Text(
                         '${book.lines[old.otherLineId] ?? ''} ${_tail(context, old, gone: true) ?? ''}',
-                        style: text.bodySmall?.copyWith(color: tokens.selectorGoneText),
+                        style: text.bodyMedium?.copyWith(fontSize: 13, color: tokens.selectorGoneText),
                       ),
                     ),
                   Row(
@@ -779,7 +886,8 @@ class _EndTile extends ConsumerWidget {
         ? context.t.session.bound(names: nexts.join('·'))
         : nexts.firstOrNull;
     final session = ref.read(recordSessionProvider.notifier);
-    final gone = line.items.every((item) => item.gone);
+    // 임시 운행만 있는 계통의 끝 이어짐(직통)은 상대 노선이 살아 있으면 어느 날에도 살아 있게 그린다 (사용자 결정 2026-11-19)
+    final gone = !state.isTemporary && line.items.every((item) => item.gone);
     final color = gone ? tokens.selectorGoneText : tokens.textMuted;
     // 끝난 이어짐은 분기 줄처럼 끝난 해를 붙인다 (실화면 검수 2026-11-08, 川内의 宮之城線)
     final tail = gone ? _tail(context, first, gone: true, suspended: line.items.first.suspended) : null;
@@ -805,7 +913,8 @@ class _EndTile extends ConsumerWidget {
           : null,
       child: CustomPaint(
         painter: EndPainter(
-          color: gone ? tokens.selectorGone : tokens.lineUnridden,
+          // 묶음의 선은 그 묶음에 현행이 하나라도 있으면 현행색 하나로 옅어진다. 글줄(번호·이름)은 줄마다 제 색이다 (사용자 결정 2026-11-20)
+          color: (line.stackOf > 1 ? !line.stackLive : gone) ? tokens.selectorGone : tokens.lineUnridden,
           up: line.up,
           parallel: line.parallel,
           trunkThrough: line.trunkThrough,
@@ -818,24 +927,36 @@ class _EndTile extends ConsumerWidget {
         ),
         child: ConstrainedBox(
           // 같은 끝의 노선이 여럿이면 목록처럼 촘촘히 쌓는다 (A안)
-          constraints: BoxConstraints(minHeight: line.stackOf > 1 && line.stackAt > 0 ? 30 : 48),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 0, 12, 0),
-            child: Align(
-              alignment: Alignment.centerLeft,
-              child: Wrap(
-                spacing: 10,
-                crossAxisAlignment: WrapCrossAlignment.center,
-                children: [
-                  Text(name, style: text.bodyMedium?.copyWith(fontSize: 13, color: color)),
-                  if (where != null)
-                    Text(where, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
-                  if (tail != null)
-                    Text(tail, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
-                ],
-              ),
-            ),
-          ),
+          // 같은 끝의 직통이 여럿이면 줄마다 속이 찬 번호를 붙이고, 번호 옆 스위치백 표식과 헷갈리지 않게 줄 간격을 넉넉히 둔다 (사용자 결정 2026-11-19)
+          constraints: const BoxConstraints(minHeight: 48),
+          child: line.stackOf > 1
+              ? Stack(
+                  // 글줄이 줄 높이(48) 안에서 가운데에 오게 제약을 그대로 넘긴다. 번호도 같은 가운데다
+                  fit: StackFit.passthrough,
+                  children: [
+                    Positioned(
+                      left: SelectorRuler.textX - 27,
+                      top: 0,
+                      bottom: 0,
+                      child: Center(
+                        child: Container(
+                          width: 18,
+                          height: 18,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(shape: BoxShape.circle, color: gone ? tokens.selectorGoneText : tokens.textMuted),
+                          // 원 크기가 고정이라 숫자도 글자 크기 설정을 따르지 않는다(환승 캡슐 번호와 같다). 큰 글자에서 숫자가 원 밖으로 잘렸다 (실화면 2026-11-19)
+                          child: Text(
+                            '${line.stackAt + 1}',
+                            textScaler: TextScaler.noScaling,
+                            style: text.labelSmall?.copyWith(fontSize: 11, height: 1, fontWeight: FontWeight.w700, color: tokens.surface),
+                          ),
+                        ),
+                      ),
+                    ),
+                    _endText(context, text, tokens, book.lines, name, where, tail, color),
+                  ],
+                )
+              : _endText(context, text, tokens, book.lines, name, where, tail, color),
         ),
       ),
     );
@@ -852,6 +973,63 @@ class _EndTile extends ConsumerWidget {
       ],
     );
   }
+
+  Widget _endText(BuildContext context, TextTheme text, AppTokens tokens, Map<String, String> lineNames, String name, String? where, String? tail, Color color) =>
+      Padding(
+            padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 0, 12, 0),
+            child: Align(
+              alignment: Alignment.centerLeft,
+              // 이어받기 전 노선(같은 사슬)은 같은 줄 묶음 안에서 바로 위에 이름과 끝난 해만 적는다. 간격 없이 붙여 한 노선의 이어짐으로 읽힌다
+              // (佐世保: 松浦線 ~1988 / 松浦鉄道西九州線 ~2020 → 환승, 사용자 결정 2026-11-19)
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  for (final old in line.items.first.before)
+                    Padding(
+                      padding: const EdgeInsets.only(top: 6),
+                      child: Text(
+                        '${lineNames[old.otherLineId] ?? old.otherLineId ?? ''}  ${_tail(context, old, gone: true) ?? ''}',
+                        style: text.bodyMedium?.copyWith(fontSize: 13, color: tokens.selectorGoneText),
+                      ),
+                    ),
+                  // 폭이 모자라면 방면 역·노선 이름을 말줄임하고 끝난 해는 끝까지 보인다 (실화면 2026-11-19)
+                  // 끝난 해는 끝까지 보이고, 모자라면 방면 역부터, 그다음 노선 이름을 말줄임한다.
+                  // 끝 글자는 줄 폭의 60%까지만 차지해 아주 좁거나 글자가 클 때도 넘치지 않는다 (실화면 2026-11-19)
+                  LayoutBuilder(
+                    builder: (context, box) => Row(
+                      spacing: 10,
+                      children: [
+                        // 노선 이름과 방면 역을 한 글줄로 이어 남는 폭을 다 쓰고, 넘치면 끝(방면 역)부터 말줄임한다.
+                        // 비율로 폭을 나누면 자리가 남아도 방면 역이 일찍 잘린다 (실화면 2026-11-19 新潟)
+                        Flexible(
+                          child: Text.rich(
+                            TextSpan(
+                              style: text.bodyMedium?.copyWith(fontSize: 13, color: color),
+                              children: [
+                                TextSpan(text: name),
+                                if (where != null) ...[
+                                  const WidgetSpan(child: SizedBox(width: 10)),
+                                  TextSpan(text: where, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
+                                ],
+                              ],
+                            ),
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                        if (tail != null)
+                          ConstrainedBox(
+                            constraints: BoxConstraints(maxWidth: box.maxWidth * .6),
+                            child: Text(tail, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall?.copyWith(fontSize: 11.5, color: color)),
+                          ),
+                      ],
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          );
 }
 
 class _ArchiveTile extends ConsumerWidget {
@@ -868,10 +1046,11 @@ class _ArchiveTile extends ConsumerWidget {
     final text = Theme.of(context).textTheme;
     final stop = line.stop;
     final name = state.archiveNames[stop.id] ?? stop.id;
+    final aside = state.archiveAside[stop.id];
     final year = context.t.session.state.until(year: stop.closedYear);
     final message = context.t.session.archiveStop(name: name, year: stop.closedYear);
     final km = stop.km;
-    final style = text.bodyMedium?.copyWith(color: tokens.textClosed);
+    final style = closedNameStyle(text, tokens);
     return InkWell(
       onTap: () => ScaffoldMessenger.of(context).showSnackBar(
         SnackBar(content: Text(message), persist: false),
@@ -891,7 +1070,19 @@ class _ArchiveTile extends ConsumerWidget {
             child: Row(
               spacing: 10,
               children: [
-                Expanded(child: Text(name, style: style)),
+                Expanded(
+                  child: Text.rich(
+                    TextSpan(children: [
+                      TextSpan(
+                        text: name,
+                        style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
+                        locale: japaneseOnlyLocale(name0: name),
+                      ),
+                      if (aside != null)
+                        TextSpan(text: '  $aside', style: japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed)), locale: const Locale('ja')),
+                    ]),
+                  ),
+                ),
                 Text(year, style: text.bodySmall?.copyWith(color: tokens.textClosed)),
                 Text(
                   km == null ? '?' : km.toStringAsFixed(1),
@@ -940,6 +1131,8 @@ class _SectionTile extends ConsumerWidget {
         dash: tokens.textClosed,
         lanes: line.lanes,
         laneStyle: laneStyleOf(tokens),
+        stem: switch (line.stem) { null => null, true => tokens.selectorGone, false => tokens.lineUnridden },
+        stemUp: line.gap < 0,
       ),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 4, 12, 4),
@@ -952,7 +1145,11 @@ class _SectionTile extends ConsumerWidget {
                   children: [
                     Flexible(
                       child: Text(
-                        line.suspended ? context.t.session.suspendedSection : closedNote(context, year),
+                        line.suspended
+                            ? context.t.session.suspendedSection
+                            : line.opens != null
+                                ? context.t.session.openedSection(year: line.opens!)
+                                : closedNote(context, year),
                         style: text.bodySmall?.copyWith(color: tokens.textClosed),
                       ),
                     ),
@@ -1107,6 +1304,44 @@ class _OneWayChip extends StatelessWidget {
 }
 
 /// [tail]이 [head] 마지막 줄의 남은 자리에 통째로 들어가는가. 화면과 같은 글자 배율로 잰다.
+/// 기록할 수 없는 폐역 줄과 열람 전용 역 줄의 이름은 같은 글자다. 예전에는 역 줄 16px·열람 전용 줄 14px로 갈려
+/// 한 노선 일람에서 폐역 글씨 크기가 제각각이었다 (西鉄 甘木線 将軍梅前·富安, 사용자 지적 2026-11-18)
+TextStyle? closedNameStyle(TextTheme text, AppTokens tokens) =>
+    text.titleMedium?.copyWith(fontWeight: FontWeight.w400, color: tokens.textClosed);
+
+final _hangul = RegExp(r'[\uAC00-\uD7A3\u3131-\u318E]');
+final _kanjiKana = RegExp(r'[\u3040-\u30FF\u3400-\u9FFF]');
+
+/// 한국어·영어 이름이 없어 일본어 표기 그대로 보이는 이름은 일본어 글꼴 모양으로 그린다. 앱 글꼴(Pretendard)에 한자가 없어
+/// 로캘 없이 그리면 시스템 대체 글꼴(중국어 모양)이 골라져 한글 이름보다 크고 모양이 다르다 (2026-11-18)
+Locale? japaneseOnlyLocale({required String name0}) =>
+    _kanjiKana.hasMatch(name0) && !_hangul.hasMatch(name0) ? const Locale('ja') : null;
+
+/// 일본어 글자(일본어로만 보이는 이름, 이름 옆 일본어·읽기)는 한 일본어 글꼴로, 한글과 같아 보이는 크기로 그린다.
+/// 앱 글꼴 Pretendard에는 한국 표준 한자(KS X 1001)만 있어, 競·馬·場·前은 Pretendard 한자(한글과 같은 크기, 약 0.87em)로,
+/// 将·国·蛍 같은 일본 신자체는 시스템 일본어 글꼴(1em)로 섞여 그려졌다. 그래서 같은 일본어 이름인 競馬場前과 将軍梅前의 크기가 달랐다
+/// (西鉄 甘木線, 사용자 지적 2026-11-18: 일본어만 있는 이름은 한국어 역 이름과 같은 크기). 줄 높이는 원래 글자와 같게 두어 줄기 정렬이 그대로다
+const _jaScale = 0.875;
+TextStyle? japaneseStyle(TextStyle? base) {
+  if (base == null) return null;
+  final size = base.fontSize ?? 14;
+  return base.copyWith(
+    fontFamily: 'Hiragino Sans',
+    fontFamilyFallback: const ['Hiragino Kaku Gothic ProN', 'Noto Sans CJK JP', 'Noto Sans JP'],
+    fontSize: size * _jaScale,
+    height: (base.height ?? 1.3) / _jaScale,
+  );
+}
+
+/// 한국어판에서 이름 뒤 방향 조사(로/으로). 끝 글자에 받침이 있고 ㄹ이 아니면 「으로」다(신주쿠역으로·니가타로). 다른 언어는 이름 그대로
+String koDirectional(BuildContext context, String name) {
+  if (Localizations.localeOf(context).languageCode != 'ko' || name.isEmpty) return name;
+  final c = name.codeUnitAt(name.length - 1);
+  if (c < 0xAC00 || c > 0xD7A3) return '$name(으)로';
+  final jong = (c - 0xAC00) % 28;
+  return jong == 0 || jong == 8 ? '$name로' : '$name으로';
+}
+
 bool _fitsAfter(BuildContext context, InlineSpan head, InlineSpan tail, double width, {double extra = 0}) {
   TextPainter paint(InlineSpan span, double max) => TextPainter(
         text: span,
@@ -1122,4 +1357,84 @@ bool _fitsAfter(BuildContext context, InlineSpan head, InlineSpan tail, double w
   final need = second.width;
   second.dispose();
   return used + need <= width;
+}
+
+/// 괄호 맨 위 역 바로 아래의 안내 상자 (사용자 결정 2026-11-19). 이관이면 넘어간 날과 노선, 「노선 보기」, 그 노선으로 기록된다는 말을,
+/// 폐지·운휴·개업 전이면 그 해와 기록할 수 있는 날짜를 적는다. 줄기는 상자 왼쪽으로 그대로 지나간다
+class _NoticeTile extends ConsumerWidget {
+  const _NoticeTile({required this.line, required this.prev, required this.trunk});
+
+  final NoticeLine line;
+  final SelectorLine? prev;
+  final TrunkStyle trunk;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tokens = context.tokens;
+    final text = Theme.of(context).textTheme;
+    final t = context.t.session;
+    final colors = noticeColors(line.kind, tokens, Theme.of(context).brightness);
+    final book = ref.watch(nameBookProvider);
+    final session = ref.read(recordSessionProvider.notifier);
+    final lineId = line.lineId;
+    final year = line.year ?? '?';
+    final title = switch (line.kind) {
+      NoticeKind.hand => t.handSince(date: handDate(line.on ?? ''), line: book.lines[lineId] ?? lineId ?? ''),
+      NoticeKind.closed => closedNote(context, year),
+      NoticeKind.suspended => line.year == null ? t.suspendedSection : t.state.suspendedSince(year: line.year!),
+      NoticeKind.before => t.openedSection(year: year),
+    };
+    final body = switch (line.kind) {
+      NoticeKind.hand => t.handNote,
+      NoticeKind.closed => t.noticeClosedSub,
+      NoticeKind.suspended => t.noticeSuspendedSub,
+      NoticeKind.before => t.noticeBeforeSub,
+    };
+    final open = lineId != null && session.canOpen(lineId);
+    Future<void> go() async {
+      final at = line.at;
+      if (lineId == null || at == null) return;
+      if (await confirmLeave(context, ref)) await session.jumpToLine(lineId, at.node);
+    }
+
+    // 상자 위·아래 줄의 줄기 칸을 그대로 잇는다. 상자는 괄호 맨 위 역 아래 칸에 놓인다
+    final above = prev;
+    final gap = switch (above) {
+      StopLine(:final index) => index,
+      BranchLine(:final gap) => gap,
+      EndLine(:final gap) => gap,
+      _ => null,
+    };
+    final piece = gap == null ? null : trunk.gap(gap);
+    return CustomPaint(
+      painter: PlainPainter(above: piece, below: piece, lanes: line.lanes, laneStyle: laneStyleOf(tokens)),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(SelectorRuler.textX - 12, 6, 12, 8),
+        child: InkWell(
+          onTap: open ? go : null,
+          borderRadius: BorderRadius.circular(10),
+          child: Container(
+            width: double.infinity,
+            padding: const EdgeInsets.fromLTRB(12, 9, 12, 10),
+            decoration: BoxDecoration(color: colors.box, borderRadius: BorderRadius.circular(10)),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              spacing: 3,
+              children: [
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  spacing: 8,
+                  children: [
+                    Expanded(child: Text(title, style: text.bodySmall?.copyWith(color: colors.title, fontWeight: FontWeight.w700))),
+                    if (open) Text(t.handOpen, style: text.bodySmall?.copyWith(color: tokens.lineRidden)),
+                  ],
+                ),
+                Text(body, style: text.bodySmall?.copyWith(color: colors.body)),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
 }

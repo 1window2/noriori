@@ -874,7 +874,7 @@ OSM 선형과 그 선에 맞춘 점은 `master.sqlite`, `rail.pmtiles`와 섞지
 | 사철 | 철도사업법 면허 또는 궤도법 특허를 받은 사업자의 여객 영업 구간. 제3종 사업자는 제외. 화물만 있는 구간과 폐지가 정해진 휴지 구간(마지막 운행 다음 날부터)은 제외. 동계 운휴처럼 규칙적으로 이어지는 구간은 포함. 재개 여부가 정해지지 않은 재해 불통은 운행 중과 같게 둠 |
 | 폐선 | 폐지 전 모습이 위 기준에 맞아야 함. 이름은 탑승일 기준으로 보여 주고, 분모의 km는 폐지 직전 값을 씀 |
 | 별선·단락선 (`extra`) | ① 선증 취급으로 건설됐지만 경유·역이 원 노선과 크게 다른 구간 ② 수록 대상 밖 구간 중 정기 여객열차나 개인이 살 수 있는 임시열차가 상당한 빈도로 다니는 구간 ③ 사업자 간 직통용 구간. 같은 역 구내에서 끝나는 짧은 선과 인접한 역 구내 연결은 제외. 梅田貨物線은 うめきた 승강장 개업 뒤에도 별선 |
-| 수록 안 함 | 철도연락선, BRT, 로프웨이·리프트(삭도), 슬로프카·경사 엘리베이터, 농업용 모노레일, 유원지 안 철도, 공사용 궤도, 홋카이도의 簡易軌道(町営·村営軌道). 철도사업이 아니거나 철도사업법·궤도법 근거가 없기 때문. 전용선·화물선과 미개업선도 수록하지 않음 (여객 영업 구간이 아니기 때문) |
+| 수록 안 함 | 철도연락선, BRT, 로프웨이·리프트(삭도), 슬로프카·경사 엘리베이터, 농업용 모노레일, 유원지 안 철도, 공사용 궤도, 홋카이도의 簡易軌道(町営·村営軌道), 馬車鉄道·人車軌道(동력이 말·사람인 궤도, 사용자 결정 2026-11-18). 철도사업이 아니거나 철도사업법·궤도법 근거가 없기 때문. 전용선·화물선과 미개업선도 수록하지 않음 (여객 영업 구간이 아니기 때문) |
 
 ### 4.2 조사 결과 (2026-10-30, 직접 집계)
 - **폐선 목록 자체가 공개 데이터마다 불완전**: station_database는 1970년대 폐선 50개, Wikidata는 34개이며 둘 다 노면전차망이 빠져 있음. 당시에는 완전한 목록을 일본어 위키백과 「日本の廃止鉄道路線一覧」과 개별 문서에서 만들려 했음. → 2026-11-04부터 1950년 이후 폐선의 닫힌 목록은 N05입니다 (§4.6, §16).
@@ -1849,7 +1849,7 @@ MapLibre의 512px 타일 기준입니다. 360dp 폭에서 일본 전체는 z4 �
 | `station_group` | id, n(정수 키) — 같은 역 묶음 (§2.8 B) |
 | `hub` / `hub_member` | id, source, verified / hub_id, node_id — 걸어서 갈아탈 수 있는 역 묶음 (§2.9) |
 | `junction` (배포 제외) | line_id, other_line_id, other_route_id?, node_id?, edge_id?, side?(up/down), is_continue, valid_from·to, source, verified (§2.9) |
-| `archive_stop` | id, line_id, route_id, archive_line_id?, seq?, after_id, before_id?, opened, closed, legal_abolition?, km?, source — 열람 전용 역 (§4.5). 기록 노선 위의 역은 route_id, 열람 전용 노선 위의 역은 archive_line_id와 순서 seq(이때 route_id는 비고 after/before는 이웃 노드나 같은 열람 전용 노선의 역). 휴지 뒤 재개 없이 폐지된 역은 closed = 휴지 시작(마지막 운행 다음 날), legal_abolition = 법적 폐지일 (§2.2) |
+| `archive_stop` | id, line_id, route_id, archive_line_id?, seq?, after_id, before_id?, opened, closed, legal_abolition?, km?, source — 열람 전용 역 (§4.5). 기록 노선 위의 역은 route_id, 열람 전용 노선 위의 역은 archive_line_id와 순서 seq(이때 route_id는 비고 after/before는 이웃 노드나 같은 열람 전용 노선의 역). seq는 route_id가 있는지로 뜻이 갈린다: 열람 전용 노선의 역이면 그 열람 전용 노선 안의 역 순서(손 표 값), 계통 위의 역이면 그 계통 진행 방향 순번(1부터, 계통마다)이고 앱은 같은 자리(두 정차 사이·첫 역 앞·끝 역 뒤)의 여러 역을 이 순서로 놓는다(순번이 없는 옛 팩은 km 순). 같은 자리 안 순서는 ① 둘 다 km가 있으면 km ② 같은 노선 위키 노선도의 행 순서(손 행도 같은 이름 행이 있으면 그 자리) ③ 그 밖은 넣은 순서다 (compile.py, 감사 K206). 휴지 뒤 재개 없이 폐지된 역은 closed = 휴지 시작(마지막 운행 다음 날), legal_abolition = 법적 폐지일 (§2.2) |
 | `archive_line` | id, line_id, at_node, opened, closed, legal_abolition?, source — 열람 전용 노선 (§4.5). closed는 archive_stop과 같은 규칙 |
 | `node_position` | node_id, lat, lon, quality(precise/approx/none), checked, source — **지도 전용**. 기간 열 없음. 선로 위 km가 바뀐 역 이전은 새 노드이고, 높이만 바뀐 이동은 마지막 좌표 하나 (§2.2) |
 | `node_move` | old_node, new_node, moved_on — 선로 위 km가 바뀐 역 이전의 옛·새 노드 (`data/overrides/moved.json`). 재해석이 옛 노드 기록의 순서를 맞출 때 씀 (ARCHITECTURE §3.5). 판 2026-11-05.2에 26행 |

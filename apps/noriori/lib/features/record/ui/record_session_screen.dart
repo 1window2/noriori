@@ -128,13 +128,18 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     final stuck = state.rows.isNotEmpty && !state.rows.any((row) => row.selectable);
     final query = _query;
     final searching = query != null && query.isNotEmpty;
+    // 임시 운행만 있는 계통은 폐지·운휴 구분선을 그리지 않는다. 정식 개업·폐지가 없고 탭 아래 안내가 알린다 (사용자 결정 2026-11-19)
     final lines = searching
         ? [
             for (final line in state.lines)
               if (line is StopLine && _matches(state, line.row.node, query)) line,
           ]
-        : state.lines;
-    final trunk = TrunkStyle(state, gaps, tokens);
+        : state.isTemporary
+            ? [for (final line in state.lines) if (line is! SectionLine && line is! NoticeLine) line]
+            : state.lines;
+    final trunk = TrunkStyle(state, gaps, tokens, scroll: _lines);
+    // 괄호는 검색 중에는 그리지 않는다(역만 추린 목록이라 범위가 없다)
+    final brackets = searching ? null : bracketPieces(lines, tokens, Theme.of(context).brightness);
     return PopScope(
       // 분기로 넘어왔으면 뒤로 가기는 직전 노선이다
       canPop: state.depth == 0,
@@ -157,23 +162,34 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(book.lines[shownLine] ?? ''),
-                    FittedBox(
-                      fit: BoxFit.scaleDown,
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        t.meta(
-                          operator: controller.operatorName,
-                          km: lineScore == null || !lineScore.started
-                              ? '${kmLabel(lineMeters)} km'
-                              : t.progress(
-                                  num: kmLabel(lineScore.numMeters),
-                                  den: kmLabel(lineScore.denMeters),
-                                  percent: percentLabel(lineScore),
-                                ),
+                    // 회사 이름이 길면 글자를 줄이지 않고 회사 이름만 말줄임한다. km·진행률은 끝까지 보인다.
+                    // 통째로 줄이면 「Tokyo Metropolitan Bureau of Transportation」이 읽을 수 없게 작아졌다 (실화면 2026-11-19)
+                    Builder(builder: (context) {
+                      final km = lineScore == null || !lineScore.started
+                          ? '${kmLabel(lineMeters)} km'
+                          : t.progress(
+                              num: kmLabel(lineScore.numMeters),
+                              den: kmLabel(lineScore.denMeters),
+                              percent: percentLabel(lineScore),
+                            );
+                      final parts = t.meta(operator: '\u0000', km: km).split('\u0000');
+                      // km 쪽은 줄 폭을 넘지 않게만 막고(아주 좁으면 그것도 말줄임), 남는 폭을 회사 이름이 쓴다
+                      return LayoutBuilder(
+                        builder: (context, box) => Row(
+                          children: [
+                            if (parts.first.isNotEmpty)
+                              Flexible(child: Text(parts.first, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall)),
+                            Flexible(
+                              child: Text(controller.operatorName, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall),
+                            ),
+                            ConstrainedBox(
+                              constraints: BoxConstraints(maxWidth: box.maxWidth),
+                              child: Text(parts.last, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall),
+                            ),
+                          ],
                         ),
-                        style: text.bodySmall,
-                      ),
-                    ),
+                      );
+                    }),
                   ],
                 ),
           actions: [
@@ -202,10 +218,13 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                       label: _routeLabel(choice),
                       selected: choice == routeId,
                       onTap: () => controller.selectRoute(choice),
+                      badge: state.tempRoutes.contains(choice) ? t.tempTag : null,
                     ),
                 ],
               ),
-            if (stuck)
+            if (state.isTemporary)
+              _TempNotice(state: state, onDay: (day) => controller.setDate(day))
+            else if (stuck)
               Padding(
                 padding: const EdgeInsets.fromLTRB(24, 8, 24, 8),
                 child: Text(t.nonePickable, style: text.bodySmall),
@@ -220,6 +239,8 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                 radius: const Radius.circular(4),
                 child: ListView.builder(
                   controller: _lines,
+                  // 줄마다 따로 쌓지 않아야 점선 박자를 목록 전체 위치로 맞출 수 있다(그림판 이동량에 줄 위치가 들어간다)
+                  addRepaintBoundaries: false,
                   padding: const EdgeInsets.only(bottom: 16),
                   itemCount: lines.length,
                   itemBuilder: (context, index) {
@@ -231,6 +252,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                         prev: index > 0 ? lines[index - 1] : null,
                         next: index + 1 < lines.length ? lines[index + 1] : null,
                         trunk: trunk,
+                        brackets: brackets?[index] ?? const [],
                       ),
                     );
                   },
@@ -303,3 +325,51 @@ class _DisplayBar extends ConsumerWidget {
     );
   }
 }
+
+/// 임시 운행만 있는 계통의 안내 한 줄과 운행일 칩. 칩을 누르면 그날로 바꾼다.
+/// 아래 끝 이어짐 점선과 붙지 않게 아래를 띄운다 (사용자 결정 2026-11-19, 목업 5판)
+class _TempNotice extends StatelessWidget {
+  const _TempNotice({required this.state, required this.onDay});
+
+  final RecordSessionState state;
+  final void Function(String day) onDay;
+
+  @override
+  Widget build(BuildContext context) {
+    final t = context.t.session;
+    final text = Theme.of(context).textTheme;
+    final tokens = context.tokens;
+    final day = state.dateInput == null ? null : DateSpan.parse(state.dateInput!).lo;
+    String label(({String from, String to}) w) {
+      final last = DateTime.parse(w.to).subtract(const Duration(days: 1)).toIso8601String().substring(0, 10);
+      return last == w.from ? dateText(context.t, w.from) : '${dateText(context.t, w.from)}–${dateText(context.t, last)}';
+    }
+
+    return Padding(
+      padding: const EdgeInsets.only(top: 2, bottom: 10),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: Text(
+              t.tempNotice,
+              textAlign: TextAlign.center,
+              style: text.bodySmall?.copyWith(color: tokens.textMuted),
+            ),
+          ),
+          FilterPillRow(
+            pills: [
+              for (final w in state.tempWindows)
+                FilterPill(
+                  label: label(w),
+                  selected: day != null && w.from.compareTo(day) <= 0 && day.compareTo(w.to) < 0,
+                  onTap: () => onDay(w.from),
+                ),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+

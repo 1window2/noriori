@@ -81,8 +81,10 @@ for t,cols in (('edge_life',('valid_from','valid_to')),('edge_attr',('valid_from
         if r['valid_from_lo'] and r['valid_to_hi'] and r['valid_from_lo']>=r['valid_to_hi']:bad.append((t,'from>=to',r['valid_from'],r['valid_to'],r.get('edge_id') or (r.get('route_id'),r.get('node_id'))))
 put('날짜 형식·순서',bad)
 fut=[]
-for t in('edge_life','edge_attr'):
-    for r in m.execute(f"select * from {t} where valid_from_lo>'{TODAY}' or (valid_to<>'ongoing' and valid_to_hi>'{TODAY}')"):fut.append((t,dict(r).get('edge_id') or dict(r).get('node_id'),r['valid_from'],r['valid_to']))
+# 역 정차 기간도 본다. 폐지 범위의 끝이 열려 있으면(「[1950-01-02..]」) 오늘 화면에 「영업 중일 수도」로 그려진다.
+# 지금 역 목록(N02)에 없으면 그 판의 날짜로 끝을 막는다 (西鉄 甘木線 鏡 등 6역, 사용자 지적 2026-11-18)
+for t in('edge_life','edge_attr','route_stop'):
+    for r in m.execute(f"select * from {t} where (valid_from_lo>'{TODAY}' or (valid_to<>'ongoing' and valid_to_hi>'{TODAY}'))"+(' and is_stop=1' if t=='route_stop' else '')):fut.append((t,dict(r).get('edge_id') or (dict(r).get('route_id'),dict(r).get('node_id')),r['valid_from'],r['valid_to']))
 put('오늘 뒤 날짜',fut)
 # ---- edge_attr
 LR=collections.defaultdict(list)
@@ -534,6 +536,17 @@ for (t,i),v in nm.items():
         for l in ('ko','en'):
             if any(r[5]==vt and not r[3] and r[2]=='rule' and THEN[l].match(r[0]) for r in v.get(l,[])):rows.append((i,x,k,l))
 put('옛 이름에 읽기가 있는데 병기로 남음',rows)
+# 읽기가 있는 이름 행은 같은 (노선, 기간)의 한국어·영어가 있어야 하고, 일본어 표기 그대로(ja_as_is)나 한자·가나가 남으면 안 된다.
+# 읽기를 알면서 외국어를 못 단 것은 생성 단계의 빠짐이다 (열람 전용 역 영어 595·노선 영어 138, 2026-11-18 사용자 지적). 영어 이름은 컴파일 뒤에 들어오므로 여기서 본다
+_rw=[]
+for (t,i),v in nm.items():
+    if t=='node' and i not in pub:continue
+    for x,k,s_,li,vf,vt in v.get('ja',[]):
+        if not k:continue
+        for l in ('ko','en'):
+            y=[r for r in v.get(l,[]) if (r[3],r[4],r[5])==(li,vf,vt)]
+            if not y or any(r[2]=='ja_as_is' or (shown(l,r[0],r[2]) is not None and HK.search(shown(l,r[0],r[2]))) for r in y):_rw.append((t,i,l,x,li,vf,vt))
+put('읽기 있는데 한국어·영어 없음',_rw)
 put('kana가 히라가나 아님',[(i,x,k) for (t,i),v in nm.items() if t=='node' for x,k,*_ in v.get('ja',[]) if k and not re.fullmatch(r'[ぁ-ゟー・ 　0-9A-Za-zァ-ヶ（）()]+',k)])
 # 현대 가나 표기가 아님 (ぎをん, をごとおんせん). 원문 옛 표기를 그대로 옮긴 것이다
 put('kana에 옛 가나(を·ゐ·ゑ)',[(t,i,x,k) for (t,i),v in nm.items() for x,k,*_ in v.get('ja',[]) if k and re.search('[をゐゑ]',k)])
@@ -2719,6 +2732,45 @@ for a_,b_,bs_ in sorted({tuple(r_) for r_ in m.execute('select node_a,node_b,bas
     d_=6371000*math.hypot(math.radians(q_[0]-p_[0]),math.radians(q_[1]-p_[1])*math.cos(math.radians(p_[0])))
     if d_>500 and '확인' not in _HJW205.get(frozenset((a_,b_)),''):rows.append((a_,nn(a_),b_,nn(b_),round(d_),json.loads(bs_)[0] if bs_ else ''))
 put('K205 채택 환승 쌍 두 역 정밀 거리 500 m 초과인데 손 표 why에 「확인」 없음(노드 맞춤 확인 목록)',sorted(set(rows),key=lambda r:-r[4]),40,lvl='warn')
+# ==== 같은 자리 열람 전용 역 순서 (2026-11-17 志度線 瓦町 앞) ====
+# K206 계통 위 열람 전용 역(route_id 있음)의 계통 순번(seq, DESIGN §4.5)이 비었거나 한 계통 안에서 겹침. 앱은 같은 자리 역을 이 순서로 놓는다
+_A206=[dict(r_) for r_ in m.execute('select id,line_id,route_id,after_id,before_id,km,seq from archive_stop where route_id is not null')]
+_AN206={i:x for i,x in n.execute("select entity_id,text from name where entity_type='archive' and lang='ja' and line_id is null and valid_from is null and valid_to is null")}
+rows=[('순번 없음',a_['route_id'],a_['id'],_AN206.get(a_['id'])) for a_ in _A206 if a_['seq'] is None]
+for (rt_,sq_),c_ in collections.Counter((a_['route_id'],a_['seq']) for a_ in _A206 if a_['seq'] is not None).items():
+    if c_>1:rows.append(('순번 겹침',rt_,sq_,c_))
+put('K206 계통 위 열람 전용 역 순번(seq) 없음·한 계통 안 겹침',rows,20)
+# K206 같은 자리(같은 계통·같은 앞 역·같은 뒤 역)에 열람 전용 역이 둘 넘는데 순번 순서가 km 순(둘 다 km 있을 때)이나 위키 노선도 행 순서와 어긋남.
+# 노선도 행은 gen_wiki 보고서(data/candidates/wiki_rows.json, 로컬 생성물)에서 이름이 같은 역 꼴 행을 찾고 앞(뒤) 역 행 쪽으로 방향을 맞춘다. 보고서가 없으면 km만 본다.
+# km가 1순위라 km와 노선도가 다르면 노선도 어긋남으로 남는다(사람이 볼 후보)
+_WP206=os.path.join(ROOT,'data','candidates','wiki_rows.json')
+_WR206=json.load(open(_WP206,encoding='utf-8')) if os.path.exists(_WP206) else {}
+def _wrow206(a_):
+    W_=_WR206.get(a_['line_id'])
+    if not W_:return None
+    nm_=znorm_(_AN206.get(a_['id']) or '');rs_=[i for i,x in W_['s'] if x==nm_]
+    if not rs_:return None
+    nr_=collections.defaultdict(list)
+    for i,x in W_['n']:nr_[x].append(i)
+    for k_,sg_ in (('after_id',1),('before_id',-1)):
+        if a_[k_] not in nr_:continue
+        i_,j_=min(((i,j) for i in rs_ for j in nr_[a_[k_]]),key=lambda p:abs(p[0]-p[1]))
+        return (a_['line_id'],i_ if (i_-j_)*sg_>0 else -i_)
+    return None
+_G206=collections.defaultdict(list)
+for a_ in _A206:_G206[(a_['route_id'],a_['after_id'],a_['before_id'])].append(a_)
+rows=[]
+for k_,L_ in sorted(_G206.items(),key=lambda x:tuple(y or '' for y in x[0])):
+    if len(L_)<2:continue
+    L_.sort(key=lambda a_:(a_['seq'] is None,a_['seq'] or 0))
+    nm_=[_AN206.get(a_['id']) for a_ in L_]
+    K_=[a_['km'] for a_ in L_ if a_['km'] is not None]
+    if K_!=sorted(K_):rows.append(('km 순과 어긋남',k_[0],k_[1],k_[2],nm_,[a_['km'] for a_ in L_]))
+    W_=[(w_,_AN206.get(a_['id'])) for a_ in L_ for w_ in [_wrow206(a_)] if w_]
+    for ln_ in {w_[0] for w_,_ in W_}:
+        V_=[(w_[1],x_) for w_,x_ in W_ if w_[0]==ln_]
+        if [x_ for _,x_ in V_]!=[x_ for _,x_ in sorted(V_)]:rows.append(('노선도 순과 어긋남',k_[0],k_[1],k_[2],nm_,[x_ for _,x_ in sorted(V_)]))
+put('K206 같은 자리 열람 전용 역 순번 순서가 km 순·위키 노선도 행 순서와 어긋남(확인 목록)',rows,40,lvl='warn')
 json.dump(R,open(os.path.join(B,'audit.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0,default=str)
 err={k:v['n'] for k,v in R.items() if v['n'] and v['lvl']=='err'};warn={k:v['n'] for k,v in R.items() if v['n'] and v['lvl']=='warn'}
 STRICT=os.environ.get('NORIORI_AUDIT_STRICT')=='1'

@@ -96,6 +96,15 @@ for t,e in W.items():
     if not e.get('hist'):continue
     cur=znorm(re.sub(r'\s*[（(].*$','',e.get('title') or t))
     ev=[];first=None;prev=None;nth=0
+    # 연혁이 「隣接して開業」「併設」 등으로 이웃한 다른 역으로 소개한 이름. 뒤에 「X駅がY駅に改称」이 나와도 그 이웃 역 이야기다
+    # (安城駅: 1939 「碧海電気鉄道線の新安城駅（貨物駅）が隣接して開業」 → 1951 「新安城駅が安城駅に改称」은 名鉄 쪽 역. JR 安城의 옛 이름으로 붙었음, 12회차 M 2026-11-19 사용자 지적)
+    other_=set()
+    for l in e['hist']:
+        l=clean(l)
+        if re.search(r'隣接|併設|に隣接|の隣に|別に|向かい|対面|構内に', l) and re.search(r'開業|開設|設置|新設|移転', l):
+            for x in re.finditer(N,l):
+                x_=fix(re.sub(r'^.*[）)]の','',x.group(1))).lstrip('のがはをにと')
+                if ok(x_) and znorm(x_)!=cur:other_.add(znorm(x_))
     for l in e['hist']:
         l=clean(l)
         d=re.match(r'^'+D,l)
@@ -112,7 +121,10 @@ for t,e in W.items():
                 if ok(f_):first=(f_,date);prev=prev or f_
         # 「仮称」 같은 줄은 버리되 「X仮停車場と改称」「X仮乗降場に改称」은 이름 줄이다
         if not re.search('改称|改名',rest) or re.search('^.{0,5}仮(?!停車場|乗降場|駅)',rest) or '決定' in rest:continue
-        pp=pairs(rest)
+        pp=pairs(rest);dropped_=[]
+        if other_:
+            dropped_=[(x,y) for x,y in pp if znorm(x) in other_ and znorm(y)==cur]
+            if dropped_:stat['neighbor_station']+=len(dropped_);pp=[q for q in pp if q not in dropped_]
         n0_=len(ev)
         for a,b in pp:ev.append((date,a,b))
         if pp:stat['pair']+=1
@@ -125,6 +137,8 @@ for t,e in W.items():
         # 한 줄에 다른 역의 「X駅をY駅と改称」과 이 역의 「Z駅に改称」이 함께 있다 (千葉中央: 国鉄千葉駅前駅を京成千葉駅と改称するのに伴い、千葉中央駅に改称)
         # 다른 역 쌍의 옛 이름은 막지 않는다: 이름을 맞바꾼 줄(相内駅 「相ノ内駅に改称。同時に相ノ内駅が東相ノ内駅に改称」)에서 이 역의 새 이름이 그 옛 이름이다
         got={znorm(b) for _,b in pp}
+        # 이웃 역 개칭 쌍을 뺀 줄의 「Y駅に改称」 조각도 그 이웃 역 이야기다
+        if dropped_:got.add(cur)
         for m in R2.finditer(rest):
             b=fix(m.group(1))
             if ok(b) and znorm(b) not in got:ev.append((date,None,b));got.add(znorm(b));stat['new_only']+=1

@@ -208,9 +208,6 @@ class Translations$map$ko {
 	/// ko: '모든 노선 보기'
 	String get soloOff => '모든 노선 보기';
 
-	/// ko: '현재'
-	String get scoreLabel => '현재';
-
 	/// ko: '기록'
 	String get add => '기록';
 
@@ -533,6 +530,9 @@ class Translations$session$ko {
 	/// ko: '날짜 모름'
 	String get dateUnknown => '날짜 모름';
 
+	/// ko: '날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요'
+	String get dateUnknownHint => '날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요';
+
 	/// ko: '달력에서 고르기'
 	String get datePick => '달력에서 고르기';
 
@@ -554,6 +554,18 @@ class Translations$session$ko {
 	/// ko: '출발역을 고르세요'
 	String get pickFrom => '출발역을 고르세요';
 
+	/// ko: '임시'
+	String get tempTag => '임시';
+
+	/// ko: '정기 여객 열차 미운행 구간(임시 열차 운행일만 기록 가능)'
+	String get tempNotice => '정기 여객 열차 미운행 구간(임시 열차 운행일만 기록 가능)';
+
+	/// ko: '임시 열차 운행일을 고르세요'
+	String get tempPickDay => '임시 열차 운행일을 고르세요';
+
+	/// ko: '이 날짜에는 임시 열차가 다니지 않았습니다. 위의 운행일을 눌러 보세요'
+	String get tempNoRun => '이 날짜에는 임시 열차가 다니지 않았습니다. 위의 운행일을 눌러 보세요';
+
 	/// ko: '도착역을 고르세요'
 	String get pickTo => '도착역을 고르세요';
 
@@ -571,6 +583,9 @@ class Translations$session$ko {
 	/// ko: '탑승일 기준 $line 구간'
 	String savedAs({required Object line}) => '탑승일 기준 ${line} 구간';
 
+	/// ko: '${year}년 ${name} 이전'
+	String movedTo({required Object year, required Object name}) => '${year}년 ${name} 이전';
+
 	/// ko: '$date부터 $line'
 	String handSince({required Object date, required Object line}) => '${date}부터 ${line}';
 
@@ -579,6 +594,15 @@ class Translations$session$ko {
 
 	/// ko: '이 구간은 그 노선으로 기록돼요'
 	String get handNote => '이 구간은 그 노선으로 기록돼요';
+
+	/// ko: '그 전 날짜로만 기록할 수 있어요'
+	String get noticeClosedSub => '그 전 날짜로만 기록할 수 있어요';
+
+	/// ko: '운휴 전 날짜로만 기록할 수 있어요'
+	String get noticeSuspendedSub => '운휴 전 날짜로만 기록할 수 있어요';
+
+	/// ko: '개업한 뒤 날짜로 기록할 수 있어요'
+	String get noticeBeforeSub => '개업한 뒤 날짜로 기록할 수 있어요';
 
 	/// ko: '어느 쪽으로 탔나요?'
 	String get chooseDirection => '어느 쪽으로 탔나요?';
@@ -655,6 +679,9 @@ class Translations$session$ko {
 
 	/// ko: '~$year 폐지'
 	String closedSection({required Object year}) => '~${year} 폐지';
+
+	/// ko: '$year년 개업'
+	String openedSection({required Object year}) => '${year}년 개업';
 
 	/// ko: '$name: 폐역($year). 기록할 수 없는 옛 역입니다'
 	String archiveStop({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다';
@@ -2096,7 +2123,6 @@ extension on Translations {
 			'start.noSpaceBody' => '기록은 그대로 있습니다. 공간을 확보한 뒤 다시 시도해 주세요.',
 			'start.restoreAction' => '복원하기',
 			'map.soloOff' => '모든 노선 보기',
-			'map.scoreLabel' => '현재',
 			'map.add' => '기록',
 			'map.search' => '노선이나 역 찾기',
 			'map.closed' => '폐선',
@@ -2209,6 +2235,7 @@ extension on Translations {
 			'session.dateTitle' => '탑승일',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
 			'session.dateUnknown' => '날짜 모름',
+			'session.dateUnknownHint' => '날짜 모름: 역은 모든 시기, 직통·환승은 마지막 상태로 보여요',
 			'session.datePick' => '달력에서 고르기',
 			'session.dateToday' => '오늘',
 			'session.dateBad' => '날짜 형식을 확인해 주세요',
@@ -2216,6 +2243,10 @@ extension on Translations {
 			'session.cancel' => '취소',
 			'session.main' => '본선',
 			'session.pickFrom' => '출발역을 고르세요',
+			'session.tempTag' => '임시',
+			'session.tempNotice' => '정기 여객 열차 미운행 구간(임시 열차 운행일만 기록 가능)',
+			'session.tempPickDay' => '임시 열차 운행일을 고르세요',
+			'session.tempNoRun' => '이 날짜에는 임시 열차가 다니지 않았습니다. 위의 운행일을 눌러 보세요',
 			'session.pickTo' => '도착역을 고르세요',
 			'session.save' => '기록하기',
 			'session.summary' => ({required Object from, required Object to, required Object km}) => '${from} → ${to} · ${km} km',
@@ -2227,9 +2258,13 @@ extension on Translations {
 			'session.state.since' => ({required Object year}) => '${year}~',
 			'session.state.span' => ({required Object from, required Object to}) => '${from}~${to}',
 			'session.savedAs' => ({required Object line}) => '탑승일 기준 ${line} 구간',
+			'session.movedTo' => ({required Object year, required Object name}) => '${year}년 ${name} 이전',
 			'session.handSince' => ({required Object date, required Object line}) => '${date}부터 ${line}',
 			'session.handOpen' => '노선 보기 ›',
 			'session.handNote' => '이 구간은 그 노선으로 기록돼요',
+			'session.noticeClosedSub' => '그 전 날짜로만 기록할 수 있어요',
+			'session.noticeSuspendedSub' => '운휴 전 날짜로만 기록할 수 있어요',
+			'session.noticeBeforeSub' => '개업한 뒤 날짜로 기록할 수 있어요',
 			'session.chooseDirection' => '어느 쪽으로 탔나요?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
 			'session.chooseRelocation' => '어느 시기의 선로였나요?',
@@ -2254,6 +2289,7 @@ extension on Translations {
 			'session.lap' => '한 바퀴',
 			'session.stops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}개 역', ), 
 			'session.closedSection' => ({required Object year}) => '~${year} 폐지',
+			'session.openedSection' => ({required Object year}) => '${year}년 개업',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다',
 			'session.archiveLine' => ({required Object name}) => '${name}: 기록할 수 없는 옛 노선입니다',
 			'session.from' => '출발',
@@ -2581,6 +2617,8 @@ extension on Translations {
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',
 			'prefNames.25' => '교토',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.26' => '오사카',
 			'prefNames.27' => '효고',
 			'prefNames.28' => '나라',
@@ -2590,8 +2628,6 @@ extension on Translations {
 			'prefNames.32' => '오카야마',
 			'prefNames.33' => '히로시마',
 			'prefNames.34' => '야마구치',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.35' => '도쿠시마',
 			'prefNames.36' => '카가와',
 			'prefNames.37' => '에히메',
