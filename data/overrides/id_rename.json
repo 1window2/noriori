@@ -1162,6 +1162,7 @@
 {"kind": "merge", "old": "a_kitakyushu_orio_nishi_nippon_third", "new": "a_edamitsu_saiwaimachi_aso", "why": "北九州線 계통 끝 折尾 뒤로 번진 郡道筋 중복이 빠짐(枝光線 행이 맡음) (위키 西鉄北九州線 rev111613506 노선도 구획; 10회차 G2 2026-11-16, audit4 kyushu_1-005~007)"},
 {"kind": "rename", "old": "a_hosshoji_electric_railway_hosshoji_second", "new": "a_mori_aga", "why": "与一谷: 法勝寺電鉄 母里支線 역(위키 日ノ丸自動車法勝寺電鉄線 rev109457516 「猪小路 - 母里間にはかつて与一谷・不動尊の各駅が存在した」)을 本線 法勝寺 뒤에서 열람 전용 노선 母里線으로 옮겨 자리 ID(a_<노선>_<앞 역>)가 바뀜 (11회차 S2 2026-11-16, audit4 chugoku_shikoku_1-014)"},
 {"kind": "rename", "old": "a_hosshoji_electric_railway_hosshoji", "new": "a_mori_aga_second", "why": "不動尊: 法勝寺電鉄 母里支線 역(위키 日ノ丸自動車法勝寺電鉄線 rev109457516 「猪小路 - 母里間にはかつて与一谷・不動尊の各駅が存在した」)을 本線 法勝寺 뒤에서 열람 전용 노선 母里線으로 옮겨 자리 ID(a_<노선>_<앞 역>)가 바뀜 (11회차 S2 2026-11-16, audit4 chugoku_shikoku_1-014)"},
-{"kind": "merge", "old": "n_zeze_kojaku", "new": "n_zeze", "why": "江若 膳所 노드는 江若 열차가 乗り入れ한 国鉄 膳所(같은 역). 膳所–浜大津을 국철 지선 계통으로 옮겨 江若 노선에서 빠짐 (11회차 R 확정·S2 2026-11-16)"}
+{"kind": "merge", "old": "n_zeze_kojaku", "new": "n_zeze", "why": "江若 膳所 노드는 江若 열차가 乗り入れ한 国鉄 膳所(같은 역). 膳所–浜大津을 국철 지선 계통으로 옮겨 江若 노선에서 빠짐 (11회차 R 확정·S2 2026-11-16)"},
+{"kind": "rename", "old": "a_hosshoji_electric_railway_hosshoji_third", "new": "a_mori_aga_third", "why": "原: 法勝寺電鉄 母里支線 역(위키 日ノ丸自動車法勝寺電鉄線 rev109457516 母里支線 노선도 「0.8 原駅」). 노선도 지선 규칙(2026-11-20)이 本線 法勝寺 뒤에서 열람 전용 노선 母里線(阿賀에서 갈라짐)으로 옮겨 자리 ID가 바뀜"}
 ]
 }

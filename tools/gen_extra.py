@@ -198,6 +198,24 @@ for a in (json.load(open(_r,encoding='utf-8')).get('report',[]) if os.path.exist
     if i in seen:continue
     seen.add(i)
     arch.append(dict(kind='line',id=i,name=n,at=at,closed=f"{a['closed_year']}-XX-XX",source=f"wikipedia:{a.get('revid')}" if a.get('revid') else 'n05'))
+# 노선도 끝 너머에 그려진 지선 역(gen_wiki branch: 분기 행 「←母里支線」의 앞말과 이름이 맞는 묶음)은 그 지선의 열람 전용 노선 역으로 옮긴다.
+# 노선 이름이 「앞말+線」「앞말+支線」인 열람 전용 노선이 하나뿐이고, 손 값(archive_fix)으로 자리를 잡지 않아 아직 끝 역 너머(앞뒤 한쪽 없음)인 역만 옮긴다.
+# 순서(seq)는 노선도 행 순서, 앞 역은 분기 행 바로 위 역이다. 맞는 노선이 없으면 그대로 두고 알린다 (日ノ丸自動車法勝寺電鉄線 母里支線, 2026-11-20 사용자 지적)
+_BRL=collections.defaultdict(set)
+for a in arch:
+    if a.get('kind')=='line':
+        for sfx in ('支線','線'):
+            if znorm(a.get('name') or '').endswith(sfx):_BRL[znorm(a['name'])[:-len(sfx)]].add(a['id'])
+_bro=collections.defaultdict(list);BRANCH_KEEP=[]
+for a in arch:
+    if a.get('kind')=='stop' and a.get('branch') and not (a.get('after') and a.get('before')) and not a.get('archive_line'):_bro[(a.get('line'),a['branch'],a['branch_at'])].append(a)
+for (ln_,root_,at_),xs in _bro.items():
+    ids_=sorted(_BRL.get(root_,()))
+    if len(ids_)!=1:BRANCH_KEEP+=[(ln_,root_,x.get('name')) for x in xs];continue
+    for k_,x in enumerate(sorted(xs,key=lambda x:x['brow']),1):x.update(archive_line=ids_[0],line=None,route=None,after=at_,before=None,km=None,seq=k_)
+for a in arch:
+    for k_ in ('branch','branch_at','brow'):a.pop(k_,None)
+if BRANCH_KEEP:print('노선도 지선 역인데 맞는 열람 전용 노선이 없어 그대로 둔 행',len(BRANCH_KEEP),BRANCH_KEEP[:12])
 if nokana_arch:raise SystemExit(f'읽기가 없어 열람 전용 노선을 만들 수 없습니다 ({len(nokana_arch)}): {nokana_arch}. data/overrides/kana.json에 line: 읽기를 넣으세요')
 _ARCHN=collections.Counter(znorm(a.get('name') or '') for a in arch if a.get('kind')=='stop')
 _ARCHBY=collections.defaultdict(list)

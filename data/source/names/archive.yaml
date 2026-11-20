@@ -824,9 +824,9 @@
 - {"entity_type": "archive", "id": "a_keisei_main_funabashikeibajo_yatsu_keisei", "lang": "ja", "text": "谷津遊園地", "kana": null, "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_keisei_main_funabashikeibajo_yatsu_keisei", "lang": "ko", "text": "谷津遊園地", "source": "ja_as_is", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_keisei_main_funabashikeibajo_yatsu_keisei", "lang": "en", "text": "谷津遊園地", "source": "ja_as_is"}
-- {"entity_type": "archive", "id": "a_keisei_main_kozunomori_keisei_narita", "lang": "ja", "text": "成田花咲町", "kana": null, "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_keisei_main_kozunomori_keisei_narita", "lang": "ko", "text": "成田花咲町", "source": "ja_as_is", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_keisei_main_kozunomori_keisei_narita", "lang": "en", "text": "成田花咲町", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_keisei_main_kozunomori_keisei_narita", "lang": "ja", "text": "成田花咲町", "kana": "なりたはなさきちょう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_keisei_main_kozunomori_keisei_narita", "lang": "ko", "text": "나리타하나사키초", "source": "hand", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_keisei_main_kozunomori_keisei_narita", "lang": "en", "text": "Naritahanasakicho", "source": "rule"}
 - {"entity_type": "archive", "id": "a_shinjukuoiwake", "lang": "ja", "text": "新宿追分（旧）", "kana": "しんじゅくおいわけ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_shinjukuoiwake", "lang": "ko", "text": "신주쿠오이와케", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_shinjukuoiwake", "lang": "en", "text": "Shinjukuoiwake", "source": "rule"}
@@ -1865,9 +1865,9 @@
 - {"entity_type": "archive", "id": "a_densha_line_niigata_higashisekiya_fourth", "lang": "ja", "text": "硫酸会社前", "kana": null, "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_densha_line_niigata_higashisekiya_fourth", "lang": "ko", "text": "硫酸会社前", "source": "ja_as_is", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_densha_line_niigata_higashisekiya_fourth", "lang": "en", "text": "硫酸会社前", "source": "ja_as_is"}
-- {"entity_type": "archive", "id": "a_hosshoji_electric_railway_hosshoji_third", "lang": "ja", "text": "原", "kana": null, "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_hosshoji_electric_railway_hosshoji_third", "lang": "ko", "text": "原", "source": "ja_as_is", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_hosshoji_electric_railway_hosshoji_third", "lang": "en", "text": "原", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_mori_aga_third", "lang": "ja", "text": "原", "kana": null, "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_mori_aga_third", "lang": "ko", "text": "原", "source": "ja_as_is", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_mori_aga_third", "lang": "en", "text": "原", "source": "ja_as_is"}
 - {"entity_type": "archive", "id": "a_inokouji", "lang": "ja", "text": "猪小路", "kana": "いのこうじ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_inokouji", "lang": "ko", "text": "이노코지", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_inokouji", "lang": "en", "text": "Inokoji", "source": "rule"}

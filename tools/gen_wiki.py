@@ -311,6 +311,20 @@ for lid_,l in lines.items():
     _mr=r_by_line[lid_][0] if r_by_line[lid_] else None
     _fa=[i for i,n in pos if _mr and n==_mr['from']];_fb=[i for i,n in pos if _mr and n==_mr['to']]
     flip_=bool(_fa and _fb and _fa[0]>_fb[-1])
+    # 노선도 맨 끝(맨 앞) 너머에 그려진 역 묶음이 이 노선의 연장이 아니라 중간 역에서 갈라진 지선일 수 있다(日ノ丸自動車法勝寺電鉄線: 阿賀 「←母里支線」,
+    # 母里支線 역 原·猪小路·与一谷·不動尊·母里가 法勝寺 뒤 다른 열에 그려짐, 2026-11-20 사용자 지적). 분기 아이콘(ABZ) 행의 표기 「…支線」「…線」 앞말이
+    # 너머 묶음의 역 이름과 같으면 그 묶음 전체를 그 분기 행 바로 위 역(branch_at)에서 갈라지는 지선의 역(branch)으로 표시한다. 옮기는 것은 gen_extra다
+    _ends=(min(posd),max(posd)) if posd else (None,None)
+    _stn=lambda q:(lambda m:znorm(re.sub(r'(仮|臨時)$','',m.group(1))) if m else None)(ST.match(flat[q]['t'].strip())) if any(STICON.search(x) for c in flat[q]['c'] for x in c) else None
+    _blk={side:{_stn(q) for q in qs}-{None} for side,qs in (('a',range(_ends[1]+1,len(flat))),('b',range(0,_ends[0]))) if _ends[0] is not None}
+    _br={}
+    for q in range(len(flat)):
+        if q in posd or not any('ABZ' in x for c in flat[q]['c'] for x in c):continue
+        lab_=re.sub(r'\s*-?\s*\d{4}.*$','',re.sub(r'[←→↑↓]','',flat[q]['t'])).strip()
+        root_=znorm(re.sub(r'(支線|線)$','',lab_)) if re.search(r'線$',lab_) else ''
+        at_=next((posd[z] for z in range(q,-1,-1) if z in posd),None)
+        for side,ns in _blk.items():
+            if root_ and root_ in ns and at_:_br[side]=(at_,root_)
     _wr=WROWS[lid_]=dict(n=[[i,n] for i,n in pos],s=[])
     for i,r in enumerate(flat):
         m_=ST.match(r['t'].strip())
@@ -436,6 +450,7 @@ for lid_,l in lines.items():
         # 노선도 표기를 고친 이름(손 표 name)도 그 행 이름이다
         if [i,znorm(nm0)] not in _wr['s']:_wr['s'].append([i,znorm(nm0)])
         a_=dict(kind='stop',id='a_'+stable(lid_,m.group(1)),line=lid_,route=rid_,after=aft,before=bef,name=nm0,opened=(y0+'-XX-XX') if y0 else None,closed=(y1+'-XX-XX') if y1 else None,km=km_,source=f"wikipedia:{rec['revid']}")
+        if not pick_ and not (prevn and nxt) and _br.get('a' if prevn and not nxt else 'b'):a_.update(branch=_br['a' if prevn and not nxt else 'b'][1],branch_at=_br['a' if prevn and not nxt else 'b'][0],brow=i)
         if NYD:
             a_.update(opened=NYD.get('opened') or a_['opened'],closed=NYD['closed'],_ny=True)
             if NYD.get('legal'):a_['legal_abolition']=NYD['legal']
