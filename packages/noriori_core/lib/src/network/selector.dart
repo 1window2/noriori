@@ -95,6 +95,7 @@ final class SelectorRow {
     required this.state,
     required this.selectable,
     this.passing = false,
+    this.noBoarding = false,
     required this.kmCum,
     required this.links,
     this.kmEstimated = false,
@@ -119,6 +120,10 @@ final class SelectorRow {
   /// 승하차 불가 끝 노드로 그린다: 가운데가 회색인 노드, 고를 수 있다(km 계산). 분기점·신호장, 그날 서지 않는 계통 끝 역
   /// (大洗鹿島線 北鹿島 1985–1994, 三岐線 三岐朝明 1989~, 徳島線 佃 1935–1962). 이름은 그날 이름이다 (5번 결정 junction-nodes-rule, 2026-11-19)
   final bool passing;
+
+  /// 계통 끝 노드인데 그날 역(또는 화물역)은 있고 이 계통이 서지 않는다: 보통 역 모양에 「승하차 불가」를 적고 고를 수 있다
+  /// (梅田貨物線 福島, 大洗鹿島線 北鹿島 1985–1994. 회색 가운데는 신호장·분기점만, 사용자 결정 2026-11-21 결정 A 추천안)
+  final bool noBoarding;
   final double? kmCum;
 
   /// km가 추정값이라 화면은 `? km` (DESIGN §4.5).
@@ -160,12 +165,16 @@ final class SelectorRow {
   /// 정차가 기록 하한(1950-01-01) 전에 모두 끝났다. 열람 전용 역처럼 꽉 찬 점으로 그리고 고를 수 없다 (사용자 결정 2026-11-08)
   final bool beforeFloor;
 
+  /// 같은 행에 연결만 바꾼 것 (숨긴 경계점 행의 끝 이어짐을 옮겨 붙일 때)
+  SelectorRow withLinks(List<SelectorLink> links) => _withLinks(links, goneLinks);
+
   SelectorRow _withLinks(List<SelectorLink> links, List<SelectorLink> goneLinks) => SelectorRow(
         seq: seq,
         node: node,
         state: state,
         selectable: selectable,
         passing: passing,
+        noBoarding: noBoarding,
         kmCum: kmCum,
         links: links,
         kmEstimated: kmEstimated,
@@ -216,6 +225,7 @@ final class SelectorBuilder {
       ((on ? bySeq : goneBySeq)[link.seq] ??= []).add(link);
     }
     final rows = <SelectorRow>[];
+    final carry = _Carry();
     final picks = network.picks(routeId);
     final ends = {if (picks.isNotEmpty) picks.first.seq, if (picks.isNotEmpty) picks.last.seq};
     for (final pick in picks) {
@@ -241,11 +251,22 @@ final class SelectorBuilder {
       var passing = false;
       // 그날 서지 않는 역도 그날 영업하는 다른 계통이 거기서 끝나면 끝 노드다(長尾線 옛 경로 瓦町–花園 1945–1951의 끝 花園을 본선 일람에서 골라야 花園–御坊川을 탄다).
       // 「어떤 여객 노선의 끝인 분기점은 그 지점을 지나는 다른 노선 일람에도 나온다」(사용자 결정 2026-11-19)
-      if ((!stop.isStop || (!_stopsOn(stop, day) && (ends.contains(stop.seq) || _endOfOther(routeId, stop.node, day)))) &&
-          _ridable(routeId, around, day)) {
+      var noBoarding = false;
+      // 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다. 앱에서 따로 끝인지 다시 계산하지 않는다 (검토 M1, 2026-11-21)
+      final span = !stop.isStop || !_stopsOn(stop, day) ? _spanOn(stop, day) : null;
+      if (span != null && _ridable(routeId, around, day)) {
+        // 그날 노드의 정체가 모양을 정한다. 신호장·분기점만 회색, 역은 「승하차 불가」, 아직 없던 경계점은 숨긴다
+        final style = span.style;
+        if (style == 'none') {
+          // 경계점 행의 끝 이어짐은 이웃한 끝 행으로 옮겨 그린다 (三岐線 富田 계통 1950 전 三岐朝明 → 富田에서 大矢知 쪽)
+          // 중간의 경계점(다른 계통을 나중 갈림으로 나눈 자리)은 그날 없던 자리라 그 연결도 그리지 않는다
+          if (ends.contains(stop.seq)) carry.addAll(bySeq[stop.seq] ?? const []);
+          continue;
+        }
         state = StopState.open;
         selectable = true;
-        passing = true;
+        passing = style != 'nostop';
+        noBoarding = style == 'nostop';
       }
       // 정차가 끝난 날 이 역이 다른 노선(같은 사슬)에 서면 폐역이 아니라 이관이다.
       // 그 전날 이 노선 것이 아니었던 칸이면 앞 노선 시절에 끝난 역이다 (ふるさと銀河線의 釧北)
@@ -264,16 +285,18 @@ final class SelectorBuilder {
         state: state,
         selectable: selectable,
         passing: passing,
+        noBoarding: noBoarding,
         kmCum: stop.kmCum,
         kmEstimated: stop.kmEstimated,
-        links: bySeq[stop.seq] ?? const [],
+        links: [...?(rows.isEmpty && carry.isNotEmpty ? carry.splice() : null), ...?bySeq[stop.seq]],
         goneLinks: goneBySeq[stop.seq] ?? const [],
         savedAs: savedAs,
         openYear: yearLabel(stop.period.fromLo, stop.period.fromHi),
         // 이관된 역을 이어받은 노선도 닫았으면 끝난 해는 이어받은 노선에서 닫힌 해다. 이관된 해를 적으면
         // 「~2001 폐지」 괄호 안 역이 「~1985」로 보였다 (北条線 北条町（旧）, 七尾線 能登三井, 실화면 2026-11-19)
-        closeYear: _ended(stop.period)
-            ? (handedTo == null ? null : _laterCloseYear(route.lineId, stop.node, around)) ?? yearLabel(stop.period.toLo, stop.period.toHi)
+        // 정차가 끝났어도 지금도 고를 수 있으면(격하된 신호장) 끝난 해가 없다
+        closeYear: _ended(stop.period) && _spanOn(stop, null) == null
+            ? (handedTo == null ? _lastSelectYear(stop) : _laterCloseYear(route.lineId, stop.node, around)) ?? yearLabel(stop.period.toLo, stop.period.toHi)
             : null,
         suspendedSince: _suspendedSince(stop, around, day),
         handedTo: handedTo,
@@ -283,7 +306,31 @@ final class SelectorBuilder {
         handedEnded: handedTo != null && !_servedLater(route.lineId, stop.node, around),
       ));
     }
+    // 맨 끝 경계점 행을 숨겼으면 그 끝 이어짐은 마지막 행에 붙인다
+    if (carry.isNotEmpty && rows.isNotEmpty) rows[rows.length - 1] = rows.last.withLinks([...rows.last.links, ...carry.splice()]);
     return rows;
+  }
+
+  /// 정차가 끝난 뒤에도 이 계통에서 고를 수 있던(격하된 신호장 등) 마지막 해. 그 뒤에 끝났으면 폐지 해는 그 해다 (八幡口 1972 신호장 → 1996 폐지)
+  String? _lastSelectYear(NetStop stop) {
+    NetPeriod? last;
+    for (final span in stop.selectSpans) {
+      if (span.style == 'none' || span.period.toHi == null || span.period.toHi!.compareTo(DateSpan.maxDate) >= 0) continue;
+      if ((span.period.toLo ?? '').compareTo(stop.period.toLo ?? '') <= 0) continue;
+      if (last == null || span.period.toLo!.compareTo(last.toLo!) > 0) last = span.period;
+    }
+    return last == null ? null : yearLabel(last.toLo, last.toHi);
+  }
+
+  /// 그날(날짜를 모르면 지금 상태) 그 행을 서지 않고 고를 수 있는 기간. 없으면 고를 수 없다
+  NetSelectSpan? _spanOn(NetStop stop, DateSpan? day) {
+    for (final span in stop.selectSpans) {
+      final on = day == null
+          ? span.period.toHi == null || span.period.toHi!.compareTo(DateSpan.maxDate) >= 0
+          : const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, span.period));
+      if (on) return span;
+    }
+    return null;
   }
 
   /// 운휴가 시작된 해. 역 정차의 끝 없는 공백이 먼저고, 아니면 그 날 운휴인 앞뒤 칸의 운휴 시작 가운데 이른 것이다.
@@ -584,21 +631,6 @@ final class SelectorBuilder {
     return const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, stop.period));
   }
 
-  /// 그날(날짜를 모르면 지금) 영업하는 다른 계통이 이 노드에서 끝나는가.
-  bool _endOfOther(String routeId, String node, DateSpan? day) {
-    for (final other in network.routesAt(node)) {
-      if (other == routeId) continue;
-      final route = network.routes[other];
-      if (route == null || (route.fromNode != node && route.toNode != node)) continue;
-      final rows = network.picks(other);
-      final alive = day == null
-          ? rows.any((row) => !_ended(row.period))
-          : rows.any((row) => const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, row.period)));
-      if (alive) return true;
-    }
-    return false;
-  }
-
   /// 그날(날짜를 모르면 지금) 이 노드에 닿는 칸 하나라도 탈 수 있는가.
   bool _ridable(String routeId, List<String> around, DateSpan? day) {
     if (day != null) return around.any((edge) => network.edgeUsable(routeId, edge, day).ridable);
@@ -768,5 +800,17 @@ final class SelectorBuilder {
     final from = link.validFromLo;
     final to = link.validToHi;
     return (from == null || from.compareTo(day.hi) <= 0) && (to == null || day.lo.compareTo(to) < 0);
+  }
+}
+
+/// 숨긴 경계점 행의 연결을 이웃한 끝 행으로 옮기기 위한 임시 목록
+final class _Carry {
+  final List<SelectorLink> _items = [];
+  bool get isNotEmpty => _items.isNotEmpty;
+  void addAll(Iterable<SelectorLink> links) => _items.addAll(links);
+  List<SelectorLink> splice() {
+    final out = List<SelectorLink>.of(_items);
+    _items.clear();
+    return out;
   }
 }

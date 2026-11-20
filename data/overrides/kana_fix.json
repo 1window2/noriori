@@ -6661,9 +6661,9 @@
 "source": "names.sqlite node kana: n_kaga_ichinomiya=かがいちのみや; n_hakusanshita=はくさんした"
 },
 "route:r_kintetsu_connecting_line": {
-"text": "三岐朝明～近鉄富田",
-"kana": "さんぎあさけ～きんてつとみだ",
-"source": "names.sqlite node kana: n_sangi_asake_signal=さんぎあさけ(node_fix, 1950–1989 역 이름 三岐朝明 — 7회차 구조 2026-11-14); n_kintetsu_tomida_sangi=きんてつとみだ"
+"text": "三岐朝明信号場～近鉄富田",
+"kana": "さんぎあさけしんごうじょう～きんてつとみだ",
+"source": "names.sqlite node kana: n_sangi_asake_signal=さんぎあさけしんごうじょう(node_fix, 지금 신호장 이름이 기본 이름 2026-11-21); n_kintetsu_tomida_sangi=きんてつとみだ"
 },
 "route:r_kinugawa_line": {
 "text": "下今市～新藤原",
@@ -8701,9 +8701,9 @@
 "source": "names.sqlite node kana: n_sangenya=さんげんや; n_shinchitosecho=しんちとせちょう"
 },
 "route:r_sangi_line": {
-"text": "三岐朝明～西藤原",
-"kana": "さんぎあさけ～にしふじわら",
-"source": "names.sqlite node kana: n_sangi_asake_signal=さんぎあさけ(node_fix, 1950–1989 역 이름 三岐朝明 — 7회차 구조 2026-11-14); n_nishi_fujiwara=にしふじわら"
+"text": "三岐朝明信号場～西藤原",
+"kana": "さんぎあさけしんごうじょう～にしふじわら",
+"source": "names.sqlite node kana: n_sangi_asake_signal=さんぎあさけしんごうじょう(node_fix, 지금 신호장 이름이 기본 이름 2026-11-21); n_nishi_fujiwara=にしふじわら"
 },
 "route:r_sangu_line": {
 "text": "多気～鳥羽",

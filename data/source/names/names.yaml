@@ -22226,7 +22226,7 @@
 - {"entity_type": "node", "id": "n_undo_koen_mae_toyohashi", "lang": "ja", "text": "運動公園前", "kana": "うんどうこうえんまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_undo_koen_mae_toyohashi", "lang": "ko", "text": "운도코엔마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_undo_koen_mae_toyohashi", "lang": "en", "text": "Undo-Koen-mae", "source": "hand"}
-- {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ja", "text": "三岐朝明", "source": "hand", "kana": "さんぎあさけ", "reading_source": "hand:node_fix"}
+- {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ja", "text": "三岐朝明信号場", "source": "hand", "kana": "さんぎあさけしんごうじょう", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_oyachi_sangi", "lang": "ja", "text": "大矢知", "kana": "おおやち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oyachi_sangi", "lang": "ko", "text": "오야치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_oyachi_sangi", "lang": "en", "text": "Oyachi", "source": "wikidata"}
@@ -27656,7 +27656,7 @@
 - {"entity_type": "node", "id": "n_saida", "lang": "ja", "text": "才田", "kana": "さいだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_saida", "lang": "ko", "text": "사이다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_saida", "lang": "en", "text": "Saida", "source": "wikidata"}
-- {"entity_type": "node", "id": "n_kaho_signal", "lang": "ja", "text": "嘉穂", "source": "noritsubushi"}
+- {"entity_type": "node", "id": "n_kaho_signal", "lang": "ja", "text": "嘉穂信号場", "source": "hand", "kana": "かほしんごうじょう", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_shimo_yamada", "lang": "ja", "text": "下山田", "kana": "しもやまだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shimo_yamada", "lang": "ko", "text": "시모야마다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shimo_yamada", "lang": "en", "text": "Shimo-Yamada", "source": "wikidata"}
@@ -52133,8 +52133,8 @@
 - {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_hanazono", "lang": "ko", "text": "마츠야마시역", "source": "hand"}
 - {"entity_type": "node", "id": "n_tabata_signal", "lang": "ko", "text": "타바타 신호장", "source": "hand"}
 - {"entity_type": "node", "id": "n_tabata_signal", "lang": "en", "text": "Tabata Signal", "source": "hand"}
-- {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ko", "text": "산기아사케", "source": "hand"}
-- {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "en", "text": "Sangi-Asake", "source": "hand"}
+- {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ko", "text": "산기아사케 신호장", "source": "hand"}
+- {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "en", "text": "Sangi-Asake Signal", "source": "hand"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "ko", "text": "분기점(오하나바타케)", "source": "hand"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "en", "text": "Jct. (Ohanabatake)", "source": "hand"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "ko", "text": "분기점(세이부치치부)", "source": "hand"}
@@ -52319,6 +52319,8 @@
 - {"entity_type": "node", "id": "n_kami_nuttari", "lang": "en", "text": "Kami-Nuttari Signal", "source": "hand"}
 - {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "ko", "text": "지선 접속점", "source": "hand"}
 - {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "en", "text": "Branch Connection", "source": "hand"}
+- {"entity_type": "node", "id": "n_kaho_signal", "lang": "ko", "text": "카호 신호장", "source": "hand"}
+- {"entity_type": "node", "id": "n_kaho_signal", "lang": "en", "text": "Kaho Signal", "source": "hand"}
 - {"entity_type": "node", "id": "n_funagoya", "lang": "en", "text": "Funagoya", "source": "rule"}
 - {"entity_type": "node", "id": "n_kanayamabashi", "lang": "en", "text": "Kanayamabashi", "source": "rule"}
 - {"entity_type": "node", "id": "n_takaoka_ekimae", "lang": "en", "text": "Takaoka-Ekimae", "source": "rule"}
@@ -53536,10 +53538,10 @@
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimin_byoin_mae", "lang": "ko", "text": "에키마에~시민뵤인마에", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimmei", "lang": "ja", "text": "駅前～神明", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimmei", "lang": "ko", "text": "에키마에~신메이", "source": "rule"}
-- {"entity_type": "route", "id": "r_sangi_line", "lang": "ja", "text": "三岐朝明～西藤原", "source": "rule"}
-- {"entity_type": "route", "id": "r_sangi_line", "lang": "ko", "text": "산기아사케~니시후지와라", "source": "rule"}
-- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "ja", "text": "三岐朝明～近鉄富田", "source": "rule"}
-- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "ko", "text": "산기아사케~킨테츠토미다", "source": "rule"}
+- {"entity_type": "route", "id": "r_sangi_line", "lang": "ja", "text": "三岐朝明信号場～西藤原", "source": "rule"}
+- {"entity_type": "route", "id": "r_sangi_line", "lang": "ko", "text": "산기아사케 신호장~니시후지와라", "source": "rule"}
+- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "ja", "text": "三岐朝明信号場～近鉄富田", "source": "rule"}
+- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "ko", "text": "산기아사케 신호장~킨테츠토미다", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokusei_line", "lang": "ja", "text": "西桑名～阿下喜", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokusei_line", "lang": "ko", "text": "니시쿠와나~아게키", "source": "rule"}
 - {"entity_type": "route", "id": "r_utsube_line", "lang": "ja", "text": "あすなろう四日市～内部", "source": "rule"}

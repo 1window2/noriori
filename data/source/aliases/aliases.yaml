@@ -2973,6 +2973,7 @@
 - {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ja", "text": "三岐朝明信号所", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_jr_matsuyama_ekimae", "lang": "ja", "text": "松山駅前", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_hanazono", "lang": "ja", "text": "松山市駅前", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_kaho_signal", "lang": "ja", "text": "嘉穂", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "ja", "text": "西武秩父（通過）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "ja", "text": "西武秩父（影森方）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_yamato_yagi_uehommachi_side", "lang": "ja", "text": "大和八木（上本町方）", "kind": "noritsubushi"}

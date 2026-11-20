@@ -60,6 +60,16 @@ final class NetworkReader {
         ));
       }
     }
+    // 끝 노드로 고를 수 있는 서지 않는 기간과 그날 노드의 정체. 이 표가 없는 옛 판이면 없다 (5번 결정 2026-11-21)
+    final hasSelect = (await _rows("SELECT 1 FROM master.sqlite_master WHERE type = 'table' AND name = 'route_stop_select'")).isNotEmpty;
+    final selectOf = <String, List<NetSelectSpan>>{};
+    if (hasSelect) {
+      for (final row in await _rows(
+        'SELECT route_id, seq, valid_from_lo, valid_from_hi, valid_to_lo, valid_to_hi, style FROM master.route_stop_select',
+      )) {
+        (selectOf['${row.read<String>('route_id')}|${row.read<int>('seq')}'] ??= []).add(NetSelectSpan(period: _period(row), style: row.read('style')));
+      }
+    }
     final hasEra = (await _rows("SELECT 1 FROM master.sqlite_master WHERE type = 'table' AND name = 'edge_km_era'")).isNotEmpty;
     final era = hasEra ? await _rows('SELECT edge_id, line_id, m FROM master.edge_km_era') : const <QueryRow>[];
     final services = await _rows('SELECT id, closed, valid_from, valid_to FROM master.service');
@@ -142,6 +152,7 @@ final class NetworkReader {
             kmEstimated: row.read<int>('km_estimated') != 0,
             period: _period(row),
             gaps: gapsOf['${row.read<String>('route_id')}|${row.read<int>('seq')}'] ?? const [],
+            selectSpans: selectOf['${row.read<String>('route_id')}|${row.read<int>('seq')}'] ?? const [],
           ),
       ],
       attrs: [

@@ -339,6 +339,8 @@ for rid,ed in redge.items():
     for e in ed:in_r[routes[rid]['line_id']].add(e)
 for e,v in attr.items():
     for a in v:
+        # 기록 하한(1950) 전에 끝난 소속은 계통에 둘 필요가 없다 (徳島線 阿波池田–三縄 1931–1935)
+        if a['valid_to']!=ON and a['valid_to_hi'] and a['valid_to_hi']<=BASE:continue
         if e not in in_r[a['line_id']]:rows.append((ln(a['line_id']),e,nn(E[e][0]),nn(E[e][1])))
 put('노선 멤버십 edge가 계통에 없음',rows)
 # ---- 공식 노선 구성 표의 폐지·휴지가 빌드에 실렸는가 (official_lines.json h의 廃止日 표, susp)
@@ -464,6 +466,8 @@ for rid,ed in redge.items():
     s=rstop[rid];r=routes[rid]
     if not s or r['closed'] or r['line_id'] in HIDL:continue
     for x in(s[0],s[-1]):
+        # 기록 하한(1950) 전에 끝난 행은 화면에 고를 일이 없다 (徳島線 三縄 1931–1935)
+        if x['valid_to']!=ON and x['valid_to_hi'] and x['valid_to_hi']<=BASE:continue
         if not x['is_stop'] and not x['is_end_point']:rows.append((rid,nn(x['node_id'])))
 put('계통 끝이 숨은 노드인데 끝 노드 행 아님',rows)
 # 날짜 스냅숏 위상: 노선별로 그날 열린 edge가 몇 조각인가
@@ -728,6 +732,9 @@ stop_cur={(r[0],r[1]) for r in m.execute("select route_id,node_id from route_sto
 node_cur={r[0] for r in m.execute("select node_id from route_stop_period where valid_to='ongoing'")}
 # 오늘 계통 끝 노드(정차가 없어도 승하차 불가 끝 노드로 고름)
 END_CUR={r['node_id'] for r in m.execute("select s.node_id from route_stop s join route r on r.id=s.route_id where s.valid_to='ongoing' and s.node_id in (r.from_node,r.to_node)")}
+if m.execute("select 1 from sqlite_master where type='table' and name='route_stop_select'").fetchone():
+    # 끝은 날마다 정한다(계통 정의의 시작·끝 노드가 아니어도 됨): 지금 서지 않고 고를 수 있는 행
+    END_CUR|={r['node_id'] for r in m.execute("select s.node_id from route_stop_select s where s.valid_to='ongoing' and s.style!='none'")}
 rows=[]
 for r in m.execute("select route_id,seq,next_stop_node,terminal_node from route_link where valid_to='ongoing'"):
     for x in (r['next_stop_node'],r['terminal_node']):
@@ -884,6 +891,10 @@ def end_on(l,x,d):
     """그날(d) 노선 l의 칸이 x에 하나 이하로 닿으면 그날 x는 l의 끝이다 (DESIGN §8.1 「시기별 끝 역」, compile era_end)"""
     return sum(1 for e,f_,t_ in LATTR[l] if x in E.get(e,()) and f_<=d<t_)<=1
 put('K01 continue junction이 계통 끝 역 아님',[(j['line_id'],j['other_line_id'],j['node_id'],(j['source'] or '')[:24]) for j in JN if j['is_continue'] and j['node_id'] not in ends[j['line_id']] and not end_on(j['line_id'],j['node_id'],lohi(j['valid_from'])[1] if j['valid_from'] else '0000')],30)
+NBR_K01=collections.defaultdict(lambda:collections.defaultdict(set))
+for rid_,v_ in rstop.items():
+    for p_,q_ in zip(v_,v_[1:]):
+        NBR_K01[routes[rid_]['line_id']][p_['node_id']].add(q_['node_id']);NBR_K01[routes[rid_]['line_id']][q_['node_id']].add(p_['node_id'])
 LK=set()
 for k in LINKS:
     if k['kind'] in('continue','branch') and k['node'] and k['route_id'] in routes:LK.add((routes[k['route_id']]['line_id'],G_(k['node']),k['other_line_id']))
@@ -896,7 +907,10 @@ for j in JN:
     if j['source']=='derived' or (j['valid_to'] not in(None,ON) and j['valid_to']<BASE):continue
     if (j['line_id'],j['other_line_id'],j['node_id']) in _JON:continue
     a,b,x=j['line_id'],j['other_line_id'],G_(j['node_id'])
-    if (a,x,b) not in LK and (b,x,a) not in LK:rows.append((a,b,j['node_id'],j['valid_from'],j['valid_to'],(j['source'] or '')[:40]))
+    # 숨은 분기점·신호장(승객 역 아님)의 근거는 그 노드를 지나는 두 노선 계통의 이웃 행에서 나온 연결로도 된다
+    # (漆生線은 嘉穂信号場에서 上山田線과 만나 下山田까지 나란히 가고 연결은 下山田 정차역에 있다)
+    xs_={x}|({G_(y) for l_ in (a,b) for y in NBR_K01[l_].get(j['node_id'],())} if j['node_id'] not in pub else set())
+    if not any((a,y,b) in LK or (b,y,a) in LK for y in xs_):rows.append((a,b,j['node_id'],j['valid_from'],j['valid_to'],(j['source'] or '')[:40]))
 put('K01 근거 junction이 route_link 분기·이어짐으로 안 나옴',rows,30)
 # 한 노선이 끝나는 노드를 같은 방식의 다른 노선이 지나가거나 거기서 끝나는데 선로 연결 판정(junction·track_link·NOCONT·JUNCTION_NOT)이 없음
 RSIV={}
@@ -1021,14 +1035,21 @@ def stops_of(rid,line,x):
     if rid:return SPR.get((rid,x),[])
     return [p for q in LROUTES.get(line,[]) for p in SPR.get((q,x),[])]
 # 계통 끝 노드 행은 정차가 없어도 그 행 기간 내내 고를 수 있다(5번 결정: 승하차 불가 끝 노드). 연결의 다음·끝 역이 될 수 있다
+# 고를 수 있는 기간 = 행 기간(정차) ∪ 끝 노드로 고를 수 있는 서지 않는 기간(route_stop_select, 숨김(none)은 뺀다). 정차로 보는 검사는 SPR만 읽는다
+SELIV=collections.defaultdict(list)
+if m.execute("select 1 from sqlite_master where type='table' and name='route_stop_select'").fetchone():
+    for r_ in m.execute("select route_id,node_id,valid_from,valid_to from route_stop_select where style!='none'"):SELIV[r_[0],r_[1]].append(ivl(r_[2],r_[3]))
 ENDIV=collections.defaultdict(list)
 for rid_,v_ in allstop.items():
     for z_ in v_:
         if rid_ in routes and z_['node_id'] in (routes[rid_]['from_node'],routes[rid_]['to_node']):ENDIV[rid_,z_['node_id']].append(ivl(z_['valid_from'],z_['valid_to']))
+for (rid_,x_),v_ in SELIV.items():
+    if rid_ in routes:ENDIV[rid_,x_]+=v_
 ENDNODES={v for r_ in routes.values() for v in (r_['from_node'],r_['to_node'])}
 ROWIV=collections.defaultdict(list)
 for rid_,v_ in allstop.items():
     for z_ in v_:ROWIV[rid_,z_['node_id']].append(ivl(z_['valid_from'],z_['valid_to']))
+for k_,v_ in SELIV.items():ROWIV[k_]+=v_
 def ends_of(rid,line,x):
     if rid and ENDIV.get((rid,x)):return ENDIV[rid,x]
     return [p for q in LROUTES.get(line,[]) for p in ENDIV.get((q,x),[])]
@@ -1305,13 +1326,18 @@ for rid,s in rstop.items():
         hit=[(a[0],b[0]) for i_,a in enumerate(v) for b in v[:i_] if a[0]!=b[0] and may(a[1],b[1])]
         if hit:rows.append((rid,t_,nn(hit[0][0]),nn(hit[0][1])))
     for t_,xs in gb.items():
-        if len(xs)>1:rows2.append((rid,t_,sorted(xs)[:3]))
+        # 「（旧）」끼리는 같은 이름이어도 된다: 폐역 해가 함께 보여 어느 것인지 안다 (사용자 결정 2026-11-21, 桜島（旧）)
+        if len(xs)>1 and not t_.endswith('（旧）'):rows2.append((rid,t_,sorted(xs)[:3]))
 put('K11 같은 계통에서 같은 날 표시 이름이 같은 역 둘',rows,30)
 put('K25 같은 계통에 지금 이름이 같은 노드 둘(（旧） 없음)',rows2,30)
 _END_SP=collections.defaultdict(list)
 for rid_,v_ in rstop.items():
     for z_ in v_:
         if z_['node_id'] in (routes[rid_]['from_node'],routes[rid_]['to_node']):_END_SP[z_['node_id']].append(((z_['valid_from_lo'] or '0000'),'',('9999' if z_['valid_to']==ON else (z_['valid_to_hi'] or '9999')),''))
+# 서지 않고 고를 수 있는 기간(route_stop_select: 끝 노드·격하된 신호장)도 그 이름이 보이는 기간이다
+if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone():
+    for r_ in m.execute("select node_id,valid_from_lo,valid_to,valid_to_hi from route_stop_select where style!='none'"):
+        _END_SP[r_[0]].append(((r_[1] or '0000'),'',('9999' if r_[2] in (ON,'ongoing') else (r_[3] or '9999')),''))
 rows=[];rows2=[]
 for (t,i,l),v in NROWS.items():
     if t!='node' or l!='ja' or i not in pub:continue
@@ -1323,7 +1349,7 @@ for (t,i,l),v in NROWS.items():
         if not p or p[3]<BASE:continue
         # 계통 끝으로 지나가던 기간(승하차 불가 끝 노드, 5번 결정)도 그 이름이 보이는 기간이다
         if not any(p[2]>q[0] and q[2]>p[0] for q in sp+_END_SP.get(i,[])):rows.append((i,x,vf,vt,src))
-    last=max(q[3] for q in sp)
+    last=max([q[3] for q in sp]+[q[2] for q in _END_SP.get(i,[])])
     if last<'9999':
         for x,k,src,li,vf,vt in v:
             p=ivl(vf,vt)
@@ -1826,6 +1852,8 @@ def _node_live(line,nodes_):
             if not sp and (q,x) in _EP_ROW:sp=_EP_ROW[(q,x)]
             # 계통 끝 노드 행은 정차가 아닌 동안(늘린 끝 행의 route_stop_gap)에도 고를 수 있다. 그 노드를 지나는 다른 계통의 행도 같다(5번 결정: 지나가는 계통 화면에도 보임)
             if x in ENDNODES and ROWIV.get((q,x)):sp=(sp or [])+ROWIV[q,x]
+            # 끝은 날마다 정한다: 어느 행이든 서지 않고 고를 수 있는 기간(route_stop_select)에는 고를 수 있다 (土讃線 1950–1962 끝 佃 ↔ 徳島線 佃)
+            if SELIV.get((q,x)):sp=(sp or [])+SELIV[q,x]
             if not sp:continue
             op=_route_open_at(q,x)
             st=_ivs_union([((p[0] or '0000-01-01'),(p[3] or '9999-12-31')) for p in sp if p])
@@ -2247,6 +2275,10 @@ for rid_,v_ in allstop.items():
         # 승하차 불가 끝 노드 행도 다음·끝 역이 될 수 있다(정차역이 없는 연락선의 반대쪽 끝, 5번 결정)
         if z_['is_stop'] or z_['is_end_point']:
             _XS[routes[rid_]['line_id'],z_['node_id']].append(((z_['valid_from_lo'] or '0000-01-01'),'9999-12-31' if z_['valid_to']==ON else (z_['valid_to_hi'] or '9999-12-31')))
+# 서지 않고 고를 수 있는 기간(route_stop_select)의 노드도 다음·끝 역이 될 수 있다
+if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone():
+    for r_ in m.execute("select route_id,node_id,valid_from_lo,valid_to,valid_to_hi from route_stop_select where style!='none'"):
+        if r_[0] in routes:_XS[routes[r_[0]]['line_id'],r_[1]].append(((r_[2] or '0000-01-01'),'9999-12-31' if r_[3] in (ON,'ongoing') else (r_[4] or '9999-12-31')))
 def _xs_on(line,x,p):return any(a<p[3] and p[0]<b for a,b in _XS.get((line,x),[]))
 _XGM=collections.defaultdict(set)
 for x_,g_ in GRP.items():_XGM[g_ or x_].add(x_)
@@ -2653,7 +2685,7 @@ for rid_,v_ in allstop.items():
         t_=next((z[0] for z in NROWS.get(('node',x_,'ja'),[]) if z[3]==l_ and not z[4] and not z[5]),None) or bj(x_)
         gb[t_].add(x_)
     for t_,xs in gb.items():
-        if len(xs)>1 and t_:rows.append((ln(l_),rid_,t_,sorted(xs)[:3]))
+        if len(xs)>1 and t_ and not t_.endswith('（旧）'):rows.append((ln(l_),rid_,t_,sorted(xs)[:3]))
 put('K193 한 계통 날짜 모름 화면에 같은 이름 노드 둘(서는 역·이관 뒤 새 역)',rows,30)
 # K194a 끝난 노선 마지막 날 이름(노선 한정, 기간 없음)의 근거가 시작 없는 N05 개칭 행(4회차 chubu_2-010 (a): のと穴水). N05 연도 개칭 행은 시작 없이 들어가
 # 같은 노드의 다른 사업자 노선·끝난 노선 이름까지 덮을 수 있다. 그 이름을 그 노선 마지막 날에 실제로 썼는지 볼 확인 목록

@@ -20,13 +20,27 @@ final class NewsData {
   bool get isEmpty => items.isEmpty && changes.isEmpty;
 }
 
-Future<NewsData> _named(Ref ref, List<NewsItem> items, List<RideChange> changes) async => NewsData(
-      items: items,
-      changes: changes,
-      names: await ref.watch(packReaderProvider).nodeNames([
-        for (final item in items) ?item.node,
-      ]),
-    );
+/// 역 이름은 그 사건 날의 이름이다. 폐역은 마지막 날 이름, 개업은 그날 이름이다.
+/// 지금 이름을 쓰면 신호장으로 격하된 역이 「산기아사케 신호장역 폐역」으로 나왔다 (2026-11-21)
+Future<NewsData> _named(Ref ref, List<NewsItem> items, List<RideChange> changes) async {
+  final reader = ref.watch(packReaderProvider);
+  final names = <String, String>{};
+  for (final item in items) {
+    final node = item.node;
+    if (node == null || names.containsKey(node)) continue;
+    final day = item.kind == NewsKind.stationClosed ? _dayBefore(item.date) : item.date;
+    final got = await reader.nodeNames([node], lineId: item.lineId, date: day);
+    names[node] = got[node] ?? (await reader.nodeNames([node]))[node] ?? node;
+  }
+  return NewsData(items: items, changes: changes, names: names);
+}
+
+String _dayBefore(String date) {
+  final parsed = DateTime.tryParse(date);
+  if (parsed == null) return date;
+  final d = parsed.subtract(const Duration(days: 1));
+  return '${d.year.toString().padLeft(4, '0')}-${d.month.toString().padLeft(2, '0')}-${d.day.toString().padLeft(2, '0')}';
+}
 
 /// 지금까지의 소식 전체. 설정의 변경 내역이 쓴다. 최근 200건만 보인다.
 final newsHistoryProvider = FutureProvider.autoDispose<NewsData>((ref) async {

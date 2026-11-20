@@ -138,6 +138,7 @@ final class NetStop {
     required this.period,
     this.kmEstimated = false,
     this.gaps = const [],
+    this.selectSpans = const [],
   });
 
   final String routeId;
@@ -155,6 +156,18 @@ final class NetStop {
 
   /// 営業キロ를 몰라 선 위 위치로 추정한 km다. 계산에만 쓰고 화면은 `? km` (DESIGN §4.5).
   final bool kmEstimated;
+
+  /// 끝 노드로 고를 수 있는데 이 계통이 서지 않는 기간과 그날 노드의 정체 (route_stop_select, 5번 결정 2026-11-21).
+  /// 정차·연도는 [period]·[gaps]가 정하고, 노드 모양만 이것이 정한다.
+  final List<NetSelectSpan> selectSpans;
+}
+
+/// 고를 수 있는 서지 않는 기간 하나. style: signal·junction(가운데 회색) / nostop(역은 있으나 이 계통이 서지 않음) / none(아직 없던 경계점, 숨김)
+final class NetSelectSpan {
+  const NetSelectSpan({required this.period, required this.style});
+
+  final NetPeriod period;
+  final String style;
 }
 
 final class NetAttr {

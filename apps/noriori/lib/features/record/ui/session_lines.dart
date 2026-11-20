@@ -296,6 +296,10 @@ class _StopTile extends ConsumerWidget {
     final row = line.row;
     // 구분선과 같은 해에 폐역된 역은 그 줄에 연도가 있다. 더 일찍 폐역된 역에만 적는다
     if (line.quiet) return null;
+    // 역은 있으나 그날 이 계통이 서지 않는 끝 노드: 보통 역 모양에 「승하차 불가」 (결정 A 추천안, 2026-11-21)
+    if (row.noBoarding) return context.t.session.spokenPassing;
+    // 그날 신호장·분기점으로 지나는 행(회색)은 역 정차가 끝난 해를 붙이지 않는다. 신호장이 없어지면 그때 폐지 해가 붙는다
+    if (row.passing) return null;
     return switch (row.state) {
       StopState.maybe => t.maybe,
       StopState.beforeOpen => t.since(year: row.openYear ?? '?'),
@@ -390,7 +394,7 @@ class _StopTile extends ConsumerWidget {
       if (km != null) t.spokenKm(km: km.toStringAsFixed(1)),
       if (!temp && row.closeYear != null && row.handedTo == null)
         t.spokenClosed(year: row.closeYear!)
-      else if (row.passing)
+      else if (row.passing || row.noBoarding)
         t.spokenPassing
       else if (row.suspendedSince != null && (row.state == StopState.suspended || row.state == StopState.unknown))
         t.spokenSuspendedSince(year: row.suspendedSince!)

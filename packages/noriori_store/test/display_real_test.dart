@@ -77,15 +77,19 @@ void main() {
     expect(continuesTo(end, 'l_nagoya_main_line'), isTrue);
   }, skip: skip);
 
-  test('그날 서지 않는 계통 끝 역은 회색 끝 노드이고 끝 너머 노선으로 이어진다 (大洗鹿島線 北鹿島 1990)', () async {
+  // 회색은 신호장·분기점만이다. 승객 없는 역(화물역 北鹿島 1970–1994)은 보통 역 모양에 「승하차 불가」로 고를 수 있다 (사용자 결정 2026-11-21, 결정 A 추천안)
+  test('그날 서지 않는 계통 끝 역은 「승하차 불가」 끝 노드이고 끝 너머 노선으로 이어진다 (大洗鹿島線 北鹿島 1990)', () async {
     final end = await endNode('r_oarai_kashima_line', '1990-06-01', 'n_kashima_soccer_stadium_kashima_rinkai');
-    expect(end.row.passing, isTrue);
+    expect(end.row.noBoarding, isTrue);
+    expect(end.row.passing, isFalse);
+    expect(end.row.selectable, isTrue);
     expect(continuesTo(end, 'l_kashima_line'), isTrue);
   }, skip: skip);
 
   test('끝 노드를 역 노드로 합쳐도 연락선은 그 역에 서지 않는다 (西武秩父鉄道連絡線 御花畑)', () async {
     final lines = await screen('r_chichibu_railway_connecting_line', today);
-    expect(stopAt(lines, 'n_ohanabatake').row.passing, isTrue);
+    // 御花畑는 역(秩父本線이 섬)이라 연락선 화면에서는 「승하차 불가」, 분기점은 회색이다
+    expect(stopAt(lines, 'n_ohanabatake').row.noBoarding, isTrue);
     expect(stopAt(lines, 'n_seibu_chichibu_through').row.passing, isTrue);
     expect(continuesTo(stopAt(lines, 'n_ohanabatake'), 'l_chichibu_main_line'), isTrue);
   }, skip: skip);

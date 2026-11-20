@@ -2174,8 +2174,8 @@
 - {"entity_type": "route", "id": "r_azumada_main_line_ihara_undo_koen_mae", "lang": "en", "text": "Ihara~Undo-Koen-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimin_byoin_mae", "lang": "en", "text": "Ekimae~Shimin-Byoin-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimmei", "lang": "en", "text": "Ekimae~Shimmei", "source": "rule"}
-- {"entity_type": "route", "id": "r_sangi_line", "lang": "en", "text": "Sangi-Asake~Nishi-Fujiwara", "source": "rule"}
-- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "en", "text": "Sangi-Asake~Kintetsu Tomida", "source": "rule"}
+- {"entity_type": "route", "id": "r_sangi_line", "lang": "en", "text": "Sangi-Asake Signal~Nishi-Fujiwara", "source": "rule"}
+- {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "en", "text": "Sangi-Asake Signal~Kintetsu Tomida", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokusei_line", "lang": "en", "text": "Nishi-Kuwana~Ageki", "source": "rule"}
 - {"entity_type": "route", "id": "r_utsube_line", "lang": "en", "text": "Asunarou Yokkaichi~Utsube", "source": "rule"}
 - {"entity_type": "route", "id": "r_hachioji_line", "lang": "en", "text": "Hinaga~Ise-Hachioji", "source": "rule"}

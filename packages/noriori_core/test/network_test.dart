@@ -577,6 +577,13 @@ void main() {
               
               period: ongoing,
               gaps: [NetPeriod(fromLo: '1944-01-01', fromHi: '1944-12-31', toLo: '1995-12-22', toHi: '1995-12-22')],
+              // 계통 끝 역이 서지 않는 동안 고를 수 있는 기간과 정체는 컴파일이 정한다(route_stop_select). 역은 있으나 서지 않으니 「승하차 불가」
+              selectSpans: [
+                NetSelectSpan(
+                  period: NetPeriod(fromLo: '1944-12-31', fromHi: '1944-12-31', toLo: '1995-12-22', toHi: '1995-12-22'),
+                  style: 'nostop',
+                ),
+              ],
             ),
           ],
           attrs: [attr('pq', 'l')],
@@ -613,10 +620,11 @@ void main() {
       expect(interpreter.unridable(on('1944-06-01')), isFalse);
       expect(interpreter.unridable(on('197X-XX-XX')), isTrue);
       expect(interpreter.unridable(on('199X-XX-XX')), isFalse);
-      // 이 시험의 印場는 계통 끝이라, 서지 않는 날에는 승하차 불가 끝 노드(가운데 회색, 고를 수 있음)다 (5번 결정 junction-nodes-rule, 2026-11-19).
-      // 실제 印場처럼 중간 역이면 고를 수 없는 폐역이다
+      // 이 시험의 印場는 계통 끝이라, 서지 않는 날에는 고를 수 있는 「승하차 불가」 끝 노드다(역이라 회색이 아니다, 결정 A 추천안 2026-11-21).
+      // 고를 수 있는지는 컴파일이 준 기간(selectSpans)만 본다. 실제 印場처럼 중간 역이면 그 기간이 없어 고를 수 없는 폐역이다
       final rows = SelectorBuilder(twice).build('t', DateSpan.parse('1970-05-01'));
-      expect(rows.last.passing, isTrue);
+      expect(rows.last.noBoarding, isTrue);
+      expect(rows.last.passing, isFalse);
       expect(rows.last.selectable, isTrue);
     });
 

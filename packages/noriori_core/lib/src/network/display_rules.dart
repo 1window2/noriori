@@ -425,8 +425,16 @@ final class DisplayRules {
   String? _viewDay;
   String get _day => _viewDay ?? today;
 
-  bool _gone(SelectorLink link, {required bool onDate, required String node}) {
+  /// 연결 기간이 화면의 날(_day)을 덮는가
+  bool _activeOn(SelectorLink link) =>
+      (link.validFromLo ?? '0000').compareTo(_day) <= 0 && (link.validToHi == null || link.validToHi!.compareTo(_day) > 0);
+
+  bool _gone(SelectorLink link, {required bool onDate, required String node, SelectorRow? row}) {
     if (!onDate) return true;
+    // 선로 연결(끝 이어짐·분기)은 두 노선이 함께 다닐 때만 있어 기간이 끝났으면 끝남이다(相生線 美幌 → 石北本線 ~1985).
+    // 이 노선 쪽이 이관돼 끝난 행(金沢 北陸本線 2015 → IRいしかわ)만 상대 역이 남아 있는지로 본다. 환승은 상대 역이 남아 있는지가 색이다
+    final ended = link.validToHi != null && link.validToHi!.compareTo(_day) <= 0;
+    if (ended && link.kind != 'transfer' && row != null && row.handedTo == null) return true;
     final route = link.otherRouteId;
     final at = link.otherNode ?? node;
     if (route != null && network.routes.containsKey(route)) {
@@ -435,9 +443,11 @@ final class DisplayRules {
       for (final stop in network.stops(route)) {
         if (stop.node != at) continue;
         found = true;
-        final to = stop.period.toHi;
-        if (to == null || to.compareTo(DateSpan.maxDate) >= 0) return false;
-        if (end == null || to.compareTo(end) > 0) end = to;
+        // 정차가 끝났어도 서지 않고 고를 수 있는 동안(격하된 신호장·끝 노드, route_stop_select)은 그 자리가 남아 있다 (三岐朝明信号場 1989~)
+        for (final to in [stop.period.toHi, for (final span in stop.selectSpans) if (span.style != 'none') span.period.toHi]) {
+          if (to == null || to.compareTo(DateSpan.maxDate) >= 0) return false;
+          if (end == null || to.compareTo(end) > 0) end = to;
+        }
       }
       if (found) return end!.compareTo(_day) <= 0;
     }
@@ -616,9 +626,9 @@ final class DisplayRules {
       for (final link in row.links)
         if (link.kind == kind &&
             (archive || !early(link)) &&
-            (options.showClosed || !undated || !_gone(link, onDate: true, node: row.node)) &&
+            (options.showClosed || !undated || !_gone(link, onDate: true, node: row.node, row: row)) &&
             !skip.contains('${row.seq}\u0000${link.otherLineId}'))
-          _display(link, early(link) || _gone(link, onDate: true, node: row.node), row.node),
+          _display(link, early(link) || _gone(link, onDate: true, node: row.node, row: row), row.node),
       if (options.showClosed)
         for (final link in row.goneLinks)
           if (link.kind == kind && (archive || !early(link)) && !skip.contains('${row.seq}\u0000${link.otherLineId}'))
@@ -641,7 +651,9 @@ final class DisplayRules {
     bool related(SelectorLink other) =>
         other.otherLineId == link.otherLineId || (_sharesLineage(other.otherLineId, link.otherLineId) && !overlap(other, link));
     final group = [for (final other in [...row.links, ...row.goneLinks]) if (kinds.contains(other.kind) && related(other)) other];
-    bool live(SelectorLink other) => row.links.contains(other) && !_gone(other, onDate: true, node: row.node);
+    // 그날 있는 연결은 연결 기간이 그날을 덮는 것이다. 「끝남」 색(상대 역이 아직 있나, _gone)과 따로 본다.
+    // 섞으면 상대 계통을 적은 옛 연결(肥薩線 八代 → 鹿児島本線 ~2004)이 상대 역이 남아 있다는 이유로 그날 연결이 되어 그날 환승을 가렸다
+    bool live(SelectorLink other) => row.links.contains(other) && _activeOn(other) && !_gone(other, onDate: true, node: row.node, row: row);
     final present = [for (final other in group) if (live(other)) other];
     if (present.isNotEmpty) {
       if (!present.contains(link)) return false;
@@ -736,7 +748,7 @@ final class DisplayRules {
     // 지금 선로로 이어진(분기·끝 이어짐) 노선과의 옛 환승은 「끝남」으로 적지 않는다. 지금도 갈아탈 수 있다 (姫路 山陽本線, 감사 3회차 kinki_1-07)
     final joined = {
       for (final link in row.links)
-        if ((link.kind == 'branch' || link.kind == 'continue') && !_gone(link, onDate: true, node: row.node)) link.otherLineId,
+        if ((link.kind == 'branch' || link.kind == 'continue') && _activeOn(link) && !_gone(link, onDate: true, node: row.node, row: row)) link.otherLineId,
     };
     all.removeWhere((item) => item.gone && item.link.kind == 'transfer' && joined.contains(item.link.otherLineId));
     // 둘 다 그날 있거나 둘 다 끝났으면 늦게 끝난 것을 남긴다. 폐선 화면에서 모두 끝났어도 노선이 끝날 때의 연결이 남는다

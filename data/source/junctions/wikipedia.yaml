@@ -376,9 +376,9 @@
 - {"line": "l_itoda_line", "other": "l_hitahikosan_line", "at": "n_tagawa_gotoji", "source": "wikipedia:110948386", "verified": false, "valid": [null, "1989-10-01"], "side": "up"}
 - {"line": "l_itoda_line", "other": "l_gotoji_line", "at": "n_tagawa_gotoji", "source": "wikipedia:110948386", "verified": false, "valid": [null, "1989-10-01"], "side": "up"}
 - {"line": "l_kobukuro_line", "other": "l_chikuho_main_line", "at": "n_kotake", "source": "wikipedia:106494274", "verified": false, "valid": [null, "1969-12-08"], "side": "down"}
-- {"line": "l_urushio_line", "other": "l_kamiyamada_line", "at": "n_shimo_yamada", "source": "wikipedia:101347681", "verified": false, "valid": [null, "1986-04-01"], "side": "up"}
+- {"line": "l_urushio_line", "other": "l_kamiyamada_line", "at": "n_kaho_signal", "source": "wikipedia:101347681", "verified": false, "valid": [null, "1986-04-01"], "side": "up"}
 - {"line": "l_kamiyamada_line", "other": "l_chikuho_main_line", "at": "n_iizuka", "source": "wikipedia:110863150", "verified": false, "valid": [null, "1988-09-01"], "side": "down"}
-- {"line": "l_kamiyamada_line", "other": "l_urushio_line", "at": "n_shimo_yamada", "source": "wikipedia:110863150", "verified": false, "valid": [null, "1986-04-01"], "side": "up"}
+- {"line": "l_kamiyamada_line", "other": "l_urushio_line", "at": "n_kaho_signal", "source": "wikipedia:110863150", "verified": false, "valid": [null, "1986-04-01"], "side": "up"}
 - {"line": "l_kamiyamada_line", "other": "l_hitahikosan_line", "at": "n_buzen_kawasaki", "source": "wikipedia:110863150", "verified": false, "valid": [null, "1988-09-01"], "side": "up"}
 - {"line": "l_esashi_line", "other": "l_hakodate_main_line", "at": "n_goryokaku", "source": "wikipedia:109241062", "verified": false, "valid": [null, "2016-03-26"], "side": "down"}
 - {"line": "l_esashi_line", "other": "l_matsumae_line", "at": "n_kikonai", "source": "wikipedia:109241062", "verified": false, "valid": [null, "1988-02-01"], "side": "down"}
@@ -523,6 +523,7 @@
 - {"line": "l_ishikawa_line", "other": "l_shokin_line", "at": "n_nonoichi_hokuriku", "source": "wikipedia:111054098", "verified": false, "valid": ["1916-03-13", "1955-11-15"], "side": "down"}
 - {"line": "l_ishikawa_line", "other": "l_nomi_line", "at": "n_tsurugi", "source": "wikipedia:111054098", "verified": false, "valid": [null, "1980-09-14"], "side": "down"}
 - {"line": "l_sunzu_line", "other": "l_tramway_ho_line", "at": "n_mishima_hirokoji", "source": "wikipedia:110893299", "verified": false, "valid": [null, "1963-02-05"], "side": "down"}
+- {"line": "l_kintetsu_connecting_line", "other": "l_sangi_line", "at": "n_sangi_asake_signal", "source": "wikipedia:111510770", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_utsube_line", "other": "l_hachioji_line", "at": "n_hinaga_yokkaichi_asunarou", "source": "wikipedia:110826270", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_hachioji_line", "other": "l_utsube_line", "at": "n_hinaga_yokkaichi_asunarou", "source": "wikipedia:108178557", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_katsuyama_eiheiji_line", "other": "l_mikuni_awara_line", "at": "n_fukuiguchi", "source": "wikipedia:111511386", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -1479,7 +1480,6 @@
 - {"line": "l_kibi_line", "other": "l_hakubi_line", "at": "n_soja", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_kihara_line", "other": "l_sotobo_line", "at": "n_ohara", "source": "derived", "verified": false, "valid": [null, "1988-03-24"], "continue": true}
 - {"line": "l_sotobo_line", "other": "l_kihara_line", "at": "n_ohara", "source": "derived", "verified": false, "valid": [null, "1988-03-24"], "side": "up"}
-- {"line": "l_kintetsu_connecting_line", "other": "l_sangi_line", "at": "n_sangi_asake_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_sangi_line", "other": "l_kintetsu_connecting_line", "at": "n_sangi_asake_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_kinugawa_line", "other": "l_nikko_line_tobu", "at": "n_shimo_imaichi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_kinuta_line", "other": "l_den_en_toshi_line", "at": "n_futako_tamagawa", "source": "derived", "verified": false, "valid": [null, "1943-07-01"], "continue": true}
@@ -2504,6 +2504,8 @@
 - {"line": "l_nishioji_line", "other": "l_umezu_line", "at": "n_nishiojishijo", "source": "derived", "verified": false, "valid": [null, "1958-12-01"], "side": "down"}
 - {"line": "l_shinetsu_main_line", "other": "l_uonuma_line", "at": "n_raikoji", "source": "derived", "verified": false, "valid": ["1954-08-01", "1984-04-01"], "side": "up"}
 - {"line": "l_urushio_line", "other": "l_gotoji_line", "at": "n_shimo_kamoo", "source": "derived", "verified": false, "valid": [null, "1986-04-01"], "continue": true}
+- {"line": "l_urushio_line", "other": "l_kamiyamada_line", "at": "n_shimo_yamada", "source": "derived", "verified": false, "valid": [null, "1986-04-01"], "continue": true}
+- {"line": "l_kamiyamada_line", "other": "l_urushio_line", "at": "n_shimo_yamada", "source": "derived", "verified": false, "valid": [null, "1986-04-01"], "side": "up"}
 - {"line": "l_ushigome_line", "other": "l_edogawa_line", "at": "n_iidabashi_toei", "source": "derived", "verified": false, "valid": [null, "1968-09-29"], "continue": true}
 - {"line": "l_edogawa_line", "other": "l_ushigome_line", "at": "n_iidabashi_toei", "source": "derived", "verified": false, "valid": [null, "1968-09-29"], "side": "up"}
 - {"line": "l_ushigome_line", "other": "l_shinjuku_line_toden", "at": "n_yotsuyamitsuke", "source": "derived", "verified": false, "valid": [null, "1970-03-27"], "continue": true}

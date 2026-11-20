@@ -524,7 +524,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
 
   /// 고른 끝이 승하차 불가 끝 노드(분기점·신호장, 그날 서지 않는 계통 끝 역)인가. 그 끝은 내리지 않고 지나간 것으로 저장한다.
   /// 그래야 그날 서지 않는 역 정차 기간으로 기록이 막히지 않는다 (5번 결정 junction-nodes-rule, 2026-11-19)
-  bool _passes(StopPick pick) => state.visible.any((row) => row.seq == pick.seq && row.passing);
+  bool _passes(StopPick pick) => state.visible.any((row) => row.seq == pick.seq && (row.passing || row.noBoarding));
 
   /// 판정용 기록. 이름은 비워 둔다.
   Ride _draft(Expansion result, StopPick from, StopPick to, String? direction) => Ride(

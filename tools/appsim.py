@@ -159,6 +159,11 @@ class App:
         if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='route_stop_gap'").fetchone():
             for r in self.db.execute("SELECT * FROM route_stop_gap"):
                 self._stop_gaps[(r["route_id"], r["seq"])].append((r["gap_from_hi"], r["gap_to_lo"]))
+        # 서지 않고 고를 수 있는 기간과 그날 노드 정체 (route_stop_select). 앱 SelectorBuilder._spanOn과 같다
+        self._sel = collections.defaultdict(list)
+        if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='route_stop_select'").fetchone():
+            for r in self.db.execute("SELECT * FROM route_stop_select"):
+                self._sel[(r["route_id"], r["seq"])].append(dict(r))
         for r in self.db.execute("SELECT * FROM route_stop ORDER BY route_id,seq"):
             self._picks[r["route_id"]].append(dict(r))
             if not 0:
@@ -352,9 +357,14 @@ class App:
             ends = (self._picks[route_id][0]["seq"], self._picks[route_id][-1]["seq"]) if self._picks[route_id] else ()
             stops_on = (st in ("yes", "maybe") and not self.in_stop_gap(d, s)) if d is not None else (s["valid_to"] == "ongoing")
             ridable = any(x in ("ok", "maybe") for x in line_states) if d is not None else any(self.edge_usable(route_id, e, self.today)[0] in ("ok", "maybe") for e in adj[s["node_id"]])
-            passing = False
-            if (not s["is_stop"] or (not stops_on and (s["seq"] in ends or self._end_of_other(route_id, s["node_id"], d)))) and ridable:
-                state, sel, passing = "open", True, True
+            passing = no_boarding = False
+            # 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다 (앱과 같다, 검토 M1·M5 2026-11-21)
+            span = self._span_on(route_id, s["seq"], d) if (not s["is_stop"] or not stops_on) else None
+            if span is not None and ridable:
+                if span["style"] == "none":
+                    continue
+                state, sel = "open", True
+                passing, no_boarding = span["style"] != "nostop", span["style"] == "nostop"
             links = []
             for r in link_rows[s["seq"]]:
                 lf = edtf_range(r["valid_from"])[0]
@@ -365,26 +375,18 @@ class App:
             rows.append(dict(seq=s["seq"], node=s["node_id"],
                              name=self.name(s["node_id"], line, d), km_cum=s["km_cum"],
                              km_on_date=kmd.get(s["seq"]), state=state, selectable=sel, links=links,
-                             passing=passing))
+                             passing=passing, no_boarding=no_boarding))
         return rows
 
-    def _end_of_other(self, route_id, node, d):
-        """그날(날짜를 모르면 지금) 영업하는 다른 계통이 이 노드에서 끝나는가 (앱 SelectorBuilder._endOfOther와 같다)"""
-        if not hasattr(self, "_ends_at"):
-            self._ends_at = collections.defaultdict(list)
-            for rid_, r_ in self.routes.items():
-                for n_ in {r_["from_node"], r_["to_node"]}:
-                    self._ends_at[n_].append(rid_)
-        for rid in self._ends_at.get(node, ()):
-            if rid == route_id:
-                continue
-            for s in self._picks[rid]:
-                if d is None:
-                    if s["valid_to"] == "ongoing":
-                        return True
-                elif state_on(d, s["valid_from_lo"], s["valid_from_hi"], s["valid_to_lo"], s["valid_to_hi"]) in ("yes", "maybe"):
-                    return True
-        return False
+    def _span_on(self, route_id, seq, d):
+        """그날(날짜를 모르면 지금) 그 행을 서지 않고 고를 수 있는 기간 (앱 SelectorBuilder._spanOn과 같다)"""
+        for x in self._sel.get((route_id, seq), ()):
+            if d is None:
+                if x["valid_to"] in (None, "ongoing"):
+                    return x
+            elif state_on(d, x["valid_from_lo"], x["valid_from_hi"], x["valid_to_lo"], x["valid_to_hi"]) in ("yes", "maybe"):
+                return x
+        return None
 
     def km_axis(self, route_id, d):
         """그날 선로망으로 계산한 누적 km. seq→km. 끊겨서 못 구하면 해당 seq 없음."""
