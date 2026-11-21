@@ -594,8 +594,9 @@ class EndPainter extends CustomPainter {
     final lane = parallel;
     Offset at(double d) => Offset(x, up ? size.height - d : d);
     if (lane != null) {
-      // 끝 너머로 이어지는 병주 상대(오사카 순환선 신이마미야 → 간사이 본선 텐노지)는 끝 이어짐이다. 줄기와 병주 선을 같은 길이로
-      // 곧게 내어 옅어지게 그린다. 병주 선만 꺾어 글씨로 보내면 분기도 직통도 아닌 모양에 두 선 길이가 달랐다 (사용자 지적 2026-11-21)
+      // 끝 너머로 이어지는 병주 상대(오사카 순환선 신이마미야 → 간사이 본선 텐노지)는 끝 이어짐이다. 이어지는 것은 그 병주 노선뿐이라
+      // 병주 선만 곧게 내어 옅어지게 그리고, 이 계통의 줄기는 끝 역에서 끝난다. 줄기까지 내리면 두 노선이 따로 직통하는 것처럼 보였다
+      // (사용자 지적 2026-11-21: 병주 선만 꺾여 길이가 달랐던 것 → 줄기도 내렸던 것 → 줄기는 내리지 않음). 바깥의 다른 끝 이어짐으로 가는 줄기는 그대로 긋는다
       final lx = laneX(lane);
       final len = math.min(size.height, 40.0);
       Offset lat(double d) => Offset(lx, up ? size.height - d : d);
@@ -603,8 +604,6 @@ class EndPainter extends CustomPainter {
         canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(color, 2.5));
       } else if (stackOf > 1) {
         _fadeLine(canvas, at(0), at(size.height), color, 2.5, a1: 1 - stackAt / stackOf, a2: 1 - (stackAt + 1) / stackOf);
-      } else {
-        _fadeLine(canvas, at(0), at(len), color, 2.5);
       }
       _fadeLine(canvas, lat(0), lat(stackOf > 1 ? size.height : len), color, 2.5,
           a1: stackOf > 1 ? 1 - stackAt / stackOf : 1, a2: stackOf > 1 ? 1 - (stackAt + 1) / stackOf : 0);
