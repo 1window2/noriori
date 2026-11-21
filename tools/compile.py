@@ -4024,10 +4024,15 @@ for s_ in stops:
 _MV=json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))
 _role_n={y_['node_id'] for E_ in _END.values() for y_,_,_ in E_}|{_nat.get((l_['route_id'],l_['seq'])) for l_ in links if l_['kind'] in ('branch','continue')}
 _mvn=0
+# 숨기는 것은 같은 계통에 옛 자리와 새 자리가 함께 있어 한 역이 두 번 보일 때만이다. 짝이 없는 계통(菊池線 본선의 새 御代志, 2022 개업 괄호 안)은
+# 그 자리가 그 계통의 유일한 그 역이라 숨기면 개업 예정 구간에서 역이 빠졌다 (사용자 지적 2026-11-22, 筑肥線 1955 博多·千葉モノレール 1990 千葉도 같음)
+_rnodes=collections.defaultdict(set)
+for s_ in stops:_rnodes[s_['route_id']].add(s_['node_id'])
 for mv_ in _MV:
     d_=mv_.get('date')
     if not d_:continue
     for s_ in stops:
+        if not {mv_['old'],mv_['new']}<=_rnodes[s_['route_id']]:continue
         if s_['node_id']==mv_['old'] and mv_['old'] not in _role_n and s_['valid_to'] not in (None,'ongoing') and _lo(s_['valid_to'],True)<='9999':
             _SELROWS.append((s_,[s_['valid_to'],'ongoing','moved']));_mvn+=1
         elif s_['node_id']==mv_['new'] and s_['valid_from'] and _rspan.get(s_['route_id']) and _lo(_rspan[s_['route_id']][0])<_lo(s_['valid_from']):
