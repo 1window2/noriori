@@ -5392,6 +5392,27 @@ _n0=len(names)
 names=[x for x in names if x.get('line') or (x['entity_type'],x['id'],x.get('valid_from'),x.get('valid_to')) not in _same_per]
 print('지금 이름과 같은 옛 이름 기간 행 뺌',len(_same_per),'행',_n0-len(names))
 REPORT_SAME_PER=sorted(_same_per,key=str)
+# 폐역의 이름은 마지막 영업일의 이름이다. 마지막 정차일까지 이어지던 기간 이름(仮乗降場 표식·옛 이름)은 폐역 뒤 날짜에도 그 이름으로 둔다.
+# 기간이 폐역 날에 끝나 폐역 뒤 화면(오늘)에서 기본 이름으로 돌아가던 것 (函館本線 越路仮乗降場 1951–1962가 「越路」로 보임, 사용자 지적 2026-11-21).
+# 폐역 뒤에도 그 노드가 다른 것으로 남으면(신호장·분기점: 기본 이름이 信号場 등, 노드 종류, 근거 표에서 폐역 뒤 정체가 있음, 폐역 뒤 시작하는 다른 이름) 기본 이름이 지금 이름이라 늘이지 않는다
+_LASTNM=[]
+_bja={x['id']:x['text'] for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to')}
+for x_,b_ in _NLAST.items():
+    if b_>='9999':continue
+    if (nodes.get(x_) or {}).get('kind') in ('signal','junction','pref_boundary') or _SIGW.search(_bja.get(x_) or ''):continue
+    if any(a_>=b_ and k_!='none' for a_,_,k_ in _IDENT.get(x_,())):continue
+    mine_=[x for x in names+_route_marked if x['entity_type']=='node' and x['id']==x_]
+    if any(x.get('valid_from') and _lo(x['valid_from'])>=b_ for x in mine_):continue
+    for x in mine_:
+        v_=x.get('valid_to')
+        if v_ in (None,'ongoing'):continue
+        if (lohi(v_)[1] or lohi(v_)[0] or '0000')>=b_ and (not x.get('valid_from') or _lo(x['valid_from'])<b_):
+            # 한 이름은 한 행으로 둔다: 끝을 비워 폐역 뒤로 잇는다. 시작이 없던 행(옛 이름 「~까지」)은 그 역 첫 정차일을 시작으로 적어
+            # 기간 없는 행(기본 이름과 겹침)이 되지 않게 한다 (같은 글자 행이 이어 붙는 K40도 생기지 않음)
+            _LASTNM.append((x_,x['lang'],x['text'],x.get('line'),v_))
+            if not x.get('valid_from'):x['valid_from']=_NFIRST[x_]
+            x['valid_to']=None
+print('폐역 뒤에도 마지막 이름으로 늘인 이름 행',len(_LASTNM),[r for r in _LASTNM if r[1]=='ja'][:12])
 db.execute('create table name (entity_type,entity_id,lang,text,kana,source,reading_source,source_title,checked,line_id,valid_from,valid_to)')
 check_dates('name',['entity_type','entity_id','lang','text','kana','source','reading_source','source_title','checked','line_id','valid_from','valid_to'],[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names])
 # 열람 전용 이름은 남은 열람 전용 행(drop·drop_stop·exclude로 뺀 것 제외)의 것만 싣는다. 뺀 ID의 이름만 남은 고아 109건(a_yomiurirando_monorail 등, 12회차 M R6)

@@ -135,7 +135,10 @@ def judge(c):
     """True=고쳐짐, False=남음, None=판정할 자료 없음, 문자열=규칙상 정상 사유"""
     k=c['kind']
     if k=='name':
-        return any(r[0]=='ja' and r[1]==c['text'] and de(r[5],c.get('valid_to')) and de(r[4],c.get('valid_from')) and (not c.get('line') or r[3]==c['line']) for r in NM['node',c['node']])
+        # 폐역 뒤에도 마지막 이름 규칙(2026-11-21): 기대한 끝이 그 역의 마지막 정차 끝이면, 끝이 비어 폐역 뒤로 이어지는 같은 이름 행도 같은 사례다
+        last_=[r[2] for r in SPR[c['node']] if r[2]!='ongoing']
+        closed_=bool(last_) and not any(r[2]=='ongoing' for r in SPR[c['node']]) and bool(c.get('valid_to')) and any(de(t_,c['valid_to']) for t_ in last_)
+        return any(r[0]=='ja' and r[1]==c['text'] and (de(r[5],c.get('valid_to')) or (closed_ and r[5] in (None,'ongoing'))) and de(r[4],c.get('valid_from')) and (not c.get('line') or r[3]==c['line']) for r in NM['node',c['node']])
     if k=='kana':return any(r[0]=='ja' and r[1]==c['text'] and r[2]==c['kana'] for r in NM['node',c['node']])
     if k=='nodename':
         b=base('node',c['node'],'ja' if c['lang']=='kana' else c['lang'])
