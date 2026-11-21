@@ -375,6 +375,8 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get from => '乗車';
 	@override String get to => '降車';
 	@override String get whyClosed => 'その日付には営業していなかった駅です';
+	@override String get whyViewSignal => '信号場・分岐点のため、ここで記録を始めたり終えたりできません';
+	@override String get whyViewNoBoarding => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません';
 	@override String get onlyDown => '下りのみ';
 	@override String get onlyUp => '上りのみ';
 	@override String get onlyOneWay => '片方向のみ';
@@ -1310,6 +1312,8 @@ extension on TranslationsJa {
 			'session.from' => '乗車',
 			'session.to' => '降車',
 			'session.whyClosed' => 'その日付には営業していなかった駅です',
+			'session.whyViewSignal' => '信号場・分岐点のため、ここで記録を始めたり終えたりできません',
+			'session.whyViewNoBoarding' => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません',
 			'session.onlyDown' => '下りのみ',
 			'session.onlyUp' => '上りのみ',
 			'session.onlyOneWay' => '片方向のみ',
@@ -1630,10 +1634,10 @@ extension on TranslationsJa {
 			'prefNames.20' => '岐阜',
 			'prefNames.21' => '静岡',
 			'prefNames.22' => '愛知',
-			'prefNames.23' => '三重',
-			'prefNames.24' => '滋賀',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.23' => '三重',
+			'prefNames.24' => '滋賀',
 			'prefNames.25' => '京都',
 			'prefNames.26' => '大阪',
 			'prefNames.27' => '兵庫',

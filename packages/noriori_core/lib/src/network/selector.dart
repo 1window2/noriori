@@ -96,6 +96,7 @@ final class SelectorRow {
     required this.selectable,
     this.passing = false,
     this.noBoarding = false,
+    this.viewOnly = false,
     required this.kmCum,
     required this.links,
     this.kmEstimated = false,
@@ -110,6 +111,8 @@ final class SelectorRow {
     this.handedOnly = false,
     this.beforeFloor = false,
     this.handedEnded = false,
+    this.hiddenAfter = const [],
+    this.hiddenAbove = const [],
   });
 
   final int seq;
@@ -124,6 +127,10 @@ final class SelectorRow {
   /// 계통 끝 노드인데 그날 역(또는 화물역)은 있고 이 계통이 서지 않는다: 보통 역 모양에 「승하차 불가」를 적고 고를 수 있다
   /// (梅田貨物線 福島, 大洗鹿島線 北鹿島 1985–1994. 회색 가운데는 신호장·분기점만, 사용자 결정 2026-11-21 결정 A 추천안)
   final bool noBoarding;
+
+  /// 그날 이 계통이나 이어진 계통의 끝이 아니라서 보이기만 하고 출발·도착역으로 고를 수 없다(신호장·승하차 불가 역).
+  /// 그 자리에서 갈라지거나 이어지는 노선이 없으면 거기서 기록을 끊을 까닭이 없다 (사용자 결정 2026-11-21)
+  final bool viewOnly;
   final double? kmCum;
 
   /// km가 추정값이라 화면은 `? km` (DESIGN §4.5).
@@ -166,16 +173,32 @@ final class SelectorRow {
   final bool beforeFloor;
 
   /// 같은 행에 연결만 바꾼 것 (숨긴 경계점 행의 끝 이어짐을 옮겨 붙일 때)
+  /// 그날 화면에서 숨긴 행(옮긴 역의 옛 자리·새 자리, 아직 없던 경계점) 중 이 행 바로 뒤에 있던 것의 노드.
+  /// 그 노드에 붙은 열람 전용 역을 이 행 뒤 자리에 놓는다(大師線 港町（旧） 뒤 久根崎, 2026-11-21)
+  final List<String> hiddenAfter;
+
+  /// 첫 행 앞에서 숨긴 행의 노드. 그 노드에 붙은 열람 전용 역은 첫 행 위 자리다
+  final List<String> hiddenAbove;
+
   SelectorRow withLinks(List<SelectorLink> links) => _withLinks(links, goneLinks);
 
-  SelectorRow _withLinks(List<SelectorLink> links, List<SelectorLink> goneLinks) => SelectorRow(
+  SelectorRow withHidden({List<String>? after, List<String>? above}) =>
+      _withLinks(links, goneLinks, hiddenAfter: after, hiddenAbove: above);
+
+  /// km만 바꾼 행 (지선·옛 경로 계통을 그날 첫 행에서 잴 때)
+  SelectorRow withKm(double? km) => _withLinks(links, goneLinks, km: km);
+
+  SelectorRow _withLinks(List<SelectorLink> links, List<SelectorLink> goneLinks,
+          {double? km, List<String>? hiddenAfter, List<String>? hiddenAbove}) =>
+      SelectorRow(
         seq: seq,
         node: node,
         state: state,
         selectable: selectable,
         passing: passing,
         noBoarding: noBoarding,
-        kmCum: kmCum,
+        viewOnly: viewOnly,
+        kmCum: km ?? kmCum,
         links: links,
         kmEstimated: kmEstimated,
         goneLinks: goneLinks,
@@ -189,6 +212,8 @@ final class SelectorRow {
         handedOnly: handedOnly,
         beforeFloor: beforeFloor,
         handedEnded: handedEnded,
+        hiddenAfter: hiddenAfter ?? this.hiddenAfter,
+        hiddenAbove: hiddenAbove ?? this.hiddenAbove,
       );
 }
 
@@ -226,6 +251,10 @@ final class SelectorBuilder {
     }
     final rows = <SelectorRow>[];
     final carry = _Carry();
+    // 숨긴 행의 노드: 앞 행 번호별, 첫 행 앞
+    final hiddenAfter = <int, List<String>>{};
+    final hiddenAbove = <String>[];
+    void hide(String node) => rows.isEmpty ? hiddenAbove.add(node) : (hiddenAfter[rows.length - 1] ??= []).add(node);
     final picks = network.picks(routeId);
     final ends = {if (picks.isNotEmpty) picks.first.seq, if (picks.isNotEmpty) picks.last.seq};
     for (final pick in picks) {
@@ -245,6 +274,11 @@ final class SelectorBuilder {
             );
       if (!stop.isStop && !stop.isEndPoint) continue;
       if (!stop.isEndPoint && !network.data.publicNodes.contains(stop.node)) continue;
+      // 역을 옮긴 옛 자리·새 자리는 날짜를 고른 화면에서 그날의 자리만 보인다(날짜 모름이면 다 보인다, 사용자 결정 2026-11-21)
+      if (day != null && !_stopsOn(stop, day) && _movedOn(stop, day)) {
+        hide(stop.node);
+        continue;
+      }
       final around = adjacent[stop.node] ?? const <String>[];
       var (state, selectable) = _state(routeId, stop, around, day);
       // 승하차 불가 끝 노드: 분기점·신호장(서지 않는 노드), 또는 그날 서지 않는 계통 끝 역. 그날 지나는 칸이 있으면 고를 수 있다
@@ -252,19 +286,23 @@ final class SelectorBuilder {
       // 그날 서지 않는 역도 그날 영업하는 다른 계통이 거기서 끝나면 끝 노드다(長尾線 옛 경로 瓦町–花園 1945–1951의 끝 花園을 본선 일람에서 골라야 花園–御坊川을 탄다).
       // 「어떤 여객 노선의 끝인 분기점은 그 지점을 지나는 다른 노선 일람에도 나온다」(사용자 결정 2026-11-19)
       var noBoarding = false;
+      var viewOnly = false;
       // 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다. 앱에서 따로 끝인지 다시 계산하지 않는다 (검토 M1, 2026-11-21)
       final span = !stop.isStop || !_stopsOn(stop, day) ? _spanOn(stop, day) : null;
       if (span != null && _ridable(routeId, around, day)) {
-        // 그날 노드의 정체가 모양을 정한다. 신호장·분기점만 회색, 역은 「승하차 불가」, 아직 없던 경계점은 숨긴다
-        final style = span.style;
+        // 그날 노드의 정체가 모양을 정한다. 신호장·분기점만 회색, 역은 「승하차 불가」, 아직 없던 경계점은 숨긴다.
+        // 「_view」는 그날 끝이 아니라 보이기만 하고 고를 수 없다
+        viewOnly = span.style.endsWith('_view');
+        final style = viewOnly ? span.style.substring(0, span.style.length - 5) : span.style;
         if (style == 'none') {
           // 경계점 행의 끝 이어짐은 이웃한 끝 행으로 옮겨 그린다 (三岐線 富田 계통 1950 전 三岐朝明 → 富田에서 大矢知 쪽)
           // 중간의 경계점(다른 계통을 나중 갈림으로 나눈 자리)은 그날 없던 자리라 그 연결도 그리지 않는다
           if (ends.contains(stop.seq)) carry.addAll(bySeq[stop.seq] ?? const []);
+          hide(stop.node);
           continue;
         }
         state = StopState.open;
-        selectable = true;
+        selectable = !viewOnly;
         passing = style != 'nostop';
         noBoarding = style == 'nostop';
       }
@@ -286,6 +324,7 @@ final class SelectorBuilder {
         selectable: selectable,
         passing: passing,
         noBoarding: noBoarding,
+        viewOnly: viewOnly,
         kmCum: stop.kmCum,
         kmEstimated: stop.kmEstimated,
         links: [...?(rows.isEmpty && carry.isNotEmpty ? carry.splice() : null), ...?bySeq[stop.seq]],
@@ -308,6 +347,19 @@ final class SelectorBuilder {
     }
     // 맨 끝 경계점 행을 숨겼으면 그 끝 이어짐은 마지막 행에 붙인다
     if (carry.isNotEmpty && rows.isNotEmpty) rows[rows.length - 1] = rows.last.withLinks([...rows.last.links, ...carry.splice()]);
+    for (final MapEntry(:key, :value) in hiddenAfter.entries) {
+      rows[key] = rows[key].withHidden(after: value);
+    }
+    if (hiddenAbove.isNotEmpty && rows.isNotEmpty) rows[0] = rows[0].withHidden(above: hiddenAbove);
+    // 지선·옛 경로 계통의 km는 그 계통 안의 위치다. 그날 기점이 앞 역으로 바뀌었으면(그날 없던 끝 역 대신 붙인 앞 역, 키쿠치선 구선 1995 전 쿠로이시)
+    // 그날 첫 행에서 잰다 (사용자 결정 2026-11-21)
+    final base = route.role == 'branch' && rows.isNotEmpty ? rows.first.kmCum : null;
+    if (base != null && base < 0) {
+      for (var i = 0; i < rows.length; i++) {
+        final km = rows[i].kmCum;
+        if (km != null) rows[i] = rows[i].withKm(double.parse((km - base).toStringAsFixed(3)));
+      }
+    }
     return rows;
   }
 
@@ -315,7 +367,7 @@ final class SelectorBuilder {
   String? _lastSelectYear(NetStop stop) {
     NetPeriod? last;
     for (final span in stop.selectSpans) {
-      if (span.style == 'none' || span.period.toHi == null || span.period.toHi!.compareTo(DateSpan.maxDate) >= 0) continue;
+      if (span.style == 'none' || span.style == 'moved' || span.period.toHi == null || span.period.toHi!.compareTo(DateSpan.maxDate) >= 0) continue;
       if ((span.period.toLo ?? '').compareTo(stop.period.toLo ?? '') <= 0) continue;
       if (last == null || span.period.toLo!.compareTo(last.toLo!) > 0) last = span.period;
     }
@@ -323,8 +375,12 @@ final class SelectorBuilder {
   }
 
   /// 그날(날짜를 모르면 지금 상태) 그 행을 서지 않고 고를 수 있는 기간. 없으면 고를 수 없다
+  bool _movedOn(NetStop stop, DateSpan day) => stop.selectSpans.any(
+      (span) => span.style == 'moved' && const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, span.period)));
+
   NetSelectSpan? _spanOn(NetStop stop, DateSpan? day) {
     for (final span in stop.selectSpans) {
+      if (span.style == 'moved') continue;
       final on = day == null
           ? span.period.toHi == null || span.period.toHi!.compareTo(DateSpan.maxDate) >= 0
           : const [PeriodState.yes, PeriodState.maybe].contains(stateOfPeriod(day, span.period));

@@ -429,7 +429,18 @@ final class DisplayRules {
   bool _activeOn(SelectorLink link) =>
       (link.validFromLo ?? '0000').compareTo(_day) <= 0 && (link.validToHi == null || link.validToHi!.compareTo(_day) > 0);
 
+  /// 임시 운행만 있는 계통의 운행 토막. 그리는 동안만 둔다
+  List<({String from, String to})> _tempWindows = const [];
+
+  /// 임시 운행만 있는 계통의 연결은 운행일에만 있다. 운행일 연결은 운행일이 아닌 날에도 끝난 연결로 보지 않는다
+  /// (역이 운행일이 아닌 날 흐린 같은 크기 원인 것과 짝. 北方貨物線 尼崎의 福知山線·JR東西線·東海道本線, 사용자 지적 2026-11-21)
+  Set<String> _tempRoutes = const {};
+
+  bool _tempLink(SelectorLink link) => _tempRoutes.contains(link.otherRouteId) || _tempWindows.any((w) =>
+      (link.validFromLo ?? '0000').compareTo(w.to) < 0 && w.from.compareTo(link.validToHi ?? DateSpan.maxDate) < 0);
+
   bool _gone(SelectorLink link, {required bool onDate, required String node, SelectorRow? row}) {
+    if (_tempLink(link)) return false;
     if (!onDate) return true;
     // 선로 연결(끝 이어짐·분기)은 두 노선이 함께 다닐 때만 있어 기간이 끝났으면 끝남이다(相生線 美幌 → 石北本線 ~1985).
     // 이 노선 쪽이 이관돼 끝난 행(金沢 北陸本線 2015 → IRいしかわ)만 상대 역이 남아 있는지로 본다. 환승은 상대 역이 남아 있는지가 색이다
@@ -444,7 +455,7 @@ final class DisplayRules {
         if (stop.node != at) continue;
         found = true;
         // 정차가 끝났어도 서지 않고 고를 수 있는 동안(격하된 신호장·끝 노드, route_stop_select)은 그 자리가 남아 있다 (三岐朝明信号場 1989~)
-        for (final to in [stop.period.toHi, for (final span in stop.selectSpans) if (span.style != 'none') span.period.toHi]) {
+        for (final to in [stop.period.toHi, for (final span in stop.selectSpans) if (span.style != 'none' && span.style != 'moved') span.period.toHi]) {
           if (to == null || to.compareTo(DateSpan.maxDate) >= 0) return false;
           if (end == null || to.compareTo(end) > 0) end = to;
         }
@@ -629,9 +640,12 @@ final class DisplayRules {
             (options.showClosed || !undated || !_gone(link, onDate: true, node: row.node, row: row)) &&
             !skip.contains('${row.seq}\u0000${link.otherLineId}'))
           _display(link, early(link) || _gone(link, onDate: true, node: row.node, row: row), row.node),
-      if (options.showClosed)
-        for (final link in row.goneLinks)
-          if (link.kind == kind && (archive || !early(link)) && !skip.contains('${row.seq}\u0000${link.otherLineId}'))
+      // 임시 운행 계통의 운행일 연결은 폐역·폐선 표시를 꺼도 보인다(끝난 연결이 아니다)
+      for (final link in row.goneLinks)
+        if ((options.showClosed || _tempLink(link)) &&
+            link.kind == kind &&
+            (archive || !early(link)) &&
+            !skip.contains('${row.seq}\u0000${link.otherLineId}'))
             _display(link, _gone(link, onDate: false, node: row.node), row.node),
     ].where((item) => _oneOnDay(row, item.link, skip)).toList());
   }
@@ -653,7 +667,8 @@ final class DisplayRules {
     final group = [for (final other in [...row.links, ...row.goneLinks]) if (kinds.contains(other.kind) && related(other)) other];
     // 그날 있는 연결은 연결 기간이 그날을 덮는 것이다. 「끝남」 색(상대 역이 아직 있나, _gone)과 따로 본다.
     // 섞으면 상대 계통을 적은 옛 연결(肥薩線 八代 → 鹿児島本線 ~2004)이 상대 역이 남아 있다는 이유로 그날 연결이 되어 그날 환승을 가렸다
-    bool live(SelectorLink other) => row.links.contains(other) && _activeOn(other) && !_gone(other, onDate: true, node: row.node, row: row);
+    bool live(SelectorLink other) =>
+        _tempLink(other) || (row.links.contains(other) && _activeOn(other) && !_gone(other, onDate: true, node: row.node, row: row));
     final present = [for (final other in group) if (live(other)) other];
     if (present.isNotEmpty) {
       if (!present.contains(link)) return false;
@@ -824,9 +839,13 @@ final class DisplayRules {
     List<ParallelRun> parallels = const [],
     DateSpan? date,
     String? shownLineId,
+    List<({String from, String to})> tempWindows = const [],
+    Set<String> tempRoutes = const {},
   }) {
     // 그리는 동안만 그 화면의 날을 기준으로 삼는다. 끝나면 오늘로 되돌려 다른 호출(환승 캡슐 등)에 남지 않게 한다
     _viewDay = date?.lo;
+    _tempWindows = tempWindows;
+    _tempRoutes = tempRoutes;
     try {
       return _linesOn(
         lineId: lineId,
@@ -845,6 +864,8 @@ final class DisplayRules {
       );
     } finally {
       _viewDay = null;
+      _tempWindows = const [];
+      _tempRoutes = const {};
     }
   }
 
@@ -1682,11 +1703,27 @@ final class DisplayRules {
   }
 
   /// 앞 역 뒤에 놓는다. 앞 역을 모르면 뒤 역 앞에, 둘 다 모르면 km로 찾는다.
+  /// 앞뒤 역이 그날 숨긴 행이면 그 행이 있던 자리(숨긴 행 바로 앞 행 뒤, 첫 행 앞이면 첫 행 위)다.
+  /// 숨긴 행 때문에 열람 전용 역이 화면에서 빠지지 않는다 (大師線 港町（旧） 뒤 久根崎, 2026-11-21)
   Map<int, List<ArchiveStop>> _place(List<SelectorRow> rows, List<ArchiveStop> stops) {
     final places = <int, List<ArchiveStop>>{};
+    int at(String? node, {required bool last}) {
+      if (node == null) return -2;
+      bool here(SelectorRow row) => row.node == node || row.hiddenAfter.contains(node);
+      final i = last ? rows.lastIndexWhere(here) : rows.indexWhere(here);
+      if (i >= 0) return rows[i].node == node ? i : -(i + 3);
+      return rows.isNotEmpty && rows.first.hiddenAbove.contains(node) ? -1 : -2;
+    }
+
     int? slot(ArchiveStop stop) {
-      final after = rows.lastIndexWhere((row) => row.node == stop.afterNode);
-      if (stop.afterNode != null && after >= 0) return after;
+      // at: 0 이상 = 그 행, -1 = 첫 행 위(숨긴 행), -(i+3) = i행 뒤 숨긴 행, -2 = 없음
+      final a = at(stop.afterNode, last: true);
+      if (a >= 0) return a;
+      if (a == -1) return -1;
+      if (a <= -3) return -(a + 3);
+      final b0 = at(stop.beforeNode, last: false);
+      if (b0 == -1) return -1;
+      if (b0 <= -3) return -(b0 + 3);
       final before = rows.indexWhere((row) => row.node == stop.beforeNode);
       // 첫 역 앞(뒤 역이 첫 줄)이면 첫 역 위 자리(-1)다. 버리면 화면에서 빠진다 (志度線 瓦町 앞 中野町·藤塚·公園前 등 34행, 10회차 G1 chugoku_shikoku_2-003)
       if (stop.beforeNode != null && before >= 0) return before - 1;

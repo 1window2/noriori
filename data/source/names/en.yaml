@@ -2636,6 +2636,7 @@
 - {"entity_type": "route", "id": "r_miyakojimamoriguchi_line", "lang": "en", "text": "Miyakojimahondori~Moriguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tanimachineyagawa_line", "lang": "en", "text": "Keihanhigashiguchi~Tanimachi 3-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishiyagawa_line", "lang": "en", "text": "Kamitsutsui 1-chome~Ishiyagawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_hirano_line", "lang": "en", "text": "Arimamichi~Hirano", "source": "rule"}
 - {"entity_type": "route", "id": "r_kawasakishiden", "lang": "en", "text": "Shidenkawasaki~Shiohama", "source": "rule"}
 - {"entity_type": "route", "id": "r_nikko_tramway_line", "lang": "en", "text": "Kokutetsu-Ekimae~Umagaeshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitasenju_line", "lang": "en", "text": "Senjuohashi~Senju 4-chome", "source": "rule"}
@@ -2699,6 +2700,7 @@
 - {"entity_type": "route", "id": "r_kujo_line", "lang": "en", "text": "Tofukuji~Nishiojikujo", "source": "rule"}
 - {"entity_type": "route", "id": "r_sembon_line", "lang": "en", "text": "Mibushakomae~Sembonkitaoji", "source": "rule"}
 - {"entity_type": "route", "id": "r_omiya_line", "lang": "en", "text": "Mibushakomae~Kujoomiya", "source": "rule"}
+- {"entity_type": "route", "id": "r_hachimammachi_line", "lang": "en", "text": "Daigakubyoimmae~Hachimanjinjamae", "source": "rule"}
 - {"entity_type": "route", "id": "r_haranomachi_line", "lang": "en", "text": "Kakyoin~Haranomachi-Ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_loop_line_sendai_city", "lang": "en", "text": "Sendai-Ekimae~Kakyoin", "source": "rule"}
 - {"entity_type": "route", "id": "r_loop_line_kakyoin_sendai_ekimae", "lang": "en", "text": "Kakyoin~Sendai-Ekimae", "source": "rule"}

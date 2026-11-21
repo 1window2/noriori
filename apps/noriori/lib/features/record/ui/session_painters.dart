@@ -591,31 +591,26 @@ class EndPainter extends CustomPainter {
     final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stemX;
     final y = size.height / 2;
     paintLanes(canvas, size, lanes, laneStyle, y);
-    final paint = _stroke(color);
     final lane = parallel;
+    Offset at(double d) => Offset(x, up ? size.height - d : d);
     if (lane != null) {
-      if (trunkThrough) canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(color, 2.5));
-      const r = SelectorRuler.bend;
-      const tx = SelectorRuler.textX - 8;
+      // 끝 너머로 이어지는 병주 상대(오사카 순환선 신이마미야 → 간사이 본선 텐노지)는 끝 이어짐이다. 줄기와 병주 선을 같은 길이로
+      // 곧게 내어 옅어지게 그린다. 병주 선만 꺾어 글씨로 보내면 분기도 직통도 아닌 모양에 두 선 길이가 달랐다 (사용자 지적 2026-11-21)
       final lx = laneX(lane);
-      canvas.drawPath(
-        up
-            ? (Path()
-              ..moveTo(lx, size.height)
-              ..lineTo(lx, y + r)
-              ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r))
-              ..lineTo(tx, y))
-            : (Path()
-              ..moveTo(lx, 0)
-              ..lineTo(lx, y - r)
-              ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r), clockwise: false)
-              ..lineTo(tx, y)),
-        paint..color = color.withValues(alpha: color.a * .6),
-      );
+      final len = math.min(size.height, 40.0);
+      Offset lat(double d) => Offset(lx, up ? size.height - d : d);
+      if (trunkThrough) {
+        canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(color, 2.5));
+      } else if (stackOf > 1) {
+        _fadeLine(canvas, at(0), at(size.height), color, 2.5, a1: 1 - stackAt / stackOf, a2: 1 - (stackAt + 1) / stackOf);
+      } else {
+        _fadeLine(canvas, at(0), at(len), color, 2.5);
+      }
+      _fadeLine(canvas, lat(0), lat(stackOf > 1 ? size.height : len), color, 2.5,
+          a1: stackOf > 1 ? 1 - stackAt / stackOf : 1, a2: stackOf > 1 ? 1 - (stackAt + 1) / stackOf : 0);
       return;
     }
     // 점선 대신 역에서 멀어질수록 옅어진다 (사용자 결정 2026-11-19). 같은 끝의 노선 여럿은 줄마다 이어 맨 바깥 줄에서 다 옅어진다
-    Offset at(double d) => Offset(x, up ? size.height - d : d);
     if (stackOf > 1) {
       final a1 = 1 - stackAt / stackOf, a2 = 1 - (stackAt + 1) / stackOf;
       _fadeLine(canvas, at(0), at(size.height), color, 2.5, a1: a1, a2: a2);

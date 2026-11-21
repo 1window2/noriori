@@ -244,6 +244,8 @@
     "from": "From",
     "to": "To",
     "whyClosed": "This station wasn't open on that date",
+    "whyViewSignal": "This is a signal or junction, so a ride can't start or end here",
+    "whyViewNoBoarding": "This line doesn't stop here, so a ride can't start or end here",
     "onlyDown": "Down only",
     "onlyUp": "Up only",
     "onlyOneWay": "One way",

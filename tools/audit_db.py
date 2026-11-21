@@ -734,7 +734,7 @@ node_cur={r[0] for r in m.execute("select node_id from route_stop_period where v
 END_CUR={r['node_id'] for r in m.execute("select s.node_id from route_stop s join route r on r.id=s.route_id where s.valid_to='ongoing' and s.node_id in (r.from_node,r.to_node)")}
 if m.execute("select 1 from sqlite_master where type='table' and name='route_stop_select'").fetchone():
     # 끝은 날마다 정한다(계통 정의의 시작·끝 노드가 아니어도 됨): 지금 서지 않고 고를 수 있는 행
-    END_CUR|={r['node_id'] for r in m.execute("select s.node_id from route_stop_select s where s.valid_to='ongoing' and s.style!='none'")}
+    END_CUR|={r['node_id'] for r in m.execute("select s.node_id from route_stop_select s where s.valid_to='ongoing' and s.style not in ('none','moved')")}
 rows=[]
 for r in m.execute("select route_id,seq,next_stop_node,terminal_node from route_link where valid_to='ongoing'"):
     for x in (r['next_stop_node'],r['terminal_node']):
@@ -1038,7 +1038,8 @@ def stops_of(rid,line,x):
 # 고를 수 있는 기간 = 행 기간(정차) ∪ 끝 노드로 고를 수 있는 서지 않는 기간(route_stop_select, 숨김(none)은 뺀다). 정차로 보는 검사는 SPR만 읽는다
 SELIV=collections.defaultdict(list)
 if m.execute("select 1 from sqlite_master where type='table' and name='route_stop_select'").fetchone():
-    for r_ in m.execute("select route_id,node_id,valid_from,valid_to from route_stop_select where style!='none'"):SELIV[r_[0],r_[1]].append(ivl(r_[2],r_[3]))
+    # 고를 수 있는 기간만(「_view」는 보이기만 함)
+    for r_ in m.execute("select route_id,node_id,valid_from,valid_to from route_stop_select where style not in ('none','moved') and style not like '%\\_view' escape '\\'"):SELIV[r_[0],r_[1]].append(ivl(r_[2],r_[3]))
 ENDIV=collections.defaultdict(list)
 for rid_,v_ in allstop.items():
     for z_ in v_:
@@ -1071,6 +1072,7 @@ for k in LINKS:
 put('K03 link 다음·끝 역이 link 기간에 정차하지 않음',rows,30)
 put('K03 link 기간 안에 끝 역이 폐역이 됨(행 나눔 없음)',rows2,30,lvl='warn')
 REDGE={rid:set(v) for rid,v in redge.items()}
+EINC_N0={r_[0]:(r_[1],r_[2]) for r_ in m.execute('select id,from_node,to_node from edge')}
 rows=[];rows2=[]
 for k in LINKS:
     if k['kind']!='continue' or not k['node'] or k['route_id'] not in routes:continue
@@ -1082,7 +1084,13 @@ for k in LINKS:
     if s and x in(s[0]['node_id'],s[-1]['node_id']) and not routes[rid]['closed'] and y_ in adj_ and any(may(ivl(k['valid_from'],k['valid_to']),q) for q in SPR.get((rid,y_),[])):rows.append((rid,nn(x),ln(k['other_line_id']),nn(y_)))
     q=k['other_route_id']
     # 함께 쓰는 칸이 있어도 다음 정차역이 자기 계통 밖이면 겹친 쪽이 아니라 공유 칸 너머로 이어진다(옛 경로 계통이 본선 마지막 칸을 함께 쓰고 그 끝에서 본선으로, 遠州 八幡·外房 蘇我, 2026-11-14)
-    if q and q!=rid and routes.get(q,{}).get('line_id')==routes[rid]['line_id'] and EINC[x]&REDGE.get(q,set())&REDGE.get(rid,set()) and (not k['next_stop_node'] or k['next_stop_node'] in {z['node_id'] for z in s}):rows2.append((rid,q,nn(x),x))
+    # 칸은 그 이음 기간에 양 끝 행이 다 살아 있을 때만 이 계통 칸이다(그날 없던 끝 역 대신 붙인 앞 역 칸은 그 기간에만, 키쿠치선 구선 쿠로이시 1995 전)
+    pk_=ivl(k['valid_from'],k['valid_to'])
+    def _alive_e(e_,rid_=rid,x_=x,pk_=pk_):
+        a_,b_=EINC_N0.get(e_,(None,None));n2_=b_ if a_==x_ else a_
+        return any(z['node_id']==n2_ and may(pk_,ivl(z['valid_from'],z['valid_to'])) for z in rstop[rid_])
+    sh_={e_ for e_ in EINC[x]&REDGE.get(q,set())&REDGE.get(rid,set()) if _alive_e(e_)} if q else set()
+    if q and q!=rid and routes.get(q,{}).get('line_id')==routes[rid]['line_id'] and sh_ and (not k['next_stop_node'] or k['next_stop_node'] in {z['node_id'] for z in s}):rows2.append((rid,q,nn(x),x))
 put('K03 끝 역 continue의 다음 역이 자기 계통 안쪽 역',rows,30)
 put('K03 같은 노선 계통 사이 continue가 칸을 공유(겹친 방향으로 이어짐)',sorted(set(rows2)),30)
 # 옛 경로 계통이 합류점 너머까지 이어짐: 끝난 칸이 있는 지선 계통에서, 닿는 칸이 모두 같은 노선 다른 계통과 함께 쓰는 현행 칸인 역이
@@ -1103,7 +1111,8 @@ for rid,ed in redge.items():
             # (遠州鉄道 옛 新浜松 계통: 遠州病院은 1958-06-01부터 역, 그 전엔 八幡까지. 2026-11-13)
             own_=[e for e in REDGE[rid] if not any(routes[q]['line_id']==L for q in ROUTES_OF_E[e]-{rid})]
             jn_={n_ for e in own_ for n_ in EINC_N.get(e,())}&{n_ for e in REDGE[rid]-set(own_) for n_ in EINC_N.get(e,())}
-            if any(z['node_id'] in jn_ and z['is_stop'] and (z['valid_from'] or '0000')>(routes[rid].get('opened') or y.get('valid_from') or '0000') for z in rstop[rid]):continue
+            # 합류점 행이 이 계통에서 서지 않는 행(그날 없던 역 자리, 大浦支線 옛 경로 메디컬센터 1961 전)이어도 같다
+            if any(z['node_id'] in jn_ and (not z['is_stop'] or (z['valid_from'] or '0000')>(routes[rid].get('opened') or y.get('valid_from') or '0000')) for z in rstop[rid]):continue
             rows.append((rid,nn(x),x,y['valid_to']))
 put('K03 옛 경로 계통이 합류점 너머 현행 역까지 이어짐',rows,30)
 if GAUGE:
@@ -1336,7 +1345,7 @@ for rid_,v_ in rstop.items():
         if z_['node_id'] in (routes[rid_]['from_node'],routes[rid_]['to_node']):_END_SP[z_['node_id']].append(((z_['valid_from_lo'] or '0000'),'',('9999' if z_['valid_to']==ON else (z_['valid_to_hi'] or '9999')),''))
 # 서지 않고 고를 수 있는 기간(route_stop_select: 끝 노드·격하된 신호장)도 그 이름이 보이는 기간이다
 if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone():
-    for r_ in m.execute("select node_id,valid_from_lo,valid_to,valid_to_hi from route_stop_select where style!='none'"):
+    for r_ in m.execute("select node_id,valid_from_lo,valid_to,valid_to_hi from route_stop_select where style not in ('none','moved')"):
         _END_SP[r_[0]].append(((r_[1] or '0000'),'',('9999' if r_[2] in (ON,'ongoing') else (r_[3] or '9999')),''))
 rows=[];rows2=[]
 for (t,i,l),v in NROWS.items():
@@ -2277,7 +2286,7 @@ for rid_,v_ in allstop.items():
             _XS[routes[rid_]['line_id'],z_['node_id']].append(((z_['valid_from_lo'] or '0000-01-01'),'9999-12-31' if z_['valid_to']==ON else (z_['valid_to_hi'] or '9999-12-31')))
 # 서지 않고 고를 수 있는 기간(route_stop_select)의 노드도 다음·끝 역이 될 수 있다
 if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone():
-    for r_ in m.execute("select route_id,node_id,valid_from_lo,valid_to,valid_to_hi from route_stop_select where style!='none'"):
+    for r_ in m.execute("select route_id,node_id,valid_from_lo,valid_to,valid_to_hi from route_stop_select where style not in ('none','moved')"):
         if r_[0] in routes:_XS[routes[r_[0]]['line_id'],r_[1]].append(((r_[2] or '0000-01-01'),'9999-12-31' if r_[3] in (ON,'ongoing') else (r_[4] or '9999-12-31')))
 def _xs_on(line,x,p):return any(a<p[3] and p[0]<b for a,b in _XS.get((line,x),[]))
 _XGM=collections.defaultdict(set)

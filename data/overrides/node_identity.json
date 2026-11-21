@@ -2211,6 +2211,17 @@
    "source": "https://ja.wikipedia.org/w/index.php?oldid=110732618",
    "quote": "1989年（平成元年）10月29日：由利高原鉄道の駅として由利郡由利町に開業。",
    "note": "article history shows nothing before opening; no signal/junction mentioned"
+  },
+  {
+   "node": "n_takashima_freight",
+   "kind": "none",
+   "from": "1995-02-27",
+   "to": null,
+   "name": null,
+   "confidence": "중간",
+   "source": "https://ja.wikipedia.org/w/index.php?oldid=104615186",
+   "quote": "1995年2月27日 廃止",
+   "note": "高島 화물역 폐지 뒤 그 자리에 시설 없음 (조사 2026-11-21)"
   }
  ]
 }

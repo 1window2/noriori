@@ -357,14 +357,20 @@ class App:
             ends = (self._picks[route_id][0]["seq"], self._picks[route_id][-1]["seq"]) if self._picks[route_id] else ()
             stops_on = (st in ("yes", "maybe") and not self.in_stop_gap(d, s)) if d is not None else (s["valid_to"] == "ongoing")
             ridable = any(x in ("ok", "maybe") for x in line_states) if d is not None else any(self.edge_usable(route_id, e, self.today)[0] in ("ok", "maybe") for e in adj[s["node_id"]])
+            # 역을 옮긴 옛 자리·새 자리는 날짜를 고른 화면에서 그날의 자리만 (앱과 같다)
+            if not include_hidden and d is not None and not stops_on and any(x["style"] == "moved" and state_on(d, x["valid_from_lo"], x["valid_from_hi"], x["valid_to_lo"], x["valid_to_hi"]) in ("yes", "maybe") for x in self._sel.get((route_id, s["seq"]), ())):
+                continue
             passing = no_boarding = False
             # 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다 (앱과 같다, 검토 M1·M5 2026-11-21)
             span = self._span_on(route_id, s["seq"], d) if (not s["is_stop"] or not stops_on) else None
             if span is not None and ridable:
                 if span["style"] == "none":
                     continue
-                state, sel = "open", True
-                passing, no_boarding = span["style"] != "nostop", span["style"] == "nostop"
+                # 「_view」: 그날 끝이 아니라 보이기만 하고 고를 수 없다 (앱과 같다)
+                view = span["style"].endswith("_view")
+                style = span["style"][:-5] if view else span["style"]
+                state, sel = "open", not view
+                passing, no_boarding = style != "nostop", style == "nostop"
             links = []
             for r in link_rows[s["seq"]]:
                 lf = edtf_range(r["valid_from"])[0]
@@ -381,6 +387,8 @@ class App:
     def _span_on(self, route_id, seq, d):
         """그날(날짜를 모르면 지금) 그 행을 서지 않고 고를 수 있는 기간 (앱 SelectorBuilder._spanOn과 같다)"""
         for x in self._sel.get((route_id, seq), ()):
+            if x["style"] == "moved":
+                continue
             if d is None:
                 if x["valid_to"] in (None, "ongoing"):
                     return x
@@ -1872,14 +1880,18 @@ def sweep(A, R):
         # 날짜가 있는 이음은 그 이음이 생긴 첫날의 선택기로 본다. 이미 끝난 이음(옛 경로 계통과의 continue, 三岐線 1931~1985)과
         # 그때는 끝 역이었다가 연장으로 지나가는 역이 된 직통(시기별 끝 역, compile.era_end: 泉岳寺 1968·綾瀬 1971·盛岡 1997)
         past = False
-        if r["valid_from"] and re.fullmatch(r"\d{4}-\d{2}-\d{2}", r["valid_from"]):
+        # 범위로만 아는 시작(「1917-XX-XX」)은 그 범위의 첫날로 본다 (広電本線 観音町 → 옛 경로 1917–1960)
+        vf_ = r["valid_from"]
+        if vf_ and re.fullmatch(r"\d{4}-(\d{2}|XX)-(\d{2}|XX)", vf_):
+            vf_ = vf_.replace("XX", "01")
+        if vf_ and re.fullmatch(r"\d{4}-\d{2}-\d{2}", vf_):
             # 기준일(1950-01-01) 전 날짜는 선택기가 날짜 모름으로 보므로 기준일부터 본다
-            then = [q["seq"] for q in A.picker(r["route_id"], max(r["valid_from"], "1950-01-01")) if q["selectable"]]
+            then = [q["seq"] for q in A.picker(r["route_id"], max(vf_, "1950-01-01")) if q["selectable"]]
             past = bool(then) and r["seq"] in (min(then), max(then))
             # 그날 이 역에 닿는 이 계통 칸 한쪽이 그 노선에 아직 없으면 그날 이 역은 끝이다. 계통이 두 토막으로 나뉜 때(拝島線 1958–1962:
             # 小平–萩山과 小川–玉川上水 사이 萩山–小川 개업 전)에는 선택기 첫·끝 역만으로는 가운데 끝 역을 못 본다 (11회차 S2, 4회차 kanto_1-003)
             if not past:
-                d_ = max(r["valid_from"], "1950-01-01")
+                d_ = max(vf_, "1950-01-01")
                 es_ = [e for _, e, x, y in A.route_edges(r["route_id"]) if node in (x, y)]
                 past = len(es_) >= 2 and any(A.attr_on(e, ln, d_, follow_lineage=False)[0] is None for e in es_)
         if r["seq"] in (seqs[0], seqs[-1]) or gone or past or (live and r["seq"] in (min(live), max(live))):

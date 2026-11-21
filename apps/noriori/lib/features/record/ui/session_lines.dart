@@ -284,7 +284,13 @@ class _StopTile extends ConsumerWidget {
     messenger.showSnackBar(
       SnackBar(
         // 임시 운행만 있는 계통은 폐지·운휴가 아니라 그날 임시 열차가 없던 것이다 (사용자 결정 2026-11-19)
-        content: Text(state.isTemporary ? t.tempNoRun : line.row.state == StopState.suspended ? t.whySuspended : t.whyClosed),
+        content: Text(line.row.viewOnly
+            ? (line.row.noBoarding ? t.whyViewNoBoarding : t.whyViewSignal)
+            : state.isTemporary
+                ? t.tempNoRun
+                : line.row.state == StopState.suspended
+                    ? t.whySuspended
+                    : t.whyClosed),
         persist: false,
       ),
     );
@@ -328,7 +334,8 @@ class _StopTile extends ConsumerWidget {
     final picked = state.isPicked(row.seq);
     final end = row.seq == state.from?.seq || row.seq == state.to?.seq;
     final mark = ref.watch(stationMarksProvider).of(ref.watch(networkProvider), row.node);
-    final tier3 = !row.selectable;
+    // 보이기만 하는 행(그날 끝이 아닌 신호장·승하차 불가 역)은 고를 수 없어도 흐리게 그리지 않는다
+    final tier3 = !row.selectable && !row.viewOnly;
     // 임시 운행만 있는 계통: 운행일이 아닌 날의 역은 영업 역과 같은 크기의 흐린 원·흐린 이름이다(폐역의 작은 원·「~해」와 다르다).
     // 끝난 해·운휴 표시는 어느 날에도 붙이지 않는다 (사용자 결정 2026-11-19, 목업 5판)
     final temp = state.isTemporary;

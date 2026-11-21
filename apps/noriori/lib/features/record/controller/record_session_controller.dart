@@ -596,6 +596,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     );
     final rules = DisplayRules(network, today: today);
     final visible = rules.visible(rows, options);
+    final tempWindows = await reader.tempWindows(routeId);
+    final tempRoutes = await reader.tempRouteIds();
     final openGaps = builder.openBetween(routeId, visible, date);
     // 날짜를 모르면 줄기는 1단계로 두고 구분선만 오늘 기준으로 그린다
     final sectionGaps = date == null
@@ -619,6 +621,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       date: date,
       // 제목이 그날의 노선(같은 사슬의 뒤 노선)이면 그 노선으로의 이관 괄호는 그리지 않는다
       shownLineId: network.lineOnDate(routeId, date),
+      tempWindows: tempWindows,
+      tempRoutes: tempRoutes,
     );
     final ids = <String>{
       for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],
@@ -672,8 +676,6 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
               if (ja != archiveNames[id]) id: ja,
           };
     final movedNotes = await reader.movedNotes(rows.map((row) => row.node), lineId: state.lineId, date: date?.lo);
-    final tempWindows = await reader.tempWindows(routeId);
-    final tempRoutes = await reader.tempRouteIds();
     // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
     final stopDirections = <int, NetStopDirection>{
       for (final row in visible)
