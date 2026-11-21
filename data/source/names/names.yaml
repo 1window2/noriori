@@ -110,7 +110,7 @@
 - {"entity_type": "node", "id": "n_konbu", "lang": "ja", "text": "昆布", "kana": "こんぶ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_konbu", "lang": "ko", "text": "콘부", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_konbu", "lang": "en", "text": "Konbu", "source": "wikidata"}
-- {"entity_type": "node", "id": "n_koshiji_hakodate", "lang": "ja", "text": "越路", "source": "wikipedia"}
+- {"entity_type": "node", "id": "n_koshiji_hakodate", "lang": "ja", "text": "越路", "source": "wikipedia", "kana": "こしじ", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_niseko", "lang": "ja", "text": "ニセコ", "kana": "にせこ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_niseko", "lang": "ko", "text": "니세코", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_niseko", "lang": "en", "text": "Niseko", "source": "wikidata"}
@@ -52325,6 +52325,8 @@
 - {"entity_type": "node", "id": "n_gobogawa", "lang": "ko", "text": "고보가와", "source": "hand"}
 - {"entity_type": "node", "id": "n_kamisu", "lang": "ko", "text": "카미스", "source": "hand"}
 - {"entity_type": "node", "id": "n_kotohira_soya_main", "lang": "ko", "text": "코토히라", "source": "hand"}
+- {"entity_type": "node", "id": "n_koshiji_hakodate", "lang": "en", "text": "Koshiji", "source": "rule"}
+- {"entity_type": "node", "id": "n_koshiji_hakodate", "lang": "ko", "text": "코시지", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kotohira_soya_main", "lang": "en", "text": "Kotohira", "source": "rule"}
 - {"entity_type": "node", "id": "n_ashigawa_soya_main", "lang": "en", "text": "Ashikawa", "source": "rule"}
 - {"entity_type": "node", "id": "n_funagoya", "lang": "en", "text": "Funagoya", "source": "rule"}

@@ -2381,6 +2381,12 @@
 - {"entity_type": "archive", "id": "a_horaibashi_shiodome_toden", "lang": "ja", "text": "木挽町七丁目", "kana": null, "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_horaibashi_shiodome_toden", "lang": "ko", "text": "木挽町七丁目", "source": "ja_as_is", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_horaibashi_shiodome_toden", "lang": "en", "text": "木挽町七丁目", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_ichijo_line", "lang": "ja", "text": "一条線", "kana": "いちじょうせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ichijo_line", "lang": "ko", "text": "이치조선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ichijo_line", "lang": "en", "text": "Ichijo Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yojo_line", "lang": "ja", "text": "四条線", "kana": "よじょうせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yojo_line", "lang": "ko", "text": "요조선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_yojo_line", "lang": "en", "text": "Yojo Line", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ja", "text": "北見鉄道", "kana": "きたみてつどう", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ko", "text": "키타미 철도", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "en", "text": "Kitami Railway", "source": "rule"}

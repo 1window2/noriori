@@ -793,6 +793,8 @@
 - {"kind": "stop", "id": "a_shido_kotoden_yashima_furu_takamatsu", "line": "l_shido_line", "route": "r_shido_line", "after": "n_kotoden_yashima", "before": "n_furu_takamatsu", "opened": "1917-08-XX", "closed": "[1928-01-01..1937-07-01]", "km": null, "source": "ndl", "wiki_row": ["l_shido_line", 23]}
 - {"kind": "stop", "id": "a_deai", "line": "l_gunchu_line", "route": "r_gunchu_line", "after": "n_yogo_iyotetsu", "before": "n_okada_iyotetsu", "opened": "1896-07-04", "closed": "[1910-07-04..1917-03-31]", "km": null, "source": "ndl", "wiki_row": ["l_gunchu_line", 10]}
 - {"kind": "stop", "id": "a_horaibashi_shiodome_toden", "line": "l_horaibashi_line", "route": "r_horaibashi_line", "after": null, "before": "n_shiodome_toden", "opened": "[1924-06-21..1939-10-01]", "closed": "1944-05-04", "legal_abolition": "[1949-04-01..1950-03-31]", "km": null, "source": "ndl"}
+- {"kind": "line", "id": "a_ichijo_line", "at": "n_ichijo_9_chome", "opened": "1929-11-03", "closed": "1948-04-07", "legal_abolition": null, "source": "wikipedia(ja) 旭川市街軌道 https://ja.wikipedia.org/w/index.php?oldid=110444326"}
+- {"kind": "line", "id": "a_yojo_line", "at": "n_yojo_9_chome", "opened": "1929-11-03", "closed": "1948-04-07", "legal_abolition": null, "source": "wikipedia(ja) 旭川市街軌道 https://ja.wikipedia.org/w/index.php?oldid=110444326"}
 - {"kind": "line", "id": "a_kitami_railway", "at": null, "closed": null, "source": "wikipedia:94426447"}
 - {"kind": "line", "id": "a_kushirokaihatsufutonishiko_line", "at": null, "closed": null, "source": "wikipedia:74145895"}
 - {"kind": "line", "id": "a_kushirokaihatsufutofuto_line", "at": null, "closed": null, "source": "wikipedia:101607943"}
