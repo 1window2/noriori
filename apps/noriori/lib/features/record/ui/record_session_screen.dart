@@ -154,7 +154,14 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
             : state.lines;
     final trunk = TrunkStyle(state, gaps, tokens, scroll: _lines);
     final layout = layoutFolds(lines, _openFolds, trunk, state, tokens,
-        toggle: (fold) => setState(() => _openFolds.contains(foldKey(fold)) ? _openFolds.remove(foldKey(fold)) : _openFolds.add(foldKey(fold))));
+        toggle: (fold) => setState(() {
+              // 디버그 대조용으로 모두 펼쳐 열었으면 그 상태를 펼친 목록으로 옮기고 그다음부터는 누른 대로다
+              if (debugOpenAllFolds) {
+                debugOpenAllFolds = false;
+                _openFolds.addAll([for (final l in state.lines) if (l is FoldLine) foldKey(l)]);
+              }
+              _openFolds.contains(foldKey(fold)) ? _openFolds.remove(foldKey(fold)) : _openFolds.add(foldKey(fold));
+            }));
     final shown = searching ? lines : layout.lines;
     _shown = shown;
     final brightness = Theme.of(context).brightness;

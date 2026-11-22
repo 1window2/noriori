@@ -18,6 +18,8 @@ Future<void> debugOpen(WidgetRef ref, GoRouter router) async {
   final file = File('${dir.path}/debug_open.json');
   if (!file.existsSync()) return;
   final spec = jsonDecode(file.readAsStringSync()) as Map<String, Object?>;
+  // 한 번만 쓴다. 남아 있으면 다음 실행에도 같은 화면이 열리고 접힌 줄을 접을 수 없다
+  file.deleteSync();
   debugOpenAllFolds = spec['folds'] == true;
   final session = ref.read(recordSessionProvider.notifier);
   await session.open(lineId: spec['line']! as String, routeId: spec['route'] as String?, focusNode: spec['focus'] as String?);
