@@ -854,6 +854,36 @@ final class DisplayRules {
       // 분기선을 끄면 곡선 대신 그 노선을 캡슐로 보여 준다 (DESIGN §8.1)
       if (!options.showBranches) ..._links(row, 'branch', options, undated: undated, skip: skip),
     ];
+    // 직통(끝 이어짐)으로 잇는 노선이 이 역을 지나 반대쪽으로도 이어지면 그 반대 방향은 갈아타서 간다. 환승으로 적는다
+    // (唐津의 唐津線 鬼塚·山本 방면. 사용자 결정 2026-11-23, 전국 일괄 규칙)
+    for (final item in _links(row, 'continue', options, undated: undated, skip: skip)) {
+      final link = item.link;
+      final route = link.otherRouteId;
+      if (route == null || network.routes[route]?.closed == true) continue;
+      if (all.any((x) => x.link.otherLineId == link.otherLineId)) continue;
+      final stops = network.stops(route);
+      final at = stops.indexWhere((st) => st.node == (link.otherNode ?? row.node));
+      final next = stops.indexWhere((st) => st.node == link.nextStop);
+      if (at <= 0 || at >= stops.length - 1 || next < 0 || next == at) continue;
+      final side = next > at ? stops.sublist(0, at).reversed : stops.sublist(at + 1);
+      final opposite = side.where((st) => st.isStop).firstOrNull;
+      if (opposite == null) continue;
+      all.add(DisplayLink(
+        link: SelectorLink(
+          seq: link.seq,
+          kind: 'transfer',
+          otherLineId: link.otherLineId,
+          otherRouteId: route,
+          validFromLo: link.validFromLo,
+          validToHi: link.validToHi,
+          flow: 'through',
+          otherNode: link.otherNode,
+          nextStop: opposite.node,
+        ),
+        gone: item.gone,
+        suspended: item.suspended,
+      ));
+    }
     // 이관 구간 경계 역에서 이어받은 노선은 구분선이 이미 알려 주어 캡슐로 다시 적지 않는다 (실화면 검수 2026-11-09, 長野의 北しなの線)
     all.removeWhere((item) => except.contains(item.link.otherLineId));
     // 지금 선로로 이어진(분기·끝 이어짐) 노선과의 옛 환승은 「끝남」으로 적지 않는다. 지금도 갈아탈 수 있다 (姫路 山陽本線, 감사 3회차 kinki_1-07)

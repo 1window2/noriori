@@ -165,7 +165,23 @@ FoldLayout layoutFolds(
     }
     inserts[line] = const [];
   }
+  // 섞는 줄은 그 본선 역에 딸린 위쪽 분기·끝 이어짐 줄 앞에 넣는다. 역과 그 역의 줄 사이에 끼면 분기 어깨가 끊긴다
+  final firstOf = LinkedHashMap<SelectorLine, SelectorLine>.identity();
+  for (var i = 0; i < lines.length; i++) {
+    final line = lines[i];
+    if (line is! StopLine || !before.containsKey(line)) continue;
+    var j = i;
+    while (j > 0 && switch (lines[j - 1]) {
+      BranchLine(:final at, :final up) => up && at.seq == line.row.seq,
+      EndLine(:final at, :final up) => up && at.seq == line.row.seq,
+      _ => false,
+    }) {
+      j--;
+    }
+    firstOf[lines[j]] = line;
+  }
   for (final line in lines) {
+    if (firstOf[line] case final stop?) out.addAll(before[stop]!);
     if (line is FoldLine) {
       // 아래로 붙으면 머리 아래로, 위로 붙으면 머리 위로 편다. 머리는 늘 붙는 역 바로 옆이다 (목업과 같다)
       final shownInner = !inserts.containsKey(line) && (line.fold.single || debugOpenAllFolds || open.contains(foldKey(line)));
@@ -174,7 +190,6 @@ FoldLayout layoutFolds(
       if (!line.fold.up && shownInner) out.addAll(line.lines);
       continue;
     }
-    if (before[line] case final list?) out.addAll(list);
     out.add(line);
   }
   // 돌아오는 선형: 머리(또는 꺾여 나간 역)부터 돌아오는 역까지 본선 줄 옆을 지나간다. 분기 원 근처에서는 흐려진다

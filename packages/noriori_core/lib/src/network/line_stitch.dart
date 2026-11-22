@@ -187,6 +187,11 @@ final class _Stitch {
       if (m.memberOf == lineId && m.fromNode == null && m.validTo != null)
         for (final r in s.network.routesOfLine(m.lineId)) r: m.validTo!.substring(0, 4),
   };
+  late final Map<String, String> _untilDay = {
+    for (final m in s.network.data.members)
+      if (m.memberOf == lineId && m.fromNode == null && m.validTo != null)
+        for (final r in s.network.routesOfLine(m.lineId)) r: m.validTo!,
+  };
   final _memberCache = <String, RouteRows?>{};
   RouteRows? _member(String r, RouteRows? rr) {
     final until = _until[r];
@@ -198,7 +203,7 @@ final class _Stitch {
         routeId: r,
         rows: [
           for (final k in keep)
-            if (rr.rows[k].closeYear case final c? when c.compareTo(until) > 0) rr.rows[k].copy(closeYearAs: until) else rr.rows[k],
+            if (rr.rows[k].closeYear case final c? when c.compareTo(until) > 0) rr.rows[k].copy(closeYearAs: until, closedOnAs: _untilDay[r]) else rr.rows[k],
         ],
         openGaps: gaps(rr.openGaps),
         sectionGaps: gaps(rr.sectionGaps),
