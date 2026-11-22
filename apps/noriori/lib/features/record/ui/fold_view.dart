@@ -126,8 +126,9 @@ FoldLayout layoutFolds(
       // 닫힌 머리: 머리만. 돌아오는 선형이면 머리부터 돌아오는 역까지 옆을 지나간다
       continue;
     }
+    // 접힌 줄 머리 쪽 본선 칸(아래로 붙으면 붙는 역 아래, 위로 붙으면 위)이 그 아래로 지나간다
     for (final l in inner) {
-      ctx[l] = c(l, main.gap(anchorStop.index));
+      ctx[l] = c(l, main.gap(f.up ? anchorStop.index - 1 : anchorStop.index));
     }
     if (rejoinAt < 0) continue;
     // km 순서대로 본선 역 사이에 끼운다. 접힌 줄 안의 역 아닌 줄은 앞 역을 따라간다
@@ -150,16 +151,20 @@ FoldLayout layoutFolds(
       }
       final target = k < rejoinAt ? stops[k] : stops[rejoinAt];
       (before[target] ??= []).addAll(g);
+      // 끼어든 자리(target 역 바로 위 칸)의 본선 줄기가 그 아래로 지나간다
+      for (final l in g) {
+        ctx[l] = c(l, main.gap(target.index - 1));
+      }
     }
     inserts[line] = const [];
   }
   for (final line in lines) {
     if (line is FoldLine) {
+      // 아래로 붙으면 머리 아래로, 위로 붙으면 머리 위로 편다. 머리는 늘 붙는 역 바로 옆이다 (목업과 같다)
+      final shownInner = !inserts.containsKey(line) && (line.fold.single || open.contains(foldKey(line)));
+      if (line.fold.up && shownInner) out.addAll(line.lines);
       if (!line.fold.single) out.add(line); // 머리
-      if (inserts.containsKey(line)) continue; // 섞는 선형은 본선 역 앞에 들어간다
-      if (line.fold.single || open.contains(foldKey(line))) {
-        out.addAll(line.lines);
-      }
+      if (!line.fold.up && shownInner) out.addAll(line.lines);
       continue;
     }
     if (before[line] case final list?) out.addAll(list);
@@ -205,8 +210,11 @@ class FoldTrunk extends TrunkStyle {
   TrunkPiece? gap(int gap) {
     final rows = fold.fold.rows;
     final last = rows.rows.length - 1;
-    if (gap == -1) return TrunkPiece(color, foldWidth);
-    if (gap >= last) return rejoins ? TrunkPiece(color, foldWidth) : null;
+    // 머리 쪽 끝은 머리로 잇고, 반대쪽 끝은 본선으로 돌아올 때만 잇는다. 위로 붙으면 머리가 아래쪽 끝이다
+    final headSide = fold.fold.up ? gap >= last : gap == -1;
+    final farSide = fold.fold.up ? gap == -1 : gap >= last;
+    if (headSide) return TrunkPiece(color, foldWidth);
+    if (farSide) return rejoins ? TrunkPiece(color, foldWidth) : null;
     if (gap < 0) return null;
     final open = gap >= rows.openGaps.length || rows.openGaps[gap];
     return TrunkPiece(
@@ -227,10 +235,14 @@ class FoldPainter extends CustomPainter {
     required this.centerY,
     this.branchY,
     this.shiftOnly = false,
+    this.padded = false,
   });
 
   /// 옮기기만 한다 (접힌 선형 안 줄의 괄호 겹그림)
   final bool shiftOnly;
+
+  /// 줄이 통째로 [foldShift]만큼 옮겨져 있다 (분기·끝 이어짐·안내 줄). 그림은 옮기지 않고 지나가는 본선 줄기만 제자리에 그린다
+  final bool padded;
   final CustomPainter inner;
   final FoldCtx? ctx;
   final FoldDecor? decor;
@@ -260,22 +272,27 @@ class FoldPainter extends CustomPainter {
     final c = ctx;
     if (c != null) {
       final pass = c.mainPass;
-      if (pass != null) {
-        canvas.drawLine(
-          const Offset(tx, 0),
-          Offset(tx, size.height),
-          _p(pass.color, pass.width),
-        );
+      // 본선 줄기와 같은 그리기(점선·이관 점선 박자 포함)로 긋는다
+      if (padded) {
+        canvas.save();
+        canvas.translate(-foldShift, 0);
+        paintTrunk(canvas, pass, 0, size.height);
+        canvas.restore();
+      } else {
+        paintTrunk(canvas, pass, 0, size.height);
       }
       canvas.save();
-      canvas.translate(foldShift, 0);
+      if (!padded) canvas.translate(foldShift, 0);
       inner.paint(canvas, size);
       canvas.restore();
       return;
     }
-    inner.paint(canvas, size);
+    // 접힌 선형 장식(옆을 지나는 선·돌아오는 곡선·「]」 곡선)은 역 줄 그림보다 먼저 그린다. 끝이 역 노드 아래로 들어가 노드가 덮는다
     final dd = decor;
-    if (dd == null) return;
+    if (dd == null) {
+      inner.paint(canvas, size);
+      return;
+    }
     final y = centerY;
     if (dd.pass case final color?) {
       final by = branchY;
@@ -321,6 +338,7 @@ class FoldPainter extends CustomPainter {
         ..lineTo(qx, s.up ? 0 : size.height);
       canvas.drawPath(path, _p(s.color, foldWidth));
     }
+    inner.paint(canvas, size);
   }
 
   void _fade(Canvas canvas, Offset from, Offset to, Color color) {
@@ -366,8 +384,12 @@ CustomPainter foldPaint(
     decor: d,
     centerY: centerY,
     branchY: branchY,
+    padded: c != null && foldPadded(line),
   );
 }
+
+/// 접힌 선형 안에서 글자까지 통째로 옮기는 줄
+bool foldPadded(SelectorLine line) => line is BranchLine || line is EndLine || line is NoticeLine;
 
 /// 접힌 줄 머리로 가는 붙는 역의 어깨 곡선 색. 해당 없으면 null
 Color? foldShoulder(
@@ -381,16 +403,12 @@ Color? foldShoulder(
 
 /// 접힌 줄 머리 「▸ 기간 · 다음 역 › 마지막 역 · n역」. 누르면 펼치고 접는다 (DESIGN §8.3)
 class FoldHeadTile extends ConsumerWidget {
-  const FoldHeadTile({
-    super.key,
-    required this.line,
-    required this.trunk,
-    this.next,
-  });
+  const FoldHeadTile({super.key, required this.line, required this.trunk, this.next, this.prev});
 
   final FoldLine line;
   final TrunkPiece? trunk;
   final SelectorLine? next;
+  final SelectorLine? prev;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -411,7 +429,9 @@ class FoldHeadTile extends ConsumerWidget {
       '${state.nameOf(near.node)} › ${state.nameOf(far.node)}',
     ].join('  ');
     const centerY = 22.0;
-    final stacked = next is BranchLine || next is EndLine;
+    // 같은 쪽 바깥에 본선의 분기·끝 이어짐 줄이 더 있을 때만 줄기를 잇는다. 접힌 선형 안의 줄은 따지지 않는다
+    final outer = f.up ? prev : next;
+    final stacked = (outer is BranchLine || outer is EndLine) && !(layout?.ctx.containsKey(outer) ?? false);
     return Semantics(
       button: true,
       expanded: open,
@@ -422,6 +442,7 @@ class FoldHeadTile extends ConsumerWidget {
         child: CustomPaint(
           painter: _FoldHeadPainter(
             BranchPainter(
+              goneColor: tokens.selectorGone,
               trunk: trunk,
               color: color,
               stem: color,
@@ -504,4 +525,57 @@ class _FoldHeadPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(covariant _FoldHeadPainter old) => true;
+}
+
+/// 접힌 선형 괄호의 세로선 자리: 본선 줄기와 접힌 선형 사이 (목업 88). 옮긴 그림판 안의 값이다
+const double foldBracketX = 88 - foldShift;
+
+/// 접힌 선형의 괄호 토막을 그린다 (DESIGN §8.3). 괄호가 붙는 역(머리)·돌아오는 역까지 걸치면 그 줄에서 갈고리로 끝난다
+class FoldBracketOverlay extends CustomPainter {
+  const FoldBracketOverlay(this.pieces, {this.nodeY, this.reach = 6});
+
+  final List<BracketPiece> pieces;
+  final double? nodeY;
+  final double reach;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    canvas.save();
+    canvas.translate(foldShift, 0);
+    paintBrackets(canvas, size, pieces, nodeY: nodeY, nodeReach: reach, bx: foldBracketX);
+    canvas.restore();
+  }
+
+  @override
+  bool shouldRepaint(FoldBracketOverlay old) => old.pieces.length != pieces.length || old.nodeY != nodeY;
+}
+
+/// 접힌 선형마다 괄호 토막을 목록 줄에 나눈다. 괄호 끝이 붙는 역이면 머리 줄, 돌아오는 역이면 그 본선 역 줄에서 끝난다
+Map<SelectorLine, ({List<BracketPiece> pieces, double? nodeY, double reach})> foldBrackets(
+  List<SelectorLine> shown,
+  List<SelectorLine> lines,
+  Color Function(NoticeKind kind) colorOf,
+) {
+  final out = LinkedHashMap<SelectorLine, List<BracketPiece>>.identity();
+  for (final fold in lines.whereType<FoldLine>()) {
+    for (final notice in fold.lines.whereType<NoticeLine>()) {
+      int at(BracketAnchor a) => a.seq == fold.fold.anchor
+          ? shown.indexWhere((l) => identical(l, fold))
+          : shown.indexWhere((l) => l is StopLine && l.row.seq == a.seq);
+      final top = at(notice.top), bottom = at(notice.bottom);
+      if (top < 0 || bottom <= top) continue;
+      for (var i = top; i <= bottom; i++) {
+        (out[shown[i]] ??= []).add(BracketPiece(color: colorOf(notice.kind), start: i == top, end: i == bottom));
+      }
+    }
+  }
+  return {
+    for (final MapEntry(key: line, value: pieces) in out.entries)
+      line: switch (line) {
+        FoldLine() => (pieces: pieces, nodeY: pieces.any((p) => p.start) ? 27.0 : 17.0, reach: 6.0),
+        StopLine(:final row) when row.seq >= 0 && pieces.any((p) => p.end && !p.start) && !row.selectable => (pieces: pieces, nodeY: 20.0, reach: 6.5),
+        StopLine(:final row) => (pieces: pieces, nodeY: row.selectable ? 24.0 : 20.0, reach: row.selectable ? 11.0 : 6.5),
+        _ => (pieces: pieces, nodeY: null, reach: 6.0),
+      },
+  };
 }

@@ -160,16 +160,8 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     final brightness = Theme.of(context).brightness;
     // 괄호는 검색 중에는 그리지 않는다(역만 추린 목록이라 범위가 없다). 접힌 선형 안의 괄호는 그 선형 줄끼리만 잇는다
     final brackets = searching ? null : bracketPieces(shown, tokens, brightness, only: (notice) => !layout.ctx.containsKey(notice));
-    final foldBrackets = <SelectorLine, List<BracketPiece>>{};
-    if (!searching) {
-      for (final line in lines.whereType<FoldLine>()) {
-        final inner = [for (final l in shown) if (layout.ctx[l]?.fold == line) l];
-        final pieces = bracketPieces(inner, tokens, brightness);
-        for (var k = 0; k < inner.length; k++) {
-          foldBrackets[inner[k]] = pieces[k];
-        }
-      }
-    }
+    // 접힌 선형의 괄호는 본선과 접힌 선형 사이에 따로 그린다 (DESIGN §8.3)
+    final folded = searching ? const <SelectorLine, ({List<BracketPiece> pieces, double? nodeY, double reach})>{} : foldBrackets(shown, lines, (kind) => noticeColors(kind, tokens, brightness).bracket);
     return PopScope(
       // 분기로 넘어왔으면 뒤로 가기는 직전 노선이다
       canPop: state.depth == 0,
@@ -286,8 +278,9 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                         prev: index > 0 ? shown[index - 1] : null,
                         next: index + 1 < shown.length ? shown[index + 1] : null,
                         trunk: fold?.trunk ?? trunk,
-                        brackets: fold == null ? (brackets?[index] ?? const []) : (foldBrackets[line] ?? const []),
+                        brackets: fold == null ? (brackets?[index] ?? const []) : const [],
                         mainBrackets: fold == null ? const [] : (brackets?[index] ?? const []),
+                        foldBracket: folded[line],
                       ),
                     );
                   },

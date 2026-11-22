@@ -78,6 +78,7 @@ final class RecordSessionState {
     this.chips = const [],
     this.origin = const {},
     this.mainRoute,
+    this.foreignKm = const {},
   });
 
   final String? lineId;
@@ -170,6 +171,9 @@ final class RecordSessionState {
   /// 이 노선의 본선 계통. [routeId]가 이것이면 본선 칩이다
   final String? mainRoute;
 
+  /// km가 이어받은 노선의 km인 행(이관 띠 안). 흐리게 적는다 (DESIGN §8.3)
+  final Set<int> foreignKm;
+
   /// 고른 두 역 중 하나의 km가 추정값이다. 승차 km를 `?`로 보인다 (DESIGN §4.5).
   bool get kmEstimated => rows.any((row) => row.kmEstimated && (row.seq == from?.seq || row.seq == to?.seq));
 
@@ -204,6 +208,7 @@ final class RecordSessionState {
     List<String>? chips,
     Map<int, StitchOrigin>? origin,
     String? mainRoute,
+    Set<int>? foreignKm,
   }) =>
       RecordSessionState(
         lineId: lineId,
@@ -237,6 +242,7 @@ final class RecordSessionState {
         chips: chips ?? this.chips,
         origin: origin ?? this.origin,
         mainRoute: mainRoute ?? this.mainRoute,
+        foreignKm: foreignKm ?? this.foreignKm,
       );
 
   bool isPicked(int seq) =>
@@ -678,7 +684,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
         );
     final lines = withFolds(linesOf(stitched.main, main: true), [
       for (final f in stitched.folds)
-        FoldLine(fold: f, at: visible.firstWhere((row) => row.seq == f.anchor), lines: foldInner(linesOf(f.rows))),
+        FoldLine(fold: f, at: visible.firstWhere((row) => row.seq == f.anchor), lines: foldInner(linesOf(f.frame ?? f.rows), period: f.period, edges: {f.anchor, ?f.rejoin})),
     ]);
     final ids = <String>{
       for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],
@@ -767,6 +773,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       chips: chips,
       origin: stitched.origin,
       mainRoute: mainRoute,
+      foreignKm: stitched.foreignKm,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
           : PickedPath.of(visible, state.preview!.nodes),
@@ -900,6 +907,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       chips: base.chips,
       origin: base.origin,
       mainRoute: base.mainRoute,
+      foreignKm: base.foreignKm,
     );
   }
 

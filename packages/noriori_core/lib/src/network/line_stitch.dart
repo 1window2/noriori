@@ -1,4 +1,5 @@
 import '../date/date_span.dart';
+import 'display_rules.dart';
 import 'network.dart';
 import 'selector.dart';
 
@@ -33,7 +34,12 @@ final class StitchFold {
     required this.count,
     this.rejoin,
     this.dead = false,
+    this.frame,
   });
+
+  /// 괄호를 셀 때 쓰는 행: 접힌 선형 행 앞(위로 붙으면 뒤)에 붙는 본선 역, 돌아오면 끝에 돌아오는 본선 역을 더했다(본선 seq 그대로).
+  /// 괄호가 갈라지는 역·돌아오는 역까지 걸치면 그 끝에서 갈고리로 끝난다 (목업의 HEAD·TAIL, DESIGN §8.3)
+  final RouteRows? frame;
 
   /// 붙는 본선 행의 seq. [up]이면 그 행 위, 아니면 아래다.
   final int anchor;
@@ -196,7 +202,11 @@ final class _Stitch {
         ],
         openGaps: gaps(rr.openGaps),
         sectionGaps: gaps(rr.sectionGaps),
-        sectionEnds: gaps(rr.sectionEnds),
+        // 칸의 폐지 해도 이 노선의 조각으로서 끝난 해(나뉜 해)로 자른다
+        sectionEnds: [
+          for (final e in gaps(rr.sectionEnds))
+            if (e.year case final y? when y.compareTo(until) > 0) SectionEnd(year: until, suspended: false, opens: e.opens) else e,
+        ],
       );
     });
   }
@@ -207,6 +217,13 @@ final class _Stitch {
   bool openOn(String r, RouteRows? rr) => rr != null && rr.rows.any(_open);
 
   bool liveToday(String r) => openOn(r, todays(r));
+
+  /// 길을 고를 때 보는 그날 상태. 날짜 모름은 가장 최신 상태(오늘)로 고른다. 그리는 행은 날짜 모름 그대로다 (DESIGN §8.3)
+  bool openThen(_R x) {
+    if (date != null) return _open(x.row);
+    final t = todays(x.route);
+    return t != null && t.rows.any((r) => r.node == x.node && _open(r));
+  }
 
   int idx(String node) => items.indexWhere((x) => x.node == node);
 
@@ -365,8 +382,8 @@ final class _Stitch {
         region = up ? [for (var k = 0; k < ia; k++) k] : [for (var k = ia + 1; k < items.length; k++) k];
       }
       if (own.isEmpty) continue;
-      final mainLive = date != null ? region.any((k) => _open(items[k].row)) : region.isNotEmpty;
-      final r2Open = date != null && own.any((x) => _open(x.row));
+      final mainLive = region.any((k) => openThen(items[k]));
+      final r2Open = own.any(openThen);
       // 같은 시기에 함께 다닌 구간은 진짜 지선이다. 다만 그날 그 구간의 유일한 길이면 잇는다 (날짜별, 결정 B)
       if (region.isNotEmpty) {
         final whole2 = (undated(r2) ?? rows(r2)!).rows.where((x) => !mn.contains(x.node)).toList();
@@ -374,16 +391,16 @@ final class _Stitch {
         final wholeMain = (undated(mainRoute) ?? main).rows.where((x) => regNodes.contains(x.node)).toList();
         if (wholeMain.isNotEmpty && whole2.isNotEmpty && !exclusive(span(whole2), span(wholeMain)) && !(r2Open && !mainLive)) continue;
       }
-      if (liveToday(r2) && (mainLive || date == null) && !bypass) continue;
+      if (liveToday(r2) && mainLive && !bypass) continue;
       used.add(r2);
       final up = !bypass && upOf(at, link);
       if (r2Open && !mainLive) {
         // 그날의 길이 r2다: 본선 줄에 잇고, 본선의 그 구간은 다른 시기 선형으로 접는다
-        final frows = [for (final k in region) _R(items[k].row.copy(selectable: false), items[k].route)];
+        final frows = [for (final k in region) _R(items[k].row.copy(selectable: date == null && items[k].row.selectable), items[k].route)];
         final seq = <_R>[...own];
         if (!bypass) {
           final tail = tailOf(r2, own.last.node, false);
-          seq.addAll(tail.every((x) => !_open(x.row)) ? [for (final x in tail) _R(_closed(x.row), x.route)] : tail);
+          seq.addAll(date != null && tail.every((x) => !_open(x.row)) ? [for (final x in tail) _R(_closed(x.row), x.route)] : tail);
         }
         if (bypass) {
           final anchorRow = items[ia];
@@ -416,14 +433,16 @@ final class _Stitch {
       folds.add(_Fold(anchor: items[ia], up: up, rows: up ? frows.reversed.toList() : frows, rejoin: b, period: periodOld(own)));
     }
     // 그날 열린 줄 끝에서 같은 노선 조각이 하나만 이어지면 한 줄이다 (둘 이상이면 갈라짐이라 칩)
-    while (date != null) {
+    while (true) {
       final t = items.last;
-      if (!_open(t.row)) break;
+      if (!openThen(t)) break;
       final have = {for (final x in items) x.node};
       final cand = [
         for (final r in lineRoutes)
           if (free(r))
-            if (rows(r)!.rows case final rs when rs.isNotEmpty && rs.first.node == t.node && rs.take(2).every((x) => x.state != StopState.beforeOpen) && !rs.skip(1).any((x) => have.contains(x.node))) r,
+            if ((date == null ? todays(r) : rows(r))?.rows case final rs?
+                when rs.isNotEmpty && rs.first.node == t.node && rs.take(2).every((x) => x.state != StopState.beforeOpen) && !rs.skip(1).any((x) => have.contains(x.node)))
+              r,
       ];
       if (cand.length != 1) break;
       used.add(cand.single);
@@ -442,6 +461,39 @@ final class _Stitch {
     for (final x in items) {
       x.row = x.row.withLinksBoth([for (final l in x.row.links) if (keep(l)) l], [for (final l in x.row.goneLinks) if (keep(l)) l]);
     }
+    // 접힌 선형 안에는 같은 노선 다른 계통으로 가는 이어짐을 그리지 않는다. 그 계통은 본선 줄이거나 다른 접힌 줄·칩이다
+    // 본선 줄에 같은 노선·같은 다음 역 이어짐이 이미 있으면 접힌 선형에서 또 그리지 않는다 (筑肥線 博多（旧）의 鹿児島本線 吉塚 방면)
+    final mainLinks = {
+      for (final x in items)
+        for (final l in [...x.row.links, ...x.row.goneLinks])
+          if (l.kind != 'transfer') '${l.otherLineId}\u0000${l.nextStop}',
+    };
+    bool keepInFold(SelectorLink l) =>
+        l.kind == 'transfer' || (!lineRoutes.contains(l.otherRouteId) && !mainLinks.contains('${l.otherLineId}\u0000${l.nextStop}'));
+    for (final f in folds) {
+      for (final x in f.rows) {
+        x.row = x.row.withLinksBoth([for (final l in x.row.links) if (keepInFold(l)) l], [for (final l in x.row.goneLinks) if (keepInFold(l)) l]);
+      }
+    }
+    // 이관 표시가 붙은 역이라도 이은 같은 노선의 다른 계통에 그날 그 역이 자기 역(이관 표시 없음)으로 있으면 그 행을 쓴다.
+    // 그 역이 이관 띠의 끝이자 다음 구간의 기점이다 (鹿児島本線 川内: 본선 계통에서는 이관 구간 끝 역, 川内~鹿児島 계통에서는 기점)
+    final ownRow = <String, (SelectorRow, String)>{};
+    for (final r in used) {
+      for (final x in rows(r)?.rows ?? const <SelectorRow>[]) {
+        // 그날(날짜 모름은 지금) 그 계통의 현재 역일 때만이다. 끝난 옛 선형(北陸本線 谷浜–直江津 ~1969)의 행은 쓰지 않는다
+        if (x.handedTo == null && x.savedAs == null && (date == null ? x.closeYear == null : _open(x))) ownRow.putIfAbsent('${x.node}\u0000$r', () => (x, r));
+      }
+    }
+    items = [
+      for (final x in items)
+        if (x.row.handedTo != null || x.row.savedAs != null)
+          if ([for (final r in used) if (r != x.route) ownRow['${x.node}\u0000$r']].nonNulls.firstOrNull case final own?)
+            _R(own.$1.withLinksBoth(x.row.links, x.row.goneLinks), own.$2)
+          else
+            x
+        else
+          x,
+    ];
     // 이어 붙인 역은 그날 이은 계통 가운데 하나라도 그 역을 열었으면 열린 역이다
     if (date != null) {
       final openRow = <String, (SelectorRow, String)>{};
@@ -502,8 +554,8 @@ final class _Stitch {
     final kmMain = _chain(items);
     final mainRows = pack(mainRoute, kmMain);
     final seqOf = <_R, int>{for (var k = 0; k < kmMain.length; k++) kmMain[k]: mainRows.rows[k].seq};
-    for (final r in _bandRows) {
-      if (seqOf[r] case final n?) foreign.add(n);
+    for (final k in _bandRows) {
+      if (k < mainRows.rows.length) foreign.add(mainRows.rows[k].seq);
     }
     final out = <StitchFold>[];
     for (final f in folds) {
@@ -513,7 +565,27 @@ final class _Stitch {
       final pk = pack(f.rows.first.route, rowsKm);
       final rejoinIdx = f.rejoin == null ? -1 : kmMain.indexWhere((x) => x.node == f.rejoin);
       final dead = date == null && _deadIn(mainRows, anchorIdx, f.up);
+      final anchorRow = mainRows.rows[anchorIdx];
+      final rejoinRow = rejoinIdx < 0 ? null : mainRows.rows[rejoinIdx];
+      final edgeHead = gapOf(kmMain[anchorIdx], f.up ? rowsKm.last : rowsKm.first);
+      final edgeTail = rejoinIdx < 0 ? null : gapOf(rowsKm.last, kmMain[rejoinIdx]);
+      final frame = f.up
+          ? RouteRows(
+              routeId: pk.routeId,
+              rows: [...pk.rows, anchorRow],
+              openGaps: [...pk.openGaps, edgeHead.open],
+              sectionGaps: [...pk.sectionGaps, edgeHead.section],
+              sectionEnds: [...pk.sectionEnds, edgeHead.end],
+            )
+          : RouteRows(
+              routeId: pk.routeId,
+              rows: [anchorRow, ...pk.rows, ?rejoinRow],
+              openGaps: [edgeHead.open, ...pk.openGaps, ?edgeTail?.open],
+              sectionGaps: [edgeHead.section, ...pk.sectionGaps, ?edgeTail?.section],
+              sectionEnds: [edgeHead.end, ...pk.sectionEnds, ?edgeTail?.end],
+            );
       out.add(StitchFold(
+        frame: frame,
         anchor: seqOf[kmMain[anchorIdx]]!,
         up: f.up,
         rows: dead ? RouteRows(routeId: pk.routeId, rows: [for (final r in pk.rows) r.copy(selectable: false)], openGaps: pk.openGaps, sectionGaps: pk.sectionGaps, sectionEnds: pk.sectionEnds) : pk,
@@ -575,7 +647,9 @@ final class _Stitch {
     return x == null || y == null ? null : (d: (y.km - x.km).abs(), est: x.est || y.est);
   }
 
-  /// 그날의 영업거리 (결정 A): 그날 다닌 길의 구간 거리를 잇는다
+  /// 그날의 영업거리 (결정 A): 그날 다닌 길의 구간 거리를 잇는다.
+  /// 이관 띠는 화면 이관 괄호와 같은 계산(역 사이 칸마다 위·아래 역의 이관 구간)으로 잡는다. 띠 안 역(띠 안 폐역 포함)은 이어받은 노선 km,
+  /// 띠 끝 역 너머가 다른 계통(법적으로 따로인 구간)이면 그 역이 새 기점이다. 추정 km 역은 다음 역을 재는 기준이 되지 않는다
   List<_R> _chain(List<_R> list) {
     if (list.isEmpty) return list;
     bool liveRoute(String r) => date == null || openOn(r, rows(r));
@@ -583,9 +657,38 @@ final class _Stitch {
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0);
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node) != null);
     if (o < 0) return list;
-    final km = List<double?>.filled(list.length, null);
-    final est = List<bool>.filled(list.length, false);
-    final band = <int>{};
+    final n = list.length;
+    final km = List<double?>.filled(n, null);
+    final est = List<bool>.filled(n, false);
+    // 이관 띠: 칸 g의 띠 = 위 역의 띠, 없으면 아래 역의 띠 (DisplayRules._bracketize와 같다)
+    final shown = net.lineOnDate(mainRoute, date);
+    (String, String)? band(SelectorRow r) => switch (DisplayRules.bandOf(r, undated: date == null, date: date)) {
+          (final to, _) when to == shown => null,
+          final b => b,
+        };
+    final owner = <int, String>{};
+    final starts = <int>{};
+    var g = 0;
+    while (g + 1 < n) {
+      final key = band(list[g].row) ?? band(list[g + 1].row);
+      if (key == null) {
+        g++;
+        continue;
+      }
+      var b = g + 1;
+      while (b + 1 < n && (band(list[b].row) ?? band(list[b + 1].row)) == key) {
+        b++;
+      }
+      for (var k = g + 1; k < b; k++) {
+        owner[k] = key.$1;
+      }
+      if (b + 1 < n && list[b + 1].route != list[g].route) {
+        starts.add(b);
+      } else {
+        owner[b] = key.$1;
+      }
+      g = b;
+    }
     void fresh(int k, String route) {
       final v = _official(route, list[k].node);
       km[k] = v?.km;
@@ -593,42 +696,30 @@ final class _Stitch {
     }
 
     fresh(o, list[o].route);
-    // 이관 띠: 이어받은 노선의 km를 흐리게
-    bool inBand(_R x) => x.row.handedTo != null && (date == null || (x.row.handedOn ?? '9999').compareTo(date!.lo) <= 0);
     var last = o;
     var prev = o;
     var restart = false;
-    for (var k = o + 1; k < list.length; k++) {
+    for (var k = o + 1; k < n; k++) {
       final x = list[k];
-      if (inBand(x)) {
-        final nextOther = k + 1 < list.length && list[k + 1].route != x.route && !inBand(list[k + 1]);
-        if (nextOther && list[k + 1].route != list[o].route) {
-          // 띠 끝 역이 다음 구간의 기점이다
-          fresh(k, list[k + 1].route);
-          if (km[k] != null) last = prev = k;
-          restart = false;
-          continue;
-        }
-        band.add(k);
-        km[k] = _ownerKm(x);
+      if (owner[k] case final line?) {
+        km[k] = _ownerKm(x, line);
+        _bandRows.add(k);
         restart = true;
         continue;
       }
-      if (restart) {
+      if (starts.contains(k) || restart) {
         restart = false;
-        fresh(k, x.route);
+        fresh(k, starts.contains(k) ? list[k + 1].route : x.route);
         if (km[k] != null) last = prev = k;
         continue;
       }
-      // 추정 km 역은 다음 역을 재는 기준이 되지 않는다. 확실한 역에서 바로 잴 수 있으면 「?」가 번지지 않는다.
-      // 못 재면(한 계통에 함께 없거나 고리를 닫는 같은 역) 바로 앞 역에서 잰다
       // 사이 역을 모두 지나는 계통 하나가 있어야 그날의 길이다. 없으면 앞 역에서 잇는다
       final through = list[last].node == x.node ? null : _through([for (var j = last; j <= k; j++) list[j].node], x.route);
       var from = last;
       var d = through == null ? null : _distOn(through, list[last].node, x.node);
       if (d == null && prev >= 0) {
         from = prev;
-        d = _dist(list[prev], x);
+        d = list[prev].node == x.node ? null : _dist(list[prev], x);
       }
       if (d == null || km[from] == null) continue;
       km[k] = _round(km[from]! + d.d);
@@ -644,19 +735,16 @@ final class _Stitch {
       est[k] = est[last] || d.est;
       if (!est[k] || est[last]) last = k;
     }
-    final out = <_R>[];
-    for (var k = 0; k < list.length; k++) {
-      final r = _R(list[k].row.copy(kmCum: km[k], clearKm: km[k] == null, kmEstimated: est[k]), list[k].route);
-      out.add(r);
-      if (band.contains(k)) _bandRows.add(r);
-    }
-    return out;
+    return [
+      for (var k = 0; k < n; k++)
+        _R(list[k].row.copy(kmCum: km[k], clearKm: km[k] == null, kmEstimated: owner.containsKey(k) ? false : est[k]), list[k].route),
+    ];
   }
 
-  final _bandRows = <_R>[];
+  /// 띠 안 역의 km 자리 (원래 순번)
+  final _bandRows = <int>{};
 
-  double? _ownerKm(_R x) {
-    final line = x.row.handedTo;
+  double? _ownerKm(_R x, String line) {
     final day = date ?? s.today;
     for (final r in net.routesAt(x.node)) {
       if (net.routes[r]?.lineId != line) continue;
@@ -666,26 +754,65 @@ final class _Stitch {
         if (st.node == x.node && st.kmCum != null && on) return st.kmCum;
       }
     }
+    // 그날 그 노선이 서지 않는 역(띠 안 폐역)은 그 노선 계통의 자리 km다
+    for (final r in net.routesOfLine(line)) {
+      for (final st in net.stops(r)) {
+        if (st.node == x.node && st.kmCum != null) return st.kmCum;
+      }
+    }
     return null;
   }
 
+  /// 접힌 줄 km: 갈라지는 쪽에서 가장 가까운, 두 선형 모두 확실한 km가 있는 본선 역에서 그 선로를 따라 잰다.
+  /// 붙는 역의 옛 선형 km가 추정값이면 그 너머 역(遠州鉄道 遠州病院 대신 八幡)에서 잰다. 추정 km 역은 다음 역을 재는 기준이 되지 않는다
   List<_R> _chainFold(_Fold f, List<_R> main, int anchorIdx) {
-    final j = f.up ? anchorIdx : anchorIdx;
-    var a = main[j];
+    final foldRoutes = {for (final r in f.rows) r.route};
+    bool exactOn(String node) => foldRoutes.any((r) => _official(r, node)?.est == false);
+    var b = anchorIdx;
+    final step = f.up ? 1 : -1;
+    for (var k = anchorIdx; k >= 0 && k < main.length; k += step) {
+      final m = main[k];
+      if (m.row.kmCum != null && !m.row.kmEstimated && exactOn(m.node)) {
+        b = k;
+        break;
+      }
+      if (!foldRoutes.any((r) => _official(r, m.node) != null)) break;
+    }
+    var baseNode = main[b];
+    var baseKm = main[b].row.kmCum;
+    var baseEst = main[b].row.kmEstimated || !exactOn(main[b].node);
+    _R? prev;
+    double? prevKm;
+    var prevEst = false;
     final seqRows = f.up ? f.rows.reversed.toList() : f.rows;
     final km = <_R, double?>{};
     final est = <_R, bool>{};
     for (final r in seqRows) {
-      final d = _dist(a, r);
-      if (d == null || a.row.kmCum == null && km[a] == null) {
+      var d = baseKm == null ? null : _dist(baseNode, r);
+      var fromKm = baseKm, fromEst = baseEst;
+      if (d == null && prev != null && prevKm != null) {
+        d = _dist(prev, r);
+        fromKm = prevKm;
+        fromEst = prevEst;
+      }
+      if (d == null || fromKm == null) {
         km[r] = null;
+        prev = r;
+        prevKm = null;
         continue;
       }
-      final base = km[a] ?? a.row.kmCum!;
-      km[r] = _round(f.up ? base - d.d : base + d.d);
-      final baseEst = est[a] ?? a.row.kmEstimated;
-      est[r] = baseEst || d.est;
-      if (!est[r]! || baseEst) a = r;
+      final v = _round(f.up ? fromKm - d.d : fromKm + d.d);
+      final e = fromEst || d.est;
+      km[r] = v;
+      est[r] = e;
+      prev = r;
+      prevKm = v;
+      prevEst = e;
+      if (!e) {
+        baseNode = r;
+        baseKm = v;
+        baseEst = false;
+      }
     }
     return [for (final r in f.rows) _R(r.row.copy(kmCum: km[r], clearKm: km[r] == null, kmEstimated: est[r] ?? false), r.route)];
   }

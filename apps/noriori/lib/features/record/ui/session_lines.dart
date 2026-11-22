@@ -180,7 +180,10 @@ LaneStyle laneStyleOf(AppTokens tokens) =>
 
 /// 선택기의 한 줄을 그린다.
 class SessionLineTile extends StatelessWidget {
-  const SessionLineTile({super.key, required this.line, this.prev, required this.next, required this.trunk, this.brackets = const [], this.mainBrackets = const []});
+  const SessionLineTile({super.key, required this.line, this.prev, required this.next, required this.trunk, this.brackets = const [], this.mainBrackets = const [], this.foldBracket});
+
+  /// 이 줄에 걸치는 접힌 선형의 괄호 토막 (DESIGN §8.3)
+  final ({List<BracketPiece> pieces, double? nodeY, double reach})? foldBracket;
 
   /// 접힌 선형 안 줄에 걸치는 본선 괄호 토막. 접힌 선형 칸으로 옮기지 않고 제자리에 그린다 (DESIGN §8.3)
   final List<BracketPiece> mainBrackets;
@@ -198,12 +201,18 @@ class SessionLineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tile = _tile(context);
-    final framed = mainBrackets.isEmpty ? tile : CustomPaint(foregroundPainter: BracketOverlay(mainBrackets), child: tile);
-    if (brackets.isEmpty || line is StopLine) return framed;
+    var tile = _tile(context);
     final inFold = FoldView.of(context)?.ctx.containsKey(line) ?? false;
-    final overlay = BracketOverlay(brackets, nodeY: line is ArchiveLine ? 18 : null);
-    return CustomPaint(foregroundPainter: inFold ? FoldPainter(overlay, ctx: null, centerY: 24, shiftOnly: true) : overlay, child: framed);
+    // 접힌 선형 안의 분기·끝 이어짐·안내 줄은 글자까지 통째로 선형 칸으로 옮긴다 (목업과 같다). 역 줄은 그림만 옮기고 글자는 본선 역과 같은 줄이다
+    final padded = inFold && foldPadded(line);
+    if (brackets.isNotEmpty && line is! StopLine) {
+      final overlay = BracketOverlay(brackets, nodeY: line is ArchiveLine ? 18 : null);
+      tile = CustomPaint(foregroundPainter: inFold && !padded ? FoldPainter(overlay, ctx: null, centerY: 24, shiftOnly: true) : overlay, child: tile);
+    }
+    if (padded) tile = Padding(padding: const EdgeInsets.only(left: foldShift), child: tile);
+    if (mainBrackets.isNotEmpty) tile = CustomPaint(foregroundPainter: BracketOverlay(mainBrackets), child: tile);
+    final fb = foldBracket;
+    return fb == null ? tile : CustomPaint(foregroundPainter: FoldBracketOverlay(fb.pieces, nodeY: fb.nodeY, reach: fb.reach), child: tile);
   }
 
   Widget _tile(BuildContext context) => switch (line) {
@@ -228,7 +237,7 @@ class SessionLineTile extends StatelessWidget {
           ),
         final TransferLine hand => _HandTile(line: hand, trunk: trunk.gap(hand.gap)),
         final NoticeLine notice => _NoticeTile(line: notice, prev: prev, trunk: trunk),
-        final FoldLine fold => FoldHeadTile(line: fold, trunk: trunk.gap(_anchorIndex(fold)), next: next),
+        final FoldLine fold => FoldHeadTile(line: fold, trunk: trunk.gap(_anchorIndex(fold)), next: next, prev: prev),
       };
 
   /// 접힌 줄 머리 자리의 본선 칸: 아래로 붙으면 붙는 역 아래 칸, 위로 붙으면 위 칸
@@ -560,7 +569,8 @@ class _StopTile extends ConsumerWidget {
                     side(
                       km?.toStringAsFixed(1) ?? '?',
                       text.bodySmall?.copyWith(
-                        color: tier3 ? tokens.textClosed : tokens.textMuted,
+                        // 이관 띠 안 역의 km는 이어받은 노선의 km라 흐리게 적는다 (DESIGN §8.3)
+                        color: tier3 || state.foreignKm.contains(row.seq) ? tokens.textClosed : tokens.textMuted,
                         fontFeatures: tabularFigures,
                       ),
                     ),
@@ -828,6 +838,7 @@ class _BranchTile extends ConsumerWidget {
         onTap: () => _open(context, ref, name),
         child: CustomPaint(
           painter: foldPaint(context, line, BranchPainter(
+            goneColor: tokens.selectorGone,
             trunk: trunk,
             color: item.gone ? tokens.selectorGone : tokens.lineUnridden,
             stem: line.stemGone ? tokens.selectorGone : tokens.lineUnridden,
@@ -1428,14 +1439,26 @@ class _NoticeTile extends ConsumerWidget {
       if (await confirmLeave(context, ref)) await session.jumpToLine(lineId, at.node);
     }
 
-    // 상자 위·아래 줄의 줄기 칸을 그대로 잇는다. 상자는 괄호 맨 위 역 아래 칸에 놓인다
-    final above = prev;
-    final gap = switch (above) {
-      StopLine(:final index) => index,
-      BranchLine(:final gap) => gap,
-      EndLine(:final gap) => gap,
-      _ => null,
-    };
+    // 상자는 괄호 맨 위 역 아래 칸에 놓이므로 그 칸의 줄기를 긋는다. 바로 위 줄(접힌 줄 머리 등)과 상관없이 괄호의 맨 위 역으로 칸을 찾는다.
+    // 접힌 선형 안 상자는 그 선형의 칸이고, 맨 위가 붙는 역이면 머리 쪽 칸이다 (DESIGN §8.3)
+    final style = trunk;
+    final top = line.top.seq;
+    int? gap;
+    if (style is FoldTrunk) {
+      final rows = style.fold.fold.rows.rows;
+      final at = rows.indexWhere((row) => row.seq == top);
+      gap = at >= 0 ? at : (style.fold.fold.up ? rows.length - 1 : -1);
+    } else {
+      final at = style.state.visible.indexWhere((row) => row.seq == top);
+      gap = at >= 0
+          ? at
+          : switch (prev) {
+              StopLine(:final index) => index,
+              BranchLine(:final gap) => gap,
+              EndLine(:final gap) => gap,
+              _ => null,
+            };
+    }
     final piece = gap == null ? null : trunk.gap(gap);
     return CustomPaint(
       painter: foldPaint(context, line, PlainPainter(above: piece, below: piece, lanes: line.lanes, laneStyle: laneStyleOf(tokens))),

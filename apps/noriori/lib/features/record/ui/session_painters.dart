@@ -62,6 +62,9 @@ void _chevron(Canvas canvas, TrunkPiece? piece, double y, Color background) {
   );
 }
 
+/// 줄기 한 칸을 그린다 (점선·이관 점선 포함). 접힌 선형 줄 아래로 지나가는 본선 줄기도 이것으로 긋는다
+void paintTrunk(Canvas canvas, TrunkPiece? piece, double from, double to) => _trunk(canvas, piece, from, to);
+
 void _trunk(Canvas canvas, TrunkPiece? piece, double from, double to) {
   if (piece == null) return;
   final paint = Paint()
@@ -114,9 +117,8 @@ const double bracketX = 30.5;
 /// 괄호를 그린다. [nodeY]가 있으면 그 줄의 역 노드 높이에 갈고리가 걸린다. 환승 캡슐이 괄호 자리까지 넓으면([pillLeft]) 갈고리는 캡슐 바로 아래·위에 걸리고,
 /// 괄호가 그 역을 지나기만 하면 캡슐 가까이에서 옅어졌다가 다시 진해진다. 한 역이 두 괄호의 끝과 시작이면 갈고리를 3씩 비킨다
 /// [nodeReach]는 노드 중심에서 테두리 바깥까지의 거리다. 갈고리는 노드 크기와 상관없이 테두리 3 앞에서 멈춘다(작은 폐역 노드에서 떠 보였다, 실화면 2026-11-19)
-void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double? nodeY, double? pillLeft, double nodeReach = 11}) {
+void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double? nodeY, double? pillLeft, double nodeReach = 11, double bx = bracketX}) {
   if (pieces.isEmpty) return;
-  const bx = bracketX;
   final wide = pillLeft != null && pillLeft < bx + 4;
   final reach = SelectorRuler.trunkX - nodeReach - 3;
   final hookEnd = pillLeft == null ? reach : (wide ? SelectorRuler.trunkX - 12 : math.min(reach, pillLeft - 5));
@@ -129,7 +131,7 @@ void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double?
       ..strokeCap = StrokeCap.round;
     final y = nodeY;
     if (y == null) {
-      canvas.drawLine(const Offset(bx, 0), Offset(bx, size.height), paint);
+      canvas.drawLine(Offset(bx, 0), Offset(bx, size.height), paint);
       continue;
     }
     if (piece.start && !piece.end) {
@@ -155,12 +157,12 @@ void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double?
     } else if (wide) {
       const f = 26.0;
       final lo = y - 14, hi = y + 14;
-      if (lo - f > 0) canvas.drawLine(const Offset(bx, 0), Offset(bx, lo - f), paint);
+      if (lo - f > 0) canvas.drawLine(Offset(bx, 0), Offset(bx, lo - f), paint);
       _fadeLine(canvas, Offset(bx, math.max(0, lo - f)), Offset(bx, lo), piece.color, 2);
       _fadeLine(canvas, Offset(bx, math.min(size.height, hi + f)), Offset(bx, hi), piece.color, 2);
       if (hi + f < size.height) canvas.drawLine(Offset(bx, hi + f), Offset(bx, size.height), paint);
     } else {
-      canvas.drawLine(const Offset(bx, 0), Offset(bx, size.height), paint);
+      canvas.drawLine(Offset(bx, 0), Offset(bx, size.height), paint);
     }
   }
 }
@@ -435,7 +437,11 @@ class BranchPainter extends CustomPainter {
     this.lanes = const [],
     this.laneStyle,
     this.fromStop = true,
+    this.goneColor,
   });
+
+  /// 폐선 색. 이 색의 선을 먼저 그린다
+  final Color? goneColor;
 
   /// 역 바로 옆 줄이다 (EndPainter.fromStop과 같음).
   final bool fromStop;
@@ -502,14 +508,15 @@ class BranchPainter extends CustomPainter {
       canvas.drawCircle(Offset(q, y), 5, _stroke(color, 1.5));
       return;
     }
-    // 줄기를 먼저 그린다. 곡선은 그 위로 지나간다
-    if (!fromTrunk) {
-      final near = up ? size.height : 0.0;
-      final far = up ? 0.0 : size.height;
-      final bend = up ? y + r : y - r;
-      if (stacked) canvas.drawLine(Offset(sx, bend), Offset(sx, far), _stroke(through, 2.5));
-      canvas.drawLine(Offset(sx, near), Offset(sx, bend), _stroke(stem, 2.5));
-    }
+    // 폐선 색 선을 먼저, 현행 색 선을 나중에 그린다. 폐선 분기가 현행 줄기·곡선을 덮지 않는다 (사용자 결정 2026-11-23).
+    // 색이 같으면 줄기를 먼저 그리고 곡선이 그 위로 지나간다
+    final near = up ? size.height : 0.0;
+    final far = up ? 0.0 : size.height;
+    final bend = up ? y + r : y - r;
+    final strokes = <(Color, void Function())>[
+      if (!fromTrunk && stacked) (through, () => canvas.drawLine(Offset(sx, bend), Offset(sx, far), _stroke(through, 2.5))),
+      if (!fromTrunk) (stem, () => canvas.drawLine(Offset(sx, near), Offset(sx, bend), _stroke(stem, 2.5))),
+    ];
     final path = Path();
     if (fromTrunk) {
       const x = SelectorRuler.trunkX;
@@ -529,7 +536,14 @@ class BranchPainter extends CustomPainter {
         ..arcToPoint(Offset(sx + r, y), radius: const Radius.circular(r), clockwise: false)
         ..lineTo(q - 5, y);
     }
-    canvas.drawPath(path, _stroke(color, 2.5));
+    strokes.add((color, () => canvas.drawPath(path, _stroke(color, 2.5))));
+    bool gone(Color c) => c == goneColor;
+    for (final (c, draw) in strokes) {
+      if (gone(c)) draw();
+    }
+    for (final (c, draw) in strokes) {
+      if (!gone(c)) draw();
+    }
     canvas.drawCircle(Offset(q, y), 5, Paint()..color = background);
     canvas.drawCircle(Offset(q, y), 5, _stroke(color, 1.5));
   }

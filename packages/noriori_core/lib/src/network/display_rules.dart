@@ -417,13 +417,27 @@ List<SelectorLine> withFolds(List<SelectorLine> main, List<FoldLine> folds) {
   return out;
 }
 
-/// 접힌 선형 안 줄에서 선형 전체를 덮는 괄호는 뺀다. 접힌 줄 문구의 기간이 대신한다 (DESIGN §8.3)
-List<SelectorLine> foldInner(List<SelectorLine> lines) {
-  final stops = [for (final l in lines) if (l is StopLine) l.row.seq];
-  if (stops.isEmpty) return lines;
+/// 접힌 선형 안 줄을 만든다 (DESIGN §8.3). [lines]는 [StitchFold.frame](붙는 역·돌아오는 역을 더한 행)으로 만든 줄이다.
+/// 붙는 역·돌아오는 역의 줄(역·분기·끝 이어짐)은 본선에 있으므로 빼고, 그 역에 걸친 괄호는 남긴다.
+/// 선형 전체를 덮고 해도 접힌 줄 기간과 같은 괄호는 뺀다(문구의 기간이 대신한다). 해가 다르면(菊池線 ~2022 안의 ~1986) 남긴다
+List<SelectorLine> foldInner(List<SelectorLine> lines, {String period = '', Set<int> edges = const {}}) {
+  bool edge(SelectorLine l) => switch (l) {
+        StopLine(:final row) => edges.contains(row.seq),
+        BranchLine(:final at) => edges.contains(at.seq),
+        EndLine(:final at) => edges.contains(at.seq),
+        _ => false,
+      };
+  final kept = [for (final l in lines) if (!edge(l)) l];
+  final stops = [for (final l in kept) if (l is StopLine) l.row.seq];
+  if (stops.isEmpty) return kept;
+  // 역 하나뿐인 선형(「]」)은 접힌 칸이 없어 괄호를 그리지 않는다. 역 줄의 「1978~」·「~1968」이 대신한다
+  if (stops.length == 1) return [for (final l in kept) if (l is! NoticeLine) l];
+  final years = period.replaceAll('~', '');
+  bool atTop(int? seq) => seq == stops.first || edges.contains(seq);
+  bool atBottom(int? seq) => seq == stops.last || edges.contains(seq);
   return [
-    for (final l in lines)
-      if (!(l is NoticeLine && l.top.seq == stops.first && l.bottom.seq == stops.last)) l,
+    for (final l in kept)
+      if (!(l is NoticeLine && atTop(l.top.seq) && atBottom(l.bottom.seq) && (l.year ?? '') == years)) l,
   ];
 }
 
