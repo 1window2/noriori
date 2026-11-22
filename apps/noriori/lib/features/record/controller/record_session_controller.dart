@@ -75,6 +75,9 @@ final class RecordSessionState {
     this.laps = 1,
     this.focus,
     this.depth = 0,
+    this.chips = const [],
+    this.origin = const {},
+    this.mainRoute,
   });
 
   final String? lineId;
@@ -158,6 +161,15 @@ final class RecordSessionState {
   /// 분기로 넘어온 횟수. 0이 아니면 뒤로 가기가 직전 노선으로 돌아간다.
   final int depth;
 
+  /// 그날 따로 보일 계통 칩 (본선 제외). 같은 노선 이어 그리기로 본선 줄에 들어간 계통은 빠진다 (DESIGN §8.3)
+  final List<String> chips;
+
+  /// 화면 행 seq → 원래 계통과 seq (DESIGN §8.3). 여러 계통을 이은 줄의 기록을 계통마다 나눌 때 쓴다
+  final Map<int, StitchOrigin> origin;
+
+  /// 이 노선의 본선 계통. [routeId]가 이것이면 본선 칩이다
+  final String? mainRoute;
+
   /// 고른 두 역 중 하나의 km가 추정값이다. 승차 km를 `?`로 보인다 (DESIGN §4.5).
   bool get kmEstimated => rows.any((row) => row.kmEstimated && (row.seq == from?.seq || row.seq == to?.seq));
 
@@ -189,6 +201,9 @@ final class RecordSessionState {
     ({int up, int down})? ways,
     int? laps,
     int? focus,
+    List<String>? chips,
+    Map<int, StitchOrigin>? origin,
+    String? mainRoute,
   }) =>
       RecordSessionState(
         lineId: lineId,
@@ -219,6 +234,9 @@ final class RecordSessionState {
         laps: clearPicks ? 1 : laps ?? this.laps,
         focus: focus ?? this.focus,
         depth: depth,
+        chips: chips ?? this.chips,
+        origin: origin ?? this.origin,
+        mainRoute: mainRoute ?? this.mainRoute,
       );
 
   bool isPicked(int seq) =>
@@ -556,12 +574,12 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
             : [
                 RideLeg(
                   seq: 0,
-                  lineId: LineId(state.lineId!),
-                  routeId: RouteId(state.routeId!),
+                  lineId: LineId(_network.routes[_pickRoute(from, to)]!.lineId),
+                  routeId: RouteId(_pickRoute(from, to)),
                   fromNode: NodeId(from.node),
                   toNode: NodeId(to.node),
                   direction: direction ??
-                      (_network.routes[state.routeId!]!.closed ? result.direction : null),
+                      (_network.routes[_pickRoute(from, to)]!.closed ? result.direction : null),
                   lineLabel: '',
                   fromLabel: '',
                   toLabel: '',
@@ -582,48 +600,86 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final network = _network;
     final today = ref.read(todayProvider);
     final builder = SelectorBuilder(network);
-    // 이관 구간 안은 이어받은 노선의 그날 역·환승·분기로 채운다 (DESIGN §8.0.1 B안)
-    final rows = builder.fillHanded(
-      routeId,
-      builder.build(
-        routeId,
-        date,
-        links: await reader.routeLinks(routeId, carryover: options.carryover),
-        carryoverStops: options.carryover ? await reader.carryoverStops(routeId) : const {},
-      ),
-      date,
-      links: {for (final other in builder.handRoutes(routeId)) other: await reader.routeLinks(other)},
-    );
     final rules = DisplayRules(network, today: today);
-    final visible = rules.visible(rows, options);
-    final tempWindows = await reader.tempWindows(routeId);
+    final todaySpan = DateSpan.parse(today);
+    final lineId = state.lineId!;
+    final mainRoute = _mainRoute(lineId);
     final tempRoutes = await reader.tempRouteIds();
-    final openGaps = builder.openBetween(routeId, visible, date);
-    // 날짜를 모르면 줄기는 1단계로 두고 구분선만 오늘 기준으로 그린다
-    final sectionGaps = date == null
-        ? builder.openBetween(routeId, visible, DateSpan.parse(today))
-        : openGaps;
-    final stops = await reader.archiveStops(routeId);
+    // 같은 노선의 계통마다 그날·오늘·날짜 모름 행을 만들고 그날의 한 줄로 잇는다 (DESIGN §8.3)
+    final screens = <(String, String?), RouteRows>{};
+    for (final r in LineStitcher.routesFor(network, lineId)) {
+      for (final d in {date, todaySpan, null}) {
+        // 이관 구간 안은 이어받은 노선의 그날 역·환승·분기로 채운다 (DESIGN §8.0.1 B안)
+        final all = builder.fillHanded(
+          r,
+          builder.build(
+            r,
+            d,
+            links: await reader.routeLinks(r, carryover: options.carryover),
+            carryoverStops: options.carryover ? await reader.carryoverStops(r) : const {},
+          ),
+          d,
+          links: {for (final other in builder.handRoutes(r)) other: await reader.routeLinks(other)},
+        );
+        final shown = rules.visible(all, options);
+        screens[(r, d?.lo)] = RouteRows(
+          routeId: r,
+          rows: shown,
+          openGaps: builder.openBetween(r, shown, d),
+          // 날짜를 모르면 줄기는 1단계로 두고 구분선만 오늘 기준으로 그린다
+          sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan) : builder.openBetween(r, shown, d),
+          sectionEnds: builder.sectionEnds(r, shown, todaySpan, date: d),
+        );
+      }
+    }
+    final stitcher = LineStitcher(network,
+        today: todaySpan, screen: (r, d) => screens[(r, d?.lo)], extra: {for (final r in tempRoutes) if (r != mainRoute) r});
+    final mainLine = stitcher.stitch(lineId, mainRoute, date);
+    final chips = [for (final r in network.routesOfLineMainFirst(lineId)) if (r != mainRoute && !mainLine.used.contains(r)) r];
+    final chip = chips.contains(routeId) ? routeId : mainRoute;
+    final stitched = chip == mainRoute
+        ? mainLine
+        : stitcher.stitch(lineId, chip, date, exclude: {mainRoute, for (final r in chips) if (r != chip) r});
+    final visible = stitched.main.rows;
+    final openGaps = stitched.main.openGaps;
+    final rows = [...visible, for (final f in stitched.folds) ...f.rows.rows];
+    final tempWindows = await reader.tempWindows(chip);
+    // 열람 전용 역은 이은 계통 것을 모두, 병주(행 seq를 쓴다)는 새 seq로 옮긴다
+    final seqOf = {for (final MapEntry(key: n, value: o) in stitched.origin.entries) (o.routeId, o.seq): n};
+    final stops = <ArchiveStop>[];
+    final parallels = <ParallelRun>[];
+    for (final r in stitched.used) {
+      for (final st in await reader.archiveStops(r)) {
+        if (!stops.any((x) => x.id == st.id)) stops.add(st);
+      }
+      for (final run in await reader.routeParallels(r)) {
+        final a = seqOf[(r, run.fromSeq)], b = seqOf[(r, run.toSeq)];
+        if (a != null && b != null) parallels.add(run.withSeqs(a, b, {for (final x in run.stopSeqs) ?seqOf[(r, x)]}));
+      }
+    }
     final branches = await reader.archiveBranches(rows.map((row) => row.node));
-    final parallels = await reader.routeParallels(routeId);
-    final lines = rules.lines(
-      lineId: state.lineId!,
-      rows: visible,
-      openGaps: openGaps,
-      options: options,
-      closedRoute: network.routes[routeId]!.closed,
-      archiveStops: stops,
-      archiveBranches: branches,
-      sectionGaps: sectionGaps,
-      sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
-      undated: date == null,
-      parallels: parallels,
-      date: date,
-      // 제목이 그날의 노선(같은 사슬의 뒤 노선)이면 그 노선으로의 이관 괄호는 그리지 않는다
-      shownLineId: network.lineOnDate(routeId, date),
-      tempWindows: tempWindows,
-      tempRoutes: tempRoutes,
-    );
+    List<SelectorLine> linesOf(RouteRows rr, {bool main = false}) => rules.lines(
+          lineId: lineId,
+          rows: rr.rows,
+          openGaps: rr.openGaps,
+          options: options,
+          closedRoute: main && network.routes[chip]!.closed,
+          archiveStops: main ? stops : const [],
+          archiveBranches: branches,
+          sectionGaps: rr.sectionGaps,
+          sectionEnds: rr.sectionEnds,
+          undated: date == null,
+          parallels: main ? parallels : const [],
+          date: date,
+          // 제목이 그날의 노선(같은 사슬의 뒤 노선)이면 그 노선으로의 이관 괄호는 그리지 않는다
+          shownLineId: network.lineOnDate(chip, date),
+          tempWindows: tempWindows,
+          tempRoutes: tempRoutes,
+        );
+    final lines = withFolds(linesOf(stitched.main, main: true), [
+      for (final f in stitched.folds)
+        FoldLine(fold: f, at: visible.firstWhere((row) => row.seq == f.anchor), lines: foldInner(linesOf(f.rows))),
+    ]);
     final ids = <String>{
       for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],
       for (final row in rows) row.node,
@@ -634,7 +690,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
           ?link.terminal,
         ],
     };
-    final names = {...await reader.nodeNames(ids, lineId: state.lineId, routeId: routeId, date: date?.lo)};
+    final names = {...await reader.nodeNames(ids, lineId: state.lineId, routeId: chip, date: date?.lo)};
     // 끝난 연결 줄의 상대 역은 그 연결이 끝난 날 전날, 상대 노선의 이름이다 (4회차 kyushu_2-007: 臼ノ浦線 「松浦線 다음 上佐々」)
     final endedIds = <(String?, String), Set<String>>{};
     for (final row in rows) {
@@ -653,16 +709,16 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final japanese = await reader.nodeNames(
       rows.map((row) => row.node),
       lineId: state.lineId,
-      routeId: routeId,
+      routeId: chip,
       date: date?.lo,
       languages: const ['ja'],
     );
     final readings = reader.languages.first == 'ja'
-        ? await reader.nodeReadings(rows.map((row) => row.node), lineId: state.lineId, routeId: routeId, date: date?.lo)
+        ? await reader.nodeReadings(rows.map((row) => row.node), lineId: state.lineId, routeId: chip, date: date?.lo)
         : const <String, String>{};
     // 날짜를 모를 때만 작은 표식을 단다. 날짜가 있으면 그날 이름에 표시가 붙는다
     final pastMarks = date == null && state.lineId != null
-        ? await reader.pastTempMarks(rows.map((row) => row.node), state.lineId!, routeId: routeId)
+        ? await reader.pastTempMarks(rows.map((row) => row.node), state.lineId!, routeId: chip)
         : const <String, String>{};
     final archiveIds = [
       for (final stop in stops) stop.id,
@@ -677,13 +733,16 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
           };
     final movedNotes = await reader.movedNotes(rows.map((row) => row.node), lineId: state.lineId, date: date?.lo);
     // 한 방향 정차역과 한 방향 칸 (DESIGN §8 한 방향 운행·한 방향 정차)
+    String routeOf(SelectorRow row) => stitched.origin[row.seq]?.routeId ?? chip;
     final stopDirections = <int, NetStopDirection>{
       for (final row in visible)
-        row.seq: ?network.stopDirectionOf(routeId, row.node, date),
+        row.seq: ?network.stopDirectionOf(routeOf(row), row.node, date),
     };
     final oneWayGaps = [
       for (var at = 0; at + 1 < visible.length; at++)
-        network.oneWayBetween(routeId, visible[at].node, visible[at + 1].node, date),
+        routeOf(visible[at]) == routeOf(visible[at + 1])
+            ? network.oneWayBetween(routeOf(visible[at + 1]), visible[at].node, visible[at + 1].node, date)
+            : null,
     ];
     if (generation != _generation) return;
     state = state.copyWith(
@@ -705,6 +764,9 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       movedNotes: movedNotes,
       tempWindows: tempWindows,
       tempRoutes: tempRoutes,
+      chips: chips,
+      origin: stitched.origin,
+      mainRoute: mainRoute,
       path: state.preview == null || state.preview!.nodes.isEmpty
           ? null
           : PickedPath.of(visible, state.preview!.nodes),
@@ -835,6 +897,9 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       laps: laps,
       focus: base.focus,
       depth: base.depth,
+      chips: base.chips,
+      origin: base.origin,
+      mainRoute: base.mainRoute,
     );
   }
 
@@ -875,7 +940,39 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       _date == null && state.rows.any((row) => row.handedOnly && (row.seq == from.seq || row.seq == to.seq));
 
   /// 계통을 넘어 구간마다 나눠 저장하는가.
-  bool _isAcross(StopPick from, StopPick to) => from.seq == _carried || _handAcross(from, to);
+  bool _isAcross(StopPick from, StopPick to) => from.seq == _carried || _handAcross(from, to) || _stitchedRoutes(from, to) != null;
+
+  /// 고른 두 행 사이가 같은 노선의 여러 계통을 이은 줄이면 그 계통들 (DESIGN §8.3). 한 계통 안이면 null.
+  /// 접힌 줄 안의 역은 붙는 본선 역 자리로 보고 그 선형 계통을 더한다
+  List<String>? _stitchedRoutes(StopPick from, StopPick to) {
+    final origin = state.origin;
+    if (origin.isEmpty || from.seq == _carried) return null;
+    final visible = state.visible;
+    final folds = [for (final line in state.lines) if (line is FoldLine) line];
+    final routes = <String>{};
+    int place(StopPick pick) {
+      final at = visible.indexWhere((row) => row.seq == pick.seq);
+      if (at >= 0) return at;
+      for (final f in folds) {
+        if (f.fold.rows.rows.any((row) => row.seq == pick.seq)) {
+          routes.addAll({for (final row in f.fold.rows.rows) ?origin[row.seq]?.routeId});
+          return visible.indexWhere((row) => row.seq == f.fold.anchor);
+        }
+      }
+      return -1;
+    }
+
+    final a = place(from), b = place(to);
+    if (a < 0 || b < 0) return null;
+    for (var k = min(a, b); k <= max(a, b); k++) {
+      if (origin[visible[k].seq]?.routeId case final r?) routes.add(r);
+    }
+    return routes.length > 1 ? routes.toList() : null;
+  }
+
+  /// 고른 두 행이 한 계통 안이면 그 계통. 이은 줄에서 본선 아닌 계통일 수 있다 (DESIGN §8.3)
+  String _pickRoute(StopPick from, StopPick to) =>
+      state.origin[from.seq]?.routeId ?? state.origin[to.seq]?.routeId ?? state.routeId!;
 
   Expansion _record(
     StopPick from,
@@ -883,25 +980,25 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     String? direction,
     String? asOf,
     bool resolveUnknown = false,
-  }) =>
-      from.seq == _carried
-          ? _resolver.across(state.lineId!, from.node, to.node, date: _date)
-          : _handAcross(from, to)
-          ? _resolver.acrossRoutes(
-              [state.routeId!, ...SelectorBuilder(_network).handRoutes(state.routeId!)],
-              from.node,
-              to.node,
-            )
-          : _resolver.record(
-        state.routeId!,
-        from.node,
-        to.node,
-        date: _date,
-        // 같은 역 두 줄이면 한 바퀴다. 방향이 있어야 펼쳐진다. 한 방향 순환은 운행 방향으로 돈다 (DESIGN §8)
-        direction: direction ?? (isLoop && from.node == to.node ? _lapDirection(from.node) : null),
-        asOf: asOf == null ? null : DateSpan.parse(asOf),
-        resolveUnknown: resolveUnknown,
-      );
+  }) {
+    if (from.seq == _carried) return _resolver.across(state.lineId!, from.node, to.node, date: _date);
+    // 같은 노선의 여러 계통을 이은 줄이면 계통마다 나눠 저장한다 (DESIGN §8.3, §2.8 F)
+    if (_stitchedRoutes(from, to) case final routes?) return _resolver.acrossRoutes(routes, from.node, to.node, date: _date);
+    final route = _pickRoute(from, to);
+    if (_handAcross(from, to)) {
+      return _resolver.acrossRoutes([route, ...SelectorBuilder(_network).handRoutes(route)], from.node, to.node);
+    }
+    return _resolver.record(
+      route,
+      from.node,
+      to.node,
+      date: _date,
+      // 같은 역 두 줄이면 한 바퀴다. 방향이 있어야 펼쳐진다. 한 방향 순환은 운행 방향으로 돈다 (DESIGN §8)
+      direction: direction ?? (isLoop && from.node == to.node ? _lapDirection(from.node) : null),
+      asOf: asOf == null ? null : DateSpan.parse(asOf),
+      resolveUnknown: resolveUnknown,
+    );
+  }
 
   String _lapDirection(String node) =>
       _resolver.record(state.routeId!, node, node, date: _date, direction: seqUp).reason == ExpandReason.oneWay
@@ -968,7 +1065,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final session = ref.read(sessionProvider);
     final now = ref.read(nowProvider)();
     final lineId = state.lineId!;
-    final closed = _network.routes[state.routeId!]!.closed;
+    final route = _pickRoute(from, to);
+    final closed = _network.routes[route]!.closed;
     final across = _isAcross(from, to) ? await _acrossLegs(result) : null;
     final ride = Ride(
       rideId: RideId(uuidV7(millis: now, randomBytes: secureRandomBytes())),
@@ -983,8 +1081,8 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
         for (var lap = 0; lap < (state.isLap ? state.laps : 1); lap++)
           RideLeg(
             seq: lap,
-            lineId: LineId(lineId),
-            routeId: RouteId(state.routeId!),
+            lineId: LineId(_network.routes[route]!.lineId),
+            routeId: RouteId(route),
             fromNode: NodeId(from.node),
             toNode: NodeId(to.node),
             // 닫힌 계통은 방향이 없으면 그 판의 짧은 쪽이다. 판이 바뀌어도 탄 쪽이 남아야 한다

@@ -164,6 +164,9 @@
     },
     "lapLess": "1周減らす",
     "lapMore": "1周増やす",
+    "foldStops": {
+      "other": "$n駅"
+    },
     "away": {
       "other": "+$n駅"
     },

@@ -164,6 +164,9 @@
     },
     "lapLess": "한 바퀴 줄이기",
     "lapMore": "한 바퀴 늘리기",
+    "foldStops": {
+      "other": "$n역"
+    },
     "away": {
       "other": "+$n역"
     },

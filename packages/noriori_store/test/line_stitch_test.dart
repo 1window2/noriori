@@ -44,7 +44,7 @@ void main() {
         );
       }
     }
-    final s = LineStitcher(network, today: DateSpan.parse(today), screen: (r, d) => cache[(r, d == null ? null : d.lo)]);
+    final s = LineStitcher(network, today: DateSpan.parse(today), screen: (r, d) => cache[(r, d?.lo)]);
     return s.stitch(lineId, network.routesOfLineMainFirst(lineId).first, date);
   }
 
@@ -59,6 +59,11 @@ void main() {
     expect(km(now, 'n_iwamizawa'), 211.0);
     expect(now.used, contains('r_muroran_main_line_shibun_iwamizawa'));
     expect(now.folds.where((f) => f.single).map((f) => f.rows.rows.single.node), contains('n_toyoizumi'));
+    // 추정 km 역(崎守町) 뒤라도 확실한 역에서 바로 잴 수 있으면 「?」가 번지지 않는다
+    final sakimori = now.folds.firstWhere((f) => f.rows.rows.any((r) => r.node == 'n_jinyamachi'));
+    final jinya = sakimori.rows.rows.firstWhere((r) => r.node == 'n_jinyamachi');
+    expect(jinya.kmCum, 69.7);
+    expect(jinya.kmEstimated, isFalse);
   });
 
   test('北陸本線 1955: 柳ヶ瀬 경유가 본선, 그날 영업거리', () async {
@@ -107,4 +112,5 @@ void main() {
     expect(has(now, 'n_midoriko'), isTrue);
     expect(has(now, 'n_tatsuno_chuo_main'), isFalse);
   });
+
 }

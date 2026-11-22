@@ -1,5 +1,6 @@
 import '../date/date_rules.dart';
 import '../date/date_span.dart';
+import 'line_stitch.dart';
 import 'network.dart';
 import 'selector.dart';
 
@@ -118,6 +119,21 @@ final class ParallelRun {
   final String? outTerminal;
   final String? validFromLo;
   final String? validToHi;
+
+  /// 순번만 바꾼 병주 (같은 노선 이어 그리기에서 새 seq로 옮길 때, DESIGN §8.3)
+  ParallelRun withSeqs(int from, int to, Set<int> stops) => ParallelRun(
+        otherLineId: otherLineId,
+        fromSeq: from,
+        toSeq: to,
+        otherRouteId: otherRouteId,
+        stopSeqs: stops,
+        inNext: inNext,
+        inTerminal: inTerminal,
+        outNext: outNext,
+        outTerminal: outTerminal,
+        validFromLo: validFromLo,
+        validToHi: validToHi,
+      );
 }
 
 /// 병주 선이 그 줄에서 하는 일.
@@ -368,6 +384,47 @@ final class NoticeLine extends SelectorLine {
 
   /// 폐지 구간이면 폐지 해, 개업 전 구간이면 개업 해다. 모르면 '?'
   final String? year;
+}
+
+/// 그날 다니지 않던 같은 노선 선형 하나 (DESIGN §8.3). 붙는 역 줄 바로 아래(위로 붙으면 바로 위)에 놓인다.
+/// [lines]는 접힌 선형 안의 줄이다(일반 노선과 같은 줄, 줄 전체를 덮는 괄호는 뺐다). 역이 하나면 접지 않는다
+final class FoldLine extends SelectorLine {
+  const FoldLine({required this.fold, required this.at, required this.lines});
+
+  final StitchFold fold;
+
+  /// 붙는 본선 역 줄의 행.
+  final SelectorRow at;
+  final List<SelectorLine> lines;
+}
+
+/// 본선 줄에 접힌 줄을 끼운다 (DESIGN §8.3). 아래로 붙으면 역 줄 바로 뒤, 위로 붙으면 역 줄 바로 앞이다
+List<SelectorLine> withFolds(List<SelectorLine> main, List<FoldLine> folds) {
+  final out = <SelectorLine>[];
+  for (final line in main) {
+    if (line is StopLine) {
+      for (final f in folds) {
+        if (f.fold.up && f.fold.anchor == line.row.seq) out.add(f);
+      }
+      out.add(line);
+      for (final f in folds) {
+        if (!f.fold.up && f.fold.anchor == line.row.seq) out.add(f);
+      }
+    } else {
+      out.add(line);
+    }
+  }
+  return out;
+}
+
+/// 접힌 선형 안 줄에서 선형 전체를 덮는 괄호는 뺀다. 접힌 줄 문구의 기간이 대신한다 (DESIGN §8.3)
+List<SelectorLine> foldInner(List<SelectorLine> lines) {
+  final stops = [for (final l in lines) if (l is StopLine) l.row.seq];
+  if (stops.isEmpty) return lines;
+  return [
+    for (final l in lines)
+      if (!(l is NoticeLine && l.top.seq == stops.first && l.bottom.seq == stops.last)) l,
+  ];
 }
 
 /// `route_link`를 줄로 바꾼다 (ARCHITECTURE §3.3 `DisplayRules`, DESIGN §8.1).

@@ -310,6 +310,9 @@ class _Translations$session$ja implements Translations$session$ko {
 	);
 	@override String get lapLess => '1周減らす';
 	@override String get lapMore => '1周増やす';
+	@override String foldStops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
+		other: '${n}駅',
+	);
 	@override String away({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
 		other: '+${n}駅',
 	);
@@ -1248,6 +1251,7 @@ extension on TranslationsJa {
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}周', ), 
 			'session.lapLess' => '1周減らす',
 			'session.lapMore' => '1周増やす',
+			'session.foldStops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}駅', ), 
 			'session.away' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '+${n}駅', ), 
 			'session.dateTitle' => '乗車日',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
@@ -1633,9 +1637,9 @@ extension on TranslationsJa {
 			'prefNames.19' => '長野',
 			'prefNames.20' => '岐阜',
 			'prefNames.21' => '静岡',
-			'prefNames.22' => '愛知',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.22' => '愛知',
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',
 			'prefNames.25' => '京都',

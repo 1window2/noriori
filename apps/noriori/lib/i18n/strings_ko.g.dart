@@ -516,6 +516,11 @@ class Translations$session$ko {
 	/// ko: '한 바퀴 늘리기'
 	String get lapMore => '한 바퀴 늘리기';
 
+	/// ko: '(other) {$n역}'
+	String foldStops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
+		other: '${n}역',
+	);
+
 	/// ko: '(other) {+$n역}'
 	String away({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
 		other: '+${n}역',
@@ -2240,6 +2245,7 @@ extension on Translations {
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}바퀴', ), 
 			'session.lapLess' => '한 바퀴 줄이기',
 			'session.lapMore' => '한 바퀴 늘리기',
+			'session.foldStops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}역', ), 
 			'session.away' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '+${n}역', ), 
 			'session.dateTitle' => '탑승일',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
@@ -2625,9 +2631,9 @@ extension on Translations {
 			'prefNames.19' => '나가노',
 			'prefNames.20' => '기후',
 			'prefNames.21' => '시즈오카',
-			'prefNames.22' => '아이치',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.22' => '아이치',
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',
 			'prefNames.25' => '교토',

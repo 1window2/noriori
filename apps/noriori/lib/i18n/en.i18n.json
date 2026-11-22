@@ -169,6 +169,10 @@
     },
     "lapLess": "Remove a lap",
     "lapMore": "Add a lap",
+    "foldStops": {
+      "one": "$n stop",
+      "other": "$n stops"
+    },
     "away": {
       "one": "+$n stop",
       "other": "+$n stops"

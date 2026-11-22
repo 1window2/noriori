@@ -11,7 +11,9 @@ import '../../../i18n/strings.g.dart';
 import '../controller/record_session_controller.dart';
 import 'one_way_bubble.dart';
 import 'session_date.dart';
+import 'fold_view.dart';
 import 'session_lines.dart';
+import 'session_painters.dart';
 import 'session_save_bar.dart';
 
 /// 역 선택기 (DESIGN §8, §8.1). 세로 노선도 한 줄에서 두 번 탭한다.
@@ -35,6 +37,10 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     return state.nameOf(node).toLowerCase().contains(want) || (state.japanese[node] ?? '').contains(want);
   }
   final _lines = ScrollController();
+
+  /// 펼친 접힌 줄 (DESIGN §8.3). 다른 노선에서 접힌 줄 안의 역으로 넘어오면 저절로 펼친다
+  final _openFolds = <String>{};
+  List<SelectorLine> _shown = const [];
   final _focusKey = GlobalKey();
   int? _focusLine;
   int _lastBuilt = 0;
@@ -50,7 +56,14 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
 
   /// 고른 역까지 옮긴다. 줄 높이가 제각각이라 그릴 때까지 다가간다.
   Future<void> _reveal(int seq) async {
-    final lines = ref.read(recordSessionProvider).lines;
+    // 접힌 줄 안의 역이면 그 줄을 먼저 편다
+    for (final line in ref.read(recordSessionProvider).lines) {
+      if (line is FoldLine && line.lines.any((l) => l is StopLine && l.row.seq == seq) && _openFolds.add(foldKey(line))) {
+        setState(() {});
+        await WidgetsBinding.instance.endOfFrame;
+      }
+    }
+    final lines = _shown;
     final target = lines.indexWhere((line) => line is StopLine && line.row.seq == seq);
     if (target < 0) return;
     setState(() => _focusLine = target);
@@ -104,7 +117,9 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     final text = Theme.of(context).textTheme;
     final tokens = context.tokens;
     final today = ref.watch(todayProvider);
-    final choices = controller.routeChoices;
+    // 같은 노선 이어 그리기로 본선 줄에 들어간 계통은 칩이 없다 (DESIGN §8.3)
+    final choices = state.mainRoute == null ? controller.routeChoices : [state.mainRoute!, ...state.chips];
+    final chosen = state.chips.contains(state.routeId) ? state.routeId : state.mainRoute ?? state.routeId;
     final ridden = ref.watch(riddenEdgesProvider).value ?? const <int>{};
     final routeId = state.routeId;
     final gaps = routeId == null
@@ -138,8 +153,23 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
             ? [for (final line in state.lines) if (line is! SectionLine && line is! NoticeLine) line]
             : state.lines;
     final trunk = TrunkStyle(state, gaps, tokens, scroll: _lines);
-    // 괄호는 검색 중에는 그리지 않는다(역만 추린 목록이라 범위가 없다)
-    final brackets = searching ? null : bracketPieces(lines, tokens, Theme.of(context).brightness);
+    final layout = layoutFolds(lines, _openFolds, trunk, state, tokens,
+        toggle: (fold) => setState(() => _openFolds.contains(foldKey(fold)) ? _openFolds.remove(foldKey(fold)) : _openFolds.add(foldKey(fold))));
+    final shown = searching ? lines : layout.lines;
+    _shown = shown;
+    final brightness = Theme.of(context).brightness;
+    // 괄호는 검색 중에는 그리지 않는다(역만 추린 목록이라 범위가 없다). 접힌 선형 안의 괄호는 그 선형 줄끼리만 잇는다
+    final brackets = searching ? null : bracketPieces(shown, tokens, brightness, only: (notice) => !layout.ctx.containsKey(notice));
+    final foldBrackets = <SelectorLine, List<BracketPiece>>{};
+    if (!searching) {
+      for (final line in lines.whereType<FoldLine>()) {
+        final inner = [for (final l in shown) if (layout.ctx[l]?.fold == line) l];
+        final pieces = bracketPieces(inner, tokens, brightness);
+        for (var k = 0; k < inner.length; k++) {
+          foldBrackets[inner[k]] = pieces[k];
+        }
+      }
+    }
     return PopScope(
       // 분기로 넘어왔으면 뒤로 가기는 직전 노선이다
       canPop: state.depth == 0,
@@ -216,7 +246,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                   for (final choice in choices)
                     FilterPill(
                       label: _routeLabel(choice),
-                      selected: choice == routeId,
+                      selected: choice == chosen,
                       onTap: () => controller.selectRoute(choice),
                       badge: state.tempRoutes.contains(choice) ? t.tempTag : null,
                     ),
@@ -231,10 +261,12 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
               ),
             Expanded(
               // 긴 노선은 손잡이를 끌어 이동한다. 도쿄에서 오사카까지 약 9,000dp다 (DESIGN §8 역 찾기)
-              child: Scrollbar(
+              child: FoldView(
+                layout: layout,
+                child: Scrollbar(
                 controller: _lines,
                 interactive: true,
-                thumbVisibility: lines.length > 30,
+                thumbVisibility: shown.length > 30,
                 thickness: 8,
                 radius: const Radius.circular(4),
                 child: ListView.builder(
@@ -242,21 +274,25 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                   // 줄마다 따로 쌓지 않아야 점선 박자를 목록 전체 위치로 맞출 수 있다(그림판 이동량에 줄 위치가 들어간다)
                   addRepaintBoundaries: false,
                   padding: const EdgeInsets.only(bottom: 16),
-                  itemCount: lines.length,
+                  itemCount: shown.length,
                   itemBuilder: (context, index) {
                     _lastBuilt = index;
+                    final line = shown[index];
+                    final fold = layout.ctx[line];
                     return KeyedSubtree(
                       key: index == _focusLine ? _focusKey : null,
                       child: SessionLineTile(
-                        line: lines[index],
-                        prev: index > 0 ? lines[index - 1] : null,
-                        next: index + 1 < lines.length ? lines[index + 1] : null,
-                        trunk: trunk,
-                        brackets: brackets?[index] ?? const [],
+                        line: line,
+                        prev: index > 0 ? shown[index - 1] : null,
+                        next: index + 1 < shown.length ? shown[index + 1] : null,
+                        trunk: fold?.trunk ?? trunk,
+                        brackets: fold == null ? (brackets?[index] ?? const []) : (foldBrackets[line] ?? const []),
+                        mainBrackets: fold == null ? const [] : (brackets?[index] ?? const []),
                       ),
                     );
                   },
                 ),
+              ),
               ),
             ),
             SessionSaveBar(state: state, returnBack: widget.returnBack),

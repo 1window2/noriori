@@ -582,6 +582,7 @@ final class _Stitch {
     // 이관 띠: 이어받은 노선의 km를 흐리게
     bool inBand(_R x) => x.row.handedTo != null && (date == null || (x.row.handedOn ?? '9999').compareTo(date!.lo) <= 0);
     var last = o;
+    var prev = o;
     var restart = false;
     for (var k = o + 1; k < list.length; k++) {
       final x = list[k];
@@ -590,7 +591,7 @@ final class _Stitch {
         if (nextOther && list[k + 1].route != list[o].route) {
           // 띠 끝 역이 다음 구간의 기점이다
           fresh(k, list[k + 1].route);
-          if (km[k] != null) last = k;
+          if (km[k] != null) last = prev = k;
           restart = false;
           continue;
         }
@@ -602,14 +603,24 @@ final class _Stitch {
       if (restart) {
         restart = false;
         fresh(k, x.route);
-        if (km[k] != null) last = k;
+        if (km[k] != null) last = prev = k;
         continue;
       }
-      final d = _dist(list[last], x);
-      if (d == null || km[last] == null) continue;
-      km[k] = _round(km[last]! + d.d);
-      est[k] = est[last] || d.est;
-      last = k;
+      // 추정 km 역은 다음 역을 재는 기준이 되지 않는다. 확실한 역에서 바로 잴 수 있으면 「?」가 번지지 않는다.
+      // 못 재면(한 계통에 함께 없거나 고리를 닫는 같은 역) 바로 앞 역에서 잰다
+      // 사이에 다른 계통(그날 이은 선형)이 끼면 그날의 길이 아니므로 앞 역에서 잇는다
+      final sameRoute = [for (var j = last; j <= k; j++) list[j].route].toSet().length == 1;
+      var from = last;
+      var d = list[last].node == x.node || !sameRoute ? null : _dist(list[last], x);
+      if (d == null && prev >= 0) {
+        from = prev;
+        d = _dist(list[prev], x);
+      }
+      if (d == null || km[from] == null) continue;
+      km[k] = _round(km[from]! + d.d);
+      est[k] = est[from] || d.est;
+      prev = k;
+      if (!est[k] || est[last]) last = k;
     }
     last = o;
     for (var k = o - 1; k >= 0; k--) {
@@ -617,7 +628,7 @@ final class _Stitch {
       if (d == null || km[last] == null) continue;
       km[k] = _round(km[last]! - d.d);
       est[k] = est[last] || d.est;
-      last = k;
+      if (!est[k] || est[last]) last = k;
     }
     final out = <_R>[];
     for (var k = 0; k < list.length; k++) {
@@ -658,8 +669,9 @@ final class _Stitch {
       }
       final base = km[a] ?? a.row.kmCum!;
       km[r] = _round(f.up ? base - d.d : base + d.d);
-      est[r] = (est[a] ?? a.row.kmEstimated) || d.est;
-      a = r;
+      final baseEst = est[a] ?? a.row.kmEstimated;
+      est[r] = baseEst || d.est;
+      if (!est[r]! || baseEst) a = r;
     }
     return [for (final r in f.rows) _R(r.row.copy(kmCum: km[r], clearKm: km[r] == null, kmEstimated: est[r] ?? false), r.route)];
   }

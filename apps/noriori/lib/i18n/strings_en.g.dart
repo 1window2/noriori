@@ -315,6 +315,10 @@ class _Translations$session$en implements Translations$session$ko {
 	);
 	@override String get lapLess => 'Remove a lap';
 	@override String get lapMore => 'Add a lap';
+	@override String foldStops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: '${n} stop',
+		other: '${n} stops',
+	);
 	@override String away({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
 		one: '+${n} stop',
 		other: '+${n} stops',
@@ -1278,6 +1282,7 @@ extension on TranslationsEn {
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} lap', other: '${n} laps', ), 
 			'session.lapLess' => 'Remove a lap',
 			'session.lapMore' => 'Add a lap',
+			'session.foldStops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} stop', other: '${n} stops', ), 
 			'session.away' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '+${n} stop', other: '+${n} stops', ), 
 			'session.dateTitle' => 'Ride date',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
@@ -1663,9 +1668,9 @@ extension on TranslationsEn {
 			'prefNames.19' => 'Nagano',
 			'prefNames.20' => 'Gifu',
 			'prefNames.21' => 'Shizuoka',
-			'prefNames.22' => 'Aichi',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.22' => 'Aichi',
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',
 			'prefNames.25' => 'Kyoto',

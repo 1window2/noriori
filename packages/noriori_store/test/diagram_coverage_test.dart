@@ -56,6 +56,8 @@ void main() {
           final shown = <SelectorLink>{};
           for (final line in lines) {
             switch (line) {
+              case FoldLine():
+                count('접힌 줄');
               case StopLine(:final transfers, :final lanes):
                 for (final mark in lanes) {
                   count('병주 ${mark.role.name}');
