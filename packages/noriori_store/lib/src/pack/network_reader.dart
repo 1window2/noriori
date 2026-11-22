@@ -5,6 +5,10 @@ import 'package:noriori_core/noriori_core.dart';
 import '../db/user_db.dart';
 
 /// 팩의 선로망을 core가 계산할 값으로 읽는다. 세션에 한 번 읽고 메모리에 둔다.
+extension on String {
+  String? get nullIfEmpty => isEmpty ? null : this;
+}
+
 final class NetworkReader {
   const NetworkReader(this._db);
 
@@ -45,6 +49,11 @@ final class NetworkReader {
     final operators = await _rows('SELECT id, category FROM master.operator ORDER BY rowid');
     final lines = await _rows('SELECT id FROM master.line ORDER BY rowid');
     final prefs = await _rows('SELECT edge_id, pref, km FROM master.edge_pref');
+    // 기간별 노선 소속 (DESIGN §8.3). 이 표가 없는 옛 팩이면 없다
+    final hasPeriod = (await _rows("SELECT 1 FROM master.sqlite_master WHERE type = 'table' AND name = 'line_period'")).isNotEmpty;
+    final members = hasPeriod
+        ? await _rows("SELECT line_id, member_line_id, from_node, to_node, valid_from, valid_to FROM master.line_period WHERE kind = 'member' AND member_line_id IS NOT NULL AND member_line_id != ''")
+        : const <QueryRow>[];
     // 정차 기간 사이 서지 않은 때. 이 표가 없는 옛 판이면 없다
     final hasGap = (await _rows("SELECT 1 FROM master.sqlite_master WHERE type = 'table' AND name = 'route_stop_gap'")).isNotEmpty;
     final gapsOf = <String, List<NetPeriod>>{};
@@ -206,6 +215,17 @@ final class NetworkReader {
       lineOrder: [for (final row in lines) row.read<String>('id')],
       oneWays: oneWays,
       stopDirections: stopDirections,
+      members: [
+        for (final row in members)
+          NetMember(
+            lineId: row.read('line_id'),
+            memberOf: row.read('member_line_id'),
+            fromNode: row.readNullable<String>('from_node')?.nullIfEmpty,
+            toNode: row.readNullable<String>('to_node')?.nullIfEmpty,
+            validFrom: row.readNullable<String>('valid_from')?.nullIfEmpty,
+            validTo: row.readNullable<String>('valid_to')?.nullIfEmpty,
+          ),
+      ],
       eraMeters: {
         for (final row in era) '${row.read<String>('line_id')}\u0000${row.read<String>('edge_id')}': row.read<int>('m'),
       },

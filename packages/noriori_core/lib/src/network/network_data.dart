@@ -301,6 +301,7 @@ final class NetworkData {
     this.eraMeters = const {},
     this.oneWays = const [],
     this.stopDirections = const [],
+    this.members = const [],
   });
 
   final List<NetRoute> routes;
@@ -330,4 +331,21 @@ final class NetworkData {
   final Map<String, int> eraMeters;
   final List<NetOneWay> oneWays;
   final List<NetStopDirection> stopDirections;
+
+  /// 한때 다른 노선에 속했던 구간 (`line_period` kind=member, 例 柳ヶ瀬線 = 北陸本線 1909-10-12~1957-10-01, DESIGN §8.3).
+  /// [NetMember.fromNode]·[NetMember.toNode]가 없으면 노선 전체다
+  final List<NetMember> members;
+}
+
+final class NetMember {
+  const NetMember({required this.lineId, required this.memberOf, this.fromNode, this.toNode, this.validFrom, this.validTo});
+
+  final String lineId;
+  final String memberOf;
+  final String? fromNode;
+  final String? toNode;
+  final String? validFrom;
+  final String? validTo;
+
+  bool on(String day) => (validFrom == null || validFrom!.compareTo(day) <= 0) && (validTo == null || day.compareTo(validTo!) < 0);
 }

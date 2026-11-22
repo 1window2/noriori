@@ -188,6 +188,46 @@ final class SelectorRow {
   /// km만 바꾼 행 (지선·옛 경로 계통을 그날 첫 행에서 잴 때)
   SelectorRow withKm(double? km) => _withLinks(links, goneLinks, km: km);
 
+  /// 지금 연결과 그날 없던 연결을 함께 바꾼 행 (같은 노선 이어 그리기에서 이은 계통으로 가는 링크를 지울 때, DESIGN §8.3)
+  SelectorRow withLinksBoth(List<SelectorLink> links, List<SelectorLink> goneLinks) => _withLinks(links, goneLinks);
+
+  /// 같은 노선 이어 그리기(DESIGN §8.3)에서 행을 옮겨 쓸 때 바꾸는 값들.
+  SelectorRow copy({
+    int? seq,
+    StopState? state,
+    bool? selectable,
+    double? kmCum,
+    bool clearKm = false,
+    bool? kmEstimated,
+    bool clearClose = false,
+    String? closeYearAs,
+  }) =>
+      SelectorRow(
+        seq: seq ?? this.seq,
+        node: node,
+        state: state ?? this.state,
+        selectable: selectable ?? this.selectable,
+        passing: passing,
+        noBoarding: noBoarding,
+        viewOnly: viewOnly,
+        kmCum: clearKm ? null : (kmCum ?? this.kmCum),
+        links: links,
+        kmEstimated: kmEstimated ?? this.kmEstimated,
+        goneLinks: goneLinks,
+        savedAs: savedAs,
+        openYear: openYear,
+        closeYear: clearClose ? null : (closeYearAs ?? closeYear),
+        suspendedSince: suspendedSince,
+        handedTo: handedTo,
+        handedOn: handedOn,
+        closedOn: clearClose ? null : closedOn,
+        handedOnly: handedOnly,
+        beforeFloor: beforeFloor,
+        handedEnded: handedEnded,
+        hiddenAfter: hiddenAfter,
+        hiddenAbove: hiddenAbove,
+      );
+
   SelectorRow _withLinks(List<SelectorLink> links, List<SelectorLink> goneLinks,
           {double? km, List<String>? hiddenAfter, List<String>? hiddenAbove}) =>
       SelectorRow(
