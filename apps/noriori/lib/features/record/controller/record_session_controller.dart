@@ -415,6 +415,9 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     }
   }
 
+  /// 그 역 줄로 화면을 옮긴다
+  void focusOn(int seq) => state = state.copyWith(focus: seq);
+
   void _pickNode(String? node) {
     if (node == null) return;
     for (final row in state.rows) {
@@ -655,8 +658,17 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final stops = <ArchiveStop>[];
     final parallels = <ParallelRun>[];
     for (final r in stitched.used) {
+      // 열람 전용 역 km는 그 계통 기준이다. 그 계통 역 하나의 그날 km와 공식 km의 차만큼 옮긴다 (DESIGN §8.3)
+      double? shift;
+      for (final row in visible) {
+        if (stitched.origin[row.seq]?.routeId != r || row.kmCum == null) continue;
+        final official = network.stops(r).where((st) => st.node == row.node && st.kmCum != null).firstOrNull?.kmCum;
+        if (official == null) continue;
+        shift = row.kmCum! - official;
+        break;
+      }
       for (final st in await reader.archiveStops(r)) {
-        if (!stops.any((x) => x.id == st.id)) stops.add(st);
+        if (!stops.any((x) => x.id == st.id)) stops.add(shift == null || shift == 0 ? st : st.shifted(shift));
       }
       for (final run in await reader.routeParallels(r)) {
         final a = seqOf[(r, run.fromSeq)], b = seqOf[(r, run.toSeq)];

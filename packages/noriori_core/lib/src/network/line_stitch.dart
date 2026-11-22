@@ -253,9 +253,15 @@ final class _Stitch {
     final ka = rs.indexWhere((x) => x.node == a);
     final kb = b == null ? -1 : rs.indexWhere((x) => x.node == b);
     final fwd = forward ?? (kb >= 0 ? kb > ka : ka == 0);
-    final picked = fwd ? rs.sublist(ka + 1, kb >= 0 ? kb : rs.length) : rs.sublist(kb >= 0 ? kb + 1 : 0, ka).reversed.toList();
-    return [for (final row in picked) _R(row, r2)];
+    if (fwd) return [for (final row in rs.sublist(ka + 1, kb >= 0 ? kb : rs.length)) _R(row, r2)];
+    return rev([for (final row in rs.sublist(kb >= 0 ? kb + 1 : 0, ka)) _R(row, r2)]);
   }
+
+  /// 행을 거꾸로 놓는다. 거꾸로 읽은 행의 분기 자리·환승 흐름도 뒤집는다 (두 번 뒤집으면 원래대로다)
+  List<_R> rev(List<_R> list) => [
+        for (final x in list.reversed)
+          _R(x.row.withLinksBoth([for (final l in x.row.links) l.flipped()], [for (final l in x.row.goneLinks) l.flipped()]), x.route),
+      ];
 
   /// 그 링크 줄이 역 위쪽인가. 끝 이어짐은 줄의 첫 역이면 위쪽이다
   bool upOf(_R at, SelectorLink l) => l.kind == 'continue' ? identical(items.first, at) || items.first.node == at.node && items.length > 1 && items.last.node != at.node : l.side == 'up';
@@ -288,7 +294,7 @@ final class _Stitch {
         used.add(r3);
         return [
           for (final x in walk(r3, jn))
-            closed ? (_R(_closed(x.row), r3)) : x,
+            closed && date != null ? (_R(_closed(x.row), r3)) : x,
         ];
       }
     }
@@ -415,8 +421,8 @@ final class _Stitch {
           if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: false, rows: frows, period: periodNew(frows)));
         } else {
           final anchorRow = items[ia];
-          items = [...seq.reversed, ...items.sublist(ia)];
-          if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: true, rows: frows.reversed.toList(), period: periodNew(frows)));
+          items = [...rev(seq), ...items.sublist(ia)];
+          if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: true, rows: rev(frows), period: periodNew(frows)));
         }
         continue;
       }
@@ -424,13 +430,14 @@ final class _Stitch {
         // 줄 끝 너머로 곧게 이어지는 구간
         final closed = date != null && own.every((x) => !_open(x.row));
         final rowsOut = [for (final x in own) closed ? _R(_closed(x.row), x.route) : x];
-        items = up ? [...rowsOut.reversed, ...items.sublist(ia)] : [...items.sublist(0, ia + 1), ...rowsOut, ...items.sublist(ia + 1)];
+        items = up ? [...rev(rowsOut), ...items.sublist(ia)] : [...items.sublist(0, ia + 1), ...rowsOut, ...items.sublist(ia + 1)];
         continue;
       }
       // 다른 시기 선형: 갈라지는 역에 접힌 줄 하나
-      final tail = bypass ? <_R>[] : tailOf(r2, own.last.node, date != null);
+      // 오늘도 다니는 같은 노선 구간(筑肥線 山本~伊万里)은 접힌 옛 선형의 꼬리로 끌어오지 않는다. 그 구간은 칩이다
+      final tail = bypass ? <_R>[] : tailOf(r2, own.last.node, true);
       final frows = [for (final x in [...own, ...tail]) _R(x.row.copy(selectable: date == null && x.row.selectable), x.route)];
-      folds.add(_Fold(anchor: items[ia], up: up, rows: up ? frows.reversed.toList() : frows, rejoin: b, period: periodOld(own)));
+      folds.add(_Fold(anchor: items[ia], up: up, rows: up ? rev(frows) : frows, rejoin: b, period: periodOld(own)));
     }
     // 그날 열린 줄 끝에서 같은 노선 조각이 하나만 이어지면 한 줄이다 (둘 이상이면 갈라짐이라 칩)
     while (true) {

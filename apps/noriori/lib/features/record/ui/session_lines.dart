@@ -409,9 +409,11 @@ class _StopTile extends ConsumerWidget {
     // 1950년 전에 정차가 끝난 역은 열람 전용 역과 같은 꽉 찬 작은 점이다 (사용자 결정 2026-11-08)
     final archived = row.beforeFloor;
     final circle = archived ? 3.5 : (tier3 && !fade ? 4.5 : 8.5);
+    // 접힌 선형 안 역은 고를 수 있어도(날짜 모름) 분기선과 같은 짙은 회색 테다 (DESIGN §8.3)
+    final inFold = FoldView.of(context)?.ctx.containsKey(line) ?? false;
     final ring = end || picked || mark != StationMark.none
         ? tokens.lineRidden
-        : (tier3 ? tokens.textClosed : tokens.text);
+        : (tier3 ? tokens.textClosed : (inFold ? tokens.lineUnridden : tokens.text));
     final count = line.transfers.fold(0, (sum, group) => sum + group.items.length);
     final spoken = [
       name,

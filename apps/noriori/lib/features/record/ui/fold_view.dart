@@ -69,6 +69,9 @@ final class FoldLayout {
   final void Function(FoldLine fold) toggle;
 }
 
+/// 디버그 화면 대조용: 접힌 줄을 모두 펼친 채로 연다 (lib/app/debug_open.dart)
+bool debugOpenAllFolds = false;
+
 /// 접힌 선형 열쇠 (열고 닫음을 기억한다).
 String foldKey(FoldLine f) => '${f.fold.anchor}:${f.fold.up}:${f.fold.period}';
 
@@ -104,7 +107,7 @@ FoldLayout layoutFolds(
     if (line is! FoldLine) continue;
     final f = line.fold;
     final color = foldColor(line, tokens);
-    final isOpen = f.single || open.contains(foldKey(line));
+    final isOpen = f.single || debugOpenAllFolds || open.contains(foldKey(line));
     final anchorStop = stops[stopIndexOf(f.anchor)];
     final rejoinAt = f.rejoin == null ? -1 : stopIndexOf(f.rejoin!);
     final trunk = FoldTrunk(
@@ -161,7 +164,7 @@ FoldLayout layoutFolds(
   for (final line in lines) {
     if (line is FoldLine) {
       // 아래로 붙으면 머리 아래로, 위로 붙으면 머리 위로 편다. 머리는 늘 붙는 역 바로 옆이다 (목업과 같다)
-      final shownInner = !inserts.containsKey(line) && (line.fold.single || open.contains(foldKey(line)));
+      final shownInner = !inserts.containsKey(line) && (line.fold.single || debugOpenAllFolds || open.contains(foldKey(line)));
       if (line.fold.up && shownInner) out.addAll(line.lines);
       if (!line.fold.single) out.add(line); // 머리
       if (!line.fold.up && shownInner) out.addAll(line.lines);
@@ -389,7 +392,8 @@ CustomPainter foldPaint(
 }
 
 /// 접힌 선형 안에서 글자까지 통째로 옮기는 줄
-bool foldPadded(SelectorLine line) => line is BranchLine || line is EndLine || line is NoticeLine;
+/// 안내 상자는 옮기지 않는다(목업과 같다: 본선 안내 상자와 같은 자리)
+bool foldPadded(SelectorLine line) => line is BranchLine || line is EndLine;
 
 /// 접힌 줄 머리로 가는 붙는 역의 어깨 곡선 색. 해당 없으면 null
 Color? foldShoulder(
@@ -417,7 +421,7 @@ class FoldHeadTile extends ConsumerWidget {
     final text = Theme.of(context).textTheme;
     final state = ref.watch(recordSessionProvider);
     final f = line.fold;
-    final open = layout?.open.contains(foldKey(line)) ?? false;
+    final open = debugOpenAllFolds || (layout?.open.contains(foldKey(line)) ?? false);
     final color = foldColor(line, tokens);
     final rows = f.rows.rows;
     // 위로 붙으면 목록 아래쪽(붙는 역 쪽)이 다음 역이다

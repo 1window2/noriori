@@ -23,6 +23,10 @@ final class ArchiveStop {
 
   /// 그 계통 진행 방향의 순번(archive_stop.seq, DESIGN §4.5). 같은 자리에 여럿이면 이 순서다. 옛 팩에는 없다.
   final int? seq;
+
+  /// km만 옮긴 열람 전용 역 (같은 노선 이어 그리기에서 그날 영업거리로 옮길 때, DESIGN §8.3)
+  ArchiveStop shifted(double by) =>
+      ArchiveStop(id: id, afterNode: afterNode, beforeNode: beforeNode, closedYear: closedYear, km: km == null ? null : ((km! + by) * 10).roundToDouble() / 10, seq: seq);
 }
 
 /// 열람 전용 노선. 역에서 갈라지는 줄로만 보인다.
@@ -427,7 +431,28 @@ List<SelectorLine> foldInner(List<SelectorLine> lines, {String period = '', Set<
         EndLine(:final at) => edges.contains(at.seq),
         _ => false,
       };
-  final kept = [for (final l in lines) if (!edge(l)) l];
+  // 접힌 선형 안 역은 폐역 해를 늘 적는다. 같은 해 폐지 괄호가 없으니(문구의 기간이 대신) 줄마다 「~1973」이 남아야 한다 (목업과 같다)
+  final kept = [
+    for (final l in lines)
+      if (!edge(l))
+        if (l is StopLine && l.quiet)
+          StopLine(
+            index: l.index,
+            row: l.row,
+            transfers: l.transfers,
+            branchUp: l.branchUp,
+            branchDown: l.branchDown,
+            small: l.small,
+            branchUpGone: l.branchUpGone,
+            branchDownGone: l.branchDownGone,
+            returnsTo: l.returnsTo,
+            endUp: l.endUp,
+            endDown: l.endDown,
+            lanes: l.lanes,
+          )
+        else
+          l,
+  ];
   final stops = [for (final l in kept) if (l is StopLine) l.row.seq];
   if (stops.isEmpty) return kept;
   // 역 하나뿐인 선형(「]」)은 접힌 칸이 없어 괄호를 그리지 않는다. 역 줄의 「1978~」·「~1968」이 대신한다

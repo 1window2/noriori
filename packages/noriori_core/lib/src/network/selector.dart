@@ -48,6 +48,30 @@ final class SelectorLink {
 
   /// 끝 역 이어짐에서 열차가 진행 방향을 바꿔 상대 노선으로 들어가던 기간들(스위치백 직통, route_link_reverse, 11회차 S3). 표가 없는 옛 판은 비었다
   final List<ReverseSpan> reverseSpans;
+
+  /// 계통을 거꾸로 읽을 때의 연결: 분기 자리(위·아래)와 환승 흐름(위·아래)이 뒤집힌다 (같은 노선 이어 그리기, DESIGN §8.3)
+  SelectorLink flipped() {
+    String? swap(String? v) => switch (v) {
+          'up' => 'down',
+          'down' => 'up',
+          _ => v,
+        };
+    return SelectorLink(
+      seq: seq,
+      kind: kind,
+      otherLineId: otherLineId,
+      otherRouteId: otherRouteId,
+      validFromLo: validFromLo,
+      validToHi: validToHi,
+      side: swap(side),
+      flow: swap(flow),
+      otherNode: otherNode,
+      nextStop: nextStop,
+      terminal: terminal,
+      midway: midway,
+      reverseSpans: reverseSpans,
+    );
+  }
 }
 
 /// 스위치백 직통 표식 기간 하나. [lo]는 시작 하한, [hi]는 끝 상한이다(끝나지 않았으면 [DateSpan.maxDate]).
