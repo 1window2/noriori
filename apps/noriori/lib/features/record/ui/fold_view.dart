@@ -1,4 +1,5 @@
 import 'dart:collection';
+import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
 import 'package:noriori_core/noriori_core.dart';
@@ -18,6 +19,9 @@ import 'session_painters.dart';
 /// 접힌 선형의 줄은 일반 줄과 같은 타일로 그리되 그림만 [foldShift]만큼 오른쪽 칸으로 옮긴다. 글자는 본선 역과 같은 줄이다.
 /// 본선 줄기는 그 아래를 그대로 지나간다
 const double foldShift = SelectorRuler.nodeX - SelectorRuler.trunkX;
+
+/// 접힌 선형 안 분기·끝 이어짐 줄의 글자를 미는 폭. 분기는 절반 폭으로 그려 원이 본선 글자 칸 바로 앞에 선다
+const double foldTextShift = 16;
 
 /// 접힌 선형 줄기의 굵기 (분기선과 같다).
 const double foldWidth = 2.5;
@@ -211,21 +215,16 @@ class FoldTrunk extends TrunkStyle {
 
   @override
   TrunkPiece? gap(int gap) {
-    final rows = fold.fold.rows;
-    final last = rows.rows.length - 1;
-    // 머리 쪽 끝은 머리로 잇고, 반대쪽 끝은 본선으로 돌아올 때만 잇는다. 위로 붙으면 머리가 아래쪽 끝이다
-    final headSide = fold.fold.up ? gap >= last : gap == -1;
-    final farSide = fold.fold.up ? gap == -1 : gap >= last;
-    if (headSide) return TrunkPiece(color, foldWidth);
-    if (farSide) return rejoins ? TrunkPiece(color, foldWidth) : null;
-    if (gap < 0) return null;
-    final open = gap >= rows.openGaps.length || rows.openGaps[gap];
-    return TrunkPiece(
-      open && rows.rows.any((row) => row.selectable)
-          ? color
-          : tokens.selectorGone,
-      foldWidth,
-    );
+    // 접힌 선형 안 줄의 칸 번호는 붙는 역(·돌아오는 역)을 더한 행(frame) 기준이다 (DESIGN §8.3)
+    final frame = fold.fold.frame;
+    if (frame == null) return null;
+    final rows = frame.rows;
+    if (gap < 0 || gap >= rows.length - 1) return null;
+    final edges = {fold.fold.anchor, ?fold.fold.rejoin};
+    // 붙는 역·돌아오는 역에 닿는 칸은 머리·돌아오는 곡선으로 잇는다
+    if (edges.contains(rows[gap].seq) || edges.contains(rows[gap + 1].seq)) return TrunkPiece(color, foldWidth);
+    final open = gap >= frame.openGaps.length || frame.openGaps[gap];
+    return TrunkPiece(open && fold.fold.rows.rows.any((row) => row.selectable) ? color : tokens.selectorGone, foldWidth);
   }
 }
 
@@ -278,15 +277,20 @@ class FoldPainter extends CustomPainter {
       // 본선 줄기와 같은 그리기(점선·이관 점선 박자 포함)로 긋는다
       if (padded) {
         canvas.save();
-        canvas.translate(-foldShift, 0);
+        canvas.translate(-foldTextShift, 0);
         paintTrunk(canvas, pass, 0, size.height);
         canvas.restore();
       } else {
         paintTrunk(canvas, pass, 0, size.height);
       }
       canvas.save();
-      if (!padded) canvas.translate(foldShift, 0);
-      inner.paint(canvas, size);
+      canvas.translate(padded ? foldShift - foldTextShift : foldShift, 0);
+      SelectorRuler.compact = true;
+      try {
+        inner.paint(canvas, size);
+      } finally {
+        SelectorRuler.compact = false;
+      }
       canvas.restore();
       return;
     }
@@ -344,10 +348,9 @@ class FoldPainter extends CustomPainter {
     inner.paint(canvas, size);
   }
 
+  /// [from]에서 진하게 시작해 [to]에서 사라진다. 선 방향을 따라 옅어진다
   void _fade(Canvas canvas, Offset from, Offset to, Color color) {
-    final paint = _p(color, foldWidth)
-      ..shader = LinearGradient(colors: [color, color.withValues(alpha: 0)])
-          .createShader(Rect.fromPoints(from, to.translate(0.01, 0.01)));
+    final paint = _p(color, foldWidth)..shader = ui.Gradient.linear(from, to, [color, color.withValues(alpha: 0)]);
     canvas.drawLine(from, to, paint);
   }
 

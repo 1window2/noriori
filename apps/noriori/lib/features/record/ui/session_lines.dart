@@ -209,7 +209,7 @@ class SessionLineTile extends StatelessWidget {
       final overlay = BracketOverlay(brackets, nodeY: line is ArchiveLine ? 18 : null);
       tile = CustomPaint(foregroundPainter: inFold && !padded ? FoldPainter(overlay, ctx: null, centerY: 24, shiftOnly: true) : overlay, child: tile);
     }
-    if (padded) tile = Padding(padding: const EdgeInsets.only(left: foldShift), child: tile);
+    if (padded) tile = Padding(padding: const EdgeInsets.only(left: foldTextShift), child: tile);
     if (mainBrackets.isNotEmpty) tile = CustomPaint(foregroundPainter: BracketOverlay(mainBrackets), child: tile);
     final fb = foldBracket;
     return fb == null ? tile : CustomPaint(foregroundPainter: FoldBracketOverlay(fb.pieces, nodeY: fb.nodeY, reach: fb.reach), child: tile);
@@ -1447,9 +1447,9 @@ class _NoticeTile extends ConsumerWidget {
     final top = line.top.seq;
     int? gap;
     if (style is FoldTrunk) {
-      final rows = style.fold.fold.rows.rows;
+      final rows = (style.fold.fold.frame ?? style.fold.fold.rows).rows;
       final at = rows.indexWhere((row) => row.seq == top);
-      gap = at >= 0 ? at : (style.fold.fold.up ? rows.length - 1 : -1);
+      gap = at >= 0 ? at : null;
     } else {
       final at = style.state.visible.indexWhere((row) => row.seq == top);
       gap = at >= 0

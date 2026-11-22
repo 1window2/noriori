@@ -20,6 +20,13 @@ abstract final class SelectorRuler {
   static const bend = 6.0;
   static const openWidth = 7.0;
   static const closedWidth = 4.0;
+
+  /// 접힌 선형 안의 분기·끝 이어짐은 폭을 절반으로 줄여 그린다. 글자 칸을 침범하지 않는다 (DESIGN §8.3).
+  /// 접힌 선형 줄을 그리는 동안만 참이다 (FoldPainter)
+  static bool compact = false;
+  static double get stem => compact ? 84.0 : stemX;
+  static double get node => compact ? 93.0 : nodeX;
+  static double get curve => compact ? 4.0 : bend;
 }
 
 /// 줄기 한 칸.
@@ -310,8 +317,8 @@ class StopPainter extends CustomPainter {
     if (eu != null && above == null) canvas.drawLine(const Offset(x, 0), Offset(x, y), _stroke(eu, 2.5));
     final ed = endDown;
     if (ed != null && below == null) canvas.drawLine(Offset(x, y), Offset(x, size.height), _stroke(ed, 2.5));
-    const sx = SelectorRuler.stemX;
-    const r = SelectorRuler.bend;
+    final sx = SelectorRuler.stem;
+    final r = SelectorRuler.curve;
     // 끝 역 너머로 줄기가 이어지면(폐지 구간·열람 전용 줄) 끝 이어짐은 분기처럼 어깨로 비켜 나간다
     final up = stemUp ?? (above != null ? eu : null);
     if (up != null) {
@@ -319,7 +326,7 @@ class StopPainter extends CustomPainter {
         Path()
           ..moveTo(x, y)
           ..lineTo(sx - r, y)
-          ..arcToPoint(const Offset(sx, 0) + Offset(0, y - r), radius: const Radius.circular(r), clockwise: false)
+          ..arcToPoint(Offset(sx, y - r), radius: Radius.circular(r), clockwise: false)
           ..lineTo(sx, 0),
         _stroke(up, 2.5),
       );
@@ -330,7 +337,7 @@ class StopPainter extends CustomPainter {
         Path()
           ..moveTo(x, y)
           ..lineTo(sx - r, y)
-          ..arcToPoint(Offset(sx, y + r), radius: const Radius.circular(r))
+          ..arcToPoint(Offset(sx, y + r), radius: Radius.circular(r))
           ..lineTo(sx, size.height),
         _stroke(down, 2.5),
       );
@@ -477,14 +484,14 @@ class BranchPainter extends CustomPainter {
     final dots = endThrough;
     if (dots != null) {
       // 줄기가 이 줄을 지나가면 끝 이어짐 점선은 분기 줄기 칸으로 비켜 선다 (EndPainter와 같음)
-      final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stemX;
+      final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stem;
       // 끝 이어짐 줄은 점선이 아니라 노드에서 이어지는 실선이고 끝 줄에서만 옅어진다. 지나가는 줄도 같은 굵기의 실선이다
       // (사용자 결정 2026-11-19, 森의 渡島海岸鉄道 줄에서 점선이 남아 있었다 2026-11-20)
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(dots, 2.5));
     }
-    const sx = SelectorRuler.stemX;
-    const r = SelectorRuler.bend;
-    const q = SelectorRuler.nodeX;
+    final sx = SelectorRuler.stem;
+    final r = SelectorRuler.curve;
+    final q = SelectorRuler.node;
     final y = centerY;
     paintLanes(canvas, size, lanes, laneStyle, y);
     final lane = parallel;
@@ -496,12 +503,12 @@ class BranchPainter extends CustomPainter {
           ? (Path()
             ..moveTo(q - 5, y)
             ..lineTo(lx + r, y)
-            ..arcToPoint(Offset(lx, y + r), radius: const Radius.circular(r), clockwise: false)
+            ..arcToPoint(Offset(lx, y + r), radius: Radius.circular(r), clockwise: false)
             ..lineTo(lx, size.height))
           : (Path()
             ..moveTo(lx, 0)
             ..lineTo(lx, y - r)
-            ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r), clockwise: false)
+            ..arcToPoint(Offset(lx + r, y), radius: Radius.circular(r), clockwise: false)
             ..lineTo(q - 5, y));
       canvas.drawPath(path, _stroke(color, 2.5));
       canvas.drawCircle(Offset(q, y), 5, Paint()..color = background);
@@ -523,17 +530,17 @@ class BranchPainter extends CustomPainter {
       path
         ..moveTo(x, y - r - 6)
         ..lineTo(x, y - r)
-        ..arcToPoint(Offset(x + r, y), radius: const Radius.circular(r), clockwise: false)
+        ..arcToPoint(Offset(x + r, y), radius: Radius.circular(r), clockwise: false)
         ..lineTo(q - 5, y);
     } else if (up) {
       path
         ..moveTo(sx, y + r)
-        ..arcToPoint(Offset(sx + r, y), radius: const Radius.circular(r))
+        ..arcToPoint(Offset(sx + r, y), radius: Radius.circular(r))
         ..lineTo(q - 5, y);
     } else {
       path
         ..moveTo(sx, y - r)
-        ..arcToPoint(Offset(sx + r, y), radius: const Radius.circular(r), clockwise: false)
+        ..arcToPoint(Offset(sx + r, y), radius: Radius.circular(r), clockwise: false)
         ..lineTo(q - 5, y);
     }
     strokes.add((color, () => canvas.drawPath(path, _stroke(color, 2.5))));
@@ -602,7 +609,7 @@ class EndPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     _trunk(canvas, trunk, 0, size.height);
-    final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stemX;
+    final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stem;
     final y = size.height / 2;
     paintLanes(canvas, size, lanes, laneStyle, y);
     final lane = parallel;
