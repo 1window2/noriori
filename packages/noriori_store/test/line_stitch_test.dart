@@ -54,6 +54,10 @@ void main() {
   test('室蘭本線: 志文–岩見沢 옛 선로는 칩 없이 그날의 길과 km만', () async {
     final y1965 = await stitch('l_muroran_main_line', '1965-06-01');
     expect(km(y1965, 'n_iwamizawa'), 209.3);
+    // 추정 km 역(崎守町) 뒤의 옛 선형 역과 그 너머도 확실한 역에서 잴 수 있으면 「?」가 아니다
+    expect(y1965.main.rows.firstWhere((r) => r.node == 'n_jinyamachi').kmEstimated, isFalse);
+    expect(y1965.main.rows.firstWhere((r) => r.node == 'n_moto_wanishi').kmEstimated, isFalse);
+    expect(y1965.main.rows.firstWhere((r) => r.node == 'n_iwamizawa').kmEstimated, isFalse);
     expect(y1965.used, contains('r_muroran_main_line_shibun_iwamizawa'));
     final now = await stitch('l_muroran_main_line', today);
     expect(km(now, 'n_iwamizawa'), 211.0);

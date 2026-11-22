@@ -561,6 +561,20 @@ final class _Stitch {
 
   double _round(double v) => (v * 10).roundToDouble() / 10;
 
+  /// [nodes]를 모두 지나는 계통 (그날 이은 계통 가운데, [prefer]를 먼저)
+  String? _through(List<String> nodes, String prefer) {
+    for (final r in {prefer, ...used}) {
+      final on = {for (final st in net.stops(r)) st.node};
+      if (nodes.every(on.contains)) return r;
+    }
+    return null;
+  }
+
+  ({double d, bool est})? _distOn(String r, String a, String b) {
+    final x = _official(r, a), y = _official(r, b);
+    return x == null || y == null ? null : (d: (y.km - x.km).abs(), est: x.est || y.est);
+  }
+
   /// 그날의 영업거리 (결정 A): 그날 다닌 길의 구간 거리를 잇는다
   List<_R> _chain(List<_R> list) {
     if (list.isEmpty) return list;
@@ -608,10 +622,10 @@ final class _Stitch {
       }
       // 추정 km 역은 다음 역을 재는 기준이 되지 않는다. 확실한 역에서 바로 잴 수 있으면 「?」가 번지지 않는다.
       // 못 재면(한 계통에 함께 없거나 고리를 닫는 같은 역) 바로 앞 역에서 잰다
-      // 사이에 다른 계통(그날 이은 선형)이 끼면 그날의 길이 아니므로 앞 역에서 잇는다
-      final sameRoute = [for (var j = last; j <= k; j++) list[j].route].toSet().length == 1;
+      // 사이 역을 모두 지나는 계통 하나가 있어야 그날의 길이다. 없으면 앞 역에서 잇는다
+      final through = list[last].node == x.node ? null : _through([for (var j = last; j <= k; j++) list[j].node], x.route);
       var from = last;
-      var d = list[last].node == x.node || !sameRoute ? null : _dist(list[last], x);
+      var d = through == null ? null : _distOn(through, list[last].node, x.node);
       if (d == null && prev >= 0) {
         from = prev;
         d = _dist(list[prev], x);
