@@ -958,6 +958,7 @@
 - {"id": "hub_kami_ita", "nodes": ["n_kami_ita", "n_kamiita"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_chinzeibashi", "nodes": ["n_chinzeibashi", "n_higashihommachi", "n_idemitsu_art_museum"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_sakuramachi_nagasaki_old", "nodes": ["n_sakuramachi_nagasaki_old", "n_sakuramachi_nagasaki_tram"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_saishun_iryo_center_mae", "nodes": ["n_saishun_iryo_center_mae", "n_saishun_iryo_center_mae_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_miyoshi_kumamoto", "nodes": ["n_miyoshi_kumamoto", "n_miyoshi_kumamoto_old"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_fujisakigu_mae", "nodes": ["n_fujisakigu_mae", "n_fujisakigumae", "n_hirocho", "n_hirocho_kumamoto_city"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_senri_chuo_kita_osaka_kyuko", "nodes": ["n_senri_chuo_kita_osaka_kyuko", "n_senri_chuo_osaka_monorail"], "source": ["station_database", "proximity_300m"], "verified": false}

@@ -887,6 +887,12 @@ class App:
                     nodes=[p[0][0]] + [m for _, _, m in p], hidden=[
                         m for _, _, m in p if m not in self.public])
 
+    def expand_line(self, line_id, a, b, date=None):
+        """같은 노선의 모든 계통을 합쳐 펼친다 (앱 RouteResolver.acrossRoutes·같은 노선 이어 그리기 §8.3 흉내).
+        옛 선형은 따로 계통이라(2번안 2026-11-23) 그날의 길이 계통마다 leg로 나뉜다. 날짜 모름은 오늘의 길이다"""
+        rids = [r for r, v in self.routes.items() if v["line_id"] == line_id]
+        return self.expand_cross(a, b, normalize_date(date) or self.today, rids)
+
     def expand_any(self, route_id, a, b, date=None):
         """선택기에서 고른 두 역을 펼친다. extend_to 역이면 그 역이 속한 계통으로 leg를 나눈다 (§2.7)."""
         ext = set([])
@@ -1301,19 +1307,21 @@ def scenarios(A, R):
           "払川" not in names18 and "八木沢・宮古短大" not in names18 and "津軽石" in names18)
 
     # ---- D. 이설 --------------------------------------------------------
-    r = "r_agatsuma_line"
+    # 옛 선형은 따로 계통이다(옛 선로 별도 계통 2번안, 사용자 결정 2026-11-23). 앱은 같은 노선 계통을 이어 그날의 길로 펼치고 계통마다 나눠 저장한다
+    r, L = "r_agatsuma_line", "l_agatsuma_line"
     a, b = "n_iwashima", "n_naganohara_kusatsuguchi"
-    x, y, u = A.expand(r, a, b, "2010-06-01"), A.expand(r, a, b, "2020-06-01"), A.expand(r, a, b, None)
-    bd1, bd2 = A.expand(r, a, b, "2014-09-30"), A.expand(r, a, b, "2014-10-01")
-    R.add("D1", "吾妻線 岩島→長野原草津口", "2010 11.8km(옛), 2020 11.5km(새), 경계 2014-09-30 옛/10-01 새, 날짜 모름은 needs_input 2안",
-          f"{x['km']} / {y['km']} / {bd1['km']},{bd2['km']} / {u['status']} {u.get('options')}",
-          approx(x["km"], 11.8) and approx(y["km"], 11.5) and u["status"] == "needs_input" and len(u["options"]) == 2)
-    v = A.expand(r, "n_shibukawa", "n_omae", None, resolve_unknown=True)
-    w = A.expand(r, "n_shibukawa", "n_omae", None, as_of="2010-01-01")
-    R.add("D1b", "吾妻線 渋川→大前 날짜 모름: 모름(partial) / 옛 선로(as_of)", "partial=공통 구간 43.8km, as_of 2010=55.6km", f"{v['status']} {v['km']} / {w['status']} {w['km']}", v["status"] == "partial" and approx(v["km"], 43.8) and approx(w["km"], 55.6))
-    p = {q["node"]: q for q in A.picker(r, "2010-06-01")}
-    R.add("D1c", "吾妻線 2010 역 선택기 표시 km (§8 고른 날짜)", "長野原草津口 42.3 (route_stop km_cum 42.0은 현행값)", f"km_cum {p['n_naganohara_kusatsuguchi']['km_cum']} / 날짜 계산 {p['n_naganohara_kusatsuguchi']['km_on_date']}",
-          approx(p["n_naganohara_kusatsuguchi"]["km_on_date"], 42.3), "km_cum은 한 값이라 앱이 edge로 다시 더해야 함")
+    x, y, u = A.expand_line(L, a, b, "2010-06-01"), A.expand_line(L, a, b, "2020-06-01"), A.expand_line(L, a, b, None)
+    bd1, bd2 = A.expand_line(L, a, b, "2014-09-30"), A.expand_line(L, a, b, "2014-10-01")
+    old_r = "r_agatsuma_line_iwashima_naganohara_kusatsuguchi"
+    R.add("D1", "吾妻線 岩島→長野原草津口", "2010 11.8km(옛 선형 계통 leg), 2020 11.5km(새), 경계 2014-09-30 옛/10-01 새, 날짜 모름은 오늘의 길 11.5",
+          f"{x['km']} {list(x.get('legs', {}))} / {y['km']} / {bd1['km']},{bd2['km']} / {u['status']} {u['km']}",
+          approx(x["km"], 11.8) and old_r in x.get("legs", {}) and approx(y["km"], 11.5) and approx(bd1["km"], 11.8) and approx(bd2["km"], 11.5) and u["status"] == "ok" and approx(u["km"], 11.5))
+    v = A.expand_line(L, "n_shibukawa", "n_omae", None)
+    w = A.expand_line(L, "n_shibukawa", "n_omae", "2010-01-01")
+    R.add("D1b", "吾妻線 渋川→大前 날짜 모름(오늘의 길) / 2010(옛 선형)", "날짜 모름 55.3km(새), 2010 55.6km(옛, 두 계통 leg: 본 계통·옛 선형 계통)", f"{v['status']} {v['km']} / {w['status']} {w['km']} {list(w.get('legs', {}))}",
+          v["status"] == "ok" and approx(v["km"], 55.3) and approx(w["km"], 55.6) and len(w.get("legs", {})) == 2)
+    z = A.expand_line(L, "n_shibukawa", "n_naganohara_kusatsuguchi", "2010-06-01")
+    R.add("D1c", "吾妻線 2010 渋川→長野原草津口 그날 영업거리 (§8.3 A)", "42.3 (옛 선형 계통을 이어 잼, 지금 km 42.0과 다름)", f"{z['km']}", approx(z["km"], 42.3))
     ride10, ride20 = A.ride_of(x, "2010-06-01"), A.ride_of(y, "2020-06-01")
     es = set(x["edges"]) | set(y["edges"])
     c1 = A.completion([ride10], "current", "on", es)
@@ -1325,22 +1333,22 @@ def scenarios(A, R):
     y14 = A.completion([], "2014", "on", es)
     R.add("D1e", "吾妻선 2014 연도 분모 (이설한 해)", "옛+새 함께 23.3km", f"{y14['den_km']} ({y14['den_units']}단위)", y14["den_km"] == 23.3)
 
-    r = "r_joban_line"
+    r, L = "r_joban_line", "l_joban_line"
     a, b = A.find_node(r, "駒ヶ嶺")[0], "n_hamayoshida"
-    x, y, u = A.expand(r, a, b, "2010-06-01"), A.expand(r, a, b, "2020-06-01"), A.expand(r, a, b, None)
-    R.add("D2", "常磐線 駒ケ嶺→浜吉田", "2010 18.2km(옛), 2020 18.8km(새, 2016-12-10), 날짜 모름 2안", f"{x['km']} / {y['km']} / {u['status']} {u.get('options')}",
-          approx(x["km"], 18.2) and approx(y["km"], 18.8) and u["status"] == "needs_input" and len(u["options"]) == 2)
-    st = A.record(r, a, b, "2013-06-01")
+    x, y, u = A.expand_line(L, a, b, "2010-06-01"), A.expand_line(L, a, b, "2020-06-01"), A.expand_line(L, a, b, None)
+    R.add("D2", "常磐線 駒ケ嶺→浜吉田", "2010 18.2km(옛 선형 계통), 2020 18.8km(새, 2016-12-10), 날짜 모름은 오늘의 길 18.8", f"{x['km']} {list(x.get('legs', {}))} / {y['km']} / {u['status']} {u['km']}",
+          approx(x["km"], 18.2) and "r_joban_line_komagamine_hamayoshida" in x.get("legs", {}) and approx(y["km"], 18.8) and u["status"] == "ok" and approx(u["km"], 18.8))
+    st = A.record("r_joban_line_komagamine_hamayoshida", a, b, "2013-06-01")
     R.add("D2b", "常磐線 駒ケ嶺→浜吉田 2013 (2011~2016 불통)", "운휴 → 날짜 모름", f"saved_date={st['saved_date']} demoted={st['demoted']} km={st['km']}", st["demoted"], "옛 edge가 2016-12-10까지 open")
 
     # 女川는 역 이전 옛 자리 노드(n_onagawa_old, 2015-03-21 전)와 새 자리 노드가 따로다 (wiki_insert_moves relabel, 재설계 결정 7).
     # 2010은 옛 자리까지 2.5km, 2020은 새 자리까지 2.3km, 2010에 새 자리는 그날 경로가 없다
-    r = "r_ishinomaki_line"
+    r, L = "r_ishinomaki_line", "l_ishinomaki_line"
     a, b, b0 = "n_urashuku", "n_onagawa", "n_onagawa_old"
-    x, y, u, v = A.expand(r, a, b0, "2010-06-01"), A.expand(r, a, b, "2020-06-01"), A.expand(r, a, b, None), A.expand(r, a, b, "2010-06-01")
+    x, y, u, v = A.expand_line(L, a, b0, "2010-06-01"), A.expand_line(L, a, b, "2020-06-01"), A.expand_line(L, a, b, None), A.expand_line(L, a, b, "2010-06-01")
     R.add("D3", "石巻線 浦宿→女川", "2010 女川(旧) 2.5km, 2020 女川 2.3km(2015-03-21), 2010 새 자리 그날 경로 없음, 날짜 모름 새 자리 2.3km", f"{x['km']} / {y['km']} / {v['status']} / {u['status']} {u['km']}",
           approx(x["km"], 2.5) and approx(y["km"], 2.3) and v["status"] == "invalid" and u["status"] == "ok" and approx(u["km"], 2.3))
-    st = A.record(r, a, b0, "2013-06-01")
+    st = A.record("r_ishinomaki_line_urashuku_onagawa_old", a, b0, "2013-06-01")
     R.add("D3b", "石巻線 浦宿→女川 2013 (2011~2015 불통)", "운휴 → 날짜 모름", f"saved_date={st['saved_date']} demoted={st['demoted']}", st["demoted"], "옛 edge가 2015-03-21까지 open")
     xx = A.db.execute("SELECT count(*), sum(successor_edge_id IS NULL) FROM edge_link").fetchone()
     R.add("D4", "edge_link (옛 선로 → 새 선로)", "successor_edge_id가 새 edge를 가리킴", f"{xx[0]}행 중 NULL {xx[1]}", xx[1] == 0, "우회: 같은 양 끝 + valid_to=valid_from")
@@ -1866,6 +1874,10 @@ def sweep(A, R):
     rows = A.db.execute("SELECT route_id,seq,other_line_id,valid_from,valid_to FROM route_link WHERE kind='continue'").fetchall()
     ends = 0
     for r in rows:
+        # 같은 노선 계통끼리의 이음(본 계통 → 옛 선형 계통, 相馬 1898–1952)은 앱이 한 줄로 이어 그려(§8.3) 따로 그리지 않는다
+        if r["other_line_id"] == A.routes[r["route_id"]]["line_id"]:
+            ends += 1
+            continue
         st = A._stops[r["route_id"]]
         seqs = [s["seq"] for s in st]
         # 계통 끝 너머 확장 행에 단 끝 이어짐(吾妻橋線 本所吾妻橋, 9회차 L)은 계통 끝 바깥이라 끝 이음이다
@@ -1915,8 +1927,8 @@ def sweep(A, R):
     # S14 재해 운휴 복구 사례
     known = [("山田線 宮古→釜石 2015", "r_yamada_line", "宮古", "釜石", "2015-01-01"),
              ("常磐線 竜田→富岡 2015", "r_joban_line", "竜田", "富岡", "2015-01-01"),
-             ("石巻線 浦宿→女川 2013", "r_ishinomaki_line", "浦宿", "女川（旧）", "2013-06-01"),
-             ("仙石線 高城町→陸前小野 2013", "r_senseki_line", "高城町", "陸前小野", "2013-06-01"),
+             ("石巻線 浦宿→女川 2013", "r_ishinomaki_line_urashuku_onagawa_old", "浦宿", "女川（旧）", "2013-06-01"),
+             ("仙石線 陸前大塚→陸前小野 2013", "r_senseki_line_rikuzen_otsuka_rikuzen_ono", "陸前大塚", "陸前小野", "2013-06-01"),
              ("只見線 会津川口→只見 2015", "r_tadami_line", "会津川口", "只見", "2015-06-01"),
              ("名松線 家城→伊勢奥津 2012", "r_meisho_line", "家城", "伊勢奥津", "2012-06-01"),
              ("日高本線 鵡川→様似 2018", "r_hidaka_main_line", "鵡川", "様似", "2018-06-01"),

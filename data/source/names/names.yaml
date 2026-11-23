@@ -29212,6 +29212,9 @@
 - {"entity_type": "node", "id": "n_kikuchi", "lang": "ja", "text": "菊池", "kana": "きくち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kikuchi", "lang": "ko", "text": "키쿠치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kikuchi", "lang": "en", "text": "Kikuchi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "ja", "text": "再春医療センター前（旧）", "kana": "さいしゅんいりょうせんたーまえ", "source": "wikipedia", "reading_source": "auto:station_db"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "ko", "text": "사이슌이료센터마에(구)", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "en", "text": "Saishun'iryo Center-mae (old)", "source": "rule"}
 - {"entity_type": "node", "id": "n_higashi_takashima", "lang": "ja", "text": "東高島", "kana": "ひがしたかしま", "source": "noritsubushi", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_takashima_freight", "lang": "ja", "text": "高島", "source": "noritsubushi", "kana": "たかしま", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_tabata_signal", "lang": "ja", "text": "田端信号場", "source": "noritsubushi", "kana": "たばたしんごうじょう", "reading_source": "hand:node_fix"}
@@ -50433,8 +50436,8 @@
 - {"entity_type": "node", "id": "n_kumamoto_kosen_mae", "lang": "ko", "text": "덴파코센마에", "source": "rule", "valid_to": "2013-03-31", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kumamoto_kosen_mae", "lang": "en", "text": "Dempakosemmae", "source": "rule", "valid_to": "2013-03-31"}
 - {"entity_type": "node", "id": "n_saishun_iryo_center_mae", "lang": "ja", "text": "再春荘前", "source": "wikipedia", "valid_from": "1965-10-16", "valid_to": "2019-10-01", "kana": "さいしゅんそうまえ"}
-- {"entity_type": "node", "id": "n_saishun_iryo_center_mae", "lang": "ko", "text": "사이슌소마에", "source": "hand", "valid_from": "1965-10-16", "valid_to": "2019-10-01", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_saishun_iryo_center_mae", "lang": "en", "text": "Saishunsomae", "source": "hand", "valid_from": "1965-10-16", "valid_to": "2019-10-01"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "ko", "text": "사이슌소마에", "source": "hand", "valid_from": "1965-10-16", "valid_to": "2019-10-01", "checked": "2026-11-20"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "en", "text": "Saishunsomae", "source": "hand", "valid_from": "1965-10-16", "valid_to": "2019-10-01"}
 - {"entity_type": "node", "id": "n_chiba_minato_chiba_urban_monorail", "lang": "ja", "text": "千葉港", "source": "wikipedia", "valid_from": "1986-03-03", "valid_to": "1992-03-14"}
 - {"entity_type": "node", "id": "n_shibahara_handai_mae", "lang": "ja", "text": "柴原", "source": "wikipedia", "valid_to": "2019-10-01", "kana": "しばはら"}
 - {"entity_type": "node", "id": "n_shibahara_handai_mae", "lang": "ko", "text": "시바하라", "source": "rule", "valid_to": "2019-10-01", "checked": "2026-11-20"}
@@ -50850,6 +50853,7 @@
 - {"entity_type": "node", "id": "n_kikuchi", "lang": "ja", "text": "隈府", "source": "wikipedia", "valid_to": "1958-08-25", "kana": "わいふ"}
 - {"entity_type": "node", "id": "n_kikuchi", "lang": "ko", "text": "와이후", "source": "rule", "valid_to": "1958-08-25", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kikuchi", "lang": "en", "text": "Waifu", "source": "rule", "valid_to": "1958-08-25"}
+- {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "ja", "text": "再春荘前", "source": "wikipedia", "valid_from": "1965-10-16", "valid_to": "2019-10-01"}
 - {"entity_type": "node", "id": "n_koishihama", "lang": "ja", "text": "小石浜", "source": "wikipedia", "valid_to": "2009-07-20", "kana": "こいしはま"}
 - {"entity_type": "node", "id": "n_koishihama", "lang": "ko", "text": "코이시하마", "source": "rule", "valid_to": "2009-07-20", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_koishihama", "lang": "en", "text": "Koishihama", "source": "rule", "valid_to": "2009-07-20"}
@@ -52438,6 +52442,8 @@
 - {"entity_type": "route", "id": "r_nemuro_main_line_nokanan_shimanoshita", "lang": "ko", "text": "노카난~시마노시타", "source": "rule"}
 - {"entity_type": "route", "id": "r_nemuro_main_line_ochiai_shintoku", "lang": "ja", "text": "落合～新得", "source": "rule"}
 - {"entity_type": "route", "id": "r_nemuro_main_line_ochiai_shintoku", "lang": "ko", "text": "오치아이~신토쿠", "source": "rule"}
+- {"entity_type": "route", "id": "r_nemuro_main_line_kanayama_nemuro_main_higashi_shikagoe", "lang": "ja", "text": "金山～東鹿越", "source": "rule"}
+- {"entity_type": "route", "id": "r_nemuro_main_line_kanayama_nemuro_main_higashi_shikagoe", "lang": "ko", "text": "카나야마~히가시시카고에", "source": "rule"}
 - {"entity_type": "route", "id": "r_furano_line", "lang": "ja", "text": "旭川～富良野", "source": "rule"}
 - {"entity_type": "route", "id": "r_furano_line", "lang": "ko", "text": "아사히카와~후라노", "source": "rule"}
 - {"entity_type": "route", "id": "r_soya_main_line", "lang": "ja", "text": "旭川～稚内", "source": "rule"}
@@ -52516,6 +52522,8 @@
 - {"entity_type": "route", "id": "r_chuo_main_line_kanda_yoyogi", "lang": "ko", "text": "칸다~요요기", "source": "rule"}
 - {"entity_type": "route", "id": "r_chuo_main_line_okaya_shiojiri", "lang": "ja", "text": "岡谷～塩尻", "source": "rule"}
 - {"entity_type": "route", "id": "r_chuo_main_line_okaya_shiojiri", "lang": "ko", "text": "오카야~시오지리", "source": "rule"}
+- {"entity_type": "route", "id": "r_chuo_main_line_nagiso_tadachi", "lang": "ja", "text": "南木曽～田立", "source": "rule"}
+- {"entity_type": "route", "id": "r_chuo_main_line_nagiso_tadachi", "lang": "ko", "text": "나기소~타다치", "source": "rule"}
 - {"entity_type": "route", "id": "r_ome_line", "lang": "ja", "text": "立川～奥多摩", "source": "rule"}
 - {"entity_type": "route", "id": "r_ome_line", "lang": "ko", "text": "타치카와~오쿠타마", "source": "rule"}
 - {"entity_type": "route", "id": "r_itsukaichi_line", "lang": "ja", "text": "拝島～武蔵岩井", "source": "rule"}
@@ -52550,6 +52558,8 @@
 - {"entity_type": "route", "id": "r_tohoku_shinkansen", "lang": "ko", "text": "도쿄~신아오모리", "source": "rule"}
 - {"entity_type": "route", "id": "r_joban_line", "lang": "ja", "text": "日暮里～岩沼", "source": "rule"}
 - {"entity_type": "route", "id": "r_joban_line", "lang": "ko", "text": "닛포리~이와누마", "source": "rule"}
+- {"entity_type": "route", "id": "r_joban_line_komagamine_hamayoshida", "lang": "ja", "text": "駒ヶ嶺～浜吉田", "source": "rule"}
+- {"entity_type": "route", "id": "r_joban_line_komagamine_hamayoshida", "lang": "ko", "text": "코마가미네~하마요시다", "source": "rule"}
 - {"entity_type": "route", "id": "r_tabata_freight_line", "lang": "ja", "text": "田端信号場～三河島", "source": "rule"}
 - {"entity_type": "route", "id": "r_tabata_freight_line", "lang": "ko", "text": "타바타 신호장~미카와시마", "source": "rule"}
 - {"entity_type": "route", "id": "r_suigun_line", "lang": "ja", "text": "水戸～安積永盛", "source": "rule"}
@@ -52568,6 +52578,8 @@
 - {"entity_type": "route", "id": "r_joetsu_shinkansen", "lang": "ko", "text": "오미야~니가타", "source": "rule"}
 - {"entity_type": "route", "id": "r_agatsuma_line", "lang": "ja", "text": "渋川～大前", "source": "rule"}
 - {"entity_type": "route", "id": "r_agatsuma_line", "lang": "ko", "text": "시부카와~오마에", "source": "rule"}
+- {"entity_type": "route", "id": "r_agatsuma_line_iwashima_naganohara_kusatsuguchi", "lang": "ja", "text": "岩島～長野原草津口", "source": "rule"}
+- {"entity_type": "route", "id": "r_agatsuma_line_iwashima_naganohara_kusatsuguchi", "lang": "ko", "text": "이와시마~나가노하라쿠사츠구치", "source": "rule"}
 - {"entity_type": "route", "id": "r_ryomo_line", "lang": "ja", "text": "小山～新前橋", "source": "rule"}
 - {"entity_type": "route", "id": "r_ryomo_line", "lang": "ko", "text": "오야마~신마에바시", "source": "rule"}
 - {"entity_type": "route", "id": "r_mito_line", "lang": "ja", "text": "小山～友部", "source": "rule"}
@@ -52580,14 +52592,20 @@
 - {"entity_type": "route", "id": "r_senzan_line", "lang": "ko", "text": "센다이~우젠치토세", "source": "rule"}
 - {"entity_type": "route", "id": "r_senseki_line", "lang": "ja", "text": "あおば通～石巻", "source": "rule"}
 - {"entity_type": "route", "id": "r_senseki_line", "lang": "ko", "text": "아오바도리~이시노마키", "source": "rule"}
+- {"entity_type": "route", "id": "r_senseki_line_rikuzen_otsuka_rikuzen_ono", "lang": "ja", "text": "陸前大塚～陸前小野", "source": "rule"}
+- {"entity_type": "route", "id": "r_senseki_line_rikuzen_otsuka_rikuzen_ono", "lang": "ko", "text": "리쿠젠오츠카~리쿠젠오노", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishinomaki_line", "lang": "ja", "text": "小牛田～女川", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishinomaki_line", "lang": "ko", "text": "코고타~오나가와", "source": "rule"}
+- {"entity_type": "route", "id": "r_ishinomaki_line_urashuku_onagawa_old", "lang": "ja", "text": "浦宿～女川（旧）", "source": "rule"}
+- {"entity_type": "route", "id": "r_ishinomaki_line_urashuku_onagawa_old", "lang": "ko", "text": "우라슈쿠~오나가와(구)", "source": "rule"}
 - {"entity_type": "route", "id": "r_kesennuma_line", "lang": "ja", "text": "前谷地～気仙沼", "source": "rule"}
 - {"entity_type": "route", "id": "r_kesennuma_line", "lang": "ko", "text": "마에야치~케센누마", "source": "rule"}
 - {"entity_type": "route", "id": "r_ofunato_line", "lang": "ja", "text": "一ノ関～盛", "source": "rule"}
 - {"entity_type": "route", "id": "r_ofunato_line", "lang": "ko", "text": "이치노세키~사카리", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitakami_line", "lang": "ja", "text": "北上～横手", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitakami_line", "lang": "ko", "text": "키타카미~요코테", "source": "rule"}
+- {"entity_type": "route", "id": "r_kitakami_line_iwasawa_hottoyuda", "lang": "ja", "text": "岩沢～ほっとゆだ", "source": "rule"}
+- {"entity_type": "route", "id": "r_kitakami_line_iwasawa_hottoyuda", "lang": "ko", "text": "이와사와~홋토유다", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamaishi_line", "lang": "ja", "text": "花巻～釜石", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamaishi_line", "lang": "ko", "text": "하나마키~카마이시", "source": "rule"}
 - {"entity_type": "route", "id": "r_tazawako_line", "lang": "ja", "text": "盛岡～大曲", "source": "rule"}
@@ -52674,10 +52692,14 @@
 - {"entity_type": "route", "id": "r_gotemba_line", "lang": "ko", "text": "코우즈~누마즈", "source": "rule"}
 - {"entity_type": "route", "id": "r_minobu_line", "lang": "ja", "text": "富士～甲府", "source": "rule"}
 - {"entity_type": "route", "id": "r_minobu_line", "lang": "ko", "text": "후지~코후", "source": "rule"}
+- {"entity_type": "route", "id": "r_minobu_line_fuji_iriyamase", "lang": "ja", "text": "富士～入山瀬", "source": "rule"}
+- {"entity_type": "route", "id": "r_minobu_line_fuji_iriyamase", "lang": "ko", "text": "후지~이리야마세", "source": "rule"}
 - {"entity_type": "route", "id": "r_iida_line", "lang": "ja", "text": "豊橋～辰野", "source": "rule"}
 - {"entity_type": "route", "id": "r_iida_line", "lang": "ko", "text": "토요하시~타츠노", "source": "rule"}
 - {"entity_type": "route", "id": "r_iida_line_toyokawa_nishi_toyokawa", "lang": "ja", "text": "豊川～西豊川", "source": "rule"}
 - {"entity_type": "route", "id": "r_iida_line_toyokawa_nishi_toyokawa", "lang": "ko", "text": "토요카와~니시토요카와", "source": "rule"}
+- {"entity_type": "route", "id": "r_iida_line_chubu_tenryu_ozore", "lang": "ja", "text": "中部天竜～大嵐", "source": "rule"}
+- {"entity_type": "route", "id": "r_iida_line_chubu_tenryu_ozore", "lang": "ko", "text": "츄부텐류~오조레", "source": "rule"}
 - {"entity_type": "route", "id": "r_taketoyo_line", "lang": "ja", "text": "大府～武豊", "source": "rule"}
 - {"entity_type": "route", "id": "r_taketoyo_line", "lang": "ko", "text": "오부~타케토요", "source": "rule"}
 - {"entity_type": "route", "id": "r_takayama_main_line", "lang": "ja", "text": "岐阜～富山", "source": "rule"}
@@ -52704,10 +52726,14 @@
 - {"entity_type": "route", "id": "r_fukuchiyama_line", "lang": "ko", "text": "아마가사키~후쿠치야마", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuchiyama_line_tsukaguchi_amagasakiko", "lang": "ja", "text": "塚口～尼崎港", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuchiyama_line_tsukaguchi_amagasakiko", "lang": "ko", "text": "츠카구치~아마가사키항", "source": "rule"}
+- {"entity_type": "route", "id": "r_fukuchiyama_line_namaze_dojo", "lang": "ja", "text": "生瀬～道場", "source": "rule"}
+- {"entity_type": "route", "id": "r_fukuchiyama_line_namaze_dojo", "lang": "ko", "text": "나마제~도죠", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line", "lang": "ja", "text": "米原～直江津", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line", "lang": "ko", "text": "마이바라~나오에츠", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_tsuruga_imajo", "lang": "ja", "text": "敦賀～今庄", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_tsuruga_imajo", "lang": "ko", "text": "츠루가~이마조", "source": "rule"}
+- {"entity_type": "route", "id": "r_hokuriku_main_line_uramoto_arimagawa", "lang": "ja", "text": "浦本～有間川", "source": "rule"}
+- {"entity_type": "route", "id": "r_hokuriku_main_line_uramoto_arimagawa", "lang": "ko", "text": "우라모토~아리마가와", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_tanihama_naoetsu", "lang": "ja", "text": "谷浜～直江津", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_tanihama_naoetsu", "lang": "ko", "text": "타니하마~나오에츠", "source": "rule"}
 - {"entity_type": "route", "id": "r_obama_line", "lang": "ja", "text": "敦賀～東舞鶴", "source": "rule"}
@@ -52744,6 +52770,8 @@
 - {"entity_type": "route", "id": "r_honshi_bisan_line", "lang": "ko", "text": "차야마치~우타즈", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakubi_line", "lang": "ja", "text": "倉敷～伯耆大山", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakubi_line", "lang": "ko", "text": "쿠라시키~호키다이센", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakubi_line_gokei_minagi", "lang": "ja", "text": "豪渓～美袋", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakubi_line_gokei_minagi", "lang": "ko", "text": "고케이~미나기", "source": "rule"}
 - {"entity_type": "route", "id": "r_geibi_line", "lang": "ja", "text": "備中神代～広島", "source": "rule"}
 - {"entity_type": "route", "id": "r_geibi_line", "lang": "ko", "text": "빗츄코지로~히로시마", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuen_line", "lang": "ja", "text": "福山～塩町", "source": "rule"}
@@ -52756,6 +52784,8 @@
 - {"entity_type": "route", "id": "r_kabe_line", "lang": "ko", "text": "요코가와~아키카메야마", "source": "rule"}
 - {"entity_type": "route", "id": "r_kabe_line_kabe_sandankyo", "lang": "ja", "text": "可部～三段峡", "source": "rule"}
 - {"entity_type": "route", "id": "r_kabe_line_kabe_sandankyo", "lang": "ko", "text": "카베~산단쿄", "source": "rule"}
+- {"entity_type": "route", "id": "r_kabe_line_yokogawa_aki_nagatsuka", "lang": "ja", "text": "横川～安芸長束", "source": "rule"}
+- {"entity_type": "route", "id": "r_kabe_line_yokogawa_aki_nagatsuka", "lang": "ko", "text": "요코가와~아키나가츠카", "source": "rule"}
 - {"entity_type": "route", "id": "r_gantoku_line", "lang": "ja", "text": "岩国～櫛ヶ浜", "source": "rule"}
 - {"entity_type": "route", "id": "r_gantoku_line", "lang": "ko", "text": "이와쿠니~쿠시가하마", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamaguchi_line", "lang": "ja", "text": "新山口～益田", "source": "rule"}
@@ -52807,6 +52837,8 @@
 - {"entity_type": "route", "id": "r_yosan_line_mukaibara_uchiko", "lang": "ko", "text": "무카이바라~우치코", "source": "rule"}
 - {"entity_type": "route", "id": "r_yosan_line_niiya_iyo_ozu", "lang": "ja", "text": "新谷～伊予大洲", "source": "rule"}
 - {"entity_type": "route", "id": "r_yosan_line_niiya_iyo_ozu", "lang": "ko", "text": "니야~이요오즈", "source": "rule"}
+- {"entity_type": "route", "id": "r_yosan_line_sakaide_marugame", "lang": "ja", "text": "坂出～丸亀", "source": "rule"}
+- {"entity_type": "route", "id": "r_yosan_line_sakaide_marugame", "lang": "ko", "text": "사카이데~마루가메", "source": "rule"}
 - {"entity_type": "route", "id": "r_uchiko_line", "lang": "ja", "text": "内子～五郎", "source": "rule"}
 - {"entity_type": "route", "id": "r_uchiko_line", "lang": "ko", "text": "우치코~고로", "source": "rule"}
 - {"entity_type": "route", "id": "r_uchiko_line_kitayama_uchiko_uchiko_uchiko", "lang": "ja", "text": "喜多山～内子（旧）", "source": "rule"}
@@ -52823,10 +52855,16 @@
 - {"entity_type": "route", "id": "r_mugi_line", "lang": "ko", "text": "도쿠시마~카이후", "source": "rule"}
 - {"entity_type": "route", "id": "r_dosan_line", "lang": "ja", "text": "多度津～窪川", "source": "rule"}
 - {"entity_type": "route", "id": "r_dosan_line", "lang": "ko", "text": "타도츠~쿠보카와", "source": "rule"}
+- {"entity_type": "route", "id": "r_dosan_line_osugi_kakumodani", "lang": "ja", "text": "大杉～角茂谷", "source": "rule"}
+- {"entity_type": "route", "id": "r_dosan_line_osugi_kakumodani", "lang": "ko", "text": "오스기~카쿠모다니", "source": "rule"}
+- {"entity_type": "route", "id": "r_dosan_line_otaguchi_tosa_ananai", "lang": "ja", "text": "大田口～土佐穴内", "source": "rule"}
+- {"entity_type": "route", "id": "r_dosan_line_otaguchi_tosa_ananai", "lang": "ko", "text": "오타구치~토사아나나이", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line", "lang": "ja", "text": "門司港～川内", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line", "lang": "ko", "text": "모지코~센다이", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_sendai_kagoshima", "lang": "ja", "text": "川内～鹿児島", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_sendai_kagoshima", "lang": "ko", "text": "센다이~가고시마", "source": "rule"}
+- {"entity_type": "route", "id": "r_kagoshima_main_line_edamitsu_yahata", "lang": "ja", "text": "枝光～八幡", "source": "rule"}
+- {"entity_type": "route", "id": "r_kagoshima_main_line_edamitsu_yahata", "lang": "ko", "text": "에다미츠~야하타", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_tobata_edamitsu", "lang": "ja", "text": "戸畑～枝光", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_tobata_edamitsu", "lang": "ko", "text": "토바타~에다미츠", "source": "rule"}
 - {"entity_type": "route", "id": "r_kyushu_shinkansen", "lang": "ja", "text": "博多～鹿児島中央", "source": "rule"}
@@ -53309,6 +53347,8 @@
 - {"entity_type": "route", "id": "r_meitetsu_airport_line", "lang": "ko", "text": "토코나메~주부국제공항", "source": "rule"}
 - {"entity_type": "route", "id": "r_osaka_line", "lang": "ja", "text": "大阪上本町～伊勢中川", "source": "rule"}
 - {"entity_type": "route", "id": "r_osaka_line", "lang": "ko", "text": "오사카우에혼마치~이세나카가와", "source": "rule"}
+- {"entity_type": "route", "id": "r_osaka_line_nishi_aoyama_higashi_aoyama", "lang": "ja", "text": "西青山～東青山", "source": "rule"}
+- {"entity_type": "route", "id": "r_osaka_line_nishi_aoyama_higashi_aoyama", "lang": "ko", "text": "니시아오야마~히가시아오야마", "source": "rule"}
 - {"entity_type": "route", "id": "r_namba_line", "lang": "ja", "text": "大阪難波～大阪上本町", "source": "rule"}
 - {"entity_type": "route", "id": "r_namba_line", "lang": "ko", "text": "오사카난바~오사카우에혼마치", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamada_line_kintetsu", "lang": "ja", "text": "伊勢中川～宇治山田", "source": "rule"}
@@ -53588,6 +53628,8 @@
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimin_byoin_mae", "lang": "ko", "text": "에키마에~시민뵤인마에", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimmei", "lang": "ja", "text": "駅前～神明", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimmei", "lang": "ko", "text": "에키마에~신메이", "source": "rule"}
+- {"entity_type": "route", "id": "r_azumada_main_line_shimmei_toyohashi_shiyakushomae_toyohashi", "lang": "ja", "text": "神明～市役所前", "source": "rule"}
+- {"entity_type": "route", "id": "r_azumada_main_line_shimmei_toyohashi_shiyakushomae_toyohashi", "lang": "ko", "text": "신메이~시야쿠쇼마에", "source": "rule"}
 - {"entity_type": "route", "id": "r_sangi_line", "lang": "ja", "text": "三岐朝明信号場～西藤原", "source": "rule"}
 - {"entity_type": "route", "id": "r_sangi_line", "lang": "ko", "text": "산기아사케 신호장~니시후지와라", "source": "rule"}
 - {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "ja", "text": "三岐朝明信号場～近鉄富田", "source": "rule"}

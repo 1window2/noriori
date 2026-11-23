@@ -409,7 +409,8 @@ def scope_edges(line,route=None,mode='seed',alt=None):
         if alt!=e.get('alt'):continue
         ro=e.get('route_only')
         if route:
-            if ro!=route and not (ro is None and (not owned or e['id'] in also)):continue
+            # also는 다른 계통 전용 칸(옛 선형 계통의 칸)도 빌려 쓸 수 있다 (信越本線 新潟(旧)–関屋가 越後線 옛 선로 칸을 지남, 2번안 2026-11-23)
+            if ro!=route and not (e['id'] in also or (ro is None and not owned)):continue
         elif ro:continue
         if mode=='seed':
             if e.get('seed_line')==line:S.append(e)
@@ -854,6 +855,8 @@ def _stop_bounds(fromv,tov,vals):
     return fromv,tov
 _MOVED_NEW={mv['old']:mv['new'] for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))}
 stops=[]
+_RBL0=collections.defaultdict(list)
+for _r0 in routes.values():_RBL0[_r0['line']].append(_r0['id'])
 for r in routes.values():
     dist=route_rank[r['id']]
     # 순서는 정렬 값(dist)으로, km는 옛 선로 역이면 실제 옛 営業キロ로 (K21)
@@ -881,6 +884,12 @@ for r in routes.values():
         nd=nodes.get(n)
         if not nd:continue
         evs=stopev.get((r['id'],n),[])
+        # 옛 선형 계통(route old, 2번안 2026-11-23)의 역 개업·폐업 사건은 2번안 전 계통(본 계통) 이름으로 적혀 있다. 자기 사건이 없으면 같은 노선의 그 역 사건을 쓴다
+        # (東北本線 옛 西千曳 1910, 宇部線 宇部新川 1923, 東北本線 渋民 1950: 옛 선형 칸이 먼저 열렸어도 역은 개업일부터)
+        if r.get('old'):
+            _oe=[ev for q_ in _RBL0.get(r['line'],()) if q_!=r['id'] for ev in stopev.get((q_,n),[])]
+            for _t in ('open_stop','close_stop'):
+                if not any(e['type']==_t for e in evs):evs=evs+[e for e in _oe if e['type']==_t]
         fromv=None;tov='ongoing'
         for e in adj[n]:
             for a in attrs.get(e['id'],[]):
@@ -906,7 +915,13 @@ for r in routes.values():
 # 값은 [시작, 끝] 하나이거나, 정차 기간이 둘 이상인 역(印場 1905~1944·1995~)은 [[시작, 끝], [시작, 끝], ...]이다.
 # 정차 행은 처음 시작부터 마지막 끝까지 하나로 두고, 기간 사이 서지 않은 때를 route_stop_gap에 적는다
 stop_gaps=[]
-for k_,v_ in json.load(open(os.path.join(ROOT,'data','overrides','stop_dates.json'),encoding='utf-8')).items():
+_SDK=json.load(open(os.path.join(ROOT,'data','overrides','stop_dates.json'),encoding='utf-8'))
+def _sd_route(s,rid_,nd_):
+    """stop_dates 계통 행이 이 정차 행에 걸리는가. 옛 선형 계통(route old, 2번안 2026-11-23)은 자기 행이 없으면 2번안 전 계통(같은 노선) 행을 쓴다 (仙石線 東名（旧）)"""
+    if not rid_ or s['route_id']==rid_:return True
+    r_=routes.get(s['route_id']) or {}
+    return bool(r_.get('old')) and (routes.get(rid_) or {}).get('line')==r_.get('line') and f"{s['route_id']}|{nd_}" not in _SDK
+for k_,v_ in _SDK.items():
     # 「_근거」처럼 _로 시작하는 키는 행 근거를 모은 옆 사전이다 (출처 보존, renames_hand.json과 같은 형식)
     if k_.startswith('_'):continue
     rid_,nd_=k_.split('|') if '|' in k_ else (None,k_)
@@ -916,7 +931,7 @@ for k_,v_ in json.load(open(os.path.join(ROOT,'data','overrides','stop_dates.jso
     if v_=='pass':
         hit_=0
         for s in stops:
-            if s['node_id']==nd_ and (not rid_ or s['route_id']==rid_) and not s.get('is_extension'):s['is_stop']=0;hit_+=1;WARN['stop_pass'].append((s['route_id'],nd_,s['valid_from'],s['valid_to']))
+            if s['node_id']==nd_ and _sd_route(s,rid_,nd_) and not s.get('is_extension'):s['is_stop']=0;hit_+=1;WARN['stop_pass'].append((s['route_id'],nd_,s['valid_from'],s['valid_to']))
         if not hit_ and not _nopatch:err('stop_dates_unknown',k_)
         continue
     ps_=v_ if v_ and isinstance(v_[0],list) else [v_]
@@ -924,7 +939,7 @@ for k_,v_ in json.load(open(os.path.join(ROOT,'data','overrides','stop_dates.jso
         if not a_[1] or not b_[0] or (lohi(a_[1])[1] or '')>=(lohi(b_[0])[0] or ''):err('stop_dates_periods',{k_:v_})
     hit_=0
     for s in stops:
-        if s['node_id']==nd_ and (not rid_ or s['route_id']==rid_):
+        if s['node_id']==nd_ and _sd_route(s,rid_,nd_):
             hit_+=1
             if ps_[0][0]:s['valid_from']=ps_[0][0]
             if ps_[-1][1]:s['valid_to']=ps_[-1][1]
@@ -979,10 +994,12 @@ for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),enco
             # 손으로 여러 기간을 준 정차는 그대로 둔다 (高松: 1959 옛 자리로 나갔다가 2001 처음 자리로 돌아옴)
             if any(g_[0] is s for g_ in stop_gaps):continue
             # 옛 노드가 서지 않는 계통(새 노드에서 만나는 다른 노선·옛 경로, 志布志線·大隅線의 志布志)은 자르지 않는다
-            _rs=[x for x in stops if x['route_id']==s['route_id'] and not x.get('is_extension')]
+            # 옛 노드는 같은 노선의 다른 계통(옛 선형 계통, 2번안 2026-11-23: 京津線 옛 御陵)에 있어도 같다
+            _ln=line_(s['route_id'])
+            _rs=[x for x in stops if line_(x['route_id'])==_ln and not x.get('is_extension')]
             if not any(x['node_id']==old and x['is_stop'] for x in _rs):continue
-            # 옛 경로 계통(branch)의 끝이 새 노드면 그 끝은 옛 선로가 본선과 만나는 곳이라 자르지 않는다
-            if routes[s['route_id']].get('role')=='branch' and new in (routes[s['route_id']]['from'],routes[s['route_id']]['to']):continue
+            # 같은 노선에 옛 노드가 서면 이전 전 그 역은 옛 노드다. 옛 경로 계통의 끝이 새 노드여도 이전 전에는 역이 아닌 갈림 지점이다
+            # (京津線 옛 御陵 앞의 갈림, 近鉄名古屋線 옛 高田本山 선형의 江戸橋 갈림: 그때 역은 江戸橋（旧）)
             if (lohi(s['valid_to'])[1] or '9999-12-31')<=dl:s['is_stop']=0
             elif (lohi(s['valid_from'])[1] or '0000')<dl:s['valid_from']=d
     _MVPAIRS.append((old,new))
@@ -1253,6 +1270,7 @@ print('합류점에서 끝낸 옛 경로·지선 계통',_TRIM)
 # 붙인 행은 그 기간에만 있고(뒤로는 숨김, route_stop_select none) 그 기간 그 칸은 이 계통의 칸이다. 세 갈래 이상(실제 분기점, 신이마미야 1961–1964)이나 다른 노선끼리 만나는 점은 그대로 분기점이다
 _LEAD_EIV={}
 _LEAD_TAKE={}
+_LEAD_BY={}
 def _lead_lo(v):return lohi(v)[0] or '0000-00-00'
 _fst0={}
 for s_ in stops:
@@ -1287,6 +1305,9 @@ for rid_,r_ in sorted(routes.items()):
         X_=(L_[0] if side_=='start' else L_[-1])
         x_=X_['node_id']
         if x_ not in (r_['from'],r_['to']) or nodes.get(x_,{}).get('kind')!='station' or x_ not in _fst0:continue
+        # 옛 선형 계통(route old, 2번안 2026-11-23)이 같은 노선 다른 계통 위에서 끝나면 그 끝은 옛 선로가 붙는 곳이다. 걷기 계산은 노선 단위 보기로
+        # 붙는 계통과 함께 하므로 앞 역을 붙이지 않는다 (東北本線 옛 滝沢 선형 끝 渋民 1950 개업: 好摩를 붙이면 好摩에서 花輪線 이어짐이 생김)
+        if r_.get('old') and any(y2['node_id']==x_ for q2,L2 in _byr0.items() if q2!=rid_ and routes[q2]['line']==r_['line'] and not routes[q2].get('old') for y2 in L2):continue
         f0_=min((_lead_lo(y['valid_from']) for y in L_))
         fs_=_lead_lo(_fst0[x_])
         d_=max(f0_,'1950-01-01')
@@ -1323,7 +1344,7 @@ for rid_,r_ in sorted(routes.items()):
         _LEAD_EIV[(rid_,e_['id'])]=(vf_,_fst0[x_])
         # 그 기간 그 칸은 이 계통 몫이다. 칸을 빌려 준 같은 노선 계통에서는 그 기간 빼서 그쪽 끝도 앞 역이 되게 한다(키쿠치선 본선 1995 전 끝 쿠로이시)
         for rid3_ in [q_ for q_ in _byr0 if q_!=rid_ and routes[q_]['line']==r_['line'] and any(e3['id']==e_['id'] for e3 in route_edges.get(q_,()))]:
-            _LEAD_TAKE[(rid3_,e_['id'])]=(vf_,_fst0[x_])
+            _LEAD_TAKE[(rid3_,e_['id'])]=(vf_,_fst0[x_]);_LEAD_BY[(rid3_,e_['id'])]=rid_
         _lead_n+=1;WARN['lead_rows'].append((rid_,side_,x_,yy_['node_id'],vf_,_fst0[x_]))
 print('그날 없던 끝 역 대신 앞 역을 기점으로',_lead_n,WARN['lead_rows'][:10])
 # 오늘 영업하는 계통의 km 원점은 공식 기점(오늘 서는 첫 공개 정차역)이다. 기점 쪽 구간이 폐지돼 원점이 폐역이면(石川線 白菊町, 京津線 京津三条,
@@ -2055,12 +2076,17 @@ for _x in json.load(open(os.path.join(ROOT,'data','overrides','tram_systems.json
 # 근거 표 THROUGH의 상대 쪽 노드(at[1])와 방면(a_toward·b_toward: 그 쪽 열차가 상대 노선에서 향하는 역). 상대 노드가 다르면 그 노드에서만 잇는다(京王 新宿–都営 新宿(新線新宿))
 # 여객 직통 기간만 적은 행(passenger_only)·스위치백 직통 행(reverse)은 그 기간의 근거 행에만 방면을 건다. 기간 밖 같은 쌍의 자동 행(선로 연결)은 선형 방면 그대로다.
 # reverse 행이면 그 기간 끝 역 이어짐이 진행 방향을 바꿔 상대 노선으로 들어가는 것이라 표식(route_link.reverse)을 건다 (11회차 S3)
-for _x in json.load(open(os.path.join(ROOT,'data','overrides','hand_tables.json'),encoding='utf-8'))['tables']['THROUGH']['값']:
+_THR=json.load(open(os.path.join(ROOT,'data','overrides','hand_tables.json'),encoding='utf-8'))['tables']['THROUGH']['값']
+# 같은 역·같은 노선 쌍에 근거 행이 여럿이면(金谷 1969– 静岡 쪽만, 1973– 静岡·浜松 쪽) 방면은 그 근거 행 기간의 연결 행에만 건다 (4회차 chubu_2-001)
+_THRP={(_x['a'],_x['b'],_x['at'][0],_x.get('from'),_x.get('to') or 'ongoing') for _x in _THR}|{(_x['b'],_x['a'],_x['at'][1],_x.get('from'),_x.get('to') or 'ongoing') for _x in _THR}
+for _x in _THR:
     _po=bool(_x.get('passenger_only'));_pv=[_x.get('from'),_x.get('to') or 'ongoing'];_rv=_x.get('reverse')
     for _a,_b,_n,_m,_tw,_sd in ((_x['a'],_x['b'],_x['at'][0],_x['at'][1],_x.get('a_toward'),'a'),(_x['b'],_x['a'],_x['at'][1],_x['at'][0],_x.get('b_toward'),'b')):
         for j in junctions:
             if (j['line'],j['other'],j.get('at'))!=(_a,_b,_n):continue
-            _own=bool(j.get('verified')) and list(j.get('valid') or [None,'ongoing'])==_pv
+            _jv=list(j.get('valid') or [None,'ongoing'])
+            if _jv!=_pv and (_a,_b,_n,_jv[0],_jv[1]) in _THRP:continue
+            _own=bool(j.get('verified')) and _jv==_pv
             if _po and not _own:continue
             # reverse: true면 두 쪽, "a"·"b"면 그 쪽 노선 끝 역 이어짐만(塩尻: 篠ノ井線→中央西線만, 中央東線→篠ノ井線은 곧게 이어짐)
             if _own and (_rv is True or _rv==_sd):j['_reverse']=True
@@ -2109,7 +2135,7 @@ _END=collections.defaultdict(list)
 def walk(rid,seq,step,cur,day=None,ext=False):
     """seq에서 한 방향으로 다음 정차역과 끝 역을 찾는다. cur이면 오늘, day면 그날 영업 구간 안에서만 본다. 둘 다 없으면 모든 시기.
     ext면 그 방향에 정차역이 없을 때 계통 끝 노드를 다음 역·끝 역으로 돌려준다"""
-    L=by_route[rid];i=next((k for k,x in enumerate(L) if x['seq']==seq),None)
+    L=VR.get(rid) or by_route[rid];i=VIDX.get((rid,seq))
     if i is None:return None,None
     if day is None and cur:day=TODAY
     op=open_on(routes[rid]['line'],day) if day else None;nxt=last=None;k=i+step;at=L[i]['node_id'];off=True
@@ -2142,7 +2168,7 @@ def neighbors(rid,seq,cur=False,day=None,ext=False):
     return walk(rid,seq,-1,cur,day,ext),walk(rid,seq,1,cur,day,ext)
 def first_hop(rid,seq,step,day):
     """seq에서 그 방향으로 그날 선로로 처음 닿는 노드 (정차역이 아니어도)"""
-    L=by_route[rid];i=next((k for k,x in enumerate(L) if x['seq']==seq),None)
+    L=VR.get(rid) or by_route[rid];i=VIDX.get((rid,seq))
     if i is None:return None
     op=open_on(routes[rid]['line'],day);at=L[i]['node_id'];k=i+step
     while 0<=k<len(L):
@@ -2163,7 +2189,7 @@ def _change_days(rid,pd):
     """기간 pd 안에서 그 계통의 정차역·선로가 바뀌는 날들(시작 포함, 정렬)"""
     lo_=lohi(pd[0])[0] or '0000';hi_=(lohi(pd[1])[0] or '9999-12-31') if pd[1] not in (None,'ongoing') else '9999-12-31'
     ds={lo_}
-    for x in by_route[rid]:
+    for x in VR.get(rid) or by_route[rid]:
         for v in (x['valid_from'],x['valid_to']):
             if v not in (None,'ongoing'):
                 d_=lohi(v)[0]
@@ -2195,7 +2221,7 @@ def split_by_day(rid,pd,fn):
 def era_end(rid,seq,valid):
     """기간 한정 직통의 시작 날에 이 역이 그 계통의 끝이었으면 끊긴 쪽('up'·'down'), 아니면 None.
     이관·연장으로 끝 역이 시기마다 다르면 지금은 지나가는 역도 그때는 끝이다 (金沢 2015–2024, 八戸 2002–2010)"""
-    t=_lo(valid[0]);L=by_route[rid];i=next((k for k,x in enumerate(L) if x['seq']==seq),None)
+    t=_lo(valid[0]);L=VR.get(rid) or by_route[rid];i=VIDX.get((rid,seq))
     if i is None or t=='0000':return None
     ln=routes[rid]['line'];n=L[i]['node_id']
     def cut(step):
@@ -2293,7 +2319,7 @@ def _on_seg(line,f,t,n):
             if lo_-1e-6<=d_[n]<=hi_+1e-6:hit=True;break
         _seg_cache[k]=hit or n in (f,t)
     return _seg_cache[k]
-def _gstate(line,n,day):
+def _gstate(line,n,day,att=True):
     """그날 그 역에서 노선의 (방식 묶음, 궤간) 집합. 궤간 모름은 None"""
     seg=set();whole=set()
     for g in lines[line].get('gauge') or []:
@@ -2302,6 +2328,15 @@ def _gstate(line,n,day):
             if not _on_seg(line,g['from_node'],g['to_node'],n):continue
             seg.add((_SYSCLS.get(g['system'],g['system']),g.get('gauge')))
         else:whole.add((_SYSCLS.get(g['system'],g['system']),g.get('gauge')))
+    # 옛 선형 계통(따로 계통, 2번안 2026-11-23)의 가운데 역은 구간 행이 본선 계통 순서로 적혀 닿지 않는다. 그 계통이 붙는 두 끝의 구간 행을 따른다
+    # (近鉄名古屋線 옛 諏訪 1938–1956 1067: 四日市 앞뒤 구간 행)
+    if not seg and att:
+        for rid_,d_ in route_rank.items():
+            if routes[rid_]['line']!=line or not routes[rid_].get('old') or n not in d_:continue
+            e0_,e1_=min(d_,key=d_.get),max(d_,key=d_.get)
+            if n in (e0_,e1_):continue
+            for x_ in (e0_,e1_):
+                seg|={y_ for y_ in _gstate(line,x_,day,False) if y_[1] is not None}
     # 그 역에 걸리는 구간 행이 있으면 노선 전체(그 밖 구간) 행보다 앞선다 (近鉄名古屋線 江戸橋–中川 1938~1959 1067)
     return seg or whole or {(_SYSCLS.get(lines[line].get('type'),lines[line].get('type')),None)}
 def _fits(a,b):
@@ -2314,8 +2349,12 @@ def _gstate_e(line,a,b,day):
         if g.get('from_node') and g.get('to_node'):
             if _on_seg(line,g['from_node'],g['to_node'],a) and _on_seg(line,g['from_node'],g['to_node'],b):seg.add((_SYSCLS.get(g['system'],g['system']),g.get('gauge')))
         else:whole.add((_SYSCLS.get(g['system'],g['system']),g.get('gauge')))
-    # 칸 두 끝이 다 든 구간 행이 없으면(옛 경로 칸: 名古屋線 諏訪 1938–1956) 그 역에 걸린 행으로 본다
-    return seg or whole or _gstate(line,a,day)
+    # 칸 두 끝이 다 든 구간 행이 없으면(옛 경로 칸: 名古屋線 諏訪 1938–1956) 그 역에 걸린 행으로 본다.
+    # 그 역(또는 옛 선형 계통이 붙는 곳)에 걸린 구간 행이 있으면 노선 전체 행보다 앞선다 (釜石線 옛 足ヶ瀬–仙人峠 762)
+    if seg:return seg
+    g_=_gstate(line,a,day)
+    if g_!=whole and any(x[1] is not None for x in g_):return g_
+    return whole or g_
 def _gstate_n(line,n,ys,day):
     """그날 노선 line이 n에서 이웃 ys 쪽 칸들로 가진 (방식, 궤간) 집합. 이웃이 없으면 역 단위"""
     ys=[y for y in (ys or ()) if y]
@@ -2464,11 +2503,70 @@ _RPE={rid_:{frozenset((e_['a'],e_['b'])):e_['id'] for e_ in es_} for rid_,es_ in
 _SIDX={}
 for _rid,_L in by_route.items():
     for _k,_x in enumerate(_L):_SIDX[(_rid,_x['seq'])]=_k
+# ── 노선 단위 보기 (2번안 2026-11-23): 걷기 계산(다음 역·끝 역·그날의 계통 끝·줄기)은 옛 선형 계통(route old)을 그것이 붙는 본 계통(host)에
+# 다시 얹은 행·칸으로 한다. 2번안 전에는 본 계통 안 옛 선로(alt)라 본 계통 행·칸에 함께 있던 것이다. 저장하는 계통·정차·칸은 그대로다.
+# VR[계통] 걷는 행, VE 칸, VPE (양 끝 → 칸), VIDX[(계통, seq)] 행 위치. 옛 선형 가운데 행은 host 행 복사본으로 두 붙는 역 사이(막다른 옛 선형은
+# 좌표로 가까운 쪽)에 사이 seq로 끼우고, 붙는 역 행은 host 행과 옛 선형 붙는 역 행 기간을 합친 복사본이다(2번안 전 한 행)
+VR={};VE={};VPE={};VIDX={};VORIG={};HOSTED=collections.defaultdict(set);_VINS=set()
+def _vcopy(x,**kw):
+    y=dict(x,**kw);VORIG[id(y)]=x
+    if id(x) in _GAPS:_GAPS[id(y)]=_GAPS[id(x)]
+    return y
+_vins=collections.defaultdict(list)
+for _q,_v in routes.items():
+    if not _v.get('old'):continue
+    _Lq=by_route.get(_q) or []
+    for _h in sorted((h for h,w in routes.items() if h!=_q and w['line']==_v['line'] and not w.get('old') and by_route.get(h)),key=lambda h:(routes[h].get('role')!='main',h)):
+        _L=by_route[_h];_pos={x['node_id']:k for k,x in enumerate(_L)}
+        _off=[k for k,x in enumerate(_Lq) if x['node_id'] not in _pos]
+        if not _off or _off[-1]-_off[0]+1!=len(_off):continue
+        _ha=_off[0]>0;_hb=_off[-1]<len(_Lq)-1
+        if not(_ha or _hb):continue
+        _mid=_Lq[_off[0]:_off[-1]+1];_att=[]
+        if _ha:_att.append((_pos[_Lq[_off[0]-1]['node_id']],_Lq[_off[0]-1]))
+        if _hb:_att.append((_pos[_Lq[_off[-1]+1]['node_id']],_Lq[_off[-1]+1]))
+        if _ha and _hb:
+            _ia=_att[0][0]
+            if _ia>_att[1][0]:_mid=_mid[::-1];_ia=_att[1][0]
+        else:
+            _ia=_att[0][0];_mid=_mid if _ha else _mid[::-1];_f=ppos.get(_mid[0]['node_id'])
+            def _vd(k,_L=_L,_f=_f):
+                if not(0<=k<len(_L)) or not _f:return 1e9
+                g_=ppos.get(_L[k]['node_id'])
+                return (g_['lat']-_f['lat'])**2+(g_['lon']-_f['lon'])**2 if g_ else 1e9
+            if _vd(_ia+1)>_vd(_ia-1):_mid=_mid[::-1];_ia-=1
+        _vins[_h].append((_ia,_mid,_q,_att));HOSTED[_h].add(_q);break
+for _h,_L in by_route.items():
+    if not _vins.get(_h):VR[_h]=_L;VE[_h]=route_edges.get(_h,[]);VPE[_h]=_RPE.get(_h,{});continue
+    _aiv=collections.defaultdict(list)
+    for _ia,_mid,_q,_att in _vins[_h]:
+        for _k,_x in _att:_aiv[_k].append(_x)
+    _rows=[]
+    for _k,_x in enumerate(_L):
+        if _k in _aiv:
+            _ws=[_x]+_aiv[_k]
+            _rows.append(_vcopy(_x,valid_from=min((w['valid_from'] for w in _ws),key=lambda v:_lo(v)),valid_to=max((w['valid_to'] for w in _ws),key=lambda v:_lo(v,True)),is_stop=int(any(w['is_stop'] for w in _ws))))
+        else:_rows.append(_x)
+    for _ia,_mid,_q,_att in sorted(_vins[_h],key=lambda t:-t[0]):
+        _s0=_L[_ia]['seq'] if _ia>=0 else _L[0]['seq']-1;_s1=_L[_ia+1]['seq'] if _ia+1<len(_L) else _s0+1
+        _cp=[_vcopy(x,route_id=_h,seq=_s0+(_s1-_s0)*(i+1)/(len(_mid)+1)) for i,x in enumerate(_mid)];_VINS.update(id(x) for x in _cp)
+        _rows=_rows[:_ia+1]+_cp+_rows[_ia+1:]
+    VR[_h]=_rows
+    VE[_h]=list(route_edges.get(_h,[]))+[e for _,_,_q,_ in _vins[_h] for e in route_edges.get(_q,[])]
+    VPE[_h]=dict(_RPE.get(_h,{}))
+    for _,_,_q,_ in _vins[_h]:VPE[_h].update(_RPE.get(_q,{}))
+for _h,_L in VR.items():
+    for _k,_x in enumerate(_L):VIDX[(_h,_x['seq'])]=_k
+def _vrow(y,h):
+    """보기 행을 연결 계산이 쓰는 원래 행으로(host 행 복사본만, 옛 선형 가운데 행은 보기 행 그대로)"""
+    o=VORIG.get(id(y))
+    return o if o is not None and o['route_id']==h else y
+print('노선 단위 보기: 옛 선형 계통을 얹은 계통',len(_vins),'얹은 옛 선형',sum(len(v) for v in _vins.values()))
 def hop(rid,seq,step,day=None):
     """계통 rid의 seq 역에서 step 방향으로 계통 칸으로 처음 닿는 (노드, 칸). day면 그날 그 노선 칸이 열린 것 먼저"""
-    L=by_route[rid];i=_SIDX.get((rid,seq))
+    L=VR.get(rid) or by_route[rid];i=VIDX.get((rid,seq))
     if i is None:return None,None
-    at=L[i]['node_id'];P=_RPE.get(rid,{});op=open_on(routes[rid]['line'],day) if day else None
+    at=L[i]['node_id'];P=VPE.get(rid,{});op=open_on(routes[rid]['line'],day) if day else None
     k=i+step
     while 0<=k<len(L):
         f_=frozenset((at,L[k]['node_id']))
@@ -2479,7 +2577,7 @@ def rdir(rid,seq,step,day=None):
     """계통 rid의 seq 역에서 step 방향으로 나가는 칸의 시작 방향"""
     y_,eid_=hop(rid,seq,step,day)
     if not y_:return None
-    return gde(eid_,by_route[rid][_SIDX[(rid,seq)]]['node_id'])
+    return gde(eid_,VR[rid][VIDX[(rid,seq)]]['node_id'])
 _RBL=collections.defaultdict(list)
 for _rid in routes:_RBL[routes[_rid]['line']].append(_rid)
 def _thru_e(B,x):
@@ -2660,7 +2758,7 @@ def _clip_iv(iv_,f0,t0):
     iv_=[(f_ if _lo(f_)>=_lo(f0) else f0,t_ if _lo(t_,True)<=_lo(t0,True) else t0) for f_,t_ in iv_]
     return [(f_,t_) for f_,t_ in iv_ if _lo(f_)<_lo(t_,True)]
 _rspan={}
-for rid_,L_ in by_route.items():
+for rid_,L_ in VR.items():
     if L_:_rspan[rid_]=(min((y['valid_from'] for y in L_),key=lambda v:_lo(v)),max((y['valid_to'] for y in L_),key=lambda v:_lo(v,True)))
 # 계통의 끝은 날마다 정한다 (검토 M3, 2026-11-21): 그날 한쪽 칸은 계통 노선 소속인데 반대쪽 칸은 아닌(또는 칸이 없는) 행이 그날의 끝이다.
 # 가장 바깥 행은 그 한 경우다. 앞쪽 구간이 폐지·이관되면(徳島線 佃 1962~, 播但線 飾磨港 폐지 뒤 姫路) 안쪽 행이 끝이 되고,
@@ -2669,8 +2767,14 @@ for rid_,L_ in by_route.items():
 # 끝 노드 행 덮개·끝 이어짐·다음 역 찾기·끝 노드 표시가 모두 이것만 읽는다
 _END=collections.defaultdict(list)
 def _own_iv(rid_,e_):
-    return _lead_clip(rid_,e_['id'],[(a_['valid_from'],a_['valid_to'] or 'ongoing') for a_ in _ra2[(routes[rid_]['line'],e_['id'])]])
-for rid_,L_ in by_route.items():
+    iv_=[(a_['valid_from'],a_['valid_to'] or 'ongoing') for a_ in _ra2[(routes[rid_]['line'],e_['id'])]]
+    # 이 계통에 얹은 옛 선형 계통(노선 단위 보기)이 앞 역으로 빌려 간 칸은 보기에서 이 계통 칸이다 (中央本線 田立–坂下 1973 전)
+    if _LEAD_BY.get((rid_,e_['id'])) in HOSTED.get(rid_,()):
+        p_=_LEAD_EIV.get((rid_,e_['id']))
+        return _ivx(iv_,[p_]) if p_ else iv_
+    return _lead_clip(rid_,e_['id'],iv_)
+# 노선 단위 보기(VR·VE)로 판정하고, 행은 연결 계산이 쓰는 원래 행으로 적는다
+for rid_,L_ in VR.items():
     if rid_ in _HID_R or len(L_)<2:continue
     if routes[rid_].get('closed'):
         # 닫힌 계통(순환)은 행 순서로 양쪽을 나눌 수 없어 가장 바깥 행만 본다
@@ -2680,13 +2784,13 @@ for rid_,L_ in by_route.items():
             for i_ in ord_:
                 if not T_[i_]:continue
                 e_=[x for x in _minus(list(T_[i_]),acc_) if _lo(x[0])<_lo(x[1],True) and _lo(x[1],True)>FLOOR]
-                if e_:_END[rid_].append((L_[i_],inw_,e_))
+                if e_ and _vrow(L_[i_],rid_)['route_id']==rid_ and id(L_[i_]) not in _VINS:_END[rid_].append((_vrow(L_[i_],rid_),inw_,e_))
                 acc_=_ivu(acc_+T_[i_])
         continue
     sq_={}
     for y_ in L_:sq_.setdefault(y_['node_id'],y_['seq'])
     ga_=collections.defaultdict(list)
-    for e in route_edges.get(rid_,()):
+    for e in VE.get(rid_,()):
         if e['a']!=e['b']:ga_[e['a']].append(e);ga_[e['b']].append(e)
     def _side(y_,e0_):
         """행 y_에서 칸 e0_ 쪽으로 가면 만나는 첫 행의 순번 (행 없는 노드는 한 갈래로만 지나간다)"""
@@ -2708,7 +2812,8 @@ for rid_,L_ in by_route.items():
         for inw_,a_,b_ in ((1,up_,lo_),(-1,lo_,up_)):
             # 기록 하한(1950) 전에만 끝이던 기간은 끝으로 보지 않는다 (연결과 같은 하한)
             e_=[x for x in _minus(list(a_),b_) if _lo(x[0])<_lo(x[1],True) and _lo(x[1],True)>FLOOR]
-            if e_:_END[rid_].append((y_,inw_,e_))
+            # 얹은 옛 선형 가운데 행의 끝은 그 옛 선형 계통 자신의 끝(_END[옛 계통])이 맡는다
+            if e_ and id(y_) not in _VINS:_END[rid_].append((_vrow(y_,rid_),inw_,e_))
 _ENDROW={id(y_) for E_ in _END.values() for y_,_,_ in E_}
 def _oend(rid2_,o_,day_=None):
     """행 o_가 그날(날짜가 없으면 어느 날이든) 계통 rid2_의 끝(날마다 정한 끝)이면 안쪽 방향(1·-1), 아니면 0. 행 위치(첫·마지막 행)로 보지 않는다"""
@@ -2814,7 +2919,7 @@ for s in stops:
     # 토막마다 이어짐·분기를 판정한다. 환승 토막(linked_pd)은 모든 토막을 모은 뒤 아래에서 한 번에 낸다 (링크 조사 R5 2026-11-12)
     # 끝은 그날 그 방향으로 이 계통에 서는 역이 하나도 없을 때다. 옛 경로 계통으로 바로 옆 정차가 비는 날(室蘭本線 豊浦)은 끝이 아니다
     def _term_on(d,s=s,r=r):
-        L_=by_route[r['id']]
+        L_=VR.get(r['id']) or by_route[r['id']]
         return not(any(x['is_stop'] and x['seq']<s['seq'] and on_day(x,d) for x in L_) and any(x['is_stop'] and x['seq']>s['seq'] and on_day(x,d) for x in L_))
     isend0=isend
     pieces_=[((s['valid_from'],s['valid_to']),(mp,mn),isend)]
@@ -2833,7 +2938,9 @@ for s in stops:
           # 지정 노드에 그 기간 정차가 없으면(이전한 역의 옛 자리, 鳥羽 1929–1970 志摩線은 鳥羽（旧）) 묶음 안 노드로 찾는다
           if j.get('_other_at') and not [c for c in cand if period(s,c[0]) and _clip(period(s,c[0]),j)]:
               cand=[(o,m) for m in near for o in node_stops.get(m,()) if routes[o['route_id']]['line']==oid and o['route_id']!=r['id'] and (not rr or o['route_id']==rr)]
-          cand=[c for c in cand if period(s,c[0])]
+          # 상대 계통은 근거 행 기간에 이 역에 함께 선 것만 본다. 같은 노선의 옛 선형 계통(京津線 옛 御陵, ~1997-10-12)이 근거 기간(1997-10-12~)에
+          # 없는데 후보로 남아 방면을 가져가면 연결이 빠지고 환승이 된다 (2번안 2026-11-23, 감사 K122)
+          cand=[c for c in cand if period(s,c[0]) and _clip(period(s,c[0]),j)]
           # 근거 표(THROUGH·손 확인) 없이 묶음의 다른 노드(다른 역)로 선로를 잇지 않는다. 같은 사업자 이웃 역이라고 선로가 이어진 것은 아니다
           # (立久恵線 出雲市–一畑 電鉄出雲市, 3회차 chugoku_shikoku_2-017). 그 쌍은 아래에서 환승이 된다
           # 같은 group(같은 역 묶음)의 다른 노드(사업자마다 나뉜 노드)도 다른 노드다. 다른 노드끼리의 이어짐은 여객 직통 근거(THROUGH·노면전차 계통표)가 있을 때만이고,
@@ -3422,7 +3529,9 @@ def _trunk(q,t,prev,day,seen,depth=0):
         if (q2,t) in seen or q2==q:continue
         # 같은 두 역 사이에 같은 노선 다른 계통 칸이 따로 있는 여객 이력 계통(extra, 和歌山線 短絡線 1962–1972)은 줄기가 아니다 (11회차 S3)
         if q2 in _DUPX:continue
-        for x_ in by_route.get(q2,()):
+        # 이 계통에 얹힌 옛 선형 계통은 보기로 이미 지났다
+        if q2 in HOSTED.get(q,()):continue
+        for x_ in VR.get(q2) or by_route.get(q2,()):
             if x_['node_id']!=t or x_.get('is_extension'):continue
             for st_ in (-1,1):
                 h_,eid_=hop(q2,x_['seq'],st_,day)
@@ -3431,9 +3540,9 @@ def _trunk(q,t,prev,day,seen,depth=0):
                 if a_ is not None and a_<75:continue
                 nx_,last_=walk(q2,x_['seq'],st_,False,day)
                 if not last_ or last_==t:continue
-                li_=next((k for k,y in enumerate(by_route[q2]) if y['node_id']==last_ and y['is_stop'] and on_day(y,day)),None)
+                li_=next((k for k,y in enumerate(VR.get(q2) or by_route[q2]) if y['node_id']==last_ and y['is_stop'] and on_day(y,day)),None)
                 if li_ is None:return last_
-                p2_=hop(q2,by_route[q2][li_]['seq'],-st_,day)[0]
+                p2_=hop(q2,(VR.get(q2) or by_route[q2])[li_]['seq'],-st_,day)[0]
                 return _trunk(q2,last_,p2_,day,seen|{(q2,t)},depth+1) or last_
     return None
 def _split_days(ds,pd,fn):
@@ -3453,7 +3562,7 @@ _ntr=0;_out=[]
 for l_ in links:
     q_=(l_.get('_o') or (None,))[0];t_=l_.get('terminal_node')
     if not q_ or not t_:_out.append(l_);continue
-    oi_=_SIDX[l_['_o']];L_=by_route[q_]
+    oi_=VIDX[l_['_o']];L_=VR[q_]
     ti_=[k for k,y in enumerate(L_) if y['node_id']==t_]
     if not ti_ or ti_[0]==oi_:_out.append(l_);continue
     st_=1 if ti_[0]>oi_ else -1;tseq_=L_[ti_[0]]['seq']
@@ -3516,6 +3625,28 @@ for l_ in links:
         if _lo(f_)<_lo(w_,True):_out.append(dict(l_,valid_from=f_,valid_to=w_))
 links=_out
 print('같은 상대 환승이 여러 역에 붙어 약한 역에서 뺀 행',_ndup,'(통째로 뺌',_ndrop,')')
+# 같은 역 줄에서 같은 노선의 옛 선형 계통(route old, 2번안 2026-11-23)으로 선로가 이어진 기간에는 그 노선과의 환승을 두지 않는다.
+# 옛 선형 계통은 본 계통과 한 줄(§8.3)이라, 옛 선형으로 이어진 때 본 계통과의 환승은 같은 노선의 연결과 환승이 겹친 것이다 (伊勢線 江戸橋 1917–1955, 감사 K121)
+_oldlk=collections.defaultdict(list)
+for l_ in links:
+    if l_['kind'] in ('continue','branch') and routes.get(l_.get('other_route_id') or '',{}).get('old'):_oldlk[(l_['route_id'],l_['seq'],l_['other_line_id'])].append((l_['valid_from'],l_['valid_to']))
+_out=[];_nold=0
+for l_ in links:
+    k_=(l_['route_id'],l_['seq'],l_['other_line_id'])
+    if l_['kind']!='transfer' or k_ not in _oldlk:_out.append(l_);continue
+    pcs_=[(l_['valid_from'],l_['valid_to'])]
+    for g_,h_ in _oldlk[k_]:
+        nxt_=[]
+        for f_,w_ in pcs_:
+            if _lo(h_,True)<=_lo(f_) or _lo(g_)>=_lo(w_,True):nxt_.append((f_,w_));continue
+            if _lo(f_)<_lo(g_):nxt_.append((f_,g_))
+            if h_ not in (None,'ongoing') and _lo(h_)<_lo(w_,True):nxt_.append((h_,w_))
+        pcs_=nxt_
+    if pcs_!=[(l_['valid_from'],l_['valid_to'])]:_nold+=1
+    for f_,w_ in pcs_:
+        if _lo(f_)<_lo(w_,True):_out.append(dict(l_,valid_from=f_,valid_to=w_))
+links=_out
+print('옛 선형 계통으로 이어진 기간에 뺀 같은 노선 환승',_nold)
 for i_,x_ in enumerate(_JNR):
     # 보정 행(source_patch)으로 더한 계통(和歌山線 短絡線)을 가리키는 행은 생성 중 컴파일에서 쓰이지 않는다 (11회차 S3)
     if i_ not in _JNR_USED and not(_nopatch and (x_['route'] not in routes or (x_.get('other_route') and x_['other_route'] not in routes))):err('junction_not_route_unused',x_)
@@ -3945,6 +4076,12 @@ for s_ in stops:
     for f_,t_ in _stop_pieces3(s_):_NSTOP[s_['node_id']].append((_lo(f_),_lo(t_,True)))
 _NFIRST={x_:min(a_ for a_,_ in v_) for x_,v_ in _NSTOP.items()}
 _NLAST={x_:max(b_ for _,b_ in v_) for x_,v_ in _NSTOP.items()}
+# 마지막 정차일의 상한. 정차 끝이 범위면(玉川遊園 [1950-01-02..1969-05-11]) 이름이 그 범위 끝까지 이어졌을 때만 「마지막 날 이름」이다 (4회차 kanto_3-006 재발)
+_NLASTHI=collections.defaultdict(str)
+for s_ in stops:
+    for f_,t_ in _stop_pieces3(s_):
+        h_=lohi(t_)[1] if t_ not in (None,'ongoing') else '9999-12-31'
+        _NLASTHI[s_['node_id']]=max(_NLASTHI[s_['node_id']],h_ or _lo(t_,True))
 _SIGW=re.compile(r'(信号場|信号所|分岐点)')
 # 그날 이름이 신호장·신호소·분기점이면 신호장이다. 그날 이름은 기간 이름, 그날 기간 이름이 없으면 기본 이름이다 (정체는 그날 이름을 따른다)
 _SIGN=collections.defaultdict(list)
@@ -4301,11 +4438,13 @@ for rid,d in _rs.items():
 par_rows.sort(key=lambda r_:(r_[0],r_[3],r_[4],r_[10] or '',r_[1],r_[11] or ''))
 t('route_parallel',['route_id','other_line_id','other_route_id','from_seq','to_seq','stop_seqs','in_next_stop','in_terminal','out_next_stop','out_terminal','valid_from_lo','valid_to_hi'],par_rows)
 print('병주 구간',len(par_rows),'1950 전에 끝나 뺀 토막',len(_par1950),'뺀 토막의 시작을 이어받은 첫 토막',len(_par1950c))
-succ={frozenset((e['a'],e['b'])):e['id'] for e in edges.values() if e.get('alt')!='old'}
+# 옛 선로 칸: 계통 안 옛 선로(alt=old)와 옛 선형 계통(route old, 2번안 2026-11-23)의 칸. 계보(옛 칸 → 지금 칸)는 둘 다 같게 잇는다
+_isold=lambda e:e.get('alt')=='old' or bool(routes.get(e.get('route_only'),{}).get('old'))
+succ={frozenset((e['a'],e['b'])):e['id'] for e in edges.values() if not _isold(e)}
 # 이설로 옮긴 역은 옛 노드와 새 노드가 따로다 (moved.json). 옛 선로의 끝을 새 노드로 바꿔 짝을 찾는다
 NEWOF={mv['old']:mv['new'] for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))}
 _el=[]
-_noold=[e for e in edges.values() if e.get('alt')!='old']
+_noold=[e for e in edges.values() if not _isold(e)]
 _g=collections.defaultdict(list)
 for e in _noold:_g[e['a']].append(e);_g[e['b']].append(e)
 def _sp(x,y,line):
@@ -4323,7 +4462,7 @@ def _sp(x,y,line):
     out=[];n_=y
     while n_!=x:n_,e=prev[n_];out.append(e)
     return out[::-1]
-_olds=[e for e in edges.values() if e.get('alt')=='old']
+_olds=[e for e in edges.values() if _isold(e)]
 _oadj=collections.defaultdict(list)
 for e in _olds:_oadj[e['a']].append(e);_oadj[e['b']].append(e)
 _on=lambda n,l:any(c.get('seed_line')==l for c in _g.get(n,()))   # 그 노선(seed_line)의 지금 선로에 닿는 노드
@@ -4355,8 +4494,14 @@ for e in _olds:
         _el.append((e['id'],pick['id'],'reroute'));continue
     # 막다른 칸: 지금 선로에 닿은 끝에서 계통 순서상 다음 지금 칸
     at=X if _on(X,e['seed_line']) else Y
-    rid_=e.get('route_only');rk=route_rank.get(rid_,{})
-    nx=[c for c in _g[at] if c.get('seed_line')==e['seed_line'] and rk.get(other(c,at),-1)>rk.get(at,0)]
+    # 옛 선형 계통 칸이면 그 계통에는 다음 지금 역이 없다. 같은 노선의 다른 계통(본 계통 먼저)에서 찾는다 (2번안 2026-11-23)
+    rid_=e.get('route_only');nx=[]
+    _ln=routes.get(rid_,{}).get('line') or e['seed_line']
+    for r_ in [rid_]+sorted((q for q,v in routes.items() if v['line']==_ln and q!=rid_),key=lambda q:(routes[q].get('role')!='main',q)):
+        rk=route_rank.get(r_,{})
+        if at not in rk:continue
+        nx=[c for c in _g[at] if c.get('seed_line')==e['seed_line'] and rk.get(other(c,at),-1)>rk.get(at,0)]
+        if nx:break
     _el.append((e['id'],nx[0]['id'] if nx else None,'reroute' if nx else 'relocate'))
 t('edge_link',['edge_id','successor_edge_id','kind'],_el)
 def geo_source(eid):
@@ -4540,7 +4685,7 @@ def _sv_resolve(s_,ei_,ed_):
     lo_,hi_=lohi(ed_['valid'][0])[0] or '0000-01-01',lohi(ed_['valid'][1] or 'ongoing')[1]
     parts_=[];path=[]
     for p_ in ed_['parts']:
-        rid=p_.get('route')
+        rid=p_.get('route');extra=[]
         if rid not in routes:err('service_route_missing',(s_['id'],ed_['valid'],rid));continue
         line=routes[rid]['line'];R=_sv_rows(rid)
         if 'a' in p_:
@@ -4552,13 +4697,61 @@ def _sv_resolve(s_,ei_,ed_):
             if None in ends:continue
             q_={'route':rid,'from':ends[0],'to':ends[1]}
         else:q_=dict(p_)
-        parts_.append(q_)
+        # 옛 선형 계통(같은 노선, 두 끝이 이 계통 위, 가운데 역은 이 계통 밖)이 판 기간에 열려 있었으면 그날의 길은 그 계통을 지난다.
+        # 부분을 그 계통 앞·옛 선형·뒤로 나눈다 (常磐線 駒ヶ嶺–浜吉田 옛 선로 시절의 운행 계통, 옛 선로 별도 계통 2번안 2026-11-23)
         seqs={n_:sq_ for n_,_,sq_ in R}
+        if 'from' in q_ and q_['from'] in seqs and q_['to'] in seqs and not routes[rid].get('closed'):
+            i_,j_=seqs[q_['from']],seqs[q_['to']];lo_s,hi_s=min(i_,j_),max(i_,j_)
+            cut=[]
+            for o_,ov_ in routes.items():
+                if o_==rid or ov_['line']!=line or ov_.get('role')!='branch':continue
+                Ro=_sv_rows(o_)
+                # 이 계통 밖 역이 한 토막으로 이어지고, 그 앞뒤 역(붙는 곳)은 이 계통 위다. 붙는 곳 바깥의 앞머리 행(相馬)은 본 계통과 같은 역이다
+                off=[k for k,(n_,_,_) in enumerate(Ro) if n_ not in seqs]
+                if not off or off[-1]-off[0]+1!=len(off) or off[0]==0 or off[-1]==len(Ro)-1:continue
+                Ro=Ro[off[0]-1:off[-1]+2]
+                mid=[(n_,rs_) for n_,rs_,_ in Ro[1:-1]]
+                fa,fb=sorted((seqs[Ro[0][0]],seqs[Ro[-1][0]]))
+                if not (lo_s<=fa<fb<=hi_s):continue
+                # 옛 선형 가운데 역이 판 기간에 섰어야 한다
+                if not any(_sv_over(x['valid_from'],x['valid_to'],lo_,hi_,False) for _,rs_ in mid for x in rs_):continue
+                fwd=seqs[Ro[0][0]]<seqs[Ro[-1][0]]
+                # 판 기간 내내 본 계통 쪽 구간(가운데 역)이 없으면 그 판의 길은 옛 선형이다: 부분을 나눈다.
+                # 본 계통 쪽에 가운데 역이 없거나(中央本線 田立) 판이 이설을 걸치면(嵯峨野線 1988~) 나누지 않고 이름 찾기 경로에만 옛 역을 넣는다.
+                # 같은 때 함께 있는 병행 지선(東北本線 尾久 경유)은 본 계통 가운데 역이 판 기간에 서서 나누지 않고, 그 역 이름이 판에 있으면 경로에만 들어간다
+                own=[rs_ for n_,rs_,sq_ in R if fa<sq_<fb]
+                if own and not any(_sv_over(x['valid_from'],x['valid_to'],lo_,hi_,False) for rs_ in own for x in rs_):
+                    cut.append((fa,fb,o_,Ro[0][0] if fwd else Ro[-1][0],Ro[-1][0] if fwd else Ro[0][0]))
+                else:extra.append((Ro[0][0],Ro[-1][0],mid))
+            if cut:
+                cut.sort();rev=i_>j_;pieces=[];at=lo_s
+                node_at={sq_:n_ for n_,_,sq_ in R}
+                for fa,fb,o_,na,nb in cut:
+                    if fa<at:continue
+                    if fa>at:pieces.append((rid,node_at[at],na))
+                    pieces.append((o_,na,nb));at=fb
+                if at<hi_s:pieces.append((rid,node_at[at],node_at[hi_s]))
+                if rev:pieces=[(r_,b_,a_) for r_,a_,b_ in pieces[::-1]]
+                for r_,a_,b_ in pieces:
+                    Rr=_sv_rows(r_);sq={n_:x for n_,_,x in Rr}
+                    parts_.append({'route':r_,'from':a_,'to':b_})
+                    seg=[(n_,rs_) for n_,rs_,x in Rr if min(sq[a_],sq[b_])<=x<=max(sq[a_],sq[b_])]
+                    if sq[a_]>sq[b_]:seg=seg[::-1]
+                    if path and seg and path[-1][0]==seg[0][0]:seg=seg[1:]
+                    path+=[(n_,rs_,routes[r_]['line']) for n_,rs_ in seg]
+                continue
+        parts_.append(q_)
         if routes[rid].get('closed') or q_['from'] not in seqs or q_['to'] not in seqs:seg=[(n_,rs_) for n_,rs_,_ in R]
         else:
             i_,j_=seqs[q_['from']],seqs[q_['to']]
             seg=[(n_,rs_) for n_,rs_,sq_ in R if min(i_,j_)<=sq_<=max(i_,j_)]
             if i_>j_:seg=seg[::-1]
+            # 나누지 않은 옛 선형의 가운데 역은 붙는 곳 뒤(진행 방향)에 끼운다. 판 이름 찾기 순서가 맞도록
+            for na_,nb_,mid_ in extra:
+                ks=[k for k,(n_,_) in enumerate(seg) if n_ in (na_,nb_)]
+                if len(ks)!=2:continue
+                ins=mid_ if seg[ks[0]][0]==na_ else mid_[::-1]
+                seg=seg[:ks[0]+1]+list(ins)+seg[ks[0]+1:]
         path+=[(n_,rs_,line) for n_,rs_ in seg]
     stops_=ed_.get('stops')
     if ed_.get('stops_ja') is not None:
@@ -5411,7 +5604,7 @@ for x_,b_ in _NLAST.items():
     for x in mine_:
         v_=x.get('valid_to')
         if v_ in (None,'ongoing'):continue
-        if (lohi(v_)[1] or lohi(v_)[0] or '0000')>=b_ and (not x.get('valid_from') or _lo(x['valid_from'])<b_):
+        if (lohi(v_)[1] or lohi(v_)[0] or '0000')>=max(b_,_NLASTHI.get(x_) or b_) and (not x.get('valid_from') or _lo(x['valid_from'])<b_):
             # 한 이름은 한 행으로 둔다: 끝을 비워 폐역 뒤로 잇는다. 시작이 없던 행(옛 이름 「~까지」)은 그 역 첫 정차일을 시작으로 적어
             # 기간 없는 행(기본 이름과 겹침)이 되지 않게 한다 (같은 글자 행이 이어 붙는 K40도 생기지 않음)
             _LASTNM.append((x_,x['lang'],x['text'],x.get('line'),v_))

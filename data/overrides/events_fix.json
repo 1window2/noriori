@@ -8690,7 +8690,7 @@
 "date": "1925-07-14",
 "type": "open",
 "line": "l_azumada_main_line",
-"route": "r_azumada_main_line"
+"route": "r_azumada_main_line_shimmei_toyohashi_shiyakushomae_toyohashi"
 },
 "set": {
 "operator": "o_toyohashi_kotsu"

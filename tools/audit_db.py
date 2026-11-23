@@ -260,6 +260,9 @@ for r in m.execute('select * from route_stop order by route_id,seq'):rstop[r['ro
 redge=collections.defaultdict(list)
 for r in m.execute('select route_id,seq,edge_id from route_edge order by route_id,seq'):redge[r[0]].append(r[2])
 routes={r['id']:dict(r) for r in m.execute('select * from route')}
+# 옛 선형 계통(원본 계통 행 old, 2번안 2026-11-23). DB 계통 표에는 칸이 없어 원본(보정 포함)에서 읽는다
+from lib import load as _load_src
+_OLD_R={r_['id'] for r_ in _load_src('routes') if r_.get('old')}
 # 여객 영업 이력이 없는 화물선(rule_class hidden)은 DB에만 두어 정차·끝 확장·이름이 없다. 공개 계통 검사에서 뺀다 (9회차 F, 그 대신 K110이 새는 길을 본다)
 HIDL={r_[0] for r_ in m.execute("select id from line where rule_class='hidden'")}
 par=[];disc=[];kmbad=[];mono=[];seqgap=[];stopno=[];endbad=[];closedbad=[];dup=[]
@@ -1081,6 +1084,8 @@ for k in LINKS:
     # 확장 행·이음 전에 끝난 옛 정차(徳島線 佃→阿波池田 1950~)와 순환을 닫는 방면(大阪環状線 新今宮→天王寺)은 아니다
     y_=k['next_stop_node'];st_=[z for z in s if z['is_stop']]
     adj_={st_[1]['node_id'] if st_ and st_[0]['node_id']==x and len(st_)>1 else None,st_[-2]['node_id'] if st_ and st_[-1]['node_id']==x and len(st_)>1 else None}-{None}
+    # 같은 노선 옛 선형 계통과의 이음(따로 계통, 2번안 2026-11-23)은 앱이 한 줄로 이어 그린다(§8.3). 다음 역 계산이 옛 선형을 함께 걸어 자기 계통 역이 나온다
+    if routes.get(k['other_route_id'] or '',{}).get('line_id')==routes[rid]['line_id'] and (rid in _OLD_R or k['other_route_id'] in _OLD_R):continue
     if s and x in(s[0]['node_id'],s[-1]['node_id']) and not routes[rid]['closed'] and y_ in adj_ and any(may(ivl(k['valid_from'],k['valid_to']),q) for q in SPR.get((rid,y_),[])):rows.append((rid,nn(x),ln(k['other_line_id']),nn(y_)))
     q=k['other_route_id']
     # 함께 쓰는 칸이 있어도 다음 정차역이 자기 계통 밖이면 겹친 쪽이 아니라 공유 칸 너머로 이어진다(옛 경로 계통이 본선 마지막 칸을 함께 쓰고 그 끝에서 본선으로, 遠州 八幡·外房 蘇我, 2026-11-14)
@@ -1909,11 +1914,13 @@ for k in LINKS:
         # 그 방향에 그날 서는 역이 없으면 다음 역은 그 계통 끝 노드다(서지 않는 끝 노드, 정차역 없는 연락선. compile walk와 같은 뜻, 5번 결정)
         if k['next_stop_node'] in (routes[q]['from_node'],routes[q]['to_node']) and any(may((d_,d_,d_,d_),pp) for pp in ROWIV.get((q,k['next_stop_node']),[])):ok=True
         # 그날 확실히 선 역만(끝이 범위인 역은 범위 첫날까지): compile의 다음 역과 같은 뜻 (9회차 L, 東部線 東堤町 [1950..1984] 폐지)
-        ON_={z['node_id'] for z in L_ if z['is_stop'] and any(pp and pp[0]<=d_<(pp[2] or '9999') for pp in SPR.get((q,z['node_id']),[]))}
-        NB_=collections.defaultdict(set)
-        for f_ in RPAIR.get(q,{}):
-            a_,b_=tuple(f_) if len(f_)==2 else (None,None)
-            if a_:NB_[a_].add(b_);NB_[b_].add(a_)
+        # 같은 노선 옛 선형 계통(따로 계통, 2번안 2026-11-23)의 칸·역도 함께 따라간다. compile walk가 끊긴 본 계통에서 옛 선형으로 건너간다 (花輪線 好摩 → 東北本線 옛 滝沢)
+        ON_=set();NB_=collections.defaultdict(set)
+        for q2 in [q]+[x for x in LROUTES.get(k['other_line_id'],[]) if x!=q and x in _OLD_R]:
+            ON_|={z['node_id'] for z in allstop.get(q2,[]) if z['is_stop'] and any(pp and pp[0]<=d_<(pp[2] or '9999') for pp in SPR.get((q2,z['node_id']),[]))}
+            for f_ in RPAIR.get(q2,{}):
+                a_,b_=tuple(f_) if len(f_)==2 else (None,None)
+                if a_:NB_[a_].add(b_);NB_[b_].add(a_)
         for i in idx:
             # 계통 칸을 따라 그날 서는 첫 역까지 (목록 순서가 아니라 칸으로: 옛 경로·이전 자리가 km 순으로 끼어 있음)
             for y0 in NB_[L_[i]['node_id']]:
@@ -1939,6 +1946,8 @@ if GAUGE:
         lo_,hi_=max(p[0],BASE),p[1]
         if lo_>=hi_:continue
         A=routes[k['route_id']]['line_id'];x=k['node']
+        # 같은 노선 계통끼리의 이음(본 계통 ↔ 옛 선형 계통)은 앱이 한 줄로 이어 그린다(§8.3). 궤간 행이 본선 계통 순서로만 적혀 옛 선형 칸은 노선 전체 행으로 읽힌다
+        if k['other_line_id']==A:continue
         nb=[(b_ if a_==x else a_) for f,e in RPAIR.get(k['route_id'],{}).items() if x in f for a_,b_ in [E[e]]]
         ga=set().union(*[gauge_on(A,lo_,hi_,y) for y in nb]) if nb else gauge_on(A,lo_,hi_,x)
         gb=gauge_on(k['other_line_id'],lo_,hi_,k['next_stop_node'])
@@ -2454,6 +2463,18 @@ rows=[]
 for x_ in OVR('moved.json'):
     if not x_.get('km_change'):continue
     kd_=[abs(p_-q_) for r1,p_ in _KMN[x_['old']] for r2,q_ in _KMN[x_['new']] if r1==r2]
+    # 옛 자리가 옛 선형 계통(따로 계통, 2번안 2026-11-23)에 있으면 두 계통이 함께 가진 역에서 잰 거리로 비교한다 (菊池線 再春 옛 자리: 熊本高専前에서 0.4/0.3)
+    if not kd_:
+        _kr=collections.defaultdict(dict)
+        for r_,v_ in allstop.items():
+            for y_ in v_:
+                if y_['km_cum'] is not None:_kr[r_][y_['node_id']]=y_['km_cum']
+        for r1,p_ in _KMN[x_['old']]:
+            for r2,q_ in _KMN[x_['new']]:
+                com=[n_ for n_ in _kr[r1] if n_ in _kr[r2] and n_ not in (x_['old'],x_['new'])]
+                if com:
+                    c_=min(com,key=lambda n_:abs(_kr[r1][n_]-p_))
+                    kd_.append(abs(abs(p_-_kr[r1][c_])-abs(q_-_kr[r2][c_])))
     if not kd_ or max(kd_)<.05:rows.append((x_['old'],x_['new'],kd_[:3]))
 put('K84 km 바뀜 근거가 있는 이전 쌍인데 두 노드 km 차 없음',rows,30)
 # ---- 직통 근거 기간 (10회차 D1, K140–K149) ----
@@ -2725,6 +2746,24 @@ for (t,i,l),v in NROWS.items():
         ch=[(z[0],z[4],z[5]) for z in v if not z[3] and (z[4] or z[5]) and any(d_ and a_<(lohi(d_)[0] or '')<=b_ for d_ in (z[4],z[5]))]
         if ch:rows.append((i,ln(li),x,e_,ch[:2]))
 put('K194c 끝난 노선 마지막 날 이름을 정차 끝 범위 앞으로 골랐는데 범위 안에 개칭이 있음(확인 목록)',rows,40,lvl='warn')
+# K194h 폐역 뒤로 끝 없이 늘인 기간 이름(시작 있음·끝 없음)인데 마지막 정차 끝이 범위다. 이름 끝이 그 범위 끝보다 이르면 늘이면 안 된다
+# (4회차 kanto_3-006 재발: 身延山別院前·柵町가 정차 끝 범위 앞날과 비교해 늘어남). 남는 행은 이름이 범위 끝까지 이어졌다는 근거가 있어야 한다
+rows=[]
+_SALL=collections.defaultdict(list)
+for rid_,v_ in rstop.items():
+    for y in v_:
+        if y['is_stop']:_SALL[y['node_id']].append(y['valid_to'])
+for (t,i,l),v in NROWS.items():
+    if t!='node' or l!='ja':continue
+    ends=_SALL.get(i)
+    if not ends or any(z in (None,ON) for z in ends):continue
+    e_=max(ends,key=lambda z:(lohi(z)[1] or ''))
+    try:a_,b_=lohi(e_)
+    except ValueError:continue
+    if a_==b_:continue
+    for x,k,src,li,vf,vt in v:
+        if vf and not vt:rows.append((i,x,vf,e_))
+put('K194h 폐역 뒤로 끝 없이 늘인 기간 이름인데 마지막 정차 끝이 범위(확인 목록)',rows,40,lvl='warn')
 # K194e 노드의 도도부현(node.pref)과 좌표가 든 현이 다름(4회차 tohoku_1-011 (4): 吉岡海底). 경계는 compile과 같은 data/base/pref.geojson(N03을 줄인 것)이라
 # 경계 가까운 역은 줄인 선 때문에 틀리게 나올 수 있다. 바다 위(어느 현에도 안 듦)는 보지 않는다. 확인 목록
 _PF194={}

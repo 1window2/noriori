@@ -9694,6 +9694,7 @@
 - {"node": "n_hirose_kumamoto", "lat": 32.953694, "lon": 130.793139, "quality": "approx", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_fukagawa_kumamoto", "lat": 32.968, "lon": 130.800167, "quality": "approx", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_kikuchi", "lat": 32.980556, "lon": 130.805194, "quality": "approx", "checked": "2026-11-20", "source": "station_database"}
+- {"node": "n_saishun_iryo_center_mae_old", "lat": 32.880972, "lon": 130.747917, "quality": "approx", "checked": "2026-11-20", "source": "hand"}
 - {"node": "n_higashi_takashima", "lat": 35.47138889, "lon": 139.6361667, "quality": "approx", "checked": "2026-11-20", "source": "wikidata"}
 - {"node": "n_takashima_freight", "lat": 35.46611111, "lon": 139.6306111, "quality": "approx", "checked": "2026-11-20", "source": "wikidata"}
 - {"node": "n_tabata_signal", "lat": 35.73826, "lon": 139.76067, "quality": "approx", "checked": "2026-11-20", "source": "hand"}

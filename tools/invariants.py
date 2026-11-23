@@ -157,6 +157,26 @@ def on_date(A):
                     hops,bad=A.service_chain(sid,d)
                     if not bad and any(h[2]==e for h in hops):ds.remove(d);break
         if not ds:del gaps[l,e]
+    # 같은 노선 계통을 이어 넣을 수 있으면 된다(앱 같은 노선 이어 그리기 §8.3, 옛 선형 계통 2번안 2026-11-23: 江戸橋（旧）에서 옛 高田本山 선형으로)
+    for (l,e),ds in list(gaps.items()):
+        ed=A.edges[e];ends={ed['from_node'],ed['to_node']}
+        for d in list(ds):
+            cand=set()
+            for rid in A.routes:
+                if A.routes[rid]['line_id']!=l:continue
+                rows=[q['node'] for q in picks(A,rid,d)]
+                seq=[s['node_id'] for s in A._stops[rid]]
+                for n in ends&set(seq):
+                    k=seq.index(n);near=set(seq[max(0,k-4):k+5])
+                    cand|={x for x in rows if x in near}
+            cand=sorted(cand);ok=False
+            for i,p_ in enumerate(cand):
+                for q_ in cand[i+1:]:
+                    x=A.expand_line(l,p_,q_,appsim.normalize_date(d))
+                    if x['status']=='ok' and (l,e) in A.ride_of(x,d)['edges']:ok=True;break
+                if ok:break
+            if ok:ds.remove(d)
+        if not ds:del gaps[l,e]
     # 사유를 적은 예외 (data/overrides/invariant_exceptions.json, 사용자 결정)
     EXC=json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)),'..','data','overrides','invariant_exceptions.json'),encoding='utf-8'))['on_date']
     for x in EXC:

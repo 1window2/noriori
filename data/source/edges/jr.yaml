@@ -350,8 +350,8 @@
 - {"id": "e_000349", "a": "n_ochiai", "b": "n_karikachi", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line_ochiai_shintoku"}
 - {"id": "e_000350", "a": "n_karikachi", "b": "n_niinai", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line_ochiai_shintoku"}
 - {"id": "e_000351", "a": "n_niinai", "b": "n_shintoku", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line_ochiai_shintoku"}
-- {"id": "e_000352", "a": "n_kanayama_nemuro_main", "b": "n_shikagoe_old", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line", "alt": "old"}
-- {"id": "e_000353", "a": "n_shikagoe_old", "b": "n_higashi_shikagoe", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line", "alt": "old"}
+- {"id": "e_000352", "a": "n_kanayama_nemuro_main", "b": "n_shikagoe_old", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line_kanayama_nemuro_main_higashi_shikagoe"}
+- {"id": "e_000353", "a": "n_shikagoe_old", "b": "n_higashi_shikagoe", "seed_line": "l_nemuro_main_line", "route_only": "r_nemuro_main_line_kanayama_nemuro_main_higashi_shikagoe"}
 - {"id": "e_000354", "a": "n_asahikawa", "b": "n_kaguraoka", "seed_line": "l_furano_line"}
 - {"id": "e_000355", "a": "n_kaguraoka", "b": "n_midorigaoka", "seed_line": "l_furano_line"}
 - {"id": "e_000356", "a": "n_midorigaoka", "b": "n_nishi_goryo", "seed_line": "l_furano_line"}
@@ -961,8 +961,8 @@
 - {"id": "e_000960", "a": "n_shinano_kawashima", "b": "n_ono_chuo_main", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line_okaya_shiojiri"}
 - {"id": "e_000961", "a": "n_ono_chuo_main", "b": "n_higashishiojiri", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line_okaya_shiojiri"}
 - {"id": "e_000962", "a": "n_higashishiojiri", "b": "n_shiojiri", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line_okaya_shiojiri"}
-- {"id": "e_000963", "a": "n_nagiso", "b": "n_tadachi_chuo_main", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line", "alt": "old"}
-- {"id": "e_000964", "a": "n_tadachi_chuo_main", "b": "n_tadachi", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line", "alt": "old"}
+- {"id": "e_000963", "a": "n_nagiso", "b": "n_tadachi_chuo_main", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line_nagiso_tadachi"}
+- {"id": "e_000964", "a": "n_tadachi_chuo_main", "b": "n_tadachi", "seed_line": "l_chuo_main_line", "route_only": "r_chuo_main_line_nagiso_tadachi"}
 - {"id": "e_000965", "a": "n_tachikawa", "b": "n_nishi_tachikawa", "seed_line": "l_ome_line"}
 - {"id": "e_000966", "a": "n_nishi_tachikawa", "b": "n_higashi_nakagami", "seed_line": "l_ome_line"}
 - {"id": "e_000967", "a": "n_higashi_nakagami", "b": "n_nakagami", "seed_line": "l_ome_line"}
@@ -1403,11 +1403,11 @@
 - {"id": "e_001402", "a": "n_hamayoshida", "b": "n_watari_joban", "seed_line": "l_joban_line"}
 - {"id": "e_001403", "a": "n_watari_joban", "b": "n_okuma_joban", "seed_line": "l_joban_line"}
 - {"id": "e_001404", "a": "n_okuma_joban", "b": "n_iwanuma", "seed_line": "l_joban_line"}
-- {"id": "e_001405", "a": "n_tabata_signal", "b": "n_mikawashima", "seed_line": "l_joban_line", "route_only": "r_tabata_freight_line"}
-- {"id": "e_001406", "a": "n_komagamine", "b": "n_shinchi_old", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
-- {"id": "e_001407", "a": "n_shinchi_old", "b": "n_sakamoto_joban_old", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
-- {"id": "e_001408", "a": "n_sakamoto_joban_old", "b": "n_yamashita_old", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
-- {"id": "e_001409", "a": "n_yamashita_old", "b": "n_hamayoshida", "seed_line": "l_joban_line", "route_only": "r_joban_line", "alt": "old"}
+- {"id": "e_001405", "a": "n_komagamine", "b": "n_shinchi_old", "seed_line": "l_joban_line", "route_only": "r_joban_line_komagamine_hamayoshida"}
+- {"id": "e_001406", "a": "n_shinchi_old", "b": "n_sakamoto_joban_old", "seed_line": "l_joban_line", "route_only": "r_joban_line_komagamine_hamayoshida"}
+- {"id": "e_001407", "a": "n_sakamoto_joban_old", "b": "n_yamashita_old", "seed_line": "l_joban_line", "route_only": "r_joban_line_komagamine_hamayoshida"}
+- {"id": "e_001408", "a": "n_yamashita_old", "b": "n_hamayoshida", "seed_line": "l_joban_line", "route_only": "r_joban_line_komagamine_hamayoshida"}
+- {"id": "e_001409", "a": "n_tabata_signal", "b": "n_mikawashima", "seed_line": "l_joban_line", "route_only": "r_tabata_freight_line"}
 - {"id": "e_001410", "a": "n_mito", "b": "n_hitachi_aoyagi", "seed_line": "l_suigun_line"}
 - {"id": "e_001411", "a": "n_hitachi_aoyagi", "b": "n_hitachi_tsuda", "seed_line": "l_suigun_line"}
 - {"id": "e_001412", "a": "n_hitachi_tsuda", "b": "n_godai", "seed_line": "l_suigun_line"}
@@ -1543,8 +1543,8 @@
 - {"id": "e_001542", "a": "n_haneo", "b": "n_fukurogura", "seed_line": "l_agatsuma_line"}
 - {"id": "e_001543", "a": "n_fukurogura", "b": "n_manza_kazawaguchi", "seed_line": "l_agatsuma_line"}
 - {"id": "e_001544", "a": "n_manza_kazawaguchi", "b": "n_omae", "seed_line": "l_agatsuma_line"}
-- {"id": "e_001545", "a": "n_iwashima", "b": "n_kawarayu_onsen", "seed_line": "l_agatsuma_line", "route_only": "r_agatsuma_line", "alt": "old"}
-- {"id": "e_001546", "a": "n_kawarayu_onsen", "b": "n_naganohara_kusatsuguchi", "seed_line": "l_agatsuma_line", "route_only": "r_agatsuma_line", "alt": "old"}
+- {"id": "e_001545", "a": "n_iwashima", "b": "n_kawarayu_onsen", "seed_line": "l_agatsuma_line", "route_only": "r_agatsuma_line_iwashima_naganohara_kusatsuguchi"}
+- {"id": "e_001546", "a": "n_kawarayu_onsen", "b": "n_naganohara_kusatsuguchi", "seed_line": "l_agatsuma_line", "route_only": "r_agatsuma_line_iwashima_naganohara_kusatsuguchi"}
 - {"id": "e_001547", "a": "n_oyama_mito", "b": "n_omoigawa", "seed_line": "l_ryomo_line"}
 - {"id": "e_001548", "a": "n_omoigawa", "b": "n_tochigi", "seed_line": "l_ryomo_line"}
 - {"id": "e_001549", "a": "n_tochigi", "b": "n_ohirashita", "seed_line": "l_ryomo_line"}
@@ -1655,9 +1655,9 @@
 - {"id": "e_001654", "a": "n_ishinomakiayumino", "b": "n_hebita", "seed_line": "l_senseki_line"}
 - {"id": "e_001655", "a": "n_hebita", "b": "n_rikuzen_yamashita", "seed_line": "l_senseki_line"}
 - {"id": "e_001656", "a": "n_rikuzen_yamashita", "b": "n_ishinomaki", "seed_line": "l_senseki_line"}
-- {"id": "e_001657", "a": "n_rikuzen_otsuka", "b": "n_tona", "seed_line": "l_senseki_line", "route_only": "r_senseki_line", "alt": "old"}
-- {"id": "e_001658", "a": "n_tona", "b": "n_nobiru", "seed_line": "l_senseki_line", "route_only": "r_senseki_line", "alt": "old"}
-- {"id": "e_001659", "a": "n_nobiru", "b": "n_rikuzen_ono", "seed_line": "l_senseki_line", "route_only": "r_senseki_line", "alt": "old"}
+- {"id": "e_001657", "a": "n_rikuzen_otsuka", "b": "n_tona", "seed_line": "l_senseki_line", "route_only": "r_senseki_line_rikuzen_otsuka_rikuzen_ono"}
+- {"id": "e_001658", "a": "n_tona", "b": "n_nobiru", "seed_line": "l_senseki_line", "route_only": "r_senseki_line_rikuzen_otsuka_rikuzen_ono"}
+- {"id": "e_001659", "a": "n_nobiru", "b": "n_rikuzen_ono", "seed_line": "l_senseki_line", "route_only": "r_senseki_line_rikuzen_otsuka_rikuzen_ono"}
 - {"id": "e_001660", "a": "n_kogota", "b": "n_kami_wakuya", "seed_line": "l_ishinomaki_line"}
 - {"id": "e_001661", "a": "n_kami_wakuya", "b": "n_wakuya", "seed_line": "l_ishinomaki_line"}
 - {"id": "e_001662", "a": "n_wakuya", "b": "n_maeyachi", "seed_line": "l_ishinomaki_line"}
@@ -1671,7 +1671,7 @@
 - {"id": "e_001670", "a": "n_mangoku_ura", "b": "n_sawada", "seed_line": "l_ishinomaki_line"}
 - {"id": "e_001671", "a": "n_sawada", "b": "n_urashuku", "seed_line": "l_ishinomaki_line"}
 - {"id": "e_001672", "a": "n_urashuku", "b": "n_onagawa", "seed_line": "l_ishinomaki_line"}
-- {"id": "e_001673", "a": "n_urashuku", "b": "n_onagawa_old", "seed_line": "l_ishinomaki_line", "route_only": "r_ishinomaki_line", "alt": "old"}
+- {"id": "e_001673", "a": "n_urashuku", "b": "n_onagawa_old", "seed_line": "l_ishinomaki_line", "route_only": "r_ishinomaki_line_urashuku_onagawa_old"}
 - {"id": "e_001674", "a": "n_maeyachi", "b": "n_wabuchi", "seed_line": "l_kesennuma_line"}
 - {"id": "e_001675", "a": "n_wabuchi", "b": "n_nonodake", "seed_line": "l_kesennuma_line"}
 - {"id": "e_001676", "a": "n_nonodake", "b": "n_rikuzen_toyosato", "seed_line": "l_kesennuma_line"}
@@ -1734,10 +1734,10 @@
 - {"id": "e_001733", "a": "n_hiraishi", "b": "n_ainono", "seed_line": "l_kitakami_line"}
 - {"id": "e_001734", "a": "n_ainono", "b": "n_yabitsu", "seed_line": "l_kitakami_line"}
 - {"id": "e_001735", "a": "n_yabitsu", "b": "n_yokote", "seed_line": "l_kitakami_line"}
-- {"id": "e_001736", "a": "n_iwasawa", "b": "n_waka_sennin_kitakami", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line", "alt": "old"}
-- {"id": "e_001737", "a": "n_waka_sennin_kitakami", "b": "n_oarasawa", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line", "alt": "old"}
-- {"id": "e_001738", "a": "n_oarasawa", "b": "n_rikuchuoishi", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line", "alt": "old"}
-- {"id": "e_001739", "a": "n_rikuchuoishi", "b": "n_hottoyuda", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line", "alt": "old"}
+- {"id": "e_001736", "a": "n_iwasawa", "b": "n_waka_sennin_kitakami", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line_iwasawa_hottoyuda"}
+- {"id": "e_001737", "a": "n_waka_sennin_kitakami", "b": "n_oarasawa", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line_iwasawa_hottoyuda"}
+- {"id": "e_001738", "a": "n_oarasawa", "b": "n_rikuchuoishi", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line_iwasawa_hottoyuda"}
+- {"id": "e_001739", "a": "n_rikuchuoishi", "b": "n_hottoyuda", "seed_line": "l_kitakami_line", "route_only": "r_kitakami_line_iwasawa_hottoyuda"}
 - {"id": "e_001740", "a": "n_hanamaki", "b": "n_nitanai", "seed_line": "l_kamaishi_line"}
 - {"id": "e_001741", "a": "n_nitanai", "b": "n_yasawa", "seed_line": "l_kamaishi_line"}
 - {"id": "e_001742", "a": "n_yasawa", "b": "n_shin_hanamaki", "seed_line": "l_kamaishi_line"}
@@ -2705,9 +2705,9 @@
 - {"id": "e_002704", "a": "n_minami_kofu", "b": "n_zenkoji", "seed_line": "l_minobu_line"}
 - {"id": "e_002705", "a": "n_zenkoji", "b": "n_kanente", "seed_line": "l_minobu_line"}
 - {"id": "e_002706", "a": "n_kanente", "b": "n_kofu", "seed_line": "l_minobu_line"}
-- {"id": "e_002707", "a": "n_fuji", "b": "n_motoichiba", "seed_line": "l_minobu_line", "route_only": "r_minobu_line", "alt": "old"}
-- {"id": "e_002708", "a": "n_motoichiba", "b": "n_tatebori_minobu", "seed_line": "l_minobu_line", "route_only": "r_minobu_line", "alt": "old"}
-- {"id": "e_002709", "a": "n_tatebori_minobu", "b": "n_iriyamase", "seed_line": "l_minobu_line", "route_only": "r_minobu_line", "alt": "old"}
+- {"id": "e_002707", "a": "n_fuji", "b": "n_motoichiba", "seed_line": "l_minobu_line", "route_only": "r_minobu_line_fuji_iriyamase"}
+- {"id": "e_002708", "a": "n_motoichiba", "b": "n_tatebori_minobu", "seed_line": "l_minobu_line", "route_only": "r_minobu_line_fuji_iriyamase"}
+- {"id": "e_002709", "a": "n_tatebori_minobu", "b": "n_iriyamase", "seed_line": "l_minobu_line", "route_only": "r_minobu_line_fuji_iriyamase"}
 - {"id": "e_002710", "a": "n_toyohashi", "b": "n_funamachi", "seed_line": "l_iida_line"}
 - {"id": "e_002711", "a": "n_funamachi", "b": "n_shimoji", "seed_line": "l_iida_line"}
 - {"id": "e_002712", "a": "n_shimoji", "b": "n_kozakai", "seed_line": "l_iida_line"}
@@ -2804,11 +2804,11 @@
 - {"id": "e_002803", "a": "n_ina_shimmachi", "b": "n_miyaki", "seed_line": "l_iida_line"}
 - {"id": "e_002804", "a": "n_miyaki", "b": "n_tatsuno_chuo_main", "seed_line": "l_iida_line"}
 - {"id": "e_002805", "a": "n_toyokawa", "b": "n_nishi_toyokawa", "seed_line": "l_iida_line", "route_only": "r_iida_line_toyokawa_nishi_toyokawa"}
-- {"id": "e_002806", "a": "n_chubu_tenryu", "b": "n_sakuma_iida", "seed_line": "l_iida_line", "route_only": "r_iida_line", "alt": "old"}
-- {"id": "e_002807", "a": "n_sakuma_iida", "b": "n_toyoneguchi", "seed_line": "l_iida_line", "route_only": "r_iida_line", "alt": "old"}
-- {"id": "e_002808", "a": "n_toyoneguchi", "b": "n_tenryu_yamamuro", "seed_line": "l_iida_line", "route_only": "r_iida_line", "alt": "old"}
-- {"id": "e_002809", "a": "n_tenryu_yamamuro", "b": "n_shiranami", "seed_line": "l_iida_line", "route_only": "r_iida_line", "alt": "old"}
-- {"id": "e_002810", "a": "n_shiranami", "b": "n_ozore", "seed_line": "l_iida_line", "route_only": "r_iida_line", "alt": "old"}
+- {"id": "e_002806", "a": "n_chubu_tenryu", "b": "n_sakuma_iida", "seed_line": "l_iida_line", "route_only": "r_iida_line_chubu_tenryu_ozore"}
+- {"id": "e_002807", "a": "n_sakuma_iida", "b": "n_toyoneguchi", "seed_line": "l_iida_line", "route_only": "r_iida_line_chubu_tenryu_ozore"}
+- {"id": "e_002808", "a": "n_toyoneguchi", "b": "n_tenryu_yamamuro", "seed_line": "l_iida_line", "route_only": "r_iida_line_chubu_tenryu_ozore"}
+- {"id": "e_002809", "a": "n_tenryu_yamamuro", "b": "n_shiranami", "seed_line": "l_iida_line", "route_only": "r_iida_line_chubu_tenryu_ozore"}
+- {"id": "e_002810", "a": "n_shiranami", "b": "n_ozore", "seed_line": "l_iida_line", "route_only": "r_iida_line_chubu_tenryu_ozore"}
 - {"id": "e_002811", "a": "n_obu", "b": "n_owari_morioka", "seed_line": "l_taketoyo_line"}
 - {"id": "e_002812", "a": "n_owari_morioka", "b": "n_ogawa_taketoyo", "seed_line": "l_taketoyo_line"}
 - {"id": "e_002813", "a": "n_ogawa_taketoyo", "b": "n_ishihama", "seed_line": "l_taketoyo_line"}
@@ -3126,8 +3126,8 @@
 - {"id": "e_003125", "a": "n_tsukaguchi", "b": "n_amagasaki", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line_tsukaguchi_amagasakiko"}
 - {"id": "e_003126", "a": "n_amagasaki", "b": "n_kinrakuji", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line_tsukaguchi_amagasakiko"}
 - {"id": "e_003127", "a": "n_kinrakuji", "b": "n_amagasakiko", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line_tsukaguchi_amagasakiko"}
-- {"id": "e_003128", "a": "n_namaze", "b": "n_takedao_fukuchiyama", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line", "alt": "old"}
-- {"id": "e_003129", "a": "n_takedao_fukuchiyama", "b": "n_dojo", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line", "alt": "old"}
+- {"id": "e_003128", "a": "n_namaze", "b": "n_takedao_fukuchiyama", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line_namaze_dojo"}
+- {"id": "e_003129", "a": "n_takedao_fukuchiyama", "b": "n_dojo", "seed_line": "l_fukuchiyama_line", "route_only": "r_fukuchiyama_line_namaze_dojo"}
 - {"id": "e_003130", "a": "n_maibara", "b": "n_sakata_hokuriku_main", "seed_line": "l_hokuriku_main_line"}
 - {"id": "e_003131", "a": "n_sakata_hokuriku_main", "b": "n_tamura", "seed_line": "l_hokuriku_main_line"}
 - {"id": "e_003132", "a": "n_tamura", "b": "n_nagahama", "seed_line": "l_hokuriku_main_line"}
@@ -3215,12 +3215,12 @@
 - {"id": "e_003214", "a": "n_shimbo", "b": "n_suizu", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tsuruga_imajo"}
 - {"id": "e_003215", "a": "n_suizu", "b": "n_ogiri", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tsuruga_imajo"}
 - {"id": "e_003216", "a": "n_ogiri", "b": "n_imajo", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tsuruga_imajo"}
-- {"id": "e_003217", "a": "n_tanihama", "b": "n_gozu", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tanihama_naoetsu"}
-- {"id": "e_003218", "a": "n_gozu", "b": "n_naoetsu", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tanihama_naoetsu"}
-- {"id": "e_003219", "a": "n_uramoto", "b": "n_no_hokuriku_main", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line", "alt": "old"}
-- {"id": "e_003220", "a": "n_no_hokuriku_main", "b": "n_tsutsuishi_hokuriku_main", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line", "alt": "old"}
-- {"id": "e_003221", "a": "n_tsutsuishi_hokuriku_main", "b": "n_nadachi_hokuriku_main", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line", "alt": "old"}
-- {"id": "e_003222", "a": "n_nadachi_hokuriku_main", "b": "n_arimagawa", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line", "alt": "old"}
+- {"id": "e_003217", "a": "n_uramoto", "b": "n_no_hokuriku_main", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_uramoto_arimagawa"}
+- {"id": "e_003218", "a": "n_no_hokuriku_main", "b": "n_tsutsuishi_hokuriku_main", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_uramoto_arimagawa"}
+- {"id": "e_003219", "a": "n_tsutsuishi_hokuriku_main", "b": "n_nadachi_hokuriku_main", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_uramoto_arimagawa"}
+- {"id": "e_003220", "a": "n_nadachi_hokuriku_main", "b": "n_arimagawa", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_uramoto_arimagawa"}
+- {"id": "e_003221", "a": "n_tanihama", "b": "n_gozu", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tanihama_naoetsu"}
+- {"id": "e_003222", "a": "n_gozu", "b": "n_naoetsu", "seed_line": "l_hokuriku_main_line", "route_only": "r_hokuriku_main_line_tanihama_naoetsu"}
 - {"id": "e_003223", "a": "n_tsuruga", "b": "n_nishi_tsuruga", "seed_line": "l_obama_line"}
 - {"id": "e_003224", "a": "n_nishi_tsuruga", "b": "n_awano", "seed_line": "l_obama_line"}
 - {"id": "e_003225", "a": "n_awano", "b": "n_higashi_mihama", "seed_line": "l_obama_line"}
@@ -3625,8 +3625,8 @@
 - {"id": "e_003624", "a": "n_ebi", "b": "n_hoki_mizoguchi", "seed_line": "l_hakubi_line"}
 - {"id": "e_003625", "a": "n_hoki_mizoguchi", "b": "n_kishimoto", "seed_line": "l_hakubi_line"}
 - {"id": "e_003626", "a": "n_kishimoto", "b": "n_hoki_daisen", "seed_line": "l_hakubi_line"}
-- {"id": "e_003627", "a": "n_gokei", "b": "n_hiwa_hakubi", "seed_line": "l_hakubi_line", "route_only": "r_hakubi_line", "alt": "old"}
-- {"id": "e_003628", "a": "n_hiwa_hakubi", "b": "n_minagi", "seed_line": "l_hakubi_line", "route_only": "r_hakubi_line", "alt": "old"}
+- {"id": "e_003627", "a": "n_gokei", "b": "n_hiwa_hakubi", "seed_line": "l_hakubi_line", "route_only": "r_hakubi_line_gokei_minagi"}
+- {"id": "e_003628", "a": "n_hiwa_hakubi", "b": "n_minagi", "seed_line": "l_hakubi_line", "route_only": "r_hakubi_line_gokei_minagi"}
 - {"id": "e_003629", "a": "n_bitchu_kojiro", "b": "n_sakane", "seed_line": "l_geibi_line"}
 - {"id": "e_003630", "a": "n_sakane", "b": "n_ichioka", "seed_line": "l_geibi_line"}
 - {"id": "e_003631", "a": "n_ichioka", "b": "n_yagami", "seed_line": "l_geibi_line"}
@@ -3763,8 +3763,8 @@
 - {"id": "e_003762", "a": "n_tsutsuga", "b": "n_doi_kabe", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
 - {"id": "e_003763", "a": "n_doi_kabe", "b": "n_togochi", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
 - {"id": "e_003764", "a": "n_togochi", "b": "n_sandankyo", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_kabe_sandankyo"}
-- {"id": "e_003765", "a": "n_yokogawa", "b": "n_mitaki_kabe", "seed_line": "l_kabe_line", "route_only": "r_kabe_line", "alt": "old"}
-- {"id": "e_003766", "a": "n_mitaki_kabe", "b": "n_aki_nagatsuka", "seed_line": "l_kabe_line", "route_only": "r_kabe_line", "alt": "old"}
+- {"id": "e_003765", "a": "n_yokogawa", "b": "n_mitaki_kabe", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_yokogawa_aki_nagatsuka"}
+- {"id": "e_003766", "a": "n_mitaki_kabe", "b": "n_aki_nagatsuka", "seed_line": "l_kabe_line", "route_only": "r_kabe_line_yokogawa_aki_nagatsuka"}
 - {"id": "e_003767", "a": "n_iwakuni", "b": "n_nishi_iwakuni", "seed_line": "l_gantoku_line"}
 - {"id": "e_003768", "a": "n_nishi_iwakuni", "b": "n_kawanishi_gannichi", "seed_line": "l_gantoku_line"}
 - {"id": "e_003769", "a": "n_kawanishi_gannichi", "b": "n_hashirano", "seed_line": "l_gantoku_line"}
@@ -4317,8 +4317,8 @@
 - {"id": "e_004316", "a": "n_iyo_nakayama", "b": "n_iyo_tachikawa", "seed_line": "l_yosan_line", "route_only": "r_yosan_line_mukaibara_uchiko"}
 - {"id": "e_004317", "a": "n_iyo_tachikawa", "b": "n_uchiko", "seed_line": "l_yosan_line", "route_only": "r_yosan_line_mukaibara_uchiko"}
 - {"id": "e_004318", "a": "n_niiya", "b": "n_iyo_ozu", "seed_line": "l_yosan_line", "route_only": "r_yosan_line_niiya_iyo_ozu"}
-- {"id": "e_004319", "a": "n_sakaide", "b": "n_utazu_yosan", "seed_line": "l_yosan_line", "route_only": "r_yosan_line", "alt": "old"}
-- {"id": "e_004320", "a": "n_utazu_yosan", "b": "n_marugame", "seed_line": "l_yosan_line", "route_only": "r_yosan_line", "alt": "old"}
+- {"id": "e_004319", "a": "n_sakaide", "b": "n_utazu_yosan", "seed_line": "l_yosan_line", "route_only": "r_yosan_line_sakaide_marugame"}
+- {"id": "e_004320", "a": "n_utazu_yosan", "b": "n_marugame", "seed_line": "l_yosan_line", "route_only": "r_yosan_line_sakaide_marugame"}
 - {"id": "e_004321", "a": "n_uchiko", "b": "n_ikazaki", "seed_line": "l_uchiko_line"}
 - {"id": "e_004322", "a": "n_ikazaki", "b": "n_kitayama_uchiko", "seed_line": "l_uchiko_line"}
 - {"id": "e_004323", "a": "n_kitayama_uchiko", "b": "n_niiya", "seed_line": "l_uchiko_line"}
@@ -4494,10 +4494,10 @@
 - {"id": "e_004493", "a": "n_kageno", "b": "n_rokutanji", "seed_line": "l_dosan_line"}
 - {"id": "e_004494", "a": "n_rokutanji", "b": "n_niida", "seed_line": "l_dosan_line"}
 - {"id": "e_004495", "a": "n_niida", "b": "n_kubokawa", "seed_line": "l_dosan_line"}
-- {"id": "e_004496", "a": "n_osugi", "b": "n_tosa_kitagawa_dosan", "seed_line": "l_dosan_line", "route_only": "r_dosan_line", "alt": "old"}
-- {"id": "e_004497", "a": "n_tosa_kitagawa_dosan", "b": "n_kakumodani", "seed_line": "l_dosan_line", "route_only": "r_dosan_line", "alt": "old"}
-- {"id": "e_004498", "a": "n_otaguchi", "b": "n_tosa_ananai_dosan", "seed_line": "l_dosan_line", "route_only": "r_dosan_line", "alt": "old"}
-- {"id": "e_004499", "a": "n_tosa_ananai_dosan", "b": "n_tosa_ananai", "seed_line": "l_dosan_line", "route_only": "r_dosan_line", "alt": "old"}
+- {"id": "e_004496", "a": "n_osugi", "b": "n_tosa_kitagawa_dosan", "seed_line": "l_dosan_line", "route_only": "r_dosan_line_osugi_kakumodani"}
+- {"id": "e_004497", "a": "n_tosa_kitagawa_dosan", "b": "n_kakumodani", "seed_line": "l_dosan_line", "route_only": "r_dosan_line_osugi_kakumodani"}
+- {"id": "e_004498", "a": "n_otaguchi", "b": "n_tosa_ananai_dosan", "seed_line": "l_dosan_line", "route_only": "r_dosan_line_otaguchi_tosa_ananai"}
+- {"id": "e_004499", "a": "n_tosa_ananai_dosan", "b": "n_tosa_ananai", "seed_line": "l_dosan_line", "route_only": "r_dosan_line_otaguchi_tosa_ananai"}
 - {"id": "e_004500", "a": "n_mojiko", "b": "n_komorie", "seed_line": "l_kagoshima_main_line"}
 - {"id": "e_004501", "a": "n_komorie", "b": "n_moji", "seed_line": "l_kagoshima_main_line"}
 - {"id": "e_004502", "a": "n_moji", "b": "n_kokura", "seed_line": "l_kagoshima_main_line"}
@@ -4621,9 +4621,9 @@
 - {"id": "e_004620", "a": "n_kami_ijuin", "b": "n_hiroki", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_sendai_kagoshima"}
 - {"id": "e_004621", "a": "n_hiroki", "b": "n_kagoshima_chuo", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_sendai_kagoshima"}
 - {"id": "e_004622", "a": "n_kagoshima_chuo", "b": "n_kagoshima", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_sendai_kagoshima"}
-- {"id": "e_004623", "a": "n_tobata", "b": "n_edamitsu", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_tobata_edamitsu"}
-- {"id": "e_004624", "a": "n_edamitsu", "b": "n_yahata_kagoshima_main", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line", "alt": "old"}
-- {"id": "e_004625", "a": "n_yahata_kagoshima_main", "b": "n_yahata", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line", "alt": "old"}
+- {"id": "e_004623", "a": "n_edamitsu", "b": "n_yahata_kagoshima_main", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_edamitsu_yahata"}
+- {"id": "e_004624", "a": "n_yahata_kagoshima_main", "b": "n_yahata", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_edamitsu_yahata"}
+- {"id": "e_004625", "a": "n_tobata", "b": "n_edamitsu", "seed_line": "l_kagoshima_main_line", "route_only": "r_kagoshima_main_line_tobata_edamitsu"}
 - {"id": "e_004626", "a": "n_hakata", "b": "n_shin_tosu", "seed_line": "l_kyushu_shinkansen"}
 - {"id": "e_004627", "a": "n_shin_tosu", "b": "n_kurume", "seed_line": "l_kyushu_shinkansen"}
 - {"id": "e_004628", "a": "n_kurume", "b": "n_chikugo_funagoya", "seed_line": "l_kyushu_shinkansen"}
