@@ -44,7 +44,16 @@ __pycache__/
 *.pyc
 .DS_Store
 
-# Editor working folders
+# Coding agent and editor working folders
+.claude/
+.codex/
+.cursor/
+.aider*
+.continue/
+.windsurf/
+.gemini/
+.junie/
+CLAUDE.local.md
 .idea/
 .vscode/
 .history/
