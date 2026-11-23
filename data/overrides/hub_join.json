@@ -659,5 +659,6 @@
 {"node": "n_seibu_shinjuku", "with": "n_shinjuku_tokyo_metro", "group": false, "why": "간접환승(徒歩連絡) 사업자 공식: 西武鉄道 「西武新宿駅」 https://www.seiburailway.jp/railway/station/seibu-shinjuku/ 「他社乗換路線 … 東京メトロ丸ノ内線 都営新宿線 都営大江戸線」, 727 m. 노드 확인(丸ノ内線 新宿. 같은 안내의 다른 노선이 모두 新宿 역이고 副都心線은 없어 新宿三丁目로 보지 않음) (11회차 T1 2026-11-17)"},
 {"node": "n_seibu_shinjuku", "with": "n_shinjuku_toei", "group": false, "why": "간접환승(徒歩連絡) 사업자 공식: 西武鉄道 「西武新宿駅」 https://www.seiburailway.jp/railway/station/seibu-shinjuku/ 「他社乗換路線 … 東京メトロ丸ノ内線 都営新宿線 都営大江戸線」, 727 m. 노드 확인(都営新宿線은 新宿에만 섬. 大江戸線 新宿西口 쌍은 따로 있음). hub_not 행(c4) 뺌 (11회차 T1 2026-11-17)"},
 {"node": "n_hon_kawagoe", "with": "n_kawagoe", "group": false, "why": "간접환승(徒歩連絡) 사업자 공식: 西武鉄道 「本川越駅」 https://www.seiburailway.jp/railway/station/hon-kawagoe/ 「他社乗換路線 JR埼京線 JR川越線 東武東上線」, 774 m. 노드 확인(JR 川越. 東武東上線은 더 가까운 川越市 쌍이 있어 東武 川越 hub_not은 둠). 사용자 판단 U01의 hub_not 행(本川越–JR 川越) 뺌 (11회차 T1 2026-11-17)"},
-{"node": "n_hieizan_sakamoto", "with": "n_sakamoto_hieizanguchi", "group": false, "why": "기존 채택 쌍(묶음 손 근거) K205 확인: JR 湖西線 比叡山坂本–京阪 石山坂本線 坂本比叡山口 637 m, 노드 확인(두 역 모두 그 이름의 유일 노드) (11회차 T1 2026-11-17)"}
+{"node": "n_hieizan_sakamoto", "with": "n_sakamoto_hieizanguchi", "group": false, "why": "기존 채택 쌍(묶음 손 근거) K205 확인: JR 湖西線 比叡山坂本–京阪 石山坂本線 坂本比叡山口 637 m, 노드 확인(두 역 모두 그 이름의 유일 노드) (11회차 T1 2026-11-17)"},
+{"node": "n_tomakomai_oji", "with": "n_tomakomai", "group": false, "why": "王子軽便鉄道(5회차 2026-11-24): 山線 苫小牧–国鉄 苫小牧 약 0.39 km. 「国鉄（当時）苫小牧駅の駅裏室蘭寄りにあった」, 노선도 HUB 기호, 1937-03-27 国鉄苫小牧駅構内에 積み替え용 専用線(ja.wikipedia 王子軽便鉄道 oldid=110434726). 다른 시설이라 group 아님"}
 ]
