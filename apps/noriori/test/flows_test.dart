@@ -960,14 +960,26 @@ void main() {
     });
 
     testWidgets('한 방향으로만 다니는 구간을 거꾸로 고르면 받지 않는다', skip: _skip != null, (tester) async {
-      final (container, at) = await open(tester, 'l_hakodate_main_line', 'r_fujishiro_line');
+      // 東海道本線 大垣–関ケ原 新垂井 경유 계통은 내려가는 열차만 다닌다. 그 계통 칩에서 거꾸로 고르면 받지 않는다
+      final (container, at) = await open(tester, 'l_tokaido_main_line', 'r_tokaido_main_line_ogaki_sekigahara', date: '1970-06-01');
       final session = container.read(recordSessionProvider.notifier);
-      session.tap(at('n_onuma'));
-      final note = session.tap(at('n_nanae'));
+      session.tap(at('n_sekigahara'));
+      final note = session.tap(at('n_ogaki'));
       expect(note?.kind, OneWayKind.section);
       expect(container.read(recordSessionProvider).to, isNull);
       session.reverse(note!);
       expect(container.read(recordSessionProvider).preview?.saved, isTrue);
+    });
+
+    testWidgets('자기 역이 없는 한 방향 계통은 칩이 없고, 본선 열에서는 다른 선로로 거꾸로 갈 수 있다', skip: _skip != null, (tester) async {
+      // 函館本線 藤城線(七飯→大沼 내려가는 열차만)은 따로 된 역이 없어 칩을 만들지 않는다(DESIGN §8.3 규칙 4). 大沼→七飯은 仁山 경유 본선이다
+      final (container, at) = await open(tester, 'l_hakodate_main_line', 'r_hakodate_main_line');
+      final session = container.read(recordSessionProvider.notifier);
+      session.tap(at('n_onuma'));
+      expect(session.tap(at('n_nanae')), isNull);
+      final state = container.read(recordSessionProvider);
+      expect(state.preview?.saved, isTrue);
+      expect(state.preview?.legs.map((l) => l.routeId), ['r_hakodate_main_line']);
     });
   });
 
