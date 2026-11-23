@@ -226,6 +226,7 @@ final class SelectorRow {
     bool clearClose = false,
     String? closeYearAs,
     String? closedOnAs,
+    String? openYearAs,
   }) =>
       SelectorRow(
         seq: seq ?? this.seq,
@@ -240,7 +241,7 @@ final class SelectorRow {
         kmEstimated: kmEstimated ?? this.kmEstimated,
         goneLinks: goneLinks,
         savedAs: savedAs,
-        openYear: openYear,
+        openYear: openYearAs ?? openYear,
         closeYear: clearClose ? null : (closeYearAs ?? closeYear),
         suspendedSince: suspendedSince,
         handedTo: handedTo,

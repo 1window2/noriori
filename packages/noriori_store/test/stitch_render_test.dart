@@ -85,7 +85,7 @@ void main() {
                 buf.writeln('$pad● ${nm(row.node)} km=${row.kmEstimated ? '${row.kmCum}?' : row.kmCum} ${row.state.name}${row.selectable ? '' : ' 못고름'}'
                     '${row.closeYear == null ? '' : ' ~${row.closeYear}'}${row.openYear == null ? '' : ' ${row.openYear}~'}${s.foreignKm.contains(row.seq) ? ' 띠km' : ''}');
               case BranchLine(:final item, :final up):
-                buf.writeln('$pad  ${up ? '┌' : '└'} 분기 ${item.link.otherLineId}/${item.link.otherRouteId} 다음 ${nm(item.link.nextStop)}${item.gone ? ' 끝남' : ''}');
+                buf.writeln('$pad  ${up ? '┌' : '└'} 분기 ${item.link.otherLineId}/${item.link.otherRouteId} 다음 ${nm(item.link.nextStop)}${item.suspended ? ' 운휴 중' : item.gone ? ' 끝남' : ''}');
               case EndLine(:final items, :final up):
                 buf.writeln('$pad  ${up ? '▲' : '▼'} 끝이어짐 ${items.map((i) => '${i.link.otherLineId}/${i.link.otherRouteId}').join(' · ')}');
               case NoticeLine(:final kind, :final top, :final bottom, :final year, :final lineId):

@@ -111,6 +111,11 @@ void main() {
           for (final row in rows) row.node,
           for (final row in rows)
             for (final link in [...row.links, ...row.goneLinks]) ...[?link.otherNode, ?link.nextStop, ?link.terminal],
+          // 화면 단계에서 만든 연결(반대 방향 환승)의 역 (기록 화면과 같다)
+          for (final l in lines)
+            if (l is StopLine)
+              for (final g in l.transfers)
+                for (final d in g.items) ...[?d.link.otherNode, ?d.link.nextStop, ?d.link.terminal],
         };
         final names = await reader.nodeNames(ids, lineId: route.lineId, date: date?.lo, languages: const ['ja']);
         final archive = await reader.archiveNames([for (final s in stops) s.id, for (final b in branches) b.id], languages: const ['ja']);

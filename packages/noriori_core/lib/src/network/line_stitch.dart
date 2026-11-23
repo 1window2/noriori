@@ -587,11 +587,27 @@ final class _Stitch {
       return (open: true, section: true, end: const SectionEnd());
     }
 
+    // 역 개업 해는 그 노드의 같은 노선 모든 계통(옛 선형 포함) 가운데 가장 이른 정차 해다(会津線 湯野上温泉 1932, 5회차 R10)
+    final firstOpen = <String, String>{};
+    for (final r in s.network.routesOfLine(lineId)) {
+      final stopsAt = {for (final st in net.stops(r)) if (st.isStop) st.node};
+      for (final row in rows(r)?.rows ?? const <SelectorRow>[]) {
+        final y = row.openYear;
+        if (y == null || row.passing || !stopsAt.contains(row.node)) continue;
+        final had = firstOpen[row.node];
+        if (had == null || y.compareTo(had) < 0) firstOpen[row.node] = y;
+      }
+    }
+    _R earliest(_R x) {
+      final y = firstOpen[x.row.node];
+      return y == null || x.row.openYear == null || y.compareTo(x.row.openYear!) >= 0 ? x : _R(x.row.copy(openYearAs: y), x.route);
+    }
+
     RouteRows pack(String routeId, List<_R> list) {
       final gaps = [for (var k = 0; k + 1 < list.length; k++) gapOf(list[k], list[k + 1])];
       return RouteRows(
         routeId: routeId,
-        rows: [for (final x in list) renum(x)],
+        rows: [for (final x in list) renum(earliest(x))],
         openGaps: [for (final g in gaps) g.open],
         sectionGaps: [for (final g in gaps) g.section],
         sectionEnds: [for (final g in gaps) g.end],

@@ -702,7 +702,23 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       for (final f in stitched.folds)
         FoldLine(fold: f, at: visible.firstWhere((row) => row.seq == f.anchor), lines: foldInner(linesOf(f.frame ?? f.rows), period: f.period, edges: {f.anchor, ?f.rejoin})),
     ]);
+    // 화면 단계에서 만든 연결(직통 노선의 반대 방향 환승)의 역도 이름을 가져온다. 데이터 연결만 모으면 노드 ID가 보였다 (5회차 R18)
+    Iterable<String> drawnStops(List<SelectorLine> ls) sync* {
+      for (final l in ls) {
+        if (l is StopLine) {
+          for (final g in l.transfers) {
+            for (final d in g.items) {
+              yield* [?d.link.otherNode, ?d.link.nextStop, ?d.link.terminal];
+            }
+          }
+        } else if (l is FoldLine) {
+          yield* drawnStops(l.lines);
+        }
+      }
+    }
+
     final ids = <String>{
+      ...drawnStops(lines),
       for (final run in parallels) ...[?run.inNext, ?run.inTerminal, ?run.outNext, ?run.outTerminal],
       for (final row in rows) row.node,
       for (final row in rows)
