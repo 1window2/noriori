@@ -834,14 +834,7 @@
 "name": "船平山駅",
 "source": "https://ja.wikipedia.org/w/index.php?oldid=111179020"
 },
-{
-"node": "n_funahirayama",
-"kind": "kari",
-"from": "1954-02-01",
-"to": "1961-04-01",
-"name": "船平山駅",
-"source": "https://ja.wikipedia.org/w/index.php?oldid=111179020"
-},
+{"node": "n_funahirayama", "kind": "kari", "from": "1954-02-01", "to": "1961-04-01", "name": "船平山仮停車場", "source": "https://ja.wikipedia.org/w/index.php?oldid=111179020"},
 {
 "node": "n_gembudo",
 "kind": "rinji",
@@ -1514,14 +1507,7 @@
 "name": "光珠内駅",
 "source": "https://ja.wikipedia.org/w/index.php?oldid=106894692"
 },
-{
-"node": "n_komatsukawa",
-"kind": "kari",
-"from": "1950-07-25",
-"to": "1951-12-25",
-"name": "小松川駅",
-"source": "https://ja.wikipedia.org/w/index.php?oldid=101674020"
-},
+{"node": "n_komatsukawa", "kind": "kari", "from": "[1950-07-25..1951-04-30]", "to": "1951-12-25", "name": "小松川駅", "source": "https://ja.wikipedia.org/w/index.php?oldid=101674020"},
 {
 "node": "n_harima_yokota",
 "kind": "kari",
@@ -2034,14 +2020,7 @@
 "name": "仁保津駅",
 "source": "https://ja.wikipedia.org/w/index.php?oldid=111177875"
 },
-{
-"node": "n_kami_yamaguchi",
-"kind": "kari",
-"from": "1953-03-15",
-"to": "1953-04-10",
-"name": "上山口駅",
-"source": "https://ja.wikipedia.org/w/index.php?oldid=111178351"
-},
+{"node": "n_kami_yamaguchi", "kind": "kari", "from": "1953-03-15", "to": "1953-04-10", "name": "日赤前仮乗降場", "source": "https://ja.wikipedia.org/w/index.php?oldid=111178351"},
 {
 "node": "n_honmataga",
 "kind": "kari",
@@ -2050,14 +2029,7 @@
 "name": "本俣賀駅",
 "source": "https://ja.wikipedia.org/w/index.php?oldid=111179209"
 },
-{
-"node": "n_yamagishi",
-"kind": "kari",
-"from": "1951-01-10",
-"to": "1952-02-10",
-"name": "山岸駅",
-"source": "https://ja.wikipedia.org/w/index.php?oldid=108250509"
-},
+{"node": "n_yamagishi", "kind": "kari", "from": "1951-01-10", "to": "1952-02-10", "name": "山岸仮停車場", "source": "https://ja.wikipedia.org/w/index.php?oldid=108250509"},
 {
 "node": "n_higashihama",
 "kind": "kari",
@@ -3699,5 +3671,15 @@
 {"node": "n_okudokai", "kind": "kari", "from": "1953-11-06", "to": "1962-11-01", "name": "奥洞海仮停車場", "route": "r_chikuho_main_line", "source": "위키 筑豊本線 年表 「1953年11月6日：奥洞海仮停車場を新設」「1962年11月1日：奥洞海仮停車場を駅に改める」 + N05 筑豊線 奥洞海 1953–(중간 둘). 仮停車場은 kari로 통일(결정 104) (8회차 W3 2026-11-15)"},
 {"node": "n_katao_sa", "kind": "rinji", "from": "1925-07-15", "to": "[1950-01-02..]", "name": "片男佐", "source": "西鉄 宮地岳線 (臨)片男佐: 위키 西鉄貝塚線 연표 「1925年7月15日 新香椎（現在の西鉄香椎） - 和白間に（臨）片男佐駅開業。廃止日不明」(중간) + N05 EB03_22419013 片男佐 1950–(끝 해 미상)(중간, 독립). N05 점이 西鉄香椎–香椎花園前 사이라 그 사이, km 추정. 폐지 1950 뒤 미상(범위). 臨時駅이라 영업한 해 전체가 기록 가능(DESIGN §9.1.2) (8회차 W3 2026-11-15)"},
 {"node": "n_shimo_seiwa", "kind": "kari", "from": "1955-08-20", "to": "1961-12-01", "name": "下政和", "source": "https://ja.wikipedia.org/w/index.php?oldid=111317864 (深名線 「下政和仮乗降場」; 1961-12-01 이전 전 옛 자리, 10회차 D2)"},
-{"node": "n_kyobashi_okayama", "kind": "rinji", "from": "1995-12-24", "to": null, "name": "京橋停留場", "route": "r_higashiyama_main_line", "source": "ja.wikipedia 京橋停留場 (API 2026-11-16) 「1995年12月24日：臨時駅として開業」「備前岡山京橋朝市開催日のうち、毎年5月と10月のみ停車する臨時停留場」(今尾 2009 인용, 중간) + N05 EB03_21417015 東山本線 京橋 1995–(중간, 독립) (10회차 G2 2026-11-16; audit4 chugoku_shikoku_1-007)"}
+{"node": "n_kyobashi_okayama", "kind": "rinji", "from": "1995-12-24", "to": null, "name": "京橋停留場", "route": "r_higashiyama_main_line", "source": "ja.wikipedia 京橋停留場 (API 2026-11-16) 「1995年12月24日：臨時駅として開業」「備前岡山京橋朝市開催日のうち、毎年5月と10月のみ停車する臨時停留場」(今尾 2009 인용, 중간) + N05 EB03_21417015 東山本線 京橋 1995–(중간, 독립) (10회차 G2 2026-11-16; audit4 chugoku_shikoku_1-007)"},
+{"node": "n_kami_kuwanagawa", "kind": "kari", "from": "1951-03-01", "to": "1951-10-10", "name": "上桑名川仮乗降場", "source": "위키 飯山線 rev111454540 年表 1951 「3月1日：上桑名川仮乗降場を新設」「10月10日：上桑名川仮乗降場を駅に変更」(중간) + N05 1951~ (5회차 데이터 정리 2026-11-23; audit5 chubu_1-004)"},
+{"node": "n_okuki", "kind": "kari", "from": "[1956-11-19..1956-12-10]", "to": "1956-12-10", "name": "大久喜仮乗降場", "source": "위키 八戸線 rev111465986 年表 1956 「11月19日?：大久喜、金浜、大蛇の各仮乗降場を新設」「12月10日：…仮乗降場を駅に改める」(중간) (5회차 데이터 정리 2026-11-23; audit5 tohoku_1-011)"},
+{"node": "n_kanehama", "kind": "kari", "from": "[1956-11-19..1956-12-10]", "to": "1956-12-10", "name": "金浜仮乗降場", "source": "위키 八戸線 rev111465986 年表 1956 「11月19日?：大久喜、金浜、大蛇の各仮乗降場を新設」「12月10日：…仮乗降場を駅に改める」(중간) (5회차 데이터 정리 2026-11-23; audit5 tohoku_1-011)"},
+{"node": "n_oja", "kind": "kari", "from": "[1956-11-19..1956-12-10]", "to": "1956-12-10", "name": "大蛇仮乗降場", "source": "위키 八戸線 rev111465986 年表 1956 「11月19日?：大久喜、金浜、大蛇の各仮乗降場を新設」「12月10日：…仮乗降場を駅に改める」(중간) (5회차 데이터 정리 2026-11-23; audit5 tohoku_1-011)"},
+{"node": "n_daigo", "kind": "kari", "from": "1950-11-01", "to": "1951-11-15", "name": "醍醐仮乗降場", "source": "위키 奥羽本線 rev111473148 年表 1950-11-01 「醍醐仮乗降場が開業」, 1951-11-15 「醍醐仮乗降場が駅に変更」(중간) + N05 EB03_12225050 개업 1950 (5회차 데이터 정리 2026-11-23; audit5 tohoku_2-012)"},
+{"node": "n_kamihama", "kind": "kari", "from": "1951-XX-XX", "to": "1952-03-01", "name": "上浜仮乗降場", "source": "위키 羽越本線 rev111580331 年表 「1951年4月1日?：鳥海駅・上浜の両仮乗降場が開業」, 1952-03-01 「上浜仮乗降場が駅に変更」(중간) + N05 EB03_12233046 개업 1951 (5회차 데이터 정리 2026-11-23; audit5 tohoku_2-013)"},
+{"node": "n_ryoishi", "kind": "kari", "from": "1951-07-23", "to": "1954-09-01", "name": "両石仮停車場", "line": "l_yamada_line", "source": "위키 山田線 rev111465927 年表 1951 「7月23日：【仮停車場新設】両石」, 1954 「9月1日：【仮停車場 → 駅】両石」(曽根 19 인용, 중간) + N05 EB03_12216029 개업 1951 (5회차 데이터 정리 2026-11-23; audit5 tohoku_2-015)"},
+{"node": "n_yokoka", "kind": "kari", "from": "2003-10-25", "to": "2004-03-19", "name": "横岡仮駅", "source": "위키 大井川鐵道大井川本線 rev111519970 「五和駅 - 神尾駅間に（仮）横岡駅が設置され」, 노선도 「（仮）横岡駅 2003-2004」(중간). 臨時 승강장(仮駅) 기간 표시로 열람 전용 横岡(~1931)과 이름 구별 (5회차 데이터 정리 2026-11-23; audit5 chubu_2-006)"},
+{"node": "n_suo_shimogo", "kind": "kari", "from": "1953-03-15", "to": "1953-04-10", "name": "周防下郷仮乗降場", "source": "위키 山口線 rev111323533 年表 1953 「3月15日：…周防下郷駅・矢原駅が仮乗降場として営業再開」「4月10日：周防下郷仮乗降場・矢原仮乗降場がそれぞれ駅に変更」(중간) (5회차 데이터 정리 2026-11-23; audit5 chugoku_shikoku_2-018)"},
+{"node": "n_yabara", "kind": "kari", "from": "1953-03-15", "to": "1953-04-10", "name": "矢原仮乗降場", "source": "위키 山口線 rev111323533 年表 1953 「3月15日：…周防下郷駅・矢原駅が仮乗降場として営業再開」「4月10日：周防下郷仮乗降場・矢原仮乗降場がそれぞれ駅に変更」(중간) (5회차 데이터 정리 2026-11-23; audit5 chugoku_shikoku_2-018)"}
 ]

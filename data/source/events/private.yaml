@@ -883,7 +883,7 @@
 - {"date": "1919-10-25", "type": "open", "operator": "o_nankai_electric_railway", "line": "l_takashinohama_line", "edges": ["n_kyarabashi..n_takashinohama"], "source": "noritsubushi"}
 - {"date": "2021-05-22", "type": "suspend", "line": "l_takashinohama_line", "edges": ["n_hagoromo..n_takashinohama"], "source": "hand"}
 - {"date": "2024-04-06", "type": "resume", "line": "l_takashinohama_line", "edges": ["n_hagoromo..n_takashinohama"], "source": "hand"}
-- {"date": "1994-06-15", "type": "open", "operator": "o_nankai_electric_railway", "line": "l_nankai_airport_line", "edges": ["e_008014", "e_004221"], "source": "noritsubushi"}
+- {"date": "1994-06-15", "type": "open", "operator": "o_nankai_electric_railway", "line": "l_nankai_airport_line", "edges": ["e_008015", "e_004221"], "source": "noritsubushi"}
 - {"date": "1944-05-31", "type": "open", "operator": "o_nankai_electric_railway", "line": "l_tanagawa_line", "edges": ["n_misaki_koen_nankai..n_tanagawa"], "source": "noritsubushi"}
 - {"date": "1944-06-01", "type": "open_stop", "route": "r_tanagawa_line", "node": "n_fukecho", "source": "wikipedia"}
 - {"date": "1948-11-03", "type": "open_stop", "route": "r_tanagawa_line", "node": "n_fukeko", "source": "wikipedia"}
@@ -1178,7 +1178,7 @@
 - {"date": "1962-09-30", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_asakusa_line", "edges": ["n_ningyocho_toei..n_higashi_nihonbashi"], "source": "noritsubushi"}
 - {"date": "1962-05-31", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_asakusa_line", "edges": ["n_higashi_nihonbashi..n_asakusabashi_toei"], "source": "noritsubushi"}
 - {"date": "1960-12-04", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_asakusa_line", "edges": ["n_asakusabashi_toei..n_oshiage_toei"], "source": "noritsubushi"}
-- {"date": "2000-09-26", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_mita_line", "edges": ["e_007306", "e_007307", "e_008596"], "source": "noritsubushi"}
+- {"date": "2000-09-26", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_mita_line", "edges": ["e_007307", "e_007308", "e_008597"], "source": "noritsubushi"}
 - {"date": "1973-11-27", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_mita_line", "edges": ["n_mita..n_hibiya_toei"], "source": "noritsubushi"}
 - {"date": "1972-06-30", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_mita_line", "edges": ["n_hibiya_toei..n_sugamo_toei"], "source": "noritsubushi"}
 - {"date": "1968-12-27", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_mita_line", "edges": ["n_sugamo_toei..n_takashimadaira"], "source": "noritsubushi"}
@@ -1188,9 +1188,9 @@
 - {"date": "1983-12-23", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_shinjuku_line_toei", "edges": ["n_higashi_ojima..n_funabori"], "source": "noritsubushi"}
 - {"date": "1986-09-14", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_shinjuku_line_toei", "edges": ["n_funabori..n_shinozaki"], "source": "noritsubushi"}
 - {"date": "1989-03-19", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_shinjuku_line_toei", "edges": ["n_shinozaki..n_motoyawata_toei"], "source": "noritsubushi"}
-- {"date": "2000-12-12", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_oedo_line", "edges": ["e_008640", "e_008641", "e_008642", "e_008643", "e_008644", "e_008645", "e_008646", "e_008647", "e_008648", "e_008649", "e_008650", "e_008651", "e_008652", "e_008653", "e_008654", "e_008655", "e_008656", "e_008657", "e_008658", "e_008659", "e_008660", "e_008661", "e_008662", "e_008663", "e_008664", "e_008665", "e_008666"], "route": "r_oedo_line", "source": "noritsubushi"}
-- {"date": "1997-12-19", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_oedo_line", "edges": ["e_008667", "e_008668", "e_008669", "e_008670", "e_008671", "e_008672", "e_008673", "e_008674"], "route": "r_oedo_line", "source": "noritsubushi"}
-- {"date": "1991-12-10", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_oedo_line", "edges": ["e_008675", "e_008676", "e_008677"], "route": "r_oedo_line", "source": "noritsubushi"}
+- {"date": "2000-12-12", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_oedo_line", "edges": ["e_008641", "e_008642", "e_008643", "e_008644", "e_008645", "e_008646", "e_008647", "e_008648", "e_008649", "e_008650", "e_008651", "e_008652", "e_008653", "e_008654", "e_008655", "e_008656", "e_008657", "e_008658", "e_008659", "e_008660", "e_008661", "e_008662", "e_008663", "e_008664", "e_008665", "e_008666", "e_008667"], "route": "r_oedo_line", "source": "noritsubushi"}
+- {"date": "1997-12-19", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_oedo_line", "edges": ["e_008668", "e_008669", "e_008670", "e_008671", "e_008672", "e_008673", "e_008674", "e_008675"], "route": "r_oedo_line", "source": "noritsubushi"}
+- {"date": "1991-12-10", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_oedo_line", "edges": ["e_008676", "e_008677", "e_008678"], "route": "r_oedo_line", "source": "noritsubushi"}
 - {"date": "2002-11-02", "type": "open_stop", "route": "r_oedo_line", "node": "n_shiodome_toei", "source": "wikipedia"}
 - {"date": "1913-04-01", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_arakawa_line", "edges": ["n_minowabashi..n_sakaecho_toei"], "source": "noritsubushi"}
 - {"date": "1925-02-07", "type": "open", "operator": "o_tokyo_metropolitan_bureau_of_transportation", "line": "l_arakawa_line", "edges": ["n_sakaecho_toei..n_oji_ekimae"], "source": "noritsubushi"}
@@ -1716,6 +1716,8 @@
 - {"date": "1910-10-01", "type": "open", "operator": "o_hankai_tramway", "line": "l_uemachi_line", "edges": ["n_tennoji_ekimae..n_sumiyoshi_hankai"], "source": "noritsubushi"}
 - {"date": "1913-07-02", "type": "open", "operator": "o_hankai_tramway", "line": "l_uemachi_line", "edges": ["n_sumiyoshi_hankai..n_sumiyoshi_koen"], "source": "noritsubushi"}
 - {"date": "2016-01-31", "type": "close", "line": "l_uemachi_line", "edges": ["n_sumiyoshi_hankai..n_sumiyoshi_koen"], "reason": "abolished", "source": "noritsubushi"}
+- {"date": "[1966-03-02..1979-12-31]", "type": "close_stop", "route": "r_uemachi_line", "node": "n_nakamichi_hankai", "source": "wikipedia"}
+- {"date": "[1950-01-01..1956-09-01]", "type": "open_stop", "route": "r_uemachi_line", "node": "n_nakamichi_hankai", "source": "wikipedia"}
 - {"date": "1940-03-XX", "type": "open_stop", "route": "r_uemachi_line", "node": "n_tezukayama_4_chome", "source": "wikipedia"}
 - {"date": "1928-11-28", "type": "open", "operator": "o_kobe_electric_railway", "line": "l_arima_line", "edges": ["n_minatogawa..n_arima_onsen"], "source": "noritsubushi"}
 - {"date": "2018-03-23", "type": "close_stop", "route": "r_arima_line", "node": "n_kikusuiyama", "source": "wikipedia"}
@@ -2045,7 +2047,7 @@
 - {"date": "1997-08-22", "type": "open", "operator": "o_osaka_monorail", "line": "l_osaka_monorail_main_line", "edges": ["n_minami_ibaraki_osaka_monorail..n_kadoma_shi_osaka_monorail"], "source": "noritsubushi"}
 - {"date": "1998-10-01", "type": "open", "operator": "o_osaka_monorail", "line": "l_saito_line", "edges": ["n_bampaku_kinen_koen..n_handai_byoin_mae"], "source": "noritsubushi"}
 - {"date": "2007-03-19", "type": "open", "operator": "o_osaka_monorail", "line": "l_saito_line", "edges": ["n_handai_byoin_mae..n_saito_nishi"], "source": "noritsubushi"}
-- {"date": "1981-02-05", "type": "open", "operator": "o_kobe_new_transit", "line": "l_port_island_line", "edges": ["e_010289", "e_010290", "e_010291", "e_010292", "e_010293", "e_010294", "e_010295", "e_010296", "e_010297"], "route": "r_port_island_line", "source": "noritsubushi"}
+- {"date": "1981-02-05", "type": "open", "operator": "o_kobe_new_transit", "line": "l_port_island_line", "edges": ["e_010291", "e_010292", "e_010293", "e_010294", "e_010295", "e_010296", "e_010297", "e_010298", "e_010299"], "route": "r_port_island_line", "source": "noritsubushi"}
 - {"date": "2006-02-02", "type": "open", "operator": "o_kobe_new_transit", "line": "l_port_island_line", "edges": ["n_shimin_hiroba..n_kobe_airport"], "route": "r_port_island_line_shimin_hiroba_kobe_airport", "source": "noritsubushi"}
 - {"date": "1990-02-21", "type": "open", "operator": "o_kobe_new_transit", "line": "l_rokko_island_line", "edges": ["n_sumiyoshi_kobe_new_transit..n_marine_park"], "source": "noritsubushi"}
 - {"date": "1969-07-20", "type": "open", "operator": "o_tateyama_kurobe_kanko", "line": "l_kurobe_cable_car", "edges": ["n_kurobeko..n_kurobedaira"], "source": "noritsubushi"}
@@ -2235,7 +2237,7 @@
 - {"date": "1932-04-10", "type": "open", "operator": "o_kishu_railway", "line": "l_kishu_railway_line", "edges": ["n_kii_gobo..n_nishi_gobo"], "source": "noritsubushi"}
 - {"date": "1979-08-10", "type": "open_stop", "route": "r_kishu_railway_line", "node": "n_gakumon", "source": "wikipedia"}
 - {"date": "1967-08-30", "type": "open_stop", "route": "r_kishu_railway_line", "node": "n_shiyakusho_mae_kishu", "source": "wikipedia"}
-- {"date": "1999-01-11", "type": "open", "operator": "o_ibara_railway", "line": "l_ibara_line", "edges": ["e_003601", "e_010605", "e_010606", "e_010607", "e_010608", "e_010609", "e_010610", "e_010611", "e_010612", "e_010613", "e_010614", "e_010615", "e_010616", "e_010617"], "source": "noritsubushi"}
+- {"date": "1999-01-11", "type": "open", "operator": "o_ibara_railway", "line": "l_ibara_line", "edges": ["e_003601", "e_010607", "e_010608", "e_010609", "e_010610", "e_010611", "e_010612", "e_010613", "e_010614", "e_010615", "e_010616", "e_010617", "e_010618", "e_010619"], "source": "noritsubushi"}
 - {"date": "1994-12-03", "type": "open", "operator": "o_chizu_express", "line": "l_chizu_express_line", "edges": ["n_kamigori_chizu_express..n_chizu_chizu_express"], "source": "noritsubushi"}
 - {"date": "1992-03-26", "type": "open", "operator": "o_asa_seaside_railway", "line": "l_asato_line", "edges": ["n_kaifu..n_kannoura_asa_seaside_asato_old"], "source": "noritsubushi"}
 - {"date": "2021-12-25", "type": "open", "operator": "o_asa_seaside_railway", "line": "l_asato_line", "edges": ["n_kannoura_asa_seaside_asato_old..n_kannoura_asa_seaside_asato"], "source": "noritsubushi"}
@@ -2279,7 +2281,7 @@
 - {"date": "1992-04-01", "type": "open_stop", "route": "r_takamori_line_minami_aso", "node": "n_minamiaso_mizu_no_umareru_sato_hakusui_kogen", "source": "wikipedia"}
 - {"date": "2012-03-17", "type": "open_stop", "route": "r_takamori_line_minami_aso", "node": "n_minamiaso_shirakawasuigen", "source": "wikipedia"}
 - {"date": "1986-10-01", "type": "open_stop", "route": "r_takamori_line_minami_aso", "node": "n_miharashidai", "source": "wikipedia"}
-- {"date": "2001-07-27", "type": "open", "operator": "o_maihama_resort_line", "line": "l_disney_resort_line", "edges": ["e_010679", "e_010680", "e_010681", "e_010682"], "route": "r_disney_resort_line", "source": "noritsubushi"}
+- {"date": "2001-07-27", "type": "open", "operator": "o_maihama_resort_line", "line": "l_disney_resort_line", "edges": ["e_010681", "e_010682", "e_010683", "e_010684"], "route": "r_disney_resort_line", "source": "noritsubushi"}
 - {"date": "1998-11-27", "type": "open", "operator": "o_tokyo_tama_intercity_monorail", "line": "l_tama_toshi_monorail_line", "edges": ["n_kamikitadai..n_tachikawa_kita"], "source": "noritsubushi"}
 - {"date": "2000-01-10", "type": "open", "operator": "o_tokyo_tama_intercity_monorail", "line": "l_tama_toshi_monorail_line", "edges": ["n_tachikawa_kita..n_tama_center"], "source": "noritsubushi"}
 - {"date": "1998-04-01", "type": "open", "operator": "o_kitakyushu_urban_monorail", "line": "l_kokura_line", "edges": ["n_kokura_kitakyushu_urban_monorail..n_heiwadori"], "source": "noritsubushi"}
@@ -2572,8 +2574,8 @@
 - {"date": "1971-07-01", "type": "open", "operator": "o_shonan_monorail", "line": "l_enoshima_line_shonan_monorail", "edges": ["n_nishi_kamakura..n_shonan_enoshima"], "source": "noritsubushi"}
 - {"date": "2003-08-10", "type": "open", "operator": "o_okinawa_urban_monorail", "line": "l_okinawa_urban_monorail_line", "edges": ["n_naha_airport..n_shuri"], "source": "noritsubushi"}
 - {"date": "2019-10-01", "type": "open", "operator": "o_okinawa_urban_monorail", "line": "l_okinawa_urban_monorail_line", "edges": ["n_shuri..n_tedako_uranishi"], "source": "noritsubushi"}
-- {"date": "1982-11-02", "type": "open", "operator": "o_yamaman", "line": "l_yukarigaoka_line", "edges": ["e_011154", "e_011155"], "route": "r_yukarigaoka_line", "source": "noritsubushi"}
-- {"date": "1983-09-22", "type": "open", "operator": "o_yamaman", "line": "l_yukarigaoka_line", "edges": ["e_011156", "e_011157", "e_011158", "e_011159"], "route": "r_yukarigaoka_line", "source": "hand+noritsubushi"}
+- {"date": "1982-11-02", "type": "open", "operator": "o_yamaman", "line": "l_yukarigaoka_line", "edges": ["e_011156", "e_011157"], "route": "r_yukarigaoka_line", "source": "noritsubushi"}
+- {"date": "1983-09-22", "type": "open", "operator": "o_yamaman", "line": "l_yukarigaoka_line", "edges": ["e_011158", "e_011159", "e_011160", "e_011161"], "route": "r_yukarigaoka_line", "source": "hand+noritsubushi"}
 - {"date": "1992-12-03", "type": "open_stop", "route": "r_yukarigaoka_line", "node": "n_chiku_center", "source": "wikipedia"}
 - {"date": "1989-07-05", "type": "open", "operator": "o_yokohama_seaside_line", "line": "l_kanazawa_seaside_line", "edges": ["n_shin_sugita_yokohama_seaside_line..n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_old"], "source": "noritsubushi"}
 - {"date": "2019-03-31", "type": "open", "operator": "o_yokohama_seaside_line", "line": "l_kanazawa_seaside_line", "edges": ["n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside_old..n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside"], "source": "noritsubushi"}
@@ -2645,8 +2647,8 @@
 - {"date": "1989-10-02", "type": "close", "line": "l_yokohama_sk_line", "edges": ["n_sakuragicho_gate..n_festival_hiroba"], "reason": "abolished", "source": "noritsubushi"}
 - {"date": null, "type": "close_stop", "route": "r_yokohama_sk_line", "node": "n_sakuragicho_gate", "source": "noritsubushi"}
 - {"date": null, "type": "close_stop", "route": "r_yokohama_sk_line", "node": "n_festival_hiroba", "source": "noritsubushi"}
-- {"date": "1970-03-13", "type": "open", "operator": "o_japan_world_exposition_association", "line": "l_osaka_expo_monorail", "edges": ["e_011268", "e_011269", "e_011270", "e_011271", "e_011272", "e_011273", "e_011274"], "route": "r_osaka_expo_monorail", "source": "noritsubushi"}
-- {"date": "1970-09-14", "type": "close", "line": "l_osaka_expo_monorail", "edges": ["e_011268", "e_011269", "e_011270", "e_011271", "e_011272", "e_011273", "e_011274"], "reason": "abolished", "source": "noritsubushi", "route": "r_osaka_expo_monorail"}
+- {"date": "1970-03-13", "type": "open", "operator": "o_japan_world_exposition_association", "line": "l_osaka_expo_monorail", "edges": ["e_011270", "e_011271", "e_011272", "e_011273", "e_011274", "e_011275", "e_011276"], "route": "r_osaka_expo_monorail", "source": "noritsubushi"}
+- {"date": "1970-09-14", "type": "close", "line": "l_osaka_expo_monorail", "edges": ["e_011270", "e_011271", "e_011272", "e_011273", "e_011274", "e_011275", "e_011276"], "reason": "abolished", "source": "noritsubushi", "route": "r_osaka_expo_monorail"}
 - {"date": null, "type": "close_stop", "route": "r_osaka_expo_monorail", "node": "n_chuoguchi_osaka_expo", "source": "noritsubushi"}
 - {"date": null, "type": "close_stop", "route": "r_osaka_expo_monorail", "node": "n_expoland_osaka_expo", "source": "noritsubushi"}
 - {"date": null, "type": "close_stop", "route": "r_osaka_expo_monorail", "node": "n_higashiguchi_osaka_expo", "source": "noritsubushi"}
@@ -2669,9 +2671,9 @@
 - {"date": "1926-04-01", "type": "open", "operator": "o_nagoya_railroad", "line": "l_kozakai_branch_line", "edges": ["n_ina..n_kozakai"], "source": "noritsubushi"}
 - {"date": "1954-12-25", "type": "close", "line": "l_kozakai_branch_line", "edges": ["n_ina..n_kozakai"], "reason": "abolished", "source": "noritsubushi"}
 - {"date": "1927-06-01", "type": "open_stop", "route": "r_kozakai_branch_line", "node": "n_ina", "source": "wikipedia"}
-- {"date": "1964-08-28", "type": "open", "operator": "o_yomiuriland", "line": "l_yomiuriland_monorail", "edges": ["e_011280", "e_011281"], "route": "r_yomiuriland_monorail", "source": "noritsubushi"}
-- {"date": "1964-01-01", "type": "open", "operator": "o_yomiuriland", "line": "l_yomiuriland_monorail", "edges": ["e_011282", "e_011283"], "route": "r_yomiuriland_monorail", "source": "noritsubushi"}
-- {"date": "1978-12-01", "type": "close", "line": "l_yomiuriland_monorail", "edges": ["e_011280", "e_011281", "e_011282", "e_011283"], "reason": "abolished", "source": "noritsubushi", "route": "r_yomiuriland_monorail"}
+- {"date": "1964-08-28", "type": "open", "operator": "o_yomiuriland", "line": "l_yomiuriland_monorail", "edges": ["e_011282", "e_011283"], "route": "r_yomiuriland_monorail", "source": "noritsubushi"}
+- {"date": "1964-01-01", "type": "open", "operator": "o_yomiuriland", "line": "l_yomiuriland_monorail", "edges": ["e_011284", "e_011285"], "route": "r_yomiuriland_monorail", "source": "noritsubushi"}
+- {"date": "1978-12-01", "type": "close", "line": "l_yomiuriland_monorail", "edges": ["e_011282", "e_011283", "e_011284", "e_011285"], "reason": "abolished", "source": "noritsubushi", "route": "r_yomiuriland_monorail"}
 - {"date": null, "type": "close_stop", "route": "r_yomiuriland_monorail", "node": "n_yuenchi_yomiuriland", "source": "noritsubushi"}
 - {"date": null, "type": "close_stop", "route": "r_yomiuriland_monorail", "node": "n_daichushajo_yomiuriland", "source": "noritsubushi"}
 - {"date": null, "type": "close_stop", "route": "r_yomiuriland_monorail", "node": "n_sakkajomae_yomiuriland", "source": "noritsubushi"}

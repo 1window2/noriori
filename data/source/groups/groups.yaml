@@ -8032,6 +8032,7 @@
 - {"id": "g_nakamaruko"}
 - {"id": "g_nakamatsu"}
 - {"id": "g_nakamatsue"}
+- {"id": "g_nakamichi_hankai"}
 - {"id": "g_nakamichihondori_2_chome"}
 - {"id": "g_nakamikage"}
 - {"id": "g_nakaminato"}
@@ -8603,6 +8604,7 @@
 - {"id": "g_nishi_wada"}
 - {"id": "g_nishi_wakamatsu"}
 - {"id": "g_nishi_waseda"}
+- {"id": "g_nishi_yahata"}
 - {"id": "g_nishi_yaizu"}
 - {"id": "g_nishi_yamana"}
 - {"id": "g_nishi_yamano"}
@@ -8643,6 +8645,7 @@
 - {"id": "g_nishigawara"}
 - {"id": "g_nishigawaryokudokoen"}
 - {"id": "g_nishigishi"}
+- {"id": "g_nishigo"}
 - {"id": "g_nishiguchi_osaka_expo"}
 - {"id": "g_nishihamanomachi"}
 - {"id": "g_nishihanamaki"}
@@ -9981,7 +9984,6 @@
 - {"id": "g_saigane"}
 - {"id": "g_saigata"}
 - {"id": "g_saigawa"}
-- {"id": "g_saigo"}
 - {"id": "g_saigoh"}
 - {"id": "g_saiin"}
 - {"id": "g_saijo"}

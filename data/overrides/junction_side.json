@@ -1,6 +1,6 @@
 [
 {"line": "l_sobu_main_line", "other": "l_sotobo_line", "at": "n_chiba", "side": "down", "why": "위키 노선도에 1963년 이전 옛 선로의 분기가 역 위쪽에 함께 그려져 있다. 지금의 外房線은 역 아래쪽(東千葉 방향)에서 갈라지고 東京 방면 열차가 그대로 들어간다"},
-{"line": "l_karatsu_line", "other": "l_chikuhi_line", "at": "n_yamamoto", "side": "up", "why": "역 아래쪽 분기는 1983년에 폐지된 옛 筑肥線이다. 지금의 筑肥線(伊万里 방면)은 역 위쪽에서 합류하고 伊万里와 唐津 사이 열차가 그대로 다닌다"},
+{"line": "l_karatsu_line", "other": "l_chikuhi_line", "other_route": "r_chikuhi_line_yamamoto_imari", "at": "n_yamamoto", "side": "up", "why": "역 아래쪽 분기는 1983년에 폐지된 옛 筑肥線이다. 지금의 筑肥線(伊万里 방면)은 역 위쪽에서 합류하고 伊万里와 唐津 사이 열차가 그대로 다닌다 / 이 행은 지금 筑肥線 계통에만 건다. 옛 筑肥線 東区間(1929–1983)은 원래 행의 아래쪽 그대로(N05 山本 筑肥線 335° 1950–1982, 唐津線 鬼塚 쪽과 나란함, 중간) (5회차 끝 이어짐 방향 전수 2026-11-23)"},
 {"line": "l_yosan_line", "other": "l_honshi_bisan_line", "at": "n_utazu", "side": "up", "why": "本四備讃線은 宇多津 위쪽(坂出 방향)에서 합류하고 岡山 방면 열차가 그대로 松山 방면으로 간다"},
 {"line": "l_nankai_main_line", "other": "l_koya_line", "at": "n_kishinosato_tamade", "side": "down", "why": "難波에서 오는 高野線 열차가 岸里玉出를 지나 그대로 남쪽으로 간다. 위키 노선도의 역 위쪽 분기는 옛 선로다"},
 {"line": "l_kotoku_line", "other": "l_naruto_line", "at": "n_ikenotani", "side": "up", "why": "池谷는 V자 역으로 두 노선이 徳島 쪽에서 갈라진다. 徳島 방면 열차가 그대로 鳴門線에 들어간다. 위키 노선도에도 역 아래쪽에 분기가 있다 / 3회차 W1a(판 2026-11-15.1): 값이 side의 뜻과 반대로 적혀 있었음. side는 갈래 노선의 선로가 이 노선의 어느 쪽 이웃 방향으로 나란히 나가는가(그 반대쪽에서 오는 열차가 곧장 들어감)이고, 선형(geometry) 시작 방향으로 확인: 鳴門線 선로는 高徳線 板東(高松) 쪽과 나란히 나가므로 徳島 쪽(勝瑞)에서 오는 열차가 곧장 들어감 → up. chugoku_shikoku_2-001"},

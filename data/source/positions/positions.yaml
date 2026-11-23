@@ -3929,6 +3929,7 @@
 - {"node": "n_edamitsu", "lat": 33.879367, "lon": 130.813318, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_space_world", "lat": 33.871246, "lon": 130.806197, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_yahata", "lat": 33.868913, "lon": 130.795209, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
+- {"node": "n_nishi_yahata", "lat": 33.8684, "lon": 130.78434, "quality": "approx", "checked": "2026-11-20", "source": "n02"}
 - {"node": "n_kurosaki", "lat": 33.866807, "lon": 130.766206, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_jinnoharu", "lat": 33.868242, "lon": 130.742656, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_orio", "lat": 33.863629, "lon": 130.713109, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
@@ -7795,6 +7796,7 @@
 - {"node": "n_hamadera_ekimae", "lat": 34.541418, "lon": 135.44316, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_tennoji_ekimae", "lat": 34.646202, "lon": 135.512929, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_abeno_hankai", "lat": 34.64178, "lon": 135.511805, "quality": "precise", "source": "n02_2024", "checked": "2026-11-09", "why": "sd 9961918 阿倍野은 여러 회사·종류 노선 묶음 행(OsakaMetro谷町線·阪堺電軌上町線). 좌표는 다른 시설 쪽이라 자기 노선 점이 따로 있음. 바꿀 점: N02 2024 阪堺電気軌道 上町線 「阿倍野」 승강장 선분 가운데, 지금 좌표에서 68 m"}
+- {"node": "n_nakamichi_hankai", "lat": 34.63817, "lon": 135.51072, "quality": "approx", "checked": "2026-11-20", "source": "n02"}
 - {"node": "n_matsumushi", "lat": 34.635458, "lon": 135.509852, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_higashitengachaya", "lat": 34.632539, "lon": 135.508475, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_kitabatake", "lat": 34.627245, "lon": 135.505408, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
@@ -11783,7 +11785,7 @@
 - {"node": "n_bancho", "lat": 34.67125, "lon": 133.928149, "quality": "approx", "checked": "2026-11-20", "source": "n05"}
 - {"node": "n_semine_miyagi", "lat": 38.655153, "lon": 141.07383, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_numazakishimo", "lat": 38.648916, "lon": 141.09763, "quality": "approx", "checked": "2026-11-20", "source": "n05"}
-- {"node": "n_saigo", "lat": 38.653446, "lon": 141.118571, "quality": "approx", "checked": "2026-11-20", "source": "n05"}
+- {"node": "n_nishigo", "lat": 38.653446, "lon": 141.118571, "quality": "approx", "checked": "2026-11-20", "source": "n05"}
 - {"node": "n_takaishi_miyagi", "lat": 38.657931, "lon": 141.151638, "quality": "approx", "checked": "2026-11-20", "source": "n05"}
 - {"node": "n_itakura", "lat": 38.674622, "lon": 141.169903, "quality": "approx", "checked": "2026-11-20", "source": "n05"}
 - {"node": "n_sanuma", "lat": 38.689622, "lon": 141.190668, "quality": "approx", "checked": "2026-11-20", "source": "n05"}

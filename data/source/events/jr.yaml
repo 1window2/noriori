@@ -3346,6 +3346,8 @@
 - {"date": "1974-12-14", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_nishi_kokura", "source": "wikipedia"}
 - {"date": "1970-07-01", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_kyushukodaimae", "source": "wikipedia"}
 - {"date": "1908-04-01", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_edamitsu", "source": "wikipedia"}
+- {"date": "[1954-01-01..1955-10-31]", "type": "close_stop", "route": "r_kagoshima_main_line", "node": "n_nishi_yahata", "source": "wikipedia"}
+- {"date": "[1949-01-20..1951-04-30]", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_nishi_yahata", "source": "wikipedia"}
 - {"date": "2000-11-21", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_jinnoharu", "source": "wikipedia"}
 - {"date": "1961-10-01", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_mizumaki", "source": "wikipedia"}
 - {"date": "1910-02-06", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_ebitsu", "source": "wikipedia"}

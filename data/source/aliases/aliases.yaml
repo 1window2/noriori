@@ -1510,6 +1510,8 @@
 - {"entity_type": "node", "id": "n_omachi_toyama_chiho", "lang": "ja", "text": "南小泉", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_marunouchi_toyama_chiho", "lang": "ja", "text": "総曲輪", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_yasunoya", "lang": "ja", "text": "安野屋町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toyota_mobility_toyama_g_square_gofuku_mae", "lang": "ja", "text": "新富山駅前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_toyota_mobility_toyama_g_square_gofuku_mae", "lang": "ja", "text": "新富山", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_toyota_mobility_toyama_g_square_gofuku_mae", "lang": "ja", "text": "富山トヨペット本社前（五福末広町）", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_toyama_daigaku_mae", "lang": "ja", "text": "球場前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_toyama_daigaku_mae", "lang": "ja", "text": "大学前", "kind": "old_title"}
@@ -2104,6 +2106,7 @@
 - {"entity_type": "node", "id": "n_saishun_iryo_center_mae_old", "lang": "ja", "text": "再春荘前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_koishihama", "lang": "ja", "text": "小石浜", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_iwaizumi_omoto", "lang": "ja", "text": "小本", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_tofugaura_kaigan", "lang": "ja", "text": "十府ヶ浦", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_soneda", "lang": "ja", "text": "電鉄福島", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_bijutsukantoshokanmae", "lang": "ja", "text": "森合", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_iwashiroshimizu", "lang": "ja", "text": "清水役場前", "kind": "old_title"}
@@ -2562,6 +2565,7 @@
 - {"entity_type": "node", "id": "n_seikogakuimmae", "lang": "ja", "text": "車庫前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_maedagakkomae", "lang": "ja", "text": "下シ沢", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_bakurochoiriguchi", "lang": "ja", "text": "高等学校前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_sunakubocho", "lang": "ja", "text": "久保町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_daikumachi", "lang": "ja", "text": "大工町広小路", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_minamimachi_4_chome", "lang": "ja", "text": "泉町広小路", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_honshamae", "lang": "ja", "text": "柵町", "kind": "old_title"}
@@ -2625,6 +2629,7 @@
 - {"entity_type": "node", "id": "n_kenchomae_akita_city", "lang": "ja", "text": "体育館前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_shogunno", "lang": "ja", "text": "遊園地", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_jieitaimae_akita_city", "lang": "ja", "text": "保安隊前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_nakadori_3_chome", "lang": "ja", "text": "堺橋労働会館前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_gengahashi", "lang": "ja", "text": "源ヶ橋", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_naniwacho", "lang": "ja", "text": "栄町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_omiyashogakkomae", "lang": "ja", "text": "森小路町", "kind": "old_title"}
@@ -2884,6 +2889,7 @@
 - {"entity_type": "node", "id": "n_matsushimakoemmae", "lang": "ja", "text": "松島町一丁目", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_noda_osaka_city", "lang": "ja", "text": "野田駅前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_umegaecho", "lang": "ja", "text": "梅ヶ枝町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_minaminakahamadori", "lang": "ja", "text": "南中浜町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_chiyozakibashi", "lang": "ja", "text": "松島町二丁目", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_nishiohashi_osaka_city", "lang": "ja", "text": "西長堀北通二丁目", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_uehommachi_1_chome", "lang": "ja", "text": "上町", "kind": "old_title"}
@@ -2937,6 +2943,7 @@
 - {"entity_type": "node", "id": "n_kitahachibanchojidosodanjomae", "lang": "ja", "text": "北八番丁", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_kitashimmachi", "lang": "ja", "text": "上り立町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_motomachihokugimmae", "lang": "ja", "text": "清水北銀前", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_echizemmachi", "lang": "ja", "text": "郵便局前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_daigakumae_toyama_chiho", "lang": "ja", "text": "五福", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_nishitetsuguraundohoterumae", "lang": "ja", "text": "西鉄本社前", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_daimyo_2_chome", "lang": "ja", "text": "大名町", "kind": "old_title"}
@@ -2969,12 +2976,15 @@
 - {"entity_type": "node", "id": "n_kami_nuttari", "lang": "ja", "text": "上沼垂", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_higashi_isahaya", "lang": "ja", "text": "東諌早", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_komaino_junction", "lang": "ja", "text": "駒井野分岐点", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_cross_bay_mae", "lang": "ja", "text": "クロスベイ前", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_yonejimaguchi", "lang": "ja", "text": "米島口アルビス米島店前", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_toyama_chiho_branch_junction", "lang": "ja", "text": "支線接続点", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_sangi_asake_signal", "lang": "ja", "text": "三岐朝明信号所", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_hatsukaichishiyakushomae", "lang": "ja", "text": "廿日市市役所前(平良)", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_jr_matsuyama_ekimae", "lang": "ja", "text": "松山駅前", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_hanazono", "lang": "ja", "text": "松山市駅前", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_kaho_signal", "lang": "ja", "text": "嘉穂", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_monju", "lang": "ja", "text": "文殊", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_through", "lang": "ja", "text": "西武秩父（通過）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_seibu_chichibu_kagemori_side", "lang": "ja", "text": "西武秩父（影森方）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_yamato_yagi_uehommachi_side", "lang": "ja", "text": "大和八木（上本町方）", "kind": "noritsubushi"}
@@ -2982,6 +2992,7 @@
 - {"entity_type": "node", "id": "n_ise_nakagawa_nagoya_side", "lang": "ja", "text": "伊勢中川（名古屋方）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_nijino", "lang": "ja", "text": "虹", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_idakiso", "lang": "ja", "text": "伊太祁曽", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_tatsuishi", "lang": "ja", "text": "竜石", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_nishinisen", "lang": "ja", "text": "西二線仮乗降場", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_juyongo", "lang": "ja", "text": "十四号仮乗降場", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_jurokugo", "lang": "ja", "text": "十六号仮乗降場", "kind": "noritsubushi"}
@@ -3049,6 +3060,14 @@
 - {"entity_type": "node", "id": "n_ryugucho", "lang": "ja", "text": "東橋", "kind": "alias"}
 - {"entity_type": "node", "id": "n_kinshicho_ekimae", "lang": "ja", "text": "錦糸堀", "kind": "alias"}
 - {"entity_type": "node", "id": "n_nijubashimae", "lang": "ja", "text": "二重橋前〈丸の内〉", "kind": "alias"}
+- {"entity_type": "node", "id": "n_cross_bay_mae", "lang": "ja", "text": "クロスベイ前", "kind": "alias"}
+- {"entity_type": "node", "id": "n_cross_bay_mae", "lang": "ja", "text": "第一イン新湊クロスベイ前", "kind": "alias"}
+- {"entity_type": "node", "id": "n_takaraura", "lang": "ja", "text": "多加良浦", "kind": "alias"}
+- {"entity_type": "node", "id": "n_ojidobutsuen", "lang": "ja", "text": "王子公園前", "kind": "alias"}
+- {"entity_type": "node", "id": "n_kyokumae", "lang": "ja", "text": "郵便局前", "kind": "alias"}
+- {"entity_type": "node", "id": "n_myosho", "lang": "ja", "text": "明昌", "kind": "alias"}
+- {"entity_type": "node", "id": "n_kamiyacho_hiroden", "lang": "ja", "text": "紙屋町東", "kind": "alias"}
+- {"entity_type": "node", "id": "n_kamiyacho_hiroden", "lang": "ja", "text": "紙屋町西", "kind": "alias"}
 - {"entity_type": "node", "id": "n_osaka", "lang": "ja", "text": "大阪（うめきた）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_awa_kainan", "lang": "ja", "text": "阿波海南（モードインターチェンジ）", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_tokyo_skytree", "lang": "ja", "text": "とうきょうスカイツリー／押上", "kind": "noritsubushi"}

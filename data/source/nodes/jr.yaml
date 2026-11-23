@@ -3929,6 +3929,7 @@
 - {"id": "n_edamitsu", "kind": "station", "group": "g_edamitsu", "pref": "40"}
 - {"id": "n_space_world", "kind": "station", "group": "g_space_world", "pref": "40"}
 - {"id": "n_yahata", "kind": "station", "group": "g_yahata", "pref": "40"}
+- {"id": "n_nishi_yahata", "kind": "station", "group": "g_nishi_yahata", "pref": "40"}
 - {"id": "n_kurosaki", "kind": "station", "group": "g_kurosaki", "pref": "40"}
 - {"id": "n_jinnoharu", "kind": "station", "group": "g_jinnoharu", "pref": "40"}
 - {"id": "n_orio", "kind": "station", "group": "g_orio", "pref": "40"}

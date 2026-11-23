@@ -1082,5 +1082,8 @@
  "group:g_yamato_yagi_yagi_nishiguchi": "끝 노드를 역 노드로 합침(edge_insert merge, 5번 결정 2026-11-20): 近鉄 八木連絡線 끝은 八木西口 승강장=大和八木역(n_yamato_yagi)",
  "hub:hub_ohanabatake": "西武秩父–御花畑 환승 묶음이 끝 노드 합침(西武 連絡線 끝=御花畑, 2026-11-20)으로 다시 묶임. 환승 쌍은 그대로",
  "line_stop:l_chichibu_railway_connecting_line|n_ohanabatake": "연락선 끝 분기점을 御花畑 역 노드로 합친 뒤에도 연락선 자체는 御花畑에서 서지 않는다(정차는 秩父本線 승강장의 것, edge_insert merge가 분기점의 서지 않음을 이어받음, 5번 결정 2026-11-20). 직통은 끝 이어짐으로",
- "line_stop:l_yagi_connecting_line|n_yamato_yagi": "八木連絡線 끝(八木西口 승강장)을 大和八木 역 노드로 합친 뒤에도 연락선 자체는 서지 않는다(정차는 橿原線 승강장의 것, edge_insert merge가 분기점의 서지 않음을 이어받음, 5번 결정 2026-11-20). 직통은 끝 이어짐(THROUGH 橿原線)으로"
+ "line_stop:l_yagi_connecting_line|n_yamato_yagi": "八木連絡線 끝(八木西口 승강장)을 大和八木 역 노드로 합친 뒤에도 연락선 자체는 서지 않는다(정차는 橿原線 승강장의 것, edge_insert merge가 분기점의 서지 않음을 이어받음, 5번 결정 2026-11-20). 직통은 끝 이어짐(THROUGH 橿原線)으로",
+"node:n_saigo": "登米線 西郷 공개 ID 개명 n_saigo → n_nishigo(읽기 にしごう, id_rename·id_redirect로 이음) (5회차 2026-11-23)",
+"group:g_saigo": "登米線 西郷 공개 ID 개명 n_saigo → n_nishigo(읽기 にしごう, id_rename·id_redirect로 이음) (5회차 2026-11-23)",
+"line_stop:l_toyoma_line|n_saigo": "登米線 西郷 공개 ID 개명 n_saigo → n_nishigo(읽기 にしごう, id_rename·id_redirect로 이음) (5회차 2026-11-23)"
 }

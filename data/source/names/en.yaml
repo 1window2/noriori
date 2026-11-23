@@ -2493,6 +2493,7 @@
 - {"entity_type": "route", "id": "r_funaki_railway_line", "lang": "en", "text": "Nishiube~Magura", "source": "rule"}
 - {"entity_type": "route", "id": "r_bansei_line", "lang": "en", "text": "Kaseda~Satsuma-Bansei", "source": "rule"}
 - {"entity_type": "route", "id": "r_kusakaru_electric_railway_line", "lang": "en", "text": "Shin-Karuizawa~Kusatsu-Onsen", "source": "rule"}
+- {"entity_type": "route", "id": "r_saidaiji_railway_line", "lang": "en", "text": "Saidaijiichi~Korakuen", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishimaruko_line", "lang": "en", "text": "Shimonogo~Nishimaruko", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsusaka_line", "lang": "en", "text": "Matsusaka~Oishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_onomichi_railway_line", "lang": "en", "text": "Onomichi~Ichi", "source": "rule"}
@@ -2542,6 +2543,7 @@
 - {"entity_type": "route", "id": "r_dreamland_line", "lang": "en", "text": "Ofuna~Dreamland", "source": "rule"}
 - {"entity_type": "route", "id": "r_arida_railway_line", "lang": "en", "text": "Fujinami~Kanayaguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kato_line", "lang": "en", "text": "Shinshunakano~Kijima", "source": "rule"}
+- {"entity_type": "route", "id": "r_miike_railway_main_line", "lang": "en", "text": "Miikeko~Manda", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamioka_railway_line", "lang": "en", "text": "Inotani~Kamiokacho", "source": "rule"}
 - {"entity_type": "route", "id": "r_bibai_railway_line", "lang": "en", "text": "Bibai~Tokiwadai", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakayama_line", "lang": "en", "text": "Nakayama~Nikenjaya", "source": "rule"}
