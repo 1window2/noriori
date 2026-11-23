@@ -343,6 +343,7 @@
 - {"id": "n_shizu_keisei", "kind": "station", "group": "g_shizu_keisei", "pref": "12"}
 - {"id": "n_yukarigaoka_keisei", "kind": "station", "group": "g_yukarigaoka_keisei", "pref": "12"}
 - {"id": "n_keisei_usui", "kind": "station", "group": "g_keisei_usui", "pref": "12"}
+- {"id": "n_kashimagawa", "kind": "station", "group": "g_kashimagawa", "pref": "12"}
 - {"id": "n_keisei_sakura", "kind": "station", "group": "g_keisei_sakura", "pref": "12"}
 - {"id": "n_osakura", "kind": "station", "group": "g_osakura", "pref": "12"}
 - {"id": "n_keisei_shisui", "kind": "station", "group": "g_keisei_shisui", "pref": "12"}

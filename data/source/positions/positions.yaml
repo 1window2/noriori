@@ -4837,6 +4837,7 @@
 - {"node": "n_shizu_keisei", "lat": 35.717406, "lon": 140.144982, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_yukarigaoka_keisei", "lat": 35.721801, "lon": 140.156354, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_keisei_usui", "lat": 35.730017, "lon": 140.180796, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
+- {"node": "n_kashimagawa", "lat": 35.73006, "lon": 140.21465, "quality": "approx", "checked": "2026-11-20", "source": "n02"}
 - {"node": "n_keisei_sakura", "lat": 35.725205, "lon": 140.229633, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_osakura", "lat": 35.729908, "lon": 140.25079, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_keisei_shisui", "lat": 35.736867, "lon": 140.270132, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
