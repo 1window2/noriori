@@ -461,7 +461,8 @@ final class _Stitch {
         } else {
           final anchorRow = items[ia];
           items = [...rev(seq), ...items.sublist(ia)];
-          if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: true, rows: rev(frows), period: periodNew(frows)));
+          // 접힌 행은 늘 화면 순서(위→아래)다. 본선 구간(region)은 이미 그 순서라 뒤집지 않는다(瀬戸線 1965 栄町·東大手, 総武本線 1965 東京–錦糸町)
+          if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: true, rows: frows, period: periodNew(frows)));
         }
         continue;
       }
@@ -700,7 +701,10 @@ final class _Stitch {
   List<_R> _chain(List<_R> list) {
     if (list.isEmpty) return list;
     bool liveRoute(String r) => date == null || openOn(r, rows(r));
-    var o = list.indexWhere((x) => _official(x.route, x.node) != null && liveRoute(x.route));
+    // km 원점은 그날 다니는 계통의 기점(km 0) 행이다. 계통 km는 그 계통 기점에서 잰 값이라, 줄 머리에 붙은 다른 계통 조각의 중간 km
+    // (福知山線 1965 尼崎港線 尼崎港 4.6, 塚口에서 잼)로 잡으면 본선 km가 통째로 밀린다. 기점 행이 없을 때만 맨 위 공식 km 행이다
+    var o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0 && liveRoute(x.route));
+    if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node) != null && liveRoute(x.route));
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0);
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node) != null);
     if (o < 0) return list;

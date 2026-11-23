@@ -20,7 +20,9 @@ void main() {
       for (final row in await db.customSelect("SELECT entity_id, text FROM names.name WHERE lang='ja' AND (valid_to IS NULL OR valid_to='' OR valid_to='ongoing') AND valid_from IS NULL").get())
         row.read<String>('entity_id'): row.read<String>('text'),
     };
-    String nm(String? id) => id == null ? '-' : '${names[id] ?? id}[$id]';
+    // 앱과 같은 이름: 그 노선·그날 이름(노선 한정 이름이 다른 노선에 새지 않게)
+    var shownNames = <String, String>{};
+    String nm(String? id) => id == null ? '-' : '${shownNames[id] ?? names[id] ?? id}[$id]';
     final wanted = (Platform.environment['RENDER_LINES'] ?? '').split(',').where((s) => s.isNotEmpty).toList();
     final lines = wanted.isNotEmpty
         ? wanted
@@ -52,6 +54,11 @@ void main() {
         final stitcher = LineStitcher(network, today: todaySpan, screen: (r, d) => screens[(r, d?.lo)]);
         final main = network.routesOfLineMainFirst(lineId).first;
         final s = stitcher.stitch(lineId, main, date);
+        shownNames = await reader.nodeNames(
+            {for (final r in s.main.rows) r.node, for (final f in s.folds) for (final r in f.rows.rows) r.node}.toList(),
+            lineId: lineId,
+            date: raw,
+            languages: const ['ja']);
         final chips = [for (final r in network.routesOfLineMainFirst(lineId)) if (r != main && !s.used.contains(r)) r];
         buf.writeln('\n## 날짜 ${raw ?? '모름'} 길이 ${s.lengthKm.toStringAsFixed(1)} 칩 ${chips.join(',')}');
         List<SelectorLine> linesOf(RouteRows rr) => rules.lines(

@@ -62,6 +62,19 @@ void main() {
     expect(per(await stitch('l_kyoto_line', '1965-08-22'), 'n_kintetsu_tambabashi'), '1968~');
   });
 
+  test('접힌 줄은 화면 순서이고 km는 붙는 역에서 잰다. 줄 km 원점은 그날 다니는 계통의 맨 위 기점이다', () async {
+    // 그날의 길을 본선에 잇고 위로 접은 본선 구간(総武本線 1965 東京–錦糸町, 瀬戸線 1965 栄町·東大手)
+    final sobu = await stitch('l_sobu_main_line', '1965-06-01');
+    final up = sobu.folds.firstWhere((f) => f.rows.rows.any((r) => r.node == 'n_bakurocho'));
+    expect(up.rows.rows.firstWhere((r) => r.node == 'n_bakurocho').kmCum, 1.8);
+    final seto = await stitch('l_seto_line', '1965-06-01');
+    final sf = seto.folds.firstWhere((f) => f.rows.rows.any((r) => r.node == 'n_higashiote'));
+    expect(sf.rows.rows.map((r) => r.node), ['n_sakaemachi_meitetsu', 'n_higashiote']);
+    expect(sf.rows.rows.last.kmCum, 2.1);
+    // 줄 머리의 다른 계통 조각(尼崎港線, 塚口에서 잰 km)이 원점을 밀지 않는다
+    expect(km(await stitch('l_fukuchiyama_line', '1965-06-01'), 'n_amagasaki'), 0.0);
+  });
+
   test('室蘭本線: 志文–岩見沢 옛 선로는 칩 없이 그날의 길과 km만', () async {
     final y1965 = await stitch('l_muroran_main_line', '1965-06-01');
     expect(km(y1965, 'n_iwamizawa'), 209.3);
