@@ -615,6 +615,7 @@ class _Translations$lineDetail$ja implements Translations$lineDetail$ko {
 	@override String get restored => '消した記録を戻しました';
 	@override String get blockedHidden => '信号場や分岐点で区切る必要があるため、ここでは消せません。記録を直接編集してください';
 	@override String get blockedPath => '区切ると経路が変わるため消せません。記録を直接編集してください';
+	@override String get blockedNoStop => 'この方向の列車が停まらない駅で区切る必要があるため、ここでは消せません。記録を直接編集してください';
 	@override String get blockedOn => 'この区間はここでは乗車済にできません。駅の選択画面から記録してください。';
 	@override String get visitAdded => '訪問済にしました';
 	@override String get visitRemoved => '訪問を消しました';
@@ -1504,6 +1505,7 @@ extension on TranslationsJa {
 			'lineDetail.restored' => '消した記録を戻しました',
 			'lineDetail.blockedHidden' => '信号場や分岐点で区切る必要があるため、ここでは消せません。記録を直接編集してください',
 			'lineDetail.blockedPath' => '区切ると経路が変わるため消せません。記録を直接編集してください',
+			'lineDetail.blockedNoStop' => 'この方向の列車が停まらない駅で区切る必要があるため、ここでは消せません。記録を直接編集してください',
 			'lineDetail.blockedOn' => 'この区間はここでは乗車済にできません。駅の選択画面から記録してください。',
 			'lineDetail.visitAdded' => '訪問済にしました',
 			'lineDetail.visitRemoved' => '訪問を消しました',
@@ -1636,9 +1638,9 @@ extension on TranslationsJa {
 			'prefNames.18' => '山梨',
 			'prefNames.19' => '長野',
 			'prefNames.20' => '岐阜',
-			'prefNames.21' => '静岡',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.21' => '静岡',
 			'prefNames.22' => '愛知',
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',

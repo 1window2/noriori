@@ -1240,6 +1240,9 @@ class Translations$lineDetail$ko {
 	/// ko: '이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요'
 	String get blockedPath => '이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요';
 
+	/// ko: '이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요'
+	String get blockedNoStop => '이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요';
+
 	/// ko: '이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요'
 	String get blockedOn => '이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요';
 
@@ -2498,6 +2501,7 @@ extension on Translations {
 			'lineDetail.restored' => '지운 기록을 되살렸습니다',
 			'lineDetail.blockedHidden' => '역이 아닌 지점에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요',
 			'lineDetail.blockedPath' => '이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요',
+			'lineDetail.blockedNoStop' => '이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요',
 			'lineDetail.blockedOn' => '이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요',
 			'lineDetail.visitAdded' => '방문으로 표시했습니다',
 			'lineDetail.visitRemoved' => '방문을 지웠습니다',
@@ -2630,9 +2634,9 @@ extension on Translations {
 			'prefNames.18' => '야마나시',
 			'prefNames.19' => '나가노',
 			'prefNames.20' => '기후',
-			'prefNames.21' => '시즈오카',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.21' => '시즈오카',
 			'prefNames.22' => '아이치',
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',

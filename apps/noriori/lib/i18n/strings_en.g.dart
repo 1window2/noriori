@@ -635,6 +635,7 @@ class _Translations$lineDetail$en implements Translations$lineDetail$ko {
 	@override String get restored => 'Ride restored';
 	@override String get blockedHidden => 'This ride would have to be split at a signal station or junction, so this section can\'t be cleared here. Edit the ride instead';
 	@override String get blockedPath => 'Removing this section would change the ride\'s route or date, so it can\'t be cleared here. Edit the ride instead';
+	@override String get blockedNoStop => 'This ride would have to be split at a station where trains in this direction don\'t stop, so this section can\'t be cleared here. Edit the ride instead';
 	@override String get blockedOn => 'This section can\'t be marked as ridden here. Log it from the station picker instead';
 	@override String get visitAdded => 'Marked as visited';
 	@override String get visitRemoved => 'Visit removed';
@@ -1535,6 +1536,7 @@ extension on TranslationsEn {
 			'lineDetail.restored' => 'Ride restored',
 			'lineDetail.blockedHidden' => 'This ride would have to be split at a signal station or junction, so this section can\'t be cleared here. Edit the ride instead',
 			'lineDetail.blockedPath' => 'Removing this section would change the ride\'s route or date, so it can\'t be cleared here. Edit the ride instead',
+			'lineDetail.blockedNoStop' => 'This ride would have to be split at a station where trains in this direction don\'t stop, so this section can\'t be cleared here. Edit the ride instead',
 			'lineDetail.blockedOn' => 'This section can\'t be marked as ridden here. Log it from the station picker instead',
 			'lineDetail.visitAdded' => 'Marked as visited',
 			'lineDetail.visitRemoved' => 'Visit removed',
@@ -1667,9 +1669,9 @@ extension on TranslationsEn {
 			'prefNames.18' => 'Yamanashi',
 			'prefNames.19' => 'Nagano',
 			'prefNames.20' => 'Gifu',
-			'prefNames.21' => 'Shizuoka',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.21' => 'Shizuoka',
 			'prefNames.22' => 'Aichi',
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',

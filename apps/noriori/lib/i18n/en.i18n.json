@@ -505,6 +505,7 @@
     "restored": "Ride restored",
     "blockedHidden": "This ride would have to be split at a signal station or junction, so this section can't be cleared here. Edit the ride instead",
     "blockedPath": "Removing this section would change the ride's route or date, so it can't be cleared here. Edit the ride instead",
+    "blockedNoStop": "This ride would have to be split at a station where trains in this direction don't stop, so this section can't be cleared here. Edit the ride instead",
     "blockedOn": "This section can't be marked as ridden here. Log it from the station picker instead",
     "visitAdded": "Marked as visited",
     "visitRemoved": "Visit removed",
