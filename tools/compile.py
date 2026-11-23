@@ -947,6 +947,25 @@ for k_,v_ in _SDK.items():
             if s['node_id']==nd_ and _sd_route(s,rid_,nd_) and not s.get('is_extension'):s['is_stop']=0;hit_+=1;WARN['stop_pass'].append((s['route_id'],nd_,s['valid_from'],s['valid_to']))
         if not hit_ and not _nopatch:err('stop_dates_unknown',k_)
         continue
+    # 값 {"pass": true, "stop": [[시작, 끝], ...]}: 평소에는 통과하고 적은 기간에만 선다(회사 관계자 전용역의 한시 개방, 黒部峡谷鉄道 猫又 2024·2025 시즌).
+    # 행 기간은 그대로 두고 적은 기간 밖을 서지 않는 때(route_stop_gap)로 둔다. 행을 그 기간으로 줄이면 그 앞뒤에 역이 화면에서 사라진다 (5회차 2026-11-24)
+    if isinstance(v_,dict):
+        ps_=sorted(v_.get('stop') or [],key=lambda p_:lohi(p_[0])[0] or '')
+        if not v_.get('pass') or not ps_:err('stop_dates_periods',{k_:v_});continue
+        for a_,b_ in zip(ps_,ps_[1:]):
+            if (lohi(a_[1])[1] or '')>(lohi(b_[0])[0] or ''):err('stop_dates_periods',{k_:v_})
+        hit_=0
+        for s in stops:
+            if s['node_id']!=nd_ or not _sd_route(s,rid_,nd_) or s.get('is_extension'):continue
+            # 행 기간은 그대로 두고 개방 밖은 정차 공백이다. 끝 없는 마지막 공백은 그 역이 승객 미취급 정식 역(node_identity staff_only)인 때라
+            # 앱이 운휴로 읽지 않는다(openStopGap의 staff 구간 규칙). 행을 마지막 개방에서 닫으면 그 뒤 날짜에 역이 일람에서 사라진다 (5회차 2026-11-24)
+            hit_+=1;s['is_stop']=1;cur_=s['valid_from']
+            for a_,b_ in ps_:
+                if (lohi(cur_)[0] or '0000')<(lohi(a_)[0] or ''):stop_gaps.append((s,cur_,a_))
+                cur_=b_
+            if s['valid_to'] in (None,'ongoing') or (lohi(cur_)[0] or '')<(lohi(s['valid_to'])[0] or '9999'):stop_gaps.append((s,cur_,s['valid_to'] or 'ongoing'))
+        if not hit_ and not _nopatch:err('stop_dates_unknown',k_)
+        continue
     ps_=v_ if v_ and isinstance(v_[0],list) else [v_]
     for a_,b_ in zip(ps_,ps_[1:]):
         if not a_[1] or not b_[0] or (lohi(a_[1])[1] or '')>=(lohi(b_[0])[0] or ''):err('stop_dates_periods',{k_:v_})
@@ -3781,6 +3800,13 @@ for l in lines:
 kana=re.compile('[぀-ヿ一-鿿]')
 # 읽기 근거가 없는 분기점 이름은 고유한 부분만 한자 그대로 두고 종류만 옮긴다(宮古 분기점, 사용자 결정 2026-11-19). 사람이 정한 노드 한국어 이름(hand)의
 # 한자 토막과, 그 이름으로 만든 계통 이름의 같은 토막은 예외다
+# 계통 이름은 끝 역 이름에서 나온다. 끝 역 한국어·영어가 일본어 표기 그대로(ja_as_is)면 그 이름으로 만든 계통 이름도 같은 출처다.
+# 출처를 물려받지 않으면 한국어·영어 검사(여기와 감사 audit_db)가 따로따로 예외를 둬야 한다 (王子軽便鉄道 「分岐点~湖畔」, 5회차 2026-11-24)
+_asis_n={(x['id'],x['lang']) for x in names if x['entity_type']=='node' and x['lang'] in ('ko','en') and x.get('source')=='ja_as_is' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to')}
+for x in names:
+    if x['entity_type']=='route' and x['lang'] in ('ko','en') and x.get('source')=='rule' and x['id'] in routes:
+        r_=routes[x['id']]
+        if (r_.get('from'),x['lang']) in _asis_n or (r_.get('to'),x['lang']) in _asis_n:x['source']='ja_as_is'
 _KANJI_OK={t_ for x in names if x['entity_type']=='node' and x['lang']=='ko' and x.get('source')=='hand' for t_ in re.findall('[一-鿿]+',x['text'])}
 for x in names:
     # 일본어 표기 그대로(ja_as_is)는 읽기 근거가 없는 마지막 수단이라 예외다 (명세 결정 6)
@@ -4131,7 +4157,7 @@ _IDP=os.path.join(ROOT,'data','overrides','node_identity.json')
 _IDENT=collections.defaultdict(list)
 if os.path.exists(_IDP):
     for r_ in json.load(open(_IDP,encoding='utf-8'))['rows']:
-        if r_['node'] in nodes:_IDENT[r_['node']].append((_lo(r_.get('from')),_lo(r_.get('to'),True),{'signal':'signal','junction':'junction','station_no_passenger':'nostop','none':'none'}[r_['kind']]))
+        if r_['node'] in nodes:_IDENT[r_['node']].append((_lo(r_.get('from')),_lo(r_.get('to'),True),{'signal':'signal','junction':'junction','station_no_passenger':'nostop','none':'none','staff_only':'staff'}[r_['kind']]))
 def _style(x_,d_):
     for a_,b_,k_ in _IDENT.get(x_,()):
         if a_<=d_<b_:return k_
@@ -4158,6 +4184,12 @@ for s_ in stops:
     if not s_['is_stop']:iv_.append((s_['valid_from'],s_['valid_to'] or 'ongoing'))
     # 그날 없던 끝 역 대신 붙인 앞 역 행은 그 기간 뒤로 이 계통에 없다(숨김)
     if s_.get('lead_until'):_SELROWS.append((s_,[s_['lead_until'],'ongoing','none']))
+    # 승객 미취급 정식 역(근거 표 staff_only, 黒部峡谷鉄道 関電関係者専用駅): 정차 행이어도 정차 기간 밖(한시 개방 사이·앞뒤)은 개업 전·폐역이 아니라
+    # 승객을 받지 않는 역으로 보인다. 근거 표에 적은 노드만이고, 아래에서 그날 정체가 staff인 토막만 남긴다 (사용자 결정 2026-11-24)
+    if s_['is_stop'] and any(k_=='staff' for _,_,k_ in _IDENT.get(s_['node_id'],())):
+        # 정차 행은 첫 정차부터 시작하므로(앞 공백은 행 시작으로 접힘) 근거 표 staff 기간 시작부터 본다. 계통 칸 기간(_rspan) 안으로 자른다
+        a0_=min(a_ for a_,_,k_ in _IDENT[s_['node_id']] if k_=='staff')
+        iv_.append((a0_,s_['valid_to'] or 'ongoing') if s_['route_id'] not in _rspan else next(iter(_clip_iv([(a0_,s_['valid_to'] or 'ongoing')],*_rspan[s_['route_id']])),(s_['valid_from'],s_['valid_to'] or 'ongoing')))
     # 역 행의 정차 기간 밖이라도 그 노드가 그날 신호장(근거 표·그날 이름)이고 이 계통 칸이 이 노드에 닿아 있으면 신호장 노드로 고를 수 있다.
     # 역이 신호장으로 격하된 뒤(三岐朝明 1989~, 上越 1983~)와 신호장이 역으로 승격되기 전(逢隈 1960–1988). 신호장이 폐지되면(이름·근거 표 끝) 거기서 끝난다
     if s_['is_stop'] and s_['route_id'] in _rspan:
@@ -4174,6 +4206,8 @@ for s_ in stops:
         prev_=None
         for a_,b_ in zip(pts_,pts_[1:]):
             st_=_style(s_['node_id'],_lo(a_))
+            # 승객 미취급 역 행에 더한 기간은 그날 정체가 staff인 토막만 쓴다(다른 정체 토막이 새로 생기지 않게)
+            if s_['is_stop'] and st_!='staff' and any(k_=='staff' for _,_,k_ in _IDENT.get(s_['node_id'],())) and not s_.get('sel_iv'):prev_=None;continue
             in_end_=any(_lo(e0_)<=_lo(a_)<_lo(e1_,True) for e0_,e1_ in _ENDIV.get(id(s_),()))
             # 그날 이 계통이나 이어진 다른 계통의 끝인 행은 숨기지 않는다. 숨기면 그 끝까지를 기록할 수 없고(三岐線 富田西口–三岐朝明 1950) 갈림 연결이 숨은 행에 달린다(新今宮 1961–1964). 그 자리는 계통이 갈리는 지점이라 분기점 모양이다
             if st_=='none' and in_end_:st_='junction'
@@ -4567,6 +4601,54 @@ def _life_rows():
         out+=[tuple(x) for x in v]
     return out
 t('edge_life',['edge_id','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi','status','last_service','legal_abolition','close_reason'],_life_rows())
+# 계절 운행(data/overrides/seasons.json, 5회차 사용자 결정 2026-11-24): 해마다 운행 기간 밖(비시즌)은 그 노선·계통의 칸을 탈 수 없다.
+# 운휴와 다른 분류라 edge_life에 섞지 않는다(운휴 뒤 폐지 소급·운휴 괄호가 걸리지 않게). 날짜는 근거가 범위만 주면 EDTF 범위로 낸다(앱은 범위 안의 날을 「아마」로 본다)
+_SEA=json.load(open(os.path.join(ROOT,'data','overrides','seasons.json'),encoding='utf-8'))['rows']
+def _sea_d(y_,v_,lo_=None):
+    """월-일(또는 [월-일..월-일]) 또는 YYYY-MM-DD를 y_해 날짜로. 범위면 (lo, hi)"""
+    if re.fullmatch(r'\d{4}-\d\d-\d\d',v_):return (v_,v_)
+    m_=re.fullmatch(r'\[(\d\d-\d\d)\.\.(\d\d-\d\d)\]',v_)
+    a_,b_=(m_.group(1),m_.group(2)) if m_ else (v_,v_)
+    return (f'{y_}-{a_}',f'{y_+(1 if b_<a_ else 0)}-{b_}')
+def _sea_next(d_):
+    return (_dtm.date.fromisoformat(d_)+_dtm.timedelta(days=1)).isoformat()
+def _sea_edtf(lo_,hi_):
+    return lo_ if lo_==hi_ else f'[{lo_}..{hi_}]'
+_SEAOFF=[];_SEARULE=[]
+for x_ in _SEA:
+    f0_=x_['from'];t0_=x_.get('to') or f'{int(AS_OF[:4])+2}-01-01'
+    on_=[]
+    for y_ in range(int(f0_[:4])-1,int(t0_[:4])+1):
+        ws_=x_['years'].get(str(y_),x_['on']) if str(y_) in x_['years'] else x_['on']
+        if ws_ is None:on_.append(((f'{y_}-01-01',f'{y_}-01-01'),(f'{y_}-12-31',f'{y_}-12-31')));continue
+        for s_,e_ in ws_:
+            sl_,sh_=_sea_d(y_,s_)
+            # 끝(마지막 운행일)은 시작과 같은 해, 월-일이 시작보다 이르면 다음 해다
+            if re.fullmatch(r'\d{4}-\d\d-\d\d',e_):el_,eh_=e_,e_
+            else:
+                m_=re.fullmatch(r'\[(\d\d-\d\d)\.\.(\d\d-\d\d)\]',e_);a_,b_=(m_.group(1),m_.group(2)) if m_ else (e_,e_)
+                ya_=y_+(1 if a_<sl_[5:] else 0);yb_=y_+(1 if b_<sl_[5:] else 0)
+                el_,eh_=f'{ya_}-{a_}',f'{yb_}-{b_}'
+            on_.append(((sl_,sh_),(el_,eh_)))
+    on_.sort(key=lambda w_:w_[0][0])
+    # 비시즌 = 앞 운행 기간 마지막 날 다음 날부터 다음 운행 기간 시작 전까지. 계절 운행 기간(from~to) 안으로 자른다
+    offs_=[]
+    for (s1_,e1_),(s2_,e2_) in zip(on_,on_[1:]):
+        a_=(_sea_next(e1_[0]),_sea_next(e1_[1]));b_=s2_
+        if a_[1]>=b_[0] and a_[0]>=b_[0]:continue
+        if a_[0]<f0_:a_=(max(a_[0],f0_),max(a_[1],f0_))
+        if b_[1]>t0_:b_=(min(b_[0],t0_),min(b_[1],t0_))
+        if a_[0]>=b_[1] or b_[0]<=f0_ or a_[1]>=t0_:continue
+        offs_.append((_sea_edtf(*a_),_sea_edtf(*b_)))
+    rid_=x_.get('route')
+    es_=sorted({e['id'] for r_ in ([rid_] if rid_ else [r['id'] for r in routes.values() if r['line']==x_['line']]) for e in route_edges.get(r_) or []})
+    if not es_:err('season_no_edges',x_['id']);continue
+    for e_ in es_:
+        for a_,b_ in offs_:_SEAOFF.append((x_['line'],rid_,e_)+per('',a_)+per('',b_))
+    _SEARULE.append((x_['line'],rid_,x_['typical'][0],x_['typical'][1],x_.get('source')))
+t('season_off',['line_id','route_id','edge_id','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],_SEAOFF)
+t('season_rule',['line_id','route_id','from_month','to_month','source'],_SEARULE)
+print('계절 운행 비시즌 행',len(_SEAOFF),'노선',len(_SEARULE))
 t('edge_km',['edge_id','km','m'],[(k,v,round(v*1000)) for k,v in kms.items()])
 t('edge_km_era',['edge_id','line_id','km','m'],[(e_,l_,round(v,3),round(v*1000)) for (l_,e_),v in sorted(ERA.items())])
 t('edge_attr',['edge_id','line_id','operator_id','lineage_id','carryover_group','denominator_class','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],[(a['edge_id'],a['line_id'],a['operator_id'],a['lineage_id'],a['carryover_group'],a['denominator_class'])+per(0,a['valid_from'])+per(0,a['valid_to']) for a in attr])
@@ -5358,6 +5440,10 @@ for st_ in (json.load(open(_ssp,encoding='utf-8')) if os.path.exists(_ssp) else 
                 # 두 쪽 모두 근거가 있는 합성이다(R 갈래 지적: 小野田港北口乗降場, 9회차 N). 없으면 일본어 표기 그대로
                 _ok_=_LATE_KANA.get(nd_+'|'+st_['name']);_ob_=_LATE_KANA.get(nd_+'|'+own_)
                 _ok_=_ok_ or ((_ob_+_MARK_FULL_KANA.get(st_['name'][len(own_):],'')) if _ob_ and st_['name'][len(own_):] in _MARK_FULL_KANA else None)
+                # 표식 이름 전체 읽기만 있으면(日赤前仮乗降場 → …かりじょうこうじょう) 끝의 표식 읽기를 떼어 바탕 읽기로 쓴다. 한국어·영어가 일본어 표기로 남지 않게 (5회차 2026-11-24)
+                if _ok_ and not _ob_ and _MARK_FULL_KANA.get(st_['name'][len(own_):]) and _ok_.endswith(_MARK_FULL_KANA[st_['name'][len(own_):]]):_ob_=_ok_[:-len(_MARK_FULL_KANA[st_['name'][len(own_):]])] or None
+                # 전체 이름 열쇠에 바탕 읽기만 든 경우(日赤前仮乗降場: にっせきまえ)는 바탕 읽기로 보고 표식 읽기를 붙여 합성한다
+                elif _ok_ and not _ob_ and _MARK_FULL_KANA.get(st_['name'][len(own_):]):_ob_=_ok_;_ok_=_ok_+_MARK_FULL_KANA[st_['name'][len(own_):]]
                 for lang_,fmt_ in MARK[kd_].items():
                     if _ok_ and _ob_ and lang_!='ja':
                         os.environ['NW_OFF']='1'
@@ -5647,11 +5733,25 @@ for x_,b_ in _NLAST.items():
             if not x.get('valid_from'):x['valid_from']=_NFIRST[x_]
             x['valid_to']=None
 print('폐역 뒤에도 마지막 이름으로 늘인 이름 행',len(_LASTNM),[r for r in _LASTNM if r[1]=='ja'][:12])
+# 마지막 그물(이름 표를 쓰기 바로 전, 모든 읽기 채움 뒤): 읽기 없는 이름 행(역·열람 전용 역, 기간·노선 한정 포함)은 같은 (노선, 기간)의 한국어·영어 행을 반드시 갖는다. 위 규칙들(지금 이름 ja_as_is, 옛 이름 병기)이
+# 걸러 낸 꼴(같은 끝 날 다른 이름이 병기를 가져간 옛 이름 護国神社前 玉里道, 이름 행이 아예 없던 열람 전용 역 旭町·大町·武田)도 일본어 표기 그대로 둔다 (5회차 2026-11-24)
+_have_lv={(x['entity_type'],x['id'],x['lang'],x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names}
+_asis2=[]
+for x in list(names):
+    if x['entity_type'] not in ('node','archive') or x['lang']!='ja' or x.get('kana'):continue
+    for lang_ in ('ko','en'):
+        k_=(x['entity_type'],x['id'],lang_,x.get('line'),x.get('valid_from'),x.get('valid_to'))
+        if k_ in _have_lv:continue
+        _have_lv.add(k_);_asis2.append(dict(entity_type=x['entity_type'],id=x['id'],lang=lang_,text=x['text'],source='ja_as_is',**({'line':x['line']} if x.get('line') else {}),**({'valid_from':x['valid_from']} if x.get('valid_from') else {}),**({'valid_to':x['valid_to']} if x.get('valid_to') else {})))
+names+=_asis2
+print('읽기 없는 이름의 빠진 한국어·영어를 일본어 표기로',len(_asis2),_asis2[:4])
 db.execute('create table name (entity_type,entity_id,lang,text,kana,source,reading_source,source_title,checked,line_id,valid_from,valid_to)')
 check_dates('name',['entity_type','entity_id','lang','text','kana','source','reading_source','source_title','checked','line_id','valid_from','valid_to'],[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names])
 # 열람 전용 이름은 남은 열람 전용 행(drop·drop_stop·exclude로 뺀 것 제외)의 것만 싣는다. 뺀 ID의 이름만 남은 고아 109건(a_yomiurirando_monorail 등, 12회차 M R6)
 _arch_ids={a_['id'] for a_ in archive}
-db.executemany('insert into name values (?,?,?,?,?,?,?,?,?,?,?,?)',[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names if (x['entity_type']!='node' or x['id'] in pub or x['id'] in ENDPT) and (x['entity_type']!='archive' or x['id'] in _arch_ids)])
+# 승객 미취급 정식 역(근거 표 staff_only)은 공개 노드·끝 노드가 아니어도 노선 일람에 보이므로 이름을 싣는다 (2026-11-24)
+_STAFFN={x_ for x_,v_ in _IDENT.items() if any(k_=='staff' for _,_,k_ in v_)}
+db.executemany('insert into name values (?,?,?,?,?,?,?,?,?,?,?,?)',[(x['entity_type'],x['id'],x['lang'],x['text'],x.get('kana'),x.get('source'),x.get('reading_source'),x.get('source_title'),x.get('checked'),x.get('line'),x.get('valid_from'),x.get('valid_to')) for x in names if (x['entity_type']!='node' or x['id'] in pub or x['id'] in ENDPT or x['id'] in _STAFFN) and (x['entity_type']!='archive' or x['id'] in _arch_ids)])
 # 역·노선별 仮乗降場·臨時駅 기간. 날짜 모름 화면의 표식에 쓴다 (사용자 결정 2026-11-07). valid_to NULL이면 지금도 仮·臨
 db.execute('create table stop_mark (node_id,line_id,kind,valid_from,valid_to)')
 # 끝 없는 표식은 지금도 仮·臨이라는 뜻이다 (날짜 원칙: ongoing)

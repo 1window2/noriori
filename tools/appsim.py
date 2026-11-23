@@ -160,6 +160,10 @@ class App:
             for r in self.db.execute("SELECT * FROM route_stop_gap"):
                 self._stop_gaps[(r["route_id"], r["seq"])].append((r["gap_from_hi"], r["gap_to_lo"]))
         # 서지 않고 고를 수 있는 기간과 그날 노드 정체 (route_stop_select). 앱 SelectorBuilder._spanOn과 같다
+        self._season = collections.defaultdict(list)
+        if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='season_off'").fetchone():
+            for r in self.db.execute("SELECT edge_id,valid_from_lo,valid_from_hi,valid_to_lo,valid_to_hi FROM season_off"):
+                self._season[r["edge_id"]].append((r["valid_from_lo"], r["valid_from_hi"], r["valid_to_lo"], r["valid_to_hi"]))
         self._sel = collections.defaultdict(list)
         if self.db.execute("SELECT 1 FROM sqlite_master WHERE name='route_stop_select'").fetchone():
             for r in self.db.execute("SELECT * FROM route_stop_select"):
@@ -244,6 +248,9 @@ class App:
                 if best is None or st == "yes":
                     best = (res, r)
         if best:
+            # 계절 운행의 비시즌(season_off): 영업 중인 칸이라도 그날은 다니지 않는다. 경계를 범위로만 아는 날은 그대로 둔다 (앱 Network.lifeOn과 같다, 2026-11-24)
+            if best[0] == "open" and any(state_on(d, x[0], x[1], x[2], x[3]) == "yes" for x in self._season.get(edge, ())):
+                return "off_season", best[1]
             return best
         if all(s == "before" for s in seen):
             return "before", None
@@ -292,6 +299,8 @@ class App:
         attr, ast = self.attr_on(edge, line, d)
         if life == "suspended":
             return "suspended", life
+        if life == "off_season":
+            return "off_season", life
         if life == "maybe_suspended":
             return "maybe", life
         if life in ("before", "closed"):
@@ -327,10 +336,12 @@ class App:
         kmd = self.km_axis(route_id, d)
         rows = []
         for s in self._picks[route_id]:
+            # 승객 미취급 정식 역(staff_only)은 정차·끝·공개 노드가 아니어도 보인다 (앱 SelectorBuilder와 같다, 2026-11-24)
+            staff = any(x["style"].startswith("staff") for x in self._sel.get((route_id, s["seq"]), ()))
             if not include_hidden:
-                if not s["is_stop"] and not s["is_end_point"]:
+                if not s["is_stop"] and not s["is_end_point"] and not staff:
                     continue
-                if s["node_id"] not in self.public and not s["is_end_point"]:
+                if s["node_id"] not in self.public and not s["is_end_point"] and not staff:
                     continue
             st = state_on(d, s["valid_from_lo"], s["valid_from_hi"], s["valid_to_lo"], s["valid_to_hi"])
             # 선로 상태
@@ -349,6 +360,8 @@ class App:
                 state, sel = "maybe", True
             elif "suspended" in line_states:
                 state, sel = "suspended", False
+            elif "off_season" in line_states:
+                state, sel = "off_season", False
             elif adj[s["node_id"]] and all(x == "no" for x in line_states):
                 state, sel = "line_closed", False
             else:
@@ -363,13 +376,19 @@ class App:
             passing = no_boarding = False
             # 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다 (앱과 같다, 검토 M1·M5 2026-11-21)
             span = self._span_on(route_id, s["seq"], d) if (not s["is_stop"] or not stops_on) else None
-            if span is not None and ridable:
+            # 승객 미취급 정식 역(staff)은 그날 칸을 탈 수 없어도 그 모양으로 남는다 (앱과 같다, 2026-11-24)
+            if span is not None and (ridable or span["style"].startswith("staff")):
                 if span["style"] == "none":
                     continue
                 # 「_view」: 그날 끝이 아니라 보이기만 하고 고를 수 없다 (앱과 같다)
                 view = span["style"].endswith("_view")
                 style = span["style"][:-5] if view else span["style"]
-                state, sel = "open", not view
+                # 승객 미취급 역도 그날 칸이 다니지 않으면 둘레 상태로 흐리게(앱 _quietState와 같다)
+                if ridable:
+                    state, sel = "open", not view
+                else:
+                    state = "off_season" if "off_season" in line_states else ("suspended" if "suspended" in line_states else "line_closed")
+                    sel = False
                 passing, no_boarding = style != "nostop", style == "nostop"
             links = []
             for r in link_rows[s["seq"]]:
@@ -1969,6 +1988,23 @@ def sweep(A, R):
         if r["after_id"] not in ns and r["after_id"] is not None:
             bad += 1
     R.add("S15", "archive_stop의 위치가 계통 노드를 가리키는가", "0 위반", f"{bad}건 / 442", bad == 0)
+    # S15b 승객 미취급 정식 역(staff_only)만 정차·끝이 아니어도 일람에 보이고, 화물역은 절대 보이지 않는다 (사용자 지시 2026-11-24: 화물역이 일람에 쏟아지는 일 금지)
+    staff_nodes = {r["node"] for r in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "data", "overrides", "node_identity.json"), encoding="utf-8"))["rows"] if r.get("kind") == "staff_only"}
+    kinds = {r["id"]: r["kind"] for r in A.db.execute("SELECT id,kind FROM node")}
+    leak, freight, seen = [], [], set()
+    for d in ("1960-06-15", "1990-06-15", "2025-06-15", None):
+        for rid in A.routes:
+            stops = {s["seq"]: s for s in A._picks[rid]}
+            for q in A.picker(rid, d):
+                s = stops.get(q["seq"])
+                if s is None or s["is_stop"] or s["is_end_point"]:
+                    continue
+                seen.add(q["node"])
+                if q["node"] not in staff_nodes:
+                    leak.append((rid, d, q["node"]))
+                if kinds.get(q["node"]) == "freight":
+                    freight.append((rid, d, q["node"]))
+    R.add("S15b", "정차·끝이 아닌데 일람에 보이는 행은 승객 미취급 정식 역(근거 표)뿐이고 화물역은 없음", "0 위반", f"근거 표 밖 {len(leak)} {leak[:5]}, 화물역 {len(freight)} {freight[:5]}, 보인 승객 미취급 역 {sorted(seen)}", not leak and not freight)
     # S16 ko 이름
     z = A.db.execute("""SELECT count(*) FROM nm.name a JOIN nm.name b ON a.entity_id=b.entity_id AND a.entity_type=b.entity_type AND a.line_id=b.line_id AND a.lang='ja' AND b.lang='ko'
         JOIN nm.name c ON c.entity_id=a.entity_id AND c.lang='ja' AND c.line_id IS NULL

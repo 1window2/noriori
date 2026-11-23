@@ -302,6 +302,8 @@ final class NetworkData {
     this.oneWays = const [],
     this.stopDirections = const [],
     this.members = const [],
+    this.seasonOff = const [],
+    this.seasonRules = const [],
   });
 
   final List<NetRoute> routes;
@@ -335,6 +337,32 @@ final class NetworkData {
   /// 한때 다른 노선에 속했던 구간 (`line_period` kind=member, 例 柳ヶ瀬線 = 北陸本線 1909-10-12~1957-10-01, DESIGN §8.3).
   /// [NetMember.fromNode]·[NetMember.toNode]가 없으면 노선 전체다
   final List<NetMember> members;
+
+  /// 계통 운행(해마다 정한 기간에만 다님)의 비시즌. 그 칸은 그날 탈 수 없다 (`season_off`, 사용자 결정 2026-11-24)
+  final List<NetSeasonOff> seasonOff;
+
+  /// 계절 운행 노선의 보통 운행 달(안내용).
+  final List<NetSeasonRule> seasonRules;
+}
+
+/// 계절 운행 칸 하나의 비시즌 기간 하나.
+final class NetSeasonOff {
+  const NetSeasonOff({required this.lineId, required this.edge, required this.period, this.routeId});
+
+  final String lineId;
+  final String? routeId;
+  final String edge;
+  final NetPeriod period;
+}
+
+/// 계절 운행 노선(또는 계통)의 보통 운행 달. [fromMonth]가 [toMonth]보다 크면 해를 넘긴다(12월~5월).
+final class NetSeasonRule {
+  const NetSeasonRule({required this.lineId, required this.fromMonth, required this.toMonth, this.routeId});
+
+  final String lineId;
+  final String? routeId;
+  final int fromMonth;
+  final int toMonth;
 }
 
 final class NetMember {

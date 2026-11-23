@@ -4,7 +4,8 @@ import 'network.dart';
 import 'network_data.dart';
 
 /// 그날 그 역의 상태 (DESIGN §8 탑승일 상태표).
-enum StopState { open, maybe, unknown, beforeOpen, closed, suspended, lineClosed, noEdge }
+/// [offSeason]: 계절 운행 노선의 비시즌이라 그날 다니지 않음 (2026-11-24)
+enum StopState { open, maybe, unknown, beforeOpen, closed, suspended, lineClosed, noEdge, offSeason }
 
 final class SelectorLink {
   const SelectorLink({
@@ -285,10 +286,13 @@ final class SelectorRow {
 
 /// 행 사이 구간의 끝난 해와 운휴 여부.
 final class SectionEnd {
-  const SectionEnd({this.year, this.suspended = false, this.opens});
+  const SectionEnd({this.year, this.suspended = false, this.opens, this.season});
 
   final String? year;
   final bool suspended;
+
+  /// 그날 이 구간이 계절 운행의 비시즌이면 보통 운행 달(「4-11」). 아니면 null (사용자 결정 2026-11-24)
+  final String? season;
 
   /// 고른 날에 아직 개업 전인 구간이 개업한 해. 그 날 화면에서는 폐지 해 대신 이 해를 적는다
   final String? opens;
@@ -338,8 +342,11 @@ final class SelectorBuilder {
               period: earlier,
               kmEstimated: pick.kmEstimated,
             );
-      if (!stop.isStop && !stop.isEndPoint) continue;
-      if (!stop.isEndPoint && !network.data.publicNodes.contains(stop.node)) continue;
+      // 승객 미취급 정식 역(근거 표 staff_only, 黒部峡谷鉄道 関電関係者専用駅)은 정차도 끝도 아니고 공개 노드가 아니어도 일람에 보인다(고를 수 없음).
+      // 컴파일이 근거 표에 적은 노드에만 staff 기간을 내므로 화물역·신호장이 여기로 새지 않는다 (사용자 결정 2026-11-24)
+      final staff = stop.selectSpans.any((span) => span.style.startsWith('staff'));
+      if (!stop.isStop && !stop.isEndPoint && !staff) continue;
+      if (!stop.isEndPoint && !staff && !network.data.publicNodes.contains(stop.node)) continue;
       // 역을 옮긴 옛 자리·새 자리는 날짜를 고른 화면에서 그날의 자리만 보인다(날짜 모름이면 다 보인다, 사용자 결정 2026-11-21)
       if (day != null && !_stopsOn(stop, day) && _movedOn(stop, day)) {
         hide(stop.node);
@@ -355,7 +362,9 @@ final class SelectorBuilder {
       var viewOnly = false;
       // 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다. 앱에서 따로 끝인지 다시 계산하지 않는다 (검토 M1, 2026-11-21)
       final span = !stop.isStop || !_stopsOn(stop, day) ? _spanOn(stop, day) : null;
-      if (span != null && _ridable(routeId, around, day)) {
+      // 승객 미취급 정식 역(staff)은 그날 칸을 탈 수 없어도(계절 운행 비시즌·운휴) 그 모양으로 남는다. 다른 정체는 그날 지나는 칸이 있어야 한다 (2026-11-24)
+      final ridable = span != null && _ridable(routeId, around, day);
+      if (span != null && (ridable || span.style.startsWith('staff'))) {
         // 그날 노드의 정체가 모양을 정한다. 신호장·분기점만 회색, 역은 「승하차 불가」, 아직 없던 경계점은 숨긴다.
         // 「_view」는 그날 끝이 아니라 보이기만 하고 고를 수 없다
         viewOnly = span.style.endsWith('_view');
@@ -367,10 +376,13 @@ final class SelectorBuilder {
           hide(stop.node);
           continue;
         }
-        state = StopState.open;
-        selectable = !viewOnly;
+        // 승객 미취급 역도 그날 칸이 다니지 않으면(비시즌·운휴) 둘레 역과 같이 흐리게 보인다. 줄은 숨기지 않는다
+        state = ridable ? StopState.open : _quietState(routeId, around, day);
+        selectable = ridable && !viewOnly;
         passing = style != 'nostop';
         noBoarding = style == 'nostop';
+        // 그날 다니지 않으면 「보이기만 하는 줄」(진한 글자)이 아니라 다른 역과 같은 흐린 줄이다
+        if (!ridable) viewOnly = false;
       }
       // 정차가 끝난 날 이 역이 다른 노선(같은 사슬)에 서면 폐역이 아니라 이관이다.
       // 그 전날 이 노선 것이 아니었던 칸이면 앞 노선 시절에 끝난 역이다 (ふるさと銀河線의 釧北)
@@ -796,6 +808,11 @@ final class SelectorBuilder {
           // 그 화면 날짜의 상태다. 날짜를 고르면 그날 운휴인지, 폐지는 그날까지 끝난 수명만 본다(운휴 뒤 재개한 칸이 그날 「폐지」로 보이지 않게).
           // 날짜 모름은 오늘 상태와 마지막 끝이다
           final suspended = edges.any((edge) => network.lifeOn(edge, date ?? today) == LifeState.suspended);
+          // 계절 운행의 비시즌: 날짜를 고른 화면에서 그 구간의 칸이 모두 비시즌일 때만이다. 날짜 모름·오늘(날짜를 안 고름)은 표시하지 않는다
+          final rule = network.seasonRuleOf(lineId, routeId: routeId);
+          final season = rule != null && date != null && edges.isNotEmpty && edges.every((edge) => network.lifeOn(edge, date) == LifeState.offSeason)
+              ? '${rule.fromMonth}-${rule.toMonth}'
+              : null;
           String? lo, hi;
           for (final edge in edges) {
             NetPeriod? last;
@@ -827,7 +844,7 @@ final class SelectorBuilder {
             }
             if (first != null) opens = yearLabel(first, firstHi ?? first);
           }
-          return SectionEnd(year: hi == null ? null : yearLabel(lo, hi), suspended: suspended, opens: opens);
+          return SectionEnd(year: hi == null ? null : yearLabel(lo, hi), suspended: suspended, opens: opens, season: season);
         }(),
     ];
   }
@@ -885,10 +902,19 @@ final class SelectorBuilder {
     if (lines.contains(Usable.ok) && period == PeriodState.yes) return (StopState.open, true);
     if (lines.contains(Usable.ok) || lines.contains(Usable.maybe)) return (StopState.maybe, true);
     if (lines.contains(Usable.suspended)) return (StopState.suspended, false);
+    if (lines.contains(Usable.offSeason)) return (StopState.offSeason, false);
     if (around.isNotEmpty && lines.every((u) => u == Usable.no)) {
       return (StopState.lineClosed, false);
     }
     return (StopState.noEdge, false);
+  }
+
+  /// 그날 다니지 않는 칸 둘레의 상태(승객 미취급 역을 흐리게 보일 때). 비시즌·운휴가 먼저다
+  StopState _quietState(String routeId, List<String> around, DateSpan? day) {
+    final lines = [for (final edge in around) network.edgeUsable(routeId, edge, day)];
+    if (lines.contains(Usable.offSeason)) return StopState.offSeason;
+    if (lines.contains(Usable.suspended)) return StopState.suspended;
+    return StopState.lineClosed;
   }
 
   /// 다른 노선으로 저장되는 역도 그 노선에서 그날 탈 수 있어야 고른다. 운휴면 운휴로 보인다 (いすみ鉄道 2024 운휴 중의 国鉄 木原線)
@@ -899,6 +925,7 @@ final class SelectorBuilder {
     ];
     if (uses.any((u) => u.ridable)) return (StopState.open, true);
     if (uses.contains(Usable.suspended)) return (StopState.suspended, false);
+    if (uses.contains(Usable.offSeason)) return (StopState.offSeason, false);
     return (StopState.lineClosed, false);
   }
 

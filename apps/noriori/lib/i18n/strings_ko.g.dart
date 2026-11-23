@@ -606,6 +606,9 @@ class Translations$session$ko {
 	/// ko: '운휴 전 날짜로만 기록할 수 있어요'
 	String get noticeSuspendedSub => '운휴 전 날짜로만 기록할 수 있어요';
 
+	/// ko: '보통 $from월~$to월에만 다녀요. 이 날은 운행하지 않아요'
+	String noticeSeasonSub({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요. 이 날은 운행하지 않아요';
+
 	/// ko: '개업한 뒤 날짜로 기록할 수 있어요'
 	String get noticeBeforeSub => '개업한 뒤 날짜로 기록할 수 있어요';
 
@@ -834,6 +837,9 @@ class Translations$session$ko {
 
 	/// ko: '운휴 중'
 	String get suspendedSection => '운휴 중';
+
+	/// ko: '계절 운행'
+	String get seasonSection => '계절 운행';
 
 	/// ko: '옛 선로 · $km km'
 	String relocationOld({required Object km}) => '옛 선로 · ${km} km';
@@ -1876,6 +1882,9 @@ class Translations$session$state$ko {
 	/// ko: '운휴'
 	String get suspended => '운휴';
 
+	/// ko: '비시즌'
+	String get offSeason => '비시즌';
+
 	/// ko: '운휴 $year~'
 	String suspendedSince({required Object year}) => '운휴 ${year}~';
 
@@ -2271,6 +2280,7 @@ extension on Translations {
 			'session.noPath' => '이 두 역 사이의 경로를 찾지 못했습니다',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => '운휴',
+			'session.state.offSeason' => '비시즌',
 			'session.state.suspendedSince' => ({required Object year}) => '운휴 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
@@ -2282,6 +2292,7 @@ extension on Translations {
 			'session.handNote' => '이 구간은 그 노선으로 기록돼요',
 			'session.noticeClosedSub' => '그 전 날짜로만 기록할 수 있어요',
 			'session.noticeSuspendedSub' => '운휴 전 날짜로만 기록할 수 있어요',
+			'session.noticeSeasonSub' => ({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요. 이 날은 운행하지 않아요',
 			'session.noticeBeforeSub' => '개업한 뒤 날짜로 기록할 수 있어요',
 			'session.chooseDirection' => '어느 쪽으로 탔나요?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -2357,6 +2368,7 @@ extension on Translations {
 			'session.repick' => '다른 역을 누르면 처음부터 다시 고릅니다',
 			'session.closedUnknown' => '폐지 구간',
 			'session.suspendedSection' => '운휴 중',
+			'session.seasonSection' => '계절 운행',
 			'session.relocationOld' => ({required Object km}) => '옛 선로 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '새 선로 · ${km} km',
 			'session.spokenOpen' => '영업 중',
@@ -2631,11 +2643,11 @@ extension on Translations {
 			'prefNames.15' => '도야마',
 			'prefNames.16' => '이시카와',
 			'prefNames.17' => '후쿠이',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.18' => '야마나시',
 			'prefNames.19' => '나가노',
 			'prefNames.20' => '기후',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.21' => '시즈오카',
 			'prefNames.22' => '아이치',
 			'prefNames.23' => '미에',

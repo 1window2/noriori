@@ -346,7 +346,8 @@ final class TransferLine extends SelectorLine {
 
 /// 괄호로 묶는 구간의 상태 (사용자 결정 2026-11-19 「칸마다 그 날짜의 상태 하나」).
 /// 이관은 다른 노선으로 기록되는 구간, 나머지는 그날 탈 수 없는 구간이다
-enum NoticeKind { hand, closed, suspended, before }
+/// [season]: 계절 운행의 비시즌 구간(검은 점선 + 녹색 괄호, 2026-11-24). 안내 [NoticeLine.year]에 보통 운행 달(「4-11」)을 싣는다
+enum NoticeKind { hand, closed, suspended, before, season }
 
 /// 괄호 끝이 걸리는 줄. 역 줄이면 [seq], 열람 전용 역 줄이면 [archive]다
 final class BracketAnchor {
@@ -1086,6 +1087,7 @@ final class DisplayRules {
       }
     }
     bool suspendedAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length && sectionEnds[gap].suspended;
+    String? seasonAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length ? sectionEnds[gap].season : null;
     String? opensAt(int gap) {
       final at = gap >= 0 && beside(gap) ? home(gap) : gap;
       return sectionEnds != null && at != null && at >= 0 && at < sectionEnds.length ? sectionEnds[at].opens : null;
@@ -1408,6 +1410,7 @@ final class DisplayRules {
       gaps: gaps,
       yearOf: yearOf,
       suspendedAt: suspendedAt,
+      seasonAt: seasonAt,
       opensAt: opensAt,
       undated: undated,
       date: date,
@@ -1428,6 +1431,7 @@ final class DisplayRules {
     required List<bool> gaps,
     required Map<int, String> yearOf,
     required bool Function(int gap) suspendedAt,
+    required String? Function(int gap) seasonAt,
     required String? Function(int gap) opensAt,
     required bool undated,
     required DateSpan? date,
@@ -1445,7 +1449,12 @@ final class DisplayRules {
       String? year, lineId, on;
       SelectorRow? at;
       if (gap < gaps.length && !gaps[gap]) {
-        if (suspendedAt(gap)) {
+        if (seasonAt(gap) case final months?) {
+          // 계절 운행의 비시즌: 폐지·운휴가 아니다. 보통 운행 달을 안내에 싣는다
+          kind = NoticeKind.season;
+          year = months;
+          key = months;
+        } else if (suspendedAt(gap)) {
           // 안내 제목에 운휴 시작 해를 붙인다(역 줄의 「운휴 2023~」과 짝). 시작 해가 다르면 다른 괄호다
           kind = NoticeKind.suspended;
           year = rows[gap].suspendedSince ?? rows[gap + 1].suspendedSince;

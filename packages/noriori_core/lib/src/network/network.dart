@@ -2,13 +2,17 @@ import '../date/date_rules.dart';
 import '../date/date_span.dart';
 import 'network_data.dart';
 
-enum LifeState { open, suspended, maybeOpen, maybeSuspended, closed, before, unknown }
+/// [offSeason]: 계절 운행 노선의 비시즌(해마다 정한 기간 밖). 폐지도 운휴도 아니고 그날 탈 수 없다 (사용자 결정 2026-11-24)
+enum LifeState { open, suspended, maybeOpen, maybeSuspended, closed, before, unknown, offSeason }
 
 /// 이 계통으로 그날 탈 수 있는 구간인가.
 enum Usable {
   ok,
   maybe,
   suspended,
+
+  /// 계절 운행 노선의 비시즌이라 그날은 다니지 않는다.
+  offSeason,
   no;
 
   /// 경로를 찾을 때 지나갈 수 있다. 애매한 구간도 지난다.
@@ -39,9 +43,20 @@ NetPeriod? openStopGap(DateSpan? date, NetStop stop) {
   for (final gap in stop.gaps) {
     // 끝 없는 공백은 끝이 ongoing(가장 늦은 날)이다
     if (gap.toLo != null && gap.toLo!.compareTo(DateSpan.maxDate) < 0) continue;
+    // 공백이 시작될 때 그 노드가 승객 미취급 정식 역(staff 구간, node_identity staff_only)이면 운휴가 아니라 그 역의 본래 모습이다.
+    // 해마다 잠깐 여는 임시 개방 역(黒部峡谷 猫又·笹平)의 마지막 개방 뒤 공백이 날짜 모름 화면에서 「운휴 2026~」로 보였다 (5회차 2026-11-24)
+    if (stop.selectSpans.any((span) => span.style.startsWith('staff') && _spanCovers(span.period, gap.fromLo))) continue;
     if (date == null || date.lo.compareTo(gap.fromHi ?? DateSpan.maxDate) >= 0) return gap;
   }
   return null;
+}
+
+/// 기간이 그 날(범위면 이른 쪽)을 품는가. 끝은 첫 무효일이다
+bool _spanCovers(NetPeriod period, String? day) {
+  if (day == null) return false;
+  final from = period.fromHi ?? period.fromLo;
+  final to = period.toLo ?? period.toHi;
+  return (from == null || from.compareTo(day) <= 0) && (to == null || to.compareTo(day) > 0);
 }
 
 /// 그 날짜 범위 전체가 정차 기간 사이 서지 않은 때에 드는가. 걸치기만 하면 거짓이다.
@@ -92,6 +107,26 @@ final class Network {
     for (final row in data.stopDirections) {
       (_stopDirection['${row.routeId}\u0000${row.node}'] ??= []).add(row);
     }
+    for (final row in data.seasonOff) {
+      (_seasonOff[row.edge] ??= []).add(row.period);
+    }
+  }
+
+  final Map<String, List<NetPeriod>> _seasonOff = {};
+
+  /// 그날 그 칸이 계절 운행의 비시즌인가. 경계를 범위로만 아는 날은 비시즌이 아니다(「아마」로 남김).
+  bool offSeasonOn(String edge, DateSpan date) =>
+      (_seasonOff[edge] ?? const <NetPeriod>[]).any((period) => stateOfPeriod(date, period) == PeriodState.yes);
+
+  /// 계절 운행 노선(계통)의 보통 운행 달. 없으면 계절 운행이 아니다.
+  NetSeasonRule? seasonRuleOf(String lineId, {String? routeId}) {
+    NetSeasonRule? line;
+    for (final rule in data.seasonRules) {
+      if (rule.lineId != lineId) continue;
+      if (rule.routeId != null && rule.routeId == routeId) return rule;
+      if (rule.routeId == null) line = rule;
+    }
+    return line;
   }
 
   final Map<String, List<NetOneWay>> _oneWay = {};
@@ -337,6 +372,7 @@ final class Network {
         best ??= row.suspended ? LifeState.maybeSuspended : LifeState.maybeOpen;
       }
     }
+    if (best == LifeState.open && offSeasonOn(edge, date)) return LifeState.offSeason;
     if (best != null) return best;
     return allBefore ? LifeState.before : LifeState.closed;
   }
@@ -407,6 +443,7 @@ final class Network {
     final (attr, state) = attrOn(edge, routes[routeId]!.lineId, date);
     return switch (life) {
       LifeState.suspended => Usable.suspended,
+      LifeState.offSeason => Usable.offSeason,
       LifeState.maybeSuspended => Usable.maybe,
       LifeState.before || LifeState.closed => Usable.no,
       _ when attr == null => Usable.no,

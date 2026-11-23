@@ -77,6 +77,45 @@ void main() {
     expect(noticeAt(await screen('r_tadami_line', '2013-06-01'), 'n_tadami').kind, NoticeKind.suspended);
   }, skip: skip);
 
+  test('계절 운행 노선의 비시즌 날짜는 녹색 계절 괄호이고 역은 고를 수 없다 (黒部峡谷鉄道 2020-01-15, 叡山ケーブル 2020-02-01)', () async {
+    final winter = await screen('r_kurobe_gorge_main_line', '2020-01-15');
+    // 괄호는 노선 전체(宇奈月~欅平)에 하나다. 가운데 역은 괄호 안에 든다
+    NoticeLine over(List<SelectorLine> lines, String node) {
+      final seq = stopAt(lines, node).row.seq;
+      return lines.whereType<NoticeLine>().firstWhere((n) => (n.top.seq ?? -1) <= seq && seq <= (n.bottom.seq ?? -1));
+    }
+    expect(over(winter, 'n_kuronagi').kind, NoticeKind.season);
+    expect(over(winter, 'n_kuronagi').year, '4-11');
+    expect(stopAt(winter, 'n_kuronagi').row.state, StopState.offSeason);
+    expect(stopAt(winter, 'n_kuronagi').row.selectable, isFalse);
+    // 승객 미취급 역은 비시즌에도 회색 통과역으로 남고(柳橋), 한시 개방 역도 사라지지 않는다(笹平·猫又)
+    expect(stopAt(winter, 'n_yanagibashi').row.passing, isTrue);
+    expect(stopAt(winter, 'n_sasadaira').row.passing, isTrue);
+    expect(stopAt(winter, 'n_nekomata').row.passing, isTrue);
+    final summer = await screen('r_kurobe_gorge_main_line', '2020-07-15');
+    expect(summer.whereType<NoticeLine>().where((n) => n.kind == NoticeKind.season), isEmpty);
+    expect(stopAt(summer, 'n_kuronagi').row.selectable, isTrue);
+    expect(noticeAt(await screen('r_eizan_cable', '2020-02-01'), 'n_cable_hiei').kind, NoticeKind.season);
+  });
+
+  test('승객 미취급 정식 역은 일람에 회색으로 보이고 고를 수 없으며, 한시 개방 기간에만 고를 수 있다 (黒部峡谷鉄道 柳橋·猫又)', () async {
+    final y2020 = await screen('r_kurobe_gorge_main_line', '2020-07-15');
+    expect(stopAt(y2020, 'n_yanagibashi').row.selectable, isFalse);
+    expect(stopAt(y2020, 'n_yanagibashi').row.passing, isTrue);
+    expect(stopAt(y2020, 'n_nekomata').row.state, isNot(StopState.beforeOpen));
+    expect(stopAt(y2020, 'n_nekomata').row.selectable, isFalse);
+    expect(stopAt(await screen('r_kurobe_gorge_main_line', '2025-07-15'), 'n_nekomata').row.selectable, isTrue);
+    // 개방이 끝난 뒤에도 역은 일람에 남고 폐역 해가 붙지 않는다(2025-07-15 笹平는 2025-05 개방 뒤, 猫又는 개방 중이라도 끝 해 없음)
+    final y2025 = await screen('r_kurobe_gorge_main_line', '2025-07-15');
+    expect(stopAt(y2025, 'n_sasadaira').row.passing, isTrue);
+    expect(stopAt(y2025, 'n_sasadaira').row.closeYear, isNull);
+    expect(stopAt(y2025, 'n_nekomata').row.closeYear, isNull);
+    // 날짜 모름: 마지막 개방 뒤 끝 없는 정차 공백은 승객 미취급 역의 본래 모습이라 운휴가 아니다
+    final undated = await screen('r_kurobe_gorge_main_line', null);
+    expect(stopAt(undated, 'n_sasadaira').row.suspendedSince, isNull);
+    expect(stopAt(undated, 'n_nekomata').row.suspendedSince, isNull);
+  });
+
   test('노선이 칸을 쓰기 전 날짜의 구간 괄호는 개업 전이다 (井原鉄道 総社–清音 1990)', () async {
     final n = noticeAt(await screen('r_ibara_line', '1990-06-01'), 'n_soja');
     expect((n.kind, n.year), (NoticeKind.before, '1999'));

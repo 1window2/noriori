@@ -525,7 +525,9 @@ put('공개 노드 ja 없음',[i for i in pub if 'ja' not in nm['node',i]])
 put('공개 노드 en 없음',[i for i in pub if 'en' not in nm['node',i]])
 # 승하차 불가 끝 노드(분기점·신호장, 정차 없는 계통 끝)는 노선 일람에 보여 이름이 있다 (5번 결정 junction-nodes-rule, 2026-11-19)
 ENDN={r[0] for r in m.execute('select distinct node_id from route_stop where is_end_point=1')}
-put('비공개 노드 이름 노출',[i for t,i in nm if t=='node' and i not in pub and i not in ENDN])
+# 승객 미취급 정식 역(route_stop_select style staff, 근거 표 node_identity staff_only)도 노선 일람에 보여 이름이 있다 (2026-11-24)
+STAFFN={r[0] for r in m.execute("select distinct node_id from route_stop_select where style like 'staff%'")} if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone() else set()
+put('비공개 노드 이름 노출',[i for t,i in nm if t=='node' and i not in pub and i not in ENDN and i not in STAFFN])
 put('kind가 station 아닌 공개 노드',[r[0] for r in m.execute("select id from node_public where kind<>'station'")])
 # 읽기 근거가 끝내 없어 한국어·영어에 일본어 표기를 그대로 보이는 이름(ja_as_is, redesign §4 결정 6)과
 # 읽기를 모르는 옛 이름의 병기 「지금 이름 (당시 옛 표기)」(DESIGN §9 표, 2026-11-08)는 설계대로다. 병기 앞부분만 본다
@@ -565,6 +567,44 @@ for (t,i),v in nm.items():
             y=[r for r in v.get(l,[]) if (r[3],r[4],r[5])==(li,vf,vt)]
             if not y or any(r[2]=='ja_as_is' or (shown(l,r[0],r[2]) is not None and HK.search(shown(l,r[0],r[2]))) for r in y):_rw.append((t,i,l,x,li,vf,vt))
 put('읽기 있는데 한국어·영어 없음',_rw)
+# 읽기 없는 이름 행도 같은 (노선, 기간)의 한국어·영어 행이 있어야 한다(일본어 표기 그대로 ja_as_is 또는 옛 이름 병기). 없으면 화면이 다른 기간 이름을 보이거나 비게 된다 (5회차 2026-11-24)
+_nk=[]
+for (t,i),v in nm.items():
+    if t not in ('node','archive') or (t=='node' and i not in pub):continue
+    for x,k,s_,li,vf,vt in v.get('ja',[]):
+        if k:continue
+        for l in ('ko','en'):
+            if not any((r[3],r[4],r[5])==(li,vf,vt) for r in v.get(l,[])):_nk.append((t,i,l,x,li,vf,vt))
+put('읽기 없는 이름에 한국어·영어 행 없음',_nk)
+# archive_fix의 읽기 열쇠(이름 또는 이름@노선)는 DB의 그 이름 열람 전용 역에 실제로 붙어야 한다. 컴파일이 노드에서 만든 열람 전용 역(1950 전 정차가 끝난 노드)은
+# 이 열쇠를 보지 않아 읽기가 조용히 버려진다(志摩町·西裏·東野田町九丁目, 5회차 2026-11-24). 그런 역의 읽기는 노드(node_fix·old_names_kana)에 둔다
+_AF=json.load(open(os.path.join(ROOT,'data','overrides','archive_fix.json'),encoding='utf-8'));_akana=collections.defaultdict(set)
+_aline={r_[0]:r_[1] for r_ in m.execute('select id,coalesce(line_id,archive_line_id) from archive_stop')}
+_aname=collections.defaultdict(set)
+for (t,i),v in nm.items():
+    if t!='archive':continue
+    for x,k,*_r in v.get('ja',[]):
+        _aname[x].add((t,i))
+        if k:_akana[x].add((k,_aline.get(i)))
+rows=[]
+for k_,v_ in _AF.items():
+    if k_.startswith('_') or not isinstance(v_,dict) or not v_.get('kana'):continue
+    nm_,_,ln_=k_.partition('@')
+    same_=list(_aname.get(nm_,()))
+    if not same_:continue
+    # 그 이름 열람 전용 역이 하나면 노선이 바뀌었어도(이관 뒤 北陸本線→あいの風) 그 역이다
+    if not any(kk==v_['kana'] and (not ln_ or ll==ln_ or len(same_)==1) for kk,ll in _akana.get(nm_,())):rows.append((k_,v_['kana'],sorted(_akana.get(nm_,()))[:3]))
+put('archive_fix 읽기 열쇠가 DB 열람 전용 역에 반영되지 않음',rows,30)
+# 승객 미취급 정식 역(route_stop_select style staff)은 근거 표 node_identity staff_only에 적은 노드에만 생겨야 하고, 화물역(노드 종류 freight)에는 절대 생기면 안 된다.
+# staff 행은 정차·끝·공개 노드가 아니어도 노선 일람에 보이므로, 잘못 번지면 화물역이 일람에 쏟아진다 (사용자 지시 2026-11-24)
+_STAFF={r_['node'] for r_ in json.load(open(os.path.join(ROOT,'data','overrides','node_identity.json'),encoding='utf-8'))['rows'] if r_.get('kind')=='staff_only'}
+_nkind={r_[0]:r_[1] for r_ in m.execute('select id,kind from node')}
+rows=[]
+if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone():
+    for r_,n_,st_ in m.execute("select route_id,node_id,style from route_stop_select where style like 'staff%'"):
+        if n_ not in _STAFF:rows.append((r_,n_,st_,'근거 표에 없는 노드'))
+        if _nkind.get(n_)=='freight':rows.append((r_,n_,st_,'화물역'))
+put('승객 미취급 역(staff) 표시가 근거 표 밖 노드나 화물역에 생김',rows,20)
 put('kana가 히라가나 아님',[(i,x,k) for (t,i),v in nm.items() if t=='node' for x,k,*_ in v.get('ja',[]) if k and not re.fullmatch(r'[ぁ-ゟー・ 　0-9A-Za-zァ-ヶ（）()]+',k)])
 # 현대 가나 표기가 아님 (ぎをん, をごとおんせん). 원문 옛 표기를 그대로 옮긴 것이다
 put('kana에 옛 가나(を·ゐ·ゑ)',[(t,i,x,k) for (t,i),v in nm.items() for x,k,*_ in v.get('ja',[]) if k and re.search('[をゐゑ]',k)])

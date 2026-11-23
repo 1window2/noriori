@@ -199,6 +199,7 @@
     "state": {
       "maybe": "?",
       "suspended": "Suspended",
+      "offSeason": "Off season",
       "suspendedSince": "Suspended $year~",
       "until": "~$year",
       "since": "$year~",
@@ -211,6 +212,7 @@
     "handNote": "Rides here are saved to that line",
     "noticeClosedSub": "Only rides before then can be saved",
     "noticeSuspendedSub": "Only rides before the suspension can be saved",
+    "noticeSeasonSub": "Runs only $from–$to each year. No service on this date",
     "noticeBeforeSub": "Rides from the opening day on can be saved",
     "chooseDirection": "Which way did you ride?",
     "directionKm": "$km km",
@@ -292,6 +294,7 @@
     "repick": "Tap another station to start over",
     "closedUnknown": "Closed section",
     "suspendedSection": "Suspended",
+    "seasonSection": "Seasonal line",
     "relocationOld": "Old alignment · $km km",
     "relocationNew": "New alignment · $km km",
     "spokenOpen": "open",

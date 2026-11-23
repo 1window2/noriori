@@ -46,16 +46,18 @@ class TrunkStyle {
     if (already) {
       return TrunkPiece(tokens.lineRiddenSoft, SelectorRuler.openWidth, oneWay: oneWay);
     }
-    final open = gap >= state.openGaps.length || state.openGaps[gap];
+    // 계절 운행의 비시즌 칸은 닫힌 칸이 아니라 운행하지 않는 날일 뿐이다. 이관 띠처럼 굵은 검은 점선으로 그린다
+    final open = gap >= state.openGaps.length || state.openGaps[gap] || handed.contains(gap);
     return open ? TrunkPiece(tokens.text, SelectorRuler.openWidth, handed: handed.contains(gap), oneWay: oneWay, scroll: scroll) : tail;
   }
 }
 
-/// 이관 괄호 안의 칸 번호. 괄호 맨 위 역부터 맨 아래 역 앞까지다
+/// 이관 괄호 안의 칸 번호. 괄호 맨 위 역부터 맨 아래 역 앞까지다.
+/// 계절 운행의 비시즌 괄호도 같은 굵은 검은 점선 줄기로 그린다(괄호 색만 녹색, 사용자 결정 2026-11-24)
 Set<int> handedGaps(List<SelectorLine> lines) {
   final out = <int>{};
   for (final notice in lines.whereType<NoticeLine>()) {
-    if (notice.kind != NoticeKind.hand) continue;
+    if (notice.kind != NoticeKind.hand && notice.kind != NoticeKind.season) continue;
     final top = lines.firstWhere(notice.top.matches, orElse: () => notice);
     final bottom = lines.firstWhere(notice.bottom.matches, orElse: () => notice);
     if (top is! StopLine || bottom is! StopLine) continue;
@@ -93,6 +95,13 @@ Set<int> handedGaps(List<SelectorLine> lines) {
         box: dark ? const Color(0xFF2A2E33) : const Color(0xFFECEAE4),
         title: tokens.text,
         body: tokens.textMuted,
+      ),
+    // 계절 운행의 비시즌은 녹색 계열이다(폐지·운휴와 구분, 사용자 결정 2026-11-24)
+    NoticeKind.season => (
+        bracket: dark ? const Color(0xFF7FBF8E) : const Color(0xFF3F8A55),
+        box: dark ? const Color(0xFF1F3326) : const Color(0xFFE1F0E4),
+        title: dark ? const Color(0xFFA8DDB4) : const Color(0xFF235C33),
+        body: dark ? const Color(0xFF9CC4A6) : const Color(0xFF3E6A4A),
       ),
   };
 }
@@ -335,6 +344,7 @@ class _StopTile extends ConsumerWidget {
       StopState.beforeOpen => t.since(year: row.openYear ?? '?'),
       // 운휴는 시작 해를 붙인다(폐역 「~해」와 짝). 역 정차만 운휴인 곳(全列車通過, 羽前前波)도 같다 (사용자 결정 2026-11-16)
       StopState.suspended => row.suspendedSince == null ? t.suspended : t.suspendedSince(year: row.suspendedSince!),
+      StopState.offSeason => t.offSeason,
       StopState.closed || StopState.lineClosed || StopState.noEdge =>
         t.until(year: row.closeYear ?? '?'),
       // 이관으로 끝난 정차는 폐역이 아니라 구분선 한 줄로만 알린다 (DESIGN §8.0.1 B안)
@@ -1427,12 +1437,22 @@ class _NoticeTile extends ConsumerWidget {
       NoticeKind.closed => closedNote(context, year),
       NoticeKind.suspended => line.year == null ? t.suspendedSection : t.state.suspendedSince(year: line.year!),
       NoticeKind.before => t.openedSection(year: year),
+      NoticeKind.season => t.seasonSection,
     };
     final body = switch (line.kind) {
       NoticeKind.hand => t.handNote,
       NoticeKind.closed => t.noticeClosedSub,
       NoticeKind.suspended => t.noticeSuspendedSub,
       NoticeKind.before => t.noticeBeforeSub,
+      NoticeKind.season => () {
+          final months = year.split('-');
+          String month(String m) {
+            final n = int.tryParse(m) ?? 0;
+            if (Localizations.localeOf(context).languageCode != 'en' || n < 1 || n > 12) return m;
+            return const ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][n - 1];
+          }
+          return t.noticeSeasonSub(from: month(months.first), to: month(months.last));
+        }(),
     };
     final open = lineId != null && session.canOpen(lineId);
     Future<void> go() async {

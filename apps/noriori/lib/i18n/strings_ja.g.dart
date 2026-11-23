@@ -343,6 +343,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get handNote => 'この区間はその路線で記録されます';
 	@override String get noticeClosedSub => 'それより前の日付でのみ記録できます';
 	@override String get noticeSuspendedSub => '運休前の日付でのみ記録できます';
+	@override String noticeSeasonSub({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行。この日は運行していません';
 	@override String get noticeBeforeSub => '開業後の日付で記録できます';
 	@override String get chooseDirection => 'どちら回りで乗りましたか？';
 	@override String directionKm({required Object km}) => '${km} km';
@@ -422,6 +423,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get repick => '別の駅をタップすると選び直せます';
 	@override String get closedUnknown => '廃止区間';
 	@override String get suspendedSection => '運休中';
+	@override String get seasonSection => '季節運行';
 	@override String relocationOld({required Object km}) => '旧線 · ${km} km';
 	@override String relocationNew({required Object km}) => '新線 · ${km} km';
 	@override String get spokenOpen => '営業中';
@@ -965,6 +967,7 @@ class _Translations$session$state$ja implements Translations$session$state$ko {
 	// Translations
 	@override String get maybe => '?';
 	@override String get suspended => '運休';
+	@override String get offSeason => 'シーズン外';
 	@override String suspendedSince({required Object year}) => '運休 ${year}~';
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
@@ -1275,6 +1278,7 @@ extension on TranslationsJa {
 			'session.noPath' => 'この2駅の間の経路が見つかりませんでした',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => '運休',
+			'session.state.offSeason' => 'シーズン外',
 			'session.state.suspendedSince' => ({required Object year}) => '運休 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
@@ -1286,6 +1290,7 @@ extension on TranslationsJa {
 			'session.handNote' => 'この区間はその路線で記録されます',
 			'session.noticeClosedSub' => 'それより前の日付でのみ記録できます',
 			'session.noticeSuspendedSub' => '運休前の日付でのみ記録できます',
+			'session.noticeSeasonSub' => ({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行。この日は運行していません',
 			'session.noticeBeforeSub' => '開業後の日付で記録できます',
 			'session.chooseDirection' => 'どちら回りで乗りましたか？',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -1361,6 +1366,7 @@ extension on TranslationsJa {
 			'session.repick' => '別の駅をタップすると選び直せます',
 			'session.closedUnknown' => '廃止区間',
 			'session.suspendedSection' => '運休中',
+			'session.seasonSection' => '季節運行',
 			'session.relocationOld' => ({required Object km}) => '旧線 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '新線 · ${km} km',
 			'session.spokenOpen' => '営業中',
@@ -1635,11 +1641,11 @@ extension on TranslationsJa {
 			'prefNames.15' => '富山',
 			'prefNames.16' => '石川',
 			'prefNames.17' => '福井',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.18' => '山梨',
 			'prefNames.19' => '長野',
 			'prefNames.20' => '岐阜',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.21' => '静岡',
 			'prefNames.22' => '愛知',
 			'prefNames.23' => '三重',

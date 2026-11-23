@@ -350,6 +350,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get handNote => 'Rides here are saved to that line';
 	@override String get noticeClosedSub => 'Only rides before then can be saved';
 	@override String get noticeSuspendedSub => 'Only rides before the suspension can be saved';
+	@override String noticeSeasonSub({required Object from, required Object to}) => 'Runs only ${from}–${to} each year. No service on this date';
 	@override String get noticeBeforeSub => 'Rides from the opening day on can be saved';
 	@override String get chooseDirection => 'Which way did you ride?';
 	@override String directionKm({required Object km}) => '${km} km';
@@ -431,6 +432,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get repick => 'Tap another station to start over';
 	@override String get closedUnknown => 'Closed section';
 	@override String get suspendedSection => 'Suspended';
+	@override String get seasonSection => 'Seasonal line';
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
 	@override String relocationNew({required Object km}) => 'New alignment · ${km} km';
 	@override String get spokenOpen => 'open';
@@ -996,6 +998,7 @@ class _Translations$session$state$en implements Translations$session$state$ko {
 	// Translations
 	@override String get maybe => '?';
 	@override String get suspended => 'Suspended';
+	@override String get offSeason => 'Off season';
 	@override String suspendedSince({required Object year}) => 'Suspended ${year}~';
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
@@ -1306,6 +1309,7 @@ extension on TranslationsEn {
 			'session.noPath' => 'No route found between these two stations',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => 'Suspended',
+			'session.state.offSeason' => 'Off season',
 			'session.state.suspendedSince' => ({required Object year}) => 'Suspended ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
@@ -1317,6 +1321,7 @@ extension on TranslationsEn {
 			'session.handNote' => 'Rides here are saved to that line',
 			'session.noticeClosedSub' => 'Only rides before then can be saved',
 			'session.noticeSuspendedSub' => 'Only rides before the suspension can be saved',
+			'session.noticeSeasonSub' => ({required Object from, required Object to}) => 'Runs only ${from}–${to} each year. No service on this date',
 			'session.noticeBeforeSub' => 'Rides from the opening day on can be saved',
 			'session.chooseDirection' => 'Which way did you ride?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -1392,6 +1397,7 @@ extension on TranslationsEn {
 			'session.repick' => 'Tap another station to start over',
 			'session.closedUnknown' => 'Closed section',
 			'session.suspendedSection' => 'Suspended',
+			'session.seasonSection' => 'Seasonal line',
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
 			'session.relocationNew' => ({required Object km}) => 'New alignment · ${km} km',
 			'session.spokenOpen' => 'open',
@@ -1666,11 +1672,11 @@ extension on TranslationsEn {
 			'prefNames.15' => 'Toyama',
 			'prefNames.16' => 'Ishikawa',
 			'prefNames.17' => 'Fukui',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.18' => 'Yamanashi',
 			'prefNames.19' => 'Nagano',
 			'prefNames.20' => 'Gifu',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.21' => 'Shizuoka',
 			'prefNames.22' => 'Aichi',
 			'prefNames.23' => 'Mie',

@@ -149,6 +149,10 @@ for e_,v_ in _db.execute("select edge_id,max(case when valid_to='ongoing' then '
 # 운행이 먼저 끝나고 법적 폐지가 늦은 구간. N05는 법적 폐지까지 선로를 남겨 두기도 한다
 LEGALY={e_:int(v_[:4]) for e_,v_ in _db.execute("select edge_id,max(legal_abolition) from edge_life group by 1") if v_ and v_[:4].isdigit()}
 STOPS={r[0] for r in _db.execute("select distinct node_id from route_stop where is_stop=1 and valid_to='ongoing'")}
+# 승객은 서지 않아도 지금 있는 정식 시설(관계자 전용역·신호장·승객 없는 역, node_identity의 끝 없는 행)은 좌표를 믿는 지금 역이다.
+# 정차 행으로만 보면 계절 개방이 끝난 猫又·笹平가 옛 역(SOFT)이 되어 黒部峡谷 선로 자르는 점이 빌드마다 달라졌다 (5회차 2026-11-24)
+_NI=json.load(open(os.path.join(ROOT,'data','overrides','node_identity.json'),encoding='utf-8'))
+STOPS|={r['node'] for r in (_NI.get('rows') or []) if isinstance(r,dict) and r.get('to') is None and r.get('kind') in ('staff_only','signal','station_no_passenger')}
 # km가 추정값인 노드 (route_stop.km_estimated). 좌표가 위치 근거로 더 낫다
 KEST={r[0] for r in _db.execute("select distinct node_id from route_stop where km_estimated=1")}
 LOPS=collections.defaultdict(set)

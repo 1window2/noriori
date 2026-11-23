@@ -192,6 +192,7 @@
     "state": {
       "maybe": "?",
       "suspended": "운휴",
+      "offSeason": "비시즌",
       "suspendedSince": "운휴 $year~",
       "until": "~$year",
       "since": "$year~",
@@ -204,6 +205,7 @@
     "handNote": "이 구간은 그 노선으로 기록돼요",
     "noticeClosedSub": "그 전 날짜로만 기록할 수 있어요",
     "noticeSuspendedSub": "운휴 전 날짜로만 기록할 수 있어요",
+    "noticeSeasonSub": "보통 $from월~$to월에만 다녀요. 이 날은 운행하지 않아요",
     "noticeBeforeSub": "개업한 뒤 날짜로 기록할 수 있어요",
     "chooseDirection": "어느 쪽으로 탔나요?",
     "directionKm": "$km km",
@@ -283,6 +285,7 @@
     "repick": "다른 역을 누르면 처음부터 다시 고릅니다",
     "closedUnknown": "폐지 구간",
     "suspendedSection": "운휴 중",
+    "seasonSection": "계절 운행",
     "relocationOld": "옛 선로 · $km km",
     "relocationNew": "새 선로 · $km km",
     "spokenOpen": "영업 중",

@@ -192,6 +192,7 @@
     "state": {
       "maybe": "?",
       "suspended": "運休",
+      "offSeason": "シーズン外",
       "suspendedSince": "運休 $year~",
       "until": "~$year",
       "since": "$year~",
@@ -204,6 +205,7 @@
     "handNote": "この区間はその路線で記録されます",
     "noticeClosedSub": "それより前の日付でのみ記録できます",
     "noticeSuspendedSub": "運休前の日付でのみ記録できます",
+    "noticeSeasonSub": "例年$from月～$to月のみ運行。この日は運行していません",
     "noticeBeforeSub": "開業後の日付で記録できます",
     "chooseDirection": "どちら回りで乗りましたか？",
     "directionKm": "$km km",
@@ -283,6 +285,7 @@
     "repick": "別の駅をタップすると選び直せます",
     "closedUnknown": "廃止区間",
     "suspendedSection": "運休中",
+    "seasonSection": "季節運行",
     "relocationOld": "旧線 · $km km",
     "relocationNew": "新線 · $km km",
     "spokenOpen": "営業中",

@@ -118,7 +118,21 @@ final class NetworkReader {
             period: periodOf(row),
           ),
     ];
+    final seasonOff = [
+      if (await has('season_off'))
+        for (final row in await _rows(
+          'SELECT line_id, route_id, edge_id, valid_from_lo, valid_from_hi, valid_to_lo, valid_to_hi FROM master.season_off',
+        ))
+          NetSeasonOff(lineId: row.read('line_id'), routeId: row.readNullable('route_id'), edge: row.read('edge_id'), period: periodOf(row)),
+    ];
+    final seasonRules = [
+      if (await has('season_rule'))
+        for (final row in await _rows('SELECT line_id, route_id, from_month, to_month FROM master.season_rule'))
+          NetSeasonRule(lineId: row.read('line_id'), routeId: row.readNullable('route_id'), fromMonth: row.read('from_month'), toMonth: row.read('to_month')),
+    ];
     return NetworkData(
+      seasonOff: seasonOff,
+      seasonRules: seasonRules,
       services: await _services(services),
       routes: [
         for (final row in routes)
