@@ -2,7 +2,7 @@
 # 완성된 DB를 원자료와 전수 대조한다. 파이프라인의 판정 코드는 쓰지 않는다(노선도 HTML 해석 tools/wparse.py와 data/source 읽기만 빌린다). 결과: build/audit_ext.json
 import sqlite3,json,os,re,math,collections,csv,zipfile,unicodedata
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-B=os.path.join(ROOT,'build')
+B=os.environ.get('NORIORI_BUILD') or os.path.join(ROOT,'build')
 m=sqlite3.connect(os.path.join(B,'master.sqlite'));n=sqlite3.connect(os.path.join(B,'names.sqlite'))
 # 사유를 달고 뺀 열람 전용 ID(archive_lines.json drop·drop_stop·exclude)의 일본어 이름. 컴파일이 그 고아 이름을 DB에 싣지 않게 된 뒤에도
 # 감사는 그 행을 「판정된 것」으로 본다(이미 기록 노선·화물역·같은 역·수록 밖). 원천 이름(data/source/names/archive.yaml)에서 읽는다 (12회차 M R6 2026-11-19)
@@ -777,13 +777,21 @@ early=[];nomatch=[];nmiss=[];opbad=[]
 NLN=collections.defaultdict(set)
 for k,s_ in stops.items():
     for y in s_:NLN[y['node_id']].add(routes[k]['line_id'])
+# 열람 전용 역은 그 근처에 있을 때만 그 N05 역이다: 이름이 같고 앞뒤 노드 가운데 하나가 10 km 안. 전국 어디든 같은 이름이면 있다고 치던 것과
+# 이름이 다른 노드가 300 m 안에 아무것이나 있으면 있다고 치던 것이 5회차에서 빠진 역(深江浜·志田浜·東起 등)을 가렸다 (2026-11-23)
 archn={nz(x) for x, in n.execute("select text from name where entity_type='archive' and lang='ja'")}|{nz(x) for x in dropped_ja()}
+ARCHPT=collections.defaultdict(list)
+for i_,af_,bf_ in m.execute('select id,after_id,before_id from archive_stop'):
+    pts_=[pos[x_] for x_ in (af_,bf_) if x_ in pos]
+    for x_, in n.execute("select text from name where entity_type='archive' and entity_id=? and lang='ja'",(i_,)):ARCHPT[nz(x_)]+=pts_ or [None]
+for x_ in dropped_ja():ARCHPT[nz(x_)].append(None)
+def arch_near(nms,pt):
+    return any(q is None or hav(q,pt)<10 for nm_ in nms for q in ARCHPT.get(nm_,()))
 for sid,v in NS.items():
     x=N2N[sid];yb=min(r['yb'] for r in v);ye=max(r['ye'] for r in v)
     if x is None:
         pt=v[-1]['pt']
-        near=[i for da in(-1,0,1) for db in(-1,0,1) for i in NGRID.get((int(pt[0]*50)+da,int(pt[1]*50)+db),()) if hav(pos[i],pt)<.3]
-        if ye>=1950 and not near and not {nz(r['name']) for r in v}&archn:nomatch.append((sid,v[-1]['name'],v[-1]['line'],yb,ye))
+        if ye>=1950 and not arch_near({nz(r['name']) for r in v},pt):nomatch.append((sid,v[-1]['name'],v[-1]['line'],yb,ye))
         continue
     # N05 역 ID는 노선마다 따로다. 그 노드의 어느 계통 정차 시작도 N05 첫 해보다 2년 넘게 이를 때만 본다
     if yb>=1951 and x not in HANDST and len(NLN[x])==1:
@@ -1453,9 +1461,16 @@ if _al:
     _t=open(_al[-1],encoding='utf-8').read()
     _OUT=re.compile(r'馬車|人車|森林鉄道|専用鉄道|専用線|専用軌道|簡易軌道|殖民軌道|無軌条|トロリーバス|貨物線|貨物専用|軍用線|工事軌道|砂利|会場内')
     _nm=set(x for x, in n.execute("select text from name where lang='ja' and entity_type in ('line','archive','route')"))|set(dropped_ja(set(_AF0.get('drop',{}))|set(_AF0.get('exclude',{}))))
+    # 회사 꼬리(鉄道·軌道)를 떼면 남는 핵심이 세 글자 이상일 때만 열쇠로 쓴다. 「鹿島軌道」→「鹿島」가 「鹿島線」과, 「海岸電気軌道」→「海岸」이
+    # 「海岸線」과 이름만 맞아 「DB에 있음」으로 넘어갔다 (5회차 2026-11-23)
     def _keys(s_):
         s_=re.sub(r'\s*[（(].*?[)）]','',s_).strip();o={s_}
-        for a_ in list(o):o|={re.sub(r'線$','',a_),a_+'線',re.sub(r'(鉄道|電鉄|軌道|電気軌道|電気鉄道)$','',a_)}
+        for a_ in list(o):
+            o|={a_+'線'}
+            c_=re.sub(r'線$','',a_)
+            if len(c_)>=3 or c_==a_:o.add(c_)
+            c_=re.sub(r'(電気軌道|電気鉄道|鉄道|電鉄|軌道)$','',a_)
+            if len(c_)>=3:o.add(c_)
         return {k for k in o if k}
     _idx=set()
     for x_ in _nm:_idx|=_keys(x_)
@@ -1468,7 +1483,9 @@ if _al:
         if not _links:continue
         _ti=_links[0]
         if _keys(_ti)&_idx:k103c['DB에 있음']+=1;continue
-        if _OUT.search(_ln):k103c['수록 밖 유형']+=1;continue
+        # 수록 밖 유형이 적혀 있어도 동력화(馬車鉄道→軽便·電気·ガソリン)가 함께 적힌 줄은 수록 대상일 수 있어 거르지 않는다 (5회차 2026-11-23)
+        _pw=re.search(r'(馬車|人車)[^）)]*?→[^）)]*?(軽便|蒸気|電気|路面電車|ガソリン|気動)',_ln)
+        if _OUT.search(_ln) and not _pw:k103c['수록 밖 유형']+=1;continue
         _j=MR.get('lines',{}).get(_ti)
         if _j:
             k103c[_j['verdict']]+=1

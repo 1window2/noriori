@@ -704,7 +704,12 @@ final class _Stitch {
     // km 원점은 그날 다니는 계통의 기점(km 0) 행이다. 계통 km는 그 계통 기점에서 잰 값이라, 줄 머리에 붙은 다른 계통 조각의 중간 km
     // (福知山線 1965 尼崎港線 尼崎港 4.6, 塚口에서 잼)로 잡으면 본선 km가 통째로 밀린다. 기점 행이 없을 때만 맨 위 공식 km 행이다
     var o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0 && liveRoute(x.route));
-    if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node) != null && liveRoute(x.route));
+    // 기점 행이 없으면 그날 줄의 맨 위 역이 0이다(그날의 영업거리, DESIGN §8.3 km 결정 A). 그 역의 계통 중간 km(内子線 1965 内子（旧） 5.6)를 원점으로 쓰지 않는다
+    var zeroAtTop = false;
+    if (o < 0) {
+      o = list.indexWhere((x) => _official(x.route, x.node) != null && liveRoute(x.route));
+      zeroAtTop = o >= 0;
+    }
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0);
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node) != null);
     if (o < 0) return list;
@@ -747,6 +752,7 @@ final class _Stitch {
     }
 
     fresh(o, list[o].route);
+    if (zeroAtTop && km[o] != null) km[o] = 0;
     var last = o;
     var prev = o;
     var restart = false;
