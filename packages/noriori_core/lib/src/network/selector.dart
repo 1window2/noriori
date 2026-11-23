@@ -792,7 +792,9 @@ final class SelectorBuilder {
                 for (var to = at + 1; to < stops.length && to <= at + 4 && stops[to].seq <= rows[i + 1].seq; to++)
                   ...network.edgesBetween(routeId, stops[at].node, stops[to].node),
           };
-          final suspended = edges.any((edge) => network.lifeOn(edge, today) == LifeState.suspended);
+          // 그 화면 날짜의 상태다. 날짜를 고르면 그날 운휴인지, 폐지는 그날까지 끝난 수명만 본다(운휴 뒤 재개한 칸이 그날 「폐지」로 보이지 않게).
+          // 날짜 모름은 오늘 상태와 마지막 끝이다
+          final suspended = edges.any((edge) => network.lifeOn(edge, date ?? today) == LifeState.suspended);
           String? lo, hi;
           for (final edge in edges) {
             NetPeriod? last;
@@ -801,18 +803,25 @@ final class SelectorBuilder {
             for (final period in [...network.livesOf(edge).map((l) => l.period), ...network.attrsOf(edge, lineId).map((a) => a.period)]) {
               final to = period.toHi;
               if (to == null || to.compareTo(DateSpan.maxDate) >= 0) continue;
+              if (date != null && (period.toLo ?? to).compareTo(date.lo) > 0) continue;
               if (last == null || to.compareTo(last.toHi!) > 0) last = period;
             }
             if (last == null) continue;
             if (hi == null || last.toHi!.compareTo(hi) > 0) (lo, hi) = (last.toLo, last.toHi);
           }
           String? opens;
-          if (date != null && edges.isNotEmpty && edges.every((edge) => network.lifeOn(edge, date) == LifeState.before)) {
+          // 개업 전: 그날 칸이 아직 없거나, 칸은 있어도 이 노선이 아직 그 칸을 쓰기 전이다(井原鉄道 総社–清音 1999~, のと鉄道 七尾–和倉温泉 1991~)
+          bool lineBefore(String edge) {
+            final attrs = network.attrsOf(edge, lineId);
+            return attrs.isNotEmpty && attrs.every((a) => (a.period.fromLo ?? '').compareTo(date!.lo) > 0);
+          }
+          if (date != null && edges.isNotEmpty && edges.every((edge) => network.lifeOn(edge, date) == LifeState.before || lineBefore(edge))) {
             String? first, firstHi;
             for (final edge in edges) {
-              for (final life in network.livesOf(edge)) {
-                final from = life.period.fromLo;
-                if (from != null && (first == null || from.compareTo(first) < 0)) (first, firstHi) = (from, life.period.fromHi);
+              for (final period in [...network.livesOf(edge).map((l) => l.period), ...network.attrsOf(edge, lineId).map((a) => a.period)]) {
+                final from = period.fromLo;
+                if (from == null || from.compareTo(date.lo) <= 0) continue;
+                if (first == null || from.compareTo(first) < 0) (first, firstHi) = (from, period.fromHi);
               }
             }
             if (first != null) opens = yearLabel(first, firstHi ?? first);

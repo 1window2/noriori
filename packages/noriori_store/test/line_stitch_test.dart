@@ -109,7 +109,7 @@ void main() {
     expect(now.used, isNot(contains('r_chikuhi_line_yamamoto_imari')));
   });
 
-  test('西鉄循環線: 고리를 닫고, 날짜 모름에서 폐지 구간의 접힌 줄은 함께 죽는다', () async {
+  test('西鉄循環線: 고리를 닫고, 날짜 모름에서 폐지 구간의 접힌 줄은 흐리게 그리되 역은 폐지된 본선 역처럼 고를 수 있다', () async {
     final y = await stitch('l_loop_line_nishitetsu', '1955-06-01');
     expect(y.main.rows.first.node, 'n_chidoribashi_kaizuka');
     expect(y.main.rows.last.node, 'n_chidoribashi_kaizuka');
@@ -117,6 +117,8 @@ void main() {
     final u = await stitch('l_loop_line_nishitetsu', null);
     expect(u.folds, isNotEmpty);
     expect(u.folds.every((f) => f.dead), isTrue);
+    final closedMain = u.main.rows.firstWhere((r) => r.node == 'n_gionmachi').selectable;
+    expect(u.folds.expand((f) => f.rows.rows).every((r) => r.selectable == closedMain), isTrue);
   });
 
   test('中央本線 1955: 辰野 경유가 그날의 본선 (날짜별)', () async {

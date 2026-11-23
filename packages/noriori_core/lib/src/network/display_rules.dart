@@ -846,7 +846,7 @@ final class DisplayRules {
     DisplayOptions options, {
     bool undated = false,
     Set<String> skip = const {},
-    Set<String> except = const {},
+    bool Function(DisplayLink item)? drop,
   }) {
     // 한 노선은 한 번만 적는다. 옛 자리·나눈 노드로 같은 노선이 두 역에 걸리면(新豊橋/新豊橋（旧）) 지금 것을 남긴다 (디자인 감사 S02)
     final all = [
@@ -856,6 +856,7 @@ final class DisplayRules {
     ];
     // 직통(끝 이어짐)으로 잇는 노선이 이 역을 지나 반대쪽으로도 이어지면 그 반대 방향은 갈아타서 간다. 환승으로 적는다
     // (唐津의 唐津線 鬼塚·山本 방면. 사용자 결정 2026-11-23, 전국 일괄 규칙)
+    final tracks = [..._links(row, 'continue', options, undated: undated, skip: skip), ..._links(row, 'branch', options, undated: undated, skip: skip)];
     for (final item in _links(row, 'continue', options, undated: undated, skip: skip)) {
       final link = item.link;
       final route = link.otherRouteId;
@@ -868,6 +869,13 @@ final class DisplayRules {
       final side = next > at ? stops.sublist(0, at).reversed : stops.sublist(at + 1);
       final opposite = side.where((st) => st.isStop).firstOrNull;
       if (opposite == null) continue;
+      // 같은 때 그 반대 방향도 선로 줄(끝 이어짐·분기)로 이어지면 갈아탈 필요가 없다 (都電 三宅坂 半蔵門線 양방향). 끝난 옛 연결은 보지 않는다(山田線 宮古 2019 전 분기)
+      bool sameTime(SelectorLink l) =>
+          (l.validFromLo ?? '').compareTo(link.validToHi ?? DateSpan.maxDate) < 0 && (link.validFromLo ?? '').compareTo(l.validToHi ?? DateSpan.maxDate) < 0;
+      if ([...row.links, for (final d in tracks) d.link]
+          .any((l) => (l.kind == 'continue' || l.kind == 'branch') && l.otherLineId == link.otherLineId && l.nextStop == opposite.node && sameTime(l))) {
+        continue;
+      }
       all.add(DisplayLink(
         link: SelectorLink(
           seq: link.seq,
@@ -885,7 +893,7 @@ final class DisplayRules {
       ));
     }
     // 이관 구간 경계 역에서 이어받은 노선은 구분선이 이미 알려 주어 캡슐로 다시 적지 않는다 (실화면 검수 2026-11-09, 長野의 北しなの線)
-    all.removeWhere((item) => except.contains(item.link.otherLineId));
+    if (drop != null) all.removeWhere(drop);
     // 지금 선로로 이어진(분기·끝 이어짐) 노선과의 옛 환승은 「끝남」으로 적지 않는다. 지금도 갈아탈 수 있다 (姫路 山陽本線, 감사 3회차 kinki_1-07)
     final joined = {
       for (final link in row.links)
@@ -1116,12 +1124,26 @@ final class DisplayRules {
     for (final (index, row) in rows.indexed) {
       final isFirst = index == first;
       final isLast = index == last;
-      // 이관 구간 경계에서 이어받은 노선으로 가는 줄은 구분선 글과 겹친다
-      final successors = {
-        for (final next in [if (index > 0) rows[index - 1], if (index + 1 < rows.length) rows[index + 1]])
-          if (bandOf(next, undated: undated, date: date) case (final to, _) when bandOf(row, undated: undated, date: date)?.$1 != to) to,
-      };
-      bool keep(DisplayLink item) => !successors.contains(item.link.otherLineId);
+      // 이관 구간 경계에서 띠 안쪽으로 이어받은 노선으로 가는 줄은 띠가 그린다(구분선 글과 겹친다). 띠 반대쪽으로 가는 그 노선 연결은 남긴다
+      // (山田線 宮古: 宮古~釜石 三陸鉄道 띠, 久慈 방면 三陸鉄道는 그대로. 2026-11-23 일반 규칙)
+      final successors = <String, Set<String>>{};
+      final own = bandOf(row, undated: undated, date: date)?.$1;
+      for (final step in [-1, 1]) {
+        final at = index + step;
+        if (at < 0 || at >= rows.length) continue;
+        final to = bandOf(rows[at], undated: undated, date: date)?.$1;
+        if (to == null || to == own) continue;
+        final nodes = successors.putIfAbsent(to, () => <String>{});
+        for (var k = at; k >= 0 && k < rows.length && bandOf(rows[k], undated: undated, date: date)?.$1 == to; k += step) {
+          nodes.add(rows[k].node);
+        }
+      }
+      bool keep(DisplayLink item) {
+        final inside = successors[item.link.otherLineId];
+        if (inside == null) return true;
+        final next = item.link.nextStop;
+        return next != null && !inside.contains(next);
+      }
       // 직통이 맨 끝 역에서 이어지면 그 역이 폐역·옛 자리여도 거기서 끝 이어짐이다 (DESIGN §8.1 시기별 끝 역, 信越本線 新潟（旧）)
       final topEnd = isFirst || index == 0;
       final bottomEnd = isLast || index == rows.length - 1;
@@ -1267,7 +1289,7 @@ final class DisplayRules {
           lanes: marks,
           index: index,
           row: row,
-          transfers: transfers(row, lineId, options, undated: undated, skip: skip, except: successors),
+          transfers: transfers(row, lineId, options, undated: undated, skip: skip, drop: (item) => !keep(item)),
           branchUp: ups.isNotEmpty,
           branchDown: downs.isNotEmpty || old.isNotEmpty,
           small: !options.showClosed && _isGoneStop(row),

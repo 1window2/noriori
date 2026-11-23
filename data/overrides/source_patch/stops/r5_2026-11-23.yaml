@@ -1,0 +1,2 @@
+# 5회차 (2026-11-23): km 근거가 공식 粁程이 아닌 정차역 (route_stop.km_estimated). 규칙: km는 공식 자료일 때만 「?」를 뗀다
+- {"patch": "add", "route": "r_akita_rinkai_railway_line", "node": "n_akita_hakumae", "why": "[秋田臨海鉄道線 秋田博前] km 4.0의 근거가 ja.wikipedia 秋田臨海鉄道線 oldid=110115668 노선도뿐이다(공식 営業キロ 원문 없음). 백로그 A12"}

@@ -65,6 +65,23 @@ void main() {
   StopLine stopAt(List<SelectorLine> lines, String node) =>
       lines.whereType<StopLine>().firstWhere((line) => line.row.node == node);
 
+  // 구간 괄호는 그 화면 날짜의 상태다(2026-11-23). 운휴 뒤 재개한 칸은 운휴 중 날짜에 「폐지」가 아니라 「운휴」이고,
+  // 칸은 있어도 이 노선이 아직 쓰기 전이면 「개업 전」이다
+  NoticeLine noticeAt(List<SelectorLine> lines, String node) {
+    final seq = stopAt(lines, node).row.seq;
+    return lines.whereType<NoticeLine>().firstWhere((n) => n.top.seq == seq || n.bottom.seq == seq);
+  }
+
+  test('운휴 중 날짜의 구간 괄호는 운휴다 (常磐線 相馬–駒ヶ嶺 2013, 只見線 会津川口–只見 2013)', () async {
+    expect(noticeAt(await screen('r_joban_line', '2013-06-01'), 'n_komagamine').kind, NoticeKind.suspended);
+    expect(noticeAt(await screen('r_tadami_line', '2013-06-01'), 'n_tadami').kind, NoticeKind.suspended);
+  }, skip: skip);
+
+  test('노선이 칸을 쓰기 전 날짜의 구간 괄호는 개업 전이다 (井原鉄道 総社–清音 1990)', () async {
+    final n = noticeAt(await screen('r_ibara_line', '1990-06-01'), 'n_soja');
+    expect((n.kind, n.year), (NoticeKind.before, '1999'));
+  }, skip: skip);
+
   // 5번 결정(2026-11-19, 입력 단계 재구성 2026-11-20): 확장 행 대신 승하차 불가 끝 노드와 끝 이어짐
   Future<StopLine> endNode(String route, String? raw, String node) async => stopAt(await screen(route, raw), node);
   bool continuesTo(StopLine line, String lineId) =>

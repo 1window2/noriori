@@ -634,7 +634,8 @@ final class _Stitch {
         frame: frame,
         anchor: seqOf[kmMain[anchorIdx]]!,
         up: f.up,
-        rows: dead ? RouteRows(routeId: pk.routeId, rows: [for (final r in pk.rows) r.copy(selectable: false)], openGaps: pk.openGaps, sectionGaps: pk.sectionGaps, sectionEnds: pk.sectionEnds) : pk,
+        // 날짜 모름에서 고를 수 있는지는 역 행이 정한다(1950 뒤 여객 정차). 폐지된 본선 칸 안의 접힌 줄도 폐지된 본선 역과 같다 (2026-11-23)
+        rows: pk,
         rejoin: rejoinIdx < 0 ? null : mainRows.rows[rejoinIdx].seq,
         period: f.period,
         next: '',
@@ -655,7 +656,7 @@ final class _Stitch {
     return StitchedLine(main: mainRows, folds: out, origin: origin, used: used, lengthKm: length, foreignKm: foreign);
   }
 
-  /// 날짜 모름에서 접힌 줄을 품은 본선 칸이 오늘 폐지됐는가
+  /// 날짜 모름에서 접힌 줄을 품은 본선 칸이 오늘 폐지됐는가(흐리게 그린다. 고를 수 있는지는 바꾸지 않는다)
   bool _deadIn(RouteRows main, int anchorIdx, bool up) {
     final k = up ? anchorIdx - 1 : anchorIdx;
     if (k < 0 || k >= main.sectionGaps.length) return false;
