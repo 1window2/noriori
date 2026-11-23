@@ -121,6 +121,19 @@ for _x in json.load(open(os.path.join(ROOT,'data','overrides','junction_side.jso
     if not _hit:
         _hit=[dict(line=_x['line'],other=_x['other'],at=_x['at'],source='hand',verified=True,valid=[None,'ongoing'])]
         junctions.append(_hit[0])
+    # other_route가 있는 손 행은 그 상대 계통에만 건다. 같은 노선의 다른 계통(옛 선형)은 원래 행(위키·선형 방향)을 그대로 쓴다
+    # (唐津線 山本: 지금 筑肥線은 위쪽, 1983 폐지 옛 筑肥線 東区間은 아래쪽. 5회차 R3)
+    if _x.get('other_route'):
+        _h2=[]
+        for j in _hit:
+            if j.get('other_route'):
+                if j['other_route']==_x['other_route']:_h2.append(j)
+                continue
+            j.setdefault('_not_routes',set()).add(_x['other_route'])
+            j2=dict(j,other_route=_x['other_route'],source='hand',verified=j.get('verified'));j2.pop('_not_routes',None)
+            if 'side' in j2:del j2['side']
+            junctions.append(j2);_h2.append(j2)
+        _hit=_h2
     for j in _hit:
         j['side']=_x['side'];j['_hand_side']=True
         # 방면 역(선택): toward는 상대 노선에서 곧장 가는 쪽 역, own_toward는 이 노선에서 그 열차가 오는 쪽 역. 역 둘레 선형이 실제 배선과 다를 때 쓴다 (西武 所沢, 10회차 G1 kanto_1-007)
@@ -2090,6 +2103,8 @@ for _x in _THR:
             if _po and not _own:continue
             # reverse: true면 두 쪽, "a"·"b"면 그 쪽 노선 끝 역 이어짐만(塩尻: 篠ノ井線→中央西線만, 中央東線→篠ノ井線은 곧게 이어짐)
             if _own and (_rv is True or _rv==_sd):j['_reverse']=True
+            # reverse: false는 그 쌍이 곧게 이어진다는 근거(배선 서술·선로 그래프). 노드 사이 선형이 거칠어 각이 날카롭게 나와도 자동 표식을 달지 않는다(新松田 松田連絡線, 5회차)
+            if _own and _rv is False:j['_noreverse']=True
             if _m!=_n:j['_other_at']=_m
             for t_ in ([_tw] if isinstance(_tw,str) else (_tw or [])):j.setdefault('_toward',set()).add(t_)
 # 선로 연결 판정은 (역, 노선 쌍)마다 하나다: 근거 행이 한쪽(A→B)에만 있으면 상대 쪽(B→A) 행을 같은 기간으로 만든다. 상대 노선이 그 노드에 설 때만이다(다른 노드는 THROUGH가 양쪽을 다 갖는다).
@@ -2562,8 +2577,9 @@ def _vrow(y,h):
     o=VORIG.get(id(y))
     return o if o is not None and o['route_id']==h else y
 print('노선 단위 보기: 옛 선형 계통을 얹은 계통',len(_vins),'얹은 옛 선형',sum(len(v) for v in _vins.values()))
-def hop(rid,seq,step,day=None):
-    """계통 rid의 seq 역에서 step 방향으로 계통 칸으로 처음 닿는 (노드, 칸). day면 그날 그 노선 칸이 열린 것 먼저"""
+def hop(rid,seq,step,day=None,strict=False):
+    """계통 rid의 seq 역에서 step 방향으로 계통 칸으로 처음 닿는 (노드, 칸). day면 그날 그 노선 칸이 열린 것 먼저.
+    strict면 그날 열린 칸이 없을 때 날짜 없이 되돌아가지 않는다(스위치백 표식 판단은 그 행 기간의 선로로만, 5회차 追分 1892–1981)"""
     L=VR.get(rid) or by_route[rid];i=VIDX.get((rid,seq))
     if i is None:return None,None
     at=L[i]['node_id'];P=VPE.get(rid,{});op=open_on(routes[rid]['line'],day) if day else None
@@ -2572,10 +2588,10 @@ def hop(rid,seq,step,day=None):
         f_=frozenset((at,L[k]['node_id']))
         if f_ in P and (op is None or f_ in op):return L[k]['node_id'],P[f_]
         k+=step
-    return hop(rid,seq,step,None) if day else (None,None)
-def rdir(rid,seq,step,day=None):
+    return hop(rid,seq,step,None) if day and not strict else (None,None)
+def rdir(rid,seq,step,day=None,strict=False):
     """계통 rid의 seq 역에서 step 방향으로 나가는 칸의 시작 방향"""
-    y_,eid_=hop(rid,seq,step,day)
+    y_,eid_=hop(rid,seq,step,day,strict)
     if not y_:return None
     return gde(eid_,VR[rid][VIDX[(rid,seq)]]['node_id'])
 _RBL=collections.defaultdict(list)
@@ -2620,10 +2636,10 @@ def _tw_pick(o,pr,nx,j):
         x_=pr if k_<i_ else nx
         if x_[0] and x_ not in out:out.append(x_)
     return out
-def _inside(rid,seq,mp,day):
+def _inside(rid,seq,mp,day,strict=False):
     """끝 역에서 이 계통이 들어오는 쪽(-1 위쪽·1 아래쪽). 바로 옆 정차역이 아니라 그날 계통 칸으로 본다: 옆 노드가 숨은 노드(신호장·분기점)이고 그 너머가 확장 행뿐이면
     정차역 이웃이 없어도 칸은 그쪽에 있다 (田端信号場–上中里 東北貨物線·田端信号場–三河島 田端貨物線·吹田貨物ターミナル–尼崎 北方貨物線, 9회차 L K68)"""
-    u_,d_=hop(rid,seq,-1,day)[0],hop(rid,seq,1,day)[0]
+    u_,d_=hop(rid,seq,-1,day,strict)[0],hop(rid,seq,1,day,strict)[0]
     if u_ and not d_:return -1
     if d_ and not u_:return 1
     return -1 if mp[0] else 1
@@ -2885,8 +2901,8 @@ def _rev_ang(l_,r,s,mp):
     L_=by_route[o_rid];i_=_SIDX.get((o_rid,o_seq))
     k_=next((k for k,x in enumerate(L_) if x['node_id']==l_['next_stop_node']),None)
     if i_ is None or k_ is None or k_==i_:return None
-    w_=rdir(r['id'],s['seq'],_inside(r['id'],s['seq'],mp,rd_),rd_)
-    return tdeg(w_,rdir(o_rid,o_seq,-1 if k_<i_ else 1,rd_))
+    w_=rdir(r['id'],s['seq'],_inside(r['id'],s['seq'],mp,rd_,True),rd_,True)
+    return tdeg(w_,rdir(o_rid,o_seq,-1 if k_<i_ else 1,rd_,True))
 links=[]
 def add_link(s,oid,rr,kind,side,other,nxt,term,fl,src,pd,o=None):
     # 다음 역·끝 역이 이 역 자신(같은 역 묶음)뿐인 분기·이어짐은 갈 구간이 없다 (大江線→東臨港線 港東通 1944~1951 「다음=끝=港東通」)
@@ -2948,6 +2964,8 @@ for s in stops:
           # 상대 계통은 근거 행 기간에 이 역에 함께 선 것만 본다. 같은 노선의 옛 선형 계통(京津線 옛 御陵, ~1997-10-12)이 근거 기간(1997-10-12~)에
           # 없는데 후보로 남아 방면을 가져가면 연결이 빠지고 환승이 된다 (2번안 2026-11-23, 감사 K122)
           cand=[c for c in cand if period(s,c[0]) and _clip(period(s,c[0]),j)]
+          # 손 방향 행이 계통을 지정해 따로 떼어 간 상대 계통은 원래 행에서 뺀다(5회차 R3)
+          if j.get('_not_routes'):cand=[c for c in cand if c[0]['route_id'] not in j['_not_routes']]
           # 근거 표(THROUGH·손 확인) 없이 묶음의 다른 노드(다른 역)로 선로를 잇지 않는다. 같은 사업자 이웃 역이라고 선로가 이어진 것은 아니다
           # (立久恵線 出雲市–一畑 電鉄出雲市, 3회차 chugoku_shikoku_2-017). 그 쌍은 아래에서 환승이 된다
           # 같은 group(같은 역 묶음)의 다른 노드(사업자마다 나뉜 노드)도 다른 노드다. 다른 노드끼리의 이어짐은 여객 직통 근거(THROUGH·노면전차 계통표)가 있을 때만이고,
@@ -3126,6 +3144,8 @@ for s in stops:
           if len(links)>n0_:j.setdefault('_kinds',set()).add(kind)
           # 스위치백 직통(근거 표 reverse 행): 끝 역 이어짐 가운데 이 계통 마지막 칸과 상대 방면 칸이 되돌아가는 각(기준각 미만)인 방면에 표식을 건다.
           # 그 행의 이어짐이 하나도 날카롭지 않으면(옛 역 자리 배선을 노드가 담지 못함) 아래에서 모두 켜고 경고로 남긴다 (11회차 S3)
+          if j.get('_noreverse'):
+              for l_ in links[n0_:]:l_['_norev']=True
           if j.get('_reverse'):
               for l_ in links[n0_:]:
                   if l_['kind']!='continue' or not l_.get('_o'):continue
@@ -4217,6 +4237,15 @@ for k in links:
 for _k,_v in NOOP.items():
     for _x in _v:err(_k+'_noop',_x)
 print('분기 방향 채움',filled)
+# 끝 역 이어짐이 선형상 되돌아가면(각이 기준 미만) 근거 표와 상관없이 스위치백 표식을 단다. 끝 이어짐 선은 선로 연결이라, 그 연결로 가려면
+# 그 역에서 방향을 바꿔야 한다는 사실을 늘 같은 규칙으로 보인다(身延線 富士, 日光線 宇都宮 上野 방면 등. 사용자 결정 2026-11-23, 감사 K197)
+for k in links:
+    if k['kind']!='continue' or not k.get('_o') or k.get('reverse') or k.get('_norev'):continue
+    s_=k['_s'];r_=routes[s_['route_id']]
+    # 이웃은 오늘이 아니라 그 행 기간의 대표일로 본다(오늘 이웃을 쓰면 나중에 생긴 南千歳 쪽을 안쪽으로 잡아 追分 1892–1981 夕張線이 되돌아감으로 보임, 5회차)
+    mp_,_=neighbors(r_['id'],s_['seq'],False,_rep_day((k['valid_from'],k['valid_to'])))
+    a_=_rev_ang(k,r_,s_,mp_)
+    if a_ is not None and a_<sharp_c(r_['line'],k['other_line_id']):k['reverse']=1
 # 스위치백 직통 행의 이어짐이 하나도 날카롭지 않으면(塩尻 1982 전 옛 역 배선) 그 행의 이어짐을 모두 표식으로 둔다. 감사 K196이 확인 목록으로 본다 (11회차 S3)
 _rjg=collections.defaultdict(list)
 for k in links:
@@ -4229,7 +4258,7 @@ for _v in _rjg.values():
 LREV=[]
 for k in links:
     if k.pop('reverse',None):LREV.append(dict(route_id=k['route_id'],seq=k['seq'],other_line_id=k['other_line_id'],next_stop_node=k['next_stop_node'],valid_from=k['valid_from'],valid_to=k['valid_to']))
-for k in links:k.pop('_o',None);k.pop('_s',None);k.pop('_rj',None)
+for k in links:k.pop('_o',None);k.pop('_s',None);k.pop('_rj',None);k.pop('_norev',None)
 # 방향을 아는 행이 있으면 같은 곳으로 가는 방향 없는 행은 뺀다. 앱은 방향이 없으면 아래쪽에 그려서
 # 위키에 분기로, 끝 역 규칙으로 이어짐으로 두 번 들어온 노선이 양쪽에 나온다 (南千歳의 石勝線)
 # 기간이 겹칠 때만이다. 기간마다 끝 역 판정이 달라 앞 기간은 분기(방향 있음), 뒤 기간은 끝 이어짐(방향 없음)인 곳(北陸本線 敦賀→小浜線 2024-03-16~)은 둘 다 남긴다

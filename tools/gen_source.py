@@ -2067,8 +2067,14 @@ for mv in _MV:
     if o_ not in nodes or w_ not in nodes or _nold[w_]>1:continue
     D_=lohi(mv['date'])[0]
     have_={(znorm(y['text']),y['lang']) for y in _byn[o_]}
+    # 한국어·영어 행은 같은 기간 일본어 행의 옮김·가름을 따른다. 언어마다 따로 보면 옛 자리에 같은 일본어 이름이 있어 일본어만 그대로 두고
+    # 한국어·영어만 갈라 기간이 어긋난다(妙見線 鼓滝 皷滝: 일본어 1969~, 한국어·영어 1965~, 5회차 2026-11-23)
+    _ja_skip={(x.get('valid_from'),x.get('valid_to')) for x in _byn[w_] if x['lang']=='ja' and (znorm(x['text']),'ja') in have_}
+    _has_ja={(x.get('valid_from'),x.get('valid_to')) for x in _byn[w_] if x['lang']=='ja'}
     for x in list(_byn[w_]):
-        if (znorm(x['text']),x['lang']) in have_:continue
+        pk_=(x.get('valid_from'),x.get('valid_to'))
+        if pk_ in _ja_skip:continue
+        if pk_ not in _has_ja and (znorm(x['text']),x['lang']) in have_:continue
         lt_,ht_=lohi(x['valid_to']);fl_=lohi(x['valid_from'])[0] if x.get('valid_from') else '0000-01-01'
         if ht_<=D_:x['id']=o_;_byn[o_].append(x);_mvs['moved']+=1
         elif fl_<D_<lt_:

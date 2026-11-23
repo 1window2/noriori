@@ -37,7 +37,17 @@ def nz(s):
     if len(s)>1 and s.endswith('駅'):s=s[:-1]
     # 送り仮名 「通り」와 「通」은 같은 이름이다 (江ノ電 海岸通り·海岸通, 2026-11-14)
     s=s.replace('通り','通')
+    # 한자 숫자와 아라비아 숫자는 같은 이름이다(札幌市電 北二十一条·北21条, 2026-11-23). 「条·丁目」 앞 숫자만 바꾸고, 양쪽을 같은 함수로 맞추므로 三条도 3条로 같게 맞는다
+    s=re.sub(r'([〇一二三四五六七八九十百]+)(?=条|丁目)',lambda m:str(_kn(m.group(1))),s)
     return s.replace(' ','')
+def _kn(t):
+    d={'〇':0,'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9}
+    n=0;cur=0
+    for c in t:
+        if c=='百':n+=(cur or 1)*100;cur=0
+        elif c=='十':n+=(cur or 1)*10;cur=0
+        else:cur=cur*10+d[c]
+    return n+cur
 ja=collections.defaultdict(list);alias=collections.defaultdict(list)
 for t,i,x in n.execute("select entity_type,entity_id,text from name where lang='ja' and valid_to is null"):ja[t,i].append(x)
 for i,x in n.execute("select entity_id,text from alias where entity_type='node' and kind<>'old_title'"):alias[i].append(x)
@@ -1314,9 +1324,13 @@ M_TROL=re.compile(r'トロリーバス|無軌条')
 # 이름이 여객역이 아닌 꼴: 보선 요원 乗降場(線路班)·신호소·화물 취급소
 M_NOPAX=re.compile(r'線路班|信号所|信号場|荷扱所')
 def m_nz2(s):
-    """N05·노선도 이름과 노드 이름의 표기 차이를 더 넓게 맞춘다: 乗降場 꼬리, 糖/糠·趾/址·鉤/鈎, 町目/丁目, の(ノ) 빠짐"""
+    """N05·노선도 이름과 노드 이름의 표기 차이를 더 넓게 맞춘다: 乗降場 꼬리, 이체자 짝, 町目/丁目, ［］ 병기, の(ノ) 빠짐.
+    町目→丁目과 廿→二十은 nz의 한자 숫자 변환 앞에 둔다(뒤에 두면 「本三町目」은 本三丁目, 노드 「本三丁目」은 本3丁目으로 어긋남. 5회차 K100)"""
+    s=unicodedata.normalize('NFKC',s or '')
+    # 이름 뒤 대괄호 병기(N05 「追手町［大手町］」)는 다른 이름이라 뺀다
+    s=re.sub(r'(?<=.)\[[^\]]*\]','',s)
+    for a,b in (('町目','丁目'),('廿','二十'),('糖','糠'),('趾','址'),('鉤','鈎'),('竈','竃'),('舘','館'),('挾','挟'),('薮','藪'),('籔','藪'),('籠','篭'),('遙','遥'),('靱','靭'),('砿','礦'),('鉱','礦'),('峯','峰'),('薗','園'),('溪','渓'),('焱','炎'),('庄','荘'),('ッ','ツ')):s=s.replace(a,b)
     s=nz(s);s=re.sub(r'(?:臨時乗降場|仮乗降場|乗降場)$','',s)
-    for a,b in (('糖','糠'),('趾','址'),('鉤','鈎'),('町目','丁目')):s=s.replace(a,b)
     return s.replace('ノ','')
 M_N2={}
 for i_ in pos:
@@ -1369,7 +1383,7 @@ for sid,nm_,l_,yb,ye in nomatch:
     if j is None:k100.append((sid,nm_,l_,yb,ye));continue
     k100c[j[0]]+=1;k100a.append((sid,nm_,l_,yb,ye)+tuple(j))
     if j[0]=='근거 부족':k100w.append((sid,nm_,l_,yb,ye,j[1]))
-put('K100 N05 역 기록(1950년 뒤)이 노드·열람 전용·수록 규칙·판정표 어디에도 없음',k100,60,lvl='err')
+put('K100 N05 역 기록(1950년 뒤)이 노드·열람 전용·수록 규칙·판정표 어디에도 없음',k100,400,lvl='err')
 put('K100 N05 역 기록(1950년 뒤) 판정 근거 부족(남은 것, 판정표)',k100w,60,lvl='warn')
 put('K100 N05 역 기록(1950년 뒤) 판정 갈래별 건수',sorted(k100c.items()),20)
 put('K100 N05 역 기록(1950년 뒤) 판정 전체(참고)',k100a,20)

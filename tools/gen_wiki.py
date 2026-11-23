@@ -27,9 +27,21 @@ lines={l['id']:l for l in _src_patch('lines',list(lines.values()))}
 routes=[r for r in _src_patch('routes',routes) if r['line'] in lines]
 nodes={n['id']:n for n in _src_patch('nodes',load('nodes'))}
 names=load('names')
-ja={};
+# 노드의 대표 이름은 지금 이름(노선·기간 한정 아닌 행)이다. 이름 표의 첫 행을 쓰면 행 순서(직전 빌드 결과)에 따라 옛 이름이 대표가 되어
+# 같은 이름 두 노드(京津線 浜大津·びわ湖浜大津) 맞춤이 빌드마다 뒤집혔다 (5회차 2026-11-23)
+ja={};JA_ALL=collections.defaultdict(set);JA_LINE=collections.defaultdict(set)
+for x in names:
+    if x['entity_type']!='node' or x['lang']!='ja':continue
+    JA_ALL[x['id']].add(x['text'])
+    if x.get('line'):JA_LINE[(x['id'],x['line'])].add(x['text'])
+    if not x.get('line') and not x.get('valid_from') and not x.get('valid_to'):ja.setdefault(x['id'],x['text'])
 for x in names:
     if x['entity_type']=='node' and x['lang']=='ja' and x['id'] not in ja:ja[x['id']]=x['text']
+# 노선마다 그 노선 계통이 서는 노드(노선도 역 이름 맞춤에서 먼저 고른다)
+LSTOP=collections.defaultdict(set)
+_rl_={r['id']:r['line'] for r in routes}
+for x_ in load('stops'):
+    if x_.get('route') in _rl_:LSTOP[_rl_[x_['route']]].add(x_['node'])
 line_ja={i:l['name_ja'] for i,l in lines.items()}
 # 노선별 정차역 순서
 edges=[e for e in _src_patch('edges',load('edges')) if e.get('seed_line') in lines]
@@ -276,6 +288,11 @@ years={};kmcheck=[];unmatched=[];archnames=[];ins=[];kmrows={}
 STICON=re.compile(r'(BHF|HST|BST)')
 NOT=re.compile(r'専用|貨物|（社）|\(社\)|工場|車両|基地|信号|操車|車庫|機関区|運転所|検車|電留線|留置|発電|鉱|炭|森林|軌道|索道|ロープウェイ')
 ST=re.compile(r'^([^\s／：・（(]+?)(?:臨時乗降場|仮乗降場|仮停車場|仮停留場|臨時駅|駅|停留場|停車場|乗降場)(?:\s*[（(].*?[)）])?(?:\s+(\d{4})?\s*[-–−~～]\s*(\d{4})?)?')
+# 꼬리(駅·停留場)가 없거나 「電停」인 노선도 역 행(名古屋市電 「南大津町電停 -1918」, 꼬리 없는 「南大津町 -1918」)을 받는 보조 규칙.
+# ST가 받는 행은 ST 그대로라 기존 열람 전용 이름·ID는 바뀌지 않는다. 역 아이콘·NOT 거르기는 똑같이 거친다. 폐역 행 뽑기에만 쓰고,
+# 노선도의 지금 역 자리 맞추기(posd·wiki_row)는 ST 그대로다(꼬리 없는 「浜大津」가 지금 역 자리로 잡혀 기존 열람 전용 앞 노드가 바뀌었다) (5회차 2026-11-23)
+ST2=re.compile(r'^([^\s／：・（(]+?)(?:電停留場|電停)?(?=\s|$|[（(])(?:\s*[（(].*?[)）])?(?:\s+(\d{4})?\s*[-–−~～]\s*(\d{4})?)?')
+def stmatch(t):return ST.match(t) or ST2.match(t)
 CLOSEDICON=re.compile(r'^(ex|x|e[A-Z]|ke|u?ex)')
 cache={};TXT={}
 for lid_,l in lines.items():
@@ -296,10 +313,13 @@ for lid_,l in lines.items():
     stat['docs']+=1
     # 정차역 위치
     S=sorted(adj[lid_])
+    # 노선도 역 이름 → 노드. 이 노선이 서는 노드를 먼저(지금 이름과 그 노선 한정 이름), 다른 노드(지나가는 노드)는 그 이름이 비었을 때만
     nm2n={}
     for n in S:
-        nd=nodes.get(n)
-        if n in ja:nm2n[znorm(ja[n])]=n
+        if n in LSTOP[lid_]:
+            for t_ in sorted(({ja.get(n)}|JA_LINE[(n,lid_)])-{None}):nm2n.setdefault(znorm(t_),n)
+    for n in S:
+        if n in ja:nm2n.setdefault(znorm(ja[n]),n)
     pos=[]
     for i,r in enumerate(flat):
         hit=None
@@ -336,6 +356,14 @@ for lid_,l in lines.items():
     for i,r in enumerate(flat):
         icons=[x for c in r['c'] for x in c]
         m=ST.match(r['t'].strip())
+        # 보조 규칙(꼬리 없음·電停)은 노드가 없는 옛 정류장만 받는다. 이미 노드 이름인 행(京津線 浜大津)은 지금 역이라 열람 전용 후보로 뽑지 않는다
+        if not m:
+            t_=r['t'].strip()
+            # 「鉄軌分界点（福井市駅） -1933」처럼 머리 토막이 분계·분기 지점이고 괄호 안이 역이면 괄호 안 이름이 역이다. 「…点」 머리 토막은 역 이름이 아니다
+            pm_=re.match(r'^[^\s（(]+?点\s*[（(]([^）)]+?)(?:駅|停留場|電停)[)）](.*)$',t_)
+            if pm_:t_=pm_.group(1)+'駅'+pm_.group(2)
+            m=ST.match(t_) or ST2.match(t_)
+            if m and (re.search(r'点$',m.group(1)) or znorm(re.sub(r'(仮|臨時)$','',m.group(1))) in name_nodes):m=None
         if i in posd:
             n=posd[i]
             # 이름이 다른 역으로의 환승: 같은 행(또는 바로 옆 HUB 행)에 적힌 다른 역

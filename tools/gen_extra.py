@@ -291,8 +291,9 @@ for a in arch:
     # (사용자 결정 2026-11-16: 읽기가 없으면 한자 그대로 보이고, 읽기 근거 수집이 먼저다. 읽기가 없다고 옛 역을 DB에서 빼지 않는다. 예전 결정 132의 「위키 노선도에서만 온 읽기 없는 행은 뺀다」를 바꿈)
     if not t and a['kind']=='stop' and n:
         t=n;src='ja_as_is';a['_noread']=True
-        # 되살린 행의 앞뒤 역이 같으면(노선도 고리·옛 자리를 앞뒤로 읽은 것) 자리는 그 역 옆까지만 안다. 뒤 역을 비운다(감사 K24 after=before)
-        if a.get('after') and a.get('after')==a.get('before'):a['before']=None
+    # 앞뒤 역이 같으면(노선도 고리·옛 자리를 앞뒤로 읽은 것) 자리는 그 역 옆까지만 안다. 뒤 역을 비운다(감사 K24 after=before).
+    # 읽기가 있는 행도 같다(5회차: 京急大師線 港町（旧）에 읽기가 붙자 이 규칙을 빠져나감)
+    if a['kind']=='stop' and a.get('after') and a.get('after')==a.get('before'):a['before']=None
     if not t:drop.append(n);continue
     b={k:v for k,v in a.items() if k not in('name','add_kana','_fk2')}
     if b.pop('_late',None):LATE.add(b['id'])

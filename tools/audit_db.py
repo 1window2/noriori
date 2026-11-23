@@ -1826,7 +1826,8 @@ def _sure(p):
 RPAIR={rid:{frozenset(E[e]):e for e in v if e in E} for rid,v in redge.items()}
 def _route_open_at(rid,x):
     """계통 rid의 칸 가운데 x에 닿는 칸들이 영업한 기간(합집합). 칸 영업 기록이 없으면 None"""
-    es=[e for f,e in RPAIR.get(rid,{}).items() if x in f]
+    # 같은 두 노드 사이에 시기가 다른 칸이 여럿일 수 있다(松戸線 前原–新津田沼（旧） 1947–1953·1961–1968). RPAIR는 쌍마다 칸 하나라 계통 칸 전부를 본다
+    es=[e for e in redge.get(rid,()) if e in E and x in E[e]]
     if not es or not all(LR.get(e) for e in es):return None
     return _ivs_union([iv for e in es for iv in _open_iv(e,routes[rid]['line_id'])])
 # K54 닿을 수 없는 정차: 정차 기간 토막(1950 뒤 확실한 부분) 내내 그 역에 닿는 그 계통 칸이 하나도 영업하지 않음 (3회차 chugoku_shikoku_2-023, 三江線 野井).
@@ -2832,11 +2833,11 @@ if _RVC198:
         a_,b_=lohi(r_[4]) if r_[4] else ('0000-01-01',)*2,lohi(r_[5]) if r_[5] not in (None,'ongoing') else ('9999-12-31',)*2
         if not any((lohi(f_)[0] if f_ else '0000-01-01')<b_[1] and a_[0]<(lohi(t_)[1] if t_ not in (None,'ongoing') else '9999-12-31') for f_,t_ in _cl198.get(tuple(r_[:4]),())):rows.append(tuple(r_))
 put('K198 스위치백 표식 기간(route_link_reverse)에 맞는 끝 역 이어짐(continue) 행이 없음',rows,20)
-# K199 근거 표 THROUGH의 reverse·passenger_only 칸 값이 틀림(reverse는 true·"a"·"b", passenger_only는 true), 또는 reverse 행의 표식 기간이 하나도 없음
+# K199 근거 표 THROUGH의 reverse·passenger_only 칸 값이 틀림(reverse는 true·"a"·"b"·false(곧게 이어짐, 자동 표식 막음, 5회차), passenger_only는 true), 또는 reverse 행의 표식 기간이 하나도 없음
 rows=[]
 _RVROWS=[x_ for x_ in _TH if 'reverse' in x_ or 'passenger_only' in x_]
 for x_ in _RVROWS:
-    if 'reverse' in x_ and x_['reverse'] not in (True,'a','b'):rows.append((x_['a'],x_['b'],x_['at'][0],'reverse 값',str(x_['reverse'])))
+    if 'reverse' in x_ and x_['reverse'] not in (True,False,'a','b'):rows.append((x_['a'],x_['b'],x_['at'][0],'reverse 값',str(x_['reverse'])))
     if 'passenger_only' in x_ and x_['passenger_only'] is not True:rows.append((x_['a'],x_['b'],x_['at'][0],'passenger_only 값',str(x_['passenger_only'])))
 if _RVC198:
     _rvl=collections.defaultdict(list)
