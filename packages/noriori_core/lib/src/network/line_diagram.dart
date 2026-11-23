@@ -182,10 +182,9 @@ LineDiagram lineDiagram(
   String routeId,
   DateSpan day,
 ) {
-  // 공식 구간이 숨은 분기점에서 시작하는 짧은 노선은 연장 역까지 넣어야 그릴 수 있다
-  // 그 계통에서 서지 않는 역(연장 칸도 아닌 통과 노드)은 그리지 않는다. 기록 화면(selector)과 같은 규칙이다
-  // (筑豊電鉄 계통이 지나기만 하는 黒崎車庫前: 北九州線 시절 1999 폐지, 7회차 2026-11-14)
-  bool shown(NetStop stop) => network.isShown(stop.node) && (stop.isStop || stop.isExtension);
+  // 그 계통에서 서지 않는 역(통과 노드)은 그리지 않는다. 승하차 불가 끝 노드(분기점·신호장)도 지도에는 그리지 않는다
+  // (筑豊電鉄 계통이 지나기만 하는 黒崎車庫前: 北九州線 시절 1999 폐지, 7회차 2026-11-14; junction-nodes-rule)
+  bool shown(NetStop stop) => network.isShown(stop.node) && stop.isStop;
   final own = network.stops(routeId);
   final all = own.where(shown).length < 2 ? network.picks(routeId) : own;
   final stops = <DiagramStop>[];

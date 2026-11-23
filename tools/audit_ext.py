@@ -48,7 +48,7 @@ routes={r['id']:dict(r) for r in m.execute('select * from route')}
 stops=collections.defaultdict(list)
 # 여객 영업 이력이 없는 화물선(rule_class hidden) 계통은 원자료(노리츠부시·N05·위키 여객 역) 대조에서 뺀다. DB에만 두는 화물 지선이다 (9회차 F)
 _HIDL={r_[0] for r_ in m.execute("select id from line where rule_class='hidden'")}
-for r in m.execute('select * from route_stop where is_extension=0 order by route_id,seq'):
+for r in m.execute('select * from route_stop order by route_id,seq'):
     if routes[r['route_id']]['line_id'] in _HIDL:continue
     stops[r['route_id']].append(dict(r))
 line_routes=collections.defaultdict(list)

@@ -7,12 +7,13 @@ import '../../../app/theme/app_theme.dart';
 import '../../../app/theme/tokens.dart';
 import '../../../i18n/strings.g.dart';
 import '../controller/record_session_controller.dart';
+import 'fold_view.dart';
 import 'one_way_bubble.dart';
 import 'session_painters.dart';
 import 'switchback_mark.dart';
 
 /// 줄기 칸의 색. 칠하기는 고른 구간, 이미 탄 구간, 영업 상태 순이다.
-final class TrunkStyle {
+class TrunkStyle {
   TrunkStyle(this.state, this.ridden, this.tokens, {this.scroll}) : handed = handedGaps(state.lines);
 
   /// 점선 박자를 목록 전체 위치에 맞추는 목록 스크롤
@@ -97,9 +98,10 @@ Set<int> handedGaps(List<SelectorLine> lines) {
 }
 
 /// 줄마다 걸리는 괄호 토막. 안내 줄이 가리키는 맨 위 줄부터 맨 아래 줄까지다
-List<List<BracketPiece>> bracketPieces(List<SelectorLine> lines, AppTokens tokens, Brightness brightness) {
+List<List<BracketPiece>> bracketPieces(List<SelectorLine> lines, AppTokens tokens, Brightness brightness, {bool Function(NoticeLine notice)? only}) {
   final out = List.generate(lines.length, (_) => <BracketPiece>[]);
   for (final notice in lines.whereType<NoticeLine>()) {
+    if (only != null && !only(notice)) continue;
     final top = lines.indexWhere(notice.top.matches);
     final bottom = lines.indexWhere(notice.bottom.matches);
     if (top < 0 || bottom <= top) continue;
@@ -178,7 +180,13 @@ LaneStyle laneStyleOf(AppTokens tokens) =>
 
 /// 선택기의 한 줄을 그린다.
 class SessionLineTile extends StatelessWidget {
-  const SessionLineTile({super.key, required this.line, this.prev, required this.next, required this.trunk, this.brackets = const []});
+  const SessionLineTile({super.key, required this.line, this.prev, required this.next, required this.trunk, this.brackets = const [], this.mainBrackets = const [], this.foldBracket});
+
+  /// 이 줄에 걸치는 접힌 선형의 괄호 토막 (DESIGN §8.3)
+  final ({List<BracketPiece> pieces, double? nodeY, double reach})? foldBracket;
+
+  /// 접힌 선형 안 줄에 걸치는 본선 괄호 토막. 접힌 선형 칸으로 옮기지 않고 제자리에 그린다 (DESIGN §8.3)
+  final List<BracketPiece> mainBrackets;
 
   final SelectorLine line;
 
@@ -193,9 +201,18 @@ class SessionLineTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final tile = _tile(context);
-    if (brackets.isEmpty || line is StopLine) return tile;
-    return CustomPaint(foregroundPainter: BracketOverlay(brackets, nodeY: line is ArchiveLine ? 18 : null), child: tile);
+    var tile = _tile(context);
+    final inFold = FoldView.of(context)?.ctx.containsKey(line) ?? false;
+    // 접힌 선형 안의 분기·끝 이어짐·안내 줄은 글자까지 통째로 선형 칸으로 옮긴다 (목업과 같다). 역 줄은 그림만 옮기고 글자는 본선 역과 같은 줄이다
+    final padded = inFold && foldPadded(line);
+    if (brackets.isNotEmpty && line is! StopLine) {
+      final overlay = BracketOverlay(brackets, nodeY: line is ArchiveLine ? 18 : null);
+      tile = CustomPaint(foregroundPainter: inFold && !padded ? FoldPainter(overlay, ctx: null, centerY: 24, shiftOnly: true) : overlay, child: tile);
+    }
+    if (padded) tile = Padding(padding: const EdgeInsets.only(left: foldTextShift), child: tile);
+    if (mainBrackets.isNotEmpty) tile = CustomPaint(foregroundPainter: BracketOverlay(mainBrackets), child: tile);
+    final fb = foldBracket;
+    return fb == null ? tile : CustomPaint(foregroundPainter: FoldBracketOverlay(fb.pieces, nodeY: fb.nodeY, reach: fb.reach), child: tile);
   }
 
   Widget _tile(BuildContext context) => switch (line) {
@@ -220,7 +237,14 @@ class SessionLineTile extends StatelessWidget {
           ),
         final TransferLine hand => _HandTile(line: hand, trunk: trunk.gap(hand.gap)),
         final NoticeLine notice => _NoticeTile(line: notice, prev: prev, trunk: trunk),
+        final FoldLine fold => FoldHeadTile(line: fold, trunk: trunk.gap(_anchorIndex(fold)), next: next, prev: prev),
       };
+
+  /// 접힌 줄 머리 자리의 본선 칸: 아래로 붙으면 붙는 역 아래 칸, 위로 붙으면 위 칸
+  int _anchorIndex(FoldLine fold) {
+    final at = trunk.state.visible.indexWhere((row) => row.seq == fold.fold.anchor);
+    return fold.fold.up ? at - 1 : at;
+  }
 }
 
 class _StopTile extends ConsumerWidget {
@@ -284,7 +308,13 @@ class _StopTile extends ConsumerWidget {
     messenger.showSnackBar(
       SnackBar(
         // 임시 운행만 있는 계통은 폐지·운휴가 아니라 그날 임시 열차가 없던 것이다 (사용자 결정 2026-11-19)
-        content: Text(state.isTemporary ? t.tempNoRun : line.row.state == StopState.suspended ? t.whySuspended : t.whyClosed),
+        content: Text(line.row.viewOnly
+            ? (line.row.noBoarding ? t.whyViewNoBoarding : t.whyViewSignal)
+            : state.isTemporary
+                ? t.tempNoRun
+                : line.row.state == StopState.suspended
+                    ? t.whySuspended
+                    : t.whyClosed),
         persist: false,
       ),
     );
@@ -296,6 +326,10 @@ class _StopTile extends ConsumerWidget {
     final row = line.row;
     // 구분선과 같은 해에 폐역된 역은 그 줄에 연도가 있다. 더 일찍 폐역된 역에만 적는다
     if (line.quiet) return null;
+    // 역은 있으나 그날 이 계통이 서지 않는 끝 노드: 보통 역 모양에 「승하차 불가」 (결정 A 추천안, 2026-11-21)
+    if (row.noBoarding) return context.t.session.spokenPassing;
+    // 그날 신호장·분기점으로 지나는 행(회색)은 역 정차가 끝난 해를 붙이지 않는다. 신호장이 없어지면 그때 폐지 해가 붙는다
+    if (row.passing) return null;
     return switch (row.state) {
       StopState.maybe => t.maybe,
       StopState.beforeOpen => t.since(year: row.openYear ?? '?'),
@@ -324,7 +358,8 @@ class _StopTile extends ConsumerWidget {
     final picked = state.isPicked(row.seq);
     final end = row.seq == state.from?.seq || row.seq == state.to?.seq;
     final mark = ref.watch(stationMarksProvider).of(ref.watch(networkProvider), row.node);
-    final tier3 = !row.selectable;
+    // 보이기만 하는 행(그날 끝이 아닌 신호장·승하차 불가 역)은 고를 수 없어도 흐리게 그리지 않는다
+    final tier3 = !row.selectable && !row.viewOnly;
     // 임시 운행만 있는 계통: 운행일이 아닌 날의 역은 영업 역과 같은 크기의 흐린 원·흐린 이름이다(폐역의 작은 원·「~해」와 다르다).
     // 끝난 해·운휴 표시는 어느 날에도 붙이지 않는다 (사용자 결정 2026-11-19, 목업 5판)
     final temp = state.isTemporary;
@@ -374,9 +409,11 @@ class _StopTile extends ConsumerWidget {
     // 1950년 전에 정차가 끝난 역은 열람 전용 역과 같은 꽉 찬 작은 점이다 (사용자 결정 2026-11-08)
     final archived = row.beforeFloor;
     final circle = archived ? 3.5 : (tier3 && !fade ? 4.5 : 8.5);
+    // 접힌 선형 안 역은 고를 수 있어도(날짜 모름) 분기선과 같은 짙은 회색 테다 (DESIGN §8.3)
+    final inFold = FoldView.of(context)?.ctx.containsKey(line) ?? false;
     final ring = end || picked || mark != StationMark.none
         ? tokens.lineRidden
-        : (tier3 ? tokens.textClosed : tokens.text);
+        : (tier3 ? tokens.textClosed : (inFold ? tokens.lineUnridden : tokens.text));
     final count = line.transfers.fold(0, (sum, group) => sum + group.items.length);
     final spoken = [
       name,
@@ -390,6 +427,8 @@ class _StopTile extends ConsumerWidget {
       if (km != null) t.spokenKm(km: km.toStringAsFixed(1)),
       if (!temp && row.closeYear != null && row.handedTo == null)
         t.spokenClosed(year: row.closeYear!)
+      else if (row.passing || row.noBoarding)
+        t.spokenPassing
       else if (row.suspendedSince != null && (row.state == StopState.suspended || row.state == StopState.unknown))
         t.spokenSuspendedSince(year: row.suspendedSince!)
       else
@@ -413,7 +452,7 @@ class _StopTile extends ConsumerWidget {
       child: InkWell(
         onTap: row.selectable ? () => _tap(context, ref, state) : () => _whyNot(context, state),
         child: CustomPaint(
-          painter: StopPainter(
+          painter: foldPaint(context, line, StopPainter(
             brackets: brackets,
             lanes: line.lanes,
             laneStyle: laneStyleOf(tokens),
@@ -431,7 +470,10 @@ class _StopTile extends ConsumerWidget {
             above: above,
             below: below,
             ring: ring,
-            fill: archived ? tokens.textClosed : (end || mark == StationMark.stepped ? tokens.lineRidden : tokens.surface),
+            // 승하차 불가 끝 노드(분기점·신호장, 그날 서지 않는 계통 끝 역)는 같은 크기·모양에 가운데만 회색이다 (junction-nodes-rule)
+            fill: archived
+                ? tokens.textClosed
+                : (end || mark == StationMark.stepped ? tokens.lineRidden : (row.passing ? tokens.textClosed : tokens.surface)),
             background: tokens.surface,
             radius: circle,
             ringWidth: tier3 && !fade ? 2 : 3.5,
@@ -452,11 +494,11 @@ class _StopTile extends ConsumerWidget {
                 : tokens.lineUnridden,
             stemUp: line.branchUp
                 ? (line.branchUpGone ? tokens.selectorGone : tokens.lineUnridden)
-                : null,
+                : foldShoulder(context, line, up: true),
             stemDown: line.branchDown
                 ? (line.branchDownGone ? tokens.selectorGone : tokens.lineUnridden)
-                : null,
-          ),
+                : foldShoulder(context, line, up: false),
+          ), centerY: centerY),
           child: Padding(
             padding: EdgeInsets.fromLTRB(SelectorRuler.textX, top, 12, 0),
             child: Column(
@@ -529,7 +571,8 @@ class _StopTile extends ConsumerWidget {
                     side(
                       km?.toStringAsFixed(1) ?? '?',
                       text.bodySmall?.copyWith(
-                        color: tier3 ? tokens.textClosed : tokens.textMuted,
+                        // 이관 띠 안 역의 km는 이어받은 노선의 km라 흐리게 적는다 (DESIGN §8.3)
+                        color: tier3 || state.foreignKm.contains(row.seq) ? tokens.textClosed : tokens.textMuted,
                         fontFeatures: tabularFigures,
                       ),
                     ),
@@ -796,7 +839,8 @@ class _BranchTile extends ConsumerWidget {
       child: InkWell(
         onTap: () => _open(context, ref, name),
         child: CustomPaint(
-          painter: BranchPainter(
+          painter: foldPaint(context, line, BranchPainter(
+            goneColor: tokens.selectorGone,
             trunk: trunk,
             color: item.gone ? tokens.selectorGone : tokens.lineUnridden,
             stem: line.stemGone ? tokens.selectorGone : tokens.lineUnridden,
@@ -815,7 +859,7 @@ class _BranchTile extends ConsumerWidget {
             parallel: line.parallel,
             lanes: line.lanes,
             laneStyle: laneStyleOf(tokens),
-          ),
+          ), centerY: centerY, branchY: centerY),
           child: ConstrainedBox(
             constraints: BoxConstraints(minHeight: 48 + item.before.length * oldHeight),
             child: Padding(
@@ -912,7 +956,7 @@ class _EndTile extends ConsumerWidget {
             }
           : null,
       child: CustomPaint(
-        painter: EndPainter(
+        painter: foldPaint(context, line, EndPainter(
           // 묶음의 선은 그 묶음에 현행이 하나라도 있으면 현행색 하나로 옅어진다. 글줄(번호·이름)은 줄마다 제 색이다 (사용자 결정 2026-11-20)
           color: (line.stackOf > 1 ? !line.stackLive : gone) ? tokens.selectorGone : tokens.lineUnridden,
           up: line.up,
@@ -924,7 +968,7 @@ class _EndTile extends ConsumerWidget {
           trunk: trunk,
           lanes: line.lanes,
           laneStyle: laneStyleOf(tokens),
-        ),
+        )),
         child: ConstrainedBox(
           // 같은 끝의 노선이 여럿이면 목록처럼 촘촘히 쌓는다 (A안)
           // 같은 끝의 직통이 여럿이면 줄마다 속이 찬 번호를 붙이고, 번호 옆 스위치백 표식과 헷갈리지 않게 줄 간격을 넉넉히 둔다 (사용자 결정 2026-11-19)
@@ -1056,13 +1100,13 @@ class _ArchiveTile extends ConsumerWidget {
         SnackBar(content: Text(message), persist: false),
       ),
       child: CustomPaint(
-        painter: PlainPainter(
+        painter: foldPaint(context, line, PlainPainter(
           above: above,
           below: below,
           node: tokens.textClosed,
           lanes: line.lanes,
           laneStyle: laneStyleOf(tokens),
-        ),
+        )),
         child: ConstrainedBox(
           constraints: const BoxConstraints(minHeight: 36),
           child: Padding(
@@ -1125,7 +1169,7 @@ class _SectionTile extends ConsumerWidget {
     final year = line.year;
     final unlocated = _unlocated(ref);
     return CustomPaint(
-      painter: PlainPainter(
+      painter: foldPaint(context, line, PlainPainter(
         above: trunk,
         below: trunk,
         dash: tokens.textClosed,
@@ -1133,7 +1177,7 @@ class _SectionTile extends ConsumerWidget {
         laneStyle: laneStyleOf(tokens),
         stem: switch (line.stem) { null => null, true => tokens.selectorGone, false => tokens.lineUnridden },
         stemUp: line.gap < 0,
-      ),
+      )),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 4, 12, 4),
         child: SizedBox(
@@ -1245,13 +1289,13 @@ class _HandTile extends ConsumerWidget {
     return InkWell(
       onTap: open ? go : null,
       child: CustomPaint(
-        painter: PlainPainter(
+        painter: foldPaint(context, line, PlainPainter(
           above: trunk,
           below: trunk,
           dash: tokens.textClosed,
           lanes: line.lanes,
           laneStyle: laneStyleOf(tokens),
-        ),
+        )),
         child: Padding(
           padding: const EdgeInsets.fromLTRB(SelectorRuler.textX, 9, 12, 10),
           child: SizedBox(width: double.infinity, child: body),
@@ -1397,17 +1441,29 @@ class _NoticeTile extends ConsumerWidget {
       if (await confirmLeave(context, ref)) await session.jumpToLine(lineId, at.node);
     }
 
-    // 상자 위·아래 줄의 줄기 칸을 그대로 잇는다. 상자는 괄호 맨 위 역 아래 칸에 놓인다
-    final above = prev;
-    final gap = switch (above) {
-      StopLine(:final index) => index,
-      BranchLine(:final gap) => gap,
-      EndLine(:final gap) => gap,
-      _ => null,
-    };
+    // 상자는 괄호 맨 위 역 아래 칸에 놓이므로 그 칸의 줄기를 긋는다. 바로 위 줄(접힌 줄 머리 등)과 상관없이 괄호의 맨 위 역으로 칸을 찾는다.
+    // 접힌 선형 안 상자는 그 선형의 칸이고, 맨 위가 붙는 역이면 머리 쪽 칸이다 (DESIGN §8.3)
+    final style = trunk;
+    final top = line.top.seq;
+    int? gap;
+    if (style is FoldTrunk) {
+      final rows = (style.fold.fold.frame ?? style.fold.fold.rows).rows;
+      final at = rows.indexWhere((row) => row.seq == top);
+      gap = at >= 0 ? at : null;
+    } else {
+      final at = style.state.visible.indexWhere((row) => row.seq == top);
+      gap = at >= 0
+          ? at
+          : switch (prev) {
+              StopLine(:final index) => index,
+              BranchLine(:final gap) => gap,
+              EndLine(:final gap) => gap,
+              _ => null,
+            };
+    }
     final piece = gap == null ? null : trunk.gap(gap);
     return CustomPaint(
-      painter: PlainPainter(above: piece, below: piece, lanes: line.lanes, laneStyle: laneStyleOf(tokens)),
+      painter: foldPaint(context, line, PlainPainter(above: piece, below: piece, lanes: line.lanes, laneStyle: laneStyleOf(tokens))),
       child: Padding(
         padding: const EdgeInsets.fromLTRB(SelectorRuler.textX - 12, 6, 12, 8),
         child: InkWell(

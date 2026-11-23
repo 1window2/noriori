@@ -315,6 +315,10 @@ class _Translations$session$en implements Translations$session$ko {
 	);
 	@override String get lapLess => 'Remove a lap';
 	@override String get lapMore => 'Add a lap';
+	@override String foldStops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
+		one: '${n} stop',
+		other: '${n} stops',
+	);
 	@override String away({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n,
 		one: '+${n} stop',
 		other: '+${n} stops',
@@ -383,6 +387,8 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get from => 'From';
 	@override String get to => 'To';
 	@override String get whyClosed => 'This station wasn\'t open on that date';
+	@override String get whyViewSignal => 'This is a signal or junction, so a ride can\'t start or end here';
+	@override String get whyViewNoBoarding => 'This line doesn\'t stop here, so a ride can\'t start or end here';
 	@override String get onlyDown => 'Down only';
 	@override String get onlyUp => 'Up only';
 	@override String get onlyOneWay => 'One way';
@@ -428,6 +434,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
 	@override String relocationNew({required Object km}) => 'New alignment · ${km} km';
 	@override String get spokenOpen => 'open';
+	@override String get spokenPassing => 'no passenger service';
 	@override String get spokenRidden => 'ridden';
 }
 
@@ -1275,6 +1282,7 @@ extension on TranslationsEn {
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} lap', other: '${n} laps', ), 
 			'session.lapLess' => 'Remove a lap',
 			'session.lapMore' => 'Add a lap',
+			'session.foldStops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '${n} stop', other: '${n} stops', ), 
 			'session.away' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('en'))(n, one: '+${n} stop', other: '+${n} stops', ), 
 			'session.dateTitle' => 'Ride date',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
@@ -1339,6 +1347,8 @@ extension on TranslationsEn {
 			'session.from' => 'From',
 			'session.to' => 'To',
 			'session.whyClosed' => 'This station wasn\'t open on that date',
+			'session.whyViewSignal' => 'This is a signal or junction, so a ride can\'t start or end here',
+			'session.whyViewNoBoarding' => 'This line doesn\'t stop here, so a ride can\'t start or end here',
 			'session.onlyDown' => 'Down only',
 			'session.onlyUp' => 'Up only',
 			'session.onlyOneWay' => 'One way',
@@ -1384,6 +1394,7 @@ extension on TranslationsEn {
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
 			'session.relocationNew' => ({required Object km}) => 'New alignment · ${km} km',
 			'session.spokenOpen' => 'open',
+			'session.spokenPassing' => 'no passenger service',
 			'session.spokenRidden' => 'ridden',
 			'data.osBackupLarge' => 'Your records are over 20 MB and may not fit in Android cloud backup. Choose a backup folder',
 			'data.title' => 'Backup and restore',
@@ -1657,12 +1668,12 @@ extension on TranslationsEn {
 			'prefNames.19' => 'Nagano',
 			'prefNames.20' => 'Gifu',
 			'prefNames.21' => 'Shizuoka',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.22' => 'Aichi',
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',
 			'prefNames.25' => 'Kyoto',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.26' => 'Osaka',
 			'prefNames.27' => 'Hyogo',
 			'prefNames.28' => 'Nara',

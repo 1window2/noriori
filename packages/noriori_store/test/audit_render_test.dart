@@ -49,7 +49,7 @@ void main() {
           'seq': r.seq,
           'node': r.node,
           'state': r.state.name,
-          'ext': r.isExtension,
+          if (r.passing) 'passing': true,
           if (r.savedAs != null) 'savedAs': r.savedAs,
           if (r.handedTo != null) 'handedTo': r.handedTo,
           if (r.handedOn != null) 'handedOn': r.handedOn,
@@ -177,6 +177,8 @@ void main() {
                   };
               jl.add({'t': 'notice', 'kind': n.kind.name, 'top': anchor(n.top), 'bottom': anchor(n.bottom), 'year': n.year, 'line': n.lineId, 'on': n.on});
               buf.writeln('  [ 괄호 ${n.kind.name} ${anchor(n.top)}~${anchor(n.bottom)}${n.year == null ? '' : ' ${n.year}'}${n.lineId == null ? '' : ' ${ln(n.lineId!)} ${n.on}'}');
+            case FoldLine():
+              break; // 계통 하나씩 펼치는 감사 화면에는 접힌 줄이 없다 (이어 그린 줄은 RENDER_STITCH)
             case final ArchiveLine a:
               jl.add({'t': 'archive', 'id': a.stop.id, 'gap': a.gap});
               buf.writeln('  ○ 열람전용역 ${archive[a.stop.id] ?? a.stop.id} ~${a.stop.closedYear} km=${a.stop.km}');

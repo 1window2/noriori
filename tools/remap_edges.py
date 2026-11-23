@@ -62,6 +62,8 @@ for e in load('edges'):
         new.setdefault('|'.join((e['seed_line'],x,y)),[]).append(e['id'])
         new.setdefault('|'.join((e['seed_line'],x,y))+(tail or '|alt=none'),[]).append(e['id'])
         if own:new.setdefault('|'.join((e['seed_line'],x,y))+own,[]).append(e['id'])
+        # 옛 선로는 이제 따로 계통이다(2번안, 2026-11-23). 예전 「|alt=old」 키는 같은 두 역의 계통 전용 칸으로 찾는다
+        if own and not tail:new.setdefault('|'.join((e['seed_line'],x,y))+'|alt=old',[]).append(e['id'])
         nb.setdefault((e['seed_line'],x),[]).append((y,e['id']))
 M={};lost=[];split={}
 for e,k in keys.items():

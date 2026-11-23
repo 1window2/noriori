@@ -46,9 +46,40 @@ TL={frozenset((a,b,x)) for x,a,b in m.execute("select at_node,line_a,line_b from
 # 계통 이음 행 (3회차 W1a: link 종류). (계통, 역 노드) → 행들
 LNK=collections.defaultdict(list)
 for r_ in m.execute('select l.route_id,s.node_id,l.other_line_id,l.other_route_id,l.kind,l.side,l.next_stop_node,l.terminal_node,l.valid_from,l.valid_to,l.other_node from route_link l join route_stop s on s.route_id=l.route_id and s.seq=l.seq'):LNK[r_[0],r_[1]].append(r_[2:])
+# 계통 끝 너머 역: 확장 행 장치를 걷어내고(5번 결정 2026-11-19) 그 계통 끝에서 그 역으로 가는 끝 이어짐(continue, 다음 역·끝 역)으로 바뀌었다.
+# (계통, 그 역) → 이어짐 기간들. extstop은 사례 기간과 겹치는 이어짐이 있는가, extend는 그런 이어짐이 하나라도 있는가
+# (5번 결정 재구성 2026-11-20) 끝 이어짐은 끝 노드에서 상대 계통으로 이어지고, 그 계통에서 끝 노드(또는 상대 노드)부터 끝 역까지 사이의 역들에 닿는다.
+# 옛 확장 행의 역(Y)은 그 사이에 있으면 닿는 것이다. 상대 계통을 적지 않은 이어짐은 그 노선 계통 가운데 두 노드를 함께 둔 계통으로 본다
+RROWS=collections.defaultdict(list)
+for r_,n_ in m.execute('select route_id,node_id from route_stop order by route_id,seq'):RROWS[r_].append(n_)
+RLN={r_:l_ for r_,l_ in m.execute('select id,line_id from route')}
+RFT={r_:(a_,b_) for r_,a_,b_ in m.execute('select id,from_node,to_node from route')}
+_RBYL=collections.defaultdict(list)
+for r_,l_ in RLN.items():_RBYL[l_].append(r_)
+_SEQ2={(r_,q_):n_ for r_,q_,n_ in m.execute('select route_id,seq,node_id from route_stop')}
+def _ovl(a,b):
+    """두 기간(시작, 끝)이 겹치는가 (EDTF 범위는 넓게)"""
+    def l_(v):return '0000' if v in (None,'ongoing') else (lohi(v)[0] or '0000')
+    def h_(v):return '9999' if v in (None,'ongoing') else (lohi(v)[1] or '9999')
+    return l_(a[0])<h_(b[1]) and l_(b[0])<h_(a[1])
 XST=collections.defaultdict(list)
-for r_ in m.execute('select route_id,node_id,valid_from,valid_to from route_stop where is_extension=1'):XST[r_[0],r_[1]].append((r_[2],r_[3]))
-EXT={r_[0]:set(json.loads(r_[1] or '[]')) for r_ in m.execute('select id,extend_to from route')}
+for rt_,sq_,ol_,orr_,nx_,te_,on_,f_,t_ in m.execute("select route_id,seq,other_line_id,other_route_id,next_stop_node,terminal_node,other_node,valid_from,valid_to from route_link where kind='continue'"):
+    at_=on_ or _SEQ2.get((rt_,sq_))
+    hit_={x_ for x_ in (nx_,te_) if x_}
+    for q_ in ([orr_] if orr_ else _RBYL.get(ol_,[])):
+        R_=RROWS.get(q_,[])
+        a0_=on_ if on_ in R_ else next((x_ for x_ in R_ if x_==at_),None)
+        if a0_ is None:
+            a0_=next((x_ for x_ in R_ if x_ in RROWS.get(rt_,[])),None)
+        if a0_ in R_ and te_ in R_:
+            # 그 사이에서 그 이어짐 기간에 그 계통이 서던 역만(서지 않던 역까지 닿는다고 세지 않는다)
+            i_,j_=R_.index(a0_),R_.index(te_)
+            hit_|={x_ for x_ in R_[min(i_,j_):max(i_,j_)+1] if any(rr_==q_ and _ovl((ff_,tt_),(f_,t_)) for rr_,ff_,tt_ in SPR.get(x_,[]))}
+    for n_ in hit_:XST[rt_,n_].append((f_,t_))
+EXT=collections.defaultdict(set)
+for (rt_,n_) in XST:EXT[rt_].add(n_)
+XNEXT=collections.defaultdict(set)
+for rt_,nx_ in m.execute("select route_id,next_stop_node from route_link where kind='continue'"):XNEXT[rt_].add(nx_)
 # 정차 공백(route_stop_gap). 끝 없는 공백은 gap_to='ongoing'(재개 미정 정차 운휴, 11회차 시뮬레이터 시험: 합치기에서 되돌려진 것을 잡는다)
 SGAP=collections.defaultdict(list)
 for r_ in m.execute('select route_id,node_id,gap_from,gap_to from route_stop_gap'):SGAP[r_[0],r_[1]].append((r_[2],r_[3]))
@@ -60,6 +91,34 @@ def _on(v,day):
     return (lo_ or '0000')<=day<(hi_ or '9999')
 # 기대값의 자리표시(「(岸ノ里 개업일)」·「(끝)」처럼 사례표를 만들 때 값을 못 정한 쪽)는 판정하지 않는 쪽으로 읽는다
 def val(v):return None if isinstance(v,str) and v.startswith('(') and v.endswith(')') else v
+def _alt_nodes(c):
+    """사례 노드에 연결이 없을 때 볼 그 계통의 끝 노드 행: 상대 노선(계통) 계통의 끝 노드이거나 이 계통의 끝 노드인 행"""
+    qs_=[c['other_route']] if c.get('other_route') else _RBYL.get(c.get('other_line'),[])
+    ends_={x_ for q_ in qs_ for x_ in RFT.get(q_,())}|set(RFT.get(c['route'],()))
+    return [x_ for x_ in RROWS.get(c['route'],[]) if x_ in ends_ and x_!=c['node']]
+def _link_case(c):
+    def _match(rs,loose):
+        out=[]
+        for r_ in rs:
+            if c.get('other_line') and r_[0]!=c['other_line']:continue
+            if c.get('other_route') and r_[1]!=c['other_route']:continue
+            if c.get('link_kind') and r_[2]!=c['link_kind']:continue
+            if c.get('day') and not _on((r_[6],r_[7]),c['day']):continue
+            if c.get('term') and r_[5]!=c['term']:continue
+            if c.get('side') and r_[3]!=c['side']:continue
+            if c.get('other_node') and r_[8]!=c['other_node']:continue
+            nx_=c.get('next')
+            if nx_ and r_[4]!=nx_:
+                # 번역: 옛 확장 위치(사례 노드)가 새 다음 역이거나, 상대 계통의 끝 노드(서지 않는 끝 노드)가 다음 역이면 같은 방면이다
+                if not loose:continue
+                q_=r_[1] or next((q for q in _RBYL.get(r_[0],[]) if r_[4] in RROWS.get(q,[])),None)
+                if not(r_[4]==c['node'] or (q_ and r_[4] in RFT.get(q_,()) and nx_ not in RROWS.get(q_,[]))):continue
+            out.append(r_)
+        return out
+    hit=_match(LNK[c['route'],c['node']],False)
+    if not hit and not c.get('absent'):
+        hit=_match(LNK[c['route'],c['node']],True) or [r_ for x_ in _alt_nodes(c) for r_ in _match(LNK[c['route'],x_],True)]
+    return not hit if c.get('absent') else bool(hit)
 def de(a,x):
     """날짜 a가 기대값 x에 맞는가. x가 자리표시·없음이면 맞음. x가 해·달 정밀도(1994-XX-XX)나 범위([1957..1958])면 a가 그 안에 들면 맞음
     (DB가 더 정확한 날을 가진 경우: 名古屋球場正門前 rinji 1987-07-01~1994-10-08)"""
@@ -76,11 +135,17 @@ def judge(c):
     """True=고쳐짐, False=남음, None=판정할 자료 없음, 문자열=규칙상 정상 사유"""
     k=c['kind']
     if k=='name':
-        return any(r[0]=='ja' and r[1]==c['text'] and de(r[5],c.get('valid_to')) and de(r[4],c.get('valid_from')) and (not c.get('line') or r[3]==c['line']) for r in NM['node',c['node']])
+        # 폐역 뒤에도 마지막 이름 규칙(2026-11-21): 기대한 끝이 그 역의 마지막 정차 끝이면, 끝이 비어 폐역 뒤로 이어지는 같은 이름 행도 같은 사례다
+        last_=[r[2] for r in SPR[c['node']] if r[2]!='ongoing']
+        closed_=bool(last_) and not any(r[2]=='ongoing' for r in SPR[c['node']]) and bool(c.get('valid_to')) and any(de(t_,c['valid_to']) for t_ in last_)
+        return any(r[0]=='ja' and r[1]==c['text'] and (de(r[5],c.get('valid_to')) or (closed_ and r[5] in (None,'ongoing'))) and de(r[4],c.get('valid_from')) and (not c.get('line') or r[3]==c['line']) for r in NM['node',c['node']])
     if k=='kana':return any(r[0]=='ja' and r[1]==c['text'] and r[2]==c['kana'] for r in NM['node',c['node']])
     if k=='nodename':
         b=base('node',c['node'],'ja' if c['lang']=='kana' else c['lang'])
         return bool(b) and (b[2] if c['lang']=='kana' else b[1])==c['text']
+    # 옛 확장 행(그 계통 행에 없는 역)의 정차 기대값은 끝 이어짐으로 그 역에 닿는가로 본다(5번 결정 재구성)
+    if k=='stop' and c.get('route') and c['node'] not in RROWS.get(c['route'],()):
+        return bool(XST.get((c['route'],c['node'])))
     if k=='stop':
         v=[r for r in SPR[c['node']] if not c.get('route') or r[0]==c['route']]
         # 정차 기간이 둘 이상인 기대값(periods: [[시작, 끝], ...])은 기간마다 같은 정차 토막(route_stop_period)이 있어야 한다. 끝 null은 지금도 선다
@@ -94,16 +159,21 @@ def judge(c):
     # 계통 이음 행: {route, node, other_line|other_route, link_kind?, day?, next?, term?, side?, absent?}. day가 있으면 그날 유효한 행만 본다.
     # absent면 조건에 맞는 행이 없어야 고쳐짐이다 (3회차 W1a)
     if k=='link':
+        return _link_case(c)
+    if k=='link_raw':
         rs=[r_ for r_ in LNK[c['route'],c['node']] if (not c.get('other_line') or r_[0]==c['other_line']) and (not c.get('other_route') or r_[1]==c['other_route'])
             and (not c.get('link_kind') or r_[2]==c['link_kind']) and (not c.get('day') or _on((r_[6],r_[7]),c['day']))]
         hit=[r_ for r_ in rs if (not c.get('next') or r_[4]==c['next']) and (not c.get('term') or r_[5]==c['term']) and (not c.get('side') or r_[3]==c['side']) and (not c.get('other_node') or r_[8]==c['other_node'])]
         return not hit if c.get('absent') else bool(hit)
     # 선로 연결 있음(nolink의 반대): pairs의 모든 쌍이 그 역에서 분기·끝 이어짐(track_link)
     # 계통 끝 확장 행의 정차 기간 (3회차 kyushu_1-013)
-    if k=='extstop':return any(de(f_,c.get('valid_from')) and (t_=='ongoing' if c.get('valid_to') is None else de(t_,c['valid_to'])) for f_,t_ in XST[c['route'],c['node']])
+    if k=='extstop':
+        lo_=lohi(c.get('valid_from'))[0] or '0000';hi_=(lohi(c['valid_to'])[1] if c.get('valid_to') else None) or '9999'
+        return any((lohi(f_)[0] or '0000')<hi_ and lo_<(('9999' if t_ in (None,'ongoing') else lohi(t_)[1]) or '9999') for f_,t_ in XST[c['route'],c['node']])
     if k=='track':return all(frozenset((a,b,c['node'])) in TL for a,b in c['pairs'])
     # 계통 끝 확장 역: absent면 extend_to에 없어야 한다
-    if k=='extend':return (c['node'] not in EXT.get(c['route'],set())) if c.get('absent') else (c['node'] in EXT.get(c['route'],set()))
+    # 옛 확장 목록은 「끝 너머 바로 다음 역」이었다. 새 모델에서 「없어야 함」은 끝 이어짐의 다음 역이 그 역이 아님, 「있어야 함」은 끝 이어짐으로 그 역에 닿음이다(5번 결정 재구성)
+    if k=='extend':return (c['node'] not in XNEXT.get(c['route'],set())) if c.get('absent') else (c['node'] in EXT.get(c['route'],set()))
     if k=='hub':return frozenset((c['a'],c['b'])) in HP
     if k=='nohub':return frozenset((c['a'],c['b'])) not in HP
     if k=='nogroup':return not(GRP.get(c['a']) and GRP.get(c['a'])==GRP.get(c['b']))
@@ -204,6 +274,18 @@ def judge(c):
     # 11회차 S3 새 판정. linkrow: 그 계통 그 역에 상대 노선(other_line)·계통(other_route?)·종류(link_kind?)의 이음 행이 기간 그대로(valid_from, valid_to) 하나 있음.
     # 근거 표 행이 선로 연결 행을 자르거나 다른 계통이 끝 역 판정을 바꿔 시작·끝이 옮겨진 것을 잡는다(王寺 和歌山線 1972-03-15, 伊勢中川 1959-11-19~)
     if k=='linkrow':
+        if not any((not c.get('other_line') or r_[0]==c['other_line']) and (not c.get('other_route') or r_[1]==c['other_route']) and (not c.get('link_kind') or r_[2]==c['link_kind'])
+                   and r_[6]==c['valid_from'] and r_[7]==c['valid_to'] for r_ in LNK[c['route'],c['node']]):
+            # 옛 확장 노드의 연결은 상대 노선 계통의 끝 노드 행으로 옮겨 갔다(5번 결정 재구성)
+            # 다음 역이 바뀌는 날 나뉜 행(같은 상대·종류)은 이어 붙여 기간을 견준다 (白新線 大形 1957·東新潟 1958 개업)
+            for x_ in _alt_nodes(c):
+                iv_=sorted((r_[6],r_[7]) for r_ in LNK[c['route'],x_] if (not c.get('other_line') or r_[0]==c['other_line']) and (not c.get('other_route') or r_[1]==c['other_route']) and (not c.get('link_kind') or r_[2]==c['link_kind']))
+                mg_=[]
+                for a_,b_ in iv_:
+                    if mg_ and mg_[-1][1]==a_:mg_[-1]=(mg_[-1][0],b_)
+                    else:mg_.append((a_,b_))
+                if (c['valid_from'],c['valid_to']) in mg_:return True
+            return False
         return any((not c.get('other_line') or r_[0]==c['other_line']) and (not c.get('other_route') or r_[1]==c['other_route']) and (not c.get('link_kind') or r_[2]==c['link_kind'])
                    and r_[6]==c['valid_from'] and r_[7]==c['valid_to'] for r_ in LNK[c['route'],c['node']])
     # 11회차 S3 새 판정. reverse: 그날(day) 그 계통 그 역의 끝 역 이어짐(continue, 상대 노선 other_line, 다음 역 next?)에 스위치백 표식 기간(route_link_reverse)이 걸림(reverse true) 또는 이어짐은 있고 표식이 없음(false)
@@ -229,7 +311,7 @@ EERA=collections.defaultdict(list)
 for a,b,l,km in m.execute('select e.from_node,e.to_node,k.line_id,k.km from edge e join edge_km_era k on k.edge_id=e.id'):EERA[frozenset((a,b)),l].append(km)
 EKP=collections.defaultdict(list)
 for a,b,l,mm,u_ in m.execute("select e.from_node,e.to_node,p.line_id,p.m,p.valid_to from edge e join edge_km_period p on p.edge_id=e.id where p.source='km_era_period'"):EKP[frozenset((a,b)),l].append((mm/1000,u_))
-RFIRST={rt:x for rt,x in m.execute('select route_id,node_id from route_stop where is_extension=0 and seq=0')}
+RFIRST={rt:x for rt,x in m.execute('select route_id,node_id from route_stop where seq=0')}
 res=[];cnt=collections.Counter();by=collections.defaultdict(collections.Counter)
 for c in C:
     j=None if c.get('normal') else judge(c)

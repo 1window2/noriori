@@ -18,7 +18,7 @@ for i,t in list(nm.execute("select entity_id,text from name where entity_type='n
 ONE={'牟岐線 阿波海南 ～ 海部 営業km: 1.5':1}   # 阿波海南 77.8 → 海部 79.2, 표와 같은 방향
 out=[];bad=[]
 for (title,rid),xs in sorted(by.items()):
-    stops=[dict(seq=s,node=n,km=k) for s,n,k in db.execute('select seq,node_id,km_cum from route_stop where route_id=? and is_stop=1 and is_extension=0 order by seq',(rid,))]
+    stops=[dict(seq=s,node=n,km=k) for s,n,k in db.execute('select seq,node_id,km_cum from route_stop where route_id=? and is_stop=1 order by seq',(rid,))]
     pos={s['node']:s for s in stops}
     xs=[x for x in xs if x['node_id'] in pos]
     if not xs:bad.append((title,rid,'역 없음'));continue

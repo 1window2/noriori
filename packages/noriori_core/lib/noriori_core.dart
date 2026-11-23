@@ -14,6 +14,7 @@ export 'src/importing/csv_import.dart';
 export 'src/importing/noritsubushi_csv.dart';
 export 'src/name/name_lookup.dart';
 export 'src/network/journey_finder.dart';
+export 'src/network/line_stitch.dart';
 export 'src/network/network_news.dart';
 export 'src/network/display_rules.dart';
 export 'src/network/network.dart';

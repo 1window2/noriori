@@ -48,7 +48,7 @@ _w=os.path.join(CAND,'wiki_km.json')
 if os.path.exists(_w):
     W=json.load(open(_w,encoding='utf-8'))
     stops=collections.defaultdict(dict)
-    for r,nd,k in m.execute("select s.route_id,s.node_id,s.km_cum from route_stop s where s.is_extension=0"):stops[r][nd]=k
+    for r,nd,k in m.execute("select s.route_id,s.node_id,s.km_cum from route_stop s"):stops[r][nd]=k
     rts=collections.defaultdict(list)
     for i,l in m.execute('select id,line_id from route'):rts[l].append(i)
     bad=[];ok=tot=0

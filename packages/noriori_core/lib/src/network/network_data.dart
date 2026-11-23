@@ -7,7 +7,6 @@ final class NetRoute {
     required this.fromNode,
     required this.toNode,
     required this.closed,
-    required this.extendTo,
   });
 
   final String id;
@@ -16,7 +15,6 @@ final class NetRoute {
   final String fromNode;
   final String toNode;
   final bool closed;
-  final List<String> extendTo;
 }
 
 final class NetEdge {
@@ -136,10 +134,11 @@ final class NetStop {
     required this.node,
     required this.kmCum,
     required this.isStop,
-    required this.isExtension,
+    this.isEndPoint = false,
     required this.period,
     this.kmEstimated = false,
     this.gaps = const [],
+    this.selectSpans = const [],
   });
 
   final String routeId;
@@ -147,7 +146,9 @@ final class NetStop {
   final String node;
   final double? kmCum;
   final bool isStop;
-  final bool isExtension;
+  /// 승하차 불가 끝 노드 행: 승객 정차가 있는 계통의 끝인데 서지 않는 노드(분기점·신호장·정류장이 없어진 경계점)와,
+  /// 그 노드를 지나는 다른 계통의 같은 노드. 노선 일람에 가운데가 회색인 노드로 보이고 고를 수 있다 (5번 결정 junction-nodes-rule, 2026-11-19)
+  final bool isEndPoint;
   final NetPeriod period;
 
   /// 정차 기간 사이 서지 않은 때 (印場 1944~1995). from이 서지 않기 시작한 날, to가 다시 선 날이다.
@@ -155,6 +156,18 @@ final class NetStop {
 
   /// 営業キロ를 몰라 선 위 위치로 추정한 km다. 계산에만 쓰고 화면은 `? km` (DESIGN §4.5).
   final bool kmEstimated;
+
+  /// 끝 노드로 고를 수 있는데 이 계통이 서지 않는 기간과 그날 노드의 정체 (route_stop_select, 5번 결정 2026-11-21).
+  /// 정차·연도는 [period]·[gaps]가 정하고, 노드 모양만 이것이 정한다.
+  final List<NetSelectSpan> selectSpans;
+}
+
+/// 고를 수 있는 서지 않는 기간 하나. style: signal·junction(가운데 회색) / nostop(역은 있으나 이 계통이 서지 않음) / none(아직 없던 경계점, 숨김)
+final class NetSelectSpan {
+  const NetSelectSpan({required this.period, required this.style});
+
+  final NetPeriod period;
+  final String style;
 }
 
 final class NetAttr {
@@ -288,6 +301,7 @@ final class NetworkData {
     this.eraMeters = const {},
     this.oneWays = const [],
     this.stopDirections = const [],
+    this.members = const [],
   });
 
   final List<NetRoute> routes;
@@ -317,4 +331,21 @@ final class NetworkData {
   final Map<String, int> eraMeters;
   final List<NetOneWay> oneWays;
   final List<NetStopDirection> stopDirections;
+
+  /// 한때 다른 노선에 속했던 구간 (`line_period` kind=member, 例 柳ヶ瀬線 = 北陸本線 1909-10-12~1957-10-01, DESIGN §8.3).
+  /// [NetMember.fromNode]·[NetMember.toNode]가 없으면 노선 전체다
+  final List<NetMember> members;
+}
+
+final class NetMember {
+  const NetMember({required this.lineId, required this.memberOf, this.fromNode, this.toNode, this.validFrom, this.validTo});
+
+  final String lineId;
+  final String memberOf;
+  final String? fromNode;
+  final String? toNode;
+  final String? validFrom;
+  final String? validTo;
+
+  bool on(String day) => (validFrom == null || validFrom!.compareTo(day) <= 0) && (validTo == null || day.compareTo(validTo!) < 0);
 }

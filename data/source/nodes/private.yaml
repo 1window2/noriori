@@ -4317,6 +4317,7 @@
 - {"id": "n_hirose_kumamoto", "kind": "station", "group": "g_hirose_kumamoto", "pref": "43"}
 - {"id": "n_fukagawa_kumamoto", "kind": "station", "group": "g_fukagawa_kumamoto", "pref": "43"}
 - {"id": "n_kikuchi", "kind": "station", "group": "g_kikuchi", "pref": "43"}
+- {"id": "n_saishun_iryo_center_mae_old", "kind": "station", "group": "g_saishun_iryo_center_mae", "pref": "43", "export_name": "再春医療センター前【旧】"}
 - {"id": "n_seibu_chichibu_through", "kind": "junction", "group": "g_seibu_chichibu_through", "pref": "11", "export_name": "[西武秩父（通過）]"}
 - {"id": "n_seibu_chichibu_ohanabatake_side", "kind": "junction", "group": "g_seibu_chichibu_ohanabatake_side", "pref": "11", "export_name": "[西武秩父（御花畑方）]"}
 - {"id": "n_seibu_chichibu_kagemori_side", "kind": "junction", "group": "g_seibu_chichibu_kagemori_side", "pref": "11", "export_name": "[西武秩父（影森方）]"}

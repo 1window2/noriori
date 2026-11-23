@@ -115,9 +115,13 @@ def rkm(rid):
 st_line=collections.defaultdict(set)
 for l,S in adj.items():
     for n in sorted(S):st_line[n].add(l)
+# compile이 끝 노드를 역 노드로 합치는 곳(edge_insert merge, 5번 결정): 합쳐질 노드에 닿는 노선은 합친 역 노드에 닿는다
+_MERGED_INTO={}
+for r_ in json.load(open(os.path.join(ROOT,'data','overrides','edge_insert.json'),encoding='utf-8'))['rows']:
+    if r_.get('merge'):_MERGED_INTO.setdefault(r_['into'],set()).add(r_['merge'])
 def _meets(l,x):
     """노선 l이 노드 x에 닿는가. 이관으로 칸 없이 계통만 받은 노선(弘南鉄道黒石線)은 계통 경로로 본다"""
-    return l in st_line.get(x,()) or any(x in (r['from'],r['to']) or x in (rpath.get(r['id']) or ()) for r in r_by_line[l])
+    return any(l in st_line.get(y,()) or any(y in (r['from'],r['to']) or y in (rpath.get(r['id']) or ()) for r in r_by_line[l]) for y in {x}|_MERGED_INTO.get(x,set()))
 # 위키 문서 색인
 idx={}
 d=os.path.join(IMP,'wiki')
@@ -513,7 +517,8 @@ def mentions(a,b):
     return False
 NOTTHROUGH=re.compile('はない|ではない|ていない|行わない|行われない|できない|休止|廃止|終了|取りやめ|取り止め|中止|打ち切|代わり|分断|不可|できず|行わ(れ)?ず')
 ends=collections.defaultdict(set)
-for r in routes:ends[r['line']]|={r['from'],r['to']}
+for r in routes:
+    if not r.get('old'):ends[r['line']]|={r['from'],r['to']}
 # ── 궤간·선로 방식. 노선 행 gauge = [{from_node, to_node, gauge, system, valid_from, valid_to}]. 구간이 비면 노선 전체.
 # 쇠바퀴 철도(일반 철도·지하철·노면전차)는 서로 들어갈 수 있고(U06), AGT·모노레일·리니어·강삭 등은 같은 방식끼리만 이어진다
 STEEL={'rail','subway','tram'}
@@ -813,7 +818,8 @@ for r in routes:
         for v in vs:junc.append(dict(line=r['line'],other=r['line'],other_route=r['id'],at=x,source='derived',verified=False,valid=v,**({'side':sd} if sd else {})))
 # ── 끝이 아닌 역의 이어짐은 분기로 바꾼다(綾瀬 常磐線·越後湯沢 上越新幹線, 2회차 종합 K01 kanto_1-033). 상대가 그 역에서 끝나면 그쪽으로 갈라지는 방향을,
 # 둘 다 지나가면 근거 행의 *_side를 쓴다. 끝난 기간 한정 직통(金沢·八戸)은 그때 끝 역이었으므로 그대로 둔다(compile era_end)
-def _ends_at(B,y):return [q for q in r_by_line[B] if y in (q['from'],q['to'])]
+# 옛 선형 계통(route old, 2번안 2026-11-23)의 끝은 옛 선로가 본선과 만나는 곳이지 노선 끝이 아니다 (京津線 옛 御陵 계통 끝 御陵: 東西線 이어짐 상대 계통을 가져감)
+def _ends_at(B,y):return [q for q in r_by_line[B] if y in (q['from'],q['to']) and not q.get('old')]
 out=[]
 for j in junc:
     A,B,x=j['line'],j['other'],j['at'];v=j.get('valid') or [None,'ongoing']
@@ -824,7 +830,8 @@ for j in junc:
         j=dict(j);j.pop('continue');out.append(j);stat['cont_to_branch']+=1;continue
     if y:
         k=dict(j);k.pop('continue')
-        rs=[q for q in r_by_line[B] if y in (rpath.get(q['id']) or (q['from'],q['to']))]
+        # 옛 선형 계통은 본 계통과 함께 이 노선의 한 줄이라 상대 계통을 고르는 후보에서 뺀다 (身延線 富士: 옛 富士–入山瀬 계통 1969 전)
+        rs=[q for q in r_by_line[B] if not q.get('old') and y in (rpath.get(q['id']) or (q['from'],q['to']))]
         re_=_ends_at(B,y)
         if not k.get('other_route') and len(rs)>1 and len(re_)==1:k['other_route']=re_[0]['id']
         nb=set(ladj[B].get(y,()))

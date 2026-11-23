@@ -310,6 +310,9 @@ class _Translations$session$ja implements Translations$session$ko {
 	);
 	@override String get lapLess => '1周減らす';
 	@override String get lapMore => '1周増やす';
+	@override String foldStops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
+		other: '${n}駅',
+	);
 	@override String away({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n,
 		other: '+${n}駅',
 	);
@@ -375,6 +378,8 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get from => '乗車';
 	@override String get to => '降車';
 	@override String get whyClosed => 'その日付には営業していなかった駅です';
+	@override String get whyViewSignal => '信号場・分岐点のため、ここで記録を始めたり終えたりできません';
+	@override String get whyViewNoBoarding => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません';
 	@override String get onlyDown => '下りのみ';
 	@override String get onlyUp => '上りのみ';
 	@override String get onlyOneWay => '片方向のみ';
@@ -420,6 +425,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String relocationOld({required Object km}) => '旧線 · ${km} km';
 	@override String relocationNew({required Object km}) => '新線 · ${km} km';
 	@override String get spokenOpen => '営業中';
+	@override String get spokenPassing => '旅客扱いなし';
 	@override String get spokenRidden => '乗車済み';
 }
 
@@ -1245,6 +1251,7 @@ extension on TranslationsJa {
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}周', ), 
 			'session.lapLess' => '1周減らす',
 			'session.lapMore' => '1周増やす',
+			'session.foldStops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '${n}駅', ), 
 			'session.away' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ja'))(n, other: '+${n}駅', ), 
 			'session.dateTitle' => '乗車日',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
@@ -1309,6 +1316,8 @@ extension on TranslationsJa {
 			'session.from' => '乗車',
 			'session.to' => '降車',
 			'session.whyClosed' => 'その日付には営業していなかった駅です',
+			'session.whyViewSignal' => '信号場・分岐点のため、ここで記録を始めたり終えたりできません',
+			'session.whyViewNoBoarding' => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません',
 			'session.onlyDown' => '下りのみ',
 			'session.onlyUp' => '上りのみ',
 			'session.onlyOneWay' => '片方向のみ',
@@ -1354,6 +1363,7 @@ extension on TranslationsJa {
 			'session.relocationOld' => ({required Object km}) => '旧線 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '新線 · ${km} km',
 			'session.spokenOpen' => '営業中',
+			'session.spokenPassing' => '旅客扱いなし',
 			'session.spokenRidden' => '乗車済み',
 			'data.osBackupLarge' => '記録ファイルが20MBを超え、Androidのクラウドバックアップに含まれない場合があります。バックアップフォルダを選んでください',
 			'data.title' => 'バックアップと復元',
@@ -1627,12 +1637,12 @@ extension on TranslationsJa {
 			'prefNames.19' => '長野',
 			'prefNames.20' => '岐阜',
 			'prefNames.21' => '静岡',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.22' => '愛知',
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',
 			'prefNames.25' => '京都',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.26' => '大阪',
 			'prefNames.27' => '兵庫',
 			'prefNames.28' => '奈良',

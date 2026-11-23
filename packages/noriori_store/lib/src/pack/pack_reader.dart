@@ -7,7 +7,7 @@ import '../db/user_db.dart';
 import '../records/record_queries.dart';
 
 /// 이 코드가 읽을 수 있는 데이터 팩의 스키마. 쿼리가 팩 스키마에 묶이므로 여기에 둔다.
-const supportedPackSchema = 2;
+const supportedPackSchema = 3;
 
 /// 팩의 규모. 판이 붙었는지 화면과 시험에서 확인하는 값이다.
 final class PackSummary {

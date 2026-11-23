@@ -73,11 +73,9 @@ final class Network {
     }
     for (final stop in data.stops) {
       (_picks[stop.routeId] ??= []).add(stop);
-      if (!stop.isExtension) {
-        (_stops[stop.routeId] ??= []).add(stop);
-        (_stopRoutes[stop.node] ??= {}).add(stop.routeId);
-        if (stop.isStop && data.publicNodes.contains(stop.node)) _shown.add(stop.node);
-      }
+      (_stops[stop.routeId] ??= []).add(stop);
+      (_stopRoutes[stop.node] ??= {}).add(stop.routeId);
+      if (stop.isStop && data.publicNodes.contains(stop.node)) _shown.add(stop.node);
     }
     for (final attr in data.attrs) {
       (_attrs[attr.edgeId] ??= []).add(attr);
@@ -388,14 +386,19 @@ final class Network {
   }
 
   /// 그날 이 계통이 속한 노선. 이관 전 날짜면 같은 사슬의 앞 노선이다 (DESIGN §8).
+  /// 그날 이 계통 노선이 가진 칸이 하나라도 있으면 그 노선이다. 첫 칸만 보면 넘겨준 옛 구간이 계통 머리에 있을 때
+  /// (徳島線 三縄–阿波池田, 1935부터 土讃線) 오늘 화면이 土讃線으로 나왔다 (2026-11-21)
   String lineOnDate(String routeId, DateSpan? date) {
     final line = routes[routeId]!.lineId;
     if (date == null) return line;
+    String? other;
     for (final hop in hops(routeId)) {
       final (attr, state) = attrOn(hop.edge, line, date);
-      if (attr != null && state == PeriodState.yes) return attr.lineId;
+      if (attr == null || state != PeriodState.yes) continue;
+      if (attr.lineId == line) return line;
+      other ??= attr.lineId;
     }
-    return line;
+    return other ?? line;
   }
 
   Usable edgeUsable(String routeId, String edge, DateSpan? date) {

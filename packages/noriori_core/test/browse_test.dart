@@ -74,7 +74,6 @@ final stripNetwork = Network(
         fromNode: 'a',
         toNode: 'e',
         closed: false,
-        extendTo: [],
       ),
     ],
     edges: const [
@@ -97,7 +96,7 @@ final stripNetwork = Network(
           node: node,
           kmCum: null,
           isStop: node != 'c',
-          isExtension: false,
+          
           period: span('1900-01-01', DateSpan.maxDate),
         ),
     ],

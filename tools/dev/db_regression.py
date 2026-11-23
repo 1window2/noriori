@@ -114,11 +114,11 @@ add('L-types','노선 종류',ty,True,'정보')
 # 9. 계통과 역
 r1=q("SELECT l.id FROM line l WHERE NOT EXISTS (SELECT 1 FROM route r WHERE r.line_id=l.id)")
 add('R-line','모든 노선에 계통',len(r1),not r1)
-r2=q("SELECT route_id FROM route_stop WHERE is_extension=0 GROUP BY route_id HAVING count(*)<2")
+r2=q("SELECT route_id FROM route_stop GROUP BY route_id HAVING count(*)<2")
 add('R-stops','모든 계통에 역 둘 이상',len(r2),not r2)
 mono=0
 prev={}
-for r,s,k in q("SELECT route_id,seq,km_cum FROM route_stop WHERE is_extension=0 AND km_cum IS NOT NULL ORDER BY route_id,seq"):
+for r,s,k in q("SELECT route_id,seq,km_cum FROM route_stop WHERE km_cum IS NOT NULL ORDER BY route_id,seq"):
     if r in prev and k+1e-9<prev[r]:mono+=1
     prev[r]=k
 add('R-km','계통 누계 km가 순번대로 줄지 않음',mono,mono==0)
@@ -143,7 +143,7 @@ def ov(a0,a1,b0,b1):
     return (a0 or '0000')<(b1 or '9999-12-31') and (b0 or '0000')<(a1 or '9999-12-31')
 loops={r for r, in q("SELECT id FROM route WHERE closed=1")}
 by=collections.defaultdict(list)
-for r,s,n,f,t in q("SELECT route_id,seq,node_id,valid_from_lo,valid_to_hi FROM route_stop WHERE is_stop=1 AND is_extension=0"):by[(r,n)].append((s,f,t))
+for r,s,n,f,t in q("SELECT route_id,seq,node_id,valid_from_lo,valid_to_hi FROM route_stop WHERE is_stop=1"):by[(r,n)].append((s,f,t))
 dup=[(r,n) for (r,n),v in by.items() if len(v)>1 and any(ov(a[1],a[2],b[1],b[2]) for i,a in enumerate(v) for b in v[i+1:]) and not (r in loops and len(v)==2)]
 add('X-dup-stop','한 계통에 같은 역이 같은 기간 두 번 정차 (닫힌 계통의 처음·끝 제외)',f'{len(dup)} {dup[:5]}',not dup)
 ja={i:t for i,t in q("SELECT entity_id,text FROM nm.name WHERE entity_type='node' AND lang='ja' AND line_id IS NULL AND valid_from IS NULL")}

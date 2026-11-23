@@ -47,7 +47,7 @@ Names used in the 1950s–70s whose reading (kana) we could not confirm from two
 
 - とさでん 城見町 suspension; 阪堺 five stops suspended in 1944 and reopened in 1955; 大阪市電 市岡元町五丁目 reopening; 阪神国道線 御幣島
 - Transfers: 嵐電 西院 to 京都市電 西大路四条; 大阪市電 浄正橋 to 福島 and 阿倍野橋
-- End dates or details for 神戸市電 高松, 京都市電 東寺道, 別大線 競輪場前, 豊橋 札木 (one-way stop), 岡崎市内線 地蔵堂, 水浜線 仲町, 秋田市電 連隊前 and 表鉄砲町, 名古屋市電 東起, 専売局前 and 池ノ端
+- End dates or details for 神戸市電 高松, 京都市電 東寺道, 別大線 競輪場前, 岡崎市内線 地蔵堂, 水浜線 仲町, 秋田市電 連隊前 and 表鉄砲町, 名古屋市電 東起, 専売局前 and 池ノ端
 </details>
 
 <details>
@@ -64,7 +64,7 @@ Names used in the 1950s–70s whose reading (kana) we could not confirm from two
 - 近鉄 江戸橋: 名古屋線–伊勢線 through services, 1950–1959
 - 大阪 京橋: track connection between 大阪環状線 and JR東西線
 - 十勝鉄道 下清水 to 国鉄 十勝清水 transfer (1950–1951)
-- 八木連絡線 closing date (1967); 東横線 神奈川 (1945–1950)
+- 東横線 神奈川 (1945–1950)
 - Whether the 鹿島臨海鉄道 大洗 through service ran after 1988
 - 秋田市電 新大工町線, September 1950 to February 1951: whether cars from 新大工町 ran on to 土崎 or to 県庁前 after the 県庁前 extension
 </details>
@@ -73,7 +73,7 @@ Names used in the 1950s–70s whose reading (kana) we could not confirm from two
 <summary>Distances (営業キロ)</summary>
 
 - 都電 菊川一丁目, 阪急 梅田 (old site), 豊橋 東田本線 old route, 松本電鉄 浅間線 学校前, 西武 拝島線 小平–萩山 (old section)
-- 福島交通 掛田 and 梁川, 北陸鉄道 金沢市内線 stops
+- 北陸鉄道 金沢市内線 stops
 - 秋田臨海鉄道 秋田博前 (the 1986 アッキー号)
 </details>
 

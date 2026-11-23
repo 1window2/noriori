@@ -15,7 +15,7 @@ def norm(s):return re.sub(r'[\s　]','',s.replace('【旧】','').replace('ヶ',
 cands=[(k,v) for k,v in fix.items() if isinstance(v,dict) and v.get('kind','line')=='line' and v.get('verdict')=='ok' and v.get('stations') and not isinstance(v['stations'][0][0],list)]
 random.Random(SEED).shuffle(cands)
 by={}
-for rid,seq,node,km,st in db.execute("SELECT route_id,seq,node_id,km_cum,is_stop FROM route_stop WHERE is_extension=0"):
+for rid,seq,node,km,st in db.execute("SELECT route_id,seq,node_id,km_cum,is_stop FROM route_stop"):
     by.setdefault(rid,[]).append((seq,node,km,st))
 out=[];checked=0
 for k,v in cands:

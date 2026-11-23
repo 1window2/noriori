@@ -517,8 +517,10 @@ for mv in MOVED:
     if got:pos[mv['old']].update(lon=round(got[0],6),lat=round(got[1],6),source='n02',quality='precise');PU[mv['old']]=(got[0],got[1],'moved')
     else:WEAK.add(mv['old'])
 byline=collections.defaultdict(lambda:collections.defaultdict(list))
+# 옛 선형 계통(route old)의 칸은 예전 alt=old 칸처럼 본선 사슬에 넣지 않는다 (2번안 2026-11-23, 仙石線 東名–野蒜이 옛 선로로 잡힘)
+_OLDR={r['id'] for r in load('routes') if r.get('old')}
 for e in edges:
-    if e.get('alt')=='old':continue
+    if e.get('alt')=='old' or e.get('route_only') in _OLDR:continue
     byline[e['seed_line']][e['a']].append(e);byline[e['seed_line']][e['b']].append(e)
 def other(e,n):return e['b'] if e['a']==n else e['a']
 def stop_on(n,lid,src,pt):

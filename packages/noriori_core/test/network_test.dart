@@ -27,7 +27,7 @@ NetStop stop(String routeId, int seq, String node, {NetPeriod period = ongoing, 
       node: node,
       kmCum: null,
       isStop: true,
-      isExtension: false,
+      
       period: period,
       kmEstimated: estimated,
     );
@@ -73,7 +73,6 @@ Network sample() => Network(
             fromNode: 'a',
             toNode: 'c',
             closed: false,
-            extendTo: [],
           ),
           NetRoute(
             id: 'loop',
@@ -82,7 +81,6 @@ Network sample() => Network(
             fromNode: 'x',
             toNode: 'x',
             closed: true,
-            extendTo: [],
           ),
         ],
         edges: const [
@@ -353,7 +351,6 @@ void main() {
                 fromNode: 'p',
                 toNode: 'q',
                 closed: false,
-                extendTo: [],
               ),
             ],
             edges: const [NetEdge(id: 'pq', n: 1, from: 'p', to: 'q', meters: 100)],
@@ -515,7 +512,6 @@ void main() {
               fromNode: 'p',
               toNode: 'q',
               closed: false,
-              extendTo: [],
             ),
           ],
           edges: const [NetEdge(id: 'pq', n: 1, from: 'p', to: 'q', meters: 100)],
@@ -566,7 +562,7 @@ void main() {
       final twice = Network(
         NetworkData(
           routes: const [
-            NetRoute(id: 't', lineId: 'l', role: 'main', fromNode: 'p', toNode: 'q', closed: false, extendTo: []),
+            NetRoute(id: 't', lineId: 'l', role: 'main', fromNode: 'p', toNode: 'q', closed: false),
           ],
           edges: const [NetEdge(id: 'pq', n: 1, from: 'p', to: 'q', meters: 100)],
           routeEdges: const [NetRouteEdge(routeId: 't', seq: 0, edgeId: 'pq')],
@@ -578,9 +574,16 @@ void main() {
               node: 'q',
               kmCum: null,
               isStop: true,
-              isExtension: false,
+              
               period: ongoing,
               gaps: [NetPeriod(fromLo: '1944-01-01', fromHi: '1944-12-31', toLo: '1995-12-22', toHi: '1995-12-22')],
+              // 계통 끝 역이 서지 않는 동안 고를 수 있는 기간과 정체는 컴파일이 정한다(route_stop_select). 역은 있으나 서지 않으니 「승하차 불가」
+              selectSpans: [
+                NetSelectSpan(
+                  period: NetPeriod(fromLo: '1944-12-31', fromHi: '1944-12-31', toLo: '1995-12-22', toHi: '1995-12-22'),
+                  style: 'nostop',
+                ),
+              ],
             ),
           ],
           attrs: [attr('pq', 'l')],
@@ -617,9 +620,12 @@ void main() {
       expect(interpreter.unridable(on('1944-06-01')), isFalse);
       expect(interpreter.unridable(on('197X-XX-XX')), isTrue);
       expect(interpreter.unridable(on('199X-XX-XX')), isFalse);
+      // 이 시험의 印場는 계통 끝이라, 서지 않는 날에는 고를 수 있는 「승하차 불가」 끝 노드다(역이라 회색이 아니다, 결정 A 추천안 2026-11-21).
+      // 고를 수 있는지는 컴파일이 준 기간(selectSpans)만 본다. 실제 印場처럼 중간 역이면 그 기간이 없어 고를 수 없는 폐역이다
       final rows = SelectorBuilder(twice).build('t', DateSpan.parse('1970-05-01'));
-      expect(rows.last.state, StopState.closed);
-      expect(rows.last.selectable, isFalse);
+      expect(rows.last.noBoarding, isTrue);
+      expect(rows.last.passing, isFalse);
+      expect(rows.last.selectable, isTrue);
     });
 
     test('분모 밖 구간은 저장 전 값에 나오지 않는다', () {
@@ -633,7 +639,6 @@ void main() {
               fromNode: 'p',
               toNode: 'q',
               closed: false,
-              extendTo: [],
             ),
           ],
           edges: const [NetEdge(id: 'pq', n: 1, from: 'p', to: 'q', meters: 100)],

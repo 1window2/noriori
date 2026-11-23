@@ -3844,7 +3844,7 @@
 - {"edge": "e_010241", "km": 1.8, "source": "noritsubushi+wikipedia"}
 - {"edge": "e_010242", "km": 1.6, "source": "noritsubushi"}
 - {"edge": "e_010243", "km": 1.6, "source": "noritsubushi"}
-- {"edge": "e_010244", "km": 0.4, "source": "noritsubushi"}
+- {"edge": "e_010244", "km": 0.4, "source": "noritsubushi+wikipedia"}
 - {"edge": "e_010245", "km": 0.5, "source": "noritsubushi+wikipedia"}
 - {"edge": "e_010246", "km": 1.2, "source": "noritsubushi"}
 - {"edge": "e_010247", "km": 1.1, "source": "noritsubushi"}

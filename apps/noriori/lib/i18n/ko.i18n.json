@@ -164,6 +164,9 @@
     },
     "lapLess": "한 바퀴 줄이기",
     "lapMore": "한 바퀴 늘리기",
+    "foldStops": {
+      "other": "$n역"
+    },
     "away": {
       "other": "+$n역"
     },
@@ -236,6 +239,8 @@
     "from": "출발",
     "to": "도착",
     "whyClosed": "그 날짜에는 운영하지 않던 역입니다",
+    "whyViewSignal": "신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요",
+    "whyViewNoBoarding": "이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요",
     "onlyDown": "하행만",
     "onlyUp": "상행만",
     "onlyOneWay": "한 방향만",
@@ -281,6 +286,7 @@
     "relocationOld": "옛 선로 · $km km",
     "relocationNew": "새 선로 · $km km",
     "spokenOpen": "영업 중",
+    "spokenPassing": "승하차 불가",
     "spokenRidden": "탄 역"
   },
   "data": {

@@ -14,7 +14,7 @@ NetStop _stop(String route, int seq, String node, double km, NetPeriod period, {
       node: node,
       kmCum: km,
       isStop: isStop,
-      isExtension: false,
+      
       period: period,
     );
 
@@ -40,8 +40,8 @@ SelectorLink _link(int seq, String line, {String? from, String? to}) => Selector
 final _network = Network(
   NetworkData(
     routes: const [
-      NetRoute(id: 'r_jr', lineId: 'jr', role: 'main', fromNode: 'a', toNode: 'd', closed: false, extendTo: []),
-      NetRoute(id: 'r_3s', lineId: '3s', role: 'main', fromNode: 'b', toNode: 'd', closed: false, extendTo: []),
+      NetRoute(id: 'r_jr', lineId: 'jr', role: 'main', fromNode: 'a', toNode: 'd', closed: false),
+      NetRoute(id: 'r_3s', lineId: '3s', role: 'main', fromNode: 'b', toNode: 'd', closed: false),
     ],
     edges: const [
       NetEdge(id: 'ab', n: 1, from: 'a', to: 'b', meters: 1000),

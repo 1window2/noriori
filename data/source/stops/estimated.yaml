@@ -63,11 +63,11 @@
 - {"route": "r_azumabashi_line", "node": "n_kikuyabashi"}
 - {"route": "r_azumabashi_line", "node": "n_matsugaya_1_chome"}
 - {"route": "r_azumabashi_line", "node": "n_shitayajinjamae"}
-- {"route": "r_azumada_main_line", "node": "n_fudagi_old"}
 - {"route": "r_azumada_main_line_azumadasakaue_azumada", "node": "n_azumada_old"}
 - {"route": "r_azumada_main_line_azumadasakaue_azumada", "node": "n_honshamae_toyohashi"}
 - {"route": "r_azumada_main_line_ekimae_shimmei", "node": "n_matsubacho"}
 - {"route": "r_azumada_main_line_ekimae_shimmei", "node": "n_shinzenimachi"}
+- {"route": "r_azumada_main_line_shimmei_toyohashi_shiyakushomae_toyohashi", "node": "n_fudagi_old"}
 - {"route": "r_bancho_line_toei", "node": "n_kudanue"}
 - {"route": "r_bancho_line_toei", "node": "n_sanbancho"}
 - {"route": "r_banetsu_west_line", "node": "n_shidahama"}
@@ -162,7 +162,7 @@
 - {"route": "r_fujisaki_line_fujisakigu_mae_kami_kumamoto_kumamoto", "node": "n_uchitsuboi"}
 - {"route": "r_fukubu_line", "node": "n_hommachidori"}
 - {"route": "r_fukubu_line_fukui_joshi_daimyomachi_tawaramachi", "node": "n_matsumotodori"}
-- {"route": "r_fukuchiyama_line", "node": "n_takedao_fukuchiyama"}
+- {"route": "r_fukuchiyama_line_namaze_dojo", "node": "n_takedao_fukuchiyama"}
 - {"route": "r_fukushima_line", "node": "n_harayashiki"}
 - {"route": "r_fukushima_line", "node": "n_shimoyoshida_fukushima"}
 - {"route": "r_furukawa_line", "node": "n_akabanebashi"}
@@ -218,7 +218,7 @@
 - {"route": "r_hakodate_tram_main_line", "node": "n_kamedacho"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_onoshindo"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_wakamatsucho"}
-- {"route": "r_hakubi_line", "node": "n_hiwa_hakubi"}
+- {"route": "r_hakubi_line_gokei_minagi", "node": "n_hiwa_hakubi"}
 - {"route": "r_hakusan_line", "node": "n_hakusan_1_chome"}
 - {"route": "r_hakusan_line", "node": "n_hakusanshita_toei"}
 - {"route": "r_hakusan_line", "node": "n_hakusanue"}
@@ -471,7 +471,7 @@
 - {"route": "r_jonan_line_nishi_nippon", "node": "n_torikai_nishi_nippon"}
 - {"route": "r_jonan_line_nishi_nippon", "node": "n_yakuin_odori_nishi_nippon"}
 - {"route": "r_kabe_line", "node": "n_kami_yagi_old"}
-- {"route": "r_kabe_line", "node": "n_mitaki_kabe"}
+- {"route": "r_kabe_line_yokogawa_aki_nagatsuka", "node": "n_mitaki_kabe"}
 - {"route": "r_kachidokibashi_line", "node": "n_kachidokibashi"}
 - {"route": "r_kachidokibashi_line", "node": "n_tsukishima_toei"}
 - {"route": "r_kagashima_line", "node": "n_minato_kagashima"}

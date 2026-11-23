@@ -11,6 +11,7 @@ import '../features/data/ui/blocked_start_screen.dart';
 import '../features/data/ui/restore_screen.dart';
 import '../i18n/strings.g.dart';
 import 'bootstrap.dart';
+import 'debug_open.dart';
 import 'session_providers.dart';
 import 'theme/app_theme.dart';
 import 'router.dart';
@@ -162,6 +163,7 @@ class _SessionAppState extends State<_SessionApp> {
     return ProviderScope(
       overrides: _overrides(session, widget.world),
       child: _Lifecycle(
+        router: _router,
         child: Consumer(
           builder: (context, ref, _) => MaterialApp.router(
             title: context.t.app.name,
@@ -182,7 +184,9 @@ class _SessionAppState extends State<_SessionApp> {
 
 /// 앱이 백그라운드로 갈 때 체크포인트와 자동 백업을 한다.
 class _Lifecycle extends ConsumerStatefulWidget {
-  const _Lifecycle({required this.child});
+  const _Lifecycle({required this.child, required this.router});
+
+  final GoRouter router;
 
   final Widget child;
 
@@ -197,6 +201,7 @@ class _LifecycleState extends ConsumerState<_Lifecycle> {
   void initState() {
     super.initState();
     _lifecycle = AppLifecycleListener(onPause: _paused, onResume: _resumed);
+    WidgetsBinding.instance.addPostFrameCallback((_) => debugOpen(ref, widget.router));
     ref.read(backupControllerProvider);
     WidgetsBinding.instance.addPostFrameCallback(
       (_) => ref.read(sessionProvider).deleteUnusedPacks(),

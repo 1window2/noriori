@@ -613,15 +613,15 @@ for lk,ps in BASE.items():
             if strict and not any(s.old or getattr(s,'move_of',None) or s.nm in nms for s,_ in c.seq[1:-1]):continue
             return d
         return None
-    keep=[]
+    # 옛 선형(선로 付替 전 부품·옛 선로 부품)은 늘 따로 계통이다. 지금 계통 안 옛 선로(alt old)로 싣지 않는다.
+    # 같은 노선의 계통들은 역 선택기가 그날의 한 줄로 잇고 다른 시기 선형은 접는다 (DESIGN §8.3, 사용자 결정 2026-11-23 2번안)
+    old_alt=set()
     for c in chains:
-        if c.parts[0].g=='tm' and len(chains)>1:
-            host=host_of(c,chains,False)
-            if host:
-                host.alts.append(c);continue
-        keep.append(c)
-    chains=keep
-    for c in chains:c.role='main'
+        if c.parts[0].g=='tm' and len(chains)>1 and host_of(c,chains,False):old_alt.add(id(c))
+    for c in chains:
+        c.role='branch' if id(c) in old_alt else 'main'
+        # 옛 선형 계통: 사건(폐지 사유 relocated, 손 휴지 표 「노선@old」)은 예전 옛 선로(alt)와 같게 만든다
+        c.oldalign=id(c) in old_alt
     def oldroute(p):
         """지금 노선의 옛 선형 부품(N05·폐선 표의 旧線). 전 구간이 닫혔고 본선 선로를 같이 쓰지 않는다"""
         if p.g not in('old','tm') or p.n05shared or p.extra or getattr(p,'n05subsec',False):return False
@@ -633,8 +633,7 @@ for lk,ps in BASE.items():
         c=P();c.parts=[p];c.seq=[(s,p) for s in p.st];c.alts=[]
         # 옛 선형(田立·東青山·土佐穴内 옛 선로)은 따로 계통이 아니라 지금 계통의 옛 선로다 (常磐線 新地·坂元·山下 모델).
         # 그 시절 날짜에 지금 계통 하나로 옛 자리 역까지 기록하고, 새 자리 역 정차는 compile의 역 이전 자르기가 이전일부터로 둔다
-        host=host_of(c,chains,True) if oldroute(p) and chains else None
-        if host:host.alts.append(c);continue
+        c.oldalign=bool(oldroute(p) and chains and host_of(c,chains,True))
         c.role='branch';chains.append(c)
     # 공식 기점이 정해진 노선(hand_tables LINE_AXIS)은 km 축을 기점에서 한 줄로 둔다. 표가 끝 구간을 따로 적어 기점이 다른 계통이 둘 이상 생긴 곳
     # (頸城鉄道 百間町 기점 두 토막 → 新黒井 0.0 한 줄, 名鉄 三河線 西中金–猿投–碧南–吉良吉田, 羽後交通 横荘線 横手 기점)을 기점 쪽부터 잇는다 (3회차 chubu_2-12·chubu_2-13·tohoku_2-014, 8회차 W1b)
@@ -1057,6 +1056,8 @@ def build_chain(c,l,alt=None,host=None):
         r=dict(id=rid,line=l,role=c.role)
         r['from']=ns[0];r['to']=ns[-1]
         if owned:r['owned']=True
+        # 옛 선형 계통 표식: 선형 생성이 본선 사슬에서 빼고(예전 alt=old 칸과 같게) 옛 선로로 따로 잇는다 (2번안 2026-11-23)
+        if getattr(c,'oldalign',False):r['old']=True
         if owned and also:r['also']=also
         if any(getattr(q,'route_extra',False) for q in c.parts):r['extra']=True
         if len(set(ns))<len(ns):r['closed']=True;r['seq']=ns
@@ -1264,7 +1265,7 @@ for lk,ps,ch in line_rel:
                     for i in range(a,b):
                         closed[i]=d;closed_s[i]=part.s['close']
                         # 화물선을 모선의 지선 계통으로 둔 표(route_extra, 여객 이력 있는 화물·연결선)의 끝은 여객 운행이 끝난 것이다. 선로는 화물로 남으니 폐지가 아니라 정기 운행 없음 (新金線·北方貨物線·馬橋支線·北小金支線, 3회차 kanto_3-21)
-                        reason[i]='relocated' if alt else ('brt' if (part.name,c.seq[a][0].name) in BRT else REASON.get(part.name,'no_regular_service' if getattr(part,'route_extra',False) else 'abolished'))
+                        reason[i]='relocated' if alt or getattr(c,'oldalign',False) else ('brt' if (part.name,c.seq[a][0].name) in BRT else REASON.get(part.name,'no_regular_service' if getattr(part,'route_extra',False) else 'abolished'))
             # 표의 구간 행이 순환·숨은 노드 때문에 안 풀린 곳
             for part in c.parts:
                 po_=[i for i,(s_,q_) in enumerate(c.seq) if q_ is part and i<n]
@@ -1385,7 +1386,7 @@ for lk,ps,ch in line_rel:
             # 지금 불통인 구간. 폐지 신고 전까지 현행으로 둔다 (§3.2)
             for part in c.parts:
                 nms_={t_ for s_ in part.st for t_ in (s_.name,s_.nm,znorm(s_.name))}
-                for x in (SUSPENDED.get(part.name+'@old',[]) if alt else SUSPENDED.get(part.name,[])+SUSPENDED.get(f'{part.name}|{part.cn}',[])+part.x_susp):
+                for x in (SUSPENDED.get(part.name+'@old',[]) if alt or getattr(c,'oldalign',False) else SUSPENDED.get(part.name,[])+SUSPENDED.get(f'{part.name}|{part.cn}',[])+part.x_susp):
                     if not(({x[0],znorm(x[0])}&nms_) and ({x[1],znorm(x[1])}&nms_)):continue
                     for a,b,d in spans(c,part,[[f'{x[0]}～{x[1]}','0',x[2]]]):
                         o_={'route':rid} if owned else {}

@@ -169,6 +169,10 @@
     },
     "lapLess": "Remove a lap",
     "lapMore": "Add a lap",
+    "foldStops": {
+      "one": "$n stop",
+      "other": "$n stops"
+    },
     "away": {
       "one": "+$n stop",
       "other": "+$n stops"
@@ -244,6 +248,8 @@
     "from": "From",
     "to": "To",
     "whyClosed": "This station wasn't open on that date",
+    "whyViewSignal": "This is a signal or junction, so a ride can't start or end here",
+    "whyViewNoBoarding": "This line doesn't stop here, so a ride can't start or end here",
     "onlyDown": "Down only",
     "onlyUp": "Up only",
     "onlyOneWay": "One way",
@@ -289,6 +295,7 @@
     "relocationOld": "Old alignment · $km km",
     "relocationNew": "New alignment · $km km",
     "spokenOpen": "open",
+    "spokenPassing": "no passenger service",
     "spokenRidden": "ridden"
   },
   "data": {

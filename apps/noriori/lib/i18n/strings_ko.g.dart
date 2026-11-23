@@ -516,6 +516,11 @@ class Translations$session$ko {
 	/// ko: '한 바퀴 늘리기'
 	String get lapMore => '한 바퀴 늘리기';
 
+	/// ko: '(other) {$n역}'
+	String foldStops({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
+		other: '${n}역',
+	);
+
 	/// ko: '(other) {+$n역}'
 	String away({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n,
 		other: '+${n}역',
@@ -698,6 +703,12 @@ class Translations$session$ko {
 	/// ko: '그 날짜에는 운영하지 않던 역입니다'
 	String get whyClosed => '그 날짜에는 운영하지 않던 역입니다';
 
+	/// ko: '신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요'
+	String get whyViewSignal => '신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요';
+
+	/// ko: '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요'
+	String get whyViewNoBoarding => '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요';
+
 	/// ko: '하행만'
 	String get onlyDown => '하행만';
 
@@ -832,6 +843,9 @@ class Translations$session$ko {
 
 	/// ko: '영업 중'
 	String get spokenOpen => '영업 중';
+
+	/// ko: '승하차 불가'
+	String get spokenPassing => '승하차 불가';
 
 	/// ko: '탄 역'
 	String get spokenRidden => '탄 역';
@@ -2231,6 +2245,7 @@ extension on Translations {
 			'session.laps' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}바퀴', ), 
 			'session.lapLess' => '한 바퀴 줄이기',
 			'session.lapMore' => '한 바퀴 늘리기',
+			'session.foldStops' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '${n}역', ), 
 			'session.away' => ({required num n}) => (_root.$meta.cardinalResolver ?? PluralResolvers.cardinal('ko'))(n, other: '+${n}역', ), 
 			'session.dateTitle' => '탑승일',
 			'session.dateHint' => '2015, 2015-03, 2015-03-14, 198X',
@@ -2295,6 +2310,8 @@ extension on Translations {
 			'session.from' => '출발',
 			'session.to' => '도착',
 			'session.whyClosed' => '그 날짜에는 운영하지 않던 역입니다',
+			'session.whyViewSignal' => '신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요',
+			'session.whyViewNoBoarding' => '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요',
 			'session.onlyDown' => '하행만',
 			'session.onlyUp' => '상행만',
 			'session.onlyOneWay' => '한 방향만',
@@ -2340,6 +2357,7 @@ extension on Translations {
 			'session.relocationOld' => ({required Object km}) => '옛 선로 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '새 선로 · ${km} km',
 			'session.spokenOpen' => '영업 중',
+			'session.spokenPassing' => '승하차 불가',
 			'session.spokenRidden' => '탄 역',
 			'data.osBackupLarge' => '기록 파일이 20MB를 넘어 Android 클라우드 백업에 들어가지 않을 수 있어요. 백업 폴더를 골라 두세요',
 			'data.title' => '백업과 복원',
@@ -2613,12 +2631,12 @@ extension on Translations {
 			'prefNames.19' => '나가노',
 			'prefNames.20' => '기후',
 			'prefNames.21' => '시즈오카',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.22' => '아이치',
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',
 			'prefNames.25' => '교토',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.26' => '오사카',
 			'prefNames.27' => '효고',
 			'prefNames.28' => '나라',

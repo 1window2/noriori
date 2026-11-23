@@ -263,18 +263,26 @@
 "lon": 136.648889,
 "pos_src": "wikidata",
 "pos_note": "三岐朝明信号場. Wikidata 좌표",
-"ja": "三岐朝明",
-"kana": "さんぎあさけ",
-"ko": "산기아사케",
-"en": "Sangi-Asake",
-"why": "1950-10-30~1989-04-01 역(三岐朝明駅), 그 뒤 신호장. 楓(2004 신호장화)처럼 역 이름으로: 위키 三岐朝明信号場 r106020979 よみがな 「さんぎあさけ」·ローマ字 SANGI-ASAKE, 한국어는 규칙 표기(나무위키 문서 없음) (7회차 구조 2026-11-14; r6out/B kinki_3-035)"
+"ja": "三岐朝明信号場",
+"kana": "さんぎあさけしんごうじょう",
+"ko": "산기아사케 신호장",
+"en": "Sangi-Asake Signal",
+"why": "1950-10-30~1989-04-01 역(三岐朝明駅), 그 뒤 신호장. 지금 상태(신호장)를 기본 이름으로, 역이던 때 이름은 기간 이름(source_patch names r5_signal_names_2026-11-21, 사용자 결정 2026-11-21: 격하 뒤는 신호장 이름, 날짜 모름은 마지막 상태). 옛 판단: 위키 三岐朝明信号場 r106020979 よみがな 「さんぎあさけ」·ローマ字 SANGI-ASAKE, 한국어는 규칙 표기(나무위키 문서 없음) (7회차 구조 2026-11-14; r6out/B kinki_3-035)"
 },
 "n_seibu_chichibu_kagemori_side": {
+"ja": "分岐点（御花畑）",
+"ko": "분기점(오하나바타케)",
+"en": "Jct. (Ohanabatake)",
+"why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름 없음(위와 같은 조사). 놓인 본선(秩父本線)을 따라 가장 가까운 역 御花畑",
 "lat": 35.9889,
 "lon": 139.08237,
 "pos_note": "西武秩父 연락선과 秩父本線의 影森방 분기. N02 조각의 분기점"
 },
 "n_seibu_chichibu_through": {
+"ja": "分岐点（西武秩父）",
+"ko": "분기점(세이부치치부)",
+"en": "Jct. (Seibu-Chichibu)",
+"why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름 없음(위키 西武秩父駅·御花畑駅·西武秩父線 配線略図·日本の信号場一覧 확인, 2026-11-19 조사). 놓인 본선(西武秩父線)을 따라 가장 가까운 역 西武秩父",
 "lat": 35.98896,
 "lon": 139.08262,
 "pos_note": "西武秩父線에서 연락선이 갈리는 점. N02 조각의 분기점"
@@ -285,6 +293,10 @@
 "pos_note": "연락선이 秩父本線과 만나는 御花畑방 점. 0.2km를 N02 선로 위에서 잼"
 },
 "n_yamato_yagi_uehommachi_side": {
+"ja": "分岐点（大和八木）",
+"ko": "분기점(야마토야기)",
+"en": "Jct. (Yamato-Yagi)",
+"why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름 없음(위키 大和八木駅 構内配線略図 확인, 2026-11-19 조사). 놓인 본선(大阪線)을 따라 가장 가까운 역 大和八木",
 "lat": 34.51483,
 "lon": 135.78844,
 "pos_note": "大阪線 上本町방 분기. N02 조각의 분기점"
@@ -295,11 +307,19 @@
 "pos_note": "八木連絡線의 八木西口방 끝. 0.2km를 N02 선로 위에서 잼"
 },
 "n_ise_nakagawa_uehommachi_side": {
+"ja": "宮古分岐",
+"ko": "宮古 분기점",
+"en": "宮古 Jct.",
+"why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름. ja.wikipedia 伊勢中川駅 oldid=110287982 「大阪上本町方の分岐点は「宮古分岐」」(중간) · 近鉄大阪線 oldid=111364868 「川合高岡駅 - 宮古分岐（中川短絡線分岐点）間複線化」(중간). 읽기 근거가 없어 고유한 부분은 한자 그대로, 分岐만 옮김",
 "lat": 34.63961,
 "lon": 136.47371,
 "pos_note": "中川短絡線과 大阪線의 분기. N02 조각의 분기점"
 },
 "n_ise_nakagawa_nagoya_side": {
+"ja": "黒田分岐",
+"ko": "黒田 분기점",
+"en": "黒田 Jct.",
+"why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름. ja.wikipedia 伊勢中川駅 oldid=110287982 「名古屋方の分岐点は「黒田分岐」の名称がある」(중간). 읽기 근거가 없어 고유한 부분은 한자 그대로, 分岐만 옮김",
 "lat": 34.64037,
 "lon": 136.47703,
 "pos_note": "中川短絡線과 名古屋線의 분기. N02 조각의 분기점"
@@ -441,6 +461,8 @@
 "pos_note": "常磐線 坂元 옛 역 (2016-12-10 이전 전). N02 2008판 승강장 가운데"
 },
 "n_yamashita_old": {
+"kana": "やました",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=111627543 「'''山下駅'''（やましたえき）」 (중간)",
 "lat": 37.96702,
 "lon": 140.90093,
 "pos_src": "n02",
@@ -453,6 +475,8 @@
 "pos_note": "気仙沼線 志津川. BRT 정류장 좌표가 붙어 있었다. N02 2008판 승강장 가운데"
 },
 "n_omagari_shinmei": {
+"kana": "おおまがり",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=109464384 「'''大曲仮乗降場'''（おおまがりかりじょうこうじょう）」 (중간)",
 "lat": 44.228732,
 "lon": 142.164265,
 "pos_src": "n05",
@@ -635,10 +659,11 @@
 "why": "ja.wikipedia 枇杷島分岐点 정의문 읽기 (읽기 조사 2026-11-08). 계통 이름에 쓰임"
 },
 "n_komaino_junction": {
-"kana": "こまいのぶんきてん",
-"ko": "코마이노 분기점",
-"en": "Komaino Junction",
-"why": "駒井野 지명 읽기 + 分岐点(신뢰도 중간) (읽기 조사 2026-11-08). 계통 이름에 쓰임"
+"ja": "駒井野信号場",
+"kana": "こまいのしんごうじょう",
+"ko": "코마이노 신호장",
+"en": "Komaino Signal",
+"why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름은 「分岐点」이 아니라 駒井野信号場(1991 개설, 2026-11-19 조사: 위키 京成東成田線·成田空港線 문서). 읽기는 기존 駒井野(こまいの, 2026-11-08 조사)에 信号場"
 },
 "n_sagami_ono_junction": {
 "kana": "さがみおおのぶんきてん",
@@ -1096,8 +1121,8 @@
 "why": "읽기 근거를 못 찾아(r3 insert_pkg2·coverage3) 같은 이름 다른 역의 읽기가 붙지 않게 지우고 일본어 표기 그대로 둠"
 },
 "n_koshiji_hakodate": {
-"kana": null,
-"why": "읽기 근거를 못 찾아(r3 insert_pkg2·coverage3) 같은 이름 다른 역의 읽기가 붙지 않게 지우고 일본어 표기 그대로 둠"
+"kana": "こしじ",
+"why": "[읽기 2026-11-21] 위키 越路仮乗降場 https://ja.wikipedia.org/w/index.php?oldid=111626993 「越路仮乗降場（こしじかりじょうこうじょう）」(중간, 근거 하나). 昆布–狩太(ニセコ) 사이, 『ニセコ町史』 1951-06~1962-04. 나무위키 하코다테 본선/역 목록(2026-09-06 판)에는 없음. 예전: 읽기 근거를 못 찾아(r3 insert_pkg2·coverage3) 지웠던 행"
 },
 "n_miyakomachi_hiroden": {
 "kana": "みやこまち",
@@ -1645,5 +1670,117 @@
 "n_yonemachi": {"kana": "こめまち", "ko": "코메마치", "en": "Komemachi", "why": "읽기 こめまち: railforum 『昭和時代』 기간 목록 텍스트 113행 「米町 こめまち」 1930.04.01~1926.02.01 이웃 沼尻·知人; railforum 『昭和時代』 기간 목록 텍스트 144행 「米町 こめまち」 1937.01.10~1963.11.01 이웃 沼尻·知人; railforum 『停車場一覧1953.09.30』 텍스트 50행 「米町 こめまち」 1926.02.01 이웃 沼尻·知人; 鉄道省 編纂『鉄道停車場一覧』昭和12年10月1日現在 https://dl.ndl.go.jp/pid/1207554/1/152 쪽 그림 판독 「釧路臨港鉄道 城山·入舟町間 표: 沼尻 ぬましり / 米町 こめまち / 知人 しれと」 (10회차 D3 2026-11-16). 한국어·영어는 규칙 표기"},
 "n_yoshizawa_kinuta": {"kana": "よしざわ", "ko": "요시자와", "en": "Yoshizawa", "why": "읽기 よしざわ: railforum 『昭和時代』 기간 목록 텍스트 21298행 「吉沢 よしざわ」 1938.04.15~1924.03.01 이웃 中耕地; railforum 『昭和時代』 기간 목록 텍스트 21435행 「吉沢 よしざわ」 1938.04.15~1939.10.01 이웃 中耕地; railforum 『昭和時代』 기간 목록 텍스트 21544행 「吉沢 よしざわ」 1939.10.01~1939.10.16 이웃 中耕地; railforum 『昭和時代』 기간 목록 텍스트 21696행 「吉沢 よしざわ」 1920.08.24~1939.10.16 이웃 中耕地 (10회차 D3 2026-11-16). 한국어·영어는 규칙 표기 (한국어 나무위키)"},
 "n_heijima_old": {"lat": 37.891405, "lon": 139.008889, "pos_note": "平島(I) 1933–1971 자리: N05 EB03_16430004 平島 1950–1970 점(위키 新潟交通電車線 지도 「平島駅（1971年まで）」 37.89087,139.00882와 60 m) (10회차 G2 2026-11-16; audit4 chubu_1-008)"},
-"n_saginoyuonsenmae_old": {"lat": 35.379759, "lon": 133.193087, "pos_note": "温泉前(옛 자리) 1929–[1950..1952]: N05 EB03_21404011 広瀬線 温泉前 1950년 판 점 (10회차 G2 2026-11-16; audit4 chugoku_shikoku_1-011)"}
+"n_saginoyuonsenmae_old": {"lat": 35.379759, "lon": 133.193087, "pos_note": "温泉前(옛 자리) 1929–[1950..1952]: N05 EB03_21404011 広瀬線 温泉前 1950년 판 점 (10회차 G2 2026-11-16; audit4 chugoku_shikoku_1-011)"},
+"n_kami_nuttari": {"ja": "上沼垂信号場", "kana": "かみぬったりしんごうじょう", "ko": "카미눗타리 신호장", "en": "Kami-Nuttari Signal", "why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름. ja.wikipedia 白新線 oldid=111454909 「上沼垂信号場-新発田間」·노선도 「1.9 上沼垂信号場」(중간). 읽기는 기존 上沼垂(かみぬったり)에 信号場"},
+"n_toyama_chiho_branch_junction": {"ja": "支線接続点", "ko": "지선 접속점", "en": "Branch Connection", "why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-20): 공식 이름. ja.wikipedia 富山地方鉄道富山軌道線 oldid=109684687 「富山駅南北接続線：支線接続点 - 富山駅」(중간). 고유 이름이 아니라 「支線(지선)」+「接続点」이라 둘 다 옮김"},
+"n_kaho_signal": {"ja": "嘉穂信号場", "kana": "かほしんごうじょう", "ko": "카호 신호장", "en": "Kaho Signal", "why": "끝 노드 이름 (5번 결정 junction-nodes-rule, 2026-11-21): 漆生線 稲築–下山田(1966-03-10)이 上山田線과 만나는 신호장. 계통 끝을 날마다 정하게 되어 漆生線 자기 선로의 끝 노드가 됨. 공식 이름·세 언어"},
+"n_ashigawa_soya_main": {
+"kana": "あしかわ",
+"ko": "아시카와",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=111651122 「'''芦川駅'''（あしかわえき）」 (중간) · 나무위키 https://namu.wiki/w/%EC%95%84%EC%8B%9C%EC%B9%B4%EC%99%80%EC%97%AD"
+},
+"n_ayameike_chikko_line_nagoya_city": {
+"kana": "しょうぶいけ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=102169050 「菖蒲池 |しょうぶいけ」 (중간)"
+},
+"n_bajo": {
+"kana": "ばっぱ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=101510213 「'''馬場駅'''（ばっぱえき）」 (중간)"
+},
+"n_daigakubyoinmae_hachimammachi": {
+"kana": "だいがくびょういんまえ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=102823046 「'''大学病院前停留場'''（だいがくびょういんまえていりゅうじょう）」 (중간)"
+},
+"n_gobogawa": {
+"kana": "ごぼがわ",
+"ko": "고보가와",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=104150432 「'''御坊川駅'''（ごぼがわえき）」 (중간) · 나무위키 https://namu.wiki/w/%EA%B3%A0%EB%B3%B4%EA%B0%80%EC%99%80%EC%97%AD"
+},
+"n_hirano_hirano": {
+"kana": "ひらの",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=99345263 「平野||ひらの||」 (중간)"
+},
+"n_hiratacho_kawashiri": {
+"kana": "ひらたまち",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=87568933 「'''平田町停留場'''（ひらたまちていりゅうじょう）」 (중간)"
+},
+"n_ichiba_akiha": {
+"kana": "いちば",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=110863172 「市場（いちば）」 (중간)"
+},
+"n_iida": {
+"kana": "いいだ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=110863172 「飯田（いいだ）」 (중간)"
+},
+"n_ishigami_ueda_maruko": {
+"kana": "いしがみ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=101509999 「'''石神駅'''（いしがみえき）」 (중간)"
+},
+"n_kamisu": {
+"kana": "かみす",
+"ko": "카미스",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=109407421 「'''神栖駅'''（かみすえき）」 (중간) · 나무위키 https://namu.wiki/w/%EC%B9%B4%EB%AF%B8%EC%8A%A4%EC%97%AD"
+},
+"n_kanonji_akiha": {
+"kana": "かんのんじ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=110863172 「観音寺（かんのんじ）」 (중간)"
+},
+"n_kotobukicho": {
+"kana": "ことぶきちょう",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=105950406 「'''寿町駅'''（ことぶきちょうえき）」 (중간)"
+},
+"n_kotobukicho_yamanashi": {
+"kana": "ことぶきちょう",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=101440631 「'''寿町駅'''（ことぶきちょうえき）」 (중간)"
+},
+"n_kotohira_soya_main": {
+"kana": "ことひら",
+"ko": "코토히라",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=110126510 「'''琴平駅'''（ことひらえき）」 (중간) · 나무위키 https://namu.wiki/w/%EC%BD%94%ED%86%A0%ED%9E%88%EB%9D%BC%EC%97%AD%28%ED%8F%90%EC%97%AD%29"
+},
+"n_momozono_yamanashi": {
+"kana": "ももぞの",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=101440832 「'''桃園駅'''（ももぞのえき）」 (중간)"
+},
+"n_nagasawa_yamanashi": {
+"kana": "ながさわ",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=101440906 「'''長沢駅'''（ながさわえき）」 (중간)"
+},
+"n_nakamura_okuyama": {
+"kana": "なかむら",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=99164909 「'''中村駅'''（なかむらえき）」 (중간)"
+},
+"n_nishikicho_loop_line_sendai_city": {
+"kana": "にしきちょう",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=93670922 「'''錦町停留場'''（にしきちょうていりゅうじょう）」 (중간)"
+},
+"n_obara_ichibata": {
+"kana": "おばら",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=111534864 「小原 （おばら）」 (중간)"
+},
+"n_ochii_sunen": {
+"kana": "おちい",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=107340138 「落居駅||おちい||」 (중간)"
+},
+"n_tenno": {
+"kana": "てんおう",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=110863172 「天王（てんおう）」 (중간)"
+},
+"n_yata_fushiki": {
+"kana": "やた",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=106439095 「'''矢田停留場'''（やたていりゅうじょう）」 (중간)"
+},
+"n_zaimokucho": {
+"kana": "ざいもくちょう",
+"why": "[읽기 2026-11-21] https://ja.wikipedia.org/w/index.php?oldid=101599169 「'''材木町駅'''（ざいもくちょうえき）」 (중간)"
+},
+"n_kuroishi_kumamoto": {
+"why": "[2001 이전 기록] 위키 黒石駅 (熊本県) oldid=110160730 「2001年2月25日：国道387号改良事業に伴う路線変更により新駅へ移転」(読売新聞 2001-02-24 西部朝刊 p.36 인용, 중간). 今昔マップ 1971·1983·1998 판독: 須屋 북쪽 약 0.35 km~새 黒石 북쪽 약 0.4 km 약 1.5 km를 国道 옆에서 동쪽 새 노반으로 옮김, 역은 남남동 약 100 m(옛 자리 약 32.87106,130.74142 ±25 m 넘음). 같은 날 三ツ石 개업. 御代志 km가 1986~2022 10.8 그대로라 営業キロ는 바뀌지 않은 것으로 봄(중간) → 설계 §2.2 규칙(km가 그대로면 노드 하나)대로 노드를 나누지 않는다 (2026-11-22 사용자 지시 조사)"
+},
+"n_saishun_iryo_center_mae_old": {
+"lat": 32.880972,
+"lon": 130.747917,
+"pos_src": "hand",
+"pos_note": "再春荘前·再春医療センター前 1965-10-16~2022-10-09 자리: 위키 再春医療センター前駅 이설 전 판 oldid=88285997 좌표(지금 판에도 남은 옛 값), 国土地理院 이설 전 seamlessphoto에서 国道387号 동쪽 가 승강장과 맞음 ±25 m. 새 자리(지금 노드)는 약 75 m 남쪽 (2026-11-22 조사)"
+}
 }

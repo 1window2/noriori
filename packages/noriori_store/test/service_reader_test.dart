@@ -20,15 +20,15 @@ void main() {
     final path = p.join(scratch.path, 'master.sqlite');
     final db = s3.sqlite3.open(path);
     db.execute('''
-      CREATE TABLE route(id, line_id, role, from_node, to_node, closed, extend_to);
-      INSERT INTO route VALUES ('r', 'l', 'main', 'a', 'd', 0, '[]');
+      CREATE TABLE route(id, line_id, role, from_node, to_node, closed);
+      INSERT INTO route VALUES ('r', 'l', 'main', 'a', 'd', 0);
       CREATE TABLE edge(id, n, from_node, to_node);
       INSERT INTO edge VALUES ('ab', 1, 'a', 'b'), ('bc', 2, 'b', 'c'), ('cd', 3, 'c', 'd');
       CREATE TABLE edge_km(edge_id, km, m);
       INSERT INTO edge_km VALUES ('ab', 1.0, 1000), ('bc', 2.0, 2000), ('cd', 3.0, 3000);
       CREATE TABLE route_edge(route_id, seq, edge_id);
       INSERT INTO route_edge VALUES ('r', 0, 'ab'), ('r', 1, 'bc'), ('r', 2, 'cd');
-      CREATE TABLE route_stop(route_id, seq, node_id, km_cum, is_stop, is_extension, km_estimated,
+      CREATE TABLE route_stop(route_id, seq, node_id, km_cum, is_stop, is_end_point, km_estimated,
         valid_from_lo, valid_from_hi, valid_to_lo, valid_to_hi);
       INSERT INTO route_stop VALUES
         ('r', 0, 'a', 0.0, 1, 0, 0, '1900-01-01', '1900-01-01', '9999-12-31', '9999-12-31'),

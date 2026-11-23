@@ -20,6 +20,13 @@ abstract final class SelectorRuler {
   static const bend = 6.0;
   static const openWidth = 7.0;
   static const closedWidth = 4.0;
+
+  /// 접힌 선형 안의 분기·끝 이어짐은 폭을 절반으로 줄여 그린다. 글자 칸을 침범하지 않는다 (DESIGN §8.3).
+  /// 접힌 선형 줄을 그리는 동안만 참이다 (FoldPainter)
+  static bool compact = false;
+  static double get stem => compact ? 84.0 : stemX;
+  static double get node => compact ? 93.0 : nodeX;
+  static double get curve => compact ? 4.0 : bend;
 }
 
 /// 줄기 한 칸.
@@ -61,6 +68,9 @@ void _chevron(Canvas canvas, TrunkPiece? piece, double y, Color background) {
       ..strokeJoin = StrokeJoin.round,
   );
 }
+
+/// 줄기 한 칸을 그린다 (점선·이관 점선 포함). 접힌 선형 줄 아래로 지나가는 본선 줄기도 이것으로 긋는다
+void paintTrunk(Canvas canvas, TrunkPiece? piece, double from, double to) => _trunk(canvas, piece, from, to);
 
 void _trunk(Canvas canvas, TrunkPiece? piece, double from, double to) {
   if (piece == null) return;
@@ -114,9 +124,8 @@ const double bracketX = 30.5;
 /// 괄호를 그린다. [nodeY]가 있으면 그 줄의 역 노드 높이에 갈고리가 걸린다. 환승 캡슐이 괄호 자리까지 넓으면([pillLeft]) 갈고리는 캡슐 바로 아래·위에 걸리고,
 /// 괄호가 그 역을 지나기만 하면 캡슐 가까이에서 옅어졌다가 다시 진해진다. 한 역이 두 괄호의 끝과 시작이면 갈고리를 3씩 비킨다
 /// [nodeReach]는 노드 중심에서 테두리 바깥까지의 거리다. 갈고리는 노드 크기와 상관없이 테두리 3 앞에서 멈춘다(작은 폐역 노드에서 떠 보였다, 실화면 2026-11-19)
-void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double? nodeY, double? pillLeft, double nodeReach = 11}) {
+void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double? nodeY, double? pillLeft, double nodeReach = 11, double bx = bracketX}) {
   if (pieces.isEmpty) return;
-  const bx = bracketX;
   final wide = pillLeft != null && pillLeft < bx + 4;
   final reach = SelectorRuler.trunkX - nodeReach - 3;
   final hookEnd = pillLeft == null ? reach : (wide ? SelectorRuler.trunkX - 12 : math.min(reach, pillLeft - 5));
@@ -129,7 +138,7 @@ void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double?
       ..strokeCap = StrokeCap.round;
     final y = nodeY;
     if (y == null) {
-      canvas.drawLine(const Offset(bx, 0), Offset(bx, size.height), paint);
+      canvas.drawLine(Offset(bx, 0), Offset(bx, size.height), paint);
       continue;
     }
     if (piece.start && !piece.end) {
@@ -155,12 +164,12 @@ void paintBrackets(Canvas canvas, Size size, List<BracketPiece> pieces, {double?
     } else if (wide) {
       const f = 26.0;
       final lo = y - 14, hi = y + 14;
-      if (lo - f > 0) canvas.drawLine(const Offset(bx, 0), Offset(bx, lo - f), paint);
+      if (lo - f > 0) canvas.drawLine(Offset(bx, 0), Offset(bx, lo - f), paint);
       _fadeLine(canvas, Offset(bx, math.max(0, lo - f)), Offset(bx, lo), piece.color, 2);
       _fadeLine(canvas, Offset(bx, math.min(size.height, hi + f)), Offset(bx, hi), piece.color, 2);
       if (hi + f < size.height) canvas.drawLine(Offset(bx, hi + f), Offset(bx, size.height), paint);
     } else {
-      canvas.drawLine(const Offset(bx, 0), Offset(bx, size.height), paint);
+      canvas.drawLine(Offset(bx, 0), Offset(bx, size.height), paint);
     }
   }
 }
@@ -308,8 +317,8 @@ class StopPainter extends CustomPainter {
     if (eu != null && above == null) canvas.drawLine(const Offset(x, 0), Offset(x, y), _stroke(eu, 2.5));
     final ed = endDown;
     if (ed != null && below == null) canvas.drawLine(Offset(x, y), Offset(x, size.height), _stroke(ed, 2.5));
-    const sx = SelectorRuler.stemX;
-    const r = SelectorRuler.bend;
+    final sx = SelectorRuler.stem;
+    final r = SelectorRuler.curve;
     // 끝 역 너머로 줄기가 이어지면(폐지 구간·열람 전용 줄) 끝 이어짐은 분기처럼 어깨로 비켜 나간다
     final up = stemUp ?? (above != null ? eu : null);
     if (up != null) {
@@ -317,7 +326,7 @@ class StopPainter extends CustomPainter {
         Path()
           ..moveTo(x, y)
           ..lineTo(sx - r, y)
-          ..arcToPoint(const Offset(sx, 0) + Offset(0, y - r), radius: const Radius.circular(r), clockwise: false)
+          ..arcToPoint(Offset(sx, y - r), radius: Radius.circular(r), clockwise: false)
           ..lineTo(sx, 0),
         _stroke(up, 2.5),
       );
@@ -328,7 +337,7 @@ class StopPainter extends CustomPainter {
         Path()
           ..moveTo(x, y)
           ..lineTo(sx - r, y)
-          ..arcToPoint(Offset(sx, y + r), radius: const Radius.circular(r))
+          ..arcToPoint(Offset(sx, y + r), radius: Radius.circular(r))
           ..lineTo(sx, size.height),
         _stroke(down, 2.5),
       );
@@ -435,7 +444,11 @@ class BranchPainter extends CustomPainter {
     this.lanes = const [],
     this.laneStyle,
     this.fromStop = true,
+    this.goneColor,
   });
+
+  /// 폐선 색. 이 색의 선을 먼저 그린다
+  final Color? goneColor;
 
   /// 역 바로 옆 줄이다 (EndPainter.fromStop과 같음).
   final bool fromStop;
@@ -471,14 +484,14 @@ class BranchPainter extends CustomPainter {
     final dots = endThrough;
     if (dots != null) {
       // 줄기가 이 줄을 지나가면 끝 이어짐 점선은 분기 줄기 칸으로 비켜 선다 (EndPainter와 같음)
-      final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stemX;
+      final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stem;
       // 끝 이어짐 줄은 점선이 아니라 노드에서 이어지는 실선이고 끝 줄에서만 옅어진다. 지나가는 줄도 같은 굵기의 실선이다
       // (사용자 결정 2026-11-19, 森의 渡島海岸鉄道 줄에서 점선이 남아 있었다 2026-11-20)
       canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(dots, 2.5));
     }
-    const sx = SelectorRuler.stemX;
-    const r = SelectorRuler.bend;
-    const q = SelectorRuler.nodeX;
+    final sx = SelectorRuler.stem;
+    final r = SelectorRuler.curve;
+    final q = SelectorRuler.node;
     final y = centerY;
     paintLanes(canvas, size, lanes, laneStyle, y);
     final lane = parallel;
@@ -490,46 +503,54 @@ class BranchPainter extends CustomPainter {
           ? (Path()
             ..moveTo(q - 5, y)
             ..lineTo(lx + r, y)
-            ..arcToPoint(Offset(lx, y + r), radius: const Radius.circular(r), clockwise: false)
+            ..arcToPoint(Offset(lx, y + r), radius: Radius.circular(r), clockwise: false)
             ..lineTo(lx, size.height))
           : (Path()
             ..moveTo(lx, 0)
             ..lineTo(lx, y - r)
-            ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r), clockwise: false)
+            ..arcToPoint(Offset(lx + r, y), radius: Radius.circular(r), clockwise: false)
             ..lineTo(q - 5, y));
       canvas.drawPath(path, _stroke(color, 2.5));
       canvas.drawCircle(Offset(q, y), 5, Paint()..color = background);
       canvas.drawCircle(Offset(q, y), 5, _stroke(color, 1.5));
       return;
     }
-    // 줄기를 먼저 그린다. 곡선은 그 위로 지나간다
-    if (!fromTrunk) {
-      final near = up ? size.height : 0.0;
-      final far = up ? 0.0 : size.height;
-      final bend = up ? y + r : y - r;
-      if (stacked) canvas.drawLine(Offset(sx, bend), Offset(sx, far), _stroke(through, 2.5));
-      canvas.drawLine(Offset(sx, near), Offset(sx, bend), _stroke(stem, 2.5));
-    }
+    // 폐선 색 선을 먼저, 현행 색 선을 나중에 그린다. 폐선 분기가 현행 줄기·곡선을 덮지 않는다 (사용자 결정 2026-11-23).
+    // 색이 같으면 줄기를 먼저 그리고 곡선이 그 위로 지나간다
+    final near = up ? size.height : 0.0;
+    final far = up ? 0.0 : size.height;
+    final bend = up ? y + r : y - r;
+    final strokes = <(Color, void Function())>[
+      if (!fromTrunk && stacked) (through, () => canvas.drawLine(Offset(sx, bend), Offset(sx, far), _stroke(through, 2.5))),
+      if (!fromTrunk) (stem, () => canvas.drawLine(Offset(sx, near), Offset(sx, bend), _stroke(stem, 2.5))),
+    ];
     final path = Path();
     if (fromTrunk) {
       const x = SelectorRuler.trunkX;
       path
         ..moveTo(x, y - r - 6)
         ..lineTo(x, y - r)
-        ..arcToPoint(Offset(x + r, y), radius: const Radius.circular(r), clockwise: false)
+        ..arcToPoint(Offset(x + r, y), radius: Radius.circular(r), clockwise: false)
         ..lineTo(q - 5, y);
     } else if (up) {
       path
         ..moveTo(sx, y + r)
-        ..arcToPoint(Offset(sx + r, y), radius: const Radius.circular(r))
+        ..arcToPoint(Offset(sx + r, y), radius: Radius.circular(r))
         ..lineTo(q - 5, y);
     } else {
       path
         ..moveTo(sx, y - r)
-        ..arcToPoint(Offset(sx + r, y), radius: const Radius.circular(r), clockwise: false)
+        ..arcToPoint(Offset(sx + r, y), radius: Radius.circular(r), clockwise: false)
         ..lineTo(q - 5, y);
     }
-    canvas.drawPath(path, _stroke(color, 2.5));
+    strokes.add((color, () => canvas.drawPath(path, _stroke(color, 2.5))));
+    bool gone(Color c) => c == goneColor;
+    for (final (c, draw) in strokes) {
+      if (gone(c)) draw();
+    }
+    for (final (c, draw) in strokes) {
+      if (!gone(c)) draw();
+    }
     canvas.drawCircle(Offset(q, y), 5, Paint()..color = background);
     canvas.drawCircle(Offset(q, y), 5, _stroke(color, 1.5));
   }
@@ -588,34 +609,28 @@ class EndPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     _trunk(canvas, trunk, 0, size.height);
-    final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stemX;
+    final x = trunk == null ? SelectorRuler.trunkX : SelectorRuler.stem;
     final y = size.height / 2;
     paintLanes(canvas, size, lanes, laneStyle, y);
-    final paint = _stroke(color);
     final lane = parallel;
+    Offset at(double d) => Offset(x, up ? size.height - d : d);
     if (lane != null) {
-      if (trunkThrough) canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(color, 2.5));
-      const r = SelectorRuler.bend;
-      const tx = SelectorRuler.textX - 8;
+      // 끝 너머로 이어지는 병주 상대(오사카 순환선 신이마미야 → 간사이 본선 텐노지)는 끝 이어짐이다. 이어지는 것은 그 병주 노선뿐이라
+      // 병주 선만 곧게 내어 옅어지게 그리고, 이 계통의 줄기는 끝 역에서 끝난다. 줄기까지 내리면 두 노선이 따로 직통하는 것처럼 보였다
+      // (사용자 지적 2026-11-21: 병주 선만 꺾여 길이가 달랐던 것 → 줄기도 내렸던 것 → 줄기는 내리지 않음). 바깥의 다른 끝 이어짐으로 가는 줄기는 그대로 긋는다
       final lx = laneX(lane);
-      canvas.drawPath(
-        up
-            ? (Path()
-              ..moveTo(lx, size.height)
-              ..lineTo(lx, y + r)
-              ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r))
-              ..lineTo(tx, y))
-            : (Path()
-              ..moveTo(lx, 0)
-              ..lineTo(lx, y - r)
-              ..arcToPoint(Offset(lx + r, y), radius: const Radius.circular(r), clockwise: false)
-              ..lineTo(tx, y)),
-        paint..color = color.withValues(alpha: color.a * .6),
-      );
+      final len = math.min(size.height, 40.0);
+      Offset lat(double d) => Offset(lx, up ? size.height - d : d);
+      if (trunkThrough) {
+        canvas.drawLine(Offset(x, 0), Offset(x, size.height), _stroke(color, 2.5));
+      } else if (stackOf > 1) {
+        _fadeLine(canvas, at(0), at(size.height), color, 2.5, a1: 1 - stackAt / stackOf, a2: 1 - (stackAt + 1) / stackOf);
+      }
+      _fadeLine(canvas, lat(0), lat(stackOf > 1 ? size.height : len), color, 2.5,
+          a1: stackOf > 1 ? 1 - stackAt / stackOf : 1, a2: stackOf > 1 ? 1 - (stackAt + 1) / stackOf : 0);
       return;
     }
     // 점선 대신 역에서 멀어질수록 옅어진다 (사용자 결정 2026-11-19). 같은 끝의 노선 여럿은 줄마다 이어 맨 바깥 줄에서 다 옅어진다
-    Offset at(double d) => Offset(x, up ? size.height - d : d);
     if (stackOf > 1) {
       final a1 = 1 - stackAt / stackOf, a2 = 1 - (stackAt + 1) / stackOf;
       _fadeLine(canvas, at(0), at(size.height), color, 2.5, a1: a1, a2: a2);
