@@ -4,7 +4,7 @@
 
 An app for recording how much of Japan's railway network you have ridden. Pick the stretch you rode and it is painted on the map, with completion rates by line, operator and prefecture.
 
-- Covers every passenger line in Japan that was open on or after 1 January 1950, including lines that have since closed: JR and the former JNR, private railways, subways, trams, monorails, AGT, cable cars, and the few guideway bus, trolleybus and maglev lines run as railways. Lines that closed before 1950 are not included.
+- Covers every passenger line in Japan that was open on or after 1 January 1950, including lines that have since closed: JR and the former JNR, private railways, subways, trams, monorails, AGT, cable cars, and the few guideway bus, trolleybus and maglev lines run as railways. Lines and stations that closed before 1950 are shown for reference only and cannot be recorded.
 - Rides can be dated. Stations, distances, transfers and through services follow the network as it was on that day, so a ride on a line that has since closed or been renamed is recorded as it was.
 - The map and line diagrams work offline.
 - Records stay on your device and are backed up automatically to a folder you choose. No account, no ads.
@@ -30,8 +30,6 @@ Line composition and ownership follow official sources (the MLIT railway handboo
 ## Help wanted
 
 These are facts we could not confirm from any public source. For now they are stored as ranges or estimates, or left blank. If you have material that settles any of them (company histories, timetables, 官報 or official notices, transport bureau records, old route maps), please open an [issue](https://github.com/1window2/noriori/issues) or a [discussion](https://github.com/1window2/noriori/discussions). Even just the title, year and page helps a lot.
-
-公開資料では確認できなかった事実の一覧です。社史・時刻表・官報・交通局資料などをお持ちの方は、Issue か Discussion で書名・発行年・ページを教えていただけると助かります。
 
 <details>
 <summary>Readings of old tram stop and station names (about 850)</summary>
@@ -79,7 +77,7 @@ Names used in the 1950s–70s whose reading (kana) we could not confirm from two
 
 ## Development
 
-Requires Flutter stable and tippecanoe.
+Requires Flutter stable, Python 3 and tippecanoe.
 
 ```bash
 bash tools/all.sh       # build the data pack

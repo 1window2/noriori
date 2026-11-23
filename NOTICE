@@ -1,24 +1,24 @@
 noriori
 Copyright 2026 noriori contributors
 
-이 저장소는 경로마다 라이선스가 다릅니다.
+Licenses in this repository differ by path.
 
-| 경로 | 라이선스 |
+| Path | License |
 |---|---|
 | apps/, packages/, tools/ | Apache License 2.0 (LICENSE) |
-| data/ (아래 제외) | CC BY-SA 4.0 (data/LICENSE) |
-| data/source/geometry/ | 원 자료의 이용 조건 (data/source/geometry/LICENSE.md) |
-| data/base/*.geojson | 国土数値情報 행정구역 데이터를 가공. 원 자료의 이용 조건 |
+| data/ (except as listed below) | CC BY-SA 4.0 (data/LICENSE) |
+| data/source/geometry/ | Terms of the original sources (data/source/geometry/LICENSE.md) |
+| data/base/*.geojson | Derived from National Land Numerical Information administrative boundary data; terms of the original source apply |
 | data/base/glyphs/ | SIL Open Font License 1.1 (data/base/LICENSE-Noto.txt) |
 | data/overrides/osm_manual.json | Open Database License 1.0 |
 | apps/noriori/assets/fonts/ | SIL Open Font License 1.1 |
 
-앱에 넣는 데이터 팩의 라이선스와 출처는 data/NOTICE.md에 있습니다.
-코드 의존성의 라이선스는 앱의 설정 > 오픈소스 라이선스에서 볼 수 있습니다.
+Licenses and sources for the data pack bundled into the app are listed in data/NOTICE.md.
+Licenses of code dependencies are shown in the app under Settings > Open source licenses.
 
 Pretendard
 Copyright (c) 2021 Kil Hyung-jin
 SIL Open Font License 1.1 (apps/noriori/assets/fonts/LICENSE-Pretendard.txt)
 
-Noto Sans, Noto Sans CJK (지도 글리프)
+Noto Sans, Noto Sans CJK (map glyphs)
 SIL Open Font License 1.1 (apps/noriori/assets/fonts/LICENSE-Noto.txt)
