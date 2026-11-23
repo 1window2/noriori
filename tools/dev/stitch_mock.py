@@ -204,6 +204,20 @@ def period(rows):
     oy=[r['oy'] for r in rows if r.get('oy') and r['oy'][:4].isdigit()]; cy=[r['cy'] for r in rows if r.get('cy') and r['cy'][:4].isdigit()]
     return (min(oy)[:4] if oy else None, max(cy)[:4] if len(cy)==len(rows) and cy else None)
 
+def built_year(route, path, close):
+    """year the folded main alignment became the line's path: the later of the old alignment's close and the start of
+    every edge's open period that lasts past that close (station years only as a fallback), or None"""
+    built = close
+    for p, q in zip(path, path[1:]):
+        es = [r[0] for r in db.execute('select e.id from route_edge re join edge e on e.id=re.edge_id where re.route_id=? and ((e.from_node=? and e.to_node=?) or (e.from_node=? and e.to_node=?))', (route, p, q, q, p))]
+        if not es: return None
+        for e in es:
+            fr = sorted(r[0] for r in db.execute("select valid_from, valid_to from edge_life where edge_id=? and coalesce(status,'')!='suspended' and valid_from is not null", (e,))
+                        if close is None or not r[1] or r[1] == 'ongoing' or r[1] > close)
+            if not fr: return None
+            if built is None or fr[0] > built: built = fr[0]
+    return built[:4] if built and built[:4].isdigit() else None
+
 def span(rows):
     oy=[r['oy'][:4] for r in rows if r.get('oy') and r['oy'][:4].isdigit()]
     cy=[r['cy'][:4] for r in rows if r.get('cy') and r['cy'][:4].isdigit()]
@@ -372,7 +386,13 @@ def stitch(main_rid, date, P, excl=()):
             frows = [dict(x, seg=None, sel=False) if x['t'] == 's' else x for x in frows]
             grp = dict(t='x', up=up, rejoin=B, items=frows, **fold_meta(frows, 'new')) if any(x['t'] == 's' for x in frows) else None
             cys = [x['cy'][:4] for x in ownst if x.get('cy') and x['cy'][:4].isdigit()]
-            if grp and bypass and cys: grp['per'] = f"{min(cys)}~"
+            # fold era starts at the later of: old alignment closes, first station of the folded alignment opens
+            # (the date every edge of the folded main alignment A..B exists; station years only as a fallback)
+            oys = [x['oy'][:4] for x in frows if x['t'] == 's' and x.get('oy') and x['oy'][:4].isdigit()]
+            ccs = sorted(x['cy'] for x in ownst if x.get('cy'))
+            built = built_year(main_rid, [A] + [x['node'] for x in frows if x['t'] == 's'] + [B], ccs[0] if ccs else None)
+            if grp and bypass and built: grp['per'] = f"{built}~"
+            elif grp and bypass and (cys or oys): grp['per'] = f"{max(filter(None, [min(cys) if cys else None, min(oys) if oys else None]))}~"
             tail = [] if bypass else tail_of(r2, ownst[-1]['node'], False)
             tblk = []
             if tail and all(s['st'] != 'o' for s in tail):

@@ -644,7 +644,11 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     final stitcher = LineStitcher(network,
         today: todaySpan, screen: (r, d) => screens[(r, d?.lo)], extra: {for (final r in tempRoutes) if (r != mainRoute) r});
     final mainLine = stitcher.stitch(lineId, mainRoute, date);
-    final chips = [for (final r in network.routesOfLineMainFirst(lineId)) if (r != mainRoute && !mainLine.used.contains(r)) r];
+    // 보기 설정으로 그날 행이 하나도 안 남는 계통(폐역·폐선을 숨길 때 그 전에 끝난 옛 선형 계통)은 칩도 두지 않는다
+    final chips = [
+      for (final r in network.routesOfLineMainFirst(lineId))
+        if (r != mainRoute && !mainLine.used.contains(r) && (screens[(r, date?.lo)]?.rows.isNotEmpty ?? false)) r
+    ];
     final chip = chips.contains(routeId) ? routeId : mainRoute;
     final stitched = chip == mainRoute
         ? mainLine

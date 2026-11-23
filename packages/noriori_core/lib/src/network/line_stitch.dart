@@ -284,6 +284,41 @@ final class _Stitch {
     return oy.isEmpty ? '' : '${oy.reduce((a, b) => a.compareTo(b) < 0 ? a : b)}~';
   }
 
+  /// 옛 선형(old)을 갈아 끼운 본선 선형(path: 갈라지는 역 … 다시 만나는 역)이 그 노선의 길이 된 해.
+  /// 옛 선형이 닫힌 날(c)과, c 뒤까지 이어지는 그 선형 칸의 열린 기간이 모두 시작된 날 가운데 늦은 쪽이다.
+  /// 운휴 뒤 새 선형 개업(常磐線 2016, 仙石線 2015), 옛 선형 일부가 먼저 닫힘(室蘭本線 1978), 운휴했다 다시 연 선형(近鉄京都線 1968),
+  /// 선형보다 늦게 생긴 역이 모두 이 규칙 하나로 맞는다. 칸을 못 찾으면 역 해로 어림한다.
+  String periodBuilt(List<String> path, List<_R> old, List<_R> rs) {
+    final cs = [for (final x in old) ?x.row.closeYear]..sort();
+    final c = cs.isEmpty ? null : cs.first;
+    var built = c;
+    for (var k = 0; k + 1 < path.length; k++) {
+      final es = net.edgesBetween(mainRoute, path[k], path[k + 1]);
+      if (es.isEmpty) return periodAfter(old, rs);
+      for (final e in es) {
+        final from = [
+          for (final l in net.livesOf(e))
+            if (!l.suspended && (c == null || l.period.toHi == null || l.period.toHi!.compareTo(c) > 0)) ?l.period.fromLo,
+        ]..sort();
+        if (from.isEmpty) return periodAfter(old, rs);
+        if (built == null || from.first.compareTo(built) > 0) built = from.first;
+      }
+    }
+    final y = built == null ? null : yearOf(built);
+    return y == null ? periodAfter(old, rs) : '$y~';
+  }
+
+  /// 옛 선형(old)을 갈아 끼운 선형(rs)의 시작 해. 옛 선형이 닫힌 해와 새 선형 역이 처음 연 해 가운데 늦은 쪽이다.
+  /// 둘 사이가 비면(운휴 뒤 새 선형 개업) 새 선형 개업 해, 옛 역을 그대로 쓰는 새 선형이면 옛 선형이 닫힌 해다.
+  String periodAfter(List<_R> old, List<_R> rs) {
+    final cy = [for (final x in old) ?yearOf(x.row.closeYear)];
+    final oy = [for (final r in rs) ?yearOf(r.row.openYear)];
+    final c = cy.isEmpty ? null : cy.reduce((a, b) => a.compareTo(b) < 0 ? a : b);
+    final o = oy.isEmpty ? null : oy.reduce((a, b) => a.compareTo(b) < 0 ? a : b);
+    final y = c == null ? o : o == null || c.compareTo(o) >= 0 ? c : o;
+    return y == null ? '' : '$y~';
+  }
+
   /// r2 끝 역에서 이어지는 같은 노선 계통.
   List<_R> tailOf(String r2, String lastNode, bool closed) {
     for (final row in rows(r2)!.rows) {
@@ -417,8 +452,7 @@ final class _Stitch {
           final anchorRow = items[ia];
           items = [...items.sublist(0, ia + 1), ...seq, ...items.sublist(ib)];
           if (frows.isNotEmpty) {
-            final cys = [for (final x in own) ?yearOf(x.row.closeYear)]..sort();
-            folds.add(_Fold(anchor: anchorRow, up: false, rows: frows, rejoin: b, period: cys.isNotEmpty ? '${cys.first}~' : periodNew(frows)));
+            folds.add(_Fold(anchor: anchorRow, up: false, rows: frows, rejoin: b, period: periodBuilt([items[ia].node, for (final x in frows) x.node, ?b], own, frows)));
           }
         } else if (!up) {
           final anchorRow = items[ia];
@@ -445,7 +479,7 @@ final class _Stitch {
       folds.add(_Fold(anchor: items[ia], up: up, rows: up ? rev(frows) : frows, rejoin: b, period: periodOld(own)));
     }
     // 그날 열린 줄 끝에서 같은 노선 조각이 하나만 이어지면 한 줄이다 (둘 이상이면 갈라짐이라 칩)
-    while (true) {
+    while (items.isNotEmpty) {
       final t = items.last;
       if (!openThen(t)) break;
       final have = {for (final x in items) x.node};

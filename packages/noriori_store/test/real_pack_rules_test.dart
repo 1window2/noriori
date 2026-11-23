@@ -22,20 +22,23 @@ void main() {
     await db.close();
   });
 
-  // 옛 길은 2011-03-12 지진 운휴로 끝나 2016 이설 때 다시 열리지 않았다. 탈 수 있던 마지막 날이 기준이다
-  test('이설 길 고르기는 길마다 그 길을 그만 쓴 날을 안다 (常磐線 新地~山下)', () {
-    final options = RouteResolver(network).relocationOptions('r_joban_line', 'n_komagamine', 'n_hamayoshida');
-    expect(options, hasLength(2));
-    final old = options.firstWhere((o) => o.until != null);
-    expect(old.until, '2011-03-12');
-    expect(options.where((o) => o.until == null).single.asOf.compareTo('2016-12-10'), greaterThanOrEqualTo(0));
+  // 옛 길은 따로 계통이다(옛 선로 별도 계통 2번안, 2026-11-23). 옛 길은 2011-03-12 지진 운휴로 끝나 2016 이설 때 다시 열리지 않았다.
+  // 탈 수 있던 마지막 날이 기준이고, 본 계통에는 새 길 하나만 있다
+  test('이설 옛 길은 따로 계통이고 그 길을 그만 쓴 날을 안다 (常磐線 新地~山下)', () {
+    final resolver = RouteResolver(network);
+    const oldRoute = 'r_joban_line_komagamine_hamayoshida';
+    expect(resolver.expand(oldRoute, 'n_komagamine', 'n_hamayoshida', date: DateSpan.parse('2011-03-11')).status, ResolveStatus.ok);
+    expect(resolver.expand(oldRoute, 'n_komagamine', 'n_hamayoshida', date: DateSpan.parse('2011-03-12')).status, isNot(ResolveStatus.ok));
+    final main = resolver.relocationOptions('r_joban_line', 'n_komagamine', 'n_hamayoshida');
+    expect(main, hasLength(1));
+    expect(main.single.until, isNull);
+    expect(main.single.asOf.compareTo('2016-12-10'), greaterThanOrEqualTo(0));
   }, skip: skip);
 
-  test('날짜를 모르는 이설 구간은 방향이 아니라 길을 묻는다 (常磐線 駒ケ嶺~浜吉田)', () {
+  // 날짜를 모르면 본 계통은 오늘의 길 하나라 묻지 않는다. 옛 길은 같은 노선 이어 그리기(§8.3)의 접힌 줄에서 고른다
+  test('날짜를 모르는 이설 구간은 본 계통에서 새 길 하나다 (常磐線 駒ケ嶺~浜吉田)', () {
     final result = RouteResolver(network).expand('r_joban_line', 'n_komagamine', 'n_hamayoshida');
-    expect(result.status, ResolveStatus.needsInput);
-    expect(result.reason, ExpandReason.relocatedParallel);
-    expect(result.options, hasLength(2));
+    expect(result.status, ResolveStatus.ok);
   }, skip: skip);
 
   test('역 시트는 묶음의 다른 node에 서는 노선도 모두 보여 준다', () {

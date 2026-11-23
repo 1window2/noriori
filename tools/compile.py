@@ -2833,9 +2833,15 @@ def _cut_end(rid2_,o_,base_):
 _ENDIV=collections.defaultdict(list)
 for E_ in _END.values():
     for y_,_,iv_ in E_:_ENDIV[id(y_)]+=iv_
+# 옛 선형 계통이 host(노선 단위 보기)에 붙는 끝은 노선 안 이음이라 고를 수 있는 끝 노드가 아니다 (菊池線 옛 선형 끝 熊本高専前: 1995 개업 전에는 그 자리를
+# 흐린 미래 역으로 둔다. 2번안 전에는 본 계통 안이라 끝이 아니었다)
+_HOSTOF={q_:h_ for h_,qs_ in HOSTED.items() for q_ in qs_}
+_HOSTN={q_:{x['node_id'] for x in by_route.get(h_,())} for q_,h_ in _HOSTOF.items()}
+def _attach_end(rid_,y_):return rid_ in _HOSTN and y_['node_id'] in _HOSTN[rid_]
 _ecov=_pcov=0
 for rid_,E_ in _END.items():
-    for y_,inw_,iv_ in E_:_ecov+=_ecover(y_,iv_)
+    for y_,inw_,iv_ in E_:
+        if not _attach_end(rid_,y_):_ecov+=_ecover(y_,iv_)
 # 끝 노드는 그 노드를 지나는 다른 계통 화면에도 보인다. 단 두 계통이 그 자리에서 선로로 이어질 때만이다 (검토 H2: 品川 山手線 끝 ≠ 新幹線 品川).
 # 이어짐 근거: 같은 노선, 또는 그 노드가 어느 계통에서도 승객이 서지 않는 노드(분기점·신호장), 또는 두 노선 사이 연결 근거 행(jx). 끝 이어짐과 같은 근거다
 _pub_e={s_['node_id'] for s_ in stops if s_['is_stop']}
@@ -2857,7 +2863,8 @@ def _conn_ev(r1,r2,X):
     return any(j_['other']==B_ for j_ in jx.get((A_,X),())) or any(j_['other']==A_ for j_ in jx.get((B_,X),()))
 _endt=collections.defaultdict(list)
 for rid_,E_ in _END.items():
-    for y_,inw_,iv_ in E_:_endt[y_['node_id']].append((rid_,iv_))
+    for y_,inw_,iv_ in E_:
+        if not _attach_end(rid_,y_):_endt[y_['node_id']].append((rid_,iv_))
 for rid_,L_ in by_route.items():
     if rid_ in _HID_R:continue
     for s_ in L_:

@@ -175,6 +175,22 @@ def on_date(A):
                     x=A.expand_line(l,p_,q_,appsim.normalize_date(d))
                     if x['status']=='ok' and (l,e) in A.ride_of(x,d)['edges']:ok=True;break
                 if ok:break
+            # 앱은 그날 역이 아닌 붙는 점에서도 계통을 나눈다(§8.3 기록). 가까운 역끼리로 못 넣으면 이 칸에 닿는 계통의 역과 같은 노선 다른 계통의 역 사이를 본다
+            # (東京モノレール 1964–1967: 浜松町 → 옛 羽田, 붙는 점 整備場는 1967 개업 전)
+            if not ok:
+                rs_=[rid for rid in A.routes if A.routes[rid]['line_id']==l]
+                near=[rid for rid in rs_ if ends&{s['node_id'] for s in A._stops[rid]}]
+                for r1 in near:
+                    for r2 in rs_:
+                        if r2==r1:continue
+                        for p_ in [q['node'] for q in picks(A,r1,d)]:
+                            for q_ in [q['node'] for q in picks(A,r2,d)]:
+                                if p_==q_:continue
+                                x=A.expand_line(l,p_,q_,appsim.normalize_date(d))
+                                if x['status']=='ok' and (l,e) in A.ride_of(x,d)['edges']:ok=True;break
+                            if ok:break
+                        if ok:break
+                    if ok:break
             if ok:ds.remove(d)
         if not ds:del gaps[l,e]
     # 사유를 적은 예외 (data/overrides/invariant_exceptions.json, 사용자 결정)

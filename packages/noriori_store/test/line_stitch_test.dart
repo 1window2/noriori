@@ -51,6 +51,17 @@ void main() {
   double? km(StitchedLine s, String node) => s.main.rows.firstWhere((r) => r.node == node).kmCum;
   bool has(StitchedLine s, String node) => s.main.rows.any((r) => r.node == node);
 
+  test('갈아 끼운 선형 fold의 기간은 그 선형 칸이 모두 생긴 해다 (운휴 뒤 새 선형 개업 포함)', () async {
+    String per(StitchedLine s, String node) => s.folds.firstWhere((f) => f.rows.rows.any((r) => r.node == node)).period;
+    // 옛 선형이 2011년에 끊기고 새 선형이 2016·2015년에 열렸다. 끊긴 해가 아니라 연 해다
+    expect(per(await stitch('l_joban_line', '2011-03-01'), 'n_sakamoto_joban'), '2016~');
+    expect(per(await stitch('l_senseki_line', '2011-03-01'), 'n_nobiru'), '2015~');
+    // 선형은 1978년에 생겼다. 옛 선형 일부가 1968년에 먼저 닫혀도 1968이 아니다
+    expect(per(await stitch('l_muroran_main_line', '1970-07-31'), 'n_sakimori'), '1978~');
+    // 운휴했다 다시 연 선형은 처음 생긴 해(1928)가 아니라 다시 노선의 길이 된 해다
+    expect(per(await stitch('l_kyoto_line', '1965-08-22'), 'n_kintetsu_tambabashi'), '1968~');
+  });
+
   test('室蘭本線: 志文–岩見沢 옛 선로는 칩 없이 그날의 길과 km만', () async {
     final y1965 = await stitch('l_muroran_main_line', '1965-06-01');
     expect(km(y1965, 'n_iwamizawa'), 209.3);
