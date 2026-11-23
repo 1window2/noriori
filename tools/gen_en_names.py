@@ -72,7 +72,8 @@ def split_words(ja,kana):
 # 영어 이름(표시)에만 쓰는 낱말. 이름 끝에서만 뜻으로 옮기는 회사 꼬리(電車·電気)와 어디서나 옮기는 낱말이다.
 # ID는 예전 규칙(split_words, 낱말 하나)으로 만들어 이미 낸 ID가 바뀌지 않는다 (12회차 M K103 2026-11-19: 札幌温泉電気軌道 → Sapporonsen였음)
 # 표의 낱말보다 먼저 뗄 긴 낱말(米子電車軌道: 軌道가 먼저면 Yonago Electric Railway Tramway)
-EN_FIRST=(('電車軌道','でんしゃきどう','Electric Tramway'),)
+# 軽便鉄道·鋼索鉄道는 한 낱말로 옮긴다(王子軽便鉄道 → Ojikeiben Railway, 中国稲荷山鋼索鉄道 → Chugokuinariyamakosaku Railway였음, 5회차 2026-11-24)
+EN_FIRST=(('電車軌道','でんしゃきどう','Electric Tramway'),('軽便鉄道','けいべんてつどう','Light Railway'),('鋼索鉄道','こうさくてつどう','Cable Railway'))
 EN_WORDS=(('温泉','おんせん','Onsen'),('電軌','でんき','Electric Tramway'),('電車','でんしゃ','Electric Railway'),('支社','ししゃ','Branch'))
 EN_TAILS=(('電気','でんき','Electric'),)
 
@@ -102,7 +103,11 @@ def split_words_en(ja,kana):
         return [titled(k,ja)]
     parts+=go(ja_left,kana_left)
     if tail_en:parts.append(tail_en)
-    return ' '.join(p for p in parts if p)
+    # 사명 꼬리와 노선 낱말이 겹치면(箱根登山鉄道鉄道線 → … Railway Railway Line) 바로 이어 같은 낱말은 하나만 둔다
+    out=[]
+    for p in (p for p in parts if p):
+        if not out or out[-1]!=p:out.append(p)
+    return ' '.join(out)
 
 def line_name(ja,kana,en=False):
     """en이면 표시용 영어 이름(낱말 여럿), 아니면 ID용(예전 규칙)"""
