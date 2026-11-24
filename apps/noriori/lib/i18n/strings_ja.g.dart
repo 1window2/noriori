@@ -381,6 +381,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get whyClosed => 'その日付には営業していなかった駅です';
 	@override String get whyViewSignal => '信号場・分岐点のため、ここで記録を始めたり終えたりできません';
 	@override String get whyViewNoBoarding => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません';
+	@override String get whyViewStaff => '旅客を扱わない駅のため、ここで記録を始めたり終えたりできません';
 	@override String get onlyDown => '下りのみ';
 	@override String get onlyUp => '上りのみ';
 	@override String get onlyOneWay => '片方向のみ';
@@ -1324,6 +1325,7 @@ extension on TranslationsJa {
 			'session.whyClosed' => 'その日付には営業していなかった駅です',
 			'session.whyViewSignal' => '信号場・分岐点のため、ここで記録を始めたり終えたりできません',
 			'session.whyViewNoBoarding' => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません',
+			'session.whyViewStaff' => '旅客を扱わない駅のため、ここで記録を始めたり終えたりできません',
 			'session.onlyDown' => '下りのみ',
 			'session.onlyUp' => '上りのみ',
 			'session.onlyOneWay' => '片方向のみ',
@@ -1640,9 +1642,9 @@ extension on TranslationsJa {
 			'prefNames.14' => '新潟',
 			'prefNames.15' => '富山',
 			'prefNames.16' => '石川',
-			'prefNames.17' => '福井',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.17' => '福井',
 			'prefNames.18' => '山梨',
 			'prefNames.19' => '長野',
 			'prefNames.20' => '岐阜',

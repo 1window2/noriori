@@ -90,6 +90,7 @@ void main() {
     expect(stopAt(winter, 'n_kuronagi').row.selectable, isFalse);
     // 승객 미취급 역은 비시즌에도 회색 통과역으로 남고(柳橋), 한시 개방 역도 사라지지 않는다(笹平·猫又)
     expect(stopAt(winter, 'n_yanagibashi').row.passing, isTrue);
+    expect(stopAt(winter, 'n_yanagibashi').row.staffOnly, isTrue);
     expect(stopAt(winter, 'n_sasadaira').row.passing, isTrue);
     expect(stopAt(winter, 'n_nekomata').row.passing, isTrue);
     final summer = await screen('r_kurobe_gorge_main_line', '2020-07-15');
@@ -110,6 +111,10 @@ void main() {
     expect(stopAt(y2025, 'n_sasadaira').row.passing, isTrue);
     expect(stopAt(y2025, 'n_sasadaira').row.closeYear, isNull);
     expect(stopAt(y2025, 'n_nekomata').row.closeYear, isNull);
+    // 승객 미취급 역은 신호장과 같은 모양이어도 고를 수 없는 까닭이 다르다(안내 문구가 갈린다). 개방 중인 猫又는 보통 역이다
+    expect(stopAt(y2025, 'n_yanagibashi').row.staffOnly, isTrue);
+    expect(stopAt(y2025, 'n_yanagibashi').row.viewOnly, isTrue);
+    expect(stopAt(y2025, 'n_nekomata').row.staffOnly, isFalse);
     // 날짜 모름: 마지막 개방 뒤 끝 없는 정차 공백은 승객 미취급 역의 본래 모습이라 운휴가 아니다
     final undated = await screen('r_kurobe_gorge_main_line', null);
     expect(stopAt(undated, 'n_sasadaira').row.suspendedSince, isNull);
@@ -232,6 +237,14 @@ void main() {
       final lines = await screen('r_shinetsu_main_line_niigata_old_sekiya', raw);
       expect(lines.whereType<EndLine>().single.items.single.link.otherLineId, 'l_shinetsu_main_line', reason: '$raw');
       expect(lines.whereType<BranchLine>(), isEmpty, reason: '$raw');
+    }
+  }, skip: skip);
+  // 끝난 계절 노선의 운행 시절 비시즌: 계절 괄호는 해를 적지 않으니 역 줄의 「비시즌」을 지우지 않는다 (5회차 시뮬레이터 시험 2026-11-24)
+  test('끝난 계절 노선의 비시즌 표시', () async {
+    final lines = await screen('r_kanden_tunnel_trolleybus', '2010-01-15');
+    for (final node in ['n_ogizawa', 'n_kurobe_dam']) {
+      expect(stopAt(lines, node).row.state, StopState.offSeason);
+      expect(stopAt(lines, node).quiet, isFalse);
     }
   }, skip: skip);
 }

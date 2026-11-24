@@ -712,6 +712,9 @@ class Translations$session$ko {
 	/// ko: '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요'
 	String get whyViewNoBoarding => '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요';
 
+	/// ko: '승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요'
+	String get whyViewStaff => '승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요';
+
 	/// ko: '하행만'
 	String get onlyDown => '하행만';
 
@@ -2326,6 +2329,7 @@ extension on Translations {
 			'session.whyClosed' => '그 날짜에는 운영하지 않던 역입니다',
 			'session.whyViewSignal' => '신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요',
 			'session.whyViewNoBoarding' => '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요',
+			'session.whyViewStaff' => '승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요',
 			'session.onlyDown' => '하행만',
 			'session.onlyUp' => '상행만',
 			'session.onlyOneWay' => '한 방향만',
@@ -2642,9 +2646,9 @@ extension on Translations {
 			'prefNames.14' => '니가타',
 			'prefNames.15' => '도야마',
 			'prefNames.16' => '이시카와',
-			'prefNames.17' => '후쿠이',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.17' => '후쿠이',
 			'prefNames.18' => '야마나시',
 			'prefNames.19' => '나가노',
 			'prefNames.20' => '기후',

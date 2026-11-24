@@ -390,6 +390,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get whyClosed => 'This station wasn\'t open on that date';
 	@override String get whyViewSignal => 'This is a signal or junction, so a ride can\'t start or end here';
 	@override String get whyViewNoBoarding => 'This line doesn\'t stop here, so a ride can\'t start or end here';
+	@override String get whyViewStaff => 'This station doesn\'t serve passengers, so a ride can\'t start or end here';
 	@override String get onlyDown => 'Down only';
 	@override String get onlyUp => 'Up only';
 	@override String get onlyOneWay => 'One way';
@@ -1355,6 +1356,7 @@ extension on TranslationsEn {
 			'session.whyClosed' => 'This station wasn\'t open on that date',
 			'session.whyViewSignal' => 'This is a signal or junction, so a ride can\'t start or end here',
 			'session.whyViewNoBoarding' => 'This line doesn\'t stop here, so a ride can\'t start or end here',
+			'session.whyViewStaff' => 'This station doesn\'t serve passengers, so a ride can\'t start or end here',
 			'session.onlyDown' => 'Down only',
 			'session.onlyUp' => 'Up only',
 			'session.onlyOneWay' => 'One way',
@@ -1671,9 +1673,9 @@ extension on TranslationsEn {
 			'prefNames.14' => 'Niigata',
 			'prefNames.15' => 'Toyama',
 			'prefNames.16' => 'Ishikawa',
-			'prefNames.17' => 'Fukui',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.17' => 'Fukui',
 			'prefNames.18' => 'Yamanashi',
 			'prefNames.19' => 'Nagano',
 			'prefNames.20' => 'Gifu',

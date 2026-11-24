@@ -121,6 +121,7 @@ final class SelectorRow {
     required this.selectable,
     this.passing = false,
     this.noBoarding = false,
+    this.staffOnly = false,
     this.viewOnly = false,
     required this.kmCum,
     required this.links,
@@ -152,6 +153,9 @@ final class SelectorRow {
   /// 계통 끝 노드인데 그날 역(또는 화물역)은 있고 이 계통이 서지 않는다: 보통 역 모양에 「승하차 불가」를 적고 고를 수 있다
   /// (梅田貨物線 福島, 大洗鹿島線 北鹿島 1985–1994. 회색 가운데는 신호장·분기점만, 사용자 결정 2026-11-21 결정 A 추천안)
   final bool noBoarding;
+
+  /// 그날 승객 미취급 정식 역(근거 표 staff_only)이다. 신호장과 같은 회색 노드로 그리되 고를 수 없는 까닭은 「승객을 받지 않는 역」이다 (5회차 2026-11-24)
+  final bool staffOnly;
 
   /// 그날 이 계통이나 이어진 계통의 끝이 아니라서 보이기만 하고 출발·도착역으로 고를 수 없다(신호장·승하차 불가 역).
   /// 그 자리에서 갈라지거나 이어지는 노선이 없으면 거기서 기록을 끊을 까닭이 없다 (사용자 결정 2026-11-21)
@@ -236,6 +240,7 @@ final class SelectorRow {
         selectable: selectable ?? this.selectable,
         passing: passing,
         noBoarding: noBoarding,
+        staffOnly: staffOnly,
         viewOnly: viewOnly,
         kmCum: clearKm ? null : (kmCum ?? this.kmCum),
         links: links,
@@ -264,6 +269,7 @@ final class SelectorRow {
         selectable: selectable,
         passing: passing,
         noBoarding: noBoarding,
+        staffOnly: staffOnly,
         viewOnly: viewOnly,
         kmCum: km ?? kmCum,
         links: links,
@@ -359,6 +365,7 @@ final class SelectorBuilder {
       // 그날 서지 않는 역도 그날 영업하는 다른 계통이 거기서 끝나면 끝 노드다(長尾線 옛 경로 瓦町–花園 1945–1951의 끝 花園을 본선 일람에서 골라야 花園–御坊川을 탄다).
       // 「어떤 여객 노선의 끝인 분기점은 그 지점을 지나는 다른 노선 일람에도 나온다」(사용자 결정 2026-11-19)
       var noBoarding = false;
+      var staffOnly = false;
       var viewOnly = false;
       // 고를 수 있는지는 컴파일이 정한 표(route_stop_select) 하나만 본다. 앱에서 따로 끝인지 다시 계산하지 않는다 (검토 M1, 2026-11-21)
       final span = !stop.isStop || !_stopsOn(stop, day) ? _spanOn(stop, day) : null;
@@ -381,6 +388,7 @@ final class SelectorBuilder {
         selectable = ridable && !viewOnly;
         passing = style != 'nostop';
         noBoarding = style == 'nostop';
+        staffOnly = style == 'staff';
         // 그날 다니지 않으면 「보이기만 하는 줄」(진한 글자)이 아니라 다른 역과 같은 흐린 줄이다
         if (!ridable) viewOnly = false;
       }
@@ -402,6 +410,7 @@ final class SelectorBuilder {
         selectable: selectable,
         passing: passing,
         noBoarding: noBoarding,
+        staffOnly: staffOnly,
         viewOnly: viewOnly,
         kmCum: stop.kmCum,
         kmEstimated: stop.kmEstimated,

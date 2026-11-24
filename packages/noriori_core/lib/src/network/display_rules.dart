@@ -1088,6 +1088,9 @@ final class DisplayRules {
     }
     bool suspendedAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length && sectionEnds[gap].suspended;
     String? seasonAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length ? sectionEnds[gap].season : null;
+    // 행의 폐지 해를 지우는 것은 옆 괄호가 그 해를 적을 때뿐이다. 계절 운행 괄호는 해를 적지 않으니 그 옆 역은 제 표시(비시즌 등)를 그대로 단다
+    // (끝난 계절 노선의 운행 시절 비시즌, 関電トンネルトロリーバス 2010-01-15, 5회차 시뮬레이터 시험 2026-11-24)
+    String? shownYear(int gap) => seasonAt(gap) != null ? null : yearOf[gap];
     String? opensAt(int gap) {
       final at = gap >= 0 && beside(gap) ? home(gap) : gap;
       return sectionEnds != null && at != null && at >= 0 && at < sectionEnds.length ? sectionEnds[at].opens : null;
@@ -1302,7 +1305,7 @@ final class DisplayRules {
               !(loneBottom && index == rows.length - 1) &&
               row.closeYear != null &&
               row.state != StopState.beforeOpen &&
-              (row.closeYear == yearOf[index - 1] || row.closeYear == yearOf[index]),
+              (row.closeYear == shownYear(index - 1) || row.closeYear == shownYear(index)),
           returnsTo: closedRoute && rows.take(index).any((earlier) => earlier.node == row.node)
               ? row.node
               : null,

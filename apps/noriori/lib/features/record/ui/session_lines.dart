@@ -318,7 +318,11 @@ class _StopTile extends ConsumerWidget {
       SnackBar(
         // 임시 운행만 있는 계통은 폐지·운휴가 아니라 그날 임시 열차가 없던 것이다 (사용자 결정 2026-11-19)
         content: Text(line.row.viewOnly
-            ? (line.row.noBoarding ? t.whyViewNoBoarding : t.whyViewSignal)
+            ? (line.row.noBoarding
+                ? t.whyViewNoBoarding
+                : line.row.staffOnly
+                    ? t.whyViewStaff
+                    : t.whyViewSignal)
             : state.isTemporary
                 ? t.tempNoRun
                 : line.row.state == StopState.suspended
