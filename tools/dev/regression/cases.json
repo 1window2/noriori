@@ -18291,6 +18291,7 @@ null
 {"id": "r5-en-05", "round": 5, "kind": "nodename", "node": "n_kyushu_railway_history_museum", "lang": "en", "text": "Kyusyu Tetsudo Kinenkan", "basis": "역명판 사진 로마자(번역형 Kyushu Railway History Museum은 별칭) (5회차 역명판 사진 조사 반영 2026-11-25)"},
 {"id": "r5-en-06", "round": 5, "kind": "nodename", "node": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyamadobutsukoen", "basis": "공식이 아닌 Wikidata 번역형 라벨도 로마자 꼴로, 번역형은 검색 별칭(일반화 규칙) (2026-11-25)"},
 {"id": "r5-en-07", "round": 5, "kind": "nodename", "node": "n_naha_airport", "lang": "en", "text": "Naha Airport", "basis": "공항(空港 → Airport)은 공항 규칙 꼴이라 번역형으로 보지 않는다 (2026-11-25)"},
-{"id": "r5-en-08", "round": 5, "kind": "nodename", "node": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura-otachimisaki-koen", "basis": "たの|うら의 う는 장음이 아니다 (2026-11-25)"}
+{"id": "r5-en-08", "round": 5, "kind": "nodename", "node": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura-otachimisaki-koen", "basis": "たの|うら의 う는 장음이 아니다 (2026-11-25)"},
+{"id": "r5-en-09", "round": 5, "kind": "nodename", "node": "n_shimabarako", "lang": "en", "text": "Shimabarako", "basis": "옛 이름 시절 역명판(島原外港, 2019 개칭 전)은 지금 이름의 공식 표기로 쓰지 않는다 (2026-11-25)"}
 ]
 }

@@ -30378,10 +30378,10 @@
 - {"entity_type": "node", "id": "n_saigoh", "lang": "en", "text": "Saigoh", "source": "official"}
 - {"entity_type": "node", "id": "n_kohjiro", "lang": "ja", "text": "神代", "kana": "こうじろ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kohjiro", "lang": "ko", "text": "코지로", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kohjiro", "lang": "en", "text": "Kohjiromachi", "source": "official"}
+- {"entity_type": "node", "id": "n_kohjiro", "lang": "en", "text": "Kohjiro", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_taira", "lang": "ja", "text": "多比良", "kana": "たいら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_taira", "lang": "ko", "text": "타이라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_taira", "lang": "en", "text": "Tairamachi", "source": "official"}
+- {"entity_type": "node", "id": "n_taira", "lang": "en", "text": "Taira", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_ariakeyue", "lang": "ja", "text": "有明湯江", "kana": "ありあけゆえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ariakeyue", "lang": "ko", "text": "아리아케유에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ariakeyue", "lang": "en", "text": "Ariakeyue", "source": "wikidata"}
@@ -30405,7 +30405,7 @@
 - {"entity_type": "node", "id": "n_shimabara_funatsu", "lang": "en", "text": "Shimabara-funatsu", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_shimabarako", "lang": "ja", "text": "島原港", "kana": "しまばらこう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shimabarako", "lang": "ko", "text": "시마바라항", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shimabarako", "lang": "en", "text": "Shimabaragaikoh", "source": "official"}
+- {"entity_type": "node", "id": "n_shimabarako", "lang": "en", "text": "Shimabarako", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kase_minami_aso", "lang": "ja", "text": "加勢", "kana": "かせ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kase_minami_aso", "lang": "ko", "text": "카세", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kase_minami_aso", "lang": "en", "text": "Kase", "source": "wikidata"}
