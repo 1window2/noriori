@@ -1,0 +1,9 @@
+# 京王新線 新宿(新線新宿) 나누기 (5회차 사용자 결정 2026-11-24, 설계 docs/research/audit5-keio-shinsen-design.md)
+- {"patch": "replace", "id": "e_008622", "a": "n_shinjuku_keio_new_line", "b": "n_shinjuku_sanchome_toei", "seed_line": "l_shinjuku_line_toei", "why": "都営新宿線 新宿 끝을 新線新宿 노드로"}
+- {"patch": "add", "id": "e_097211", "a": "n_shinjuku_keio", "b": "n_sasazuka", "seed_line": "l_keio_line", "why": "京王線 본선 新宿–笹塚(1978-10-31부터 중간 정차 없음). 3.6 km 京王 旅客営業規則 2026-10-01 https://www.keio.co.jp/assets/pdf/train/ticket/about_ticket/ryokakueigyou_01_20261001.pdf 別表第1号"}
+- {"patch": "replace", "id": "e_006809", "a": "n_shinjuku_keio", "b": "n_hatsudai", "seed_line": "l_keio_line", "route_only": "r_keio_line_shinjuku_sasazuka_old", "why": "옛 본선(정차 배치) 칸. 1978-10-31 relocated"}
+- {"patch": "replace", "id": "e_006810", "a": "n_hatsudai", "b": "n_hatagaya", "seed_line": "l_keio_line", "route_only": "r_keio_line_shinjuku_sasazuka_old", "why": "옛 본선 칸"}
+- {"patch": "replace", "id": "e_006811", "a": "n_hatagaya", "b": "n_sasazuka", "seed_line": "l_keio_line", "route_only": "r_keio_line_shinjuku_sasazuka_old", "why": "옛 본선 칸"}
+- {"patch": "add", "id": "e_097212", "a": "n_shinjuku_keio_new_line", "b": "n_hatsudai", "seed_line": "l_keio_line", "route_only": "r_keio_line_shinsen_shinjuku_sasazuka", "why": "京王新線 新線新宿–初台"}
+- {"patch": "add", "id": "e_097213", "a": "n_hatsudai", "b": "n_hatagaya", "seed_line": "l_keio_line", "route_only": "r_keio_line_shinsen_shinjuku_sasazuka", "why": "京王新線 初台–幡ヶ谷"}
+- {"patch": "add", "id": "e_097214", "a": "n_hatagaya", "b": "n_sasazuka", "seed_line": "l_keio_line", "route_only": "r_keio_line_shinsen_shinjuku_sasazuka", "why": "京王新線 幡ヶ谷–笹塚"}

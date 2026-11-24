@@ -1401,7 +1401,7 @@
 - {"date": "1926-05-18", "type": "open", "operator": "o_hokuriku_railroad", "line": "l_asanogawa_line", "edges": ["n_hokutetsu_kanazawa..n_nanatsuya"], "source": "noritsubushi"}
 - {"date": "1925-05-10", "type": "open", "operator": "o_hokuriku_railroad", "line": "l_asanogawa_line", "edges": ["n_nanatsuya..n_kagatsume"], "source": "noritsubushi"}
 - {"date": "1929-07-14", "type": "open", "operator": "o_hokuriku_railroad", "line": "l_asanogawa_line", "edges": ["n_kagatsume..n_uchinada"], "source": "noritsubushi"}
-- {"date": "1952-XX-XX", "type": "open", "operator": "o_hokuriku_railroad", "line": "l_asanogawa_line", "edges": ["n_uchinada..n_awagasaki_kaigan"], "source": "wikipedia"}
+- {"date": "[1950-07-01..1952-12-31]", "type": "open", "operator": "o_hokuriku_railroad", "line": "l_asanogawa_line", "edges": ["n_uchinada..n_awagasaki_kaigan"], "source": "wikipedia"}
 - {"date": "1972-09-01", "type": "close", "line": "l_asanogawa_line", "edges": ["n_uchinada..n_awagasaki_kaigan"], "reason": "abolished", "source": "wikipedia", "legal_abolition": "1974-07-08", "last_service": "1972-08-31"}
 - {"date": "1961-XX-XX", "type": "close_stop", "route": "r_asanogawa_line", "node": "n_shinsuzaki", "source": "wikipedia"}
 - {"date": "1952-03-01", "type": "open_stop", "route": "r_asanogawa_line", "node": "n_awagasaki", "source": "wikipedia"}

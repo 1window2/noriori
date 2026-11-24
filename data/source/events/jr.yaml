@@ -1082,7 +1082,7 @@
 - {"date": "1982-04-01", "type": "open_stop", "route": "r_tohoku_main_line_iwakiri_rifu", "node": "n_shin_rifu", "source": "wikipedia"}
 - {"date": "1894-01-04", "type": "open_stop", "route": "r_tohoku_main_line_iwakiri_rifu", "node": "n_rifu", "source": "wikipedia"}
 - {"date": "2015-05-30", "type": "open", "operator": "o_jr_east", "line": "l_tohoku_main_line", "edges": ["n_matsushima..n_takagimachi"], "route": "r_tohoku_main_line_matsushima_takagimachi", "source": "noritsubushi"}
-- {"date": "1988-03-13", "type": "open", "operator": "o_jr_east", "line": "l_tohoku_main_line", "edges": ["n_tabata_signal..n_kami_nakazato"], "route": "r_tohoku_freight_line", "source": "noritsubushi"}
+- {"date": "1988-03-13", "type": "open", "operator": "o_jr_east", "line": "l_tohoku_main_line", "edges": ["n_tabata_signal..n_oji_tohoku_main"], "route": "r_tohoku_freight_line", "source": "noritsubushi"}
 - {"date": "1890-04-16", "type": "open", "operator": "o_japanese_national_railways", "line": "l_tohoku_main_line", "edges": ["n_rifu..n_shinainuma"], "route": "r_tohoku_main_line_rifu_shinainuma", "source": "wikipedia"}
 - {"date": "1962-07-01", "type": "close", "line": "l_tohoku_main_line", "edges": ["n_rifu..n_matsushima_tohoku_main"], "reason": "abolished", "source": "wikipedia", "legal_abolition": "1962-07-01", "route": "r_tohoku_main_line_rifu_shinainuma"}
 - {"date": "1962-04-20", "type": "close", "line": "l_tohoku_main_line", "edges": ["n_matsushima_tohoku_main..n_shinainuma"], "reason": "abolished", "source": "wikipedia", "legal_abolition": "1962-04-20", "route": "r_tohoku_main_line_rifu_shinainuma"}

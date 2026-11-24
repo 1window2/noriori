@@ -20083,7 +20083,7 @@
 {
 "why": "EXP 浅野川線 1952 연장은 옛 粟ヶ崎遊園前 자리에서",
 "match": {
-"date": "1952-XX-XX",
+"date": "[1950-07-01..1952-12-31]",
 "type": "open",
 "line": "l_asanogawa_line"
 },
@@ -20178,36 +20178,8 @@
 "source": "wikipedia"
 }
 },
-{
-"why": "京王線 新宿–笹塚: 노리츠부시 표의 1963-04-01은 新宿 지하화(0.6 km) 날이다. 지금 新宿(西口) 기점은 1945-07-24부터이고 1953-07-10 専用軌道化·1963-04-01 지하화는 같은 역 사이 선형 변경이다 (위키 京王線 111519832 年表). 감사2 kanto_2-023",
-"match": {
-"date": "1963-04-01",
-"type": "open",
-"line": "l_keio_line",
-"edges": [
-"n_shinjuku_keio..n_sasazuka"
-]
-},
-"set": {
-"date": "1945-07-24",
-"edges": [
-"n_shinjuku_keio..n_hatsudai"
-]
-}
-},
-{
-"why": "京王線 初台–笹塚: 1913-10-11 代々幡–笹塚, 1914-04-08 幡代小学校前–代々幡, 1914-06-11 代々木–幡代小学校前 개업 (위키 京王線 111519832). 1950년 전 회사 변경은 기록 범위 밖이라 1950년 시점 회사로 둠. 감사2 kanto_2-023 / 2026-11-13: 代々幡(幡ヶ谷)–笹塚 1913-10-11을 따로(『京王電気軌道三十年史』 pid 1242947 コマ78·79 「十月十一日 代々幡マデ電車延長開通」, 높음), 이 행은 初台–幡ヶ谷 칸 근사",
-"add": {
-"date": "1914-06-11",
-"type": "open",
-"operator": "o_keio_teito_electric_railway",
-"line": "l_keio_line",
-"edges": [
-"n_hatsudai..n_hatagaya"
-],
-"source": "wikipedia"
-}
-},
+{"why": "京王線 新宿–笹塚: 노리츠부시 표의 1963-04-01은 新宿 지하화(0.6 km) 날이다. 지금 新宿(西口) 기점은 1945-07-24부터이고 1953-07-10 専用軌道化·1963-04-01 지하화는 같은 역 사이 선형 변경이다 (위키 京王線 111519832 年表). 감사2 kanto_2-023 / 新線 칸과 같은 두 노드라 칸 ID로(5회차 2026-11-24)", "match": {"date": "1963-04-01", "type": "open", "line": "l_keio_line", "edges": ["n_shinjuku_keio..n_sasazuka"]}, "set": {"date": "1945-07-24", "edges": ["e_006809"]}},
+{"why": "京王線 初台–笹塚: 1913-10-11 代々幡–笹塚, 1914-04-08 幡代小学校前–代々幡, 1914-06-11 代々木–幡代小学校前 개업 (위키 京王線 111519832). 1950년 전 회사 변경은 기록 범위 밖이라 1950년 시점 회사로 둠. 감사2 kanto_2-023 / 2026-11-13: 代々幡(幡ヶ谷)–笹塚 1913-10-11을 따로(『京王電気軌道三十年史』 pid 1242947 コマ78·79 「十月十一日 代々幡マデ電車延長開通」, 높음), 이 행은 初台–幡ヶ谷 칸 근사 / 칸 ID로(5회차)", "add": {"date": "1914-06-11", "type": "open", "operator": "o_keio_teito_electric_railway", "line": "l_keio_line", "edges": ["e_006810"], "source": "wikipedia"}},
 {
 "why": "近鉄京都線 伏見–堀内(近鉄丹波橋)–桃山御陵前: 1945-12-21 京阪 丹波橋 경유로 바뀌어 廃止, 1967-03-29 復活 (위키 近鉄京都線 110958649). 그 사이 1963-10-01 奈良電→近鉄 이관이 이 칸에도 걸리므로 폐지·재개 대신 운휴로 둔다(그 기간 영업 없음은 같다). 감사2 kinki_2-001",
 "add": {
@@ -22260,19 +22232,7 @@
 "legal_abolition": "1963-09-16"
 }
 },
-{
-"why": "京王 代々幡(幡ヶ谷)–笹塚 1913-10-11: 『京王電気軌道三十年史』 「十月十一日 代々幡マデ電車延長開通」(높음)·위키 京王線 (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json)",
-"add": {
-"date": "1913-10-11",
-"type": "open",
-"operator": "o_keio_teito_electric_railway",
-"line": "l_keio_line",
-"edges": [
-"n_hatagaya..n_sasazuka"
-],
-"source": "hand"
-}
-},
+{"why": "京王 代々幡(幡ヶ谷)–笹塚 1913-10-11: 『京王電気軌道三十年史』 「十月十一日 代々幡マデ電車延長開通」(높음)·위키 京王線 (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json) / 칸 ID로(5회차)", "add": {"date": "1913-10-11", "type": "open", "operator": "o_keio_teito_electric_railway", "line": "l_keio_line", "edges": ["e_006811"], "source": "hand"}},
 {
 "why": "京津電気軌道 三条大橋–札ノ辻 1912-08-15 한 구간: 1925 『地方鉄道及軌道一覧』(NDL pid 1257892 コマ152) 「三條下ル五軒町–札ノ辻 6.50 開業 1.8.15」(높음)·1966 停車場一覧 上関寺 1912-08-15. 12-14는 上関寺 서쪽 도보 연락 해소일 (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json)",
 "match": {
@@ -22938,5 +22898,7 @@
 {"why": "徳島本線은 1914-03-25 阿波池田까지 개통(『官報』1914-03-23 鉄道院告示第19・20号 인용), 「1962年に徳島線にも佃駅が設置された時点で、佃 - 阿波池田間も土讃線に所属が変更」 — 그 전까지 佃–阿波池田은 徳島本線 소속 (위키 徳島線 https://ja.wikipedia.org/w/index.php?oldid=111002251, 높음·관보 인용). 5번 결정 이관 표시(2026-11-21)", "match": {"date": "1914-03-25", "type": "open", "line": "l_dosan_line", "edges": ["n_tsukuda_dosan..n_awa_ikeda"]}, "set": {"line": "l_tokushima_line"}},
 {"why": "徳島本線은 1914-03-25 阿波池田까지 개통(『官報』1914-03-23 鉄道院告示第19・20号 인용), 「1962年に徳島線にも佃駅が設置された時点で、佃 - 阿波池田間も土讃線に所属が変更」 — 그 전까지 佃–阿波池田은 徳島本線 소속 (위키 徳島線 https://ja.wikipedia.org/w/index.php?oldid=111002251, 높음·관보 인용). 5번 결정 이관 표시(2026-11-21)", "add": {"date": "1962-07-18", "type": "transfer", "edges": ["n_tsukuda_dosan..n_awa_ikeda"], "from": {"operator": "o_japanese_national_railways", "line": "l_tokushima_line"}, "to": {"operator": "o_japanese_national_railways", "line": "l_dosan_line"}, "source": "hand"}},
 {"why": "阿波池田–三縄은 1931-09-19 徳島本線 연장으로 개통(『官報』1931-09-14 鉄道省告示第245・246号 인용)하고 1935-11-28 「阿波池田 - 三縄間を土讃線に編入」(『官報』1935-11-22 鉄道省告示第533号 인용) (위키 徳島線 https://ja.wikipedia.org/w/index.php?oldid=111002251, 높음·관보 인용)", "match": {"date": "1931-09-19", "type": "open", "line": "l_dosan_line", "edges": ["n_awa_ikeda..n_minawa"]}, "set": {"line": "l_tokushima_line"}},
-{"why": "阿波池田–三縄은 1931-09-19 徳島本線 연장으로 개통(『官報』1931-09-14 鉄道省告示第245・246号 인용)하고 1935-11-28 「阿波池田 - 三縄間を土讃線に編入」(『官報』1935-11-22 鉄道省告示第533号 인용) (위키 徳島線 https://ja.wikipedia.org/w/index.php?oldid=111002251, 높음·관보 인용)", "add": {"date": "1935-11-28", "type": "transfer", "edges": ["n_awa_ikeda..n_minawa"], "from": {"operator": "o_japanese_national_railways", "line": "l_tokushima_line"}, "to": {"operator": "o_japanese_national_railways", "line": "l_dosan_line"}, "source": "hand"}}
+{"why": "阿波池田–三縄은 1931-09-19 徳島本線 연장으로 개통(『官報』1931-09-14 鉄道省告示第245・246号 인용)하고 1935-11-28 「阿波池田 - 三縄間を土讃線に編入」(『官報』1935-11-22 鉄道省告示第533号 인용) (위키 徳島線 https://ja.wikipedia.org/w/index.php?oldid=111002251, 높음·관보 인용)", "add": {"date": "1935-11-28", "type": "transfer", "edges": ["n_awa_ikeda..n_minawa"], "from": {"operator": "o_japanese_national_railways", "line": "l_tokushima_line"}, "to": {"operator": "o_japanese_national_railways", "line": "l_dosan_line"}, "source": "hand"}},
+{"why": "山鹿温泉鉄道 1953-06-26 西日本大水害 운휴의 재개일: 『鉄道ピクトリアル』1992-03 https://dl.ndl.go.jp/pid/3294689 연표 「1953(昭28)6.26 6.26大水害(全線復旧まで約4カ月)」(중간) · 『運輸と経済』1953-09 https://dl.ndl.go.jp/pid/2637357 「最も甚だしく損害を受けたのは山鹿温泉鉄道」(중간). 「약 4개월」이라 1953 안 날짜 모름을 범위로 좁힘 (5회차 A17, 사용자 결정 2026-11-24: 재난 운휴 기간이 확정되면 그 기간 직통도 끊김)", "match": {"date": "1953-XX-XX", "type": "resume", "line": "l_yamaga_onsen_railway_line"}, "set": {"date": "[1953-09-26..1953-11-26]"}},
+{"why": "都営新宿線 新宿 끝이 新線新宿 노드로 바뀜(5회차 新宿 나누기 2026-11-24)", "match": {"date": "1980-03-16", "type": "open", "line": "l_shinjuku_line_toei", "edges": ["n_shinjuku_toei..n_iwamotocho"]}, "set": {"edges": ["n_shinjuku_keio_new_line..n_iwamotocho"]}}
 ]

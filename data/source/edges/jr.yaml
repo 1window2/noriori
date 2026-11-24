@@ -1295,7 +1295,7 @@
 - {"id": "e_001294", "a": "n_iwakiri", "b": "n_shin_rifu", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_main_line_iwakiri_rifu"}
 - {"id": "e_001295", "a": "n_shin_rifu", "b": "n_rifu", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_main_line_iwakiri_rifu"}
 - {"id": "e_001296", "a": "n_matsushima", "b": "n_takagimachi", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_main_line_matsushima_takagimachi"}
-- {"id": "e_001297", "a": "n_tabata_signal", "b": "n_kami_nakazato", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_freight_line"}
+- {"id": "e_001297", "a": "n_tabata_signal", "b": "n_oji_tohoku_main", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_freight_line"}
 - {"id": "e_001298", "a": "n_rifu", "b": "n_matsushima_tohoku_main", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_main_line_rifu_shinainuma"}
 - {"id": "e_001299", "a": "n_matsushima_tohoku_main", "b": "n_shinainuma", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_main_line_rifu_shinainuma"}
 - {"id": "e_001300", "a": "n_nonai_aoimori_aoimori_railway_old", "b": "n_namiuchi", "seed_line": "l_tohoku_main_line", "route_only": "r_tohoku_main_line_nonai_aoimori_aoimori_railway_old_aomori"}

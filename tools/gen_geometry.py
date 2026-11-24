@@ -144,8 +144,9 @@ _db=sqlite3.connect(os.path.join(BUILD,'master.sqlite'))
 CUR={r[0] for r in _db.execute("select distinct edge_id from edge_attr where valid_to='ongoing'")}
 CLOSEY={}
 # 원문이 범위일 수 있어 상한 칸으로 본다
-for e_,v_ in _db.execute("select edge_id,max(case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end) from edge_life group by 1"):
-    if v_ and v_!='9999-12-31':CLOSEY[e_]=int(v_[:4])
+# 운휴로 끝난 칸(운휴 중 이설해 계승한 칸은 법적 폐지일까지 운휴 행이 남는다, 5회차 2026-11-24)은 마지막 영업 행이 끝난 해다. 선형은 열차가 다닌 때의 선로여야 한다
+for e_,v_,o_ in _db.execute("select edge_id,max(case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end),max(case when status='open' then (case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end) end) from edge_life group by 1"):
+    if v_ and v_!='9999-12-31':CLOSEY[e_]=int((o_ or v_)[:4])
 # 운행이 먼저 끝나고 법적 폐지가 늦은 구간. N05는 법적 폐지까지 선로를 남겨 두기도 한다
 LEGALY={e_:int(v_[:4]) for e_,v_ in _db.execute("select edge_id,max(legal_abolition) from edge_life group by 1") if v_ and v_[:4].isdigit()}
 STOPS={r[0] for r in _db.execute("select distinct node_id from route_stop where is_stop=1 and valid_to='ongoing'")}

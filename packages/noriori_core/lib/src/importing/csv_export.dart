@@ -45,6 +45,7 @@ final class ExportNames {
     required this.lines,
     required this.routes,
     required this.nodes,
+    this.routeStations = const {},
   });
 
   final Map<String, String> operators;
@@ -53,6 +54,9 @@ final class ExportNames {
   /// 노리츠부시 방식의 괄호 노선명. 없으면 공식명이다.
   final Map<String, String> routes;
   final Map<String, String> nodes;
+
+  /// 계통 한정 역 대응을 거꾸로 쓴 것: 계통 ID → 노드 ID → 노리츠부시 역 이름(가져오기 대응표 stations와 짝, 5회차 2026-11-24)
+  final Map<String, Map<String, String>> routeStations;
 }
 
 /// 호환판 한 행.
@@ -217,8 +221,8 @@ final class CsvExporter {
           _line([
             names.operators[company] ?? company,
             _lineName(leg.lineId.value, leg.routeId.value),
-            _node(leg.fromNode.value, leg.fromLabel),
-            _node(leg.toNode.value, leg.toLabel),
+            names.routeStations[leg.routeId.value]?[leg.fromNode.value] ?? _node(leg.fromNode.value, leg.fromLabel),
+            names.routeStations[leg.routeId.value]?[leg.toNode.value] ?? _node(leg.toNode.value, leg.toLabel),
             _km(expansion.meters ?? 0),
             day,
             ride.note,

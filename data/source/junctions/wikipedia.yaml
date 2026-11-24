@@ -2,7 +2,6 @@
 - {"line": "l_hakodate_main_line", "other": "l_donan_isaribi_railway_line", "at": "n_goryokaku", "source": "wikipedia:111583591", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_hakodate_main_line", "other": "l_setana_line", "at": "n_kunnui", "source": "wikipedia:111583591", "verified": false, "valid": [null, "1987-03-16"], "side": "up"}
 - {"line": "l_hakodate_main_line", "other": "l_muroran_main_line", "at": "n_oshamambe", "source": "wikipedia:111583591", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_hakodate_main_line", "other": "l_iburi_line", "at": "n_kutchan", "source": "wikipedia:111583591", "verified": false, "valid": [null, "1986-11-01"], "side": "down"}
 - {"line": "l_hakodate_main_line", "other": "l_iwanai_line", "at": "n_kozawa", "source": "wikipedia:111583591", "verified": false, "valid": [null, "1985-07-01"], "side": "down"}
 - {"line": "l_hakodate_main_line", "other": "l_temiya_line", "at": "n_minami_otaru", "source": "wikipedia:111583591", "verified": false, "valid": [null, "1962-05-15"], "side": "up"}
 - {"line": "l_hakodate_main_line", "other": "l_sassho_line", "at": "n_soen", "source": "wikipedia:111583591", "verified": false, "valid": [null, "ongoing"], "side": "up"}
@@ -38,7 +37,6 @@
 - {"line": "l_soya_main_line", "other": "l_nayoro_main_line", "at": "n_nayoro", "source": "wikipedia:111330293", "verified": false, "valid": [null, "1989-05-01"], "side": "up"}
 - {"line": "l_soya_main_line", "other": "l_biko_line", "at": "n_bifuka", "source": "wikipedia:111330293", "verified": false, "valid": [null, "1985-09-17"], "side": "up"}
 - {"line": "l_soya_main_line", "other": "l_tempoku_line", "at": "n_otoineppu", "source": "wikipedia:111330293", "verified": false, "valid": [null, "1989-05-01"], "side": "down"}
-- {"line": "l_soya_main_line", "other": "l_haboro_line", "at": "n_horonobe", "source": "wikipedia:111330293", "verified": false, "valid": [null, "1987-03-30"], "side": "down"}
 - {"line": "l_soya_main_line", "other": "l_tempoku_line", "at": "n_minami_wakkanai", "source": "wikipedia:111330293", "verified": false, "valid": [null, "1989-05-01"], "side": "up"}
 - {"line": "l_sekihoku_main_line", "other": "l_furusato_ginga_line", "at": "n_kitami", "source": "wikipedia:110395242", "verified": false, "valid": [null, "2006-04-21"], "side": "up"}
 - {"line": "l_sekihoku_main_line", "other": "l_aioi_line", "at": "n_bihoro", "source": "wikipedia:110395242", "verified": false, "valid": [null, "1985-04-01"], "side": "down"}
@@ -48,7 +46,7 @@
 - {"line": "l_senmo_main_line", "other": "l_shibetsu_line", "at": "n_shibecha", "source": "wikipedia:110609575", "verified": false, "valid": [null, "1989-04-30"], "side": "down"}
 - {"line": "l_senmo_main_line", "other": "l_yumo_line", "at": "n_abashiri", "source": "wikipedia:110609575", "verified": false, "valid": [null, "1987-03-20"], "side": "down"}
 - {"line": "l_yamanote_line", "other": "l_akabane_line", "at": "n_ikebukuro", "source": "wikipedia:111444038", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_akabane_line", "other": "l_tohoku_main_line", "at": "n_akabane", "source": "wikipedia:111442920", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_akabane_line", "other": "l_tohoku_main_line", "at": "n_akabane", "source": "wikipedia:111442920", "verified": false, "valid": [null, "1985-09-30"], "side": "down"}
 - {"line": "l_nambu_line", "other": "l_ome_line", "at": "n_tachikawa", "source": "wikipedia:111552537", "verified": false, "valid": ["1908-02-18", "ongoing"], "side": "up"}
 - {"line": "l_tsurumi_line", "other": "l_nambu_line", "at": "n_hama_kawasaki", "source": "wikipedia:111439859", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_musashino_line", "other": "l_nambu_line", "at": "n_fuchu_hommachi", "source": "wikipedia:111444149", "verified": false, "valid": [null, "ongoing"], "side": "up"}
@@ -59,7 +57,6 @@
 - {"line": "l_itsukaichi_line", "other": "l_ome_line", "at": "n_haijima", "source": "wikipedia:111382671", "verified": false, "valid": ["1908-02-18", "ongoing"], "side": "down"}
 - {"line": "l_hachiko_line", "other": "l_yokohama_line", "at": "n_hachioji", "source": "wikipedia:111445160", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_hachiko_line", "other": "l_ome_line", "at": "n_haijima", "source": "wikipedia:111445160", "verified": false, "valid": ["1908-02-18", "ongoing"], "side": "up"}
-- {"line": "l_hachiko_line", "other": "l_itsukaichi_line", "at": "n_haijima", "source": "wikipedia:111445160", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_hachiko_line", "other": "l_kawagoe_line", "at": "n_komagawa", "source": "wikipedia:111445160", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_shinonoi_line", "other": "l_chuo_main_line", "at": "n_shiojiri", "source": "wikipedia:111451282", "verified": false, "valid": ["1982-05-17", "ongoing"], "side": "up", "track_valid": [null, "ongoing"]}
 - {"line": "l_shinonoi_line", "other": "l_chuo_main_line", "at": "n_shiojiri", "source": "https://ja.wikipedia.org/w/index.php?oldid=111778298; 『交通技術』29(13) 1974-12 11コマ; 『交通技術』35(11) 1980-10 9コマ; 『地図情報』2(1) 1982-08 17コマ", "verified": true, "valid": [null, "1982-05-17"], "side": "up", "continue": true}
@@ -87,10 +84,10 @@
 - {"line": "l_joetsu_line", "other": "l_shinetsu_main_line", "at": "n_miyauchi", "source": "wikipedia:111452436", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_joetsu_shinkansen", "other": "l_tohoku_shinkansen", "at": "n_omiya", "source": "wikipedia:111375376", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_joetsu_shinkansen", "other": "l_hokuriku_shinkansen", "at": "n_takasaki", "source": "wikipedia:111375376", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_ryomo_line", "other": "l_mito_line", "at": "n_oyama_mito", "source": "wikipedia:111452524", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_ryomo_line", "other": "l_mito_line", "at": "n_oyama_mito", "source": "wikipedia:111452524", "verified": false, "valid": [null, "2023-03-10"], "side": "up"}
 - {"line": "l_ryomo_line", "other": "l_tohoku_main_line", "at": "n_oyama_mito", "source": "wikipedia:111452524", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_ryomo_line", "other": "l_joetsu_line", "at": "n_shin_maebashi", "source": "wikipedia:111452524", "verified": false, "valid": [null, "ongoing"], "side": "up"}
-- {"line": "l_mito_line", "other": "l_ryomo_line", "at": "n_oyama_mito", "source": "wikipedia:111452614", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_mito_line", "other": "l_ryomo_line", "at": "n_oyama_mito", "source": "wikipedia:111452614", "verified": false, "valid": [null, "2023-03-10"], "side": "up"}
 - {"line": "l_mito_line", "other": "l_tohoku_main_line", "at": "n_oyama_mito", "source": "wikipedia:111452614", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_mito_line", "other": "l_moka_line_moka", "at": "n_shimodate", "source": "wikipedia:111452614", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_mito_line", "other": "l_moka_line", "at": "n_shimodate", "source": "wikipedia:111452614", "verified": false, "valid": [null, "1988-04-11"], "side": "up"}
@@ -106,7 +103,6 @@
 - {"line": "l_tazawako_line", "other": "l_yamada_line", "at": "n_morioka", "source": "wikipedia:111465873", "verified": false, "valid": [null, "1996-03-30"], "side": "down"}
 - {"line": "l_yamada_line", "other": "l_iwaizumi_line", "at": "n_moichi", "source": "wikipedia:111465927", "verified": false, "valid": [null, "2010-08-01"], "side": "up"}
 - {"line": "l_yamada_line", "other": "l_rias_line", "at": "n_miyako", "source": "wikipedia:111465927", "verified": false, "valid": [null, "ongoing"], "side": "up"}
-- {"line": "l_ominato_line", "other": "l_ohata_line", "at": "n_shimokita", "source": "wikipedia:111466007", "verified": false, "valid": [null, "1985-07-01"], "side": "up"}
 - {"line": "l_banetsu_east_line", "other": "l_tohoku_main_line", "at": "n_koriyama_banetsu_west", "source": "wikipedia:111569532", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_banetsu_east_line", "other": "l_banetsu_west_line", "at": "n_koriyama_banetsu_west", "source": "wikipedia:111569532", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_banetsu_west_line", "other": "l_banetsu_east_line", "at": "n_koriyama_banetsu_west", "source": "wikipedia:111454759", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -133,7 +129,6 @@
 - {"line": "l_uetsu_main_line", "other": "l_banetsu_west_line", "at": "n_niitsu", "source": "wikipedia:111580331", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_uetsu_main_line", "other": "l_shinetsu_main_line", "at": "n_niitsu", "source": "wikipedia:111580331", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_uetsu_main_line", "other": "l_hakushin_line", "at": "n_shibata", "source": "wikipedia:111580331", "verified": false, "valid": [null, "ongoing"], "side": "up"}
-- {"line": "l_uetsu_main_line", "other": "l_akatani_line", "at": "n_shibata", "source": "wikipedia:111580331", "verified": false, "valid": [null, "1984-04-01"], "side": "down"}
 - {"line": "l_uetsu_main_line", "other": "l_yonesaka_line", "at": "n_sakamachi", "source": "wikipedia:111580331", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_uetsu_main_line", "other": "l_rikuu_west_line", "at": "n_amarume", "source": "wikipedia:111580331", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_uetsu_main_line", "other": "l_ou_main_line", "at": "n_akita", "source": "wikipedia:111580331", "verified": false, "valid": [null, "ongoing"], "side": "up"}
@@ -384,8 +379,6 @@
 - {"line": "l_shinmei_line", "other": "l_rumoi_main_line", "at": "n_fukagawa", "source": "wikipedia:111317864", "verified": false, "valid": [null, "1995-09-04"], "side": "up"}
 - {"line": "l_tomiuchi_line", "other": "l_hidaka_main_line", "at": "n_mukawa", "source": "wikipedia:111101732", "verified": false, "valid": ["1929-11-26", "1986-11-01"], "side": "down"}
 - {"line": "l_rumoi_main_line", "other": "l_sassho_line", "at": "n_ishikari_numata", "source": "wikipedia:111001720", "verified": false, "valid": [null, "2026-04-01"], "side": "down"}
-- {"line": "l_rumoi_main_line", "other": "l_haboro_line", "at": "n_rumoi_rumoi_main", "source": "wikipedia:111001720", "verified": false, "valid": [null, "1987-03-30"], "side": "down"}
-- {"line": "l_haboro_line", "other": "l_rumoi_main_line", "at": "n_rumoi_rumoi_main", "source": "wikipedia:111284968", "verified": false, "valid": [null, "1987-03-30"], "side": "down"}
 - {"line": "l_shihoro_line", "other": "l_hiroo_line", "at": "n_obihiro", "source": "wikipedia:111468182", "verified": false, "valid": [null, "1987-02-02"], "side": "up"}
 - {"line": "l_hiroo_line", "other": "l_shihoro_line", "at": "n_obihiro", "source": "wikipedia:111170439", "verified": false, "valid": [null, "1987-02-02"], "side": "up"}
 - {"line": "l_chihoku_line", "other": "l_nemuro_main_line", "at": "n_ikeda", "source": "wikipedia:111532351", "verified": false, "valid": [null, "1989-06-04"], "side": "down"}
@@ -409,9 +402,9 @@
 - {"line": "l_ikebukuro_line", "other": "l_shinjuku_line_seibu", "at": "n_tokorozawa", "source": "wikipedia:111500033", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_shinjuku_line_seibu", "other": "l_haijima_line", "at": "n_kodaira", "source": "wikipedia:110605452", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_shinjuku_line_seibu", "other": "l_kokubunji_line", "at": "n_higashi_murayama", "source": "wikipedia:110605452", "verified": false, "valid": [null, "ongoing"], "side": "up"}
-- {"line": "l_shinjuku_line_seibu", "other": "l_seibuen_line", "at": "n_higashi_murayama", "source": "wikipedia:110605452", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_shinjuku_line_seibu", "other": "l_seibuen_line", "at": "n_higashi_murayama", "source": "wikipedia:110605452", "verified": false, "valid": [null, "2019-03-16"], "side": "down"}
 - {"line": "l_shinjuku_line_seibu", "other": "l_ikebukuro_line", "at": "n_tokorozawa", "source": "wikipedia:110605452", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_seibuen_line", "other": "l_shinjuku_line_seibu", "at": "n_higashi_murayama", "source": "wikipedia:109698618", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_seibuen_line", "other": "l_shinjuku_line_seibu", "at": "n_higashi_murayama", "source": "wikipedia:109698618", "verified": false, "valid": [null, "2019-03-16"], "side": "up"}
 - {"line": "l_kokubunji_line", "other": "l_haijima_line", "at": "n_ogawa_seibu", "source": "wikipedia:111288562", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_kokubunji_line", "other": "l_shinjuku_line_seibu", "at": "n_higashi_murayama", "source": "wikipedia:111288562", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_seibu_yurakucho_line", "other": "l_ikebukuro_line", "at": "n_nerima_seibu", "source": "wikipedia:111514914", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -439,7 +432,6 @@
 - {"line": "l_den_en_toshi_line", "other": "l_kinuta_line", "at": "n_futako_tamagawa", "source": "wikipedia:111498924", "verified": false, "valid": [null, "1943-07-01"], "side": "up"}
 - {"line": "l_keikyu_main_line", "other": "l_keikyu_airport_line", "at": "n_keikyu_kamata", "source": "wikipedia:111490311", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_keikyu_airport_line", "other": "l_keikyu_main_line", "at": "n_keikyu_kamata", "source": "wikipedia:110729000", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_daishi_line", "other": "l_keikyu_main_line", "at": "n_keikyu_kawasaki", "source": "wikipedia:110654966", "verified": false, "valid": ["1904-03-01", "ongoing"], "side": "up"}
 - {"line": "l_zushi_line", "other": "l_keikyu_main_line", "at": "n_kanazawa_hakkei_keikyu", "source": "wikipedia:110126529", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_kurihama_line", "other": "l_keikyu_main_line", "at": "n_horinouchi", "source": "wikipedia:111556682", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_sotetsu_main_line", "other": "l_sotetsu_shin_yokohama_line", "at": "n_nishiya", "source": "wikipedia:111119625", "verified": false, "valid": [null, "ongoing"], "side": "up"}
@@ -603,13 +595,13 @@
 - {"line": "l_aizu_kinugawa_line", "other": "l_aizu_line", "at": "n_aizukogen_ozeguchi_yagan", "source": "wikipedia:111306867", "verified": false, "valid": [null, "1987-07-16"], "continue": true}
 - {"line": "l_aizu_line", "other": "l_aizu_kinugawa_line", "at": "n_aizukogen_ozeguchi_aizu", "source": "wikipedia:111306867", "verified": false, "valid": [null, "1987-07-16"], "continue": true}
 - {"line": "l_aizu_line_aizu", "other": "l_tadami_line", "at": "n_nishi_wakamatsu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_tohoku_main_line", "other": "l_akabane_line", "at": "n_akabane", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_tohoku_main_line", "other": "l_akabane_line", "at": "n_akabane", "source": "derived", "verified": false, "valid": [null, "1985-09-30"], "continue": true, "track_valid": [null, "1985-09-30"]}
+- {"line": "l_tohoku_main_line", "other": "l_akabane_line", "at": "n_akabane", "source": "https://ja.wikipedia.org/w/index.php?oldid=111442920", "verified": true, "valid": ["1985-09-30", "ongoing"], "continue": true}
 - {"line": "l_akabane_line", "other": "l_yamanote_line", "at": "n_ikebukuro", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_akabane_line_toei", "other": "l_arakawa_line", "at": "n_oji_ekimae", "source": "derived", "verified": false, "valid": [null, "1972-11-12"], "continue": true}
 - {"line": "l_arakawa_line", "other": "l_akabane_line_toei", "at": "n_oji_ekimae", "source": "derived", "verified": false, "valid": [null, "1972-11-12"], "side": "up"}
 - {"line": "l_akatani_line", "other": "l_hakushin_line", "at": "n_shibata", "source": "derived", "verified": false, "valid": [null, "1984-04-01"], "continue": true}
 - {"line": "l_hakushin_line", "other": "l_akatani_line", "at": "n_shibata", "source": "derived", "verified": false, "valid": [null, "1984-04-01"], "continue": true}
-- {"line": "l_akatani_line", "other": "l_uetsu_main_line", "at": "n_shibata", "source": "derived", "verified": false, "valid": [null, "1984-04-01"], "continue": true}
 - {"line": "l_akechi_line", "other": "l_chuo_main_line", "at": "n_ena", "source": "derived", "verified": false, "valid": [null, "1985-11-16"], "continue": true}
 - {"line": "l_chuo_main_line", "other": "l_akechi_line", "at": "n_ena", "source": "derived", "verified": false, "valid": [null, "1985-11-16"], "side": "up"}
 - {"line": "l_akita_nairiku_line", "other": "l_tazawako_line", "at": "n_kakunodate", "source": "derived", "verified": false, "valid": [null, "1996-03-30"], "continue": true}
@@ -737,8 +729,6 @@
 - {"line": "l_susaki_line", "other": "l_chiyodabashi_line", "at": "n_eitaibashi", "source": "derived", "verified": false, "valid": [null, "1972-11-12"], "continue": true}
 - {"line": "l_chiyodabashi_line", "other": "l_kandabashi_line", "at": "n_otemachi_toei", "source": "derived", "verified": false, "valid": [null, "1968-09-29"], "continue": true}
 - {"line": "l_kandabashi_line", "other": "l_chiyodabashi_line", "at": "n_otemachi_toei", "source": "derived", "verified": false, "valid": [null, "1968-09-29"], "side": "down"}
-- {"line": "l_chojamachi_line", "other": "l_hodogaya_line", "at": "n_nishihiranumabashi", "source": "derived", "verified": false, "valid": [null, "1971-03-21"], "continue": true}
-- {"line": "l_hodogaya_line", "other": "l_chojamachi_line", "at": "n_nishihiranumabashi", "source": "derived", "verified": false, "valid": [null, "1971-03-21"], "side": "down"}
 - {"line": "l_chokai_sanroku_line", "other": "l_uetsu_main_line", "at": "n_ugo_honjo", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_uetsu_main_line", "other": "l_chokai_sanroku_line", "at": "n_ugo_honjo", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_chokan_line", "other": "l_yamatomachi_line", "at": "n_shimonoseki_sanyo", "source": "derived", "verified": false, "valid": [null, "1969-10-30"], "continue": true}
@@ -749,7 +739,6 @@
 - {"line": "l_chuo_main_line", "other": "l_shinonoi_line", "at": "n_shiojiri", "source": "https://ja.wikipedia.org/w/index.php?oldid=111778298; 『交通技術』29(13) 1974-12 11コマ; 『交通技術』35(11) 1980-10 9コマ; 『地図情報』2(1) 1982-08 17コマ", "verified": true, "valid": [null, "1982-05-17"], "continue": true}
 - {"line": "l_chuoichiba_line", "other": "l_namamugi_line", "at": "n_kanagawakaikanmae", "source": "derived", "verified": false, "valid": [null, "1966-07-31"], "continue": true}
 - {"line": "l_namamugi_line", "other": "l_chuoichiba_line", "at": "n_kanagawakaikanmae", "source": "derived", "verified": false, "valid": [null, "1966-07-31"], "side": "down"}
-- {"line": "l_keikyu_main_line", "other": "l_daishi_line", "at": "n_keikyu_kawasaki", "source": "derived", "verified": false, "valid": ["1904-03-01", "ongoing"], "side": "up"}
 - {"line": "l_dazaifu_line", "other": "l_tenjin_omuta_line", "at": "n_nishitetsu_futsukaichi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_dobashi_line", "other": "l_muromachi_line", "at": "n_shintokiwabashi", "source": "derived", "verified": false, "valid": [null, "1968-03-31"], "continue": true}
 - {"line": "l_muromachi_line", "other": "l_dobashi_line", "at": "n_shintokiwabashi", "source": "derived", "verified": false, "valid": [null, "1968-03-31"], "side": "down"}
@@ -928,8 +917,6 @@
 - {"line": "l_rias_line", "other": "l_hachinohe_line", "at": "n_kuji_hachinohe", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_hachinohe_line_freight", "other": "l_hachinohe_line", "at": "n_hon_hachinohe", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_hachinohe_line", "other": "l_hachinohe_line_freight", "at": "n_hon_hachinohe", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
-- {"line": "l_hagoromocho_line", "other": "l_honmachi_line_transportation_bureau_city_of_yokohama", "at": "n_honmachi_4_chome_transportation_bureau_city_of_yokohama", "source": "derived", "verified": false, "valid": [null, "1972-04-01"], "continue": true}
-- {"line": "l_honmachi_line_transportation_bureau_city_of_yokohama", "other": "l_hagoromocho_line", "at": "n_honmachi_4_chome_transportation_bureau_city_of_yokohama", "source": "derived", "verified": false, "valid": [null, "1972-04-01"], "side": "up"}
 - {"line": "l_hagoromocho_line", "other": "l_hinodecho_line", "at": "n_yoshinocho_3_chome", "source": "derived", "verified": false, "valid": [null, "1972-04-01"], "continue": true}
 - {"line": "l_hinodecho_line", "other": "l_hagoromocho_line", "at": "n_yoshinocho_3_chome", "source": "derived", "verified": false, "valid": [null, "1972-04-01"], "continue": true}
 - {"line": "l_hagoromocho_line", "other": "l_isogo_line", "at": "n_yoshinocho_3_chome", "source": "derived", "verified": false, "valid": [null, "1972-04-01"], "continue": true}
@@ -1134,8 +1121,6 @@
 - {"line": "l_ochanomizu_line", "other": "l_hongo_line", "at": "n_sotokanda_2_chome", "source": "derived", "verified": false, "valid": [null, "1971-03-18"], "side": "up"}
 - {"line": "l_honmachi_line_transportation_bureau_city_of_yokohama", "other": "l_kanagawa_line", "at": "n_sakuragicho_ekimae", "source": "derived", "verified": false, "valid": [null, "1971-03-21"], "continue": true}
 - {"line": "l_kanagawa_line", "other": "l_honmachi_line_transportation_bureau_city_of_yokohama", "at": "n_sakuragicho_ekimae", "source": "derived", "verified": false, "valid": [null, "1971-03-21"], "continue": true}
-- {"line": "l_horai_yachigashira_line", "other": "l_hakodate_tram_main_line", "at": "n_jujigai", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_hakodate_tram_main_line", "other": "l_horai_yachigashira_line", "at": "n_jujigai", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_horaibashi_line", "other": "l_tameike_line", "at": "n_toranomon_toei", "source": "derived", "verified": false, "valid": [null, "1967-12-10"], "continue": true}
 - {"line": "l_tameike_line", "other": "l_horaibashi_line", "at": "n_toranomon_toei", "source": "derived", "verified": false, "valid": [null, "1967-12-10"], "continue": true}
 - {"line": "l_horaibashi_line", "other": "l_toranomon_line", "at": "n_toranomon_toei", "source": "derived", "verified": false, "valid": [null, "1967-12-10"], "continue": true}
@@ -1151,7 +1136,6 @@
 - {"line": "l_hyogo_line", "other": "l_shiriike_line", "at": "n_tsukishima", "source": "derived", "verified": false, "valid": [null, "1971-03-14"], "continue": true}
 - {"line": "l_shiriike_line", "other": "l_hyogo_line", "at": "n_tsukishima", "source": "derived", "verified": false, "valid": [null, "1971-03-14"], "continue": true}
 - {"line": "l_iburi_line", "other": "l_muroran_main_line", "at": "n_datemombetsu", "source": "derived", "verified": false, "valid": [null, "1986-11-01"], "continue": true}
-- {"line": "l_iburi_line", "other": "l_hakodate_main_line", "at": "n_kutchan", "source": "derived", "verified": false, "valid": [null, "1986-11-01"], "continue": true}
 - {"line": "l_ichigaya_line", "other": "l_ushigome_line", "at": "n_ichigayamitsuke", "source": "derived", "verified": false, "valid": [null, "1970-03-27"], "continue": true}
 - {"line": "l_ushigome_line", "other": "l_ichigaya_line", "at": "n_ichigayamitsuke", "source": "derived", "verified": false, "valid": [null, "1970-03-27"], "side": "down"}
 - {"line": "l_ichigaya_line", "other": "l_kudan_line", "at": "n_kudanue", "source": "derived", "verified": false, "valid": [null, "1970-03-27"], "continue": true}
@@ -1204,8 +1188,6 @@
 - {"line": "l_hokuriku_main_line", "other": "l_ir_ishikawa_railway_line", "at": "n_kurikara", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_isarago_line", "other": "l_furukawa_line", "at": "n_furukawabashi_furukawa", "source": "derived", "verified": false, "valid": [null, "1969-10-26"], "continue": true}
 - {"line": "l_furukawa_line", "other": "l_isarago_line", "at": "n_furukawabashi_furukawa", "source": "derived", "verified": false, "valid": [null, "1969-10-26"], "side": "up"}
-- {"line": "l_isarago_line", "other": "l_shinagawa_line", "at": "n_sengakujimae", "source": "derived", "verified": false, "valid": [null, "1967-12-10"], "continue": true}
-- {"line": "l_shinagawa_line", "other": "l_isarago_line", "at": "n_sengakujimae", "source": "derived", "verified": false, "valid": [null, "1967-12-10"], "side": "down"}
 - {"line": "l_ise_line", "other": "l_kansai_main_line", "at": "n_minami_yokkaichi", "source": "derived", "verified": false, "valid": [null, "1987-03-27"], "continue": true}
 - {"line": "l_kansai_main_line", "other": "l_ise_line", "at": "n_minami_yokkaichi", "source": "derived", "verified": false, "valid": [null, "1987-03-27"], "side": "down"}
 - {"line": "l_ise_line", "other": "l_kisei_main_line", "at": "n_tsu", "source": "derived", "verified": false, "valid": [null, "1987-03-27"], "continue": true}
@@ -1251,7 +1233,6 @@
 - {"line": "l_itoda_line", "other": "l_ita_line_heisei_chikuho", "at": "n_kanada", "source": "derived", "verified": false, "valid": [null, "1989-10-01"], "continue": true}
 - {"line": "l_itoda_line_heisei_chikuho", "other": "l_ita_line", "at": "n_kanada", "source": "derived", "verified": false, "valid": [null, "1989-10-01"], "continue": true}
 - {"line": "l_itoda_line_heisei_chikuho", "other": "l_ita_line_heisei_chikuho", "at": "n_kanada", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_itsukaichi_line", "other": "l_hachiko_line", "at": "n_haijima", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_iwaicho_line", "other": "l_kakomachiencho_line", "at": "n_kakomachi", "source": "derived", "verified": false, "valid": [null, "1972-03-01"], "continue": true}
 - {"line": "l_kakomachiencho_line", "other": "l_iwaicho_line", "at": "n_kakomachi", "source": "derived", "verified": false, "valid": [null, "1972-03-01"], "continue": true}
 - {"line": "l_iwaicho_line", "other": "l_shimoegawa_line", "at": "n_kakomachi", "source": "derived", "verified": false, "valid": [null, "1972-03-01"], "continue": true}
@@ -1274,8 +1255,6 @@
 - {"line": "l_tohoku_main_line", "other": "l_joban_line", "at": "n_nippori", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_joban_line", "other": "l_tohoku_main_line", "at": "n_tabata_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tohoku_main_line", "other": "l_joban_line", "at": "n_tabata_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_joban_line", "other": "l_yamanote_line", "at": "n_tabata_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_yamanote_line", "other": "l_joban_line", "at": "n_tabata_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_joban_line_freight", "other": "l_joban_line", "at": "n_mito", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_joban_line", "other": "l_joban_line_freight", "at": "n_mito", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
 - {"line": "l_joban_line_freight", "other": "l_suigun_line", "at": "n_mito", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -1394,8 +1373,6 @@
 - {"line": "l_tokaido_main_line", "other": "l_kansai_main_line", "at": "n_nagoya", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_kansai_main_line_freight", "other": "l_kansai_main_line", "at": "n_yokkaichi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_kansai_main_line", "other": "l_kansai_main_line_freight", "at": "n_yokkaichi", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
-- {"line": "l_karasuma_line_kyoto_tram", "other": "l_kitaoji_line", "at": "n_karasumashakomae", "source": "derived", "verified": false, "valid": [null, "1977-10-01"], "continue": true}
-- {"line": "l_kitaoji_line", "other": "l_karasuma_line_kyoto_tram", "at": "n_karasumashakomae", "source": "derived", "verified": false, "valid": [null, "1977-10-01"], "side": "down"}
 - {"line": "l_karasuma_line_kyoto_tram", "other": "l_kawaramachi_line", "at": "n_kyoto_ekimae", "source": "derived", "verified": false, "valid": [null, "1977-10-01"], "continue": true}
 - {"line": "l_kawaramachi_line", "other": "l_karasuma_line_kyoto_tram", "at": "n_kyoto_ekimae", "source": "derived", "verified": false, "valid": [null, "1977-10-01"], "continue": true}
 - {"line": "l_tohoku_main_line", "other": "l_karasuyama_line", "at": "n_hoshakuji", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -1432,11 +1409,10 @@
 - {"line": "l_nagano_line_nagano", "other": "l_kato_line", "at": "n_shinshunakano", "source": "derived", "verified": false, "valid": [null, "2002-04-01"], "side": "down"}
 - {"line": "l_katsuta_line", "other": "l_kagoshima_main_line", "at": "n_yoshizuka", "source": "derived", "verified": false, "valid": [null, "1985-04-01"], "continue": true}
 - {"line": "l_kagoshima_main_line", "other": "l_katsuta_line", "at": "n_yoshizuka", "source": "derived", "verified": false, "valid": [null, "1985-04-01"], "side": "up"}
-- {"line": "l_kawagoe_line", "other": "l_tohoku_main_line", "at": "n_omiya", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_tohoku_main_line", "other": "l_kawagoe_line", "at": "n_omiya", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_kawagoe_line", "other": "l_tohoku_main_line", "at": "n_omiya", "source": "derived", "verified": false, "valid": [null, "1985-09-30"], "continue": true}
+- {"line": "l_tohoku_main_line", "other": "l_kawagoe_line", "at": "n_omiya", "source": "derived", "verified": false, "valid": [null, "1985-09-30"], "continue": true, "track_valid": [null, "1985-09-30"]}
+- {"line": "l_tohoku_main_line", "other": "l_kawagoe_line", "at": "n_omiya", "source": "https://ja.wikipedia.org/w/index.php?oldid=111443331; https://ja.wikipedia.org/w/index.php?oldid=111442920", "verified": true, "valid": ["1985-09-30", "ongoing"], "continue": true}
 - {"line": "l_kawamata_line", "other": "l_tohoku_main_line", "at": "n_matsukawa", "source": "derived", "verified": false, "valid": [null, "1972-05-14"], "continue": true}
-- {"line": "l_kawaramachi_line", "other": "l_kitaoji_line", "at": "n_rakuhokukokomae", "source": "derived", "verified": false, "valid": [null, "1978-10-01"], "continue": true}
-- {"line": "l_kitaoji_line", "other": "l_kawaramachi_line", "at": "n_rakuhokukokomae", "source": "derived", "verified": false, "valid": [null, "1978-10-01"], "side": "down"}
 - {"line": "l_kawashiri_line", "other": "l_trunk_line", "at": "n_kawaramachi_kumamoto_city", "source": "derived", "verified": false, "valid": [null, "1965-02-21"], "continue": true}
 - {"line": "l_trunk_line", "other": "l_kawashiri_line", "at": "n_kawaramachi_kumamoto_city", "source": "derived", "verified": false, "valid": [null, "1965-02-21"], "side": "up"}
 - {"line": "l_keio_line", "other": "l_keibajo_line", "at": "n_higashi_fuchu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -1626,8 +1602,6 @@
 - {"line": "l_sanyo_shinkansen", "other": "l_kyushu_shinkansen", "at": "n_hakata", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_loop_line", "other": "l_minami_line", "at": "n_hijiyamashita", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_minami_line", "other": "l_loop_line", "at": "n_hijiyamashita", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_loop_line", "other": "l_minami_line", "at": "n_inarimachi_hiroden", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_minami_line", "other": "l_loop_line", "at": "n_inarimachi_hiroden", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_maizuru_line", "other": "l_sanin_main_line", "at": "n_ayabe", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_manji_line", "other": "l_muroran_main_line", "at": "n_shibun", "source": "derived", "verified": false, "valid": [null, "1985-04-01"], "continue": true}
 - {"line": "l_marugame_line", "other": "l_sakaide_line", "at": "n_marugametorimachi", "source": "derived", "verified": false, "valid": [null, "1963-09-15"], "continue": true}
@@ -1647,8 +1621,6 @@
 - {"line": "l_hatchobori_line", "other": "l_marunouchi_line_toei", "at": "n_tochomae_toei", "source": "derived", "verified": false, "valid": [null, "1967-12-10"], "side": "down"}
 - {"line": "l_maruoka_line", "other": "l_eiheiji_line", "at": "n_hon_maruoka", "source": "derived", "verified": false, "valid": ["1930-05-01", "1968-07-11"], "continue": true}
 - {"line": "l_eiheiji_line", "other": "l_maruoka_line", "at": "n_hon_maruoka", "source": "derived", "verified": false, "valid": ["1930-05-01", "1968-07-11"], "side": "up"}
-- {"line": "l_marutamachi_line", "other": "l_nishioji_line", "at": "n_emmachi_marutamachi", "source": "derived", "verified": false, "valid": [null, "1976-04-01"], "continue": true}
-- {"line": "l_nishioji_line", "other": "l_marutamachi_line", "at": "n_emmachi_marutamachi", "source": "derived", "verified": false, "valid": [null, "1976-04-01"], "side": "down"}
 - {"line": "l_marutamachi_line", "other": "l_shirakawa_line", "at": "n_tennocho_marutamachi", "source": "derived", "verified": false, "valid": [null, "1976-04-01"], "continue": true}
 - {"line": "l_shirakawa_line", "other": "l_marutamachi_line", "at": "n_tennocho_marutamachi", "source": "derived", "verified": false, "valid": [null, "1976-04-01"], "continue": true}
 - {"line": "l_matsudo_line", "other": "l_keisei_main_line", "at": "n_keisei_tsudanuma", "source": "derived", "verified": false, "valid": ["1953-10-20", "ongoing"], "continue": true}
@@ -1736,8 +1708,6 @@
 - {"line": "l_morimatsu_line", "other": "l_yokogawara_line", "at": "n_iyo_tachibana", "source": "derived", "verified": false, "valid": ["1931-10-12", "1965-12-01"], "continue": true}
 - {"line": "l_morinomiyamidoribashi_line", "other": "l_tamatsukurimorinomiya_line", "at": "n_morinomiyahigashinocho", "source": "derived", "verified": false, "valid": [null, "1964-10-01"], "continue": true}
 - {"line": "l_tamatsukurimorinomiya_line", "other": "l_morinomiyamidoribashi_line", "at": "n_morinomiyahigashinocho", "source": "derived", "verified": false, "valid": [null, "1964-10-01"], "continue": true}
-- {"line": "l_mukogawa_line", "other": "l_hanshin_main_line", "at": "n_mukogawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_hanshin_main_line", "other": "l_mukogawa_line", "at": "n_mukogawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_mukojima_line", "other": "l_narihira_line", "at": "n_honjo_azumabashi", "source": "derived", "verified": false, "valid": [null, "1969-10-26"], "continue": true}
 - {"line": "l_narihira_line", "other": "l_mukojima_line", "at": "n_honjo_azumabashi", "source": "derived", "verified": false, "valid": [null, "1969-10-26"], "side": "down"}
 - {"line": "l_muroki_line", "other": "l_kagoshima_main_line", "at": "n_ongagawa", "source": "derived", "verified": false, "valid": [null, "1985-04-01"], "continue": true}
@@ -1756,8 +1726,6 @@
 - {"line": "l_chuo_main_line", "other": "l_musashino_line", "at": "n_kunitachi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_musashino_line", "other": "l_joban_line", "at": "n_mabashi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_joban_line", "other": "l_musashino_line", "at": "n_mabashi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_musashino_line", "other": "l_sobu_main_line", "at": "n_nishi_funabashi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_sobu_main_line", "other": "l_musashino_line", "at": "n_nishi_funabashi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_musashino_line", "other": "l_tokaido_main_line", "at": "n_tsurumi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tokaido_main_line", "other": "l_musashino_line", "at": "n_tsurumi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_musashino_line", "other": "l_tohoku_main_line", "at": "n_yono", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -1929,7 +1897,6 @@
 - {"line": "l_ogano_line", "other": "l_aizawa_line", "at": "n_kamishiraishi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_aizawa_line", "other": "l_ogano_line", "at": "n_kamishiraishi", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
 - {"line": "l_ogose_line", "other": "l_tojo_main_line", "at": "n_sakado_tobu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_ohata_line", "other": "l_ominato_line", "at": "n_shimokita", "source": "derived", "verified": false, "valid": [null, "1985-07-01"], "continue": true}
 - {"line": "l_oimachi_line", "other": "l_den_en_toshi_line", "at": "n_futako_tamagawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_den_en_toshi_line", "other": "l_oimachi_line", "at": "n_futako_tamagawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_oito_line", "other": "l_hokuriku_main_line", "at": "n_itoigawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -1980,8 +1947,6 @@
 - {"line": "l_oshikiri_line", "other": "l_shimoegawa_line", "at": "n_yanagibashi_oshikiri_line_yanagibashi_shimacho", "source": "derived", "verified": false, "valid": [null, "1972-03-01"], "continue": true}
 - {"line": "l_shimoegawa_line", "other": "l_oshikiri_line", "at": "n_yanagibashi_oshikiri_line_yanagibashi_shimacho", "source": "derived", "verified": false, "valid": [null, "1972-03-01"], "continue": true}
 - {"line": "l_osumi_line", "other": "l_nippo_main_line", "at": "n_kokubu_nippo_main", "source": "derived", "verified": false, "valid": [null, "1987-03-14"], "continue": true}
-- {"line": "l_otemaeuehommachi_line", "other": "l_tanimachineyagawa_line", "at": "n_banbacho", "source": "derived", "verified": false, "valid": [null, "1968-12-18"], "continue": true}
-- {"line": "l_tanimachineyagawa_line", "other": "l_otemaeuehommachi_line", "at": "n_banbacho", "source": "derived", "verified": false, "valid": [null, "1968-12-18"], "side": "down"}
 - {"line": "l_otemaeuehommachi_line", "other": "l_tamatsukuri_line", "at": "n_uehonmachi_2_chome", "source": "derived", "verified": false, "valid": [null, "1961-11-01"], "continue": true}
 - {"line": "l_tamatsukuri_line", "other": "l_otemaeuehommachi_line", "at": "n_uehonmachi_2_chome", "source": "derived", "verified": false, "valid": [null, "1961-11-01"], "side": "up"}
 - {"line": "l_otemaeuehommachi_line", "other": "l_uehommachi_line", "at": "n_uehonmachi_2_chome", "source": "derived", "verified": false, "valid": [null, "1968-12-18"], "continue": true}
@@ -2122,14 +2087,8 @@
 - {"line": "l_kusatsu_line", "other": "l_shigaraki_line_shigaraki_kohgen", "at": "n_kibukawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_osaka_line", "other": "l_shigi_line", "at": "n_kawachi_yamamoto", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_shihoro_line", "other": "l_nemuro_main_line", "at": "n_obihiro", "source": "derived", "verified": false, "valid": [null, "1987-03-23"], "continue": true}
-- {"line": "l_shijo_line", "other": "l_higashiyama_line_kyoto_city", "at": "n_gion_kyoto_city", "source": "derived", "verified": false, "valid": [null, "1972-01-23"], "continue": true}
-- {"line": "l_higashiyama_line_kyoto_city", "other": "l_shijo_line", "at": "n_gion_kyoto_city", "source": "derived", "verified": false, "valid": [null, "1972-01-23"], "side": "down"}
-- {"line": "l_shijo_line", "other": "l_omiya_line", "at": "n_shijoomiya", "source": "derived", "verified": false, "valid": [null, "1972-01-23"], "continue": true}
-- {"line": "l_omiya_line", "other": "l_shijo_line", "at": "n_shijoomiya", "source": "derived", "verified": false, "valid": [null, "1972-01-23"], "side": "down"}
 - {"line": "l_shima_line", "other": "l_toba_line", "at": "n_toba_kintetsu", "source": "derived", "verified": false, "valid": ["1970-03-01", "ongoing"], "continue": true}
 - {"line": "l_toba_line", "other": "l_shima_line", "at": "n_toba_kintetsu", "source": "derived", "verified": false, "valid": ["1970-03-01", "ongoing"], "continue": true}
-- {"line": "l_shimizuguchiencho_line", "other": "l_takaoka_line", "at": "n_shimizuguchi", "source": "derived", "verified": false, "valid": [null, "1971-04-01"], "continue": true}
-- {"line": "l_takaoka_line", "other": "l_shimizuguchiencho_line", "at": "n_shimizuguchi", "source": "derived", "verified": false, "valid": [null, "1971-04-01"], "side": "down"}
 - {"line": "l_tokaido_main_line", "other": "l_shimizuko_line", "at": "n_shimizu", "source": "derived", "verified": false, "valid": [null, "1984-04-01"], "side": "down"}
 - {"line": "l_shimmachi_line", "other": "l_kainan_line", "at": "n_koemmae", "source": "derived", "verified": false, "valid": [null, "1971-04-01"], "continue": true}
 - {"line": "l_kainan_line", "other": "l_shimmachi_line", "at": "n_koemmae", "source": "derived", "verified": false, "valid": [null, "1971-04-01"], "side": "up"}
@@ -2177,10 +2136,6 @@
 - {"line": "l_shokotsu_line", "other": "l_nayoro_main_line", "at": "n_shokotsu", "source": "derived", "verified": false, "valid": [null, "1985-04-01"], "continue": true}
 - {"line": "l_sobu_main_line", "other": "l_joban_line", "at": "n_kanamachi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_joban_line", "other": "l_sobu_main_line", "at": "n_kanamachi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
-- {"line": "l_sobu_main_line", "other": "l_tokaido_main_line", "at": "n_tokyo", "source": "derived", "verified": false, "valid": [null, "1972-07-15"], "continue": true}
-- {"line": "l_sobu_main_line", "other": "l_tokaido_main_line", "at": "n_tokyo", "source": "derived", "verified": false, "valid": ["1980-10-01", "ongoing"], "continue": true}
-- {"line": "l_tokaido_main_line", "other": "l_sobu_main_line", "at": "n_tokyo", "source": "derived", "verified": false, "valid": [null, "1972-07-15"], "continue": true}
-- {"line": "l_tokaido_main_line", "other": "l_sobu_main_line", "at": "n_tokyo", "source": "derived", "verified": false, "valid": ["1980-10-01", "ongoing"], "continue": true}
 - {"line": "l_hitahikosan_line", "other": "l_soeda_line", "at": "n_soeda", "source": "derived", "verified": false, "valid": [null, "1985-04-01"], "side": "up"}
 - {"line": "l_soen_line", "other": "l_kitagojo_line", "at": "n_soenekidori", "source": "derived", "verified": false, "valid": [null, "1960-06-01"], "continue": true}
 - {"line": "l_kitagojo_line", "other": "l_soen_line", "at": "n_soenekidori", "source": "derived", "verified": false, "valid": [null, "1960-06-01"], "side": "down"}
@@ -2349,6 +2304,8 @@
 - {"line": "l_togane_line", "other": "l_sobu_main_line", "at": "n_naruto_sobu_main", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tohoku_main_line", "other": "l_tsugaru_line", "at": "n_aomori", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tsugaru_line", "other": "l_tohoku_main_line", "at": "n_aomori", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_tohoku_main_line", "other": "l_yamanote_line", "at": "n_tabata_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
+- {"line": "l_yamanote_line", "other": "l_tohoku_main_line", "at": "n_tabata_signal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tohoku_main_line", "other": "l_senseki_line", "at": "n_takagimachi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tohoku_main_line", "other": "l_tokaido_main_line", "at": "n_tokyo", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tokaido_main_line", "other": "l_tohoku_main_line", "at": "n_tokyo", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -2415,12 +2372,8 @@
 - {"line": "l_tramway_branch_line", "other": "l_tramway_kureha_line", "at": "n_hatagomachi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tramway_toyama_city_center_line", "other": "l_tramway_branch_line", "at": "n_marunouchi_toyama_chiho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tramway_branch_line", "other": "l_tramway_toyama_city_center_line", "at": "n_marunouchi_toyama_chiho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_tramway_toyama_city_center_line", "other": "l_tramway_yasunoya_line", "at": "n_marunouchi_toyama_chiho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_tramway_yasunoya_line", "other": "l_tramway_toyama_city_center_line", "at": "n_marunouchi_toyama_chiho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tramway_toyama_city_center_line", "other": "l_tramway_main_line", "at": "n_nishicho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tramway_main_line", "other": "l_tramway_toyama_city_center_line", "at": "n_nishicho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_tramway_toyama_station_north_south_link", "other": "l_tramway_branch_line", "at": "n_toyama_chiho_branch_junction", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
-- {"line": "l_tramway_branch_line", "other": "l_tramway_toyama_station_north_south_link", "at": "n_toyama_chiho_branch_junction", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tramway_yasunoya_line", "other": "l_tramway_branch_line", "at": "n_marunouchi_toyama_chiho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_tramway_branch_line", "other": "l_tramway_yasunoya_line", "at": "n_marunouchi_toyama_chiho", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tramway_yasunoya_line", "other": "l_tramway_kureha_line", "at": "n_yasunoya", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
@@ -2456,8 +2409,6 @@
 - {"line": "l_yamaguchi_line", "other": "l_ube_line", "at": "n_shin_yamaguchi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_ube_line", "other": "l_sanyo_main_line", "at": "n_ube", "source": "derived", "verified": false, "valid": [null, "ongoing"], "continue": true}
 - {"line": "l_sotobo_line", "other": "l_uchibo_line", "at": "n_soga", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_uchiko_line", "other": "l_yosan_line", "at": "n_goro", "source": "derived", "verified": false, "valid": ["1918-02-14", "ongoing"], "continue": true}
-- {"line": "l_yosan_line", "other": "l_uchiko_line", "at": "n_goro", "source": "derived", "verified": false, "valid": ["1918-02-14", "ongoing"], "side": "down"}
 - {"line": "l_uchiko_line", "other": "l_yosan_line", "at": "n_uchiko", "source": "derived", "verified": false, "valid": ["1935-10-06", "ongoing"], "continue": true}
 - {"line": "l_yosan_line", "other": "l_uchiko_line", "at": "n_uchiko", "source": "derived", "verified": false, "valid": ["1935-10-06", "ongoing"], "continue": true}
 - {"line": "l_uehommachi_line", "other": "l_tamatsukuri_line", "at": "n_uehonmachi_2_chome", "source": "derived", "verified": false, "valid": [null, "1961-11-01"], "continue": true}
@@ -2832,8 +2783,8 @@
 - {"line": "l_hankai_line", "other": "l_uemachi_line", "at": "n_sumiyoshi_hankai", "source": "NDL 13172060 koma 48 『全国鉄道事情大研究 大阪南部・和歌山篇』(1993); NDL 13224825 koma 22 『鉄道総合年表 1972-93』; NDL 3294590 koma 35 『鉄道ピクトリアル』35(臨時増刊) 1985-12; https://ja.wikipedia.org/w/index.php?oldid=111440345", "verified": true, "valid": ["2016-01-31", "ongoing"], "side": "up"}
 - {"line": "l_senseki_line", "other": "l_ishinomaki_line", "at": "n_ishinomaki", "source": "https://www.jreast.co.jp/sendai/upload-images/2016/06/sensekitohokuline.pdf (JR東日本 仙台支社 2016-06-29 「仙石東北ライン一部列車の女川駅直通運転の開始について」, 제목·날짜); https://response.jp/article/2016/06/30/277710.html; https://ja.wikipedia.org/w/index.php?oldid=111322221", "verified": true, "valid": ["[1990-07-21..2016-08-06]", "ongoing"], "continue": true}
 - {"line": "l_ishinomaki_line", "other": "l_senseki_line", "at": "n_ishinomaki", "source": "https://www.jreast.co.jp/sendai/upload-images/2016/06/sensekitohokuline.pdf (JR東日本 仙台支社 2016-06-29 「仙石東北ライン一部列車の女川駅直通運転の開始について」, 제목·날짜); https://response.jp/article/2016/06/30/277710.html; https://ja.wikipedia.org/w/index.php?oldid=111322221", "verified": true, "valid": ["[1990-07-21..2016-08-06]", "ongoing"], "side": "up"}
-- {"line": "l_keio_line", "other": "l_shinjuku_line_toei", "at": "n_shinjuku_keio", "source": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E7%8E%8B%E6%96%B0%E7%B7%9A&oldid=111094481", "verified": true, "valid": ["1980-03-16", "ongoing"], "continue": true}
-- {"line": "l_shinjuku_line_toei", "other": "l_keio_line", "at": "n_shinjuku_toei", "source": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E7%8E%8B%E6%96%B0%E7%B7%9A&oldid=111094481", "verified": true, "valid": ["1980-03-16", "ongoing"], "continue": true}
+- {"line": "l_keio_line", "other": "l_shinjuku_line_toei", "at": "n_shinjuku_keio_new_line", "source": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E7%8E%8B%E6%96%B0%E7%B7%9A&oldid=111094481", "verified": true, "valid": ["1980-03-16", "ongoing"], "continue": true}
+- {"line": "l_shinjuku_line_toei", "other": "l_keio_line", "at": "n_shinjuku_keio_new_line", "source": "https://ja.wikipedia.org/w/index.php?title=%E4%BA%AC%E7%8E%8B%E6%96%B0%E7%B7%9A&oldid=111094481", "verified": true, "valid": ["1980-03-16", "ongoing"], "continue": true}
 - {"line": "l_yamanote_line", "other": "l_tokaido_main_line", "at": "n_shinagawa", "source": "https://ja.wikipedia.org/w/index.php?title=%E5%B1%B1%E6%89%8B%E7%B7%9A&oldid=111774144", "verified": true, "valid": ["1925-11-01", "ongoing"], "continue": true}
 - {"line": "l_tokaido_main_line", "other": "l_yamanote_line", "at": "n_shinagawa", "source": "https://ja.wikipedia.org/w/index.php?title=%E5%B1%B1%E6%89%8B%E7%B7%9A&oldid=111774144", "verified": true, "valid": ["1925-11-01", "ongoing"], "continue": true}
 - {"line": "l_hokuso_line", "other": "l_matsudo_line", "at": "n_kita_hatsutomi_hokuso", "source": "https://ja.wikipedia.org/w/index.php?title=%E5%8C%97%E7%B7%8F%E9%89%84%E9%81%93%E5%8C%97%E7%B7%8F%E7%B7%9A&oldid=111140937", "verified": true, "valid": ["1979-03-09", "1992-07-08"], "continue": true}
@@ -2944,8 +2895,28 @@
 - {"line": "l_joban_line", "other": "l_minato_line", "at": "n_katsuta", "source": "https://ja.wikipedia.org/w/index.php?oldid=111406453; https://ja.wikipedia.org/w/index.php?oldid=110784651; https://ja.wikipedia.org/w/index.php?oldid=111719547", "verified": true, "valid": ["[1950-01-01..1963-06-19]", "[1990-07-01..1991-04-01]"], "continue": true}
 - {"line": "l_arida_railway_line", "other": "l_kisei_main_line", "at": "n_fujinami", "source": "https://ja.wikipedia.org/w/index.php?oldid=109051399; https://ja.wikipedia.org/w/index.php?oldid=109776113", "verified": true, "valid": ["[1950-04-01..1950-04-30]", "1992-12-01"], "continue": true}
 - {"line": "l_kisei_main_line", "other": "l_arida_railway_line", "at": "n_fujinami_kisei_main", "source": "https://ja.wikipedia.org/w/index.php?oldid=109051399; https://ja.wikipedia.org/w/index.php?oldid=109776113", "verified": true, "valid": ["[1950-04-01..1950-04-30]", "1992-12-01"], "continue": true}
-- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2000-04-01..2000-05-31]", "[2018-04-22..2018-05-31]"], "continue": true}
-- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2000-04-01..2000-05-31]", "[2018-04-22..2018-05-31]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2000-04-01..2000-05-31]", "[2000-04-02..2000-06-01]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2000-04-01..2000-05-31]", "[2000-04-02..2000-06-01]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2003-04-01..2003-05-31]", "[2003-04-02..2003-06-01]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2003-04-01..2003-05-31]", "[2003-04-02..2003-06-01]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2006-04-01..2006-05-31]", "[2006-04-02..2006-06-01]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2006-04-01..2006-05-31]", "[2006-04-02..2006-06-01]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2007-04-21", "2007-05-06"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2007-04-21", "2007-05-06"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2008-04-25", "2008-05-06"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2008-04-25", "2008-05-06"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2009-04-17", "2009-04-20"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2009-04-17", "2009-04-20"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2009-04-24", "2009-05-06"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["2009-04-24", "2009-05-06"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2010-04-17..2010-04-29]", "[2010-05-04..2010-05-07]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2010-04-17..2010-04-29]", "[2010-05-04..2010-05-07]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2013-04-01..2013-05-31]", "[2013-04-02..2013-06-01]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2013-04-01..2013-05-31]", "[2013-04-02..2013-06-01]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2016-04-01..2016-05-31]", "[2016-04-02..2016-06-01]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2016-04-01..2016-05-31]", "[2016-04-02..2016-06-01]"], "continue": true}
+- {"line": "l_akita_nairiku_line", "other": "l_ou_main_line", "at": "n_takanosu_akita_nairiku_jukan", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2018-04-01..2018-04-21]", "[2018-04-22..2018-05-31]"], "continue": true}
+- {"line": "l_ou_main_line", "other": "l_akita_nairiku_line", "at": "n_takanosu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111364809; https://railf.jp/news/2018/04/22/202000.html; https://www.hirosakipark.jp/sakura/2013/03/1319.html", "verified": true, "valid": ["[2018-04-01..2018-04-21]", "[2018-04-22..2018-05-31]"], "continue": true}
 - {"line": "l_kiryu_line", "other": "l_jomo_line", "at": "n_akagi_tobu", "source": "https://ja.wikipedia.org/w/index.php?oldid=111009706; https://ja.wikipedia.org/w/index.php?oldid=110994647", "verified": true, "valid": ["[1950-01-01..1962-12-31]", "[1963-01-01..1964-01-01]"], "continue": true}
 - {"line": "l_jomo_line", "other": "l_kiryu_line", "at": "n_akagi_jomo", "source": "https://ja.wikipedia.org/w/index.php?oldid=111009706; https://ja.wikipedia.org/w/index.php?oldid=110994647", "verified": true, "valid": ["[1950-01-01..1962-12-31]", "[1963-01-01..1964-01-01]"], "continue": true}
 - {"line": "l_ena_railway_line", "other": "l_fukushimarinkai_railway_line", "at": "n_sakaecho", "source": "https://ja.wikipedia.org/w/index.php?oldid=111389371; https://ja.wikipedia.org/w/index.php?oldid=108817377; https://ja.wikipedia.org/w/index.php?oldid=105334360", "verified": true, "valid": ["1953-01-12", "1966-02-15"], "continue": true}
@@ -2987,8 +2958,8 @@
 - {"line": "l_rumoi_main_line", "other": "l_rumoi_railway", "at": "n_ebishima", "source": "https://dl.ndl.go.jp/pid/3294271; https://dl.ndl.go.jp/pid/12671004; https://dl.ndl.go.jp/pid/3294673", "verified": true, "valid": ["1956-05-15", "1969-05-01"], "continue": true}
 - {"line": "l_makurazaki_line", "other": "l_kagoshima_main_line", "at": "n_ijuin_kagoshima_kotsu", "source": "https://dl.ndl.go.jp/pid/3330205; https://dl.ndl.go.jp/pid/9574373; https://dl.ndl.go.jp/pid/3294553", "verified": true, "valid": ["1949-02-19", "1983-06-21"], "continue": true}
 - {"line": "l_kagoshima_main_line", "other": "l_makurazaki_line", "at": "n_ijuin", "source": "https://dl.ndl.go.jp/pid/3330205; https://dl.ndl.go.jp/pid/9574373; https://dl.ndl.go.jp/pid/3294553", "verified": true, "valid": ["1949-02-19", "1983-06-21"], "continue": true}
-- {"line": "l_yamaga_onsen_railway_line", "other": "l_kagoshima_main_line", "at": "n_ueki_yamaga_onsen", "source": "https://dl.ndl.go.jp/pid/13828049; https://dl.ndl.go.jp/pid/3000196; https://dl.ndl.go.jp/pid/13331720", "verified": true, "valid": ["[1950-12-01..1954-12-08]", "1957-07-26"], "continue": true}
-- {"line": "l_kagoshima_main_line", "other": "l_yamaga_onsen_railway_line", "at": "n_ueki", "source": "https://dl.ndl.go.jp/pid/13828049; https://dl.ndl.go.jp/pid/3000196; https://dl.ndl.go.jp/pid/13331720", "verified": true, "valid": ["[1950-12-01..1954-12-08]", "1957-07-26"], "continue": true}
+- {"line": "l_yamaga_onsen_railway_line", "other": "l_kagoshima_main_line", "at": "n_ueki_yamaga_onsen", "source": "https://dl.ndl.go.jp/pid/13828049; https://dl.ndl.go.jp/pid/3000196; https://dl.ndl.go.jp/pid/13331720", "verified": true, "valid": ["[1950-12-01..1950-12-31]", "1957-07-26"], "continue": true}
+- {"line": "l_kagoshima_main_line", "other": "l_yamaga_onsen_railway_line", "at": "n_ueki", "source": "https://dl.ndl.go.jp/pid/13828049; https://dl.ndl.go.jp/pid/3000196; https://dl.ndl.go.jp/pid/13331720", "verified": true, "valid": ["[1950-12-01..1950-12-31]", "1957-07-26"], "continue": true}
 - {"line": "l_yuen_railway_line", "other": "l_hohi_main_line", "at": "n_minami_kumamoto_yuen", "source": "https://dl.ndl.go.jp/pid/13331720; https://dl.ndl.go.jp/pid/12065385; https://dl.ndl.go.jp/pid/3294358", "verified": true, "valid": ["1960-05-01", "1964-03-31"], "continue": true}
 - {"line": "l_hohi_main_line", "other": "l_yuen_railway_line", "at": "n_minami_kumamoto", "source": "https://dl.ndl.go.jp/pid/13331720; https://dl.ndl.go.jp/pid/12065385; https://dl.ndl.go.jp/pid/3294358", "verified": true, "valid": ["1960-05-01", "1964-03-31"], "continue": true}
 - {"line": "l_choshi_electric_railway_line", "other": "l_sobu_main_line", "at": "n_choshi_choshi", "source": "https://dl.ndl.go.jp/pid/3294738; https://dl.ndl.go.jp/pid/12060783; https://dl.ndl.go.jp/pid/13155401", "verified": true, "valid": ["1955-04-17", "[1960-10-01..1960-10-31]"], "continue": true}
@@ -3041,6 +3012,54 @@
 - {"line": "l_johana_line", "other": "l_himi_line", "at": "n_takaoka", "source": "https://ja.wikipedia.org/w/index.php?oldid=111452176", "verified": true, "valid": ["2015-03-14", "ongoing"], "continue": true}
 - {"line": "l_hakushima_line", "other": "l_hiroden_main_line", "at": "n_hatchobori_hiroden", "source": "https://ja.wikipedia.org/w/index.php?oldid=110659791", "verified": true, "valid": ["1952-06-10", "ongoing"], "continue": true}
 - {"line": "l_hiroden_main_line", "other": "l_hakushima_line", "at": "n_hatchobori_hiroden", "source": "https://ja.wikipedia.org/w/index.php?oldid=110659791", "verified": true, "valid": ["1952-06-10", "ongoing"], "side": "up"}
+- {"line": "l_kawagoe_line", "other": "l_tohoku_main_line", "at": "n_omiya", "source": "https://ja.wikipedia.org/w/index.php?oldid=111443331; https://ja.wikipedia.org/w/index.php?oldid=111442920", "verified": true, "valid": ["1985-09-30", "ongoing"], "other_route": "r_tohoku_main_line_akabane_omiya", "continue": true}
+- {"line": "l_akabane_line", "other": "l_tohoku_main_line", "at": "n_akabane", "source": "https://ja.wikipedia.org/w/index.php?oldid=111442920", "verified": true, "valid": ["1985-09-30", "ongoing"], "other_route": "r_tohoku_main_line_akabane_omiya", "continue": true}
+- {"line": "l_sobu_main_line", "other": "l_tokaido_main_line", "at": "n_tokyo", "source": "https://ja.wikipedia.org/w/index.php?oldid=111408491", "verified": true, "valid": ["1980-10-01", "ongoing"], "other_route": "r_tokaido_main_line", "continue": true}
+- {"line": "l_tokaido_main_line", "other": "l_sobu_main_line", "at": "n_tokyo", "source": "https://ja.wikipedia.org/w/index.php?oldid=111408491", "verified": true, "valid": ["1980-10-01", "ongoing"], "continue": true}
+- {"line": "l_daishi_line", "other": "l_keikyu_main_line", "at": "n_keikyu_kawasaki", "source": "https://ja.wikipedia.org/w/index.php?oldid=111094799; https://ja.wikipedia.org/w/index.php?oldid=110654966", "verified": true, "valid": ["1966-12-10", "ongoing"], "continue": true}
+- {"line": "l_keikyu_main_line", "other": "l_daishi_line", "at": "n_keikyu_kawasaki", "source": "https://ja.wikipedia.org/w/index.php?oldid=111094799; https://ja.wikipedia.org/w/index.php?oldid=110654966", "verified": true, "valid": ["1966-12-10", "ongoing"], "side": "up"}
+- {"line": "l_mukogawa_line", "other": "l_hanshin_main_line", "at": "n_mukogawa", "source": "https://ja.wikipedia.org/w/index.php?oldid=110949472", "verified": true, "valid": ["1985-04-13", "ongoing"], "continue": true}
+- {"line": "l_hanshin_main_line", "other": "l_mukogawa_line", "at": "n_mukogawa", "source": "https://ja.wikipedia.org/w/index.php?oldid=110949472", "verified": true, "valid": ["1985-04-13", "ongoing"], "side": "down"}
+- {"line": "l_tramway_toyama_station_north_south_link", "other": "l_tramway_branch_line", "at": "n_toyama_chiho_branch_junction", "source": "https://ja.wikipedia.org/w/index.php?oldid=109684687", "verified": true, "valid": ["2015-03-14", "ongoing"], "continue": true}
+- {"line": "l_tramway_branch_line", "other": "l_tramway_toyama_station_north_south_link", "at": "n_toyama_chiho_branch_junction", "source": "https://ja.wikipedia.org/w/index.php?oldid=109684687", "verified": true, "valid": ["2015-03-14", "ongoing"], "side": "up"}
+- {"line": "l_itsukaichi_line", "other": "l_hachiko_line", "at": "n_haijima", "source": "https://ja.wikipedia.org/w/index.php?oldid=109751865; https://www.haisenryakuzu.net/documents/jr/east/itsukaichi/ver010/; https://www.haisenryakuzu.net/documents/jr/east/itsukaichi/", "verified": true, "valid": ["[1931-12-10..2012-09-30]", "ongoing"], "continue": true}
+- {"line": "l_hachiko_line", "other": "l_itsukaichi_line", "at": "n_haijima", "source": "https://ja.wikipedia.org/w/index.php?oldid=109751865; https://www.haisenryakuzu.net/documents/jr/east/itsukaichi/ver010/; https://www.haisenryakuzu.net/documents/jr/east/itsukaichi/", "verified": true, "valid": ["[1931-12-10..2012-09-30]", "ongoing"], "side": "down"}
+- {"line": "l_horai_yachigashira_line", "other": "l_hakodate_tram_main_line", "at": "n_jujigai", "source": "https://ja.wikipedia.org/w/index.php?oldid=111537183; https://ja.wikipedia.org/w/index.php?oldid=108306557; https://wakouji.sakura.ne.jp/hakodate/rosen2.htm; 『運転協会誌』31(6) 1989-06 (NDL 2868105); 『鉄道ピクトリアル』19(臨増) 1969-04 (NDL 3294356); 『鉄道ジャーナル』6(1) 1972-01 (NDL 3330108); 『鉄道ピクトリアル』30(臨増) 1980-12 (NDL 3294518)", "verified": true, "valid": ["1913-10-30", "1992-04-01"], "continue": true}
+- {"line": "l_hakodate_tram_main_line", "other": "l_horai_yachigashira_line", "at": "n_jujigai", "source": "https://ja.wikipedia.org/w/index.php?oldid=111537183; https://ja.wikipedia.org/w/index.php?oldid=108306557; https://wakouji.sakura.ne.jp/hakodate/rosen2.htm; 『運転協会誌』31(6) 1989-06 (NDL 2868105); 『鉄道ピクトリアル』19(臨増) 1969-04 (NDL 3294356); 『鉄道ジャーナル』6(1) 1972-01 (NDL 3330108); 『鉄道ピクトリアル』30(臨増) 1980-12 (NDL 3294518)", "verified": true, "valid": ["1913-10-30", "1992-04-01"], "continue": true}
+- {"line": "l_horai_yachigashira_line", "other": "l_hakodate_tram_main_line", "at": "n_jujigai", "source": "https://ja.wikipedia.org/w/index.php?oldid=111537183; https://ja.wikipedia.org/w/index.php?oldid=108306557; https://wakouji.sakura.ne.jp/hakodate/rosen2.htm; 『運転協会誌』31(6) 1989-06 (NDL 2868105); 『鉄道ピクトリアル』19(臨増) 1969-04 (NDL 3294356); 『鉄道ジャーナル』6(1) 1972-01 (NDL 3330108); 『鉄道ピクトリアル』30(臨増) 1980-12 (NDL 3294518)", "verified": true, "valid": ["[1913-10-30..1966-06-30]", "ongoing"], "continue": true}
+- {"line": "l_hakodate_tram_main_line", "other": "l_horai_yachigashira_line", "at": "n_jujigai", "source": "https://ja.wikipedia.org/w/index.php?oldid=111537183; https://ja.wikipedia.org/w/index.php?oldid=108306557; https://wakouji.sakura.ne.jp/hakodate/rosen2.htm; 『運転協会誌』31(6) 1989-06 (NDL 2868105); 『鉄道ピクトリアル』19(臨増) 1969-04 (NDL 3294356); 『鉄道ジャーナル』6(1) 1972-01 (NDL 3330108); 『鉄道ピクトリアル』30(臨増) 1980-12 (NDL 3294518)", "verified": true, "valid": ["[1913-10-30..1966-06-30]", "ongoing"], "side": "down"}
+- {"line": "l_uchiko_line", "other": "l_yosan_line", "at": "n_goro", "source": "https://ja.wikipedia.org/w/index.php?oldid=111003743; 『だいこう』28(1)–31 1982-03~1985-03 (NDL 2369971–2369974); 『日本鉄道請負業史 昭和(後期)篇』1990 (NDL 2527361); 『鉄道ピクトリアル』43(12) 1993-12 (NDL 3294716)", "verified": true, "valid": ["1935-10-06", "1985-11-25"], "continue": true}
+- {"line": "l_yosan_line", "other": "l_uchiko_line", "at": "n_goro", "source": "https://ja.wikipedia.org/w/index.php?oldid=111003743; 『だいこう』28(1)–31 1982-03~1985-03 (NDL 2369971–2369974); 『日本鉄道請負業史 昭和(後期)篇』1990 (NDL 2527361); 『鉄道ピクトリアル』43(12) 1993-12 (NDL 3294716)", "verified": true, "valid": ["1935-10-06", "1985-11-25"], "continue": true}
+- {"line": "l_iburi_line", "other": "l_hakodate_main_line", "at": "n_kutchan", "source": "GSI gazo1 z15 ; 위키 函館本線 rev111583591 ; 위키 胆振線 rev110138348", "verified": true, "valid": ["1919-11-15", "1986-11-01"], "continue": true}
+- {"line": "l_hakodate_main_line", "other": "l_iburi_line", "at": "n_kutchan", "source": "GSI gazo1 z15 ; 위키 函館本線 rev111583591 ; 위키 胆振線 rev110138348", "verified": true, "valid": ["1919-11-15", "1986-11-01"], "side": "up", "continue": true}
+- {"line": "l_haboro_line", "other": "l_soya_main_line", "at": "n_horonobe", "source": "GSI gazo1 z16 ; 위키 宗谷本線 rev111330293", "verified": true, "valid": ["1935-06-30", "1987-03-30"], "continue": true}
+- {"line": "l_soya_main_line", "other": "l_haboro_line", "at": "n_horonobe", "source": "GSI gazo1 z16 ; 위키 宗谷本線 rev111330293", "verified": true, "valid": ["1935-06-30", "1987-03-30"], "side": "up", "continue": true}
+- {"line": "l_ohata_line", "other": "l_ominato_line", "at": "n_shimokita", "source": "GSI gazo1 z16 ; 위키 大湊線 rev111466007", "verified": true, "valid": ["1939-12-06", "1985-07-01"], "continue": true}
+- {"line": "l_ominato_line", "other": "l_ohata_line", "at": "n_shimokita", "source": "GSI gazo1 z16 ; 위키 大湊線 rev111466007", "verified": true, "valid": ["1939-12-06", "1985-07-01"], "side": "down", "continue": true}
+- {"line": "l_akatani_line", "other": "l_uetsu_main_line", "at": "n_shibata", "source": "GSI gazo1 z16 ; 위키 羽越本線 rev111580331", "verified": true, "valid": ["1925-11-20", "1984-04-01"], "continue": true}
+- {"line": "l_uetsu_main_line", "other": "l_akatani_line", "at": "n_shibata", "source": "GSI gazo1 z16 ; 위키 羽越本線 rev111580331", "verified": true, "valid": ["1925-11-20", "1984-04-01"], "side": "up", "continue": true}
+- {"line": "l_haboro_line", "other": "l_rumoi_main_line", "at": "n_rumoi_rumoi_main", "source": "GSI gazo1 z16 ; 위키 羽幌線 rev111284968", "verified": true, "valid": ["1927-10-25", "1987-03-30"], "continue": true}
+- {"line": "l_rumoi_main_line", "other": "l_haboro_line", "at": "n_rumoi_rumoi_main", "source": "GSI gazo1 z16 ; 위키 羽幌線 rev111284968", "verified": true, "valid": ["1927-10-25", "1987-03-30"], "side": "up", "continue": true}
+- {"line": "l_chojamachi_line", "other": "l_hodogaya_line", "at": "n_nishihiranumabashi", "source": "NDL 2810342 koma 27 ; 위키 横浜市電 rev108362204", "verified": true, "valid": ["1928-05-29", "1971-03-21"], "continue": true}
+- {"line": "l_hodogaya_line", "other": "l_chojamachi_line", "at": "n_nishihiranumabashi", "source": "NDL 2810342 koma 27 ; 위키 横浜市電 rev108362204", "verified": true, "valid": ["1928-05-29", "1971-03-21"], "side": "up", "continue": true}
+- {"line": "l_hagoromocho_line", "other": "l_honmachi_line_transportation_bureau_city_of_yokohama", "at": "n_honmachi_4_chome_transportation_bureau_city_of_yokohama", "source": "NDL 1351381 koma 219 ; NDL 13944346 koma 58", "verified": true, "valid": ["1928-12-03", "1972-04-01"], "continue": true}
+- {"line": "l_honmachi_line_transportation_bureau_city_of_yokohama", "other": "l_hagoromocho_line", "at": "n_honmachi_4_chome_transportation_bureau_city_of_yokohama", "source": "NDL 1351381 koma 219 ; NDL 13944346 koma 58", "verified": true, "valid": ["1928-12-03", "1972-04-01"], "side": "up", "continue": true}
+- {"line": "l_isarago_line", "other": "l_shinagawa_line", "at": "n_sengakujimae", "source": "NDL 13140958 koma 56 ; NDL 2456593 koma 106", "verified": true, "valid": ["1919-09-18", "1967-12-10"], "continue": true}
+- {"line": "l_shinagawa_line", "other": "l_isarago_line", "at": "n_sengakujimae", "source": "NDL 13140958 koma 56 ; NDL 2456593 koma 106", "verified": true, "valid": ["1919-09-18", "1967-12-10"], "side": "up", "continue": true}
+- {"line": "l_karasuma_line_kyoto_tram", "other": "l_kitaoji_line", "at": "n_karasumashakomae", "source": "NDL 2473792 koma 18 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1931-12-25", "1977-10-01"], "continue": true}
+- {"line": "l_kitaoji_line", "other": "l_karasuma_line_kyoto_tram", "at": "n_karasumashakomae", "source": "NDL 2473792 koma 18 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1931-12-25", "1977-10-01"], "side": "up", "continue": true}
+- {"line": "l_kawaramachi_line", "other": "l_kitaoji_line", "at": "n_rakuhokukokomae", "source": "NDL 13944347 koma 84 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1956-10-12", "1978-10-01"], "continue": true}
+- {"line": "l_kitaoji_line", "other": "l_kawaramachi_line", "at": "n_rakuhokukokomae", "source": "NDL 13944347 koma 84 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1956-10-12", "1978-10-01"], "side": "down", "continue": true}
+- {"line": "l_marutamachi_line", "other": "l_nishioji_line", "at": "n_emmachi_marutamachi", "source": "NDL 2473791 koma 19 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1928-11-05", "1976-04-01"], "continue": true}
+- {"line": "l_nishioji_line", "other": "l_marutamachi_line", "at": "n_emmachi_marutamachi", "source": "NDL 2473791 koma 19 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1928-11-05", "1976-04-01"], "side": "down", "continue": true}
+- {"line": "l_otemaeuehommachi_line", "other": "l_tanimachineyagawa_line", "at": "n_banbacho", "source": "NDL 13934686 koma 37 ; 위키 大阪市電 rev111485449", "verified": true, "valid": ["1928-08-17", "1968-12-18"], "continue": true}
+- {"line": "l_tanimachineyagawa_line", "other": "l_otemaeuehommachi_line", "at": "n_banbacho", "source": "NDL 13934686 koma 37 ; 위키 大阪市電 rev111485449", "verified": true, "valid": ["1928-08-17", "1968-12-18"], "side": "up", "continue": true}
+- {"line": "l_shijo_line", "other": "l_higashiyama_line_kyoto_city", "at": "n_gion_kyoto_city", "source": "NDL 2473793 koma 13 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1912-12-25", "1972-01-23"], "continue": true}
+- {"line": "l_higashiyama_line_kyoto_city", "other": "l_shijo_line", "at": "n_gion_kyoto_city", "source": "NDL 2473793 koma 13 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1912-12-25", "1972-01-23"], "continue": true}
+- {"line": "l_shijo_line", "other": "l_omiya_line", "at": "n_shijoomiya", "source": "NDL 2473793 koma 13 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1912-12-25", "1972-01-23"], "continue": true}
+- {"line": "l_omiya_line", "other": "l_shijo_line", "at": "n_shijoomiya", "source": "NDL 2473793 koma 13 ; 위키 京都市電 rev111408161", "verified": true, "valid": ["1912-12-25", "1972-01-23"], "side": "up", "continue": true}
+- {"line": "l_shimizuguchiencho_line", "other": "l_takaoka_line", "at": "n_shimizuguchi", "source": "NDL 13216470 koma 160 ; 위키 名古屋市電行幸線 rev108191698 ; 위키 名古屋市電高岳延長線 rev108442325", "verified": true, "valid": ["1949-07-15", "1971-04-01"], "continue": true}
+- {"line": "l_takaoka_line", "other": "l_shimizuguchiencho_line", "at": "n_shimizuguchi", "source": "NDL 13216470 koma 160 ; 위키 名古屋市電行幸線 rev108191698 ; 위키 名古屋市電高岳延長線 rev108442325", "verified": true, "valid": ["1949-07-15", "1971-04-01"], "side": "up", "continue": true}
 - {"line": "l_hakodate_main_line", "other": "l_hakodate_main_line", "other_route": "r_hakodate_main_line_sunagawa_kami_sunagawa", "at": "n_sunagawa", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_hakodate_main_line", "other": "l_hakodate_main_line", "other_route": "r_hakodate_main_line_bibai_minami_bibai", "at": "n_bibai", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_hakodate_main_line", "other": "l_hakodate_main_line", "other_route": "r_hakodate_main_line_onuma_mori", "at": "n_onuma", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -3079,7 +3098,7 @@
 - {"line": "l_tokaido_main_line", "other": "l_tokaido_main_line", "other_route": "r_hoppo_freight_line", "at": "n_amagasaki", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tokaido_main_line", "other": "l_tokaido_main_line", "other_route": "r_umeda_freight_line", "at": "n_suita_freight_terminal", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tokaido_main_line", "other": "l_tokaido_main_line", "other_route": "r_yokohama_rinko_line", "at": "n_takashima_freight", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_yamanote_line", "other": "l_yamanote_line", "other_route": "r_yamanote_freight_line", "at": "n_komagome", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
+- {"line": "l_yamanote_line", "other": "l_yamanote_line", "other_route": "r_yamanote_freight_line", "at": "n_komagome", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_nambu_line", "other": "l_nambu_line", "other_route": "r_nambu_line_shitte_hama_kawasaki", "at": "n_shitte", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tsurumi_line", "other": "l_tsurumi_line", "other_route": "r_tsurumi_line_musashi_shiraishi_okawa", "at": "n_musashi_shiraishi", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tsurumi_line", "other": "l_tsurumi_line", "other_route": "r_tsurumi_line_asano_umi_shibaura", "at": "n_asano", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -3105,7 +3124,7 @@
 - {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_main_line_iwakiri_rifu", "at": "n_iwakiri", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_main_line_iwakiri_rifu", "at": "n_rifu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_main_line_matsushima_takagimachi", "at": "n_matsushima", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
-- {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_freight_line", "at": "n_kami_nakazato", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
+- {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_freight_line", "at": "n_oji_tohoku_main", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
 - {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_main_line_rifu_shinainuma", "at": "n_rifu", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_main_line_rifu_shinainuma", "at": "n_shinainuma", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_tohoku_main_line", "other": "l_tohoku_main_line", "other_route": "r_tohoku_main_line_nonai_aoimori_aoimori_railway_old_aomori", "at": "n_nonai_aoimori_aoimori_railway_old", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
@@ -3253,6 +3272,9 @@
 - {"line": "l_kagoshima_main_line", "other": "l_kagoshima_main_line", "other_route": "r_kagoshima_main_line_yoshizuka_takeshita_old", "at": "n_yoshizuka", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
 - {"line": "l_kagoshima_main_line", "other": "l_kagoshima_main_line", "other_route": "r_kagoshima_main_line_yoshizuka_takeshita_old", "at": "n_takeshita", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_kamaishi_line", "other": "l_kamaishi_line", "other_route": "r_kamaishi_line_ashigase_sennintoge_old", "at": "n_ashigase", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
+- {"line": "l_keio_line", "other": "l_keio_line", "other_route": "r_keio_line_shinjuku_sasazuka_old", "at": "n_shinjuku_keio", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
+- {"line": "l_keio_line", "other": "l_keio_line", "other_route": "r_keio_line_shinjuku_sasazuka_old", "at": "n_sasazuka", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
+- {"line": "l_keio_line", "other": "l_keio_line", "other_route": "r_keio_line_shinsen_shinjuku_sasazuka", "at": "n_sasazuka", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_keishin_line", "other": "l_keishin_line", "other_route": "r_keishin_line_misasagi_keihan_keihan_yamashina_old", "at": "n_misasagi_keihan", "source": "derived", "verified": false, "valid": [null, "ongoing"]}
 - {"line": "l_keishin_line", "other": "l_keishin_line", "other_route": "r_keishin_line_misasagi_keihan_keihan_yamashina_old", "at": "n_keihan_yamashina", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "up"}
 - {"line": "l_kitano_line", "other": "l_kitano_line", "other_route": "r_kitano_line_kitano_keifuku_kitano_hakubaicho", "at": "n_kitano_hakubaicho", "source": "derived", "verified": false, "valid": [null, "ongoing"]}

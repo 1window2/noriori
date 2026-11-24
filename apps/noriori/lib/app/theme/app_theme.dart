@@ -26,10 +26,20 @@ SystemUiOverlayStyle overlayStyle(Brightness brightness) => SystemUiOverlayStyle
       statusBarIconBrightness: brightness == Brightness.light ? Brightness.dark : Brightness.light,
     );
 
+/// 시스템 글자 크기(일반·접근성 단계)를 따르되 이 배율을 넘지 않는다. 그보다 크면 선택 화면 머리글이 「S…」로 잘리고
+/// 역 이름이 글자 단위로 끊겨 읽을 수 없게 된다 (사용자 결정 2026-11-24, 세 언어·단계별 시뮬레이터 시험으로 정한 값)
+const double maxTextScale = 1.4;
+
+/// 글자 배율 상한을 건다. 작게 쓰는 설정은 그대로 둔다
+Widget withTextScaleCap(BuildContext context, Widget child) {
+  final media = MediaQuery.of(context);
+  return MediaQuery(data: media.copyWith(textScaler: media.textScaler.clamp(maxScaleFactor: maxTextScale)), child: child);
+}
+
 /// 화면마다 AppBar가 있지는 않다. 앱 전체에 한 번 깐다.
 Widget withOverlayStyle(BuildContext context, Widget? child) => AnnotatedRegion<SystemUiOverlayStyle>(
       value: overlayStyle(Theme.of(context).brightness),
-      child: child ?? const SizedBox.shrink(),
+      child: withTextScaleCap(context, child ?? const SizedBox.shrink()),
     );
 
 ThemeData appTheme(Brightness brightness) {

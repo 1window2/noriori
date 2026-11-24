@@ -1,0 +1,2 @@
+# 京王新線 新宿(新線新宿) 나누기 (5회차 사용자 결정 2026-11-24, 설계 docs/research/audit5-keio-shinsen-design.md)
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ja", "text": "新線新宿", "kind": "alias", "why": "찾기용 안내 호칭"}

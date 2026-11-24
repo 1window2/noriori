@@ -16,11 +16,21 @@ const unmatchedRef = 'unmatched';
 
 /// 일본어 이름과 별칭에서 ID로 가는 표. 키는 [importKey]다.
 final class ImportNames {
-  const ImportNames({required this.routes, required this.lines, required this.nodes, this.services = const {}});
+  const ImportNames({
+    required this.routes,
+    required this.lines,
+    required this.nodes,
+    this.services = const {},
+    this.routeStations = const {},
+  });
 
   final Map<String, Set<String>> routes;
   final Map<String, Set<String>> lines;
   final Map<String, Set<String>> nodes;
+
+  /// 계통 한정 역 대응(노리츠부시 대응표 stations): 계통 ID → importKey(노리츠부시 역 이름) → 노드 ID.
+  /// 노리츠부시 구간 끝 역이 우리 계통에 없을 때 그 계통 안에서만 바꿔 읽는다(東北貨物線 「田端信号場～上中里」 → 王子, 5회차 2026-11-24)
+  final Map<String, Map<String, String>> routeStations;
 
   /// 운행 계통 이름과 노리츠부시 대응표의 노선명 (DESIGN §10.2). 공식 노선 구성과 다르게 나뉜 노선은 운행 계통으로 펼친다.
   final Map<String, Set<String>> services;
@@ -83,13 +93,20 @@ final class CsvMatcher {
       if (froms == null || tos == null) return _servicesOf(row.line).isEmpty ? const RowMissed(MissReason.line) : const RowMissed(MissReason.station);
       return _service(row, froms, tos) ?? (_servicesOf(row.line).isEmpty ? const RowMissed(MissReason.line) : const RowMissed(MissReason.path));
     }
-    if (froms == null || tos == null) return const RowMissed(MissReason.station);
+    // 계통 한정 역 대응이 있는 계통은 그 이름도 받는다. 전역 이름표에 없는 역 이름(그 계통에만 있는 대응)도 여기서 산다
+    Set<String> routeNames(String routeId, Set<String>? global, String name) => {
+          ...?global,
+          if (names.routeStations[routeId]?[importKey(name)] case final String node) node,
+        };
+    if ((froms == null || tos == null) && !routes.any((id) => names.routeStations.containsKey(id))) {
+      return const RowMissed(MissReason.station);
+    }
     RowMatched? best;
     var bestGap = 0;
     for (final routeId in routes) {
       final stops = {for (final stop in network.stops(routeId)) stop.node};
-      for (final from in froms.where(stops.contains)) {
-        for (final to in tos.where(stops.contains)) {
+      for (final from in routeNames(routeId, froms, row.from).where(stops.contains)) {
+        for (final to in routeNames(routeId, tos, row.to).where(stops.contains)) {
           final found = _expand(routeId, from, to, row);
           if (found == null) continue;
           final gap = _gap(found.meters, row.meters);
@@ -100,7 +117,8 @@ final class CsvMatcher {
         }
       }
     }
-    return best ?? _service(row, froms, tos) ?? const RowMissed(MissReason.path);
+    if (best == null && (froms == null || tos == null)) return const RowMissed(MissReason.station);
+    return best ?? _service(row, froms!, tos!) ?? const RowMissed(MissReason.path);
   }
 
   List<String> _servicesOf(String line) => [

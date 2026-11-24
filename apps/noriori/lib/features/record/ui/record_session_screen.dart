@@ -169,6 +169,22 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     final brackets = searching ? null : bracketPieces(shown, tokens, brightness, only: (notice) => !layout.ctx.containsKey(notice));
     // 접힌 선형의 괄호는 본선과 접힌 선형 사이에 따로 그린다 (DESIGN §8.3)
     final folded = searching ? const <SelectorLine, ({List<BracketPiece> pieces, double? nodeY, double reach})>{} : foldBrackets(shown, lines, (kind) => noticeColors(kind, tokens, brightness).bracket);
+    // 머리글 폭 계산: 뒤로 단추(56) + 제목 + 날짜 칩 + 단추 둘(48×2) + 끝 여백(4). 글자 배율을 그대로 반영해 잰다
+    final scaler = MediaQuery.textScalerOf(context);
+    double measure(String value, TextStyle? style) => (TextPainter(
+          text: TextSpan(text: value, style: style),
+          textDirection: TextDirection.ltr,
+          textScaler: scaler,
+          maxLines: 1,
+        )..layout())
+        .width;
+    final chipLabel = unsure ? '$dateChip ?' : dateChip;
+    final chipWidth = measure(chipLabel, text.labelMedium) + 12 + 8 + 2 + 16 + 2;
+    final titleStyle = Theme.of(context).appBarTheme.titleTextStyle ?? text.titleLarge;
+    final titleRoom = MediaQuery.sizeOf(context).width - 56 - chipWidth - 48 * 2 - 4;
+    final chipDown = query == null && measure(book.lines[shownLine] ?? '', titleStyle) > titleRoom;
+    final chipRowHeight = scaler.scale((text.labelMedium?.fontSize ?? 12) * 1.5) + 12 + 8;
+    final dateChipWidget = SessionDateChip(label: chipLabel, onTap: () => _editDate(controller, raw));
     return PopScope(
       // 분기로 넘어왔으면 뒤로 가기는 직전 노선이다
       canPop: state.depth == 0,
@@ -179,6 +195,18 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
       child: Scaffold(
         appBar: AppBar(
           titleSpacing: 0,
+          // 노선 이름이 날짜 칩 옆에 다 들어가지 않으면(긴 영어 이름·큰 글자) 날짜 칩을 머리글 아래 줄로 내린다.
+          // 들어가면 지금 배치 그대로다 (사용자 결정 2026-11-24 글자 크기 상한과 함께, 세 언어·글자 단계 시험)
+          bottom: chipDown
+              ? PreferredSize(
+                  preferredSize: Size.fromHeight(chipRowHeight),
+                  // 칩은 제목 시작선(뒤로 단추 폭 56)에 맞춘다. 칩 안의 Center가 폭을 다 차지하지 않게 Row에 넣는다
+                  child: Padding(
+                    padding: const EdgeInsets.fromLTRB(56, 0, 12, 8),
+                    child: Row(children: [dateChipWidget]),
+                  ),
+                )
+              : null,
           title: query != null
               ? TextField(
                   autofocus: true,
@@ -222,7 +250,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                   ],
                 ),
           actions: [
-            SessionDateChip(label: unsure ? '$dateChip ?' : dateChip, onTap: () => _editDate(controller, raw)),
+            if (!chipDown) dateChipWidget,
             IconButton(
               tooltip: context.t.lineDetail.open,
               icon: const Icon(Icons.info_outline),
@@ -326,10 +354,13 @@ class _DisplayBar extends ConsumerWidget {
               onChanged: change == null ? null : (next) => change(next ?? false),
               visualDensity: VisualDensity.compact,
             ),
-            Text(
-              label,
-              style: text.bodySmall?.copyWith(
-                color: change == null ? tokens.textClosed : tokens.textMuted,
+            // 큰 글자(1.4배)·좁은 폭에서 한 줄을 넘으면 줄을 바꾼다
+            Flexible(
+              child: Text(
+                label,
+                style: text.bodySmall?.copyWith(
+                  color: change == null ? tokens.textClosed : tokens.textMuted,
+                ),
               ),
             ),
             const SizedBox(width: 8),

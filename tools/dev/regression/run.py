@@ -157,12 +157,12 @@ def judge(c):
     # 거짓 연결 지적: 그 역에서 두 노선 사이 분기·끝 이어짐(track_link)이 없어야 한다 (pairs: [[노선, 상대 노선], ...])
     if k=='nolink':return not any(frozenset((a,b,c['node'])) in TL for a,b in c['pairs'])
     # 계통 이음 행: {route, node, other_line|other_route, link_kind?, day?, next?, term?, side?, absent?}. day가 있으면 그날 유효한 행만 본다.
-    # absent면 조건에 맞는 행이 없어야 고쳐짐이다 (3회차 W1a)
+    # absent면 조건에 맞는 행이 없어야 고쳐짐이다 (3회차 W1a). link_raw의 from은 시작 값 그대로(범위 창처럼 확실한 날이 없는 행, 5회차)
     if k=='link':
         return _link_case(c)
     if k=='link_raw':
         rs=[r_ for r_ in LNK[c['route'],c['node']] if (not c.get('other_line') or r_[0]==c['other_line']) and (not c.get('other_route') or r_[1]==c['other_route'])
-            and (not c.get('link_kind') or r_[2]==c['link_kind']) and (not c.get('day') or _on((r_[6],r_[7]),c['day']))]
+            and (not c.get('link_kind') or r_[2]==c['link_kind']) and (not c.get('day') or _on((r_[6],r_[7]),c['day'])) and (not c.get('from') or r_[6]==c['from'])]
         hit=[r_ for r_ in rs if (not c.get('next') or r_[4]==c['next']) and (not c.get('term') or r_[5]==c['term']) and (not c.get('side') or r_[3]==c['side']) and (not c.get('other_node') or r_[8]==c['other_node'])]
         return not hit if c.get('absent') else bool(hit)
     # 선로 연결 있음(nolink의 반대): pairs의 모든 쌍이 그 역에서 분기·끝 이어짐(track_link)

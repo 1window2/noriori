@@ -3421,7 +3421,7 @@
 - {"entity_type": "route", "id": "r_tohoku_main_line_akabane_omiya", "lang": "ja", "text": "東北本線 (埼京線)", "kind": "noritsubushi", "span": ["赤羽", "大宮"]}
 - {"entity_type": "route", "id": "r_tohoku_main_line_iwakiri_rifu", "lang": "ja", "text": "東北本線 (利府支線)", "kind": "noritsubushi", "span": ["岩切", "利府"]}
 - {"entity_type": "route", "id": "r_tohoku_main_line_matsushima_takagimachi", "lang": "ja", "text": "東北本線 (仙石東北ライン)", "kind": "noritsubushi", "span": ["松島", "高城町"]}
-- {"entity_type": "route", "id": "r_tohoku_freight_line", "lang": "ja", "text": "東北本線 (東北貨物線)", "kind": "noritsubushi", "span": ["田端信号場", "上中里"]}
+- {"entity_type": "route", "id": "r_tohoku_freight_line", "lang": "ja", "text": "東北本線 (東北貨物線)", "kind": "noritsubushi", "span": ["田端信号場", "王子"]}
 - {"entity_type": "route", "id": "r_tohoku_main_line_rifu_shinainuma", "lang": "ja", "text": "東北本線 (利府・品井沼旧線)", "kind": "noritsubushi", "span": ["利府", "品井沼"]}
 - {"entity_type": "route", "id": "r_tohoku_main_line_nonai_aoimori_aoimori_railway_old_aomori", "lang": "ja", "text": "東北本線 (野内（旧）・青森旧線)", "kind": "noritsubushi", "span": ["野内（旧）", "青森"]}
 - {"entity_type": "route", "id": "r_tohoku_shinkansen", "lang": "ja", "text": "東北新幹線", "kind": "noritsubushi", "span": ["東京", "新青森"]}

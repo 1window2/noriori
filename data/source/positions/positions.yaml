@@ -7206,7 +7206,7 @@
 - {"node": "n_horikawakoizumi", "lat": 36.675647, "lon": 137.219281, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_omachi_toyama_chiho", "lat": 36.673066, "lon": 137.220483, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_minami_toyama_ekimae", "lat": 36.670484, "lon": 137.22044, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
-- {"node": "n_toyama_chiho_branch_junction", "lat": 36.69982, "lon": 137.21199, "quality": "approx", "checked": "2026-11-20", "source": "n02"}
+- {"node": "n_toyama_chiho_branch_junction", "lat": 36.70042, "lon": 137.21246, "quality": "approx", "checked": "2026-11-20", "source": "hand"}
 - {"node": "n_shintomicho_toyama_chiho", "lat": 36.69886, "lon": 137.211256, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_kenchomae_toyama_chiho", "lat": 36.695728, "lon": 137.20984, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_marunouchi_toyama_chiho", "lat": 36.692563, "lon": 137.208896, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
@@ -9700,7 +9700,7 @@
 - {"node": "n_saishun_iryo_center_mae_old", "lat": 32.880972, "lon": 130.747917, "quality": "approx", "checked": "2026-11-20", "source": "hand"}
 - {"node": "n_higashi_takashima", "lat": 35.47138889, "lon": 139.6361667, "quality": "approx", "checked": "2026-11-20", "source": "wikidata"}
 - {"node": "n_takashima_freight", "lat": 35.46611111, "lon": 139.6306111, "quality": "approx", "checked": "2026-11-20", "source": "wikidata"}
-- {"node": "n_tabata_signal", "lat": 35.73826, "lon": 139.76067, "quality": "approx", "checked": "2026-11-20", "source": "hand"}
+- {"node": "n_tabata_signal", "lat": 35.74831, "lon": 139.74406, "quality": "approx", "checked": "2026-11-20", "source": "hand"}
 - {"node": "n_akitako", "lat": 39.756306, "lon": 140.062306, "quality": "approx", "checked": "2026-11-20", "source": "wikidata"}
 - {"node": "n_shin_koiwa_signal", "lat": 35.72036111, "lon": 139.8631111, "quality": "approx", "checked": "2026-11-20", "source": "wikidata"}
 - {"node": "n_seibu_chichibu_through", "lat": 35.98896, "lon": 139.08262, "quality": "approx", "checked": "2026-11-20", "source": "hand"}

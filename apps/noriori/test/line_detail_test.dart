@@ -1360,10 +1360,10 @@ void main() {
   // 영어는 글이 길어 넘치기 쉽다. 세 언어 모두 좁은 폰·큰 글자로 본다 (사용자 지시 2026-11-12)
   for (final (width, scale, locale) in const [
     (390.0, 1.0, AppLocale.ko),
-    (360.0, 1.3, AppLocale.ko),
+    (360.0, 1.4, AppLocale.ko),
     (390.0, 1.0, AppLocale.en),
-    (360.0, 1.3, AppLocale.en),
-    (360.0, 1.3, AppLocale.ja),
+    (360.0, 1.4, AppLocale.en),
+    (360.0, 1.4, AppLocale.ja),
   ]) {
     testWidgets('전수: 모든 노선의 노선 상세를 끝까지 내려도 그리기 오류와 ID 노출이 없다 (폭 $width, 글자 $scale배, ${locale.languageCode})',
         skip: _skip != null || full != null, (tester) async {

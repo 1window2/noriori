@@ -3921,5 +3921,10 @@ null
 "r_kurobe_gorge_main_line|n_sasadaira": {"pass": true, "stop": [["2025-05-03", "2025-05-10"]]},
 "r_kurobe_gorge_main_line|n_moriishi": "pass",
 "r_kurobe_gorge_main_line|n_dashidaira": "pass",
-"r_kurobe_gorge_main_line|n_koyadaira": "pass"
+"r_kurobe_gorge_main_line|n_koyadaira": "pass",
+"r_keio_line_shinjuku_sasazuka_old|n_hatsudai": [null, "1978-10-31"],
+"r_keio_line_shinjuku_sasazuka_old|n_hatagaya": [null, "1978-10-31"],
+"r_keio_line_shinsen_shinjuku_sasazuka|n_hatsudai": ["1978-10-31", null],
+"r_keio_line_shinsen_shinjuku_sasazuka|n_hatagaya": ["1978-10-31", null],
+"r_keio_line_shinsen_shinjuku_sasazuka|n_shinjuku_keio_new_line": ["1978-10-31", null]
 }

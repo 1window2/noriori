@@ -137,6 +137,31 @@ void main() {
     expect([for (final row in plan.rows) row.undated], [false, true, false]);
   });
 
+  test('노리츠부시 계통 한정 역 대응은 그 계통 안에서만 바꿔 읽고 내보낼 때 되돌린다 (東北貨物線 上中里 → 王子, 5회차)', () async {
+    if (skip != null) return;
+    final dir = masterFile.absolute.parent.path;
+    final db = UserDb(openDirect(File(':memory:')));
+    await db.customStatement("ATTACH 'file:$dir/names.sqlite?mode=ro&immutable=1' AS names");
+    await db.customStatement("ATTACH 'file:$dir/master.sqlite?mode=ro&immutable=1' AS master");
+    final names = await PackReader(db).importNames();
+    final exportNames = await PackReader(db).exportNames();
+    await db.close();
+    expect(names.routeStations['r_tohoku_freight_line']?.values, contains('n_oji_tohoku_main'));
+    expect(exportNames.routeStations['r_tohoku_freight_line']?['n_oji_tohoku_main'], '上中里');
+    final file = parseNoritsubushiCsv([
+      '会社名,路線名,乗車開始駅,乗車終了駅,乗車キロ,乗車日',
+      'JR東日本,東北貨物線 (東北本線),田端信号場,上中里,1.7,2020-01-01',
+      'JR東日本,東北本線,田端,上中里,1.7,2020-01-01',
+    ].join('\n'));
+    final plan = planImport(file, CsvMatcher(network, names), const {}, idOf: uuidV5);
+    expect(plan.missed, isEmpty);
+    final freight = plan.rows.first.result as RowMatched;
+    expect((freight.routeId, freight.fromNode, freight.toNode), ('r_tohoku_freight_line', 'n_tabata_signal', 'n_oji_tohoku_main'));
+    // 다른 계통(東北本線 본선)의 上中里는 그대로 上中里다
+    final main = plan.rows.last.result as RowMatched;
+    expect(main.toNode, 'n_kami_nakazato');
+  });
+
   test('펼치기 결과가 같다', () {
     final resolver = RouteResolver(network);
     final rows = (table['expand']! as List<Object?>).cast<Map<String, Object?>>();

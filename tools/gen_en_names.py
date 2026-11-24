@@ -9,6 +9,7 @@ import glob,json,os,re,sqlite3,sys,unicodedata
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'tools'))
 from en_rules import hepburn,load_fix,fix_station
+import en_rules
 from lib import HT,source_on,_rows,ROOT as _ROOT
 
 # 운행 계통은 표가 짧아 손으로 적는다. 운행 계통 정의(services.json)에 en이 있으면 그것을 쓴다
@@ -168,7 +169,10 @@ def check(rows):
         re.search(r' (line|branch line)\b',r['text']) or r['text'] in GENERIC_NAMES or r['text'] in('Line','Railway Line','Cable Line','Cable Car','Connecting Line','Trolleybus')
         or not r['text'].strip() or not r['text'].replace('·','').isascii())]
     # 역 이름은 names.yaml에 있다. 읽기대로 옮긴 외래어와 붙은 ekimae가 돌아오지 않게 한다
-    bad+=[r['text'] for r in rows if re.search('keburu|monoreru|taminaru|kosakusen|[a-z]ekimae',r['text'],re.I)]
+    # 공식 영어 이름(회사 자료·역명판, en_official.json)은 그 표기 그대로 둔다(Asahiekimae dori, Dentetsutaminarubiru mae). 계통 이름 「A~B」 안의 공식 역 이름도 같다 (5회차 2026-11-24)
+    _off={v['en'] for v in en_rules.load_official().values()}
+    def _offok(t):return t in _off or all(p_ in _off for p_ in re.split(r'~',t) if re.search('keburu|monoreru|taminaru|kosakusen|[a-z]ekimae',p_,re.I))
+    bad+=[r['text'] for r in rows if re.search('keburu|monoreru|taminaru|kosakusen|[a-z]ekimae',r['text'],re.I) and not _offok(r['text'])]
     if bad:sys.exit('영어 이름 규칙 위반: '+', '.join(bad))
 
 def main():

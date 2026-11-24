@@ -247,4 +247,16 @@ void main() {
       expect(stopAt(lines, node).quiet, isFalse);
     }
   }, skip: skip);
+  // 운휴 중 이설해 계승한 역(常磐線 2011→2016): 옛 역은 새 역 개업 전날까지 운휴, 그 뒤는 폐역이다. 기록은 마지막 운행일까지만 (설계 audit5-relocation-successor-design.md)
+  test('이설 계승역은 새 역 개업 전까지 운휴', () async {
+    const route = 'r_joban_line_komagamine_hamayoshida';
+    final y2010 = await screen(route, '2010-06-01');
+    final y2013 = await screen(route, '2013-06-01');
+    for (final node in ['n_shinchi_old', 'n_sakamoto_joban_old', 'n_yamashita_old']) {
+      expect(stopAt(y2010, node).row.state, StopState.open, reason: node);
+      expect(stopAt(y2013, node).row.state, StopState.suspended, reason: node);
+      expect(stopAt(y2013, node).row.suspendedSince, '2011', reason: node);
+      expect(stopAt(y2013, node).row.selectable, isFalse, reason: node);
+    }
+  }, skip: skip);
 }

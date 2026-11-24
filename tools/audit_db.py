@@ -134,7 +134,15 @@ for e,L in life.items():
 put('법적 폐지가 기준일 전인데 수록',rows)
 # 운행을 다시 시작하지 않고 끝난 휴지(DESIGN §2.2, 결정 122): 운휴 뒤 재개 없이 닫힌 칸은 운휴 시작으로 소급해 닫혀야 하고(마지막 행이 suspended인 채 닫히면 안 됨),
 # 법적 폐지일이 닫힌 날보다 늦으면 사유가 no_regular_service(이설·BRT는 그대로)다
-put('운휴 뒤 재개 없이 닫힘(운휴 시작으로 소급 안 됨)',[(e,ln(attr[e][0]['line_id']) if attr.get(e) else '',v[-1]['valid_from'],v[-1]['valid_to']) for e,v in LR.items() if v[-1]['status']=='suspended' and v[-1]['valid_to']!=ON],30)
+# 다만 운휴 중 이설해 계승한 칸(폐지 사유 relocated이고 칸 끝 노드의 이전처 새 역이 닫힌 날 열림, 常磐線 駒ヶ嶺–浜吉田 2011→2016)은 운휴로 남는 것이 규칙이다
+# (설계 audit5-relocation-successor-design.md, 사용자 결정 2026-11-24). compile의 _reloc_successor와 같은 조건이다
+_MVD=collections.defaultdict(set)
+for mv_ in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8')):_MVD[mv_['old']].add(mv_['date'])
+def _reloc_ok(e,L):
+    if L['close_reason']!='relocated':return False
+    fr_,to_=m.execute('select from_node,to_node from edge where id=?',(e,)).fetchone()
+    return any((L['valid_to'] or '')[:10] in _MVD.get(n_,()) for n_ in (fr_,to_))
+put('운휴 뒤 재개 없이 닫힘(운휴 시작으로 소급 안 됨)',[(e,ln(attr[e][0]['line_id']) if attr.get(e) else '',v[-1]['valid_from'],v[-1]['valid_to']) for e,v in LR.items() if v[-1]['status']=='suspended' and v[-1]['valid_to']!=ON and not _reloc_ok(e,v[-1])],30)
 put('법적 폐지가 닫힌 날보다 늦은데 사유 abolished',[(e,ln(attr[e][0]['line_id']) if attr.get(e) else '',L['valid_to'],L['legal_abolition']) for e,L in life.items() if L['close_reason']=='abolished' and L['legal_abolition'] and L['valid_to']!=ON and (lohi(L['legal_abolition'])[0] or '')>(lohi(L['valid_to'])[1] or '9999')],30)
 put('폐지 사유 없는 폐지 edge',[e for e,L in life.items() if L['valid_to']!=ON and not L['close_reason']])
 put('현행 edge에 폐지 사유',[e for e,L in life.items() if L['valid_to']==ON and L['close_reason']])
@@ -609,7 +617,9 @@ put('kana가 히라가나 아님',[(i,x,k) for (t,i),v in nm.items() if t=='node
 # 현대 가나 표기가 아님 (ぎをん, をごとおんせん). 원문 옛 표기를 그대로 옮긴 것이다
 put('kana에 옛 가나(を·ゐ·ゑ)',[(t,i,x,k) for (t,i),v in nm.items() for x,k,*_ in v.get('ja',[]) if k and re.search('[をゐゑ]',k)])
 put('공개 노드 kana 없음',[(i,base('node',i,'ja')[0]) for i in pub if base('node',i,'ja') and not base('node',i,'ja')[1] and i not in asis])
-put('en에 비ASCII',[(i,x) for (t,i),v in nm.items() for x,k,s,*_ in v.get('en',[]) if shown('en',x,s) is not None and not shown('en',x,s).replace('·','').isascii() and not _kj_ok(shown('en',x,s))])
+# 공식 영어 이름의 장음 기호(Shijō-Ōmiya)는 공식대로 둔다 (사용자 결정 2026-11-24). 그 밖의 비ASCII만 잡는다
+_MACRON=str.maketrans('','','āīūēōĀĪŪĒŌ')
+put('en에 비ASCII',[(i,x) for (t,i),v in nm.items() for x,k,s,*_ in v.get('en',[]) if shown('en',x,s) is not None and not shown('en',x,s).replace('·','').translate(_MACRON).isascii() and not _kj_ok(shown('en',x,s))])
 # 계통 이름도 화면에 나온다(PackReader.nameBook). 없으면 한국어·영어 화면에 일본어 계통 이름이 나온다 (끝 역이 신호장·분기점인 계통)
 put('계통 ko·en 이름 없음',[(i,l,J('route',i)) for (t,i),v in nm.items() if t=='route' for l in ('ko','en') if l not in v])
 put('en 빈 값',[(i,x) for (t,i),v in nm.items() for x,k,s,*_ in v.get('en',[]) if not x.strip()])
@@ -619,7 +629,8 @@ def hav(a,b):
     return 6371*2*math.asin(math.sqrt(h))
 # 같은 한자 다른 읽기: 같은 표기의 다른 지명은 흔하다(桂川 かつらがわ·けいせん, 山崎 やまさき·やまざき). 그래서 같은 노드 안이거나
 # 8km 안의 노드끼리만 본다. 가까워도 실제로 읽기가 다른 역(西院 阪急 さいいん·京福 さい, 木幡 JR こはた·京阪 こわた)은 뺀다
-NEAR_OK={'西院','木幡'}
+# 三河豊田: 名鉄 挙母線 1937–1959(みかわとよだ, 1942 鉄道省 運賃算出表 높음)과 愛知環状鉄道 1976~(みかわとよた)은 시기가 겹치지 않는 다른 역 (5회차 2026-11-24)
+NEAR_OK={'西院','木幡','三河豊田'}
 kk=collections.defaultdict(lambda:collections.defaultdict(set))
 # 같은 노드에서 같은 글자의 읽기가 기간을 달리해 바뀐 것(苅田 かりた ~1959 → かんだ, 공식 읽기 변경)은 충돌이 아니다.
 # 그 노드에서 그 글자의 행이 모두 기간이 겹치지 않으면(기간 없는 지금 행 하나 + 끝난 옛 행들) 한 노드 안 충돌로 세지 않는다 (2026-11-13)
@@ -2027,7 +2038,13 @@ for k in LINKS:
     if len(nbs)>=2:rows.append((k['route_id'],nn(k['node']),k['kind'],ln(k['other_line_id']),nn(t),d,sorted(nn(z) for z in nbs)[:3]))
 put('K61 연결 끝 역에서 그날 상대 노선이 더 이어짐(끝 역이 줄기 끝이 아님)',rows,30,lvl='warn')
 # K62 시작이 범위인 연결 행의 범위 상한이 끝보다 늦음 (3회차 tohoku_1-019 石巻)
-rows=[(k['route_id'],nn(k['node']),k['kind'],ln(k['other_line_id']),k['valid_from'],k['valid_to']) for k in LINKS for p in [ivl(k['valid_from'],k['valid_to'])] if p and k['valid_to']!=ON and (p[1] or '')>(p[2] or '9999') and not str(k['valid_from']).startswith('[..')]
+# 시작·끝이 둘 다 범위이고 끝 범위가 시작 범위보다 뒤로 밀린 창(그해 운행은 근거로 확인, 날짜만 모름: 秋田内陸 2000 봄)은 compile이 있었다고 받은 행이라 뺀다 (5회차 2026-11-25)
+def _k62_window(k):
+    f_,t_=str(k['valid_from']),str(k['valid_to'])
+    if not (f_.startswith('[') and t_.startswith('[')):return False
+    a_,b_=lohi(f_),lohi(t_)
+    return bool(a_[0] and b_[0] and a_[1] and b_[1]) and a_[0]<b_[0] and a_[1]<b_[1]
+rows=[(k['route_id'],nn(k['node']),k['kind'],ln(k['other_line_id']),k['valid_from'],k['valid_to']) for k in LINKS for p in [ivl(k['valid_from'],k['valid_to'])] if p and k['valid_to']!=ON and (p[1] or '')>(p[2] or '9999') and not str(k['valid_from']).startswith('[..') and not _k62_window(k)]
 put('K62 연결 시작 범위의 상한이 끝보다 늦음',rows,30)
 # K63 계통 연속성: 이웃 두 정차역이 함께 서는 날에 그 사이 계통 칸이 영업하지 않음(병주 칸도 없음, 3회차 kinki_2-019 西野田線)
 rows=[]
@@ -2456,14 +2473,18 @@ put('K91 끝난 노선의 날짜 모름 화면 이름이 그 역 마지막 정�
 # K92 역 이름에 안내용 副駅名称(〈 〉)이 들어감 (3회차 kanto_1-015: 明治神宮前〈原宿〉). 정식 역명만 이름이고 〈 〉 꼴은 검색 별칭이다
 rows=[(i_,l_,x_) for t_,i_,l_,x_ in n.execute("select entity_type,entity_id,lang,text from name where entity_type='node'") if re.search('[〈〉]',x_ or '')]
 put('K92 역 이름에 안내용 副駅名称(〈〉)',rows,30)
+_MVPAIR={tuple(sorted((x['old'],x['new']))) for x in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))}
 # K93 같은 노선의 다른 계통에 지금 이름이 같은 역 둘((旧) 없음, 3회차 tohoku_2-013: 東北本線 山線 옛 松島–海線 松島). 같은 계통은 K25
 rows=[]
 for l_,rids_ in LROUTES.items():
     gb=collections.defaultdict(set)
     for rid_ in rids_:
         for y in rstop.get(rid_,[]):
-            if y['is_stop']:gb[bj(y['node_id'])].add(y['node_id'])
+            # 노선 한정 이름(기간 없음)이 있으면 그 이름으로 본다(5회차 京王線 新宿·新線新宿)
+            if y['is_stop']:gb[next((z[0] for z in NROWS.get(('node',y['node_id'],'ja'),[]) if z[3]==l_ and not z[4] and not z[5]),None) or bj(y['node_id'])].add(y['node_id'])
     for t_,xs in gb.items():
+        # 역 이전(moved.json) 옛·새 노드 쌍은 옛 역에 이전 안내가 붙어 구별된다(会津線 舟子 1980 大川ダム 선로 바꿈)
+        if len(xs)==2 and tuple(sorted(xs)) in _MVPAIR:continue
         if len(xs)>1 and t_ and not any(len(xs)>1 and set(xs)<=RNODES.get(r_,set()) for r_ in rids_):rows.append((ln(l_),t_,sorted(xs)[:3]))
 put('K93 같은 노선 다른 계통에 지금 이름이 같은 노드 둘(（旧） 없음)',rows,30)
 # K110 여객 영업 이력이 없는 화물선(rule_class hidden)은 DB에만 둔다(사용자 결정 2026-11-09). 앱에 드러나는 길이 없어야 한다 (9회차 F):

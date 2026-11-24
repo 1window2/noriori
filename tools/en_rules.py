@@ -7,6 +7,20 @@ from lib import ROMA,ROOT,kata2hira,romaji
 def load_fix():
     return json.load(open(os.path.join(ROOT,'data','overrides','en_fix.json'),encoding='utf-8'))
 
+def load_official():
+    """현행 역 공식 영어 이름 {노드: {en, source, type}} (data/overrides/en_official.json, 5회차)"""
+    p_=os.path.join(ROOT,'data','overrides','en_official.json')
+    if not os.path.exists(p_):return {}
+    rows=json.load(open(p_,encoding='utf-8'))['rows']
+    return {k:dict(v,en=norm_official(v['en'])) for k,v in rows.items()}
+
+def norm_official(s):
+    """공식 자료에서 옮긴 글자 흔적을 고친다: 전각 글자, 굽은 따옴표(ROYCE’), 가운뎃점(Ōmori・Kinjōgakuin-mae),
+    낱말 가운데 대문자 장음 기호(KyŪkan). 장음 기호 자체는 공식대로 둔다"""
+    s=''.join(unicodedata.normalize('NFKC',c) if c not in '・' and unicodedata.east_asian_width(c)=='F' else c for c in s)
+    s=s.replace('’',"'").replace('‘',"'").replace('・','-')
+    return re.sub('(?<=[a-zāīūēō])[ĀĪŪĒŌ]',lambda m:m.group(0).lower(),s)
+
 # 훈독 낱말의 첫 글자. 長音처럼 보여도 앞 글자와 다른 낱말이라 줄이면 안 된다 (丸ノ内, 松浦, 箕面)
 WORD_START={'内':'うち','浦':'うら','裏':'うら','牛':'うし','魚':'うお','海':'うみ','兎':'うさぎ','畝':'うね','上':'うえ','尾':'お','箕面':'お'}
 # 宇는 う 한 글자라 앞이 う 줄이면 구별되지 않는다 (陸中宇部, 由宇)
@@ -120,9 +134,35 @@ def ekimae(ja,kana,known):
     jr,base,tail=m.groups()
     read=re.sub('(じぇいあーる)|(えきまえ(おお)?(どおり)?$)','',kana)
     head=place(base,read,known)
-    name=f"{head}-Ekimae" if head else 'Ekimae'
+    # 駅前는 공식이 없으면 「-ekimae」 소문자다(-mae와 같은 꼴, 사용자 결정 2026-11-24). 공식 영어 이름은 en_official.json이 앞선다
+    name=f"{head}-ekimae" if head else 'Ekimae'
     if jr:name='JR '+name
     return name+{'大通':'-Odori','通':'-dori',None:''}[tail]
+
+EKIGUCHI=re.compile(r'^(.+?)駅(東|西|南|北|中央|前|新)?口$')
+def ekiguchi(ja,kana,known):
+    """駅〇口 정류장(秋葉原駅東口 → Akihabara-eki-higashiguchi). 공식 근거가 없어 「〇口」는 한 낱말로 붙인다 (5회차 규칙 설계, 공식 이름 다수 꼴)"""
+    m=EKIGUCHI.match(ja)
+    if not m or 'えき' not in kana:return None
+    i=kana.rfind('えき');base,rest=kana[:i],kana[i+2:]
+    if not base or not rest:return None
+    return f"{place(m.group(1),base,known)}-eki-{hepburn(rest)}"
+
+# 前 앞의 시설 낱말은 하이픈 소문자로 나눈다(Akado-shogakko-mae). 공식 이름 다수 꼴 (5회차 규칙 설계 2026-11-24)
+INST=sorted((('病院','びょういん','byoin'),('市役所','しやくしょ','shiyakusho'),('区役所','くやくしょ','kuyakusho'),('役所','やくしょ','yakusho'),
+             ('小学校','しょうがっこう','shogakko'),('中学校','ちゅうがっこう','chugakko'),('学校','がっこう','gakko'),('高校','こうこう','koko'),
+             ('大学','だいがく','daigaku'),('車庫','しゃこ','shako'),('交差点','こうさてん','kosaten'),('神社','じんじゃ','jinja'),('郵便局','ゆうびんきょく','yubinkyoku')),
+            key=lambda t:len(t[0]),reverse=True)
+def mae(ja,kana,known):
+    """〇〇前 정류장 → 「〇〇-mae」(앞에 하이픈이 있어도 붙인다, 공식 이름 16/28). 駅前는 ekimae가 먼저 다룬다"""
+    if len(ja)<2 or not ja.endswith('前') or not kana.endswith('まえ') or ja.endswith('駅前'):return None
+    bj,bk=ja[:-1],kana[:-2]
+    # 이름 전체가 시설 낱말이면 나누지 않는다(市役所前 → Shiyakusho-mae, 大学前 → Daigaku-mae)
+    if any(bj==wj and bk==wk for wj,wk,_ in INST):return f"{place(bj,bk,known)}-mae"
+    for wj,wk,we in INST:
+        if bj.endswith(wj) and bk.endswith(wk) and len(bj)>len(wj):
+            return f"{place(bj[:-len(wj)],bk[:-len(wk)],known)}-{we}-mae"
+    return f"{place(bj,bk,known)}-mae"
 
 def terminal(ja,kana,known):
     m=TERMINAL.match(ja)
@@ -152,7 +192,7 @@ def fix_station(ja,kana,text,known,keep=()):
     ja=plainja(ja);kana=plainkana(kana)
     if not kana:return None
     if chome(ja,kana,known) and text in keep:return None
-    return chome(ja,kana,known) or ekimae(ja,kana,known) or terminal(ja,kana,known) or katakana(ja,kana,known,text) or eki(ja,kana,known)
+    return chome(ja,kana,known) or ekimae(ja,kana,known) or ekiguchi(ja,kana,known) or terminal(ja,kana,known) or katakana(ja,kana,known,text) or mae(ja,kana,known) or eki(ja,kana,known)
 
 def eki(ja,kana,known):
     """이름이 「駅」으로 끝나는 정류장(広島駅, 須磨駅)은 -eki를 붙여 같은 이름 철도역과 가른다 (2회차 종합 K17)"""
@@ -173,6 +213,10 @@ def fix_nodes(names):
     # 규칙 이름은 확정된 읽기로 다시 만든다. node_fix.json이 읽기를 고치기 전에 만든 값이 남아 있다
     for x in rows:
         if x['source']=='rule' and kana.get(x['id']):x['text']=station_reading(kana[x['id']],plainja(ja[x['id']]))
+    # 현행 역의 공식 영어 이름(회사 자료·역명판 사진)이 가장 앞선다. 다른 역 이름의 낱말 경계 바탕(known)으로도 쓴다 (사용자 결정 2026-11-24)
+    official=load_official()
+    for x in rows:
+        if x['id'] in official:x['text']=official[x['id']]['en'];x['source']='official'
     # 다른 역 이름의 바탕. 어절이 나뉜 표기만 믿는다
     known={}
     for x in rows:
@@ -181,6 +225,7 @@ def fix_nodes(names):
     known.update({tuple(k.split('|')):v['en'] for k,v in fix['base'].items()})
     for x in rows:
         i=x['id']
+        if x['source']=='official':continue
         if i in nodefix:x['text']=nodefix[i]['en'];x['source']='hand';continue
         if x['source']=='hand' or i not in ja:continue
         made=fix_station(ja[i],kana[i],x['text'],known,keep)

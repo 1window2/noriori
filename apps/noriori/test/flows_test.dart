@@ -564,7 +564,7 @@ void main() {
 
   testWidgets('운휴로 끊긴 연결은 끝난 해 대신 운휴 중으로 적는다 (外房線 大原의 いすみ線, 10회차 G1 kanto_3-007)', skip: _skip != null, (tester) async {
     // 전수 화면 점검과 같은 좁은 폰·큰 글자 (사용자 지시 2026-11-12: 세 언어)
-    for (final (width, scale, locale) in const [(360.0, 1.3, AppLocale.ko), (360.0, 1.3, AppLocale.en), (360.0, 1.3, AppLocale.ja)]) {
+    for (final (width, scale, locale) in const [(360.0, 1.4, AppLocale.ko), (360.0, 1.4, AppLocale.en), (360.0, 1.4, AppLocale.ja)]) {
       LocaleSettings.setLocaleSync(locale);
       tester.view.physicalSize = Size(width * 3, 844 * 3);
       tester.view.devicePixelRatio = 3;
@@ -598,7 +598,7 @@ void main() {
       LocaleSettings.setLocaleSync(locale);
       tester.view.physicalSize = const Size(360 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3;
-      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      tester.platformDispatcher.textScaleFactorTestValue = 1.4;
       final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-16', locale: locale));
       final session = container.read(recordSessionProvider.notifier);
       await tester.runAsync(() => session.open(lineId: 'l_shido_line', routeId: 'r_shido_line'));
@@ -627,7 +627,7 @@ void main() {
       LocaleSettings.setLocaleSync(locale);
       tester.view.physicalSize = const Size(360 * 3, 844 * 3);
       tester.view.devicePixelRatio = 3;
-      tester.platformDispatcher.textScaleFactorTestValue = 1.3;
+      tester.platformDispatcher.textScaleFactorTestValue = 1.4;
       final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-16', locale: locale));
       final session = container.read(recordSessionProvider.notifier);
       await tester.runAsync(() => session.open(lineId: 'l_otsuki_line', routeId: 'r_otsuki_line'));
@@ -1007,10 +1007,10 @@ void main() {
   // 영어는 글이 길어 칩·줄이 넘치기 쉽다. 한국어만이 아니라 세 언어 모두 좁은 폰·큰 글자로 본다 (사용자 지시 2026-11-12)
   for (final (width, scale, locale) in const [
     (390.0, 1.0, AppLocale.ko),
-    (360.0, 1.3, AppLocale.ko),
+    (360.0, 1.4, AppLocale.ko),
     (390.0, 1.0, AppLocale.en),
-    (360.0, 1.3, AppLocale.en),
-    (360.0, 1.3, AppLocale.ja),
+    (360.0, 1.4, AppLocale.en),
+    (360.0, 1.4, AppLocale.ja),
   ]) {
     testWidgets('전수: 모든 계통의 세션 화면을 끝까지 내려도 그리기 오류가 없다 (폭 $width, 글자 $scale배, ${locale.languageCode})',
         skip: _skip != null || full != null, (tester) async {

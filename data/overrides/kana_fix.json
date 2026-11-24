@@ -9750,11 +9750,7 @@
 "kana": "さかえまち～ふくずみ",
 "source": "names.sqlite node kana: n_sakaemachi_sapporo_city=さかえまち; n_fukuzumi=ふくずみ"
 },
-"route:r_tohoku_freight_line": {
-"text": "田端信号場～上中里",
-"kana": "たばたしんごうじょう～かみなかざと",
-"source": "names.sqlite node kana: hand「田端信号場」=たばたしんごうじょう; n_kami_nakazato=かみなかざと"
-},
+"route:r_tohoku_freight_line": {"text": "田端信号場～王子", "kana": "たばたしんごうじょう～おうじ", "source": "names.sqlite node kana: hand「田端信号場」=たばたしんごうじょう; n_oji_tohoku_main=おうじ"},
 "route:r_tohoku_main_line": {
 "text": "東京～青森",
 "kana": "とうきょう～あおもり",

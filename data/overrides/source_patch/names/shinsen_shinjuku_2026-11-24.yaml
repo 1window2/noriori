@@ -1,0 +1,10 @@
+# 京王新線 新宿(新線新宿) 나누기 (5회차 사용자 결정 2026-11-24, 설계 docs/research/audit5-keio-shinsen-design.md)
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ja", "text": "新宿", "kana": "しんじゅく", "source": "hand", "why": "기본 이름은 新宿(京王 공식 역 이름 「新宿駅」 KO01, 사용자 결정)"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ko", "text": "신주쿠", "source": "namuwiki", "checked": "2026-11-24", "why": "나무위키 표기(names_ko.json 「新宿|しんじゅく」)"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "en", "text": "Shinjuku", "source": "rule", "why": "京王 영문 역명 Shinjuku"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ja", "text": "新線新宿", "kana": "しんせんしんじゅく", "source": "hand", "line": "l_keio_line", "why": "京王 안내 호칭 「新線新宿」(위키 京王新線 oldid=111094481 「京王線新宿駅と新線新宿駅は改札内で接続している同一駅」「1978年10月31日に開業」, 위키 京王線 oldid=111519832 年表 「1978年10月31日 - 新宿（新線新宿） - 笹塚間複々線化（京王新線開通）。初台駅、幡ヶ谷駅が新線に移転」). 京王線 화면에서만"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ja", "text": "新線新宿", "kana": "しんせんしんじゅく", "source": "hand", "line": "l_shinjuku_line_toei", "why": "같은 승강장의 안내 호칭. 都営新宿線 화면에서만(사용자 결정 2026-11-24)"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ko", "text": "신센신주쿠", "source": "rule", "line": "l_keio_line", "why": "ko.station(しんせんしんじゅく). 나무위키 표제 없음"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "ko", "text": "신센신주쿠", "source": "rule", "line": "l_shinjuku_line_toei", "why": "ko.station(しんせんしんじゅく). 나무위키 표제 없음"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "en", "text": "Shinsenshinjuku", "source": "rule", "line": "l_keio_line", "why": "en_rules.station_reading(しんせんしんじゅく). 공식 영문 근거를 찾으면 바꿈"}
+- {"patch": "add", "entity_type": "node", "id": "n_shinjuku_keio_new_line", "lang": "en", "text": "Shinsenshinjuku", "source": "rule", "line": "l_shinjuku_line_toei", "why": "en_rules.station_reading(しんせんしんじゅく)"}

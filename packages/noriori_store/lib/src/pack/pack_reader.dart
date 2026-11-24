@@ -104,11 +104,22 @@ final class PackReader {
       final kind = byKind[row.read<String>('entity_type')] ??= {};
       (kind[importKey(row.read('text'))] ??= {}).add(row.read('entity_id'));
     }
+    // 계통 한정 역 대응 표는 2026-11-24.5판부터 있다. 옛 판에는 없다
+    final routeStations = <String, Map<String, String>>{};
+    final hasTable = await _db
+        .customSelect("SELECT 1 FROM names.sqlite_master WHERE type = 'table' AND name = 'import_station'")
+        .getSingleOrNull();
+    if (hasTable != null) {
+      for (final row in await _db.customSelect('SELECT route_id, text, node_id FROM names.import_station').get()) {
+        (routeStations[row.read<String>('route_id')] ??= {})[importKey(row.read('text'))] = row.read('node_id');
+      }
+    }
     return ImportNames(
       routes: byKind['route'] ?? const {},
       lines: byKind['line'] ?? const {},
       nodes: byKind['node'] ?? const {},
       services: byKind['service'] ?? const {},
+      routeStations: routeStations,
     );
   }
 
@@ -144,11 +155,21 @@ final class PackReader {
         .get()) {
       lines[row.read('entity_id')] = row.read('text');
     }
+    final routeStations = <String, Map<String, String>>{};
+    final hasTable = await _db
+        .customSelect("SELECT 1 FROM names.sqlite_master WHERE type = 'table' AND name = 'import_station'")
+        .getSingleOrNull();
+    if (hasTable != null) {
+      for (final row in await _db.customSelect('SELECT route_id, text, node_id FROM names.import_station').get()) {
+        (routeStations[row.read<String>('route_id')] ??= {})[row.read('node_id')] = row.read('text');
+      }
+    }
     return ExportNames(
       operators: plain('operator'),
       lines: lines,
       nodes: nodes,
       routes: {for (final row in aliases.reversed) row.read<String>('entity_id'): row.read('text')},
+      routeStations: routeStations,
     );
   }
 

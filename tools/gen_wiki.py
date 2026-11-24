@@ -644,13 +644,17 @@ def nocont(a,b):
 JNOT=HT.get('JUNCTION_NOT',[]);JN_USED=set()
 for x_ in JNOT:
     if x_['line'] not in lines or (x_.get('other') and x_['other'] not in lines) or x_['at'] not in nodes or not x_.get('why'):raise SystemExit(f'JUNCTION_NOT 행이 틀렸습니다: {x_}')
+_RLINE={r['id']:r['line'] for r in routes}
 def jnot_per(j):
     """j에 걸리는 JUNCTION_NOT 행들의 '연결 없음' 기간. 쌍의 양쪽 화면 행에 함께 건다"""
     out=[]
     for i_,x_ in enumerate(JNOT):
         # 계통 한정 행(route)은 compile이 그 계통의 연결에만 건다
         if x_['at']!=j['at'] or x_.get('route'):continue
-        if x_.get('other_route'):hit=j['line']==x_['line'] and j.get('other_route')==x_['other_route']
+        # 계통 한정 상대(other_route) 행은 그 계통을 가리키는 행과, 계통을 정하지 않은 노선 단위 행(양쪽 화면)에 건다.
+        # 노선 단위 행은 compile이 상대 노선의 계통으로 풀어 본선 계통에 붙인다(赤羽線 赤羽·川越線 大宮 → 東北本線 본선, 5회차 2026-11-25).
+        # 다른 계통으로 가는 근거 직통은 THROUGH(b_route) 행이 따로 넣는다. 같은 노선 계통끼리 행(東北本線 赤羽)은 늘 계통을 가리키므로 해당 없음
+        if x_.get('other_route'):hit=(j['line']==x_['line'] and j.get('other_route')==x_['other_route']) or (not j.get('other_route') and x_['line']!=_RLINE.get(x_['other_route']) and {j['line'],j['other']}=={x_['line'],_RLINE.get(x_['other_route'])})
         else:hit={j['line'],j['other']}=={x_['line'],x_['other']}
         if hit:JN_USED.add(i_);out.append((x_.get('from') or '0000','9999' if x_.get('to') in (None,'ongoing') else x_['to']))
     return out
@@ -875,7 +879,8 @@ junc=out
 # 후보 행이 없어 걸리지 않았어도 두 노선이 실제로 만나는 판정 행은 쓰인 것이다(근거 문서 없는 다른 사업자 쌍의 「선로 연결 없음」, 川部 弘南鉄道黒石線).
 # 멈추는 것은 이름·ID가 틀려 만나는 곳이 없는 행뿐이다
 NC_USED|={k_ for k_ in NOCONT if set.intersection(*[set(ladj[l_]) for l_ in k_])}
-JN_USED|={i_ for i_,x_ in enumerate(JNOT) if _meets(x_['line'],x_['at']) and (x_.get('other_route') or _meets(x_['other'],x_['at']))}
+# 계통 한정 상대 행은 실제로 걸린 것만 쓰인 것으로 센다(걸리지 않으면 아무 일도 하지 않으므로 멈춘다). 계통 한정 행(route)은 compile이 따로 센다
+JN_USED|={i_ for i_,x_ in enumerate(JNOT) if _meets(x_['line'],x_['at']) and (x_.get('route') or (not x_.get('other_route') and _meets(x_['other'],x_['at'])))}
 unused=[sorted(k_) for k_ in NOCONT if k_ not in NC_USED]+[JNOT[i_] for i_ in range(len(JNOT)) if i_ not in JN_USED]
 if unused:raise SystemExit(f'쓰이지 않은 NOCONT·JUNCTION_NOT 행: {unused}')
 os.makedirs(CAND,exist_ok=True)

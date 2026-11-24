@@ -1583,20 +1583,20 @@
 - {"entity_type": "route", "id": "r_hakodate_main_line", "lang": "en", "text": "Hakodate~Asahikawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakodate_main_line_sunagawa_kami_sunagawa", "lang": "en", "text": "Sunagawa~Kami-Sunagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakodate_main_line_bibai_minami_bibai", "lang": "en", "text": "Bibai~Minami-Bibai", "source": "rule"}
-- {"entity_type": "route", "id": "r_hakodate_main_line_onuma_mori", "lang": "en", "text": "Onuma~Mori", "source": "rule"}
-- {"entity_type": "route", "id": "r_fujishiro_line", "lang": "en", "text": "Nanae~Onuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakodate_main_line_onuma_mori", "lang": "en", "text": "Ōnuma~Mori", "source": "rule"}
+- {"entity_type": "route", "id": "r_fujishiro_line", "lang": "en", "text": "Nanae~Ōnuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakodate_main_line_osamunai_ino_hakodate_main", "lang": "en", "text": "Osamunai~Ino", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokkaido_shinkansen", "lang": "en", "text": "Shin-Aomori~Shin-Hakodate-Hokuto", "source": "rule"}
-- {"entity_type": "route", "id": "r_sassho_line", "lang": "en", "text": "Soen~Ishikari-Numata", "source": "rule"}
+- {"entity_type": "route", "id": "r_sassho_line", "lang": "en", "text": "Sōen~Ishikari-Numata", "source": "rule"}
 - {"entity_type": "route", "id": "r_chitose_line", "lang": "en", "text": "Numanohata~Shiroishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_chitose_line_minami_chitose_new_chitose_airport", "lang": "en", "text": "Minami-Chitose~New Chitose Airport", "source": "rule"}
 - {"entity_type": "route", "id": "r_chitose_line_naebo_kita_hiroshima", "lang": "en", "text": "Naebo (old)~Kita-Hiroshima", "source": "rule"}
 - {"entity_type": "route", "id": "r_sekisho_line", "lang": "en", "text": "Minami-Chitose~Shintoku", "source": "rule"}
-- {"entity_type": "route", "id": "r_sekisho_line_shin_yubari_yubari", "lang": "en", "text": "Shin-Yubari~Yubari", "source": "rule"}
+- {"entity_type": "route", "id": "r_sekisho_line_shin_yubari_yubari", "lang": "en", "text": "Shin-Yūbari~Yubari", "source": "rule"}
 - {"entity_type": "route", "id": "r_muroran_main_line", "lang": "en", "text": "Oshamambe~Iwamizawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_muroran_main_line_higashi_muroran_muroran", "lang": "en", "text": "Higashi-Muroran~Muroran", "source": "rule"}
 - {"entity_type": "route", "id": "r_muroran_main_line_shibun_iwamizawa", "lang": "en", "text": "Shibun~Iwamizawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_muroran_main_line_okishi_toyoura", "lang": "en", "text": "Okishi~Toyoura", "source": "rule"}
+- {"entity_type": "route", "id": "r_muroran_main_line_okishi_toyoura", "lang": "en", "text": "Ōkishi~Toyoura", "source": "rule"}
 - {"entity_type": "route", "id": "r_muroran_main_line_kogane_moto_wanishi", "lang": "en", "text": "Kogane~Moto-Wanishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_hidaka_main_line", "lang": "en", "text": "Tomakomai~Samani", "source": "rule"}
 - {"entity_type": "route", "id": "r_nemuro_main_line", "lang": "en", "text": "Takikawa~Nemuro", "source": "rule"}
@@ -1607,11 +1607,11 @@
 - {"entity_type": "route", "id": "r_soya_main_line", "lang": "en", "text": "Asahikawa~Wakkanai", "source": "rule"}
 - {"entity_type": "route", "id": "r_sekihoku_main_line", "lang": "en", "text": "Shin-Asahikawa~Abashiri", "source": "rule"}
 - {"entity_type": "route", "id": "r_senmo_main_line", "lang": "en", "text": "Higashi-Kushiro~Abashiri", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokaido_main_line", "lang": "en", "text": "Tokyo~Kobe", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokaido_main_line", "lang": "en", "text": "Tokyo~Kōbe", "source": "rule"}
 - {"entity_type": "route", "id": "r_tokaido_main_line_shinagawa_tsurumi", "lang": "en", "text": "Shinagawa~Tsurumi", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokaido_main_line_tsurumi_hazawa_yokohama_kokudai", "lang": "en", "text": "Tsurumi~Hazawa Yokohama-Kokudai", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokaido_main_line_ogaki_mino_akasaka", "lang": "en", "text": "Ogaki~Mino-Akasaka", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokaido_main_line_ogaki_sekigahara", "lang": "en", "text": "Ogaki~Sekigahara", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokaido_main_line_tsurumi_hazawa_yokohama_kokudai", "lang": "en", "text": "Tsurumi~Hazawa-Yokohama-Kokudai", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokaido_main_line_ogaki_mino_akasaka", "lang": "en", "text": "Ōgaki~Mino-Akasaka", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokaido_main_line_ogaki_sekigahara", "lang": "en", "text": "Ōgaki~Sekigahara", "source": "rule"}
 - {"entity_type": "route", "id": "r_tokaido_freight_line", "lang": "en", "text": "Tsurumi~Higashi-Totsuka", "source": "rule"}
 - {"entity_type": "route", "id": "r_takashima_line", "lang": "en", "text": "Tsurumi~Sakuragicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_osaki_branch_line", "lang": "en", "text": "Osaki~Nishi-Oi", "source": "rule"}
@@ -1626,8 +1626,8 @@
 - {"entity_type": "route", "id": "r_tsurumi_line", "lang": "en", "text": "Tsurumi~Ogimachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsurumi_line_musashi_shiraishi_okawa", "lang": "en", "text": "Musashi-Shiraishi~Okawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsurumi_line_asano_umi_shibaura", "lang": "en", "text": "Asano~Umi-Shibaura", "source": "rule"}
-- {"entity_type": "route", "id": "r_musashino_line", "lang": "en", "text": "Fuchu-Hommachi~Nishi-Funabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_musashino_south_line", "lang": "en", "text": "Tsurumi~Fuchu-Hommachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_musashino_line", "lang": "en", "text": "Fuchuhommachi~Nishi-Funabashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_musashino_south_line", "lang": "en", "text": "Tsurumi~Fuchuhommachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kunitachi_branch_line", "lang": "en", "text": "Shin-Kodaira~Kunitachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_omiya_branch_line", "lang": "en", "text": "Nishi-Urawa~Yono", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishiurawa_branch_line", "lang": "en", "text": "Musashi-Urawa~Yono", "source": "rule"}
@@ -1643,7 +1643,7 @@
 - {"entity_type": "route", "id": "r_chuo_main_line_kanda_yoyogi", "lang": "en", "text": "Kanda~Yoyogi", "source": "rule"}
 - {"entity_type": "route", "id": "r_chuo_main_line_okaya_shiojiri", "lang": "en", "text": "Okaya~Shiojiri", "source": "rule"}
 - {"entity_type": "route", "id": "r_chuo_main_line_nagiso_tadachi", "lang": "en", "text": "Nagiso~Tadachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_ome_line", "lang": "en", "text": "Tachikawa~Okutama", "source": "rule"}
+- {"entity_type": "route", "id": "r_ome_line", "lang": "en", "text": "Tachikawa~Oku-Tama", "source": "rule"}
 - {"entity_type": "route", "id": "r_itsukaichi_line", "lang": "en", "text": "Haijima~Musashi-Iwai", "source": "rule"}
 - {"entity_type": "route", "id": "r_hachiko_line", "lang": "en", "text": "Hachioji~Kuragano", "source": "rule"}
 - {"entity_type": "route", "id": "r_koumi_line", "lang": "en", "text": "Kobuchizawa~Komoro", "source": "rule"}
@@ -1655,23 +1655,23 @@
 - {"entity_type": "route", "id": "r_tohoku_main_line_akabane_omiya", "lang": "en", "text": "Akabane~Omiya", "source": "rule"}
 - {"entity_type": "route", "id": "r_tohoku_main_line_iwakiri_rifu", "lang": "en", "text": "Iwakiri~Rifu", "source": "rule"}
 - {"entity_type": "route", "id": "r_tohoku_main_line_matsushima_takagimachi", "lang": "en", "text": "Matsushima~Takagimachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_tohoku_freight_line", "lang": "en", "text": "Tabata Signal~Kami-Nakazato", "source": "rule"}
+- {"entity_type": "route", "id": "r_tohoku_freight_line", "lang": "en", "text": "Tabata Signal~Oji", "source": "rule"}
 - {"entity_type": "route", "id": "r_tohoku_main_line_rifu_shinainuma", "lang": "en", "text": "Rifu~Shinainuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_tohoku_main_line_nonai_aoimori_aoimori_railway_old_aomori", "lang": "en", "text": "Nonai (old)~Aomori", "source": "rule"}
 - {"entity_type": "route", "id": "r_tohoku_shinkansen", "lang": "en", "text": "Tokyo~Shin-Aomori", "source": "rule"}
 - {"entity_type": "route", "id": "r_joban_line", "lang": "en", "text": "Nippori~Iwanuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_joban_line_komagamine_hamayoshida", "lang": "en", "text": "Komagamine~Hamayoshida", "source": "rule"}
 - {"entity_type": "route", "id": "r_tabata_freight_line", "lang": "en", "text": "Tabata Signal~Mikawashima", "source": "rule"}
-- {"entity_type": "route", "id": "r_suigun_line", "lang": "en", "text": "Mito~Asaka-Nagamori", "source": "rule"}
+- {"entity_type": "route", "id": "r_suigun_line", "lang": "en", "text": "Mito~Asakanagamori", "source": "rule"}
 - {"entity_type": "route", "id": "r_suigun_line_kami_sugaya_hitachi_ota", "lang": "en", "text": "Kami-Sugaya~Hitachi-Ota", "source": "rule"}
 - {"entity_type": "route", "id": "r_kawagoe_line", "lang": "en", "text": "Omiya~Komagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_takasaki_line", "lang": "en", "text": "Omiya~Takasaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_joetsu_line", "lang": "en", "text": "Takasaki~Miyauchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_joetsu_line_echigo_yuzawa_gala_yuzawa", "lang": "en", "text": "Echigo-Yuzawa~Gala-Yuzawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_joetsu_line_echigo_yuzawa_gala_yuzawa", "lang": "en", "text": "Echigo-Yuzawa~GALA Yuzawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_joetsu_shinkansen", "lang": "en", "text": "Omiya~Niigata", "source": "rule"}
 - {"entity_type": "route", "id": "r_agatsuma_line", "lang": "en", "text": "Shibukawa~Omae", "source": "rule"}
-- {"entity_type": "route", "id": "r_agatsuma_line_iwashima_naganohara_kusatsuguchi", "lang": "en", "text": "Iwashima~Naganohara-Kusatsuguchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_ryomo_line", "lang": "en", "text": "Oyama~Shin-Maebashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_agatsuma_line_iwashima_naganohara_kusatsuguchi", "lang": "en", "text": "Iwashima~Naganoharakusatsuguchi", "source": "rule"}
+- {"entity_type": "route", "id": "r_ryomo_line", "lang": "en", "text": "Oyama~Shim-Maebashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_mito_line", "lang": "en", "text": "Oyama~Tomobe", "source": "rule"}
 - {"entity_type": "route", "id": "r_nikko_line", "lang": "en", "text": "Utsunomiya~Nikko", "source": "rule"}
 - {"entity_type": "route", "id": "r_karasuyama_line", "lang": "en", "text": "Hoshakuji~Karasuyama", "source": "rule"}
@@ -1683,7 +1683,7 @@
 - {"entity_type": "route", "id": "r_kesennuma_line", "lang": "en", "text": "Maeyachi~Kesennuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_ofunato_line", "lang": "en", "text": "Ichinoseki~Sakari", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitakami_line", "lang": "en", "text": "Kitakami~Yokote", "source": "rule"}
-- {"entity_type": "route", "id": "r_kitakami_line_iwasawa_hottoyuda", "lang": "en", "text": "Iwasawa~Hottoyuda", "source": "rule"}
+- {"entity_type": "route", "id": "r_kitakami_line_iwasawa_hottoyuda", "lang": "en", "text": "Iwasawa~Hotto-Yuda", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamaishi_line", "lang": "en", "text": "Hanamaki~Kamaishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tazawako_line", "lang": "en", "text": "Morioka~Omagari", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamada_line", "lang": "en", "text": "Morioka~Kamaishi", "source": "rule"}
@@ -1721,53 +1721,53 @@
 - {"entity_type": "route", "id": "r_narita_line", "lang": "en", "text": "Sakura~Matsugishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_narita_line_abiko_narita", "lang": "en", "text": "Abiko~Narita", "source": "rule"}
 - {"entity_type": "route", "id": "r_narita_line_narita_narita_airport_terminal_1", "lang": "en", "text": "Narita~Narita Airport Terminal 1", "source": "rule"}
-- {"entity_type": "route", "id": "r_kashima_line", "lang": "en", "text": "Katori~Kashima Soccer Stadium", "source": "rule"}
+- {"entity_type": "route", "id": "r_kashima_line", "lang": "en", "text": "Katori~Kashima-Soccer Stadium", "source": "rule"}
 - {"entity_type": "route", "id": "r_kururi_line", "lang": "en", "text": "Kisarazu~Kazusa-Kameyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_togane_line", "lang": "en", "text": "Oami~Naruto", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokaido_shinkansen", "lang": "en", "text": "Tokyo~Shin-Osaka", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokaido_shinkansen", "lang": "en", "text": "Tokyo~Shin-Ōsaka", "source": "rule"}
 - {"entity_type": "route", "id": "r_gotemba_line", "lang": "en", "text": "Kozu~Numazu", "source": "rule"}
 - {"entity_type": "route", "id": "r_minobu_line", "lang": "en", "text": "Fuji~Kofu", "source": "rule"}
 - {"entity_type": "route", "id": "r_minobu_line_fuji_iriyamase", "lang": "en", "text": "Fuji~Iriyamase", "source": "rule"}
 - {"entity_type": "route", "id": "r_iida_line", "lang": "en", "text": "Toyohashi~Tatsuno", "source": "rule"}
 - {"entity_type": "route", "id": "r_iida_line_toyokawa_nishi_toyokawa", "lang": "en", "text": "Toyokawa~Nishi-Toyokawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_iida_line_chubu_tenryu_ozore", "lang": "en", "text": "Chubu-Tenryu~Ozore", "source": "rule"}
-- {"entity_type": "route", "id": "r_taketoyo_line", "lang": "en", "text": "Obu~Taketoyo", "source": "rule"}
+- {"entity_type": "route", "id": "r_iida_line_chubu_tenryu_ozore", "lang": "en", "text": "Chūbu-Tenryū~Ōzore", "source": "rule"}
+- {"entity_type": "route", "id": "r_taketoyo_line", "lang": "en", "text": "Ōbu~Taketoyo", "source": "rule"}
 - {"entity_type": "route", "id": "r_takayama_main_line", "lang": "en", "text": "Gifu~Toyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_taita_line", "lang": "en", "text": "Tajimi~Mino-Ota", "source": "rule"}
-- {"entity_type": "route", "id": "r_kansai_main_line", "lang": "en", "text": "Nagoya~JR Namba", "source": "rule"}
+- {"entity_type": "route", "id": "r_taita_line", "lang": "en", "text": "Tajimi~Mino-Ōta", "source": "rule"}
+- {"entity_type": "route", "id": "r_kansai_main_line", "lang": "en", "text": "Nagoya~JR-Namba", "source": "rule"}
 - {"entity_type": "route", "id": "r_kisei_main_line", "lang": "en", "text": "Kameyama~Wakayamashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_meisho_line", "lang": "en", "text": "Matsusaka~Ise-Okitsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_sangu_line", "lang": "en", "text": "Taki~Toba", "source": "rule"}
-- {"entity_type": "route", "id": "r_kosei_line", "lang": "en", "text": "Yamashina~Omi-Shiotsu", "source": "rule"}
-- {"entity_type": "route", "id": "r_osaka_loop_line", "lang": "en", "text": "Tennoji~Shin-Imamiya", "source": "rule"}
-- {"entity_type": "route", "id": "r_sakurajima_line", "lang": "en", "text": "Nishikujo~Sakurajima", "source": "rule"}
-- {"entity_type": "route", "id": "r_jr_tozai_line", "lang": "en", "text": "Kyobashi~Amagasaki", "source": "rule"}
+- {"entity_type": "route", "id": "r_kosei_line", "lang": "en", "text": "Yamashina~Ōmi-Shiotsu", "source": "rule"}
+- {"entity_type": "route", "id": "r_osaka_loop_line", "lang": "en", "text": "Tennōji~Shin-Imamiya", "source": "rule"}
+- {"entity_type": "route", "id": "r_sakurajima_line", "lang": "en", "text": "Nishikujō~Sakurajima", "source": "rule"}
+- {"entity_type": "route", "id": "r_jr_tozai_line", "lang": "en", "text": "Kyōbashi~Amagasaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuchiyama_line", "lang": "en", "text": "Amagasaki~Fukuchiyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuchiyama_line_tsukaguchi_amagasakiko", "lang": "en", "text": "Tsukaguchi~Amagasakiko", "source": "rule"}
-- {"entity_type": "route", "id": "r_fukuchiyama_line_namaze_dojo", "lang": "en", "text": "Namaze~Dojo", "source": "rule"}
+- {"entity_type": "route", "id": "r_fukuchiyama_line_namaze_dojo", "lang": "en", "text": "Namaze~Dōjō", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line", "lang": "en", "text": "Maibara~Naoetsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_tsuruga_imajo", "lang": "en", "text": "Tsuruga~Imajo", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_uramoto_arimagawa", "lang": "en", "text": "Uramoto~Arimagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokuriku_main_line_tanihama_naoetsu", "lang": "en", "text": "Tanihama~Naoetsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_obama_line", "lang": "en", "text": "Tsuruga~Higashi-Maizuru", "source": "rule"}
-- {"entity_type": "route", "id": "r_etsumi_hoku_line", "lang": "en", "text": "Echizen-Hanando~Kuzuryuko", "source": "rule"}
+- {"entity_type": "route", "id": "r_etsumi_hoku_line", "lang": "en", "text": "Echizen-Hanandō~Kuzuryūko", "source": "rule"}
 - {"entity_type": "route", "id": "r_nanao_line", "lang": "en", "text": "Tsubata~Wajima", "source": "rule"}
-- {"entity_type": "route", "id": "r_johana_line", "lang": "en", "text": "Takaoka~Johana", "source": "rule"}
+- {"entity_type": "route", "id": "r_johana_line", "lang": "en", "text": "Takaoka~Jōhana", "source": "rule"}
 - {"entity_type": "route", "id": "r_himi_line", "lang": "en", "text": "Takaoka~Himi", "source": "rule"}
-- {"entity_type": "route", "id": "r_sanyo_main_line", "lang": "en", "text": "Kobe~Moji", "source": "rule"}
-- {"entity_type": "route", "id": "r_sanyo_main_line_hyogo_wadamisaki", "lang": "en", "text": "Hyogo~Wadamisaki", "source": "rule"}
-- {"entity_type": "route", "id": "r_sanyo_shinkansen", "lang": "en", "text": "Shin-Osaka~Hakata", "source": "rule"}
+- {"entity_type": "route", "id": "r_sanyo_main_line", "lang": "en", "text": "Kōbe~Moji", "source": "rule"}
+- {"entity_type": "route", "id": "r_sanyo_main_line_hyogo_wadamisaki", "lang": "en", "text": "Hyōgo~Wadamisaki", "source": "rule"}
+- {"entity_type": "route", "id": "r_sanyo_shinkansen", "lang": "en", "text": "Shin-Ōsaka~Hakata", "source": "rule"}
 - {"entity_type": "route", "id": "r_kakogawa_line", "lang": "en", "text": "Kakogawa~Tanikawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_bantan_line", "lang": "en", "text": "Shikamako~Wadayama", "source": "rule"}
 - {"entity_type": "route", "id": "r_kishin_line", "lang": "en", "text": "Himeji~Niimi", "source": "rule"}
 - {"entity_type": "route", "id": "r_ako_line", "lang": "en", "text": "Aioi~Higashi-Okayama", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsuyama_line", "lang": "en", "text": "Okayama~Tsuyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_kibi_line", "lang": "en", "text": "Okayama~Soja", "source": "rule"}
+- {"entity_type": "route", "id": "r_kibi_line", "lang": "en", "text": "Okayama~Sōja", "source": "rule"}
 - {"entity_type": "route", "id": "r_uno_line", "lang": "en", "text": "Okayama~Uno", "source": "rule"}
 - {"entity_type": "route", "id": "r_honshi_bisan_line", "lang": "en", "text": "Chayamachi~Utazu", "source": "rule"}
-- {"entity_type": "route", "id": "r_hakubi_line", "lang": "en", "text": "Kurashiki~Hoki-Daisen", "source": "rule"}
-- {"entity_type": "route", "id": "r_hakubi_line_gokei_minagi", "lang": "en", "text": "Gokei~Minagi", "source": "rule"}
-- {"entity_type": "route", "id": "r_geibi_line", "lang": "en", "text": "Bitchu-Kojiro~Hiroshima", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakubi_line", "lang": "en", "text": "Kurashiki~Hōki-Daisen", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakubi_line_gokei_minagi", "lang": "en", "text": "Gōkei~Minagi", "source": "rule"}
+- {"entity_type": "route", "id": "r_geibi_line", "lang": "en", "text": "Bitchū-Kōjiro~Hiroshima", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuen_line", "lang": "en", "text": "Fukuyama~Shiomachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuen_line_kawasa_bingo_mikawa", "lang": "en", "text": "Kawasa~Bingo-Mikawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_kure_line", "lang": "en", "text": "Mihara~Kaitaichi", "source": "rule"}
@@ -1777,31 +1777,31 @@
 - {"entity_type": "route", "id": "r_gantoku_line", "lang": "en", "text": "Iwakuni~Kushigahama", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamaguchi_line", "lang": "en", "text": "Shin-Yamaguchi~Masuda", "source": "rule"}
 - {"entity_type": "route", "id": "r_ube_line", "lang": "en", "text": "Shin-Yamaguchi~Ube", "source": "rule"}
-- {"entity_type": "route", "id": "r_onoda_line", "lang": "en", "text": "Ino~Onoda", "source": "rule"}
+- {"entity_type": "route", "id": "r_onoda_line", "lang": "en", "text": "Inō~Onoda", "source": "rule"}
 - {"entity_type": "route", "id": "r_onoda_line_suzumeda_nagato_motoyama", "lang": "en", "text": "Suzumeda~Nagato-Motoyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_mine_line", "lang": "en", "text": "Asa~Nagatoshi", "source": "rule"}
-- {"entity_type": "route", "id": "r_mine_line_minami_omine_omine", "lang": "en", "text": "Minami-Omine~Omine", "source": "rule"}
-- {"entity_type": "route", "id": "r_sanin_main_line", "lang": "en", "text": "Kyoto~Hatabu", "source": "rule"}
+- {"entity_type": "route", "id": "r_mine_line_minami_omine_omine", "lang": "en", "text": "Minami-Ōmine~Omine", "source": "rule"}
+- {"entity_type": "route", "id": "r_sanin_main_line", "lang": "en", "text": "Kyōto~Hatabu", "source": "rule"}
 - {"entity_type": "route", "id": "r_sanin_main_line_nagatoshi_senzaki", "lang": "en", "text": "Nagatoshi~Senzaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_maizuru_line", "lang": "en", "text": "Ayabe~Naka-Maizuru", "source": "rule"}
 - {"entity_type": "route", "id": "r_inbi_line", "lang": "en", "text": "Tottori~Higashi-Tsuyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakai_line", "lang": "en", "text": "Yonago~Funatsukiba", "source": "rule"}
 - {"entity_type": "route", "id": "r_kisuki_line", "lang": "en", "text": "Shinji~Bingo-Ochiai", "source": "rule"}
 - {"entity_type": "route", "id": "r_kusatsu_line", "lang": "en", "text": "Tsuge~Kusatsu", "source": "rule"}
-- {"entity_type": "route", "id": "r_nara_line", "lang": "en", "text": "Kyoto~Kizu", "source": "rule"}
+- {"entity_type": "route", "id": "r_nara_line", "lang": "en", "text": "Kyōto~Kizu", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakurai_line", "lang": "en", "text": "Nara~Takada", "source": "rule"}
 - {"entity_type": "route", "id": "r_katamachi_line", "lang": "en", "text": "Kizu~Katamachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_osaka_higashi_line", "lang": "en", "text": "Shin-Osaka~Kyuhoji", "source": "rule"}
-- {"entity_type": "route", "id": "r_wakayama_line", "lang": "en", "text": "Oji~Wakayama", "source": "rule"}
-- {"entity_type": "route", "id": "r_hanwa_line", "lang": "en", "text": "Tennoji~Wakayama", "source": "rule"}
-- {"entity_type": "route", "id": "r_hanwa_line_otori_higashi_hagoromo", "lang": "en", "text": "Otori~Higashi-Hagoromo", "source": "rule"}
+- {"entity_type": "route", "id": "r_osaka_higashi_line", "lang": "en", "text": "Shin-Ōsaka~Kyūhōji", "source": "rule"}
+- {"entity_type": "route", "id": "r_wakayama_line", "lang": "en", "text": "Ōji~Wakayama", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanwa_line", "lang": "en", "text": "Tennōji~Wakayama", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanwa_line_otori_higashi_hagoromo", "lang": "en", "text": "Ōtori~Higashi-Hagoromo", "source": "rule"}
 - {"entity_type": "route", "id": "r_kansai_airport_line", "lang": "en", "text": "Hineno~Kansai Airport", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakata_minami_line", "lang": "en", "text": "Hakata~Hakata-Minami", "source": "rule"}
 - {"entity_type": "route", "id": "r_yosan_line", "lang": "en", "text": "Takamatsu~Uwajima", "source": "rule"}
 - {"entity_type": "route", "id": "r_yosan_line_mukaibara_uchiko", "lang": "en", "text": "Mukaibara~Uchiko", "source": "rule"}
-- {"entity_type": "route", "id": "r_yosan_line_niiya_iyo_ozu", "lang": "en", "text": "Niiya~Iyo-Ozu", "source": "rule"}
+- {"entity_type": "route", "id": "r_yosan_line_niiya_iyo_ozu", "lang": "en", "text": "Niiya~Iyo-Ōzu", "source": "rule"}
 - {"entity_type": "route", "id": "r_yosan_line_sakaide_marugame", "lang": "en", "text": "Sakaide~Marugame", "source": "rule"}
-- {"entity_type": "route", "id": "r_uchiko_line", "lang": "en", "text": "Uchiko~Goro", "source": "rule"}
+- {"entity_type": "route", "id": "r_uchiko_line", "lang": "en", "text": "Uchiko~Gorō", "source": "rule"}
 - {"entity_type": "route", "id": "r_uchiko_line_kitayama_uchiko_uchiko_uchiko", "lang": "en", "text": "Kitayama~Uchiko (old)", "source": "rule"}
 - {"entity_type": "route", "id": "r_yodo_line", "lang": "en", "text": "Wakai~Kita-Uwajima", "source": "rule"}
 - {"entity_type": "route", "id": "r_kotoku_line", "lang": "en", "text": "Takamatsu~Tokushima", "source": "rule"}
@@ -1809,9 +1809,9 @@
 - {"entity_type": "route", "id": "r_tokushima_line", "lang": "en", "text": "Tsukuda~Sako", "source": "rule"}
 - {"entity_type": "route", "id": "r_mugi_line", "lang": "en", "text": "Tokushima~Kaifu", "source": "rule"}
 - {"entity_type": "route", "id": "r_dosan_line", "lang": "en", "text": "Tadotsu~Kubokawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_dosan_line_osugi_kakumodani", "lang": "en", "text": "Osugi~Kakumodani", "source": "rule"}
-- {"entity_type": "route", "id": "r_dosan_line_otaguchi_tosa_ananai", "lang": "en", "text": "Otaguchi~Tosa-Ananai", "source": "rule"}
-- {"entity_type": "route", "id": "r_kagoshima_main_line", "lang": "en", "text": "Mojiko~Sendai", "source": "rule"}
+- {"entity_type": "route", "id": "r_dosan_line_osugi_kakumodani", "lang": "en", "text": "Ōsugi~Kakumodani", "source": "rule"}
+- {"entity_type": "route", "id": "r_dosan_line_otaguchi_tosa_ananai", "lang": "en", "text": "Ōtaguchi~Tosa-Ananai", "source": "rule"}
+- {"entity_type": "route", "id": "r_kagoshima_main_line", "lang": "en", "text": "Mojikō~Sendai", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_sendai_kagoshima", "lang": "en", "text": "Sendai~Kagoshima", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_edamitsu_yahata", "lang": "en", "text": "Edamitsu~Yahata", "source": "rule"}
 - {"entity_type": "route", "id": "r_kagoshima_main_line_tobata_edamitsu", "lang": "en", "text": "Tobata~Edamitsu", "source": "rule"}
@@ -1830,27 +1830,27 @@
 - {"entity_type": "route", "id": "r_chikuhi_line_nijinomatsubara_yamamoto", "lang": "en", "text": "Nijinomatsubara~Yamamoto", "source": "rule"}
 - {"entity_type": "route", "id": "r_chikuhi_line_meinohama_karatsu", "lang": "en", "text": "Meinohama~Karatsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_chikuhi_line_yamamoto_imari", "lang": "en", "text": "Yamamoto~Imari", "source": "rule"}
-- {"entity_type": "route", "id": "r_sasebo_line", "lang": "en", "text": "Kohoku~Sasebo", "source": "rule"}
+- {"entity_type": "route", "id": "r_sasebo_line", "lang": "en", "text": "Kōhoku~Sasebo", "source": "rule"}
 - {"entity_type": "route", "id": "r_omura_line", "lang": "en", "text": "Haiki~Isahaya", "source": "rule"}
-- {"entity_type": "route", "id": "r_kyudai_main_line", "lang": "en", "text": "Kurume~Oita", "source": "rule"}
-- {"entity_type": "route", "id": "r_hohi_main_line", "lang": "en", "text": "Oita~Kumamoto", "source": "rule"}
+- {"entity_type": "route", "id": "r_kyudai_main_line", "lang": "en", "text": "Kurume~Ōita", "source": "rule"}
+- {"entity_type": "route", "id": "r_hohi_main_line", "lang": "en", "text": "Ōita~Kumamoto", "source": "rule"}
 - {"entity_type": "route", "id": "r_nippo_main_line", "lang": "en", "text": "Kokura~Kagoshima", "source": "rule"}
-- {"entity_type": "route", "id": "r_hitahikosan_line", "lang": "en", "text": "Jono~Yoake", "source": "rule"}
+- {"entity_type": "route", "id": "r_hitahikosan_line", "lang": "en", "text": "Jōno~Yoake", "source": "rule"}
 - {"entity_type": "route", "id": "r_hitahikosan_line_ishida_higashi_kokura", "lang": "en", "text": "Ishida~Higashi-Kokura", "source": "rule"}
 - {"entity_type": "route", "id": "r_nichinan_line", "lang": "en", "text": "Minami-Miyazaki~Shibushi", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyazaki_kuko_line", "lang": "en", "text": "Tayoshi~Miyazaki Airport", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitto_line", "lang": "en", "text": "Miyakonojo~Yoshimatsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_chikuho_main_line", "lang": "en", "text": "Wakamatsu~Haruda", "source": "rule"}
-- {"entity_type": "route", "id": "r_gotoji_line", "lang": "en", "text": "Tagawa-Gotoji~Shin-Iizuka", "source": "rule"}
+- {"entity_type": "route", "id": "r_gotoji_line", "lang": "en", "text": "Tagawagotōji~Shin-Iizuka", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimizuko_line", "lang": "en", "text": "Shimizu~Miho", "source": "rule"}
 - {"entity_type": "route", "id": "r_futamata_line", "lang": "en", "text": "Kakegawa~Shinjohara", "source": "rule"}
 - {"entity_type": "route", "id": "r_okata_line", "lang": "en", "text": "Okazaki~Shin-Toyota", "source": "rule"}
-- {"entity_type": "route", "id": "r_tarumi_line", "lang": "en", "text": "Ogaki~Komi", "source": "rule"}
+- {"entity_type": "route", "id": "r_tarumi_line", "lang": "en", "text": "Ōgaki~Komi", "source": "rule"}
 - {"entity_type": "route", "id": "r_sasayama_line", "lang": "en", "text": "Sasayamaguchi~Fukusumi", "source": "rule"}
 - {"entity_type": "route", "id": "r_mikuni_line", "lang": "en", "text": "Awaraonsen~Awara", "source": "rule"}
 - {"entity_type": "route", "id": "r_noto_line", "lang": "en", "text": "Anamizu~Takojima", "source": "rule"}
 - {"entity_type": "route", "id": "r_toyamako_line", "lang": "en", "text": "Toyama~Iwasehama", "source": "rule"}
-- {"entity_type": "route", "id": "r_etsumi_nan_line", "lang": "en", "text": "Mino-Ota~Hokuno", "source": "rule"}
+- {"entity_type": "route", "id": "r_etsumi_nan_line", "lang": "en", "text": "Mino-Ōta~Hokuno", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamioka_line", "lang": "en", "text": "Inotani~Okuhida-Onsenguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_akechi_line", "lang": "en", "text": "Ena~Akechi", "source": "rule"}
 - {"entity_type": "route", "id": "r_takasago_line", "lang": "en", "text": "Kakogawa~Takasago", "source": "rule"}
@@ -1860,13 +1860,13 @@
 - {"entity_type": "route", "id": "r_ujina_line", "lang": "en", "text": "Hiroshima~Ujina", "source": "rule"}
 - {"entity_type": "route", "id": "r_gannichi_line", "lang": "en", "text": "Kawanishi~Nishikicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyazu_line", "lang": "en", "text": "Nishi-Maizuru~Toyooka", "source": "rule"}
-- {"entity_type": "route", "id": "r_wakasa_line", "lang": "en", "text": "Koge~Wakasa", "source": "rule"}
+- {"entity_type": "route", "id": "r_wakasa_line", "lang": "en", "text": "Kōge~Wakasa", "source": "rule"}
 - {"entity_type": "route", "id": "r_kurayoshi_line", "lang": "en", "text": "Kurayoshi~Yamamori", "source": "rule"}
 - {"entity_type": "route", "id": "r_taisha_line", "lang": "en", "text": "Izumoshi~Taisha", "source": "rule"}
-- {"entity_type": "route", "id": "r_sanko_line", "lang": "en", "text": "Gotsu~Miyoshi", "source": "rule"}
+- {"entity_type": "route", "id": "r_sanko_line", "lang": "en", "text": "Gōtsu~Miyoshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_ise_line", "lang": "en", "text": "Minami-Yokkaichi~Tsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_shigaraki_line", "lang": "en", "text": "Kibukawa~Shigaraki", "source": "rule"}
-- {"entity_type": "route", "id": "r_naganohara_line", "lang": "en", "text": "Naganohara-Kusatsuguchi~Oshi", "source": "rule"}
+- {"entity_type": "route", "id": "r_naganohara_line", "lang": "en", "text": "Naganoharakusatsuguchi~Oshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_ashio_line", "lang": "en", "text": "Kiryu~Mato", "source": "rule"}
 - {"entity_type": "route", "id": "r_ashio_line_godo_ashio_sori", "lang": "en", "text": "Godo~Sori", "source": "rule"}
 - {"entity_type": "route", "id": "r_moka_line", "lang": "en", "text": "Shimodate~Motegi", "source": "rule"}
@@ -1889,7 +1889,7 @@
 - {"entity_type": "route", "id": "r_uonuma_line", "lang": "en", "text": "Raikoji~Nishi-Ojiya", "source": "rule"}
 - {"entity_type": "route", "id": "r_kihara_line", "lang": "en", "text": "Ohara~Kazusa-Nakano", "source": "rule"}
 - {"entity_type": "route", "id": "r_kajiyabara_line", "lang": "en", "text": "Itano~Kajiyabara", "source": "rule"}
-- {"entity_type": "route", "id": "r_komatsushima_line", "lang": "en", "text": "Chuden~Komatsushimako", "source": "rule"}
+- {"entity_type": "route", "id": "r_komatsushima_line", "lang": "en", "text": "Chūden~Komatsushimako", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakamura_line", "lang": "en", "text": "Kubokawa~Nakamura", "source": "rule"}
 - {"entity_type": "route", "id": "r_muroki_line", "lang": "en", "text": "Ongagawa~Muroki", "source": "rule"}
 - {"entity_type": "route", "id": "r_katsuta_line", "lang": "en", "text": "Yoshizuka~Chikuzen-Katsuta", "source": "rule"}
@@ -1897,7 +1897,7 @@
 - {"entity_type": "route", "id": "r_yabe_line", "lang": "en", "text": "Hainuzuka~Kuroki", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamano_line", "lang": "en", "text": "Minamata~Kurino", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyanojo_line", "lang": "en", "text": "Sendai~Satsuma-Okuchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_yunomae_line", "lang": "en", "text": "Hitoyoshi-Onsen~Yunomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_yunomae_line", "lang": "en", "text": "Hitoyoshi-Onsen~Yuno-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_saga_line", "lang": "en", "text": "Saga~Setaka", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsuura_line", "lang": "en", "text": "Arita~Sasebo", "source": "rule"}
 - {"entity_type": "route", "id": "r_sechibaru_line", "lang": "en", "text": "Yoshii~Sechibaru", "source": "rule"}
@@ -1906,20 +1906,20 @@
 - {"entity_type": "route", "id": "r_takamori_line", "lang": "en", "text": "Tateno~Takamori", "source": "rule"}
 - {"entity_type": "route", "id": "r_hososhima_line", "lang": "en", "text": "Hyugashi~Hososhima", "source": "rule"}
 - {"entity_type": "route", "id": "r_soeda_line", "lang": "en", "text": "Kawara~Soeda", "source": "rule"}
-- {"entity_type": "route", "id": "r_tagawa_line", "lang": "en", "text": "Yukuhashi~Tagawa-Ita", "source": "rule"}
+- {"entity_type": "route", "id": "r_tagawa_line", "lang": "en", "text": "Yukuhashi~Tagawaita", "source": "rule"}
 - {"entity_type": "route", "id": "r_takachiho_line", "lang": "en", "text": "Nobeoka~Takachiho", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsuma_line", "lang": "en", "text": "Sadowara~Sugiyasu", "source": "rule"}
 - {"entity_type": "route", "id": "r_shibushi_line", "lang": "en", "text": "Nishi-Miyakonojo~Shibushi", "source": "rule"}
 - {"entity_type": "route", "id": "r_osumi_line", "lang": "en", "text": "Shibushi~Kokubu", "source": "rule"}
 - {"entity_type": "route", "id": "r_katsuki_line", "lang": "en", "text": "Nakama~Katsuki", "source": "rule"}
-- {"entity_type": "route", "id": "r_ita_line", "lang": "en", "text": "Nogata~Tagawa-Ita", "source": "rule"}
-- {"entity_type": "route", "id": "r_itoda_line", "lang": "en", "text": "Kanada~Tagawa-Gotoji", "source": "rule"}
+- {"entity_type": "route", "id": "r_ita_line", "lang": "en", "text": "Nōgata~Tagawaita", "source": "rule"}
+- {"entity_type": "route", "id": "r_itoda_line", "lang": "en", "text": "Kanada~Tagawagotōji", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyada_line", "lang": "en", "text": "Katsuno~Chikuzen-Miyada", "source": "rule"}
 - {"entity_type": "route", "id": "r_kobukuro_line", "lang": "en", "text": "Kotake~Futase", "source": "rule"}
 - {"entity_type": "route", "id": "r_urushio_line", "lang": "en", "text": "Shimo-Kamoo~Shimo-Yamada", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamiyamada_line", "lang": "en", "text": "Iizuka~Buzen-Kawasaki", "source": "rule"}
-- {"entity_type": "route", "id": "r_esashi_line", "lang": "en", "text": "Goryokaku~Esashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_matsumae_line", "lang": "en", "text": "Kikonai~Matsumae", "source": "rule"}
+- {"entity_type": "route", "id": "r_esashi_line", "lang": "en", "text": "Goryōkaku~Esashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_matsumae_line", "lang": "en", "text": "Kikonai~Matsu-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kaikyo_line", "lang": "en", "text": "Naka-Oguni~Kikonai", "source": "rule"}
 - {"entity_type": "route", "id": "r_setana_line", "lang": "en", "text": "Kunnui~Setana", "source": "rule"}
 - {"entity_type": "route", "id": "r_horonai_line", "lang": "en", "text": "Iwamizawa~Horonai", "source": "rule"}
@@ -1951,27 +1951,27 @@
 - {"entity_type": "route", "id": "r_shibetsu_line", "lang": "en", "text": "Shibecha~Nemuro-Shibetsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_shibetsu_line_nakashibetsu_attoko", "lang": "en", "text": "Nakashibetsu~Attoko", "source": "rule"}
 - {"entity_type": "route", "id": "r_akitako_line", "lang": "en", "text": "Tsuchizaki~Akitako", "source": "rule"}
-- {"entity_type": "route", "id": "r_hanwa_freight_line", "lang": "en", "text": "Yao~Sugimotocho", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanwa_freight_line", "lang": "en", "text": "Yao~Sugimotochō", "source": "rule"}
 - {"entity_type": "route", "id": "r_kompoku_line", "lang": "en", "text": "Shiretoko-Shari~Koshikawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_yubari_line_noborikawa_branch", "lang": "en", "text": "Shin-Yubari~Noborikawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_yubari_line_noborikawa_branch", "lang": "en", "text": "Shin-Yūbari~Noborikawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_ashiya_line", "lang": "en", "text": "Ongagawa~Ashiyajokojo", "source": "rule"}
-- {"entity_type": "route", "id": "r_chuohonsemmusashinokyogijo_line", "lang": "en", "text": "Mitaka~Musashi-Nokyogijomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_shimogawara_line", "lang": "en", "text": "Kokubunji~Tokyo-Keibajo-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_chuohonsemmusashinokyogijo_line", "lang": "en", "text": "Mitaka~Musashi-Nokyogijo-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_shimogawara_line", "lang": "en", "text": "Kokubunji~Tokyokeibajo-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_shiogama_line", "lang": "en", "text": "Rikuzen-Sanno~Shiogama", "source": "rule"}
 - {"entity_type": "route", "id": "r_yunoki_line", "lang": "en", "text": "Hidariishi~Yunoki", "source": "rule"}
 - {"entity_type": "route", "id": "r_yanagase_line", "lang": "en", "text": "Kinomoto~Tsuruga", "source": "rule"}
-- {"entity_type": "route", "id": "r_shinminato_line", "lang": "en", "text": "Nomachi~Shimminato", "source": "rule"}
+- {"entity_type": "route", "id": "r_shinminato_line", "lang": "en", "text": "Nōmachi~Shimminato", "source": "rule"}
 - {"entity_type": "route", "id": "r_isesaki_line", "lang": "en", "text": "Asakusa~Isesaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_isesaki_line_oshiage_hikifune", "lang": "en", "text": "Oshiage~Hikifune", "source": "rule"}
 - {"entity_type": "route", "id": "r_kameido_line", "lang": "en", "text": "Kameido~Hikifune", "source": "rule"}
 - {"entity_type": "route", "id": "r_taishi_line", "lang": "en", "text": "Nishiarai~Daishimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kiryu_line", "lang": "en", "text": "Ota~Akagi", "source": "rule"}
-- {"entity_type": "route", "id": "r_koizumi_line", "lang": "en", "text": "Tatebayashi~Nishi-Koizumi", "source": "rule"}
-- {"entity_type": "route", "id": "r_koizumi_line_ota_higashi_koizumi", "lang": "en", "text": "Ota~Higashi-Koizumi", "source": "rule"}
+- {"entity_type": "route", "id": "r_koizumi_line", "lang": "en", "text": "Tatebayashi~Nishi-koizumi", "source": "rule"}
+- {"entity_type": "route", "id": "r_koizumi_line_ota_higashi_koizumi", "lang": "en", "text": "Ota~Higashi-koizumi", "source": "rule"}
 - {"entity_type": "route", "id": "r_sano_line", "lang": "en", "text": "Tatebayashi~Kuzu", "source": "rule"}
-- {"entity_type": "route", "id": "r_nikko_line_tobu", "lang": "en", "text": "Tobu-dobutsu-koen~Tobu Nikko", "source": "rule"}
-- {"entity_type": "route", "id": "r_kinugawa_line", "lang": "en", "text": "Shimo-Imaichi~Shin-Fujiwara", "source": "rule"}
-- {"entity_type": "route", "id": "r_utsunomiya_line", "lang": "en", "text": "Shin-Tochigi~Tobu-Utsunomiya", "source": "rule"}
+- {"entity_type": "route", "id": "r_nikko_line_tobu", "lang": "en", "text": "Tobu-dobutsu-koen~Tobu-nikko", "source": "rule"}
+- {"entity_type": "route", "id": "r_kinugawa_line", "lang": "en", "text": "Shimo-imaichi~Shin-fujiwara", "source": "rule"}
+- {"entity_type": "route", "id": "r_utsunomiya_line", "lang": "en", "text": "Shin-tochigi~Tobu-utsunomiya", "source": "rule"}
 - {"entity_type": "route", "id": "r_noda_line", "lang": "en", "text": "Omiya~Funabashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tojo_main_line", "lang": "en", "text": "Ikebukuro~Yorii", "source": "rule"}
 - {"entity_type": "route", "id": "r_ogose_line", "lang": "en", "text": "Sakado~Ogose", "source": "rule"}
@@ -1983,38 +1983,38 @@
 - {"entity_type": "route", "id": "r_tamako_line", "lang": "en", "text": "Kokubunji~Tamako", "source": "rule"}
 - {"entity_type": "route", "id": "r_seibu_yurakucho_line", "lang": "en", "text": "Nerima~Kotake-mukaihara", "source": "rule"}
 - {"entity_type": "route", "id": "r_toshima_line", "lang": "en", "text": "Nerima~Toshimaen", "source": "rule"}
-- {"entity_type": "route", "id": "r_sayama_line", "lang": "en", "text": "Nishi-Tokorozawa~Seibu-Kyujo-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_sayama_line", "lang": "en", "text": "Nishi-Tokorozawa~Seibukyūjō-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_haijima_line", "lang": "en", "text": "Kodaira~Haijima", "source": "rule"}
 - {"entity_type": "route", "id": "r_tamagawa_line", "lang": "en", "text": "Musashi-Sakai~Koremasa", "source": "rule"}
-- {"entity_type": "route", "id": "r_yamaguchi_line_seibu", "lang": "en", "text": "Tamako~Seibu-Kyujo-mae", "source": "rule"}
-- {"entity_type": "route", "id": "r_keisei_main_line", "lang": "en", "text": "Keisei Ueno~Narita Airport Terminal 1", "source": "rule"}
-- {"entity_type": "route", "id": "r_keisei_main_line_keisei_narita_higashi_narita", "lang": "en", "text": "Keisei Narita~Higashi-Narita", "source": "rule"}
-- {"entity_type": "route", "id": "r_higashi_narita_line", "lang": "en", "text": "Keisei Narita~Higashi-Narita", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamaguchi_line_seibu", "lang": "en", "text": "Tamako~Seibukyūjō-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_keisei_main_line", "lang": "en", "text": "Keisei-Ueno~Narita Airport Terminal 1", "source": "rule"}
+- {"entity_type": "route", "id": "r_keisei_main_line_keisei_narita_higashi_narita", "lang": "en", "text": "Keisei-Narita~Higashi-Narita", "source": "rule"}
+- {"entity_type": "route", "id": "r_higashi_narita_line", "lang": "en", "text": "Keisei-Narita~Higashi-Narita", "source": "rule"}
 - {"entity_type": "route", "id": "r_oshiage_line", "lang": "en", "text": "Oshiage~Aoto", "source": "rule"}
-- {"entity_type": "route", "id": "r_chiba_line", "lang": "en", "text": "Keisei Tsudanuma~Chiba-Chuo", "source": "rule"}
+- {"entity_type": "route", "id": "r_chiba_line", "lang": "en", "text": "Keisei-Tsudanuma~Chiba chuo", "source": "rule"}
 - {"entity_type": "route", "id": "r_chiba_line_shin_chiba_keisei_chiba_old", "lang": "en", "text": "Shin-Chiba~Keisei Chiba", "source": "rule"}
-- {"entity_type": "route", "id": "r_chihara_line", "lang": "en", "text": "Chiba-Chuo~Chiharadai", "source": "rule"}
-- {"entity_type": "route", "id": "r_kanamachi_line", "lang": "en", "text": "Keisei-Takasago~Keisei Kanamachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_chihara_line", "lang": "en", "text": "Chiba chuo~Chiharadai", "source": "rule"}
+- {"entity_type": "route", "id": "r_kanamachi_line", "lang": "en", "text": "Keisei-Takasago~Keisei-Kanamachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_narita_airport_line", "lang": "en", "text": "Keisei-Takasago~Narita Airport Terminal 1", "source": "rule"}
-- {"entity_type": "route", "id": "r_matsudo_line", "lang": "en", "text": "Matsudo~Keisei Tsudanuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_matsudo_line", "lang": "en", "text": "Matsudo~Keisei-Tsudanuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_keio_line", "lang": "en", "text": "Shinjuku~Keio Hachioji", "source": "rule"}
 - {"entity_type": "route", "id": "r_sagamihara_line", "lang": "en", "text": "Chofu~Hashimoto", "source": "rule"}
 - {"entity_type": "route", "id": "r_takao_line", "lang": "en", "text": "Kitano~Takaosanguchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_keibajo_line", "lang": "en", "text": "Higashi-Fuchu~Fuchu-Keiba-Seimon-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_keibajo_line", "lang": "en", "text": "Higashi-Fuchu~Fuchukeibaseimon-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_dobutsuen_line", "lang": "en", "text": "Takahatafudo~Tama-Dobutsukoen", "source": "rule"}
 - {"entity_type": "route", "id": "r_inogashira_line", "lang": "en", "text": "Shibuya~Kichijoji", "source": "rule"}
 - {"entity_type": "route", "id": "r_odawara_line", "lang": "en", "text": "Shinjuku~Odawara", "source": "rule"}
 - {"entity_type": "route", "id": "r_enoshima_line_odakyu", "lang": "en", "text": "Sagami-Ono Junction~Katase-Enoshima", "source": "rule"}
 - {"entity_type": "route", "id": "r_tama_line", "lang": "en", "text": "Shin-Yurigaoka~Karakida", "source": "rule"}
 - {"entity_type": "route", "id": "r_toyoko_line", "lang": "en", "text": "Shibuya~Sakuragicho", "source": "rule"}
-- {"entity_type": "route", "id": "r_meguro_line", "lang": "en", "text": "Meguro~Den-en-chofu", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokyu_shin_yokohama_line", "lang": "en", "text": "Hiyoshi~Shin-Yokohama", "source": "rule"}
+- {"entity_type": "route", "id": "r_meguro_line", "lang": "en", "text": "Meguro~Den-en-chōfu", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokyu_shin_yokohama_line", "lang": "en", "text": "Hiyoshi~Shin-yokohama", "source": "rule"}
 - {"entity_type": "route", "id": "r_tokyu_tamagawa_line", "lang": "en", "text": "Tamagawa~Kamata", "source": "rule"}
-- {"entity_type": "route", "id": "r_oimachi_line", "lang": "en", "text": "Oimachi~Futako-Tamagawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_oimachi_line", "lang": "en", "text": "Ōimachi~Futako-tamagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_ikegami_line", "lang": "en", "text": "Gotanda~Kamata", "source": "rule"}
-- {"entity_type": "route", "id": "r_den_en_toshi_line", "lang": "en", "text": "Shibuya~Chuo-Rinkan", "source": "rule"}
+- {"entity_type": "route", "id": "r_den_en_toshi_line", "lang": "en", "text": "Shibuya~Chūō-rinkan", "source": "rule"}
 - {"entity_type": "route", "id": "r_kodomonokuni_line", "lang": "en", "text": "Nagatsuta~Kodomonokuni", "source": "rule"}
-- {"entity_type": "route", "id": "r_setagaya_line", "lang": "en", "text": "Sangen-Jaya~Shimo-Takaido", "source": "rule"}
+- {"entity_type": "route", "id": "r_setagaya_line", "lang": "en", "text": "Sangen-jaya~Shimo-takaido", "source": "rule"}
 - {"entity_type": "route", "id": "r_keikyu_main_line", "lang": "en", "text": "Sengakuji~Uraga", "source": "rule"}
 - {"entity_type": "route", "id": "r_keikyu_airport_line", "lang": "en", "text": "Keikyu Kamata~Haneda Airport Terminal 1·2", "source": "rule"}
 - {"entity_type": "route", "id": "r_keikyu_airport_line_anamori_inari_haneda_airport_keikyu_old", "lang": "en", "text": "Anamori-inari~Haneda Airport", "source": "rule"}
@@ -2027,57 +2027,57 @@
 - {"entity_type": "route", "id": "r_ginza_line", "lang": "en", "text": "Asakusa~Shibuya", "source": "rule"}
 - {"entity_type": "route", "id": "r_marunouchi_line", "lang": "en", "text": "Ikebukuro~Ogikubo", "source": "rule"}
 - {"entity_type": "route", "id": "r_marunouchi_line_honancho_branch", "lang": "en", "text": "Nakano-sakaue~Honancho", "source": "rule"}
-- {"entity_type": "route", "id": "r_hibiya_line", "lang": "en", "text": "Kita-Senju~Naka-Meguro", "source": "rule"}
-- {"entity_type": "route", "id": "r_tozai_line_tokyo_metro", "lang": "en", "text": "Nakano~Nishi-Funabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_chiyoda_line", "lang": "en", "text": "Yoyogi-Uehara~Kita-Ayase", "source": "rule"}
-- {"entity_type": "route", "id": "r_yurakucho_line", "lang": "en", "text": "Wakoshi~Shin-Kiba", "source": "rule"}
+- {"entity_type": "route", "id": "r_hibiya_line", "lang": "en", "text": "Kita-senju~Naka-meguro", "source": "rule"}
+- {"entity_type": "route", "id": "r_tozai_line_tokyo_metro", "lang": "en", "text": "Nakano~Nishi-funabashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_chiyoda_line", "lang": "en", "text": "Yoyogi-uehara~Kita-ayase", "source": "rule"}
+- {"entity_type": "route", "id": "r_yurakucho_line", "lang": "en", "text": "Wakoshi~Shin-kiba", "source": "rule"}
 - {"entity_type": "route", "id": "r_hanzomon_line", "lang": "en", "text": "Shibuya~Oshiage", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_tokyo_metro", "lang": "en", "text": "Meguro~Akabane-iwabuchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukutoshin_line", "lang": "en", "text": "Kotake-mukaihara~Shibuya", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagoya_main_line", "lang": "en", "text": "Toyohashi~Meitetsu Gifu", "source": "rule"}
-- {"entity_type": "route", "id": "r_nishio_line", "lang": "en", "text": "Shin-Anjo~Kira-Yoshida", "source": "rule"}
-- {"entity_type": "route", "id": "r_mikawa_line", "lang": "en", "text": "Nishi Nakagane~Kira-Yoshida", "source": "rule"}
+- {"entity_type": "route", "id": "r_nishio_line", "lang": "en", "text": "Shin Anjō~Kira Yoshida", "source": "rule"}
+- {"entity_type": "route", "id": "r_mikawa_line", "lang": "en", "text": "Nishi Nakagane~Kira Yoshida", "source": "rule"}
 - {"entity_type": "route", "id": "r_toyota_line", "lang": "en", "text": "Umetsubo~Akaike", "source": "rule"}
-- {"entity_type": "route", "id": "r_gamagori_line", "lang": "en", "text": "Kira-Yoshida~Gamagori", "source": "rule"}
-- {"entity_type": "route", "id": "r_tokoname_line", "lang": "en", "text": "Jingu-mae~Tokoname", "source": "rule"}
-- {"entity_type": "route", "id": "r_chikko_line", "lang": "en", "text": "Oe~Higashi-Nagoyako", "source": "rule"}
-- {"entity_type": "route", "id": "r_kowa_line", "lang": "en", "text": "Otagawa~Kowa", "source": "rule"}
+- {"entity_type": "route", "id": "r_gamagori_line", "lang": "en", "text": "Kira Yoshida~Gamagōri", "source": "rule"}
+- {"entity_type": "route", "id": "r_tokoname_line", "lang": "en", "text": "Jingū-mae~Tokoname", "source": "rule"}
+- {"entity_type": "route", "id": "r_chikko_line", "lang": "en", "text": "Ōe~Higashi Nagoyakō", "source": "rule"}
+- {"entity_type": "route", "id": "r_kowa_line", "lang": "en", "text": "Ōtagawa~Kōwa", "source": "rule"}
 - {"entity_type": "route", "id": "r_chita_new_line", "lang": "en", "text": "Fuki~Utsumi", "source": "rule"}
 - {"entity_type": "route", "id": "r_seto_line", "lang": "en", "text": "Sakaemachi~Owari Seto", "source": "rule"}
-- {"entity_type": "route", "id": "r_komaki_line", "lang": "en", "text": "Kamiiida~Inuyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_kakamigahara_line", "lang": "en", "text": "Meitetsu Gifu~Shin-Unuma", "source": "rule"}
-- {"entity_type": "route", "id": "r_inuyama_line", "lang": "en", "text": "Biwajima Junction~Shin-Unuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_komaki_line", "lang": "en", "text": "Kami Iida~Inuyama", "source": "rule"}
+- {"entity_type": "route", "id": "r_kakamigahara_line", "lang": "en", "text": "Meitetsu Gifu~Shin Unuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_inuyama_line", "lang": "en", "text": "Biwajima Junction~Shin Unuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_hiromi_line", "lang": "en", "text": "Inuyama~Mitake", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsushima_line", "lang": "en", "text": "Sukaguchi~Tsushima", "source": "rule"}
 - {"entity_type": "route", "id": "r_bisai_line", "lang": "en", "text": "Yatomi~Tamanoi", "source": "rule"}
 - {"entity_type": "route", "id": "r_takehana_line", "lang": "en", "text": "Kasamatsu~Osu", "source": "rule"}
-- {"entity_type": "route", "id": "r_hashima_line", "lang": "en", "text": "Egira~Shin-Hashima", "source": "rule"}
-- {"entity_type": "route", "id": "r_toyokawa_line", "lang": "en", "text": "Ko~Toyokawa-inari", "source": "rule"}
+- {"entity_type": "route", "id": "r_hashima_line", "lang": "en", "text": "Egira~Shin Hashima", "source": "rule"}
+- {"entity_type": "route", "id": "r_toyokawa_line", "lang": "en", "text": "Kō~Toyokawa-inari", "source": "rule"}
 - {"entity_type": "route", "id": "r_meitetsu_airport_line", "lang": "en", "text": "Tokoname~Central Japan International Airport", "source": "rule"}
-- {"entity_type": "route", "id": "r_osaka_line", "lang": "en", "text": "Osaka Uehommachi~Ise-Nakagawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_osaka_line", "lang": "en", "text": "Osaka-Uehommachi~Ise-Nakagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_osaka_line_nishi_aoyama_higashi_aoyama", "lang": "en", "text": "Nishi-Aoyama~Higashi-Aoyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_namba_line", "lang": "en", "text": "Osaka Namba~Osaka Uehommachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_namba_line", "lang": "en", "text": "Osaka-Namba~Osaka-Uehommachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamada_line_kintetsu", "lang": "en", "text": "Ise-Nakagawa~Ujiyamada", "source": "rule"}
-- {"entity_type": "route", "id": "r_nara_line_kintetsu", "lang": "en", "text": "Fuse~Kintetsu Nara", "source": "rule"}
-- {"entity_type": "route", "id": "r_keihanna_line", "lang": "en", "text": "Nagata~Gakken Nara-Tomigaoka", "source": "rule"}
+- {"entity_type": "route", "id": "r_nara_line_kintetsu", "lang": "en", "text": "Fuse~Kintetsu-Nara", "source": "rule"}
+- {"entity_type": "route", "id": "r_keihanna_line", "lang": "en", "text": "Nagata~Gakken-Nara-Tomigaoka", "source": "rule"}
 - {"entity_type": "route", "id": "r_kashihara_line", "lang": "en", "text": "Yamato-Saidaiji~Kashiharajingu-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_tenri_line", "lang": "en", "text": "Hirahata~Tenri", "source": "rule"}
 - {"entity_type": "route", "id": "r_shigi_line", "lang": "en", "text": "Kawachi-Yamamoto~Shigisanguchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_minami_osaka_line", "lang": "en", "text": "Osaka Abenobashi~Kashiharajingu-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_minami_osaka_line", "lang": "en", "text": "Osaka-Abenobashi~Kashiharajingu-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_yoshino_line", "lang": "en", "text": "Kashiharajingu-mae~Yoshino", "source": "rule"}
-- {"entity_type": "route", "id": "r_nagano_line_kintetsu", "lang": "en", "text": "Furuichi~Kawachinagano", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagano_line_kintetsu", "lang": "en", "text": "Furuichi~Kawachi-Nagano", "source": "rule"}
 - {"entity_type": "route", "id": "r_kyoto_line", "lang": "en", "text": "Kyoto~Yamato-Saidaiji", "source": "rule"}
 - {"entity_type": "route", "id": "r_ikoma_line", "lang": "en", "text": "Oji~Ikoma", "source": "rule"}
 - {"entity_type": "route", "id": "r_tawaramoto_line", "lang": "en", "text": "Shin-Oji~Nishi-Tawaramoto", "source": "rule"}
 - {"entity_type": "route", "id": "r_domyoji_line", "lang": "en", "text": "Domyoji~Kashiwara", "source": "rule"}
-- {"entity_type": "route", "id": "r_gose_line", "lang": "en", "text": "Shakudo~Kintetsu Gose", "source": "rule"}
-- {"entity_type": "route", "id": "r_nagoya_line", "lang": "en", "text": "Ise-Nakagawa~Kintetsu Nagoya", "source": "rule"}
+- {"entity_type": "route", "id": "r_gose_line", "lang": "en", "text": "Shakudo~Kintetsu-Gose", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagoya_line", "lang": "en", "text": "Ise-Nakagawa~Kintetsu-Nagoya", "source": "rule"}
 - {"entity_type": "route", "id": "r_suzuka_line", "lang": "en", "text": "Ise-Wakamatsu~Hiratacho", "source": "rule"}
-- {"entity_type": "route", "id": "r_yunoyama_line", "lang": "en", "text": "Kintetsu Yokkaichi~Yunoyama-Onsen", "source": "rule"}
+- {"entity_type": "route", "id": "r_yunoyama_line", "lang": "en", "text": "Kintetsu-Yokkaichi~Yunoyama-onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_shima_line", "lang": "en", "text": "Toba~Kashikojima", "source": "rule"}
 - {"entity_type": "route", "id": "r_shima_line_shiraki_gochi", "lang": "en", "text": "Shiraki~Gochi", "source": "rule"}
 - {"entity_type": "route", "id": "r_toba_line", "lang": "en", "text": "Ujiyamada~Toba", "source": "rule"}
-- {"entity_type": "route", "id": "r_ikoma_cable_line", "lang": "en", "text": "Torii-mae~Ikoma-Sanjo", "source": "rule"}
+- {"entity_type": "route", "id": "r_ikoma_cable_line", "lang": "en", "text": "Toriimae~Ikomasanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishi_shigi_cable_line", "lang": "en", "text": "Shigisanguchi~Takayasuyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_nankai_main_line", "lang": "en", "text": "Namba~Wakayamashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_takashinohama_line", "lang": "en", "text": "Hagoromo~Takashinohama", "source": "rule"}
@@ -2096,16 +2096,16 @@
 - {"entity_type": "route", "id": "r_iwashimizu_hachimangu_sando_cable", "lang": "en", "text": "Iwashimizu-hachimangu~Cable-hachimangu-sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_keishin_line", "lang": "en", "text": "Misasagi~Biwako-hamaotsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishiyama_sakamoto_line", "lang": "en", "text": "Ishiyamadera~Sakamoto-Hieizanguchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_kyoto_main_line", "lang": "en", "text": "Juso~Kyoto-Kawaramachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_senri_line", "lang": "en", "text": "Tenjimbashisuji 6-chome~Kita-Senri", "source": "rule"}
+- {"entity_type": "route", "id": "r_kyoto_main_line", "lang": "en", "text": "Juso~Kyoto-kawaramachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_senri_line", "lang": "en", "text": "Tenjimbashisuji-rokuchome~Kita-senri", "source": "rule"}
 - {"entity_type": "route", "id": "r_arashiyama_line", "lang": "en", "text": "Katsura~Arashiyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_kobe_main_line", "lang": "en", "text": "Osaka-Umeda~Kobe-Sannomiya", "source": "rule"}
+- {"entity_type": "route", "id": "r_kobe_main_line", "lang": "en", "text": "Osaka-umeda (Hankyu)~Kobe-sannomiya", "source": "rule"}
 - {"entity_type": "route", "id": "r_imazu_line", "lang": "en", "text": "Takarazuka~Imazu", "source": "rule"}
 - {"entity_type": "route", "id": "r_itami_line", "lang": "en", "text": "Tsukaguchi~Itami", "source": "rule"}
 - {"entity_type": "route", "id": "r_koyo_line", "lang": "en", "text": "Shukugawa~Koyoen", "source": "rule"}
-- {"entity_type": "route", "id": "r_takarazuka_main_line", "lang": "en", "text": "Osaka-Umeda~Takarazuka", "source": "rule"}
-- {"entity_type": "route", "id": "r_minoo_line", "lang": "en", "text": "Ishibashi handai-mae~Minoo", "source": "rule"}
-- {"entity_type": "route", "id": "r_kobe_kosoku_line_hankyu", "lang": "en", "text": "Kobe-Sannomiya~Nishidai", "source": "rule"}
+- {"entity_type": "route", "id": "r_takarazuka_main_line", "lang": "en", "text": "Osaka-umeda (Hankyu)~Takarazuka", "source": "rule"}
+- {"entity_type": "route", "id": "r_minoo_line", "lang": "en", "text": "Ishibashi handai-mae~Minoh", "source": "rule"}
+- {"entity_type": "route", "id": "r_kobe_kosoku_line_hankyu", "lang": "en", "text": "Kobe-sannomiya~Nishidai", "source": "rule"}
 - {"entity_type": "route", "id": "r_hanshin_main_line", "lang": "en", "text": "Osaka-Umeda~Motomachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_hanshin_namba_line", "lang": "en", "text": "Amagasaki~Osaka Namba", "source": "rule"}
 - {"entity_type": "route", "id": "r_mukogawa_line", "lang": "en", "text": "Mukogawa~Mukogawa-Danchi-mae", "source": "rule"}
@@ -2117,16 +2117,16 @@
 - {"entity_type": "route", "id": "r_sanyo_main_line_sanyo", "lang": "en", "text": "Nishidai~Sanyo Himeji", "source": "rule"}
 - {"entity_type": "route", "id": "r_aboshi_line", "lang": "en", "text": "Shikama~Sanyo-Aboshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_sapporo_city", "lang": "en", "text": "Asabu~Makomanai", "source": "rule"}
-- {"entity_type": "route", "id": "r_tozai_line_sapporo_city", "lang": "en", "text": "Miyanosawa~Shin-Sapporo", "source": "rule"}
+- {"entity_type": "route", "id": "r_tozai_line_sapporo_city", "lang": "en", "text": "Miyanosawa~Shin Sapporo", "source": "rule"}
 - {"entity_type": "route", "id": "r_toho_line", "lang": "en", "text": "Sakaemachi~Fukuzumi", "source": "rule"}
-- {"entity_type": "route", "id": "r_hakodate_tram_main_line", "lang": "en", "text": "Hakodate Dock-mae~Goryokaku-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakodate_tram_main_line", "lang": "en", "text": "Hakodate Dock-Mae~Goryōkaku-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_horai_yachigashira_line", "lang": "en", "text": "Jujigai~Yachigashira", "source": "rule"}
-- {"entity_type": "route", "id": "r_omori_line", "lang": "en", "text": "Matsukazecho~Hakodate-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_yunokawa_line", "lang": "en", "text": "Matsukazecho~Yunokawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_namboku_line_sendai_city", "lang": "en", "text": "Izumi-Chuo~Tomizawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_omori_line", "lang": "en", "text": "Matsukaze-Cho~Hakodate Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_yunokawa_line", "lang": "en", "text": "Matsukaze-Cho~Yunokawa", "source": "rule"}
+- {"entity_type": "route", "id": "r_namboku_line_sendai_city", "lang": "en", "text": "Izumi-chuo~Tomizawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_tozai_line_sendai_city", "lang": "en", "text": "Yagiyama Zoological Park~Arai", "source": "rule"}
 - {"entity_type": "route", "id": "r_asakusa_line", "lang": "en", "text": "Nishi-magome~Oshiage", "source": "rule"}
-- {"entity_type": "route", "id": "r_mita_line", "lang": "en", "text": "Meguro~Nishi-Takashimadaira", "source": "rule"}
+- {"entity_type": "route", "id": "r_mita_line", "lang": "en", "text": "Meguro~Nishi-takashimadaira", "source": "rule"}
 - {"entity_type": "route", "id": "r_shinjuku_line_toei", "lang": "en", "text": "Shinjuku~Motoyawata", "source": "rule"}
 - {"entity_type": "route", "id": "r_oedo_line", "lang": "en", "text": "Tochomae~Hikarigaoka", "source": "rule"}
 - {"entity_type": "route", "id": "r_arakawa_line", "lang": "en", "text": "Minowabashi~Waseda", "source": "rule"}
@@ -2137,7 +2137,7 @@
 - {"entity_type": "route", "id": "r_higashiyama_line", "lang": "en", "text": "Takabata~Fujigaoka", "source": "rule"}
 - {"entity_type": "route", "id": "r_meijo_meiko_line", "lang": "en", "text": "Ozone~Nagoyako", "source": "rule"}
 - {"entity_type": "route", "id": "r_meijo_line", "lang": "en", "text": "Ozone~Kanayama", "source": "rule"}
-- {"entity_type": "route", "id": "r_tsurumai_line", "lang": "en", "text": "Kami-Otai~Akaike", "source": "rule"}
+- {"entity_type": "route", "id": "r_tsurumai_line", "lang": "en", "text": "Kamiotai~Akaike", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakura_dori_line", "lang": "en", "text": "Taiko-dori~Tokushige", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamiiida_line", "lang": "en", "text": "Heian-dori~Kamiiida", "source": "rule"}
 - {"entity_type": "route", "id": "r_karasuma_line", "lang": "en", "text": "Kokusaikaikan~Takeda", "source": "rule"}
@@ -2145,36 +2145,36 @@
 - {"entity_type": "route", "id": "r_seishin_extension_line", "lang": "en", "text": "Myodani~Seishin-chuo", "source": "rule"}
 - {"entity_type": "route", "id": "r_seishin_line", "lang": "en", "text": "Myodani~Shin-Nagata", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamate_line", "lang": "en", "text": "Shin-Kobe~Shin-Nagata", "source": "rule"}
-- {"entity_type": "route", "id": "r_kaigan_line", "lang": "en", "text": "Sannomiya-Hanadokeimae~Shin-Nagata", "source": "rule"}
+- {"entity_type": "route", "id": "r_kaigan_line", "lang": "en", "text": "Sannomiyahanadokei-mae~Shin-Nagata", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokushin_line", "lang": "en", "text": "Shin-Kobe~Tanigami", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukuoka_subway_airport_line", "lang": "en", "text": "Meinohama~Fukuoka Airport", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakozaki_line", "lang": "en", "text": "Nakasu-Kawabata~Kaizuka", "source": "rule"}
 - {"entity_type": "route", "id": "r_nanakuma_line", "lang": "en", "text": "Hashimoto~Hakata", "source": "rule"}
-- {"entity_type": "route", "id": "r_trunk_line", "lang": "en", "text": "Kumamoto-Ekimae~Jogyojimachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_trunk_line", "lang": "en", "text": "Kumamoto-ekimae~Jogyojimachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_suizenji_line", "lang": "en", "text": "Suidocho~Suizenji-Koen", "source": "rule"}
-- {"entity_type": "route", "id": "r_kengun_line", "lang": "en", "text": "Suizenji-Koen~Kengummachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_kami_kumamoto_line", "lang": "en", "text": "Karashimacho~Kami-Kumamoto", "source": "rule"}
-- {"entity_type": "route", "id": "r_tasaki_line", "lang": "en", "text": "Kumamoto-Ekimae~Tasakibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_first_phase_line", "lang": "en", "text": "Takenohashi~Kagoshima-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_second_phase_line", "lang": "en", "text": "Takamibaba~Kagoshima-Chuo-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kengun_line", "lang": "en", "text": "Suizenji-Koen~Kengunmachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kami_kumamoto_line", "lang": "en", "text": "Karashimacho~Kamikumamoto", "source": "rule"}
+- {"entity_type": "route", "id": "r_tasaki_line", "lang": "en", "text": "Kumamoto-ekimae~Tasakibashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_first_phase_line", "lang": "en", "text": "Takenohashi~Kagoshimaeki-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_second_phase_line", "lang": "en", "text": "Takamibaba~Kagoshima chuoeki-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_taniyama_line", "lang": "en", "text": "Takenohashi~Taniyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_toso_line", "lang": "en", "text": "Kagoshima-Chuo-Ekimae~Korimoto", "source": "rule"}
+- {"entity_type": "route", "id": "r_toso_line", "lang": "en", "text": "Kagoshima chuoeki-mae~Korimoto", "source": "rule"}
 - {"entity_type": "route", "id": "r_konan_line", "lang": "en", "text": "Hirosaki~Kuroishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_owani_line", "lang": "en", "text": "Owani~Chuo-Hirosaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_nihonkai_hisui_line", "lang": "en", "text": "Ichiburi~Naoetsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_myoko_haneuma_line", "lang": "en", "text": "Myoko-Kogen~Naoetsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_shinano_railway_line", "lang": "en", "text": "Karuizawa~Shinonoi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kita_shinano_line", "lang": "en", "text": "Nagano~Myoko-Kogen", "source": "rule"}
-- {"entity_type": "route", "id": "r_shin_minatoko_line", "lang": "en", "text": "Koshinokata~Rokudoji", "source": "rule"}
-- {"entity_type": "route", "id": "r_takaoka_tramway_line", "lang": "en", "text": "Takaoka-eki~Rokudoji", "source": "rule"}
-- {"entity_type": "route", "id": "r_toyama_chiho_main_line", "lang": "en", "text": "Dentetsu-Toyama~Unazukionsen", "source": "rule"}
+- {"entity_type": "route", "id": "r_shin_minatoko_line", "lang": "en", "text": "Koshinokata~Rokudōji", "source": "rule"}
+- {"entity_type": "route", "id": "r_takaoka_tramway_line", "lang": "en", "text": "Takaoka-eki~Rokudōji", "source": "rule"}
+- {"entity_type": "route", "id": "r_toyama_chiho_main_line", "lang": "en", "text": "Dentetsu-Toyama~Unazuki-Onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_tateyama_line", "lang": "en", "text": "Terada~Tateyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_fujikoshi_line", "lang": "en", "text": "Inarimachi~Minami-Toyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamidaki_line", "lang": "en", "text": "Minami-Toyama~Iwakuraji", "source": "rule"}
-- {"entity_type": "route", "id": "r_tramway_main_line", "lang": "en", "text": "Dentetsu-Toyama Station Esta-mae~Minami-Toyama-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_tramway_branch_line", "lang": "en", "text": "Dentetsu-Toyama Station Esta-mae~Nishicho", "source": "rule"}
+- {"entity_type": "route", "id": "r_tramway_main_line", "lang": "en", "text": "Dentetsu-Toyamaeki Esta-mae~Minamitoyamaeki-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_tramway_branch_line", "lang": "en", "text": "Dentetsu-Toyamaeki Esta-mae~Nishicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_tramway_yasunoya_line", "lang": "en", "text": "Marunouchi~Yasunoya", "source": "rule"}
-- {"entity_type": "route", "id": "r_tramway_kureha_line", "lang": "en", "text": "Hatagomachi~Daigakumae", "source": "rule"}
+- {"entity_type": "route", "id": "r_tramway_kureha_line", "lang": "en", "text": "Hatagomachi~Daigaku-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_tramway_toyama_city_center_line", "lang": "en", "text": "Marunouchi~Nishicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_asanogawa_line", "lang": "en", "text": "Hokutetsu-Kanazawa~Awagasaki-Kaigan", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishikawa_line", "lang": "en", "text": "Nomachi~Kaga-Ichinomiya", "source": "rule"}
@@ -2194,7 +2194,7 @@
 - {"entity_type": "route", "id": "r_azumada_main_line_ihara_undo_koen_mae", "lang": "en", "text": "Ihara~Undo-Koen-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimin_byoin_mae", "lang": "en", "text": "Ekimae~Shimin-Byoin-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_azumada_main_line_ekimae_shimmei", "lang": "en", "text": "Ekimae~Shimmei", "source": "rule"}
-- {"entity_type": "route", "id": "r_azumada_main_line_shimmei_toyohashi_shiyakushomae_toyohashi", "lang": "en", "text": "Shimmei~Shiyakushomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_azumada_main_line_shimmei_toyohashi_shiyakushomae_toyohashi", "lang": "en", "text": "Shimmei~City Hall-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_sangi_line", "lang": "en", "text": "Sangi-Asake Signal~Nishi-Fujiwara", "source": "rule"}
 - {"entity_type": "route", "id": "r_kintetsu_connecting_line", "lang": "en", "text": "Sangi-Asake Signal~Kintetsu Tomida", "source": "rule"}
 - {"entity_type": "route", "id": "r_hokusei_line", "lang": "en", "text": "Nishi-Kuwana~Ageki", "source": "rule"}
@@ -2205,17 +2205,17 @@
 - {"entity_type": "route", "id": "r_katsuyama_eiheiji_line", "lang": "en", "text": "Fukui~Keifuku-Ono", "source": "rule"}
 - {"entity_type": "route", "id": "r_mikuni_awara_line", "lang": "en", "text": "Fukuiguchi~Mikuni Minato", "source": "rule"}
 - {"entity_type": "route", "id": "r_ohmi_main_line", "lang": "en", "text": "Maibara~Kibukawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_taga_line", "lang": "en", "text": "Takamiya~Taga Taisha-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_taga_line", "lang": "en", "text": "Takamiya~Tagataisha-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_yokaichi_line", "lang": "en", "text": "Yokaichi~Omi-Hachiman", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyafuku_line", "lang": "en", "text": "Fukuchiyama~Miyazu", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyazu_line_kyoto_tango_railway_willer_trains", "lang": "en", "text": "Nishi-Maizuru~Toyooka", "source": "rule"}
 - {"entity_type": "route", "id": "r_eizan_main_line", "lang": "en", "text": "Demachiyanagi~Yase-Hieizanguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kurama_line", "lang": "en", "text": "Takaragaike~Kurama", "source": "rule"}
-- {"entity_type": "route", "id": "r_arashiyama_main_line", "lang": "en", "text": "Shijo-Omiya~Arashiyama", "source": "rule"}
-- {"entity_type": "route", "id": "r_kitano_line", "lang": "en", "text": "Kitano-Hakubaicho~Katabiranotsuji", "source": "rule"}
+- {"entity_type": "route", "id": "r_arashiyama_main_line", "lang": "en", "text": "Shijō-Ōmiya~Arashiyama", "source": "rule"}
+- {"entity_type": "route", "id": "r_kitano_line", "lang": "en", "text": "Kitano-Hakubaichō~Katabiranotsuji", "source": "rule"}
 - {"entity_type": "route", "id": "r_eizan_cable", "lang": "en", "text": "Cable Yase~Cable Hiei", "source": "rule"}
 - {"entity_type": "route", "id": "r_midosuji_line", "lang": "en", "text": "Esaka~Nakamozu", "source": "rule"}
-- {"entity_type": "route", "id": "r_tanimachi_line", "lang": "en", "text": "Dainichi~Yaominami", "source": "rule"}
+- {"entity_type": "route", "id": "r_tanimachi_line", "lang": "en", "text": "Dainichi~Yao-minami", "source": "rule"}
 - {"entity_type": "route", "id": "r_yotsubashi_line", "lang": "en", "text": "Nishi-Umeda~Suminoekoen", "source": "rule"}
 - {"entity_type": "route", "id": "r_osaka_metro_chuo_line", "lang": "en", "text": "Yumeshima~Nagata", "source": "rule"}
 - {"entity_type": "route", "id": "r_sennichimae_line", "lang": "en", "text": "Nodahanshin~Minami-Tatsumi", "source": "rule"}
@@ -2223,8 +2223,8 @@
 - {"entity_type": "route", "id": "r_nagahori_tsurumi_ryokuchi_line", "lang": "en", "text": "Taisho~Kadoma-minami", "source": "rule"}
 - {"entity_type": "route", "id": "r_imazatosuji_line", "lang": "en", "text": "Itakano~Imazato", "source": "rule"}
 - {"entity_type": "route", "id": "r_nanko_port_town_line", "lang": "en", "text": "Cosmosquare~Suminoekoen", "source": "rule"}
-- {"entity_type": "route", "id": "r_hankai_line", "lang": "en", "text": "Ebisucho~Hamadera-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_uemachi_line", "lang": "en", "text": "Tennoji-Ekimae~Sumiyoshi-Koen", "source": "rule"}
+- {"entity_type": "route", "id": "r_hankai_line", "lang": "en", "text": "Ebisuchō~Hamadera-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_uemachi_line", "lang": "en", "text": "Tennōji-Ekimae~Sumiyoshi-Koen", "source": "rule"}
 - {"entity_type": "route", "id": "r_arima_line", "lang": "en", "text": "Minatogawa~Arima Onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_sanda_line", "lang": "en", "text": "Arimaguchi~Sanda", "source": "rule"}
 - {"entity_type": "route", "id": "r_koen_toshi_line", "lang": "en", "text": "Yokoyama~Woody Town Chuo", "source": "rule"}
@@ -2232,50 +2232,50 @@
 - {"entity_type": "route", "id": "r_kobe_kosoku_line_kobe", "lang": "en", "text": "Shinkaichi~Minatogawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_myoken_line", "lang": "en", "text": "Kawanishi-Noseguchi~Myokenguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_nissei_line", "lang": "en", "text": "Yamashita~Nissei Chuo", "source": "rule"}
-- {"entity_type": "route", "id": "r_higashiyama_main_line", "lang": "en", "text": "Okayama-Ekimae~Higashiyama-Okaden Chuggington Museum", "source": "rule"}
+- {"entity_type": "route", "id": "r_higashiyama_main_line", "lang": "en", "text": "Okayama-ekimae~Higashiyama-Okaden Chuggington Museum", "source": "rule"}
 - {"entity_type": "route", "id": "r_seikibashi_line", "lang": "en", "text": "Yanagawa~Seikibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_hiroden_main_line", "lang": "en", "text": "Hiroshima-eki~Hiroden-Nishi-Hiroshima", "source": "rule"}
-- {"entity_type": "route", "id": "r_hiroden_main_line_hiroshima_matobacho", "lang": "en", "text": "Hiroshima-eki~Matobacho", "source": "rule"}
-- {"entity_type": "route", "id": "r_hiroden_main_line_tenmacho_hiroden_nishi_hiroshima", "lang": "en", "text": "Temmacho~Hiroden-Nishi-Hiroshima", "source": "rule"}
-- {"entity_type": "route", "id": "r_ujina_line_hiroden", "lang": "en", "text": "Kamiyacho~Hiroshimako", "source": "rule"}
+- {"entity_type": "route", "id": "r_hiroden_main_line", "lang": "en", "text": "Hiroshima Sta.~Hiroden-nishi-hiroshima", "source": "rule"}
+- {"entity_type": "route", "id": "r_hiroden_main_line_hiroshima_matobacho", "lang": "en", "text": "Hiroshima Sta.~Matoba-cho", "source": "rule"}
+- {"entity_type": "route", "id": "r_hiroden_main_line_tenmacho_hiroden_nishi_hiroshima", "lang": "en", "text": "Temma-cho~Hiroden-nishi-hiroshima", "source": "rule"}
+- {"entity_type": "route", "id": "r_ujina_line_hiroden", "lang": "en", "text": "Kamiyacho~Hiroshima-Port", "source": "rule"}
 - {"entity_type": "route", "id": "r_eba_line", "lang": "en", "text": "Dobashi~Eba", "source": "rule"}
-- {"entity_type": "route", "id": "r_yokogawa_line", "lang": "en", "text": "Tokaichimachi~Yokogawa-eki", "source": "rule"}
-- {"entity_type": "route", "id": "r_minami_line", "lang": "en", "text": "Inarimachi~Minamimachi 6-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_yokogawa_line", "lang": "en", "text": "Tokaichi-machi~Yokogawa Sta.", "source": "rule"}
+- {"entity_type": "route", "id": "r_minami_line", "lang": "en", "text": "Inari-machi~Minami-machi rokuchome", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakushima_line", "lang": "en", "text": "Hatchobori~Hakushima", "source": "rule"}
-- {"entity_type": "route", "id": "r_loop_line", "lang": "en", "text": "Inarimachi~Hijiyamashita", "source": "rule"}
-- {"entity_type": "route", "id": "r_miyajima_line", "lang": "en", "text": "Hiroden-Nishi-Hiroshima~Hiroden-Miyajimaguchi", "source": "rule"}
+- {"entity_type": "route", "id": "r_loop_line", "lang": "en", "text": "Inari-machi~Hijiyama-shita", "source": "rule"}
+- {"entity_type": "route", "id": "r_miyajima_line", "lang": "en", "text": "Hiroden-nishi-hiroshima~Hiroden-miyajima-guchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kita_matsue_line", "lang": "en", "text": "Izumoshi~Matsue Shinjiko-Onsen", "source": "rule"}
-- {"entity_type": "route", "id": "r_taisha_line_ichibata", "lang": "en", "text": "Kawato~Izumo Taisha-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_taisha_line_ichibata", "lang": "en", "text": "Kawato~Izumo-Taisha-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kotohira_line", "lang": "en", "text": "Takamatsu Chikko~Kotoden-Kotohira", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagao_line", "lang": "en", "text": "Kawaramachi~Nagao", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "lang": "en", "text": "Kawaramachi~Hayashimichi", "source": "rule"}
 - {"entity_type": "route", "id": "r_shido_line", "lang": "en", "text": "Kawaramachi~Kotoden-Shido", "source": "rule"}
-- {"entity_type": "route", "id": "r_takahama_line", "lang": "en", "text": "Takahama~Matsuyama City", "source": "rule"}
-- {"entity_type": "route", "id": "r_yokogawara_line", "lang": "en", "text": "Matsuyama City~Yokogawara", "source": "rule"}
-- {"entity_type": "route", "id": "r_gunchu_line", "lang": "en", "text": "Matsuyama City~Gunchu Port", "source": "rule"}
-- {"entity_type": "route", "id": "r_johoku_line_iyotetsu", "lang": "en", "text": "Komachi~Heiwadori 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_jonan_line", "lang": "en", "text": "Dogo Onsen~Nishihoribata", "source": "rule"}
-- {"entity_type": "route", "id": "r_jonan_line_heiwadori_1_chome_kamiichiman", "lang": "en", "text": "Heiwadori 1-chome~Kamiichiman", "source": "rule"}
-- {"entity_type": "route", "id": "r_honmachi_line", "lang": "en", "text": "Nishihoribata~Honmachi 6-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_otemachi_line", "lang": "en", "text": "Komachi~Nishihoribata", "source": "rule"}
-- {"entity_type": "route", "id": "r_hanazono_line", "lang": "en", "text": "Matsuyama City~Minamihoribata", "source": "rule"}
+- {"entity_type": "route", "id": "r_takahama_line", "lang": "en", "text": "Takahama~Matsuyama City Station", "source": "rule"}
+- {"entity_type": "route", "id": "r_yokogawara_line", "lang": "en", "text": "Matsuyama City Station~Yokogawara", "source": "rule"}
+- {"entity_type": "route", "id": "r_gunchu_line", "lang": "en", "text": "Matsuyama City Station~Gunchu Port", "source": "rule"}
+- {"entity_type": "route", "id": "r_johoku_line_iyotetsu", "lang": "en", "text": "Komachi~Heiwadori 1", "source": "rule"}
+- {"entity_type": "route", "id": "r_jonan_line", "lang": "en", "text": "Dogo Onsen~Nishi-Horibata", "source": "rule"}
+- {"entity_type": "route", "id": "r_jonan_line_heiwadori_1_chome_kamiichiman", "lang": "en", "text": "Heiwadori 1~Kamiichiman", "source": "rule"}
+- {"entity_type": "route", "id": "r_honmachi_line", "lang": "en", "text": "Nishi-Horibata~Hommachi 6", "source": "rule"}
+- {"entity_type": "route", "id": "r_otemachi_line", "lang": "en", "text": "Komachi~Nishi-Horibata", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanazono_line", "lang": "en", "text": "Matsuyama City~Minami-Horibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_ino_line", "lang": "en", "text": "Harimayabashi~Ino", "source": "rule"}
-- {"entity_type": "route", "id": "r_gomen_line", "lang": "en", "text": "Gomenmachi~Harimayabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_sambashi_line", "lang": "en", "text": "Harimayabashi~Sambashi-dori 5-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_gomen_line", "lang": "en", "text": "Gomemmachi~Harimayabashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_sambashi_line", "lang": "en", "text": "Harimayabashi~Sambashidori 5-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakamura_line_tosa_kuroshio", "lang": "en", "text": "Kubokawa~Nakamura", "source": "rule"}
 - {"entity_type": "route", "id": "r_sukumo_line", "lang": "en", "text": "Sukumo~Nakamura", "source": "rule"}
 - {"entity_type": "route", "id": "r_asa_line", "lang": "en", "text": "Gomen~Nahari", "source": "rule"}
-- {"entity_type": "route", "id": "r_ita_line_heisei_chikuho", "lang": "en", "text": "Nogata~Tagawa-Ita", "source": "rule"}
-- {"entity_type": "route", "id": "r_itoda_line_heisei_chikuho", "lang": "en", "text": "Kanada~Tagawa-Gotoji", "source": "rule"}
-- {"entity_type": "route", "id": "r_tagawa_line_heisei_chikuho", "lang": "en", "text": "Yukuhashi~Tagawa-Ita", "source": "rule"}
+- {"entity_type": "route", "id": "r_ita_line_heisei_chikuho", "lang": "en", "text": "Nōgata~Tagawaita", "source": "rule"}
+- {"entity_type": "route", "id": "r_itoda_line_heisei_chikuho", "lang": "en", "text": "Kanada~Tagawagotōji", "source": "rule"}
+- {"entity_type": "route", "id": "r_tagawa_line_heisei_chikuho", "lang": "en", "text": "Yukuhashi~Tagawaita", "source": "rule"}
 - {"entity_type": "route", "id": "r_mojiko_retro_scenic_line", "lang": "en", "text": "Kyushu Railway History Museum~Kanmonkaikyo Mekari", "source": "rule"}
 - {"entity_type": "route", "id": "r_akasako_branch_line", "lang": "en", "text": "Akasako~Sumiyoshi", "source": "rule"}
-- {"entity_type": "route", "id": "r_nagasaki_tram_main_line", "lang": "en", "text": "Sumiyoshi~Sofukuji", "source": "rule"}
-- {"entity_type": "route", "id": "r_sakuramachi_branch_line", "lang": "en", "text": "Nagasaki-Ekimae~Shiyakusho", "source": "rule"}
-- {"entity_type": "route", "id": "r_sakuramachi_branch_line_sakuramachi_furumachi", "lang": "en", "text": "Sakuramachi~Furumachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagasaki_tram_main_line", "lang": "en", "text": "Sumiyoshi~Sofukuji Temple", "source": "rule"}
+- {"entity_type": "route", "id": "r_sakuramachi_branch_line", "lang": "en", "text": "Nagasaki-ekimae~City Hall", "source": "rule"}
+- {"entity_type": "route", "id": "r_sakuramachi_branch_line_sakuramachi_furumachi", "lang": "en", "text": "Sakura-machi~Furumachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_oura_branch_line", "lang": "en", "text": "Shinchi-Chukagai~Ishibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_oura_branch_line_sembacho_ourakaigandori", "lang": "en", "text": "Sembacho~Ourakaigandori", "source": "rule"}
-- {"entity_type": "route", "id": "r_hotarujaya_branch_line", "lang": "en", "text": "Nishihamanomachi~Hotarujaya", "source": "rule"}
+- {"entity_type": "route", "id": "r_oura_branch_line_sembacho_ourakaigandori", "lang": "en", "text": "Sembacho~Ourakaigan-dori", "source": "rule"}
+- {"entity_type": "route", "id": "r_hotarujaya_branch_line", "lang": "en", "text": "Nishihamano-machi~Hotarujaya", "source": "rule"}
 - {"entity_type": "route", "id": "r_kikuchi_line", "lang": "en", "text": "Kami-Kumamoto~Miyoshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kikuchi_line_miyoshi_kikuchi", "lang": "en", "text": "Miyoshi (old)~Kikuchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kikuchi_line_kumamoto_kosen_mae_miyoshi", "lang": "en", "text": "Kumamoto-Kosen-mae~Miyoshi (old)", "source": "rule"}
@@ -2289,7 +2289,7 @@
 - {"entity_type": "route", "id": "r_port_island_line_shimin_hiroba_kobe_airport", "lang": "en", "text": "Shimin Hiroba~Kobe Airport", "source": "rule"}
 - {"entity_type": "route", "id": "r_rokko_island_line", "lang": "en", "text": "Sumiyoshi~Marine Park", "source": "rule"}
 - {"entity_type": "route", "id": "r_kurobe_cable_car", "lang": "en", "text": "Kurobeko~Kurobedaira", "source": "rule"}
-- {"entity_type": "route", "id": "r_tateyama_cable_car", "lang": "en", "text": "Tateyama~Bijodaira", "source": "rule"}
+- {"entity_type": "route", "id": "r_tateyama_cable_car", "lang": "en", "text": "Tateyama Station~Bijodaira", "source": "rule"}
 - {"entity_type": "route", "id": "r_kobe_kosoku_line_sanyo", "lang": "en", "text": "Nishidai~Sannomiya", "source": "rule"}
 - {"entity_type": "route", "id": "r_kobe_kosoku_line_sanyo_kosoku_kobe_motomachi", "lang": "en", "text": "Kosoku Kobe~Motomachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_nanao_line_noto", "lang": "en", "text": "Nanao~Wajima", "source": "rule"}
@@ -2297,12 +2297,12 @@
 - {"entity_type": "route", "id": "r_chichibu_railway_connecting_line", "lang": "en", "text": "Jct. (Seibu-Chichibu)~Ohanabatake", "source": "rule"}
 - {"entity_type": "route", "id": "r_chichibu_railway_connecting_line_branch", "lang": "en", "text": "Seibu-Chichibu~Jct. (Ohanabatake)", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsuda_connecting_line", "lang": "en", "text": "Shin-Matsuda~Matsuda", "source": "rule"}
-- {"entity_type": "route", "id": "r_unuma_connecting_line", "lang": "en", "text": "Shin-Unuma~Unuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_unuma_connecting_line", "lang": "en", "text": "Shin Unuma~Unuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_yagi_connecting_line", "lang": "en", "text": "Jct. (Yamato-Yagi)~Yamato-Yagi", "source": "rule"}
 - {"entity_type": "route", "id": "r_ninokuchi_connecting_line", "lang": "en", "text": "Jct. (Yamato-Yagi)~Ninokuchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakagawa_connecting_line", "lang": "en", "text": "宮古 Jct.~黒田 Jct.", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_kita_osaka_kyuko", "lang": "en", "text": "Esaka~Minoh-kayano", "source": "rule"}
-- {"entity_type": "route", "id": "r_donan_isaribi_railway_line", "lang": "en", "text": "Goryokaku~Kikonai", "source": "rule"}
+- {"entity_type": "route", "id": "r_donan_isaribi_railway_line", "lang": "en", "text": "Goryōkaku~Kikonai", "source": "rule"}
 - {"entity_type": "route", "id": "r_aoimori_railway_line", "lang": "en", "text": "Metoki~Aomori", "source": "rule"}
 - {"entity_type": "route", "id": "r_rias_line", "lang": "en", "text": "Sakari~Kuji", "source": "rule"}
 - {"entity_type": "route", "id": "r_chokai_sanroku_line", "lang": "en", "text": "Ugo-Honjo~Yashima", "source": "rule"}
@@ -2329,11 +2329,11 @@
 - {"entity_type": "route", "id": "r_johoku_line_tokai_kotsu", "lang": "en", "text": "Kachigawa~Biwajima", "source": "rule"}
 - {"entity_type": "route", "id": "r_iga_line", "lang": "en", "text": "Iga-Ueno~Nishi Nabari", "source": "rule"}
 - {"entity_type": "route", "id": "r_yoro_line", "lang": "en", "text": "Kuwana~Ibi", "source": "rule"}
-- {"entity_type": "route", "id": "r_etsumi_nan_line_nagaragawa", "lang": "en", "text": "Mino-Ota~Hokuno", "source": "rule"}
+- {"entity_type": "route", "id": "r_etsumi_nan_line_nagaragawa", "lang": "en", "text": "Mino-Ōta~Hokuno", "source": "rule"}
 - {"entity_type": "route", "id": "r_sagano_scenic_line", "lang": "en", "text": "Torokko Saga~Torokko Kameoka", "source": "rule"}
 - {"entity_type": "route", "id": "r_kishu_railway_line", "lang": "en", "text": "Gobo~Nishi-Gobo", "source": "rule"}
 - {"entity_type": "route", "id": "r_hojo_line_hojo", "lang": "en", "text": "Ao~Hojomachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_ibara_line", "lang": "en", "text": "Soja~Kannabe", "source": "rule"}
+- {"entity_type": "route", "id": "r_ibara_line", "lang": "en", "text": "Sōja~Kannabe", "source": "rule"}
 - {"entity_type": "route", "id": "r_chizu_express_line", "lang": "en", "text": "Kamigori~Chizu", "source": "rule"}
 - {"entity_type": "route", "id": "r_asato_line", "lang": "en", "text": "Awa-Kainan~Kannoura", "source": "rule"}
 - {"entity_type": "route", "id": "r_amagi_line_amagi", "lang": "en", "text": "Kiyama~Amagi", "source": "rule"}
@@ -2353,7 +2353,7 @@
 - {"entity_type": "route", "id": "r_maya_cable_line", "lang": "en", "text": "Maya Cable~Niji", "source": "rule"}
 - {"entity_type": "route", "id": "r_sarakurayama_cable_car", "lang": "en", "text": "Sanroku~Sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_linimo", "lang": "en", "text": "Fujigaoka~Yakusa", "source": "rule"}
-- {"entity_type": "route", "id": "r_monkey_park_monorail", "lang": "en", "text": "Inuyama-Yuen~Dobutsuen", "source": "rule"}
+- {"entity_type": "route", "id": "r_monkey_park_monorail", "lang": "en", "text": "Inuyama-yūen~Dobutsuen", "source": "rule"}
 - {"entity_type": "route", "id": "r_ueno_zoo_monorail_line", "lang": "en", "text": "Ueno Zoo East Garden~Ueno Zoo West Garden", "source": "rule"}
 - {"entity_type": "route", "id": "r_towada_kanko_electric_railway_line", "lang": "en", "text": "Misawa~Towadashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yashiro_line", "lang": "en", "text": "Yashiro~Suzaka", "source": "rule"}
@@ -2363,8 +2363,8 @@
 - {"entity_type": "route", "id": "r_takachiho_line_takachiho", "lang": "en", "text": "Nobeoka~Takachiho", "source": "rule"}
 - {"entity_type": "route", "id": "r_tokadai_line", "lang": "en", "text": "Komaki~Tokadai-Higashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tateyama_tunnel_trolleybus", "lang": "en", "text": "Murodo~Daikambo", "source": "rule"}
-- {"entity_type": "route", "id": "r_ichijo_line", "lang": "en", "text": "Nishi 4-chome~Maruyama-Koen", "source": "rule"}
-- {"entity_type": "route", "id": "r_ichijo_line_nishi_4_chome_ichijobashi", "lang": "en", "text": "Nishi 4-chome~Ichijobashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_ichijo_line", "lang": "en", "text": "Nishi yon chome~Maruyama-Koen", "source": "rule"}
+- {"entity_type": "route", "id": "r_ichijo_line_nishi_4_chome_ichijobashi", "lang": "en", "text": "Nishi yon chome~Ichijobashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsugaru_railway_line", "lang": "en", "text": "Tsugaru-Goshogawara~Tsugaru-Nakasato", "source": "rule"}
 - {"entity_type": "route", "id": "r_iwate_galaxy_railway_line", "lang": "en", "text": "Morioka~Metoki", "source": "rule"}
 - {"entity_type": "route", "id": "r_sendai_airport_line", "lang": "en", "text": "Natori~Sendai Airport", "source": "rule"}
@@ -2390,7 +2390,7 @@
 - {"entity_type": "route", "id": "r_tenryu_hamanako_line", "lang": "en", "text": "Kakegawa~Shinjohara", "source": "rule"}
 - {"entity_type": "route", "id": "r_aichi_loop_line", "lang": "en", "text": "Okazaki~Kozoji", "source": "rule"}
 - {"entity_type": "route", "id": "r_ise_line_ise", "lang": "en", "text": "Kawarada~Tsu", "source": "rule"}
-- {"entity_type": "route", "id": "r_tarumi_line_tarumi", "lang": "en", "text": "Ogaki~Tarumi", "source": "rule"}
+- {"entity_type": "route", "id": "r_tarumi_line_tarumi", "lang": "en", "text": "Ōgaki~Tarumi", "source": "rule"}
 - {"entity_type": "route", "id": "r_akechi_line_akechi", "lang": "en", "text": "Ena~Akechi", "source": "rule"}
 - {"entity_type": "route", "id": "r_hapi_line_fukui_line", "lang": "en", "text": "Tsuruga~Daishoji", "source": "rule"}
 - {"entity_type": "route", "id": "r_shigaraki_line_shigaraki_kohgen", "lang": "en", "text": "Kibukawa~Shigaraki", "source": "rule"}
@@ -2398,22 +2398,22 @@
 - {"entity_type": "route", "id": "r_kishigawa_line", "lang": "en", "text": "Wakayama~Kishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_mizushima_main_line", "lang": "en", "text": "Kurashikishi~Mitsubishi-Jiko-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishikigawa_seiryu_line", "lang": "en", "text": "Kawanishi~Nishikicho", "source": "rule"}
-- {"entity_type": "route", "id": "r_wakasa_line_wakasa", "lang": "en", "text": "Koge~Wakasa", "source": "rule"}
-- {"entity_type": "route", "id": "r_chikuho_electric_railroad", "lang": "en", "text": "Kurosaki-Ekimae~Chikuho-Nogata", "source": "rule"}
+- {"entity_type": "route", "id": "r_wakasa_line_wakasa", "lang": "en", "text": "Kōge~Wakasa", "source": "rule"}
+- {"entity_type": "route", "id": "r_chikuho_electric_railroad", "lang": "en", "text": "Kurosaki-ekimae~Chikuho-Nogata", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishi_kyushu_line", "lang": "en", "text": "Arita~Sasebo", "source": "rule"}
 - {"entity_type": "route", "id": "r_hisatsu_orange_line", "lang": "en", "text": "Yatsushiro~Sendai", "source": "rule"}
-- {"entity_type": "route", "id": "r_yunomae_line_kumagawa", "lang": "en", "text": "Hitoyoshi-Onsen~Yunomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_yunomae_line_kumagawa", "lang": "en", "text": "Hitoyoshi-Onsen~Yuno-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_tokyo_monorail_haneda_airport_line", "lang": "en", "text": "Monorail Hamamatsucho~Haneda Airport Terminal 2", "source": "rule"}
 - {"entity_type": "route", "id": "r_enoshima_line_shonan_monorail", "lang": "en", "text": "Ofuna~Shonan-Enoshima", "source": "rule"}
 - {"entity_type": "route", "id": "r_okinawa_urban_monorail_line", "lang": "en", "text": "Naha Airport~Tedako-Uranishi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yukarigaoka_line", "lang": "en", "text": "Yukarigaoka~Koen", "source": "rule"}
 - {"entity_type": "route", "id": "r_kanazawa_seaside_line", "lang": "en", "text": "Shin-Sugita~Kanazawa-hakkei", "source": "rule"}
-- {"entity_type": "route", "id": "r_astram_line", "lang": "en", "text": "Hondori~Koiki-koen-mae", "source": "rule"}
-- {"entity_type": "route", "id": "r_mount_tsukuba_cable_car", "lang": "en", "text": "Miyawaki~Tsukubasancho", "source": "rule"}
+- {"entity_type": "route", "id": "r_astram_line", "lang": "en", "text": "Hondori~Koikikoen-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_mount_tsukuba_cable_car", "lang": "en", "text": "Miyawaki~Tsukuba-sancho", "source": "rule"}
 - {"entity_type": "route", "id": "r_mitake_tozan_cable_car", "lang": "en", "text": "Takimoto~Mitakesan", "source": "rule"}
 - {"entity_type": "route", "id": "r_jukkokutoge_cable_car", "lang": "en", "text": "Jukkokutoge Sanroku~Jukkokutoge Sancho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kuramayama_cable_line", "lang": "en", "text": "Sammon~Tahoto", "source": "rule"}
-- {"entity_type": "route", "id": "r_rokko_cable_line", "lang": "en", "text": "Rokko Cable-shita~Rokko-Sanjo", "source": "rule"}
+- {"entity_type": "route", "id": "r_rokko_cable_line", "lang": "en", "text": "Rokko Cable Car Lower Station~Rokko Sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_yakuri_cable", "lang": "en", "text": "Yakuri Tozan-guchi~Yakuri-Sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_beppu_rakutenchi_cable_line", "lang": "en", "text": "Unsenji~Onbara", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyajidake_line", "lang": "en", "text": "Nishitetsu Shingu~Tsuyazaki", "source": "rule"}
@@ -2423,10 +2423,10 @@
 - {"entity_type": "route", "id": "r_miki_line_miki", "lang": "en", "text": "Yakujin~Miki", "source": "rule"}
 - {"entity_type": "route", "id": "r_seno_line", "lang": "en", "text": "Midoriguchi~Midori-Chuo", "source": "rule"}
 - {"entity_type": "route", "id": "r_kanden_tunnel_trolleybus", "lang": "en", "text": "Ogizawa~Kurobe Dam", "source": "rule"}
-- {"entity_type": "route", "id": "r_yamahana_nishi_line", "lang": "en", "text": "Nishi 15-chome~Chuotoshokammae", "source": "rule"}
-- {"entity_type": "route", "id": "r_yamahana_line", "lang": "en", "text": "Chuotoshokammae~Susukino", "source": "rule"}
-- {"entity_type": "route", "id": "r_toshin_line", "lang": "en", "text": "Susukino~Nishi 4-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_ekimae_line", "lang": "en", "text": "Kochi-Ekimae~Harimayabashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamahana_nishi_line", "lang": "en", "text": "Nishi jugo chome~Chuo toshokan mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamahana_line", "lang": "en", "text": "Chuo toshokan mae~Susukino", "source": "rule"}
+- {"entity_type": "route", "id": "r_toshin_line", "lang": "en", "text": "Susukino~Nishi yon chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_ekimae_line", "lang": "en", "text": "Kochieki mae~Harimayabashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yokohama_expo_rinko_line", "lang": "en", "text": "Nippon-Maru~Yamashita-Koen", "source": "rule"}
 - {"entity_type": "route", "id": "r_yokohama_expo_hsst_line", "lang": "en", "text": "Bijutsukan~Seaside Park", "source": "rule"}
 - {"entity_type": "route", "id": "r_yokohama_sk_line", "lang": "en", "text": "Sakuragicho Gate~Festival Hiroba", "source": "rule"}
@@ -2481,20 +2481,20 @@
 - {"entity_type": "route", "id": "r_katakami_railway", "lang": "en", "text": "Katakami~Yanahara", "source": "rule"}
 - {"entity_type": "route", "id": "r_yabakei_line", "lang": "en", "text": "Nakatsu~Morizane Onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_makurazaki_line", "lang": "en", "text": "Ijuin~Makurazaki", "source": "rule"}
-- {"entity_type": "route", "id": "r_tagami_line", "lang": "en", "text": "Keirinjo-Mae~Tagami", "source": "rule"}
+- {"entity_type": "route", "id": "r_tagami_line", "lang": "en", "text": "Keirinjo-mae~Tagami", "source": "rule"}
 - {"entity_type": "route", "id": "r_eiheiji_line", "lang": "en", "text": "Kanazu~Eiheiji", "source": "rule"}
 - {"entity_type": "route", "id": "r_ako_railway_line", "lang": "en", "text": "Une~Banshu-Ako", "source": "rule"}
 - {"entity_type": "route", "id": "r_hoshu_line", "lang": "en", "text": "Buzen-Zenkoji~Buzen-Futsukaichi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tomo_railway_line", "lang": "en", "text": "Fukuyama~Tomo", "source": "rule"}
-- {"entity_type": "route", "id": "r_betsudai_line", "lang": "en", "text": "Oita-Ekimae~Kamegawa-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_betsudai_line_beppu_ekimae_branch", "lang": "en", "text": "Kitahama~Beppu-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_betsudai_line", "lang": "en", "text": "Ōita-ekimae~Kamegawa-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_betsudai_line_beppu_ekimae_branch", "lang": "en", "text": "Kitahama~Beppu-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagato_railway_line", "lang": "en", "text": "Ozuki~Nishiichi", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukushima_line", "lang": "en", "text": "Hiyoshimachi~Fukushima", "source": "rule"}
 - {"entity_type": "route", "id": "r_obihirobu_line", "lang": "en", "text": "Obihiro~Totsuta", "source": "rule"}
 - {"entity_type": "route", "id": "r_obihirobu_line_obihiroodori_branch", "lang": "en", "text": "Shin'obihiro~Obihiroodori", "source": "rule"}
-- {"entity_type": "route", "id": "r_yaita_line", "lang": "en", "text": "Shin-Takatoku~Yaita", "source": "rule"}
+- {"entity_type": "route", "id": "r_yaita_line", "lang": "en", "text": "Shin-takatoku~Yaita", "source": "rule"}
 - {"entity_type": "route", "id": "r_sendai_railway_line", "lang": "en", "text": "Shakitasendai~Nishi-Furukawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_heisaka_branch_line", "lang": "en", "text": "Nishio~Minatomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_heisaka_branch_line", "lang": "en", "text": "Nishio~Minato-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_hirose_line", "lang": "en", "text": "Arashima~Izumohirose", "source": "rule"}
 - {"entity_type": "route", "id": "r_takatomi_line", "lang": "en", "text": "Nagarakitamachi~Takatomi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kujukuri_railway_line", "lang": "en", "text": "Togane~Kazusa-Katakai", "source": "rule"}
@@ -2532,9 +2532,9 @@
 - {"entity_type": "route", "id": "r_bandai_express_electric_railway_line", "lang": "en", "text": "Kawageta~Numajiri", "source": "rule"}
 - {"entity_type": "route", "id": "r_akita_chuo_kotsu_line", "lang": "en", "text": "Hachirogata~Gojonome", "source": "rule"}
 - {"entity_type": "route", "id": "r_sunen_line", "lang": "en", "text": "Ote~Shin-Fukuroi", "source": "rule"}
-- {"entity_type": "route", "id": "r_chokan_line", "lang": "en", "text": "Chofu-eki~Shimonoseki-eki", "source": "rule"}
+- {"entity_type": "route", "id": "r_chokan_line", "lang": "en", "text": "Chōfu-eki~Shimonoseki-eki", "source": "rule"}
 - {"entity_type": "route", "id": "r_kaetsu_line", "lang": "en", "text": "Isurugi~Shogawamachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_koromo_line", "lang": "en", "text": "Uwagoromo~Okazaki-Ida", "source": "rule"}
+- {"entity_type": "route", "id": "r_koromo_line", "lang": "en", "text": "Uwa Goromo~Okazaki-Ida", "source": "rule"}
 - {"entity_type": "route", "id": "r_sasazu_line", "lang": "en", "text": "Minami-Toyama~Chitetsusasazu", "source": "rule"}
 - {"entity_type": "route", "id": "r_yagyubashi_branch_line", "lang": "en", "text": "Shinkawa~Yagyu-bashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yagyubashi_branch_line_shimmei_nakashiba", "lang": "en", "text": "Shimmei~Nakashiba", "source": "rule"}
@@ -2556,8 +2556,8 @@
 - {"entity_type": "route", "id": "r_bibai_railway_line", "lang": "en", "text": "Bibai~Tokiwadai", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakayama_line", "lang": "en", "text": "Nakayama~Nikenjaya", "source": "rule"}
 - {"entity_type": "route", "id": "r_futami_line", "lang": "en", "text": "Furuichiguchi~Futami", "source": "rule"}
-- {"entity_type": "route", "id": "r_naiku_line", "lang": "en", "text": "Iseshi-Ekimae~Naikumae", "source": "rule"}
-- {"entity_type": "route", "id": "r_jobu_railway_line", "lang": "en", "text": "Tansho~Seibukagakumae", "source": "rule"}
+- {"entity_type": "route", "id": "r_naiku_line", "lang": "en", "text": "Iseshi-ekimae~Naiku-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_jobu_railway_line", "lang": "en", "text": "Tansho~Seibukagaku-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_sanadasoehi_line", "lang": "en", "text": "Ueda~Sanada", "source": "rule"}
 - {"entity_type": "route", "id": "r_sanadasoehi_line_soehi_branch", "lang": "en", "text": "Motohara~Soehi", "source": "rule"}
 - {"entity_type": "route", "id": "r_ikasa_line", "lang": "en", "text": "Kasaoka~Ibara", "source": "rule"}
@@ -2569,8 +2569,8 @@
 - {"entity_type": "route", "id": "r_yachiyo_line", "lang": "en", "text": "Fuji~Yachiyo", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimizubu_line", "lang": "en", "text": "Shimoshimizu~Kumaushi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitajima_branch_line", "lang": "en", "text": "Wakayamashi~Higashi-Matsue", "source": "rule"}
-- {"entity_type": "route", "id": "r_fukuoka_line", "lang": "en", "text": "Okazaki-Ekimae~Fukuokacho", "source": "rule"}
-- {"entity_type": "route", "id": "r_okoshi_line", "lang": "en", "text": "Meitetsu-Ichinomiya~Okoshi", "source": "rule"}
+- {"entity_type": "route", "id": "r_fukuoka_line", "lang": "en", "text": "Okazaki-ekimae~Fukuokacho", "source": "rule"}
+- {"entity_type": "route", "id": "r_okoshi_line", "lang": "en", "text": "Meitetsu Ichinomiya~Okoshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_aki_line", "lang": "en", "text": "Gomen~Aki", "source": "rule"}
 - {"entity_type": "route", "id": "r_shibetsu_tramway_line", "lang": "en", "text": "Shibetsu~Okushibetsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_yubari_railway_line", "lang": "en", "text": "Nopporo~Yubari-Honcho", "source": "rule"}
@@ -2580,36 +2580,36 @@
 - {"entity_type": "route", "id": "r_miyazakikotsu_line", "lang": "en", "text": "Minami-Miyazaki~Uchiumi", "source": "rule"}
 - {"entity_type": "route", "id": "r_toyamachitetsuimizu_line", "lang": "en", "text": "Shintoyama~Koshinokata", "source": "rule"}
 - {"entity_type": "route", "id": "r_obanazawa_line", "lang": "en", "text": "Oishida~Obanazawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_densha_line", "lang": "en", "text": "Kofu-Ekimae~Kaiaoyagi", "source": "rule"}
+- {"entity_type": "route", "id": "r_densha_line", "lang": "en", "text": "Kofu-ekimae~Kaiaoyagi", "source": "rule"}
 - {"entity_type": "route", "id": "r_hatabu_line", "lang": "en", "text": "Hatabu~Higashishimonoseki", "source": "rule"}
 - {"entity_type": "route", "id": "r_hikoroichi_line", "lang": "en", "text": "Sakari~Iwate-Ishibashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_josotsukubatetsudokinugawa_line", "lang": "en", "text": "Otago~Sanjo", "source": "rule"}
-- {"entity_type": "route", "id": "r_densha_line_niigata", "lang": "en", "text": "Hakusanmae~Tsubame", "source": "rule"}
+- {"entity_type": "route", "id": "r_densha_line_niigata", "lang": "en", "text": "Hakusan-mae~Tsubame", "source": "rule"}
 - {"entity_type": "route", "id": "r_hosshoji_electric_railway_line", "lang": "en", "text": "Yonagoshi~Hosshoji", "source": "rule"}
 - {"entity_type": "route", "id": "r_nihonkogyosaganoseki_railway", "lang": "en", "text": "Nikkokozaki~Nikkosaganoseki", "source": "rule"}
-- {"entity_type": "route", "id": "r_chikabumi_line", "lang": "en", "text": "Asahikawa-Ekimae~Issenrokugo", "source": "rule"}
-- {"entity_type": "route", "id": "r_chikabumi_line_hokkaidojinjamae_keibajokitaguchimae", "lang": "en", "text": "Hokkaidojinjamae~Keibajokitaguchimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_chikabumi_line", "lang": "en", "text": "Asahikawa-ekimae~Issenrokugo", "source": "rule"}
+- {"entity_type": "route", "id": "r_chikabumi_line_hokkaidojinjamae_keibajokitaguchimae", "lang": "en", "text": "Hokkaido-jinja-mae~Keibajokitaguchi-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_higashikawa_line", "lang": "en", "text": "Asahikawa-Yojo~Higashikawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_higashiasahikawa_line", "lang": "en", "text": "Asahigawaoiwake~Asahiyamakoen", "source": "rule"}
-- {"entity_type": "route", "id": "r_kinuta_line", "lang": "en", "text": "Futako-Tamagawa~Kinuta-hommura", "source": "rule"}
-- {"entity_type": "route", "id": "r_ikaho_line", "lang": "en", "text": "Shibukawa-Ekimae~Ikaho", "source": "rule"}
-- {"entity_type": "route", "id": "r_maebashi_line", "lang": "en", "text": "Maebashi-Ekimae~Shibukawa-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_takasaki_line_tobu", "lang": "en", "text": "Takasaki-Ekimae~Shibukawashimmachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kinuta_line", "lang": "en", "text": "Futako-tamagawa~Kinuta-hommura", "source": "rule"}
+- {"entity_type": "route", "id": "r_ikaho_line", "lang": "en", "text": "Shibukawa-ekimae~Ikaho", "source": "rule"}
+- {"entity_type": "route", "id": "r_maebashi_line", "lang": "en", "text": "Maebashi-ekimae~Shibukawa-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_takasaki_line_tobu", "lang": "en", "text": "Takasaki-ekimae~Shibukawashimmachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsuokogyo_railway_line", "lang": "en", "text": "Obuke~Higashihachimantai", "source": "rule"}
-- {"entity_type": "route", "id": "r_asama_line", "lang": "en", "text": "Matsumoto-Ekimae~Asama-Onsen", "source": "rule"}
+- {"entity_type": "route", "id": "r_asama_line", "lang": "en", "text": "Matsumoto-ekimae~Asama-Onsen", "source": "rule"}
 - {"entity_type": "route", "id": "r_nemurotakushoku_railway_line", "lang": "en", "text": "Nemuro~Habomai", "source": "rule"}
 - {"entity_type": "route", "id": "r_kojaku_railway_line", "lang": "en", "text": "Biwako-hamaotsu~Omiimazu", "source": "rule"}
 - {"entity_type": "route", "id": "r_saru_railway_line", "lang": "en", "text": "Tomikawa~Hiratori", "source": "rule"}
-- {"entity_type": "route", "id": "r_marugame_line", "lang": "en", "text": "Marugametoricho~Zentsujiakamommae", "source": "rule"}
-- {"entity_type": "route", "id": "r_sakaide_line", "lang": "en", "text": "Sakaide-Ekimae~Marugametoricho", "source": "rule"}
-- {"entity_type": "route", "id": "r_tadotsu_line", "lang": "en", "text": "Tadotsusambashidori~Zentsujiakamommae", "source": "rule"}
+- {"entity_type": "route", "id": "r_marugame_line", "lang": "en", "text": "Marugametoricho~Zentsujiakamon-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_sakaide_line", "lang": "en", "text": "Sakaide-ekimae~Marugametoricho", "source": "rule"}
+- {"entity_type": "route", "id": "r_tadotsu_line", "lang": "en", "text": "Tadotsusambashidori~Zentsujiakamon-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_seiho_line", "lang": "en", "text": "Mizuochi~Ota", "source": "rule"}
 - {"entity_type": "route", "id": "r_seiho_line_sabae_echizen_hirai", "lang": "en", "text": "Sabae~Echizen-Heii", "source": "rule"}
 - {"entity_type": "route", "id": "r_hobara_line", "lang": "en", "text": "Nagaokabunkiten~Hobara", "source": "rule"}
 - {"entity_type": "route", "id": "r_kaketa_line", "lang": "en", "text": "Hobara~Kaketa", "source": "rule"}
 - {"entity_type": "route", "id": "r_yanagawa_line", "lang": "en", "text": "Hobara~Yanagawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_iizakato_line", "lang": "en", "text": "Fukushima-Ekimae~Yunomachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_iizakahigashi_line_seikogakuimmae_date_ekimae", "lang": "en", "text": "Seikogakuimmae~Date-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_iizakato_line", "lang": "en", "text": "Fukushima-ekimae~Yunomachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_iizakahigashi_line_seikogakuimmae_date_ekimae", "lang": "en", "text": "Seikogakuin-mae~Date-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukushimarinkai_railway_line", "lang": "en", "text": "Izumi~Sakaemachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_chikuhokogyo_railway_line", "lang": "en", "text": "Katsuki~Nobu", "source": "rule"}
 - {"entity_type": "route", "id": "r_haborotanko_railway_line", "lang": "en", "text": "Chikubetsu~Chikubetsutanko", "source": "rule"}
@@ -2618,8 +2618,8 @@
 - {"entity_type": "route", "id": "r_suihin_line", "lang": "en", "text": "Kamimito~Oarai (old)", "source": "rule"}
 - {"entity_type": "route", "id": "r_arao_city_electric_railway", "lang": "en", "text": "Arao~Midorigaoka", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitakyushu_line", "lang": "en", "text": "Moji~Orio", "source": "rule"}
-- {"entity_type": "route", "id": "r_yoshizuka_line", "lang": "en", "text": "Chiyomachi~Yoshizuka-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_yamaguchisenotogi_line", "lang": "en", "text": "Yuenchimae~UNESCO Village", "source": "rule"}
+- {"entity_type": "route", "id": "r_yoshizuka_line", "lang": "en", "text": "Chiyomachi~Yoshizuka-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamaguchisenotogi_line", "lang": "en", "text": "Yuenchi-mae~UNESCO Village", "source": "rule"}
 - {"entity_type": "route", "id": "r_ise_line_kintetsu", "lang": "en", "text": "Edobashi~Shimmatsusaka", "source": "rule"}
 - {"entity_type": "route", "id": "r_okuyama_line", "lang": "en", "text": "Enshu-Byoin~Okuyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_shiroyama_line", "lang": "en", "text": "Shiroyama~Higashi-Kushiro", "source": "rule"}
@@ -2628,10 +2628,10 @@
 - {"entity_type": "route", "id": "r_koshien_line", "lang": "en", "text": "Kamikoshien~Hamakoshien", "source": "rule"}
 - {"entity_type": "route", "id": "r_shakubetsu_railway_line", "lang": "en", "text": "Sha-Shakubetsu~Shakubetsu-Tanzan", "source": "rule"}
 - {"entity_type": "route", "id": "r_akiha_line", "lang": "en", "text": "Shin-Fukuroi~Enshumorimachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_shizuokashinai_line", "lang": "en", "text": "Shizuoka-Ekimae~Anzai", "source": "rule"}
-- {"entity_type": "route", "id": "r_okazakishinai_line", "lang": "en", "text": "Okazaki-Ida~Okazaki-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_loop_line_nishitetsu", "lang": "en", "text": "Chidoribashi~Hakatachikkomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_loop_line_hakatachikkomae_chidoribashi", "lang": "en", "text": "Hakatachikkomae~Chidoribashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_shizuokashinai_line", "lang": "en", "text": "Shizuoka-ekimae~Anzai", "source": "rule"}
+- {"entity_type": "route", "id": "r_okazakishinai_line", "lang": "en", "text": "Okazaki-Ida~Okazaki-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_loop_line_nishitetsu", "lang": "en", "text": "Chidoribashi~Hakatachikko-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_loop_line_hakatachikkomae_chidoribashi", "lang": "en", "text": "Hakatachikko-mae~Chidoribashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_loop_line_old_route", "lang": "en", "text": "Giommachi~Yanagibashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimura_line", "lang": "en", "text": "Itabashi 5-chome~Shimurabashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_bancho_line_toei", "lang": "en", "text": "Hanzomon~Kudan'ue", "source": "rule"}
@@ -2642,67 +2642,67 @@
 - {"entity_type": "route", "id": "r_utsubohommachi_line", "lang": "en", "text": "Kawaguchicho~Tanimachi 3-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_sangenyashinchitose_line", "lang": "en", "text": "Sangen'ya~Shinchitosecho", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsushimaminamiokajima_line", "lang": "en", "text": "Taishobashi~Daiumbashidori", "source": "rule"}
-- {"entity_type": "route", "id": "r_tsurumachi_line", "lang": "en", "text": "Tsurumachishakomae~Daiumbashidori", "source": "rule"}
-- {"entity_type": "route", "id": "r_soen_line", "lang": "en", "text": "Soen'ekidori~Soen-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_chuoichiba_line", "lang": "en", "text": "Kanagawakaikammae~Chuoichiba", "source": "rule"}
-- {"entity_type": "route", "id": "r_horikawa_line", "lang": "en", "text": "Kyoto-Ekimae~Kitano", "source": "rule"}
+- {"entity_type": "route", "id": "r_tsurumachi_line", "lang": "en", "text": "Tsurumachi-shako-mae~Daiumbashidori", "source": "rule"}
+- {"entity_type": "route", "id": "r_soen_line", "lang": "en", "text": "Soen'ekidori~Sōen-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_chuoichiba_line", "lang": "en", "text": "Kanagawakaikan-mae~Chuoichiba", "source": "rule"}
+- {"entity_type": "route", "id": "r_horikawa_line", "lang": "en", "text": "Kyōto-ekimae~Kitano", "source": "rule"}
 - {"entity_type": "route", "id": "r_kawashiri_line", "lang": "en", "text": "Kawaramachi~Kawashirimachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yagumahigashisentozai_connecting_line", "lang": "en", "text": "Kanayamabashi~Ikeuchicho", "source": "rule"}
-- {"entity_type": "route", "id": "r_omutashinai_line", "lang": "en", "text": "Sakaemachi-Ekimae~Yotsuyama", "source": "rule"}
+- {"entity_type": "route", "id": "r_omutashinai_line", "lang": "en", "text": "Sakaemachi-ekimae~Yotsuyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_odawarashinai_line", "lang": "en", "text": "Odawara~Hakone-Itabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_akitashinai_line", "lang": "en", "text": "Akita-Ekimae~Tsuchizaki", "source": "rule"}
+- {"entity_type": "route", "id": "r_akitashinai_line", "lang": "en", "text": "Akita-ekimae~Tsuchizaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_shindaikumachi_line", "lang": "en", "text": "Omoteteppomachi~Shindaikumachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_shinai_line", "lang": "en", "text": "Kawaraishi~Hondori 9-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_kogai_line", "lang": "en", "text": "Hondori 9-chome~Hirokosaten", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagahama_line", "lang": "en", "text": "Hirokosaten~Nagahama", "source": "rule"}
-- {"entity_type": "route", "id": "r_hyogo_line", "lang": "en", "text": "Nankomae~Tsukishima", "source": "rule"}
+- {"entity_type": "route", "id": "r_hyogo_line", "lang": "en", "text": "Nanko-mae~Tsukishima", "source": "rule"}
 - {"entity_type": "route", "id": "r_minatogawa_line", "lang": "en", "text": "Minatogawakoennishiguchi~Shinkaichi", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimonoishiki_line", "lang": "en", "text": "Otobashi~Shimonoisshiki", "source": "rule"}
-- {"entity_type": "route", "id": "r_uehommachi_line", "lang": "en", "text": "Uehommachi 2-chome~Tennojisaimommae", "source": "rule"}
+- {"entity_type": "route", "id": "r_uehommachi_line", "lang": "en", "text": "Uehommachi 2-chome~Tennojisaimon-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_temmabashizengenjicho_line", "lang": "en", "text": "Temmabashi~Higashi-Nodamachi 9-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_higashinodakasugaecho_line", "lang": "en", "text": "Higashi-Nodamachi 9-chome~Miyakojimashakomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_higashinodakasugaecho_line", "lang": "en", "text": "Higashi-Nodamachi 9-chome~Miyakojima-shako-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kudara_line", "lang": "en", "text": "Teradacho~Kudara", "source": "rule"}
-- {"entity_type": "route", "id": "r_nishidotomboritennoji_line", "lang": "en", "text": "Sakuragawa 2-chome~Tennojisaimommae", "source": "rule"}
+- {"entity_type": "route", "id": "r_nishidotomboritennoji_line", "lang": "en", "text": "Sakuragawa 2-chome~Tennojisaimon-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_hankai_line_osaka_city", "lang": "en", "text": "Ashiharabashi~Dejima", "source": "rule"}
-- {"entity_type": "route", "id": "r_nishinodasakurajima_line", "lang": "en", "text": "Kanehiracho~Sakurajima-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_nishinodasakurajima_line", "lang": "en", "text": "Kanehiracho~Sakurajima-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyakojimamoriguchi_line", "lang": "en", "text": "Miyakojimahondori~Moriguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tanimachineyagawa_line", "lang": "en", "text": "Keihanhigashiguchi~Tanimachi 3-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishiyagawa_line", "lang": "en", "text": "Kamitsutsui 1-chome~Ishiyagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_hirano_line", "lang": "en", "text": "Arimamichi~Hirano", "source": "rule"}
 - {"entity_type": "route", "id": "r_kawasakishiden", "lang": "en", "text": "Shidenkawasaki~Shiohama", "source": "rule"}
-- {"entity_type": "route", "id": "r_nikko_tramway_line", "lang": "en", "text": "Kokutetsu-Ekimae~Umagaeshi", "source": "rule"}
+- {"entity_type": "route", "id": "r_nikko_tramway_line", "lang": "en", "text": "Kokutetsu-ekimae~Umagaeshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitasenju_line", "lang": "en", "text": "Senjuohashi~Senju 4-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_hanzomon_line_toei", "lang": "en", "text": "Hibiyakoen~Hanzomon", "source": "rule"}
 - {"entity_type": "route", "id": "r_dobashi_line", "lang": "en", "text": "Shintokiwabashi~Sukiyabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_minowa_line", "lang": "en", "text": "Ueno-Ekimae~Senjuohashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_isarago_line", "lang": "en", "text": "Furukawabashi~Sengakujimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_minowa_line", "lang": "en", "text": "Ueno-ekimae~Senjuohashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_isarago_line", "lang": "en", "text": "Furukawabashi~Sengakuji-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_roppongi_line", "lang": "en", "text": "Hamamatsucho 1-chome~Kita-Aoyama 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_senzoku_line", "lang": "en", "text": "Kuramae 1-chome~Minowashakomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_senzoku_line", "lang": "en", "text": "Kuramae 1-chome~Minowa-shako-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_furukawa_line", "lang": "en", "text": "Tengenjibashi~Kanasugibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_tengenjibashi_line", "lang": "en", "text": "Shibuya-Ekimae~Tengenjibashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_tengenjibashi_line", "lang": "en", "text": "Shibuya-ekimae~Tengenjibashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_hiroo_line_toei", "lang": "en", "text": "Kita-Aoyama 1-chome~Tengenjibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_ikebukuro_line_toei", "lang": "en", "text": "Gokokujimae~Ikebukuro-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_ikebukuro_line_toei", "lang": "en", "text": "Gokokuji-mae~Ikebukuro-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_rokkakubashi_line", "lang": "en", "text": "Rokkakubashi~Aokidori", "source": "rule"}
-- {"entity_type": "route", "id": "r_hommoku_line", "lang": "en", "text": "Sakuragicho-Ekimae~Makado", "source": "rule"}
+- {"entity_type": "route", "id": "r_hommoku_line", "lang": "en", "text": "Sakuragicho-ekimae~Makado", "source": "rule"}
 - {"entity_type": "route", "id": "r_negishi_line_yokohama_city", "lang": "en", "text": "Makado~Yawatabashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_idogaya_line", "lang": "en", "text": "Hodogaya-eki~Toricho 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_harutake_line", "lang": "en", "text": "Karashimacho~Minami-Kumamoto-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_harutake_line", "lang": "en", "text": "Karashimacho~Minami-Kumamoto-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_inari_line", "lang": "en", "text": "Kanjimbashi~Inari", "source": "rule"}
 - {"entity_type": "route", "id": "r_fushiki_line", "lang": "en", "text": "Yonejimaguchi~Fushikiko", "source": "rule"}
 - {"entity_type": "route", "id": "r_dozaka_line", "lang": "en", "text": "Uenokoen~Sengoku 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_kitagojo_line", "lang": "en", "text": "Sapporo-Ekimae~Chuoshijodori", "source": "rule"}
+- {"entity_type": "route", "id": "r_kitagojo_line", "lang": "en", "text": "Sapporo-ekimae~Chuoshijodori", "source": "rule"}
 - {"entity_type": "route", "id": "r_senju_line", "lang": "en", "text": "Komagata 2-chome~Minami-Senju", "source": "rule"}
-- {"entity_type": "route", "id": "r_otsuka_line", "lang": "en", "text": "Denzuimmae~Otsuka-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_otsuka_line", "lang": "en", "text": "Denzuin-mae~Otsuka-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamaguchicho_line", "lang": "en", "text": "Heidencho~Akatsuka", "source": "rule"}
 - {"entity_type": "route", "id": "r_karato_line", "lang": "en", "text": "Higashishimonoseki~Karato", "source": "rule"}
 - {"entity_type": "route", "id": "r_hongo_line", "lang": "en", "text": "Sotokanda 2-chome~Mukogaoka 2-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakaemachi_line", "lang": "en", "text": "Sasashimacho~Nishiura", "source": "rule"}
-- {"entity_type": "route", "id": "r_shimizuguchiencho_line", "lang": "en", "text": "Shimizuguchi~Johokugakkomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_ishiwara_line", "lang": "en", "text": "Ishiwara 1-chome~Kinshicho-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_shimizuguchiencho_line", "lang": "en", "text": "Shimizuguchi~Johoku-gakko-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_ishiwara_line", "lang": "en", "text": "Ishiwara 1-chome~Kinshicho-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsukiji_line", "lang": "en", "text": "Hibiyakoen~Kayabacho", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsukijisen_branch_line", "lang": "en", "text": "Inaeicho~Nishiinaei", "source": "rule"}
-- {"entity_type": "route", "id": "r_naebo_line", "lang": "en", "text": "Dochomae~Naebo-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_gokokuji_line", "lang": "en", "text": "Sengoku 1-chome~Gokokujimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_naebo_line", "lang": "en", "text": "Docho-mae~Naebo-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_gokokuji_line", "lang": "en", "text": "Sengoku 1-chome~Gokokuji-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_chojamachi_line", "lang": "en", "text": "Nishihiranumabashi~Yamamotocho", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakamura_line_nagoya_city", "lang": "en", "text": "Sasashimacho~Inabajicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kuboyama_line", "lang": "en", "text": "Hamamatsucho~Urafunecho", "source": "rule"}
@@ -2714,86 +2714,86 @@
 - {"entity_type": "route", "id": "r_oshikirijoshin_connecting_line", "lang": "en", "text": "Oshikiricho~Joshincho", "source": "rule"}
 - {"entity_type": "route", "id": "r_sugita_line", "lang": "en", "text": "Ashinabashi~Sugita", "source": "rule"}
 - {"entity_type": "route", "id": "r_isogo_line", "lang": "en", "text": "Yoshinocho 3-chome~Ashinabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_toko_line", "lang": "en", "text": "Tsurumakoen~Horita-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_toko_line", "lang": "en", "text": "Tsurumakoen~Horita-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_toko_line_takatsuji_takiko", "lang": "en", "text": "Takatsuji~Takiko", "source": "rule"}
 - {"entity_type": "route", "id": "r_takaokaencho_line", "lang": "en", "text": "Higashishincho~Tsurumakoen", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimoegawa_line", "lang": "en", "text": "Yanagibashi~Funakata", "source": "rule"}
 - {"entity_type": "route", "id": "r_yagumahigashi_line", "lang": "en", "text": "Yagumadori~Takatsuji", "source": "rule"}
 - {"entity_type": "route", "id": "r_oe_line", "lang": "en", "text": "Uchidabashi~Showamachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_higashiyamakoen", "lang": "en", "text": "Dobutsuen~Botanical Garden", "source": "rule"}
-- {"entity_type": "route", "id": "r_kasaderaencho_line", "lang": "en", "text": "Kasaderanishimommae~Kasadera-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kasaderaencho_line", "lang": "en", "text": "Kasaderanishimon-mae~Kasadera-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_narihira_line", "lang": "en", "text": "Midori 1-chome~Fukujimbashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kotobashi_line", "lang": "en", "text": "Ryogoku 2-chome~Kinshibori", "source": "rule"}
-- {"entity_type": "route", "id": "r_sunamachi_line", "lang": "en", "text": "Suijimmori~Toyokoemmae", "source": "rule"}
+- {"entity_type": "route", "id": "r_sunamachi_line", "lang": "en", "text": "Suijimmori~Toyokoen-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kasaibashi_line", "lang": "en", "text": "Sakaigawa~Kasaibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_sengencho_line", "lang": "en", "text": "Aokibashi~Kofukujimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_owariyabashi_line", "lang": "en", "text": "Kofukujimae~Hamamatsucho", "source": "rule"}
-- {"entity_type": "route", "id": "r_hanazonobashi_line", "lang": "en", "text": "Nihon'odorikenchomae~Mutsumibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_teppoku_line", "lang": "en", "text": "Sapporo-Ekimae~Shin-Kotoni-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_sengencho_line", "lang": "en", "text": "Aokibashi~Kofukuji-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_owariyabashi_line", "lang": "en", "text": "Kofukuji-mae~Hamamatsucho", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanazonobashi_line", "lang": "en", "text": "Nihon'odorikencho-mae~Mutsumibashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_teppoku_line", "lang": "en", "text": "Sapporo-ekimae~Shin-Kotoni-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kokudo_line", "lang": "en", "text": "Noda~Higashikobe", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimizushinai_line", "lang": "en", "text": "Minatobashi~Yokosuna", "source": "rule"}
 - {"entity_type": "route", "id": "r_shimizushinai_line_nishikubo_sodeshi_old_route", "lang": "en", "text": "Nishikubo~Sodeshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_marutamachi_line", "lang": "en", "text": "Tennocho~Emmachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_shirakawa_line", "lang": "en", "text": "Ginkakujimichi~Tennocho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kujo_line", "lang": "en", "text": "Tofukuji~Nishiojikujo", "source": "rule"}
-- {"entity_type": "route", "id": "r_sembon_line", "lang": "en", "text": "Mibushakomae~Sembonkitaoji", "source": "rule"}
-- {"entity_type": "route", "id": "r_omiya_line", "lang": "en", "text": "Mibushakomae~Kujoomiya", "source": "rule"}
-- {"entity_type": "route", "id": "r_hachimammachi_line", "lang": "en", "text": "Daigakubyoimmae~Hachimanjinjamae", "source": "rule"}
-- {"entity_type": "route", "id": "r_haranomachi_line", "lang": "en", "text": "Kakyoin~Haranomachi-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_loop_line_sendai_city", "lang": "en", "text": "Sendai-Ekimae~Kakyoin", "source": "rule"}
-- {"entity_type": "route", "id": "r_loop_line_kakyoin_sendai_ekimae", "lang": "en", "text": "Kakyoin~Sendai-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_kammachi_line", "lang": "en", "text": "Shiyakushomae~Shimizucho", "source": "rule"}
-- {"entity_type": "route", "id": "r_ishiki_line", "lang": "en", "text": "Kajiyacho~Ishikicho", "source": "rule"}
+- {"entity_type": "route", "id": "r_sembon_line", "lang": "en", "text": "Mibu-shako-mae~Sembonkitaoji", "source": "rule"}
+- {"entity_type": "route", "id": "r_omiya_line", "lang": "en", "text": "Mibu-shako-mae~Kujoomiya", "source": "rule"}
+- {"entity_type": "route", "id": "r_hachimammachi_line", "lang": "en", "text": "Daigaku-byoin-mae~Hachiman-jinja-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_haranomachi_line", "lang": "en", "text": "Kakyoin~Haranomachi-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_loop_line_sendai_city", "lang": "en", "text": "Sendai-ekimae~Kakyoin", "source": "rule"}
+- {"entity_type": "route", "id": "r_loop_line_kakyoin_sendai_ekimae", "lang": "en", "text": "Kakyoin~Sendai-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kammachi_line", "lang": "en", "text": "Shiyakusho-mae~Shimizucho", "source": "rule"}
+- {"entity_type": "route", "id": "r_ishiki_line", "lang": "en", "text": "Kajiya-cho~Ishikicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishiki_line_shinshoin_ishiki_old_route", "lang": "en", "text": "Shinshoin~Ishiki", "source": "rule"}
-- {"entity_type": "route", "id": "r_gifushinai_line", "lang": "en", "text": "Gifu-Ekimae~Nagarakitamachi", "source": "rule"}
+- {"entity_type": "route", "id": "r_gifushinai_line", "lang": "en", "text": "Gifu-ekimae~Nagarakitamachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_gifushinai_line_chusetsu_branch", "lang": "en", "text": "Tetsumeicho~Chusetsu", "source": "rule"}
-- {"entity_type": "route", "id": "r_miyamae_line", "lang": "en", "text": "Gasugaishamae~Goryokakukoemmae", "source": "rule"}
+- {"entity_type": "route", "id": "r_miyamae_line", "lang": "en", "text": "Gasugaisha-mae~Goryokaku-Koen-Mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_toranomon_line", "lang": "en", "text": "Sakuradamon~Kamiyacho", "source": "rule"}
-- {"entity_type": "route", "id": "r_gotanda_line", "lang": "en", "text": "Seishokomae~Gotanda-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_gotanda_line", "lang": "en", "text": "Seishoko-mae~Gotanda-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_tameike_line", "lang": "en", "text": "Toranomon~Yotsuyamitsuke", "source": "rule"}
-- {"entity_type": "route", "id": "r_totsuka_line", "lang": "en", "text": "Takadanobaba-Ekimae~Omokagebashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_suidobashi_line", "lang": "en", "text": "Shintokiwabashi~Bunkyokuyakushomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_aoyama_line", "lang": "en", "text": "Miyakezaka~Shibuya-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_totsuka_line", "lang": "en", "text": "Takadanobaba-ekimae~Omokagebashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_suidobashi_line", "lang": "en", "text": "Shintokiwabashi~Bunkyo-kuyakusho-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_aoyama_line", "lang": "en", "text": "Miyakezaka~Shibuya-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_shinanomachi_line", "lang": "en", "text": "Yotsuya-sanchome~Kita-Aoyama 1-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_ichigaya_line", "lang": "en", "text": "Kudan'ue~Ichigayamitsuke", "source": "rule"}
 - {"entity_type": "route", "id": "r_nakameguro_line", "lang": "en", "text": "Shibuyabashi~Naka-Meguro", "source": "rule"}
-- {"entity_type": "route", "id": "r_koenji_line", "lang": "en", "text": "Shinjuku-Ekimae~Koenji 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_ogikubo_line", "lang": "en", "text": "Koenji 1-chome~Ogikubo-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_meguro_line_toei", "lang": "en", "text": "Gyoranzakashita~Meguro-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_marunouchi_line_toei", "lang": "en", "text": "Marunouchi 1-chome~Tochomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_shinjuku_line_toden", "lang": "en", "text": "Hanzomon~Shinjuku-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_ueno_line", "lang": "en", "text": "Sudacho~Ueno-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_koenji_line", "lang": "en", "text": "Shinjuku-ekimae~Koenji 1-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_ogikubo_line", "lang": "en", "text": "Koenji 1-chome~Ogikubo-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_meguro_line_toei", "lang": "en", "text": "Gyoranzakashita~Meguro-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_marunouchi_line_toei", "lang": "en", "text": "Marunouchi 1-chome~Tocho-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_shinjuku_line_toden", "lang": "en", "text": "Hanzomon~Shinjuku-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_ueno_line", "lang": "en", "text": "Sudacho~Ueno-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_hatchobori_line", "lang": "en", "text": "Babasakimon~Eitaibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_izumibashi_line", "lang": "en", "text": "Suitengumae~Ueno-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_komagome_line", "lang": "en", "text": "Mukogaoka 2-chome~Komagome-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_asukayama_line", "lang": "en", "text": "Komagome-Ekimae~Asukayama", "source": "rule"}
-- {"entity_type": "route", "id": "r_hakusan_line", "lang": "en", "text": "Bunkyokuyakushomae~Hakusan'ue", "source": "rule"}
-- {"entity_type": "route", "id": "r_sugamo_line", "lang": "en", "text": "Hakusan'ue~Sugamoshakomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_itabashi_line", "lang": "en", "text": "Sugamoshakomae~Itabashi 5-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_otowa_line", "lang": "en", "text": "Gokokujimae~Edogawabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_kiridoshi_line", "lang": "en", "text": "Bunkyokuyakushomae~Ueno-hirokoji", "source": "rule"}
-- {"entity_type": "route", "id": "r_tomizaka_line", "lang": "en", "text": "Omagari~Bunkyokuyakushomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_izumibashi_line", "lang": "en", "text": "Suitengu-mae~Ueno-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_komagome_line", "lang": "en", "text": "Mukogaoka 2-chome~Komagome-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_asukayama_line", "lang": "en", "text": "Komagome-ekimae~Asukayama", "source": "rule"}
+- {"entity_type": "route", "id": "r_hakusan_line", "lang": "en", "text": "Bunkyo-kuyakusho-mae~Hakusan'ue", "source": "rule"}
+- {"entity_type": "route", "id": "r_sugamo_line", "lang": "en", "text": "Hakusan'ue~Sugamo-shako-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_itabashi_line", "lang": "en", "text": "Sugamo-shako-mae~Itabashi 5-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_otowa_line", "lang": "en", "text": "Gokokuji-mae~Edogawabashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_kiridoshi_line", "lang": "en", "text": "Bunkyo-kuyakusho-mae~Ueno-hirokoji", "source": "rule"}
+- {"entity_type": "route", "id": "r_tomizaka_line", "lang": "en", "text": "Omagari~Bunkyo-kuyakusho-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_umayabashi_line", "lang": "en", "text": "Ueno-hirokoji~Honjo 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_azumabashi_line", "lang": "en", "text": "Ueno-Ekimae~Azumabashi 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_ryogoku_station_spur_line", "lang": "en", "text": "Ryogoku 2-chome~Ryogoku-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_shinohashi_line", "lang": "en", "text": "Kayabacho~Sumiyoshicho 2-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_susaki_line", "lang": "en", "text": "Eitaibashi~Toyokoemmae", "source": "rule"}
-- {"entity_type": "route", "id": "r_akabane_line_toei", "lang": "en", "text": "Oji-Ekimae~Akabane", "source": "rule"}
+- {"entity_type": "route", "id": "r_azumabashi_line", "lang": "en", "text": "Ueno-ekimae~Azumabashi 1-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_ryogoku_station_spur_line", "lang": "en", "text": "Ryogoku 2-chome~Ryogoku-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_shinohashi_line", "lang": "en", "text": "Kayabacho~Sumiyoshichō 2-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_susaki_line", "lang": "en", "text": "Eitaibashi~Toyokoen-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_akabane_line_toei", "lang": "en", "text": "Oji-ekimae~Akabane", "source": "rule"}
 - {"entity_type": "route", "id": "r_kujonakanoshima_line", "lang": "en", "text": "Funatsubashi~Kujoshimmichi", "source": "rule"}
 - {"entity_type": "route", "id": "r_chikko_line_osaka_city", "lang": "en", "text": "Kujoshimmichi~Osakako", "source": "rule"}
 - {"entity_type": "route", "id": "r_chikkokitakaigandori_line", "lang": "en", "text": "Osakako~Sanjodori 4-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_tosaborinangan_line", "lang": "en", "text": "Kawaguchicho~Yodoyabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_matsushimaajigawa_line", "lang": "en", "text": "Matsushimakoemmae~Tamafunebashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_matsushimaajigawa_line", "lang": "en", "text": "Matsushimakoen-mae~Tamafunebashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kasumicho_line_osaka_city", "lang": "en", "text": "Ebisucho~Kasumicho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kasumichotamatsukuri_line", "lang": "en", "text": "Kasumicho~Tamatsukuri", "source": "rule"}
 - {"entity_type": "route", "id": "r_nambakizu_line", "lang": "en", "text": "Nigiwaibashi~Daikokucho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitahama_line", "lang": "en", "text": "Kitahama 2-chome~Tenjimbashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_imabashitemmabashisuji_line", "lang": "en", "text": "Tenjimbashi~Temmabashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_umedazengenjicho_line", "lang": "en", "text": "Osaka-Ekimae~Miyakojimashakomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_umedazengenjicho_line", "lang": "en", "text": "Ōsaka-ekimae~Miyakojima-shako-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_fukushimasonezaki_line", "lang": "en", "text": "Umedashimmichi~Fukushimanishidori", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishinodafukushima_line", "lang": "en", "text": "Fukushimanishidori~Tamagawacho 4-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishinoda_line", "lang": "en", "text": "Funatsubashi~Kanehiracho", "source": "rule"}
-- {"entity_type": "route", "id": "r_noda_line_osaka_city", "lang": "en", "text": "Tamagawacho 3-chome~Nodahanshindenshamae", "source": "rule"}
+- {"entity_type": "route", "id": "r_noda_line_osaka_city", "lang": "en", "text": "Tamagawacho 3-chome~Nodahanshindensha-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_sonezakitemmabashisuji_line", "lang": "en", "text": "Umedashimmichi~Temmabashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_temmaimafuku_line", "lang": "en", "text": "Kushincho 2-chome~Imafuku", "source": "rule"}
 - {"entity_type": "route", "id": "r_tenjimbashinishisuji_line", "lang": "en", "text": "Kitahama 2-chome~Tenjimbashisuji 6-chome", "source": "rule"}
@@ -2805,27 +2805,27 @@
 - {"entity_type": "route", "id": "r_tamatsukuri_line", "lang": "en", "text": "Sueyoshibashi~Tamatsukuri", "source": "rule"}
 - {"entity_type": "route", "id": "r_tamatsukuriimazato_line", "lang": "en", "text": "Tamatsukuri~Imazato", "source": "rule"}
 - {"entity_type": "route", "id": "r_otemaeuehommachi_line", "lang": "en", "text": "Bambacho~Uehommachi 2-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_tennojiabeno_line", "lang": "en", "text": "Tennojisaimommae~Abenobashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_tennojiabeno_line", "lang": "en", "text": "Tennojisaimon-mae~Abenobashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kujokozu_line", "lang": "en", "text": "Tamafunebashi~Uehommachi 6-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_uehommachishimoajiharacho_line", "lang": "en", "text": "Uehommachi 6-chome~Shimoajiharacho", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsuruhashi_line", "lang": "en", "text": "Shimoajiharacho~Imazato", "source": "rule"}
 - {"entity_type": "route", "id": "r_dojimaohashi_line", "lang": "en", "text": "Fukushimanishidori~Dojimaohashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakuragawanakanoshima_line", "lang": "en", "text": "Sakuragawa 2-chome~Dojimaohashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_tennojidaido_line", "lang": "en", "text": "Tennojisaimommae~Teradacho", "source": "rule"}
-- {"entity_type": "route", "id": "r_namboku_line", "lang": "en", "text": "Osaka-Ekimae~Ebisucho", "source": "rule"}
-- {"entity_type": "route", "id": "r_namboku_line_midosuji_branch", "lang": "en", "text": "Osaka-Ekimae~Oebashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_tennojidaido_line", "lang": "en", "text": "Tennojisaimon-mae~Teradacho", "source": "rule"}
+- {"entity_type": "route", "id": "r_namboku_line", "lang": "en", "text": "Ōsaka-ekimae~Ebisucho", "source": "rule"}
+- {"entity_type": "route", "id": "r_namboku_line_midosuji_branch", "lang": "en", "text": "Ōsaka-ekimae~Oebashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakaisuji_line_osaka_city", "lang": "en", "text": "Oebashi~Nippombashisuji 3-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_hirano_line_nankai", "lang": "en", "text": "Imaike~Hirano", "source": "rule"}
-- {"entity_type": "route", "id": "r_kakomachiencho_line", "lang": "en", "text": "Kakomachi~Rokutanshogakkomae", "source": "rule"}
-- {"entity_type": "route", "id": "r_sasashima_line", "lang": "en", "text": "Rokutanshogakkomae~Nagoya-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_hiroicho_line", "lang": "en", "text": "Nagoya-Ekimae~Nagonocho", "source": "rule"}
+- {"entity_type": "route", "id": "r_kakomachiencho_line", "lang": "en", "text": "Kakomachi~Rokutan-shogakko-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_sasashima_line", "lang": "en", "text": "Rokutan-shogakko-mae~Nagoya-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_hiroicho_line", "lang": "en", "text": "Nagoya-ekimae~Nagonocho", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamiegawa_line", "lang": "en", "text": "Shimacho~Joshincho", "source": "rule"}
 - {"entity_type": "route", "id": "r_joshinencho_line", "lang": "en", "text": "Joshincho~Chichibudori", "source": "rule"}
 - {"entity_type": "route", "id": "r_junkankita_line", "lang": "en", "text": "Yadacho 4-chome~Yadacho 10-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_fujinari_line", "lang": "en", "text": "Takiko~Shiritsudaigakubyoin", "source": "rule"}
-- {"entity_type": "route", "id": "r_higashirinko_line", "lang": "en", "text": "Kasadera-Ekimae~Oecho", "source": "rule"}
+- {"entity_type": "route", "id": "r_higashirinko_line", "lang": "en", "text": "Kasadera-ekimae~Oecho", "source": "rule"}
 - {"entity_type": "route", "id": "r_fushimi_line", "lang": "en", "text": "Shiokojitakakura~Chushojima", "source": "rule"}
-- {"entity_type": "route", "id": "r_kawaramachi_line", "lang": "en", "text": "Rakuhokukokomae~Kyoto-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kawaramachi_line", "lang": "en", "text": "Rakuhoku-koko-mae~Kyōto-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_nishioji_line", "lang": "en", "text": "Sembonkitaoji~Nishiojikujo", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitaoji_line", "lang": "en", "text": "Takano~Sembonkitaoji", "source": "rule"}
 - {"entity_type": "route", "id": "r_higashiyama_line_kyoto_city", "lang": "en", "text": "Takano~Tofukuji", "source": "rule"}
@@ -2833,32 +2833,32 @@
 - {"entity_type": "route", "id": "r_shijo_line", "lang": "en", "text": "Gion~Shijoomiya", "source": "rule"}
 - {"entity_type": "route", "id": "r_shichijo_line", "lang": "en", "text": "Higashiyamashichijo~Nishiojishichijo", "source": "rule"}
 - {"entity_type": "route", "id": "r_umezu_line", "lang": "en", "text": "Nishiojishijo~Umezu", "source": "rule"}
-- {"entity_type": "route", "id": "r_karasuma_line_kyoto_tram", "lang": "en", "text": "Karasumashakomae~Kyoto-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_namamugi_line", "lang": "en", "text": "Namamugi~Susakijinjamae", "source": "rule"}
-- {"entity_type": "route", "id": "r_kanagawa_line", "lang": "en", "text": "Susakijinjamae~Sakuragicho-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_hinodecho_line", "lang": "en", "text": "Sakuragicho-Ekimae~Yoshinocho 3-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_honmachi_line_transportation_bureau_city_of_yokohama", "lang": "en", "text": "Sakuragicho-Ekimae~Nihon'odorikenchomae", "source": "rule"}
+- {"entity_type": "route", "id": "r_karasuma_line_kyoto_tram", "lang": "en", "text": "Karasuma-shako-mae~Kyōto-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_namamugi_line", "lang": "en", "text": "Namamugi~Susaki-jinja-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kanagawa_line", "lang": "en", "text": "Susaki-jinja-mae~Sakuragicho-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_hinodecho_line", "lang": "en", "text": "Sakuragicho-ekimae~Yoshinocho 3-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_honmachi_line_transportation_bureau_city_of_yokohama", "lang": "en", "text": "Sakuragicho-ekimae~Nihon'odorikencho-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_hagoromocho_line", "lang": "en", "text": "Honcho 4-chome~Yoshinocho 3-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_sakaemachi_main_line", "lang": "en", "text": "Takimichibunkiten~Hyogo-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_sakaemachi_main_line", "lang": "en", "text": "Takimichibunkiten~Hyōgo-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_nunobiki_line", "lang": "en", "text": "Takimichibunkiten~Kamitsutsui 1-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_zeikan_line", "lang": "en", "text": "Takimichibunkiten~Zeikammae", "source": "rule"}
+- {"entity_type": "route", "id": "r_zeikan_line", "lang": "en", "text": "Takimichibunkiten~Zeikan-mae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kokudo_line_kobe_city", "lang": "en", "text": "Sannomiyabunkiten~Wakinohamacho", "source": "rule"}
 - {"entity_type": "route", "id": "r_suma_line", "lang": "en", "text": "Higashi-Shiriike 2-chome~Suma-eki", "source": "rule"}
 - {"entity_type": "route", "id": "r_wada_line", "lang": "en", "text": "Nakanoshima~Takamatsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_takamatsu_line", "lang": "en", "text": "Higashi-Shiriike 2-chome~Takamatsu", "source": "rule"}
 - {"entity_type": "route", "id": "r_kitaosaka_line", "lang": "en", "text": "Noda~Tenjimbashisuji 6-chome", "source": "rule"}
-- {"entity_type": "route", "id": "r_nishiyonchome_line_nishi_4_chome_mitsukoshimae", "lang": "en", "text": "Nishi 4-chome~Mitsukoshimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_nishinijitchome_line", "lang": "en", "text": "Chuoshijodori~Choseiemmae", "source": "rule"}
-- {"entity_type": "route", "id": "r_shinonome_line", "lang": "en", "text": "Horaicho~Matsukazecho", "source": "rule"}
-- {"entity_type": "route", "id": "r_nagamachi_line", "lang": "en", "text": "Chuo 3-chome~Nagamachi-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_kitasendai_line", "lang": "en", "text": "Futsukamachi~Kita-Sendai-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_tobu_line", "lang": "en", "text": "Nishicho~Chitetsu Building-mae", "source": "rule"}
-- {"entity_type": "route", "id": "r_miyashita_line", "lang": "en", "text": "Higashidenjigata~Denki Building-mae", "source": "rule"}
-- {"entity_type": "route", "id": "r_yamamuro_line", "lang": "en", "text": "Chukyoimmae~Fujikoshi-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_kainan_line", "lang": "en", "text": "Nankaiwakayamashi-Ekimae~Kainan-Ekimae", "source": "rule"}
-- {"entity_type": "route", "id": "r_shimmachi_line", "lang": "en", "text": "Koemmae~Kokutetsuwakayama-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_nishiyonchome_line_nishi_4_chome_mitsukoshimae", "lang": "en", "text": "Nishi 4-chome~Mitsukoshi-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_nishinijitchome_line", "lang": "en", "text": "Chuoshijodori~Choseien-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_shinonome_line", "lang": "en", "text": "Horai-Cho~Matsukaze-Cho", "source": "rule"}
+- {"entity_type": "route", "id": "r_nagamachi_line", "lang": "en", "text": "Chuo 3-chome~Nagamachi-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kitasendai_line", "lang": "en", "text": "Futsukamachi~Kita-Sendai-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_tobu_line", "lang": "en", "text": "Nishicho~Chitetsu-Biru-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_miyashita_line", "lang": "en", "text": "Higashidenjigata~Denki-Biru-mae", "source": "rule"}
+- {"entity_type": "route", "id": "r_yamamuro_line", "lang": "en", "text": "Chukyoin-mae~Fujikoshi-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_kainan_line", "lang": "en", "text": "Nankaiwakayamashi-ekimae~Kainan-ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_shimmachi_line", "lang": "en", "text": "Koen-mae~Kokutetsuwakayama-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_wakaura_branch_line", "lang": "en", "text": "Wakauraguchi~Shinwakaura", "source": "rule"}
-- {"entity_type": "route", "id": "r_kantsu_line", "lang": "en", "text": "Kyudaimae~Meinohama", "source": "rule"}
+- {"entity_type": "route", "id": "r_kantsu_line", "lang": "en", "text": "Kyudai-mae~Meinohama", "source": "rule"}
 - {"entity_type": "route", "id": "r_gofukumachi_line", "lang": "en", "text": "Gofukumachi~Giommachi", "source": "rule"}
 - {"entity_type": "route", "id": "r_jonan_line_nishi_nippon", "lang": "en", "text": "Watanabe-dori 1-chome~Nishijin", "source": "rule"}
 - {"entity_type": "route", "id": "r_tobata_line", "lang": "en", "text": "Daimon~Tobata", "source": "rule"}
@@ -2866,12 +2866,12 @@
 - {"entity_type": "route", "id": "r_kitagata_line", "lang": "en", "text": "Uomachi~Kitagata", "source": "rule"}
 - {"entity_type": "route", "id": "r_yamatomachi_line", "lang": "en", "text": "Shimonoseki-eki~Hikoshimaguchi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kurokami_line", "lang": "en", "text": "Jogyojimachi~Kokaibashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_tsuboi_line", "lang": "en", "text": "Fujisakigumae~Kami-Kumamoto-Ekimae", "source": "rule"}
+- {"entity_type": "route", "id": "r_tsuboi_line", "lang": "en", "text": "Fujisakigu-mae~Kami-Kumamoto-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_kannabe_line", "lang": "en", "text": "Ibara~Kannabe", "source": "rule"}
 - {"entity_type": "route", "id": "r_yakage_line", "lang": "en", "text": "Kitagawa~Yakage", "source": "rule"}
-- {"entity_type": "route", "id": "r_mukogaoka_yuen_monorail_line", "lang": "en", "text": "Mukogaoka-Yuen~Mukogaoka-Yuen-Seimon", "source": "rule"}
-- {"entity_type": "route", "id": "r_kotohira_line_kotohira_sangu", "lang": "en", "text": "Zentsujiakamommae~Kotosankotohira", "source": "rule"}
-- {"entity_type": "route", "id": "r_minami_line_matobacho", "lang": "en", "text": "Matobacho~Hijiyamashita", "source": "rule"}
+- {"entity_type": "route", "id": "r_mukogaoka_yuen_monorail_line", "lang": "en", "text": "Mukogaoka-yuen~Mukogaoka-Yuen-Seimon", "source": "rule"}
+- {"entity_type": "route", "id": "r_kotohira_line_kotohira_sangu", "lang": "en", "text": "Zentsujiakamon-mae~Kotosankotohira", "source": "rule"}
+- {"entity_type": "route", "id": "r_minami_line_matobacho", "lang": "en", "text": "Matoba-cho~Hijiyama-shita", "source": "rule"}
 - {"entity_type": "route", "id": "r_nikko_cable_line", "lang": "ja", "text": "馬返～明智平", "source": "rule"}
 - {"entity_type": "route", "id": "r_nikko_cable_line", "lang": "ko", "text": "우마가에시~아케치다이라", "source": "rule"}
 - {"entity_type": "route", "id": "r_nikko_cable_line", "lang": "en", "text": "Umagaeshi~Akechidaira", "source": "rule"}
@@ -2907,7 +2907,7 @@
 - {"entity_type": "route", "id": "r_oji_keiben_railway_shikotsuko_branch", "lang": "en", "text": "分岐点~湖畔", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "ja", "text": "前原～京成津田沼", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "ko", "text": "마에바라~케이세이츠다누마", "source": "rule"}
-- {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "en", "text": "Maebara~Keisei Tsudanuma", "source": "rule"}
+- {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "en", "text": "Maebara~Keisei-Tsudanuma", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamaishi_line_ashigase_sennintoge_old", "lang": "ja", "text": "足ヶ瀬～仙人峠", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamaishi_line_ashigase_sennintoge_old", "lang": "ko", "text": "아시가세~센닌토게", "source": "rule"}
 - {"entity_type": "route", "id": "r_kamaishi_line_ashigase_sennintoge_old", "lang": "en", "text": "Ashigase~Sennintoge", "source": "rule"}
@@ -2960,6 +2960,12 @@
 - {"entity_type": "route", "id": "r_sotobo_line_soga_chiba_old", "lang": "ja", "text": "蘇我～千葉（旧）", "source": "rule"}
 - {"entity_type": "route", "id": "r_sotobo_line_soga_chiba_old", "lang": "ko", "text": "소가~치바(구)", "source": "rule"}
 - {"entity_type": "route", "id": "r_sotobo_line_soga_chiba_old", "lang": "en", "text": "Soga~Chiba (old)", "source": "rule"}
+- {"entity_type": "route", "id": "r_keio_line_shinsen_shinjuku_sasazuka", "lang": "ja", "text": "新宿～笹塚", "source": "rule"}
+- {"entity_type": "route", "id": "r_keio_line_shinsen_shinjuku_sasazuka", "lang": "ko", "text": "신주쿠~사사즈카", "source": "rule"}
+- {"entity_type": "route", "id": "r_keio_line_shinsen_shinjuku_sasazuka", "lang": "en", "text": "Shinjuku~Sasazuka", "source": "rule"}
+- {"entity_type": "route", "id": "r_keio_line_shinjuku_sasazuka_old", "lang": "ja", "text": "新宿～笹塚", "source": "rule"}
+- {"entity_type": "route", "id": "r_keio_line_shinjuku_sasazuka_old", "lang": "ko", "text": "신주쿠~사사즈카", "source": "rule"}
+- {"entity_type": "route", "id": "r_keio_line_shinjuku_sasazuka_old", "lang": "en", "text": "Shinjuku~Sasazuka", "source": "rule"}
 - {"entity_type": "route", "id": "r_shima_line_freight", "lang": "ja", "text": "賢島～真珠港", "source": "rule"}
 - {"entity_type": "route", "id": "r_nemuro_main_line_freight_tenneru", "lang": "ja", "text": "東釧路～天寧", "source": "rule"}
 - {"entity_type": "route", "id": "r_nemuro_main_line_freight_hama_akkeshi", "lang": "ja", "text": "厚岸～浜厚岸", "source": "rule"}
