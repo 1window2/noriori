@@ -18,7 +18,7 @@ def norm_official(s):
     """공식 자료에서 옮긴 글자 흔적을 고친다: 전각 글자, 굽은 따옴표(ROYCE’), 가운뎃점(Ōmori・Kinjōgakuin-mae),
     낱말 가운데 대문자 장음 기호(KyŪkan). 장음 기호 자체는 공식대로 둔다"""
     s=''.join(unicodedata.normalize('NFKC',c) if c not in '・' and unicodedata.east_asian_width(c)=='F' else c for c in s)
-    s=s.replace('’',"'").replace('‘',"'").replace('・','-')
+    s=s.replace('’',"'").replace('‘',"'").replace('・','-').replace('·','-')
     return re.sub('(?<=[a-zāīūēō])[ĀĪŪĒŌ]',lambda m:m.group(0).lower(),s)
 
 # 훈독 낱말의 첫 글자. 長音처럼 보여도 앞 글자와 다른 낱말이라 줄이면 안 된다 (丸ノ内, 松浦, 箕面)

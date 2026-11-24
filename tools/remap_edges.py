@@ -11,7 +11,8 @@ sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import ROOT,load
 OV=os.path.join(ROOT,'data','overrides')
 KEYS=os.path.join(OV,'edge_keys.json')
-PAT=re.compile(r'e_\d{6}')
+# 낱말 경계를 본다. 사진 파일 이름 「line_20210320」 안의 「e_202103」을 edge 번호로 읽지 않는다 (5회차 영어 이름 근거, 2026-11-25)
+PAT=re.compile(r'(?<![A-Za-z0-9_])e_\d{6}(?!\d)')
 def files():
     out=[]
     for f in sorted(glob.glob(os.path.join(OV,'**','*'),recursive=True)):
