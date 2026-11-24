@@ -2209,7 +2209,8 @@ for x in list(names):
         names.append(dict(entity_type='node',id=x['id'],lang='ko',text=t_,source='rule',checked=TODAY));_hasb.add((x['id'],'ko'));_kfill['ko']+=1
 print('읽기 있는 지금 이름의 빠진 한국어·영어 규칙 행',dict(_kfill))
 # 영어 이름은 일본어와 읽기가 확정된 뒤에 고친다 (DESIGN §9.1, data/overrides/en_fix.json)
-en_rules.fix_nodes(names)
+# 로마자 꼴로 바꾼 번역형 영어 이름(Yagiyama Zoological Park)은 검색 별칭으로 남긴다
+for i_,t_ in en_rules.fix_nodes(names):aliases.append(dict(entity_type='node',id=i_,lang='en',text=t_,kind='translated'))
 # 역 이전의 옛 역 (DESIGN §2.2 옛 역의 표시). 새 역과 이름이 같으면 이름 뒤에 표시를 붙이고, 원래 이름과 노리츠부시 표기는 별칭으로 남긴다
 OLDMARK={'ja':'（旧）','ko':'(구)','en':' (old)'}
 # 노드·언어별 지금 이름. 기간 있는 행은 이 글자와 같을 때만 （旧）를 단다(옛 자리로 옮겨 온 다른 이름의 옛 이름 행은 그대로)

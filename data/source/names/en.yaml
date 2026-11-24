@@ -2124,7 +2124,7 @@
 - {"entity_type": "route", "id": "r_omori_line", "lang": "en", "text": "Matsukaze-Cho~Hakodate Ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_yunokawa_line", "lang": "en", "text": "Matsukaze-Cho~Yunokawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_namboku_line_sendai_city", "lang": "en", "text": "Izumi-chuo~Tomizawa", "source": "rule"}
-- {"entity_type": "route", "id": "r_tozai_line_sendai_city", "lang": "en", "text": "Yagiyama Zoological Park~Arai", "source": "rule"}
+- {"entity_type": "route", "id": "r_tozai_line_sendai_city", "lang": "en", "text": "Yagiyamadobutsukoen~Arai", "source": "rule"}
 - {"entity_type": "route", "id": "r_asakusa_line", "lang": "en", "text": "Nishi-magome~Oshiage", "source": "rule"}
 - {"entity_type": "route", "id": "r_mita_line", "lang": "en", "text": "Meguro~Nishi-takashimadaira", "source": "rule"}
 - {"entity_type": "route", "id": "r_shinjuku_line_toei", "lang": "en", "text": "Shinjuku~Motoyawata", "source": "rule"}
@@ -2250,15 +2250,15 @@
 - {"entity_type": "route", "id": "r_nagao_line", "lang": "en", "text": "Kawaramachi~Nagao", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "lang": "en", "text": "Kawaramachi~Hayashimichi", "source": "rule"}
 - {"entity_type": "route", "id": "r_shido_line", "lang": "en", "text": "Kawaramachi~Kotoden-Sido", "source": "rule"}
-- {"entity_type": "route", "id": "r_takahama_line", "lang": "en", "text": "Takahama~Matsuyama City", "source": "rule"}
-- {"entity_type": "route", "id": "r_yokogawara_line", "lang": "en", "text": "Matsuyama City~Yokogawara", "source": "rule"}
-- {"entity_type": "route", "id": "r_gunchu_line", "lang": "en", "text": "Matsuyama City~Gunchu Port", "source": "rule"}
+- {"entity_type": "route", "id": "r_takahama_line", "lang": "en", "text": "Takahama~Matsuyamashi", "source": "rule"}
+- {"entity_type": "route", "id": "r_yokogawara_line", "lang": "en", "text": "Matsuyamashi~Yokogawara", "source": "rule"}
+- {"entity_type": "route", "id": "r_gunchu_line", "lang": "en", "text": "Matsuyamashi~Gunchuko", "source": "rule"}
 - {"entity_type": "route", "id": "r_johoku_line_iyotetsu", "lang": "en", "text": "Komachi~Heiwadori 1", "source": "rule"}
 - {"entity_type": "route", "id": "r_jonan_line", "lang": "en", "text": "Dogo Onsen~Nishi-Horibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_jonan_line_heiwadori_1_chome_kamiichiman", "lang": "en", "text": "Heiwadori 1~Kamiichiman", "source": "rule"}
 - {"entity_type": "route", "id": "r_honmachi_line", "lang": "en", "text": "Nishi-Horibata~Honmachi 6-chome", "source": "rule"}
 - {"entity_type": "route", "id": "r_otemachi_line", "lang": "en", "text": "Komachi~Nishi-Horibata", "source": "rule"}
-- {"entity_type": "route", "id": "r_hanazono_line", "lang": "en", "text": "Matsuyama City~Minami-Horibata", "source": "rule"}
+- {"entity_type": "route", "id": "r_hanazono_line", "lang": "en", "text": "Matsuyamashi-eki~Minami-Horibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_ino_line", "lang": "en", "text": "Harimayabashi~Ino", "source": "rule"}
 - {"entity_type": "route", "id": "r_gomen_line", "lang": "en", "text": "Gomemmachi~Harimayabashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_sambashi_line", "lang": "en", "text": "Harimayabashi~Sambashidori 5-chome", "source": "rule"}
@@ -2345,7 +2345,7 @@
 - {"entity_type": "route", "id": "r_new_shuttle", "lang": "en", "text": "Omiya~Uchijuku", "source": "rule"}
 - {"entity_type": "route", "id": "r_yurikamome_line", "lang": "en", "text": "Shimbashi~Toyosu", "source": "rule"}
 - {"entity_type": "route", "id": "r_guideway_bus_shidami_line", "lang": "en", "text": "Ozone~Obata Ryokuchi", "source": "rule"}
-- {"entity_type": "route", "id": "r_seikan_tunnel_tappi_shako_line", "lang": "en", "text": "Seikan Tunnel Museum~Taikenkodo", "source": "rule"}
+- {"entity_type": "route", "id": "r_seikan_tunnel_tappi_shako_line", "lang": "en", "text": "Seikan Tunnel Kinenkan~Taikenkodo", "source": "rule"}
 - {"entity_type": "route", "id": "r_takao_tozan_cable_car", "lang": "en", "text": "Kiyotaki~Takaosan", "source": "rule"}
 - {"entity_type": "route", "id": "r_oyama_cable_line", "lang": "en", "text": "Ōyama Cable~Afurijinja", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakamoto_cable", "lang": "en", "text": "Cable Sakamoto~Cable Enryakuji", "source": "rule"}
@@ -2354,7 +2354,7 @@
 - {"entity_type": "route", "id": "r_sarakurayama_cable_car", "lang": "en", "text": "Sanroku~Sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_linimo", "lang": "en", "text": "Fujigaoka~Yakusa", "source": "rule"}
 - {"entity_type": "route", "id": "r_monkey_park_monorail", "lang": "en", "text": "Inuyama-yūen~Dobutsuen", "source": "rule"}
-- {"entity_type": "route", "id": "r_ueno_zoo_monorail_line", "lang": "en", "text": "Ueno Zoo East Garden~Ueno Zoo West Garden", "source": "rule"}
+- {"entity_type": "route", "id": "r_ueno_zoo_monorail_line", "lang": "en", "text": "Ueno-dobutsuen-higashien~Ueno-dobutsuen-nishien", "source": "rule"}
 - {"entity_type": "route", "id": "r_towada_kanko_electric_railway_line", "lang": "en", "text": "Misawa~Towadashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_yashiro_line", "lang": "en", "text": "Yashiro~Suzaka", "source": "rule"}
 - {"entity_type": "route", "id": "r_kashima_railway_line", "lang": "en", "text": "Ishioka~Hokota", "source": "rule"}
@@ -2720,7 +2720,7 @@
 - {"entity_type": "route", "id": "r_shimoegawa_line", "lang": "en", "text": "Yanagibashi~Funakata", "source": "rule"}
 - {"entity_type": "route", "id": "r_yagumahigashi_line", "lang": "en", "text": "Yagumadori~Takatsuji", "source": "rule"}
 - {"entity_type": "route", "id": "r_oe_line", "lang": "en", "text": "Uchidabashi~Showamachi", "source": "rule"}
-- {"entity_type": "route", "id": "r_higashiyamakoen", "lang": "en", "text": "Dobutsuen~Botanical Garden", "source": "rule"}
+- {"entity_type": "route", "id": "r_higashiyamakoen", "lang": "en", "text": "Dobutsuen~Shokubutsuen", "source": "rule"}
 - {"entity_type": "route", "id": "r_kasaderaencho_line", "lang": "en", "text": "Kasaderanishimon-mae~Kasadera-ekimae", "source": "rule"}
 - {"entity_type": "route", "id": "r_narihira_line", "lang": "en", "text": "Midori 1-chome~Fukujimbashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_kotobashi_line", "lang": "en", "text": "Ryogoku 2-chome~Kinshibori", "source": "rule"}

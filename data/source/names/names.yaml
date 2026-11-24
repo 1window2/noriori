@@ -2441,7 +2441,7 @@
 - {"entity_type": "node", "id": "n_koganei", "lang": "en", "text": "Koganei", "source": "official"}
 - {"entity_type": "node", "id": "n_jichi_medical_university", "lang": "ja", "text": "自治医大", "kana": "じちいだい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_jichi_medical_university", "lang": "ko", "text": "지치이다이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_jichi_medical_university", "lang": "en", "text": "Jichi Medical University", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_jichi_medical_university", "lang": "en", "text": "Jichiidai", "source": "rule"}
 - {"entity_type": "node", "id": "n_ishibashi", "lang": "ja", "text": "石橋", "kana": "いしばし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ishibashi", "lang": "ko", "text": "이시바시", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ishibashi", "lang": "en", "text": "Ishibashi", "source": "official"}
@@ -14536,7 +14536,7 @@
 - {"entity_type": "node", "id": "n_komaino_junction", "lang": "ja", "text": "駒井野信号場", "source": "hand", "kana": "こまいのしんごうじょう", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "ja", "text": "空港第2ビル", "kana": "くうこうだいにびる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "ko", "text": "공항제2빌딩", "source": "hand", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "en", "text": "Airport Terminal 2", "source": "hand"}
+- {"entity_type": "node", "id": "n_airport_terminal_2_keisei", "lang": "en", "text": "Airport Terminal 2", "source": "official"}
 - {"entity_type": "node", "id": "n_narita_airport_terminal_1_keisei", "lang": "ja", "text": "成田空港", "kana": "なりたくうこう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_narita_airport_terminal_1_keisei", "lang": "ko", "text": "나리타 공항", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_narita_airport_terminal_1_keisei", "lang": "en", "text": "Narita Airport Terminal 1", "source": "hand"}
@@ -19724,7 +19724,7 @@
 - {"entity_type": "node", "id": "n_tomizawa", "lang": "en", "text": "Tomizawa", "source": "official"}
 - {"entity_type": "node", "id": "n_yagiyama_zoological_park", "lang": "ja", "text": "八木山動物公園", "kana": "やぎやまどうぶつこうえん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yagiyama_zoological_park", "lang": "ko", "text": "야기야마도부츠코엔", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyama Zoological Park", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyamadobutsukoen", "source": "rule"}
 - {"entity_type": "node", "id": "n_aobayama", "lang": "ja", "text": "青葉山", "kana": "あおばやま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_aobayama", "lang": "ko", "text": "아오바야마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_aobayama", "lang": "en", "text": "Aobayama", "source": "official"}
@@ -19733,7 +19733,7 @@
 - {"entity_type": "node", "id": "n_kawauchi_sendai_city", "lang": "en", "text": "Kawauchi", "source": "official"}
 - {"entity_type": "node", "id": "n_international_center", "lang": "ja", "text": "国際センター", "kana": "こくさいせんたー", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_international_center", "lang": "ko", "text": "코쿠사이센터", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_international_center", "lang": "en", "text": "International Center", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_international_center", "lang": "en", "text": "Kokusai Center", "source": "rule"}
 - {"entity_type": "node", "id": "n_omachi_nishi_koen", "lang": "ja", "text": "大町西公園", "kana": "おおまちにしこうえん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_omachi_nishi_koen", "lang": "ko", "text": "오마치니시코엔", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_omachi_nishi_koen", "lang": "en", "text": "Omachi Nishi-koen", "source": "official"}
@@ -22907,7 +22907,7 @@
 - {"entity_type": "node", "id": "n_kitano_hakubaicho", "lang": "en", "text": "Kitano-Hakubaichō", "source": "official"}
 - {"entity_type": "node", "id": "n_tojiin_ritsumeikan_university_kinugasa_campus_mae", "lang": "ja", "text": "等持院・立命館大学衣笠キャンパス前", "kana": "とうじいん・りつめいかんだいがくきぬがさきゃんぱすまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tojiin_ritsumeikan_university_kinugasa_campus_mae", "lang": "ko", "text": "토지인·리츠메이칸다이가쿠키누가사캠퍼스마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tojiin_ritsumeikan_university_kinugasa_campus_mae", "lang": "en", "text": "Tojiin-Ritsumeikan University Kinugasa Campus-mae", "source": "hand"}
+- {"entity_type": "node", "id": "n_tojiin_ritsumeikan_university_kinugasa_campus_mae", "lang": "en", "text": "Tojiin-Ritsumeikan-daigaku Kinugasa Campus-mae", "source": "hand"}
 - {"entity_type": "node", "id": "n_ryoanji", "lang": "ja", "text": "龍安寺", "kana": "りょうあんじ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ryoanji", "lang": "ko", "text": "료안지", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ryoanji", "lang": "en", "text": "Ryōanji", "source": "official"}
@@ -24167,10 +24167,10 @@
 - {"entity_type": "node", "id": "n_otemachi_iyotetsu", "lang": "en", "text": "Otemachi", "source": "official"}
 - {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_gunchu", "lang": "ja", "text": "松山市", "kana": "まつやまし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_gunchu", "lang": "ko", "text": "마츠야마시", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_gunchu", "lang": "en", "text": "Matsuyama City", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_gunchu", "lang": "en", "text": "Matsuyamashi", "source": "rule"}
 - {"entity_type": "node", "id": "n_ishitegawa_park", "lang": "ja", "text": "石手川公園", "kana": "いしてがわこうえん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ishitegawa_park", "lang": "ko", "text": "이시테가와코엔", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ishitegawa_park", "lang": "en", "text": "Ishitegawa Park", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ishitegawa_park", "lang": "en", "text": "Ishitegawakoen", "source": "rule"}
 - {"entity_type": "node", "id": "n_iyo_tachibana", "lang": "ja", "text": "いよ立花", "kana": "いよたちばな", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_iyo_tachibana", "lang": "ko", "text": "이요타치바나", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_iyo_tachibana", "lang": "en", "text": "Iyo-Tachibana", "source": "official"}
@@ -24209,7 +24209,7 @@
 - {"entity_type": "node", "id": "n_minara", "lang": "en", "text": "Minara", "source": "official"}
 - {"entity_type": "node", "id": "n_ehime_univ_hospital", "lang": "ja", "text": "愛大医学部南口", "kana": "あいだいいがくぶみなみぐち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ehime_univ_hospital", "lang": "ko", "text": "아이다이이가쿠부미나미구치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ehime_univ_hospital", "lang": "en", "text": "Ehime Univ. Hospital", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ehime_univ_hospital", "lang": "en", "text": "Aidaiigakubuminamiguchi", "source": "rule"}
 - {"entity_type": "node", "id": "n_yokogawara", "lang": "ja", "text": "横河原", "kana": "よこがわら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yokogawara", "lang": "ko", "text": "요코가와라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yokogawara", "lang": "en", "text": "Yokogawara", "source": "official"}
@@ -24245,7 +24245,7 @@
 - {"entity_type": "node", "id": "n_gunchu", "lang": "en", "text": "Gunchu", "source": "official"}
 - {"entity_type": "node", "id": "n_gunchu_port", "lang": "ja", "text": "郡中港", "kana": "ぐんちゅうこう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_gunchu_port", "lang": "ko", "text": "군츄항", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_gunchu_port", "lang": "en", "text": "Gunchu Port", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_gunchu_port", "lang": "en", "text": "Gunchuko", "source": "rule"}
 - {"entity_type": "node", "id": "n_kayamachi_6_chome", "lang": "ja", "text": "萱町六丁目", "kana": "かやまちろくちょうめ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kayamachi_6_chome", "lang": "ko", "text": "카야마치로쿠초메", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kayamachi_6_chome", "lang": "en", "text": "Kayamachi 6-chome", "source": "rule"}
@@ -24721,7 +24721,7 @@
 - {"entity_type": "node", "id": "n_hoshii", "lang": "en", "text": "Hoshii", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_tagawa_municipal_hospital", "lang": "ja", "text": "田川市立病院", "kana": "たがわしりつびょういん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tagawa_municipal_hospital", "lang": "ko", "text": "타가와시리츠뵤인", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tagawa_municipal_hospital", "lang": "en", "text": "Tagawa Municipal Hospital", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tagawa_municipal_hospital", "lang": "en", "text": "Tagawashiritsubyoin", "source": "rule"}
 - {"entity_type": "node", "id": "n_shimoita", "lang": "ja", "text": "下伊田", "kana": "しもいた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shimoita", "lang": "ko", "text": "시모이타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shimoita", "lang": "en", "text": "Shimoita", "source": "wikidata"}
@@ -24787,7 +24787,7 @@
 - {"entity_type": "node", "id": "n_kyushu_railway_history_museum", "lang": "en", "text": "Kyusyu Tetsudo Kinenkan", "source": "official"}
 - {"entity_type": "node", "id": "n_idemitsu_art_museum", "lang": "ja", "text": "出光美術館", "kana": "いでみつびじゅつかん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_idemitsu_art_museum", "lang": "ko", "text": "이데미츠비주츠칸", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_idemitsu_art_museum", "lang": "en", "text": "Idemitsu Art Museum", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_idemitsu_art_museum", "lang": "en", "text": "Idemitsubijutsukan", "source": "rule"}
 - {"entity_type": "node", "id": "n_norfolk_hiroba", "lang": "ja", "text": "ノーフォーク広場", "kana": "のーふぉーくひろば", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_norfolk_hiroba", "lang": "ko", "text": "노퍽히로바", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_norfolk_hiroba", "lang": "en", "text": "Norfolk Hiroba", "source": "official"}
@@ -30591,7 +30591,7 @@
 - {"entity_type": "node", "id": "n_daiba_yurikamome", "lang": "en", "text": "Daiba", "source": "official"}
 - {"entity_type": "node", "id": "n_tokyo_international_cruise_terminal", "lang": "ja", "text": "東京国際クルーズターミナル", "kana": "とうきょうこくさいくるーずたーみなる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tokyo_international_cruise_terminal", "lang": "ko", "text": "도쿄코쿠사이크루즈터미널", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tokyo_international_cruise_terminal", "lang": "en", "text": "Tokyo International Cruise Terminal", "source": "hand"}
+- {"entity_type": "node", "id": "n_tokyo_international_cruise_terminal", "lang": "en", "text": "Tokyo-kokusai Cruise Terminal", "source": "hand"}
 - {"entity_type": "node", "id": "n_telecom_center", "lang": "ja", "text": "テレコムセンター", "kana": "てれこむせんたー", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_telecom_center", "lang": "ko", "text": "텔레콤센터", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_telecom_center", "lang": "en", "text": "Telecom Center", "source": "official"}
@@ -30645,7 +30645,7 @@
 - {"entity_type": "node", "id": "n_obata_ryokuchi", "lang": "en", "text": "Obata Ryokuchi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_seikan_tunnel_museum", "lang": "ja", "text": "青函トンネル記念館", "kana": "せいかんとんねるきねんかん", "source": "noritsubushi", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_seikan_tunnel_museum", "lang": "ko", "text": "세이칸터널키넨칸", "source": "hand", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_seikan_tunnel_museum", "lang": "en", "text": "Seikan Tunnel Museum", "source": "hand"}
+- {"entity_type": "node", "id": "n_seikan_tunnel_museum", "lang": "en", "text": "Seikan Tunnel Kinenkan", "source": "hand"}
 - {"entity_type": "node", "id": "n_taikenkodo", "lang": "ja", "text": "体験坑道", "kana": "たいけんこうどう", "source": "noritsubushi", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_taikenkodo", "lang": "ko", "text": "타이켄코도", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_taikenkodo", "lang": "en", "text": "Taikenkodo", "source": "rule"}
@@ -30734,7 +30734,7 @@
 - {"entity_type": "node", "id": "n_nishidai_hankyu", "lang": "en", "text": "Nishidai", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_ueno_zoo_east_garden", "lang": "ja", "text": "上野動物園東園", "kana": "うえのどうぶつえんひがしえん", "source": "noritsubushi", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_ueno_zoo_east_garden", "lang": "ko", "text": "우에노도부츠엔히가시엔", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ueno_zoo_east_garden", "lang": "en", "text": "Ueno Zoo East Garden", "source": "hand"}
+- {"entity_type": "node", "id": "n_ueno_zoo_east_garden", "lang": "en", "text": "Ueno-dobutsuen-higashien", "source": "hand"}
 - {"entity_type": "node", "id": "n_ueno_zoo_west_garden", "lang": "ja", "text": "上野動物園西園", "source": "noritsubushi", "kana": "うえのどうぶつえんにしえん", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_misawa_towada_kanko", "lang": "ja", "text": "三沢", "kana": "みさわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_misawa_towada_kanko", "lang": "ko", "text": "미사와", "source": "namuwiki", "checked": "2026-11-20"}
@@ -32047,7 +32047,7 @@
 - {"entity_type": "node", "id": "n_sasebo_chuo", "lang": "en", "text": "Sasebo-Chuo", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_tanoura_otachimisaki_park", "lang": "ja", "text": "たのうら御立岬公園", "kana": "たのうらおたちみさきこうえん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tanoura_otachimisaki_park", "lang": "ko", "text": "타노우라오타치미사키코엔", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura Otachimisaki Park", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura-otachimisaki-koen", "source": "hand"}
 - {"entity_type": "node", "id": "n_shin_minamata_hisatsu_orange", "lang": "ja", "text": "新水俣", "kana": "しんみなまた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shin_minamata_hisatsu_orange", "lang": "ko", "text": "신미나마타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shin_minamata_hisatsu_orange", "lang": "en", "text": "Shin-Minamata", "source": "official"}
@@ -32086,16 +32086,16 @@
 - {"entity_type": "node", "id": "n_tenkubashi_tokyo_monorail", "lang": "en", "text": "Tenkubashi", "source": "official"}
 - {"entity_type": "node", "id": "n_haneda_airport_terminal_3_tokyo_monorail", "lang": "ja", "text": "羽田空港第3ターミナル", "kana": "はねだくうこうだいさんたーみなる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_haneda_airport_terminal_3_tokyo_monorail", "lang": "ko", "text": "하네다 공항 제3터미널", "source": "hand", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_haneda_airport_terminal_3_tokyo_monorail", "lang": "en", "text": "Haneda Airport Terminal 3", "source": "rule"}
+- {"entity_type": "node", "id": "n_haneda_airport_terminal_3_tokyo_monorail", "lang": "en", "text": "Haneda Airport Terminal 3", "source": "official"}
 - {"entity_type": "node", "id": "n_shin_seibijo", "lang": "ja", "text": "新整備場", "kana": "しんせいびじょう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shin_seibijo", "lang": "ko", "text": "신세이비조", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shin_seibijo", "lang": "en", "text": "Shin Seibijo", "source": "official"}
 - {"entity_type": "node", "id": "n_haneda_airport_terminal_1", "lang": "ja", "text": "羽田空港第1ターミナル", "kana": "はねだくうこうだいいちたーみなる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_haneda_airport_terminal_1", "lang": "ko", "text": "하네다 공항 제1터미널", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_haneda_airport_terminal_1", "lang": "en", "text": "Haneda Airport Terminal 1", "source": "rule"}
+- {"entity_type": "node", "id": "n_haneda_airport_terminal_1", "lang": "en", "text": "Haneda Airport Terminal 1", "source": "official"}
 - {"entity_type": "node", "id": "n_haneda_airport_terminal_2", "lang": "ja", "text": "羽田空港第2ターミナル", "kana": "はねだくうこうだいにたーみなる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_haneda_airport_terminal_2", "lang": "ko", "text": "하네다 공항 제2터미널", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_haneda_airport_terminal_2", "lang": "en", "text": "Haneda Airport Terminal 2", "source": "rule"}
+- {"entity_type": "node", "id": "n_haneda_airport_terminal_2", "lang": "en", "text": "Haneda Airport Terminal 2", "source": "official"}
 - {"entity_type": "node", "id": "n_ofuna_shonan_monorail", "lang": "ja", "text": "大船", "kana": "おおふな", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ofuna_shonan_monorail", "lang": "ko", "text": "오후나", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ofuna_shonan_monorail", "lang": "en", "text": "Ofuna", "source": "wikidata"}
@@ -32122,7 +32122,7 @@
 - {"entity_type": "node", "id": "n_shonan_enoshima", "lang": "en", "text": "Shonan-Enoshima", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_naha_airport", "lang": "ja", "text": "那覇空港", "kana": "なはくうこう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_naha_airport", "lang": "ko", "text": "나하공항", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_naha_airport", "lang": "en", "text": "Naha Airport", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_naha_airport", "lang": "en", "text": "Naha Airport", "source": "official"}
 - {"entity_type": "node", "id": "n_akamine", "lang": "ja", "text": "赤嶺", "kana": "あかみね", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_akamine", "lang": "ko", "text": "아카미네", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_akamine", "lang": "en", "text": "Akamine", "source": "official"}
@@ -32131,7 +32131,7 @@
 - {"entity_type": "node", "id": "n_oroku", "lang": "en", "text": "Oroku", "source": "official"}
 - {"entity_type": "node", "id": "n_onoyama_park", "lang": "ja", "text": "奥武山公園", "kana": "おうのやまこうえん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_onoyama_park", "lang": "ko", "text": "오노야마코엔", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_onoyama_park", "lang": "en", "text": "Onoyama Park", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_onoyama_park", "lang": "en", "text": "Onoyamakoen", "source": "rule"}
 - {"entity_type": "node", "id": "n_tsubogawa_okinawa_urban_monorail", "lang": "ja", "text": "壺川", "kana": "つぼがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tsubogawa_okinawa_urban_monorail", "lang": "ko", "text": "츠보가와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tsubogawa_okinawa_urban_monorail", "lang": "en", "text": "Tsubogawa", "source": "official"}
@@ -41296,7 +41296,7 @@
 - {"entity_type": "node", "id": "n_dobutsuen_nagoya_city_transportation_bureau_cooperative_association", "lang": "ja", "text": "動物園", "source": "wikipedia+n05", "kana": "どうぶつえん", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_botanical_garden", "lang": "ja", "text": "植物園", "kana": "しょくぶつえん", "source": "wikipedia+n05", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_botanical_garden", "lang": "ko", "text": "쇼쿠부츠엔", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_botanical_garden", "lang": "en", "text": "Botanical Garden", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_botanical_garden", "lang": "en", "text": "Shokubutsuen", "source": "rule"}
 - {"entity_type": "node", "id": "n_shirakawadoriotsu", "lang": "ja", "text": "白川通大津", "kana": "しらかわどおりおおつ", "source": "wikipedia+n05", "reading_source": "auto:n05_line"}
 - {"entity_type": "node", "id": "n_shirakawadoriotsu", "lang": "ko", "text": "시라카와도리오츠", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shirakawadoriotsu", "lang": "en", "text": "Shirakawadoriotsu", "source": "rule"}
@@ -43456,7 +43456,7 @@
 - {"entity_type": "node", "id": "n_furitsudaigakumae", "lang": "en", "text": "Furitsu-daigaku-mae", "source": "rule"}
 - {"entity_type": "node", "id": "n_shokubutsuemmae", "lang": "ja", "text": "植物園前", "kana": "しょくぶつえんまえ", "source": "wikipedia+n05", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_shokubutsuemmae", "lang": "ko", "text": "쇼쿠부츠엔마에", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shokubutsuemmae", "lang": "en", "text": "Botanical Garden-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_shokubutsuemmae", "lang": "en", "text": "Shokubutsuen-mae", "source": "rule"}
 - {"entity_type": "node", "id": "n_karasumashakomae", "lang": "ja", "text": "烏丸車庫前", "kana": "からすましゃこまえ", "source": "wikipedia+n05", "reading_source": "auto:n05_line"}
 - {"entity_type": "node", "id": "n_karasumashakomae", "lang": "ko", "text": "카라스마샤코마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_karasumashakomae", "lang": "en", "text": "Karasuma-shako-mae", "source": "rule"}
@@ -53501,7 +53501,7 @@
 - {"entity_type": "node", "id": "n_togiyacho_suji", "lang": "ko", "text": "토기야초스지", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_gobogawa", "lang": "en", "text": "Gobogawa", "source": "rule"}
 - {"entity_type": "node", "id": "n_jr_matsuyama_ekimae", "lang": "en", "text": "JR Matsuyama-ekimae", "source": "rule"}
-- {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_hanazono", "lang": "en", "text": "Matsuyama City", "source": "hand"}
+- {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_hanazono", "lang": "en", "text": "Matsuyamashi-eki", "source": "rule"}
 - {"entity_type": "node", "id": "n_nakanohashidori", "lang": "en", "text": "Nakanohashidori", "source": "rule"}
 - {"entity_type": "node", "id": "n_nakanohashidori", "lang": "ko", "text": "나카노하시도리", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shiozaki_ino", "lang": "en", "text": "Shiozaki", "source": "rule"}
@@ -53518,7 +53518,7 @@
 - {"entity_type": "node", "id": "n_higashi_takashima", "lang": "en", "text": "Higashitakashima", "source": "rule"}
 - {"entity_type": "node", "id": "n_higashi_takashima", "lang": "ko", "text": "히가시타카시마", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_oyama_cable", "lang": "en", "text": "Ōyama Cable", "source": "rule"}
-- {"entity_type": "node", "id": "n_ueno_zoo_west_garden", "lang": "en", "text": "Ueno Zoo West Garden", "source": "hand"}
+- {"entity_type": "node", "id": "n_ueno_zoo_west_garden", "lang": "en", "text": "Ueno-dobutsuen-nishien", "source": "hand"}
 - {"entity_type": "node", "id": "n_takeda_kashima", "lang": "en", "text": "Takeda", "source": "rule"}
 - {"entity_type": "node", "id": "n_takeda_kashima", "lang": "ko", "text": "타케다", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nishikicho_nagano_line_nagano", "lang": "en", "text": "Nishikicho", "source": "rule"}
@@ -53802,7 +53802,7 @@
 - {"entity_type": "node", "id": "n_yahatabashi", "lang": "ko", "text": "야와타바시", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yata_fushiki", "lang": "en", "text": "Yata", "source": "rule"}
 - {"entity_type": "node", "id": "n_yata_fushiki", "lang": "ko", "text": "야타", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shokubutsuenmae", "lang": "en", "text": "Botanical Garden-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_shokubutsuenmae", "lang": "en", "text": "Shokubutsuen-mae", "source": "rule"}
 - {"entity_type": "node", "id": "n_shokubutsuenmae", "lang": "ko", "text": "쇼쿠부츠엔마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yamanokuchi_sanyo", "lang": "en", "text": "Yamanokuchi", "source": "rule"}
 - {"entity_type": "node", "id": "n_yamanokuchi_sanyo", "lang": "ko", "text": "야마노쿠치", "source": "rule", "checked": "2026-11-20"}

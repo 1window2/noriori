@@ -3075,6 +3075,18 @@
 - {"entity_type": "node", "id": "n_nishihamanomachi", "lang": "ja", "text": "西浜町／浜町アーケード", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato_old", "lang": "ja", "text": "甲浦(鉄道駅)", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato", "lang": "ja", "text": "甲浦（モードインターチェンジ）", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_jichi_medical_university", "lang": "en", "text": "Jichi Medical University", "kind": "translated"}
+- {"entity_type": "node", "id": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyama Zoological Park", "kind": "translated"}
+- {"entity_type": "node", "id": "n_international_center", "lang": "en", "text": "International Center", "kind": "translated"}
+- {"entity_type": "node", "id": "n_matsuyama_city_iyotetsu_gunchu", "lang": "en", "text": "Matsuyama City", "kind": "translated"}
+- {"entity_type": "node", "id": "n_ishitegawa_park", "lang": "en", "text": "Ishitegawa Park", "kind": "translated"}
+- {"entity_type": "node", "id": "n_ehime_univ_hospital", "lang": "en", "text": "Ehime Univ. Hospital", "kind": "translated"}
+- {"entity_type": "node", "id": "n_gunchu_port", "lang": "en", "text": "Gunchu Port", "kind": "translated"}
+- {"entity_type": "node", "id": "n_tagawa_municipal_hospital", "lang": "en", "text": "Tagawa Municipal Hospital", "kind": "translated"}
+- {"entity_type": "node", "id": "n_idemitsu_art_museum", "lang": "en", "text": "Idemitsu Art Museum", "kind": "translated"}
+- {"entity_type": "node", "id": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura Otachimisaki Park", "kind": "translated"}
+- {"entity_type": "node", "id": "n_onoyama_park", "lang": "en", "text": "Onoyama Park", "kind": "translated"}
+- {"entity_type": "node", "id": "n_botanical_garden", "lang": "en", "text": "Botanical Garden", "kind": "translated"}
 - {"entity_type": "node", "id": "n_nonai_aoimori_aoimori_railway_old", "lang": "ja", "text": "野内", "kind": "moved"}
 - {"entity_type": "node", "id": "n_nonai_aoimori_aoimori_railway_old", "lang": "ja", "text": "野内【旧】", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_orikasa", "lang": "ja", "text": "織笠", "kind": "moved"}

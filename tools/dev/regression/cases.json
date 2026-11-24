@@ -16886,7 +16886,8 @@ null
 "kind": "nodename",
 "node": "n_matsuyama_city_iyotetsu_hanazono",
 "lang": "en",
-"text": "Matsuyama City"
+"text": "Matsuyamashi-eki",
+"basis": "번역형 Matsuyama City는 검색 별칭, 이름은 로마자 꼴(사용자 결정 2026-11-24 영어 이름 원칙 3, 바꿈 2026-11-25). 駅으로 끝나는 정류장은 -eki"
 },
 {
 "id": "kanto_1-007",
@@ -18287,6 +18288,9 @@ null
 {"id": "r5-en-02", "round": 5, "kind": "nodename", "node": "n_saishun_iryo_center_mae", "lang": "en", "text": "SaishunIryoCenter-mae", "basis": "역명판 사진 표기 그대로(공식 우선), 옛 en_fix Wikidata 라벨보다 앞섬 (5회차 역명판 사진 조사 반영 2026-11-25)"},
 {"id": "r5-en-03", "round": 5, "kind": "nodename", "node": "n_chuo_daigaku_meisei_daigaku", "lang": "en", "text": "Chuo-Daigaku-Meisei-Daigaku", "basis": "공식 표기의 가운뎃점 ·(U+00B7)도 ・처럼 하이픈 (5회차 역명판 사진 조사 반영 2026-11-25)"},
 {"id": "r5-en-04", "round": 5, "kind": "nodename", "node": "n_shimabara", "lang": "en", "text": "Shimabara", "basis": "한 글자에 한 음절씩 띄운 역명판 배치(SHIMA BARA)는 한 낱말 (5회차 역명판 사진 조사 반영 2026-11-25)"},
-{"id": "r5-en-05", "round": 5, "kind": "nodename", "node": "n_kyushu_railway_history_museum", "lang": "en", "text": "Kyusyu Tetsudo Kinenkan", "basis": "역명판 사진 로마자(번역형 Kyushu Railway History Museum은 별칭) (5회차 역명판 사진 조사 반영 2026-11-25)"}
+{"id": "r5-en-05", "round": 5, "kind": "nodename", "node": "n_kyushu_railway_history_museum", "lang": "en", "text": "Kyusyu Tetsudo Kinenkan", "basis": "역명판 사진 로마자(번역형 Kyushu Railway History Museum은 별칭) (5회차 역명판 사진 조사 반영 2026-11-25)"},
+{"id": "r5-en-06", "round": 5, "kind": "nodename", "node": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyamadobutsukoen", "basis": "공식이 아닌 Wikidata 번역형 라벨도 로마자 꼴로, 번역형은 검색 별칭(일반화 규칙) (2026-11-25)"},
+{"id": "r5-en-07", "round": 5, "kind": "nodename", "node": "n_naha_airport", "lang": "en", "text": "Naha Airport", "basis": "공항(空港 → Airport)은 공항 규칙 꼴이라 번역형으로 보지 않는다 (2026-11-25)"},
+{"id": "r5-en-08", "round": 5, "kind": "nodename", "node": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura-otachimisaki-koen", "basis": "たの|うら의 う는 장음이 아니다 (2026-11-25)"}
 ]
 }

@@ -1,5 +1,5 @@
 {
- "설명": "현행 역의 공식 영어 이름(사용자 결정 2026-11-24: 공식 표기 최우선, 장음 기호는 공식대로, 모두 대문자는 첫 글자만 대문자, 駅·駅前를 Station으로 옮긴 번역형은 검색 별칭). 회사 자료(노선도·역 일람·공개 데이터)와 역명판 사진에서 확인한 값. 규칙 이름·위키 라벨보다 앞선다. 5회차 영어 이름 조사(연구 원자료 audit5/en_names, en_names2) 번역형(Industrial Park·Chinatown 같은 영어 번역)과 노선도에서 줄여 쓴 잘린 이름도 이름으로 쓰지 않고 검색 별칭(aliases)으로만 둔다(5회차 K170 정리 2026-11-25). 읽을 때 전각 글자·굽은 따옴표·가운뎃점(・→-)·낱말 가운데 대문자 장음 기호는 tools/en_rules.py load_official이 고친다. 5회차 3차 조사(audit5/en_names3, 2026-11-25): 역명판 사진 행의 source는 「역명판 사진 <Commons 파일 URL>」이고 사진 사본은 아카이브 디스크 noriori-evidence에 둔다. note는 판독 메모(모두 대문자, 판에 찍힌 특이 철자 등)다. 한 글자 밑에 한 음절씩 띄워 쓴 역명판 배치(Chu Na Gon, Shima Bara)는 한 낱말로 붙인다. 空港→Airport·公園→Park·大学→University·市役所→City Hall처럼 일본어 낱말을 영어로 옮긴 꼴과 괄호 안 영어 덧붙임은 모두 번역형으로 보아 별칭으로 옮겼다. confidence low는 회사 영어 사이트의 시간표 검색 역 목록에서만 본 값이다",
+ "설명": "현행 역의 공식 영어 이름(사용자 결정 2026-11-24: 공식 표기 최우선, 장음 기호는 공식대로, 모두 대문자는 첫 글자만 대문자, 駅·駅前를 Station으로 옮긴 번역형은 검색 별칭). 회사 자료(노선도·역 일람·공개 데이터)와 역명판 사진에서 확인한 값. 규칙 이름·위키 라벨보다 앞선다. 5회차 영어 이름 조사(연구 원자료 audit5/en_names, en_names2) 번역형(Industrial Park·Chinatown 같은 영어 번역)과 노선도에서 줄여 쓴 잘린 이름도 이름으로 쓰지 않고 검색 별칭(aliases)으로만 둔다(5회차 K170 정리 2026-11-25). 읽을 때 전각 글자·굽은 따옴표·가운뎃점(・→-)·낱말 가운데 대문자 장음 기호는 tools/en_rules.py load_official이 고친다. 5회차 3차 조사(audit5/en_names3, 2026-11-25): 역명판 사진 행의 source는 「역명판 사진 <Commons 파일 URL>」이고 사진 사본은 아카이브 디스크 noriori-evidence에 둔다. note는 판독 메모(모두 대문자, 판에 찍힌 특이 철자 등)다. 한 글자 밑에 한 음절씩 띄워 쓴 역명판 배치(Chu Na Gon, Shima Bara)는 한 낱말로 붙인다. 公園→Park·大学→University·市役所→City Hall처럼 일본어 낱말을 영어로 옮긴 꼴과 괄호 안 영어 덧붙임은 모두 번역형으로 보아 별칭으로 옮겼다. confidence low는 회사 영어 사이트의 시간표 검색 역 목록에서만 본 값이다. 공항(Airport)은 공항 터미널 규칙과 같은 꼴이라 번역형으로 보지 않는다(2026-11-25)",
  "rows": {
   "n_abashiri": {
    "en": "Abashiri",
@@ -279,6 +279,11 @@
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aira_Station3.JPG",
    "type": "sign",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased"
+  },
+  "n_airport_terminal_2_keisei": {
+   "en": "Airport Terminal 2",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/index.php",
+   "type": "company"
   },
   "n_aizu_bange": {
    "en": "Aizu-Bange",
@@ -6350,6 +6355,21 @@
   "n_hane_sanin_main": {
    "en": "Hane",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_haneda_airport_terminal_1": {
+   "en": "Haneda Airport Terminal 1",
+   "source": "https://www.tokyo-monorail.co.jp/english/guidance/index.html",
+   "type": "company"
+  },
+  "n_haneda_airport_terminal_2": {
+   "en": "Haneda Airport Terminal 2",
+   "source": "https://www.tokyo-monorail.co.jp/english/guidance/index.html",
+   "type": "company"
+  },
+  "n_haneda_airport_terminal_3_tokyo_monorail": {
+   "en": "Haneda Airport Terminal 3",
+   "source": "https://www.tokyo-monorail.co.jp/english/guidance/index.html",
    "type": "company"
   },
   "n_haneo": {
@@ -23055,6 +23075,11 @@
   "n_nagusa": {
    "en": "Nagusa",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_naha_airport": {
+   "en": "Naha Airport",
+   "source": "https://www.yui-rail.co.jp/en/",
    "type": "company"
   },
   "n_nahari": {
@@ -40919,7 +40944,6 @@
   }
  },
  "aliases": {
-  "n_airport_terminal_2_keisei": "Airport Terminal 2",
   "n_daigakubyoin": "University hospital",
   "n_dogokoen": "Dogo Park",
   "n_doshokubutsueniriguchi": "Zoological and Botanical Gardens Entrance",
@@ -40933,11 +40957,8 @@
   "n_gunchu_port": "Gunchu Port",
   "n_haga_takanezawa_kogyo_danchi": "Haga Takanezawa Industrial Park",
   "n_hagamachi_kogyo_danchi_kanri_center_mae": "Haga Industrial Park Management Center",
-  "n_haneda_airport_terminal_1": "Haneda Airport Terminal 1",
   "n_haneda_airport_terminal_12": "Haneda Airport Terminal 1·2",
-  "n_haneda_airport_terminal_2": "Haneda Airport Terminal 2",
   "n_haneda_airport_terminal_3_keikyu": "Haneda Airport Terminal 3",
-  "n_haneda_airport_terminal_3_tokyo_monorail": "Haneda Airport Terminal 3",
   "n_hasumachi": "Hasumachi (Baba Memorial Park mae)",
   "n_heiwakoen": "Peace Park",
   "n_higashiyama_okaden_chuggington_museum": "Higashiyama",
@@ -40971,7 +40992,6 @@
   "n_miyazaki_airport": "Miyazaki Airport",
   "n_nagasaki_ekimae": "Nagasaki Station",
   "n_nagasakidaigaku": "Nagasaki University",
-  "n_naha_airport": "Naha Airport",
   "n_naha_city_hospital": "Naha City Hospital",
   "n_narita_airport_terminal_1_keisei": "Narita Airport",
   "n_new_chitose_airport": "New Chitose Airport",

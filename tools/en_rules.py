@@ -200,6 +200,18 @@ def eki(ja,kana,known):
         return f"{place(ja[:-1],kana[:-2],known)}-eki"
     return None
 
+# 번역형 낱말과 그 외래어 가나. 가나가 일본어 이름에 있으면(フラワーパーク) 번역이 아니다
+TRANSLATED_WORDS={'Park':'パーク','Garden':'ガーデン','Gardens':'ガーデン','Botanical':None,'Zoo':'ズー','Zoological':None,'Museum':'ミュージアム',
+ 'Hospital':'ホスピタル','University':'ユニバーシティ','Univ':None,'Medical':'メディカル','Municipal':None,'City':'シティ','Hall':'ホール',
+ 'Port':'ポート','Temple':None,'Shrine':None,'Castle':'キャッスル','Station':'ステーション','Sta':None,'Entrance':None,'Office':'オフィス',
+ 'Prefectural':None,'Police':None,'Elementary':None,'Depot':None,'Cathedral':None,'International':'インターナショナル','Art':'アート'}
+def is_translated(text,ja):
+    # 공항(空港 → Airport, 中部国際空港 → Central Japan International Airport)은 공항 규칙의 꼴이다
+    if '空港' in ja:return False
+    for w in re.findall(r"[A-Za-z]+",text):
+        if w in TRANSLATED_WORDS and not (TRANSLATED_WORDS[w] and TRANSLATED_WORDS[w] in ja):return True
+    return False
+
 def fix_nodes(names):
     """gen_source.py가 일본어와 읽기를 확정한 뒤 부른다. en 행의 글자만 바꾼다 (행 순서는 그대로)"""
     fix=load_fix();nodefix=fix['node'];keep=set(fix['chome_official'])
@@ -217,6 +229,18 @@ def fix_nodes(names):
     official=load_official()
     for x in rows:
         if x['id'] in official:x['text']=official[x['id']]['en'];x['source']='official'
+    # 번역형(植物園→Botanical Garden, 松山市→Matsuyama City, 八木山動物公園→Yagiyama Zoological Park)은 공식이 아닌 라벨에서도 쓰지 않는다.
+    # 로마자 꼴(읽기 규칙)로 바꾸고 번역형은 검색 별칭으로 돌려준다. 공항(Airport)은 공항 터미널 규칙(terminal)이 정한 꼴이라 그대로다 (사용자 결정 2026-11-24 영어 이름 원칙 3, 일반화 2026-11-25)
+    translated=[]
+    def untranslate(x,known=None):
+        i=x['id']
+        if x['source']=='official' or i not in ja or not kana.get(i) or not is_translated(x['text'],ja[i]):return
+        translated.append((i,x['text']));x['text']=station_reading(kana[i],plainja(ja[i]));x['source']='rule'
+        # 외래어·-mae 규칙을 읽기 꼴에 다시 씌운다(東京国際クルーズターミナル → …Cruise Terminal). 첫 차례는 아래 고리가 씌운다
+        if known is not None:
+            made=fix_station(ja[i],kana[i],x['text'],known,keep)
+            if made:x['text']=made
+    for x in rows:untranslate(x)
     # 다른 역 이름의 바탕. 어절이 나뉜 표기만 믿는다
     known={}
     for x in rows:
@@ -230,6 +254,7 @@ def fix_nodes(names):
         if x['source']=='hand' or i not in ja:continue
         made=fix_station(ja[i],kana[i],x['text'],known,keep)
         if made:x['text']=made;x['source']='rule'
+    for x in rows:untranslate(x,known)
     # 기간 있는 옛 이름의 규칙 영어도 같은 규칙(駅前 -Ekimae, 丁目 -chome 등)을 그 시절 이름·읽기로 적용한다
     old_ja={(x['id'],x.get('valid_to')):(x['text'],plainkana(x.get('kana'))) for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and x.get('valid_to')}
     for x in names:
@@ -238,3 +263,4 @@ def fix_nodes(names):
         if j_ and k_:
             made=fix_station(j_,k_,x['text'],known,keep)
             if made:x['text']=made
+    return translated
