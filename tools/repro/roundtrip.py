@@ -37,7 +37,8 @@ for rid in A.routes:
         for p,q in pairs:
             a,b=p['node'],q['node']
             if a==b:continue
-            ext=set(A.routes[rid]['extend_to'])
+            # 계통 끝 확장 행(extend_to)은 5회차 전에 없어졌다. 남은 계통에는 확장 역이 없으니 모두 보통 저장이다
+            ext=set(A.routes[rid].get('extend_to') or ())
             if {a,b}&ext:
                 res=A.expand_any(rid,a,b,normalize_date(dd));kind='ext'
                 saved=normalize_date(dd)
