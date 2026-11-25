@@ -5,6 +5,8 @@ on:
   push:
     branches: [main]
   pull_request:
+  # 손으로도 돌릴 수 있다 (Actions 탭의 Run workflow)
+  workflow_dispatch:
 
 permissions:
   contents: read
