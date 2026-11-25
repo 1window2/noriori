@@ -884,7 +884,10 @@ final class DisplayRules {
     // 직통(끝 이어짐)으로 잇는 노선이 이 역을 지나 반대쪽으로도 이어지면 그 반대 방향은 갈아타서 간다. 환승으로 적는다
     // (唐津의 唐津線 鬼塚·山本 방면. 사용자 결정 2026-11-23, 전국 일괄 규칙)
     final tracks = [..._links(row, 'continue', options, undated: undated, skip: skip), ..._links(row, 'branch', options, undated: undated, skip: skip)];
-    for (final item in _links(row, 'continue', options, undated: undated, skip: skip)) {
+    // 승객이 내리고 탈 수 없는 끝 노드(분기점·신호장, 이 계통이 서지 않는 역, 승객 미취급 역)에서는 갈아탈 수 없어 반대 방향 환승을 만들지 않는다
+    // (秋田市電 新大工町線 分岐点（表鉄砲町）의 秋田市内線, 5회차 2026-11-26)
+    final boardable = !(row.passing || row.noBoarding || row.staffOnly);
+    for (final item in boardable ? _links(row, 'continue', options, undated: undated, skip: skip) : const <DisplayLink>[]) {
       final link = item.link;
       final route = link.otherRouteId;
       if (route == null || network.routes[route]?.closed == true) continue;

@@ -109,14 +109,17 @@ void main() {
       }
     }
 
-    for (final query in _search.isEmpty ? const <String>[] : _search.split(',')) {
+    final queries = _search.isEmpty ? const <String>[] : _search.split(',');
+    for (var qi = 0; qi < queries.length; qi++) {
+      final query = queries[qi];
       unawaited(router.push('/search'));
       await _wait(tester, () => find.byType(TextField).evaluate().isNotEmpty, limit: const Duration(seconds: 20));
       await tester.enterText(find.byType(TextField).first, query);
       for (var i = 0; i < 15; i++) {
         await tester.pump(const Duration(milliseconds: 200));
       }
-      await _shot(tester, 'search_${_safe(query)}');
+      // 한자·한글 검색어는 파일 이름에서 지워지므로 순번을 붙인다
+      await _shot(tester, 'search_${qi.toString().padLeft(2, '0')}_${_safe(query)}');
       router.pop();
       await tester.pump(const Duration(milliseconds: 400));
     }

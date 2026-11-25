@@ -50,6 +50,8 @@ void main() {
           'node': r.node,
           'state': r.state.name,
           if (r.passing) 'passing': true,
+          if (r.noBoarding) 'noBoarding': true,
+          if (r.staffOnly) 'staffOnly': true,
           if (r.savedAs != null) 'savedAs': r.savedAs,
           if (r.handedTo != null) 'handedTo': r.handedTo,
           if (r.handedOn != null) 'handedOn': r.handedOn,

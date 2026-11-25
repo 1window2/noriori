@@ -37,6 +37,10 @@ for fn in sorted(os.listdir(RJ)):
             t = L['t']
             if t == 'stop':
                 node_of[L['seq']] = L['node']
+                # S16 승객이 갈아탈 수 없는 끝 노드(분기점·신호장)에 지금 환승 줄 (5회차 2026-11-26, 秋田市電 分岐点（表鉄砲町）).
+                # 역이던 시절에 끝난 환승(gone, 尺別 尺別鉄道 ~1970)은 그 역의 이력이라 본다
+                if L.get('passing') and any(not i['gone'] for g in L['transfers'] for i in g['items']):
+                    put('S16 분기점·신호장 끝 노드에 환승 줄', 'err', dict(route=rid, date=date, at=nn(L['node']), other=[ln(i['line']) for g in L['transfers'] for i in g['items']], ids=[rid, L['node']]))
                 for g in L['transfers']:
                     for it in g['items']: el[L['seq']].append(('T', it, g['flow']))
             elif t == 'branch' and 'item' in L:

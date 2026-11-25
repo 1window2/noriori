@@ -4206,6 +4206,21 @@ _endnm={(x['id'],x['lang']) for x in names if x['entity_type']=='node' and not x
 for n in sorted(ENDPT):
     for lg_ in ('ja','ko','en'):
         if (n,lg_) not in _endnm:err('endpoint_no_name',(n,lg_))
+# 「분기점(역명)」 꼴 끝 노드 이름의 읽기는 종류 읽기 + 괄호 안 역의 읽기다: 分岐点（御花畑）= ぶんきてん（おはなばたけ）. 계통 이름 읽기(kana_fix)와 같은 규칙.
+# 괄호 안 이름의 읽기는 같은 일본어 이름을 가진 노드의 기본 읽기가 하나로 정해질 때만 쓴다. 정해지지 않으면 비운다(종류 읽기만 남기지 않는다, 5회차 2026-11-26)
+_KTAIL={'分岐点':'ぶんきてん','信号場':'しんごうじょう','信号所':'しんごうじょ','接続点':'せつぞくてん'}
+_jkana=collections.defaultdict(set)
+for x_ in names:
+    if x_['entity_type']=='node' and x_['lang']=='ja' and x_.get('kana') and not x_.get('line') and not x_.get('valid_from') and not x_.get('valid_to') and '（' not in x_['text']:_jkana[x_['text']].add(x_['kana'])
+_jkfix=[]
+for x_ in names:
+    if x_['entity_type']!='node' or x_['lang']!='ja':continue
+    m_=re.fullmatch(r'(分岐点|信号場|信号所|接続点)（(.+)）',x_['text'])
+    if not m_:continue
+    ks_=_jkana.get(m_.group(2),set())
+    k_=f"{_KTAIL[m_.group(1)]}（{next(iter(ks_))}）" if len(ks_)==1 else None
+    if x_.get('kana')!=k_:_jkfix.append((x_['id'],x_['text'],x_.get('kana'),k_));x_['kana']=k_
+print('분기점(역명) 이름 읽기 맞춤',len(_jkfix),_jkfix[:10])
 t('route_stop',['route_id','seq','node_id','km_cum','is_stop','is_end_point','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi','km_estimated'],[(s['route_id'],s['seq'],s['node_id'],s['km_cum'],s['is_stop'],1 if s['node_id'] in ENDPT or (not s['is_stop'] and id(s) in _ENDROW and s['route_id'] in _stopped_routes) else 0)+per(0,s['valid_from'])+per(0,s['valid_to'])+(1 if (s['route_id'],s['node_id']) in EST else 0,) for s in stops])
 # ── 고를 수 있는 서지 않는 기간과 그날 노드의 정체 (5번 결정 재구성 2026-11-21) ──
 # route_stop의 기간은 행 기간(정차)이다. 끝 노드로 고를 수 있는데 정차가 아닌 기간은 이 표에 따로 내고, 그 기간 노드의 정체(style)를 함께 적는다.

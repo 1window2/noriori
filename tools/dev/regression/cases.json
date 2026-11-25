@@ -18731,6 +18731,69 @@ null
 "r_shinetsu_main_line_niigata_old_sekiya"
 ],
 "note": "이관 띠 끝 역의 이관 전 연결은 띠가 그 노선의 오늘 상태라 따로 그리지 않는다(사용자 결정 2026-11-19)"
+},
+{
+"id": "r5-fix-08",
+"round": 5,
+"cause": null,
+"kind": "kana",
+"node": "n_omoteteppomachi_junction",
+"text": "分岐点（表鉄砲町）",
+"kana": "ぶんきてん（おもててっぽうまち）",
+"note": "분기점(역명) 이름 읽기 = 종류 읽기 + 괄호 안 역 읽기 (5회차 2026-11-26)"
+},
+{
+"id": "r5-fix-09",
+"round": 5,
+"cause": null,
+"kind": "kana",
+"node": "n_seibu_chichibu_kagemori_side",
+"text": "分岐点（御花畑）",
+"kana": "ぶんきてん（おはなばたけ）",
+"note": "분기점(역명) 이름 읽기 = 종류 읽기 + 괄호 안 역 읽기 (5회차 2026-11-26)"
+},
+{
+"id": "r5-fix-10",
+"round": 5,
+"cause": null,
+"kind": "kana",
+"node": "n_seibu_chichibu_through",
+"text": "分岐点（西武秩父）",
+"kana": "ぶんきてん（せいぶちちぶ）",
+"note": "분기점(역명) 이름 읽기 = 종류 읽기 + 괄호 안 역 읽기 (5회차 2026-11-26)"
+},
+{
+"id": "r5-fix-11",
+"round": 5,
+"cause": null,
+"kind": "kana",
+"node": "n_yamato_yagi_uehommachi_side",
+"text": "分岐点（大和八木）",
+"kana": "ぶんきてん（やまとやぎ）",
+"note": "분기점(역명) 이름 읽기 = 종류 읽기 + 괄호 안 역 읽기 (5회차 2026-11-26)"
+},
+{
+"id": "r5-scr-03",
+"round": 5,
+"cause": null,
+"cat": "screen",
+"kind": "screen",
+"checks": [
+"S16 분기점·신호장 끝 노드에 환승 줄"
+],
+"ids": [
+"r_chichibu_railway_connecting_line",
+"r_chichibu_railway_connecting_line_branch",
+"r_enoshima_line_odakyu",
+"r_hakushin_line",
+"r_inuyama_line",
+"r_nakagawa_connecting_line",
+"r_ninokuchi_connecting_line",
+"r_sangi_line",
+"r_shinetsu_main_line",
+"r_umeda_freight_line"
+],
+"note": "승객이 갈아탈 수 없는 끝 노드에는 반대 방향 환승을 만들지 않는다 (秋田市電 分岐点（表鉄砲町）, 5회차 2026-11-26)"
 }
 ]
 }
