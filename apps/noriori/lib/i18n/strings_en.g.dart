@@ -577,11 +577,13 @@ class _Translations$sources$en implements Translations$sources$ko {
 	@override late final _Translations$sources$n02$en n02 = _Translations$sources$n02$en._(_root);
 	@override late final _Translations$sources$n05$en n05 = _Translations$sources$n05$en._(_root);
 	@override late final _Translations$sources$n03$en n03 = _Translations$sources$n03$en._(_root);
+	@override late final _Translations$sources$gsi$en gsi = _Translations$sources$gsi$en._(_root);
 	@override late final _Translations$sources$stationDatabase$en stationDatabase = _Translations$sources$stationDatabase$en._(_root);
 	@override late final _Translations$sources$wikipedia$en wikipedia = _Translations$sources$wikipedia$en._(_root);
 	@override late final _Translations$sources$wikidata$en wikidata = _Translations$sources$wikidata$en._(_root);
 	@override late final _Translations$sources$namuwiki$en namuwiki = _Translations$sources$namuwiki$en._(_root);
 	@override late final _Translations$sources$noritsubushi$en noritsubushi = _Translations$sources$noritsubushi$en._(_root);
+	@override late final _Translations$sources$others$en others = _Translations$sources$others$en._(_root);
 	@override late final _Translations$sources$openFreeMap$en openFreeMap = _Translations$sources$openFreeMap$en._(_root);
 	@override late final _Translations$sources$openStreetMap$en openStreetMap = _Translations$sources$openStreetMap$en._(_root);
 	@override late final _Translations$sources$noto$en noto = _Translations$sources$noto$en._(_root);
@@ -1059,6 +1061,18 @@ class _Translations$sources$n03$en implements Translations$sources$n03$ko {
 	@override String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.gsi
+class _Translations$sources$gsi$en implements Translations$sources$gsi$ko {
+	_Translations$sources$gsi$en._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'GSI Vector Tiles (Geospatial Information Authority of Japan)';
+	@override String get use => 'Part of the track shapes around Tabata';
+	@override String get terms => 'GSI Content Terms of Use (compatible with CC BY 4.0). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成';
+}
+
 // Path: sources.stationDatabase
 class _Translations$sources$stationDatabase$en implements Translations$sources$stationDatabase$ko {
 	_Translations$sources$stationDatabase$en._(this._root);
@@ -1117,6 +1131,18 @@ class _Translations$sources$noritsubushi$en implements Translations$sources$nori
 	@override String get name => 'Noritsubushi';
 	@override String get use => 'Operating kilometers, station order, key dates, Japanese names';
 	@override String get terms => 'Factual data only';
+}
+
+// Path: sources.others
+class _Translations$sources$others$en implements Translations$sources$others$ko {
+	_Translations$sources$others$en._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Other factual sources';
+	@override String get use => 'Operator publications (official English names and more), Public Transportation Open Data Center, public materials of the National Diet Library and the National Archives of Japan, Japan Post postal code data, station sign photos';
+	@override String get terms => 'Used as factual data. Each data row records its source, and the full list is in data/NOTICE.md in the repository';
 }
 
 // Path: sources.openFreeMap
@@ -1490,6 +1516,9 @@ extension on TranslationsEn {
 			'sources.n03.name' => 'National Land Numerical Information: Administrative Zones (N03)',
 			'sources.n03.use' => 'Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.gsi.name' => 'GSI Vector Tiles (Geospatial Information Authority of Japan)',
+			'sources.gsi.use' => 'Part of the track shapes around Tabata',
+			'sources.gsi.terms' => 'GSI Content Terms of Use (compatible with CC BY 4.0). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => 'Station list and coordinates',
 			'sources.stationDatabase.terms' => 'Seo-4d696b75. CC BY-SA 4.0',
@@ -1505,6 +1534,9 @@ extension on TranslationsEn {
 			'sources.noritsubushi.name' => 'Noritsubushi',
 			'sources.noritsubushi.use' => 'Operating kilometers, station order, key dates, Japanese names',
 			'sources.noritsubushi.terms' => 'Factual data only',
+			'sources.others.name' => 'Other factual sources',
+			'sources.others.use' => 'Operator publications (official English names and more), Public Transportation Open Data Center, public materials of the National Diet Library and the National Archives of Japan, Japan Post postal code data, station sign photos',
+			'sources.others.terms' => 'Used as factual data. Each data row records its source, and the full list is in data/NOTICE.md in the repository',
 			'sources.openFreeMap.name' => 'OpenFreeMap',
 			'sources.openFreeMap.use' => 'Base map',
 			'sources.openFreeMap.terms' => 'OpenFreeMap © OpenMapTiles. Data from OpenStreetMap',
@@ -1669,14 +1701,14 @@ extension on TranslationsEn {
 			'prefNames.6' => 'Fukushima',
 			'prefNames.7' => 'Ibaraki',
 			'prefNames.8' => 'Tochigi',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.9' => 'Gunma',
 			'prefNames.10' => 'Saitama',
 			'prefNames.11' => 'Chiba',
 			'prefNames.12' => 'Tokyo',
 			'prefNames.13' => 'Kanagawa',
 			'prefNames.14' => 'Niigata',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.15' => 'Toyama',
 			'prefNames.16' => 'Ishikawa',
 			'prefNames.17' => 'Fukui',

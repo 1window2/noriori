@@ -4798,7 +4798,7 @@ print('계절 운행 비시즌 행',len(_SEAOFF),'노선',len(_SEARULE))
 t('edge_km',['edge_id','km','m'],[(k,v,round(v*1000)) for k,v in kms.items()])
 t('edge_km_era',['edge_id','line_id','km','m'],[(e_,l_,round(v,3),round(v*1000)) for (l_,e_),v in sorted(ERA.items())])
 t('edge_attr',['edge_id','line_id','operator_id','lineage_id','carryover_group','denominator_class','valid_from','valid_from_lo','valid_from_hi','valid_to','valid_to_lo','valid_to_hi'],[(a['edge_id'],a['line_id'],a['operator_id'],a['lineage_id'],a['carryover_group'],a['denominator_class'])+per(0,a['valid_from'])+per(0,a['valid_to']) for a in attr])
-# 승계 켬일 때만 보이는 국철 시대 폐역과 구선로 (DESIGN §2.9 E, 사용자 결정 2026-11-06).
+# 승계 켬일 때만 보이는 국철 시대 폐역과 구선로 (DESIGN §2.8 E, 사용자 결정 2026-11-06).
 # 국철·JR에서 다른 사업자로 넘어간 구간의 뒤 계통에, 이관 전에 끝난 앞 계통의 같은 노선 구선로 분기와 정차를 옮겨 둔다. 고를 수 있는지는 날짜가 정한다
 _jr={o for (o,) in db.execute("select id from operator") if o=='o_japanese_national_railways' or o.startswith('o_jr')}
 _rl=dict(db.execute("select id,line_id from route"))

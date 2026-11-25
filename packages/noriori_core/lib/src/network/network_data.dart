@@ -329,7 +329,7 @@ final class NetworkData {
   final List<String> lineOrder;
   final List<NetEdgePref> edgePrefs;
 
-  /// 3섹 전환 때 営業キロ를 다시 정한 구간의 국철·JR 시대 길이. 키는 `노선\u0000edge` (DESIGN §2.9 E)
+  /// 3섹 전환 때 営業キロ를 다시 정한 구간의 국철·JR 시대 길이. 키는 `노선\u0000edge` (DESIGN §2.8 E)
   final Map<String, int> eraMeters;
   final List<NetOneWay> oneWays;
   final List<NetStopDirection> stopDirections;

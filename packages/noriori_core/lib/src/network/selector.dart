@@ -343,7 +343,7 @@ final class SelectorBuilder {
     final picks = network.picks(routeId);
     final ends = {if (picks.isNotEmpty) picks.first.seq, if (picks.isNotEmpty) picks.last.seq};
     for (final pick in picks) {
-      // 승계 켬이면 이관 전에 폐역된 역도 그 시기 정차역으로 본다 (DESIGN §2.9 E). 고를 수 있는지는 날짜가 정한다
+      // 승계 켬이면 이관 전에 폐역된 역도 그 시기 정차역으로 본다 (DESIGN §2.8 E). 고를 수 있는지는 날짜가 정한다
       final earlier = pick.isStop ? null : carryoverStops[pick.seq];
       final stop = earlier == null
           ? pick

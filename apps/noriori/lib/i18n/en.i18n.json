@@ -430,6 +430,11 @@
       "use": "Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
+    "gsi": {
+      "name": "GSI Vector Tiles (Geospatial Information Authority of Japan)",
+      "use": "Part of the track shapes around Tabata",
+      "terms": "GSI Content Terms of Use (compatible with CC BY 4.0). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成"
+    },
     "stationDatabase": {
       "name": "station_database",
       "use": "Station list and coordinates",
@@ -454,6 +459,11 @@
       "name": "Noritsubushi",
       "use": "Operating kilometers, station order, key dates, Japanese names",
       "terms": "Factual data only"
+    },
+    "others": {
+      "name": "Other factual sources",
+      "use": "Operator publications (official English names and more), Public Transportation Open Data Center, public materials of the National Diet Library and the National Archives of Japan, Japan Post postal code data, station sign photos",
+      "terms": "Used as factual data. Each data row records its source, and the full list is in data/NOTICE.md in the repository"
     },
     "openFreeMap": {
       "name": "OpenFreeMap",

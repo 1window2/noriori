@@ -235,9 +235,11 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
                         builder: (context, box) => Row(
                           children: [
                             if (parts.first.isNotEmpty)
-                              Flexible(child: Text(parts.first, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall)),
+                              Flexible(child: Text(parts.first, maxLines: 1, overflow: TextOverflow.ellipsis, textWidthBasis: TextWidthBasis.longestLine, style: text.bodySmall)),
+                            // 말줄임한 글은 실제 폭만 차지한다(textWidthBasis). 기본(부모 폭)이면 못 넣은 글자 자리만큼 「JR…  · 565.4 km」처럼 벌어진다
                             Flexible(
-                              child: Text(controller.operatorName, maxLines: 1, overflow: TextOverflow.ellipsis, style: text.bodySmall),
+                              child: Text(controller.operatorName,
+                                  maxLines: 1, overflow: TextOverflow.ellipsis, textWidthBasis: TextWidthBasis.longestLine, style: text.bodySmall),
                             ),
                             ConstrainedBox(
                               constraints: BoxConstraints(maxWidth: box.maxWidth),

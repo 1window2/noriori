@@ -145,7 +145,7 @@ class App:
             self._life[r["edge_id"]].append(dict(r))
         self.edges = {r["id"]: dict(r) for r in self.db.execute("SELECT * FROM edge")}
         self.km = {r["edge_id"]: r["km"] for r in self.db.execute("SELECT * FROM edge_km")}
-        # 승계 끔 단위는 3섹 전환 때 다시 잰 구간을 국철 시대 km로 센다 (DESIGN §2.9 E)
+        # 승계 끔 단위는 3섹 전환 때 다시 잰 구간을 국철 시대 km로 센다 (DESIGN §2.8 E)
         self.era = {(r["line_id"], r["edge_id"]): r["km"] for r in self.db.execute("SELECT * FROM edge_km_era")}
         self._edge_routes = collections.defaultdict(list)
         self._route_edges = collections.defaultdict(list)
@@ -868,7 +868,7 @@ class App:
 
     def expand_cross(self, a, b, date=None, routes=None):
         """숨은 노드 경계 자동 분할 (§2.8 F) 흉내: 후보 계통들을 합친 그래프에서 경로를 찾아
-        hop별 계통으로 legs를 나눈다. 앱이 service/extend_to 없이 할 수 있는 우회."""
+        hop별 계통으로 legs를 나눈다. 앱이 service 없이 할 수 있는 우회(계통 끝 너머는 끝 이어짐, 확장 행 extend_to는 없앰)."""
         d = normalize_date(date)
         edges = []
         owner = {}
@@ -913,7 +913,8 @@ class App:
         return self.expand_cross(a, b, normalize_date(date) or self.today, rids)
 
     def expand_any(self, route_id, a, b, date=None):
-        """선택기에서 고른 두 역을 펼친다. extend_to 역이면 그 역이 속한 계통으로 leg를 나눈다 (§2.7)."""
+        """선택기에서 고른 두 역을 펼친다. 확장 행(extend_to)은 없앴으므로(§2.7, 2026-11-19) 지금은 늘 그 계통의 expand다.
+        아래 갈래는 옛 확장 행의 흔적이고 ext가 비어 타지 않는다."""
         ext = set([])
         if a not in ext and b not in ext:
             return self.expand(route_id, a, b, date)

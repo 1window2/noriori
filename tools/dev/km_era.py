@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# 국철·JR 시대 営業キロ가 3섹 전환 때 다시 정해진 구간의 옛 km (DESIGN §2.9 E, 사용자 결정 2026-11-06).
+# 국철·JR 시대 営業キロ가 3섹 전환 때 다시 정해진 구간의 옛 km (DESIGN §2.8 E, 사용자 결정 2026-11-06).
 # 입력: docs/research/km-jnr-3sec-2026-11-06.json(노리츠부시 국철 표와 DB의 역별 차, 원인 조사)과 build/master.sqlite.
 # 원인이 remeasure(역·선로 그대로 km만 바뀜)인 역만 쓴다. 이설·이전(realign, move)은 노드와 선로를 나눠 고친다.
 # 결과: data/overrides/km_era.json. 정차역 두 곳 사이 국철 시대 km이고, 컴파일이 사이 edge에 지금 km 비율로 나눈다

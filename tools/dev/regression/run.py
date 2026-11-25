@@ -129,8 +129,9 @@ def de(a,x):
     except ValueError:return False
     return bool(la and lx) and lx<=la and ha<=hx
 # 경고(warn) 단계 검사 가운데 사용자 결정이 허용한 꼴. 사례가 이 검사에만 걸려 있으면 규칙상 정상이다
-RULE_OK={'K02 근거 없는 이어짐(source=derived continue)':'U02 선로가 이어졌으면 정기 직통이 없어도 분기·끝 이어짐으로 그린다(DESIGN §2.9 문자대로). '
-         '근거 칸 없는 이어짐(derived) 경고는 확인 목록이라 결함이 아니다'}
+RULE_OK={'K02 근거 없는 이어짐(source=derived continue)':'U02 선로가 실제로 이어진 끝 역이면 정기 직통이 없어도 끝 이어짐으로 그린다(DESIGN §2.9 문자대로). '
+         '근거 칸 없는 이어짐(derived) 경고는 확인 목록이라 그것만으로는 결함이 아니다. '
+         '국지 선로가 없는 끝 이어짐·입체 교차로 생긴 가짜 연결은 이 사유가 아니라 결정 D7·D8(2026-11-24)대로 근거로 판정하거나 환승으로 둔다'}
 def judge(c):
     """True=고쳐짐, False=남음, None=판정할 자료 없음, 문자열=규칙상 정상 사유"""
     k=c['kind']

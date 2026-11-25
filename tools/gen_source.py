@@ -1725,7 +1725,7 @@ for n in nodes.values():
             if lab.endswith('駅') and t_.endswith('에키'):t_=t_[:-2]+'역'
             add('node',n['id'],'ko',t_,source=v[1] if v else 'rule',line=lid[lk_],checked=TODAY,_lab=lab)
         if kk:
-            # 역 이름 영어 규칙(駅前 -Ekimae, 丁目 -chome, 외래어)을 노선 전용 이름에도 쓴다
+            # 역 이름 영어 규칙(駅前 -ekimae, 丁目 -chome, 외래어)을 노선 전용 이름에도 쓴다
             e_=en_rules.station_reading(kk,lab);e_=en_rules.fix_station(lab,kk,e_,{}) or e_
             add('node',n['id'],'en',''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='rule',line=lid[lk_],_lab=lab)
 NLN=json.load(open(os.path.join(IMP,'namuwiki','names_lines.json'),encoding='utf-8')) if source_on('namuwiki') else {}
@@ -2005,7 +2005,7 @@ for n in nodes.values():
             kk=ok_ or (kata2hira(sdk[0]) if sdk else None)
             if kk:
                 add('node',n['id'],'ko',ko.station(kk,old),source='rule',line=rl_,valid_from=f,valid_to=to,checked=TODAY)
-                # 역 이름 영어 규칙(駅前 -Ekimae, 외래어)을 옛 이름에도 (博多駅前 Hakata-Ekimae). 일본어 행에 읽기가 없으면 en_rules.fix_nodes가 못 고친다
+                # 역 이름 영어 규칙(駅前 -ekimae, 외래어)을 옛 이름에도 (博多駅前 Hakata-ekimae). 일본어 행에 읽기가 없으면 en_rules.fix_nodes가 못 고친다
                 e_=en_rules.station_reading(kk,old);e_=en_rules.fix_station(old,kk,e_,{}) or e_
                 add('node',n['id'],'en',e_,source='rule',line=rl_,valid_from=f,valid_to=to)
 print('옛 이름 행',dict(rn_stat),'노선 문서 年表',len(LDOC_RN))

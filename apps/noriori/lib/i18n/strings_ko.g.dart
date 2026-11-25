@@ -1124,11 +1124,13 @@ class Translations$sources$ko {
 	late final Translations$sources$n02$ko n02 = Translations$sources$n02$ko._(_root);
 	late final Translations$sources$n05$ko n05 = Translations$sources$n05$ko._(_root);
 	late final Translations$sources$n03$ko n03 = Translations$sources$n03$ko._(_root);
+	late final Translations$sources$gsi$ko gsi = Translations$sources$gsi$ko._(_root);
 	late final Translations$sources$stationDatabase$ko stationDatabase = Translations$sources$stationDatabase$ko._(_root);
 	late final Translations$sources$wikipedia$ko wikipedia = Translations$sources$wikipedia$ko._(_root);
 	late final Translations$sources$wikidata$ko wikidata = Translations$sources$wikidata$ko._(_root);
 	late final Translations$sources$namuwiki$ko namuwiki = Translations$sources$namuwiki$ko._(_root);
 	late final Translations$sources$noritsubushi$ko noritsubushi = Translations$sources$noritsubushi$ko._(_root);
+	late final Translations$sources$others$ko others = Translations$sources$others$ko._(_root);
 	late final Translations$sources$openFreeMap$ko openFreeMap = Translations$sources$openFreeMap$ko._(_root);
 	late final Translations$sources$openStreetMap$ko openStreetMap = Translations$sources$openStreetMap$ko._(_root);
 	late final Translations$sources$noto$ko noto = Translations$sources$noto$ko._(_root);
@@ -1988,6 +1990,24 @@ class Translations$sources$n03$ko {
 	String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.gsi
+class Translations$sources$gsi$ko {
+	Translations$sources$gsi$ko._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// ko: '国土地理院 ベクトルタイル'
+	String get name => '国土地理院 ベクトルタイル';
+
+	/// ko: '田端信号場 일대 선로 모양 일부'
+	String get use => '田端信号場 일대 선로 모양 일부';
+
+	/// ko: '国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成'
+	String get terms => '国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成';
+}
+
 // Path: sources.stationDatabase
 class Translations$sources$stationDatabase$ko {
 	Translations$sources$stationDatabase$ko._(this._root);
@@ -2076,6 +2096,24 @@ class Translations$sources$noritsubushi$ko {
 
 	/// ko: '사실 정보로 사용'
 	String get terms => '사실 정보로 사용';
+}
+
+// Path: sources.others
+class Translations$sources$others$ko {
+	Translations$sources$others$ko._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// ko: '그 밖의 사실 근거'
+	String get name => '그 밖의 사실 근거';
+
+	/// ko: '사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진'
+	String get use => '사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진';
+
+	/// ko: '사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다'
+	String get terms => '사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다';
 }
 
 // Path: sources.openFreeMap
@@ -2467,6 +2505,9 @@ extension on Translations {
 			'sources.n03.name' => '국토수치정보 행정구역 (N03)',
 			'sources.n03.use' => '일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.gsi.name' => '国土地理院 ベクトルタイル',
+			'sources.gsi.use' => '田端信号場 일대 선로 모양 일부',
+			'sources.gsi.terms' => '国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => '역 목록과 좌표',
 			'sources.stationDatabase.terms' => 'Seo-4d696b75. CC BY-SA 4.0',
@@ -2482,6 +2523,9 @@ extension on Translations {
 			'sources.noritsubushi.name' => '노리츠부시',
 			'sources.noritsubushi.use' => '영업거리, 역 순서, 기본 날짜, 일본어 표기',
 			'sources.noritsubushi.terms' => '사실 정보로 사용',
+			'sources.others.name' => '그 밖의 사실 근거',
+			'sources.others.use' => '사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진',
+			'sources.others.terms' => '사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다',
 			'sources.openFreeMap.name' => 'OpenFreeMap',
 			'sources.openFreeMap.use' => '배경 지도',
 			'sources.openFreeMap.terms' => 'OpenFreeMap © OpenMapTiles. Data from OpenStreetMap',
@@ -2646,14 +2690,14 @@ extension on Translations {
 			'prefNames.6' => '후쿠시마',
 			'prefNames.7' => '이바라키',
 			'prefNames.8' => '도치기',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.9' => '군마',
 			'prefNames.10' => '사이타마',
 			'prefNames.11' => '치바',
 			'prefNames.12' => '도쿄',
 			'prefNames.13' => '가나가와',
 			'prefNames.14' => '니가타',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.15' => '도야마',
 			'prefNames.16' => '이시카와',
 			'prefNames.17' => '후쿠이',

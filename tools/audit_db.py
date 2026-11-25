@@ -2247,7 +2247,7 @@ for x_,v_ in _RJ.items():
         try:span=(datetime.date.fromisoformat(min(p_[3],TODAY)[:10])-datetime.date.fromisoformat(p_[1][:10])).days
         except ValueError:continue
         # 1950-01-01 전에 끝난 표식은 기록 범위 밖이라 확인할 것이 없다(弁天島 1907~1916, 北鎌倉 1927~1930). 계절 臨時駅의 영업 철은 날짜로 다루지 않는다
-        # (DESIGN §9.4 臨時駅 「영업한 해 전체가 기록 가능」): 남는 행은 해마다 영업했는지(영업하지 않은 해가 있는지)의 확인 목록이다 (9회차 N)
+        # (DESIGN §9.1.2 臨時駅 「영업한 해 전체가 기록 가능」): 남는 행은 해마다 영업했는지(영업하지 않은 해가 있는지)의 확인 목록이다 (9회차 N)
         if p_[3]<=BASE:continue
         if span>366 and not _GP.get(x_):rows.append((nn(x_),x_,f_,t_))
 put('K48 臨時駅 표식이 1년 넘게 이어지고 정차 공백 없음(영업 시즌 확인 목록)',rows,40,lvl='warn')

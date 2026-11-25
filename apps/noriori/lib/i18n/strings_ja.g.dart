@@ -558,11 +558,13 @@ class _Translations$sources$ja implements Translations$sources$ko {
 	@override late final _Translations$sources$n02$ja n02 = _Translations$sources$n02$ja._(_root);
 	@override late final _Translations$sources$n05$ja n05 = _Translations$sources$n05$ja._(_root);
 	@override late final _Translations$sources$n03$ja n03 = _Translations$sources$n03$ja._(_root);
+	@override late final _Translations$sources$gsi$ja gsi = _Translations$sources$gsi$ja._(_root);
 	@override late final _Translations$sources$stationDatabase$ja stationDatabase = _Translations$sources$stationDatabase$ja._(_root);
 	@override late final _Translations$sources$wikipedia$ja wikipedia = _Translations$sources$wikipedia$ja._(_root);
 	@override late final _Translations$sources$wikidata$ja wikidata = _Translations$sources$wikidata$ja._(_root);
 	@override late final _Translations$sources$namuwiki$ja namuwiki = _Translations$sources$namuwiki$ja._(_root);
 	@override late final _Translations$sources$noritsubushi$ja noritsubushi = _Translations$sources$noritsubushi$ja._(_root);
+	@override late final _Translations$sources$others$ja others = _Translations$sources$others$ja._(_root);
 	@override late final _Translations$sources$openFreeMap$ja openFreeMap = _Translations$sources$openFreeMap$ja._(_root);
 	@override late final _Translations$sources$openStreetMap$ja openStreetMap = _Translations$sources$openStreetMap$ja._(_root);
 	@override late final _Translations$sources$noto$ja noto = _Translations$sources$noto$ja._(_root);
@@ -1028,6 +1030,18 @@ class _Translations$sources$n03$ja implements Translations$sources$n03$ko {
 	@override String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.gsi
+class _Translations$sources$gsi$ja implements Translations$sources$gsi$ko {
+	_Translations$sources$gsi$ja._(this._root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => '国土地理院 ベクトルタイル';
+	@override String get use => '田端信号場付近の線路形状の一部';
+	@override String get terms => '国土地理院コンテンツ利用規約（CC BY 4.0互換）。出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成';
+}
+
 // Path: sources.stationDatabase
 class _Translations$sources$stationDatabase$ja implements Translations$sources$stationDatabase$ko {
 	_Translations$sources$stationDatabase$ja._(this._root);
@@ -1086,6 +1100,18 @@ class _Translations$sources$noritsubushi$ja implements Translations$sources$nori
 	@override String get name => '乗りつぶしオンライン';
 	@override String get use => '営業キロ、駅の順序、開業日・廃止日、日本語表記';
 	@override String get terms => '事実情報として使用';
+}
+
+// Path: sources.others
+class _Translations$sources$others$ja implements Translations$sources$others$ko {
+	_Translations$sources$others$ja._(this._root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'その他の事実情報の出典';
+	@override String get use => '事業者の公式資料（英語駅名など）、公共交通オープンデータセンター、国立国会図書館・国立公文書館の公開資料、日本郵便の郵便番号データ、駅名標の写真';
+	@override String get terms => '事実情報として使用。出典はデータの行ごとに記録し、一覧はリポジトリのdata/NOTICE.mdにあります';
 }
 
 // Path: sources.openFreeMap
@@ -1459,6 +1485,9 @@ extension on TranslationsJa {
 			'sources.n03.name' => '国土数値情報 行政区域データ (N03)',
 			'sources.n03.use' => '日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.gsi.name' => '国土地理院 ベクトルタイル',
+			'sources.gsi.use' => '田端信号場付近の線路形状の一部',
+			'sources.gsi.terms' => '国土地理院コンテンツ利用規約（CC BY 4.0互換）。出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => '駅一覧と座標',
 			'sources.stationDatabase.terms' => 'Seo-4d696b75. CC BY-SA 4.0',
@@ -1474,6 +1503,9 @@ extension on TranslationsJa {
 			'sources.noritsubushi.name' => '乗りつぶしオンライン',
 			'sources.noritsubushi.use' => '営業キロ、駅の順序、開業日・廃止日、日本語表記',
 			'sources.noritsubushi.terms' => '事実情報として使用',
+			'sources.others.name' => 'その他の事実情報の出典',
+			'sources.others.use' => '事業者の公式資料（英語駅名など）、公共交通オープンデータセンター、国立国会図書館・国立公文書館の公開資料、日本郵便の郵便番号データ、駅名標の写真',
+			'sources.others.terms' => '事実情報として使用。出典はデータの行ごとに記録し、一覧はリポジトリのdata/NOTICE.mdにあります',
 			'sources.openFreeMap.name' => 'OpenFreeMap',
 			'sources.openFreeMap.use' => '背景地図',
 			'sources.openFreeMap.terms' => 'OpenFreeMap © OpenMapTiles. Data from OpenStreetMap',
@@ -1638,14 +1670,14 @@ extension on TranslationsJa {
 			'prefNames.6' => '福島',
 			'prefNames.7' => '茨城',
 			'prefNames.8' => '栃木',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.9' => '群馬',
 			'prefNames.10' => '埼玉',
 			'prefNames.11' => '千葉',
 			'prefNames.12' => '東京',
 			'prefNames.13' => '神奈川',
 			'prefNames.14' => '新潟',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.15' => '富山',
 			'prefNames.16' => '石川',
 			'prefNames.17' => '福井',

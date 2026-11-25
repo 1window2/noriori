@@ -536,7 +536,7 @@ class _StopTile extends ConsumerWidget {
                             TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (past != null) TextSpan(text: ' ${past.label}', style: text.labelSmall),
                           ]),
-                          TextSpan(text: '  $aside', style: japaneseStyle(asideStyle), locale: const Locale('ja')),
+                          TextSpan(text: '  ${kinsoku(aside)}', style: japaneseStyle(asideStyle), locale: const Locale('ja')),
                           box.maxWidth,
                           // 한 방향 칩은 글자 폭으로 잴 수 없어 넉넉히 더한다
                           extra: oneWay == null ? 0 : 72 * MediaQuery.textScalerOf(context).scale(1),
@@ -544,7 +544,7 @@ class _StopTile extends ConsumerWidget {
                         return Text.rich(
                         TextSpan(
                           children: [
-                            TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
+                            TextSpan(text: nameLocale == null ? name : kinsoku(name), style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (oneWay != null)
                               WidgetSpan(
                                 alignment: PlaceholderAlignment.middle,
@@ -562,7 +562,7 @@ class _StopTile extends ConsumerWidget {
                               ),
                             if (aside != null)
                               TextSpan(
-                                text: besideName ? '  $aside' : '\n$aside',
+                                text: besideName ? '  ${kinsoku(aside)}' : '\n${kinsoku(aside)}',
                                 locale: const Locale('ja'),
                                 style: japaneseStyle(asideStyle),
                               ),
@@ -1074,6 +1074,8 @@ class _EndTile extends ConsumerWidget {
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
+                            // 말줄임한 글의 실제 폭만 차지한다. 부모 폭을 다 잡으면 꼬리(끝 역) 앞에 빈칸이 벌어진다
+                            textWidthBasis: TextWidthBasis.longestLine,
                           ),
                         ),
                         if (tail != null)
@@ -1140,7 +1142,7 @@ class _ArchiveTile extends ConsumerWidget {
                         locale: japaneseOnlyLocale(name0: name),
                       ),
                       if (aside != null)
-                        TextSpan(text: '  $aside', style: japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed)), locale: const Locale('ja')),
+                        TextSpan(text: '  ${kinsoku(aside)}', style: japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed)), locale: const Locale('ja')),
                     ]),
                   ),
                 ),
@@ -1377,6 +1379,11 @@ final _kanjiKana = RegExp(r'[\u3040-\u30FF\u3400-\u9FFF]');
 /// 로캘 없이 그리면 시스템 대체 글꼴(중국어 모양)이 골라져 한글 이름보다 크고 모양이 다르다 (2026-11-18)
 Locale? japaneseOnlyLocale({required String name0}) =>
     _kanjiKana.hasMatch(name0) && !_hangul.hasMatch(name0) ? const Locale('ja') : null;
+
+/// 일본어 줄머리 금칙: 작은 가나·장음·닫는 부호 앞에서는 줄을 바꾸지 않는다(「たばたしんごうじ|ょう」 금지, 5회차 2026-11-26).
+/// 줄 안에서는 여전히 글자가 차는 대로 끊고(사용자 결정 2026-11-16), 금칙 글자만 앞 글자에 붙인다. 글자 사이에 폭 없는 이음표(U+2060)를 넣는다
+final _kinsokuHead = RegExp(r'(?=[ぁぃぅぇぉっゃゅょゎゕゖァィゥェォッャュョヮヵヶㇰ-ㇿー々ゝゞヽヾ・、。，．）」』】〕〉》！？])');
+String kinsoku(String s) => s.replaceAll(_kinsokuHead, '\u2060');
 
 /// 일본어 글자(일본어로만 보이는 이름, 이름 옆 일본어·읽기)는 한 일본어 글꼴로, 한글과 같아 보이는 크기로 그린다.
 /// 앱 글꼴 Pretendard에는 한국 표준 한자(KS X 1001)만 있어, 競·馬·場·前은 Pretendard 한자(한글과 같은 크기, 약 0.87em)로,

@@ -37,13 +37,8 @@ for rid in A.routes:
         for p,q in pairs:
             a,b=p['node'],q['node']
             if a==b:continue
-            # 계통 끝 확장 행(extend_to)은 5회차 전에 없어졌다. 남은 계통에는 확장 역이 없으니 모두 보통 저장이다
-            ext=set(A.routes[rid].get('extend_to') or ())
-            if {a,b}&ext:
-                res=A.expand_any(rid,a,b,normalize_date(dd));kind='ext'
-                saved=normalize_date(dd)
-            else:
-                res=A.record(rid,a,b,dd);kind='plain';saved=res.get('saved_date')
+            # 계통 끝 확장 행(extend_to)은 없앴다(DESIGN §2.7, 2026-11-19). 계통 끝 너머는 끝 이어짐이라 모두 보통 저장이다
+            res=A.record(rid,a,b,dd);kind='plain';saved=res.get('saved_date')
             if res['status']!='ok' or not res.get('nodes'):
                 stat[kind,'저장안됨',res['status']]+=1;continue
             direction=res.get('direction') if A.routes[rid]['closed'] else None

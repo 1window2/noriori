@@ -290,7 +290,7 @@ def fix_nodes(names):
         made=fix_station(ja[i],kana[i],x['text'],known,keep)
         if made:x['text']=made;x['source']='rule'
     for x in rows:untranslate(x,known)
-    # 기간 있는 옛 이름의 규칙 영어도 같은 규칙(駅前 -Ekimae, 丁目 -chome 등)을 그 시절 이름·읽기로 적용한다
+    # 기간 있는 옛 이름의 규칙 영어도 같은 규칙(駅前 -ekimae, 丁目 -chome 등)을 그 시절 이름·읽기로 적용한다
     old_ja={(x['id'],x.get('valid_to')):(x['text'],plainkana(x.get('kana'))) for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and x.get('valid_to')}
     for x in names:
         if x['entity_type']!='node' or x['lang']!='en' or x.get('line') or not x.get('valid_to'):continue

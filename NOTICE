@@ -7,12 +7,14 @@ Licenses in this repository differ by path.
 |---|---|
 | apps/, packages/, tools/ | Apache License 2.0 (LICENSE) |
 | data/ (except as listed below) | CC BY-SA 4.0 (data/LICENSE) |
+| docs/ | CC BY-SA 4.0 (data/LICENSE). Research notes quote short excerpts from Wikipedia (CC BY-SA 4.0) and other sources listed in data/NOTICE.md, each with its source |
 | data/source/geometry/ | Terms of the original sources (data/source/geometry/LICENSE.md) |
 | data/base/*.geojson | Derived from National Land Numerical Information administrative boundary data; terms of the original source apply |
 | data/base/glyphs/ | SIL Open Font License 1.1 (data/base/LICENSE-Noto.txt) |
 | data/overrides/osm_manual.json | Open Database License 1.0 |
 | Rows derived from National Land Numerical Information N05 (railway time series): data/source/geometry/n05.yaml, rows with source n05 in data/source/positions/positions.yaml, and the N05 files listed in data/NOTICE.md | MLIT terms of use, non-commercial use only (not CC BY-SA 4.0) |
 | apps/noriori/assets/fonts/ | SIL Open Font License 1.1 |
+| Everything else (root files, .github/, distribution/, mockups/) | Apache License 2.0 (LICENSE) |
 
 Licenses and sources for the data pack bundled into the app are listed in data/NOTICE.md.
 Licenses of code dependencies are shown in the app under Settings > Open source licenses.

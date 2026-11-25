@@ -8,6 +8,8 @@
 
 행마다 `source`에 값의 출처가 있습니다.
 
+근거 칸(`source`, `why`, `note`)과 `docs/research`의 「」 인용은 값을 다시 확인하기 위한 짧은 발췌입니다. 위키백과 발췌에는 판 번호(revid·oldid)를 붙였고 CC BY-SA 4.0을 따릅니다. 다른 출처의 발췌는 날짜·이름·거리 같은 사실을 옮긴 것이며 아래 표의 출처와 자료 번호를 함께 적었습니다.
+
 ## 파일별
 
 | 파일 | 내용 | 조건 |
@@ -40,6 +42,16 @@
 | [Wikidata](https://www.wikidata.org/) | 영어 이름, 일부 역 좌표 | CC0 1.0 |
 | [나무위키](https://namu.wiki/) | 한국어 표제어 표기. 문서 본문은 쓰지 않음 | 사이트 라이선스 CC BY-NC-SA 2.0 KR. 표제어 표기는 사실 정보로 취급 |
 | [노리츠부시](https://www.noritsubushi.org/) (乗りつぶし) | 영업거리, 역 순서, 개업일과 폐지일의 뼈대, 일본어 표기 | 사실 정보로 취급. 사이트의 문장과 이미지는 쓰지 않음 |
+| [영어 위키백과](https://en.wikipedia.org/) | 일부 영어 이름의 대조 | CC BY-SA 4.0 |
+| [Wikimedia Commons](https://commons.wikimedia.org/) | 역명판·옛 사진·노선도 판독(영어 표기, 옛 이름, 정류장 자리). 사진은 저장소에 넣지 않고 읽은 표기만 근거 칸에 적음 | 파일마다 다름. 판독한 표기는 사실 정보로 취급 |
+| 철도 사업자 공식 사이트·시각표·역 안내 | 영어 공식 이름, 운행 사실(직통·정차·계절 운행) | 사실 정보로 취급. 문장과 이미지는 쓰지 않음 |
+| [公共交通オープンデータセンター](https://www.odpt.org/) (東京都交通局 데이터) | 都営 역의 영어 공식 이름 대조 | 公共交通オープンデータ基本ライセンス. 역 이름은 사실 정보로 취급 |
+| [国立国会図書館デジタルコレクション](https://dl.ndl.go.jp/) | 옛 역 이름·읽기·개업일과 폐지일의 근거 (인터넷 공개 자료의 검색 결과 발췌만) | 사실 정보로 취급. 근거 칸에는 짧은 발췌와 자료 번호만 둠 |
+| [国立公文書館デジタルアーカイブ](https://www.digital.archives.go.jp/) | 면허·폐지 공문서의 날짜 근거 | 사실 정보로 취급 |
+| [EDINET](https://disclosure2.edinet-fsa.go.jp/) (有価証券報告書) | 사업자 영업거리·노선 구성의 대조 | 사실 정보로 취급 |
+| 鉄道フォーラム(railforum) 역·정류장 자료 | 정차 기간·휴지 기간·옛 이름·읽기의 근거 | 사실 정보로 취급. 근거 칸에는 짧은 발췌만 둠 |
+| [日本郵便 郵便番号データ](https://www.post.japanpost.jp/zipcode/download.html) (KEN_ALL) | 지명 읽기의 둘째 근거 | 日本郵便의 이용 조건(자유 이용). 읽기는 사실 정보로 취급 |
+| [Internet Archive](https://archive.org/) | 사라진 공식 페이지의 보존 판 대조 | 사실 정보로 취급 |
 
 배경 지도는 데이터 팩에 들어가지 않습니다. 앱이 [OpenFreeMap](https://openfreemap.org/)에서 받아 그리고, 지도 위 안내 단추에 `OpenFreeMap © OpenMapTiles Data from OpenStreetMap` 표기가 나옵니다.
 
