@@ -23300,5 +23300,7 @@
 "continues": "l_myokennomori_cable",
 "source": "hand"
 }
-}
+},
+{"why": "比叡山鉄道 坂本ケーブル 전시 휴지. DB 지금: 전시 운휴 없음(1927-03-15부터 계속 open). 시작 1945-03-19: 위키 比叡山鉄道線 rev109148718 인포박스 「休止 = 1945年3月19日」(『比叡山鉄道株式会社』2003 사사 인용, 중간) + 『京阪電気鉄道』(1991) 「比叡山鉄道-坂本ケーブル-も昭和20年3月運転休止」 https://dl.ndl.go.jp/pid/13318212 k77(NDL 스니펫, 중간, 달까지 일치). 엇갈림 주의: 『鉄道ピクトリアル』1970-08(NDL 3294373 k20) 표 「坂本-叡山中堂 2.0 昭19. 昭19. …施設撤去せず」(칸 뜻 불명, 잘림) (audit5 r3 2026-11-25)", "add": {"date": "1945-03-19", "type": "suspend", "line": "l_sakamoto_cable", "edges": ["n_cable_sakamoto..n_cable_enryakuji"], "source": "hand"}, "_group": "main"},
+{"why": "위와 같은 칸의 재개 1946-08-07: 위키 같은 인포박스 「再開 = 1946年8月7日」(중간) + 『伝灯 : 最澄と叡山 比叡山開創一千二百年記念史鑑』(1988) 「坂本ケーブル(現・比叡山鉄道〈株〉)も、昭和二十一年八月七日、車輛を復旧して」 https://dl.ndl.go.jp/pid/14282838 k151(NDL 스니펫, 중간) — 서로 독립 중간 둘 (audit5 r3 2026-11-25)", "add": {"date": "1946-08-07", "type": "resume", "line": "l_sakamoto_cable", "edges": ["n_cable_sakamoto..n_cable_enryakuji"], "source": "hand"}, "_group": "main"}
 ]

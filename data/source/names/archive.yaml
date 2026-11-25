@@ -2654,6 +2654,36 @@
 - {"entity_type": "archive", "id": "a_horinochi_tramway", "lang": "ja", "text": "堀之内軌道", "kana": "ほりのうちきどう", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_horinochi_tramway", "lang": "ko", "text": "호리노우치 궤도", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_horinochi_tramway", "lang": "en", "text": "Horinochi Tramway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_tokiwadoori", "lang": "ja", "text": "常盤通", "kana": "ときわどおり", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_tokiwadoori", "lang": "ko", "text": "토키와도리", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_tokiwadoori", "lang": "en", "text": "Tokiwadori", "source": "rule"}
+- {"entity_type": "archive", "id": "a_jizoudou", "lang": "ja", "text": "地蔵堂", "kana": "じぞうどう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_jizoudou", "lang": "ko", "text": "지조도", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_jizoudou", "lang": "en", "text": "Jizodo", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nagakisawa_branch_line", "lang": "ja", "text": "長木沢支線", "kana": "ながきさわしせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nagakisawa_branch_line", "lang": "ko", "text": "나가키사와 지선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_nagakisawa_branch_line", "lang": "en", "text": "Nagakisawa Branch Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nagakisawa", "lang": "ja", "text": "長木沢", "kana": "ながきさわ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nagakisawa", "lang": "ko", "text": "나가키사와", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_nagakisawa", "lang": "en", "text": "Nagakisawa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_akitadensha", "lang": "ja", "text": "秋田電車", "kana": "あきたでんしゃ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_akitadensha", "lang": "ko", "text": "아키타 전차", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_akitadensha", "lang": "en", "text": "Akita Electric Railway", "source": "rule"}
+- {"entity_type": "archive", "id": "a_rentaimae", "lang": "ja", "text": "連隊前", "kana": "れんたいまえ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_rentaimae", "lang": "ko", "text": "렌타이마에", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_rentaimae", "lang": "en", "text": "Rentai-mae", "source": "rule"}
+- {"entity_type": "archive", "id": "a_oohachiwan", "lang": "ja", "text": "大八湾", "kana": "おおはちわん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_oohachiwan", "lang": "ko", "text": "오하치완", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_oohachiwan", "lang": "en", "text": "Ohachiwan", "source": "rule"}
+- {"entity_type": "archive", "id": "a_choushiguchi", "lang": "ja", "text": "銚子口", "kana": "ちょうしぐち", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_choushiguchi", "lang": "ko", "text": "쵸시구치", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_choushiguchi", "lang": "en", "text": "Choshiguchi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shinjukuekimae", "lang": "ja", "text": "新宿駅前（旧）", "kana": "しんじゅくえきまえ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shinjukuekimae", "lang": "ko", "text": "신주쿠에키마에", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shinjukuekimae", "lang": "en", "text": "Shinjuku-ekimae", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kanagawa", "lang": "ja", "text": "神奈川", "kana": "かながわ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kanagawa", "lang": "ko", "text": "카나가와", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kanagawa", "lang": "en", "text": "Kanagawa", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ja", "text": "北見鉄道", "kana": "きたみてつどう", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ko", "text": "키타미 철도", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "en", "text": "Kitami Railway", "source": "rule"}

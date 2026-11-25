@@ -2999,6 +2999,7 @@
 - {"entity_type": "node", "id": "n_biwako_hamaotsu_kojaku", "lang": "ja", "text": "びわ湖浜大津", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_yonejimaguchi_fushiki", "lang": "ja", "text": "米島口アルビス米島店前", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_kenryukomae", "lang": "ja", "text": "乾隆高前", "kind": "noritsubushi"}
+- {"entity_type": "node", "id": "n_tojimichi", "lang": "ja", "text": "東寺道", "kind": "noritsubushi"}
 - {"entity_type": "node", "id": "n_nijino", "lang": "ja", "text": "虹の駅", "kind": "alias"}
 - {"entity_type": "node", "id": "n_yamato_yagi", "lang": "ja", "text": "八木西口", "kind": "alias"}
 - {"entity_type": "node", "id": "n_meiji_jingumae", "lang": "ja", "text": "明治神宮前〈原宿〉", "kind": "alias"}
@@ -3083,7 +3084,6 @@
 - {"entity_type": "node", "id": "n_ehime_univ_hospital", "lang": "en", "text": "Ehime Univ. Hospital", "kind": "translated"}
 - {"entity_type": "node", "id": "n_gunchu_port", "lang": "en", "text": "Gunchu Port", "kind": "translated"}
 - {"entity_type": "node", "id": "n_tagawa_municipal_hospital", "lang": "en", "text": "Tagawa Municipal Hospital", "kind": "translated"}
-- {"entity_type": "node", "id": "n_idemitsu_art_museum", "lang": "en", "text": "Idemitsu Art Museum", "kind": "translated"}
 - {"entity_type": "node", "id": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura Otachimisaki Park", "kind": "translated"}
 - {"entity_type": "node", "id": "n_onoyama_park", "lang": "en", "text": "Onoyama Park", "kind": "translated"}
 - {"entity_type": "node", "id": "n_botanical_garden", "lang": "en", "text": "Botanical Garden", "kind": "translated"}

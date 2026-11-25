@@ -528,6 +528,158 @@
    "revid": "111870241",
    "printed": "Uembetsu",
    "note": "일본어 위키백과 「雨煙別駅」 정보칸 로마자 'Uembetsu', 읽기 うえんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_cross_bay_mae": {
+   "en": "Daiichi-Inn-Shinminato Crossbay-mae",
+   "ja": "第一イン新湊 クロスベイ前",
+   "title": "第一イン新湊 クロスベイ前駅",
+   "revid": "110492875",
+   "printed": "Daiichi-Inn-Shinminato Crossbay-mae",
+   "note": "일본어 위키백과 「第一イン新湊 クロスベイ前駅」 정보칸 로마자, 읽기 だいいちいんしんみなと くろすべいまえ 일치, 万葉線 문서. 주의: 万葉線 회사 영어 시각표는 다른 역에서 新湊=Shimminato(東新湊 Higashi-shimminato, 中新湊 Naka-shimminato)로 m을 쓰고 이 역은 'Crossbay mae'로 줄여 씀 — 공식 전체 이름이 없어 위키 순위로 정함 (audit5 r3_names 2026-11-25)"
+  },
+  "n_enshushimmura|遠州新村": {
+   "en": "Ensyu Shinmura",
+   "ja": "遠州新村",
+   "title": "遠州新村駅",
+   "revid": "107840012",
+   "printed": "Ensyu Shinmura",
+   "note": "일본어 위키백과 「遠州新村駅」 정보칸 로마자 'Ensyu Shinmura', 읽기 えんしゅうしんむら 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_gembudo|(臨)玄武洞": {
+   "en": "Gembudō",
+   "ja": "(臨)玄武洞",
+   "title": "玄武洞駅",
+   "revid": "109190508",
+   "printed": "Gembudō",
+   "note": "일본어 위키백과 「玄武洞駅」 정보칸 로마자 'Gembudō', 읽기 げんぶどう 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_gotsuhommachi|江津本町": {
+   "en": "Gōtsuhommachi",
+   "ja": "江津本町",
+   "title": "江津本町駅",
+   "revid": "103623166",
+   "printed": "Gōtsuhommachi",
+   "note": "일본어 위키백과 「江津本町駅」 정보칸 로마자 'Gōtsuhommachi', 읽기 ごうつほんまち 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_konan_shimpo|岡南新保": {
+   "en": "Kōnan-Shimpō",
+   "ja": "岡南新保",
+   "title": "岡南新保駅",
+   "revid": "101593525",
+   "printed": "Kōnan-Shimpō",
+   "note": "일본어 위키백과 「岡南新保駅」 정보칸 로마자 'Kōnan-Shimpō', 읽기 こうなんしんぽう 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_nagoya_kyujo_seimonmae|ナゴヤ球場正門前": {
+   "en": "Nagoyakyujōseimonmae",
+   "ja": "ナゴヤ球場正門前",
+   "title": "ナゴヤ球場正門前駅",
+   "revid": "109616920",
+   "printed": "Nagoyakyujōseimonmae",
+   "note": "일본어 위키백과 「ナゴヤ球場正門前駅」 정보칸 로마자 'Nagoyakyujōseimonmae', 읽기 なごやきゅうじょうせいもんまえ 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_nagoya_kyujo_seimonmae|(臨)ナゴヤ球場正門前": {
+   "en": "Nagoyakyujōseimonmae",
+   "ja": "(臨)ナゴヤ球場正門前",
+   "title": "ナゴヤ球場正門前駅",
+   "revid": "109616920",
+   "printed": "Nagoyakyujōseimonmae",
+   "note": "일본어 위키백과 「ナゴヤ球場正門前駅」 정보칸 로마자 'Nagoyakyujōseimonmae', 읽기 なごやきゅうじょうせいもんまえ 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_sambashi_dori_1_chome_old|桟橋通一丁目（旧）": {
+   "en": "Sambashidori 1-chome",
+   "ja": "桟橋通一丁目（旧）",
+   "title": "桟橋通一丁目駅",
+   "revid": "101769615",
+   "printed": "Sambashidori 1-chome",
+   "note": "일본어 위키백과 「桟橋通一丁目駅」 정보칸 로마자 'Sambashidori 1-chome', 읽기 さんばしどおりいっちょうめ 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_sho_tombetsu|小頓別": {
+   "en": "Shō-Tombetsu",
+   "ja": "小頓別",
+   "title": "小頓別駅",
+   "revid": "109455449",
+   "printed": "Shō-Tombetsu",
+   "note": "일본어 위키백과 「小頓別駅」 정보칸 로마자 'Shō-Tombetsu', 읽기 しょうとんべつ 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_yuemmaebasueigyosho|遊園前バス営業所": {
+   "en": "Yūenmaebasueigyousho",
+   "ja": "遊園前バス営業所",
+   "title": "遊園前バス営業所駅",
+   "revid": "105931585",
+   "printed": "YŪENMAEBASUEIGYOUSHO",
+   "note": "일본어 위키백과 「遊園前バス営業所駅」 정보칸 로마자 'YŪENMAEBASUEIGYOUSHO', 읽기 ゆうえんまえばすえいぎょうしょ 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_zempoji|善宝寺": {
+   "en": "Zempōji",
+   "ja": "善宝寺",
+   "title": "善宝寺駅",
+   "revid": "110498100",
+   "printed": "Zempōji",
+   "note": "일본어 위키백과 「善宝寺駅」 정보칸 로마자 'Zempōji', 읽기 ぜんぽうじ 일치, 노선 이름 확인. 1차 n/m 위키 대조는 정보칸의 HTML 문자 참조(&#333; 등)를 못 풀어 놓쳤던 행(재해석). 폐지·옛 이름 행이므로 키는 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_kitatombetsu|北頓別": {
+   "en": "Kita-Tombetsu",
+   "ja": "北頓別",
+   "title": "北頓別仮乗降場",
+   "revid": "109456248",
+   "printed": "Kita-Tombetsu",
+   "note": "일본어 위키백과 「北頓別仮乗降場」 정보칸 로마자 'Kita-Tombetsu', 읽기 きたとんべつ 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_kitatombetsu|北頓別仮乗降場": {
+   "en": "Kita-Tombetsu",
+   "ja": "北頓別仮乗降場",
+   "title": "北頓別仮乗降場",
+   "revid": "109456248",
+   "printed": "Kita-Tombetsu",
+   "note": "일본어 위키백과 「北頓別仮乗降場」 정보칸 로마자 'Kita-Tombetsu', 읽기 きたとんべつ 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_sempoku|釧北": {
+   "en": "Sempoku",
+   "ja": "釧北",
+   "title": "釧北仮乗降場",
+   "revid": "111688649",
+   "printed": "Sempoku",
+   "note": "일본어 위키백과 「釧北仮乗降場」 정보칸 로마자 'Sempoku', 읽기 せんぽく 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_sempoku|釧北仮乗降場": {
+   "en": "Sempoku",
+   "ja": "釧北仮乗降場",
+   "title": "釧北仮乗降場",
+   "revid": "111688649",
+   "printed": "Sempoku",
+   "note": "일본어 위키백과 「釧北仮乗降場」 정보칸 로마자 'Sempoku', 읽기 せんぽく 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_tempokuzakae|天北栄": {
+   "en": "Tenpoku-Zakae",
+   "ja": "天北栄",
+   "title": "天北栄仮乗降場",
+   "revid": "109455425",
+   "printed": "Tenpoku-Zakae",
+   "note": "일본어 위키백과 「天北栄仮乗降場」 정보칸 로마자 'Tenpoku-Zakae', 읽기 てんぽくざかえ 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_tempokuzakae|天北栄仮乗降場": {
+   "en": "Tenpoku-Zakae",
+   "ja": "天北栄仮乗降場",
+   "title": "天北栄仮乗降場",
+   "revid": "109455425",
+   "printed": "Tenpoku-Zakae",
+   "note": "일본어 위키백과 「天北栄仮乗降場」 정보칸 로마자 'Tenpoku-Zakae', 읽기 てんぽくざかえ 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_tonbetsu|頓別": {
+   "en": "Tombetsu",
+   "ja": "頓別",
+   "title": "頓別仮乗降場",
+   "revid": "109457517",
+   "printed": "Tombetsu",
+   "note": "일본어 위키백과 「頓別仮乗降場」 정보칸 로마자 'Tombetsu', 읽기 とんべつ 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
+  },
+  "n_tonbetsu|頓別仮乗降場": {
+   "en": "Tombetsu",
+   "ja": "頓別仮乗降場",
+   "title": "頓別仮乗降場",
+   "revid": "109457517",
+   "printed": "Tombetsu",
+   "note": "일본어 위키백과 「頓別仮乗降場」 정보칸 로마자 'Tombetsu', 읽기 とんべつ 일치, 노선 이름 확인. 1차 대조가 「X駅/X停留場/X電停」 제목만 봐서 놓친 「X仮乗降場」 제목 문서. 폐지·옛 이름 행 키 node|이름 (audit5 r3_names 2026-11-25)"
   }
  }
 }

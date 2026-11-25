@@ -40923,6 +40923,3959 @@
    "source": "https://www.haneda-tokyo-access.com/en/ride/train-line-map.html",
    "type": "company",
    "note": "Keikyu train line map (English), read visually; paired by romanization"
+  },
+  "n_nambu_shijo": {
+   "en": "Nambushijō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kanazawa-seaside-line-Nambu-shijo-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (platform name board), romaji read from the image: 'Nambushijō' (macron as printed). ja.wikipedia infobox has 'Nambu-Shijō' (based on the company English site); sign form used. n/m: m (official). (audit5 r3_names 2026-11-25)"
+  },
+  "n_tambo_art": {
+   "en": "Tamboato",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:TAMBOATO_Station.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'TAMBOATO' (all caps, title-cased). ja.wikipedia infobox 'Tambo Art (Paddy Field Art)' is a translated/English form, alias only. n/m: m (official). (audit5 r3_names 2026-11-25)"
+  },
+  "n_chiwata": {
+   "en": "Chiwata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiwata_Station_Nagasaki_Japan_(232420729).jpeg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'CHIWATA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_matsubara": {
+   "en": "Matsubara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiwata_Station_Nagasaki_Japan_(232420729).jpeg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_chiwata (same operator signage), read from the image: 'MATSUBARA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ibii": {
+   "en": "Ibii",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ibii_station_202505_-_station_name_sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'IBII'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kitago": {
+   "en": "Kitagō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ibii_station_202505_-_station_name_sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ibii (same operator signage), read from the image: 'KITAGŌ'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_jigenji": {
+   "en": "Jigenji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Jigenji_Station_3.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'JIGENJI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_sakanoue": {
+   "en": "Sakanoue",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Jigenji_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_jigenji (same operator signage), read from the image: 'SAKANOUE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kumamoto": {
+   "en": "Kumamoto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kumamoto_Station_Sign_(local_lines).jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'KUMAMOTO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_miyazaki": {
+   "en": "Miyazaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Miyazaki_Station_Sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'MIYAZAKI'. All caps title-cased (case after hyphen lower-case, macrons kept). ja.wikipedia caption says this sign was removed in 2022. (audit5 r3_names 2026-11-25)"
+  },
+  "n_nagasaki": {
+   "en": "Nagasaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nagasaki-Sta-Zairai-Ekimei.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'NAGASAKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_hyuga_shintomi": {
+   "en": "Hyuga-shintomi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:日向新富駅_駅名標.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'HYUGA-SHINTOMI'. All caps title-cased (case after hyphen lower-case, macrons kept). Worn sign; no macron visible on HYUGA. (audit5 r3_names 2026-11-25)"
+  },
+  "n_takanabe": {
+   "en": "Takanabe",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:日向新富駅_駅名標.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_hyuga_shintomi (same operator signage), read from the image: 'TAKANABE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_sadowara": {
+   "en": "Sadowara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:日向新富駅_駅名標.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_hyuga_shintomi (same operator signage), read from the image: 'SADOWARA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kirishima_jingu": {
+   "en": "Kirishima-jingū",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:霧島神宮駅看板.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'KIRISHIMA-JINGŪ'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_minamikata": {
+   "en": "Minamikata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:南方駅_駅名標.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'MINAMIKATA'. All caps title-cased (case after hyphen lower-case, macrons kept). Sign faded; romaji read as MINAMIKATA (low contrast). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ibusuki": {
+   "en": "Ibusuki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Platform_and_sign_of_Ibusuki_Station.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'ibusuki'. All caps title-cased (case after hyphen lower-case, macrons kept). Design sign with lower-case romaji \"ibusuki\"; capitalised. (audit5 r3_names 2026-11-25)"
+  },
+  "n_kaku": {
+   "en": "Kaku",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:賀来駅_駅名標と名所案内.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'KAKU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_bungo_kokubu": {
+   "en": "Bungo-kokubu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:賀来駅_駅名標と名所案内.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kaku (same operator signage), read from the image: 'BUNGO-KOKUBU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ogushigo": {
+   "en": "Ogusigo",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ogusigo_station_-_panoramio.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'OGUSIGO'. All caps title-cased (case after hyphen lower-case, macrons kept). Printed Kunrei-style \"OGUSIGO\" (kept as printed). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kawatana": {
+   "en": "Kawatana",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ogusigo_station_-_panoramio.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ogushigo (same operator signage), read from the image: 'KAWATANA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_haenosaki": {
+   "en": "Haenosaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ogusigo_station_-_panoramio.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ogushigo (same operator signage), read from the image: 'HAENOSAKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_osumi_natsui": {
+   "en": "Ōsumi-natsui",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nameplate_of_Osumi-natui_Station.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'ŌSUMI-NATSUI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_fukushima_takamatsu": {
+   "en": "Fukushima-takamatsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nameplate_of_Osumi-natui_Station.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_osumi_natsui (same operator signage), read from the image: 'FUKUSHIMA-TAKAMATSU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_takarabe": {
+   "en": "Takarabe",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:財部駅看板.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'TAKARABE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_isoichi": {
+   "en": "Isoichi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:財部駅看板.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_takarabe (same operator signage), read from the image: 'ISOICHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishi_oita": {
+   "en": "Nishi-ōita",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Oita_Station_Sign_3.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_oita (same operator signage), read from the image: 'NISHI-ŌITA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_maki_nippo_main": {
+   "en": "Maki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Oita_Station_Sign_3.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_oita (same operator signage), read from the image: 'MAKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_takio": {
+   "en": "Takio",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Oita_Station_Sign_3.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_oita (same operator signage), read from the image: 'TAKIO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_onigase": {
+   "en": "Onigase",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Onoya_Station_Sign_4.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_onoya (same operator signage), read from the image: 'ONIGASE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_minami_yufu": {
+   "en": "Minamiyufu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yufuin_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_yufuin (same operator signage), read from the image: 'MINAMIYUFU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_buzen_zenkoji": {
+   "en": "Buzen-zenkōji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yanagigaura_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_yanagigaura (same operator signage), read from the image: 'BUZEN-ZENKŌJI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_buzen_nagasu": {
+   "en": "Buzen-nagasu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yanagigaura_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_yanagigaura (same operator signage), read from the image: 'BUZEN-NAGASU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishiyashiki": {
+   "en": "Nishiyashiki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Usa_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_usa (same operator signage), read from the image: 'NISHIYASHIKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kinko": {
+   "en": "Kinkō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:加治木駅駅名標.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kajiki (same operator signage), read from the image: 'KINKŌ'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishi_soeda": {
+   "en": "Nishi-soeda",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Soeda_station_name_sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_soeda (same operator signage), read from the image: 'NISHI-SOEDA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_minami_kurume": {
+   "en": "Minami-kurume",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kurumekoko-maeStationNameplate.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kurume_kokomae (same operator signage), read from the image: 'MINAMI-KURUME'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kamimuragakuenmae": {
+   "en": "Kamimura Gakuen-mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:串木野駅_駅名標.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kushikino (same operator signage), read from the image: 'KAMIMURA GAKUEN-MAE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kobanchaya": {
+   "en": "Kobanchaya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:串木野駅_駅名標.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kushikino (same operator signage), read from the image: 'KOBANCHAYA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_hishiro": {
+   "en": "Hishiro",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:津久見駅_(48461025142).jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_tsukumi (same operator signage), read from the image: 'HISHIRO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_hizen_ryuo": {
+   "en": "Hizen-ryūō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hizen-Kashima_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_hizen_kashima (same operator signage), read from the image: 'HIZEN-RYŪŌ'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_minami_yukuhashi": {
+   "en": "Minami-yukuhashi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yukuhashi_Station_Sign_(JR)_2.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_yukuhashi (same operator signage), read from the image: 'MINAMI-YUKUHASHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_hizen_nanaura": {
+   "en": "Hizennanaura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hizen-Hama_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_hizen_hama (same operator signage), read from the image: 'HIZENNANAURA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_tateishi": {
+   "en": "Tateishi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Naka-Yamaga_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_naka_yamaga (same operator signage), read from the image: 'TATEISHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kitsuki": {
+   "en": "Kitsuki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Naka-Yamaga_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_naka_yamaga (same operator signage), read from the image: 'KITSUKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_hizen_iida": {
+   "en": "Hizen-iida",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tara_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_tara (same operator signage), read from the image: 'HIZEN-IIDA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kumasaki": {
+   "en": "Kumasaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kami-Usuki_Station_Name_sign_20260321.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kami_usuki (same operator signage), read from the image: 'KUMASAKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_naomi": {
+   "en": "Naomi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kamioka_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kamioka_nippo_main (same operator signage), read from the image: 'NAOMI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_seta_hohi_main": {
+   "en": "Seta",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Higo-Ozu_Station_sign_2025.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_higo_ozu (same operator signage), read from the image: 'SETA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_osumi_okawara": {
+   "en": "Ōsumi-ōkawara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kita-Naganoda_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kita_naganoda (same operator signage), read from the image: 'ŌSUMI-ŌKAWARA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kyusendo": {
+   "en": "Kyūsendō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Isshochi_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_isshochi (same operator signage), read from the image: 'KYŪSENDŌ'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_higashi_taku": {
+   "en": "Higashitaku",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ogi_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ogi (same operator signage), read from the image: 'HIGASHITAKU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_maenohama": {
+   "en": "Maenohama",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kiire_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kiire (same operator signage), read from the image: 'MAENOHAMA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_uto": {
+   "en": "Uto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Midorikawa_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_midorikawa (same operator signage), read from the image: 'UTO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_konoha": {
+   "en": "Konoha",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Higo-Ikura_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_higo_ikura (same operator signage), read from the image: 'KONOHA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_bungo_toyooka": {
+   "en": "Bungo-toyooka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kamegawa_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kamegawa (same operator signage), read from the image: 'BUNGO-TOYOOKA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_suizenji": {
+   "en": "Suizenji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shin-Suizenji_Station_2008-3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_shin_suizenji (same operator signage), read from the image: 'SUIZENJI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kanaishihara": {
+   "en": "Kanaishihara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kami-Imari_Station3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_kami_imari (same operator signage), read from the image: 'KANAISHIHARA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_konagai": {
+   "en": "Konagai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JR_NAGASAKI-LINE_HIZEN-OURA_STATION_EKIMEIHYOU.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_hizen_oura (same operator signage), read from the image: 'KONAGAI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kamase": {
+   "en": "Kamase",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Haki_Station_3.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_haki (same operator signage), read from the image: 'KAMASE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kita_yamada": {
+   "en": "Kitayamada",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Bungo-Mori_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_bungo_mori (same operator signage), read from the image: 'KITAYAMADA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_era": {
+   "en": "Era",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Bungo-Mori_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_bungo_mori (same operator signage), read from the image: 'ERA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_higashi_saigawa_sanshiro": {
+   "en": "Higashisaigawa Sanshirou",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shin-Toyotsu_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_shin_toyotsu (same operator signage), read from the image: 'HIGASHISAIGAWA SANSHIROU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishi_urakami": {
+   "en": "Nishiurakami",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Michinoo-ekimei.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_michinoo (same operator signage), read from the image: 'NISHIURAKAMI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_koda_nagasaki_main": {
+   "en": "Kōda",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Michinoo-ekimei.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_michinoo (same operator signage), read from the image: 'KŌDA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_minami_arao": {
+   "en": "Minami Arao",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nagasu_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_nagasu (same operator signage), read from the image: 'MINAMI ARAO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nakamatsu": {
+   "en": "Nakamatsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:MAR_Minami-Aso-Mizu-no-Umareru-Sato-Hakusui-Kogen_Station_(42277585981).jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_minamiaso_mizu_no_umareru_sato_hakusui_kogen (same operator signage), read from the image: 'NAKAMATSU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_unoshima": {
+   "en": "Unoshima",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Buzen-Shoe_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_buzen_shoe (same operator signage), read from the image: 'UNOSHIMA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_irino": {
+   "en": "Irino",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ei_Station_頴娃駅_駅名標_20180506.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ei (same operator signage), read from the image: 'IRINO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishi_ei": {
+   "en": "Nishiei",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ei_Station_頴娃駅_駅名標_20180506.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ei (same operator signage), read from the image: 'NISHIEI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_fukudaimae": {
+   "en": "Fukudai-mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nanakuma_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_nanakuma (same operator signage), read from the image: 'Fukudai-mae'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_tamarai": {
+   "en": "Tamarai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:BungotaketaStationSignboard.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_bungo_taketa (same operator signage), read from the image: 'TAMARAI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_asaji": {
+   "en": "Asaji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:BungotaketaStationSignboard.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_bungo_taketa (same operator signage), read from the image: 'ASAJI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ozai": {
+   "en": "Ōzai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:鶴崎駅名標.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_tsurusaki (same operator signage), read from the image: 'ŌZAI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_mimata": {
+   "en": "Mimata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Miyakonojo_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_miyakonojo (same operator signage), read from the image: 'Mimata'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_idemitsu_art_museum": {
+   "en": "Idemitsu Bijutsukan",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Idemitsueki.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'IDEMITSU BIJUTSUKAN'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_fukuoka_airport": {
+   "en": "Fukuoka-kuko",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukuoka_Airport_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'Fukuoka-kuko'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ohorikoen": {
+   "en": "Ohorikoen",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ohori_Park_Station_Sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'Ohorikoen'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishitetsu_kashii": {
+   "en": "Nishitetsu Kashii",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nishitetsu-Kashii_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'Nishitetsu Kashii'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_yusubaru": {
+   "en": "Yusubaru",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:平成筑豊鉄道田川線_赤駅_駅名標.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_aka (same operator signage), read from the image: 'YUSUBARU'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_uchida": {
+   "en": "Uchida",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:平成筑豊鉄道田川線_赤駅_駅名標.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_aka (same operator signage), read from the image: 'UCHIDA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_fukushimaguchi": {
+   "en": "Fukushimaguchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:20210723_Uranosaki_Station.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_uranosaki (same operator signage), read from the image: 'FUKUSHIMAGUCHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ganda": {
+   "en": "Ganda",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chikuho-Nogata_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_chikuho_nogata (same operator signage), read from the image: 'Ganda'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kurokamimachi": {
+   "en": "Kurokami-machi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fujisakigu-mae_Station_name.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_fujisakigu_mae (same operator signage), read from the image: 'Kurokami-machi'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_horikawa": {
+   "en": "Horikawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shin-Suya_Station_name.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_shinsuya (same operator signage), read from the image: 'Horikawa'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_suya": {
+   "en": "Suya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shin-Suya_Station_name.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_shinsuya (same operator signage), read from the image: 'Suya'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_shin_tsuruba": {
+   "en": "Shin-tsuruba",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yunomae_station_sign_1.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_yunomae (same operator signage), read from the image: 'SHIN-TSURUBA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_tanagata": {
+   "en": "Tanagata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ainoura_Station_name_signs.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ainoura (same operator signage), read from the image: 'Tanagata'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_fukuro": {
+   "en": "Fukuro",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Minamata_Station2.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_minamata (same operator signage), read from the image: 'Fukuro'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishitetsu_futsukaichi": {
+   "en": "Nishitetsu Futsukaichi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Murasaki_Station_Sign_3.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_murasaki (same operator signage), read from the image: 'Nishitetsu Futsukaichi'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_ichibataguchi": {
+   "en": "Ichibataguchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Station_sign_of_Ichibataguchi_Station_above_the_platform_2014-09-03.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'ICHIBATAGUCHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_otera": {
+   "en": "Otera",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Otera-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'OTERA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_midami": {
+   "en": "Midami",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Otera-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_otera (same operator signage), read from the image: 'MIDAMI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_naka_sasebo": {
+   "en": "Nakasasebo",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Naka-Sasebo_Station_Sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'NAKASASEBO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kita_sasebo": {
+   "en": "Kitasasebo",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Naka-Sasebo_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_naka_sasebo (same operator signage), read from the image: 'KITASASEBO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_sasebo_chuo": {
+   "en": "Sasebochuo",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Naka-Sasebo_Station_Sign.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_naka_sasebo (same operator signage), read from the image: 'SASEBOCHUO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_nishitetsu_kurume": {
+   "en": "Nishitetsu Kurume",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nishitetsu-Kurume_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'Nishitetsu Kurume'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_reiwa_costa_yukuhashi": {
+   "en": "Reiwa-costa-yukuhashi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Reiwa-Costa-Yukuhashi_Station_sign_20201009.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'REIWA-COSTA-YUKUHASHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+  },
+  "n_kanehana|奔無加": {
+   "en": "Pommuka",
+   "ja": "奔無加",
+   "kana": "ぽんむか",
+   "source": "鉄道省『鉄道停車場一覧』大正15年(1926) NDL https://dl.ndl.go.jp/pid/1020981/1/139",
+   "type": "official list",
+   "printed": "Pommuka",
+   "evidence": "evidence/ndl_rows/1020981_139_奔無加_1637.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 1917년판(3461950 p94)도 lab OCR Pommuka. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_towadashi|三本木": {
+   "en": "Sambongi",
+   "ja": "三本木",
+   "kana": "さんぼんぎ",
+   "source": "鉄道省『鉄道停車場一覧』大正15年(1926) NDL https://dl.ndl.go.jp/pid/1020981/1/146",
+   "type": "official list",
+   "printed": "Sambongi",
+   "evidence": "evidence/ndl_rows/1020981_146_三本木_2189.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 十和田鉄道. 1960년대 국철 판(1873236 p151) SAMBONGI(十和田観光電鉄)도 같음. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_hyakkenmachi|百間町": {
+   "en": "Hyakken-machi",
+   "ja": "百間町",
+   "kana": "ひゃっけんまち",
+   "source": "鉄道省『鉄道停車場一覧』大正15年(1926) NDL https://dl.ndl.go.jp/pid/1020981/1/157",
+   "type": "official list",
+   "printed": "Hyakken-machi",
+   "evidence": "evidence/ndl_rows/1020981_157_百間町_2101.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 頸城鉄道. 1917년판(3461950 p104) 「Hyakken-Machi」. 하이픈으로 ん이 n. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_suzukashi|伊勢神戸": {
+   "en": "Ise-Kambe",
+   "ja": "伊勢神戸",
+   "kana": "いせかんべ",
+   "source": "鉄道省『鉄道停車場一覧』大正15年(1926) NDL https://dl.ndl.go.jp/pid/1020981/1/194",
+   "type": "official list",
+   "printed": "Ise-Kambe",
+   "evidence": "evidence/ndl_rows/1020981_194_伊勢神戸_1739.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 伊勢鉄道(현 近鉄鈴鹿線·伊勢鉄道) 伊勢神戸. 1927년판(1025500 p204)도 lab OCR Ise-Kambe. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_tenri|丹波市": {
+   "en": "Tambaichi",
+   "ja": "丹波市",
+   "kana": "たんばいち",
+   "source": "鉄道省『鉄道停車場一覧』大正15年(1926) NDL https://dl.ndl.go.jp/pid/1020981/1/84",
+   "type": "official list",
+   "printed": "Tambaichi",
+   "evidence": "evidence/ndl_rows/1020981_84_丹波市_643.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 국유 桜井線 丹波市(明治31 개업). 1917년판(3461950 p56)도 Tambaichi. 大軌 丹波市(n_tenri_kintetsu_old)에는 같은 행이 아니라 걸지 않음. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_minamibamba|南馬場": {
+   "en": "Minami-bamba",
+   "ja": "南馬場",
+   "kana": "みなみばんば",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/178",
+   "type": "official list",
+   "printed": "MINAMI-BAMBA",
+   "evidence": "evidence/ndl_rows/1873236_178_南馬場_1851.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 京浜急行. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_otsukahonmachi|大塚本町": {
+   "en": "Ōtsuka Hommachi",
+   "ja": "大塚本町",
+   "kana": "おおつかほんまち",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/180",
+   "type": "official list",
+   "printed": "ŌTSUKA / HOMMACHI",
+   "evidence": "evidence/ndl_rows/1873236_180_大塚本町_2874.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 相模鉄道. 두 줄로 나뉘어 띄어쓰기인지 줄바꿈인지 불명(하이픈 없음). 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_rokudoji|新湊": {
+   "en": "Shim-minato",
+   "ja": "新湊",
+   "kana": "しんみなと",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/194",
+   "type": "official list",
+   "printed": "SHIM-MINATO",
+   "evidence": "evidence/ndl_rows/1873236_194_新湊_3704.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 加越能鉄道 新湊港線 新湊. 같은 쪽 다른 표(1873236 p194 y2750, 括弧 (新湊))는 「SHIM / MINATO」(하이픈 없음) — 표기 둘, n/m은 둘 다 m. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_shinminato|新湊": {
+   "en": "Shin-minato",
+   "ja": "新湊",
+   "kana": "しんみなと",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/39",
+   "type": "official list",
+   "printed": "SHIN-MINATO",
+   "evidence": "evidence/ndl_rows/1873236_39_新湊_3060.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 국철 新湊線 新湊(괄호 표기 행). 국철은 Shin-으로 끊어 n — 加越能 新湊(Shim-minato)과 다름. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_cross_bay_mae|西新湊": {
+   "en": "Nishi-shimminato",
+   "ja": "西新湊",
+   "kana": "にししんみなと",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/194",
+   "type": "official list",
+   "printed": "NISHI- / SHIMMI / NATO",
+   "evidence": "evidence/ndl_rows/1873236_194_西新湊_2619.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 加越能鉄道 西新湊(현 第一イン新湊クロスベイ前의 옛 이름). SHIMMI/NATO는 하이픈 없는 줄바꿈. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_tenjimbashi_senri_old|天神橋": {
+   "en": "Tenjimbashi",
+   "ja": "天神橋",
+   "kana": "てんじんばし",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/203",
+   "type": "official list",
+   "printed": "TENJIM / BASHI",
+   "evidence": "evidence/ndl_rows/1873236_203_天神橋_1311.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 京阪神急行電鉄 千里山線 天神橋(괄호 행). 하이픈 없는 줄바꿈이라 한 낱말. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_osaka_uehommachi|上本町": {
+   "en": "Uehommachi",
+   "ja": "上本町",
+   "kana": "うえほんまち",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/204",
+   "type": "official list",
+   "printed": "UEHOM / MACHI",
+   "evidence": "evidence/ndl_rows/1873236_204_上本町_3287.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 近畿日本鉄道 上本町. 하이픈 없는 줄바꿈. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_sanyo_temma|電鉄天満": {
+   "en": "Dentetsu-temma",
+   "ja": "電鉄天満",
+   "kana": "でんてつてんま",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/215",
+   "type": "official list",
+   "printed": "DENTETSU-TEMMA",
+   "evidence": "evidence/ndl_rows/1873236_215_電鉄天満_1548.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 山陽電気鉄道 網干線. 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_ono_shimabara|小野本町": {
+   "en": "Ono Hommachi",
+   "ja": "小野本町",
+   "kana": "おのほんまち",
+   "source": "『停車場一覧』(日本国有鉄道, 1960년대 판) NDL https://dl.ndl.go.jp/pid/1873236/1/226",
+   "type": "official list",
+   "printed": "ONO / HOMMACHI",
+   "evidence": "evidence/ndl_rows/1873236_226_小野本町_3129.jpg",
+   "note": "옛 공식 로마자 역 일람(인터넷 공개, 쪽 그림 잘라 읽음), 높음. 島原鉄道. 두 줄, 띄어쓰기 불명(하이픈 없음). 모두 대문자는 첫 글자만 대문자(하이픈 뒤 소문자). n/m 결정 근거 (audit5 r3_names 2026-11-25)"
+  },
+  "n_abukuma": {
+   "en": "Abukuma",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_aikawa_akita_nairiku_jukan": {
+   "en": "Aikawa",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_aizu_arakai": {
+   "en": "Aizu-Arakai",
+   "source": "https://aizutetsudo.jp/station/aizuarakai/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_aizu_nagano": {
+   "en": "Aizu-Nagano",
+   "source": "https://aizutetsudo.jp/station/aizunagano/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_aizu_sanson_dojo": {
+   "en": "Aizu-Sanson Dojo",
+   "source": "https://aizutetsudo.jp/station/aizusansondoujo/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_aizu_shimogo": {
+   "en": "Aizu-Shimogo",
+   "source": "https://aizutetsudo.jp/station/aizushimogou/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_aizu_tajima": {
+   "en": "Aizu-Tajima",
+   "source": "https://aizutetsudo.jp/station/aizutajima/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_aizukogen_ozeguchi_aizu": {
+   "en": "Aizukogen-ozeguchi",
+   "source": "https://www.yagan.co.jp/eki/aizukogen/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased; boundary station shared with Aizu Railway, Yagan Railway page"
+  },
+  "n_aizukogen_ozeguchi_yagan": {
+   "en": "Aizukogen-ozeguchi",
+   "source": "https://www.yagan.co.jp/eki/aizukogen/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_ajigaura": {
+   "en": "Ajigaura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:磯崎駅ホーム_-_panoramio.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_isozaki"
+  },
+  "n_akagi_jomo": {
+   "en": "Akagi",
+   "source": "https://www.tobu.co.jp/en/_assets_l/pdf/routeMap.pdf",
+   "type": "company",
+   "note": "same station shared with Tobu; Tobu official form (row n_akagi_tobu)"
+  },
+  "n_amaariki": {
+   "en": "Amaariki",
+   "source": "https://www.kominato.co.jp/station/amaariki/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_amaya": {
+   "en": "Amaya",
+   "source": "https://aizutetsudo.jp/station/amaya/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_anabe": {
+   "en": "Anabe",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Anabe_Station_2025_6_22.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_anagawa_chiba_urban_monorail": {
+   "en": "Anagawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiba-monorail-CM07-Anagawa-station-sign-20190701-125244.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_aniai": {
+   "en": "Aniai",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_aoyama_igr_iwate_galaxy": {
+   "en": "Aoyama",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_araijuku": {
+   "en": "Araijuku",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_arase": {
+   "en": "Arase",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_asamushi_onsen": {
+   "en": "Asamushi-Onsen",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Nonai-station-platform-20120911-075242.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_nonai_aoimori_aoimori_railway"
+  },
+  "n_ashinomaki_onsen": {
+   "en": "Ashinomaki Onsen",
+   "source": "https://aizutetsudo.jp/station/ashinomaki/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_ashinomaki_onsen_minami": {
+   "en": "Ashinomaki Onsen Minami",
+   "source": "https://aizutetsudo.jp/station/ashinomakionsenminami/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_bashamichi": {
+   "en": "Bashamichi",
+   "source": "http://www.mm21railway.co.jp/global/english/index.html",
+   "type": "company",
+   "note": "company English site station list (subtitle in parentheses not part of the name)"
+  },
+  "n_chiba_chiba_urban_monorail": {
+   "en": "Chiba",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiba-monorail-CM16-Sakaecho-station-sign-20190701-110056.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_sakaecho_chiba_urban_monorail"
+  },
+  "n_chibiki": {
+   "en": "Chibiki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Chibiki-station-platform-20120911-133110.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_chitose_konan": {
+   "en": "Chitose",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_choshi_choshi": {
+   "en": "Chōshi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:250821_Choshi_Station_03.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; JR East sign at the shared station (Chōshi Electric uses the same station name)"
+  },
+  "n_chuo_hirosaki": {
+   "en": "ChuoHirosaki",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens; printed in camel case (ChuoHirosaki)"
+  },
+  "n_egi": {
+   "en": "Egi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Joden-Egi-station-platform-20100907.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; small all-caps romaji on the platform sign, title-cased"
+  },
+  "n_enoshima": {
+   "en": "Enoshima",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_fujifilm_mae": {
+   "en": "Fujifilm Mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:FUJIFILMmae.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; older wooden sign (FUJIFILM MAE), all caps, title-cased"
+  },
+  "n_fujimicho_shonan_monorail": {
+   "en": "Fujimicho",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_fujisawa_enoshima": {
+   "en": "Fujisawa",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_fukoda": {
+   "en": "Fukouda",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tsugaru-railway-Fukoda-station-platform-20110615-074800.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; letters spaced one per kana (FU KO U DA), joined; all caps, title-cased; printed spelling Fukouda (kana ふこうだ)"
+  },
+  "n_fukushima_abukuma_express": {
+   "en": "Fukushima",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_fukushima_fukushima_transportation": {
+   "en": "Fukushima",
+   "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
+   "type": "company",
+   "note": "same station shared with JR East; JR East official form (row n_fukushima_ou_main)"
+  },
+  "n_fukushima_gakuin_mae": {
+   "en": "Fukushimagakuinmae",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_fukuura": {
+   "en": "Fukuura",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_furusato_koen": {
+   "en": "Furusato Koen",
+   "source": "https://aizutetsudo.jp/station/furusatokouen/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_fusamoto": {
+   "en": "Fusamoto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Isumi-railway-Fusamoto-station-platform-20151228-100030.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_gijukukokomae": {
+   "en": "Gijukukokomae",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_gohyakurakan": {
+   "en": "Gohyakurakan",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Anabe_Station_2025_6_22.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_anabe"
+  },
+  "n_goi_kominato": {
+   "en": "GOI",
+   "source": "https://www.kominato.co.jp/station/goi/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name"
+  },
+  "n_gokurakuji": {
+   "en": "Gokurakuji",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_hakunokokomae": {
+   "en": "Hakunokokomae",
+   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_hatogaya": {
+   "en": "Hatogaya",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_higashi_aomori": {
+   "en": "Higashi-Aomori",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Higashi-aomori-station-platform-20120912-062654.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_higashi_funaoka": {
+   "en": "Higashifunaoka",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_higashi_fusamoto": {
+   "en": "Higashi-Fusamoto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Isumi-railway-Koyamatsu-station-platform-20151228-113532.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_koyamatsu"
+  },
+  "n_higashi_kawaguchi_saitama": {
+   "en": "Higashi-Kawaguchi",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_higashi_matsudo_keisei": {
+   "en": "Higashi-Matsudo",
+   "source": "https://www.hokuso-railway.co.jp/en/",
+   "type": "company",
+   "note": "Hokuso English station list (Narita Sky Access platforms at this station are on Hokuso track; same form as the Hokuso node in the previous round)"
+  },
+  "n_higashi_mito": {
+   "en": "Higashimito",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Higashi-mito-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_higashi_narita_shibayama": {
+   "en": "Higashi-Narita",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/us/141.pdf",
+   "type": "company",
+   "note": "Keisei English station map PDF title (station shared with Shibayama Railway, managed by Keisei)"
+  },
+  "n_higuchi_moka": {
+   "en": "Higuchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Kugeta-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_kugeta; Kunrei-style spelling as printed (Higuti); Moka Railway signs differ in style: 2014 photos (Tenyaba, Nanai) are Hepburn, older boards (Ichihana, Kugeta) are Kunrei (Itihana, Higuti, Terauti) / 옛 판 훈령식 표기 Higuti: 회사 지금 판(2014 노선도)이 헵번식이라 같은 읽기의 헵번 꼴 Higuchi을 이름으로, 인쇄 꼴은 검색 별칭 (audit5 r3 2026-11-25)"
+  },
+  "n_hinuma": {
+   "en": "Hinuma",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Hinuma-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_hiraiso": {
+   "en": "Hiraiso",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:磯崎駅ホーム_-_panoramio.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_isozaki"
+  },
+  "n_hiraka": {
+   "en": "Hiraka",
+   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_hirokoshita": {
+   "en": "Hirokoshita",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_hirosaki_higashikomae": {
+   "en": "Hirosakihigashikōmae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hirosakihigasikōmae_station03.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps with macron (HIROSAKIHIGASHIKŌMAE), title-cased; the final E sits at the frame edge of the photo, read with the kana ひろさきひがしこうまえ; company English timetable 2019 wraps it as Hirosakihigashi/kokomae"
+  },
+  "n_hitachinai": {
+   "en": "Hitachinai",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_hobara": {
+   "en": "Hobara",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_ichihana": {
+   "en": "Ichihana",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ichihana_station_Running_in_board.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; printed Kunrei-style spelling kept as printed (Itihana); Moka Railway signs differ in style: 2014 photos (Tenyaba, Nanai) are Hepburn, older boards (Ichihana, Kugeta) are Kunrei (Itihana, Higuti, Terauti) / 옛 판 훈령식 표기 Itihana: 회사 지금 판(2014 노선도)이 헵번식이라 같은 읽기의 헵번 꼴 Ichihana을 이름으로, 인쇄 꼴은 검색 별칭 (audit5 r3 2026-11-25)"
+  },
+  "n_ichinohe": {
+   "en": "Ichinohe",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_iidaoka": {
+   "en": "Iidaoka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Anabe_Station_2025_6_22.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_anabe"
+  },
+  "n_inakadate": {
+   "en": "Inakadate",
+   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_inamuragasaki": {
+   "en": "Inamuragasaki",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_inuboh": {
+   "en": "Inuboh",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:250821_Inubo_Station_02.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased; tiled wall name board"
+  },
+  "n_isaida": {
+   "en": "Isaida",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Izuhakone-railway-Daiyuzan-line-Isaida-station-platform-20140310-124246.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_ishikawa_konan": {
+   "en": "Ishikawa",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_ishikawa_pool_mae": {
+   "en": "Ishikawapurumae",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_isozaki": {
+   "en": "Isozaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:磯崎駅ホーム_-_panoramio.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_iwahara": {
+   "en": "Iwahara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Izuhakone-railway-Daiyuzan-line-Iwahara-station-platform-20140310-135018.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_iwanome": {
+   "en": "Iwanome",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_iwate_kawaguchi": {
+   "en": "Iwatekawaguchi",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_iwate_numakunai_igr_iwate_galaxy": {
+   "en": "Iwatenumakunai",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_jomon_ogata": {
+   "en": "Jomon-Ogata",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_kabuto_abukuma_express": {
+   "en": "Kabuto",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_kakuda": {
+   "en": "Kakuda",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_kamakura_enoshima": {
+   "en": "Kamakura",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_kamakurakokomae": {
+   "en": "Kamakura-koko-mae",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_kami_hinokinai": {
+   "en": "Kamihinokinai",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_kamigora": {
+   "en": "Kami-Gora",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_kamihobara": {
+   "en": "Kamihobara",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_kamikitacho": {
+   "en": "Kamikitachō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Kamikitacho-station-platform-20120912-141820.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_kamimiyori_shiobara_onsenguchi": {
+   "en": "Kamimiyori-shiobara-onsenguchi",
+   "source": "https://www.yagan.co.jp/eki/kamimiyori/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kamisugi_akita_nairiku_jukan": {
+   "en": "Kamisugi",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_kanazawa_hakkei_yokohama_seaside_line_kanazawa_seaside": {
+   "en": "Kanazawa-Hakkei",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_kannon": {
+   "en": "Kannon",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:250821_Kannon_Station_01.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; station-building name lettering (KANNON over 観音駅), all caps, title-cased"
+  },
+  "n_kashima_asahi": {
+   "en": "Kashimaasahi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Kashima-asahi-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_kashima_ono": {
+   "en": "Kashimaōno",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Kashima-ono-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_kashimanada": {
+   "en": "Kashimanada",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Taiyo-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_taiyo; all caps, title-cased"
+  },
+  "n_kataseyama": {
+   "en": "Kataseyama",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_katsurase": {
+   "en": "Katsurase",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_kawaguchi_motogo": {
+   "en": "Kawaguchi-Motogo",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_kawaji_yumoto": {
+   "en": "Kawaji-yumoto",
+   "source": "https://www.yagan.co.jp/eki/kawajiyumoto/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kawakura": {
+   "en": "Kawakura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tsugaru-railway-Kawakura-station-platform-20110615-072906.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_kayakusa": {
+   "en": "Kayakusa",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_kazusa_kawama": {
+   "en": "Kazusa-kawama",
+   "source": "https://www.kominato.co.jp/station/kazusakawama/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kazusa_murakami": {
+   "en": "Kazusa-murakami",
+   "source": "https://www.kominato.co.jp/station/kazusamurakami/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kazusa_nakagawa": {
+   "en": "Kazusa-Nakagawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kuniyoshi_Station_platform_Aug_10_2021_02-13PM.jpeg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_kuniyoshi; older wooden name board on the station hut reads KAZUSA NAKAGAWA (https://commons.wikimedia.org/wiki/File:Kazusa-nakagawa_sta.jpg); platform-sign form used"
+  },
+  "n_kazusa_tsurumai": {
+   "en": "Kazusa-tsurumai",
+   "source": "https://www.kominato.co.jp/station/kazusatsurumai/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kazusa_ushiku": {
+   "en": "Kazusa-ushiku",
+   "source": "https://www.kominato.co.jp/station/kazusaushiku/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kazusa_yamada": {
+   "en": "Kazusa-yamada",
+   "source": "https://www.kominato.co.jp/station/kazusayamada/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_keisei_owada": {
+   "en": "Keisei-Ōwada",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/us/131.pdf",
+   "type": "company",
+   "note": "Keisei English station map PDF title"
+  },
+  "n_keisei_takasago_hokuso": {
+   "en": "Keisei-Takasago",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/us/111.pdf",
+   "type": "company",
+   "note": "Keisei English station map PDF title (station shared with Hokuso, managed by Keisei)"
+  },
+  "n_kenyoshi": {
+   "en": "Kenyoshi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Kenyoshi-station-platform-20120911-095506.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_kintaichi_onsen": {
+   "en": "Kintaichionsen",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_kiryu_kyujo_mae": {
+   "en": "Kiryu Kyujo Mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Joden-Kiryu-kyujo-mae-station-entrance-20100907.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; station-hut name board 桐生球場前駅 / KIRYU KYUJO MAE STATION; trailing STATION dropped; all caps, title-cased"
+  },
+  "n_kita_marumori": {
+   "en": "Kitamarumori",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_kita_mitsukaido": {
+   "en": "Kitamitsukaidô",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kita-Mitsukaido_Station_-_Sep_17_2021_various_15_33_32_669000.jpeg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps with circumflex (KITAMITSUKAIDÔ), title-cased; older-style sign photographed 2021"
+  },
+  "n_kitaurakohan": {
+   "en": "Kitaurakohan",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Kitaurakohan-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_kobuchi_akita_nairiku_jukan": {
+   "en": "Kobuchi",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_koenkami": {
+   "en": "Koen-kami",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_kofudai_kominato": {
+   "en": "Kofudai",
+   "source": "https://www.kominato.co.jp/station/kofudai/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_kogawara": {
+   "en": "Kogawara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Kamikitacho-station-platform-20120912-141820.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_kamikitacho"
+  },
+  "n_kokusai_tenjijo": {
+   "en": "Kokusai-tenjijo",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_kominato": {
+   "en": "Kominato",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Kominato-station-platform-20120912-160926.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_koshigoe": {
+   "en": "Koshigoe",
+   "source": "https://www.enoden.co.jp/en/train/station/",
+   "type": "company",
+   "note": "company English station information list; all caps in source, title-cased"
+  },
+  "n_kowakidani": {
+   "en": "Kowakidani",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_koyadai": {
+   "en": "Kōyadai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Koyadai-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_koyamatsu": {
+   "en": "Koyamatsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Isumi-railway-Koyamatsu-station-platform-20151228-113532.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_koyanagi": {
+   "en": "Koyanagi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Higashi-aomori-station-platform-20120912-062654.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_higashi_aomori"
+  },
+  "n_kozuya": {
+   "en": "Kozuya",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_kugahara_isumi": {
+   "en": "Kugahara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Isumi-railway-Kugahara-station-platform-20151228-102848.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; sub-name (Sanku Gakuin) not taken"
+  },
+  "n_kugeta": {
+   "en": "Kugeta",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Kugeta-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_kuniyoshi": {
+   "en": "Kuniyoshi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kuniyoshi_Station_platform_Aug_10_2021_02-13PM.jpeg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; sub-name (Kaze soyogu tani) not taken"
+  },
+  "n_kuriyagawa": {
+   "en": "Kuriyagawa",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_manganji": {
+   "en": "Manganji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tama-monorail-TT08-Manganji-station-sign-20191231-124304.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; sub-name (土方歳三 生誕の地) in Japanese only"
+  },
+  "n_marumori": {
+   "en": "Marumori",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_mashiko": {
+   "en": "Mashiko",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Nanai-station-platform-20140505-120750.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_nanai; Moka Railway signs differ in style: 2014 photos (Tenyaba, Nanai) are Hepburn, older boards (Ichihana, Kugeta) are Kunrei (Itihana, Higuti, Terauti)"
+  },
+  "n_matsuba": {
+   "en": "Matsuba",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_matsugaya": {
+   "en": "Matsugaya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tama-monorail-TT02-Matsugaya-station-sign-20191231-113543.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_matsukitai": {
+   "en": "Matsukitai",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_mejiroyamashita": {
+   "en": "Mejiroyamashita",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_mido": {
+   "en": "Mido",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_midoricho": {
+   "en": "Midoricho",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Izuhakone-railway-Daiyuzan-line-Midoricho-station-platform-20140310-124926.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_minami_hatogaya": {
+   "en": "Minami-Hatogaya",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_minami_kakuda": {
+   "en": "Minamikakuda",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_minami_nagai": {
+   "en": "Minami-Nagai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:MinamiNagaiStn_Platform.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_minami_wakamatsu": {
+   "en": "Minami-Wakamatsu",
+   "source": "https://aizutetsudo.jp/station/minamiwakamatsu/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_minatomirai": {
+   "en": "Minatomirai",
+   "source": "http://www.mm21railway.co.jp/global/english/index.html",
+   "type": "company",
+   "note": "company English site station list (subtitle in parentheses not part of the name)"
+  },
+  "n_misawa_aoimori": {
+   "en": "Misawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Misawa-station-platform-20110615-172634.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_mitazono": {
+   "en": "Mitazono",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:仙台空港駅_駅名標_20250209.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_sendai_airport"
+  },
+  "n_mitsuma": {
+   "en": "Mitsuma",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Mitsuma_Station_onplatforms_train-2016_10_16.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_mitsuwadai": {
+   "en": "Mitsuwadai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiba-monorail-CM10-Mitsuwadai-station-sign-20190701-133406.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_miyanoshita": {
+   "en": "Miyanoshita",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_miyauchi_yamagata": {
+   "en": "Miyauchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Orihata_Station_2006-10-31.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_orihata; all caps, title-cased"
+  },
+  "n_mizunuma": {
+   "en": "Mizunuma",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Mizunuma_Station_-_sign_-_feb_5_2015.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_monden": {
+   "en": "Monden",
+   "source": "https://aizutetsudo.jp/station/monden/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_motegi": {
+   "en": "Motegi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Tenyaba-station-platform-20140505-104750.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_tenyaba; Moka Railway signs differ in style: 2014 photos (Tenyaba, Nanai) are Hepburn, older boards (Ichihana, Kugeta) are Kunrei (Itihana, Higuti, Terauti)"
+  },
+  "n_motomachi_chukagai": {
+   "en": "Motomachi-Chūkagai",
+   "source": "http://www.mm21railway.co.jp/global/english/index.html",
+   "type": "company",
+   "note": "company English site station list (subtitle in parentheses not part of the name)"
+  },
+  "n_mukaisenoue": {
+   "en": "Mukaisenoue",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_nagai_yamagata": {
+   "en": "Nagai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:MinamiNagaiStn_Platform.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_minami_nagai; all caps, title-cased"
+  },
+  "n_nakaarai": {
+   "en": "Naka Arai",
+   "source": "https://aizutetsudo.jp/station/nakaarai/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_nakagora": {
+   "en": "Naka-Gora",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_nakamiyori_onsen": {
+   "en": "Nakamiyori-onsen",
+   "source": "https://www.yagan.co.jp/eki/nakamiyorionsen/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_nakane": {
+   "en": "Nakane",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nakane_Station_platform_(48086546713).jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_nakatsuma": {
+   "en": "Nakatsuma",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kanto-railway-Nakatsuma-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_namiki_chuo": {
+   "en": "Namiki-Chūō",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_namiki_kita": {
+   "en": "Namiki-Kita",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_nihon_odori": {
+   "en": "Nihon-ōdōri",
+   "source": "http://www.mm21railway.co.jp/global/english/index.html",
+   "type": "company",
+   "note": "company English site station list (subtitle in parentheses not part of the name)"
+  },
+  "n_nisato": {
+   "en": "Nisato",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Konan_Undo-Koen-mae-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_undo_koen_mae_konan; themed sign (田んぼ鉄道 design)"
+  },
+  "n_nishi_hiranai": {
+   "en": "Nishi-Hiranai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Kominato-station-platform-20120912-160926.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_kominato"
+  },
+  "n_nishi_kamakura": {
+   "en": "Nishi-Kamakura",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_nishi_takanosu": {
+   "en": "Nishi-Takanosu",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_nitta_abukuma_express": {
+   "en": "Nitta",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_nojimakoen": {
+   "en": "Nojimakōen",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_nonai_aoimori_aoimori_railway": {
+   "en": "Nonai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Nonai-station-platform-20120911-075242.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_odawara_izuhakone": {
+   "en": "Odawara",
+   "source": "https://odakyu-global.com/assets/file/routemap.pdf",
+   "type": "company",
+   "note": "same station shared with Odakyu; Odakyu official form (row n_odawara_odakyu)"
+  },
+  "n_ofuna_shonan_monorail": {
+   "en": "Ofuna",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_ohiradai": {
+   "en": "Ohiradai",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_oimachi_tokyo_waterfront_area_rapid_transit": {
+   "en": "Oimachi",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_oizumi_abukuma_express": {
+   "en": "Ooizumi",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_ojika_kogen": {
+   "en": "Ojika-kogen",
+   "source": "https://www.yagan.co.jp/eki/ojikakogen/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_oka_abukuma_express": {
+   "en": "Oka",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_okashinai": {
+   "en": "Okashinai",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_okawa_dam_koen": {
+   "en": "Okawadamu Koen",
+   "source": "https://aizutetsudo.jp/station/ookawadamkouen/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_okuani": {
+   "en": "Okuani",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_okunakayama_kogen": {
+   "en": "Okunakayamakogen",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_omiya_saitama_new_urban_transit": {
+   "en": "Omiya",
+   "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
+   "type": "company",
+   "note": "same station shared with JR East; JR East official form (row n_omiya)"
+  },
+  "n_onodai": {
+   "en": "Onodai",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_onoekokomae": {
+   "en": "Onoekokomae",
+   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_orihata": {
+   "en": "Orihata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Orihata_Station_2006-10-31.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_oroshimachi_abukuma_express": {
+   "en": "Oroshimachi",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_osaki_tokyo_waterfront_area_rapid_transit": {
+   "en": "Osaki",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_ottomo": {
+   "en": "Ottomo",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Ottomo-station-platform-20120911-151448.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_owani": {
+   "en": "Owani",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_ringo": {
+   "en": "Ringō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Orihata_Station_2006-10-31.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_orihata; all caps with macron (RINGŌ), title-cased"
+  },
+  "n_ryuokyo": {
+   "en": "Ryuōkyo",
+   "source": "https://www.yagan.co.jp/eki/ryuokyo/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_sabaishi": {
+   "en": "Sabaishi",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_sachiura": {
+   "en": "Sachiura",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_sadori": {
+   "en": "Sadori",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_sagami_numata": {
+   "en": "Sagaminumata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Izuhakone-railway-Daiyuzan-line-Sagami-numata-station-platform-20140310-132736.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps without hyphen (SAGAMINUMATA), title-cased"
+  },
+  "n_saimyouji": {
+   "en": "Saimyoji",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_sakaecho_chiba_urban_monorail": {
+   "en": "Sakaechō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiba-monorail-CM16-Sakaecho-station-sign-20190701-110056.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_sakaimatsu": {
+   "en": "Sakaimatsu",
+   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_sakuragi_chiba_urban_monorail": {
+   "en": "Sakuragi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiba-monorail-CM12-Sakuragi-station-sign-20190701-140306.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; sub-name (Kasori Shell Mounds) in parentheses not taken"
+  },
+  "n_sangyoshinko_center": {
+   "en": "SangyōShinkō Center",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\\\"Station\\\" suffix dropped); printed without a space between Sangyō and Shinkō; センター as the loanword Center"
+  },
+  "n_sasaharada": {
+   "en": "Sasaharada",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ichihana_station_Running_in_board.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_ichihana"
+  },
+  "n_satomi": {
+   "en": "Satomi",
+   "source": "https://www.kominato.co.jp/station/satomi/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_seiaichuko_mae": {
+   "en": "Seiaichukomae",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_shidai_igakubu": {
+   "en": "Shidai-Igakubu",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_shimizugawa": {
+   "en": "Shimizugawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Kominato-station-platform-20120912-160926.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_kominato"
+  },
+  "n_shimoda": {
+   "en": "Shimoda",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Shimoda-station-platform-20120912-114346.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_shin_fujiwara_yagan": {
+   "en": "Shin-fujiwara",
+   "source": "https://www.yagan.co.jp/eki/shinfujiwara/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_shin_hokota": {
+   "en": "Shinhokota",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Shin-hokota-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_shin_kiba_tokyo_waterfront_area_rapid_transit": {
+   "en": "Shin-kiba",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_shin_sugita_yokohama_seaside_line": {
+   "en": "Shin-Sugita",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_shin_takashima": {
+   "en": "Shin-takashima",
+   "source": "http://www.mm21railway.co.jp/global/english/index.html",
+   "type": "company",
+   "note": "company English site station list (subtitle in parentheses not part of the name)"
+  },
+  "n_shinagawa_seaside": {
+   "en": "Shinagawa Seaside",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_shinjuku_keio_new_line": {
+   "en": "Shinjuku",
+   "source": "https://api-public.odpt.org/api/v4/odpt:Station?odpt:operator=odpt.Operator:Toei (en_names/evidence/odpt_toei_station.json)",
+   "type": "company",
+   "note": "same station shared with Toei; Toei official form (row n_shinjuku_toei)"
+  },
+  "n_shinonome_tokyo_waterfront_area_rapid_transit": {
+   "en": "Shinonome",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_shiyakusho_mae_chiba_urban_monorail": {
+   "en": "Shiyakushomae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chiba-monorail-CM02-Shiyakushomae-station-sign-20190701-154534.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; translated gloss (City Hall) in parentheses kept as alias"
+  },
+  "n_shonan_enoshima": {
+   "en": "Shonan-Enoshima",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_shonan_fukasawa": {
+   "en": "Shonan-Fukasawa",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_shonan_machiya": {
+   "en": "Shonan-Machiya",
+   "source": "https://kamakura-enoshima-monorail.jp/images/home/route-map.jpg",
+   "type": "company",
+   "note": "company English site route map (image, read visually)"
+  },
+  "n_shukugawara_konan": {
+   "en": "Shukugawara",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_sugo": {
+   "en": "Sugo",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_suwanotaira": {
+   "en": "Suwanotaira",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Suwanotaira-station-platform-20120911-112250.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
+  },
+  "n_taiyo": {
+   "en": "Taiyō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Taiyo-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_tajima_koko_mae": {
+   "en": "Tajima Koko Mae",
+   "source": "https://aizutetsudo.jp/station/tajimakoukoumae/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_takako": {
+   "en": "Takako",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_takanosu_akita_nairiku_jukan": {
+   "en": "Takanosu",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_takasaki_joshin": {
+   "en": "Takasaki",
+   "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
+   "type": "company",
+   "note": "same station shared with JR East; JR East official form (row n_takasaki)"
+  },
+  "n_takataki": {
+   "en": "Takataki",
+   "source": "https://www.kominato.co.jp/station/takataki/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_takizawa": {
+   "en": "Takizawa",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_tatara_moka": {
+   "en": "Tatara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ichihana_station_Running_in_board.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_ichihana"
+  },
+  "n_tennozu_isle_tokyo_waterfront_area_rapid_transit": {
+   "en": "Tennozu Isle",
+   "source": "https://www.twr.co.jp/en/tabid/233/Default.aspx",
+   "type": "company",
+   "note": "company English site timetable station list (\"Station\" suffix dropped)"
+  },
+  "n_tenyaba": {
+   "en": "Tenyaba",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Tenyaba-station-platform-20140505-104750.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Moka Railway signs differ in style: 2014 photos (Tenyaba, Nanai) are Hepburn, older boards (Ichihana, Kugeta) are Kunrei (Itihana, Higuti, Terauti)"
+  },
+  "n_terauchi": {
+   "en": "Terauchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Kugeta-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_kugeta; Kunrei-style spelling as printed (Terauti); Moka Railway signs differ in style: 2014 photos (Tenyaba, Nanai) are Hepburn, older boards (Ichihana, Kugeta) are Kunrei (Itihana, Higuti, Terauti) / 옛 판 훈령식 표기 Terauti: 회사 지금 판(2014 노선도)이 헵번식이라 같은 읽기의 헵번 꼴 Terauchi을 이름으로, 인쇄 꼴은 검색 별칭 (audit5 r3 2026-11-25)"
+  },
+  "n_to_no_hetsuri": {
+   "en": "Tonohetsuri",
+   "source": "https://aizutetsudo.jp/station/tounohetsuri/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_togawa": {
+   "en": "Togawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:十川駅駅舎と駅名板.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; letters spaced one per kana (TO GA WA), joined; all caps, title-cased"
+  },
+  "n_tokawa_choshi": {
+   "en": "Tokawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:250821_Inubo_Station_02.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_inuboh; all caps, title-cased"
+  },
+  "n_tokiniwa": {
+   "en": "Tokiniwa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:TokiniwaStn_Platform.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_tokushuku": {
+   "en": "Tokushuku",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Tokushuku-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_tomai": {
+   "en": "Tomai",
+   "source": "https://www.igr.jp/station/aoyama/",
+   "type": "company",
+   "note": "company station-page route strip (same romaji in title case in each station page header, e.g. /station/iwatekawaguchi/: Iwatekawaguchi); compounds written without hyphen; all caps in source, title-cased"
+  },
+  "n_tomino": {
+   "en": "Tomino",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_tonosawa": {
+   "en": "Tonosawa",
+   "source": "https://www.hakonenavi.jp/international/en/wp-content/themes/hakonenavi/assets/img/file/traffic-guide-eng-202603.pdf",
+   "type": "company",
+   "note": "Odakyu Hakone English Hakone Transportation Route Map (Freepass guide, March 2026), p.2, read visually"
+  },
+  "n_torihama": {
+   "en": "Torihama",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_tozawa": {
+   "en": "Tozawa",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_tozuka_angyo": {
+   "en": "Tozuka-Angyo",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_tsugaru_iizume": {
+   "en": "Tugaruiizume",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tsugaru-railway-Tsugaru-iizume-station-platform-20110615-105444.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; letters spaced one per kana (TU GA RU II ZU ME), joined; Kunrei-style TU as printed; all caps, title-cased"
+  },
+  "n_tsugaru_osawa": {
+   "en": "Tsugaruosawa",
+   "source": "https://konantetsudo.jp/english/owaniline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_tsukahara": {
+   "en": "Tsukahara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Izuhakone-railway-Daiyuzan-line-Tsukahara-station-platform-20140310-134232.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_tsukizaki": {
+   "en": "Tsukizaki",
+   "source": "https://www.kominato.co.jp/station/tsukizaki/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_tsunezumi": {
+   "en": "Tsunezumi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kashima-seaside-railway-Tsunezumi-station-platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_ugo_nagatoro": {
+   "en": "Ugo-Nagatoro",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_ugo_nakazato": {
+   "en": "Ugo-Nakazato",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_ugo_ota": {
+   "en": "Ugo-Ota",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_uminokoen_minamiguchi": {
+   "en": "Uminokōen-Minamiguchi",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_uminokoen_shibaguchi": {
+   "en": "Uminokōen-Shibaguchi",
+   "source": "https://www.seasideline.co.jp/lang/en/fare.html",
+   "type": "company",
+   "note": "company English fares table (\"Station\" suffix dropped)"
+  },
+  "n_undo_koen_mae_konan": {
+   "en": "Undokoenmae",
+   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
+   "type": "company",
+   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+  },
+  "n_urawa_misono": {
+   "en": "Urawa-Misono",
+   "source": "https://www.s-rail.co.jp/global/english.php",
+   "type": "company",
+   "note": "company English page fare table (names split over two lines with a hyphen kept as one hyphenated name)"
+  },
+  "n_wadagahara": {
+   "en": "Wadagahara",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Izuhakone-railway-Daiyuzan-line-Wadagahara-station-platform-20140310-135756.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps, title-cased"
+  },
+  "n_yadamae": {
+   "en": "Yadamae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Nonai-station-platform-20120911-075242.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour-station romaji on the sign of n_nonai_aoimori_aoimori_railway"
+  },
+  "n_yagoshima": {
+   "en": "Yagoshima",
+   "source": "https://aizutetsudo.jp/station/yagoshima/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_yanagawa_abukuma_express": {
+   "en": "Yanagawa",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_yatsu_akita_nairiku_jukan": {
+   "en": "Yatsu",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_yokohama_yokohama_minatomirai": {
+   "en": "Yokohama",
+   "source": "http://www.mm21railway.co.jp/global/english/index.html",
+   "type": "company",
+   "note": "company English site station list (subtitle in parentheses not part of the name)"
+  },
+  "n_yokokura_abukuma_express": {
+   "en": "Yokokura",
+   "source": "https://www.abukyu.co.jp/station/",
+   "type": "company",
+   "note": "company route map and timetable page, romaji under each station name"
+  },
+  "n_yonaizawa": {
+   "en": "Yonaizawa",
+   "source": "https://www.akita-nairiku.com/en/timetable/",
+   "type": "company",
+   "note": "company English site timetable and fare station selector (same list on /en/fare/)"
+  },
+  "n_yorokeikoku": {
+   "en": "Yorokeikoku",
+   "source": "https://www.kominato.co.jp/station/yorokeikoku/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_yoson_koen": {
+   "en": "Youson Koen",
+   "source": "https://aizutetsudo.jp/station/yousonkouen/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_yukarigaoka_yamaman": {
+   "en": "Yukarigaoka",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/index.php (en_names/evidence/web/keisei_stationmap.html)",
+   "type": "company",
+   "note": "same station shared with Keisei; Keisei official form (row n_yukarigaoka_keisei)"
+  },
+  "n_yunishigawa_onsen": {
+   "en": "Yunishigawa-onsen",
+   "source": "https://www.yagan.co.jp/eki/yunishigawaonsen/",
+   "type": "company",
+   "note": "company station page, sign-style romaji under the station name; all caps in source, title-cased"
+  },
+  "n_yunokami_onsen": {
+   "en": "Yunokami Onsen",
+   "source": "https://aizutetsudo.jp/station/yunokamionsenstation/",
+   "type": "company",
+   "note": "company station page heading (\"<name> Station\", Station dropped)"
+  },
+  "n_ageki": {
+   "en": "Ageki",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_agi": {
+   "en": "Agi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Iinuma station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E9%A3%AF%E6%B2%BC%E9%A7%85_-_panoramio_(1).jpg",
+   "type": "sign"
+  },
+  "n_aichikyuhaku_kinen_koen": {
+   "en": "Ai・Chikyuhaku Kinen Koen",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Linimo L07 (other operator); middle dot as printed",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_akasakaue": {
+   "en": "Akasakaue",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_amino": {
+   "confidence": "low",
+   "en": "Amino",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_anoh": {
+   "en": "Anoh",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_ao_kobe": {
+   "en": "Ao",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR West official row n_ao in en_official",
+   "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_aobe": {
+   "en": "Aobe",
+   "note": "Oigawa English timetable page, replacement/community bus stop \"Aobe Station\" (rail section Sasamado-Senzu suspended, station not on current map)",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_arako": {
+   "en": "Arako",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN04 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_arakogawa_koen": {
+   "en": "Arakogawa Koen",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN08 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_arimagawa": {
+   "en": "Arimagawa",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the JR West-era Nadachi sign; name unchanged",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%90%8D%E7%AB%8B%E9%A7%85_%E3%83%9B%E3%83%BC%E3%83%A0(%E5%B7%A8%E5%A4%A7%E3%81%AA%E3%81%86%E3%81%95%E8%80%B3)_-_panoramio.jpg",
+   "type": "sign"
+  },
+  "n_ariyoshi": {
+   "en": "Ariyoshi",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_awazu_ir_ishikawa": {
+   "en": "Awazu",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/awazu/?ctg=info",
+   "type": "company"
+  },
+  "n_bessho_onsen": {
+   "en": "Bessho-Onsen",
+   "note": "Ueda Dentetsu English leaflet PDF body text \"Bessho-Onsen Station\" (strip label printed Bessho_Onsen)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_boeki_center": {
+   "en": "Boeki Center",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_cable_hachimangu_guchi": {
+   "en": "Cable-hachimangu-guchi",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi); label broken over two lines; same form on one line in keihan_guide.pdf",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_cable_hachimangu_sanjo": {
+   "en": "Cable-hachimangu-sanjo",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi); one line in keihan_guide.pdf",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_central_japan_international_airport": {
+   "en": "Central Japan International Airport",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Meitetsu airport station (other operator); with 'Centrair' logo",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_chikuma": {
+   "en": "Chikuma",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_daigakumae_ueda": {
+   "en": "Daigakumae",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_daishoji_ir_ishikawa": {
+   "en": "Daishōji",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/daishoji/?ctg=info",
+   "type": "company"
+  },
+  "n_domoto": {
+   "en": "Domoto",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_endo": {
+   "en": "Endo",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased; decorated Alpico sign (station number AK13)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:EndoStation_20180722_090856.jpg",
+   "type": "sign"
+  },
+  "n_entoku": {
+   "en": "Entoku",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/entoku",
+   "type": "company"
+  },
+  "n_etchu_daimon": {
+   "en": "Etchu-Daimon",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/etchudaimon",
+   "type": "company"
+  },
+  "n_fujigaoka_aichi_rapid_transit": {
+   "en": "Fujigaoka",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Linimo L01 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_fukuoka": {
+   "en": "Fukuoka",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/fukuoka",
+   "type": "company"
+  },
+  "n_fukuyo": {
+   "en": "Fukuyō",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons (map: Fukuyo)",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_furuma": {
+   "en": "Furuma",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_furusho": {
+   "en": "Furusho",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_fuzokuchugakumae": {
+   "en": "Fuzokuchugakumae",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/fuzokuchugakumae",
+   "type": "company"
+  },
+  "n_geidai_dori": {
+   "en": "Geidai-dori",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Linimo L05 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_gekkoji": {
+   "en": "Gekkouji",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; printed in lower case 'gekkouji' (ou kept); first letter capitalised",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji-kyuko-Gekkoji-station-platform.jpg",
+   "type": "sign"
+  },
+  "n_gobo_kishu": {
+   "en": "Gobō",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR West official row n_gobo in en_official",
+   "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_gondo": {
+   "en": "Gondo",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/gondo",
+   "type": "company"
+  },
+  "n_goten_yama": {
+   "en": "Goten-yama",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_gujo_kyoto_tango_railway_willer_trains": {
+   "en": "Gujō",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Tantetsu (WILLER TRAINS) F6 sign; macron as printed",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Gujo_station_(4).jpg",
+   "type": "sign"
+  },
+  "n_hanno_nagaragawa": {
+   "en": "Hanno",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Nagaragawa Railway sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hannosta.JPG",
+   "type": "sign"
+  },
+  "n_hashimoto_keihan": {
+   "en": "Hashimoto",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_hata_alpico_kotsu": {
+   "en": "Hata",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Endo station sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:EndoStation_20180722_090856.jpg",
+   "type": "sign"
+  },
+  "n_hibari": {
+   "en": "Hibari",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Hokutetsu Ishikawa Line sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hibari_Station_20240429.jpg",
+   "type": "sign"
+  },
+  "n_higashi_katsura": {
+   "en": "Higashikatsura",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fujikyu wooden-style sign, no hyphen as printed",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji-kyuko-Higashi-katsura-station-platform-2.jpg",
+   "type": "sign"
+  },
+  "n_higashi_namerikawa": {
+   "en": "Higashi-Namerikawa",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/higashinamerikawa",
+   "type": "company"
+  },
+  "n_higashi_toyama": {
+   "en": "Higashi-Toyama",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/higashitoyama",
+   "type": "company"
+  },
+  "n_higashihatcho": {
+   "en": "Higashihattyo",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Toyohashi Railroad tram stop sign (tyo spelling kept)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%A9%8B%E5%B8%82%E6%97%AD%E6%9C%AC%E7%94%BA_%E8%B1%8A%E6%A9%8B%E9%89%84%E9%81%93_%E6%9D%B1%E5%85%AB%E7%94%BA%E9%9B%BB%E5%81%9C_20240824_1520.jpg",
+   "type": "sign"
+  },
+  "n_hino_nagano": {
+   "en": "Hino",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/hino",
+   "type": "company"
+  },
+  "n_hirahara": {
+   "en": "Hirahara",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_hiranda": {
+   "en": "Hiranda",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_hirono_golf_jo_mae": {
+   "en": "Hirono Golf Jo Mae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Shintetsu KB49 sign 'HIRONO GOLF JO MAE'; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hirono_Golf-j%C5%8D-mae_Station_in_2014-3-19_No,2.JPG",
+   "type": "sign"
+  },
+  "n_hiyoshicho": {
+   "en": "Hiyoshicho",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_hoshigaoka_keihan": {
+   "en": "Hoshigaoka",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_hoshikawa_sangi": {
+   "en": "Hoshikawa",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_hosorogi": {
+   "en": "Hosorogi",
+   "note": "Hapi-Line Fukui station page, station-sign style romaji block (text)",
+   "source": "https://www.hapi-line.co.jp/route/station/archives/20",
+   "type": "company"
+  },
+  "n_iburihashi": {
+   "en": "Iburihashi",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/iburihashi/?ctg=info",
+   "type": "company"
+  },
+  "n_ichibe": {
+   "en": "Ichibe",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Idamichi station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Idamichi.jpg",
+   "type": "sign"
+  },
+  "n_ichinobe": {
+   "en": "Ichinobe",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Ohmi Railway OR18 sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ichinobe_station_running_in_board_to_east_20201014.jpg",
+   "type": "sign"
+  },
+  "n_ichinotorii": {
+   "en": "Ichinotorii",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Nose Electric NS08 sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E4%B8%80%E3%81%AE%E9%B3%A5%E5%B1%85%E9%A7%85%E5%B7%9D%E8%A5%BF%E8%83%BD%E5%8B%A2%E5%8F%A3%E6%96%B9%E9%9D%A2%E9%A7%85%E5%90%8D%E6%A8%99.jpg",
+   "type": "sign"
+  },
+  "n_idakiso": {
+   "en": "Idakiso",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_idamichi": {
+   "en": "Idamichi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Kintetsu-style sign (line operated by Kintetsu until 2007, names unchanged); all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Idamichi.jpg",
+   "type": "sign"
+  },
+  "n_iinuma": {
+   "en": "Iinuma",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E9%A3%AF%E6%B2%BC%E9%A7%85_-_panoramio_(1).jpg",
+   "type": "sign"
+  },
+  "n_ikawa": {
+   "en": "Ikawa",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_ikuji": {
+   "en": "Ikuji",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/ikuji",
+   "type": "company"
+  },
+  "n_inaei": {
+   "en": "Inaei",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN09 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_irieoka": {
+   "en": "Irieoka",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_irigaike_koen": {
+   "en": "Irigaike Koen",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Linimo L03 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_isurugi": {
+   "en": "Isurugi",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/isurugi",
+   "type": "company"
+  },
+  "n_iwashimizu_hachimangu": {
+   "en": "Iwashimizu-hachimangu",
+   "note": "Keihan English guide PDF map label (text layer)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/useful-files/keihan_guide.pdf",
+   "type": "company"
+  },
+  "n_iwatakiguchi": {
+   "confidence": "low",
+   "en": "Iwataki-Guchi",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_jatco_mae": {
+   "en": "Jatco Mae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; decorated Gakunan station sign 'JATCO MAE' (all caps; title-cased); plain platform sign n_jatco_mae:6 reads the same",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji_20210410160609_(51334221113).jpg",
+   "type": "sign"
+  },
+  "n_joetsumyoko_echigo_tokimeki": {
+   "en": "Jōetsumyōkō",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; JR West Hokuriku Shinkansen sign at the shared station (same name); macrons as printed",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Joetsu_Myoko_Station_Shinkansen_Ekimeihyo.jpg",
+   "type": "sign"
+  },
+  "n_kabatake": {
+   "en": "Kabatake",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_kabutoyama": {
+   "en": "Kabutoyama",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Tantetsu (WILLER TRAINS) T23 sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kabutoyama_station_(3).jpg",
+   "type": "sign"
+  },
+  "n_kachigawa_tokai_kotsu": {
+   "en": "Kachigawa",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at the JR-Central Transport Johoku Line station (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_kaga_kasama": {
+   "en": "Kaga-Kasama",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/kaga_kasama/?ctg=info",
+   "type": "company"
+  },
+  "n_kamayama": {
+   "en": "Kamayama",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_kamijo_nagano": {
+   "en": "Kamijo",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/kamijo",
+   "type": "company"
+  },
+  "n_kanrojimae": {
+   "en": "Kanrojimae",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_kansai_airport": {
+   "en": "Kansai-airport",
+   "note": "Nankai English route search, route-map image alt text 'KANSAI-AIRPORT' (all caps; title-cased, case after hyphen not recoverable); read in round en_names3; airport form is a name (rule 2026-11-25); Keihan English guide map (other operator) also prints 'Kansai-airport'",
+   "source": "https://kensaku.nankai.co.jp/en/pc/N1",
+   "type": "company"
+  },
+  "n_kanzo": {
+   "en": "Kanzō",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons (map: Kanzo)",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_kasugacho": {
+   "en": "Kasugacho",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_katanoshi": {
+   "en": "Katanoshi",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_kawamiya": {
+   "en": "Kawamiya",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Yutorito Line Y06 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_kawamura_nagoya_guideway_bus": {
+   "en": "Kawamura",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Yutorito Line Y07 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_kawane_koyama": {
+   "en": "Kawane-Koyama",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons (map: Kawane Koyama)",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_kibukawa_ohmi": {
+   "en": "Kibukawa",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR West official row n_kibukawa in en_official",
+   "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_kinjo_futo": {
+   "en": "Kinjo Futo",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN11 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_kire": {
+   "en": "Kire",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_kirihara_nagano": {
+   "en": "Kirihara",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/kirihara",
+   "type": "company"
+  },
+  "n_kisaichi": {
+   "en": "Kisaichi",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_kishi_wakayama": {
+   "en": "Kishi",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_kita_futo": {
+   "en": "Kita Futo",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_kita_nagano": {
+   "en": "Kita-Nagano",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_kita_sabae": {
+   "en": "Kita-Sabae",
+   "note": "Hapi-Line Fukui station page, station-sign style romaji block (text)",
+   "source": "https://www.hapi-line.co.jp/route/station/archives/11",
+   "type": "company"
+  },
+  "n_kitagata_makuwa": {
+   "en": "Kitagata Makuwa",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Tarumi Railway sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kitagata_Makuwa_station_ac_(3).jpg",
+   "type": "sign"
+  },
+  "n_kitasuzaka": {
+   "en": "Kitasuzaka",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/kitasuzaka",
+   "type": "company"
+  },
+  "n_kitsunegasaki": {
+   "en": "Kitsunegasaki",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_kobe_airport": {
+   "en": "Kobe Airport",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_kochibora": {
+   "en": "Kochibora",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Oribe sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tarumi_Railwey_Tarumi_Line_Oribe_Sta._1.jpg",
+   "type": "sign"
+  },
+  "n_kohoku_nagoya_rinkai_rapid_transit": {
+   "en": "Kohoku",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN07 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_kokusai_center": {
+   "en": "Kokusai Center",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); own station S03; printed with '(International Center)' below, kept as alias",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_komaiko": {
+   "en": "Komaiko",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/komaiko/?ctg=info",
+   "type": "company"
+  },
+  "n_komoto_nagoya_rinkai_rapid_transit": {
+   "en": "Komoto",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN03 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_konno": {
+   "en": "Konno",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Nagaragawa Railway sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Konno.JPG",
+   "type": "sign"
+  },
+  "n_kosugi_ainokaze_toyama": {
+   "en": "Kosugi",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/kosugi",
+   "type": "company"
+  },
+  "n_kotsu_center_mae": {
+   "en": "Kotsucentermae",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_kozu_keihan": {
+   "en": "Kozu",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_kumihama": {
+   "confidence": "low",
+   "en": "Kumihama",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_kunda": {
+   "en": "Kunda",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the retro-style Miyazu sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Miyazu_sign_-_Morikami_Museum_and_Japanese_Gardens_-_Palm_Beach_County,_Florida_-_DSC03552.jpg",
+   "type": "sign"
+  },
+  "n_kurikara": {
+   "en": "Kurikara",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed) (shared station with Ainokaze)",
+   "source": "https://www.ishikawa-railway.jp/station/kurikara/?ctg=info",
+   "type": "company"
+  },
+  "n_kurobe": {
+   "en": "Kurobe",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/kurobe",
+   "type": "company"
+  },
+  "n_kurohime": {
+   "en": "Kurohime",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_kusanagi_shizuoka": {
+   "en": "Kusanagi",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_kuwamachi": {
+   "en": "Kuwamachi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Idamichi station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Idamichi.jpg",
+   "type": "sign"
+  },
+  "n_kuwana_yoro": {
+   "en": "Kuwana",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR Central official row n_kuwana in en_official",
+   "source": "https://global.jr-central.co.jp/en/info/railwaymap/_pdf/railwaymap.pdf",
+   "type": "company"
+  },
+  "n_kyotango_omiya": {
+   "confidence": "low",
+   "en": "Kyotango-Omiya",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_maehata": {
+   "en": "Maehata",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Higashihatcho tram stop sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E6%A9%8B%E5%B8%82%E6%97%AD%E6%9C%AC%E7%94%BA_%E8%B1%8A%E6%A9%8B%E9%89%84%E9%81%93_%E6%9D%B1%E5%85%AB%E7%94%BA%E9%9B%BB%E5%81%9C_20240824_1520.jpg",
+   "type": "sign"
+  },
+  "n_maibara_ohmi": {
+   "en": "Maibara",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR West official row n_maibara in en_official",
+   "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_maita_ueda": {
+   "en": "Maita",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_makino_keihan": {
+   "en": "Makino",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_marine_park": {
+   "en": "Marine Park",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_matsumoto_alpico_kotsu": {
+   "en": "Matsumoto",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR East official row n_matsumoto in en_official",
+   "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
+   "type": "company"
+  },
+  "n_matto": {
+   "en": "Mattō",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/matto/?ctg=info",
+   "type": "company"
+  },
+  "n_meiho": {
+   "en": "Meihō",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/meiho/?ctg=info",
+   "type": "company"
+  },
+  "n_mieji": {
+   "en": "Mieji",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Kitagata-Makuwa sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kitagata_Makuwa_station_ac_(3).jpg",
+   "type": "sign"
+  },
+  "n_mikadodai": {
+   "en": "Mikadodai",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_mikawa_ir_ishikawa": {
+   "en": "Mikawa",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/mikawa/?ctg=info",
+   "type": "company"
+  },
+  "n_minami_arako": {
+   "en": "Minami Arako",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN05 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_minami_imajo": {
+   "en": "Minami-Imajo",
+   "note": "Hapi-Line Fukui station page, station-sign style romaji block (text)",
+   "source": "https://www.hapi-line.co.jp/route/station/archives/2",
+   "type": "company"
+  },
+  "n_minami_koen": {
+   "en": "Minami Koen",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_minami_takada": {
+   "en": "Minami-Takada",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the ETR Takada station sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:ETR_Takada_Station_Ekimeihyou_Zantei.jpg",
+   "type": "sign"
+  },
+  "n_minami_uozaki": {
+   "en": "Minami Uozaki",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_minatojima": {
+   "en": "Minatojima",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_mineyama": {
+   "confidence": "low",
+   "en": "Mineyama",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_minoh_kayano": {
+   "en": "Minoh-kayano",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Kitakyu hanging platform sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Minoh-Kayano_sta._Ekimeihyou.jpg",
+   "type": "sign"
+  },
+  "n_misashima": {
+   "en": "Misashima",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Hokuetsu Express platform sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Misashima-Station_platform_20150104.jpg",
+   "type": "sign"
+  },
+  "n_mishima_izuhakone": {
+   "en": "Mishima",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR Central official row n_mishima in en_official",
+   "source": "https://global.jr-central.co.jp/en/info/railwaymap/_pdf/railwaymap.pdf",
+   "type": "company"
+  },
+  "n_miyanosaka_keihan": {
+   "en": "Miyanosaka",
+   "note": "Keihan English Route Map and Stations PDF (outlined text, read visually at 300 dpi)",
+   "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
+   "type": "company"
+  },
+  "n_miyazu": {
+   "en": "Miyazu",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; retro-style station sign (old national-railway style); all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Miyazu_sign_-_Morikami_Museum_and_Japanese_Gardens_-_Palm_Beach_County,_Florida_-_DSC03552.jpg",
+   "type": "sign"
+  },
+  "n_miyoshicho": {
+   "en": "Miyoshicyo",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually); printed 'Miyoshicyo' (cyo spelling kept); no sign photo with romaji found on Commons",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_miyota": {
+   "en": "Miyota",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_mizuhashi": {
+   "en": "Mizuhashi",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/mizuhashi",
+   "type": "company"
+  },
+  "n_morera_gifu": {
+   "en": "Moreragifu",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Kitagata-Makuwa sign 'MORERAGIFU'; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kitagata_Makuwa_station_ac_(3).jpg",
+   "type": "sign"
+  },
+  "n_morimoto": {
+   "en": "Morimoto",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/morimoto/?ctg=info",
+   "type": "company"
+  },
+  "n_moriyama_nagoya_guideway_bus": {
+   "en": "Moriyama",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Yutorito Line Y04 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_motosu": {
+   "en": "Motosu",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Oribe sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tarumi_Railwey_Tarumi_Line_Oribe_Sta._1.jpg",
+   "type": "sign"
+  },
+  "n_murayama_nagano": {
+   "en": "Murayama",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/murayama",
+   "type": "company"
+  },
+  "n_mure": {
+   "en": "Mure",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_myoko_kogen": {
+   "en": "Myōkō-Kōgen",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_nadachi": {
+   "en": "Nadachi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; JR West-era sign (before the 2015 transfer to ETR); name unchanged",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%90%8D%E7%AB%8B%E9%A7%85_%E3%83%9B%E3%83%BC%E3%83%A0(%E5%B7%A8%E5%A4%A7%E3%81%AA%E3%81%86%E3%81%95%E8%80%B3)_-_panoramio.jpg",
+   "type": "sign"
+  },
+  "n_nagano_nagano": {
+   "en": "Nagano",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/nagano",
+   "type": "company"
+  },
+  "n_naganuma_shizuoka": {
+   "en": "Naganuma",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_nagashima_dam": {
+   "en": "Nagashima Dam",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_nagoya_dome_mae_yada_nagoya_guideway_bus": {
+   "en": "Nagoya Dome-mae Yada",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); shared label of subway M13 / Yutorito Y02",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_nagoya_nagoya_rinkai_rapid_transit": {
+   "en": "Nagoya",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR Central official row n_nagoya in en_official",
+   "source": "https://global.jr-central.co.jp/en/info/railwaymap/_pdf/railwaymap.pdf",
+   "type": "company"
+  },
+  "n_naka_futo": {
+   "en": "Naka Futo",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_naka_karuizawa": {
+   "en": "Naka-Karuizawa",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_naka_koen": {
+   "en": "Naka Koen",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_nakajima": {
+   "en": "Nakajima",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN06 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_nakano_ueda": {
+   "en": "Nakano",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_nakanomatsukawa": {
+   "en": "Nakanomatsukawa",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/nakanomatsukawa",
+   "type": "company"
+  },
+  "n_nakashioda": {
+   "en": "Nakashioda",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_namerikawa_ainokaze_toyama": {
+   "en": "Namerikawa",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/namerikawa",
+   "type": "company"
+  },
+  "n_nanawa": {
+   "en": "Nanawa",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_nekomata": {
+   "en": "Nekomata",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Kurobe Gorge Railway sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nekomata_Station_-_Temporary_platform.jpg",
+   "type": "sign"
+  },
+  "n_nishi_kuwana": {
+   "en": "Nishi-Kuwana",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_nishi_matto": {
+   "en": "Nishi-Mattō",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/nishi_matto/?ctg=info",
+   "type": "company"
+  },
+  "n_nishi_nyuzen": {
+   "en": "Nishi-Nyuzen",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/nishinyuzen",
+   "type": "company"
+  },
+  "n_nishi_ueda": {
+   "en": "Nishi-Ueda",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_nishibessho": {
+   "en": "Nishi-Bessho",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_nishiyamaguchi": {
+   "en": "Nishiyamaguchi",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_nomineagari": {
+   "en": "Nomi-Neagari",
+   "note": "IR Ishikawa Railway station page, romaji under station name (text, macrons as printed)",
+   "source": "https://www.ishikawa-railway.jp/station/nomi_neagari/?ctg=info",
+   "type": "company"
+  },
+  "n_nonoichi_hokuriku": {
+   "en": "Nonoichi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Hokutetsu Ishikawa Line sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nonoichi_Station_(Hokuriku_Railroad)_20240429.jpg",
+   "type": "sign"
+  },
+  "n_nonoichi_kodaimae": {
+   "en": "Nonoichi-kōdaimae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Nonoichi station sign (macron as printed)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nonoichi_Station_(Hokuriku_Railroad)_20240429.jpg",
+   "type": "sign"
+  },
+  "n_noshi": {
+   "en": "Noshi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Yamaoka station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E6%98%8E%E7%9F%A5%E9%89%84%E9%81%93%E5%B1%B1%E5%B2%A1%E9%A7%852.jpg",
+   "type": "sign"
+  },
+  "n_nukajutaku_mae": {
+   "en": "Nukajūtaku-mae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Otomaru station sign (macron as printed)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Otomaru_Station_20240429.jpg",
+   "type": "sign"
+  },
+  "n_nukuri": {
+   "en": "Nukuri",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_nyuzen": {
+   "en": "Nyuzen",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/nyuzen",
+   "type": "company"
+  },
+  "n_obata_ryokuchi": {
+   "en": "Obata Ryokuchi",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Yutorito Line Y09 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_obuse": {
+   "en": "Obuse",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/obuse",
+   "type": "company"
+  },
+  "n_ogaki_yoro": {
+   "en": "Ōgaki",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR Central official row n_ogaki in en_official",
+   "source": "https://global.jr-central.co.jp/en/info/railwaymap/_pdf/railwaymap.pdf",
+   "type": "company"
+  },
+  "n_ohda": {
+   "en": "Ohda",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_oikeyuen": {
+   "en": "Oikeyuuen",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased); printed OIKEYUUEN (uu kept)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_oizumi_sangi": {
+   "en": "Oizumi",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_okazakimae": {
+   "en": "Okazakimae",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_okuizumi": {
+   "en": "Okuizumi",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_omori_oigawa": {
+   "en": "Omori",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_oribe": {
+   "en": "Oribe",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Tarumi Railway sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tarumi_Railwey_Tarumi_Line_Oribe_Sta._1.jpg",
+   "type": "sign"
+  },
+  "n_osaka_airport": {
+   "en": "Osaka Airport",
+   "note": "Kansai Railway Network Map (joint publication of the region's railways), read visually in round en_names3; airport form is a name, not a translated alias (rule 2026-11-25)",
+   "source": "https://www.hanshin.co.jp/global/en/map/ (rosenmap.pdf p.2)",
+   "type": "company"
+  },
+  "n_oshino": {
+   "en": "Oshino",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Nonoichi station sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nonoichi_Station_(Hokuriku_Railroad)_20240429.jpg",
+   "type": "sign"
+  },
+  "n_otai": {
+   "en": "Otai",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at the JR-Central Transport Johoku Line station (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_otomaru": {
+   "en": "Otomaru",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Hokutetsu Ishikawa Line sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Otomaru_Station_20240429.jpg",
+   "type": "sign"
+  },
+  "n_otowacho": {
+   "en": "Otowacho",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_owada_oigawa": {
+   "en": "Owada",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_ozone_nagoya_guideway_bus": {
+   "en": "Ozone",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); shared label of subway M12 / Yutorito Y01",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_port_terminal": {
+   "en": "Port Terminal",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_rendaiji": {
+   "en": "Rendaiji",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Izukyu IZ15 sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Rendaiji-Sta-Board.JPG",
+   "type": "sign"
+  },
+  "n_rengeji": {
+   "en": "Rengeji",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_saigata_hokuetsu_express": {
+   "en": "Saigata",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR East official row n_saigata in en_official",
+   "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
+   "type": "company"
+  },
+  "n_sakidaira": {
+   "en": "Sakidaira",
+   "note": "Oigawa Railway English pamphlet PDF (map label); also bus stop \"Sakidaira\" on English timetable page",
+   "source": "https://daitetsu.jp/pdf/oigawa_rail_eng.pdf",
+   "type": "company"
+  },
+  "n_sakurabashi_shizuoka": {
+   "en": "Sakurabashi",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_sakurasawa": {
+   "en": "Sakurasawa",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/sakurasawa",
+   "type": "company"
+  },
+  "n_sanda_kobe": {
+   "en": "Sanda",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR West official row n_sanda in en_official",
+   "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
+   "type": "company"
+  },
+  "n_sando": {
+   "en": "Sandou",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased); printed SANDOU (ou kept)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_sannomiya_kobe_new_transit": {
+   "en": "Sannomiya",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_sasashima_raibu": {
+   "en": "Sasashima Raibu",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Aonami Line AN02 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_sawama": {
+   "en": "Sawama",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_senzu": {
+   "en": "Senzu",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_sessokyo_onsen": {
+   "en": "Sessokyō-Onsen",
+   "note": "Oigawa Railway English timetable page (station rows, text); route map image RouteMap-All-EN-20260401 shows the same without macrons (map: Sesso-Kyo Onsen)",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_shigaraki": {
+   "en": "Shigaraki",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Shigaraki Kohgen Railway terminal sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:071020_Shigaraki_Station_Koga_Shiga_pref_Japan03s3.jpg",
+   "type": "sign"
+  },
+  "n_shigeno": {
+   "en": "Shigeno",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_shijima": {
+   "en": "Shijima",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Hibari station sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hibari_Station_20240429.jpg",
+   "type": "sign"
+  },
+  "n_shikibu": {
+   "en": "Shikibu",
+   "note": "Hapi-Line Fukui station page, station-sign style romaji block (text)",
+   "source": "https://www.hapi-line.co.jp/route/station/archives/7",
+   "type": "company"
+  },
+  "n_shimoizumi": {
+   "en": "Shimoizumi",
+   "note": "Oigawa English timetable page, bus stop \"Shimoizumi Station\"; also station label on https://daitetsu.jp/pdf/oigawa_rail_eng.pdf map",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_shimonogo": {
+   "en": "Shimonogo",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_shin_hamamatsu": {
+   "en": "Shin-Hamamatsu",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Enshu Railway ET01 sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E6%96%B0%E6%B5%9C%E6%9D%BE(ET01)%E9%A7%85%E5%90%8D%E6%A8%99.jpg",
+   "type": "sign"
+  },
+  "n_shin_toyamaguchi": {
+   "en": "Shin-Toyamaguchi",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/shintoyamaguchi",
+   "type": "company"
+  },
+  "n_shinano_kokubunji": {
+   "en": "Shinano-Kokubunji",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_shinano_oiwake": {
+   "en": "Shinano-Oiwake",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_shinano_takehara": {
+   "en": "Shinanotakehara",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/shinanotakehara",
+   "type": "company"
+  },
+  "n_shinanoyoshida": {
+   "en": "Shinanoyoshida",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/shinanoyoshida",
+   "type": "company"
+  },
+  "n_shinshunakano": {
+   "en": "Shinshunakano",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/shinshunakano",
+   "type": "company"
+  },
+  "n_shiodamachi": {
+   "en": "Shiodamachi",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_shiogo": {
+   "en": "Shiogō",
+   "note": "Oigawa English timetable page, bus stop \"Shiogō Station\" (rail section suspended, station not on current map)",
+   "source": "https://daitetsu.jp/eng/ft_timetable",
+   "type": "company"
+  },
+  "n_shirasawa_keikoku": {
+   "en": "Shirasawa Keikoku",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Yutorito Line Y08 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_shiroshita_ueda": {
+   "en": "Shiroshita",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_shisho": {
+   "confidence": "low",
+   "en": "Shisho",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_shiyakushomae_nagano": {
+   "en": "Shiyakusyomae",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased); printed SHIYAKUSYOMAE (syo spelling kept)",
+   "source": "https://www.nagaden-net.co.jp/info/station/shiyakushomae",
+   "type": "company"
+  },
+  "n_shotenkyo": {
+   "en": "Shōtenkyō",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Tantetsu (WILLER TRAINS) T22 sign; macrons as printed",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Syotenkyo_station_(1).jpg",
+   "type": "sign"
+  },
+  "n_sodani": {
+   "en": "Sodani",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Hibari station sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hibari_Station_20240429.jpg",
+   "type": "sign"
+  },
+  "n_sohara_sangi": {
+   "en": "Sohara",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_suhara_nagaragawa": {
+   "en": "Suhara",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Hanno station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hannosta.JPG",
+   "type": "sign"
+  },
+  "n_sumiyoshi_kobe_new_transit": {
+   "en": "Sumiyoshi",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_sunadabashi_nagoya_guideway_bus": {
+   "en": "Sunada-bashi",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); shared label of subway M14 / Yutorito Y03 (hyphen as printed)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_suruga_tokuyama": {
+   "en": "Suruga-Tokuyama",
+   "note": "Oigawa Railway English pamphlet PDF (\"7 minute walk from Suruga-Tokuyama Station\")",
+   "source": "https://daitetsu.jp/pdf/oigawa_rail_eng.pdf",
+   "type": "company"
+  },
+  "n_suzaka": {
+   "en": "Suzaka",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/suzaka",
+   "type": "company"
+  },
+  "n_takada_echigo_tokimeki": {
+   "en": "Takada",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; ETR Myōkō Haneuma Line sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:ETR_Takada_Station_Ekimeihyou_Zantei.jpg",
+   "type": "sign"
+  },
+  "n_takaoka_yabunami": {
+   "en": "Takaoka-Yabunami",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/takaokayabunami",
+   "type": "company"
+  },
+  "n_tanaka": {
+   "en": "Tanaka",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_tanakaguchi": {
+   "en": "Tanakaguchi",
+   "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
+   "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
+   "type": "company"
+  },
+  "n_tango_yura": {
+   "confidence": "low",
+   "en": "Tango-yura",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_tateyama_tateyama_kurobe_kanko": {
+   "en": "Tateyama",
+   "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as Toyama Chiho Railway official row n_tateyama_toyama_chiho in en_official",
+   "source": "https://chitetsu.co.jp/english/img/railways/railways-linemap.gif",
+   "type": "company"
+  },
+  "n_terashita": {
+   "en": "Terashita",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_togura": {
+   "en": "Togura",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_toin": {
+   "en": "Toin",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_toji_shiryokan_minami": {
+   "en": "Tojishiryokan Minami",
+   "note": "Nagoya City Transportation Bureau bilingual CityBus & Subway Guide, train route map p.1 (outlined text, read visually at 300 dpi); label at Linimo L08 (other operator)",
+   "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
+   "type": "company"
+  },
+  "n_tsuru_bunkadaigaku_mae": {
+   "en": "Tsurubunkadaigakumae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fujikyu platform sign, printed as one word",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji-kyuko-Tsuru-bunka-daigaku-mae-station-platform.jpg",
+   "type": "sign"
+  },
+  "n_tsurushi": {
+   "en": "Tsurushi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fujikyu platform sign, romaji small (read zoomed)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji-kyuko-Tsuru-shi-station-platform.jpg",
+   "type": "sign"
+  },
+  "n_tsusumi": {
+   "en": "Tsusumi",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/tsusumi",
+   "type": "company"
+  },
+  "n_tsutsuishi": {
+   "en": "Tsutsuishi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the JR West-era Nadachi sign; name unchanged",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%90%8D%E7%AB%8B%E9%A7%85_%E3%83%9B%E3%83%BC%E3%83%A0(%E5%B7%A8%E5%A4%A7%E3%81%AA%E3%81%86%E3%81%95%E8%80%B3)_-_panoramio.jpg",
+   "type": "sign"
+  },
+  "n_ueda_ueda": {
+   "en": "Ueda",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_uedahara": {
+   "en": "Uedahara",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_umamichi": {
+   "en": "Umamichi",
+   "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
+   "source": "https://www.sangirail.co.jp/images/rail-map.jpg (page https://www.sangirail.co.jp/srosen/)",
+   "type": "company"
+  },
+  "n_uonuma_kyuryo": {
+   "en": "Uonuma-kyūryō",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Hokuetsu Express station entrance sign 'UONUMA-KYŪRYŌ' (romaji only, no translated Station); all caps, title-cased (case after hyphen not recoverable, lower-case)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%8C%97%E8%B6%8A%E6%80%A5%E8%A1%8C_%E9%AD%9A%E6%B2%BC%E4%B8%98%E9%99%B5%E9%A7%85_-_panoramio.jpg",
+   "type": "sign"
+  },
+  "n_uozaki_kobe_new_transit": {
+   "en": "Uozaki",
+   "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
+   "source": "https://www.knt-liner.co.jp/en/station/",
+   "type": "company"
+  },
+  "n_uozu": {
+   "en": "Uozu",
+   "note": "Ainokaze Toyama Railway station page, romaji under station name (text; neighbours on the page agree)",
+   "source": "https://ainokaze.co.jp/station/uozu",
+   "type": "company"
+  },
+  "n_ushinoya": {
+   "en": "Ushinoya",
+   "note": "Hapi-Line Fukui station page, station-sign style romaji block (text)",
+   "source": "https://www.hapi-line.co.jp/route/station/archives/21",
+   "type": "company"
+  },
+  "n_yagisawa": {
+   "en": "Yagisawa",
+   "note": "Ueda Dentetsu English leaflet PDF, station strip (image, read visually)",
+   "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
+   "type": "company"
+  },
+  "n_yakusa_aichi_rapid_transit": {
+   "en": "Yakusa",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Aichi Loop Railway sign at the shared station (same name)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:AK-Yakusa-station-name-board-002.jpg",
+   "type": "sign"
+  },
+  "n_yamaoka": {
+   "en": "Yamaoka",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased; older photo (neighbour still shows the pre-2003 name Hanashiro), Yamaoka unchanged",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E6%98%8E%E7%9F%A5%E9%89%84%E9%81%93%E5%B1%B1%E5%B2%A1%E9%A7%852.jpg",
+   "type": "sign"
+  },
+  "n_yanagihara_nagano": {
+   "en": "Yanagihara",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/yanagihara",
+   "type": "company"
+  },
+  "n_yasaka_nagaragawa": {
+   "en": "Yasaka",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Konno station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Konno.JPG",
+   "type": "sign"
+  },
+  "n_yashiro_koko_mae": {
+   "en": "Yashirokōkō-mae",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_yashiro_shinano": {
+   "en": "Yashiro",
+   "note": "Shinano Railway English home page station diagram image, read visually (zoomed)",
+   "source": "https://www.shinanorailway.co.jp/english/ (image common/img/home/station.gif)",
+   "type": "company"
+  },
+  "n_yomase": {
+   "en": "Yomase",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/yomase",
+   "type": "company"
+  },
+  "n_yosano": {
+   "confidence": "low",
+   "en": "Yosano",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_yoshiikeonsenmae": {
+   "en": "Yoshiike-onsenmae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fujikyu platform sign, read zoomed",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji-kyuko-Yoshiike-onsen-mae-station-platform.jpg",
+   "type": "sign"
+  },
+  "n_yoshiwara_honcho": {
+   "en": "Yoshiwara Honcho",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Jatco-mae station sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji_20210410160609_(51334221113).jpg",
+   "type": "sign"
+  },
+  "n_yuhigaura_kitsu_onsen": {
+   "confidence": "low",
+   "en": "Yuhigaura-Kitsu-Onsen",
+   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
+   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
+   "type": "company"
+  },
+  "n_yunoki_shizuoka": {
+   "en": "Yunoki",
+   "note": "Shizuoka Railway English site, Route Chart station list (text)",
+   "source": "https://train.shizutetsu.co.jp/en",
+   "type": "company"
+  },
+  "n_zenkojishita": {
+   "en": "Zenkojishita",
+   "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
+   "source": "https://www.nagaden-net.co.jp/info/station/zenkojishita",
+   "type": "company"
   }
  },
  "aliases": {
@@ -41031,6 +44984,16 @@
   "n_yokogawa_hiroden": "Yokogawa Sta.",
   "n_yuinomorichuo": "Yuinomori-central",
   "n_yuinomorihigashi": "Yuinomori-east",
-  "n_yuinomorinishi": "Yuinomori-west"
+  "n_yuinomorinishi": "Yuinomori-west",
+  "n_higuchi_moka": "Higuti",
+  "n_ichihana": "Itihana",
+  "n_terauchi": "Terauti",
+  "n_airport_terminal_2": "Narita Airport Terminal 2•3",
+  "n_lavender_farm": "Lavender Farm",
+  "n_narita_airport_terminal_1": "Narita Airport Terminal 1",
+  "n_shiyakusho_mae_chiba_urban_monorail": "Shiyakushomae (City Hall)",
+  "n_tambo_art": "Tambo Art",
+  "n_ken_sogo_undojo": "Pref. Sports Park",
+  "n_kenritsu_bijutsukanmae": "Pref. Art Museum"
  }
 }

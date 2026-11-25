@@ -242,13 +242,20 @@ def fix_nodes(names):
         if x['source']=='rule' and kana.get(x['id']):x['text']=station_reading(kana[x['id']],plainja(ja[x['id']]))
     # 현행 역의 공식 영어 이름(회사 자료·역명판 사진)이 가장 앞선다. 다른 역 이름의 낱말 경계 바탕(known)으로도 쓴다 (사용자 결정 2026-11-24)
     official=load_official()
+    # 열쇠는 노드(지금 이름) 또는 「노드|일본어 이름」(그 이름일 때만: 폐역의 마지막 이름·기간 있는 옛 이름, 옛 공식 역 일람 로마자 5회차 r3)
+    def _named(tab,i,j):
+        for k_ in (i+'|'+(j or ''),i+'|'+plainja(j or '')):
+            if k_ in tab:return tab[k_]
+        return None
     for x in rows:
-        if x['id'] in official:x['text']=official[x['id']]['en'];x['source']='official'
+        v_=official.get(x['id']) or _named(official,x['id'],ja.get(x['id']))
+        if v_:x['text']=v_['en'];x['source']='official'
     # 공식을 못 찾은 역은 일본어 위키백과 역 문서 정보칸 로마자가 다음이다(위키 가운데 일본어 위키 최우선, 사용자 결정 2026-11-25). Wikidata 라벨·규칙보다 앞선다.
     # 출처 표시는 wikipedia이고, 아래 규칙 손질(fix_station·번역형 바꾸기)을 거치지 않는다
     jawiki=load_jawiki()
     for x in rows:
-        if x['source']!='official' and x['id'] in jawiki:x['text']=jawiki[x['id']]['en'];x['source']='wikipedia';x['_jawiki']=True
+        v_=jawiki.get(x['id']) or _named(jawiki,x['id'],ja.get(x['id']))
+        if x['source']!='official' and v_:x['text']=v_['en'];x['source']='wikipedia';x['_jawiki']=True
     # 번역형(植物園→Botanical Garden, 松山市→Matsuyama City, 八木山動物公園→Yagiyama Zoological Park)은 공식이 아닌 라벨에서도 쓰지 않는다.
     # 로마자 꼴(읽기 규칙)로 바꾸고 번역형은 검색 별칭으로 돌려준다. 공항(Airport)은 공항 터미널 규칙(terminal)이 정한 꼴이라 그대로다 (사용자 결정 2026-11-24 영어 이름 원칙 3, 일반화 2026-11-25)
     translated=[]
@@ -278,8 +285,14 @@ def fix_nodes(names):
     # 기간 있는 옛 이름의 규칙 영어도 같은 규칙(駅前 -Ekimae, 丁目 -chome 등)을 그 시절 이름·읽기로 적용한다
     old_ja={(x['id'],x.get('valid_to')):(x['text'],plainkana(x.get('kana'))) for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and x.get('valid_to')}
     for x in names:
-        if x['entity_type']!='node' or x['lang']!='en' or x.get('line') or not x.get('valid_to') or x.get('source')!='rule':continue
+        if x['entity_type']!='node' or x['lang']!='en' or x.get('line') or not x.get('valid_to'):continue
         j_,k_=old_ja.get((x['id'],x['valid_to']),(None,None))
+        # 옛 이름의 공식(옛 역 일람)·일본어 위키 로마자는 「노드|그 이름」 열쇠로 규칙보다 앞선다
+        v_=_named(official,x['id'],j_) if j_ else None
+        if v_:x['text']=v_['en'];x['source']='official';continue
+        v_=_named(jawiki,x['id'],j_) if j_ else None
+        if v_ and x.get('source')!='official':x['text']=v_['en'];x['source']='wikipedia';continue
+        if x.get('source')!='rule':continue
         if j_ and k_:
             made=fix_station(j_,k_,x['text'],known,keep)
             if made:x['text']=made

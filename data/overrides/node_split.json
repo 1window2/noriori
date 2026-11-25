@@ -1022,6 +1022,9 @@
 "new_id": "n_tojimichi_fushimi_line",
 "new_group": "g_tojimichi_fushimi_line",
 "name_ja": "東寺道",
+"kana": "とうじみち",
+"ko": "토지미치",
+"en": "Tojimichi",
 "pref": "26",
 "why": "c1:n_tojimichi: 같은 이름의 다른 정류장 둘(같은 길 東寺道 위 약 1.08 km). 千本・大宮線 東寺道(1935-08-21~1972-01-23)은 大宮通 교차점, 伏見線 東寺道(1895~1952)는 竹田街道 교차점(地理院 ort_old10 1961–69 z17 두 장에서 같은 동서 길이 이어짐, N05-24 伏見線 東寺道 점은 동쪽 교차점에서 17 m). 大宮線이 기존 ID 유지(더 늦게까지 영업), 伏見線 쪽이 새 노드. 1 km 넘게 떨어진 다른 정류장이라 group도 새로(같은 역 아님). 좌표는 source_patch/positions/r5struct_2026-11-13.yaml(손 판독, 오차 40 m) (3회차 선형 조사 2026-11-13; r3out/geo n_tojimichi)"
 },
