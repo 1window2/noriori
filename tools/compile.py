@@ -932,7 +932,7 @@ for r in routes.values():
             mx=max(((lohi(a['valid_to'])[1] or '9999-12-30'),a['valid_to']) for a in vals)
             if (lohi(tov)[1] or '')>mx[0]:tov=mx[1]
         fromv,tov=_stop_bounds(fromv,tov,vals)
-        stops.append(dict(route_id=r['id'],seq=seq,node_id=n,km_cum=dround(km),is_stop=stop_flag,is_extension=0,valid_from=fromv,valid_to=tov))
+        stops.append(dict(route_id=r['id'],seq=seq,node_id=n,km_cum=dround(km),is_stop=stop_flag,valid_from=fromv,valid_to=tov))
 
 
 # 문서에서 옮긴 역 기간. 역 문서 연결이 안 되는 곳
@@ -955,7 +955,7 @@ for k_,v_ in _SDK.items():
     if v_=='pass':
         hit_=0
         for s in stops:
-            if s['node_id']==nd_ and _sd_route(s,rid_,nd_) and not s.get('is_extension'):s['is_stop']=0;hit_+=1;WARN['stop_pass'].append((s['route_id'],nd_,s['valid_from'],s['valid_to']))
+            if s['node_id']==nd_ and _sd_route(s,rid_,nd_):s['is_stop']=0;hit_+=1;WARN['stop_pass'].append((s['route_id'],nd_,s['valid_from'],s['valid_to']))
         if not hit_ and not _nopatch:err('stop_dates_unknown',k_)
         continue
     # 값 {"pass": true, "stop": [[시작, 끝], ...]}: 평소에는 통과하고 적은 기간에만 선다(회사 관계자 전용역의 한시 개방, 黒部峡谷鉄道 猫又 2024·2025 시즌).
@@ -967,7 +967,7 @@ for k_,v_ in _SDK.items():
             if (lohi(a_[1])[1] or '')>(lohi(b_[0])[0] or ''):err('stop_dates_periods',{k_:v_})
         hit_=0
         for s in stops:
-            if s['node_id']!=nd_ or not _sd_route(s,rid_,nd_) or s.get('is_extension'):continue
+            if s['node_id']!=nd_ or not _sd_route(s,rid_,nd_):continue
             # 행 기간은 그대로 두고 개방 밖은 정차 공백이다. 끝 없는 마지막 공백은 그 역이 승객 미취급 정식 역(node_identity staff_only)인 때라
             # 앱이 운휴로 읽지 않는다(openStopGap의 staff 구간 규칙). 행을 마지막 개방에서 닫으면 그 뒤 날짜에 역이 일람에서 사라진다 (5회차 2026-11-24)
             hit_+=1;s['is_stop']=1;cur_=s['valid_from']
@@ -1003,7 +1003,7 @@ for (nd_,ro_),ps_ in _TMK.items():
     holes=[(a_[1],b_[0]) for a_,b_ in zip(ps_,ps_[1:]) if (lohi(a_[1])[1] or '9999')<(lohi(b_[0])[0] or '0000')]
     if not holes:continue
     for s in stops:
-        if s['node_id']!=nd_ or (ro_ and s['route_id']!=ro_) or not s['is_stop'] or s.get('is_extension'):continue
+        if s['node_id']!=nd_ or (ro_ and s['route_id']!=ro_) or not s['is_stop']:continue
         for a_,b_ in holes:
             if (lohi(s['valid_from'])[1] or '0000')<=(lohi(a_)[0] or '') and (s['valid_to'] in (None,'ongoing') or (lohi(b_)[1] or '')<=(lohi(s['valid_to'])[0] or '9999')):
                 if not any(g_[0] is s and g_[1]==a_ and g_[2]==b_ for g_ in stop_gaps):stop_gaps.append((s,a_,b_));_season+=1
@@ -1021,7 +1021,7 @@ for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),enco
     fam_=lambda rid:(lines.get((routes.get(rid) or {}).get('line')) or {}).get('family')
     line_=lambda rid:(routes.get(rid) or {}).get('line')
     new_fams={fam_(s['route_id']) for s in stops if s['node_id']==new}
-    new_lines=set(mv.get('lines') or [])|({line_(s['route_id']) for s in stops if s['node_id']==new and not s.get('is_extension')} if not mv.get('lines') else set())
+    new_lines=set(mv.get('lines') or [])|({line_(s['route_id']) for s in stops if s['node_id']==new} if not mv.get('lines') else set())
     # 기간을 이전일 쪽으로 넓히지는 않는다. 새 노드에 이전 뒤에 생긴 노선(新潟 1958 이전, 上越新幹線 1982)이 있다
     for s in stops:
         if s['node_id']==old:
@@ -1039,7 +1039,7 @@ for mv in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),enco
             # 옛 노드가 서지 않는 계통(새 노드에서 만나는 다른 노선·옛 경로, 志布志線·大隅線의 志布志)은 자르지 않는다
             # 옛 노드는 같은 노선의 다른 계통(옛 선형 계통, 2번안 2026-11-23: 京津線 옛 御陵)에 있어도 같다
             _ln=line_(s['route_id'])
-            _rs=[x for x in stops if line_(x['route_id'])==_ln and not x.get('is_extension')]
+            _rs=[x for x in stops if line_(x['route_id'])==_ln]
             if not any(x['node_id']==old and x['is_stop'] for x in _rs):continue
             # 같은 노선에 옛 노드가 서면 이전 전 그 역은 옛 노드다. 옛 경로 계통의 끝이 새 노드여도 이전 전에는 역이 아닌 갈림 지점이다
             # (京津線 옛 御陵 앞의 갈림, 近鉄名古屋線 옛 高田本山 선형의 江戸橋 갈림: 그때 역은 江戸橋（旧）)
@@ -1068,11 +1068,11 @@ for i_,x_ in enumerate(_SPLITP):
     if x_.get('normal') or a_ not in nodes or b_ not in nodes:continue
     f_,t_=x_.get('from'),x_['to'];flo_=_sp_lo(f_);tlo_=_sp_lo(t_)
     hit_=0
-    for s in [s for s in stops if s['node_id']==b_ and s['is_stop'] and not s.get('is_extension')]:
+    for s in [s for s in stops if s['node_id']==b_ and s['is_stop']]:
         slo_,shi_=_sp_lo(s['valid_from']),_sp_hi(s['valid_to'])
         if not (slo_<tlo_ and flo_<shi_):continue
         hit_+=1
-        rs_=[y for y in stops if y['route_id']==s['route_id'] and not y.get('is_extension')]
+        rs_=[y for y in stops if y['route_id']==s['route_id']]
         as_=next((y for y in rs_ if y['node_id']==a_),None)
         if as_ is not None and any(a_ in (edges[e_]['a'],edges[e_]['b']) for e_ in _spe_route.get(s['route_id'],())):
             as_['is_stop']=1;as_['valid_from']=s['valid_from'] if slo_>=flo_ else f_;as_['valid_to']=s['valid_to'] if shi_<=tlo_ else t_
@@ -1107,7 +1107,7 @@ _ra=collections.defaultdict(list)
 for a_ in attr:_ra[(a_['line_id'],a_['edge_id'])].append(a_)
 _clip=0
 for s in stops:
-    if s.get('is_extension') or not s['is_stop'] or s['valid_to'] in (None,'ongoing'):continue
+    if not s['is_stop'] or s['valid_to'] in (None,'ongoing'):continue
     r_=routes[s['route_id']]
     vals=[a_ for e in route_edges[s['route_id']] if s['node_id'] in (e['a'],e['b']) for a_ in _ra[(r_['line'],e['id'])]]
     if not vals:continue
@@ -1153,7 +1153,7 @@ _ra2=collections.defaultdict(list)
 for a_ in attr:_ra2[(a_['line_id'],a_['edge_id'])].append(a_)
 _clip2=0
 for s in stops:
-    if s.get('is_extension') or not s['is_stop'] or s['valid_from'] is None:continue
+    if not s['is_stop'] or s['valid_from'] is None:continue
     r_=routes[s['route_id']]
     vals=[a_ for e in route_edges[s['route_id']] if s['node_id'] in (e['a'],e['b']) for a_ in _ra2[(r_['line'],e['id'])]]
     if not vals:continue
@@ -1191,7 +1191,7 @@ _life_by=collections.defaultdict(list)
 for r_ in life:_life_by[r_['edge_id']].append(r_)
 _resume=[]
 for s in stops:
-    if s.get('is_extension') or not s['is_stop'] or s['valid_from'] is None:continue
+    if not s['is_stop'] or s['valid_from'] is None:continue
     d0_=lohi(s['valid_from'])[1] or '0000'
     es_=[e for e in route_edges[s['route_id']] if s['node_id'] in (e['a'],e['b'])]
     if not es_:continue
@@ -1301,7 +1301,7 @@ for rid,r in routes.items():
         _trim_j.append(dict(line=r['line'],other=r['line'],other_route=rid,at=cur,source='derived',verified=False,valid=[None,'ongoing'],**({'side':sd_} if sd_ else {})))
 # 순번을 다시 매기고, 시작 쪽을 떼어 냈으면 km를 새 시작에서 잰다
 for rid in {t_[0] for t_ in _TRIM}:
-    L_=sorted((s for s in stops if s['route_id']==rid and not s.get('is_extension')),key=lambda s:s['seq'])
+    L_=sorted((s for s in stops if s['route_id']==rid),key=lambda s:s['seq'])
     b0_=L_[0]['km_cum'] if L_ and L_[0]['km_cum'] else 0
     for i_,s in enumerate(L_):s['seq']=i_;s['km_cum']=dround(s['km_cum']-b0_) if s['km_cum'] is not None else None
 _gid={id(s) for s in stops};stop_gaps=[g_ for g_ in stop_gaps if id(g_[0]) in _gid]
@@ -1317,7 +1317,7 @@ _LEAD_BY={}
 def _lead_lo(v):return lohi(v)[0] or '0000-00-00'
 _fst0={}
 for s_ in stops:
-    if s_['is_stop'] and not s_.get('is_extension'):
+    if s_['is_stop']:
         k_=_lead_lo(s_['valid_from'])
         if s_['node_id'] not in _fst0 or k_<_lead_lo(_fst0[s_['node_id']]):_fst0[s_['node_id']]=s_['valid_from']
 _IDN0=collections.defaultdict(list)
@@ -1338,7 +1338,7 @@ for a_ in attr:
     if e_ and e_['a']!=e_['b']:_attr_at[e_['a']].append(a_);_attr_at[e_['b']].append(a_)
 _byr0=collections.defaultdict(list)
 for s_ in stops:
-    if not s_.get('is_extension'):_byr0[s_['route_id']].append(s_)
+    _byr0[s_['route_id']].append(s_)
 for L_ in _byr0.values():L_.sort(key=lambda y:y['seq'])
 _lead_n=0
 for rid_,r_ in sorted(routes.items()):
@@ -1376,7 +1376,7 @@ for rid_,r_ in sorted(routes.items()):
         k_=kms.get(e_['id'])
         km_=None if X_['km_cum'] is None or k_ is None else dround(X_['km_cum']-k_ if side_=='start' else X_['km_cum']+k_)
         vf_=yy_['valid_from'] if _lead_lo(yy_['valid_from'])>f0_ else min((y['valid_from'] for y in L_),key=_lead_lo)
-        row_=dict(route_id=rid_,seq=0,node_id=yy_['node_id'],km_cum=km_,is_stop=yy_['is_stop'],is_extension=0,valid_from=vf_,valid_to=_fst0[x_],lead_until=_fst0[x_])
+        row_=dict(route_id=rid_,seq=0,node_id=yy_['node_id'],km_cum=km_,is_stop=yy_['is_stop'],valid_from=vf_,valid_to=_fst0[x_],lead_until=_fst0[x_])
         if side_=='start':
             for y in L_:y['seq']+=1
             row_['seq']=0;L_.insert(0,row_)
@@ -1396,10 +1396,10 @@ _ROUTE_ORIGIN=[]
 _SPAB={(x_['a'],x_['b']) for x_ in _SPLITP if not x_.get('normal')}
 _bys=collections.defaultdict(list)
 for s in stops:
-    if not s.get('is_extension'):_bys[s['route_id']].append(s)
+    _bys[s['route_id']].append(s)
 for L_ in _bys.values():L_.sort(key=lambda s:s['seq'])
 # 원점 역이 「이 노선」의 현행 정차역이면 그대로 둔다. 다른 노선이 지금 서는 역이라도 이 노선이 그 역을 더 쓰지 않으면 원점을 옮긴다(徳島線 三縄·阿波池田 → 佃 0.0)
-_curnode={(routes[s['route_id']]['line'],s['node_id']) for s in stops if s['is_stop'] and s['valid_to']=='ongoing' and not s.get('is_extension')}
+_curnode={(routes[s['route_id']]['line'],s['node_id']) for s in stops if s['is_stop'] and s['valid_to']=='ongoing'}
 for rid_,L_ in _bys.items():
     r_=routes[rid_]
     # 지선·옛 경로 계통(branch)의 km는 그 계통 안의 위치라 공식 기점과 관계없다
@@ -1620,7 +1620,7 @@ for rid_ in sorted({s['route_id'] for s in stops}):
     if len(ends_)!=1:continue
     end_=next(iter(ends_))
     if end_ in (None,'ongoing'):continue
-    ss_=[s for s in stops if s['route_id']==rid_ and s['is_stop'] and not s.get('is_extension')]
+    ss_=[s for s in stops if s['route_id']==rid_ and s['is_stop']]
     if not ss_ or not all(s['valid_to'] and s['valid_to'].startswith('[') and lohi(s['valid_to'])[1]==lohi(end_)[1] and lohi(s['valid_to'])[0]==lohi(s['valid_from'] or '')[0] for s in ss_):continue
     for s in ss_:
         if s['valid_to']!=end_:_LINEEND.append((rid_,s['node_id'],s['valid_to'],end_));s['valid_to']=end_
@@ -1634,7 +1634,7 @@ print('범위 정차 끝을 선 끝으로',len(_LINEEND),_LINEEND[:6])
 _PRE50=[];_PRE50_RED=[];_PRE50_TRIM=[]
 _bys50=collections.defaultdict(list)
 for s in stops:
-    if not s.get('is_extension'):_bys50[s['route_id']].append(s)
+    _bys50[s['route_id']].append(s)
 _arch_ids={a['id'] for a in archive}
 _nm50=collections.defaultdict(list)
 for x in names:
@@ -1678,7 +1678,7 @@ for rid_,L_ in sorted(_bys50.items()):
         _PRE50_TRIM.append((rid_,h_['node_id'],e_['id']))
         L_=[y for y in L_ if y is not h_]
     if any(t_[0]==rid_ for t_ in _PRE50_TRIM):
-        L3_=sorted((y for y in stops if y['route_id']==rid_ and not y.get('is_extension')),key=lambda y:y['seq'])
+        L3_=sorted((y for y in stops if y['route_id']==rid_),key=lambda y:y['seq'])
         b0_=L3_[0]['km_cum'] if L3_ and L3_[0]['km_cum'] else 0
         for j_,y in enumerate(L3_):y['seq']=j_;y['km_cum']=dround(y['km_cum']-b0_) if y['km_cum'] is not None else None
         for a in archive:
@@ -1772,7 +1772,7 @@ for l,k in curline.items():denom.append(dict(scope=l,basis='current',carryover='
 def _grp_split():
     _sp=collections.defaultdict(list)
     for s_ in stops:
-        if s_['is_stop'] and not s_.get('is_extension'):_sp[s_['node_id']].append((s_['route_id'],lohi(s_['valid_from'])[1] or '0000',lohi(s_['valid_to'])[0] or '9999-12-31',lohi(s_['valid_from'])[0] or '0000',lohi(s_['valid_to'])[1] or '9999-12-31'))
+        if s_['is_stop']:_sp[s_['node_id']].append((s_['route_id'],lohi(s_['valid_from'])[1] or '0000',lohi(s_['valid_to'])[0] or '9999-12-31',lohi(s_['valid_from'])[0] or '0000',lohi(s_['valid_to'])[1] or '9999-12-31'))
     def must(p,q):return p[1]<q[2] and q[1]<p[2]
     def may(p,q):return p[3]<q[4] and q[3]<p[4]
     def first(x):return min((p[3] for p in _sp[x]),default='9999')
@@ -1959,7 +1959,7 @@ SPLITPAIR={frozenset((x_['a'],x_['b'])):x_ for x_ in _SPLITP if not x_.get('norm
 def _sp_segs(x):
     out_=[]
     for s_ in stops:
-        if s_['node_id']!=x or not s_['is_stop'] or s_.get('is_extension'):continue
+        if s_['node_id']!=x or not s_['is_stop']:continue
         segs_=[(_sp_lo(s_['valid_from']),_sp_hi(s_['valid_to']))]
         for g_ in stop_gaps:
             if g_[0] is not s_:continue
@@ -2630,7 +2630,7 @@ def _thru_e(B,x):
     """노선 B가 x를 지나는 계통의 (계통, 위쪽 칸, 아래쪽 칸). 본선 계통 먼저. 없으면 None"""
     for rid_ in sorted(_RBL.get(B,()),key=lambda r_:(routes[r_].get('role')!='main',r_)):
         for x_ in by_route.get(rid_,()):
-            if x_['node_id']!=x or x_.get('is_extension'):continue
+            if x_['node_id']!=x:continue
             u_,d_=hop(rid_,x_['seq'],-1),hop(rid_,x_['seq'],1)
             if u_[0] and d_[0]:return rid_,u_[1],d_[1]
     return None
@@ -2685,7 +2685,7 @@ def _alt_cont(s,r,mp,oid,m,o,pd,ys_own,xs,own_fn,rr,group_near):
         if a0_ is None or a0_>=th_:return False
     best=None
     for o2 in node_stops.get(m,()):
-        if routes[o2['route_id']]['line']!=oid or o2['route_id']==o['route_id'] or o2.get('is_extension') or not on_day(o2,rd_):continue
+        if routes[o2['route_id']]['line']!=oid or o2['route_id']==o['route_id'] or not on_day(o2,rd_):continue
         if rr and o2['route_id']!=rr:continue
         for st2 in (-1,1):
             h2_=hop(o2['route_id'],o2['seq'],st2,rd_)[0]
@@ -3163,7 +3163,7 @@ for s in stops:
                       # 선형 방향(side_geo)보다 앞선다(丸ノ内一丁目 28系統 永代橋 쪽 → up) (4회차 kanto_1-010·kanto_1-012, 11회차 S2)
                       if kind=='branch' and j.get('_own_toward'):
                           L0_=by_route[r['id']];i0_=_SIDX.get((r['id'],s['seq']))
-                          ks_=[k for k,x in enumerate(L0_) if x['node_id'] in j['_own_toward'] and not x.get('is_extension')]
+                          ks_=[k for k,x in enumerate(L0_) if x['node_id'] in j['_own_toward']]
                           sds_=sorted({'down' if k<i0_ else 'up' for k in ks_ if k!=i0_}) if i0_ is not None else []
                           if sds_:
                               for sdo_ in sds_:
@@ -3602,7 +3602,7 @@ def _trunk(q,t,prev,day,seen,depth=0):
         # 이 계통에 얹힌 옛 선형 계통은 보기로 이미 지났다
         if q2 in HOSTED.get(q,()):continue
         for x_ in VR.get(q2) or by_route.get(q2,()):
-            if x_['node_id']!=t or x_.get('is_extension'):continue
+            if x_['node_id']!=t:continue
             for st_ in (-1,1):
                 h_,eid_=hop(q2,x_['seq'],st_,day)
                 if not h_ or h_==prev or frozenset((t,h_)) not in op_:continue
@@ -4868,7 +4868,6 @@ def _sv_rows(rid):
     """계통의 역 행을 노드별로 묶어 순번 순서로. 기간이 다른 같은 노드는 한 후보다"""
     out={}
     for x in by_route.get(rid,[]):
-        if x.get('is_extension'):continue
         out.setdefault(x['node_id'],[x['seq'],[]])[1].append(x)
     return sorted(((n_,v[1],v[0]) for n_,v in out.items()),key=lambda z:z[2])
 def _sv_grp(n_):
@@ -4999,7 +4998,7 @@ t('service_stop',['service_id','edition','seq','node_id'],_sv_stop)
 _ERA_ARCH=[]
 _skm=collections.defaultdict(dict)
 for s in stops:
-    if s['km_cum'] is not None and not s.get('is_extension'):_skm[s['route_id']].setdefault(s['node_id'],s['km_cum'])
+    if s['km_cum'] is not None:_skm[s['route_id']].setdefault(s['node_id'],s['km_cum'])
 for a in archive:
     if a.get('kind')!='stop' or a.get('archive_line') or not a.get('route') or a['route'] not in routes:continue
     d_=lohi(a.get('closed') or '')[0] if a.get('closed') else None
@@ -5068,7 +5067,7 @@ for a in archive:
     if a.get('kind')=='stop' and not a.get('archive_line') and arch_route(a):_abyr[arch_route(a)].append(a)
 _ASEQ_CONFLICT=[]
 for rid_,L_ in _abyr.items():
-    R_=[x for x in by_route.get(rid_,[]) if not x.get('is_extension')]
+    R_=list(by_route.get(rid_,[]))
     _last={x['node_id']:i for i,x in enumerate(R_)};_first={}
     for i,x in enumerate(R_):_first.setdefault(x['node_id'],i)
     _byid={a['id']:a for a in L_};_slot={}
@@ -5694,7 +5693,7 @@ def _last_line_names():
     ended={l_:max(lohi(v_)[0] or '0000' for v_ in vs) for l_,vs in _lend.items() if all(v_ not in (None,'ongoing') for v_ in vs)}
     span={}
     for s_ in stops:
-        if not s_['is_stop'] or s_.get('is_extension') or s_['route_id'] not in routes:continue
+        if not s_['is_stop'] or s_['route_id'] not in routes:continue
         l_=routes[s_['route_id']]['line']
         if l_ not in ended:continue
         f_=lohi(s_['valid_from'])[0] or '0000-01-01' if s_.get('valid_from') else '0000-01-01'
@@ -5714,7 +5713,7 @@ def _last_line_names():
     _pub=set();_on=collections.defaultdict(set)
     for s_ in stops:
         if s_['is_stop']:_pub.add(s_['node_id'])
-        if s_['route_id'] in routes and not s_.get('is_extension'):_on[routes[s_['route_id']]['line']].add(s_['node_id'])
+        if s_['route_id'] in routes:_on[routes[s_['route_id']]['line']].add(s_['node_id'])
     for (n_,l_),(f0,t0) in sorted(span.items()):
         if (n_,l_) in have or (n_,'ja') not in cur:continue
         end_=min(ended[l_],t0)

@@ -15,7 +15,7 @@
 
 넣은 파일 (사례 1·6만): `data/overrides/source_patch/{nodes,groups,positions,names,edges,km,geometry,events,routes}/realign_2026-11-06.yaml`. 행마다 `why` 앞에 `[富山港線]`·`[北条線]` 태그가 있습니다. 새 edge는 `e_090003`(富山–富山口), `e_090004`(富山口–奥田中学校前), `e_090005`(北条町–北条町(구))입니다. 두 사례는 원본의 기존 edge 번호를 하나도 가리키지 않아 `tools/remap_edges.py`와 부딪치지 않습니다.
 
-2단계 행(사례 3~5)은 저장소 밖 작업 폴더에 둡니다: `(작업 폴더)`, 함께 넣을 다른 파일의 행은 같은 폴더의 `companion.json`입니다. 생성 스크립트는 `.../연구 원자료/build_patch.py`입니다.
+2단계 행(사례 3~5)은 저장소 밖 작업 폴더에 둡니다: `(작업 폴더)`, 함께 넣을 다른 파일의 행은 같은 폴더의 `companion.json`입니다. 생성 스크립트는 연구 원자료의 `build_patch.py`입니다.
 
 ## 확인 방법
 

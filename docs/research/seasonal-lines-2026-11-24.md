@@ -1,6 +1,6 @@
 # 계절 운행 노선 조사 (5회차 2026-11-24)
 
-해마다 정한 기간에만 다니는 노선·구간(1950-01-01 뒤). 데이터는 `data/overrides/seasons.json`, 원자료는 보관 디스크 noriori-evidence/audit5/season.
+해마다 정한 기간에만 다니는 노선·구간(1950-01-01 뒤). 데이터는 `data/overrides/seasons.json`, 원자료는 아카이브 디스크 noriori-evidence/audit5/season.
 
 | 노선·구간 | 운영 | 운행 철 | 계절 운행 기간 | 근거 |
 |---|---|---|---|---|

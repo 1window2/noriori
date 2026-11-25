@@ -1,7 +1,7 @@
 # 환승역 승강장 배치 검증 (DESIGN §7.5)
 
 읽기만 함. 대상: `data/overrides/platforms/n05.yaml` 2116행(n05 2093, station_database 12, interpolated 7, n02 3, hand 1; 이 중 `how: db` 29행), `build/master.sqlite`의 `station_hub` 472곳(centroid 418, representative 54), `station_platform` 1149행.
-보조 스크립트: `(원격 작업 환경 임시 폴더)/work/` (a.py ~ e.py, p2.py).
+보조 스크립트: `(조사 당시 임시 폴더)/work/` (a.py ~ e.py, p2.py).
 
 ## 요약
 
