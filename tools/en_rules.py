@@ -227,6 +227,13 @@ def is_translated(text,ja):
         if w in TRANSLATED_WORDS and not (TRANSLATED_WORDS[w] and TRANSLATED_WORDS[w] in ja):return True
     return False
 
+# 공식 번역형(市役所 City Hall, 運動公園前 Sports Park)은 다른 역 이름의 낱말 바탕이 아니다. 영어 시설 낱말이 있어도 일본어 이름에 가타카나가 있으면
+# 외래어를 그대로 옮긴 것(国際センター Kokusai Center, スポーツセンター → Sports Center)이라 바탕으로 둔다 (5회차 2026-11-25)
+_FAC_WORDS=re.compile(r'\b(Hall|Park|University|Hospital|Station|Center|Museum|Shrine|Temple|Airport|School|Office|Garden|Gardens|Port|Terminal|Bridge|Depot|Yard|Cathedral|Castle|Farm|Ground)\b')
+def _translated_base(text,ja):
+    if ja and is_translated(text,ja):return True
+    return bool(_FAC_WORDS.search(text)) and not re.search('[ァ-ヶー]',ja or '')
+
 def fix_nodes(names):
     """gen_source.py가 일본어와 읽기를 확정한 뒤 부른다. en 행의 글자만 바꾼다 (행 순서는 그대로)"""
     fix=load_fix();nodefix=fix['node'];keep=set(fix['chome_official'])
@@ -271,7 +278,8 @@ def fix_nodes(names):
     # 다른 역 이름의 바탕. 어절이 나뉜 표기만 믿는다
     known={}
     for x in rows:
-        if x['source']!='rule' and x['id'] not in nodefix and ('-' in x['text'] or ' ' in x['text'] or len(x['text'])<13):
+        # 공식 번역형(市役所 City Hall, 사용자 결정 2026-11-25)은 그 역만의 이름이라 다른 역 이름의 낱말 바탕으로 쓰지 않는다(市役所前 → City Hall-mae가 됨)
+        if x['source']!='rule' and x['id'] not in nodefix and ('-' in x['text'] or ' ' in x['text'] or len(x['text'])<13) and not _translated_base(x['text'],ja.get(x['id'],'')):
             known.setdefault((plainja(ja[x['id']]),kana[x['id']]),x['text'])
     known.update({tuple(k.split('|')):v['en'] for k,v in fix['base'].items()})
     for x in rows:

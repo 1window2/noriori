@@ -16886,8 +16886,8 @@ null
 "kind": "nodename",
 "node": "n_matsuyama_city_iyotetsu_hanazono",
 "lang": "en",
-"text": "Matsuyamashi-eki",
-"basis": "번역형 Matsuyama City는 검색 별칭, 이름은 로마자 꼴(사용자 결정 2026-11-24 영어 이름 원칙 3, 바꿈 2026-11-25). 駅으로 끝나는 정류장은 -eki"
+"text": "Matsuyama City Station",
+"basis": "伊予鉄 공식 번역형 Matsuyama City Station이 이름, 읽기 꼴 Matsuyamashi-eki는 검색 별칭(사용자 결정 2026-11-25가 2026-11-24 원칙 3을 바꿈). 공식이 없는 駅 끝 정류장은 그대로 -eki"
 },
 {
 "id": "kanto_1-007",
@@ -18284,14 +18284,14 @@ null
 {"id": "r5-saikyo-05", "round": 5, "kind": "link_raw", "route": "r_kawagoe_line", "node": "n_omiya", "other_route": "r_tohoku_main_line", "link_kind": "continue", "day": "1980-01-01", "basis": "5회차 결정 5·6(2026-11-24): 1985-09-30 埼京線 개업부터 赤羽線·川越線 끝 이어짐은 東北本線 赤羽–大宮 계통으로만. 계통 한정 JUNCTION_NOT이 노선 단위 행에 걸리지 않던 생성기 오류(2026-11-25 화면 대조). 1985 전에는 본선 계통 그대로"},
 {"id": "r5-akita-01", "round": 5, "kind": "link_raw", "route": "r_akita_nairiku_line", "node": "n_takanosu_akita_nairiku_jukan", "other_line": "l_ou_main_line", "link_kind": "continue", "day": "2007-04-25", "basis": "5회차 결정 14(2026-11-24): 秋田内陸 AN-8900 奥羽本線 직통을 확인한 해의 봄 창으로. 같은 역·노선 쌍 근거 행이 여럿일 때 마지막 행 범위로 모든 해를 재 빠뜨리던 compile 오류(2026-11-25 화면 대조)"},
 {"id": "r5-akita-02", "round": 5, "kind": "link_raw", "route": "r_akita_nairiku_line", "node": "n_takanosu_akita_nairiku_jukan", "other_line": "l_ou_main_line", "link_kind": "continue", "from": "[2000-04-01..2000-05-31]", "basis": "5회차 결정 14(2026-11-24): 秋田内陸 AN-8900 奥羽本線 직통을 확인한 해의 봄 창으로. 같은 역·노선 쌍 근거 행이 여럿일 때 마지막 행 범위로 모든 해를 재 빠뜨리던 compile 오류(2026-11-25 화면 대조). 날짜를 모르는 해는 4~5월 범위 창"},
-{"id": "r5-en-01", "round": 5, "kind": "nodename", "node": "n_dogokoen", "lang": "en", "text": "Dogokoen", "basis": "번역형(Dogo Park)은 별칭, 이름은 로마자 꼴(사용자 결정 2026-11-24 영어 이름 원칙 3) (5회차 역명판 사진 조사 반영 2026-11-25)"},
+{"id": "r5-en-01", "round": 5, "kind": "nodename", "node": "n_dogokoen", "lang": "en", "text": "Dogo Park", "basis": "번역형(Dogo Park)은 별칭, 이름은 로마자 꼴(사용자 결정 2026-11-24 영어 이름 원칙 3) (5회차 역명판 사진 조사 반영 2026-11-25) → 공식 번역형은 이름, 일본어 읽기 꼴은 검색 별칭(사용자 결정 2026-11-25가 바꿈)"},
 {"id": "r5-en-02", "round": 5, "kind": "nodename", "node": "n_saishun_iryo_center_mae", "lang": "en", "text": "SaishunIryoCenter-mae", "basis": "역명판 사진 표기 그대로(공식 우선), 옛 en_fix Wikidata 라벨보다 앞섬 (5회차 역명판 사진 조사 반영 2026-11-25)"},
 {"id": "r5-en-03", "round": 5, "kind": "nodename", "node": "n_chuo_daigaku_meisei_daigaku", "lang": "en", "text": "Chuo-Daigaku-Meisei-Daigaku", "basis": "공식 표기의 가운뎃점 ·(U+00B7)도 ・처럼 하이픈 (5회차 역명판 사진 조사 반영 2026-11-25)"},
 {"id": "r5-en-04", "round": 5, "kind": "nodename", "node": "n_shimabara", "lang": "en", "text": "Shimabara", "basis": "한 글자에 한 음절씩 띄운 역명판 배치(SHIMA BARA)는 한 낱말 (5회차 역명판 사진 조사 반영 2026-11-25)"},
-{"id": "r5-en-05", "round": 5, "kind": "nodename", "node": "n_kyushu_railway_history_museum", "lang": "en", "text": "Kyusyu Tetsudo Kinenkan", "basis": "역명판 사진 로마자(번역형 Kyushu Railway History Museum은 별칭) (5회차 역명판 사진 조사 반영 2026-11-25)"},
-{"id": "r5-en-06", "round": 5, "kind": "nodename", "node": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyamadobutsukoen", "basis": "공식이 아닌 Wikidata 번역형 라벨도 로마자 꼴로, 번역형은 검색 별칭(일반화 규칙) (2026-11-25)"},
+{"id": "r5-en-05", "round": 5, "kind": "nodename", "node": "n_kyushu_railway_history_museum", "lang": "en", "text": "Kyushu Railway History Museum", "basis": "역명판 사진 로마자(번역형 Kyushu Railway History Museum은 별칭) (5회차 역명판 사진 조사 반영 2026-11-25) → 공식 번역형은 이름, 일본어 읽기 꼴은 검색 별칭(사용자 결정 2026-11-25가 바꿈)"},
+{"id": "r5-en-06", "round": 5, "kind": "nodename", "node": "n_yagiyama_zoological_park", "lang": "en", "text": "Yagiyama Zoological Park", "basis": "공식이 아닌 Wikidata 번역형 라벨도 로마자 꼴로, 번역형은 검색 별칭(일반화 규칙) (2026-11-25) → 공식 번역형은 이름, 일본어 읽기 꼴은 검색 별칭(사용자 결정 2026-11-25가 바꿈)"},
 {"id": "r5-en-07", "round": 5, "kind": "nodename", "node": "n_naha_airport", "lang": "en", "text": "Naha Airport", "basis": "공항(空港 → Airport)은 공항 규칙 꼴이라 번역형으로 보지 않는다 (2026-11-25)"},
-{"id": "r5-en-08", "round": 5, "kind": "nodename", "node": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura-otachimisaki-koen", "basis": "たの|うら의 う는 장음이 아니다 (2026-11-25)"},
+{"id": "r5-en-08", "round": 5, "kind": "nodename", "node": "n_tanoura_otachimisaki_park", "lang": "en", "text": "Tanoura Otachimisaki Park", "basis": "たの|うら의 う는 장음이 아니다 (2026-11-25) → 공식 번역형 Tanoura Otachimisaki Park가 이름(사용자 결정 2026-11-25). 장음 규칙의 읽기 꼴 Tanoura-otachimisaki-koen은 검색 별칭"},
 {"id": "r5-arch-01", "round": 5, "kind": "archbranch", "archive_line": "a_seibuomiya_line", "route": "r_tohoku_shinkansen", "absent": true, "basis": "5회차 화면 대조(2026-11-25): 열람 전용 노선을 그 역의 모든 계통에 붙여 西武大宮線(1906–1940)이 東北·上越新幹線(1982~)에서 갈라지는 것처럼 보였다. 그 역에 함께 있던 재래선 계통에만 붙인다(archive_branch)"},
 {"id": "r5-arch-02", "round": 5, "kind": "archbranch", "archive_line": "a_seibuomiya_line", "route": "r_joetsu_shinkansen", "absent": true, "basis": "5회차 화면 대조(2026-11-25): 열람 전용 노선을 그 역의 모든 계통에 붙여 西武大宮線(1906–1940)이 東北·上越新幹線(1982~)에서 갈라지는 것처럼 보였다. 그 역에 함께 있던 재래선 계통에만 붙인다(archive_branch)"},
 {"id": "r5-arch-03", "round": 5, "kind": "archbranch", "archive_line": "a_seibuomiya_line", "route": "r_tohoku_main_line", "basis": "5회차 화면 대조(2026-11-25): 열람 전용 노선을 그 역의 모든 계통에 붙여 西武大宮線(1906–1940)이 東北·上越新幹線(1982~)에서 갈라지는 것처럼 보였다. 그 역에 함께 있던 재래선 계통에만 붙인다(archive_branch)"},
@@ -18387,7 +18387,14 @@ null
 {"id": "r5-r3-24", "round": 5, "kind": "hidden", "line": "l_nemuro_main_line_freight", "a": "n_nemuro", "b": "n_nemuro_ko", "km": 2.6, "freight": "n_nemuro_ko", "note": "根室本線 根室–根室港: 여객 이력 없는 화물 지선(숨은 노선)", "basis": "5회차 3차 조사 반영(2026-11-25)"},
 {"id": "r5-r3-25", "round": 5, "kind": "hidden", "line": "l_tokaido_main_line_freight", "a": "n_higashi_kanagawa", "b": "n_umi_kanagawa", "km": 2.0, "freight": "n_umi_kanagawa", "note": "東海道本線 東神奈川–海神奈川: 여객 이력 없는 화물 지선(숨은 노선)", "basis": "5회차 3차 조사 반영(2026-11-25)"},
 {"id": "r5-r3-26", "round": 5, "kind": "nodename", "node": "n_honmachi_6_chome", "lang": "en", "text": "Hommachi 6-chome", "basis": "5회차 3차 조사 반영(2026-11-25): 本町 m 표기는 역명판·노선도 공식(伊予鉄)"},
-{"id": "r5-r3-27", "round": 5, "kind": "nodename", "node": "n_fukuoka_airport", "lang": "en", "text": "Fukuoka-kuko", "basis": "5회차 3차 조사 반영(2026-11-25): 역명판 공식 로마자가 이름, 번역형 Fukuoka Airport는 별칭(en_fix가 공식을 덮지 않음)"},
-{"id": "r5-r3-28", "round": 5, "kind": "nodename", "node": "n_ichihana", "lang": "en", "text": "Ichihana", "basis": "5회차 3차 조사 반영(2026-11-25): 真岡鐵道 옛 판 훈령식 Itihana는 별칭, 지금 판 헵번식 꼴이 이름"}
+{"id": "r5-r3-27", "round": 5, "kind": "nodename", "node": "n_fukuoka_airport", "lang": "en", "text": "Fukuoka Airport", "basis": "5회차 3차 조사 반영(2026-11-25): 역명판 공식 로마자가 이름, 번역형 Fukuoka Airport는 별칭(en_fix가 공식을 덮지 않음) → 공식 번역형은 이름, 일본어 읽기 꼴은 검색 별칭(사용자 결정 2026-11-25가 바꿈)"},
+{"id": "r5-r3-28", "round": 5, "kind": "nodename", "node": "n_ichihana", "lang": "en", "text": "Ichihana", "basis": "5회차 3차 조사 반영(2026-11-25): 真岡鐵道 옛 판 훈령식 Itihana는 별칭, 지금 판 헵번식 꼴이 이름"},
+{"id": "r5-r3b-01", "round": 5, "kind": "link_raw", "route": "r_shindaikumachi_line", "node": "n_omoteteppomachi", "other_line": "l_akitashinai_line", "link_kind": "continue", "next": "n_hiyoshi_akita_city", "day": "1950-12-01", "basis": "5회차 3차 조사 반영(2026-11-25): 表鉄砲町 정차 시작이 범위([1950-09-01..1955-12-31])여도 新大工町線 1950–51 土崎 쪽 끝 이어짐이 이어진다. 끝 이어짐은 확실한 겹침만 뺀다(compile _sure)"},
+{"id": "r5-r3b-02", "round": 5, "kind": "link_raw", "route": "r_akitashinai_line", "node": "n_omoteteppomachi", "other_line": "l_shindaikumachi_line", "link_kind": "branch", "day": "1950-12-01", "basis": "5회차 3차 조사 반영(2026-11-25): 1950-09-01 県庁前 개통 뒤 秋田市内線은 表鉄砲町을 지나며 新大工町 쪽으로 갈린다"},
+{"id": "r5-r3b-03", "round": 5, "kind": "stop", "route": "r_akitashinai_line", "node": "n_omoteteppomachi", "valid_from": "[1950-09-01..1955-12-31]", "valid_to": "1965-07-XX", "basis": "5회차 3차 조사 반영(2026-11-25): 1950-09-01엔 승객 미취급 信号所, 정류장 시작은 1955 사이(위키·railforum)"},
+{"id": "r5-r3b-04", "round": 5, "kind": "nodename", "node": "n_shiyakushomae", "lang": "en", "text": "Shiyakusho-mae", "basis": "5회차 3차 조사 반영(2026-11-25): 공식 번역형(市役所 City Hall)은 그 역만의 이름이라 다른 역 규칙 이름의 낱말 바탕이 되지 않는다(City Hall-mae가 되던 것)"},
+{"id": "r5-r3b-05", "round": 5, "kind": "nodename", "node": "n_new_chitose_airport", "lang": "en", "text": "New Chitose Airport", "basis": "5회차 3차 조사 반영(2026-11-25): 공식 번역형은 이름(사용자 결정 2026-11-25), 한국어는 나무위키 「신치토세 공항」 그대로"},
+{"id": "r5-r3b-06", "round": 5, "kind": "nodename", "node": "n_new_chitose_airport", "lang": "ko", "text": "신치토세 공항", "basis": "5회차 3차 조사 반영(2026-11-25): 한국어는 영어 번역형과 따로, 나무위키 제목"},
+{"id": "r5-r3b-07", "round": 5, "kind": "nodename", "node": "n_dogokoen", "lang": "ko", "text": "도고코엔", "basis": "5회차 3차 조사 반영(2026-11-25): 영어는 Dogo Park여도 한국어는 나무위키 제목 도고코엔"}
 ]
 }

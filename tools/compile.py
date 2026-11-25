@@ -2290,6 +2290,13 @@ def _bounded(s):
     if f is None:f=min(vals,key=lambda a_:lohi(a_['valid_from'])[0] or '0000')['valid_from']
     if t is None:t=max(vals,key=lambda a_:lohi(a_['valid_to'])[1] or '9999-12-31')['valid_to']
     return f,t
+def _maybe_period(s,o):
+    """두 정차 기간이 겹칠 수 있는 기간(이른 시작의 이른 끝 < 늦은 끝의 늦은 끝). 겹침이 확실하지 않아도 낸다. 없으면 None"""
+    (sf,st),(of,ot)=_bounded(s),_bounded(o)
+    f=max((sf,of),key=lambda x:lohi(x)[0] or '0000')
+    t=min((st,ot),key=lambda x:(lohi(x)[1] or '9999-12-31') if x not in (None,'ongoing') else '9999-12-31')
+    if (lohi(f)[0] or '0000')>=((lohi(t)[1] or '9999-12-31') if t not in (None,'ongoing') else '9999-12-31'):return None
+    return f,t
 def period(s,o):
     """두 정차 기간의 겹침. 겹치지 않으면 None"""
     (sf,st),(of,ot)=_bounded(s),_bounded(o)
@@ -3329,6 +3336,9 @@ for rid_,L_ in by_route.items():
 _pub_e={s_['node_id'] for s_ in stops if s_['is_stop']}
 _gp_e=collections.defaultdict(list)
 for g_ in stop_gaps:_gp_e[id(g_[0])].append((g_[1],g_[2]))
+def _sure(iv):
+    """기간 가운데 시작이 끝보다 확실히 앞서는 것만(period와 같은 판정: 시작의 늦은 끝 < 끝의 이른 끝)"""
+    return [(f_,t_) for f_,t_ in iv if (lohi(f_)[1] or '0000')<((lohi(t_)[0] or '9999-12-31') if t_ not in (None,'ongoing') else '9999-12-30')]
 def _stop_iv(y):
     """행 y가 서는 기간들(서지 않은 때를 뺀 토막). 정차 행이 아니면 없음"""
     if not y['is_stop']:return []
@@ -3438,7 +3448,9 @@ for rid,L in sorted(by_route.items()):
                 if _jnot_route(rid,X,B_,rid2) or _jnot_route(rid2,m,A_,rid):continue
                 base=_ivx(_ivx(_selivs(h),_selivs(o)),eiv_)
                 # 두 행이 함께 서는 날은 생성기가 이었으므로 뺀다. 같은 노선 계통끼리는 생성기가 한쪽만 잇기도 해서 빼지 않고 아래에서 없는 쪽만 낸다
-                if not same_:base=_minus(base,_ivx(_stop_iv(h),_stop_iv(o)))
+                # 생성기는 두 정차 기간의 겹침이 확실한 날만 판정한다(period: 늦은 시작의 늦은 끝 < 이른 끝의 이른 끝). 시작·끝이 범위라 겹침이 확실하지 않은 날은
+                # 생성기가 보지 않았으니 빼지 않는다. 빼면 아무도 잇지 않는다 (秋田市電 表鉄砲町: 정차 시작 [1950-09-01..1955-12-31], 新大工町線 끝 이어짐 1950–51, 5회차 2026-11-25)
+                if not same_:base=_minus(base,_sure(_ivx(_stop_iv(h),_stop_iv(o))))
                 base=_ivx(_ivx(base,_alive(rid,h['seq'],True)),_alive(rid2,o['seq'],True))
                 base=[(f_,t_) for f_,t_ in base if _lo(f_)<_lo(t_,True) and not(t_ not in (None,'ongoing') and (lohi(t_)[1] or '9999')<=FLOOR)]
                 if not base:continue
@@ -3929,7 +3941,8 @@ def _jrows():
             gs_={j['at']}|{m for m,x in nodes.items() if nodes[j['at']].get('group') and x.get('group')==nodes[j['at']].get('group')}
             A_=[s for m in gs_ for s in node_stops.get(m,()) if routes[s['route_id']]['line']==j['line']]
             B_=[s for m in gs_ for s in node_stops.get(m,()) if routes[s['route_id']]['line']==j['other'] and (not j.get('other_route') or s['route_id']==j['other_route'])]
-            if not any(pd and _lo(pd[0])<_lo(u_,True) and _lo(f_)<_lo(pd[1],True) for a in A_ for b in B_ if a is not b for pd in [period(a,b)]):
+            # 함께 섰을 수 있는 날(시작·끝이 범위라 겹침이 확실하지 않은 날 포함)이 있으면 근거 행을 남긴다. 계통 이음은 끝 이어짐이 그 창을 잇는다 (秋田市電 表鉄砲町, 5회차 2026-11-25)
+            if not any(pd and _lo(pd[0])<_lo(u_,True) and _lo(f_)<_lo(pd[1],True) for a in A_ for b in B_ if a is not b for pd in [_maybe_period(a,b)]):
                 WARN['junction_never_together'].append((j['line'],j['other'],j.get('other_route'),j['at']));continue
         # 그날 궤간이 맞지 않아 계통 이음을 하나도 내지 않은 행(3회차 W1a: 大曲 田沢湖線 1997~)은 선로 연결로 내지 않는다
         if j.get('_sharp') and not j.get('_kinds'):WARN['junction_sharp'].append((j['line'],j['other'],j.get('at')));continue
@@ -5969,8 +5982,10 @@ for x in names:
 # 번역형 공식 영어 이름(熊本駅前 「Kumamoto Station」)은 찾기 별칭으로만 둔다 (en_official.json aliases)
 _eo=os.path.join(ROOT,'data','overrides','en_official.json')
 if os.path.exists(_eo):
+    # 값은 별칭 하나 또는 여럿(공식 표기가 바뀐 역은 옛 공식 표기도 별칭, 5회차 r3)
     for nd_,tx_ in json.load(open(_eo,encoding='utf-8')).get('aliases',{}).items():
-        if nd_ in pub:sadd('node',nd_,tx_)
+        if nd_ in pub:
+            for t_ in ([tx_] if isinstance(tx_,str) else tx_):sadd('node',nd_,t_)
 # 운행 계통 별칭 (data/overrides/service_aliases.json). 공식 노선 하나 전체의 애칭은 그 노선으로, 운행 계통의 애칭은 그 계통으로 찾는다.
 # 대상은 노선 ja 이름이나 ID다. 못 찾거나 여럿이면 오류다
 _sa=os.path.join(ROOT,'data','overrides','service_aliases.json')

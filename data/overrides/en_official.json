@@ -1,5 +1,5 @@
 {
- "설명": "현행 역의 공식 영어 이름(사용자 결정 2026-11-24: 공식 표기 최우선, 장음 기호는 공식대로, 모두 대문자는 첫 글자만 대문자, 駅·駅前를 Station으로 옮긴 번역형은 검색 별칭). 회사 자료(노선도·역 일람·공개 데이터)와 역명판 사진에서 확인한 값. 규칙 이름·위키 라벨보다 앞선다. 5회차 영어 이름 조사(연구 원자료 audit5/en_names, en_names2) 번역형(Industrial Park·Chinatown 같은 영어 번역)과 노선도에서 줄여 쓴 잘린 이름도 이름으로 쓰지 않고 검색 별칭(aliases)으로만 둔다(5회차 K170 정리 2026-11-25). 읽을 때 전각 글자·굽은 따옴표·가운뎃점(・→-)·낱말 가운데 대문자 장음 기호는 tools/en_rules.py load_official이 고친다. 5회차 3차 조사(audit5/en_names3, 2026-11-25): 역명판 사진 행의 source는 「역명판 사진 <Commons 파일 URL>」이고 사진 사본은 아카이브 디스크 noriori-evidence에 둔다. note는 판독 메모(모두 대문자, 판에 찍힌 특이 철자 등)다. 한 글자 밑에 한 음절씩 띄워 쓴 역명판 배치(Chu Na Gon, Shima Bara)는 한 낱말로 붙인다. 公園→Park·大学→University·市役所→City Hall처럼 일본어 낱말을 영어로 옮긴 꼴과 괄호 안 영어 덧붙임은 모두 번역형으로 보아 별칭으로 옮겼다. confidence low는 회사 영어 사이트의 시간표 검색 역 목록에서만 본 값이다. 공항(Airport)은 공항 터미널 규칙과 같은 꼴이라 번역형으로 보지 않는다(2026-11-25). 역명판 사진이 옛 이름 시절 것이면(島原鉄道 2019 개칭 전 神代町·多比良町·島原外港) 쓰지 않는다. 새 행은 지금 이름 읽기와 대조했다",
+ "설명": "현행 역의 공식 영어 이름(사용자 결정 2026-11-24: 공식 표기 최우선, 장음 기호는 공식대로, 모두 대문자는 첫 글자만 대문자, 공식 번역형(Dogo Park·Nagasaki University·Fukuoka Airport)은 이름, 일본어 읽기 꼴은 검색 별칭(사용자 결정 2026-11-25가 2026-11-24 결정을 바꿈)). 회사 자료(노선도·역 일람·공개 데이터)와 역명판 사진에서 확인한 값. 규칙 이름·위키 라벨보다 앞선다. 5회차 영어 이름 조사(연구 원자료 audit5/en_names, en_names2) 노선도에서 줄여 쓴 잘린 이름(西鉄 접두 없는 Hirao 등)과 괄호로 번역을 덧붙인 꼴은 검색 별칭(aliases)으로만 둔다(5회차 K170 정리 2026-11-25). 읽을 때 전각 글자·굽은 따옴표·가운뎃점(・→-)·낱말 가운데 대문자 장음 기호는 tools/en_rules.py load_official이 고친다. 5회차 3차 조사(audit5/en_names3, 2026-11-25): 역명판 사진 행의 source는 「역명판 사진 <Commons 파일 URL>」이고 사진 사본은 아카이브 디스크 noriori-evidence에 둔다. note는 판독 메모(모두 대문자, 판에 찍힌 특이 철자 등)다. 한 글자 밑에 한 음절씩 띄워 쓴 역명판 배치(Chu Na Gon, Shima Bara)는 한 낱말로 붙인다. 公園→Park·大学→University·市役所→City Hall처럼 일본어 낱말을 영어로 옮긴 꼴과 괄호 안 영어 덧붙임은 모두 번역형으로 보아 별칭으로 옮겼다. confidence low는 회사 영어 사이트의 시간표 검색 역 목록에서만 본 값이다. 공항(Airport)은 공항 터미널 규칙과 같은 꼴이라 번역형으로 보지 않는다(2026-11-25). 역명판 사진이 옛 이름 시절 것이면(島原鉄道 2019 개칭 전 神代町·多比良町·島原外港) 쓰지 않는다. 새 행은 지금 이름 읽기와 대조했다",
  "rows": {
   "n_abashiri": {
    "en": "Abashiri",
@@ -19061,10 +19061,10 @@
    "type": "company"
   },
   "n_kyushu_railway_history_museum": {
-   "en": "Kyusyu Tetsudo Kinenkan",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kyushu_Tetsudo_Kinenkan_%28Kyushu_Railway_History_Museum%29_Station_Sign.jpg",
-   "type": "sign",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased"
+   "en": "Kyushu Railway History Museum",
+   "source": "https://en.wikipedia.org/wiki/Kyushu_Railway_History_Museum_Station",
+   "type": "company",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased / 공식 번역형 Kyushu Railway History Museum를 이름으로 올림(사용자 결정 2026-11-25), 옛 이름 Kyusyu Tetsudo Kinenkan는 별칭"
   },
   "n_kyushukodaimae": {
    "en": "Kyūshūkōdai-mae",
@@ -22824,10 +22824,10 @@
    "type": "company"
   },
   "n_nagasaki_ekimae": {
-   "en": "Nagasaki Eki-Mae",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nagasaki-Ekimae_Station_Sign.jpg",
-   "type": "sign",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased"
+   "en": "Nagasaki Station",
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased / 공식 번역형 Nagasaki Station를 이름으로 올림(사용자 결정 2026-11-25), 옛 이름 Nagasaki Eki-Mae는 별칭"
   },
   "n_nagasaki_tosaden_kotsu": {
    "en": "Nagasaki",
@@ -32887,9 +32887,10 @@
    "type": "company"
   },
   "n_shiritsubyoinmae": {
-   "en": "Shiritsu byoin-mae",
-   "source": "https://www.kotsu-city-kagoshima.jp/wp/wp-content/uploads/2026/08/0bfe6934a57be48b03c0f86880ed5312.pdf",
-   "type": "company"
+   "en": "Naha City Hospital",
+   "source": "https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_%E6%B2%96%E7%B9%A9_OKINAWA_%E5%96%AE%E8%BB%8C%E9%9B%BB%E8%BB%8A_MonoRail_%E9%81%8A%E8%BB%8A%E6%B2%B3_tour_view_from_13_%E5%B8%82%E7%AB%8B%E9%86%AB%E9%99%A2%E5%89%8D%E7%AB%99_Naha_City_Hospital_Station_to_14_%E5%84%80%E4%BF%9D%E7%AB%99_Gibo_Station_0903am_in_January_2025_R12S_01.jpg",
+   "type": "sign",
+   "note": "공식 번역형 Naha City Hospital를 이름으로 올림(사용자 결정 2026-11-25), 옛 이름 Shiritsu byoin-mae는 별칭"
   },
   "n_shiritsutaiikukanmae": {
    "en": "Shiritsutaiikukan-mae",
@@ -41345,10 +41346,11 @@
    "note": "neighbouring-station romaji printed on the station name sign of n_ei (same operator signage), read from the image: 'NISHIEI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
   },
   "n_fukudaimae": {
-   "en": "Fukudai-mae",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nanakuma_Station_Sign.jpg",
-   "type": "sign",
-   "note": "neighbouring-station romaji printed on the station name sign of n_nanakuma (same operator signage), read from the image: 'Fukudai-mae'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+   "en": "Fukuoka University",
+   "old": "Fukudai-mae",
+   "source": "https://subway.city.fukuoka.lg.jp/eng/route/deta/map.pdf",
+   "type": "company",
+   "note": "Fukuoka City Subway English route map (fetched 2026-11) prints 'Fukuoka University'. Neighbouring-station text on the Nanakuma sign photo https://commons.wikimedia.org/wiki/File:Nanakuma_Station_Sign.jpg (Commons date 2017-07-20) reads 'Fukudai-mae'. 'Fukudai-mae' moves to aliases. / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
   },
   "n_tamarai": {
    "en": "Tamarai",
@@ -41381,16 +41383,18 @@
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'IDEMITSU BIJUTSUKAN'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
   },
   "n_fukuoka_airport": {
-   "en": "Fukuoka-kuko",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukuoka_Airport_Station_Sign_2.jpg",
-   "type": "sign",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'Fukuoka-kuko'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+   "en": "Fukuoka Airport",
+   "old": "Fukuoka-kuko",
+   "source": "https://subway.city.fukuoka.lg.jp/eng/route/deta/map.pdf",
+   "type": "company",
+   "note": "Fukuoka City Subway English route map (fetched 2026-11) prints 'Fukuoka Airport'. The older platform sign photo https://commons.wikimedia.org/wiki/File:Fukuoka_Airport_Station_Sign_2.jpg (Commons date 2018-09-17) reads 'Fukuoka-kuko(Airport)'. Newer company form is the name; 'Fukuoka-kuko' moves to aliases. Change date not found. / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
   },
   "n_ohorikoen": {
-   "en": "Ohorikoen",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ohori_Park_Station_Sign.jpg",
-   "type": "sign",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image: 'Ohorikoen'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 2026-11-25)"
+   "en": "Ohori Park",
+   "old": "Ohorikoen",
+   "source": "https://subway.city.fukuoka.lg.jp/eng/route/deta/map.pdf",
+   "type": "company",
+   "note": "Fukuoka City Subway English route map (fetched 2026-11) prints 'Ohori Park'. Platform sign photo https://commons.wikimedia.org/wiki/File:Ohori_Park_Station_Sign.jpg (Commons date 2019-06-25) reads 'Ohorikoen(Ohori Park)'. 'Ohorikoen' moves to aliases. / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
   },
   "n_nishitetsu_kashii": {
    "en": "Nishitetsu Kashii",
@@ -42001,10 +42005,10 @@
    "note": "company English timetable (Owani Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
   },
   "n_hirosaki_higashikomae": {
-   "en": "Hirosakihigashikōmae",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hirosakihigasikōmae_station03.JPG",
+   "en": "Hirosaki Higashi High School",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Konan_Undo-Koen-mae-STA_Name-sign.jpg",
    "type": "sign",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps with macron (HIROSAKIHIGASHIKŌMAE), title-cased; the final E sits at the frame edge of the photo, read with the kana ひろさきひがしこうまえ; company English timetable 2019 wraps it as Hirosakihigashi/kokomae"
+   "note": "neighbour-station English on the 2026-02-08 sign of 運動公園前; replaces the older platform sign HIROSAKIHIGASHIKŌMAE (now alias) and the 2019 timetable form; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
   },
   "n_hitachinai": {
    "en": "Hitachinai",
@@ -42307,10 +42311,10 @@
    "note": "company route map and timetable page, romaji under each station name"
   },
   "n_kita_mitsukaido": {
-   "en": "Kitamitsukaidô",
-   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kita-Mitsukaido_Station_-_Sep_17_2021_various_15_33_32_669000.jpeg",
-   "type": "sign",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps with circumflex (KITAMITSUKAIDÔ), title-cased; older-style sign photographed 2021"
+   "en": "Kita-mitsukaidō",
+   "source": "https://www.kantetsu.co.jp/train/files/kitamitsukaido.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name; replaces the older platform-sign form Kitamitsukaidô (photo 2021-09-17, now alias); company timetable dated 2026-03-14"
   },
   "n_kitaurakohan": {
    "en": "Kitaurakohan",
@@ -43159,10 +43163,10 @@
    "note": "company English fares table (\"Station\" suffix dropped)"
   },
   "n_undo_koen_mae_konan": {
-   "en": "Undokoenmae",
-   "source": "https://konantetsudo.jp/english/konanline-timetable201910.pdf",
-   "type": "company",
-   "note": "company English timetable (Konan Line, Oct 2019; linked from https://konantetsudo.jp/for-foreigners/), names printed without spaces or hyphens"
+   "en": "Sports Park",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Konan_Undo-Koen-mae-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "station name sign photographed 2026-02-08 (田んぼ鉄道 design, numbered KK03); replaces the 2019 English timetable form Undokoenmae (now alias); 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
   },
   "n_urawa_misono": {
    "en": "Urawa-Misono",
@@ -44876,61 +44880,1321 @@
    "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased)",
    "source": "https://www.nagaden-net.co.jp/info/station/zenkojishita",
    "type": "company"
+  },
+  "n_daiho": {
+   "en": "Daihou",
+   "source": "https://www.kantetsu.co.jp/train/files/daiho.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name; printed Daihou (ou for the long vowel)"
+  },
+  "n_inatoi": {
+   "en": "Inatoi",
+   "source": "https://www.kantetsu.co.jp/train/files/inatoi.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_kokinu": {
+   "en": "Kokinu",
+   "source": "https://www.kantetsu.co.jp/train/files/kokinu.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_kurogo": {
+   "en": "Kurogo",
+   "source": "https://www.kantetsu.co.jp/train/files/kurogo.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_minami_ishige": {
+   "en": "Minami-Ishige",
+   "source": "https://www.kantetsu.co.jp/train/files/minamiishige.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_minami_moriya": {
+   "en": "Minami-Moriya",
+   "source": "https://www.kantetsu.co.jp/train/files/minamimoriya.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_moriya_kanto": {
+   "en": "Moriya",
+   "source": "https://www.mir.co.jp/en/",
+   "type": "company",
+   "note": "same station shared with Tsukuba Express; TX English station list (en_official row n_moriya_tsukuba_express)"
+  },
+  "n_nishi_toride": {
+   "en": "Nishitoride",
+   "source": "https://www.kantetsu.co.jp/train/files/nishitoride.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name; printed without hyphen"
+  },
+  "n_otago": {
+   "en": "Otago",
+   "source": "https://www.kantetsu.co.jp/train/files/otago.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_ryugasaki": {
+   "en": "Ryugasaki",
+   "source": "https://www.kantetsu.co.jp/train/files/ryugasaki.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name; all caps, title-cased"
+  },
+  "n_sanuki": {
+   "en": "Sanuki",
+   "source": "https://www.kantetsu.co.jp/train/files/sanuki.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name; all caps, title-cased"
+  },
+  "n_shimotsuma": {
+   "en": "Shimotsuma",
+   "source": "https://www.kantetsu.co.jp/train/files/shimotsuma.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_shin_moriya": {
+   "en": "Shin-Moriya",
+   "source": "https://www.kantetsu.co.jp/train/files/shinmoriya.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_shin_toride": {
+   "en": "Shin-Toride",
+   "source": "https://www.kantetsu.co.jp/train/files/shintoride.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_sodo": {
+   "en": "Sodo",
+   "source": "https://www.kantetsu.co.jp/train/files/sodo.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_tamamura": {
+   "en": "Tamamura",
+   "source": "https://www.kantetsu.co.jp/train/files/tamamura.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_terahara": {
+   "en": "Terahara",
+   "source": "https://www.kantetsu.co.jp/train/files/terahara.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name; printed all lower case (terahara); first letter capitalised"
+  },
+  "n_tobanoe": {
+   "en": "Tobanoe",
+   "source": "https://www.kantetsu.co.jp/train/files/tobanoe.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_togashira": {
+   "en": "Togashira",
+   "source": "https://www.kantetsu.co.jp/train/files/togashira.pdf",
+   "type": "company",
+   "note": "Kanto Railway station departure timetable PDF (revised 2026-03-14), romaji under the station name"
+  },
+  "n_dentetsu_izumoshi": {
+   "en": "Dentetsu Izumoshi",
+   "source": "https://railway.ichibata.co.jp/lang/en/",
+   "type": "company",
+   "note": "Ichibata Electric Railway official English page: fare table and station heading 'DENTETSU IZUMOSHI' / 'Dentetsu Izumoshi Station'. 'Station' dropped (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_koyukanshineki": {
+   "en": "Koyukan Shin-eki",
+   "source": "https://railway.ichibata.co.jp/lang/en/",
+   "type": "company",
+   "note": "Ichibata Electric Railway official English page: tourist text 'Koyukan Shin-eki Station'. 'Station' dropped (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_aikamachi": {
+   "en": "Aikamachi",
+   "source": "https://railway.ichibata.co.jp/lang/en/",
+   "type": "company",
+   "note": "Ichibata Electric Railway official English page: station heading 'Aikamachi Station'. 'Station' dropped (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_matsue_shinjiko_onsen": {
+   "en": "Matsue Shinjiko-Onsen",
+   "source": "https://railway.ichibata.co.jp/lang/en/",
+   "type": "company",
+   "note": "Ichibata Electric Railway official English page: station heading 'Matsue Shinjiko-Onsen Station', fare table 'MATSUE SHINJIKO-ONSEN' (running text also has 'Matsue Shinjiko Onsen Station'). 'Station' dropped (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_hitoyoshi_onsen": {
+   "en": "Hitoyoshi Onsen",
+   "source": "https://www.kumagawa-rail.com/",
+   "type": "company",
+   "note": "Kumagawa Railroad official site, English service notice: 'Hitoyoshi Onsen Station'. 'Station' dropped (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_higo_nishinomura": {
+   "en": "Higo Nishinomura",
+   "source": "https://www.kumagawa-rail.com/",
+   "type": "company",
+   "note": "Kumagawa Railroad official site, English service notice: 'Higo Nishinomura Station'. 'Station' dropped. Older official form: 'HIGO-NISHINOMURA' in 『停車場一覧』(日本国有鉄道, 1960년대 판) https://dl.ndl.go.jp/pid/1873236/1/115 (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_chizu_chizu_express": {
+   "en": "Chizu",
+   "source": "https://www.chizukyu.co.jp/chizukyu/syaryou_eki/eki/chizu/",
+   "type": "company",
+   "note": "Chizu Express official station page, sign-style name block (kanji / kana / romaji): 'Chizu' (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_miyamoto_musashi": {
+   "en": "Miyamoto-Musashi",
+   "source": "https://www.chizukyu.co.jp/chizukyu/syaryou_eki/eki/miyamotomusashi/",
+   "type": "company",
+   "note": "Chizu Express official station page, sign-style name block (kanji / kana / romaji): 'Miyamoto-Musashi' (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_ohara_chizu_express": {
+   "en": "Ohara",
+   "source": "https://www.chizukyu.co.jp/chizukyu/syaryou_eki/eki/ohara/",
+   "type": "company",
+   "note": "Chizu Express official station page, sign-style name block (kanji / kana / romaji): 'Ohara' (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_nishi_awakura": {
+   "en": "Nishi-Awakura",
+   "source": "https://www.chizukyu.co.jp/chizukyu/syaryou_eki/eki/nishiawakura/",
+   "type": "company",
+   "note": "Chizu Express official station page, sign-style name block (kanji / kana / romaji): 'Nishi-Awakura' (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_awakura_onsen": {
+   "en": "Awakura-Onsen",
+   "source": "https://www.chizukyu.co.jp/chizukyu/syaryou_eki/eki/awakuraonsen/",
+   "type": "company",
+   "note": "Chizu Express official station page, sign-style name block (kanji / kana / romaji): 'Awakura-Onsen' (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_yamasato": {
+   "en": "Yamasato",
+   "source": "https://www.chizukyu.co.jp/chizukyu/syaryou_eki/eki/yamasato/",
+   "type": "company",
+   "note": "Chizu Express official station page, sign-style name block (kanji / kana / romaji): 'Yamasato' (audit5 r3_names 2차 2026-11-25)"
+  },
+  "n_airport_terminal_2": {
+   "en": "Narita Airport Terminal 2·3",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/us/144.pdf",
+   "type": "company",
+   "note": "Keisei English station map PDF title, printed with a bullet between 2 and 3 (Narita Airport Terminal 2•3); JR East English timetable search has Narita Airport Terminal 2,3; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_ekihigashikoenmae": {
+   "en": "Ekihigashi Park",
+   "source": "https://www.miyarail.co.jp/ekihigashi-park-03",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_haga_takanezawa_kogyo_danchi": {
+   "en": "Haga Takanezawa Industrial Park",
+   "source": "https://www.miyarail.co.jp/haga-takanezawa-industrial-park-19",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_hagamachi_kogyo_danchi_kanri_center_mae": {
+   "en": "Haga Industrial Park Management Center",
+   "source": "https://www.miyarail.co.jp/haga-industrial-park-management-center-17",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_haneda_airport_terminal_12": {
+   "en": "Haneda Airport Terminal 1·2",
+   "source": "https://www.haneda-tokyo-access.com/en/ride/train-line-map.html",
+   "type": "company",
+   "note": "Keikyu English train line map (read visually in round 3, en_names3/evidence/web/keikyu_train-line-map_im01.gif); 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_haneda_airport_terminal_3_keikyu": {
+   "en": "Haneda Airport Terminal 3",
+   "source": "https://www.haneda-tokyo-access.com/en/ride/train-line-map.html",
+   "type": "company",
+   "note": "Keikyu English train line map (read visually in round 3, en_names3/evidence/web/keikyu_train-line-map_im01.gif); 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_hiraishichuoshogakkomae": {
+   "en": "Hiraishi-chuo Elementary School",
+   "source": "https://www.miyarail.co.jp/hiraishi-chuo-elem-sch-08",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_international_center": {
+   "en": "International Center",
+   "source": "https://www.kotsu.city.sendai.jp/assets/img/subway/station/2026nswe_rail.pdf",
+   "type": "company",
+   "note": "Sendai City Transportation Bureau subway route map PDF (2026); 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_jichi_medical_university": {
+   "en": "Jichi Medical University",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JR_Tohoku-Main-Line_Jichi_Medical_University_Station-name_signboard.jpg",
+   "type": "sign",
+   "note": "JR East English timetable search gives the same form; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_kashinomorikoenmae": {
+   "en": "Kashinomori Park",
+   "source": "https://www.miyarail.co.jp/kashinomori-park-18",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_kiyohara_chiku_shimin_center_mae": {
+   "en": "Kiyohara District Civic Center",
+   "source": "https://www.miyarail.co.jp/kiyohara-district-civic-center-11",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_lavender_farm": {
+   "en": "Lavender-Farm",
+   "source": "https://www.jrhokkaido.co.jp/global/pdf/route_map.pdf",
+   "type": "company",
+   "note": "JR Hokkaido English route map (seasonal station); the decorative arch reads LAVENDER FARM STATION; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_narita_airport_terminal_1": {
+   "en": "Narita Airport Terminal 1",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/us/145.pdf",
+   "type": "company",
+   "note": "Keisei English station map PDF of the shared station; JR East English timetable search gives the same form; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_narita_airport_terminal_1_keisei": {
+   "en": "Narita Airport Terminal 1",
+   "source": "https://www.keisei.co.jp/keisei/tetudou/stationmap/pdf/us/145.pdf",
+   "type": "company",
+   "note": "Keisei English station map PDF title; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_new_chitose_airport": {
+   "en": "New Chitose Airport",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JR_Chitose-Line_New_Chitose_Airport_Station-name_signboard.jpg",
+   "type": "sign",
+   "note": "JR Hokkaido English route map gives the same form (https://www.jrhokkaido.co.jp/global/pdf/route_map.pdf); 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_seiryokokomae": {
+   "en": "Seiryo High School",
+   "source": "https://www.miyarail.co.jp/seiryo-high-school-10",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_sendai_airport": {
+   "en": "Sendai Airport",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:仙台空港駅_駅名標_20250209.jpg",
+   "type": "sign",
+   "note": "sign photographed 2025-02-09; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_socio_distribution_center": {
+   "en": "Socio Distribution Center",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Socio_Distribution_Center_Station_sign_20170416_(2).jpg",
+   "type": "sign",
+   "note": "sign photographed 2017-04-16, all caps, title-cased; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_tobiyamajoato": {
+   "en": "Tobiyama Castle Site",
+   "source": "https://www.miyarail.co.jp/tobiyama-castle-site-09",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_tohoku_fukushi_dai_mae": {
+   "en": "Tohoku Fukushi University",
+   "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi",
+   "type": "company",
+   "note": "JR East English timetable search; 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_utsunomiya_station_east": {
+   "en": "Utsunomiya Station East",
+   "source": "https://www.miyarail.co.jp/utsunomiya-station-east-01",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_utsunomiya_university_yoto_campus": {
+   "en": "Utsunomiya University Yoto Campus",
+   "source": "https://www.miyarail.co.jp/utsunomiya-univ-yoto-campus-06",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_yagiyama_zoological_park": {
+   "en": "Yagiyama Zoological Park",
+   "source": "https://www.kotsu.city.sendai.jp/assets/img/subway/station/2026nswe_rail.pdf",
+   "type": "company",
+   "note": "Sendai City Transportation Bureau subway route map PDF (2026); 2026-11-25 rule: the current official form is the name, older forms become aliases (facility-type names) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_yuinomorichuo": {
+   "en": "Yuinomori-central",
+   "source": "https://www.miyarail.co.jp/yuinomori-central-14",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_yuinomorihigashi": {
+   "en": "Yuinomori-east",
+   "source": "https://www.miyarail.co.jp/yuinomori-east-15",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_yuinomorinishi": {
+   "en": "Yuinomori-west",
+   "source": "https://www.miyarail.co.jp/yuinomori-west-13",
+   "type": "company",
+   "note": "Utsunomiya Light Rail station page, English line under the stop name (operator uses translated English for all stops, as for the existing row Green Stadium); naming-rights sub-names in parentheses not taken; translated form kept as the name under the 2026-11-25 rule that the current official form is the name / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_daigakubyoin": {
+   "en": "University Hospital",
+   "source": "https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx",
+   "type": "company",
+   "note": "Nagasaki Electric Tramway multilingual stop list (xlsx, 2024-10): 'University Hospital'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_heiwakoen": {
+   "en": "Peace Park",
+   "source": "https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx",
+   "type": "company",
+   "note": "Nagasaki Electric Tramway multilingual stop list (xlsx, 2024-10): 'Peace Park'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_nagasakidaigaku": {
+   "en": "Nagasaki University",
+   "source": "https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx",
+   "type": "company",
+   "note": "Nagasaki Electric Tramway multilingual stop list (xlsx, 2024-10): 'Nagasaki University'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_doshokubutsueniriguchi": {
+   "en": "Zoological and Botanical Gardens Entrance",
+   "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf",
+   "type": "company",
+   "note": "Kumamoto City English tram route map: 'Zoological and Botanical Gardens Entrance'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_kumamotojoshiyakushomae": {
+   "en": "Kumamoto Castle /City Hall",
+   "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf",
+   "type": "company",
+   "note": "Kumamoto City English tram route map (printed with the slash and space as shown): 'Kumamoto Castle /City Hall'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_honmyojiiriguchi": {
+   "en": "Honmyoji Temple Entrance",
+   "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf",
+   "type": "company",
+   "note": "Kumamoto City English tram route map; also the stop sign photo: 'Honmyoji Temple Entrance'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_shiyakushomae_iyotetsu": {
+   "en": "Matsuyama City Hall",
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf",
+   "type": "company",
+   "note": "Iyotetsu route map (English labels): 'Matsuyama City Hall'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_kenchomae_iyotetsu": {
+   "en": "Ehime Pref. Office",
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf",
+   "type": "company",
+   "note": "Iyotetsu route map (English labels, abbreviated Pref.): 'Ehime Pref. Office'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_sekijujibyoinmae": {
+   "en": "Red Cross Hospital",
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf",
+   "type": "company",
+   "note": "Iyotetsu route map (English labels): 'Red Cross Hospital'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_dogokoen": {
+   "en": "Dogo Park",
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf",
+   "type": "company",
+   "note": "Iyotetsu route map (English labels); stop sign photo also reads Dogo Park: 'Dogo Park'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_onoyama_park": {
+   "en": "Onoyama Park",
+   "source": "https://www.yui-rail.co.jp/en/",
+   "type": "company",
+   "note": "Okinawa Urban Monorail English site station list: 'Onoyama Park'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_prefectural_office": {
+   "en": "Prefectural Office",
+   "source": "https://www.yui-rail.co.jp/en/",
+   "type": "company",
+   "note": "Okinawa Urban Monorail English site station list: 'Prefectural Office'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_naha_city_hospital": {
+   "en": "Naha City Hospital",
+   "source": "https://www.yui-rail.co.jp/en/",
+   "type": "company",
+   "note": "Okinawa Urban Monorail English site station list: 'Naha City Hospital'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_kushida_shrine": {
+   "en": "Kushida Shrine",
+   "source": "https://subway.city.fukuoka.lg.jp/eng/route/deta/map.pdf",
+   "type": "company",
+   "note": "Fukuoka City Subway English route map; the platform sign photo (2018) also reads Kushida Shrine: 'Kushida Shrine'. Current official English is a translated (facility) form. Under the coordinator's facility rule (current official form is the name, older forms are aliases) this becomes the name; under the earlier rule (translated forms are aliases only) it stays an alias — flagged for that decision. (audit5 r3_names 2차 2026-11-25) / 공식 번역형은 이름(사용자 결정 2026-11-25), 일본어 읽기 꼴은 검색 별칭"
+  },
+  "n_ehime_univ_hospital": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Ehime Univ. Hospital",
+   "note": "공식 번역형 Ehime Univ. Hospital를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_fukui_joshi_daimyomachi": {
+   "source": "https://en.wikipedia.org/wiki/Fukui_Castle_Ruins-daimyomachi_Station",
+   "type": "company",
+   "en": "Fukui Castle Ruins-daimyomachi",
+   "note": "공식 번역형 Fukui Castle Ruins-daimyomachi를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_genbakushiryokan": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Atomic Bomb Museum",
+   "note": "공식 번역형 Atomic Bomb Museum를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_gunchu_port": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Gunchu Port",
+   "note": "공식 번역형 Gunchu Port를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_hiroshima_hiroden": {
+   "source": "https://www.hiroden.co.jp/en/pdf/s-routeMap.pdf?2603 (evidence/web/hiroden_s-routeMap_en.pdf; page evidence/web/hiroden_en_s-routemap.html)",
+   "type": "company",
+   "en": "Hiroshima Station",
+   "note": "공식 번역형 Hiroshima Sta.를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_hiroshimako": {
+   "source": "https://www.hiroden.co.jp/en/pdf/s-routeMap.pdf?2603 (evidence/web/hiroden_s-routeMap_en.pdf; page evidence/web/hiroden_en_s-routemap.html)",
+   "type": "company",
+   "en": "Hiroshima-Port",
+   "note": "공식 번역형 Hiroshima-Port를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_ishitegawa_park": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Ishitegawa Park",
+   "note": "공식 번역형 Ishitegawa Park를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_joetsu_kokusai_ski_jo_mae": {
+   "source": "https://en.wikipedia.org/wiki/J%C5%8Detsu_International_Skiing_Ground_Station",
+   "type": "company",
+   "en": "Jōetsu International Skiing Ground",
+   "note": "공식 번역형 Jōetsu International Skiing Ground를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_jr_matsuyama_ekimae": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "JR Matsuyama Station",
+   "note": "공식 번역형 JR Matsuyama Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_keisatsushomae": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Police Station",
+   "note": "공식 번역형 Police Station을 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_kumamoto_ekimae": {
+   "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf (evidence/web/kumamoto_city_routemap_en.pdf)",
+   "type": "company",
+   "en": "Kumamoto Station",
+   "note": "공식 번역형 Kumamoto Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_matsuyama_city_iyotetsu_gunchu": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Matsuyama City",
+   "note": "공식 번역형 Matsuyama City Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_matsuyama_city_iyotetsu_hanazono": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Matsuyama City Station",
+   "note": "공식 번역형 Matsuyama City Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_meganebashi": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Meganebashi Bridge",
+   "note": "공식 번역형 Meganebashi Bridge를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_miyazaki_airport": {
+   "source": "https://en.wikipedia.org/wiki/Miyazaki_Airport_Station",
+   "type": "company",
+   "en": "Miyazaki Airport",
+   "note": "공식 번역형 Miyazaki Airport를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_niigata_university": {
+   "source": "https://en.wikipedia.org/wiki/Niigata_University_Station",
+   "type": "company",
+   "en": "Niigata University",
+   "note": "공식 번역형 Niigata University를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_omura_sharyokichi": {
+   "source": "https://en.wikipedia.org/wiki/%C5%8Cmura_Rail_Yard_Station",
+   "type": "company",
+   "en": "Ōmura Rail Yard",
+   "note": "공식 번역형 Ōmura Rail Yard를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_otemachi_ekimae_iyotetsu": {
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "en": "Otemachi Station",
+   "note": "공식 번역형 Otemachi Sta.를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_ouratenshudo": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Oura Cathedral",
+   "note": "공식 번역형 Oura Cathedral를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_rokko_cable_shita": {
+   "source": "https://www.rokkocable.com/en/ (evidence/web/rokkocable_en.html)",
+   "type": "company",
+   "en": "Rokko Cable Car Lower Station",
+   "note": "공식 번역형 Rokko Cable Car Lower Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_shin_suizenji_ekimae": {
+   "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf (evidence/web/kumamoto_city_routemap_en.pdf)",
+   "type": "company",
+   "en": "Shinsuizenji Station",
+   "note": "공식 번역형 Shinsuizenji Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_shinchi_chukagai": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Shinchi Chinatown",
+   "note": "공식 번역형 Shinchi Chinatown를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_shiyakusho": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "City Hall",
+   "note": "공식 번역형 City Hall를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_sofukuji": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Sofukuji Temple",
+   "note": "공식 번역형 Sofukuji Temple를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_st_marys_hospital": {
+   "source": "https://en.wikipedia.org/wiki/St._Mary's_Hospital_Station",
+   "type": "company",
+   "en": "St. Mary's Hospital",
+   "note": "공식 번역형 St. Mary's Hospital를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_suizenji_koen": {
+   "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf (evidence/web/kumamoto_city_routemap_en.pdf)",
+   "type": "company",
+   "en": "Suizenji Park",
+   "note": "공식 번역형 Suizenji Park를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_suwajinja": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Suwa-jinja Shrine",
+   "note": "공식 번역형 Suwa-jinja Shrine를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_tanoura_otachimisaki_park": {
+   "source": "https://en.wikipedia.org/wiki/Tanoura_Otachimisaki_Park_Station",
+   "type": "company",
+   "en": "Tanoura Otachimisaki Park",
+   "note": "공식 번역형 Tanoura Otachimisaki Park를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_tojiin_ritsumeikan_university_kinugasa_campus_mae": {
+   "source": "https://www.keifuku.co.jp/cms/wp-content/uploads/928f8d9feaa9dd61e5ec73381b794915.pdf (evidence/web/randen_howtoride_sightseeing_map_en.pdf; index page evidence/web/randen_keifuku_map.html)",
+   "type": "company",
+   "en": "Tōjiin・Ritsumeikan University",
+   "note": "공식 번역형 Tōjiin・Ritsumeikan University를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_tokyo_international_cruise_terminal": {
+   "source": "https://en.wikipedia.org/wiki/Tokyo_International_Cruise_Terminal_Station",
+   "type": "company",
+   "en": "Tokyo International Cruise Terminal",
+   "note": "공식 번역형 Tokyo International Cruise Terminal를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_torokko_saga": {
+   "source": "https://commons.wikimedia.org/wiki/File:Non_service_announcement_of_Torokko_Saga_Station_at_Covid19.jpg",
+   "type": "sign",
+   "en": "Saga Torokko",
+   "note": "공식 번역형 Saga Torokko Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_toyamaeki_toyama_chiho": {
+   "source": "https://chitetsu.co.jp/english/img/trams/trams-linemap.gif (evidence/web/toyama_trams-linemap_en.gif; page toyama_chitetsu_en_trams.html)",
+   "type": "company",
+   "en": "Toyama Station",
+   "note": "공식 번역형 Toyama Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_urakami_ekimae": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Urakami Station",
+   "note": "공식 번역형 Urakami Station를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_urakamishako": {
+   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
+   "type": "company",
+   "en": "Urakami Tram Depot",
+   "note": "공식 번역형 Urakami Tram Depot를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_yokogawa_hiroden": {
+   "source": "https://www.hiroden.co.jp/en/pdf/s-routeMap.pdf?2603 (evidence/web/hiroden_s-routeMap_en.pdf; page evidence/web/hiroden_en_s-routemap.html)",
+   "type": "company",
+   "en": "Yokogawa Station",
+   "note": "공식 번역형 Yokogawa Sta.를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_ken_sogo_undojo": {
+   "source": "https://en.wikipedia.org/wiki/Pref._Sports_Park_Station",
+   "type": "company",
+   "en": "Pref. Sports Park",
+   "note": "공식 번역형 Pref. Sports Park를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_kenritsu_bijutsukanmae": {
+   "source": "https://en.wikipedia.org/wiki/Pref._Art_Museum_Station",
+   "type": "company",
+   "en": "Pref. Art Museum",
+   "note": "공식 번역형 Pref. Art Museum를 이름으로 올림(사용자 결정 2026-11-25)"
+  },
+  "n_aina": {
+   "en": "Aina",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_aioi_nagaragawa": {
+   "en": "Aioi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Gujō-Hachiman sign; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Gujyo-hachiman_station.jpg",
+   "type": "sign"
+  },
+  "n_arai_echigo_tokimeki": {
+   "en": "Arai",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the ETR Kita-Arai sign (photo 2026-05-22)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%8C%97%E6%96%B0%E4%BA%95%E9%A7%85%E9%A7%85%E5%90%8D%E6%A8%99%EF%BC%88%E3%81%88%E3%81%A1%E3%81%94%E3%83%88%E3%82%AD%E3%82%81%E3%81%8D%E9%89%84%E9%81%93%E3%83%BB%E5%A6%99%E9%AB%98%E3%81%AF%E3%81%AD%E3%81%86%E3%81%BE%E3%83%A9%E3%82%A4%E3%83%B3%EF%BC%8920260522-P1083565.jpg",
+   "type": "sign"
+  },
+  "n_asmo_mae": {
+   "en": "Asmo-mae",
+   "note": "station sign photo on the Tenryu Hamanako Railroad station page (company-hosted), romaji read from the image; all caps; title-cased; printed ASMO-MAE",
+   "source": "역명판 사진 https://www.tenhama.co.jp/about/station/asumo/",
+   "type": "sign"
+  },
+  "n_asozu": {
+   "en": "Asozu",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Fukui Railway Harmony Hall (F13) sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Harmony_Hall_Station_Sign.jpg",
+   "type": "sign"
+  },
+  "n_asunarou_yokkaichi": {
+   "en": "Asunarou Yokkaichi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Yokkaichi Asunarou Railway sign 'Asunarou YOKKAICHI' (capitals of YOKKAICHI title-cased)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Asunarou_Yokkaichi_Station_train_station_sign.JPG",
+   "type": "sign"
+  },
+  "n_awagasaki": {
+   "en": "Awagasaki",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_chibata": {
+   "en": "Chibata",
+   "note": "station sign photo on the Tenryu Hamanako Railroad station page (company-hosted); all caps; title-cased",
+   "source": "역명판 사진 https://www.tenhama.co.jp/about/station/chibata/",
+   "type": "sign"
+  },
+  "n_daiba_izuhakone": {
+   "en": "Daiba",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Izuhakone Railway IS05 sign, photo dated 2024-05 in file name",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E5%A0%B4%E9%A7%85_%E9%A7%85%E5%90%8D%E6%A8%99%EF%BC%882024%E5%B9%B45%E6%9C%88%EF%BC%89.jpg",
+   "type": "sign"
+  },
+  "n_dojo_minamiguchi": {
+   "en": "Dojo Minamiguchi",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_ebisu_kobe": {
+   "en": "Ebisu",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_enshu_mori": {
+   "en": "Enshumori",
+   "note": "station name board photo on the Tenryu Hamanako Railroad station page (company-hosted); all caps; title-cased; printed ENSHUMORI (one word)",
+   "source": "역명판 사진 https://www.tenhama.co.jp/about/station/enshumori/",
+   "type": "sign"
+  },
+  "n_flower_town": {
+   "en": "Flower Town",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_fruit_park": {
+   "en": "Fruit Park",
+   "note": "station building sign photo on the Tenryu Hamanako Railroad station page (company-hosted): 'FRUIT PARK STATION' (Station = translation of 駅, dropped); name is itself the katakana of Fruit Park",
+   "source": "역명판 사진 https://www.tenhama.co.jp/about/station/fruitpark/",
+   "type": "sign"
+  },
+  "n_fujikyu_highland": {
+   "en": "Fujikyu Highland",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Fujisan (FJ16) station sign; 'Highland' is the katakana word in the name, not a translation",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Mt.Fuji_and_Mt.Fuji_station.JPG",
+   "type": "sign"
+  },
+  "n_fukui_fukui": {
+   "en": "Fukui-eki",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fukui Railway F22 sign 'Fukui-eki' (eki is part of the stop name 福井駅)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukutetsu_Fukui-Eki_Station_(50761400783).jpg",
+   "type": "sign"
+  },
+  "n_gakunan_enoo": {
+   "en": "Gakunan Enoo",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/gakunan_enoo.html",
+   "type": "company"
+  },
+  "n_gakunan_fujioka": {
+   "en": "Gakunan Fujioka",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/gakunan_fujioka.html",
+   "type": "company"
+  },
+  "n_gakunan_harada": {
+   "en": "Gakunan Harada",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/gakunan_harada.html",
+   "type": "company"
+  },
+  "n_gosha": {
+   "en": "Gosha",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_gujo_hachiman": {
+   "en": "Gujō-Hachiman",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Nagaragawa Railway hanging sign; all caps; title-cased; macron as printed",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Gujyo-hachiman_station.jpg",
+   "type": "sign"
+  },
+  "n_hakusan_nagataki": {
+   "en": "Hakusannagataki",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Nagaragawa Railway Hokunō sign 'HAKUSANNAGATAKI'; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hokunou_station.jpg",
+   "type": "sign"
+  },
+  "n_hamanako_sakume": {
+   "en": "Hamanako-Sakume",
+   "note": "station sign photo on the Tenryu Hamanako Railroad station page (company-hosted); all caps; hanging sign prints Hamanako-Sakume",
+   "source": "역명판 사진 https://www.tenhama.co.jp/about/station/sakume/",
+   "type": "sign"
+  },
+  "n_handai_byoin_mae": {
+   "en": "Handai-byoin-mae",
+   "note": "Osaka Monorail station page heading, English line under the station name (text)",
+   "source": "https://www.osaka-monorail.co.jp/station/r52_handai_byouinmae/",
+   "type": "company"
+  },
+  "n_harima": {
+   "en": "Harima",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/harima/",
+   "type": "company"
+  },
+  "n_hata_kobe": {
+   "en": "Hata",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_higashi_akasaka": {
+   "en": "Higashi-Akasaka",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/higashiakasaka/",
+   "type": "company"
+  },
+  "n_hina": {
+   "en": "Hina",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/hina.html",
+   "type": "company"
+  },
+  "n_hinomiko": {
+   "en": "Hinomiko",
+   "note": "Hokuriku Railroad Ishikawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/ishikawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_hiro_godo": {
+   "en": "Hirogōdo",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/hirogodo/",
+   "type": "company"
+  },
+  "n_hokutetsu_kanazawa": {
+   "en": "Hokutetsu-Kanazawa",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_hon_yoshiwara": {
+   "en": "Honyoshiwara",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/honyoshiwara.html",
+   "type": "company"
+  },
+  "n_ichiba_kobe": {
+   "en": "Ichiba",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_ikeno": {
+   "en": "Ikeno",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/ikeno/",
+   "type": "company"
+  },
+  "n_inokuchi_hokuriku": {
+   "en": "Inokuchi",
+   "note": "Hokuriku Railroad Ishikawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/ishikawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_ise_ueno": {
+   "en": "Ise ueno",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Ise Railway Nakaseko sign, printed 'Ise ueno' (lower-case u as printed)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nakaseko-STA_Name-sign.jpg",
+   "type": "sign"
+  },
+  "n_ishizu_yoro": {
+   "en": "Ishizu",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/ishizu/",
+   "type": "company"
+  },
+  "n_isobe_hokuriku": {
+   "en": "Isobe",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_kagatsume": {
+   "en": "Kagatsume",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_kaizuka_mizuma": {
+   "en": "Kaizuka",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Mizuma Railway platform sign (neighbour 貝塚市役所前 in kanji only); all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Osaka_20250208180321_(54682184988).jpg",
+   "type": "sign"
+  },
+  "n_kaminobe": {
+   "en": "Kaminobe",
+   "note": "station sign photo on the Tenryu Hamanako Railroad station page (company-hosted); all caps; title-cased",
+   "source": "역명판 사진 https://www.tenhama.co.jp/about/station/kaminobe/",
+   "type": "sign"
+  },
+  "n_kamiya": {
+   "en": "Kamiya",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/kamiya.html",
+   "type": "company"
+  },
+  "n_karasue": {
+   "en": "Karasue",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/karasue/",
+   "type": "company"
+  },
+  "n_kashiyama": {
+   "en": "Kashiyama",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_kita_godo": {
+   "en": "Kita-Gōdo",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/kitagodo/",
+   "type": "company"
+  },
+  "n_kita_ikeno": {
+   "en": "Kita-Ikeno",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/kitaikeno/",
+   "type": "company"
+  },
+  "n_kita_ogaki": {
+   "en": "Kita-Ōgaki",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/kitaogaki/",
+   "type": "company"
+  },
+  "n_kita_suzurandai": {
+   "en": "Kita Suzurandai",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_kitama": {
+   "en": "Kitama",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_kizu_kobe": {
+   "en": "Kizu",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_kobata": {
+   "en": "Kobata",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_komano": {
+   "en": "Komano",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/komano/",
+   "type": "company"
+  },
+  "n_magae": {
+   "en": "Magae",
+   "note": "Hokuriku Railroad Ishikawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/ishikawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_matsudai": {
+   "en": "Matsudai",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Hokuhoku Line Tokamachi sign (current design); old design prints MATSUDAI",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%8C%97%E8%B6%8A%E6%80%A5%E8%A1%8C%E3%81%BB%E3%81%8F%E3%81%BB%E3%81%8F%E7%B7%9A%E5%8D%81%E6%97%A5%E7%94%BA%E9%A7%85%E9%A7%85%E5%90%8D%E6%A8%99%EF%BC%88%E7%8F%BE%E5%9C%A8%EF%BC%89.jpg",
+   "type": "sign"
+  },
+  "n_midorigaoka_kobe": {
+   "en": "Midorigaoka",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_miki_kobe": {
+   "en": "Miki",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_miki_uenomaru": {
+   "en": "Miki Uenomaru",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_minami_woody_town": {
+   "en": "Minami Woody Town",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_mino_hongo": {
+   "en": "Mino-Hongō",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/minohongo/",
+   "type": "company"
+  },
+  "n_mino_matsuyama": {
+   "en": "Mino-Matsuyama",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/minomatsuyama/",
+   "type": "company"
+  },
+  "n_mino_takada": {
+   "en": "Mino-Takada",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/minotakada/",
+   "type": "company"
+  },
+  "n_mino_tsuya": {
+   "en": "Mino-Tsuya",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/minotsuya/",
+   "type": "company"
+  },
+  "n_mino_yamazaki": {
+   "en": "Mino-Yamazaki",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/minoyamazaki/",
+   "type": "company"
+  },
+  "n_mino_yanagi": {
+   "en": "Mino-Yanagi",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/minoyanagi/",
+   "type": "company"
+  },
+  "n_minotani": {
+   "en": "Minotani",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_mitsukuchi_hokuriku_asanogawa": {
+   "en": "Mitsukuchi",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_mitsutoge": {
+   "en": "Mitsutouge",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fujikyu FJ11 platform sign, printed lower-case 'mitsutouge' (ou kept); first letter capitalised",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E4%B8%89%E3%81%A4%E5%B3%A0%E9%A7%85_-_panoramio_(1).jpg",
+   "type": "sign"
+  },
+  "n_mitsuya": {
+   "en": "Mitsuya",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_muro": {
+   "en": "Muro",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/muro/",
+   "type": "company"
+  },
+  "n_nanatsuya": {
+   "en": "Nanatsuya",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_niro": {
+   "en": "Niro",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_nishi_ogaki": {
+   "en": "Nishi-Ōgaki",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/nishiogaki/",
+   "type": "company"
+  },
+  "n_nishiizumi": {
+   "en": "Nishiizumi",
+   "note": "Hokuriku Railroad Ishikawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/ishikawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_okaba": {
+   "en": "Okaba",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_okobata": {
+   "en": "Okobata",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_omi_echigo_tokimeki": {
+   "en": "Ōmi",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the ETR Itoigawa running-in board (macron as printed)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Echigo_tokimeki_railway_nihonkai_hisui_line_Running_in_board.JPG",
+   "type": "sign"
+  },
+  "n_omura_kobe": {
+   "en": "Omura",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_ono_kobe": {
+   "en": "Ono",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_oshibedani": {
+   "en": "Oshibedani",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_otoba_yoro": {
+   "en": "Ōtoba",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/otoba/",
+   "type": "company"
+  },
+  "n_oyanagi": {
+   "en": "Oyanagi",
+   "note": "Hokuriku Railroad Ishikawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/ishikawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_saito_nishi": {
+   "en": "Saito-nishi",
+   "note": "Osaka Monorail station page heading, English line under the station name (text)",
+   "source": "https://www.osaka-monorail.co.jp/station/r54_saito_nishi/",
+   "type": "company"
+  },
+  "n_sakae_kobe": {
+   "en": "Sakae",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_sanda_honmachi": {
+   "en": "Sanda Hommachi",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_sasadaira": {
+   "en": "Sasadaira",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Kurobe Gorge Railway platform sign (same style as Nekomata); all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E7%AC%B9%E5%B9%B3%E9%A7%85_-_panoramio_(1).jpg",
+   "type": "sign"
+  },
+  "n_seimei": {
+   "en": "Seimei",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Fukui Railway Harmony Hall (F13) sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Harmony_Hall_Station_Sign.jpg",
+   "type": "sign"
+  },
+  "n_shijimi": {
+   "en": "Shijimi",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_shimo_fukaya": {
+   "en": "Shimofukaya",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/shimofukaya/",
+   "type": "company"
+  },
+  "n_shimo_noshiro": {
+   "en": "Shimonoshiro",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/shimonoshiro/",
+   "type": "company"
+  },
+  "n_shintetsu_dojo": {
+   "en": "Shintetsu Dojo",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_shinza": {
+   "en": "Shinza",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Hokuhoku Line Tokamachi sign (current design)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%8C%97%E8%B6%8A%E6%80%A5%E8%A1%8C%E3%81%BB%E3%81%8F%E3%81%BB%E3%81%8F%E7%B7%9A%E5%8D%81%E6%97%A5%E7%94%BA%E9%A7%85%E9%A7%85%E5%90%8D%E6%A8%99%EF%BC%88%E7%8F%BE%E5%9C%A8%EF%BC%89.jpg",
+   "type": "sign"
+  },
+  "n_shizenen_mae": {
+   "en": "Shizen En Mae",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Gujō-Hachiman sign 'SHIZEN EN MAE'; all caps; title-cased",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Gujyo-hachiman_station.jpg",
+   "type": "sign"
+  },
+  "n_sports_koen": {
+   "en": "Sports-Koen",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Fukui Railway Kitago (F1) sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukutetsu_Kitago_station_sign.jpg",
+   "type": "sign"
+  },
+  "n_sudo": {
+   "en": "Sudo",
+   "note": "Gakunan Railway station page, station-sign style name image (read visually; all caps; title-cased)",
+   "source": "https://www.gakutetsu.jp/station/sudo.html",
+   "type": "company"
+  },
+  "n_tado": {
+   "en": "Tado",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/tado/",
+   "type": "company"
+  },
+  "n_tamagaki": {
+   "en": "Tamagaki",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Ise Railway Suzuka Circuit Inō sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:IS-Suzuka_Circuit_In%C5%8D_Station-Running_in_board.jpg",
+   "type": "sign"
+  },
+  "n_tanihama": {
+   "en": "Tanihama",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the ETR Naoetsu running-in board (Myōkō Haneuma Line side)",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Echigo_tokimeki_railway_myokou_haneuma_line_Running_in_board.JPG",
+   "type": "sign"
+  },
+  "n_taoji": {
+   "en": "Taoji",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_tokuda_ise": {
+   "en": "Tokuda",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Ise Railway Nakaseko sign",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nakaseko-STA_Name-sign.jpg",
+   "type": "sign"
+  },
+  "n_tomoe": {
+   "en": "Tomoe",
+   "note": "Yoro Railway station page heading, romaji line (class stroman-alphabets; text, macrons as printed)",
+   "source": "https://www.yororailway.co.jp/station/tomoe/",
+   "type": "company"
+  },
+  "n_torokko_hozukyo": {
+   "en": "Torokko Hozukyō",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the newer Torokko Kameoka sign (2026-06-19); older wooden sign prints only 'Hozukyō' -> alias",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_tourism%E3%83%88%E3%83%AD%E3%83%83%E3%82%B3%E4%BA%80%E5%B2%A1%E7%AB%99_%E5%B5%AF%E5%B3%A8%E9%87%8E%E8%A7%80%E5%85%89%E9%90%B5%E9%81%93_%E5%B0%8F%E9%BE%9C%E5%B2%A1%E8%BB%8A%E7%AB%99_n_%E5%B5%AF%E5%B3%A8%E9%87%8E%E3%83%88%E3%83%AD%E3%83%83%E3%82%B3%E5%88%97%E8%BB%8A_Sagano_Scenic_Railway_in_June_2026_R12S_01.jpg",
+   "type": "sign"
+  },
+  "n_torokko_kameoka": {
+   "en": "Torokko Kameoka",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; newer Sagano Scenic Railway sign (photo timestamp 2026-06-19) prints 'Torokko Kameoka'; older wooden sign (n_torokko_kameoka:15) prints only 'Kameoka' -> alias",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JP_%E6%97%A5%E6%9C%AC_Japan_tourism%E3%83%88%E3%83%AD%E3%83%83%E3%82%B3%E4%BA%80%E5%B2%A1%E7%AB%99_%E5%B5%AF%E5%B3%A8%E9%87%8E%E8%A7%80%E5%85%89%E9%90%B5%E9%81%93_%E5%B0%8F%E9%BE%9C%E5%B2%A1%E8%BB%8A%E7%AB%99_n_%E5%B5%AF%E5%B3%A8%E9%87%8E%E3%83%88%E3%83%AD%E3%83%83%E3%82%B3%E5%88%97%E8%BB%8A_Sagano_Scenic_Railway_in_June_2026_R12S_01.jpg",
+   "type": "sign"
+  },
+  "n_toyokawa_osaka_monorail": {
+   "en": "Toyokawa",
+   "note": "Osaka Monorail station page heading, English line under the station name (text)",
+   "source": "https://www.osaka-monorail.co.jp/station/r53_toyokawa/",
+   "type": "company"
+  },
+  "n_tsurugi": {
+   "en": "Tsurugi",
+   "note": "Hokuriku Railroad Ishikawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/ishikawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_uchinada": {
+   "en": "Uchinada",
+   "note": "Hokuriku Railroad Asanogawa Line bilingual timetable PDF (2026-04-29), station column in English (text)",
+   "source": "https://www.hokutetsu.co.jp/_wp/wp-content/uploads/2026/04/asanogawa-line_timetable_weekday_20260429.pdf",
+   "type": "company"
+  },
+  "n_woody_town_chuo": {
+   "en": "Woody Town Chuo",
+   "note": "Kobe Electric Railway English site route map image (2026-03), romaji under each station (read visually, zoomed)",
+   "source": "https://global.shintetsu.co.jp/wp-content/uploads/2026/03/route-map02.png (page https://global.shintetsu.co.jp/railway/)",
+   "type": "company"
+  },
+  "n_fujisan": {
+   "en": "Mt.Fuji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Mt.Fuji_and_Mt.Fuji_station.JPG",
+   "type": "sign",
+   "note": "富士急行 FJ16 역명판에 번역형 Mt.Fuji만 인쇄(Mt. = 山). 공식 번역형은 이름(사용자 결정 2026-11-25), 읽기 꼴 Fujisan은 검색 별칭 (audit5 r3 2026-11-25)"
+  },
+  "n_iwappara_skiing_ground": {
+   "en": "Iwappara Skiing Ground",
+   "source": "JR東日本 영어 시각표 역 색인 https://www.jreast-timetable.jp/en/ (역명판도 같은 꼴)",
+   "type": "company",
+   "note": "JR東日本 공식 번역형. 공식 번역형은 이름(사용자 결정 2026-11-25), 읽기 꼴은 검색 별칭 (audit5 r3 2026-11-25)"
   }
  },
  "aliases": {
   "n_daigakubyoin": "University hospital",
-  "n_dogokoen": "Dogo Park",
-  "n_doshokubutsueniriguchi": "Zoological and Botanical Gardens Entrance",
-  "n_ehime_univ_hospital": "Ehime Univ. Hospital",
-  "n_ekihigashikoenmae": "Ekihigashi Park",
-  "n_fukudaimae": "Fukuoka University",
-  "n_fukui_joshi_daimyomachi": "Fukui Castle Ruins-daimyomachi",
-  "n_fukuoka_airport": "Fukuoka Airport",
+  "n_fukudaimae": "Fukudai-mae",
+  "n_fukuoka_airport": "Fukuoka-kuko",
   "n_genbaku_dome_mae": "Genbaku Dome-mae (Atomic Bomb Dome)",
-  "n_genbakushiryokan": "Atomic Bomb Museum",
-  "n_gunchu_port": "Gunchu Port",
-  "n_haga_takanezawa_kogyo_danchi": "Haga Takanezawa Industrial Park",
-  "n_hagamachi_kogyo_danchi_kanri_center_mae": "Haga Industrial Park Management Center",
-  "n_haneda_airport_terminal_12": "Haneda Airport Terminal 1·2",
-  "n_haneda_airport_terminal_3_keikyu": "Haneda Airport Terminal 3",
   "n_hasumachi": "Hasumachi (Baba Memorial Park mae)",
-  "n_heiwakoen": "Peace Park",
   "n_higashiyama_okaden_chuggington_museum": "Higashiyama",
-  "n_hiraishichuoshogakkomae": "Hiraishi-chuo Elementary School",
-  "n_hiroshima_hiroden": "Hiroshima Sta.",
-  "n_hiroshimako": "Hiroshima-Port",
   "n_honmachi_6_chome": "Hommachi 6",
-  "n_honmyojiiriguchi": "Honmyoji Temple Entrance",
-  "n_international_center": "International Center",
-  "n_ishitegawa_park": "Ishitegawa Park",
-  "n_jichi_medical_university": "Jichi Medical University",
-  "n_joetsu_kokusai_ski_jo_mae": "Jōetsu International Skiing Ground",
-  "n_jr_matsuyama_ekimae": "JR Matsuyama Station",
   "n_kansai_airport": "Kansai-Airport",
-  "n_kashinomorikoenmae": "Kashinomori Park",
   "n_kayamachi_6_chome": "Kayamachi 6",
-  "n_keisatsushomae": "Police Station",
   "n_keisei_owada": "Ōwada",
-  "n_kenchomae_iyotetsu": "Ehime Pref. Office",
   "n_kenritsutaiikukanmae": "Kenritsutaiikukan-mae (Prefectural Gymnasium)",
-  "n_kiyohara_chiku_shimin_center_mae": "Kiyohara District Civic Center",
   "n_kobe_airport": "Kobe Airport",
   "n_kokusai_center": "International Center",
-  "n_kumamoto_ekimae": "Kumamoto Station",
-  "n_kumamotojoshiyakushomae": "Kumamoto Castle /City Hall",
-  "n_kushida_shrine": "Kushida Shrine",
-  "n_kyushu_railway_history_museum": "Kyushu Railway History Museum",
-  "n_matsuyama_city_iyotetsu_gunchu": "Matsuyama City Station",
-  "n_matsuyama_city_iyotetsu_hanazono": "Matsuyama City Station",
-  "n_meganebashi": "Meganebashi Bridge",
-  "n_miyazaki_airport": "Miyazaki Airport",
-  "n_nagasaki_ekimae": "Nagasaki Station",
-  "n_nagasakidaigaku": "Nagasaki University",
-  "n_naha_city_hospital": "Naha City Hospital",
+  "n_kyushu_railway_history_museum": "Kyusyu Tetsudo Kinenkan",
+  "n_nagasaki_ekimae": "Nagasaki Eki-Mae",
   "n_narita_airport_terminal_1_keisei": "Narita Airport",
-  "n_new_chitose_airport": "New Chitose Airport",
-  "n_niigata_university": "Niigata University",
   "n_nishitetsu_fukuoka": "Fukuoka (Tenjin)",
   "n_nishitetsu_futsukaichi": "Futsukaichi",
   "n_nishitetsu_ginsui": "Ginsui",
@@ -44944,56 +46208,26 @@
   "n_nishitetsu_wataze": "Wataze",
   "n_nishitetsu_yanagawa": "Yanagawa",
   "n_nishitetsuchihaya": "Chihaya",
-  "n_ohorikoen": "Ohori Park",
-  "n_omura_sharyokichi": "Ōmura Rail Yard",
-  "n_onoyama_park": "Onoyama Park",
+  "n_ohorikoen": "Ohorikoen",
   "n_osaka_airport": "Osaka Airport",
-  "n_otemachi_ekimae_iyotetsu": "Otemachi Sta.",
-  "n_ouratenshudo": "Oura Cathedral",
-  "n_prefectural_office": "Prefectural Office",
-  "n_rokko_cable_shita": "Rokko Cable Car Lower Station",
   "n_saidaijicho_okayama_geijutsu_sozo_gekijo_harenowa_mae": "Saidaiji-cho",
-  "n_seiryokokomae": "Seiryo High School",
-  "n_sekijujibyoinmae": "Red Cross Hospital",
-  "n_sendai_airport": "Sendai Airport",
-  "n_shin_suizenji_ekimae": "Shinsuizenji Station",
-  "n_shinchi_chukagai": "Shinchi Chinatown",
-  "n_shiritsubyoinmae": "Naha City Hospital",
+  "n_shiritsubyoinmae": "Shiritsu byoin-mae",
   "n_shiritsutaiikukanmae": "Shiritsutaiikukan-mae (City Gymnasium)",
-  "n_shiyakusho": "City Hall",
-  "n_shiyakushomae_iyotetsu": "Matsuyama City Hall",
-  "n_socio_distribution_center": "Socio Distribution Center",
-  "n_sofukuji": "Sofukuji Temple",
-  "n_st_marys_hospital": "St. Mary's Hospital",
-  "n_suizenji_koen": "Suizenji Park",
-  "n_suwajinja": "Suwa-jinja Shrine",
-  "n_tanoura_otachimisaki_park": "Tanoura Otachimisaki Park",
   "n_tateyama_tateyama_kurobe_kanko": "Tateyama Station",
-  "n_tobiyamajoato": "Tobiyama Castle Site",
-  "n_tojiin_ritsumeikan_university_kinugasa_campus_mae": "Tōjiin・Ritsumeikan University",
-  "n_tokyo_international_cruise_terminal": "Tokyo International Cruise Terminal",
   "n_torokko_arashiyama": "Arasiyama",
-  "n_torokko_saga": "Saga Torokko Station",
-  "n_toyamaeki_toyama_chiho": "Toyama Station",
-  "n_undo_koen_mae_konan": "Sports Park",
-  "n_urakami_ekimae": "Urakami Station",
-  "n_urakamishako": "Urakami Tram Depot",
-  "n_utsunomiya_station_east": "Utsunomiya Station East",
-  "n_utsunomiya_university_yoto_campus": "Utsunomiya University Yoto Campus",
-  "n_yagiyama_zoological_park": "Yagiyama Zoological Park",
-  "n_yokogawa_hiroden": "Yokogawa Sta.",
-  "n_yuinomorichuo": "Yuinomori-central",
-  "n_yuinomorihigashi": "Yuinomori-east",
-  "n_yuinomorinishi": "Yuinomori-west",
+  "n_undo_koen_mae_konan": "Undokoenmae",
   "n_higuchi_moka": "Higuti",
   "n_ichihana": "Itihana",
   "n_terauchi": "Terauti",
   "n_airport_terminal_2": "Narita Airport Terminal 2•3",
   "n_lavender_farm": "Lavender Farm",
-  "n_narita_airport_terminal_1": "Narita Airport Terminal 1",
   "n_shiyakusho_mae_chiba_urban_monorail": "Shiyakushomae (City Hall)",
   "n_tambo_art": "Tambo Art",
-  "n_ken_sogo_undojo": "Pref. Sports Park",
-  "n_kenritsu_bijutsukanmae": "Pref. Art Museum"
+  "n_kita_mitsukaido": "Kitamitsukaidô",
+  "n_hirosaki_higashikomae": "Hirosakihigashikōmae",
+  "n_joetsu_kokusai_ski_jo_mae": "Joetsu International Skiing Ground",
+  "n_torokko_hozukyo": "Hozukyō",
+  "n_torokko_kameoka": "Kameoka",
+  "n_toyamaeki_toyama_chiho": "Toyama Sta."
  }
 }
