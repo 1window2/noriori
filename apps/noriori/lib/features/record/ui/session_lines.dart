@@ -1455,7 +1455,7 @@ class _NoticeTile extends ConsumerWidget {
             if (Localizations.localeOf(context).languageCode != 'en' || n < 1 || n > 12) return m;
             return const ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][n - 1];
           }
-          return t.noticeSeasonSub(from: month(months.first), to: month(months.last));
+          return line.anyDate ? t.noticeSeasonAnySub(from: month(months.first), to: month(months.last)) : t.noticeSeasonSub(from: month(months.first), to: month(months.last));
         }(),
     };
     final open = lineId != null && session.canOpen(lineId);

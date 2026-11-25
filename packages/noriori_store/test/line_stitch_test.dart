@@ -39,7 +39,7 @@ void main() {
           routeId: r,
           rows: visible,
           openGaps: builder.openBetween(r, visible, ds),
-          sectionGaps: builder.openBetween(r, visible, DateSpan.parse(today)),
+          sectionGaps: builder.openBetween(r, visible, DateSpan.parse(today), offSeasonOpen: true),
           sectionEnds: builder.sectionEnds(r, visible, DateSpan.parse(today), date: ds),
         );
       }

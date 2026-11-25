@@ -344,6 +344,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get noticeClosedSub => 'それより前の日付でのみ記録できます';
 	@override String get noticeSuspendedSub => '運休前の日付でのみ記録できます';
 	@override String noticeSeasonSub({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行。この日は運行していません';
+	@override String noticeSeasonAnySub({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行';
 	@override String get noticeBeforeSub => '開業後の日付で記録できます';
 	@override String get chooseDirection => 'どちら回りで乗りましたか？';
 	@override String directionKm({required Object km}) => '${km} km';
@@ -1292,6 +1293,7 @@ extension on TranslationsJa {
 			'session.noticeClosedSub' => 'それより前の日付でのみ記録できます',
 			'session.noticeSuspendedSub' => '運休前の日付でのみ記録できます',
 			'session.noticeSeasonSub' => ({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行。この日は運行していません',
+			'session.noticeSeasonAnySub' => ({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行',
 			'session.noticeBeforeSub' => '開業後の日付で記録できます',
 			'session.chooseDirection' => 'どちら回りで乗りましたか？',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -1641,9 +1643,9 @@ extension on TranslationsJa {
 			'prefNames.13' => '神奈川',
 			'prefNames.14' => '新潟',
 			'prefNames.15' => '富山',
-			'prefNames.16' => '石川',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.16' => '石川',
 			'prefNames.17' => '福井',
 			'prefNames.18' => '山梨',
 			'prefNames.19' => '長野',

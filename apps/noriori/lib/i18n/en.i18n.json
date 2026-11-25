@@ -213,6 +213,7 @@
     "noticeClosedSub": "Only rides before then can be saved",
     "noticeSuspendedSub": "Only rides before the suspension can be saved",
     "noticeSeasonSub": "Runs only $from–$to each year. No service on this date",
+    "noticeSeasonAnySub": "Runs only $from–$to each year",
     "noticeBeforeSub": "Rides from the opening day on can be saved",
     "chooseDirection": "Which way did you ride?",
     "directionKm": "$km km",

@@ -206,6 +206,7 @@
     "noticeClosedSub": "그 전 날짜로만 기록할 수 있어요",
     "noticeSuspendedSub": "운휴 전 날짜로만 기록할 수 있어요",
     "noticeSeasonSub": "보통 $from월~$to월에만 다녀요. 이 날은 운행하지 않아요",
+    "noticeSeasonAnySub": "보통 $from월~$to월에만 다녀요",
     "noticeBeforeSub": "개업한 뒤 날짜로 기록할 수 있어요",
     "chooseDirection": "어느 쪽으로 탔나요?",
     "directionKm": "$km km",

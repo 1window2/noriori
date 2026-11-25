@@ -44,7 +44,7 @@ void main() {
             routeId: r,
             rows: shown,
             openGaps: builder.openBetween(r, shown, d),
-            sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan) : builder.openBetween(r, shown, d),
+            sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan, offSeasonOpen: true) : builder.openBetween(r, shown, d),
             sectionEnds: builder.sectionEnds(r, shown, todaySpan, date: d),
           );
         }

@@ -636,7 +636,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
           rows: shown,
           openGaps: builder.openBetween(r, shown, d),
           // 날짜를 모르면 줄기는 1단계로 두고 구분선만 오늘 기준으로 그린다
-          sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan) : builder.openBetween(r, shown, d),
+          sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan, offSeasonOpen: true) : builder.openBetween(r, shown, d),
           sectionEnds: builder.sectionEnds(r, shown, todaySpan, date: d),
         );
       }

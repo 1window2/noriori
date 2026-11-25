@@ -375,10 +375,14 @@ final class NoticeLine extends SelectorLine {
     this.on,
     this.year,
     this.at,
+    this.anyDate = false,
     super.lanes,
   });
 
   final NoticeKind kind;
+
+  /// 날짜 모름 화면의 안내다. 계절 운행은 「그날 운행하지 않음」을 붙이지 않는다
+  final bool anyDate;
   final BracketAnchor top;
   final BracketAnchor bottom;
 
@@ -1451,7 +1455,12 @@ final class DisplayRules {
       String key = '';
       String? year, lineId, on;
       SelectorRow? at;
-      if (gap < gaps.length && !gaps[gap]) {
+      if (undated && gap < gaps.length && gaps[gap] && seasonAt(gap) != null) {
+        // 날짜 모름 화면의 계절 운행 구간: 닫힌 구간이 아니어도 계절 운행 괄호와 운행 달 안내를 단다(줄기는 실선 그대로, 사용자 결정 2026-11-25)
+        kind = NoticeKind.season;
+        year = seasonAt(gap);
+        key = year!;
+      } else if (gap < gaps.length && !gaps[gap]) {
         if (seasonAt(gap) case final months?) {
           // 계절 운행의 비시즌: 폐지·운휴가 아니다. 보통 운행 달을 안내에 싣는다
           kind = NoticeKind.season;
@@ -1520,6 +1529,7 @@ final class DisplayRules {
           on: span.on,
           at: span.at,
           year: span.year,
+          anyDate: undated,
         ),
       ));
     }

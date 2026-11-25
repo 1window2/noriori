@@ -206,6 +206,7 @@
     "noticeClosedSub": "それより前の日付でのみ記録できます",
     "noticeSuspendedSub": "運休前の日付でのみ記録できます",
     "noticeSeasonSub": "例年$from月～$to月のみ運行。この日は運行していません",
+    "noticeSeasonAnySub": "例年$from月～$to月のみ運行",
     "noticeBeforeSub": "開業後の日付で記録できます",
     "chooseDirection": "どちら回りで乗りましたか？",
     "directionKm": "$km km",

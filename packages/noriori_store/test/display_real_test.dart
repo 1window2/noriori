@@ -53,7 +53,7 @@ void main() {
       closedRoute: network.routes[routeId]!.closed,
       archiveStops: await reader.archiveStops(routeId),
       archiveBranches: await reader.archiveBranches(rows.map((row) => row.node), routes: {routeId, ...builder.handRoutes(routeId)}),
-      sectionGaps: date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps,
+      sectionGaps: date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today), offSeasonOpen: true) : openGaps,
       sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
       undated: date == null,
       parallels: await reader.routeParallels(routeId),

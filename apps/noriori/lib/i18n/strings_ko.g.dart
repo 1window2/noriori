@@ -609,6 +609,9 @@ class Translations$session$ko {
 	/// ko: '보통 $from월~$to월에만 다녀요. 이 날은 운행하지 않아요'
 	String noticeSeasonSub({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요. 이 날은 운행하지 않아요';
 
+	/// ko: '보통 $from월~$to월에만 다녀요'
+	String noticeSeasonAnySub({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요';
+
 	/// ko: '개업한 뒤 날짜로 기록할 수 있어요'
 	String get noticeBeforeSub => '개업한 뒤 날짜로 기록할 수 있어요';
 
@@ -2296,6 +2299,7 @@ extension on Translations {
 			'session.noticeClosedSub' => '그 전 날짜로만 기록할 수 있어요',
 			'session.noticeSuspendedSub' => '운휴 전 날짜로만 기록할 수 있어요',
 			'session.noticeSeasonSub' => ({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요. 이 날은 운행하지 않아요',
+			'session.noticeSeasonAnySub' => ({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요',
 			'session.noticeBeforeSub' => '개업한 뒤 날짜로 기록할 수 있어요',
 			'session.chooseDirection' => '어느 쪽으로 탔나요?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -2645,9 +2649,9 @@ extension on Translations {
 			'prefNames.13' => '가나가와',
 			'prefNames.14' => '니가타',
 			'prefNames.15' => '도야마',
-			'prefNames.16' => '이시카와',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.16' => '이시카와',
 			'prefNames.17' => '후쿠이',
 			'prefNames.18' => '야마나시',
 			'prefNames.19' => '나가노',

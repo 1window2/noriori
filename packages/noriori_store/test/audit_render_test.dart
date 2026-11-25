@@ -86,7 +86,7 @@ void main() {
         );
         final visible = rules.visible(rows, options);
         final openGaps = builder.openBetween(routeId, visible, date);
-        final sectionGaps = date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps;
+        final sectionGaps = date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today), offSeasonOpen: true) : openGaps;
         final stops = await reader.archiveStops(routeId);
         final parallels = await reader.routeParallels(routeId);
         final branches = await reader.archiveBranches(rows.map((row) => row.node), routes: {routeId, ...builder.handRoutes(routeId)});

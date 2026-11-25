@@ -786,14 +786,19 @@ final class SelectorBuilder {
   }
 
   /// 행과 다음 행 사이가 그날 영업했는가. 날짜를 모르면 모두 1단계다 (DESIGN §8 상태표).
-  List<bool> openBetween(String routeId, List<SelectorRow> rows, DateSpan? date) {
+  /// [offSeasonOpen]: 계절 운행의 비시즌을 열린 구간으로 본다. 날짜 모름 화면의 구분선은 오늘 기준으로 그리는데, 오늘이 비시즌이라고
+  /// 운행 중인 계절 노선(ガーラ湯沢)을 폐지 구간으로 그리면 안 된다 (5회차 화면 시험 2026-11-25)
+  List<bool> openBetween(String routeId, List<SelectorRow> rows, DateSpan? date, {bool offSeasonOpen = false}) {
     final day = normalizeRideDate(date);
     if (rows.length < 2) return const [];
     if (day == null) return List.filled(rows.length - 1, true);
     return _between(
       routeId,
       rows,
-      (edges) => edges.any((edge) => network.edgeUsable(routeId, edge, day).ridable),
+      (edges) => edges.any((edge) {
+        final usable = network.edgeUsable(routeId, edge, day);
+        return usable.ridable || (offSeasonOpen && usable == Usable.offSeason);
+      }),
       last: null,
     );
   }
@@ -817,9 +822,13 @@ final class SelectorBuilder {
           // 그 화면 날짜의 상태다. 날짜를 고르면 그날 운휴인지, 폐지는 그날까지 끝난 수명만 본다(운휴 뒤 재개한 칸이 그날 「폐지」로 보이지 않게).
           // 날짜 모름은 오늘 상태와 마지막 끝이다
           final suspended = edges.any((edge) => network.lifeOn(edge, date ?? today) == LifeState.suspended);
-          // 계절 운행의 비시즌: 날짜를 고른 화면에서 그 구간의 칸이 모두 비시즌일 때만이다. 날짜 모름·오늘(날짜를 안 고름)은 표시하지 않는다
+          // 계절 운행: 날짜를 고른 화면은 그 구간의 칸이 모두 그날 비시즌일 때, 날짜 모름은 오늘 폐지·운휴가 아닌 계절 노선 구간이면 언제나 표시한다
+          // (사용자 결정 2026-11-25: 지금 폐지된 것이 아니면 날짜 모름이어도 계절 운행이라고 보인다)
           final rule = network.seasonRuleOf(lineId, routeId: routeId);
-          final season = rule != null && date != null && edges.isNotEmpty && edges.every((edge) => network.lifeOn(edge, date) == LifeState.offSeason)
+          bool liveToday(String edge) => switch (network.lifeOn(edge, today)) { LifeState.open || LifeState.offSeason || LifeState.maybeOpen => true, _ => false };
+          final season = rule != null &&
+                  edges.isNotEmpty &&
+                  (date != null ? edges.every((edge) => network.lifeOn(edge, date) == LifeState.offSeason) : edges.every(liveToday))
               ? '${rule.fromMonth}-${rule.toMonth}'
               : null;
           String? lo, hi;
