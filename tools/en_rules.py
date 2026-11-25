@@ -14,6 +14,12 @@ def load_official():
     rows=json.load(open(p_,encoding='utf-8'))['rows']
     return {k:dict(v,en=norm_official(v['en'])) for k,v in rows.items()}
 
+def load_jawiki():
+    """공식이 없는 역의 일본어 위키백과 정보칸 로마자 {노드: {en, title, revid}} (data/overrides/en_jawiki.json, 5회차 2026-11-25)"""
+    p_=os.path.join(ROOT,'data','overrides','en_jawiki.json')
+    if not os.path.exists(p_):return {}
+    return {k:dict(v,en=norm_official(v['en'])) for k,v in json.load(open(p_,encoding='utf-8'))['rows'].items()}
+
 def norm_official(s):
     """공식 자료에서 옮긴 글자 흔적을 고친다: 전각 글자, 굽은 따옴표(ROYCE’), 가운뎃점(Ōmori・Kinjōgakuin-mae),
     낱말 가운데 대문자 장음 기호(KyŪkan). 장음 기호 자체는 공식대로 둔다"""
@@ -22,11 +28,13 @@ def norm_official(s):
     return re.sub('(?<=[a-zāīūēō])[ĀĪŪĒŌ]',lambda m:m.group(0).lower(),s)
 
 # 훈독 낱말의 첫 글자. 長音처럼 보여도 앞 글자와 다른 낱말이라 줄이면 안 된다 (丸ノ内, 松浦, 箕面)
+BOTH_READ=('箕面',)
 WORD_START={'内':'うち','浦':'うら','裏':'うら','牛':'うし','魚':'うお','海':'うみ','兎':'うさぎ','畝':'うね','上':'うえ','尾':'お','箕面':'お'}
 # 宇는 う 한 글자라 앞이 う 줄이면 구별되지 않는다 (陸中宇部, 由宇)
 AFTER_O='おこそとのほもよろごぞどぼぽょ'
 # 한 낱말로 읽는 말. 앞 표의 한자가 있어도 장음이다
-ONE_WORD=('青海','神海','河内')
+# 熟字訓·옛 국명(한자를 하나씩 읽지 않는 말). 공식 표기도 한 낱말의 장음으로 줄인다 (5회차 장음 점검 2026-11-25: 近江 Ōmi, 下総 Shimōsa, 伯耆 Hōki, 国府 Kō, 洞爺 Tōya)
+ONE_WORD=('青海','神海','河内','青梅','真岡','近江','下総','伯耆','国府','府中','洞爺')
 
 def mark_words(kana,ja):
     """일본어 이름을 보고 읽기에 낱말 경계 |를 넣는다"""
@@ -45,8 +53,15 @@ def mark_words(kana,ja):
     return kana
 
 def contract(kana,ja=None):
-    """장음을 줄인다. 낱말 경계는 넘지 않는다"""
-    k=mark_words(kata2hira(unicodedata.normalize('NFKC',kana)),ja)
+    """장음을 줄인다. 같은 한자 읽기 안에서만 줄이고 한자 경계는 넘지 않는다(豊|岡 Toyooka, 田|の|浦 Tanoura, 奥|羽 Ou).
+    한자별 읽기 표로 나눌 수 있으면 en_segment.contract, 못 나누면(숫자가 든 이름 등) 아래 옛 규칙. 熟字訓(ONE_WORD)은 한 낱말이라 옛 규칙 (5회차 장음 점검 2026-11-25)"""
+    h=kata2hira(unicodedata.normalize('NFKC',kana))
+    # 같은 한자 자리 안이어도 두 음절을 모두 읽는 熟字訓(箕面 みの|お, Minoo)은 위 WORD_START 손 규칙으로 읽는다
+    if ja and not any(w in ja for w in ONE_WORD+BOTH_READ):
+        import en_segment
+        r=en_segment.contract(h,plainja(ja))
+        if r is not None:return r
+    k=mark_words(h,ja)
     k=re.sub('([おこそとのほもよろごぞどぼぽょ])[うお]',r'\1',k)
     return re.sub('([うくすつぬふむゆるぐずづぶぷゅ])う',r'\1',k).replace('|','')
 
@@ -229,12 +244,17 @@ def fix_nodes(names):
     official=load_official()
     for x in rows:
         if x['id'] in official:x['text']=official[x['id']]['en'];x['source']='official'
+    # 공식을 못 찾은 역은 일본어 위키백과 역 문서 정보칸 로마자가 다음이다(위키 가운데 일본어 위키 최우선, 사용자 결정 2026-11-25). Wikidata 라벨·규칙보다 앞선다.
+    # 출처 표시는 wikipedia이고, 아래 규칙 손질(fix_station·번역형 바꾸기)을 거치지 않는다
+    jawiki=load_jawiki()
+    for x in rows:
+        if x['source']!='official' and x['id'] in jawiki:x['text']=jawiki[x['id']]['en'];x['source']='wikipedia';x['_jawiki']=True
     # 번역형(植物園→Botanical Garden, 松山市→Matsuyama City, 八木山動物公園→Yagiyama Zoological Park)은 공식이 아닌 라벨에서도 쓰지 않는다.
     # 로마자 꼴(읽기 규칙)로 바꾸고 번역형은 검색 별칭으로 돌려준다. 공항(Airport)은 공항 터미널 규칙(terminal)이 정한 꼴이라 그대로다 (사용자 결정 2026-11-24 영어 이름 원칙 3, 일반화 2026-11-25)
     translated=[]
     def untranslate(x,known=None):
         i=x['id']
-        if x['source']=='official' or i not in ja or not kana.get(i) or not is_translated(x['text'],ja[i]):return
+        if x['source']=='official' or x.get('_jawiki') or i not in ja or not kana.get(i) or not is_translated(x['text'],ja[i]):return
         translated.append((i,x['text']));x['text']=station_reading(kana[i],plainja(ja[i]));x['source']='rule'
         # 외래어·-mae 규칙을 읽기 꼴에 다시 씌운다(東京国際クルーズターミナル → …Cruise Terminal). 첫 차례는 아래 고리가 씌운다
         if known is not None:
@@ -249,7 +269,7 @@ def fix_nodes(names):
     known.update({tuple(k.split('|')):v['en'] for k,v in fix['base'].items()})
     for x in rows:
         i=x['id']
-        if x['source']=='official':continue
+        if x['source']=='official' or x.get('_jawiki'):continue
         if i in nodefix:x['text']=nodefix[i]['en'];x['source']='hand';continue
         if x['source']=='hand' or i not in ja:continue
         made=fix_station(ja[i],kana[i],x['text'],known,keep)
@@ -263,4 +283,5 @@ def fix_nodes(names):
         if j_ and k_:
             made=fix_station(j_,k_,x['text'],known,keep)
             if made:x['text']=made
+    for x in rows:x.pop('_jawiki',None)
     return translated

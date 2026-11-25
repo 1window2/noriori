@@ -238,6 +238,10 @@ def judge(c):
         if c.get('absent'):return not v
         return any(r[1]==c['text'] and not r[4] and not r[5] for r in v)
     # 9회차 M: 열람 전용 노선(archive_line)이 이름·다는 역(at)으로 있는가 (archline)
+    # 5회차: 열람 전용 노선이 그 계통 화면에서 갈라지는가(archive_branch). absent면 붙지 않아야 함(西武大宮線 ↔ 東北新幹線)
+    if k=='archbranch':
+        hit=m.execute('select 1 from archive_branch where archive_line_id=? and route_id=?',(c['archive_line'],c['route'])).fetchone() is not None
+        return not hit if c.get('absent') else hit
     if k=='archline':return any(r[0]=='ja' and r[1]==c['name'] for i_,at_ in m.execute('select id,at_node from archive_line') if not c.get('at') or at_==c['at'] for r in NM['archive',i_])
     # 9회차 F: 여객 이력이 없는 화물 구간(숨은 노선). {line, a?, b?, km?, freight?}: 노선이 rule_class hidden이고 그 칸들에 분모 단위가 없으며,
     # a–b 칸이 그 노선에 속하고(km가 있으면 그 값), freight 노드는 kind freight이고 공개 노드가 아니다

@@ -1885,8 +1885,8 @@ class Translations$session$state$ko {
 	/// ko: '운휴'
 	String get suspended => '운휴';
 
-	/// ko: '비시즌'
-	String get offSeason => '비시즌';
+	/// ko: '휴무'
+	String get offSeason => '휴무';
 
 	/// ko: '운휴 $year~'
 	String suspendedSince({required Object year}) => '운휴 ${year}~';
@@ -2283,7 +2283,7 @@ extension on Translations {
 			'session.noPath' => '이 두 역 사이의 경로를 찾지 못했습니다',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => '운휴',
-			'session.state.offSeason' => '비시즌',
+			'session.state.offSeason' => '휴무',
 			'session.state.suspendedSince' => ({required Object year}) => '운휴 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',

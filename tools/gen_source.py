@@ -2308,7 +2308,7 @@ for x in json.load(open(os.path.join(ROOT,'data','overrides','line_history.json'
     k_=x.get('kana')
     ko_=x.get('ko') or (ko.line(k_,x['name_ja']) if k_ else x['name_ja'])
     # 영어는 지금 노선 이름과 같은 규칙(gen_en_names.line_name: 낱말 분리·노선 꼬리)이다. 읽기를 통째로 옮기면 箱根登山鉄道鋼索線이 Hakonetozantetsudokosaku Line이 됐다 (5회차 2026-11-24)
-    en_=x.get('en') or ((_line_en(x['name_ja'],k_,en=True) or en_rules.hepburn(k_).title()) if k_ else x['name_ja'])
+    en_=x.get('en') or ((_line_en(x['name_ja'],k_,en=True) or en_rules.hepburn(k_,x['name_ja']).title()) if k_ else x['name_ja'])
     for lang_,text_ in (('ja',x['name_ja']),('ko',ko_),('en',en_)):
         add('line',x['line'],lang_,text_,kana=k_ if lang_=='ja' else None,source='line_history' if k_ or lang_=='ja' or x.get(lang_) else 'ja_as_is',valid_from=x['valid_from'],valid_to=x['valid_to'])
 for lk,ps,ch in line_rel:

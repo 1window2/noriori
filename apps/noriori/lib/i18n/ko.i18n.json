@@ -192,7 +192,7 @@
     "state": {
       "maybe": "?",
       "suspended": "운휴",
-      "offSeason": "비시즌",
+      "offSeason": "휴무",
       "suspendedSince": "운휴 $year~",
       "until": "~$year",
       "since": "$year~",

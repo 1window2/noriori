@@ -655,13 +655,24 @@ final class PackReader {
   }
 
   /// 그 역들에서 갈라지던 열람 전용 노선.
-  Future<List<ArchiveBranch>> archiveBranches(Iterable<String> nodes) async {
+  /// [routes]를 주면 그 계통들에서 갈라지던 것만 고른다(archive_branch: 그 역에 함께 있던 재래선 계통).
+  /// 西武大宮線(~1940)이 東北新幹線(1982~) 화면에 붙지 않게 한다 (5회차 화면 대조 2026-11-25)
+  Future<List<ArchiveBranch>> archiveBranches(Iterable<String> nodes, {Iterable<String>? routes}) async {
     final list = nodes.toSet().toList();
     if (list.isEmpty) return const [];
     final marks = List.filled(list.length, '?').join(',');
+    final routeList = routes?.toSet().toList();
+    if (routeList != null && routeList.isEmpty) return const [];
+    final routeMarks = routeList == null ? '' : List.filled(routeList.length, '?').join(',');
     final rows = await _db.customSelect(
-      'SELECT id, at_node, closed FROM master.archive_line WHERE at_node IN ($marks)',
-      variables: [for (final id in list) Variable.withString(id)],
+      routeList == null
+          ? 'SELECT id, at_node, closed FROM master.archive_line WHERE at_node IN ($marks)'
+          : 'SELECT id, at_node, closed FROM master.archive_line WHERE at_node IN ($marks) AND id IN '
+              '(SELECT archive_line_id FROM master.archive_branch WHERE route_id IN ($routeMarks))',
+      variables: [
+        for (final id in list) Variable.withString(id),
+        for (final id in routeList ?? const <String>[]) Variable.withString(id),
+      ],
     ).get();
     return [
       for (final row in rows)

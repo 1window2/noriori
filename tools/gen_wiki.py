@@ -748,8 +748,14 @@ junc=[j for j in junc if (lines[j['line']].get('rule_class')=='shinkansen')==(li
 # 행: {a, b, at: [a 쪽 노드, b 쪽 노드], from, to, src, why[, a_route, b_route, a_side, b_side]}. *_route는 그 쪽 계통(지선), *_side는 그 쪽이
 # 지나가는 역일 때의 분기 방향. 판정 표·궤간 거르기 뒤에 더하므로 이 표가 이긴다 (직통·환승 전수 점검 R4–R6, 2026-11-09)
 TH=[];TH_SKIP=[]
+# 컴파일이 나누는 노드(node_split.json: 지하철역·노면 정류장)의 새 ID로 적은 행은 나누기 전 원 노드로 읽는다. 컴파일이 옮길 노선 쪽 기록을 새 노드로 다시 옮긴다
+# (최종 DB의 n_monzen_nakacho_toden처럼 손 표 작성자가 보는 ID를 그대로 쓸 수 있게, 5회차 옛 평면 교차 2차 2026-11-25)
+_SPLIT_NEW={x_['new_id']:(x_['node'],set(x_['move_lines'])) for x_ in json.load(open(os.path.join(ROOT,'data','overrides','node_split.json'),encoding='utf-8'))}
 for x_ in HT.get('THROUGH',[]):
     for p_,q_,n_,rr_,sd_ in ((x_['a'],x_['b'],x_['at'][0],x_.get('b_route'),x_.get('a_side')),(x_['b'],x_['a'],x_['at'][1],x_.get('a_route'),x_.get('b_side'))):
+        if n_ not in nodes and n_ in _SPLIT_NEW:
+            if p_ not in _SPLIT_NEW[n_][1]:raise SystemExit(f'THROUGH 행이 나뉜 노드의 옮길 노선이 아닌 노선에 걸렸습니다: {p_} {n_}')
+            n_=_SPLIT_NEW[n_][0]
         if p_ not in lines or q_ not in lines or n_ not in nodes:raise SystemExit(f'THROUGH 행의 노선·노드가 없습니다: {p_} {q_} {n_}')
         # 노선이 그 노드를 지나지 않는 행(노선 구성이 바뀐 곳)은 넣지 않고 보고서에 남긴다
         if not _meets(p_,n_):TH_SKIP.append((p_,q_,n_));stat['through_skip']+=1;continue

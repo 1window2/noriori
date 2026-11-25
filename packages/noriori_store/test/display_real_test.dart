@@ -52,7 +52,7 @@ void main() {
       options: options,
       closedRoute: network.routes[routeId]!.closed,
       archiveStops: await reader.archiveStops(routeId),
-      archiveBranches: await reader.archiveBranches(rows.map((row) => row.node)),
+      archiveBranches: await reader.archiveBranches(rows.map((row) => row.node), routes: {routeId, ...builder.handRoutes(routeId)}),
       sectionGaps: date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps,
       sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
       undated: date == null,

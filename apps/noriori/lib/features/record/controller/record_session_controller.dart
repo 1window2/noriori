@@ -679,7 +679,9 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
         if (a != null && b != null) parallels.add(run.withSeqs(a, b, {for (final x in run.stopSeqs) ?seqOf[(r, x)]}));
       }
     }
-    final branches = await reader.archiveBranches(rows.map((row) => row.node));
+    // 열람 전용 노선은 이 화면 계통(이관 구간을 채운 계통 포함)에서 갈라지던 것만 붙인다 (archive_branch, 5회차 2026-11-25)
+    final branchRoutes = {for (final k in screens.keys) k.$1, for (final k in screens.keys) ...builder.handRoutes(k.$1)};
+    final branches = await reader.archiveBranches(rows.map((row) => row.node), routes: branchRoutes);
     List<SelectorLine> linesOf(RouteRows rr, {bool main = false}) => rules.lines(
           lineId: lineId,
           rows: rr.rows,

@@ -3046,7 +3046,8 @@ for s in stops:
               for pd1 in [q_ for p_ in track_ok(r['line'],oid,n,pd0,ys_own,m,ys_o) for q_ in _gsplit(r['line'],oid,p_)]:
                   # 다음 역·끝 역은 그날 선로로 찾고, 기간 안에서 바뀌면 행을 나눈다 (K03)
                   # 시기별 끝 역의 직통(era)은 그 역이 끝이던 첫날부터 한 행이다. 나누면 뒤 토막은 그 역이 끝이 아닌 날에 시작한다 (盛岡 1997, 中洲川端 1982)
-                  segs_=[(pd1,neighbors(o['route_id'],o['seq'],False,_rep_day(pd1)))] if era else split_by_day(o['route_id'],pd1,lambda d,o=o:neighbors(o['route_id'],o['seq'],False,d))
+                  # 다만 그 기간 안에서 상대 계통의 끝 역이 바뀌면(鏡島線 1954-09-10 西鏡島 연장) 끝 역이 바뀌는 날에서만 나눈다. 안 나누면 끝 역이 그때 없던 역이 된다 (K03·K120, 5회차 2026-11-25)
+                  segs_=[(p_,neighbors(o['route_id'],o['seq'],False,_rep_day(p_))) for p_,_k in split_by_day(o['route_id'],pd1,lambda d,o=o:tuple(x_[1] for x_ in neighbors(o['route_id'],o['seq'],False,d)))] if era else split_by_day(o['route_id'],pd1,lambda d,o=o:neighbors(o['route_id'],o['seq'],False,d))
                   # 정차역 이웃도, 대표 날의 확장 역도 없어 버려질 토막은 상대 계통 확장 행 기간으로 잘라 그 토막만 확장 역을 다음 역으로 본다.
                   # 이미 이어지는 토막은 건드리지 않는다 (1986 秋田港線: 秋田港이 서지 않고 秋田博前까지 확장된 38일, 11회차 S3)
                   segs_=[q_ for sg_ in segs_ for q_ in _ext_segs(o,sg_)]
@@ -3933,6 +3934,9 @@ def _jrows():
         # 그날 궤간이 맞지 않아 계통 이음을 하나도 내지 않은 행(3회차 W1a: 大曲 田沢湖線 1997~)은 선로 연결로 내지 않는다
         if j.get('_sharp') and not j.get('_kinds'):WARN['junction_sharp'].append((j['line'],j['other'],j.get('at')));continue
         cont=bool(j.get('continue')) and ('continue' in (j.get('_kinds') or j.get('_tried') or {'continue'}))
+        # 계통 이음을 하나도 내지 못한 행(지나가는 노선의 정차하지 않는 분기 노드: 布引線 三宮分岐点)은 그 노선 선로가 그 노드에 둘 이상 닿으면
+        # 지나가는 노선이라 끝 이어짐이 아니라 분기다 (감사 K01, 5회차 옛 평면 교차 2차 2026-11-25)
+        if cont and not j.get('_kinds') and not j.get('_tried') and j.get('at') and sum(1 for e in adj.get(j['at'],()) if j['line'] in (_eln[e['id']] or {e.get('seed_line')}))>=2:cont=False
         v_=_jvalid(j)
         # 두 노선이 함께 있던 날이 없는 행(八木 연락선 1967-12-20 바뀜: 앞 노선 끝날이 뒤 노선 시작날)은 낼 기간이 없다 (K18)
         if v_[1] not in (None,'ongoing') and not str(v_[0]).startswith('[') and _lo(v_[0])>=_lo(v_[1],True):WARN['junction_empty'].append((j['line'],j['other'],j.get('at'),v_));continue
@@ -5109,6 +5113,27 @@ for n_,a_ in _PRE50_RED:_r50[n_].append(_adrop.get(a_,a_))
 _IDR+=[('node',n_,None,json.dumps(v_),AS_OF) for n_,v_ in sorted(_r50.items())]
 t('id_redirect',['entity_type','old_id','context_line','new_ids','dataset_version'],_IDR)
 t('archive_line',['id primary key','line_id','at_node','opened','closed','source','legal_abolition'],[(a['id'],a.get('line'),a.get('at'),a.get('opened'),a.get('closed'),a.get('source'),a.get('legal_abolition')) for a in archive if a.get('kind')=='line'])
+# 열람 전용 노선을 어느 계통 화면에서 갈라지게 그리나. 그 역을 지나는 재래선 계통 가운데, 그 역 정차 기간이 열람 전용 노선의 영업 기간과
+# 하루라도 겹칠 수 있는 계통만이다. 신칸센은 재래선·노면전차와 선로를 나누지 않는다(§8.1). 겹치는 계통이 없으면(그 역에 지금 계통이 나중에 들어옴:
+# 光明電気鉄道 豊岡 → 二俣線) 그 역의 재래선 계통 모두에 붙여 사라지지 않게 한다.
+# 예전에는 그 역을 지나는 모든 계통에 붙여, 西武大宮線(~1940)이 東北·上越新幹線(1982~)에서 갈라지는 것처럼 보였다 (5회차 화면 대조 2026-11-25)
+_ab_stop=collections.defaultdict(list)
+for s_ in stops:_ab_stop[s_['node_id']].append(s_)
+_AB=[];_AB_FALLBACK=[]
+for a in archive:
+    if a.get('kind')!='line' or not a.get('at'):continue
+    o_lo=lohi(a.get('opened'))[0] or '0000-01-01';c_hi=lohi(a.get('closed'))[1] or '9999-12-31'
+    conv=set();hit=set()
+    for s_ in _ab_stop.get(a['at'],()):
+        r_=s_['route_id']
+        if lines[routes[r_]['line']].get('rule_class')=='shinkansen':continue
+        conv.add(r_)
+        f_lo=lohi(s_['valid_from'])[0] or '0000-01-01';t_hi=lohi(s_['valid_to'] or 'ongoing')[1]
+        if f_lo<c_hi and t_hi>o_lo:hit.add(r_)
+    if not hit and conv:_AB_FALLBACK.append(a['id'])
+    _AB+=[(a['id'],r_) for r_ in sorted(hit or conv)]
+print('열람 전용 노선 갈라짐 계통',len(_AB),'기간 겹침 없어 그 역 재래선 계통 모두',len(_AB_FALLBACK),_AB_FALLBACK)
+t('archive_branch',['archive_line_id','route_id'],_AB)
 t('denominator',['scope','basis','carryover','km','unit_count'],[(d['scope'],d['basis'],d['carryover'],d['km'],d['unit_count']) for d in denom])
 t('denominator_unit',['n','unit_key','carryover','edge_id','km','m','class','valid_from','valid_to','date_lo','date_hi','certainty'],[(i+1,u['unit_key'],u['carryover'],u['edge_id'],u['km'],round(u['km']*1000),u['cls'],u['valid_from'],u['valid_to'],lohi(u['valid_from'])[0],lohi(u['valid_to'])[1],'unknown' if not u['valid_from'] or not u['valid_to'] else 'certain') for i,u in enumerate(unit_rows)])
 # 파생: 폐지 구간, 도도부현별 km, 수록 등급
@@ -5924,6 +5949,24 @@ for x in names:
         sadd('node',x['id'],x['text'].translate(_MAC))
 for id_,k_ in _kana_now.items():
     if id_ in pub and k_:sadd('node',id_,_enr.romaji(k_))
+# 공식 영어 이름이 진짜 이름이고, 우리 규칙 표기가 공식과 다르면 그 꼴로도 찾는다(사용자 결정 2026-11-25):
+# 헵번식 ん→m(公式 Shimin-byōin-mae ↔ Shimimbyoimmae), 공식이 숫자·로마자를 쓴 이름의 읽기(Tezukayama-3chōme ↔ Tezukayamasanchome, JR-Goidō ↔ Jeiarugoido),
+# 공식이 장음을 줄인 이름의 규칙 꼴(Anō ↔ Anoo). 장음 기호 뗀 꼴과 가나를 그대로 옮긴 꼴은 위에서 넣었다
+_ja_now={x['id']:x['text'] for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('valid_from') and not x.get('valid_to') and not x.get('line')}
+_en_off={x['id'] for x in names if x['entity_type']=='node' and x['lang']=='en' and x.get('source')=='official' and not x.get('valid_from') and not x.get('valid_to') and not x.get('line')}
+for id_ in sorted(_en_off&pub):
+    k_=_kana_now.get(id_);j_=_ja_now.get(id_)
+    if not k_ or not j_:continue
+    hk_=_enr.plainkana(k_);pj_=_enr.plainja(j_)
+    r_=_enr.station_reading(hk_,pj_);r_=_enr.fix_station(pj_,hk_,r_,{}) or r_
+    sadd('node',id_,r_)
+# ん을 b·p·m 앞에서 m으로 쓰느냐 n으로 쓰느냐는 출처마다 갈린다(공식 m 161 : n 25, Wikidata는 제각각). 어느 쪽으로 쳐도 찾게 바꾼 꼴을 넣는다 (사용자 결정 2026-11-25)
+# 키보드로 ん은 n으로 친다. 옛 이름·노선 한정 이름·열람 전용 이름까지 모든 영어 이름에 건다
+for x in names:
+    if x['lang']=='en' and ((x['entity_type']=='node' and x['id'] in pub) or x['entity_type'] in ('archive','line','service')):
+        t_=x['text']
+        for v_ in (re.sub(r'm(?=[bpm])','n',t_),re.sub(r'n(?=[bpm])','m',t_),re.sub(r'M(?=[bpm])','N',t_)):
+            if v_!=t_:sadd(x['entity_type'],x['id'],v_)
 # 번역형 공식 영어 이름(熊本駅前 「Kumamoto Station」)은 찾기 별칭으로만 둔다 (en_official.json aliases)
 _eo=os.path.join(ROOT,'data','overrides','en_official.json')
 if os.path.exists(_eo):

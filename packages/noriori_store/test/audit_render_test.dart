@@ -89,7 +89,7 @@ void main() {
         final sectionGaps = date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps;
         final stops = await reader.archiveStops(routeId);
         final parallels = await reader.routeParallels(routeId);
-        final branches = await reader.archiveBranches(rows.map((row) => row.node));
+        final branches = await reader.archiveBranches(rows.map((row) => row.node), routes: {routeId, ...builder.handRoutes(routeId)});
         final lines = rules.lines(
           lineId: route.lineId,
           rows: visible,
