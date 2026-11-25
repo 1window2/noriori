@@ -14,7 +14,8 @@
 |---|---|---|
 | `master.sqlite` | 역, 선로, 이벤트, km, 계통, 분모 단위. 선형은 들어 있지 않음 | CC BY-SA 4.0 |
 | `names.sqlite` | 표시 이름, 별칭, 검색 색인 | CC BY-SA 4.0. 표기는 사실 정보로 취급 |
-| `rail.pmtiles`의 `station` 레이어 | 역 점 | CC BY-SA 4.0 |
+| `rail.pmtiles`의 `station` 레이어 | 역 점 | CC BY-SA 4.0. 단, 출처가 N05인 점은 아래 줄 |
+| `source/positions/positions.yaml`의 `source: n05` 행과 그 값이 들어간 `master.sqlite` `node_position`(`source` = `n05`), `rail.pmtiles` `station` 레이어의 그 점 (약 2,900곳, 주로 폐역) | 역 좌표 | 国土数値情報 이용 조건 (非商用). CC BY-SA 4.0에서 뺀다. 원 자료가 유료 간행물(『停車場変遷大辞典』)을 원전으로 써서 영리·상업 목적이 아닌 이용에 한해 제공된다. noriori는 판매·광고 없는 비영리 기록 도구로 이 조건 안에서 쓴다. 상업적으로 다시 쓰려면 이 행들을 빼야 한다 |
 | `rail.pmtiles`의 `edge` 레이어, `source/geometry/` | 선로 모양 | [원 자료의 조건](source/geometry/LICENSE.md) |
 | `source/geometry/n05.yaml`, `overrides/geometry/n05_fill.yaml`, `overrides/positions/n05_fill.yaml` (`rail.pmtiles`의 `edge` 레이어와 역 좌표에 포함) | N02와 OSM에 없는 폐선 구간의 선로 모양 | 国土数値情報 이용 조건 (非商用). CC BY 4.0 아님 |
 | `overrides/platforms/n05.yaml` (`master.sqlite`의 `platform`·`station_hub`·`station_platform` 표, `rail.pmtiles`의 `hubnode`·`platform`·`spoke` 레이어) | 환승역의 노선별 승강장 위치와 통합 노드 (DESIGN §7.5) | 国土数値情報 이용 조건 (非商用). `tools/dev/platforms.py`가 N05 역 점에서 고름 |

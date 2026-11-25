@@ -106,4 +106,4 @@ The repository is laid out as `apps/noriori` (app), `packages/noriori_core` (rul
 
 ## License
 
-Code is under the [Apache License 2.0](LICENSE) and data under [CC BY-SA 4.0](data/LICENSE). Track geometry follows the terms of its original sources. See [NOTICE](NOTICE) and [data/NOTICE.md](data/NOTICE.md) for details.
+Code is under the [Apache License 2.0](LICENSE) and data under [CC BY-SA 4.0](data/LICENSE). Track geometry follows the terms of its original sources. Data derived from the MLIT N05 railway time series (mainly geometry and coordinates of closed stations) may be used for non-commercial purposes only; noriori is a free, ad-free, non-commercial tool. See [NOTICE](NOTICE) and [data/NOTICE.md](data/NOTICE.md) for details.
