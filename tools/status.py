@@ -44,7 +44,7 @@ last=one('select count(*) from edge_life where last_service is not null')
 reason=dict(m.execute('select close_reason,count(*) from edge_life where close_reason is not null group by 1'))
 out=f"""# noriori DB 현황
 
-`python3 -I tools/status.py`가 빌드 결과로 만든 문서입니다. 기준일 {rep['today']}. 설계는 [DESIGN.md](DESIGN.md), 구축 과정은 [db-build-log.md](db-build-log.md)에 있습니다.
+`python3 -I tools/status.py`가 빌드 결과로 만든 문서입니다. 기준일 {rep['today']}. 설계는 [DESIGN.md](DESIGN.md), 감사와 조사 기록은 [research/](research/)에 있습니다.
 
 ## 규모
 
@@ -98,7 +98,7 @@ out+=f"""
 | JR→타사 이관 | {f"{len(gen['transfers'])}건" if gen else SKIP} |
 | 오늘자 이웃 역 쌍, 노리츠부시 표 대조 | {f"{au['오늘 이웃 쌍, DB에만'].get('ok')}쌍 일치, 표에만 있는 {au['오늘 이웃 쌍, 표에만']['n']}쌍은 화물·연락선·기간 한정 별선" if au else SKIP} |
 
-표본 감사는 세 차례 했습니다. 3차 결과와 항목별 처리는 [db-build-log.md](db-build-log.md)에 있습니다. 규칙 검사는 `tools/audit_db.py`, 원자료 전수 대조는 `tools/audit_ext.py`입니다. 역 개업일과 폐지일은 역 문서의 `{{{{駅情報}}}}`를 우선으로 씁니다. 항목별 처리 결과는 [db-build-log.md](db-build-log.md)에 있습니다.
+감사 결과와 항목별 처리는 [research/](research/)의 회차별 문서에 있습니다. 규칙 검사는 `tools/audit_db.py`, 원자료 전수 대조는 `tools/audit_ext.py`입니다. 역 개업일과 폐지일은 역 문서의 `{{{{駅情報}}}}`를 우선으로 씁니다.
 
 ## 위치와 선형
 
@@ -150,7 +150,6 @@ out+=f"""
 - **역명 이력**: 역 문서 연혁에서 자동으로 뽑았습니다 ({n.execute("select count(*) from name where valid_to is not null").fetchone()[0]}행). 사철 문서 일부는 빠졌습니다. 한글 표기가 없는 옛 이름은 현행 한글로 보입니다.
 - **불통 이력**: 지금 끊긴 구간 {one("select count(distinct edge_id) from edge_life where status='suspended' and valid_to='ongoing'")}개 edge와 동일본 대지진, 2010년대 호우 등 주요 장기 불통만 넣었습니다. 몇 달 이내의 불통은 없습니다.
 - **기준일 뒤 폐지인데 열람 전용**: {one("select count(*) from archive_line where closed>='1950-01-01'")}개 노선은 km를 못 구해 기록할 수 없습니다.
-- **표시 규칙 목업**: v0.23 이후 표시 규칙이 `mockups/wiki-compare.html`에 반영되지 않았습니다.
 
 ## 다시 만들기
 

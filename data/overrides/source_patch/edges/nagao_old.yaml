@@ -1,3 +1,3 @@
 # 長尾線 옛 경로 (DECISIONS 30번)
 # 보정 행의 edge·노드 번호는 생성기가 쓰지 않는 90000번대
-- {"patch": "add", "id": "e_090001", "a": "n_kawaramachi_takamatsu_kotohira", "b": "n_hanazono_takamatsu_kotohira", "seed_line": "l_nagao_line", "route_only": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "why": "長尾線 1951-12-26 경로 변경 전 옛 경로(琴電高松–旧出晴 쪽–花園). 생성기 n05_fix branch 결함(docs/TODO.md) 대신. 재생성으로 원본에 생기면 지움"}
+- {"patch": "add", "id": "e_090001", "a": "n_kawaramachi_takamatsu_kotohira", "b": "n_hanazono_takamatsu_kotohira", "seed_line": "l_nagao_line", "route_only": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "why": "長尾線 1951-12-26 경로 변경 전 옛 경로(琴電高松–旧出晴 쪽–花園). 생성기 n05_fix branch 결함(docs/TODO.md 생성기 정리) 대신. 재생성으로 원본에 생기면 지움"}

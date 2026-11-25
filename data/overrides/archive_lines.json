@@ -1,5 +1,5 @@
 {
- "설명": "열람 전용 노선(archive_line) 보정. 컴파일 단계에서 적용하고, 쓰이지 않는 행은 컴파일 오류. drop: 이미 기록 노선이 있는 같은 노선(이름 표기 차이로 gen_extra가 중복 생성, 2026-11-05 원문 재판정). 값은 그 기록 노선. closed: 원문과 다른 폐지일. 재생성기를 고치면 지운다 (docs/handoff/docs/TODO.md.md). exclude: 수록 대상이 아닌 종류(DESIGN §4.1: 여객 영업이 없던 화물선·군용선·차량 반입 연락선, 미개업 계획선). 값은 사유 (DB 감사 D5, 원문 재판정 2026-11-05) drop_stop·stop_closed·line_at (재설계 통합 int_identity 2026-11-08, 컴파일 단계 적용은 본 작업 구현 대기): drop_stop은 이름으로 다른 노선에 복사된 열람 전용 역 행(값은 사유, 맞는 행 ID 포함), stop_closed는 열람 전용 역의 폐지일(휴지 해가 들어간 행), line_at은 열람 전용 노선이 붙는 노드(null은 접속 역 없음) stop_opened는 열람 전용 역의 개업일(원천 빈칸)",
+ "설명": "열람 전용 노선(archive_line) 보정. 컴파일 단계에서 적용하고, 쓰이지 않는 행은 컴파일 오류. drop: 이미 기록 노선이 있는 같은 노선(이름 표기 차이로 gen_extra가 중복 생성, 2026-11-05 원문 재판정). 값은 그 기록 노선. closed: 원문과 다른 폐지일. 재생성기를 고치면 지운다 (docs/TODO.md 생성기 정리). exclude: 수록 대상이 아닌 종류(DESIGN §4.1: 여객 영업이 없던 화물선·군용선·차량 반입 연락선, 미개업 계획선). 값은 사유 (DB 감사 D5, 원문 재판정 2026-11-05) drop_stop·stop_closed·line_at (재설계 통합 int_identity 2026-11-08, 컴파일 단계 적용은 본 작업 구현 대기): drop_stop은 이름으로 다른 노선에 복사된 열람 전용 역 행(값은 사유, 맞는 행 ID 포함), stop_closed는 열람 전용 역의 폐지일(휴지 해가 들어간 행), line_at은 열람 전용 노선이 붙는 노드(null은 접속 역 없음) stop_opened는 열람 전용 역의 개업일(원천 빈칸)",
  "drop": {
   "a_saru_railway": "l_saru_railway_line",
   "a_taiheiyosekitanhambaiyusorinko_line": "l_rinko_line",
