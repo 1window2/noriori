@@ -497,6 +497,7 @@
 - {"id": "hub_kodaimae", "nodes": ["n_kodaimae", "n_kyushukodaimae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_edamitsu", "nodes": ["n_edamitsu", "n_edamitsu_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_yahata", "nodes": ["n_yahata", "n_yahata_ekimae", "n_yahata_kagoshima_main"], "source": ["station_database", "proximity_300m"], "verified": false}
+- {"id": "hub_momozono_nishi_nippon", "nodes": ["n_momozono_nishi_nippon", "n_nishi_yahata"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_kurosaki", "nodes": ["n_kurosaki", "n_kurosaki_ekimae"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_orio", "nodes": ["n_orio", "n_orio_nishi_nippon"], "source": ["station_database", "proximity_300m"], "verified": false}
 - {"id": "hub_chihaya", "nodes": ["n_chihaya", "n_nishitetsuchihaya"], "source": ["station_database", "proximity_300m"], "verified": false}

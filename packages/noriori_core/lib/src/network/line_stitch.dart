@@ -461,7 +461,8 @@ final class _Stitch {
         } else {
           final anchorRow = items[ia];
           items = [...rev(seq), ...items.sublist(ia)];
-          if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: true, rows: rev(frows), period: periodNew(frows)));
+          // 접힌 행은 늘 화면 순서(위→아래)다. 본선 구간(region)은 이미 그 순서라 뒤집지 않는다(瀬戸線 1965 栄町·東大手, 総武本線 1965 東京–錦糸町)
+          if (frows.isNotEmpty) folds.add(_Fold(anchor: anchorRow, up: true, rows: frows, period: periodNew(frows)));
         }
         continue;
       }
@@ -586,11 +587,27 @@ final class _Stitch {
       return (open: true, section: true, end: const SectionEnd());
     }
 
+    // 역 개업 해는 그 노드의 같은 노선 모든 계통(옛 선형 포함) 가운데 가장 이른 정차 해다(会津線 湯野上温泉 1932, 5회차 R10)
+    final firstOpen = <String, String>{};
+    for (final r in s.network.routesOfLine(lineId)) {
+      final stopsAt = {for (final st in net.stops(r)) if (st.isStop) st.node};
+      for (final row in rows(r)?.rows ?? const <SelectorRow>[]) {
+        final y = row.openYear;
+        if (y == null || row.passing || !stopsAt.contains(row.node)) continue;
+        final had = firstOpen[row.node];
+        if (had == null || y.compareTo(had) < 0) firstOpen[row.node] = y;
+      }
+    }
+    _R earliest(_R x) {
+      final y = firstOpen[x.row.node];
+      return y == null || x.row.openYear == null || y.compareTo(x.row.openYear!) >= 0 ? x : _R(x.row.copy(openYearAs: y), x.route);
+    }
+
     RouteRows pack(String routeId, List<_R> list) {
       final gaps = [for (var k = 0; k + 1 < list.length; k++) gapOf(list[k], list[k + 1])];
       return RouteRows(
         routeId: routeId,
-        rows: [for (final x in list) renum(x)],
+        rows: [for (final x in list) renum(earliest(x))],
         openGaps: [for (final g in gaps) g.open],
         sectionGaps: [for (final g in gaps) g.section],
         sectionEnds: [for (final g in gaps) g.end],
@@ -634,7 +651,8 @@ final class _Stitch {
         frame: frame,
         anchor: seqOf[kmMain[anchorIdx]]!,
         up: f.up,
-        rows: dead ? RouteRows(routeId: pk.routeId, rows: [for (final r in pk.rows) r.copy(selectable: false)], openGaps: pk.openGaps, sectionGaps: pk.sectionGaps, sectionEnds: pk.sectionEnds) : pk,
+        // 날짜 모름에서 고를 수 있는지는 역 행이 정한다(1950 뒤 여객 정차). 폐지된 본선 칸 안의 접힌 줄도 폐지된 본선 역과 같다 (2026-11-23)
+        rows: pk,
         rejoin: rejoinIdx < 0 ? null : mainRows.rows[rejoinIdx].seq,
         period: f.period,
         next: '',
@@ -655,7 +673,7 @@ final class _Stitch {
     return StitchedLine(main: mainRows, folds: out, origin: origin, used: used, lengthKm: length, foreignKm: foreign);
   }
 
-  /// 날짜 모름에서 접힌 줄을 품은 본선 칸이 오늘 폐지됐는가
+  /// 날짜 모름에서 접힌 줄을 품은 본선 칸이 오늘 폐지됐는가(흐리게 그린다. 고를 수 있는지는 바꾸지 않는다)
   bool _deadIn(RouteRows main, int anchorIdx, bool up) {
     final k = up ? anchorIdx - 1 : anchorIdx;
     if (k < 0 || k >= main.sectionGaps.length) return false;
@@ -699,7 +717,15 @@ final class _Stitch {
   List<_R> _chain(List<_R> list) {
     if (list.isEmpty) return list;
     bool liveRoute(String r) => date == null || openOn(r, rows(r));
-    var o = list.indexWhere((x) => _official(x.route, x.node) != null && liveRoute(x.route));
+    // km 원점은 그날 다니는 계통의 기점(km 0) 행이다. 계통 km는 그 계통 기점에서 잰 값이라, 줄 머리에 붙은 다른 계통 조각의 중간 km
+    // (福知山線 1965 尼崎港線 尼崎港 4.6, 塚口에서 잼)로 잡으면 본선 km가 통째로 밀린다. 기점 행이 없을 때만 맨 위 공식 km 행이다
+    var o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0 && liveRoute(x.route));
+    // 기점 행이 없으면 그날 줄의 맨 위 역이 0이다(그날의 영업거리, DESIGN §8.3 km 결정 A). 그 역의 계통 중간 km(内子線 1965 内子（旧） 5.6)를 원점으로 쓰지 않는다
+    var zeroAtTop = false;
+    if (o < 0) {
+      o = list.indexWhere((x) => _official(x.route, x.node) != null && liveRoute(x.route));
+      zeroAtTop = o >= 0;
+    }
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node)?.km == 0);
     if (o < 0) o = list.indexWhere((x) => _official(x.route, x.node) != null);
     if (o < 0) return list;
@@ -742,6 +768,7 @@ final class _Stitch {
     }
 
     fresh(o, list[o].route);
+    if (zeroAtTop && km[o] != null) km[o] = 0;
     var last = o;
     var prev = o;
     var restart = false;

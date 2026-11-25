@@ -1672,7 +1672,7 @@
 - {"node": "n_shinjuku_odakyu", "lat": 35.691182, "lon": 139.699648, "source": "n05", "n05_line": "小田原線", "n05_operator": "小田急電鉄", "years": [1950, 9999]}
 - {"node": "n_shinjuku_sanchome_toei", "lat": 35.69084, "lon": 139.706535, "source": "n05", "n05_line": "10号線新宿線", "n05_operator": "東京都", "years": [1980, 9999]}
 - {"node": "n_shinjuku_sanchome_tokyo_metro", "lat": 35.69118, "lon": 139.70421, "source": "n05", "n05_line": "4号線丸ノ内線", "n05_operator": "東京地下鉄", "years": [2004, 9999], "lines": {"l_fukutoshin_line": [35.690583, 139.704752, "13号線副都心線"], "l_marunouchi_line": [35.69118, 139.70421, "4号線丸ノ内線"]}}
-- {"node": "n_shinjuku_toei", "lat": 35.68843, "lon": 139.698615, "source": "n05", "n05_line": "10号線新宿線", "n05_operator": "東京都", "years": [1980, 9999], "lines": {"l_oedo_line": [35.687625, 139.69935, "12号線大江戸線"], "l_shinjuku_line_toei": [35.68843, 139.698615, "10号線新宿線"]}}
+- {"node": "n_shinjuku_toei", "lat": 35.687625, "lon": 139.69935, "source": "n05", "n05_line": "12号線大江戸線", "n05_operator": "東京都", "years": [1997, 9999]}
 - {"node": "n_shinjuku_tokyo_metro", "lat": 35.692467, "lon": 139.700549, "source": "n05", "n05_line": "4号線丸ノ内線", "n05_operator": "東京地下鉄", "years": [2004, 9999]}
 - {"node": "n_shinkaichi", "lat": 34.675992, "lon": 135.169563, "source": "n05", "n05_line": "3号線", "n05_operator": "神戸市", "years": [1950, 1967]}
 - {"node": "n_shinkaichi_hankyu", "lat": 34.676455, "lon": 135.16993, "source": "n05", "n05_line": "神戸高速線", "n05_operator": "阪急電鉄", "years": [1973, 9999]}
@@ -2122,3 +2122,4 @@
 - {"node": "n_zoshigaya", "lat": 35.7202, "lon": 139.714715, "source": "n05", "n05_line": "13号線副都心線", "n05_operator": "東京地下鉄", "years": [2008, 9999]}
 - {"node": "n_zushi", "lat": 35.297391, "lon": 139.57837, "source": "n05", "n05_line": "横須賀線", "n05_operator": "東日本旅客鉄道（旧国鉄）", "years": [1950, 9999]}
 - {"node": "n_zushihayama", "lat": 35.294291, "lon": 139.580518, "source": "n05", "n05_line": "逗子線", "n05_operator": "京浜急行電鉄", "years": [2020, 9999]}
+- {"node": "n_shinjuku_keio_new_line", "lat": 35.68843, "lon": 139.698615, "source": "n05", "n05_line": "10号線新宿線", "n05_operator": "東京都", "years": [1978, 9999]}

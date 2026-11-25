@@ -1,5 +1,5 @@
 {
- "설명": "끝 노드로 고를 수 있는데 어느 계통도 서지 않는 날의 노드 정체(5번 결정 2026-11-21). kind: signal(신호장·신호소) junction(분기점만) station_no_passenger(승객 없는 역·화물역·운휴) none(그 자리에 아무것도 없음). to는 그 다음 날(끝 날 포함 안 함). compile route_stop_select의 style을 정하는 첫째 근거. 조사: ja.wikipedia 역·노선 문서(판 번호·인용), 2026-11-21",
+ "설명": "끝 노드로 고를 수 있는데 어느 계통도 서지 않는 날의 노드 정체(5번 결정 2026-11-21). kind: signal(신호장·신호소) junction(분기점만) station_no_passenger(승객 없는 역·화물역·운휴) none(그 자리에 아무것도 없음). to는 그 다음 날(끝 날 포함 안 함). compile route_stop_select의 style을 정하는 첫째 근거. 조사: ja.wikipedia 역·노선 문서(판 번호·인용), 2026-11-21 / staff_only: 회사 관계자 전용 정식 역(일반 승객 승하차 없음). 노선 일람에 보이되 고를 수 없다. 이 표에 적은 노드만 해당(노드 종류·이름에서 끌어오지 않음, 2026-11-24)",
  "rows": [
   {
    "node": "n_aizu_sanson_dojo",
@@ -2222,6 +2222,12 @@
    "source": "https://ja.wikipedia.org/w/index.php?oldid=104615186",
    "quote": "1995年2月27日 廃止",
    "note": "高島 화물역 폐지 뒤 그 자리에 시설 없음 (조사 2026-11-21)"
-  }
+  },
+{"node": "n_yanagibashi", "kind": "staff_only", "from": "1953-11-16", "to": null, "name": null, "confidence": "중간", "source": "위키 黒部峡谷鉄道 rev111588021 「関電関係者専用駅については…一般乗客に乗車券の販売はされない」 + trafficnews.jp/post/568688 2/3 「一般客は乗降できない柳橋駅」", "note": "関西電力関係者専用駅: 일반 승객 승하차 없음(한시 개방 기간은 stop_dates 정차). 노선 일람에 보이되 고를 수 없음 (사용자 결정 2026-11-24)"},
+{"node": "n_moriishi", "kind": "staff_only", "from": "1953-11-16", "to": null, "name": null, "confidence": "중간", "source": "위키 黒部峡谷鉄道 rev111588021 関電関係者専用駅(근거 중간 하나)", "note": "関西電力関係者専用駅: 일반 승객 승하차 없음(한시 개방 기간은 stop_dates 정차). 노선 일람에 보이되 고를 수 없음 (사용자 결정 2026-11-24)"},
+{"node": "n_dashidaira", "kind": "staff_only", "from": "1953-11-16", "to": null, "name": null, "confidence": "중간", "source": "위키 黒部峡谷鉄道 rev111588021 関電関係者専用駅(근거 중간 하나)", "note": "関西電力関係者専用駅: 일반 승객 승하차 없음(한시 개방 기간은 stop_dates 정차). 노선 일람에 보이되 고를 수 없음 (사용자 결정 2026-11-24)"},
+{"node": "n_koyadaira", "kind": "staff_only", "from": "1953-11-16", "to": null, "name": null, "confidence": "중간", "source": "위키 黒部峡谷鉄道 rev111588021 関電関係者専用駅(근거 중간 하나)", "note": "関西電力関係者専用駅: 일반 승객 승하차 없음(한시 개방 기간은 stop_dates 정차). 노선 일람에 보이되 고를 수 없음 (사용자 결정 2026-11-24)"},
+{"node": "n_sasadaira", "kind": "staff_only", "from": "1953-11-16", "to": null, "name": null, "confidence": "중간", "source": "위키 黒部峡谷鉄道 rev111588021 関電関係者専用駅 + tetsudo-ch.com/12998626(2025-05-03~09만 하차 가능)", "note": "関西電力関係者専用駅: 일반 승객 승하차 없음(한시 개방 기간은 stop_dates 정차). 노선 일람에 보이되 고를 수 없음 (사용자 결정 2026-11-24)"},
+{"node": "n_nekomata", "kind": "staff_only", "from": "1953-11-16", "to": null, "name": null, "confidence": "중간", "source": "위키 黒部峡谷鉄道 rev111588021 + tetsudo-ch.com/12998626 「工事関係者専用の駅」·travelvoice.jp/20260706-160118 「10月1日以降は猫又駅での乗降ができなくなる」", "note": "関西電力関係者専用駅: 일반 승객 승하차 없음(한시 개방 기간은 stop_dates 정차). 노선 일람에 보이되 고를 수 없음 (사용자 결정 2026-11-24)"}
  ]
 }

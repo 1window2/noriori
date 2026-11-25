@@ -13,6 +13,9 @@ enum CutBlock {
 
   /// 조각을 다시 펼치면 경로나 날짜가 달라진다. 기록을 건드리지 않는다.
   changesPath,
+
+  /// 이 기록의 방향 열차가 서지 않는(한 방향 정차) 역에서 끊어야 한다. 그 역에서는 타고 내릴 수 없어 조각이 기록이 되지 않는다 (DESIGN §8 한 방향 정차).
+  noStop,
 }
 
 sealed class CutOutcome {
@@ -89,6 +92,16 @@ CutOutcome cutSection(
   }
   for (final run in runs.skip(1)) {
     if (!network.isShown(run.first.from)) return const CutBlocked(CutBlock.hiddenNode);
+  }
+  // 끊는 역이 이 기록 방향 열차의 승하차를 받지 않으면(士幌線 黒石平 하행만·電力所前 상행만) 그 역을 끝으로 하는 조각은 탈 수 없는 기록이다
+  for (var k = 1; k < runs.length; k++) {
+    final node = runs[k].first.from;
+    final arrive = runs[k - 1].last;
+    final depart = runs[k].first;
+    if (_refuses(network, arrive, node, expansions[arrive.leg].date, departing: false) ||
+        _refuses(network, depart, node, expansions[depart.leg].date, departing: true)) {
+      return const CutBlocked(CutBlock.noStop);
+    }
   }
   final before = interpreter.ride(ride);
   var keptFirst = false;
@@ -196,4 +209,16 @@ String? _keptAlignment(Network network, Ride ride, List<_Hop> group, String from
     if (got.saved && got.edges.length == want.length && want.containsAll(got.edges)) return option.asOf;
   }
   return null;
+}
+
+/// 그 칸을 달리는 이 기록 방향 열차가 [node]에서 타거나(departing) 내리지 못하는가.
+bool _refuses(Network network, _Hop hop, String node, DateSpan? day, {required bool departing}) {
+  final row = network.stopDirectionOf(hop.route, node, day);
+  if (row == null) return false;
+  final stops = network.stops(hop.route);
+  final a = stops.indexWhere((stop) => stop.node == hop.from);
+  final b = stops.indexWhere((stop) => stop.node == hop.to);
+  if (a < 0 || b < 0 || a == b) return false;
+  final direction = b > a ? seqUp : seqDown;
+  return row.direction != direction || (departing && row.use == 'alight') || (!departing && row.use == 'board');
 }

@@ -606,6 +606,12 @@ class Translations$session$ko {
 	/// ko: '운휴 전 날짜로만 기록할 수 있어요'
 	String get noticeSuspendedSub => '운휴 전 날짜로만 기록할 수 있어요';
 
+	/// ko: '보통 $from월~$to월에만 다녀요. 이 날은 운행하지 않아요'
+	String noticeSeasonSub({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요. 이 날은 운행하지 않아요';
+
+	/// ko: '보통 $from월~$to월에만 다녀요'
+	String noticeSeasonAnySub({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요';
+
 	/// ko: '개업한 뒤 날짜로 기록할 수 있어요'
 	String get noticeBeforeSub => '개업한 뒤 날짜로 기록할 수 있어요';
 
@@ -691,6 +697,9 @@ class Translations$session$ko {
 	/// ko: '$name: 폐역($year). 기록할 수 없는 옛 역입니다'
 	String archiveStop({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다';
 
+	/// ko: '$name: 폐역($year). 기록할 수 없는 옛 역입니다. 지금의 $now역 자리'
+	String archiveStopNow({required Object name, required Object year, required Object now}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다. 지금의 ${now}역 자리';
+
 	/// ko: '$name: 기록할 수 없는 옛 노선입니다'
 	String archiveLine({required Object name}) => '${name}: 기록할 수 없는 옛 노선입니다';
 
@@ -708,6 +717,9 @@ class Translations$session$ko {
 
 	/// ko: '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요'
 	String get whyViewNoBoarding => '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요';
+
+	/// ko: '승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요'
+	String get whyViewStaff => '승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요';
 
 	/// ko: '하행만'
 	String get onlyDown => '하행만';
@@ -834,6 +846,9 @@ class Translations$session$ko {
 
 	/// ko: '운휴 중'
 	String get suspendedSection => '운휴 중';
+
+	/// ko: '계절 운행'
+	String get seasonSection => '계절 운행';
 
 	/// ko: '옛 선로 · $km km'
 	String relocationOld({required Object km}) => '옛 선로 · ${km} km';
@@ -1109,11 +1124,13 @@ class Translations$sources$ko {
 	late final Translations$sources$n02$ko n02 = Translations$sources$n02$ko._(_root);
 	late final Translations$sources$n05$ko n05 = Translations$sources$n05$ko._(_root);
 	late final Translations$sources$n03$ko n03 = Translations$sources$n03$ko._(_root);
+	late final Translations$sources$gsi$ko gsi = Translations$sources$gsi$ko._(_root);
 	late final Translations$sources$stationDatabase$ko stationDatabase = Translations$sources$stationDatabase$ko._(_root);
 	late final Translations$sources$wikipedia$ko wikipedia = Translations$sources$wikipedia$ko._(_root);
 	late final Translations$sources$wikidata$ko wikidata = Translations$sources$wikidata$ko._(_root);
 	late final Translations$sources$namuwiki$ko namuwiki = Translations$sources$namuwiki$ko._(_root);
 	late final Translations$sources$noritsubushi$ko noritsubushi = Translations$sources$noritsubushi$ko._(_root);
+	late final Translations$sources$others$ko others = Translations$sources$others$ko._(_root);
 	late final Translations$sources$openFreeMap$ko openFreeMap = Translations$sources$openFreeMap$ko._(_root);
 	late final Translations$sources$openStreetMap$ko openStreetMap = Translations$sources$openStreetMap$ko._(_root);
 	late final Translations$sources$noto$ko noto = Translations$sources$noto$ko._(_root);
@@ -1239,6 +1256,9 @@ class Translations$lineDetail$ko {
 
 	/// ko: '이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요'
 	String get blockedPath => '이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요';
+
+	/// ko: '이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요'
+	String get blockedNoStop => '이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요';
 
 	/// ko: '이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요'
 	String get blockedOn => '이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요';
@@ -1873,6 +1893,9 @@ class Translations$session$state$ko {
 	/// ko: '운휴'
 	String get suspended => '운휴';
 
+	/// ko: '휴무'
+	String get offSeason => '휴무';
+
 	/// ko: '운휴 $year~'
 	String suspendedSince({required Object year}) => '운휴 ${year}~';
 
@@ -1967,6 +1990,24 @@ class Translations$sources$n03$ko {
 	String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
 }
 
+// Path: sources.gsi
+class Translations$sources$gsi$ko {
+	Translations$sources$gsi$ko._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// ko: '国土地理院 ベクトルタイル'
+	String get name => '国土地理院 ベクトルタイル';
+
+	/// ko: '田端信号場 일대 선로 모양 일부'
+	String get use => '田端信号場 일대 선로 모양 일부';
+
+	/// ko: '国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成'
+	String get terms => '国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成';
+}
+
 // Path: sources.stationDatabase
 class Translations$sources$stationDatabase$ko {
 	Translations$sources$stationDatabase$ko._(this._root);
@@ -2055,6 +2096,24 @@ class Translations$sources$noritsubushi$ko {
 
 	/// ko: '사실 정보로 사용'
 	String get terms => '사실 정보로 사용';
+}
+
+// Path: sources.others
+class Translations$sources$others$ko {
+	Translations$sources$others$ko._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+
+	/// ko: '그 밖의 사실 근거'
+	String get name => '그 밖의 사실 근거';
+
+	/// ko: '사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진'
+	String get use => '사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진';
+
+	/// ko: '사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다'
+	String get terms => '사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다';
 }
 
 // Path: sources.openFreeMap
@@ -2268,6 +2327,7 @@ extension on Translations {
 			'session.noPath' => '이 두 역 사이의 경로를 찾지 못했습니다',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => '운휴',
+			'session.state.offSeason' => '휴무',
 			'session.state.suspendedSince' => ({required Object year}) => '운휴 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
@@ -2279,6 +2339,8 @@ extension on Translations {
 			'session.handNote' => '이 구간은 그 노선으로 기록돼요',
 			'session.noticeClosedSub' => '그 전 날짜로만 기록할 수 있어요',
 			'session.noticeSuspendedSub' => '운휴 전 날짜로만 기록할 수 있어요',
+			'session.noticeSeasonSub' => ({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요. 이 날은 운행하지 않아요',
+			'session.noticeSeasonAnySub' => ({required Object from, required Object to}) => '보통 ${from}월~${to}월에만 다녀요',
 			'session.noticeBeforeSub' => '개업한 뒤 날짜로 기록할 수 있어요',
 			'session.chooseDirection' => '어느 쪽으로 탔나요?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -2306,12 +2368,14 @@ extension on Translations {
 			'session.closedSection' => ({required Object year}) => '~${year} 폐지',
 			'session.openedSection' => ({required Object year}) => '${year}년 개업',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다',
+			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다. 지금의 ${now}역 자리',
 			'session.archiveLine' => ({required Object name}) => '${name}: 기록할 수 없는 옛 노선입니다',
 			'session.from' => '출발',
 			'session.to' => '도착',
 			'session.whyClosed' => '그 날짜에는 운영하지 않던 역입니다',
 			'session.whyViewSignal' => '신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요',
 			'session.whyViewNoBoarding' => '이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요',
+			'session.whyViewStaff' => '승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요',
 			'session.onlyDown' => '하행만',
 			'session.onlyUp' => '상행만',
 			'session.onlyOneWay' => '한 방향만',
@@ -2354,6 +2418,7 @@ extension on Translations {
 			'session.repick' => '다른 역을 누르면 처음부터 다시 고릅니다',
 			'session.closedUnknown' => '폐지 구간',
 			'session.suspendedSection' => '운휴 중',
+			'session.seasonSection' => '계절 운행',
 			'session.relocationOld' => ({required Object km}) => '옛 선로 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '새 선로 · ${km} km',
 			'session.spokenOpen' => '영업 중',
@@ -2440,6 +2505,9 @@ extension on Translations {
 			'sources.n03.name' => '국토수치정보 행정구역 (N03)',
 			'sources.n03.use' => '일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.gsi.name' => '国土地理院 ベクトルタイル',
+			'sources.gsi.use' => '田端信号場 일대 선로 모양 일부',
+			'sources.gsi.terms' => '国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => '역 목록과 좌표',
 			'sources.stationDatabase.terms' => 'Seo-4d696b75. CC BY-SA 4.0',
@@ -2455,6 +2523,9 @@ extension on Translations {
 			'sources.noritsubushi.name' => '노리츠부시',
 			'sources.noritsubushi.use' => '영업거리, 역 순서, 기본 날짜, 일본어 표기',
 			'sources.noritsubushi.terms' => '사실 정보로 사용',
+			'sources.others.name' => '그 밖의 사실 근거',
+			'sources.others.use' => '사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진',
+			'sources.others.terms' => '사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다',
 			'sources.openFreeMap.name' => 'OpenFreeMap',
 			'sources.openFreeMap.use' => '배경 지도',
 			'sources.openFreeMap.terms' => 'OpenFreeMap © OpenMapTiles. Data from OpenStreetMap',
@@ -2498,6 +2569,7 @@ extension on Translations {
 			'lineDetail.restored' => '지운 기록을 되살렸습니다',
 			'lineDetail.blockedHidden' => '역이 아닌 지점에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요',
 			'lineDetail.blockedPath' => '이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요',
+			'lineDetail.blockedNoStop' => '이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요',
 			'lineDetail.blockedOn' => '이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요',
 			'lineDetail.visitAdded' => '방문으로 표시했습니다',
 			'lineDetail.visitRemoved' => '방문을 지웠습니다',
@@ -2618,6 +2690,8 @@ extension on Translations {
 			'prefNames.6' => '후쿠시마',
 			'prefNames.7' => '이바라키',
 			'prefNames.8' => '도치기',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.9' => '군마',
 			'prefNames.10' => '사이타마',
 			'prefNames.11' => '치바',
@@ -2631,8 +2705,6 @@ extension on Translations {
 			'prefNames.19' => '나가노',
 			'prefNames.20' => '기후',
 			'prefNames.21' => '시즈오카',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.22' => '아이치',
 			'prefNames.23' => '미에',
 			'prefNames.24' => '시가',

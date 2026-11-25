@@ -27,9 +27,21 @@ lines={l['id']:l for l in _src_patch('lines',list(lines.values()))}
 routes=[r for r in _src_patch('routes',routes) if r['line'] in lines]
 nodes={n['id']:n for n in _src_patch('nodes',load('nodes'))}
 names=load('names')
-ja={};
+# 노드의 대표 이름은 지금 이름(노선·기간 한정 아닌 행)이다. 이름 표의 첫 행을 쓰면 행 순서(직전 빌드 결과)에 따라 옛 이름이 대표가 되어
+# 같은 이름 두 노드(京津線 浜大津·びわ湖浜大津) 맞춤이 빌드마다 뒤집혔다 (5회차 2026-11-23)
+ja={};JA_ALL=collections.defaultdict(set);JA_LINE=collections.defaultdict(set)
+for x in names:
+    if x['entity_type']!='node' or x['lang']!='ja':continue
+    JA_ALL[x['id']].add(x['text'])
+    if x.get('line'):JA_LINE[(x['id'],x['line'])].add(x['text'])
+    if not x.get('line') and not x.get('valid_from') and not x.get('valid_to'):ja.setdefault(x['id'],x['text'])
 for x in names:
     if x['entity_type']=='node' and x['lang']=='ja' and x['id'] not in ja:ja[x['id']]=x['text']
+# 노선마다 그 노선 계통이 서는 노드(노선도 역 이름 맞춤에서 먼저 고른다)
+LSTOP=collections.defaultdict(set)
+_rl_={r['id']:r['line'] for r in routes}
+for x_ in load('stops'):
+    if x_.get('route') in _rl_:LSTOP[_rl_[x_['route']]].add(x_['node'])
 line_ja={i:l['name_ja'] for i,l in lines.items()}
 # 노선별 정차역 순서
 edges=[e for e in _src_patch('edges',load('edges')) if e.get('seed_line') in lines]
@@ -276,6 +288,11 @@ years={};kmcheck=[];unmatched=[];archnames=[];ins=[];kmrows={}
 STICON=re.compile(r'(BHF|HST|BST)')
 NOT=re.compile(r'専用|貨物|（社）|\(社\)|工場|車両|基地|信号|操車|車庫|機関区|運転所|検車|電留線|留置|発電|鉱|炭|森林|軌道|索道|ロープウェイ')
 ST=re.compile(r'^([^\s／：・（(]+?)(?:臨時乗降場|仮乗降場|仮停車場|仮停留場|臨時駅|駅|停留場|停車場|乗降場)(?:\s*[（(].*?[)）])?(?:\s+(\d{4})?\s*[-–−~～]\s*(\d{4})?)?')
+# 꼬리(駅·停留場)가 없거나 「電停」인 노선도 역 행(名古屋市電 「南大津町電停 -1918」, 꼬리 없는 「南大津町 -1918」)을 받는 보조 규칙.
+# ST가 받는 행은 ST 그대로라 기존 열람 전용 이름·ID는 바뀌지 않는다. 역 아이콘·NOT 거르기는 똑같이 거친다. 폐역 행 뽑기에만 쓰고,
+# 노선도의 지금 역 자리 맞추기(posd·wiki_row)는 ST 그대로다(꼬리 없는 「浜大津」가 지금 역 자리로 잡혀 기존 열람 전용 앞 노드가 바뀌었다) (5회차 2026-11-23)
+ST2=re.compile(r'^([^\s／：・（(]+?)(?:電停留場|電停)?(?=\s|$|[（(])(?:\s*[（(].*?[)）])?(?:\s+(\d{4})?\s*[-–−~～]\s*(\d{4})?)?')
+def stmatch(t):return ST.match(t) or ST2.match(t)
 CLOSEDICON=re.compile(r'^(ex|x|e[A-Z]|ke|u?ex)')
 cache={};TXT={}
 for lid_,l in lines.items():
@@ -296,10 +313,13 @@ for lid_,l in lines.items():
     stat['docs']+=1
     # 정차역 위치
     S=sorted(adj[lid_])
+    # 노선도 역 이름 → 노드. 이 노선이 서는 노드를 먼저(지금 이름과 그 노선 한정 이름), 다른 노드(지나가는 노드)는 그 이름이 비었을 때만
     nm2n={}
     for n in S:
-        nd=nodes.get(n)
-        if n in ja:nm2n[znorm(ja[n])]=n
+        if n in LSTOP[lid_]:
+            for t_ in sorted(({ja.get(n)}|JA_LINE[(n,lid_)])-{None}):nm2n.setdefault(znorm(t_),n)
+    for n in S:
+        if n in ja:nm2n.setdefault(znorm(ja[n]),n)
     pos=[]
     for i,r in enumerate(flat):
         hit=None
@@ -336,6 +356,14 @@ for lid_,l in lines.items():
     for i,r in enumerate(flat):
         icons=[x for c in r['c'] for x in c]
         m=ST.match(r['t'].strip())
+        # 보조 규칙(꼬리 없음·電停)은 노드가 없는 옛 정류장만 받는다. 이미 노드 이름인 행(京津線 浜大津)은 지금 역이라 열람 전용 후보로 뽑지 않는다
+        if not m:
+            t_=r['t'].strip()
+            # 「鉄軌分界点（福井市駅） -1933」처럼 머리 토막이 분계·분기 지점이고 괄호 안이 역이면 괄호 안 이름이 역이다. 「…点」 머리 토막은 역 이름이 아니다
+            pm_=re.match(r'^[^\s（(]+?点\s*[（(]([^）)]+?)(?:駅|停留場|電停)[)）](.*)$',t_)
+            if pm_:t_=pm_.group(1)+'駅'+pm_.group(2)
+            m=ST.match(t_) or ST2.match(t_)
+            if m and (re.search(r'点$',m.group(1)) or znorm(re.sub(r'(仮|臨時)$','',m.group(1))) in name_nodes):m=None
         if i in posd:
             n=posd[i]
             # 이름이 다른 역으로의 환승: 같은 행(또는 바로 옆 HUB 행)에 적힌 다른 역
@@ -616,13 +644,17 @@ def nocont(a,b):
 JNOT=HT.get('JUNCTION_NOT',[]);JN_USED=set()
 for x_ in JNOT:
     if x_['line'] not in lines or (x_.get('other') and x_['other'] not in lines) or x_['at'] not in nodes or not x_.get('why'):raise SystemExit(f'JUNCTION_NOT 행이 틀렸습니다: {x_}')
+_RLINE={r['id']:r['line'] for r in routes}
 def jnot_per(j):
     """j에 걸리는 JUNCTION_NOT 행들의 '연결 없음' 기간. 쌍의 양쪽 화면 행에 함께 건다"""
     out=[]
     for i_,x_ in enumerate(JNOT):
         # 계통 한정 행(route)은 compile이 그 계통의 연결에만 건다
         if x_['at']!=j['at'] or x_.get('route'):continue
-        if x_.get('other_route'):hit=j['line']==x_['line'] and j.get('other_route')==x_['other_route']
+        # 계통 한정 상대(other_route) 행은 그 계통을 가리키는 행과, 계통을 정하지 않은 노선 단위 행(양쪽 화면)에 건다.
+        # 노선 단위 행은 compile이 상대 노선의 계통으로 풀어 본선 계통에 붙인다(赤羽線 赤羽·川越線 大宮 → 東北本線 본선, 5회차 2026-11-25).
+        # 다른 계통으로 가는 근거 직통은 THROUGH(b_route) 행이 따로 넣는다. 같은 노선 계통끼리 행(東北本線 赤羽)은 늘 계통을 가리키므로 해당 없음
+        if x_.get('other_route'):hit=(j['line']==x_['line'] and j.get('other_route')==x_['other_route']) or (not j.get('other_route') and x_['line']!=_RLINE.get(x_['other_route']) and {j['line'],j['other']}=={x_['line'],_RLINE.get(x_['other_route'])})
         else:hit={j['line'],j['other']}=={x_['line'],x_['other']}
         if hit:JN_USED.add(i_);out.append((x_.get('from') or '0000','9999' if x_.get('to') in (None,'ongoing') else x_['to']))
     return out
@@ -716,8 +748,14 @@ junc=[j for j in junc if (lines[j['line']].get('rule_class')=='shinkansen')==(li
 # 행: {a, b, at: [a 쪽 노드, b 쪽 노드], from, to, src, why[, a_route, b_route, a_side, b_side]}. *_route는 그 쪽 계통(지선), *_side는 그 쪽이
 # 지나가는 역일 때의 분기 방향. 판정 표·궤간 거르기 뒤에 더하므로 이 표가 이긴다 (직통·환승 전수 점검 R4–R6, 2026-11-09)
 TH=[];TH_SKIP=[]
+# 컴파일이 나누는 노드(node_split.json: 지하철역·노면 정류장)의 새 ID로 적은 행은 나누기 전 원 노드로 읽는다. 컴파일이 옮길 노선 쪽 기록을 새 노드로 다시 옮긴다
+# (최종 DB의 n_monzen_nakacho_toden처럼 손 표 작성자가 보는 ID를 그대로 쓸 수 있게, 5회차 옛 평면 교차 2차 2026-11-25)
+_SPLIT_NEW={x_['new_id']:(x_['node'],set(x_['move_lines'])) for x_ in json.load(open(os.path.join(ROOT,'data','overrides','node_split.json'),encoding='utf-8'))}
 for x_ in HT.get('THROUGH',[]):
     for p_,q_,n_,rr_,sd_ in ((x_['a'],x_['b'],x_['at'][0],x_.get('b_route'),x_.get('a_side')),(x_['b'],x_['a'],x_['at'][1],x_.get('a_route'),x_.get('b_side'))):
+        if n_ not in nodes and n_ in _SPLIT_NEW:
+            if p_ not in _SPLIT_NEW[n_][1]:raise SystemExit(f'THROUGH 행이 나뉜 노드의 옮길 노선이 아닌 노선에 걸렸습니다: {p_} {n_}')
+            n_=_SPLIT_NEW[n_][0]
         if p_ not in lines or q_ not in lines or n_ not in nodes:raise SystemExit(f'THROUGH 행의 노선·노드가 없습니다: {p_} {q_} {n_}')
         # 노선이 그 노드를 지나지 않는 행(노선 구성이 바뀐 곳)은 넣지 않고 보고서에 남긴다
         if not _meets(p_,n_):TH_SKIP.append((p_,q_,n_));stat['through_skip']+=1;continue
@@ -847,7 +885,8 @@ junc=out
 # 후보 행이 없어 걸리지 않았어도 두 노선이 실제로 만나는 판정 행은 쓰인 것이다(근거 문서 없는 다른 사업자 쌍의 「선로 연결 없음」, 川部 弘南鉄道黒石線).
 # 멈추는 것은 이름·ID가 틀려 만나는 곳이 없는 행뿐이다
 NC_USED|={k_ for k_ in NOCONT if set.intersection(*[set(ladj[l_]) for l_ in k_])}
-JN_USED|={i_ for i_,x_ in enumerate(JNOT) if _meets(x_['line'],x_['at']) and (x_.get('other_route') or _meets(x_['other'],x_['at']))}
+# 계통 한정 상대 행은 실제로 걸린 것만 쓰인 것으로 센다(걸리지 않으면 아무 일도 하지 않으므로 멈춘다). 계통 한정 행(route)은 compile이 따로 센다
+JN_USED|={i_ for i_,x_ in enumerate(JNOT) if _meets(x_['line'],x_['at']) and (x_.get('route') or (not x_.get('other_route') and _meets(x_['other'],x_['at'])))}
 unused=[sorted(k_) for k_ in NOCONT if k_ not in NC_USED]+[JNOT[i_] for i_ in range(len(JNOT)) if i_ not in JN_USED]
 if unused:raise SystemExit(f'쓰이지 않은 NOCONT·JUNCTION_NOT 행: {unused}')
 os.makedirs(CAND,exist_ok=True)

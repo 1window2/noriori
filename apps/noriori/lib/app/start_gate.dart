@@ -115,6 +115,7 @@ class _Bare extends StatelessWidget {
         locale: TranslationProvider.of(context).flutterLocale,
         supportedLocales: AppLocaleUtils.supportedLocales,
         localizationsDelegates: GlobalMaterialLocalizations.delegates,
+        builder: (context, child) => withTextScaleCap(context, child ?? const SizedBox.shrink()),
         home: child,
       );
 }

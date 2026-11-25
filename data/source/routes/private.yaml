@@ -26,7 +26,7 @@
 - {"id": "r_tamagawa_line", "line": "l_tamagawa_line", "role": "main", "from": "n_musashi_sakai_seibu", "to": "n_koremasa"}
 - {"id": "r_yamaguchi_line_seibu", "line": "l_yamaguchi_line_seibu", "role": "main", "from": "n_tamako", "to": "n_seibu_kyujo_mae"}
 - {"id": "r_keisei_main_line", "line": "l_keisei_main_line", "role": "main", "from": "n_keisei_ueno", "to": "n_narita_airport_terminal_1_keisei", "hidden_stops": ["n_komaino_junction"]}
-- {"id": "r_keisei_main_line_keisei_narita_higashi_narita", "line": "l_keisei_main_line", "role": "branch", "from": "n_keisei_narita", "to": "n_higashi_narita_keisei", "owned": true, "also": ["e_006749"], "hidden_stops": ["n_komaino_junction"]}
+- {"id": "r_keisei_main_line_keisei_narita_higashi_narita", "line": "l_keisei_main_line", "role": "branch", "from": "n_keisei_narita", "to": "n_higashi_narita_keisei", "owned": true, "also": ["e_006752"], "hidden_stops": ["n_komaino_junction"]}
 - {"id": "r_higashi_narita_line", "line": "l_higashi_narita_line", "role": "main", "from": "n_keisei_narita", "to": "n_higashi_narita_keisei", "hidden_stops": ["n_komaino_junction"]}
 - {"id": "r_oshiage_line", "line": "l_oshiage_line", "role": "main", "from": "n_oshiage_keisei", "to": "n_aoto"}
 - {"id": "r_chiba_line", "line": "l_chiba_line", "role": "main", "from": "n_keisei_tsudanuma", "to": "n_chiba_chuo"}
@@ -276,7 +276,7 @@
 - {"id": "r_seikibashi_line", "line": "l_seikibashi_line", "role": "main", "from": "n_yanagawa_okayama", "to": "n_seikibashi"}
 - {"id": "r_hiroden_main_line", "line": "l_hiroden_main_line", "role": "main", "from": "n_hiroshima_hiroden", "to": "n_hiroden_nishi_hiroshima"}
 - {"id": "r_hiroden_main_line_hiroshima_matobacho", "line": "l_hiroden_main_line", "role": "branch", "from": "n_hiroshima_hiroden", "to": "n_matobacho", "owned": true}
-- {"id": "r_hiroden_main_line_tenmacho_hiroden_nishi_hiroshima", "line": "l_hiroden_main_line", "role": "branch", "from": "n_tenmacho", "to": "n_hiroden_nishi_hiroshima", "owned": true, "also": ["e_009843"], "hidden_stops": ["n_kanonmachi"]}
+- {"id": "r_hiroden_main_line_tenmacho_hiroden_nishi_hiroshima", "line": "l_hiroden_main_line", "role": "branch", "from": "n_tenmacho", "to": "n_hiroden_nishi_hiroshima", "owned": true, "also": ["e_009847"], "hidden_stops": ["n_kanonmachi"]}
 - {"id": "r_ujina_line_hiroden", "line": "l_ujina_line_hiroden", "role": "main", "from": "n_kamiyacho_hiroden", "to": "n_hiroshimako"}
 - {"id": "r_eba_line", "line": "l_eba_line", "role": "main", "from": "n_dobashi_hiroden", "to": "n_eba"}
 - {"id": "r_yokogawa_line", "line": "l_yokogawa_line", "role": "main", "from": "n_tokaichimachi", "to": "n_yokogawa_hiroden"}
@@ -288,7 +288,7 @@
 - {"id": "r_taisha_line_ichibata", "line": "l_taisha_line_ichibata", "role": "main", "from": "n_kawato", "to": "n_izumo_taisha_mae"}
 - {"id": "r_kotohira_line", "line": "l_kotohira_line", "role": "main", "from": "n_takamatsu_chikko", "to": "n_kotoden_kotohira"}
 - {"id": "r_nagao_line", "line": "l_nagao_line", "role": "main", "from": "n_kawaramachi_takamatsu_kotohira", "to": "n_nagao_takamatsu_kotohira"}
-- {"id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "line": "l_nagao_line", "role": "branch", "from": "n_kawaramachi_takamatsu_kotohira", "to": "n_hayashimichi", "owned": true, "also": ["e_009967", "e_009968", "e_009969", "e_009970"], "hidden_stops": ["n_hanazono_takamatsu_kotohira"]}
+- {"id": "r_nagao_line_kawaramachi_takamatsu_kotohira_hayashimichi", "line": "l_nagao_line", "role": "branch", "from": "n_kawaramachi_takamatsu_kotohira", "to": "n_hayashimichi", "owned": true, "also": ["e_009971", "e_009972", "e_009973", "e_009974"], "hidden_stops": ["n_hanazono_takamatsu_kotohira"]}
 - {"id": "r_shido_line", "line": "l_shido_line", "role": "main", "from": "n_kawaramachi_takamatsu_kotohira", "to": "n_kotoden_shido"}
 - {"id": "r_takahama_line", "line": "l_takahama_line", "role": "main", "from": "n_takahama_iyotetsu", "to": "n_matsuyama_city_iyotetsu_gunchu"}
 - {"id": "r_yokogawara_line", "line": "l_yokogawara_line", "role": "main", "from": "n_matsuyama_city_iyotetsu_gunchu", "to": "n_yokogawara"}
@@ -314,7 +314,7 @@
 - {"id": "r_sakuramachi_branch_line", "line": "l_sakuramachi_branch_line", "role": "main", "from": "n_nagasaki_ekimae", "to": "n_shiyakusho"}
 - {"id": "r_sakuramachi_branch_line_sakuramachi_furumachi", "line": "l_sakuramachi_branch_line", "role": "branch", "from": "n_sakuramachi_nagasaki_tram", "to": "n_furumachi_nagasaki", "owned": true}
 - {"id": "r_oura_branch_line", "line": "l_oura_branch_line", "role": "main", "from": "n_shinchi_chukagai", "to": "n_ishibashi_nagasaki_tram"}
-- {"id": "r_oura_branch_line_sembacho_ourakaigandori", "line": "l_oura_branch_line", "role": "branch", "from": "n_sembacho", "to": "n_ourakaigandori", "owned": true, "also": ["e_010207"], "hidden_stops": ["n_medical_center"]}
+- {"id": "r_oura_branch_line_sembacho_ourakaigandori", "line": "l_oura_branch_line", "role": "branch", "from": "n_sembacho", "to": "n_ourakaigandori", "owned": true, "also": ["e_010211"], "hidden_stops": ["n_medical_center"]}
 - {"id": "r_hotarujaya_branch_line", "line": "l_hotarujaya_branch_line", "role": "main", "from": "n_nishihamanomachi", "to": "n_hotarujaya"}
 - {"id": "r_kikuchi_line", "line": "l_kikuchi_line", "role": "main", "from": "n_kami_kumamoto_kumamoto", "to": "n_miyoshi_kumamoto"}
 - {"id": "r_kikuchi_line_miyoshi_kikuchi", "line": "l_kikuchi_line", "role": "branch", "from": "n_miyoshi_kumamoto_old", "to": "n_kikuchi", "owned": true}
@@ -359,7 +359,7 @@
 - {"id": "r_choshi_electric_railway_line", "line": "l_choshi_electric_railway_line", "role": "main", "from": "n_choshi_choshi", "to": "n_tokawa_choshi"}
 - {"id": "r_isumi_line", "line": "l_isumi_line", "role": "main", "from": "n_ohara", "to": "n_kazusa_nakano_isumi"}
 - {"id": "r_hokuso_line", "line": "l_hokuso_line", "role": "main", "from": "n_keisei_takasago_hokuso", "to": "n_inba_nihon_idai_hokuso"}
-- {"id": "r_hokuso_line_kita_hatsutomi_hokuso_nishi_shiroi", "line": "l_hokuso_line", "role": "branch", "from": "n_kita_hatsutomi_hokuso", "to": "n_nishi_shiroi", "owned": true, "also": ["e_010490"], "hidden_stops": ["n_shin_kamagaya_hokuso"]}
+- {"id": "r_hokuso_line_kita_hatsutomi_hokuso_nishi_shiroi", "line": "l_hokuso_line", "role": "branch", "from": "n_kita_hatsutomi_hokuso", "to": "n_nishi_shiroi", "owned": true, "also": ["e_010494"], "hidden_stops": ["n_shin_kamagaya_hokuso"]}
 - {"id": "r_shibayama_railway_line", "line": "l_shibayama_railway_line", "role": "main", "from": "n_higashi_narita_shibayama", "to": "n_shibayama_chiyoda"}
 - {"id": "r_rinkai_line", "line": "l_rinkai_line", "role": "main", "from": "n_shin_kiba_tokyo_waterfront_area_rapid_transit", "to": "n_osaki_tokyo_waterfront_area_rapid_transit"}
 - {"id": "r_minatomirai_line", "line": "l_minatomirai_line", "role": "main", "from": "n_yokohama_yokohama_minatomirai", "to": "n_motomachi_chukagai"}

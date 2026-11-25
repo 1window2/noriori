@@ -77,8 +77,11 @@ LICENSE='''# 선형의 이용 조건
 | `n02_legacy.yaml` | 国土数値情報 鉄道データ (N02) 2005·2008·2015판 | 国土数値情報 이용 조건 (商用可). CC BY 4.0 아님 |
 | `n05.yaml` | 国土数値情報 鉄道時系列データ (N05) 2024판. 폐선 구간 중 N02와 OSM에 없는 것만 | 国土数値情報 이용 조건 (非商用). CC BY 4.0 아님 |
 | `osm.yaml` | OpenStreetMap | Open Database License (ODbL) 1.0 |
+| `data/overrides/source_patch/geometry/` 중 출처 `gsi` 행 | 国土地理院 ベクトルタイル 鉄道中心線 (experimental_railcl, 2026-11 수집) | 国土地理院コンテンツ利用規約 (CC BY 4.0 호환, 출처 표시) |
 
 N02 표시: 「国土数値情報（鉄道データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。
+
+지리원 표시: 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成。田端信号場 일대 3칸(5회차 2026-11-24)에만 쓴다.
 
 N05 표시: 「国土数値情報（鉄道時系列データ）」（国土交通省）（https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html）を加工して作成。このデータは国土交通省が作成したものではありません。비상업 목적으로만 씁니다. 공간 오차는 수백 m, 시간 오차는 1~5년일 수 있습니다.
 
@@ -144,11 +147,16 @@ _db=sqlite3.connect(os.path.join(BUILD,'master.sqlite'))
 CUR={r[0] for r in _db.execute("select distinct edge_id from edge_attr where valid_to='ongoing'")}
 CLOSEY={}
 # 원문이 범위일 수 있어 상한 칸으로 본다
-for e_,v_ in _db.execute("select edge_id,max(case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end) from edge_life group by 1"):
-    if v_ and v_!='9999-12-31':CLOSEY[e_]=int(v_[:4])
+# 운휴로 끝난 칸(운휴 중 이설해 계승한 칸은 법적 폐지일까지 운휴 행이 남는다, 5회차 2026-11-24)은 마지막 영업 행이 끝난 해다. 선형은 열차가 다닌 때의 선로여야 한다
+for e_,v_,o_ in _db.execute("select edge_id,max(case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end),max(case when status='open' then (case when valid_to='ongoing' then '9999-12-31' else valid_to_hi end) end) from edge_life group by 1"):
+    if v_ and v_!='9999-12-31':CLOSEY[e_]=int((o_ or v_)[:4])
 # 운행이 먼저 끝나고 법적 폐지가 늦은 구간. N05는 법적 폐지까지 선로를 남겨 두기도 한다
 LEGALY={e_:int(v_[:4]) for e_,v_ in _db.execute("select edge_id,max(legal_abolition) from edge_life group by 1") if v_ and v_[:4].isdigit()}
 STOPS={r[0] for r in _db.execute("select distinct node_id from route_stop where is_stop=1 and valid_to='ongoing'")}
+# 승객은 서지 않아도 지금 있는 정식 시설(관계자 전용역·신호장·승객 없는 역, node_identity의 끝 없는 행)은 좌표를 믿는 지금 역이다.
+# 정차 행으로만 보면 계절 개방이 끝난 猫又·笹平가 옛 역(SOFT)이 되어 黒部峡谷 선로 자르는 점이 빌드마다 달라졌다 (5회차 2026-11-24)
+_NI=json.load(open(os.path.join(ROOT,'data','overrides','node_identity.json'),encoding='utf-8'))
+STOPS|={r['node'] for r in (_NI.get('rows') or []) if isinstance(r,dict) and r.get('to') is None and r.get('kind') in ('staff_only','signal','station_no_passenger')}
 # km가 추정값인 노드 (route_stop.km_estimated). 좌표가 위치 근거로 더 낫다
 KEST={r[0] for r in _db.execute("select distinct node_id from route_stop where km_estimated=1")}
 LOPS=collections.defaultdict(set)

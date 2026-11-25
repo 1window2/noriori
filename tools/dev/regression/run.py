@@ -129,8 +129,9 @@ def de(a,x):
     except ValueError:return False
     return bool(la and lx) and lx<=la and ha<=hx
 # 경고(warn) 단계 검사 가운데 사용자 결정이 허용한 꼴. 사례가 이 검사에만 걸려 있으면 규칙상 정상이다
-RULE_OK={'K02 근거 없는 이어짐(source=derived continue)':'U02 선로가 이어졌으면 정기 직통이 없어도 분기·끝 이어짐으로 그린다(DESIGN §2.9 문자대로). '
-         '근거 칸 없는 이어짐(derived) 경고는 확인 목록이라 결함이 아니다'}
+RULE_OK={'K02 근거 없는 이어짐(source=derived continue)':'U02 선로가 실제로 이어진 끝 역이면 정기 직통이 없어도 끝 이어짐으로 그린다(DESIGN §2.9 문자대로). '
+         '근거 칸 없는 이어짐(derived) 경고는 확인 목록이라 그것만으로는 결함이 아니다. '
+         '국지 선로가 없는 끝 이어짐·입체 교차로 생긴 가짜 연결은 이 사유가 아니라 결정 D7·D8(2026-11-24)대로 근거로 판정하거나 환승으로 둔다'}
 def judge(c):
     """True=고쳐짐, False=남음, None=판정할 자료 없음, 문자열=규칙상 정상 사유"""
     k=c['kind']
@@ -157,12 +158,12 @@ def judge(c):
     # 거짓 연결 지적: 그 역에서 두 노선 사이 분기·끝 이어짐(track_link)이 없어야 한다 (pairs: [[노선, 상대 노선], ...])
     if k=='nolink':return not any(frozenset((a,b,c['node'])) in TL for a,b in c['pairs'])
     # 계통 이음 행: {route, node, other_line|other_route, link_kind?, day?, next?, term?, side?, absent?}. day가 있으면 그날 유효한 행만 본다.
-    # absent면 조건에 맞는 행이 없어야 고쳐짐이다 (3회차 W1a)
+    # absent면 조건에 맞는 행이 없어야 고쳐짐이다 (3회차 W1a). link_raw의 from은 시작 값 그대로(범위 창처럼 확실한 날이 없는 행, 5회차)
     if k=='link':
         return _link_case(c)
     if k=='link_raw':
         rs=[r_ for r_ in LNK[c['route'],c['node']] if (not c.get('other_line') or r_[0]==c['other_line']) and (not c.get('other_route') or r_[1]==c['other_route'])
-            and (not c.get('link_kind') or r_[2]==c['link_kind']) and (not c.get('day') or _on((r_[6],r_[7]),c['day']))]
+            and (not c.get('link_kind') or r_[2]==c['link_kind']) and (not c.get('day') or _on((r_[6],r_[7]),c['day'])) and (not c.get('from') or r_[6]==c['from'])]
         hit=[r_ for r_ in rs if (not c.get('next') or r_[4]==c['next']) and (not c.get('term') or r_[5]==c['term']) and (not c.get('side') or r_[3]==c['side']) and (not c.get('other_node') or r_[8]==c['other_node'])]
         return not hit if c.get('absent') else bool(hit)
     # 선로 연결 있음(nolink의 반대): pairs의 모든 쌍이 그 역에서 분기·끝 이어짐(track_link)
@@ -238,6 +239,10 @@ def judge(c):
         if c.get('absent'):return not v
         return any(r[1]==c['text'] and not r[4] and not r[5] for r in v)
     # 9회차 M: 열람 전용 노선(archive_line)이 이름·다는 역(at)으로 있는가 (archline)
+    # 5회차: 열람 전용 노선이 그 계통 화면에서 갈라지는가(archive_branch). absent면 붙지 않아야 함(西武大宮線 ↔ 東北新幹線)
+    if k=='archbranch':
+        hit=m.execute('select 1 from archive_branch where archive_line_id=? and route_id=?',(c['archive_line'],c['route'])).fetchone() is not None
+        return not hit if c.get('absent') else hit
     if k=='archline':return any(r[0]=='ja' and r[1]==c['name'] for i_,at_ in m.execute('select id,at_node from archive_line') if not c.get('at') or at_==c['at'] for r in NM['archive',i_])
     # 9회차 F: 여객 이력이 없는 화물 구간(숨은 노선). {line, a?, b?, km?, freight?}: 노선이 rule_class hidden이고 그 칸들에 분모 단위가 없으며,
     # a–b 칸이 그 노선에 속하고(km가 있으면 그 값), freight 노드는 kind freight이고 공개 노드가 아니다

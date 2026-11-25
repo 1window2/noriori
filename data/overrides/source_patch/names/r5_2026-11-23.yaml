@@ -1,0 +1,4 @@
+# 5회차 데이터 정리 (2026-11-23): 새 공개 역 이름 — audit5 공개 역·노선·정차 기간·이름
+- {"patch": "add", "entity_type": "node", "id": "n_yotsuyama_miike", "lang": "ja", "text": "四ツ山", "source": "wikipedia", "why": "[三池鉄道 本線] 표기는 위키 駅一覧 「四ツ山駅」(N05는 「四山」). 읽기 근거 없음 → 일본어 표기 그대로(결정 132) (5회차 데이터 정리 2026-11-23; audit5 kyushu_2-001)"}
+- {"patch": "add", "entity_type": "node", "id": "n_yotsuyama_miike", "lang": "ko", "text": "四ツ山", "source": "ja_as_is", "why": "[三池鉄道 本線] 표기는 위키 駅一覧 「四ツ山駅」(N05는 「四山」). 읽기 근거 없음 → 일본어 표기 그대로(결정 132) (5회차 데이터 정리 2026-11-23; audit5 kyushu_2-001)"}
+- {"patch": "add", "entity_type": "node", "id": "n_yotsuyama_miike", "lang": "en", "text": "四ツ山", "source": "ja_as_is", "why": "[三池鉄道 本線] 표기는 위키 駅一覧 「四ツ山駅」(N05는 「四山」). 읽기 근거 없음 → 일본어 표기 그대로(결정 132) (5회차 데이터 정리 2026-11-23; audit5 kyushu_2-001)"}

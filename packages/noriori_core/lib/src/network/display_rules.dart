@@ -13,6 +13,7 @@ final class ArchiveStop {
     required this.closedYear,
     required this.km,
     this.seq,
+    this.node,
   });
 
   final String id;
@@ -21,12 +22,15 @@ final class ArchiveStop {
   final String closedYear;
   final double? km;
 
+  /// 같은 자리이거나 분명히 계승한 기존 노드(archive_stop.node_id, 5회차 2026-11-26). 없으면 null, 옛 팩에도 없다
+  final String? node;
+
   /// 그 계통 진행 방향의 순번(archive_stop.seq, DESIGN §4.5). 같은 자리에 여럿이면 이 순서다. 옛 팩에는 없다.
   final int? seq;
 
   /// km만 옮긴 열람 전용 역 (같은 노선 이어 그리기에서 그날 영업거리로 옮길 때, DESIGN §8.3)
   ArchiveStop shifted(double by) =>
-      ArchiveStop(id: id, afterNode: afterNode, beforeNode: beforeNode, closedYear: closedYear, km: km == null ? null : ((km! + by) * 10).roundToDouble() / 10, seq: seq);
+      ArchiveStop(id: id, afterNode: afterNode, beforeNode: beforeNode, closedYear: closedYear, km: km == null ? null : ((km! + by) * 10).roundToDouble() / 10, seq: seq, node: node);
 }
 
 /// 열람 전용 노선. 역에서 갈라지는 줄로만 보인다.
@@ -346,7 +350,8 @@ final class TransferLine extends SelectorLine {
 
 /// 괄호로 묶는 구간의 상태 (사용자 결정 2026-11-19 「칸마다 그 날짜의 상태 하나」).
 /// 이관은 다른 노선으로 기록되는 구간, 나머지는 그날 탈 수 없는 구간이다
-enum NoticeKind { hand, closed, suspended, before }
+/// [season]: 계절 운행의 비시즌 구간(검은 점선 + 녹색 괄호, 2026-11-24). 안내 [NoticeLine.year]에 보통 운행 달(「4-11」)을 싣는다
+enum NoticeKind { hand, closed, suspended, before, season }
 
 /// 괄호 끝이 걸리는 줄. 역 줄이면 [seq], 열람 전용 역 줄이면 [archive]다
 final class BracketAnchor {
@@ -374,10 +379,14 @@ final class NoticeLine extends SelectorLine {
     this.on,
     this.year,
     this.at,
+    this.anyDate = false,
     super.lanes,
   });
 
   final NoticeKind kind;
+
+  /// 날짜 모름 화면의 안내다. 계절 운행은 「그날 운행하지 않음」을 붙이지 않는다
+  final bool anyDate;
   final BracketAnchor top;
   final BracketAnchor bottom;
 
@@ -785,7 +794,25 @@ final class DisplayRules {
     // 끝난 날을 모르는 연결뿐이면 그대로 둔다
     if (ended.isEmpty) return link.validToHi == null || link.validToHi == DateSpan.maxDate || link.validToHi!.compareTo(_day) > 0;
     final last = ended.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
-    return link.validToHi == last;
+    if (link.validToHi != last) return false;
+    // 같은 날 끝난 것 가운데, 이 연결의 끝을 범위로만 알고(끝 하한 < 끝 상한) 다른 종류의 연결이 그 범위 안에서 시작해 끝까지 갔으면
+    // 이 연결은 그 앞 상태다(끝난 날이 범위라 같은 날 끝난 것으로 보일 뿐). 마지막 상태는 뒤에 시작한 연결 하나다(5회차 2026-11-26).
+    // 花岡線 大館 小坂線: 끝 이어짐 ~[1963-10-02..1985-04-01] 뒤 환승 [1963-10-02..1985-04-01]~1985-04-01,
+    // 小坂線 大館: 끝 이어짐 ~[1963-10-02..1985-04-01] 뒤 환승 1973-11-01(松峯 개업)~1985-04-01, 定山渓鉄道 東札幌 분기 ~[1969-10-01..1969-11-01] 뒤 환승
+    bool chained(SelectorLink other) {
+      final endLo = link.validToLo;
+      final start = other.validFromLo;
+      return !identical(other, link) &&
+          other.kind != link.kind &&
+          other.validToHi == last &&
+          endLo != null &&
+          start != null &&
+          endLo.compareTo(last) < 0 &&
+          endLo.compareTo(start) <= 0 &&
+          start.compareTo(last) < 0 &&
+          (link.validFromLo ?? '0000').compareTo(start) < 0;
+    }
+    return !group.any(chained);
   }
 
 
@@ -846,7 +873,7 @@ final class DisplayRules {
     DisplayOptions options, {
     bool undated = false,
     Set<String> skip = const {},
-    Set<String> except = const {},
+    bool Function(DisplayLink item)? drop,
   }) {
     // 한 노선은 한 번만 적는다. 옛 자리·나눈 노드로 같은 노선이 두 역에 걸리면(新豊橋/新豊橋（旧）) 지금 것을 남긴다 (디자인 감사 S02)
     final all = [
@@ -856,7 +883,11 @@ final class DisplayRules {
     ];
     // 직통(끝 이어짐)으로 잇는 노선이 이 역을 지나 반대쪽으로도 이어지면 그 반대 방향은 갈아타서 간다. 환승으로 적는다
     // (唐津의 唐津線 鬼塚·山本 방면. 사용자 결정 2026-11-23, 전국 일괄 규칙)
-    for (final item in _links(row, 'continue', options, undated: undated, skip: skip)) {
+    final tracks = [..._links(row, 'continue', options, undated: undated, skip: skip), ..._links(row, 'branch', options, undated: undated, skip: skip)];
+    // 승객이 내리고 탈 수 없는 끝 노드(분기점·신호장, 이 계통이 서지 않는 역, 승객 미취급 역)에서는 갈아탈 수 없어 반대 방향 환승을 만들지 않는다
+    // (秋田市電 新大工町線 分岐点（表鉄砲町）의 秋田市内線, 5회차 2026-11-26)
+    final boardable = !(row.passing || row.noBoarding || row.staffOnly);
+    for (final item in boardable ? _links(row, 'continue', options, undated: undated, skip: skip) : const <DisplayLink>[]) {
       final link = item.link;
       final route = link.otherRouteId;
       if (route == null || network.routes[route]?.closed == true) continue;
@@ -868,6 +899,13 @@ final class DisplayRules {
       final side = next > at ? stops.sublist(0, at).reversed : stops.sublist(at + 1);
       final opposite = side.where((st) => st.isStop).firstOrNull;
       if (opposite == null) continue;
+      // 같은 때 그 반대 방향도 선로 줄(끝 이어짐·분기)로 이어지면 갈아탈 필요가 없다 (都電 三宅坂 半蔵門線 양방향). 끝난 옛 연결은 보지 않는다(山田線 宮古 2019 전 분기)
+      bool sameTime(SelectorLink l) =>
+          (l.validFromLo ?? '').compareTo(link.validToHi ?? DateSpan.maxDate) < 0 && (link.validFromLo ?? '').compareTo(l.validToHi ?? DateSpan.maxDate) < 0;
+      if ([...row.links, for (final d in tracks) d.link]
+          .any((l) => (l.kind == 'continue' || l.kind == 'branch') && l.otherLineId == link.otherLineId && l.nextStop == opposite.node && sameTime(l))) {
+        continue;
+      }
       all.add(DisplayLink(
         link: SelectorLink(
           seq: link.seq,
@@ -885,7 +923,7 @@ final class DisplayRules {
       ));
     }
     // 이관 구간 경계 역에서 이어받은 노선은 구분선이 이미 알려 주어 캡슐로 다시 적지 않는다 (실화면 검수 2026-11-09, 長野의 北しなの線)
-    all.removeWhere((item) => except.contains(item.link.otherLineId));
+    if (drop != null) all.removeWhere(drop);
     // 지금 선로로 이어진(분기·끝 이어짐) 노선과의 옛 환승은 「끝남」으로 적지 않는다. 지금도 갈아탈 수 있다 (姫路 山陽本線, 감사 3회차 kinki_1-07)
     final joined = {
       for (final link in row.links)
@@ -1078,6 +1116,10 @@ final class DisplayRules {
       }
     }
     bool suspendedAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length && sectionEnds[gap].suspended;
+    String? seasonAt(int gap) => sectionEnds != null && gap >= 0 && gap < sectionEnds.length ? sectionEnds[gap].season : null;
+    // 행의 폐지 해를 지우는 것은 옆 괄호가 그 해를 적을 때뿐이다. 계절 운행 괄호는 해를 적지 않으니 그 옆 역은 제 표시(비시즌 등)를 그대로 단다
+    // (끝난 계절 노선의 운행 시절 비시즌, 関電トンネルトロリーバス 2010-01-15, 5회차 시뮬레이터 시험 2026-11-24)
+    String? shownYear(int gap) => seasonAt(gap) != null ? null : yearOf[gap];
     String? opensAt(int gap) {
       final at = gap >= 0 && beside(gap) ? home(gap) : gap;
       return sectionEnds != null && at != null && at >= 0 && at < sectionEnds.length ? sectionEnds[at].opens : null;
@@ -1116,12 +1158,26 @@ final class DisplayRules {
     for (final (index, row) in rows.indexed) {
       final isFirst = index == first;
       final isLast = index == last;
-      // 이관 구간 경계에서 이어받은 노선으로 가는 줄은 구분선 글과 겹친다
-      final successors = {
-        for (final next in [if (index > 0) rows[index - 1], if (index + 1 < rows.length) rows[index + 1]])
-          if (bandOf(next, undated: undated, date: date) case (final to, _) when bandOf(row, undated: undated, date: date)?.$1 != to) to,
-      };
-      bool keep(DisplayLink item) => !successors.contains(item.link.otherLineId);
+      // 이관 구간 경계에서 띠 안쪽으로 이어받은 노선으로 가는 줄은 띠가 그린다(구분선 글과 겹친다). 띠 반대쪽으로 가는 그 노선 연결은 남긴다
+      // (山田線 宮古: 宮古~釜石 三陸鉄道 띠, 久慈 방면 三陸鉄道는 그대로. 2026-11-23 일반 규칙)
+      final successors = <String, Set<String>>{};
+      final own = bandOf(row, undated: undated, date: date)?.$1;
+      for (final step in [-1, 1]) {
+        final at = index + step;
+        if (at < 0 || at >= rows.length) continue;
+        final to = bandOf(rows[at], undated: undated, date: date)?.$1;
+        if (to == null || to == own) continue;
+        final nodes = successors.putIfAbsent(to, () => <String>{});
+        for (var k = at; k >= 0 && k < rows.length && bandOf(rows[k], undated: undated, date: date)?.$1 == to; k += step) {
+          nodes.add(rows[k].node);
+        }
+      }
+      bool keep(DisplayLink item) {
+        final inside = successors[item.link.otherLineId];
+        if (inside == null) return true;
+        final next = item.link.nextStop;
+        return next != null && !inside.contains(next);
+      }
       // 직통이 맨 끝 역에서 이어지면 그 역이 폐역·옛 자리여도 거기서 끝 이어짐이다 (DESIGN §8.1 시기별 끝 역, 信越本線 新潟（旧）)
       final topEnd = isFirst || index == 0;
       final bottomEnd = isLast || index == rows.length - 1;
@@ -1267,7 +1323,7 @@ final class DisplayRules {
           lanes: marks,
           index: index,
           row: row,
-          transfers: transfers(row, lineId, options, undated: undated, skip: skip, except: successors),
+          transfers: transfers(row, lineId, options, undated: undated, skip: skip, drop: (item) => !keep(item)),
           branchUp: ups.isNotEmpty,
           branchDown: downs.isNotEmpty || old.isNotEmpty,
           small: !options.showClosed && _isGoneStop(row),
@@ -1278,7 +1334,7 @@ final class DisplayRules {
               !(loneBottom && index == rows.length - 1) &&
               row.closeYear != null &&
               row.state != StopState.beforeOpen &&
-              (row.closeYear == yearOf[index - 1] || row.closeYear == yearOf[index]),
+              (row.closeYear == shownYear(index - 1) || row.closeYear == shownYear(index)),
           returnsTo: closedRoute && rows.take(index).any((earlier) => earlier.node == row.node)
               ? row.node
               : null,
@@ -1386,6 +1442,7 @@ final class DisplayRules {
       gaps: gaps,
       yearOf: yearOf,
       suspendedAt: suspendedAt,
+      seasonAt: seasonAt,
       opensAt: opensAt,
       undated: undated,
       date: date,
@@ -1406,6 +1463,7 @@ final class DisplayRules {
     required List<bool> gaps,
     required Map<int, String> yearOf,
     required bool Function(int gap) suspendedAt,
+    required String? Function(int gap) seasonAt,
     required String? Function(int gap) opensAt,
     required bool undated,
     required DateSpan? date,
@@ -1422,8 +1480,18 @@ final class DisplayRules {
       String key = '';
       String? year, lineId, on;
       SelectorRow? at;
-      if (gap < gaps.length && !gaps[gap]) {
-        if (suspendedAt(gap)) {
+      if (undated && gap < gaps.length && gaps[gap] && seasonAt(gap) != null) {
+        // 날짜 모름 화면의 계절 운행 구간: 닫힌 구간이 아니어도 계절 운행 괄호와 운행 달 안내를 단다(줄기는 실선 그대로, 사용자 결정 2026-11-25)
+        kind = NoticeKind.season;
+        year = seasonAt(gap);
+        key = year!;
+      } else if (gap < gaps.length && !gaps[gap]) {
+        if (seasonAt(gap) case final months?) {
+          // 계절 운행의 비시즌: 폐지·운휴가 아니다. 보통 운행 달을 안내에 싣는다
+          kind = NoticeKind.season;
+          year = months;
+          key = months;
+        } else if (suspendedAt(gap)) {
           // 안내 제목에 운휴 시작 해를 붙인다(역 줄의 「운휴 2023~」과 짝). 시작 해가 다르면 다른 괄호다
           kind = NoticeKind.suspended;
           year = rows[gap].suspendedSince ?? rows[gap + 1].suspendedSince;
@@ -1486,6 +1554,7 @@ final class DisplayRules {
           on: span.on,
           at: span.at,
           year: span.year,
+          anyDate: undated,
         ),
       ));
     }

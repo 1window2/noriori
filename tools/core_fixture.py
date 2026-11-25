@@ -17,7 +17,7 @@ def rec(rid,a,b,date):
     if r['status']=='invalid' and d is not None and r.get('reason') in('no-path-on-date','not-closed-on-date'):
         r=A.expand_any(rid,a,b,None);demoted=True
     return r,demoted
-# 거리는 구간마다 그 노선의 km다. 3섹 전환 전 노선은 국철 시대 km (DESIGN §2.9 E, 앱 RouteResolver와 같음)
+# 거리는 구간마다 그 노선의 km다. 3섹 전환 전 노선은 국철 시대 km (DESIGN §2.8 E, 앱 RouteResolver와 같음)
 ERA_M={(x['line_id'],x['edge_id']):x['m'] for x in A.db.execute('SELECT line_id,edge_id,m FROM edge_km_era')}
 def meters(r,rid):
     legs=r.get('legs') or {A.routes[rid]['line_id']:r.get('edges',[])}

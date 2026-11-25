@@ -46,16 +46,18 @@ class TrunkStyle {
     if (already) {
       return TrunkPiece(tokens.lineRiddenSoft, SelectorRuler.openWidth, oneWay: oneWay);
     }
-    final open = gap >= state.openGaps.length || state.openGaps[gap];
+    // 계절 운행의 비시즌 칸은 닫힌 칸이 아니라 운행하지 않는 날일 뿐이다. 이관 띠처럼 굵은 검은 점선으로 그린다
+    final open = gap >= state.openGaps.length || state.openGaps[gap] || handed.contains(gap);
     return open ? TrunkPiece(tokens.text, SelectorRuler.openWidth, handed: handed.contains(gap), oneWay: oneWay, scroll: scroll) : tail;
   }
 }
 
-/// 이관 괄호 안의 칸 번호. 괄호 맨 위 역부터 맨 아래 역 앞까지다
+/// 이관 괄호 안의 칸 번호. 괄호 맨 위 역부터 맨 아래 역 앞까지다.
+/// 계절 운행의 비시즌 괄호도 같은 굵은 검은 점선 줄기로 그린다(괄호 색만 녹색, 사용자 결정 2026-11-24)
 Set<int> handedGaps(List<SelectorLine> lines) {
   final out = <int>{};
   for (final notice in lines.whereType<NoticeLine>()) {
-    if (notice.kind != NoticeKind.hand) continue;
+    if (notice.kind != NoticeKind.hand && notice.kind != NoticeKind.season) continue;
     final top = lines.firstWhere(notice.top.matches, orElse: () => notice);
     final bottom = lines.firstWhere(notice.bottom.matches, orElse: () => notice);
     if (top is! StopLine || bottom is! StopLine) continue;
@@ -93,6 +95,13 @@ Set<int> handedGaps(List<SelectorLine> lines) {
         box: dark ? const Color(0xFF2A2E33) : const Color(0xFFECEAE4),
         title: tokens.text,
         body: tokens.textMuted,
+      ),
+    // 계절 운행의 비시즌은 녹색 계열이다(폐지·운휴와 구분, 사용자 결정 2026-11-24)
+    NoticeKind.season => (
+        bracket: dark ? const Color(0xFF7FBF8E) : const Color(0xFF3F8A55),
+        box: dark ? const Color(0xFF1F3326) : const Color(0xFFE1F0E4),
+        title: dark ? const Color(0xFFA8DDB4) : const Color(0xFF235C33),
+        body: dark ? const Color(0xFF9CC4A6) : const Color(0xFF3E6A4A),
       ),
   };
 }
@@ -309,7 +318,11 @@ class _StopTile extends ConsumerWidget {
       SnackBar(
         // 임시 운행만 있는 계통은 폐지·운휴가 아니라 그날 임시 열차가 없던 것이다 (사용자 결정 2026-11-19)
         content: Text(line.row.viewOnly
-            ? (line.row.noBoarding ? t.whyViewNoBoarding : t.whyViewSignal)
+            ? (line.row.noBoarding
+                ? t.whyViewNoBoarding
+                : line.row.staffOnly
+                    ? t.whyViewStaff
+                    : t.whyViewSignal)
             : state.isTemporary
                 ? t.tempNoRun
                 : line.row.state == StopState.suspended
@@ -335,6 +348,7 @@ class _StopTile extends ConsumerWidget {
       StopState.beforeOpen => t.since(year: row.openYear ?? '?'),
       // 운휴는 시작 해를 붙인다(폐역 「~해」와 짝). 역 정차만 운휴인 곳(全列車通過, 羽前前波)도 같다 (사용자 결정 2026-11-16)
       StopState.suspended => row.suspendedSince == null ? t.suspended : t.suspendedSince(year: row.suspendedSince!),
+      StopState.offSeason => t.offSeason,
       StopState.closed || StopState.lineClosed || StopState.noEdge =>
         t.until(year: row.closeYear ?? '?'),
       // 이관으로 끝난 정차는 폐역이 아니라 구분선 한 줄로만 알린다 (DESIGN §8.0.1 B안)
@@ -522,7 +536,7 @@ class _StopTile extends ConsumerWidget {
                             TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (past != null) TextSpan(text: ' ${past.label}', style: text.labelSmall),
                           ]),
-                          TextSpan(text: '  $aside', style: japaneseStyle(asideStyle), locale: const Locale('ja')),
+                          TextSpan(text: '  ${kinsoku(aside)}', style: japaneseStyle(asideStyle), locale: const Locale('ja')),
                           box.maxWidth,
                           // 한 방향 칩은 글자 폭으로 잴 수 없어 넉넉히 더한다
                           extra: oneWay == null ? 0 : 72 * MediaQuery.textScalerOf(context).scale(1),
@@ -530,7 +544,7 @@ class _StopTile extends ConsumerWidget {
                         return Text.rich(
                         TextSpan(
                           children: [
-                            TextSpan(text: name, style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
+                            TextSpan(text: nameLocale == null ? name : kinsoku(name), style: nameLocale == null ? style : japaneseStyle(style), locale: nameLocale),
                             if (oneWay != null)
                               WidgetSpan(
                                 alignment: PlaceholderAlignment.middle,
@@ -548,7 +562,7 @@ class _StopTile extends ConsumerWidget {
                               ),
                             if (aside != null)
                               TextSpan(
-                                text: besideName ? '  $aside' : '\n$aside',
+                                text: besideName ? '  ${kinsoku(aside)}' : '\n${kinsoku(aside)}',
                                 locale: const Locale('ja'),
                                 style: japaneseStyle(asideStyle),
                               ),
@@ -1060,6 +1074,8 @@ class _EndTile extends ConsumerWidget {
                             ),
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
+                            // 말줄임한 글의 실제 폭만 차지한다. 부모 폭을 다 잡으면 꼬리(끝 역) 앞에 빈칸이 벌어진다
+                            textWidthBasis: TextWidthBasis.longestLine,
                           ),
                         ),
                         if (tail != null)
@@ -1092,7 +1108,10 @@ class _ArchiveTile extends ConsumerWidget {
     final name = state.archiveNames[stop.id] ?? stop.id;
     final aside = state.archiveAside[stop.id];
     final year = context.t.session.state.until(year: stop.closedYear);
-    final message = context.t.session.archiveStop(name: name, year: stop.closedYear);
+    final now = state.archiveNow[stop.id];
+    final message = now == null
+        ? context.t.session.archiveStop(name: name, year: stop.closedYear)
+        : context.t.session.archiveStopNow(name: name, year: stop.closedYear, now: now);
     final km = stop.km;
     final style = closedNameStyle(text, tokens);
     return InkWell(
@@ -1114,18 +1133,25 @@ class _ArchiveTile extends ConsumerWidget {
             child: Row(
               spacing: 10,
               children: [
+                // 일본어 이름·읽기는 기록 대상 역 줄과 같은 규칙: 이름 마지막 줄에 통째로 들어가면 바로 뒤, 넘치면 다음 줄 맨 앞부터 (사용자 결정 2026-11-16)
                 Expanded(
-                  child: Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        text: name,
-                        style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
-                        locale: japaneseOnlyLocale(name0: name),
-                      ),
-                      if (aside != null)
-                        TextSpan(text: '  $aside', style: japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed)), locale: const Locale('ja')),
-                    ]),
-                  ),
+                  child: LayoutBuilder(builder: (context, box) {
+                    final nameSpan = TextSpan(
+                      text: japaneseOnlyLocale(name0: name) == null ? name : kinsoku(name),
+                      style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
+                      locale: japaneseOnlyLocale(name0: name),
+                    );
+                    final asideStyle = japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed));
+                    final beside = aside == null ||
+                        _fitsAfter(context, nameSpan, TextSpan(text: '  ${kinsoku(aside)}', style: asideStyle, locale: const Locale('ja')), box.maxWidth);
+                    return Text.rich(
+                      TextSpan(children: [
+                        nameSpan,
+                        if (aside != null)
+                          TextSpan(text: beside ? '  ${kinsoku(aside)}' : '\n${kinsoku(aside)}', style: asideStyle, locale: const Locale('ja')),
+                      ]),
+                    );
+                  }),
                 ),
                 Text(year, style: text.bodySmall?.copyWith(color: tokens.textClosed)),
                 Text(
@@ -1361,6 +1387,11 @@ final _kanjiKana = RegExp(r'[\u3040-\u30FF\u3400-\u9FFF]');
 Locale? japaneseOnlyLocale({required String name0}) =>
     _kanjiKana.hasMatch(name0) && !_hangul.hasMatch(name0) ? const Locale('ja') : null;
 
+/// 일본어 줄머리 금칙: 작은 가나·장음·닫는 부호 앞에서는 줄을 바꾸지 않는다(「たばたしんごうじ|ょう」 금지, 5회차 2026-11-26).
+/// 줄 안에서는 여전히 글자가 차는 대로 끊고(사용자 결정 2026-11-16), 금칙 글자만 앞 글자에 붙인다. 글자 사이에 폭 없는 이음표(U+2060)를 넣는다
+final _kinsokuHead = RegExp(r'(?=[ぁぃぅぇぉっゃゅょゎゕゖァィゥェォッャュョヮヵヶㇰ-ㇿー々ゝゞヽヾ・、。，．）」』】〕〉》！？])');
+String kinsoku(String s) => s.replaceAll(_kinsokuHead, '\u2060');
+
 /// 일본어 글자(일본어로만 보이는 이름, 이름 옆 일본어·읽기)는 한 일본어 글꼴로, 한글과 같아 보이는 크기로 그린다.
 /// 앱 글꼴 Pretendard에는 한국 표준 한자(KS X 1001)만 있어, 競·馬·場·前은 Pretendard 한자(한글과 같은 크기, 약 0.87em)로,
 /// 将·国·蛍 같은 일본 신자체는 시스템 일본어 글꼴(1em)로 섞여 그려졌다. 그래서 같은 일본어 이름인 競馬場前과 将軍梅前의 크기가 달랐다
@@ -1427,12 +1458,22 @@ class _NoticeTile extends ConsumerWidget {
       NoticeKind.closed => closedNote(context, year),
       NoticeKind.suspended => line.year == null ? t.suspendedSection : t.state.suspendedSince(year: line.year!),
       NoticeKind.before => t.openedSection(year: year),
+      NoticeKind.season => t.seasonSection,
     };
     final body = switch (line.kind) {
       NoticeKind.hand => t.handNote,
       NoticeKind.closed => t.noticeClosedSub,
       NoticeKind.suspended => t.noticeSuspendedSub,
       NoticeKind.before => t.noticeBeforeSub,
+      NoticeKind.season => () {
+          final months = year.split('-');
+          String month(String m) {
+            final n = int.tryParse(m) ?? 0;
+            if (Localizations.localeOf(context).languageCode != 'en' || n < 1 || n > 12) return m;
+            return const ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][n - 1];
+          }
+          return line.anyDate ? t.noticeSeasonAnySub(from: month(months.first), to: month(months.last)) : t.noticeSeasonSub(from: month(months.first), to: month(months.last));
+        }(),
     };
     final open = lineId != null && session.canOpen(lineId);
     Future<void> go() async {

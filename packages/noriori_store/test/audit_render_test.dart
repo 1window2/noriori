@@ -50,6 +50,8 @@ void main() {
           'node': r.node,
           'state': r.state.name,
           if (r.passing) 'passing': true,
+          if (r.noBoarding) 'noBoarding': true,
+          if (r.staffOnly) 'staffOnly': true,
           if (r.savedAs != null) 'savedAs': r.savedAs,
           if (r.handedTo != null) 'handedTo': r.handedTo,
           if (r.handedOn != null) 'handedOn': r.handedOn,
@@ -86,10 +88,10 @@ void main() {
         );
         final visible = rules.visible(rows, options);
         final openGaps = builder.openBetween(routeId, visible, date);
-        final sectionGaps = date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps;
+        final sectionGaps = date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today), offSeasonOpen: true) : openGaps;
         final stops = await reader.archiveStops(routeId);
         final parallels = await reader.routeParallels(routeId);
-        final branches = await reader.archiveBranches(rows.map((row) => row.node));
+        final branches = await reader.archiveBranches(rows.map((row) => row.node), routes: {routeId, ...builder.handRoutes(routeId)});
         final lines = rules.lines(
           lineId: route.lineId,
           rows: visible,
@@ -111,6 +113,11 @@ void main() {
           for (final row in rows) row.node,
           for (final row in rows)
             for (final link in [...row.links, ...row.goneLinks]) ...[?link.otherNode, ?link.nextStop, ?link.terminal],
+          // 화면 단계에서 만든 연결(반대 방향 환승)의 역 (기록 화면과 같다)
+          for (final l in lines)
+            if (l is StopLine)
+              for (final g in l.transfers)
+                for (final d in g.items) ...[?d.link.otherNode, ?d.link.nextStop, ?d.link.terminal],
         };
         final names = await reader.nodeNames(ids, lineId: route.lineId, date: date?.lo, languages: const ['ja']);
         final archive = await reader.archiveNames([for (final s in stops) s.id, for (final b in branches) b.id], languages: const ['ja']);

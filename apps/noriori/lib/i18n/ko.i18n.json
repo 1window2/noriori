@@ -192,6 +192,7 @@
     "state": {
       "maybe": "?",
       "suspended": "운휴",
+      "offSeason": "휴무",
       "suspendedSince": "운휴 $year~",
       "until": "~$year",
       "since": "$year~",
@@ -204,6 +205,8 @@
     "handNote": "이 구간은 그 노선으로 기록돼요",
     "noticeClosedSub": "그 전 날짜로만 기록할 수 있어요",
     "noticeSuspendedSub": "운휴 전 날짜로만 기록할 수 있어요",
+    "noticeSeasonSub": "보통 $from월~$to월에만 다녀요. 이 날은 운행하지 않아요",
+    "noticeSeasonAnySub": "보통 $from월~$to월에만 다녀요",
     "noticeBeforeSub": "개업한 뒤 날짜로 기록할 수 있어요",
     "chooseDirection": "어느 쪽으로 탔나요?",
     "directionKm": "$km km",
@@ -235,12 +238,14 @@
     "closedSection": "~$year 폐지",
     "openedSection": "$year년 개업",
     "archiveStop": "$name: 폐역($year). 기록할 수 없는 옛 역입니다",
+    "archiveStopNow": "$name: 폐역($year). 기록할 수 없는 옛 역입니다. 지금의 $now역 자리",
     "archiveLine": "$name: 기록할 수 없는 옛 노선입니다",
     "from": "출발",
     "to": "도착",
     "whyClosed": "그 날짜에는 운영하지 않던 역입니다",
     "whyViewSignal": "신호장·분기점이라 여기서 기록을 시작하거나 끝낼 수 없어요",
     "whyViewNoBoarding": "이 노선은 이 역에 서지 않아 여기서 기록을 시작하거나 끝낼 수 없어요",
+    "whyViewStaff": "승객을 받지 않는 역이라 여기서 기록을 시작하거나 끝낼 수 없어요",
     "onlyDown": "하행만",
     "onlyUp": "상행만",
     "onlyOneWay": "한 방향만",
@@ -283,6 +288,7 @@
     "repick": "다른 역을 누르면 처음부터 다시 고릅니다",
     "closedUnknown": "폐지 구간",
     "suspendedSection": "운휴 중",
+    "seasonSection": "계절 운행",
     "relocationOld": "옛 선로 · $km km",
     "relocationNew": "새 선로 · $km km",
     "spokenOpen": "영업 중",
@@ -405,6 +411,11 @@
       "use": "일본 윤곽과 도도부현 경계, 경계를 넘는 구간의 도도부현별 거리",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
+    "gsi": {
+      "name": "国土地理院 ベクトルタイル",
+      "use": "田端信号場 일대 선로 모양 일부",
+      "terms": "国土地理院コンテンツ利用規約 (CC BY 4.0 호환). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成"
+    },
     "stationDatabase": {
       "name": "station_database",
       "use": "역 목록과 좌표",
@@ -429,6 +440,11 @@
       "name": "노리츠부시",
       "use": "영업거리, 역 순서, 기본 날짜, 일본어 표기",
       "terms": "사실 정보로 사용"
+    },
+    "others": {
+      "name": "그 밖의 사실 근거",
+      "use": "사업자 공식 자료(영어 역 이름 등), 公共交通オープンデータセンター, 국립국회도서관·국립공문서관 공개 자료, 日本郵便 우편번호 자료, 역명판 사진",
+      "terms": "사실 정보로 사용. 출처는 데이터 행마다 있고 전체 목록은 저장소의 data/NOTICE.md에 있습니다"
     },
     "openFreeMap": {
       "name": "OpenFreeMap",
@@ -485,6 +501,7 @@
     "restored": "지운 기록을 되살렸습니다",
     "blockedHidden": "역이 아닌 지점에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요",
     "blockedPath": "이 구간을 빼면 남은 기록의 경로나 날짜가 달라져서 지울 수 없습니다. 기록을 직접 고쳐 주세요",
+    "blockedNoStop": "이 방향 열차가 서지 않는 역에서 기록을 나눠야 해서 여기서는 지울 수 없습니다. 기록을 직접 고쳐 주세요",
     "blockedOn": "이 구간은 여기서 탑승으로 표시할 수 없습니다. 출발역과 도착역을 골라 기록해 주세요",
     "visitAdded": "방문으로 표시했습니다",
     "visitRemoved": "방문을 지웠습니다",

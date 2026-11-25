@@ -350,6 +350,8 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get handNote => 'Rides here are saved to that line';
 	@override String get noticeClosedSub => 'Only rides before then can be saved';
 	@override String get noticeSuspendedSub => 'Only rides before the suspension can be saved';
+	@override String noticeSeasonSub({required Object from, required Object to}) => 'Runs only ${from}–${to} each year. No service on this date';
+	@override String noticeSeasonAnySub({required Object from, required Object to}) => 'Runs only ${from}–${to} each year';
 	@override String get noticeBeforeSub => 'Rides from the opening day on can be saved';
 	@override String get chooseDirection => 'Which way did you ride?';
 	@override String directionKm({required Object km}) => '${km} km';
@@ -383,12 +385,14 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String closedSection({required Object year}) => '~${year} closed';
 	@override String openedSection({required Object year}) => 'Opens in ${year}';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
+	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name} closed in ${year} and can\'t be logged. Now ${now} station';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
 	@override String get to => 'To';
 	@override String get whyClosed => 'This station wasn\'t open on that date';
 	@override String get whyViewSignal => 'This is a signal or junction, so a ride can\'t start or end here';
 	@override String get whyViewNoBoarding => 'This line doesn\'t stop here, so a ride can\'t start or end here';
+	@override String get whyViewStaff => 'This station doesn\'t serve passengers, so a ride can\'t start or end here';
 	@override String get onlyDown => 'Down only';
 	@override String get onlyUp => 'Up only';
 	@override String get onlyOneWay => 'One way';
@@ -431,6 +435,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String get repick => 'Tap another station to start over';
 	@override String get closedUnknown => 'Closed section';
 	@override String get suspendedSection => 'Suspended';
+	@override String get seasonSection => 'Seasonal line';
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
 	@override String relocationNew({required Object km}) => 'New alignment · ${km} km';
 	@override String get spokenOpen => 'open';
@@ -572,11 +577,13 @@ class _Translations$sources$en implements Translations$sources$ko {
 	@override late final _Translations$sources$n02$en n02 = _Translations$sources$n02$en._(_root);
 	@override late final _Translations$sources$n05$en n05 = _Translations$sources$n05$en._(_root);
 	@override late final _Translations$sources$n03$en n03 = _Translations$sources$n03$en._(_root);
+	@override late final _Translations$sources$gsi$en gsi = _Translations$sources$gsi$en._(_root);
 	@override late final _Translations$sources$stationDatabase$en stationDatabase = _Translations$sources$stationDatabase$en._(_root);
 	@override late final _Translations$sources$wikipedia$en wikipedia = _Translations$sources$wikipedia$en._(_root);
 	@override late final _Translations$sources$wikidata$en wikidata = _Translations$sources$wikidata$en._(_root);
 	@override late final _Translations$sources$namuwiki$en namuwiki = _Translations$sources$namuwiki$en._(_root);
 	@override late final _Translations$sources$noritsubushi$en noritsubushi = _Translations$sources$noritsubushi$en._(_root);
+	@override late final _Translations$sources$others$en others = _Translations$sources$others$en._(_root);
 	@override late final _Translations$sources$openFreeMap$en openFreeMap = _Translations$sources$openFreeMap$en._(_root);
 	@override late final _Translations$sources$openStreetMap$en openStreetMap = _Translations$sources$openStreetMap$en._(_root);
 	@override late final _Translations$sources$noto$en noto = _Translations$sources$noto$en._(_root);
@@ -635,6 +642,7 @@ class _Translations$lineDetail$en implements Translations$lineDetail$ko {
 	@override String get restored => 'Ride restored';
 	@override String get blockedHidden => 'This ride would have to be split at a signal station or junction, so this section can\'t be cleared here. Edit the ride instead';
 	@override String get blockedPath => 'Removing this section would change the ride\'s route or date, so it can\'t be cleared here. Edit the ride instead';
+	@override String get blockedNoStop => 'This ride would have to be split at a station where trains in this direction don\'t stop, so this section can\'t be cleared here. Edit the ride instead';
 	@override String get blockedOn => 'This section can\'t be marked as ridden here. Log it from the station picker instead';
 	@override String get visitAdded => 'Marked as visited';
 	@override String get visitRemoved => 'Visit removed';
@@ -995,6 +1003,7 @@ class _Translations$session$state$en implements Translations$session$state$ko {
 	// Translations
 	@override String get maybe => '?';
 	@override String get suspended => 'Suspended';
+	@override String get offSeason => 'Off season';
 	@override String suspendedSince({required Object year}) => 'Suspended ${year}~';
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
@@ -1050,6 +1059,18 @@ class _Translations$sources$n03$en implements Translations$sources$n03$ko {
 	@override String get name => 'National Land Numerical Information: Administrative Zones (N03)';
 	@override String get use => 'Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them';
 	@override String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
+}
+
+// Path: sources.gsi
+class _Translations$sources$gsi$en implements Translations$sources$gsi$ko {
+	_Translations$sources$gsi$en._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'GSI Vector Tiles (Geospatial Information Authority of Japan)';
+	@override String get use => 'Part of the track shapes around Tabata';
+	@override String get terms => 'GSI Content Terms of Use (compatible with CC BY 4.0). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成';
 }
 
 // Path: sources.stationDatabase
@@ -1110,6 +1131,18 @@ class _Translations$sources$noritsubushi$en implements Translations$sources$nori
 	@override String get name => 'Noritsubushi';
 	@override String get use => 'Operating kilometers, station order, key dates, Japanese names';
 	@override String get terms => 'Factual data only';
+}
+
+// Path: sources.others
+class _Translations$sources$others$en implements Translations$sources$others$ko {
+	_Translations$sources$others$en._(this._root);
+
+	final TranslationsEn _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'Other factual sources';
+	@override String get use => 'Operator publications (official English names and more), Public Transportation Open Data Center, public materials of the National Diet Library and the National Archives of Japan, Japan Post postal code data, station sign photos';
+	@override String get terms => 'Used as factual data. Each data row records its source, and the full list is in data/NOTICE.md in the repository';
 }
 
 // Path: sources.openFreeMap
@@ -1305,6 +1338,7 @@ extension on TranslationsEn {
 			'session.noPath' => 'No route found between these two stations',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => 'Suspended',
+			'session.state.offSeason' => 'Off season',
 			'session.state.suspendedSince' => ({required Object year}) => 'Suspended ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
@@ -1316,6 +1350,8 @@ extension on TranslationsEn {
 			'session.handNote' => 'Rides here are saved to that line',
 			'session.noticeClosedSub' => 'Only rides before then can be saved',
 			'session.noticeSuspendedSub' => 'Only rides before the suspension can be saved',
+			'session.noticeSeasonSub' => ({required Object from, required Object to}) => 'Runs only ${from}–${to} each year. No service on this date',
+			'session.noticeSeasonAnySub' => ({required Object from, required Object to}) => 'Runs only ${from}–${to} each year',
 			'session.noticeBeforeSub' => 'Rides from the opening day on can be saved',
 			'session.chooseDirection' => 'Which way did you ride?',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -1343,12 +1379,14 @@ extension on TranslationsEn {
 			'session.closedSection' => ({required Object year}) => '~${year} closed',
 			'session.openedSection' => ({required Object year}) => 'Opens in ${year}',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
+			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name} closed in ${year} and can\'t be logged. Now ${now} station',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',
 			'session.to' => 'To',
 			'session.whyClosed' => 'This station wasn\'t open on that date',
 			'session.whyViewSignal' => 'This is a signal or junction, so a ride can\'t start or end here',
 			'session.whyViewNoBoarding' => 'This line doesn\'t stop here, so a ride can\'t start or end here',
+			'session.whyViewStaff' => 'This station doesn\'t serve passengers, so a ride can\'t start or end here',
 			'session.onlyDown' => 'Down only',
 			'session.onlyUp' => 'Up only',
 			'session.onlyOneWay' => 'One way',
@@ -1391,6 +1429,7 @@ extension on TranslationsEn {
 			'session.repick' => 'Tap another station to start over',
 			'session.closedUnknown' => 'Closed section',
 			'session.suspendedSection' => 'Suspended',
+			'session.seasonSection' => 'Seasonal line',
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
 			'session.relocationNew' => ({required Object km}) => 'New alignment · ${km} km',
 			'session.spokenOpen' => 'open',
@@ -1477,6 +1516,9 @@ extension on TranslationsEn {
 			'sources.n03.name' => 'National Land Numerical Information: Administrative Zones (N03)',
 			'sources.n03.use' => 'Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.gsi.name' => 'GSI Vector Tiles (Geospatial Information Authority of Japan)',
+			'sources.gsi.use' => 'Part of the track shapes around Tabata',
+			'sources.gsi.terms' => 'GSI Content Terms of Use (compatible with CC BY 4.0). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => 'Station list and coordinates',
 			'sources.stationDatabase.terms' => 'Seo-4d696b75. CC BY-SA 4.0',
@@ -1492,6 +1534,9 @@ extension on TranslationsEn {
 			'sources.noritsubushi.name' => 'Noritsubushi',
 			'sources.noritsubushi.use' => 'Operating kilometers, station order, key dates, Japanese names',
 			'sources.noritsubushi.terms' => 'Factual data only',
+			'sources.others.name' => 'Other factual sources',
+			'sources.others.use' => 'Operator publications (official English names and more), Public Transportation Open Data Center, public materials of the National Diet Library and the National Archives of Japan, Japan Post postal code data, station sign photos',
+			'sources.others.terms' => 'Used as factual data. Each data row records its source, and the full list is in data/NOTICE.md in the repository',
 			'sources.openFreeMap.name' => 'OpenFreeMap',
 			'sources.openFreeMap.use' => 'Base map',
 			'sources.openFreeMap.terms' => 'OpenFreeMap © OpenMapTiles. Data from OpenStreetMap',
@@ -1535,6 +1580,7 @@ extension on TranslationsEn {
 			'lineDetail.restored' => 'Ride restored',
 			'lineDetail.blockedHidden' => 'This ride would have to be split at a signal station or junction, so this section can\'t be cleared here. Edit the ride instead',
 			'lineDetail.blockedPath' => 'Removing this section would change the ride\'s route or date, so it can\'t be cleared here. Edit the ride instead',
+			'lineDetail.blockedNoStop' => 'This ride would have to be split at a station where trains in this direction don\'t stop, so this section can\'t be cleared here. Edit the ride instead',
 			'lineDetail.blockedOn' => 'This section can\'t be marked as ridden here. Log it from the station picker instead',
 			'lineDetail.visitAdded' => 'Marked as visited',
 			'lineDetail.visitRemoved' => 'Visit removed',
@@ -1655,6 +1701,8 @@ extension on TranslationsEn {
 			'prefNames.6' => 'Fukushima',
 			'prefNames.7' => 'Ibaraki',
 			'prefNames.8' => 'Tochigi',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.9' => 'Gunma',
 			'prefNames.10' => 'Saitama',
 			'prefNames.11' => 'Chiba',
@@ -1668,8 +1716,6 @@ extension on TranslationsEn {
 			'prefNames.19' => 'Nagano',
 			'prefNames.20' => 'Gifu',
 			'prefNames.21' => 'Shizuoka',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.22' => 'Aichi',
 			'prefNames.23' => 'Mie',
 			'prefNames.24' => 'Shiga',

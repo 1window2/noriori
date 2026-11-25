@@ -1,0 +1,5 @@
+# 京王新線 新宿(新線新宿) 나누기 (5회차 사용자 결정 2026-11-24, 설계 docs/research/audit5-keio-shinsen-design.md)
+- {"patch": "add", "edge": "e_097211", "km": 3.6, "source": "hand", "why": "본선 新宿–笹塚 — 京王 旅客営業規則 2026-10-01 https://www.keio.co.jp/assets/pdf/train/ticket/about_ticket/ryokakueigyou_01_20261001.pdf 別表第1号 新宿→初台 1.7·幡ヶ谷 2.7·笹塚 3.6"}
+- {"patch": "add", "edge": "e_097212", "km": 1.7, "source": "hand", "why": "新線新宿–初台 — 京王 旅客営業規則 2026-10-01 https://www.keio.co.jp/assets/pdf/train/ticket/about_ticket/ryokakueigyou_01_20261001.pdf 別表第1号 新宿→初台 1.7·幡ヶ谷 2.7·笹塚 3.6"}
+- {"patch": "add", "edge": "e_097213", "km": 1.0, "source": "hand", "why": "初台–幡ヶ谷 — 京王 旅客営業規則 2026-10-01 https://www.keio.co.jp/assets/pdf/train/ticket/about_ticket/ryokakueigyou_01_20261001.pdf 別表第1号 新宿→初台 1.7·幡ヶ谷 2.7·笹塚 3.6"}
+- {"patch": "add", "edge": "e_097214", "km": 0.9, "source": "hand", "why": "幡ヶ谷–笹塚 — 京王 旅客営業規則 2026-10-01 https://www.keio.co.jp/assets/pdf/train/ticket/about_ticket/ryokakueigyou_01_20261001.pdf 別表第1号 新宿→初台 1.7·幡ヶ谷 2.7·笹塚 3.6"}

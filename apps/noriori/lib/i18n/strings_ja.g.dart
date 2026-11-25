@@ -343,6 +343,8 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get handNote => 'この区間はその路線で記録されます';
 	@override String get noticeClosedSub => 'それより前の日付でのみ記録できます';
 	@override String get noticeSuspendedSub => '運休前の日付でのみ記録できます';
+	@override String noticeSeasonSub({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行。この日は運行していません';
+	@override String noticeSeasonAnySub({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行';
 	@override String get noticeBeforeSub => '開業後の日付で記録できます';
 	@override String get chooseDirection => 'どちら回りで乗りましたか？';
 	@override String directionKm({required Object km}) => '${km} km';
@@ -374,12 +376,14 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String closedSection({required Object year}) => '~${year} 廃止';
 	@override String openedSection({required Object year}) => '${year}年開業';
 	@override String archiveStop({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です';
+	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置';
 	@override String archiveLine({required Object name}) => '${name}は記録対象外です';
 	@override String get from => '乗車';
 	@override String get to => '降車';
 	@override String get whyClosed => 'その日付には営業していなかった駅です';
 	@override String get whyViewSignal => '信号場・分岐点のため、ここで記録を始めたり終えたりできません';
 	@override String get whyViewNoBoarding => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません';
+	@override String get whyViewStaff => '旅客を扱わない駅のため、ここで記録を始めたり終えたりできません';
 	@override String get onlyDown => '下りのみ';
 	@override String get onlyUp => '上りのみ';
 	@override String get onlyOneWay => '片方向のみ';
@@ -422,6 +426,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get repick => '別の駅をタップすると選び直せます';
 	@override String get closedUnknown => '廃止区間';
 	@override String get suspendedSection => '運休中';
+	@override String get seasonSection => '季節運行';
 	@override String relocationOld({required Object km}) => '旧線 · ${km} km';
 	@override String relocationNew({required Object km}) => '新線 · ${km} km';
 	@override String get spokenOpen => '営業中';
@@ -553,11 +558,13 @@ class _Translations$sources$ja implements Translations$sources$ko {
 	@override late final _Translations$sources$n02$ja n02 = _Translations$sources$n02$ja._(_root);
 	@override late final _Translations$sources$n05$ja n05 = _Translations$sources$n05$ja._(_root);
 	@override late final _Translations$sources$n03$ja n03 = _Translations$sources$n03$ja._(_root);
+	@override late final _Translations$sources$gsi$ja gsi = _Translations$sources$gsi$ja._(_root);
 	@override late final _Translations$sources$stationDatabase$ja stationDatabase = _Translations$sources$stationDatabase$ja._(_root);
 	@override late final _Translations$sources$wikipedia$ja wikipedia = _Translations$sources$wikipedia$ja._(_root);
 	@override late final _Translations$sources$wikidata$ja wikidata = _Translations$sources$wikidata$ja._(_root);
 	@override late final _Translations$sources$namuwiki$ja namuwiki = _Translations$sources$namuwiki$ja._(_root);
 	@override late final _Translations$sources$noritsubushi$ja noritsubushi = _Translations$sources$noritsubushi$ja._(_root);
+	@override late final _Translations$sources$others$ja others = _Translations$sources$others$ja._(_root);
 	@override late final _Translations$sources$openFreeMap$ja openFreeMap = _Translations$sources$openFreeMap$ja._(_root);
 	@override late final _Translations$sources$openStreetMap$ja openStreetMap = _Translations$sources$openStreetMap$ja._(_root);
 	@override late final _Translations$sources$noto$ja noto = _Translations$sources$noto$ja._(_root);
@@ -615,6 +622,7 @@ class _Translations$lineDetail$ja implements Translations$lineDetail$ko {
 	@override String get restored => '消した記録を戻しました';
 	@override String get blockedHidden => '信号場や分岐点で区切る必要があるため、ここでは消せません。記録を直接編集してください';
 	@override String get blockedPath => '区切ると経路が変わるため消せません。記録を直接編集してください';
+	@override String get blockedNoStop => 'この方向の列車が停まらない駅で区切る必要があるため、ここでは消せません。記録を直接編集してください';
 	@override String get blockedOn => 'この区間はここでは乗車済にできません。駅の選択画面から記録してください。';
 	@override String get visitAdded => '訪問済にしました';
 	@override String get visitRemoved => '訪問を消しました';
@@ -964,6 +972,7 @@ class _Translations$session$state$ja implements Translations$session$state$ko {
 	// Translations
 	@override String get maybe => '?';
 	@override String get suspended => '運休';
+	@override String get offSeason => 'シーズン外';
 	@override String suspendedSince({required Object year}) => '運休 ${year}~';
 	@override String until({required Object year}) => '~${year}';
 	@override String since({required Object year}) => '${year}~';
@@ -1019,6 +1028,18 @@ class _Translations$sources$n03$ja implements Translations$sources$n03$ko {
 	@override String get name => '国土数値情報 行政区域データ (N03)';
 	@override String get use => '日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ';
 	@override String get terms => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。';
+}
+
+// Path: sources.gsi
+class _Translations$sources$gsi$ja implements Translations$sources$gsi$ko {
+	_Translations$sources$gsi$ja._(this._root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => '国土地理院 ベクトルタイル';
+	@override String get use => '田端信号場付近の線路形状の一部';
+	@override String get terms => '国土地理院コンテンツ利用規約（CC BY 4.0互換）。出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成';
 }
 
 // Path: sources.stationDatabase
@@ -1079,6 +1100,18 @@ class _Translations$sources$noritsubushi$ja implements Translations$sources$nori
 	@override String get name => '乗りつぶしオンライン';
 	@override String get use => '営業キロ、駅の順序、開業日・廃止日、日本語表記';
 	@override String get terms => '事実情報として使用';
+}
+
+// Path: sources.others
+class _Translations$sources$others$ja implements Translations$sources$others$ko {
+	_Translations$sources$others$ja._(this._root);
+
+	final TranslationsJa _root; // ignore: unused_field
+
+	// Translations
+	@override String get name => 'その他の事実情報の出典';
+	@override String get use => '事業者の公式資料（英語駅名など）、公共交通オープンデータセンター、国立国会図書館・国立公文書館の公開資料、日本郵便の郵便番号データ、駅名標の写真';
+	@override String get terms => '事実情報として使用。出典はデータの行ごとに記録し、一覧はリポジトリのdata/NOTICE.mdにあります';
 }
 
 // Path: sources.openFreeMap
@@ -1274,6 +1307,7 @@ extension on TranslationsJa {
 			'session.noPath' => 'この2駅の間の経路が見つかりませんでした',
 			'session.state.maybe' => '?',
 			'session.state.suspended' => '運休',
+			'session.state.offSeason' => 'シーズン外',
 			'session.state.suspendedSince' => ({required Object year}) => '運休 ${year}~',
 			'session.state.until' => ({required Object year}) => '~${year}',
 			'session.state.since' => ({required Object year}) => '${year}~',
@@ -1285,6 +1319,8 @@ extension on TranslationsJa {
 			'session.handNote' => 'この区間はその路線で記録されます',
 			'session.noticeClosedSub' => 'それより前の日付でのみ記録できます',
 			'session.noticeSuspendedSub' => '運休前の日付でのみ記録できます',
+			'session.noticeSeasonSub' => ({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行。この日は運行していません',
+			'session.noticeSeasonAnySub' => ({required Object from, required Object to}) => '例年${from}月～${to}月のみ運行',
 			'session.noticeBeforeSub' => '開業後の日付で記録できます',
 			'session.chooseDirection' => 'どちら回りで乗りましたか？',
 			'session.directionKm' => ({required Object km}) => '${km} km',
@@ -1312,12 +1348,14 @@ extension on TranslationsJa {
 			'session.closedSection' => ({required Object year}) => '~${year} 廃止',
 			'session.openedSection' => ({required Object year}) => '${year}年開業',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です',
+			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置',
 			'session.archiveLine' => ({required Object name}) => '${name}は記録対象外です',
 			'session.from' => '乗車',
 			'session.to' => '降車',
 			'session.whyClosed' => 'その日付には営業していなかった駅です',
 			'session.whyViewSignal' => '信号場・分岐点のため、ここで記録を始めたり終えたりできません',
 			'session.whyViewNoBoarding' => 'この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません',
+			'session.whyViewStaff' => '旅客を扱わない駅のため、ここで記録を始めたり終えたりできません',
 			'session.onlyDown' => '下りのみ',
 			'session.onlyUp' => '上りのみ',
 			'session.onlyOneWay' => '片方向のみ',
@@ -1360,6 +1398,7 @@ extension on TranslationsJa {
 			'session.repick' => '別の駅をタップすると選び直せます',
 			'session.closedUnknown' => '廃止区間',
 			'session.suspendedSection' => '運休中',
+			'session.seasonSection' => '季節運行',
 			'session.relocationOld' => ({required Object km}) => '旧線 · ${km} km',
 			'session.relocationNew' => ({required Object km}) => '新線 · ${km} km',
 			'session.spokenOpen' => '営業中',
@@ -1446,6 +1485,9 @@ extension on TranslationsJa {
 			'sources.n03.name' => '国土数値情報 行政区域データ (N03)',
 			'sources.n03.use' => '日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ',
 			'sources.n03.terms' => '「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。',
+			'sources.gsi.name' => '国土地理院 ベクトルタイル',
+			'sources.gsi.use' => '田端信号場付近の線路形状の一部',
+			'sources.gsi.terms' => '国土地理院コンテンツ利用規約（CC BY 4.0互換）。出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成',
 			'sources.stationDatabase.name' => 'station_database',
 			'sources.stationDatabase.use' => '駅一覧と座標',
 			'sources.stationDatabase.terms' => 'Seo-4d696b75. CC BY-SA 4.0',
@@ -1461,6 +1503,9 @@ extension on TranslationsJa {
 			'sources.noritsubushi.name' => '乗りつぶしオンライン',
 			'sources.noritsubushi.use' => '営業キロ、駅の順序、開業日・廃止日、日本語表記',
 			'sources.noritsubushi.terms' => '事実情報として使用',
+			'sources.others.name' => 'その他の事実情報の出典',
+			'sources.others.use' => '事業者の公式資料（英語駅名など）、公共交通オープンデータセンター、国立国会図書館・国立公文書館の公開資料、日本郵便の郵便番号データ、駅名標の写真',
+			'sources.others.terms' => '事実情報として使用。出典はデータの行ごとに記録し、一覧はリポジトリのdata/NOTICE.mdにあります',
 			'sources.openFreeMap.name' => 'OpenFreeMap',
 			'sources.openFreeMap.use' => '背景地図',
 			'sources.openFreeMap.terms' => 'OpenFreeMap © OpenMapTiles. Data from OpenStreetMap',
@@ -1504,6 +1549,7 @@ extension on TranslationsJa {
 			'lineDetail.restored' => '消した記録を戻しました',
 			'lineDetail.blockedHidden' => '信号場や分岐点で区切る必要があるため、ここでは消せません。記録を直接編集してください',
 			'lineDetail.blockedPath' => '区切ると経路が変わるため消せません。記録を直接編集してください',
+			'lineDetail.blockedNoStop' => 'この方向の列車が停まらない駅で区切る必要があるため、ここでは消せません。記録を直接編集してください',
 			'lineDetail.blockedOn' => 'この区間はここでは乗車済にできません。駅の選択画面から記録してください。',
 			'lineDetail.visitAdded' => '訪問済にしました',
 			'lineDetail.visitRemoved' => '訪問を消しました',
@@ -1624,6 +1670,8 @@ extension on TranslationsJa {
 			'prefNames.6' => '福島',
 			'prefNames.7' => '茨城',
 			'prefNames.8' => '栃木',
+			_ => null,
+		} ?? switch (path) {
 			'prefNames.9' => '群馬',
 			'prefNames.10' => '埼玉',
 			'prefNames.11' => '千葉',
@@ -1637,8 +1685,6 @@ extension on TranslationsJa {
 			'prefNames.19' => '長野',
 			'prefNames.20' => '岐阜',
 			'prefNames.21' => '静岡',
-			_ => null,
-		} ?? switch (path) {
 			'prefNames.22' => '愛知',
 			'prefNames.23' => '三重',
 			'prefNames.24' => '滋賀',

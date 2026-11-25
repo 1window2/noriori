@@ -48,7 +48,7 @@ for q,t,k in [('select from_node from edge','node','edge.from'),('select to_node
               ('select other_node from route_link','node','link.onode'),('select next_stop_node from route_link','node','link.next'),('select terminal_node from route_link','node','link.term'),
               ('select node_id from hub_member','node','hub'),('select node_id from junction','node','junction.node'),('select line_id from junction','line','junction.line'),
               ('select other_line_id from junction','line','junction.other'),('select node_id from node_position','node','pos'),('select line_id from closed_section','line','closed.line'),
-              ('select line_id from archive_stop','line','arch.line'),('select line_id from archive_line','line','archl.line'),('select route_id from service_part','route','svc.route'),('select node_id from service_stop','node','svc.stop'),
+              ('select line_id from archive_stop','line','arch.line'),('select node_id from archive_stop','node','arch.node'),('select line_id from archive_line','line','archl.line'),('select route_id from service_part','route','svc.route'),('select node_id from service_stop','node','svc.stop'),
               ('select edge_id from denominator_unit','edge','unit.edge'),('select edge_id from edge_pref','edge','pref.edge'),('select edge_id from edge_link','edge','elink')]:ref(q,t,k)
 put('edge에 life 없음',[r[0] for r in m.execute('select id from edge where id not in (select edge_id from edge_life)')])
 put('edge에 km 없음',[r[0] for r in m.execute('select id from edge where id not in (select edge_id from edge_km)')])
@@ -134,7 +134,15 @@ for e,L in life.items():
 put('법적 폐지가 기준일 전인데 수록',rows)
 # 운행을 다시 시작하지 않고 끝난 휴지(DESIGN §2.2, 결정 122): 운휴 뒤 재개 없이 닫힌 칸은 운휴 시작으로 소급해 닫혀야 하고(마지막 행이 suspended인 채 닫히면 안 됨),
 # 법적 폐지일이 닫힌 날보다 늦으면 사유가 no_regular_service(이설·BRT는 그대로)다
-put('운휴 뒤 재개 없이 닫힘(운휴 시작으로 소급 안 됨)',[(e,ln(attr[e][0]['line_id']) if attr.get(e) else '',v[-1]['valid_from'],v[-1]['valid_to']) for e,v in LR.items() if v[-1]['status']=='suspended' and v[-1]['valid_to']!=ON],30)
+# 다만 운휴 중 이설해 계승한 칸(폐지 사유 relocated이고 칸 끝 노드의 이전처 새 역이 닫힌 날 열림, 常磐線 駒ヶ嶺–浜吉田 2011→2016)은 운휴로 남는 것이 규칙이다
+# (설계 audit5-relocation-successor-design.md, 사용자 결정 2026-11-24). compile의 _reloc_successor와 같은 조건이다
+_MVD=collections.defaultdict(set)
+for mv_ in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8')):_MVD[mv_['old']].add(mv_['date'])
+def _reloc_ok(e,L):
+    if L['close_reason']!='relocated':return False
+    fr_,to_=m.execute('select from_node,to_node from edge where id=?',(e,)).fetchone()
+    return any((L['valid_to'] or '')[:10] in _MVD.get(n_,()) for n_ in (fr_,to_))
+put('운휴 뒤 재개 없이 닫힘(운휴 시작으로 소급 안 됨)',[(e,ln(attr[e][0]['line_id']) if attr.get(e) else '',v[-1]['valid_from'],v[-1]['valid_to']) for e,v in LR.items() if v[-1]['status']=='suspended' and v[-1]['valid_to']!=ON and not _reloc_ok(e,v[-1])],30)
 put('법적 폐지가 닫힌 날보다 늦은데 사유 abolished',[(e,ln(attr[e][0]['line_id']) if attr.get(e) else '',L['valid_to'],L['legal_abolition']) for e,L in life.items() if L['close_reason']=='abolished' and L['legal_abolition'] and L['valid_to']!=ON and (lohi(L['legal_abolition'])[0] or '')>(lohi(L['valid_to'])[1] or '9999')],30)
 put('폐지 사유 없는 폐지 edge',[e for e,L in life.items() if L['valid_to']!=ON and not L['close_reason']])
 put('현행 edge에 폐지 사유',[e for e,L in life.items() if L['valid_to']==ON and L['close_reason']])
@@ -525,7 +533,9 @@ put('공개 노드 ja 없음',[i for i in pub if 'ja' not in nm['node',i]])
 put('공개 노드 en 없음',[i for i in pub if 'en' not in nm['node',i]])
 # 승하차 불가 끝 노드(분기점·신호장, 정차 없는 계통 끝)는 노선 일람에 보여 이름이 있다 (5번 결정 junction-nodes-rule, 2026-11-19)
 ENDN={r[0] for r in m.execute('select distinct node_id from route_stop where is_end_point=1')}
-put('비공개 노드 이름 노출',[i for t,i in nm if t=='node' and i not in pub and i not in ENDN])
+# 승객 미취급 정식 역(route_stop_select style staff, 근거 표 node_identity staff_only)도 노선 일람에 보여 이름이 있다 (2026-11-24)
+STAFFN={r[0] for r in m.execute("select distinct node_id from route_stop_select where style like 'staff%'")} if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone() else set()
+put('비공개 노드 이름 노출',[i for t,i in nm if t=='node' and i not in pub and i not in ENDN and i not in STAFFN])
 put('kind가 station 아닌 공개 노드',[r[0] for r in m.execute("select id from node_public where kind<>'station'")])
 # 읽기 근거가 끝내 없어 한국어·영어에 일본어 표기를 그대로 보이는 이름(ja_as_is, redesign §4 결정 6)과
 # 읽기를 모르는 옛 이름의 병기 「지금 이름 (당시 옛 표기)」(DESIGN §9 표, 2026-11-08)는 설계대로다. 병기 앞부분만 본다
@@ -565,11 +575,51 @@ for (t,i),v in nm.items():
             y=[r for r in v.get(l,[]) if (r[3],r[4],r[5])==(li,vf,vt)]
             if not y or any(r[2]=='ja_as_is' or (shown(l,r[0],r[2]) is not None and HK.search(shown(l,r[0],r[2]))) for r in y):_rw.append((t,i,l,x,li,vf,vt))
 put('읽기 있는데 한국어·영어 없음',_rw)
+# 읽기 없는 이름 행도 같은 (노선, 기간)의 한국어·영어 행이 있어야 한다(일본어 표기 그대로 ja_as_is 또는 옛 이름 병기). 없으면 화면이 다른 기간 이름을 보이거나 비게 된다 (5회차 2026-11-24)
+_nk=[]
+for (t,i),v in nm.items():
+    if t not in ('node','archive') or (t=='node' and i not in pub):continue
+    for x,k,s_,li,vf,vt in v.get('ja',[]):
+        if k:continue
+        for l in ('ko','en'):
+            if not any((r[3],r[4],r[5])==(li,vf,vt) for r in v.get(l,[])):_nk.append((t,i,l,x,li,vf,vt))
+put('읽기 없는 이름에 한국어·영어 행 없음',_nk)
+# archive_fix의 읽기 열쇠(이름 또는 이름@노선)는 DB의 그 이름 열람 전용 역에 실제로 붙어야 한다. 컴파일이 노드에서 만든 열람 전용 역(1950 전 정차가 끝난 노드)은
+# 이 열쇠를 보지 않아 읽기가 조용히 버려진다(志摩町·西裏·東野田町九丁目, 5회차 2026-11-24). 그런 역의 읽기는 노드(node_fix·old_names_kana)에 둔다
+_AF=json.load(open(os.path.join(ROOT,'data','overrides','archive_fix.json'),encoding='utf-8'));_akana=collections.defaultdict(set)
+_aline={r_[0]:r_[1] for r_ in m.execute('select id,coalesce(line_id,archive_line_id) from archive_stop')}
+_aname=collections.defaultdict(set)
+for (t,i),v in nm.items():
+    if t!='archive':continue
+    for x,k,*_r in v.get('ja',[]):
+        _aname[x].add((t,i))
+        if k:_akana[x].add((k,_aline.get(i)))
+rows=[]
+for k_,v_ in _AF.items():
+    if k_.startswith('_') or not isinstance(v_,dict) or not v_.get('kana'):continue
+    nm_,_,ln_=k_.partition('@')
+    same_=list(_aname.get(nm_,()))
+    if not same_:continue
+    # 그 이름 열람 전용 역이 하나면 노선이 바뀌었어도(이관 뒤 北陸本線→あいの風) 그 역이다
+    if not any(kk==v_['kana'] and (not ln_ or ll==ln_ or len(same_)==1) for kk,ll in _akana.get(nm_,())):rows.append((k_,v_['kana'],sorted(_akana.get(nm_,()))[:3]))
+put('archive_fix 읽기 열쇠가 DB 열람 전용 역에 반영되지 않음',rows,30)
+# 승객 미취급 정식 역(route_stop_select style staff)은 근거 표 node_identity staff_only에 적은 노드에만 생겨야 하고, 화물역(노드 종류 freight)에는 절대 생기면 안 된다.
+# staff 행은 정차·끝·공개 노드가 아니어도 노선 일람에 보이므로, 잘못 번지면 화물역이 일람에 쏟아진다 (사용자 지시 2026-11-24)
+_STAFF={r_['node'] for r_ in json.load(open(os.path.join(ROOT,'data','overrides','node_identity.json'),encoding='utf-8'))['rows'] if r_.get('kind')=='staff_only'}
+_nkind={r_[0]:r_[1] for r_ in m.execute('select id,kind from node')}
+rows=[]
+if m.execute("select 1 from sqlite_master where name='route_stop_select'").fetchone():
+    for r_,n_,st_ in m.execute("select route_id,node_id,style from route_stop_select where style like 'staff%'"):
+        if n_ not in _STAFF:rows.append((r_,n_,st_,'근거 표에 없는 노드'))
+        if _nkind.get(n_)=='freight':rows.append((r_,n_,st_,'화물역'))
+put('승객 미취급 역(staff) 표시가 근거 표 밖 노드나 화물역에 생김',rows,20)
 put('kana가 히라가나 아님',[(i,x,k) for (t,i),v in nm.items() if t=='node' for x,k,*_ in v.get('ja',[]) if k and not re.fullmatch(r'[ぁ-ゟー・ 　0-9A-Za-zァ-ヶ（）()]+',k)])
 # 현대 가나 표기가 아님 (ぎをん, をごとおんせん). 원문 옛 표기를 그대로 옮긴 것이다
 put('kana에 옛 가나(を·ゐ·ゑ)',[(t,i,x,k) for (t,i),v in nm.items() for x,k,*_ in v.get('ja',[]) if k and re.search('[をゐゑ]',k)])
 put('공개 노드 kana 없음',[(i,base('node',i,'ja')[0]) for i in pub if base('node',i,'ja') and not base('node',i,'ja')[1] and i not in asis])
-put('en에 비ASCII',[(i,x) for (t,i),v in nm.items() for x,k,s,*_ in v.get('en',[]) if shown('en',x,s) is not None and not shown('en',x,s).replace('·','').isascii() and not _kj_ok(shown('en',x,s))])
+# 공식 영어 이름의 장음 기호(Shijō-Ōmiya)는 공식대로 둔다 (사용자 결정 2026-11-24). 그 밖의 비ASCII만 잡는다
+_MACRON=str.maketrans('','','āīūēōĀĪŪĒŌ')
+put('en에 비ASCII',[(i,x) for (t,i),v in nm.items() for x,k,s,*_ in v.get('en',[]) if shown('en',x,s) is not None and not shown('en',x,s).replace('·','').translate(_MACRON).isascii() and not _kj_ok(shown('en',x,s))])
 # 계통 이름도 화면에 나온다(PackReader.nameBook). 없으면 한국어·영어 화면에 일본어 계통 이름이 나온다 (끝 역이 신호장·분기점인 계통)
 put('계통 ko·en 이름 없음',[(i,l,J('route',i)) for (t,i),v in nm.items() if t=='route' for l in ('ko','en') if l not in v])
 put('en 빈 값',[(i,x) for (t,i),v in nm.items() for x,k,s,*_ in v.get('en',[]) if not x.strip()])
@@ -579,7 +629,8 @@ def hav(a,b):
     return 6371*2*math.asin(math.sqrt(h))
 # 같은 한자 다른 읽기: 같은 표기의 다른 지명은 흔하다(桂川 かつらがわ·けいせん, 山崎 やまさき·やまざき). 그래서 같은 노드 안이거나
 # 8km 안의 노드끼리만 본다. 가까워도 실제로 읽기가 다른 역(西院 阪急 さいいん·京福 さい, 木幡 JR こはた·京阪 こわた)은 뺀다
-NEAR_OK={'西院','木幡'}
+# 三河豊田: 名鉄 挙母線 1937–1959(みかわとよだ, 1942 鉄道省 運賃算出表 높음)과 愛知環状鉄道 1976~(みかわとよた)은 시기가 겹치지 않는 다른 역 (5회차 2026-11-24)
+NEAR_OK={'西院','木幡','三河豊田'}
 kk=collections.defaultdict(lambda:collections.defaultdict(set))
 # 같은 노드에서 같은 글자의 읽기가 기간을 달리해 바뀐 것(苅田 かりた ~1959 → かんだ, 공식 읽기 변경)은 충돌이 아니다.
 # 그 노드에서 그 글자의 행이 모두 기간이 겹치지 않으면(기간 없는 지금 행 하나 + 끝난 옛 행들) 한 노드 안 충돌로 세지 않는다 (2026-11-13)
@@ -1826,7 +1877,8 @@ def _sure(p):
 RPAIR={rid:{frozenset(E[e]):e for e in v if e in E} for rid,v in redge.items()}
 def _route_open_at(rid,x):
     """계통 rid의 칸 가운데 x에 닿는 칸들이 영업한 기간(합집합). 칸 영업 기록이 없으면 None"""
-    es=[e for f,e in RPAIR.get(rid,{}).items() if x in f]
+    # 같은 두 노드 사이에 시기가 다른 칸이 여럿일 수 있다(松戸線 前原–新津田沼（旧） 1947–1953·1961–1968). RPAIR는 쌍마다 칸 하나라 계통 칸 전부를 본다
+    es=[e for e in redge.get(rid,()) if e in E and x in E[e]]
     if not es or not all(LR.get(e) for e in es):return None
     return _ivs_union([iv for e in es for iv in _open_iv(e,routes[rid]['line_id'])])
 # K54 닿을 수 없는 정차: 정차 기간 토막(1950 뒤 확실한 부분) 내내 그 역에 닿는 그 계통 칸이 하나도 영업하지 않음 (3회차 chugoku_shikoku_2-023, 三江線 野井).
@@ -1986,7 +2038,13 @@ for k in LINKS:
     if len(nbs)>=2:rows.append((k['route_id'],nn(k['node']),k['kind'],ln(k['other_line_id']),nn(t),d,sorted(nn(z) for z in nbs)[:3]))
 put('K61 연결 끝 역에서 그날 상대 노선이 더 이어짐(끝 역이 줄기 끝이 아님)',rows,30,lvl='warn')
 # K62 시작이 범위인 연결 행의 범위 상한이 끝보다 늦음 (3회차 tohoku_1-019 石巻)
-rows=[(k['route_id'],nn(k['node']),k['kind'],ln(k['other_line_id']),k['valid_from'],k['valid_to']) for k in LINKS for p in [ivl(k['valid_from'],k['valid_to'])] if p and k['valid_to']!=ON and (p[1] or '')>(p[2] or '9999') and not str(k['valid_from']).startswith('[..')]
+# 시작·끝이 둘 다 범위이고 끝 범위가 시작 범위보다 뒤로 밀린 창(그해 운행은 근거로 확인, 날짜만 모름: 秋田内陸 2000 봄)은 compile이 있었다고 받은 행이라 뺀다 (5회차 2026-11-25)
+def _k62_window(k):
+    f_,t_=str(k['valid_from']),str(k['valid_to'])
+    if not (f_.startswith('[') and t_.startswith('[')):return False
+    a_,b_=lohi(f_),lohi(t_)
+    return bool(a_[0] and b_[0] and a_[1] and b_[1]) and a_[0]<b_[0] and a_[1]<b_[1]
+rows=[(k['route_id'],nn(k['node']),k['kind'],ln(k['other_line_id']),k['valid_from'],k['valid_to']) for k in LINKS for p in [ivl(k['valid_from'],k['valid_to'])] if p and k['valid_to']!=ON and (p[1] or '')>(p[2] or '9999') and not str(k['valid_from']).startswith('[..') and not _k62_window(k)]
 put('K62 연결 시작 범위의 상한이 끝보다 늦음',rows,30)
 # K63 계통 연속성: 이웃 두 정차역이 함께 서는 날에 그 사이 계통 칸이 영업하지 않음(병주 칸도 없음, 3회차 kinki_2-019 西野田線)
 rows=[]
@@ -2189,7 +2247,7 @@ for x_,v_ in _RJ.items():
         try:span=(datetime.date.fromisoformat(min(p_[3],TODAY)[:10])-datetime.date.fromisoformat(p_[1][:10])).days
         except ValueError:continue
         # 1950-01-01 전에 끝난 표식은 기록 범위 밖이라 확인할 것이 없다(弁天島 1907~1916, 北鎌倉 1927~1930). 계절 臨時駅의 영업 철은 날짜로 다루지 않는다
-        # (DESIGN §9.4 臨時駅 「영업한 해 전체가 기록 가능」): 남는 행은 해마다 영업했는지(영업하지 않은 해가 있는지)의 확인 목록이다 (9회차 N)
+        # (DESIGN §9.1.2 臨時駅 「영업한 해 전체가 기록 가능」): 남는 행은 해마다 영업했는지(영업하지 않은 해가 있는지)의 확인 목록이다 (9회차 N)
         if p_[3]<=BASE:continue
         if span>366 and not _GP.get(x_):rows.append((nn(x_),x_,f_,t_))
 put('K48 臨時駅 표식이 1년 넘게 이어지고 정차 공백 없음(영업 시즌 확인 목록)',rows,40,lvl='warn')
@@ -2415,14 +2473,18 @@ put('K91 끝난 노선의 날짜 모름 화면 이름이 그 역 마지막 정�
 # K92 역 이름에 안내용 副駅名称(〈 〉)이 들어감 (3회차 kanto_1-015: 明治神宮前〈原宿〉). 정식 역명만 이름이고 〈 〉 꼴은 검색 별칭이다
 rows=[(i_,l_,x_) for t_,i_,l_,x_ in n.execute("select entity_type,entity_id,lang,text from name where entity_type='node'") if re.search('[〈〉]',x_ or '')]
 put('K92 역 이름에 안내용 副駅名称(〈〉)',rows,30)
+_MVPAIR={tuple(sorted((x['old'],x['new']))) for x in json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))}
 # K93 같은 노선의 다른 계통에 지금 이름이 같은 역 둘((旧) 없음, 3회차 tohoku_2-013: 東北本線 山線 옛 松島–海線 松島). 같은 계통은 K25
 rows=[]
 for l_,rids_ in LROUTES.items():
     gb=collections.defaultdict(set)
     for rid_ in rids_:
         for y in rstop.get(rid_,[]):
-            if y['is_stop']:gb[bj(y['node_id'])].add(y['node_id'])
+            # 노선 한정 이름(기간 없음)이 있으면 그 이름으로 본다(5회차 京王線 新宿·新線新宿)
+            if y['is_stop']:gb[next((z[0] for z in NROWS.get(('node',y['node_id'],'ja'),[]) if z[3]==l_ and not z[4] and not z[5]),None) or bj(y['node_id'])].add(y['node_id'])
     for t_,xs in gb.items():
+        # 역 이전(moved.json) 옛·새 노드 쌍은 옛 역에 이전 안내가 붙어 구별된다(会津線 舟子 1980 大川ダム 선로 바꿈)
+        if len(xs)==2 and tuple(sorted(xs)) in _MVPAIR:continue
         if len(xs)>1 and t_ and not any(len(xs)>1 and set(xs)<=RNODES.get(r_,set()) for r_ in rids_):rows.append((ln(l_),t_,sorted(xs)[:3]))
 put('K93 같은 노선 다른 계통에 지금 이름이 같은 노드 둘(（旧） 없음)',rows,30)
 # K110 여객 영업 이력이 없는 화물선(rule_class hidden)은 DB에만 둔다(사용자 결정 2026-11-09). 앱에 드러나는 길이 없어야 한다 (9회차 F):
@@ -2832,11 +2894,11 @@ if _RVC198:
         a_,b_=lohi(r_[4]) if r_[4] else ('0000-01-01',)*2,lohi(r_[5]) if r_[5] not in (None,'ongoing') else ('9999-12-31',)*2
         if not any((lohi(f_)[0] if f_ else '0000-01-01')<b_[1] and a_[0]<(lohi(t_)[1] if t_ not in (None,'ongoing') else '9999-12-31') for f_,t_ in _cl198.get(tuple(r_[:4]),())):rows.append(tuple(r_))
 put('K198 스위치백 표식 기간(route_link_reverse)에 맞는 끝 역 이어짐(continue) 행이 없음',rows,20)
-# K199 근거 표 THROUGH의 reverse·passenger_only 칸 값이 틀림(reverse는 true·"a"·"b", passenger_only는 true), 또는 reverse 행의 표식 기간이 하나도 없음
+# K199 근거 표 THROUGH의 reverse·passenger_only 칸 값이 틀림(reverse는 true·"a"·"b"·false(곧게 이어짐, 자동 표식 막음, 5회차), passenger_only는 true), 또는 reverse 행의 표식 기간이 하나도 없음
 rows=[]
 _RVROWS=[x_ for x_ in _TH if 'reverse' in x_ or 'passenger_only' in x_]
 for x_ in _RVROWS:
-    if 'reverse' in x_ and x_['reverse'] not in (True,'a','b'):rows.append((x_['a'],x_['b'],x_['at'][0],'reverse 값',str(x_['reverse'])))
+    if 'reverse' in x_ and x_['reverse'] not in (True,False,'a','b'):rows.append((x_['a'],x_['b'],x_['at'][0],'reverse 값',str(x_['reverse'])))
     if 'passenger_only' in x_ and x_['passenger_only'] is not True:rows.append((x_['a'],x_['b'],x_['at'][0],'passenger_only 값',str(x_['passenger_only'])))
 if _RVC198:
     _rvl=collections.defaultdict(list)

@@ -46,6 +46,8 @@
 - {"date": "1962-04-XX", "type": "close_stop", "route": "r_hakodate_main_line", "node": "n_koshiji_hakodate", "source": "wikipedia"}
 - {"date": "1951-06-XX", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_koshiji_hakodate", "source": "wikipedia"}
 - {"date": "1905-01-29", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_ginzan", "source": "wikipedia"}
+- {"date": "1951-08-11", "type": "close_stop", "route": "r_hakodate_main_line", "node": "n_ohamanaka", "source": "wikipedia"}
+- {"date": "1951-07-15", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_ohamanaka", "source": "wikipedia"}
 - {"date": "1910-11-21", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_otaru_chikko", "source": "wikipedia"}
 - {"date": "2006-03-18", "type": "close_stop", "route": "r_hakodate_main_line", "node": "n_hariusu", "source": "wikipedia"}
 - {"date": "1905-10-08", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_hariusu", "source": "wikipedia"}
@@ -1082,7 +1084,7 @@
 - {"date": "1982-04-01", "type": "open_stop", "route": "r_tohoku_main_line_iwakiri_rifu", "node": "n_shin_rifu", "source": "wikipedia"}
 - {"date": "1894-01-04", "type": "open_stop", "route": "r_tohoku_main_line_iwakiri_rifu", "node": "n_rifu", "source": "wikipedia"}
 - {"date": "2015-05-30", "type": "open", "operator": "o_jr_east", "line": "l_tohoku_main_line", "edges": ["n_matsushima..n_takagimachi"], "route": "r_tohoku_main_line_matsushima_takagimachi", "source": "noritsubushi"}
-- {"date": "1988-03-13", "type": "open", "operator": "o_jr_east", "line": "l_tohoku_main_line", "edges": ["n_tabata_signal..n_kami_nakazato"], "route": "r_tohoku_freight_line", "source": "noritsubushi"}
+- {"date": "1988-03-13", "type": "open", "operator": "o_jr_east", "line": "l_tohoku_main_line", "edges": ["n_tabata_signal..n_oji_tohoku_main"], "route": "r_tohoku_freight_line", "source": "noritsubushi"}
 - {"date": "1890-04-16", "type": "open", "operator": "o_japanese_national_railways", "line": "l_tohoku_main_line", "edges": ["n_rifu..n_shinainuma"], "route": "r_tohoku_main_line_rifu_shinainuma", "source": "wikipedia"}
 - {"date": "1962-07-01", "type": "close", "line": "l_tohoku_main_line", "edges": ["n_rifu..n_matsushima_tohoku_main"], "reason": "abolished", "source": "wikipedia", "legal_abolition": "1962-07-01", "route": "r_tohoku_main_line_rifu_shinainuma"}
 - {"date": "1962-04-20", "type": "close", "line": "l_tohoku_main_line", "edges": ["n_matsushima_tohoku_main..n_shinainuma"], "reason": "abolished", "source": "wikipedia", "legal_abolition": "1962-04-20", "route": "r_tohoku_main_line_rifu_shinainuma"}
@@ -3346,6 +3348,8 @@
 - {"date": "1974-12-14", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_nishi_kokura", "source": "wikipedia"}
 - {"date": "1970-07-01", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_kyushukodaimae", "source": "wikipedia"}
 - {"date": "1908-04-01", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_edamitsu", "source": "wikipedia"}
+- {"date": "[1954-01-01..1955-10-31]", "type": "close_stop", "route": "r_kagoshima_main_line", "node": "n_nishi_yahata", "source": "wikipedia"}
+- {"date": "[1949-01-20..1951-04-30]", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_nishi_yahata", "source": "wikipedia"}
 - {"date": "2000-11-21", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_jinnoharu", "source": "wikipedia"}
 - {"date": "1961-10-01", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_mizumaki", "source": "wikipedia"}
 - {"date": "1910-02-06", "type": "open_stop", "route": "r_kagoshima_main_line", "node": "n_ebitsu", "source": "wikipedia"}

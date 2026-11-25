@@ -29,13 +29,13 @@ python3 -I tools/status.py
 
 ## 컴파일 단계 보정
 
-`imports/`가 없는 체크아웃(CI, 원격 작업 환경)에서도 바로 빌드에 반영되는 보정 표입니다. 생성기(`gen_*`)가 읽는 표는 `source/`를 다시 만들어야 반영됩니다.
+`imports/`가 없는 체크아웃(CI 등)에서도 바로 빌드에 반영되는 보정 표입니다. 생성기(`gen_*`)가 읽는 표는 `source/`를 다시 만들어야 반영됩니다.
 
 | 파일 | 내용 |
 |---|---|
 | `overrides/events_fix.json` | 생성기가 빠뜨리거나 틀리게 쓴 사건을 재생성 전까지 고친다. `match`+`set`은 사건 하나를 찾아 값을 바꾸고, `add`는 사건을 더한다. 재생성으로 `source/`가 맞아져 쓰이지 않게 된 행은 `compile.py` 오류(`events_fix_unused`)라 그때 지운다 |
 | `overrides/edge_dates.json` | 구간 시작일 (`노드|노드` → EDTF) |
-| `overrides/stop_dates.json`, `moved.json`, `extend.json`, `hub_pairs.json`, `hub_not.json`, `junction_side.json` | 역 기간, 역 이전, 숨은 끝 너머, 환승 묶음, 분기 방향 |
+| `overrides/stop_dates.json`, `moved.json`, `extend.json`, `hub_pairs.json`, `hub_not.json`, `junction_side.json` | 역 기간, 역 이전, 끝 이어짐 방면(그 방면 첫 역, DESIGN §2.7), 환승 묶음, 분기 방향 |
 | `overrides/kana.json`, `kana_est.json`, `kana_evidence.json` | 역 읽기(`node:이름` → 가나). `kana.json`은 근거가 있는 읽기, `kana_est.json`은 근거가 모자란 읽기(출처 `estimated`, 한자로 추정했거나 근거가 중간 하나뿐인 조사 값)다. 조사한 읽기의 근거(공식 정거장 목록 쪽, railforum 행 등)는 `kana_evidence.json`에 행마다 남기고, 확정 규칙(높음 하나, 또는 서로 독립인 중간 둘. railforum의 두 목록은 하나로, 현행 지명 읽기는 세지 않음)을 넘은 것만 `confirmed: true`로 `kana.json`에 둔다 |
 | `overrides/one_way.json`, `stop_direction.json` | 한 방향 운행 구간(운행 순서의 역 목록)과 한 방향 정차·하차전용 역(`direction`, `label`, `use`). 기간과 근거(`why`)를 행마다 적는다 (DESIGN §8) |
 | `overrides/stop_status.json` | 仮乗降場·臨時駅이던 기간(`node`, `kind` kari/rinji, `from`, `to`). `line`이 있으면 그 노선에서만 표시한다(없으면 그 기간에 서는 모든 노선) |

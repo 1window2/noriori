@@ -39,7 +39,7 @@ void main() {
           routeId: r,
           rows: visible,
           openGaps: builder.openBetween(r, visible, ds),
-          sectionGaps: builder.openBetween(r, visible, DateSpan.parse(today)),
+          sectionGaps: builder.openBetween(r, visible, DateSpan.parse(today), offSeasonOpen: true),
           sectionEnds: builder.sectionEnds(r, visible, DateSpan.parse(today), date: ds),
         );
       }
@@ -60,6 +60,19 @@ void main() {
     expect(per(await stitch('l_muroran_main_line', '1970-07-31'), 'n_sakimori'), '1978~');
     // 운휴했다 다시 연 선형은 처음 생긴 해(1928)가 아니라 다시 노선의 길이 된 해다
     expect(per(await stitch('l_kyoto_line', '1965-08-22'), 'n_kintetsu_tambabashi'), '1968~');
+  });
+
+  test('접힌 줄은 화면 순서이고 km는 붙는 역에서 잰다. 줄 km 원점은 그날 다니는 계통의 맨 위 기점이다', () async {
+    // 그날의 길을 본선에 잇고 위로 접은 본선 구간(総武本線 1965 東京–錦糸町, 瀬戸線 1965 栄町·東大手)
+    final sobu = await stitch('l_sobu_main_line', '1965-06-01');
+    final up = sobu.folds.firstWhere((f) => f.rows.rows.any((r) => r.node == 'n_bakurocho'));
+    expect(up.rows.rows.firstWhere((r) => r.node == 'n_bakurocho').kmCum, 1.8);
+    final seto = await stitch('l_seto_line', '1965-06-01');
+    final sf = seto.folds.firstWhere((f) => f.rows.rows.any((r) => r.node == 'n_higashiote'));
+    expect(sf.rows.rows.map((r) => r.node), ['n_sakaemachi_meitetsu', 'n_higashiote']);
+    expect(sf.rows.rows.last.kmCum, 2.1);
+    // 줄 머리의 다른 계통 조각(尼崎港線, 塚口에서 잰 km)이 원점을 밀지 않는다
+    expect(km(await stitch('l_fukuchiyama_line', '1965-06-01'), 'n_amagasaki'), 0.0);
   });
 
   test('室蘭本線: 志文–岩見沢 옛 선로는 칩 없이 그날의 길과 km만', () async {
@@ -109,7 +122,7 @@ void main() {
     expect(now.used, isNot(contains('r_chikuhi_line_yamamoto_imari')));
   });
 
-  test('西鉄循環線: 고리를 닫고, 날짜 모름에서 폐지 구간의 접힌 줄은 함께 죽는다', () async {
+  test('西鉄循環線: 고리를 닫고, 날짜 모름에서 폐지 구간의 접힌 줄은 흐리게 그리되 역은 폐지된 본선 역처럼 고를 수 있다', () async {
     final y = await stitch('l_loop_line_nishitetsu', '1955-06-01');
     expect(y.main.rows.first.node, 'n_chidoribashi_kaizuka');
     expect(y.main.rows.last.node, 'n_chidoribashi_kaizuka');
@@ -117,6 +130,8 @@ void main() {
     final u = await stitch('l_loop_line_nishitetsu', null);
     expect(u.folds, isNotEmpty);
     expect(u.folds.every((f) => f.dead), isTrue);
+    final closedMain = u.main.rows.firstWhere((r) => r.node == 'n_gionmachi').selectable;
+    expect(u.folds.expand((f) => f.rows.rows).every((r) => r.selectable == closedMain), isTrue);
   });
 
   test('中央本線 1955: 辰野 경유가 그날의 본선 (날짜별)', () async {

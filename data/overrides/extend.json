@@ -4,24 +4,14 @@
 "n_ushida_meitetsu"
 ]
 },
-"r_yamanote_freight_line": {
-"end": [
-"n_kami_nakazato",
-"n_mikawashima"
-]
-},
+"r_yamanote_freight_line": {"end": ["n_oji_tohoku_main", "n_mikawashima"]},
 "r_tohoku_freight_line": {
 "start": [
 "n_komagome",
 "n_mikawashima"
 ]
 },
-"r_tabata_freight_line": {
-"start": [
-"n_komagome",
-"n_kami_nakazato"
-]
-},
+"r_tabata_freight_line": {"start": ["n_komagome", "n_oji_tohoku_main"]},
 "r_hoppo_freight_line": {
 "start": [
 "n_kishibe"
@@ -77,7 +67,7 @@
 },
 "r_ninokuchi_connecting_line": {
 "start": [
-"n_masuga"
+"n_yamato_yagi"
 ]
 },
 "r_nakagawa_connecting_line": {

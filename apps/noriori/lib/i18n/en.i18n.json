@@ -199,6 +199,7 @@
     "state": {
       "maybe": "?",
       "suspended": "Suspended",
+      "offSeason": "Off season",
       "suspendedSince": "Suspended $year~",
       "until": "~$year",
       "since": "$year~",
@@ -211,6 +212,8 @@
     "handNote": "Rides here are saved to that line",
     "noticeClosedSub": "Only rides before then can be saved",
     "noticeSuspendedSub": "Only rides before the suspension can be saved",
+    "noticeSeasonSub": "Runs only $from–$to each year. No service on this date",
+    "noticeSeasonAnySub": "Runs only $from–$to each year",
     "noticeBeforeSub": "Rides from the opening day on can be saved",
     "chooseDirection": "Which way did you ride?",
     "directionKm": "$km km",
@@ -244,12 +247,14 @@
     "closedSection": "~$year closed",
     "openedSection": "Opens in $year",
     "archiveStop": "$name closed in $year and can't be logged",
+    "archiveStopNow": "$name closed in $year and can't be logged. Now $now station",
     "archiveLine": "$name is a historic line and can't be logged",
     "from": "From",
     "to": "To",
     "whyClosed": "This station wasn't open on that date",
     "whyViewSignal": "This is a signal or junction, so a ride can't start or end here",
     "whyViewNoBoarding": "This line doesn't stop here, so a ride can't start or end here",
+    "whyViewStaff": "This station doesn't serve passengers, so a ride can't start or end here",
     "onlyDown": "Down only",
     "onlyUp": "Up only",
     "onlyOneWay": "One way",
@@ -292,6 +297,7 @@
     "repick": "Tap another station to start over",
     "closedUnknown": "Closed section",
     "suspendedSection": "Suspended",
+    "seasonSection": "Seasonal line",
     "relocationOld": "Old alignment · $km km",
     "relocationNew": "New alignment · $km km",
     "spokenOpen": "open",
@@ -424,6 +430,11 @@
       "use": "Outline of Japan, prefecture borders, and per-prefecture distance of sections crossing them",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
+    "gsi": {
+      "name": "GSI Vector Tiles (Geospatial Information Authority of Japan)",
+      "use": "Part of the track shapes around Tabata",
+      "terms": "GSI Content Terms of Use (compatible with CC BY 4.0). 出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成"
+    },
     "stationDatabase": {
       "name": "station_database",
       "use": "Station list and coordinates",
@@ -448,6 +459,11 @@
       "name": "Noritsubushi",
       "use": "Operating kilometers, station order, key dates, Japanese names",
       "terms": "Factual data only"
+    },
+    "others": {
+      "name": "Other factual sources",
+      "use": "Operator publications (official English names and more), Public Transportation Open Data Center, public materials of the National Diet Library and the National Archives of Japan, Japan Post postal code data, station sign photos",
+      "terms": "Used as factual data. Each data row records its source, and the full list is in data/NOTICE.md in the repository"
     },
     "openFreeMap": {
       "name": "OpenFreeMap",
@@ -505,6 +521,7 @@
     "restored": "Ride restored",
     "blockedHidden": "This ride would have to be split at a signal station or junction, so this section can't be cleared here. Edit the ride instead",
     "blockedPath": "Removing this section would change the ride's route or date, so it can't be cleared here. Edit the ride instead",
+    "blockedNoStop": "This ride would have to be split at a station where trains in this direction don't stop, so this section can't be cleared here. Edit the ride instead",
     "blockedOn": "This section can't be marked as ridden here. Log it from the station picker instead",
     "visitAdded": "Marked as visited",
     "visitRemoved": "Visit removed",

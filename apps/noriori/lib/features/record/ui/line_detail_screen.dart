@@ -73,6 +73,8 @@ class _LineDetailScreenState extends ConsumerState<LineDetailScreen> with Guarde
         _say(t.blockedHidden);
       case SectionRefused(reason: CutBlock.changesPath):
         _say(t.blockedPath);
+      case SectionRefused(reason: CutBlock.noStop):
+        _say(t.blockedNoStop);
       case SectionRefused():
         _say(t.blockedOn);
       case SectionUntouched():

@@ -214,6 +214,7 @@
 - {"route": "r_hagoromocho_line", "node": "n_yoshinocho_1_chome"}
 - {"route": "r_hagoromocho_line", "node": "n_yoshinocho_3_chome"}
 - {"route": "r_hakodate_main_line", "node": "n_koshiji_hakodate"}
+- {"route": "r_hakodate_main_line", "node": "n_ohamanaka"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_kaigancho"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_kamedacho"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_onoshindo"}
@@ -1329,6 +1330,7 @@
 - {"route": "r_tsurumachi_line", "node": "n_tsurumachi_2_chome"}
 - {"route": "r_tsurumachi_line", "node": "n_tsurumachi_3_chome"}
 - {"route": "r_tsushima_line", "node": "n_tsushimaguchi"}
+- {"route": "r_uemachi_line", "node": "n_nakamichi_hankai"}
 - {"route": "r_ueno_line", "node": "n_manseibashi"}
 - {"route": "r_ueno_line", "node": "n_sotokanda_3_chome"}
 - {"route": "r_ueno_line", "node": "n_sotokanda_5_chome"}

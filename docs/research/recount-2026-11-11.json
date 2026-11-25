@@ -4689,7 +4689,7 @@
   },
   {
    "source": "TODO.md:41",
-   "item": "2026-11-05 원격 작업 환경이 혼자 고른 12건(島原 보정, 押切線 휴지 모델링, 도도부현 경계 km 분할, ? km 표시 자리 등) 사용자 확인",
+   "item": "2026-11-05 원격 작업에서 사용자 확인 없이 정한 12건(島原 보정, 押切線 휴지 모델링, 도도부현 경계 km 분할, ? km 표시 자리 등) 사용자 확인",
    "status": "open",
    "evidence": "docs/handoff/DECISIONS-2026-11-05.md는 0fa6761(2026-11-07)에서 지워져 git 기록에만 있다. docs에 사용자가 확인했다는 기록은 없다.",
    "remaining": "사용자 확인. 데이터 모델링 판단(휴지·경계 km)이 섞여 있다",
@@ -5211,7 +5211,7 @@
    "source": "backlog",
    "item": "읽기 없는 역 이름(names.sqlite node ja kana 빈 것 595건) 분류",
    "status": "partial",
-   "evidence": "보류·근거 없음 419 = 현재 이름 ja_as_is 7(八幡通·細倉·中ノ橋通·栄町口·立山仮駅·磨屋町筋·粟ヶ崎遊園前, 읽기 조사 4~5차 not_found) + 옛 이름 412(r3/readings_old6/not_found.json, 6차까지 공개 원문 없음). 조사 가능 176 = 노선별 이름 행(line_id 있는 noritsubushi 행, 예 美濃相生·荒海) 107은 같은 표기 읽기가 DB 다른 행에 있어 바로 채울 수 있음 + 같은 표기 읽기가 다른 노드에 있는 11(桜町·藤山·栄町 등, 같은 읽기인지 확인 필요) + 조사 기록이 없는 58(浜大津東口·新博多·西鉄博多 등). 분류표: 연구 원자료/recount/c_work/kana_empty_classified.json",
+   "evidence": "보류·근거 없음 419 = 현재 이름 ja_as_is 7(八幡通·細倉·中ノ橋通·栄町口·立山仮駅·磨屋町筋·粟ヶ崎遊園前, 읽기 조사 4~5차 not_found) + 옛 이름 412(r3/readings_old6/not_found.json, 6차까지 공개 원문 없음). 조사 가능 176 = 노선별 이름 행(line_id 있는 noritsubushi 행, 예 美濃相生·荒海) 107은 같은 표기 읽기가 DB 다른 행에 있어 바로 채울 수 있음 + 같은 표기 읽기가 다른 노드에 있는 11(桜町·藤山·栄町 등, 같은 읽기인지 확인 필요) + 조사 기록이 없는 58(浜大津東口·新博多·西鉄博多 등). 분류표: 연구 원자료 recount/c_work/kana_empty_classified.json",
    "remaining": "조사 가능 176건 채우기(107은 기계적으로)",
    "freeze_blocking": false,
    "kind": "reading",

@@ -9,6 +9,7 @@ import glob,json,os,re,sqlite3,sys,unicodedata
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(ROOT,'tools'))
 from en_rules import hepburn,load_fix,fix_station
+import en_rules
 from lib import HT,source_on,_rows,ROOT as _ROOT
 
 # 운행 계통은 표가 짧아 손으로 적는다. 운행 계통 정의(services.json)에 en이 있으면 그것을 쓴다
@@ -72,7 +73,8 @@ def split_words(ja,kana):
 # 영어 이름(표시)에만 쓰는 낱말. 이름 끝에서만 뜻으로 옮기는 회사 꼬리(電車·電気)와 어디서나 옮기는 낱말이다.
 # ID는 예전 규칙(split_words, 낱말 하나)으로 만들어 이미 낸 ID가 바뀌지 않는다 (12회차 M K103 2026-11-19: 札幌温泉電気軌道 → Sapporonsen였음)
 # 표의 낱말보다 먼저 뗄 긴 낱말(米子電車軌道: 軌道가 먼저면 Yonago Electric Railway Tramway)
-EN_FIRST=(('電車軌道','でんしゃきどう','Electric Tramway'),)
+# 軽便鉄道·鋼索鉄道는 한 낱말로 옮긴다(王子軽便鉄道 → Ojikeiben Railway, 中国稲荷山鋼索鉄道 → Chugokuinariyamakosaku Railway였음, 5회차 2026-11-24)
+EN_FIRST=(('電車軌道','でんしゃきどう','Electric Tramway'),('軽便鉄道','けいべんてつどう','Light Railway'),('鋼索鉄道','こうさくてつどう','Cable Railway'))
 EN_WORDS=(('温泉','おんせん','Onsen'),('電軌','でんき','Electric Tramway'),('電車','でんしゃ','Electric Railway'),('支社','ししゃ','Branch'))
 EN_TAILS=(('電気','でんき','Electric'),)
 
@@ -102,7 +104,11 @@ def split_words_en(ja,kana):
         return [titled(k,ja)]
     parts+=go(ja_left,kana_left)
     if tail_en:parts.append(tail_en)
-    return ' '.join(p for p in parts if p)
+    # 사명 꼬리와 노선 낱말이 겹치면(箱根登山鉄道鉄道線 → … Railway Railway Line) 바로 이어 같은 낱말은 하나만 둔다
+    out=[]
+    for p in (p for p in parts if p):
+        if not out or out[-1]!=p:out.append(p)
+    return ' '.join(out)
 
 def line_name(ja,kana,en=False):
     """en이면 표시용 영어 이름(낱말 여럿), 아니면 ID용(예전 규칙)"""
@@ -163,7 +169,10 @@ def check(rows):
         re.search(r' (line|branch line)\b',r['text']) or r['text'] in GENERIC_NAMES or r['text'] in('Line','Railway Line','Cable Line','Cable Car','Connecting Line','Trolleybus')
         or not r['text'].strip() or not r['text'].replace('·','').isascii())]
     # 역 이름은 names.yaml에 있다. 읽기대로 옮긴 외래어와 붙은 ekimae가 돌아오지 않게 한다
-    bad+=[r['text'] for r in rows if re.search('keburu|monoreru|taminaru|kosakusen|[a-z]ekimae',r['text'],re.I)]
+    # 공식 영어 이름(회사 자료·역명판, en_official.json)은 그 표기 그대로 둔다(Asahiekimae dori, Dentetsutaminarubiru mae). 계통 이름 「A~B」 안의 공식 역 이름도 같다 (5회차 2026-11-24)
+    _off={v['en'] for v in en_rules.load_official().values()}
+    def _offok(t):return t in _off or all(p_ in _off for p_ in re.split(r'~',t) if re.search('keburu|monoreru|taminaru|kosakusen|[a-z]ekimae',p_,re.I))
+    bad+=[r['text'] for r in rows if re.search('keburu|monoreru|taminaru|kosakusen|[a-z]ekimae',r['text'],re.I) and not _offok(r['text'])]
     if bad:sys.exit('영어 이름 규칙 위반: '+', '.join(bad))
 
 def main():

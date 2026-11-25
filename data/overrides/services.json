@@ -9866,7 +9866,8 @@
      [
       "京王線",
       "新宿",
-      "笹塚"
+      "笹塚",
+      "r_keio_line_shinsen_shinjuku_sasazuka"
      ]
     ],
     "stops": [
@@ -9879,7 +9880,7 @@
     "src": [
      "https://ja.wikipedia.org/w/index.php?title=京王新線&oldid=111094481"
     ],
-    "note": "DB 新宿 노드가 京王線 新宿와 新線新宿을 구분하지 않음."
+    "note": "新線新宿은 5회차(2026-11-24)부터 따로 된 노드(n_shinjuku_keio_new_line, 이름은 新宿). 경로는 新線 계통(r_keio_line_shinsen_shinjuku_sasazuka)으로 지정한다."
    }
   ]
  },

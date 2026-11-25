@@ -192,6 +192,7 @@
     "state": {
       "maybe": "?",
       "suspended": "運休",
+      "offSeason": "シーズン外",
       "suspendedSince": "運休 $year~",
       "until": "~$year",
       "since": "$year~",
@@ -204,6 +205,8 @@
     "handNote": "この区間はその路線で記録されます",
     "noticeClosedSub": "それより前の日付でのみ記録できます",
     "noticeSuspendedSub": "運休前の日付でのみ記録できます",
+    "noticeSeasonSub": "例年$from月～$to月のみ運行。この日は運行していません",
+    "noticeSeasonAnySub": "例年$from月～$to月のみ運行",
     "noticeBeforeSub": "開業後の日付で記録できます",
     "chooseDirection": "どちら回りで乗りましたか？",
     "directionKm": "$km km",
@@ -235,12 +238,14 @@
     "closedSection": "~$year 廃止",
     "openedSection": "$year年開業",
     "archiveStop": "$name（$year年廃止）は記録対象外です",
+    "archiveStopNow": "$name（$year年廃止）は記録対象外です。現在の$now駅の位置",
     "archiveLine": "$nameは記録対象外です",
     "from": "乗車",
     "to": "降車",
     "whyClosed": "その日付には営業していなかった駅です",
     "whyViewSignal": "信号場・分岐点のため、ここで記録を始めたり終えたりできません",
     "whyViewNoBoarding": "この路線はこの駅に止まらないため、ここで記録を始めたり終えたりできません",
+    "whyViewStaff": "旅客を扱わない駅のため、ここで記録を始めたり終えたりできません",
     "onlyDown": "下りのみ",
     "onlyUp": "上りのみ",
     "onlyOneWay": "片方向のみ",
@@ -283,6 +288,7 @@
     "repick": "別の駅をタップすると選び直せます",
     "closedUnknown": "廃止区間",
     "suspendedSection": "運休中",
+    "seasonSection": "季節運行",
     "relocationOld": "旧線 · $km km",
     "relocationNew": "新線 · $km km",
     "spokenOpen": "営業中",
@@ -405,6 +411,11 @@
       "use": "日本の輪郭と都道府県境、県境をまたぐ区間の都道府県別キロ",
       "terms": "「国土数値情報（行政区域データ）」（国土交通省）を加工して作成。このデータは国土交通省が作成したものではありません。"
     },
+    "gsi": {
+      "name": "国土地理院 ベクトルタイル",
+      "use": "田端信号場付近の線路形状の一部",
+      "terms": "国土地理院コンテンツ利用規約（CC BY 4.0互換）。出典：国土地理院ベクトルタイル（鉄道中心線）を加工して作成"
+    },
     "stationDatabase": {
       "name": "station_database",
       "use": "駅一覧と座標",
@@ -429,6 +440,11 @@
       "name": "乗りつぶしオンライン",
       "use": "営業キロ、駅の順序、開業日・廃止日、日本語表記",
       "terms": "事実情報として使用"
+    },
+    "others": {
+      "name": "その他の事実情報の出典",
+      "use": "事業者の公式資料（英語駅名など）、公共交通オープンデータセンター、国立国会図書館・国立公文書館の公開資料、日本郵便の郵便番号データ、駅名標の写真",
+      "terms": "事実情報として使用。出典はデータの行ごとに記録し、一覧はリポジトリのdata/NOTICE.mdにあります"
     },
     "openFreeMap": {
       "name": "OpenFreeMap",
@@ -485,6 +501,7 @@
     "restored": "消した記録を戻しました",
     "blockedHidden": "信号場や分岐点で区切る必要があるため、ここでは消せません。記録を直接編集してください",
     "blockedPath": "区切ると経路が変わるため消せません。記録を直接編集してください",
+    "blockedNoStop": "この方向の列車が停まらない駅で区切る必要があるため、ここでは消せません。記録を直接編集してください",
     "blockedOn": "この区間はここでは乗車済にできません。駅の選択画面から記録してください。",
     "visitAdded": "訪問済にしました",
     "visitRemoved": "訪問を消しました",

@@ -631,7 +631,7 @@ final class RouteResolver {
     );
   }
 
-  /// 거리는 구간마다 그 노선의 km로 센다. 3섹 전환 전 노선은 국철 시대 km다 (DESIGN §2.9 E)
+  /// 거리는 구간마다 그 노선의 km로 센다. 3섹 전환 전 노선은 국철 시대 km다 (DESIGN §2.8 E)
   int _legMeters(List<ExpandedLeg> legs) =>
       legs.fold(0, (sum, leg) => sum + network.metersOf(leg.edges, lineId: leg.lineId));
 

@@ -20,7 +20,9 @@ void main() {
       for (final row in await db.customSelect("SELECT entity_id, text FROM names.name WHERE lang='ja' AND (valid_to IS NULL OR valid_to='' OR valid_to='ongoing') AND valid_from IS NULL").get())
         row.read<String>('entity_id'): row.read<String>('text'),
     };
-    String nm(String? id) => id == null ? '-' : '${names[id] ?? id}[$id]';
+    // 앱과 같은 이름: 그 노선·그날 이름(노선 한정 이름이 다른 노선에 새지 않게)
+    var shownNames = <String, String>{};
+    String nm(String? id) => id == null ? '-' : '${shownNames[id] ?? names[id] ?? id}[$id]';
     final wanted = (Platform.environment['RENDER_LINES'] ?? '').split(',').where((s) => s.isNotEmpty).toList();
     final lines = wanted.isNotEmpty
         ? wanted
@@ -42,7 +44,7 @@ void main() {
             routeId: r,
             rows: shown,
             openGaps: builder.openBetween(r, shown, d),
-            sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan) : builder.openBetween(r, shown, d),
+            sectionGaps: d == null ? builder.openBetween(r, shown, todaySpan, offSeasonOpen: true) : builder.openBetween(r, shown, d),
             sectionEnds: builder.sectionEnds(r, shown, todaySpan, date: d),
           );
         }
@@ -52,6 +54,11 @@ void main() {
         final stitcher = LineStitcher(network, today: todaySpan, screen: (r, d) => screens[(r, d?.lo)]);
         final main = network.routesOfLineMainFirst(lineId).first;
         final s = stitcher.stitch(lineId, main, date);
+        shownNames = await reader.nodeNames(
+            {for (final r in s.main.rows) r.node, for (final f in s.folds) for (final r in f.rows.rows) r.node}.toList(),
+            lineId: lineId,
+            date: raw,
+            languages: const ['ja']);
         final chips = [for (final r in network.routesOfLineMainFirst(lineId)) if (r != main && !s.used.contains(r)) r];
         buf.writeln('\n## 날짜 ${raw ?? '모름'} 길이 ${s.lengthKm.toStringAsFixed(1)} 칩 ${chips.join(',')}');
         List<SelectorLine> linesOf(RouteRows rr) => rules.lines(
@@ -78,7 +85,7 @@ void main() {
                 buf.writeln('$pad● ${nm(row.node)} km=${row.kmEstimated ? '${row.kmCum}?' : row.kmCum} ${row.state.name}${row.selectable ? '' : ' 못고름'}'
                     '${row.closeYear == null ? '' : ' ~${row.closeYear}'}${row.openYear == null ? '' : ' ${row.openYear}~'}${s.foreignKm.contains(row.seq) ? ' 띠km' : ''}');
               case BranchLine(:final item, :final up):
-                buf.writeln('$pad  ${up ? '┌' : '└'} 분기 ${item.link.otherLineId}/${item.link.otherRouteId} 다음 ${nm(item.link.nextStop)}${item.gone ? ' 끝남' : ''}');
+                buf.writeln('$pad  ${up ? '┌' : '└'} 분기 ${item.link.otherLineId}/${item.link.otherRouteId} 다음 ${nm(item.link.nextStop)}${item.suspended ? ' 운휴 중' : item.gone ? ' 끝남' : ''}');
               case EndLine(:final items, :final up):
                 buf.writeln('$pad  ${up ? '▲' : '▼'} 끝이어짐 ${items.map((i) => '${i.link.otherLineId}/${i.link.otherRouteId}').join(' · ')}');
               case NoticeLine(:final kind, :final top, :final bottom, :final year, :final lineId):

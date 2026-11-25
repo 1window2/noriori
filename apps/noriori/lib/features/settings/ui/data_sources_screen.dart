@@ -21,6 +21,7 @@ class DataSourcesScreen extends StatelessWidget {
             (t.n02.name, t.n02.use, t.n02.terms, 'https://nlftp.mlit.go.jp/ksj/'),
             (t.n05.name, t.n05.use, t.n05.terms, 'https://nlftp.mlit.go.jp/ksj/gml/datalist/KsjTmplt-N05-2024.html'),
             (t.n03.name, t.n03.use, t.n03.terms, 'https://nlftp.mlit.go.jp/ksj/'),
+            (t.gsi.name, t.gsi.use, t.gsi.terms, 'https://maps.gsi.go.jp/development/vt.html'),
             (
               t.stationDatabase.name,
               t.stationDatabase.use,
@@ -37,6 +38,7 @@ class DataSourcesScreen extends StatelessWidget {
             (t.wikidata.name, t.wikidata.use, t.wikidata.terms, 'https://www.wikidata.org/'),
             (t.namuwiki.name, t.namuwiki.use, t.namuwiki.terms, 'https://namu.wiki/'),
             (t.noritsubushi.name, t.noritsubushi.use, t.noritsubushi.terms, 'https://www.noritsubushi.org/'),
+            (t.others.name, t.others.use, t.others.terms, 'https://www.odpt.org/'),
             (t.openFreeMap.name, t.openFreeMap.use, t.openFreeMap.terms, 'https://openfreemap.org/'),
             (t.noto.name, t.noto.use, t.noto.terms, 'https://openfontlicense.org/'),
           ])

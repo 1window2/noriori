@@ -11,6 +11,7 @@ def dround(x,n=1):
 import ko
 import conn
 import en_rules
+from gen_en_names import line_name as _line_en
 
 ONLY=set(sys.argv[1].split(',')) if len(sys.argv)>1 and sys.argv[1]!='all' else None   # 예: jr1 (JR 홋카이도만)
 DB=os.path.join(IMP,'stationdb')
@@ -1724,7 +1725,7 @@ for n in nodes.values():
             if lab.endswith('駅') and t_.endswith('에키'):t_=t_[:-2]+'역'
             add('node',n['id'],'ko',t_,source=v[1] if v else 'rule',line=lid[lk_],checked=TODAY,_lab=lab)
         if kk:
-            # 역 이름 영어 규칙(駅前 -Ekimae, 丁目 -chome, 외래어)을 노선 전용 이름에도 쓴다
+            # 역 이름 영어 규칙(駅前 -ekimae, 丁目 -chome, 외래어)을 노선 전용 이름에도 쓴다
             e_=en_rules.station_reading(kk,lab);e_=en_rules.fix_station(lab,kk,e_,{}) or e_
             add('node',n['id'],'en',''.join(c for c in unicodedata.normalize('NFD',e_) if c!='\u0304'),source='rule',line=lid[lk_],_lab=lab)
 NLN=json.load(open(os.path.join(IMP,'namuwiki','names_lines.json'),encoding='utf-8')) if source_on('namuwiki') else {}
@@ -1792,6 +1793,17 @@ OLDNAMES=json.load(open(os.path.join(ROOT,'data','overrides','old_names.json'),e
 # 일본어 위키에 적힌 옛 역 이름의 읽기 (tools/old_name_kana.py). 한국어·영어 옛 이름을 이 읽기로 만든다
 _ok=os.path.join(ROOT,'data','overrides','old_names_kana.json')
 OLDKANA={k:v['kana'] for k,v in json.load(open(_ok,encoding='utf-8')).items() if v.get('kana')} if os.path.exists(_ok) else {}
+# N05 손 대조 표(n05_fix.json)의 개칭 행 {name, kana, now}에 적힌 옛 이름 읽기. 위키 역 표에서 옮긴 읽기라 같은 표의 역 읽기(auto:n05_line)와 같은 근거다.
+# 옛 이름 행에 넘기지 않아 山王筋(→山王) 등 9곳이 읽기 없이 남았다 (5회차 신뢰도 전수 R1 2026-11-24). 같은 (옛 이름, 지금 이름)에 읽기가 갈리면 쓰지 않는다
+_N05K={}
+def _n05k(o):
+    if isinstance(o,dict):
+        if o.get('name') and o.get('now') and o.get('kana'):_N05K.setdefault((o['name'],o['now']),set()).add(kata2hira(o['kana']))
+        for v in o.values():_n05k(v)
+    elif isinstance(o,list):
+        for v in o:_n05k(v)
+_n05k(json.load(open(os.path.join(ROOT,'data','overrides','n05_fix.json'),encoding='utf-8')).get('lines'))
+N05OLDKANA={k:next(iter(v)) for k,v in _N05K.items() if len(v)==1}
 old_alias=[]
 def doc_about(n,t):
     """제목이 같은 이름이고 그 역의 노선이 적힌 문서만 그 역의 문서로 본다. 동명 역 문서의 연혁이 섞이면 안 된다"""
@@ -1976,7 +1988,7 @@ for n in nodes.values():
                 old_alias.append(dict(entity_type='node',id=n['id'],lang='ja',text=old,kind='old_title'));rn_stat['pre1950_alias']+=1;continue
             # 사람이 확인한 옛 이름의 읽기·한국어·영어 (data/overrides/old_names.json, 재평가 ST4-12). 한국어·영어 화면도 그 시절 이름을 보인다
             on_=OLDNAMES.get(n['id']+'|'+old)
-            ok_=OLDKANA.get(n['id']+'|'+old)
+            ok_=OLDKANA.get(n['id']+'|'+old) or N05OLDKANA.get((old,JAFIX.get(n['id'],n0)))
             add('node',n['id'],'ja',old,source='n05' if t=='n05' else 'wikipedia',line=rl_,valid_from=f,valid_to=to,kana=on_['kana'] if on_ else ok_)
             old_alias.append(dict(entity_type='node',id=n['id'],lang='ja',text=old,kind='old_title'))
             if on_:
@@ -1993,7 +2005,7 @@ for n in nodes.values():
             kk=ok_ or (kata2hira(sdk[0]) if sdk else None)
             if kk:
                 add('node',n['id'],'ko',ko.station(kk,old),source='rule',line=rl_,valid_from=f,valid_to=to,checked=TODAY)
-                # 역 이름 영어 규칙(駅前 -Ekimae, 외래어)을 옛 이름에도 (博多駅前 Hakata-Ekimae). 일본어 행에 읽기가 없으면 en_rules.fix_nodes가 못 고친다
+                # 역 이름 영어 규칙(駅前 -ekimae, 외래어)을 옛 이름에도 (博多駅前 Hakata-ekimae). 일본어 행에 읽기가 없으면 en_rules.fix_nodes가 못 고친다
                 e_=en_rules.station_reading(kk,old);e_=en_rules.fix_station(old,kk,e_,{}) or e_
                 add('node',n['id'],'en',e_,source='rule',line=rl_,valid_from=f,valid_to=to)
 print('옛 이름 행',dict(rn_stat),'노선 문서 年表',len(LDOC_RN))
@@ -2067,8 +2079,14 @@ for mv in _MV:
     if o_ not in nodes or w_ not in nodes or _nold[w_]>1:continue
     D_=lohi(mv['date'])[0]
     have_={(znorm(y['text']),y['lang']) for y in _byn[o_]}
+    # 한국어·영어 행은 같은 기간 일본어 행의 옮김·가름을 따른다. 언어마다 따로 보면 옛 자리에 같은 일본어 이름이 있어 일본어만 그대로 두고
+    # 한국어·영어만 갈라 기간이 어긋난다(妙見線 鼓滝 皷滝: 일본어 1969~, 한국어·영어 1965~, 5회차 2026-11-23)
+    _ja_skip={(x.get('valid_from'),x.get('valid_to')) for x in _byn[w_] if x['lang']=='ja' and (znorm(x['text']),'ja') in have_}
+    _has_ja={(x.get('valid_from'),x.get('valid_to')) for x in _byn[w_] if x['lang']=='ja'}
     for x in list(_byn[w_]):
-        if (znorm(x['text']),x['lang']) in have_:continue
+        pk_=(x.get('valid_from'),x.get('valid_to'))
+        if pk_ in _ja_skip:continue
+        if pk_ not in _has_ja and (znorm(x['text']),x['lang']) in have_:continue
         lt_,ht_=lohi(x['valid_to']);fl_=lohi(x['valid_from'])[0] if x.get('valid_from') else '0000-01-01'
         if ht_<=D_:x['id']=o_;_byn[o_].append(x);_mvs['moved']+=1
         elif fl_<D_<lt_:
@@ -2191,7 +2209,8 @@ for x in list(names):
         names.append(dict(entity_type='node',id=x['id'],lang='ko',text=t_,source='rule',checked=TODAY));_hasb.add((x['id'],'ko'));_kfill['ko']+=1
 print('읽기 있는 지금 이름의 빠진 한국어·영어 규칙 행',dict(_kfill))
 # 영어 이름은 일본어와 읽기가 확정된 뒤에 고친다 (DESIGN §9.1, data/overrides/en_fix.json)
-en_rules.fix_nodes(names)
+# 로마자 꼴로 바꾼 번역형 영어 이름(Yagiyama Zoological Park)은 검색 별칭으로 남긴다
+for i_,t_ in en_rules.fix_nodes(names):aliases.append(dict(entity_type='node',id=i_,lang='en',text=t_,kind='translated'))
 # 역 이전의 옛 역 (DESIGN §2.2 옛 역의 표시). 새 역과 이름이 같으면 이름 뒤에 표시를 붙이고, 원래 이름과 노리츠부시 표기는 별칭으로 남긴다
 OLDMARK={'ja':'（旧）','ko':'(구)','en':' (old)'}
 # 노드·언어별 지금 이름. 기간 있는 행은 이 글자와 같을 때만 （旧）를 단다(옛 자리로 옮겨 온 다른 이름의 옛 이름 행은 그대로)
@@ -2288,7 +2307,8 @@ for x in json.load(open(os.path.join(ROOT,'data','overrides','line_history.json'
         continue
     k_=x.get('kana')
     ko_=x.get('ko') or (ko.line(k_,x['name_ja']) if k_ else x['name_ja'])
-    en_=x.get('en') or ((en_rules.hepburn(k_[:-2]).title()+' Line' if k_.endswith('せん') else en_rules.hepburn(k_).title()) if k_ else x['name_ja'])
+    # 영어는 지금 노선 이름과 같은 규칙(gen_en_names.line_name: 낱말 분리·노선 꼬리)이다. 읽기를 통째로 옮기면 箱根登山鉄道鋼索線이 Hakonetozantetsudokosaku Line이 됐다 (5회차 2026-11-24)
+    en_=x.get('en') or ((_line_en(x['name_ja'],k_,en=True) or en_rules.hepburn(k_,x['name_ja']).title()) if k_ else x['name_ja'])
     for lang_,text_ in (('ja',x['name_ja']),('ko',ko_),('en',en_)):
         add('line',x['line'],lang_,text_,kana=k_ if lang_=='ja' else None,source='line_history' if k_ or lang_=='ja' or x.get(lang_) else 'ja_as_is',valid_from=x['valid_from'],valid_to=x['valid_to'])
 for lk,ps,ch in line_rel:

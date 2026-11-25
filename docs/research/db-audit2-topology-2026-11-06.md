@@ -1,6 +1,6 @@
 # DB 2차 감사 ③ 위상 (2026-11-06, 판 2026-11-06.3)
 
-대상은 감사용 사본 `연구 원자료/snap-2026-11-06.3/master.sqlite`·`names.sqlite`(판 2026-11-06.3)뿐입니다. `build/`는 읽지 않았습니다. 저장소는 읽기만 했고 고친 파일은 이 문서와 `db-audit2-topology-2026-11-06.json` 둘입니다. 검사는 표본이 아니라 해당 표 전수이고, 스크립트는 저장소 밖 임시 폴더에서 `python3 -I`로 돌렸습니다(핵심 부분은 부록 A).
+대상은 감사용 사본 연구 원자료 `snap-2026-11-06.3/master.sqlite`·`names.sqlite`(판 2026-11-06.3)뿐입니다. `build/`는 읽지 않았습니다. 저장소는 읽기만 했고 고친 파일은 이 문서와 `db-audit2-topology-2026-11-06.json` 둘입니다. 검사는 표본이 아니라 해당 표 전수이고, 스크립트는 저장소 밖 임시 폴더에서 `python3 -I`로 돌렸습니다(핵심 부분은 부록 A).
 
 맡은 범위는 위상입니다: 노드·역 묶음(group)·환승 묶음(hub), 역 이전 짝(`node_move`), edge·계통(`route_edge`·`route_stop`), `route_link`·`junction`·`route_parallel`, 열람 전용(`archive_stop`·`archive_line`)의 자리. 시간·승계·이름·좌표·원자료 대조는 다른 감사가 맡아, 위상 판정에 걸리는 곳만 적고 넘겼습니다.
 

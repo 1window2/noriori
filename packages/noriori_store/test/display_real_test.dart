@@ -52,8 +52,8 @@ void main() {
       options: options,
       closedRoute: network.routes[routeId]!.closed,
       archiveStops: await reader.archiveStops(routeId),
-      archiveBranches: await reader.archiveBranches(rows.map((row) => row.node)),
-      sectionGaps: date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today)) : openGaps,
+      archiveBranches: await reader.archiveBranches(rows.map((row) => row.node), routes: {routeId, ...builder.handRoutes(routeId)}),
+      sectionGaps: date == null ? builder.openBetween(routeId, visible, DateSpan.parse(today), offSeasonOpen: true) : openGaps,
       sectionEnds: builder.sectionEnds(routeId, visible, DateSpan.parse(today), date: date),
       undated: date == null,
       parallels: await reader.routeParallels(routeId),
@@ -64,6 +64,67 @@ void main() {
 
   StopLine stopAt(List<SelectorLine> lines, String node) =>
       lines.whereType<StopLine>().firstWhere((line) => line.row.node == node);
+
+  // 구간 괄호는 그 화면 날짜의 상태다(2026-11-23). 운휴 뒤 재개한 칸은 운휴 중 날짜에 「폐지」가 아니라 「운휴」이고,
+  // 칸은 있어도 이 노선이 아직 쓰기 전이면 「개업 전」이다
+  NoticeLine noticeAt(List<SelectorLine> lines, String node) {
+    final seq = stopAt(lines, node).row.seq;
+    return lines.whereType<NoticeLine>().firstWhere((n) => n.top.seq == seq || n.bottom.seq == seq);
+  }
+
+  test('운휴 중 날짜의 구간 괄호는 운휴다 (常磐線 相馬–駒ヶ嶺 2013, 只見線 会津川口–只見 2013)', () async {
+    expect(noticeAt(await screen('r_joban_line', '2013-06-01'), 'n_komagamine').kind, NoticeKind.suspended);
+    expect(noticeAt(await screen('r_tadami_line', '2013-06-01'), 'n_tadami').kind, NoticeKind.suspended);
+  }, skip: skip);
+
+  test('계절 운행 노선의 비시즌 날짜는 녹색 계절 괄호이고 역은 고를 수 없다 (黒部峡谷鉄道 2020-01-15, 叡山ケーブル 2020-02-01)', () async {
+    final winter = await screen('r_kurobe_gorge_main_line', '2020-01-15');
+    // 괄호는 노선 전체(宇奈月~欅平)에 하나다. 가운데 역은 괄호 안에 든다
+    NoticeLine over(List<SelectorLine> lines, String node) {
+      final seq = stopAt(lines, node).row.seq;
+      return lines.whereType<NoticeLine>().firstWhere((n) => (n.top.seq ?? -1) <= seq && seq <= (n.bottom.seq ?? -1));
+    }
+    expect(over(winter, 'n_kuronagi').kind, NoticeKind.season);
+    expect(over(winter, 'n_kuronagi').year, '4-11');
+    expect(stopAt(winter, 'n_kuronagi').row.state, StopState.offSeason);
+    expect(stopAt(winter, 'n_kuronagi').row.selectable, isFalse);
+    // 승객 미취급 역은 비시즌에도 회색 통과역으로 남고(柳橋), 한시 개방 역도 사라지지 않는다(笹平·猫又)
+    expect(stopAt(winter, 'n_yanagibashi').row.passing, isTrue);
+    expect(stopAt(winter, 'n_yanagibashi').row.staffOnly, isTrue);
+    expect(stopAt(winter, 'n_sasadaira').row.passing, isTrue);
+    expect(stopAt(winter, 'n_nekomata').row.passing, isTrue);
+    final summer = await screen('r_kurobe_gorge_main_line', '2020-07-15');
+    expect(summer.whereType<NoticeLine>().where((n) => n.kind == NoticeKind.season), isEmpty);
+    expect(stopAt(summer, 'n_kuronagi').row.selectable, isTrue);
+    expect(noticeAt(await screen('r_eizan_cable', '2020-02-01'), 'n_cable_hiei').kind, NoticeKind.season);
+  });
+
+  test('승객 미취급 정식 역은 일람에 회색으로 보이고 고를 수 없으며, 한시 개방 기간에만 고를 수 있다 (黒部峡谷鉄道 柳橋·猫又)', () async {
+    final y2020 = await screen('r_kurobe_gorge_main_line', '2020-07-15');
+    expect(stopAt(y2020, 'n_yanagibashi').row.selectable, isFalse);
+    expect(stopAt(y2020, 'n_yanagibashi').row.passing, isTrue);
+    expect(stopAt(y2020, 'n_nekomata').row.state, isNot(StopState.beforeOpen));
+    expect(stopAt(y2020, 'n_nekomata').row.selectable, isFalse);
+    expect(stopAt(await screen('r_kurobe_gorge_main_line', '2025-07-15'), 'n_nekomata').row.selectable, isTrue);
+    // 개방이 끝난 뒤에도 역은 일람에 남고 폐역 해가 붙지 않는다(2025-07-15 笹平는 2025-05 개방 뒤, 猫又는 개방 중이라도 끝 해 없음)
+    final y2025 = await screen('r_kurobe_gorge_main_line', '2025-07-15');
+    expect(stopAt(y2025, 'n_sasadaira').row.passing, isTrue);
+    expect(stopAt(y2025, 'n_sasadaira').row.closeYear, isNull);
+    expect(stopAt(y2025, 'n_nekomata').row.closeYear, isNull);
+    // 승객 미취급 역은 신호장과 같은 모양이어도 고를 수 없는 까닭이 다르다(안내 문구가 갈린다). 개방 중인 猫又는 보통 역이다
+    expect(stopAt(y2025, 'n_yanagibashi').row.staffOnly, isTrue);
+    expect(stopAt(y2025, 'n_yanagibashi').row.viewOnly, isTrue);
+    expect(stopAt(y2025, 'n_nekomata').row.staffOnly, isFalse);
+    // 날짜 모름: 마지막 개방 뒤 끝 없는 정차 공백은 승객 미취급 역의 본래 모습이라 운휴가 아니다
+    final undated = await screen('r_kurobe_gorge_main_line', null);
+    expect(stopAt(undated, 'n_sasadaira').row.suspendedSince, isNull);
+    expect(stopAt(undated, 'n_nekomata').row.suspendedSince, isNull);
+  });
+
+  test('노선이 칸을 쓰기 전 날짜의 구간 괄호는 개업 전이다 (井原鉄道 総社–清音 1990)', () async {
+    final n = noticeAt(await screen('r_ibara_line', '1990-06-01'), 'n_soja');
+    expect((n.kind, n.year), (NoticeKind.before, '1999'));
+  }, skip: skip);
 
   // 5번 결정(2026-11-19, 입력 단계 재구성 2026-11-20): 확장 행 대신 승하차 불가 끝 노드와 끝 이어짐
   Future<StopLine> endNode(String route, String? raw, String node) async => stopAt(await screen(route, raw), node);
@@ -176,6 +237,26 @@ void main() {
       final lines = await screen('r_shinetsu_main_line_niigata_old_sekiya', raw);
       expect(lines.whereType<EndLine>().single.items.single.link.otherLineId, 'l_shinetsu_main_line', reason: '$raw');
       expect(lines.whereType<BranchLine>(), isEmpty, reason: '$raw');
+    }
+  }, skip: skip);
+  // 끝난 계절 노선의 운행 시절 비시즌: 계절 괄호는 해를 적지 않으니 역 줄의 「비시즌」을 지우지 않는다 (5회차 시뮬레이터 시험 2026-11-24)
+  test('끝난 계절 노선의 비시즌 표시', () async {
+    final lines = await screen('r_kanden_tunnel_trolleybus', '2010-01-15');
+    for (final node in ['n_ogizawa', 'n_kurobe_dam']) {
+      expect(stopAt(lines, node).row.state, StopState.offSeason);
+      expect(stopAt(lines, node).quiet, isFalse);
+    }
+  }, skip: skip);
+  // 운휴 중 이설해 계승한 역(常磐線 2011→2016): 옛 역은 새 역 개업 전날까지 운휴, 그 뒤는 폐역이다. 기록은 마지막 운행일까지만 (설계 audit5-relocation-successor-design.md)
+  test('이설 계승역은 새 역 개업 전까지 운휴', () async {
+    const route = 'r_joban_line_komagamine_hamayoshida';
+    final y2010 = await screen(route, '2010-06-01');
+    final y2013 = await screen(route, '2013-06-01');
+    for (final node in ['n_shinchi_old', 'n_sakamoto_joban_old', 'n_yamashita_old']) {
+      expect(stopAt(y2010, node).row.state, StopState.open, reason: node);
+      expect(stopAt(y2013, node).row.state, StopState.suspended, reason: node);
+      expect(stopAt(y2013, node).row.suspendedSince, '2011', reason: node);
+      expect(stopAt(y2013, node).row.selectable, isFalse, reason: node);
     }
   }, skip: skip);
 }

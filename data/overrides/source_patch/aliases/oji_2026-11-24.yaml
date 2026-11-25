@@ -1,0 +1,9 @@
+# 5회차 사용자 결정(2026-11-24): 一般客扱許可를 받은 専用鉄道는 여객 노선 — 王子軽便鉄道(「山線」, 苫小牧–第四発電所·分岐点–湖畔, 一般客扱 1922-04-01~1951-05-10, 1950-01-01부터 기록). 재생성으로 원본에 생기면 지움
+- {"patch": "add", "entity_type": "node", "id": "n_tomakomai_oji", "lang": "ja", "text": "山線苫小牧", "kind": "alias", "why": "[王子軽便鉄道] 苫小牧의 다른 이름 「山線苫小牧」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_tomakomai_oji", "lang": "ja", "text": "山線駅", "kind": "alias", "why": "[王子軽便鉄道] 苫小牧의 다른 이름 「山線駅」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_takaoka_oji", "lang": "ja", "text": "六哩", "kind": "alias", "why": "[王子軽便鉄道] 高丘의 다른 이름 「六哩」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_yufure_oji", "lang": "ja", "text": "十二哩", "kind": "alias", "why": "[王子軽便鉄道] 夕振의 다른 이름 「十二哩」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_maruyama_oji", "lang": "ja", "text": "十三哩", "kind": "alias", "why": "[王子軽便鉄道] 丸山의 다른 이름 「十三哩」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_mizutamari_oji", "lang": "ja", "text": "第一", "kind": "alias", "why": "[王子軽便鉄道] 水溜의 다른 이름 「第一」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_daisanhatsudensho_oji", "lang": "ja", "text": "牛ノ沢", "kind": "alias", "why": "[王子軽便鉄道] 第三発電所의 다른 이름 「牛ノ沢」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}
+- {"patch": "add", "entity_type": "node", "id": "n_daiyonhatsudensho_oji", "lang": "ja", "text": "上千歳", "kind": "alias", "why": "[王子軽便鉄道] 第四発電所의 다른 이름 「上千歳」 (ja.wikipedia 王子軽便鉄道 oldid=110434726 역 표·본문·각주). 찾기용"}

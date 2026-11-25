@@ -452,9 +452,7 @@ def stitch(main_rid, date, P, excl=()):
             nxt = [n_ for n_, k in enumerate(tix) if k > fi][:1]; prv = [n_ for n_, k in enumerate(tix) if k < fi][-1:]
             seg = (prv[0], nxt[0]) if prv and nxt else ((prv or nxt)[0],) * 2
             if any(t <= seg[0] and seg[1] <= b for t, b in ranges):
-                x['dead'] = True
-                for r in x['items']:
-                    if r['t'] == 's': r['sel'] = False
+                x['dead'] = True  # drawn dim; selectability stays the station's own (same as closed main-line stations when undated)
     out = [i for i in items if not (i['t'] in 'be' and i.get('line') == line and any(i.get('nx') in RNODES[r] for r in used if r != main_rid))]
     if date:  # a joining station is open when any joined section has it open that day
         openn = {}

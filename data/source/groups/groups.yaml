@@ -4893,6 +4893,7 @@
 - {"id": "g_kashima_soccer_stadium"}
 - {"id": "g_kashimada"}
 - {"id": "g_kashimadai"}
+- {"id": "g_kashimagawa"}
 - {"id": "g_kashimanada"}
 - {"id": "g_kashin"}
 - {"id": "g_kashinomorikoenmae"}
@@ -8032,6 +8033,7 @@
 - {"id": "g_nakamaruko"}
 - {"id": "g_nakamatsu"}
 - {"id": "g_nakamatsue"}
+- {"id": "g_nakamichi_hankai"}
 - {"id": "g_nakamichihondori_2_chome"}
 - {"id": "g_nakamikage"}
 - {"id": "g_nakaminato"}
@@ -8603,6 +8605,7 @@
 - {"id": "g_nishi_wada"}
 - {"id": "g_nishi_wakamatsu"}
 - {"id": "g_nishi_waseda"}
+- {"id": "g_nishi_yahata"}
 - {"id": "g_nishi_yaizu"}
 - {"id": "g_nishi_yamana"}
 - {"id": "g_nishi_yamano"}
@@ -8643,6 +8646,7 @@
 - {"id": "g_nishigawara"}
 - {"id": "g_nishigawaryokudokoen"}
 - {"id": "g_nishigishi"}
+- {"id": "g_nishigo"}
 - {"id": "g_nishiguchi_osaka_expo"}
 - {"id": "g_nishihamanomachi"}
 - {"id": "g_nishihanamaki"}
@@ -9137,6 +9141,7 @@
 - {"id": "g_ogyu"}
 - {"id": "g_ohamakitamachi"}
 - {"id": "g_ohamaminamimachi"}
+- {"id": "g_ohamanaka"}
 - {"id": "g_ohanabatake"}
 - {"id": "g_ohanajaya"}
 - {"id": "g_ohara"}
@@ -9981,7 +9986,6 @@
 - {"id": "g_saigane"}
 - {"id": "g_saigata"}
 - {"id": "g_saigawa"}
-- {"id": "g_saigo"}
 - {"id": "g_saigoh"}
 - {"id": "g_saiin"}
 - {"id": "g_saijo"}

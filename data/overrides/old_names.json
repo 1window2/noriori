@@ -2076,5 +2076,6 @@
 "ko": "카리타",
 "en": "Karita"
 },
-"n_kodomonokuni_meitetsu|洲崎": {"kana": "すさき", "ko": "스사키", "en": "Susaki"}
+"n_kodomonokuni_meitetsu|洲崎": {"kana": "すさき", "ko": "스사키", "en": "Susaki"},
+"n_tofugaura_kaigan|十府ヶ浦": {"kana": "とふがうら", "ko": "토후가우라", "en": "Tofugaura", "why": "읽기는 같은 지명 정식역 十府ヶ浦海岸(とふがうらかいがん, 노드 지금 이름 읽기)의 앞부분, 한국어·영어도 지금 이름(토후가우라카이간·Tofugaura-Kaigan)의 앞부분 (5회차 데이터 정리 2026-11-23; audit5 tohoku_2-011)"}
 }

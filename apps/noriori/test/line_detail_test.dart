@@ -321,6 +321,50 @@ void main() {
     }
   });
 
+  test('한 방향만 서는 역에서 끊어야 하면 구간 끄기를 하지 않고 그 이유를 따로 낸다', skip: _skip, () {
+    // 士幌線 黒石平(하행만)·電力所前(상행만, 1963–1987). 清水谷→十勝三股 기록에서 둘 사이를 끄면 電力所前에서 상행으로 타는 조각이 생긴다
+    final network = rig.network;
+    final interpreter = RideInterpreter(network);
+    const ride = Ride(
+      rideId: RideId('shihoro'),
+      legs: [
+        RideLeg(
+          seq: 0,
+          lineId: LineId('l_shihoro_line'),
+          routeId: RouteId('r_shihoro_line'),
+          fromNode: NodeId('n_shimizudani'),
+          toNode: NodeId('n_tokachi_mitsumata'),
+          lineLabel: 'l',
+          fromLabel: 'a',
+          toLabel: 'b',
+        ),
+      ],
+      datasetVersion: 'v',
+      createdAt: 1,
+      updatedAt: 1,
+      deviceId: 'd',
+    );
+    final derived = interpreter.ride(ride);
+    expect(derived.status, ResolveStatus.ok);
+    final expansion = interpreter.expansions(ride).single;
+    final at = expansion.nodes.indexOf('n_kuroishidaira');
+    expect(expansion.nodes[at + 1], 'n_denryokushomae');
+    final edge = int.parse(expansion.edges[at].substring(2));
+    final hit = derived.edges.firstWhere((e) => e.edge == edge);
+    var next = 0;
+    final outcome = cutSection(
+      ride,
+      network,
+      offUnits: {hit.unitOn},
+      carryover: true,
+      nameOf: (node) => node,
+      newId: () => 'n${next++}',
+      now: 5,
+    );
+    expect(outcome, isA<CutBlocked>());
+    expect((outcome as CutBlocked).reason, CutBlock.noStop);
+  });
+
   test('모든 노선의 노선도가 표시 역 사이 구간을 빠짐없이 만든다', skip: _skip, () {
     final network = rig.network;
     var empty = 0;
@@ -1316,10 +1360,10 @@ void main() {
   // 영어는 글이 길어 넘치기 쉽다. 세 언어 모두 좁은 폰·큰 글자로 본다 (사용자 지시 2026-11-12)
   for (final (width, scale, locale) in const [
     (390.0, 1.0, AppLocale.ko),
-    (360.0, 1.3, AppLocale.ko),
+    (360.0, 1.4, AppLocale.ko),
     (390.0, 1.0, AppLocale.en),
-    (360.0, 1.3, AppLocale.en),
-    (360.0, 1.3, AppLocale.ja),
+    (360.0, 1.4, AppLocale.en),
+    (360.0, 1.4, AppLocale.ja),
   ]) {
     testWidgets('전수: 모든 노선의 노선 상세를 끝까지 내려도 그리기 오류와 ID 노출이 없다 (폭 $width, 글자 $scale배, ${locale.languageCode})',
         skip: _skip != null || full != null, (tester) async {
