@@ -57,6 +57,16 @@ Readings are never guessed. A name with no confirmed reading shows in kanji only
 </details>
 
 <details>
+<summary>Wartime closures (1941–1945)</summary>
+
+- 大沼電鉄 大八湾 and 銚子口 (1929–1945): existence rests on a single source
+- 有田鉄道 明王寺 (opened 1935): closing date
+- 都電 高円寺線 新宿駅前–角筈一丁目 (0.3 km, suspended 1944): the exact section
+- 比叡山 坂本ケーブル reopening (1946) and 生駒鋼索線 宝山寺–生駒山上 suspension and reopening dates
+- 箱根登山 鋼索線 and 信貴山急行 西信貴 鋼索線: whether the 1944 stoppage was a suspension or a legal abolition
+</details>
+
+<details>
 <summary>Through services and track connections</summary>
 
 - 近鉄 江戸橋: 名古屋線–伊勢線 through services, 1950–1959
@@ -65,7 +75,7 @@ Readings are never guessed. A name with no confirmed reading shows in kanji only
 - 東横線 神奈川 (1945–1950)
 - Whether the 鹿島臨海鉄道 大洗 through service ran after 1988
 - 秋田市電 新大工町線, September 1950 to February 1951: whether cars from 新大工町 ran on to 土崎 or to 県庁前 after the 県庁前 extension
-- About 130 places where a closed branch or tram line met another line: which way the connecting curve faced, that is, toward which neighbouring stop cars could run straight on. 38 have one source, 92 have none, and at 砂川 the route map and aerial photos disagree.
+- About 90 places where a closed branch or tram line met another line: which way the connecting curve faced, that is, toward which neighbouring stop cars could run straight on. 26 have one source, 62 have none, and at 興部 the route map and aerial photos disagree. Old route maps (運転系統図), track layouts and photos of the junctions are the most useful material.
 </details>
 
 <details>
