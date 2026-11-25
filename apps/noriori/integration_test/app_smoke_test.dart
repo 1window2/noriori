@@ -4,7 +4,7 @@ import 'package:integration_test/integration_test.dart';
 import 'package:noriori/i18n/strings.g.dart';
 import 'package:noriori/main.dart' as app;
 
-/// 에뮬레이터·실기기에서 진짜 앱을 띄운다. 원격 작업 환경에는 에뮬레이터가 없어 맥에서 돌린다 (docs/TODO.md).
+/// 에뮬레이터·실기기에서 진짜 앱을 띄운다. 에뮬레이터가 있는 로컬 맥에서 돌린다 (docs/TODO.md).
 ///
 /// `flutter test integration_test -d <기기>`. 지도는 네이티브 화면이라 pumpAndSettle이 끝나지 않을 수 있어 시간으로 기다린다.
 Future<void> _wait(WidgetTester tester, bool Function() done, {Duration limit = const Duration(seconds: 60)}) async {

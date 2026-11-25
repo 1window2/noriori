@@ -774,7 +774,7 @@
 | R:87 | geometry/n02.yaml과 n02_legacy.yaml을 조건별로 분리 | 구현됨 | data/source/geometry/ |
 | R:89 | 사이트 내부 식별자를 공개 데이터에 넣지 않음 | 구현됨 | data/source/lines 검색 0건 |
 | R:89 | 계통별 표 km 대조는 n_routes.json이 있을 때만 | 구현됨 | tools/compile.py:39 |
-| R:30 | 컴파일 단계 보정 표는 imports가 없는 체크아웃(CI, 원격 작업 환경)에서도 빌드에 반영 | 구현됨 | tools/compile.py:20-31이 data/source를 읽은 뒤 적용 |
+| R:30 | 컴파일 단계 보정 표는 imports가 없는 체크아웃(CI 등)에서도 빌드에 반영 | 구현됨 | tools/compile.py:20-31이 data/source를 읽은 뒤 적용 |
 | R:36 | events_fix.json: `match`+`set`으로 사건 하나를 고치고 `add`로 더함, 쓰이지 않는 행은 compile 오류 `events_fix_unused` | 구현됨 | tools/compile.py:22-31 (`events_fix_unused`, `events_fix_ambiguous`), 오류면 멈춤 :849. data/overrides/events_fix.json 4행 (2026-11-05) |
 | R:37 | edge_dates, stop_dates, moved, extend, hub_pairs, hub_not, junction_side는 컴파일이 읽음 | 구현됨 | tools/compile.py:35, :451-453 등 |
 | R:39 | invariant_exceptions.json: 날짜별 도달성 검사 예외, `provisional: true`는 임시 | 구현됨 | tools/invariants.py:137-138 |

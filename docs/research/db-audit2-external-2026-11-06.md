@@ -1,6 +1,6 @@
 # DB 2차 감사 (5) 외부 사실·수록 범위·완전성 (판 2026-11-06.3)
 
-감사 대상은 스냅숏 `연구 원자료/snap-2026-11-06.3/master.sqlite`·`names.sqlite`(판 2026-11-06.3, `as_of` 2026-11-02)뿐입니다. 저장소는 읽기만 했고, 고친 파일은 이 문서와 `db-audit2-external-2026-11-06.json` 둘입니다. 스크립트와 받은 자료는 저장소 밖 임시 폴더에 두었습니다. 위키백과는 API(`action=parse`)로 받아 revid를 적었습니다. 요청 헤더에는 연락처를 넣지 않았습니다. 인용 URL은 모두 `https://ja.wikipedia.org/w/index.php?oldid=<revid>` 형식입니다.
+감사 대상은 스냅숏 연구 원자료 `snap-2026-11-06.3/master.sqlite`·`names.sqlite`(판 2026-11-06.3, `as_of` 2026-11-02)뿐입니다. 저장소는 읽기만 했고, 고친 파일은 이 문서와 `db-audit2-external-2026-11-06.json` 둘입니다. 스크립트와 받은 자료는 저장소 밖 임시 폴더에 두었습니다. 위키백과는 API(`action=parse`)로 받아 revid를 적었습니다. 요청 헤더에는 연락처를 넣지 않았습니다. 인용 URL은 모두 `https://ja.wikipedia.org/w/index.php?oldid=<revid>` 형식입니다.
 
 1차 감사(`db-audit-2026-11-06.md`)의 §5(노리츠부시 전수 대조)와 §6(표본 40)은 다시 하지 않았습니다. 거기 있던 항목에는 `[알려짐]`을 붙였습니다.
 

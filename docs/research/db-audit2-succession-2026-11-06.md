@@ -2,7 +2,7 @@
 
 감사 대상은 스냅숏 `snap-2026-11-06.3/master.sqlite`(md5 8486c607…)와 `names.sqlite`(md5 379cef76…) 두 파일뿐입니다. 둘 다 읽기 전용(`mode=ro`)으로 열었습니다. `build/master.sqlite`는 읽지 않았습니다. 원천은 `data/source/*.yaml`, `data/overrides/*`, `data/imports/noritsubushi/lines.json`, `data/imports/wiki/station.json`, `data/candidates/n05_report.json`을 읽기만 했습니다. 저장소에서 바꾼 파일은 이 문서와 같은 이름의 `.json` 둘뿐입니다.
 
-검사 스크립트는 세션 임시 폴더 `(작업 폴더)`에 있고 모두 `python3 -I`로 돕니다. 파이프라인 코드는 재사용하지 않았습니다. 각 규칙의 핵심 조건은 아래 표에 SQL이나 식으로 적었습니다.
+검사 스크립트는 임시 작업 폴더에 있고 모두 `python3 -I`로 돕니다. 파이프라인 코드는 재사용하지 않았습니다. 각 규칙의 핵심 조건은 아래 표에 SQL이나 식으로 적었습니다.
 
 이전 감사(`db-audit-2026-11-06.md`) 0절에서 고친 항목과 그 문서의 S7(국철 km ≠ 3섹 km)은 `[알려짐]`으로 표시했습니다. 승계 끔은 노리츠부시 방식, 승계 켬은 기본 방식입니다(DESIGN §2.8 E).
 

@@ -2,7 +2,7 @@
 
 대상은 스냅샷 `snap-2026-11-06.3/master.sqlite`, `names.sqlite`(판 2026-11-06.3)만입니다. `build/`는 읽지 않았습니다. 원천은 커밋 `340460f`(판 2026-11-06.3)의 `data/source/*`(작업 트리에서 다시 생성 중이라 `git show HEAD:`로 꺼내 읽음), `data/overrides/*`, `data/imports/stationdb/station.csv`, 위키 캐시, `data/base/pref.geojson`을 읽기만 했습니다. 저장소에서 쓴 파일은 이 문서와 `db-audit2-names-2026-11-06.json` 둘뿐입니다.
 
-검사 스크립트는 세션 임시 폴더(`…/연구 원자료/a4/*.py`)에 있고, 다시 돌릴 수 있게 핵심 조건을 부록 A에 SQL·파이썬으로 옮겼습니다. 모두 `python3 -I`, 읽기 전용 URI(`mode=ro`)로 열었습니다. 규칙 표기(ko·en)를 다시 만들어 비교할 때만 저장소의 `tools/ko.py`, `tools/en_rules.py`를 import했습니다(`NW_OFF=1`, 나무위키 표 끔).
+검사 스크립트는 연구 원자료(`a4/*.py`)에 있고, 다시 돌릴 수 있게 핵심 조건을 부록 A에 SQL·파이썬으로 옮겼습니다. 모두 `python3 -I`, 읽기 전용 URI(`mode=ro`)로 열었습니다. 규칙 표기(ko·en)를 다시 만들어 비교할 때만 저장소의 `tools/ko.py`, `tools/en_rules.py`를 import했습니다(`NW_OFF=1`, 나무위키 표 끔).
 
 `[알려짐]`은 1차 감사(`db-audit-2026-11-06.md`)나 그 0절 반영 기록에 이미 있는 항목입니다.
 
