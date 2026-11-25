@@ -1,3 +1,3 @@
 # 10회차 G2 데이터 고침의 사건 보정 (2026-11-16)
-- {"patch": "add", "date": "1946-05-10", "type": "open", "operator": "o_keihan_electric_railway", "line": "l_keishin_line", "edges": ["e_008166"], "source": "wikipedia", "why": "[浜大津] 京津線 浜大津(2) 이전 1946-05-10(위키 京阪京津線 rev111210110) (10회차 G2; audit4 kinki_1-02)"}
-- {"patch": "add", "date": "1981-04-12", "type": "close", "line": "l_keishin_line", "edges": ["e_008166"], "reason": "relocated", "source": "wikipedia", "why": "[浜大津] 1981-04-12 「京津線の浜大津駅を石山坂本線の同駅（旧東口）に統合」(위키 京阪京津線 rev111210110) (10회차 G2; audit4 kinki_1-02)"}
+- {"patch": "add", "date": "1946-05-10", "type": "open", "operator": "o_keihan_electric_railway", "line": "l_keishin_line", "edges": ["e_008167"], "source": "wikipedia", "why": "[浜大津] 京津線 浜大津(2) 이전 1946-05-10(위키 京阪京津線 rev111210110) (10회차 G2; audit4 kinki_1-02)"}
+- {"patch": "add", "date": "1981-04-12", "type": "close", "line": "l_keishin_line", "edges": ["e_008167"], "reason": "relocated", "source": "wikipedia", "why": "[浜大津] 1981-04-12 「京津線の浜大津駅を石山坂本線の同駅（旧東口）に統合」(위키 京阪京津線 rev111210110) (10회차 G2; audit4 kinki_1-02)"}

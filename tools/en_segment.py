@@ -124,4 +124,9 @@ def contract(kana,ja):
     for c,r in sg:
         if m and m[-1][0] and iskanji(m[-1][0][-1]) and c=='生' and r in ('う','お'):m[-1]=(m[-1][0]+c,m[-1][1]+r);continue
         m.append((c,r))
-    return ''.join(_within(r) if c else r for c,r in m)
+    # 가나 덩어리 안에서도 の·が 뒤의 う·お는 낱말 경계다(たの|うら 御立岬公園: 田の浦를 가나로 쓴 것, 5회차 2026-11-26). 한자 쪽 숨은 の·が 규칙과 같다
+    def _w(c,r):
+        if not c:return r
+        if any(iskanji(x) for x in c):return _within(r)
+        return ''.join(_within(p) for p in re.split(r'(?<=[のが])(?=[うお])',r))
+    return ''.join(_w(c,r) for c,r in m)

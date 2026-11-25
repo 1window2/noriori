@@ -515,6 +515,8 @@ final class PackReader {
           otherRouteId: row.readNullable('other_route_id'),
           validFromLo: _lo(row.readNullable('valid_from')),
           validToHi: _hi(row.readNullable('valid_to')),
+          validFromHi: _hi(row.readNullable('valid_from')),
+          validToLo: _lo(row.readNullable('valid_to')),
           side: row.readNullable('side'),
           flow: row.readNullable('flow'),
           otherNode: row.readNullable('other_node'),
@@ -636,8 +638,10 @@ final class PackReader {
 
   /// 그 계통의 열람 전용 역. 계통 순번(seq)이 있는 행이 먼저 그 순서로, 나머지(옛 팩)는 넣은 순서(rowid)다.
   Future<List<ArchiveStop>> archiveStops(String routeId) async {
+    // 옛 팩에는 node_id 칸이 없다 (열람 전용 역 ↔ 기존 노드 잇기, 5회차 2026-11-26)
+    final hasNode = await _hasColumn('archive_stop', 'node_id');
     final rows = await _db.customSelect(
-      'SELECT id, after_id, before_id, closed, km, seq FROM master.archive_stop WHERE route_id = ? '
+      'SELECT id, after_id, before_id, closed, km, seq${hasNode ? ', node_id' : ''} FROM master.archive_stop WHERE route_id = ? '
       'ORDER BY seq IS NULL, seq, rowid',
       variables: [Variable.withString(routeId)],
     ).get();
@@ -650,9 +654,52 @@ final class PackReader {
           closedYear: _year(row.readNullable('closed')),
           km: row.readNullable('km'),
           seq: row.readNullable('seq'),
+          node: hasNode ? row.readNullable('node_id') : null,
         ),
     ];
   }
+
+  /// 기존 노드와 이은 열람 전용 역 가운데 그 계통과 운행 기간이 겹친 것(archive_node_link, 5회차 2026-11-26).
+  /// 노드 줄에 열람 전용 노선 환승처럼 단다. 겹치지 않은 계승은 환승이 아니라 넣지 않는다. 표가 없는 옛 팩이면 없다.
+  /// id는 「link:열람 전용 역 ID」라 열람 전용 역 줄 이름과 섞이지 않는다
+  Future<List<ArchiveBranch>> archiveTransfers(Iterable<String> nodes, Iterable<String> routes) async {
+    final list = nodes.toSet().toList(), routeList = routes.toSet().toList();
+    if (list.isEmpty || routeList.isEmpty || !await _hasTable('archive_node_link')) return const [];
+    final rows = await _db.customSelect(
+      'SELECT DISTINCT l.archive_id, l.node_id, s.closed FROM master.archive_node_link l '
+      'JOIN master.archive_stop s ON s.id = l.archive_id '
+      'WHERE l.node_id IN (${List.filled(list.length, '?').join(',')}) AND l.route_id IN (${List.filled(routeList.length, '?').join(',')})',
+      variables: [for (final id in list) Variable.withString(id), for (final id in routeList) Variable.withString(id)],
+    ).get();
+    return [
+      for (final row in rows)
+        ArchiveBranch(id: 'link:${row.read<String>('archive_id')}', atNode: row.read('node_id'), closedYear: _year(row.readNullable('closed'))),
+    ];
+  }
+
+  /// 「link:열람 전용 역 ID」 줄 이름: 그 열람 전용 역이 놓인 노선 이름과 역 이름(伊勢線 徳和)
+  Future<Map<String, String>> archiveLinkLabels(Iterable<String> linkIds) async {
+    final ids = [for (final x in linkIds) if (x.startsWith('link:')) x.substring(5)];
+    if (ids.isEmpty) return const {};
+    final rows = await _db.customSelect(
+      'SELECT id, line_id FROM master.archive_stop WHERE id IN (${List.filled(ids.length, '?').join(',')})',
+      variables: [for (final id in ids) Variable.withString(id)],
+    ).get();
+    final lineOf = {for (final row in rows) row.read<String>('id'): row.readNullable<String>('line_id')};
+    final stopNames = await archiveNames(ids);
+    final lineIds = [for (final l in lineOf.values) ?l];
+    final lineRows = await _nameRows('line', lineIds);
+    return {
+      for (final id in ids)
+        'link:$id': [if (lineOf[id] != null) _pick(lineRows[lineOf[id]], languages), stopNames[id]].whereType<String>().join(' '),
+    };
+  }
+
+  Future<bool> _hasColumn(String table, String column) async => (await _db.customSelect(
+        "SELECT 1 FROM pragma_table_info(?, 'master') WHERE name = ?",
+        variables: [Variable.withString(table), Variable.withString(column)],
+      ).get())
+          .isNotEmpty;
 
   /// 그 역들에서 갈라지던 열람 전용 노선.
   /// [routes]를 주면 그 계통들에서 갈라지던 것만 고른다(archive_branch: 그 역에 함께 있던 재래선 계통).

@@ -90,6 +90,35 @@ for rid, sq, ol, kd, f_, t_ in m.execute("select route_id,seq,other_line_id,kind
     if ol is None: continue
     hi = '9999-12-31' if t_ in (None, 'ongoing') else (lohi(t_)[1] or '9999-12-31')
     if hi > '1950-01-01': DBL[(rid, sq, ol)].append((kd, f_, t_, hi))
+# 날짜 모름 화면은 같은 계보 노선의 계통을 이어 그린다(明知線 → 明知鉄道). 그래서 역(노드)마다, 이 계통 노선과 같은 계보인 계통의 연결을 함께 본다
+RLINE = dict(m.execute('select id,line_id from route'))
+ALLL = collections.defaultdict(list)   # 노드 → [(계통 노선, 상대 노선, 종류, 시작 lo, 끝 hi, 끝 lo, 계통)] 1950 앞도 포함(가장 늦게 끝난 연결 판정용)
+for rid, nd, ol, kd, f_, t_ in m.execute("select l.route_id,s.node_id,l.other_line_id,l.kind,l.valid_from,l.valid_to from route_link l join route_stop s on s.route_id=l.route_id and s.seq=l.seq"):
+    if ol is None or kd not in ('continue', 'transfer', 'branch'): continue
+    lo = lohi(f_)[0] if f_ else '0000-01-01'
+    hi = '9999-12-31' if t_ in (None, 'ongoing') else (lohi(t_)[1] or '9999-12-31')
+    ALLL[nd].append((RLINE.get(rid), ol, kd, lo or '0000-01-01', hi, (lohi(t_)[0] if t_ not in (None, 'ongoing') else hi) or hi, rid))
+TODAY = os.environ.get('RENDER_TODAY') or '2026-11-20'
+def _expect_track(rid, line, node, ol, day):
+    """그 역 그 노선(같은 계보 포함)의 오늘 보일 연결(display_rules _oneOnDay)에 선로 연결(이어짐·분기)이 있나.
+    다른 노선(같은 계보) 계통의 행은 이 계통의 그 상대 행이 다 끝난 뒤에 시작한 것(이어받은 노선, 明知線 → 明知鉄道)만 함께 본다. 같은 노선의 다른 계통(옛 선형)은 따로 그린다"""
+    rel = lambda r: r[1] == ol or LIN[r[1]] & LIN[ol]
+    own = [r for r in ALLL[node] if r[6] == rid and rel(r)]
+    end_own = max((r[4] for r in own), default='0000-01-01')
+    by = collections.defaultdict(list)
+    for r in ALLL[node]:
+        if r[6] != rid and r[0] and r[0] != line and LIN[r[0]] & LIN[line] and rel(r): by[r[6]].append(r)
+    g = own + [r for rs in by.values() if min(x[3] for x in rs) >= end_own for r in rs]
+    live = [r for r in g if r[3] <= day < r[4]]
+    if live: return any(r[2] in ('continue', 'branch') for r in live)
+    ended = [r for r in g if r[3] <= day and r[4] <= day]
+    if not ended: return False
+    last = max(r[4] for r in ended)
+    lastset = [r for r in ended if r[4] == last]
+    # 끝을 범위로만 아는 연결 뒤 그 범위 안에서 다른 종류가 시작해 끝까지 갔으면 앞 상태다(display_rules chained, 5회차 2026-11-26)
+    def chained(r):
+        return any(o is not r and o[2] != r[2] and r[5] < last and r[5] <= o[3] < last and r[3] < o[3] for o in lastset)
+    return any(r[2] in ('continue', 'branch') for r in lastset if not chained(r))
 DBN = collections.defaultdict(set)   # (계통, 순번, 상대 노선) → 그 연결의 다음 역
 for rid, sq, ol, nx in m.execute("select route_id,seq,other_line_id,next_stop_node from route_link"):
     if ol is not None: DBN[(rid, sq, ol)].add(nx)
@@ -136,6 +165,10 @@ for fn in sorted(os.listdir(RJ)):
             if any(a_ <= sq <= b_ for a_, b_ in PAR.get((rid, ol), [])): continue
             node = next((L['node'] for L in sc['lines'] if L['t'] == 'stop' and L['seq'] == sq), None)
             if banded(node, ol, DBN[(rid, sq, ol)]): continue
+            # 이관 띠 끝 역에서 그 띠 노선(같은 계보)과의 연결이 이관 날까지 끝났으면, 그 노선의 오늘 상태는 띠다(사용자 결정 2026-11-19: 노선·계보당 오늘 연결 하나).
+            # 이관 전 상태라 화면에 따로 없어야 맞다 (山田線 釜石 南リアス線 ~2011 → 2019 이관, 北九州線 熊西, 徳島線 阿波池田, 信越本線 関屋, 5회차 2026-11-26)
+            if any((bd['line'] == ol or LIN[bd['line']] & LIN[ol]) and node in (bd['top'], bd['bottom']) and bd.get('on')
+                   and max(h for _, _, _, h in v) <= bd['on'] for bd in bands): continue
             base = dict(route=rid, date='모름', at=nn(node), other=ln(ol), ids=[rid, node, ol])
             # 역마다 노선(같은 계보면 이어받은 노선)당 그날 연결 하나만 보인다(사용자 결정 2026-11-19). 같은 계보 노선이 보이면 그 노선의 연결이다
             got = seen[sq].get(ol) or [e for o2, ends in seen[sq].items() if LIN[o2] & LIN[ol] for e in ends]
@@ -146,8 +179,10 @@ for fn in sorted(os.listdir(RJ)):
             if shown < dbmax and dbmax < MAX: put('S15 날짜 모름 화면에 보인 상대 노선 끝이 DB 그 키의 가장 늦은 끝보다 이름', 'err', dict(base, shown=shown, db=dbmax))
             elif shown < dbmax: put('S15 날짜 모름 화면에 보인 상대 노선 끝이 DB 그 키의 가장 늦은 끝보다 이름', 'err', dict(base, shown=shown, db='지금까지'))
             # S12 1950 뒤 선로 연결(이어짐·분기) 행이 있는데 그 역 줄에 선로 줄(분기·끝 이어짐)로 안 나오고 환승으로만 나옴(이관 띠 노선 제외)
+            # 날짜 모름 화면은 오늘의 연결 하나만 보인다(사용자 결정 2026-11-19, display_rules _oneOnDay). 노선·계보마다 오늘 있는 연결,
+            # 없으면 오늘까지 가장 늦게 끝난 연결이 보일 것이다. 그 연결이 선로 연결일 때만 환승으로만 나온 것을 본다(明知線 恵那: 오늘은 환승)
             kd_ = set().union(*[kinds[sq][o2] for o2 in list(kinds[sq]) if o2 == ol or LIN[o2] & LIN[ol]])
-            if any(k in ('continue', 'branch') for k, _, _, _ in v) and not (kd_ & {'B', 'E', 'before'}):
+            if _expect_track(rid, J['line'], node, ol, TODAY) and not (kd_ & {'B', 'E', 'before'}):
                 put('S12 DB 선로 연결(이어짐·분기)이 화면에서 환승으로만 나옴', 'warn', dict(base, db=[(k, f, t) for k, f, t, _ in v]))
         # S13 열람 전용 역 행 수와 날짜 모름 화면 ○ 줄 수가 다름
         if ARC.get(rid, 0) != narch: put('S13 열람 전용 역 행 수와 화면 ○ 줄 수가 다름', 'err', dict(route=rid, db=ARC.get(rid, 0), shown=narch, ids=[rid]))

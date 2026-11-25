@@ -1430,6 +1430,8 @@ for x_ in names:
     if x_['entity_type']=='node':_nm_of[x_['id']].append(x_)
 _pos_of={p_['node']:p_ for p_ in positions}
 _NFIX=json.load(open(os.path.join(ROOT,'data','overrides','node_fix.json'),encoding='utf-8'))
+import en_rules as _enrE
+_EN_OFF=_enrE.load_official()
 _OLDFIX=json.load(open(os.path.join(ROOT,'data','overrides','old_names_fix.json'),encoding='utf-8'))
 _RNH=json.load(open(os.path.join(ROOT,'data','overrides','renames_hand.json'),encoding='utf-8'))
 _rn5_=os.path.join(ROOT,'data','overrides','renames_n05.json')
@@ -1505,6 +1507,17 @@ for x_ in json.load(open(os.path.join(ROOT,'data','overrides','node_split.json')
         # 읽기를 지운 행(kana null, 다른 역 읽기를 빌려 온 것)도 그 읽기로 만든 한국어·영어를 지운다 (생성기 node_fix 규칙과 같음, 9회차 N)
         if (chg_ and not f_.get('kana')) or ('kana' in f_ and f_['kana'] is None):
             names[:]=[y for y in names if not (y['entity_type']=='node' and y['id']==new_ and y['lang'] in ('ko','en') and y.get('source')!='hand' and not y.get('line') and not y.get('valid_from') and not y.get('valid_to'))]
+    # 공식 영어 이름(en_official)은 나눈 노드에도 가장 앞선다. 생성기 fix_nodes와 같은 순서로 node_split·node_fix의 손 영어보다 먼저다.
+    # 지금 이름과 같은 표기인 노선별 행에도 건다. 덮인 손 표기는 검색 별칭으로 남긴다 (富山駅 地鉄 Toyama Station·大手町駅前 伊予鉄 Otemachi Station, 5회차 2026-11-26)
+    _ov_=_EN_OFF.get(new_)
+    if _ov_:
+        _jl_={(y.get('line'),y.get('valid_from'),y.get('valid_to')):y['text'] for y in names if y['entity_type']=='node' and y['id']==new_ and y['lang']=='ja'}
+        _jn_=_jl_.get((None,None,None))
+        for y in names:
+            if y['entity_type']!='node' or y['id']!=new_ or y['lang']!='en' or y.get('valid_from') or y.get('valid_to'):continue
+            if y.get('line') and _jl_.get((y.get('line'),None,None),_jn_)!=_jn_:continue
+            if y['text']!=_ov_['en']:aliases.append(dict(entity_type='node',id=new_,lang='en',text=y['text'],kind='alias'))
+            y['text']=_ov_['en'];y['source']='official'
     # 사람이 고친 옛 이름(old_names_fix.json의 「새 노드|옛 이름」 행)도 생성기가 못 거친 나눈 노드에 같은 뜻으로 얹는다.
     # null이면 그 옛 이름 행(같은 기간의 한국어·영어 포함)을 빼고, [이름, 시작, 끝]이면 그 행을 그 값으로 두거나 없으면 더한다 (大手町駅前의 옛 이름 江戸町駅前)
     for k_,v_ in _OLDFIX.items():
@@ -2938,8 +2951,52 @@ def _rev_ang(l_,r,s,mp):
     L_=by_route[o_rid];i_=_SIDX.get((o_rid,o_seq))
     k_=next((k for k,x in enumerate(L_) if x['node_id']==l_['next_stop_node']),None)
     if i_ is None or k_ is None or k_==i_:return None
-    w_=rdir(r['id'],s['seq'],_inside(r['id'],s['seq'],mp,rd_,True),rd_,True)
-    return tdeg(w_,rdir(o_rid,o_seq,-1 if k_<i_ else 1,rd_,True))
+    st1_=_inside(r['id'],s['seq'],mp,rd_,True);st2_=-1 if k_<i_ else 1
+    w_=rdir(r['id'],s['seq'],st1_,rd_,True);u_=rdir(o_rid,o_seq,st2_,rd_,True)
+    # 스위치백 표식의 각 (5회차 전수 훑기 2026-11-26, 전역 규칙):
+    # (노드를 선형에 내린 자리부터 재는 규칙은 쓰지 않는다: 神明·上田은 그대로 남고 名古屋 築地口에 가짜 표식이 생겼다. 근거가 나올 때까지 선형 판정 그대로)
+    # ② 두 칸이 노드에서 함께 가는 앞머리(갈림이 역보다 앞)는 건너뛰고 갈라지는 점부터 잰다(大学病院前, 表鉄砲町 1950 전)
+    # (먼 현으로 거르는 규칙은 쓰지 않는다: 끝 역에서 함께 나가 멀리서 갈라지는 진짜 스위치백(青森 東北本線↔奥羽本線)까지 지운다. 곧은 직통인데 선형이 거친 곳은 근거와 함께 THROUGH reverse:false로 둔다)
+    e1_=hop(r['id'],s['seq'],st1_,rd_,True)[1];e2_=hop(o_rid,o_seq,st2_,rd_,True)[1]
+    x_=VR[r['id']][VIDX[(r['id'],s['seq'])]]['node_id']
+    if e1_ and e2_ and e1_!=e2_:
+        d_=_diverge_dirs(e1_,e2_,x_)
+        if d_:return tdeg(d_[0],d_[1])
+    return tdeg(w_,u_)
+def _orient(eid,x):
+    cs=_GEOC.get(eid)
+    if not cs or len(cs)<2:return None
+    px=ppos.get(x)
+    if px:rev=(cs[-1][0]-px['lon'])**2+(cs[-1][1]-px['lat'])**2<(cs[0][0]-px['lon'])**2+(cs[0][1]-px['lat'])**2
+    else:rev=edges[eid]['a']!=x
+    return cs[::-1] if rev else cs
+def _walk_pts(c_,step=5.0):
+    """선형을 step m 간격 점으로(시작부터 누적 길이와 좌표)"""
+    cl=math.cos(math.radians(c_[0][1]));out=[(0.0,c_[0])];acc=0.0;nxt=step
+    for p,q in zip(c_,c_[1:]):
+        l_=math.hypot((q[1]-p[1])*111320.0,(q[0]-p[0])*111320.0*cl)
+        while l_>0 and acc+l_>=nxt:
+            f_=(nxt-acc)/l_;out.append((nxt,(p[0]+(q[0]-p[0])*f_,p[1]+(q[1]-p[1])*f_)));nxt+=step
+        acc+=l_
+    return out,cl
+def _diverge_dirs(e1,e2,x):
+    """두 칸 방향(가까운 현). 3 m 안으로 함께 가는 앞머리(10 m 넘을 때)는 건너뛴다. 앞머리가 없으면 None(gde 그대로)"""
+    a_,b_=_orient(e1,x),_orient(e2,x)
+    if not a_ or not b_:return None
+    pa,cl=_walk_pts(a_);pb,_=_walk_pts(b_)
+    sh=0.0
+    for (la,qa),(lb,qb) in zip(pa,pb):
+        if math.hypot((qa[1]-qb[1])*111320.0,(qa[0]-qb[0])*111320.0*cl)>3.0:break
+        sh=la
+    if sh<=10.0:return None
+    def _dir(pts,reach,share):
+        rest=pts[-1][0]-sh
+        if rest<=5.0:return None
+        lim=sh+min(reach,share*rest)
+        p0=next(q for l,q in pts if l>=sh);p1=next((q for l,q in pts if l>=lim),pts[-1][1])
+        return _unit(((p1[1]-p0[1])*111320.0,(p1[0]-p0[0])*111320.0*cl))
+    u1,u2=_dir(pa,GEO_D,0.45),_dir(pb,GEO_D,0.45)
+    return (u1,u2) if u1 and u2 else None
 links=[]
 def add_link(s,oid,rr,kind,side,other,nxt,term,fl,src,pd,o=None):
     # 다음 역·끝 역이 이 역 자신(같은 역 묶음)뿐인 분기·이어짐은 갈 구간이 없다 (大江線→東臨港線 港東通 1944~1951 「다음=끝=港東通」)
@@ -5108,7 +5165,54 @@ for rid_,L_ in _abyr.items():
         for a in o_:n_+=1;a['seq']=n_
 WARN['archive_seq_conflict']=_ASEQ_CONFLICT
 print('계통 위 열람 전용 역 순번',sum(len(v) for v in _abyr.values()),'순서 단서 엇갈림',len(_ASEQ_CONFLICT),_ASEQ_CONFLICT[:6])
-t('archive_stop',['id primary key','line_id','route_id','after_id','before_id','opened','closed','km','source','legal_abolition','archive_line_id','seq'],[(a['id'],a.get('line'),None if a.get('archive_line') else arch_route(a),a.get('after'),a.get('before'),a.get('opened'),a.get('closed'),a.get('km'),a.get('source'),a.get('legal_abolition'),a.get('archive_line'),a.get('seq')) for a in archive if a.get('kind')=='stop'])
+# 열람 전용 역이 같은 자리이거나 분명히 계승한 기존 노드(node_id, 사용자 결정 2026-11-26, docs/research/audit5-archive-node-link-design.md).
+# 근거(node_why)가 있어야 하고 노드가 있어야 한다. km·기록·분모는 바뀌지 않고 표시와 연결에만 쓴다
+# 계통 위 열람 전용 역의 앞뒤 역은 그 계통의 노드여야 한다(앱 시뮬 S15). 위키 이름으로 고른 노드가 컴파일된 그 계통에 없으면
+# (浜大津: 京津線 옛 끝 노드가 아니라 石坂線 びわ湖浜大津, 옛 이름이 같음) 같은 이름(지금·옛 이름)을 가진 그 계통 노드 하나로 바꾼다.
+# 여럿이거나 없으면 그대로 두어 검사가 잡는다 (5회차 2026-11-26)
+_rsn=collections.defaultdict(set)
+for s in stops:_rsn[s['route_id']].add(s['node_id'])
+_njs=collections.defaultdict(set)
+for x in names:
+    if x['entity_type']=='node' and x['lang']=='ja':_njs[x['id']].add(x['text'].replace('（旧）',''))
+_aidset={a['id'] for a in archive if a.get('kind')=='stop'}
+_amoved=0
+for a in archive:
+    r_=a.get('route') if a.get('kind')=='stop' and not a.get('archive_line') else None
+    if not r_ or r_ not in _rsn:continue
+    for k_ in ('after','before'):
+        v_=a.get(k_)
+        if not v_ or v_ in _rsn[r_] or v_ in _aidset:continue
+        c_=[n_ for n_ in _rsn[r_] if _njs.get(n_,set())&_njs.get(v_,set())]
+        if len(c_)==1:a[k_]=c_[0];_amoved+=1
+print('열람 전용 역 앞뒤를 그 계통 같은 이름 노드로',_amoved)
+# 행은 data/overrides/archive_node.json(열람 전용 역 ID → 노드, 잠긴 ID라 출처(위키·N05·손 행)와 상관없이 같은 꼴)
+_ANJ=os.path.join(ROOT,'data','overrides','archive_node.json')
+_AN=json.load(open(_ANJ,encoding='utf-8'))['rows'] if os.path.exists(_ANJ) else {}
+_asid={a['id'] for a in archive if a.get('kind')=='stop'}
+for k_ in _AN:
+    if k_ not in _asid:err('archive_node_unknown',k_)
+for a in archive:
+    if a.get('kind')=='stop' and a['id'] in _AN:a.update(node=_AN[a['id']]['node'],node_why=_AN[a['id']].get('node_why'),node_overlap=bool(_AN[a['id']].get('node_overlap')))
+for a in archive:
+    if a.get('kind')!='stop' or not a.get('node'):continue
+    if a['node'] not in nodes or not a.get('node_why'):err('archive_node_bad',(a['id'],a.get('node')))
+t('archive_stop',['id primary key','line_id','route_id','after_id','before_id','opened','closed','km','source','legal_abolition','archive_line_id','seq','node_id'],[(a['id'],a.get('line'),None if a.get('archive_line') else arch_route(a),a.get('after'),a.get('before'),a.get('opened'),a.get('closed'),a.get('km'),a.get('source'),a.get('legal_abolition'),a.get('archive_line'),a.get('seq'),a.get('node') if a.get('node') in nodes else None) for a in archive if a.get('kind')=='stop'])
+# 이은 노드와 운행 기간이 확실히 겹친 계통만 환승으로 단다(겹치지 않은 계승은 환승이 아님, 사용자 결정 2026-11-26).
+# 겹침은 열람 전용 역 [opened, closed)와 그 계통 정차 행 기간의 확실한 겹침(늦은 시작의 늦은 끝 < 이른 끝의 이른 끝)
+_anl=[]
+for a in archive:
+    if a.get('kind')!='stop' or a.get('node') not in nodes:continue
+    # 겹침은 행의 판단(node_overlap)을 따른다. 노드 정차 기간이 틀린 곳(新岐阜 名古屋本線 1928~)에서 기계 대조가 가짜 환승을 만들지 않게 한다.
+    # 겹침이 있는 행만 기계 대조로 환승을 달 계통을 고른다 (5회차 2026-11-26)
+    if not a.get('node_overlap'):continue
+    for s in stops:
+        if s['node_id']!=a['node'] or not s['is_stop']:continue
+        f_=max((a.get('opened'),s['valid_from']),key=lambda x:lohi(x)[0] or '0000')
+        u_=min((a.get('closed') or 'ongoing',s['valid_to'] or 'ongoing'),key=lambda x:'9999-12-31' if x in (None,'ongoing') else (lohi(x)[1] or '9999-12-31'))
+        if (lohi(f_)[1] or '0000')<('9999-12-31' if u_ in (None,'ongoing') else (lohi(u_)[0] or '9999-12-31')):_anl.append((a['id'],a['node'],s['route_id'],f_,u_))
+t('archive_node_link',['archive_id','node_id','route_id','valid_from','valid_to'],sorted(set(_anl)))
+print('열람 전용 역 ↔ 노드',sum(1 for a in archive if a.get('kind')=='stop' and a.get('node')),'환승 계통',len(set(_anl)))
 # 동결 전 공개 ID 개명·합친 노드의 옛 ID (data/overrides/id_rename.json, 2회차 결정 U12). 새 ID가 이 판에 없거나 옛 ID가 아직 있으면 행이 틀린 것이다
 _IDR=[]
 for _r in json.load(open(os.path.join(ROOT,'data','overrides','id_rename.json'),encoding='utf-8'))['rows']:
@@ -5608,6 +5712,13 @@ print('仮乗降場·臨時駅 기간 이름',len(_marked),'계통 한정',len(_
 # 추정 읽기는 쓰지 않는다 (사용자 결정 19). 읽기를 찾아 한국어·영어 옛 이름이 생기면 그 행이 대신한다 (사용자 결정 2026-11-08)
 _base={(x['id'],x['lang']):x['text'] for x in names if x['entity_type']=='node' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to')}
 _dated={(x['id'],x['lang'],x.get('valid_to')) for x in names if x['entity_type']=='node' and not x.get('line') and x.get('valid_to')}
+# 지금 영어 이름이 공식 번역형(赤十字病院前 Red Cross Hospital)이면 그 시절에는 없던 이름이다. 병기 앞부분은 지금 이름의 읽기 꼴(Sekijuji-byoin-mae)로 둔다 (5회차 2026-11-26)
+_jn0={x['id']:(x['text'],x.get('kana')) for x in names if x['entity_type']=='node' and x['lang']=='ja' and not x.get('line') and not x.get('valid_from') and not x.get('valid_to')}
+for (i_,l_),t_ in list(_base.items()):
+    if l_!='en' or i_ not in _jn0 or not _jn0[i_][1]:continue
+    j_,k_=_jn0[i_]
+    if _enrE._translated_base(t_,j_):
+        r_=_enrE.station_reading(_enrE.plainkana(k_),_enrE.plainja(j_));_base[(i_,l_)]=_enrE.fix_station(_enrE.plainja(j_),_enrE.plainkana(k_),r_,{}) or r_
 _then=[]
 for x in names:
     if x['entity_type']!='node' or x['lang']!='ja' or x.get('line') or not x.get('valid_to') or x['valid_to']=='ongoing':continue
@@ -5951,6 +6062,10 @@ for x in names:
         sadd('archive',x['id'],x['text']);sadd('archive',x['id'],x.get('kana'))
 for x in aliases:
     if x['entity_type'] in('node','line','service') and not(x['entity_type']=='node' and x['id'] not in pub):sadd(x['entity_type'],x['id'],x['text'])
+# 기존 노드와 이은 열람 전용 역(같은 자리·계승)의 이름으로도 그 노드를 찾는다. 결과에는 노드의 정식 이름이 뜬다 (5회차 2026-11-26)
+_anode={a['id']:a['node'] for a in archive if a.get('kind')=='stop' and a.get('node') in pub}
+for x in names:
+    if x['entity_type']=='archive' and x['id'] in _anode and x['lang']=='ja':sadd('node',_anode[x['id']],x['text']);sadd('node',_anode[x['id']],x.get('kana'))
 # 장음 기호가 든 공식 영어 이름(Ōmiya·Tōkyō)은 기호를 뺀 꼴로도 찾는다. 가나를 그대로 옮긴 꼴(oomiya·toukyou)은 공개 역 모두에 넣는다.
 # 공식이 장음을 아예 적지 않는 사업자(JR東日本 Omiya)도 같은 말로 찾혀야 한다. ō가 おお인지 おう인지는 기호로 알 수 없어 읽기에서 만든다 (사용자 결정 2026-11-24, 넓힘 2026-11-25)
 import en_rules as _enr
@@ -5977,9 +6092,20 @@ for id_ in sorted(_en_off&pub):
 for x in names:
     if x['lang']=='en' and ((x['entity_type']=='node' and x['id'] in pub) or x['entity_type'] in ('archive','line','service')):
         t_=x['text']
+        # 공식 번역형(Atomic Bomb Museum, St. Mary's Hospital)은 영어 낱말이라 ん 꼴을 바꾸지 않는다(Bonb·Tenple 같은 꼴이 생김, 5회차 2026-11-26)
+        if x['entity_type']=='node' and _enr._translated_base(t_,_ja_now.get(x['id'],'')):continue
         for v_ in (re.sub(r'm(?=[bpm])','n',t_),re.sub(r'n(?=[bpm])','m',t_),re.sub(r'M(?=[bpm])','N',t_)):
             if v_!=t_:sadd(x['entity_type'],x['id'],v_)
-# 번역형 공식 영어 이름(熊本駅前 「Kumamoto Station」)은 찾기 별칭으로만 둔다 (en_official.json aliases)
+# 줄여 쓴 공식 표기(Ehime Univ. Hospital, Pref. Sports Park, Mt.Fuji, Toyama Sta.)는 이름 그대로 두고 풀어 쓴 꼴로도 찾는다. 찾으면 화면에는 정식 이름이 뜬다 (사용자 결정 2026-11-26)
+_ABBR=((r'\bUniv\.\s*','University '),(r'\bPref\.\s*','Prefectural '),(r'\bMt\.\s*','Mount '),(r'\bSta\.','Station'),(r'\bSt\.\s*','Saint '),(r'\s*/\s*',' / '))
+for x in names:
+    if x['lang']=='en' and x['entity_type']=='node' and x['id'] in pub:
+        t_=x['text'];v_=t_
+        for p_,r_ in _ABBR:v_=re.sub(p_,r_,v_)
+        v_=re.sub(r'\s+',' ',v_).strip()
+        if v_!=t_:sadd('node',x['id'],v_)
+        if re.search(r'\bMt\.(?=\S)',t_):sadd('node',x['id'],re.sub(r'\bMt\.(?=\S)','Mt. ',t_))
+# en_official.json aliases: 공식 이름 밖의 공식 표기(잘린 꼴 Hirao, 괄호로 번역을 덧붙인 꼴, 옛 공식 표기 Fukuoka-kuko)는 찾기 별칭이다. 공식 번역형은 이름이다(사용자 결정 2026-11-25)
 _eo=os.path.join(ROOT,'data','overrides','en_official.json')
 if os.path.exists(_eo):
     # 값은 별칭 하나 또는 여럿(공식 표기가 바뀐 역은 옛 공식 표기도 별칭, 5회차 r3)

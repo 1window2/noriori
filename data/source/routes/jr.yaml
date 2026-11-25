@@ -120,12 +120,12 @@
 - {"id": "r_tsugaru_line", "line": "l_tsugaru_line", "role": "main", "from": "n_aomori", "to": "n_minmaya"}
 - {"id": "r_uetsu_main_line", "line": "l_uetsu_main_line", "role": "main", "from": "n_niitsu", "to": "n_akita"}
 - {"id": "r_hakushin_line", "line": "l_hakushin_line", "role": "main", "from": "n_niigata", "to": "n_shibata", "hidden_stops": ["n_kami_nuttari"]}
-- {"id": "r_hakushin_line_higashi_niigata_nuttari", "line": "l_hakushin_line", "role": "branch", "from": "n_nuttari", "to": "n_niizaki", "owned": true, "also": ["e_002235", "e_002236", "e_002237"], "hidden_stops": ["n_higashi_niigata", "n_kami_nuttari"]}
+- {"id": "r_hakushin_line_higashi_niigata_nuttari", "line": "l_hakushin_line", "role": "branch", "from": "n_nuttari", "to": "n_niizaki", "owned": true, "also": ["e_002236", "e_002237", "e_002238"], "hidden_stops": ["n_higashi_niigata", "n_kami_nuttari"]}
 - {"id": "r_rikuu_east_line", "line": "l_rikuu_east_line", "role": "main", "from": "n_kogota", "to": "n_shinjo_ou_main"}
 - {"id": "r_rikuu_west_line", "line": "l_rikuu_west_line", "role": "main", "from": "n_shinjo_ou_main", "to": "n_amarume"}
 - {"id": "r_shinetsu_main_line", "line": "l_shinetsu_main_line", "role": "main", "from": "n_takasaki", "to": "n_niigata", "hidden_stops": ["n_chikuma", "n_kami_nuttari", "n_shinano_kokubunji", "n_tekuno_sakaki", "n_yashiro_koko_mae"]}
 - {"id": "r_shinetsu_main_line_yokogawa_karuizawa", "line": "l_shinetsu_main_line", "role": "branch", "from": "n_yokokawa", "to": "n_karuizawa", "owned": true}
-- {"id": "r_shinetsu_main_line_echigo_ishiyama_niigata_shinetsu_main", "line": "l_shinetsu_main_line", "role": "branch", "from": "n_kameda", "to": "n_niigata_old", "owned": true, "also": ["e_002368", "e_002369"], "hidden_stops": ["n_echigo_ishiyama", "n_kami_nuttari"]}
+- {"id": "r_shinetsu_main_line_echigo_ishiyama_niigata_shinetsu_main", "line": "l_shinetsu_main_line", "role": "branch", "from": "n_kameda", "to": "n_niigata_old", "owned": true, "also": ["e_002369", "e_002370"], "hidden_stops": ["n_echigo_ishiyama", "n_kami_nuttari"]}
 - {"id": "r_hokuriku_shinkansen", "line": "l_hokuriku_shinkansen", "role": "main", "from": "n_takasaki", "to": "n_tsuruga"}
 - {"id": "r_iiyama_line", "line": "l_iiyama_line", "role": "main", "from": "n_toyono_iiyama", "to": "n_echigo_kawaguchi"}
 - {"id": "r_echigo_line", "line": "l_echigo_line", "role": "main", "from": "n_kashiwazaki", "to": "n_niigata"}

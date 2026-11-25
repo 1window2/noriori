@@ -4539,11 +4539,7 @@
 "kana": "しかまこう～わだやま",
 "source": "names.sqlite node kana: n_shikamako=しかまこう; n_wadayama=わだやま"
 },
-"route:r_beppu_rakutenchi_cable_line": {
-"text": "雲泉寺(ラクテンチ下)～乙原(ラクテンチ上)",
-"kana": "うんせんじ～おんばら",
-"source": "names.sqlite node kana: n_unsenji=うんせんじ; n_onbara_rakutenchi=おんばら"
-},
+"route:r_beppu_rakutenchi_cable_line": {"text": "雲泉寺(ラクテンチ下)～乙原(ラクテンチ上)", "kana": "うんせんじ～おとばる", "source": "node n_onbara_rakutenchi 읽기 고침과 같은 근거(rakutenchi.jp/access 「乙原（おとばる）」, ja.wikipedia 別府ラクテンチケーブル線 「乙原（おとばる）駅」) (audit5 r3_names 3차 2026-11-26)"},
 "route:r_bessho_line": {
 "text": "上田～別所温泉",
 "kana": "うえだ～べっしょおんせん",

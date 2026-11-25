@@ -15,6 +15,8 @@ final class SelectorLink {
     required this.otherRouteId,
     required this.validFromLo,
     required this.validToHi,
+    this.validFromHi,
+    this.validToLo,
     this.side,
     this.flow,
     this.otherNode,
@@ -32,6 +34,11 @@ final class SelectorLink {
   final String? otherRouteId;
   final String? validFromLo;
   final String? validToHi;
+
+  /// 시작 상한·끝 하한. 날짜가 범위면 [validFromLo]·[validToHi]와 다르다. 앞 행의 끝과 뒤 행의 시작이 같은 범위면(직통 끝 → 환승 시작이 그 범위 안 어느 날)
+  /// 두 행은 겹친 것이 아니라 차례로 이어진 것이다. 없으면(옛 판·만든 행) 모른다
+  final String? validFromHi;
+  final String? validToLo;
 
   /// 분기가 역 위쪽(`up`)인가 아래쪽(`down`)인가.
   final String? side;
@@ -64,6 +71,8 @@ final class SelectorLink {
       otherRouteId: otherRouteId,
       validFromLo: validFromLo,
       validToHi: validToHi,
+      validFromHi: validFromHi,
+      validToLo: validToLo,
       side: swap(side),
       flow: swap(flow),
       otherNode: otherNode,
@@ -647,6 +656,8 @@ final class SelectorBuilder {
         otherRouteId: link.otherRouteId,
         validFromLo: link.validFromLo,
         validToHi: link.validToHi,
+        validFromHi: link.validFromHi,
+        validToLo: link.validToLo,
         side: link.side,
         flow: link.flow,
         otherNode: link.otherNode,

@@ -61,6 +61,7 @@ final class RecordSessionState {
     this.pastMarks = const {},
     this.archiveNames = const {},
     this.archiveAside = const {},
+    this.archiveNow = const {},
     this.movedNotes = const {},
     this.tempWindows = const [],
     this.tempRoutes = const {},
@@ -114,6 +115,9 @@ final class RecordSessionState {
 
   /// 열람 전용 역 이름 옆에 작게 다는 글: 다른 언어판은 일본어 이름(현지 이름과 다를 때), 일본어판은 읽기. 역 줄과 같은 규칙이다 (2026-11-18 사용자 지적)
   final Map<String, String> archiveAside;
+
+  /// 같은 자리이거나 계승한 기존 노드가 있는 열람 전용 역 → 그 노드의 지금 이름 (5회차 2026-11-26)
+  final Map<String, String> archiveNow;
 
   /// 이름까지 바뀐 옛 자리의 이전 표시(옛 자리 노드 → 새 역 이름·옮긴 해)
   final Map<String, ({String name, String year})> movedNotes;
@@ -193,6 +197,7 @@ final class RecordSessionState {
     Map<String, String>? pastMarks,
     Map<String, String>? archiveNames,
     Map<String, String>? archiveAside,
+    Map<String, String>? archiveNow,
     Map<String, ({String name, String year})>? movedNotes,
     List<({String from, String to})>? tempWindows,
     Set<String>? tempRoutes,
@@ -226,6 +231,7 @@ final class RecordSessionState {
         pastMarks: pastMarks ?? this.pastMarks,
         archiveNames: archiveNames ?? this.archiveNames,
         archiveAside: archiveAside ?? this.archiveAside,
+        archiveNow: archiveNow ?? this.archiveNow,
         movedNotes: movedNotes ?? this.movedNotes,
         tempWindows: tempWindows ?? this.tempWindows,
         tempRoutes: tempRoutes ?? this.tempRoutes,
@@ -681,7 +687,11 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
     }
     // 열람 전용 노선은 이 화면 계통(이관 구간을 채운 계통 포함)에서 갈라지던 것만 붙인다 (archive_branch, 5회차 2026-11-25)
     final branchRoutes = {for (final k in screens.keys) k.$1, for (final k in screens.keys) ...builder.handRoutes(k.$1)};
-    final branches = await reader.archiveBranches(rows.map((row) => row.node), routes: branchRoutes);
+    final branches = [
+      ...await reader.archiveBranches(rows.map((row) => row.node), routes: branchRoutes),
+      // 같은 자리이거나 계승한 열람 전용 역 가운데 이 화면 계통과 운행이 겹친 것은 환승처럼 단다 (5회차 2026-11-26)
+      ...await reader.archiveTransfers(rows.map((row) => row.node), branchRoutes),
+    ];
     List<SelectorLine> linesOf(RouteRows rr, {bool main = false}) => rules.lines(
           lineId: lineId,
           rows: rr.rows,
@@ -764,11 +774,19 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       for (final stop in stops) stop.id,
       for (final branch in branches) branch.id,
     ];
-    final archiveNames = await reader.archiveNames(archiveIds);
+    final archiveNames = {
+      ...await reader.archiveNames([for (final id in archiveIds) if (!id.startsWith('link:')) id]),
+      ...await reader.archiveLinkLabels(archiveIds),
+    };
+    // 기존 노드와 이은 열람 전용 역은 누르면 「지금의 ○○」를 덧붙인다
+    final nowNodes = {for (final stop in stops) if (stop.node != null) stop.id: stop.node!};
+    final nowNames = await reader.nodeNames(nowNodes.values);
+    final archiveNow = {for (final MapEntry(key: id, value: node) in nowNodes.entries) id: nowNames[node] ?? node};
+    final plainIds = [for (final id in archiveIds) if (!id.startsWith('link:')) id];
     final archiveAside = reader.languages.first == 'ja'
-        ? await reader.archiveReadings(archiveIds)
+        ? await reader.archiveReadings(plainIds)
         : {
-            for (final MapEntry(key: id, value: ja) in (await reader.archiveNames(archiveIds, languages: const ['ja'])).entries)
+            for (final MapEntry(key: id, value: ja) in (await reader.archiveNames(plainIds, languages: const ['ja'])).entries)
               if (ja != archiveNames[id]) id: ja,
           };
     final movedNotes = await reader.movedNotes(rows.map((row) => row.node), lineId: state.lineId, date: date?.lo);
@@ -801,6 +819,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       pastMarks: pastMarks,
       archiveNames: archiveNames,
       archiveAside: archiveAside,
+      archiveNow: archiveNow,
       movedNotes: movedNotes,
       tempWindows: tempWindows,
       tempRoutes: tempRoutes,
@@ -922,6 +941,7 @@ final class RecordSessionController extends Notifier<RecordSessionState> {
       pastMarks: base.pastMarks,
       archiveNames: base.archiveNames,
       archiveAside: base.archiveAside,
+      archiveNow: base.archiveNow,
       movedNotes: base.movedNotes,
       tempWindows: base.tempWindows,
       tempRoutes: base.tempRoutes,

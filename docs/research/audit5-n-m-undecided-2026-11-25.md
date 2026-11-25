@@ -16,8 +16,8 @@
 
 | 일본어 | 읽기 | 지금 영어 | 출처 | 비고 | ID |
 |---|---|---|---|---|---|
-| 乙原(ラクテンチ上) | おんばら | Onbara | Wikidata |  | `n_onbara_rakutenchi` |
-| 原爆資料館 | げんばくしりょうかん | Gembakushiryokan | 규칙 |  | `n_genbakushiryokan` |
+| 乙原(ラクテンチ上) | おとばる | Otobaru | 규칙 | 해결(2026-11-26): 읽기가 JR 乙原에서 잘못 붙은 것, おとばる로 고쳐 n/m 문제 없음 | `n_onbara_rakutenchi` |
+| 原爆資料館 | げんばくしりょうかん | Atomic Bomb Museum | 공식 번역형 | 해결(2026-11-26): 長崎電軌 다국어 정류장 목록, 읽기 꼴 두 가지는 검색 별칭 | `n_genbakushiryokan` |
 | 田んぼアート | たんぼあーと | Tambo Art | 손 |  | `n_tambo_art` |
 | 第一イン新湊 クロスベイ前 | だいいちいんしんみなと くろすべいまえ | Daiichi Inn Shinminato Cross Bay-mae | 손 |  | `n_cross_bay_mae` |
 | 南部市場 | なんぶしじょう | Nambu-Shijo | Wikidata |  | `n_nambu_shijo` |

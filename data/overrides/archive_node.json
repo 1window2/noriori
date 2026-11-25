@@ -1,0 +1,197 @@
+{
+ "설명": "열람 전용 역 → 같은 자리이거나 분명히 계승한 기존 노드 (사용자 결정 2026-11-26, docs/research/audit5-archive-node-link-design.md). 열쇠는 열람 전용 역 ID(ID 잠금). kind same_place|succession, node_overlap은 그 노드의 다른 노선과 운행이 겹쳤는지(사람 판단, 겹친 행만 환승 줄). 근거 원자료 아카이브 디스크 audit5/archive_node",
+ "rows": {
+  "a_tokuwa": {
+   "node": "n_tokuwa",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 역(접속역). ja.wikipedia 「徳和駅」 https://ja.wikipedia.org/w/index.php?oldid=110923303 연혁 「1930年12月25日：伊勢電気鉄道本線の徳和駅が開業」·「…伊勢線…との接続駅であった」 — 국철 徳和 문서 한 곳에 두 회사 역을 같은 역으로 서술(중간). 겹침: 伊勢電 1930-12-25~1942-08-11 vs 紀勢本線 1894~ → 환승. (5회차 2026-11-26)"
+  },
+  "a_hanaoka": {
+   "node": "n_hanaoka_mie",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 역(접속역). ja.wikipedia 「花岡駅 (三重県)」 https://ja.wikipedia.org/w/index.php?oldid=102823071 「伊勢電気鉄道…と三重電気鉄道松阪線が交差する地点に設けられていた」·「両線の接続駅として設置された」(중간). 겹침: 1930-12-25~1942-08-11 vs 松阪線 → 환승. 참고: 위키는 松阪軽便 개업 때는 없던 역이라 함 → 노드 松阪線 정차 시작 1912-08-17은 따로 점검 필요. (5회차 2026-11-26)"
+  },
+  "a_noda_funabashi_tobu": {
+   "node": "n_kaijin",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 역(접속역). ja.wikipedia 「海神駅」 https://ja.wikipedia.org/w/index.php?oldid=110536244 「1929年12月25日 - 総武鉄道海神線接続」·「1934年4月3日 - 海神線が廃止され、京成本線のみの駅になる」(한 역이 두 노선 역이었다는 서술) + ja.wikipedia 「東武野田線」 https://ja.wikipedia.org/w/index.php?oldid=111896911 노선도 「海神駅 海神線 1934年廃止」(중간). 겹침: 1929-12-25~1933-11-01 vs 京成本線 1919~ → 환승. (5회차 2026-11-26)"
+  },
+  "a_shiroishi": {
+   "node": "n_shiroishi_chitose",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 역(분기역). ja.wikipedia 「定山渓鉄道線」 https://ja.wikipedia.org/w/index.php?oldid=109021513 「分岐駅を苗穂駅から白石駅に変更」·「白石駅 - 定山渓駅間…開業」 + ja.wikipedia 「白石駅 (JR北海道)」 https://ja.wikipedia.org/w/index.php?oldid=111771037 연혁 「1918年10月17日：定山渓鉄道線開通」(중간 둘). km −2.7(東札幌 기준)도 白石–東札幌 2.7 km와 맞음. 地下鉄 白石(n_shiroishi_sapporo_city)은 같은 문서에서 「約1.6 km離れた別の場所」 → 제외. 겹침: 1918-10-17~1941-02-24 vs 函館本線 1903~ → 환승. (5회차 2026-11-26)"
+  },
+  "a_kitashinagawa": {
+   "node": "n_kitashinagawa",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 역(乗り入れ). ja.wikipedia 「北品川駅」 https://ja.wikipedia.org/w/index.php?oldid=111763410 「1925年3月11日 - …当駅までの東京市電乗り入れ開始」·「1933年4月1日 - …東京市電の乗り入れ終了」(중간). 폐지일 1933-04-01이 행과 일치. 주의: 행 개업 1924-03-29는 위키 乗り入れ 시작(1925-03-11)과 다름. 겹침: vs 京急本線 1904~ → 환승. (5회차 2026-11-26)"
+  },
+  "a_miharabashi": {
+   "node": "n_miharabashi",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 市電 계통의 끝·접속 정류장. ja.wikipedia 「東京都電車」 https://ja.wikipedia.org/w/index.php?oldid=110874184 蓬莱橋線 「1924年6月21日：芝口一丁目 - 木挽町四丁目（三原橋）間開業」·「1944年5月4日：三原橋 - 汐留間廃止」, 築地線 경로 「銀座四丁目 - 三原橋 - 築地」(중간, 위치는 노드 N05 점·노선 끝이 그 교차점이라는 데서만, 약). 겹침: 1924-06-21~1944-05-04 vs 築地線 1904~1968 → 환승. (5회차 2026-11-26)"
+  },
+  "a_surugadaishita": {
+   "node": "n_surugadaishita",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 市電 계통의 교차 정류장. ja.wikipedia 「東京都電車」 https://ja.wikipedia.org/w/index.php?oldid=110874184 錦町線 「御茶ノ水 - 駿河台下 - 錦町河岸 - 神田橋 - 新常盤橋」, 九段線 駿河台下(노드)와 같은 교차점(중간, 25 m 직접 근거는 노드 N05 점뿐, 약). 겹침: 錦町線 [1904-12-08..1907]~1944-05-04 vs 九段線 1904-12-07~1970 → 환승. (5회차 2026-11-26)"
+  },
+  "a_ochanomizu": {
+   "node": "n_ochanomizu_toei",
+   "kind": "same_place",
+   "node_overlap": true,
+   "node_why": "조건1 같은 市電 계통의 끝·접속 정류장. ja.wikipedia 「東京都電車」 https://ja.wikipedia.org/w/index.php?oldid=110874184 錦町線 「御茶ノ水 - 駿河台下 - …」 기점 御茶ノ水 = お茶の水線 御茶ノ水(노드)(중간, 약). JR 御茶ノ水(n_ochanomizu)·메트로(n_ochanomizu_tokyo_metro)는 다른 사업자, 같은 구내 근거 없음 → 제외. 겹침: vs お茶の水線 1905-04-05~1970 → 환승. (5회차 2026-11-26)"
+  },
+  "a_higashi_nodamachi_9_chome": {
+   "node": "n_higashi_nodamachi_9_chome",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_higashinodakasugaecho_line의 km 0.0에 있고, 노드 n_higashi_nodamachi_9_chome도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「大阪市電」 https://ja.wikipedia.org/w/index.php?oldid=111485449 「東野田沢上江町線（東野田九丁目 - 都島車庫前間）」(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_higashi_nodamachi_9_chome_temmabashizengenjicho_line": {
+   "node": "n_higashi_nodamachi_9_chome",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_temmabashizengenjicho_line의 km 1.7에 있고, 노드 n_higashi_nodamachi_9_chome도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「大阪市電」 https://ja.wikipedia.org/w/index.php?oldid=111485449 「東野田沢上江町線（東野田九丁目 - …）」(天満橋善源寺町線 끝)(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_funatsubashi": {
+   "node": "n_funatsubashi",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_kujonakanoshima_line의 km 0.0에 있고, 노드 n_funatsubashi도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「大阪市電」 https://ja.wikipedia.org/w/index.php?oldid=111485449 노선 목록 「九条中之島線」(정류장 이름은 위키 미확인, DB 근거 위주)(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_funatsubashi_nishinoda_line": {
+   "node": "n_funatsubashi",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_nishinoda_line의 km 0.0에 있고, 노드 n_funatsubashi도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「大阪市電」 https://ja.wikipedia.org/w/index.php?oldid=111485449 노선 목록(西野田線)(정류장 이름은 위키 미확인, DB 근거 위주)(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_oebashi_osaka_city": {
+   "node": "n_oebashi_osaka_city",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_namboku_line_midosuji_branch의 km 1.1에 있고, 노드 n_oebashi_osaka_city도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「大阪市電」 https://ja.wikipedia.org/w/index.php?oldid=111485449 「南北線（支線）（…梅田停車場前 - 大江橋間）」(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_oebashi_osaka_city_sakaisuji_line_osaka_city": {
+   "node": "n_oebashi_osaka_city",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_sakaisuji_line_osaka_city의 km 0.0에 있고, 노드 n_oebashi_osaka_city도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「大阪市電」 https://ja.wikipedia.org/w/index.php?oldid=111485449 「南北線（支線）（大江橋 - 渡辺橋間…）」, 堺筋線 기점(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_nishiura_sakaemachi": {
+   "node": "n_nishiura_sakaemachi",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_kakuozan_line의 km 0.0에 있고, 노드 n_nishiura_sakaemachi도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「名古屋市電」 https://ja.wikipedia.org/w/index.php?oldid=106345723 「西裏（車道付近） - 北畑間延伸開業」(1912-05-22)·「西裏 - 覚王山間」(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_nishiura_sakaemachi_sakaemachi_line": {
+   "node": "n_nishiura_sakaemachi",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_sakaemachi_line의 km 3.9에 있고, 노드 n_nishiura_sakaemachi도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「名古屋市電」 https://ja.wikipedia.org/w/index.php?oldid=106345723 「久屋町 - 西裏間延伸開業」(1903-01-31)(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_shimacho": {
+   "node": "n_shimacho",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_kamiegawa_line의 km 0.0에 있고, 노드 n_shimacho도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「名古屋市電」 https://ja.wikipedia.org/w/index.php?oldid=106345723 「柳橋 - 志摩町 - 那古野町 - 押切町間開業」(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_shimacho_oshikiri_line_yanagibashi_shimacho": {
+   "node": "n_shimacho",
+   "kind": "same_place",
+   "node_overlap": false,
+   "node_why": "조건1 같은 자리. DB상 이 열람 전용 역은 r_oshikiri_line_yanagibashi_shimacho의 km 0.7에 있고, 노드 n_shimacho도 같은 노선 같은 km(route_stop, is_stop=0)의 분기 노드다 — 같은 노선·같은 km·같은 이름. 계통 근거 ja.wikipedia 「名古屋市電」 https://ja.wikipedia.org/w/index.php?oldid=106345723 「1901年2月19日 : 柳橋 - 志摩町 - 那古野町 - 押切町間開業」(중간). 겹침: 노드에 정차 노선이 없어(is_stop=0) 환승 줄 없음. 같은 노드를 가리키는 다른 열람 전용 노선 행이 함께 있음(열람 전용끼리의 환승은 이 칸 밖). (5회차 2026-11-26)"
+  },
+  "a_shingifu": {
+   "node": "n_meitetsu_gifu",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 이설·통합. ja.wikipedia 「名鉄岐阜駅」 https://ja.wikipedia.org/w/index.php?oldid=110126472 「1948年4月18日：名岐線の新岐阜駅を長住町駅付近へ移転・統合し、長住町駅を新岐阜駅（2代）に改称」(중간). 겹침 없음으로 둠: 1928–1948 노드는 각무원선 長住町(다른 자리의 다른 역)이었음. 주의: DB 노드의 名古屋本線 정차가 1928-12-28부터라 기계 대조로는 겹침이 생김 → 1948-04-18로 고쳐야 할 가능성(별도 점검). (5회차 2026-11-26)"
+  },
+  "a_uwajima": {
+   "node": "n_uwajima",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 이설. ja.wikipedia 「宇和島駅」 https://ja.wikipedia.org/w/index.php?oldid=111776477 「1914年10月18日：宇和島鉄道の駅として開業。現在の宇和島市立城北中学校の位置にあった」·「1916年12月1日：現在地に移転」(중간). 겹침 없음(옛 자리 폐지 = 새 자리 개업). (5회차 2026-11-26)"
+  },
+  "a_hirose": {
+   "node": "n_sadowara",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 같은 이름 역 교체(이설). ja.wikipedia 「日豊本線」 https://ja.wikipedia.org/w/index.php?oldid=111420360 「1920年9月11日：…広瀬駅（2代）が開業。広瀬駅（初代）が廃止」 + ja.wikipedia 「佐土原駅」 https://ja.wikipedia.org/w/index.php?oldid=111018674 「1920年9月11日：…日豊本線の広瀬駅…として開業」·1965 佐土原 개칭(중간 둘). 겹침 없음. 주의: 행의 opened=1920-09-11은 초대 개업일(1913-12-15, 宮崎県営鉄道)과 다름. (5회차 2026-11-26)"
+  },
+  "a_ogoso_old": {
+   "node": "n_ogoso",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 이설·재개. ja.wikipedia 「小古曽駅」 https://ja.wikipedia.org/w/index.php?oldid=110826291 「1944年1月：営業休止」·「1959年5月：内部方へ0.1キロメートル移設して、…営業再開」(중간). 겹침 없음. (5회차 2026-11-26)"
+  },
+  "a_osadakoen_oita_transportation_yabakei_old": {
+   "node": "n_osadakoen_oita_transportation_yabakei",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 이설. ja.wikipedia 「大貞公園駅」 https://ja.wikipedia.org/w/index.php?oldid=111056418 「1944年3月1日 - 770 m上ノ原寄りに移転」(중간). 겹침 없음. (5회차 2026-11-26)"
+  },
+  "a_shimojima_old": {
+   "node": "n_shimojima",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 이설. ja.wikipedia 「下島駅 (長野県伊那市)」 https://ja.wikipedia.org/w/index.php?oldid=108811425 「現在地より0.4km程伊那市駅寄りにあった」·「1932年頃：現在地に移転」(중간). 겹침 없음. (5회차 2026-11-26)"
+  },
+  "a_miyanosaka": {
+   "node": "n_miyanosaka_tokyu_railways",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 통합 이설. ja.wikipedia 「宮の坂駅」 https://ja.wikipedia.org/w/index.php?oldid=105169681 「1945年7月15日：…豪徳寺前駅と、山下寄りにあった旧・宮ノ坂駅を統合し、宮ノ坂駅として開設」(중간). 겹침 없음. 참고: 열람 전용 豪徳寺前(a_goutokujimae)도 같은 근거로 이 노드를 이음(이번 후보 밖). (5회차 2026-11-26)"
+  },
+  "a_tomisuhara": {
+   "node": "n_kawagoe_tomisuhara",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 통합 이설. ja.wikipedia 「川越富洲原駅」 https://ja.wikipedia.org/w/index.php?oldid=109415214 「当時の富洲原駅は、現在の駅より300m南側」·「1945年：隣の川越駅と統合し、北へ300m程移転」(중간). 겹침 없음. 참고: 열람 전용 川越(a_kawagoe)도 같은 근거(이번 후보 밖). (5회차 2026-11-26)"
+  },
+  "a_hazu": {
+   "node": "n_kasumigaura",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 이설·개칭. ja.wikipedia 「霞ヶ浦駅」 https://ja.wikipedia.org/w/index.php?oldid=111487947 「1943年10月22日：霞ヶ浦駅廃止、羽津駅を現在地に移設」·「1950年6月5日：羽津駅が霞ヶ浦駅に改称」(중간). 겹침 없음으로 둠. 주의: DB 노드는 정차 1929~·옛 이름 羽津(시작일 없음)~1950인데, 1929–1943 이 자리는 초대 霞ヶ浦였음 → 노드 이름 기간 점검 필요. (5회차 2026-11-26)"
+  },
+  "a_aratamachi": {
+   "node": "n_kano_meitetsu",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 역의 휴지 뒤 개칭 재개. ja.wikipedia 「加納駅 (岐阜県)」 https://ja.wikipedia.org/w/index.php?oldid=109532430 「1914年6月2日 - …安良田町駅として開業」·「1944年 - 営業を休止」·「1958年1月10日 - 加納駅として営業を再開」(중간). 겹침 없음(같은 노선). 주의: DB 노드가 이미 1914–1944 安良田町 정차를 가짐 → 이 열람 전용 행은 노드와 중복일 가능성(행 정리 검토). (5회차 2026-11-26)"
+  },
+  "a_mikawayoshida": {
+   "node": "n_kira_yoshida",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 역(이설·통합 뒤 개칭). ja.wikipedia 「吉良吉田駅」 https://ja.wikipedia.org/w/index.php?oldid=111620327 「1928年8月25日 - 三河鉄道の…三河吉田間開通時に開業」·「1936年7月24日 - 西約300 m地点に移転」·「1960年11月1日 - 吉良吉田駅に改称」 + ja.wikipedia 「名鉄三河線」 https://ja.wikipedia.org/w/index.php?oldid=111831648 노선도 「三河吉田駅 -1943」·「西尾線吉良吉田駅（初代）を移設し三河吉田駅に統合」(중간 둘). 겹침 없음(같은 노선). 주의: DB 노드 三河線 정차가 1928-08-25부터라 이 행과 같은 노선에서 겹침 → 중복 행 또는 노드 시작일 점검 필요(두 위키의 이설 연도도 1936/1943로 엇갈림). (5회차 2026-11-26)"
+  },
+  "a_shiki": {
+   "node": "n_shiki",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 역의 폐지 뒤 영업 재개. ja.wikipedia 「志紀駅」 https://ja.wikipedia.org/w/index.php?oldid=109880917 「1946年：燃料事情悪化により廃止」·「1961年10月11日：…駅舎を建設し、営業を再開」(중간). 위치 변경 서술 없음(km 160.3 vs 160.5). 겹침 없음. 주의: 행 폐지 1947-10-XX vs 위키 1946. (5회차 2026-11-26)"
+  },
+  "a_shijuku": {
+   "node": "n_shijuku",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 같은 노선의 이설 재개업(경계 사례). ja.wikipedia 「四十九駅」 https://ja.wikipedia.org/w/index.php?oldid=109374997 「旧駅の300メートル北に…新駅が建設」·「2018年3月17日：旧駅から北へ300メートルの地点に再開業」(중간). 73년 공백이지만 위키가 「再開業」로 서술. 겹침 없음. (5회차 2026-11-26)"
+  },
+  "a_iseueno": {
+   "node": "n_toyotsu_ueno",
+   "kind": "succession",
+   "node_overlap": false,
+   "node_why": "조건2 통합(후보 노드와 다른 노드). ja.wikipedia 「豊津上野駅」 https://ja.wikipedia.org/w/index.php?oldid=109415615 「1943年7月1日：伊勢上野駅と豊津浦駅を廃止し、豊津上野駅開業」 + ja.wikipedia 「伊勢上野駅」 https://ja.wikipedia.org/w/index.php?oldid=110498456 「隣駅と統合されて現在は豊津上野駅」(중간 둘). 후보 n_ise_ueno(伊勢鉄道 1987~)는 다른 회사의 다른 역. 겹침 없음(노드 1943-07-01~). 참고: 열람 전용 豊津浦(a_toyotsuura)도 같은 근거. (5회차 2026-11-26)"
+  }
+ }
+}

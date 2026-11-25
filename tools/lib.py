@@ -152,6 +152,9 @@ def _patch(mod,r):
         x=dict(x);op=x.pop('patch');x.pop('why',None)
         if op=='add':
             if key and k(x) in have:raise SystemExit(f'source_patch/{mod}: {k(x)}가 원본에 이미 있습니다. 보정 행을 지우세요')
+            # 다른 보정 파일이 같은 번호로 이미 더했으면 멈춘다(秋田 분기점 칸이 田端 칸 e_097201과 겹쳐 조용히 덮였음, 5회차 2026-11-26).
+            # 같은 키에 기간 행이 여럿인 이름·별칭 표는 키가 겹쳐도 정상이다
+            if key and isinstance(key,str) and k(x) in added:raise SystemExit(f'source_patch/{mod}: {k(x)}를 두 보정 행이 더합니다. 번호를 바꾸세요')
             r.append(x)
             # 앞 파일이 더한 행을 뒤 파일이 replace로 고칠 수 있게 따로 적어 둔다 (옛 선로 칸의 km를 근거 조사로 고침).
             # 더하기 겹침 검사는 원본만 본다. 이름처럼 같은 키에 기간 행이 여럿인 표가 있다

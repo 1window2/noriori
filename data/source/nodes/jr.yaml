@@ -45,6 +45,7 @@
 - {"id": "n_shikaribetsu", "kind": "station", "group": "g_shikaribetsu", "pref": "1"}
 - {"id": "n_niki", "kind": "station", "group": "g_niki", "pref": "1"}
 - {"id": "n_yoichi", "kind": "station", "group": "g_yoichi", "pref": "1"}
+- {"id": "n_ohamanaka", "kind": "station", "group": "g_ohamanaka", "pref": "1"}
 - {"id": "n_ranshima", "kind": "station", "group": "g_ranshima", "pref": "1"}
 - {"id": "n_shioya_hakodate_main", "kind": "station", "group": "g_shioya_hakodate_main", "pref": "1"}
 - {"id": "n_otaru", "kind": "station", "group": "g_otaru", "pref": "1"}

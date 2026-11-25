@@ -1487,9 +1487,9 @@
 - {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_hitomarumae_sanyo_akashi", "lang": "ja", "text": "遊園地前", "kana": "ゆうえんちまえ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_hitomarumae_sanyo_akashi", "lang": "ko", "text": "유엔치마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_hitomarumae_sanyo_akashi", "lang": "en", "text": "Yuenchi-mae", "source": "rule"}
-- {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_tegara_sanyo_himeji", "lang": "ja", "text": "豆腐町", "kana": null, "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_tegara_sanyo_himeji", "lang": "ko", "text": "豆腐町", "source": "ja_as_is", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_tegara_sanyo_himeji", "lang": "en", "text": "豆腐町", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_tegara_sanyo_himeji", "lang": "ja", "text": "豆腐町", "kana": "とうふまち", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_tegara_sanyo_himeji", "lang": "ko", "text": "토후마치", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_sanyo_main_line_sanyo_tegara_sanyo_himeji", "lang": "en", "text": "Tofumachi", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kohinai", "lang": "ja", "text": "小比内", "kana": "こひない", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kohinai", "lang": "ko", "text": "코히나이", "source": "estimated", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kohinai", "lang": "en", "text": "Kohinai", "source": "estimated"}
@@ -2684,6 +2684,9 @@
 - {"entity_type": "archive", "id": "a_kanagawa", "lang": "ja", "text": "神奈川", "kana": "かながわ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kanagawa", "lang": "ko", "text": "카나가와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kanagawa", "lang": "en", "text": "Kanagawa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nagasakiminato", "lang": "ja", "text": "長崎港", "kana": "ながさきみなと", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nagasakiminato", "lang": "ko", "text": "나가사키미나토", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_nagasakiminato", "lang": "en", "text": "Nagasakiminato", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ja", "text": "北見鉄道", "kana": "きたみてつどう", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "ko", "text": "키타미 철도", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kitami_railway", "lang": "en", "text": "Kitami Railway", "source": "rule"}

@@ -385,6 +385,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String closedSection({required Object year}) => '~${year} closed';
 	@override String openedSection({required Object year}) => 'Opens in ${year}';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
+	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name} closed in ${year} and can\'t be logged. Now ${now} station';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
 	@override String get to => 'To';
@@ -1352,6 +1353,7 @@ extension on TranslationsEn {
 			'session.closedSection' => ({required Object year}) => '~${year} closed',
 			'session.openedSection' => ({required Object year}) => 'Opens in ${year}',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
+			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name} closed in ${year} and can\'t be logged. Now ${now} station',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',
 			'session.to' => 'To',
@@ -1673,9 +1675,9 @@ extension on TranslationsEn {
 			'prefNames.12' => 'Tokyo',
 			'prefNames.13' => 'Kanagawa',
 			'prefNames.14' => 'Niigata',
-			'prefNames.15' => 'Toyama',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.15' => 'Toyama',
 			'prefNames.16' => 'Ishikawa',
 			'prefNames.17' => 'Fukui',
 			'prefNames.18' => 'Yamanashi',

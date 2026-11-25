@@ -2256,7 +2256,7 @@
 - {"entity_type": "route", "id": "r_johoku_line_iyotetsu", "lang": "en", "text": "Komachi~Heiwadori 1", "source": "rule"}
 - {"entity_type": "route", "id": "r_jonan_line", "lang": "en", "text": "Dogo Onsen~Nishi-Horibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_jonan_line_heiwadori_1_chome_kamiichiman", "lang": "en", "text": "Heiwadori 1~Kamiichiman", "source": "rule"}
-- {"entity_type": "route", "id": "r_honmachi_line", "lang": "en", "text": "Nishi-Horibata~Hommachi 6-chome", "source": "rule"}
+- {"entity_type": "route", "id": "r_honmachi_line", "lang": "en", "text": "Nishi-Horibata~Hommachi 6", "source": "rule"}
 - {"entity_type": "route", "id": "r_otemachi_line", "lang": "en", "text": "Komachi~Nishi-Horibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_hanazono_line", "lang": "en", "text": "Matsuyama City Station~Minami-Horibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_ino_line", "lang": "en", "text": "Harimayabashi~Ino", "source": "rule"}
@@ -2268,7 +2268,7 @@
 - {"entity_type": "route", "id": "r_ita_line_heisei_chikuho", "lang": "en", "text": "Nōgata~Tagawaita", "source": "rule"}
 - {"entity_type": "route", "id": "r_itoda_line_heisei_chikuho", "lang": "en", "text": "Kanada~Tagawagotōji", "source": "rule"}
 - {"entity_type": "route", "id": "r_tagawa_line_heisei_chikuho", "lang": "en", "text": "Yukuhashi~Tagawaita", "source": "rule"}
-- {"entity_type": "route", "id": "r_mojiko_retro_scenic_line", "lang": "en", "text": "Kyushu Railway History Museum~Kanmonkaikyo Mekari", "source": "rule"}
+- {"entity_type": "route", "id": "r_mojiko_retro_scenic_line", "lang": "en", "text": "Kyusyu Tetsudo Kinenkan~Kanmonkaikyo Mekari", "source": "rule"}
 - {"entity_type": "route", "id": "r_akasako_branch_line", "lang": "en", "text": "Akasako~Sumiyoshi", "source": "rule"}
 - {"entity_type": "route", "id": "r_nagasaki_tram_main_line", "lang": "en", "text": "Sumiyoshi~Sofukuji Temple", "source": "rule"}
 - {"entity_type": "route", "id": "r_sakuramachi_branch_line", "lang": "en", "text": "Nagasaki Station~City Hall", "source": "rule"}
@@ -2415,7 +2415,7 @@
 - {"entity_type": "route", "id": "r_kuramayama_cable_line", "lang": "en", "text": "Sammon~Tahoto", "source": "rule"}
 - {"entity_type": "route", "id": "r_rokko_cable_line", "lang": "en", "text": "Rokko Cable Car Lower Station~Rokko Sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_yakuri_cable", "lang": "en", "text": "Yakuri Tozan-guchi~Yakuri-Sanjo", "source": "rule"}
-- {"entity_type": "route", "id": "r_beppu_rakutenchi_cable_line", "lang": "en", "text": "Unsenji~Onbara", "source": "rule"}
+- {"entity_type": "route", "id": "r_beppu_rakutenchi_cable_line", "lang": "en", "text": "Unsenji~Otobaru", "source": "rule"}
 - {"entity_type": "route", "id": "r_miyajidake_line", "lang": "en", "text": "Nishitetsu Shingu~Tsuyazaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_furusato_ginga_line", "lang": "en", "text": "Ikeda~Kitami", "source": "rule"}
 - {"entity_type": "route", "id": "r_kurihara_denen_railway_line", "lang": "en", "text": "Ishikoshi~Hosokura Mine Park-mae", "source": "rule"}

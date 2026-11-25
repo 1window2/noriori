@@ -45,6 +45,7 @@
 - {"node": "n_shikaribetsu", "lat": 43.12551, "lon": 140.737211, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_niki", "lat": 43.154091, "lon": 140.770546, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_yoichi", "lat": 43.186558, "lon": 140.794686, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
+- {"node": "n_ohamanaka", "lat": 43.19228, "lon": 140.82308, "quality": "approx", "checked": "2026-11-20", "source": "n02"}
 - {"node": "n_ranshima", "lat": 43.19651, "lon": 140.854643, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_shioya_hakodate_main", "lat": 43.202406, "lon": 140.924546, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}
 - {"node": "n_otaru", "lat": 43.197172, "lon": 140.993653, "quality": "precise", "checked": "2026-11-20", "source": "station_database"}

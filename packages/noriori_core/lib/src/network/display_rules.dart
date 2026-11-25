@@ -13,6 +13,7 @@ final class ArchiveStop {
     required this.closedYear,
     required this.km,
     this.seq,
+    this.node,
   });
 
   final String id;
@@ -21,12 +22,15 @@ final class ArchiveStop {
   final String closedYear;
   final double? km;
 
+  /// 같은 자리이거나 분명히 계승한 기존 노드(archive_stop.node_id, 5회차 2026-11-26). 없으면 null, 옛 팩에도 없다
+  final String? node;
+
   /// 그 계통 진행 방향의 순번(archive_stop.seq, DESIGN §4.5). 같은 자리에 여럿이면 이 순서다. 옛 팩에는 없다.
   final int? seq;
 
   /// km만 옮긴 열람 전용 역 (같은 노선 이어 그리기에서 그날 영업거리로 옮길 때, DESIGN §8.3)
   ArchiveStop shifted(double by) =>
-      ArchiveStop(id: id, afterNode: afterNode, beforeNode: beforeNode, closedYear: closedYear, km: km == null ? null : ((km! + by) * 10).roundToDouble() / 10, seq: seq);
+      ArchiveStop(id: id, afterNode: afterNode, beforeNode: beforeNode, closedYear: closedYear, km: km == null ? null : ((km! + by) * 10).roundToDouble() / 10, seq: seq, node: node);
 }
 
 /// 열람 전용 노선. 역에서 갈라지는 줄로만 보인다.
@@ -790,7 +794,25 @@ final class DisplayRules {
     // 끝난 날을 모르는 연결뿐이면 그대로 둔다
     if (ended.isEmpty) return link.validToHi == null || link.validToHi == DateSpan.maxDate || link.validToHi!.compareTo(_day) > 0;
     final last = ended.reduce((a, b) => a.compareTo(b) >= 0 ? a : b);
-    return link.validToHi == last;
+    if (link.validToHi != last) return false;
+    // 같은 날 끝난 것 가운데, 이 연결의 끝을 범위로만 알고(끝 하한 < 끝 상한) 다른 종류의 연결이 그 범위 안에서 시작해 끝까지 갔으면
+    // 이 연결은 그 앞 상태다(끝난 날이 범위라 같은 날 끝난 것으로 보일 뿐). 마지막 상태는 뒤에 시작한 연결 하나다(5회차 2026-11-26).
+    // 花岡線 大館 小坂線: 끝 이어짐 ~[1963-10-02..1985-04-01] 뒤 환승 [1963-10-02..1985-04-01]~1985-04-01,
+    // 小坂線 大館: 끝 이어짐 ~[1963-10-02..1985-04-01] 뒤 환승 1973-11-01(松峯 개업)~1985-04-01, 定山渓鉄道 東札幌 분기 ~[1969-10-01..1969-11-01] 뒤 환승
+    bool chained(SelectorLink other) {
+      final endLo = link.validToLo;
+      final start = other.validFromLo;
+      return !identical(other, link) &&
+          other.kind != link.kind &&
+          other.validToHi == last &&
+          endLo != null &&
+          start != null &&
+          endLo.compareTo(last) < 0 &&
+          endLo.compareTo(start) <= 0 &&
+          start.compareTo(last) < 0 &&
+          (link.validFromLo ?? '0000').compareTo(start) < 0;
+    }
+    return !group.any(chained);
   }
 
 

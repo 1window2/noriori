@@ -376,6 +376,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String closedSection({required Object year}) => '~${year} 廃止';
 	@override String openedSection({required Object year}) => '${year}年開業';
 	@override String archiveStop({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です';
+	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置';
 	@override String archiveLine({required Object name}) => '${name}は記録対象外です';
 	@override String get from => '乗車';
 	@override String get to => '降車';
@@ -1321,6 +1322,7 @@ extension on TranslationsJa {
 			'session.closedSection' => ({required Object year}) => '~${year} 廃止',
 			'session.openedSection' => ({required Object year}) => '${year}年開業',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です',
+			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置',
 			'session.archiveLine' => ({required Object name}) => '${name}は記録対象外です',
 			'session.from' => '乗車',
 			'session.to' => '降車',
@@ -1642,9 +1644,9 @@ extension on TranslationsJa {
 			'prefNames.12' => '東京',
 			'prefNames.13' => '神奈川',
 			'prefNames.14' => '新潟',
-			'prefNames.15' => '富山',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.15' => '富山',
 			'prefNames.16' => '石川',
 			'prefNames.17' => '福井',
 			'prefNames.18' => '山梨',

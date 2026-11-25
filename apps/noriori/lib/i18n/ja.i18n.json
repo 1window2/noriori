@@ -238,6 +238,7 @@
     "closedSection": "~$year 廃止",
     "openedSection": "$year年開業",
     "archiveStop": "$name（$year年廃止）は記録対象外です",
+    "archiveStopNow": "$name（$year年廃止）は記録対象外です。現在の$now駅の位置",
     "archiveLine": "$nameは記録対象外です",
     "from": "乗車",
     "to": "降車",

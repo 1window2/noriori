@@ -20106,8 +20106,8 @@
 "source": "wikipedia"
 }
 },
-{"why": "京王線 新宿–笹塚: 노리츠부시 표의 1963-04-01은 新宿 지하화(0.6 km) 날이다. 지금 新宿(西口) 기점은 1945-07-24부터이고 1953-07-10 専用軌道化·1963-04-01 지하화는 같은 역 사이 선형 변경이다 (위키 京王線 111519832 年表). 감사2 kanto_2-023 / 新線 칸과 같은 두 노드라 칸 ID로(5회차 2026-11-24)", "match": {"date": "1963-04-01", "type": "open", "line": "l_keio_line", "edges": ["n_shinjuku_keio..n_sasazuka"]}, "set": {"date": "1945-07-24", "edges": ["e_006809"]}},
-{"why": "京王線 初台–笹塚: 1913-10-11 代々幡–笹塚, 1914-04-08 幡代小学校前–代々幡, 1914-06-11 代々木–幡代小学校前 개업 (위키 京王線 111519832). 1950년 전 회사 변경은 기록 범위 밖이라 1950년 시점 회사로 둠. 감사2 kanto_2-023 / 2026-11-13: 代々幡(幡ヶ谷)–笹塚 1913-10-11을 따로(『京王電気軌道三十年史』 pid 1242947 コマ78·79 「十月十一日 代々幡マデ電車延長開通」, 높음), 이 행은 初台–幡ヶ谷 칸 근사 / 칸 ID로(5회차)", "add": {"date": "1914-06-11", "type": "open", "operator": "o_keio_teito_electric_railway", "line": "l_keio_line", "edges": ["e_006810"], "source": "wikipedia"}},
+{"why": "京王線 新宿–笹塚: 노리츠부시 표의 1963-04-01은 新宿 지하화(0.6 km) 날이다. 지금 新宿(西口) 기점은 1945-07-24부터이고 1953-07-10 専用軌道化·1963-04-01 지하화는 같은 역 사이 선형 변경이다 (위키 京王線 111519832 年表). 감사2 kanto_2-023 / 新線 칸과 같은 두 노드라 칸 ID로(5회차 2026-11-24)", "match": {"date": "1963-04-01", "type": "open", "line": "l_keio_line", "edges": ["n_shinjuku_keio..n_sasazuka"]}, "set": {"date": "1945-07-24", "edges": ["e_006810"]}},
+{"why": "京王線 初台–笹塚: 1913-10-11 代々幡–笹塚, 1914-04-08 幡代小学校前–代々幡, 1914-06-11 代々木–幡代小学校前 개업 (위키 京王線 111519832). 1950년 전 회사 변경은 기록 범위 밖이라 1950년 시점 회사로 둠. 감사2 kanto_2-023 / 2026-11-13: 代々幡(幡ヶ谷)–笹塚 1913-10-11을 따로(『京王電気軌道三十年史』 pid 1242947 コマ78·79 「十月十一日 代々幡マデ電車延長開通」, 높음), 이 행은 初台–幡ヶ谷 칸 근사 / 칸 ID로(5회차)", "add": {"date": "1914-06-11", "type": "open", "operator": "o_keio_teito_electric_railway", "line": "l_keio_line", "edges": ["e_006811"], "source": "wikipedia"}},
 {
 "why": "近鉄京都線 伏見–堀内(近鉄丹波橋)–桃山御陵前: 1945-12-21 京阪 丹波橋 경유로 바뀌어 廃止, 1967-03-29 復活 (위키 近鉄京都線 110958649). 그 사이 1963-10-01 奈良電→近鉄 이관이 이 칸에도 걸리므로 폐지·재개 대신 운휴로 둔다(그 기간 영업 없음은 같다). 감사2 kinki_2-001",
 "add": {
@@ -20817,7 +20817,7 @@
 "set": {
 "line": "l_hiroden_main_line",
 "edges": [
-"e_009895"
+"e_009896"
 ]
 }
 },
@@ -20831,8 +20831,8 @@
 "set": {
 "line": "l_minami_line",
 "edges": [
-"e_009896",
-"e_009897"
+"e_009897",
+"e_009898"
 ]
 }
 },
@@ -20842,7 +20842,7 @@
 "date": "2026-03-28",
 "type": "transfer",
 "edges": [
-"e_009895"
+"e_009896"
 ],
 "source": "wikipedia",
 "from": {
@@ -20861,8 +20861,8 @@
 "date": "2026-03-28",
 "type": "transfer",
 "edges": [
-"e_009896",
-"e_009897"
+"e_009897",
+"e_009898"
 ],
 "source": "wikipedia",
 "from": {
@@ -20882,7 +20882,7 @@
 "type": "suspend",
 "line": "l_hiroden_main_line",
 "edges": [
-"e_009895"
+"e_009896"
 ],
 "source": "hand"
 }
@@ -20894,8 +20894,8 @@
 "type": "suspend",
 "line": "l_minami_line",
 "edges": [
-"e_009896",
-"e_009897"
+"e_009897",
+"e_009898"
 ],
 "source": "hand"
 }
@@ -20907,9 +20907,9 @@
 "type": "resume",
 "line": "l_loop_line",
 "edges": [
-"e_009895",
 "e_009896",
-"e_009897"
+"e_009897",
+"e_009898"
 ],
 "source": "hand"
 }
@@ -20920,9 +20920,9 @@
 "date": "2020-04-01",
 "type": "transfer",
 "edges": [
-"e_010821",
 "e_010822",
-"e_010823"
+"e_010823",
+"e_010824"
 ],
 "source": "wikipedia",
 "from": {
@@ -20960,7 +20960,6 @@
 "date": "2020-04-01",
 "type": "transfer",
 "edges": [
-"e_011252",
 "e_011253",
 "e_011254",
 "e_011255",
@@ -20970,7 +20969,8 @@
 "e_011259",
 "e_011260",
 "e_011261",
-"e_011262"
+"e_011262",
+"e_011263"
 ],
 "source": "wikipedia",
 "from": {
@@ -20989,8 +20989,8 @@
 "date": "2020-04-01",
 "type": "transfer",
 "edges": [
-"e_011263",
-"e_011264"
+"e_011264",
+"e_011265"
 ],
 "source": "wikipedia",
 "from": {
@@ -21149,7 +21149,7 @@
 "date": "1951-06-25",
 "line": "l_shinetsu_main_line",
 "edges": [
-"e_002452"
+"e_002453"
 ]
 }
 },
@@ -21159,7 +21159,7 @@
 "date": "1951-12-15",
 "type": "transfer",
 "edges": [
-"e_002452"
+"e_002453"
 ],
 "from": {
 "operator": "o_japanese_national_railways",
@@ -22149,7 +22149,7 @@
 "legal_abolition": "1963-09-16"
 }
 },
-{"why": "京王 代々幡(幡ヶ谷)–笹塚 1913-10-11: 『京王電気軌道三十年史』 「十月十一日 代々幡マデ電車延長開通」(높음)·위키 京王線 (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json) / 칸 ID로(5회차)", "add": {"date": "1913-10-11", "type": "open", "operator": "o_keio_teito_electric_railway", "line": "l_keio_line", "edges": ["e_006811"], "source": "hand"}},
+{"why": "京王 代々幡(幡ヶ谷)–笹塚 1913-10-11: 『京王電気軌道三十年史』 「十月十一日 代々幡マデ電車延長開通」(높음)·위키 京王線 (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json) / 칸 ID로(5회차)", "add": {"date": "1913-10-11", "type": "open", "operator": "o_keio_teito_electric_railway", "line": "l_keio_line", "edges": ["e_006812"], "source": "hand"}},
 {
 "why": "京津電気軌道 三条大橋–札ノ辻 1912-08-15 한 구간: 1925 『地方鉄道及軌道一覧』(NDL pid 1257892 コマ152) 「三條下ル五軒町–札ノ辻 6.50 開業 1.8.15」(높음)·1966 停車場一覧 上関寺 1912-08-15. 12-14는 上関寺 서쪽 도보 연락 해소일 (R6-L 구간 개업 이력 2026-11-13; r5/out_misc/r18/segments.json)",
 "match": {
@@ -22744,7 +22744,7 @@
 }
 },
 {
-"why": "[外房線 옛 千葉·本千葉] 日本国有鉄道公示第223号(『鉄道公報』4078号 1963-04-23, NDL pid 13825482) 「昭和38年4月28日から、総武本線千葉停車場を移転…房総東線千葉・本千葉間1.8→1.4」, 『鉄道統計年報』昭和38年度 「4/28 千葉駅移転にともなう線路付換により一般0.3キロ減」(房総東線 순감), 日本国有鉄道公示第13号(1958-01-25, 『官庁別官報集録』 NDL pid 14202602 コマ311) 「房総東線本千葉停車場を移転…千葉・本千葉間1.8(旧1.2) 本千葉・蘇我間2.4(旧3.0)」, 시행 2月1日(『運輸界』1958-03, NDL pid 2204970)(중간·1차 사료 스니펫). N05 房総東線 1950–1962 판 선로(옛 千葉에서 시작, 1963– 새 선로는 옛 本千葉 자리에서 합류), 本千葉 역 점 EB03_13212002(1950–1957) (5회차 패치 2026-11-13; r3out/dates). 옛 경로 계통 蘇我–本千葉(지금)–本千葉（旧）–千葉（旧）. 1958-02-01 本千葉가 같은 선로 위 0.6 km 蘇我 쪽으로 옮김(km 1.2→1.8, 蘇我까지 3.0→2.4)이라 本千葉（旧）–本千葉 칸은 1963-04-28까지 계속. 1963-04-28 새 千葉에서 새 선로(옛 本千葉 자리에서 옛 선로에 합류)로 바뀜. 蘇我 앞 本千葉는 1958 전 정차역이 아니라 본선 칸 本千葉–蘇我(e_002533)를 함께 써서 蘇我에서 끝냄(遠州 사례). 새 千葉–本千葉 1.4 개업. 원본 1896-02-25 n_chiba..n_soga 사건은 events_fix로 本千葉–蘇我로 좁힘. 생성 중 컴파일(보정 행 없이)에도 원본 사건 고침과 함께 들어가도록 events_fix add로 둠",
+"why": "[外房線 옛 千葉·本千葉] 日本国有鉄道公示第223号(『鉄道公報』4078号 1963-04-23, NDL pid 13825482) 「昭和38年4月28日から、総武本線千葉停車場を移転…房総東線千葉・本千葉間1.8→1.4」, 『鉄道統計年報』昭和38年度 「4/28 千葉駅移転にともなう線路付換により一般0.3キロ減」(房総東線 순감), 日本国有鉄道公示第13号(1958-01-25, 『官庁別官報集録』 NDL pid 14202602 コマ311) 「房総東線本千葉停車場を移転…千葉・本千葉間1.8(旧1.2) 本千葉・蘇我間2.4(旧3.0)」, 시행 2月1日(『運輸界』1958-03, NDL pid 2204970)(중간·1차 사료 스니펫). N05 房総東線 1950–1962 판 선로(옛 千葉에서 시작, 1963– 새 선로는 옛 本千葉 자리에서 합류), 本千葉 역 점 EB03_13212002(1950–1957) (5회차 패치 2026-11-13; r3out/dates). 옛 경로 계통 蘇我–本千葉(지금)–本千葉（旧）–千葉（旧）. 1958-02-01 本千葉가 같은 선로 위 0.6 km 蘇我 쪽으로 옮김(km 1.2→1.8, 蘇我까지 3.0→2.4)이라 本千葉（旧）–本千葉 칸은 1963-04-28까지 계속. 1963-04-28 새 千葉에서 새 선로(옛 本千葉 자리에서 옛 선로에 합류)로 바뀜. 蘇我 앞 本千葉는 1958 전 정차역이 아니라 본선 칸 本千葉–蘇我(e_002534)를 함께 써서 蘇我에서 끝냄(遠州 사례). 새 千葉–本千葉 1.4 개업. 원본 1896-02-25 n_chiba..n_soga 사건은 events_fix로 本千葉–蘇我로 좁힘. 생성 중 컴파일(보정 행 없이)에도 원본 사건 고침과 함께 들어가도록 events_fix add로 둠",
 "add": {
 "date": "1963-04-28",
 "type": "open",
@@ -23302,5 +23302,11 @@
 }
 },
 {"why": "比叡山鉄道 坂本ケーブル 전시 휴지. DB 지금: 전시 운휴 없음(1927-03-15부터 계속 open). 시작 1945-03-19: 위키 比叡山鉄道線 rev109148718 인포박스 「休止 = 1945年3月19日」(『比叡山鉄道株式会社』2003 사사 인용, 중간) + 『京阪電気鉄道』(1991) 「比叡山鉄道-坂本ケーブル-も昭和20年3月運転休止」 https://dl.ndl.go.jp/pid/13318212 k77(NDL 스니펫, 중간, 달까지 일치). 엇갈림 주의: 『鉄道ピクトリアル』1970-08(NDL 3294373 k20) 표 「坂本-叡山中堂 2.0 昭19. 昭19. …施設撤去せず」(칸 뜻 불명, 잘림) (audit5 r3 2026-11-25)", "add": {"date": "1945-03-19", "type": "suspend", "line": "l_sakamoto_cable", "edges": ["n_cable_sakamoto..n_cable_enryakuji"], "source": "hand"}, "_group": "main"},
-{"why": "위와 같은 칸의 재개 1946-08-07: 위키 같은 인포박스 「再開 = 1946年8月7日」(중간) + 『伝灯 : 最澄と叡山 比叡山開創一千二百年記念史鑑』(1988) 「坂本ケーブル(現・比叡山鉄道〈株〉)も、昭和二十一年八月七日、車輛を復旧して」 https://dl.ndl.go.jp/pid/14282838 k151(NDL 스니펫, 중간) — 서로 독립 중간 둘 (audit5 r3 2026-11-25)", "add": {"date": "1946-08-07", "type": "resume", "line": "l_sakamoto_cable", "edges": ["n_cable_sakamoto..n_cable_enryakuji"], "source": "hand"}, "_group": "main"}
+{"why": "위와 같은 칸의 재개 1946-08-07: 위키 같은 인포박스 「再開 = 1946年8月7日」(중간) + 『伝灯 : 最澄と叡山 比叡山開創一千二百年記念史鑑』(1988) 「坂本ケーブル(現・比叡山鉄道〈株〉)も、昭和二十一年八月七日、車輛を復旧して」 https://dl.ndl.go.jp/pid/14282838 k151(NDL 스니펫, 중간) — 서로 독립 중간 둘 (audit5 r3 2026-11-25)", "add": {"date": "1946-08-07", "type": "resume", "line": "l_sakamoto_cable", "edges": ["n_cable_sakamoto..n_cable_enryakuji"], "source": "hand"}, "_group": "main"},
+{"why": "秋田市電 表鉄砲町 북쪽 0.3 km 분기점(railforum 昭和 쪽147 「分岐点 4.8 km」, 설계 docs/research/audit5-omoteteppomachi-junction-design.md, 5회차 2026-11-25): A선 1889 개업 구간 끝을 分岐로(表鉄砲町–分岐는 1950 B선)", "match": {"date": "1889-07-14", "type": "open", "line": "l_akitashinai_line", "edges": ["n_omoteteppomachi..n_tsuchizaki_akita_city"]}, "set": {"edges": ["n_omoteteppomachi_junction..n_tsuchizaki_akita_city"]}},
+{"why": "秋田市電 表鉄砲町 북쪽 0.3 km 분기점(railforum 昭和 쪽147 「分岐点 4.8 km」, 설계 docs/research/audit5-omoteteppomachi-junction-design.md, 5회차 2026-11-25): B선 1950-09-01 개업 구간을 分岐까지", "match": {"date": "1950-09-01", "type": "open", "line": "l_akitashinai_line", "edges": ["n_omachi_2_chome..n_omoteteppomachi"]}, "set": {"edges": ["n_omachi_2_chome..n_omoteteppomachi_junction"]}},
+{"why": "秋田市電 表鉄砲町 북쪽 0.3 km 분기점(railforum 昭和 쪽147 「分岐点 4.8 km」, 설계 docs/research/audit5-omoteteppomachi-junction-design.md, 5회차 2026-11-25): 新大工町線 구간은 分岐–新大工町", "match": {"date": "1889-07-14", "type": "open", "line": "l_shindaikumachi_line", "edges": ["n_omoteteppomachi..n_shindaikumachi_akita_city"]}, "set": {"edges": ["n_omoteteppomachi_junction..n_shindaikumachi_akita_city"]}},
+{"why": "秋田市電 表鉄砲町 북쪽 0.3 km 분기점(railforum 昭和 쪽147 「分岐点 4.8 km」, 설계 docs/research/audit5-omoteteppomachi-junction-design.md, 5회차 2026-11-25): 新大工町線 폐지 구간도 分岐–新大工町", "match": {"type": "close", "line": "l_shindaikumachi_line", "edges": ["n_omoteteppomachi..n_shindaikumachi_akita_city"]}, "set": {"edges": ["n_omoteteppomachi_junction..n_shindaikumachi_akita_city"]}},
+{"why": "近鉄 生駒鋼索線 山上線 宝山寺–生駒山上 전시 휴지. DB 지금: 전시 운휴 없음(1929-03-27부터 계속 open). 근거: 近畿日本鉄道 공식 「生駒ケーブル」 年表 https://www.kintetsu.co.jp/senden/ikoma_cable/about/ 「1944年 物資供給のため宝山寺2号線撤去。山上線は海軍専用使用。宝山寺1号線のみ営業を継続。」(사업자 공식, 높음 — 해) + 『鉄道ピクトリアル』1992-12(NDL 3294701, 공개 검색 스니펫, 중간) k53 近鉄 성립(1944-06-01) 당시 노선 그림 「宝山寺－生駒山上***(休止中)」(성립 때 이미 휴지 → 상한 1944-06-01) + 위키 近鉄生駒鋼索線 rev111398121 「1944年2月11日：山上線が不要不急線として休止」(『近畿日本鉄道100年のあゆみ』 인용, 중간). → 1944 휴지는 높음, 1944-06-01 이전은 높음+중간. 날 02-11은 위키 하나라 범위 [1944-01-01..1944-06-01]로 둠 (audit5 r4 2026-11-25)", "add": {"date": "[1944-01-01..1944-06-01]", "type": "suspend", "line": "l_ikoma_cable_line", "edges": ["n_hozanji..n_umeyashiki_kintetsu", "n_umeyashiki_kintetsu..n_kasumigaoka_kintetsu", "n_kasumigaoka_kintetsu..n_ikoma_sanjo"], "source": "hand"}, "_group": "main"},
+{"why": "위와 같은 칸의 재개. 近鉄 공식 年表 「1945年 山上線が復活。」(높음 — 해) + 위키 같은 판 「1945年8月1日：山上線の運行再開」(중간 하나 — 날). 날은 범위 안 후보로만 적고 해 범위로 둠 (audit5 r4 2026-11-25)", "add": {"date": "[1945-01-01..1945-12-31]", "type": "resume", "line": "l_ikoma_cable_line", "edges": ["n_hozanji..n_umeyashiki_kintetsu", "n_umeyashiki_kintetsu..n_kasumigaoka_kintetsu", "n_kasumigaoka_kintetsu..n_ikoma_sanjo"], "source": "hand"}, "_group": "main"}
 ]

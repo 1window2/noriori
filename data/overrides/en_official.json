@@ -1979,13 +1979,6 @@
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
   },
-  "n_awara_yunomachi": {
-   "en": "Awara Yunomachi",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_awaraonsen": {
    "en": "Awaraonsen",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
@@ -2167,13 +2160,6 @@
    "en": "Bandaimachi",
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
    "type": "company"
-  },
-  "n_banden": {
-   "en": "Banden",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_bando": {
    "en": "Bandō",
@@ -3548,13 +3534,6 @@
    "source": "https://subway.osakametro.co.jp/en/station_guide/ (en_names/evidence/web/osakametro_en_station_guide.html; ja paired by station code from https://subway.osakametro.co.jp/station_guide/ = osakametro_ja_station_guide.html)",
    "type": "company"
   },
-  "n_domeki": {
-   "en": "Domeki",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_domyoji": {
    "en": "Domyoji",
    "source": "https://www.kintetsu.co.jp/station/en_searchlist.html",
@@ -3786,20 +3765,6 @@
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
   },
-  "n_echizen_kaihotsu": {
-   "en": "Echizen Kaihotsu",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
-  "n_echizen_nonaka": {
-   "en": "Echizen Nonaka",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_echizen_omiya": {
    "en": "Echizen-Ōmiya",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
@@ -3810,24 +3775,10 @@
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
   },
-  "n_echizen_shimabashi": {
-   "en": "Echizen Shimabashi",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_echizen_shimoyama": {
    "en": "Echizen-Shimoyama",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
-  },
-  "n_echizen_shinbo": {
-   "en": "Echizen Shinbo",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_echizen_takada": {
    "en": "Echizen-Takada",
@@ -3838,13 +3789,6 @@
    "en": "Echizen-Takefu",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
-  },
-  "n_echizen_takehara": {
-   "en": "Echizen Takehara",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_echizen_tano": {
    "en": "Echizen-Tano",
@@ -3872,9 +3816,10 @@
    "type": "company"
   },
   "n_eda_tokyu_railways": {
-   "en": "Ed a",
+   "en": "Eda",
    "source": "https://www.tokyu.co.jp/railway/common/pdf/rosen-english.pdf",
-   "type": "company"
+   "type": "company",
+   "note": "東急 영어 노선도 PDF 글자 층이 자간 때문에 「Ed a」로 나뉘어 읽혔음. 그림에는 한 낱말 Eda (5회차 2026-11-26)"
   },
   "n_edagawa": {
    "en": "Edagawa",
@@ -3943,13 +3888,6 @@
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:SanyoEigashimaNamePlate%28Outdoor%2920190825.jpg",
    "type": "sign",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
-  },
-  "n_eiheijiguchi": {
-   "en": "Eiheiji Guchi",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_eiwa": {
    "en": "Eiwa",
@@ -4621,13 +4559,6 @@
    "en": "Fukui",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
-  },
-  "n_fukui_echizen": {
-   "en": "Fukui",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_fukui_tobu": {
    "en": "Fukui",
@@ -7296,13 +7227,6 @@
    "type": "company",
    "note": "Keio Railway Map (bilingual route map), read visually at 400 dpi; paired by Japanese name"
   },
-  "n_higashi_fujishima": {
-   "en": "Higashi Fujishima",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_higashi_fujiwara": {
    "en": "Higashifujiwara",
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sangi-railway-S13-Higashi-fujiwara-station-sign-20250417-093940.jpg",
@@ -8724,13 +8648,6 @@
    "source": "https://www.kotsu.city.nagoya.jp/rp/Jassets/pdf/lang/city_bus_subway_guide.pdf",
    "type": "company"
   },
-  "n_hishima": {
-   "en": "Hishima",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_hita": {
    "en": "Hita",
    "source": "https://www.jrkyushu.co.jp/railway/routemap/rootmap_num.pdf",
@@ -9137,13 +9054,6 @@
    "source": "https://www.jrkyushu.co.jp/railway/routemap/rootmap_num.pdf",
    "type": "company"
   },
-  "n_honjo_echizen": {
-   "en": "Honjo",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_honjo_takasaki": {
    "en": "Honjo",
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
@@ -9374,13 +9284,6 @@
    "source": "https://www.tobu.co.jp/en/_assets_l/pdf/routeMap.pdf",
    "type": "company"
   },
-  "n_hossaka": {
-   "en": "Hossaka",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_hosui_susukino": {
    "en": "Hosui Susukino",
    "source": "https://www.city.sapporo.jp/documents/33423/4_2026_chikatetsu_shiden_eki_mei_e_1.pdf (en_names/evidence/web/sapporo_city_ekimei_en_2026.pdf) ; https://www.city.sapporo.jp/documents/77432/rosenzu_e.pdf (en_names/evidence/web/sapporo_subway_routemap_en.pdf)",
@@ -9390,13 +9293,6 @@
    "en": "Hota",
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
    "type": "company"
-  },
-  "n_hota_echizen": {
-   "en": "Hota",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_hotaka": {
    "en": "Hotaka",
@@ -14423,13 +14319,6 @@
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
    "type": "company"
   },
-  "n_katsuyama": {
-   "en": "Katsuyama",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_katsuyamacho": {
    "en": "Katsuyamacho",
    "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (en_names/evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ en_names/evidence/web/iyotetsu_global_en.html)",
@@ -16824,13 +16713,6 @@
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
    "type": "company"
   },
-  "n_kobunato": {
-   "en": "Kobunato",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_kochi_dosan": {
    "en": "Kōchi",
    "source": "https://www.jr-shikoku.co.jp/01_trainbus/st_number/map.pdf and https://www.jr-shikoku.co.jp/global/en/trainbus/kakueki.html",
@@ -17471,13 +17353,6 @@
    "source": "https://kensaku.nankai.co.jp/en/pc/N1",
    "type": "company",
    "note": "Nankai English route search, route-map image alt text (all caps); paired by romanization; all caps in source, title-cased"
-  },
-  "n_komyoji": {
-   "en": "Komyoji",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_konai": {
    "en": "Konai",
@@ -19061,10 +18936,10 @@
    "type": "company"
   },
   "n_kyushu_railway_history_museum": {
-   "en": "Kyushu Railway History Museum",
-   "source": "https://en.wikipedia.org/wiki/Kyushu_Railway_History_Museum_Station",
-   "type": "company",
-   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased / 공식 번역형 Kyushu Railway History Museum를 이름으로 올림(사용자 결정 2026-11-25), 옛 이름 Kyusyu Tetsudo Kinenkan는 별칭"
+   "en": "Kyusyu Tetsudo Kinenkan",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kyushu_Tetsudo_Kinenkan_%28Kyushu_Railway_History_Museum%29_Station_Sign.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased / 역명판이 로마자 뒤에 괄호로 번역을 덧붙인 꼴이라 로마자가 이름, Kyushu Railway History Museum은 별칭 (5회차 2026-11-26)"
   },
   "n_kyushukodaimae": {
    "en": "Kyūshūkōdai-mae",
@@ -19673,13 +19548,6 @@
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
    "type": "company"
   },
-  "n_matsumoto_machiya": {
-   "en": "Matsumoto Machiya",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_matsumushi": {
    "en": "Matsumushi",
    "source": "https://www.hankai.co.jp/route/file/rootmap.pdf (en_names/evidence/web/hankai_rootmap.pdf; images en_names/evidence/web/hankai_rootmap_img-000.jpg, -005.jpg; page en_names/evidence/web/hankai_route.html)",
@@ -19726,13 +19594,6 @@
    "en": "Matsuo-taisha",
    "source": "https://www.hankyu.co.jp/en/station/index.html (en_names/evidence/web/hankyu_en_station_index.html)",
    "type": "company"
-  },
-  "n_matsuoka": {
-   "en": "Matsuoka",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_matsusaka": {
    "en": "Matsusaka",
@@ -20252,24 +20113,10 @@
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
   },
-  "n_mikuni_echizen": {
-   "en": "Mikuni",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_mikuni_hankyu": {
    "en": "Mikuni",
    "source": "https://www.hankyu.co.jp/en/station/index.html (en_names/evidence/web/hankyu_en_station_index.html)",
    "type": "company"
-  },
-  "n_mikuni_jinja": {
-   "en": "Mikuni Jinja",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_mikuni_minato": {
    "en": "Mikuniminato",
@@ -21667,13 +21514,6 @@
    "en": "Mizuhodai",
    "source": "https://www.tobu.co.jp/en/_assets_l/pdf/routeMap.pdf",
    "type": "company"
-  },
-  "n_mizui": {
-   "en": "Mizui",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_mizuki": {
    "en": "Mizuki",
@@ -23560,13 +23400,6 @@
    "source": "https://global.jr-central.co.jp/en/info/railwaymap/_pdf/railwaymap.pdf",
    "type": "company"
   },
-  "n_nakatsuno": {
-   "en": "Nakatsuno",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_nakaura": {
    "en": "Nakaura",
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
@@ -25167,13 +25000,6 @@
    "source": "https://www.jr-shikoku.co.jp/01_trainbus/st_number/map.pdf and https://www.jr-shikoku.co.jp/global/en/trainbus/kakueki.html",
    "type": "company"
   },
-  "n_nishibetsuin": {
-   "en": "Nishibetsuin",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_nishibukuro": {
    "en": "Nishibukuro",
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
@@ -25564,13 +25390,6 @@
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E3%81%84%E3%81%99%E3%81%BF%E9%89%84%E9%81%93-%E6%96%B0%E7%94%B0%E9%87%8E%E9%A7%85-20230330.jpg",
    "type": "sign",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; small; title-cased"
-  },
-  "n_nittazuka": {
-   "en": "Nittazuka",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_niwasaka": {
    "en": "Niwasaka",
@@ -26657,13 +26476,6 @@
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Oiwake_Station_%28Mie%29-03.jpg",
    "type": "sign",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; title-cased"
-  },
-  "n_oiwakeguchi": {
-   "en": "Oiwakeguchi",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_oizumi_gakuen": {
    "en": "Ōizumi-gakuen",
@@ -28198,13 +28010,6 @@
    "type": "sign",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; all caps; romaji split over the kanji as printed; title-cased; layout spaces between kanji removed"
   },
-  "n_ozeki_echizen": {
-   "en": "Ozeki",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_ozeki_nishi_nippon": {
    "en": "Ōzeki",
    "source": "https://www.nishitetsu.jp/train/rosen/ (train_routemap_ext.png)",
@@ -29055,9 +28860,10 @@
    "type": "company"
   },
   "n_sakashitamachi": {
-   "en": "Sakashiatamachi",
+   "en": "Sakashitamachi",
    "source": "https://www.manyosen.co.jp/files/files20240410101031.pdf (en_names/evidence/web/manyosen_doraemon_timetable_en.pdf, rendered manyosen_doraemon_timetable_en-1.png)",
-   "type": "company"
+   "type": "company",
+   "note": "인쇄 「Saka|shiata|machi」(같은 PDF 두 곳)는 어느 로마자 방식에도 없는 철자라 오타로 보고, 같은 PDF의 片原町 Kataharamachi 표기 방식대로 바로잡음. 인쇄 꼴은 검색 별칭 (5회차 2026-11-26)"
   },
   "n_sakata_hokuriku_main": {
    "en": "Sakata",
@@ -30707,13 +30513,6 @@
    "source": "https://www.jreast-timetable.jp/cgi-bin/en/st_search.cgi?mode=0&ekimei={a,e,i,o,u}",
    "type": "company"
   },
-  "n_shiizakai": {
-   "en": "Shiizakai",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_shijo": {
    "en": "Shijo",
    "source": "https://www.city.kyoto.lg.jp/kotsu/page/0000008995.html (eigo_240529.pdf)",
@@ -31185,13 +30984,6 @@
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
   },
-  "n_shimohyogo_kofuku": {
-   "en": "Shimohyogo Kofuku",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
-  },
   "n_shimoichi": {
    "en": "Shimoichi",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
@@ -31334,13 +31126,6 @@
    "en": "Shimosato",
    "source": "https://global.trafficinfo.westjr.co.jp/static/images/route_{kansai_detail,chugoku_detail,hokuriku_detail,sanyo,h_shinkansen}.svg",
    "type": "company"
-  },
-  "n_shimoshii": {
-   "en": "Shimoshii",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_shimosone": {
    "en": "Shimo-Sone",
@@ -35369,13 +35154,6 @@
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tarobogu_mae_station_running_in_board_20201014.jpg",
    "type": "sign",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image"
-  },
-  "n_taromaru_angelland": {
-   "en": "Taromaru Angelland",
-   "source": "https://www.echizen-tetudo.co.jp/en/",
-   "type": "company",
-   "note": "Echizen Railway English site, schedule-search station dropdown (word spacing differs from sign style; low confidence); paired by romanization",
-   "confidence": "low"
   },
   "n_tarui": {
    "en": "Tarui",
@@ -43276,13 +43054,6 @@
    "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
    "type": "company"
   },
-  "n_amino": {
-   "confidence": "low",
-   "en": "Amino",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
-   "type": "company"
-  },
   "n_anoh": {
    "en": "Anoh",
    "note": "Sangi Railway route map image, Hokusei Line station table with English names (read visually)",
@@ -43655,13 +43426,6 @@
    "source": "https://www.keihan.co.jp/travel/en/pdf/useful-files/keihan_guide.pdf",
    "type": "company"
   },
-  "n_iwatakiguchi": {
-   "confidence": "low",
-   "en": "Iwataki-Guchi",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
-   "type": "company"
-  },
   "n_jatco_mae": {
    "en": "Jatco Mae",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; decorated Gakunan station sign 'JATCO MAE' (all caps; title-cased); plain platform sign n_jatco_mae:6 reads the same",
@@ -43890,13 +43654,6 @@
    "source": "https://www.keihan.co.jp/travel/en/pdf/trains/information-for-travelers/routemap_and_stations.pdf",
    "type": "company"
   },
-  "n_kumihama": {
-   "confidence": "low",
-   "en": "Kumihama",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
-   "type": "company"
-  },
   "n_kunda": {
    "en": "Kunda",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the retro-style Miyazu sign; all caps; title-cased",
@@ -43937,13 +43694,6 @@
    "en": "Kuwana",
    "note": "Romaji of the same-name connecting station of another operator (company source of that row); shared station; same romaji as JR Central official row n_kuwana in en_official",
    "source": "https://global.jr-central.co.jp/en/info/railwaymap/_pdf/railwaymap.pdf",
-   "type": "company"
-  },
-  "n_kyotango_omiya": {
-   "confidence": "low",
-   "en": "Kyotango-Omiya",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
    "type": "company"
   },
   "n_maehata": {
@@ -44046,13 +43796,6 @@
    "en": "Minatojima",
    "note": "Kobe New Transit English site, Route Map and Station Info menu (text)",
    "source": "https://www.knt-liner.co.jp/en/station/",
-   "type": "company"
-  },
-  "n_mineyama": {
-   "confidence": "low",
-   "en": "Mineyama",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
    "type": "company"
   },
   "n_minoh_kayano": {
@@ -44607,13 +44350,6 @@
    "source": "https://www.uedadentetsu.com/pdf/uedadentetsu_english.pdf",
    "type": "company"
   },
-  "n_shisho": {
-   "confidence": "low",
-   "en": "Shisho",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
-   "type": "company"
-  },
   "n_shiyakushomae_nagano": {
    "en": "Shiyakusyomae",
    "note": "Nagano Electric Railway station page heading romaji (text, all caps; title-cased); printed SHIYAKUSYOMAE (syo spelling kept)",
@@ -44690,13 +44426,6 @@
    "en": "Tanakaguchi",
    "note": "Wakayama Electric Railway station pages, route navigation strip (text, all caps; title-cased)",
    "source": "https://wakayama-dentetsu.co.jp/station/idakiso/",
-   "type": "company"
-  },
-  "n_tango_yura": {
-   "confidence": "low",
-   "en": "Tango-yura",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
    "type": "company"
   },
   "n_tateyama_tateyama_kurobe_kanko": {
@@ -44843,13 +44572,6 @@
    "source": "https://www.nagaden-net.co.jp/info/station/yomase",
    "type": "company"
   },
-  "n_yosano": {
-   "confidence": "low",
-   "en": "Yosano",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
-   "type": "company"
-  },
   "n_yoshiikeonsenmae": {
    "en": "Yoshiike-onsenmae",
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; Fujikyu platform sign, read zoomed",
@@ -44861,13 +44583,6 @@
    "note": "station name sign photo on Wikimedia Commons, romaji read from the image; neighbour label on the Jatco-mae station sign; all caps; title-cased",
    "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fuji_20210410160609_(51334221113).jpg",
    "type": "sign"
-  },
-  "n_yuhigaura_kitsu_onsen": {
-   "confidence": "low",
-   "en": "Yuhigaura-Kitsu-Onsen",
-   "note": "WILLER (operator of Kyoto Tango Railway) English sightseeing-train timetable page, stop names (text); confidence low: same page has typos for other stops (Knonotori-No-Sato, Amano hashidate)",
-   "source": "https://willer-travel.com/en/train/tantetsu/aomatsu.html",
-   "type": "company"
   },
   "n_yunoki_shizuoka": {
    "en": "Yunoki",
@@ -45314,16 +45029,16 @@
    "note": "공식 번역형 Ehime Univ. Hospital를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_fukui_joshi_daimyomachi": {
-   "source": "https://en.wikipedia.org/wiki/Fukui_Castle_Ruins-daimyomachi_Station",
-   "type": "company",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukui_Castle_Ruins-Daimyomachi_Station_Sign.jpg",
+   "type": "sign",
    "en": "Fukui Castle Ruins-daimyomachi",
-   "note": "공식 번역형 Fukui Castle Ruins-daimyomachi를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) Fukui Castle Ruins-daimyomachi를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_genbakushiryokan": {
-   "source": "https://www.naga-den.com/pages/9/ (evidence/web/nagaden_pages9_route.html) + multilingual list https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx (evidence/web/nagaden_stop_names_multilingual.xlsx)",
-   "type": "company",
    "en": "Atomic Bomb Museum",
-   "note": "공식 번역형 Atomic Bomb Museum를 이름으로 올림(사용자 결정 2026-11-25)"
+   "source": "https://www.naga-den.com/relays/download/9/5893/111//?file=/files/libs/4631/202410010007026898.xlsx",
+   "type": "company",
+   "note": "Nagasaki Electric Tramway multilingual stop list (xlsx, 2024-10): 'Atomic Bomb Museum'; ja.wikipedia infobox (revid 110990398) same. Official translated form is the name (user decision 2026-11-25), so the n/m question for 'Gembakushiryokan' no longer applies; the rule form becomes an alias. (audit5 r3_names 3차 2026-11-26)"
   },
   "n_gunchu_port": {
    "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
@@ -45350,10 +45065,10 @@
    "note": "공식 번역형 Ishitegawa Park를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_joetsu_kokusai_ski_jo_mae": {
-   "source": "https://en.wikipedia.org/wiki/J%C5%8Detsu_International_Skiing_Ground_Station",
-   "type": "company",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Joetsu_International_Skiing_Ground_Station_train_station_sign.JPG",
+   "type": "sign",
    "en": "Jōetsu International Skiing Ground",
-   "note": "공식 번역형 Jōetsu International Skiing Ground를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) Jōetsu International Skiing Ground를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_jr_matsuyama_ekimae": {
    "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
@@ -45398,16 +45113,16 @@
    "note": "공식 번역형 Miyazaki Airport를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_niigata_university": {
-   "source": "https://en.wikipedia.org/wiki/Niigata_University_Station",
-   "type": "company",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:NiigataUniversityStation_Sign_201703.jpg",
+   "type": "sign",
    "en": "Niigata University",
-   "note": "공식 번역형 Niigata University를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) Niigata University를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_omura_sharyokichi": {
-   "source": "https://en.wikipedia.org/wiki/%C5%8Cmura_Rail_Yard_Station",
-   "type": "company",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E6%9D%91%E8%BB%8A%E4%B8%A1%E5%9F%BA%E5%9C%B0%E9%A7%85%E7%9C%8B%E6%9D%BF.jpg",
+   "type": "sign",
    "en": "Ōmura Rail Yard",
-   "note": "공식 번역형 Ōmura Rail Yard를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) Ōmura Rail Yard를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_otemachi_ekimae_iyotetsu": {
    "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ evidence/web/iyotetsu_global_en.html)",
@@ -45452,10 +45167,10 @@
    "note": "공식 번역형 Sofukuji Temple를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_st_marys_hospital": {
-   "source": "https://en.wikipedia.org/wiki/St._Mary's_Hospital_Station",
+   "source": "https://www.nishitetsu.jp/train/rosen/ (train_routemap_ext.png)",
    "type": "company",
    "en": "St. Mary's Hospital",
-   "note": "공식 번역형 St. Mary's Hospital를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) St. Mary's Hospital를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_suizenji_koen": {
    "source": "https://www.city.kumamoto.jp/kiji00345021/3_45021_441313_up_v7o6g6hr.pdf (evidence/web/kumamoto_city_routemap_en.pdf)",
@@ -45470,10 +45185,10 @@
    "note": "공식 번역형 Suwa-jinja Shrine를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_tanoura_otachimisaki_park": {
-   "source": "https://en.wikipedia.org/wiki/Tanoura_Otachimisaki_Park_Station",
-   "type": "company",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tanoura_Otachimisaki_Park_Station3.JPG",
+   "type": "sign",
    "en": "Tanoura Otachimisaki Park",
-   "note": "공식 번역형 Tanoura Otachimisaki Park를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) Tanoura Otachimisaki Park를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_tojiin_ritsumeikan_university_kinugasa_campus_mae": {
    "source": "https://www.keifuku.co.jp/cms/wp-content/uploads/928f8d9feaa9dd61e5ec73381b794915.pdf (evidence/web/randen_howtoride_sightseeing_map_en.pdf; index page evidence/web/randen_keifuku_map.html)",
@@ -45482,10 +45197,10 @@
    "note": "공식 번역형 Tōjiin・Ritsumeikan University를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_tokyo_international_cruise_terminal": {
-   "source": "https://en.wikipedia.org/wiki/Tokyo_International_Cruise_Terminal_Station",
+   "source": "https://www.yurikamome.co.jp/en/",
    "type": "company",
    "en": "Tokyo International Cruise Terminal",
-   "note": "공식 번역형 Tokyo International Cruise Terminal를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형(출처 바로잡음: 역명판·회사 자료, en.wikipedia 아님) Tokyo International Cruise Terminal를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_torokko_saga": {
    "source": "https://commons.wikimedia.org/wiki/File:Non_service_announcement_of_Torokko_Saga_Station_at_Covid19.jpg",
@@ -45518,16 +45233,16 @@
    "note": "공식 번역형 Yokogawa Sta.를 이름으로 올림(사용자 결정 2026-11-25)"
   },
   "n_ken_sogo_undojo": {
-   "source": "https://en.wikipedia.org/wiki/Pref._Sports_Park_Station",
+   "source": "静岡鉄道 영어 안내(2차 조사 기록: Shizuoka Railway English site lists only the translated form 'Pref. Sports Park' (alias))",
    "type": "company",
    "en": "Pref. Sports Park",
-   "note": "공식 번역형 Pref. Sports Park를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형 Pref. Sports Park를 이름으로 올림(사용자 결정 2026-11-25) / 출처 바로잡음: 静岡鉄道 영어 안내가 번역형만 실음(en.wikipedia 아님)"
   },
   "n_kenritsu_bijutsukanmae": {
-   "source": "https://en.wikipedia.org/wiki/Pref._Art_Museum_Station",
+   "source": "静岡鉄道 영어 안내(2차 조사 기록: Shizuoka Railway English site lists only the translated form 'Pref. Art Museum' (alias))",
    "type": "company",
    "en": "Pref. Art Museum",
-   "note": "공식 번역형 Pref. Art Museum를 이름으로 올림(사용자 결정 2026-11-25)"
+   "note": "공식 번역형 Pref. Art Museum를 이름으로 올림(사용자 결정 2026-11-25) / 출처 바로잡음: 静岡鉄道 영어 안내가 번역형만 실음(en.wikipedia 아님)"
   },
   "n_aina": {
    "en": "Aina",
@@ -46176,6 +45891,324 @@
    "source": "JR東日本 영어 시각표 역 색인 https://www.jreast-timetable.jp/en/ (역명판도 같은 꼴)",
    "type": "company",
    "note": "JR東日本 공식 번역형. 공식 번역형은 이름(사용자 결정 2026-11-25), 읽기 꼴은 검색 별칭 (audit5 r3 2026-11-25)"
+  },
+  "n_kodomonokuni": {
+   "en": "Kodomonokuni",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nichinan-Line_Kodomono-kuni-STA_Platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'KODOMONOKUNI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_sosanji": {
+   "en": "Sosanji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sosanji_Station.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'SOSANJI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_miyagahama": {
+   "en": "Miyagahama",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:ホームから見る指宿方の風景.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'MIYAGAHAMA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_hiroki": {
+   "en": "Hiroki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hiroki_Station2.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'HIROKI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_hasugaike": {
+   "en": "Hasugaike",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hasugaike-STA_Platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'HASUGAIKE'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_ichinuno": {
+   "en": "Ichinuno",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JRKyushu_Ichinuno_Station_2.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'ICHINUNO'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_hizen_koga": {
+   "en": "Hizen-koga",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JRKyushu_Ichinuno_Station_2.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_ichinuno (JR Kyushu signage), read from the image: 'HIZEN-KOGA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_matsugaura": {
+   "en": "Matsugaura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsugaura-STA_Platform.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'MATSUGAURA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_ei_okawa": {
+   "en": "Ei-ōkawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsugaura-STA_Platform.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_matsugaura (JR Kyushu signage), read from the image: 'EI-ŌKAWA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_satsuma_shioya": {
+   "en": "Satsuma-shioya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsugaura-STA_Platform.jpg",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_matsugaura (JR Kyushu signage), read from the image: 'SATSUMA-SHIOYA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_hizen_nagata": {
+   "en": "Hizennagata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JRKyushu_HizenNagata_Station_2.jpg",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'HIZENNAGATA'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_undokoen": {
+   "en": "Undokōen",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sosanji_Station.JPG",
+   "type": "sign",
+   "note": "neighbouring-station romaji printed on the station name sign of n_sosanji (JR Kyushu signage), read from the image: 'UNDOKŌEN'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_setoishi": {
+   "en": "Setoishi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Setoishi_Station_2.JPG",
+   "type": "sign",
+   "note": "station name sign photo on Wikimedia Commons (thumbnail via thumb.wikimedia.org), romaji read from the image: 'SETOISHI'. All caps title-cased (case after hyphen lower-case, macrons kept). (audit5 r3_names 3차 2026-11-26)"
+  },
+  "n_honmachi_6_chome": {
+   "en": "Hommachi 6",
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (en_names/evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ en_names/evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "note": "伊予鉄 노선도의 丁目을 뺀 공식 표기. 줄인 공식 표기도 이름으로 두고 풀어 쓴 꼴(… 6-chome)은 검색 별칭(사용자 결정 2026-11-26)"
+  },
+  "n_kayamachi_6_chome": {
+   "en": "Kayamachi 6",
+   "source": "https://www.iyotetsu.co.jp/railbus/timetable/map/routemap_rail.pdf (en_names/evidence/web/iyotetsu_routemap_rail.pdf; linked from https://www.iyotetsu.co.jp/global/en/ en_names/evidence/web/iyotetsu_global_en.html)",
+   "type": "company",
+   "note": "伊予鉄 노선도의 丁目을 뺀 공식 표기. 줄인 공식 표기도 이름으로 두고 풀어 쓴 꼴(… 6-chome)은 검색 별칭(사용자 결정 2026-11-26)"
+  },
+  "n_awara_yunomachi": {
+   "en": "Awara Yunomachi",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Awara Yunomachi\" under あわら湯のまち on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; variant: English User Guide and Along-the-Line pages (2026) write \"Awara-Yunomachi\" (hyphen); route map and station page write \"Awara Yunomachi\"; no sign photo found - doubtful only in the hyphen"
+  },
+  "n_banden": {
+   "en": "Banden",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Banden\" under 番田 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_domeki": {
+   "en": "Domeki",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Domeki\" under 轟 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_echizen_kaihotsu": {
+   "en": "Echizen Kaihotsu",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Echizen Kaihotsu\" under 越前開発 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"ECHIZEN KAIHOTSU\" on new-style Fukuiguchi E3 sign (https://commons.wikimedia.org/wiki/File:EC-Fukuiguchi_Station-Running_in_board.jpg, photo 2026-06-28)"
+  },
+  "n_echizen_nonaka": {
+   "en": "Echizen Nonaka",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Echizen Nonaka\" under 越前野中 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; older sign (Sanno E17, same photo 2018-08-14) shows hyphenated \"ECHIZEN-NONAKA\"; company newer form kept"
+  },
+  "n_echizen_shimabashi": {
+   "en": "Echizen Shimabashi",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Echizen Shimabashi\" under 越前島橋 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; older sign (Kannonmachi E9, https://commons.wikimedia.org/wiki/File:Echizen_Railway-Kannonmachi_station-board.jpg, 2018-08-14) shows hyphenated \"ECHIZEN-SHIMABASHI\"; company 2024/2026 form without hyphen is newer and matches the new-style signs (cf. \"ECHIZEN KAIHOTSU\" 2026)"
+  },
+  "n_echizen_shinbo": {
+   "en": "Echizen Shinbo",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Echizen Shinbo\" under 越前新保 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_echizen_takehara": {
+   "en": "Echizen Takehara",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Echizen Takehara\" under 越前竹原 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; older sign (Sanno E17, https://commons.wikimedia.org/wiki/File:Echizen_Railway-Sanno_station-board.jpg, 2018-08-14) shows hyphenated \"ECHIZEN-TAKEHARA\"; company newer form kept"
+  },
+  "n_eiheijiguchi": {
+   "en": "Eiheijiguchi",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Eiheijiguchi\" under 永平寺口 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown (dropdown/station page: \"Eiheiji Guchi\"); the same site also writes \"Eiheijiguchi Station\" on the English Along-the-Line page (2026), while the station page/schedule dropdown has \"Eiheiji Guchi\" (that list also has \"ShinFukui\", \"Nikkakagaku Mae\" which disagree with the route map and signs) - route map form taken; old sign on Shimoshii (2009-03-29) shows \"EIHEIJI-GUCHI\" (older)"
+  },
+  "n_fukui_echizen": {
+   "en": "Fukui",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Fukui\" under 福井 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_higashi_fujishima": {
+   "en": "Higashi Fujishima",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Higashi Fujishima\" under 東藤島 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_hishima": {
+   "en": "Hishima",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Hishima\" under 比島 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_honjo_echizen": {
+   "en": "Honjo",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Honjo\" under 本荘 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_hossaka": {
+   "en": "Hossaka",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Hossaka\" under 発坂 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_hota_echizen": {
+   "en": "Hota",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Hota\" under 保田 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_katsuyama": {
+   "en": "Katsuyama",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Katsuyama\" under 勝山 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_kobunato": {
+   "en": "Kobunato",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Kobunato\" under 小舟渡 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_komyoji": {
+   "en": "Komyoji",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Komyoji\" under 光明寺 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; older sign agrees: neighbour label \"KOMYOJI\" on Shimoshii sign (https://commons.wikimedia.org/wiki/File:Simoshii-Station-Platform.JPG, 2009-03-29)"
+  },
+  "n_matsumoto_machiya": {
+   "en": "Matsumoto Machiya",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Matsumoto Machiya\" under まつもと町屋 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"MATSUMOTO MACHIYA\" on new-style Fukuiguchi E3 sign (https://commons.wikimedia.org/wiki/File:EC-Fukuiguchi_Station-Running_in_board.jpg, photo 2026-06-28)"
+  },
+  "n_matsuoka": {
+   "en": "Matsuoka",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Matsuoka\" under 松岡 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; older sign agrees: neighbour label \"MATSUOKA\" on Kannonmachi E9 sign (https://commons.wikimedia.org/wiki/File:Echizen_Railway-Kannonmachi_station-board.jpg, 2018-08-14)"
+  },
+  "n_mikuni_echizen": {
+   "en": "Mikuni",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Mikuni\" under 三国 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: own E43 sign \"MIKUNI\" (https://commons.wikimedia.org/wiki/File:Nameplate_of_Mikuni_Station_260124_01.jpg, 2026-01-24) and neighbour label on Mikuni-Jinja sign (same date)"
+  },
+  "n_mizui": {
+   "en": "Mizui",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Mizui\" under 水居 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"MIZUI\" on Mikuni-Jinja E42 sign (https://commons.wikimedia.org/wiki/File:Mikuni-Jinja_Station_260124_01.jpg, 2026-01-24)"
+  },
+  "n_nakatsuno": {
+   "en": "Nakatsuno",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Nakatsuno\" under 中角 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"NAKATSUNO\" on Washizuka-Haribara E32 signs (https://commons.wikimedia.org/wiki/File:Washizuka-Haribara_Station_Name_Sign.jpg and _2, photos 2020-05-03)"
+  },
+  "n_nishibetsuin": {
+   "en": "Nishibetsuin",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Nishibetsuin\" under 西別院 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"Nishibetsuin\" on Tawaramachi E26 sign (https://commons.wikimedia.org/wiki/File:Station_Sign_of_Tawaramachi_Station.jpg, photo 2021-02-28)"
+  },
+  "n_nittazuka": {
+   "en": "Nittazuka",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Nittazuka\" under 新田塚 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"NITTAZUKA\" on Yatsushima E29 sign (https://commons.wikimedia.org/wiki/File:EC-Yatsushima_Station-Running_in_board.jpg, photo 2026-06-28)"
+  },
+  "n_oiwakeguchi": {
+   "en": "Oiwakeguchi",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Oiwakeguchi\" under 追分口 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_ozeki_echizen": {
+   "en": "Ozeki",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Ozeki\" under 大関 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: neighbour label \"OZEKI\" on Shimohyogo-Kofuku E36 sign (https://commons.wikimedia.org/wiki/File:Shimohyogo-Kofuku_Station_260124_01.jpg, 2026-01-24)"
+  },
+  "n_shiizakai": {
+   "en": "Shiizakai",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Shiizakai\" under 志比堺 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; no sign photo with romaji found on Commons (category viewed)"
+  },
+  "n_shimohyogo_kofuku": {
+   "en": "Shimohyogo Kofuku",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Shimohyogo Kofuku\" under 下兵庫こうふく on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: own E36 sign \"SHIMOHYOGO KOFUKU\" (https://commons.wikimedia.org/wiki/File:Shimohyogo-Kofuku_Station_260124_01.jpg, 2026-01-24) and neighbour label on Nishinagata-Yurinosato sign (https://commons.wikimedia.org/wiki/File:Nishinagata-Yurinosato_Station_Name_Sign.jpg, 2020-05-03)"
+  },
+  "n_shimoshii": {
+   "en": "Shimoshii",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Shimoshii\" under 下志比 on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; older own sign \"SHIMOSHII\" (https://commons.wikimedia.org/wiki/File:Simoshii-Station-Platform.JPG, 2009-03-29) agrees"
+  },
+  "n_taromaru_angelland": {
+   "en": "Taromaru Angelland",
+   "source": "https://www.echizen-tetudo.co.jp/_assets/img/routemap.svg",
+   "type": "company",
+   "note": "read \"Taromaru Angelland\" under 太郎丸エンゼルランド on the Echizen Railway route map (company SVG on echizen-tetudo.co.jp/route/, Last-Modified 2024-01-22, still served 2026-11-26); same text in the station page en-name (echizen-tetudo.co.jp/station/N.html, 2026-11-26) and schedule dropdown; sign agrees: own E33 sign \"TAROMARU ANGELLAND\" (https://commons.wikimedia.org/wiki/File:Echizen_railway_Taromaru-Angelland_station.jpg, photo 2017-06-11) and neighbour label \"TAROMARU ANGELLAND\" on Washizuka-Haribara station panel (https://commons.wikimedia.org/wiki/File:Washizuka-Haribara_Station_Name_Sign_2.jpg, 2020-05-03); the older Washizuka-Haribara standing sign shows \"TAROMARU ANGEL LAND\" (same day) - older form, not used"
+  },
+  "n_mikuni_jinja": {
+   "en": "Mikuni Jinjya",
+   "source": "https://commons.wikimedia.org/wiki/File:Mikuni-Jinja_Station_260124_01.jpg",
+   "type": "sign",
+   "note": "own E42 platform sign reads \"MIKUNI JINJYA\" (https://commons.wikimedia.org/wiki/File:Mikuni-Jinja_Station_260124_01.jpg, 2026-01-24); same on the station building plate (https://commons.wikimedia.org/wiki/File:Mikuni-Jinja_Station_260124_02.jpg) and as neighbour label on the Mikuni E43 sign (https://commons.wikimedia.org/wiki/File:Nameplate_of_Mikuni_Station_260124_01.jpg), all 2026-01-24; all caps -> first letter capital. CONFLICT: company route map (2024-01-22) and station page (2026) write \"Mikuni Jinja\"; sign photos are the newest dated evidence, odd spelling kept"
+  },
+  "n_amino": {
+   "en": "Amino",
+   "source": "https://trains.willer.co.jp/station/",
+   "type": "company",
+   "note": "Kyoto Tango Railway (WILLER TRAINS) company station list trains.willer.co.jp/station/ reads \"AMINO\" (all caps -> \"Amino\", read 2026-11-26); agrees with WILLER English timetable page https://willer-travel.com/en/train/tantetsu/aomatsu.html (\"Amino\"); no sign photo with romaji found on Commons (current Tantetsu signs print macrons, but this name has no long vowel)"
+  },
+  "n_kumihama": {
+   "en": "Kumihama",
+   "source": "https://trains.willer.co.jp/station/",
+   "type": "company",
+   "note": "Kyoto Tango Railway (WILLER TRAINS) company station list trains.willer.co.jp/station/ reads \"KUMIHAMA\" (all caps -> \"Kumihama\", read 2026-11-26); agrees with WILLER English timetable page https://willer-travel.com/en/train/tantetsu/aomatsu.html (\"Kumihama\"); no sign photo with romaji found on Commons (current Tantetsu signs print macrons, but this name has no long vowel)"
+  },
+  "n_mineyama": {
+   "en": "Mineyama",
+   "source": "https://trains.willer.co.jp/station/",
+   "type": "company",
+   "note": "Kyoto Tango Railway (WILLER TRAINS) company station list trains.willer.co.jp/station/ reads \"MINEYAMA\" (all caps -> \"Mineyama\", read 2026-11-26); agrees with WILLER English timetable page https://willer-travel.com/en/train/tantetsu/aomatsu.html (\"Mineyama\"); no sign photo with romaji found on Commons (current Tantetsu signs print macrons, but this name has no long vowel)"
+  },
+  "n_yosano": {
+   "en": "Yosano",
+   "source": "https://trains.willer.co.jp/station/",
+   "type": "company",
+   "note": "Kyoto Tango Railway (WILLER TRAINS) company station list trains.willer.co.jp/station/ reads \"YOSANO\" (all caps -> \"Yosano\", read 2026-11-26); agrees with WILLER English timetable page https://willer-travel.com/en/train/tantetsu/aomatsu.html (\"Yosano\"); no sign photo with romaji found on Commons (current Tantetsu signs print macrons, but this name has no long vowel)"
+  },
+  "n_shisho": {
+   "en": "Shisho",
+   "source": "https://commons.wikimedia.org/wiki/File:Shisho_Station_2026-02_ac.jpg",
+   "type": "sign",
+   "note": "Tantetsu M9 platform sign reads \"Shisho\" (photo February 2026, crop evidence/signs/shisho_sign_2026-02_crop.png); agrees with WILLER English timetable page; the company station list writes \"SHISYO\" (page 2019-) - newest sign form taken"
+  },
+  "n_tango_yura": {
+   "en": "Tango-yura",
+   "source": "https://commons.wikimedia.org/wiki/File:Tango_Yura_Station_2020-05_ac_(1).jpg",
+   "type": "sign",
+   "note": "Tantetsu-style station entrance board reads \"丹後由良駅 / Tango-yura Station\" (photo May 2020; name part \"Tango-yura\", crop evidence/signs/tango_yura_entrance_2020-05_crop.png); agrees with WILLER English timetable page \"Tango-yura\"; company station list writes \"TANGOYURA\""
   }
  },
  "aliases": {
@@ -46185,14 +46218,12 @@
   "n_genbaku_dome_mae": "Genbaku Dome-mae (Atomic Bomb Dome)",
   "n_hasumachi": "Hasumachi (Baba Memorial Park mae)",
   "n_higashiyama_okaden_chuggington_museum": "Higashiyama",
-  "n_honmachi_6_chome": "Hommachi 6",
   "n_kansai_airport": "Kansai-Airport",
-  "n_kayamachi_6_chome": "Kayamachi 6",
   "n_keisei_owada": "Ōwada",
   "n_kenritsutaiikukanmae": "Kenritsutaiikukan-mae (Prefectural Gymnasium)",
   "n_kobe_airport": "Kobe Airport",
   "n_kokusai_center": "International Center",
-  "n_kyushu_railway_history_museum": "Kyusyu Tetsudo Kinenkan",
+  "n_kyushu_railway_history_museum": "Kyushu Railway History Museum",
   "n_nagasaki_ekimae": "Nagasaki Eki-Mae",
   "n_narita_airport_terminal_1_keisei": "Narita Airport",
   "n_nishitetsu_fukuoka": "Fukuoka (Tenjin)",
@@ -46228,6 +46259,11 @@
   "n_joetsu_kokusai_ski_jo_mae": "Joetsu International Skiing Ground",
   "n_torokko_hozukyo": "Hozukyō",
   "n_torokko_kameoka": "Kameoka",
-  "n_toyamaeki_toyama_chiho": "Toyama Sta."
+  "n_sakashitamachi": "Sakashiatamachi",
+  "n_eiheijiguchi": "Eiheiji Guchi",
+  "n_mikuni_jinja": "Mikuni Jinja",
+  "n_iwatakiguchi": "Iwataki-Guchi",
+  "n_kyotango_omiya": "Kyotango-Omiya",
+  "n_yuhigaura_kitsu_onsen": "Yuhigaura-Kitsu-Onsen"
  }
 }

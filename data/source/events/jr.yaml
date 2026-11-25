@@ -46,6 +46,8 @@
 - {"date": "1962-04-XX", "type": "close_stop", "route": "r_hakodate_main_line", "node": "n_koshiji_hakodate", "source": "wikipedia"}
 - {"date": "1951-06-XX", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_koshiji_hakodate", "source": "wikipedia"}
 - {"date": "1905-01-29", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_ginzan", "source": "wikipedia"}
+- {"date": "1951-08-11", "type": "close_stop", "route": "r_hakodate_main_line", "node": "n_ohamanaka", "source": "wikipedia"}
+- {"date": "1951-07-15", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_ohamanaka", "source": "wikipedia"}
 - {"date": "1910-11-21", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_otaru_chikko", "source": "wikipedia"}
 - {"date": "2006-03-18", "type": "close_stop", "route": "r_hakodate_main_line", "node": "n_hariusu", "source": "wikipedia"}
 - {"date": "1905-10-08", "type": "open_stop", "route": "r_hakodate_main_line", "node": "n_hariusu", "source": "wikipedia"}

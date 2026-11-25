@@ -1088,5 +1088,6 @@
 "line_stop:l_kurobe_gorge_main_line|n_dashidaira": "黒部峡谷鉄道 関西電力関係者専用駅: 일반 승객이 타고 내린 적이 없어(사용자 결정 2026-11-24, stop_dates pass·근거 _근거_r5stn) 어느 계통에서도 정차가 아니라 공개 노드 밖(선로 위 점)으로 둔다",
 "node:n_koyadaira": "黒部峡谷鉄道 関西電力関係者専用駅: 일반 승객이 타고 내린 적이 없어(사용자 결정 2026-11-24, stop_dates pass·근거 _근거_r5stn) 어느 계통에서도 정차가 아니라 공개 노드 밖(선로 위 점)으로 둔다",
 "line_stop:l_kurobe_gorge_main_line|n_koyadaira": "黒部峡谷鉄道 関西電力関係者専用駅: 일반 승객이 타고 내린 적이 없어(사용자 결정 2026-11-24, stop_dates pass·근거 _근거_r5stn) 어느 계통에서도 정차가 아니라 공개 노드 밖(선로 위 점)으로 둔다",
- "line_stop:l_shinjuku_line_toei|n_shinjuku_toei": "都営新宿線 新宿 정차를 新線新宿 노드(n_shinjuku_keio_new_line)로 옮김. 5회차 사용자 결정(2026-11-24), docs/research/audit5-keio-shinsen-design.md"
+ "line_stop:l_shinjuku_line_toei|n_shinjuku_toei": "都営新宿線 新宿 정차를 新線新宿 노드(n_shinjuku_keio_new_line)로 옮김. 5회차 사용자 결정(2026-11-24), docs/research/audit5-keio-shinsen-design.md",
+ "line_stop:l_shindaikumachi_line|n_omoteteppomachi": "新大工町線은 表鉄砲町이 아니라 그 북쪽 0.3 km 분기점(分岐点（表鉄砲町）)에서 갈린다(railforum 昭和 쪽147 「分岐点 4.8 km」, 설계 docs/research/audit5-omoteteppomachi-junction-design.md). 表鉄砲町 정류장은 秋田市内線 역 (5회차 2026-11-26)"
 }

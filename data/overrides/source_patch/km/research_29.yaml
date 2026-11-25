@@ -1,11 +1,11 @@
 # 선형 없는 29구간 조사(docs/research/no-geometry-29-2026-11-05.md)의 km 보정. 추정 km 묶음이 첫 칸에 몰리고 뒤 칸이 0이던 것
 # 会津線 上三寄(芦ノ牧温泉)–湯野上 옛 선로 12.2km를 N05 옛 선(1953–79) 길이 비례로 나눔 (会津鉄道会津線 revid 108995651)
-- {"patch": "replace", "edge": "e_005549", "km": 6.0, "source": "wikipedia:108995651+n05"}
-- {"patch": "replace", "edge": "e_005550", "km": 1.9, "source": "wikipedia:108995651+n05"}
-- {"patch": "replace", "edge": "e_005551", "km": 4.3, "source": "wikipedia:108995651+n05"}
+- {"patch": "replace", "edge": "e_005550", "km": 6.0, "source": "wikipedia:108995651+n05"}
+- {"patch": "replace", "edge": "e_005551", "km": 1.9, "source": "wikipedia:108995651+n05"}
+- {"patch": "replace", "edge": "e_005552", "km": 4.3, "source": "wikipedia:108995651+n05"}
 # 士別軌道 上士別–二十二線–二十七線–奥士別 9.5km (士別軌道 revid 110659295의 역별 km)
-- {"patch": "replace", "edge": "e_012624", "km": 3.9, "source": "wikipedia:110659295"}
-- {"patch": "replace", "edge": "e_012625", "km": 2.9, "source": "wikipedia:110659295"}
-- {"patch": "replace", "edge": "e_012626", "km": 2.7, "source": "wikipedia:110659295"}
+- {"patch": "replace", "edge": "e_012625", "km": 3.9, "source": "wikipedia:110659295"}
+- {"patch": "replace", "edge": "e_012626", "km": 2.9, "source": "wikipedia:110659295"}
+- {"patch": "replace", "edge": "e_012627", "km": 2.7, "source": "wikipedia:110659295"}
 # 近鉄八王子線 西日野 1976 이전 거리 0.1km (西日野駅 revid 109414905, 近鉄100年のあゆみ p.688)
-- {"patch": "replace", "edge": "e_009414", "km": 0.1, "source": "wikipedia:109414905"}
+- {"patch": "replace", "edge": "e_009415", "km": 0.1, "source": "wikipedia:109414905"}

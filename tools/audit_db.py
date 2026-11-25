@@ -48,7 +48,7 @@ for q,t,k in [('select from_node from edge','node','edge.from'),('select to_node
               ('select other_node from route_link','node','link.onode'),('select next_stop_node from route_link','node','link.next'),('select terminal_node from route_link','node','link.term'),
               ('select node_id from hub_member','node','hub'),('select node_id from junction','node','junction.node'),('select line_id from junction','line','junction.line'),
               ('select other_line_id from junction','line','junction.other'),('select node_id from node_position','node','pos'),('select line_id from closed_section','line','closed.line'),
-              ('select line_id from archive_stop','line','arch.line'),('select line_id from archive_line','line','archl.line'),('select route_id from service_part','route','svc.route'),('select node_id from service_stop','node','svc.stop'),
+              ('select line_id from archive_stop','line','arch.line'),('select node_id from archive_stop','node','arch.node'),('select line_id from archive_line','line','archl.line'),('select route_id from service_part','route','svc.route'),('select node_id from service_stop','node','svc.stop'),
               ('select edge_id from denominator_unit','edge','unit.edge'),('select edge_id from edge_pref','edge','pref.edge'),('select edge_id from edge_link','edge','elink')]:ref(q,t,k)
 put('edge에 life 없음',[r[0] for r in m.execute('select id from edge where id not in (select edge_id from edge_life)')])
 put('edge에 km 없음',[r[0] for r in m.execute('select id from edge where id not in (select edge_id from edge_km)')])

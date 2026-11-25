@@ -1106,7 +1106,10 @@ class _ArchiveTile extends ConsumerWidget {
     final name = state.archiveNames[stop.id] ?? stop.id;
     final aside = state.archiveAside[stop.id];
     final year = context.t.session.state.until(year: stop.closedYear);
-    final message = context.t.session.archiveStop(name: name, year: stop.closedYear);
+    final now = state.archiveNow[stop.id];
+    final message = now == null
+        ? context.t.session.archiveStop(name: name, year: stop.closedYear)
+        : context.t.session.archiveStopNow(name: name, year: stop.closedYear, now: now);
     final km = stop.km;
     final style = closedNameStyle(text, tokens);
     return InkWell(

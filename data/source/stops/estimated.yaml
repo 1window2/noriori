@@ -214,6 +214,7 @@
 - {"route": "r_hagoromocho_line", "node": "n_yoshinocho_1_chome"}
 - {"route": "r_hagoromocho_line", "node": "n_yoshinocho_3_chome"}
 - {"route": "r_hakodate_main_line", "node": "n_koshiji_hakodate"}
+- {"route": "r_hakodate_main_line", "node": "n_ohamanaka"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_kaigancho"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_kamedacho"}
 - {"route": "r_hakodate_tram_main_line", "node": "n_onoshindo"}
