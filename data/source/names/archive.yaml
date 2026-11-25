@@ -938,9 +938,9 @@
 - {"entity_type": "archive", "id": "a_suzugamori", "lang": "ja", "text": "鈴ヶ森", "kana": "すずがもり", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_suzugamori", "lang": "ko", "text": "스즈가모리", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_suzugamori", "lang": "en", "text": "Suzugamori", "source": "rule"}
-- {"entity_type": "archive", "id": "a_kaigan", "lang": "ja", "text": "海岸", "kana": "かいがん", "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_kaigan", "lang": "ko", "text": "카이간", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_kaigan", "lang": "en", "text": "Kaigan", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kaigan", "lang": "ja", "text": "海岸", "kana": null, "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kaigan", "lang": "ko", "text": "海岸", "source": "ja_as_is", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kaigan", "lang": "en", "text": "海岸", "source": "ja_as_is"}
 - {"entity_type": "archive", "id": "a_oomoriyahata", "lang": "ja", "text": "大森八幡", "kana": "おおもりやはた", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_oomoriyahata", "lang": "ko", "text": "오모리야하타", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_oomoriyahata", "lang": "en", "text": "Omoriyahata", "source": "rule"}
@@ -1150,7 +1150,7 @@
 - {"entity_type": "archive", "id": "a_inarimae", "lang": "en", "text": "Inari-mae", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kooriguchi", "lang": "ja", "text": "小折口", "kana": "こおりぐち", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kooriguchi", "lang": "ko", "text": "코리구치", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_kooriguchi", "lang": "en", "text": "Koriguchi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kooriguchi", "lang": "en", "text": "Kooriguchi", "source": "rule"}
 - {"entity_type": "archive", "id": "a_miyaushiro", "lang": "ja", "text": "宮後", "kana": "みやうしろ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_miyaushiro", "lang": "ko", "text": "미야우시로", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_miyaushiro", "lang": "en", "text": "Miyaushiro", "source": "rule"}
@@ -1943,6 +1943,108 @@
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "ja", "text": "記念館前", "kana": "きねんかんまえ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "ko", "text": "키넨칸마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "en", "text": "Kinenkan-mae", "source": "rule"}
+- {"entity_type": "archive", "id": "a_toyosawa", "lang": "ja", "text": "豊沢", "kana": "とよさわ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_toyosawa", "lang": "ko", "text": "토요사와", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_toyosawa", "lang": "en", "text": "Toyosawa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shirokanesankouchou", "lang": "ja", "text": "白金三光町", "kana": "しろかねさんこうちょう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shirokanesankouchou", "lang": "ko", "text": "시로카네산코초", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shirokanesankouchou", "lang": "en", "text": "Shirokanesankocho", "source": "rule"}
+- {"entity_type": "archive", "id": "a_dateato", "lang": "ja", "text": "伊達跡", "kana": "だてあと", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_dateato", "lang": "ko", "text": "다테아토", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_dateato", "lang": "en", "text": "Dateato", "source": "rule"}
+- {"entity_type": "archive", "id": "a_ebisuchoujamaru", "lang": "ja", "text": "恵比寿長者丸", "kana": "えびすちょうじゃまる", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ebisuchoujamaru", "lang": "ko", "text": "에비스초자마루", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ebisuchoujamaru", "lang": "en", "text": "Ebisuchojamaru", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yaraishita", "lang": "ja", "text": "矢来下", "kana": "やらいした", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yaraishita", "lang": "ko", "text": "야라이시타", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_yaraishita", "lang": "en", "text": "Yaraishita", "source": "rule"}
+- {"entity_type": "archive", "id": "a_ginzanishirokuchoume", "lang": "ja", "text": "銀座西六丁目", "kana": "ぎんざにしろくちょうめ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ginzanishirokuchoume", "lang": "ko", "text": "긴자니시로쿠초메", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ginzanishirokuchoume", "lang": "en", "text": "Ginzanishi 6-chome", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shinbashiekikitaguchi", "lang": "ja", "text": "新橋駅北口", "kana": "しんばしえききたぐち", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shinbashiekikitaguchi", "lang": "ko", "text": "신바시에키키타구치", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shinbashiekikitaguchi", "lang": "en", "text": "Shimbashi-eki-kitaguchi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_hisamatsuchou", "lang": "ja", "text": "久松町", "kana": "ひさまつちょう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_hisamatsuchou", "lang": "ko", "text": "히사마츠초", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_hisamatsuchou", "lang": "en", "text": "Hisamatsucho", "source": "rule"}
+- {"entity_type": "archive", "id": "a_hamachougashi", "lang": "ja", "text": "浜町河岸", "kana": "はまちょうがし", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_hamachougashi", "lang": "ko", "text": "하마초가시", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_hamachougashi", "lang": "en", "text": "Hamachogashi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_ryougoku", "lang": "ja", "text": "両国", "kana": "りょうごく", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ryougoku", "lang": "ko", "text": "료고쿠", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ryougoku", "lang": "en", "text": "Ryogoku", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nishikichousanchoume", "lang": "ja", "text": "錦町三丁目", "kana": "にしきちょうさんちょうめ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nishikichousanchoume", "lang": "ko", "text": "니시키초산초메", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_nishikichousanchoume", "lang": "en", "text": "Nishikicho 3-chome", "source": "rule"}
+- {"entity_type": "archive", "id": "a_surugadaishita", "lang": "ja", "text": "駿河台下", "kana": "するがだいした", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_surugadaishita", "lang": "ko", "text": "스루가다이시타", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_surugadaishita", "lang": "en", "text": "Surugadaishita", "source": "rule"}
+- {"entity_type": "archive", "id": "a_surugadaiitchoume", "lang": "ja", "text": "駿河台一丁目", "kana": "するがだいいっちょうめ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_surugadaiitchoume", "lang": "ko", "text": "스루가다이잇초메", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_surugadaiitchoume", "lang": "en", "text": "Surugadai 1-chome", "source": "rule"}
+- {"entity_type": "archive", "id": "a_ochanomizu", "lang": "ja", "text": "御茶ノ水", "kana": "おちゃのみず", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ochanomizu", "lang": "ko", "text": "오차노미즈", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ochanomizu", "lang": "en", "text": "Ochanomizu", "source": "rule"}
+- {"entity_type": "archive", "id": "a_doshuubashi", "lang": "ja", "text": "土州橋", "kana": "どしゅうばし", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_doshuubashi", "lang": "ko", "text": "도슈바시", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_doshuubashi", "lang": "en", "text": "Doshubashi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shibauraitchoume", "lang": "ja", "text": "芝浦一丁目", "kana": "しばうらいっちょうめ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shibauraitchoume", "lang": "ko", "text": "시바우라잇초메", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shibauraitchoume", "lang": "en", "text": "Shibaura 1-chome", "source": "rule"}
+- {"entity_type": "archive", "id": "a_takeshibabashi", "lang": "ja", "text": "竹芝橋", "kana": "たけしばばし", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_takeshibabashi", "lang": "ko", "text": "타케시바바시", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_takeshibabashi", "lang": "en", "text": "Takeshibabashi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shibauranichoume", "lang": "ja", "text": "芝浦二丁目", "kana": "しばうらにちょうめ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shibauranichoume", "lang": "ko", "text": "시바우라니초메", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shibauranichoume", "lang": "en", "text": "Shibaura 2-chome", "source": "rule"}
+- {"entity_type": "archive", "id": "a_hanaoka", "lang": "ja", "text": "花岡", "kana": "はなおか", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_hanaoka", "lang": "ko", "text": "하나오카", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_hanaoka", "lang": "en", "text": "Hanaoka", "source": "rule"}
+- {"entity_type": "archive", "id": "a_tokuwa", "lang": "ja", "text": "徳和", "kana": "とくわ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_tokuwa", "lang": "ko", "text": "토쿠와", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_tokuwa", "lang": "en", "text": "Tokuwa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kamikushida", "lang": "ja", "text": "上櫛田", "kana": "かみくしだ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kamikushida", "lang": "ko", "text": "카미쿠시다", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kamikushida", "lang": "en", "text": "Kamikushida", "source": "rule"}
+- {"entity_type": "archive", "id": "a_koishiro", "lang": "ja", "text": "漕代", "kana": "こいしろ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_koishiro", "lang": "ko", "text": "코이시로", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_koishiro", "lang": "en", "text": "Koishiro", "source": "rule"}
+- {"entity_type": "archive", "id": "a_minamisaikuu", "lang": "ja", "text": "南斎宮", "kana": "みなみさいくう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_minamisaikuu", "lang": "ko", "text": "미나미사이쿠", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_minamisaikuu", "lang": "en", "text": "Minamisaiku", "source": "rule"}
+- {"entity_type": "archive", "id": "a_minamimyoujou", "lang": "ja", "text": "南明星", "kana": "みなみみょうじょう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_minamimyoujou", "lang": "ko", "text": "미나미묘조", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_minamimyoujou", "lang": "en", "text": "Minamimyojo", "source": "rule"}
+- {"entity_type": "archive", "id": "a_isearita", "lang": "ja", "text": "伊勢有田", "kana": "いせありた", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_isearita", "lang": "ko", "text": "이세아리타", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_isearita", "lang": "en", "text": "Ise-Arita", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kawabata", "lang": "ja", "text": "川端", "kana": "かわばた", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kawabata", "lang": "ko", "text": "카와바타", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kawabata", "lang": "en", "text": "Kawabata", "source": "rule"}
+- {"entity_type": "archive", "id": "a_miyagawazutsumi", "lang": "ja", "text": "宮川堤", "kana": "みやがわづつみ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_miyagawazutsumi", "lang": "ko", "text": "미야가와즈츠미", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_miyagawazutsumi", "lang": "en", "text": "Miyagawazutsumi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yamadanishiguchi", "lang": "ja", "text": "山田西口", "kana": "やまだにしぐち", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yamadanishiguchi", "lang": "ko", "text": "야마다니시구치", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_yamadanishiguchi", "lang": "en", "text": "Yamadanishiguchi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_tokiwachou", "lang": "ja", "text": "常盤町", "kana": "ときわちょう", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_tokiwachou", "lang": "ko", "text": "토키와초", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_tokiwachou", "lang": "en", "text": "Tokiwacho", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shiroishi", "lang": "ja", "text": "白石", "kana": "しろいし", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shiroishi", "lang": "ko", "text": "시로이시", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shiroishi", "lang": "en", "text": "Shiroishi", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kaigan_arida_railway", "lang": "ja", "text": "海岸", "kana": "かいがん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kaigan_arida_railway", "lang": "ko", "text": "카이간", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kaigan_arida_railway", "lang": "en", "text": "Kaigan", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yuasa", "lang": "ja", "text": "湯浅", "kana": "ゆあさ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yuasa", "lang": "ko", "text": "유아사", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_yuasa", "lang": "en", "text": "Yuasa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_yoshikawa", "lang": "ja", "text": "吉川", "kana": "よしかわ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_yoshikawa", "lang": "ko", "text": "요시카와", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_yoshikawa", "lang": "en", "text": "Yoshikawa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_ikedaen", "lang": "ja", "text": "池田園", "kana": "いけだえん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ikedaen", "lang": "ko", "text": "이케다엔", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ikedaen", "lang": "en", "text": "Ikedaen", "source": "rule"}
 - {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "ja", "text": "橿原神宮前", "kana": "かしはらじんぐうまえ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "ko", "text": "카시하라진구마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kashiharajinguumae", "lang": "en", "text": "Kashiharajingu-mae", "source": "rule"}
@@ -1957,7 +2059,7 @@
 - {"entity_type": "archive", "id": "a_kaimonbashi", "lang": "en", "text": "Kaimombashi", "source": "rule"}
 - {"entity_type": "archive", "id": "a_yokooka", "lang": "ja", "text": "横岡", "kana": "よこおか", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_yokooka", "lang": "ko", "text": "요코카", "source": "estimated", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_yokooka", "lang": "en", "text": "Yokoka", "source": "estimated"}
+- {"entity_type": "archive", "id": "a_yokooka", "lang": "en", "text": "Yokooka", "source": "estimated"}
 - {"entity_type": "archive", "id": "a_hoshikawa", "lang": "ja", "text": "星川", "kana": "ほしかわ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_hoshikawa", "lang": "ko", "text": "호시카와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_hoshikawa", "lang": "en", "text": "Hoshikawa", "source": "rule"}
@@ -2444,6 +2546,18 @@
 - {"entity_type": "archive", "id": "a_kyuukaruizawa", "lang": "ja", "text": "旧軽井沢", "kana": "きゅうかるいざわ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kyuukaruizawa", "lang": "ko", "text": "큐카루이자와", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kyuukaruizawa", "lang": "en", "text": "Kyukaruizawa", "source": "rule"}
+- {"entity_type": "archive", "id": "a_hamacho_line", "lang": "ja", "text": "浜町線", "kana": "はまちょうせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_hamacho_line", "lang": "ko", "text": "하마초선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_hamacho_line", "lang": "en", "text": "Hamacho Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_nishikicho_line", "lang": "ja", "text": "錦町線", "kana": "にしきちょうせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_nishikicho_line", "lang": "ko", "text": "니시키초선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_nishikicho_line", "lang": "en", "text": "Nishikicho Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_ebisu_line", "lang": "ja", "text": "恵比寿線", "kana": "えびすせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_ebisu_line", "lang": "ko", "text": "에비스선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_ebisu_line", "lang": "en", "text": "Ebisu Line", "source": "rule"}
+- {"entity_type": "archive", "id": "a_shibaura_line", "lang": "ja", "text": "芝浦線", "kana": "しばうらせん", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_shibaura_line", "lang": "ko", "text": "시바우라선", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_shibaura_line", "lang": "en", "text": "Shibaura Line", "source": "rule"}
 - {"entity_type": "archive", "id": "a_misumi", "lang": "ja", "text": "三角", "kana": "みすみ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_misumi", "lang": "ko", "text": "미스미", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_misumi", "lang": "en", "text": "Misumi", "source": "rule"}

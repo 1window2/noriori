@@ -1698,7 +1698,7 @@
 - {"entity_type": "route", "id": "r_aterazawa_line", "lang": "en", "text": "Kita-Yamagata~Aterazawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_oga_line", "lang": "en", "text": "Oiwake~Oga", "source": "rule"}
 - {"entity_type": "route", "id": "r_gono_line", "lang": "en", "text": "Higashi-Noshiro~Kawabe", "source": "rule"}
-- {"entity_type": "route", "id": "r_tsugaru_line", "lang": "en", "text": "Aomori~Minmaya", "source": "rule"}
+- {"entity_type": "route", "id": "r_tsugaru_line", "lang": "en", "text": "Aomori~Mimmaya", "source": "rule"}
 - {"entity_type": "route", "id": "r_uetsu_main_line", "lang": "en", "text": "Niitsu~Akita", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakushin_line", "lang": "en", "text": "Niigata~Shibata", "source": "rule"}
 - {"entity_type": "route", "id": "r_hakushin_line_higashi_niigata_nuttari", "lang": "en", "text": "Nuttari~Niizaki", "source": "rule"}
@@ -2362,7 +2362,7 @@
 - {"entity_type": "route", "id": "r_myokennomori_cable", "lang": "en", "text": "Kurokawa~Cable Sanjo", "source": "rule"}
 - {"entity_type": "route", "id": "r_takachiho_line_takachiho", "lang": "en", "text": "Nobeoka~Takachiho", "source": "rule"}
 - {"entity_type": "route", "id": "r_tokadai_line", "lang": "en", "text": "Komaki~Tokadai-Higashi", "source": "rule"}
-- {"entity_type": "route", "id": "r_tateyama_tunnel_trolleybus", "lang": "en", "text": "Murodo~Daikambo", "source": "rule"}
+- {"entity_type": "route", "id": "r_tateyama_tunnel_trolleybus", "lang": "en", "text": "Murodo~Daikanbo", "source": "rule"}
 - {"entity_type": "route", "id": "r_ichijo_line", "lang": "en", "text": "Nishi yon chome~Maruyama-Koen", "source": "rule"}
 - {"entity_type": "route", "id": "r_ichijo_line_nishi_4_chome_ichijobashi", "lang": "en", "text": "Nishi yon chome~Ichijobashi", "source": "rule"}
 - {"entity_type": "route", "id": "r_tsugaru_railway_line", "lang": "en", "text": "Tsugaru-Goshogawara~Tugaru Nakasato", "source": "rule"}

@@ -1,0 +1,533 @@
+{
+ "설명": "공식 영어 이름(en_official.json)을 찾지 못한 역의 일본어 위키백과 역 문서 정보칸 로마자. 위키 가운데 일본어 위키가 최우선이다(사용자 결정 2026-11-25). 공식 다음, Wikidata 라벨·규칙보다 앞선다. 출처 표시는 wikipedia(공식 아님). 모두 대문자 표기만 첫 글자 대문자로 맞추고 장음 기호·하이픈은 그대로 둔다. 문서의 읽기가 DB 읽기와 같고 문서에 그 노선 이름이 나오는 행만 넣었다(이름만 같은 다른 역 문서는 뺐다). 지금 이름 행에만 건다. （旧） 노드의 「(old)」는 생성기가 붙이므로 표에는 적지 않는다",
+ "rows": {
+  "n_awaji_nihommatsu": {
+   "en": "Awaji-Nihonmatsu",
+   "ja": "淡路二本松",
+   "title": "淡路二本松駅",
+   "revid": "105596365",
+   "printed": "AWAJI-NIHONMATSU",
+   "note": "일본어 위키백과 「淡路二本松駅」 정보칸 로마자 'AWAJI-NIHONMATSU', 읽기 あわじにほんまつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_banba": {
+   "en": "Bamba",
+   "ja": "馬場",
+   "title": "馬場駅 (石川県)",
+   "revid": "101506517",
+   "printed": "Bamba",
+   "note": "일본어 위키백과 「馬場駅 (石川県)」 정보칸 로마자 'Bamba', 읽기 ばんば 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_daikanbo": {
+   "en": "Daikanbo",
+   "ja": "大観峰",
+   "title": "大観峰駅",
+   "revid": "111099651",
+   "printed": "Daikanbo",
+   "note": "일본어 위키백과 「大観峰駅」 정보칸 로마자 'Daikanbo', 읽기 だいかんぼう 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_embetsu": {
+   "en": "Embetsu",
+   "ja": "遠別",
+   "title": "遠別駅",
+   "revid": "109463688",
+   "printed": "Embetsu",
+   "note": "일본어 위키백과 「遠別駅」 정보칸 로마자 'Embetsu', 읽기 えんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_fujiedahommachi": {
+   "en": "Fujiedahommachi",
+   "ja": "藤枝本町",
+   "title": "藤枝本町駅",
+   "revid": "98271006",
+   "printed": "FUJIEDAHOMMACHI",
+   "note": "일본어 위키백과 「藤枝本町駅」 정보칸 로마자 'FUJIEDAHOMMACHI', 읽기 ふじえだほんまち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_gion_shinbashi_kita": {
+   "en": "Gion-shinbashi-kita",
+   "ja": "祇園新橋北",
+   "title": "祇園新橋北駅",
+   "revid": "110225348",
+   "printed": "Gion-shinbashi-kita",
+   "note": "일본어 위키백과 「祇園新橋北駅」 정보칸 로마자 'Gion-shinbashi-kita', 읽기 ぎおんしんばしきた 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_hachimanbaba": {
+   "en": "Hachimanbaba",
+   "ja": "八幡馬場",
+   "title": "八幡馬場駅",
+   "revid": "111683031",
+   "printed": "HACHIMANBABA",
+   "note": "일본어 위키백과 「八幡馬場駅」 정보칸 로마자 'HACHIMANBABA', 읽기 はちまんばば 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_hama_tombetsu": {
+   "en": "Hama-Tombetsu",
+   "ja": "浜頓別",
+   "title": "浜頓別駅",
+   "revid": "102555313",
+   "printed": "Hama-Tombetsu",
+   "note": "일본어 위키백과 「浜頓別駅」 정보칸 로마자 'Hama-Tombetsu', 읽기 はまとんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_harutakeshinmichi": {
+   "en": "Harutake-Shinmichi",
+   "ja": "春竹新道",
+   "title": "春竹新道駅",
+   "revid": "100249833",
+   "printed": "Harutake-Shinmichi",
+   "note": "일본어 위키백과 「春竹新道駅」 정보칸 로마자 'Harutake-Shinmichi', 읽기 はるたけしんみち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_hidaka_mombetsu": {
+   "en": "Hidaka-Mombetsu",
+   "ja": "日高門別",
+   "title": "日高門別駅",
+   "revid": "109535145",
+   "printed": "Hidaka-Mombetsu",
+   "note": "일본어 위키백과 「日高門別駅」 정보칸 로마자 'Hidaka-Mombetsu', 읽기 ひだかもんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_hombetsu": {
+   "en": "Hombetsu",
+   "ja": "本別",
+   "title": "本別駅",
+   "revid": "109414107",
+   "printed": "Hombetsu",
+   "note": "일본어 위키백과 「本別駅」 정보칸 로마자 'Hombetsu', 읽기 ほんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_hommachi_old": {
+   "en": "Hommachi",
+   "ja": "本町（旧）",
+   "title": "本町駅",
+   "revid": "111464056",
+   "printed": "Hommachi",
+   "note": "일본어 위키백과 「本町駅」 정보칸 로마자 'Hommachi', 읽기 ほんまち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_hommyojidori": {
+   "en": "Honmyouji-doori",
+   "ja": "本妙寺通",
+   "title": "本妙寺通駅",
+   "revid": "87568993",
+   "printed": "Honmyouji-doori",
+   "note": "일본어 위키백과 「本妙寺通駅」 정보칸 로마자 'Honmyouji-doori', 읽기 ほんみょうじどおり 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_honmutabe": {
+   "en": "Hon-Mutabe",
+   "ja": "本牟田部",
+   "title": "本牟田部駅",
+   "revid": "110336748",
+   "printed": "Hon-Mutabe",
+   "note": "일본어 위키백과 「本牟田部駅」 정보칸 로마자 'Hon-Mutabe', 읽기 ほんむたべ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_ikushumbetsu": {
+   "en": "Ikushumbetsu",
+   "ja": "幾春別",
+   "title": "幾春別駅",
+   "revid": "111414121",
+   "printed": "Ikushumbetsu",
+   "note": "일본어 위키백과 「幾春別駅」 정보칸 로마자 'Ikushumbetsu', 읽기 いくしゅんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_inbara": {
+   "en": "Imbara",
+   "ja": "因原",
+   "title": "因原駅",
+   "revid": "103623324",
+   "printed": "Imbara",
+   "note": "일본어 위키백과 「因原駅」 정보칸 로마자 'Imbara', 읽기 いんばら 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_ippommatsu": {
+   "en": "Ipponmatsu",
+   "ja": "一本松",
+   "title": "一本松駅 (兵庫県)",
+   "revid": "105596298",
+   "printed": "IPPONMATSU",
+   "note": "일본어 위키백과 「一本松駅 (兵庫県)」 정보칸 로마자 'IPPONMATSU', 읽기 いっぽんまつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_ippommatsu_nayoro_main": {
+   "en": "Ippommatsu",
+   "ja": "一本松",
+   "title": "一本松駅 (北海道紋別市)",
+   "revid": "111666177",
+   "printed": "Ippommatsu",
+   "note": "일본어 위키백과 「一本松駅 (北海道紋別市)」 정보칸 로마자 'Ippommatsu', 읽기 いっぽんまつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kambetsu": {
+   "en": "Kambetsu",
+   "ja": "寒別",
+   "title": "寒別駅",
+   "revid": "109817494",
+   "printed": "Kambetsu",
+   "note": "일본어 위키백과 「寒別駅」 정보칸 로마자 'Kambetsu', 읽기 かんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kami_sammiya": {
+   "en": "Kami-Sammiya",
+   "ja": "上三宮",
+   "title": "上三宮駅",
+   "revid": "109675900",
+   "printed": "Kami-Sammiya",
+   "note": "일본어 위키백과 「上三宮駅」 정보칸 로마자 'Kami-Sammiya', 읽기 かみさんみや 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kami_shumbetsu": {
+   "en": "Kami-Shumbetsu",
+   "ja": "上春別",
+   "title": "上春別駅",
+   "revid": "109450056",
+   "printed": "Kami-Shumbetsu",
+   "note": "일본어 위키백과 「上春別駅」 정보칸 로마자 'Kami-Shumbetsu', 읽기 かみしゅんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kami_tombetsu": {
+   "en": "Kami-Tombetsu",
+   "ja": "上頓別",
+   "title": "上頓別駅",
+   "revid": "109455587",
+   "printed": "Kami-Tombetsu",
+   "note": "일본어 위키백과 「上頓別駅」 정보칸 로마자 'Kami-Tombetsu', 읽기 かみとんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kamimanba": {
+   "en": "Kami-mamba",
+   "ja": "上万場",
+   "title": "上万場駅",
+   "revid": "110080334",
+   "printed": "Kami-mamba",
+   "note": "일본어 위키백과 「上万場駅」 정보칸 로마자 'Kami-mamba', 읽기 かみまんば 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kinpocho": {
+   "en": "Kimpōchō",
+   "ja": "金宝町",
+   "title": "金宝町駅",
+   "revid": "106532823",
+   "printed": "KIMPŌCHŌ",
+   "note": "일본어 위키백과 「金宝町駅」 정보칸 로마자 'KIMPŌCHŌ', 읽기 きんぽうちょう 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kita_kembuchi": {
+   "en": "Kita-Kembuchi",
+   "ja": "北剣淵",
+   "title": "北剣淵駅",
+   "revid": "111002157",
+   "printed": "Kita-Kembuchi",
+   "note": "일본어 위키백과 「北剣淵駅」 정보칸 로마자 'Kita-Kembuchi', 읽기 きたけんぶち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_konmachi": {
+   "en": "Kommachi",
+   "ja": "米町",
+   "title": "米町駅 (石川県)",
+   "revid": "101505544",
+   "printed": "Kommachi",
+   "note": "일본어 위키백과 「米町駅 (石川県)」 정보칸 로마자 'Kommachi', 읽기 こんまち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_konmatsu": {
+   "en": "Konmatsu",
+   "ja": "根松",
+   "title": "根松駅",
+   "revid": "108249267",
+   "printed": "KONMATSU",
+   "note": "일본어 위키백과 「根松駅」 정보칸 로마자 'KONMATSU', 읽기 こんまつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kotambetsu": {
+   "en": "Kotambetsu",
+   "ja": "古丹別",
+   "title": "古丹別駅",
+   "revid": "109463420",
+   "printed": "Kotambetsu",
+   "note": "일본어 위키백과 「古丹別駅」 정보칸 로마자 'Kotambetsu', 읽기 こたんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_kumbetsu": {
+   "en": "Kumbetsu",
+   "ja": "薫別",
+   "title": "薫別駅",
+   "revid": "109414417",
+   "printed": "Kumbetsu",
+   "note": "일본어 위키백과 「薫別駅」 정보칸 로마자 'Kumbetsu', 읽기 くんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_manba": {
+   "en": "Mamba",
+   "ja": "万場",
+   "title": "万場駅",
+   "revid": "110912041",
+   "printed": "Mamba",
+   "note": "일본어 위키백과 「万場駅」 정보칸 로마자 'Mamba', 읽기 まんば 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_minami_dambara": {
+   "en": "Minami-Dambara",
+   "ja": "南段原",
+   "title": "南段原駅",
+   "revid": "101599694",
+   "printed": "Minami-Dambara",
+   "note": "일본어 위키백과 「南段原駅」 정보칸 로마자 'Minami-Dambara', 읽기 みなみだんばら 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_minami_hombetsu": {
+   "en": "Minami-Hombetsu",
+   "ja": "南本別",
+   "title": "南本別駅",
+   "revid": "109413713",
+   "printed": "Minami-Hombetsu",
+   "note": "일본어 위키백과 「南本別駅」 정보칸 로마자 'Minami-Hombetsu', 읽기 みなみほんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_minmaya": {
+   "en": "Mimmaya",
+   "ja": "三厩",
+   "title": "三厩駅",
+   "revid": "111735204",
+   "printed": "Mimmaya",
+   "note": "일본어 위키백과 「三厩駅」 정보칸 로마자 'Mimmaya', 읽기 みんまや 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_mombetsu": {
+   "en": "Mombetsu",
+   "ja": "紋別",
+   "title": "紋別駅",
+   "revid": "109475104",
+   "printed": "Mombetsu",
+   "note": "일본어 위키백과 「紋別駅」 정보칸 로마자 'Mombetsu', 읽기 もんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_momponai": {
+   "en": "Momponai",
+   "ja": "紋穂内",
+   "title": "紋穂内駅",
+   "revid": "109450900",
+   "printed": "Momponai",
+   "note": "일본어 위키백과 「紋穂内駅」 정보칸 로마자 'Momponai', 읽기 もんぽない 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_moto_mombetsu": {
+   "en": "Moto-Mombetsu",
+   "ja": "元紋別",
+   "title": "元紋別駅",
+   "revid": "109475161",
+   "printed": "Moto-Mombetsu",
+   "note": "일본어 위키백과 「元紋別駅」 정보칸 로마자 'Moto-Mombetsu', 읽기 もともんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_nagasawashinmachi": {
+   "en": "Nagasawashinmachi",
+   "ja": "長沢新町",
+   "title": "長沢新町駅",
+   "revid": "101440898",
+   "printed": "NAGASAWASHINMACHI",
+   "note": "일본어 위키백과 「長沢新町駅」 정보칸 로마자 'NAGASAWASHINMACHI', 읽기 ながさわしんまち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_naka_tombetsu": {
+   "en": "Naka-Tombetsu",
+   "ja": "中頓別",
+   "title": "中頓別駅",
+   "revid": "110048114",
+   "printed": "Naka-Tombetsu",
+   "note": "일본어 위키백과 「中頓別駅」 정보칸 로마자 'Naka-Tombetsu', 읽기 なかとんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_namporo": {
+   "en": "Namporo",
+   "ja": "南幌",
+   "title": "南幌駅",
+   "revid": "98391838",
+   "printed": "Namporo",
+   "note": "일본어 위키백과 「南幌駅」 정보칸 로마자 'Namporo', 읽기 なんぽろ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_nishi_shumbetsu": {
+   "en": "Nishi-Shumbetsu",
+   "ja": "西春別",
+   "title": "西春別駅",
+   "revid": "110085865",
+   "printed": "Nishi-Shumbetsu",
+   "note": "일본어 위키백과 「西春別駅」 정보칸 로마자 'Nishi-Shumbetsu', 읽기 にししゅんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_okambara": {
+   "en": "Ōkambara",
+   "ja": "大蒲原",
+   "title": "大蒲原駅",
+   "revid": "110092809",
+   "printed": "Ōkambara",
+   "note": "일본어 위키백과 「大蒲原駅」 정보칸 로마자 'Ōkambara', 읽기 おおかんばら 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_onbara": {
+   "en": "Ombara",
+   "ja": "乙原",
+   "title": "乙原駅 (島根県)",
+   "revid": "105405447",
+   "printed": "Ombara",
+   "note": "일본어 위키백과 「乙原駅 (島根県)」 정보칸 로마자 'Ombara', 읽기 おんばら 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_sammoji": {
+   "en": "Sammoji",
+   "ja": "三文字",
+   "title": "三文字駅",
+   "revid": "111895513",
+   "printed": "Sammoji",
+   "note": "일본어 위키백과 「三文字駅」 정보칸 로마자 'Sammoji', 읽기 さんもじ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_sanbien": {
+   "en": "Sambien",
+   "ja": "三美園",
+   "title": "三美園駅",
+   "revid": "97272821",
+   "printed": "SAMBIEN",
+   "note": "일본어 위키백과 「三美園駅」 정보칸 로마자 'SAMBIEN', 읽기 さんびえん 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_sanda_honmachi": {
+   "en": "Sanda Hommachi",
+   "ja": "三田本町",
+   "title": "三田本町駅",
+   "revid": "110971917",
+   "printed": "SANDA HOMMACHI",
+   "note": "일본어 위키백과 「三田本町駅」 정보칸 로마자 'SANDA HOMMACHI', 읽기 さんだほんまち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_sanmon": {
+   "en": "Sammon",
+   "ja": "山門",
+   "title": "山門駅",
+   "revid": "110241738",
+   "printed": "Sammon",
+   "note": "일본어 위키백과 「山門駅」 정보칸 로마자 'Sammon', 읽기 さんもん 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_sanmyo": {
+   "en": "Sammyo",
+   "ja": "三明",
+   "title": "三明駅",
+   "revid": "106723588",
+   "printed": "Sammyo",
+   "note": "일본어 위키백과 「三明駅」 정보칸 로마자 'Sammyo', 읽기 さんみょう 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_sembiri": {
+   "en": "Sembiri",
+   "ja": "仙美里",
+   "title": "仙美里駅",
+   "revid": "109937048",
+   "printed": "Sembiri",
+   "note": "일본어 위키백과 「仙美里駅」 정보칸 로마자 'Sembiri', 읽기 せんびり 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_senmatsu": {
+   "en": "Semmatsu",
+   "ja": "千松",
+   "title": "千松駅",
+   "revid": "95654930",
+   "printed": "Semmatsu",
+   "note": "일본어 위키백과 「千松駅」 정보칸 로마자 'Semmatsu', 읽기 せんまつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_senpukuji": {
+   "en": "Senpukuji",
+   "ja": "泉福寺",
+   "title": "泉福寺駅",
+   "revid": "110445555",
+   "printed": "Senpukuji",
+   "note": "일본어 위키백과 「泉福寺駅」 정보칸 로마자 'Senpukuji', 읽기 せんぷくじ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shimbashi_yurikamome_old": {
+   "en": "Shimbashi",
+   "ja": "新橋（旧）",
+   "title": "新橋駅",
+   "revid": "111878806",
+   "printed": "Shimbashi",
+   "note": "일본어 위키백과 「新橋駅」 정보칸 로마자 'Shimbashi', 읽기 しんばし 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shimbo": {
+   "en": "Shimbo",
+   "ja": "新保",
+   "title": "新保駅",
+   "revid": "108425266",
+   "printed": "Shimbo",
+   "note": "일본어 위키백과 「新保駅」 정보칸 로마자 'Shimbo', 읽기 しんぼ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shimo_tombetsu": {
+   "en": "Shimo-Tombetsu",
+   "ja": "下頓別",
+   "title": "下頓別駅",
+   "revid": "109456129",
+   "printed": "Shimo-Tombetsu",
+   "note": "일본어 위키백과 「下頓別駅」 정보칸 로마자 'Shimo-Tombetsu', 읽기 しもとんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shinmei": {
+   "en": "Shimmei",
+   "ja": "神明",
+   "title": "神明駅 (北海道)",
+   "revid": "109380911",
+   "printed": "Shimmei",
+   "note": "일본어 위키백과 「神明駅 (北海道)」 정보칸 로마자 'Shimmei', 읽기 しんめい 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shinmei_fukui": {
+   "en": "Shimmei",
+   "ja": "神明",
+   "title": "神明駅 (福井県)",
+   "revid": "109939073",
+   "printed": "Shimmei",
+   "note": "일본어 위키백과 「神明駅 (福井県)」 정보칸 로마자 'Shimmei', 읽기 しんめい 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shinmeiguchi": {
+   "en": "Shinmeiguchi",
+   "ja": "神明口",
+   "title": "神明口駅",
+   "revid": "105608888",
+   "printed": "SHINMEIGUCHI",
+   "note": "일본어 위키백과 「神明口駅」 정보칸 로마자 'SHINMEIGUCHI', 읽기 しんめいぐち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shosambetsu": {
+   "en": "Shosambetsu",
+   "ja": "初山別",
+   "title": "初山別駅",
+   "revid": "109463553",
+   "printed": "Shosambetsu",
+   "note": "일본어 위키백과 「初山別駅」 정보칸 로마자 'Shosambetsu', 읽기 しょさんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shumbetsu": {
+   "en": "Shumbetsu",
+   "ja": "春別",
+   "title": "春別駅",
+   "revid": "109450328",
+   "printed": "Shumbetsu",
+   "note": "일본어 위키백과 「春別駅」 정보칸 로마자 'Shumbetsu', 읽기 しゅんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_shumonbetsu": {
+   "en": "Shumombetsu",
+   "ja": "朱文別",
+   "title": "朱文別駅",
+   "revid": "111717324",
+   "printed": "Shumombetsu",
+   "note": "일본어 위키백과 「朱文別駅」 정보칸 로마자 'Shumombetsu', 읽기 しゅもんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_tamba_hioki": {
+   "en": "Tamba-Hioki",
+   "ja": "丹波日置",
+   "title": "丹波日置駅",
+   "revid": "105434502",
+   "printed": "Tamba-Hioki",
+   "note": "일본어 위키백과 「丹波日置駅」 정보칸 로마자 'Tamba-Hioki', 읽기 たんばひおき 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_tambaguchi_old": {
+   "en": "Tambaguchi",
+   "ja": "丹波口（旧）",
+   "title": "丹波口駅",
+   "revid": "110987959",
+   "printed": "Tambaguchi",
+   "note": "일본어 위키백과 「丹波口駅」 정보칸 로마자 'Tambaguchi', 읽기 たんばぐち 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_tampi": {
+   "en": "Tampi",
+   "ja": "丹比",
+   "title": "丹比駅",
+   "revid": "98843705",
+   "printed": "Tampi",
+   "note": "일본어 위키백과 「丹比駅」 정보칸 로마자 'Tampi', 읽기 たんぴ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_temmabashi_keihan_old": {
+   "en": "Temmabashi",
+   "ja": "天満橋（旧）",
+   "title": "天満橋駅",
+   "revid": "111816523",
+   "printed": "Temmabashi",
+   "note": "일본어 위키백과 「天満橋駅」 정보칸 로마자 'Temmabashi', 읽기 てんまばし 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_tenmabayashi": {
+   "en": "Tenmabayashi",
+   "ja": "天間林",
+   "title": "天間林駅",
+   "revid": "109747638",
+   "printed": "TENMABAYASHI",
+   "note": "일본어 위키백과 「天間林駅」 정보칸 로마자 'TENMABAYASHI', 읽기 てんまばやし 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_tenmaku": {
+   "en": "Temmaku",
+   "ja": "天幕",
+   "title": "天幕駅",
+   "revid": "109834801",
+   "printed": "Temmaku",
+   "note": "일본어 위키백과 「天幕駅」 정보칸 로마자 'Temmaku', 읽기 てんまく 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  },
+  "n_uembetsu": {
+   "en": "Uembetsu",
+   "ja": "雨煙別",
+   "title": "雨煙別駅",
+   "revid": "111870241",
+   "printed": "Uembetsu",
+   "note": "일본어 위키백과 「雨煙別駅」 정보칸 로마자 'Uembetsu', 읽기 うえんべつ 일치, 노선 이름 확인. 공식 영어 이름을 못 찾은 역의 n/m(ん+b·p·m)·표기 근거(중간) (5회차 2026-11-25)"
+  }
+ }
+}
