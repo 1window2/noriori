@@ -1133,18 +1133,25 @@ class _ArchiveTile extends ConsumerWidget {
             child: Row(
               spacing: 10,
               children: [
+                // 일본어 이름·읽기는 기록 대상 역 줄과 같은 규칙: 이름 마지막 줄에 통째로 들어가면 바로 뒤, 넘치면 다음 줄 맨 앞부터 (사용자 결정 2026-11-16)
                 Expanded(
-                  child: Text.rich(
-                    TextSpan(children: [
-                      TextSpan(
-                        text: name,
-                        style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
-                        locale: japaneseOnlyLocale(name0: name),
-                      ),
-                      if (aside != null)
-                        TextSpan(text: '  ${kinsoku(aside)}', style: japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed)), locale: const Locale('ja')),
-                    ]),
-                  ),
+                  child: LayoutBuilder(builder: (context, box) {
+                    final nameSpan = TextSpan(
+                      text: japaneseOnlyLocale(name0: name) == null ? name : kinsoku(name),
+                      style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
+                      locale: japaneseOnlyLocale(name0: name),
+                    );
+                    final asideStyle = japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed));
+                    final beside = aside == null ||
+                        _fitsAfter(context, nameSpan, TextSpan(text: '  ${kinsoku(aside)}', style: asideStyle, locale: const Locale('ja')), box.maxWidth);
+                    return Text.rich(
+                      TextSpan(children: [
+                        nameSpan,
+                        if (aside != null)
+                          TextSpan(text: beside ? '  ${kinsoku(aside)}' : '\n${kinsoku(aside)}', style: asideStyle, locale: const Locale('ja')),
+                      ]),
+                    );
+                  }),
                 ),
                 Text(year, style: text.bodySmall?.copyWith(color: tokens.textClosed)),
                 Text(
