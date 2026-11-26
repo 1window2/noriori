@@ -1082,7 +1082,9 @@ class _EndTile extends ConsumerWidget {
                                 ],
                               ],
                             ),
-                            maxLines: 1,
+                            // 방면 역이 「Nishitetsu Tenjin-Omuta Line K…」로 잘리지 않게 네 줄까지 접는다. 긴 영어 노선 이름은 이름만으로 두 줄을 써서
+                            // 기본 글자에서도 두 줄로는 방면 역이 잘렸다 (Osaka City Tram Uehommachishimoajiharacho Line). 줄 높이는 최소 48에서 늘어난다 (기기 순회 2026-11-26·27)
+                            maxLines: 4,
                             overflow: TextOverflow.ellipsis,
                             // 말줄임한 글의 실제 폭만 차지한다. 부모 폭을 다 잡으면 꼬리(끝 역) 앞에 빈칸이 벌어진다
                             textWidthBasis: TextWidthBasis.longestLine,
@@ -1442,7 +1444,7 @@ TextStyle? fitLongWord(BuildContext context, String name, TextStyle? style, doub
   var longest = 0.0;
   for (final word in name.split(RegExp(r'[\s\-‐–]+'))) {
     if (word.length < 6) continue;
-    final painter = TextPainter(text: TextSpan(text: word, style: style), textDirection: TextDirection.ltr, textScaler: scaler, maxLines: 1)..layout();
+    final painter = TextPainter(text: TextSpan(text: word, style: style), textDirection: TextDirection.ltr, textScaler: scaler, locale: Localizations.maybeLocaleOf(context), maxLines: 1)..layout();
     if (painter.width > longest) longest = painter.width;
     painter.dispose();
   }

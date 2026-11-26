@@ -784,8 +784,8 @@ class Translations$session$ko {
 	/// ko: '그 날짜에는 운행이 중단된 구간입니다'
 	String get whySuspended => '그 날짜에는 운행이 중단된 구간입니다';
 
-	/// ko: '$names 방면'
-	String bound({required Object names}) => '${names} 방면';
+	/// ko: '$names 방⁠면'
+	String bound({required Object names}) => '${names} 방⁠면';
 
 	/// ko: '$year년 폐지'
 	String spokenClosed({required Object year}) => '${year}년 폐지';
@@ -2403,7 +2403,7 @@ extension on Translations {
 			'session.alightTitle' => '하차전용 역이에요',
 			'session.alightDetail' => '도착역으로만 고를 수 있어요',
 			'session.whySuspended' => '그 날짜에는 운행이 중단된 구간입니다',
-			'session.bound' => ({required Object names}) => '${names} 방면',
+			'session.bound' => ({required Object names}) => '${names} 방⁠면',
 			'session.spokenClosed' => ({required Object year}) => '${year}년 폐지',
 			'session.spokenSuspendedSince' => ({required Object year}) => '${year}년부터 운휴',
 			'session.pastKari' => '가',

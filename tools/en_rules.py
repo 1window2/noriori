@@ -25,6 +25,8 @@ def norm_official(s):
     낱말 가운데 대문자 장음 기호(KyŪkan). 장음 기호 자체는 공식대로 둔다"""
     s=''.join(unicodedata.normalize('NFKC',c) if c not in '・' and unicodedata.east_asian_width(c)=='F' else c for c in s)
     s=s.replace('’',"'").replace('‘',"'").replace('・','-').replace('·','-')
+    # 노선도 그림(svg)에서 줄바꿈된 이름은 하이픈 뒤에 빈칸이 남는다(「Higashi- Yodogawa」, 기기 순회 2026-11-26). 하이픈 둘레·겹친 빈칸을 없앤다
+    s=re.sub(r'\s*-\s*','-',re.sub(r'\s{2,}',' ',s.strip()))
     return re.sub('(?<=[a-zāīūēō])[ĀĪŪĒŌ]',lambda m:m.group(0).lower(),s)
 
 # 훈독 낱말의 첫 글자. 長音처럼 보여도 앞 글자와 다른 낱말이라 줄이면 안 된다 (丸ノ内, 松浦, 箕面)

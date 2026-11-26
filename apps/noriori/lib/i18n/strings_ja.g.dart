@@ -405,7 +405,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get alightTitle => '降車専用の駅です';
 	@override String get alightDetail => '降車駅としてのみ選べます';
 	@override String get whySuspended => 'その日付には運休中の区間です';
-	@override String bound({required Object names}) => '${names}方面';
+	@override String bound({required Object names}) => '${names}⁠方⁠面';
 	@override String spokenClosed({required Object year}) => '${year}年廃止';
 	@override String spokenSuspendedSince({required Object year}) => '${year}年から運休';
 	@override String get pastKari => '仮';
@@ -1379,7 +1379,7 @@ extension on TranslationsJa {
 			'session.alightTitle' => '降車専用の駅です',
 			'session.alightDetail' => '降車駅としてのみ選べます',
 			'session.whySuspended' => 'その日付には運休中の区間です',
-			'session.bound' => ({required Object names}) => '${names}方面',
+			'session.bound' => ({required Object names}) => '${names}⁠方⁠面',
 			'session.spokenClosed' => ({required Object year}) => '${year}年廃止',
 			'session.spokenSuspendedSince' => ({required Object year}) => '${year}年から運休',
 			'session.pastKari' => '仮',

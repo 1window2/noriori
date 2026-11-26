@@ -267,7 +267,7 @@
     "alightTitle": "降車専用の駅です",
     "alightDetail": "降車駅としてのみ選べます",
     "whySuspended": "その日付には運休中の区間です",
-    "bound": "$names方面",
+    "bound": "$names\u2060方\u2060面",
     "spokenClosed": "$year年廃止",
     "spokenSuspendedSince": "$year年から運休",
     "pastKari": "仮",

@@ -176,6 +176,8 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
           text: TextSpan(text: value, style: style),
           textDirection: TextDirection.ltr,
           textScaler: scaler,
+          // 글자 언어를 넣어야 화면과 같은 글꼴로 잰다. 없으면 일본어 한자가 좁은 대체 글꼴로 재져 칩이 안 내려가고 「JR東…」로 잘렸다 (기기 순회 2026-11-26)
+          locale: Localizations.maybeLocaleOf(context),
           maxLines: 1,
         )..layout())
         .width;
@@ -183,13 +185,14 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
     final chipWidth = measure(chipLabel, text.labelMedium) + 12 + 8 + 2 + 16 + 2;
     final titleStyle = Theme.of(context).appBarTheme.titleTextStyle ?? text.titleLarge;
     final titleRoom = MediaQuery.sizeOf(context).width - 56 - chipWidth - 48 * 2 - 4;
+    // km 글은 숫자와 단위를 붙여 둔다. 회사·km 줄이 두 줄로 접힐 때 「1.7」과 「km」가 갈리던 것 (기기 순회 2026-11-27)
     final kmText = lineScore == null || !lineScore.started
-        ? '${kmLabel(lineMeters)} km'
+        ? '${kmLabel(lineMeters)}\u00a0km'
         : t.progress(
             num: kmLabel(lineScore.numMeters),
             den: kmLabel(lineScore.denMeters),
             percent: percentLabel(lineScore),
-          );
+          ).replaceAll(' ', '\u00a0');
     // 제목뿐 아니라 회사·km 줄이 칩 옆에 다 들어가지 않아도 칩을 내린다. 회사 이름이 「JR東…」로 잘리던 것 (기기 순회 2026-11-26)
     final chipDown = query == null &&
         (measure(book.lines[shownLine] ?? '', titleStyle) > titleRoom ||
@@ -197,9 +200,22 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
             measure(t.meta(operator: controller.operatorName, km: kmText), titleStyle?.merge(text.bodySmall) ?? text.bodySmall) + 6 > titleRoom);
     // 칩을 내렸으면 제목은 칩 자리까지 쓴다. 그래도 넘치면 두 줄로 접고 머리글을 키운다
     final titleFit = query != null
-        ? (lines: 1, toolbarHeight: null)
+        ? (lines: 1, toolbarHeight: null, style: titleStyle)
         : fitAppBarTitle(context, book.lines[shownLine] ?? '', titleStyle,
             chipDown ? MediaQuery.sizeOf(context).width - 56 - 48 * 2 - 4 : titleRoom);
+    // 칩을 내리고도 회사·km 줄이 제목 폭에 안 들어가면(영어 「Japanese National Railways · 751.0 km」, 큰 글자) 회사 이름을 말줄임하지 않고 두 줄로 접는다.
+    // 늘어난 줄 높이만큼 머리글을 키운다 (기기 순회 2026-11-26)
+    final metaText = t.meta(operator: controller.operatorName, km: kmText);
+    final metaRoom = chipDown ? MediaQuery.sizeOf(context).width - 56 - 48 * 2 - 4 : titleRoom;
+    final metaStyle = titleStyle?.merge(text.bodySmall) ?? text.bodySmall;
+    final metaWrap = query == null && measure(metaText, metaStyle) + 6 > metaRoom;
+    final metaExtra = !metaWrap
+        ? 0.0
+        : (TextPainter(text: TextSpan(text: metaText, style: metaStyle), textDirection: TextDirection.ltr, textScaler: scaler, locale: Localizations.maybeLocaleOf(context), maxLines: 2)
+                  ..layout(maxWidth: metaRoom))
+                .height -
+            (TextPainter(text: TextSpan(text: metaText, style: metaStyle), textDirection: TextDirection.ltr, textScaler: scaler, locale: Localizations.maybeLocaleOf(context), maxLines: 1)..layout()).height;
+    final toolbarHeight = titleFit.toolbarHeight == null && metaExtra == 0 ? null : (titleFit.toolbarHeight ?? kToolbarHeight) + metaExtra;
     final chipRowHeight = scaler.scale((text.labelMedium?.fontSize ?? 12) * 1.5) + 12 + 8;
     final dateChipWidget = SessionDateChip(label: chipLabel, onTap: () => _editDate(controller, raw));
     return PopScope(
@@ -212,7 +228,7 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
       child: Scaffold(
         appBar: AppBar(
           titleSpacing: 0,
-          toolbarHeight: titleFit.toolbarHeight,
+          toolbarHeight: toolbarHeight,
           // 노선 이름이 날짜 칩 옆에 다 들어가지 않으면(긴 영어 이름·큰 글자) 날짜 칩을 머리글 아래 줄로 내린다.
           // 들어가면 지금 배치 그대로다 (사용자 결정 2026-11-24 글자 크기 상한과 함께, 세 언어·글자 단계 시험)
           bottom: chipDown
@@ -236,9 +252,12 @@ class _RecordSessionScreenState extends ConsumerState<RecordSessionScreen> {
               : Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(book.lines[shownLine] ?? '', maxLines: titleFit.lines, overflow: TextOverflow.ellipsis),
+                    Text(book.lines[shownLine] ?? '', maxLines: titleFit.lines, overflow: TextOverflow.ellipsis, style: titleFit.style),
                     // 회사 이름이 길면 글자를 줄이지 않고 회사 이름만 말줄임한다. km·진행률은 끝까지 보인다.
                     // 통째로 줄이면 「Tokyo Metropolitan Bureau of Transportation」이 읽을 수 없게 작아졌다 (실화면 2026-11-19)
+                    if (metaWrap)
+                      Text(metaText, maxLines: 2, overflow: TextOverflow.ellipsis, style: text.bodySmall)
+                    else
                     Builder(builder: (context) {
                       final parts = t.meta(operator: '\u0000', km: kmText).split('\u0000');
                       // km 쪽은 줄 폭을 넘지 않게만 막고(아주 좁으면 그것도 말줄임), 남는 폭을 회사 이름이 쓴다

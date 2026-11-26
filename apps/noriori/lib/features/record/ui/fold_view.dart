@@ -451,9 +451,15 @@ class FoldHeadTile extends ConsumerWidget {
       '${state.nameOf(near.node)} › ${state.nameOf(far.node)}',
     ].join('  ');
     const centerY = 22.0;
-    // 같은 쪽 바깥에 본선의 분기·끝 이어짐 줄이 더 있을 때만 줄기를 잇는다. 접힌 선형 안의 줄은 따지지 않는다
+    // 같은 쪽 바깥에 같은 역·같은 방향의 분기·끝 이어짐 줄이 더 있을 때만 줄기를 잇는다. 접힌 선형 안의 줄은 따지지 않는다.
+    // 다른 역에 붙은 줄(아래 역 新得에 위로 붙는 石勝線)이 바로 다음에 와도 이으면, 머리 아래로 막대가 끊긴 채 남았다 (根室本線 落合, 기기 순회 2026-11-26)
     final outer = f.up ? prev : next;
-    final stacked = (outer is BranchLine || outer is EndLine) && !(layout?.ctx.containsKey(outer) ?? false);
+    final sameAnchor = switch (outer) {
+      BranchLine(:final at, :final up) => at.seq == f.anchor && up == f.up,
+      EndLine(:final at, :final up) => at.seq == f.anchor && up == f.up,
+      _ => false,
+    };
+    final stacked = sameAnchor && !(layout?.ctx.containsKey(outer) ?? false);
     return Semantics(
       button: true,
       expanded: open,

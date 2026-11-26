@@ -267,7 +267,7 @@
     "alightTitle": "하차전용 역이에요",
     "alightDetail": "도착역으로만 고를 수 있어요",
     "whySuspended": "그 날짜에는 운행이 중단된 구간입니다",
-    "bound": "$names 방면",
+    "bound": "$names\u00a0방\u2060면",
     "spokenClosed": "$year년 폐지",
     "spokenSuspendedSince": "$year년부터 운휴",
     "pastKari": "가",
