@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:noriori/features/record/ui/session_lines.dart' show fitLongWord;
+import 'package:noriori/app/widgets/long_word.dart';
 
 void main() {
   testWidgets('긴 로마자 낱말은 한 줄에 들도록 줄이고, 짧은 이름·한글은 그대로 둔다', (tester) async {

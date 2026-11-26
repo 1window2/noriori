@@ -11,6 +11,7 @@ import '../../../app/theme/tokens.dart';
 import '../../../app/widgets/app_bar_title.dart';
 import '../../../app/widgets/guarded_write.dart';
 import '../../../app/widgets/line_strip_bar.dart';
+import '../../../app/widgets/long_word.dart';
 import '../../../app/widgets/meter.dart';
 import '../../../app/widgets/pills.dart';
 import '../../../i18n/strings.g.dart';
@@ -18,7 +19,7 @@ import '../controller/line_detail_controller.dart';
 import '../controller/record_list_controller.dart';
 import '../controller/record_session_controller.dart';
 import 'line_stem.dart';
-import 'session_lines.dart' show closedNote, fitLongWord;
+import 'session_lines.dart' show closedNote;
 
 /// 노선 상세 (DESIGN §3.3, §8.2). 세로 노선도에서 그 자리에서 고친다.
 class LineDetailScreen extends ConsumerStatefulWidget {
@@ -491,7 +492,7 @@ class _StopRow extends StatelessWidget {
               children: [
                 Text(
                   name,
-                  // 긴 로마자 낱말은 낱말 가운데서 끊지 않게 줄인다 (session_lines.fitLongWord)
+                  // 긴 로마자 낱말은 낱말 가운데서 끊지 않게 줄인다 (fitLongWord)
                   style: fitLongWord(context, name, text.bodyLarge?.copyWith(color: stop.gone ? tokens.textClosed : tokens.text), box.maxWidth),
                 ),
                 for (final other in stop.others)
