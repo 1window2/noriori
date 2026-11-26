@@ -593,6 +593,49 @@ void main() {
     tester.platformDispatcher.clearTextScaleFactorTestValue();
   });
 
+  testWidgets('머리글의 노선 이름·회사 이름은 큰 글자에서도 잘리지 않는다 (山手線·秋田市電新大工町線, 기기 순회 2026-11-26)', skip: _skip != null, (tester) async {
+    for (final locale in AppLocale.values) {
+      for (final (line, route) in const [
+        ('l_yamanote_line', 'r_yamanote_freight_line'),
+        ('l_shindaikumachi_line', 'r_shindaikumachi_line'),
+        ('l_tokaido_main_line', null),
+        ('l_matsushimaminamiokajima_line', null),
+      ]) {
+        LocaleSettings.setLocaleSync(locale);
+        tester.view.physicalSize = const Size(402 * 3, 874 * 3);
+        tester.view.devicePixelRatio = 3;
+        tester.platformDispatcher.textScaleFactorTestValue = 1.4;
+        final container = ProviderContainer(overrides: rig.overrides(today: '2026-11-16', locale: locale));
+        final session = container.read(recordSessionProvider.notifier);
+        await tester.runAsync(() => session.open(lineId: line, routeId: route, dateUnknown: true));
+        final router = _router(const Text('처음'));
+        await tester.pumpWidget(_app(router, container, locale: locale));
+        await _frames(tester, 2);
+        unawaited(router.push<void>('/record/session?back=1'));
+        await _frames(tester, 12);
+        final bar = find.byType(AppBar).last;
+        final cut = [
+          for (final p in tester.renderObjectList<RenderParagraph>(find.descendant(of: bar, matching: find.byType(RichText))))
+            if (p.didExceedMaxLines) p.text.toPlainText(),
+        ];
+        // 시험 글꼴은 글자마다 1em이라 실제보다 훨씬 넓다. 그래서 「잘림이 없다」 대신 규칙을 본다:
+        // 제목·회사 줄이 잘렸으면 날짜 칩은 반드시 머리글 아래 줄로 내려가 있어야 한다(칩 옆에서 잘리는 일이 없다)
+        if (cut.isNotEmpty) {
+          final chip = tester.getRect(find.byType(SessionDateChip));
+          final title = tester.getRect(find.ancestor(of: find.text(cut.first), matching: find.byType(Column)).first);
+          expect(chip.top, greaterThanOrEqualTo(title.bottom - 1), reason: '$locale $line $cut');
+        }
+        expect(tester.takeException(), isNull);
+        await tester.pumpWidget(const SizedBox());
+        container.dispose();
+      }
+    }
+    await tester.pump(const Duration(seconds: 10));
+    LocaleSettings.setLocaleSync(AppLocale.ko);
+    tester.view.reset();
+    tester.platformDispatcher.clearTextScaleFactorTestValue();
+  });
+
   testWidgets('첫 역 앞의 열람 전용 역은 첫 역 위에 보인다 (志度線 瓦町 앞 中野町·藤塚·公園前, 10회차 G1 chugoku_shikoku_2-003)', skip: _skip != null, (tester) async {
     for (final locale in AppLocale.values) {
       LocaleSettings.setLocaleSync(locale);

@@ -221,8 +221,17 @@ void main() {
                   }
                   await _shot(tester, '${tag}_p${page.toString().padLeft(2, '0')}_tap$k', millis: 900);
                   ScaffoldMessenger.maybeOf(tester.element(find.byType(Scaffold).last))?.hideCurrentSnackBar();
-                  await tester.tapAt(const Offset(5, 400));
+                  // 말풍선은 머리글 제목을 눌러 닫는다. 목록 왼쪽 끝(5, 400)을 누르면 그 자리의 갈래 줄이 눌려 다른 노선으로 넘어갔다
+                  // (鹿児島本線이 山陽本線으로 넘어가 뒤쪽 쪽을 못 찍음, 기기 순회 2026-11-26)
+                  final bar = tester.getRect(find.byType(AppBar).last);
+                  await tester.tapAt(Offset(bar.left + 72, bar.top + bar.height / 2));
                   await tester.pump(const Duration(milliseconds: 400));
+                  if (container.read(recordSessionProvider).depth > 0) {
+                    // ignore: avoid_print
+                    print('SWEEP_JUMPED:$tag');
+                    await session.jumpBack();
+                    await tester.pump(const Duration(milliseconds: 600));
+                  }
                 }
               });
         router.pop();

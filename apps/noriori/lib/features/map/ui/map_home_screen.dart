@@ -13,6 +13,7 @@ import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
 import '../../../app/widgets/pills.dart';
 import '../../../i18n/strings.g.dart';
+import '../fit_camera.dart';
 import '../map_style.dart';
 
 /// 탑승 칠하기 (ARCHITECTURE §2.6 후보 A). 방식이 바뀌어도 화면은 이 뒤를 모른다.
@@ -248,7 +249,9 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     for (final suffix in _suffixes) {
       await map.setFilter('$railLayer$suffix', railFilter(closed: false, only: solo?.edges, year: year));
       await map.setFilter('$railClosedLayer$suffix', railFilter(closed: true, only: solo?.edges, year: year));
+      await map.setFilter('$railSoloLayer$suffix', solo == null ? const ['==', ['get', 'n'], -1] : railFilter(closed: false, only: solo.edges, year: year));
       await map.setLayerVisibility('$railLayer$suffix', !_onlyRidden);
+      await map.setLayerVisibility('$railSoloLayer$suffix', solo != null && !_onlyRidden);
       await map.setLayerVisibility('$railClosedLayer$suffix', showClosed && !_onlyRidden);
       await map.setLayerVisibility('$riddenClosedLayer$suffix', showClosed);
       await map.setLayerVisibility('$stationClosedLayer$suffix', showClosed);
@@ -377,24 +380,43 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
   /// 마지막으로 화면을 맞춘 단독 보기 노선.
   String? _fittedLine;
 
-  /// 단독 보기를 켜면 그 노선에 맞춘다.
+  /// 지도 위 검색창·칩 묶음. 단독 보기를 맞출 때 그 아래부터 쓴다
+  final _overlayKey = GlobalKey();
+
+  /// 지금 지도 크기와, 단독 보기를 맞출 때의 지도 크기. 다르면 다시 맞춘다
+  Size? _mapSize;
+  Size? _fitSize;
+
+  /// 검색창·칩 묶음 아래 끝(지도 위쪽에서 잰 높이). 아직 그려지지 않았으면 안전 여백과 고정 높이로 어림한다
+  double _overlayBottom() {
+    final box = _overlayKey.currentContext?.findRenderObject() as RenderBox?;
+    final stack = context.findRenderObject() as RenderBox?;
+    if (box == null || stack == null || !box.hasSize || !box.attached) return MediaQuery.paddingOf(context).top + 160;
+    return box.localToGlobal(Offset(0, box.size.height), ancestor: stack).dy;
+  }
+
+  /// 단독 보기를 켜면 그 노선에 맞춘다. 위쪽은 검색창·칩·단독 칩 아래, 아래쪽은 시트와 전국 보기 단추 위다.
+  /// 고정 여백(위 160)은 큰 글자에서 칩 묶음보다 작아 끝 역이 단독 칩 밑에 숨었고, 지도가 다 자리 잡기 전에 맞추면
+  /// 남쪽 끝이 시트 밑으로 빠졌다 (기기 순회 2026-11-26 大阪市電東野田沢上江町線)
   Future<void> _fitLine(SoloLine solo) async {
     final box = await ref.read(packReaderProvider).boundsOf(solo.nodes);
     if (box == null || !mounted) return;
-    final padding = MediaQuery.paddingOf(context);
-    await _map?.moveCamera(
-      CameraUpdate.newLatLngBounds(
-        LatLngBounds(
-          southwest: LatLng(box.south, box.west),
-          northeast: LatLng(box.north, box.east),
-        ),
-        left: 32,
-        right: 32,
-        top: padding.top + 160,
-        // 전국 보기 단추에 끝 역이 가리지 않게 띄운다
-        bottom: widget.sheetHeight + 88,
-      ),
+    final size = _mapSize ?? MediaQuery.sizeOf(context);
+    _fitSize = size;
+    final camera = fitCamera(
+      south: box.south,
+      west: box.west,
+      north: box.north,
+      east: box.east,
+      width: size.width,
+      height: size.height,
+      left: 32,
+      right: 32,
+      top: _overlayBottom() + 24,
+      // 전국 보기 단추에 끝 역이 가리지 않게 띄운다
+      bottom: widget.sheetHeight + 88,
     );
+    await _map?.moveCamera(CameraUpdate.newLatLngZoom(LatLng(camera.lat, camera.lon), camera.zoom));
   }
 
   /// 지도가 아직 준비되지 않았을 때 받은 역. 스타일이 다 올라오면 옮긴다
@@ -414,15 +436,21 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
 
   Future<void> _fitJapan() async {
     final padding = MediaQuery.paddingOf(context);
-    await _map?.moveCamera(
-      CameraUpdate.newLatLngBounds(
-        _japan,
-        left: 8,
-        right: 8,
-        top: padding.top + 96,
-        bottom: widget.sheetHeight + 8,
-      ),
+    final size = _mapSize ?? MediaQuery.sizeOf(context);
+    // 단독 보기와 같이 가운데·배율을 직접 구한다 (fitCamera)
+    final camera = fitCamera(
+      south: _japan.southwest.latitude,
+      west: _japan.southwest.longitude,
+      north: _japan.northeast.latitude,
+      east: _japan.northeast.longitude,
+      width: size.width,
+      height: size.height,
+      left: 8,
+      right: 8,
+      top: padding.top + 96,
+      bottom: widget.sheetHeight + 8,
     );
+    await _map?.moveCamera(CameraUpdate.newLatLngZoom(LatLng(camera.lat, camera.lon), camera.zoom));
   }
 
   void _toggle(void Function() change) {
@@ -457,7 +485,19 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     final score = ref.watch(scoreTableProvider(const BasisCurrent())).value?.total;
     final t = context.t.map;
     final sheet = widget.sheet;
-    return Stack(
+    return LayoutBuilder(builder: (context, constraints) {
+      final size = constraints.biggest;
+      if (size != _mapSize) {
+        _mapSize = size;
+        // 단독 보기를 맞춘 뒤 지도 크기가 바뀌었으면(화면 전환 중에 맞춘 경우) 새 크기로 다시 맞춘다
+        final solo = ref.read(soloLineProvider);
+        if (solo != null && _fittedLine != null && _fitSize != null && _fitSize != size) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) unawaited(_fitLine(solo));
+          });
+        }
+      }
+      return Stack(
       fit: StackFit.expand,
       children: [
         ColoredBox(color: tokens.land),
@@ -505,6 +545,8 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
             child: Column(
+              key: _overlayKey,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _SearchBar(label: t.search, score: score),
@@ -582,6 +624,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
         ?sheet,
       ],
     );
+    });
   }
 }
 

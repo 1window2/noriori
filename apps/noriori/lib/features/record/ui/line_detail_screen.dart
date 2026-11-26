@@ -8,6 +8,7 @@ import 'package:noriori_core/noriori_core.dart';
 import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
 import '../../../app/theme/tokens.dart';
+import '../../../app/widgets/app_bar_title.dart';
 import '../../../app/widgets/guarded_write.dart';
 import '../../../app/widgets/line_strip_bar.dart';
 import '../../../app/widgets/meter.dart';
@@ -186,9 +187,13 @@ class _LineDetailScreenState extends ConsumerState<LineDetailScreen> with Guarde
     );
     final lo = _dragFrom == null ? null : (_dragFrom! < (_dragTo ?? _dragFrom!) ? _dragFrom : _dragTo);
     final hi = _dragFrom == null ? null : (_dragFrom! < (_dragTo ?? _dragFrom!) ? _dragTo ?? _dragFrom : _dragFrom);
+    // 제목 폭: 뒤로 단추(56)와 제목 양옆 간격(16×2), 단추 둘(48×2)을 뺀 나머지
+    final titleFit = fitAppBarTitle(context, title, Theme.of(context).appBarTheme.titleTextStyle ?? Theme.of(context).textTheme.titleLarge,
+        MediaQuery.sizeOf(context).width - 56 - 16 * 2 - 48 * 2);
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        toolbarHeight: titleFit.toolbarHeight,
+        title: Text(title, maxLines: titleFit.lines, overflow: TextOverflow.ellipsis),
         actions: [
           IconButton(
             tooltip: t.soloMap,
@@ -489,7 +494,8 @@ class _StopRow extends StatelessWidget {
                   Consumer(
                     builder: (context, ref, _) => TextButton(
                       onPressed: () => onRoute(other),
-                      child: Text(t.joinsTo(name: ref.watch(nameBookProvider).routes[other] ?? other)),
+                      // 계통 이름의 「~」 뒤에서 줄을 바꿀 수 있게 한다. 영어 이름은 그 자리 말고는 끊을 곳이 없어 「Hamayoshid/a」처럼 낱말 가운데서 끊겼다 (기기 순회 2026-11-26)
+                      child: Text(t.joinsTo(name: (ref.watch(nameBookProvider).routes[other] ?? other).replaceAllMapped(RegExp('[~～〜]'), (m) => '${m[0]}\u200B'))),
                     ),
                   ),
               ],

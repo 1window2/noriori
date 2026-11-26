@@ -29,12 +29,13 @@ gn=dict(m.execute('select id,n from station_group'))
 at=collections.defaultdict(set)
 ends={}
 for e,a,b in m.execute('select id,from_node,to_node from edge'):at[a].add(e);at[b].add(e);ends[e]=(a,b)
+EDGE_ENDS=dict(ends)   # 아래 역 점 고리에서 ends 이름을 다른 뜻으로 다시 쓰므로 따로 둔다
 lines_of=collections.defaultdict(set)
 for l,e in m.execute('select distinct line_id,edge_id from edge_attr'):lines_of[e].add(l)
 SNAP_KM=1.0
 snap_moved=[]
 # 지도 렌더링 전수 점검 (build/map_audit.json). 선 위에 서지 못한 점과 크게 옮긴 점을 남긴다
-AUDIT={'station_off_line':[],'station_moved_far':[],'platform_off_line':[],'platform_moved':[],'hub_far':[]}
+AUDIT={'station_off_line':[],'station_moved_far':[],'platform_off_line':[],'platform_moved':[],'hub_far':[],'edge_end_far':[]}
 def nearest(lat,lon,coords):
     kx=math.cos(math.radians(lat))*111.32;ky=110.57;best=None
     for p,q in zip(coords,coords[1:]):
@@ -72,15 +73,36 @@ def feature(eid,num,g):
     p=dict(n=num,closed=int(vt!='ongoing'))
     if year(vf) is not None:p['fy']=year(vf)
     p['ty']=year(vt,1) if year(vt,1) is not None else 9999
-    return json.dumps(dict(type='Feature',tippecanoe=dict(layer='edge'),properties=p,geometry=dict(type='LineString',coordinates=g['coords'])),ensure_ascii=False)+'\n'
+    return json.dumps(dict(type='Feature',tippecanoe=dict(layer='edge'),properties=p,geometry=dict(type='LineString',coordinates=joined(eid,g['coords']))),ensure_ascii=False)+'\n'
+# 선 끝을 그 끝 역의 그린 점에 잇는다. 역 점은 여러 노선 가운데 한 선 위로 옮겨 그리므로, 다른 노선의 선이 그 역 앞에서 끝나면 끝이 허공에 뜬다
+# (名古屋市電明道町線: N05 선이 菊井町 45m 앞에서 끝남, 기기 순회 2026-11-26). 그린 점까지 곧게 이어 붙인다. 150m를 넘으면 잇지 않고 점검에 남긴다.
+# 그린 점은 역 점·승강장 점을 다 계산한 뒤에 정해지므로, 선은 그 뒤에 쓴다
+DRAWN={}     # 노드 -> 그 노드를 그린 점 [(노선 또는 None, (lat,lon))]
+JOIN_KM=0.15
+joined_n=[0]
+def joined(eid,coords):
+    if eid not in EDGE_ENDS or not DRAWN:return coords
+    out=list(coords)
+    for nd in EDGE_ENDS[eid]:
+        cs=DRAWN.get(nd)
+        if not cs:continue
+        own=[q for l_,q in cs if l_ in lines_of[eid]] or [q for l_,q in cs if l_ is None] or [q for _,q in cs]
+        # 선의 두 끝 가운데 이 노드에 가까운 끝
+        heads=[(apart((0,out[0][1],out[0][0]),(0,*q)),0,q) for q in own]+[(apart((0,out[-1][1],out[-1][0]),(0,*q)),-1,q) for q in own]
+        d,i,q=min(heads)
+        if d<0.003:continue
+        # 그 노드가 다른 자리에 그려진 경우(옮긴 역의 옛 노드가 지금 역 점으로 묶임: 川原湯温泉(旧))는 옛 선이 옛 자리에서 끝나는 것이 맞다. 잇지 않는다
+        if nd in pos and apart((0,*pos[nd]),(0,*q))>JOIN_KM:continue
+        if d>JOIN_KM:
+            AUDIT['edge_end_far'].append(dict(edge=eid,node=nd,gap_km=round(d,3)));continue
+        pt=[round(q[1],6),round(q[0],6)]
+        out=[pt]+out if i==0 else out+[pt]
+        joined_n[0]+=1
+    return out
 gj=os.path.join(BUILD,'rail.geojsonl')
 n=0
 osm_points=[]
 with open(gj,'w',encoding='utf-8') as f:
-    for eid,num in m.execute('select id,n from edge'):
-        g=geo.get(eid)
-        if not g:continue
-        f.write(feature(eid,num,g));n+=1
     # 지도 점은 역 묶음 단위다 (ARCHITECTURE §2.6). 묶음의 대표는 환승역을 먼저, 그다음 사업자 표의 순서다.
     # ID는 영어 이름이라 그 순서로 고르면 회사 이름의 알파벳 순이 된다
     oprank={o:i for i,(o,) in enumerate(m.execute('select id from operator order by rowid'))}
@@ -107,6 +129,8 @@ with open(gj,'w',encoding='utf-8') as f:
         for l in ('ja','ko','en'):
             if l in label[top]:p[l]=label[top][l]
         GPT[grp]=(lat,lon)
+        for x in members:
+            if x not in IN_SH:DRAWN.setdefault(x,[]).append((None,(lat,lon)))
         point=json.dumps(dict(type='Feature',tippecanoe=dict(layer='station',minzoom=8 if h else 10),properties=p,geometry=dict(type='Point',coordinates=[lon,lat])),ensure_ascii=False)+'\n'
         (osm_points.append(point) if on_osm else f.write(point))
     # 위치 미확인 표식. 기준 역과 방향은 빌드가 정한다 (ARCHITECTURE §2.6)
@@ -166,6 +190,8 @@ with open(gj,'w',encoding='utf-8') as f:
         hla,hlo,_=SH[h]
         if abs(hla-la)+abs(hlo-lo)>1e-6:
             f.write(json.dumps(dict(type='Feature',tippecanoe=dict(layer='spoke',minzoom=13),properties=dict(sh=h,closed=closed,nodes=','.join(sorted(set(nds))),**node_years(nds)),geometry=dict(type='LineString',coordinates=[[hlo,hla],[lo,la]])),ensure_ascii=False)+'\n')
+    for h,c,nd,ln in m.execute('select hub_id,cluster_id,node_id,line_id from station_platform'):
+        DRAWN.setdefault(nd,[]).append((ln,tuple(shut_of[(h,c)][:2])))
     hub_closed=collections.defaultdict(list)
     for (h,c),v in shut_of.items():hub_closed[h]+=v[3]
     rep_node={}
@@ -201,14 +227,17 @@ with open(gj,'w',encoding='utf-8') as f:
         (la1,lo1),(la2,lo2)=wpt[ka],wpt[kb]
         f.write(json.dumps(dict(type='Feature',tippecanoe=dict(layer='walk',minzoom=11),properties=dict(a=ka[1],b=kb[1],closed=int(shut),**({'fy':min(walk_y[(ka,kb)][0])} if all(walk_y[(ka,kb)][0]) else {}),ty=max(walk_y[(ka,kb)][1])),geometry=dict(type='LineString',coordinates=[[lo1,la1],[lo2,la2]])),ensure_ascii=False)+'\n')
     print('간접환승 선',len(walks),'끝난 것',sum(walks.values()))
+    for eid,num in m.execute('select id,n from edge'):
+        g=geo.get(eid)
+        if not g:continue
+        f.write(feature(eid,num,g));n+=1
+    print('선 끝 이음',joined_n[0],'멀어서 안 이음',len(AUDIT['edge_end_far']))
 print('환승역 통합 노드',len(SH),'승강장 노드',len(shut_of))
 # 묶음 중심이 그 역 선에서 멀면 연결선만 허공에 뜬다 (참고)
 for h,(la,lo,k) in SH.items():
     nds={x for (hh,_),v in shut_of.items() if hh==h for x in v[2]}
     ds=[nearest(la,lo,(geo.get(e) or osm[e])['coords'])[0] for x in nds for e in at[x] if e in geo or e in osm]
     if ds and min(ds)>0.15:AUDIT['hub_far'].append(dict(hub=h,nearest_km=round(min(ds),3)))
-json.dump(AUDIT,open(os.path.join(BUILD,'map_audit.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
-print('지도 점검',{k:len(v) for k,v in AUDIT.items()})
 print('역 점 옮김',len(snap_moved),'최대 %.0fm'%(max(snap_moved)*1000),'OSM 선 위',len(osm_points))
 out=os.path.join(BUILD,'rail.pmtiles')
 if os.path.exists(out):os.remove(out)
@@ -226,6 +255,9 @@ if osm:
         f.writelines(osm_points)
     subprocess.run(['tippecanoe','-q','-o','rail-osm.pmtiles','-Z3','-z14','--no-feature-limit','--no-tile-size-limit','-r1','-n','noriori rail osm','-A','© OpenStreetMap contributors','rail-osm.geojsonl'],check=True,cwd=BUILD,env=dict(os.environ,TIPPECANOE_MAX_THREADS='1'))
     os.remove(oj)
+# 선 끝 이음 점검은 OSM 선까지 쓴 뒤에 남긴다
+json.dump(AUDIT,open(os.path.join(BUILD,'map_audit.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
+print('지도 점검',{k:len(v) for k,v in AUDIT.items()})
 # 기본 배경은 앱에 넣는다. 인터넷이 없어도 일본 윤곽과 도도부현 경계가 보인다 (설계 §13). 원본은 tools/gen_base.sh
 BASE=os.path.join(ROOT,'data','base')
 bb=os.path.join(BUILD,'base.pmtiles')
