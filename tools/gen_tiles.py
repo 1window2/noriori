@@ -165,7 +165,7 @@ with open(gj,'w',encoding='utf-8') as f:
             f.write(json.dumps(dict(type='Feature',tippecanoe=dict(layer='platformmark',minzoom=13),properties=dict(node=x,closed=int(bool(e_ and e_!='9999'))),geometry=dict(type='Point',coordinates=[lo,la])),ensure_ascii=False)+'\n')
         hla,hlo,_=SH[h]
         if abs(hla-la)+abs(hlo-lo)>1e-6:
-            f.write(json.dumps(dict(type='Feature',tippecanoe=dict(layer='spoke',minzoom=13),properties=dict(sh=h,closed=closed,**node_years(nds)),geometry=dict(type='LineString',coordinates=[[hlo,hla],[lo,la]])),ensure_ascii=False)+'\n')
+            f.write(json.dumps(dict(type='Feature',tippecanoe=dict(layer='spoke',minzoom=13),properties=dict(sh=h,closed=closed,nodes=','.join(sorted(set(nds))),**node_years(nds)),geometry=dict(type='LineString',coordinates=[[hlo,hla],[lo,la]])),ensure_ascii=False)+'\n')
     hub_closed=collections.defaultdict(list)
     for (h,c),v in shut_of.items():hub_closed[h]+=v[3]
     rep_node={}

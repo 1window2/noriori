@@ -84,6 +84,14 @@ void _layoutCheck(WidgetTester tester, String name) {
       rect = rect.expandToInclude(b.toRect());
     }
     rect = rect.shift(origin);
+    // 스크롤 목록 안의 글은 그 목록 창 안에 보이는 부분만 본다(머리글 밑으로 지나간 줄은 가려져 있다)
+    for (RenderObject? x = r.parent; x != null; x = x.parent) {
+      if (x is RenderViewportBase && x.hasSize) {
+        rect = rect.intersect(x.localToGlobal(Offset.zero) & x.size);
+        break;
+      }
+    }
+    if (rect.width <= 0 || rect.height <= 0) continue;
     if (rect.bottom < 0 || rect.top > size.height) continue;
     boxes.add((r, rect, text));
     if (r.didExceedMaxLines) {
@@ -198,10 +206,16 @@ void main() {
                   ...find.byWidgetPredicate((w) => w.runtimeType.toString() == '_ArchiveTile').hitTestable().evaluate().take(2),
                   ...find.byType(SwitchbackMark).hitTestable().evaluate().take(2),
                 ];
-                for (final (k, e) in targets.indexed) {
-                  final key = '${e.widget.runtimeType}#${e.widget.hashCode}';
+                // 누르면 목록이 다시 그려져 앞서 찾은 요소가 사라진다. 누를 자리와 열쇠를 먼저 모두 정한다
+                final plan = <(String, Offset)>[
+                  for (final e in targets)
+                    if (e.mounted)
+                      ('${e.widget.runtimeType}@${(tester.getCenter(find.byElementPredicate((x) => identical(x, e))).dy + (_mainList(tester)?.position.pixels ?? 0)).round()}',
+                          tester.getCenter(find.byElementPredicate((x) => identical(x, e)))),
+                ];
+                for (final (k, (key, at)) in plan.indexed) {
                   if (!tapped.add(key)) continue;
-                  await tester.tapAt(tester.getCenter(find.byElementPredicate((x) => identical(x, e))));
+                  await tester.tapAt(at);
                   for (var i = 0; i < 4; i++) {
                     await tester.pump(const Duration(milliseconds: 150));
                   }

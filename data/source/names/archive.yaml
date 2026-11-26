@@ -1943,6 +1943,9 @@
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "ja", "text": "記念館前", "kana": "きねんかんまえ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "ko", "text": "키넨칸마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_kitagata_jono_nishi_nippon_kitagatashakomae", "lang": "en", "text": "Kinenkan-mae", "source": "rule"}
+- {"entity_type": "archive", "id": "a_kasumigaura", "lang": "ja", "text": "霞ヶ浦", "kana": "かすみがうら", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_kasumigaura", "lang": "ko", "text": "카스미가우라", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_kasumigaura", "lang": "en", "text": "Kasumigaura", "source": "rule"}
 - {"entity_type": "archive", "id": "a_toyosawa", "lang": "ja", "text": "豊沢", "kana": "とよさわ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_toyosawa", "lang": "ko", "text": "토요사와", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_toyosawa", "lang": "en", "text": "Toyosawa", "source": "rule"}

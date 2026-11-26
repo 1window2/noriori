@@ -70,10 +70,20 @@ List<Object> yearFilter(int year) => [
 /// 옛 철도망을 보면 그해에 있던 것만 남긴다 (사용자 지시 2026-11-16)
 const transferLayers = [spokeLayer, walkLayer, platformLayer, hubNodeLayer, hubNameLayer];
 
-List<Object> transferFilter({required bool showClosed, int? year}) => [
+/// [soloNodes]를 주면(노선 단독 보기) 그 노선의 노드가 든 환승역 점·승강장·연결선만 남기고, 간접 환승선(walk)은 끈다(walkLayer에서 [walk] 참).
+/// 단독 보기에서 다른 노선의 환승역 점과 주황 도보 연결이 남던 것 (赤羽線 지도의 王子·板橋 근처, 5회차 2026-11-26)
+List<Object> transferFilter({required bool showClosed, int? year, Set<String>? soloNodes, bool walk = false}) => [
       'all',
       if (!showClosed) ['==', ['get', 'closed'], 0],
       if (year != null) ...yearFilter(year),
+      if (soloNodes != null)
+        if (walk || soloNodes.isEmpty)
+          ['==', ['get', 'closed'], -1]
+        else
+          [
+            'any',
+            for (final n in soloNodes) ['in', ',$n,', ['concat', ',', ['coalesce', ['get', 'nodes'], ''], ',']],
+          ],
     ];
 
 /// 안 탄 선까지 그리는 층의 필터. [only]를 주면 그 구간만 남긴다 (노선 단독 보기).

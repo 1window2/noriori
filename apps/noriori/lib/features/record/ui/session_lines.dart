@@ -581,7 +581,16 @@ class _StopTile extends ConsumerWidget {
                       ),
                     if (state.stopsAway(row) case final away?)
                       side(t.away(n: away), text.bodySmall?.copyWith(color: tokens.textMuted)),
-                    if (note != null) side(note, text.bodySmall?.copyWith(color: tokens.textClosed)),
+                    // 상태 꼬리표는 이름 칸을 밀어내지 않는다. 폭이 모자라면 줄을 바꾼다(360 폭·큰 글자 영어 田端信号場, 5회차 2026-11-26)
+                    // (Flexible로 두면 꼬리표가 짧아도 이름 칸이 반으로 줄어 화면 폭의 3할로만 막는다)
+                    if (note != null)
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width * .3),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 3),
+                          child: Text(note, textAlign: TextAlign.end, style: text.bodySmall?.copyWith(color: tokens.textClosed)),
+                        ),
+                      ),
                     side(
                       km?.toStringAsFixed(1) ?? '?',
                       text.bodySmall?.copyWith(

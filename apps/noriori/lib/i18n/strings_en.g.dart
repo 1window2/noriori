@@ -439,7 +439,7 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String relocationOld({required Object km}) => 'Old alignment · ${km} km';
 	@override String relocationNew({required Object km}) => 'New alignment · ${km} km';
 	@override String get spokenOpen => 'open';
-	@override String get spokenPassing => 'no passenger service';
+	@override String get spokenPassing => 'No boarding';
 	@override String get spokenRidden => 'ridden';
 }
 
@@ -1433,7 +1433,7 @@ extension on TranslationsEn {
 			'session.relocationOld' => ({required Object km}) => 'Old alignment · ${km} km',
 			'session.relocationNew' => ({required Object km}) => 'New alignment · ${km} km',
 			'session.spokenOpen' => 'open',
-			'session.spokenPassing' => 'no passenger service',
+			'session.spokenPassing' => 'No boarding',
 			'session.spokenRidden' => 'ridden',
 			'data.osBackupLarge' => 'Your records are over 20 MB and may not fit in Android cloud backup. Choose a backup folder',
 			'data.title' => 'Backup and restore',

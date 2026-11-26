@@ -301,7 +301,7 @@
     "relocationOld": "Old alignment · $km km",
     "relocationNew": "New alignment · $km km",
     "spokenOpen": "open",
-    "spokenPassing": "no passenger service",
+    "spokenPassing": "No boarding",
     "spokenRidden": "ridden"
   },
   "data": {

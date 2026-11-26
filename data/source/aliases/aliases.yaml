@@ -967,6 +967,7 @@
 - {"entity_type": "node", "id": "n_ginan", "lang": "ja", "text": "境川", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_chajo", "lang": "ja", "text": "上川手", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_kano_meitetsu", "lang": "ja", "text": "安良田町", "kind": "old_title"}
+- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ja", "text": "長住町", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ja", "text": "新岐阜", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_horiuchi_koen", "lang": "ja", "text": "碧海堀内", "kind": "old_title"}
 - {"entity_type": "node", "id": "n_sakurai_meitetsu", "lang": "ja", "text": "碧海桜井", "kind": "old_title"}

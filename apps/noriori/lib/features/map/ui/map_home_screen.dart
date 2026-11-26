@@ -255,7 +255,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       await map.setLayerVisibility('$stationNameLayer$suffix', _showNames);
     }
     for (final id in transferLayers) {
-      await map.setFilter(id, transferFilter(showClosed: showClosed, year: year));
+      await map.setFilter(id, transferFilter(showClosed: showClosed, year: year, soloNodes: solo?.nodes, walk: id == walkLayer));
     }
     await _applyMarkers(map, solo, showClosed);
     await _applyHeat(map);

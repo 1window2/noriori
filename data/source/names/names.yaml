@@ -48930,9 +48930,10 @@
 - {"entity_type": "node", "id": "n_kano_meitetsu", "lang": "ja", "text": "安良田町", "source": "n05", "valid_to": "[1957-XX-XX..1958-XX-XX]", "kana": "あらたまち"}
 - {"entity_type": "node", "id": "n_kano_meitetsu", "lang": "ko", "text": "아라타마치", "source": "rule", "valid_to": "[1957-XX-XX..1958-XX-XX]", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kano_meitetsu", "lang": "en", "text": "Aratamachi", "source": "rule", "valid_to": "[1957-XX-XX..1958-XX-XX]"}
-- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ja", "text": "新岐阜", "source": "wikipedia", "valid_to": "2005-01-29", "kana": "しんぎふ"}
-- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ko", "text": "신기후", "source": "rule", "valid_to": "2005-01-29", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "en", "text": "Shingifu", "source": "rule", "valid_to": "2005-01-29"}
+- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ja", "text": "長住町", "source": "wikipedia", "valid_from": "1928-12-28", "valid_to": "1948-04-18"}
+- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ja", "text": "新岐阜", "source": "wikipedia", "valid_from": "1948-04-18", "valid_to": "2005-01-29", "kana": "しんぎふ"}
+- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "ko", "text": "신기후", "source": "rule", "valid_from": "1948-04-18", "valid_to": "2005-01-29", "checked": "2026-11-20"}
+- {"entity_type": "node", "id": "n_meitetsu_gifu", "lang": "en", "text": "Shingifu", "source": "rule", "valid_from": "1948-04-18", "valid_to": "2005-01-29"}
 - {"entity_type": "node", "id": "n_horiuchi_koen", "lang": "ja", "text": "碧海堀内", "source": "wikipedia", "valid_to": "2008-06-29", "kana": "へきかいほりうち"}
 - {"entity_type": "node", "id": "n_horiuchi_koen", "lang": "ko", "text": "헤키카이호리우치", "source": "rule", "valid_to": "2008-06-29", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_horiuchi_koen", "lang": "en", "text": "Hekikaihoriuchi", "source": "rule", "valid_to": "2008-06-29"}
