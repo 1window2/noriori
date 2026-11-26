@@ -700,6 +700,12 @@ class Translations$session$ko {
 	/// ko: '$name: 폐역($year). 기록할 수 없는 옛 역입니다. 지금의 $now역 자리'
 	String archiveStopNow({required Object name, required Object year, required Object now}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다. 지금의 ${now}역 자리';
 
+	/// ko: '$name: 폐역. 기록할 수 없는 옛 역입니다'
+	String archiveStopNoYear({required Object name}) => '${name}: 폐역. 기록할 수 없는 옛 역입니다';
+
+	/// ko: '$name: 폐역. 기록할 수 없는 옛 역입니다. 지금의 $now역 자리'
+	String archiveStopNowNoYear({required Object name, required Object now}) => '${name}: 폐역. 기록할 수 없는 옛 역입니다. 지금의 ${now}역 자리';
+
 	/// ko: '$name: 기록할 수 없는 옛 노선입니다'
 	String archiveLine({required Object name}) => '${name}: 기록할 수 없는 옛 노선입니다';
 
@@ -2369,6 +2375,8 @@ extension on Translations {
 			'session.openedSection' => ({required Object year}) => '${year}년 개업',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다',
 			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name}: 폐역(${year}). 기록할 수 없는 옛 역입니다. 지금의 ${now}역 자리',
+			'session.archiveStopNoYear' => ({required Object name}) => '${name}: 폐역. 기록할 수 없는 옛 역입니다',
+			'session.archiveStopNowNoYear' => ({required Object name, required Object now}) => '${name}: 폐역. 기록할 수 없는 옛 역입니다. 지금의 ${now}역 자리',
 			'session.archiveLine' => ({required Object name}) => '${name}: 기록할 수 없는 옛 노선입니다',
 			'session.from' => '출발',
 			'session.to' => '도착',
@@ -2688,10 +2696,10 @@ extension on Translations {
 			'prefNames.4' => '아키타',
 			'prefNames.5' => '야마가타',
 			'prefNames.6' => '후쿠시마',
-			'prefNames.7' => '이바라키',
-			'prefNames.8' => '도치기',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.7' => '이바라키',
+			'prefNames.8' => '도치기',
 			'prefNames.9' => '군마',
 			'prefNames.10' => '사이타마',
 			'prefNames.11' => '치바',

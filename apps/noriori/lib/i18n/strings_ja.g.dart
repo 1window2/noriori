@@ -377,6 +377,8 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String openedSection({required Object year}) => '${year}年開業';
 	@override String archiveStop({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です';
 	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置';
+	@override String archiveStopNoYear({required Object name}) => '${name}（廃止）は記録対象外です';
+	@override String archiveStopNowNoYear({required Object name, required Object now}) => '${name}（廃止）は記録対象外です。現在の${now}駅の位置';
 	@override String archiveLine({required Object name}) => '${name}は記録対象外です';
 	@override String get from => '乗車';
 	@override String get to => '降車';
@@ -1349,6 +1351,8 @@ extension on TranslationsJa {
 			'session.openedSection' => ({required Object year}) => '${year}年開業',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です',
 			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置',
+			'session.archiveStopNoYear' => ({required Object name}) => '${name}（廃止）は記録対象外です',
+			'session.archiveStopNowNoYear' => ({required Object name, required Object now}) => '${name}（廃止）は記録対象外です。現在の${now}駅の位置',
 			'session.archiveLine' => ({required Object name}) => '${name}は記録対象外です',
 			'session.from' => '乗車',
 			'session.to' => '降車',
@@ -1668,10 +1672,10 @@ extension on TranslationsJa {
 			'prefNames.4' => '秋田',
 			'prefNames.5' => '山形',
 			'prefNames.6' => '福島',
-			'prefNames.7' => '茨城',
-			'prefNames.8' => '栃木',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.7' => '茨城',
+			'prefNames.8' => '栃木',
 			'prefNames.9' => '群馬',
 			'prefNames.10' => '埼玉',
 			'prefNames.11' => '千葉',

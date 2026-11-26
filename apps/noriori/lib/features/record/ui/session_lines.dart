@@ -379,14 +379,14 @@ class _StopTile extends ConsumerWidget {
     final temp = state.isTemporary;
     final fade = temp && tier3;
     final rowHeight = line.small ? 32.0 : (tier3 && !fade ? 40.0 : 48.0);
-    final style = fade
+    final baseStyle = fade
         ? text.titleMedium?.copyWith(fontWeight: FontWeight.w500, color: tokens.textMuted)
         : tier3
         ? closedNameStyle(text, tokens)
         : text.titleMedium?.copyWith(fontWeight: end ? FontWeight.w700 : FontWeight.w500, color: tokens.text);
     final nameLocale = japaneseOnlyLocale(name0: state.nameOf(row.node));
     final scaler = MediaQuery.textScalerOf(context);
-    final lineHeight = scaler.scale((style?.fontSize ?? 16) * (style?.height ?? 1.3));
+    final lineHeight = scaler.scale((baseStyle?.fontSize ?? 16) * (baseStyle?.height ?? 1.3));
     final top = ((rowHeight - lineHeight) / 2).clamp(2.0, 24.0);
     final centerY = top + lineHeight / 2;
     final note = temp ? null : _note(context);
@@ -527,6 +527,7 @@ class _StopTile extends ConsumerWidget {
                         final asideStyle = text.bodySmall?.copyWith(
                           color: tier3 ? tokens.textClosed : tokens.textMuted,
                         );
+                        final style = fitLongWord(context, name, baseStyle, box.maxWidth);
                         // 읽기는 이름 마지막 줄의 남은 자리에 통째로 들어가면 이름 바로 뒤에, 조금이라도 넘치면 다음 줄 맨 앞부터 둔다.
                         // 이름이 여러 줄이어도 같은 규칙이다. 읽기가 이름 줄과 아랫줄로 쪼개지거나 한두 글자만 삐져나오지 않는다.
                         // 이름·읽기 모두 줄 안에서는 글자가 차는 대로 끊는다 (사용자 결정 2026-11-16)
@@ -1118,9 +1119,13 @@ class _ArchiveTile extends ConsumerWidget {
     final aside = state.archiveAside[stop.id];
     final year = context.t.session.state.until(year: stop.closedYear);
     final now = state.archiveNow[stop.id];
+    // 폐지 해를 모르면(「?」) 해 없는 문장을 쓴다. 「closed in ?」「（?年廃止）」로 보였다 (기기 순회 2026-11-26)
+    final noYear = stop.closedYear.isEmpty || stop.closedYear == '?';
     final message = now == null
-        ? context.t.session.archiveStop(name: name, year: stop.closedYear)
-        : context.t.session.archiveStopNow(name: name, year: stop.closedYear, now: now);
+        ? (noYear ? context.t.session.archiveStopNoYear(name: name) : context.t.session.archiveStop(name: name, year: stop.closedYear))
+        : (noYear
+            ? context.t.session.archiveStopNowNoYear(name: name, now: now)
+            : context.t.session.archiveStopNow(name: name, year: stop.closedYear, now: now));
     final km = stop.km;
     final style = closedNameStyle(text, tokens);
     return InkWell(
@@ -1145,9 +1150,11 @@ class _ArchiveTile extends ConsumerWidget {
                 // 일본어 이름·읽기는 기록 대상 역 줄과 같은 규칙: 이름 마지막 줄에 통째로 들어가면 바로 뒤, 넘치면 다음 줄 맨 앞부터 (사용자 결정 2026-11-16)
                 Expanded(
                   child: LayoutBuilder(builder: (context, box) {
+                    // 긴 로마자 낱말은 기록 대상 역 줄과 같이 줄인다 (fitLongWord)
+                    final fit = fitLongWord(context, name, style, box.maxWidth);
                     final nameSpan = TextSpan(
                       text: japaneseOnlyLocale(name0: name) == null ? name : kinsoku(name),
-                      style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
+                      style: japaneseOnlyLocale(name0: name) == null ? fit : japaneseStyle(fit),
                       locale: japaneseOnlyLocale(name0: name),
                     );
                     final asideStyle = japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed));
@@ -1424,6 +1431,25 @@ String koDirectional(BuildContext context, String name) {
   if (c < 0xAC00 || c > 0xD7A3) return '$name(으)로';
   final jong = (c - 0xAC00) % 28;
   return jong == 0 || jong == 8 ? '$name로' : '$name으로';
+}
+
+/// 로마자 이름의 가장 긴 낱말이 줄 폭보다 길면 그 낱말이 한 줄에 들도록 글자를 줄인 꼴을 준다(원래 크기의 60%까지. 큰 글자 1.4배에서도 기본 크기의 84%다).
+/// 영어 이름은 띄어쓰기·하이픈 말고는 끊을 곳이 없어, 큰 글자에서 「Odawarahigash/icho」처럼 낱말 가운데서 줄이 바뀌었다 (기기 순회 2026-11-26).
+/// 한글·한자 이름은 글자 사이에서 끊는 것이 자연스러워 그대로 둔다
+TextStyle? fitLongWord(BuildContext context, String name, TextStyle? style, double width) {
+  if (style == null || !RegExp('[A-Za-z]{6,}').hasMatch(name) || width <= 0) return style;
+  final scaler = MediaQuery.textScalerOf(context);
+  var longest = 0.0;
+  for (final word in name.split(RegExp(r'[\s\-‐–]+'))) {
+    if (word.length < 6) continue;
+    final painter = TextPainter(text: TextSpan(text: word, style: style), textDirection: TextDirection.ltr, textScaler: scaler, maxLines: 1)..layout();
+    if (painter.width > longest) longest = painter.width;
+    painter.dispose();
+  }
+  if (longest <= width) return style;
+  final size = style.fontSize ?? 14;
+  final factor = (width / longest).clamp(0.6, 1.0);
+  return style.copyWith(fontSize: size * factor * 0.99);
 }
 
 bool _fitsAfter(BuildContext context, InlineSpan head, InlineSpan tail, double width, {double extra = 0}) {

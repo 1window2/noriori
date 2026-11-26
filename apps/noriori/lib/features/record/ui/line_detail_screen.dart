@@ -18,7 +18,7 @@ import '../controller/line_detail_controller.dart';
 import '../controller/record_list_controller.dart';
 import '../controller/record_session_controller.dart';
 import 'line_stem.dart';
-import 'session_lines.dart' show closedNote;
+import 'session_lines.dart' show closedNote, fitLongWord;
 
 /// 노선 상세 (DESIGN §3.3, §8.2). 세로 노선도에서 그 자리에서 고친다.
 class LineDetailScreen extends ConsumerStatefulWidget {
@@ -482,13 +482,14 @@ class _StopRow extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Wrap(
+            child: LayoutBuilder(builder: (context, box) => Wrap(
               spacing: 8,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Text(
                   name,
-                  style: text.bodyLarge?.copyWith(color: stop.gone ? tokens.textClosed : tokens.text),
+                  // 긴 로마자 낱말은 낱말 가운데서 끊지 않게 줄인다 (session_lines.fitLongWord)
+                  style: fitLongWord(context, name, text.bodyLarge?.copyWith(color: stop.gone ? tokens.textClosed : tokens.text), box.maxWidth),
                 ),
                 for (final other in stop.others)
                   Consumer(
@@ -499,7 +500,7 @@ class _StopRow extends StatelessWidget {
                     ),
                   ),
               ],
-            ),
+            )),
           ),
           if (stop.kmCum != null)
             Padding(

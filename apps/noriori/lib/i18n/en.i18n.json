@@ -248,6 +248,8 @@
     "openedSection": "Opens in $year",
     "archiveStop": "$name closed in $year and can't be logged",
     "archiveStopNow": "$name closed in $year and can't be logged. Now $now station",
+    "archiveStopNoYear": "$name is closed and can't be logged",
+    "archiveStopNowNoYear": "$name is closed and can't be logged. Now $now station",
     "archiveLine": "$name is a historic line and can't be logged",
     "from": "From",
     "to": "To",

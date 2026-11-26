@@ -386,6 +386,8 @@ class _Translations$session$en implements Translations$session$ko {
 	@override String openedSection({required Object year}) => 'Opens in ${year}';
 	@override String archiveStop({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged';
 	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name} closed in ${year} and can\'t be logged. Now ${now} station';
+	@override String archiveStopNoYear({required Object name}) => '${name} is closed and can\'t be logged';
+	@override String archiveStopNowNoYear({required Object name, required Object now}) => '${name} is closed and can\'t be logged. Now ${now} station';
 	@override String archiveLine({required Object name}) => '${name} is a historic line and can\'t be logged';
 	@override String get from => 'From';
 	@override String get to => 'To';
@@ -1380,6 +1382,8 @@ extension on TranslationsEn {
 			'session.openedSection' => ({required Object year}) => 'Opens in ${year}',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name} closed in ${year} and can\'t be logged',
 			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name} closed in ${year} and can\'t be logged. Now ${now} station',
+			'session.archiveStopNoYear' => ({required Object name}) => '${name} is closed and can\'t be logged',
+			'session.archiveStopNowNoYear' => ({required Object name, required Object now}) => '${name} is closed and can\'t be logged. Now ${now} station',
 			'session.archiveLine' => ({required Object name}) => '${name} is a historic line and can\'t be logged',
 			'session.from' => 'From',
 			'session.to' => 'To',
@@ -1699,10 +1703,10 @@ extension on TranslationsEn {
 			'prefNames.4' => 'Akita',
 			'prefNames.5' => 'Yamagata',
 			'prefNames.6' => 'Fukushima',
-			'prefNames.7' => 'Ibaraki',
-			'prefNames.8' => 'Tochigi',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.7' => 'Ibaraki',
+			'prefNames.8' => 'Tochigi',
 			'prefNames.9' => 'Gunma',
 			'prefNames.10' => 'Saitama',
 			'prefNames.11' => 'Chiba',

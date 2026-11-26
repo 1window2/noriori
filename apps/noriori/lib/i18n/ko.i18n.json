@@ -239,6 +239,8 @@
     "openedSection": "$year년 개업",
     "archiveStop": "$name: 폐역($year). 기록할 수 없는 옛 역입니다",
     "archiveStopNow": "$name: 폐역($year). 기록할 수 없는 옛 역입니다. 지금의 $now역 자리",
+    "archiveStopNoYear": "$name: 폐역. 기록할 수 없는 옛 역입니다",
+    "archiveStopNowNoYear": "$name: 폐역. 기록할 수 없는 옛 역입니다. 지금의 $now역 자리",
     "archiveLine": "$name: 기록할 수 없는 옛 노선입니다",
     "from": "출발",
     "to": "도착",
