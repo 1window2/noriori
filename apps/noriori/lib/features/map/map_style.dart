@@ -22,6 +22,10 @@ const _ridden = [1.8, 2.4, 3.2, 4.4, 6.0];
 /// 폐선은 현행보다 흐리지만 전국 화면에서 보일 만큼은 굵다. 켜고 끄는 차이가 보여야 한다.
 const _closedUnridden = [1.0, 1.3, 1.6, 2.2, 3.2];
 
+/// 단독 보기의 미승 현행선. 노선 하나만 남는 화면이라 도도부현 경계선보다 굵어야 보인다. 폐선 이상, 탄 선 이하다.
+/// 전국 굵기(_unridden)로는 긴 노선(常磐線·上越新幹線)이 경계선과 구별되지 않았다 (기기 순회 2026-11-26)
+const _soloUnridden = [1.4, 1.8, 2.0, 2.6, 3.6];
+
 List<Object> _matchInts(String key, Set<int> values) => [
       'match',
       ['to-string', ['get', key]],
@@ -70,10 +74,20 @@ List<Object> yearFilter(int year) => [
 /// 옛 철도망을 보면 그해에 있던 것만 남긴다 (사용자 지시 2026-11-16)
 const transferLayers = [spokeLayer, walkLayer, platformLayer, hubNodeLayer, hubNameLayer];
 
-List<Object> transferFilter({required bool showClosed, int? year}) => [
+/// [soloNodes]를 주면(노선 단독 보기) 그 노선의 노드가 든 환승역 점·승강장·연결선만 남기고, 간접 환승선(walk)은 끈다(walkLayer에서 [walk] 참).
+/// 단독 보기에서 다른 노선의 환승역 점과 주황 도보 연결이 남던 것 (赤羽線 지도의 王子·板橋 근처, 5회차 2026-11-26)
+List<Object> transferFilter({required bool showClosed, int? year, Set<String>? soloNodes, bool walk = false}) => [
       'all',
       if (!showClosed) ['==', ['get', 'closed'], 0],
       if (year != null) ...yearFilter(year),
+      if (soloNodes != null)
+        if (walk || soloNodes.isEmpty)
+          ['==', ['get', 'closed'], -1]
+        else
+          [
+            'any',
+            for (final n in soloNodes) ['in', ',$n,', ['concat', ',', ['coalesce', ['get', 'nodes'], ''], ',']],
+          ],
     ];
 
 /// 안 탄 선까지 그리는 층의 필터. [only]를 주면 그 구간만 남긴다 (노선 단독 보기).
@@ -160,6 +174,9 @@ const _closedStationFade = [
 ];
 
 const railLayer = 'rail';
+
+/// 단독 보기의 미승 현행선을 굵게 덧그리는 층. 단독 보기가 아니면 아무것도 고르지 않는다
+const railSoloLayer = 'rail-solo';
 const railClosedLayer = 'rail-closed';
 const riddenCurrentLayer = 'rail-ridden';
 const riddenClosedLayer = 'rail-closed-ridden';
@@ -212,6 +229,18 @@ List<Map<String, Object>> _railLayers(String source, String suffix, AppTokens to
         'paint': {
           'line-color': _hex(tokens.lineUnridden),
           'line-width': _width(_unridden),
+        },
+      },
+      {
+        'id': '$railSoloLayer$suffix',
+        'type': 'line',
+        'source': source,
+        'source-layer': 'edge',
+        'filter': const ['==', ['get', 'n'], -1],
+        'layout': {'line-cap': 'round', 'line-join': 'round'},
+        'paint': {
+          'line-color': _hex(tokens.lineUnridden),
+          'line-width': _width(_soloUnridden),
         },
       },
       {

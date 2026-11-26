@@ -5,6 +5,7 @@ import 'package:noriori_core/noriori_core.dart';
 import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
 import '../../../app/theme/tokens.dart';
+import '../../../app/widgets/long_word.dart';
 import '../../../i18n/strings.g.dart';
 import '../controller/record_session_controller.dart';
 import 'fold_view.dart';
@@ -379,14 +380,14 @@ class _StopTile extends ConsumerWidget {
     final temp = state.isTemporary;
     final fade = temp && tier3;
     final rowHeight = line.small ? 32.0 : (tier3 && !fade ? 40.0 : 48.0);
-    final style = fade
+    final baseStyle = fade
         ? text.titleMedium?.copyWith(fontWeight: FontWeight.w500, color: tokens.textMuted)
         : tier3
         ? closedNameStyle(text, tokens)
         : text.titleMedium?.copyWith(fontWeight: end ? FontWeight.w700 : FontWeight.w500, color: tokens.text);
     final nameLocale = japaneseOnlyLocale(name0: state.nameOf(row.node));
     final scaler = MediaQuery.textScalerOf(context);
-    final lineHeight = scaler.scale((style?.fontSize ?? 16) * (style?.height ?? 1.3));
+    final lineHeight = scaler.scale((baseStyle?.fontSize ?? 16) * (baseStyle?.height ?? 1.3));
     final top = ((rowHeight - lineHeight) / 2).clamp(2.0, 24.0);
     final centerY = top + lineHeight / 2;
     final note = temp ? null : _note(context);
@@ -527,6 +528,7 @@ class _StopTile extends ConsumerWidget {
                         final asideStyle = text.bodySmall?.copyWith(
                           color: tier3 ? tokens.textClosed : tokens.textMuted,
                         );
+                        final style = fitLongWord(context, name, baseStyle, box.maxWidth);
                         // 읽기는 이름 마지막 줄의 남은 자리에 통째로 들어가면 이름 바로 뒤에, 조금이라도 넘치면 다음 줄 맨 앞부터 둔다.
                         // 이름이 여러 줄이어도 같은 규칙이다. 읽기가 이름 줄과 아랫줄로 쪼개지거나 한두 글자만 삐져나오지 않는다.
                         // 이름·읽기 모두 줄 안에서는 글자가 차는 대로 끊는다 (사용자 결정 2026-11-16)
@@ -581,7 +583,16 @@ class _StopTile extends ConsumerWidget {
                       ),
                     if (state.stopsAway(row) case final away?)
                       side(t.away(n: away), text.bodySmall?.copyWith(color: tokens.textMuted)),
-                    if (note != null) side(note, text.bodySmall?.copyWith(color: tokens.textClosed)),
+                    // 상태 꼬리표는 이름 칸을 밀어내지 않는다. 폭이 모자라면 줄을 바꾼다(360 폭·큰 글자 영어 田端信号場, 5회차 2026-11-26)
+                    // (Flexible로 두면 꼬리표가 짧아도 이름 칸이 반으로 줄어 화면 폭의 3할로만 막는다)
+                    if (note != null)
+                      ConstrainedBox(
+                        constraints: BoxConstraints(maxWidth: MediaQuery.sizeOf(context).width * .3),
+                        child: Padding(
+                          padding: const EdgeInsets.only(top: 3),
+                          child: Text(note, textAlign: TextAlign.end, style: text.bodySmall?.copyWith(color: tokens.textClosed)),
+                        ),
+                      ),
                     side(
                       km?.toStringAsFixed(1) ?? '?',
                       text.bodySmall?.copyWith(
@@ -1072,7 +1083,9 @@ class _EndTile extends ConsumerWidget {
                                 ],
                               ],
                             ),
-                            maxLines: 1,
+                            // 방면 역이 「Nishitetsu Tenjin-Omuta Line K…」로 잘리지 않게 네 줄까지 접는다. 긴 영어 노선 이름은 이름만으로 두 줄을 써서
+                            // 기본 글자에서도 두 줄로는 방면 역이 잘렸다 (Osaka City Tram Uehommachishimoajiharacho Line). 줄 높이는 최소 48에서 늘어난다 (기기 순회 2026-11-26·27)
+                            maxLines: 4,
                             overflow: TextOverflow.ellipsis,
                             // 말줄임한 글의 실제 폭만 차지한다. 부모 폭을 다 잡으면 꼬리(끝 역) 앞에 빈칸이 벌어진다
                             textWidthBasis: TextWidthBasis.longestLine,
@@ -1109,9 +1122,13 @@ class _ArchiveTile extends ConsumerWidget {
     final aside = state.archiveAside[stop.id];
     final year = context.t.session.state.until(year: stop.closedYear);
     final now = state.archiveNow[stop.id];
+    // 폐지 해를 모르면(「?」) 해 없는 문장을 쓴다. 「closed in ?」「（?年廃止）」로 보였다 (기기 순회 2026-11-26)
+    final noYear = stop.closedYear.isEmpty || stop.closedYear == '?';
     final message = now == null
-        ? context.t.session.archiveStop(name: name, year: stop.closedYear)
-        : context.t.session.archiveStopNow(name: name, year: stop.closedYear, now: now);
+        ? (noYear ? context.t.session.archiveStopNoYear(name: name) : context.t.session.archiveStop(name: name, year: stop.closedYear))
+        : (noYear
+            ? context.t.session.archiveStopNowNoYear(name: name, now: now)
+            : context.t.session.archiveStopNow(name: name, year: stop.closedYear, now: now));
     final km = stop.km;
     final style = closedNameStyle(text, tokens);
     return InkWell(
@@ -1136,9 +1153,11 @@ class _ArchiveTile extends ConsumerWidget {
                 // 일본어 이름·읽기는 기록 대상 역 줄과 같은 규칙: 이름 마지막 줄에 통째로 들어가면 바로 뒤, 넘치면 다음 줄 맨 앞부터 (사용자 결정 2026-11-16)
                 Expanded(
                   child: LayoutBuilder(builder: (context, box) {
+                    // 긴 로마자 낱말은 기록 대상 역 줄과 같이 줄인다 (fitLongWord)
+                    final fit = fitLongWord(context, name, style, box.maxWidth);
                     final nameSpan = TextSpan(
                       text: japaneseOnlyLocale(name0: name) == null ? name : kinsoku(name),
-                      style: japaneseOnlyLocale(name0: name) == null ? style : japaneseStyle(style),
+                      style: japaneseOnlyLocale(name0: name) == null ? fit : japaneseStyle(fit),
                       locale: japaneseOnlyLocale(name0: name),
                     );
                     final asideStyle = japaneseStyle(text.bodySmall?.copyWith(color: tokens.textClosed));

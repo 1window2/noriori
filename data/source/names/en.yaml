@@ -2903,8 +2903,8 @@
 - {"entity_type": "route", "id": "r_oji_keiben_railway", "lang": "ko", "text": "토마코마이~第四発電所", "source": "rule"}
 - {"entity_type": "route", "id": "r_oji_keiben_railway", "lang": "en", "text": "Tomakomai~第四発電所", "source": "rule"}
 - {"entity_type": "route", "id": "r_oji_keiben_railway_shikotsuko_branch", "lang": "ja", "text": "分岐点～湖畔", "source": "rule"}
-- {"entity_type": "route", "id": "r_oji_keiben_railway_shikotsuko_branch", "lang": "ko", "text": "分岐点~湖畔", "source": "rule"}
-- {"entity_type": "route", "id": "r_oji_keiben_railway_shikotsuko_branch", "lang": "en", "text": "分岐点~湖畔", "source": "rule"}
+- {"entity_type": "route", "id": "r_oji_keiben_railway_shikotsuko_branch", "lang": "ko", "text": "分岐点~코한", "source": "rule"}
+- {"entity_type": "route", "id": "r_oji_keiben_railway_shikotsuko_branch", "lang": "en", "text": "分岐点~Kohan", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "ja", "text": "前原～京成津田沼", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "ko", "text": "마에바라~케이세이츠다누마", "source": "rule"}
 - {"entity_type": "route", "id": "r_matsudo_line_maebara_keisei_tsudanuma_old", "lang": "en", "text": "Maebara~Keisei-Tsudanuma", "source": "rule"}

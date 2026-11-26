@@ -180,12 +180,14 @@ LineDiagram lineDiagram(
   Network network,
   String lineId,
   String routeId,
-  DateSpan day,
-) {
+  DateSpan day, {
+  bool withEnds = false,
+}) {
   // 그 계통에서 서지 않는 역(통과 노드)은 그리지 않는다. 승하차 불가 끝 노드(분기점·신호장)도 지도에는 그리지 않는다
   // (筑豊電鉄 계통이 지나기만 하는 黒崎車庫前: 北九州線 시절 1999 폐지, 7회차 2026-11-14; junction-nodes-rule)
-  bool shown(NetStop stop) => network.isShown(stop.node) && stop.isStop;
   final own = network.stops(routeId);
+  final ends = withEnds && own.isNotEmpty ? {own.first.node, own.last.node} : const <String>{};
+  bool shown(NetStop stop) => (network.isShown(stop.node) && stop.isStop) || ends.contains(stop.node);
   final all = own.where(shown).length < 2 ? network.picks(routeId) : own;
   final stops = <DiagramStop>[];
   final cells = <List<String>>[];
@@ -206,6 +208,9 @@ LineDiagram lineDiagram(
     }
     cellOf.putIfAbsent(stop.node, () => stops.isEmpty ? 0 : stops.length - 1);
   }
+  // 탈 수 있는 역이 하나뿐이고 다른 끝이 분기점인 계통(秋田市電新大工町線: 分岐点（表鉄砲町）–新大工町)은 그대로면 그릴 역이 하나라
+  // 노선 상세가 빈 화면이었다 (기기 순회 2026-11-26). 그때만 끝 분기점·신호장을 함께 그린다. 기록 화면처럼 끝 노드로 보인다
+  if (stops.length < 2 && !withEnds) return _stopsAndCells(network, lineId, routeId, day, withEnds: true);
   // 첫 역 앞의 숨은 분기점은 첫 칸에, 끝 역 뒤의 것은 끝 칸에 든다
   if (cells.isNotEmpty) cells.last.addAll(pending.where((e) => !cells.last.contains(e)));
   // 이웃하지 않은 역을 잇는 옛 선로는 그 역들 사이의 칸마다 든다

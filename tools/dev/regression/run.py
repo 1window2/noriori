@@ -24,9 +24,10 @@ if n.execute("select 1 from sqlite_master where name='stop_mark_route'").fetchon
     for x,k,f_,t_ in n.execute('select node_id,kind,valid_from,valid_to from stop_mark_route'):MARK[x].append((k,f_,t_))
 HP={frozenset((a,b)) for a,b in m.execute('select node_a,node_b from hub_pair')}
 ARCH=collections.defaultdict(list)
-for i,rt,a,b,km in m.execute('select id,route_id,after_id,before_id,km from archive_stop'):
+ARCHD=collections.defaultdict(list)   # 일본어 이름 → [(계통, 개업, 폐지, km)] (5회차 flag8: 열람 전용 역 날짜 판정)
+for i,rt,a,b,km,op,cl in m.execute('select id,route_id,after_id,before_id,km,opened,closed from archive_stop'):
     for r in NM['archive',i]:
-        if r[0]=='ja':ARCH[r[1]].append((rt,a,b,km))
+        if r[0]=='ja':ARCH[r[1]].append((rt,a,b,km));ARCHD[r[1]].append((rt,op,cl,km))
 EK=collections.defaultdict(list)
 for a,b,km in m.execute('select e.from_node,e.to_node,k.km from edge e join edge_km k on k.edge_id=e.id'):EK[frozenset((a,b))].append(km)
 LP={(l,x,f_) for l,x,f_ in m.execute("select line_id,name_ja,valid_from from line_period where kind='name'")}
@@ -181,6 +182,9 @@ def judge(c):
     # 12회차(2026-11-18): archname 열람 전용 행(역·노선)의 그 언어 이름 {aid, lang, text}, closeby 그 계통 정차 기간의 폐지 늦은 끝이 그날 이전 {route, node, by}
     if k=='archname':return any(r[0]==c['lang'] and r[1]==c['text'] for r in NM['archive',c['aid']])
     if k=='closeby':return bool(SPR[c['node']]) and all(t_!='ongoing' and (lohi(t_)[1] or '9999')<=c['by'] for rt,f_,t_ in SPR[c['node']] if rt==c['route'])
+    # archdates: 그 계통(route)의 그 이름(name) 열람 전용 역의 개업(opened?)·폐지(closed?)가 그 값이고, km가 비어야 하면 km_null
+    if k=='archdates':
+        return any(rt==c['route'] and ('opened' not in c or op==c['opened']) and ('closed' not in c or cl==c['closed']) and (not c.get('km_null') or km is None) for rt,op,cl,km in ARCHD[c['name']])
     if k=='archive':
         return any(rt==c['route'] and (not c.get('after') or a==c['after']) and (not c.get('before') or b==c['before']) and (c.get('km') is None or (km is not None and abs(km-c['km'])<.05)) for rt,a,b,km in ARCH[c['name']])
     if k=='edgekm':return any(abs(x-c['km'])<.05 for x in EK[frozenset((c['a'],c['b']))])

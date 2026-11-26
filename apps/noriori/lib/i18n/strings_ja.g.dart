@@ -377,6 +377,8 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String openedSection({required Object year}) => '${year}年開業';
 	@override String archiveStop({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です';
 	@override String archiveStopNow({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置';
+	@override String archiveStopNoYear({required Object name}) => '${name}（廃止）は記録対象外です';
+	@override String archiveStopNowNoYear({required Object name, required Object now}) => '${name}（廃止）は記録対象外です。現在の${now}駅の位置';
 	@override String archiveLine({required Object name}) => '${name}は記録対象外です';
 	@override String get from => '乗車';
 	@override String get to => '降車';
@@ -403,7 +405,7 @@ class _Translations$session$ja implements Translations$session$ko {
 	@override String get alightTitle => '降車専用の駅です';
 	@override String get alightDetail => '降車駅としてのみ選べます';
 	@override String get whySuspended => 'その日付には運休中の区間です';
-	@override String bound({required Object names}) => '${names}方面';
+	@override String bound({required Object names}) => '${names}⁠方⁠面';
 	@override String spokenClosed({required Object year}) => '${year}年廃止';
 	@override String spokenSuspendedSince({required Object year}) => '${year}年から運休';
 	@override String get pastKari => '仮';
@@ -1349,6 +1351,8 @@ extension on TranslationsJa {
 			'session.openedSection' => ({required Object year}) => '${year}年開業',
 			'session.archiveStop' => ({required Object name, required Object year}) => '${name}（${year}年廃止）は記録対象外です',
 			'session.archiveStopNow' => ({required Object name, required Object year, required Object now}) => '${name}（${year}年廃止）は記録対象外です。現在の${now}駅の位置',
+			'session.archiveStopNoYear' => ({required Object name}) => '${name}（廃止）は記録対象外です',
+			'session.archiveStopNowNoYear' => ({required Object name, required Object now}) => '${name}（廃止）は記録対象外です。現在の${now}駅の位置',
 			'session.archiveLine' => ({required Object name}) => '${name}は記録対象外です',
 			'session.from' => '乗車',
 			'session.to' => '降車',
@@ -1375,7 +1379,7 @@ extension on TranslationsJa {
 			'session.alightTitle' => '降車専用の駅です',
 			'session.alightDetail' => '降車駅としてのみ選べます',
 			'session.whySuspended' => 'その日付には運休中の区間です',
-			'session.bound' => ({required Object names}) => '${names}方面',
+			'session.bound' => ({required Object names}) => '${names}⁠方⁠面',
 			'session.spokenClosed' => ({required Object year}) => '${year}年廃止',
 			'session.spokenSuspendedSince' => ({required Object year}) => '${year}年から運休',
 			'session.pastKari' => '仮',
@@ -1668,10 +1672,10 @@ extension on TranslationsJa {
 			'prefNames.4' => '秋田',
 			'prefNames.5' => '山形',
 			'prefNames.6' => '福島',
-			'prefNames.7' => '茨城',
-			'prefNames.8' => '栃木',
 			_ => null,
 		} ?? switch (path) {
+			'prefNames.7' => '茨城',
+			'prefNames.8' => '栃木',
 			'prefNames.9' => '群馬',
 			'prefNames.10' => '埼玉',
 			'prefNames.11' => '千葉',

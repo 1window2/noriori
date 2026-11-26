@@ -13,6 +13,7 @@ import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
 import '../../../app/widgets/pills.dart';
 import '../../../i18n/strings.g.dart';
+import '../fit_camera.dart';
 import '../map_style.dart';
 
 /// 탑승 칠하기 (ARCHITECTURE §2.6 후보 A). 방식이 바뀌어도 화면은 이 뒤를 모른다.
@@ -248,14 +249,16 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     for (final suffix in _suffixes) {
       await map.setFilter('$railLayer$suffix', railFilter(closed: false, only: solo?.edges, year: year));
       await map.setFilter('$railClosedLayer$suffix', railFilter(closed: true, only: solo?.edges, year: year));
+      await map.setFilter('$railSoloLayer$suffix', solo == null ? const ['==', ['get', 'n'], -1] : railFilter(closed: false, only: solo.edges, year: year));
       await map.setLayerVisibility('$railLayer$suffix', !_onlyRidden);
+      await map.setLayerVisibility('$railSoloLayer$suffix', solo != null && !_onlyRidden);
       await map.setLayerVisibility('$railClosedLayer$suffix', showClosed && !_onlyRidden);
       await map.setLayerVisibility('$riddenClosedLayer$suffix', showClosed);
       await map.setLayerVisibility('$stationClosedLayer$suffix', showClosed);
       await map.setLayerVisibility('$stationNameLayer$suffix', _showNames);
     }
     for (final id in transferLayers) {
-      await map.setFilter(id, transferFilter(showClosed: showClosed, year: year));
+      await map.setFilter(id, transferFilter(showClosed: showClosed, year: year, soloNodes: solo?.nodes, walk: id == walkLayer));
     }
     await _applyMarkers(map, solo, showClosed);
     await _applyHeat(map);
@@ -377,24 +380,62 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
   /// 마지막으로 화면을 맞춘 단독 보기 노선.
   String? _fittedLine;
 
-  /// 단독 보기를 켜면 그 노선에 맞춘다.
+  /// 지도 위 검색창·칩 묶음. 단독 보기를 맞출 때 그 아래부터 쓴다
+  final _overlayKey = GlobalKey();
+
+  /// 지금 지도 크기와, 단독 보기를 맞출 때의 지도 크기. 다르면 다시 맞춘다
+  Size? _mapSize;
+  Size? _fitSize;
+
+  /// 검색창·칩 묶음 아래 끝(지도 위쪽에서 잰 높이). 아직 그려지지 않았으면 안전 여백과 고정 높이로 어림한다
+  double _overlayBottom() {
+    final box = _overlayKey.currentContext?.findRenderObject() as RenderBox?;
+    final stack = context.findRenderObject() as RenderBox?;
+    if (box == null || stack == null || !box.hasSize || !box.attached) return MediaQuery.paddingOf(context).top + 160;
+    return box.localToGlobal(Offset(0, box.size.height), ancestor: stack).dy;
+  }
+
+  /// 단독 보기를 켜면 그 노선에 맞춘다. 위쪽은 검색창·칩·단독 칩 아래, 아래쪽은 시트와 전국 보기 단추 위다.
+  /// 고정 여백(위 160)은 큰 글자에서 칩 묶음보다 작아 끝 역이 단독 칩 밑에 숨었고, 지도가 다 자리 잡기 전에 맞추면
+  /// 남쪽 끝이 시트 밑으로 빠졌다 (기기 순회 2026-11-26 大阪市電東野田沢上江町線)
   Future<void> _fitLine(SoloLine solo) async {
     final box = await ref.read(packReaderProvider).boundsOf(solo.nodes);
     if (box == null || !mounted) return;
-    final padding = MediaQuery.paddingOf(context);
-    await _map?.moveCamera(
-      CameraUpdate.newLatLngBounds(
-        LatLngBounds(
-          southwest: LatLng(box.south, box.west),
-          northeast: LatLng(box.north, box.east),
-        ),
-        left: 32,
-        right: 32,
-        top: padding.top + 160,
-        // 전국 보기 단추에 끝 역이 가리지 않게 띄운다
-        bottom: widget.sheetHeight + 88,
-      ),
+    final size = _mapSize ?? MediaQuery.sizeOf(context);
+    _fitSize = size;
+    final camera = fitCamera(
+      south: box.south,
+      west: box.west,
+      north: box.north,
+      east: box.east,
+      width: size.width,
+      height: size.height,
+      left: 32,
+      right: 32,
+      top: _overlayBottom() + 24,
+      // 전국 보기 단추에 끝 역이 가리지 않게 띄운다
+      bottom: widget.sheetHeight + 88,
     );
+    await _moveTo(camera, size);
+  }
+
+  /// 구한 가운데·배율로 옮긴 뒤, 실제로 보이는 폭을 재어 배율 차이를 한 번 바로잡는다.
+  /// iOS는 배율을 고도로 바꿔 옮기는데, 그 변환이 지도 뷰 크기에 따라 0.2배율쯤 크게 나와 끝 역이 화면 가장자리에 붙었다 (기기 순회 2026-11-26 御黒門線)
+  Future<void> _moveTo(({double lat, double lon, double zoom}) camera, Size size) async {
+    final map = _map;
+    if (map == null) return;
+    final target = LatLng(camera.lat, camera.lon);
+    // newLatLngZoom은 iOS에서 고도를 옛 가운데 위도로 바꾼다. 새 가운데로 바꾸는 newCameraPosition을 쓴다
+    await map.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(target: target, zoom: camera.zoom)));
+    try {
+      final seen = await map.getVisibleRegion();
+      final width = seen.northeast.longitude - seen.southwest.longitude;
+      final want = size.width / (512 * math.pow(2, camera.zoom)) * 360;
+      if (width <= 0 || !mounted) return;
+      final off = math.log(want / width) / math.ln2;
+      if (off.abs() < 0.02) return;
+      await map.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(target: target, zoom: camera.zoom - off)));
+    } catch (_) {}
   }
 
   /// 지도가 아직 준비되지 않았을 때 받은 역. 스타일이 다 올라오면 옮긴다
@@ -414,15 +455,21 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
 
   Future<void> _fitJapan() async {
     final padding = MediaQuery.paddingOf(context);
-    await _map?.moveCamera(
-      CameraUpdate.newLatLngBounds(
-        _japan,
-        left: 8,
-        right: 8,
-        top: padding.top + 96,
-        bottom: widget.sheetHeight + 8,
-      ),
+    final size = _mapSize ?? MediaQuery.sizeOf(context);
+    // 단독 보기와 같이 가운데·배율을 직접 구한다 (fitCamera)
+    final camera = fitCamera(
+      south: _japan.southwest.latitude,
+      west: _japan.southwest.longitude,
+      north: _japan.northeast.latitude,
+      east: _japan.northeast.longitude,
+      width: size.width,
+      height: size.height,
+      left: 8,
+      right: 8,
+      top: padding.top + 96,
+      bottom: widget.sheetHeight + 8,
     );
+    await _moveTo(camera, size);
   }
 
   void _toggle(void Function() change) {
@@ -457,7 +504,19 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
     final score = ref.watch(scoreTableProvider(const BasisCurrent())).value?.total;
     final t = context.t.map;
     final sheet = widget.sheet;
-    return Stack(
+    return LayoutBuilder(builder: (context, constraints) {
+      final size = constraints.biggest;
+      if (size != _mapSize) {
+        _mapSize = size;
+        // 단독 보기를 맞춘 뒤 지도 크기가 바뀌었으면(화면 전환 중에 맞춘 경우) 새 크기로 다시 맞춘다
+        final solo = ref.read(soloLineProvider);
+        if (solo != null && _fittedLine != null && _fitSize != null && _fitSize != size) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            if (mounted) unawaited(_fitLine(solo));
+          });
+        }
+      }
+      return Stack(
       fit: StackFit.expand,
       children: [
         ColoredBox(color: tokens.land),
@@ -504,7 +563,14 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
           bottom: false,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-            child: Column(
+            // 묶음 높이를 잴 수 있게 위에 붙인다. Stack(expand)에 그대로 두면 Column이 화면 높이를 다 차지해 아래 끝이 화면 끝으로 잡혔다
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
+              key: _overlayKey,
+              mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 _SearchBar(label: t.search, score: score),
@@ -549,7 +615,8 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
                 ),
                 if (ref.watch(soloLineIdProvider) case final solo?)
                   FilterPill(
-                    label: '${ref.watch(nameBookProvider).lines[solo] ?? solo} · ${t.soloOff}',
+                    label: ref.watch(nameBookProvider).lines[solo] ?? solo,
+                    tail: '· ${t.soloOff}',
                     selected: true,
                     elevated: true,
                     onTap: () => ref.read(soloLineIdProvider.notifier).set(null),
@@ -563,6 +630,8 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
                   ),
                 ?widget.notice,
               ],
+            ),
+              ),
             ),
           ),
         ),
@@ -581,6 +650,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
         ?sheet,
       ],
     );
+    });
   }
 }
 

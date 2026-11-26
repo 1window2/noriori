@@ -8,8 +8,10 @@ import 'package:noriori_core/noriori_core.dart';
 import '../../../app/session_providers.dart';
 import '../../../app/theme/app_theme.dart';
 import '../../../app/theme/tokens.dart';
+import '../../../app/widgets/app_bar_title.dart';
 import '../../../app/widgets/guarded_write.dart';
 import '../../../app/widgets/line_strip_bar.dart';
+import '../../../app/widgets/long_word.dart';
 import '../../../app/widgets/meter.dart';
 import '../../../app/widgets/pills.dart';
 import '../../../i18n/strings.g.dart';
@@ -186,9 +188,15 @@ class _LineDetailScreenState extends ConsumerState<LineDetailScreen> with Guarde
     );
     final lo = _dragFrom == null ? null : (_dragFrom! < (_dragTo ?? _dragFrom!) ? _dragFrom : _dragTo);
     final hi = _dragFrom == null ? null : (_dragFrom! < (_dragTo ?? _dragFrom!) ? _dragTo ?? _dragFrom : _dragFrom);
+    // 제목 폭: 뒤로 단추(56)와 제목 양옆 간격(16×2), 단추 둘(48×2)을 뺀 나머지
+    final titleFit = fitAppBarTitle(context, title, Theme.of(context).appBarTheme.titleTextStyle ?? Theme.of(context).textTheme.titleLarge,
+        MediaQuery.sizeOf(context).width - 56 - 16 * 2 - 48 * 2,
+        // 노선 쪽은 회사 이름까지 붙은 영어 이름(「Tenryu Hamanako Railroad Tenryu Hamanako Line」)이 큰 글자에서 세 줄에도 안 들어가 네 줄까지 접는다 (기기 순회 2026-11-26)
+        maxLines: 4);
     return Scaffold(
       appBar: AppBar(
-        title: Text(title),
+        toolbarHeight: titleFit.toolbarHeight,
+        title: Text(title, maxLines: titleFit.lines, overflow: TextOverflow.ellipsis, style: titleFit.style),
         actions: [
           IconButton(
             tooltip: t.soloMap,
@@ -329,14 +337,15 @@ class _Header extends ConsumerWidget {
           if (ref.watch(unmappedLinesProvider).value?.contains(lineId) ?? false)
             Text(context.t.mapSheet.unmapped, style: text.labelMedium?.copyWith(color: tokens.textMuted)),
           LineStripBar(strip: strip),
-          // 양 끝 역 이름은 칸을 반씩 쓰고 넘치면 줄인다(영어 이름이 길다, 세 언어 전수 점검 2026-11-12)
+          // 양 끝 역 이름은 칸을 반씩 쓰고 넘치면 두 줄로 접는다(영어 이름이 길다, 세 언어 전수 점검 2026-11-12).
+          // 한 줄 말줄임이면 「Akihabara-eki-higashigu…」처럼 끝 역을 알 수 없었다 (기기 순회 2026-11-26)
           Row(
             children: [
               Expanded(
                 child: Text(
                   names[strip.startNode] ?? '',
                   style: text.labelSmall,
-                  maxLines: 1,
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                 ),
               ),
@@ -345,7 +354,7 @@ class _Header extends ConsumerWidget {
                 child: Text(
                   names[strip.endNode] ?? '',
                   style: text.labelSmall,
-                  maxLines: 1,
+                  maxLines: 2,
                   overflow: TextOverflow.ellipsis,
                   textAlign: TextAlign.end,
                 ),
@@ -477,23 +486,25 @@ class _StopRow extends StatelessWidget {
             ),
           ),
           Expanded(
-            child: Wrap(
+            child: LayoutBuilder(builder: (context, box) => Wrap(
               spacing: 8,
               crossAxisAlignment: WrapCrossAlignment.center,
               children: [
                 Text(
                   name,
-                  style: text.bodyLarge?.copyWith(color: stop.gone ? tokens.textClosed : tokens.text),
+                  // 긴 로마자 낱말은 낱말 가운데서 끊지 않게 줄인다 (fitLongWord)
+                  style: fitLongWord(context, name, text.bodyLarge?.copyWith(color: stop.gone ? tokens.textClosed : tokens.text), box.maxWidth),
                 ),
                 for (final other in stop.others)
                   Consumer(
                     builder: (context, ref, _) => TextButton(
                       onPressed: () => onRoute(other),
-                      child: Text(t.joinsTo(name: ref.watch(nameBookProvider).routes[other] ?? other)),
+                      // 계통 이름의 「~」 뒤에서 줄을 바꿀 수 있게 한다. 영어 이름은 그 자리 말고는 끊을 곳이 없어 「Hamayoshid/a」처럼 낱말 가운데서 끊겼다 (기기 순회 2026-11-26)
+                      child: Text(t.joinsTo(name: (ref.watch(nameBookProvider).routes[other] ?? other).replaceAllMapped(RegExp('[~～〜]'), (m) => '${m[0]}\u200B'))),
                     ),
                   ),
               ],
-            ),
+            )),
           ),
           if (stop.kmCum != null)
             Padding(

@@ -6077,6 +6077,25 @@ for x in names:
         sadd('archive',x['id'],x['text']);sadd('archive',x['id'],x.get('kana'))
 for x in aliases:
     if x['entity_type'] in('node','line','service') and not(x['entity_type']=='node' and x['id'] not in pub):sadd(x['entity_type'],x['id'],x['text'])
+# 노선 별칭 「鋼索線 (叡山ケーブル)」「沖縄都市モノレール線 (ゆいレール)」의 괄호 속 통칭으로도 그 노선을 찾는다. 통칭이 이 괄호에만 있어 ゆいレール·アストラムライン·ニュートラム·和田岬線·坂本ケーブル가 안 찾혔다 (기기 순회 2026-11-27).
+# 「・」로 나눈 조각 가운데 노선 이름 꼴(…線·ライン·レール·ケーブル·トラム)만 넣는다. 구간(滝川～富良野)·역 짝(碧南・吉良吉田)·옛 선로(…旧線)와, 다른 노선의 이름(秋田港線 (奥羽本線))은 넣지 않는다
+_lja_all=collections.defaultdict(set)
+for x in names:
+    if x['entity_type']=='line' and x['lang']=='ja':_lja_all[x['text']].add(x['id'])
+# 운행 계통의 이름·별칭(埼京線·仙石東北ライン)은 그 계통으로 찾으므로 노선으로 겹쳐 넣지 않는다
+_svc_txt={x['text'] for x in names if x['entity_type']=='service'}|{x['text'] for x in aliases if x['entity_type']=='service'}
+_sa0=os.path.join(ROOT,'data','overrides','service_aliases.json')
+if os.path.exists(_sa0):_svc_txt|=set(json.load(open(_sa0,encoding='utf-8')))
+for x in aliases:
+    if x['entity_type']!='route' or x['id'] not in routes:continue
+    lid_=routes[x['id']].get('line')
+    for nick_ in re.findall(r'[（(]([^()（）]+)[)）]',x['text']):
+        for p_ in re.split(r'[・·]',nick_):
+            p_=p_.strip()
+            # 「支線」처럼 두 글자 이하 조각은 너무 흔해 넣지 않는다 (豊橋 東田本線 (支線))
+            if len(p_)<3 or not re.search(r'(線|ライン|レール|ケーブル|ケーブルカー|トラム)$',p_) or re.search(r'旧線$|[～〜\-－–]',p_):continue
+            if (p_ in _lja_all and lid_ not in _lja_all[p_]) or p_ in _svc_txt:continue
+            sadd('line',lid_,p_)
 # 기존 노드와 이은 열람 전용 역(같은 자리·계승)의 이름으로도 그 노드를 찾는다. 결과에는 노드의 정식 이름이 뜬다 (5회차 2026-11-26)
 _anode={a['id']:a['node'] for a in archive if a.get('kind')=='stop' and a.get('node') in pub}
 for x in names:
