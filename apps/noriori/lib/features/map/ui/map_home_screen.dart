@@ -416,7 +416,26 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       // 전국 보기 단추에 끝 역이 가리지 않게 띄운다
       bottom: widget.sheetHeight + 88,
     );
-    await _map?.moveCamera(CameraUpdate.newLatLngZoom(LatLng(camera.lat, camera.lon), camera.zoom));
+    await _moveTo(camera, size);
+  }
+
+  /// 구한 가운데·배율로 옮긴 뒤, 실제로 보이는 폭을 재어 배율 차이를 한 번 바로잡는다.
+  /// iOS는 배율을 고도로 바꿔 옮기는데, 그 변환이 지도 뷰 크기에 따라 0.2배율쯤 크게 나와 끝 역이 화면 가장자리에 붙었다 (기기 순회 2026-11-26 御黒門線)
+  Future<void> _moveTo(({double lat, double lon, double zoom}) camera, Size size) async {
+    final map = _map;
+    if (map == null) return;
+    final target = LatLng(camera.lat, camera.lon);
+    // newLatLngZoom은 iOS에서 고도를 옛 가운데 위도로 바꾼다. 새 가운데로 바꾸는 newCameraPosition을 쓴다
+    await map.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(target: target, zoom: camera.zoom)));
+    try {
+      final seen = await map.getVisibleRegion();
+      final width = seen.northeast.longitude - seen.southwest.longitude;
+      final want = size.width / (512 * math.pow(2, camera.zoom)) * 360;
+      if (width <= 0 || !mounted) return;
+      final off = math.log(want / width) / math.ln2;
+      if (off.abs() < 0.02) return;
+      await map.moveCamera(CameraUpdate.newCameraPosition(CameraPosition(target: target, zoom: camera.zoom - off)));
+    } catch (_) {}
   }
 
   /// 지도가 아직 준비되지 않았을 때 받은 역. 스타일이 다 올라오면 옮긴다
@@ -450,7 +469,7 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
       top: padding.top + 96,
       bottom: widget.sheetHeight + 8,
     );
-    await _map?.moveCamera(CameraUpdate.newLatLngZoom(LatLng(camera.lat, camera.lon), camera.zoom));
+    await _moveTo(camera, size);
   }
 
   void _toggle(void Function() change) {
@@ -544,7 +563,12 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
           bottom: false,
           child: Padding(
             padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-            child: Column(
+            // 묶음 높이를 잴 수 있게 위에 붙인다. Stack(expand)에 그대로 두면 Column이 화면 높이를 다 차지해 아래 끝이 화면 끝으로 잡혔다
+            child: Align(
+              alignment: Alignment.topCenter,
+              child: SizedBox(
+                width: double.infinity,
+                child: Column(
               key: _overlayKey,
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -606,6 +630,8 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
                   ),
                 ?widget.notice,
               ],
+            ),
+              ),
             ),
           ),
         ),
