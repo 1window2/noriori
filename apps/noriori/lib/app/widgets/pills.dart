@@ -171,9 +171,13 @@ class FilterPill extends StatelessWidget {
     required this.onTap,
     this.elevated = false,
     this.badge,
+    this.tail,
   });
 
   final String label;
+
+  /// 이름 뒤에 줄이지 않고 늘 보이는 글(노선 강조 칩의 「· 모든 노선 보기」). 폭이 모자라면 [label]만 말줄임한다
+  final String? tail;
   final bool selected;
   final VoidCallback onTap;
 
@@ -209,13 +213,28 @@ class FilterPill extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               spacing: 6,
               children: [
-                Text(
-                  label,
-                  style: text.labelMedium?.copyWith(
-                    fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
-                    color: selected ? tokens.surface : tokens.textMuted,
+                // 칩이 놓인 폭(지도 위 세로 줄 등)보다 글이 길면 넘치지 않고 말줄임한다(큰 글자 秋田内陸縦貫鉄道, 5회차 2026-11-26)
+                Flexible(
+                  child: Text(
+                    label,
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    textWidthBasis: TextWidthBasis.longestLine,
+                    style: text.labelMedium?.copyWith(
+                      fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                      color: selected ? tokens.surface : tokens.textMuted,
+                    ),
                   ),
                 ),
+                if (tail case final more?)
+                  Text(
+                    more,
+                    maxLines: 1,
+                    style: text.labelMedium?.copyWith(
+                      fontWeight: selected ? FontWeight.w700 : FontWeight.w500,
+                      color: selected ? tokens.surface : tokens.textMuted,
+                    ),
+                  ),
                 if (badge case final mark?)
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 1),

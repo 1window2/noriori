@@ -549,7 +549,8 @@ class _MapHomeScreenState extends ConsumerState<MapHomeScreen> {
                 ),
                 if (ref.watch(soloLineIdProvider) case final solo?)
                   FilterPill(
-                    label: '${ref.watch(nameBookProvider).lines[solo] ?? solo} · ${t.soloOff}',
+                    label: ref.watch(nameBookProvider).lines[solo] ?? solo,
+                    tail: '· ${t.soloOff}',
                     selected: true,
                     elevated: true,
                     onTap: () => ref.read(soloLineIdProvider.notifier).set(null),

@@ -20,6 +20,6 @@ flutter test "${TOUR_TEST:-integration_test/tour_test.dart}" -d "$device" "$@" 2
       fi
       echo "찍음 $name"
       ;;
-    *"All tests passed"*|*"Some tests failed"*|*EXCEPTION*|*Error*) echo "$line" ;;
+    *"All tests passed"*|*"Some tests failed"*|*EXCEPTION*|*Error*|*SWEEP_*) echo "$line" ;;
   esac
 done
