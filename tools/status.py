@@ -132,7 +132,7 @@ out+=f"""
 | `lines_ko.json`, `lines_kana.json` | 원자료 이름과 공식 노선명이 다른 노선의 한글 이름과 읽기 |
 | `kana.json`, `kana_est.json` | 역 읽기. `kana_est.json`의 일부는 한자로 추정한 값이고 한글 이름 출처가 `estimated`로 표시됩니다 ({est}건) |
 | `operators_ko.json`, `names_ko.json` | 사업자와 개별 역의 한글 이름 |
-| `services.json` | 운행 계통 16개 |
+| `services.json` | 운행 계통 {one('select count(*) from service')}개 |
 | `old_hand.json`, `old_history.json` | 문서에서 옮긴 옛 노선과 구간별 이력 |
 
 코드 안의 표: 3섹 개명 대응(`RENAME`), BRT 첫날(`BRTDAY`), 재해 뒤 마지막 운행일(`SVC`), 앞선 사업자(`OPHIST`), 열람 전용 폐지일(`ARCH_CLOSE`).
@@ -141,7 +141,7 @@ out+=f"""
 
 - **폐선 선형**: N02와 OSM 어느 쪽에서도 길이가 맞는 경로를 찾지 못한 폐선 구간은 선이 없습니다. OSM 선형은 ODbL이라 `rail-osm.pmtiles`로 따로 냅니다.
 - **배경 지도**: 앱에 넣는 기본 배경(`base.pmtiles`)은 일본 윤곽과 도도부현 경계뿐입니다. 자세한 배경은 인터넷이 있을 때 OpenFreeMap을 씁니다.
-- **`manifest.json`**: 파일 해시까지 만듭니다. ed25519 서명과 최소 앱 버전은 아직 없습니다. 판을 앱 밖에서 받게 될 때(서버 배포) 사용자의 오프라인 키로 붙입니다.
+- **`manifest.json`**: 파일 해시와 ed25519 서명(`manifest.json.sig`)이 있습니다. 서명은 공개 판(태그)에만 로컬에서 붙이고(`tools/release_pack.sh`, ARCHITECTURE §4.5), 이 빌드처럼 서명하지 않은 개발판은 앱이 그대로 씁니다. 최소 앱 버전은 아직 없습니다.
 - **도도부현 경계 km**: 근사값입니다.
 - **운행 계통**: {one('select count(*) from service')}개만 수록했습니다.
 - **열람 전용 폐선**: 역 목록·순서·km를 확정하지 못한 노선은 열람 전용이라 기록할 수 없습니다.

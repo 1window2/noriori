@@ -4,6 +4,8 @@
 >
 > 문서 정리 (2026-11-27, 구조·규칙 변화 없음): DESIGN과 두 번 적혀 있던 ID 이름(§4.2), 역 이전 노드 기준(§3.5), 등급 하향(§4.0), 폐선 분모 편입(§4.3)은 DESIGN의 해당 절을 가리키게 하고, 판별 측정값은 DESIGN §7 한 곳에 두었습니다. 끝난 단계(옛 노면전차망, 열람 전용 범위)와 워크플로 수(여섯)를 지금 상태로 맞췄습니다. 절 번호는 그대로입니다.
 >
+> 반영 (2026-11-28, 사용자 승인): 데이터 팩 매니페스트의 ed25519 서명과 `Release` 워크플로의 팩 업로드·빌드 증명(§4.4·§4.5). 최소 앱 버전은 아직 없습니다.
+>
 > v0.13 변경: 태그마다 도는 `Release` 워크플로로 서명 없는 IPA와 AltStore·SideStore 소스를 올립니다 (§4.4, 사용자 결정 2026-11-04). 다시 동결했습니다 (2026-11-04).
 >
 > v0.12 변경: 명세 동결 전 검토와 사용자 결정(2026-11-03·11-04)을 반영했습니다. 출처 모듈(§4.0), ID 규칙의 범위와 내부 ID 예외(§4.2), CI 워크플로 넷과 로컬 판 릴리스 절차(§4.4), 판 번호 형식(§4.5), 1950 기준일 뒤의 데이터 단계(§4.3, §8), 탈 수 없는 날짜의 경고(§3.4)를 적었습니다. 사진, 수동 백업 ZIP, 현재 위치 버튼은 v1.0에서 뺐습니다. 폴더, 라우트, 타입 이름은 코드에 맞췄습니다. 독립 재검토 뒤 사용자 결정(2026-11-04)으로 `_old`·지역 이름 ID, 환승 묶음 해시 ID 재부여, 역 이전 노드 기준(§3.5), 이관 뒤 폐선의 분모(§4.3), 저장 때 빈 유효 범위의 경고(§3.4)를 고쳤습니다.
@@ -195,7 +197,7 @@ core는 저장소 인터페이스를 부르지 않습니다. store가 값을 읽
 | 기본 배경 (일본 윤곽, 도도부현 경계) | 데이터 팩의 `base.pmtiles` | `tools/gen_base.sh`가 国土数値情報 N03에서 만듦 |
 | 온라인 배경 | OpenFreeMap | 없어도 지도가 보여야 함 |
 | 선로(`edge`), 역(`station`), 표식(`marker`) | `rail.pmtiles` | 판별 파일. `edge` 레이어는 N02 2020·2024판(CC BY 4.0), N02 2005·2008·2015판(商用可), N05 2024판(非商用)을 구간마다 하나씩 씀. 조건은 출처별 파일에 있음 (§4.0) |
-| OSM 선로와 그 선에 맞춘 역 점 (ODbL) | `rail-osm.pmtiles` | N02에 없어 OSM으로 그린 805 edge. 현행 18구간 115.9km도 여기에만 있음. 형식상 선택 파일이지만 배포하는 모든 팩에 넣음. 라이선스 때문에 파일만 분리. 같은 edge 번호 `n`을 씀 |
+| OSM 선로와 그 선에 맞춘 역 점 (ODbL) | `rail-osm.pmtiles` | N02에 없어 OSM으로 그린 1,299 edge(2026-11-28 빌드). 현행 5구간 46.6km도 여기에만 있음. 형식상 선택 파일이지만 배포하는 모든 팩에 넣음. 라이선스 때문에 파일만 분리. 같은 edge 번호 `n`을 씀 |
 | 탑승 표시 | 필터 식 (아래) | 저장할 때 `ride_edge`에서 갱신 |
 | 위치 미확인 표식 | 빌드가 만든 `map_marker` 행 | 선이 없는 폐지 구간에만 (DESIGN §7.3). 수치는 DESIGN §7의 판별 측정값 |
 
@@ -509,7 +511,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 | 옛 노면전차망 | 끝남. 일반 철도와 같은 기준으로 v1.0에 넣음 (사용자 결정 2026-11-04, 판 2026-11-05.1에 기록 가능 138노선, DESIGN §4.4) | 사용자 결정 |
 | 住吉 중복 | `n_sumiyoshi_nagasaki_tram_akasako_branch`, `n_sumiyoshi_nagasaki_tram_nagasaki_tram_main` 병합 | 같은 역이 두 노드 |
 | 역 이전 배포 | 끝남 (2026-11-04). `moved.json`을 master의 `node_move`(old_node, new_node, moved_on)로 배포 | §3.5 역 이전 |
-| 서명, 최소 앱 버전 | `manifest.json`과 분리한 `manifest.json.sig`(ed25519), manifest의 최소 앱 버전. 둘 다 미구현 | 정규화 없이 파일 그대로 서명 |
+| 서명, 최소 앱 버전 | 서명은 끝남 (2026-11-28): `manifest.json`과 분리한 `manifest.json.sig`(ed25519, §4.5). manifest의 최소 앱 버전은 미구현 | 정규화 없이 파일 그대로 서명 |
 | 직통 표시 점검 | 양쪽 노선이 그 역에서 끝나는 JR `continue` 415행을 위키 노선도와 대조 (행 수는 2026-11-02 값, 다시 세지 않음) | 표본 5행 중 1행 오표시. 통계와 입력에는 영향 없음 |
 | 분기 방향 | `route_link.side`가 빈 분기 17행(416행 중)을 채움. 손 보정은 `data/overrides/junction_side.json`(사유 포함) | 비면 아래로 그려져 반대쪽에 놓임 |
 | 소소한 값 | モンキーパークモノレール線 `line.type`, 東山 역명, 東山本線 구간 km 0.1 차이 확인 | 독립 표본에서 나옴 |
@@ -551,13 +553,13 @@ trigram은 두 글자 역명(`新宿`)을 찾지 못해 쓰지 않습니다. 가
 | `Flutter` (`flutter.yml`) | `Data` 잡 뒤 (`CI`·`Release`) | 같은 실행의 팩으로 생성 코드 diff(drift, slang), `flutter analyze`, core·store·앱 시험 |
 | `Android` (`android.yml`) | `Data` 잡 뒤 (`CI`) | 같은 실행의 팩으로 릴리스 빌드. 디버그 서명 APK를 3일 보관 |
 | `iOS` (`ios.yml`) | `Data` 잡 뒤 (`CI`) | 같은 실행의 팩으로 서명 없이 릴리스 빌드. 서명 안 된 IPA를 3일 보관 |
-| `Release` (`release.yml`) | `v1.2.3` 태그 | 다음 순서로 돎:<br>1. 먼저 검사한다. 태그와 pubspec 버전이 같은지, 빌드 번호가 앞선 릴리스의 IPA보다 큰지, 직전 태그 뒤 `data/source`·`data/overrides`·`data/sources.json`이 바뀌었는데 `edition`이 그대로가 아닌지.<br>2. `Data`로 팩을 만들고 `Flutter` 시험을 통과한 뒤에만 서명 없는 IPA(`noriori-<버전>-b<빌드>.ipa`)를 GitHub Releases에 올림.<br>3. 모든 릴리스의 IPA로 AltStore·SideStore 소스(`tools/altstore_source.py`, 정보는 `distribution/altstore/meta.json`)를 만들어 그 릴리스에 `altstore.json`으로 붙임.<br>소스 주소는 `releases/latest/download/altstore.json` 하나로 고정 |
+| `Release` (`release.yml`) | `v1.2.3` 태그 | 다음 순서로 돎:<br>1. 먼저 검사한다. 태그와 pubspec 버전이 같은지, 빌드 번호가 앞선 릴리스의 IPA보다 큰지, 직전 태그 뒤 `data/source`·`data/overrides`·`data/sources.json`이 바뀌었는데 `edition`이 그대로가 아닌지.<br>2. `Data`로 팩을 만들고 `Flutter` 시험을 통과한 뒤에만 서명 없는 IPA(`noriori-<버전>-b<빌드>.ipa`)와 데이터 팩(`noriori-pack-<판>.zip`, 따로 `manifest.json`)을 빌드 증명(attestation)과 함께 GitHub Releases에 올림. 매니페스트 서명(`manifest.json.sig`)은 올린 뒤 로컬에서 붙임(§4.5). 같은 태그로 다시 돌면 앞서 붙인 서명을 지우므로 다시 서명함.<br>3. 모든 릴리스의 IPA로 AltStore·SideStore 소스(`tools/altstore_source.py`, 정보는 `distribution/altstore/meta.json`)를 만들어 그 릴리스에 `altstore.json`으로 붙임.<br>소스 주소는 `releases/latest/download/altstore.json` 하나로 고정 |
 
 README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 배지). `flutter.yml`·`android.yml`·`ios.yml`은 `CI`가 부르는 재사용 워크플로라 따로 실행 기록이 없으므로, 배지는 워크플로 상태가 아니라 main 마지막 커밋의 작업 결과(check-runs, 작업 이름 `flutter / flutter` 등)를 읽습니다. 모든 커밋에서 CI를 돌리므로(`[skip ci]` 쓰지 않음) main 마지막 커밋에는 늘 결과가 있습니다. `Data`는 배지 없이 돕니다. 정식 서명 키는 CI에 두지 않습니다 (§4.5).
 
 `verify.py`는 CI에서도 돌지만 station_database 이름 대조는 `data/imports`가 있을 때만 합니다. `audit_ext.py`는 `data/imports`가 필요해 로컬 전용입니다. CI는 네트워크를 쓰지 않습니다.
 
-**판 릴리스 절차** (로컬. 앱 릴리스는 태그를 올리면 `Release`가 IPA와 소스를 올리고, 정식 서명 APK는 로컬에서 만들어 같은 릴리스에 올립니다)
+**판 릴리스 절차** (로컬. 앱 릴리스는 태그를 올리면 `Release`가 IPA·데이터 팩·소스를 올리고, 정식 서명 APK는 로컬에서 만들어 같은 릴리스에 올립니다)
 1. 내용이 바뀌면 `data/overrides/as_of.json`의 `edition`을 올립니다 (§4.5). 태그 때 `Release`가 직전 태그와 비교해 다시 확인합니다.
 2. `bash tools/all.sh`를 `data/imports`가 있는 상태로 돌립니다. 컴파일 검사 오류, `verify.py`, `check_geometry.py`, `check_ids.py`(ID 잠금, §4.2), `appsim.py` 시나리오 FAIL, `invariants.py` 위반 중 하나라도 있으면 멈춥니다. 마지막에 `tools/audit_db.py`(설계 규칙), `tools/audit_ext.py`(원자료 대조, `data/imports`가 있을 때), `tools/dev/regression/run.py`(전수 대조 1·2회차 지적 회귀 대조)가 돌고 지금은 단계별 건수만 보입니다. `NORIORI_AUDIT_STRICT=1`이면 오류(err) 항목이나 남은 회귀 사례가 있을 때 멈춥니다.
 3. 판 사이 재해석 비교(`tools/repro/`가 시작점, 미완), 쿼리 계획 검사(미구현).
@@ -569,17 +571,17 @@ README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 �
 데이터 팩은 앱에 포함됩니다. 내려받기(P1)를 위해 같은 파일과 `manifest.json`, `manifest.json.sig`를 GitHub Releases에도 올립니다. 서명은 사람이 오프라인 키로 합니다 (2026-11-28).
 
 - **키**: ed25519 키 두 쌍. 하나를 잃어도 다른 하나로 서명할 수 있습니다. 개인 키는 저장소·CI 밖의 오프라인 보관 장소에만 두고, 공개 키는 `data/keys/manifest-ed25519-1.pub.pem`·`-2.pub.pem`과 앱 상수 `manifestPublicKeys`(`packages/noriori_store/lib/src/pack/pack_signature.dart`)에 같은 값으로 둡니다(`python3 -I tools/sign_manifest.py keys`로 대조).
-- **서명**: 팩과 매니페스트는 `Release` 워크플로가 만들고 빌드 증명을 붙여 올립니다. 개인 키는 CI에 두지 않으므로 서명만 로컬에서 붙입니다(`tools/release_pack.sh <태그>` → `tools/release_sign.py`). 서명은 매니페스트에 하고 매니페스트가 파일마다 해시를 적으므로, CI가 만든 팩 전체를 보증합니다. 서명 전에 ① 팩 묶음과 매니페스트의 빌드 증명(`gh attestation verify`), ② 파일마다 해시·크기, ③ 같은 커밋으로 이 기기에서 만든 DB와 표마다 행 내용이 같은지를 확인하고, 하나라도 어긋나면 서명하지 않습니다. CI와 이 기기의 팩은 SQLite·타일 바이트가 달라 파일 해시로는 비교할 수 없지만 내용은 같습니다(2026-11-28 확인). 빌드가 매니페스트를 새로 쓰면 옛 서명은 지워지고, `tools/sync_pack.sh`는 지금 매니페스트와 맞는 서명만 앱 자산에 넣습니다.
+- **서명**: 팩과 매니페스트는 `Release` 워크플로가 만들고 빌드 증명을 붙여 올립니다. 개인 키는 CI에 두지 않으므로 서명만 로컬에서 붙입니다(`tools/release_pack.sh <태그>` → `tools/release_sign.py`). 서명은 매니페스트에 하고 매니페스트가 파일마다 해시를 적으므로, CI가 만든 팩 전체를 보증합니다. 서명 전에 ① 팩 묶음과 매니페스트의 빌드 증명(`gh attestation verify`), ② 파일마다 해시·크기, ③ 같은 커밋으로 이 기기에서 만든 DB와 표마다 행 내용이 같은지를 확인하고, 하나라도 어긋나면 서명하지 않습니다. CI와 이 기기의 팩은 SQLite·타일 바이트가 달라 파일 해시로는 비교할 수 없지만 내용은 같습니다(2026-11-28 확인). 빌드가 매니페스트를 새로 쓰면 옛 서명은 지워지고(`gen_tiles.py`), `tools/sync_pack.sh`는 `build/`에 서명이 있으면 지금 매니페스트와 맞는지 확인해 맞을 때만 앱 자산에 넣고 맞지 않으면 멈춥니다.
 - **앱**: 서명 파일이 있으면 공개 키 가운데 하나로 맞아야 그 판을 씁니다. 맞지 않으면 그 판을 쓰지 않습니다(`PackUnavailable`). 서명하지 않은 개발판은 그대로 씁니다.
 
 | 항목 | 내용 |
 |---|---|
-| `edition` | `YYYY-MM-DD` 또는 같은 날의 고침 판 `YYYY-MM-DD.N` (지금 `2026-11-05.2`). 날짜를 먼저 비교하고, 같으면 N을 수로 비교합니다. N이 없으면 0입니다 (`compareEditions`). 문자열 순서로 비교하지 않습니다 |
+| `edition` | `YYYY-MM-DD` 또는 같은 날의 고침 판 `YYYY-MM-DD.N` (지금 값은 `data/overrides/as_of.json`, 예: `2026-11-05.2`). 날짜를 먼저 비교하고, 같으면 N을 수로 비교합니다. N이 없으면 0입니다 (`compareEditions`). 문자열 순서로 비교하지 않습니다 |
 | `schema_version` | 정수. 앱은 자기가 지원하는 값과 같은 팩만 씁니다 |
 | 최소 앱 버전 | manifest에 둡니다. 미구현 |
 | `files` | 파일마다 `sha256`, `size` |
 | 필수 파일 | `master.sqlite`(배포판은 `pack-master.sqlite`를 이 이름으로), `names.sqlite`, `rail.pmtiles`, `manifest.json` |
-| 선택 파일 | `rail-osm.pmtiles`, `base.pmtiles`, `glyph-*.pbf`. 형식상 선택이지만 배포하는 모든 팩(앱 자산, Releases)에 넣습니다. `rail-osm.pmtiles`가 빠지면 현행 18구간의 선이 사라집니다 |
+| 선택 파일 | `rail-osm.pmtiles`, `base.pmtiles`, `glyph-*.pbf`. 형식상 선택이지만 배포하는 모든 팩(앱 자산, Releases)에 넣습니다. `rail-osm.pmtiles`가 빠지면 현행 5구간의 선이 사라집니다 |
 
 **앱 서명은 첫 공개 전에 정합니다.** 서명이 다른 APK로 갈아타려면 앱을 지워야 하고, 앱을 지우면 기록이 사라집니다. 앱 ID는 `app.noriori`입니다 (확정).
 - 정식 서명 키는 개발자 로컬 보관소에만 두고 CI에 두지 않습니다. CI는 디버그 서명만 합니다.
