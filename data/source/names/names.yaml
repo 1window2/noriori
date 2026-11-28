@@ -3639,7 +3639,7 @@
 - {"entity_type": "node", "id": "n_uzen_chitose", "lang": "en", "text": "Uzen-Chitose", "source": "official"}
 - {"entity_type": "node", "id": "n_aoba_dori", "lang": "ja", "text": "あおば通", "kana": "あおばどおり", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_aoba_dori", "lang": "ko", "text": "아오바도리", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_aoba_dori", "lang": "en", "text": "Aoba-dori", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_aoba_dori", "lang": "en", "text": "Aobadori Avenue", "source": "official"}
 - {"entity_type": "node", "id": "n_sendai_senseki_old", "lang": "ja", "text": "仙台（旧）", "kana": "せんだい", "source": "wikipedia", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sendai_senseki_old", "lang": "ko", "text": "센다이(구)", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_sendai_senseki_old", "lang": "en", "text": "Sendai (old)", "source": "wikidata"}

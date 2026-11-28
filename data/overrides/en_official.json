@@ -1012,6 +1012,12 @@
    "source": "https://www.jrhokkaido.co.jp/global/pdf/route_map.pdf",
    "type": "company"
   },
+  "n_aoba_dori": {
+   "en": "Aobadori Avenue",
+   "source": "https://timetables.jreast.co.jp/en/2612/timetable/tt1710/1710010.html",
+   "type": "company",
+   "note": "JR East official English timetable title \"Aobadori Avenue Station Timetable (Senseki Line)\"; official translated form is the name, the reading form is a search alias (round 6, 2026-11-28)"
+  },
   "n_aoba_dori_ichibancho": {
    "en": "Aoba-dori Ichibancho",
    "source": "https://www.kotsu.city.sendai.jp/assets/img/subway/station/2026nswe_rail.pdf (en_names/evidence/web/sendai_subway_routemap_2026.pdf, p.2; rendered sendai_subway_routemap_2026-2.png)",

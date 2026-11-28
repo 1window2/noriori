@@ -165,6 +165,21 @@ for e_,l_,o_ in _db.execute("select distinct edge_id,line_id,operator_id from ed
     ELINE[e_].add(l_)
     if o_ in ops:LOPS[l_].add(ops[o_]['name_ja'])
 _db.close()
+# 노드 나누기(data/overrides/node_split.json)는 compile이 선형 찾기 뒤에 적용한다. 선형을 나누기 전 노드로 찾으면 옮겨 갈 노선의 칸(노면 정류장)이
+# 원 노드(지하철역) 자리로 잘려 지도에 끊김이나 곧은 덧선이 생긴다(6회차 2026-11-28: 나눈 노드에 닿는 칸 231개 가운데 115개가 50 m 넘게 어긋남, 覚王山·新橋·月島·新栄町).
+# 그래서 선형을 찾기 전에 옮겨 갈 노선만 쓰는 칸의 끝을 새 노드로 바꾸고 새 노드 좌표로 찾는다. 새 노드 좌표는 원본에 쓰지 않는다(아래 positions 덤프에서 뺀다)
+SPLIT_NEW=set()
+for x_ in json.load(open(os.path.join(ROOT,'data','overrides','node_split.json'),encoding='utf-8')):
+    n_,new_,mv_=x_['node'],x_['new_id'],set(x_['move_lines'])
+    if new_ not in pos:
+        pp_=x_.get('position')
+        if not pp_ or pp_.get('lat') is None:continue
+        pos[new_]=dict(node=new_,lat=pp_['lat'],lon=pp_['lon'],quality='approx',source=pp_.get('source','n05'));SPLIT_NEW.add(new_)
+    for e in edges:
+        ls_=ELINE.get(e['id']) or {e.get('seed_line')}-{None}
+        if not ls_ or not ls_<=mv_:continue
+        for k_ in ('a','b'):
+            if e[k_]==n_:e[k_]=new_
 MOVED=json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))
 def seglen(a,b):
     p=math.radians((a[1]+b[1])/2)
@@ -673,7 +688,8 @@ N05AL={k:tuple(v) for k,v in HT['N05AL'].items()}
 def ends_far(eid):
     r=rows.get(eid)
     if not r:return 9
-    e=ids[eid];A,B=where(e['a']),where(e['b']);c=r['coords']
+    # 원 좌표로 잰다. 선로 위로 옮긴 점(_on)은 잘못 잡은 선로(九蔵町: 420 m 옆 JR 선로) 위에 있어 거리가 0이 나와 N05로 바꾸지 못했다 (6회차 2026-11-28)
+    e=ids[eid];A,B=lonlat(e['a']) or where(e['a']),lonlat(e['b']) or where(e['b']);c=r['coords']
     return max(seglen(c[0],A) if A else 0,seglen(c[-1],B) if B else 0)
 if source_on('n05'):
     # gen_n05가 남긴 별칭: 손 대조 노선의 N05 노선 이름 (真田傍陽線 ↔ 菅原鹿沢線)
@@ -771,7 +787,7 @@ dump('geometry/osm.yaml',[x for x in out if x['source']=='osm'],'OpenStreetMap �
 if PU:
     for p in pos.values():
         p.pop('_on',None)
-    dump('positions/positions.yaml',list(pos.values()),'노드 좌표')
+    dump('positions/positions.yaml',[p for p in pos.values() if p['node'] not in SPLIT_NEW],'노드 좌표')
 # gen_source가 data/source를 지우고 다시 만들므로 여기서 쓴다
 with open(os.path.join(SRC,'geometry','LICENSE.md'),'w',encoding='utf-8') as o:o.write(LICENSE)
 os.makedirs(CAND,exist_ok=True)

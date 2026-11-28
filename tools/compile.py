@@ -2503,7 +2503,11 @@ def pick_key(c,s):
     # 같은 근거 등급이면 이름이 같은 노드나 그 역의 「駅前」 정류장을 먼저 고른다(阪神 本線 野田의 北大阪線 상대는 같은 이름 野田 정류장이지 지나가는 海老江가 아니다.
     # JR 伊野의 とさでん 상대는 역 앞 伊野駅前이다, 6회차 2026-11-28).
     # 仙台(K05)은 지나가는 노드가 같은 이름 역이라 그대로다
-    return (is_cur(o)!=is_cur(s),m!=n,_brank(n,m),m!=n and _ja_base(m) not in (_ja_base(n),(_ja_base(n) or '')+'駅前'),m!=n and not(pr[0] and nx[0]),round(hav_km(n,m),3),not(pr[0] and nx[0]),o['route_id'],o['seq'])
+    return (is_cur(o)!=is_cur(s),m!=n,_brank(n,m),m!=n and not _same_or_ekimae(n,m),m!=n and not(pr[0] and nx[0]),round(hav_km(n,m),3),not(pr[0] and nx[0]),o['route_id'],o['seq'])
+def _same_or_ekimae(n,m):
+    """두 노드가 같은 이름이거나 한쪽이 다른 쪽의 「駅前」 정류장인가. 이름이 없으면 아니다"""
+    a_,b_=_ja_base(n),_ja_base(m)
+    return a_ is not None and b_ is not None and (a_==b_ or b_==a_+'駅前' or a_==b_+'駅前')
 _JAB={}
 def _ja_base(x):
     """노드의 기간 없는 일본어 이름 (환승 상대 고르기용)"""
@@ -2687,6 +2691,22 @@ for _j in list(junctions)+[x_ for v_ in list(jx.values()) for x_ in v_ if x_.get
     if _j.get('side'):WARN['side_geo_fix'].append((_j['line'],_j['other'],_j['at'],_j.get('side'),_sg))
     _j['side']=_sg
 print('선형으로 고친 분기 방향',len(WARN['side_geo_fix']),'손 행과 선형이 다름',len(WARN['side_geo_hand']))
+# 직각 교차처럼 선형으로 방향이 안 갈리고(side_geo None) 방향 칸도 빈 행은 근거 표 THROUGH의 방면을 쓴다.
+# A→B 행의 a_toward(A 열차가 B에서 향하는 역)는 B→A 행 쪽에서 보면 지나가는 노선 B 위의 방면 역(_own_toward)이다.
+# 新栄町 公園線→栄町線 車道 쪽 곡선: 선형을 노선별 정류장 점으로 바로 그리자 십자 교차가 직각이 되어 방향이 비었음 (6회차 2026-11-28, 회귀 r5-xing2-45)
+_THTW=collections.defaultdict(set)
+for _x in _THR:
+    for _a,_b,_m,_tw,_pv in ((_x['a'],_x['b'],_x['at'][1],_x.get('a_toward'),(_x.get('from'),_x.get('to') or 'ongoing')),(_x['b'],_x['a'],_x['at'][0],_x.get('b_toward'),(_x.get('from'),_x.get('to') or 'ongoing'))):
+        for t_ in ([_tw] if isinstance(_tw,str) else (_tw or [])):_THTW[(_b,_a,_m)].add((t_,_pv))
+_n_tw=0
+for _j in junctions:
+    if _j.get('side') or _j.get('_own_toward') or not _j.get('at'):continue
+    _jv=list(_j.get('valid') or [None,'ongoing'])
+    # 기간이 이 행과 똑같은 근거 행의 방면이 먼저다(十字街: 1913–1992 末広町 쪽, –현재 魚市場通 쪽). 없으면 기간이 겹치는 행
+    _c=_THTW.get((_j['line'],_j['other'],_j['at']),())
+    _t=sorted({t_ for t_,pv_ in _c if list(pv_)==_jv}) or sorted({t_ for t_,pv_ in _c if _lo(pv_[0])<_lo(_jv[1],True) and _lo(_jv[0])<_lo(pv_[1],True)})
+    if _t:_j['_thtw']=set(_t);_n_tw+=1
+print('방향 빈 행에 쓸 근거 표 방면이 있는 분기',_n_tw)
 def _tw_pick(o,pr,nx,j):
     """방면 역(j['_toward'])이 상대 계통에서 이 역의 위쪽이면 pr, 아래쪽이면 nx. 상대 계통에 없는 역은 그 노선 다른 계통 순서로도 찾지 않는다"""
     L_=by_route[o['route_id']];i_=_SIDX[(o['route_id'],o['seq'])];out=[]
@@ -3100,9 +3120,10 @@ for s in stops:
           # 토막 첫날로 잰 값은 그 토막의 끝 역 여부(isend_p)와 맞을 때만 쓴다. 토막 나누기(정차 기준)와 끝 역 시기(칸 기준)가 다르게 보는 곳은 행 시작 날 값을 그대로 둔다
           if j.get('continue') and not j.get('implied') and jv_:
               era=era_end(r['id'],s['seq'],jv_)
+              # 토막의 끝 역 여부는 이 행에 쓰는 isend다(같은 노선 다른 계통이면 isend0, 다른 노선이면 isend_p)
               if len(pieces_)>1 and _lo(s['valid_from'])>_lo(jv_[0]):
                   ep_=era_end(r['id'],s['seq'],(s['valid_from'],jv_[1]))
-                  if (not isend_p and ep_=='through') or (isend_p and ep_ in ('up','down')):era=ep_
+                  if (not isend and ep_=='through') or (isend and ep_ in ('up','down')):era=ep_
           # 끝난 기간 한정 행은 그 기간의 선로로 끝 역인지 본다. 오늘 끝 역이어도 그때 지나가는 역이었으면 분기다 (2회차 종합 K01)
           thru_then=era=='through' and isend and (jv_ or [None,'ongoing'])[1] not in (None,'ongoing')
           if isend or era=='through':era=None
@@ -3252,7 +3273,14 @@ for s in stops:
                                   add_link(s,oid,rr,kind,sdo_,group_near(m),nxt,term,None,None,pd,o)
                                   if sdo_!=j.get('side'):WARN['branch_side_own_toward'].append((r['id'],n,oid,j.get('side'),sdo_,pd[0]))
                               continue
+                      _nl_=len(links)
                       add_link(s,oid,rr,kind,j.get('side') or era,group_near(m),nxt,term,None,None,pd,o)
+                      # 근거 표 THROUGH의 방면(_thtw). 방향이 끝까지(역 좌표 보충 뒤에도) 비는 행에만 아래에서 쓴다
+                      if kind=='branch' and j.get('_thtw') and not (j.get('side') or era):
+                          L0_=by_route[r['id']];i0_=_SIDX.get((r['id'],s['seq']))
+                          _ts_=sorted({'down' if k<i0_ else 'up' for k,x in enumerate(L0_) if x['node_id'] in j['_thtw'] and k!=i0_}) if i0_ is not None else []
+                          for l_ in links[_nl_:]:
+                              if _ts_:l_['_thtw_sides']=_ts_
           # 이 행으로 낸 계통 이음의 종류 (연결 표를 판정대로 낼 때 쓴다)
           if len(links)>n0_:j.setdefault('_kinds',set()).add(kind)
           # 스위치백 직통(근거 표 reverse 행): 끝 역 이어짐 가운데 이 계통 마지막 칸과 상대 방면 칸이 되돌아가는 각(기준각 미만)인 방면에 표식을 건다.
@@ -4398,6 +4426,17 @@ filled=0
 for k in links:
     if k['kind']=='branch' and not k.get('side') and not k.get('at_edge'):
         k['side']=side_of(k);filled+=bool(k['side'])
+# 선형·기간·역 좌표로도 방향이 비는 분기는 근거 표 THROUGH의 방면으로 채운다. A→B 행의 a_toward(A 열차가 B에서 향하는 역)는
+# 지나가는 노선 B 쪽에서 보면 방면 역이고, 그 역이 위쪽이면 그쪽에서 내려와 곧장 들어가므로 down이다(운행 계통표 방면과 같은 규칙).
+# 기존 값은 바꾸지 않는다. 新栄町 公園線→栄町線 車道 쪽 곡선: 노선별 정류장 점으로 그린 십자 교차가 직각이라 방향이 비었음 (6회차 2026-11-28, 회귀 r5-xing2-45)
+_thtw_fill=0
+for k in list(links):
+    ts_=k.pop('_thtw_sides',None)
+    if not ts_ or k.get('side'):continue
+    k['side']=ts_[0];_thtw_fill+=1
+    for sd_ in ts_[1:]:
+        k2_=dict(k);k2_['side']=sd_;links.append(k2_);_thtw_fill+=1
+print('근거 표 방면으로 채운 빈 분기 방향',_thtw_fill)
 for _k,_v in NOOP.items():
     for _x in _v:err(_k+'_noop',_x)
 print('분기 방향 채움',filled)

@@ -35,7 +35,8 @@ for l,e in m.execute('select distinct line_id,edge_id from edge_attr'):lines_of[
 SNAP_KM=1.0
 snap_moved=[]
 # 지도 렌더링 전수 점검 (build/map_audit.json). 선 위에 서지 못한 점과 크게 옮긴 점을 남긴다
-AUDIT={'station_off_line':[],'station_moved_far':[],'platform_off_line':[],'platform_moved':[],'hub_far':[],'edge_end_far':[]}
+# edge_end_overrun: 선이 역 점을 지나쳐 더 나가 잇지 않은 칸(끊김은 아님, 길게 나간 선을 살펴보는 목록). map_join_unused: 쓰이지 않은 map_join 행
+AUDIT={'station_off_line':[],'station_moved_far':[],'platform_off_line':[],'platform_moved':[],'hub_far':[],'edge_end_far':[],'edge_end_overrun':[],'map_join_unused':[]}
 def nearest(lat,lon,coords):
     kx=math.cos(math.radians(lat))*111.32;ky=110.57;best=None
     for p,q in zip(coords,coords[1:]):
@@ -85,6 +86,7 @@ JOIN_KM=0.15
 JOIN_PRECISE_KM=0.35
 # 원 선형이 짧은 것이 조사로 확인된 칸은 한도를 넘어도 잇는다 (data/overrides/map_join.json)
 JOIN_ALLOW={e_:r_['node'] for e_,r_ in json.load(open(os.path.join(ROOT,'data','overrides','map_join.json'),encoding='utf-8'))['rows'].items()}
+JOIN_USED=set()   # 실제로 한도를 넘어 이은 행. 쓰이지 않은 행은 점검에 남긴다
 TOUCH_KM=0.02
 quality=dict(m.execute('select node_id,quality from node_position'))
 edges_of_line=collections.defaultdict(set)
@@ -119,7 +121,10 @@ def joined(eid,coords):
             # 끝만 재면 선이 역 점을 지나쳐 더 나간 칸(역 점이 선 위에 있음)과 끝이 같은 노선의 다른 칸에 닿은 칸도 떨어진 것으로 센다.
             # 둘 다 화면에서는 끊기지 않으므로 잇지도 남기지도 않는다 (기기 순회 2026-11-26의 180건 가운데 154건)
             end=out[0] if i==0 else out[-1]
-            if touches(*q,out) or any(touches(end[1],end[0],shape(x)) for l_ in lines_of[eid] for x in edges_of_line[l_] if x!=eid and overlaps(eid,x)):continue
+            # 같은 노선 다른 칸은 이 역에 닿는 칸만 본다. 아무 칸이나 보면 평행 선로·옛 선형에 우연히 닿은 끊김이 점검에서 사라진다
+            if touches(*q,out):AUDIT['edge_end_overrun'].append(dict(edge=eid,node=nd,gap_km=round(d,3)));continue
+            if any(touches(end[1],end[0],shape(x)) for l_ in lines_of[eid] for x in edges_of_line[l_] if x!=eid and nd in EDGE_ENDS.get(x,()) and overlaps(eid,x)):continue
+            if JOIN_ALLOW.get(eid)==nd:JOIN_USED.add(eid)
             if JOIN_ALLOW.get(eid)!=nd and d>(JOIN_PRECISE_KM if quality.get(nd)=='precise' else JOIN_KM):
                 AUDIT['edge_end_far'].append(dict(edge=eid,node=nd,gap_km=round(d,3),quality=quality.get(nd)));continue
         pt=[round(q[1],6),round(q[0],6)]
@@ -282,7 +287,8 @@ if osm:
         f.writelines(osm_points)
     subprocess.run(['tippecanoe','-q','-o','rail-osm.pmtiles','-Z3','-z14','--no-feature-limit','--no-tile-size-limit','-r1','-n','noriori rail osm','-A','© OpenStreetMap contributors','rail-osm.geojsonl'],check=True,cwd=BUILD,env=dict(os.environ,TIPPECANOE_MAX_THREADS='1'))
     os.remove(oj)
-# 선 끝 이음 점검은 OSM 선까지 쓴 뒤에 남긴다
+# 선 끝 이음 점검은 OSM 선까지 쓴 뒤에 남긴다. 한도를 넘어 잇는 행이 한 번도 쓰이지 않았으면(노드가 칸 끝이 아님, 이미 가까움) 알린다
+AUDIT['map_join_unused']=sorted(set(JOIN_ALLOW)-JOIN_USED)
 json.dump(AUDIT,open(os.path.join(BUILD,'map_audit.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('지도 점검',{k:len(v) for k,v in AUDIT.items()})
 # 기본 배경은 앱에 넣는다. 인터넷이 없어도 일본 윤곽과 도도부현 경계가 보인다 (설계 §13). 원본은 tools/gen_base.sh

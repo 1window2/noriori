@@ -1676,7 +1676,7 @@
 - {"entity_type": "route", "id": "r_nikko_line", "lang": "en", "text": "Utsunomiya~Nikko", "source": "rule"}
 - {"entity_type": "route", "id": "r_karasuyama_line", "lang": "en", "text": "Hoshakuji~Karasuyama", "source": "rule"}
 - {"entity_type": "route", "id": "r_senzan_line", "lang": "en", "text": "Sendai~Uzen-Chitose", "source": "rule"}
-- {"entity_type": "route", "id": "r_senseki_line", "lang": "en", "text": "Aoba-dori~Ishinomaki", "source": "rule"}
+- {"entity_type": "route", "id": "r_senseki_line", "lang": "en", "text": "Aobadori Avenue~Ishinomaki", "source": "rule"}
 - {"entity_type": "route", "id": "r_senseki_line_rikuzen_otsuka_rikuzen_ono", "lang": "en", "text": "Rikuzen-Otsuka~Rikuzen-Ono", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishinomaki_line", "lang": "en", "text": "Kogota~Onagawa", "source": "rule"}
 - {"entity_type": "route", "id": "r_ishinomaki_line_urashuku_onagawa_old", "lang": "en", "text": "Urashuku~Onagawa (old)", "source": "rule"}

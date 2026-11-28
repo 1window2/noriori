@@ -2103,8 +2103,6 @@
 - {"line": "l_takamori_line", "other": "l_hohi_main_line", "at": "n_tateno", "source": "derived", "verified": false, "valid": [null, "1986-04-01"], "continue": true}
 - {"line": "l_hohi_main_line", "other": "l_takamori_line", "at": "n_tateno", "source": "derived", "verified": false, "valid": [null, "1986-04-01"], "side": "up"}
 - {"line": "l_keio_line", "other": "l_takao_line", "at": "n_kitano_keio", "source": "derived", "verified": false, "valid": [null, "ongoing"], "side": "down"}
-- {"line": "l_takaoka_line", "other": "l_sakaemachi_line", "at": "n_higashishinmachi", "source": "derived", "verified": false, "valid": [null, "1971-02-01"], "continue": true}
-- {"line": "l_sakaemachi_line", "other": "l_takaoka_line", "at": "n_higashishinmachi", "source": "derived", "verified": false, "valid": [null, "1971-02-01"], "side": "down"}
 - {"line": "l_takaoka_line", "other": "l_takaokaencho_line", "at": "n_higashishinmachi", "source": "derived", "verified": false, "valid": [null, "1971-04-01"], "continue": true}
 - {"line": "l_takaokaencho_line", "other": "l_takaoka_line", "at": "n_higashishinmachi", "source": "derived", "verified": false, "valid": [null, "1971-04-01"], "continue": true}
 - {"line": "l_takaokaencho_line", "other": "l_sakaemachi_line", "at": "n_higashishinmachi", "source": "derived", "verified": false, "valid": [null, "1971-02-01"], "continue": true}
@@ -2444,6 +2442,8 @@
 - {"line": "l_kantsu_line", "other": "l_gofukumachi_line", "at": "n_gofukumachi", "source": "『博多チンチン電車物語』1999 ; 『鉄道ジャーナル』1981-11 ; 위키 西鉄福岡市内線", "verified": true, "valid": ["[1946-10-19..1955-12-31]", "1975-11-02"], "side": "up", "continue": true}
 - {"line": "l_gofukumachi_line", "other": "l_kantsu_line", "at": "n_gofukumachi", "source": "『鉄道ジャーナル』1981-11 ; 위키 西鉄福岡市内線", "verified": true, "valid": ["[1946-10-19..1955-12-31]", "1975-11-02"], "continue": true}
 - {"line": "l_kantsu_line", "other": "l_gofukumachi_line", "at": "n_gofukumachi", "source": "『鉄道ジャーナル』1981-11 ; 위키 西鉄福岡市内線", "verified": true, "valid": ["[1946-10-19..1955-12-31]", "1975-11-02"], "side": "down", "continue": true}
+- {"line": "l_takaoka_line", "other": "l_sakaemachi_line", "at": "n_higashishinmachi", "source": "名古屋市交通局『市営百年史』(2023) 第2編第1章 p.91 「市営化当初の電車運転系統図（大正11年）」 ; 위키 名古屋市電 rev106345723", "verified": true, "valid": ["[1914-11-05..1922-12-31]", "1971-02-01"], "continue": true}
+- {"line": "l_sakaemachi_line", "other": "l_takaoka_line", "at": "n_higashishinmachi", "source": "名古屋市交通局『市営百年史』(2023) 第2編第1章 p.91 「市営化当初の電車運転系統図（大正11年）」 ; 위키 名古屋市電 rev106345723", "verified": true, "valid": ["[1914-11-05..1922-12-31]", "1971-02-01"], "continue": true}
 - {"line": "l_jonan_line_nishi_nippon", "other": "l_loop_line_nishitetsu", "at": "n_watanabe_dori_1_chome", "source": "『鉄道ジャーナル』1981-11 ; 위키 西鉄福岡市内線 rev110542419", "verified": true, "valid": ["[1927-03-26..1944-09-24]", "1975-11-02"], "continue": true}
 - {"line": "l_loop_line_nishitetsu", "other": "l_jonan_line_nishi_nippon", "at": "n_watanabe_dori_1_chome", "source": "『鉄道ジャーナル』1981-11 ; 위키 西鉄福岡市内線 rev110542419", "verified": true, "valid": ["[1927-03-26..1944-09-24]", "1975-11-02"], "side": "up", "continue": true}
 - {"line": "l_jonan_line_nishi_nippon", "other": "l_loop_line_nishitetsu", "at": "n_watanabe_dori_1_chome", "source": "『鉄道ジャーナル』1981-11 ; 위키 西鉄福岡市内線 rev110542419", "verified": true, "valid": ["[1944-09-24..1955-12-31]", "1975-11-02"], "continue": true}
