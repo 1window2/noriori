@@ -152,7 +152,7 @@ _CURN={x for e in edges if e['id'] in CUR for x in (e['a'],e['b'])}
 # 현행 구간에 닿는 노드는 빼다: 현행 선형은 N02 선로를 따르고 역 자리는 승강장 층(§7.5)이 맡는다. 거기서 자르면 되돌아가는 꺾임이 생긴다(豊橋 東田本線 札木)
 POS_ORIG={}
 def _fixpos(n_,lo_,la_):
-    if n_ not in pos or n_ in _CURN or pos[n_].get('lat') is None or lo_ is None or la_ is None:return
+    if n_ not in pos or n_ in _CURN or lo_ is None or la_ is None:return
     POS_ORIG.setdefault(n_,dict(pos[n_]));pos[n_]=dict(pos[n_],lon=lo_,lat=la_)
 for _f in sorted(glob.glob(os.path.join(ROOT,'data','overrides','source_patch','positions','*.yaml'))):
     for _l in open(_f,encoding='utf-8'):
@@ -186,18 +186,30 @@ _db.close()
 # 원 노드(지하철역) 자리로 잘려 지도에 끊김이나 곧은 덧선이 생긴다(6회차 2026-11-28: 나눈 노드에 닿는 칸 231개 가운데 115개가 50 m 넘게 어긋남, 覚王山·新橋·月島·新栄町).
 # 그래서 선형을 찾기 전에 옮겨 갈 노선만 쓰는 칸의 끝을 새 노드로 바꾸고 새 노드 좌표로 찾는다. 새 노드 좌표는 원본에 쓰지 않는다(아래 positions 덤프에서 뺀다)
 SPLIT_NEW=set()
+# 새 노드 좌표: 보정 행(source_patch/positions의 add, 컴파일이 쓰는 값) → 나눔 행 position → 원 노드 좌표 순. 좌표가 없어도 칸 끝은 늘 바꾼다(6회차 리뷰)
+_SPADD={}
+for _f in sorted(glob.glob(os.path.join(ROOT,'data','overrides','source_patch','positions','*.yaml'))):
+    for _l in open(_f,encoding='utf-8'):
+        if _l.startswith('- '):
+            _x=json.loads(_l[2:])
+            if _x.get('patch')=='add' and _x.get('lat') is not None:_SPADD[_x['node']]=_x
 for x_ in json.load(open(os.path.join(ROOT,'data','overrides','node_split.json'),encoding='utf-8')):
     n_,new_,mv_=x_['node'],x_['new_id'],set(x_['move_lines'])
     if new_ not in pos:
-        pp_=x_.get('position')
-        if not pp_ or pp_.get('lat') is None:continue
-        pos[new_]=dict(node=new_,lat=pp_['lat'],lon=pp_['lon'],quality='approx',source=pp_.get('source','n05'));SPLIT_NEW.add(new_)
+        pp_=_SPADD.get(new_) or x_.get('position')
+        if pp_ and pp_.get('lat') is not None:pos[new_]=dict(node=new_,lat=pp_['lat'],lon=pp_['lon'],quality='approx',source=pp_.get('source','n05'))
+        elif n_ in pos and pos[n_].get('lat') is not None:pos[new_]=dict(pos[n_],node=new_)
+        if new_ in pos:SPLIT_NEW.add(new_)
     for e in edges:
         ls_=ELINE.get(e['id']) or {e.get('seed_line')}-{None}
         if not ls_ or not ls_<=mv_:continue
         for k_ in ('a','b'):
             if e[k_]==n_:e[k_]=new_
-# 우회 선 판정(아래 DETOUR)은 처음 좌표로 잰다. 사슬 탐색은 노드 좌표를 선로 위로 옮기고, 사람이 고친 좌표(node_fix)는 컴파일에서야 얹힌다
+# 나뉜 새 노드에도 사람이 고친 좌표(node_fix)를 얹는다
+for _n in SPLIT_NEW:
+    _v=_nf0.get('rows',_nf0).get(_n)
+    if isinstance(_v,dict) and _v.get('lat') is not None and _v.get('lon') is not None:pos[_n]=dict(pos[_n],lon=_v['lon'],lat=_v['lat'])
+# 우회 선 판정(아래 DETOUR)은 사슬 탐색이 선로 위로 옮기기 전의 좌표로 잰다(사람이 고친 좌표 포함)
 _NF=json.load(open(os.path.join(ROOT,'data','overrides','node_fix.json'),encoding='utf-8'))
 _NF=_NF.get('rows',_NF)
 POS0={n_:(p_['lon'],p_['lat']) for n_,p_ in pos.items() if p_.get('lat') is not None}
@@ -543,7 +555,8 @@ for x in load('aliases'):
 def mid(c):return c[len(c)//2] if len(c)%2 else tuple((a+b)/2 for a,b in zip(c[len(c)//2-1],c[len(c)//2]))
 PU={}
 # 좌표를 믿을 수 없는 노드: 보간값, 없음, 역 이전으로 옛 노드와 새 노드의 좌표가 같은 경우
-WEAK={n for n,p in pos.items() if p.get('lat') is None or p.get('source')=='interpolated'}
+# 사람이 고친 좌표를 얹은 노드(POS_ORIG)는 보간 출처라도 믿는다(사슬 탐색이 _on으로 덮지 않게, 6회차 리뷰)
+WEAK={n for n,p in pos.items() if p.get('lat') is None or (p.get('source')=='interpolated' and n not in POS_ORIG)}
 # 지금 서지 않는 옛 역은 원천 좌표가 같은 이름의 다른 역을 가리키기도 한다. 선로 위 km 지점과 300m 넘게 다르면 옮긴다
 _cn=set()
 for e_ in edges:

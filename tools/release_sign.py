@@ -30,7 +30,7 @@ def tables(db):
     c=sqlite3.connect(f'file:{db}?mode=ro',uri=True);out={}
     # FTS5 숨은 표(*_data·*_idx·*_docsize·*_config)는 SQLite 판과 병합 시점에 따라 바이트가 달라 내용 비교에서 뺀다. 검색 내용은 *_content가 담는다
     for (t,) in c.execute("select name from sqlite_master where type='table' and name not like 'sqlite_%' order by name"):
-        if t.endswith(('_data','_idx','_docsize','_config')) and c.execute("select 1 from sqlite_master where type='table' and name=?",(t.rsplit('_',1)[0],)).fetchone():continue
+        if t.endswith(('_data','_idx','_docsize','_config')) and c.execute("select 1 from sqlite_master where type='table' and name=? and lower(sql) like '%virtual table%fts5%'",(t.rsplit('_',1)[0],)).fetchone():continue
         cols=[r[1] for r in c.execute(f'pragma table_info("{t}")')]
         h=hashlib.sha256();n=0
         for row in c.execute(f'select * from "{t}" order by '+','.join(f'"{x}"' for x in cols)):h.update(repr(row).encode());n+=1
@@ -50,7 +50,8 @@ def main(a):
     if len(zips)!=1:raise SystemExit(f'릴리스 {tag}에 팩 묶음이 하나가 아닙니다: {zips}')
     man=os.path.join(d,'manifest.json')
     # 1. 빌드 증명
-    for f in (zips[0],man):run('gh','attestation','verify',f,'-R',repo(),'--signer-workflow',WORKFLOW,'--source-ref',f'refs/tags/{tag}','--deny-self-hosted-runners')
+    # 태그 이름(ref)뿐 아니라 그 태그 커밋에서 만든 것인지도 본다(태그를 옮긴 뒤 다시 서명하는 경우, 6회차 리뷰)
+    for f in (zips[0],man):run('gh','attestation','verify',f,'-R',repo(),'--signer-workflow',WORKFLOW,'--source-ref',f'refs/tags/{tag}','--source-digest',tc,'--deny-self-hosted-runners')
     # 2. 파일 해시
     pk=os.path.join(d,'pack');zipfile.ZipFile(zips[0]).extractall(pk)
     if open(os.path.join(pk,'manifest.json'),'rb').read()!=open(man,'rb').read():raise SystemExit('묶음 안 매니페스트가 따로 올린 매니페스트와 다릅니다')
@@ -73,7 +74,9 @@ def main(a):
         for f in glob.glob(os.path.join(dst,'*')):
             if os.path.isfile(f):os.remove(f)
         # 매니페스트가 적은 파일(해시 확인함)과 매니페스트만 넣는다
-        for f in list(m['files'])+['manifest.json']:shutil.copy(os.path.join(pk,f),os.path.join(dst,f))
+        for f in list(m['files'])+['manifest.json']:
+            if f!=os.path.basename(f) or f.startswith('.'):raise SystemExit(f'매니페스트 파일 이름이 이상합니다: {f}')
+            shutil.copy(os.path.join(pk,f),os.path.join(dst,f))
         shutil.copy(man+'.sig',dst);sign_manifest.verify(dst);print('앱 자산에 릴리스 팩과 서명을 넣음')
     if upload:
         run('gh','release','upload',tag,man+'.sig','-R',repo(),'--clobber');print(f'릴리스 {tag}에 manifest.json.sig를 올림')

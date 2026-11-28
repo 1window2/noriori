@@ -2707,6 +2707,12 @@ for _j in junctions:
     _t=sorted({t_ for t_,pv_ in _c if list(pv_)==_jv}) or sorted({t_ for t_,pv_ in _c if _lo(pv_[0])<_lo(_jv[1],True) and _lo(_jv[0])<_lo(pv_[1],True)})
     if _t:_j['_thtw']=set(_t);_n_tw+=1
 print('방향 빈 행에 쓸 근거 표 방면이 있는 분기',_n_tw)
+def _tag_thtw(ls_,r,s,j):
+    """방금 낸 분기 행에 근거 표 방면으로 정한 방향 후보를 붙인다(역 좌표 보충 뒤에도 비면 그때 쓴다)"""
+    L0_=by_route[r['id']];i0_=_SIDX.get((r['id'],s['seq']))
+    ts_=sorted({'down' if k<i0_ else 'up' for k,x in enumerate(L0_) if x['node_id'] in j['_thtw'] and k!=i0_}) if i0_ is not None else []
+    for l_ in ls_:
+        if ts_:l_['_thtw_sides']=ts_
 def _tw_pick(o,pr,nx,j):
     """방면 역(j['_toward'])이 상대 계통에서 이 역의 위쪽이면 pr, 아래쪽이면 nx. 상대 계통에 없는 역은 그 노선 다른 계통 순서로도 찾지 않는다"""
     L_=by_route[o['route_id']];i_=_SIDX[(o['route_id'],o['seq'])];out=[]
@@ -3117,7 +3123,7 @@ for s in stops:
           # 끝 역 시기는 근거 행 시작 날로 잰다. 다만 이 계통의 끝 역 여부가 바뀌는 날에서 나뉜 정차 토막이 근거 행보다 늦게 시작하면 그 토막 첫날로 잰다.
           # 행 시작 날의 상태를 뒤 토막이 물려받으면 안 된다: 函館 ガス会社前(본선이 1954–1978 亀田町 쪽으로 지나간 동안도 이어짐이 됨),
           # 名古屋 鶴舞公園(公園線이 1970–1972 이 역에서 끝난 동안도 분기가 됨) (6회차 2026-11-27)
-          # 토막 첫날로 잰 값은 그 토막의 끝 역 여부(isend_p)와 맞을 때만 쓴다. 토막 나누기(정차 기준)와 끝 역 시기(칸 기준)가 다르게 보는 곳은 행 시작 날 값을 그대로 둔다
+          # 토막 첫날로 잰 값은 그 토막의 끝 역 여부(isend)와 맞을 때만 쓴다. 토막 나누기(정차 기준)와 끝 역 시기(칸 기준)가 다르게 보는 곳은 행 시작 날 값을 그대로 둔다
           if j.get('continue') and not j.get('implied') and jv_:
               era=era_end(r['id'],s['seq'],jv_)
               # 토막의 끝 역 여부는 이 행에 쓰는 isend다(같은 노선 다른 계통이면 isend0, 다른 노선이면 isend_p)
@@ -3222,7 +3228,10 @@ for s in stops:
                               for x_ in _tw_pick(o,pr,nx,j):
                                   va_=rdir(o['route_id'],o['seq'],-1 if x_ is pr else 1,rd_);cu_,cd_=ucos(va_,vu_),ucos(va_,vd_)
                                   sdx_=own_sd_ or (('up' if cu_>cd_ else 'down') if cu_ is not None and cd_ is not None and abs(cu_-cd_)>=.5 else sd_)
+                                  _nl_=len(links)
                                   add_link(s,oid,rr,kind,sdx_,group_near(m),x_[0],x_[1],None,None,pd,o)
+                                  # 방향이 끝내 비면 근거 표 THROUGH의 방면(_thtw)을 아래에서 쓴다(西宮北口 神戸本線→今津線, 6회차 리뷰)
+                                  if kind=='branch' and not sdx_ and j.get('_thtw'):_tag_thtw(links[_nl_:],r,s,j)
                               continue
                           if not sd_ and (j.get('continue') or j.get('_geo')):
                               # 방향을 적지 않은 이어짐 행(綾瀬 常磐線→千代田線)은 이 노선 한쪽에서 들어와 상대 노선으로 가장 곧게 나가는 방면이다.
@@ -3276,11 +3285,7 @@ for s in stops:
                       _nl_=len(links)
                       add_link(s,oid,rr,kind,j.get('side') or era,group_near(m),nxt,term,None,None,pd,o)
                       # 근거 표 THROUGH의 방면(_thtw). 방향이 끝까지(역 좌표 보충 뒤에도) 비는 행에만 아래에서 쓴다
-                      if kind=='branch' and j.get('_thtw') and not (j.get('side') or era):
-                          L0_=by_route[r['id']];i0_=_SIDX.get((r['id'],s['seq']))
-                          _ts_=sorted({'down' if k<i0_ else 'up' for k,x in enumerate(L0_) if x['node_id'] in j['_thtw'] and k!=i0_}) if i0_ is not None else []
-                          for l_ in links[_nl_:]:
-                              if _ts_:l_['_thtw_sides']=_ts_
+                      if kind=='branch' and j.get('_thtw') and not (j.get('side') or era):_tag_thtw(links[_nl_:],r,s,j)
           # 이 행으로 낸 계통 이음의 종류 (연결 표를 판정대로 낼 때 쓴다)
           if len(links)>n0_:j.setdefault('_kinds',set()).add(kind)
           # 스위치백 직통(근거 표 reverse 행): 끝 역 이어짐 가운데 이 계통 마지막 칸과 상대 방면 칸이 되돌아가는 각(기준각 미만)인 방면에 표식을 건다.

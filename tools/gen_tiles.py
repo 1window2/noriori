@@ -124,8 +124,10 @@ def joined(eid,coords):
             # 같은 노선 다른 칸은 이 역에 닿는 칸만 본다. 아무 칸이나 보면 평행 선로·옛 선형에 우연히 닿은 끊김이 점검에서 사라진다
             if touches(*q,out):AUDIT['edge_end_overrun'].append(dict(edge=eid,node=nd,gap_km=round(d,3)));continue
             if any(touches(end[1],end[0],shape(x)) for l_ in lines_of[eid] for x in edges_of_line[l_] if x!=eid and nd in EDGE_ENDS.get(x,()) and overlaps(eid,x)):continue
-            if JOIN_ALLOW.get(eid)==nd:JOIN_USED.add(eid)
-            if JOIN_ALLOW.get(eid)!=nd and d>(JOIN_PRECISE_KM if quality.get(nd)=='precise' else JOIN_KM):
+            # 손 이음 행은 한도를 넘어 실제로 쓰일 때만 쓰인 것으로 센다(한도 안이면 행 없이도 이어져 지울 대상, 6회차 리뷰)
+            lim_=JOIN_PRECISE_KM if quality.get(nd)=='precise' else JOIN_KM
+            if JOIN_ALLOW.get(eid)==nd and d>lim_:JOIN_USED.add(eid)
+            if JOIN_ALLOW.get(eid)!=nd and d>lim_:
                 AUDIT['edge_end_far'].append(dict(edge=eid,node=nd,gap_km=round(d,3),quality=quality.get(nd)));continue
         pt=[round(q[1],6),round(q[0],6)]
         out=[pt]+out if i==0 else out+[pt]
