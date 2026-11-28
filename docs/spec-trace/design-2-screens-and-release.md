@@ -749,7 +749,7 @@
 | # | 행 | 요구 | 판정 | 체감 | 근거 |
 |---|---|---|---|---|---|
 | 598 | L1815 | 이름 `noriori` 소문자, 폴더 | 구현됨 | - | `apps/noriori/pubspec.yaml` |
-| 599 | L1816 | GitHub는 private 저장소, 공개 전환은 v1.0 때 | 구현됨 | - | README 배지와 `.github/workflows/release.yml`:3의 주소 github.com/1window2/noriori, `ci.yml`:73-76 private 조건 |
+| 599 | L1816 | GitHub 저장소 (2026-11-26부터 공개 `1window2/noriori`, DESIGN §17) | 구현됨 | - | README 배지와 `.github/workflows/release.yml`:3의 주소 github.com/1window2/noriori, `ci.yml`:34 private 조건(공개라 PR에서도 iOS가 돎). 2026-11-27 문구 갱신 |
 | 600 | L1817 | 첫 공개 범위 전체 v1.0 | 부분 | B | 위 L1782 |
 | 601 | L1820 | 탑승 기준일 1950-01-01, 법적 폐지일 기준 | 구현됨 | - | dates:4 |
 | 602 | L1820 | 이른 날짜와 폐지 이후 날짜는 자동 날짜 모름 | 구현됨 | C | 선택기는 고른 구간이 그날 없으면 날짜 모름으로 내림 A/features/record/controller/record_session_controller.dart:417-436, 저장은 C/network/route_resolver.dart:113-142. 札沼線 2020-04-18 실행 확인 |
@@ -872,7 +872,7 @@
 | 702 | v0.42 L1663 | 세로선 양옆 표 구조를 위키식 줄 배치에 흡수 | 구현됨 | - | `session_painters.dart`:7-22, lines:264-273 |
 | 703 | v0.42 L1665 | `이어서 타기` 시트를 끌어 올리면 기록 탭처럼 노선 목록 | 구현됨 | - | sheet:49-72,182-192 |
 | 704 | v0.42 L1822 | 데이터 라이선스: 선형은 N02 원 조건 | 구현됨 | - | `data/source/geometry/LICENSE.md` |
-| 705 | v0.42 L1825 | 공개 저장소에 `data/source`를 넣음 | 부분 | D | 결정은 됨. 저장소를 아직 만들지 않음 |
+| 705 | v0.42 L1825 | 공개 저장소에 `data/source`를 넣음 | 구현됨 | D | 공개 저장소 `1window2/noriori`에 `data/source`가 있음 (2026-11-26). 2026-11-27 재판정 |
 | 706 | v0.42 L1862 | 운전 계통 수량 v1.0은 30~50개 추정 | 부분 | D | `master.service` 17행 |
 | 707 | L1819 | 앱 아이콘: 전면 안 적용, 다른 후보는 지움 (v0.50) | 구현됨 | - | `apps/noriori/icon/front.svg`·`front-foreground.svg`·`front.background`로 Android `mipmap-*/ic_launcher*.png`와 iOS `AppIcon.appiconset`을 다시 만듦 (커밋 c3a7116, `tools/gen_icons.sh`) |
 | 708 | v0.42 L1863 | 근사 처리 3건: 東田本線 駅前, 옛 羽田駅, 菊池線 黒石 연장은 가까운 현재 노드로 | 구현됨 | - | `docs/db-build-log.md`:144, 데이터에 반영. 菊池線 黒石은 그 줄에 없고 §17에만 있음 |
@@ -950,7 +950,7 @@
 | 735 | L1731 | `route_stop.km_estimated` (v0.51) | 구현됨 | - | `tools/compile.py`:606-608, pack 698행 |
 | 736 | L1733 | `edge.geometry_source` | 구현됨 | - | `tools/compile.py`:656 |
 | 737 | L1753 | `alias` kind `moved` | 구현됨 | - | names alias moved 12행 |
-| 738 | L1765 | GitHub Actions "워크플로 넷" (L1765, L1836) | 문서 오류 | E | ARCHITECTURE §4.4는 여섯 (`CI`, `Release` 더함). `.github/workflows/`에 ci.yml, release.yml이 있음 |
+| 738 | L1765 | GitHub Actions 워크플로 수 (DESIGN §15, ARCHITECTURE §9) | 구현됨 | E | 2026-11-27에 문서를 여섯으로 고침. `.github/workflows/`에 6개 |
 | 739 | L1769 | 선형 라이선스를 파일별로 (N02 2020·2024 CC BY, 옛 판 商用可, N05 非商用, OSM ODbL) | 구현됨 | - | `data/source/geometry/LICENSE.md` |
 | 740 | L1776 | 데이터 출처 화면에 N05를 포함한 모든 출처 | 부분 | D | `apps/noriori/lib/features/settings/ui/data_sources_screen.dart`:22 N05 행. 화면은 목업 대조 전 (규칙 5) |
 | 741 | L1819 | AltStore 소스 배너는 환승역 4선 안 | 구현됨 | - | `distribution/altstore/header.png`·`header.svg`, `meta.json`:8 headerURL |

@@ -65,6 +65,10 @@ final class MemoryAssets implements PackAssets {
 
   @override
   Future<String> manifestText() async => manifestOf(files, edition: edition, schema: schema);
+
+
+  @override
+  Future<String?> signatureText() async => null;
 }
 
 /// 폴더에 이미 받아 둔 판을 만든다.

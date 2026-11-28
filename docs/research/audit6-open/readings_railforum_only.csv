@@ -1,0 +1,1423 @@
+file,key,name_ja,current_reading,lines
+node_fix,n_yamato_yagi_uehommachi_side,分岐点（大和八木）,ぶんきてん,
+node_fix,n_takeda_kashima,,たけだ,
+node_fix,n_funatsukiba,船着場,ふなつきば,JR西日本 境線
+node_fix,n_otohime,乙姫,おとひめ,なかや旅館 玄妙遊園ロマンスカー
+node_fix,n_akashima_urashima,赤島,あかじま,浦島観光 狼煙山ケーブルカー
+node_fix,n_noroshiyama,狼煙山,のろしやま,浦島観光 狼煙山ケーブルカー
+node_fix,n_mannen_hyoe,萬年,まんねん,兵衛旅館 兵衛旅館鋼索鉄道
+node_fix,n_ninomaru_shingu,二の丸,にのまる,和歌山観光 新宮観光リフトカー
+node_fix,n_sanjo_minoo,山上,さんじょう,大阪観光 箕面鋼索鉄道
+node_fix,n_kenryukomae,乾隆校前,けんりゅうこうまえ,京都市交通局 京都市電千本線
+node_fix,n_hachimanjinjamae,八幡神社前,はちまんじんじゃまえ,仙台市交通局 仙台市電八幡町線
+node_fix,n_gorin_2_chome,五輪二丁目,ごりんにちょうめ,仙台市交通局 仙台市電原町線
+node_fix,n_odawara_1_chome,小田原一丁目,おだわらいっちょうめ,仙台市交通局 仙台市電原町線
+node_fix,n_omachinishikoenmae,大町西公園前,おおまちにしこうえんまえ,仙台市交通局 仙台市電循環線
+node_fix,n_reja_center_mae,レジャーセンター前,れじゃーせんたーまえ,仙台市交通局 仙台市電循環線
+node_fix,n_sogogurandomiyaginochugakkomae,総合グランド宮城野中学校前,そうごうぐらんどみやぎのちゅうがっこうまえ,仙台市交通局 仙台市電原町線
+node_fix,n_kamegawashinkawa,亀川新川,かめがわしんかわ,大分交通 大分交通別大線
+node_fix,n_kaminocho_bancho,上之町,かみのちょう,岡山電気軌道 岡山電気軌道東山本線 / 岡山電気軌道 岡山電気軌道番町線
+node_fix,n_yurakubashi,有楽橋,ゆうらくばし,東京都交通局 都電土橋線
+node_fix,n_ojidobutsuen,王子動物園,おうじどうぶつえん,神戸市交通局 神戸市電石屋川線
+node_fix,n_1_chome,一丁目,いっちょうめ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_4_chome,四丁目,よんちょうめ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_5_chome,五丁目,ごちょうめ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_6_chome,六丁目,ろくちょうめ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_adachikuyakushomae,足立区役所前,あだちくやくしょまえ,東京都交通局 都電北千住線
+node_fix,n_aga_ekimae,阿賀駅前,あがえきまえ,呉市交通局 呉市電郊外線
+node_fix,n_aizomecho,愛染町,あいぞめちょう,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_akagawacho_1_chome,赤川町一丁目,あかがわちょういっちょうめ,大阪市交通局 大阪市電都島守口線
+node_fix,n_akagawacho_3_chome,赤川町三丁目,あかがわちょうさんちょうめ,大阪市交通局 大阪市電都島守口線
+node_fix,n_akatenuguiinarimae,赤手拭稲荷前,あかてぬぐいいなりまえ,大阪市交通局 大阪市電西道頓堀天王寺線
+node_fix,n_akihamichi,秋葉道,あきはみち,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_akita_ekimae,秋田駅前,あきたえきまえ,秋田市交通局 秋田市電秋田市内線
+node_fix,n_amagasakitamaebashi,尼崎玉江橋,あまがさきたまえばし,阪神電気鉄道 阪神国道線
+node_fix,n_aokibashi,青木橋,あおきばし,横浜市交通局 横浜市電六角橋線 / 横浜市交通局 横浜市電浅間町線
+node_fix,n_aokidori,青木通,あおきどおり,横浜市交通局 横浜市電六角橋線 / 横浜市交通局 横浜市電神奈川線
+node_fix,n_aoyamaminamicho,青山南町,あおやまみなみちょう,東京都交通局 都電霞町線
+node_fix,n_ariakemachi,有明町,ゆうめいちょう,西日本鉄道 西鉄大牟田市内線
+node_fix,n_asabe,浅部,あさべ,宮城バス 仙北鉄道登米線
+node_fix,n_asahibashi_osaka_city,朝日橋,あさひばし,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_asahimachi_2_chome,旭町二丁目,あさひまちにちょうめ,とさでん交通 とさでん交通伊野線
+node_fix,n_asahishinbunshikyokumae,朝日新聞支局前,あさひしんぶんしきょくまえ,札幌市交通局 札幌市電苗穂線
+node_fix,n_asaitomae,麻糸前,あさいとまえ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_asakayamadori,浅香山通,あさかやまどおり,大阪市交通局 大阪市電阪堺線
+node_fix,n_asaokabashi,浅岡橋,あさおかばし,横浜市交通局 横浜市電浅間町線
+node_fix,n_ashiikebashi,芦池橋,あしいけばし,名古屋鉄道 名鉄岡崎市内線
+node_fix,n_ashikado,足門,あしかど,東武鉄道 東武高崎線
+node_fix,n_ashinabashi,葦名橋,あしなばし,横浜市交通局 横浜市電杉田線 / 横浜市交通局 横浜市電磯子線
+node_fix,n_ashiya_ekimae,芦屋駅前,あしやえきまえ,阪神電気鉄道 阪神国道線
+node_fix,n_azabunakanohashi,麻布中ノ橋,あざぶなかのはし,東京都交通局 都電古川線
+node_fix,n_azusawacho,小豆沢町,あずさわちょう,東京都交通局 都電志村線
+node_fix,n_bancho,番町,ばんちょう,岡山電気軌道 岡山電気軌道番町線
+node_fix,n_bandobashi_maebashi,板東橋,ばんどうばし,東武鉄道 東武前橋線
+node_fix,n_banjin,番神,ばんしん,琴平参宮電鉄 琴平参宮電鉄丸亀線
+node_fix,n_banseicho,万世町,まんせいちょう,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_bansho,番匠,ばんじょう,北陸鉄道 北陸鉄道松金線
+node_fix,n_bentenmae,弁天前,べんてんまえ,大分交通 大分交通別大線
+node_fix,n_bentenura,弁天裏,べんてんうら,名古屋市交通局 名古屋市電築地線
+node_fix,n_beppu_ekimae,別府駅前,べっぷえきまえ,大分交通 大分交通別大線
+node_fix,n_birugaishamae,ビール会社前,びーるがいしゃまえ,札幌市交通局 札幌市電苗穂線
+node_fix,n_bochimae,墓地前,ぼちまえ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_bochishita,墓地下,ぼちした,東京都交通局 都電広尾線
+node_fix,n_cable_hiei,ケーブル比叡,けーぶるひえい,京福電気鉄道 京福電気鉄道鋼索線
+node_fix,n_cable_yase,ケーブル八瀬,けーぶるやせ,京福電気鉄道 京福電気鉄道鋼索線
+node_fix,n_chishimacho,千島町,ちしまちょう,大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_chitosebashi,千歳橋,ちとせばし,横浜市交通局 横浜市電花園橋線
+node_fix,n_chogocho_1_chome,長後町一丁目,ちょうごちょういっちょうめ,東京都交通局 都電志村線
+node_fix,n_chogocho_2_chome,長後町二丁目,ちょうごちょうにちょうめ,東京都交通局 都電志村線
+node_fix,n_chojamachi_1_chome,長者町一丁目,ちょうじゃまちいっちょうめ,横浜市交通局 横浜市電花園橋線 / 横浜市交通局 横浜市電長者町線
+node_fix,n_chojamachi_3_chome,長者町三丁目,ちょうじゃまちさんちょうめ,横浜市交通局 横浜市電長者町線
+node_fix,n_chojamachi_5_chome,長者町五丁目,ちょうじゃまちごちょうめ,横浜市交通局 横浜市電羽衣町線 / 横浜市交通局 横浜市電長者町線
+node_fix,n_chuohanamaki,中央花巻,ちゅうおうはなまき,花巻電鉄 花巻電鉄鉛線
+node_fix,n_chuoichiba,中央市場,ちゅうおういちば,横浜市交通局 横浜市電中央市場線
+node_fix,n_chuoichibadori,中央市場通,ちゅうおうしじょうどおり,札幌市交通局 札幌市電北5条線 / 札幌市交通局 札幌市電西20丁目線
+node_fix,n_chuosanbashidori,中央桟橋通,ちゅうおうさんばしどおり,呉市交通局 呉市電市内線
+node_fix,n_chuoyubinkyokumae,中央郵便局前,ちゅうおうゆうびんきょくまえ,札幌市交通局 札幌市電北5条線
+node_fix,n_daigakushita,大学下,だいがくした,名古屋鉄道 名鉄岡崎市内線
+node_fix,n_daiguji,大宮司,だいぐうじ,名古屋市交通局 名古屋市電築地線
+node_fix,n_daiichikokudo,第一国道,だいいちこくどう,川崎市交通局 川崎市電
+node_fix,n_daimotsukitaguchi,大物北口,だいもつきたぐち,阪神電気鉄道 阪神国道線
+node_fix,n_daiyonsunamachishogakko,第四砂町小学校,だいよんすなまちしょうがっこう,東京都交通局 都電砂町線
+node_fix,n_dangozakashita,団子坂下,だんござかした,東京都交通局 都電動坂線
+node_fix,n_denzuinmae,伝通院前,でんずういんまえ,東京都交通局 都電大塚線 / 東京都交通局 都電富坂線
+node_fix,n_dochomae,道庁前,どうちょうまえ,札幌市交通局 札幌市電苗穂線 / 札幌市交通局 札幌市電西4丁目線
+node_fix,n_dokanyamashita,道灌山下,どうかんやました,東京都交通局 都電動坂線
+node_fix,n_dozakashita,動坂下,どうざかした,東京都交通局 都電動坂線
+node_fix,n_ebisujinjamae,戎神社前,えびすじんじゃまえ,大阪市交通局 大阪市電西道頓堀天王寺線
+node_fix,n_eirakubashisuji,永楽橋筋,えいらくばしすじ,大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_fuchomae,府庁前,ふちょうまえ,京都市交通局 京都市電丸太町線
+node_fix,n_fudanotsuji_kyoto_city,札ノ辻,ふだのつじ,京都市交通局 京都市電伏見線
+node_fix,n_fudoshita,不動下,ふどうした,横浜市交通局 横浜市電根岸線
+node_fix,n_fujimidori,富士見通,ふじみどおり,大分交通 大分交通別大線
+node_fix,n_fujishimajinjamae,藤島神社前,ふじしまじんじゃまえ,福井鉄道 福井鉄道福武線
+node_fix,n_fukamachi,深町,ふかまち,大分交通 大分交通別大線
+node_fix,n_fukujinbashi,福神橋,ふくじんばし,東京都交通局 都電業平線
+node_fix,n_fukuroji,袋地乗降場,ふくろちじょうこうじょう,留萠鉄道 留萠鉄道
+node_fix,n_fukuyoshicho,福吉町,ふくよしちょう,東京都交通局 都電霞町線
+node_fix,n_futatsuyacho,二ツ谷町,ふたつやちょう,横浜市交通局 横浜市電六角橋線
+node_fix,n_futatsuzeki,二ツ堰,ふたつぜき,花巻電鉄 花巻電鉄鉛線
+node_fix,n_gakumae,学前,がくまえ,士別軌道 士別軌道線
+node_fix,n_gengahashi,源が橋,げんがはし,大阪市交通局 大阪市電百済線
+node_fix,n_ginkakujimichi,銀閣寺道,ぎんかくじみち,京都市交通局 京都市電今出川線 / 京都市交通局 京都市電白川線
+node_fix,n_gorinitchomekokuritsubyoiniriguchi,五輪一丁目国立病院入口,ごりんいっちょうめこくりつびょういんいりぐち,仙台市交通局 仙台市電原町線
+node_fix,n_goshobashi,御所橋,ごしょばし,尾道鉄道 尾道鉄道線
+node_fix,n_gurandomae,グランド前,ぐらんどまえ,琴平参宮電鉄 琴平参宮電鉄丸亀線
+node_fix,n_gyokuseijimae,玉井寺前,ぎょくせいじまえ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_gyoranzakashita,魚籃坂下,ぎょらんざかした,東京都交通局 都電伊皿子線 / 東京都交通局 都電目黒線
+node_fix,n_hachiman_1_chome,八幡一丁目,はちまんいっちょうめ,仙台市交通局 仙台市電八幡町線
+node_fix,n_hachimanura,八幡裏,はちまんうら,東武鉄道 東武伊香保線
+node_fix,n_hagimachi,萩町,はぎまち,東武鉄道 東武前橋線
+node_fix,n_hakoneguchi,箱根口,はこねぐち,箱根登山鉄道 箱根登山鉄道小田原市内線
+node_fix,n_hamadashakomae,浜田車庫前,はまだしゃこまえ,阪神電気鉄道 阪神国道線
+node_fix,n_hanareyama,離山,はなれやま,東武鉄道 東武伊香保線
+node_fix,n_hanazonobashi,花園橋,はなぞのばし,横浜市交通局 横浜市電本牧線 / 横浜市交通局 横浜市電花園橋線
+node_fix,n_harukigawa,春木川,はるきがわ,大分交通 大分交通別大線
+node_fix,n_hayashijishinkecho,林寺新家町,はやしじしんけちょう,大阪市交通局 大阪市電百済線
+node_fix,n_heison,兵村,へいそん,士別軌道 士別軌道線
+node_fix,n_higashi_2_chome,東二丁目,ひがしにちょうめ,東京都交通局 都電天現寺橋線
+node_fix,n_higashi_asakusa_1_chome,東浅草一丁目,ひがしあさくさいっちょうめ,東京都交通局 都電千住線
+node_fix,n_higashi_asakusa_2_chome,東浅草二丁目,ひがしあさくさにちょうめ,東京都交通局 都電千住線
+node_fix,n_higashi_azabu_1_chome,東麻布一丁目,ひがしあざぶいっちょうめ,東京都交通局 都電札の辻線
+node_fix,n_higashi_beppu_ekimae,東別府駅前,ひがしべっぷえきまえ,大分交通 大分交通別大線
+node_fix,n_higashiarakawa,東荒川,ひがしあらかわ,東京都交通局 都電一之江線
+node_fix,n_higashibangaichi,東番外地,ひがしばんがいち,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_higashigokencho,東五軒町,ひがしごけんちょう,東京都交通局 都電江戸川線
+node_fix,n_higashiinotani,東猪谷,ひがしいのたに,三井金属鉱業 神岡軌道
+node_fix,n_higashikanagawaekinishiguchi,東神奈川駅西口,ひがしかながわえきにしぐち,横浜市交通局 横浜市電六角橋線
+node_fix,n_higashikawagakko,東川学校,ひがしかわがっこう,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_higashikobe,東神戸,ひがしこうべ,阪神電気鉄道 阪神国道線
+node_fix,n_higashinagasu,東長洲,ひがしながす,阪神電気鉄道 阪神国道線
+node_fix,n_higashisanuma,東佐沼,ひがしさぬま,宮城バス 仙北鉄道登米線
+node_fix,n_higashisuna_4_chome,東砂四丁目,ひがしすなよんちょうめ,東京都交通局 都電葛西橋線
+node_fix,n_hikiusu,引臼,ひきうす,根室拓殖鉄道 根室拓殖鉄道線
+node_fix,n_hikojo,飛行場,ひこうじょう,宮崎交通 宮崎交通線
+node_fix,n_hinodecho_1_chome,日の出町一丁目,ひのでちょういっちょうめ,横浜市交通局 横浜市電日の出町線 / 横浜市交通局 横浜市電長者町線
+node_fix,n_hirokosaten,広交叉点,ひろこうさてん,呉市交通局 呉市電郊外線 / 呉市交通局 呉市電長浜線
+node_fix,n_hiroobashi,広尾橋,ひろおばし,東京都交通局 都電広尾線
+node_fix,n_hiroohashi,広大橋,ひろおおはし,呉市交通局 呉市電郊外線
+node_fix,n_hiroshishomae,広支所前,ひろししょまえ,呉市交通局 呉市電郊外線
+node_fix,n_hodogayabashi,保土ヶ谷橋,ほどがやばし,横浜市交通局 横浜市電井土ヶ谷線
+node_fix,n_hokke,法花,ほっけ,名古屋市交通局 名古屋市電下之一色線
+node_fix,n_hokkesawabashi,法華沢橋,ほっけざわばし,東武鉄道 東武前橋線
+node_fix,n_hokudaibyoinmae,北大病院前,ほくだいびょういんまえ,札幌市交通局 札幌市電鉄北線
+node_fix,n_hokudaiseimonmae,北大正門前,ほくだいせいもんまえ,札幌市交通局 札幌市電鉄北線
+node_fix,n_hon_1_chome,本一丁目,ほんいっちょうめ,茨城交通 茨城交通水浜線
+node_fix,n_hon_3_chome,本三丁目,ほんさんちょうめ,茨城交通 茨城交通水浜線
+node_fix,n_hon_5_chome,本五丁目,ほんごちょうめ,茨城交通 茨城交通水浜線
+node_fix,n_hondori_10_chome,本通十丁目,ほんどおりじゅっちょうめ,呉市交通局 呉市電郊外線
+node_fix,n_hondori_11_chome,本通十一丁目,ほんどおりじゅういっちょうめ,呉市交通局 呉市電郊外線
+node_fix,n_hondori_13_chome,本通十三丁目,ほんどおりじゅうさんちょうめ,呉市交通局 呉市電郊外線
+node_fix,n_hondori_15_chome,本通十五丁目,ほんどおりじゅうごちょうめ,呉市交通局 呉市電郊外線
+node_fix,n_hondori_3_chome,本通三丁目,ほんどおりさんちょうめ,呉市交通局 呉市電市内線
+node_fix,n_hondori_6_chome,本通六丁目,ほんどおりろくちょうめ,呉市交通局 呉市電市内線
+node_fix,n_hondori_7_chome,本通七丁目,ほんどおりななちょうめ,呉市交通局 呉市電市内線
+node_fix,n_hondori_8_chome,本通八丁目,ほんどおりはっちょうめ,呉市交通局 呉市電市内線
+node_fix,n_hondori_9_chome,本通九丁目,ほんどおりきゅうちょうめ,呉市交通局 呉市電市内線 / 呉市交通局 呉市電郊外線
+node_fix,n_hondorijokojo,本通乗降場,ほんどおりじょうこうじょう,留萠鉄道 留萠鉄道
+node_fix,n_hongooiwake,本郷追分,ほんごうおいわけ,東京都交通局 都電本郷線
+node_fix,n_honmachi_1_chome_transportation_bureau_city_of_yokohama,本町一丁目,ほんちょういっちょうめ,横浜市交通局 横浜市電本町線
+node_fix,n_honmokusankeienshuten,本牧三渓園終点,ほんもくさんけいえんしゅうてん,横浜市交通局 横浜市電本牧線
+node_fix,n_honmyojiguchi,本妙寺口,ほんみょうじぐち,熊本電気鉄道 熊本電気鉄道藤崎線
+node_fix,n_hontanaka,本田中,ほんたなか,北陸鉄道 北陸鉄道松金線
+node_fix,n_horikawamarutamachi,堀川丸太町,ほりかわまるたまち,京都市交通局 京都市電丸太町線 / 京都市交通局 京都市電堀川線
+node_fix,n_horikawanakadachiuri,堀川中立売,ほりかわなかだちうり,京都市交通局 京都市電堀川線
+node_fix,n_horikawaoike,堀川御池,ほりかわおいけ,京都市交通局 京都市電堀川線
+node_fix,n_horikawasanjo,堀川三条,ほりかわさんじょう,京都市交通局 京都市電堀川線
+node_fix,n_horikawashimochojamachi,堀川下長者町,ほりかわしもちょうじゃまち,京都市交通局 京都市電堀川線
+node_fix,n_horikawashimodachiuri,堀川下立売,ほりかわしもだちうり,京都市交通局 京都市電堀川線
+node_fix,n_horikawatakoyakushi,堀川蛸薬師,ほりかわたこやくし,京都市交通局 京都市電堀川線
+node_fix,n_hozenbyoinmae,保全病院前,ほぜんびょういんまえ,札幌市交通局 札幌市電豊平線
+node_fix,n_idaimae,医大前,いだいまえ,東武鉄道 東武前橋線
+node_fix,n_idogaya_ekimae,井土ヶ谷駅前,いどがやえきまえ,横浜市交通局 横浜市電井土ヶ谷線
+node_fix,n_iigura_1_chome,飯倉一丁目,いいくらいっちょうめ,東京都交通局 都電六本木線 / 東京都交通局 都電札の辻線
+node_fix,n_iigurakatamachi,飯倉片町,いいくらかたまち,東京都交通局 都電六本木線
+node_fix,n_ikegamichumon,池上中門,いけがみちゅうもん,川崎市交通局 川崎市電
+node_fix,n_ikegamishinden,池上新田,いけがみしんでん,川崎市交通局 川崎市電
+node_fix,n_ikenohata_2_chome,池之端二丁目,いけのはたにちょうめ,東京都交通局 都電動坂線
+node_fix,n_ikuecho,生江町,いくえちょう,大阪市交通局 大阪市電都島守口線
+node_fix,n_imado,今戸,いまど,東京都交通局 都電千住線
+node_fix,n_imaibashi,今井橋,いまいばし,東京都交通局 都電一之江線
+node_fix,n_imaichicho,今市町,いまいちちょう,大阪市交通局 大阪市電都島守口線
+node_fix,n_imaicho,今井町,いまいちょう,東京都交通局 都電霞町線
+node_fix,n_irisawa,入沢,いりさわ,東武鉄道 東武伊香保線
+node_fix,n_isezakicho,伊勢佐木町,いせざきちょう,横浜市交通局 横浜市電長者町線
+node_fix,n_ishikawacho_5_chome,石川町五丁目,いしかわちょうごちょうめ,横浜市交通局 横浜市電長者町線
+node_fix,n_ishikiribashi,石切橋,いしきりばし,東京都交通局 都電江戸川線
+node_fix,n_ishinkokomae,惟信高校前,いしんこうこうまえ,名古屋市交通局 名古屋市電築地線
+node_fix,n_ishiwara_1_chome,石原一丁目,いしわらいっちょうめ,東京都交通局 都電業平線 / 東京都交通局 都電石原線
+node_fix,n_ishiwara_2_chome,石原二丁目,いしわらにちょうめ,東京都交通局 都電石原線
+node_fix,n_ishiwara_3_chome,石原三丁目,いしわらさんちょうめ,東京都交通局 都電石原線
+node_fix,n_iwahi,岩樋,いわい,呉市交通局 呉市電長浜線
+node_fix,n_iwasakidani,岩崎谷,いわさきだに,鹿児島市交通局 鹿児島市電上町線
+node_fix,n_izokukaikanmae,遺族会館前,いぞくかいかんまえ,大分交通 大分交通別大線
+node_fix,n_izuomenocho_1_chome,泉尾梅の町一丁目,いずおうめのちょういっちょうめ,大阪市交通局 大阪市電三軒家新千歳線
+node_fix,n_izuomenocho_3_chome,泉尾梅の町三丁目,いずおうめのちょうさんちょうめ,大阪市交通局 大阪市電三軒家新千歳線
+node_fix,n_izuomenocho_4_chome,泉尾梅の町四丁目,いずおうめのちょうよんちょうめ,大阪市交通局 大阪市電三軒家新千歳線
+node_fix,n_jikkenbashi,十間橋,じっけんばし,東京都交通局 都電業平線
+node_fix,n_jinba,陣馬,じんば,東武鉄道 東武高崎線
+node_fix,n_jodoji,浄土寺,じょうどじ,京都市交通局 京都市電白川線
+node_fix,n_jojuinmae,成就院前,じょうじゅいんまえ,川崎市交通局 川崎市電
+node_fix,n_juniten,十二天,じゅうにてん,横浜市交通局 横浜市電本牧線
+node_fix,n_junizakaue,拾弐坂上,じゅうにさかうえ,東武鉄道 東武伊香保線
+node_fix,n_kachidokibashi,勝鬨橋,かちどきばし,東京都交通局 都電勝鬨橋線
+node_fix,n_kajibashi,鍛冶橋,かじばし,東京都交通局 都電八丁堀線 / 東京都交通局 都電土橋線
+node_fix,n_kajikawa,加治川,かじかわ,JR東日本 羽越本線
+node_fix,n_kameyamakoenmae,亀山公園前,かめやまこうえんまえ,琴平参宮電鉄 琴平参宮電鉄丸亀線
+node_fix,n_kamifujimae,上富士前,かみふじまえ,東京都交通局 都電動坂線 / 東京都交通局 都電駒込線
+node_fix,n_kamiishiya,上石屋,うえいしや,阪神電気鉄道 阪神国道線
+node_fix,n_kamikoshien,上甲子園,かみこうしえん,阪神電気鉄道 阪神国道線 / 阪神電気鉄道 阪神甲子園線
+node_fix,n_kamikyokusei,上旭正,かみきょくせい,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_kaminanagosen,上七号線,かみななごうせん,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_kamiokacho,神岡町,かみおかちょう,三井金属鉱業 神岡軌道
+node_fix,n_kanagawakaikanmae,神奈川会館前,かながわかいかんまえ,横浜市交通局 横浜市電中央市場線 / 横浜市交通局 横浜市電生麦線
+node_fix,n_kandamyojinmae,神田明神前,かんだみょうじんまえ,東京都交通局 都電本郷線
+node_fix,n_kanehiracho,兼平町,かねひらちょう,大阪市交通局 大阪市電西野田桜島線 / 大阪市交通局 大阪市電西野田線
+node_fix,n_kaneko_takasaki_line_tobu,金古,かねこ,東武鉄道 東武高崎線
+node_fix,n_kanekoyotsukado,金古四ツ角,かねこよつかど,東武鉄道 東武高崎線
+node_fix,n_kangenmachi,管絃町,かんげんまち,西日本鉄道 西鉄福岡市内線循環線
+node_fix,n_kanjinbashi,勧進橋,かんじんばし,京都市交通局 京都市電伏見線 / 京都市交通局 京都市電稲荷線
+node_fix,n_kankogaikanginmae,官公街勧銀前,かんこうがいかんぎんまえ,大分交通 大分交通別大線
+node_fix,n_kannonjiura,観音寺裏,かんのんじうら,東武鉄道 東武高崎線
+node_fix,n_kansukecho,勘助町,かんすけちょう,大阪市交通局 大阪市電西道頓堀天王寺線
+node_fix,n_kantan,菡萏,かんたん,大分交通 大分交通別大線
+node_fix,n_kappabashi,合羽橋,かっぱばし,東京都交通局 都電千束線
+node_fix,n_karasumamarutamachi,烏丸丸太町,からすままるたまち,京都市交通局 京都市電丸太町線 / 京都市交通局 京都市電烏丸線
+node_fix,n_kasaderanishimonmae,笠寺西門前,かさでらにしもんまえ,名古屋市交通局 名古屋市電笠寺延長線 / 名古屋市交通局 名古屋市電笠寺線
+node_fix,n_kasaibashi,葛西橋,かさいばし,東京都交通局 都電葛西橋線
+node_fix,n_kasugadecho,春日出町,かすがでちょう,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_kasugadeshakomae,春日出車庫前,かすがでしゃこまえ,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_kasugaura,春日浦,かすがうら,大分交通 大分交通別大線
+node_fix,n_katahiraitchomekensatsuchomae,片平一丁目検察庁前,かたひらいっちょうめけんさつちょうまえ,仙台市交通局 仙台市電循環線
+node_fix,n_katoshamae,加藤社前,かとうしゃまえ,熊本電気鉄道 熊本電気鉄道藤崎線
+node_fix,n_kawabatamarutamachi,川端丸太町,かわばたまるたまち,京都市交通局 京都市電丸太町線
+node_fix,n_kawaneichishiro,川根市代,かわねいちしろ,大井川鐵道 大井川鐵道井川線
+node_fix,n_kawaragi,瓦木,かわらぎ,阪神電気鉄道 阪神国道線
+node_fix,n_kawaramachimarutamachi,河原町丸太町,かわらまちまるたまち,京都市交通局 京都市電丸太町線 / 京都市交通局 京都市電河原町線
+node_fix,n_keihanhigashiguchi,京阪東口,けいはんひがしぐち,大阪市交通局 大阪市電天満橋善源寺町線 / 大阪市交通局 大阪市電谷町寝屋川線
+node_fix,n_keihankokudoguchi,京阪国道口,けいはんこくどうぐち,京都市交通局 京都市電九条線
+node_fix,n_keiogijukumae,慶応義塾前,けいおうぎじゅくまえ,東京都交通局 都電札の辻線
+node_fix,n_kenchoshiyakushomae,県庁市役所前,けんちょうしやくしょまえ,仙台市交通局 仙台市電循環線
+node_fix,n_kikuyabashi,菊屋橋,きくやばし,東京都交通局 都電千束線 / 東京都交通局 都電吾妻橋線
+node_fix,n_kimachi_tramway_ho,木町,きまち,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_kimachidori_2_chome,木町通二丁目,きまちとおりにちょうめ,仙台市交通局 仙台市電循環線
+node_fix,n_kinouchimae,木内前,きのうちまえ,秋田市交通局 秋田市電秋田市内線
+node_fix,n_kinrinshakomae,錦林車庫前,きんりんしゃこまえ,京都市交通局 京都市電白川線
+node_fix,n_kinshibori,錦糸堀,きんしぼり,東京都交通局 都電小松川線 / 東京都交通局 都電江東橋線 / 東京都交通局 都電猿江線
+node_fix,n_kinshiborishakomae,錦糸堀車庫前,きんしぼりしゃこまえ,東京都交通局 都電江東橋線
+node_fix,n_kisegawa,黄瀬川,きせがわ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_kita_ueno_1_chome,北上野一丁目,きたうえのいっちょうめ,東京都交通局 都電三ノ輪線
+node_fix,n_kitafukui,北福井,きたふくい,JR西日本 北陸本線
+node_fix,n_kitaimazu,北今津,きたいまづ,阪神電気鉄道 阪神国道線
+node_fix,n_kitakoenmae,北公園前,きたこうえんまえ,大阪市交通局 大阪市電阪堺線
+node_fix,n_kitakuise,北杭瀬,きたくいせ,阪神電気鉄道 阪神国道線
+node_fix,n_kitanagata,北永田,きたながた,横浜市交通局 横浜市電井土ヶ谷線
+node_fix,n_kitaokajima,北恩加島,きたおかじま,大阪市交通局 大阪市電三軒家新千歳線
+node_fix,n_kitashimo,北下,きたしも,東武鉄道 東武高崎線
+node_fix,n_kitasuna_2_chome,北砂二丁目,きたすなにちょうめ,東京都交通局 都電砂町線
+node_fix,n_kitasuna_3_chome,北砂三丁目,きたすなさんちょうめ,東京都交通局 都電砂町線
+node_fix,n_kitasuna_4_chome,北砂四丁目,きたすなよんちょうめ,東京都交通局 都電葛西橋線
+node_fix,n_kitasuna_7_chome,北砂七丁目,きたすなななちょうめ,東京都交通局 都電葛西橋線
+node_fix,n_kitatsumori,北津守,きたつもり,大阪市交通局 大阪市電阪堺線
+node_fix,n_kiyokawanojomae,清川農場前,きよかわのうじょうまえ,十勝鉄道 十勝鉄道帯広部線
+node_fix,n_kiyosenmae,亀陽泉前,きようせんまえ,大分交通 大分交通別大線
+node_fix,n_kobayashicho,小林町,こばやしちょう,大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_kofukujimae,洪福寺前,こうふくじまえ,横浜市交通局 横浜市電尾張屋橋線 / 横浜市交通局 横浜市電浅間町線
+node_fix,n_kohinata_4_chome,小日向四丁目,こひなたよんちょうめ,東京都交通局 都電大塚線
+node_fix,n_koisatobashi,鯉里橋,こいさとばし,東武鉄道 東武前橋線
+node_fix,n_koishikawa_4_chome,小石川四丁目,こいしかわよんちょうめ,東京都交通局 都電大塚線
+node_fix,n_kokuritsubyoimmae,国立病院前,こくりつびょういんまえ,旭川市街軌道 近文線
+node_fix,n_kokusaikankoko,国際観光港,こくさいかんこうこう,大分交通 大分交通別大線
+node_fix,n_komagata_2_chome,駒形二丁目,こまがたにちょうめ,東京都交通局 都電千住線 / 東京都交通局 都電蔵前線
+node_fix,n_komagatabashi,駒形橋,こまがたばし,東京都交通局 都電業平線
+node_fix,n_komatsugawa_3_chome,小松川三丁目,こまつがわさんちょうめ,東京都交通局 都電小松川線
+node_fix,n_komatsugawa_4_chome,小松川四丁目,こまつがわよんちょうめ,東京都交通局 都電小松川線
+node_fix,n_konangakuenmae,甲南学園前,こうなんがくえんまえ,阪神電気鉄道 阪神国道線
+node_fix,n_korakuemmae,後楽園前,こうらくえんまえ,東京都交通局 都電水道橋線
+node_fix,n_korinjimae,光林寺前,こうりんじまえ,東京都交通局 都電古川線
+node_fix,n_kototoibashi,言問橋,ことといばし,東京都交通局 都電向島線
+node_fix,n_kuboyama,久保山,くぼやま,横浜市交通局 横浜市電久保山線
+node_fix,n_kujokawaramachi,九条河原町,くじょうかわらまち,京都市交通局 京都市電九条線
+node_fix,n_kujokintetsumae,九条近鉄前,くじょうきんてつまえ,京都市交通局 京都市電九条線
+node_fix,n_kujoomiya,九条大宮,くじょうおおみや,京都市交通局 京都市電九条線 / 京都市交通局 京都市電大宮線
+node_fix,n_kujoshakomae,九条車庫前,くじょうしゃこまえ,京都市交通局 京都市電九条線
+node_fix,n_kujoshichihonmatsu,九条七本松,くじょうしちほんまつ,京都市交通局 京都市電九条線
+node_fix,n_kujoshinsenbon,九条新千本,くじょうしんせんぼん,京都市交通局 京都市電九条線
+node_fix,n_kumanojinjamae,熊野神社前,くまのじんじゃまえ,京都市交通局 京都市電丸太町線 / 京都市交通局 京都市電東山線
+node_fix,n_kuo,九王,くおう,JR四国 予讃線
+node_fix,n_kure_ekimae,呉駅前,くれえきまえ,呉市交通局 呉市電市内線
+node_fix,n_kuregoshi,呉越,くれごえ,呉市交通局 呉市電郊外線
+node_fix,n_kurerikkyo,呉陸橋,くれりっきょう,呉市交通局 呉市電市内線
+node_fix,n_kuromatagawa,黒又川,くろまたがわ,JR東日本 只見線
+node_fix,n_kuromon,黒門,くろもん,山陽電気軌道 山陽電気軌道長関線
+node_fix,n_kuruwamachi,曲輪町,くるわちょう,東武鉄道 東武前橋線
+node_fix,n_kusadoinari,草戸稲荷,くさといなり,鞆鉄道 鞆鉄道線
+node_fix,n_kuwazukitaguchi,桑津北口,くわづきたぐち,大阪市交通局 大阪市電百済線
+node_fix,n_kyoikudaigakumae,教育大学前,きょういくだいがくまえ,東京都交通局 都電大塚線
+node_fix,n_kyoto_ekimae,京都駅前,きょうとえきまえ,京都市交通局 京都市電河原町線 / 京都市交通局 京都市電烏丸線
+node_fix,n_kyowagakko,共和学校,きょうわがっこう,根室拓殖鉄道 根室拓殖鉄道線
+node_fix,n_kyugo,九号,くごう,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_maebashi_ekimae,前橋駅前,まえばしえきまえ,東武鉄道 東武前橋線
+node_fix,n_maedagakkomae,前田学校前,まえだがっこうまえ,花巻電鉄 花巻電鉄鉛線
+node_fix,n_maiya,米谷,まいや,宮城バス 仙北鉄道登米線
+node_fix,n_makado,間門,まかど,横浜市交通局 横浜市電本牧線 / 横浜市交通局 横浜市電根岸線
+node_fix,n_marutamachichiekoin,丸太町智恵光院,まるたまちちえこういん,京都市交通局 京都市電丸太町線
+node_fix,n_marutamachionmaedori,丸太町御前通,まるたまちおんまえどおり,京都市交通局 京都市電丸太町線
+node_fix,n_marutamachishichihonmatsu,丸太町七本松,まるたまちななほんまつ,京都市交通局 京都市電丸太町線
+node_fix,n_marutamachishinmichi,丸太町新道,まるたまちしんみち,京都市交通局 京都市電丸太町線
+node_fix,n_matsumotodori,松本通,まつもとどおり,福井鉄道 福井鉄道福武線
+node_fix,n_meitokubashi,明徳橋,めいとくばし,名古屋市交通局 名古屋市電築地線
+node_fix,n_mibushakomae,壬生車庫前,みぶしゃこまえ,京都市交通局 京都市電千本線 / 京都市交通局 京都市電大宮線
+node_fix,n_midori_1_chome,緑一丁目,みどりいっちょうめ,東京都交通局 都電業平線 / 東京都交通局 都電江東橋線 / 東京都交通局 都電高橋線
+node_fix,n_midori_2_chome,緑二丁目,みどりにちょうめ,東京都交通局 都電江東橋線
+node_fix,n_midori_3_chome,緑三丁目,みどりさんちょうめ,東京都交通局 都電江東橋線
+node_fix,n_miharabashi,三原橋,みはらばし,東京都交通局 都電築地線
+node_fix,n_miharashishita,見晴下,みはらしした,東武鉄道 東武伊香保線
+node_fix,n_mikawamachi_3_chome,三川町三丁目,みかわまちさんちょうめ,西日本鉄道 西鉄大牟田市内線
+node_fix,n_mikawamachi_4_chome,三川町四丁目,みかわまちよんちょうめ,西日本鉄道 西鉄大牟田市内線
+node_fix,n_mikawamachi_5_chome,三川町五丁目,みかわまちごちょうめ,西日本鉄道 西鉄大牟田市内線
+node_fix,n_minami_ota_4_chome,南太田四丁目,みなみおおたよんちょうめ,横浜市交通局 横浜市電井土ヶ谷線
+node_fix,n_minamikagayacho,南加賀屋町,みなみかがやちょう,大阪市交通局 大阪市電阪堺線
+node_fix,n_minaminakadori,南中通,みなみなかどおり,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_minamiokajimacho,南恩加島町,みなみおかじまちょう,大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_minamisuna_2_chome,南砂二丁目,みなみすなにちょうめ,東京都交通局 都電砂町線
+node_fix,n_minamisuna_3_chome,南砂三丁目,みなみすなさんちょうめ,東京都交通局 都電砂町線
+node_fix,n_minamisuna_5_chome,南砂五丁目,みなみすなごちょうめ,東京都交通局 都電葛西橋線
+node_fix,n_minatobashi,港橋,みなとばし,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_mine_shimizushinai,嶺,みね,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_mine_shimizushinai_line_nishikubo_sodeshi_old_route,嶺（旧）,みね,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_misuji_2_chome,三筋二丁目,みすじにちょうめ,東京都交通局 都電千束線 / 東京都交通局 都電厩橋線
+node_fix,n_mitsudera,三ツ寺,みつでら,東武鉄道 東武高崎線
+node_fix,n_miyakezaka,三宅坂,みやけざか,東京都交通局 都電半蔵門線 / 東京都交通局 都電青山線
+node_fix,n_miyakojimahondori,都島本通,みやこじまほんどおり,大阪市交通局 大阪市電東野田沢上江町線 / 大阪市交通局 大阪市電都島守口線
+node_fix,n_miyakojimaminamidori,都島南通,みやこじまみなみどおり,大阪市交通局 大阪市電東野田沢上江町線
+node_fix,n_miyakojimashakomae,都島車庫前,みやこじましゃこまえ,大阪市交通局 大阪市電東野田沢上江町線 / 大阪市交通局 大阪市電梅田善源寺町線
+node_fix,n_miyoshibashi,三吉橋,みよしばし,横浜市交通局 横浜市電花園橋線
+node_fix,n_miyukida,行幸田,みゆきだ,東武鉄道 東武高崎線
+node_fix,n_miyukihama,御幸浜,みゆきのはま,箱根登山鉄道 箱根登山鉄道小田原市内線
+node_fix,n_morigu,森具,もりぐ,阪神電気鉄道 阪神国道線
+node_fix,n_moriichibamae,森市場前,もりいちばまえ,阪神電気鉄道 阪神国道線
+node_fix,n_morohakukoji,諸白小路,もろはくこうじ,箱根登山鉄道 箱根登山鉄道小田原市内線
+node_fix,n_motojuku,元宿,もとじゅく,東武鉄道 東武伊香保線
+node_fix,n_mozumi_mitsui_mining_and_smelting,茂住,もずみ,三井金属鉱業 神岡軌道
+node_fix,n_mukogaoka_1_chome,向丘一丁目,むこうがおかいっちょうめ,東京都交通局 都電本郷線
+node_fix,n_mukogaoka_2_chome,向丘二丁目,むこうがおかにちょうめ,東京都交通局 都電本郷線 / 東京都交通局 都電駒込線
+node_fix,n_mukoohashi,武庫大橋,むこおおはし,阪神電気鉄道 阪神国道線
+node_fix,n_munetaka,棟高,むなだか,東武鉄道 東武高崎線
+node_fix,n_mutsumibashi,睦橋,むつみばし,横浜市交通局 横浜市電磯子線 / 横浜市交通局 横浜市電花園橋線
+node_fix,n_myojokomae,明星校前,めいせいこうまえ,十勝鉄道 十勝鉄道帯広部線
+node_fix,n_nadakotogakkomae,灘高等学校前,なだこうとうがっこうまえ,阪神電気鉄道 阪神国道線
+node_fix,n_nagaishidori,永石通,ながいしどおり,大分交通 大分交通別大線
+node_fix,n_nagarahonmachi,長良本町,ながらほんまち,名古屋市交通局 名古屋市電下之一色線
+node_fix,n_nagarekawadori,流川通,ながれかわどおり,大分交通 大分交通別大線
+node_fix,n_nagatsukacho,長塚町,ながつかちょう,東武鉄道 東武高崎線
+node_fix,n_nakadori_3_chome,中通三丁目,なかどおりさんちょうめ,呉市交通局 呉市電市内線
+node_fix,n_nakaebie,中海老江,なかえびえ,阪神電気鉄道 阪神国道線
+node_fix,n_nakafuhonshamae,中府本社前,なかぶほんしゃまえ,琴平参宮電鉄 琴平参宮電鉄丸亀線
+node_fix,n_nakahamacho,仲浜町,なかはまちょう,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_nakajuku,仲宿,なかじゅく,東京都交通局 都電志村線
+node_fix,n_nakamadori,仲間通,なかまどおり,大分交通 大分交通別大線
+node_fix,n_nakamikage,中御影,なかみかげ,阪神電気鉄道 阪神国道線
+node_fix,n_nakanonoichi,中野々市,なかののいち,北陸鉄道 北陸鉄道松金線
+node_fix,n_nakasomuta,中草牟田,なかそうむた,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_nakasomuta_ishiki_line_shinshoin_ishiki_old_route,中草牟田（旧）,なかそうむた,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_namidabashi_senju,泪橋,なみだばし,東京都交通局 都電千住線
+node_fix,n_nanamagarishita,七曲下,ななまがりした,横浜市交通局 横浜市電根岸線
+node_fix,n_naniwacho,浪速町,なにわちょう,大阪市交通局 大阪市電阪堺線
+node_fix,n_narihirabashi,業平橋,なりひらばし,東京都交通局 都電業平線
+node_fix,n_negishi_4_chome,根岸四丁目,ねぎしよんちょうめ,東京都交通局 都電三ノ輪線
+node_fix,n_negishi_5_chome,根岸五丁目,ねぎしごちょうめ,東京都交通局 都電三ノ輪線
+node_fix,n_negishibashi,根岸橋,ねぎしばし,横浜市交通局 横浜市電磯子線
+node_fix,n_nigosen,二号線,にごうせん,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_nihonodorikenchomae,日本大通県庁前,にほんおおどおりけんちょうまえ,横浜市交通局 横浜市電本町線 / 横浜市交通局 横浜市電花園橋線
+node_fix,n_nijo_ekimae,二条駅前,にじょうえきまえ,京都市交通局 京都市電千本線
+node_fix,n_nikkokozaki,日鉱幸崎,にっこうこうざき,日本鉱業 日本鉱業佐賀関鉄道
+node_fix,n_nikkosaganoseki,日鉱佐賀関,にっこうさがのせき,日本鉱業 日本鉱業佐賀関鉄道
+node_fix,n_nikyubashi,二級橋,にきゅうばし,呉市交通局 呉市電郊外線
+node_fix,n_ninotani,二の谷,にのたに,横浜市交通局 横浜市電本牧線
+node_fix,n_nipponginkomae,日本銀行前,にほんぎんこうまえ,東京都交通局 都電土橋線
+node_fix,n_nipponkokanikegamiseimonmae,日本鋼管池上正門前,にほんこうかんいけがみせいもんまえ,川崎市交通局 川崎市電
+node_fix,n_nipponkokanmae,日本鋼管前,にほんこうかんまえ,川崎市交通局 川崎市電
+node_fix,n_nishi_hatchobori_2_chome,西八丁堀二丁目,にしはっちょうぼりにちょうめ,東京都交通局 都電築地線
+node_fix,n_nishi_hondori_3_chome,西本通三丁目,にしほんどおりさんちょうめ,呉市交通局 呉市電市内線
+node_fix,n_nishi_hondori_6_chome,西本通六丁目,にしほんどおりろくちょうめ,呉市交通局 呉市電市内線
+node_fix,n_nishi_kanagawacho_5_chome,西神奈川町五丁目,にしかながわちょうごちょうめ,横浜市交通局 横浜市電六角橋線
+node_fix,n_nishiarakawa,西荒川,にしあらかわ,東京都交通局 都電小松川線
+node_fix,n_nishiazabu,西麻布,にしあざぶ,東京都交通局 都電広尾線 / 東京都交通局 都電霞町線
+node_fix,n_nishihanamaki,西花巻,にしはなまき,岩手中央バス 花巻電鉄花巻温泉線 / 花巻電鉄 花巻電鉄鉛線
+node_fix,n_nishihiranumabashi,西平沼橋,にしひらぬまばし,横浜市交通局 横浜市電保土ヶ谷線 / 横浜市交通局 横浜市電長者町線
+node_fix,n_nishijinshokugyoanteishomae,西陣職業安定所前,にしじんしょくぎょうあんていしょまえ,京都市交通局 京都市電堀川線
+node_fix,n_nishikanagawacho,西神奈川町,にしかながわちょう,横浜市交通局 横浜市電六角橋線
+node_fix,n_nishikasugadecho,西春日出町,にしかすがでちょう,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_nishikubo,西久保,にしくぼ,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_nishinaniwa,西難波,にしなにわ,阪神電気鉄道 阪神国道線
+node_fix,n_nishinohashi,西之端,にしのはし,山陽電気軌道 山陽電気軌道唐戸線
+node_fix,n_nishinomiya_ekimae,西宮駅前,にしのみやえきまえ,阪神電気鉄道 阪神国道線
+node_fix,n_nishinomiyaebisu,西宮戎,にしのみやえびす,阪神電気鉄道 阪神国道線
+node_fix,n_nishinomiyafudabasuji,西宮札場筋,にしのみやふだばすじ,阪神電気鉄道 阪神国道線
+node_fix,n_nishinomiyanishiguchi,西宮西口,にしのみやにしぐち,阪神電気鉄道 阪神国道線
+node_fix,n_nishinotoinbukkoji,西洞院仏光寺,にしのとういんぶっこうじ,京都市交通局 京都市電堀川線
+node_fix,n_nishinotoingojo,西洞院五条,にしのとういんごじょう,京都市交通局 京都市電堀川線
+node_fix,n_nishinotoinmatsubara,西洞院松原,にしのとういんまつばら,京都市交通局 京都市電堀川線
+node_fix,n_nishinotoinrokujo,西洞院六条,にしのとういんろくじょう,京都市交通局 京都市電堀川線
+node_fix,n_nishinotoinshomen,西洞院正面,にしのとういんしょうめん,京都市交通局 京都市電堀川線
+node_fix,n_nishinowari,西ノ割,にしのわり,名古屋市交通局 名古屋市電築地線
+node_fix,n_nishiojikujo,西大路九条,にしおおじくじょう,京都市交通局 京都市電九条線 / 京都市交通局 京都市電西大路線
+node_fix,n_nishirokugo,西六号,にしろくごう,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_nishisando,西参道,にしさんどう,東武鉄道 東武日光軌道線
+node_fix,n_nishishimayacho,西島屋町,にししまやちょう,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_nishiube,西宇部,にしうべ,船木鉄道 船木鉄道線
+node_fix,n_nogezaka,野毛坂,のげざか,横浜市交通局 横浜市電長者町線
+node_fix,n_nonoichinishiguchi,野々市西口,ののいちにしぐち,北陸鉄道 北陸鉄道松金線
+node_fix,n_norainu,野良犬,のらいぬ,東武鉄道 東武高崎線
+node_fix,n_ohamaminamimachi,大浜南町,おおはまみなみまち,大阪市交通局 大阪市電阪堺線
+node_fix,n_ohinataryoyoshomae,大日向療養所前,おおひなたりょうようじょまえ,東武鉄道 東武伊香保線
+node_fix,n_oishibashi,大石橋,おおいしばし,京都市交通局 京都市電九条線 / 京都市交通局 京都市電伏見線
+node_fix,n_oishigawa,大石川,おおいしがわ,阪神電気鉄道 阪神国道線
+node_fix,n_okage,御蔭,みかげ,東武鉄道 東武伊香保線
+node_fix,n_okayamajinjamae,岡山神社前,おかやまじんじゃまえ,岡山電気軌道 岡山電気軌道番町線
+node_fix,n_okushibetsu,奥士別,おくしべつ,士別軌道 士別軌道線
+node_fix,n_omiyabukkoji,大宮仏光寺,おおみやぶっこうじ,京都市交通局 京都市電大宮線
+node_fix,n_omiyacho,大宮町,おおみやちょう,大阪市交通局 大阪市電都島守口線
+node_fix,n_omiyagojo,大宮五条,おおみやごじょう,京都市交通局 京都市電大宮線
+node_fix,n_omiyamatsubara,大宮松原,おおみやまつばら,京都市交通局 京都市電大宮線
+node_fix,n_omiyashogakkomae,大宮小学校前,おおみやしょうがっこうまえ,大阪市交通局 大阪市電都島守口線
+node_fix,n_omoteteppomachi,表鉄砲町,おもててっぽうまち,秋田市交通局 秋田市電秋田市内線
+node_fix,n_omuta_ekimae,大牟田駅前,おおむたえきまえ,西日本鉄道 西鉄大牟田市内線
+node_fix,n_oriharashita,折原下,おりはらした,東武鉄道 東武伊香保線
+node_fix,n_otemachi_tramway_ho,追手町,おうてまち,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_otorichugakkomae,大鳥中学校前,おおとりちゅうがっこうまえ,横浜市交通局 横浜市電本牧線
+node_fix,n_owariyabashi,尾張屋橋,おわりやばし,横浜市交通局 横浜市電尾張屋橋線
+node_fix,n_oyagi,大八木,おおやぎ,東武鉄道 東武高崎線
+node_fix,n_puru_center_mae,プールセンター前,ぷーるせんたーまえ,横浜市交通局 横浜市電根岸線
+node_fix,n_rajomoncho,羅城門町,らじょうもんちょう,京都市交通局 京都市電九条線
+node_fix,n_rakuyokokomae,洛陽高校前,らくようこうこうまえ,京都市交通局 京都市電九条線
+node_fix,n_rinkoichibamae,臨港市場前,りんこういちばまえ,呉市交通局 呉市電長浜線
+node_fix,n_rokkakubashi,六角橋,ろっかくばし,横浜市交通局 横浜市電六角橋線
+node_fix,n_rokushoen,六勝園,ろくしょうえん,大分交通 大分交通別大線
+node_fix,n_ryujindori,竜神通,りゅうじんどおり,秋田市交通局 秋田市電秋田市内線
+node_fix,n_ryukokugakuenmae,龍谷学園前,りゅうこくがくえんまえ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_ryusen_3_chome,竜泉三丁目,りゅうせんさんちょうめ,東京都交通局 都電千束線
+node_fix,n_saidaijiichi,西大寺市,さいだいじし,両備バス 西大寺鉄道線
+node_fix,n_sakaemachi_ekimae,栄町駅前,さかえまちえきまえ,西日本鉄道 西鉄大牟田市内線
+node_fix,n_sakaibashi_sugita,境橋,さかいばし,横浜市交通局 横浜市電杉田線
+node_fix,n_sakimoricho,崎守町,さきもりちょう,JR北海道 室蘭本線
+node_fix,n_sakiogura,先小倉,さきおぐら,呉市交通局 呉市電郊外線
+node_fix,n_sakuragicho_ekimae,桜木町駅前,さくらぎちょうえきまえ,横浜市交通局 横浜市電日の出町線 / 横浜市交通局 横浜市電本牧線 / 横浜市交通局 横浜市電本町線 / 横浜市交通局 横浜市電神奈川線
+node_fix,n_sakurajima_ekimae,桜島駅前,さくらじまえきまえ,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_samondonobashi,左門殿橋,さもんどばし,阪神電気鉄道 阪神国道線
+node_fix,n_sangenya,三軒家,さんげんや,大阪市交通局 大阪市電三軒家新千歳線 / 大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_sannohashi,三ノ橋,さんのはし,東京都交通局 都電古川線
+node_fix,n_sannomae,山王前,さんのうまえ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_sannotani,三の谷,さんのたに,横浜市交通局 横浜市電本牧線
+node_fix,n_sanposhakomae,三宝車庫前,さんぼうしゃこまえ,大阪市交通局 大阪市電阪堺線
+node_fix,n_sansenichibamae,三泉市場前,さんせんいちばまえ,大阪市交通局 大阪市電三軒家新千歳線
+node_fix,n_saruba,去場,さるば,沙流鉄道 沙流鉄道線
+node_fix,n_satsumacho,薩摩町,さつまちょう,横浜市交通局 横浜市電花園橋線
+node_fix,n_seki_guchi_1_chome,関口一丁目,せきぐちいっちょうめ,東京都交通局 都電江戸川線
+node_fix,n_sekijujibyoinshita,赤十字病院下,せきじゅうじびょういんした,東京都交通局 都電広尾線
+node_fix,n_senbaikoshamae,専売公社前,せんばいこうしゃまえ,大分交通 大分交通別大線
+node_fix,n_senbondemizu,千本出水,せんぼんでみず,京都市交通局 京都市電千本線
+node_fix,n_senbonimadegawa,千本今出川,せんぼんいまでがわ,京都市交通局 京都市電今出川線 / 京都市交通局 京都市電千本線
+node_fix,n_senbonjunibo,千本十二坊,せんぼんじゅうにぼう,京都市交通局 京都市電千本線
+node_fix,n_senbonkitaoji,千本北大路,せんぼんきたおおじ,京都市交通局 京都市電北大路線 / 京都市交通局 京都市電千本線 / 京都市交通局 京都市電西大路線
+node_fix,n_senbonkuramaguchi,千本鞍馬口,せんぼんくらまぐち,京都市交通局 京都市電千本線
+node_fix,n_senbonmarutamachi,千本丸太町,せんぼんまるたまち,京都市交通局 京都市電丸太町線 / 京都市交通局 京都市電千本線
+node_fix,n_senbonnakadachiuri,千本中立売,せんぼんなかだちうり,京都市交通局 京都市電千本線 / 京都市交通局 京都市電堀川線
+node_fix,n_senbonsanjo,千本三条,せんぼんさんじょう,京都市交通局 京都市電千本線
+node_fix,n_sengenmae,浅間前,せんげんまえ,東京都交通局 都電小松川線
+node_fix,n_sengenshita,浅間下,せんげんした,横浜市交通局 横浜市電平沼線 / 横浜市交通局 横浜市電浅間町線
+node_fix,n_sengoku_2_chome,千石二丁目,せんごくにちょうめ,東京都交通局 都電護国寺線
+node_fix,n_sengoku_3_chome,千石三丁目,せんごくさんちょうめ,東京都交通局 都電護国寺線
+node_fix,n_sengokubaba,千石馬場,せんごくばば,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_senzoku_2_chome,千束二丁目,せんぞくにちょうめ,東京都交通局 都電千束線
+node_fix,n_shakitasendai,社北仙台,しゃきたせんだい,仙台鉄道 仙台鉄道線
+node_fix,n_shibazonobashi,芝園橋,しばぞのばし,東京都交通局 都電三田線 / 東京都交通局 都電古川線
+node_fix,n_shibukawa_ekimae,渋川駅前,しぶかわえきまえ,東武鉄道 東武伊香保線 / 東武鉄道 東武前橋線
+node_fix,n_shibukawashinmachi,渋川新町,しぶかわしんまち,東武鉄道 東武伊香保線 / 東武鉄道 東武高崎線
+node_fix,n_shibukawayotsukado,渋川四ツ角,しぶかわよつかど,東武鉄道 東武伊香保線
+node_fix,n_shichijonishinotoin,七条西洞院,しちじょうにしのとういん,京都市交通局 京都市電七条線 / 京都市交通局 京都市電堀川線
+node_fix,n_shichijoomiya,七条大宮,しちじょうおおみや,京都市交通局 京都市電七条線 / 京都市交通局 京都市電大宮線
+node_fix,n_shichomae,市庁前,しちょうまえ,横浜市交通局 横浜市電本牧線
+node_fix,n_shidenkawasaki,市電川崎,しでんかわさき,川崎市交通局 川崎市電
+node_fix,n_shidenkawasaki_old,市電川崎（旧）,しでんかわさき,川崎市交通局 川崎市電
+node_fix,n_shigakkoato,私学校跡,しがっこうあと,鹿児島市交通局 鹿児島市電上町線
+node_fix,n_shijohorikawa,四条堀川,しじょうほりかわ,京都市交通局 京都市電堀川線
+node_fix,n_shijonishinotoin,四条西洞院,しじょうにしのとういん,京都市交通局 京都市電四条線 / 京都市交通局 京都市電堀川線
+node_fix,n_shikama_mitsui_mining_and_smelting,鹿間,しかま,三井金属鉱業 神岡軌道
+node_fix,n_shimabaraguchi,島原口,しまばらぐち,京都市交通局 京都市電大宮線
+node_fix,n_shimayabashi,島屋橋,しまやばし,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_shimayacho,島屋町,しまやちょう,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_shimizu_ekimae,清水駅前,しみずえきまえ,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_shimizubashi,清水橋,しみずばし,四日市あすなろう鉄道 四日市あすなろう鉄道八王子線
+node_fix,n_shimo_seiwa,下政和,しもせいわ,JR北海道 深名線
+node_fix,n_shimohakoda,下箱田,しもはこだ,東武鉄道 東武前橋線
+node_fix,n_shimoishiki,下伊敷,しもいしき,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_shimonoda,下野田,しものだ,東武鉄道 東武高崎線
+node_fix,n_shimoshimizu,下清水,しもしみず,十勝鉄道 十勝鉄道清水部線
+node_fix,n_shimotakae,下高江,しもたかえ,熊本市交通局 熊本市電川尻線
+node_fix,n_shinchitosecho,新千歳町,しんちとせちょう,大阪市交通局 大阪市電三軒家新千歳線
+node_fix,n_shindenbashi,新田橋,しんでんばし,名古屋鉄道 名鉄岡崎市内線
+node_fix,n_shingakuji,心岳寺,しんがくじ,JR九州 日豊本線
+node_fix,n_shinkanbashi,新上橋,しんかんばし,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_shinmachi_1_chome,新町一丁目,しんまちいっちょうめ,山陽電気軌道 山陽電気軌道唐戸線
+node_fix,n_shinmachi_3_chome,新町三丁目,しんまちさんちょうめ,山陽電気軌道 山陽電気軌道唐戸線
+node_fix,n_shinmachi_4_chome,新町四丁目,しんまちよんちょうめ,山陽電気軌道 山陽電気軌道唐戸線
+node_fix,n_shinmachikobanmae,新町交番前,あらまちこうばんまえ,東武鉄道 東武高崎線
+node_fix,n_shinmeichoshakomae,神明町車庫前,しんめいちょうしゃこまえ,東京都交通局 都電動坂線
+node_fix,n_shinmeimae,神明前,しんめいまえ,花巻電鉄 花巻電鉄鉛線
+node_fix,n_shinmeisha,神明社,しんめいしゃ,名古屋鉄道 名鉄岡崎市内線
+node_fix,n_shinshoin,新照院,しんしょういん,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_shintokiwabashi,新常盤橋,しんときわばし,東京都交通局 都電土橋線 / 東京都交通局 都電室町線 / 東京都交通局 都電水道橋線
+node_fix,n_shiodomebashi,塩留橋,しおどめばし,川崎市交通局 川崎市電
+node_fix,n_shiogama_shiogama,塩竈,しおがま,日本国有鉄道 塩釜線
+node_fix,n_shirahata,白旗,しらはた,横浜市交通局 横浜市電杉田線
+node_fix,n_shirakikaisuiyokujo,白木海水浴場,しらきかいすいよくじょう,大分交通 大分交通別大線
+node_fix,n_shiranuimachi,不知火町,しらぬいまち,西日本鉄道 西鉄大牟田市内線
+node_fix,n_shiroganemachi,白金町,しろかねまち,西日本鉄道 西鉄大牟田市内線
+node_fix,n_shiroishidori,白石通,しろいしどおり,札幌市交通局 札幌市電豊平線
+node_fix,n_shirokitakoenmae,城北公園前,しろきたこうえんまえ,大阪市交通局 大阪市電都島守口線
+node_fix,n_shitaya_2_chome,下谷二丁目,したやにちょうめ,東京都交通局 都電三ノ輪線
+node_fix,n_shitaya_3_chome,下谷三丁目,したやさんちょうめ,東京都交通局 都電三ノ輪線
+node_fix,n_shizuoka_ekimae,静岡駅前,しずおかえきまえ,静岡鉄道 静岡鉄道静岡市内線
+node_fix,n_shochikuzamae,松竹座前,しょうちくざまえ,札幌市交通局 札幌市電豊平線
+node_fix,n_shohaenmae,照波園前,しょうはえんまえ,大分交通 大分交通別大線
+node_fix,n_shoko,曙光,しょこう,羽幌炭礦鉄道 羽幌炭礦鉄道線
+node_fix,n_shokochukinmae,商工中金前,しょうこうちゅうきんまえ,川崎市交通局 川崎市電
+node_fix,n_shokubutsuemmae,植物園前,しょくぶつえんまえ,京都市交通局 京都市電北大路線
+node_fix,n_shoningahama,聖人ヶ浜,しょうにんがはま,大分交通 大分交通別大線
+node_fix,n_shotenbashi,聖天橋,しょうてんばし,横浜市交通局 横浜市電杉田線
+node_fix,n_shounbashi,昌運橋,しょううんばし,大阪市交通局 大阪市電鶴町線
+node_fix,n_showadensenmae,昭和電線前,しょうわでんせんまえ,川崎市交通局 川崎市電
+node_fix,n_shujitsugakuenmae,就実学園前,しゅうじつがくえんまえ,岡山電気軌道 岡山電気軌道番町線
+node_fix,n_shusseinarimae,出世稲荷前,しゅっせいなりまえ,京都市交通局 京都市電千本線
+node_fix,n_sodeshikeisatsushomae,袖師警察署前,そでしけいさつしょまえ,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_somuta_ishiki_line_shinshoin_ishiki_old_route,草牟田（旧）,そうむた,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_sotokanda_2_chome,外神田二丁目,そとかんだにちょうめ,東京都交通局 都電お茶の水線 / 東京都交通局 都電本郷線 / 東京都交通局 都電淡路町線
+node_fix,n_sotokanda_3_chome,外神田三丁目,そとかんださんちょうめ,東京都交通局 都電上野線 / 東京都交通局 都電淡路町線
+node_fix,n_suijinmori,水神森,すいじんもり,東京都交通局 都電小松川線 / 東京都交通局 都電砂町線
+node_fix,n_sukiyabashi,数寄屋橋,すきやばし,東京都交通局 都電土橋線 / 東京都交通局 都電築地線
+node_fix,n_sumidakoenmae,隅田公園前,すみだこうえんまえ,東京都交通局 都電千住線
+node_fix,n_sumidakuyakushomae,墨田区役所前,すみだくやくしょまえ,東京都交通局 都電業平線
+node_fix,n_suminoekoenmae,住の江公園前,すみのえこうえんまえ,大阪市交通局 大阪市電阪堺線
+node_fix,n_sumiyoshi_ekimae,住吉駅前,すみよしえきまえ,阪神電気鉄道 阪神国道線
+node_fix,n_sumiyoshigawa,住吉川,すみよしがわ,大阪市交通局 大阪市電阪堺線
+node_fix,n_sumiyoshimiyamae,住吉宮前,すみよしみやまえ,西日本鉄道 西鉄福岡市内線循環線
+node_fix,n_suwabashi,諏訪橋,すわばし,西日本鉄道 西鉄大牟田市内線
+node_fix,n_suzukijima,鈴木島,すずきじま,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_suzukijima_shimizushinai_line_nishikubo_sodeshi_old_route,鈴木島（旧）,すずきじま,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_tachibanabashi,橘橋,たちばなばし,東武鉄道 東武前橋線
+node_fix,n_tadotsusanbashidori,多度津桟橋通,たどつさんばしどおり,琴平参宮電鉄 琴平参宮電鉄多度津線
+node_fix,n_taihei_1_chome,太平一丁目,たいへいいっちょうめ,東京都交通局 都電石原線
+node_fix,n_taihei_3_chome,太平三丁目,たいへいさんちょうめ,東京都交通局 都電石原線
+node_fix,n_taiheiji,太平寺,たへいじ,北陸鉄道 北陸鉄道松金線
+node_fix,n_taishibashi,太子橋,たいしばし,大阪市交通局 大阪市電都島守口線
+node_fix,n_taishochugakkomae,大正中学校前,たいしょうちゅうがっこうまえ,大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_taishokeisatsushomae,大正警察署前,たいしょうけいさつしょまえ,大阪市交通局 大阪市電松島南恩加島線
+node_fix,n_taiunbashidori,大運橋通,だいうんばしどおり,大阪市交通局 大阪市電松島南恩加島線 / 大阪市交通局 大阪市電鶴町線
+node_fix,n_takagicho,高樹町,たかぎちょう,東京都交通局 都電霞町線
+node_fix,n_takakuracho_1_chome,高倉町一丁目,たかくらちょういっちょうめ,大阪市交通局 大阪市電都島守口線
+node_fix,n_takakuracho_2_chome,高倉町二丁目,たかくらちょうにちょうめ,大阪市交通局 大阪市電都島守口線
+node_fix,n_takakuracho_3_chome,高倉町三丁目,たかくらちょうさんちょうめ,大阪市交通局 大阪市電都島守口線
+node_fix,n_takakurayamaonsen,高倉山温泉,たかくらやまおんせん,花巻電鉄 花巻電鉄鉛線
+node_fix,n_takanecho,高根町,たかねちょう,横浜市交通局 横浜市電久保山線
+node_fix,n_takarabashi,宝橋,たからばし,大阪市交通局 大阪市電阪堺線
+node_fix,n_takarasawa,宝沢乗降場,たからざわじょうこうじょう,留萠鉄道 留萠鉄道
+node_fix,n_takasaki_ekimae,高崎駅前,たかさきえきまえ,東武鉄道 東武高崎線
+node_fix,n_takemachidori,竹町通,たけまちどおり,大分交通 大分交通別大線
+node_fix,n_tamachi_3_chome,田町三丁目,たまちさんちょうめ,東武鉄道 東武高崎線
+node_fix,n_tamaeshogakkomae,玉江小学校前,たまえしょうがっこうまえ,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_tamazatomichi,玉里道,たまざとみち,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_tameike,溜池,ためいけ,東京都交通局 都電溜池線 / 東京都交通局 都電霞町線
+node_fix,n_tanakamachi,田中町,たなかまち,秋田市交通局 秋田市電秋田市内線
+node_fix,n_tanoura,田ノ浦,たのうら,大分交通 大分交通別大線
+node_fix,n_tatebaba,竪馬場,たてばば,鹿児島市交通局 鹿児島市電上町線
+node_fix,n_tatebacho,立葉町,たてばちょう,大阪市交通局 大阪市電西道頓堀天王寺線
+node_fix,n_tatsukawamachiiriguchi,立川町入口,たてかわちょういりぐち,東武鉄道 東武前橋線
+node_fix,n_tenjinshita,天神下,てんじんした,東京都交通局 都電切通線
+node_fix,n_tennojikoenmae,天王寺公園前,てんのうじこうえんまえ,大阪市交通局 大阪市電西道頓堀天王寺線
+node_fix,n_teradacho_ekimae,寺田町駅前,てらだちょうえきまえ,大阪市交通局 大阪市電百済線
+node_fix,n_tetsudobyoinmae,鉄道病院前,てつどうびょういんまえ,札幌市交通局 札幌市電苗穂線
+node_fix,n_tobe_1_chome,戸部一丁目,とべいっちょうめ,横浜市交通局 横浜市電長者町線
+node_fix,n_tofukuinmae,東福院前,とうふくいんまえ,横浜市交通局 横浜市電本牧線
+node_fix,n_tojimichi_fushimi_line,東寺道,とうじみち,京都市交通局 京都市電伏見線
+node_fix,n_tokachikiyokawa,十勝清川,とかちきよかわ,十勝鉄道 十勝鉄道帯広部線
+node_fix,n_tokyoekiyaesuguchi,東京駅八重洲口,とうきょうえきやえすぐち,東京都交通局 都電土橋線
+node_fix,n_tosakiguchi,戸崎口,とざきぐち,名古屋鉄道 名鉄岡崎市内線
+node_fix,n_toyokoenmae,東陽公園前,とうようこうえんまえ,東京都交通局 都電洲崎線 / 東京都交通局 都電猿江線 / 東京都交通局 都電砂町線
+node_fix,n_tsujimachi,辻町,つじまち,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_tsukiji_2_chome,築地二丁目,つきじにちょうめ,東京都交通局 都電築地線
+node_fix,n_tsukumo_kure_city_transportation_bureau,津久茂,つくも,呉市交通局 呉市電長浜線
+node_fix,n_tsumagoi,嬬恋,つまごい,草軽電気鉄道 草軽電気鉄道線
+node_fix,n_tsumorijinjamae,津守神社前,つもりじんじゃまえ,大阪市交通局 大阪市電阪堺線
+node_fix,n_tsurumakicho,鶴巻町,つるまきちょう,東京都交通局 都電江戸川線
+node_fix,n_tsuruyacho_3_chome,鶴屋町三丁目,つるやちょうさんちょうめ,横浜市交通局 横浜市電浅間町線
+node_fix,n_tsuto,津門,つと,阪神電気鉄道 阪神国道線
+node_fix,n_uehara,上原,うえはら,横浜市交通局 横浜市電長者町線
+node_fix,n_urajuku,裏宿,うらじゅく,東武鉄道 東武伊香保線
+node_fix,n_ushubetsu,牛朱別,うししゅべつ,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_usuisangyomae,臼井産業前,うすいさんぎょうまえ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_utajimabashi,歌島橋,うたじまばし,阪神電気鉄道 阪神国道線
+node_fix,n_watari,渡り,わたり,花巻電鉄 花巻電鉄鉛線
+node_fix,n_yahatanishidori,八幡西通,やわたにしどおり,名古屋市交通局 名古屋市電下之一色線
+node_fix,n_yakubamae,役場前,やくばまえ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_yamanokami,山の神,やまのかみ,花巻電鉄 花巻電鉄鉛線
+node_fix,n_yamauchide,山打出,やまうちで,阪神電気鉄道 阪神国道線
+node_fix,n_yanagishima,柳島,やなぎしま,東京都交通局 都電業平線
+node_fix,n_yatsuya,八ツ矢,やつや,北陸鉄道 北陸鉄道松金線
+node_fix,n_yatsuyanagi,八柳,やつやなぎ,秋田市交通局 秋田市電秋田市内線
+node_fix,n_yobikomae,予備校前,よびこうまえ,札幌市交通局 札幌市電北5条線
+node_fix,n_yojonijutchome,四条廿丁目,よじょうにじゅっちょうめ,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_yokohamaekinishiguchi,横浜駅西口,よこはまえきにしぐち,横浜市交通局 横浜市電浅間町線
+node_fix,n_yokoka,横岡,よこおか,大井川鐵道 大井川鐵道大井川本線
+node_fix,n_yokosuna,横砂,よこすな,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_yonchumae,四中前,よんちゅうまえ,十勝鉄道 十勝鉄道帯広部線
+node_fix,n_yonohashi,四ノ橋,しのはし,東京都交通局 都電古川線
+node_fix,n_yoshihamabashi,吉浜橋,よしはまばし,横浜市交通局 横浜市電本牧線
+node_fix,n_yoshinocho_3_chome,吉野町三丁目,よしのちょうさんちょうめ,横浜市交通局 横浜市電弘明寺線 / 横浜市交通局 横浜市電日の出町線 / 横浜市交通局 横浜市電磯子線 / 横浜市交通局 横浜市電羽衣町線
+node_fix,n_yotsuyama,四ツ山,よつやま,西日本鉄道 西鉄大牟田市内線
+node_fix,n_yuseikyokumae,郵政局前,ゆうせいきょくまえ,仙台市交通局 仙台市電循環線
+node_fix,n_zentsujiakamonmae,善通寺赤門前,ぜんつうじあかもんまえ,琴平参宮電鉄 琴平参宮電鉄丸亀線 / 琴平参宮電鉄 琴平参宮電鉄多度津線 / 琴平参宮電鉄 琴平参宮電鉄琴平線
+node_fix,n_zosenshodori,造船所通,ぞうせんしょどおり,大阪市交通局 大阪市電阪堺線
+node_fix,n_aioicho_takasaki_line_tobu,相生町,あいおいちょう,東武鉄道 東武高崎線
+node_fix,n_asahibashi_toyohashi,旭橋,あさひばし,豊橋鉄道 豊橋鉄道東田本線
+node_fix,n_atago_asahikawa,愛宕,あたご,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_azumabashi,東橋,あずまばし,横浜市交通局 横浜市電花園橋線
+node_fix,n_betsuinmae_betsudai,別院前,べついんまえ,大分交通 大分交通別大線
+node_fix,n_daido_okayama,大道,おおみち,岡山電気軌道 岡山電気軌道東山本線
+node_fix,n_daigakumae_toyama_chiho,大学前,だいがくまえ,富山地方鉄道 富山地方鉄道富山軌道線呉羽線
+node_fix,n_daishi_maebashi,大師,だいし,東武鉄道 東武前橋線
+node_fix,n_dobutsuen_nagoya_city_transportation_bureau_cooperative_association,動物園,どうぶつえん,名古屋市交通局協力会 名古屋市交通局協力会東山公園モノレール
+node_fix,n_fukushima_takasaki_line_tobu,福島,ふくしま,東武鉄道 東武高崎線
+node_fix,n_furukawabashi_furukawa,古川橋,ふるかわばし,東京都交通局 都電伊皿子線 / 東京都交通局 都電古川線
+node_fix,n_gijidomae,議事堂前,ぎじどうまえ,東京都交通局 都電半蔵門線
+node_fix,n_gokokujinjamae,護国神社前,ごこくじんじゃまえ,鹿児島市交通局 鹿児島市電伊敷線
+node_fix,n_gokokujinjamae_toyama_chiho,護国神社前,ごこくじんじゃまえ,富山地方鉄道 富山地方鉄道富山軌道線呉羽線
+node_fix,n_hachimandori,八幡通,はちまんどおり,とさでん交通 とさでん交通後免線
+node_fix,n_hama_isogo,浜,はま,横浜市交通局 横浜市電磯子線
+node_fix,n_hamacho_betsudai,浜町,はままち,大分交通 大分交通別大線
+node_fix,n_hara_kure_city_transportation_bureau,原,はら,呉市交通局 呉市電郊外線
+node_fix,n_hatake_kure_city_transportation_bureau,畑,はた,呉市交通局 呉市電郊外線
+node_fix,n_higashicho_shokin,東町,ひがしまち,北陸鉄道 北陸鉄道松金線
+node_fix,n_higashiojima,東大島,ひがしおおしま,阪神電気鉄道 阪神国道線
+node_fix,n_hiyoshi_akita_city,日吉,ひよし,秋田市交通局 秋田市電秋田市内線
+node_fix,n_hongocho_hommoku,本郷町,ほんごうちょう,横浜市交通局 横浜市電本牧線
+node_fix,n_honmachi_1_chome_takasaki_line_tobu,本町一丁目,もとまちいっちょうめ,東武鉄道 東武高崎線
+node_fix,n_honmachi_3_chome_takasaki_line_tobu,本町三丁目,もとまちさんちょうめ,東武鉄道 東武高崎線
+node_fix,n_honshamae_toyohashi,本社前,ほんしゃまえ,豊橋鉄道 豊橋鉄道東田本線
+node_fix,n_iizuka_takasaki_line_tobu,飯塚,いいづか,東武鉄道 東武高崎線
+node_fix,n_inari_shokin,稲荷,いなり,北陸鉄道 北陸鉄道松金線
+node_fix,n_isa_takasaki_line_tobu,石原,いしはら,東武鉄道 東武高崎線
+node_fix,n_ishida_tramway_ho,石田,いしだ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_jieitaimae_akita_city,自衛隊前,じえいたいまえ,秋田市交通局 秋田市電秋田市内線
+node_fix,n_kagami_amagi,鏡,かがみ,西日本鉄道 西鉄甘木線
+node_fix,n_kaigandori_kure_city_transportation_bureau,海岸通,かいがんどおり,呉市交通局 呉市電郊外線
+node_fix,n_kannon_asahikawa,観音,かんおん,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_katao_sa,片男佐,かたおさ,西日本鉄道 西鉄貝塚線
+node_fix,n_keisatsushomae_nikko_tramway,警察署前,けいさつしょまえ,東武鉄道 東武日光軌道線
+node_fix,n_kenchomae_akita_city,県庁前,けんちょうまえ,秋田市交通局 秋田市電秋田市内線
+node_fix,n_kenchomae_shizuokashinai,県庁前,けんちょうまえ,静岡鉄道 静岡鉄道静岡市内線
+node_fix,n_kitanoda_takasaki_line_tobu,北野田,きたのだ,東武鉄道 東武高崎線
+node_fix,n_kiyosato_takasaki_line_tobu,清里,きよさと,東武鉄道 東武高崎線
+node_fix,n_koenmae_akita_city,公園前,こうえんまえ,秋田市交通局 秋田市電秋田市内線
+node_fix,n_kogyo_koko_mae,工業高校前,こうぎょうこうこうまえ,富山地方鉄道 富山地方鉄道富山軌道線呉羽線
+node_fix,n_kokura_kure_city_transportation_bureau,小倉,おぐら,呉市交通局 呉市電郊外線
+node_fix,n_kokura_takasaki_line_tobu,小倉,おぐら,東武鉄道 東武高崎線
+node_fix,n_kokuritsubyoinmae,国立病院前,こくりつびょういんまえ,伊豆箱根鉄道 伊豆箱根鉄道軌道線
+node_fix,n_korakuenmae,後楽園前,こうらくえんまえ,岡山電気軌道 岡山電気軌道番町線
+node_fix,n_koseibyoimmae,厚生病院前,こうせいびょういんまえ,JR北海道 名寄本線
+node_fix,n_koseibyoinmae,厚生病院前,こうせいびょういんまえ,仙台市交通局 仙台市電八幡町線
+node_fix,n_kotsukyokumae_loop_line_sendai_city,交通局前,こうつうきょくまえ,仙台市交通局 仙台市電循環線
+node_fix,n_kumano_hanamaki,熊野,くまの,花巻電鉄 花巻電鉄鉛線
+node_fix,n_matsubacho,松葉町,まつばちょう,豊橋鉄道 豊橋鉄道東田本線
+node_fix,n_matsubara_hanamaki,松原,まつばら,花巻電鉄 花巻電鉄鉛線
+node_fix,n_matsubara_maebashi,松原,まつばら,東武鉄道 東武前橋線
+node_fix,n_matsukura_hanamaki,松倉,まつくら,花巻電鉄 花巻電鉄鉛線
+node_fix,n_matsuyama_yagyubashi_branch,松山,まつやま,豊橋鉄道 豊橋鉄道柳生橋支線
+node_fix,n_mizusawa_ikaho,水沢,みずさわ,東武鉄道 東武伊香保線
+node_fix,n_mori_kokudo,森,もり,阪神電気鉄道 阪神国道線
+node_fix,n_nagahama_kure_city_transportation_bureau,長浜,ながはま,呉市交通局 呉市電長浜線
+node_fix,n_nagarabashi_shimonoishiki,長良橋,ながらばし,名古屋市交通局 名古屋市電下之一色線
+node_fix,n_nakahata_kure_city_transportation_bureau,中畑,なかはた,呉市交通局 呉市電郊外線
+node_fix,n_nakaizumi_takasaki_line_tobu,中泉,なかいずみ,東武鉄道 東武高崎線
+node_fix,n_nakamurabashi_isogo,中村橋,なかむらばし,横浜市交通局 横浜市電磯子線
+node_fix,n_nakanohashidori,中ノ橋通,なかのはしどおり,とさでん交通 とさでん交通伊野線
+node_fix,n_nanba,難波,なにわ,阪神電気鉄道 阪神国道線
+node_fix,n_naruto,鳴門,なると,士別軌道 士別軌道線
+node_fix,n_ninohashi_furukawa,二ノ橋,にのはし,東京都交通局 都電古川線
+node_fix,n_nishiojima,西大島,にしおおしま,阪神電気鉄道 阪神国道線
+node_fix,n_oshima_miyagi,小島,おじま,宮城バス 仙北鉄道登米線
+node_fix,n_otebashi,大手橋,おおてばし,名古屋市交通局 名古屋市電築地線
+node_fix,n_otebashi_toyohashi,大手橋,おおてばし,豊橋鉄道 豊橋鉄道柳生橋支線
+node_fix,n_ropponmatsu_ikaho,六本松,ろっぽんまつ,東武鉄道 東武伊香保線
+node_fix,n_saibanshomae_marutamachi,裁判所前,さいばんしょまえ,京都市交通局 京都市電丸太町線
+node_fix,n_saibanshomae_toyama_chiho,裁判所前,さいばんしょまえ,富山地方鉄道 富山地方鉄道富山軌道線呉羽線
+node_fix,n_sakaemachiguchi,栄町口,さかえちょうぐち,岡山電気軌道 岡山電気軌道東山本線
+node_fix,n_sakaigawa_betsudai,境川,さかいがわ,大分交通 大分交通別大線
+node_fix,n_sakaigawa_kasaibashi,境川,さかいがわ,東京都交通局 都電砂町線 / 東京都交通局 都電葛西橋線
+node_fix,n_sakanoe,坂ノ上,さかのうえ,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_sakurabashi_kawasaki_city_transportation_bureau,桜橋,さくらばし,川崎市交通局 川崎市電
+node_fix,n_sanbonmatsu,三本松,さんぼんまつ,大阪市交通局 大阪市電西野田桜島線
+node_fix,n_shakomae,車庫前,しゃこまえ,琴平参宮電鉄 琴平参宮電鉄丸亀線
+node_fix,n_shigosen_asahikawa,四号線,よんごうせん,旭川電気軌道 旭川電気軌道東川線
+node_fix,n_shiminkaikanmae_loop_line_sendai_city,市民会館前,しみんかいかんまえ,仙台市交通局 仙台市電循環線
+node_fix,n_shindaikumachi_akita_city,新大工町,しんだいくまち,秋田市交通局 秋田市電新大工町線
+node_fix,n_shinden_hanamaki,新田,あらた,花巻電鉄 花巻電鉄鉛線
+node_fix,n_shiozaki_ino,塩崎,しおざき,とさでん交通 とさでん交通伊野線
+node_fix,n_shiritsubyoinmae_omutashinai,市立病院前,しりつびょういんまえ,西日本鉄道 西鉄大牟田市内線
+node_fix,n_shiyakushomae,市役所前,しやくしょまえ,東武鉄道 東武日光軌道線
+node_fix,n_shiyakushomae_odawarashinai,市役所前,しやくしょまえ,箱根登山鉄道 箱根登山鉄道小田原市内線
+node_fix,n_shiyakushomae_shimizushinai,市役所前,しやくしょまえ,静岡鉄道 静岡鉄道清水市内線
+node_fix,n_shogunbaimae,将軍梅前,しょうぐんばいまえ,西日本鉄道 西鉄甘木線
+node_fix,n_shoji,小路,しょうじ,阪神電気鉄道 阪神国道線
+node_fix,n_shokokaigishomae_ikaho,商工会議所前,しょうこうかいぎしょまえ,東武鉄道 東武伊香保線
+node_fix,n_shokokaigishomae_maebashi,商工会議所前,しょうこうかいぎしょまえ,東武鉄道 東武前橋線
+node_fix,n_shokubutsuenmae,植物園前,しょくぶつえんまえ,札幌市交通局 札幌市電北5条線
+node_fix,n_sumiyoshicho_takasaki_line_tobu,住吉町,すみよしちょう,東武鉄道 東武高崎線
+node_fix,n_takashima_amagi,高島,たかしま,西日本鉄道 西鉄甘木線
+node_fix,n_tamachi_kawashiri,田町,たまち,熊本市交通局 熊本市電川尻線
+node_fix,n_tanaka_shokin,田中,たなか,北陸鉄道 北陸鉄道松金線
+node_fix,n_tanaka_takasaki_line_tobu,田中,たなか,東武鉄道 東武高崎線
+node_fix,n_tenjinbashi,天神橋,てんじんばし,横浜市交通局 横浜市電磯子線
+node_fix,n_tennocho_marutamachi,天王町,てんのうちょう,京都市交通局 京都市電丸太町線 / 京都市交通局 京都市電白川線
+node_fix,n_todaimae_inogashira,東大前,とうだいまえ,京王電鉄 京王井の頭線
+node_fix,n_togiyacho_suji,磨屋町筋,とぎやちょうすじ,岡山電気軌道 岡山電気軌道清輝橋線
+node_fix,n_tokumaru_shokin,徳丸,とくまる,北陸鉄道 北陸鉄道松金線
+node_fix,n_toyoda_asahikawa,豊田,とよだ,旭川電気軌道 旭川電気軌道東旭川線
+node_fix,n_uchikoshi_chojamachi,打越,うちこし,横浜市交通局 横浜市電長者町線
+node_fix,n_wakamiya_kunisaki,若宮,わかみや,大分交通 大分交通国東線
+node_fix,n_yahatabashi,八幡橋,やわたばし,横浜市交通局 横浜市電根岸線 / 横浜市交通局 横浜市電磯子線
+node_fix,n_yamanokuchi_sanyo,山之口,やまのくち,山陽電気軌道 山陽電気軌道唐戸線
+node_fix,n_yokote_nikko_tramway,横手,よこて,東武鉄道 東武日光軌道線
+node_fix,n_yubinkyokumae_odawarashinai,郵便局前,ゆうびんきょくまえ,箱根登山鉄道 箱根登山鉄道小田原市内線
+node_fix,n_zaimokucho_kasumicho,材木町,ざいもくちょう,東京都交通局 都電霞町線
+node_fix,n_egawashomae,,えがわしょまえ,
+node_fix,n_higashi_nodamachi_9_chome,東野田町九丁目,ひがしのだまちきゅうちょうめ,
+node_fix,n_ibayashi,,いばやし,
+node_fix,n_nishiura_sakaemachi,西裏,にしうら,
+node_fix,n_shimacho,志摩町,しまちょう,
+node_fix,n_asahimachi_omuta,,あさひまち,
+node_fix,n_omachi_enoshima,,おおまち,
+old_names_kana,n_inaeicho_tsukiji_line_nagoya_city|西稲永,n_inaeicho_tsukiji_line_nagoya_city,にしいなえ,
+old_names_kana,n_kameyama_sanyo|電鉄亀山,n_kameyama_sanyo,でんてつかめやま,
+old_names_kana,n_kamiya_3_chome|王子北町,n_kamiya_3_chome,おうじきたまち,
+old_names_kana,n_shimo_1_chome|志茂町一丁目,n_shimo_1_chome,しもまちいっちょうめ,
+old_names_kana,n_shimo_2_chome|志茂町三丁目,n_shimo_2_chome,しもまちさんちょうめ,
+old_names_kana,n_jieitaimae_akita_city|保安隊前,n_jieitaimae_akita_city,ほあんたいまえ,
+old_names_kana,n_kenchomae_akita_city|新国道,n_kenchomae_akita_city,しんこくどう,
+old_names_kana,n_kenchomae_akita_city|スポーツセンター前,n_kenchomae_akita_city,すぽーつせんたーまえ,
+old_names_kana,n_kenchomae_akita_city|体育館前,n_kenchomae_akita_city,たいいくかんまえ,
+old_names_kana,n_omachi_2_chome|県庁前,n_omachi_2_chome,けんちょうまえ,
+old_names_kana,n_rairaikyo|松葉,n_rairaikyo,まつば,
+old_names_kana,n_kohoku_nagoya_rinkai_rapid_transit|名古屋競馬場前,n_kohoku_nagoya_rinkai_rapid_transit,なごやけいばじょうまえ,
+old_names_kana,n_kita_aoyama_3_chome|青山五丁目,n_kita_aoyama_3_chome,あおやまごちょうめ,
+old_names_kana,n_minami_aoyama_2_chome|青山三丁目,n_minami_aoyama_2_chome,あおやまさんちょうめ,
+old_names_kana,n_arakawa_nanachome|三河島八丁目,n_arakawa_nanachome,みかわしまはっちょうめ,
+old_names_kana,n_arakawa_nichome|三河島,n_arakawa_nichome,みかわしま,
+old_names_kana,n_arakawakuyakushomae|三河島二丁目,n_arakawakuyakushomae,みかわしまにちょうめ,
+old_names_kana,n_arakawayuenchimae|尾久町六丁目,n_arakawayuenchimae,おぐまちろくちょうめ,
+old_names_kana,n_higashi_ogu_sanchome|下尾久,n_higashi_ogu_sanchome,しもおぐ,
+old_names_kana,n_higashi_ogu_sanchome|尾久町一丁目,n_higashi_ogu_sanchome,おぐまちいっちょうめ,
+old_names_kana,n_machiya_ekimae|町屋一丁目,n_machiya_ekimae,まちやいっちょうめ,
+old_names_kana,n_agemasunaga|九紡前,n_agemasunaga,きゅうぼうまえ,
+old_names_kana,n_nishigahara_1_chome|上中里,n_nishigahara_1_chome,かみなかざと,
+old_names_kana,n_aichidaigakumae|高師口,n_aichidaigakumae,たかしぐち,
+old_names_kana,n_shitayajinjamae|東上野五丁目,n_shitayajinjamae,ひがしうえのごちょうめ,
+old_names_kana,n_ekimae_odori|駅大通,n_ekimae_odori,えきおおどおり,
+old_names_kana,n_kitarinzaiji|車庫前,n_kitarinzaiji,しゃこまえ,
+old_names_kana,n_toyohashikoenmae|練兵場前,n_toyohashikoenmae,れんぺいじょうまえ,
+old_names_kana,n_bancho|七番町口,n_bancho,しちばんちょうぐち,
+old_names_kana,n_shujitsugakuenmae|一番町就実前,n_shujitsugakuenmae,いちばんちょうしゅうじつまえ,
+old_names_kana,n_daigakumae_ueda|下本郷,n_daigakumae_ueda,しもほんごう,
+old_names_kana,n_izokukaikanmae|北部中学通,n_izokukaikanmae,ほくぶちゅうがくどおり,
+old_names_kana,n_nagarekawadori|別府桟橋,n_nagarekawadori,べっぷさんばし,
+old_names_kana,n_komeicho|北前新田,n_komeicho,きたまえしんでん,
+old_names_kana,n_korakucho|南前新田,n_korakucho,みなみまえしんでん,
+old_names_kana,n_kujominami_1_chome|九条中通一丁目,n_kujominami_1_chome,くじょうなかどおりいっちょうめ,
+old_names_kana,n_minami_chitose|千歳空港,n_minami_chitose,ちとせくうこう,
+old_names_kana,n_irieguchi|入江下,n_irieguchi,いりえした,
+old_names_kana,n_shimonoseki_sanyo|下関駅前,n_shimonoseki_sanyo,しものせきえきまえ,
+old_names_kana,n_dainikokomae|女学校前,n_dainikokomae,じょがっこうまえ,
+old_names_kana,n_komakokomae|小笠原新田,n_komakokomae,おがさわらしんでん,
+old_names_kana,n_tokyoekiyaesuguchi|東京駅東口,n_tokyoekiyaesuguchi,とうきょうえきひがしぐち,
+old_names_kana,n_dozakashita|駒込動坂町,n_dozakashita,こまごめどうざかちょう,
+old_names_kana,n_nezu_1_chome|根津宮永町,n_nezu_1_chome,ねづみやながちょう,
+old_names_kana,n_arate_nishi_nippon|堂山,n_arate_nishi_nippon,どうやま,
+old_names_kana,n_aso|浅生通,n_aso,あそうどおり,
+old_names_kana,n_iidabashi_1_chome|飯田町一丁目,n_iidabashi_1_chome,いいだまちいっちょうめ,
+old_names_kana,n_shiyakushomae_kagoshima_city|桟橋通,n_shiyakushomae_kagoshima_city,さんばしどおり,
+old_names_kana,n_hommachidori|大名町,n_hommachidori,だいみょうまち,
+old_names_kana,n_kyotoekihachijoguchi|京都駅南口,n_kyotoekihachijoguchi,きょうとえきみなみぐち,
+old_names_kana,n_chiyoricho_3_chome|葛島西詰,n_chiyoricho_3_chome,かずらしまにしづめ,
+old_names_kana,n_kazurashimabashihigashizume|葛島東詰,n_kazurashimabashihigashizume,かずらしまひがしづめ,
+old_names_kana,n_hachiman_1_chome|八幡町一丁目,n_hachiman_1_chome,はちまんまちいっちょうめ,
+old_names_kana,n_hachiman_2_chome|八幡町二丁目,n_hachiman_2_chome,はちまんまちにちょうめ,
+old_names_kana,n_hachimanjinjamae|滝前丁,n_hachimanjinjamae,たきまえちょう,
+old_names_kana,n_koseibyoinmae|新坂通,n_koseibyoinmae,にいざかどおり,
+old_names_kana,n_koseibyoinmae|土橋通,n_koseibyoinmae,どばしどおり,
+old_names_kana,n_hakodate_dock_mae|函館ドック前,n_hakodate_dock_mae,はこだてどっくまえ,
+old_names_kana,n_uoichibadori|商工会議所前,n_uoichibadori,しょうこうかいぎしょまえ,
+old_names_kana,n_koishikawa_1_chome|初音町,n_koishikawa_1_chome,はつねちょう,
+old_names_kana,n_nishikata_1_chome|小石川柳町,n_nishikata_1_chome,こいしかわやなぎちょう,
+old_names_kana,n_nihonodorikenchomae|県庁前,n_nihonodorikenchomae,けんちょうまえ,
+old_names_kana,n_naniwacho|栄町,n_naniwacho,さかえまち,
+old_names_kana,n_gorin_2_chome|鹿島通,n_gorin_2_chome,かしまどおり,
+old_names_kana,n_gorinitchomekokuritsubyoiniriguchi|国立病院前,n_gorinitchomekokuritsubyoiniriguchi,こくりつびょういんまえ,
+old_names_kana,n_odawara_1_chome|小田原車通,n_odawara_1_chome,おだわらくるまとおり,
+old_names_kana,n_odawara_2_chome|小田原弓の町,n_odawara_2_chome,おだわらゆみのまち,
+old_names_kana,n_tokiwagigakuenmae|小田原金剛院丁,n_tokiwagigakuenmae,おだわらこんごういんちょう,
+old_names_kana,n_tokiwagigakuenmae|小田原広丁,n_tokiwagigakuenmae,おだわらひろちょう,
+old_names_kana,n_tsutsujigaokakishodaimae|榴ヶ岡,n_tsutsujigaokakishodaimae,つつじがおか,
+old_names_kana,n_kakyoin|花京院通,n_kakyoin,かきょういんどおり,
+old_names_kana,n_kotodori|大江,n_kotodori,おおえ,
+old_names_kana,n_sakae_nagoya_city|栄町,n_sakae_nagoya_city,さかえまち,
+old_names_kana,n_kadotayashiki|国清寺前,n_kadotayashiki,こくせいじまえ,
+old_names_kana,n_kenchodori|県庁通,n_kenchodori,けんちょうどおり,
+old_names_kana,n_okayama_ekimae|駅前,n_okayama_ekimae,えきまえ,
+old_names_kana,n_nogeodori|緑橋,n_nogeodori,みどりばし,
+old_names_kana,n_matobacho|的場,n_matobacho,まとば,
+old_names_kana,n_minami_aoyama_1_chome|南町一丁目,n_minami_aoyama_1_chome,みなみちょういっちょうめ,
+old_names_kana,n_nishikuyakushomae|扇田町,n_nishikuyakushomae,おうぎだちょう,
+old_names_kana,n_tobekeisatsushomae|石崎町,n_tobekeisatsushomae,いしざきちょう,
+old_names_kana,n_fukui|福井駅前,n_fukui,ふくいえきまえ,
+old_names_kana,n_honmokusankeienshuten|本牧三渓園前,n_honmokusankeienshuten,ほんもくさんけいえんまえ,
+old_names_kana,n_tori_3_chome|八重洲通,n_tori_3_chome,やえすどおり,
+old_names_kana,n_hongooiwake|本郷追分町,n_hongooiwake,ほんごうおいわけちょう,
+old_names_kana,n_horaicho|蓬莱町,n_horaicho,ほうらいちょう,
+old_names_kana,n_nishi_shimbashi_1_chome|田村町一丁目,n_nishi_shimbashi_1_chome,たむらちょういっちょうめ,
+old_names_kana,n_horonai_sumiyoshi|住吉,n_horonai_sumiyoshi,すみよし,
+old_names_kana,n_kudankita_3_chome|九段三丁目,n_kudankita_3_chome,くだんさんちょうめ,
+old_names_kana,n_choseiemmae_sapporo_transportation_service_promotion|西保健所前,n_choseiemmae_sapporo_transportation_service_promotion,にしほけんじょまえ,
+old_names_kana,n_chuokuyakushomae|消防局前,n_chuokuyakushomae,しょうぼうきょくまえ,
+old_names_kana,n_sapporoidaimae|医大病院前,n_sapporoidaimae,いだいびょういんまえ,
+old_names_kana,n_nishi_15_chome|医大病院前,n_nishi_15_chome,いだいびょういんまえ,
+old_names_kana,n_sakuramizu|前谷地,n_sakuramizu,まえやじ,
+old_names_kana,n_seikogakuimmae|車庫前,n_seikogakuimmae,しゃこまえ,
+old_names_kana,n_higashi_ikebukuro_1_chome|日出町三丁目,n_higashi_ikebukuro_1_chome,ひのでちょうさんちょうめ,
+old_names_kana,n_higashi_ikebukuro_1_chome|池袋東一丁目,n_higashi_ikebukuro_1_chome,いけぶくろひがしいっちょうめ,
+old_names_kana,n_otsuka_6_chome|大塚坂下町,n_otsuka_6_chome,おおつかさかしたまち,
+old_names_kana,n_otsuka_6_chome|大塚五丁目,n_otsuka_6_chome,おおつかごちょうめ,
+old_names_kana,n_inoshogyomae|挟間橋,n_inoshogyomae,はざまばし,
+old_names_kana,n_kamimachi_1_chome|本丁筋一丁目,n_kamimachi_1_chome,ほんちょうすじいっちょうめ,
+old_names_kana,n_kamimachi_3_chome|本丁筋三丁目,n_kamimachi_3_chome,ほんちょうすじさんちょうめ,
+old_names_kana,n_kamimachi_4_chome|本丁筋四丁目,n_kamimachi_4_chome,ほんちょうすじよんちょうめ,
+old_names_kana,n_kamimachi_5_chome|本丁筋五丁目,n_kamimachi_5_chome,ほんちょうすじごちょうめ,
+old_names_kana,n_kenchomae_tosaden_kotsu|本町上二丁目,n_kenchomae_tosaden_kotsu,ほんまちかみにちょうめ,
+old_names_kana,n_motorijinjamae|公園下,n_motorijinjamae,こうえんした,
+old_names_kana,n_washinomiya|鷲ノ宮,n_washinomiya,わしのみや,
+old_names_kana,n_ishikicho|上伊敷,n_ishikicho,かみいしき,
+old_names_kana,n_ishiwara_2_chome|石原町二丁目,n_ishiwara_2_chome,いしわらちょうにちょうめ,
+old_names_kana,n_ishiwara_3_chome|石原町三丁目,n_ishiwara_3_chome,いしわらちょうさんちょうめ,
+old_names_kana,n_taihei_1_chome|太平町一丁目,n_taihei_1_chome,たいへいちょういっちょうめ,
+old_names_kana,n_taihei_3_chome|太平町三丁目,n_taihei_3_chome,たいへいちょうさんちょうめ,
+old_names_kana,n_ishiwara_1_chome|石原町一丁目,n_ishiwara_1_chome,いしわらちょういっちょうめ,
+old_names_kana,n_takinogawa_5_chome|御代ノ台,n_takinogawa_5_chome,みよのだい,
+old_names_kana,n_iwamotocho_2_chome|元岩井町,n_iwamotocho_2_chome,もといわいちょう,
+old_names_kana,n_taito_3_chome|御徒町二丁目,n_taito_3_chome,おかちまちにちょうめ,
+old_names_kana,n_akihabaraekihigashiguchi|秋葉原駅前,n_akihabaraekihigashiguchi,あきはばらえきまえ,
+old_names_kana,n_seibukagakumae|若泉,n_seibukagakumae,わかいずみ,
+old_names_kana,n_takasagocho|北味酒,n_takasagocho,きたみさけ,
+old_names_kana,n_shinzo_kekkan_center|循環器病センター,n_shinzo_kekkan_center,じゅんかんきびょうせんたー,
+old_names_kana,n_ohori_nishi_nippon|大濠町,n_ohori_nishi_nippon,おおほりまち,
+old_names_kana,n_jukkokutoge_sanroku|十国登り口,n_jukkokutoge_sanroku,じっこくのぼりぐち,
+old_names_kana,n_mizuho_kuyakusho_nagoya_tram|瑞穂通三丁目,n_mizuho_kuyakusho_nagoya_tram,みずほどおりさんちょうめ,
+old_names_kana,n_mizuhodori_1_chome|市立大学病院前,n_mizuhodori_1_chome,しりつだいがくびょういんまえ,
+old_names_kana,n_tsukishima_toden|月島通八丁目,n_tsukishima_toden,つきしまどおりはっちょうめ,
+old_names_kana,n_kaizuka_nishi_nippon_old|西鉄多々良,n_kaizuka_nishi_nippon_old,にしてつたたら,
+old_names_kana,n_kaizuka_nishi_nippon_old|競輪場前,n_kaizuka_nishi_nippon_old,けいりんじょうまえ,
+old_names_kana,n_maidashi_3_chome|金平,n_maidashi_3_chome,かねひら,
+old_names_kana,n_chikusa_ekimae|千種橋東,n_chikusa_ekimae,ちくさばしひがし,
+old_names_kana,n_kami_kumamoto_kumamoto_city|上熊本駅前,n_kami_kumamoto_kumamoto_city,かみくまもとえきまえ,
+old_names_kana,n_senbabashi|塩屋町,n_senbabashi,しおやまち,
+old_names_kana,n_urusanmachi|蔚山町護国神社前,n_urusanmachi,うるさんまちごこくじんじゃまえ,
+old_names_kana,n_kamiokacho|東町,n_kamiokacho,ひがしまち,
+old_names_kana,n_shigakkoato|大学病院前,n_shigakkoato,だいがくびょういんまえ,
+old_names_kana,n_arato_1_chome|衛戍病院前,n_arato_1_chome,えいじゅびょういんまえ,
+old_names_kana,n_daimyo_2_chome|大名町,n_daimyo_2_chome,だいみょうまち,
+old_names_kana,n_muromibashi|西ノ庄,n_muromibashi,にしのしょう,
+old_names_kana,n_nishitetsuguraundohoterumae|西鉄本社前,n_nishitetsuguraundohoterumae,にしてつほんしゃまえ,
+old_names_kana,n_nishijin_nishi_nippon|西新町,n_nishijin_nishi_nippon,にしじんまち,
+old_names_kana,n_higashisuna_4_chome|北砂町七丁目,n_higashisuna_4_chome,きたすなまちななちょうめ,
+old_names_kana,n_kitasuna_4_chome|北砂町四丁目,n_kitasuna_4_chome,きたすなまちよんちょうめ,
+old_names_kana,n_kitasuna_7_chome|南砂町六丁目,n_kitasuna_7_chome,みなみすなまちろくちょうめ,
+old_names_kana,n_minamisuna_5_chome|南砂町二丁目,n_minamisuna_5_chome,みなみすなまちにちょうめ,
+old_names_kana,n_tawaramoto|近畿日本田原本,n_tawaramoto,きんきにっぽんたわらもと,
+old_names_kana,n_fukui_echizen|福井駅前,n_fukui_echizen,ふくいえきまえ,
+old_names_kana,n_shichijokawaramachi|七条内浜,n_shichijokawaramachi,しちじょううちはま,
+old_names_kana,n_shokochukinmae|上並木,n_shokochukinmae,かみなみき,
+old_names_kana,n_kamichikami|上近見町,n_kamichikami,かみちかみまち,
+old_names_kana,n_shimochikami|下近見町,n_shimochikami,しもちかみまち,
+old_names_kana,n_kadoma_shi_keihan|新門真,n_kadoma_shi_keihan,しんかどま,
+old_names_kana,n_haneda_airport_terminal_12|羽田空港,n_haneda_airport_terminal_12,はねだくうこう,
+old_names_kana,n_kenritsu_daigaku|京急安浦,n_kenritsu_daigaku,けいきゅうやすうら,
+old_names_kana,n_shioiri_keikyu|横須賀汐留,n_shioiri_keikyu,よこすかしおどめ,
+old_names_kana,n_doshokubutsueniriguchi|動物園前,n_doshokubutsueniriguchi,どうぶつえんまえ,
+old_names_kana,n_kengunkobanmae|健軍派出所前,n_kengunkobanmae,けんぐんはしゅつしょまえ,
+old_names_kana,n_shiritsutaiikukanmae|砂取,n_shiritsutaiikukanmae,すなとり,
+old_names_kana,n_saishun_iryo_center_mae_old|再春荘前,n_saishun_iryo_center_mae_old,さいしゅんそうまえ,
+old_names_kana,n_yushima_4_chome|春木町,n_yushima_4_chome,はるきちょう,
+old_names_kana,n_matsue_shinjiko_onsen|松江温泉,n_matsue_shinjiko_onsen,まつえおんせん,
+old_names_kana,n_fujimicho_nishi_nippon|園芸学校前,n_fujimicho_nishi_nippon,えんげいがっこうまえ,
+old_names_kana,n_katano_nishi_nippon|三郎丸,n_katano_nishi_nippon,さぶろうまる,
+old_names_kana,n_mihagino|香春口五丁目,n_mihagino,かわらぐちごちょうめ,
+old_names_kana,n_shiritsukokurabyoimmae|小倉市立病院前,n_shiritsukokurabyoimmae,こくらしりつびょういんまえ,
+old_names_kana,n_chuoyubinkyokumae|道庁西門通,n_chuoyubinkyokumae,どうちょうにしもんどおり,
+old_names_kana,n_chuoyubinkyokumae|道庁裏門通,n_chuoyubinkyokumae,どうちょううらもんどおり,
+old_names_kana,n_kita_gojo_11_chome|北高校通,n_kita_gojo_11_chome,きたこうこうどおり,
+old_names_kana,n_chuoichibadori|西高校前,n_chuoichibadori,にしこうこうまえ,
+old_names_kana,n_akasaka|延命寺,n_akasaka,えんめいじ,
+old_names_kana,n_kamitomino_1_chome|富野,n_kamitomino_1_chome,とみの,
+old_names_kana,n_kamitomino_3_chome|上富野,n_kamitomino_3_chome,かみとみの,
+old_names_kana,n_kazashi|白木崎,n_kazashi,しらきざき,
+old_names_kana,n_kobai|紅梅町,n_kobai,こうばいまち,
+old_names_kana,n_komemachi|大坂町九丁目,n_komemachi,おおさかまちきゅうちょうめ,
+old_names_kana,n_maeda_nishi_nippon|西前田,n_maeda_nishi_nippon,にしまえだ,
+old_names_kana,n_momozono_nishi_nippon|桃園町,n_momozono_nishi_nippon,ももぞのちょう,
+old_names_kana,n_ogura_nishi_nippon|中町,n_ogura_nishi_nippon,なかまち,
+old_names_kana,n_seitetsunishimommae|緑町,n_seitetsunishimommae,みどりまち,
+old_names_kana,n_shikadaigakumae|運動場前,n_shikadaigakumae,うんどうじょうまえ,
+old_names_kana,n_shiritsumojibyoimmae|市民病院前,n_shiritsumojibyoimmae,しみんびょういんまえ,
+old_names_kana,n_showa_nishi_nippon|昭和町,n_showa_nishi_nippon,しょうわまち,
+old_names_kana,n_tatemachi_nishi_nippon|田町裏,n_tatemachi_nishi_nippon,たまちうら,
+old_names_kana,n_yuemmaebasueigyosho|到津車庫前,n_yuemmaebasueigyosho,いとうづしゃこまえ,
+old_names_kana,n_furitsudaigakumae|西京大学前,n_furitsudaigakumae,さいきょうだいがくまえ,
+old_names_kana,n_kitaojishimmachi|学芸大学前,n_kitaojishimmachi,がくげいだいがくまえ,
+old_names_kana,n_shokubutsuemmae|北大路橋,n_shokubutsuemmae,きたおおじばし,
+old_names_kana,n_nishioyodo|浦江,n_nishioyodo,うらえ,
+old_names_kana,n_kitahachibanchojidosodanjomae|北八番丁,n_kitahachibanchojidosodanjomae,きたはちばんちょう,
+old_names_kana,n_kobe_sannomiya_hankyu|三宮,n_kobe_sannomiya_hankyu,さんのみや,
+old_names_kana,n_nishinomiyanishiguchi|夙川橋,n_nishinomiyanishiguchi,しゅくがわばし,
+old_names_kana,n_kichijojimae|吉祥寺町,n_kichijojimae,きちじょうじまち,
+old_names_kana,n_komagomefujimae|駒込富士前町,n_komagomefujimae,こまごめふじまえちょう,
+old_names_kana,n_haguro_meitetsu|明治村口,n_haguro_meitetsu,めいじむらぐち,
+old_names_kana,n_hirosaki_konan|弘南弘前,n_hirosaki_konan,こうなんひろさき,
+old_names_kana,n_yukisawa_onsen|雪沢鉱泉,n_yukisawa_onsen,ゆきさわこうせん,
+old_names_kana,n_hanshimpakumae|甲子園阪神パーク前,n_hanshimpakumae,こうしえんはんしんぱーくまえ,
+old_names_kana,n_midori_2_chome|緑町二丁目,n_midori_2_chome,みどりちょうにちょうめ,
+old_names_kana,n_midori_3_chome|緑町三丁目,n_midori_3_chome,みどりちょうさんちょうめ,
+old_names_kana,n_ryogoku_3_chome|東両国三丁目,n_ryogoku_3_chome,ひがしりょうごくさんちょうめ,
+old_names_kana,n_ryogoku_2_chome|東両国二丁目,n_ryogoku_2_chome,ひがしりょうごくにちょうめ,
+old_names_kana,n_takamatsu_chikko_old|築港,n_takamatsu_chikko_old,ちっこう,
+old_names_kana,n_gengahashi|源ヶ橋,n_gengahashi,げんがはし,
+old_names_kana,n_keihankokudoguchi|九条大路壬生通,n_keihankokudoguchi,くじょうおおじみぶどおり,
+old_names_kana,n_kujokintetsumae|九条堀川奈良電前,n_kujokintetsumae,くじょうほりかわならでんまえ,
+old_names_kana,n_kujokintetsumae|九条奈良電前,n_kujokintetsumae,くじょうならでんまえ,
+old_names_kana,n_kujoshichihonmatsu|九条大路七本松,n_kujoshichihonmatsu,くじょうおおじしちほんまつ,
+old_names_kana,n_rakuyokokomae|九条御前通,n_rakuyokokomae,くじょうおんまえどおり,
+old_names_kana,n_kuramae_2_chome|蔵前三丁目,n_kuramae_2_chome,くらまえさんちょうめ,
+old_names_kana,n_keikyu_kurihama|湘南久里浜,n_keikyu_kurihama,しょうなんくりはま,
+old_names_kana,n_kitakurihama|湘南井田,n_kitakurihama,しょうなんいだ,
+old_names_kana,n_nanotsuguchi|船津町,n_nanotsuguchi,ふなつまち,
+old_names_kana,n_shiminkaikanmae|須崎橋,n_shiminkaikanmae,すさきばし,
+old_names_kana,n_chuo_1_chome|元寺小路,n_chuo_1_chome,もとてらこうじ,
+old_names_kana,n_katahiraitchomekensatsuchomae|片平丁,n_katahiraitchomekensatsuchomae,かたひらちょう,
+old_names_kana,n_kimachidori_2_chome|北鍛冶町,n_kimachidori_2_chome,きたかじまち,
+old_names_kana,n_kotosaibanshomae|狐小路裁判所前,n_kotosaibanshomae,きつねこうじさいばんしょまえ,
+old_names_kana,n_kotsukyokumae_loop_line_sendai_city|北二番丁車庫前,n_kotsukyokumae_loop_line_sendai_city,きたにばんちょうしゃこまえ,
+old_names_kana,n_kotsukyokumae_loop_line_sendai_city|北二番丁交通局前,n_kotsukyokumae_loop_line_sendai_city,きたにばんちょうこうつうきょくまえ,
+old_names_kana,n_nishikicho_loop_line_sendai_city|光禅寺通,n_nishikicho_loop_line_sendai_city,こうぜんじどおり,
+old_names_kana,n_omachinishikoenmae|大町一丁目,n_omachinishikoenmae,おおまちいっちょうめ,
+old_names_kana,n_reja_center_mae|レジャーセンター北警察署前,n_reja_center_mae,れじゃーせんたーきたけいさつしょまえ,
+old_names_kana,n_shiminkaikanmae_loop_line_sendai_city|公会堂前,n_shiminkaikanmae_loop_line_sendai_city,こうかいどうまえ,
+old_names_kana,n_yuseikyokumae|東二番丁逓信局前,n_yuseikyokumae,ひがしにばんちょうていしんきょくまえ,
+old_names_kana,n_yuseikyokumae|東二番丁郵政局前,n_yuseikyokumae,ひがしにばんちょうゆうせいきょくまえ,
+old_names_kana,n_futsukamachi|勾当台通北四番丁,n_futsukamachi,こうとうだいどおりきたよばんちょう,
+old_names_kana,n_chuo_3_chome|東五番丁,n_chuo_3_chome,ひがしごばんちょう,
+old_names_kana,n_gurandomae|中学校通,n_gurandomae,ちゅうがっこうどおり,
+old_names_kana,n_nakafuhonshamae|中府,n_nakafuhonshamae,なかぶ,
+old_names_kana,n_tokyoekimarunouchikitaguchi|東京駅降車口,n_tokyoekimarunouchikitaguchi,とうきょうえきこうしゃぐち,
+old_names_kana,n_tokyoekimarunouchiminamiguchi|東京駅乗車口,n_tokyoekimarunouchiminamiguchi,とうきょうえきじょうしゃぐち,
+old_names_kana,n_marutamachichiekoin|医師会前,n_marutamachichiekoin,いしかいまえ,
+old_names_kana,n_saibanshomae_marutamachi|堺町御門前,n_saibanshomae_marutamachi,さかいまちごもんまえ,
+old_names_kana,n_emmachi_marutamachi|西ノ京円町,n_emmachi_marutamachi,にしのきょうえんまち,
+old_names_kana,n_tennocho_marutamachi|岡崎東天王町,n_tennocho_marutamachi,おかざきひがしてんのうちょう,
+old_names_kana,n_higashihachimantai|屋敷台,n_higashihachimantai,やしきだい,
+old_names_kana,n_matsushimakoemmae|松島町一丁目,n_matsushimakoemmae,まつしまちょういっちょうめ,
+old_names_kana,n_atsuta_jingu_nishi|神宮西,n_atsuta_jingu_nishi,じんぐうにし,
+old_names_kana,n_atsuta_jingu_temma_cho|伝馬町,n_atsuta_jingu_temma_cho,てんまちょう,
+old_names_kana,n_kita_ueno_1_chome|下車坂町,n_kita_ueno_1_chome,しもくるまざかちょう,
+old_names_kana,n_negishi_4_chome|金杉一丁目,n_negishi_4_chome,かなすぎいっちょうめ,
+old_names_kana,n_negishi_5_chome|金杉二丁目,n_negishi_5_chome,かなすぎにちょうめ,
+old_names_kana,n_shitaya_2_chome|坂本二丁目,n_shitaya_2_chome,さかもとにちょうめ,
+old_names_kana,n_shitaya_3_chome|金杉仲通,n_shitaya_3_chome,かなすぎなかどおり,
+old_names_kana,n_nishi_shimbashi_3_chome|田村町四丁目,n_nishi_shimbashi_3_chome,たむらちょうよんちょうめ,
+old_names_kana,n_omiyashogakkomae|森小路町,n_omiyashogakkomae,もりしょうじちょう,
+old_names_kana,n_taishibashi|土居町,n_taishibashi,どいちょう,
+old_names_kana,n_seibuteomae|交通局出張所前,n_seibuteomae,こうつうきょくしゅっちょうじょまえ,
+old_names_kana,n_seibuteomae|梁川車庫前,n_seibuteomae,やながわしゃこまえ,
+old_names_kana,n_seibuteomae|開発建設部前,n_seibuteomae,かいはつけんせつぶまえ,
+old_names_kana,n_yanagawacho|梁川町開発建設部前,n_yanagawacho,やながわちょうかいはつけんせつぶまえ,
+old_names_kana,n_higashi_mukojima_1_chome|寺島町一丁目,n_higashi_mukojima_1_chome,てらしまちょういっちょうめ,
+old_names_kana,n_higashi_mukojima_3_chome|寺島町二丁目,n_higashi_mukojima_3_chome,てらしまちょうにちょうめ,
+old_names_kana,n_mukojima_2_chome|向島三丁目,n_mukojima_2_chome,むこうじまさんちょうめ,
+old_names_kana,n_mukojima_5_chome|向島須崎町,n_mukojima_5_chome,むこうじますさきちょう,
+old_names_kana,n_honjo_azumabashi_toden|吾妻橋二丁目,n_honjo_azumabashi_toden,あずまばしにちょうめ,
+old_names_kana,n_toyoizumi|豊住,n_toyoizumi,とよずみ,
+old_names_kana,n_kawanishi_noseguchi_nose|能勢口,n_kawanishi_noseguchi_nose,のせぐち,
+old_names_kana,n_tsuzumigataki_old|皷ヶ滝,n_tsuzumigataki_old,つづみがたき,
+old_names_kana,n_cable_sanjo|山上,n_cable_sanjo,さんじょう,
+old_names_kana,n_dome_mae_chiyozaki|大阪ドーム前千代崎,n_dome_mae_chiyozaki,おおさかどーむまえちよざき,
+old_names_kana,n_aramachinissekibyoimmae|日赤病院前,n_aramachinissekibyoimmae,にっせきびょういんまえ,
+old_names_kana,n_aramachinissekibyoimmae|荒町,n_aramachinissekibyoimmae,あらまち,
+old_names_kana,n_funacho|舟丁南警察署前,n_funacho,ふなちょうみなみけいさつしょまえ,
+old_names_kana,n_itsutsubashi_sendai_city|五ッ橋通,n_itsutsubashi_sendai_city,いつつばしどおり,
+old_names_kana,n_nagamachi_1_chome_sendai_tram|長町北町,n_nagamachi_1_chome_sendai_tram,ながまちきたまち,
+old_names_kana,n_nagamachi_1_chome_sendai_tram|長町市場前,n_nagamachi_1_chome_sendai_tram,ながまちいちばまえ,
+old_names_kana,n_nagamachi_3_chome|長町南町,n_nagamachi_3_chome,ながまちみなみまち,
+old_names_kana,n_nagamachishishomae|秋保電鉄前,n_nagamachishishomae,あきうでんてつまえ,
+old_names_kana,n_tetsudokanrikyokumae|北目町通,n_tetsudokanrikyokumae,きためまちどおり,
+old_names_kana,n_stadium_city_north|井樋の口,n_stadium_city_north,いびのくち,
+old_names_kana,n_stadium_city_south|稲佐橋通,n_stadium_city_south,いなさばしどおり,
+old_names_kana,n_iseshi_ekimae|山田駅前,n_iseshi_ekimae,やまだえきまえ,
+old_names_kana,n_sarutahikojinjamae|浦田町,n_sarutahikojinjamae,うらたちょう,
+old_names_kana,n_tsukiyominomiyamae|中村,n_tsukiyominomiyamae,なかむら,
+old_names_kana,n_nakamura_koen_nagoya_tram|中村公園前,n_nakamura_koen_nagoya_tram,なかむらこうえんまえ,
+old_names_kana,n_higashiitachibori|立売堀南通,n_higashiitachibori,いたちぼりみなみどおり,
+old_names_kana,n_higashi_hanazono|ラグビー場前,n_higashi_hanazono,らぐびーじょうまえ,
+old_names_kana,n_ikoma|近畿日本生駒,n_ikoma,きんきにっぽんいこま,
+old_names_kana,n_midori_1_chome|東両国緑町,n_midori_1_chome,ひがしりょうごくみどりちょう,
+old_names_kana,n_honjo_1_chome|厩橋一丁目,n_honjo_1_chome,うまやばしいっちょうめ,
+old_names_kana,n_arasawa|荒沢,n_arasawa,あらさわ,
+old_names_kana,n_denshakomae|地蔵下,n_denshakomae,じぞうした,
+old_names_kana,n_furukawaarumimae|白崖下,n_furukawaarumimae,しらがけした,
+old_names_kana,n_kokutetsu_ekimae|停車場前,n_kokutetsu_ekimae,ていしゃばまえ,
+old_names_kana,n_shinkyo|神橋前,n_shinkyo,しんきょうまえ,
+old_names_kana,n_shiyakushomae|中鉢石,n_shiyakushomae,なかはついし,
+old_names_kana,n_choseiemmae|西保健所前,n_choseiemmae,にしほけんじょまえ,
+old_names_kana,n_noda_osaka_city|野田駅前,n_noda_osaka_city,のだえきまえ,
+old_names_kana,n_anjo_meitetsu|新安城,n_anjo_meitetsu,しんあんじょう,
+old_names_kana,n_waratenjimmae|衣笠球場前,n_waratenjimmae,きぬがさきゅうじょうまえ,
+old_names_kana,n_rokuban_cho_6_chome|二番道,n_rokuban_cho_6_chome,にばんみち,
+old_names_kana,n_juntendobyoimmae|本郷元町,n_juntendobyoimmae,ほんごうもとまち,
+old_names_kana,n_oecho|六号地,n_oecho,ろくごうち,
+old_names_kana,n_detohama|出戸,n_detohama,でと,
+old_names_kana,n_chikuni|千国崎,n_chikuni,ちくにざき,
+old_names_kana,n_konan_fukuda|臨港福田,n_konan_fukuda,りんこうふくだ,
+old_names_kana,n_konan_izumita|臨港泉田,n_konan_izumita,りんこういずみだ,
+old_names_kana,n_konan_shimpo|臨港新保,n_konan_shimpo,りんこうしんぼ,
+old_names_kana,n_minami_okayama|汽車会社前,n_minami_okayama,きしゃがいしゃまえ,
+old_names_kana,n_namikicho|臨港藤田,n_namikicho,りんこうふじた,
+old_names_kana,n_daigakushita|三島学校下,n_daigakushita,みしまがっこうした,
+old_names_kana,n_shiritsubyoinmae_omutashinai|大牟田警察前,n_shiritsubyoinmae_omutashinai,おおむたけいさつまえ,
+old_names_kana,n_kintetsu_yao_old|関急八尾,n_kintetsu_yao_old,かんきゅうやお,
+old_names_kana,n_otowa_1_chome|音羽七丁目,n_otowa_1_chome,おとわななちょうめ,
+old_names_kana,n_otowa_2_chome|音羽三丁目,n_otowa_2_chome,おとわさんちょうめ,
+old_names_kana,n_kasuga_2_chome|同心町,n_kasuga_2_chome,どうしんちょう,
+old_names_kana,n_kohinata_4_chome|清水谷町,n_kohinata_4_chome,しみずだにまち,
+old_names_kana,n_koishikawa_4_chome|竹早町,n_koishikawa_4_chome,たけはやちょう,
+old_names_kana,n_otsuka_2_chome|大塚窪町,n_otsuka_2_chome,おおつかくぼまち,
+old_names_kana,n_shin_otsuka_otsuka|大塚辻町,n_shin_otsuka_otsuka,おおつかつじまち,
+old_names_kana,n_otsuka_3_chome|大塚仲町,n_otsuka_3_chome,おおつかなかまち,
+old_names_kana,n_keisan_kagaku_center|京コンピュータ前,n_keisan_kagaku_center,けいこんぴゅーたまえ,
+old_names_kana,n_akasaka_8_chome|新坂町,n_akasaka_8_chome,しんざかまち,
+old_names_kana,n_roppongi_7_chome|竜土町,n_roppongi_7_chome,りゅうどちょう,
+old_names_kana,n_kita_aoyama_1_chome|青山一丁目,n_kita_aoyama_1_chome,あおやまいっちょうめ,
+old_names_kana,n_haraojima|岡山練馬場,n_haraojima,おかやまれんばじょう,
+old_names_kana,n_hirokojihonmachi|広小路七丁目,n_hirokojihonmachi,ひろこうじななちょうめ,
+old_names_kana,n_sakae_nagoya_tram|栄町,n_sakae_nagoya_tram,さかえまち,
+old_names_kana,n_mizuho_undojo_nishi|瑞穂運動場,n_mizuho_undojo_nishi,みずほうんどうじょう,
+old_names_kana,n_amidaike|北堀江通四丁目,n_amidaike,きたほりえどおりよんちょうめ,
+old_names_kana,n_kyomachibori_4_chome|京町堀通四丁目,n_kyomachibori_4_chome,きょうまちぼりどおりよんちょうめ,
+old_names_kana,n_nishiitachibori|立売堀北通五丁目,n_nishiitachibori,いたちぼりきたどおりごちょうめ,
+old_names_kana,n_misato_sangi|宇賀渓口,n_misato_sangi,うがけいぐち,
+old_names_kana,n_izumo_jinzai|神西,n_izumo_jinzai,じんざい,
+old_names_kana,n_sanjo_sarakura_tozan|帆柱山,n_sanjo_sarakura_tozan,ほばしらやま,
+old_names_kana,n_sanroku|尾倉公園,n_sanroku,おぐらこうえん,
+old_names_kana,n_ogibashi_2_chome|小名木川橋,n_ogibashi_2_chome,おなぎがわばし,
+old_names_kana,n_toyo_5_chome|深川平井町,n_toyo_5_chome,ふかがわひらいちょう,
+old_names_kana,n_toyosumibashi|豊住町,n_toyosumibashi,とよずみちょう,
+old_names_kana,n_kido_nanzoin_mae|城戸,n_kido_nanzoin_mae,きど,
+old_names_kana,n_kajiyacho|柿本寺通,n_kajiyacho,かきもとじどおり,
+old_names_kana,n_kagoshima_chuo_ekimae|西鹿児島駅前,n_kagoshima_chuo_ekimae,にしかごしまえきまえ,
+old_names_kana,n_tamachi_okayama|市役所前,n_tamachi_okayama,しやくしょまえ,
+old_names_kana,n_tamachi_okayama|中鉄バス前,n_tamachi_okayama,ちゅうてつばすまえ,
+old_names_kana,n_yubinkyokumae|岡山郵便局前,n_yubinkyokumae,おかやまゆうびんきょくまえ,
+old_names_kana,n_yokohamaekinishiguchi|横浜駅裏口,n_yokohamaekinishiguchi,よこはまえきうらぐち,
+old_names_kana,n_asakusa_7_chome|聖天町,n_asakusa_7_chome,しょうでんちょう,
+old_names_kana,n_higashi_asakusa_1_chome|吉野町三丁目,n_higashi_asakusa_1_chome,よしのちょうさんちょうめ,
+old_names_kana,n_higashi_asakusa_2_chome|山谷町,n_higashi_asakusa_2_chome,さんやちょう,
+old_names_kana,n_higashi_asakusa_2_chome|浅草山谷,n_higashi_asakusa_2_chome,あさくささんや,
+old_names_kana,n_imado|吉野町二丁目,n_imado,よしのちょうにちょうめ,
+old_names_kana,n_sendai_senseki_old|仙台東口,n_sendai_senseki_old,せんだいひがしぐち,
+old_names_kana,n_iriya_2_chome|入谷町,n_iriya_2_chome,いりやまち,
+old_names_kana,n_ryusen_3_chome|竜泉寺町,n_ryusen_3_chome,りゅうせんじまち,
+old_names_kana,n_senzoku_2_chome|千束町,n_senzoku_2_chome,せんぞくまち,
+old_names_kana,n_misuji_2_chome|三筋町,n_misuji_2_chome,みすじまち,
+old_names_kana,n_hakubutsukansanjusangendomae|三十三間堂前,n_hakubutsukansanjusangendomae,さんじゅうさんげんどうまえ,
+old_names_kana,n_shigisanguchi|東高安,n_shigisanguchi,ひがしたかやす,
+old_names_kana,n_shijosakaimachi|大丸前,n_shijosakaimachi,だいまるまえ,
+old_names_kana,n_shiyakushomae_shimizushinai|郵便局前,n_shiyakushomae_shimizushinai,ゆうびんきょくまえ,
+old_names_kana,n_sodeshikeisatsushomae|嶺駐在所前,n_sodeshikeisatsushomae,みねちゅうざいしょまえ,
+old_names_kana,n_kojima_shimotsui_old|味野,n_kojima_shimotsui_old,あじの,
+old_names_kana,n_itabashi_honcho_toden|板橋十丁目,n_itabashi_honcho_toden,いたばしじっちょうめ,
+old_names_kana,n_nakajuku|板橋八丁目,n_nakajuku,いたばしはっちょうめ,
+old_names_kana,n_shimura_sakaue_toden|志村,n_shimura_sakaue_toden,しむら,
+old_names_kana,n_yamatocho|富士見通,n_yamatocho,ふじみどおり,
+old_names_kana,n_cross_bay_mae|新湊市役所前,n_cross_bay_mae,しんみなとしやくしょまえ,
+old_names_kana,n_cross_bay_mae|射水市新湊庁舎前,n_cross_bay_mae,いみずししんみなとちょうしゃまえ,
+old_names_kana,n_shin_tokorozawa_shinjuku_line_seibu|北所沢,n_shin_tokorozawa_shinjuku_line_seibu,きたところざわ,
+old_names_kana,n_tokorozawamiyukicho|所沢飛行場前,n_tokorozawamiyukicho,ところざわひこうじょうまえ,
+old_names_kana,n_kasugacho|春日二丁目,n_kasugacho,かすがにちょうめ,
+old_names_kana,n_umegaecho|梅ヶ枝町,n_umegaecho,うめがえちょう,
+old_names_kana,n_hakusan_5_chome|小石川原町,n_hakusan_5_chome,こいしかわはらまち,
+old_names_kana,n_hakusan_5_chome|南部原町,n_hakusan_5_chome,なんぶはらまち,
+old_names_kana,n_hon_komagome_2_chome|北部原町,n_hon_komagome_2_chome,ほくぶはらまち,
+old_names_kana,n_hon_komagome_6_chome|西丸町,n_hon_komagome_6_chome,にしまるちょう,
+old_names_kana,n_toyodaigakumae|曙町,n_toyodaigakumae,あけぼのちょう,
+old_names_kana,n_isogo_sugita|磯子浜小学校前,n_isogo_sugita,いそごはましょうがっこうまえ,
+old_names_kana,n_bakurochoiriguchi|高等学校前,n_bakurochoiriguchi,こうとうがっこうまえ,
+old_names_kana,n_daikumachi|大工町広小路,n_daikumachi,だいくまちひろこうじ,
+old_names_kana,n_minamimachi_4_chome|泉町広小路,n_minamimachi_4_chome,いずみちょうひろこうじ,
+old_names_kana,n_sankoshita|県立原子力館前,n_sankoshita,けんりつげんしりょくかんまえ,
+old_names_kana,n_kuhonjikosaten|郵政局前,n_kuhonjikosaten,ゆうせいきょくまえ,
+old_names_kana,n_kuhonjikosaten|電報局前,n_kuhonjikosaten,でんぽうきょくまえ,
+old_names_kana,n_misotenjinmae|味噌天神,n_misotenjinmae,みそてんじん,
+old_names_kana,n_daiyonsunamachishogakko|南砂町一丁目,n_daiyonsunamachishogakko,みなみすなまちいっちょうめ,
+old_names_kana,n_kitasuna_2_chome|北砂町一丁目,n_kitasuna_2_chome,きたすなまちいっちょうめ,
+old_names_kana,n_kitasuna_3_chome|北砂町二丁目,n_kitasuna_3_chome,きたすなまちにちょうめ,
+old_names_kana,n_minamisuna_2_chome|南砂町四丁目,n_minamisuna_2_chome,みなみすなまちよんちょうめ,
+old_names_kana,n_minamisuna_3_chome|南砂町三丁目,n_minamisuna_3_chome,みなみすなまちさんちょうめ,
+old_names_kana,n_kiba_2_chome|木場一丁目,n_kiba_2_chome,きばいっちょうめ,
+old_names_kana,n_kiba_5_chome|木場三丁目,n_kiba_5_chome,きばさんちょうめ,
+old_names_kana,n_chitose_3_chome|千歳町,n_chitose_3_chome,ちとせちょう,
+old_names_kana,n_keio_katakura|片倉,n_keio_katakura,かたくら,
+old_names_kana,n_shikinochugakkomae|向野,n_shikinochugakkomae,むかいの,
+old_names_kana,n_kawanishi_noseguchi_hankyu|能勢口,n_kawanishi_noseguchi_hankyu,のせぐち,
+old_names_kana,n_namidabashi|新川,n_namidabashi,しんかわ,
+old_names_kana,n_nichudori|交通部前,n_nichudori,こうつうぶまえ,
+old_names_kana,n_higashi_2_chome|中通二丁目,n_higashi_2_chome,なかどおりにちょうめ,
+old_names_kana,n_hiroo_1_chome|下通二丁目,n_hiroo_1_chome,しもどおりにちょうめ,
+old_names_kana,n_zasshonokuma|西鉄雑餉隈,n_zasshonokuma,にしてつざっしょのくま,
+old_names_kana,n_tenri_kintetsu|天理市,n_tenri_kintetsu,てんりし,
+old_names_kana,n_tenri_kintetsu_old|丹波市,n_tenri_kintetsu_old,たんばいち,
+old_names_kana,n_tenri_kintetsu_old|天理市,n_tenri_kintetsu_old,てんりし,
+old_names_kana,n_hokudaibyoinmae|大学病院前,n_hokudaibyoinmae,だいがくびょういんまえ,
+old_names_kana,n_motomiyacho|泥田,n_motomiyacho,どんだ,
+old_names_kana,n_kitashimmachi|上り立町,n_kitashimmachi,あがりたてまち,
+old_names_kana,n_higashi_kanda|家政高校前,n_higashi_kanda,かせいこうこうまえ,
+old_names_kana,n_sendai_senseki|仙台東口,n_sendai_senseki,せんだいひがしぐち,
+old_names_kana,n_shinnittetsu_mae|東海製鉄前,n_shinnittetsu_mae,とうかいせいてつまえ,
+old_names_kana,n_tomizakaue|富坂二丁目,n_tomizakaue,とみさかにちょうめ,
+old_names_kana,n_tosabori_5_chome|江戸堀北通五丁目,n_tosabori_5_chome,えどぼりきたどおりごちょうめ,
+old_names_kana,n_tosabori_4_chome|江戸堀北通四丁目,n_tosabori_4_chome,えどぼりきたどおりよんちょうめ,
+old_names_kana,n_kogakubumae|大学通,n_kogakubumae,だいがくどおり,
+old_names_kana,n_shinden_kagoshima_city|唐湊,n_shinden_kagoshima_city,とそ,
+old_names_kana,n_shinden_kagoshima_city|神田,n_shinden_kagoshima_city,しんでん,
+old_names_kana,n_shiritsubyoinmae|専売公社前,n_shiritsubyoinmae,せんばいこうしゃまえ,
+old_names_kana,n_toyohira_5_chome|平岸街道,n_toyohira_5_chome,ひらぎしかいどう,
+old_names_kana,n_suwashimmichi|高等師範前,n_suwashimmichi,こうとうしはんまえ,
+old_names_kana,n_suwashimmichi|新道,n_suwashimmichi,しんみち,
+old_names_kana,n_nishiohashi_osaka_city|西長堀北通二丁目,n_nishiohashi_osaka_city,にしながほりきたどおりにちょうめ,
+old_names_kana,n_chiyozakibashi|松島町二丁目,n_chiyozakibashi,まつしまちょうにちょうめ,
+old_names_kana,n_toyama_daigaku_mae|球場前,n_toyama_daigaku_mae,きゅうじょうまえ,
+old_names_kana,n_toyama_daigaku_mae|大学前,n_toyama_daigaku_mae,だいがくまえ,
+old_names_kana,n_horikawakoizumi|小泉町,n_horikawakoizumi,こいずみちょう,
+old_names_kana,n_omachi_toyama_chiho|堀川大町,n_omachi_toyama_chiho,ほりかわおおまち,
+old_names_kana,n_omachi_toyama_chiho|南小泉,n_omachi_toyama_chiho,みなみこいずみ,
+old_names_kana,n_hanabatacho|公会堂前,n_hanabatacho,こうかいどうまえ,
+old_names_kana,n_hanabatacho|お城前,n_hanabatacho,おしろまえ,
+old_names_kana,n_hanabatacho|熊本城市民会館前,n_hanabatacho,くまもとじょうしみんかいかんまえ,
+old_names_kana,n_iwanebashi_kumamoto_city|加藤神社前,n_iwanebashi_kumamoto_city,かとうじんじゃまえ,
+old_names_kana,n_ishinkokomae|西川町二丁目,n_ishinkokomae,にしかわちょうにちょうめ,
+old_names_kana,n_kagurazaka_toei|肴町,n_kagurazaka_toei,さかなまち,
+old_names_kana,n_tsurumachi_2_chome|鶴町車庫前,n_tsurumachi_2_chome,つるまちしゃこまえ,
+old_names_kana,n_tsurumachishakomae|鶴町四丁目,n_tsurumachishakomae,つるまちよんちょうめ,
+old_names_kana,n_minamichokai|鳥海,n_minamichokai,ちょうかい,
+old_names_kana,n_hiroshimako|宇品,n_hiroshimako,うじな,
+old_names_kana,n_hiroshimako_old|宇品,n_hiroshimako_old,うじな,
+old_names_kana,n_motoujinaguchi|向宇品口,n_motoujinaguchi,むこううじなぐち,
+old_names_kana,n_ujina_2_chome|宇品13丁目,n_ujina_2_chome,うじなじゅうさんちょうめ,
+old_names_kana,n_ujina_3_chome|10丁目,n_ujina_3_chome,じゅっちょうめ,
+old_names_kana,n_kotobuki_3_chome|桂町,n_kotobuki_3_chome,かつらちょう,
+old_names_kana,n_motoasakusa_3_chome|小島町,n_motoasakusa_3_chome,こじまちょう,
+old_names_kana,n_utsubohonmachi|靱南通,n_utsubohonmachi,うつぼみなみどおり,
+old_names_kana,n_utsubohonmachi_4_chome|茂左衛門橋,n_utsubohonmachi_4_chome,もざえもんばし,
+old_names_kana,n_konanshogakkomae|柏中学前,n_konanshogakkomae,かしわちゅうがくまえ,
+old_names_kana,n_shiseikanshogakkomae|西創成学校前,n_shiseikanshogakkomae,にしそうせいがっこうまえ,
+old_names_kana,n_shiseikanshogakkomae|創成学校前,n_shiseikanshogakkomae,そうせいがっこうまえ,
+old_names_kana,n_shiseikanshogakkomae|創成小学校前,n_shiseikanshogakkomae,そうせいしょうがっこうまえ,
+old_names_kana,n_yamahanakujo|中島橋通,n_yamahanakujo,なかじまばしどおり,
+old_names_kana,n_yamahanakujo|中央保健所前,n_yamahanakujo,ちゅうおうほけんじょまえ,
+old_names_kana,n_denshajigyoshomae|廟塔前,n_denshajigyoshomae,びょうどうまえ,
+old_names_kana,n_nishisenkujoasahiyamakoendori|旭山公園通,n_nishisenkujoasahiyamakoendori,あさひやまこうえんどおり,
+old_names_kana,n_ropeway_iriguchi|郵政研修所前,n_ropeway_iriguchi,ゆうせいけんしゅうじょまえ,
+old_names_kana,n_ropeway_iriguchi|ロープウェー入口,n_ropeway_iriguchi,ろーぷうぇーいりぐち,
+old_names_kana,n_chuotoshokanmae|学芸大学前,n_chuotoshokanmae,がくげいだいがくまえ,
+old_names_kana,n_chuotoshokanmae|教育大学前,n_chuotoshokanmae,きょういくだいがくまえ,
+old_names_kana,n_motomachihokugimmae|清水北銀前,n_motomachihokugimmae,しみずほくぎんまえ,
+old_names_kana,n_kenchomae_kobe_city|山手,n_kenchomae_kobe_city,やまて,
+old_names_kana,n_yabe|相模,n_yabe,さがみ,
+old_names_kana,n_hokkaikokimae|野幌バス停留所,n_hokkaikokimae,のっぽろばすていりゅうしょ,
+old_names_kana,n_chitosecho|警察署前,n_chitosecho,けいさつしょまえ,
+old_names_kana,n_chiyogadai|千代ヶ岱,n_chiyogadai,ちよがだい,
+old_names_kana,n_chofu_sanyo|長府駅前,n_chofu_sanyo,ちょうふえきまえ,
+old_names_kana,n_chuomachi|中央区,n_chuomachi,ちゅうおうく,
+old_names_kana,n_chuooroshiurishijomae|八千代通,n_chuooroshiurishijomae,やちよどおり,
+old_names_kana,n_chuotoshokanmae|西屯田通,n_chuotoshokanmae,にしとんでんどおり,
+old_names_kana,n_daikomae|成田山前,n_daikomae,なりたさんまえ,
+old_names_kana,n_echizemmachi|郵便局前,n_echizemmachi,ゆうびんきょくまえ,
+old_names_kana,n_edamitsuhommachi|北本町,n_edamitsuhommachi,きたほんまち,
+old_names_kana,n_funatsukiba|船着場仮乗降場,n_funatsukiba,ふなつきば,
+old_names_kana,n_fushimi_nagoya_city|伏見町,n_fushimi_nagoya_city,ふしみちょう,
+old_names_kana,n_higashihonganjimae_kyoto_city|烏丸六条,n_higashihonganjimae_kyoto_city,からすまろくじょう,
+old_names_kana,n_hiyoshikomae|近見,n_hiyoshikomae,ちかみ,
+old_names_kana,n_kami_yamaguchi|日赤前仮乗降場,n_kami_yamaguchi,にっせきまえ,
+old_names_kana,n_kamichikami|蓮台寺,n_kamichikami,れんだいじ,
+old_names_kana,n_karashimacho|東辛島町,n_karashimacho,ひがしからしまちょう,
+old_names_kana,n_katao_sa|(臨)片男佐,n_katao_sa,かたおさ,
+old_names_kana,n_kawasaki_ekimae|省線川崎駅前,n_kawasaki_ekimae,しょうせんかわさきえきまえ,
+old_names_kana,n_kiyomizumichi|東山松原,n_kiyomizumichi,ひがしやままつばら,
+old_names_kana,n_koseibyoimmae|厚生病院前仮乗降場,n_koseibyoimmae,こうせいびょういんまえ,
+old_names_kana,n_kurobedaira|黒部御前,n_kurobedaira,くろべごぜん,
+old_names_kana,n_mikurasugahara|御蔵菅原通,n_mikurasugahara,みくらすがはらどおり,
+old_names_kana,n_minami_kagoshima_ekimae|南港入口,n_minami_kagoshima_ekimae,なんこういりぐち,
+old_names_kana,n_minaminakahamadori|南中浜町,n_minaminakahamadori,みなみなかはまちょう,
+old_names_kana,n_mizuhodori_1_chome|市民病院前,n_mizuhodori_1_chome,しりつびょういんまえ,
+old_names_kana,n_nagaishidori|秋葉通,n_nagaishidori,あきばどおり,
+old_names_kana,n_nojomae|第二農場前,n_nojomae,だいにのうじょうまえ,
+old_names_kana,n_norinkokomae|釜無川,n_norinkokomae,かまなしがわ,
+old_names_kana,n_okunodo|奥堂町,n_okunodo,おくのどうまち,
+old_names_kana,n_otemon|下ノ橋,n_otemon,しものはし,
+old_names_kana,n_sakuradoriotsu|東桜町,n_sakuradoriotsu,ひがしさくらまち,
+old_names_kana,n_sakuramoto_kawasaki_city_transportation_bureau|市電桜本,n_sakuramoto_kawasaki_city_transportation_bureau,しでんさくらもと,
+old_names_kana,n_sambyakume|岬之町,n_sambyakume,はなのちょう,
+old_names_kana,n_senoekyokumae|瀬上本町,n_senoekyokumae,せのうえほんまち,
+old_names_kana,n_shimochikami|日吉,n_shimochikami,ひよし,
+old_names_kana,n_shinnittetsu_mae|富士製鉄前,n_shinnittetsu_mae,ふじせいてつまえ,
+old_names_kana,n_shiritsubyoinmae|たばこ産業前,n_shiritsubyoinmae,たばこさんぎょうまえ,
+old_names_kana,n_shiyakushomae_odawarashinai|幸町交番前,n_shiyakushomae_odawarashinai,さいわいちょうこうばんまえ,
+old_names_kana,n_sunakubocho|久保町,n_sunakubocho,くぼちょう,
+old_names_kana,n_toyota_mobility_toyama_g_square_gofuku_mae|新富山駅前,n_toyota_mobility_toyama_g_square_gofuku_mae,しんとやまえきまえ,
+old_names_kana,n_wakamiya_kunisaki|(臨)若宮,n_wakamiya_kunisaki,わかみや,
+old_names_kana,n_yuigahama|海岸通,n_yuigahama,かいがんどおり,
+old_names_kana,n_ichinosekirokujizoson|六地蔵尊,n_ichinosekirokujizoson,ろくじぞうそん,
+old_names_kana,n_ichinosekirokujizoson|(臨)六地蔵尊,n_ichinosekirokujizoson,ろくじぞうそん,
+old_names_kana,n_suizokukanguchi|県庁跡,n_suizokukanguchi,けんちょうあと,
+old_names_kana,n_kita_gojo_11_chome|陵雲中学校通,n_kita_gojo_11_chome,りょううんちゅうがくこうどおり,
+archive_fix,新浜大津@l_kojaku_railway_line,,しんはまおおつ,
+archive_fix,宮ノ前@l_nagano_line_kintetsu,,みやのまえ,
+archive_fix,追分@l_iida_line,,おいわけ,
+archive_fix,新町@l_iida_line,,しんまち,
+archive_fix,五色山,,ごしきやま,l_sanyo_main_line_sanyo
+archive_fix,片野本町@l_kitagata_line,,かたのほんまち,
+archive_fix,郡道筋@l_kitagata_line,,ぐんどうすじ,l_edamitsu_line
+archive_fix,記念館前@l_kitagata_line,,きねんかんまえ,
+archive_fix,勝山橋@l_kitakyushu_line,,かつやまばし,
+archive_fix,常昌院プール前,,じょうしょういんぷーるまえ,
+archive_fix,東照宮前,,とうしょうぐうまえ,
+archive_fix,与一谷,,よいちだに,
+archive_fix,不動尊,,ふどうそん,
+archive_fix,原,,はら,
+archive_fix,宮本町,,みやもとちょう,
+archive_fix,中村,,なかむら,
+archive_fix,国道,,こくどう,
+archive_fix,競馬場前@l_amagi_line_nishi_nippon,,けいばじょうまえ,
+archive_fix,順光寺前,,じゅんこうじまえ,
+archive_fix,寺町,,てらまち,
+archive_fix,天神前@l_bessho_line,,てんじんまえ,
+archive_fix,池端,,いけはた,
+archive_fix,中学校前,,ちゅうがっこうまえ,
+archive_fix,硫酸会社前,,りゅうさんがいしゃまえ,
+archive_fix,砂子坂,,すなこざか,
+archive_fix,片山,,かたやま,
+archive_fix,鏡田,,かがみだ,
+archive_fix,池内,,いけない,
+archive_fix,末盛通五丁目,,すえもりどおりごちょうめ,
+archive_fix,木挽町七丁目,,こびきちょうななちょうめ,
+archive_fix,毛賀終点,,けがしゅうてん,
+archive_fix,道下,,みちのした,
+archive_fix,栄町,,さかえまち,
+archive_fix,西町@l_iizaka_line,,にしまち,
+archive_fix,成出,,なりで,
+archive_fix,佐場野古屋,,さばのこや,
+archive_fix,兵庫田,,ひょうごだ,
+archive_fix,競馬場前@l_isesaki_line,,けいばじょうまえ,
+archive_fix,山上,,やまがみ,
+archive_fix,粟島,,あわしま,
+archive_fix,赤川,,あかがわ,
+archive_fix,田中町,,たなかまち,
+archive_fix,本合,,もったい,
+archive_fix,中津浜,,なかつのはま,
+archive_fix,笹島警察署前,,ささしまけいさつしょまえ,
+archive_fix,丸子競馬場,,まるこけいばじょう,
+archive_fix,本町,,ほんまち,
+archive_fix,大清水,,おおしみず,
+archive_fix,香川台,,かがわだい,
+archive_fix,遊園地前,,ゆうえんちまえ,
+archive_fix,大手,,おおて,
+archive_fix,学園前,,がくえんまえ,
+archive_fix,追分@l_shizuoka_shimizu_line,,おいわけ,
+archive_fix,八幡裏,,はちまんうら,
+archive_fix,二万堂,,にまんどう,
+archive_fix,有松,,ありまつ,
+archive_fix,米泉,,よないずみ,
+archive_fix,泉,,いずみ,
+archive_fix,泉新町,,いずみしんまち,
+archive_fix,袴塚,,はかまつか,
+archive_fix,湊,,みなと,
+archive_fix,木金似,,ききんに,
+archive_fix,千早,,ちはや,
+archive_fix,古井ノ坂,,こいのさか,
+archive_fix,葵橋,,あおいばし,
+archive_fix,敦盛塚,,あつもりづか,
+archive_fix,備後木戸,,びんごきど,
+archive_fix,筑後川,,ちくごがわ,
+archive_fix,我科,,がじな,
+archive_fix,豪徳寺前,,ごうとくじまえ,
+archive_fix,幡代小学校前,,はたしろしょうがっこうまえ,
+archive_fix,東住道,,ひがしすみのどう,
+archive_fix,一ノ谷,,いちのたに,
+archive_fix,井堰,,いぜき,
+archive_fix,石堂,,いしどう,
+archive_fix,石郷,,いしごう,
+archive_fix,岩戸前,,いわとまえ,
+archive_fix,神社前,,じんじゃまえ,
+archive_fix,神武御陵前,,じんむごりょうまえ,
+archive_fix,陣屋,,じんや,
+archive_fix,十郎丸,,じゅうろうまる,
+archive_fix,神田口,,かんだぐち,
+archive_fix,仮新生駒,,かりしんいこま,
+archive_fix,北外丸,,きたとまる,
+archive_fix,鯉段,,こいのだん,
+archive_fix,紺屋ヶ関,,こんやがせき,
+archive_fix,町畑,,まちはた,
+archive_fix,豆塚,,まめつか,
+archive_fix,目達原,,めたばる,
+archive_fix,三原橋,,みはらばし,
+archive_fix,光満,,みつま,
+archive_fix,武庫大橋,,むこおおはし,
+archive_fix,陸奥亀田,,むつかめだ,
+archive_fix,陸奥森山,,むつもりやま,
+archive_fix,長垂,,ながたれ,
+archive_fix,中北野,,なかきたの,
+archive_fix,南薫,,なんくん,
+archive_fix,奈多東口,,なたひがしぐち,
+archive_fix,仁王丸,,におうまる,
+archive_fix,小川橋,,おがわばし,
+archive_fix,大橋堀,,おおはしぼり,
+archive_fix,大田川,,おおたがわ,
+archive_fix,太田川橋東詰,,おおたがわばしひがしづめ,
+archive_fix,六所神社前,,ろくしょじんじゃまえ,
+archive_fix,産川,,さんがわ,
+archive_fix,参急松江,,さんきゅうまつえ,
+archive_fix,漣,,さざなみ,
+archive_fix,師団口,,しだんぐち,
+archive_fix,鹿田,,しかた,
+archive_fix,下北野,,しもきたの,
+archive_fix,下村,,しもむら,
+archive_fix,下須恵,,しもすえ,
+archive_fix,下田崎,,しもたさき,
+archive_fix,新七重浜,,しんななえはま,
+archive_fix,高串,,たかぐし,
+archive_fix,高砂口,,たかさごくち,
+archive_fix,竹谷,,たけのや,
+archive_fix,手平,,てびら,
+archive_fix,天狗山,,てんぐやま,
+archive_fix,富安,,とみやす,
+archive_fix,唐原,,とうのはる,
+archive_fix,津軽湊,,つがるみなと,
+archive_fix,牛木,,うしぎ,
+archive_fix,若尾,,わかお,
+archive_fix,和歌山口,,わかやまぐち,
+archive_fix,大和橋,,やまとばし,
+archive_fix,安永,,やすなが,
+archive_fix,郵便局前,,ゆうびんきょくまえ,
+archive_fix,高平山,,たかひらさん,
+archive_fix,東北特殊鋼,,とうほくとくしゅこう,
+archive_fix,渕ノ上,,ふちのうえ,
+archive_fix,蛍川,,ほたるがわ,
+archive_fix,神宮東門,,じんぐうひがしもん,
+archive_fix,沢上車庫前,,さわかみしゃこまえ,
+archive_fix,木流,,きながし,
+archive_fix,志田浜乗車場,,しだはま,
+archive_fix,白鳥町,,しらとりちょう,
+archive_fix,新宿,,しんしゅく,
+archive_fix,軽金前,,けいきんまえ,
+archive_fix,花畑,,はなばたけ,
+archive_fix,両備福山,,りょうびふくやま,
+archive_fix,広又,,ひろまた,
+archive_fix,今小町,,いまこまち,
+archive_fix,大和田,,おおわだ,
+archive_fix,戎,,えびす,
+archive_fix,酒屋町,,さかやまち,
+archive_fix,兵庫駅南口,,ひょうごえきみなみぐち,
+archive_fix,大仏前@l_hyogo_line,,だいぶつまえ,
+archive_fix,西印田,,にしいんでん,
+archive_fix,音徳寺坂,,おんとくじざか,
+archive_fix,神戸下,,ごうどした,
+archive_fix,山寺,,やまでら,
+archive_fix,御園,,みその,
+archive_fix,伊那福岡終点,,いなふくおかしゅうてん,
+archive_fix,黒田,,くろだ,
+archive_fix,千歳川,,ちとせがわ,
+archive_fix,渕ノ欠,,ふちのかけ,
+archive_fix,可睡,,かすい,
+archive_fix,穴守,,あなもり,
+archive_fix,下町,,しもちょう,
+archive_fix,平安神宮前,,へいあんじんぐうまえ,
+archive_fix,土橋,,どばし,
+archive_fix,市村,,いちむら,
+archive_fix,若宮,,わかみや,
+archive_fix,黒門,,くろもん,
+archive_fix,賀来神社裏,,かくじんじゃうら,
+archive_fix,櫟木,,いちぎ,
+archive_fix,上小月,,かみおづき,
+archive_fix,上七崎,,かみならさき,
+archive_fix,東武野口,,とうぶのぐち,
+archive_fix,大久保,,おおくぼ,
+archive_fix,三軒家,,さんげんや,
+archive_fix,越名,,こえな,
+archive_fix,桜川,,さくらがわ,
+archive_fix,西越ノ潟,,にしこしのかた,
+archive_fix,東海,,とうかい,
+archive_fix,船戸,,ふなと,
+archive_fix,陸軍病院前,,りくぐんびょういんまえ,
+archive_fix,新来迎寺,,しんらいこうじ,
+archive_fix,中津,,なかつ,
+archive_fix,三角,,みすみ,
+archive_fix,大仏前@l_keihan_main_line,,だいぶつまえ,
+archive_fix,旭通@l_hanshin_main_line,,あさひどおり,
+archive_fix,大黒沢@l_iiyama_line,,おおくろさわ,
+archive_fix,八幡塚@l_keikyu_main_line,,はちまんづか,
+archive_fix,清水原@l_suigun_line,,しみずっぱら,
+archive_fix,航空隊前@l_kashii_line,,こうくうたいまえ,

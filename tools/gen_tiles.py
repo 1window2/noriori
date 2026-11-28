@@ -35,7 +35,8 @@ for l,e in m.execute('select distinct line_id,edge_id from edge_attr'):lines_of[
 SNAP_KM=1.0
 snap_moved=[]
 # 지도 렌더링 전수 점검 (build/map_audit.json). 선 위에 서지 못한 점과 크게 옮긴 점을 남긴다
-AUDIT={'station_off_line':[],'station_moved_far':[],'platform_off_line':[],'platform_moved':[],'hub_far':[],'edge_end_far':[]}
+# edge_end_overrun: 선이 역 점을 지나쳐 더 나가 잇지 않은 칸(끊김은 아님, 길게 나간 선을 살펴보는 목록). map_join_unused: 쓰이지 않은 map_join 행
+AUDIT={'station_off_line':[],'station_moved_far':[],'platform_off_line':[],'platform_moved':[],'hub_far':[],'edge_end_far':[],'edge_end_overrun':[],'map_join_unused':[]}
 def nearest(lat,lon,coords):
     kx=math.cos(math.radians(lat))*111.32;ky=110.57;best=None
     for p,q in zip(coords,coords[1:]):
@@ -79,6 +80,29 @@ def feature(eid,num,g):
 # 그린 점은 역 점·승강장 점을 다 계산한 뒤에 정해지므로, 선은 그 뒤에 쓴다
 DRAWN={}     # 노드 -> 그 노드를 그린 점 [(노선 또는 None, (lat,lon))]
 JOIN_KM=0.15
+# 역 좌표가 정밀(precise)하면 0.35 km까지 잇는다. 현행 선형(N02)은 긴 승강장 끝에서 끊기고(成田·池袋 副都心線 200~330 m),
+# 폐선 선형(OSM)은 살아남은 역 앞에서 선로가 걷혀 끝난다(倉吉線 上井·羽幌線 幌延). 역 자리가 확실하니 곧게 이어도 역을 지나치지 않는다.
+# 좌표가 대략(approx)인 역은 150 m를 넘으면 잇지 않고 점검에 남긴다 (6회차 2026-11-27)
+JOIN_PRECISE_KM=0.35
+# 원 선형이 짧은 것이 조사로 확인된 칸은 한도를 넘어도 잇는다 (data/overrides/map_join.json)
+JOIN_ALLOW={e_:r_['node'] for e_,r_ in json.load(open(os.path.join(ROOT,'data','overrides','map_join.json'),encoding='utf-8'))['rows'].items()}
+JOIN_USED=set()   # 실제로 한도를 넘어 이은 행. 쓰이지 않은 행은 점검에 남긴다
+TOUCH_KM=0.02
+quality=dict(m.execute('select node_id,quality from node_position'))
+edges_of_line=collections.defaultdict(set)
+for e_,ls_ in lines_of.items():
+    for l_ in ls_:edges_of_line[l_].add(e_)
+def shape(e):
+    g=geo.get(e) or osm.get(e)
+    return g['coords'] if g else None
+def touches(lat,lon,coords):
+    return coords is not None and len(coords)>1 and nearest(lat,lon,coords)[0]<=TOUCH_KM
+def overlaps(a,b):
+    """두 칸의 기간이 겹치나. 지도는 연도로 거르므로 연도로 본다. 모르는 끝은 열린 것으로 둔다"""
+    (fa,ta),(fb,tb)=life.get(a,(None,None)),life.get(b,(None,None))
+    lo=lambda v:year(v) if year(v) is not None else -1
+    hi=lambda v:year(v,1) if v!='ongoing' and year(v,1) is not None else 9999
+    return lo(fa)<=hi(tb) and lo(fb)<=hi(ta)
 joined_n=[0]
 def joined(eid,coords):
     if eid not in EDGE_ENDS or not DRAWN:return coords
@@ -94,7 +118,17 @@ def joined(eid,coords):
         # 그 노드가 다른 자리에 그려진 경우(옮긴 역의 옛 노드가 지금 역 점으로 묶임: 川原湯温泉(旧))는 옛 선이 옛 자리에서 끝나는 것이 맞다. 잇지 않는다
         if nd in pos and apart((0,*pos[nd]),(0,*q))>JOIN_KM:continue
         if d>JOIN_KM:
-            AUDIT['edge_end_far'].append(dict(edge=eid,node=nd,gap_km=round(d,3)));continue
+            # 끝만 재면 선이 역 점을 지나쳐 더 나간 칸(역 점이 선 위에 있음)과 끝이 같은 노선의 다른 칸에 닿은 칸도 떨어진 것으로 센다.
+            # 둘 다 화면에서는 끊기지 않으므로 잇지도 남기지도 않는다 (기기 순회 2026-11-26의 180건 가운데 154건)
+            end=out[0] if i==0 else out[-1]
+            # 같은 노선 다른 칸은 이 역에 닿는 칸만 본다. 아무 칸이나 보면 평행 선로·옛 선형에 우연히 닿은 끊김이 점검에서 사라진다
+            if touches(*q,out):AUDIT['edge_end_overrun'].append(dict(edge=eid,node=nd,gap_km=round(d,3)));continue
+            if any(touches(end[1],end[0],shape(x)) for l_ in lines_of[eid] for x in edges_of_line[l_] if x!=eid and nd in EDGE_ENDS.get(x,()) and overlaps(eid,x)):continue
+            # 손 이음 행은 한도를 넘어 실제로 쓰일 때만 쓰인 것으로 센다(한도 안이면 행 없이도 이어져 지울 대상, 6회차 리뷰)
+            lim_=JOIN_PRECISE_KM if quality.get(nd)=='precise' else JOIN_KM
+            if JOIN_ALLOW.get(eid)==nd and d>lim_:JOIN_USED.add(eid)
+            if JOIN_ALLOW.get(eid)!=nd and d>lim_:
+                AUDIT['edge_end_far'].append(dict(edge=eid,node=nd,gap_km=round(d,3),quality=quality.get(nd)));continue
         pt=[round(q[1],6),round(q[0],6)]
         out=[pt]+out if i==0 else out+[pt]
         joined_n[0]+=1
@@ -255,7 +289,8 @@ if osm:
         f.writelines(osm_points)
     subprocess.run(['tippecanoe','-q','-o','rail-osm.pmtiles','-Z3','-z14','--no-feature-limit','--no-tile-size-limit','-r1','-n','noriori rail osm','-A','© OpenStreetMap contributors','rail-osm.geojsonl'],check=True,cwd=BUILD,env=dict(os.environ,TIPPECANOE_MAX_THREADS='1'))
     os.remove(oj)
-# 선 끝 이음 점검은 OSM 선까지 쓴 뒤에 남긴다
+# 선 끝 이음 점검은 OSM 선까지 쓴 뒤에 남긴다. 한도를 넘어 잇는 행이 한 번도 쓰이지 않았으면(노드가 칸 끝이 아님, 이미 가까움) 알린다
+AUDIT['map_join_unused']=sorted(set(JOIN_ALLOW)-JOIN_USED)
 json.dump(AUDIT,open(os.path.join(BUILD,'map_audit.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('지도 점검',{k:len(v) for k,v in AUDIT.items()})
 # 기본 배경은 앱에 넣는다. 인터넷이 없어도 일본 윤곽과 도도부현 경계가 보인다 (설계 §13). 원본은 tools/gen_base.sh
@@ -307,4 +342,6 @@ files={x:dict(sha256=sha(os.path.join(BUILD,x)),size=os.path.getsize(os.path.joi
 files['master.sqlite']=dict(sha256=sha(PACK),size=os.path.getsize(PACK))
 man=dict(edition=EDITION,schema_version=3,files=files)
 json.dump(man,open(os.path.join(BUILD,'manifest.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
+# 매니페스트가 새로 쓰였으니 옛 서명은 맞지 않는다. 판을 낼 때 tools/sign_manifest.py로 다시 서명한다
+if os.path.exists(os.path.join(BUILD,'manifest.json.sig')):os.remove(os.path.join(BUILD,'manifest.json.sig'))
 print('tiles',n,os.path.getsize(out),'osm',no,os.path.getsize(oo) if no else 0)

@@ -9,6 +9,7 @@ export 'src/db/user_db.dart' show SchemaStep, UserDb, userSchemaVersion;
 export 'src/pack/network_reader.dart' show NetworkReader;
 export 'src/pack/pack_folder.dart' show InstalledPack, PackAssets, PackFolder, PackUnavailable;
 export 'src/pack/pack_manifest.dart' show PackManifest;
+export 'src/pack/pack_signature.dart' show manifestPublicKeys, manifestSignatureValid;
 export 'src/pack/pack_reader.dart'
     show NameBook, PackReader, PackSummary, SearchHit, supportedPackSchema;
 export 'src/records/cache_rebuild.dart' show CacheRebuild;

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """noriori 앱 동작 시뮬레이션과 시나리오 검증.
 
-앱 코드가 아직 없으므로, 앱이 master.sqlite / names.sqlite 로 할 일을
-파이썬과 SQL로 직접 흉내 낸다. DB는 읽기 전용(immutable)으로 열고 ATTACH 한다.
+앱이 master.sqlite / names.sqlite 로 할 일을 앱 코드와 따로 파이썬과 SQL로 흉내 내
+DB를 대조한다(앱보다 먼저 만든 대조용 구현). DB는 읽기 전용(immutable)으로 열고 ATTACH 한다.
 
     python3 appsim.py                 # 시나리오 전체 + 전수 점검 + 스키마 비교
     python3 appsim.py --json out.json # 결과를 JSON으로도 저장

@@ -21,7 +21,7 @@ python3 -I tools/status.py
 - `imports/`가 있으면: 옛 폐선(station_database, N05 교차 검증) → 시드 생성 → 위키 대조 → 시드 재생성(옛 역 삽입) → 위키 대조 → 판 기록 → 컴파일 → 선형 → 컴파일 → 타일 → 검증 → 선형 검사
 - `imports/`가 없으면 (깨끗한 체크아웃): 생성을 건너뛴다고 알리고 저장소의 `source/`를 컴파일하고 검증합니다. 원천이 필요한 대조는 건너뜁니다. `candidates/`도 없어도 됩니다.
 
-결과는 `build/master.sqlite`, `build/names.sqlite`, `build/rail.pmtiles`, `build/rail-osm.pmtiles`, `build/manifest.json`, `build/report.json`, `build/verify.json`, `build/check_geometry.json`입니다. `rail.pmtiles`, `rail-osm.pmtiles`, `manifest.json`은 tippecanoe가 있어야 만들어집니다. 없으면 그렇게 알리고 넘어갑니다. 쓴 판은 `sources.lock`에 있습니다.
+결과는 `build/master.sqlite`, `build/names.sqlite`, `build/rail.pmtiles`, `build/rail-osm.pmtiles`, `build/base.pmtiles`, `build/glyph-*.pbf`, `build/pack-master.sqlite`(앱이 읽지 않는 표를 뺀 배포판), `build/manifest.json`, `build/report.json`, `build/verify.json`, `build/check_geometry.json`입니다. 타일·글리프·`pack-master.sqlite`·`manifest.json`은 tippecanoe가 있어야 만들어집니다. 없으면 그렇게 알리고 넘어갑니다. 쓴 판은 `sources.lock`에 있습니다.
 
 `tools/check_geometry.py`는 현행 구간의 선형 없음, 길이 비율, 끝점과 역의 거리, 이웃 끝 간격, 역과 선로의 거리, 되돌아가는 꺾임을 재고 기준을 넘으면 실패합니다. 예외는 `overrides/geometry_exceptions.json`에 사유와 함께 적은 것만 허용하고, 쓰이지 않게 된 예외도 실패로 봅니다.
 
@@ -56,7 +56,7 @@ bash tools/all.sh
 bash tools/sync_pack.sh
 ```
 
-`sync_pack.sh`는 `build/`의 `manifest.json`, `master.sqlite`, `names.sqlite`, `rail.pmtiles`를 `apps/noriori/assets/pack/`으로 복사합니다. 이 폴더는 빌드 산출물이라 저장소에 넣지 않습니다. 앱을 빌드하기 전에 실행합니다. `tippecanoe`가 없으면 `rail.pmtiles`와 `manifest.json`이 없어서 실패합니다.
+`sync_pack.sh`는 `build/`의 `manifest.json`, `names.sqlite`, `rail.pmtiles`, `base.pmtiles`, `glyph-*.pbf`, `rail-osm.pmtiles`(있으면), `pack-master.sqlite`(앱 자산에서는 `master.sqlite`)를 `apps/noriori/assets/pack/`으로 복사합니다. `build/manifest.json.sig`가 있으면 지금 매니페스트와 맞는지 확인해 함께 넣고, 맞지 않으면 멈춥니다(서명은 공개 판에만, ARCHITECTURE §4.5). 먼저 `check_edition.py`가 내용이 바뀌었는데 판이 같은지 봅니다. 이 폴더는 빌드 산출물이라 저장소에 넣지 않습니다. 앱을 빌드하기 전에 실행합니다. `tippecanoe`가 없으면 `rail.pmtiles`와 `manifest.json`이 없어서 실패합니다.
 
 ## 기준일
 

@@ -948,7 +948,14 @@ for e,v in attr.items():
 def end_on(l,x,d):
     """그날(d) 노선 l의 칸이 x에 하나 이하로 닿으면 그날 x는 l의 끝이다 (DESIGN §8.1 「시기별 끝 역」, compile era_end)"""
     return sum(1 for e,f_,t_ in LATTR[l] if x in E.get(e,()) and f_<=d<t_)<=1
-put('K01 continue junction이 계통 끝 역 아님',[(j['line_id'],j['other_line_id'],j['node_id'],(j['source'] or '')[:24]) for j in JN if j['is_continue'] and j['node_id'] not in ends[j['line_id']] and not end_on(j['line_id'],j['node_id'],lohi(j['valid_from'])[1] if j['valid_from'] else '0000')],30)
+def _day_before(v):
+    if v in (None,'ongoing'):return AS_OF
+    d_=lohi(v)[0]
+    try:return (datetime.date.fromisoformat(d_)-datetime.timedelta(days=1)).isoformat()
+    except Exception:return d_
+# 이어짐 행은 그 기간 안에 끝 이어짐 토막이 있으면 is_continue다(compile: 끝 역 여부가 바뀌는 날에서 나뉜 정차 토막마다 판정, 6회차 2026-11-27).
+# 그래서 시작 날과 마지막 날 가운데 한 번이라도 그 노선의 끝이면 맞다 (鶴舞公園: 公園線이 1970-04-01부터 이 역에서 끝남)
+put('K01 continue junction이 계통 끝 역 아님',[(j['line_id'],j['other_line_id'],j['node_id'],(j['source'] or '')[:24]) for j in JN if j['is_continue'] and j['node_id'] not in ends[j['line_id']] and not end_on(j['line_id'],j['node_id'],lohi(j['valid_from'])[1] if j['valid_from'] else '0000') and not end_on(j['line_id'],j['node_id'],_day_before(j['valid_to']))],30)
 NBR_K01=collections.defaultdict(lambda:collections.defaultdict(set))
 for rid_,v_ in rstop.items():
     for p_,q_ in zip(v_,v_[1:]):
@@ -962,7 +969,8 @@ _JON=set()
 if os.path.exists(os.path.join(B,'report.json')):
     _JON={tuple(x) for x in json.load(open(os.path.join(B,'report.json'),encoding='utf-8')).get('warnings',{}).get('junction_other_node_transfer',[])}
 for j in JN:
-    if j['source']=='derived' or (j['valid_to'] not in(None,ON) and j['valid_to']<BASE):continue
+    # 끝이 범위(「[1933-07-01..1934-12-31]」)면 범위의 늦은 날로 본다. 문자열 그대로 비교하면 「[」가 숫자보다 커서 1950 전에 끝난 행도 걸린다 (6회차 2026-11-28 緑一丁目)
+    if j['source']=='derived' or (j['valid_to'] not in(None,ON) and (lohi(j['valid_to'])[1] or j['valid_to'])<BASE):continue
     if (j['line_id'],j['other_line_id'],j['node_id']) in _JON:continue
     a,b,x=j['line_id'],j['other_line_id'],G_(j['node_id'])
     # 숨은 분기점·신호장(승객 역 아님)의 근거는 그 노드를 지나는 두 노선 계통의 이웃 행에서 나온 연결로도 된다
@@ -2963,6 +2971,31 @@ for k_,L_ in sorted(_G206.items(),key=lambda x:tuple(y or '' for y in x[0])):
         V_=[(w_[1],x_) for w_,x_ in W_ if w_[0]==ln_]
         if [x_ for _,x_ in V_]!=[x_ for _,x_ in sorted(V_)]:rows.append(('노선도 순과 어긋남',k_[0],k_[1],k_[2],nm_,[x_ for _,x_ in sorted(V_)]))
 put('K206 같은 자리 열람 전용 역 순번 순서가 km 순·위키 노선도 행 순서와 어긋남(확인 목록)',rows,40,lvl='warn')
+# K173 같은 이름 다른 정류장 의심 (6회차 2026-11-28, docs/research/audit6-same-name-stop-split-design.md): 한 노드에 선 노선 가운데 노면 노선(line.type tram)의
+# 선형이 노드 좌표에서 150 m 넘게 떨어지고, 그 역에서 다른 노선과 track_link가 없는 것. 다른 자리의 다른 정류장이 한 노드로 묶였을 수 있다.
+# 근거로 노드를 나누거나(node_split) 한 정류장 확인 행(data/overrides/same_stop_confirmed.json)으로 닫는다. 철도·지하철 대형역은 사업자가 한 역으로 다뤄 대상에서 뺀다
+_SSC=json.load(open(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),'data','overrides','same_stop_confirmed.json'),encoding='utf-8'))['rows']
+_lt=dict(m.execute('select id,type from line'))
+_np={r_[0]:(r_[1],r_[2]) for r_ in m.execute('select node_id,lat,lon from node_position where lat is not null')}
+_stl=collections.defaultdict(set)
+for nd_,l_ in m.execute('select rs.node_id,r.line_id from route_stop rs join route r on r.id=rs.route_id where rs.is_stop=1'):_stl[nd_].add(l_)
+_tl=set()
+for at_,a_,b_ in m.execute('select at_node,line_a,line_b from track_link'):_tl|={(at_,a_,b_),(at_,b_,a_)}
+_inc=collections.defaultdict(set)
+for e_,a_,b_,l_ in m.execute('select e.id,e.from_node,e.to_node,x.line_id from edge e join edge_attr x on x.edge_id=e.id'):_inc[a_,l_].add(e_);_inc[b_,l_].add(e_)
+rows=[];_used=set()
+for nd_,ls_ in sorted(_stl.items()):
+    if len(ls_)<2 or nd_ not in _np:continue
+    for l_ in sorted(ls_):
+        es_=[e_ for e_ in _inc[nd_,l_] if e_ in SHP]
+        if _lt.get(l_)!='tram' or not es_:continue
+        dd_=min(pdist(_np[nd_],DEC(e_)) for e_ in es_)
+        oth_=sorted(o_ for o_ in ls_ if o_!=l_ and (nd_,l_,o_) not in _tl)
+        if dd_<=0.15 or not oth_:continue
+        if nd_ in _SSC:_used.add(nd_);continue
+        rows.append((nd_,J('node',nd_),l_,round(dd_,3),oth_))
+put('K173 같은 이름 다른 정류장 의심(노면 노선 선형이 노드에서 150 m 넘고 다른 노선과 선로 연결 없음)',rows,30,lvl='warn')
+put('K173 쓰이지 않는 한 정류장 확인 행(same_stop_confirmed.json)',[k_ for k_ in _SSC if k_ not in _used],30)
 json.dump(R,open(os.path.join(B,'audit.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0,default=str)
 err={k:v['n'] for k,v in R.items() if v['n'] and v['lvl']=='err'};warn={k:v['n'] for k,v in R.items() if v['n'] and v['lvl']=='warn'}
 STRICT=os.environ.get('NORIORI_AUDIT_STRICT')=='1'

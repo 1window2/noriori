@@ -1254,7 +1254,7 @@
 - {"node": "n_noborito", "lat": 35.620696, "lon": 139.570267, "source": "n05", "n05_line": "南武線", "n05_operator": "東日本旅客鉄道（旧国鉄）", "years": [1950, 9999]}
 - {"node": "n_noborito_odakyu", "lat": 35.620712, "lon": 139.569269, "source": "n05", "n05_line": "小田原線", "n05_operator": "小田急電鉄", "years": [1958, 9999]}
 - {"node": "n_noda", "lat": 34.688935, "lon": 135.47493, "source": "n05", "n05_line": "大阪環状線", "n05_operator": "西日本旅客鉄道（旧国鉄）", "years": [1965, 9999]}
-- {"node": "n_noda_hanshin", "lat": 34.694728, "lon": 135.47392, "source": "n05", "n05_line": "国道線", "n05_operator": "阪神電気鉄道", "years": [1950, 1974]}
+- {"node": "n_noda_tram", "lat": 34.694728, "lon": 135.47392, "source": "n05", "n05_line": "国道線", "n05_operator": "阪神電気鉄道", "years": [1950, 1974]}
 - {"node": "n_nodahanshin", "lat": 34.694115, "lon": 135.47487, "source": "n05", "n05_line": "5号線", "n05_operator": "大阪市", "years": [1969, 2017]}
 - {"node": "n_noe", "lat": 34.7073, "lon": 135.543335, "source": "n05", "n05_line": "京阪本線", "n05_operator": "京阪電気鉄道", "years": [1950, 9999]}
 - {"node": "n_noe_uchindai", "lat": 34.709141, "lon": 135.53833, "source": "n05", "n05_line": "2号線", "n05_operator": "大阪市", "years": [1977, 2017]}
@@ -2123,3 +2123,67 @@
 - {"node": "n_zushi", "lat": 35.297391, "lon": 139.57837, "source": "n05", "n05_line": "横須賀線", "n05_operator": "東日本旅客鉄道（旧国鉄）", "years": [1950, 9999]}
 - {"node": "n_zushihayama", "lat": 35.294291, "lon": 139.580518, "source": "n05", "n05_line": "逗子線", "n05_operator": "京浜急行電鉄", "years": [2020, 9999]}
 - {"node": "n_shinjuku_keio_new_line", "lat": 35.68843, "lon": 139.698615, "source": "n05", "n05_line": "10号線新宿線", "n05_operator": "東京都", "years": [1978, 9999]}
+- {"node": "n_aratama_bashi", "lat": 35.11773, "lon": 136.93722, "source": "n05", "n05_line": "4号線名城線", "n05_operator": "名古屋市", "years": [1974, 9999], "lines": {"l_meijo_line": [35.11773, 136.93722, "4号線名城線"], "l_sakura_dori_line": [35.1189, 136.93638, "6号線桜通線"]}}
+- {"node": "n_aratama_bashi_nagoya_tram", "lat": 35.118172, "lon": 136.936496, "source": "n05", "n05_line": "循環東線", "n05_operator": "名古屋市", "years": [1950, 1973]}
+- {"node": "n_asakusa_toden", "lat": 35.710853, "lon": 139.797161, "source": "n05", "n05_line": "吾妻橋線", "n05_operator": "東京都", "years": [1950, 1971], "lines": {"l_azumabashi_line": [35.710853, 139.797161, "吾妻橋線"], "l_senju_line": [35.711134, 139.79796, "千住線"]}}
+- {"node": "n_asakusabashi_toden", "lat": 35.694924, "lon": 139.785106, "source": "n05", "n05_line": "両国橋線", "n05_operator": "東京都", "years": [1950, 1971], "lines": {"l_kuramae_line": [35.695284, 139.784972, "蔵前線"], "l_muromachi_line": [35.695284, 139.784972, "室町線"], "l_ryogokubashi_line": [35.694924, 139.785106, "両国橋線"]}}
+- {"node": "n_daimon_toden", "lat": 35.656393, "lon": 139.754691, "source": "n05", "n05_line": "金杉線", "n05_operator": "東京都", "years": [1950, 1966]}
+- {"node": "n_gomenmachi_aki_line", "lat": 33.574608, "lon": 133.651176, "source": "db", "db_source": "n05", "how": "db"}
+- {"node": "n_hanabatake", "lat": 33.30586, "lon": 130.515035, "source": "n05", "n05_line": "天神大牟田線", "n05_operator": "西日本鉄道", "years": [1950, 9999]}
+- {"node": "n_hanabatake_fukushima_line", "lat": 33.306503, "lon": 130.51674, "source": "n05", "n05_line": "福島線", "n05_operator": "西日本鉄道", "years": [1950, 1957]}
+- {"node": "n_hibino_nagoya_city", "lat": 35.132765, "lon": 136.89309, "source": "n05", "n05_line": "2号線名港線", "n05_operator": "名古屋市", "years": [2004, 9999]}
+- {"node": "n_hibino_nagoya_tram", "lat": 35.133526, "lon": 136.893338, "source": "n05", "n05_line": "下江川線", "n05_operator": "名古屋市", "years": [1950, 1973]}
+- {"node": "n_higashi_betsuin", "lat": 35.149935, "lon": 136.904575, "source": "n05", "n05_line": "2号線名城線", "n05_operator": "名古屋市", "years": [2004, 9999]}
+- {"node": "n_higashi_betsuin_nagoya_tram", "lat": 35.149601, "lon": 136.903945, "source": "n05", "n05_line": "熱田線", "n05_operator": "名古屋市", "years": [1950, 1967]}
+- {"node": "n_hongo_sanchome_toden", "lat": 35.707239, "lon": 139.760598, "source": "n05", "n05_line": "本郷線", "n05_operator": "東京都", "years": [1950, 1970], "lines": {"l_hongo_line": [35.707239, 139.760598, "本郷線"], "l_kiridoshi_line": [35.70755, 139.76102, "切通線"]}}
+- {"node": "n_honjo_azumabashi", "lat": 35.708604, "lon": 139.804559, "source": "n05", "n05_line": "1号線浅草線", "n05_operator": "東京都", "years": [1960, 9999]}
+- {"node": "n_honjo_azumabashi_toden", "lat": 35.708665, "lon": 139.803787, "source": "n05", "n05_line": "業平線", "n05_operator": "東京都", "years": [1960, 1971]}
+- {"node": "n_iidabashi_toden", "lat": 35.702635, "lon": 139.743992, "source": "n05", "n05_line": "角筈線", "n05_operator": "東京都", "years": [1950, 1969], "lines": {"l_edogawa_line": [35.703188, 139.744489, "江戸川線"], "l_tsunohazu_line": [35.702635, 139.743992, "角筈線"], "l_ushigome_line": [35.7023, 139.744156, "牛込線"]}}
+- {"node": "n_ikeshita", "lat": 35.167825, "lon": 136.946025, "source": "n05", "n05_line": "1号線東山線", "n05_operator": "名古屋市", "years": [1960, 9999]}
+- {"node": "n_ikeshita_nagoya_tram", "lat": 35.167121, "lon": 136.945675, "source": "n05", "n05_line": "覚王山線", "n05_operator": "名古屋市", "years": [1950, 1964]}
+- {"node": "n_imaike_nagoya_city", "lat": 35.169785, "lon": 136.938075, "source": "n05", "n05_line": "1号線東山線", "n05_operator": "名古屋市", "years": [1960, 9999], "lines": {"l_higashiyama_line": [35.169785, 136.938075, "1号線東山線"], "l_sakura_dori_line": [35.168975, 136.937005, "6号線桜通線"]}}
+- {"node": "n_imaike_nagoya_tram", "lat": 35.169132, "lon": 136.936969, "source": "n05", "n05_line": "覚王山線", "n05_operator": "名古屋市", "years": [1950, 1966], "lines": {"l_junkanhigashi_line": [35.167848, 136.936715, "循環東線"], "l_kakuozan_line": [35.169132, 136.936969, "覚王山線"]}}
+- {"node": "n_kakuozan", "lat": 35.166545, "lon": 136.952505, "source": "n05", "n05_line": "1号線東山線", "n05_operator": "名古屋市", "years": [1963, 9999]}
+- {"node": "n_kakuozan_nagoya_tram", "lat": 35.16626, "lon": 136.951673, "source": "n05", "n05_line": "覚王山線", "n05_operator": "名古屋市", "years": [1950, 1964]}
+- {"node": "n_kamiiida_nagoya_tram", "lat": 35.205692, "lon": 136.929615, "source": "n05", "n05_line": "御成通線", "n05_operator": "名古屋市", "years": [1950, 1970]}
+- {"node": "n_kamimaezu", "lat": 35.157356, "lon": 136.90642, "source": "n05", "n05_line": "3号線鶴舞線", "n05_operator": "名古屋市", "years": [1977, 9999], "lines": {"l_meijo_meiko_line": [35.15762, 136.906798, "2号線名城線"], "l_tsurumai_line": [35.157356, 136.90642, "3号線鶴舞線"]}}
+- {"node": "n_kamimaezu_nagoya_tram", "lat": 35.157558, "lon": 136.90551, "source": "n05", "n05_line": "公園線", "n05_operator": "名古屋市", "years": [1950, 1971], "lines": {"l_atsuta_line": [35.157507, 136.906245, "熱田線"], "l_koen_line": [35.157558, 136.90551, "公園線"], "l_okuromon_line": [35.157558, 136.90551, "御黒門線"]}}
+- {"node": "n_kita_nijuyo_jo", "lat": 43.08961, "lon": 141.344825, "source": "n05", "n05_line": "南北線", "n05_operator": "札幌市", "years": [1971, 9999]}
+- {"node": "n_kita_nijuyo_jo_sapporo_tram", "lat": 43.08961, "lon": 141.344825, "source": "n05", "n05_line": "南北線", "n05_operator": "札幌市", "years": [1971, 9999]}
+- {"node": "n_koshien", "lat": 34.723987, "lon": 135.363157, "source": "db", "db_source": "station_database", "how": "db"}
+- {"node": "n_koshien_tram", "lat": 34.723753, "lon": 135.363217, "source": "n05", "n05_line": "甲子園線", "n05_operator": "阪神電気鉄道", "years": [1950, 1974]}
+- {"node": "n_kudanshita_toden", "lat": 35.695556, "lon": 139.751713, "source": "n05", "n05_line": "九段線", "n05_operator": "東京都", "years": [1950, 1969]}
+- {"node": "n_kumanomae", "lat": 35.74918, "lon": 139.76928, "source": "n05", "n05_line": "荒川線", "n05_operator": "東京都", "years": [1950, 9999]}
+- {"node": "n_kumanomae_nippori_toneri", "lat": 35.748245, "lon": 139.769925, "source": "n05", "n05_line": "日暮里・舎人ライナー", "n05_operator": "東京都", "years": [2008, 9999]}
+- {"node": "n_kyoto_ekimae_horikawa_line", "lat": 34.9872, "lon": 135.75822, "source": "db", "db_source": "hand", "how": "db"}
+- {"node": "n_mishima_hirokoji", "lat": 35.119345, "lon": 138.911215, "source": "n05", "n05_line": "駿豆線", "n05_operator": "伊豆箱根鉄道", "years": [1957, 9999]}
+- {"node": "n_monzen_nakacho_toden", "lat": 35.672665, "lon": 139.794548, "source": "n05", "n05_line": "洲崎線", "n05_operator": "東京都", "years": [1950, 1971], "lines": {"l_susaki_line": [35.672665, 139.794548, "洲崎線"], "l_takabashi_line": [35.672099, 139.794684, "高橋線"], "l_tsukishima_line": [35.672099, 139.794684, "月島線"]}}
+- {"node": "n_nakamura_koen", "lat": 35.16773, "lon": 136.854925, "source": "n05", "n05_line": "1号線東山線", "n05_operator": "名古屋市", "years": [1969, 9999]}
+- {"node": "n_nakamura_koen_nagoya_tram", "lat": 35.168376, "lon": 136.855674, "source": "n05", "n05_line": "中村線", "n05_operator": "名古屋市", "years": [1950, 1968]}
+- {"node": "n_nihombashi_toden", "lat": 35.682471, "lon": 139.774214, "source": "n05", "n05_line": "千代田橋線", "n05_operator": "東京都", "years": [1950, 1971], "lines": {"l_chiyodabashi_line": [35.682471, 139.774214, "千代田橋線"], "l_hondori_line": [35.682993, 139.77397, "本通線"]}}
+- {"node": "n_ningyocho_toden", "lat": 35.68621, "lon": 139.782569, "source": "n05", "n05_line": "和泉橋線", "n05_operator": "東京都", "years": [1950, 1968]}
+- {"node": "n_nishinada", "lat": 34.705782, "lon": 135.224639, "source": "db", "db_source": "station_database", "how": "db"}
+- {"node": "n_nishinada_tram", "lat": 34.706239, "lon": 135.225339, "source": "n05", "n05_line": "国道線", "n05_operator": "阪神電気鉄道", "years": [1950, 1973]}
+- {"node": "n_noda_hanshin", "lat": 34.694432, "lon": 135.47606, "source": "db", "db_source": "station_database", "how": "db"}
+- {"node": "n_otemachi_ekimae_iyotetsu", "lat": 33.840315, "lon": 132.75547, "source": "n05", "n05_line": "大手町線", "n05_operator": "伊予鉄道", "years": [2018, 9999]}
+- {"node": "n_otemachi_iyotetsu", "lat": 33.839745, "lon": 132.75523, "source": "n05", "n05_line": "高浜線", "n05_operator": "伊予鉄道", "years": [1953, 9999]}
+- {"node": "n_otemachi_toden", "lat": 35.685796, "lon": 139.763238, "source": "n05", "n05_line": "神田橋線", "n05_operator": "東京都", "years": [1950, 1967]}
+- {"node": "n_roppongi_toden", "lat": 35.66376, "lon": 139.731881, "source": "n05", "n05_line": "六本木線", "n05_operator": "東京都", "years": [1950, 1968], "lines": {"l_kasumicho_line": [35.663489, 139.733027, "霞町線"], "l_roppongi_line": [35.66376, 139.731881, "六本木線"]}}
+- {"node": "n_sakae_nagoya_tram", "lat": 35.168361, "lon": 136.907063, "source": "n05", "n05_line": "大津町線", "n05_operator": "名古屋市", "years": [1950, 1967], "lines": {"l_atsuta_line": [35.168361, 136.907063, "熱田線"], "l_otsumachi_line": [35.168361, 136.907063, "大津町線"], "l_sakaemachi_line": [35.168963, 136.90643, "栄町線"]}}
+- {"node": "n_sangen_jaya", "lat": 35.644105, "lon": 139.669185, "source": "n05", "n05_line": "世田谷線", "n05_operator": "東急電鉄", "years": [2019, 9999], "lines": {"l_setagaya_line": [35.644105, 139.669185, "世田谷線"], "l_tamagawa_line_tokyu_railways": [35.643076, 139.670741, "玉川線"]}}
+- {"node": "n_sangen_jaya_den_en_toshi", "lat": 35.643417, "lon": 139.671149, "source": "n05", "n05_line": "田園都市線", "n05_operator": "東急電鉄", "years": [2019, 9999]}
+- {"node": "n_shibuya_tamagawa_line", "lat": 35.658826, "lon": 139.700891, "source": "db", "db_source": "n05", "how": "db"}
+- {"node": "n_shimbashi_toden", "lat": 35.667195, "lon": 139.760909, "source": "n05", "n05_line": "金杉線", "n05_operator": "東京都", "years": [1950, 1966], "lines": {"l_hondori_line": [35.667195, 139.760909, "本通線"], "l_horaibashi_line": [35.666962, 139.760099, "蓬莱橋線"], "l_kanasugi_line": [35.667195, 139.760909, "金杉線"]}}
+- {"node": "n_shin_shimizu_shinai", "lat": 35.017212, "lon": 138.488083, "source": "n05", "n05_line": "清水市内線", "n05_operator": "静岡鉄道", "years": [1954, 1974]}
+- {"node": "n_shinjuku_sanchome_toden", "lat": 35.689859, "lon": 139.707211, "source": "n05", "n05_line": "新宿線", "n05_operator": "東京都", "years": [1950, 1969]}
+- {"node": "n_shinsakae_machi", "lat": 35.17067, "lon": 136.920105, "source": "n05", "n05_line": "1号線東山線", "n05_operator": "名古屋市", "years": [1960, 9999]}
+- {"node": "n_shinsakae_machi_nagoya_tram", "lat": 35.16942, "lon": 136.921451, "source": "n05", "n05_line": "公園線", "n05_operator": "名古屋市", "years": [1950, 1969], "lines": {"l_aoicho_line": [35.16942, 136.921451, "葵町線"], "l_koen_line": [35.16942, 136.921451, "公園線"], "l_sakaemachi_line": [35.169553, 136.920937, "栄町線"]}}
+- {"node": "n_suidobashi_toden", "lat": 35.703313, "lon": 139.755214, "source": "n05", "n05_line": "水道橋線", "n05_operator": "東京都", "years": [1950, 1967]}
+- {"node": "n_susukino_sapporo_tram", "lat": 43.055561, "lon": 141.353967, "source": "db", "db_source": "n05", "how": "db"}
+- {"node": "n_takashimacho_yokohama_tram", "lat": 35.459463, "lon": 139.623718, "source": "n05", "n05_line": "保土ヶ谷線", "n05_operator": "横浜市", "years": [1950, 1970]}
+- {"node": "n_toyamaeki_toyama_chiho", "lat": 36.701614, "lon": 137.21291, "source": "n05", "n05_line": "富山駅南北接続線", "n05_operator": "富山地方鉄道", "years": [2015, 9999]}
+- {"node": "n_tsukiji_guchi", "lat": 35.099945, "lon": 136.8832, "source": "n05", "n05_line": "2号線名港線", "n05_operator": "名古屋市", "years": [2004, 9999]}
+- {"node": "n_tsukiji_guchi_nagoya_tram", "lat": 35.099441, "lon": 136.883927, "source": "n05", "n05_line": "築港線", "n05_operator": "名古屋市", "years": [1950, 1970]}
+- {"node": "n_wadamisaki_kobe_tram", "lat": 34.658719, "lon": 135.176545, "source": "db", "db_source": "n05", "how": "db"}
+- {"node": "n_yabacho", "lat": 35.163305, "lon": 136.908725, "source": "n05", "n05_line": "2号線名城線", "n05_operator": "名古屋市", "years": [2004, 9999]}
+- {"node": "n_yabacho_nagoya_tram", "lat": 35.16228, "lon": 136.906782, "source": "n05", "n05_line": "熱田線", "n05_operator": "名古屋市", "years": [1950, 1967]}

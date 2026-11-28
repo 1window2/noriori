@@ -17,6 +17,8 @@ docs/name-review.md
 
 # Signing keys and secrets
 *.pem
+# Public keys for verifying data pack manifests. Private keys never go in the repository
+!data/keys/*.pub.pem
 *.jks
 *.keystore
 key.properties

@@ -72,6 +72,22 @@ void main() {
       expect(searchQuery('a"b'), '"a b"');
       expect(searchQuery('  "  '), isNull);
     });
+
+    test('영어 Mt. 산 이름은 산 읽기로도 찾는다', () {
+      expect(searchQuery('Mt. Takao'),
+          '"m t . t a k a o" OR "t a k a o s a n" OR "t a k a o z a n" OR "t a k a o y a m a" OR "t a k a o d a k e" OR "t a k a o t a k e"');
+      expect(searchQuery('Mount Koya'), contains('"k o y a s a n"'));
+      expect(searchQuery('mt.fuji'), startsWith('"m t . f u j i" OR "f u j i s a n"'));
+      // Mt로 시작하는 다른 낱말과 「Mt.」만 친 것은 그대로
+      expect(searchQuery('Mtsu'), '"m t s u"');
+      expect(searchQuery('Mt.'), '"m t ."');
+    });
+
+    test('Mt. 검색어의 접은 꼴은 옛 이름 순위에도 같은 산 꼬리를 쓴다', () {
+      expect(searchFoldedVariants('Mt. Takao'), contains('t a k a o s a n'));
+      expect(searchFoldedVariants('新宿'), ['新 宿']);
+      expect(searchFoldedVariants('  '), isEmpty);
+    });
   });
 
   group('완주율', () {

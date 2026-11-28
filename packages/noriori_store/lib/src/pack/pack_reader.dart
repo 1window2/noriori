@@ -450,7 +450,7 @@ final class PackReader {
       variables: [Variable.withString(query), Variable.withInt(limit)],
     ).get();
     final oldOnly = await _matchedOnlyByOldName(
-      foldSearchText(text.replaceAll('"', '')),
+      searchFoldedVariants(text),
       {for (final row in rows) row.read<String>('entity_id')},
     );
     final ranked = [
@@ -464,7 +464,7 @@ final class PackReader {
   }
 
   /// 기간이 있는 이름으로만 검색어가 들어맞는 ID. 기간 없는 이름이나 별칭으로 맞으면 넣지 않는다
-  Future<Set<String>> _matchedOnlyByOldName(String folded, Set<String> ids) async {
+  Future<Set<String>> _matchedOnlyByOldName(List<String> folded, Set<String> ids) async {
     if (ids.isEmpty || folded.isEmpty) return const {};
     final rows = await _db.customSelect(
       'SELECT entity_id, text, kana, valid_from, valid_to FROM names.name '
@@ -477,7 +477,7 @@ final class PackReader {
       final to = row.readNullable<String>('valid_to');
       final dated = row.readNullable<String>('valid_from') != null || (to != null && to != 'ongoing');
       final hit = [row.read<String>('text'), row.readNullable<String>('kana')]
-          .any((x) => x != null && foldSearchText(x).contains(folded));
+          .any((x) => x != null && folded.any(foldSearchText(x).contains));
       if (hit) (dated ? old : current).add(row.read('entity_id'));
     }
     return old.difference(current);

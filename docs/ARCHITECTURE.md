@@ -2,6 +2,10 @@
 
 > 작성일: 2026-11-01 · 갱신: 2026-11-04 · 상태: **동결** (2026-11-04). 동결 뒤에는 사용자 결정이 있을 때만 DESIGN과 함께 고칩니다. 기능과 규칙은 [DESIGN.md](DESIGN.md), 구조와 저장 스키마는 이 문서가 기준입니다. 같은 내용을 두 곳에 쓰지 않습니다. 이 문서에서 `DESIGN §x`가 아닌 `§x`는 이 문서의 절입니다.
 >
+> 문서 정리 (2026-11-27, 구조·규칙 변화 없음): DESIGN과 두 번 적혀 있던 ID 이름(§4.2), 역 이전 노드 기준(§3.5), 등급 하향(§4.0), 폐선 분모 편입(§4.3)은 DESIGN의 해당 절을 가리키게 하고, 판별 측정값은 DESIGN §7 한 곳에 두었습니다. 끝난 단계(옛 노면전차망, 열람 전용 범위)와 워크플로 수(여섯)를 지금 상태로 맞췄습니다. 절 번호는 그대로입니다.
+>
+> 반영 (2026-11-28, 사용자 승인): 데이터 팩 매니페스트의 ed25519 서명과 `Release` 워크플로의 팩 업로드·빌드 증명(§4.4·§4.5). 최소 앱 버전은 아직 없습니다.
+>
 > v0.13 변경: 태그마다 도는 `Release` 워크플로로 서명 없는 IPA와 AltStore·SideStore 소스를 올립니다 (§4.4, 사용자 결정 2026-11-04). 다시 동결했습니다 (2026-11-04).
 >
 > v0.12 변경: 명세 동결 전 검토와 사용자 결정(2026-11-03·11-04)을 반영했습니다. 출처 모듈(§4.0), ID 규칙의 범위와 내부 ID 예외(§4.2), CI 워크플로 넷과 로컬 판 릴리스 절차(§4.4), 판 번호 형식(§4.5), 1950 기준일 뒤의 데이터 단계(§4.3, §8), 탈 수 없는 날짜의 경고(§3.4)를 적었습니다. 사진, 수동 백업 ZIP, 현재 위치 버튼은 v1.0에서 뺐습니다. 폴더, 라우트, 타입 이름은 코드에 맞췄습니다. 독립 재검토 뒤 사용자 결정(2026-11-04)으로 `_old`·지역 이름 ID, 환승 묶음 해시 ID 재부여, 역 이전 노드 기준(§3.5), 이관 뒤 폐선의 분모(§4.3), 저장 때 빈 유효 범위의 경고(§3.4)를 고쳤습니다.
@@ -193,9 +197,9 @@ core는 저장소 인터페이스를 부르지 않습니다. store가 값을 읽
 | 기본 배경 (일본 윤곽, 도도부현 경계) | 데이터 팩의 `base.pmtiles` | `tools/gen_base.sh`가 国土数値情報 N03에서 만듦 |
 | 온라인 배경 | OpenFreeMap | 없어도 지도가 보여야 함 |
 | 선로(`edge`), 역(`station`), 표식(`marker`) | `rail.pmtiles` | 판별 파일. `edge` 레이어는 N02 2020·2024판(CC BY 4.0), N02 2005·2008·2015판(商用可), N05 2024판(非商用)을 구간마다 하나씩 씀. 조건은 출처별 파일에 있음 (§4.0) |
-| OSM 선로와 그 선에 맞춘 역 점 (ODbL) | `rail-osm.pmtiles` | N02에 없어 OSM으로 그린 805 edge. 현행 18구간 115.9km도 여기에만 있음. 형식상 선택 파일이지만 배포하는 모든 팩에 넣음. 라이선스 때문에 파일만 분리. 같은 edge 번호 `n`을 씀 |
+| OSM 선로와 그 선에 맞춘 역 점 (ODbL) | `rail-osm.pmtiles` | N02에 없어 OSM으로 그린 1,299 edge(2026-11-28 빌드). 현행 5구간 46.6km도 여기에만 있음. 형식상 선택 파일이지만 배포하는 모든 팩에 넣음. 라이선스 때문에 파일만 분리. 같은 edge 번호 `n`을 씀 |
 | 탑승 표시 | 필터 식 (아래) | 저장할 때 `ride_edge`에서 갱신 |
-| 위치 미확인 표식 | 빌드가 만든 `map_marker` 행 | 선이 없는 폐지 구간에만 (DESIGN §7.3). 판 2026-11-05.2에 폐지 3,997구간 중 122구간이 선이 없어 143곳 |
+| 위치 미확인 표식 | 빌드가 만든 `map_marker` 행 | 선이 없는 폐지 구간에만 (DESIGN §7.3). 수치는 DESIGN §7의 판별 측정값 |
 
 **탑승 칠하기는 A(필터 식)로 정했습니다** (2026-11-03 Android 실측). `maplibre_gl` 0.27의 feature state는 iOS에서 예외를 던지므로 쓰지 않습니다.
 
@@ -346,7 +350,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 | 오늘 | 기기 시간대가 아니라 JST (DESIGN §2.2) |
 | ID 정정 | `id_redirect`는 읽을 때만 적용, 사용자 원본 ID를 다시 쓰지 않음 (DESIGN §2.10) |
 | 역 방문 | `visit`은 노드와 `date_input`을 저장하고 묶음과 날짜는 파생. 묶음 ID는 판마다 바뀔 수 있음 |
-| 역 이전 | 선로 위 km가 바뀐 역 이전은 같은 선로 위라도 옛 노드와 새 노드를 두고 `data/overrides/moved.json`(지금 26쌍)으로 잇습니다. 평면 위치와 km가 그대로이고 높이만 바뀐 이동(지하화, 고가화)은 노드 하나이고, `move`는 필요할 때만 적습니다 (사용자 결정, 2026-11-04, DESIGN §2.2). 이전일과 새 판 사이에 옛 노드로 저장된 기록은 `RideInterpreter`가 lineage와 `node_move`로 순서를 맞춤. 캐시에서만 바꾸고 원본은 그대로 |
+| 역 이전 | 노드 기준(선로 위 km가 바뀌면 옛·새 노드 + `data/overrides/moved.json`, 높이만 바뀌면 노드 하나)은 DESIGN §2.2 「역 위치 이동」이 유일한 기준입니다 (사용자 결정, 2026-11-04). 이전일과 새 판 사이에 옛 노드로 저장된 기록은 `RideInterpreter`가 lineage와 `node_move`로 순서를 맞춤. 캐시에서만 바꾸고 원본은 그대로 |
 | 범위 날짜 | 문자열이 아니라 (하한, 상한)으로 비교. 영업 기간과 겹치면 탈 수 있음 |
 | edge 번호 | `e_` 번호는 생성 순서라 앞쪽 노선의 edge 수가 바뀌면 뒤가 밀립니다 (2026-11-06: 会津線 옛 선로 3 edge가 国鉄 쪽으로 옮겨 5,142개가 3씩 밀림). 기록 원본은 역 노드라 영향이 없지만, 번호로 edge를 가리키는 `data/overrides/source_patch`·`geometry/n05_fill.yaml`은 이전 판과 끝 역으로 대조해 옮겨야 합니다. 옮기지 않으면 km·선형 보정이 다른 edge에 붙습니다 |
 | 이설 기간 | `moved.json`은 정차 기간을 이전일에서 자르기만 하고 넓히지 않습니다. 새 노드에 이전 뒤에 생긴 노선(新潟 1958 이전, 上越新幹線 1982)이 있습니다 |
@@ -443,7 +447,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 | 선형 고르기 | edge마다 하나: N02 최신 판부터 → OSM → N05. 폐선의 OSM 경로는 N05와 대조해 받아들이고(`overrides/closed_geometry.json`), 그래도 선이 없거나 끝이 역에서 300m 넘게 떨어지면 N05 (`data/README.md`) |
 | 배포 | N02와 N05는 `rail.pmtiles`의 `edge` 레이어에 함께 둡니다. OSM은 `rail-osm.pmtiles`에만 둡니다. `master.sqlite`, `names.sqlite`, 역의 원래 좌표에는 OSM 값을 넣지 않습니다 |
 | 출처 표시 | 앱의 데이터 출처 화면(`/settings/sources`)과 `data/NOTICE.md`에 출처와 파일별 조건 |
-| 끄기 | 출처 목록 하나에서 출처를 끄고 다시 빌드할 수 있어야 합니다. 빠진 값은 다음 출처로 채우거나 등급을 내립니다 (선형이 없으면 표식, 폐선의 역 목록·순서·km가 확정되지 않으면 열람 전용). 현행 노선은 열람 전용으로 내리지 않고 CI 실패로 고칩니다 (DESIGN §2.6). 출처 목록은 `data/sources.json`이고 `tools/lib.py`의 `source_on()`으로 읽습니다. 필수 출처를 끄면 빌드가 멈추고, 꺼진 출처의 값이 남으면 `verify.py`가 실패합니다 |
+| 끄기 | 출처 목록 하나에서 출처를 끄고 다시 빌드할 수 있어야 합니다. 빠진 값은 다음 출처로 채우고, 없으면 DESIGN §4.1 등급 하향 규칙을 따릅니다 (선형이 없으면 표식, 폐선의 역 목록·순서·km가 확정되지 않으면 열람 전용, 현행 노선은 열람 전용으로 내리지 않고 CI 실패). 출처 목록은 `data/sources.json`이고 `tools/lib.py`의 `source_on()`으로 읽습니다. 필수 출처를 끄면 빌드가 멈추고, 꺼진 출처의 값이 남으면 `verify.py`가 실패합니다 |
 
 역 이름, 위치, 연도, km는 사실 정보로 다루고 권리를 주장하지 않습니다. 라이선스를 이유로 지도 규칙에 예외를 만들지 않습니다.
 
@@ -458,20 +462,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 
 ### 4.2 ID 동결
 
-**ID 이름** (사용자 결정, 2026-11-03·11-04)
-
-| 종류 | 접두사 | 규칙 |
-|---|---|---|
-| 공개·기록 ID | 노드 `n_`, 노선 `l_`, 계통 `r_`, 운행 계통 `s_`, 사업자 `o_`, 역 묶음 `g_`, 환승 묶음 `hub_`, 열람 전용 `a_` | 접두사 뒤에 영어 이름. **숫자·해시·`_b` 금지.** 원천 사이트의 번호는 넣지 않음 |
-| 내부 ID | edge `e_`(`e_000123`), 승계 사슬 `lg`(`lg1`), carryover `c`(`c1`) | 사용자 기록에 저장하지 않으므로 번호 허용 |
-
-- 예: `n_minami_oyubari`, `l_tokaido_main_line`, `o_tobu_railway`, `s_chuo_rapid`.
-- 이름이 겹치면 회사·노선 이름을 붙입니다. 지금 생성기는 그 이름의 JR 역이 하나뿐이면 JR 역을 이름 그대로 두고 나머지에 회사 약칭을 붙이며, 같은 회사 안에서 겹치면(JR 역끼리 포함) 노선 이름을 붙입니다 (`n_okubo_chuo_main`, `n_sumiyoshi_hanshin`).
-- 회사·노선 이름으로도 구별되지 않으면 먼저 있던 역(역 이전의 옛 노드 등)에 `_old`를 붙이고 나중 역이 이름을 그대로 갖습니다 (`n_higashi_karatsu_old`). 그래도 겹치면 지역 이름을 붙입니다 (`o_keifuku_electric_railroad_fukui`). `_b` 같은 이름 아닌 꼬리는 쓰지 않습니다 (사용자 결정, 2026-11-04. 남은 것은 §4.3).
-- 환승 묶음은 묶인 노드 중 JR 역의 이름, JR 역이 없으면 첫 노드의 이름을 씁니다. 겹치면 위 규칙을 따릅니다.
-- 지선 계통은 노선 이름 뒤에 구간을 붙입니다 (`r_tokaido_main_line_ogaki_mino_akasaka`).
-- 숫자는 역·노선 이름 자체에 있을 때만 남습니다 (`n_nishi_11_chome`, `n_airport_terminal_2`).
-- ID는 불투명한 값입니다. 파싱하지 않고, 이름이 바뀌어도 바꾸지 않습니다.
+**ID 이름** (사용자 결정, 2026-11-03·11-04): 규칙은 DESIGN §2.10 「ID 형식」이 유일한 기준입니다. 요약하면 공개·기록 ID(노드 `n_`, 노선 `l_`, 계통 `r_`, 운행 계통 `s_`, 사업자 `o_`, 역 묶음 `g_`, 환승 묶음 `hub_`, 열람 전용 `a_`)는 접두사 뒤에 영어 이름이고 **숫자·해시·`_b` 금지**(`_b` 같은 이름 아닌 꼬리 금지, 남은 것은 §4.3), 내부 ID(edge `e_`, 승계 사슬 `lg`, carryover `c`)는 사용자 기록에 저장하지 않으므로 번호를 허용합니다. 이름이 겹칠 때 붙이는 순서(회사 → 노선 → `_old` → 지역 이름), 환승 묶음 이름, 지선 계통 이름, 이름 속 숫자도 DESIGN §2.10에 있습니다. ID는 불투명한 값이라 파싱하지 않고, 이름이 바뀌어도 바꾸지 않습니다.
 
 **지금의 ID** (동결 전)
 
@@ -479,7 +470,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 
 표에 없는 새 항목이 생기면 `gen_source.py`가 멈춥니다. 새 노선을 넣을 때는 `NORIORI_NEW_IDS=1 bash tools/all.sh`로 내부 키를 그대로 낸 뒤 `tools/new_ids.py`가 영어 이름 ID를 표에 더합니다. 겹치면 회사 약칭, 노선 이름 순으로 붙이고, 그래도 겹치면 멈춥니다.
 
-**공개 전에는 사용자가 없으므로** 판마다 지문 비교(아래 검사)로 밀림을 잡습니다. 공개 뒤에는 기록이 ID를 저장하므로 재생성을 멈춥니다. `id_map.json`은 공개하지 않고, 시드를 동결하면 쓰지 않습니다.
+**앱 v1.0 공개 전에는 사용자가 없으므로** 판마다 지문 비교(아래 검사)로 밀림을 잡습니다 (저장소는 2026-11-26에 공개됐지만, 여기서 「공개」는 앱 공개입니다). 앱 공개 뒤에는 기록이 ID를 저장하므로 재생성을 멈춥니다. `id_map.json`은 공개하지 않고, 시드를 동결하면 쓰지 않습니다.
 
 자연키 원장은 만들지 않습니다. 이름과 좌표 격자가 키이면 정정할 때 원장이 다른 역을 같은 역으로 잇거나 같은 역을 끊는데, 그 오류는 조용히 지나갑니다. 재생성 자체를 없애는 쪽이 단순합니다.
 
@@ -496,7 +487,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 | 삭제 금지 | 목록의 ID가 사라지면 실패. 은퇴 목록(redirect 또는 묘비 포함)에 있으면 통과 |
 | 재사용 금지 | 은퇴한 ID가 다시 나오면 실패 |
 | edge | 사용자 기록에 저장하지 않으므로 `split-edge` 은퇴는 자유. 재사용만 금지 |
-| 지문 | 같은 ID의 좌표가 판 사이에 1km 이상 옮겨지거나 이름이 완전히 바뀌면 실패. 사람이 확인한 변경은 `check_ids.py --accept <ID>`로 지문에 반영 (`tools/check_ids.py`) |
+| 지문 | 같은 ID의 좌표가 판 사이에 1km 이상 옮겨지거나 이름이 완전히 바뀌거나 계통이 다른 노선으로 옮겨지면 실패 (§7 ID 행과 같음). 사람이 확인한 변경은 `check_ids.py --accept <ID>`로 지문에 반영 (`tools/check_ids.py`) |
 | redirect 순환 | redirect 사슬에 순환이 있으면 실패 |
 | 이름 규칙 | 공개·기록 ID에 해시나 이름 아닌 번호가 있으면 실패 (`verify.py`) |
 
@@ -514,13 +505,13 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 | 지문 비교 도구 | 판 사이 같은 ID의 좌표 1km 이상 이동, 이름 완전 변경을 찾아 `id_map.json` 밀림을 잡음 | §4.2 |
 | 출처 끄기 | 끝남 (2026-11-04). `data/sources.json`에서 끄고 다시 빌드. 빠진 값은 다음 출처나 등급 하향 | §4.0 |
 | 선형 출처 열 | `edge.geometry_quality`는 선 유무(`precise`/`none`)만, 출처는 열 `geometry_source`(`n02`/`n05`/`osm`). `route.map_coverage`는 출처와 무관하게 선 유무로. 끝남 (2026-11-04) | 지도에 그려지는 선이 `none`으로 보임 |
-| 1950~1969 폐선 | 판 2026-11-04.1에서 N05 노선 묶음 전부를 판정해 74노선을 넣음 (`tools/gen_n05.py`, 1950~1969 국철 3노선 포함). 열람 전용 102, 보류 54, 옛 노면전차망 131은 다음 단계. 새 항목의 공개 ID는 `NORIORI_NEW_IDS=1`로 한 번 빌드한 뒤 `tools/new_ids.py`가 영어 이름으로 매김 (§4.2) | DESIGN §4.6 |
-| 폐선 분모 편입 | 끝남 (판 2026-11-04.2). N05 판정이 끝나 한 번에 `normal`로 옮겼고 `outside`는 0입니다. 원래 규칙: 새로 들어오는 것만 분모 밖에 둡니다. 1950~1969 국철·JR 폐선과 처음부터 사철이던 1950~1999 폐선은 N05 목록 대조가 끝날 때까지 `outside`이고, 끝나면 한 번에 `normal`로 옮겨 역대·특정 연도 분모에 넣습니다. **반드시 되돌려 넣습니다.** 노리츠부시로 대조가 끝난 국철·JR 1969-12-08 이후 폐선은 지금처럼 `normal`이고 분모에서 빼지 않습니다. 국철·JR에서 사철로 이관된 뒤 폐지된 구간도 2000년 전이라도 `normal`입니다. 2000년 이후 사철 폐선도 지금처럼 노선별 검증 뒤 `normal`입니다 | 사용자 결정 (2026-11-04) |
-| 열람 전용 범위 | 위 두 단계 뒤 다시 정합니다. 열람 전용은 검증할 수 없는 것만 남깁니다 | 사용자 결정 |
-| 옛 노면전차망 | 일반 철도 다음 단계에서 같은 기준으로 넣습니다 | 사용자 결정 |
+| 1950~1969 폐선 | 판 2026-11-04.1에서 N05 노선 묶음 전부를 판정해 74노선을 넣음 (`tools/gen_n05.py`, 1950~1969 국철 3노선 포함). 열람 전용 102, 보류 54. 옛 노면전차망 131묶음은 따로 판정해 넣음 (DESIGN §4.4). 새 항목의 공개 ID는 `NORIORI_NEW_IDS=1`로 한 번 빌드한 뒤 `tools/new_ids.py`가 영어 이름으로 매김 (§4.2) | DESIGN §4.6 |
+| 폐선 분모 편입 | 끝남 (판 2026-11-04.2). N05 판정이 끝나 한 번에 `normal`로 옮겼고 `outside`는 0입니다. 규칙(앞으로 새 범위에도 적용)은 DESIGN §2.8 O `outside` 편입 규칙, 범위별 등급은 DESIGN §4.6 표 | 사용자 결정 (2026-11-04) |
+| 열람 전용 범위 | 정함 (사용자 결정 2026-11-05): 역 목록조차 불분명한 노선만. 역 목록이 전해지면 `? km`로라도 노선을 엶 (DESIGN §4.5) | 사용자 결정 |
+| 옛 노면전차망 | 끝남. 일반 철도와 같은 기준으로 v1.0에 넣음 (사용자 결정 2026-11-04, 판 2026-11-05.1에 기록 가능 138노선, DESIGN §4.4) | 사용자 결정 |
 | 住吉 중복 | `n_sumiyoshi_nagasaki_tram_akasako_branch`, `n_sumiyoshi_nagasaki_tram_nagasaki_tram_main` 병합 | 같은 역이 두 노드 |
 | 역 이전 배포 | 끝남 (2026-11-04). `moved.json`을 master의 `node_move`(old_node, new_node, moved_on)로 배포 | §3.5 역 이전 |
-| 서명, 최소 앱 버전 | `manifest.json`과 분리한 `manifest.json.sig`(ed25519), manifest의 최소 앱 버전. 둘 다 미구현 | 정규화 없이 파일 그대로 서명 |
+| 서명, 최소 앱 버전 | 서명은 끝남 (2026-11-28): `manifest.json`과 분리한 `manifest.json.sig`(ed25519, §4.5). manifest의 최소 앱 버전은 미구현 | 정규화 없이 파일 그대로 서명 |
 | 직통 표시 점검 | 양쪽 노선이 그 역에서 끝나는 JR `continue` 415행을 위키 노선도와 대조 (행 수는 2026-11-02 값, 다시 세지 않음) | 표본 5행 중 1행 오표시. 통계와 입력에는 영향 없음 |
 | 분기 방향 | `route_link.side`가 빈 분기 17행(416행 중)을 채움. 손 보정은 `data/overrides/junction_side.json`(사유 포함) | 비면 아래로 그려져 반대쪽에 놓임 |
 | 소소한 값 | モンキーパークモノレール線 `line.type`, 東山 역명, 東山本線 구간 km 0.1 차이 확인 | 독립 표본에서 나옴 |
@@ -529,8 +520,7 @@ class Change { List<UserRecord> before, after; Change undo({now}); } // 되돌�
 **끝낸 것**
 - 팩 스키마 2 (2026-11-02): 거리 정수화(`edge_km.m`, `denominator_unit.m`), 분모 기간(`date_lo`, `date_hi`), 정수 키(`edge.n`, `denominator_unit.n`, `station_group.n`), 인덱스(도도부현별 분모 2,164ms → 4.4ms), 검색 색인(`search`), 타일 필드(선로 `n`, `closed`, `fy`, `ty`, 역은 묶음 단위 `station` 레이어에 `g`, `hub`, `closed`, `fy`, `ty`, `node`, `ja`, `ko`, `en`).
 - 현행 선형 공백: 현행 9,731 edge 모두 선이 있습니다 (판 2026-11-05.2, OSM 현행 구간 포함, `check_geometry` 실패 0, 예외 9).
-- 폐지 구간 선형: 판 2026-11-05.2에 3,997구간 중 3,875구간이 `map_visible=1`입니다 (N02 각 판, OSM, N05). 노면전차와 이설 옛 선로를 넣으며 생긴 122구간은 맥 재생성의 `gen_geometry.py`에서 채웁니다.
-- 표식 표 `map_marker`: 선이 없는 폐지 구간에만 만듭니다. 판 2026-11-05.2에 143곳.
+- 폐지 구간 선형과 표식 표 `map_marker`: 선이 없는 폐지 구간에만 표식을 만듭니다. 판별 수치는 DESIGN §7 한 곳에 둡니다.
 - 빌드 날짜 고정: `data/overrides/as_of.json`의 `as_of`를 오늘 대신 씁니다.
 - 배포 정리: `edge_shape`, `junction`, `denominator`는 빌드 검사에만 쓰고 배포 팩(`pack-master.sqlite`)에서 뺍니다.
 - 운행 계통 판과 정차역 (2026-11-08, 스키마 판은 2 그대로): `service_edition`(판 기간, `all_stops`), `service_part.edition`, `service_stop`. `NetworkReader`는 `service_edition`이 없는 옛 팩을 정차역 없는 판 하나로 읽습니다(`route_stop_gap`과 같은 방식). 별칭(`data/overrides/service_aliases.json`)은 `search`에 노선·운행 계통 항목으로만 넣습니다 (DESIGN §2.7, §14.1).
@@ -558,36 +548,40 @@ trigram은 두 글자 역명(`新宿`)을 찾지 못해 쓰지 않습니다. 가
 
 | 워크플로 | 언제 | 내용 |
 |---|---|---|
-| `CI` (`ci.yml`) | PR, main 푸시 | `Data` 다음에 `Flutter`·`Android`·`iOS`. 브랜치 푸시는 PR이 있을 때 PR로만 돌아 같은 커밋을 두 번 돌리지 않음. 같은 PR에 새로 올리면 앞 실행은 멈춤. `iOS`는 private 저장소에서는 main 푸시에서만(macOS 실행 시간이 10배로 차감), 저장소가 공개되면 PR에서도 돎 |
+| `CI` (`ci.yml`) | PR, main 푸시 | `Data` 다음에 `Flutter`·`Android`·`iOS`. 브랜치 푸시는 PR이 있을 때 PR로만 돌아 같은 커밋을 두 번 돌리지 않음. 같은 PR에 새로 올리면 앞 실행은 멈춤. `iOS`는 저장소가 공개라 PR에서도 돎(비공개 저장소였다면 macOS 실행 시간이 10배로 차감되어 main 푸시에서만 돌게 되어 있음). 공개 저장소라 Actions 시간이 들지 않으므로 모든 커밋에서 CI를 돌림(커밋 메시지에 `[skip ci]`를 쓰지 않음, 2026-11-27). 로컬 깨끗한 CI도 푸시 전에 계속 돌림. Actions 탭에서 손으로도 돌릴 수 있음(`workflow_dispatch`) |
 | `Data` (`data.yml`) | `CI`·`Release`가 부름 | 개인 정보 검사, 의존 방향(`check_boundaries.py`), 데이터 파이프라인 재생성과 검증(`all.sh`: imports 없이 컴파일 → 글리프·타일 → `verify.py` → `check_geometry.py` → `check_ids.py` → `core_fixture.py`), 앱 시뮬과 불변식(`appsim.py`, `invariants.py`), 팩 생성(`sync_pack.sh`). `build/`와 앱 자산 팩을 3일 보관. 배지 없음 |
 | `Flutter` (`flutter.yml`) | `Data` 잡 뒤 (`CI`·`Release`) | 같은 실행의 팩으로 생성 코드 diff(drift, slang), `flutter analyze`, core·store·앱 시험 |
 | `Android` (`android.yml`) | `Data` 잡 뒤 (`CI`) | 같은 실행의 팩으로 릴리스 빌드. 디버그 서명 APK를 3일 보관 |
 | `iOS` (`ios.yml`) | `Data` 잡 뒤 (`CI`) | 같은 실행의 팩으로 서명 없이 릴리스 빌드. 서명 안 된 IPA를 3일 보관 |
-| `Release` (`release.yml`) | `v1.2.3` 태그 | 다음 순서로 돎:<br>1. 먼저 검사한다. 태그와 pubspec 버전이 같은지, 빌드 번호가 앞선 릴리스의 IPA보다 큰지, 직전 태그 뒤 `data/source`·`data/overrides`·`data/sources.json`이 바뀌었는데 `edition`이 그대로가 아닌지.<br>2. `Data`로 팩을 만들고 `Flutter` 시험을 통과한 뒤에만 서명 없는 IPA(`noriori-<버전>-b<빌드>.ipa`)를 GitHub Releases에 올림.<br>3. 모든 릴리스의 IPA로 AltStore·SideStore 소스(`tools/altstore_source.py`, 정보는 `distribution/altstore/meta.json`)를 만들어 그 릴리스에 `altstore.json`으로 붙임.<br>소스 주소는 `releases/latest/download/altstore.json` 하나로 고정 |
+| `Release` (`release.yml`) | `v1.2.3` 태그 | 다음 순서로 돎:<br>1. 먼저 검사한다. 태그와 pubspec 버전이 같은지, 빌드 번호가 앞선 릴리스의 IPA보다 큰지, 직전 태그 뒤 `data/source`·`data/overrides`·`data/sources.json`이 바뀌었는데 `edition`이 그대로가 아닌지.<br>2. `Data`로 팩을 만들고 `Flutter` 시험을 통과한 뒤에만 서명 없는 IPA(`noriori-<버전>-b<빌드>.ipa`)와 데이터 팩(`noriori-pack-<판>.zip`, 따로 `manifest.json`)을 빌드 증명(attestation)과 함께 GitHub Releases에 올림. 매니페스트 서명(`manifest.json.sig`)은 올린 뒤 로컬에서 붙임(§4.5). 같은 태그로 다시 돌면 앞서 붙인 서명을 지우므로 다시 서명함.<br>3. 모든 릴리스의 IPA로 AltStore·SideStore 소스(`tools/altstore_source.py`, 정보는 `distribution/altstore/meta.json`)를 만들어 그 릴리스에 `altstore.json`으로 붙임.<br>소스 주소는 `releases/latest/download/altstore.json` 하나로 고정 |
 
-README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 배지). 공식 Flutter CI 배지는 없습니다. `Data`는 배지 없이 돕니다. 저장소가 private인 동안 shields.io는 상태를 읽지 못합니다. 정식 서명 키는 CI에 두지 않습니다 (§4.5).
+README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 배지). `flutter.yml`·`android.yml`·`ios.yml`은 `CI`가 부르는 재사용 워크플로라 따로 실행 기록이 없으므로, 배지는 워크플로 상태가 아니라 main 마지막 커밋의 작업 결과(check-runs, 작업 이름 `flutter / flutter` 등)를 읽습니다. 모든 커밋에서 CI를 돌리므로(`[skip ci]` 쓰지 않음) main 마지막 커밋에는 늘 결과가 있습니다. `Data`는 배지 없이 돕니다. 정식 서명 키는 CI에 두지 않습니다 (§4.5).
 
 `verify.py`는 CI에서도 돌지만 station_database 이름 대조는 `data/imports`가 있을 때만 합니다. `audit_ext.py`는 `data/imports`가 필요해 로컬 전용입니다. CI는 네트워크를 쓰지 않습니다.
 
-**판 릴리스 절차** (로컬. 앱 릴리스는 태그를 올리면 `Release`가 IPA와 소스를 올리고, 정식 서명 APK는 로컬에서 만들어 같은 릴리스에 올립니다)
+**판 릴리스 절차** (로컬. 앱 릴리스는 태그를 올리면 `Release`가 IPA·데이터 팩·소스를 올리고, 정식 서명 APK는 로컬에서 만들어 같은 릴리스에 올립니다)
 1. 내용이 바뀌면 `data/overrides/as_of.json`의 `edition`을 올립니다 (§4.5). 태그 때 `Release`가 직전 태그와 비교해 다시 확인합니다.
 2. `bash tools/all.sh`를 `data/imports`가 있는 상태로 돌립니다. 컴파일 검사 오류, `verify.py`, `check_geometry.py`, `check_ids.py`(ID 잠금, §4.2), `appsim.py` 시나리오 FAIL, `invariants.py` 위반 중 하나라도 있으면 멈춥니다. 마지막에 `tools/audit_db.py`(설계 규칙), `tools/audit_ext.py`(원자료 대조, `data/imports`가 있을 때), `tools/dev/regression/run.py`(전수 대조 1·2회차 지적 회귀 대조)가 돌고 지금은 단계별 건수만 보입니다. `NORIORI_AUDIT_STRICT=1`이면 오류(err) 항목이나 남은 회귀 사례가 있을 때 멈춥니다.
 3. 판 사이 재해석 비교(`tools/repro/`가 시작점, 미완), 쿼리 계획 검사(미구현).
 4. `bash tools/sync_pack.sh`. `check_edition.py`가 앱 자산의 이전 manifest와 비교해, 내용이 바뀌었는데 판이 같으면 멈춥니다. 이전 팩이 없는 깨끗한 체크아웃(CI)에서는 비교할 대상이 없어 검사하지 않습니다.
-5. manifest 서명(미구현) 뒤 GitHub Releases에 올립니다 (§4.5).
+5. 태그를 올리면 `Release`가 IPA와 데이터 팩(`noriori-pack-<판>.zip`, `manifest.json`)을 빌드 증명(attestation)과 함께 릴리스에 올립니다. 그 태그를 체크아웃해 `tools/all.sh`를 돌린 이 기기에서 `NORIORI_MANIFEST_KEY=<개인 키 경로> bash tools/release_pack.sh <태그> --upload`가 매니페스트에 서명해 `manifest.json.sig`를 같은 릴리스에 올립니다(§4.5). 정식 APK는 `--into-app`으로 릴리스 팩과 서명을 앱 자산에 넣은 뒤 만듭니다.
 
 ### 4.5 배포
 
-데이터 팩은 앱에 포함됩니다. 내려받기(P1)를 위해 같은 파일과 `manifest.json`, `manifest.json.sig`를 GitHub Releases에도 올립니다. 서명은 사람이 오프라인 키로 합니다 (미구현).
+데이터 팩은 앱에 포함됩니다. 내려받기(P1)를 위해 같은 파일과 `manifest.json`, `manifest.json.sig`를 GitHub Releases에도 올립니다. 서명은 사람이 오프라인 키로 합니다 (2026-11-28).
+
+- **키**: ed25519 키 두 쌍. 하나를 잃어도 다른 하나로 서명할 수 있습니다. 개인 키는 저장소·CI 밖의 오프라인 보관 장소에만 두고, 공개 키는 `data/keys/manifest-ed25519-1.pub.pem`·`-2.pub.pem`과 앱 상수 `manifestPublicKeys`(`packages/noriori_store/lib/src/pack/pack_signature.dart`)에 같은 값으로 둡니다(`python3 -I tools/sign_manifest.py keys`로 대조).
+- **서명**: 팩과 매니페스트는 `Release` 워크플로가 만들고 빌드 증명을 붙여 올립니다. 개인 키는 CI에 두지 않으므로 서명만 로컬에서 붙입니다(`tools/release_pack.sh <태그>` → `tools/release_sign.py`). 서명은 매니페스트에 하고 매니페스트가 파일마다 해시를 적으므로, CI가 만든 팩 전체를 보증합니다. 서명 전에 ① 팩 묶음과 매니페스트의 빌드 증명(`gh attestation verify`), ② 파일마다 해시·크기, ③ 같은 커밋으로 이 기기에서 만든 DB와 표마다 행 내용이 같은지를 확인하고, 하나라도 어긋나면 서명하지 않습니다. CI와 이 기기의 팩은 SQLite·타일 바이트가 달라 파일 해시로는 비교할 수 없지만 내용은 같습니다(2026-11-28 확인). 빌드가 매니페스트를 새로 쓰면 옛 서명은 지워지고(`gen_tiles.py`), `tools/sync_pack.sh`는 `build/`에 서명이 있으면 지금 매니페스트와 맞는지 확인해 맞을 때만 앱 자산에 넣고 맞지 않으면 멈춥니다.
+- **앱**: 서명 파일이 있으면 공개 키 가운데 하나로 맞아야 그 판을 씁니다. 맞지 않으면 그 판을 쓰지 않습니다(`PackUnavailable`). 서명하지 않은 개발판은 그대로 씁니다.
 
 | 항목 | 내용 |
 |---|---|
-| `edition` | `YYYY-MM-DD` 또는 같은 날의 고침 판 `YYYY-MM-DD.N` (지금 `2026-11-05.2`). 날짜를 먼저 비교하고, 같으면 N을 수로 비교합니다. N이 없으면 0입니다 (`compareEditions`). 문자열 순서로 비교하지 않습니다 |
+| `edition` | `YYYY-MM-DD` 또는 같은 날의 고침 판 `YYYY-MM-DD.N` (지금 값은 `data/overrides/as_of.json`, 예: `2026-11-05.2`). 날짜를 먼저 비교하고, 같으면 N을 수로 비교합니다. N이 없으면 0입니다 (`compareEditions`). 문자열 순서로 비교하지 않습니다 |
 | `schema_version` | 정수. 앱은 자기가 지원하는 값과 같은 팩만 씁니다 |
 | 최소 앱 버전 | manifest에 둡니다. 미구현 |
 | `files` | 파일마다 `sha256`, `size` |
 | 필수 파일 | `master.sqlite`(배포판은 `pack-master.sqlite`를 이 이름으로), `names.sqlite`, `rail.pmtiles`, `manifest.json` |
-| 선택 파일 | `rail-osm.pmtiles`, `base.pmtiles`, `glyph-*.pbf`. 형식상 선택이지만 배포하는 모든 팩(앱 자산, Releases)에 넣습니다. `rail-osm.pmtiles`가 빠지면 현행 18구간의 선이 사라집니다 |
+| 선택 파일 | `rail-osm.pmtiles`, `base.pmtiles`, `glyph-*.pbf`. 형식상 선택이지만 배포하는 모든 팩(앱 자산, Releases)에 넣습니다. `rail-osm.pmtiles`가 빠지면 현행 5구간의 선이 사라집니다 |
 
 **앱 서명은 첫 공개 전에 정합니다.** 서명이 다른 APK로 갈아타려면 앱을 지워야 하고, 앱을 지우면 기록이 사라집니다. 앱 ID는 `app.noriori`입니다 (확정).
 - 정식 서명 키는 개발자 로컬 보관소에만 두고 CI에 두지 않습니다. CI는 디버그 서명만 합니다.
@@ -618,7 +612,7 @@ README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 �
 | 로그 | 기기 안 파일만. 내보내기는 사용자가 고름 |
 | 제보 | ID가 채워진 GitHub 이슈 링크 |
 | 라이선스 화면 | 데이터 출처 화면(`/settings/sources`)에 출처와 파일별 조건(N02 각 판, N05, OSM 포함) 표시 (§4.0). 오픈소스 라이선스는 설정에서 |
-| 외부 요청 | 수집 도구의 User-Agent 등 외부 요청에 사용자 연락처를 넣지 않음 |
+| 외부 요청 | 수집 도구의 User-Agent 등 외부 요청에 사용자 연락처를 넣지 않음 (DESIGN §9.2와 같은 결정) |
 
 **성능 예산** (DESIGN §12)
 
@@ -677,7 +671,7 @@ README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 �
 
 | 단계 | 항목 |
 |---|---|
-| 뼈대 끝 | CI 네 워크플로 첫 실행, iOS 실기기에서 폴더 책갈피와 백그라운드 쓰기 (사용자 기기 필요) |
+| 뼈대 끝 | CI 워크플로 첫 실행, iOS 실기기에서 폴더 책갈피와 백그라운드 쓰기 (사용자 기기 필요) |
 | 데이터 선행 | §4.3의 남은 일, 판 사이 재해석 도구 (`tools/repro/`가 시작점), 동시 멤버십이 없다는 사실에 맞춰 DESIGN §2.7·§14 문구 정리 |
 | 백업 | `setting`·`change_report`를 백업에 포함. `setting`의 `device_id`는 복원으로 옮기지 않음 |
 | core | 완주율 표시는 내림 (99.5%가 100%로 보이지 않게), 조각 셋 이상, 이설일 경계의 대표 날짜, 재해석에서 방향 없는 닫힌 계통은 `needs_input`, 전체판 CSV의 `resolve_unknown`·`node_explicit`, UUIDv5 입력 열 명시 |
@@ -704,7 +698,7 @@ README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 �
 | **역 선택기** | DESIGN §8.1의 환승·분기 표시는 P0 첫 항목이다. §2.5의 스냅숏과 행 높이 캐시는 측정 뒤 | 東海道本線 벤치 통과 |
 | **P0 완성** | 전국 입력, 방문, 운행 계통, 순환, 수정, 구간 끄기, 되돌리기, 백업과 자동 백업 파일, CSV 내보내기 | DESIGN §6 P0 전부 |
 | **P1** | 열람 전용, 특정 연도, 승계 끔, 타임 슬라이더, 배지, 삭제한 기록, 데이터 내려받기. 사진은 v1.0 밖 | DESIGN §6 P1 전부 |
-| **1950 기준일 데이터** | ① 1950~1969 폐선을 N05와 대조해 넣기 (`tools/gen_n05.py`, 판 2026-11-04.1에서 판정 끝) ② 1950~1969 국철·JR 폐선과 처음부터 사철이던 1950~1999 폐선을 `outside`에서 `normal`로 한 번에 옮겨 분모에 넣기 (판 2026-11-04.2에서 끝) (1969-12-08 이후 국철·JR, 이관 뒤 폐지 구간, 2000년 이후 사철은 이미 `normal`) ③ 열람 전용 범위 재결정 ④ 옛 노면전차망 (§4.3) | ① 옛 노면전차망을 뺀 N05의 폐지 선로 전부에 등급(지도 표시 / 기록 가능 / 열람 전용 / 보류, DESIGN §4.1). ②는 ④를 기다리지 않음 ② 편입 뒤 도달성·불변식 통과, 연도별 분모가 1950부터 채워짐 ③④ 사용자 결정 |
+| **1950 기준일 데이터** | ① 1950~1969 폐선을 N05와 대조해 넣기 (`tools/gen_n05.py`, 판 2026-11-04.1에서 판정 끝) ② 1950~1969 국철·JR 폐선과 처음부터 사철이던 1950~1999 폐선을 `outside`에서 `normal`로 한 번에 옮겨 분모에 넣기 (판 2026-11-04.2에서 끝) (1969-12-08 이후 국철·JR, 이관 뒤 폐지 구간, 2000년 이후 사철은 이미 `normal`) ③ 열람 전용 범위 재결정 (2026-11-05에 정함, DESIGN §4.5) ④ 옛 노면전차망 (끝남, DESIGN §4.4) | ① 옛 노면전차망을 뺀 N05의 폐지 선로 전부에 등급(지도 표시 / 기록 가능 / 열람 전용 / 보류, DESIGN §4.1). ②는 ④를 기다리지 않음 ② 편입 뒤 도달성·불변식 통과, 연도별 분모가 1950부터 채워짐 ③④ 사용자 결정 |
 | **공개 준비** | §4.3의 ID 정리를 끝낸 뒤 시드 동결과 `ids.lock`, 채널별 서명, 나무위키 본수집, 내부 시험 | v1.0 |
 | **이후** | 서버 | 홈 미니PC Docker로 두 기기 동기화 |
 
@@ -721,7 +715,7 @@ README에는 Flutter, Android, iOS 배지가 있습니다(shields.io 아이콘 �
 | 공개·기록 ID는 영어 이름, 내부 ID만 번호. 구별되지 않으면 `_old`, 그래도 겹치면 지역 이름 | 사용자 결정 (2026-11-03·11-04). 내부 ID는 사용자 기록에 저장하지 않음 (§4.2) | 없음 |
 | 출처는 모듈로 나누고 하나씩 끌 수 있게 | 사용자 결정 (2026-11-04). 문제 제기가 오면 그 출처만 빼고 다시 빌드 (§4.0) | 없음 |
 | N05 선형은 `rail.pmtiles`에 함께 | 사용자 결정 (2026-11-04). 별도 타일 파일로 나누지 않고, 출처별 파일(`n05.yaml`)을 빼고 다시 빌드하면 빠지게 함 | 문제 제기가 올 때 |
-| CI 워크플로는 넷, 판 릴리스 검사와 판 번호 검사는 로컬 | 사용자 결정 (2026-11-04) (§4.4) | 사용자가 정함 |
+| CI 워크플로는 여섯(`CI`가 `Data`·`Flutter`·`Android`·`iOS`를 부르고 태그마다 `Release`), 판 릴리스 검사와 판 번호 검사는 로컬 | 사용자 결정 (2026-11-04) (§4.4). 처음 결정(v0.12)은 넷이었고 뒤에 `Release`(v0.13)와 `CI`가 더해짐 | 사용자가 정함 |
 | 쓰기 DB 하나, 원본과 캐시를 한 트랜잭션에 | 두 파일을 맞추는 절차가 통째로 없어짐 | 캐시가 파일을 지나치게 키울 때 |
 | 재계산은 시작할 때만, 한 트랜잭션 | 전체 재해석이 짧음 (§0.2). 배경 빌드와 경쟁이 없음 | 실기기에서 첫 화면이 몇 초 넘게 막힐 때 |
 | 활성 판을 저장하지 않음 | 폴더에서 계산하므로 상태가 어긋날 수 없음 | 없음 |
