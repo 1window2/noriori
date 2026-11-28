@@ -115,13 +115,20 @@ for x in exc:
         if x['edge_key'] not in EKEY:raise SystemExit(f"geometry_exceptions.json의 구간이 없습니다: {x['edge_key']}")
         x['edge']=EKEY[x['edge_key']]
 used=set();allow=collections.defaultdict(set)
+# 폐선 구간이 다른 선로로 돌아간 고리(영업km와 두 역 직선을 모두 크게 넘음). 생성기는 이런 선을 두 역 점 직선으로 바꾸므로 남으면 보정 행이 고리다 (6회차 2026-11-28)
+for e in sorted(edges):
+    if e in cur or e not in geo:continue
+    k=km.get(e);A,B=pos.get(edges[e]['a']),pos.get(edges[e]['b'])
+    if not k or not A or not B:continue
+    l=L(geo[e]['coords']);D=d(A,B)
+    if l>1.4*D+.15 and l>1.2*k+.2:F['detour'].append((e,f"{name(e)} 폐선 영업 {k} 직선 {D:.2f} 길이 {l:.2f} {geo[e]['source']}"))
 bad=[]
 for i,x in enumerate(exc):
     if not str(x.get('reason','')).strip() or not x.get('checks') or not (x.get('edge') or x.get('node')):bad.append(f'예외 {i}: 사유, 검사, 대상 중 빠진 것이 있음')
     for c in x.get('checks',[]):allow[(x.get('edge') or x.get('node'),c)].add(i)
 fails=[]
 tot=collections.Counter()
-for c in ('license','nopos','none','ratio','end','gap','track','spike'):
+for c in ('license','nopos','none','ratio','end','gap','track','spike','detour'):
     seen=set()
     for t,s in F[c]:
         tot[c]+=1

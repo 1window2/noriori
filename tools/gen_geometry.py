@@ -2,7 +2,7 @@
 # 선로 원천에서 edge별 선형을 찾는다. N02 최신판부터 옛 판 순서로, 없으면 OSM에서 찾는다
 # OSM 유래 선형은 geometry/osm.yaml에만 쓴다. ODbL이라 master.sqlite, rail.pmtiles와 섞지 않는다
 # 역 좌표가 보간값인 노드는 선로 위 km 비율 지점으로 옮긴다. OSM 경로로는 옮기지 않는다
-import sys,os,re,json,struct,zipfile,math,heapq,collections,gzip,sqlite3
+import sys,os,re,json,struct,zipfile,math,heapq,collections,gzip,sqlite3,glob
 sys.path.insert(0,os.path.dirname(os.path.abspath(__file__)))
 from lib import *
 Z=os.path.join(IMP,'n02')
@@ -145,6 +145,23 @@ km={k['edge']:k['km'] for k in load('km')}
 # 현행 여부와 폐지 연도는 앞서 돈 compile의 결과로 본다
 _db=sqlite3.connect(os.path.join(BUILD,'master.sqlite'))
 CUR={r[0] for r in _db.execute("select distinct edge_id from edge_attr where valid_to='ongoing'")}
+_CURN={x for e in edges if e['id'] in CUR for x in (e['a'],e['b'])}
+# 사람이 고친 좌표(source_patch/positions의 replace, node_fix의 lat/lon)는 컴파일에서 얹힌다. 선을 찾고 자르는 데는 고친 좌표를 먼저 쓴다.
+# 그러지 않으면 고치기 전 자리에서 선이 끊긴다(東川線: N05 역 이름이 한 역씩 밀려 좌표만 고쳤는데 선 끝은 옛 자리, 6회차 2026-11-28).
+# 원천 좌표 파일(positions.yaml)에는 원래 값을 쓴다(보정 행이 계속 원본 위에 얹히게).
+# 현행 구간에 닿는 노드는 빼다: 현행 선형은 N02 선로를 따르고 역 자리는 승강장 층(§7.5)이 맡는다. 거기서 자르면 되돌아가는 꺾임이 생긴다(豊橋 東田本線 札木)
+POS_ORIG={}
+def _fixpos(n_,lo_,la_):
+    if n_ not in pos or n_ in _CURN or pos[n_].get('lat') is None or lo_ is None or la_ is None:return
+    POS_ORIG.setdefault(n_,dict(pos[n_]));pos[n_]=dict(pos[n_],lon=lo_,lat=la_)
+for _f in sorted(glob.glob(os.path.join(ROOT,'data','overrides','source_patch','positions','*.yaml'))):
+    for _l in open(_f,encoding='utf-8'):
+        if _l.startswith('- '):
+            _x=json.loads(_l[2:])
+            if _x.get('patch')=='replace':_fixpos(_x['node'],_x.get('lon'),_x.get('lat'))
+_nf0=json.load(open(os.path.join(ROOT,'data','overrides','node_fix.json'),encoding='utf-8'))
+for _n,_v in (_nf0.get('rows',_nf0)).items():
+    if isinstance(_v,dict):_fixpos(_n,_v.get('lon'),_v.get('lat'))
 CLOSEY={}
 # 원문이 범위일 수 있어 상한 칸으로 본다
 # 운휴로 끝난 칸(운휴 중 이설해 계승한 칸은 법적 폐지일까지 운휴 행이 남는다, 5회차 2026-11-24)은 마지막 영업 행이 끝난 해다. 선형은 열차가 다닌 때의 선로여야 한다
@@ -180,6 +197,12 @@ for x_ in json.load(open(os.path.join(ROOT,'data','overrides','node_split.json')
         if not ls_ or not ls_<=mv_:continue
         for k_ in ('a','b'):
             if e[k_]==n_:e[k_]=new_
+# 우회 선 판정(아래 DETOUR)은 처음 좌표로 잰다. 사슬 탐색은 노드 좌표를 선로 위로 옮기고, 사람이 고친 좌표(node_fix)는 컴파일에서야 얹힌다
+_NF=json.load(open(os.path.join(ROOT,'data','overrides','node_fix.json'),encoding='utf-8'))
+_NF=_NF.get('rows',_NF)
+POS0={n_:(p_['lon'],p_['lat']) for n_,p_ in pos.items() if p_.get('lat') is not None}
+for n_,v_ in _NF.items():
+    if isinstance(v_,dict) and v_.get('lat') is not None and v_.get('lon') is not None:POS0[n_]=(v_['lon'],v_['lat'])
 MOVED=json.load(open(os.path.join(ROOT,'data','overrides','moved.json'),encoding='utf-8'))
 def seglen(a,b):
     p=math.radians((a[1]+b[1])/2)
@@ -769,6 +792,21 @@ for eid in sorted(rows):
     A,B=where(e['a']),where(e['b']);pl=r.get('plat','')
     if A and 'a' not in pl and .3<seglen(c[0],A)<=lim:c.insert(0,[round(A[0],5),round(A[1],5)]);st['tostation']+=1
     if B and 'b' not in pl and .3<seglen(c[-1],B)<=lim:c.append([round(B[0],5),round(B[1],5)]);st['tostation']+=1
+# 폐선 구간의 선이 영업km와 두 역 사이 직선거리를 모두 크게 넘으면(다른 선로로 돌아간 고리) 두 역 점을 곧게 잇는다.
+# 선이 없는 구간은 지도에 그려지지 않아 끊겨 보이므로 지우지 않는다. 현행 구간은 선형 검사(check_geometry)가 따로 본다.
+# 기준은 선형 검사의 km 허용(1.2K+0.2)과 직선 대비 1.4배+0.15 km를 함께 넘을 때다 (秋田市電 0.1 km 칸에 2 km 고리, 6회차 2026-11-28)
+DETOUR=[]
+def detour(c,k,A,B):
+    D=seglen(A,B);L=pathlen(c)
+    return L>1.4*D+.15 and k and L>1.2*k+.2,round(L,3),round(D,3)
+for eid in sorted(rows):
+    if eid in CUR:continue
+    e=ids[eid];A,B=POS0.get(e['a']),POS0.get(e['b'])
+    if not A or not B:continue
+    bad,L,D=detour(rows[eid]['coords'],km.get(eid),A,B)
+    if not bad:continue
+    rows[eid]['coords']=[[round(A[0],5),round(A[1],5)],[round(B[0],5),round(B[1],5)]];rows[eid].pop('plat',None);rows[eid]['match']='straight'
+    DETOUR.append([eid,km.get(eid),L,D]);st['detour_straight']+=1
 # 자동 탐색이 다른 선로를 고른 구간. OSM 선로를 손으로 따라간 값이다
 # 키는 노선|앞 노드|뒤 노드다. edge 번호는 노선이 늘면 밀린다
 EKEY={f"{e['seed_line']}|{e['a']}|{e['b']}":e['id'] for e in ids.values()}
@@ -787,9 +825,9 @@ dump('geometry/osm.yaml',[x for x in out if x['source']=='osm'],'OpenStreetMap �
 if PU:
     for p in pos.values():
         p.pop('_on',None)
-    dump('positions/positions.yaml',[p for p in pos.values() if p['node'] not in SPLIT_NEW],'노드 좌표')
+    dump('positions/positions.yaml',[POS_ORIG.get(p['node'],p) for p in pos.values() if p['node'] not in SPLIT_NEW],'노드 좌표')
 # gen_source가 data/source를 지우고 다시 만들므로 여기서 쓴다
 with open(os.path.join(SRC,'geometry','LICENSE.md'),'w',encoding='utf-8') as o:o.write(LICENSE)
 os.makedirs(CAND,exist_ok=True)
-json.dump(dict(stats=st,positions=PU,meta=meta,chain_fail=CHAINFAIL),open(os.path.join(CAND,'geometry_report.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0,sort_keys=True)
+json.dump(dict(stats=st,positions=PU,meta=meta,chain_fail=CHAINFAIL,detour_straight=DETOUR),open(os.path.join(CAND,'geometry_report.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=0,sort_keys=True)
 print(dict(st),len(rows),len(edges))
