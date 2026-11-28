@@ -368,7 +368,7 @@
 | A:527 | 팩 스키마 2로 끝낸 것 | 구현됨 | tools/gen_tiles.py:58, 위 행들로 확인. edge_pref 제외 |
 | A:547 | trigram 안 씀. 가나는 히라가나, ヶ류는 한 형태 | 구현됨 | core/name/name_lookup.dart:38-50, names.search tokenize unicode61 |
 | A:551 | 워크플로 여섯. `CI`가 PR·main 푸시마다 `Data`를 한 번 부르고 그 팩으로 `Flutter`·`Android`·`iOS`, 넷 모두 PR 체크 | 구현됨 | .github/workflows/ci.yml:48-77 (workflow_call) |
-| A:558 | 브랜치 푸시는 PR로만, 같은 PR의 앞 실행은 멈춤, iOS는 private이면 main 푸시에서만 | 구현됨 | ci.yml:48-59,73-77 |
+| A:558 | 브랜치 푸시는 PR로만, 같은 PR의 앞 실행은 멈춤, iOS는 private이면 main 푸시에서만(저장소가 공개라 지금은 PR에서도 돎) | 구현됨 | ci.yml:31-35 |
 | A:560 | Flutter: 같은 실행의 팩으로 생성 코드 diff(drift, slang), `flutter analyze`, core·store·앱 시험 | 구현됨 | flutter.yml:19-34 |
 | A:559 | Data: 개인 정보 검사, 의존 방향, all.sh, sync_pack, build와 앱 자산 팩을 3일 보관 | 구현됨 | data.yml:30-44 |
 | A:559 | Data: all.sh 안의 컴파일 → 글리프·타일 → verify → check_geometry → check_ids → core_fixture, appsim·invariants | 구현됨 | tools/all.sh:26-41. 오류면 멈춤: compile.py:849, verify.py:71,87, check_ids.py:70, appsim.py:1710, invariants.py:205. 문서는 core_fixture를 check_ids 바로 뒤에 적었고 all.sh는 appsim·invariants 다음에 둠 (결과 차이 없음) |
@@ -380,7 +380,7 @@
 | A:563 | Release 1: 직전 태그 뒤 data/source·overrides·sources.json이 바뀌었는데 edition이 그대로면 멈춤 | 구현됨 | release.yml:38-45 |
 | A:563 | Release 2: Data로 팩을 만들고 Flutter 시험을 통과한 뒤에만 서명 없는 IPA를 Releases에 | 구현됨 | release.yml:47-101 (ios는 check·flutter 뒤) |
 | A:563 | Release 3: 모든 릴리스의 IPA로 AltStore·SideStore 소스, `releases/latest/download/altstore.json` 고정 | 구현됨 | release.yml:102-109, tools/altstore_source.py, distribution/altstore/meta.json. 저장소가 private인 동안은 소스를 밖에서 읽을 수 없음 |
-| A:565 | README에 Flutter·Android·iOS 배지 (shields.io), Data는 배지 없음 | 부분 | README.md:3. 배지는 flutter.yml·android.yml·ios.yml을 가리키는데 이 셋은 이제 `workflow_call`로만 돌아 자기 실행이 없음. 저장소가 private이라 지금은 어느 쪽이든 상태가 안 보임 (공개 뒤 확인) |
+| A:565 | README에 Flutter·Android·iOS 배지 (shields.io), Data는 배지 없음 | 부분 | README.md:3. 배지는 flutter.yml·android.yml·ios.yml을 가리키는데 이 셋은 이제 `workflow_call`로만 돌아 자기 실행이 없음. 배지는 이제 main 마지막 커밋의 check-runs를 읽음(README.md:3, ARCHITECTURE §4.4). 저장소 공개(2026-11-26) 뒤 표시는 아직 이 표에서 재판정하지 않음 |
 | A:570 | 판 릴리스 절차 1: 내용이 바뀌면 edition을 올림, Release가 다시 확인 | 구현됨 | data/overrides/as_of.json `2026-11-05.2`, release.yml:38-45 |
 | A:571 | 판 릴리스 절차 2: all.sh가 컴파일 오류, verify, check_geometry, check_ids, appsim FAIL, invariants 위반에서 멈춤 | 구현됨 | tools/all.sh:5 `set -eo pipefail`, A:559 행의 종료 지점 |
 | A:573 | 판 릴리스 절차 4: sync_pack.sh의 check_edition이 같은 판의 내용 변경을 멈춤 | 구현됨 | tools/sync_pack.sh, tools/check_edition.py |
