@@ -2500,7 +2500,17 @@ def pick_key(c,s):
     # 묶음 안 다른 노드끼리는 상대가 지나가는 노드를 먼저 고른다 (東西線 仙台: 仙石線은 あおば通에서 끝나지만 仙台를 지나감, 2회차 종합 K05)
     # 묶음 안 다른 노드끼리는 환승 근거가 센 쪽(같은 노드 > 같은 group > 문서·같은 이름·역앞·150 m > 손 표 간접 환승)을 먼저, 그다음 상대가 지나가는 노드, 가까운 노드 순
     # (阪神 野田: 千日前線은 野田阪神(문서·같은 건물)이고 玉川(손 표 537 m)가 아니다, 3회차 kinki_2-012)
-    return (is_cur(o)!=is_cur(s),m!=n,_brank(n,m),m!=n and not(pr[0] and nx[0]),round(hav_km(n,m),3),not(pr[0] and nx[0]),o['route_id'],o['seq'])
+    # 같은 근거 등급이면 이름이 같은 노드나 그 역의 「駅前」 정류장을 먼저 고른다(阪神 本線 野田의 北大阪線 상대는 같은 이름 野田 정류장이지 지나가는 海老江가 아니다.
+    # JR 伊野의 とさでん 상대는 역 앞 伊野駅前이다, 6회차 2026-11-28).
+    # 仙台(K05)은 지나가는 노드가 같은 이름 역이라 그대로다
+    return (is_cur(o)!=is_cur(s),m!=n,_brank(n,m),m!=n and _ja_base(m) not in (_ja_base(n),(_ja_base(n) or '')+'駅前'),m!=n and not(pr[0] and nx[0]),round(hav_km(n,m),3),not(pr[0] and nx[0]),o['route_id'],o['seq'])
+_JAB={}
+def _ja_base(x):
+    """노드의 기간 없는 일본어 이름 (환승 상대 고르기용)"""
+    if not _JAB:
+        for y_ in names:
+            if y_['entity_type']=='node' and y_['lang']=='ja' and not y_.get('line') and not y_.get('valid_from') and not y_.get('valid_to'):_JAB.setdefault(y_['id'],y_['text'])
+    return _JAB.get(x)
 def pick(cand,s):
     """같은 노선의 후보 정차 행 중 표시할 하나. 오늘 상태가 같은 것, 가까운 것, 지나가는 것 순"""
     n=s['node_id']
