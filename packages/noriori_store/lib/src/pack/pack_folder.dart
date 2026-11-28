@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 
@@ -7,10 +8,14 @@ import 'package:path/path.dart' as p;
 
 import '../db/connection.dart';
 import 'pack_manifest.dart';
+import 'pack_signature.dart';
 
 /// 앱에 든 팩. 앱이 번들에서 읽어 주므로 store는 Flutter를 모른다.
 abstract interface class PackAssets {
   Future<String> manifestText();
+
+  /// 매니페스트 서명(`manifest.json.sig`). 서명하지 않은 개발판에는 없다.
+  Future<String?> signatureText();
   Future<Uint8List> fileBytes(String name);
 }
 
@@ -137,6 +142,12 @@ final class PackFolder {
   Future<InstalledPack> _copyFromAssets(PackManifest manifest) async {
     final target = Directory(p.join(root.path, manifest.edition));
     if (target.existsSync()) return InstalledPack(target, manifest);
+    // 서명이 있으면 앱에 든 공개 키 가운데 하나로 맞아야 쓴다. 서명 없는 개발판은 그대로 쓴다 (tools/sign_manifest.py)
+    final text = await assets.manifestText();
+    final signature = await assets.signatureText();
+    if (signature != null && manifestPublicKeys.isNotEmpty && !await manifestSignatureValid(utf8.encode(text), signature)) {
+      throw const PackUnavailable('매니페스트 서명이 맞지 않다');
+    }
     final temp = Directory(p.join(root.path, '$_tempPrefix${manifest.edition}'))
       ..createSync();
     for (final MapEntry(key: name, value: expected) in manifest.files.entries) {
@@ -147,8 +158,8 @@ final class PackFolder {
       }
       File(p.join(temp.path, name)).writeAsBytesSync(bytes, flush: true);
     }
-    final text = await assets.manifestText();
     File(p.join(temp.path, PackManifest.fileName)).writeAsStringSync(text, flush: true);
+    if (signature != null) File(p.join(temp.path, '${PackManifest.fileName}.sig')).writeAsStringSync(signature, flush: true);
     temp.renameSync(target.path);
     return InstalledPack(target, manifest);
   }

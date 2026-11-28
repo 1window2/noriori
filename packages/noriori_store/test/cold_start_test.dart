@@ -573,6 +573,10 @@ final class _FixedManifest implements PackAssets {
 
   @override
   Future<String> manifestText() async => manifest;
+
+
+  @override
+  Future<String?> signatureText() async => null;
 }
 
 /// 두 번째 기록을 쓰다가 저장이 실패한다.

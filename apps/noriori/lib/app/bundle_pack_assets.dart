@@ -10,6 +10,16 @@ final class BundlePackAssets implements PackAssets {
   @override
   Future<String> manifestText() => rootBundle.loadString('$_root/${PackManifest.fileName}');
 
+  /// 서명 파일은 서명한 판에만 있다. 없으면 null
+  @override
+  Future<String?> signatureText() async {
+    try {
+      return await rootBundle.loadString('$_root/${PackManifest.fileName}.sig');
+    } on Object {
+      return null;
+    }
+  }
+
   @override
   Future<Uint8List> fileBytes(String name) async {
     final data = await rootBundle.load('$_root/$name');

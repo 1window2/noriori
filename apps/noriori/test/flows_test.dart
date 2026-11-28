@@ -37,6 +37,9 @@ final class _FileAssets implements PackAssets {
   Future<String> manifestText() => File('assets/pack/manifest.json').readAsString();
 
   @override
+  Future<String?> signatureText() async => null;
+
+  @override
   Future<Uint8List> fileBytes(String name) => File('assets/pack/$name').readAsBytes();
 }
 

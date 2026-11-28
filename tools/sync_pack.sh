@@ -8,6 +8,9 @@ python3 -I tools/check_edition.py
 # 옛 판의 글리프가 남으면 매니페스트에 없는 파일이 앱에 들어간다
 rm -f apps/noriori/assets/pack/glyph-*.pbf
 cp build/manifest.json build/names.sqlite build/rail.pmtiles apps/noriori/assets/pack/
+# 매니페스트 서명: 지금 매니페스트와 맞을 때만 넣는다. 옛 서명이 남으면 앱이 판을 거부한다 (tools/sign_manifest.py)
+rm -f apps/noriori/assets/pack/manifest.json.sig
+if [ -f build/manifest.json.sig ]; then python3 -I tools/sign_manifest.py verify build && cp build/manifest.json.sig apps/noriori/assets/pack/; fi
 # 앱이 읽지 않는 표를 뺀 판이다
 cp build/pack-master.sqlite apps/noriori/assets/pack/master.sqlite
 # 기본 배경과 역 이름 글리프. 지도가 인터넷 없이 그려지는 데 필요하다
