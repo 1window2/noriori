@@ -82,6 +82,12 @@ void main() {
       expect(searchQuery('Mtsu'), '"m t s u"');
       expect(searchQuery('Mt.'), '"m t ."');
     });
+
+    test('Mt. 검색어의 접은 꼴은 옛 이름 순위에도 같은 산 꼬리를 쓴다', () {
+      expect(searchFoldedVariants('Mt. Takao'), contains('t a k a o s a n'));
+      expect(searchFoldedVariants('新宿'), ['新 宿']);
+      expect(searchFoldedVariants('  '), isEmpty);
+    });
   });
 
   group('완주율', () {

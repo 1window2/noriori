@@ -17,9 +17,10 @@ def run(*a,**k):
     r=subprocess.run(a,capture_output=True,text=True,**k)
     if r.returncode:raise SystemExit(f'실패: {" ".join(a)}\n{(r.stderr or r.stdout)[-600:]}')
     return r.stdout
-def repo():
-    u=run('git','-C',ROOT,'remote','get-url','origin').strip()
-    return u.split('github.com')[-1].lstrip(':/').removesuffix('.git')
+# 빌드 증명은 이 저장소의 Release 워크플로가 그 태그로 GitHub 호스트 러너에서 만든 것만 받는다. 저장소는 로컬 origin이 아니라 상수다(포크를 가리켜도 속지 않게)
+REPO='1window2/noriori'
+WORKFLOW=f'{REPO}/.github/workflows/release.yml'
+def repo():return REPO
 def sha(p):
     h=hashlib.sha256()
     with open(p,'rb') as f:
@@ -27,7 +28,9 @@ def sha(p):
     return h.hexdigest()
 def tables(db):
     c=sqlite3.connect(f'file:{db}?mode=ro',uri=True);out={}
+    # FTS5 숨은 표(*_data·*_idx·*_docsize·*_config)는 SQLite 판과 병합 시점에 따라 바이트가 달라 내용 비교에서 뺀다. 검색 내용은 *_content가 담는다
     for (t,) in c.execute("select name from sqlite_master where type='table' and name not like 'sqlite_%' order by name"):
+        if t.endswith(('_data','_idx','_docsize','_config')) and c.execute("select 1 from sqlite_master where type='table' and name=?",(t.rsplit('_',1)[0],)).fetchone():continue
         cols=[r[1] for r in c.execute(f'pragma table_info("{t}")')]
         h=hashlib.sha256();n=0
         for row in c.execute(f'select * from "{t}" order by '+','.join(f'"{x}"' for x in cols)):h.update(repr(row).encode());n+=1
@@ -36,7 +39,7 @@ def tables(db):
 def main(a):
     if len(a)<2:raise SystemExit(open(__file__,encoding='utf-8').read().split('\nimport')[0])
     tag,key=a[0],a[1];upload='--upload' in a;into='--into-app' in a
-    if not os.path.isfile(key):raise SystemExit(f'개인 키가 없습니다: {key}')
+    if not os.path.isfile(key):raise SystemExit('개인 키 파일이 없습니다(NORIORI_MANIFEST_KEY 경로를 확인하세요)')
     # 3번 대조의 기준: build/가 그 태그 커밋에서 만든 판이어야 한다
     head=run('git','-C',ROOT,'rev-parse','HEAD').strip();tc=run('git','-C',ROOT,'rev-parse',tag+'^{commit}').strip()
     if head!=tc:raise SystemExit(f'지금 체크아웃({head[:8]})이 태그 {tag}({tc[:8]})가 아닙니다. 태그를 체크아웃하고 tools/all.sh를 돌린 뒤 하세요')
@@ -47,7 +50,7 @@ def main(a):
     if len(zips)!=1:raise SystemExit(f'릴리스 {tag}에 팩 묶음이 하나가 아닙니다: {zips}')
     man=os.path.join(d,'manifest.json')
     # 1. 빌드 증명
-    for f in (zips[0],man):run('gh','attestation','verify',f,'-R',repo())
+    for f in (zips[0],man):run('gh','attestation','verify',f,'-R',repo(),'--signer-workflow',WORKFLOW,'--source-ref',f'refs/tags/{tag}','--deny-self-hosted-runners')
     # 2. 파일 해시
     pk=os.path.join(d,'pack');zipfile.ZipFile(zips[0]).extractall(pk)
     if open(os.path.join(pk,'manifest.json'),'rb').read()!=open(man,'rb').read():raise SystemExit('묶음 안 매니페스트가 따로 올린 매니페스트와 다릅니다')
@@ -66,9 +69,11 @@ def main(a):
     sign_manifest.sign(key,d)
     print(f'서명함: {man}.sig (판 {m["edition"]}, 빌드 증명·해시·DB 내용 확인)')
     if into:
-        dst=os.path.join(ROOT,'apps','noriori','assets','pack')
-        for f in glob.glob(os.path.join(dst,'*')):os.remove(f)
-        for f in os.listdir(pk):shutil.copy(os.path.join(pk,f),dst)
+        dst=os.path.join(ROOT,'apps','noriori','assets','pack');os.makedirs(dst,exist_ok=True)
+        for f in glob.glob(os.path.join(dst,'*')):
+            if os.path.isfile(f):os.remove(f)
+        # 매니페스트가 적은 파일(해시 확인함)과 매니페스트만 넣는다
+        for f in list(m['files'])+['manifest.json']:shutil.copy(os.path.join(pk,f),os.path.join(dst,f))
         shutil.copy(man+'.sig',dst);sign_manifest.verify(dst);print('앱 자산에 릴리스 팩과 서명을 넣음')
     if upload:
         run('gh','release','upload',tag,man+'.sig','-R',repo(),'--clobber');print(f'릴리스 {tag}에 manifest.json.sig를 올림')

@@ -12,6 +12,9 @@ def load_official():
     p_=os.path.join(ROOT,'data','overrides','en_official.json')
     if not os.path.exists(p_):return {}
     rows=json.load(open(p_,encoding='utf-8'))['rows']
+    # 표기가 여럿인 행의 en은 규칙으로 고른 꼴과 같아야 한다. 어긋나면 어느 쪽이 맞는지 사람이 본다
+    bad=[k for k,v in rows.items() if v.get('forms') and v.get('en') and norm_official(v['en'])!=pick_official(v['forms'])]
+    if bad:raise SystemExit(f'en_official.json: en이 forms에서 규칙으로 고른 꼴과 다름 {bad}')
     return {k:dict(v,en=norm_official(pick_official(v['forms']) if v.get('forms') else v['en'])) for k,v in rows.items()}
 
 def pick_official(forms):

@@ -12,6 +12,16 @@ KEYS=sorted(glob.glob(os.path.join(ROOT,'data','keys','manifest-ed25519-*.pub.pe
 def openssl(*a,inp=None):
     r=subprocess.run(['openssl',*a],input=inp,capture_output=True)
     return r.returncode,r.stdout,r.stderr
+def check_openssl():
+    """ed25519 서명·확인은 OpenSSL 3 이상만 된다. macOS 기본 LibreSSL은 ed25519 키를 읽지 못해 원인이 틀린 실패를 낸다"""
+    c,out,_=openssl('version');v=out.decode().split()
+    if c or len(v)<2 or v[0]!='OpenSSL' or int(v[1].split('.')[0])<3:raise SystemExit(f'OpenSSL 3 이상이 PATH 앞에 있어야 합니다(지금: {out.decode().strip() or "없음"})')
+def masked(err,*paths):
+    """오류 출력에서 키 파일 경로를 가린다"""
+    t=err.decode(errors='replace')
+    for p_ in paths:
+        if p_:t=t.replace(p_,'<키 파일>')
+    return t[:200]
 def raw_pub(pem):
     """공개 키 PEM의 원시 32바이트. DER SubjectPublicKeyInfo의 마지막 32바이트다"""
     c,out,err=openssl('pkey','-pubin','-in',pem,'-outform','DER')
@@ -27,6 +37,7 @@ def verify(folder):
     man=os.path.join(folder,'manifest.json');sigp=man+'.sig'
     if not os.path.exists(sigp):print('서명 없음',sigp);return 0
     if not KEYS:raise SystemExit('저장소에 공개 키가 없습니다(data/keys)')
+    check_openssl()
     data=open(man,'rb').read()
     try:sig=base64.b64decode(open(sigp,encoding='ascii').read().strip(),validate=True)
     except Exception:raise SystemExit(f'서명 파일 꼴이 틀렸습니다: {sigp}')
@@ -37,8 +48,10 @@ def verify(folder):
 def sign(key,folder):
     man=os.path.join(folder,'manifest.json')
     if not os.path.exists(man):raise SystemExit(f'매니페스트가 없습니다: {man}')
+    if not KEYS:raise SystemExit('저장소에 공개 키가 없습니다(data/keys)')
+    check_openssl()
     c,out,err=openssl('pkeyutl','-sign','-inkey',key,'-rawin','-in',man)
-    if c or len(out)!=64:raise SystemExit(f'서명하지 못했습니다: {err.decode()[:200]}')
+    if c or len(out)!=64:raise SystemExit(f'서명하지 못했습니다: {masked(err,key)}')
     open(man+'.sig','w',encoding='ascii').write(base64.b64encode(out).decode()+'\n')
     # 저장소 공개 키 가운데 하나로 맞아야 한다. 다른 키로 서명한 파일을 내보내지 않는다
     try:verify(folder)

@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:noriori_store/noriori_store.dart';
 
@@ -10,12 +11,13 @@ final class BundlePackAssets implements PackAssets {
   @override
   Future<String> manifestText() => rootBundle.loadString('$_root/${PackManifest.fileName}');
 
-  /// 서명 파일은 서명한 판에만 있다. 없으면 null
+  /// 서명 파일은 서명한 판에만 있다. 자산이 없을 때(FlutterError)만 null이고, 다른 오류는 그대로 올린다.
+  /// 읽다가 난 오류를 「서명 없음」으로 바꾸면 서명 확인을 건너뛰게 된다
   @override
   Future<String?> signatureText() async {
     try {
       return await rootBundle.loadString('$_root/${PackManifest.fileName}.sig');
-    } on Object {
+    } on FlutterError {
       return null;
     }
   }
