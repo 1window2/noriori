@@ -1,0 +1,537 @@
+id,name_ja,reading,current_en,current_en_source,lines
+n_abozaki,阿母崎,あぼざき,Abozaki,wikidata,島原鉄道 島原鉄道線
+n_aburatsu,油津,あぶらつ,Aburatsu,wikidata,JR九州 日南線
+n_afurijinja,阿夫利神社,あふりじんじゃ,Afurijinja,rule,大山観光電鉄 大山観光電鉄大山鋼索線
+n_aino_shimabara,愛野,あいの,Aino,wikidata,島原鉄道 島原鉄道線
+n_akaike_nagaragawa,赤池,あかいけ,Akaike,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_akaiwaguchi,赤岩口,あかいわぐち,Akaiwaguchi,rule,豊橋鉄道 豊橋鉄道東田本線
+n_akasaka_jomo,赤坂,あかさか,Akasaka,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_akechi_akechi,明智,あけち,Akechi,wikidata,日本国有鉄道 明知線 / 明知鉄道 明知鉄道明知線
+n_amatsu,天津,あまつ,Amatsu,wikidata,JR九州 日豊本線
+n_aoidake,青井岳,あおいだけ,Aoidake,wikidata,JR九州 日豊本線
+n_arato,荒砥,あらと,Arato,wikidata,JR東日本 長井線 / 山形鉄道 山形鉄道フラワー長井線
+n_araya_jomo,新屋,あらや,Araya,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_ariakeyue,有明湯江,ありあけゆえ,Ariakeyue,wikidata,島原鉄道 島原鉄道線
+n_asagiri_kumagawa,あさぎり,あさぎり,Asagiri,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_asahi_otsuka,朝日大塚,あさひおおつか,Asahi Otsuka,wikidata,近江鉄道 近江鉄道本線
+n_asahigaoka_ichibata,朝日ヶ丘,あさひがおか,Asahigaoka,wikidata,一畑電気鉄道 一畑電車北松江線
+n_asahino,朝日野,あさひの,Asahino,wikidata,近江鉄道 近江鉄道本線
+n_ashino_koen,芦野公園,あしのこうえん,Ashino-Koen,wikidata,津軽鉄道 津軽鉄道線
+n_aso_shimodajo,阿蘇下田城,あそしもだじょう,Aso-Shimodajo,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線 / 日本国有鉄道 高森線
+n_aso_shirakawa,阿蘇白川,あそしらかわ,Aso-Shirakawa,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線 / 日本国有鉄道 高森線
+n_ayame_koen,あやめ公園,あやめこうえん,Ayame-Koen,wikidata,山形鉄道 山形鉄道フラワー長井線
+n_ayukawa_yuri_kogen,鮎川,あゆかわ,Ayukawa,wikidata,日本国有鉄道 矢島線 / 由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_azamui,浅海井,あざむい,Azamui,wikidata,JR九州 日豊本線
+n_azuma,吾妻,あづま,Azuma,wikidata,島原鉄道 島原鉄道線
+n_azumada,東田,あずまだ,Azumada,rule,豊橋鉄道 豊橋鉄道東田本線
+n_azumadasakaue,東田坂上,あずまださかうえ,Azumadasakaue,rule,豊橋鉄道 豊橋鉄道東田本線
+n_bayside,ベイサイド・ステーション,べいさいど・すてーしょん,Bayside,wikidata,舞浜リゾートライン 舞浜リゾートラインディズニーリゾートライン
+n_bell_mae,ベル前,べるまえ,Bell-mae,rule,福井鉄道 福井鉄道福武線
+n_bijutsukantoshokanmae,美術館図書館前,びじゅつかんとしょかんまえ,Bijutsukantoshokan-mae,rule,福島交通 福島交通飯坂線
+n_bishamondai,毘沙門台,びしゃもんだい,Bishamondai,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_bitchu_kurese,備中呉妹,びっちゅうくれせ,Bitchu-Kurese,wikidata,井原鉄道 井原鉄道井原線
+n_bungo_kiyokawa,豊後清川,ぶんごきよかわ,Bungo-Kiyokawa,wikidata,JR九州 豊肥本線
+n_bungo_miyoshi,豊後三芳,ぶんごみよし,Bungo-Miyoshi,wikidata,JR九州 久大本線
+n_bungo_nakagawa,豊後中川,ぶんごなかがわ,Bungo-Nakagawa,wikidata,JR九州 久大本線
+n_bungo_ogi,豊後荻,ぶんごおぎ,Bungo-Ogi,wikidata,JR九州 豊肥本線
+n_buzen_okuma,豊前大熊,ぶぜんおおくま,Buzen Okuma,wikidata,JR九州 糸田線 / 平成筑豊鉄道 平成筑豊鉄道糸田線
+n_chiku_center,地区センター,ちくせんたー,Chiku center,wikidata,山万 山万ユーカリが丘線
+n_chikugo_kusano,筑後草野,ちくごくさの,Chikugo-Kusano,wikidata,JR九州 久大本線
+n_chikuho_nakama,筑豊中間,ちくほうなかま,Chikuho-Nakama,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_chokoku_no_mori,彫刻の森,ちょうこくのもり,Chokoku-no-Mori,wikidata,小田急箱根 箱根登山鉄道鉄道線
+n_chokushi,勅旨,ちょくし,Chokushi,wikidata,JR西日本 信楽線 / 信楽高原鐵道 信楽高原鐵道信楽線
+n_chorakuji,長楽寺,ちょうらくじ,Chorakuji,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_choyo,長陽,ちょうよう,Choyo,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線 / 日本国有鉄道 高森線
+n_chugakko,中学校,ちゅうがっこう,Chugakko,wikidata,山万 山万ユーカリが丘線
+n_chuo_maebashi,中央前橋,ちゅうおうまえばし,Chuo-Maebashi,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_daigaku_mae,大学前,だいがくまえ,Daigaku-mae,rule,近江鉄道 近江鉄道本線
+n_daito,大塔,だいとう,Daito,wikidata,JR九州 佐世保線
+n_ebata,江端,えばた,Ebata,wikidata,福井鉄道 福井鉄道福武線
+n_ebino,えびの,えびの,Ebino,wikidata,JR九州 吉都線
+n_ebino_iino,えびの飯野,えびのいいの,Ebino Iino,wikidata,JR九州 吉都線
+n_ebino_uwae,えびの上江,えびのうわえ,Ebino Uwae,wikidata,JR九州 吉都線
+n_echigawa,愛知川,えちがわ,Echigawa,wikidata,近江鉄道 近江鉄道本線
+n_echigo_oshiage_hisuikaigan,えちご押上ひすい海岸,えちごおしあげひすいかいがん,Echigo-Oshiage-Hisuikaigan,wikidata,えちごトキめき鉄道 えちごトキめき鉄道日本海ひすいライン
+n_einomaru,永犬丸,えいのまる,Einomaru,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_ekimae,駅前,えきまえ,Ekimae,rule,豊橋鉄道 豊橋鉄道東田本線
+n_emukae_shikamachi,江迎鹿町,えむかえしかまち,Emukae-Shikamachi,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_fuchu_tango_kairiku_kotsu,府中,ふちゅう,Fuchu,wikidata,丹後海陸交通 丹後海陸交通天橋立鋼索鉄道
+n_fujitana,藤棚,ふじたな,Fujitana,wikidata,平成筑豊鉄道 平成筑豊鉄道伊田線
+n_fujiyamashita,富士山下,ふじやました,Fujiyamashita,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_fukado,深戸,ふかど,Fukado,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_fukui_mizushima_rinkai,福井,ふくい,Fukui,wikidata,水島臨海鉄道 水島臨海鉄道水島本線
+n_fukuno_nagaragawa,福野,ふくの,Fukuno,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_furuichi_hiroshima_rapid_transit,古市,ふるいち,Furuichi,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_genjii_no_mori,源じいの森,げんじいのもり,Genjii No Mori,wikidata,平成筑豊鉄道 平成筑豊鉄道田川線
+n_gion_shinbashi_kita,祇園新橋北,ぎおんしんばしきた,Gion-shinbashi-kita,wikipedia,広島高速交通 広島高速交通広島新交通1号線
+n_gokasho,五箇荘,ごかしょう,Gokasho,wikidata,近江鉄道 近江鉄道本線
+n_gonokomae,五農校前,ごのうこうまえ,Gonoko-mae,rule,津軽鉄道 津軽鉄道線
+n_goryo,御領,ごりょう,Goryo,wikidata,JR九州 指宿枕崎線
+n_goryo_ibara,御領,ごりょう,Goryo,wikidata,井原鉄道 井原鉄道井原線
+n_gujo_yamato,郡上大和,ぐじょうやまと,Gujo-Yamato,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_gyokukeijimae,玉桂寺前,ぎょくけいじまえ,Gyokukeiji-mae,rule,信楽高原鐵道 信楽高原鐵道信楽線
+n_hagiwara_chikuho,萩原,はぎわら,Hagiwara,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_hakenomiya,八景水谷,はけのみや,Hakenomiya,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_hanamizuzaka,花水坂,はなみずざか,Hanamizuzaka,wikidata,福島交通 福島交通飯坂線
+n_hanando,花堂,はなんどう,Hanando,rule,福井鉄道 福井鉄道福武線
+n_hanashiro_onsen,花白温泉,はなしろおんせん,Hanashiro-Onsen,wikidata,日本国有鉄道 明知線 / 明知鉄道 明知鉄道明知線
+n_hidariishi,左石,ひだりいし,Hidariishi,wikidata,JR九州 松浦線 / 日本国有鉄道 柚木線 / 松浦鉄道 松浦鉄道西九州線
+n_hido,比土,ひど,Hido,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_higashi_beppu,東別府,ひがしべっぷ,Higashi-Beppu,wikidata,JR九州 日豊本線
+n_higashi_hiroshima,東広島,ひがしひろしま,Higashi-Hiroshima,wikidata,JR西日本 山陽新幹線
+n_higashi_ishinden,東一身田,ひがしいしんでん,Higashi-Ishinden,wikidata,伊勢鉄道 伊勢鉄道伊勢線 / 日本国有鉄道 伊勢線
+n_higashi_menda,東免田,ひがしめんだ,Higashi-Menda,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_higashi_nakama,東中間,ひがしなかま,Higashi-Nakama,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_higashi_nikkawa,東新川,ひがしにっかわ,Higashi-Nikkawa,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_higashi_ogaki,東大垣,ひがしおおがき,Higashi-Ogaki,wikidata,日本国有鉄道 樽見線 / 樽見鉄道 樽見鉄道樽見線
+n_higashi_tabira,東田平,ひがしたびら,Higashi-Tabira,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_higashi_takasaki,東高崎,ひがしたかさき,Higashi Takasaki,wikidata,JR九州 吉都線
+n_higashi_tomioka,東富岡,ひがしとみおか,Higashi-Tomioka,wikidata,上信電鉄 上信電鉄上信線
+n_higashi_tsuno,東都農,ひがしつの,Higashi-Tsuno,wikidata,JR九州 日豊本線
+n_higashi_yamashiro,東山代,ひがしやましろ,Higashi-Yamashiro,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_higashichuocho,東中央町,ひがしちゅうおうちょう,Higashichuocho,rule,岡山電気軌道 岡山電気軌道清輝橋線
+n_higashisono,東園,ひがしその,Higashisono,wikidata,JR九州 長崎本線
+n_higashiyama_okaden_chuggington_museum,東山・おかでんチャギントンミュージアム駅,ひがしやま・おかでんちゃぎんとんみゅーじあむえき,Higashiyama-Okaden Chuggington Museum,hand,岡山電気軌道 岡山電気軌道東山本線
+n_higoshi_jomo,樋越,ひごし,Higoshi,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_hikiji,引治,ひきじ,Hikiji,wikidata,JR九州 久大本線
+n_hikone_serikawa,ひこね芹川,ひこねせりかわ,Hikone-Serikawa,wikidata,近江鉄道 近江鉄道本線
+n_hikoneguchi,彦根口,ひこねぐち,Hikoneguchi,wikidata,近江鉄道 近江鉄道本線
+n_hinata,日当,ひなた,Hinata,wikidata,樽見鉄道 樽見鉄道樽見線
+n_hirokoji_iga,広小路,ひろこうじ,Hirokoji,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_hirosaki_gakuindai_mae,弘前学院大前,ひろさきがくいんだいまえ,Hirosakigakuindai-mae,rule,弘南鉄道 弘南鉄道大鰐線
+n_hirowara,広原,ひろわら,Hirowara,wikidata,JR九州 吉都線
+n_hiu,日宇,ひう,Hiu,wikidata,JR九州 佐世保線
+n_hizen_kubo,肥前久保,ひぜんくぼ,Hizen-Kubo,wikidata,JR九州 筑肥線
+n_hizen_nagano,肥前長野,ひぜんながの,Hizen-Nagano,wikidata,JR九州 筑肥線
+n_hizen_shiroishi,肥前白石,ひぜんしろいし,Hizen-Shiroishi,wikidata,JR九州 長崎本線
+n_hojomachi,北条町,ほうじょうまち,Hojomachi,wikidata,北条鉄道 北条鉄道北条線
+n_hokuhoku_oshima,ほくほく大島,ほくほくおおしま,Hokuhoku-Oshima,wikidata,北越急行 北越急行ほくほく線
+n_hon_isahaya,本諫早,ほんいさはや,Hon-Isahaya,wikidata,島原鉄道 島原鉄道線
+n_hondori_hiroshima_rapid_transit,本通,ほんどおり,Hondori,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_honkawachi,本川内,ほんかわち,Honkawachi,wikidata,JR九州 長崎本線
+n_honmutabe,本牟田部,ほんむたべ,Hon-Mutabe,wikipedia,JR九州 唐津線
+n_hoshii,糒,ほしい,Hoshii,wikidata,JR九州 伊田線 / 平成筑豊鉄道 平成筑豊鉄道伊田線
+n_hyuga_kutsukake,日向沓掛,ひゅうがくつかけ,Hyuga-Kutsukake,wikidata,JR九州 日豊本線
+n_hyuga_maeda,日向前田,ひゅうがまえだ,Hyuga Maeda,wikidata,JR九州 吉都線
+n_hyuga_nagai,日向長井,ひゅうがながい,Hyuga-Nagai,wikidata,JR九州 日豊本線
+n_hyuga_sumiyoshi,日向住吉,ひゅうがすみよし,Hyuga-Sumiyoshi,wikidata,JR九州 日豊本線
+n_ibara,井原,いばら,Ibara,wikidata,井原鉄道 井原鉄道井原線
+n_ichibu_kumagawa,一武,いちぶ,Ichibu,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_iehisa,家久,いえひさ,Iehisa,wikidata,福井鉄道 福井鉄道福武線
+n_ihara,井原,いはら,Ihara,rule,豊橋鉄道 豊橋鉄道東田本線
+n_iibama,飯羽間,いいばま,Iibama,wikidata,日本国有鉄道 明知線 / 明知鉄道 明知鉄道明知線
+n_iizaka_onsen,飯坂温泉,いいざかおんせん,Iizaka Onsen,wikidata,福島交通 福島交通飯坂線
+n_ikeda_kumamoto,池田,いけだ,Ikeda,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_imabuku,今福,いまぶく,Imabuku,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_imaguma,今隈,いまぐま,Imaguma,wikidata,甘木鉄道 甘木鉄道甘木線
+n_imaike_chikuho,今池,いまいけ,Imaike,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_imazu,今津,いまづ,Imazu,wikidata,JR九州 日豊本線
+n_inaba_funaoka,因幡船岡,いなばふなおか,Inaba-Funaoka,wikidata,JR西日本 若桜線 / 若桜鉄道 若桜鉄道若桜線
+n_inako_iga,依那古,いなこ,Inako,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_ino_yamaman,井野,いの,Ino,wikidata,山万 山万ユーカリが丘線
+n_inonada,伊野灘,いのなだ,Inonada,wikidata,一畑電気鉄道 一畑電車北松江線
+n_inotsuki,いのつき,いのつき,Inotsuki,wikidata,松浦鉄道 松浦鉄道西九州線
+n_inukai,犬飼,いぬかい,Inukai,wikidata,JR九州 豊肥本線
+n_isahayahigashikoukou,諫早東高校,いさはやひがしこうこう,Isahayahigashikoukou,wikidata,島原鉄道 島原鉄道線
+n_ishii_chizu_express,石井,いしい,Ishii,wikidata,智頭急行 智頭急行智頭線
+n_ishikaki,石垣,いしかき,Ishikaki,wikidata,JR九州 指宿枕崎線
+n_ishizai,石才,いしざい,Ishizai,wikidata,水間鉄道 水間鉄道水間線
+n_itoda,糸田,いとだ,Itoda,wikidata,JR九州 糸田線 / 平成筑豊鉄道 平成筑豊鉄道糸田線
+n_itonuki,糸貫,いとぬき,Itonuki,wikidata,日本国有鉄道 樽見線 / 樽見鉄道 樽見鉄道樽見線
+n_iwamura,岩村,いわむら,Iwamura,wikidata,日本国有鉄道 明知線 / 明知鉄道 明知鉄道明知線
+n_iwashiroshimizu,岩代清水,いわしろしみず,Iwashiroshimizu,wikidata,福島交通 福島交通飯坂線
+n_iwaya,岩屋,いわや,Iwaya,wikidata,JR九州 唐津線
+n_izue,いずえ,いずえ,Izue,wikidata,井原鉄道 井原鉄道井原線
+n_izumi_fukushima_transportation,泉,いずみ,Izumi,wikidata,福島交通 福島交通飯坂線
+n_jina,地名,じな,Jina,wikidata,大井川鐵道 大井川鐵道大井川本線
+n_jinaigurandomae,仁愛グランド前,じんあいぐらんどまえ,Jin'aigurando-mae,rule,えちぜん鉄道 えちぜん鉄道三国芦原線
+n_johoku,城北,じょうほく,Johoku,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_jono_kitakyushu_urban_monorail,城野,じょうの,Jono,wikidata,北九州高速鉄道 北九州高速鉄道小倉線
+n_joshidai,女子大,じょしだい,Joshidai,wikidata,山万 山万ユーカリが丘線
+n_joshu_fukushima,上州福島,じょうしゅうふくしま,Joshu-Fukushima,wikidata,上信電鉄 上信電鉄上信線
+n_joshu_ichinomiya,上州一ノ宮,じょうしゅういちのみや,Joshu-Ichinomiya,wikidata,上信電鉄 上信電鉄上信線
+n_joshu_nanokaichi,上州七日市,じょうしゅうなのかいち,Joshu-Nanokaichi,wikidata,上信電鉄 上信電鉄上信線
+n_joshu_niiya,上州新屋,じょうしゅうにいや,Joshu-Niiya,wikidata,上信電鉄 上信電鉄上信線
+n_joshu_tomioka,上州富岡,じょうしゅうとみおか,Joshu-Tomioka,wikidata,上信電鉄 上信電鉄上信線
+n_joto_jomo,城東,じょうとう,Joto,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_jukkokutoge_sancho,十国峠山頂,じゅっこくとうげさんちょう,Jukkokutoge Sancho,hand,十国峠 十国峠十国鋼索線
+n_jukkokutoge_sanroku,十国峠山麓,じゅっこくとうげさんろく,Jukkokutoge Sanroku,rule,十国峠 十国峠十国鋼索線
+n_jukujo,十九条,じゅうくじょう,Jukujo,wikidata,日本国有鉄道 樽見線 / 樽見鉄道 樽見鉄道樽見線
+n_kadotayashiki,門田屋敷,かどたやしき,Kadotayashiki,rule,岡山電気軌道 岡山電気軌道東山本線
+n_kagoshima,鹿児島,かごしま,Kagoshima,wikidata,JR九州 日豊本線 / JR九州 鹿児島本線
+n_kaiji,海路,かいじ,Kaiji,wikidata,JR九州 肥薩線
+n_kaimon,開聞,かいもん,Kaimon,wikidata,JR九州 指宿枕崎線
+n_kaizaki,海崎,かいざき,Kaizaki,wikidata,JR九州 日豊本線
+n_kaize_matsuura,皆瀬,かいぜ,Kaize,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_kaizuka_shiyakushomae,貝塚市役所前,かいづかしやくしょまえ,Kaizuka-shiyakusho-mae,rule,水間鉄道 水間鉄道水間線
+n_kakishita_onsen_guchi,柿下温泉口,かきしたおんせんぐち,Kakishita Onsen Guchi,wikidata,平成筑豊鉄道 平成筑豊鉄道田川線
+n_kamanohana,釜ノ鼻,かまのはな,Kamanohana,wikidata,島原鉄道 島原鉄道線
+n_kamei,亀井,かめい,Kamei,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_kami_ijuin,上伊集院,かみいじゅういん,Kami-Ijuin,wikidata,JR九州 鹿児島本線
+n_kamiita,上伊田,かみいた,Kamiita,wikidata,平成筑豊鉄道 平成筑豊鉄道田川線
+n_kamiizumi,上泉,かみいずみ,Kamiizumi,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_kamimanba,上万場,かみまんば,Kami-mamba,wikipedia,長良川鉄道 長良川鉄道越美南線
+n_kamimatsukawa,上松川,かみまつかわ,Kamimatsukawa,wikidata,福島交通 福島交通飯坂線
+n_kamiyacho_hiroden,紙屋町,かみやちょう,Kamiyacho,rule,広島電鉄 広島電鉄宇品線 / 広島電鉄 広島電鉄本線
+n_kamiyasu,上安,かみやす,Kamiyasu,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_kamono,加茂野,かもの,Kamono,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_kannabe_ibara,神辺,かんなべ,Kannabe,wikidata,井原鉄道 井原鉄道井原線
+n_kanohara,神農原,かのはら,Kanohara,wikidata,上信電鉄 上信電鉄上信線
+n_kantakunosato,干拓の里,かんたくのさと,Kantakunosato,wikidata,島原鉄道 島原鉄道線
+n_kariu,狩生,かりう,Kariu,wikidata,JR九州 日豊本線
+n_kasamatsu_tango_kairiku_kotsu,傘松,かさまつ,Kasamatsu,rule,丹後海陸交通 丹後海陸交通天橋立鋼索鉄道
+n_kase_minami_aso,加勢,かせ,Kase,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線
+n_kase_tsugaru,嘉瀬,かせ,Kase,wikidata,津軽鉄道 津軽鉄道線
+n_kasukawa,粕川,かすかわ,Kasukawa,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_katakai_jomo,片貝,かたかい,Katakai,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_kawabe_no_mori,河辺の森,かわべのもり,Kawabe-no-mori,wikidata,近江鉄道 近江鉄道本線
+n_kawage,河芸,かわげ,Kawage,wikidata,伊勢鉄道 伊勢鉄道伊勢線 / 日本国有鉄道 伊勢線
+n_kawaminami,川南,かわみなみ,Kawaminami,wikidata,JR九州 日豊本線
+n_kawayama,河山,かわやま,Kawayama,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_kayamachi,茅町,かやまち,Kayamachi,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_keibajomae_kitakyushu_urban_monorail,競馬場前,けいばじょうまえ,Keibajo-mae,rule,北九州高速鉄道 北九州高速鉄道小倉線
+n_keirinjomae_toyohashi,競輪場前,けいりんじょうまえ,Keirinjo-mae,rule,豊橋鉄道 豊橋鉄道東田本線
+n_kencho_mae_hiroshima_rapid_transit,県庁前,けんちょうまえ,Kencho-mae,rule,広島高速交通 広島高速交通広島新交通1号線
+n_kibana,木花,きばな,Kibana,wikidata,JR九州 日南線
+n_kinoe,木上,きのえ,Kinoe,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_kita,喜多,きた,Kita,wikidata,京都丹後鉄道（WILLER TRAINS） 京都丹後鉄道宮福線
+n_kita_gochi,北河内,きたごうち,Kita-Gochi,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_kitagata_kitakyushu_urban_monorail,北方,きたがた,Kitagata,wikidata,北九州高速鉄道 北九州高速鉄道小倉線
+n_kitagawa,北川,きたがわ,Kitagawa,wikidata,JR九州 日豊本線
+n_kitahara,北原,きたはら,Kitahara,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_kitayama_moka,北山,きたやま,Kitayama,wikidata,真岡鐵道 真岡鐵道真岡線
+n_kiyotaki,清滝,きよたき,Kiyotaki,rule,高尾登山電鉄 高尾山ケーブルカー
+n_kobashi,小橋,こばし,Kobashi,rule,岡山電気軌道 岡山電気軌道東山本線
+n_kobayashi_kitto,小林,こばやし,Kobayashi,wikidata,JR九州 吉都線
+n_kobe_shimabara,古部,こべ,Kobe,wikidata,島原鉄道 島原鉄道線
+n_koen,公園,こうえん,Koen,wikidata,山万 山万ユーカリが丘線
+n_koginosato,近義の里,こぎのさと,Koginosato,wikidata,水間鉄道 水間鉄道水間線
+n_kohjiro,神代,こうじろ,Kohjiro,wikidata,島原鉄道 島原鉄道線
+n_koiki_koen_mae,広域公園前,こういきこうえんまえ,Koikikoen-mae,rule,広島高速交通 広島高速交通広島新交通1号線
+n_kokenawa,苔縄,こけなわ,Kokenawa,wikidata,智頭急行 智頭急行智頭線
+n_komanaki,駒鳴,こまなき,Komanaki,wikidata,JR九州 筑肥線
+n_komi_tarumi,神海,こうみ,Komi,wikidata,日本国有鉄道 樽見線 / 樽見鉄道 樽見鉄道樽見線
+n_komoriutanosato_takaya,子守唄の里高屋,こもりうたのさとたかや,Komoriutanosato-Takaya,wikidata,井原鉄道 井原鉄道井原線
+n_konohara_enshin,河野原円心,こうのはらえんしん,Konohara-Enshin,wikidata,智頭急行 智頭急行智頭線
+n_koritsubyoinmae,公立病院前,こうりつびょういんまえ,Koritsu-byoin-mae,rule,くま川鉄道 くま川鉄道湯前線
+n_kotobuki_fujikyu,寿,ことぶき,Kotobuki,wikidata,富士山麓電気鉄道 富士山麓電気鉄道大月線
+n_kouda,神田,こうだ,Kouda,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_koyanose,木屋瀬,こやのせ,Koyanose,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_koyoshi,子吉,こよし,Koyoshi,wikidata,日本国有鉄道 矢島線 / 由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_kubara,久原,くばら,Kubara,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_kubiki,くびき,くびき,Kubiki,wikidata,北越急行 北越急行ほくほく線
+n_kubota_yuri_kogen,久保田,くぼた,Kubota,wikidata,由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_kumamoto_kosen_mae,熊本高専前,くまもとこうせんまえ,Kumamoto-Kosen-mae,hand,熊本電気鉄道 熊本電気鉄道菊池線
+n_kumanishi,熊西,くまにし,Kumanishi,wikidata,筑豊電気鉄道 筑豊電気鉄道 / 西日本鉄道 西鉄北九州線
+n_kumanojo,隈之城,くまのじょう,Kumanojo,wikidata,JR九州 鹿児島本線
+n_kurogou,黒川,くろごう,Kurogou,wikidata,松浦鉄道 松浦鉄道西九州線
+n_kuroishi_kumamoto,黒石,くろいし,Kuroishi,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_kurosaki_ekimae,黒崎駅前,くろさきえきまえ,Kurosaki-ekimae,rule,筑豊電気鉄道 筑豊電気鉄道 / 西日本鉄道 西鉄北九州線
+n_kurosawa_yuri_kogen,黒沢,くろさわ,Kurosawa,wikidata,日本国有鉄道 矢島線 / 由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_kusuku,楠久,くすく,Kusuku,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_kyobashi_okayama,京橋,きょうばし,Kyobashi,rule,岡山電気軌道 岡山電気軌道東山本線
+n_kyomachi_onsen,京町温泉,きょうまちおんせん,Kyomachi Onsen,wikidata,JR九州 吉都線
+n_kyujomae_mizushima_rinkai,球場前,きゅうじょうまえ,Kyujo-mae,rule,水島臨海鉄道 水島臨海鉄道水島本線
+n_kyuragi,厳木,きゅうらぎ,Kyuragi,wikidata,JR九州 唐津線
+n_maego,前郷,まえごう,Maego,wikidata,日本国有鉄道 矢島線 / 由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_maehama,前浜,まえはま,Maehama,wikidata,松浦鉄道 松浦鉄道西九州線
+n_maehira_koen,前平公園,まえひらこうえん,Maehira-Koen,wikidata,長良川鉄道 長良川鉄道越美南線
+n_magarikane,勾金,まがりかね,Magarikane,wikidata,JR九州 田川線 / 平成筑豊鉄道 平成筑豊鉄道田川線
+n_magarisawa,曲沢,まがりさわ,Magarisawa,wikidata,由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_manba,万場,まんば,Mamba,wikipedia,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_mangatsuka,万ヶ塚,まんがつか,Mangatsuka,wikidata,JR九州 吉都線
+n_maniwa,馬庭,まにわ,Maniwa,wikidata,上信電鉄 上信電鉄上信線
+n_maruyama_iga,丸山,まるやま,Maruyama,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_maruyamashita,丸山下,まるやました,Maruyamashita,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_matsue_english_garden_mae,松江イングリッシュガーデン前,まつえいんぐりっしゅがーでんまえ,Matsue English Garden-mae,hand,一畑電気鉄道 一畑電車北松江線
+n_matsumori_nagaragawa,松森,まつもり,Matsumori,wikidata,長良川鉄道 長良川鉄道越美南線
+n_matsuo_shimabara,松尾,まつお,Matsuo,wikidata,島原鉄道 島原鉄道線
+n_matsuyama_heisei_chikuho,松山,まつやま,Matsuyama,wikidata,平成筑豊鉄道 平成筑豊鉄道糸田線
+n_matsuzaki_amagi,松崎,まつざき,Matsuzaki,wikidata,日本国有鉄道 甘木線 / 甘木鉄道 甘木鉄道甘木線
+n_maya_cable,摩耶ケーブル,まやけーぶる,Maya Cable,rule,こうべ未来都市機構 こうべ未来都市機構摩耶ケーブル線
+n_meotoishi,夫婦石,めおといし,Meotoishi,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_midaibashi,三代橋,みだいばし,Midaibashi,wikidata,松浦鉄道 松浦鉄道西九州線
+n_miemachi,三重町,みえまち,Miemachi,wikidata,JR九州 豊肥本線
+n_miharashidai,見晴台,みはらしだい,Miharashidai,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線
+n_mikekado,三毛門,みけかど,Mikekado,wikidata,JR九州 日豊本線
+n_mikeyamaguchi,三ヶ山口,みけやまぐち,Mikeyamaguchi,hand,水間鉄道 水間鉄道水間線
+n_mikuriya_matsuura,御厨,みくりや,Mikuriya,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_mimitsu,美々津,みみつ,Mimitsu,wikidata,JR九州 日豊本線
+n_minakuchi,水口,みなくち,Minakuchi,wikidata,近江鉄道 近江鉄道本線
+n_minakuchi_ishibashi,水口石橋,みなくちいしばし,Minakuchi Ishibashi,wikidata,近江鉄道 近江鉄道本線
+n_minakuchi_jonan,水口城南,みなくちじょうなん,Minakuchi Jonan,wikidata,近江鉄道 近江鉄道本線
+n_minakuchi_matsuo,水口松尾,みなくちまつお,Minakuchi Matsuo,wikidata,近江鉄道 近江鉄道本線
+n_minami_gochi,南河内,みなみごうち,Minami-Gochi,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_minami_hyuga,南日向,みなみひゅうが,Minami-Hyuga,wikidata,JR九州 日豊本線
+n_minami_kariyasu,美並苅安,みなみかりやす,Minami-Kariyasu,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_minami_kodakara_onsen,みなみ子宝温泉,みなみこだからおんせん,Minami-Kodakara-Onsen,wikidata,長良川鉄道 長良川鉄道越美南線
+n_minamiaso_shirakawasuigen,南阿蘇白川水源,みなみあそしらかわすいげん,Minamiaso-Shirakawasuigen,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線
+n_mino_shirotori,美濃白鳥,みのしろとり,Mino-Shirotori,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_minoshi,美濃市,みのし,Minoshi,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_mitani_ibara,三谷,みたに,Mitani,wikidata,井原鉄道 井原鉄道井原線
+n_mitsubishi_jiko_mae,三菱自工前,みつびしじこうまえ,Mitsubishi-Jiko-mae,hand,水島臨海鉄道 水島臨海鉄道水島本線
+n_mitsuishi_kumamoto,三ツ石,みついし,Mitsuishi,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_mitsumata,三俣,みつまた,Mitsumata,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_mitsumatsu_mizuma,三ツ松,みつまつ,Mitsumatsu,wikidata,水間鉄道 水間鉄道水間線
+n_miyajima_boat_race,宮島ボートレース場,みやじまぼーとれーすじょう,Miyajima Boat Race,hand,広島電鉄 広島電鉄宮島線
+n_miyamura,宮村,みやむら,Miyamura,wikidata,京都丹後鉄道（WILLER TRAINS） 京都丹後鉄道宮福線
+n_miyoshi_kumamoto,御代志,みよし,Miyoshi,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_mizuma_kannon,水間観音,みずまかんのん,Mizuma Kannon,wikidata,水間鉄道 水間鉄道水間線
+n_mizunarikawa,水成川,みずなりかわ,Mizunarikawa,wikidata,JR九州 指宿枕崎線
+n_mizuochi,水落,みずおち,Mizuochi,wikidata,福井鉄道 福井鉄道福武線 / 福井鉄道 福井鉄道鯖浦線
+n_mochibaru,餅原,もちばる,Mochibaru,wikidata,JR九州 日豊本線
+n_momonokawa,桃川,もものかわ,Momonokawa,wikidata,JR九州 筑肥線
+n_mori_mizuma,森,もり,Mori,wikidata,水間鉄道 水間鉄道水間線
+n_moriguchi_alpico_kotsu,森口,もりぐち,Moriguchi,wikidata,アルピコ交通 アルピコ交通上高地線
+n_morishita_chikuho,森下,もりした,Morishita,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_moriyama_shimabara,森山,もりやま,Moriyama,wikidata,島原鉄道 島原鉄道線
+n_motoyama_matsuura,本山,もとやま,Motoyama,wikidata,松浦鉄道 松浦鉄道西九州線
+n_mukuno,椋野,むくの,Mukuno,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_mushigawa_osugi,虫川大杉,むしがわおおすぎ,Mushigawa-Osugi,wikidata,北越急行 北越急行ほくほく線
+n_nabera,鍋原,なべら,Nabera,wikidata,樽見鉄道 樽見鉄道樽見線
+n_nagae,長江,ながえ,Nagae,wikidata,一畑電気鉄道 一畑電車北松江線
+n_nagatanino,長谷野,ながたにの,Nagatanino,wikidata,近江鉄道 近江鉄道本線
+n_nagayo,長与,ながよ,Nagayo,wikidata,JR九州 長崎本線
+n_nagose,名越,なごせ,Nagose,wikidata,水間鉄道 水間鉄道水間線
+n_naguwa,南桑,なぐわ,Naguwa,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_naka_taku,中多久,なかたく,Naka-Taku,wikidata,JR九州 唐津線
+n_nakahanda,中判田,なかはんだ,Nakahanda,wikidata,JR九州 豊肥本線
+n_nakaizumi,中泉,なかいずみ,Nakaizumi,wikidata,JR九州 伊田線 / 平成筑豊鉄道 平成筑豊鉄道伊田線
+n_nakasuji,中筋,なかすじ,Nakasuji,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_nakazato,中里,なかざと,Nakazato,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_nanjai,南蛇井,なんじゃい,Nanjai,wikidata,上信電鉄 上信電鉄上信線
+n_nanyo_shiyakusho,南陽市役所,なんようしやくしょ,Nanyo-Shiyakusho,wikidata,山形鉄道 山形鉄道フラワー長井線
+n_naokawa,直川,なおかわ,Naokawa,wikidata,JR九州 日豊本線
+n_naruishi,鳴石,なるいし,Naruishi,wikidata,松浦鉄道 松浦鉄道西九州線
+n_nichinan,日南,にちなん,Nichinan,wikidata,JR九州 日南線
+n_nigatsuden,二月田,にがつでん,Nigatsuden,wikidata,JR九州 指宿枕崎線
+n_nihongi,二本木,にほんぎ,Nihongi,wikidata,JR東日本 信越本線 / えちごトキめき鉄道 えちごトキめき鉄道妙高はねうまライン
+n_niisato,新里,にいさと,Niisato,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_nijino,虹,にじ,Niji,rule,こうべ未来都市機構 こうべ未来都市機構摩耶ケーブル線
+n_nikkawa,新川,にっかわ,Nikkawa,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_nishi_arita,西有田,にしありた,Nishi-Arita,wikidata,松浦鉄道 松浦鉄道西九州線
+n_nishi_gobo,西御坊,にしごぼう,Nishi-Gobo,wikidata,紀州鉄道 紀州鉄道線
+n_nishi_kiryu,西桐生,にしきりゅう,Nishi-Kiryu,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_nishi_kobayashi,西小林,にしこばやし,Nishi Kobayashi,wikidata,JR九州 吉都線
+n_nishi_ochi,西相知,にしおうち,Nishi-Ochi,wikidata,JR九州 筑肥線
+n_nishi_ote,西大手,にしおおて,Nishi-Ote,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_nishi_sabae,西鯖江,にしさばえ,Nishi-Sabae,wikidata,福井鉄道 福井鉄道福武線
+n_nishi_tomioka,西富岡,にしとみおか,Nishi-Tomioka,wikidata,上信電鉄 上信電鉄上信線
+n_nishi_yamana,西山名,にしやまな,Nishi-Yamana,wikidata,上信電鉄 上信電鉄上信線
+n_nishi_yoshii,西吉井,にしよしい,Nishi-Yoshii,wikidata,上信電鉄 上信電鉄上信線
+n_nishidai_moka,西田井,にしだい,Nishidai,wikidata,JR東日本 真岡線 / 真岡鐵道 真岡鐵道真岡線
+n_nishigawaryokudokoen,西川緑道公園,にしがわりょくどうこうえん,Nishigawaryokudokoen,rule,岡山電気軌道 岡山電気軌道東山本線
+n_nishihara,西原,にしはら,Nishihara,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_nishikoba,西木場,にしこば,Nishikoba,wikidata,松浦鉄道 松浦鉄道西九州線
+n_nishitachiarai,西太刀洗,にしたちあらい,Nishitachiarai,wikidata,日本国有鉄道 甘木線 / 甘木鉄道 甘木鉄道甘木線
+n_nishitakisawa,西滝沢,にしたきさわ,Nishitakisawa,wikidata,日本国有鉄道 矢島線 / 由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_nishitetsu_fukuoka,西鉄福岡（天神）,にしてつふくおか,Nishitetsu Fukuoka,wikidata,西日本鉄道 大牟田線
+n_nishitetsu_ginsui,西鉄銀水,にしてつぎんすい,Nishitetsu Ginsui,wikidata,西日本鉄道 大牟田線
+n_nishitetsu_gojo,西鉄五条,にしてつごじょう,Nishitetsu Gojo,wikidata,西日本鉄道 西鉄太宰府線
+n_nishitetsu_hirao,西鉄平尾,にしてつひらお,Nishitetsu Hirao,wikidata,西日本鉄道 大牟田線
+n_nishitetsu_nakashima,西鉄中島,にしてつなかしま,Nishitetsu-Nakashima,wikidata,西日本鉄道 大牟田線
+n_nishitetsu_ogori,西鉄小郡,にしてつおごおり,Nishitetsu Ogori,wikidata,西日本鉄道 大牟田線
+n_nishitetsu_shingu,西鉄新宮,にしてつしんぐう,Nishitetsu Shingu,wikidata,西日本鉄道 西鉄宮地岳線 / 西日本鉄道 西鉄貝塚線
+n_nishitetsu_wataze,西鉄渡瀬,にしてつわたぜ,Nishitetsu-Wataze,wikidata,西日本鉄道 大牟田線
+n_nishitetsu_yanagawa,西鉄柳川,にしてつやながわ,Nishitetsu Yanagawa,wikidata,西日本鉄道 大牟田線
+n_nishitetsuchihaya,西鉄千早,にしてつちはや,Nishitetsuchihaya,rule,西日本鉄道 西鉄貝塚線
+n_nishitomii,西富井,にしとみい,Nishitomii,wikidata,水島臨海鉄道 水島臨海鉄道水島本線
+n_nishiyama_chikuho,西山,にしやま,Nishiyama,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_nishiyama_koen,西山公園,にしやまこうえん,Nishiyama-Koen,wikidata,福井鉄道 福井鉄道福武線
+n_no,能生,のう,No,wikidata,JR西日本 北陸本線 / えちごトキめき鉄道 えちごトキめき鉄道日本海ひすいライン
+n_nonaka,野中,のなか,Nonaka,wikidata,松浦鉄道 松浦鉄道西九州線
+n_nukumi,生見,ぬくみ,Nukumi,wikidata,JR九州 指宿枕崎線
+n_obara_hiroshima_rapid_transit,大原,おおばら,Obara,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_obi,飫肥,おび,Obi,wikidata,JR九州 日南線
+n_ochi,相知,おうち,Ochi,wikidata,JR九州 唐津線
+n_oda_ibara,小田,おだ,Oda,wikidata,井原鉄道 井原鉄道井原線
+n_oda_misumi,網田,おうだ,Oda,wikidata,JR九州 三角線
+n_odotsu,大堂津,おおどうつ,Odotsu,wikidata,JR九州 日南線
+n_oe_kyoto_tango_railway_willer_trains,大江,おおえ,Oe,wikidata,京都丹後鉄道（WILLER TRAINS） 京都丹後鉄道宮福線
+n_ogata_hohi_main,緒方,おがた,Ogata,wikidata,JR九州 豊肥本線
+n_ogi_matsuura,大木,おおぎ,Ogi,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_ogo,大胡,おおご,Ogo,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_ohmisaki,大三東,おおみさき,Ohmisaki,wikidata,島原鉄道 島原鉄道線
+n_oike_ikoi_no_mori,大池いこいの森,おおいけいこいのもり,Oike-Ikoi-no-mori,wikidata,北越急行 北越急行ほくほく線
+n_oita_daigaku_mae,大分大学前,おおいただいがくまえ,Ōita-daigaku-mae,rule,JR九州 豊肥本線
+n_okadome_kofuku,おかどめ幸福,おかどめこうふく,Okadome-Kofuku,wikidata,くま川鉄道 くま川鉄道湯前線
+n_okawano,大川野,おおかわの,Okawano,wikidata,JR九州 筑肥線
+n_okayama_ekimae,岡山駅前,おかやまえきまえ,Okayama-ekimae,rule,岡山電気軌道 岡山電気軌道東山本線
+n_omachi_hiroshima_rapid_transit,大町,おおまち,Omachi,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_omachi_sasebo,大町,おおまち,Omachi,wikidata,JR九州 佐世保線
+n_omura,大村,おおむら,Omura,wikidata,JR九州 大村線
+n_onaka,大中,おおなか,Onaka,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_onbara_rakutenchi,乙原(ラクテンチ上),おとばる,Otobaru,hand,ラクテンチ ラクテンチ別府ラクテンチケーブル線
+n_ongano,遠賀野,おんがの,Ongano,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_oniwa,大庭,おおにわ,Oniwa,wikidata,アルピコ交通 アルピコ交通上高地線
+n_onizuka,鬼塚,おにづか,Onizuka,wikidata,JR九州 唐津線
+n_orimoto,折本,おりもと,Orimoto,wikidata,JR東日本 真岡線 / 真岡鐵道 真岡鐵道真岡線
+n_oshima_nagaragawa,大島,おおしま,Oshima,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_osumi_yokogawa,大隅横川,おおすみよこがわ,Osumi-Yokogawa,wikidata,JR九州 肥薩線
+n_otaki_isumi,大多喜,おおたき,Otaki,wikidata,JR東日本 木原線 / いすみ鉄道 いすみ鉄道いすみ線
+n_oya_nagaragawa,大矢,おおや,Oya,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_oyabu,大藪,おおやぶ,Oyabu,wikidata,平成筑豊鉄道 平成筑豊鉄道糸田線
+n_oyama_cable,大山ケーブル,おおやまけーぶる,Ōyama Cable,rule,大山観光電鉄 大山観光電鉄大山鋼索線
+n_ozuka,大塚,おおづか,Ozuka,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_reikyukoentaiikukan,霊丘公園体育館,れいきゅうこうえんたいいくかん,Reikyukoentaiikukan,wikidata,島原鉄道 島原鉄道線
+n_resort_gateway,リゾートゲートウェイ・ステーション,りぞーとげーとうぇい・すてーしょん,Resort Gateway,wikidata,舞浜リゾートライン 舞浜リゾートラインディズニーリゾートライン
+n_sagarahanganjoji,相良藩願成寺,さがらはんがんじょうじ,Sagarahanganjoji,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_sagaratoshima,相良十島,さがらとしま,Sagaratoshima,wikidata,くま川鉄道 くま川鉄道湯前線
+n_saidaijicho_okayama_geijutsu_sozo_gekijo_harenowa_mae,西大寺町・岡山芸術創造劇場ハレノワ前,さいだいじちょう・おかやまげいじゅつそうぞうげきじょうはれのわまえ,Saidaijicho-Okayama Geijutsu Sozo Gekijo Harenowa-mae,hand,岡山電気軌道 岡山電気軌道東山本線
+n_saigawa,犀川,さいがわ,Saigawa,wikidata,JR九州 田川線 / 平成筑豊鉄道 平成筑豊鉄道田川線
+n_saiwai,幸,さいわい,Saiwai,wikidata,島原鉄道 島原鉄道線
+n_sakae_mizushima_rinkai,栄,さかえ,Sakae,wikidata,水島臨海鉄道 水島臨海鉄道水島本線
+n_sakiyama,崎山,さきやま,Sakiyama,wikidata,JR九州 田川線 / 平成筑豊鉄道 平成筑豊鉄道田川線
+n_sakuragawa_ohmi,桜川,さくらがわ,Sakuragawa,wikidata,近江鉄道 近江鉄道本線
+n_sangamori,三ヶ森,さんがもり,Sangamori,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_sanjuhassha,三十八社,さんじゅうはっしゃ,Sanjuhassha,wikidata,福井鉄道 福井鉄道福武線
+n_sanmon,山門,さんもん,Sammon,wikipedia,鞍馬寺 鞍馬寺鞍馬山鋼索鉄道
+n_sari,佐里,さり,Sari,wikidata,JR九州 筑肥線
+n_sasaya,笹谷,ささや,Sasaya,wikidata,福島交通 福島交通飯坂線
+n_sato,里,さと,Sato,wikidata,松浦鉄道 松浦鉄道西九州線
+n_satsuma_imaizumi,薩摩今和泉,さつまいまいずみ,Satsuma-Imaizumi,wikidata,JR九州 指宿枕崎線
+n_satsuma_itashiki,薩摩板敷,さつまいたしき,Satsuma-Itashiki,wikidata,JR九州 指宿枕崎線
+n_satsuma_matsumoto,薩摩松元,さつままつもと,Satsuma-Matsumoto,wikidata,JR九州 鹿児島本線
+n_screen,スクリーン,すくりーん,Screen,wikidata,近江鉄道 近江鉄道多賀線
+n_sechigo,清児,せちご,Sechigo,wikidata,水間鉄道 水間鉄道水間線
+n_seiho_koukou_mae,清峰高校前,せいほうこうこうまえ,Seiho-koko-mae,rule,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_seikan_tunnel_museum,青函トンネル記念館,せいかんとんねるきねんかん,Seikan Tunnel Kinenkan,hand,青函トンネル記念館 青函トンネル記念館青函トンネル竜飛斜坑線
+n_seikibashi,清輝橋,せいきばし,Seikibashi,rule,岡山電気軌道 岡山電気軌道清輝橋線
+n_seiryu_miharashi,清流みはらし,せいりゅうみはらし,Seiryu Miharashi,wikidata,錦川鉄道 錦川鉄道錦川清流線
+n_seki_nagaragawa,関,せき,Seki,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_seki_shimouchi,関下有知,せきしもうち,Seki-Shimouchi,wikidata,長良川鉄道 長良川鉄道越美南線
+n_seki_shiyakusho_mae,関市役所前,せきしやくしょまえ,Seki-shiyakusho-mae,rule,長良川鉄道 長良川鉄道越美南線
+n_sekijujimae,赤十字前,せきじゅうじまえ,Sekijuji-mae,rule,福井鉄道 福井鉄道福武線
+n_sekiyama,関山,せきやま,Sekiyama,wikidata,JR東日本 信越本線 / えちごトキめき鉄道 えちごトキめき鉄道妙高はねうまライン
+n_sendaira,千平,せんだいら,Sendaira,wikidata,上信電鉄 上信電鉄上信線
+n_senpukuji,泉福寺,せんぷくじ,Senpukuji,wikipedia,松浦鉄道 松浦鉄道西九州線
+n_senryugataki,潜竜ヶ滝,せんりゅうがたき,Senryugataki,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線
+n_shijuku,四十九,しじゅく,Shijuku,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_shikido,敷戸,しきど,Shikido,wikidata,JR九州 豊肥本線
+n_shikinosato,四季の郷,しきのさと,Shikinosato,wikidata,山形鉄道 山形鉄道フラワー長井線
+n_shimabara_funatsu,島原船津,しまばらふなつ,Shimabara-funatsu,wikidata,島原鉄道 島原鉄道線
+n_shimabarako,島原港,しまばらこう,Shimabarako,wikidata,島原鉄道 島原鉄道線
+n_shimodate_nikomae,下館二高前,しもだてにこうまえ,Shimodateniko-mae,rule,真岡鐵道 真岡鐵道真岡線
+n_shimoita,下伊田,しもいた,Shimoita,wikidata,平成筑豊鉄道 平成筑豊鉄道伊田線
+n_shimojima_alpico_kotsu,下島,しもじま,Shimojima,wikidata,アルピコ交通 アルピコ交通上高地線
+n_shimonii,下新,しもにい,Shimonii,wikidata,アルピコ交通 アルピコ交通上高地線
+n_shimonita,下仁田,しもにた,Shimonita,wikidata,上信電鉄 上信電鉄上信線
+n_shimoyoshida,下吉田,しもよしだ,Shimoyoshida,wikidata,富士山麓電気鉄道 富士山麓電気鉄道大月線
+n_shin_hakushima_hiroshima_rapid_transit,新白島,しんはくしま,Shin-Hakushima,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_shin_koyanose,新木屋瀬,しんこやのせ,Shin-Koyanose,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_shin_omura,新大村,しんおおむら,Shin-Omura,wikidata,JR九州 大村線 / JR九州 西九州新幹線
+n_shin_onomichi,新尾道,しんおのみち,Shin-Onomichi,wikidata,JR西日本 山陽新幹線
+n_shin_tamana,新玉名,しんたまな,Shin-Tamana,wikidata,JR九州 九州新幹線
+n_shinmei_fukui,神明,しんめい,Shimmei,wikipedia,福井鉄道 福井鉄道福武線
+n_shinsaidaijichosuji,新西大寺町筋,しんさいだいじちょうすじ,Shinsaidaijichosuji,rule,岡山電気軌道 岡山電気軌道清輝橋線
+n_shinzo_kekkan_center,心臓血管センター,しんぞうけっかんせんたー,Shinzo-Kekkan Center,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_shirasawa_ibusuki_makurazaki,白沢,しらさわ,Shirasawa,wikidata,JR九州 指宿枕崎線
+n_shiromigaoka,城見ヶ丘,しろみがおか,Shiromigaoka,wikidata,いすみ鉄道 いすみ鉄道いすみ線
+n_shirotori_kogen,白鳥高原,しろとりこうげん,Shirotori-Kogen,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_shirousagi,白兎,しろうさぎ,Shirousagi,wikidata,山形鉄道 山形鉄道フラワー長井線
+n_shitanoe,下ノ江,したのえ,Shitanoe,wikidata,JR九州 日豊本線
+n_shiyakushomae_toyohashi,市役所前,しやくしょまえ,Shiyakusho-mae,rule,豊橋鉄道 豊橋鉄道東田本線
+n_shokokaigishomae,商工会議所前,しょうこうかいぎしょまえ,Shokokaigisho-mae,rule,福井鉄道 福井鉄道福武線
+n_shonai,庄内,しょうない,Shonai,wikidata,JR九州 久大本線
+n_shuuchi_kasagami,守内かさ神,しゅうちかさがみ,Shuuchi-Kasagami,wikidata,錦川鉄道 錦川鉄道錦川清流線
+n_soneda,曽根田,そねだ,Soneda,wikidata,福島交通 福島交通飯坂線
+n_sono,園,その,Sono,wikidata,一畑電気鉄道 一畑電車北松江線
+n_sounnosato_ebara,早雲の里荏原,そううんのさとえばら,Sounnosato-Ebara,wikidata,井原鉄道 井原鉄道井原線
+n_sugao,菅尾,すがお,Sugao,wikidata,JR九州 豊肥本線
+n_sugikawachi,杉河内,すぎかわち,Sugikawachi,wikidata,JR九州 久大本線
+n_sundome_nishi,サンドーム西,さんどーむにし,Sundome Nishi,wikidata,福井鉄道 福井鉄道福武線
+n_suwa_omura,諏訪,すわ,Suwa,wikidata,JR九州 大村線
+n_suzuka,鈴鹿,すずか,Suzuka,wikidata,伊勢鉄道 伊勢鉄道伊勢線 / 日本国有鉄道 伊勢線
+n_taga_taisha_mae,多賀大社前,たがたいしゃまえ,Tagataisha-mae,rule,近江鉄道 近江鉄道多賀線
+n_tagawa_municipal_hospital,田川市立病院,たがわしりつびょういん,Tagawashiritsubyoin,rule,平成筑豊鉄道 平成筑豊鉄道伊田線
+n_tahoto,多宝塔,たほうとう,Tahoto,rule,鞍馬寺 鞍馬寺鞍馬山鋼索鉄道
+n_taichonosato,泰澄の里,たいちょうのさと,Taichonosato,wikidata,福井鉄道 福井鉄道福武線
+n_taikenkodo,体験坑道,たいけんこうどう,Taikenkodo,rule,青函トンネル記念館 青函トンネル記念館青函トンネル竜飛斜坑線
+n_tainohama,田井ノ浜,たいのはま,Tainohama,wikidata,JR四国 牟岐線
+n_taira,多比良,たいら,Taira,wikidata,島原鉄道 島原鉄道線
+n_taisanji_oyama_kanko,大山寺,たいさんじ,Taisanji,wikidata,大山観光電鉄 大山観光電鉄大山鋼索線
+n_taishou,大正,たいしょう,Taishou,wikidata,島原鉄道 島原鉄道線
+n_takaharu,高原,たかはる,Takaharu,wikidata,JR九州 吉都線
+n_takahashi,高橋,たかはし,Takahashi,wikidata,JR九州 佐世保線
+n_takaiwa_matsuura,高岩,たかいわ,Takaiwa,wikidata,松浦鉄道 松浦鉄道西九州線
+n_takamori,高森,たかもり,Takamori,wikidata,南阿蘇鉄道 南阿蘇鉄道高森線 / 日本国有鉄道 高森線
+n_takao_tarumi,高尾,たかお,Takao,wikidata,樽見鉄道 樽見鉄道樽見線
+n_takaoka_manyosen,高岡駅,たかおかえき,Takaoka-eki,rule,万葉線 万葉線高岡軌道線
+n_takaosan,高尾山,たかおさん,Takaosan,rule,高尾登山電鉄 高尾山ケーブルカー
+n_takasaki_shinden,高崎新田,たかさきしんでん,Takasaki Shinden,wikidata,JR九州 吉都線
+n_takasakishokadaigakumae,高崎商科大学前,たかさきしょうかだいがくまえ,Takasakishoka-daigaku-mae,rule,上信電鉄 上信電鉄上信線
+n_takashimaguchi,鷹島口,たかしまぐち,Takashimaguchi,wikidata,松浦鉄道 松浦鉄道西九州線
+n_takashina,高科,たかしな,Takashina,wikidata,樽見鉄道 樽見鉄道樽見線
+n_takatori_hiroshima_rapid_transit,高取,たかとり,Takatori,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_takefu_shin,たけふ新,たけふしん,Takefu-shin,wikidata,福井鉄道 福井鉄道福武線
+n_takenaka,竹中,たけなか,Takenaka,wikidata,JR九州 豊肥本線
+n_takimizu,滝水,たきみず,Takimizu,wikidata,JR九州 豊肥本線
+n_taku,多久,たく,Taku,wikidata,JR九州 唐津線
+n_tamachi_okayama,田町,たまち,Tamachi,rule,岡山電気軌道 岡山電気軌道清輝橋線
+n_tampi,丹比,たんぴ,Tampi,wikipedia,JR西日本 若桜線 / 若桜鉄道 若桜鉄道若桜線
+n_tanigashira,谷頭,たにがしら,Tanigashira,wikidata,JR九州 吉都線
+n_tanigumi_guchi,谷汲口,たにぐみぐち,Tanigumi-guchi,wikidata,日本国有鉄道 樽見線 / 樽見鉄道 樽見鉄道樽見線
+n_tano,田野,たの,Tano,wikidata,JR九州 日豊本線
+n_tanokuchi,田野口,たのくち,Tanokuchi,wikidata,大井川鐵道 大井川鐵道大井川本線
+n_taragi,多良木,たらぎ,Taragi,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_taragishorenji,多良木青蓮寺,たらぎしょうれんじ,Taragishorenji,wikidata,JR九州 湯前線 / くま川鉄道 くま川鉄道湯前線
+n_tatsuruhama,田鶴浜,たつるはま,Tatsuruhama,wikidata,JR西日本 七尾線 / のと鉄道 のと鉄道七尾線
+n_tennojuku,天王宿,てんのうじゅく,Tennojuku,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_tobanaka,鳥羽中,とばなか,Tobanaka,wikidata,福井鉄道 福井鉄道福武線
+n_tokaichiba_fujikyu,十日市場,とおかいちば,Tokaichiba,wikidata,富士山麓電気鉄道 富士山麓電気鉄道大月線
+n_tokiwa_mizushima_rinkai,常盤,ときわ,Tokiwa,wikidata,水島臨海鉄道 水島臨海鉄道水島本線
+n_tokumaru,徳丸,とくまる,Tokumaru,wikidata,若桜鉄道 若桜鉄道若桜線
+n_tokunaga,徳永,とくなが,Tokunaga,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_tokyo_disneyland,東京ディズニーランド・ステーション,とうきょうでぃずにーらんど・すてーしょん,Tokyo Disneyland,wikidata,舞浜リゾートライン 舞浜リゾートラインディズニーリゾートライン
+n_tokyo_disneysea,東京ディズニーシー・ステーション,とうきょうでぃずにーしー・すてーしょん,Tokyo DisneySea,wikidata,舞浜リゾートライン 舞浜リゾートラインディズニーリゾートライン
+n_tomo,伴,とも,Tomo,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_tomo_chuo,伴中央,ともちゅうおう,Tomo-chuo,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_toritani,通谷,とおりたに,Toritani,wikidata,筑豊電気鉄道 筑豊電気鉄道
+n_torokko_arashiyama,トロッコ嵐山,とろっこあらしやま,Torokko Arashiyama,wikidata,嵯峨野観光鉄道 嵯峨野観光鉄道嵯峨野観光線
+n_tsuboigawakoen,坪井川公園,つぼいがわこうえん,Tsuboigawakoen,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_tsugaru_goshogawara,津軽五所川原,つがるごしょがわら,Tsugaru-Goshogawara,hand,津軽鉄道 津軽鉄道線
+n_tsunomori,津ノ森,つのもり,Tsunomori,wikidata,一畑電気鉄道 一畑電車北松江線
+n_tsutsui_aoimori,筒井,つつい,Tsutsui,wikidata,青い森鉄道 青い森鉄道線
+n_uchigoshi,打越,うちごし,Uchigoshi,wikidata,熊本電気鉄道 熊本電気鉄道菊池線
+n_uchinoda,内之田,うちのだ,Uchinoda,wikidata,JR九州 日南線
+n_uchiumi,内海,うちうみ,Uchiumi,wikidata,JR九州 日南線
+n_uebayashi,上林,うえばやし,Uebayashi,wikidata,伊賀鉄道 伊賀鉄道伊賀線
+n_uemura,植村,うえむら,Uemura,wikidata,JR九州 肥薩線
+n_umeyama,梅山,うめやま,Umeyama,wikidata,長良川鉄道 長良川鉄道越美南線
+n_undo_koen_mae_toyohashi,運動公園前,うんどうこうえんまえ,Undo-Koen-mae,hand,豊橋鉄道 豊橋鉄道東田本線
+n_unsenji,雲泉寺(ラクテンチ下),うんせんじ,Unsenji,rule,ラクテンチ ラクテンチ別府ラクテンチケーブル線
+n_urada,浦田,うらだ,Urada,wikidata,水島臨海鉄道 水島臨海鉄道水島本線
+n_uragawara,うらがわら,うらがわら,Uragawara,wikidata,北越急行 北越急行ほくほく線
+n_ureshino_onsen,嬉野温泉,うれしのおんせん,Ureshino-Onsen,wikidata,JR九州 西九州新幹線
+n_uzen_narita,羽前成田,うぜんなりた,Uzen-Narita,wikidata,JR東日本 長井線 / 山形鉄道 山形鉄道フラワー長井線
+n_wakasa,若桜,わかさ,Wakasa,wikidata,JR西日本 若桜線 / 若桜鉄道 若桜鉄道若桜線
+n_yakage,矢掛,やかげ,Yakage,wikidata,井原鉄道 井原鉄道井原線
+n_yakuri_sanjo,八栗山上,やくりさんじょう,Yakuri-Sanjo,hand,四国ケーブル 四国ケーブル八栗ケーブル
+n_yakuri_tozan_guchi,八栗登山口,やくりとざんぐち,Yakuri Tozan-guchi,hand,四国ケーブル 四国ケーブル八栗ケーブル
+n_yakushido_yuri_kogen,薬師堂,やくしどう,Yakushido,wikidata,日本国有鉄道 矢島線 / 由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_yamada_nagaragawa,山田,やまだ,Yamada,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_yamadani,山谷,やまだに,Yamadani,wikidata,松浦鉄道 松浦鉄道西九州線
+n_yamamoto,山本,やまもと,Yamamoto,wikidata,JR九州 唐津線 / JR九州 筑肥線
+n_yamana,山名,やまな,Yamana,wikidata,上信電鉄 上信電鉄上信線
+n_yamanokuchi,山之口,やまのくち,Yamanokuchi,wikidata,JR九州 日豊本線
+n_yamanota,山の田,やまのた,Yamanota,wikidata,松浦鉄道 松浦鉄道西九州線
+n_yamuramachi,谷村町,やむらまち,Yamuramachi,wikidata,富士山麓電気鉄道 富士山麓電気鉄道大月線
+n_yanaze,柳瀬,やなぜ,Yanaze,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_yasuhigashi,安東,やすひがし,Yasuhigashi,wikidata,広島高速交通 広島高速交通広島新交通1号線
+n_yayoi_mizushima_rinkai,弥生,やよい,Yayoi,wikidata,水島臨海鉄道 水島臨海鉄道水島本線
+n_yazu_koko_mae,八頭高校前,やずこうこうまえ,Yazu-koko-mae,rule,若桜鉄道 若桜鉄道若桜線
+n_yokoya,横屋,よこや,Yokoya,wikidata,日本国有鉄道 樽見線 / 樽見鉄道 樽見鉄道樽見線
+n_yonago_airport,米子空港,よなごくうこう,Yonago Airport,wikidata,JR西日本 境線
+n_yoshii_joshin,吉井,よしい,Yoshii,wikidata,上信電鉄 上信電鉄上信線
+n_yoshii_matsuura,吉井,よしい,Yoshii,wikidata,JR九州 松浦線 / 日本国有鉄道 世知原線 / 松浦鉄道 松浦鉄道西九州線
+n_yoshio,吉尾,よしお,Yoshio,wikidata,JR九州 肥薩線
+n_yoshizawa,吉沢,よしざわ,Yoshizawa,wikidata,由利高原鉄道 由利高原鉄道鳥海山ろく線
+n_yukaba,行波,ゆかば,Yukaba,wikidata,JR西日本 岩日線 / 錦川鉄道 錦川鉄道錦川清流線
+n_yumemino,ゆめみ野,ゆめみの,Yumemino,wikidata,関東鉄道 関東鉄道常総線
+n_yuno,湯野,ゆの,Yuno,wikidata,井原鉄道 井原鉄道井原線
+n_yunohira,湯平,ゆのひら,Yunohira,wikidata,JR九州 久大本線
+n_yunohora_onsen_guchi,湯の洞温泉口,ゆのほらおんせんぐち,Yunohora-Onsen-guchi,wikidata,日本国有鉄道 越美南線 / 長良川鉄道 長良川鉄道越美南線
+n_zaikoji,財光寺,ざいこうじ,Zaikoji,wikidata,JR九州 日豊本線
+n_zen,膳,ぜん,Zen,wikidata,上毛電気鉄道 上毛電気鉄道上毛線
+n_zendoji,善導寺,ぜんどうじ,Zendoji,wikidata,JR九州 久大本線
+n_zoshuku,蔵宿,ぞうしゅく,Zoshuku,wikidata,JR九州 松浦線 / 松浦鉄道 松浦鉄道西九州線

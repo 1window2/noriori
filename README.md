@@ -60,7 +60,7 @@ Where two stops or stations of the same name stood apart at the same time, we co
 
 - 都電 錦糸町駅前: the exact date the north stop (石原線) changed its name from 錦糸堀 to 錦糸町駅前 (between September 1958 and 1962). It is not in the data yet.
 - 都電 新宿駅前: what the 1963 change from the "old" to the "new" 新宿駅前 on route 14 was (a single snippet; the two 新宿駅前 stops are already separate stations).
-- 東武 伊香保軌道線 高崎線 (高崎駅前–渋川) 九蔵町: where the stop stood. Its position is only interpolated, so the map line ends about 270 m from it.
+- 東武 伊香保軌道線 高崎線 (高崎駅前–渋川) 九蔵町: where the stop stood. Its position is only interpolated, so the map draws a straight line to it for now.
 - 名古屋市電 大曽根: the exact position of the stop at the 大曽根 crossing (we have only an approximate one).
 - 東急 玉川線 二子玉川: whether the tram stop and the station were one stop (二子玉川園).
 </details>
