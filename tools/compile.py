@@ -3084,7 +3084,15 @@ for s in stops:
           era=None
           # 근거 표 여객 직통 기간(passenger_only)으로 자른 선로 연결 토막은 자르기 전 기간(track_valid)으로 끝 역 시기를 본다 (塩尻 中央本線→篠ノ井線, 11회차 S3)
           jv_=j.get('track_valid') or j.get('valid')
-          if j.get('continue') and not j.get('implied') and jv_:era=era_end(r['id'],s['seq'],jv_)
+          # 끝 역 시기는 근거 행 시작 날로 잰다. 다만 이 계통의 끝 역 여부가 바뀌는 날에서 나뉜 정차 토막이 근거 행보다 늦게 시작하면 그 토막 첫날로 잰다.
+          # 행 시작 날의 상태를 뒤 토막이 물려받으면 안 된다: 函館 ガス会社前(본선이 1954–1978 亀田町 쪽으로 지나간 동안도 이어짐이 됨),
+          # 名古屋 鶴舞公園(公園線이 1970–1972 이 역에서 끝난 동안도 분기가 됨) (6회차 2026-11-27)
+          # 토막 첫날로 잰 값은 그 토막의 끝 역 여부(isend_p)와 맞을 때만 쓴다. 토막 나누기(정차 기준)와 끝 역 시기(칸 기준)가 다르게 보는 곳은 행 시작 날 값을 그대로 둔다
+          if j.get('continue') and not j.get('implied') and jv_:
+              era=era_end(r['id'],s['seq'],jv_)
+              if len(pieces_)>1 and _lo(s['valid_from'])>_lo(jv_[0]):
+                  ep_=era_end(r['id'],s['seq'],(s['valid_from'],jv_[1]))
+                  if (not isend_p and ep_=='through') or (isend_p and ep_ in ('up','down')):era=ep_
           # 끝난 기간 한정 행은 그 기간의 선로로 끝 역인지 본다. 오늘 끝 역이어도 그때 지나가는 역이었으면 분기다 (2회차 종합 K01)
           thru_then=era=='through' and isend and (jv_ or [None,'ongoing'])[1] not in (None,'ongoing')
           if isend or era=='through':era=None
@@ -6143,9 +6151,14 @@ for x in names:
 _eo=os.path.join(ROOT,'data','overrides','en_official.json')
 if os.path.exists(_eo):
     # 값은 별칭 하나 또는 여럿(공식 표기가 바뀐 역은 옛 공식 표기도 별칭, 5회차 r3)
-    for nd_,tx_ in json.load(open(_eo,encoding='utf-8')).get('aliases',{}).items():
+    _eoj=json.load(open(_eo,encoding='utf-8'))
+    for nd_,tx_ in _eoj.get('aliases',{}).items():
         if nd_ in pub:
             for t_ in ([tx_] if isinstance(tx_,str) else tx_):sadd('node',nd_,t_)
+    # 공식 표기가 여럿인 행(forms)은 이름으로 고르지 않은 꼴도 모두 별칭이다 (tools/en_rules.py pick_official, 사용자 결정 2026-11-28)
+    for nd_,v_ in _eoj['rows'].items():
+        if nd_ in pub:
+            for t_ in v_.get("forms") or ():sadd("node",nd_,_enr.norm_official(t_))
 # 운행 계통 별칭 (data/overrides/service_aliases.json). 공식 노선 하나 전체의 애칭은 그 노선으로, 운행 계통의 애칭은 그 계통으로 찾는다.
 # 대상은 노선 ja 이름이나 ID다. 못 찾거나 여럿이면 오류다
 _sa=os.path.join(ROOT,'data','overrides','service_aliases.json')

@@ -10,6 +10,7 @@ def opt(p):
 m=sqlite3.connect(os.path.join(BUILD,'master.sqlite'))
 n=sqlite3.connect(os.path.join(BUILD,'names.sqlite'))
 rep=json.load(open(os.path.join(BUILD,'report.json'),encoding='utf-8'))
+TABLES={r_[0] for r_ in m.execute("select name from sqlite_master where type='table'")}
 ver=json.load(open(os.path.join(BUILD,'verify.json'),encoding='utf-8'))
 au=opt(os.path.join(BUILD,'audit_ext.json'))
 gen=opt(os.path.join(CAND,'gen_report.json'))
@@ -108,6 +109,9 @@ out+=f"""
 | 역 위치 근사 (좌표 보간) | {pos.get('approx',0)} |
 | 역 위치 없음 | {pos.get('none',0)} |
 | 선형 있는 edge | {geo.get('precise',0)} / {rep['edges']} |
+| 폐지 구간 가운데 지도에 선이 있는 것 | {one('select sum(map_visible) from closed_section')} / {one('select count(*) from closed_section')} |
+| 위치 미확인 구간 표식(선이 없는 폐지 구간, §7.3) | {one('select count(*) from map_marker')} |
+| 노선 지도 표시 / 기록 가능 (coverage, §2.11) | {one("select count(*) from coverage where grade='지도 표시'") if 'coverage' in TABLES else '-'} / {one("select count(*) from coverage where grade!='지도 표시'") if 'coverage' in TABLES else '-'} |
 
 선형은 N02 2005~2024판에서 만들고, N02에 없는 구간은 OSM 선형을 `rail-osm.pmtiles`로 따로 냅니다. 위 수는 N02 선형만 셉니다.
 
@@ -136,8 +140,8 @@ out+=f"""
 ## 알려진 한계
 
 - **폐선 선형**: N02와 OSM 어느 쪽에서도 길이가 맞는 경로를 찾지 못한 폐선 구간은 선이 없습니다. OSM 선형은 ODbL이라 `rail-osm.pmtiles`로 따로 냅니다.
-- **`rail.pmtiles`**: 선형과 역 점만 들어 있습니다. 설계의 작은 기본 배경과 도도부현 경계선은 아직 없습니다.
-- **`manifest.json`**: 해시까지 만들었고 ed25519 서명은 비어 있습니다. 서명 키는 공개 전에 사용자가 만듭니다.
+- **배경 지도**: 앱에 넣는 기본 배경(`base.pmtiles`)은 일본 윤곽과 도도부현 경계뿐입니다. 자세한 배경은 인터넷이 있을 때 OpenFreeMap을 씁니다.
+- **`manifest.json`**: 파일 해시까지 만듭니다. ed25519 서명과 최소 앱 버전은 아직 없습니다. 판을 앱 밖에서 받게 될 때(서버 배포) 사용자의 오프라인 키로 붙입니다.
 - **도도부현 경계 km**: 근사값입니다.
 - **운행 계통**: {one('select count(*) from service')}개만 수록했습니다.
 - **열람 전용 폐선**: 역 목록·순서·km를 확정하지 못한 노선은 열람 전용이라 기록할 수 없습니다.

@@ -76,7 +76,18 @@ String foldSearchText(String text) {
 const _koFold = {0xCD78: 0xCD08, 0xC8E0: 0xC870, 0xC96C: 0xC8FC, 0xCE04: 0xCD94, 0xCC60: 0xCC28, 0xC7C8: 0xC790}; // 쵸초 죠조 쥬주 츄추 챠차 쟈자
 
 /// FTS 검색어. 비면 null. 한 글자 토큰의 구로 찾는다.
+/// 영어로 「Mt. 高尾」처럼 산을 앞에 붙여 치면 역 이름의 산 읽기(-san·-zan·-yama·-dake)로도 찾는다:
+/// 「Mt. Takao」 → Takaosan·Takaosanguchi. 색인에 「Mt.」 별칭을 넣지 않는 것은 金山(광산)·成田山(절)처럼
+/// 산이 아닌 〜山 이름에 틀린 별칭이 붙기 때문이다 (6회차 2026-11-27).
 String? searchQuery(String text) {
-  final folded = foldSearchText(text.replaceAll('"', ''));
-  return folded.isEmpty ? null : '"$folded"';
+  final plain = text.replaceAll('"', '');
+  final folded = foldSearchText(plain);
+  if (folded.isEmpty) return null;
+  final mount = _mount.firstMatch(plain.trim());
+  final rest = mount == null ? '' : foldSearchText(mount.group(1)!);
+  if (rest.isEmpty) return '"$folded"';
+  return ['"$folded"', for (final tail in _mountTails) '"$rest $tail"'].join(' OR ');
 }
+
+final _mount = RegExp(r'^(?:mt\.|mt\s|mount\s)\s*(.*\S)$', caseSensitive: false);
+const _mountTails = ['s a n', 'z a n', 'y a m a', 'd a k e', 't a k e'];

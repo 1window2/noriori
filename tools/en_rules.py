@@ -12,7 +12,13 @@ def load_official():
     p_=os.path.join(ROOT,'data','overrides','en_official.json')
     if not os.path.exists(p_):return {}
     rows=json.load(open(p_,encoding='utf-8'))['rows']
-    return {k:dict(v,en=norm_official(v['en'])) for k,v in rows.items()}
+    return {k:dict(v,en=norm_official(pick_official(v['forms']) if v.get('forms') else v['en'])) for k,v in rows.items()}
+
+def pick_official(forms):
+    """공식 표기가 여럿이면(같은 회사 역명판끼리 엇갈림) 하나를 이름으로 고른다. 하이픈이 있는(더 많은) 꼴, 장음 기호가 있는(더 많은) 꼴,
+    띄어쓰기가 없는(더 적은) 꼴 순이다. 고르지 않은 꼴은 모두 찾기 별칭이다(compile, 사용자 결정 2026-11-28)"""
+    fs=[norm_official(f) for f in forms]
+    return min(fs,key=lambda f:(-f.count('-'),-sum(c in 'āīūēōĀĪŪĒŌ' for c in f),f.count(' '),fs.index(f)))
 
 def load_jawiki():
     """공식이 없는 역의 일본어 위키백과 정보칸 로마자 {노드: {en, title, revid}} (data/overrides/en_jawiki.json, 5회차 2026-11-25)"""
