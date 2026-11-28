@@ -1,4 +1,8 @@
 {
+ "line_stop:l_horikawa_line|n_kyoto_ekimae": "노드 나눔(node_split.json, 6회차 2026-11-28): l_horikawa_line(N電) 정차는 새 노드 n_kyoto_ekimae_horikawa_line(室町 부근)으로 옮김. 원 노드는 烏丸線·河原町線",
+ "line_stop:l_kitaosaka_line|n_noda_hanshin": "노드 나눔(node_split.json, 6회차 2026-11-28): l_kitaosaka_line 정차는 새 노드 n_noda_tram(野田 노면 정류장)으로 옮김. 원 노드는 l_hanshin_main_line",
+ "line_stop:l_kokudo_line|n_noda_hanshin": "노드 나눔(node_split.json, 6회차 2026-11-28): l_kokudo_line 정차는 새 노드 n_noda_tram(野田 노면 정류장)으로 옮김. 원 노드는 l_hanshin_main_line",
+ "line_stop:l_koenji_line|n_shinjuku_ekimae": "노드 나눔(node_split.json, 6회차 2026-11-28): l_koenji_line 정차는 새 노드 n_shinjuku_ekimae_koenji_line(新宿駅前, 大ガード 서쪽)으로 옮김. 원 노드는 l_shinjuku_line_toden(大ガード 동쪽)",
  "group:g_chikugogori": "역 이전(moved.json): 옛 자리 노드만 지금 역 묶음으로 옮겨 옛 자리 쪽 묶음이 빔 (compile 2회차 wave 3 D1, 지금 역 묶음 ID를 남김)",
  "group:g_fukui_ekimae": "역 이전(moved.json): 옛 자리 노드만 지금 역 묶음으로 옮겨 옛 자리 쪽 묶음이 빔 (compile 2회차 wave 3 D1, 지금 역 묶음 ID를 남김)",
  "group:g_funagoya": "역 이전(moved.json): 옛 자리 노드만 지금 역 묶음으로 옮겨 옛 자리 쪽 묶음이 빔 (compile 2회차 wave 3 D1, 지금 역 묶음 ID를 남김)",

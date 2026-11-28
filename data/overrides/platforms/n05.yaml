@@ -1254,7 +1254,7 @@
 - {"node": "n_noborito", "lat": 35.620696, "lon": 139.570267, "source": "n05", "n05_line": "南武線", "n05_operator": "東日本旅客鉄道（旧国鉄）", "years": [1950, 9999]}
 - {"node": "n_noborito_odakyu", "lat": 35.620712, "lon": 139.569269, "source": "n05", "n05_line": "小田原線", "n05_operator": "小田急電鉄", "years": [1958, 9999]}
 - {"node": "n_noda", "lat": 34.688935, "lon": 135.47493, "source": "n05", "n05_line": "大阪環状線", "n05_operator": "西日本旅客鉄道（旧国鉄）", "years": [1965, 9999]}
-- {"node": "n_noda_hanshin", "lat": 34.694728, "lon": 135.47392, "source": "n05", "n05_line": "国道線", "n05_operator": "阪神電気鉄道", "years": [1950, 1974]}
+- {"node": "n_noda_tram", "lat": 34.694728, "lon": 135.47392, "source": "n05", "n05_line": "国道線", "n05_operator": "阪神電気鉄道", "years": [1950, 1974]}
 - {"node": "n_nodahanshin", "lat": 34.694115, "lon": 135.47487, "source": "n05", "n05_line": "5号線", "n05_operator": "大阪市", "years": [1969, 2017]}
 - {"node": "n_noe", "lat": 34.7073, "lon": 135.543335, "source": "n05", "n05_line": "京阪本線", "n05_operator": "京阪電気鉄道", "years": [1950, 9999]}
 - {"node": "n_noe_uchindai", "lat": 34.709141, "lon": 135.53833, "source": "n05", "n05_line": "2号線", "n05_operator": "大阪市", "years": [1977, 2017]}

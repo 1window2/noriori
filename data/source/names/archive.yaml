@@ -1403,9 +1403,9 @@
 - {"entity_type": "archive", "id": "a_ushiki", "lang": "ja", "text": "牛木", "kana": "うしぎ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_ushiki", "lang": "ko", "text": "우시기", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_ushiki", "lang": "en", "text": "Ushigi", "source": "rule"}
-- {"entity_type": "archive", "id": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura", "lang": "ja", "text": "下浦", "kana": null, "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura", "lang": "ko", "text": "下浦", "source": "ja_as_is", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura", "lang": "en", "text": "下浦", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura", "lang": "ja", "text": "下浦", "kana": "しもうら", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura", "lang": "ko", "text": "시모우라", "source": "namuwiki", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_amagi_line_nishi_nippon_hongo_nishi_nippon_kamiura", "lang": "en", "text": "Shimoura", "source": "rule"}
 - {"entity_type": "archive", "id": "a_iseki", "lang": "ja", "text": "井堰", "kana": "いぜき", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_iseki", "lang": "ko", "text": "이제키", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_iseki", "lang": "en", "text": "Izeki", "source": "rule"}
@@ -2273,9 +2273,9 @@
 - {"entity_type": "archive", "id": "a_asama_line", "lang": "ja", "text": "朝熊線", "kana": "あさません", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_asama_line", "lang": "ko", "text": "아사마선", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_asama_line", "lang": "en", "text": "Asama Line", "source": "rule"}
-- {"entity_type": "archive", "id": "a_densha_line_niigata_hakusanmae_higashisekiya", "lang": "ja", "text": "白山駅前", "kana": null, "source": "wikipedia"}
-- {"entity_type": "archive", "id": "a_densha_line_niigata_hakusanmae_higashisekiya", "lang": "ko", "text": "白山駅前", "source": "ja_as_is", "checked": "2026-11-20"}
-- {"entity_type": "archive", "id": "a_densha_line_niigata_hakusanmae_higashisekiya", "lang": "en", "text": "白山駅前", "source": "ja_as_is"}
+- {"entity_type": "archive", "id": "a_densha_line_niigata_hakusanmae_higashisekiya", "lang": "ja", "text": "白山駅前", "kana": "はくさんえきまえ", "source": "wikipedia"}
+- {"entity_type": "archive", "id": "a_densha_line_niigata_hakusanmae_higashisekiya", "lang": "ko", "text": "하쿠산에키마에", "source": "rule", "checked": "2026-11-20"}
+- {"entity_type": "archive", "id": "a_densha_line_niigata_hakusanmae_higashisekiya", "lang": "en", "text": "Hakusan-ekimae", "source": "rule"}
 - {"entity_type": "archive", "id": "a_yuubinkyokumae", "lang": "ja", "text": "郵便局前", "kana": "ゆうびんきょくまえ", "source": "wikipedia"}
 - {"entity_type": "archive", "id": "a_yuubinkyokumae", "lang": "ko", "text": "유빈쿄쿠마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "archive", "id": "a_yuubinkyokumae", "lang": "en", "text": "Yubinkyoku-mae", "source": "rule"}

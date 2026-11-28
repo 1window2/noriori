@@ -30,11 +30,11 @@
 "keep_lines": ["l_setagaya_line", "l_tamagawa_line_tokyu_railways"],
 "move_lines": ["l_den_en_toshi_line"],
 "new_id": "n_sangen_jaya_den_en_toshi",
-"new_group": "g_sangen_jaya",
+"new_group": "g_sangen_jaya_den_en_toshi",
 "position": {"lat": 35.64336, "lon": 139.67107, "source": "n02_2024"},
 "name_ja": "三軒茶屋",
 "pref": "13",
-"why": "c1:n_sangen_jaya: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 世田谷線(1925~ 현행, 가장 오래 존속)이 기존 ID 유지. 田園都市線 지하역(1977~)이 새 노드. 좌표 미정(노선 선형 위 추정 필요). group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1977-04-07~9999-12-31). 근거: line.type: l_den_en_toshi_line=rail, l_setagaya_line=tram, l_tamagawa_line_tokyu_railways=tram"
+"why": "c1:n_sangen_jaya: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 世田谷線(1925~ 현행, 가장 오래 존속)이 기존 ID 유지. 田園都市線 지하역(1977~)이 새 노드. 좌표 미정(노선 선형 위 추정 필요). group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1977-04-07~9999-12-31). 근거: line.type: l_den_en_toshi_line=rail, l_setagaya_line=tram, l_tamagawa_line_tokyu_railways=tram / group: 함께 영업했지만 두 자리가 199 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_sakura_shinmachi",
@@ -195,11 +195,11 @@
 "keep_lines": ["l_asakusa_line"],
 "move_lines": ["l_hondori_line", "l_horaibashi_line", "l_kanasugi_line"],
 "new_id": "n_shimbashi_toden",
-"new_group": "g_shimbashi",
+"new_group": "g_shimbashi_toden",
 "position": {"lat": 35.667195, "lon": 139.760909, "source": "n05"},
 "name_ja": "新橋",
 "pref": "13",
-"why": "c1:n_shimbashi_toei: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15308007(金杉線), 지금 노드에서 237 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1963-12-12~1967-12-10). 근거: line.type: l_asakusa_line=subway, l_hondori_line=tram, l_horaibashi_line=tram, l_kanasugi_line=tram; N05 EB03_15308007 金杉線 점이 현재 노드 좌표에서 237 m"
+"why": "c1:n_shimbashi_toei: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15308007(金杉線), 지금 노드에서 237 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1963-12-12~1967-12-10). 근거: line.type: l_asakusa_line=subway, l_hondori_line=tram, l_horaibashi_line=tram, l_kanasugi_line=tram; N05 EB03_15308007 金杉線 점이 현재 노드 좌표에서 237 m / group: 함께 영업했지만 두 자리가 237 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_nihombashi_toei",
@@ -228,11 +228,11 @@
 "keep_lines": ["l_asakusa_line"],
 "move_lines": ["l_kuramae_line", "l_muromachi_line", "l_ryogokubashi_line"],
 "new_id": "n_asakusabashi_toden",
-"new_group": "g_asakusabashi",
+"new_group": "g_asakusabashi_toden",
 "position": {"lat": 35.695284, "lon": 139.784972, "source": "n05"},
 "name_ja": "浅草橋",
 "pref": "13",
-"why": "c1:n_asakusabashi_toei: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15363001(蔵前線), 지금 노드에서 241 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1960-12-04~1972-11-12). 근거: line.type: l_asakusa_line=subway, l_kuramae_line=tram, l_muromachi_line=tram, l_ryogokubashi_line=tram; N05 EB03_15363001 蔵前線 점이 현재 노드 좌표에서 241 m"
+"why": "c1:n_asakusabashi_toei: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15363001(蔵前線), 지금 노드에서 241 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1960-12-04~1972-11-12). 근거: line.type: l_asakusa_line=subway, l_kuramae_line=tram, l_muromachi_line=tram, l_ryogokubashi_line=tram; N05 EB03_15363001 蔵前線 점이 현재 노드 좌표에서 241 m / group: 함께 영업했지만 두 자리가 239 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_asakusa_toei",
@@ -316,11 +316,11 @@
 "keep_lines": ["l_mita_line"],
 "move_lines": ["l_ochanomizu_line", "l_suidobashi_line"],
 "new_id": "n_suidobashi_toden",
-"new_group": "g_suidobashi",
+"new_group": "g_suidobashi_toden",
 "position": {"lat": 35.703313, "lon": 139.755214, "source": "n05"},
 "name_ja": "水道橋",
 "pref": "13",
-"why": "c1:n_suidobashi_toei: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15350008(水道橋線), 지금 노드에서 163 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_suidobashi와 겹침). 근거: line.type: l_mita_line=subway, l_ochanomizu_line=tram, l_suidobashi_line=tram; N05 EB03_15350008 水道橋線 점이 현재 노드 좌표에서 163 m"
+"why": "c1:n_suidobashi_toei: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15350008(水道橋線), 지금 노드에서 163 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_suidobashi와 겹침). 근거: line.type: l_mita_line=subway, l_ochanomizu_line=tram, l_suidobashi_line=tram; N05 EB03_15350008 水道橋線 점이 현재 노드 좌표에서 163 m / group: 함께 영업했지만 두 자리가 163 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_nishi_sugamo",
@@ -371,11 +371,11 @@
 "keep_lines": ["l_shinjuku_line_toei"],
 "move_lines": ["l_shinjuku_line_toden"],
 "new_id": "n_shinjuku_sanchome_toden",
-"new_group": "g_shinjuku_sanchome_tokyo_metro",
+"new_group": "g_shinjuku_sanchome_toden",
 "position": {"lat": 35.689859, "lon": 139.707211, "source": "n05"},
 "name_ja": "新宿三丁目",
 "pref": "13",
-"why": "c1:n_shinjuku_sanchome_toei: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15352011(新宿線), 지금 노드에서 236 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_shinjuku_sanchome_tokyo_metro와 겹침). 근거: line.type: l_shinjuku_line_toden=tram, l_shinjuku_line_toei=subway; N05 EB03_15352011 新宿線 점이 현재 노드 좌표에서 236 m"
+"why": "c1:n_shinjuku_sanchome_toei: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15352011(新宿線), 지금 노드에서 236 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_shinjuku_sanchome_tokyo_metro와 겹침). 근거: line.type: l_shinjuku_line_toden=tram, l_shinjuku_line_toei=subway; N05 EB03_15352011 新宿線 점이 현재 노드 좌표에서 236 m / group: 함께 영업했지만 두 자리가 236 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_kudanshita_toei",
@@ -481,11 +481,11 @@
 "keep_lines": ["l_oedo_line"],
 "move_lines": ["l_susaki_line", "l_takabashi_line", "l_tsukishima_line"],
 "new_id": "n_monzen_nakacho_toden",
-"new_group": "g_monzen_nakacho_tokyo_metro",
+"new_group": "g_monzen_nakacho_toden",
 "position": {"lat": 35.672665, "lon": 139.794548, "source": "n05"},
 "name_ja": "門前仲町",
 "pref": "13",
-"why": "c1:n_monzen_nakacho_toei: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15376004(洲崎線), 지금 노드에서 175 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_monzen_nakacho_tokyo_metro와 겹침). 근거: line.type: l_oedo_line=subway, l_susaki_line=tram, l_takabashi_line=tram, l_tsukishima_line=tram; N05 EB03_15376004 洲崎線 점이 현재 노드 좌표에서 175 m"
+"why": "c1:n_monzen_nakacho_toei: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_15376004(洲崎線), 지금 노드에서 175 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_monzen_nakacho_tokyo_metro와 겹침). 근거: line.type: l_oedo_line=subway, l_susaki_line=tram, l_takabashi_line=tram, l_tsukishima_line=tram; N05 EB03_15376004 洲崎線 점이 현재 노드 좌표에서 175 m / group: 함께 영업했지만 두 자리가 175 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_tsukishima_toei",
@@ -602,11 +602,11 @@
 "keep_lines": ["l_higashiyama_line", "l_meijo_meiko_line"],
 "move_lines": ["l_atsuta_line", "l_otsumachi_line", "l_sakaemachi_line"],
 "new_id": "n_sakae_nagoya_tram",
-"new_group": "g_sakae_nagoya_city",
+"new_group": "g_sakae_nagoya_tram",
 "position": {"lat": 35.168963, "lon": 136.90643, "source": "n05"},
 "name_ja": "栄",
 "pref": "23",
-"why": "c1:n_sakae_nagoya_city: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17308007(栄町線), 지금 노드에서 185 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1957-11-15~1971-02-01). 근거: line.type: l_atsuta_line=tram, l_higashiyama_line=subway, l_meijo_meiko_line=subway, l_otsumachi_line=tram, l_sakaemachi_line=tram; N05 EB03_17308007 栄町線 점이 현재 노드 좌표에서 185 m"
+"why": "c1:n_sakae_nagoya_city: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17308007(栄町線), 지금 노드에서 185 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1957-11-15~1971-02-01). 근거: line.type: l_atsuta_line=tram, l_higashiyama_line=subway, l_meijo_meiko_line=subway, l_otsumachi_line=tram, l_sakaemachi_line=tram; N05 EB03_17308007 栄町線 점이 현재 노드 좌표에서 185 m / group: 함께 영업했지만 두 자리가 185 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_shinsakae_machi",
@@ -646,11 +646,11 @@
 "keep_lines": ["l_higashiyama_line"],
 "move_lines": ["l_higashiyamakoen_line", "l_kakuozan_line"],
 "new_id": "n_kakuozan_nagoya_tram",
-"new_group": "g_kakuozan",
+"new_group": "g_kakuozan_nagoya_tram",
 "position": {"lat": 35.16626, "lon": 136.951673, "source": "n05"},
 "name_ja": "覚王山",
 "pref": "23",
-"why": "c1:n_kakuozan: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17309005(覚王山線), 지금 노드에서 188 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1963-04-01~1965-03-01). 근거: line.type: l_higashiyama_line=subway, l_higashiyamakoen_line=tram, l_kakuozan_line=tram; N05 EB03_17309005 覚王山線 점이 현재 노드 좌표에서 188 m"
+"why": "c1:n_kakuozan: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17309005(覚王山線), 지금 노드에서 188 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1963-04-01~1965-03-01). 근거: line.type: l_higashiyama_line=subway, l_higashiyamakoen_line=tram, l_kakuozan_line=tram; N05 EB03_17309005 覚王山線 점이 현재 노드 좌표에서 188 m / group: 함께 영업했지만 두 자리가 188 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_motoyama_nagoya_city",
@@ -690,11 +690,11 @@
 "keep_lines": ["l_meijo_line", "l_meijo_meiko_line"],
 "move_lines": ["l_onaridori_line", "l_ozone_line", "l_takaoka_line"],
 "new_id": "n_ozone_nagoya_tram",
-"new_group": "g_ozone",
+"new_group": "g_ozone_nagoya_tram",
 "position": {"lat": 35.190249, "lon": 136.930154, "source": "n05"},
 "name_ja": "大曽根",
 "pref": "23",
-"why": "c1:n_ozone_nagoya_city: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17333009(高岳線), 지금 노드에서 652 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_ozone,n_ozone_meitetsu와 겹침). 근거: line.type: l_meijo_line=subway, l_meijo_meiko_line=subway, l_onaridori_line=tram, l_ozone_line=tram, l_takaoka_line=tram; N05 EB03_17333009 高岳線 점이 현재 노드 좌표에서 652 m"
+"why": "c1:n_ozone_nagoya_city: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17333009(高岳線), 지금 노드에서 652 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_ozone,n_ozone_meitetsu와 겹침). 근거: line.type: l_meijo_line=subway, l_meijo_meiko_line=subway, l_onaridori_line=tram, l_ozone_line=tram, l_takaoka_line=tram; N05 EB03_17333009 高岳線 점이 현재 노드 좌표에서 652 m / group: 함께 영업했지만 두 자리가 652 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_kurokawa_nagoya_city",
@@ -723,11 +723,11 @@
 "keep_lines": ["l_meijo_meiko_line"],
 "move_lines": ["l_atsuta_line"],
 "new_id": "n_yabacho_nagoya_tram",
-"new_group": "g_yabacho",
+"new_group": "g_yabacho_nagoya_tram",
 "position": {"lat": 35.16228, "lon": 136.906782, "source": "n05"},
 "name_ja": "矢場町",
 "pref": "23",
-"why": "c1:n_yabacho: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17313003(熱田線), 지금 노드에서 261 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1967-03-30~1968-02-01). 근거: line.type: l_atsuta_line=tram, l_meijo_meiko_line=subway; N05 EB03_17313003 熱田線 점이 현재 노드 좌표에서 261 m"
+"why": "c1:n_yabacho: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17313003(熱田線), 지금 노드에서 261 m. group: 함께 영업한 기간이 있어 같은 group 유지(겹침 1967-03-30~1968-02-01). 근거: line.type: l_atsuta_line=tram, l_meijo_meiko_line=subway; N05 EB03_17313003 熱田線 점이 현재 노드 좌표에서 261 m / group: 함께 영업했지만 두 자리가 261 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_kamimaezu",
@@ -877,11 +877,11 @@
 "keep_lines": ["l_kamiiida_line"],
 "move_lines": ["l_onaridori_line"],
 "new_id": "n_kamiiida_nagoya_tram",
-"new_group": "g_kamiiida_meitetsu",
+"new_group": "g_kamiiida_nagoya_tram",
 "position": {"lat": 35.205692, "lon": 136.929615, "source": "n05"},
 "name_ja": "上飯田",
 "pref": "23",
-"why": "c1:n_kamiiida_nagoya_city: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17335005(御成通線), 지금 노드에서 205 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_kamiiida_meitetsu와 겹침). 근거: line.type: l_kamiiida_line=subway, l_onaridori_line=tram; N05 EB03_17335005 御成通線 점이 현재 노드 좌표에서 205 m"
+"why": "c1:n_kamiiida_nagoya_city: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 N05 EB03_17335005(御成通線), 지금 노드에서 205 m. group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_kamiiida_meitetsu와 겹침). 근거: line.type: l_kamiiida_line=subway, l_onaridori_line=tram; N05 EB03_17335005 御成通線 점이 현재 노드 좌표에서 205 m / group: 함께 영업했지만 두 자리가 204 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_karasuma_oike",
@@ -965,11 +965,11 @@
 "keep_lines": ["l_kaigan_line"],
 "move_lines": ["l_wada_line"],
 "new_id": "n_wadamisaki_kobe_tram",
-"new_group": "g_wadamisaki",
+"new_group": "g_wadamisaki_kobe_tram",
 "position": {"lat": 34.658719, "lon": 135.176545, "source": "n05"},
 "name_ja": "和田岬",
 "pref": "28",
-"why": "c1:n_wadamisaki_kobe_city: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 미정(노선 선형 위 추정 필요). group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_wadamisaki와 겹침). 근거: line.type: l_kaigan_line=subway, l_wada_line=tram"
+"why": "c1:n_wadamisaki_kobe_city: 동시 영업 없음(후계 역 공유). 지하철/철도 쪽이 현행(ongoing)이라 기존 ID 유지, 노면전차 쪽 새 노드. 좌표 미정(노선 선형 위 추정 필요). group: 함께 영업한 기간이 있어 같은 group 유지(같은 group의 n_wadamisaki와 겹침). 근거: line.type: l_kaigan_line=subway, l_wada_line=tram / group: 함께 영업했지만 두 자리가 262 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 },
 {
 "node": "n_mishima_hirokoji",
@@ -1033,9 +1033,50 @@
 "keep_lines": ["l_ishiwara_line"],
 "move_lines": ["l_sarue_line"],
 "new_id": "n_kinshicho_ekimae_sarue_line",
-"new_group": "g_kinshicho_ekimae",
+"new_group": "g_kinshicho_ekimae_sarue_line",
 "name_ja": "錦糸町駅前",
 "pref": "13",
-"why": "c1:n_kinshicho_ekimae: 같은 이름의 다른 정류장 둘. 石原線 錦糸町駅前(1949-11-01~1971-03-18)은 総武線 錦糸町역 북쪽 四ツ目通, 猿江線 錦糸町駅前(1958-05-29~1972-11-12)은 역 남쪽 광장 앞으로 선로를 사이에 두고 약 175 m(地理院 ort_old10 1961–69 z17, N05-24 두 점). 두 선로는 이어지지 않음(n05_fix 노트 「선로 안 이어짐」, hand_tables JUNCTION_NOT 행 함께). 石原線이 기존 ID 유지, 猿江線 쪽이 새 노드. 함께 영업한 기간(1958-05-29~1971-03-18)의 같은 이름 정류장이라 같은 group(역 방문은 하나) (3회차 선형 조사 2026-11-13; r3out/geo n_kinshicho_ekimae)"
+"why": "c1:n_kinshicho_ekimae: 같은 이름의 다른 정류장 둘. 石原線 錦糸町駅前(1949-11-01~1971-03-18)은 総武線 錦糸町역 북쪽 四ツ目通, 猿江線 錦糸町駅前(1958-05-29~1972-11-12)은 역 남쪽 광장 앞으로 선로를 사이에 두고 약 175 m(地理院 ort_old10 1961–69 z17, N05-24 두 점). 두 선로는 이어지지 않음(n05_fix 노트 「선로 안 이어짐」, hand_tables JUNCTION_NOT 행 함께). 石原線이 기존 ID 유지, 猿江線 쪽이 새 노드. 함께 영업한 기간(1958-05-29~1971-03-18)의 같은 이름 정류장이라 같은 group(역 방문은 하나) (3회차 선형 조사 2026-11-13; r3out/geo n_kinshicho_ekimae) / group: 함께 영업했지만 두 자리가 173 m(150 m 넘음)라 다른 역(다른 group, 걸어서 갈아타는 환승) (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
+},
+{
+"node": "n_shinjuku_ekimae",
+"keep_lines": ["l_shinjuku_line_toden"],
+"move_lines": ["l_koenji_line"],
+"new_id": "n_shinjuku_ekimae_koenji_line",
+"new_group": "g_shinjuku_ekimae_koenji_line",
+"position": {"lat": 35.693594, "lon": 139.698536, "source": "n05"},
+"name_ja": "新宿駅前",
+"kana": "しんじゅくえきまえ",
+"ko": "신주쿠에키마에",
+"en": "Shinjuku-ekimae",
+"pref": "13",
+"why": "같은 都電의 다른 정류장 둘: 高円寺線(杉並線, 1067 mm) 新宿駅前는 大ガード 서쪽 青梅街道 입구(1944 뒤), 新宿線(1372 mm) 新宿駅前는 大ガード 동쪽 靖国通り. 255 m, 국철 선로가 사이를 가르고 궤간이 달라 선로가 이어지지 않음. 근거: N05-24 노선별 「新宿駅前」 점 둘(高円寺線 35.693594,139.698536 = e_014400 끝, 新宿線 35.693648,139.701359 = e_014446 끝), 지리원 항공사진 ort_old10(1961–69), ja.wikipedia 都電杉並線 rev104579410 「1944年以降新宿大ガード手前まで後退」. ID: 두 정류장 사이 계승 자료가 없어 더 늦게까지 영업한 新宿線(1970) 쪽이 원 ID를 이음(東寺道 선례), 원 노드 좌표는 source_patch/positions로 新宿線 점. group: 255 m라 다른 역 (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
+},
+{
+"node": "n_noda_hanshin",
+"keep_lines": ["l_hanshin_main_line"],
+"move_lines": ["l_kokudo_line", "l_kitaosaka_line"],
+"new_id": "n_noda_tram",
+"new_group": "g_noda_tram",
+"position": {"lat": 34.694728, "lon": 135.47392, "source": "n05"},
+"name_ja": "野田",
+"kana": "のだ",
+"ko": "노다",
+"en": "Noda",
+"pref": "27",
+"why": "c1:n_noda_hanshin: 동시 영업했지만 다른 시설(노면 정류장 vs 역). 阪神 本線 野田가 현행이라 기존 ID 유지, 国道線·北大阪線 野田(국도 2호 위 노면 정류장, 두 노선이 같은 정류장) 새 노드(阪神 국도선 선례 n_nishinada_tram과 같은 꼴). 좌표 N05 EB03_19436001(国道線), 지금 노드에서 199 m(北大阪線 점 EB03_19435001은 152 m). 1932-08-10 세 노선 連絡線(위키 阪神北大阪線 rev110507999 年表)은 여객 직통 없는 선로라 이어짐이 아님. group: 199 m라 다른 역 (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
+},
+{
+"node": "n_kyoto_ekimae",
+"keep_lines": ["l_karasuma_line_kyoto_tram", "l_kawaramachi_line"],
+"move_lines": ["l_horikawa_line"],
+"new_id": "n_kyoto_ekimae_horikawa_line",
+"new_group": "g_kyoto_ekimae",
+"name_ja": "京都駅前",
+"kana": "きょうとえきまえ",
+"ko": "교토에키마에",
+"en": "Kyoto-ekimae",
+"pref": "26",
+"why": "堀川線(N電, 1067 mm) 京都駅前(1927-04-05~1961-07-31)는 표준궤 京都駅前 승강장과 다른 정류장: 塩小路通 북쪽 室町通 교차점 부근, 표준궤 선로와 나란한 별도 선로(3선 아님). 근거: 『京都市営電気事業沿革誌』(1933, NDL 1258700) 1080–1081쪽(높음), 『鉄道ピクトリアル』356(1978) 「狭軌線の方はここが京都駅前電停」, 1953 지도, 지리원 항공사진 1961–69. 좌표는 室町×塩小路 교차점 부근 후보(대략, 25 m 미증명, 연구 원자료 audit6/H_kyoto). group: 지금 노드에서 약 140 m라 같은 역 (6회차 같은 이름 다른 정류장 규칙, 사용자 결정 2026-11-28, 설계 docs/research/audit6-same-name-stop-split-design.md)"
 }
 ]

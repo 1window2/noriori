@@ -46209,6 +46209,829 @@
    "source": "https://commons.wikimedia.org/wiki/File:Tango_Yura_Station_2020-05_ac_(1).jpg",
    "type": "sign",
    "note": "Tantetsu-style station entrance board reads \"丹後由良駅 / Tango-yura Station\" (photo May 2020; name part \"Tango-yura\", crop evidence/signs/tango_yura_entrance_2020-05_crop.png); agrees with WILLER English timetable page \"Tango-yura\"; company station list writes \"TANGOYURA\""
+  },
+  "n_akamizu": {
+   "en": "Akamizu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tateno_Station_Sign_(JR).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tateno) 역명판에 인쇄된 이 역 이름 「TATENO sign, left neighbour AKAMIZU」, 촬영 2014-02-23; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ichinokawa": {
+   "en": "Ichinokawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Platform_of_Akamizu_Station_after_Kumamoto_Earthquake_5.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_akamizu) 역명판에 인쇄된 이 역 이름 「AKAMIZU sign right neighbour ICHINOKAWA」, 촬영 2017-11-06. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_akase": {
+   "en": "Akase",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ishiuchidam-station-board01.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ishiuchi_dam) 역명판에 인쇄된 이 역 이름 「ISHIUCHI-DAMU sign, left neighbour AKASE」, 촬영 date not on file page. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_asahigaoka_nippo_main": {
+   "en": "Asahigaoka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:南延岡駅看板.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_minami_nobeoka) 역명판에 인쇄된 이 역 이름 「MINAMI-NOBEOKA sign left neighbour ASAHIGAOKA」, 촬영 2009-07-29; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kadogawa": {
+   "en": "Kadogawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sign,_Totoro_Station,_Nippō_Main_Line,_Nobeoka_-_Feb_28,_2026.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_totoro) 역명판에 인쇄된 이 역 이름 「TOTORO sign left neighbour KADOGAWA」, 촬영 2026-02-28; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_bungo_nakamura": {
+   "en": "Bungo Nakamura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:野矢駅_ホーム駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_noya) 역명판에 인쇄된 이 역 이름 「NOYA sign right neighbour printed BUNGO NAKAMURA (space, no hyphen)」, 촬영 2025-09-08. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_buzen_kawasaki": {
+   "en": "Buzen Kawasaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hita_hikosan_line_20210320083704_(51336861358).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ikejiri) 역명판에 인쇄된 이 역 이름 「IKEJIRI sign left neighbour printed BUZEN KAWASAKI (space)」, 촬영 2021-03-20. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_mikawachi": {
+   "en": "Mikawachi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:R0011088_早岐駅駅名標_(2352722495).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_haiki) 역명판에 인쇄된 이 역 이름 「HAIKI sign right neighbours MIKAWACHI / DAITŌ」, 촬영 2008-03-22; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_sesekushi": {
+   "en": "Sesekushi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hirakawa_Station_2025-2.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_hirakawa) 역명판에 인쇄된 이 역 이름 「HIRAKAWA sign left neighbour SESEKUSHI」, 촬영 2025-05-12. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_goino": {
+   "en": "Goino",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hirakawa_Station_2025-2.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_hirakawa) 역명판에 인쇄된 이 역 이름 「HIRAKAWA sign right neighbour GOINO」, 촬영 2025-05-12. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_chikugo_oishi": {
+   "en": "Chikugo-Ōishi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:夜明駅_駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_yoake) 역명판에 인쇄된 이 역 이름 「YOAKE sign right neighbour printed CHIKUGO-ŌISHI (macron)」, 촬영 2025-09-08. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_iwamatsu": {
+   "en": "Iwamatsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Isahaya_Station_Sign_(JR).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_isahaya) 역명판에 인쇄된 이 역 이름 「ISAHAYA sign right neighbour IWAMATSU」, 촬영 2017-01-06. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_oe": {
+   "en": "Oe",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JRKyushu_HizenNagata_Station_2.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_hizen_nagata) 역명판에 인쇄된 이 역 이름 「HIZENNAGATA sign right neighbour OE」, 촬영 November 2008; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_higashi_nakatsu": {
+   "en": "Higashi-Nakatsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nakatsu_Station_Sign_(JR)_3.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_nakatsu) 역명판에 인쇄된 이 역 이름 「NAKATSU sign right neighbour HIGASHI-NAKATSU」, 촬영 2017-04-30. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_higo_nagahama": {
+   "en": "Higo-Nagahama",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JRK-Sumiyoshi-station-board.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_sumiyoshi_misumi) 역명판에 인쇄된 이 역 이름 「SUMIYOSHI sign right neighbour HIGO-NAGAHAMA」, 촬영 date not on file page. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hyokiyama": {
+   "en": "Hyōkiyama",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hinatayama_Station3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_hinatayama) 역명판에 인쇄된 이 역 이름 「HINATAYAMA sign left neighbour printed HYŌKIYAMA (macron)」, 촬영 2012-12-04. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hyuga_otsuka": {
+   "en": "Hyuga-Otsuka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:榎原駅_駅舎,駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_yowara) 역명판에 인쇄된 이 역 이름 「YOWARA sign left neighbour HYUGA-OTSUKA (paint worn; no macron visible)」, 촬영 2025-09-13. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_taninokuchi": {
+   "en": "Taninokuchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:榎原駅_駅舎,駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_yowara) 역명판에 인쇄된 이 역 이름 「YOWARA sign right neighbour TANINOKUCHI (worn but legible)」, 촬영 2025-09-13. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ichiki": {
+   "en": "Ichiki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yunomoto_Station3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_yunomoto) 역명판에 인쇄된 이 역 이름 「YUNOMOTO sign right neighbour ICHIKI」, 촬영 2013-03-13. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ichitana": {
+   "en": "Ichitana",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sotaro_Station_name_sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_sotaro) 역명판에 인쇄된 이 역 이름 「SŌTARŌ sign left neighbour ICHITANA」, 촬영 2023-06-26. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_shigeoka": {
+   "en": "Shigeoka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sotaro_Station_name_sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_sotaro) 역명판에 인쇄된 이 역 이름 「SŌTARŌ sign right neighbour SHIGEOKA」, 촬영 2023-06-26. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ijuin": {
+   "en": "Ijūin",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Higashiichiki_Station3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_higashi_ichiki) 역명판에 인쇄된 이 역 이름 「HIGASHI-ICHIKI sign right neighbour printed IJŪIN (macron)」, 촬영 2013-02-27. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ikoi_no_mura": {
+   "en": "Ikoinomura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aso_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_aso_hohi_main) 역명판에 인쇄된 이 역 이름 「ASO sign left neighbour printed IKOINOMURA (one word)」, 촬영 2014-02-23. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_uchinomaki": {
+   "en": "Uchinomaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aso_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_aso_hohi_main) 역명판에 인쇄된 이 역 이름 「ASO sign right neighbour UCHINOMAKI」, 촬영 2014-02-23. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_minami_kagoshima": {
+   "en": "Minami-Kagoshima",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Korimoto_Station_3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_korimoto) 역명판에 인쇄된 이 역 이름 「KŌRIMOTO sign left neighbour MINAMI-KAGOSHIMA」, 촬영 2016-02-24. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kagoshima_chuo": {
+   "en": "Kagoshima-Chūō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Korimoto_Station_3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_korimoto) 역명판에 인쇄된 이 역 이름 「KŌRIMOTO sign right neighbour printed KAGOSHIMA-CHŪŌ (macrons)」, 촬영 2016-02-24. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kikitsu": {
+   "en": "Kikitsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nishi-Isahaya_Station_Sign_20210530.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_nishi_isahaya) 역명판에 인쇄된 이 역 이름 「NISHI-ISAHAYA sign right neighbour KIKITSU」, 촬영 2021-05-30. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nakafukura": {
+   "en": "Naka-Fukura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kareigawa_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kareigawa) 역명판에 인쇄된 이 역 이름 「KAREIGAWA sign left neighbour printed NAKA-FUKURA (hyphen)」, 촬영 2018-05-05. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kirishima_onsen": {
+   "en": "Kirishima-Onsen",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kareigawa_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kareigawa) 역명판에 인쇄된 이 역 이름 「KAREIGAWA sign right neighbour KIRISHIMA-ONSEN」, 촬영 2018-05-05. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kita_nobeoka": {
+   "en": "Kita-Nobeoka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sign,_Nobeoka_Station,_Nippo_Main_Line_-_Feb_28,_2026.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_nobeoka) 역명판에 인쇄된 이 역 이름 「NOBEOKA sign right neighbour KITA-NOBEOKA」, 촬영 2026-02-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kiyotake": {
+   "en": "Kiyotake",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kano_Station_Sign_(Nippo_Main_Line).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kano) 역명판에 인쇄된 이 역 이름 「KANO sign right neighbour KIYOTAKE」, 촬영 2017-03-20. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kouchiumi": {
+   "en": "Kouchiumi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ibii_station_202505_-_station_name_sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ibii) 역명판에 인쇄된 이 역 이름 「IBII sign right neighbour KOUCHIUMI」, 촬영 May 2025. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kurino": {
+   "en": "Kurino",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yoshimatsu_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_yoshimatsu) 역명판에 인쇄된 이 역 이름 「YOSHIMATSU sign right neighbour KURINO」, 촬영 2017-03-17. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tsurumaru": {
+   "en": "Tsurumaru",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Yoshimatsu_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_yoshimatsu) 역명판에 인쇄된 이 역 이름 「YOSHIMATSU sign left neighbour TSURUMARU」, 촬영 2017-03-17. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kushima": {
+   "en": "Kushima",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:福島今町駅_駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_fukushima_imamachi) 역명판에 인쇄된 이 역 이름 「FUKUSHIMA-IMAMACHI sign right neighbour KUSHIMA」, 촬영 2025-09-13. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_mimasaka": {
+   "en": "Mimasaka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kami-Arita_Station_Sign_2.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kami_arita) 역명판에 인쇄된 이 역 이름 「KAMI ARITA sign left neighbour MIMASAKA」, 촬영 2017-04-29; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nagasato": {
+   "en": "Nagasato",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sign_and_Platform_of_Yue_Station.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_yue) 역명판에 인쇄된 이 역 이름 「YUE sign left neighbour NAGASATO」, 촬영 2015-09-26. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nishi_hitoyoshi": {
+   "en": "Nishi-Hitoyoshi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hitoyoshi_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_hitoyoshi) 역명판에 인쇄된 이 역 이름 「HITOYOSHI sign right neighbour NISHI-HITOYOSHI」, 촬영 2017-03-17. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_oga_nippo_main": {
+   "en": "Ōga",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hiji_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_hiji) 역명판에 인쇄된 이 역 이름 「HIJI sign left neighbour printed Ō G A (macron, letter-spaced)」, 촬영 2018-03-31. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_yokoku": {
+   "en": "Yōkoku",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Hiji_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_hiji) 역명판에 인쇄된 이 역 이름 「HIJI sign right neighbour printed YŌKOKU (macron)」, 촬영 2018-03-31. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_oryuzako": {
+   "en": "Oryūzako",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:ホームと駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_aoshima) 역명판에 인쇄된 이 역 이름 「AOSHIMA (new design) sign left neighbour printed ORYŪZAKO (macron)」, 촬영 2025-09-13. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_sashiu": {
+   "en": "Sashiu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JR_Kōzaki_Station_20260321_4.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kozaki) 역명판에 인쇄된 이 역 이름 「KŌZAKI sign left neighbour SASHIU」, 촬영 2026-03-21. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_sakanoichi": {
+   "en": "Sakanoichi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:JR_Kōzaki_Station_20260321_4.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kozaki) 역명판에 인쇄된 이 역 이름 「KŌZAKI sign right neighbour SAKANOICHI」, 촬영 2026-03-21. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_takematsu": {
+   "en": "Takematsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:大村車両基地駅看板.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_omura_sharyokichi) 역명판에 인쇄된 이 역 이름 「ŌMURA RAIL YARD sign left neighbour TAKEMATSU」, 촬영 2022-09-23. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tanushimaru": {
+   "en": "Tanushimaru",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chikugo-Yoshii_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_chikugo_yoshii) 역명판에 인쇄된 이 역 이름 「CHIKUGO-YOSHII sign left neighbour TANUSHIMARU」, 촬영 2016-12-31. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ukiha": {
+   "en": "Ukiha",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Chikugo-Yoshii_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_chikugo_yoshii) 역명판에 인쇄된 이 역 이름 「CHIKUGO-YOSHII sign right neighbour UKIHA」, 촬영 2016-12-31. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_usuki_ibusuki_makurazaki": {
+   "en": "Usuki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Taniyama_Station_Sign_(JR).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_taniyama) 역명판에 인쇄된 이 역 이름 「TANIYAMA sign right neighbour USUKI」, 촬영 2018-05-05. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_utsutsugawa": {
+   "en": "Utsutsugawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:UrakamiSTA.name.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_urakami) 역명판에 인쇄된 이 역 이름 「URAKAMI sign left neighbour UTSUTSUGAWA」, 촬영 2013-07-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_watari_hisatsu": {
+   "en": "Watari",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kuma_Nagaguchi_Station_2024-3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_naraguchi) 역명판에 인쇄된 이 역 이름 「NARAGUCHI sign left neighbour WATARI」, 촬영 2024-06-07. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ichiburi": {
+   "en": "Ichiburi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Oyashirazu_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_oyashirazu) 역명판에 인쇄된 이 역 이름 「JR West OYASHIRAZU sign left neighbour Ichiburi (mixed case)」, 촬영 2015-01-22; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_samizo": {
+   "en": "Samizo",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:アルピコ交通上高地線新村駅20241019-P1058837.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_niimura) 역명판에 인쇄된 이 역 이름 「NIIMURA sign left neighbour SAMIZO」, 촬영 2024-10-19. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kitanii_matsumotodaigakumae": {
+   "en": "Kitanii Matsumotodaigakumae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:アルピコ交通上高地線新村駅20241019-P1058837.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_niimura) 역명판에 인쇄된 이 역 이름 「NIIMURA sign right neighbour printed KITANII MATSUMOTODAIGAKUMAE」, 촬영 2024-10-19. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_shinano_arai": {
+   "en": "Shinanoarai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsumoto_-_Nagisa_station_board.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_nagisa_alpico_kotsu) 역명판에 인쇄된 이 역 이름 「NAGISA sign neighbour printed Shinanoarai (one word)」, 촬영 2012-07-29. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nishi_matsumoto": {
+   "en": "Nishimatsumoto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsumoto_-_Nagisa_station_board.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_nagisa_alpico_kotsu) 역명판에 인쇄된 이 역 이름 「NAGISA sign neighbour printed Nishimatsumoto (one word)」, 촬영 2012-07-29. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_amagi_amagi": {
+   "en": "Amagi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Takata_Station_Sign_(Amagi_Railway).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_takata_amagi) 역명판에 인쇄된 이 역 이름 「TAKATA (Amagi Railway) sign right neighbour AMAGI」, 촬영 2018-04-21. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_oitai": {
+   "en": "Ōitai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ogori_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ogori) 역명판에 인쇄된 이 역 이름 「OGŌRI (Amagi Railway) sign left neighbour printed ŌITAI (macron)」, 촬영 2015-11-20. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tateno_amagi": {
+   "en": "Tateno",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ogori_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ogori) 역명판에 인쇄된 이 역 이름 「OGŌRI (Amagi Railway) sign right neighbour TATENO」, 촬영 2015-11-20. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_yamaguma": {
+   "en": "Yamaguma",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tachiarai_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tachiarai) 역명판에 인쇄된 이 역 이름 「TACHIARAI (Amagi Railway) sign right neighbour YAMAGUMA」, 촬영 2015-11-20. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_metoki": {
+   "en": "Metoki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Aoimori-railway-Sannohe-station-sign-20120912-091424.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_sannohe) 역명판에 인쇄된 이 역 이름 「SANNOHE (Aoimori) sign right neighbour Metoki」, 촬영 2012-09-12. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kannoura_asa_seaside_asato": {
+   "en": "Kannoura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Asa-Kaigan-Shishikui-Station-Board.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_shishikui) 역명판에 인쇄된 이 역 이름 「SHISHIKUI (JR Shikoku) sign right neighbour KANNOURA」, 촬영 2010-05-26. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_chikuho_katsuki": {
+   "en": "Chikuhō-Katsuki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kibogaokakoko-mae_Station_Sign_1.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kibogaoka_kokomae) 역명판에 인쇄된 이 역 이름 「KIBŌGAOKA-KŌKŌMAE (Chikutetsu) sign next stop printed Chikuhō-Katsuki」, 촬영 2016-06-18. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nishi_ashikajima": {
+   "en": "Nishiashikajima",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:銚子電鐵-笠上黑生站_(53308408695).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kasagami_kurohae) 역명판에 인쇄된 이 역 이름 「KASAGAMI KUROHAE (Choshi) old rusty sign right neighbour NISHIASHIKAJIMA (one word)」, 촬영 2023-08-14. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_uramoto": {
+   "en": "Uramoto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:梶屋敷駅_駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kajiyashiki) 역명판에 인쇄된 이 역 이름 「KAJIYASHIKI (ETR) sign right neighbour Uramoto」, 촬영 2019-08-10. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_enshu_shibamoto": {
+   "en": "Enshu Shibamoto",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:ET-Enshu_Gansuiji_Station-Running_in_board.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_enshu_gansuiji) 역명판에 인쇄된 이 역 이름 「ENSHU GANSUIJI (Entetsu) sign neighbour Enshu Shibamoto」, 촬영 2025-01-02; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kasei": {
+   "en": "Kasei",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:田野倉駅名標（現）.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tanokura) 역명판에 인쇄된 이 역 이름 「TANOKURA (Fujikyu, Thomas Land livery) sign neighbour KASEI」, 촬영 2025-01-04. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kamiotsuki": {
+   "en": "Kamiotsuki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:田野倉駅名標（現）.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tanokura) 역명판에 인쇄된 이 역 이름 「TANOKURA (Fujikyu) sign neighbour printed KAMIOTSUKI (one word)」, 촬영 2025-01-04. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_jinaijoshikoko": {
+   "en": "Jin-ai Girls' High School",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukui_Castle_Ruins-Daimyomachi_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_fukui_joshi_daimyomachi) 역명판에 인쇄된 이 역 이름 「FUKUI CASTLE RUINS-DAIMYOMACHI (Fukutetsu F21) sign neighbour F23 printed Jin-ai Girls' High School (translated form)」, 촬영 2020-06-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_asuwayamakoenguchi": {
+   "en": "Asuwayama-Koenguchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukui_Castle_Ruins-Daimyomachi_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_fukui_joshi_daimyomachi) 역명판에 인쇄된 이 역 이름 「FUKUTETSU F21 sign neighbour F20 printed Asuwayama-Koenguchi」, 촬영 2020-06-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_iohji_mae": {
+   "en": "Ioji-mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukushima_Hirano-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_hirano_fukushima_transportation) 역명판에 인쇄된 이 역 이름 「HIRANO (Iizaka Line) sign neighbour printed IOJI-MAE」, 촬영 2026-05-17. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_sakuramizu": {
+   "en": "Sakuramizu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fukushima_Hirano-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_hirano_fukushima_transportation) 역명판에 인쇄된 이 역 이름 「HIRANO (Iizaka Line) sign neighbour SAKURAMIZU」, 촬영 2026-05-17. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_akaji": {
+   "en": "Akaji",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Minami_Nogata_Gotenguchi_Station3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_minami_nogata_gotenguchi) 역명판에 인쇄된 이 역 이름 「MINAMI-NŌGATA GOTENGUCHI (Heichiku) sign left neighbour AKAJI」, 촬영 2012-10-16. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hitomi": {
+   "en": "Hitomi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kanada_Station_Sign_(Ita_Line)_2.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kanada) 역명판에 인쇄된 이 역 이름 「KANADA (Heichiku) sign left neighbour HITOMI」, 촬영 2018-01-03; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kami_kanada": {
+   "en": "Kamikanada",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kanada_Station_Sign_(Ita_Line)_2.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kanada) 역명판에 인쇄된 이 역 이름 「KANADA (Heichiku) sign right neighbour printed KAMIKANADA (one word)」, 촬영 2018-01-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ichiba_heisei_chikuho": {
+   "en": "Ichiba",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Fureai-Shoriki_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_fureai_shoriki) 역명판에 인쇄된 이 역 이름 「FUREAI SYOURIKI (Heichiku) sign left neighbour ICHIBA」, 촬영 2018-01-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_fudoin_mae": {
+   "en": "Fudoin-mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Station_name_sign_at_Ushita_Station.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ushita) 역명판에 인쇄된 이 역 이름 「USHITA (Astram) sign neighbour Fudoin-mae」, 촬영 2023-01-02. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hakushima_hiroshima_rapid_transit": {
+   "en": "Hakushima",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Station_name_sign_at_Ushita_Station.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_ushita) 역명판에 인쇄된 이 역 이름 「USHITA (Astram) sign neighbour Hakushima」, 촬영 2023-01-02. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_takaono": {
+   "en": "Takaono",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nodago_Station3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_nodagou) 역명판에 인쇄된 이 역 이름 「NODAGOU (Hisatsu Orange) sign neighbour Takaono」, 촬영 2012-11-13; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_harima_yokota": {
+   "en": "Harimayokota",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Osa_Station_ag10_10.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_osa) 역명판에 인쇄된 이 역 이름 「OSA (Hojo) old sign right neighbour printed HARIMAYOKOTA (one word)」, 촬영 2010-08-25. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hamayamakoen_kitaguchi": {
+   "en": "Hamayamakoen-Kitaguchi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Station_sign_of_Yōkan_Station_2014-09-03.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_youkan) 역명판에 인쇄된 이 역 이름 「YOUKAN (Ichibata, new sign) neighbour 24 printed HAMAYAMAKOEN-KITAGUCHI」, 촬영 2014-09-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_izumo_science_center_park_town_mae": {
+   "en": "Izumo Science Center-Park Town-mae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:一畑電車大津町駅_駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_otsumachi) 역명판에 인쇄된 이 역 이름 「ŌTSUMACHI (Ichibata, new sign) neighbour printed IZUMO SCIENCE CENTER-PARK TOWN-MAE (caps; partly translated)」, 촬영 2022-01-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tabushi": {
+   "en": "Tabushi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Station_sign_and_mascot_at_Unshū-Hirata_Station.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_unshu_hirata) 역명판에 인쇄된 이 역 이름 「UNSHU-HIRATA (Ichibata) sign neighbour TABUSHI」, 촬영 2014-09-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nunozaki": {
+   "en": "Nunozaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Station_sign_and_mascot_at_Unshū-Hirata_Station.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_unshu_hirata) 역명판에 인쇄된 이 역 이름 「UNSHU-HIRATA (Ichibata) sign neighbour NUNOZAKI」, 촬영 2014-09-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_takanomiya": {
+   "en": "Takanomiya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsue_Vogel_Park_Station_-_Nov_4,_2011.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_matsue_vogel_park) 역명판에 인쇄된 이 역 이름 「MATSUE VOGEL-PARK (Ichibata) sign neighbour TAKANOMIYA」, 촬영 2011-11-04. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nishihata": {
+   "en": "Nishihata",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:いすみ鉄道の上総中野駅駅名標Image.jpeg",
+   "type": "sign",
+   "note": "이웃 역(n_kazusa_nakano_isumi) 역명판에 인쇄된 이 역 이름 「KAZUSA-NAKANO (Isumi) sign neighbour Nishihata」, 촬영 2016-07-16. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_negoya": {
+   "en": "Negoya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sano-no-watashi-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_sanonowatashi) 역명판에 인쇄된 이 역 이름 「SANO-NO-WATASHI (Joshin) sign neighbour NEGOYA」, 촬영 2026-01-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_minami_takasaki": {
+   "en": "Minamitakasaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sano-no-watashi-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_sanonowatashi) 역명판에 인쇄된 이 역 이름 「SANO-NO-WATASHI (Joshin) sign neighbour printed MINAMITAKASAKI (one word)」, 촬영 2026-01-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_shiyakusho_mae_kishu": {
+   "en": "Shiyakushomae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kii-gobo_Station_name_signs.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kii_gobo) 역명판에 인쇄된 이 역 이름 「KII-GOBO (Kishu Railway) sign neighbour printed Shiyakushomae」, 촬영 2018-07-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_gakumon": {
+   "en": "Gakumon",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kii-gobo_Station_name_signs.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kii_gobo) 역명판에 인쇄된 이 역 이름 「KII-GOBO (Kishu Railway) sign neighbour Gakumon」, 촬영 2018-07-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_moritsune": {
+   "en": "Moritsune",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sign,_Tokuriki_Kōdanmae_Station,_Kitakyushu_Monorail_-_Nov_15,_2025.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tokuriki_kodanmae) 역명판에 인쇄된 이 역 이름 「TOKURIKI KODAN-MAE (Kitakyushu Monorail) sign neighbour 09 Moritsune」, 촬영 2025-11-15. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_shii_kitakyushu_urban_monorail": {
+   "en": "Shii",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:徳力嵐山口駅駅名標.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tokuriki_arashiyamaguchi) 역명판에 인쇄된 이 역 이름 「TOKURIKI ARASHIYAMAGUCHI (Kitakyushu Monorail) sign neighbour 12 Shii」, 촬영 2018-07-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kankanzaka": {
+   "en": "Kankanzaka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Kami-Kumamoto_Station_Sign_(Kumamoto_Electric_Railway).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kami_kumamoto_kumamoto) 역명판에 인쇄된 이 역 이름 「KAMIKUMAMOTO (Kumamoto Electric) sign neighbour Kankanzaka」, 촬영 2018-04-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_haze": {
+   "en": "Haze",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:20210723_Uranosaki_Station.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_uranosaki) 역명판에 인쇄된 이 역 이름 「URANOSAKI (MR) sign neighbour printed HA ZE (letter-spaced)」, 촬영 2021-07-23. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kami_ainoura": {
+   "en": "Kami-Ainoura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sasebo_20200922181826_(50870249112).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_daigaku) 역명판에 인쇄된 이 역 이름 「DAIGAKU (MR, new sign) neighbour Kami-Ainoura」, 촬영 2020-09-22. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kanatake": {
+   "en": "Kanatake",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:MR_Kawahigashi_Station3.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_kawahigashi_matsuura) 역명판에 인쇄된 이 역 이름 「KAWAHIGASHI (MR) sign neighbour KANATAKE」, 촬영 2014-03-20. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_koura": {
+   "en": "Koura",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sasebo_20200922175212_(50870153731).jpg",
+   "type": "sign",
+   "note": "이웃 역(n_saza) 역명판에 인쇄된 이 역 이름 「SAZA (MR, new sign) neighbour Koura」, 촬영 2020-09-22; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_matsuura_hatsudenshomae": {
+   "en": "Matsuurahatsudenshomae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsuura_Station_Sign_5.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_matsuura) 역명판에 인쇄된 이 역 이름 「MATSUURA (MR) sign neighbour printed MATSUURAHATSUDENSHOMAE (one word)」, 촬영 2019-01-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tsukinokawa": {
+   "en": "Tsukinokawa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Matsuura_Station_Sign_5.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_matsuura) 역명판에 인쇄된 이 역 이름 「MATSUURA (MR) sign neighbour TSUKINOKAWA」, 촬영 2019-01-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_naka_tabira": {
+   "en": "Nakatabira",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tabira-Hiradoguchi_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tabira_hiradoguchi) 역명판에 인쇄된 이 역 이름 「TABIRAHIRADOGUCHI (MR) sign neighbour printed NAKATABIRA (one word)」, 촬영 2019-01-03. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_suetachibana": {
+   "en": "Suetachibana",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Nishi-Tabira_Station_SIGN_20200711.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_nishi_tabira) 역명판에 인쇄된 이 역 이름 「NISHI-TABIRA (MR, new sign) neighbour Suetachibana」, 촬영 2020-07-11. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kita_mooka": {
+   "en": "Kitamōka",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka_station_sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_moka) 역명판에 인쇄된 이 역 이름 「MŌKA (Moka Railway) sign neighbour printed Kitamōka (macron, one word)」, 촬영 2015-08-31. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_nanai": {
+   "en": "Nanai",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Moka-railway-Nanai-station-platform-20140505-120750.jpg",
+   "type": "sign",
+   "note": "이웃 역(?) 역명판에 인쇄된 이 역 이름 「NANAI own sign (Moka Railway) on the file listed for Mashiko: Nanai, neighbours Tatara / Mashiko」, 촬영 2014-05-05. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_sekiterasumae": {
+   "en": "Sekiterasumae",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Sekiguchi-station-name-board.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_seki_guchi) 역명판에 인쇄된 이 역 이름 「SEKIGUCHI (Nagatetsu) sign neighbour printed SEKITERASUMAE」, 촬영 2024-02-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tomika": {
+   "en": "Tomika",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Seki-Tomioka-station-name-board.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_seki_tomioka) 역명판에 인쇄된 이 역 이름 「SEKI-TOMIOKA (Nagatetsu) sign neighbour TOMIKA」, 촬영 2023-10-23. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kasashiho": {
+   "en": "Kasashiho",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Noto-Nakajima-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_noto_nakajima) 역명판에 인쇄된 이 역 이름 「NOTONAKAJIMA (Noto Railway) sign neighbour KASASHIHO」, 촬영 2026-04-12. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_takamiya_ohmi": {
+   "en": "Takamiya",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Amago_station_station_name_sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_amago) 역명판에 인쇄된 이 역 이름 「AMAGO (Ohmi Railway OR10) sign neighbour Takamiya」, 촬영 February 2022. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_toyosato_ohmi": {
+   "en": "Toyosato",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Amago_station_station_name_sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_amago) 역명판에 인쇄된 이 역 이름 「AMAGO (Ohmi Railway OR10) sign neighbour Toyosato」, 촬영 February 2022. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_yokaichi": {
+   "en": "Yōkaichi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shin_Yokaichi_station_running_in_board_East_20201014.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_shin_yokaichi) 역명판에 인쇄된 이 역 이름 「SHIN-YŌKAICHI (Ohmi OR16) sign neighbour printed Yōkaichi (macron)」, 촬영 2020-10-14. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hiregasaki": {
+   "en": "Hiregasaki",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Heiwadai_Station_(Chiba)_train_station_sign.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_heiwadai_ryutetsu) 역명판에 인쇄된 이 역 이름 「HEIWADAI (Ryutetsu RN5) sign neighbour HIREGASAKI」, 촬영 2020-06-20; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_tetsudo_hakubutsukan": {
+   "en": "Tetsudō-Hakubutsukan",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Saitama-new-shuttle-NS03-Kamonomiya-station-sign-20210504-104553.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_kamonomiya_saitama_new_urban_transit) 역명판에 인쇄된 이 역 이름 「KAMONOMIYA (New Shuttle NS03) sign neighbour printed TETSUDŌ-HAKUBUTSUKAN (macron), kana adds (おおなり)」, 촬영 2021-05-04. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kumoi": {
+   "en": "Kumoi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shigaraki_Kohgen_Railway_Shigaraki_Line_Shigarakigūshi_Sta._20201115_09.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_shigarakigushi) 역명판에 인쇄된 이 역 이름 「SHIGARAKIGŪSHI (SKR) sign neighbour KUMOI」, 촬영 2020-11-15. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_mie_shimabara": {
+   "en": "Mie",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Shimabara_Station_Sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_shimabara) 역명판에 인쇄된 이 역 이름 「SHIMA BARA (Shimatetsu) sign neighbour printed MI E (letter-spaced)」, 촬영 2017-01-06. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_midori_tarumi": {
+   "en": "Midori",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tarumi_Railway_Tarumi_Line_Tarumi_Sta._20220401_11.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tarumi_tarumi) 역명판에 인쇄된 이 역 이름 「TARUMI (Tarumi Railway TR19) sign neighbour MIDORI」, 촬영 2022-04-01. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_takamatsu_tokyo_tama_intercity_monorail": {
+   "en": "Takamatsu",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Tama-monorail-TT14-Tachihi-station-sign-20191231-135906.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_tachihi) 역명판에 인쇄된 이 역 이름 「TACHIHI (Tama Monorail TT14) sign neighbour Takamatsu」, 촬영 2019-12-31; 다른 판 1장도 같음. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ekimae_odori": {
+   "en": "Ekimae-odori",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:愛知県豊橋市_新川電停_駅名標_20240825_0748.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_shinkawa_toyohashi) 역명판에 인쇄된 이 역 이름 「SHINKAWA (Toyotetsu tram 3) sign neighbour printed Ekimae-odori」, 촬영 2024-08-25. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_fudagi": {
+   "en": "Fudagi",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:愛知県豊橋市_新川電停_駅名標_20240825_0748.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_shinkawa_toyohashi) 역명판에 인쇄된 이 역 이름 「SHINKAWA (Toyotetsu tram 3) sign neighbour Fudagi」, 촬영 2024-08-25. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hayabusa": {
+   "en": "Hayabusa",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Abe-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_abe) 역명판에 인쇄된 이 역 이름 「ABE (Wakasa Railway) sign neighbour HAYABUSA」, 촬영 2025-09-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_hatto": {
+   "en": "Hattō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Abe-STA_Name-sign.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_abe) 역명판에 인쇄된 이 역 이름 「ABE (Wakasa Railway) sign neighbour printed HATTŌ (macron)」, 촬영 2025-09-28. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_mato": {
+   "en": "Matō",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Ashio_Station_train_station_sign.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_ashio) 역명판에 인쇄된 이 역 이름 「ASHIO (Watarase WK16) sign neighbour printed MATŌ (macron)」, 촬영 2017-06-17. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_shimo_shinden": {
+   "en": "Shimo-Shinden",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:Watetsu-WK03-Aioi-station-sign-20250505-081015.jpg",
+   "type": "sign",
+   "note": "이웃 역(n_aioi_watarase_keikoku) 역명판에 인쇄된 이 역 이름 「AIOI (Watarase WK03) sign neighbour SHIMO-SHINDEN」, 촬영 2025-05-05. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_kawabe_yuri_kogen": {
+   "en": "Kawabe",
+   "source": "역명판 사진 https://commons.wikimedia.org/wiki/File:YashimaStationSignboard.JPG",
+   "type": "sign",
+   "note": "이웃 역(n_yashima_yuri_kogen) 역명판에 인쇄된 이 역 이름 「YASHIMA (Yuri Kogen) sign neighbour printed KA WA BE (letter-spaced)」, 촬영 2010-06-13. 모두 대문자는 첫 글자만 대문자 (6회차 audit6/D1_en 2026-11-27)"
+  },
+  "n_ikushumbetsu|幾春別": {
+   "en": "Ikushumbetsu",
+   "ja": "幾春別",
+   "source": "An Official Guide to Eastern Asia, Vol. III North-Eastern Japan (Imperial Japanese Government Railways, 1913) (archive.org ahz0075.0001.001.umich.edu (OCR text) offsets 1504908, 1508361); AMS Series L506 Japan 1:250,000 (U.S. Army Map Service, printed 1955-56), UT Austin PCL scan (https://maps.lib.utexas.edu/maps/ams/japan/txu-oclc-6900707-nk54-2.jpg)",
+   "type": "official list",
+   "printed": "Ikushumbetsu",
+   "note": "옛 공식·준공식 영어 자료의 로마자(1913 / 1955), n/m 결정 근거(m). \"Horonaibuto-Ikushumbetsu 4.5 m.\" (Horonai branch line list); \"Ikushumbetsu\" coal field / label \"Ikushumbetsu 幾春別\" at the station town (6회차 audit6/D2_nm 2026-11-27)"
+  },
+  "n_honmachi_seto|本町": {
+   "en": "Honmachi",
+   "ja": "本町",
+   "source": "Terry's Guide to the Japanese Empire (1914, 1920, 1927, 1928 eds., one source) (archive.org terrysjapanesee00terrgoog, terrysguidetojap00terr_0, terrysguidetojap00terr, terrysguidetojap0000unse); An Official Guide to Eastern Asia, Vol. III North-Eastern Japan (Imperial Japanese Government Railways, 1913) (archive.org ahz0075.0001.001.umich.edu (OCR text) offsets 639740, 640109)",
+   "type": "guide",
+   "printed": "Honmachi",
+   "note": "옛 공식·준공식 영어 자료의 로마자(1914-1928), n/m 결정 근거(n). \"from the Honmachi gomon (or Seto) Station near the castle\" (Seto electric line, Nagoya) / Nagoya addresses \"Hon-machi, Nishi-ku\" (Court of Appeal, Local Court) (6회차 audit6/D2_nm 2026-11-27)"
+  },
+  "n_gembudo|(臨)玄武洞": {
+   "en": "Gembudo",
+   "ja": "(臨)玄武洞",
+   "source": "An Official Guide to Eastern Asia, Vol. II South-Western Japan (Imperial Japanese Government Railways, 1914) (archive.org in.ernet.dli.2015.96772 (OCR text) offset 1565153; also index \"Gembudo, Basalt Grottoes, near Kinosaki\")",
+   "type": "official list",
+   "printed": "Gembudo",
+   "note": "鉄道院 1914 영어 공식 안내서 시각표의 로마자(그 이름이 쓰인 1912~1918과 같은 때), n/m 결정 근거(m). 지금 역 玄武洞(공식 Gembudō)과 따로 옛 임시 정류장 이름에만 씀 (6회차 audit6/D2_nm 2026-11-27)"
+  },
+  "n_furugo": {
+   "en": "Furugō",
+   "forms": [
+    "Furugo",
+    "Furugō"
+   ],
+   "source": "역명판 사진 Furugo: https://commons.wikimedia.org/wiki/File:Minami-Oita_Station_3.JPG (09:13, 5 March 2007) ; Furugō: https://commons.wikimedia.org/wiki/File:Oita_Station_Sign_3.jpg (16:23, 31 March 2018)",
+   "type": "sign",
+   "note": "이웃 역 역명판에 인쇄된 이 역 이름. 모두 대문자는 첫 글자만 대문자. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_higashi_isahaya": {
+   "en": "Higashi-Isahaya",
+   "forms": [
+    "Higashi-Isahaya",
+    "Higashiisahaya"
+   ],
+   "source": "역명판 사진 Higashi-Isahaya: https://commons.wikimedia.org/wiki/File:Isahaya_Station_Sign_(JR).jpg (Taken on 6 January 2017, 17:38:04) ; Higashiisahaya: https://commons.wikimedia.org/wiki/File:JRKyushu_HizenNagata_Station_2.jpg (November 2008)",
+   "type": "sign",
+   "note": "이웃 역 역명판에 인쇄된 이 역 이름. 모두 대문자는 첫 글자만 대문자. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_minami_kumamoto": {
+   "en": "Minami-Kumamoto",
+   "forms": [
+    "Minamikumamoto",
+    "Minami-Kumamoto"
+   ],
+   "source": "역명판 사진 Minamikumamoto: https://commons.wikimedia.org/wiki/File:Heisei_Station_Sign.jpg (15:06, 8 January 2019) ; Minami-Kumamoto: https://commons.wikimedia.org/wiki/File:Shin-Suizenji_Station_Sign.jpg (16:02, 31 December 2014)",
+   "type": "sign",
+   "note": "이웃 역 역명판에 인쇄된 이 역 이름. 모두 대문자는 첫 글자만 대문자. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_jidosha_gakko_mae": {
+   "en": "Jidoshagakkomae",
+   "forms": [
+    "Jidoshagakkomae",
+    "Jidoshagakko Mae"
+   ],
+   "source": "역명판 사진 Jidoshagakkomae: https://commons.wikimedia.org/wiki/File:ET-Saginomiya_Station-Running_in_board_2.jpg (00:00, 2 January 2025) ; Jidoshagakko Mae: https://commons.wikimedia.org/wiki/File:ET-Kamijima_Station-Running_in_board.jpg (00:00, 2 January 2025)",
+   "type": "sign",
+   "note": "이웃 역 역명판에 인쇄된 이 역 이름. 모두 대문자는 첫 글자만 대문자. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_imagawa_kappa": {
+   "en": "Imagawakappa",
+   "forms": [
+    "Imagawakappa",
+    "Imagawa Kappa"
+   ],
+   "source": "역명판 사진 Imagawakappa: https://commons.wikimedia.org/wiki/File:Miyakoizumi.jpg (13:55, 4 April 2009) ; Imagawa Kappa: https://commons.wikimedia.org/wiki/File:Toyotsu_Station_Sign_(Tagawa_Line).jpg (16:04, 27 December 2018)",
+   "type": "sign",
+   "note": "이웃 역 역명판에 인쇄된 이 역 이름. 모두 대문자는 첫 글자만 대문자. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_iwatakiguchi": {
+   "en": "Iwataki-Guchi",
+   "forms": [
+    "Iwatakiguchi",
+    "Iwataki-Guchi"
+   ],
+   "source": "trains.willer.co.jp/station/ 역 일람(2026-11-26) ; WILLER 영어 시간표",
+   "type": "company",
+   "note": "회사 역 일람(모두 대문자, 京丹後大宮은 장음 부호 ー를 하이픈으로 씀)과 영어 시간표가 엇갈림. 역명판 사진 없음. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_kyotango_omiya": {
+   "en": "Kyotango-Omiya",
+   "forms": [
+    "Kyotango-Omiya"
+   ],
+   "source": "trains.willer.co.jp/station/ 역 일람(2026-11-26) ; WILLER 영어 시간표",
+   "type": "company",
+   "note": "회사 역 일람(모두 대문자, 京丹後大宮은 장음 부호 ー를 하이픈으로 씀)과 영어 시간표가 엇갈림. 역명판 사진 없음. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
+  },
+  "n_yuhigaura_kitsu_onsen": {
+   "en": "Yuhigaura-Kitsu-Onsen",
+   "forms": [
+    "Yuhigaura-Kitsuonsen",
+    "Yuhigaura-Kitsu-Onsen"
+   ],
+   "source": "trains.willer.co.jp/station/ 역 일람(2026-11-26) ; WILLER 영어 시간표",
+   "type": "company",
+   "note": "회사 역 일람(모두 대문자, 京丹後大宮은 장음 부호 ー를 하이픈으로 씀)과 영어 시간표가 엇갈림. 역명판 사진 없음. 공식 표기가 엇갈려(같은 회사 역명판·자료끼리) 규칙으로 이름을 고름: 하이픈 > 장음 기호 > 띄어쓰기 없음, 나머지 꼴은 별칭 (사용자 결정 2026-11-28; 6회차 audit6/D1_en·audit5/r4_low41)"
   }
  },
  "aliases": {
@@ -46264,6 +47087,8 @@
   "n_mikuni_jinja": "Mikuni Jinja",
   "n_iwatakiguchi": "Iwataki-Guchi",
   "n_kyotango_omiya": "Kyotango-Omiya",
-  "n_yuhigaura_kitsu_onsen": "Yuhigaura-Kitsu-Onsen"
+  "n_yuhigaura_kitsu_onsen": "Yuhigaura-Kitsu-Onsen",
+  "n_jinaijoshikoko": "Jin'aijoshikoko",
+  "n_izumo_science_center_park_town_mae": "Izumo Science Center Park Town-mae"
  }
 }

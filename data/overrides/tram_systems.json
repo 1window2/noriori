@@ -595,7 +595,7 @@
    "at": "n_koenji_1_chome",
    "x": "l_koenji_line",
    "y": "l_ogikubo_line",
-   "x_toward": "n_shinjuku_ekimae",
+   "x_toward": "n_shinjuku_ekimae_koenji_line",
    "y_toward": null,
    "system": "14系統（杉並線）",
    "why": "都電 14系統（杉並線）: 新宿駅前 -（l_koenji_line）- 高円寺一丁目 -（l_ogikubo_line）- 荻窪駅前",

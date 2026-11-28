@@ -1,0 +1,3 @@
+# 6회차 같은 이름 다른 정류장 나누기(2026-11-28)의 정류장 자리. 설계 docs/research/audit6-same-name-stop-split-design.md, 연구 원자료 audit6/E_coords·H_kyoto
+- {"patch": "replace", "node": "n_shinjuku_ekimae", "lat": 35.693648, "lon": 139.701359, "quality": "approx", "source": "n05", "checked": "2026-11-28", "why": "都電 新宿線 新宿駅前(1949–1970, 大ガード 동쪽 靖国通り): N05-24 東京都 新宿線 「新宿駅前」 점 = e_014446 끝. 高円寺線 정류장(大ガード 서쪽)은 node_split으로 n_shinjuku_ekimae_koenji_line에 지금까지의 좌표를 넘김"}
+- {"patch": "add", "node": "n_kyoto_ekimae_horikawa_line", "lat": 34.9872, "lon": 135.75822, "quality": "approx", "source": "hand", "checked": "2026-11-28", "why": "京都市電 堀川線(N電) 京都駅前: 塩小路通 북쪽 室町通 교차점 부근(『鉄道ピクトリアル』356 「狭軌線と並んで」, 1953 지도, 지리원 항공사진 1961–69 판독). 교차점 중심은 수 m로 읽었으나 승강장 위치는 근거가 없어 대략"}

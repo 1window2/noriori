@@ -12033,7 +12033,7 @@
 - {"entity_type": "node", "id": "n_kamimuragakuenmae", "lang": "en", "text": "Kamimura Gakuen-mae", "source": "official"}
 - {"entity_type": "node", "id": "n_ichiki", "lang": "ja", "text": "市来", "kana": "いちき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ichiki", "lang": "ko", "text": "이치키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ichiki", "lang": "en", "text": "Ichiki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ichiki", "lang": "en", "text": "Ichiki", "source": "official"}
 - {"entity_type": "node", "id": "n_yunomoto", "lang": "ja", "text": "湯之元", "kana": "ゆのもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yunomoto", "lang": "ko", "text": "유노모토", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yunomoto", "lang": "en", "text": "Yunomoto", "source": "official"}
@@ -12042,7 +12042,7 @@
 - {"entity_type": "node", "id": "n_higashi_ichiki", "lang": "en", "text": "Higashi-Ichiki", "source": "official"}
 - {"entity_type": "node", "id": "n_ijuin", "lang": "ja", "text": "伊集院", "kana": "いじゅういん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ijuin", "lang": "ko", "text": "이주인", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ijuin", "lang": "en", "text": "Ijuin", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ijuin", "lang": "en", "text": "Ijūin", "source": "official"}
 - {"entity_type": "node", "id": "n_satsuma_matsumoto", "lang": "ja", "text": "薩摩松元", "kana": "さつままつもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_satsuma_matsumoto", "lang": "ko", "text": "사츠마마츠모토", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_satsuma_matsumoto", "lang": "en", "text": "Satsuma-Matsumoto", "source": "wikidata"}
@@ -12054,7 +12054,7 @@
 - {"entity_type": "node", "id": "n_hiroki", "lang": "en", "text": "Hiroki", "source": "official"}
 - {"entity_type": "node", "id": "n_kagoshima_chuo", "lang": "ja", "text": "鹿児島中央", "kana": "かごしまちゅうおう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kagoshima_chuo", "lang": "ko", "text": "가고시마츄오", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kagoshima_chuo", "lang": "en", "text": "Kagoshima-Chuo", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kagoshima_chuo", "lang": "en", "text": "Kagoshima-Chūō", "source": "official"}
 - {"entity_type": "node", "id": "n_kagoshima", "lang": "ja", "text": "鹿児島", "kana": "かごしま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kagoshima", "lang": "ko", "text": "가고시마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kagoshima", "lang": "en", "text": "Kagoshima", "source": "wikidata"}
@@ -12156,13 +12156,13 @@
 - {"entity_type": "node", "id": "n_sumiyoshi_misumi", "lang": "en", "text": "Sumiyoshi", "source": "official"}
 - {"entity_type": "node", "id": "n_higo_nagahama", "lang": "ja", "text": "肥後長浜", "kana": "ひごながはま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_higo_nagahama", "lang": "ko", "text": "히고나가하마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_higo_nagahama", "lang": "en", "text": "Higo-Nagahama", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_higo_nagahama", "lang": "en", "text": "Higo-Nagahama", "source": "official"}
 - {"entity_type": "node", "id": "n_oda_misumi", "lang": "ja", "text": "網田", "kana": "おうだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oda_misumi", "lang": "ko", "text": "오다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_oda_misumi", "lang": "en", "text": "Oda", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_akase", "lang": "ja", "text": "赤瀬", "kana": "あかせ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_akase", "lang": "ko", "text": "아카세", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_akase", "lang": "en", "text": "Akase", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_akase", "lang": "en", "text": "Akase", "source": "official"}
 - {"entity_type": "node", "id": "n_ishiuchi_dam", "lang": "ja", "text": "石打ダム", "kana": "いしうちだむ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ishiuchi_dam", "lang": "ko", "text": "이시우치댐", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ishiuchi_dam", "lang": "en", "text": "Ishiuchi-Damu", "source": "official"}
@@ -12207,10 +12207,10 @@
 - {"entity_type": "node", "id": "n_naraguchi", "lang": "en", "text": "Naraguchi", "source": "official"}
 - {"entity_type": "node", "id": "n_watari_hisatsu", "lang": "ja", "text": "渡", "kana": "わたり", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_watari_hisatsu", "lang": "ko", "text": "와타리", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_watari_hisatsu", "lang": "en", "text": "Watari", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_watari_hisatsu", "lang": "en", "text": "Watari", "source": "official"}
 - {"entity_type": "node", "id": "n_nishi_hitoyoshi", "lang": "ja", "text": "西人吉", "kana": "にしひとよし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishi_hitoyoshi", "lang": "ko", "text": "니시히토요시", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nishi_hitoyoshi", "lang": "en", "text": "Nishi-Hitoyoshi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nishi_hitoyoshi", "lang": "en", "text": "Nishi-Hitoyoshi", "source": "official"}
 - {"entity_type": "node", "id": "n_hitoyoshi", "lang": "ja", "text": "人吉", "kana": "ひとよし", "source": "noritsubushi", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_hitoyoshi", "lang": "ko", "text": "히토요시", "source": "hand", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hitoyoshi", "lang": "en", "text": "Hitoyoshi", "source": "official"}
@@ -12228,7 +12228,7 @@
 - {"entity_type": "node", "id": "n_yoshimatsu", "lang": "en", "text": "Yoshimatsu", "source": "official"}
 - {"entity_type": "node", "id": "n_kurino", "lang": "ja", "text": "栗野", "kana": "くりの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kurino", "lang": "ko", "text": "쿠리노", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kurino", "lang": "en", "text": "Kurino", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kurino", "lang": "en", "text": "Kurino", "source": "official"}
 - {"entity_type": "node", "id": "n_osumi_yokogawa", "lang": "ja", "text": "大隅横川", "kana": "おおすみよこがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_osumi_yokogawa", "lang": "ko", "text": "오스미요코가와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_osumi_yokogawa", "lang": "en", "text": "Osumi-Yokogawa", "source": "wikidata"}
@@ -12237,16 +12237,16 @@
 - {"entity_type": "node", "id": "n_uemura", "lang": "en", "text": "Uemura", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kirishima_onsen", "lang": "ja", "text": "霧島温泉", "kana": "きりしまおんせん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kirishima_onsen", "lang": "ko", "text": "키리시마온센", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kirishima_onsen", "lang": "en", "text": "Kirishima-Onsen", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kirishima_onsen", "lang": "en", "text": "Kirishima-Onsen", "source": "official"}
 - {"entity_type": "node", "id": "n_kareigawa", "lang": "ja", "text": "嘉例川", "kana": "かれいがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kareigawa", "lang": "ko", "text": "카레이가와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kareigawa", "lang": "en", "text": "Kareigawa", "source": "official"}
 - {"entity_type": "node", "id": "n_nakafukura", "lang": "ja", "text": "中福良", "kana": "なかふくら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nakafukura", "lang": "ko", "text": "나카후쿠라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nakafukura", "lang": "en", "text": "Nakafukura", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nakafukura", "lang": "en", "text": "Naka-Fukura", "source": "official"}
 - {"entity_type": "node", "id": "n_hyokiyama", "lang": "ja", "text": "表木山", "kana": "ひょうきやま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hyokiyama", "lang": "ko", "text": "효키야마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hyokiyama", "lang": "en", "text": "Hyokiyama", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hyokiyama", "lang": "en", "text": "Hyōkiyama", "source": "official"}
 - {"entity_type": "node", "id": "n_hinatayama", "lang": "ja", "text": "日当山", "kana": "ひなたやま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hinatayama", "lang": "ko", "text": "히나타야마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hinatayama", "lang": "en", "text": "Hinatayama", "source": "official"}
@@ -12258,10 +12258,10 @@
 - {"entity_type": "node", "id": "n_korimoto", "lang": "en", "text": "Kōrimoto", "source": "official"}
 - {"entity_type": "node", "id": "n_minami_kagoshima", "lang": "ja", "text": "南鹿児島", "kana": "みなみかごしま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_minami_kagoshima", "lang": "ko", "text": "미나미카고시마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_minami_kagoshima", "lang": "en", "text": "Minami-Kagoshima", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_minami_kagoshima", "lang": "en", "text": "Minami-Kagoshima", "source": "official"}
 - {"entity_type": "node", "id": "n_usuki_ibusuki_makurazaki", "lang": "ja", "text": "宇宿", "kana": "うすき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_usuki_ibusuki_makurazaki", "lang": "ko", "text": "우스키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_usuki_ibusuki_makurazaki", "lang": "en", "text": "Usuki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_usuki_ibusuki_makurazaki", "lang": "en", "text": "Usuki", "source": "official"}
 - {"entity_type": "node", "id": "n_taniyama", "lang": "ja", "text": "谷山", "kana": "たにやま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_taniyama", "lang": "ko", "text": "타니야마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_taniyama", "lang": "en", "text": "Taniyama", "source": "official"}
@@ -12273,13 +12273,13 @@
 - {"entity_type": "node", "id": "n_sakanoue", "lang": "en", "text": "Sakanoue", "source": "official"}
 - {"entity_type": "node", "id": "n_goino", "lang": "ja", "text": "五位野", "kana": "ごいの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_goino", "lang": "ko", "text": "고이노", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_goino", "lang": "en", "text": "Goino", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_goino", "lang": "en", "text": "Goino", "source": "official"}
 - {"entity_type": "node", "id": "n_hirakawa", "lang": "ja", "text": "平川", "kana": "ひらかわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hirakawa", "lang": "ko", "text": "히라카와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hirakawa", "lang": "en", "text": "Hirakawa", "source": "official"}
 - {"entity_type": "node", "id": "n_sesekushi", "lang": "ja", "text": "瀬々串", "kana": "せせくし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sesekushi", "lang": "ko", "text": "세세쿠시", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_sesekushi", "lang": "en", "text": "Sesekushi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_sesekushi", "lang": "en", "text": "Sesekushi", "source": "official"}
 - {"entity_type": "node", "id": "n_nakamyo", "lang": "ja", "text": "中名", "kana": "なかみょう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nakamyo", "lang": "ko", "text": "나카묘", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nakamyo", "lang": "en", "text": "Nakamyō", "source": "official"}
@@ -12420,13 +12420,13 @@
 - {"entity_type": "node", "id": "n_konagai", "lang": "en", "text": "Konagai", "source": "official"}
 - {"entity_type": "node", "id": "n_nagasato", "lang": "ja", "text": "長里", "kana": "ながさと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nagasato", "lang": "ko", "text": "나가사토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nagasato", "lang": "en", "text": "Nagasato", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nagasato", "lang": "en", "text": "Nagasato", "source": "official"}
 - {"entity_type": "node", "id": "n_yue", "lang": "ja", "text": "湯江", "kana": "ゆえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yue", "lang": "ko", "text": "유에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yue", "lang": "en", "text": "Yue", "source": "official"}
 - {"entity_type": "node", "id": "n_oe", "lang": "ja", "text": "小江", "kana": "おえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oe", "lang": "ko", "text": "오에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_oe", "lang": "en", "text": "Oe", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_oe", "lang": "en", "text": "Oe", "source": "official"}
 - {"entity_type": "node", "id": "n_hizen_nagata", "lang": "ja", "text": "肥前長田", "kana": "ひぜんながた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hizen_nagata", "lang": "ko", "text": "히젠나가타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hizen_nagata", "lang": "en", "text": "Hizennagata", "source": "official"}
@@ -12435,7 +12435,7 @@
 - {"entity_type": "node", "id": "n_higashi_isahaya_old", "lang": "en", "text": "Higashi-Isahaya (old)", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_higashi_isahaya", "lang": "ja", "text": "東諫早", "kana": "ひがしいさはや", "source": "hand", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_higashi_isahaya", "lang": "ko", "text": "히가시이사하야", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_higashi_isahaya", "lang": "en", "text": "Higashi-Isahaya", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_higashi_isahaya", "lang": "en", "text": "Higashi-Isahaya", "source": "official"}
 - {"entity_type": "node", "id": "n_isahaya", "lang": "ja", "text": "諫早", "kana": "いさはや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_isahaya", "lang": "ko", "text": "이사하야", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_isahaya", "lang": "en", "text": "Isahaya", "source": "official"}
@@ -12447,7 +12447,7 @@
 - {"entity_type": "node", "id": "n_yokoshima", "lang": "en", "text": "Yokoshima", "source": "rule"}
 - {"entity_type": "node", "id": "n_kikitsu", "lang": "ja", "text": "喜々津", "kana": "ききつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kikitsu", "lang": "ko", "text": "키키츠", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kikitsu", "lang": "en", "text": "Kikitsu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kikitsu", "lang": "en", "text": "Kikitsu", "source": "official"}
 - {"entity_type": "node", "id": "n_ichinuno", "lang": "ja", "text": "市布", "kana": "いちぬの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ichinuno", "lang": "ko", "text": "이치누노", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ichinuno", "lang": "en", "text": "Ichinuno", "source": "official"}
@@ -12456,7 +12456,7 @@
 - {"entity_type": "node", "id": "n_hizen_koga", "lang": "en", "text": "Hizen-koga", "source": "official"}
 - {"entity_type": "node", "id": "n_utsutsugawa", "lang": "ja", "text": "現川", "kana": "うつつがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_utsutsugawa", "lang": "ko", "text": "우츠츠가와", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_utsutsugawa", "lang": "en", "text": "Utsutsugawa", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_utsutsugawa", "lang": "en", "text": "Utsutsugawa", "source": "official"}
 - {"entity_type": "node", "id": "n_urakami", "lang": "ja", "text": "浦上", "kana": "うらかみ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_urakami", "lang": "ko", "text": "우라카미", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_urakami", "lang": "en", "text": "Urakami", "source": "official"}
@@ -12630,7 +12630,7 @@
 - {"entity_type": "node", "id": "n_nagao_sasebo", "lang": "en", "text": "Nagao", "source": "official"}
 - {"entity_type": "node", "id": "n_mimasaka", "lang": "ja", "text": "三間坂", "kana": "みまさか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_mimasaka", "lang": "ko", "text": "미마사카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_mimasaka", "lang": "en", "text": "Mimasaka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_mimasaka", "lang": "en", "text": "Mimasaka", "source": "official"}
 - {"entity_type": "node", "id": "n_kami_arita", "lang": "ja", "text": "上有田", "kana": "かみありた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kami_arita", "lang": "ko", "text": "카미아리타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kami_arita", "lang": "en", "text": "Kami Arita", "source": "official"}
@@ -12639,7 +12639,7 @@
 - {"entity_type": "node", "id": "n_arita", "lang": "en", "text": "Arita", "source": "official"}
 - {"entity_type": "node", "id": "n_mikawachi", "lang": "ja", "text": "三河内", "kana": "みかわち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_mikawachi", "lang": "ko", "text": "미카와치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_mikawachi", "lang": "en", "text": "Mikawachi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_mikawachi", "lang": "en", "text": "Mikawachi", "source": "official"}
 - {"entity_type": "node", "id": "n_haiki", "lang": "ja", "text": "早岐", "kana": "はいき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_haiki", "lang": "ko", "text": "하이키", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_haiki", "lang": "en", "text": "Haiki", "source": "official"}
@@ -12678,7 +12678,7 @@
 - {"entity_type": "node", "id": "n_omura_sharyokichi", "lang": "en", "text": "Ōmura Rail Yard", "source": "official"}
 - {"entity_type": "node", "id": "n_takematsu", "lang": "ja", "text": "竹松", "kana": "たけまつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takematsu", "lang": "ko", "text": "타케마츠", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_takematsu", "lang": "en", "text": "Takematsu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_takematsu", "lang": "en", "text": "Takematsu", "source": "official"}
 - {"entity_type": "node", "id": "n_suwa_omura", "lang": "ja", "text": "諏訪", "kana": "すわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_suwa_omura", "lang": "ko", "text": "스와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_suwa_omura", "lang": "en", "text": "Suwa", "source": "wikidata"}
@@ -12687,7 +12687,7 @@
 - {"entity_type": "node", "id": "n_omura", "lang": "en", "text": "Omura", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_iwamatsu", "lang": "ja", "text": "岩松", "kana": "いわまつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_iwamatsu", "lang": "ko", "text": "이와마츠", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_iwamatsu", "lang": "en", "text": "Iwamatsu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_iwamatsu", "lang": "en", "text": "Iwamatsu", "source": "official"}
 - {"entity_type": "node", "id": "n_kurume_kokomae", "lang": "ja", "text": "久留米高校前", "kana": "くるめこうこうまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kurume_kokomae", "lang": "ko", "text": "쿠루메코코마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kurume_kokomae", "lang": "en", "text": "Kurumekōkō-Mae", "source": "official"}
@@ -12708,16 +12708,16 @@
 - {"entity_type": "node", "id": "n_chikugo_kusano", "lang": "en", "text": "Chikugo-Kusano", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_tanushimaru", "lang": "ja", "text": "田主丸", "kana": "たぬしまる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tanushimaru", "lang": "ko", "text": "타누시마루", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tanushimaru", "lang": "en", "text": "Tanushimaru", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tanushimaru", "lang": "en", "text": "Tanushimaru", "source": "official"}
 - {"entity_type": "node", "id": "n_chikugo_yoshii", "lang": "ja", "text": "筑後吉井", "kana": "ちくごよしい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_chikugo_yoshii", "lang": "ko", "text": "치쿠고요시이", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_chikugo_yoshii", "lang": "en", "text": "Chikugo-Yoshii", "source": "official"}
 - {"entity_type": "node", "id": "n_ukiha", "lang": "ja", "text": "うきは", "kana": "うきは", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ukiha", "lang": "ko", "text": "우키하", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ukiha", "lang": "en", "text": "Ukiha", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ukiha", "lang": "en", "text": "Ukiha", "source": "official"}
 - {"entity_type": "node", "id": "n_chikugo_oishi", "lang": "ja", "text": "筑後大石", "kana": "ちくごおおいし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_chikugo_oishi", "lang": "ko", "text": "치쿠고오이시", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_chikugo_oishi", "lang": "en", "text": "Chikugo-Oishi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_chikugo_oishi", "lang": "en", "text": "Chikugo-Ōishi", "source": "official"}
 - {"entity_type": "node", "id": "n_yoake", "lang": "ja", "text": "夜明", "kana": "よあけ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yoake", "lang": "ko", "text": "요아케", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yoake", "lang": "en", "text": "Yoake", "source": "official"}
@@ -12753,7 +12753,7 @@
 - {"entity_type": "node", "id": "n_hikiji", "lang": "en", "text": "Hikiji", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_bungo_nakamura", "lang": "ja", "text": "豊後中村", "kana": "ぶんごなかむら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_bungo_nakamura", "lang": "ko", "text": "분고나카무라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_bungo_nakamura", "lang": "en", "text": "Bungo-Nakamura", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_bungo_nakamura", "lang": "en", "text": "Bungo Nakamura", "source": "official"}
 - {"entity_type": "node", "id": "n_noya", "lang": "ja", "text": "野矢", "kana": "のや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_noya", "lang": "ko", "text": "노야", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_noya", "lang": "en", "text": "No Ya", "source": "official"}
@@ -12792,7 +12792,7 @@
 - {"entity_type": "node", "id": "n_minami_oita", "lang": "en", "text": "Minamiōita", "source": "official"}
 - {"entity_type": "node", "id": "n_furugo", "lang": "ja", "text": "古国府", "kana": "ふるごう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_furugo", "lang": "ko", "text": "후루고", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_furugo", "lang": "en", "text": "Furugo", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_furugo", "lang": "en", "text": "Furugō", "source": "official"}
 - {"entity_type": "node", "id": "n_oita", "lang": "ja", "text": "大分", "kana": "おおいた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oita", "lang": "ko", "text": "오이타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_oita", "lang": "en", "text": "Ōita", "source": "official"}
@@ -12849,19 +12849,19 @@
 - {"entity_type": "node", "id": "n_miyaji", "lang": "en", "text": "Miyaji", "source": "official"}
 - {"entity_type": "node", "id": "n_ikoi_no_mura", "lang": "ja", "text": "いこいの村", "kana": "いこいのむら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ikoi_no_mura", "lang": "ko", "text": "이코이노무라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ikoi_no_mura", "lang": "en", "text": "Ikoi-no-Mura", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ikoi_no_mura", "lang": "en", "text": "Ikoinomura", "source": "official"}
 - {"entity_type": "node", "id": "n_aso_hohi_main", "lang": "ja", "text": "阿蘇", "kana": "あそ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_aso_hohi_main", "lang": "ko", "text": "아소", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_aso_hohi_main", "lang": "en", "text": "Aso", "source": "official"}
 - {"entity_type": "node", "id": "n_uchinomaki", "lang": "ja", "text": "内牧", "kana": "うちのまき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_uchinomaki", "lang": "ko", "text": "우치노마키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_uchinomaki", "lang": "en", "text": "Uchinomaki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_uchinomaki", "lang": "en", "text": "Uchinomaki", "source": "official"}
 - {"entity_type": "node", "id": "n_ichinokawa", "lang": "ja", "text": "市ノ川", "kana": "いちのかわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ichinokawa", "lang": "ko", "text": "이치노카와", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ichinokawa", "lang": "en", "text": "Ichinokawa", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ichinokawa", "lang": "en", "text": "Ichinokawa", "source": "official"}
 - {"entity_type": "node", "id": "n_akamizu", "lang": "ja", "text": "赤水", "kana": "あかみず", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_akamizu", "lang": "ko", "text": "아카미즈", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_akamizu", "lang": "en", "text": "Akamizu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_akamizu", "lang": "en", "text": "Akamizu", "source": "official"}
 - {"entity_type": "node", "id": "n_tateno", "lang": "ja", "text": "立野", "kana": "たての", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tateno", "lang": "ko", "text": "타테노", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tateno", "lang": "en", "text": "Tateno", "source": "official"}
@@ -12897,7 +12897,7 @@
 - {"entity_type": "node", "id": "n_shin_suizenji", "lang": "en", "text": "Shin-Suizenji", "source": "official"}
 - {"entity_type": "node", "id": "n_minami_kumamoto", "lang": "ja", "text": "南熊本", "kana": "みなみくまもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_minami_kumamoto", "lang": "ko", "text": "미나미쿠마모토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_minami_kumamoto", "lang": "en", "text": "Minami-Kumamoto", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_minami_kumamoto", "lang": "en", "text": "Minami-Kumamoto", "source": "official"}
 - {"entity_type": "node", "id": "n_heisei", "lang": "ja", "text": "平成", "kana": "へいせい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_heisei", "lang": "ko", "text": "헤이세이", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_heisei", "lang": "en", "text": "Heisei", "source": "official"}
@@ -12954,7 +12954,7 @@
 - {"entity_type": "node", "id": "n_nakatsu", "lang": "en", "text": "Nakatsu", "source": "official"}
 - {"entity_type": "node", "id": "n_higashi_nakatsu", "lang": "ja", "text": "東中津", "kana": "ひがしなかつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_higashi_nakatsu", "lang": "ko", "text": "히가시나카츠", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_higashi_nakatsu", "lang": "en", "text": "Higashi-Nakatsu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_higashi_nakatsu", "lang": "en", "text": "Higashi-Nakatsu", "source": "official"}
 - {"entity_type": "node", "id": "n_imazu", "lang": "ja", "text": "今津", "kana": "いまづ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_imazu", "lang": "ko", "text": "이마즈", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_imazu", "lang": "en", "text": "Imazu", "source": "wikidata"}
@@ -12987,13 +12987,13 @@
 - {"entity_type": "node", "id": "n_kitsuki", "lang": "en", "text": "Kitsuki", "source": "official"}
 - {"entity_type": "node", "id": "n_oga_nippo_main", "lang": "ja", "text": "大神", "kana": "おおが", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oga_nippo_main", "lang": "ko", "text": "오가", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_oga_nippo_main", "lang": "en", "text": "Oga", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_oga_nippo_main", "lang": "en", "text": "Ōga", "source": "official"}
 - {"entity_type": "node", "id": "n_hiji", "lang": "ja", "text": "日出", "kana": "ひじ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hiji", "lang": "ko", "text": "히지", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hiji", "lang": "en", "text": "Hiji", "source": "official"}
 - {"entity_type": "node", "id": "n_yokoku", "lang": "ja", "text": "暘谷", "kana": "ようこく", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yokoku", "lang": "ko", "text": "요코쿠", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_yokoku", "lang": "en", "text": "Yokoku", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_yokoku", "lang": "en", "text": "Yōkoku", "source": "official"}
 - {"entity_type": "node", "id": "n_bungo_toyooka", "lang": "ja", "text": "豊後豊岡", "kana": "ぶんごとよおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_bungo_toyooka", "lang": "ko", "text": "분고토요오카", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_bungo_toyooka", "lang": "en", "text": "Bungo-toyooka", "source": "official"}
@@ -13026,13 +13026,13 @@
 - {"entity_type": "node", "id": "n_ozai", "lang": "en", "text": "Ōzai", "source": "official"}
 - {"entity_type": "node", "id": "n_sakanoichi", "lang": "ja", "text": "坂ノ市", "kana": "さかのいち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sakanoichi", "lang": "ko", "text": "사카노이치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_sakanoichi", "lang": "en", "text": "Sakanoichi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_sakanoichi", "lang": "en", "text": "Sakanoichi", "source": "official"}
 - {"entity_type": "node", "id": "n_kozaki", "lang": "ja", "text": "幸崎", "kana": "こうざき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kozaki", "lang": "ko", "text": "코자키", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kozaki", "lang": "en", "text": "Kōzaki", "source": "official"}
 - {"entity_type": "node", "id": "n_sashiu", "lang": "ja", "text": "佐志生", "kana": "さしう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sashiu", "lang": "ko", "text": "사시우", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_sashiu", "lang": "en", "text": "Sashiu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_sashiu", "lang": "en", "text": "Sashiu", "source": "official"}
 - {"entity_type": "node", "id": "n_shitanoe", "lang": "ja", "text": "下ノ江", "kana": "したのえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shitanoe", "lang": "ko", "text": "시타노에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shitanoe", "lang": "en", "text": "Shitanoe", "source": "wikidata"}
@@ -13074,13 +13074,13 @@
 - {"entity_type": "node", "id": "n_naokawa", "lang": "en", "text": "Naokawa", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_shigeoka", "lang": "ja", "text": "重岡", "kana": "しげおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shigeoka", "lang": "ko", "text": "시게오카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shigeoka", "lang": "en", "text": "Shigeoka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_shigeoka", "lang": "en", "text": "Shigeoka", "source": "official"}
 - {"entity_type": "node", "id": "n_sotaro", "lang": "ja", "text": "宗太郎", "kana": "そうたろう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sotaro", "lang": "ko", "text": "소타로", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_sotaro", "lang": "en", "text": "Sōtarō", "source": "official"}
 - {"entity_type": "node", "id": "n_ichitana", "lang": "ja", "text": "市棚", "kana": "いちたな", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ichitana", "lang": "ko", "text": "이치타나", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ichitana", "lang": "en", "text": "Ichitana", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ichitana", "lang": "en", "text": "Ichitana", "source": "official"}
 - {"entity_type": "node", "id": "n_kitagawa", "lang": "ja", "text": "北川", "kana": "きたがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kitagawa", "lang": "ko", "text": "키타가와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kitagawa", "lang": "en", "text": "Kitagawa", "source": "wikidata"}
@@ -13089,7 +13089,7 @@
 - {"entity_type": "node", "id": "n_hyuga_nagai", "lang": "en", "text": "Hyuga-Nagai", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kita_nobeoka", "lang": "ja", "text": "北延岡", "kana": "きたのべおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kita_nobeoka", "lang": "ko", "text": "키타노베오카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kita_nobeoka", "lang": "en", "text": "Kita-Nobeoka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kita_nobeoka", "lang": "en", "text": "Kita-Nobeoka", "source": "official"}
 - {"entity_type": "node", "id": "n_nobeoka", "lang": "ja", "text": "延岡", "kana": "のべおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nobeoka", "lang": "ko", "text": "노베오카", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nobeoka", "lang": "en", "text": "Nobeoka", "source": "official"}
@@ -13101,7 +13101,7 @@
 - {"entity_type": "node", "id": "n_totorokaisuiyokujo", "lang": "en", "text": "Totorokaisuiyokujo", "source": "rule"}
 - {"entity_type": "node", "id": "n_asahigaoka_nippo_main", "lang": "ja", "text": "旭ヶ丘", "kana": "あさひがおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_asahigaoka_nippo_main", "lang": "ko", "text": "아사히가오카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_asahigaoka_nippo_main", "lang": "en", "text": "Asahigaoka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_asahigaoka_nippo_main", "lang": "en", "text": "Asahigaoka", "source": "official"}
 - {"entity_type": "node", "id": "n_totoro", "lang": "ja", "text": "土々呂", "kana": "ととろ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_totoro", "lang": "ko", "text": "토토로", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_totoro", "lang": "en", "text": "Totoro", "source": "official"}
@@ -13110,7 +13110,7 @@
 - {"entity_type": "node", "id": "n_kakusa", "lang": "en", "text": "Kakusa", "source": "rule"}
 - {"entity_type": "node", "id": "n_kadogawa", "lang": "ja", "text": "門川", "kana": "かどがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kadogawa", "lang": "ko", "text": "카도가와", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kadogawa", "lang": "en", "text": "Kadogawa", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kadogawa", "lang": "en", "text": "Kadogawa", "source": "official"}
 - {"entity_type": "node", "id": "n_hyugashi", "lang": "ja", "text": "日向市", "kana": "ひゅうがし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hyugashi", "lang": "ko", "text": "휴가시", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hyugashi", "lang": "en", "text": "Hyūgashi", "source": "official"}
@@ -13161,7 +13161,7 @@
 - {"entity_type": "node", "id": "n_kano", "lang": "en", "text": "Kano", "source": "official"}
 - {"entity_type": "node", "id": "n_kiyotake", "lang": "ja", "text": "清武", "kana": "きよたけ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kiyotake", "lang": "ko", "text": "키요타케", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kiyotake", "lang": "en", "text": "Kiyotake", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kiyotake", "lang": "en", "text": "Kiyotake", "source": "official"}
 - {"entity_type": "node", "id": "n_hyuga_kutsukake", "lang": "ja", "text": "日向沓掛", "kana": "ひゅうがくつかけ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hyuga_kutsukake", "lang": "ko", "text": "휴가쿠츠카케", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hyuga_kutsukake", "lang": "en", "text": "Hyuga-Kutsukake", "source": "wikidata"}
@@ -13266,7 +13266,7 @@
 - {"entity_type": "node", "id": "n_ikejiri", "lang": "en", "text": "Ikejiri", "source": "official"}
 - {"entity_type": "node", "id": "n_buzen_kawasaki", "lang": "ja", "text": "豊前川崎", "kana": "ぶぜんかわさき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_buzen_kawasaki", "lang": "ko", "text": "부젠카와사키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_buzen_kawasaki", "lang": "en", "text": "Buzen-Kawasaki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_buzen_kawasaki", "lang": "en", "text": "Buzen Kawasaki", "source": "official"}
 - {"entity_type": "node", "id": "n_nishi_soeda", "lang": "ja", "text": "西添田", "kana": "にしそえだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishi_soeda", "lang": "ko", "text": "니시소에다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nishi_soeda", "lang": "en", "text": "Nishi-soeda", "source": "official"}
@@ -13299,13 +13299,13 @@
 - {"entity_type": "node", "id": "n_aoshima", "lang": "en", "text": "Aoshima", "source": "official"}
 - {"entity_type": "node", "id": "n_oryuzako", "lang": "ja", "text": "折生迫", "kana": "おりゅうざこ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oryuzako", "lang": "ko", "text": "오류자코", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_oryuzako", "lang": "en", "text": "Oryuzako", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_oryuzako", "lang": "en", "text": "Oryūzako", "source": "official"}
 - {"entity_type": "node", "id": "n_uchiumi", "lang": "ja", "text": "内海", "kana": "うちうみ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_uchiumi", "lang": "ko", "text": "우치우미", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_uchiumi", "lang": "en", "text": "Uchiumi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kouchiumi", "lang": "ja", "text": "小内海", "kana": "こうちうみ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kouchiumi", "lang": "ko", "text": "코우치우미", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kouchiumi", "lang": "en", "text": "Kouchiumi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kouchiumi", "lang": "en", "text": "Kouchiumi", "source": "official"}
 - {"entity_type": "node", "id": "n_ibii", "lang": "ja", "text": "伊比井", "kana": "いびい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ibii", "lang": "ko", "text": "이비이", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ibii", "lang": "en", "text": "Ibii", "source": "official"}
@@ -13332,19 +13332,19 @@
 - {"entity_type": "node", "id": "n_nango", "lang": "en", "text": "Nangō", "source": "official"}
 - {"entity_type": "node", "id": "n_taninokuchi", "lang": "ja", "text": "谷之口", "kana": "たにのくち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_taninokuchi", "lang": "ko", "text": "타니노쿠치", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_taninokuchi", "lang": "en", "text": "Taninokuchi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_taninokuchi", "lang": "en", "text": "Taninokuchi", "source": "official"}
 - {"entity_type": "node", "id": "n_yowara", "lang": "ja", "text": "榎原", "kana": "よわら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yowara", "lang": "ko", "text": "요와라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yowara", "lang": "en", "text": "Yowara", "source": "official"}
 - {"entity_type": "node", "id": "n_hyuga_otsuka", "lang": "ja", "text": "日向大束", "kana": "ひゅうがおおつか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hyuga_otsuka", "lang": "ko", "text": "휴가오츠카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hyuga_otsuka", "lang": "en", "text": "Hyuga-Otsuka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hyuga_otsuka", "lang": "en", "text": "Hyuga-Otsuka", "source": "official"}
 - {"entity_type": "node", "id": "n_hyuga_kitakata", "lang": "ja", "text": "日向北方", "kana": "ひゅうがきたかた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hyuga_kitakata", "lang": "ko", "text": "휴가키타카타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hyuga_kitakata", "lang": "en", "text": "Hyūga-Kitakata", "source": "official"}
 - {"entity_type": "node", "id": "n_kushima", "lang": "ja", "text": "串間", "kana": "くしま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kushima", "lang": "ko", "text": "쿠시마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kushima", "lang": "en", "text": "Kushima", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kushima", "lang": "en", "text": "Kushima", "source": "official"}
 - {"entity_type": "node", "id": "n_fukushima_imamachi", "lang": "ja", "text": "福島今町", "kana": "ふくしまいままち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_fukushima_imamachi", "lang": "ko", "text": "후쿠시마이마마치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_fukushima_imamachi", "lang": "en", "text": "Fukushima-Imamachi", "source": "official"}
@@ -13407,7 +13407,7 @@
 - {"entity_type": "node", "id": "n_kyomachi_onsen", "lang": "en", "text": "Kyomachi Onsen", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_tsurumaru", "lang": "ja", "text": "鶴丸", "kana": "つるまる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tsurumaru", "lang": "ko", "text": "츠루마루", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tsurumaru", "lang": "en", "text": "Tsurumaru", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tsurumaru", "lang": "en", "text": "Tsurumaru", "source": "official"}
 - {"entity_type": "node", "id": "n_wakamatsu", "lang": "ja", "text": "若松", "kana": "わかまつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_wakamatsu", "lang": "ko", "text": "와카마츠", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_wakamatsu", "lang": "en", "text": "Wakamatsu", "source": "official"}
@@ -21129,7 +21129,7 @@
 - {"entity_type": "node", "id": "n_chuo_hirosaki", "lang": "en", "text": "ChuoHirosaki", "source": "official"}
 - {"entity_type": "node", "id": "n_ichiburi", "lang": "ja", "text": "市振", "kana": "いちぶり", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ichiburi", "lang": "ko", "text": "이치부리", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ichiburi", "lang": "en", "text": "Ichiburi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ichiburi", "lang": "en", "text": "Ichiburi", "source": "official"}
 - {"entity_type": "node", "id": "n_oyashirazu", "lang": "ja", "text": "親不知", "kana": "おやしらず", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oyashirazu", "lang": "ko", "text": "오야시라즈", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_oyashirazu", "lang": "en", "text": "Oyashirazu", "source": "official"}
@@ -21144,7 +21144,7 @@
 - {"entity_type": "node", "id": "n_kajiyashiki", "lang": "en", "text": "Kajiyashiki", "source": "official"}
 - {"entity_type": "node", "id": "n_uramoto", "lang": "ja", "text": "浦本", "kana": "うらもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_uramoto", "lang": "ko", "text": "우라모토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_uramoto", "lang": "en", "text": "Uramoto", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_uramoto", "lang": "en", "text": "Uramoto", "source": "official"}
 - {"entity_type": "node", "id": "n_no", "lang": "ja", "text": "能生", "kana": "のう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_no", "lang": "ko", "text": "노우", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_no", "lang": "en", "text": "No", "source": "wikidata"}
@@ -21974,13 +21974,13 @@
 - {"entity_type": "node", "id": "n_otsuki_fujikyu", "lang": "en", "text": "Ōtsuki", "source": "official"}
 - {"entity_type": "node", "id": "n_kamiotsuki", "lang": "ja", "text": "上大月", "kana": "かみおおつき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kamiotsuki", "lang": "ko", "text": "카미오츠키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kamiotsuki", "lang": "en", "text": "Kamiotsuki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kamiotsuki", "lang": "en", "text": "Kamiotsuki", "source": "official"}
 - {"entity_type": "node", "id": "n_tanokura", "lang": "ja", "text": "田野倉", "kana": "たのくら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tanokura", "lang": "ko", "text": "타노쿠라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tanokura", "lang": "en", "text": "Tanokura", "source": "official"}
 - {"entity_type": "node", "id": "n_kasei", "lang": "ja", "text": "禾生", "kana": "かせい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kasei", "lang": "ko", "text": "카세이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kasei", "lang": "en", "text": "Kasei", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kasei", "lang": "en", "text": "Kasei", "source": "official"}
 - {"entity_type": "node", "id": "n_akasaka_fujikyu", "lang": "ja", "text": "赤坂", "kana": "あかさか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_akasaka_fujikyu", "lang": "ko", "text": "아카사카", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_akasaka_fujikyu", "lang": "en", "text": "Akasaka", "source": "official"}
@@ -22187,14 +22187,14 @@
 - {"entity_type": "node", "id": "n_ekimae", "lang": "en", "text": "Ekimae", "source": "rule"}
 - {"entity_type": "node", "id": "n_ekimae_odori", "lang": "ja", "text": "駅前大通", "kana": "えきまえおおどおり", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ekimae_odori", "lang": "ko", "text": "에키마에오도리", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ekimae_odori", "lang": "en", "text": "Ekimae-Odori", "source": "rule"}
+- {"entity_type": "node", "id": "n_ekimae_odori", "lang": "en", "text": "Ekimae-odori", "source": "official"}
 - {"entity_type": "node", "id": "n_shinkawa_toyohashi", "lang": "ja", "text": "新川", "kana": "しんかわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shinkawa_toyohashi", "lang": "ko", "text": "신카와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shinkawa_toyohashi", "lang": "en", "text": "Shinkawa", "source": "official"}
 - {"entity_type": "node", "id": "n_shimmei_toyohashi", "lang": "ja", "text": "神明", "source": "wikipedia", "kana": "しんめい", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_fudagi", "lang": "ja", "text": "札木", "kana": "ふだぎ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_fudagi", "lang": "ko", "text": "후다기", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_fudagi", "lang": "en", "text": "Fudagi", "source": "rule"}
+- {"entity_type": "node", "id": "n_fudagi", "lang": "en", "text": "Fudagi", "source": "official"}
 - {"entity_type": "node", "id": "n_shiyakushomae_toyohashi", "lang": "ja", "text": "市役所前", "kana": "しやくしょまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shiyakushomae_toyohashi", "lang": "ko", "text": "시야쿠쇼마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shiyakushomae_toyohashi", "lang": "en", "text": "Shiyakusho-mae", "source": "rule"}
@@ -22445,7 +22445,7 @@
 - {"entity_type": "node", "id": "n_fujishimajinjamae", "lang": "en", "text": "Fujishima-jinja-mae", "source": "rule"}
 - {"entity_type": "node", "id": "n_asuwayamakoenguchi", "lang": "ja", "text": "足羽山公園口", "kana": "あすわやまこうえんぐち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_asuwayamakoenguchi", "lang": "ko", "text": "아스와야마코엔구치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_asuwayamakoenguchi", "lang": "en", "text": "Asuwayamakoenguchi", "source": "rule"}
+- {"entity_type": "node", "id": "n_asuwayamakoenguchi", "lang": "en", "text": "Asuwayama-Koenguchi", "source": "official"}
 - {"entity_type": "node", "id": "n_hommachidori", "lang": "ja", "text": "本町通り", "kana": "ほんまちどおり", "source": "wikipedia", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_hommachidori", "lang": "ko", "text": "혼마치도리", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hommachidori", "lang": "en", "text": "Hommachidori", "source": "rule"}
@@ -22458,7 +22458,7 @@
 - {"entity_type": "node", "id": "n_fukui_fukui", "lang": "en", "text": "Fukui-eki", "source": "official"}
 - {"entity_type": "node", "id": "n_jinaijoshikoko", "lang": "ja", "text": "仁愛女子高校", "kana": "じんあいじょしこうこう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_jinaijoshikoko", "lang": "ko", "text": "진아이죠시코코", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_jinaijoshikoko", "lang": "en", "text": "Jin'aijoshikoko", "source": "rule"}
+- {"entity_type": "node", "id": "n_jinaijoshikoko", "lang": "en", "text": "Jin-ai Girls' High School", "source": "official"}
 - {"entity_type": "node", "id": "n_matsumotodori", "lang": "ja", "text": "松本通", "kana": "まつもとどおり", "source": "wikipedia", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_matsumotodori", "lang": "ko", "text": "마츠모토도리", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_matsumotodori", "lang": "en", "text": "Matsumotodori", "source": "rule"}
@@ -22626,13 +22626,13 @@
 - {"entity_type": "node", "id": "n_hikoneguchi", "lang": "en", "text": "Hikoneguchi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_takamiya_ohmi", "lang": "ja", "text": "高宮", "kana": "たかみや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takamiya_ohmi", "lang": "ko", "text": "타카미야", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_takamiya_ohmi", "lang": "en", "text": "Takamiya", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_takamiya_ohmi", "lang": "en", "text": "Takamiya", "source": "official"}
 - {"entity_type": "node", "id": "n_amago", "lang": "ja", "text": "尼子", "kana": "あまご", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_amago", "lang": "ko", "text": "아마고", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_amago", "lang": "en", "text": "Amago", "source": "official"}
 - {"entity_type": "node", "id": "n_toyosato_ohmi", "lang": "ja", "text": "豊郷", "kana": "とよさと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_toyosato_ohmi", "lang": "ko", "text": "토요사토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_toyosato_ohmi", "lang": "en", "text": "Toyosato", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_toyosato_ohmi", "lang": "en", "text": "Toyosato", "source": "official"}
 - {"entity_type": "node", "id": "n_echigawa", "lang": "ja", "text": "愛知川", "kana": "えちがわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_echigawa", "lang": "ko", "text": "에치가와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_echigawa", "lang": "en", "text": "Echigawa", "source": "wikidata"}
@@ -22644,7 +22644,7 @@
 - {"entity_type": "node", "id": "n_kawabe_no_mori", "lang": "en", "text": "Kawabe-no-mori", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_yokaichi", "lang": "ja", "text": "八日市", "kana": "ようかいち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yokaichi", "lang": "ko", "text": "요카이치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_yokaichi", "lang": "en", "text": "Yokaichi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_yokaichi", "lang": "en", "text": "Yōkaichi", "source": "official"}
 - {"entity_type": "node", "id": "n_nagatanino", "lang": "ja", "text": "長谷野", "kana": "ながたにの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nagatanino", "lang": "ko", "text": "나가타니노", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nagatanino", "lang": "en", "text": "Nagatanino", "source": "wikidata"}
@@ -22767,7 +22767,7 @@
 - {"entity_type": "node", "id": "n_amanohashidate", "lang": "en", "text": "Amanohashidate", "source": "official"}
 - {"entity_type": "node", "id": "n_iwatakiguchi", "lang": "ja", "text": "岩滝口", "kana": "いわたきぐち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_iwatakiguchi", "lang": "ko", "text": "이와타키구치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_iwatakiguchi", "lang": "en", "text": "Iwatakiguchi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_iwatakiguchi", "lang": "en", "text": "Iwataki-Guchi", "source": "official"}
 - {"entity_type": "node", "id": "n_yosano", "lang": "ja", "text": "与謝野", "kana": "よさの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yosano", "lang": "ko", "text": "요사노", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yosano", "lang": "en", "text": "Yosano", "source": "official"}
@@ -22776,7 +22776,7 @@
 - {"entity_type": "node", "id": "n_yosano", "lang": "en", "text": "Tango-Yamada", "source": "rule", "line": "l_miyazu_line"}
 - {"entity_type": "node", "id": "n_kyotango_omiya", "lang": "ja", "text": "京丹後大宮", "kana": "きょうたんごおおみや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kyotango_omiya", "lang": "ko", "text": "쿄탄고오미야", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kyotango_omiya", "lang": "en", "text": "Kyotango-Omiya", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kyotango_omiya", "lang": "en", "text": "Kyotango-Omiya", "source": "official"}
 - {"entity_type": "node", "id": "n_mineyama", "lang": "ja", "text": "峰山", "kana": "みねやま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_mineyama", "lang": "ko", "text": "미네야마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_mineyama", "lang": "en", "text": "Mineyama", "source": "official"}
@@ -22785,7 +22785,7 @@
 - {"entity_type": "node", "id": "n_amino", "lang": "en", "text": "Amino", "source": "official"}
 - {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "ja", "text": "夕日ヶ浦木津温泉", "kana": "ゆうひがうらきつおんせん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "ko", "text": "유히가우라키츠온센", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "en", "text": "Yuhigaura-Kitsu-onsen", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "en", "text": "Yuhigaura-Kitsu-Onsen", "source": "official"}
 - {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "ja", "text": "丹後木津", "source": "noritsubushi", "line": "l_miyazu_line", "kana": "たんごきづ"}
 - {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "ko", "text": "탄고키츠", "source": "hand", "line": "l_miyazu_line", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yuhigaura_kitsu_onsen", "lang": "en", "text": "Tango-Kizu", "source": "rule", "line": "l_miyazu_line"}
@@ -23885,7 +23885,7 @@
 - {"entity_type": "node", "id": "n_dentetsu_izumoshi", "lang": "en", "text": "Dentetsu Izumoshi", "source": "official"}
 - {"entity_type": "node", "id": "n_izumo_science_center_park_town_mae", "lang": "ja", "text": "出雲科学館パークタウン前", "kana": "いずもかがくかんぱーくたうんまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_izumo_science_center_park_town_mae", "lang": "ko", "text": "이즈모카가쿠칸파크타운마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_izumo_science_center_park_town_mae", "lang": "en", "text": "Izumo Science Center Park Town-mae", "source": "hand"}
+- {"entity_type": "node", "id": "n_izumo_science_center_park_town_mae", "lang": "en", "text": "Izumo Science Center-Park Town-mae", "source": "official"}
 - {"entity_type": "node", "id": "n_otsumachi", "lang": "ja", "text": "大津町", "kana": "おおつまち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_otsumachi", "lang": "ko", "text": "오츠마치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_otsumachi", "lang": "en", "text": "Otsumachi", "source": "official"}
@@ -23903,13 +23903,13 @@
 - {"entity_type": "node", "id": "n_midami", "lang": "en", "text": "Midami", "source": "official"}
 - {"entity_type": "node", "id": "n_tabushi", "lang": "ja", "text": "旅伏", "kana": "たぶし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tabushi", "lang": "ko", "text": "타부시", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tabushi", "lang": "en", "text": "Tabushi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tabushi", "lang": "en", "text": "Tabushi", "source": "official"}
 - {"entity_type": "node", "id": "n_unshu_hirata", "lang": "ja", "text": "雲州平田", "kana": "うんしゅうひらた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_unshu_hirata", "lang": "ko", "text": "운슈히라타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_unshu_hirata", "lang": "en", "text": "Unshu-Hirata", "source": "official"}
 - {"entity_type": "node", "id": "n_nunozaki", "lang": "ja", "text": "布崎", "kana": "ぬのざき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nunozaki", "lang": "ko", "text": "누노자키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nunozaki", "lang": "en", "text": "Nunozaki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nunozaki", "lang": "en", "text": "Nunozaki", "source": "official"}
 - {"entity_type": "node", "id": "n_koyukanshineki", "lang": "ja", "text": "湖遊館新駅", "kana": "こゆうかんしんえき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_koyukanshineki", "lang": "ko", "text": "코유칸신역", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_koyukanshineki", "lang": "en", "text": "Koyukan Shin-eki", "source": "official"}
@@ -23927,7 +23927,7 @@
 - {"entity_type": "node", "id": "n_tsunomori", "lang": "en", "text": "Tsunomori", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_takanomiya", "lang": "ja", "text": "高ノ宮", "kana": "たかのみや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takanomiya", "lang": "ko", "text": "타카노미야", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_takanomiya", "lang": "en", "text": "Takanomiya", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_takanomiya", "lang": "en", "text": "Takanomiya", "source": "official"}
 - {"entity_type": "node", "id": "n_matsue_vogel_park", "lang": "ja", "text": "松江フォーゲルパーク", "kana": "まつえふぉーげるぱーく", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_matsue_vogel_park", "lang": "ko", "text": "마츠에포겔파크", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_matsue_vogel_park", "lang": "en", "text": "Matsue Vogel-Park", "source": "official"}
@@ -23960,7 +23960,7 @@
 - {"entity_type": "node", "id": "n_youkan", "lang": "en", "text": "Youkan", "source": "official"}
 - {"entity_type": "node", "id": "n_hamayamakoen_kitaguchi", "lang": "ja", "text": "浜山公園北口", "kana": "はまやまこうえんきたぐち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hamayamakoen_kitaguchi", "lang": "ko", "text": "하마야마코엔키타구치", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hamayamakoen_kitaguchi", "lang": "en", "text": "Hamayamakoen-Kitaguchi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hamayamakoen_kitaguchi", "lang": "en", "text": "Hamayamakoen-Kitaguchi", "source": "official"}
 - {"entity_type": "node", "id": "n_izumo_taisha_mae", "lang": "ja", "text": "出雲大社前", "kana": "いずもたいしゃまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_izumo_taisha_mae", "lang": "ko", "text": "이즈모타이샤마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_izumo_taisha_mae", "lang": "en", "text": "Izumotaisha-Mae", "source": "official"}
@@ -24692,7 +24692,7 @@
 - {"entity_type": "node", "id": "n_minami_nogata_gotenguchi", "lang": "en", "text": "Minami-Nōgata Gotenguchi", "source": "official"}
 - {"entity_type": "node", "id": "n_akaji", "lang": "ja", "text": "あかぢ", "kana": "あかぢ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_akaji", "lang": "ko", "text": "아카지", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_akaji", "lang": "en", "text": "Akaji", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_akaji", "lang": "en", "text": "Akaji", "source": "official"}
 - {"entity_type": "node", "id": "n_fujitana", "lang": "ja", "text": "藤棚", "kana": "ふじたな", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_fujitana", "lang": "ko", "text": "후지타나", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_fujitana", "lang": "en", "text": "Fujitana", "source": "wikidata"}
@@ -24701,7 +24701,7 @@
 - {"entity_type": "node", "id": "n_nakaizumi", "lang": "en", "text": "Nakaizumi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_ichiba_heisei_chikuho", "lang": "ja", "text": "市場", "kana": "いちば", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ichiba_heisei_chikuho", "lang": "ko", "text": "이치바", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ichiba_heisei_chikuho", "lang": "en", "text": "Ichiba", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_ichiba_heisei_chikuho", "lang": "en", "text": "Ichiba", "source": "official"}
 - {"entity_type": "node", "id": "n_fureai_shoriki", "lang": "ja", "text": "ふれあい生力", "kana": "ふれあいしょうりき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_fureai_shoriki", "lang": "ko", "text": "후레아이쇼리키", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_fureai_shoriki", "lang": "en", "text": "Fureai Syouriki", "source": "official"}
@@ -24710,13 +24710,13 @@
 - {"entity_type": "node", "id": "n_akaike_heisei_chikuho", "lang": "en", "text": "Akaike", "source": "official"}
 - {"entity_type": "node", "id": "n_hitomi", "lang": "ja", "text": "人見", "kana": "ひとみ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hitomi", "lang": "ko", "text": "히토미", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hitomi", "lang": "en", "text": "Hitomi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hitomi", "lang": "en", "text": "Hitomi", "source": "official"}
 - {"entity_type": "node", "id": "n_kanada", "lang": "ja", "text": "金田", "kana": "かなだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kanada", "lang": "ko", "text": "카나다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kanada", "lang": "en", "text": "Kanada", "source": "official"}
 - {"entity_type": "node", "id": "n_kami_kanada", "lang": "ja", "text": "上金田", "kana": "かみかなだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kami_kanada", "lang": "ko", "text": "카미카나다", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kami_kanada", "lang": "en", "text": "Kami Kanada", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kami_kanada", "lang": "en", "text": "Kamikanada", "source": "official"}
 - {"entity_type": "node", "id": "n_hoshii", "lang": "ja", "text": "糒", "kana": "ほしい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hoshii", "lang": "ko", "text": "호시", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hoshii", "lang": "en", "text": "Hoshii", "source": "wikidata"}
@@ -24746,7 +24746,7 @@
 - {"entity_type": "node", "id": "n_miyakoizumi", "lang": "en", "text": "Miyakoizumi", "source": "official"}
 - {"entity_type": "node", "id": "n_imagawa_kappa", "lang": "ja", "text": "今川河童", "kana": "いまがわかっぱ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_imagawa_kappa", "lang": "ko", "text": "이마가와캇파", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_imagawa_kappa", "lang": "en", "text": "Imagawa Kappa", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_imagawa_kappa", "lang": "en", "text": "Imagawakappa", "source": "official"}
 - {"entity_type": "node", "id": "n_toyotsu_heisei_chikuho", "lang": "ja", "text": "豊津", "kana": "とよつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_toyotsu_heisei_chikuho", "lang": "ko", "text": "토요츠", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_toyotsu_heisei_chikuho", "lang": "en", "text": "Toyotsu", "source": "official"}
@@ -24926,7 +24926,7 @@
 - {"entity_type": "node", "id": "n_kami_kumamoto_kumamoto", "lang": "en", "text": "Kamikumamoto", "source": "official"}
 - {"entity_type": "node", "id": "n_kankanzaka", "lang": "ja", "text": "韓々坂", "kana": "かんかんざか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kankanzaka", "lang": "ko", "text": "칸칸자카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kankanzaka", "lang": "en", "text": "Kankanzaka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kankanzaka", "lang": "en", "text": "Kankanzaka", "source": "official"}
 - {"entity_type": "node", "id": "n_ikeda_kumamoto", "lang": "ja", "text": "池田", "kana": "いけだ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ikeda_kumamoto", "lang": "ko", "text": "이케다", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ikeda_kumamoto", "lang": "en", "text": "Ikeda", "source": "wikidata"}
@@ -25484,7 +25484,7 @@
 - {"entity_type": "node", "id": "n_tatsuruhama", "lang": "en", "text": "Tatsuruhama", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kasashiho", "lang": "ja", "text": "笠師保", "kana": "かさしほ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kasashiho", "lang": "ko", "text": "카사시호", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kasashiho", "lang": "en", "text": "Kasashiho", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kasashiho", "lang": "en", "text": "Kasashiho", "source": "official"}
 - {"entity_type": "node", "id": "n_noto_nakajima", "lang": "ja", "text": "能登中島", "kana": "のとなかじま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_noto_nakajima", "lang": "ko", "text": "노토나카지마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_noto_nakajima", "lang": "en", "text": "Notonakajima", "source": "official"}
@@ -25604,7 +25604,7 @@
 - {"entity_type": "node", "id": "n_kamono", "lang": "en", "text": "Kamonoguchi", "source": "rule", "line": "l_etsumi_nan_line"}
 - {"entity_type": "node", "id": "n_tomika", "lang": "ja", "text": "富加", "kana": "とみか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tomika", "lang": "ko", "text": "토미카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tomika", "lang": "en", "text": "Tomika", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tomika", "lang": "en", "text": "Tomika", "source": "official"}
 - {"entity_type": "node", "id": "n_tomika", "lang": "ja", "text": "加茂野", "source": "noritsubushi", "line": "l_etsumi_nan_line", "kana": "かもの"}
 - {"entity_type": "node", "id": "n_tomika", "lang": "ko", "text": "카모노", "source": "namuwiki", "line": "l_etsumi_nan_line", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tomika", "lang": "en", "text": "Kamono", "source": "rule", "line": "l_etsumi_nan_line"}
@@ -25799,7 +25799,7 @@
 - {"entity_type": "node", "id": "n_osa", "lang": "en", "text": "Osa", "source": "official"}
 - {"entity_type": "node", "id": "n_harima_yokota", "lang": "ja", "text": "播磨横田", "kana": "はりまよこた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_harima_yokota", "lang": "ko", "text": "하리마요코타", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_harima_yokota", "lang": "en", "text": "Harima-Yokota", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_harima_yokota", "lang": "en", "text": "Harimayokota", "source": "official"}
 - {"entity_type": "node", "id": "n_hojomachi", "lang": "ja", "text": "北条町", "kana": "ほうじょうまち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hojomachi", "lang": "ko", "text": "호조마치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hojomachi", "lang": "en", "text": "Hojomachi", "source": "wikidata"}
@@ -25958,13 +25958,13 @@
 - {"entity_type": "node", "id": "n_inaba_funaoka", "lang": "en", "text": "Inaba-Funaoka", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_hayabusa", "lang": "ja", "text": "隼", "kana": "はやぶさ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hayabusa", "lang": "ko", "text": "하야부사", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hayabusa", "lang": "en", "text": "Hayabusa", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hayabusa", "lang": "en", "text": "Hayabusa", "source": "official"}
 - {"entity_type": "node", "id": "n_abe", "lang": "ja", "text": "安部", "kana": "あべ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_abe", "lang": "ko", "text": "아베", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_abe", "lang": "en", "text": "Abe", "source": "official"}
 - {"entity_type": "node", "id": "n_hatto", "lang": "ja", "text": "八東", "kana": "はっとう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hatto", "lang": "ko", "text": "핫토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hatto", "lang": "en", "text": "Hatto", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hatto", "lang": "en", "text": "Hattō", "source": "official"}
 - {"entity_type": "node", "id": "n_tampi", "lang": "ja", "text": "丹比", "kana": "たんぴ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tampi", "lang": "ko", "text": "탄피", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tampi", "lang": "en", "text": "Tampi", "source": "wikipedia"}
@@ -26132,7 +26132,7 @@
 - {"entity_type": "node", "id": "n_higashi_ishinden", "lang": "en", "text": "Higashi-Ishinden", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kumoi", "lang": "ja", "text": "雲井", "kana": "くもい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kumoi", "lang": "ko", "text": "쿠모이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kumoi", "lang": "en", "text": "Kumoi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kumoi", "lang": "en", "text": "Kumoi", "source": "official"}
 - {"entity_type": "node", "id": "n_chokushi", "lang": "ja", "text": "勅旨", "kana": "ちょくし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_chokushi", "lang": "ko", "text": "초쿠시", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_chokushi", "lang": "en", "text": "Chokushi", "source": "wikidata"}
@@ -26180,7 +26180,7 @@
 - {"entity_type": "node", "id": "n_kintaichi_onsen", "lang": "en", "text": "Kintaichionsen", "source": "official"}
 - {"entity_type": "node", "id": "n_metoki", "lang": "ja", "text": "目時", "kana": "めとき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_metoki", "lang": "ko", "text": "메토키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_metoki", "lang": "en", "text": "Metoki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_metoki", "lang": "en", "text": "Metoki", "source": "official"}
 - {"entity_type": "node", "id": "n_sannohe", "lang": "ja", "text": "三戸", "kana": "さんのへ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sannohe", "lang": "ko", "text": "산노헤", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_sannohe", "lang": "en", "text": "Sannohe", "source": "official"}
@@ -26295,7 +26295,7 @@
 - {"entity_type": "node", "id": "n_ashio", "lang": "en", "text": "Ashio", "source": "official"}
 - {"entity_type": "node", "id": "n_mato", "lang": "ja", "text": "間藤", "kana": "まとう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_mato", "lang": "ko", "text": "마토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_mato", "lang": "en", "text": "Mato", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_mato", "lang": "en", "text": "Matō", "source": "official"}
 - {"entity_type": "node", "id": "n_orimoto", "lang": "ja", "text": "折本", "kana": "おりもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_orimoto", "lang": "ko", "text": "오리모토", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_orimoto", "lang": "en", "text": "Orimoto", "source": "wikidata"}
@@ -26310,7 +26310,7 @@
 - {"entity_type": "node", "id": "n_moka", "lang": "en", "text": "Mōka", "source": "official"}
 - {"entity_type": "node", "id": "n_kita_mooka", "lang": "ja", "text": "北真岡", "kana": "きたもおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kita_mooka", "lang": "ko", "text": "키타모오카", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kita_mooka", "lang": "en", "text": "Kita-Mooka", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kita_mooka", "lang": "en", "text": "Kitamōka", "source": "official"}
 - {"entity_type": "node", "id": "n_nishidai_moka", "lang": "ja", "text": "西田井", "kana": "にしだい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishidai_moka", "lang": "ko", "text": "니시다이", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nishidai_moka", "lang": "en", "text": "Nishidai", "source": "wikidata"}
@@ -26319,7 +26319,7 @@
 - {"entity_type": "node", "id": "n_mashiko", "lang": "en", "text": "Mashiko", "source": "official"}
 - {"entity_type": "node", "id": "n_nanai", "lang": "ja", "text": "七井", "kana": "なない", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nanai", "lang": "ko", "text": "나나이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nanai", "lang": "en", "text": "Nanai", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nanai", "lang": "en", "text": "Nanai", "source": "official"}
 - {"entity_type": "node", "id": "n_tatara_moka", "lang": "ja", "text": "多田羅", "kana": "たたら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tatara_moka", "lang": "ko", "text": "타타라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tatara_moka", "lang": "en", "text": "Tatara", "source": "official"}
@@ -26802,7 +26802,7 @@
 - {"entity_type": "node", "id": "n_nishitakisawa", "lang": "en", "text": "Nishitakisawa", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "ja", "text": "川辺", "kana": "かわべ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "ko", "text": "카와베", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "en", "text": "Kawabe", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "en", "text": "Kawabe", "source": "official"}
 - {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "ja", "text": "羽後川辺", "source": "noritsubushi", "line": "l_yashima_line", "kana": "うごかわべ"}
 - {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "ko", "text": "우고카와베", "source": "rule", "line": "l_yashima_line", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kawabe_yuri_kogen", "lang": "en", "text": "Ugo-Kawabe", "source": "rule", "line": "l_yashima_line"}
@@ -26871,7 +26871,7 @@
 - {"entity_type": "node", "id": "n_fusamoto", "lang": "en", "text": "Fusamoto", "source": "official"}
 - {"entity_type": "node", "id": "n_nishihata", "lang": "ja", "text": "西畑", "kana": "にしはた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishihata", "lang": "ko", "text": "니시하타", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nishihata", "lang": "en", "text": "Nishihata", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nishihata", "lang": "en", "text": "Nishihata", "source": "official"}
 - {"entity_type": "node", "id": "n_kazusa_nakano_isumi", "lang": "ja", "text": "上総中野", "kana": "かずさなかの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kazusa_nakano_isumi", "lang": "ko", "text": "카즈사나카노", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kazusa_nakano_isumi", "lang": "en", "text": "Kazusa-Nakano", "source": "official"}
@@ -26934,7 +26934,7 @@
 - {"entity_type": "node", "id": "n_nishi_izumi", "lang": "en", "text": "Nishi Izumi", "source": "official"}
 - {"entity_type": "node", "id": "n_takaono", "lang": "ja", "text": "高尾野", "kana": "たかおの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takaono", "lang": "ko", "text": "타카오노", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_takaono", "lang": "en", "text": "Takaono", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_takaono", "lang": "en", "text": "Takaono", "source": "official"}
 - {"entity_type": "node", "id": "n_nodagou", "lang": "ja", "text": "野田郷", "kana": "のだごう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nodagou", "lang": "ko", "text": "노다고", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nodagou", "lang": "en", "text": "Nodagou", "source": "official"}
@@ -27010,7 +27010,7 @@
 - {"entity_type": "node", "id": "n_takata_amagi", "lang": "en", "text": "Takata", "source": "official"}
 - {"entity_type": "node", "id": "n_amagi_amagi", "lang": "ja", "text": "甘木", "kana": "あまぎ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_amagi_amagi", "lang": "ko", "text": "아마기", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_amagi_amagi", "lang": "en", "text": "Amagi", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_amagi_amagi", "lang": "en", "text": "Amagi", "source": "official"}
 - {"entity_type": "node", "id": "n_hanamune", "lang": "ja", "text": "花宗", "kana": "はなむね", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hanamune", "lang": "ko", "text": "하나무네", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hanamune", "lang": "en", "text": "Hanamune", "source": "wikidata"}
@@ -27245,7 +27245,7 @@
 - {"entity_type": "node", "id": "n_meotoishi", "lang": "en", "text": "Meotoishi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kanatake", "lang": "ja", "text": "金武", "kana": "かなたけ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kanatake", "lang": "ko", "text": "카나타케", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kanatake", "lang": "en", "text": "Kanatake", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kanatake", "lang": "en", "text": "Kanatake", "source": "official"}
 - {"entity_type": "node", "id": "n_higashi_yamashiro", "lang": "ja", "text": "東山代", "kana": "ひがしやましろ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_higashi_yamashiro", "lang": "ko", "text": "히가시야마시로", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_higashi_yamashiro", "lang": "en", "text": "Higashi-Yamashiro", "source": "wikidata"}
@@ -27263,7 +27263,7 @@
 - {"entity_type": "node", "id": "n_imabuku", "lang": "en", "text": "Imabuku", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_tsukinokawa", "lang": "ja", "text": "調川", "kana": "つきのかわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tsukinokawa", "lang": "ko", "text": "츠키노카와", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tsukinokawa", "lang": "en", "text": "Tsukinokawa", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tsukinokawa", "lang": "en", "text": "Tsukinokawa", "source": "official"}
 - {"entity_type": "node", "id": "n_matsuura", "lang": "ja", "text": "松浦", "kana": "まつうら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_matsuura", "lang": "ko", "text": "마츠우라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_matsuura", "lang": "en", "text": "Matsuura", "source": "official"}
@@ -27323,7 +27323,7 @@
 - {"entity_type": "node", "id": "n_saza", "lang": "en", "text": "Saza", "source": "official"}
 - {"entity_type": "node", "id": "n_koura", "lang": "ja", "text": "小浦", "kana": "こうら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_koura", "lang": "ko", "text": "코우라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_koura", "lang": "en", "text": "Koura", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_koura", "lang": "en", "text": "Koura", "source": "official"}
 - {"entity_type": "node", "id": "n_masaru", "lang": "ja", "text": "真申", "kana": "まさる", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_masaru", "lang": "ko", "text": "마사루", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_masaru", "lang": "en", "text": "Masaru", "source": "official"}
@@ -27332,7 +27332,7 @@
 - {"entity_type": "node", "id": "n_ainoura", "lang": "en", "text": "Ainoura", "source": "official"}
 - {"entity_type": "node", "id": "n_kami_ainoura", "lang": "ja", "text": "上相浦", "kana": "かみあいのうら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kami_ainoura", "lang": "ko", "text": "카미아이노우라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kami_ainoura", "lang": "en", "text": "Kami-Ainoura", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_kami_ainoura", "lang": "en", "text": "Kami-Ainoura", "source": "official"}
 - {"entity_type": "node", "id": "n_nakazato", "lang": "ja", "text": "中里", "kana": "なかざと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nakazato", "lang": "ko", "text": "나카자토", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nakazato", "lang": "en", "text": "Nakazato", "source": "wikidata"}
@@ -27959,7 +27959,7 @@
 - {"entity_type": "node", "id": "n_yayoi", "lang": "en", "text": "Yayoi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_ikushumbetsu", "lang": "ja", "text": "幾春別", "kana": "いくしゅんべつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ikushumbetsu", "lang": "ko", "text": "이쿠슌베츠", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_ikushumbetsu", "lang": "en", "text": "Ikushumbetsu", "source": "wikipedia"}
+- {"entity_type": "node", "id": "n_ikushumbetsu", "lang": "en", "text": "Ikushumbetsu", "source": "official"}
 - {"entity_type": "node", "id": "n_yakeyama", "lang": "ja", "text": "焼山", "kana": "やけやま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yakeyama", "lang": "ko", "text": "야케야마", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_yakeyama", "lang": "en", "text": "Yakeyama", "source": "wikidata"}
@@ -29355,13 +29355,13 @@
 - {"entity_type": "node", "id": "n_sasaya", "lang": "en", "text": "Sasaya", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_sakuramizu", "lang": "ja", "text": "桜水", "kana": "さくらみず", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sakuramizu", "lang": "ko", "text": "사쿠라미즈", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_sakuramizu", "lang": "en", "text": "Sakuramizu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_sakuramizu", "lang": "en", "text": "Sakuramizu", "source": "official"}
 - {"entity_type": "node", "id": "n_hirano_fukushima_transportation", "lang": "ja", "text": "平野", "kana": "ひらの", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hirano_fukushima_transportation", "lang": "ko", "text": "히라노", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hirano_fukushima_transportation", "lang": "en", "text": "Hirano", "source": "official"}
 - {"entity_type": "node", "id": "n_iohji_mae", "lang": "ja", "text": "医王寺前", "kana": "いおうじまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_iohji_mae", "lang": "ko", "text": "이오지마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_iohji_mae", "lang": "en", "text": "Ioji-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_iohji_mae", "lang": "en", "text": "Ioji-mae", "source": "official"}
 - {"entity_type": "node", "id": "n_hanamizuzaka", "lang": "ja", "text": "花水坂", "kana": "はなみずざか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hanamizuzaka", "lang": "ko", "text": "하나미즈자카", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_hanamizuzaka", "lang": "en", "text": "Hanamizuzaka", "source": "wikidata"}
@@ -29604,13 +29604,13 @@
 - {"entity_type": "node", "id": "n_takasaki_joshin", "lang": "en", "text": "Takasaki", "source": "official"}
 - {"entity_type": "node", "id": "n_minami_takasaki", "lang": "ja", "text": "南高崎", "kana": "みなみたかさき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_minami_takasaki", "lang": "ko", "text": "미나미타카사키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_minami_takasaki", "lang": "en", "text": "Minami-Takasaki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_minami_takasaki", "lang": "en", "text": "Minamitakasaki", "source": "official"}
 - {"entity_type": "node", "id": "n_sanonowatashi", "lang": "ja", "text": "佐野のわたし", "kana": "さののわたし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sanonowatashi", "lang": "ko", "text": "사노노와타시", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_sanonowatashi", "lang": "en", "text": "Sano-No-Watashi", "source": "official"}
 - {"entity_type": "node", "id": "n_negoya", "lang": "ja", "text": "根小屋", "kana": "ねごや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_negoya", "lang": "ko", "text": "네고야", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_negoya", "lang": "en", "text": "Negoya", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_negoya", "lang": "en", "text": "Negoya", "source": "official"}
 - {"entity_type": "node", "id": "n_takasakishokadaigakumae", "lang": "ja", "text": "高崎商科大学前", "kana": "たかさきしょうかだいがくまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takasakishokadaigakumae", "lang": "ko", "text": "타카사키쇼카다이가쿠마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_takasakishokadaigakumae", "lang": "en", "text": "Takasakishoka-daigaku-mae", "source": "rule"}
@@ -29791,7 +29791,7 @@
 - {"entity_type": "node", "id": "n_kasagami_kurohae", "lang": "en", "text": "Kasagami Kurohae", "source": "official"}
 - {"entity_type": "node", "id": "n_nishi_ashikajima", "lang": "ja", "text": "西海鹿島", "kana": "にしあしかじま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishi_ashikajima", "lang": "ko", "text": "니시아시카지마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nishi_ashikajima", "lang": "en", "text": "Nishi-Ashikajima", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nishi_ashikajima", "lang": "en", "text": "Nishiashikajima", "source": "official"}
 - {"entity_type": "node", "id": "n_ashikajima", "lang": "ja", "text": "海鹿島", "kana": "あしかじま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ashikajima", "lang": "ko", "text": "아시카지마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ashikajima", "lang": "en", "text": "Ashikajima", "source": "official"}
@@ -29953,7 +29953,7 @@
 - {"entity_type": "node", "id": "n_kamijima", "lang": "en", "text": "Kamijima", "source": "official"}
 - {"entity_type": "node", "id": "n_jidosha_gakko_mae", "lang": "ja", "text": "自動車学校前", "kana": "じどうしゃがっこうまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_jidosha_gakko_mae", "lang": "ko", "text": "지도샤갓코마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_jidosha_gakko_mae", "lang": "en", "text": "Jidosha-gakko-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_jidosha_gakko_mae", "lang": "en", "text": "Jidoshagakkomae", "source": "official"}
 - {"entity_type": "node", "id": "n_saginomiya_enshu", "lang": "ja", "text": "さぎの宮", "kana": "さぎのみや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_saginomiya_enshu", "lang": "ko", "text": "사기노미야", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_saginomiya_enshu", "lang": "en", "text": "Saginomiya", "source": "official"}
@@ -29980,7 +29980,7 @@
 - {"entity_type": "node", "id": "n_enshu_kobayashi", "lang": "en", "text": "Enshu Kobayashi", "source": "official"}
 - {"entity_type": "node", "id": "n_enshu_shibamoto", "lang": "ja", "text": "遠州芝本", "kana": "えんしゅうしばもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_enshu_shibamoto", "lang": "ko", "text": "엔슈시바모토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_enshu_shibamoto", "lang": "en", "text": "Enshu-Shibamoto", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_enshu_shibamoto", "lang": "en", "text": "Enshu Shibamoto", "source": "official"}
 - {"entity_type": "node", "id": "n_enshu_gansuiji", "lang": "ja", "text": "遠州岩水寺", "kana": "えんしゅうがんすいじ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_enshu_gansuiji", "lang": "ko", "text": "엔슈간스이지", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_enshu_gansuiji", "lang": "en", "text": "Enshu Gansuiji", "source": "official"}
@@ -30175,7 +30175,7 @@
 - {"entity_type": "node", "id": "n_seki_tomioka", "lang": "en", "text": "Seki-Tomioka", "source": "official"}
 - {"entity_type": "node", "id": "n_sekiterasumae", "lang": "ja", "text": "せきてらす前", "kana": "せきてらすまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_sekiterasumae", "lang": "ko", "text": "세키테라스마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_sekiterasumae", "lang": "en", "text": "Sekiterasu-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_sekiterasumae", "lang": "en", "text": "Sekiterasumae", "source": "official"}
 - {"entity_type": "node", "id": "n_seki_shiyakusho_mae", "lang": "ja", "text": "関市役所前", "kana": "せきしやくしょまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_seki_shiyakusho_mae", "lang": "ko", "text": "세키시야쿠쇼마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_seki_shiyakusho_mae", "lang": "en", "text": "Seki-shiyakusho-mae", "source": "rule"}
@@ -30220,13 +30220,13 @@
 - {"entity_type": "node", "id": "n_gobo_kishu", "lang": "en", "text": "Gobō", "source": "official"}
 - {"entity_type": "node", "id": "n_gakumon", "lang": "ja", "text": "学門", "kana": "がくもん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_gakumon", "lang": "ko", "text": "가쿠몬", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_gakumon", "lang": "en", "text": "Gakumon", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_gakumon", "lang": "en", "text": "Gakumon", "source": "official"}
 - {"entity_type": "node", "id": "n_kii_gobo", "lang": "ja", "text": "紀伊御坊", "kana": "きいごぼう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kii_gobo", "lang": "ko", "text": "키이고보", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kii_gobo", "lang": "en", "text": "Kii-Gobo", "source": "official"}
 - {"entity_type": "node", "id": "n_shiyakusho_mae_kishu", "lang": "ja", "text": "市役所前", "kana": "しやくしょまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shiyakusho_mae_kishu", "lang": "ko", "text": "시야쿠쇼마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shiyakusho_mae_kishu", "lang": "en", "text": "Shiyakusho-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_shiyakusho_mae_kishu", "lang": "en", "text": "Shiyakushomae", "source": "official"}
 - {"entity_type": "node", "id": "n_nishi_gobo", "lang": "ja", "text": "西御坊", "kana": "にしごぼう", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishi_gobo", "lang": "ko", "text": "니시고보", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nishi_gobo", "lang": "en", "text": "Nishi-Gobo", "source": "wikidata"}
@@ -30319,22 +30319,22 @@
 - {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato_old", "lang": "en", "text": "Kannoura (old)", "source": "rule"}
 - {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato", "lang": "ja", "text": "甲浦", "kana": "かんのうら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato", "lang": "ko", "text": "칸노우라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato", "lang": "en", "text": "Kannoura", "source": "rule"}
+- {"entity_type": "node", "id": "n_kannoura_asa_seaside_asato", "lang": "en", "text": "Kannoura", "source": "official"}
 - {"entity_type": "node", "id": "n_tateno_amagi", "lang": "ja", "text": "立野", "kana": "たての", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tateno_amagi", "lang": "ko", "text": "타테노", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tateno_amagi", "lang": "en", "text": "Tateno", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tateno_amagi", "lang": "en", "text": "Tateno", "source": "official"}
 - {"entity_type": "node", "id": "n_ogori", "lang": "ja", "text": "小郡", "kana": "おごおり", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ogori", "lang": "ko", "text": "오고리", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ogori", "lang": "en", "text": "Ogōri", "source": "official"}
 - {"entity_type": "node", "id": "n_oitai", "lang": "ja", "text": "大板井", "kana": "おおいたい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oitai", "lang": "ko", "text": "오이타이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_oitai", "lang": "en", "text": "Oitai", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_oitai", "lang": "en", "text": "Ōitai", "source": "official"}
 - {"entity_type": "node", "id": "n_imaguma", "lang": "ja", "text": "今隈", "kana": "いまぐま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_imaguma", "lang": "ko", "text": "이마구마", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_imaguma", "lang": "en", "text": "Imaguma", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_yamaguma", "lang": "ja", "text": "山隈", "kana": "やまぐま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_yamaguma", "lang": "ko", "text": "야마구마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_yamaguma", "lang": "en", "text": "Yamaguma", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_yamaguma", "lang": "en", "text": "Yamaguma", "source": "official"}
 - {"entity_type": "node", "id": "n_isahaya_shimabara", "lang": "ja", "text": "諫早", "kana": "いさはや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_isahaya_shimabara", "lang": "ko", "text": "이사하야", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_isahaya_shimabara", "lang": "en", "text": "Isahaya", "source": "official"}
@@ -30394,7 +30394,7 @@
 - {"entity_type": "node", "id": "n_matsuo_shimabara", "lang": "en", "text": "Matsuo", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_mie_shimabara", "lang": "ja", "text": "三会", "kana": "みえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_mie_shimabara", "lang": "ko", "text": "미에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_mie_shimabara", "lang": "en", "text": "Mie", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_mie_shimabara", "lang": "en", "text": "Mie", "source": "official"}
 - {"entity_type": "node", "id": "n_shimabara", "lang": "ja", "text": "島原", "kana": "しまばら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shimabara", "lang": "ko", "text": "시마바라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_shimabara", "lang": "en", "text": "Shimabara", "source": "official"}
@@ -30451,7 +30451,7 @@
 - {"entity_type": "node", "id": "n_tachihi", "lang": "en", "text": "Tachihi", "source": "official"}
 - {"entity_type": "node", "id": "n_takamatsu_tokyo_tama_intercity_monorail", "lang": "ja", "text": "高松", "kana": "たかまつ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takamatsu_tokyo_tama_intercity_monorail", "lang": "ko", "text": "타카마츠", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_takamatsu_tokyo_tama_intercity_monorail", "lang": "en", "text": "Takamatsu", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_takamatsu_tokyo_tama_intercity_monorail", "lang": "en", "text": "Takamatsu", "source": "official"}
 - {"entity_type": "node", "id": "n_tachikawa_kita", "lang": "ja", "text": "立川北", "kana": "たちかわきた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tachikawa_kita", "lang": "ko", "text": "타치카와키타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tachikawa_kita", "lang": "en", "text": "Tachikawa-Kita", "source": "official"}
@@ -30514,7 +30514,7 @@
 - {"entity_type": "node", "id": "n_keibajomae_kitakyushu_urban_monorail", "lang": "en", "text": "Keibajo-mae", "source": "rule"}
 - {"entity_type": "node", "id": "n_moritsune", "lang": "ja", "text": "守恒", "kana": "もりつね", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_moritsune", "lang": "ko", "text": "모리츠네", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_moritsune", "lang": "en", "text": "Moritsune", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_moritsune", "lang": "en", "text": "Moritsune", "source": "official"}
 - {"entity_type": "node", "id": "n_tokuriki_kodanmae", "lang": "ja", "text": "徳力公団前", "kana": "とくりきこうだんまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tokuriki_kodanmae", "lang": "ko", "text": "토쿠리키코단마에", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tokuriki_kodanmae", "lang": "en", "text": "Tokuriki Kodan-mae", "source": "official"}
@@ -30523,7 +30523,7 @@
 - {"entity_type": "node", "id": "n_tokuriki_arashiyamaguchi", "lang": "en", "text": "Tokuriki Arashiyamaguchi", "source": "official"}
 - {"entity_type": "node", "id": "n_shii_kitakyushu_urban_monorail", "lang": "ja", "text": "志井", "kana": "しい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shii_kitakyushu_urban_monorail", "lang": "ko", "text": "시이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shii_kitakyushu_urban_monorail", "lang": "en", "text": "Shii", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_shii_kitakyushu_urban_monorail", "lang": "en", "text": "Shii", "source": "official"}
 - {"entity_type": "node", "id": "n_kikugaoka", "lang": "ja", "text": "企救丘", "kana": "きくがおか", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kikugaoka", "lang": "ko", "text": "키쿠가오카", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kikugaoka", "lang": "en", "text": "Kikugaoka", "source": "official"}
@@ -30532,7 +30532,7 @@
 - {"entity_type": "node", "id": "n_omiya_saitama_new_urban_transit", "lang": "en", "text": "Omiya", "source": "official"}
 - {"entity_type": "node", "id": "n_tetsudo_hakubutsukan", "lang": "ja", "text": "鉄道博物館", "kana": "てつどうはくぶつかん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tetsudo_hakubutsukan", "lang": "ko", "text": "테츠도하쿠부츠칸", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_tetsudo_hakubutsukan", "lang": "en", "text": "Tetsudo-Hakubutsukan", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_tetsudo_hakubutsukan", "lang": "en", "text": "Tetsudō-Hakubutsukan", "source": "official"}
 - {"entity_type": "node", "id": "n_kamonomiya_saitama_new_urban_transit", "lang": "ja", "text": "加茂宮", "kana": "かものみや", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kamonomiya_saitama_new_urban_transit", "lang": "ko", "text": "카모노미야", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kamonomiya_saitama_new_urban_transit", "lang": "en", "text": "Kamonomiya", "source": "official"}
@@ -31141,13 +31141,13 @@
 - {"entity_type": "node", "id": "n_matsumoto_alpico_kotsu", "lang": "en", "text": "Matsumoto", "source": "official"}
 - {"entity_type": "node", "id": "n_nishi_matsumoto", "lang": "ja", "text": "西松本", "kana": "にしまつもと", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishi_matsumoto", "lang": "ko", "text": "니시마츠모토", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nishi_matsumoto", "lang": "en", "text": "Nishi-Matsumoto", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_nishi_matsumoto", "lang": "en", "text": "Nishimatsumoto", "source": "official"}
 - {"entity_type": "node", "id": "n_nagisa_alpico_kotsu", "lang": "ja", "text": "渚", "kana": "なぎさ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nagisa_alpico_kotsu", "lang": "ko", "text": "나기사", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nagisa_alpico_kotsu", "lang": "en", "text": "Nagisa", "source": "official"}
 - {"entity_type": "node", "id": "n_shinano_arai", "lang": "ja", "text": "信濃荒井", "kana": "しなのあらい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shinano_arai", "lang": "ko", "text": "시나노아라이", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shinano_arai", "lang": "en", "text": "Shinano-Arai", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_shinano_arai", "lang": "en", "text": "Shinanoarai", "source": "official"}
 - {"entity_type": "node", "id": "n_oniwa", "lang": "ja", "text": "大庭", "kana": "おおにわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_oniwa", "lang": "ko", "text": "오니와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_oniwa", "lang": "en", "text": "Oniwa", "source": "wikidata"}
@@ -31156,13 +31156,13 @@
 - {"entity_type": "node", "id": "n_shimonii", "lang": "en", "text": "Shimonii", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_kitanii_matsumotodaigakumae", "lang": "ja", "text": "北新・松本大学前", "kana": "きたにい・まつもとだいがくまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kitanii_matsumotodaigakumae", "lang": "ko", "text": "키타니마츠모토다이가쿠마에", "source": "rule", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_kitanii_matsumotodaigakumae", "lang": "en", "text": "Kita-Niimatsumoto-daigaku-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_kitanii_matsumotodaigakumae", "lang": "en", "text": "Kitanii Matsumotodaigakumae", "source": "official"}
 - {"entity_type": "node", "id": "n_niimura", "lang": "ja", "text": "新村", "kana": "にいむら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_niimura", "lang": "ko", "text": "니무라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_niimura", "lang": "en", "text": "Niimura", "source": "official"}
 - {"entity_type": "node", "id": "n_samizo", "lang": "ja", "text": "三溝", "kana": "さみぞ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_samizo", "lang": "ko", "text": "사미조", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_samizo", "lang": "en", "text": "Samizo", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_samizo", "lang": "en", "text": "Samizo", "source": "official"}
 - {"entity_type": "node", "id": "n_moriguchi_alpico_kotsu", "lang": "ja", "text": "森口", "kana": "もりぐち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_moriguchi_alpico_kotsu", "lang": "ko", "text": "모리구치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_moriguchi_alpico_kotsu", "lang": "en", "text": "Moriguchi", "source": "wikidata"}
@@ -31318,7 +31318,7 @@
 - {"entity_type": "node", "id": "n_nishi_kiryu", "lang": "en", "text": "Nishi-Kiryu", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_shimo_shinden", "lang": "ja", "text": "下新田", "kana": "しもしんでん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_shimo_shinden", "lang": "ko", "text": "시모신덴", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_shimo_shinden", "lang": "en", "text": "Shimo-Shinden", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_shimo_shinden", "lang": "en", "text": "Shimo-Shinden", "source": "official"}
 - {"entity_type": "node", "id": "n_undo_koen", "lang": "ja", "text": "運動公園", "kana": "うんどうこうえん", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_undo_koen", "lang": "ko", "text": "운도코엔", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_undo_koen", "lang": "en", "text": "Undo-Koen", "source": "official"}
@@ -31420,7 +31420,7 @@
 - {"entity_type": "node", "id": "n_kogane_joshi", "lang": "en", "text": "Kogane-Jōshi", "source": "official"}
 - {"entity_type": "node", "id": "n_hiregasaki", "lang": "ja", "text": "鰭ヶ崎", "kana": "ひれがさき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hiregasaki", "lang": "ko", "text": "히레가사키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hiregasaki", "lang": "en", "text": "Hiregasaki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hiregasaki", "lang": "en", "text": "Hiregasaki", "source": "official"}
 - {"entity_type": "node", "id": "n_heiwadai_ryutetsu", "lang": "ja", "text": "平和台", "kana": "へいわだい", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_heiwadai_ryutetsu", "lang": "ko", "text": "헤이와다이", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_heiwadai_ryutetsu", "lang": "en", "text": "Heiwadai", "source": "official"}
@@ -31760,7 +31760,7 @@
 - {"entity_type": "node", "id": "n_takao_tarumi", "lang": "en", "text": "Takao", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_midori_tarumi", "lang": "ja", "text": "水鳥", "kana": "みどり", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_midori_tarumi", "lang": "ko", "text": "미도리", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_midori_tarumi", "lang": "en", "text": "Midori", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_midori_tarumi", "lang": "en", "text": "Midori", "source": "official"}
 - {"entity_type": "node", "id": "n_tarumi_tarumi", "lang": "ja", "text": "樽見", "kana": "たるみ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_tarumi_tarumi", "lang": "ko", "text": "타루미", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tarumi_tarumi", "lang": "en", "text": "Tarumi", "source": "official"}
@@ -31949,7 +31949,7 @@
 - {"entity_type": "node", "id": "n_kibogaoka_kokomae", "lang": "en", "text": "Kibōgaoka-Kōkōmae", "source": "official"}
 - {"entity_type": "node", "id": "n_chikuho_katsuki", "lang": "ja", "text": "筑豊香月", "kana": "ちくほうかつき", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_chikuho_katsuki", "lang": "ko", "text": "치쿠호카츠키", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_chikuho_katsuki", "lang": "en", "text": "Chikuho-Katsuki", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_chikuho_katsuki", "lang": "en", "text": "Chikuhō-Katsuki", "source": "official"}
 - {"entity_type": "node", "id": "n_kusubashi", "lang": "ja", "text": "楠橋", "kana": "くすばし", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_kusubashi", "lang": "ko", "text": "쿠스바시", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_kusubashi", "lang": "en", "text": "Kusubashi", "source": "official"}
@@ -31994,7 +31994,7 @@
 - {"entity_type": "node", "id": "n_naruishi", "lang": "en", "text": "Naruishi", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_haze", "lang": "ja", "text": "波瀬", "kana": "はぜ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_haze", "lang": "ko", "text": "하제", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_haze", "lang": "en", "text": "Haze", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_haze", "lang": "en", "text": "Haze", "source": "official"}
 - {"entity_type": "node", "id": "n_fukushimaguchi", "lang": "ja", "text": "福島口", "kana": "ふくしまぐち", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_fukushimaguchi", "lang": "ko", "text": "후쿠시마구치", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_fukushimaguchi", "lang": "en", "text": "Fukushimaguchi", "source": "official"}
@@ -32006,19 +32006,19 @@
 - {"entity_type": "node", "id": "n_maehama", "lang": "en", "text": "Maehama", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_matsuura_hatsudenshomae", "lang": "ja", "text": "松浦発電所前", "kana": "まつうらはつでんしょまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_matsuura_hatsudenshomae", "lang": "ko", "text": "마츠우라하츠덴쇼마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_matsuura_hatsudenshomae", "lang": "en", "text": "Matsuurahatsudensho-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_matsuura_hatsudenshomae", "lang": "en", "text": "Matsuurahatsudenshomae", "source": "official"}
 - {"entity_type": "node", "id": "n_nishikoba", "lang": "ja", "text": "西木場", "kana": "にしこば", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishikoba", "lang": "ko", "text": "니시코바", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nishikoba", "lang": "en", "text": "Nishikoba", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_naka_tabira", "lang": "ja", "text": "中田平", "kana": "なかたびら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_naka_tabira", "lang": "ko", "text": "나카타비라", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_naka_tabira", "lang": "en", "text": "Naka-Tabira", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_naka_tabira", "lang": "en", "text": "Nakatabira", "source": "official"}
 - {"entity_type": "node", "id": "n_nishi_tabira", "lang": "ja", "text": "西田平", "kana": "にしたびら", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_nishi_tabira", "lang": "ko", "text": "니시타비라", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_nishi_tabira", "lang": "en", "text": "Nishi-Tabira", "source": "official"}
 - {"entity_type": "node", "id": "n_suetachibana", "lang": "ja", "text": "すえたちばな", "kana": "すえたちばな", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_suetachibana", "lang": "ko", "text": "스에타치바나", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_suetachibana", "lang": "en", "text": "Suetachibana", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_suetachibana", "lang": "en", "text": "Suetachibana", "source": "official"}
 - {"entity_type": "node", "id": "n_takaiwa_matsuura", "lang": "ja", "text": "高岩", "kana": "たかいわ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_takaiwa_matsuura", "lang": "ko", "text": "타카이와", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_takaiwa_matsuura", "lang": "en", "text": "Takaiwa", "source": "wikidata"}
@@ -32255,13 +32255,13 @@
 - {"entity_type": "node", "id": "n_shin_hakushima_hiroshima_rapid_transit", "lang": "en", "text": "Shin-Hakushima", "source": "wikidata"}
 - {"entity_type": "node", "id": "n_hakushima_hiroshima_rapid_transit", "lang": "ja", "text": "白島", "kana": "はくしま", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_hakushima_hiroshima_rapid_transit", "lang": "ko", "text": "하쿠시마", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_hakushima_hiroshima_rapid_transit", "lang": "en", "text": "Hakushima", "source": "wikidata"}
+- {"entity_type": "node", "id": "n_hakushima_hiroshima_rapid_transit", "lang": "en", "text": "Hakushima", "source": "official"}
 - {"entity_type": "node", "id": "n_ushita", "lang": "ja", "text": "牛田", "kana": "うした", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_ushita", "lang": "ko", "text": "우시타", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ushita", "lang": "en", "text": "Ushita", "source": "official"}
 - {"entity_type": "node", "id": "n_fudoin_mae", "lang": "ja", "text": "不動院前", "kana": "ふどういんまえ", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_fudoin_mae", "lang": "ko", "text": "후도인마에", "source": "namuwiki", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_fudoin_mae", "lang": "en", "text": "Fudoin-mae", "source": "rule"}
+- {"entity_type": "node", "id": "n_fudoin_mae", "lang": "en", "text": "Fudoin-mae", "source": "official"}
 - {"entity_type": "node", "id": "n_gion_shinbashi_kita", "lang": "ja", "text": "祇園新橋北", "kana": "ぎおんしんばしきた", "source": "noritsubushi", "reading_source": "auto:station_db"}
 - {"entity_type": "node", "id": "n_gion_shinbashi_kita", "lang": "ko", "text": "기온신바시키타", "source": "namuwiki", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_gion_shinbashi_kita", "lang": "en", "text": "Gion-shinbashi-kita", "source": "wikipedia"}
@@ -40854,9 +40854,9 @@
 - {"entity_type": "node", "id": "n_koseishogakkomae", "lang": "ja", "text": "港西小学校前", "kana": "こうせいしょうがっこうまえ", "source": "wikipedia+n05", "reading_source": "auto:name_key"}
 - {"entity_type": "node", "id": "n_koseishogakkomae", "lang": "ko", "text": "코세이쇼갓코마에", "source": "estimated", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_koseishogakkomae", "lang": "en", "text": "Kosei-shogakko-mae", "source": "rule"}
-- {"entity_type": "node", "id": "n_nishiinaei", "lang": "ja", "text": "西稲永", "kana": "にしいなえい", "source": "wikipedia+n05", "reading_source": "auto:name_key"}
+- {"entity_type": "node", "id": "n_nishiinaei", "lang": "ja", "text": "西稲永", "kana": "にしいなえ", "source": "wikipedia+n05", "reading_source": "hand:node_fix"}
 - {"entity_type": "node", "id": "n_nishiinaei", "lang": "ko", "text": "니시이나에이", "source": "estimated", "checked": "2026-11-20"}
-- {"entity_type": "node", "id": "n_nishiinaei", "lang": "en", "text": "Nishiinaei", "source": "rule"}
+- {"entity_type": "node", "id": "n_nishiinaei", "lang": "en", "text": "Nishiinae", "source": "rule"}
 - {"entity_type": "node", "id": "n_atsuta_ekimae", "lang": "ja", "text": "熱田駅前", "kana": "あつたえきまえ", "source": "wikipedia+n05", "reading_source": "auto:n05_line"}
 - {"entity_type": "node", "id": "n_atsuta_ekimae", "lang": "ko", "text": "아츠타에키마에", "source": "rule", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_atsuta_ekimae", "lang": "en", "text": "Atsuta-ekimae", "source": "rule"}
@@ -52173,7 +52173,9 @@
 - {"entity_type": "node", "id": "n_gionmachi", "lang": "ja", "text": "馬場新町", "source": "wikipedia", "valid_from": "1964-07-01", "valid_to": "1964-12-07", "kana": "ばばしんまち"}
 - {"entity_type": "node", "id": "n_gionmachi", "lang": "ko", "text": "바바신마치", "source": "rule", "valid_from": "1964-07-01", "valid_to": "1964-12-07", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_gionmachi", "lang": "en", "text": "Babashimmachi", "source": "rule", "valid_from": "1964-07-01", "valid_to": "1964-12-07"}
-- {"entity_type": "node", "id": "n_watanabe_dori_2_chome", "lang": "ja", "text": "渡辺通三丁目", "source": "n05", "valid_to": "[1950-XX-XX..1978-XX-XX]"}
+- {"entity_type": "node", "id": "n_watanabe_dori_2_chome", "lang": "ja", "text": "渡辺通三丁目", "source": "n05", "valid_to": "[1950-XX-XX..1978-XX-XX]", "kana": "わたなべどおりさんちょうめ"}
+- {"entity_type": "node", "id": "n_watanabe_dori_2_chome", "lang": "ko", "text": "와타나베도리산초메", "source": "rule", "valid_to": "[1950-XX-XX..1978-XX-XX]", "checked": "2026-11-20"}
+- {"entity_type": "node", "id": "n_watanabe_dori_2_chome", "lang": "en", "text": "Watanabe-dori 3-chome", "source": "rule", "valid_to": "[1950-XX-XX..1978-XX-XX]"}
 - {"entity_type": "node", "id": "n_tenjin_loop_line_nishitetsu", "lang": "ja", "text": "天神町", "source": "n05", "valid_to": "[1950-XX-XX..1974-XX-XX]", "kana": "てんじんのちょう"}
 - {"entity_type": "node", "id": "n_tenjin_loop_line_nishitetsu", "lang": "ko", "text": "텐진노초", "source": "rule", "valid_to": "[1950-XX-XX..1974-XX-XX]", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_tenjin_loop_line_nishitetsu", "lang": "en", "text": "Tenjinnocho", "source": "rule", "valid_to": "[1950-XX-XX..1974-XX-XX]"}
@@ -52513,7 +52515,9 @@
 - {"entity_type": "node", "id": "n_taihei_3_chome", "lang": "ja", "text": "太平町三丁目", "source": "n05", "valid_to": "[1967-XX-XX..1968-XX-XX]", "kana": "たいへいちょうさんちょうめ"}
 - {"entity_type": "node", "id": "n_taihei_3_chome", "lang": "ko", "text": "타이헤이초산초메", "source": "rule", "valid_to": "[1967-XX-XX..1968-XX-XX]", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_taihei_3_chome", "lang": "en", "text": "Taiheicho 3-chome", "source": "rule", "valid_to": "[1967-XX-XX..1968-XX-XX]"}
-- {"entity_type": "node", "id": "n_inaeicho_tsukiji_line_nagoya_city", "lang": "ja", "text": "西稲永", "source": "wikipedia", "valid_from": "[..1941-12-30]", "valid_to": "1956-09-15"}
+- {"entity_type": "node", "id": "n_inaeicho_tsukiji_line_nagoya_city", "lang": "ja", "text": "西稲永", "source": "wikipedia", "valid_from": "[..1941-12-30]", "valid_to": "1956-09-15", "kana": "にしいなえ"}
+- {"entity_type": "node", "id": "n_inaeicho_tsukiji_line_nagoya_city", "lang": "ko", "text": "니시이나에", "source": "rule", "valid_from": "[..1941-12-30]", "valid_to": "1956-09-15", "checked": "2026-11-20"}
+- {"entity_type": "node", "id": "n_inaeicho_tsukiji_line_nagoya_city", "lang": "en", "text": "Nishiinae", "source": "rule", "valid_from": "[..1941-12-30]", "valid_to": "1956-09-15"}
 - {"entity_type": "node", "id": "n_ishinkokomae", "lang": "ja", "text": "西川町二丁目", "source": "n05", "valid_to": "[1960-XX-XX..1961-XX-XX]", "kana": "にしかわちょうにちょうめ"}
 - {"entity_type": "node", "id": "n_ishinkokomae", "lang": "ko", "text": "니시카와초니초메", "source": "rule", "valid_to": "[1960-XX-XX..1961-XX-XX]", "checked": "2026-11-20"}
 - {"entity_type": "node", "id": "n_ishinkokomae", "lang": "en", "text": "Nishi-Kawacho 2-chome", "source": "rule", "valid_to": "[1960-XX-XX..1961-XX-XX]"}
